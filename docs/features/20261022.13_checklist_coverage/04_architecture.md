@@ -103,7 +103,7 @@ apply(readout, room_dir):
         readout.panels += [counts panel with label stage_unknown and the reason]
         return readout                                           # no records, no asks (CC-R3)
     files  = room file list (relative paths)
-    found  = {doc row: match(row, files)}                        # patterns, then the cover note index (CC-R6)
+    found  = {doc row: match(row, files)}                        # patterns, then contained-in rules (CC-R6)
     checks = {entry: claims whose check.name maps to the entry}  # via a CHECK_NAMES table: "1.2" -> "arr_definition", ...
     records = [status(row, stage, found, checks) for row in rows]   # CC-R4, CC-R5
     inst_gaps = cap_table_instruments(room_dir, files)           # 1.10 script reading, CC-R13

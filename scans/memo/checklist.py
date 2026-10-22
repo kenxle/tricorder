@@ -103,7 +103,9 @@ ENTRY_CHECKS = {
     "1.2": {"arr_from_subscription_rows", "arr_definition"},
     "1.3": {"rebuild_cohorts_from_customer_file", "cohort_retention"},
     "1.4": {"payroll_from_hiring_plan_and_rerun_cash", "burn_hiring_runway"},
-    "1.5": {"deck_claim_vs_named_cell", "deck_model_reconcile"},
+    # deck_revenue_vs_pnl and deck_history_vs_metrics: the deck-vs-books checks, which compare the
+    # deck's figures with the books the same way 1.5 compares them with the model (row C65).
+    "1.5": {"deck_claim_vs_named_cell", "deck_model_reconcile", "deck_revenue_vs_pnl", "deck_history_vs_metrics"},
     "1.6": {"top_customer_share", "customer_concentration"},
     "1.7": {"gross_margin_from_ledger", "gross_margin"},
     "1.8": {"cumulative_column_shown_as_active", "vanity_metric"},
@@ -153,6 +155,7 @@ GAP_WORDS = {
     "C78": ("option grant", "grant record"), "C76": ("ip assignment", "invention assignment"),
     "C01": ("accountant-prepared", "audited", "reviewed financ"), "C79": ("tax return",),
     "C35": ("customer reference",), "C14": ("cohort",), "C19": ("financial model",), "C72": ("cap table",),
+    "C20": ("balance sheet", "monthly p&l", "cash flow statement"),
 }
 
 # Rows that make the same request to the founder; the first folds into the second.
@@ -286,8 +289,13 @@ def guide_asks() -> dict:
 
 def items_for_gap(gap: Gap) -> list[str]:
     """The checklist document rows a gap's text names. Shared by coverage and the ask-list step."""
-    text = f"{gap.would_need} {gap.what}".lower()
-    return [cid for cid, words in GAP_WORDS.items() if any(w in text for w in words)]
+    def hits(text):
+        text = text.lower()
+        return [cid for cid, words in GAP_WORDS.items() if any(w in text for w in words)]
+
+    # The gap's "what" names the missing thing; "would_need" may list alternatives
+    # ("balance sheets, or invoices and revenue by customer"), so it is read only when "what" names nothing.
+    return hits(gap.what) or hits(gap.would_need)
 
 
 def gap_is_asked(asks: list[AskItem], gap: Gap) -> bool:

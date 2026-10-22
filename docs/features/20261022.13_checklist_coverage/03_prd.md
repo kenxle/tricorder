@@ -45,13 +45,14 @@ Statuses use FRAMEWORKS' words plus one addition, `not_checked` (CC-R5). A requi
 - **CC-R4. Every item gets one status.** For a known stage, each of the 109 items gets exactly one of: `checked`, `found`, `missing`, `not_checked`, `not_expected`. The counts by status come from the script and add up to the item count.
 - **CC-R5. Status rules.**
   - A document row is `found` when a room file matches it. Found does not depend on stage.
-  - A check row is `checked` when a readout claim's `check.name` belongs to an entry the row's `checked_by` names, and that entry did not return `cannot_check`.
-  - A check row whose entry exists but whose input documents are not in the room is `missing`.
+  - A check row is `checked` when a readout claim's `check.name` belongs to an entry the row's `checked_by` names, and that entry did not return `cannot_check`. A check that returns `cannot_check` writes a gap and no claim, so the claim is what decides.
+  - A check row with a claim is `checked`, even when one of its input documents is missing, because some checks run on a fallback file (1.12 kind a reads the model's ARR build when the customer file is absent). The missing file is still asked for, and the row is folded into that request (review S10).
+  - A check row with no claim whose input documents are not in the room is `missing`.
   - A check row with no entry yet, or whose missing input is not expected at this stage, is `not_checked`. This is the one status FRAMEWORKS does not list; it keeps "missing" meaning "something to ask for".
   - An outside row is `checked` when its scan wrote a claim for it, and `not_checked` otherwise. An outside row is never `missing`, because Tricorder fetches it itself.
   - An ask row (kind "ask") the stage expects is `missing` until the founder answers.
   - Any other row not expected at the stage is `not_expected`.
-- **CC-R6. Matching a file to a document.** First the file-name patterns in a table in the module, kept in line with `scans.base.INPUT_KINDS`. Then, for a file no pattern matches, the room's own index (the cover note's "What it is" column). The `hollis_voice_file` column is a test oracle for the Hollis Voice rooms, not the matcher, because its locations are wrong for other rooms (on Brasswick the spike, using that column, marks C30 found at "slide 5" and C96 at "slide 13", Hollis Voice's slides; `spike/out/brasswick_auto.json`). A match qualified in the column, such as C75's "terms stated there; no SAFE documents", is `found` with the qualifier as a note.
+- **CC-R6. Matching a file to a document.** First the file-name patterns in a table in the module, kept in line with `scans.base.INPUT_KINDS`; statements of work never count as customer contracts. Then "contained in" rules for a document a room often holds inside another file: a sheet in the model (cohorts, P&L), a page of the deck (unit economics, market, use of funds), text in the cap table (SAFE terms, pro forma). These cover what the Hollis Voice rooms actually do, which a cover-note fallback would not: the cover note lists the same files the patterns already see. A cover-note fallback is deferred until a room shows a file no pattern or rule matches. The `hollis_voice_file` column is a test oracle for the Hollis Voice rooms, not the matcher, because its locations are wrong for other rooms (on Brasswick the spike, using that column, marks C30 found at "slide 5" and C96 at "slide 13", Hollis Voice's slides; `spike/out/brasswick_auto.json`). A match qualified in the column, such as C75's "terms stated there; no SAFE documents", is `found` with the qualifier as a note.
 - **CC-R7. Each row says why.** Found rows name the file. Checked rows name the claim ids. Missing check rows name the missing input rows. Not-checked rows say whether no check exists or its input is not expected.
 
 ### Ask list
@@ -95,7 +96,7 @@ Statuses use FRAMEWORKS' words plus one addition, `not_checked` (CC-R5). A requi
 | A check returned `cannot_check` | The row is not `checked`; if its inputs are missing it is `missing`, otherwise `not_checked` | CC-R5 |
 | checklist.csv has a stage value outside yes, lighter, no, not stated | The step fails loudly in tests; at run time the row is `not_expected` and a gap names the bad value | CC-R4 |
 | A document row has no guide | Generic request text | CC-R11 |
-| Brasswick or any non-Hollis room | Matching by index and patterns, not by `hollis_voice_file` | CC-R6 |
+| Brasswick or any non-Hollis room | Matching by patterns and contained-in rules, not by `hollis_voice_file` | CC-R6 |
 
 ## UX
 

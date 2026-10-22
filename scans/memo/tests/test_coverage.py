@@ -187,10 +187,51 @@ def test_outside_rows_never_missing():  # CC-R5
 
 
 def test_cannot_check_is_not_checked():  # CC-R5
-    # A check that cannot run writes a gap, not a claim, so its row is never checked.
+    # A check that cannot run writes a gap and no claim. The claim, not the gap, is what checks a row.
     gap = Gap(what="Not in the room: the cap table", why="cannot_check", would_need="the cap table")
-    recs = _records(coverage.apply(_readout(FULL, gaps=[gap]), FULL))
-    assert recs["C81"]["status"] != "checked"
+    assert _records(coverage.apply(_readout(FULL, gaps=[gap]), FULL))["C81"]["status"] == "not_checked"
+    ran = _claim("redflags-003", "cap_table_reconcile", uri="02_financials/cap_table.xlsx")
+    assert _records(coverage.apply(_readout(FULL, gaps=[gap], claims=[ran]), FULL))["C81"]["status"] == "checked"
+
+
+def test_deck_vs_books_claims_check_c65():  # CC-R5, review S9
+    r = coverage.apply(_readout(FULL, claims=[_claim("redflags-008", "deck_revenue_vs_pnl")]), FULL)
+    assert _records(r)["C65"]["status"] == "checked"
+    r = coverage.apply(_readout(FULL, claims=[_claim("redflags-009", "deck_history_vs_metrics")]), FULL)
+    assert _records(r)["C65"]["status"] == "checked"
+
+
+def test_check_that_ran_without_a_missing_file_is_checked_and_still_asked():  # CC-R5, CC-R9, review S10
+    r = coverage.apply(_readout(SEED, claims=[_claim("redflags-001", "mrr_column_vs_subscription_rows",
+                                                    uri="02_financials/financial_model.xlsx")]), SEED)
+    rec = _records(r)["C06"]
+    assert rec["status"] == "checked"
+    assert "redflags-001" in rec["detail"] and "C03" in rec["detail"] and "Cannot run" not in rec["detail"]
+    c03 = next(row for row in _panel(r, coverage.ASKS_PANEL).rows if "C03" in row[1].split(", "))
+    assert "C06" in c03[1].split(", ")
+
+
+def test_founder_text_has_no_cell_reference():  # review U8
+    r = coverage.apply(_readout(SEED), SEED)
+    for a in r.asks:
+        assert "Cap_Table!" not in a.what and ".xlsx" not in a.what, a.what
+
+
+def test_balance_sheet_gap_is_not_revenue_by_customer():  # review U8
+    g = Gap(what="Not in the room: a balance sheet with a deferred revenue line", why="file missing",
+            would_need="monthly balance sheets, or invoices and revenue by customer")
+    assert "C03" not in checklist.items_for_gap(g)
+
+
+def test_ask_line_numbers_are_positions_in_readout_asks():  # review U9
+    from schema.claim import AskItem
+    before = AskItem(what="Something the ask-list step wrote first", why="x", piece="market", from_kind="weak_piece")
+    r = _readout(SEED); r.asks = [before]
+    r = coverage.apply(r, SEED)
+    rec = _records(r)["C03"]
+    n = int(rec["ask_line"])
+    assert r.asks[n - 1].checklist_id is not None and "C03" in next(
+        row for row in _panel(r, coverage.ASKS_PANEL).rows if row[0] == r.asks[n - 1].what)[1]
 
 
 def test_match_by_pattern_not_column():  # CC-R6
@@ -308,9 +349,16 @@ def test_cap_table_instruments_without_documents():  # CC-R13, Ken's default 3
 # Dedupe --------------------------------------------------------------------
 
 
-def test_no_request_twice():  # CC-R14
+def test_no_request_twice():  # CC-R14: the real merge, with a fake scan result on disk
+    from schema.claim import ScanResult
+    from scans.base import write_result
+
     for room, gaps in ((SEED, _sample_gaps()), (FULL, []), (BRASS, [])):
-        r = coverage.apply(_readout(room, gaps=gaps), room)
+        dup = [Gap(what="Not in the room: an expense ledger", why="file missing", would_need="the expense ledger"),
+               Gap(what="Not in the room: an expense ledger", why="file missing", would_need="the expense ledger by vendor")]
+        write_result(ScanResult(scan="redflags", room=room.name, ran_at="2026-10-24T10:00:00Z", gaps=list(gaps) + dup), room)
+        r = build_readout(room)
+        assert "redflags" in r.scans_run
         whats = [a.what.strip().lower() for a in r.asks]
         assert len(whats) == len(set(whats)), room
         kinds = {row.id: row.kind for row in checklist.load()}
@@ -319,7 +367,8 @@ def test_no_request_twice():  # CC-R14
             # A check row may sit on two lines when it needs two missing files; a document is asked once.
             for i in (i for i in row[1].split(", ") if kinds[i] != "check"):
                 by_item.setdefault(i, set()).add(row[2])
-        assert not any({"gap", "checklist"} <= kinds for kinds in by_item.values()), room
+        assert not any({"gap", "checklist"} <= k for k in by_item.values()), room
+        assert sum(1 for a in r.asks if "expense ledger" in a.what.lower()) <= 1, room
 
 
 def test_gap_wins_over_checklist():  # CC-R15
@@ -378,4 +427,5 @@ def test_runs_offline(monkeypatch):  # CC-R20
         raise AssertionError("coverage opened a network connection")
 
     monkeypatch.setattr(socket, "create_connection", _no_network)
+    monkeypatch.setattr(socket.socket, "connect", _no_network)
     coverage.apply(_readout(SEED), SEED)

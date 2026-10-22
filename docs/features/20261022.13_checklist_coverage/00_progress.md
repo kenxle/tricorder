@@ -73,6 +73,26 @@ Seed drop at Series A, missing by kind: 17 documents, 33 checks, 3 founder asks.
 
 Spike limits, stated plainly: "checked" is a projection from inputs being present; the four seed-drop gaps are hand-written from FRAMEWORKS "Ask list" worked example, not scan output; matching uses `hollis_voice_file` first, which is wrong for Brasswick (the PRD's CC-R6 drops it as the matcher); the 1.10 instrument reading is a script over the SAFE block only.
 
+## Review fix round (wave 1, 2026-10-22)
+
+Review: `docs/features/20261022.10_feature_breakdown/review_wave1.md`. Each behavior fix had a failing test first (`python3 -m pytest scans/memo/tests/test_coverage.py`: 5 failed, then 42 passed).
+
+| Finding | Disposition | Evidence |
+|---|---|---|
+| S9. Deck-vs-books claims never check C65 | Fixed. `deck_revenue_vs_pnl` and `deck_history_vs_metrics` added to entry 1.5's check names. | `test_deck_vs_books_claims_check_c65`; real merge: C65 checked on both Hollis Voice rooms |
+| S10. C06 on the seed drop said "Cannot run" though a kind a claim ran | Fixed. A check row with a claim is `checked`; a missing input is still asked for and the row folds into that line. PRD CC-R5 updated. | `test_check_that_ran_without_a_missing_file_is_checked_and_still_asked`; real merge: C06 and C10 checked on the seed drop |
+| S11a. `test_no_request_twice` did not run the merge | Fixed. It now runs `build_readout` with a fake redflags result on disk, including two gaps for one document. The seam with `asks.py` stays untested because that step does not exist; the Plan's row says so. | test passes |
+| S11b. `test_cannot_check_is_not_checked` proved nothing | Fixed. It now shows the gap alone leaves C81 not checked and a claim checks it. PRD CC-R5 says a `cannot_check` result writes a gap and no claim. | test passes |
+| S11c. Offline test patched too little | Fixed. Also patches `socket.socket.connect`. | `test_runs_offline` |
+| S12. PRD and code disagree on file matching | Docs fixed to match the code: patterns, then contained-in rules. The PRD's own reasoning supports it: the cover note lists the same files the patterns already see, so the fallback would add nothing on these rooms. Deferred until a room needs it. | CC-R6, architecture flow, Plan slice 1 |
+| U8. Founder text had cell references; balance-sheet gap tagged C03 | Taken. File and cell locations move from `what` to `why`; `items_for_gap` reads the gap's `what` first and `would_need` only when `what` names nothing; "balance sheet" maps to C20. | `test_founder_text_has_no_cell_reference`, `test_balance_sheet_gap_is_not_revenue_by_customer` |
+| U9. `ask_line` counted coverage's own lines | Taken. It is now the position in `readout.asks`. | `test_ask_line_numbers_are_positions_in_readout_asks` |
+| U5 (duplicate gaps in redflags.json) | Not coverage's to fix; coverage already merges them into one ask line. | `test_two_gaps_for_one_document_ask_once` |
+
+Real merge after the fixes (redflags then memo, scratch out dir): seed drop 7 checked (C02, C06, C10, C19, C20, C60, C65), 14 found, 63 missing, 25 not checked, 25 ask lines; full room 13 checked, 15 found, 40 missing, 41 not checked, 22 ask lines.
+
+Full suite at the end of this round: `python3 -m pytest`, 203 passed, 0 failed (2026-10-22). One earlier run in the round showed 2 failures in `scans/redflags/tests/test_deck_vs_books.py` while that builder's own test-first round was in progress; they passed on the rerun. The prototype and `02_prototype/screenshot.png` were rebuilt from the fixed step.
+
 ## Decisions and events
 
 - 2026-10-22, by 19:58 UTC (file time of the earliest surviving spike output): spike running on branch `claude/project-thread-dfe7j4`.

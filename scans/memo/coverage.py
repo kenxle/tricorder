@@ -120,14 +120,20 @@ def _statuses(rows, stage, found, claims):
             rec["missing_inputs"] = missing
             if not cl.expected(level):
                 rec["status"], rec["detail"] = "not_expected", f"Not expected at this stage ({level})."
+            elif ids:
+                # A check can run on a fallback file (1.12 kind a reads the model's ARR_Build when the
+                # customer file is absent). It is checked; a missing file is still asked for.
+                rec["status"], rec["detail"] = "checked", f"Checked by {', '.join(ids)} ({r.checked_by})."
+                asked = [i for i in missing if i not in later]
+                if asked:
+                    rec["detail"] += f" {', '.join(asked)} would let it run on the fuller file."
+                rec["missing_inputs"] = asked
             elif missing and later:
                 rec["status"] = "not_checked"
                 rec["detail"] = f"Cannot run: needs {', '.join(later)}, not expected at this stage."
             elif missing:
                 rec["status"] = "missing"
                 rec["detail"] = f"Cannot run: needs {', '.join(missing)}, not in the room."
-            elif ids:
-                rec["status"], rec["detail"] = "checked", f"Checked by {', '.join(ids)} ({r.checked_by})."
             elif r.entries == ("1.11",):
                 rec["status"], rec["detail"] = "found", "Its files are in the room; entry 1.11 checks only that they are there."
             elif r.check_exists:
@@ -207,6 +213,17 @@ def _line(what, why, piece, from_kind, checklist_id, covers, if_you_have_it, sta
             "covers": list(covers), "ask_stage": "after_term_sheet" if late else "before_second_meeting"}
 
 
+LOCATION = re.compile(r"\s*\(([^()]*(?:\.xlsx|\.csv|\.pdf|\.md|![A-Z]+\d)[^()]*)\)")
+
+
+def _founder_text(would_need: str):
+    """Ask text the founder reads: no file path or cell reference. Returns (text, location)."""
+    m = LOCATION.search(would_need)
+    if not m:
+        return would_need, None
+    return (would_need[:m.start()] + would_need[m.end():]).strip(), m.group(1)
+
+
 def _ask_lines(rows, recs, gaps, stage, has_flag):
     by_id = {r.id: r for r in rows}
     level = lambda i: by_id[i].stage[stage]  # noqa: E731
@@ -229,7 +246,8 @@ def _ask_lines(rows, recs, gaps, stage, has_flag):
             line["covers"] += [i for i in items if i not in line["covers"]]
             continue
         piece = g.piece or by_id[items[0]].readout_piece
-        line = _line(g.would_need, g.what, piece, "gap", items[0], items,
+        what, where = _founder_text(g.would_need)
+        line = _line(what, g.what + (f" ({where})" if where else ""), piece, "gap", items[0], items,
                      all(level(i) != "yes" for i in items if cl.expected(level(i))), stage)
         lines.append(line)
         by_gap_what[g.what] = len(lines) - 1
@@ -256,6 +274,11 @@ def _ask_lines(rows, recs, gaps, stage, has_flag):
         elif r.kind == "check":
             for inp in rec.get("missing_inputs", []):
                 want.setdefault(inp, []).append(cid)
+    for cid, rec in recs.items():  # checked rows that a fuller file would let run more completely
+        if rec["status"] == "checked" and rec["row"].kind == "check":
+            for inp in rec.get("missing_inputs", []):
+                if recs.get(inp, {}).get("status") == "missing":
+                    want.setdefault(inp, []).append(cid)
 
     guides = cl.guide_asks()
     for target in sorted(want, key=lambda c: int(c[1:])):
@@ -331,9 +354,10 @@ def apply(readout: Readout, room_dir: Path) -> Readout:
 
     existing = {a.what.strip().lower() for a in readout.asks}
     kept = [l for l in lines if l["item"].what.strip().lower() not in existing]
+    offset = len(readout.asks)
     readout.asks += [l["item"] for l in kept]
-    line_of = {}
-    for n, l in enumerate(kept, start=1):
+    line_of = {}  # position in readout.asks, counting from 1
+    for n, l in enumerate(kept, start=offset + 1):
         for c in l["covers"]:
             line_of.setdefault(c, n)
 
