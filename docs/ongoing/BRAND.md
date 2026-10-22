@@ -18,6 +18,7 @@
 - [Data room research](../reports/20261022.02_research/research_data_room.md)
 - [Ken's communication style guide](../../../personal/context/personal/communication_style.md)
 - USPTO trademark records, linked in "The name's origin and the trademark risk" below
+- The judge's and the demo critic's critiques ([critique_judge.md](../features/20261022.01_hackathon_plan/critique_judge.md), [critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md)), for the pitch's length, the margin's revenue base and the answer on a room we didn't make
 
 ## The name and the line
 
@@ -130,13 +131,13 @@ Filled:
 > | Deck | $2,500,000 | pitch_deck.pdf, slides 3 and 14 |
 > | Financial model | $2,240,868 | financial_model.xlsx, ARR_Build, ARR_TOTAL |
 >
-> Largest gap: about $759,132, between the video and the model. The deck is $259,132 above the model. The room does not explain either gap.
+> Largest gap: about $760,000, between the video and the model. The deck is $259,132 above the model. The room does not explain either gap.
 >
 > Ask the founder: which of these is ARR as of 2026-09-30, and can you walk us from the billing data to it?
 
 The last question is the one a pre-seed fund's angel guide recommends: ask the founder to walk from the source data to the number ([pre-seed fund, Sep 2026](https://www.hustlefund.vc/post/angel-squad-red-flags-in-startup-founders-that-experienced-investors-never-ignore)).
 
-The $759,132 figure is the video's rounded "about $3,000,000" minus the model's $2,240,868, computed with Python. The readout keeps "about" because the founder said a rounded figure.
+The gap is the video's rounded "about $3,000,000" minus the model's $2,240,868, which is $759,132, computed with Python. A gap that starts from a spoken figure is rounded too, here to the nearest $10,000, because "about" next to exact dollars reads as false precision ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), finding 12). A gap between two written figures keeps its exact dollars.
 
 ### A flag
 
@@ -154,9 +155,11 @@ Filled:
 > **Flag: gross margin leaves out delivery costs**
 >
 > - The document shows: 80% gross margin (pitch_deck.pdf, slide 5; financial_model.xlsx, P&L).
-> - The check found: 58.1% (expense_ledger.csv, with every line tagged hosting, inference, telephony or support moved into cost of revenue).
-> - Difference: 21.9 points.
+> - The check found: 58.1% on the model's recurring revenue, which includes the Marlow pilot (expense_ledger.csv, with every line tagged hosting, inference, telephony or support moved into cost of revenue). On subscription revenue alone, without the pilot, it is 54.5% (financial_model.xlsx, P&L, W7, W13, W14, W20, W22).
+> - Difference: 21.9 points on recurring revenue.
 > - Ask the founder: why do cloud hosting and model inference sit under R&D, and support staff under sales and marketing, instead of cost of revenue?
+
+A margin says which revenue it divides by. Once the pilot is out of recurring revenue, the two figures differ ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), finding 12).
 
 A second filled flag, because the pilot is the one an AI-literate panel will recognise:
 
@@ -264,11 +267,13 @@ Filled:
 
 Written for Ken to say. Plain, with contractions, no absolutes. "I" for what Ken decided, "we" for what the team built.
 
-**Open (one sentence):**
+The spoken pitch fits the three-minute beat sheet in [ROADMAP.md, demo-script](ROADMAP.md#demo-script). The slot is likely three minutes or less, and VC judges already know the problem, so the pitch carries the open sentence, the beats and the close, and nothing else ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), finding 11).
+
+**Open (one sentence), said at 0:00 while the ARR ladder is on screen, before the beat sheet's first line:**
 
 > When a startup sends a data room, an associate spends days rebuilding its numbers before a partner sees anything; Tricorder does that first pass and shows the partner what doesn't add up, with a source on every line.
 
-**The problem, in investors' words (two quotes, no more):**
+**The problem, in investors' words (two quotes, for the page, not the spoken pitch):** the founder brief carries the first. Both are here for answers to questions.
 
 > "When burn or revenue differs between the deck, the model and the accounting records, the gap suggests carelessness or something worse, and either reading damages the deal." ([seed fund guide, Aug 2026](https://www.crv.com/content/what-is-a-data-room))
 
@@ -276,19 +281,20 @@ Written for Ken to say. Plain, with contractions, no absolutes. "I" for what Ken
 
 Say who wrote each one by role: a seed and Series A fund's guide, and a junior VC. If Ken's own interviews this week produce a better line, and the person agrees to be quoted, use it in place of the second.
 
-**The buyer, named:** the partner or principal at a seed to Series A fund pays. The associate uses it every day. Angels and accelerators come later; the research found angels tend to pay to avoid diligence rather than to do it better.
+**The buyer, named, in one line at 2:30:** "The partner pays per seat." Behind it: the partner or principal at a seed to Series A fund pays. The associate uses it every day. Angels and accelerators come later; the research found angels tend to pay to avoid diligence rather than to do it better.
 
-**The one workflow shown:** point Tricorder at Hollis Voice's thin first-tier room. The readout opens on the ARR disagreement: deck, model and video side by side. Ken clicks one source to show it lands on the cell. Then the full room goes in, and the pilot, the cohort churn and the customer concentration appear. The overview page may switch the trigger to a forwarded pitch email; the readout and its order stay the same.
+**The one workflow shown:** the readout for Hollis Voice's full room is already on screen, because it ran before Ken walked up. It opens on the ARR ladder: about $3.0M said on video, $2.5M in the deck, $2.24M in the model, $2.06M in the billing rows ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), verdict). Ken clicks the video figure, then the model figure and the pilot clause, each opening in the page. Then the flags, the gaps, and one line for the runs on the sealed variant room and the clean room. The forwarded pitch email is the closing "next" line.
 
-**The honest line on where the data goes:** say the sentence in "Where the data goes" below, then: "Today's room is synthetic. We built the company, planted the problems, and kept an answer key, so you can see the score."
+**Where the data goes, only when asked:** say the sentence in "Where the data goes" below, then: "Today's room is synthetic."
 
-**The close:**
+**The close, at 2:30:**
 
-> It doesn't tell you to invest or pass. It reads out what's in the room and what to ask the founder. If you do first-pass diligence and want to see it on your next deal, let's talk.
+> Next: forward the pitch email, and this is waiting before you open it. It doesn't tell you to invest or pass. It reads out what's in the room and what to ask the founder. If you do first-pass diligence and want to see it on your next deal, let's talk.
 
 **If a judge asks:**
 
-- *Isn't this a wrapper on a model?* The checks are code that rebuild each number from the raw files. The planted-flag room and its answer key are the test. The model reads contracts and labels where code can't.
+- *You built the company, planted the flags and wrote the answer key. What does it find in a data room you didn't make?* Answer with the two runs, not the room we planted ([critique_judge.md](../features/20261022.01_hackathon_plan/critique_judge.md), finding 1). Someone outside the team planted a second room this week and sealed its key until our 3:30 freeze; here's what it found there, with the real numbers. On the same company with nothing planted, here's everything it flagged.
+- *Isn't this a wrapper on a model?* The checks are code that rebuild each number from the raw files. The sealed variant room and the clean run are the test. The model reads contracts and labels where code can't.
 - *Others already link claims to sources.* Yes, several do. Ours leads with what disagrees and writes a gap as a gap instead of filling it.
 - *What happens when a scan fails?* The readout says which check didn't run and why. It doesn't leave the section blank.
 
@@ -343,4 +349,4 @@ The hackathon gives $150 for the best social content posted during the day. Ken 
 
 > Tricorder reads only the documents you give it or the decks in mail you send it, keeps only the readout and its sources, and lets you see and delete everything it pulled.
 
-Use this sentence on the product page and in the pitch, word for word. On Saturday, add one more: "Today's data room is synthetic."
+Use this sentence on the product page and, when a judge asks, in the pitch, word for word. On Saturday, add one more: "Today's data room is synthetic."

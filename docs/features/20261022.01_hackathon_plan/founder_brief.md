@@ -2,6 +2,8 @@
 
 Team Tricorder · Deal Flow NYC, Track 2: Diligence · Saturday 2026-10-24
 
+**One startup, four ARR numbers:** about $3.0M on video, $2.5M in the deck, $2.24M in the model, $2.06M in the billing rows.
+
 ## Problem
 
 VCs told the organisers a first pass takes an associate days of rebuilding numbers from a messy data room.
@@ -24,16 +26,17 @@ Angels come later: they pay to avoid diligence, and memo tools already sell at $
 
 ## The one workflow we'll demo
 
-**Forward the pitch email, get the readout.** We open on a pitch email from Hollis Voice, an invented phone agent for vet clinics. The investor forwards it, and the readout is waiting. Today we start the forward by hand.
-
-Then we load the full synthetic data room. Three more flags appear: a pilot counted as ARR, hidden cohort churn, and customer concentration.
+We open on the readout, already waiting, for Hollis Voice, an invented phone agent for vet clinics. It ran on the full data room before we walked up.
 
 On screen:
 
-1. **Disagreements first.** The deck says $2,500,000 ARR, the model $2,240,868, and the founder about $3,000,000 on video. Rebuilt from subscription rows, it's $2,060,868. Each figure opens its slide, cell or video second.
-2. **Flags**, each with the company's number, ours, and the question for the founder.
-3. **Gaps**, marked "not in the room".
-4. **Our score** against the answer key: planted flags found out of eight, decoys wrongly flagged out of three.
+1. **Disagreements first:** the ladder above, each figure opening its slide, cell or video second.
+2. **Flags**, each with the company's number, ours, and the question for the founder: a pilot counted as ARR, hidden cohort churn, customer concentration.
+3. **Comps and market signals**, each with its reason or source.
+4. **Gaps**, marked "not in the room".
+5. **Rooms we didn't plant:** real scores on a room an outsider planted and sealed, and one with nothing planted.
+
+**Next:** forward the pitch email, and the readout is already waiting.
 
 **Where the data goes.** Tricorder reads only the documents you give it or the decks in mail you send it, keeps only the readout and its sources, and lets you see and delete everything it pulled. Today's data room is synthetic.
 
@@ -51,3 +54,5 @@ Sources
 - [Voice of the customer research](../../reports/20261022.02_research/research_voice_of_customer.md): the $600M fund and PitchBook seat pay rows.
 - [Data room research](../../reports/20261022.02_research/research_data_room.md): Hollis Voice, its eight planted entries and three decoys.
 - [The organisers' problem tracks](../../reports/20261022.01_hackathon_sources/problem_tracks.txt): the Track 2 problem statement.
+- [Demo critique](critique_demo.md): the ARR ladder at the top and the readout-first opening. [Judge critique](critique_judge.md): the sealed variant room and the clean run.
+- [Answer key](../../../data_room/answer_key.json), `facts`: the four ARR figures.

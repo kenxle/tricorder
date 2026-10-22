@@ -27,7 +27,7 @@ One folder per person, so Saturday's pull requests do not touch the same files. 
 
 | Folder | What it holds | Owner on Saturday |
 |---|---|---|
-| `schema/` | The Claim models, the exported JSON Schema, generated TypeScript types in `schema/ts/`, the quote checker. Frozen at 11:00 AM. | captain |
+| `schema/` | The Claim models, the exported JSON Schema, generated TypeScript types in `schema/ts/`, the quote checker. The models and the JSON Schema are written this week by the skeleton slice (option B on the overview page) and are frozen from then; only the quote checker is Saturday work. | captain |
 | `scans/memo/` | Merges the scan results into the readout. | captain |
 | `eval/` | Scores a readout against the answer key. | captain |
 | `demo/` | The demo script's files and the frozen outputs. | captain |
