@@ -8,17 +8,17 @@ Everything the factory built today for Deal Flow, NYC's first VC hackathon (Beta
 - **Do this week.** Your rows on [the board](../../BULLETIN.md): the founder brief in your words, the pitch video, the keys, who joined and their repo access, the organisers' questions, the Reddit pages.
 - **Read first.** The [one-page founder brief](founder_brief.md). It is what you hand the judges, and the organisers asked every team for it.
 
-Written 2026-10-22 at 11:55 AM. Updated 12:50 PM: the critics' fixes are applied and every link on this page opens.
+Written 2026-10-22 at 11:55 AM. Updated 2:24 PM: your review of the product brief, personas and research is folded into every doc, and the reconciliation pass is running.
 
 ## What exists now
 
 <div class="panel"><p><b>Saturday is build-only, so this week built everything but the product.</b> The organisers wrote "On Saturday you only build. Everything a founder does before writing code happens this week." The repo holds documents, research, the synthetic data room and prompts. It holds no product code.</p></div>
 
-1. **Research, four tracks.** [Voice of the customer](../../reports/20261022.02_research/research_voice_of_customer.md): what investors check first, the flags they regret, what they pay for, with 67 pieces of evidence, all linked, counted by its script. [The landscape](../../reports/20261022.02_research/research_landscape.md): the market map in the organisers' three columns, the sponsor tools, the judges. [Feasibility per scan](../../reports/20261022.02_research/research_feasibility.md): what four people can build in six hours, every data source with its terms. [The data room](../../reports/20261022.02_research/research_data_room.md): what a real one holds, the flags a first pass finds, the design of ours.
-2. **The ongoing docs.** [Product brief](../../ongoing/PRODUCT_BRIEF.md), [personas](../../ongoing/PERSONAS.md) with say, do, pay, [brand](../../ongoing/BRAND.md) (how the readout talks, the pitch to judges, the posting voice), [roadmap](../../ongoing/ROADMAP.md) (this week, Saturday hour by hour, after), [architecture](../../ongoing/ARCHITECTURE.md) (the stack, the Claim schema, the inbox design), [frameworks](../../ongoing/FRAMEWORKS.md) (28 entries by its script: every check and prompt a scan runs, typed in on Saturday).
-3. **The synthetic data room.** [Hollis Voice](../../../data_room/README.md), an invented phone agent for vet clinics raising a Series A. 17 files, a thin 12-file seed drop, an answer key of 8 planted flags and 3 decoys, and cash that reconciles. Also a clean room with no flags, and a switch that writes a variant room someone outside the build seals ([SEALING.md](../../../data_room/SEALING.md)). The checks passed on all three rooms, and reruns are byte-identical. Every name and number is fictional.
-4. **The founder brief.** [One page](founder_brief.md) in the organisers' four headings: problem, customer, business model, the one workflow we demo. 448 words by its script, revised to the critics. Yours to edit.
-5. **The critics.** [The judge](critique_judge.md), [buildability](critique_buildability.md), [the demo](critique_demo.md). What they said is in section 5; their fixes are applied.
+1. **Research.** [Voice of the customer](../../reports/20261022.02_research/research_voice_of_customer.md): what investors check first, the flags they regret, what they pay for. [The landscape](../../reports/20261022.02_research/research_landscape.md): the market map in the organisers' three columns, the sponsor tools, the judges, and every public feature of Startup Due Dil, the partner-built tool closest to ours. [Feasibility per scan](../../reports/20261022.02_research/research_feasibility.md): what four people can build, every data source with its terms. [The data room](../../reports/20261022.02_research/research_data_room.md) and [what a data room is](../../reports/20261022.02_research/what_is_a_data_room.md). [The gaps](../../reports/20261022.02_research/research_gaps.md): online answers to what interviews would have asked. [Real investment memos](../../reports/20261022.02_research/research_memos.md): 28 published memos and 6 templates.
+2. **The ongoing docs.** [Product brief](../../ongoing/PRODUCT_BRIEF.md), [personas](../../ongoing/PERSONAS.md) grouped by stage, [brand](../../ongoing/BRAND.md), [roadmap](../../ongoing/ROADMAP.md) with a table of every ask you made and where it is built, [architecture](../../ongoing/ARCHITECTURE.md), [frameworks](../../ongoing/FRAMEWORKS.md) (every check and prompt a scan runs), the [diligence checklist](../../ongoing/CHECKLIST.md) and the [memo template](../../ongoing/MEMO_TEMPLATE.md).
+3. **The synthetic data room.** [Hollis Voice](../../../data_room/README.md), an invented phone agent for vet clinics raising a Series A. A 17-file room, a 12-file seed drop, an answer key of 8 planted red flags, 3 decoys and the green flags, cash that reconciles, a clean room with no flags, and a switch for a sealed variant room ([SEALING.md](../../../data_room/SEALING.md)). Every name and number is fictional.
+4. **The founder brief.** [One page](founder_brief.md) in the organisers' four headings. Yours to edit.
+5. **The critics.** [The judge](critique_judge.md), [buildability](critique_buildability.md), [the demo](critique_demo.md). Their fixes are applied.
 
 ## Decisions
 
@@ -335,7 +335,7 @@ Three critics read everything with fresh eyes. Their full files: [the judge](cri
 <div class="card"><h4>The demo</h4><p>Lands if it opens on the four ARR numbers and runs on the full room. The slot is likely three minutes, not five. The room's cash does not add up ($2.9M of losses unexplained against $2M raised), two customer ids and the "Claims page" look built to be caught, two decoys catch nothing, and the numbers are too tidy. All being fixed in the generator.</p></div>
 </div>
 
-**Being applied now, no decision needed:** the check names unified to one set; the stale paths in the architecture and roadmap corrected; the Claim schema made one source; the cash reconciled in the generator; ordinary customer ids; slide 14 retitled "Appendix: key metrics"; two decoys given teeth; seeded noise on costs and salaries; the cover note's "after a term sheet" changed to "after a first meeting"; the demo script cut to a three-minute core with a five-minute extension and the beat sheet from the demo critique; source clicks rendered in-page instead of launching Excel; the pitch to judges trimmed to fit; the video re-planned as an off-stage voiceover with a captioned clip; the slot-length question added to your organisers row.
+**Applied, no decision needed:** the check names unified to one set; the stale paths in the architecture and roadmap corrected; the Claim schema made one source; the cash reconciled in the generator; ordinary customer ids; slide 14 retitled "Appendix: key metrics"; two decoys given teeth; seeded noise on costs and salaries; the cover note's "after a term sheet" changed to "after a first meeting"; the demo script cut to a three-minute core with a five-minute extension and the beat sheet from the demo critique; source clicks rendered in-page instead of launching Excel; the pitch to judges trimmed to fit; the video re-planned as an off-stage voiceover with a captioned clip; the slot-length question added to your organisers row.
 
 **The question the judge says the plan cannot answer** is in [critique_judge.md](critique_judge.md), last section. Read it before Saturday.
 
@@ -344,11 +344,12 @@ Three critics read everything with fresh eyes. Their full files: [the judge](cri
 All on [BULLETIN.md](../../BULLETIN.md), newest first:
 
 - **Edit the founder brief** in your own words ([founder_brief.md](founder_brief.md)).
-- **Record the two-minute pitch video** from [the script](../../../data_room/hollis_voice/01_overview/pitch_video_script.md); it says "about $3 million" on purpose.
-- **Say who accepted the invites.**
+- **Get the two-minute pitch video recorded** from [the script](../../../data_room/hollis_voice/01_overview/pitch_video_script.md), voiced by someone other than the presenter, as the demo critic advised; it says "about $3 million" on purpose.
+- **Say who accepted the invites, and add them to the GitHub repo.**
+- **Answer the cards** on this page, including which Startup Due Dil ideas to adopt (in the landscape research, Part 5).
 - **Get the sponsor keys**: Akta (ask for a coupon; the useful signals are on the $50 plan), Nicrron, You.com, Tavily, an Anthropic key, a GitHub token, a contact address for the SEC's User-Agent rule.
-- **Ask the organisers** who Roundtable is, which fund D. J. Patel is with, whether Abeera Saeed is still at Plug and Play, and whether the build window is six hours or nine. Plus the track change from the other session's row.
-- **Save the 20 Reddit pages** the voice-of-customer track listed. Not blocking.
+- **Ask the organisers** who Roundtable is, which fund D. J. Patel is with, whether Abeera Saeed is still at Plug and Play, and whether the build window is six hours or nine, and how long each team's demo slot is. Plus the track change from the other session's row.
+- **Save the Reddit pages** the research listed: 20 in the voice-of-the-customer research and 15 in the gaps research. Not blocking.
 
 ## How this was built
 
