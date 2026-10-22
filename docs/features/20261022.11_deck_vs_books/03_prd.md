@@ -131,7 +131,7 @@ Open, for Ken or the owner named:
 
 Resolved:
 
-- **Q2, flag or watch when the hidden months hold nothing bad.** Ken decided on 2026-10-22: a `watch`. It stays a `flag` when the hidden months hold a dip or a flat stretch. On the test deck the six months left out hold a climb from $2,651 to $19,462, so it is a watch ([evidence/test_rooms.txt](evidence/test_rooms.txt)).
+- **Q2, flag or watch when the hidden months hold nothing bad.** Default chosen by the orchestrator on 2026-10-22, open for Ken to change: a `watch`. It stays a `flag` when the hidden months hold a dip or a flat stretch. On the test deck the six months left out hold a climb from $2,651 to $19,462, so it is a watch ([evidence/test_rooms.txt](evidence/test_rooms.txt)).
 
 - Which check name for partial history: `deck_history_vs_metrics`, because `answer_key_brasswick.json` uses it for BF2 and `eval.score` matches on it.
 - Where the chart's numbers come from: the pixels, scale free, because the bar values are not in the PDF text and the model is not on the main path. The spike read 21, 9, 15 and 7 bars correctly and matched shapes within 0.4 points ([02_interface_example.md](02_interface_example.md)).

@@ -43,7 +43,7 @@ Every number on this page comes from [evidence/](evidence/) (the built module) o
 ## Decisions and events
 
 - 2026-10-22T20:02Z: spike runs recorded in `spike/out/`.
-- 2026-10-22: Ken decided, through the coordinator, that hidden months holding only a climb make a `watch`. A dip or a flat stretch keeps a `flag`. The PRD's DVB-R7 and Q2 were updated.
+- 2026-10-22: the orchestrator chose a default, open for Ken to change: hidden months holding only a climb make a `watch`. A dip or a flat stretch keeps a `flag`. The PRD's DVB-R7 and Q2 were updated.
 - 2026-10-22: the schema owner agreed to `chart_shape_tolerance` in `schema/settings.py`. The framework now merges a third `check()` element into `ScanResult.panels`, so the match table ships as a Panel.
 - 2026-10-22: tests written first and run red. The module made them green.
 - 2026-10-22: a defect found while recording evidence. On a test deck whose chart starts before the books, the bar for $900 (under 1 percent of the tallest bar) was missed, which gave a false "1 months are skipped" flag. A red assertion was added, then the bar reader was fixed to scan the bottom-most bar row. The spike script still has the old reader; it is a record, not production code.
