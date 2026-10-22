@@ -39,4 +39,5 @@ Read these when the task touches them. Seneschal keeps the table current.
 | `docs/ongoing/STYLE_GUIDE.md` | Any frontend work. |
 | `docs/ongoing/TESTING.md` | Writing or running tests, or reading what the CI command runs. |
 | `docs/ongoing/diagrams/INDEX.md` | Finding a diagram of a flow before changing it. |
+| `data_room/README.md` | Running any scan: the synthetic Hollis Voice room, how to regenerate it, and the answer key of planted flags. |
 <!-- /seneschal:doc-table -->
