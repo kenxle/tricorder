@@ -64,7 +64,7 @@ Four of the day's blocks are rules with nothing to build: the 1:21 PM block (no 
 | The associate's ten tabs, opened automatically | 1:47 PM (comment on the voice-of-the-customer research) | [outside-in](#outside-in) | After |
 | Reference checks, low priority | 1:50 PM (comment on the voice-of-the-customer research) | [reference-checks](#reference-checks) | After |
 | A bank check through a banking connector | 1:52 PM | [bank-check](#bank-check) | After |
-| Contracts as an input, checked for gaps such as cancellation periods | 1:53 PM | [redflag-readings](#redflag-readings), [contract-terms](#contract-terms) | Saturday, then After |
+| Contracts as an input, checked for gaps such as cancellation periods | 1:53 PM, and 3:17 PM ("include contract terms for sat") | [contract-terms-saturday](#contract-terms-saturday) | Saturday |
 | A list of things to ask the founder for | 1:54 PM | [readout](#readout), [readout-page](#readout-page) | Saturday |
 | A diligence checklist | 1:56 PM | [checklist](#checklist) | This week |
 | Coverage against the checklist, and an ask list from missing items at the company's stage | 1:56 PM | [checklist-coverage](#checklist-coverage) | After |
@@ -384,7 +384,7 @@ The empty repo the four people build in, with the typed Claim schema and a stub 
 - The schema is frozen and merged before Saturday.
 - Every example file in `sample_out/` validates.
 
-**If the organisers say no:** option A. The skeleton and the schema typing take the first half hour of backend-and-data and the captain on Saturday. Backend-and-data's half hour comes out of the red-flag model readings. The captain's comes out of the quote checker, which goes back to the half hour first planned.
+**If the organisers say no:** option A. The skeleton and the schema typing take the first half hour of backend-and-data and the captain on Saturday. Backend-and-data's half hour comes out of the contract-terms-saturday hour, which then reads Hollis Voice's contracts only. The captain's comes out of the quote checker, which goes back to the half hour first planned.
 
 **Who:** agent. Ken reviews.
 
@@ -510,13 +510,13 @@ The schedule gives 10:30 AM to 4:30 PM for hacking, with lunch, so the plan uses
 
 ### Who owns what
 
-Each person owns folders, so pull requests do not touch the same files. This follows the feasibility research's Part 4.1, with the shared file readers and the red-flag model readings given to backend-and-data, and the market-signals panel to frontend. The full layout is in [ARCHITECTURE.md](ARCHITECTURE.md).
+Each person owns folders, so pull requests do not touch the same files. This follows the feasibility research's Part 4.1, with the shared file readers and the contract-terms reading given to backend-and-data, and the market-signals panel to frontend. The full layout is in [ARCHITECTURE.md](ARCHITECTURE.md).
 
 | Role | Folders | Slices | Build hours |
 |---|---|---|---|
 | captain | `schema/` except `readers.py`, `scans/memo/`, `eval/`, `demo/` | claim-result, readout, demo-freeze | 4.5 |
 | frontend | `readout/`, and on Saturday the live re-run in `scans/signals/` | readout-page, market-signals | 4.5 |
-| backend-and-data | repo root files, `server/`, `schema/readers.py`, `scans/video/`, `scans/readings/` | readers, pitch-video, redflag-readings | 4.5 |
+| backend-and-data | repo root files, `server/`, `schema/readers.py`, `scans/video/`, `scans/readings/` | readers, pitch-video, contract-terms-saturday | 4.5 |
 | design-and-finance | `scans/redflags/`, `scans/comps/` | redflag-engine, comps | 4.5 |
 
 Build hours run from 10:30 AM to the 3:30 PM freeze, less a half-hour lunch: 4.5 hours each, 18 person-hours in all, from [check_saturday_hours.py](../features/20261022.01_hackathon_plan/check_saturday_hours.py). The same script checks that each role's slices fill its window and that the run of show below gives each slice its stated hours. Rehearsal adds 45 minutes for all four.
@@ -577,7 +577,7 @@ The red flags in the financials and metrics: the organisers' first direction, an
 - One pandas check per planted flag in the data room research's Part 3.4, over the CSVs and the model: pilot booked as ARR, deck ARR against the model (1 percent tolerance), churn hidden in the cohort tab, burn against the hiring plan, customer concentration, gross margin without delivery costs, cumulative sign-ups shown as active clinics. The video-against-deck variant is found by the readout slice, because it needs the video scan's output.
 - Deck claims read from the deck's claims page (slide 14) by regex, with `01_overview/claims.json` as the fallback (feasibility 1.1 and 1.9). The buildability critic's regex read 14 of 14 rows; three rows need a better label split.
 - Files are read through `schema/readers.py`. The scan writes no reader of its own.
-- The script decides that a number is wrong (feasibility Part 3.2). The model readings that explain a flag (the pilot contract clause, the cohort note) are the [redflag-readings](#redflag-readings) slice, owned by backend-and-data after the video slice, or moved to after Saturday.
+- The script decides that a number is wrong (feasibility Part 3.2). The model reading that gives a flag its clause quotes (the pilot contract) is the [contract-terms-saturday](#contract-terms-saturday) slice, owned by backend-and-data after the video slice. The model's reading of the cohort note is after Saturday, in [financial-model](#financial-model).
 - Each flag is a Claim with the claimed number, the computed number, a severity, and sources pointing at both places.
 - The cells behind the green flags, read by script with no judgement: the round from the cap table (new money, pre-money, Series A ownership) and the model (`SERIES_A_RAISE`), the market size (`MARKET_TAM_USD`), staff today (`STAFF_NOW`) and staff after hiring (the last row of `hiring_plan.csv`). The cap table's sum check (`cap_table_reconcile`, [FRAMEWORKS.md](FRAMEWORKS.md) entry 1.10) runs here, so the clean cap table (DC3) reads clear. The readout's strong pieces rest on these claims, and no other Saturday slice writes them.
 - `python -m scans.redflags <room>` writes `out/<room>/redflags.json`.
@@ -689,23 +689,36 @@ The pitch video broken into claims with timestamps, third in the feasibility res
 
 **Judgment:** no.
 
-### redflag-readings
+### contract-terms-saturday
 
-The model readings that explain two red flags: the pilot contract's clauses and the note on the cohort tab. They moved out of the red-flag engine so that slice stays scripts only ([critique_buildability.md](../features/20261022.01_hackathon_plan/critique_buildability.md), finding 2).
+Every contract in the room, read for its terms and checked against how each customer is counted, on both demo rooms. It is the Saturday part of entry 1.13, "Contract terms", in [FRAMEWORKS.md](FRAMEWORKS.md) ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:53 PM block).
 
-**Waits on:** redflag-engine (the flags these readings explain), pitch-video (backend-and-data starts this after the video slice), readers.
+**Waits on:** redflag-engine (the pilot flag these claims sit beside), pitch-video (backend-and-data starts this after the video slice), readers, claim-result (the quote checker).
 
 **Includes:**
 
-- The model reads `pilot_agreement_marlow.pdf` (term, termination, no duty to convert) and the cohort note, with the prompts in [FRAMEWORKS.md](FRAMEWORKS.md) entries 1.2 and 1.3, one schema per request.
-- Each reading is a Claim that cites the flag it explains. It never decides a number is wrong; the engine's script already did.
+- One model request per room reads every contract in it, with entry 1.13's prompt and schema, one schema per request. Hollis Voice has three contracts in `04_customers/`: the Cedar & Pine order form, the Marlow pilot agreement and the Brookline Row order form. Brasswick has four in `04_contracts/`: the Corvane agreement, the Ostley and Tessmore order forms, and the Norrgate statement of work.
+- The terms read: start, end and length; the notice that ends a running contract, kept apart from the notice not to renew; auto-renewal; pilot or trial terms and any duty to convert; the price, any discount and the list price; payment terms. Each stated term is a claim that quotes its clause. The request also returns the clause fields (exclusivity, most-favoured-customer, change of control), but nothing reads them until [contract-terms](#contract-terms).
+- Brasswick's Norrgate statement of work is a supplier contract. It is read for its terms and shown as info claims. It is not matched to a customer row, so it produces no check and no missing-customer gap.
+- Three of entry 1.13's script comparisons, run on both rooms: `cancellable_within_notice_vs_arr`, `pilot_without_duty_to_convert_vs_recurring` and `contract_price_vs_counted_price`. They compare each contract with the ARR build (Hollis Voice) or the model's `Revenue_Build` tab (Brasswick), the MRR column (`mrr` in `customer_mrr_by_month.csv`, or `subscription_revenue` in Brasswick's metrics and customer files), and the largest customer's share. The price check also confirms the fee behind that share.
+- The model reads clauses. The script decides that a number is wrong. Each comparison cites the flag it explains and sits beside the claim from entries 1.2, 1.6 and, where it applies, 1.12.
+- If the hour runs short, Hollis Voice is finished before Brasswick is started.
 - `python -m scans.readings <room>` writes `out/<room>/readings.json`.
 
-**Done when:** the pilot flag carries the clause quotes, and every quote passes the checker. On the demo laptop the readings show as frozen output.
+**Not in this slice:** checks 3, 4 and 6 (plan revenue past a contract's end, a signed contract not yet live, a counted line with no contract), the exclusivity, most-favoured-customer and change-of-control clauses, and contracts beyond the room's. Those are [contract-terms](#contract-terms), after Saturday. The cohort note reading is in [financial-model](#financial-model), after Saturday.
+
+**Done when:**
+
+- On Hollis Voice, the Marlow pilot agreement's 30-day notice and its "nothing requires the Customer to buy a subscription" clause are read with quotes. The notice check and the pilot check both flag it, with the clause beside the ARR row (`ARR_Build!E13`) and the `mrr` rows.
+- On Hollis Voice, Cedar & Pine's 90 days and Brookline Row's 30 days are read as notice not to renew, and both contracts return clear on all three checks. Brookline Row's 10 percent discount is read and matches the counted price.
+- On Brasswick, the three customer contracts return their terms. Corvane and Tessmore return clear. The price check finds Ostley Freight's $27,540 in `Revenue_Build` against the order form's $2,295 a month, and reports it as one cause with the annual prepayment flag from entry 1.12 (BF4).
+- The Norrgate statement of work returns its term, its notice and its fee as info claims, and no comparison.
+- On the Hollis Voice seed drop, which holds no contracts, the entry returns `cannot_check` with the gap "Not in the room: customer contracts".
+- Every quote passes the quote checker. On the demo laptop the readings show as frozen output, saved for both rooms under `demo/frozen/` before the freeze.
 
 **Who:** backend-and-data.
 
-**Hours:** 1.0 (2:30 to 3:30 PM). First in the cut order, with the memo's model pass. If cut, it moves to after Saturday.
+**Hours:** 1.0 (2:30 to 3:30 PM). Fourth in the cut order, after comps. If cut, the pilot flag still shows from the engine's script check, without clause quotes, and the reading moves to after Saturday.
 
 **Judgment:** no.
 
@@ -787,7 +800,7 @@ Ken's 1:12 PM and 1:15 PM comments let the operator steer the readout: an instru
 From the buildability critique's finding 11 and the demo critique's "What else goes wrong live":
 
 - **The demo laptop is Ken's:** M2 Max, with ffmpeg, Python 3.13 and Node 20. Backend-and-data's laptop is the backup, on `demo/frozen/`.
-- **The live step runs script checks only.** They need no network. Panels that need a model (the memo's connecting sentences, the comp reasons, the red-flag model readings) show frozen output. Nothing on screen calls a model at render time.
+- **The live step runs script checks only.** They need no network. Panels that need a model (the memo's connecting sentences, the comp reasons, the contract-terms readings) show frozen output. Nothing on screen calls a model at render time.
 - **Only the live beat needs the network.** The page and the frozen files are served from localhost, with no fonts or scripts from a CDN. The real company's outside-world panel needs venue wifi or the phone hotspot. Without either, it shows this week's saved copies with their dates, and Ken says so.
 - **Display.** Every laptop brings a USB-C to HDMI adapter. Rehearse at 1280 by 720 at 150% zoom.
 
@@ -799,14 +812,14 @@ From the buildability critique's finding 11 and the demo critique's "What else g
 | 10:00 to 10:20 | Organisers' intros and demos. Note any sponsor offer. | Listen. | Listen. | Listen. | |
 | 10:20 to 10:30 | Read this table aloud. Name the cut order. | Huddle. | Huddle. | Huddle. | |
 | 10:30 to 11:30 | claim-result: quote checker, against the readers stub. At 11:00, post the first social post. | readout-page on the example files. | readers. | redflag-engine: pure checks on the CSVs and the model. | |
-| 11:30 | Merge the readers and the quote checker. | Pull. | Pull. | Pull. | **1. Readers merged.** If they are late, cut the memo's model pass and the red-flag model readings now. |
+| 11:30 | Merge the readers and the quote checker. | Pull. | Pull. | Pull. | **1. Readers merged.** If they are late, cut the memo's model pass now. |
 | 11:30 to 12:30 | readout: memo. | readout-page. | pitch-video. | redflag-engine: the deck's claims page by regex, the green-flag cells, and the seed drop. | |
 | 12:30 to 1:00 | Lunch at desks. | Lunch. | Lunch. | Lunch. | |
-| 1:00 to 1:30 | demo-freeze: merge, first full run on the seed drop. | readout-page on real outputs. | pitch-video. | redflag-engine: the full room. | **2. First end-to-end run.** If the red-flag engine does not find the seed drop's flags, cut the red-flag model readings, and backend-and-data pairs with design-and-finance after the video slice. |
+| 1:00 to 1:30 | demo-freeze: merge, first full run on the seed drop. | readout-page on real outputs. | pitch-video. | redflag-engine: the full room. | **2. First end-to-end run.** If the red-flag engine does not find the seed drop's flags, backend-and-data pairs with design-and-finance after the video slice, and contract-terms-saturday is cut if the pairing runs past 2:30. |
 | 1:30 to 2:00 | readout: finish the piece verdicts, the top green and red flags, conflicts and corroborations, and the ask list. | readout-page: in-page source panels. | pitch-video. | redflag-engine: the clean room. | |
 | 2:00 to 2:30 | demo-freeze: score script, frozen outputs. | readout-page: source panels and video jump. | pitch-video. | comps. | |
 | 2:30 | Run the full room, the clean room and the approved real company's room, read the score. | | | | **3. Cut call.** Whatever is not producing claims falls back to saved results or is cut, in the cut order. The real inbox-polling forward is built only if the red-flag engine and the readout are done now, by whoever finishes their slice first. |
-| 2:30 to 3:30 | demo-freeze. | readout-page polish: the ask list's copy button and the reorder buttons, and the market-signals panel with its live run on the approved real company. | redflag-readings. | comps. | |
+| 2:30 to 3:30 | demo-freeze. | readout-page polish: the ask list's copy button and the reorder buttons, and the market-signals panel with its live run on the approved real company. | contract-terms-saturday. | comps. | |
 | 3:30 | Tag `demo-freeze`. Post the second social post. The outside person sends the variant room's key. | | | | **4. Demo freeze.** |
 | 3:30 to 4:15 | Rehearse, presenting: the three-minute core, then the five-minute extension. | Rehearse, driving the laptop. | Rehearse on the backup laptop. | Rehearse, ready for numbers questions. | Two run-throughs. |
 | 4:15 to 4:30 | Fresh runs on the variant room and the clean room, close tabs. | Page ready on all rooms. Test the live outside panel on the approved real company on the demo network. | Backup laptop on the frozen files, including the variant and clean runs. | Answer key scores checked for the full room and the variant room. | |
@@ -817,12 +830,13 @@ From the buildability critique's finding 11 and the demo critique's "What else g
 
 ### Cut order
 
-The feasibility research ranks the scans by demo value: red-flag engine, readout, pitch video, comps, market signals. The cut order is that ranking reversed, with the model passes cut before any scan, because the script's top flags, pieces and verdicts are enough for the demo ([critique_buildability.md](../features/20261022.01_hackathon_plan/critique_buildability.md), notes):
+The feasibility research ranks the scans by demo value: red-flag engine, readout, pitch video, comps, market signals. The cut order is that ranking reversed, with the memo's model pass cut before any scan, because the script's top flags, pieces and verdicts are enough for the demo ([critique_buildability.md](../features/20261022.01_hackathon_plan/critique_buildability.md), notes):
 
-1. **The memo's model pass and the red-flag model readings first.** The readout keeps its script-set top flags, pieces and verdicts. The readings move to after Saturday.
+1. **The memo's model pass first.** The readout keeps its script-set top flags, pieces and verdicts. The cohort note reading is already out of Saturday's plan; it moved to after Saturday to make room for contract terms.
 2. **Market signals second.** The panel is already static; if it is not built, it is dropped.
 3. **Comps third.** The panel shows the cached comp list without the live ranking, or is dropped.
-4. **Pitch video fourth.** The demo plays the captioned clip and shows this week's saved transcript and claims, which the feasibility research already plans as the fallback.
+4. **Contract terms fourth** (contract-terms-saturday). The pilot flag still shows from the engine's script check, without clause quotes. The slice moves to after Saturday.
+5. **Pitch video fifth.** The demo plays the captioned clip and shows this week's saved transcript and claims, which the feasibility research already plans as the fallback.
 
 The red-flag engine, the readout and the readout page are never cut; they are the demo. Inside the readout page, the reorder buttons go first if the polish hour runs short; the ask list and its copy button stay. When a slice is cut, its owner pairs with the owner of the slice that is behind, in that owner's folder and branch, so cutting never causes a merge conflict.
 
@@ -1289,23 +1303,23 @@ The rest of the accounting mislabels family ([FRAMEWORKS.md](FRAMEWORKS.md), ent
 
 ### contract-terms
 
-Customer contracts as a first-class input, read for their terms and checked against how each one is counted ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:53 PM block). The rules are entry 1.13, "Contract terms", in [FRAMEWORKS.md](FRAMEWORKS.md). Saturday holds only one piece of it: the model's reading of the Marlow pilot agreement, in [redflag-readings](#redflag-readings), which is first in the cut order. The six comparisons and the other contracts are this slice.
+What is left of customer contracts after Saturday ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:53 PM block). The rules are entry 1.13, "Contract terms", in [FRAMEWORKS.md](FRAMEWORKS.md). Saturday's [contract-terms-saturday](#contract-terms-saturday) already reads every contract in both demo rooms and runs three comparisons (the notice check, the pilot check and the price check). This slice adds the rest.
 
-**Waits on:** [redflag-readings](#redflag-readings), the slice where a model first reads a contract's clauses; [readout-store](#readout-store).
+**Waits on:** [contract-terms-saturday](#contract-terms-saturday), the slice where a model first reads a contract's clauses; [readout-store](#readout-store).
 
 **Includes:**
 
-- Contracts upload with the room or on their own. A folder that holds only contracts is a valid input.
-- The model reads each contract for its terms: start and end, length, notice and cancellation period, termination for convenience, auto-renewal, pilot or trial terms and any duty to convert, price, discounts, payment terms, and clauses such as exclusivity or change of control. Each term is a claim that quotes its clause.
-- A script compares each contract's terms with how it is counted: ARR, MRR, customer concentration and the model's revenue. The model reads clauses. It never decides a number is wrong.
-- A gap is any place the counting outruns the paper. Examples: a contract the customer can cancel in under 90 days counted as a year of ARR; a pilot with no duty to convert counted as recurring; an auto-renewal treated as certain; a signed contract that has not gone live counted as revenue.
+- Contracts upload with the room or on their own. A folder that holds only contracts is a valid input, and the contracts of rooms beyond the two demo rooms are read the same way.
+- The clauses Saturday leaves unread: exclusivity, most-favoured-customer, change of control, and any other clause that changes what the customer pays or when it can leave. Each is a claim that quotes its clause.
+- The three comparisons Saturday leaves out: `plan_revenue_past_term_end` (the plan keeps a contract's revenue after its term ends, or treats an automatic renewal as certain), `signed_not_live_vs_revenue` (a signed contract or amendment that has not started is counted as revenue) and `counted_line_without_contract` (a counted line has no contract in the room).
 - The ARR and concentration entries keep their own checks and point to this one.
 - A contract the room lacks becomes an ask-list line: the current contract language for that customer.
 
 **Done when:**
 
-- On the full room, the Marlow pilot agreement's "no duty to convert" clause is read, and the pilot counted in ARR shows as a gap, with the clause and the ARR row side by side.
-- Every order form in `04_customers/` returns its terms, each quoting its clause.
+- On the full Hollis Voice room, the plan check flags the Marlow pilot with its eight plan months after the term ends, and clears Cedar & Pine and Brookline Row.
+- The exclusivity, most-favoured-customer and change-of-control fields return "not stated" for the Hollis Voice contracts, each read from the contract and not assumed.
+- A test contract with a change-of-control clause returns that clause with its quote.
 - A folder that holds only contracts produces a result with no crash.
 - A test contract with a 30-day cancellation counted as a year of ARR produces a gap. The same contract with a one-year commitment does not.
 - Every quote passes the quote checker.
@@ -1372,6 +1386,7 @@ The financial modeling Ken asked for in the 10:10 AM dictation. Saturday's [redf
 - **Tricorder's own version of the model**, built from the raw data the way a Series A lead does ("a lead builds their own model from your raw data", [the data-room research](../reports/20261022.02_research/research_data_room.md), 1.3; Ken at 2:40 PM: "i was already planning on building our own versions of models"). The room's revenue, cost and headcount rows go into one monthly table with burn, cash and runway, and each cell links to the row it came from.
 - **Side by side with the company's model.** Every line of the company's model sits beside Tricorder's rebuilt line, and a difference beyond the match tolerance becomes a disagreement claim in the right piece.
 - Unit economics recomputed from the room's rows, by [FRAMEWORKS.md](FRAMEWORKS.md) entry 1.9.
+- The model's reading of the cohort tab's note, with the prompt in entry 1.3. Saturday keeps the script rebuild of the cohorts; this reading moved here to make room for contract terms on Saturday. It is a claim that quotes the note and never decides a number is wrong.
 - The operator can change one assumption, such as a hire's start month or a churn rate, and see runway move. The script's own figure stays on screen beside it, and the operator's case is marked as theirs.
 - Market size, bottom-up, stays in [frameworks-scan](#frameworks-scan) (entry 5.6).
 

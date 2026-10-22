@@ -304,7 +304,7 @@ Some worked examples also show arithmetic on those figures: a gap, a ratio, a sh
 
 The check names are the ones the answer key's `check` field and the test in [ARCHITECTURE.md](ARCHITECTURE.md) match on. `arr_from_subscription_rows` is the data-room research's own example name (3.6). The other seven in the key are the names `data_room/generate.py` writes. Only `cap_table_reconcile` (DC3, a decoy with no `check` in the key) is set here. The seed-drop column for the flags is the key's `catchable_from_seed_drop`. For the decoys it follows from the key's `seed_drop_files`: the cap table is in the seed drop and the Brookline Row order form is not.
 
-On Saturday the first eleven rows run: the eight planted entries and the three decoys, through the red-flag engine's scripts and, for PF2b, the readout. The rows for entry 1.12's second checks and for entry 1.13 run after Saturday, as "When each entry runs" says. The one exception is the Marlow pilot reading, which Saturday's redflag-readings slice does first in the cut order.
+On Saturday the first eleven rows run: the eight planted entries and the three decoys, through the red-flag engine's scripts and, for PF2b, the readout. The rows for entry 1.12's second checks run after Saturday, as "When each entry runs" says. Entry 1.13's rows run on Saturday through checks 1, 2 and 5, in the roadmap's contract-terms-saturday slice. Its checks 3, 4 and 6 run after Saturday.
 
 ### The parts of every entry
 
@@ -312,13 +312,13 @@ Each entry has exactly seven parts, in this order: **Inputs**, **The questions i
 
 ### When each entry runs
 
-The roadmap decides what is built on Saturday ([ROADMAP.md](ROADMAP.md)). On Saturday the red-flag engine is scripts only, and the only model readings are the pilot clause and the cohort note, which are first in the cut order. This table follows the roadmap. Where it and a section heading below seem to differ, this table is right.
+The roadmap decides what is built on Saturday ([ROADMAP.md](ROADMAP.md)). On Saturday the red-flag engine is scripts only. The model reads customer contracts (entry 1.13, in the contract-terms-saturday slice, fourth in the cut order), writes the memo's connecting sentences (first in the cut order) and writes the comp reasons. This table follows the roadmap. Where it and a section heading below seem to differ, this table is right.
 
 | Entry | When | Roadmap slice |
 |---|---|---|
 | 1.1 Deck claim extraction | Saturday: the claims page (slide 14) by regex, with `claims.json` as the fallback. The model reading of the other slides is after Saturday. | redflag-engine |
-| 1.2 ARR definition check | Saturday: the script. The model's reading of the pilot agreement is Saturday too, first in the cut order. | redflag-engine, redflag-readings |
-| 1.3 Cohort retention rebuild | Saturday: the script. The model's reading of the cohort note is Saturday too, first in the cut order. | redflag-engine, redflag-readings |
+| 1.2 ARR definition check | Saturday: the script. The model reads the pilot agreement on Saturday with entry 1.13's prompt. | redflag-engine, contract-terms-saturday |
+| 1.3 Cohort retention rebuild | Saturday: the script. The model's reading of the cohort note is after Saturday. | redflag-engine, financial-model |
 | 1.4 Burn against the hiring plan and runway | Saturday: the script | redflag-engine |
 | 1.5 Deck-against-model reconciliation | Saturday: the script, on the claims page's rows and the named cells | redflag-engine |
 | 1.6 Customer concentration | Saturday: the script | redflag-engine |
@@ -328,7 +328,7 @@ The roadmap decides what is built on Saturday ([ROADMAP.md](ROADMAP.md)). On Sat
 | 1.10 Cap table reconciliation | Saturday: the sum and round check, which also reads the cells behind the round's green flag. The model reading is after Saturday. | redflag-engine |
 | 1.11 What the room cannot settle | After Saturday | checklist-coverage |
 | 1.12 Accounting mislabels | Saturday: kinds a and d, through entries 1.2 and 1.7. After Saturday: the `mrr` column check and kinds b, c, e, f, g and h. | redflag-engine, accounting-mislabels |
-| 1.13 Contract terms | After Saturday, except the model's reading of the Marlow pilot agreement, which is Saturday's redflag-readings slice and first in the cut order | redflag-readings, contract-terms |
+| 1.13 Contract terms | Saturday: the model reads every contract in both demo rooms, and the script runs checks 1, 2 and 5 (notice against ARR, pilot without duty to convert, contract price against counted price). Fourth in the cut order. After Saturday: checks 3, 4 and 6, the exclusivity, most-favoured-customer and change-of-control clauses, and contracts beyond the room's. | contract-terms-saturday, contract-terms |
 | 2.1 Public comps from EDGAR | Saturday, from this week's cached filings. The "why fair" sentence shows as frozen output. | comps |
 | 2.2 Recent private rounds | Saturday, from this week's cached Form D files | comps |
 | 3.1 Hiring, web traffic and reviews | This week, for competitors, saved as readings. Saturday shows them as a static panel. The company's own signals are after Saturday. | signals-readings, market-signals, outside-in |
@@ -352,7 +352,7 @@ The organisers' first direction: "churn hidden in cohort charts, revenue counted
 
 Entry 1.1 runs before all of them. It turns the deck into claims the other entries check.
 
-On Saturday this scan is scripts only. Entries 1.9 and 1.11, the model readings other than the pilot clause and the cohort note, most of 1.12 and all of 1.13 but the pilot reading come after Saturday ("When each entry runs").
+On Saturday this scan is scripts only. Entries 1.9 and 1.11, the model readings other than the contract terms, most of 1.12 and checks 3, 4 and 6 of 1.13 come after Saturday ("When each entry runs").
 
 ### 1.1 Deck claim extraction
 
@@ -1902,7 +1902,9 @@ A contract says what a customer owes and when it can leave. The books count that
 
 Entries 1.2 and 1.6 keep their own checks and point here. Entry 1.2 reads the pilot clause for the ARR lines. Entry 1.6 reads the largest customer's term and exit. This entry holds the full comparison for every contract.
 
-**Scope: after Saturday, except the pilot reading.** On Saturday the roadmap's [redflag-readings](ROADMAP.md#redflag-readings) slice has the model read `pilot_agreement_marlow.pdf` with entry 1.2's prompt (term, termination, no duty to convert), and that slice is first in the cut order. Everything else here is the roadmap's [contract-terms](ROADMAP.md#contract-terms) slice, after Saturday: this entry's typed-terms prompt, the other two contracts, and the six comparisons. If the pilot reading is cut, the pilot flag still shows on Saturday, from the script check in 1.2 (`arr_from_subscription_rows`), without the clause quotes.
+**Scope: Saturday for checks 1, 2 and 5, after Saturday for the rest.** On Saturday the roadmap's [contract-terms-saturday](ROADMAP.md#contract-terms-saturday) slice has the model read every contract in both demo rooms with this entry's prompt: three on Hollis Voice, and the Corvane agreement, two order forms and the Norrgate statement of work on Brasswick. It reads these terms: length, the notice that ends a running contract kept apart from the notice not to renew, auto-renewal, pilot terms and any duty to convert, price, discount and list price, and payment terms. The script runs checks 1, 2 and 5 on both rooms, against the ARR build or the model's revenue build, the MRR column and the largest customer's share. That slice is fourth in the cut order. The prompt also asks for the clause fields (exclusivity, most-favoured-customer, change of control), but nothing reads them on Saturday. The rest is the roadmap's [contract-terms](ROADMAP.md#contract-terms) slice, after Saturday: checks 3, 4 and 6, the clauses, and contracts beyond the room's. If the Saturday slice is cut, the pilot flag still shows from the script check in 1.2 (`arr_from_subscription_rows`), without the clause quotes.
+
+A supplier contract, such as Brasswick's Norrgate statement of work, is read for its terms and shown as info claims. The script does not match it to a customer row, so it writes no check and no "customer row" gap for it.
 
 | Check name | The gap it looks for | Terms it uses | Compared with | Feeds the piece |
 |---|---|---|---|---|
@@ -1922,6 +1924,7 @@ Entries 1.2 and 1.6 keep their own checks and point here. Entry 1.2 reads the pi
 - The claims of entries 1.2 and 1.6, so the readout can put a contract claim beside the claim it explains.
 - Settings: `short_notice_days`, `min_contract_months` and `match_tolerance`.
 - Not in the Hollis Voice room: a subscription order form for Marlow Veterinary Group, and a contract for any other customer. The checks that need them return a gap.
+- Brasswick (`data_room/brasswick/`): `04_contracts/` holds `msa_corvane_logistics.pdf`, `order_form_ostley_freight.pdf`, `order_form_tessmore_freight.pdf` and `sow_norrgate_software_studio.pdf`. The counting files are the model's `Revenue_Build` tab (columns "Monthly fee (contract)" and "Revenue booked 2026-09"), `03_metrics/monthly_metrics.csv` column `subscription_revenue`, and `03_metrics/revenue_by_customer.csv` column `subscription_revenue`. These stand in for `ARR_Build` and the `mrr` column. Brasswick has no pilot, so check 2 returns clear.
 
 **The questions it asks**
 
@@ -1957,7 +1960,7 @@ plan_share(c)   = counted_mrr(c) ÷ the recurring revenue in the last actual mon
 
 The plan multiplies one starting figure, the last actual month's recurring revenue, by one growth rate each month. That starting figure holds every counted contract. A contract's part of any plan month is therefore its `plan_share` of that month.
 
-**1. Cancellable within the notice window but counted as a year of ARR (after Saturday).** Check name: `cancellable_within_notice_vs_arr`. It uses `short_notice_days` and `min_contract_months`, the same settings as the line test in 1.2.
+**1. Cancellable within the notice window but counted as a year of ARR (Saturday).** Check name: `cancellable_within_notice_vs_arr`. It uses `short_notice_days` and `min_contract_months`, the same settings as the line test in 1.2.
 
 ```
 flag  if counted_mrr(c) > 0 and days_to_exit(c) ≤ short_notice_days
@@ -1966,7 +1969,7 @@ watch if no flag and term_months(c) < min_contract_months and counted_mrr(c) > 0
 
 Notice not to renew does not count as a way out of a running contract. It sets the exit at the end of the term. This is the one change from the line test in 1.2, and the two examples below (Cedar & Pine at 90 days, Brookline Row at 30 days) show why it matters.
 
-**2. A pilot with no duty to convert counted as recurring (after Saturday).** Check name: `pilot_without_duty_to_convert_vs_recurring`.
+**2. A pilot with no duty to convert counted as recurring (Saturday).** Check name: `pilot_without_duty_to_convert_vs_recurring`.
 
 ```
 flag if is_pilot_or_trial(c) = true
@@ -2001,7 +2004,7 @@ flag if first_month(c) is earlier than the month of live_from(c)
      or a fee or location change that takes effect after as_of is already in the as-of month's mrr
 ```
 
-**5. A contract price the counted price does not match (after Saturday).** Check name: `contract_price_vs_counted_price`.
+**5. A contract price the counted price does not match (Saturday).** Check name: `contract_price_vs_counted_price`.
 
 ```
 scheduled(c, t) = the fee in effect in month t from the fee schedule, with an annual fee ÷ 12
@@ -2074,6 +2077,14 @@ The three contracts and the counting files are in `data_room/hollis_voice/`. The
 | Marlow Veterinary Group | flag (30 days to exit, 180,000 counted) | flag (no duty to convert, 180,000 against 90,000) | flag (no renewal; 8 plan months) | clear | clear | flag |
 | Cedar & Pine Animal Hospitals | clear (396 days to exit) | clear | clear (term ends after the plan) | clear | clear | clear |
 | Brookline Row Veterinary | clear (243 days to exit) | clear | clear (0.31% of the plan) | clear | clear | clear |
+
+*Brasswick, `data_room/brasswick/` (checks 1, 2 and 5 only; the as-of date is 2026-09-30)*
+
+- Corvane Logistics, the largest customer (`msa_corvane_logistics.pdf`). Terms read: 24 months from 2025-05-01 to 2027-04-30; $11,850 a month, fixed for the initial term; renews for 12 months unless either party gives 60 days written notice before the term ends; the only right to end it is a material breach not fixed within 30 days. Counted as $11,850 in `Revenue_Build` and in the customer file. Check 1 `clear` (the 60 days is notice not to renew; the exit is the term end). Check 5 `clear`, and it confirms the fee behind the 19.9% share in 1.6.
+- Tessmore Freight (`order_form_tessmore_freight.pdf`). Terms read: 12 months from 2026-02-01; $25,920 a year, $2,160 a month, 10% off the $2,400 list price; renews for 12 months unless either party gives 30 days notice. Counted as $2,160 a month. Checks 1 and 5 `clear`.
+- Ostley Freight (`order_form_ostley_freight.pdf`). Terms read: 12 months from 2026-09-01; $27,540 a year, $2,295 a month, 10% off the $2,550 list price; renews unless either party gives 30 days notice. Counted in `Revenue_Build` ("Revenue booked 2026-09") as $27,540 against a contract of $2,295 a month, so check 5 is `flag`: the counted price is above the contract's. The customer file's `subscription_revenue` holds $2,295, which matches. The flag has one cause with the annual prepayment flag in 1.12 (kind g, BF4), and the readout shows them together.
+- Norrgate Software Studio (`sow_norrgate_software_studio.pdf`), a supplier contract. Terms read as info claims: 12 months from 2026-07-01 to 2027-06-30, $26,500 a month, ending early on 90 days written notice by either party. No customer comparison runs on it. Entry 1.12 (kind e, after Saturday) uses it against the burn plan.
+- Check 2 returns `clear` for all three customers, because none is a pilot. The entry's label on Brasswick is `flag`, from Ostley.
 
 **Model reading**
 
