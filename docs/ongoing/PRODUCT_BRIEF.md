@@ -144,7 +144,7 @@ The demo runs on the data-room research's synthetic data room ([what a data room
 - **The data rule above holds for every input.** The inbox makes it sharpest, so it is stated on the page where the inbox is connected.
 - **Saturday is build-only.** The organisers' instructions for this week say Saturday is for building only ([writers' brief, 10:18 AM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). This week is for everything else:
   - the research (done: The voice-of-the-customer research to the data-room research)
-  - two or three interviews with associates, principals and angels, asking the organisers' three questions
+  - [the research gaps](../reports/20261022.02_research/research_gaps.md): online research on the questions the voice-of-the-customer research left open
   - the one-page founder brief for the judges
   - the synthetic data room and its answer key
   - the API keys (the feasibility research, Part 5)
@@ -160,11 +160,11 @@ Tricorder is a product after Saturday, so this section is written for a product.
 
 **On the demo room, the score against the answer key.** Planted flags found out of the eight entries, and decoys wrongly flagged out of three (the data-room research, Part 3.6). The seed drop alone should catch five of the eight; the full room the other three (the data-room research, Part 3.4).
 
-**In the interviews this week.** The voice-of-the-customer research found no trustworthy public number for how long a first-pass memo takes. Ken's interviews need to get that number, because it is the baseline for the first pilot measure.
+**In the online research this week.** The voice-of-the-customer research found no trustworthy public number for how long a first-pass memo takes. [The research gaps](../reports/20261022.02_research/research_gaps.md) need to find that number, because it is the baseline for the first pilot measure.
 
 **With a pilot fund, the measures a fund would judge it on:**
 
-- **Time to first-pass memo.** From the deck arriving to a readout the associate would hand a partner. The target is set against the baseline the interviews find.
+- **Time to first-pass memo.** From the deck arriving to a readout the associate would hand a partner. The target is set against the baseline the research gaps find.
 - **Flags a partner agrees with.** Of the flags Tricorder raises, how many the partner calls real. Of the problems the partner finds, how many Tricorder raised first.
 - **Disagreements found.** How many places per deal the deck, model, video and outside world disagree, and how many of those the partner did not already know.
 - **Whether the fund pays.** Say and do are not enough. The pilot ends with a price.
@@ -181,8 +181,8 @@ Each line is a recommendation this brief is written to, with the alternative.
 6. **Where the data goes.** Mailbox read for decks only, nothing stored beyond the readout and its sources, the investor sees and deletes everything. Alternative: a self-hosted version that keeps all data inside the fund.
 7. **Demo company.** Hollis Voice, the data-room research's synthetic Series A room. Alternative: Brasswick, the data-room research's plainer freight-invoice company.
 8. **After Saturday.** A product sold to funds; the partner or principal buys, the associate uses. Alternative: skills Ken sells on stclair.ai, or a hackathon entry that ends Saturday.
-9. **Angels.** Angels already pay for diligence by proxy, which makes them a real market. Price for funds first only if the interviews show funds pay more per first pass. Alternative: an angel tier from the start.
+9. **Angels.** Angels already pay for diligence by proxy, which makes them a real market. Price for funds first only if [the research gaps](../reports/20261022.02_research/research_gaps.md) show funds pay more per first pass. Alternative: an angel tier from the start.
 10. **Persona order.** Keep the ranking by strength of evidence (partner, angel, accelerator, associate, corporate VC). Who uses and who buys is a separate question and does not change it.
 11. **Measures.** Set numeric targets after the first pilot. Alternative: state predicted numbers now.
 12. **Self-score on stage.** Show the answer-key score (flags found, decoys wrongly flagged) in the demo. Alternative: show the readout only.
-13. **This week.** No product code; research, interviews, founder brief, data room, keys and prompts. Alternative: pre-build module skeletons this week.
+13. **This week.** No product code; research, the research gaps, founder brief, data room, keys and prompts. Alternative: pre-build module skeletons this week.

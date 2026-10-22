@@ -4,7 +4,7 @@
 
 **What belongs:** One persona per problem, each with the problem in the person's own words, what they have tried, why it failed them, the moment Tricorder solves it, the proof we can show, the objection to answer first, and say, do, pay evidence of how they deal with the problem today, with a rating. Personas are ordered by rating. Separately, for marketing: who uses the product and who buys it.
 
-**What does not:** What the product does (PRODUCT_BRIEF.md). How it talks (BRAND.md). New quotes without a primary link. Interview notes before they are written up.
+**What does not:** What the product does (PRODUCT_BRIEF.md). How it talks (BRAND.md). New quotes without a primary link. Research findings before they are written up.
 
 **Level of detail:** A builder or a pitch writer can pick up one persona and know whose problem they are solving and what evidence backs it. Quotes come only from the voice-of-customer research, with the link it gives.
 
@@ -199,7 +199,7 @@ Who uses Tricorder and who buys it is a separate question, for marketing. It is 
 - **Say (2 rows).** Rows 38 and 39.
 - **Do (0 rows).** None found.
 - **Pay (0 rows).** None found.
-- **Rating: say.** Too thin to design for. Ken's interviews could change this.
+- **Rating: say.** Too thin to design for. [The research gaps](../reports/20261022.02_research/research_gaps.md) could change this.
 
 ---
 
@@ -208,12 +208,12 @@ Who uses Tricorder and who buys it is a separate question, for marketing. It is 
 This is a marketing question, separate from say, do and pay. It decides whom each message speaks to, not which problems carry the most signal.
 
 - **Funds.** A partner or principal decides and pays. The operator, the person working in the readout, is usually the associate who does the first pass today, and at some funds the partner.
-- **Angels.** The same person uses it and pays for it. They already pay for diligence by proxy; the interviews ask what a first pass of their own would be worth per deal.
+- **Angels.** The same person uses it and pays for it. They already pay for diligence by proxy; [the research gaps](../reports/20261022.02_research/research_gaps.md) look for what a first pass of their own would be worth per deal.
 - **Accelerators.** The screening staff would use it and the program would pay. The research found no program paying for a tool yet.
 
-## What the interviews need to fill
+## What the online research still needs to fill
 
-The voice-of-the-customer research is a stand-in for interviews. Ken's two or three interviews this week ask the organisers' three questions. These gaps matter most for the ranking:
+The voice-of-the-customer research is the primary source. [The research gaps](../reports/20261022.02_research/research_gaps.md), answering the same questions from online sources, fill its gaps. These gaps matter most for the ranking:
 
 - **How long a first-pass memo takes, in hours.** No trustworthy public number exists (the voice-of-the-customer research, question 3).
 - **Hidden churn.** Every checklist names it, but no one in the voice-of-the-customer research told a regret story about it.

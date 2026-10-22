@@ -16,7 +16,7 @@ The slow part is gathering and checking. On the pages we read, none of 24 tools 
 
 The user is the associate at a seed or Series A fund who does the first pass by hand. The buyer is the partner or principal who signs for the fund's tools.
 
-Funds already pay for this. A $600M fund uses a commercial tool that turns a data room into a memo ([vendor case study](https://www.v7labs.com/news/moderne-ventures-accelerates-due-diligence-with-v7-go)). One PitchBook seat costs $13,500 a year ([third-party roundup](https://www.failory.com/blog/pitchbook-pricing)). Both are second-hand; our interviews ask directly.
+Funds already pay for this. A $600M fund uses a commercial tool that turns a data room into a memo ([vendor case study](https://www.v7labs.com/news/moderne-ventures-accelerates-due-diligence-with-v7-go)). One PitchBook seat costs $13,500 a year ([third-party roundup](https://www.failory.com/blog/pitchbook-pricing)). Both are second-hand; [the research gaps](../../reports/20261022.02_research/research_gaps.md) look for what funds say they pay.
 
 ## Business model
 

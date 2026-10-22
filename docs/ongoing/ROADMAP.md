@@ -107,17 +107,15 @@ The founder's two-minute pitch, recorded as a voiceover over the deck slides by 
 
 **Judgment:** n/a.
 
-### interviews
+### research-gaps
 
-Two or three short diligence interviews with associates, principals or angels Ken knows, using the organisers' three questions. The interviews are what make the buyer story real. Today the partner's pay rating is inferred from a competitor's case study and a pricing roundup, and no buyer has spoken yet ([critique_judge.md](../features/20261022.01_hackathon_plan/critique_judge.md), finding 3).
+Online research that answers the organisers' three questions where the voice-of-the-customer research left gaps. It covers how long a first-pass memo takes and which part is slowest, whether angels would pay for a first pass of their own and what it is worth per deal, how data rooms reach investors and what they open first, regret stories about hidden churn and about burn against the hiring plan, and what funds pay for first-pass diligence in their own words. Today the partner's pay rating is inferred from a competitor's case study and a pricing roundup ([critique_judge.md](../features/20261022.01_hackathon_plan/critique_judge.md), finding 3).
 
-**Waits on:** nothing. This is the board row TRI-interviews (run two or three diligence interviews before Saturday).
+**Waits on:** nothing.
 
-**Includes:** each answer in `docs/reports/20261022.02_research/interviews.md`, one section per person, role only. The voice-of-the-customer research found no public number for how long a first-pass memo takes, and no regret story about hidden churn; ask both directly. The judge's fix: put one named, consenting investor's answer in the founder brief's Problem section. The best version is one fund that says it would forward its next three decks.
+**Done when:** [research_gaps.md](../reports/20261022.02_research/research_gaps.md) exists.
 
-**Done when:** at least two interviews are written up, and the demo script quotes what they said about the slowest part.
-
-**Who:** Ken.
+**Who:** agent.
 
 **Judgment:** n/a.
 
@@ -773,7 +771,7 @@ Comps from Form D and EDGAR in depth.
 
 One fund uses Tricorder on real inbound deals.
 
-**Waits on:** interviews, readout-store, inbox-forward, and the data rule written into the product brief.
+**Waits on:** research-gaps, readout-store, inbox-forward, and the data rule written into the product brief.
 
 **Includes:** one fund's associate forwarding real decks for a set period; what they flagged, what they ignored, and whether the partner trusted the first pass.
 

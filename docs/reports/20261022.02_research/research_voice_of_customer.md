@@ -1,4 +1,4 @@
-# Voice of the customer: first-pass diligence (R1)
+# Voice of the customer: first-pass diligence
 
 Written 2026-10-22 for the Tricorder hackathon plan. It answers the organisers' three questions from public sources. It is the primary source for the plan, and [the research gaps](research_gaps.md) fill its gaps.
 

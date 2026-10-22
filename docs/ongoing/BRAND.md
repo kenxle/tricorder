@@ -372,7 +372,7 @@ If the verdict did not move, the line says "Verdict unchanged." If the instructi
 
 | Claim | Why not | What would let us |
 |---|---|---|
-| Any speed in hours or minutes ("underwrite in an hour") | No independent source gives first-pass hours. The only figures are vendor claims. "In an hour" is the organisers' headline, not our measurement. | Timed runs on real rooms, and Ken's interview answers on how long a first pass takes. |
+| Any speed in hours or minutes ("underwrite in an hour") | No independent source gives first-pass hours. The only figures are vendor claims. "In an hour" is the organisers' headline, not our measurement. | Timed runs on real rooms, and [the research gaps](../reports/20261022.02_research/research_gaps.md) on how long a first pass takes. |
 | Accuracy as a percentage, or "catches every red flag" | One synthetic room with planted flags is a test, not a measure. | A scored set of rooms, reported with how many there were. |
 | "Trusted by funds", "used by investors" | No fund uses it. | A named fund that agrees to be named. |
 | "The only tool that links claims to sources" | Five entrants claim it. | Nothing. Drop it. |
@@ -396,7 +396,7 @@ The spoken pitch fits the three-minute beat sheet in [ROADMAP.md, demo-script](R
 
 > "It took us weeks to sift through the data, ultimately which led to us losing momentum and conviction in the founders ability to execute (amongst other things)." ([junior VC, Dec 2022](https://williamleonard.substack.com/p/learnings-from-year-2-in-venture))
 
-Say who wrote each one by role: a seed and Series A fund's guide, and a junior VC. If Ken's own interviews this week produce a better line, and the person agrees to be quoted, use it in place of the second.
+Say who wrote each one by role: a seed and Series A fund's guide, and a junior VC. If [the research gaps](../reports/20261022.02_research/research_gaps.md) turn up a better line in a person's or firm's own words, with its link, use it in place of the second.
 
 **The buyer, named, in one line at 2:30:** "The partner pays per seat." Behind it: the partner or principal at a seed to Series A fund pays. The associate uses it every day. Angels come next: they already pay to get diligence done by proxy, and a first pass of their own fits their time.
 

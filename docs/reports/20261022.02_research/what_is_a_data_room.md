@@ -64,9 +64,9 @@ The organisers require a synthetic room ("Bring a synthetic data room; never upl
 
 The first tier (the seed drop) is the subset a founder would share after a first meeting. The second tier adds revenue by customer, the ledger and the contracts. Seven problems are planted across the files, each one a flag the research found investors look for, and three traps are planted that a careless check would wrongly flag.
 
-## What to ask in your interviews
+## What the online research still needs to find
 
-The public sources describe rooms from the vendor and fund side. Two things only an investor can tell you, added to [the interview sheet](interviews.md) as questions 6 and 7:
+The public sources describe rooms from the vendor and fund side. Two things only an investor can tell you, answered from online sources in [the research gaps](research_gaps.md):
 
 - How do rooms reach you today: a DocSend link, a Drive folder, attachments in the email?
 - At what point in your process do you ask for one, and what do you open first?
