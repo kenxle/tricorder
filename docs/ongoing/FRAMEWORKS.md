@@ -780,7 +780,7 @@ Its claims feed the overview's **burn and runway** piece ([The readout](#the-rea
 3. When two documents use the same label, do they mean the same thing, for the same date?
 4. When the deck and the model agree, do they both agree with the raw data?
 
-CRV, a16z and Visible all name this flag ([research_data_room.md](../reports/20261022.02_research/research_data_room.md), RF4). It is also the flag investors name most in public ([research_voice_of_customer.md](../reports/20261022.02_research/research_voice_of_customer.md), "What this means for Tricorder").
+CRV, a16z and Visible all name this flag ([research_data_room.md](../reports/20261022.02_research/research_data_room.md), RF4). In public, investors name it second, after ARR that is not really recurring, which usually shows up as this same kind of disagreement ([red_flag_counts.py](../reports/20261022.02_research/red_flag_counts.py)).
 
 **Mechanical check**
 

@@ -8,7 +8,7 @@ Team Tricorder · Deal Flow NYC, Track 2: Diligence · Saturday 2026-10-24
 
 VCs told the organisers a first pass takes an associate days of rebuilding numbers from a messy data room.
 
-The red flag investors name most is numbers that disagree. A seed and Series A fund's guide: "When burn or revenue differs between the deck, the model and the accounting records, the gap suggests carelessness or something worse, and either reading damages the deal." ([seed fund guide, Aug 2026](https://www.crv.com/content/what-is-a-data-room))
+The red flags investors name most are ARR that isn't really recurring, then numbers that disagree. A seed and Series A fund's guide: "When burn or revenue differs between the deck, the model and the accounting records, the gap suggests carelessness or something worse, and either reading damages the deal." ([seed fund guide, Aug 2026](https://www.crv.com/content/what-is-a-data-room))
 
 The slow part is gathering and checking. On the pages we read, none of 24 tools shows market signals, comps and financial red flags together.
 
