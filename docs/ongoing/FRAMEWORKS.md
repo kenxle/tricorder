@@ -137,7 +137,7 @@ Every prompt below receives its inputs in `<doc>` blocks. The script that builds
 </doc>
 <doc path="03_metrics/customer_mrr_by_month.csv" locator="row">
 [row 1] customer_id,month,plan,mrr,product_type
-[row {n}] C-BIG,2026-09,Group,36000,Subscription
+[row {n}] C0087,2026-09,Group,36000,Subscription
 </doc>
 <doc path="01_overview/pitch_video.mp4" locator="segment">
 [seg {id} | {start_s}-{end_s}] ...transcript text of that segment...
@@ -847,8 +847,8 @@ Fill "pairs" with one entry per match. Propose the label using these rules, and 
 
 **Inputs**
 
-- `03_metrics/customer_mrr_by_month.csv`, as-of month, including customer `C-BIG`.
-- `04_customers/order_form_cedar_pine.pdf`: the largest customer, 17 locations, a 24-month term ([research_data_room.md](../reports/20261022.02_research/research_data_room.md), 3.3).
+- `03_metrics/customer_mrr_by_month.csv`, as-of month, including customer `C0087`, the largest (ids are ordinary; the generator reviser renamed `C-BIG` and `P-MARLOW` to `C0087` and `C0219`).
+- `04_customers/order_form_cedar_pine.pdf`: the largest customer, 40 locations, a 24-month term ([research_data_room.md](../reports/20261022.02_research/research_data_room.md), 3.3).
 - `01_overview/pitch_deck.pdf`, slide 4 and the claims row "Largest customer".
 
 **The questions it asks**
@@ -870,7 +870,7 @@ flag if share_top1 is above the deck's stated ceiling by more than match_toleran
 mark the concentration_line if share_top1 > 20 percent
 ```
 
-Group rows that share a parent before ranking. A customer with 17 locations is one customer.
+Group rows that share a parent before ranking. A customer with 40 locations is one customer.
 
 Worked example, Hollis Voice (PF5 in [data_room_planted.csv](../reports/20261022.02_research/data_room_planted.csv)):
 
@@ -2873,7 +2873,7 @@ deck_gap  = deck TAM ÷ bottom-up TAM
 
 Worked example, Hollis Voice:
 
-- ACV = $2,060,868 ÷ 212 = $9,721 a year (`arr_true_recurring` and `paying_clinics_now` in [data_room_design_numbers.json](../reports/20261022.02_research/data_room_design_numbers.json); scripted arithmetic). The largest customer counts as one account across 17 locations, so ACV per location is lower than this. A per-location ACV needs a location count per account from the generator.
+- ACV = $2,060,868 ÷ 212 = $9,721 a year (`arr_true_recurring` and `paying_clinics_now` in [data_room_design_numbers.json](../reports/20261022.02_research/data_room_design_numbers.json); scripted arithmetic). The largest customer counts as one account across 40 locations, so ACV per location is lower than this. A per-location ACV needs a location count per account from the generator.
 - Count of independent veterinary clinics: not in the research. The scan returns "Not in the room: a cited count of target customers" until someone attaches a source page. It does not use a number from memory.
 - The deck's market figure on slide 8 is not given in the research either. The generator sets it.
 
