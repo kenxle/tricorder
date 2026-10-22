@@ -3,13 +3,16 @@
 Run: python3 docs/ongoing/checklist_counts.py
 
 Prints counts by readout piece, by kind, by stage expectation, by where the item
-comes from, and by whether a check exists. CHECKLIST.md quotes this output.
+comes from, by whether a check exists, and by document guide. CHECKLIST.md quotes
+this output.
 """
 import csv
 from collections import Counter
 from pathlib import Path
 
 CSV = Path(__file__).with_name("checklist.csv")
+GUIDES = Path(__file__).resolve().parent.parent / "reports" / "20261022.03_document_guides"
+NOT_GUIDES = {"INDEX.md", "00_brief.md"}
 
 PIECES = ["traction and revenue", "retention", "burn and runway", "unit economics",
           "customers and contracts", "market", "comps", "team", "the pitch itself",
@@ -53,6 +56,23 @@ def main():
     c = Counter(r["piece"] for r in rows if r["check_exists"] == "no")
     for piece in PIECES:
         print(f"  {piece}: {c.get(piece, 0)}")
+
+    print_guides(rows)
+
+
+def print_guides(rows):
+    slugs = sorted(p.stem for p in GUIDES.glob("*.md") if p.name not in NOT_GUIDES)
+    linked = Counter(r["guide"] for r in rows if r["guide"])
+    unknown = sorted(set(linked) - set(slugs))
+    if unknown:
+        raise SystemExit(f"guide not found in {GUIDES}: {unknown}")
+    print("\nBy document guide")
+    print(f"  items linked to a guide: {sum(linked.values())}")
+    print(f"  items with no guide: {sum(1 for r in rows if not r['guide'])}")
+    print(f"  guides linked from at least one item: {len(linked)} of {len(slugs)}")
+    for slug in slugs:
+        if slug not in linked:
+            print(f"  not linked: {slug}")
 
 
 if __name__ == "__main__":
