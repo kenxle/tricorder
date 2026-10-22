@@ -8,7 +8,7 @@
 
 **Level of detail:** One slice per heading, with short lists. A builder can pick up a slice and know what done looks like.
 
-**Sources:** The writers' brief ([00_brief_for_writers.md](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), every "Added" block from 10:15 AM through the two 2:19 PM blocks on deck-against-books and speed), Ken's 2:21 PM edit to the product brief (steering easy enough for a partner, [PRODUCT_BRIEF.md](PRODUCT_BRIEF.md), "Steering the readout"), the landscape research's Part 5 on Startup Due Dil ([research_landscape.md](../reports/20261022.02_research/research_landscape.md)), the gaps research ([research_gaps.md](../reports/20261022.02_research/research_gaps.md)), the data room as generated ([data_room/README.md](../../data_room/README.md), [SEALING.md](../../data_room/SEALING.md), `data_room/answer_key.json`), the overview page's cards ([00_overview.md](../features/20261022.01_hackathon_plan/00_overview.md)), Ken's comments on the voice-of-the-customer research at 1:47 PM (the outside-in slice) and 1:50 PM (reference checks, low priority), the product brief's "What Tricorder gathers before the data room is opened" ([PRODUCT_BRIEF.md](PRODUCT_BRIEF.md)), the saved Plaid Sandbox page ([sandbox_user_custom.md](../reports/20261022.02_research/raw/feasibility/plaid/sandbox_user_custom.md)), the organisers' tracks ([problem_tracks.txt](../reports/20261022.01_hackathon_sources/problem_tracks.txt)), the feasibility research ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), the main source for scan order, stack, folder owners and keys), the data room research ([research_data_room.md](../reports/20261022.02_research/research_data_room.md)), the landscape research ([research_landscape.md](../reports/20261022.02_research/research_landscape.md)), the voice-of-the-customer research ([research_voice_of_customer.md](../reports/20261022.02_research/research_voice_of_customer.md)), the guardrails ([guardrails.md](../../.claude/guardrails.md)), the board ([BULLETIN.md](../BULLETIN.md)) and the three critiques ([judge](../features/20261022.01_hackathon_plan/critique_judge.md), [buildability](../features/20261022.01_hackathon_plan/critique_buildability.md), [demo](../features/20261022.01_hackathon_plan/critique_demo.md)), which set the Saturday slices, the demo opening and the beat sheet. The shape is copied from My Text Reminders' [ROADMAP.md](../../../my-text-reminders/docs/ongoing/ROADMAP.md). Hour budgets come from [the schedule](../features/20261022.01_hackathon_plan/00_brief_for_writers.md) and are added up by [check_saturday_hours.py](../features/20261022.01_hackathon_plan/check_saturday_hours.py), not by hand.
+**Sources:** The writers' brief ([00_brief_for_writers.md](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), every "Added" block from 10:15 AM through the 2:49 PM block on live demos with real YC companies), Ken's 2:21 PM edit to the product brief (steering easy enough for a partner, [PRODUCT_BRIEF.md](PRODUCT_BRIEF.md), "Steering the readout"), the landscape research's Part 5 on Startup Due Dil ([research_landscape.md](../reports/20261022.02_research/research_landscape.md)), the gaps research ([research_gaps.md](../reports/20261022.02_research/research_gaps.md)), the data room as generated ([data_room/README.md](../../data_room/README.md), [SEALING.md](../../data_room/SEALING.md), `data_room/answer_key.json`), the overview page's cards ([00_overview.md](../features/20261022.01_hackathon_plan/00_overview.md)), Ken's comments on the voice-of-the-customer research at 1:47 PM (the outside-in slice) and 1:50 PM (reference checks, low priority), the product brief's "What Tricorder gathers before the data room is opened" ([PRODUCT_BRIEF.md](PRODUCT_BRIEF.md)), the saved Plaid Sandbox page ([sandbox_user_custom.md](../reports/20261022.02_research/raw/feasibility/plaid/sandbox_user_custom.md)), the organisers' tracks ([problem_tracks.txt](../reports/20261022.01_hackathon_sources/problem_tracks.txt)), the feasibility research ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), the main source for scan order, stack, folder owners and keys), the data room research ([research_data_room.md](../reports/20261022.02_research/research_data_room.md)), the landscape research ([research_landscape.md](../reports/20261022.02_research/research_landscape.md)), the voice-of-the-customer research ([research_voice_of_customer.md](../reports/20261022.02_research/research_voice_of_customer.md)), the guardrails ([guardrails.md](../../.claude/guardrails.md)), the board ([BULLETIN.md](../BULLETIN.md)) and the three critiques ([judge](../features/20261022.01_hackathon_plan/critique_judge.md), [buildability](../features/20261022.01_hackathon_plan/critique_buildability.md), [demo](../features/20261022.01_hackathon_plan/critique_demo.md)), which set the Saturday slices, the demo opening and the beat sheet. The shape is copied from My Text Reminders' [ROADMAP.md](../../../my-text-reminders/docs/ongoing/ROADMAP.md). Hour budgets come from [the schedule](../features/20261022.01_hackathon_plan/00_brief_for_writers.md) and are added up by [check_saturday_hours.py](../features/20261022.01_hackathon_plan/check_saturday_hours.py), not by hand.
 
 ## How to read a slice
 
@@ -25,7 +25,7 @@ A slice is done when its pull request is merged to `main`. On Saturday the capta
 
 Every feature or behaviour Ken asked for on 2026-10-22, and the slice that builds it. "When Ken said it" is the time the [writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md) gives his words, or the document the ask came from. "When it is built" names the horizon of each linked slice, in link order. A script checks that every link points at a slice in this file and that the horizons match: [check_asks_table.py](../features/20261022.01_hackathon_plan/check_asks_table.py).
 
-Three of the day's blocks are writing rules with nothing to build: the 1:21 PM block (no research labels in documents), the 1:24 PM block (say, do, pay is not user against buyer) and the 1:12 PM rename to "the operator". They bind the documents, not the roadmap.
+Four of the day's blocks are rules with nothing to build: the 1:21 PM block (no research labels in documents), the 1:24 PM block (say, do, pay is not user against buyer), the 1:12 PM rename to "the operator", and the 2:35 PM block (the two primary personas are the associate who prepares the memo and the partner who reads it, at seed and Series A funds). The first three bind the documents. The last one decides who every slice serves first.
 
 | Ken's ask | When Ken said it | Slice that builds it | When it is built |
 |---|---|---|---|
@@ -50,7 +50,7 @@ Three of the day's blocks are writing rules with nothing to build: the 1:21 PM b
 | An overview of which pieces look strong and which look weak | 12:55 PM | [readout](#readout), [readout-page](#readout-page) | Saturday |
 | Easy drill-downs to verify and corroborate every number | 12:55 PM | [readout](#readout), [readout-page](#readout-page) | Saturday |
 | The readout opens on the best green flags and the worst red flags | 1:09 PM | [readout](#readout), [readout-page](#readout-page) | Saturday |
-| The pitch line: green flags, red flags, every number two clicks from its source | 1:09 PM | [demo-script](#demo-script) | This week |
+| The pitch line: "Point it at a startup, get a readout. Tricorder takes any data: decks, videos, spreadsheets, data rooms. It reveals insight you can trust, every claim sourced." | 10:34 AM (team-workshop session, board row TRI-new-pitch) | [demo-script](#demo-script) | This week |
 | Real green flags in the demo room | 1:09 PM (overview page card) | [data-room](#data-room) | This week |
 | Steer the readout by rewriting a piece | 1:12 PM | [steering](#steering) | After |
 | Steer the readout by getting more info for a piece | 1:12 PM and 1:15 PM | [steering](#steering) | After |
@@ -77,7 +77,10 @@ Three of the day's blocks are writing rules with nothing to build: the 1:21 PM b
 | Steering easy enough for a partner who runs diligence: one plain sentence on the line that looks wrong, no setup, the answer on that line | 2:21 PM (Ken's edit to the product brief, "Steering the readout") | [steering](#steering) | After |
 | The claims workflow: extract claims from the deck and video, check whether the other documents support them | 2:41 PM | [claim-support](#claim-support) | After |
 | Templated data rooms with hidden issues, names swapped on the fly, one per problem story | 2:46 PM | [room-templates](#room-templates) | After |
-| Synthetic rooms for 2 or 3 real YC spring companies so the internet scan runs live | 2:44 PM | [room-templates](#room-templates) | After |
+| A reference guide for every document a seed or Series A room can hold: green flags, red flags and pitfalls, and how Tricorder checks it | 2:38 PM | [checklist](#checklist), [checklist-coverage](#checklist-coverage) | This week, then After |
+| Synthetic rooms for 2 or 3 real YC spring companies so the internet scan runs live | 2:44 PM | [yc-rooms](#yc-rooms), [room-templates](#room-templates) | This week, then After |
+| Live demos on real YC companies from a list Ken approves, each paired with a fake data room | 2:49 PM | [yc-rooms](#yc-rooms), [demo-script](#demo-script), [market-signals](#market-signals), [demo-freeze](#demo-freeze) | This week, then Saturday |
+| The sponsor tools (Akta, Crunchbase, Nicrron) in the product, built ahead with keys plugged in on the day | 2:56 PM | [sponsor-adapters](#sponsor-adapters) | This week |
 
 ### Proposals waiting on Ken
 
@@ -91,7 +94,9 @@ These are not slices yet. Ken's board row "Answer the cards" asks which Startup 
 
 ## The one workflow we demo
 
-**Recommended: open on the top green and red flags, already waiting, then the overview, then drill into the weakest piece and one strong piece.** The first screen is the best green flags and the worst red flags for Hollis Voice's full room. Under them is the overview: each piece of the company with its mark (looking strong, looking weak, mixed, or not enough in the room) and its reason in one line ([writers' brief, 12:55 PM and 1:09 PM blocks](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). The first click opens the weakest piece, traction and revenue. There the ARR figures sit side by side: about $3.0M said on video, $2.5M in the deck, $2.24M in the model, $2.06M in the billing rows, each with its source chip ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), verdict; the exact figures are in `data_room/answer_key.json`, `facts`). The next opens one strong piece, the pitch itself, which is also the green flag: the round on slide 13, corroborated by the cap table, each source opening the other. This is true on stage: the run finished before the captain walked up. The body follows the [demo-script](#demo-script) beat sheet: the green and red flags, the overview, the video sentence, the pilot clause, the strong piece, the gaps. Then one line reads out the runs on the sealed variant room and the clean room ([blind-room](#blind-room)). The forwarded pitch email is the closing "next" line: forward it, and the readout is waiting before you open it. That keeps the "before you even ask" moment from the brief's 11:20 AM block as what comes next. Why this form: judges remember what they saw working, and opening on a forward started by hand spends the first 20 seconds on the one thing on screen that is not real ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), finding 2; [critique_judge.md](../features/20261022.01_hackathon_plan/critique_judge.md), finding 6).
+**Recommended: open on the top green and red flags, already waiting, then the overview, then drill into the weakest piece and one strong piece.** The first screen is the best green flags and the worst red flags for Hollis Voice's full room. Under them is the overview: each piece of the company with its mark (looking strong, looking weak, mixed, or not enough in the room) and its reason in one line ([writers' brief, 12:55 PM and 1:09 PM blocks](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). The first click opens the weakest piece, traction and revenue. There the ARR figures sit side by side: about $3.0M said on video, $2.5M in the deck, $2.24M in the model, $2.06M in the billing rows, each with its source chip ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), verdict; the exact figures are in `data_room/answer_key.json`, `facts`). The next opens one strong piece, the pitch itself, which is also the green flag: the round on slide 13, corroborated by the cap table, each source opening the other. This is true on stage: the run finished before the captain walked up. The body follows the [demo-script](#demo-script) beat sheet: the green and red flags, the overview, the video sentence, the pilot clause, the strong piece, the gaps. Then one line reads out the runs on the sealed variant room and the clean room ([blind-room](#blind-room)). The forwarded pitch email is the closing "next" line: forward it, and the readout is waiting before you open it. That keeps the "before you even ask" moment from the brief's 11:20 AM block as what comes next.
+
+**Then a real company, live.** One beat in the core switches to a real YC company from the list Ken approves, paired with its synthetic room ([yc-rooms](#yc-rooms); [writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:49 PM block). Its outside-world panel runs live on stage: the company's website, Hacker News, the App Store and SEC filings, read as the judges watch. Ken says out loud that the company is real and its data room is not: we wrote the room, every page says "Synthetic test document. Not this company's data.", and its problems are our test plants. Hollis Voice stays the controlled room whose planted flags are known. Why this form: judges remember what they saw working, and opening on a forward started by hand spends the first 20 seconds on the one thing on screen that is not real ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), finding 2; [critique_judge.md](../features/20261022.01_hackathon_plan/critique_judge.md), finding 6).
 
 **The real forward, only if time allows.** The forwarding address is an after-Saturday slice ([inbox-forward](#inbox-forward)). A small inbox-polling script needs no OAuth review, so it can be built on Saturday, but only if the red-flag engine and the readout are done at the 2:30 cut call. Otherwise the close says it in one line.
 
@@ -114,7 +119,8 @@ The organisers say Saturday is build-only and everything before code happens thi
 - [saturday-specs](#saturday-specs): an agent. The FRAMEWORKS entries exist. The example result files, the static readout mock and one test call per schema are still to do.
 - [social-posts](#social-posts): an agent drafts, Ken edits. Not drafted yet.
 - [demo-script](#demo-script): the beat sheet is below. Ken reads the core aloud against a timer.
-- [record-pitch-video](#record-pitch-video): Ken arranges an off-stage voice, then installs whisper.cpp and saves the transcript.
+- [yc-rooms](#yc-rooms): Ken approves the list of real YC companies on the overview page's demo-company card. Then an agent generates a synthetic room for each approved company, and cached-data saves each company's outside-world calls.
+- [record-pitch-video](#record-pitch-video): Ken reads each room's script flatly, then installs whisper.cpp and saves the transcript.
 - [founder-brief](#founder-brief): Ken edits it in his own words.
 
 ### data-room
@@ -192,7 +198,7 @@ Ken reads a few pitch scripts into video himself, flatly ([writers' brief](../fe
 
 **Done when:** the video and the captioned clip play in the browser on the demo laptop, and the saved transcript contains the ARR sentence with its timestamp.
 
-**Who:** Ken arranges it. The voice is someone off stage, not the presenter: a friend, or a teammate who does not present. The founder is invented, so the video uses no real person's likeness without consent (feasibility 1.5).
+**Who:** Ken reads each script himself, flatly. On stage the clip plays as audio over the deck slides, with captions. For a real company's room, the clip carries the same synthetic label as the room, so Ken's reading never stands in for that company's founders.
 
 **Judgment:** n/a.
 
@@ -210,6 +216,30 @@ Online research that answers the organisers' three questions where the voice-of-
 
 **Judgment:** n/a.
 
+### sponsor-adapters
+
+The sponsor tools in the product, with keys that only arrive on the day ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:56 PM block). Ken: "let's make sure that these are in our roadmap and features. we won't get access to them until day of but we can do the other stuff ahead of time." The landscape research names three as most useful on Saturday: Akta (signals, company data and news, with source metadata on every response), Crunchbase (comps and funding data through its MCP), and the Nicrron gateway (one key for every model, with free repeat requests) ([research_landscape.md](../reports/20261022.02_research/research_landscape.md), Part 2).
+
+**Waits on:** nothing this week; the keys on Saturday morning.
+
+**Includes, this week (no keys needed):**
+
+- One small adapter per sponsor, written against its published docs (saved under the feasibility and landscape research's raw folders): the request it makes, the response it expects, and how each response field becomes a Claim with its source.
+- A recorded sample response per adapter, shaped from the docs, so tests and the demo can run with no key and no network.
+- A switch per adapter: off, sample, or live. Every scan works with all three off, using the free sources (Tavily, You.com, GitHub, EDGAR, Hacker News) and this week's cache.
+- For Nicrron: model calls go through one client, so pointing it at the gateway is a setting, not a code change.
+
+**Includes, Saturday 9:00 to 10:30 (captain, during breakfast and team formation, inside the existing window):**
+
+- Paste the keys into each laptop's `.env`, flip each adapter to live, run one call each, and keep sample mode for any that fails.
+- On stage, say which sponsor tool each panel used.
+
+**Done when:** every adapter passes its tests in sample mode this week; on Saturday each one is live or falls back to sample mode without a code change.
+
+**Who:** agent this week; captain on Saturday morning.
+
+**Judgment:** no.
+
 ### keys
 
 Every key and account Saturday needs, in a local `.env` that is never committed, plus the demo laptop's tools.
@@ -222,7 +252,7 @@ Every key and account Saturday needs, in a local `.env` that is never committed,
 - Tavily key. Free 1,000 credits a month, no card.
 - You.com key, or the keyless MCP profile (100 queries a day).
 - GitHub token. Free; 5,000 requests an hour.
-- Akta key, plus a question to the sponsor about the paid plan. Pay-as-you-go returns 403 on headcount, web traffic, jobs and reviews; those need the Subscription plan or a sponsor coupon.
+- Akta key, which comes on the day (see [sponsor-adapters](#sponsor-adapters)), plus a question to the sponsor about the paid plan. Pay-as-you-go returns 403 on headcount, web traffic, jobs and reviews; those need the Subscription plan or a sponsor coupon.
 - Product Hunt token. Optional; its terms say non-commercial use.
 - OpenAI key. Optional; only for the Whisper API fallback.
 - A declared EDGAR User-Agent string with a real contact address. No key.
@@ -237,11 +267,33 @@ Every key and account Saturday needs, in a local `.env` that is never committed,
 
 **Judgment:** n/a.
 
+### yc-rooms
+
+Synthetic data rooms for real YC companies, so the outside-world scan runs live on a real public footprint while the room's documents are invented ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:44 PM, 2:46 PM and 2:49 PM blocks). Ken at 2:49 PM: "we want to have a list of YC companies and we'll pair them with fake data rooms and run live demos on them". The demo pairs one of these with Hollis Voice, the controlled room whose planted flags are known.
+
+**Waits on:** data-room; Ken approves the list of companies on the overview page's card for the demo company.
+
+**Includes:**
+
+- **The candidate list.** Two or three real YC companies from the spring 2026 batch, proposed by a research agent, each with its public footprint: website, Hacker News, App Store, SEC filings and any announced round, saved with links. Ken picks. No room is generated before he does.
+- **A profile per approved company,** built only from public pages: name, product, the founders' public bios and any announced round, each saved with its link.
+- **A room per approved company,** written by this week's generator with the profile swapped in. The numbers are invented and plausible, anchored only to what the company has published. This is the first piece of [room-templates](#room-templates): the profile swap.
+- **The safeguard.** An invented room under a real company's name must never read as a claim about that company. Every page and sheet carries "Synthetic test document. Not this company's data." Planted problems are named test plants in the answer key and on screen, and the demo says so out loud.
+- An answer key per room, outside the room folder, as for Hollis Voice.
+- A pitch script per room, which Ken reads flatly ([record-pitch-video](#record-pitch-video)).
+- The company's outside-world calls saved this week by [cached-data](#cached-data), so Saturday's live run has a fallback.
+
+**Done when:** each approved company has a room that passes `data_room/check.py` against its own key; a script finds the synthetic label on every page and sheet of every real-company room; and every public fact in each profile opens its saved page.
+
+**Who:** agent, after Ken approves the list.
+
+**Judgment:** yes.
+
 ### cached-data
 
 The outside data the comps and market-signal scans read on Saturday, saved as files, so nothing on stage waits on a live call.
 
-**Waits on:** keys (Akta and Tavily for the signal pulls; the EDGAR User-Agent for the SEC downloads).
+**Waits on:** keys (Akta and Tavily for the signal pulls; the EDGAR User-Agent for the SEC downloads); Ken's approved list in yc-rooms, for the real companies' calls.
 
 **Includes**, from the feasibility research's 1.2, 1.3 and 1.6:
 
@@ -253,6 +305,7 @@ The outside data the comps and market-signal scans read on Saturday, saved as fi
 - Each comp candidate's 10-K Item 1 text, which the comp prompt (2.1) reads.
 - A saved page describing each Form D issuer, which the private-comp prompt (2.2) reads.
 - `cache/index.json`, which maps each URL to its saved file. The quote checker reads it to check URL sources.
+- For each real company Ken approves in [yc-rooms](#yc-rooms), its own outside-world calls: its website, Hacker News, Apple's App Store lookup and SEC EDGAR, plus Akta and Tavily where the keys allow. Each call is saved with its request (the endpoint and its parameters, never the key) in `cache/index.json`, so Saturday's live run can send the same calls again and fall back to these copies.
 - Everything under `cache/` at the repo root, with the date each file was read.
 
 **Done when:** each file opens, and a short `cache/README.md` lists what each file is and where it came from.
@@ -271,6 +324,7 @@ This week's saved competitor readings, written as the market-signals panel's dat
 
 - `cache/signals/signals.json` in the Claim schema: a short grid per competitor from the cached Akta pulls and Tavily pricing pages, each number linked to its saved source through `cache/index.json` (feasibility 1.3).
 - For Hollis Voice itself, only what the room gives: website copy and pricing.
+- For the approved real company the demo uses, its own readings from this week's saved calls, shown as the fallback for Saturday's live run.
 - The date each reading was taken, shown on the panel.
 - If Akta's paid signals were not available, the grid shows news and company data only, and the gap says why.
 
@@ -380,7 +434,7 @@ One diligence checklist, [CHECKLIST.md](CHECKLIST.md) ([writers' brief](../featu
 
 **Done when:** CHECKLIST.md and its CSV exist, and every count in the doc matches the script's output.
 
-**Status:** done. Its "Checked by" column names the FRAMEWORKS entries and marks which run Saturday.
+**Status:** done. Its "Checked by" column names the FRAMEWORKS entries and marks which run Saturday. The reference guides, one per data-room document a seed or Series A room can hold, are being written now in `docs/reports/20261022.03_document_guides/` ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:38 PM block). When they land, each document row links its guide.
 
 **Who:** agent. Ken reviews.
 
@@ -390,18 +444,19 @@ One diligence checklist, [CHECKLIST.md](CHECKLIST.md) ([writers' brief](../featu
 
 The demo script and Saturday's run of show, written for the captain to present: a three-minute core with a five-minute extension. The schedule gives 5:30 to 6:00 for every team's demo and the winner ([brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)), so the slot is likely three minutes or less ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), finding 1). The board row TRI-ask-organisers asks the slot length.
 
-**Waits on:** data-room, blind-room, record-pitch-video, and the overview page's card on the demo opening.
+**Waits on:** data-room, blind-room, yc-rooms, record-pitch-video, and the overview page's card on the demo opening.
 
 **Includes:**
 
-- The beat sheet below. It opens on the top green and red flags already waiting, then the overview, drills into the weakest piece (revenue, with its four ARR numbers) and one strong piece (the pitch itself), and ends the core on the forward as the "next" line.
+- The beat sheet below. It opens on the top green and red flags already waiting, then the overview, drills into the weakest piece (revenue, with its four ARR numbers) and one strong piece (the pitch itself), then shows a real YC company with its outside-world scan running live, and ends the core on the forward as the "next" line.
+- The line Ken says out loud on the live beat: the company is real, its public footprint is read live, and its data room is synthetic, written by us, labelled on every page, with our test plants in it.
 - Who says what and who drives the laptop.
 - The fallback for each step: which saved file to show if a scan fails on stage.
 - Answers ready for the questions the landscape research expects from this panel: where the data goes, what happens when a scan fails, what is hard to copy ([research_landscape.md](../reports/20261022.02_research/research_landscape.md), Part 3).
 - The answer to "can it catch fraud": no. It finds differences in reporting between files and against the outside world, and shows each one. A fake that agrees across every file gets through ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:33 PM block).
 - The run of show below, checked against the day's real schedule once the organisers answer the board row TRI-ask-organisers (who Roundtable is, the build window and more).
 
-**The beat sheet**, from the demo critique, with the variant and clean runs added, and reshaped after Ken's 12:55 PM and 1:09 PM comments to open on the top green and red flags, then the overview. Three-minute core, then the extension if the slot is five minutes. The frontend drives. Backend-and-data holds the backup laptop on `demo/frozen/`. Start a run on the sealed variant room in a hidden tab at 0:00. It runs script checks only, so it needs no network.
+**The beat sheet**, from the demo critique, with the variant and clean runs added, reshaped after Ken's 12:55 PM and 1:09 PM comments to open on the top green and red flags, then the overview, and given a live beat on a real company after his 2:49 PM note. The live beat took the 2:00 slot in the core. The sealed variant room's score moved into the close, and the gaps and the other two scores moved into the extension. Three-minute core, then the extension if the slot is five minutes. The frontend drives. Backend-and-data holds the backup laptop on `demo/frozen/`. Start a run on the sealed variant room in a hidden tab at 0:00. It runs script checks only, so it needs no network. A second tab holds the approved real company's readout, run before the demo like Hollis Voice's. Its outside-world panel starts its live calls when the frontend opens that tab at 2:00.
 
 | Time | On screen | Ken says | Fallback |
 |---|---|---|---|
@@ -409,11 +464,12 @@ The demo script and Saturday's run of show, written for the captain to present: 
 | 0:30 | Click traction and revenue: the four ARR figures in large type, each with its source chip. Click "video 0:35": a five-second captioned clip, "about three million" | "Revenue reads weak: four ARR numbers. On video, three million. In the billing rows, $2.06 million. That's 46% more." | No sound: captions carry it. No video: the transcript line with its timestamp. |
 | 1:00 | Click the model figure: ARR_Build row 13, "Marlow Veterinary Group (pilot)", then clause 8, "No duty to convert" | "Part of the gap is a six-month pilot counted as a year of revenue. Here's the clause." | Pre-rendered PNGs of the cell and the clause. |
 | 1:30 | Back to the top, click the green flag; the pitch itself opens: slide 13's $9,000,000 at $45,000,000 pre-money for 16.67%, beside the cap table's Series A rows; click the cap table figure and slide 13 opens (answer_key.json, `deck_claims` and DC3) | "The green flag: the round adds up. The deck asks for nine million at forty-five pre, and the cap table computes the same 16.67%. Green flags get the same two clicks as red ones." | Pre-rendered PNGs of slide 13 and the cap table rows. |
-| 2:00 | Back on the overview: market reads "not enough in the room"; the gaps panel ("not in the room"), then the score lines: this room; the sealed variant room, from the hidden tab with its start time; the clean room | "It says what's missing and leaves clean things alone. We planted eight problems and three traps. Today it found X and tripped Y. On a room someone outside the team planted and sealed, started when I began talking, it found X of N. On the same company with nothing planted, it raised Z flags." | Scores from the frozen run and the 4:15 variant and clean runs. Never wait on stage. |
-| 2:30 | Readout header: "every line sourced" | "Next: forward the pitch email, and this is waiting before you open it. The partner pays per seat. If you do first passes, try it on your next deal." | None needed. |
-| 3:00 | Switch from the seed drop to the full room: the three flags that need the second tier light up | "With the first tier alone, five of eight. Add the detail, and the pilot, the churn and the concentration appear." | Skip the beat. |
-| 3:30 | The clean room's readout | "Same company, nothing planted. This is everything it flags." | Skip the beat. |
-| 4:00 | Readout stays up | Questions: where the data goes, "isn't this a wrapper", what happens when a scan fails, what it finds in a room we didn't make (answers in BRAND.md) | n/a |
+| 2:00 | The second tab: the approved real company's readout. Its banner reads "Synthetic test document. Not this company's data." The outside-world panel runs live: the company's website, Hacker News, App Store and SEC results arrive one by one, each with the time it was read and its link. | "This is [company], a real YC company from the spring batch. This part is live: its website, Hacker News, the App Store and its SEC filings, read just now. Its data room is not real. We wrote it, every page says so, and the problems in it are our test plants, not theirs." | Any call that fails or is slow shows this week's saved copy with its date, and Ken says "saved on" that date instead of "just now". |
+| 2:30 | Back on Hollis Voice. The sealed variant room's score line, from the hidden tab with its start time, then the readout header: "every line sourced" | "On a room someone outside the team planted and sealed, started when I began talking, it found X of N. Next: forward the pitch email, and this is waiting before you open it. The partner pays per seat. If you do first passes, try it on your next deal." | Scores from the frozen run and the 4:15 variant run. Never wait on stage. |
+| 3:00 | Back on the overview: market reads "not enough in the room"; the gaps panel ("not in the room"), then the score lines for this room and the clean room | "It says what's missing and leaves clean things alone. We planted eight problems and three traps. Today it found X and tripped Y. On the same company with nothing planted, it raised Z flags." | Scores from the frozen run and the 4:15 clean run. Never wait on stage. |
+| 3:30 | Switch from the seed drop to the full room: the three flags that need the second tier light up | "With the first tier alone, five of eight. Add the detail, and the pilot, the churn and the concentration appear." | Skip the beat. |
+| 4:00 | The clean room's readout | "Same company, nothing planted. This is everything it flags." | Skip the beat. |
+| 4:30 | Readout stays up | Questions: where the data goes, "isn't this a wrapper", what happens when a scan fails, what it finds in a room we didn't make, whether the real company knows (answers in BRAND.md) | n/a |
 
 The numbers in the beats come from the room as the demo critic read it on 2026-10-22. The generator is being revised this week, so on Saturday use the numbers from the frozen run.
 
@@ -458,7 +514,7 @@ Each person owns folders, so pull requests do not touch the same files. This fol
 | Role | Folders | Slices | Build hours |
 |---|---|---|---|
 | captain | `schema/` except `readers.py`, `scans/memo/`, `eval/`, `demo/` | claim-result, readout, demo-freeze | 4.5 |
-| frontend | `readout/` | readout-page, market-signals | 4.5 |
+| frontend | `readout/`, and on Saturday the live re-run in `scans/signals/` | readout-page, market-signals | 4.5 |
 | backend-and-data | repo root files, `server/`, `schema/readers.py`, `scans/video/`, `scans/readings/` | readers, pitch-video, redflag-readings | 4.5 |
 | design-and-finance | `scans/redflags/`, `scans/comps/` | redflag-engine, comps | 4.5 |
 
@@ -676,16 +732,19 @@ Comparable companies and recent rounds, each with the reason it is a fair comp. 
 
 ### market-signals
 
-Hiring, traffic, reviews, news and pricing for the demo company's real competitors. Fifth in the feasibility research's ranking. On Saturday it is a static panel of this week's cached competitor readings, because live signals cannot show much for a company with no outside footprint ([critique_buildability.md](../features/20261022.01_hackathon_plan/critique_buildability.md), finding 9). Backend-and-data's freed hours go to the readers and the video.
+Hiring, traffic, reviews, news and pricing for the demo company's real competitors, and the live outside-world run on one approved real company. Fifth in the feasibility research's ranking. For Hollis Voice it is a static panel of this week's cached competitor readings, because live signals cannot show much for a company with no outside footprint ([critique_buildability.md](../features/20261022.01_hackathon_plan/critique_buildability.md), finding 9). Backend-and-data's freed hours go to the readers and the video.
 
-**Waits on:** signals-readings (this week's `cache/signals/signals.json`).
+**The live run on a real company** ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:49 PM block). For the approved real company the demo uses, the panel sends this week's saved calls for that company again, live on stage. It uses only the sources that need no paid plan: the company's website, Hacker News, Apple's App Store lookup and SEC EDGAR. It takes this slice's slot, so Saturday's hours do not change. Any call that fails or is slow shows this week's saved copy from [cached-data](#cached-data), with its date. The full live scan, with resolution and every tab, is [outside-in](#outside-in) after Saturday.
+
+**Waits on:** signals-readings (this week's `cache/signals/signals.json`); yc-rooms and cached-data, for the approved real company's saved calls.
 
 **Includes:**
 
 - The signals panel in the readout page, reading `cache/signals/signals.json` through the server.
 - Each reading shows the date it was taken, and each number links to its saved source.
+- On the approved real company's readout, a live re-run of its saved calls. Each fresh answer is saved beside the old copy and shown with the time it was read. The panel carries the room's synthetic label.
 
-**Done when:** the panel shows at least three competitors on the readout page, and every number's link opens its saved copy.
+**Done when:** the panel shows at least three competitors on the readout page, and every number's link opens its saved copy. On the approved real company, the live re-run shows each source with the time it was read, and with the network off it shows this week's saved copies with their dates.
 
 **Who:** frontend.
 
@@ -705,7 +764,8 @@ Integration, the score, the freeze and the rehearsal.
 - `eval/score.py` reads the readout and the answer key and prints how many of the 8 planted entries were found and how many of the 3 decoys were wrongly flagged. The score goes on the page as one line, with the real number, even if it is 7 ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), finding 7).
 - The clean-room run: the readout on the plants-off room from [blind-room](#blind-room). `eval/score.py` prints how many flags it raised.
 - The variant run: at the 3:30 PM freeze the outside person sends the sealed key. The readout runs on the variant room, and `eval/score.py` prints the real numbers against that key. Nobody changes a check after the key opens.
-- The frozen outputs saved under `demo/frozen/` as the fallback for every step of the script, including the variant and clean runs.
+- The approved real company's room, run like Hollis Voice's, with its outside-world panel's live re-run tested on the network the demo will use.
+- The frozen outputs saved under `demo/frozen/` as the fallback for every step of the script, including the variant and clean runs and the real company's readout with this week's saved outside copies.
 - A `demo-freeze` git tag at 3:30 PM. After it, nothing merges except a fix for a crash found in rehearsal, and only on the captain's call.
 - The rehearsal: a three-minute core with a five-minute extension, from the beat sheet in [demo-script](#demo-script). At least two run-throughs, one of them on the backup laptop from the frozen files. The schedule gives 5:30 to 6:00 for every team's demo plus the winner, so the slot is likely three minutes or less (demo critique, finding 1).
 
@@ -727,7 +787,7 @@ From the buildability critique's finding 11 and the demo critique's "What else g
 
 - **The demo laptop is Ken's:** M2 Max, with ffmpeg, Python 3.13 and Node 20. Backend-and-data's laptop is the backup, on `demo/frozen/`.
 - **The live step runs script checks only.** They need no network. Panels that need a model (the memo's connecting sentences, the comp reasons, the red-flag model readings) show frozen output. Nothing on screen calls a model at render time.
-- **No venue wifi needed.** The page and the frozen files are served from localhost, with no fonts or scripts from a CDN. Bring a phone hotspot anyway.
+- **Only the live beat needs the network.** The page and the frozen files are served from localhost, with no fonts or scripts from a CDN. The real company's outside-world panel needs venue wifi or the phone hotspot. Without either, it shows this week's saved copies with their dates, and Ken says so.
 - **Display.** Every laptop brings a USB-C to HDMI adapter. Rehearse at 1280 by 720 at 150% zoom.
 
 ### Run of show
@@ -744,11 +804,11 @@ From the buildability critique's finding 11 and the demo critique's "What else g
 | 1:00 to 1:30 | demo-freeze: merge, first full run on the seed drop. | readout-page on real outputs. | pitch-video. | redflag-engine: the full room. | **2. First end-to-end run.** If the red-flag engine does not find the seed drop's flags, cut the red-flag model readings, and backend-and-data pairs with design-and-finance after the video slice. |
 | 1:30 to 2:00 | readout: finish the piece verdicts, the top green and red flags, conflicts and corroborations, and the ask list. | readout-page: in-page source panels. | pitch-video. | redflag-engine: the clean room. | |
 | 2:00 to 2:30 | demo-freeze: score script, frozen outputs. | readout-page: source panels and video jump. | pitch-video. | comps. | |
-| 2:30 | Run the full room and the clean room, read the score. | | | | **3. Cut call.** Whatever is not producing claims falls back to saved results or is cut, in the cut order. The real inbox-polling forward is built only if the red-flag engine and the readout are done now, by whoever finishes their slice first. |
-| 2:30 to 3:30 | demo-freeze. | readout-page polish: the ask list's copy button and the reorder buttons, and the market-signals panel. | redflag-readings. | comps. | |
+| 2:30 | Run the full room, the clean room and the approved real company's room, read the score. | | | | **3. Cut call.** Whatever is not producing claims falls back to saved results or is cut, in the cut order. The real inbox-polling forward is built only if the red-flag engine and the readout are done now, by whoever finishes their slice first. |
+| 2:30 to 3:30 | demo-freeze. | readout-page polish: the ask list's copy button and the reorder buttons, and the market-signals panel with its live run on the approved real company. | redflag-readings. | comps. | |
 | 3:30 | Tag `demo-freeze`. Post the second social post. The outside person sends the variant room's key. | | | | **4. Demo freeze.** |
 | 3:30 to 4:15 | Rehearse, presenting: the three-minute core, then the five-minute extension. | Rehearse, driving the laptop. | Rehearse on the backup laptop. | Rehearse, ready for numbers questions. | Two run-throughs. |
-| 4:15 to 4:30 | Fresh runs on the variant room and the clean room, close tabs. | Page ready on all rooms. | Backup laptop on the frozen files, including the variant and clean runs. | Answer key scores checked for the full room and the variant room. | |
+| 4:15 to 4:30 | Fresh runs on the variant room and the clean room, close tabs. | Page ready on all rooms. Test the live outside panel on the approved real company on the demo network. | Backup laptop on the frozen files, including the variant and clean runs. | Answer key scores checked for the full room and the variant room. | |
 | 4:30 to 5:30 | Judging: presents. | Drives. | Backup. | Answers questions on the numbers. | |
 | 5:30 to 6:00 | Demos and the winner: presents. | Drives. | Backup. | Ready. | |
 
@@ -884,7 +944,7 @@ A card per founder from GitHub, personal sites and talks. LinkedIn is never scra
 
 **The associate's ten tabs, opened automatically.** An associate at Flyer One Ventures describes her first step on a deal: "Before I even open your data room, I already have ten tabs up. I’m checking your traffic, reviews, investors, any co-founder issues, and whether your story matches what’s online." ([Startups Magazine, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal); the [voice-of-the-customer research](../reports/20261022.02_research/research_voice_of_customer.md), row 1). Her routine is Tricorder's market-signal and presence scans, done by hand. This slice opens her tabs for her. It runs before the data room is opened, so it works on an inbound that holds only a company name and a deck. At the earliest stage there is often no data room at all, and these tabs carry the first pass ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:38 PM block). It builds the table in the product brief's "What Tricorder gathers before the data room is opened" ([PRODUCT_BRIEF.md](PRODUCT_BRIEF.md)). Every source term, limit and price below comes from the feasibility research's 1.3, 1.6, 1.7 and Part 2 ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md)), with the page that research read.
 
-**Waits on:** the board row TRI-sponsor-keys (get the sponsor API keys before Saturday): Akta, Tavily, You.com, a GitHub token, the EDGAR User-Agent, and a Product Hunt token if Ken approves its terms; traffic and Akta's review signals also need Akta's Subscription plan or a sponsor coupon, and without it they run as gaps; [readout-store](#readout-store), so each company's pulled pages and claims outlive one laptop and the operator can see and delete them; the Saturday slices claim-result (the quote checker), readout (the linking and the piece verdicts) and cached-data (the `cache/index.json` rule), merged; Ken approves the two real companies for the live run under Done when; a decision on Product Hunt, whose API terms say non-commercial use (shared with online-presence); [steering](#steering), for the "get more info" steers only, since the tabs ship without it.
+**Waits on:** the board row TRI-sponsor-keys (get the sponsor API keys before Saturday): Akta, Tavily, You.com, a GitHub token, the EDGAR User-Agent, and a Product Hunt token if Ken approves its terms; traffic and Akta's review signals also need Akta's Subscription plan or a sponsor coupon, and without it they run as gaps; [readout-store](#readout-store), so each company's pulled pages and claims outlive one laptop and the operator can see and delete them; the Saturday slices claim-result (the quote checker), readout (the linking and the piece verdicts) and cached-data (the `cache/index.json` rule), merged; [yc-rooms](#yc-rooms), whose approved YC companies and their synthetic rooms are the live run under Done when; a decision on Product Hunt, whose API terms say non-commercial use (shared with online-presence); [steering](#steering), for the "get more info" steers only, since the tabs ship without it.
 
 **Includes:**
 
@@ -966,7 +1026,7 @@ A card per founder from GitHub, personal sites and talks. LinkedIn is never scra
   - The top green and red flags draw on these claims by the same script rule as every other claim. Nothing missing online becomes a red flag.
 - **The FRAMEWORKS.md entries it adds.** A "Scan 8. Outside-in" section. Investors and co-founder issues get new entries in the seven parts. Traffic and reviews run entry 3.1 on the company itself. The story tab runs entry 7.1, extended to press and customers' pages. The `rating` unit, the wider narrative set and the Step 1 rule go in the same change.
 - **How it relates to the other slices.**
-  - [market-signals](#market-signals) stays a separate Saturday slice and is unchanged, Waits on included. It shows this week's cached competitor readings. This slice is its live version for the company itself, and it keeps the competitor rows. Making the signals panel read live rows is part of this slice.
+  - [market-signals](#market-signals) stays a separate Saturday slice. It shows this week's cached competitor readings, and on Saturday it re-sends one approved real company's saved calls live. This slice is the full live version for the company itself, and it keeps the competitor rows. Making the signals panel read every tab live is part of this slice.
   - [online-presence](#online-presence) stays separate and now waits on this slice. This slice builds the company resolver, the cache, and the Hacker News and Apple clients, so online-presence reuses those instead of building them again. What online-presence alone adds is the Reddit mini-browser and the Facebook page text the investor pastes.
   - [founder-profiles](#founder-profiles) stays separate and now waits on this slice. It judges each founder's fit and commitment (FRAMEWORKS.md, Scan 6). The co-founder tab asks a different question: the team's history together, and whether the sources agree on who the founders are. Both read the same GitHub and page fetches through the one cache built here.
   - [comps-deep](#comps-deep) stays separate. Both read the same Form D quarterly files. This slice reads the company's own rows; comps-deep ranks other companies.
@@ -984,7 +1044,8 @@ A card per founder from GitHub, personal sites and talks. LinkedIn is never scra
 - A fixture with a co-founder named in a dated outside article and missing from the deck produces a `watch` claim with both quotes, no reason, and no flag.
 - A fixture where the deck's round amount matches the Form D amount sold marks the claim corroborated. A fixture where the deck matches only the company's own website does not.
 - A folder holding only a deck PDF, and a folder holding only an inbound email, each produce `outside.json`.
-- A live run on two real companies Ken approves, each chosen for having a public footprint. One is a US company listed on a stock exchange, with an app on Apple's App Store and SEC filings; its public investor presentation stands in for the deck. The other is a venture-backed private US company with a Form D filing in the last four quarters, a public website and at least one Hacker News post; it runs with no deck, and its story tab reports "no deck claims to check" as a gap. On both, every tab returns claims or a gap with its reason, and every claim's source opens from `cache/index.json`.
+- A live run on the real YC companies Ken approved in [yc-rooms](#yc-rooms), each paired with its synthetic room. On each, every tab returns claims or a gap with its reason, and every claim's source opens from `cache/index.json`.
+- On a synthetic room under a real company's name, the story tab compares invented deck claims with real public pages. Every difference it shows carries the room's label, "Synthetic test document. Not this company's data.", and reads as a test result, never as a finding about the company.
 - The quote checker passes on every claim, from the fixture and from both live runs.
 - The run on Hollis Voice reports every outside source as none found or not checked, each with its reason, and every piece verdict is the same as in the run without this scan.
 - The ScanResult lists the calls and credits spent per source.
@@ -1123,9 +1184,9 @@ Low priority: Ken is not sure Tricorder can take this on. Reference calls are ro
 
 ### room-templates
 
-Templated data rooms with hidden issues ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:46 PM block). Ken: "we should actually set up a few different data rooms that will allow us to highlight different problems. the data rooms will need to be a little bit templated, so we can swap in new names on the fly, but we should make data rooms with hidden isseus in them, based on the problems we saw in the reserach." This week's generator already writes Hollis Voice, a second company, a clean room and a sealed variant; this slice turns it into a template engine.
+Templated data rooms with hidden issues ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:46 PM block). Ken: "we should actually set up a few different data rooms that will allow us to highlight different problems. the data rooms will need to be a little bit templated, so we can swap in new names on the fly, but we should make data rooms with hidden isseus in them, based on the problems we saw in the reserach." This week's generator already writes Hollis Voice, a second invented company, a clean room and a sealed variant, and [yc-rooms](#yc-rooms) swaps a real company's public profile into it. This slice turns it into a template engine.
 
-**Waits on:** this week's data-room work (Hollis Voice, the second company, the real-company rooms) merged.
+**Waits on:** data-room (Hollis Voice and the second invented company) and yc-rooms (the rooms for real companies) merged.
 
 **Includes:**
 
@@ -1244,6 +1305,7 @@ The readout's coverage against the [checklist](#checklist), and an ask list that
 - The ask list also draws on the checklist. Every item expected at the company's stage and missing from the room becomes a request, beside the lines from gaps and weak pieces. An item expected only at a later stage is not asked for.
 - The company's stage comes from the deck's round slide, and the operator can change it.
 - A coverage panel on the readout page.
+- The reference guides' proposed checks, one guide per data-room document ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:38 PM block). Each proposed check becomes a check, or is marked as left to the operator, and each guide's missing-document line becomes its ask.
 - Entry 1.11's asks, which no Saturday slice runs: bank statements, accountant-prepared statements, tax returns, IP assignments and customer references when the room lacks them, and one walk-through ask per flag ([FRAMEWORKS.md](FRAMEWORKS.md), entry 1.11).
 
 **Done when:**

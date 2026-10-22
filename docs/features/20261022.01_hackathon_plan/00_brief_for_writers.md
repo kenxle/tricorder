@@ -370,3 +370,9 @@ Added 2026-10-22 at 2:51 PM, a note on the overview page:
 > for the data room prep, we'll need to ask me to read a few scripts into a video. i'll just read them flatly, nothing crazy
 
 Settled: Ken records the pitch videos himself, one flat reading per room's script (Hollis Voice, the second invented company, each approved real-company room). This replaces the demo critic's suggestion of an off-stage voice. On stage the clip plays as audio over the deck slides with captions. Each room's generator writes its script; the board row lists them.
+
+Added 2026-10-22 at 2:56 PM, on the landscape research's three most useful sponsor tools:
+
+> yeah let's make sure that these are in our roadmap and features. we won't get access to them until day of but we can do the other stuff ahead of time
+
+Settled: Akta, Crunchbase and the Nicrron gateway are features (product brief, "The sponsor tools") and a this-week roadmap slice (`sponsor-adapters`): an adapter per sponsor built against its published docs with sample responses and an off, sample or live switch, so Saturday morning is pasting keys and flipping switches inside the existing 9:00 to 10:30 window.

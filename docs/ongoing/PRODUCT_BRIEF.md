@@ -83,7 +83,7 @@ Everything about a startup, from its pitch deck and video to its financials to i
 
 ### What Tricorder gathers before the data room is opened
 
-An associate describes her routine: "Before I even open your data room, I already have ten tabs up. I’m checking your traffic, reviews, investors, any co-founder issues, and whether your story matches what’s online." ([associate at a seed fund, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)). Tricorder opens those tabs for her, automatically, the moment a company comes in. Sources and their terms are in [the feasibility research](../reports/20261022.02_research/research_feasibility.md), Part 2.
+An associate describes her routine: "Before I even open your data room, I already have ten tabs up. I’m checking your traffic, reviews, investors, any co-founder issues, and whether your story matches what’s online." ([associate at a seed fund, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)). Tricorder opens those tabs for her, automatically, the moment a company comes in. This matters most at seed. A seed room is thin by design: a deck, a model, a cap table, a few metrics and founder bios. Y Combinator's seed guide calls an executive summary and a deck enough. So the outside world carries much of a seed first pass, and that is why Tricorder pulls signals from the internet ([the data-room research](../reports/20261022.02_research/research_data_room.md), Part 1). Sources and their terms are in [the feasibility research](../reports/20261022.02_research/research_feasibility.md), Part 2.
 
 | What she checks | What Tricorder gathers | Where from | Piece it feeds |
 |---|---|---|---|
@@ -93,7 +93,11 @@ An associate describes her routine: "Before I even open your data room, I alread
 | Co-founder issues | How long the founders have worked together, who left and when, public disputes | Founder bios in the room, founders' GitHub, personal sites, talks and press; never LinkedIn scraping | Team |
 | Whether the story matches what's online | Each claim in the deck checked against the website, press, Hacker News and Product Hunt, with dates | The website, Hacker News through the Algolia API, Product Hunt's API, search | Every piece the claim belongs to |
 
-On Saturday the demo company is invented and has no online footprint, so these show as cached competitor readings and as gaps ("not found online"). The online-presence and founder-profile scans that run this for a real company come after Saturday ([ROADMAP.md](ROADMAP.md)).
+On Saturday, Hollis Voice is invented and has no online footprint, so for it these show as cached competitor readings and as gaps ("not found online"). For a real YC company paired with a synthetic room, part of this runs live on stage: its website, Hacker News, the App Store and SEC filings (see "The demo" below). The full set of tabs, and the online-presence and founder-profile scans, come after Saturday ([ROADMAP.md](ROADMAP.md)).
+
+### The sponsor tools
+
+The hackathon's sponsors offer the data Tricorder reads: Akta for company signals, data and news, Crunchbase for comps and funding, and the Nicrron gateway for model access through one key ([the landscape research](../reports/20261022.02_research/research_landscape.md), Part 2). Each has an adapter that turns its responses into sourced claims. Keys arrive on the day, so each adapter is built and tested this week against its published docs with sample responses, and switches to live on Saturday morning ([ROADMAP.md](ROADMAP.md#sponsor-adapters)). Every scan still works with no sponsor key, from the free sources and this week's cache.
 
 ### The scans
 
@@ -112,9 +116,12 @@ Each scan is one piece of first-pass diligence. Each returns a list of claims, a
 
 The framework entries are written in [FRAMEWORKS.md](FRAMEWORKS.md). The roadmap ([ROADMAP.md](ROADMAP.md)) holds the slices and the run of show.
 
+**The claims workflow.** The deck and the pitch video make the claims. Every other document and the outside world either support each claim, contradict it, or say nothing. Tricorder extracts each claim, normalises it, finds the evidence, compares by script, and labels it supported, contradicted or unsupported. The labels feed the pieces ([diagrams/claims_workflow.md](diagrams/claims_workflow.md); Ken at 2:41 PM: "extract claims from the pitch deck and video, and see if the other docs support"). Saturday runs it for the planted flags in the deck and the video. The roadmap's claim-support slice runs it on every claim.
+
 ### More checks after Saturday
 
 - **Deck against the books.** Every revenue figure in the deck is checked against the P&L for the same period. A deck that shows only part of the company's history is flagged: a chart that starts after the first revenue month, skips months, or hides a dip. This is the associate's rule: "If revenue in the deck doesn’t match the P&L, or you show only part of your history, everything else becomes questionable." ([associate, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)).
+- **Tricorder's own version of the model.** A Series A lead builds its own model from the raw data. Tricorder does the same: the room's revenue, cost and headcount rows go into one monthly table with burn, cash and runway, each cell linked to its row. Every line of the company's model sits beside Tricorder's rebuilt line, and a difference becomes a disagreement claim. Ken at 2:40 PM: "i was already planning on building our own versions of models".
 - **Contract terms.** Every contract is read for its terms and compared with how it is counted, as under Inputs above ([FRAMEWORKS.md](FRAMEWORKS.md), entry 1.13).
 - **The rest of the accounting mislabels.** Saturday's engine runs the kinds it owns. The other kinds follow ([FRAMEWORKS.md](FRAMEWORKS.md), entry 1.12).
 - **The bank check.** With the founder's consent, the investor connects the company's bank account through a banking connector, Plaid first. Tricorder compares deposits with the revenue rows and outflows with the model's burn. It finds differences in reporting, not fraud. Plaid's Sandbox supports custom test users with configured accounts, so it can be shown on a synthetic bank feed ([Plaid docs](https://plaid.com/docs/sandbox/user-custom/)).
@@ -136,7 +143,8 @@ The readout starts with the best green flags and the worst red flags. Then it br
 - **Every claim links to its source.** A footnote opens the deck page, the spreadsheet cell, the URL with the date it was read, or the video second.
 - **A "could not verify" box.** A script checks that each claim's quote appears in its source. A claim that fails drops out of the memo and is listed here.
 - **Views that suit the stage, and the operator's own order.** The stage decides what exists about a company. So the default order of the pieces suits the stage: at pre-seed the team, the pitch itself and the outside world come first, and at Series A the financial pieces. The operator can reorder the pieces, and their order comes back on their next company at that stage. The verdicts never change with the order.
-- **The checklist and coverage.** Tricorder keeps one diligence checklist ([CHECKLIST.md](CHECKLIST.md)): every document, check and outside item a first pass looks for, with the stage it is expected at, built from published checklists. The readout shows coverage for the company's stage: each item found, checked or missing.
+- **The checklist and coverage.** Tricorder keeps one diligence checklist ([CHECKLIST.md](CHECKLIST.md)): every document, check and outside item a first pass looks for, with the stage it is expected at, built from published checklists, DocSend's two checklist pages among them. The readout shows coverage for the company's stage: each item found, checked or missing.
+- **A reference guide for every data-room document.** Each document a seed or Series A room can hold gets its own guide: what it is, what changes between seed and Series A, what a first pass checks, its green flags, red flags and pitfalls with sources, how Tricorder checks it, and the ask-list line if it is missing ([writers' brief, 2:38 PM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). Research agents are writing them now in `docs/reports/20261022.03_document_guides/`. The checklist and the scans draw on them.
 - **The ask list.** The readout ends with what to request from the founder. A script builds it from three things: every gap, every weak piece that more information could settle, and every checklist item expected at the company's stage that the room lacks. Each line says what to ask for (for example current monthly burn, or the current contract language for the largest customers) and the claim it would settle. The operator can copy it into an email. It is the "get more info" steer in reverse: what Tricorder cannot fetch, it asks the operator to request.
 - **An interactive memo for the partners.** Tricorder helps the operator write the memo for the partners' meeting. Its sections follow [MEMO_TEMPLATE.md](MEMO_TEMPLATE.md), which is built from real published memos and templates. The memo is interactive: it reads top to bottom like a normal memo, and any partner can drill from a line to its claims and from a claim to its sources, so a reader who wants the raw numbers gets them in two clicks. The recommendation and the judgement lines stay the operator's; Tricorder never says invest or pass. A static PDF, with every claim footnoted, stays available.
 - **Each reader steers their own copy, and can run what-ifs.** The operator's memo is the shared version. Each partner can steer a personal copy without changing anyone else's, and can tweak a few assumptions in the financial model (churn, price, hiring pace, whether the pilot counts) to see what the numbers become. Scripts recompute from the company's own files, which never change, and every tweaked number is marked as that reader's scenario beside the company's figure and Tricorder's rebuilt one.
@@ -156,7 +164,22 @@ Saturday's demo may show one steer on stage, if the overview page's card says so
 
 ### The demo
 
-The demo runs on the data-room research's synthetic data room ([what a data room is](../reports/20261022.02_research/what_is_a_data_room.md)). The organisers require it: "Bring a synthetic data room; never upload a real company's confidential data." ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt)). The company is **Hollis Voice**, an invented phone agent for independent veterinary clinics, raising a $9,000,000 Series A. The room has 17 files, eight planted red flags (seven kinds, one of them also stated on video), three clean decoys and three green flags. The counts are the lengths of the `full_room_files`, `flags`, `decoys` and `green_flags` lists in [answer_key.json](../../data_room/answer_key.json). Four of the planted kinds are the organisers' four examples. The other three are customer concentration, gross margin that leaves out delivery costs, and cumulative sign-ups shown as active customers. The generator also writes a clean room with nothing planted and a variant room whose flags someone outside the build picks and seals ([SEALING.md](../../data_room/SEALING.md)). The demo opens on the readout, already waiting because the run finished before the captain walked up: the top green and red flags, then the overview. It drills into the weakest piece (revenue, with its four ARR numbers) and then into one strong piece, showing the sources that agree in both directions ([writers' brief, 12:55 PM and 1:09 PM blocks](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)).
+Ken's direction at 2:49 PM: "we want to have a list of YC companies and we'll pair them with fake data rooms and run live demos on them" ([writers' brief, 2:44 PM to 2:49 PM blocks](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). So the demo shows two kinds of room.
+
+**The controlled rooms.** Every room is synthetic. The organisers require it: "Bring a synthetic data room; never upload a real company's confidential data." ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt)). Two invented companies have rooms whose planted flags are known ([what a data room is](../reports/20261022.02_research/what_is_a_data_room.md)).
+
+- **Hollis Voice**, an invented phone agent for independent veterinary clinics, raising a $9,000,000 Series A. The room has 17 files, eight planted red flags (seven kinds, one of them also stated on video), three clean decoys and three green flags. The counts are the lengths of the `full_room_files`, `flags`, `decoys` and `green_flags` lists in [answer_key.json](../../data_room/answer_key.json). Four of the planted kinds are the organisers' four examples. The other three are customer concentration, gross margin that leaves out delivery costs, and cumulative sign-ups shown as active customers. The generator also writes a clean room with nothing planted and a variant room whose flags someone outside the build picks and seals ([SEALING.md](../../data_room/SEALING.md)).
+- **Brasswick**, an invented seed-stage company. Its room is one thin tier and carries different kinds of planted flags, with its own answer key (`data_room/answer_key_brasswick.json`).
+
+**Real companies, live.** Real YC companies from the spring 2026 batch, from a list Ken approves, are each paired with a fake data room. On stage, the outside-world scan reads one real company's public footprint live: its website, Hacker News, the App Store and SEC filings. The room's documents are invented. One safeguard holds throughout: an invented room under a real company's name must never read as a claim about that company.
+
+- Every page of those rooms carries "Synthetic test document. Not this company's data."
+- The numbers are invented and plausible, anchored only to what the company has published.
+- Planted problems are named test plants in the answer key and on screen, and the demo says so out loud.
+- The company's public facts (name, product, the founders' public bios, any announced round) come only from public pages, saved with links.
+- Ken picks the companies. A research agent proposes candidates with their public footprint, and the rooms are generated only after Ken chooses.
+
+**The order on stage.** The demo opens on Hollis Voice's readout, already waiting because the run finished before the captain walked up: the top green and red flags, then the overview. It drills into the weakest piece (revenue, with its four ARR numbers) and then into one strong piece, showing the sources that agree in both directions ([writers' brief, 12:55 PM and 1:09 PM blocks](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). Then it switches to the approved real company, whose outside-world scan runs live while the judges watch. If a live call fails, the panel shows the copy saved this week, with its date. The roadmap's [demo-script](ROADMAP.md#demo-script) holds the beats.
 
 ## What it is not
 
@@ -173,7 +196,7 @@ The demo runs on the data-room research's synthetic data room ([what a data room
 1. **Every claim links to its source.** A claim without a source a person can open does not reach the readout.
 2. **Green flags and red flags first, then the overview, strong and weak alike, gaps shown as gaps.** The readout opens on the best green flags and the worst red flags, then every piece of the company. A piece that looks strong counts as much as one that looks weak. A number two independent sources agree on is corroborated, and that is what makes a piece look strong. Disagreements and flags are reasons a piece looks weak, one click down. The readout never fills a missing fact with a plausible one.
 3. **A check a script can run beats a model's reading.** The script decides that a number is wrong. The model reads only what a script cannot: a deck's claims page, a contract clause, a tab note, a spoken number, a messy ledger line. The feasibility research found three of the planted flags are pure script checks, and the rest need a model only to read text before a script compares (the feasibility research, Part 3.2).
-4. **No real company's confidential data.** The demo room is synthetic. Public filings and public pages are fine.
+4. **No real company's confidential data.** Every demo room is synthetic. Public filings and public pages are fine. A synthetic room under a real company's name never reads as a claim about that company: it is labelled on every page, and its planted problems are named test plants.
 5. **Nothing is scraped against a site's terms.** LinkedIn's terms prohibit scraping, so the founder scan uses official APIs, consented exports, GitHub, personal sites and public talks. Reddit is read only from pages a person saved by hand. Where a source has an official API, Tricorder uses it.
 6. **Personas and problems, with say, do, pay.** Every persona is a specific problem in that person's own words. Say, do and pay are the three layers of evidence, weakest to strongest. What people pay to solve goes in the value proposition. See [PERSONAS.md](PERSONAS.md).
 7. **The data stays with the investor, and they can see and delete what was pulled.** The mailbox is read for decks only. Nothing is stored beyond the readout and its sources. The investor can see and delete everything Tricorder pulled. [BRAND.md](BRAND.md) gives the sentence that says this on the page.
@@ -190,7 +213,8 @@ The demo runs on the data-room research's synthetic data room ([what a data room
 - **No scan logic before Saturday.** The organisers say Saturday is for building ([writers' brief, 10:18 AM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). This week holds everything else:
   - the research, including [the research gaps](../reports/20261022.02_research/research_gaps.md), all done online
   - the one-page founder brief for the judges
-  - the synthetic data room, its answer key, the clean room and the sealed variant room
+  - the synthetic data rooms (Hollis Voice and Brasswick), their answer keys, the clean room and the sealed variant room
+  - the synthetic rooms for the real YC companies Ken approves, each page labelled "Synthetic test document. Not this company's data.", and each company's outside calls saved as the live demo's fallback
   - the API keys (the feasibility research, Part 5)
   - the prompts and schemas, written as entries in [FRAMEWORKS.md](FRAMEWORKS.md)
   - the diligence checklist and the memo template
@@ -202,7 +226,7 @@ The demo runs on the data-room research's synthetic data room ([what a data room
 
 Tricorder is a product after Saturday, so this section is written for a product. Numbers below are targets to set after the first pilot, not predictions.
 
-**First measure: the hackathon result.** A live demo on the synthetic room, judged by a panel of investors and agent builders. The organisers describe one judge as wanting both good code and a real business (the landscape research, Part 3). The demo shows both: the readout catching planted flags live, and a named buyer who pays.
+**First measure: the hackathon result.** A live demo on the synthetic rooms, with the outside-world scan running live on a real company, judged by a panel of investors and agent builders. The organisers describe one judge as wanting both good code and a real business (the landscape research, Part 3). The demo shows both: the readout catching planted flags live, and a named buyer who pays.
 
 **On the demo room, the score against the answer key.** Planted flags found out of the eight entries, and decoys wrongly flagged out of three (the data-room research, Part 3.6). The seed drop alone should catch five of the eight; the full room the other three (the data-room research, Part 3.4). The same run on the sealed variant room and on the clean room shows the checks are not fitted to our own key.
 
@@ -227,6 +251,10 @@ Tricorder is a product after Saturday, so this section is written for a product.
 - **Competitors validate the idea** (1:36 PM block). Tricorder does the same core job and adds to it.
 - **Personas grouped by stage** (1:38 PM block), ranked by evidence within each stage.
 - **Differences in reporting, never fraud** (1:33 PM block).
+- **The primary personas** (2:35 PM block): the associate at a seed or Series A fund who prepares the memo, and the partner or principal who reads it and decides. Angels, accelerator screeners and corporate VCs are secondary.
+- **A reference guide per data-room document** (2:38 PM block), being written now.
+- **The claims workflow** (2:41 PM block), in [diagrams/claims_workflow.md](diagrams/claims_workflow.md).
+- **Real YC companies paired with fake rooms, run live** (2:44 PM, 2:46 PM and 2:49 PM blocks). Hollis Voice and Brasswick stay as the controlled rooms. Rooms become templates with hidden issues after Saturday (the roadmap's room-templates slice).
 - **The features asked for from 1:12 PM to 2:19 PM**: both kinds of steering, contracts as an input, accounting mislabels, the bank check, the ask list, the checklist and coverage, the interactive memo, per-reader copies and what-ifs, multiplayer (uncertain), deck against the books, and scans that start as soon as their input exists. [ROADMAP.md](ROADMAP.md), "Ken's asks and where they are built", gives the slice for each.
 
 **Open, with the recommendation this brief is written to.** Each is a card on [the plan overview page](../features/20261022.01_hackathon_plan/00_overview.md).
@@ -238,7 +266,7 @@ Tricorder is a product after Saturday, so this section is written for a product.
 5. **Inbox input.** A forwarding address first, then Gmail and Outlook through their official APIs.
 6. **Diligence on the inbound.** The scans start when a deck arrives, unasked.
 7. **Where the data goes.** Mailbox read for decks only, nothing stored beyond the readout and its sources, the investor sees and deletes everything. Alternative: a self-hosted version.
-8. **Demo company.** Hollis Voice. Alternative: Brasswick.
+8. **Demo company.** Hollis Voice leads, with Brasswick as the second controlled room, and one real YC company from the list Ken approves runs live. Alternative: Brasswick leads. The YC list waits on Ken's approval.
 9. **After Saturday.** A product sold to funds; the partner or principal buys, the operator uses. Alternative: skills Ken sells on stclair.ai, or a hackathon entry that ends Saturday.
 10. **Who we price for first.** Funds first, angels next. Alternative: an angel plan from the start, as Startup Due Dil already sells.
 11. **Measures.** Set numeric targets after the first pilot.
