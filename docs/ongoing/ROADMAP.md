@@ -8,7 +8,7 @@
 
 **Level of detail:** One slice per heading, with short lists. A builder can pick up a slice and know what done looks like.
 
-**Sources:** The writers' brief ([00_brief_for_writers.md](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), every "Added" block through 2026-10-22 at 11:20 AM), the organisers' tracks ([problem_tracks.txt](../reports/20261022.01_hackathon_sources/problem_tracks.txt)), the feasibility research ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), the main source for scan order, stack, folder owners and keys), the data room research ([research_data_room.md](../reports/20261022.02_research/research_data_room.md)), the landscape research ([research_landscape.md](../reports/20261022.02_research/research_landscape.md)), the voice-of-the-customer research ([research_voice_of_customer.md](../reports/20261022.02_research/research_voice_of_customer.md)), the guardrails ([guardrails.md](../../.claude/guardrails.md)), the board ([BULLETIN.md](../BULLETIN.md)) and the three critiques ([judge](../features/20261022.01_hackathon_plan/critique_judge.md), [buildability](../features/20261022.01_hackathon_plan/critique_buildability.md), [demo](../features/20261022.01_hackathon_plan/critique_demo.md)), which set the Saturday slices, the demo opening and the beat sheet. The shape is copied from My Text Reminders' [ROADMAP.md](../../../my-text-reminders/docs/ongoing/ROADMAP.md). Hour budgets come from [the schedule](../features/20261022.01_hackathon_plan/00_brief_for_writers.md) and were added up by a script, not by hand.
+**Sources:** The writers' brief ([00_brief_for_writers.md](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), every "Added" block through 2026-10-22 at 11:20 AM, the 12:55 PM block that makes the readout an overview, the 1:09 PM block that puts the best green flags and the worst red flags first, and the 1:12 PM block on steering), the organisers' tracks ([problem_tracks.txt](../reports/20261022.01_hackathon_sources/problem_tracks.txt)), the feasibility research ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), the main source for scan order, stack, folder owners and keys), the data room research ([research_data_room.md](../reports/20261022.02_research/research_data_room.md)), the landscape research ([research_landscape.md](../reports/20261022.02_research/research_landscape.md)), the voice-of-the-customer research ([research_voice_of_customer.md](../reports/20261022.02_research/research_voice_of_customer.md)), the guardrails ([guardrails.md](../../.claude/guardrails.md)), the board ([BULLETIN.md](../BULLETIN.md)) and the three critiques ([judge](../features/20261022.01_hackathon_plan/critique_judge.md), [buildability](../features/20261022.01_hackathon_plan/critique_buildability.md), [demo](../features/20261022.01_hackathon_plan/critique_demo.md)), which set the Saturday slices, the demo opening and the beat sheet. The shape is copied from My Text Reminders' [ROADMAP.md](../../../my-text-reminders/docs/ongoing/ROADMAP.md). Hour budgets come from [the schedule](../features/20261022.01_hackathon_plan/00_brief_for_writers.md) and were added up by a script, not by hand.
 
 ## How to read a slice
 
@@ -23,7 +23,7 @@ A slice is done when its pull request is merged to `main`. On Saturday the capta
 
 ## The one workflow we demo
 
-**Recommended: open on the readout, already waiting, with the ARR ladder first.** The first screen is the readout for Hollis Voice's full room. Its top is the ladder of ARR figures: about $3.0M said on video, $2.5M in the deck, $2.24M in the model, $2.06M in the billing rows, each with its source chip ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), verdict; the exact figures are in `data_room/answer_key.json`, `facts`). This is true on stage: the run finished before the captain walked up. The body follows the [demo-script](#demo-script) beat sheet: the video sentence, the pilot clause, the flags, the gaps. Then one line reads out the runs on the sealed variant room and the clean room ([blind-room](#blind-room)). The forwarded pitch email is the closing "next" line: forward it, and the readout is waiting before you open it. That keeps the "before you even ask" moment from the brief's 11:20 AM block as what comes next. Why this form: judges remember what they saw working, and opening on a forward started by hand spends the first 20 seconds on the one thing on screen that is not real ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), finding 2; [critique_judge.md](../features/20261022.01_hackathon_plan/critique_judge.md), finding 6).
+**Recommended: open on the top green and red flags, already waiting, then the overview, then drill into the weakest piece and one strong piece.** The first screen is the best green flags and the worst red flags for Hollis Voice's full room. Under them is the overview: each piece of the company with its mark (looking strong, looking weak, mixed, or not enough in the room) and its reason in one line ([writers' brief, 12:55 PM and 1:09 PM blocks](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). The first click opens the weakest piece, traction and revenue. There the ARR figures sit side by side: about $3.0M said on video, $2.5M in the deck, $2.24M in the model, $2.06M in the billing rows, each with its source chip ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), verdict; the exact figures are in `data_room/answer_key.json`, `facts`). The next opens one strong piece, the pitch itself, which is also the green flag: the round on slide 13, corroborated by the cap table, each source opening the other. This is true on stage: the run finished before the captain walked up. The body follows the [demo-script](#demo-script) beat sheet: the green and red flags, the overview, the video sentence, the pilot clause, the strong piece, the gaps. Then one line reads out the runs on the sealed variant room and the clean room ([blind-room](#blind-room)). The forwarded pitch email is the closing "next" line: forward it, and the readout is waiting before you open it. That keeps the "before you even ask" moment from the brief's 11:20 AM block as what comes next. Why this form: judges remember what they saw working, and opening on a forward started by hand spends the first 20 seconds on the one thing on screen that is not real ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), finding 2; [critique_judge.md](../features/20261022.01_hackathon_plan/critique_judge.md), finding 6).
 
 **The real forward, only if time allows.** The forwarding address is an after-Saturday slice ([inbox-forward](#inbox-forward)). A small inbox-polling script needs no OAuth review, so it can be built on Saturday, but only if the red-flag engine and the readout are done at the 2:30 cut call. Otherwise the close says it in one line.
 
@@ -203,7 +203,7 @@ The [FRAMEWORKS.md](FRAMEWORKS.md) entries and the hand-written examples that th
 - The prompt that pulls claims out of the deck, and the prompt that pulls claims out of the video transcript with segment ids.
 - The comp selection rules, the "why this is a fair comp" prompt and the comp schema (feasibility 1.2).
 - The signals schema and the "what changed" prompt (feasibility 1.3).
-- The memo ordering prompt: conflicts first, then flags by severity, then the other scans.
+- The memo's piece table, verdict rule and top-flags rule ([FRAMEWORKS.md](FRAMEWORKS.md), "Piece verdicts" and "Top green and red flags"), and the prompt for its connecting sentences.
 - One hand-written example result file per Saturday scan, in the Claim schema, so the readout page can be built from 10:30 before any scan runs.
 - A static mock of the readout layout that Ken can edit (feasibility 1.8).
 - Each structured-output schema sent once this week in a real call, so any refusal shows up before Saturday. On Saturday each request carries one schema.
@@ -286,21 +286,21 @@ The demo script and Saturday's run of show, written for the captain to present: 
 
 **Includes:**
 
-- The beat sheet below. It opens on the readout already waiting, ARR ladder first, and ends the core on the forward as the "next" line.
+- The beat sheet below. It opens on the top green and red flags already waiting, then the overview, drills into the weakest piece (revenue, with its four ARR numbers) and one strong piece (the pitch itself), and ends the core on the forward as the "next" line.
 - Who says what and who drives the laptop.
 - The fallback for each step: which saved file to show if a scan fails on stage.
 - Answers ready for the questions the landscape research expects from this panel: where the data goes, what happens when a scan fails, what is hard to copy ([research_landscape.md](../reports/20261022.02_research/research_landscape.md), Part 3).
 - The run of show below, checked against the day's real schedule once the organisers answer the board row TRI-ask-organisers (who Roundtable is, the build window and more).
 
-**The beat sheet**, from the demo critique, with the variant and clean runs added. Three-minute core, then the extension if the slot is five minutes. The frontend drives. Backend-and-data holds the backup laptop on `demo/frozen/`. Start a run on the sealed variant room in a hidden tab at 0:00. It runs script checks only, so it needs no network.
+**The beat sheet**, from the demo critique, with the variant and clean runs added, and reshaped after Ken's 12:55 PM and 1:09 PM comments to open on the top green and red flags, then the overview. Three-minute core, then the extension if the slot is five minutes. The frontend drives. Backend-and-data holds the backup laptop on `demo/frozen/`. Start a run on the sealed variant room in a hidden tab at 0:00. It runs script checks only, so it needs no network.
 
 | Time | On screen | Ken says | Fallback |
 |---|---|---|---|
-| 0:00 | Readout top: the ARR ladder in large type, each figure with its source chip | "One startup, one month, four ARR numbers. The further from the billing data, the bigger the number." | Backup laptop on the frozen readout. Last resort: a screenshot. |
-| 0:30 | Click "video 0:35": a five-second captioned clip, "about three million" | "On video, three million. In the billing rows, $2.06 million. That's 46% more." | No sound: captions carry it. No video: the transcript line with its timestamp. |
+| 0:00 | The top of the readout. The green flag: the round adds up. The red flags, worst first by the top-flags rule: runway 37 months shown, 19 with all 24 hires; clinics 357 claimed, 212 paying; largest customer under 9% claimed, 21% found; margin 80% against 58.1%; retention 102.6% shown, 87.3% rebuilt, 11 customers dropped (answer_key.json, PF3 to PF7). Below them, the overview: each piece with its mark and its reason in one line. | "Here's a startup the way you'd want a first pass: the best green flags, the worst red flags, then every piece of the company, strong or weak, one line each. Every number is two clicks from its source." | Backup laptop on the frozen readout. Last resort: a screenshot. |
+| 0:30 | Click traction and revenue: the four ARR figures in large type, each with its source chip. Click "video 0:35": a five-second captioned clip, "about three million" | "Revenue reads weak: four ARR numbers. On video, three million. In the billing rows, $2.06 million. That's 46% more." | No sound: captions carry it. No video: the transcript line with its timestamp. |
 | 1:00 | Click the model figure: ARR_Build row 13, "Marlow Veterinary Group (pilot)", then clause 8, "No duty to convert" | "Part of the gap is a six-month pilot counted as a year of revenue. Here's the clause." | Pre-rendered PNGs of the cell and the clause. |
-| 1:30 | Flags list: retention 102.6% shown, 87.3% rebuilt, 11 customers dropped; runway 37 months shown, 19 with all 24 hires; largest customer under 9% claimed, 21% found; margin 80% against 58.1% (answer_key.json, PF3 to PF6) | "Each flag shows their number, our number, and the question to ask the founder on Monday." | Frozen readout. |
-| 2:00 | Gaps panel ("not in the room"), the clean cap table, then the score lines: this room; the sealed variant room, from the hidden tab with its start time; the clean room | "It says what's missing and leaves clean things alone. We planted eight problems and three traps. Today it found X and tripped Y. On a room someone outside the team planted and sealed, started when I began talking, it found X of N. On the same company with nothing planted, it raised Z flags." | Scores from the frozen run and the 4:15 variant and clean runs. Never wait on stage. |
+| 1:30 | Back to the top, click the green flag; the pitch itself opens: slide 13's $9,000,000 at $45,000,000 pre-money for 16.67%, beside the cap table's Series A rows; click the cap table figure and slide 13 opens (answer_key.json, `deck_claims` and DC3) | "The green flag: the round adds up. The deck asks for nine million at forty-five pre, and the cap table computes the same 16.67%. Green flags get the same two clicks as red ones." | Pre-rendered PNGs of slide 13 and the cap table rows. |
+| 2:00 | Back on the overview: market reads "not enough in the room"; the gaps panel ("not in the room"), then the score lines: this room; the sealed variant room, from the hidden tab with its start time; the clean room | "It says what's missing and leaves clean things alone. We planted eight problems and three traps. Today it found X and tripped Y. On a room someone outside the team planted and sealed, started when I began talking, it found X of N. On the same company with nothing planted, it raised Z flags." | Scores from the frozen run and the 4:15 variant and clean runs. Never wait on stage. |
 | 2:30 | Readout header: "every line sourced" | "Next: forward the pitch email, and this is waiting before you open it. The partner pays per seat. If you do first passes, try it on your next deal." | None needed. |
 | 3:00 | Switch from the seed drop to the full room: the three flags that need the second tier light up | "With the first tier alone, five of eight. Add the detail, and the pilot, the churn and the concentration appear." | Skip the beat. |
 | 3:30 | The clean room's readout | "Same company, nothing planted. This is everything it flags." | Skip the beat. |
@@ -430,21 +430,26 @@ The red flags in the financials and metrics: the organisers' first direction, an
 
 ### readout
 
-The first-draft memo assembled from the scans' claims: conflicts first, every sentence sourced. Second in the feasibility research's ranking.
+The top green and red flags, the overview and its drill-downs, assembled from the scans' claims: every piece of the company with a verdict, every sentence sourced. Second in the feasibility research's ranking.
 
 **Waits on:** claim-result. It is built against `sample_out/` until the real scans land at the 1:00 PM integration point.
 
 **Includes:**
 
-- `scans/memo/` reads every `out/<room>/*.json` that exists, runs the quote checker again, and links claims that disagree (same label, unit and period, values apart by more than the tolerance).
-- Orders the readout: conflicts first, then flags by severity, then video, comps and signals.
-- One model pass that writes connecting sentences. Each sentence must cite claim ids; a sentence with none is dropped. This pass is first in the cut order: ordering by script is enough for the demo. On the demo laptop it shows as frozen output.
+- `scans/memo/` reads every `out/<room>/*.json` that exists, runs the quote checker again, and links claims that disagree (same label, unit and period, values apart by more than the tolerance) into `conflicts_with`.
+- Links claims from independent sources that agree (same label, unit and period, values within the tolerance) into `corroborated_by`.
+- Groups the claims into the nine pieces and gives each piece its verdict by the stated script rule ([FRAMEWORKS.md](FRAMEWORKS.md), "Piece verdicts"): looking strong, looking weak, mixed or not enough in the room, with a one-line reason and the counts of corroborating and contradicting sources. Pieces go in a fixed order, strong and weak alike.
+- Picks the best green flags and the worst red flags from the piece verdicts and the flags, by the stated script rule ([FRAMEWORKS.md](FRAMEWORKS.md), "Top green and red flags"), and puts them first in `readout.json`.
+- One model pass that writes connecting sentences. Each sentence must cite claim ids; a sentence with none is dropped. This pass is first in the cut order: the script's top flags, pieces and verdicts are enough for the demo. On the demo laptop it shows as frozen output.
 - A missing scan becomes a gap in the readout, not an error.
 - Writes `out/<room>/readout.json`.
 
 **Done when:**
 
-- The four ARR figures in the data room research's Part 3.4 (the model's $2,240,868, the deck's $2,500,000, the video's spoken figure of about $3,000,000, and the recurring ARR the scan computes) show as one conflict at the top.
+- The four ARR figures in the data room research's Part 3.4 (the model's $2,240,868, the deck's $2,500,000, the video's spoken figure of about $3,000,000, and the recurring ARR the scan computes) show as one conflict group inside traction and revenue, and that piece reads looking weak.
+- On the full room, the pitch itself reads looking strong, with `corroborated_by` linking slide 13 to the cap table's Series A rows (DC3, the clean cap table).
+- Every piece has a verdict, including "not enough in the room" where no number has a second source.
+- On the full room, the green flag is the round (the pitch itself), and the red flags come out in the order the rule gives: runway, clinics, largest customer, gross margin, retention ([FRAMEWORKS.md](FRAMEWORKS.md), "Top green and red flags", worked example).
 - The video-against-deck flag is found here.
 - Deleting one scan's output file leaves a gap in the readout and no crash.
 
@@ -463,9 +468,10 @@ The web page the judges see. The feasibility research calls the readout "the thi
 **Includes:**
 
 - A React page in `readout/` that reads `readout.json` through the server.
-- The ARR ladder at the top in large type, each figure with its source chip. This is the demo's first screen ([The one workflow we demo](#the-one-workflow-we-demo)).
-- Conflicts at the top, then flags by severity, then panels for the video, comps and signals.
-- A footnote on every sentence. It opens the source as an in-page panel: a pre-rendered PNG of the slide or page, a small HTML table with the cited cell highlighted, the clause text, or the video at its second through the media fragment (`#t=35`). URL sources open their saved copy from `cache/`. A click never launches Excel or a PDF viewer: a spreadsheet app opening on a projector is slow, and it shows the associate the room's tidy rows ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), finding 6).
+- The best green flags and the worst red flags at the very top, green first, each line one click from its piece. A green flag gets the same size and the same source links as a red one.
+- The overview under them: one row per piece, in a fixed order, with its mark, its one-line reason and its counts of corroborating and contradicting sources. Strong and weak rows look the same size. This is the demo's first screen ([The one workflow we demo](#the-one-workflow-we-demo)).
+- One click on a piece opens its drill-down: its claims, with each conflict shown side by side. Inside traction and revenue, the four ARR figures sit in large type, each with its source chip. The comps panel sits in comps, the signals panel in market, and the video moments in the pitch itself.
+- A footnote on every sentence. It opens the source as an in-page panel: a pre-rendered PNG of the slide or page, a small HTML table with the cited cell highlighted, the clause text, or the video at its second through the media fragment (`#t=35`). URL sources open their saved copy from `cache/`. A click never launches Excel or a PDF viewer: a spreadsheet app opening on a projector is slow, and it shows the associate the room's tidy rows ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), finding 6). The panel also lists every other source that corroborates or contradicts the claim, each one click away.
 - The video player beside the video claims; clicking a claim jumps to its start.
 - A "could not verify" box, a gaps panel, and the score lines for this room, the sealed variant room and the clean room.
 - A switch between the seed drop and the full room.
@@ -476,6 +482,7 @@ The web page the judges see. The feasibility research calls the readout "the thi
 - The page renders `sample_out/` at 11:00 AM and the real outputs at 1:00 PM.
 - A missing scan shows its gap panel, not a blank page or an error.
 - Every footnote opens its source in the page.
+- One click opens a piece's claims, and one more opens a claim's source with its corroborating and contradicting sources.
 
 **Who:** frontend.
 
@@ -589,6 +596,10 @@ Integration, the score, the freeze and the rehearsal.
 
 **Judgment:** n/a.
 
+### A steer on stage (a card, not yet a slice)
+
+Ken's 1:12 PM and 1:15 PM comments let the operator steer the readout: an instruction on a piece rewrites it, or gets more info for it from new sources, with a visible diff ([steering](#steering)). Steering is an after-Saturday slice. One steer on stage (one piece rewritten from one instruction, such as "treat the pilot as non-recurring") is a candidate for Saturday, and the overview page carries it as a card. It has no owner or hours in the table above. If Ken picks it, the card names which slice gives up time, and the run of show changes then.
+
 ### The demo laptop
 
 From the buildability critique's finding 11 and the demo critique's "What else goes wrong live":
@@ -610,7 +621,7 @@ From the buildability critique's finding 11 and the demo critique's "What else g
 | 11:30 to 12:30 | readout: memo. | readout-page. | pitch-video. | redflag-engine: the deck's claims page by regex, and the seed drop. | |
 | 12:30 to 1:00 | Lunch at desks. | Lunch. | Lunch. | Lunch. | |
 | 1:00 to 1:30 | demo-freeze: merge, first full run on the seed drop. | readout-page on real outputs. | pitch-video. | redflag-engine: the full room. | **2. First end-to-end run.** If the red-flag engine does not find the seed drop's flags, cut the red-flag model readings, and backend-and-data pairs with design-and-finance after the video slice. |
-| 1:30 to 2:00 | readout: finish ordering and conflicts. | readout-page: in-page source panels. | pitch-video. | redflag-engine: the clean room. | |
+| 1:30 to 2:00 | readout: finish the piece verdicts, the top green and red flags, conflicts and corroborations. | readout-page: in-page source panels. | pitch-video. | redflag-engine: the clean room. | |
 | 2:00 to 2:30 | demo-freeze: score script, frozen outputs. | readout-page: source panels and video jump. | pitch-video. | comps. | |
 | 2:30 | Run the full room and the clean room, read the score. | | | | **3. Cut call.** Whatever is not producing claims falls back to saved results or is cut, in the cut order. The real inbox-polling forward is built only if the red-flag engine and the readout are done now, by whoever finishes their slice first. |
 | 2:30 to 3:30 | demo-freeze. | readout-page polish, and the market-signals panel. | redflag-readings. | comps. | |
@@ -624,9 +635,9 @@ From the buildability critique's finding 11 and the demo critique's "What else g
 
 ### Cut order
 
-The feasibility research ranks the scans by demo value: red-flag engine, readout, pitch video, comps, market signals. The cut order is that ranking reversed, with the model passes cut before any scan, because ordering by script is enough for the demo ([critique_buildability.md](../features/20261022.01_hackathon_plan/critique_buildability.md), notes):
+The feasibility research ranks the scans by demo value: red-flag engine, readout, pitch video, comps, market signals. The cut order is that ranking reversed, with the model passes cut before any scan, because the script's top flags, pieces and verdicts are enough for the demo ([critique_buildability.md](../features/20261022.01_hackathon_plan/critique_buildability.md), notes):
 
-1. **The memo's model pass and the red-flag model readings first.** The readout keeps its script ordering. The readings move to after Saturday.
+1. **The memo's model pass and the red-flag model readings first.** The readout keeps its script-set top flags, pieces and verdicts. The readings move to after Saturday.
 2. **Market signals second.** The panel is already static; if it is not built, it is dropped.
 3. **Comps third.** The panel shows the cached comp list without the live ranking, or is dropped.
 4. **Pitch video fourth.** The demo plays the captioned clip and shows this week's saved transcript and claims, which the feasibility research already plans as the fallback.
@@ -646,6 +657,25 @@ A persistent store of readouts, so a readout outlives one laptop.
 **Waits on:** the Saturday slices merged; a host for the product (the guardrails' deploy field is empty until then).
 
 **Includes:** each readout, its sources and the files it read, stored per fund; a delete that removes all of them; a list of everything held for one company. This is the data rule from the brief: nothing is stored beyond the readout and its sources, and the investor can see and delete everything pulled.
+
+**Who:** agent.
+
+**Judgment:** yes.
+
+### steering
+
+The operator steers the readout: a comment or short instruction on a piece makes Tricorder rewrite that piece, or get more info for it from new sources ([writers' brief, 1:12 PM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)).
+
+**Waits on:** readout-store, so a revision outlives the session.
+
+**Includes:** the shape in [ARCHITECTURE.md](ARCHITECTURE.md), "Steering the readout". An instruction box on every piece, for either kind of steer. A rewrite reruns the scans that feed the piece on its inputs, with the instruction passed to their model readings. A request for more info first fetches or opens the new sources it names (the full room instead of the seed drop, another filing, a competitor's pages), under the same data and terms rules as any input, then runs the piece's scans with them; the new claims are marked new. The memo rebuilds the piece and the top green and red flags by the same script rules. The new piece replaces the old one with a visible diff: claims added and dropped, wording changed, and the verdict before and after with the claims that moved it. Every revision is kept.
+
+**Done when:**
+
+- On Hollis Voice, "treat the pilot as non-recurring" on traction and revenue rewrites that piece, and the diff shows what changed.
+- On the Hollis Voice seed drop, "read the full room" on retention adds the claims from the second tier, marked new, and the diff names the claim that moved the verdict.
+- An instruction that asks for a different script number leaves the number as the script computed it, and the revision says so.
+- Every rewritten claim still passes the quote checker.
 
 **Who:** agent.
 

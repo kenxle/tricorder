@@ -57,7 +57,7 @@ The order is R1's: highest layer first, then the persona with more rows. R1's ev
 - A home-built tool is a second job to maintain.
 - The commercial tools R2 found are quote-only enterprise contracts, and V7 Go's own page claims memos in 2 to 4 hours, not minutes. None of the 24 tools R2 checked shows market signals, comps and red flags together ([landscape_counts.py](../reports/20261022.02_research/landscape_counts.py)). The partner in R1 row 25 still clicks into each citation to check it.
 
-**The moment Tricorder solves it.** The partner opens the readout before the second meeting. The first thing on the page is the ARR the company reports in four places, side by side, each linked: the model, the deck and the founder's video disagree, and the pilot counted as ARR is named.
+**The moment Tricorder solves it.** The partner opens the readout before the second meeting. The first screen is the best green flags and the worst red flags. Under them is the overview: each piece of the company marked looking strong or looking weak, with the reason in one line. Revenue reads weak. One click shows why: the ARR the company reports in four places, side by side, each linked. The model, the deck and the founder's video disagree, and the pilot counted as ARR is named. A piece that reads strong shows the sources that agree on its number, so the partner also knows what holds up.
 
 **The proof we can show.** On the demo room: the model's ARR is $2,240,868, the deck says $2,500,000 and the founder says about $3,000,000 on video, while the true recurring figure is $2,060,868 (R4, from [data_room_design_numbers.py](../reports/20261022.02_research/data_room_design_numbers.py)). Tricorder finds the gap, finds the pilot that makes up part of it, and links the pilot agreement's notice clause.
 
@@ -91,7 +91,7 @@ The order is R1's: highest layer first, then the persona with more rows. R1's ev
 
 **Why it failed them.** Each workaround avoids diligence rather than doing it. One angel's co-investors found the cause of her loss: "They discovered two sets of books: a made-up one for investors; the other with the real numbers." ([angel, May 2023](https://techcrunch.com/?p=2539424)). A full outside diligence costs far more than an angel check (a consultant priced one at about 100K, R1 row 41).
 
-**The moment Tricorder solves it.** Before writing the check, the angel forwards the founder's email. The readout comes back with the places the deck and the model disagree and the questions to ask the founder.
+**The moment Tricorder solves it.** Before writing the check, the angel forwards the founder's email. The readout comes back with the best green flags and the worst red flags, then an overview of which pieces look strong and which look weak. Under each weak piece are the places the deck and the model disagree and the questions to ask the founder.
 
 **The proof we can show.** The seed drop, the thin first tier a founder sends before a term sheet, catches five of the eight planted entries on its own (R4, Part 3.4).
 
@@ -123,7 +123,7 @@ The order is R1's: highest layer first, then the persona with more rows. R1's ev
 
 **Why it failed them.** The home-built screener worked in part: staff still read the share it labelled for review (row 61). A screener sorts applications. It does not check whether an applicant's numbers agree with each other.
 
-**The moment Tricorder solves it.** After Saturday. A batch of applications, each with a deck, comes back as a stack of short readouts, sorted so the ones whose numbers disagree are on top.
+**The moment Tricorder solves it.** After Saturday. A batch of applications, each with a deck, comes back as a stack of short readouts. Each opens on its best green flags and worst red flags, then its overview of strong and weak pieces, so a screener sees in a minute whose numbers hold together.
 
 **The proof we can show.** None yet beyond the demo room. Early applicants send thin material. A pre-seed partner: "As a VC who invests in Pre-Seed startups, often the data that we get from startups has pretty much nothing." ([pre-seed partner, early 2021, inferred](https://sacra.com/p/elizabeth-yin-hustlefund-interview/)). So the readout's gap list matters as much as its flags.
 
@@ -156,7 +156,7 @@ The order is R1's: highest layer first, then the persona with more rows. R1's ev
 
 **Why it failed them.** It is all by hand, and it does not scale to the volume: "As an associate at a VC fund, I review about 500 decks a year, speak with around 100 founders, go deep on maybe 15, and invest in only a few." ([associate, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)). A messy room cost one team weeks and the deal's momentum (row 5).
 
-**The moment Tricorder solves it.** A deck arrives in the fund's inbox. Before the associate opens it, the ten tabs are already done: the market signals, the comps, and the red flags sit in one readout. The associate starts at the disagreements and walks into the partners' meeting with every claim linked.
+**The moment Tricorder solves it.** A deck arrives in the fund's inbox. Before the associate opens it, the ten tabs are already done: the market signals, the comps, and the red flags sit in one readout. The associate starts at the green and red flags and the overview, opens the weak pieces to see the disagreements behind them, checks the sources that back the strong ones, and walks into the partners' meeting with every claim linked.
 
 **The proof we can show.** On the demo room, the readout catches the deck's count of 357 clinics, which is the last value of a column that never decreases, against 212 paying accounts (R4, PF7). The associate sees both numbers and both files in one row.
 

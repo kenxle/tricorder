@@ -80,6 +80,7 @@ class Claim(BaseModel):
     confidence: Literal["computed", "quoted", "judged", "unverified"]
     sources: list[Source]    # at least one, enforced
     conflicts_with: list[str] = []   # ids of claims that disagree
+    corroborated_by: list[str] = []  # ids of claims from an independent source that agree
 
 class Gap(BaseModel):
     what: str                # "No customer contracts in the room"
@@ -91,6 +92,22 @@ class Panel(BaseModel):
     columns: list[str]       # column names
     rows: list[list[str]]    # one list of strings per row
 
+class Piece(BaseModel):
+    name: Literal["traction_and_revenue", "retention", "burn_and_runway", "unit_economics", "customers", "market", "comps", "team", "the_pitch_itself"]
+    verdict: Literal["looking_strong", "looking_weak", "mixed", "not_enough_in_the_room"]
+    reason: str              # one line, with its number and source
+    reason_claim_ids: list[str]  # the claims the reason line rests on
+    claim_ids: list[str]     # every claim in the piece, for the drill-down
+    corroborating_sources: int   # independent sources behind its corroborated claims
+    contradicting_sources: int   # sources behind its contradicted or flagged claims
+
+class TopFlag(BaseModel):
+    kind: Literal["green", "red"]
+    piece: Literal["traction_and_revenue", "retention", "burn_and_runway", "unit_economics", "customers", "market", "comps", "team", "the_pitch_itself"]
+    rank: int                # 1 is the strongest green or the worst red
+    text: str                # the one headline line, with its numbers and sources
+    claim_ids: list[str]     # the claims behind it, for the click into the piece
+
 class ScanResult(BaseModel):
     scan: str
     room: str
@@ -100,6 +117,8 @@ class ScanResult(BaseModel):
     gaps: list[Gap]
     panels: list[Panel] = [] # optional named tables or lists the page shows beside the claims
 ```
+
+**The readout file** (`out/<room>/readout.json`) holds the top green and red flags first, then the nine Pieces in a fixed order, then every claim and gap. The page draws the headline list from the TopFlags, the overview from the Pieces, and the drill-down from the claims each Piece lists. A Piece's verdict and the choice of top flags come from script rules, never a model ([FRAMEWORKS.md](FRAMEWORKS.md), "Piece verdicts" and "Top green and red flags").
 
 **Confidence is a label, not a number.** `computed`: a script recomputed the number from the source. `quoted`: a model read it and the quote checker found the quote. `judged`: a model's reading with nothing to recompute, such as whether a cohort note hides churn. `unverified`: the quote checker could not find the quote; the readout puts the claim in a "could not verify" box instead of the memo.
 
@@ -116,7 +135,7 @@ class ScanResult(BaseModel):
 | Isolation | No scan imports another scan. A scan never reads another scan's output; only the memo does. |
 | Failure | A missing input or a refused call is a Gap, and the scan still exits 0. A crash exits non-zero. |
 
-**How the readout merges them.** `scans/memo/` reads every `out/<room>/*.json` that exists and runs the quote checker again. It links claims that carry a Value with the same label, unit and period whose numbers differ by more than the tolerance (1 percent, the data room research's deck-against-model tolerance), and writes each link into both claims' `conflicts_with`. It orders the readout: conflict groups first, then flags by severity, then the other scans. One model pass writes connecting sentences, and each must cite claim ids or it is dropped (feasibility 1.8). A scan with no output file becomes a gap in the readout. The result is `out/<room>/readout.json`, which the page renders.
+**How the readout merges them.** `scans/memo/` reads every `out/<room>/*.json` that exists and runs the quote checker again. It links claims that carry a Value with the same label, unit and period whose numbers differ by more than the tolerance (1 percent, the data room research's deck-against-model tolerance), and writes each link into both claims' `conflicts_with`. It also links claims from independent sources whose numbers agree within the same tolerance, and writes each link into both claims' `corroborated_by`. Then it groups the claims into the nine pieces and gives each piece its verdict, by the script rule in [FRAMEWORKS.md](FRAMEWORKS.md) ("Piece verdicts"). Last, it picks the best green flags and the worst red flags from the piece verdicts and the flags, by the script rule in [FRAMEWORKS.md](FRAMEWORKS.md) ("Top green and red flags"). The readout opens on those, then lists the pieces in a fixed order, strong and weak alike, and each piece lists its claims for the drill-down. One model pass writes connecting sentences, and each must cite claim ids or it is dropped (feasibility 1.8). It may shorten a piece's reason line, but never change its verdict. A scan with no output file becomes a gap in the readout. The result is `out/<room>/readout.json`, which the page renders.
 
 ## The data room and the answer key
 
@@ -125,6 +144,37 @@ The generator is the data room research's design (Part 3.6), and lives at `data_
 The answer key, `data_room/answer_key.json`, sits outside both room folders so Tricorder is never pointed at it. It holds the 8 planted entries and the 3 decoys, each with its locations, the true value, the shown value, the check name and the tolerance (data room research, Part 3.6). The check names are the red-flag engine's check names, fixed this week in [FRAMEWORKS.md](FRAMEWORKS.md).
 
 **How the test compares.** `eval/score.py <room>` reads `out/<room>/readout.json` and the answer key. A planted entry counts as found when a readout claim with severity `flag` has the key's check name and cites at least one of the key's files. A decoy counts as wrongly flagged when a `flag` claim cites the decoy's file and location. It prints found of 8 and decoys flagged of 3, and the page shows that score. The data room research expects 5 entries from the seed drop and the other 3 from the full room (Part 3.4). The red-flag engine's own test in `scans/redflags/tests/` runs the same comparison on that scan alone.
+
+## Steering the readout (after Saturday)
+
+The readout is a working surface. The operator can steer a piece with a comment or a short instruction ([writers' brief, 1:12 PM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). A steer is one of two kinds: rewrite the piece from what it already read, or get more info for it by reading new sources.
+
+```python
+class Steer(BaseModel):
+    piece: Literal["traction_and_revenue", "retention", "burn_and_runway", "unit_economics", "customers", "market", "comps", "team", "the_pitch_itself"]
+    kind: Literal["rewrite", "more_info"]
+    instruction: str         # "treat the pilot as non-recurring", "read the full room"
+    at: str                  # ISO time the operator gave it
+
+class PieceRevision(BaseModel):
+    steer: Steer
+    before: Piece
+    after: Piece
+    claims_added: list[str]      # for more_info, the claims from the new sources, marked new on the page
+    sources_added: list[str]     # files or URLs read for the first time
+    claims_dropped: list[str]
+    verdict_moved_by: list[str]  # claim ids that changed the verdict; empty if it did not move
+```
+
+How a steer runs:
+
+1. The server takes the Steer and looks up which entries feed that piece, from the piece table in [FRAMEWORKS.md](FRAMEWORKS.md) ("Piece verdicts").
+2. For a **rewrite**, those scans rerun on that piece's inputs only. The instruction goes to their model readings as one more input. The scripts rerun as they are, so a script's number comes out the same.
+   For **more info**, the server first fetches or opens the new sources the instruction names, under the same rules as any input: official APIs and saved pages, nothing scraped against a site's terms, nothing kept beyond the readout and its sources. Examples: the full room instead of the seed drop, another filing from EDGAR, a competitor's pricing pages. Then those scans run on the piece's inputs plus the new sources. A source that cannot be opened becomes a gap that says why.
+3. The memo rebuilds that piece and the top green and red flags, by the same script rules.
+4. The new Piece replaces the old one. `readout.json` keeps every PieceRevision, and the page shows the diff: claims added (marked new when they come from new sources), claims dropped, wording changed, and the verdict before and after with the claims that moved it.
+
+A steer can change what is read, how claims are grouped and how they are worded. An instruction that asks for a different number from a script is not carried out; the revision says so in one line, and the script's number stays.
 
 ## The inbox input (after Saturday)
 

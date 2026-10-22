@@ -30,13 +30,14 @@
 
 **Proposed line for Saturday:**
 
-> Point it at a startup's data room, get a readout. Red flags first, then comps and market signals, every claim sourced.
+> Point it at a startup, get a readout: the best green flags, the worst red flags, and every number two clicks from its sources.
 
 Why the change:
 
-- Track 2 asks for three things: market signals, comps and red flags ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt)). The new line names all three.
-- Sourcing is Track 1. The posted line spends its first words on it. The new line drops it.
-- Red flags lead because a readout that puts what doesn't add up first is where Tricorder can differ. Five AI tools already claim to link every claim to a source ([landscape](../reports/20261022.02_research/research_landscape.md)), so "every claim sourced" stays but cannot carry the line alone.
+- It says what the readout opens with: the best green flags and the worst red flags. Ken settled that shape at 12:55 PM and 1:09 PM ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 12:55 PM and 1:09 PM blocks).
+- It says "a startup", not "a data room". Tricorder reads everything about a startup, from its pitch deck and video to its financials to its online presence ([PRODUCT_BRIEF.md](PRODUCT_BRIEF.md), "What it is").
+- Sourcing is Track 1. The posted line spends its first words on it. The new line keeps sourcing only as the way a partner checks a number: two clicks. Five AI tools already claim to link every claim to a source ([landscape](../reports/20261022.02_research/research_landscape.md)), so sourcing cannot carry the line alone.
+- Track 2 asks for three things: market signals, comps and red flags ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt)). The line does not name them. They appear in the readout as red flags at the top and as pieces of the overview (market, comps).
 - The first sentence keeps the posted rhythm, so the team card and the demo still sound like the same product.
 
 **Decision for the overview page.** Recommendation: use the proposed line on the demo's first screen and in the founder brief. Leave the posted line on the network card; it does not need editing.
@@ -49,7 +50,7 @@ A tricorder is the handheld scanner from Star Trek, which is where the team-name
 
 The investors in the research talk in short sentences with numbers in them. They name the document. They expect the worst reading until the data says otherwise. A seed fund's guide puts it like this: "When burn or revenue differs between the deck, the model and the accounting records, the gap suggests carelessness or something worse, and either reading damages the deal." ([seed fund guide, Aug 2026](https://www.crv.com/content/what-is-a-data-room)).
 
-The readout speaks like a careful associate writing to a partner. It states the number. It states the source. It states the disagreement. It does not soften a flag, and it does not guess at a reason.
+The readout speaks like a careful associate writing to a partner. It states the number. It states the source. It states which sources agree and which disagree. It does not soften a flag, and it does not guess at a reason.
 
 These rules apply to the readout, the demo screens, the pitch and the posts.
 
@@ -95,16 +96,109 @@ These rules apply to the readout, the demo screens, the pitch and the posts.
 
 ## The readout's voice
 
-Four shapes. Each is filled with the Hollis Voice numbers from the [data room research](../reports/20261022.02_research/research_data_room.md) (Part 3). Hollis Voice is the proposed synthetic demo company: an AI phone agent for vet clinics, raising a Series A. Its numbers come from that research's seeded design script. Differences below were computed with Python from those figures.
+The readout has three levels. First, a short headline list: the best green flags and the worst red flags. Second, the overview: one verdict line per piece of the company. Third, under each piece, the drill-down holds its claims in five shapes: a corroboration, a disagreement, a flag, a gap and a clean check. Hollis Voice is the proposed synthetic demo company: an AI phone agent for vet clinics, raising a Series A. The disagreement, flag, gap and clean-check examples use the numbers from the [data room research](../reports/20261022.02_research/research_data_room.md) (Part 3), which come from that research's seeded design script. Differences in those examples were computed with Python from those figures. The green-flag, red-flag, verdict-line and corroboration examples use the generated room (`data_room/hollis_voice/`) and its answer key (`data_room/answer_key.json`), and name the file and cell for each number.
 
-Order in the readout: disagreements first, then flags, then gaps, then clean checks. This follows the product brief's rule that claims which disagree are the first thing a partner sees.
+Order in the readout: the best green flags and the worst red flags first. Then the overview, one verdict line per piece in a fixed order, strong and weak alike. Inside a piece, the claim behind the reason line comes first, then corroborations, disagreements, flags, gaps and clean checks. This follows the product brief's rule that the operator sees what is great and what is wrong first, then the whole company, and that a strong piece counts as much as a weak one ([PRODUCT_BRIEF.md](PRODUCT_BRIEF.md), principle 2).
 
 **What each shape means:**
 
+- **A green flag** is a headline line for a strong, corroborated positive: a number in a piece that reads looking strong, which independent sources agree on and nothing contradicts.
+- **A red flag** is a headline line for one of the most serious problems: a flagged number, with what was stated and what the check found.
+- **A verdict line** is one piece of the company with its mark (looking strong, looking weak, mixed, or not enough in the room), its reason in one sentence, and how many sources corroborate and contradict it. A script sets the mark ([FRAMEWORKS.md](FRAMEWORKS.md), "Piece verdicts").
+- **A corroboration** is two or more independent documents in the room stating the same value for the same thing. The deck, the company overview, the video and the website repeat each other, so together they count as one source.
 - **A disagreement** is two or more documents in the room stating different values for the same thing. The readout lists them side by side and does not pick a winner.
 - **A flag** is a check that rebuilds a number from the raw files and finds the stated number does not hold.
 - **A gap** is a document or fact the check needs that is not in the room.
 - **A clean check** is a check that ran and found nothing. It is shown, so the partner knows it was done.
+
+### A green flag and a red flag, at the top
+
+The headline list has two parts: green flags first, then red flags. A script picks both ([FRAMEWORKS.md](FRAMEWORKS.md), "Top green and red flags"). A green flag is written with the same care, length and sourcing as a red flag.
+
+Green flag template:
+
+> **Green flag: [what holds up, in under ten words].** [The number], stated in [source] and the same in [source] ([file, place]; [file, place]). Nothing in the room contradicts it.
+
+Filled:
+
+> **Green flag: the round adds up.** $9,000,000 at $45,000,000 pre-money for 16.67%, stated in the deck and computed the same in the cap table (pitch_deck.pdf, slide 13; cap_table.xlsx, Series A rows). Nothing in the room contradicts it.
+
+Red flag template:
+
+> **Red flag: [what is wrong, in under ten words].** [Stated value] stated ([file, place]); [value the check found] found ([file, how it was rebuilt]). [Piece] reads looking weak.
+
+Filled:
+
+> **Red flag: runway leaves out most of the hiring plan.** 37 months stated (financial_model.xlsx, RUNWAY_MONTHS; pitch_deck.pdf, slide 11); 19 months found with all 24 planned hires (hiring_plan.csv, rerun through the Cash_Runway tab). Burn and runway reads looking weak.
+
+The round's figures are in the answer key's `deck_claims` and DC3; the runway and hire figures are PF4 in the answer key and in FRAMEWORKS.md's Hollis Voice table.
+
+Rules for the headline list:
+
+- A green flag is never padded. If no piece reads looking strong, the list says so in one line: "No green flag: nothing in the room is corroborated and uncontradicted."
+- A green flag says the documents agree. It does not say the number is true; documents from the same founder can agree and still be wrong together ([FRAMEWORKS.md](FRAMEWORKS.md), 1.11).
+- A red flag at the top is the same flag as in its piece's drill-down, said in one line. It links to that full flag.
+- Neither list is a call on the deal. The partner decides.
+
+### A piece's verdict line
+
+Template:
+
+> **[Piece]: [looking strong | looking weak | mixed | not enough in the room].** [The reason, in one sentence, with its number and where it came from.] [n] sources corroborate, [n] contradict.
+
+Filled, a strong piece:
+
+> **The pitch itself: looking strong.** The deck asks for $9,000,000 at $45,000,000 pre-money for 16.67% of the company, and the cap table computes the same round (pitch_deck.pdf, slide 13; cap_table.xlsx, Series A rows). 3 sources corroborate (the deck, the cap table, the model), none contradict.
+
+Filled, a weak piece:
+
+> **Traction and revenue: looking weak.** ARR is stated four ways, from about $3,000,000 on the video to $2,060,868 in the subscription rows (pitch video, about 0:35; customer_mrr_by_month.csv). [n] sources corroborate, [n] contradict.
+
+Filled, a piece the room cannot judge:
+
+> **Market: not enough in the room.** The deck's 28,000 clinics and $252,000,000 market are company estimates, and no other file in the room states them (pitch_deck.pdf, slide 8). None corroborate, none contradict.
+
+The round's figures are in the answer key's `deck_claims` and the cap table's Series A rows; the ARR figures are in the answer key's `facts`; the market figures are in `deck_claims` and the answer key's notes. The counts on a weak piece come from Saturday's run, so they stay as [n] here.
+
+Rules for a verdict line:
+
+- The mark comes from the script's rule. The writer never picks it, softens it or adds to it.
+- The reason carries a number and its source, like every other line (rule 1). A mark with no reason is rule 1's bad example.
+- A strong piece gets a line the same length as a weak one. The overview is not a list of problems.
+- "Not enough in the room" says what the room is missing, the way a gap does. It is not a soft "weak".
+- Every piece appears, in the same order, on every readout.
+
+### A corroboration
+
+Template:
+
+> **Corroborated: [metric], [value]**
+>
+> | Source | States | Where |
+> |---|---|---|
+> | [document] | [value] | [file, page or cell] |
+> | [document] | [value] | [file, page or cell] |
+>
+> [n] independent sources agree. [Nothing in the room contradicts it. / Contradicted by: (source, value).]
+
+Filled:
+
+> **Corroborated: Series A pre-money, $45,000,000**
+>
+> | Source | States | Where |
+> |---|---|---|
+> | Deck | $45,000,000 | pitch_deck.pdf, slide 13 |
+> | Cap table | $45,000,000 | cap_table.xlsx, Cap_Table, "Pre-money valuation (USD)" |
+>
+> 2 independent sources agree. Nothing in the room contradicts it.
+
+Rules for a corroboration:
+
+- Name every source that agrees, each with its place, so one click opens it.
+- A repeat is shown and not counted. The company overview repeating the deck is one source, not two.
+- Write "corroborated" or "agree". Never "verified" or "confirmed": documents from the same founder can agree and still be wrong together ([FRAMEWORKS.md](FRAMEWORKS.md), 1.11).
+
+The four shapes below are the drill-down's other lines. They are the reasons a piece reads weak.
 
 ### A disagreement
 
@@ -198,17 +292,39 @@ Filled:
 
 > **Clean: cap table.** Holders were summed and the SAFEs converted at their stated cap. Holders add to 100.00%, and the $2,000,000 of SAFEs at a $12,000,000 post-money cap convert to 16.67%, which matches the table. (cap_table.xlsx)
 
+### A steered section
+
+When the operator steers a piece, the piece opens with one line that says what changed, above the diff. A rewrite:
+
+> **Rewritten on your instruction: "[instruction]".** [What changed, in one sentence.] Verdict: [before] to [after], moved by [claim]. The checks' numbers are unchanged.
+
+A request for more info:
+
+> **More info on your instruction: "[instruction]".** Read [n] new sources ([names]). [n] new claims, marked new. Verdict: [before] to [after], moved by [claim].
+
+If the verdict did not move, the line says "Verdict unchanged." If the instruction asked for a different number from a check, the line says "The check's number stays: [number] ([source])."
+
 ## Words we use and words we avoid
 
 **The metaphor in one line.** A tricorder scans and reads out what it finds; the person holding it decides.
 
-**The product never says "invest" or "pass".** It does not recommend a decision, and it does not use any word that stands in for one ("strong buy", "avoid", "green light"). The readout's job ends at what the documents show and what to ask. The partner makes the call. This is the one absolute in this doc.
+**The product never says "invest" or "pass".** It does not recommend a decision, and it does not use any word that stands in for one ("strong buy", "avoid", "green light"). The readout's job ends at what the documents show and what to ask. The partner makes the call. This is the one absolute in this doc. "Green flag", "red flag", "looking strong" and "looking weak" describe one number or one piece of the company against its own documents. They are never said of the company as a whole or of the deal.
 
 **Use:**
 
 | Word | Means |
 |---|---|
 | readout | What Tricorder returns: the first-pass memo with its sources. |
+| overview | The readout's first screen: every piece of the company with its mark and its reason in one line. |
+| piece | One part of the company the overview marks: traction and revenue, retention, burn and runway, unit economics, customers, market, comps, team, the pitch itself. |
+| looking strong | A piece with at least one corroborated number and nothing contradicted. Not a call on the deal. |
+| looking weak | A piece with a flag, or with contradictions and nothing corroborated. |
+| mixed | A piece with both corroborated and contradicted numbers, and no flag. |
+| not enough in the room | A piece where no number has a second source, either way. |
+| corroborated | A number two independent sources in the room agree on. |
+| drill down | One click from a piece to its claims, or from a claim to its sources. |
+| green flag | A strong, corroborated positive at the top of the readout: a number independent sources agree on, in a piece that reads looking strong. |
+| red flag | One of the most serious problems, at the top of the readout: a flag, said in one line with both numbers. |
 | scan | One piece of first-pass diligence (red flags, comps, signals, video, founders). |
 | flag | A number that does not hold up when a check rebuilds it. |
 | disagreement | Two documents stating different values for the same thing. |
@@ -232,6 +348,7 @@ Filled:
 | insights | Say "flags", "disagreements" or the finding itself. |
 | unlock, supercharge | Cut. Say what changes and by how much. |
 | accurate, reliable, catches everything | Not without a score from a test run. See the claims table. |
+| verified, confirmed (of a number) | Say "corroborated" and name the sources. Documents that agree can still be wrong together. |
 | invest, pass, recommend | The partner decides. |
 | likely, probably, appears to (in the readout) | State what the document shows, or write a gap. |
 
@@ -269,9 +386,9 @@ Written for Ken to say. Plain, with contractions, no absolutes. "I" for what Ken
 
 The spoken pitch fits the three-minute beat sheet in [ROADMAP.md, demo-script](ROADMAP.md#demo-script). The slot is likely three minutes or less, and VC judges already know the problem, so the pitch carries the open sentence, the beats and the close, and nothing else ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), finding 11).
 
-**Open (one sentence), said at 0:00 while the ARR ladder is on screen, before the beat sheet's first line:**
+**Open (one sentence), said at 0:00 while the green and red flags are on screen, before the beat sheet's first line:**
 
-> When a startup sends a data room, an associate spends days rebuilding its numbers before a partner sees anything; Tricorder does that first pass and shows the partner what doesn't add up, with a source on every line.
+> When a startup sends a data room, an associate spends days rebuilding its numbers before a partner sees anything; Tricorder does that first pass and shows the partner the best green flags and the worst red flags, with every number two clicks from its source.
 
 **The problem, in investors' words (two quotes, for the page, not the spoken pitch):** the founder brief carries the first. Both are here for answers to questions.
 
@@ -283,7 +400,7 @@ Say who wrote each one by role: a seed and Series A fund's guide, and a junior V
 
 **The buyer, named, in one line at 2:30:** "The partner pays per seat." Behind it: the partner or principal at a seed to Series A fund pays. The associate uses it every day. Angels and accelerators come later; the research found angels tend to pay to avoid diligence rather than to do it better.
 
-**The one workflow shown:** the readout for Hollis Voice's full room is already on screen, because it ran before Ken walked up. It opens on the ARR ladder: about $3.0M said on video, $2.5M in the deck, $2.24M in the model, $2.06M in the billing rows ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), verdict). Ken clicks the video figure, then the model figure and the pilot clause, each opening in the page. Then the flags, the gaps, and one line for the runs on the sealed variant room and the clean room. The forwarded pitch email is the closing "next" line.
+**The one workflow shown:** the readout for Hollis Voice's full room is already on screen, because it ran before Ken walked up. It opens on the best green flags and the worst red flags. Under them is the overview: each piece of the company with its mark and its reason. Ken clicks the weakest piece, traction and revenue, and the four ARR numbers appear: about $3.0M said on video, $2.5M in the deck, $2.24M in the model, $2.06M in the billing rows ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), verdict). He clicks the video figure, then the model figure and the pilot clause, each opening in the page. Then he clicks one strong piece, the pitch itself: the deck's $9M at $45M pre-money, and the cap table that computes the same round, each source opening the other. Back on the overview: the other weak pieces' reasons, the gaps, and one line for the runs on the sealed variant room and the clean room. The forwarded pitch email is the closing "next" line.
 
 **Where the data goes, only when asked:** say the sentence in "Where the data goes" below, then: "Today's room is synthetic."
 
@@ -295,7 +412,7 @@ Say who wrote each one by role: a seed and Series A fund's guide, and a junior V
 
 - *You built the company, planted the flags and wrote the answer key. What does it find in a data room you didn't make?* Answer with the two runs, not the room we planted ([critique_judge.md](../features/20261022.01_hackathon_plan/critique_judge.md), finding 1). Someone outside the team planted a second room this week and sealed its key until our 3:30 freeze; here's what it found there, with the real numbers. On the same company with nothing planted, here's everything it flagged.
 - *Isn't this a wrapper on a model?* The checks are code that rebuild each number from the raw files. The sealed variant room and the clean run are the test. The model reads contracts and labels where code can't.
-- *Others already link claims to sources.* Yes, several do. Ours leads with what disagrees and writes a gap as a gap instead of filling it.
+- *Others already link claims to sources.* Yes, several do. Ours opens on the best green flags and the worst red flags, then an overview of what looks strong and what looks weak. It shows which sources agree on each number as well as which disagree, and it writes a gap as a gap instead of filling it.
 - *What happens when a scan fails?* The readout says which check didn't run and why. It doesn't leave the section blank.
 
 ## Posting voice
@@ -304,6 +421,8 @@ The hackathon gives $150 for the best social content posted during the day. Ken 
 
 **Show:**
 
+- The top of the readout: the best green flags and the worst red flags.
+- The overview: the company's pieces, strong and weak, each with its reason.
 - The readout catching a planted flag, with both numbers and the source file on screen.
 - A disagreement on screen: the deck, the model and the video side by side.
 - The team at work: hands, screens, whiteboards. Faces only with each person's yes.

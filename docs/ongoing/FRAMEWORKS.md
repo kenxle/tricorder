@@ -17,6 +17,7 @@
 - **A gap is shown as a gap.** When an input is missing, the entry returns "Not in the room" and names what is missing. Nothing fills the hole.
 - **Labels, never probabilities.** Each entry scores itself with a short set of labels, and each label has a written rule. No entry outputs a number that pretends to be a probability. No entry says invest or pass.
 - **Hollis Voice is the worked example.** The fictional company in the synthetic data room carries eight planted entries and three clean decoys. The table under "Where each planted flag is caught" maps each one to the entry that must catch it.
+- **The readout opens on the best green flags and the worst red flags, then the overview.** Two script entries under [The readout](#the-readout-saturday) group every claim into nine pieces of the company, mark each piece looking strong, looking weak, mixed or not enough in the room, and pick the headline flags. Every Saturday entry names the piece its claims feed.
 - **The first four scans are for Saturday.** The red-flag engine, the comp builder, market signals and the pitch video. Business frameworks, founder profiles and online presence come after Saturday.
 
 ## How every entry works
@@ -76,7 +77,7 @@ Paste this `$defs` block into every entry's schema before use. It belongs in `sc
     "Claim": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "scan", "text", "value", "severity", "check", "confidence", "sources", "conflicts_with"],
+      "required": ["id", "scan", "text", "value", "severity", "check", "confidence", "sources", "conflicts_with", "corroborated_by"],
       "properties": {
         "id": {"type": "string", "description": "Unique inside the scan, for example 'redflags-004'."},
         "scan": {"type": "string"},
@@ -86,7 +87,8 @@ Paste this `$defs` block into every entry's schema before use. It belongs in `sc
         "check": {"$ref": "#/$defs/Check"},
         "confidence": {"type": "string", "enum": ["computed", "quoted", "judged", "unverified"]},
         "sources": {"type": "array", "items": {"$ref": "#/$defs/Source"}},
-        "conflicts_with": {"type": "array", "items": {"type": "string"}, "description": "Ids of claims that state a different number for the same label, unit and period."}
+        "conflicts_with": {"type": "array", "items": {"type": "string"}, "description": "Ids of claims that state a different number for the same label, unit and period."},
+        "corroborated_by": {"type": "array", "items": {"type": "string"}, "description": "Ids of claims from an independent source that state the same number, within tolerance, for the same label, unit and period. The memo fills it; a scan leaves it empty."}
       }
     },
     "Gap": {
@@ -98,6 +100,32 @@ Paste this `$defs` block into every entry's schema before use. It belongs in `sc
         "why": {"type": "string", "description": "For example 'file missing', 'tab missing', 'Akta plan returns 403', 'not stated in the file'."},
         "would_need": {"type": "string", "description": "The document or source that would close the gap."}
       }
+    },
+    "Piece": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "verdict", "reason", "reason_claim_ids", "claim_ids", "corroborating_sources", "contradicting_sources"],
+      "properties": {
+        "name": {"type": "string", "enum": ["traction_and_revenue", "retention", "burn_and_runway", "unit_economics", "customers", "market", "comps", "team", "the_pitch_itself"]},
+        "verdict": {"type": "string", "enum": ["looking_strong", "looking_weak", "mixed", "not_enough_in_the_room"]},
+        "reason": {"type": "string", "description": "One line, with its number and source."},
+        "reason_claim_ids": {"type": "array", "items": {"type": "string"}},
+        "claim_ids": {"type": "array", "items": {"type": "string"}, "description": "Every claim in the piece, for the drill-down."},
+        "corroborating_sources": {"type": "integer"},
+        "contradicting_sources": {"type": "integer"}
+      }
+    },
+    "TopFlag": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "piece", "rank", "text", "claim_ids"],
+      "properties": {
+        "kind": {"type": "string", "enum": ["green", "red"]},
+        "piece": {"type": "string", "enum": ["traction_and_revenue", "retention", "burn_and_runway", "unit_economics", "customers", "market", "comps", "team", "the_pitch_itself"]},
+        "rank": {"type": "integer", "description": "1 is the strongest green or the worst red."},
+        "text": {"type": "string"},
+        "claim_ids": {"type": "array", "items": {"type": "string"}}
+      }
     }
   }
 }
@@ -108,6 +136,7 @@ Three conventions the entries rely on:
 - **`Value.label` is a fixed key.** The memo links two claims when their label, unit and period match and their numbers differ by more than the tolerance ([ARCHITECTURE.md](ARCHITECTURE.md), "How the readout merges them"). A fixed list of keys makes that match work across the deck, the model and the video.
 - **Percents are percent points.** 80% is stored as `{"number": 80, "unit": "percent"}`.
 - **Every claim has at least one source.** A missing input is a Gap, not a claim. The quote checker drops any claim with no sources.
+- **`corroborated_by` mirrors `conflicts_with`.** The memo fills both. It links two claims as corroborating when they match on label, unit and period, agree within the tolerance, and come from independent sources (see "Piece verdicts"). A scan leaves both empty.
 
 ### Confidence labels
 
@@ -192,6 +221,7 @@ Thresholds are settings, not facts. The research says so for each one: "Threshol
 | `grr_line` | 80 percent | Jason Lemkin, via RF1 in [research_data_room.md](../reports/20261022.02_research/research_data_room.md): below 80 percent signals churn to fix before scaling |
 | `load_factor_range` | 1.25 to 1.4 times base pay | Kruze, via RF3 in [research_data_room.md](../reports/20261022.02_research/research_data_room.md) |
 | `runway_floor` | 18 months | NFX, via RF3: a raise should give at least 18 to 24 months |
+| `top_green_flags`, `top_red_flags` | Set by the team before Saturday. | How many of each the headline list shows. The 1:09 PM block asks for a short list and gives no number ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). |
 | `gm_context` | Bessemer average 65 to 70 percent, middle half 60 to 80; a16z 80 to 90 for software | RF6 in [research_data_room.md](../reports/20261022.02_research/research_data_room.md). Context for the reader only. Never a test. |
 
 ### Hollis Voice, the numbers the examples use
@@ -357,6 +387,8 @@ This entry feeds the others and is not shown as a flag. Its label tells the read
 - `partial`: at least one row could not be read or its quote was not found. The readout lists the rows.
 - `cannot_check`: no deck and no sidecar.
 
+Its claims feed the overview piece their `value.label` names ([The readout](#the-readout-saturday), "Piece verdicts"); a claim with no value, or the label `other`, feeds **the pitch itself**.
+
 **What it must not do**
 
 - Correct, round or convert a number beyond turning its printed form into a plain number.
@@ -485,6 +517,8 @@ Label rules:
 - `clear`: the recompute matches within tolerance and every counted line passes the line test. On Hollis Voice the entry's label is `flag` because of the pilot, but the onboarding fee and the Brookline Row prepay must not get a flag claim of their own.
 - `cannot_check`: `ARR_Build` is missing. With the seed drop only, the customer file and the pilot agreement are absent. The entry then returns `watch` if a counted line's label names a pilot, and otherwise `cannot_check`. The data-room research counts the full PF1 catch as needing the full room.
 
+Its claims feed the overview's **traction and revenue** piece ([The readout](#the-readout-saturday), "Piece verdicts").
+
 **What it must not do**
 
 - Give a reason the pilot was counted. Nothing in the room states one.
@@ -605,6 +639,8 @@ Propose the label using these rules, and name the rule and claim ids in "label_r
 - `clear`: counts and retention reconcile, GRR is at or above the line, and both net and gross appear.
 - `cannot_check`: the raw customer file is missing. With the seed drop only, the entry still reads the tab's note. If the note drops early leavers, it returns `watch` with a judged claim. The data-room research counts the full PF3 catch as needing the full room.
 
+Its claims feed the overview's **retention** piece ([The readout](#the-readout-saturday), "Piece verdicts").
+
 **What it must not do**
 
 - Say the definition was chosen to hide churn. It reports what the definition includes and excludes.
@@ -718,6 +754,8 @@ Propose the label using these rules, and name the rule and claim ids in "label_r
 - `watch`: no flag, but the rebuilt runway is under `runway_floor`, or the load factor sits outside `load_factor_range`.
 - `clear`: runway and hire count reconcile, runway is at or above the floor, and the load factor is in range.
 - `cannot_check`: the hiring plan or the cash tab is missing.
+
+Its claims feed the overview's **burn and runway** piece ([The readout](#the-readout-saturday), "Piece verdicts"), except a `headcount` claim, which feeds team.
 
 **What it must not do**
 
@@ -837,6 +875,8 @@ Fill "pairs" with one entry per match. Propose the label using these rules, and 
 - `clear`: every pair is within tolerance, on the same definition and period.
 - `cannot_check`: the deck or the model is missing.
 
+Its claims feed the overview piece their `value.label` names ([The readout](#the-readout-saturday), "Piece verdicts"); a claim with no value, or the label `other`, feeds **the pitch itself**.
+
 **What it must not do**
 
 - Average two numbers, or call one of them right. The readout shows both with their sources and the rebuilt figure beside them.
@@ -948,6 +988,8 @@ Propose the label using these rules, and name the rule and claim ids in "label_r
 - `watch`: no flag, but `share_top1` is above `concentration_line`, or the largest customer can leave on `short_notice_days` or less.
 - `clear`: the deck matches, the share is at or below the line, and the largest contract runs at least `min_contract_months` with longer notice.
 - `cannot_check`: the customer file is missing. The data-room research counts PF5 as needing the full room.
+
+Its claims feed the overview's **customers** piece ([The readout](#the-readout-saturday), "Piece verdicts").
 
 **What it must not do**
 
@@ -1062,6 +1104,8 @@ Fill "lines" with one entry per line you classified. Propose the label using the
 - `clear`: the rebuild matches and nothing is unclear.
 - `cannot_check`: neither the ledger nor the P&L is in the room.
 
+Its claims feed the overview's **unit economics** piece ([The readout](#the-readout-saturday), "Piece verdicts").
+
 **What it must not do**
 
 - Use a benchmark as a pass or fail. Benchmarks appear beside the result as context, with their sources.
@@ -1167,6 +1211,8 @@ Propose the label using these rules, and name the rule and claim ids in "label_r
 - `watch`: the deck uses an undefined label and the room holds no active or paying count to check it against.
 - `clear`: every deck count matches an active or paying column.
 - `cannot_check`: the metrics export is missing.
+
+Its claims feed the overview's **traction and revenue** piece ([The readout](#the-readout-saturday), "Piece verdicts").
 
 **What it must not do**
 
@@ -1279,6 +1325,8 @@ Propose the label using these rules, and name the rule and claim ids in "label_r
 - `clear`: every deck figure matches and uses the rebuilt margin.
 - `cannot_check`: spend or customer counts are missing.
 
+Its claims feed the overview's **unit economics** piece ([The readout](#the-readout-saturday), "Piece verdicts").
+
 **What it must not do**
 
 - Estimate spend, churn or a channel split that the room does not hold.
@@ -1387,6 +1435,8 @@ Propose the label using these rules, and name the rule and claim ids in "label_r
 - `clear`: everything reconciles. On Hollis Voice this is the expected label, and a flag counts as a false positive in the answer-key test.
 - `cannot_check`: the cap table is missing.
 
+Its claims feed the overview's **the pitch itself** piece ([The readout](#the-readout-saturday), "Piece verdicts").
+
 **What it must not do**
 
 - Comment on whether the valuation or the dilution is good.
@@ -1487,6 +1537,8 @@ Propose the label using these rules, and name the rule and claim ids in "label_r
 - `flag`: bank statements are in the room and at least one month's deposits do not tie to revenue plus financing within `match_tolerance`.
 - `ask`: every other case. The readout shows the asks as a list the partner can send.
 - There is no `clear` label. A founder-supplied file that ties out can still be forged, so this entry never says the risk is ruled out.
+
+Each walk-through claim feeds the piece of the flag it asks about ([The readout](#the-readout-saturday), "Piece verdicts"). Its gaps sit in the overview's gap list, beside the pieces, because no one piece owns a missing bank statement.
 
 **What it must not do**
 
@@ -1627,6 +1679,8 @@ Per comp:
 
 Overall: `comps_found` with at least one fair comp; `thin` with partial comps only; `none_found` otherwise.
 
+Its claims feed the overview's **comps** piece ([The readout](#the-readout-saturday), "Piece verdicts").
+
 **What it must not do**
 
 - Pick comps from the model's memory. Every candidate comes from a filing the script fetched.
@@ -1740,6 +1794,8 @@ Propose the overall label: "rounds_found" if at least one round is fair, "thin" 
 **How the readout scores it**
 
 Per round: `fair` when sector and business model match on a quoted page and the size is in the band; `partial` when one of the two is unknown or different; `rejected` when both are. Overall: `rounds_found`, `thin` or `none_found`, as in 2.1.
+
+Its claims feed the overview's **comps** piece ([The readout](#the-readout-saturday), "Piece verdicts").
 
 **What it must not do**
 
@@ -1864,6 +1920,8 @@ Fill "signals" with one entry per signal. Propose each signal's label: "rising",
 - `rising`, `flat`, `falling`: two dated readings, with the change beside the label so a partner can judge the size. The flat band is a setting the team picks; the raw change always shows.
 - `one_reading`: one dated reading. No direction is claimed.
 - `no_signal`: no source answered, with the reason (plan, empty response, synthetic company).
+
+Its claims feed the overview's **market** piece ([The readout](#the-readout-saturday), "Piece verdicts").
 
 **What it must not do**
 
@@ -1990,6 +2048,8 @@ Customer wins:
 - `none_found`: news was searched and no item is a customer win.
 - `not_checked`: no news source was run, as for a synthetic company.
 
+Its claims feed the overview's **market** piece ([The readout](#the-readout-saturday), "Piece verdicts").
+
 **What it must not do**
 
 - Guess a price behind "contact sales".
@@ -2109,6 +2169,8 @@ This entry feeds 4.2 and 4.3. Its label tells the readout whether the video side
 - `partial`: some segments were unreadable or some quotes did not match.
 - `cannot_check`: no video, no transcript and no script file.
 
+Its claims feed the overview piece their `value.label` names ([The readout](#the-readout-saturday), "Piece verdicts"); a claim with no value, or the label `other`, feeds **the pitch itself**.
+
 **What it must not do**
 
 - Write a timestamp. Times come from the segments.
@@ -2221,6 +2283,8 @@ The tier is the label for each moment. The tiers are an order of what a partner 
 - `moments_found`: at least one tier 1 or tier 2 moment.
 - `no_disputed_moments`: the video holds no disputed or flagged figure.
 - `cannot_check`: no claims from 4.1.
+
+Its claims feed the overview's **the pitch itself** piece ([The readout](#the-readout-saturday), "Piece verdicts").
 
 **What it must not do**
 
@@ -2336,13 +2400,243 @@ Per metric row, the first rule that fits:
 - `deck_differs_from_model`: the spoken value agrees with one of them, and the deck and the model differ.
 - `not_spoken`: the founder does not state this metric.
 
-Overall: `disagreements_found` if any row has a pattern other than `all_agree` or `not_spoken`; `all_agree` otherwise; `cannot_check` if there is no transcript. Rows with disagreements go to the top of the readout, above everything else.
+Overall: `disagreements_found` if any row has a pattern other than `all_agree` or `not_spoken`; `all_agree` otherwise; `cannot_check` if there is no transcript. Rows with disagreements are reasons the piece their metric belongs to reads weak, and they sit in that piece's drill-down ([The readout](#the-readout-saturday), "Piece verdicts").
+
+Its claims feed the overview piece their `value.label` names ([The readout](#the-readout-saturday), "Piece verdicts"); a claim with no value, or the label `other`, feeds **traction and revenue**.
 
 **What it must not do**
 
 - Call one figure true. The rebuilt figure is labeled "rebuilt from raw data", and the readout shows all of them.
 - Explain why the founder said a different number.
 - Excuse a gap because the founder said "about". The hedge shows beside the value; `spoken_tolerance` decides.
+
+## The readout (Saturday)
+
+The memo turns every scan's claims into the readout. Its first screen is the best green flags and the worst red flags. Under them is the overview: the company in nine pieces, each with a verdict and a reason in one line. One click opens a piece's claims; one more opens a claim's sources, with every source that corroborates or contradicts it ([writers' brief, 12:55 PM and 1:09 PM blocks](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). Two entries set it up, both pure scripts: "Piece verdicts" groups the claims and marks each piece, and "Top green and red flags" picks the headline list from those marks and the flags.
+
+### Piece verdicts
+
+**Inputs**
+
+- Every claim from every Saturday scan, after the quote checker. `unverified` claims are left out.
+- Every gap from every scan.
+- The `conflicts_with` and `corroborated_by` links the memo writes (below).
+- The room's as-of month, from the deck's cover ("Data as of 2026-09-30" on Hollis Voice, slide 1).
+- The settings `match_tolerance` and `spoken_tolerance`.
+
+**The questions it asks**
+
+1. Which piece of the company does each claim belong to?
+2. Which numbers do two independent sources agree on, and which do they contradict?
+3. For each piece: is it looking strong, looking weak, mixed, or is there not enough in the room?
+4. Which claim gives each piece its one-line reason?
+5. How many sources corroborate and contradict each piece?
+
+**Mechanical check**
+
+Check name: `piece_verdicts`.
+
+Step 1, assign each claim to one piece. A claim from Scan 2 goes to comps. A claim from Scan 3 goes to market. Any other claim goes to the piece its `value.label` names in this table. A claim with no value, or with the label `other`, goes to the piece its entry names under "How the readout scores it". A gap goes to its entry's piece.
+
+| Piece | `value.label` keys |
+|---|---|
+| traction and revenue | `arr`, `mrr`, `paying_accounts`, `accounts_created` |
+| retention | `nrr_12m`, `grr_12m`, `cohort_size` |
+| burn and runway | `cash`, `net_burn_monthly`, `runway_months`, `payroll_monthly`, `hires` |
+| unit economics | `gross_margin`, `cost_of_revenue`, `arpa`, `acv`, `cac`, `payback_months`, `ltv`, `price` |
+| customers | `largest_customer_share`, `top3_customer_share`, `contract_term`, `notice_period` |
+| market | `tam`, `sam`, `som`, `signal` |
+| comps | every claim from Scan 2 |
+| team | `headcount` |
+| the pitch itself | `raise_amount`, `pre_money`, `post_money`, `ownership`: the ask and the round, and the money raised before it |
+
+Step 2, link the claims. The memo already writes `conflicts_with` ([ARCHITECTURE.md](ARCHITECTURE.md), "How the readout merges them"). It writes `corroborated_by` by the mirror rule:
+
+```
+before matching:
+    a null period on a claim whose quote says "today", "now", "currently" or "as of"
+    is set to the room's as-of month
+    the label "other" never links, either way
+    for ownership, raise_amount, price, contract_term and notice_period, the entry
+    writes the holder, round, plan or contract first in the claim's text, before a
+    colon ("Series A: ...", "Standard plan: ..."), and two claims link only when
+    that text before the colon is the same
+match(a, b)   = same label, same unit, same period, and the same name before the colon where the label needs one
+agree(a, b)   = | a − b | ÷ | b | ≤ match_tolerance  (spoken_tolerance when either is spoken)
+independent(a, b) = a and b cite different files, and not both from the narrative set:
+    the deck, its claims sidecar, the company overview, the pitch video and its script,
+    the website copy, the product one-pager and the cover note
+    (they repeat one another, so together they count as one source)
+corroborated_by(a) = every b with match(a, b), agree(a, b) and independent(a, b)
+```
+
+Step 3, mark each claim. A claim is **contradicted** if `conflicts_with` is not empty or its severity is "flag". A claim is **corroborated** if `corroborated_by` is not empty and it is not contradicted. Contradiction wins: two of the company's own files agreeing on a number does not cancel a check that rebuilt it differently.
+
+Step 4, mark each piece. Count C, the corroborated claims, and X, the contradicted claims. F is true when any claim in the piece has severity "flag". The first rule that fits sets the verdict:
+
+```
+looking_weak            if F, or (X ≥ 1 and C = 0)
+mixed                   if X ≥ 1 and C ≥ 1
+looking_strong          if C ≥ 1 and X = 0
+not_enough_in_the_room  if C = 0 and X = 0
+```
+
+Step 5, write the reason and the counts.
+
+- **Reason.** Weak: the flag in the piece with the largest relative gap (see "Top green and red flags"), or the first contradicted claim if there is no flag. Mixed: the most-corroborated claim and the first contradicted claim. Strong: the corroborated claim with the most independent sources. Not enough in the room: the first gap's `what`, or "Only one source states [label]". The reason is that claim's `text`. Its ids go in `reason_claim_ids`.
+- **`corroborating_sources`.** The independent sources behind the piece's corroborated claims, with the narrative set counted as one.
+- **`contradicting_sources`.** The distinct files cited by the piece's contradicted claims.
+
+Worked example, Hollis Voice (the generated room in `data_room/hollis_voice/` and `data_room/answer_key.json`). The flags are the answer key's planted entries; the other figures are read from the files named.
+
+| Piece | Verdict | Why, by the rule |
+|---|---|---|
+| traction and revenue | looking weak | Flags PF1, PF2, PF2b and PF7. ARR is stated four ways: about $3,000,000 spoken, $2,500,000 in the deck, $2,240,868 in the model, $2,060,868 from the subscription rows (`facts`). The deck shows 357 clinics against 212 paying accounts. The model's `ARR_TOTAL` and the 2026-09 `arr` in `monthly_metrics.csv` agree at $2,240,868, and that corroboration still loses to the flag. |
+| retention | looking weak | Flag PF3: 102.6% net revenue retention shown, 87.3% rebuilt. |
+| burn and runway | looking weak | Flag PF4: 37 months of runway in the model and the deck, 19 with all 24 planned hires. Cash of $1,800,000 rests on the model alone (Assumptions and Cash_Bridge are one file), and no bank statement is in the room (1.11). |
+| unit economics | looking weak | Flag PF6: 80% gross margin in the deck and the model, 58.1% rebuilt. One corroboration sits inside the weak piece: the Standard plan's $649 a month on deck slide 7, the one-pager and the website is also the list price in the Brookline Row order form. |
+| customers | looking weak | Flag PF5: the deck says no customer is above 9% of ARR; the largest customer is 21.0% of MRR. |
+| market | not enough in the room | The deck's 28,000 clinics and $252,000,000 market are company estimates on slide 8, and no other file states them (answer key, `deck_claims` and `notes`). |
+| comps | not enough in the room, from the room alone | Comp claims come from this week's cached filings, not from the room. Saturday's cached run sets this verdict by the same rule. |
+| team | mixed | Staff today: 17 on deck slide 10 and in the company overview, and 17 in the model (Assumptions `STAFF_NOW`; P&L "Staff at month end", 2026-09). Staff after the planned hires: 41 on deck slide 12, 25 in the model's Hiring_Plan tab ("Staff after these hires"). Corroborated and contradicted, with no flag in the piece. |
+| the pitch itself | looking strong | Four corroborated claims and nothing contradicting. "Series A: raise" $9,000,000 on deck slide 13 (the video at 1:45 says nine million too), in the cap table ("New money (USD)") and in the model (Assumptions `SERIES_A_RAISE`). "Series A: pre-money" $45,000,000 on slide 13 and in the cap table ("Pre-money valuation (USD)"). "Series A: ownership" 16.67% on slide 13 and in the cap table (`Cap_Table!B28`, 0.166667, DC3). "SAFEs: raised" $5,500,000 in the company overview, the cap table ("Total SAFEs") and the model (Cash_Bridge, "Total raised before the Series A"). `corroborating_sources` is 3 (the narrative set, the cap table, the model); `contradicting_sources` is 0. |
+
+**Said plainly: one piece reads looking strong, and it is the round.** The pitch itself reads strong because the deal's terms agree across the deck, the cap table and the model. That is DC3, the clean cap table decoy. No piece about how the business performs reads strong: the eight planted entries cover five of the nine pieces by design, and team reads mixed.
+
+**A proposal for a strong business piece, not made here.** The generator could make team read looking strong without touching any plant:
+
+- Stop writing the Hiring_Plan tab's "Staff after these hires" row (`data_room/generate.py`, the two `ws_hire.write` calls just after `HIRES_COUNTED` is defined). That cell is not one of PF4's answer-key locations. PF4 is still caught through `HIRES_COUNTED`, the P&L payroll row and the runway. Team would then rest on 17 staff today in the narrative set and in the model, with nothing contradicting it.
+- Fix two name slips in `build_bios()` in the same file. The bios' text calls the Head of Customer Success "Anselm" and the Lead Voice Engineer "Lucan", while the bios' own headings and deck slide 10 say Nolan Okafor and Lucas Feldman. They are not in the answer key. A judge who clicks into team would see them.
+
+This doc does not edit the generator; the data-room owner decides.
+
+**Model reading**
+
+None. The verdict, the reason and the counts are a script's. The memo's one model pass may shorten a reason line. It must cite the reason's claim ids, or the script's text stands. It never changes a verdict.
+
+**Output shape**
+
+```json
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["framework", "label", "label_reason", "claims", "gaps", "pieces"],
+  "properties": {
+    "framework": {"type": "string", "const": "piece_verdicts"},
+    "label": {"type": "string", "enum": ["built", "partial"]},
+    "label_reason": {"type": "string"},
+    "claims": {"type": "array", "items": {"$ref": "#/$defs/Claim"}},
+    "gaps": {"type": "array", "items": {"$ref": "#/$defs/Gap"}},
+    "pieces": {"type": "array", "items": {"$ref": "#/$defs/Piece"}}
+  }
+}
+```
+
+`claims` and `gaps` stay empty: this entry writes no new claims. `pieces` holds all nine, in the table's order.
+
+**How the readout scores it**
+
+- `built`: every Saturday scan wrote its output, and every piece has a verdict.
+- `partial`: at least one scan's output is missing. The pieces it feeds are still marked, from what exists, and the missing scan shows as a gap in each of them.
+
+The overview shows all nine pieces in the table's order, strong and weak alike, each with its verdict, its reason and its two counts.
+
+**What it must not do**
+
+- Let a model choose or change a verdict.
+- Give the company an overall score, weight the pieces, or say invest or pass.
+- Count a repeat as corroboration. The deck and the overview saying the same number are one source.
+- Present looking strong as proof. Founder files that agree can still be a consistent fake (1.11).
+- Hide a piece, or sort weak pieces above strong ones.
+
+### Top green and red flags
+
+**Inputs**
+
+- The nine pieces from "Piece verdicts", with their claims and links.
+- Every claim with severity "flag".
+- The settings `top_green_flags` and `top_red_flags`.
+
+**The questions it asks**
+
+1. Which corroborated positives are the strongest?
+2. Which flags are the most serious?
+
+**Mechanical check**
+
+Check name: `top_flags`.
+
+```
+green candidates = corroborated claims (see "Piece verdicts", step 3)
+                   in a piece whose verdict is looking_strong
+green score(c)   = the independent sources behind c, the narrative set counted as one
+keep the best-scoring candidate per piece; rank those pieces by score,
+ties in the piece table's order
+
+red candidates   = claims with severity "flag"
+red gap(c)       = | stated − found | ÷ | found |
+                   stated is c's value; found is the value of the claim in
+                   c.conflicts_with whose confidence is "computed", or else the one
+                   that cites a record (not the narrative set)
+keep the largest-gap flag per piece; rank those pieces by gap
+
+show the first top_green_flags greens, then the first top_red_flags reds
+```
+
+One per piece, so the headline list spans the company instead of repeating one problem. A green flag comes only from a piece that reads looking strong. If there is none, the list says "No green flag" and is not padded.
+
+Worked example, Hollis Voice. Gaps are scripted arithmetic on the figures in the table under "Hollis Voice, the numbers the examples use" and in `answer_key.json`, by the formula above.
+
+- **Green.** One piece reads looking strong, so there is one green flag: the pitch itself. Its best-scoring claim is "Series A: raise" $9,000,000, with three independent sources (the narrative set, the cap table, the model). The headline reads "the round adds up" ([BRAND.md](BRAND.md), "A green flag and a red flag, at the top").
+- **Red**, one flag per weak piece, worst first:
+
+| Rank | Piece | Flag | Stated against found | Gap |
+|---|---|---|---|---|
+| 1 | burn and runway | PF4 runway | 37 months against 19 | 94.7% |
+| 2 | traction and revenue | PF7 clinics | 357 against 212 | 68.4% |
+| 3 | customers | PF5 largest customer | under 9% against 21.0% | 57.1% |
+| 4 | unit economics | PF6 gross margin | 80% against 58.1% | 37.7% |
+| 5 | retention | PF3 net revenue retention | 102.6% against 87.3% | 17.5% |
+
+Inside traction and revenue, PF7's gap is larger than any ARR pair: PF2b is 20.0%, PF2 11.6% and PF1 8.7% (the same pairs as in 4.3). So the headline red flag for that piece is the clinic count. The four ARR figures still lead the piece's drill-down, where the demo goes next.
+
+**Model reading**
+
+None. Each headline line is written from its claim's text in the shapes in [BRAND.md](BRAND.md). The memo's model pass may shorten a line if it cites the claim ids.
+
+**Output shape**
+
+```json
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["framework", "label", "label_reason", "claims", "gaps", "top_flags"],
+  "properties": {
+    "framework": {"type": "string", "const": "top_flags"},
+    "label": {"type": "string", "enum": ["built", "no_green_flag", "no_red_flag", "neither"]},
+    "label_reason": {"type": "string"},
+    "claims": {"type": "array", "items": {"$ref": "#/$defs/Claim"}},
+    "gaps": {"type": "array", "items": {"$ref": "#/$defs/Gap"}},
+    "top_flags": {"type": "array", "items": {"$ref": "#/$defs/TopFlag"}}
+  }
+}
+```
+
+**How the readout scores it**
+
+- `built`: at least one green flag and one red flag.
+- `no_green_flag`: no piece reads looking strong. The list says so in one line.
+- `no_red_flag`: no claim carries a flag. The list says so in one line.
+- `neither`: both lists are empty.
+
+The headline list is the first thing on the page: green flags first, then red. Each line opens its piece.
+
+**What it must not do**
+
+- Take a green flag from a weak, mixed or not-enough piece, or pad the green list.
+- Rank by a model's sense of importance. The ranks are the formula's.
+- Show two flags from one piece in the headline list.
+- Say anything about the company as a whole, or invest or pass.
 
 ## After Saturday
 
@@ -3386,4 +3680,5 @@ Each theme shows how many mentions it rests on and how many are first-hand.
 - **CAC and market size on Hollis Voice.** The research does not fix sales and marketing spend or a count of clinics. Entries 1.9 and 5.6 return "Not in the room" for those until the generator or a cited source supplies them.
 - **`spoken_tolerance` and the signal flat band.** The team sets both before Saturday. The answer-key test keeps `spoken_tolerance` honest: PF2b must still be caught.
 - **Where an entry's label and tables live.** The ScanResult in [ARCHITECTURE.md](ARCHITECTURE.md) has one optional field, `panels`, for them. Each panel has a `name`, a list of `columns` (names) and `rows` (each row a list of strings). The comps table, the signals grid and the video moments go there, so the page has a place for them. This doc carries the label into each claim's `severity` (see "The order of work inside a scan").
+- **Matching needs periods and names.** `conflicts_with` and `corroborated_by` both match on label, unit and period. A deck claim with a null period cannot meet a model cell dated 2026-09, and two holders' `ownership` cannot be told apart by label alone. "Piece verdicts" sets two rules for Saturday: a null period on a "today" claim takes the room's as-of month, and five labels match only on the same name before the colon. After Saturday, a `subject` field on Value would replace the colon rule.
 - **Opus 5.5 request parameters.** The feasibility research notes it may reject `temperature` and forced tool choice, from a source it could not confirm on a public page. Test one call with each schema before Saturday ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), 1.10).

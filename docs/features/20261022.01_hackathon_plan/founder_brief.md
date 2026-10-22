@@ -26,21 +26,21 @@ Angels come later: they pay to avoid diligence, and memo tools already sell at $
 
 ## The one workflow we'll demo
 
-We open on the readout, already waiting, for Hollis Voice, an invented phone agent for vet clinics. It ran on the full data room before we walked up.
+We open on the readout for Hollis Voice, an invented vet-clinic phone agent, run before we walk up.
 
-On screen:
+1. **Green and red flags first:** the round adds up; the runway leaves out most hires.
+2. **The overview:** every piece of the company, strong or weak, with its reason.
+3. **Revenue, the weakest piece:** the four ARR numbers above, each opening its source. A pilot counts as ARR.
+4. **The round, a strong piece:** the deck's $9M at $45M pre-money matches the cap table.
+5. **Rooms we didn't plant:** scores on an outsider's sealed room, and one with nothing planted.
 
-1. **Disagreements first:** the ladder above, each figure opening its slide, cell or video second.
-2. **Flags**, each with the company's number, ours, and the question for the founder: a pilot counted as ARR, hidden cohort churn, customer concentration.
-3. **Comps and market signals**, each with its reason or source.
-4. **Gaps**, marked "not in the room".
-5. **Rooms we didn't plant:** real scores on a room an outsider planted and sealed, and one with nothing planted.
+The operator can steer any piece.
 
 **Next:** forward the pitch email, and the readout is already waiting.
 
 **Where the data goes.** Tricorder reads only the documents you give it or the decks in mail you send it, keeps only the readout and its sources, and lets you see and delete everything it pulled. Today's data room is synthetic.
 
-> Point it at a startup's data room, get a readout. Red flags first, then comps and market signals, every claim sourced.
+> Point it at a startup, get a readout: the best green flags, the worst red flags, and every number two clicks from its sources.
 
 ---
 
@@ -54,5 +54,6 @@ Sources
 - [Voice of the customer research](../../reports/20261022.02_research/research_voice_of_customer.md): the $600M fund and PitchBook seat pay rows.
 - [Data room research](../../reports/20261022.02_research/research_data_room.md): Hollis Voice, its eight planted entries and three decoys.
 - [The organisers' problem tracks](../../reports/20261022.01_hackathon_sources/problem_tracks.txt): the Track 2 problem statement.
-- [Demo critique](critique_demo.md): the ARR ladder at the top and the readout-first opening. [Judge critique](critique_judge.md): the sealed variant room and the clean run.
-- [Answer key](../../../data_room/answer_key.json), `facts`: the four ARR figures.
+- [Demo critique](critique_demo.md): the four ARR numbers and the readout-first opening. [Judge critique](critique_judge.md): the sealed variant room and the clean run.
+- [Answer key](../../../data_room/answer_key.json), `facts`: the four ARR figures; `deck_claims` and DC3: the round; PF4: the runway.
+- [Writers' brief](00_brief_for_writers.md), 12:55 PM, 1:09 PM and 1:12 PM blocks: green and red flags first, the overview, steering.
