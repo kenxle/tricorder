@@ -1571,7 +1571,7 @@ A mislabel is a number filed under a label it does not earn. The organisers name
 | g. Deferred revenue as earned | Revenue, ARR | Cash or an invoice for service not yet delivered | `customer_mrr_by_month.csv` columns `billings`, `mrr`, `one_time_fee`; model `ARR_Build` | `deferred_revenue_vs_earned` | Saturday | traction and revenue |
 | h. One-time fees in recurring metrics | MRR, ARR, "recurring revenue" | A setup or onboarding fee paid once | `customer_mrr_by_month.csv` columns `product_type`, `one_time_fee`; `monthly_metrics.csv` column `mrr`; model `ARR_Build` | `one_time_fees_in_recurring_metrics` | Saturday | traction and revenue |
 
-Saturday means the Hollis Voice room holds the data and a script can run the check. After Saturday means the room has nothing to run it on. Kind c is the only one after Saturday.
+Saturday means the roadmap's Saturday red-flag engine runs it: kinds a and d, through entries 1.2 and 1.7. The Hollis Voice room also holds the data for kinds b, e, f, g and h, but the red-flag engine's Saturday hours are full, so the roadmap's [accounting-mislabels](ROADMAP.md#accounting-mislabels) slice builds them after Saturday. Kind c has nothing in the room to run on.
 
 **Inputs**
 
@@ -1618,7 +1618,7 @@ flag month t if mrr_gap(t) ÷ mrr_subscription(t) > match_tolerance
 - The $15,000 is the Marlow Veterinary Group pilot's monthly fee (customer C0219, `product_type` Pilot, `mrr` 15,000 in 2026-08 and 2026-09). It is the same pilot as PF1 (pilot booked as ARR). The readout shows this claim beside the ARR claim. They have one cause.
 - Missing file: with the customer file absent, read the `Product type` column of `ARR_Build` in the model. If that is missing too, return the gap "Not in the room: a revenue export by product type".
 
-**b. Bookings or billings shown as revenue (Saturday).** Claimed: revenue. Really: contract value signed (bookings) or cash invoiced (billings). Check name: `billings_vs_recognised_revenue`.
+**b. Bookings or billings shown as revenue (after Saturday; the room has the data).** Claimed: revenue. Really: contract value signed (bookings) or cash invoiced (billings). Check name: `billings_vs_recognised_revenue`.
 
 ```
 revenue_file(t)  = SUM(mrr)      over rows where month = t AND product_type = "Subscription"
@@ -1657,7 +1657,7 @@ The model also reads the deck for a figure labelled GMV, volume, gross bookings 
 - Hollis Voice: in 2026-09 the ledger has delivery costs booked outside cost of revenue. Hosting and model inference of $20,541.29 are booked as R&D. Support staff of $20,266.67 are booked as S&M.
 - The deck and the model show a gross margin of 80%. With every delivery cost in, it is 58.1% (PF6, gross margin leaves out delivery costs).
 
-**e. Contractors left out of headcount and burn (Saturday).** Claimed: a staff count and a burn. Really: people paid as contractors whose cost or presence is not in either. Check name: `contractor_spend_vs_headcount_and_burn`.
+**e. Contractors left out of headcount and burn (after Saturday; the room has the data).** Claimed: a staff count and a burn. Really: people paid as contractors whose cost or presence is not in either. Check name: `contractor_spend_vs_headcount_and_burn`.
 
 ```
 contractor_lines    = ledger rows whose description or category contains
@@ -1676,7 +1676,7 @@ The tie-out shows that the P&L matches the ledger. It does not show that the led
 - Missing file: with no ledger, return `cannot_check` and the gap "Not in the room: an expense ledger".
 - The staff-count claim feeds the team piece (value label `headcount`). The spend and burn claims feed burn and runway.
 
-**f. Capitalised costs that keep spend off the P&L (Saturday).** Claimed: a smaller expense and a smaller burn. Really: cash spent and recorded as an asset. Check name: `capitalised_spend_vs_pnl_and_cash`.
+**f. Capitalised costs that keep spend off the P&L (after Saturday; the room has the data).** Claimed: a smaller expense and a smaller burn. Really: cash spent and recorded as an asset. Check name: `capitalised_spend_vs_pnl_and_cash`.
 
 ```
 capitalised(t)  = SUM(amount_usd) of ledger rows whose booked_as or category names an asset:
@@ -1693,7 +1693,7 @@ flag if capitalised(t) ÷ ledger_total(t) > match_tolerance,
 - Result: `clear`, with that gap.
 - The check reports the amount and where it sits. Whether the treatment is allowed is for the investor's accountant, so the claim text does not say it is wrong.
 
-**g. Deferred revenue counted as earned (Saturday).** Claimed: revenue or ARR for the period. Really: cash or an invoice for service not yet delivered. Check name: `deferred_revenue_vs_earned`.
+**g. Deferred revenue counted as earned (after Saturday; the room has the data).** Claimed: revenue or ARR for the period. Really: cash or an invoice for service not yet delivered. Check name: `deferred_revenue_vs_earned`.
 
 ```
 deferred(t) = SUM over customers of
@@ -1710,7 +1710,7 @@ The second test also catches a multi-year contract counted at its full value in 
 - Result: `clear`. No claim for the Brookline prepay (DC2).
 - Missing file: with no balance sheet in the room, the script rebuilds the balance from the `billings` column, as above. The gap is "Not in the room: a balance sheet with a deferred revenue line". With no customer file, return `cannot_check`.
 
-**h. One-time fees counted in recurring metrics (Saturday).** Claimed: MRR, ARR or "recurring revenue". Really: a setup or onboarding fee paid once. Check name: `one_time_fees_in_recurring_metrics`.
+**h. One-time fees counted in recurring metrics (after Saturday; the room has the data).** Claimed: MRR, ARR or "recurring revenue". Really: a setup or onboarding fee paid once. Check name: `one_time_fees_in_recurring_metrics`.
 
 ```
 fees(t) = SUM(one_time_fee) over rows where month = t
