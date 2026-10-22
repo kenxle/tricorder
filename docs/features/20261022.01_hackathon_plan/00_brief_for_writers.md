@@ -444,3 +444,5 @@ Added 2026-10-22 at 3:15 PM, a sentence Ken added to the product brief's Inputs:
 > While compiling the data room, there are quick ways to send messages to the company asking them for information, with guidance on what they should submit.
 
 Settled: a `founder-requests` roadmap slice drafts requests from the ask list, each with guidance from the document guides on what to submit; the operator sends them from their own email.
+
+Added 2026-10-22 at 3:18 PM: Ken removed a "Ken's direction at 2:49 PM: ..." line from the product brief's demo section. Settled: product docs (the brief, FEATURES, PERSONAS, BRAND) state things plainly and carry no provenance of Ken's chat or this brief's time stamps; that history stays here in the writers' brief. ROADMAP's asks table is the exception, because tracing each ask is its job.
