@@ -26,7 +26,8 @@ HOLLIS = DATA_ROOM / "hollis_voice"
 DECK = "01_overview/pitch_deck.pdf"
 MODEL = "02_financials/financial_model.xlsx"
 COPIED = (DECK, "01_overview/claims.json", MODEL, "03_metrics/monthly_metrics.csv",
-          "03_metrics/customer_mrr_by_month.csv")
+          "03_metrics/customer_mrr_by_month.csv", "03_metrics/revenue_by_customer.csv")
+BRASSWICK = DATA_ROOM / "brasswick"
 SLIDE = 3
 TEAL = "#1B998B"
 MONTHS = ["January", "February", "March", "April", "May", "June", "July",
@@ -191,3 +192,73 @@ def make_room(tmp_path: Path, kind: str, leave_out: tuple[str, ...] = ()) -> Pat
         raise ValueError(kind)
     _write_deck(room, page)
     return room
+
+
+# Generic slide replacement, for any room ------------------------------------
+
+def _deck_size(src: Path) -> tuple[float, float]:
+    from pypdf import PdfReader
+    return tuple(float(x) for x in PdfReader(str(src / DECK)).pages[0].mediabox[2:])
+
+
+def text_slide(size, title: str, lines: list[str]) -> bytes:
+    """A plain slide: a title and lines of text, nothing else."""
+    from reportlab.pdfgen import canvas
+
+    sw, sh = size
+    buf = io.BytesIO()
+    c = canvas.Canvas(buf, pagesize=(sw, sh), invariant=1)
+    c.setFont("Helvetica-Bold", 30)
+    c.drawString(48, sh - 54, title)
+    c.setFont("Helvetica", 16)
+    for i, line in enumerate(lines):
+        c.drawString(48, sh - 120 - 28 * i, line)
+    c.showPage()
+    c.save()
+    return buf.getvalue()
+
+
+def chart_slide(size, title: str, months: list[str], values: list[float], caption: str) -> bytes:
+    """A slide with a bar chart of the given values and a caption under it."""
+    from reportlab.lib.utils import ImageReader
+    from reportlab.pdfgen import canvas
+
+    sw, sh = size
+    buf = io.BytesIO()
+    c = canvas.Canvas(buf, pagesize=(sw, sh), invariant=1)
+    c.setFont("Helvetica-Bold", 30)
+    c.drawString(48, sh - 54, title)
+    c.drawImage(ImageReader(_chart_png(months, values, "Revenue ($ thousands)")), 360, 80, width=560, height=315)
+    c.setFont("Helvetica", 11)
+    c.drawString(360, 62, caption)
+    c.showPage()
+    c.save()
+    return buf.getvalue()
+
+
+def replace_slides(tmp_path: Path, src: Path, slides: dict[int, bytes]) -> Path:
+    """A copy of a room whose deck has some slides replaced."""
+    need_deck_tools()
+    from pypdf import PdfReader, PdfWriter
+
+    room = copy_room(tmp_path, leave_out=(DECK,), src=src)
+    old = PdfReader(str(src / DECK))
+    w = PdfWriter()
+    for i, p in enumerate(old.pages, 1):
+        w.add_page(PdfReader(io.BytesIO(slides[i])).pages[0] if i in slides else p)
+    (room / DECK).parent.mkdir(parents=True, exist_ok=True)
+    with open(room / DECK, "wb") as f:
+        w.write(f)
+    return room
+
+
+def total_revenue(src: Path) -> list[tuple[str, float]]:
+    rows = xlsx_sheet(src / MODEL, "P&L")
+    hdr_i = next(i for i, r in enumerate(rows) if r[0] == "Line")
+    hdr, kind = rows[hdr_i], rows[hdr_i + 1]
+    line = next(r for r in rows if r[0] == "Total revenue")
+    return [(hdr[i], line[i]) for i in range(2, len(hdr)) if kind[i] == "Actual"]
+
+
+def month_label(m: str) -> str:
+    return _label(m)

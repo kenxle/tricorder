@@ -25,7 +25,7 @@ Two rows would also join the table "Where each planted flag is caught":
 
 1. For each revenue figure in the deck, what does the P&L say for the same period?
 2. Does a revenue chart's shape follow the P&L, month by month?
-3. Does the chart start at the first month the books hold revenue, or later?
+3. Does the chart start at the first month the books hold revenue, and end at the last actual month?
 4. If later, what do the months left out hold: a climb, a dip, or a flat stretch?
 5. Does the chart skip months, or show quarters where the books hold months?
 
@@ -56,6 +56,10 @@ for each chart:
         flag if left_out holds a peak above the chart's first month, a month-on-month fall,
              or three months in a row within 1 percent of each other
         watch if left_out holds only a climb
+    trailing = actual months after the chart's last month
+    if trailing: "shows part of the history"
+        flag if revenue in them falls below the chart's last month, falls month on month, or goes flat
+        watch if it only keeps climbing
     if the chart is quarterly: watch, or flag if a month inside a quarter fell
     if monthly bars < months in the window: flag (skipped months)
 months the chart shows that the books lack -> gap, for the ask list

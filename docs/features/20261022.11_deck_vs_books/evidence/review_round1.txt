@@ -1,0 +1,33 @@
+## S1: claims.json ARR '$2.2M', no exact form in the deck
+  redflags-001 [info] deck_revenue_vs_pnl: The deck's ARR of $2,200,000 (slide 3) matches the P&L's $2,240,868 (12 x 'Recurring revenue (subscription plus pilot)' for 2026-09), a gap of 1.8%, within the rounding of the printed $2.2M.
+  redflags-002 [info] deck_revenue_vs_pnl: The deck's revenue chart on slide 3 has 21 bars for 2025-01 to 2026-09; their shape matches 'Recurring revenue (subscription plus pilot)' in the P&L (largest difference 0.4 points of the tallest bar).
+  redflags-003 [info] deck_history_vs_metrics: The revenue chart on slide 3 starts at 2025-01, the first revenue month in the books, and runs to 2026-09 with no month left out.
+  redflags-004 [info] deck_revenue_vs_pnl: The deck's plan growth of 3.5% a month (slide 11) matches the model's plan columns, which grow 3.50% to 3.50% a month. It is a plan, not a period the books hold as actuals.
+
+## S2: 'Revenue grows 8.0% a month in the plan.'
+  redflags-001 [flag] deck_revenue_vs_pnl: The deck's ARR of $2,500,000 (slide 3) differs from the P&L's $2,240,868 (12 x 'Recurring revenue (subscription plus pilot)' for 2026-09), a gap of 11.6%.
+  redflags-002 [info] deck_revenue_vs_pnl: The deck's revenue chart on slide 3 has 21 bars for 2025-01 to 2026-09; their shape matches 'Recurring revenue (subscription plus pilot)' in the P&L (largest difference 0.4 points of the tallest bar).
+  redflags-003 [info] deck_history_vs_metrics: The revenue chart on slide 3 starts at 2025-01, the first revenue month in the books, and runs to 2026-09 with no month left out.
+  redflags-004 [flag] deck_revenue_vs_pnl: The deck's plan growth of 8.0% a month (slide 11) differs from the model's plan columns, which grow 3.50% to 3.50% a month. It is a plan, not a period the books hold as actuals.
+
+## S3: Brasswick chart 2025-05 to 2025-09
+  redflags-001 [info] deck_revenue_vs_pnl: The deck's Revenue, last 12 months of $943,340 (slide 4) matches the P&L's $943,340 (sum of 'Total revenue', 2025-10 to 2026-09), a gap of 0.0%.
+  redflags-002 [info] deck_revenue_vs_pnl: The deck's MRR, September 2026 of $84,810 (slide 4) matches the P&L's $84,810 ('Subscription revenue' for 2026-09), a gap of 0.0%.
+  redflags-003 [info] deck_revenue_vs_pnl: The deck's revenue chart on slide 4 has 5 bars for 2025-05 to 2025-09; their shape matches 'Total revenue' in the P&L (largest difference 0.2 points of the tallest bar).
+  redflags-004 [flag] deck_history_vs_metrics: Shows part of the history: the revenue chart on slide 4 ends at 2025-09, 12 months before the last month in the books (2026-09); the months left out after it, 2025-10 to 2026-09, show that revenue fell to $60,400 in 2026-01, 28.2% below the chart's last month ($84,090); revenue fell month on month in 2025-10, 2025-12, 2026-01.
+
+## S4: Brasswick with 2026-03 missing from 'Total revenue'
+  redflags-001 [info] deck_revenue_vs_pnl: The deck's MRR, September 2026 of $84,810 (slide 4) matches the P&L's $84,810 ('Subscription revenue' for 2026-09), a gap of 0.0%.
+  gap: Not in the room: a P&L revenue value the deck's figure on slide 4 needs (blank or missing cell in the P&L: month 2026-03)
+
+## S5: Brasswick 'Revenue grew every month in 2025.'
+  redflags-001 [info] deck_revenue_vs_pnl: The deck's Revenue, last 12 months of $943,340 (slide 4) matches the P&L's $943,340 (sum of 'Total revenue', 2025-10 to 2026-09), a gap of 0.0%.
+  redflags-002 [info] deck_revenue_vs_pnl: The deck's MRR, September 2026 of $84,810 (slide 4) matches the P&L's $84,810 ('Subscription revenue' for 2026-09), a gap of 0.0%.
+  redflags-003 [flag] deck_revenue_vs_pnl: The deck says revenue grew every month in 2025 (slide 4); in the P&L 'Total revenue' fell in 2025-10, 2025-12.
+
+## U1: Hollis Voice deck with no 'Data as of' line
+  redflags-001 [info] deck_revenue_vs_pnl: The deck's ARR of $2,500,000 (slide 3) is not matched to the books: the deck states no 'Data as of' month, so the period is unknown.
+  redflags-002 [info] deck_revenue_vs_pnl: The deck's revenue chart on slide 3 has 21 bars for 2025-01 to 2026-09; their shape matches 'Recurring revenue (subscription plus pilot)' in the P&L (largest difference 0.4 points of the tallest bar).
+  redflags-003 [info] deck_history_vs_metrics: The revenue chart on slide 3 starts at 2025-01, the first revenue month in the books, and runs to 2026-09 with no month left out.
+  redflags-004 [info] deck_revenue_vs_pnl: The deck's plan growth of 3.5% a month (slide 11) matches the model's plan columns, which grow 3.50% to 3.50% a month. It is a plan, not a period the books hold as actuals.
+

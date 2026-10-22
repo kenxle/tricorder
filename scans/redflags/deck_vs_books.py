@@ -110,6 +110,8 @@ class Out:
             sources=sources, conflicts_with=[], corroborated_by=[]))
 
     def gap(self, what, why, would_need):
+        if any(g.what == what and g.why == why for g in self.gaps):
+            return  # the same missing value seen by a second figure
         self.gaps.append(gap(what, why, would_need, PIECE))
 
     def row(self, slide, figure, period, books, basis, gap_text, ok):
@@ -152,6 +154,25 @@ def _usd(v: float) -> str:
 def _source(uri: str, locator: str, quote: str) -> Source:
     return Source(kind="file", uri=uri, locator=locator, start_s=None, end_s=None,
                   quote=quote, retrieved_at=date.today().isoformat())
+
+
+def _flat_stretch(months: list[str], values: list[float]) -> tuple[str, str] | None:
+    """The first run of FLAT_MIN_MONTHS or more months, each within FLAT_TOLERANCE of the one before."""
+    def is_flat(i):
+        return values[i - 1] > 0 and abs(values[i] / values[i - 1] - 1) <= FLAT_TOLERANCE
+
+    i = 1
+    while i < len(values):
+        if is_flat(i):
+            j = i
+            while j + 1 < len(values) and is_flat(j + 1):
+                j += 1
+            if j - i + 2 >= FLAT_MIN_MONTHS:
+                return months[i - 1], months[j]
+            i = j + 1
+        else:
+            i += 1
+    return None
 
 
 def _cell_source(c: Cell) -> Source:
@@ -253,7 +274,9 @@ def deck_figures(room: Path, deck: Path) -> tuple[list[Figure], str | None]:
                     rows.append((r["label"], r["value"], int(r["slide"]),
                                  _source(path.relative_to(room).as_posix(), f"claims[{i}]", f'"value": "{r["value"]}"')))
     for label, printed, slide, row_src in rows:
-        number, _ = parse_money(printed)
+        number, half = parse_money(printed)
+        exact = f"${number:,.0f}"
+        short_only = bool(re.search(r"[KMB]$", printed.strip())) and not any(exact in p for p in pages)
         sources = []
         if 1 <= slide <= len(pages):
             for tok in MONEY.findall(pages[slide - 1]):
@@ -262,7 +285,8 @@ def deck_figures(room: Path, deck: Path) -> tuple[list[Figure], str | None]:
                     sources.append(_source(uri, f"slide {slide}", tok))
                     break
         sources.append(row_src)
-        figures.append(Figure("stated", slide, sources, label=label, printed=printed, number=number))
+        figures.append(Figure("stated", slide, sources, label=label, printed=printed, number=number,
+                              half_step=half if short_only else 0.0))
 
     for i, text in enumerate(pages, 1):
         for line in text.splitlines():
@@ -352,20 +376,7 @@ def describe_hidden(months: list[str], values: list[float], chart_first: float) 
     """
     peak_i = max(range(len(values)), key=lambda i: values[i])
     falls = [months[i] for i in range(1, len(values)) if values[i] < values[i - 1]]
-    def is_flat(i):
-        return values[i - 1] > 0 and abs(values[i] / values[i - 1] - 1) <= FLAT_TOLERANCE
-
-    flat, i = None, 1
-    while i < len(values) and flat is None:
-        if is_flat(i):
-            j = i
-            while j + 1 < len(values) and is_flat(j + 1):
-                j += 1
-            if j - i + 2 >= FLAT_MIN_MONTHS:
-                flat = (months[i - 1], months[j])
-            i = j + 1
-        else:
-            i += 1
+    flat = _flat_stretch(months, values)
     parts = []
     if values[peak_i] > chart_first:
         parts.append(f"hold a peak of {_usd(values[peak_i])} in {months[peak_i]}; revenue then fell "
@@ -381,10 +392,33 @@ def describe_hidden(months: list[str], values: list[float], chart_first: float) 
     return {"text": text, "severity": severity, "peak_month": months[peak_i]}
 
 
+def describe_after(months: list[str], values: list[float], chart_last: float) -> dict:
+    """What the months after a chart's last month hold. Flag when revenue fell below the chart's
+    last month, fell month on month, or went flat. Watch when it only kept climbing."""
+    low_i = min(range(len(values)), key=lambda i: values[i])
+    seq = [chart_last] + list(values)
+    falls = [months[i] for i in range(len(values)) if seq[i + 1] < seq[i]]
+    flat = _flat_stretch(months, values)
+    parts = []
+    if values[low_i] < chart_last:
+        parts.append(f"revenue fell to {_usd(values[low_i])} in {months[low_i]}, "
+                     f"{100 * (1 - values[low_i] / chart_last):.1f}% below the chart's last month ({_usd(chart_last)})")
+    if falls:
+        parts.append(f"revenue fell month on month in {', '.join(falls)}")
+    if flat:
+        parts.append(f"revenue was flat from {flat[0]} to {flat[1]}")
+    if parts:
+        return {"text": "show that " + "; ".join(parts), "severity": "flag", "low_month": months[low_i]}
+    return {"text": f"hold the climb from {_usd(values[0])} to {_usd(values[-1])}, with no fall",
+            "severity": "watch", "low_month": months[low_i]}
+
+
 def _stated(f: Figure, books: Books, as_of: str | None, tol: float, out: Out):
     lines, label = books.lines, f.label or ""
     mm = re.search(r"(\w+) (\d{4})$", label)
     rec, total = lines[books.recurring_label], lines[books.total_label]
+    if (label == "ARR" or "last 12 months" in label) and as_of is None:
+        return _unmatched(f, "the deck states no 'Data as of' month, so the period is unknown", out)
     if label == "ARR" and as_of in rec:
         c = rec[as_of]
         value, cells, period = 12 * c.value, [c], as_of
@@ -409,11 +443,14 @@ def _stated(f: Figure, books: Books, as_of: str | None, tol: float, out: Out):
         v = Value(number=f.number, unit="USD", label="other", period=period)
     else:
         return _unmatched(f, f"no rule maps the label '{label}' to a P&L line", out)
+    if value == 0:
+        return _unmatched(f, f"the P&L holds 0 for it ({basis})", out)
     ok = figure_matches(f.number, value, f.half_step, tol)
     gap_rel = abs(f.number - value) / abs(value)
     out.row(f.slide, f.printed, period, _usd(value), basis, f"{100 * gap_rel:.1f}%", ok)
     out.claim(f"The deck's {label} of {_usd(f.number)} (slide {f.slide}) {'matches' if ok else 'differs from'} "
-              f"the P&L's {_usd(value)} ({basis}), a gap of {100 * gap_rel:.1f}%.",
+              f"the P&L's {_usd(value)} ({basis}), a gap of {100 * gap_rel:.1f}%"
+              + (f", within the rounding of the printed {f.printed}." if ok and gap_rel > tol else "."),
               v, "info" if ok else "flag", CHECK_REVENUE, f.sources + [_cell_source(c) for c in cells])
 
 
@@ -481,6 +518,15 @@ def _history(f: Figure, books: Books, window: list[str], line: dict[str, Cell], 
         for m in dict.fromkeys([first, held["peak_month"], window[0]]):
             if line[m].locator:
                 sources.append(_cell_source(line[m]))
+    trailing = [m for m in books.actual if m > window[-1]]
+    if trailing and window[-1] in line:
+        after = describe_after(trailing, [line[m].value for m in trailing], line[window[-1]].value)
+        parts.append(f"ends at {window[-1]}, {len(trailing)} months before the last month in the books "
+                     f"({books.actual[-1]}); the months left out after it, {trailing[0]} to {trailing[-1]}, {after['text']}")
+        severities.append(after["severity"])
+        for m in dict.fromkeys([window[-1], after["low_month"]]):
+            if line[m].locator:
+                sources.append(_cell_source(line[m]))
     if skipped > 0:
         parts.append(f"shows {len(f.bars)} bars for a {len(window)}-month window, so {skipped} months are skipped")
         severities.append("flag")
@@ -493,15 +539,15 @@ def _history(f: Figure, books: Books, window: list[str], line: dict[str, Cell], 
         severities.append("flag" if dips else "watch")
     if parts:
         sev = "flag" if "flag" in severities else "watch"
-        out.row(f.slide, "chart window", f"{window[0]} to {window[-1]}", f"revenue from {first}",
-                "first chart month against first revenue month", "", False)
+        out.row(f.slide, "chart window", f"{window[0]} to {window[-1]}", f"revenue from {first} to {books.actual[-1]}",
+                "chart window against the months the books hold", "", False)
         out.claim(f"Shows part of the history: the revenue chart on slide {f.slide} " + "; it ".join(parts) + ".",
-                  Value(number=len(left_out) + max(skipped, 0), unit="months", label="other",
-                        period=f"{left_out[0]} to {left_out[-1]}" if left_out else None),
+                  Value(number=len(left_out) + len(trailing), unit="months", label="other",
+                        period=" and ".join(f"{r[0]} to {r[-1]}" for r in (left_out, trailing) if r) or None),
                   sev, CHECK_HISTORY, sources)
         return
-    out.row(f.slide, "chart window", f"{window[0]} to {window[-1]}", f"revenue from {first}",
-            "first chart month against first revenue month", "", True)
+    out.row(f.slide, "chart window", f"{window[0]} to {window[-1]}", f"revenue from {first} to {books.actual[-1]}",
+            "chart window against the months the books hold", "", True)
     if window[0] == first:
         text = (f"The revenue chart on slide {f.slide} starts at {window[0]}, the first revenue month in the books, "
                 f"and runs to {window[-1]} with no month left out.")
@@ -526,7 +572,7 @@ def _plan_growth(f: Figure, books: Books, tol: float, out: Out):
             f"month-on-month growth of '{books.recurring_label}', plan columns", "", ok)
     out.claim(f"The deck's plan growth of {f.pct}% a month (slide {f.slide}) {'matches' if ok else 'differs from'} the "
               f"model's plan columns, which grow {lo:.2f}% to {hi:.2f}% a month. It is a plan, not a period the books hold as actuals.",
-              Value(number=f.pct, unit="percent", label="other", period=period), "info", CHECK_REVENUE,
+              Value(number=f.pct, unit="percent", label="other", period=period), "info" if ok else "flag", CHECK_REVENUE,
               f.sources + [_cell_source(rec[books.plan[0]])])
 
 
@@ -545,7 +591,18 @@ def _grew(f: Figure, books: Books, out: Out):
     out.claim(f"The deck says revenue grew every month in {f.year} (slide {f.slide}); in the P&L '{books.total_label}' "
               + (f"rose in every month from {yr[0]} to {yr[-1]}" if ok else "fell in " + ", ".join(falls)) + tail,
               None, "info" if ok else "flag", CHECK_REVENUE,
-              f.sources + [_cell_source(total[m]) for m in (prev, yr[0]) if m in total])
+              f.sources + [_cell_source(total[m]) for m in _cited_months(prev, yr, falls) if m in total])
+
+
+def _cited_months(prev: str, yr: list[str], falls: list[str]) -> list[str]:
+    """The cells behind a "grew every month" claim: each month that fell and the month before it,
+    or, when none fell, the month before the year and its first month."""
+    if not falls:
+        return [prev, yr[0]]
+    months = []
+    for m in falls:
+        months += [yr[yr.index(m) - 1], m]
+    return list(dict.fromkeys(months))
 
 
 def check(room: Path, ids: Ids) -> tuple[list[Claim], list[Gap], list[Panel]]:
@@ -582,14 +639,20 @@ def check(room: Path, ids: Ids) -> tuple[list[Claim], list[Gap], list[Panel]]:
         return out.claims, out.gaps, _panel(out)
 
     for f in figures:
-        if f.kind == "stated":
-            _stated(f, books, as_of, tol, out)
-        elif f.kind == "chart":
-            _chart(f, books, tol_shape, out)
-        elif f.kind == "plan_growth":
-            _plan_growth(f, books, tol, out)
-        elif f.kind == "grew_every_month":
-            _grew(f, books, out)
+        try:
+            if f.kind == "stated":
+                _stated(f, books, as_of, tol, out)
+            elif f.kind == "chart":
+                _chart(f, books, tol_shape, out)
+            elif f.kind == "plan_growth":
+                _plan_growth(f, books, tol, out)
+            elif f.kind == "grew_every_month":
+                _grew(f, books, out)
+        except (KeyError, ValueError, TypeError, ZeroDivisionError, LocatorError) as err:
+            missing = f"month {err.args[0]}" if isinstance(err, KeyError) and err.args else str(err)
+            out.gap(f"Not in the room: a P&L revenue value the deck's figure on slide {f.slide} needs",
+                    f"blank or missing cell in the P&L: {missing}",
+                    "The monthly P&L with a revenue value in every month")
     return out.claims, out.gaps, _panel(out)
 
 

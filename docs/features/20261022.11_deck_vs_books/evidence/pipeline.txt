@@ -1,4 +1,4 @@
-# TRICORDER_OUT_DIR pointed at a scratch folder, so nothing was written to out/ in the repo.
+# TRICORDER_OUT_DIR pointed at a scratch folder, so nothing was written to out/ in the repo. Run at 2026-10-22T20:39Z, after review round 1.
 $ python3 -m scans.redflags data_room/hollis_voice
 redflags: 10 claims, 4 gaps -> <out>/hollis_voice/redflags.json
 $ python3 -m scans.memo data_room/hollis_voice && python3 -m eval.score data_room/hollis_voice
@@ -21,10 +21,9 @@ deck_vs_books claims in <out>/hollis_voice/readout.json:
   redflags-009 [info] deck_history_vs_metrics: The revenue chart on slide 3 starts at 2025-01, the first revenue month in the books, and runs to 2026-09 with no month left out.
   redflags-010 [info] deck_revenue_vs_pnl: The deck's plan growth of 3.5% a month (slide 11) matches the model's plan columns, which grow 3.50% to 3.50% a month. It is a plan, not a period the books hold as actuals.
   unverified from this check: 0
-  panels: ['accounting mislabels: entry', 'accounting mislabels: checks', 'accounting mislabels: lines', 'deck against the books', 'checklist coverage', 'checklist coverage counts', 'checklist ask lines']
 
 $ python3 -m scans.redflags data_room/brasswick
-redflags: 11 claims, 2 gaps -> <out>/brasswick/redflags.json
+redflags: 11 claims, 4 gaps -> <out>/brasswick/redflags.json
 $ python3 -m scans.memo data_room/brasswick && python3 -m eval.score data_room/brasswick
 found  BF1 Recoveries counted at their gross amount
 found  BF2 The deck's revenue chart starts after a fall
@@ -43,5 +42,4 @@ deck_vs_books claims in <out>/brasswick/readout.json:
   redflags-010 [flag] deck_history_vs_metrics: Shows part of the history: the revenue chart on slide 4 starts at 2026-01, 8 months after the first revenue month in the books (2025-05); the months left out, 2025-05 to 2025-12, hold a peak of $84,090 in 2025-09; revenue then fell 28.2% to $60,400 in the chart's first month; revenue fell month on month in 2025-10, 2025-12.
   redflags-011 [info] deck_revenue_vs_pnl: The deck says revenue grew every month in 2026 (slide 4); in the P&L 'Total revenue' rose in every month from 2026-01 to 2026-09, and changed by -$2,705 from 2025-12 to 2026-01.
   unverified from this check: 0
-  panels: ['accounting mislabels: entry', 'accounting mislabels: checks', 'accounting mislabels: lines', 'deck against the books', 'checklist coverage', 'checklist coverage counts', 'checklist ask lines']
 

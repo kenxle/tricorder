@@ -19,7 +19,8 @@ from schema.check_quotes import check_claim
 from schema.claim import Readout
 from scans.base import Ids
 from scans.redflags import deck_vs_books as dvb
-from scans.redflags.tests.deck_vs_books_fixtures import DATA_ROOM, HOLLIS, MODEL, copy_room, make_room
+from scans.redflags.tests.deck_vs_books_fixtures import (DATA_ROOM, DECK, HOLLIS, MODEL, _deck_size, chart_slide, copy_room,
+                                                         make_room, month_label, replace_slides, text_slide, total_revenue)
 
 BRASSWICK = DATA_ROOM / "brasswick"
 CLEAN = DATA_ROOM / "hollis_voice_clean"
@@ -336,3 +337,127 @@ def test_chart_shape_tolerance_is_a_setting(monkeypatch, tmp_path):
     claims, _ = run(HOLLIS)
     chart = next(c for c in by_check(claims, REVENUE) if "chart on slide 3" in c.text)
     assert chart.severity == "flag"
+
+
+
+# Review round 1 (docs/features/20261022.10_feature_breakdown/review_wave1.md) -----
+
+def test_s1_short_form_figure_uses_half_step_through_check(tmp_path):
+    """S1: a "$2.2M" ARR with no exact form in the deck matches books of $2,240,868 (half step $50,000)."""
+    room = make_room(tmp_path, "no_claims_page")
+    cj = room / "01_overview/claims.json"
+    data = json.loads(cj.read_text())
+    data["claims"][0]["value"] = "$2.2M"
+    cj.write_text(json.dumps(data, indent=2))
+    claims, _ = run(room)
+    arr = next(c for c in by_check(claims, REVENUE) if c.value and c.value.label == "arr")
+    assert arr.value.number == 2_200_000
+    assert arr.severity == "info" and "matches" in arr.text
+    assert "within the rounding of the printed $2.2M" in arr.text
+
+
+def test_s1_exact_form_keeps_one_percent_rule():
+    """The real deck prints $2,500,000 exactly, so no half step applies and it stays a flag."""
+    claims, _ = run_real("hollis_voice")
+    arr = next(c for c in claims if c.value and c.value.label == "arr")
+    assert arr.severity == "flag"
+
+
+def test_s2_plan_growth_mismatch_is_a_flag(tmp_path):
+    room = replace_slides(tmp_path, HOLLIS, {11: text_slide(_deck_size(HOLLIS), "Plan and runway",
+                                                            ["Revenue grows 8.0% a month in the plan."])})
+    claims, _ = run(room)
+    plan = next(c for c in claims if "plan growth" in c.text)
+    assert "differs from" in plan.text
+    assert plan.severity == "flag"
+
+
+def _brasswick_chart_room(tmp_path, start, end):
+    series = [(m, v) for m, v in total_revenue(BRASSWICK) if start <= m <= end]
+    cap = f"Monthly revenue, {month_label(series[0][0])} to {month_label(series[-1][0])}"
+    slide = chart_slide(_deck_size(BRASSWICK), "Traction", [m for m, _ in series], [v for _, v in series], cap)
+    return replace_slides(tmp_path, BRASSWICK, {4: slide})
+
+
+def test_s3_chart_ending_early_is_partial_history(tmp_path):
+    """S3: a chart from 2025-05 to 2025-09 ends at the peak and hides the fall after it."""
+    claims, _ = run(_brasswick_chart_room(tmp_path, "2025-05", "2025-09"))
+    (hist,) = by_check(claims, HISTORY)
+    assert "no month left out" not in hist.text
+    assert hist.text.startswith("Shows part of the history:")
+    assert "ends at 2025-09" in hist.text and "2025-10 to 2026-09" in hist.text
+    assert hist.severity == "flag"
+    assert hist.value.number == 12
+
+
+def test_s3_whole_window_still_info(tmp_path):
+    claims, _ = run(_brasswick_chart_room(tmp_path, "2025-05", "2026-09"))
+    (hist,) = by_check(claims, HISTORY)
+    assert hist.severity == "info" and "no month left out" in hist.text
+
+
+def test_s4_blank_revenue_cell_is_a_gap_not_a_crash(monkeypatch):
+    """S4: one month missing from "Total revenue" must not crash check() or the engine."""
+    real = dvb.load_pnl
+
+    def holed(room):
+        books = real(room)
+        if books is not None:
+            books.lines[books.total_label].pop("2026-03", None)
+        return books
+
+    monkeypatch.setattr(dvb, "load_pnl", holed)
+    claims, gaps = run(BRASSWICK)
+    assert any("2026-03" in g.why for g in gaps)
+    assert all(g.piece == "traction_and_revenue" for g in gaps)
+    assert len({(g.what, g.why) for g in gaps}) == len(gaps)  # one gap per missing value, not one per figure
+    assert claims  # the figures that do not need 2026-03 still run
+    from scans.redflags import scan
+    result = scan.run(BRASSWICK)
+    assert any(c.check.name == HISTORY for c in result.claims) or any("2026-03" in g.why for g in result.gaps)
+
+
+def test_s4_zero_books_value_is_unmatched_not_a_crash(monkeypatch):
+    real = dvb.load_pnl
+
+    def zeroed(room):
+        books = real(room)
+        c = books.lines["Subscription revenue"]["2026-09"]
+        books.lines["Subscription revenue"]["2026-09"] = dvb.Cell(0, c.uri, c.locator, "0")
+        return books
+
+    monkeypatch.setattr(dvb, "load_pnl", zeroed)
+    claims, _ = run(BRASSWICK)
+    mrr = next(c for c in claims if "MRR, September 2026" in c.text)
+    assert "not matched" in mrr.text and mrr.severity == "info"
+
+
+def test_s5_grew_flag_cites_the_months_that_fell(tmp_path):
+    """S5: "grew every month in 2025" on Brasswick fell in 2025-10 and 2025-12; cite those cells and the months before."""
+    room = replace_slides(tmp_path, BRASSWICK, {4: text_slide(_deck_size(BRASSWICK), "Traction",
+                                                              ["Revenue grew every month in 2025."])})
+    claims, _ = run(room)
+    grew = next(c for c in claims if "grew every month in 2025" in c.text)
+    assert grew.severity == "flag" and "2025-10" in grew.text and "2025-12" in grew.text
+    books = dvb.load_pnl(BRASSWICK)
+    total = books.lines[books.total_label]
+    cited = {s.locator for s in grew.sources if s.uri == MODEL}
+    assert {total[m].locator for m in ("2025-09", "2025-10", "2025-11", "2025-12")} <= cited
+
+
+def test_u1_no_as_of_month_gives_the_real_reason(tmp_path):
+    room = replace_slides(tmp_path, HOLLIS, {1: text_slide(_deck_size(HOLLIS), "Hollis Voice", ["Series A"])})
+    claims, _ = run(room)
+    arr = next(c for c in claims if "ARR" in c.text and "not matched" in c.text)
+    assert "no 'Data as of' month" in arr.text
+
+
+def test_u7_history_value_counts_months_left_out_only(tmp_path):
+    """A chart captioned 2026-01 to 2026-09 with only 8 bars: 8 months left out before it, 1 skipped. The value is 8."""
+    series = [(m, v) for m, v in total_revenue(BRASSWICK) if "2026-02" <= m <= "2026-09"]
+    slide = chart_slide(_deck_size(BRASSWICK), "Traction", [m for m, _ in series], [v for _, v in series],
+                        "Monthly revenue, January 2026 to September 2026")
+    claims, _ = run(replace_slides(tmp_path, BRASSWICK, {4: slide}))
+    (hist,) = by_check(claims, HISTORY)
+    assert "1 months are skipped" in hist.text or "1 month is skipped" in hist.text
+    assert hist.value.number == 8

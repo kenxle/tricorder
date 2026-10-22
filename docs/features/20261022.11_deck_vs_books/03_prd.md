@@ -48,7 +48,7 @@ A label the table does not cover is unmatched (DVB-R5).
 :::
 
 ::: callout-req
-**DVB-R3. Compare with the tolerance.** A figure matches when `|deck − books| ÷ |books| ≤ match_tolerance` from `schema.settings.load()` (default 0.01). A figure printed in short form, with no exact form anywhere in the deck, also matches when the difference is within half a unit of its last printed digit ($2.5M is within $50,000). This keeps a rounded figure from reading as a mismatch (FRAMEWORKS 1.5, "What it must not do").
+**DVB-R3. Compare with the tolerance.** A figure matches when `|deck − books| ÷ |books| ≤ match_tolerance` from `schema.settings.load()` (default 0.01). A figure printed in short form, with no exact form anywhere in the deck, also matches when the difference is within half a unit of its last printed digit ($2.5M is within $50,000). This keeps a rounded figure from reading as a mismatch (FRAMEWORKS 1.5, "What it must not do"). The claim then says the match is "within the rounding of the printed" figure. A books value of 0 makes the figure unmatched, never a division by zero.
 :::
 
 ::: callout-req
@@ -67,10 +67,11 @@ A label the table does not cover is unmatched (DVB-R5).
 **DVB-R7. Partial history.** The first revenue month is the first actual month in which "Total revenue" is above zero. The check compares it with the chart's first month. It writes a claim, check name `deck_history_vs_metrics`, that starts "Shows part of the history:" when any of these hold. Its severity is `flag` when the hidden months hold a dip (a month-on-month fall, or a peak above the chart's first month) or a flat stretch (three months in a row within 1 percent of each other), when months are skipped, or when quarters hide a monthly fall. It is `watch` when the hidden months hold only a climb, or quarters hide no fall (Ken's decision, 2026-10-22, relayed by the coordinator):
 
 - the chart starts after the first revenue month. The claim lists the months left out and says what they hold: the peak and the fall from it to the chart's first month when revenue fell, or the climb from the first to the last left-out month when it did not;
+- the chart ends before the last actual month (added in review round 1, finding S3). The claim lists the months left out after it. It is a `flag` when revenue in them falls below the chart's last month, falls month on month, or goes flat, and a `watch` when it only keeps climbing;
 - the chart has fewer monthly bars than its window has months. The claim says how many are skipped;
 - the chart shows quarters where the books hold months. The claim names any month inside a quarter where revenue fell, or says none fell.
 
-Its sources are the chart's caption, the first revenue month's cell, the peak's cell and the chart's first month's cell. Its value is the number of months left out, unit `months`, label `other`. A chart that covers the whole history is an `info` claim under the same check name.
+Its sources are the chart's caption, the first revenue month's cell, the peak's cell and the chart's first month's cell. Its value is the number of months left out before and after the window (skipped bars are not counted), unit `months`, label `other`. A chart that covers the whole history, from the first revenue month to the last actual month, is an `info` claim under the same check name.
 :::
 
 ::: callout-req
