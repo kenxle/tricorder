@@ -116,6 +116,7 @@ The readout starts with the best green flags and the worst red flags. Then it br
 - **A "could not verify" box.** A script checks that each claim's quote appears in its source. A claim that fails drops out of the memo and is listed here.
 - **The operator sets the order.** The pieces show in an order the operator can change, so a pre-seed reader can put the founders and the outside world first and a Series A reader the financial pieces.
 - **The ask list.** The readout ends with what to request from the founder: every gap and every weak piece that more information could settle becomes one line, with what to ask for (for example current monthly burn, or the current contract language for the largest customers) and the claim it would settle. The operator can copy it into an email.
+- **An interactive memo for the partners.** The readout drafts the memo for the partners' meeting, and that memo is interactive too: it reads top to bottom like a normal memo, and any partner can drill from a line to its claims and from a claim to its sources, so a reader who wants the raw numbers gets them in two clicks. A static PDF, with every claim footnoted, stays available.
 
 ### Steering the readout
 

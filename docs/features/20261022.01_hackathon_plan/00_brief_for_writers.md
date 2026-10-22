@@ -284,3 +284,9 @@ Added 2026-10-22 at 1:58 PM, as a comment on who the first-pass memo is for:
 > great, so we are HELPING to write this memo. we need to get a sample memo or many of them, so we have a template for what this memo looks like
 
 Settled: Tricorder helps the operator write the memo for the partners' meeting. A research track collects real investment memos that funds have published (for example the memos Bessemer Venture Partners publishes, and memos other funds or their partners have shared) and memo templates funds and accelerators publish, saves each, and finds the sections they share. From that, `docs/ongoing/MEMO_TEMPLATE.md` defines Tricorder's memo: its sections in order, what each holds, which readout pieces and checklist items fill it, and how the top green and red flags, the gaps and the ask list appear in it. The readout's export is a draft of that memo with every claim still linked to its source.
+
+Added 2026-10-22 at 2:00 PM, as a comment on investors who discard the glossy memo and go to the raw numbers:
+
+> this also means that we can deliver interactive memos that allow the readers to drill down as well
+
+Settled: the memo Tricorder helps write is interactive, not a static document. The partners who read it can drill down from any line to the claims behind it and from any claim to its source and the sources that agree or disagree, the same two clicks the operator has in the readout. It still reads as a normal memo top to bottom; the drill-downs sit behind it. A static PDF export stays available for funds that need one, with every claim footnoted to its source.
