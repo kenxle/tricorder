@@ -46,9 +46,6 @@ Investors have to check a startup before they put money in, and checking is slow
 - **Accurately gathering and checking data is tedious and time consuming.** Sources put it at 12 to 15 hours of senior associate time per investment committee memo ([a memo-tool vendor's claim](https://agentman.ai/blog/ic-memo-that-wrote-itself)), two to three weeks of diligence at seed ([a seed fund](https://underscore.vc/?p=80)), 118 hours of diligence per deal on average ([a survey of VCs](https://www.nber.org/system/files/working_papers/w22587/w22587.pdf)), and in one case weeks just to sift the data ([a junior VC](https://williamleonard.substack.com/p/learnings-from-year-2-in-venture)).
 - **Volume makes it worse.** "As an associate at a VC fund, I review about 500 decks a year, speak with around 100 founders, go deep on maybe 15, and invest in only a few." ([associate, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)).
 
-The market leaves a gap. No tool the landscape research checked shows market signals, comps and red flags in the financials together ([the landscape research](../reports/20261022.02_research/research_landscape.md)). The incumbents describe a company from the outside. The entrants read data rooms and write memos.
-
-The closest competitors validate the idea. Several AI entrants already turn a data room into a memo with every claim linked to its source, and the voice-of-the-customer research's strongest pay signal is a $600M fund using one of them ([vendor case study, paraphrased in the voice-of-the-customer research](https://www.v7labs.com/news/moderne-ventures-accelerates-due-diligence-with-v7-go)). A fund partner built one for his own work, Startup Due Dil, and now sells it to funds and angels ([the landscape research](../reports/20261022.02_research/research_landscape.md), Part 5). Tricorder does not need to be very different from them. It does the same core job and adds to it. What it adds is the top green and red flags, the overview under them, and the corroboration trail. The operator sees first the best green flags and the worst red flags, then which pieces of the company look strong and which look weak. Any number is two clicks from its source and from every source that corroborates or contradicts it. The red-flag engine proves each flag with a script, and its flags feed the overview.
 
 ## The jobs to be done
 
@@ -161,6 +158,10 @@ The readout is a working surface, not a read-only document ([writers' brief, 1:1
 - **A steer changes the reading, not the numbers.** It can change what is read, how claims are grouped and how they are worded. A script's number stays as the script computed it.
 
 Saturday's demo may show one steer on stage, if the overview page's card says so. The roadmap carries steering as an after-Saturday slice ([ROADMAP.md](ROADMAP.md), "steering").
+
+### Where it sits among similar tools
+
+The closest competitors validate the idea. Several AI entrants already turn a data room into a memo with every claim linked to its source, and the voice-of-the-customer research's strongest pay signal is a $600M fund using one of them ([vendor case study, paraphrased in the voice-of-the-customer research](https://www.v7labs.com/news/moderne-ventures-accelerates-due-diligence-with-v7-go)). A fund partner built one for his own work, Startup Due Dil, and now sells it to funds and angels ([the landscape research](../reports/20261022.02_research/research_landscape.md), Part 5). Tricorder does not need to be very different from them. It does the same core job and adds to it. What it adds is the top green and red flags, the overview under them, and the corroboration trail. The operator sees first the best green flags and the worst red flags, then which pieces of the company look strong and which look weak. Any number is two clicks from its source and from every source that corroborates or contradicts it. The red-flag engine proves each flag with a script, and its flags feed the overview.
 
 ### The demo
 
