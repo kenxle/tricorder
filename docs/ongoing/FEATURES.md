@@ -157,11 +157,8 @@ The product brief states each rule in one line. This is the longer reasoning beh
 
 - **Not a sourcing database.** It does not find companies. Affinity, Harmonic, PitchBook and the rest do that (the landscape research, Part 1).
 - **Not a CRM or a fund operations tool.**
-- **Not a chat window over documents.** A prior financial hackathon disqualified basic RAG apps (the landscape research, Part 4). Tricorder's checks are scripts with numbers and tolerances.
 - **Not a replacement for the partner's judgment.** It does the gathering and the checking. The partner decides.
-- **Not a fraud detector.** The voice-of-the-customer research's worst misses were faked books and forged bank statements. Tricorder cannot tell a faked document from a real one. It finds differences in reporting, between files and against the outside world, and shows each one. A fake that agrees across every file gets through. The bank check after Saturday compares the bank with the books, and it too finds differences in reporting, not fraud.
 - **Not confirmatory diligence.** Reference calls, bank statements and legal review come after the term sheet (the voice-of-the-customer research, "What they do instead"). Tricorder may later prepare reference calls, at low priority, but it never makes them.
-- **Not a Track 1 sourcing product.** The founder scan is one scan inside Tricorder, built after Saturday.
 
 **The principles for choosing methods.**
 
