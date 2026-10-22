@@ -1,0 +1,13 @@
+files in room: 17
+named in the index text (whitespace ignored): 15
+not named: ['04_customers/order_form_brookline_row.pdf', '01_overview/claims.json']
+first-tier rows: 11 second-tier rows: 5
+seed drop files: 12
+rows that start with a number then a path: 16
+lines beginning with a lone 1 and a space gap: 8
+'raise' False
+'$9,000,000' False
+'hello@' False
+'@' False
+'phone' False
+'valuation' False

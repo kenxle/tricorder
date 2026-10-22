@@ -13,3 +13,8 @@ Files agents would delete but may not. Ken removes them in one batch.
 - docs/reports/20261022.03_document_guides/raw/web_kjlabuz_substack_com_p_fast.txt; raw/founder-bios/hn_founder_lied_about_credentials_investors_found_out_diligence.json (empty); raw/founder-bios/justice_gov_usao_sdny_pr_founder_artificial_intelligence_start_charged_fraud.txt (empty); raw/ai-and-data-governance-documents/weil_com_media_mailings_2021_q2_ftc_orders_destruction_of_algorithms_created_from_unlawfully_acquire.txt and weil_ftc_orders_destruction_of_algorithms.pdf (unreadable); raw/hiring-plan-and-future-org/electricnoirstudios_notion_site_Hires_to_series_A_5f4cb196d22b4f7c9212d21ddfcbce5f.txt (empty). From the people-guides agent.
 - docs/reports/20261022.03_document_guides/raw/ip-assignment/koleyjessen_com_media_publication_119_Important_Considerations_for_Portfolio_Company_Commercial_Cont.pdf (stray copy)
 - docs/reports/20261022.03_document_guides/raw/*/hn_comment_*.json (search noise in the six financials folders); raw/bank-statements/ empty stubs: two justice.gov files and newsfilecorp_com_release_212484_SEC_Charges_Founder_of_AI_Hiring_Startup_Joonko_with_Fraud.txt
+
+From the story-group guides agent, 2026-10-22 3:39 PM:
+
+- docs/reports/20261022.03_document_guides/raw/hn-tmp/ (temporary Hacker News fetches)
+- docs/reports/20261022.03_document_guides/raw/pitch-deck/hn_deck_*.json (temporary Hacker News fetches)

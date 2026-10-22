@@ -1,0 +1,115 @@
+SOURCE: https://madewithlove.com/blog/5-red-flags-for-vcs-when-planning-to-invest-in-seed-or-series-a-companies.md
+
+> ## Content Index
+> Fetch the complete content index at: https://madewithlove.com/blog/llms.txt
+> Use this file to discover other available public pages before exploring further.
+
+# 5 red flags for VCs when planning to invest in Seed or Series A companies
+- URL: https://madewithlove.com/blog/5-red-flags-for-vcs-when-planning-to-invest-in-seed-or-series-a-companies/
+- Published: 2025-05-27T06:08:08.000Z
+- Updated: 2026-09-10T17:26:40.000Z
+- Description: Discover the five most common technical-due-diligence red flags—from undersized or misaligned teams to “just-about-working” codebases—that VCs must spot before writing a cheque.
+- Author: Yannick De Pauw
+- Tags: Due diligence, Ideas, Investor, Technical debt
+
+### When red flags cost green 
+
+The term sheet is ready, the pitch deck was convincing, and the founder is charismatic enough to light up the entire Zoom call. You’re a **venture capitalist** preparing to **invest** in a Seed or Series A round, and everything *seems* in place. 
+
+But at madewithlove, we’ve seen what happens when excitement overshadows engineering reality. Our team of [CTOs in residence](https://madewithlove.com/blog/cto-as-a-service-caas-in-saas-is-it-useful-for-your-startup/), software engineers, and technical leaders conduct audits for startups and scale-ups on a weekly basis. We’re often called in for [**technical audits** ](https://madewithlove.com/blog/the-ultimate-guide-to-technical-due-diligence/)just before deals are signed. And let’s just say… not all cap tables are backed by scalable codebases.
+
+Whether it's Seed-stage **scrappiness** or Series A **acceleration**, the concerns tend to repeat like a buggy CI pipeline. Across dozens of [due diligence](https://madewithlove.com/blog/technical-due-diligence-software-acquisition/) projects, we've noticed the same questions come up, whether you're backing a promising seed-stage MVP or a Series A company gearing up for **growth**. Is the team ready to scale? Can the tech handle success? Is the roadmap more sci-fi than software?
+
+Here are the five most common red flags that VCs, and frankly, anyone serious about tech due diligence, should watch out for. Spotting these early could save you a headache, a down round, or worse, a write-off.
+
+## 1\. The team is too small to scale, and too big to stay aligned
+
+You’d think a lean team is a green flag. Until you realise that the “**lead engineer**” is also the customer support line, the DevOps person, and sometimes the only one writing tests (if any exist).
+
+On the other hand, we’ve seen **bloated teams** where half the engineers are building features no one uses while the other half are rebuilding the[ CI/CD pipeline](https://madewithlove.com/blog/what-to-do-when-your-team-cant-deploy-continuously/) for the fourth time. The ideal team size will reflect the needs and resources of the company at a given moment. If the company is at an early stage, it may benefit more from fewer developers who are more experienced and able to make an impact quickly. On the other hand, investing in junior talent can be cheaper and a pathway to growing your culture. For founders, prior experience can compensate for other organisational gaps.
+
+An ideal team at Seed or Series A should be product-minded, pragmatic, and stable, but not padded. Scaling a team is not only about **headcount** but also about a healthy engineering **culture** with clearly defined responsibilities. When every developer is a **silo** or there is a low bus factor, scaling becomes a logistics nightmare or a risky endeavour.
+
+### Seed vs Series A
+
+For seed teams, a small but well-balanced setup is acceptable, especially when there’s trust in an experienced founding engineer. We do, however, look for a team that is proactive about reducing the bus factor and, therefore, making efforts to create documentation about the product and decisions for later. Not every process needs to be in place, but only one person understanding parts of the product or infrastructure will raise concerns.
+
+In our audits, we look at more than just the **headcount**. For Series A, we want to know *if* they have strong onboarding documentation, mature review processes, effective task assignment mechanisms, and established hiring processes. We also look at how they plan to build upon these. A small team with **high standards** often beats a larger team operating **chaotically**.
+
+## 2\. The technology “works”… but only just
+
+It runs. You can sign up. Sometimes the email even arrives. Sounds familiar?
+
+A functional demo is a low bar. We often **audit** startups where the codebase is held together with global variables and **hope**. Environments are not isolated. Secrets are exposed. Infrastructure is manual. Logs? Optional. Monitoring? A Slack channel called #outages.
+
+Here’s what a VC should look for: a codebase with **maintainable**, testable, deployable [infrastructure](https://madewithlove.com/blog/infrastructure-is-a-business-decision/). Without that, **technical debt** is a silent killer of momentum, morale, and market entry. Of course, there should also be a plan in place for tackling the technical debt, for example allocating 15-20% of each sprint to paying down the technical debt.
+
+In general, we will look to see how fast someone is able to understand the system and be productive in it. For Series A, we will look more deeply at the code quality and practices around it.. For Seed companies, do focus on the MVP and ensure you find market-fit while solving the basics and have good code practices and tooling in place.
+
+### Seed vs Series A
+
+Accelerating at Seed stage and focusing on features to attract users in pursuit of **product-market fit** may knowingly incur technical debt, leading to faster iterations and simplified architectures. We are more **lenient** at this stage, especially when the founding team demonstrates awareness of these trade-offs and has a realistic plan for addressing them as the company **matures**. By Series A, there should be a solid foundation. Manual deployments, weak testing practices, and non-existent observability at that stage should raise serious concerns.
+
+[![CTA Image](https://madewithlove.com/blog/content/images/2026/09/Screenshot-2026-09-10-at-19.19.15.png)](https://madewithlove.com/services/audits-due-diligence/?sample=1&utm%5Fsource=blog&utm%5Fmedium=cta&utm%5Fcampaign=audit-sample&utm%5Fcontent=5-red-flags-for-vcs-when-planning-to-invest-in-seed-or-series-a-companies) 
+
+****See what a technical due diligence report actually looks like** 
+
+A real sample of the report we deliver to investors and founders, redacted but complete. Twenty-one pages, in your inbox in a minute.
+
+[Send me the sample report ](https://madewithlove.com/services/audits-due-diligence/?sample=1&utm%5Fsource=blog&utm%5Fmedium=cta&utm%5Fcampaign=audit-sample&utm%5Fcontent=5-red-flags-for-vcs-when-planning-to-invest-in-seed-or-series-a-companies) 
+
+## 3\. A roadmap full of dreams, not deliverables
+
+If your startup’s entire **roadmap** fits on one pretty slide, be afraid. And if it does not exist at all, be very afraid.
+
+We’ve seen companies with zero structured **backlog**, unclear ownership of product direction, or a to-do list driven by whatever the loudest customer requested last week.
+
+In our audits, “no structured roadmap” is one of the top **concerns**, even at Seed. A good product roadmap shows priorities, trade-offs, and technical reality, not just vague **aspirations**. If a team can’t answer how they’ll build what’s next, they probably won’t.
+
+### Seed vs. Series A
+
+At Seed, having a rough but coherent direction is often enough. But a Series A team should already have internalised a structured, collaborative planning **process**. By then, we expect detailed backlogs, clear ownership, prioritisation and estimation mechanisms.
+
+We’ve audited seed-stage teams that had no visible planning process: no [roadmap](https://madewithlove.com/blog/how-to-build-roadmaps-that-can-be-used-by-engineering-and-product-teams/), no triage rubrics, and no ownership. At this stage, that’s not just **immature;** it’s risky. 
+
+## 4\. It’s all features, no foundation
+
+Every engineer dreams of building cool new features. But if that’s *all* they do, your startup might be what we call a “**feature factory**.”
+
+We’ve seen codebases where technical debt goes **untouched** for years. No refactors. No scalability planning. Just a mad dash of sprints, shiny on the surface, **messy** underneath.
+
+What’s missing? Time for clean-up. Budget for **reliability** work. Strike a balance between shiny features and invisible infrastructure. If nobody’s improving the system, you’ll soon have a system no one wants to touch.
+
+### Seed vs Series A
+
+We understand that at Seed, the team will be **shipping** rapidly while they find their market fit, meaning features are often prioritised over perfection. By Series A we look to see a clearer **plan** on how technical debt will be addressed, this is to ensure that scalability won’t be impacted. The team should show us awareness of **scope management** and have processes to balance new features with improvements. If a company claims they have no [technical debt](https://madewithlove.com/blog/understanding-and-managing-technical-debt-and-legacy-code-a-guide-for-founders/), this is often a red flag, demonstrating a lack of awareness. 
+
+Occasionally, we find Series A companies carrying technical debt because of fast market traction, and we let it slide *if* there’s a clear plan to address it and dedicated engineering capacity to do so. Seed-stage teams don’t always have that luxury. If a Seed startup has already **accumulated** debt without the means or mindset to fix it, it's a deeper concern.
+
+## 5\. The solution could be rebuilt over a long weekend
+
+This one’s subtle but deadly: the tech does what it should, but so could a junior freelancer after three energy drinks.
+
+When a product is easily **reproducible**, it’s a sign the real moat isn’t there. That’s not just a problem for the engineering team. It’s a strategic risk. When this is more the case, we look for deep domain knowledge and a proven market fit.
+
+**Also: beware the AI veneer.** A chatbot slapped on top of generic CRUD doesn’t mean you’re an AI startup. We’ve seen too many cases where “AI-powered” is just OpenAI API with a prompt and a prayer.
+
+We’ve flagged solutions where logic lived entirely in the frontend, where no defensive patterns were in place, or where the **backend** was stitched together from tutorials and duct tape. If the market heats up, competitors *will* move faster and smarter.
+
+A robust **architecture** should be hard to copy and easy to evolve.
+
+### Seed vs Series A
+
+At Seed stage, although we expect some level of **differentiation**, we understand that teams are still discovering **product-market fit** and their core idea is evolving. By Series A, the company should deeply understand their market fit and have established research practices. There should be concrete evidence that reproducing their product would require significant effort, and the company should possess **in-house** knowledge that creates meaningful barriers to entry.
+
+## Final thought: no audit is perfect, but ignorance is expensive
+
+To be clear: red flags don’t mean “don’t invest.” But they *do* mean: ask better **questions**, dig deeper, and plan support wisely. Technical debt can be tackled. Roadmaps can be fixed. But you can’t reverse a bad investment without regrets (and write-offs).
+
+At **madewithlove**, we’re here to help you make those calls with clarity. Our [**technical audits**](https://madewithlove.com/services/audits/)are designed to cut through the fluff and show you what’s really under the hood. 
+
+## Founders: this is what you need to show investors.
+
+If you are on the receiving end of this kind of scrutiny, our guide explains how to structure and communicate your roadmap in a way that actually builds confidence.
+
+[How to communicate a roadmap to VCs](https://madewithlove.com/blog/how-to-communicate-a-roadmap-to-vcs/)

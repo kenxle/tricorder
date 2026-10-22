@@ -1,0 +1,80 @@
+SOURCE: https://www.crv.com/content/how-investors-evaluate-market-size
+
+- - - - - CRV | How Investors Evaluate Market Size | CRV - - 
+ An investor asks you to rebuild the market estimate from your customer count and price, and you have an answer ready for every input on the slide. Your answers there show an investor how well you know your customer. This guide covers the three market layers, the two sizing methods under comparison and the thresholds that move as you go from pre-seed to Series A .
+ What is Market Size 
+ Market size is the total annual revenue available in a market you have defined, at the price customers pay today. Founders often blur that figure with market share. You can hold $50 million inside a $5 billion market and still have a one percent share, and neither number tells you the other.
+ Investors care about the number because it caps the outcome. A fund that needs one company to return the whole fund cannot get there from a market topping out in the hundreds of millions, no matter how well the founder executes. An investor uses that ceiling to decide whether the rest of the conversation is worth having. Imprecision is fine, provided you can identify the customers counted and the price used.
+ How TAM, SAM and SOM Break Down the Opportunity 
+ Investors work down through nested layers, from the widest revenue pool to what your company can realistically win:
+ - Total addressable market (TAM): The full revenue available at complete market share, the ceiling that tells an investor whether the category can support a venture outcome at all.
+- Serviceable addressable market (SAM): The slice your current product, pricing model and distribution can reach, narrowed further by geography, customer size and vertical.
+- Serviceable obtainable market (SOM): What you can realistically win in three to five years. The estimate accounts for competitors already selling into the market and the sales capacity of your team.
+ SOM draws more scrutiny than the other two layers, because it is the only one that has to reconcile with the revenue line in your financial model.
+ Top-Down vs. Bottom-Up: Which Sizing Method Investors Trust 
+ Top-down starts from a published industry figure and filters it down to your slice, while bottom-up starts from a counted customer base and multiplies by what each customer pays. A top-down version might begin with a report putting your software category at $7 billion worldwide. Filtering to North America at 35 percent, then to companies with 10 to 250 employees at 40 percent of that slice, leaves a serviceable market of roughly $980 million. Bottom-up never opens the report: you count 200,000 target businesses, multiply by a $6,000 annual contract and land at $1.2 billion.
+ A top-down figure presented alone draws more skepticism than almost anything else on a market slide. Published reports confirm the scale of a category without saying anything about whether your filters hold. Investors examine the bottom-up model customer by customer and use the published total as a cross-check. Both methods together give you a figure you can defend, and a wide gap between them becomes a prompt to investigate instead of something to paper over. Nobody reading the slide should have to guess where a figure came from, so name the method beside every layer.
+ What Investors Look for Beyond the Sizing Math 
+ The market figure opens diligence rather than closing it. Once the arithmetic holds together, an investor turns to what it cannot answer: how tightly you drew the market, where it is heading and why now. The next questions are who else sells to those buyers and whether your revenue plan matches the obtainable layer.
+ Market Definition 
+ A tight market definition reads as research; a broad one reads as a guess. You show an investor you have talked to these customers by naming the industry, the revenue band, the tool the buyer uses today and the event that triggers a purchase. Vague labels like "mid-market finance teams" do none of that work. Narrowing improves your credibility even when it shrinks the headline number, provided you can explain why the next customer tier follows from the beachhead.
+ Market Growth Rate 
+ Market growth changes where each new customer comes from. When a market expands, new demand appears that no incumbent owns yet, and you take less of your growth out of somebody else's installed base. Flat markets leave you persuading buyers to replace what they already use, and you feel that friction as a longer sales cycle. Most funds prefer a precisely defined market with room to expand, even when the category looks small on paper.
+ Market Timing 
+ Every market slide implies a why now, and you have to name the enabler. Investors look for a technology shift, a regulatory change, a cost curve that crossed a threshold or a change in how buyers behave. Markets that sit unclaimed for a decade raise an obvious question: what changed, and why did earlier attempts fail? Your answer should point to the shift that makes your product possible today and was missing five years ago.
+ Competitive Structure 
+ A large market with an entrenched leader is often a worse opportunity than a smaller fragmented one. Categories with strong network effects concentrate hard, and a new entrant needs a reason the incumbent's scale stops helping it. Fragmented markets, where the top players hold small shares and buyers switch freely, let a young company win accounts one at a time. An investor will ask which kind yours is, and what your serviceable market looks like after you subtract what incumbents already lock up.
+ Path to Revenue 
+ Your obtainable market has to line up with the amount you're raising, the financial model and the hiring plan. When the market slide points to one year-three revenue outcome and the financial model points to another, an investor will ask you to reconcile them. A share number built out of capacity answers it: how many reps you'll hire, how long each takes to ramp, how many deals a ramped rep closes per month and at what contract size. You avoid the contradiction by asking for a startup runway that funds exactly that plan.
+ What Market Size Investors Expect at Each Stage 
+ Funds raise the bar as the check size goes up, because the math behind each check changes. Investors apply a different standard from one round to the next:
+ - Pre-seed: Investors are buying your read on the market more than the market itself. A well-argued smaller market with a visible early revenue path can clear the bar.
+- Seed: The working threshold at most institutional funds moves into billion-dollar territory. Credibility in the obtainable layer counts for more here than the ceiling figure.
+- Series A: Funds at this stage need a market that supports a venture scale revenue outcome. The sizing also has to reconcile with recurring revenue you can already show, and that bar keeps climbing .
+ At every one of these stages, we've seen a number you can defend do more for a founder than a big one. The seed bar carries more detail than a single bullet can hold, and the full seed investor criteria get their own guide.
+ How to Size a Market That Does Not Exist Yet 
+ Published reports trail fast-moving categories, and a genuinely new category has no report at all. You start with the market you displace and the spend that shifts to you, whether that spend sits in a software line item, an outsourced service contract or hours of human labor. Labor spend is where most artificial intelligence (AI) founders start in 2026, and it takes the estimate well beyond software budgets.
+ At a startup's scale the same logic runs smaller and tighter. You count the roles your product replaces or compresses, then multiply by a loaded wage: the average U.S. wage across occupations was $69,770 in the most recent federal data. From there, apply the share a buyer will hand you: 20 percent of a $50,000 manual workflow gives you a $10,000 anchor a customer recognizes.
+ Paid pilots, design partners with signed commitments and a named pipeline all give the obtainable layer something countable to stand on. Naming the uncertainty and showing the range gets a founder further than manufacturing precision from a report that doesn't exist. CRV led DoorDash's first financing round and backed the company again during its Series A and B, years before restaurant delivery registered as a category anyone was sizing. Revenue reached $13.7 billion in 2025 , from a business that now spans grocery and retail orders alongside restaurant delivery.
+ The Market Sizing Mistakes That Cost Founders Credibility 
+ Founders make the same mistakes on this slide, and they share one pattern: the number cannot be rebuilt on a whiteboard when an investor asks. Five of them come up far more than the rest:
+ - Claiming the whole category: Sizing the market as the entire industry when your product serves one segment of it. A tool for grocery stores is not a share of everything Americans spend on groceries.
+- Skipping the bottom-up check: Presenting a filtered report figure with no customer count or price behind it, which leaves an investor unable to test a single input.
+- Confusing transaction volume with revenue: Marketplace and payments founders showing gross merchandise value (GMV), the total dollars flowing through the product, in place of the share the company keeps. The GMV and revenue gap can run dozens of times at payments companies.
+- Assigning share with no basis: Naming a capture percentage without the rep headcount, quota and deal size that would produce it.
+- Citing figures that have aged out: Using a market report old enough that the category has since changed shape, without dating the figure or adjusting it forward.
+ Each of these costs you the same thing: the reader's trust in every number that comes after the market slide. Once that trust goes, an investor reads the revenue projections two slides later as fiction.
+ How Investors Evaluate Market Size Comes Down to Your Reasoning 
+ The market slide is a reasoning test dressed up as a research exercise. We invest early , at the stage where a market number is still an argument rather than a track record. Founders who own that argument, rather than inheriting it from a report, are the ones who hold up under questioning. From that point, investors stop debating whether the market is big enough and start asking how fast you can capture it. A market size claim is only as strong as the weakest input a founder can defend.
+ If you're an early stage founder looking for a lead investor who will work through your market math with you at the whiteboard and commit within 24 hours without a committee, reach out to us to see if we'd be a good fit.
+ Frequently Asked Questions About How Investors Evaluate Market Size 
+ Where does market size belong in a pitch deck? 
+ Most decks put it after the problem and product sections, once the reader knows who you serve and what you sell. Placing it earlier forces an investor to judge a number before they understand the customer it counts. Whatever slide it lands on, the TAM, SAM and SOM layers belong together so the nesting is visible at a glance.
+ Which data sources do investors trust for market sizing? 
+ Discovery calls, pilot conversion and pricing from paying customers supply the primary data. Government datasets from the Census Bureau and the Bureau of Labor Statistics work as secondary anchors when you show how you filtered them. Public company filings and named analyst reports do the same job. Unsourced internal estimates and figures lifted from blog posts carry no weight in a serious diligence process.
+ Is market size or the team more important to early stage investors? 
+ The team wins by a wide margin in a broad survey of venture investors. More than 90 percent of investors in that survey rated the management team as important to outcomes, and they ranked it above the business model, the product and the market. Market size was an infrequent explanation for rejection in a single-firm study: among 7,199 pass decisions, only two percent of passes named it. In practice, investors use market size as a floor: they screen for a market large enough to support the outcome and then decide on the people.
+ Can a startup raise venture capital in a market that looks small today? 
+ Yes, when the small market is a deliberate first segment with a credible expansion path behind it. You need the second and third customer tiers named, with a reason each one buys. Without that, a narrow market looks like an accident, and the documented failure causes for later stage companies include poor product-market fit even after early traction.
+
+ CRV proudly co-led Lotus AI’s Series A and our firm led Outtake’s Series A and joined the board in February 2025. We also backed Outtake during its Series B, so we’re thrilled to see both teams make this year’s list.” to “CRV proudly co-led Lotus AI’s Series A and our firm led Outtake’s Series A, joined the board and backed Outtake during its Series B, so we’re thrilled to see both teams make this year’s list.
+
+CRV invests in founding teams at the beginning of their journeys, leading Seed and Series A rounds in amazing companies. We’ve backed more than 750 companies early on including DoorDash (another Next-Billion alum), Mercury and Vercel .
+
+Congrats to both Lotus AI and Outtake on being named to Forbes’ Next-Billion Dollar Startups list .
+
+ Cookie Preferences
+ - Necessary
+ Always on
+
+ These cookies are essential in order to use the website and use its features.
+
+- Analytics
+ Analytics consent 
+
+ Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics such as the number of visitors, bounce rate, traffic source, etc.
+
+ Save Preferences 
+ Your Privacy Matters to Us
+ We use cookies and similar technologies on this site, employed by CRV and our partners, to support core features and help us understand how visitors engage with our content. For details, please review our Privacy Policy 
+ Accept All Reject All Manage Preferences

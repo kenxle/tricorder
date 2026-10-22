@@ -1,0 +1,170 @@
+SOURCE: https://hub.causo.ai/guides/tam-slide-market-size
+
+- - - - - - - TAM slide pitch deck: bottom-up math that survives VC scrutiny | Causo Hub - - - - - - - 
+ Hub / Guides / pitch-deck / The TAM slide: market size math that isn't fake 
+
+ The TAM slide: market size math that isn't fake
+
+ The TAM slide pitch deck test isn't how big your number is, it's whether a partner can rebuild it in thirty seconds. Bottom-up math (customer count × realistic ACV, segment by segment) survives scrutiny. Top-down Gartner citations and "1% of a $500B market" claims get eye-rolls. This guide shows defensible math for four business models and the specific triggers that kill credibility in 2026.
+
+ Most founders inflate their TAM and think investors can't tell. They can tell in about eight seconds.
+
+ The market slide is where credibility is won or lost on page four. According to OpenVC , quoting random top-down studies found online is treated by investors as a major credibility-undermining mistake, not a shortcut. And yet Gartner-cited TAMs with a handwavy "1% of the market" claim are still the single most common slide pattern in seed decks.
+
+ This piece works through bottom-up TAM math for four specific archetypes: B2B SaaS, marketplace, consumer subscription, and dev tool. Then it catalogs the eye-roll triggers and shows what a defensible slide actually looks like.
+
+ How to calculate TAM for a startup: the 5-step bottom-up method
+
+ The bottom-up approach is the only one that survives partner-room scrutiny. OpenVC defines it plainly: number of clients multiplied by average revenue per client . Build it in this order:
+
+- Define the unit buyer precisely. Not "SMBs" or "developers." Specify: "US-based Shopify stores doing $1M-$10M GMV" or "backend engineers at Series B+ companies using Kubernetes." The tighter the definition, the more defensible the count.
+
+- Count the unit buyers with a primary source. LinkedIn for headcount, Crunchbase for company counts, Shopify's public reports, Stripe's platform data, census data for consumer segments. Cite the source in a footnote on the slide.
+
+- Set a realistic ACV or ARPU. Use your own current pricing, or comparable public SaaS benchmarks, not aspirational enterprise ACVs you've never closed.
+
+- Multiply to get SOM, not TAM. SOM first, because that's the number a seed partner actually underwrites against. GoingVC notes that SOM must factor in real-world constraints like competition, budget, and specific go-to-market strategy.
+
+- Expand to SAM and TAM with stated assumptions. SAM = the segments you can reach with current channels and product. TAM = the full category if you executed globally against every adjacent segment. Show the arithmetic, footnote the sources.
+
+ Bottom-up TAM math for four startup archetypes
+
+ Worked examples, because abstract frameworks don't help when you're staring at a blank slide at 11pm.
+
+ Archetype 
+ Unit buyer 
+ Count 
+ ACV / ARPU 
+ SOM math 
+ Resulting SOM 
+
+ B2B SaaS (HR tech) 
+ US companies, 50-500 employees, hiring actively 
+ ~180,000 
+ $12,000/yr 
+ 4% capture in 5 yrs 
+ ~$86M ARR 
+
+ Marketplace (freelance design) 
+ Active buyers on design platforms, mid-market 
+ ~420,000 
+ $2,400/yr GMV × 20% take 
+ 3% capture in 5 yrs 
+ ~$6M net revenue 
+
+ Consumer subscription (fitness) 
+ US adults, 25-44, with gym membership or equivalent 
+ ~38M 
+ $120/yr 
+ 0.5% penetration in 5 yrs 
+ ~$23M ARR 
+
+ Dev tool (observability) 
+ Backend engineers at Series B+ cos using Kubernetes 
+ ~900,000 
+ $180/yr per seat, ~8 seats/co 
+ 2% capture 
+ ~$26M ARR 
+
+ Each of those numbers comes with a caveat: the count must be footnoted to a primary source , and the penetration rate must be justified against comparable companies' trajectories. A 4% capture rate over five years is aggressive but defensible if you can point to a peer that hit it. A 20% capture rate is a red flag unless you have contracted distribution.
+
+ The investor eye-roll triggers that kill a market slide
+
+ The following patterns get flagged instantly by anyone who has reviewed more than fifty decks. Cut all of them from your TAM slide pitch deck.
+
+- "1% of a $500B market" framing. The 1%-of-a-giant-market argument signals that the founder hasn't thought about go-to-market. GoingVC notes SOM is often calculated as 1% of SAM, but this cannot be how you justify reaching $1B in revenue.
+
+- Gartner, Statista, or McKinsey as primary source. Aggregator reports are fine as sanity checks in the appendix. As the headline number, they read as lazy.
+
+- Problem-first TAM. Sequoia Capital specifically warns founders against "problem-first" TAMs that equate the size of a problem with the size of the addressable market. "Healthcare spending is $4T, therefore our TAM is $4T" is the canonical example.
+
+- Trillion-dollar markets. Anything above ~$500B implies either government capture or category-level monopoly. Partners will assume you're either naive or exaggerating.
+
+- No footnoted sources on the slide itself. Qubit Capital recommends footnoting all inputs with source citations kept small but visible in the slide's corner. Missing footnotes is a trust signal, not an aesthetic choice.
+
+ The AI startup TAM trap in 2026
+
+ Every AI pitch deck has a TAM slide claiming the category is worth trillions. The numbers don't survive Q2 2026 scrutiny.
+
+ Sequoia Capital flagged a $600B gap between AI infrastructure investment and actual revenue growth, which means the implied TAMs being shown in AI decks outpace the real category revenue by an order of magnitude. If your market slide says "the AI market will be $15T by 2030," partners are mentally subtracting 90% before they read the next line.
+
+ The fix: size your actual buyer (e.g., "mid-market SaaS companies spending on AI infrastructure") with current 2024-2025 spend data, and let the TAM grow into the future as a separate projection line.
+
+ What a defensible TAM slide looks like
+
+ Defensible means a partner can rebuild the math on a whiteboard in thirty seconds and get within 20% of your number. Everything on the slide exists to enable that exercise.
+
+ ✅ Good: "SOM (2030): 22,000 US mid-market Shopify stores × $3,600 ACV = $79M ARR. SAM: 180,000 stores globally × $3,600 = $648M. TAM: all e-commerce platforms, $4.2B. Sources: Shopify Q4 2024 merchant count, our closed-won ACV across 47 customers." Why it works: every number is traceable, the SOM is what matters, the ACV is your own.
+
+ ❌ Bad: "The global e-commerce tools market is $58B (Gartner, 2023). We're targeting 1% = $580M." Why it fails: no customer definition, no ACV, no bottom-up logic, and a citation that partners pattern-match to "founder didn't do the work."
+
+ Olympus Intel frames a rigorous sizing exercise as a VC's "north star" for evaluating real revenue potential. The math is the whole point. Pretty charts are optional.
+
+ FAQ
+
+ How do you calculate TAM for a startup? 
+Build it bottom-up: count the specific segments of customers you can actually sell to, multiply by the realistic annual contract value or ARPU for each segment, then add them up. Top-down Gartner-style estimates get rejected because they measure the problem, not your addressable opportunity.
+
+ What's the difference between TAM, SAM, and SOM? 
+TAM is total demand for the category worldwide. SAM is the slice your business model and geographic reach can actually serve. SOM is the realistic 3-5 year share you can capture given competition, sales capacity, and go-to-market constraints. SOM is the one partners anchor on.
+
+ Should I use bottom-up or top-down TAM? 
+Bottom-up, always, for the headline number. Top-down can appear as a sanity check or sensitivity bound, but never as the primary math. Investors read the OpenVC and a16z blogs, so they pattern-match Gartner-citation TAMs as low-effort in under three seconds.
+
+ How big should TAM be for a VC to invest? 
+Most seed-stage VCs want to see a credible path to a $1B+ SOM within a decade, which usually implies a TAM in the $10B-$100B range. Bigger than that and you trip the trillion-dollar-market skepticism. Smaller and the fund-returning math stops working.
+
+ What are common mistakes on a market sizing slide? 
+Quoting a top-down consultancy report, claiming 1% of a giant market, presenting a problem-first TAM that equates problem size with addressable revenue, and omitting footnoted sources. Each one is an instant credibility hit with VCs who review dozens of decks a week.
+
+ Related on the hub
+
+- The 12-slide seed pitch deck that raised $187M: real teardowns — Related pitch deck guide.
+
+- Raising a seed round for a vertical SaaS startup in 2026 — Related fundraising basics guide.
+
+- AI founder seed 2026: what changed and the playbook that works — Related fundraising basics guide.
+
+ Good 
+ 4.3M backend developers worldwide, 22% at companies with observability budgets, $180 ACV = $170M SOM with a credible expansion path to SAM.
+ Bottom-up dev tool TAM
+
+ Bad 
+ Gartner says the observability market will hit $58B by 2028. We're targeting 1% = $580M. (Nothing about who the customer is or how you reach them.)
+ Top-down Gartner TAM
+
+ ★ Causo · Start free
+ Run this raise inside Causo.
+ Match to the best-fit partner at 1,000+ funds, draft a hyper-specific email, and send from your own inbox, in one place.
+
+ Start free 
+ Keep reading
+ All guides → 
+ Guide · ai-for-founders
+ AI for market sizing and TAM in 2026
+ AI for market sizing and TAM in 2026: the bottoms-up workflow VCs trust, the top-down trap that kills your slide, and prompts that defend the number.
+ Guide · fundraising-basics
+ Raising a seed round for a vertical SaaS startup in 2026
+ Raising a seed round for a vertical SaaS startup in 2026: kill the TAM objection, lead with the right metrics, and size your SAFE to current Carta benchmarks.
+ Guide · pitch-deck
+ The seed pitch deck for AI startups in 2026
+ The seed pitch deck for AI startups in 2026 has three new make-or-break slides: defensibility, inference-adjusted economics, and the foundation-lab question.
+ Guide · traction-metrics
+ Traction metrics for VCs in 2026: what IC memos screen for
+ The traction metrics for VCs in 2026: the five IC screening archetypes, 2024 to 2026 benchmarks by stage, and how Tier-1 funds weight them differently.
+
+ While you're here The funds behind these numbers
+ - Accel Seed · Very active 
+- Andreessen Horowitz Seed · Very active 
+- Benchmark Seed · Very active 
+ Find your best-fit investors
+ See all 1,176 investors or browse the 50-fund shortlist → 🦝 From Causo
+ ★ Try it
+ Grade your email
+ Our LLM has read 40,000 cold emails. It'll rewrite yours in 30 seconds.
+ Open Grader 
+ Starter templates
+ Cold email — seed, AI Cold email — seed, fintech Follow-up — 1st nudge Rejection response 
+
+ Related
+ Active seed AI VCs · EU All 343 guides

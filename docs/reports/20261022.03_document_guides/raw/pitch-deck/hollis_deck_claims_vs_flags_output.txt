@@ -1,0 +1,19 @@
+rows on the deck's claims page: 14
+flags with a location on slide 14: {'ARR': ['PF2'], 'Net revenue retention': ['PF3'], 'Runway': ['PF4'], 'Largest customer': ['PF5'], 'Gross margin': ['PF6'], 'Clinics on Hollis': ['PF7']}
+content slides carrying a planted flag: [3, 4, 5, 6, 11, 12]
+deck claim rows that a planted flag names (by shown value):
+   ARR $2,500,000 slide 3 -> PF2
+   Clinics on Hollis 357 slide 3 -> PF7
+   Calls handled, September 2026 72,149 slide 3 -> no flag
+   Largest customer under 9% of ARR slide 4 -> PF5
+   Gross margin 80% slide 5 -> PF6
+   Net revenue retention 102.6% (12 months) slide 6 -> PF3
+   US independent clinics (company estimate) 28,000 slide 8 -> no flag
+   Market size (company estimate) $252,000,000 slide 8 -> no flag
+   Runway 37 months slide 11 -> PF4
+   Average monthly net burn, next 12 months $374,462 slide 11 -> PF4
+   Planned hires, next 12 months 24 slide 12 -> no flag
+   Staff after hiring 41 slide 12 -> no flag
+   Series A raise $9,000,000 slide 13 -> no flag
+   Pre-money valuation $45,000,000 slide 13 -> no flag
+claim rows tied to a flag: 7 of 14

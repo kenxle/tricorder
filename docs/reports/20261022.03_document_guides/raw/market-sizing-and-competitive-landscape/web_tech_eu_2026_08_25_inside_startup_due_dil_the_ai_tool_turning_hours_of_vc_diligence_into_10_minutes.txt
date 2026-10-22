@@ -1,0 +1,356 @@
+SOURCE: https://tech.eu/2026/08/25/inside-startup-due-dil-the-ai-tool-turning-hours-of-vc-diligence-into-10-minutes/
+
+Inside Startup Due Dil: the AI tool turning hours of VC diligence into 10 minutes - Tech.eu 
+
+ News 
+
+ News 
+
+ Videos 
+
+ Insights: Premium articles 
+
+ Subscribe to Newsletters 
+
+ Topics 
+
+ Fintech 
+
+ Healthtech 
+
+ SaaS 
+
+ Deeptech 
+
+ Mobility 
+
+ Sustainability 
+
+ Artificial Intelligence 
+
+ Insights 
+
+ Tech.eu Insights 
+
+ Premium articles 
+
+ Reports 
+
+ Podcasts 
+
+ Funding Explorer 
+
+ Summit London 2026 
+ -->
+
+ NOTIFICATIONS 
+
+ Sign in to your account, or Sign up to stay up to date with the hottest European tech startup news. 
+
+ Sign in 
+
+ Sign up 
+
+ Search on Tech.eu...
+
+ News 
+
+ News 
+
+ Videos 
+
+ Insights: Premium articles 
+
+ Funding Explorer 
+
+ Subscribe to Newsletters 
+
+ Topics 
+
+ Fintech 
+
+ Healthtech 
+
+ SaaS 
+
+ Deeptech 
+
+ Mobility 
+
+ Sustainability 
+
+ Artificial Intelligence 
+
+ Tech.eu 
+
+ About 
+
+ Authors 
+
+ Contribute 
+
+ Contact 
+
+ Awards 
+ -->
+ Job Board 
+ -->
+ Pitch Your Startup 
+
+ Advertisement 
+ -->
+ Advertise 
+
+ Sign in to your account, or Sign up to stay up to date with the hottest European tech startup news.
+
+ Sign in 
+
+ Sign up 
+
+ FUNDING EXPLORER 
+
+ Tech.eu Funding Explorer is a free and open platform built to help founders, investors, operators, researchers and ecosystem builders explore European tech funding data more easily.
+
+ Tech.eu Insights creates insight and guides strategies with its comprehensive content and reports.
+
+ Tech.eu Reports stand out with their comprehensive content and in-depth research reports.
+
+ Tech.eu Events connects the global tech and startup ecosystem through real conversations and meaningful connections at the Tech.eu Summit London.
+
+ RECENT POSTS
+
+ Indurex raises €7M to strengthen cybersecurity across critical infrastructure 
+
+ Anglo-Finnish Oxford University quantum spinout QuantrolOx raises €12M 
+
+ Cloud: Europe’s 6 most-funded companies in H1 2026 
+
+ Portuguese drone maker Beyond Vision raises over €28M to scale production and global expansion 
+
+ Mistral boss and Yann LeCun back Swiss robotics startup Enact in $30M pre-seed round 
+
+ Discover More About the Tech.eu Summit London 2026 -->
+
+ Discover More About the Tech.eu Summit London 2026 -->
+
+ Keep the pulse of the technology world with the Tech.eu Newsletter.
+
+ Subscribe 
+
+ Dark Theme 
+
+ Tech.eu Insights creates insight and guides strategies with its comprehensive content and reports. Browse popular Insights content.
+
+ Europe’s tech funding cools in April as investors grow more selective 
+
+ Fewer deals, bigger bets: Europe’s venture market resets in Q1 2026 
+
+ Funding dips, but fundamentals hold: European tech raises €7.5B in March 
+
+ February funding rebounds to €7.8B as UK startups capture the lion’s share of European capital 
+
+ Cloover’s billion-dollar round headlines a fintech-heavy month led by Germany 
+
+ VC Fund 
+
+ Inside Startup Due Dil: the AI tool turning hours of VC diligence into 10 minutes
+
+ Built by SMRK partner Vlad Tislenko, the platform deploys ten AI agents to verify founder claims and surface investment risks — while keeping humans at the centre of decision-making.
+
+ Cate Lawrence 
+ 25 August 2026 
+
+ Share
+
+ Facebook
+
+ Twitter
+
+ Linkedin
+
+ Share
+
+ Send email 
+ Copy link 
+
+ Vlad Tislenko, a partner at venture capital firm SMRK VC , today announced the launch of Startup Due Dil , a web application that automates the collection, verification, and structuring of information during startup due diligence. 
+
+ SMRK VC invests in Ukrainian technology startups. At the fund, Tislenko works with portfolio companies including Esper Bionics , Deus Robotics , Osavul , Ability.ai , and Principle. Before joining SMRK, he was a technology entrepreneur and led Concepter until its exit in 2021. 
+
+ Automating the grunt work of due diligence 
+
+ Startup Due Dil began as an internal tool Tislenko built to support his own work assessing investment opportunities. The platform cost less than €1,000 to build.  Tislenko told me he was inspired to found Startup Due Dil to keep up with AI progress, particularly to better understand the technology, “so I can make better investment decisions in the AI space and give better advice to portfolio companies.” 
+
+ He also highlighted the opportunity to automate routine but important tasks, such as verifying information founders share in pitch decks. Thoroughly evaluating a startup requires reviewing large volumes of information, a process that can take anywhere from several hours to several days.  
+
+ Startup Due Dil is designed to produce an initial structured report in approximately 10 minutes. Missing risks or relying on unverified claims, however, can carry both financial and reputational consequences for investors. 
+
+ "When analysing startups systematically, the most time-consuming part is finding, verifying, and structuring information. I began building Startup Due Dil for my own work to automate this part of the process. The goal is not to replace the investor, but to provide a more complete evidence base for decision-making and reduce the risk of overlooking an important signal," said Tislenko. 
+
+ Nine specialists and an Oracle
+
+ The system orchestrates ten AI agents, analyses pitch decks, supporting documents, and public sources, and produces a structured report for investors and founders. Nine specialist agents are responsible for distinct areas of analysis: 
+
+ Team and founders
+
+ Market
+
+ Competitors
+
+ Technology and product
+
+ Traction and financials
+
+ Business model
+
+ Regulatory compliance
+
+ Ownership structure and cap table
+
+ Legal considerations
+
+ The tenth agent, Oracle, acts as the orchestrator. It plans the diligence process, provides context to the specialist agents, evaluates the completeness of their work, and is responsible for the final report. If the analysis of a particular area is insufficient, Oracle can rerun the relevant agent with additional context. 
+
+ To begin an analysis, a user only needs to upload the startup's pitch deck. For a deeper review, the user can also provide financial statements, a cap table, legal documents, written comments, and links to other relevant sources. The platform compares claims made in the submitted materials with information from public sources. 
+
+ The final report includes source citations, while key findings are organised into red, yellow, and green flags - ranging from material risks and inconsistencies to areas requiring clarification and verified positive signals.   
+
+ Putting founders’ claims to the test 
+
+ According to Tislenko, the platform has highlighted one thing that many early-stage founders do: overestimate their market size.  
+
+ “Quite often, Startup Due Dil cannot verify those numbers,” he asserts.    
+
+ He contends that after years of analysing startups, he’s learned to find nuances in pitch decks quickly and the data founders share. 
+
+ “When I see that Startup Due Dil misses one of those nuances, I update the particular agent to be more attentive to it. I then rerun Startup Due Dil to verify that the system now understands that nuance. 
+
+  I also listen to feedback from the SMRK team and other investors who are testing the system.” 
+
+ Can investors trust AI with due diligence?  
+
+ But the need to continually refine the agents points to one of the fundamental challenges of using AI for investment research: AI systems can confidently produce incorrect information. 
+
+ To minimise this risk, Tislenko built a multi-agent system. The Oracle plans the work of specialised agents and has high standards for what it expects to see in the end.  
+
+ If certain specialised agents provide results that are not good enough, the Oracle retriggers their research, providing additional context. 
+
+ “These agents work really hard throughout those 10 minutes!” asserts Tislenko.   
+
+ But he admits there is still a chance that Startup Due Dil may make a mistake. 
+
+ Given the highly confidential financial, legal, ownership, and fundraising information involved in due diligence, data privacy is an obvious concern. 
+
+ Data security is a core priority in the platform's development. Administrative dashboards do not display private workspace content, and developers do not have access to user files or reports. 
+
+ To generate outputs, data is temporarily processed by third-party AI model providers. The current version of Startup Due Dil uses the OpenAI API, although its architecture also supports Anthropic.   Once documents are uploaded, the model analyses the information step by step, transcribes visual content, and processes the material to produce the final due diligence report. 
+
+ OpenAI may retain API inputs and outputs for up to 30 days.   
+
+ Tislenko explained that he specifically designed the system “so that OpenAI or Anthropic don’t use customers’ materials to train their models."
+
+ "Neither do I. I don’t have access to users inputs and outputs, I get logs so that I can help users resolve customer support issues, and I train the system only after direct customer feedback to me.” 
+
+ Due diligence is still a people’s game   
+
+ Ten minutes is dramatically faster than traditional due diligence, but Startup Due Dil isn't intended as a standalone investment research tool. For Tislenko, the most important part of a VC's job remains building and managing relationships with people.   
+
+ “The same stands for due diligence. You may want to talk to people who know or have worked with your prospective investee and do reference checks. Also, Startup Due Dil may show important signals, but you will still need to talk them through with the entrepreneur.”  
+
+ Startup Due Dil is designed primarily for venture capital and private equity firms evaluating technology companies, particularly at the early stages and is currently used in SMRK's investment work while being tested by other investors. Startups can also run a one-off analysis before raising capital to assess their readiness for investor due diligence. 
+
+ As AI becomes more widely used in due diligence, it could also change how startups construct pitch decks and data rooms in the first place.
+
+ Tislenko believes that in the future, these types of systems will help founders build perfect pitch decks and data rooms.  
+
+ “But ultimately, it will still be a people’s game.” 
+
+ SMRK VC 
+
+ Startup Due Dil 
+
+ Write Comment 
+
+ Inside Startup Due Dil: the AI tool turning hours of VC diligence into 10 minutes
+
+ Comments 
+
+ Would you like to write the first comment?
+
+ Login to post comments 
+
+ Follow the developments in the technology world. What would you like us to deliver to you?
+
+ Weekly Newsletter 
+
+ Daily Newsletter 
+
+ Event Announcements 
+
+ Save my choices 
+
+ Your subscription registration has been successfully created.
+
+ Next news
+
+ NEXT
+
+ Ploughshare’s TAG Alliance grows to 19 members as defence spin-outs accelerate
+
+ Ploughshare’s Technology and Growth (TAG) Alliance is gaining momentum less than a year after…
+
+ Cate Lawrence 
+
+ News
+
+ News 
+
+ Insights: Premium articles 
+
+ Subscribe to Newsletters 
+
+ Topics
+
+ Fintech 
+
+ Healthtech 
+
+ SaaS 
+
+ Deeptech 
+
+ Mobility 
+
+ Sustainability 
+
+ Artificial Intelligence 
+
+ Tech.eu
+
+ About 
+
+ Authors 
+
+ Contribute 
+
+ Advertise 
+
+ Advertisement 
+ -->
+ Pitch Your Startup 
+
+ Contact 
+
+ Events 
+
+ Cookie Settings 
+
+ Privacy Policy 
+
+ Terms & Conditions 
+
+ A webrazzi company
+
+ A webrazzi company
+
+ All Rights Reserved. © 2026
