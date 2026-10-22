@@ -1,0 +1,389 @@
+SOURCE: https://www.fluint.io/post/how-and-why-to-ditch-the-old-3x-coverage-ratio-rule
+
+- How and Why to Ditch the "3X Pipeline Coverage" Rule | Fluint blog - - - - - - - - 
+
+ Introducing Loop
+
+ Free usage now through August 31
+
+ Platform
+
+ Two ways to work together:
+
+ Engineer the context yourself, or let us run the whole agent for you.
+
+ Loop / Context
+
+ Engineer your own context
+
+ Loop serves judgment-enriched, revenue-aware context over a single MCP call to any model, and any agent.
+
+ Build your own context layer
+ →
+
+ Model
+
+ Train your own, private LLM (Coming soon)
+
+ Cut and predict your AI spend with a fixed-cost, private LLM that's fine-tuned to your GTM data.
+
+ Deploy your model
+ →
+
+ Agent
+
+ Launch a fully-configured agent
+
+ Our pre-built sales assistant, customized to your team. Built on your context, with fully hosted chat infrastructure and interface.
+
+ see byo agent
+ →
+
+ Use Cases
+
+ Use cases
+
+ Where teams put Fluint to work across their go-to-market.
+
+ 01
+ Loop
+
+ Prove Impact
+
+ Agent-to-revenue attribution for every action.
+
+ 01
+ Loop
+
+ Cut Spend
+
+ Up to 70% fewer tokens via pre-enriched context.
+
+ 01
+ Loop / Context
+
+ Context Layer
+
+ The context layer, delivered over MCP.
+
+ 01
+ Chat
+
+ Managed Agent
+
+ Ship a fully configured, white-labeled AI sales agent your reps trust, live in about a week.
+
+ 01
+ Loop
+
+ Private Model
+
+ Managed private ML, trained on your outcomes.
+
+ 01
+
+ All Use Cases
+
+ Capture which agent and seller actions drive your biggest wins. Then enrich every agent, tool, and seller with what's actually working in your GTM today.
+
+ Features
+
+ Features
+
+ Explore Fluint features
+
+ Loop + Agent
+ new
+
+ Call Notetaker
+
+ Loop
+ new
+
+ Agent Attribution
+
+ Loop
+ new
+
+ Loop Console
+
+ loop
+ new
+
+ Team View
+
+ Loop
+ new
+
+ Predictors
+
+ Loop + Agent
+ new
+
+ Managed Agent
+
+ Loop / Context
+ new
+
+ The Context MCP
+
+ Resources
+
+ Resources
+
+ Fluint notes on context engineering and AI for revenue teams. Visit the blog → 
+
+ Blog
+ new
+
+ The Fluint Blog
+
+ Context engineering, attribution, and AI forRevOps.
+
+ Docs
+
+ Documentation
+
+ MCP setup, integrations, and the API reference
+
+ Log
+
+ Changelog
+
+ What's new across Loop, Context, and Chat
+
+ Features
+
+ Features
+
+ New ways Fluint works across your revenue motion.
+
+ Loop + Agent
+
+ A notetaker that feeds your AI model, not a folder.
+
+ Loop
+
+ Revenue attribution for AI agents: measure your ro(a)i.
+
+ Loop
+
+ The GTM data that matters, surfaced and visualized for you.
+
+ loop
+
+ Score every rep against what actually closes deals.
+
+ Loop
+
+ Run a private AI model that predicts your revenue outcomes.
+
+ Loop + Agent
+
+ A fully-managed sales agent, live with your team this week.
+
+ Loop / Context
+
+ The context layer for revenue: one MCP call, every agent.
+
+ Pricing 
+ Get Started
+
+ Login
+
+ Olli Loop 
+
+ Want more content like this?
+
+ Subscribe to our newsletter and get more insights from Nate straight into your inbox
+
+ Blog /
+ Post
+ /
+ 11 mins
+
+ How and Why to Ditch the "3X Pipeline Coverage" Rule
+ It's wild how many sales teams still rely on the “3X pipeline coverage” idea.
+
+ Nate Nasralla
+ Co-Founder @ Fluint
+
+ Share:
+
+ https://www.fluint.io/post/
+ AI Summary
+
+ Table of contents
+
+ Heading 2
+
+ Heading 3
+ Heading 4
+ Heading 5
+ Heading 6
+
+ TL;DR
+
+ Pipeline coverage is a top-of-funnel vanity metric. It counts how much pipe you poured in, not how much leaks out, and deals almost always leak in the middle of the funnel. So stop chasing a bigger coverage ratio and start lifting stage conversion. Trace each deal's path to closed-won, find the transition that's quietly losing you deals (for one team it was no Finance buy-in by Stage 3), and fix it with the sales motion you already know. Then make it systematic: stand up an Agent that runs the winning mid-funnel play on every deal and ties each play back to what the deal did next. Coverage resets every quarter. Stage conversion compounds.
+
+ Most sales leaders can tell you their pipeline coverage to the decimal. Ask them where deals actually die, and you get a shrug. 
+ It's wild how many teams still run the quarter off the "3X coverage" rule of thumb. Build 3X your number in pipeline and you're "covered." Build 4X and you're golden.
+ Except… you're not. Reps hit 4X coverage and miss quota more often than a Monday standup runs long.
+ Coverage only measures one thing: how much pipe you poured in. It tells you nothing about how much leaks out before a deal closes. And it always leaks somewhere, almost always in the middle. The top of the funnel is the easy part. The quarter is won or lost between Stage 2 and Stage 4.
+ Two types of sales teams
+ At the risk of oversimplifying, there are two types of teams out there.
+ Type 1 wins by volume. Close rates hover around 20%, so the answer to every gap is "more pipe." Leadership hammers prospecting, reps get told to get after it, and everyone keeps pouring into a bucket with a hole in the bottom.
+ Type 2 wins by rate. They go stage by stage, find where deals leak, and fix that one spot. Less pipe, more closed-won. They patch the hole instead of pouring faster.
+ The first team wins by force. The second wins by finesse, usually with a fraction of the pipeline.
+ You can hear which one you're building by mid-quarter.
+ Type 1 sounds like:
+ "Can you pull a few deals forward?""Why aren't we sourcing 15 opps, minimum?""Set up the meeting, I'll handle this one."
+ Type 2 sounds like:
+ "What's happening in the buying committee at Stage 3?""Can we get to it upstream, at Stage 2?""What skill or process gap does that mean we're closing?"
+ Same quarter. Completely different questions.
+ The leak nobody could see
+ Let me simplify a real one. We worked with an HR-tech team whose model AE looked great on paper: about $1M in quarterly pipeline against a $250K target. A clean 4:1 ratio. Textbook healthy.
+ They still missed by about 15%. Spread across 15 reps, that gap got expensive fast.
+ Coverage said everything was fine. The truth was one layer down. Their Stage 3 → 4 rate was sitting around 40%, which dragged the overall win rate to 21%. At that rate, only about $215K of that $1M ever closed. The rest leaked, most of it between two stages, quarter after quarter.
+ So what was going on?
+ Deals were getting de-prioritized by Finance and Ops in the middle of the funnel. The demos were clean. The buyers were multithreaded. The pain was quantified. And then… silence. Reps were selling to the CHRO and never getting to the COO who controlled the priority list.
+ None of that showed up in the coverage number. It showed up as a missed quarter and a shrug.
+ That's the tell. The number that's supposed to predict your quarter is the one hiding why you'll miss it.
+ Coverage is an open loop. Your revenue should be a closed one.
+ So why did that leak stay invisible for so long? It wasn't because the team wasn't paying attention.
+ A rep runs a play. A deal moves. The CRM logs that something happened, the dashboard updates, and then nothing. Nobody draws the line back to the stage that leaked. Nobody flags that "no Finance buy-in by Stage 3" was quietly killing deals. The feedback never makes it back to the rep, so nothing gets better. The loop stays open.
+ Revenue almost never closes that loop. We run the quarter, QBR about it 90 days later, and call that learning. Meanwhile the same leak opens again next quarter, and the one after that.
+ This is the gap Fluint closes. Loop traces what your reps and agents do, joins each action to the CRM outcome, and lets a private model label which moves move revenue and which transitions leak, matched against how comparable deals have closed. For this team, "get Finance and Ops bought in before Stage 3" turned out to be one of the strongest predictors of close they had. Nobody had to guess it. It was sitting in their data the whole time. They just had no way to see it.
+ And once you can see the leak, the sales motion to fix it is the part you already know how to run:
+ - Get reps multithreading to the COO at Stage 2, not the CHRO at Stage 4.
+- Put a real business case in front of the person who owns the priority list.
+- Coach to that specific gap in 1:1s, instead of coaching to vibes.
+- Tie your exit criteria to it, so a deal can't move until the leak is sealed.
+ The HR team did exactly this, by hand, one rep and one deal review at a time. Win rate climbed to about 28%. Stage 1 → 3 got a little slower, but Stage 3 → 5 got 10 days faster, and they closed more with less pipe. The reps loved it, because they were finally spending their energy where it moved the number.
+ Make the winning play run on every deal
+ Coaching works until the manager is out, the team doubles, or the play lives only in your best rep's head. The version that holds up is an agentic one.
+ You take the move that closes the gap, multithreading to the COO at Stage 2 with the right business case, and you stand up an Agent that runs it on every deal that reaches Stage 2. Loop gives it the context to know which buyer, which trigger, and which proof to bring, drawn from how deals like this one have actually closed. Now your best rep's mid-funnel judgment runs on all of them, not just the deals a manager happened to sit in on.
+ Then you trace it. Every time the Agent fires the play, the loop ties that action to what the deal did next: did it clear Stage 3, did it close, at what ACV. You stop arguing about whether the play works and start watching the Stage 3 → 4 rate move. If a cohort stops converting, you see it in days, not at the next business review. And because the loop is closed, the play sharpens each cycle instead of going stale.
+ The difference between winning the mid-funnel once and winning it every quarter comes down to this. Coverage was never going to tell you any of it. It can't see the middle of the funnel. It only counts the top.
+ So, which team are you building?
+ Coverage isn't useless. It's just an input. It tells you how hard the team is leaning, which, honestly, you can feel without a dashboard.
+ The number that matters is whether your stage conversion gets better every quarter. Whether last quarter's leak becomes this quarter's fixed predictor, running on every deal instead of the lucky few. That isn't a vanity ratio. It's a revenue motion that compounds.
+ So, a few questions worth sitting with this week:
+ - Type 1 or Type 2: which one are you actually building?
+- If you're Type 2, where is your funnel really leaking? (Not where you think, but where the data says.)
+- And when you find it, can you make the fix run on every deal, or does it stay locked in one rep's head?
+
+ FAQ's on:
+
+ ‍
+
+ More posts
+
+ Why stop now?
+
+ You’re on a roll. Keep reading related write-up’s:
+
+ Blog post
+
+ Inside the Informatica Memo That Rewired an Enterprise Sales Motion
+
+ Get the full breakdown of how Informatica shifted from pitch decks to co-authored narratives.
+
+ Blog post
+
+ 18 Sales Lessons from Mark Zuckerberg's Leaked 4,262 Word Email
+
+ This 4,262 word email leaked from Mark Zuckerberg. And it shares almost everything you need to know about selling to executives, and what kind of messaging...
+
+ Blog post
+
+ Brief & Brilliant: Book Preview
+
+ How to simplify complex deals and sell through the chaos of modern life.
+
+ Blog post
+
+ Can a GTM Engineer Recreate Olli?
+
+ We gave Jordan Crawford our playbook and watched him try to replace us.
+
+ Blog post
+
+ What Is the Orchestration Tax? The Hidden Cost of Multi-Agent AI in Enterprise Sales
+
+ You're running a stack of agents you can't observe. That's the orchestration tax: reconciliation work, token spend, and outcomes RevOps can't attribute. The fix isn't a smarter orchestrator. It's one shared context layer every agent reads from, and that you can see.
+
+ View all posts Subscribe 
+
+ Wall of love
+
+ Deal-winning context that changes the outcome
+
+ Loved by top performers from 500+ companies, with over $250M in closed-won revenue, all built with Fluint context.
+
+ Nathan L.
+ Sr. Enterprise Team Lead
+
+ Just closed the largest 7-figure ARR deal of my career using the one page business case framework.
+
+Now getting more call transcripts into the tool so I can do more of that 1-click goodness.
+
+ Shem E.
+ Senior AE
+
+ After starting a new role, Fluint helped me land a $250K deal during my first 6 months on the job. Giving my champion a true business case made all the difference.
+
+ Matt R.
+ Strategic AE
+
+ The 1-Page Business Case is a game changer. I used it as a primer for an exec meeting, and co-drafted it with my champion. We got right into the exec’s concerns, then to the green light and next steps. Invaluable.
+
+ Cobi C.
+ Strategic Account Director
+
+ We just landed a multiyear agreement thanks to the business case I built in Fluint.
+
+The buying team literally skipped entire steps in the decision process after seeing our champion lay out the value for them.
+
+ Kishan P.
+ Sr. Director Strategic Accounts
+
+ The beauty of Fluint is the ability to create spaces for collaboration with prospects and customers. I’ve leveraged Fluint to manage two 8-figure pursuits, creating 1 pagers to bring teams together, foster new relationships and new perspectives as we actively work to drive change.
+
+ Samantha P.
+ Global Strategic Account Executive
+
+ Fluint’s a game changer. Before, I thought I had to get a deal done. Now, it’s all about my buyers, and their strategic initiatives.
+
+Which is what Fluint lets me do: enable my champions, by making it easy for them to sell what matters to them and impacts their role.
+
+ Julien B.
+ Head of Global Business Development
+
+ Fluint helped me triple the size of a deal we just closed last month, the biggest of my year. We expected it to take 12 - 15 months to close it. Did a 7+ figure deal in 9 months.
+
+ Rick S.
+ Head of Sales
+
+ In the most complex deal I've closed we had to go through 8 very intense review boards with lots of uncertainty, but thank heavens I had Fluint to guide me. It's been seriously amazing.
+
+ Get Started 
+
+ The Revenue Engineering Platform designed to build, test, and deploy AI agents and models, across the full revenue cycle.
+ Start free
+
+ Run a guided POC
+
+ Resources
+ Changelog Visit help center 
+ Company
+ About us Contact Nate Nasralla 
+ Comparison
+ Fluint vs. Gong Fluint vs. Highspot Fluint vs. Sybill Fluint vs. Attention 
+
+ Ask AI about Fluint:
+
+ © 2026 Fluint ⛰️ Built with love in Denver
+ Privacy Policy
+ Terms of Sercive
+ Trust & Security

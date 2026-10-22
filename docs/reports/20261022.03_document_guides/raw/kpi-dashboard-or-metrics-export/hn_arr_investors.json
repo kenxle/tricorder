@@ -1,0 +1,1386 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "recursivecaveat"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "&gt; To lend credibility to the false figures, Fairfull forged bank documents using PDF-editing software and uploaded them to the data room <em>investors</em> used for due <em>diligence</em>.<p>Wait, when they're doing due <em>diligence</em>, nobody actually checks anything with the bank? I think it might be harder to fake eligibility for a mortgage than $107 million <em>ARR</em>."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "investors"
+     ],
+     "value": "The AI startup with no AI: Aussie boss jailed for misleading <em>investors</em>"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.smh.com.au/technology/australian-start-up-boss-who-faked-revenue-gets-nine-years-jail-20260618-p60847.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_recursivecaveat",
+    "story_48604326"
+   ],
+   "author": "recursivecaveat",
+   "comment_text": "&gt; To lend credibility to the false figures, Fairfull forged bank documents using PDF-editing software and uploaded them to the data room investors used for due diligence.<p>Wait, when they&#x27;re doing due diligence, nobody actually checks anything with the bank? I think it might be harder to fake eligibility for a mortgage than $107 million ARR.",
+   "created_at": "2026-06-20T05:33:37Z",
+   "created_at_i": 1781933617,
+   "objectID": "48606618",
+   "parent_id": 48604326,
+   "story_id": 48604326,
+   "story_title": "The AI startup with no AI: Aussie boss jailed for misleading investors",
+   "story_url": "https://www.smh.com.au/technology/australian-start-up-boss-who-faked-revenue-gets-nine-years-jail-20260618-p60847.html",
+   "updated_at": "2026-06-20T05:34:31Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jillesvangurp"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "Sounds like a great deal while it lasted for the engineers working there. They were over paid by a company that was bending over backwards to please them with money, benefits, and pretty much everything they could want. The stock turned out to be worthless of course, which is a bit of a bummer. But that's why salaries were presumably that high.<p>So, the money ran out and people got fired. So what? If they were any good, they no doubt found other companies to get a good deal with pretty soon after. I see no problem here. There's a shortage of competent engineers. That's the reason companies like this pay so well.<p>The only issue I see is dumb <em>investors</em> putting money in a company that clearly had no product market fit, a big spending problem, and nowhere near the <em>ARR</em> you would normally associate with a 100M+ C round. I mean, we're a struggling bootstrapped startup and we are getting close to that revenue this year. The <em>investors</em> we talk about (for a seed round) seem to be a lot more picky than was apparently the case for this company. You'd hope <em>investors</em> would do some due <em>diligence</em>. That clearly did not happen, at all. What the hell were they thinking?<p>Probably a juicy story there of incompetence, greed, stupidity, and various individuals benefiting when they arguably shouldn't have. I imagine the e.g. CEO of this company funneled away plenty for himself before bailing out in a hurry. If he paid his engineers a quarter million per year, I bet his own salary was probably a bit higher."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "What software engineers can learn from the rapid collapse of Fast"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://newsletter.pragmaticengineer.com/p/the-scoop-fast"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_jillesvangurp",
+    "story_30947595"
+   ],
+   "author": "jillesvangurp",
+   "comment_text": "Sounds like a great deal while it lasted for the engineers working there. They were over paid by a company that was bending over backwards to please them with money, benefits, and pretty much everything they could want. The stock turned out to be worthless of course, which is a bit of a bummer. But that&#x27;s why salaries were presumably that high.<p>So, the money ran out and people got fired. So what? If they were any good, they no doubt found other companies to get a good deal with pretty soon after. I see no problem here. There&#x27;s a shortage of competent engineers. That&#x27;s the reason companies like this pay so well.<p>The only issue I see is dumb investors putting money in a company that clearly had no product market fit, a big spending problem, and nowhere near the ARR you would normally associate with a 100M+ C round. I mean, we&#x27;re a struggling bootstrapped startup and we are getting close to that revenue this year. The investors we talk about (for a seed round) seem to be a lot more picky than was apparently the case for this company. You&#x27;d hope investors would do some due diligence. That clearly did not happen, at all. What the hell were they thinking?<p>Probably a juicy story there of incompetence, greed, stupidity, and various individuals benefiting when they arguably shouldn&#x27;t have. I imagine the e.g. CEO of this company funneled away plenty for himself before bailing out in a hurry. If he paid his engineers a quarter million per year, I bet his own salary was probably a bit higher.",
+   "created_at": "2022-04-08T08:18:01Z",
+   "created_at_i": 1649405881,
+   "objectID": "30954580",
+   "parent_id": 30947595,
+   "story_id": 30947595,
+   "story_title": "What software engineers can learn from the rapid collapse of Fast",
+   "story_url": "https://newsletter.pragmaticengineer.com/p/the-scoop-fast",
+   "updated_at": "2024-09-20T10:53:33Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jsnell"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "FT clearly didn't do their due <em>diligence</em>, since the auxiliary information provided with the $70B leak (about e.g. growth rates and enterprise sales) made it clear that the number could not possibly be correct.<p>It just wasn't clear exactly what the error was (e.g. was a projection of a $70B <em>ARR</em> by end of year being misinterpreted as $70B <em>ARR</em> now -- that would have been stupid, but less stupid than the &quot;<em>investors</em> added a fudge factor to the numbers&quot; story that they're now going with)."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "OpenAI annualised revenues $20B less than previously signalled"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.cnbc.com/2026/10/08/open-ai-revenue-nvidia-oracle-coreweave.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_jsnell",
+    "story_50008187"
+   ],
+   "author": "jsnell",
+   "children": [
+    50011074
+   ],
+   "comment_text": "FT clearly didn&#x27;t do their due diligence, since the auxiliary information provided with the $70B leak (about e.g. growth rates and enterprise sales) made it clear that the number could not possibly be correct.<p>It just wasn&#x27;t clear exactly what the error was (e.g. was a projection of a $70B ARR by end of year being misinterpreted as $70B ARR now -- that would have been stupid, but less stupid than the &quot;investors added a fudge factor to the numbers&quot; story that they&#x27;re now going with).",
+   "created_at": "2026-10-08T19:28:02Z",
+   "created_at_i": 1791487682,
+   "objectID": "50010804",
+   "parent_id": 50010269,
+   "story_id": 50008187,
+   "story_title": "OpenAI annualised revenues $20B less than previously signalled",
+   "story_url": "https://www.cnbc.com/2026/10/08/open-ai-revenue-nvidia-oracle-coreweave.html",
+   "updated_at": "2026-10-09T01:43:55Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "calebkaiser"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "I've worked on two open source infrastructure projects that raised money now, and am friends with people involved in many more. I'd put a couple of asterisks next to the claims in this article:<p>- VCs definitely cared about our Stars, especially in early stages, but not as our primary metric. I suppose Stars might be the primary metric if they're truly off the charts, but usually they're just one of many social proof signals an <em>investor</em> might look at.<p>- <em>Investors</em>, especially at the earliest stages, are quite a varied bunch. Some were diligent about looking at who was leaving Stars on the repo (i.e. are these accounts fake/do they belong to potential future customers). Some less so. This is true for basically every metric (see: startups that grossly misreport <em>ARR</em>)<p>- Fake GitHub stars were a thing way before 2022. I'd have to look in more detail at the methodology here, but I'd question any analysis that finds that paying for GitHub Stars (or any social following kind of metric) is a strictly post-2022 thing. Any metric that can be construed as social proof will immediately have its own grifter economy. <em>Investors</em> know this and (mostly) do their <em>diligence</em>.<p>Finally, showing numbers is hard for an early stage open source startup. At later stages, you should be able to show an actual business with typical metrics, but at the seed stage you often just have a repo and a website. Your goal is just to get a lot of people using your software. You can add telemetry to track that, but that's a thorny decision. GitHub Stars aren't a terrible proxy for popularity, provided that you audit the quality of the following. A project with a lot of organic stars and forks is, at the very least, a project that a lot of people are familiar with.<p>I'm not saying that GitHub Stars aren't wildly overvalued or gamed, but contextualized properly, they're a reasonable metric to consider, particularly at earlier stages. Most <em>investors</em> aren't just throwing millions at random repositories with 20k Stars from obviously spam accounts."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "GitHub's fake star economy"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://awesomeagents.ai/news/github-fake-stars-investigation/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_calebkaiser",
+    "story_47831621"
+   ],
+   "author": "calebkaiser",
+   "comment_text": "I&#x27;ve worked on two open source infrastructure projects that raised money now, and am friends with people involved in many more. I&#x27;d put a couple of asterisks next to the claims in this article:<p>- VCs definitely cared about our Stars, especially in early stages, but not as our primary metric. I suppose Stars might be the primary metric if they&#x27;re truly off the charts, but usually they&#x27;re just one of many social proof signals an investor might look at.<p>- Investors, especially at the earliest stages, are quite a varied bunch. Some were diligent about looking at who was leaving Stars on the repo (i.e. are these accounts fake&#x2F;do they belong to potential future customers). Some less so. This is true for basically every metric (see: startups that grossly misreport ARR)<p>- Fake GitHub stars were a thing way before 2022. I&#x27;d have to look in more detail at the methodology here, but I&#x27;d question any analysis that finds that paying for GitHub Stars (or any social following kind of metric) is a strictly post-2022 thing. Any metric that can be construed as social proof will immediately have its own grifter economy. Investors know this and (mostly) do their diligence.<p>Finally, showing numbers is hard for an early stage open source startup. At later stages, you should be able to show an actual business with typical metrics, but at the seed stage you often just have a repo and a website. Your goal is just to get a lot of people using your software. You can add telemetry to track that, but that&#x27;s a thorny decision. GitHub Stars aren&#x27;t a terrible proxy for popularity, provided that you audit the quality of the following. A project with a lot of organic stars and forks is, at the very least, a project that a lot of people are familiar with.<p>I&#x27;m not saying that GitHub Stars aren&#x27;t wildly overvalued or gamed, but contextualized properly, they&#x27;re a reasonable metric to consider, particularly at earlier stages. Most investors aren&#x27;t just throwing millions at random repositories with 20k Stars from obviously spam accounts.",
+   "created_at": "2026-04-20T17:48:30Z",
+   "created_at_i": 1776707310,
+   "objectID": "47837993",
+   "parent_id": 47833003,
+   "story_id": 47831621,
+   "story_title": "GitHub's fake star economy",
+   "story_url": "https://awesomeagents.ai/news/github-fake-stars-investigation/",
+   "updated_at": "2026-04-27T19:34:43Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "vintagedave"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "This is specifically AIs modeling the 99 Helpers C-level team? I was interested in a fictional chat representing 'a' C-level suite, to ask questions about any company or approach.<p>That said, I selected all of your characters and asked:<p>&gt; Ok, you're looking for investment. Why, and what questions that I have can you answer right now?<p>Hoping for something solid. My prompt may not have been strong enough, but if I was an <em>investor</em> I'd be asking, say, revenue stats or questions leading to <em>diligence</em> answers, etc.<p>What I expected was some kind of group chat in terms of some people replying, not everyone, or one person and then another riffing off them, rather like you would in a meeting.<p>What I got was eight separate replies, ie everyone replied. All were long, three lengthy paragraphs at least each -- this was <i>far</i> too much to read as a group chat. I skimread it all. All inhabited their persona well. None of them were particularly detailed. One of the best was Marcus, who replied (among lots of other text):<p>&gt; I can also elaborate on our current MRR and <em>ARR</em>, our churn rates, and our burn rate and runway.<p>So I moved to a 1:1 chat, quoted him, and asked for info. Again a verbose reply but it included:<p>&gt; Our current Monthly Recurring Revenue (MRR) stands at $85,000, which translates to an Annual Recurring Revenue (<em>ARR</em>) of $1,020,000.<p>&gt; we're currently tracking at a gross monthly churn rate of 2.1%. While this is within acceptable industry ranges for a company at our stage, I'm not satisfied<p>&gt; Our burn rate is $200,000 per month. This figure reflects our investment in product development, sales, and marketing efforts to scale 99helpers. Based on our current cash reserves, our runway is approximately 15 months<p>I have no idea how true these numbers are, ie if the AIs have access to your internal finances or not. It would be a very interesting approach to the open startup concept.<p>Either way, I feel the multi-persona approach is interesting; does not work currently as a group chat; is too generic ('I can talk about...'); and is overly verbose. I think it has potential if it is concise, if personas only reply if they have something to genuinely contribute, and if the strength of the inhabited persona character does not overrule the insight or advice."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "AI C-Suite \u2013 Chat with a fictional leadership team (1-on-1 or group chat)"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://99helpers.com/tools/csuite-advisor"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_vintagedave",
+    "story_47321340"
+   ],
+   "author": "vintagedave",
+   "children": [
+    47322289
+   ],
+   "comment_text": "This is specifically AIs modeling the 99 Helpers C-level team? I was interested in a fictional chat representing &#x27;a&#x27; C-level suite, to ask questions about any company or approach.<p>That said, I selected all of your characters and asked:<p>&gt; Ok, you&#x27;re looking for investment. Why, and what questions that I have can you answer right now?<p>Hoping for something solid. My prompt may not have been strong enough, but if I was an investor I&#x27;d be asking, say, revenue stats or questions leading to diligence answers, etc.<p>What I expected was some kind of group chat in terms of some people replying, not everyone, or one person and then another riffing off them, rather like you would in a meeting.<p>What I got was eight separate replies, ie everyone replied. All were long, three lengthy paragraphs at least each -- this was <i>far</i> too much to read as a group chat. I skimread it all. All inhabited their persona well. None of them were particularly detailed. One of the best was Marcus, who replied (among lots of other text):<p>&gt; I can also elaborate on our current MRR and ARR, our churn rates, and our burn rate and runway.<p>So I moved to a 1:1 chat, quoted him, and asked for info. Again a verbose reply but it included:<p>&gt; Our current Monthly Recurring Revenue (MRR) stands at $85,000, which translates to an Annual Recurring Revenue (ARR) of $1,020,000.<p>&gt; we&#x27;re currently tracking at a gross monthly churn rate of 2.1%. While this is within acceptable industry ranges for a company at our stage, I&#x27;m not satisfied<p>&gt; Our burn rate is $200,000 per month. This figure reflects our investment in product development, sales, and marketing efforts to scale 99helpers. Based on our current cash reserves, our runway is approximately 15 months<p>I have no idea how true these numbers are, ie if the AIs have access to your internal finances or not. It would be a very interesting approach to the open startup concept.<p>Either way, I feel the multi-persona approach is interesting; does not work currently as a group chat; is too generic (&#x27;I can talk about...&#x27;); and is overly verbose. I think it has potential if it is concise, if personas only reply if they have something to genuinely contribute, and if the strength of the inhabited persona character does not overrule the insight or advice.",
+   "created_at": "2026-03-10T11:03:11Z",
+   "created_at_i": 1773140591,
+   "objectID": "47321613",
+   "parent_id": 47321341,
+   "story_id": 47321340,
+   "story_title": "AI C-Suite \u2013 Chat with a fictional leadership team (1-on-1 or group chat)",
+   "story_url": "https://99helpers.com/tools/csuite-advisor",
+   "updated_at": "2026-03-10T12:27:29Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "sgpl"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "I had never heard of the company before but really interesting how there was no due <em>diligence</em> by the financiers/VCs before they wired in the money. Is this generally the norm?<p>Also surprising that a company that became a unicorn at its last financing round didn't have a CFO and that the CEO <i>'maintained control over operations, sales, and record-keeping, including invoicing, and he was the final decision maker on what revenue was booked and included in the company\u2019s financial records.'</i><p>Googled the person, apparently he co-founded a company previously that was acquired by Google and he claims to have previously served as the CTO of Zynga and holds 60 technology patents - so perhaps the stellar credentials were a check in the column against auditing financials.<p>Other tidbits:<p><pre><code>  - Founded in 2015:\n  - Series A: $11 mil (at inception)\n  - Convertible Notes: $24.7 mil (Apr '17 to May '18)\n  - Series B: $20 mil (Sep/Oct 2018) | valuation: ~$500 mil\n  - Series C: $60 mil (Nov '19 to Jan '20) | valuation: ~$1.1 bil \n\n</code></pre>\nWhile raising Series C round, overstated <em>ARR</em> by about $51 to $55 million in <em>investor</em> presentations. And after audit (in May 2020), valuation dropped to about $300 million."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Co-Founder and Former CEO of Headspin Charged with Fraud"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.justice.gov/usao-ndca/pr/co-founder-and-former-ceo-palo-alto-based-start-technology-company-headspin-charged"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_sgpl",
+    "story_28311106"
+   ],
+   "author": "sgpl",
+   "children": [
+    28311466,
+    28311503,
+    28313235,
+    28317816
+   ],
+   "comment_text": "I had never heard of the company before but really interesting how there was no due diligence by the financiers&#x2F;VCs before they wired in the money. Is this generally the norm?<p>Also surprising that a company that became a unicorn at its last financing round didn&#x27;t have a CFO and that the CEO <i>&#x27;maintained control over operations, sales, and record-keeping, including invoicing, and he was the final decision maker on what revenue was booked and included in the company\u2019s financial records.&#x27;</i><p>Googled the person, apparently he co-founded a company previously that was acquired by Google and he claims to have previously served as the CTO of Zynga and holds 60 technology patents - so perhaps the stellar credentials were a check in the column against auditing financials.<p>Other tidbits:<p><pre><code>  - Founded in 2015:\n  - Series A: $11 mil (at inception)\n  - Convertible Notes: $24.7 mil (Apr &#x27;17 to May &#x27;18)\n  - Series B: $20 mil (Sep&#x2F;Oct 2018) | valuation: ~$500 mil\n  - Series C: $60 mil (Nov &#x27;19 to Jan &#x27;20) | valuation: ~$1.1 bil \n\n</code></pre>\nWhile raising Series C round, overstated ARR by about $51 to $55 million in investor presentations. And after audit (in May 2020), valuation dropped to about $300 million.",
+   "created_at": "2021-08-26T06:35:10Z",
+   "created_at_i": 1629959710,
+   "objectID": "28311399",
+   "parent_id": 28311106,
+   "story_id": 28311106,
+   "story_title": "Co-Founder and Former CEO of Headspin Charged with Fraud",
+   "story_url": "https://www.justice.gov/usao-ndca/pr/co-founder-and-former-ceo-palo-alto-based-start-technology-company-headspin-charged",
+   "updated_at": "2024-09-20T09:13:30Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "fab1an"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "SEEKING WORK - Remote - Berlin, Germany.<p>I am exploratively beginning to offer <i>M&amp;A coaching</i> for CEO/founders of smaller startups (less than 5M in <em>ARR</em>). This is basically a service I wish I have had access to when (and before!) I sold my own SaaS ML company last year.<p>I will share everything I have learned about the small-time M&amp;A market and process, including:<p>* managing your own psychology and expectations as founder/CEO<p>* working with M&amp;A advisors, 'banks' and your lawyers<p>* managing and preparing your shareholders/<em>investors</em>/team<p>* negotiating term sheets and valuations<p>* housekeeping and getting through due <em>diligence</em><p>Note that I will not introduce you to a buyer or get your company sold. Instead, my goal is to help you as a founder to be more &quot;M&amp;A ready&quot; when the time is right.<p>Email me at fabian at fabian.ai and we will take it from there!"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Freelancer? Seeking Freelancer? (December 2019)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_fab1an",
+    "story_21683553"
+   ],
+   "author": "fab1an",
+   "comment_text": "SEEKING WORK - Remote - Berlin, Germany.<p>I am exploratively beginning to offer <i>M&amp;A coaching</i> for CEO&#x2F;founders of smaller startups (less than 5M in ARR). This is basically a service I wish I have had access to when (and before!) I sold my own SaaS ML company last year.<p>I will share everything I have learned about the small-time M&amp;A market and process, including:<p>* managing your own psychology and expectations as founder&#x2F;CEO<p>* working with M&amp;A advisors, &#x27;banks&#x27; and your lawyers<p>* managing and preparing your shareholders&#x2F;investors&#x2F;team<p>* negotiating term sheets and valuations<p>* housekeeping and getting through due diligence<p>Note that I will not introduce you to a buyer or get your company sold. Instead, my goal is to help you as a founder to be more &quot;M&amp;A ready&quot; when the time is right.<p>Email me at fabian at fabian.ai and we will take it from there!",
+   "created_at": "2019-12-02T18:53:27Z",
+   "created_at_i": 1575312807,
+   "objectID": "21685492",
+   "parent_id": 21683553,
+   "story_id": 21683553,
+   "story_title": "Ask HN: Freelancer? Seeking Freelancer? (December 2019)",
+   "updated_at": "2024-09-20T05:23:40Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "avifreedman"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "Have you checked whether any of your customers are connected to VCs?  Enough of ours are that in our seed, A, and B <em>diligence</em> they found folks to talk about us that I didn't point them to.<p>Re: selling vs raising, I would say it really depends on your fire to change the vertical market you're talking about (or more).<p>The other thing I've seen (in both directions) is that if you get hooked up to a few CEOs, they can make introductions for you.  Can you introduce customers to any CEOs that don't compete that have great <em>investors</em> that you'd like to talk to?  Get most CEOs I know a solid $100k+ <em>ARR</em> customer into and they'll listen to your story and make intros if I think appropriate.<p>It is a disadvantage to not be in an investor-dense area, and travel costs money.  I moved to SF to start Kentik, but I think the same principles would work if I had stayed in Philadelphia.<p>Good luck!"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Sell my startup for $14M because I can't raise $2M?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_avifreedman",
+    "story_15314663"
+   ],
+   "author": "avifreedman",
+   "comment_text": "Have you checked whether any of your customers are connected to VCs?  Enough of ours are that in our seed, A, and B diligence they found folks to talk about us that I didn&#x27;t point them to.<p>Re: selling vs raising, I would say it really depends on your fire to change the vertical market you&#x27;re talking about (or more).<p>The other thing I&#x27;ve seen (in both directions) is that if you get hooked up to a few CEOs, they can make introductions for you.  Can you introduce customers to any CEOs that don&#x27;t compete that have great investors that you&#x27;d like to talk to?  Get most CEOs I know a solid $100k+ ARR customer into and they&#x27;ll listen to your story and make intros if I think appropriate.<p>It is a disadvantage to not be in an investor-dense area, and travel costs money.  I moved to SF to start Kentik, but I think the same principles would work if I had stayed in Philadelphia.<p>Good luck!",
+   "created_at": "2017-09-23T01:20:53Z",
+   "created_at_i": 1506129653,
+   "objectID": "15317452",
+   "parent_id": 15314663,
+   "story_id": 15314663,
+   "story_title": "Ask HN: Sell my startup for $14M because I can't raise $2M?",
+   "updated_at": "2024-09-20T01:22:34Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "AndrewKemendo"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "<i>We think access is broadening out the network so that everybody who could contribute can get access to the network. And that\u2019s the one that we\u2019re working on.</i><p>I would like to hear a lot more about this. Being on the east coast the Silicon Valley crowd or even just the ethos around it seem totally foreign.<p>I will say I am somewhat connected in the D.C. area and I have heard from many Angels and VC's that the east coast will never look like SV simply because the money that is here is not like SV money - it's too tied up, needs too much due <em>diligence</em> and <em>investors</em> <em>are</em> too tightly wound as advisers/board members.<p>I don't know if that is true, and we <em>are</em> seeing huge growth in the Startup scene here, but it certainly feels much more restrictive than what you see on HN and read about how SV money/networks get thrown around."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "In conversation with Marc Andreessen"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://nymag.com/daily/intelligencer/2014/10/marc-andreessen-in-conversation.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_AndrewKemendo",
+    "story_8480445"
+   ],
+   "author": "AndrewKemendo",
+   "children": [
+    8480930
+   ],
+   "comment_text": "<i>We think access is broadening out the network so that everybody who could contribute can get access to the network. And that\u2019s the one that we\u2019re working on.</i><p>I would like to hear a lot more about this. Being on the east coast the Silicon Valley crowd or even just the ethos around it seem totally foreign.<p>I will say I am somewhat connected in the D.C. area and I have heard from many Angels and VC&#x27;s that the east coast will never look like SV simply because the money that is here is not like SV money - it&#x27;s too tied up, needs too much due diligence and investors are too tightly wound as advisers&#x2F;board members.<p>I don&#x27;t know if that is true, and we are seeing huge growth in the Startup scene here, but it certainly feels much more restrictive than what you see on HN and read about how SV money&#x2F;networks get thrown around.",
+   "created_at": "2014-10-20T04:51:03Z",
+   "created_at_i": 1413780663,
+   "objectID": "8480746",
+   "parent_id": 8480445,
+   "story_id": 8480445,
+   "story_title": "In conversation with Marc Andreessen",
+   "story_url": "http://nymag.com/daily/intelligencer/2014/10/marc-andreessen-in-conversation.html",
+   "updated_at": "2024-09-19T21:19:18Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "kls"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "<i>The infrastructure is better</i><p>It's funny when this subject is brought up it is always about the nets infrastructure and never about logistics which have improved enormously from the income of the .com boom as well as advances in technology in their sector. Fedex and UPS <em>are</em> now shipping far more for far cheaper than they ever have, the first bubble helped them improve their infrastructure and that is a huge piece of the puzzle as to why we <em>are</em> able to handle more innovation now.<p>That being said, I do think the scrutiny and due <em>diligence</em> some <em>investors</em> <em>are</em> doing lacks rigor as such some of the companies will fail, the real question is <em>are</em> the successes enough to offset the bad investments. Once that scale tips we <em>are</em> running up the bubble, I don't think we <em>are</em> there yet, but it will bubble at some point, as one of the only bright sectors of the economy it cannot be ignored for long. People <em>are</em> desperate to get their money in an inflating bet, at the moment the barrier to entry to do that with Angle and VC investing is high which creates a form of self regulating market."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "4 Signs We're Not in a Tech Bubble"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://us2.campaign-archive1.com/?u=05dd73e60ccac15ccb49357c8&id=2ea8948f1e"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_kls",
+    "story_3764112"
+   ],
+   "author": "kls",
+   "comment_text": "<i>The infrastructure is better</i><p>It's funny when this subject is brought up it is always about the nets infrastructure and never about logistics which have improved enormously from the income of the .com boom as well as advances in technology in their sector. Fedex and UPS are now shipping far more for far cheaper than they ever have, the first bubble helped them improve their infrastructure and that is a huge piece of the puzzle as to why we are able to handle more innovation now.<p>That being said, I do think the scrutiny and due diligence some investors are doing lacks rigor as such some of the companies will fail, the real question is are the successes enough to offset the bad investments. Once that scale tips we are running up the bubble, I don't think we are there yet, but it will bubble at some point, as one of the only bright sectors of the economy it cannot be ignored for long. People are desperate to get their money in an inflating bet, at the moment the barrier to entry to do that with Angle and VC investing is high which creates a form of self regulating market.",
+   "created_at": "2012-03-28T01:31:24Z",
+   "created_at_i": 1332898284,
+   "objectID": "3764284",
+   "parent_id": 3764112,
+   "points": null,
+   "story_id": 3764112,
+   "story_title": "4 Signs We're Not in a Tech Bubble",
+   "story_url": "http://us2.campaign-archive1.com/?u=05dd73e60ccac15ccb49357c8&id=2ea8948f1e",
+   "updated_at": "2023-09-06T21:22:30Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "numlocked"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "By default (and in most cases) <em>investors</em> and operators <em>are</em> aligned. When we <em>diligence</em> our <em>investors</em>, we call companies they worked with where things <i>didn\u2019t</i> go well, and speak to those founders. Understanding how <em>investors</em> operate when it\u2019s not all up-and-to-the-right is important when picking partners!"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "OpenRouter raises $113M Series B"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://openrouter.ai/announcements/series-b"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_numlocked",
+    "story_48338660"
+   ],
+   "author": "numlocked",
+   "comment_text": "By default (and in most cases) investors and operators are aligned. When we diligence our investors, we call companies they worked with where things <i>didn\u2019t</i> go well, and speak to those founders. Understanding how investors operate when it\u2019s not all up-and-to-the-right is important when picking partners!",
+   "created_at": "2026-05-31T12:59:01Z",
+   "created_at_i": 1780232341,
+   "objectID": "48345352",
+   "parent_id": 48345239,
+   "story_id": 48338660,
+   "story_title": "OpenRouter raises $113M Series B",
+   "story_url": "https://openrouter.ai/announcements/series-b",
+   "updated_at": "2026-06-02T19:01:16Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "bsims"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "Appreciate the comments, particularly those that provided specific organizations and links related to investigative journalism, white collar crime etc. I also hope the information was helpful to those who <em>are</em> involved in forming their own organizations, dealing with <em>investors</em>, etc.<p>Some additional points addressing various comments and themes:<p>>I\u2019m glad there is additional dialogue about investor due <em>diligence</em>. Others <em>are</em> absolutely right that if you\u2019re going to invest in a company it is up to you to do your own due <em>diligence</em>. Go visit the company, speak with customers, get references.<p>>I lost no money in this process and was simply looking out for the interests of a friend and investor.<p>>The original individual referenced counter sued the State of Idaho for defamation, after the State originally filed suit against him years ago. Obviously the State has far greater resources than I do. As much as I\u2019d like to throw up names, links etc. there is a very real downside and unfortunately is not something I\u2019m willing to do at this time publicly. If some enterprising investigative journalist wanted to take the reins I\u2019d be open to helping them find out information on their own.<p>>This was posted on Blogger because I didn't want it distracting from other things I\u2019m working on. I also don\u2019t think my personal site would have been able to handle the traffic.<p>>There <em>are</em> legitimate examples of reverse mergers and stocks that aren't traded on major exchanges. However, the smaller the stock the more chance for fraud, fewer checks etc.<p>>International incorporation is a regular practice and employed by companies such as Apple and Facebook. However the Cayman Islands <em>are</em> simultaneously a hot bed for fraudulent activity (interestingly as <em>are</em> Vancouver, B.C. and Boca Raton, Florida).<p><a href=\"http://www.businessinsider.com/facebook-funneled-nearly-half-a-billion-pounds-in-the-cayman-islands-last-year-2012-12\" rel=\"nofollow\">http://www.businessinsider.com/facebook-funneled-nearly-half...</a><p>As for Unicorns and sniff tests, if you don\u2019t believe it, that's ok. I wouldn't have believed it either. It's good you're exercising your right to question things which was the basis of the post."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "What it's like to uncover a $1 billion fraud"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://stockfraudstory.blogspot.com/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_bsims",
+    "story_5236372"
+   ],
+   "author": "bsims",
+   "comment_text": "Appreciate the comments, particularly those that provided specific organizations and links related to investigative journalism, white collar crime etc. I also hope the information was helpful to those who are involved in forming their own organizations, dealing with investors, etc.<p>Some additional points addressing various comments and themes:<p>&#62;I\u2019m glad there is additional dialogue about investor due diligence. Others are absolutely right that if you\u2019re going to invest in a company it is up to you to do your own due diligence. Go visit the company, speak with customers, get references.<p>&#62;I lost no money in this process and was simply looking out for the interests of a friend and investor.<p>&#62;The original individual referenced counter sued the State of Idaho for defamation, after the State originally filed suit against him years ago. Obviously the State has far greater resources than I do. As much as I\u2019d like to throw up names, links etc. there is a very real downside and unfortunately is not something I\u2019m willing to do at this time publicly. If some enterprising investigative journalist wanted to take the reins I\u2019d be open to helping them find out information on their own.<p>&#62;This was posted on Blogger because I didn't want it distracting from other things I\u2019m working on. I also don\u2019t think my personal site would have been able to handle the traffic.<p>&#62;There are legitimate examples of reverse mergers and stocks that aren't traded on major exchanges. However, the smaller the stock the more chance for fraud, fewer checks etc.<p>&#62;International incorporation is a regular practice and employed by companies such as Apple and Facebook. However the Cayman Islands are simultaneously a hot bed for fraudulent activity (interestingly as are Vancouver, B.C. and Boca Raton, Florida).<p><a href=\"http://www.businessinsider.com/facebook-funneled-nearly-half-a-billion-pounds-in-the-cayman-islands-last-year-2012-12\" rel=\"nofollow\">http://www.businessinsider.com/facebook-funneled-nearly-half...</a><p>As for Unicorns and sniff tests, if you don\u2019t believe it, that's ok. I wouldn't have believed it either. It's good you're exercising your right to question things which was the basis of the post.",
+   "created_at": "2013-02-18T02:53:35Z",
+   "created_at_i": 1361156015,
+   "objectID": "5237895",
+   "parent_id": 5236372,
+   "story_id": 5236372,
+   "story_title": "What it's like to uncover a $1 billion fraud",
+   "story_url": "http://stockfraudstory.blogspot.com/",
+   "updated_at": "2024-09-19T19:16:18Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "chalst"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "Who <em>are</em> Avalia?  Due <em>diligence</em> suggests they advise <em>investors</em>, from their homepage, they don't cme across as your regular finance types."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "arr"
+     ],
+     "value": "Red Hat: The people that <em>are</em> worth billions to IBM"
+    },
+    "story_url": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "diligence"
+     ],
+     "value": "https://avalia.io/red-hat-software-due-<em>diligence</em>/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_chalst",
+    "story_19006043"
+   ],
+   "author": "chalst",
+   "comment_text": "Who are Avalia?  Due diligence suggests they advise investors, from their homepage, they don&#x27;t cme across as your regular finance types.",
+   "created_at": "2019-01-26T13:47:09Z",
+   "created_at_i": 1548510429,
+   "objectID": "19006260",
+   "parent_id": 19006043,
+   "story_id": 19006043,
+   "story_title": "Red Hat: The people that are worth billions to IBM",
+   "story_url": "https://avalia.io/red-hat-software-due-diligence/",
+   "updated_at": "2024-09-20T03:37:18Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "7Figures2Commas"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "Homejoy was (at least at one point) the fastest growing company in YC history according to PG[1], and if you go back and read the press, particularly around its funding, it was treated like it was already a success.<p>Its rapid demise is a good reminder that growth isn't profit, and funding from top tier <em>investors</em> doesn't actually signal that you <em>are</em> building a sustainable business.<p>Incidentally, I have pointed out the employee misclassification issue numerous times[2][3], and wrote last year[4]:<p>&gt; It's going to be very interesting in the coming years to see which of these on-demand companies continue to thrive because I personally think it's inevitable that many of them <em>are</em> going to be forced to reclassify their workers as employees. I suspect some <em>investors</em> aren't giving this enough consideration in their due <em>diligence</em>.<p>If <em>investors</em> <em>are</em> now doing their due <em>diligence</em> (gasp) and realizing that many of these portfolio companies <em>are</em> not going to be able to effectively defend against misclassifcation class actions, Homejoy is <i>not</i> going to be the last of these highly-funded on-demand companies to literally hit a wall.<p>[1] <a href=\"http://www.reddit.com/r/EntrepreneurRideAlong/comments/1uyr6r/homejoy_is_the_fastest_growing_company_in_the/\" rel=\"nofollow\">http://www.reddit.com/r/EntrepreneurRideAlong/comments/1uyr6...</a><p>[2] <a href=\"https://news.ycombinator.com/item?id=8489834\" rel=\"nofollow\">https://news.ycombinator.com/item?id=8489834</a><p>[3] <a href=\"https://news.ycombinator.com/item?id=8468863\" rel=\"nofollow\">https://news.ycombinator.com/item?id=8468863</a><p>[4] <a href=\"https://news.ycombinator.com/item?id=8709632\" rel=\"nofollow\">https://news.ycombinator.com/item?id=8709632</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Homejoy says goodbye"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://blog.homejoy.com/homejoy-says-goodbye/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_7Figures2Commas",
+    "story_9903831"
+   ],
+   "author": "7Figures2Commas",
+   "comment_text": "Homejoy was (at least at one point) the fastest growing company in YC history according to PG[1], and if you go back and read the press, particularly around its funding, it was treated like it was already a success.<p>Its rapid demise is a good reminder that growth isn&#x27;t profit, and funding from top tier investors doesn&#x27;t actually signal that you are building a sustainable business.<p>Incidentally, I have pointed out the employee misclassification issue numerous times[2][3], and wrote last year[4]:<p>&gt; It&#x27;s going to be very interesting in the coming years to see which of these on-demand companies continue to thrive because I personally think it&#x27;s inevitable that many of them are going to be forced to reclassify their workers as employees. I suspect some investors aren&#x27;t giving this enough consideration in their due diligence.<p>If investors are now doing their due diligence (gasp) and realizing that many of these portfolio companies are not going to be able to effectively defend against misclassifcation class actions, Homejoy is <i>not</i> going to be the last of these highly-funded on-demand companies to literally hit a wall.<p>[1] <a href=\"http:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;EntrepreneurRideAlong&#x2F;comments&#x2F;1uyr6r&#x2F;homejoy_is_the_fastest_growing_company_in_the&#x2F;\" rel=\"nofollow\">http:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;EntrepreneurRideAlong&#x2F;comments&#x2F;1uyr6...</a><p>[2] <a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=8489834\" rel=\"nofollow\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=8489834</a><p>[3] <a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=8468863\" rel=\"nofollow\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=8468863</a><p>[4] <a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=8709632\" rel=\"nofollow\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=8709632</a>",
+   "created_at": "2015-07-17T18:24:10Z",
+   "created_at_i": 1437157450,
+   "objectID": "9904326",
+   "parent_id": 9903831,
+   "points": null,
+   "story_id": 9903831,
+   "story_title": "Homejoy says goodbye",
+   "story_url": "http://blog.homejoy.com/homejoy-says-goodbye/",
+   "updated_at": "2023-09-07T03:13:52Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "fsk"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "It depends on what kind of bubble you're in, and how negligent your <em>investors</em> <em>are</em> regarding due <em>diligence</em>.  Obviously, if you invest $100k in a business in exchange for $25k services rendered, that isn't $25k of &quot;real&quot; revenue.<p>During the 1999 .com bubble, Yahoo (iirc) and some other companies invested in startups, in exchange for an agreement to purchase their services.  That let the corporation pad its revenue, inflate its earnings, and with an already-high P/E ratio, gullible <em>investors</em> bought."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "UK startup accelerators take matched service charges on top of invested capital?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_fsk",
+    "story_9190485"
+   ],
+   "author": "fsk",
+   "comment_text": "It depends on what kind of bubble you&#x27;re in, and how negligent your investors are regarding due diligence.  Obviously, if you invest $100k in a business in exchange for $25k services rendered, that isn&#x27;t $25k of &quot;real&quot; revenue.<p>During the 1999 .com bubble, Yahoo (iirc) and some other companies invested in startups, in exchange for an agreement to purchase their services.  That let the corporation pad its revenue, inflate its earnings, and with an already-high P&#x2F;E ratio, gullible investors bought.",
+   "created_at": "2015-03-12T23:25:22Z",
+   "created_at_i": 1426202722,
+   "objectID": "9194705",
+   "parent_id": 9191220,
+   "points": null,
+   "story_id": 9190485,
+   "story_title": "UK startup accelerators take matched service charges on top of invested capital?",
+   "updated_at": "2023-09-07T02:17:34Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "dpflan"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "Fascinating and awesome <em>diligence</em>.<p><em>Are</em> you an <em>investor</em>? Startup stats fan? Looking to take your lessons and research and start your own company?<p>Would you be willing to share your notes or a curated version?"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "YC W20 Online-Only Demo Day"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://blog.ycombinator.com/yc-w20-online-demo-day/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_dpflan",
+    "story_22506013"
+   ],
+   "author": "dpflan",
+   "children": [
+    22507385
+   ],
+   "comment_text": "Fascinating and awesome diligence.<p>Are you an investor? Startup stats fan? Looking to take your lessons and research and start your own company?<p>Would you be willing to share your notes or a curated version?",
+   "created_at": "2020-03-06T20:54:25Z",
+   "created_at_i": 1583528065,
+   "objectID": "22507208",
+   "parent_id": 22507122,
+   "story_id": 22506013,
+   "story_title": "YC W20 Online-Only Demo Day",
+   "story_url": "https://blog.ycombinator.com/yc-w20-online-demo-day/",
+   "updated_at": "2024-09-20T05:47:09Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "yardie"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "Guys like the one you describe <em>are</em> a rounding error in modern industrial refrigeration. Like a major company may use him they transition to modern equipment but at the scale they need he would raise all sorts of red flags not just in government regulators but insurance and <em>investors</em> doing their <em>diligence</em>. They <em>are</em> going to want to know why an expensive line item is going out.<p>TLDR; you're friends business model doesn't scale and relies on very unique edge cases."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The Uninhabitable Earth"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://nymag.com/daily/intelligencer/2017/07/climate-change-earth-too-hot-for-humans.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_yardie",
+    "story_14734865"
+   ],
+   "author": "yardie",
+   "comment_text": "Guys like the one you describe are a rounding error in modern industrial refrigeration. Like a major company may use him they transition to modern equipment but at the scale they need he would raise all sorts of red flags not just in government regulators but insurance and investors doing their diligence. They are going to want to know why an expensive line item is going out.<p>TLDR; you&#x27;re friends business model doesn&#x27;t scale and relies on very unique edge cases.",
+   "created_at": "2017-07-10T14:12:51Z",
+   "created_at_i": 1499695971,
+   "objectID": "14736071",
+   "parent_id": 14735804,
+   "story_id": 14734865,
+   "story_title": "The Uninhabitable Earth",
+   "story_url": "http://nymag.com/daily/intelligencer/2017/07/climate-change-earth-too-hot-for-humans.html",
+   "updated_at": "2024-09-20T01:02:37Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jacquesm"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "It concentrates a lot of time on a single customer which means I may have to say 'no' to my other, repeat customers for shorter jobs. My line of business is normally technical due <em>diligence</em> (helping <em>investors</em> to make savvy decisions about where to invest and where definitely not to invest). That work is usually very short term (typically a week) and there is no guessing ahead of time when a job will come up. So when one of my customers calls I'm supposed to be up and running within a day or so.<p>Another risk is that when I call my friends in to assist I assume their risk of not getting paid, in other words, if the company would not be able to meet its obligations I would make sure my friends and colleagues would be made whole (those relationships <em>are</em> worth more to me than any job ever would be)."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Saving a Project and a Company"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://jacquesmattheij.com/saving-a-project-and-a-company"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_jacquesm",
+    "story_8814253"
+   ],
+   "author": "jacquesm",
+   "comment_text": "It concentrates a lot of time on a single customer which means I may have to say &#x27;no&#x27; to my other, repeat customers for shorter jobs. My line of business is normally technical due diligence (helping investors to make savvy decisions about where to invest and where definitely not to invest). That work is usually very short term (typically a week) and there is no guessing ahead of time when a job will come up. So when one of my customers calls I&#x27;m supposed to be up and running within a day or so.<p>Another risk is that when I call my friends in to assist I assume their risk of not getting paid, in other words, if the company would not be able to meet its obligations I would make sure my friends and colleagues would be made whole (those relationships are worth more to me than any job ever would be).",
+   "created_at": "2014-12-30T14:20:44Z",
+   "created_at_i": 1419949244,
+   "objectID": "8814648",
+   "parent_id": 8814625,
+   "story_id": 8814253,
+   "story_title": "Saving a Project and a Company",
+   "story_url": "http://jacquesmattheij.com/saving-a-project-and-a-company",
+   "updated_at": "2024-09-19T21:24:25Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jroseattle"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "Overall, I have no problem with Marc's suggestions from a credibility/benefit POV, and I don't think he's making those comments to further any strategic position for himself.<p>&quot;People in SV generally consider this unethical and abusive.&quot;<p>But this comment stood out to me. In my interpretation, this translates to Marc saying the civility and integrity of the benevolent overlords of Sili Valley <em>are</em> the true standard bearers of how to operate in the technology capital business. Further, anyone who doesn't follow that protocol is out of bounds.<p>Marc even calls out how the market will take care of this problem and that tech companies will need to do their own due <em>diligence</em> on <em>investors</em>. The implication: tech companies <em>are</em> obviously not smart enough to do that on their own, so I better let them know. Really...if any company taking on significant investment doesn't execute their own due <em>diligence</em> on their <em>investors</em>, well you get what you get."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "investors"
+     ],
+     "value": "Andreessen: Beware Non-Silicon Valley <em>Investors</em> Bearing High Valuations"
+    },
+    "story_url": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "investors"
+     ],
+     "value": "http://blogs.wsj.com/venturecapital/2014/04/08/andreessen-beware-non-silicon-valley-<em>investors</em>-bearing-high-valuations/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_jroseattle",
+    "story_7580253"
+   ],
+   "author": "jroseattle",
+   "children": [
+    7581158
+   ],
+   "comment_text": "Overall, I have no problem with Marc&#x27;s suggestions from a credibility&#x2F;benefit POV, and I don&#x27;t think he&#x27;s making those comments to further any strategic position for himself.<p>&quot;People in SV generally consider this unethical and abusive.&quot;<p>But this comment stood out to me. In my interpretation, this translates to Marc saying the civility and integrity of the benevolent overlords of Sili Valley are the true standard bearers of how to operate in the technology capital business. Further, anyone who doesn&#x27;t follow that protocol is out of bounds.<p>Marc even calls out how the market will take care of this problem and that tech companies will need to do their own due diligence on investors. The implication: tech companies are obviously not smart enough to do that on their own, so I better let them know. Really...if any company taking on significant investment doesn&#x27;t execute their own due diligence on their investors, well you get what you get.",
+   "created_at": "2014-04-13T12:32:12Z",
+   "created_at_i": 1397392332,
+   "objectID": "7581124",
+   "parent_id": 7580253,
+   "points": null,
+   "story_id": 7580253,
+   "story_title": "Andreessen: Beware Non-Silicon Valley Investors Bearing High Valuations",
+   "story_url": "http://blogs.wsj.com/venturecapital/2014/04/08/andreessen-beware-non-silicon-valley-investors-bearing-high-valuations/",
+   "updated_at": "2023-09-06T22:40:32Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "antr"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "Lawsuits don't care what you <em>are</em>, but they tend to happen to startups and business which have cash on the balance sheet. This is no joke. <em>Investors</em> have a fiduciary duty to their LPs, and even if its the wrong move, a managerial &quot;change&quot; transmits investor <em>diligence</em> to the LPs."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Does Snapchat's CEO Need to Go?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://finance.fortune.cnn.com/2014/01/03/snapchat-ceo-go/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_antr",
+    "story_7007945"
+   ],
+   "author": "antr",
+   "comment_text": "Lawsuits don&#x27;t care what you are, but they tend to happen to startups and business which have cash on the balance sheet. This is no joke. Investors have a fiduciary duty to their LPs, and even if its the wrong move, a managerial &quot;change&quot; transmits investor diligence to the LPs.",
+   "created_at": "2014-01-03T21:00:58Z",
+   "created_at_i": 1388782858,
+   "objectID": "7008095",
+   "parent_id": 7008042,
+   "story_id": 7007945,
+   "story_title": "Does Snapchat's CEO Need to Go?",
+   "story_url": "http://finance.fortune.cnn.com/2014/01/03/snapchat-ceo-go/",
+   "updated_at": "2024-09-19T20:19:23Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "dazzawazza"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "A startup I worked at received investment from a group of <em>investors</em>. While doing due <em>diligence</em> the <em>investors</em> said we made it easier for them because we were using Microsoft technologies. They turned out to be really bad <em>investors</em> who were real PITA.<p>I guess I am trying to say it only matters to people you probably don't want to do business with. They should care about how capable you <em>are</em> not the platform/language you chose to use as a tool to show your capabilities.\n"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask YC: Does your choice of language/platform play a role during an acquisition?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_dazzawazza",
+    "story_64085"
+   ],
+   "author": "dazzawazza",
+   "comment_text": "A startup I worked at received investment from a group of investors. While doing due diligence the investors said we made it easier for them because we were using Microsoft technologies. They turned out to be really bad investors who were real PITA.<p>I guess I am trying to say it only matters to people you probably don't want to do business with. They should care about how capable you are not the platform/language you chose to use as a tool to show your capabilities.\n",
+   "created_at": "2007-10-07T00:04:26Z",
+   "created_at_i": 1191715466,
+   "objectID": "64282",
+   "parent_id": 64085,
+   "story_id": 64085,
+   "story_title": "Ask YC: Does your choice of language/platform play a role during an acquisition?",
+   "story_url": "",
+   "updated_at": "2024-09-19T16:22:41Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "salleisha"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "April 15th isn't just a date, it\u2019s a stress test for your back office.<p>If you\u2019re running a Delaware C-Corp, you know the drill. You think you have time, then suddenly it\u2019s April 14th, your bank sync is broken, and your CPA is ghosting you because they have 100 other founders in the same boat.<p>A few reminders for the 2026 tax season:<p>- Zero income \u2260 Zero paperwork: Even if you\u2019re pre-revenue, the IRS still requires Form 1120. No filing, no compliance.<p>- Extensions buy time, not money: You can file for an extension to submit your paperwork in October, but any taxes owed <em>are</em> still due now.<p>- Due <em>Diligence</em> starts here: <em>Investors</em> don\u2019t just look at your code; they look at your tax returns. Messy filings <em>are</em> a major red flag during your next round.<p>We built TaxHero AI so you don\u2019t have to play accountant every spring. We handle the prep and the calendar, so April 15th is just another Tuesday for you.<p>Stop scrambling. Build the product, we\u2019ll handle the IRS.<p>Check your deadlines: taxhero.vc/checkin<p>#Startups #DelawareCCorp #TaxSeason2026 #FounderLife #Fintech"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "[dead]"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_salleisha",
+    "story_47367671"
+   ],
+   "author": "salleisha",
+   "comment_text": "April 15th isn&#x27;t just a date, it\u2019s a stress test for your back office.<p>If you\u2019re running a Delaware C-Corp, you know the drill. You think you have time, then suddenly it\u2019s April 14th, your bank sync is broken, and your CPA is ghosting you because they have 100 other founders in the same boat.<p>A few reminders for the 2026 tax season:<p>- Zero income \u2260 Zero paperwork: Even if you\u2019re pre-revenue, the IRS still requires Form 1120. No filing, no compliance.<p>- Extensions buy time, not money: You can file for an extension to submit your paperwork in October, but any taxes owed are still due now.<p>- Due Diligence starts here: Investors don\u2019t just look at your code; they look at your tax returns. Messy filings are a major red flag during your next round.<p>We built TaxHero AI so you don\u2019t have to play accountant every spring. We handle the prep and the calendar, so April 15th is just another Tuesday for you.<p>Stop scrambling. Build the product, we\u2019ll handle the IRS.<p>Check your deadlines: taxhero.vc&#x2F;checkin<p>#Startups #DelawareCCorp #TaxSeason2026 #FounderLife #Fintech",
+   "created_at": "2026-03-13T18:11:10Z",
+   "created_at_i": 1773425470,
+   "objectID": "47367672",
+   "parent_id": 47367671,
+   "story_id": 47367671,
+   "story_title": "[dead]",
+   "updated_at": "2026-03-13T18:12:41Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "SilverElfin"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "&gt;  investments <em>are</em> often justified as a cost of running a VC firm<p>&gt; But yes, you\u2019d expect more due <em>diligence</em> from <em>investors</em>, but a lot of times it\u2019s just about how likeable you <em>are</em> and who you know.<p>I think both of these can be true simultaneously. The limits of due <em>diligence</em> and the practical ability to evaluate an investment opportunity (quickly and at low cost) mean you sometimes do make mistakes, even \u201cstupid\u201d ones. But also, access and networks and old boys clubs <em>are</em> rampant in the VC ecosystem."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "An investigation into Substrate"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://substack.com/inbox/post/177604037"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_SilverElfin",
+    "story_45767013"
+   ],
+   "author": "SilverElfin",
+   "comment_text": "&gt;  investments are often justified as a cost of running a VC firm<p>&gt; But yes, you\u2019d expect more due diligence from investors, but a lot of times it\u2019s just about how likeable you are and who you know.<p>I think both of these can be true simultaneously. The limits of due diligence and the practical ability to evaluate an investment opportunity (quickly and at low cost) mean you sometimes do make mistakes, even \u201cstupid\u201d ones. But also, access and networks and old boys clubs are rampant in the VC ecosystem.",
+   "created_at": "2025-11-01T17:20:27Z",
+   "created_at_i": 1762017627,
+   "objectID": "45783435",
+   "parent_id": 45783329,
+   "story_id": 45767013,
+   "story_title": "An investigation into Substrate",
+   "story_url": "https://substack.com/inbox/post/177604037",
+   "updated_at": "2026-03-05T22:59:59Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "darth_avocado"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "Lack of due <em>diligence</em> often gets characterized as a failed investment. And failed investments <em>are</em> often justified as a cost of running a VC firm, as long as one of them is a 100x success, the 99 failed ones don\u2019t matter. But yes, you\u2019d expect more due <em>diligence</em> from <em>investors</em>, but a lot of times it\u2019s just about how likeable you <em>are</em> and who you know. We wouldn\u2019t have VCs funding Adam Neumann\u2019s new venture with hundreds of millions of dollars as soon as his Wework nonsense got exposed and collapsed."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "An investigation into Substrate"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://substack.com/inbox/post/177604037"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_darth_avocado",
+    "story_45767013"
+   ],
+   "author": "darth_avocado",
+   "children": [
+    45783435,
+    45783836
+   ],
+   "comment_text": "Lack of due diligence often gets characterized as a failed investment. And failed investments are often justified as a cost of running a VC firm, as long as one of them is a 100x success, the 99 failed ones don\u2019t matter. But yes, you\u2019d expect more due diligence from investors, but a lot of times it\u2019s just about how likeable you are and who you know. We wouldn\u2019t have VCs funding Adam Neumann\u2019s new venture with hundreds of millions of dollars as soon as his Wework nonsense got exposed and collapsed.",
+   "created_at": "2025-11-01T17:08:01Z",
+   "created_at_i": 1762016881,
+   "objectID": "45783329",
+   "parent_id": 45783248,
+   "story_id": 45767013,
+   "story_title": "An investigation into Substrate",
+   "story_url": "https://substack.com/inbox/post/177604037",
+   "updated_at": "2026-03-05T22:59:59Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tomhow"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "&gt; &quot;I can make millions out of selling stolen code if I don't get caught&quot;<p>This is the opposite of what happens and YC drums this into founders from the start; at least they did in my day, because pg's main startup (Viaweb) was nearly brought undone by an IP dispute, and it scarred him deeply.<p>What YC tells you is that the more successful you <em>are</em>, the more likely it is that you'll be caught if you mis-use IP, and auditing this is one of the biggest parts of the due <em>diligence</em> that <em>investors</em>, acquirers and commercial partners will undertake.<p>In fact, pg explicitly addresses this very thing in his 2005 essay How To Start a Startup [1], which was the original inspiration for YC:<p><i>One of the worst things that can happen to a startup is to run into intellectual property problems. We did, and it came closer to killing us than any competitor ever did.</i><p><i>As we were in the middle of getting bought, we discovered that one of our people had, early on, been bound by an agreement that said all his ideas belonged to the giant company that was paying for him to go to grad school. In theory, that could have meant someone else owned big chunks of our software. So the acquisition came to a screeching halt while we tried to sort this out. The problem was, since we'd been about to be acquired, we'd allowed ourselves to run low on cash. Now we needed to raise more to keep going. But it's hard to raise money with an IP cloud over your head, because <em>investors</em> can't judge how serious it is.</i><p>[1] <a href=\"https://paulgraham.com/start.html\" rel=\"nofollow\">https://paulgraham.com/start.html</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "My open source project was relicensed by a YC company [license updated]"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://twitter.com/soham_btw/status/1940952786491027886"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_tomhow",
+    "story_44460552"
+   ],
+   "author": "tomhow",
+   "comment_text": "&gt; &quot;I can make millions out of selling stolen code if I don&#x27;t get caught&quot;<p>This is the opposite of what happens and YC drums this into founders from the start; at least they did in my day, because pg&#x27;s main startup (Viaweb) was nearly brought undone by an IP dispute, and it scarred him deeply.<p>What YC tells you is that the more successful you are, the more likely it is that you&#x27;ll be caught if you mis-use IP, and auditing this is one of the biggest parts of the due diligence that investors, acquirers and commercial partners will undertake.<p>In fact, pg explicitly addresses this very thing in his 2005 essay How To Start a Startup [1], which was the original inspiration for YC:<p><i>One of the worst things that can happen to a startup is to run into intellectual property problems. We did, and it came closer to killing us than any competitor ever did.</i><p><i>As we were in the middle of getting bought, we discovered that one of our people had, early on, been bound by an agreement that said all his ideas belonged to the giant company that was paying for him to go to grad school. In theory, that could have meant someone else owned big chunks of our software. So the acquisition came to a screeching halt while we tried to sort this out. The problem was, since we&#x27;d been about to be acquired, we&#x27;d allowed ourselves to run low on cash. Now we needed to raise more to keep going. But it&#x27;s hard to raise money with an IP cloud over your head, because investors can&#x27;t judge how serious it is.</i><p>[1] <a href=\"https:&#x2F;&#x2F;paulgraham.com&#x2F;start.html\" rel=\"nofollow\">https:&#x2F;&#x2F;paulgraham.com&#x2F;start.html</a>",
+   "created_at": "2025-07-06T03:29:24Z",
+   "created_at_i": 1751772564,
+   "objectID": "44477591",
+   "parent_id": 44464847,
+   "story_id": 44460552,
+   "story_title": "My open source project was relicensed by a YC company [license updated]",
+   "story_url": "https://twitter.com/soham_btw/status/1940952786491027886",
+   "updated_at": "2025-08-11T10:33:10Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "bigiain"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "Yeah. One of those clients is hosted on GCE. She is quite technical and plugged into general IT news, and they <em>are</em> in the middle of due <em>diligence</em> with potential <em>investors</em> though.<p>&gt; In terms of going nuclear, anything regarding trademark will have zero impact on our clients.<p>Is that true if Matt/Automattic win against WPEngine, and he starts using that as precident and starts demanding 8% of revenue as his standard shakedown on anybody who's used the &quot;WordPress&quot; trademark to generate revenue?"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Why World War WordPress Will End with a Zombie Fork"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://darnell.day/why-world-war-wordpress-will-end-with-a-zombie-fork"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_bigiain",
+    "story_41841744"
+   ],
+   "author": "bigiain",
+   "children": [
+    41846949
+   ],
+   "comment_text": "Yeah. One of those clients is hosted on GCE. She is quite technical and plugged into general IT news, and they are in the middle of due diligence with potential investors though.<p>&gt; In terms of going nuclear, anything regarding trademark will have zero impact on our clients.<p>Is that true if Matt&#x2F;Automattic win against WPEngine, and he starts using that as precident and starts demanding 8% of revenue as his standard shakedown on anybody who&#x27;s used the &quot;WordPress&quot; trademark to generate revenue?",
+   "created_at": "2024-10-15T01:28:18Z",
+   "created_at_i": 1728955698,
+   "objectID": "41844031",
+   "parent_id": 41843519,
+   "story_id": 41841744,
+   "story_title": "Why World War WordPress Will End with a Zombie Fork",
+   "story_url": "https://darnell.day/why-world-war-wordpress-will-end-with-a-zombie-fork",
+   "updated_at": "2024-10-16T18:08:09Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "photochemsyn"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "Nice writeup, and a good explanation of why the academic literature is often less than helpful.  There <em>are</em> several issues that aren't really mentioned however.  For anyone looking into a specific field (such as the one mentioned in the article, metabolic engineering in yeast), you might want to consider:<p>1) Identification of all the major research groups working on the problem, including their physical locations and resources, lab standards and data standards, history of grants and proposals, etc.  This will not be in the academic literature, and is fairly difficult and possibly expensive to acquire, and if you don't know what to look for, well, you need to hire experts with relevant experience.  Think of it as due <em>diligence</em> (Theranos <em>investors</em> got burned because they didn't do this).<p>2) You have to aggregate a lot of papers to get a good picture of what each research group is up to.  A single coherent project might generate a dozen papers scattered here and there, and importantly, they won't have published their failures in most cases, even though that information is just as valuable to an outsider attempting to replicate or advance their work as the successes <em>are</em>.<p>3) A common mistake is to neglect materials &amp; methods and instead focus on results and discussion.  A large fraction of the literature is based on poor methodology and so the results can't really be trusted, and fraud is remarkably widespread in academia, for various reasons from PhDs desperate to graduate to PIs who've made the practice their bread and butter for decades.  Clearly written materials and methods sections that include all the information needed to replicate the work <em>are</em> an indication that it's fairly trustworthy. Deliberate obfuscation is a bad sign."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The business of extracting knowledge from academic publications"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.theseedsofscience.pub/p/the-business-of-extracting-knowledge"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_photochemsyn",
+    "story_38105839"
+   ],
+   "author": "photochemsyn",
+   "comment_text": "Nice writeup, and a good explanation of why the academic literature is often less than helpful.  There are several issues that aren&#x27;t really mentioned however.  For anyone looking into a specific field (such as the one mentioned in the article, metabolic engineering in yeast), you might want to consider:<p>1) Identification of all the major research groups working on the problem, including their physical locations and resources, lab standards and data standards, history of grants and proposals, etc.  This will not be in the academic literature, and is fairly difficult and possibly expensive to acquire, and if you don&#x27;t know what to look for, well, you need to hire experts with relevant experience.  Think of it as due diligence (Theranos investors got burned because they didn&#x27;t do this).<p>2) You have to aggregate a lot of papers to get a good picture of what each research group is up to.  A single coherent project might generate a dozen papers scattered here and there, and importantly, they won&#x27;t have published their failures in most cases, even though that information is just as valuable to an outsider attempting to replicate or advance their work as the successes are.<p>3) A common mistake is to neglect materials &amp; methods and instead focus on results and discussion.  A large fraction of the literature is based on poor methodology and so the results can&#x27;t really be trusted, and fraud is remarkably widespread in academia, for various reasons from PhDs desperate to graduate to PIs who&#x27;ve made the practice their bread and butter for decades.  Clearly written materials and methods sections that include all the information needed to replicate the work are an indication that it&#x27;s fairly trustworthy. Deliberate obfuscation is a bad sign.",
+   "created_at": "2023-11-02T13:16:50Z",
+   "created_at_i": 1698931010,
+   "objectID": "38113088",
+   "parent_id": 38105839,
+   "story_id": 38105839,
+   "story_title": "The business of extracting knowledge from academic publications",
+   "story_url": "https://www.theseedsofscience.pub/p/the-business-of-extracting-knowledge",
+   "updated_at": "2024-09-20T15:32:54Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jjeaff"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "No idea about whether bad actors would think twice, but if you <em>are</em> asking about whether having YC attached to your business opens doors, absolutely. I did a startup with a much less well-known incubator VC and that alone got us in so many doors compared to when you <em>are</em> trying talk with VCs on your own. Honestly, I think that is the one and only major benefit to doing an incubator. Unless you <em>are</em> just really green and need the support for things that maybe aren't on your radar like taxes and payroll and compliance, etc., the unknown unknowns.<p>There <em>are</em> a lot of businesses with a great deal of traction that do incubators because it simply opens a lot more doors for VC investment. You would be surprised how little due <em>diligence</em> many <em>investors</em> actually do. Many will just invest in whatever $respected_vc is investing in. Assuming that $respected_vc has already done the due <em>diligence</em>."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Is Y Combinator worth the money? Brutally honest review of W22 batch experience"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://acecreamu.substack.com/p/is-y-combinator-worth-the-money"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_jjeaff",
+    "story_35373019"
+   ],
+   "author": "jjeaff",
+   "comment_text": "No idea about whether bad actors would think twice, but if you are asking about whether having YC attached to your business opens doors, absolutely. I did a startup with a much less well-known incubator VC and that alone got us in so many doors compared to when you are trying talk with VCs on your own. Honestly, I think that is the one and only major benefit to doing an incubator. Unless you are just really green and need the support for things that maybe aren&#x27;t on your radar like taxes and payroll and compliance, etc., the unknown unknowns.<p>There are a lot of businesses with a great deal of traction that do incubators because it simply opens a lot more doors for VC investment. You would be surprised how little due diligence many investors actually do. Many will just invest in whatever $respected_vc is investing in. Assuming that $respected_vc has already done the due diligence.",
+   "created_at": "2023-03-30T16:43:29Z",
+   "created_at_i": 1680194609,
+   "objectID": "35375527",
+   "parent_id": 35375106,
+   "story_id": 35373019,
+   "story_title": "Is Y Combinator worth the money? Brutally honest review of W22 batch experience",
+   "story_url": "https://acecreamu.substack.com/p/is-y-combinator-worth-the-money",
+   "updated_at": "2024-09-20T13:41:37Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "spicymaki"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "&gt; It is odd how in past fraud cases (Enron, Bernie Madoff, others) the media focused on the victims and how much they lost.<p>Seems the highest portion lost were from institutional <em>investors</em> making long shot bets. They may not want to be candid about their lack of due <em>diligence</em> with investor funds. It might be such a small portion of an overall portfolio they can write it off and move on.<p>There <em>are</em> so many people losing money in crypto these days due to exchange collapses and rug pulls perhaps there may be too little signal relative to the noise. Just search &quot;victims of crypto scam&quot; in a news search engine and there <em>are</em> tens of thousands of results. Many with hundreds or thousands of victims per scam."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Coinbase CEO slams media for treating Sam Bankman-Fried with \u2018kid gloves\u2019"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://nypost.com/2022/12/09/coinbase-ceo-slams-media-for-treating-sam-bankman-fried-with-kid-gloves/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_spicymaki",
+    "story_33922236"
+   ],
+   "author": "spicymaki",
+   "comment_text": "&gt; It is odd how in past fraud cases (Enron, Bernie Madoff, others) the media focused on the victims and how much they lost.<p>Seems the highest portion lost were from institutional investors making long shot bets. They may not want to be candid about their lack of due diligence with investor funds. It might be such a small portion of an overall portfolio they can write it off and move on.<p>There are so many people losing money in crypto these days due to exchange collapses and rug pulls perhaps there may be too little signal relative to the noise. Just search &quot;victims of crypto scam&quot; in a news search engine and there are tens of thousands of results. Many with hundreds or thousands of victims per scam.",
+   "created_at": "2022-12-09T19:16:33Z",
+   "created_at_i": 1670613393,
+   "objectID": "33925345",
+   "parent_id": 33922628,
+   "story_id": 33922236,
+   "story_title": "Coinbase CEO slams media for treating Sam Bankman-Fried with \u2018kid gloves\u2019",
+   "story_url": "https://nypost.com/2022/12/09/coinbase-ceo-slams-media-for-treating-sam-bankman-fried-with-kid-gloves/",
+   "updated_at": "2024-09-20T12:47:21Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "propogandist"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "diligence",
+      "investors"
+     ],
+     "value": "This headline is derived from a report published by for-profit Energy consulting company (IdeaSmiths) that specializes in writing reports to justify big CapEx investments.<p>From their site-<p>&gt; Our analytical and due <em>diligence</em> capabilities can provide significant value to early-stage inventors and professional <em>investors</em> and legal firms.<p>The \u201carticle\u201d (and Study) also features BS projections like this:<p>&gt; The drop in emissions has saved Texans between $10.2 billion and $76.4 billion in healthcare and other environmentally related costs, the report states.<p>These sorts of reports and headlines <em>are</em> aimed at people that want 3rd party validation rather than objective, unbiased analysis.<p>It\u2019s even noted on IdeaSmiths LLC\u2019s website as a speciality:<p>&gt; Technical due <em>diligence</em> for <em>investors</em> vetting new ventures and inventors looking for 3rd party validation<p><a href=\"https://www.ideasmiths.net/services-provide/\" rel=\"nofollow\">https://www.ideasmiths.net/services-provide/</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Texas solar and wind resources saved consumers nearly $28B over 12 years"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.utilitydive.com/news/texas-solar-and-wind-resources-saved-consumers-nearly-28-billion-over-12-y/634893/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_propogandist",
+    "story_33383238"
+   ],
+   "author": "propogandist",
+   "comment_text": "This headline is derived from a report published by for-profit Energy consulting company (IdeaSmiths) that specializes in writing reports to justify big CapEx investments.<p>From their site-<p>&gt; Our analytical and due diligence capabilities can provide significant value to early-stage inventors and professional investors and legal firms.<p>The \u201carticle\u201d (and Study) also features BS projections like this:<p>&gt; The drop in emissions has saved Texans between $10.2 billion and $76.4 billion in healthcare and other environmentally related costs, the report states.<p>These sorts of reports and headlines are aimed at people that want 3rd party validation rather than objective, unbiased analysis.<p>It\u2019s even noted on IdeaSmiths LLC\u2019s website as a speciality:<p>&gt; Technical due diligence for investors vetting new ventures and inventors looking for 3rd party validation<p><a href=\"https:&#x2F;&#x2F;www.ideasmiths.net&#x2F;services-provide&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.ideasmiths.net&#x2F;services-provide&#x2F;</a>",
+   "created_at": "2022-10-29T15:58:16Z",
+   "created_at_i": 1667059096,
+   "objectID": "33385192",
+   "parent_id": 33383238,
+   "story_id": 33383238,
+   "story_title": "Texas solar and wind resources saved consumers nearly $28B over 12 years",
+   "story_url": "https://www.utilitydive.com/news/texas-solar-and-wind-resources-saved-consumers-nearly-28-billion-over-12-y/634893/",
+   "updated_at": "2024-09-20T12:28:48Z"
+  }
+ ],
+ "hitsPerPage": 30,
+ "nbHits": 982,
+ "nbPages": 33,
+ "page": 0,
+ "params": "query=ARR+diligence+investors&tags=comment&hitsPerPage=30&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 38,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 17
+  },
+  "afterFetch": {
+   "format": {
+    "highlighting": 2,
+    "total": 2
+   },
+   "merge": {
+    "mergeLoop": {
+     "prepareNextHit": 10,
+     "total": 10
+    },
+    "total": 10
+   },
+   "total": 10
+  },
+  "fetch": {
+   "query": 13,
+   "scanning": 13,
+   "total": 27
+  },
+  "total": 38
+ },
+ "query": "ARR diligence investors",
+ "serverTimeMS": 41
+}

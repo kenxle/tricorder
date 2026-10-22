@@ -1,0 +1,37 @@
+SOURCE: https://www.tomtunguz.com/payback_period_2020/index.md
+
+---
+title: "What is a Best in Class Payback Period for a Software Company in 2020?"
+description: "Discover benchmark payback periods for top SaaS companies in 2020, from Zoom's 3-month standard to industry medians. Data-driven analysis for startup founders."
+categories: ["data analysis","benchmarks","sales","marketing"]
+keywords: ["payback period","SaaS benchmarks","Zoom","DataDog","sales efficiency","customer acquisition cost","Tomasz Tunguz","venture capital"]
+ai_summary: "Explore optimal payback periods for SaaS companies in 2020, highlighting industry leaders and efficiency metrics."
+date: 2020-01-20
+lastmod: 2026-10-22
+wordCount: 324
+readingTime: 2 minutes
+canonical_url: https://tomtunguz.com/payback_period_2020/
+author: "Tomasz Tunguz"
+---
+
+Payback period is one of the best composite diagnostic metrics of product market fit. I've written before about the benefits of [short payback periods](https://tomtunguz.com/payback_period_cash/). In short, startups with shorter payback periods require less capital and also grow more quickly. In 2020, what is an excellent payback period[1]?
+
+![image](https://res.cloudinary.com/dzawgnnlr/image/upload/q_auto/f_auto/w_auto/payback_period_2020-01-20.png)
+
+Here is a group of publicly traded companies sorted by estimated payback period[2]. Zoom is at the top with a payback period of just over 3 months. DataDog, Slack, Crowdstrike, and Twilio round out the top 5 at 7 months or less. 
+
+Those are exceptionally efficient businesses. It bears noting that 4 of the top 5 started out as bottoms up businesses, which have grown to support enterprise customers as they've matured. Zoom, DataDog, Slack, and Twilio all share this pattern. 
+
+The top quartile is 15 months; the median is 22 months; and the bottom quartile is 29 months. These figures have increased over the past four years, but the change isn't statistically significant. 
+
+![image](https://res.cloudinary.com/dzawgnnlr/image/upload/q_auto/f_auto/w_auto/pb_period_and_gross_margin.png)
+
+I was curious about any relationships that existed between sales efficiency and gross margin. One might hypothesize the greater the gross profit of a business, the better potential sales efficiency. But there's no correlation. R^2 is -0.-04 - truly none. 
+
+I also looked at sales and marketing as a percentage of revenue, which bore a similar result. I suspect average contract value may have some relationship with the sales efficiency though. 
+
+Starting with a low ACV enables a company to expand accounts significantly. More importantly, it requires the company establish an efficient go-to-market from the outset; a discipline that benefits the business throughout its life. 
+
+[1] Just how do we define payback period? It is amount of time a customer repays the cost of customer acquisition with gross profit dollars. It's also the inverse of the gross profit sales efficiency. 
+
+[2] For these companies, I'm estimating payback period by using the marginal gross profit and total selling and marketing expenses each reports annually.

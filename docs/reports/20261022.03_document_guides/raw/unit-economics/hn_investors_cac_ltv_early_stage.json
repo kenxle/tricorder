@@ -1,0 +1,27 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [],
+ "hitsPerPage": 30,
+ "nbHits": 0,
+ "nbPages": 0,
+ "page": 0,
+ "params": "query=investors+LTV+CAC+early+stage+startup+misleading&tags=comment&hitsPerPage=30&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 36,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 25
+  },
+  "fetch": {
+   "query": 34,
+   "total": 35
+  },
+  "total": 36
+ },
+ "query": "investors LTV CAC early stage startup misleading",
+ "serverTimeMS": 36
+}

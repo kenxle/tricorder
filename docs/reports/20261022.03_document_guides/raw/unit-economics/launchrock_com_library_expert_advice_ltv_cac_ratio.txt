@@ -1,0 +1,184 @@
+SOURCE: https://www.launchrock.com/library/expert-advice/ltv-cac-ratio
+
+- - - - - - - - - - - - - - - - LTV:CAC Ratio: definition, the SaaS unit-economics health metric, and what the benchmarks actually mean | Startups.com 
+
+ How it Works Browse Pricing Education Community 
+
+ About Support Signup Sign In 
+
+ Signup
+
+ Sign In
+
+ How it Works 
+ Browse 
+ Pricing 
+
+ Education Founder 
+
+ Idea 
+
+ Formation 
+
+ Planning 
+
+ Product 
+
+ Marketing 
+
+ Team 
+
+ Funding 
+
+ Operations 
+
+ Community Discussions 
+
+ Podcast 
+
+ About Mission 
+
+ Jobs 
+
+ Culture 
+
+ Support 
+
+ LTV CAC Ratio
+ May 27th, 2026 | By: Ryan Rutan CMO | Tags: Business Planning , Lifetime Value (LTV) , Customer Acquisition Cost (CAC) , Unit Economics , CAC Payback , Gross Margin 
+
+ LTV CAC Ratio
+ The LTV:CAC ratio compares the total gross profit a customer generates over their lifetime to the cost of acquiring them. It's used as a primary signal of whether the business model is fundamentally working at customer-economics level. The standard benchmark is 3:1 or higher considered healthy (a customer generates 3x what it cost to acquire them), 5:1 or higher considered excellent, and ratios below 3:1 typically signal business model problems that need addressing before scaling. It is one of the most-discussed SaaS metrics and a useful diagnostic, but also one frequently calculated poorly or interpreted out of context. 
+ The calculation:
+ Basic formula :
+ - LTV:CAC = LTV / CAC
+ LTV calculation (typical SaaS approach):
+ - LTV = (Average Revenue Per Account x Gross Margin) / Annual Churn Rate
+- Example: $10,000 ARPA x 80% gross margin / 10% annual churn = $80,000 LTV.
+ CAC calculation :
+ - CAC = (Sales + Marketing spend in period) / (New customers acquired in period)
+- Example: $1M spend / 100 new customers = $10,000 CAC.
+ LTV:CAC in this example : $80,000 / $10,000 = 8:1. Very healthy.
+ Benchmark interpretation :
+ Less than 1:1 : Catastrophic. Acquiring customers loses money. Either CAC must come down dramatically or LTV must increase dramatically.
+ 1:1 to 3:1 : Borderline. Unit economics work in narrow sense (LTV exceeds CAC) but the margin for error is thin. Often signals need for pricing increases, gross margin improvement, or CAC reduction.
+ 3:1 to 5:1 : Healthy. Standard "good" range for SaaS. Investors comfortable; growth investment justified.
+ 5:1+ : Excellent. Strong signal of business model health. Sometimes also signals under-investment in growth (could spend more CAC for more LTV).
+ The math behind these benchmarks :
+ - 3:1 LTV:CAC is roughly the threshold where a SaaS company can sustain growth investment at typical SaaS gross margins and operating leverage.
+- Below 3:1, the company struggles to generate enough lifetime value to cover acquisition costs plus operating overhead.
+- Above 5:1, the company is either very efficient or under-investing in growth.
+ Common LTV:CAC calculation mistakes :
+ Using revenue-LTV instead of gross-profit-LTV :
+ - LTV calculated on revenue (not gross profit) overstates LTV.
+- The correct LTV uses gross profit margin to reflect actual money the company keeps.
+- $10K revenue at 50% gross margin = $5K gross profit; LTV should reflect $5K, not $10K.
+ Underestimating churn :
+ - Optimistic churn assumptions inflate LTV dramatically.
+- 5% annual churn gives 20-year LTV (1/0.05); 10% churn gives 10-year LTV (1/0.10). The math is very sensitive.
+- Use realistic churn data, not optimistic estimates.
+ Including only direct acquisition costs in CAC :
+ - True CAC includes sales reps, marketing spend, marketing tools, content costs.
+- Some companies report "media CAC" (just ad spend) which dramatically understates true CAC.
+- Investors discount media-CAC numbers heavily.
+ Cohort vs blended CAC :
+ - Blended CAC: total S&M spend / total new customers. Includes upsell and brand spend not strictly "acquisition."
+- Cohort CAC: tracks specific cohorts of customers and their acquisition costs.
+- Blended is more common; cohort is more accurate.
+ Using LTV in the wrong context :
+ - LTV assumes the company exists long enough for customers to live their full lifetimes. At early-stage companies, this isn't a given.
+- LTV doesn't account for inflation, discount rates, or time value of money.
+- For most pragmatic uses, LTV is "directional" not "precise."
+ Ryan's Take
+ LTV:CAC is one of those metrics that sounds rigorous and often
+isn't. The calculation can be tortured into almost any answer
+depending on assumptions: revenue vs gross profit LTV,
+optimistic vs realistic churn, blended vs cohort CAC, including
+or excluding various costs. Investors know this and discount
+founder-reported numbers heavily. The discipline that works:
+use gross-profit LTV (not revenue LTV), use realistic churn
+rates (recent cohort data, not optimistic estimates), use
+blended CAC including all relevant S&M costs, and report
+sensitivity to key assumptions. The honest LTV:CAC reported
+rigorously is far more useful (and more credible) than the
+optimistic LTV:CAC reported with tortured math. Aim for 3:1+
+measured honestly; the math will tell you whether the
+business model is actually working.
+
+ What founders get wrong: Using optimistic assumptions (revenue-LTV instead of gross-profit-LTV, optimistic churn rates, "media CAC" excluding sales costs) to produce inflated LTV:CAC ratios that don't reflect reality. The right discipline: gross-profit-LTV, realistic churn rates from actual cohort data, blended CAC including all S&M costs, sensitivity analysis on key assumptions. Honest LTV:CAC is more useful than tortured math. Aim for 3:1+ measured rigorously, not 10:1 measured creatively.
+ Related: [ LTV ] · [ CAC ] · [ Unit Economics ] · [ CAC Payback ] · [ Gross Margin ]
+ FAQ
+ What is LTV:CAC ratio? 
+A unit-economics metric comparing the total revenue or gross profit a customer generates over their lifetime (LTV) to the cost of acquiring that customer (CAC). Used as a primary signal of whether the business model is fundamentally working at customer-economics level.
+ What's a good LTV:CAC ratio? 
+3:1 or higher is generally considered healthy for SaaS; 5:1+ excellent. Below 3:1 typically signals business model problems requiring pricing, gross margin, or CAC improvements before scaling. Below 1:1 is catastrophic (acquiring customers loses money). Above 5:1 is excellent but may also signal under-investment in growth.
+ How do I calculate LTV:CAC correctly? 
+Use gross-profit LTV (not revenue LTV) reflecting actual money kept after delivery costs. Use realistic churn rates from actual cohort data (optimistic churn dramatically inflates LTV). Use blended CAC including all S&M costs (sales reps, marketing spend, tools, content), not just media spend. Report sensitivity to key assumptions.
+
+ About the Author
+
+ Ryan Rutan
+ Founding Partner @ Startups.com platform | Clarity.fm , Launchrock, Fundable, Zirtual, and Co-Host of The Startup Therapy Podcast. Ryan has 15 years of experience as a Founder, Advisor, Mentor, and Investor — the quintessential startup guerrilla. He works with 100's of the best startups every year on everything from ideation, idea validation, early marketing traction, customer acquisition to fundraising, scaling, and operations.
+
+ Discuss this Article
+
+ Comments
+
+ x 
+
+ POST 
+
+ Related Articles
+
+ Timing Isn't Everything
+
+ with Sheila Marcelo 
+
+ The Co-Founder and CEO of Care.com talks about the winding road she took — from a small coconut farm in the Philippines to becoming one of a handful women CEOs leading a publicly traded company. 
+ Continue 
+
+ Expecting Chaos
+
+ with Reid Hoffman 
+
+ The prolific internet entrepreneur and investor shares stories about the hard-fought success at PayPal, discusses his failures and what it was like at the very peak of the dot com bubble. 
+ Continue 
+
+ Against Considerable Odds
+
+ with Tristan Walker 
+
+ Founder & CEO of Walker & Company on courage, patience, and building things that solve problems.
+ Continue 
+
+ Unlock Startups Unlimited 
+
+ Access 20,000+ Startup Experts, 650+ masterclass videos, 1,000+ in-depth guides, and all the software tools you need to launch and grow quickly.
+
+ Learn More 
+
+ Already a member? Sign in 
+
+ Education 
+ Validate Your Idea Acquire Customers View All 
+ Community 
+ Startup Therapy 
+ Company 
+ Pricing About Us 
+ Legal 
+ Terms of Service Privacy Policy 
+ Follow 
+
+ the startups.com platform
+
+ Community
+
+ Planning
+
+ Mentors
+
+ Funding
+
+ Customers
+
+ Copyright © 2026 Startups.com LLC. All rights reserved.

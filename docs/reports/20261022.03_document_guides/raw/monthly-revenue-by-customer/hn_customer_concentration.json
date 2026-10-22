@@ -1,0 +1,1361 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "vanuatu"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "serving models is very profitable (70%+) but the issue is you need to invest in training the next iteration. but so far all of anthropics models have been profitable fully loaded<p>the vast majority of the labs revenue is from enterprise api usage (theres public sources from the information and ramp). but the risk there is <em>customer</em> <em>concentration</em>, where most of the revenue comes from other tech companies and a chunk of it is from foreign labs distilling<p>so i am drawing a conclusion that the labs' business model is good, maybe not as great as boosters think it is. if they make real progress on the biosciences like drug discovery that could turn it into an amazing business"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Mistral raises \u20ac3B"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_vanuatu",
+    "story_49605767"
+   ],
+   "author": "vanuatu",
+   "children": [
+    49613028
+   ],
+   "comment_text": "serving models is very profitable (70%+) but the issue is you need to invest in training the next iteration. but so far all of anthropics models have been profitable fully loaded<p>the vast majority of the labs revenue is from enterprise api usage (theres public sources from the information and ramp). but the risk there is customer concentration, where most of the revenue comes from other tech companies and a chunk of it is from foreign labs distilling<p>so i am drawing a conclusion that the labs&#x27; business model is good, maybe not as great as boosters think it is. if they make real progress on the biosciences like drug discovery that could turn it into an amazing business",
+   "created_at": "2026-09-08T16:24:06Z",
+   "created_at_i": 1788884646,
+   "objectID": "49612539",
+   "parent_id": 49611440,
+   "story_id": 49605767,
+   "story_title": "Mistral raises \u20ac3B",
+   "story_url": "https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier/",
+   "updated_at": "2026-09-09T08:50:20Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tsavo42"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "Anthropic just closed a $13 billion Series F at a $183 billion post-money valuation. Yeah, $183 billion for the company behind Claude. That's more than Nike or McDonald's - actual companies that make real things people buy - for a chatbot company. AI companies are getting crazy valuations compared to traditional SaaS.<p>Anthropic claims 5x revenue growth in 8 months, hitting something like $5B annually - if you believe their accounting. If those numbers are real, they've cracked the code. If it's startup math bullshit, reality will catch up eventually.<p>&quot;Run-rate revenue&quot; is VC-speak for &quot;we took our best month, multiplied by twelve, and crossed our fingers.&quot; Real finance people want to see monthly recurring revenue, <em>customer</em> <em>concentration</em>, and unit economics. Industry benchmarks show healthy B2B companies maintain 85%+ gross margins and 15%+ net retention rates. Anthropic's keeping those numbers private, which is either smart or suspicious. Recent OpenAI reports show similar opacity around unit economics despite massive revenue claims.<p>The funding comes as OpenAI burns $5 billion annually while charging $20/month for ChatGPT. Benchmark studies show Claude 3.5 matches or exceeds GPT-4 on many tasks, but enterprise adoption data suggests most companies still prefer OpenAI for stability. Every AI startup claims their model codes better than ChatGPT. Maybe Claude does, maybe it doesn't - but $183 billion says investors aren't asking for proof. Major VC portfolios show investors throwing billions at anything with &quot;AI&quot; in the pitch deck.<p>Meanwhile, enterprise customers are trying to figure out if AI actually saves money or just creates expensive new dependencies. Anthropic's betting that their safety stuff and whatever they call Constitutional AI justifies premium pricing. We'll see if CTOs agree when budget reviews come around."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Anthropic Raises $13B at $183B Valuation: AI Bubble Peak or Actual Revenue?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://toolstac.com/news/2025-09-02/anthropic-funding-surge"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_tsavo42",
+    "story_45112488"
+   ],
+   "author": "tsavo42",
+   "comment_text": "Anthropic just closed a $13 billion Series F at a $183 billion post-money valuation. Yeah, $183 billion for the company behind Claude. That&#x27;s more than Nike or McDonald&#x27;s - actual companies that make real things people buy - for a chatbot company. AI companies are getting crazy valuations compared to traditional SaaS.<p>Anthropic claims 5x revenue growth in 8 months, hitting something like $5B annually - if you believe their accounting. If those numbers are real, they&#x27;ve cracked the code. If it&#x27;s startup math bullshit, reality will catch up eventually.<p>&quot;Run-rate revenue&quot; is VC-speak for &quot;we took our best month, multiplied by twelve, and crossed our fingers.&quot; Real finance people want to see monthly recurring revenue, customer concentration, and unit economics. Industry benchmarks show healthy B2B companies maintain 85%+ gross margins and 15%+ net retention rates. Anthropic&#x27;s keeping those numbers private, which is either smart or suspicious. Recent OpenAI reports show similar opacity around unit economics despite massive revenue claims.<p>The funding comes as OpenAI burns $5 billion annually while charging $20&#x2F;month for ChatGPT. Benchmark studies show Claude 3.5 matches or exceeds GPT-4 on many tasks, but enterprise adoption data suggests most companies still prefer OpenAI for stability. Every AI startup claims their model codes better than ChatGPT. Maybe Claude does, maybe it doesn&#x27;t - but $183 billion says investors aren&#x27;t asking for proof. Major VC portfolios show investors throwing billions at anything with &quot;AI&quot; in the pitch deck.<p>Meanwhile, enterprise customers are trying to figure out if AI actually saves money or just creates expensive new dependencies. Anthropic&#x27;s betting that their safety stuff and whatever they call Constitutional AI justifies premium pricing. We&#x27;ll see if CTOs agree when budget reviews come around.",
+   "created_at": "2025-09-03T05:26:23Z",
+   "created_at_i": 1756877183,
+   "objectID": "45112489",
+   "parent_id": 45112488,
+   "story_id": 45112488,
+   "story_title": "Anthropic Raises $13B at $183B Valuation: AI Bubble Peak or Actual Revenue?",
+   "story_url": "https://toolstac.com/news/2025-09-02/anthropic-funding-surge",
+   "updated_at": "2026-03-05T22:37:37Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "openrisk"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "&gt; <em>Customer</em> <em>concentration</em><p>Interesting that oligopsony beats oligopoly :-)"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Intel Reports Second Quarter 2024 Financial Results"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.intc.com/news-events/press-releases/detail/1704/intel-reports-second-quarter-2024-financial-results"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_openrisk",
+    "story_41133084"
+   ],
+   "author": "openrisk",
+   "comment_text": "&gt; Customer concentration<p>Interesting that oligopsony beats oligopoly :-)",
+   "created_at": "2024-08-02T05:57:47Z",
+   "created_at_i": 1722578267,
+   "objectID": "41136452",
+   "parent_id": 41136326,
+   "story_id": 41133084,
+   "story_title": "Intel Reports Second Quarter 2024 Financial Results",
+   "story_url": "https://www.intc.com/news-events/press-releases/detail/1704/intel-reports-second-quarter-2024-financial-results",
+   "updated_at": "2024-09-20T17:33:03Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "danielmarkbruce"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "Thinking they were in a stable situation and going into max cashflow mode when there were in a death match. If you look at stock standard competitive theory (like, without any nuance) like Porter, you can see their situation getting really hairy starting 15 years ago. <em>Customer</em> <em>concentration</em> (public clouds), substitute products (arm in servers for standard workflows, various others in AI workloads etc), competition in their main product line couldn't go anywhere but worse (they were practically all by themselves). They had to fight like crazy but they thought they should print money."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Intel Reports Second Quarter 2024 Financial Results"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.intc.com/news-events/press-releases/detail/1704/intel-reports-second-quarter-2024-financial-results"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_danielmarkbruce",
+    "story_41133084"
+   ],
+   "author": "danielmarkbruce",
+   "children": [
+    41136452
+   ],
+   "comment_text": "Thinking they were in a stable situation and going into max cashflow mode when there were in a death match. If you look at stock standard competitive theory (like, without any nuance) like Porter, you can see their situation getting really hairy starting 15 years ago. Customer concentration (public clouds), substitute products (arm in servers for standard workflows, various others in AI workloads etc), competition in their main product line couldn&#x27;t go anywhere but worse (they were practically all by themselves). They had to fight like crazy but they thought they should print money.",
+   "created_at": "2024-08-02T05:25:33Z",
+   "created_at_i": 1722576333,
+   "objectID": "41136326",
+   "parent_id": 41133289,
+   "story_id": 41133084,
+   "story_title": "Intel Reports Second Quarter 2024 Financial Results",
+   "story_url": "https://www.intc.com/news-events/press-releases/detail/1704/intel-reports-second-quarter-2024-financial-results",
+   "updated_at": "2024-09-20T17:33:03Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ikawe"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "Note the article is from June 2022<p>&gt; The agency\u2019s new advisory levels aren\u2019t requirements that drinking water suppliers must meet. The EPA only recommends that utilities notify <em>customers</em> when <em>concentrations</em> exceed the limit.<p>&gt; But they set the stage for further EPA action. The agency plans to propose mandatory drinking water limits for PFOA and PFOS later this year.<p>So here we are, in April 2024 with some actual rules and timelines: <a href=\"https://www.epa.gov/sdwa/and-polyfluoroalkyl-substances-pfas\" rel=\"nofollow\">https://www.epa.gov/sdwa/and-polyfluoroalkyl-substances-pfas</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "US EPA sets health advisory limits for PFAS from 70 ppt to .02 ppt (2022)"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://cen.acs.org/environment/persistent-pollutants/US-EPA-sets-health-advisory-6-PFAS/100/i22"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ikawe",
+    "story_40471550"
+   ],
+   "author": "ikawe",
+   "comment_text": "Note the article is from June 2022<p>&gt; The agency\u2019s new advisory levels aren\u2019t requirements that drinking water suppliers must meet. The EPA only recommends that utilities notify customers when concentrations exceed the limit.<p>&gt; But they set the stage for further EPA action. The agency plans to propose mandatory drinking water limits for PFOA and PFOS later this year.<p>So here we are, in April 2024 with some actual rules and timelines: <a href=\"https:&#x2F;&#x2F;www.epa.gov&#x2F;sdwa&#x2F;and-polyfluoroalkyl-substances-pfas\" rel=\"nofollow\">https:&#x2F;&#x2F;www.epa.gov&#x2F;sdwa&#x2F;and-polyfluoroalkyl-substances-pfas</a>",
+   "created_at": "2024-05-25T04:10:36Z",
+   "created_at_i": 1716610236,
+   "objectID": "40472593",
+   "parent_id": 40471550,
+   "story_id": 40471550,
+   "story_title": "US EPA sets health advisory limits for PFAS from 70 ppt to .02 ppt (2022)",
+   "story_url": "https://cen.acs.org/environment/persistent-pollutants/US-EPA-sets-health-advisory-6-PFAS/100/i22",
+   "updated_at": "2024-09-20T17:07:05Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "fasteo"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "I saw this as an advantage though. They do not have whale <em>customers</em> bringing a significant % of their revenue. I see lower risk here<p>&quot;Our average revenue per <em>customer</em> (which we refer to as ARPU) has increased significantly, from $35.97 in 2018 to $40.16 in 2019 to $47.78 in 2020. We have no material <em>customer</em> <em>concentration</em> as our top 25 <em>customers</em> made up 11%, 10% and 9% of our revenue in 2018, 2019 and 2020, respectively.&quot;"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "DigitalOcean S-1"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.sec.gov/Archives/edgar/data/1582961/000119312521055798/d898181ds1.htm"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_fasteo",
+    "story_26262465"
+   ],
+   "author": "fasteo",
+   "comment_text": "I saw this as an advantage though. They do not have whale customers bringing a significant % of their revenue. I see lower risk here<p>&quot;Our average revenue per customer (which we refer to as ARPU) has increased significantly, from $35.97 in 2018 to $40.16 in 2019 to $47.78 in 2020. We have no material customer concentration as our top 25 customers made up 11%, 10% and 9% of our revenue in 2018, 2019 and 2020, respectively.&quot;",
+   "created_at": "2021-02-25T15:07:17Z",
+   "created_at_i": 1614265637,
+   "objectID": "26263487",
+   "parent_id": 26262857,
+   "story_id": 26262465,
+   "story_title": "DigitalOcean S-1",
+   "story_url": "https://www.sec.gov/Archives/edgar/data/1582961/000119312521055798/d898181ds1.htm",
+   "updated_at": "2024-09-20T08:02:44Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "skmurphy"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "<p><pre><code>   This is a great discussion of these items:\n   1. Sustainable competitive advantage - \"How easy is it for someone \n      else to provide the same product or service that you provide?\"  \n   2. The Presence of Network Effects - do more <em>customers</em> create more \n      value for all <em>customers</em>?\n   3. Revenue Visibility and Predictability\n   4. <em>Customer</em> Lock-in/High Switching Costs\n   5. Gross Margin Level: higher is better\n   6. Marginal Profitability / Economies of Scale\n   7. Many <em>Customers</em>: Low <em>Customer</em> <em>Concentration</em>  \n   8. Lack of Dependency on Major Partner(s)\n   9. Natural Demand (vs. Heavy Marketing Spend Needed)\n  10. Growth</code></pre>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "All Revenue is Not Created Equal: Keys to the 10x Revenue Club"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://abovethecrowd.com/2011/05/24/all-revenue-is-not-created-equal-the-keys-to-the-10x-revenue-club/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_skmurphy",
+    "story_2609821"
+   ],
+   "author": "skmurphy",
+   "comment_text": "<p><pre><code>   This is a great discussion of these items:\n   1. Sustainable competitive advantage - \"How easy is it for someone \n      else to provide the same product or service that you provide?\"  \n   2. The Presence of Network Effects - do more customers create more \n      value for all customers?\n   3. Revenue Visibility and Predictability\n   4. Customer Lock-in/High Switching Costs\n   5. Gross Margin Level: higher is better\n   6. Marginal Profitability / Economies of Scale\n   7. Many Customers: Low Customer Concentration  \n   8. Lack of Dependency on Major Partner(s)\n   9. Natural Demand (vs. Heavy Marketing Spend Needed)\n  10. Growth</code></pre>",
+   "created_at": "2011-06-01T23:23:10Z",
+   "created_at_i": 1306970590,
+   "objectID": "2609836",
+   "parent_id": 2609821,
+   "points": null,
+   "story_id": 2609821,
+   "story_title": "All Revenue is Not Created Equal: Keys to the 10x Revenue Club",
+   "story_url": "http://abovethecrowd.com/2011/05/24/all-revenue-is-not-created-equal-the-keys-to-the-10x-revenue-club/",
+   "updated_at": "2023-09-06T19:54:43Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mbesto"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "&gt; Only 250 <em>customers</em>?<p>Likely all government entities with 5~10 year contracts. <em>Customer</em> <em>concentration</em> is only an issue when there is a possibility of churn. This isn't the case."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Palantir S-1"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.sec.gov/Archives/edgar/data/1321655/000119312520230013/d904406ds1.htm"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mbesto",
+    "story_24276086"
+   ],
+   "author": "mbesto",
+   "comment_text": "&gt; Only 250 customers?<p>Likely all government entities with 5~10 year contracts. Customer concentration is only an issue when there is a possibility of churn. This isn&#x27;t the case.",
+   "created_at": "2020-08-25T23:32:38Z",
+   "created_at_i": 1598398358,
+   "objectID": "24277493",
+   "parent_id": 24276207,
+   "story_id": 24276086,
+   "story_title": "Palantir S-1",
+   "story_url": "https://www.sec.gov/Archives/edgar/data/1321655/000119312520230013/d904406ds1.htm",
+   "updated_at": "2024-09-20T06:50:30Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "seem_2211"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "This sounds bad, but is honestly anyone surprised?<p>Client/<em>customer</em> <em>concentration</em> is something that every business needs to be watching as a matter of critical importance.<p>The big boys will always play rough and negotiate things on their terms when they can get away with it - be it the Government, Apple, Walmart or Amazon.<p>I have sympathy for the companies that are about to be put under immense stress, but it should also be something that every business has already planned for."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Amazon Is Poised to Unleash a Purge of Small Wholesale Suppliers"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.bloomberg.com/news/articles/2019-05-28/amazon-is-poised-to-unleash-long-feared-purge-of-small-suppliers"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_seem_2211",
+    "story_20033164"
+   ],
+   "author": "seem_2211",
+   "children": [
+    20033492,
+    20033529
+   ],
+   "comment_text": "This sounds bad, but is honestly anyone surprised?<p>Client&#x2F;customer concentration is something that every business needs to be watching as a matter of critical importance.<p>The big boys will always play rough and negotiate things on their terms when they can get away with it - be it the Government, Apple, Walmart or Amazon.<p>I have sympathy for the companies that are about to be put under immense stress, but it should also be something that every business has already planned for.",
+   "created_at": "2019-05-28T19:23:20Z",
+   "created_at_i": 1559071400,
+   "objectID": "20033420",
+   "parent_id": 20033164,
+   "story_id": 20033164,
+   "story_title": "Amazon Is Poised to Unleash a Purge of Small Wholesale Suppliers",
+   "story_url": "https://www.bloomberg.com/news/articles/2019-05-28/amazon-is-poised-to-unleash-long-feared-purge-of-small-suppliers",
+   "updated_at": "2024-09-20T04:15:55Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "btown"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "Huh, you may be right. The notion that the index is ever susceptible to large one-off deals, though, still makes it suspect as an indicator of the general health of the tech startup industry. Similar to how high <em>customer</em> <em>concentration</em> can cause the valuation of a business to be lower than an unconcentrated <em>customer</em> base with similar revenue."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Funding Conditions for Tech Startups Soar to a New Record"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.bloomberg.com/news/articles/2017-08-11/funding-conditions-for-tech-startups-soar-to-a-new-record"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_btown",
+    "story_14989983"
+   ],
+   "author": "btown",
+   "comment_text": "Huh, you may be right. The notion that the index is ever susceptible to large one-off deals, though, still makes it suspect as an indicator of the general health of the tech startup industry. Similar to how high customer concentration can cause the valuation of a business to be lower than an unconcentrated customer base with similar revenue.",
+   "created_at": "2017-08-11T20:14:12Z",
+   "created_at_i": 1502482452,
+   "objectID": "14993719",
+   "parent_id": 14992663,
+   "story_id": 14989983,
+   "story_title": "Funding Conditions for Tech Startups Soar to a New Record",
+   "story_url": "https://www.bloomberg.com/news/articles/2017-08-11/funding-conditions-for-tech-startups-soar-to-a-new-record",
+   "updated_at": "2024-09-20T01:14:25Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "fludlight"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "&gt; In France, lending CF is growing. I invested a few euros on one of the platform just by curiosity. They are mostly industrial companies looking for sub 500k loans to acquire/replace equipment. The rates are outrageous, up to 8%. You get a detailed market and financial analysis, you see companies 20 years+ old, with stable numbers, doing like 2 or 3M a year in sales. Why the hell didn't their bank lend them 200k at 4 or 5%? French bankers usually don't play their role anymore, which is lend capital, take some risks, and push good projects towards friendly VCs (I must say that we're very lucky/happy our banker has the opposite behavior :) )<p>Ex-banker here.  8% is not a bad rate for such a loan.  Most banks, in the US at least, don't want to do term loans for equipment for small companies because the transactions costs are high (same amount of work for a $5m loan, often less), there's usually a <em>customer</em> <em>concentration</em> problem, the borrower is usually overlevered already, the asset recovery process is just as expensive as a larger loan, and the collateral liquidation values are low.  So if you're an established, small industrial company a bank will gladly give you either a real estate loan or a line of credit at 4 or 5% collateralized by your receivables, but that's about it.<p>Edit: There are specialty finance companies that have sprung up in the past few decades that make equipment term loans, and their rates are 5-12%.  There are also &quot;hard money&quot; guys lending at 15%+ to riskier borrowers."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ways a VC says no without saying no"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://unsupervisedmethods.com/15-ways-a-venture-capitalist-says-no-68632ba021c3#63748"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_fludlight",
+    "story_14814472"
+   ],
+   "author": "fludlight",
+   "children": [
+    14836949
+   ],
+   "comment_text": "&gt; In France, lending CF is growing. I invested a few euros on one of the platform just by curiosity. They are mostly industrial companies looking for sub 500k loans to acquire&#x2F;replace equipment. The rates are outrageous, up to 8%. You get a detailed market and financial analysis, you see companies 20 years+ old, with stable numbers, doing like 2 or 3M a year in sales. Why the hell didn&#x27;t their bank lend them 200k at 4 or 5%? French bankers usually don&#x27;t play their role anymore, which is lend capital, take some risks, and push good projects towards friendly VCs (I must say that we&#x27;re very lucky&#x2F;happy our banker has the opposite behavior :) )<p>Ex-banker here.  8% is not a bad rate for such a loan.  Most banks, in the US at least, don&#x27;t want to do term loans for equipment for small companies because the transactions costs are high (same amount of work for a $5m loan, often less), there&#x27;s usually a customer concentration problem, the borrower is usually overlevered already, the asset recovery process is just as expensive as a larger loan, and the collateral liquidation values are low.  So if you&#x27;re an established, small industrial company a bank will gladly give you either a real estate loan or a line of credit at 4 or 5% collateralized by your receivables, but that&#x27;s about it.<p>Edit: There are specialty finance companies that have sprung up in the past few decades that make equipment term loans, and their rates are 5-12%.  There are also &quot;hard money&quot; guys lending at 15%+ to riskier borrowers.",
+   "created_at": "2017-07-20T20:09:20Z",
+   "created_at_i": 1500581360,
+   "objectID": "14815839",
+   "parent_id": 14815533,
+   "story_id": 14814472,
+   "story_title": "Ways a VC says no without saying no",
+   "story_url": "https://unsupervisedmethods.com/15-ways-a-venture-capitalist-says-no-68632ba021c3#63748",
+   "updated_at": "2024-09-20T01:05:00Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "kamilszybalski"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "<em>Customer</em> <em>concentration</em> risk is a real thing."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Twilio stock plummets as major client Uber distances itself"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://techcrunch.com/2017/05/02/twilio-stock-takes-a-nosedive-in-after-hours-trading-on-weak-guidance/?ncid=rss&utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+Techcrunch+%28TechCrunch%29"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_kamilszybalski",
+    "story_14251222"
+   ],
+   "author": "kamilszybalski",
+   "comment_text": "Customer concentration risk is a real thing.",
+   "created_at": "2017-05-02T23:35:42Z",
+   "created_at_i": 1493768142,
+   "objectID": "14251700",
+   "parent_id": 14251222,
+   "story_id": 14251222,
+   "story_title": "Twilio stock plummets as major client Uber distances itself",
+   "story_url": "https://techcrunch.com/2017/05/02/twilio-stock-takes-a-nosedive-in-after-hours-trading-on-weak-guidance/?ncid=rss&utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+Techcrunch+%28TechCrunch%29",
+   "updated_at": "2024-09-20T00:46:46Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "disposablezero"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "If one plans to take full advantage of brain, entrepreneur, capital and <em>customer</em> <em>concentrations</em> then yes. Otherwise, scarcity elsewhere make for increased career leverage (at varying income / cost of living ratios) elsewhere.<p>Also: <a href=\"https://news.ycombinator.com/item?id=13178495\" rel=\"nofollow\">https://news.ycombinator.com/item?id=13178495</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Does It Make Sense for Programmers to Move to the Bay Area?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://blog.triplebyte.com/does-it-make-sense-for-programmers-to-move-to-the-bay-area"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_disposablezero",
+    "story_13178305"
+   ],
+   "author": "disposablezero",
+   "comment_text": "If one plans to take full advantage of brain, entrepreneur, capital and customer concentrations then yes. Otherwise, scarcity elsewhere make for increased career leverage (at varying income &#x2F; cost of living ratios) elsewhere.<p>Also: <a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=13178495\" rel=\"nofollow\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=13178495</a>",
+   "created_at": "2016-12-15T03:38:03Z",
+   "created_at_i": 1481773083,
+   "objectID": "13182178",
+   "parent_id": 13178305,
+   "story_id": 13178305,
+   "story_title": "Does It Make Sense for Programmers to Move to the Bay Area?",
+   "story_url": "http://blog.triplebyte.com/does-it-make-sense-for-programmers-to-move-to-the-bay-area",
+   "updated_at": "2024-09-20T00:08:51Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "twunde"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "Other airports do have ads for tech companies (Seattle comes to mind) but the <em>concentration</em> is significantly lower.<p>Billboards are primarily focused on brand awareness since you can't update them frequently and you don't have amazing targeting/attribution data. They're also hyper-geographic specific. For tech companies that means that billboards are most useful when targeting either a specific conference or when targeting people that can make sales decisions.<p>Sf's billboard space is heavily used by the tech industry because\nA) you've got a high <em>concentration</em> of consumers for your tech product (developers, marketers, operations, product managers, etc)\nB) you've got a high <em>concentration</em> of decision-makers in terms of director/VP/execs/consultants going through that airport who may end up making a final decision on your sales.\nC) you've got a <em>concentration</em> of investors in terms of VC, private equity, angel investors. This helps bring in interest for that next round/acquisition. For your existing investors this means that they've got something to brag about. \nD) hometown pride. Companies tend to put billboards near where executives travel through since it's a reminder of the work that the marketer is doing. It also helps with hiring and media reputation.<p>If you compare SF to NYC or Boston, those other cities have a much smaller amount of their workforce in tech (22% compared to 11%). This is especially true if you think about the number of people transferring at these airports. The <em>concentration</em> of <em>customers</em> just isn't there, which is why NYC ads tend to be more consumer driven."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Why do SF billboards hit different?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_twunde",
+    "story_47562924"
+   ],
+   "author": "twunde",
+   "comment_text": "Other airports do have ads for tech companies (Seattle comes to mind) but the concentration is significantly lower.<p>Billboards are primarily focused on brand awareness since you can&#x27;t update them frequently and you don&#x27;t have amazing targeting&#x2F;attribution data. They&#x27;re also hyper-geographic specific. For tech companies that means that billboards are most useful when targeting either a specific conference or when targeting people that can make sales decisions.<p>Sf&#x27;s billboard space is heavily used by the tech industry because\nA) you&#x27;ve got a high concentration of consumers for your tech product (developers, marketers, operations, product managers, etc)\nB) you&#x27;ve got a high concentration of decision-makers in terms of director&#x2F;VP&#x2F;execs&#x2F;consultants going through that airport who may end up making a final decision on your sales.\nC) you&#x27;ve got a concentration of investors in terms of VC, private equity, angel investors. This helps bring in interest for that next round&#x2F;acquisition. For your existing investors this means that they&#x27;ve got something to brag about. \nD) hometown pride. Companies tend to put billboards near where executives travel through since it&#x27;s a reminder of the work that the marketer is doing. It also helps with hiring and media reputation.<p>If you compare SF to NYC or Boston, those other cities have a much smaller amount of their workforce in tech (22% compared to 11%). This is especially true if you think about the number of people transferring at these airports. The concentration of customers just isn&#x27;t there, which is why NYC ads tend to be more consumer driven.",
+   "created_at": "2026-03-29T23:58:37Z",
+   "created_at_i": 1774828717,
+   "objectID": "47568770",
+   "parent_id": 47562924,
+   "story_id": 47562924,
+   "story_title": "Why do SF billboards hit different?",
+   "updated_at": "2026-03-30T00:01:33Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "next_xibalba"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "I merely comment on the <em>concentration</em> of <em>customers</em> and how it has not at all hurt Nvidia's margins. In fact, they have expanded quite dramatically. All of your other points are moot.<p>&gt; &quot;rising costs&quot;<p>Nvidia's margin expansion would suggest otherwise. Or at least, the costs are not scaling with volume/pricing. Again, all we need to do is look at the margins.<p>&gt; &quot;their position quite untenable ... But until ROCm is at least _easy_ nothing will happen there&quot;<p>Seems like you're contradicting yourself. Not sure what point you're trying to make. Bottom line is, there is absolutely no concern about monopsony as suggested by the GP. Revenue is booming and margins are expanding. Will it last? Who knows. Fat margins tend to invite competition."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "NSF and Nvidia award Ai2 $152M to support building an open AI ecosystem"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://allenai.org/blog/nsf-nvidia"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_next_xibalba",
+    "story_44899935"
+   ],
+   "author": "next_xibalba",
+   "comment_text": "I merely comment on the concentration of customers and how it has not at all hurt Nvidia&#x27;s margins. In fact, they have expanded quite dramatically. All of your other points are moot.<p>&gt; &quot;rising costs&quot;<p>Nvidia&#x27;s margin expansion would suggest otherwise. Or at least, the costs are not scaling with volume&#x2F;pricing. Again, all we need to do is look at the margins.<p>&gt; &quot;their position quite untenable ... But until ROCm is at least _easy_ nothing will happen there&quot;<p>Seems like you&#x27;re contradicting yourself. Not sure what point you&#x27;re trying to make. Bottom line is, there is absolutely no concern about monopsony as suggested by the GP. Revenue is booming and margins are expanding. Will it last? Who knows. Fat margins tend to invite competition.",
+   "created_at": "2025-08-15T01:24:55Z",
+   "created_at_i": 1755221095,
+   "objectID": "44907647",
+   "parent_id": 44905495,
+   "story_id": 44899935,
+   "story_title": "NSF and Nvidia award Ai2 $152M to support building an open AI ecosystem",
+   "story_url": "https://allenai.org/blog/nsf-nvidia",
+   "updated_at": "2026-03-05T22:28:28Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "larossmann"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "&gt; So, you think businesses should move away from the largest single-point <em>concentrations</em> of <em>customers</em> and workers? Something like 20% of all the humans in USA are represented by those two little acronyms NY and CA.<p>You are correct in that you need to fish where fish are. Conversely, this sounds too close to staying with the abusive partner because they're hot. At some point, the abusive partner needs that prompt to change their behavior, and that does mean leaving them, even if they are hot."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Louis Rossmann explains why he left New York"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.youtube.com/watch?v=nSlGTVInDOI"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_larossmann",
+    "story_33934789"
+   ],
+   "author": "larossmann",
+   "comment_text": "&gt; So, you think businesses should move away from the largest single-point concentrations of customers and workers? Something like 20% of all the humans in USA are represented by those two little acronyms NY and CA.<p>You are correct in that you need to fish where fish are. Conversely, this sounds too close to staying with the abusive partner because they&#x27;re hot. At some point, the abusive partner needs that prompt to change their behavior, and that does mean leaving them, even if they are hot.",
+   "created_at": "2022-12-20T05:37:03Z",
+   "created_at_i": 1671514623,
+   "objectID": "34061977",
+   "parent_id": 33940073,
+   "story_id": 33934789,
+   "story_title": "Louis Rossmann explains why he left New York",
+   "story_url": "https://www.youtube.com/watch?v=nSlGTVInDOI",
+   "updated_at": "2025-05-07T10:31:20Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mathgladiator"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "&gt; So, you think businesses should move away from the largest single-point <em>concentrations</em> of <em>customers</em> and workers? Something like 20% of all the humans in USA are represented by those two little acronyms NY and CA.<p>Yes. At a certain point, it's just not worth it. Atlas Shrugged makes the case that competent people are not slaves and they can just stop."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Louis Rossmann explains why he left New York"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.youtube.com/watch?v=nSlGTVInDOI"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mathgladiator",
+    "story_33934789"
+   ],
+   "author": "mathgladiator",
+   "children": [
+    33940814
+   ],
+   "comment_text": "&gt; So, you think businesses should move away from the largest single-point concentrations of customers and workers? Something like 20% of all the humans in USA are represented by those two little acronyms NY and CA.<p>Yes. At a certain point, it&#x27;s just not worth it. Atlas Shrugged makes the case that competent people are not slaves and they can just stop.",
+   "created_at": "2022-12-11T06:38:26Z",
+   "created_at_i": 1670740706,
+   "objectID": "33940708",
+   "parent_id": 33940073,
+   "story_id": 33934789,
+   "story_title": "Louis Rossmann explains why he left New York",
+   "story_url": "https://www.youtube.com/watch?v=nSlGTVInDOI",
+   "updated_at": "2024-09-20T12:49:04Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "blamazon"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "So, you think businesses should move away from the largest single-point <em>concentrations</em> of <em>customers</em> and workers? Something like 20% of all the humans in USA are represented by those two little acronyms NY and CA.<p>'easy to do business' isn't just about regulations. It's often about fishing where fish are.<p>Tangentially related to differences in regulation between states, but interestingly Oklahoma has a nearly ironclad ban on noncompete agreements for workers. Has some fascinating effects for attracting skilled labor there. I know welders, mechanics, electricians, etc based in OK that are at the top of their game nationally and earn mind blowing salaries hopping from contract to contract, like sports players. Usually unionized as well, so reasonable work-life balance to boot."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Louis Rossmann explains why he left New York"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.youtube.com/watch?v=nSlGTVInDOI"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_blamazon",
+    "story_33934789"
+   ],
+   "author": "blamazon",
+   "children": [
+    33940708,
+    34061977
+   ],
+   "comment_text": "So, you think businesses should move away from the largest single-point concentrations of customers and workers? Something like 20% of all the humans in USA are represented by those two little acronyms NY and CA.<p>&#x27;easy to do business&#x27; isn&#x27;t just about regulations. It&#x27;s often about fishing where fish are.<p>Tangentially related to differences in regulation between states, but interestingly Oklahoma has a nearly ironclad ban on noncompete agreements for workers. Has some fascinating effects for attracting skilled labor there. I know welders, mechanics, electricians, etc based in OK that are at the top of their game nationally and earn mind blowing salaries hopping from contract to contract, like sports players. Usually unionized as well, so reasonable work-life balance to boot.",
+   "created_at": "2022-12-11T04:26:55Z",
+   "created_at_i": 1670732815,
+   "objectID": "33940073",
+   "parent_id": 33936643,
+   "story_id": 33934789,
+   "story_title": "Louis Rossmann explains why he left New York",
+   "story_url": "https://www.youtube.com/watch?v=nSlGTVInDOI",
+   "updated_at": "2024-09-20T12:49:04Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "pottertheotter"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "It depends on what you want to get out of it. Are you looking to learn about the business/market, or are you also interested in potentially investing? The S-1 has information on the financials, the stock being offered, the company's capitalization, their business, the market/industry, etc.<p>At the front of every S-1 is the &quot;Prospectus Summary&quot; [1], which is easily identified as it has a black border around it. It's a condensed version of the rest of the filing, so (a) it may have some parts that don't interest you, and (b) it repeats information that is explained more fully in other sections.<p>My recommendation is to check out the Table of Contents [2] and click on a few of the sections that stick out to you. Every S-1 follows the same format [3], so if you skim through one of them you'll get a good idea of what will be in others and what you care about.<p>When I'm primarily interested in learning about the business (i.e., not making an investment), I head straight to the Business section [4].<p>The MD&amp;A [5] is also great. You'll learn additional things about the business, but it will be mixed in with financial data. A lot of that detail might not be important to you. For instance, there are sections of the MD&amp;A that discuss non-GAAP financial metrics (i.e., financial metrics that are not standardized by the SEC) or the company's liquidity. The headings within the MD&amp;A help a lot.<p>The Risk Factors [6] can be interesting, but there's a lot of boiler plate info. Skim it and look for things that seem specific to the company. For instance, there's one that says, &quot;The markets in which we participate are competitive...&quot; and it lists companies they see as their competition. A couple pages later is one that says, &quot;We target enterprise <em>customers</em>...&quot; and has some details on <em>customer</em> size and <em>concentration</em>. But then there is one  that says, &quot;If we fail to retain and motivate members of our management team or other key employees, or fail to attract additional qualified personnel to support our operations, our business and future growth prospects would be harmed.&quot; There are some specifics about the company and the market they are in, but it's also kind of obvious and in there so that a shareholder can't sue them later and say, &quot;We didn't know this was a risk!&quot;<p>I hope this helps some. It's a bit daunting to see so many pages with so much information. Happy to answer other questions you have. I took a few companies public as an investment banker, then invested in equities at a hedge fund, and also have a PhD in capital markets and disclosure.<p>[1] <a href=\"https://www.sec.gov/Archives/edgar/data/1734722/000119312521094920/d98556ds1.htm#rom98556_1\" rel=\"nofollow\">https://www.sec.gov/Archives/edgar/data/1734722/000119312521...</a><p>[2] <a href=\"https://www.sec.gov/Archives/edgar/data/1734722/000119312521094920/d98556ds1.htm#toc\" rel=\"nofollow\">https://www.sec.gov/Archives/edgar/data/1734722/000119312521...</a><p>[3] <a href=\"https://www.sec.gov/files/forms-1.pdf\" rel=\"nofollow\">https://www.sec.gov/files/forms-1.pdf</a><p>[4] <a href=\"https://www.sec.gov/Archives/edgar/data/1734722/000119312521094920/d98556ds1.htm#rom98556_11\" rel=\"nofollow\">https://www.sec.gov/Archives/edgar/data/1734722/000119312521...</a><p>[5] <a href=\"https://www.sec.gov/Archives/edgar/data/1734722/000119312521094920/d98556ds1.htm#rom98556_9\" rel=\"nofollow\">https://www.sec.gov/Archives/edgar/data/1734722/000119312521...</a><p>[6] <a href=\"https://www.sec.gov/Archives/edgar/data/1734722/000119312521094920/d98556ds1.htm#rom98556_2\" rel=\"nofollow\">https://www.sec.gov/Archives/edgar/data/1734722/000119312521...</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "UiPath Inc S-1 SEC Form"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://sec.report/Document/0001193125-21-094920/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_pottertheotter",
+    "story_26605337"
+   ],
+   "author": "pottertheotter",
+   "children": [
+    26610670
+   ],
+   "comment_text": "It depends on what you want to get out of it. Are you looking to learn about the business&#x2F;market, or are you also interested in potentially investing? The S-1 has information on the financials, the stock being offered, the company&#x27;s capitalization, their business, the market&#x2F;industry, etc.<p>At the front of every S-1 is the &quot;Prospectus Summary&quot; [1], which is easily identified as it has a black border around it. It&#x27;s a condensed version of the rest of the filing, so (a) it may have some parts that don&#x27;t interest you, and (b) it repeats information that is explained more fully in other sections.<p>My recommendation is to check out the Table of Contents [2] and click on a few of the sections that stick out to you. Every S-1 follows the same format [3], so if you skim through one of them you&#x27;ll get a good idea of what will be in others and what you care about.<p>When I&#x27;m primarily interested in learning about the business (i.e., not making an investment), I head straight to the Business section [4].<p>The MD&amp;A [5] is also great. You&#x27;ll learn additional things about the business, but it will be mixed in with financial data. A lot of that detail might not be important to you. For instance, there are sections of the MD&amp;A that discuss non-GAAP financial metrics (i.e., financial metrics that are not standardized by the SEC) or the company&#x27;s liquidity. The headings within the MD&amp;A help a lot.<p>The Risk Factors [6] can be interesting, but there&#x27;s a lot of boiler plate info. Skim it and look for things that seem specific to the company. For instance, there&#x27;s one that says, &quot;The markets in which we participate are competitive...&quot; and it lists companies they see as their competition. A couple pages later is one that says, &quot;We target enterprise customers...&quot; and has some details on customer size and concentration. But then there is one  that says, &quot;If we fail to retain and motivate members of our management team or other key employees, or fail to attract additional qualified personnel to support our operations, our business and future growth prospects would be harmed.&quot; There are some specifics about the company and the market they are in, but it&#x27;s also kind of obvious and in there so that a shareholder can&#x27;t sue them later and say, &quot;We didn&#x27;t know this was a risk!&quot;<p>I hope this helps some. It&#x27;s a bit daunting to see so many pages with so much information. Happy to answer other questions you have. I took a few companies public as an investment banker, then invested in equities at a hedge fund, and also have a PhD in capital markets and disclosure.<p>[1] <a href=\"https:&#x2F;&#x2F;www.sec.gov&#x2F;Archives&#x2F;edgar&#x2F;data&#x2F;1734722&#x2F;000119312521094920&#x2F;d98556ds1.htm#rom98556_1\" rel=\"nofollow\">https:&#x2F;&#x2F;www.sec.gov&#x2F;Archives&#x2F;edgar&#x2F;data&#x2F;1734722&#x2F;000119312521...</a><p>[2] <a href=\"https:&#x2F;&#x2F;www.sec.gov&#x2F;Archives&#x2F;edgar&#x2F;data&#x2F;1734722&#x2F;000119312521094920&#x2F;d98556ds1.htm#toc\" rel=\"nofollow\">https:&#x2F;&#x2F;www.sec.gov&#x2F;Archives&#x2F;edgar&#x2F;data&#x2F;1734722&#x2F;000119312521...</a><p>[3] <a href=\"https:&#x2F;&#x2F;www.sec.gov&#x2F;files&#x2F;forms-1.pdf\" rel=\"nofollow\">https:&#x2F;&#x2F;www.sec.gov&#x2F;files&#x2F;forms-1.pdf</a><p>[4] <a href=\"https:&#x2F;&#x2F;www.sec.gov&#x2F;Archives&#x2F;edgar&#x2F;data&#x2F;1734722&#x2F;000119312521094920&#x2F;d98556ds1.htm#rom98556_11\" rel=\"nofollow\">https:&#x2F;&#x2F;www.sec.gov&#x2F;Archives&#x2F;edgar&#x2F;data&#x2F;1734722&#x2F;000119312521...</a><p>[5] <a href=\"https:&#x2F;&#x2F;www.sec.gov&#x2F;Archives&#x2F;edgar&#x2F;data&#x2F;1734722&#x2F;000119312521094920&#x2F;d98556ds1.htm#rom98556_9\" rel=\"nofollow\">https:&#x2F;&#x2F;www.sec.gov&#x2F;Archives&#x2F;edgar&#x2F;data&#x2F;1734722&#x2F;000119312521...</a><p>[6] <a href=\"https:&#x2F;&#x2F;www.sec.gov&#x2F;Archives&#x2F;edgar&#x2F;data&#x2F;1734722&#x2F;000119312521094920&#x2F;d98556ds1.htm#rom98556_2\" rel=\"nofollow\">https:&#x2F;&#x2F;www.sec.gov&#x2F;Archives&#x2F;edgar&#x2F;data&#x2F;1734722&#x2F;000119312521...</a>",
+   "created_at": "2021-03-28T01:58:40Z",
+   "created_at_i": 1616896720,
+   "objectID": "26607352",
+   "parent_id": 26606019,
+   "story_id": 26605337,
+   "story_title": "UiPath Inc S-1 SEC Form",
+   "story_url": "https://sec.report/Document/0001193125-21-094920/",
+   "updated_at": "2024-09-20T08:10:50Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "dsr_"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "Corporations are people. If they don't act ethically, we can't expect people to act ethically.<p>Ending a contract with an agency that runs <em>concentration</em> camps is good. Better, though, is to not accept any contracts with any government that runs <em>concentration</em> camps.<p>Small steps are good. Big steps are better.<p>PS: great fear from all paying <em>customers</em> that run <em>concentration</em> camps that an internet mob could separate them from their code at any time -- sounds like a good policy to me. Not as good as &quot;Don't be evil&quot;, but reasonably close."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "After GitHub CEO backs Black Lives Matter, workers demand an end to ICE contract"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.latimes.com/business/technology/story/2020-06-12/github-ceo-black-lives-matter-employees-demand-end-ice-contract"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_dsr_",
+    "story_23528224"
+   ],
+   "author": "dsr_",
+   "children": [
+    23529578,
+    23529622,
+    23531003,
+    23531390
+   ],
+   "comment_text": "Corporations are people. If they don&#x27;t act ethically, we can&#x27;t expect people to act ethically.<p>Ending a contract with an agency that runs concentration camps is good. Better, though, is to not accept any contracts with any government that runs concentration camps.<p>Small steps are good. Big steps are better.<p>PS: great fear from all paying customers that run concentration camps that an internet mob could separate them from their code at any time -- sounds like a good policy to me. Not as good as &quot;Don&#x27;t be evil&quot;, but reasonably close.",
+   "created_at": "2020-06-15T16:51:13Z",
+   "created_at_i": 1592239873,
+   "objectID": "23529513",
+   "parent_id": 23528224,
+   "story_id": 23528224,
+   "story_title": "After GitHub CEO backs Black Lives Matter, workers demand an end to ICE contract",
+   "story_url": "https://www.latimes.com/business/technology/story/2020-06-12/github-ceo-black-lives-matter-employees-demand-end-ice-contract",
+   "updated_at": "2024-09-20T06:23:30Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "barbecue_sauce"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "And, though Walmart is likely to have a higher number of <em>customers</em> present, the <em>concentration</em> of people can be much lower in a 150,000 sq ft warehouse store then a 300 sq ft Gamestop (provided people are following proper social distancing)."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "GameStop: We Can Stay Open During Lockdowns Because We're 'Essential Retail'"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://kotaku.com/gamestop-we-can-stay-open-during-lockdowns-because-wer-1842415962"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_barbecue_sauce",
+    "story_22637513"
+   ],
+   "author": "barbecue_sauce",
+   "comment_text": "And, though Walmart is likely to have a higher number of customers present, the concentration of people can be much lower in a 150,000 sq ft warehouse store then a 300 sq ft Gamestop (provided people are following proper social distancing).",
+   "created_at": "2020-03-20T18:43:20Z",
+   "created_at_i": 1584729800,
+   "objectID": "22640308",
+   "parent_id": 22638018,
+   "story_id": 22637513,
+   "story_title": "GameStop: We Can Stay Open During Lockdowns Because We're 'Essential Retail'",
+   "story_url": "https://kotaku.com/gamestop-we-can-stay-open-during-lockdowns-because-wer-1842415962",
+   "updated_at": "2024-09-20T05:51:30Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "terravion"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "I can think of a ton more people who want to go from SF to NY (LA to DC, etc) or vice versa for the day than I can people who want to go to London for the day.  Flying supersonic, you could actually get some work done on the other end.  My guess, is that supersonic flight would be a huge boon to California, making it much more practical to locate 2,000 miles away from the geographic <em>concentration</em> of <em>customers</em>."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Drop the Supersonic Aircraft Ban"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.wsj.com/articles/drop-the-supersonic-aircraft-ban-watch-business-boom-1465769638"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_terravion",
+    "story_11893939"
+   ],
+   "author": "terravion",
+   "children": [
+    11894869
+   ],
+   "comment_text": "I can think of a ton more people who want to go from SF to NY (LA to DC, etc) or vice versa for the day than I can people who want to go to London for the day.  Flying supersonic, you could actually get some work done on the other end.  My guess, is that supersonic flight would be a huge boon to California, making it much more practical to locate 2,000 miles away from the geographic concentration of customers.",
+   "created_at": "2016-06-13T15:12:07Z",
+   "created_at_i": 1465830727,
+   "objectID": "11894479",
+   "parent_id": 11894360,
+   "story_id": 11893939,
+   "story_title": "Drop the Supersonic Aircraft Ban",
+   "story_url": "http://www.wsj.com/articles/drop-the-supersonic-aircraft-ban-watch-business-boom-1465769638",
+   "updated_at": "2024-09-19T23:23:24Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "PopeOfNope"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "Nope. I lived the rat race for 7 years before I learned enough to get out and do exactly what you're doing. If you're already successful enough at consulting remotely and starting lifestyle businesses to be making a living at it, then there's little benefit to going to the valley.<p>There are two exceptions, though. The first: if you want to start a fast growing startup with venture capital funding. For that, you still need to go to the valley. The second: if the <em>customers</em> for your lifestyle businesses are silicon valley companies, then you want to go to where the highest <em>concentration</em> of your <em>customers</em> are."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Am I missing out by not being in sillicon valley?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_PopeOfNope",
+    "story_9572288"
+   ],
+   "author": "PopeOfNope",
+   "comment_text": "Nope. I lived the rat race for 7 years before I learned enough to get out and do exactly what you&#x27;re doing. If you&#x27;re already successful enough at consulting remotely and starting lifestyle businesses to be making a living at it, then there&#x27;s little benefit to going to the valley.<p>There are two exceptions, though. The first: if you want to start a fast growing startup with venture capital funding. For that, you still need to go to the valley. The second: if the customers for your lifestyle businesses are silicon valley companies, then you want to go to where the highest concentration of your customers are.",
+   "created_at": "2015-05-19T23:08:28Z",
+   "created_at_i": 1432076908,
+   "objectID": "9573722",
+   "parent_id": 9572288,
+   "points": null,
+   "story_id": 9572288,
+   "story_title": "Ask HN: Am I missing out by not being in sillicon valley?",
+   "updated_at": "2023-09-07T02:47:27Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "fakedang"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "You're comparing whole oranges with orange slices. When comparing vegan food with animal protein, bother to take into account the entire package rather than one part. Animals are actually a much more energy intensive source of nutrition, and excellent for efficiency in terms of calories delivered. Our bodies process more nutrients from animal protein, while deriving nutrition from grains is a more recent evolution for us. You could easily feed entire villages with a couple of cows (as is done even today in many parts of the world). And this isn't including their value as milk producers and fertilizer generators.<p>On the other hand, almonds are a very niche crop, grown for a select few types of <em>customers</em>, but the sheer <em>concentration</em> of their agriculture in California - that too by a single farming billionaire family, the Resnicks - has caused the situation to become dire to such an extent never seen before in any other place."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The Last Drops of Mexico City"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://mexicocitywater.longlead.com"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_fakedang",
+    "story_43423032"
+   ],
+   "author": "fakedang",
+   "children": [
+    43432134
+   ],
+   "comment_text": "You&#x27;re comparing whole oranges with orange slices. When comparing vegan food with animal protein, bother to take into account the entire package rather than one part. Animals are actually a much more energy intensive source of nutrition, and excellent for efficiency in terms of calories delivered. Our bodies process more nutrients from animal protein, while deriving nutrition from grains is a more recent evolution for us. You could easily feed entire villages with a couple of cows (as is done even today in many parts of the world). And this isn&#x27;t including their value as milk producers and fertilizer generators.<p>On the other hand, almonds are a very niche crop, grown for a select few types of customers, but the sheer concentration of their agriculture in California - that too by a single farming billionaire family, the Resnicks - has caused the situation to become dire to such an extent never seen before in any other place.",
+   "created_at": "2025-03-20T23:23:37Z",
+   "created_at_i": 1742513017,
+   "objectID": "43430183",
+   "parent_id": 43427998,
+   "story_id": 43423032,
+   "story_title": "The Last Drops of Mexico City",
+   "story_url": "https://mexicocitywater.longlead.com",
+   "updated_at": "2025-03-23T23:22:54Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tickerticker"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "SVB's fail was because of radical speed in deposit inflow, which was invested in fixed rate bonds just at the moment that the Fed was on a rising rate ratchet. Because of an affluent clientele, they had unusually high % of uninsured deposits. Very unlikely that a small bank would have had the need to layoff so many deposits in such a short time span. Very unlikely that a smaller bank would have had the high % of uninsured deposits.  These are the funds that jump ship immediately.<p>First Republic fail was because of large pool of fixed rate assets....(jumbo low-rate mortgages and Treasury Notes) in a rising rate context. They also had an affluent clientele and thus a high % of uninsured deposits. The fixed rate assets lost so much value while rates rose, that they had no tangible equity.  Thus, the hot money deposits raced out of the bank.<p>Smaller banks typically don't have such a <em>concentration</em> of affluent <em>customers</em>, which means that more of their clientele would be under the threshold for FDIC insurance. Smaller banks probably have a good book of commercial loans which are commonly priced at a variable rate.<p>I am baffled that SVB and FRB did not hedge their fixed rate portfolios with interest rate swaps....Maybe their mind was on staying abreast of the white-hot tech sector instead of wringing their hands about the next Fed rate decision."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Bank Failures Visualized"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://observablehq.com/@mbostock/bank-failures"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_tickerticker",
+    "story_35795975"
+   ],
+   "author": "tickerticker",
+   "comment_text": "SVB&#x27;s fail was because of radical speed in deposit inflow, which was invested in fixed rate bonds just at the moment that the Fed was on a rising rate ratchet. Because of an affluent clientele, they had unusually high % of uninsured deposits. Very unlikely that a small bank would have had the need to layoff so many deposits in such a short time span. Very unlikely that a smaller bank would have had the high % of uninsured deposits.  These are the funds that jump ship immediately.<p>First Republic fail was because of large pool of fixed rate assets....(jumbo low-rate mortgages and Treasury Notes) in a rising rate context. They also had an affluent clientele and thus a high % of uninsured deposits. The fixed rate assets lost so much value while rates rose, that they had no tangible equity.  Thus, the hot money deposits raced out of the bank.<p>Smaller banks typically don&#x27;t have such a concentration of affluent customers, which means that more of their clientele would be under the threshold for FDIC insurance. Smaller banks probably have a good book of commercial loans which are commonly priced at a variable rate.<p>I am baffled that SVB and FRB did not hedge their fixed rate portfolios with interest rate swaps....Maybe their mind was on staying abreast of the white-hot tech sector instead of wringing their hands about the next Fed rate decision.",
+   "created_at": "2023-05-03T02:24:46Z",
+   "created_at_i": 1683080686,
+   "objectID": "35796979",
+   "parent_id": 35796655,
+   "story_id": 35795975,
+   "story_title": "Bank Failures Visualized",
+   "story_url": "https://observablehq.com/@mbostock/bank-failures",
+   "updated_at": "2024-09-20T14:05:18Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "nicoburns"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "As someone currently leading a small team that is responsible for absolutely everything technical at our company (from development to ops to IT and even UX), I do agree that it's a good learning experience. On the other hand it sure does take a lot of time out of the day. And I think all the context switching definitely leads me to be less productive than I would otherwise be. Of note for me: while development work often requires uninterrupted time and deep <em>concentration</em>, ops and <em>customer</em> support requests are often urgent and have to be dealt with right away.<p>I think the ideal might be to get broad experience and then specialise a little later."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Full cycle developers \u2013 Operate what you build (2018)"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://netflixtechblog.com/full-cycle-developers-at-netflix-a08c31f83249"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_nicoburns",
+    "story_27457150"
+   ],
+   "author": "nicoburns",
+   "comment_text": "As someone currently leading a small team that is responsible for absolutely everything technical at our company (from development to ops to IT and even UX), I do agree that it&#x27;s a good learning experience. On the other hand it sure does take a lot of time out of the day. And I think all the context switching definitely leads me to be less productive than I would otherwise be. Of note for me: while development work often requires uninterrupted time and deep concentration, ops and customer support requests are often urgent and have to be dealt with right away.<p>I think the ideal might be to get broad experience and then specialise a little later.",
+   "created_at": "2021-06-10T08:33:26Z",
+   "created_at_i": 1623314006,
+   "objectID": "27458370",
+   "parent_id": 27458000,
+   "story_id": 27457150,
+   "story_title": "Full cycle developers \u2013 Operate what you build (2018)",
+   "story_url": "https://netflixtechblog.com/full-cycle-developers-at-netflix-a08c31f83249",
+   "updated_at": "2024-09-20T08:45:29Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "true_religion"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "I and 3 of my best friends are moving to Florida at the end of this month. So don't say its devoid of programmers just yet.<p>Whilst not as premier as Silicon Valley, Florida has great things going for it as a hacker:<p>1. It's cheap living in warm weather<p>2. It has <em>concentrations</em> of paying <em>customers</em> in clear demographics and dilineated geographic areas (i.e. state-wide suburbia and ethnic enclaves).<p>3. It's a nice place to find angel investors if you have the right product---the next facebook might not find investment here, but something that makes the lives of baby boomers easier will."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Any theories on why cities like Miami are devoid of programmers?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_true_religion",
+    "story_2737120"
+   ],
+   "author": "true_religion",
+   "children": [
+    2738249
+   ],
+   "comment_text": "I and 3 of my best friends are moving to Florida at the end of this month. So don't say its devoid of programmers just yet.<p>Whilst not as premier as Silicon Valley, Florida has great things going for it as a hacker:<p>1. It's cheap living in warm weather<p>2. It has concentrations of paying customers in clear demographics and dilineated geographic areas (i.e. state-wide suburbia and ethnic enclaves).<p>3. It's a nice place to find angel investors if you have the right product---the next facebook might not find investment here, but something that makes the lives of baby boomers easier will.",
+   "created_at": "2011-07-07T09:29:59Z",
+   "created_at_i": 1310030999,
+   "objectID": "2737844",
+   "parent_id": 2737120,
+   "story_id": 2737120,
+   "story_title": "Ask HN: Any theories on why cities like Miami are devoid of programmers?",
+   "story_url": "",
+   "updated_at": "2024-09-19T17:49:49Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "lsc"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "yeah.  and the water thing only works if you can target relatively high-value <em>customers</em>.  But at $0.50 or so a 'click' if you are at a tradeshow or some other <em>concentration</em> of 'high value' <em>customers</em>, it's probably a better deal than paying as much for adwords.<p>Adwords itself is an example of how some companies are willing to pay tens of dollars per 'click' for advertising.  Branded dirt won't usually work, but it might at a nursery tradeshow.<p>But yeah, nothing but 'free content' is going to work if you are spamming the masses with your advertising.  But, I believe that many content creators are willing to create content to advertise themselves.  Especially in the technical world, writing has almost no hope of paying the same as technical work, but people still do it.<p>I suspect the problem will not be that nobody is willing to write content for free, but that we need a new way of vetting the good, credible content from the bad."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Post-Medium Publishing"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.paulgraham.com/publishing.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_lsc",
+    "story_828992"
+   ],
+   "author": "lsc",
+   "comment_text": "yeah.  and the water thing only works if you can target relatively high-value customers.  But at $0.50 or so a 'click' if you are at a tradeshow or some other concentration of 'high value' customers, it's probably a better deal than paying as much for adwords.<p>Adwords itself is an example of how some companies are willing to pay tens of dollars per 'click' for advertising.  Branded dirt won't usually work, but it might at a nursery tradeshow.<p>But yeah, nothing but 'free content' is going to work if you are spamming the masses with your advertising.  But, I believe that many content creators are willing to create content to advertise themselves.  Especially in the technical world, writing has almost no hope of paying the same as technical work, but people still do it.<p>I suspect the problem will not be that nobody is willing to write content for free, but that we need a new way of vetting the good, credible content from the bad.",
+   "created_at": "2009-09-18T18:34:48Z",
+   "created_at_i": 1253298888,
+   "objectID": "830831",
+   "parent_id": 830440,
+   "story_id": 828992,
+   "story_title": "Post-Medium Publishing",
+   "story_url": "http://www.paulgraham.com/publishing.html",
+   "updated_at": "2024-09-19T16:40:58Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "bob1029"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "&gt; failing everywhere except Azure<p>Azure is a failure once you factor in the <em>concentration</em> risk of their <em>customer</em> portfolio. Most of the revenue comes from maybe 10 companies. OpenAI alone is ~50% of future commitments."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Welcome to the Room \u2013 A lesson in leadership by Satya Nadella"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.jsnover.com/blog/2026/02/01/welcome-to-the-room/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_bob1029",
+    "story_46874372"
+   ],
+   "author": "bob1029",
+   "comment_text": "&gt; failing everywhere except Azure<p>Azure is a failure once you factor in the concentration risk of their customer portfolio. Most of the revenue comes from maybe 10 companies. OpenAI alone is ~50% of future commitments.",
+   "created_at": "2026-02-07T13:02:48Z",
+   "created_at_i": 1770469368,
+   "objectID": "46923519",
+   "parent_id": 46922817,
+   "story_id": 46874372,
+   "story_title": "Welcome to the Room \u2013 A lesson in leadership by Satya Nadella",
+   "story_url": "https://www.jsnover.com/blog/2026/02/01/welcome-to-the-room/",
+   "updated_at": "2026-03-05T23:31:56Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "nsoldiac"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "customer",
+      "concentration"
+     ],
+     "value": "Setting the issue of worker treatment aside for a sec, what IBM and it's many clients are doing is a wide-known shady practice that's been around for a long time - hourly rate dilution. Dilution as in mixing different elements (hourly rates in this case) to lower the <em>concentration</em> of something. <em>Customer</em> love it, IBM loves it (when they can pay close to nothing for their H1B workers - and they do) and american workers rarely actually find out. Frighteningly close to a perfect white-collar crime. EVERYONE in consulting does this, small and big. There's no \"American IT Workers Union\" so this is not going away anytime soon."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "IBM: The cost difference is too great for business not to look for H1B workers"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://cis.org/miano/ibm-cost-difference-too-great-business-not-look-h-1b-workers"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_nsoldiac",
+    "story_4659855"
+   ],
+   "author": "nsoldiac",
+   "comment_text": "Setting the issue of worker treatment aside for a sec, what IBM and it's many clients are doing is a wide-known shady practice that's been around for a long time - hourly rate dilution. Dilution as in mixing different elements (hourly rates in this case) to lower the concentration of something. Customer love it, IBM loves it (when they can pay close to nothing for their H1B workers - and they do) and american workers rarely actually find out. Frighteningly close to a perfect white-collar crime. EVERYONE in consulting does this, small and big. There's no \"American IT Workers Union\" so this is not going away anytime soon.",
+   "created_at": "2012-10-16T19:52:55Z",
+   "created_at_i": 1350417175,
+   "objectID": "4661532",
+   "parent_id": 4659855,
+   "story_id": 4659855,
+   "story_title": "IBM: The cost difference is too great for business not to look for H1B workers",
+   "story_url": "http://cis.org/miano/ibm-cost-difference-too-great-business-not-look-h-1b-workers",
+   "updated_at": "2024-09-19T18:57:20Z"
+  }
+ ],
+ "hitsPerPage": 30,
+ "nbHits": 589,
+ "nbPages": 20,
+ "page": 0,
+ "params": "query=customer+concentration&tags=comment&hitsPerPage=30&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 32,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 24
+  },
+  "afterFetch": {
+   "format": {
+    "highlighting": 1,
+    "total": 2
+   },
+   "merge": {
+    "mergeLoop": {
+     "prepareNextHit": 12,
+     "total": 12
+    },
+    "total": 12
+   },
+   "total": 12
+  },
+  "fetch": {
+   "query": 8,
+   "scanning": 9,
+   "total": 18
+  },
+  "total": 32
+ },
+ "query": "customer concentration",
+ "serverTimeMS": 35
+}

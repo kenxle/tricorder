@@ -1,0 +1,128 @@
+SOURCE: https://www.kellblog.com/target-pipeline-coverage-is-not-the-inverse-of-win-rate/
+
+Target Pipeline Coverage is Not the Inverse of Win Rate 
+
+ - 
+ - 
+
+ - 
+
+ - 
+
+ - 
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - Home 
+
+ - Best Of 
+
+ - Chat 
+
+ - FAQ 
+
+ - About 
+
+ Sign in 
+ Subscribe 
+
+ Metrics 
+ Target Pipeline Coverage is Not the Inverse of Win Rate
+
+ Dave Kellogg 
+
+ 09 Jun 2024 
+ — 7 min read 
+
+ Share
+
+ w3plc 
+
+ I was reading a SaaS benchmark report the other day and encountered this line:
+ "Win rates declining [over the two-year period] from 23% to 19% might not seem all that significant. But in terms of required pipeline, it represents a dramatic shift from 4.3x to 5.3x coverage.”
+ It's the kind of sentence that you might read, nod your head in hasty agreement, and then keep going. But you'd be wrong to do that. Quite wrong. And a lot of people make this mistake.
+ Thus, in this post, I'll explain why it's wrong to invert win rate to calculate target pipeline coverage , demonstrate that with a spreadsheet, and then give you a better way to determine target pipeline coverage.
+ Before diving into the math, let's take a second to sanity check the conclusion reached above: you're going to need 5.3x pipeline coverage [1]. Given that the rule of thumb for pipeline coverage is 3.0x, how do we feel about requiring 5.3x? My thoughts [2]:
+ - I wonder who's going to generate that? In many companies, it's primarily marketing. So this potentially passing the buck: "hey marketing, we're not closing as much as we used to, so we need more coverage." It's your problem, now.
+- At what cost? Let's say that it costs $4K to generate a sales-accepted (aka, stage 2) opportunity [3]. If we needed 3x coverage before -- e.g., 30 opportunities ("oppties") to generate 10 deals -- now we are going to need 53. That's 23 more oppties at an incremental cost of $92K. Who's going to pay for that? What's that going to do to our CAC ratio and CPP ?
+- Why do we lose so much? Sales is telling us that they can win only 19% of the oppties that they accept as valid sales oppties? That strikes me as low. If a tougher macro environment means lower quality stage 1 oppties, then why is sales accepting them? Lower quality stage 1 opportunities should show up in a higher stage 2 rejection rate, not a lower win rate [4].
+ So, if the answer is that we need 5.3x pipeline coverage to make plan, I'm going to have a lot of questions without doing any math at all. But now, let's cut to the math.
+ What is Win Rate? 
+ Most people define win rate as follows:
+ For all oppties that reached a terminal state during the quarter, win rate = wins / (wins + losses) . I call this narrow win rate because it excludes no-decisions (also known as derails) where an oppty hits a terminal state without anyone winning it -- for example, where the customer decided to stick with the status quo or the whole evaluation gets derailed by a surprise merger [5]. Because derails can happen a lot [6], I define an additional metric, broad win rate = wins / (wins + losses + derails) .
+ Note that both of these win rates exclude slips , when the close date for an opportunity is moved out of the current quarter into a future one. Slips happen a lot. In fact, my basic rule of thumb is you win a third, you lose a third, and you slip a third [7]. Also note that I'm doing this on a count basis, not a dollar basis, which is my default preference [8].
+ You should already see why inverting win rate is not a great way to determine pipeline coverage requirements:
+ - It's ambiguous. Which win rate, narrow or broad?
+- Slips are common, but excluded from win rates. (Definitionally, because slipped oppties do not hit a terminal state in the quarter.)
+- The timing is wrong. We use pipeline coverage at the start of the quarter to see if we have a chance at hitting the number. But win rates are based on when oppties die, not their start-of-quarter status.
+ What is Close Rate? 
+ I define close rate as a cohort-based metric that answers the question: given a set of oppties, what percent of them do we close/win [9] in some time period. For example, the six-quarter close rate for the cohort of stage-2 oppties created in 1Q22 = oppties in the cohort closed in the period [1Q22 to 3Q23] / oppties created in 1Q22. Let's show it with an example:
+ The first block shows oppty count, the second shows percent. Here, we see a 27% six-quarter close rate. You can also run a cumulative rate along the bottom of the table that would show, for example, that the four-quarter close rate is 23%.
+ Win rates are period metrics that tell you what happened to the oppties that a hit a terminal state in a given period. Close rates are cohort metrics that tell you, in the fullness of time, the percent of a set of oppties that we win.
+ - They are different.
+- They are both valuable.
+- Win rates are great for tracking progress against the enemy.
+- Close rates are great for knowing how much value we expect to extract , and when, from a set of oppties.
+- Neither is good if you want to invert something to find required pipeline coverage.
+ Week 3 Pipeline Conversion Rate 
+ Let's look at a different metric. Instead of starting with the fate of oppties in the pipeline, let's start with an early-quarter snapshot of the current-quarter pipeline and then compare it to how much we close. Ideally, we'd take the snapshot on day one of the quarter, but that's not realistic because sales invariably needs some clean-up time after the end of a quarter. Ergo, I typically use week-3 starting pipeline. If you have a monthly cadence , I'd suggest doing this same analysis on a monthly basis and using day-3 starting pipeline [10]. You can then calculate week-3 pipeline conversion rate = new ARR closed / week-3 starting pipeline . See [11] for some notes on this metric.
+ Because the conversion rates often differ significantly between new and expansion business, most people segment week-3 pipeline conversion rate by new business (newbiz) vs. expansion. In my endless desire to keep things simple, I always start with the total, unsegmented pipeline and break it out later if I need to. The reality is that while the conversion rates are different, if the mix remains roughly constant, it all comes out in the wash.
+ Here's a table to show this concept at work:
+ To get implied target pipeline coverage, I take a trailing nine-quarter average of the week-3 pipeline conversion rate (34%) and then invert it to get 2.86. You could also have fun with the percent-of-plan row, asking questions like: what pipeline coverage do we need to hit plan 90% of the time?
+ In this post, I've hopefully blown a hole in the conventional wisdom that you can invert win rate to get target pipeline coverage. And I've provided a far better metric for accomplishing that task: week-3 pipeline conversion rate.
+ My metrics brother Ray Rike and I recently released an episode of our podcast, SaaS Talk with the Metrics Brothers , on this very topic. The spreadsheet for this post is here .
+ # # #
+ Notes 
+ [1] When I used to help my kids with math homework, I'd always include a sanity check review of the answer. If you're calculating the mean summer temperature in Alaska and the answer is 451 degrees , then go back and check your work.
+ [2] And I find that rule of thumb high in many situations. At the last company I ran, we could consistently hit plan with 2.5x coverage.
+ [3] In practice, the average cost of a stage 2 oppty varies considerably. I think a range of $2K to $10K probably covers 90% of cases, with a mean around $4-5K. These are mid-market and enterprise figures. SMB is presumably cheaper. These are sales-accepted so the cost is equivalent to your stage 1 oppty cost dividied by your stage 2 acceptance rate (typically 60-80%).
+ [4] Yes, I'm aware of the "desperation effect" whereby sellers with weak pipeline accept lower-quality opportunities, but sales management must fight to hold some objective quality bar to preserve pipeline discipline, to ensure resources are only put against quality oppties, and to ensure the validity of pipeline analysis. So yes, the effect is real, but it's sales management's job to limit it. (See the "floating bar" problem discussed here .)
+ [5] Many people code no-decisions as losses and then have a reason code for no-decision. I think this potentially blurs up win/loss analysis because losing to a competitor is different from a no-decision. (Plus, it usually precludes putting no-decision codes on no-decisions which I also want.) The fact is they are two different cases: losing to a competitor vs. an evaluation process ending without selecting a winner.
+ [6] Particularly in new markets where people are primarily exploring whether they want to buy one at all . In more developed markets -- where the customer is more likely thinking, "I'm going to buy one, the question is which" -- you should see lower derail rates. And those derails should be more surprise-driven -- e.g., we got acquired, the CFO quit, we missed a quarter, we failed an audit, we're being sued, etc.
+ [7] Which implies in a 50% narrow win rate, a 33% broad win rate, a 33% slip rate. This is realistic if you are one of two competitors going head-to-head in a market segment. If it's more of a horse race, I'd expect to see a lower rate. Also, the "a third, a third, a third" rule excludes derails which you can skim off the top. For example, if 20% derail and the balance split by thirds, then you win 27%, lose 27%, and slip 27% of your deals.
+ [8] I prefer counts to dollars because they're more visceral and less messed up by big deals. If you are running two sales motions (e.g., corporate and enterprise), I'd first try to stay count-based, but segment the analysis before going to a dollar basis. But there's a time and a place for both.
+ [9] Which some might prefer to think of as a "closed/won rate," but that's too many syllables for me.
+ [10] Both generously allows about 10% plus or minus of the period to elapse before snapshotting: 3 days out of 30 (10%) and, depending on how you calculate weeks and what day the quarter starts on, up to 14 days out of 91 (15%).
+ [11] This assumes (a) sales cycles much longer than the period (e.g., 6-12 months) and (b) no sales are made prior to the snapshot. It ignores (a) deal expansion or shrinkage after week 3, and (b) where closed/won deals came from (e.g., they may be in the week-3 snapshot, created after it, or pulled-forward from a future quarter). This asymmetry bothers some people but it's really supposed to be a macro measure. The real risk you face using it is when ceteris aren't paribus .
+
+ Read more
+
+ Appearance on the Founder Brand Podcast with Finn Thormeier
+
+ What do Jack Daniel’s, Robert Service, and David Ogilvy have to do with founder branding? A conversation with Finn Thormeier about staying in character, staying on message, and building a senior audience without writing for the algorithm.
+
+ 13 Oct 2026 
+
+ Please Don’t Scare the Children: Thoughts on a Delicate Reason to Split Off the New Business Team
+
+ Salespeople run on emotion. Bruising renewal conversations can erode the conviction they need to win new business. A delicate reason to separate land from expand and renew—and why confronting the brutal facts doesn’t require everyone to take the same daily beating.
+
+ 06 Oct 2026 
+
+ Terminators, Dogs, and Skills
+
+ Could your salespeople pass an industry cocktail party test? Could your marketing copy? Inspired by the dogs in Terminator, I built an AI skill to flag writing that sounds like it came from an industry outsider.
+
+ 03 Oct 2026 
+
+ The Only Sensible Policy for Commenting on Rumors
+
+ Deny enough false rumors and you’ll eventually turn “no comment” into confirmation. Why companies need a consistent policy for responding to rumors—and why the time to adopt it is before you need it.
+
+ 28 Sep 2026 
+
+ Sign up to receive posts
+
+ At the corner of new tech and old truth
+
+ Subscribe 
+ Email sent 
+
+ - Sign up 
+
+ Powered by Ghost

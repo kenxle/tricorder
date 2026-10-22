@@ -1,0 +1,118 @@
+SOURCE: https://hackernoon.com/the-finance-function-saas-founders-build-too-late
+
+- - - - - - - - - - - - - - - - - - Discover Anything 
+
+ Signup Write 
+
+ 111 reads 
+ The Finance Function SaaS Founders Build Too Late
+ by Taha Ahmed 
+ by Taha Ahmed | @ tahaahmed Founder of TA Strategic Advisory, fractional CFO for venture & PE-backed startups. Ex-Goldman Sachs.
+ Subscribe 
+
+ October 14th, 2026 
+
+ TLDR 
+
+ Your browser does not support the audio element. 
+ Speed 1x 
+ Voice Dr. One Ms. Hacker 
+
+ by Taha Ahmed @ tahaahmed 
+
+ by Taha Ahmed | @ tahaahmed Founder of TA Strategic Advisory, fractional CFO for venture & PE-backed startups. Ex-Goldman Sachs.
+ Subscribe 
+
+ Story's Credibility 
+
+ by Taha Ahmed | @ tahaahmed Founder of TA Strategic Advisory, fractional CFO for venture & PE-backed startups. Ex-Goldman Sachs.
+ Subscribe 
+
+ Story's Credibility 
+
+ Most seed-stage founders can tell you their ARR and their headcount. Ask them for net revenue retention by cohort and you usually get a pause, followed by a spreadsheet that doesn't quite answer the question.
+
+ That gap sinks more Series A rounds than founders expect. The product can be good and the team can be strong, but if nobody built the finance function, the numbers fall apart as soon as diligence starts. The odds are already long. Carta tracked startups that raised a seed round in the first quarter of 2021 and found that only 32.9% had raised a Series A within two years. Most seed companies never make the jump, and a messy data room is one of the more avoidable reasons.
+
+ I work inside VC-backed startups on this problem. These are the gaps I see most often, and what I'd put in place instead.
+
+ The three numbers your Series A will be judged on
+
+ 1. Net revenue retention by cohort, not blended.
+
+ Blended NRR hides everything. A single big expansion can mask ten quiet churns. Investors want to see it cut by when customers signed, the January cohort next to the June cohort, and then by segment, enterprise next to SMB.
+
+ The blended figure tells an investor very little anyway, because most companies land close to 100%. Benchmarkit's 2026 SaaS benchmarks, produced with Aleph , put median NRR at 102% for 2025, and at 94% for companies under $5 million in ARR. The same report found median gross revenue retention of 84%, so for a typical company, expansion is covering a lot of churn underneath the headline number. If your early cohorts retain at 120% and your recent ones at 95%, you want to know that well before the partner meeting.
+
+ 2. Burn multiple.
+
+ Burn multiple is net burn divided by net new ARR, or how many dollars you burn to add one dollar of recurring revenue. David Sacks, who coined the metric , considers 2x reasonable for an early-stage company and treats 3x or more as a sign that something in the business isn't working. He also expects it to improve with stage, from around 3x at seed to about 2x after the Series A.
+
+ Scale Venture Partners' data points the same way. In its dataset, companies under $1 million in ARR averaged a burn multiple of 3.4, and the typical SaaS company burned about $1.60 for every dollar of net new ARR on its way from seed to IPO.
+
+ Most founders track burn and ARR on separate lines and never put one over the other. That ratio is the number investors actually care about.
+
+ 3. CAC payback, broken out by channel.
+
+ In the same Benchmarkit report , the median B2B SaaS company took 16 months to earn back what it spent to acquire a customer. The top quartile did it in six months or less, and the bottom quartile took 24 months or more. Deal size matters too. Companies selling contracts under $5,000 a year had a median payback of 11 months, while enterprise deals between $50,000 and $100,000 ran to 22.
+
+ A blended number averages all of that away. Paid search might pay back in 8 months while outbound takes 22. Scale the blended figure and you scale your worst channel right along with your best. Break it out by channel, set a target that fits your deal size, and move budget away from whatever keeps missing it.
+
+ When the books can't produce the numbers
+
+ All three of these depend on books that close correctly every month, and plenty of companies well past seed still don't have them. One recent case shows what happens without them.
+
+ A founder I advised runs an industrial automation software company with roughly $10 million in revenue and was preparing to raise. The product was SaaS, but the books still treated it like a project business. When a customer paid up front, the full amount was booked as revenue in the month the cash arrived. Revenue recognition rules treat that cash as deferred revenue, earned month by month over the life of the contract. So revenue spiked whenever a large invoice landed, and nobody could say with confidence what ARR actually was. Without a reliable ARR, none of the three numbers above could be calculated. There was no retention to cut by cohort, no net new ARR to put a burn multiple on, and no clean new revenue to measure CAC payback against.
+
+ We rebuilt the revenue history contract by contract, moved the upfront billings into deferred revenue, separated subscription revenue from one-time implementation work, and set up a monthly close that kept it that way.
+
+ The payoff showed up before the raise even started. For the first time, the founder had one set of numbers everyone trusted, and that changed the board meetings. Instead of debating what revenue actually was, the founder and the VC investors on the board were working from the same figures, and the conversation moved to what to do about them, including where to invest and where to hold back. The decisions got better because they were finally being made on real numbers.
+
+ The 90-day finance disciplines after a seed round
+
+ You don't need a finance team. You need three habits in place within 90 days of the seed money landing.
+
+ A weekly cash report. Cash in, cash out, runway at current burn. One page, sent every Monday morning without exception. Plenty of founders check the bank balance, but very few can tell you how burn has trended over the last eight weeks. Doing it weekly builds the habit while the stakes are still low.
+
+ A real operating model. Not the fundraising model with the hockey stick. A driver-based model where headcount, marketing spend and churn flow through to cash. When it breaks, and it will, you change the drivers instead of rebuilding the spreadsheet. This is the model investors open first in diligence, before they spend much time on the deck.
+
+ A monthly board-grade reporting packet. Do this even if you don't have a board yet. Include the P&L, cash flow, the three numbers above, and a one-page note on what happened, what changed and what comes next. Writing that note every month is what builds the muscle. Founders who start at seed walk into their Series A with twelve months of packets behind them. Founders who don't end up improvising the story in the room.
+
+ The reporting cadence that makes the next raise easier
+
+ Most founders think the raise starts when they decide to raise. In practice it starts about twelve months earlier, with the reporting cadence.
+
+ Every clean monthly packet you send investors adds to a record. By the time the Series A process kicks off, the data room is mostly assembled, the cohorts are already cut, and the story has a year of numbers behind it. The founders who scramble are usually the ones who treated reporting as something to get around to later.
+
+ So start now. One page on Mondays, one packet a month, and one model you actually keep up to date.
+
+ Build it while it's cheap
+
+ Your valuation is built on the finance function, and it's far cheaper to build early than to rebuild under diligence. Put it in place while the money is small and mistakes are cheap, and the Series A becomes a process you run on your own schedule.
+
+ About Author
+
+ by Taha Ahmed | @ tahaahmed 
+
+ Founder of TA Strategic Advisory, fractional CFO for venture & PE-backed startups. Ex-Goldman Sachs.
+ Subscribe 
+
+ Read my stories About @tahaahmed 
+
+ TOPICS
+ business 
+ # startup-financing # series-a-fundraising # seed-stage-startups # saas-metrics # net-revenue-retention # burn-multiple # customer-acquisition-cost # cac-payback-period 
+
+ Light-Mode
+ Classic
+
+ Newspaper
+
+ Proof of Usefulness
+
+ Dark-Mode
+ Neon Noir
+
+ Minty
+
+ Startups of the Year

@@ -1,0 +1,396 @@
+SOURCE: https://andrewchen.com/the-easiest-spreadsheet-for-churn-mrr-and-cohort-analysis-guest-post/
+
+Use this spreadsheet for churn, MRR, and cohort analysis (Guest Post) at andrewchen 
+
+- 
+- 
+- 
+- 
+
+- 
+- 
+
+- 
+- - - 
+- 
+ - 
+
+- 
+
+ andrewchen -->
+ Andrew Chen Archives 
+
+ Subscribe · 
+ Featured ·
+ Recent ·
+ The Cold Start Problem 📘 
+
+Dear readers,
+I have moved to Substack and I will be writing here from now on:
+
+ 👉 andrewchen.substack.com 
+In the meantime, I will leave andrewchen.com up for posterity. Enjoy!
+
+ Use this spreadsheet for churn, MRR, and cohort analysis (Guest Post) 
+
+ 0 comments 
+ -->
+
+ [Andrew:  Christoph Janz has written some of the best essays on SaaS metrics and cohort analyses, and he was kind enough share the latest with us below. A bit about the author: Christoph is co-founder and Managing Partner at Point Nine Capital, an early-stage venture capital fund with a strong focus on SaaS investments. Their investments include Zendesk, FreeAgent, Clio, Geckoboard, Contactually and Unbounce. Christoph blogs here  and is the creator of a popular SaaS metrics dashboard ]
+
+ Christoph Janz, Point Nine Capital
+
+Cohort Analysis Spreadsheet
+
+ If you’re a long-time reader of my blog (or if you know me personally) you’ll know that cohort analyses are one of my favorite tools for getting a deeper understanding of a product’s usage. Cohort analyses are also essential if you operate a SaaS business and want to know how you’re doing in terms of churn, customer lifetime and customer lifetime value. I’ve blogged about it before and have included “Ignore your cohorts” in my “9 Worst Practices in SaaS Metrics” slides.
+
+ My feeling is that over the last 12 months the awareness for the importance of cohort analyses has grown among startup founders. One reason may be that thought leaders like David Skok have been writing about the topic, another reason are web analytic tools like MixPanel and KissMetrics that make it simple to create cohort analyses.
+
+ And yet, many founders are still having difficulties with cohort analyses, be it with the collection of the data or the interpretation of the results. With that in mind I wanted to create a simple cohort analysis template for early-stage SaaS startups.
+
+ Download the Excel file here. 
+
+ The idea is that you have to enter only a small amount of data and everything else is calculated automatically. Specifically, what you’ll have to type in (or import from a data source) is the basic cohort data: How many customers did you acquire in each month and how many of them were retained in each subsequent month. If you also want to see your churn on an MRR basis and get a sense for your CLTV, you’ll also have to enter the corresponding revenue numbers.
+
+ 💌 Are you up to date? 
+
+Get updates to this essay, plus more on cohort analysis and SaaS growth.
+
+ Leave this field empty if you're human: 
+
+ If you’re not sure how to read a cohort analysis, here’s a quick explanation:
+
+ Here are some brief notes on each of the arrays in the sheet:
+
+ A1 : This is where you enter the raw data. Start with January 2013 and enter the number of new customers that you’ve acquired in that month. Then move to the right and enter how many of those January 2013 customers were still customers in February, March, April and so on. Then move on to the next row. If your data goes further back than January 2013, extend the table accordingly.
+
+ A2 and A3 : A2 takes the data from A1 and shows it in “left-aligned mode”, making it easier to compare different cohorts. As you can see the columns have changed from specific months to “lifetime months”. A3 shows the number of churned customers as opposed to the number of retained customers. Both A2 and A3 aren’t particularly insightful to look at per se, but the data is necessary for the calculations in B1, B2 and B3.
+
+ B1 : Shows the percentage of retained customers, making it easy to see how retention develops over time as well as to compare different cohorts with each other. What you’ll want to see is that younger cohorts are getting better than older cohorts.
+
+ B2 . This is kind of like the  “inverse” of B1, showing the percentage of churned customers as opposed to the percentage of retained customers. In any given row, the sum of the percentages of churned customers plus the percentage of retained customers equals 100%.
+
+ B3 : B3 is similar to B2, but the difference is that churn isn’t calculated relative to the original number of customers of the cohort but relative to the number of the cohort’s customers in the previous month. Let’s say you have a cohort with 100 customers and after 6 months the cohort has been reduced to 50 customers. If you lose 5 customers in month 7, this represents 5/100=5% churn in B2 but 5/50=10% churn in B3.
+
+ So what’s the correct number? There’s no right or wrong here, it depends on the question that you want to ask. If you want to know e.g. “How many customers do I lose within the first six months?”, B2 (in conjunction with B1) gives you the right answer. But if you want to know what percentage of customers you’re losing per month (important when you look at data across multiple cohorts and for lifetime estimates), take a look at B3.
+
+ What you’ll want to see in this table is that after a usually relatively high churn rate in the first lifetime months churn starts to stabilize (because the people who never really adopted the product in the first place are now gone).
+
+ C1-C3 : Same as A1-A3, just for MRR instead of customer numbers.
+
+ D1-D3 : Same as B1-B3, just for MRR instead of customer numbers. What you’ll want to see is that your MRR churn is lower than your customer churn due to account expansions.
+
+ E1 and E2 : If you enter the CACs for each cohort, these tables show you when each cohort breaks even.
+
+ Also take a look at the second tab in the Excel sheet, which calculates/estimates customer lifetime and customer lifetime value on a cohort basis. Note that the data is highly speculative for younger cohorts for which there isn’t much data yet.
+
+ Further notes are included in the Excel sheets.
+
+ If you have any questions or comments, please feel free to reach out !
+
+ PS. Get new updates/analysis on tech and startups 
+ I write a high-quality, weekly newsletter covering what's happening in Silicon Valley, focused on startups, marketing, and mobile.
+
+ Leave this field empty if you're human: 
+
+ Views expressed in “content” (including posts, podcasts, videos) linked on this website or posted in social media and other platforms (collectively, “content distribution outlets”) are my own and are not the views of AH Capital Management, L.L.C. (“a16z”) or its respective affiliates. AH Capital Management is an investment adviser registered with the Securities and Exchange Commission. Registration as an investment adviser does not imply any special skill or training. The posts are not directed to any investors or potential investors, and do not constitute an offer to sell -- or a solicitation of an offer to buy -- any securities, and may not be used or relied upon in evaluating the merits of any investment.
+
+The content should not be construed as or relied upon in any manner as investment, legal, tax, or other advice. You should consult your own advisers as to legal, business, tax, and other related matters concerning any investment. Any projections, estimates, forecasts, targets, prospects and/or opinions expressed in these materials are subject to change without notice and may differ or be contrary to opinions expressed by others. Any charts provided here are for informational purposes only, and should not be relied upon when making any investment decision. Certain information contained in here has been obtained from third-party sources. While taken from sources believed to be reliable, I have not independently verified such information and makes no representations about the enduring accuracy of the information or its appropriateness for a given situation. The content speaks only as of the date indicated. 
+
+Under no circumstances should any posts or other information provided on this website -- or on associated content distribution outlets -- be construed as an offer soliciting the purchase or sale of any security or interest in any pooled investment vehicle sponsored, discussed, or mentioned by a16z personnel. Nor should it be construed as an offer to provide investment advisory services; an offer to invest in an a16z-managed pooled investment vehicle will be made separately and only by means of the confidential offering documents of the specific pooled investment vehicles -- which should be read in their entirety, and only to those who, among other requirements, meet certain qualifications under federal securities laws. Such investors, defined as accredited investors and qualified purchasers, are generally deemed capable of evaluating the merits and risks of prospective investments and financial matters. There can be no assurances that a16z’s investment objectives will be achieved or investment strategies will be successful. Any investment in a vehicle managed by a16z involves a high degree of risk including the risk that the entire amount invested is lost. Any investments or portfolio companies mentioned, referred to, or described are not representative of all investments in vehicles managed by a16z and there can be no assurance that the investments will be profitable or that other investments made in the future will have similar characteristics or results. A list of investments made by funds managed by a16z is available at https://a16z.com/investments/.
+
+ Excluded from this list are investments for which the issuer has not provided permission for a16z to disclose publicly as well as unannounced investments in publicly traded digital assets. Past results of Andreessen Horowitz’s investments, pooled investment vehicles, or investment strategies are not necessarily indicative of future results. Please see https://a16z.com/disclosures for additional important information.
+
+ Pages
+
+ - About 
+
+- Downloads 
+
+- Essays on network effects, growth hacking, gaming, and consumer startups 
+
+- Featured Essays 
+
+- Get updates 
+
+- Recent 
+
+- Sitemap 
+
+ Search
+
+ search site archives
+
+ Blogroll
+
+ Archives
+
+ - February 2024 
+
+ - January 2024 
+
+ - September 2023 
+
+ - August 2023 
+
+ - August 2022 
+
+ - July 2022 
+
+ - December 2021 
+
+ - November 2021 
+
+ - September 2021 
+
+ - August 2021 
+
+ - February 2021 
+
+ - July 2020 
+
+ - January 2020 
+
+ - November 2019 
+
+ - July 2019 
+
+ - June 2019 
+
+ - May 2019 
+
+ - March 2019 
+
+ - December 2018 
+
+ - November 2018 
+
+ - September 2018 
+
+ - August 2018 
+
+ - July 2018 
+
+ - June 2018 
+
+ - May 2018 
+
+ - February 2018 
+
+ - January 2018 
+
+ - December 2017 
+
+ - October 2017 
+
+ - July 2017 
+
+ - June 2017 
+
+ - January 2017 
+
+ - December 2016 
+
+ - October 2016 
+
+ - May 2016 
+
+ - March 2016 
+
+ - February 2016 
+
+ - January 2016 
+
+ - August 2015 
+
+ - June 2015 
+
+ - May 2015 
+
+ - April 2015 
+
+ - March 2015 
+
+ - February 2015 
+
+ - January 2015 
+
+ - November 2014 
+
+ - October 2014 
+
+ - September 2014 
+
+ - August 2014 
+
+ - July 2014 
+
+ - June 2014 
+
+ - May 2014 
+
+ - March 2014 
+
+ - February 2014 
+
+ - January 2014 
+
+ - November 2013 
+
+ - October 2013 
+
+ - September 2013 
+
+ - August 2013 
+
+ - July 2013 
+
+ - June 2013 
+
+ - May 2013 
+
+ - April 2013 
+
+ - March 2013 
+
+ - February 2013 
+
+ - January 2013 
+
+ - December 2012 
+
+ - November 2012 
+
+ - October 2012 
+
+ - September 2012 
+
+ - August 2012 
+
+ - July 2012 
+
+ - June 2012 
+
+ - May 2012 
+
+ - April 2012 
+
+ - March 2012 
+
+ - October 2011 
+
+ - August 2011 
+
+ - July 2011 
+
+ - June 2011 
+
+ - May 2011 
+
+ - March 2011 
+
+ - February 2011 
+
+ - January 2011 
+
+ - April 2010 
+
+ - January 2010 
+
+ - December 2009 
+
+ - November 2009 
+
+ - October 2009 
+
+ - September 2009 
+
+ - August 2009 
+
+ - July 2009 
+
+ - June 2009 
+
+ - May 2009 
+
+ - April 2009 
+
+ - March 2009 
+
+ - February 2009 
+
+ - January 2009 
+
+ - December 2008 
+
+ - November 2008 
+
+ - October 2008 
+
+ - September 2008 
+
+ - August 2008 
+
+ - July 2008 
+
+ - June 2008 
+
+ - May 2008 
+
+ - April 2008 
+
+ - March 2008 
+
+ - February 2008 
+
+ - January 2008 
+
+ - December 2007 
+
+ - November 2007 
+
+ - October 2007 
+
+ - September 2007 
+
+ - August 2007 
+
+ - July 2007 
+
+ - June 2007 
+
+ - May 2007 
+
+ - April 2007 
+
+ - March 2007 
+
+ - February 2007 
+
+ - January 2007 
+
+ - December 2006 
+
+ - November 2006 
+
+ - October 2006 
+
+ - September 2006 
+
+ Categories
+
+ - Uncategorized 
+
+ Meta
+
+ - 
+
+ - Log in 
+
+ - Site Feed 
+
+ - Comments Feed 
+
+ - Back to top 
+
+ Sitemap

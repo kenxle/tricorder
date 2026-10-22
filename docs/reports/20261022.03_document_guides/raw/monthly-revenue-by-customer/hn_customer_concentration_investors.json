@@ -1,0 +1,28 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [],
+ "hitsPerPage": 30,
+ "nbHits": 0,
+ "nbPages": 0,
+ "page": 0,
+ "params": "query=customer+concentration+investors+startup+revenue+largest+customer&tags=comment&hitsPerPage=30&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 67,
+ "processingTimingsMS": {
+  "_request": {
+   "queue": 6,
+   "roundTrip": 14
+  },
+  "fetch": {
+   "query": 65,
+   "total": 66
+  },
+  "total": 67
+ },
+ "query": "customer concentration investors startup revenue largest customer",
+ "serverTimeMS": 73
+}

@@ -1,0 +1,311 @@
+SOURCE: https://www.forentrepreneurs.com/saas-metrics-2-definitions/
+
+- 
+
+ SaaS Metrics 2.0 – Detailed Definitions - For Entrepreneurs 
+ - 
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+- 
+- 
+
+- 
+
+- 
+- 
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+- - - 
+- 
+
+ - 
+- 
+- 
+
+ Skip to content 
+
+ Search ... 
+
+ See all results 
+
+ #1 on Inc. Magazine’s List of 50 Best Websites for Entrepreneurs 
+ #2 on Forbes List of 100 Best Websites for Entrepreneurs 
+
+ - Home 
+
+- 9 Step Startup Roadmap 
+
+- SaaS 
+
+- Sales & Marketing 
+
+- Recruiting 
+
+- About Us 
+
+- Search this site 
+
+ - Home 
+
+- 9 Step Startup Roadmap 
+
+- SaaS 
+
+- Sales & Marketing 
+
+- Recruiting 
+
+- About Us 
+
+- Search this site 
+
+ SaaS Metrics 2.0 – Detailed Definitions
+
+ Posts
+
+ Categories
+
+ Tags
+
+ Search by Algolia 
+
+ Intro
+
+ This page is a supplement to the the SaaS Metrics 2.0 blog post . It provides detailed definitions for each of the key metrics used in that post.
+
+ Calculating LTV and CAC for a SaaS startup
+
+ Unit Economics is a very powerful way to analyze the long term profitability of a SaaS business.
+
+ I am often asked for the details of how to compute the various elements, such as CAC and LTV. This post gives the formulae.
+
+ CAC – Cost to Acquire a Customer
+
+ CAC is defined as follows:
+
+There is a problem with using this formula in the early days, as you may have several expensive people in the team that should scale to handle a fair number of customers as you grow. In that case, your CAC will be too high. I suggest doing a very simple adjustment to the Sales & Marketing expenses to take only a portion of those salaries and expenses in the early days. That will give a better indication of how CAC will look in the future when you are at scale.
+
+ Customer Lifetime
+
+ If you start with a cohort of 100 customers and apply a constant churn rate every month, you’ll get an exponential decay, as shown in the following graph (which uses a 3% monthly churn rate):
+
+ Mathematically this can be simplified to the following formula to find the average Customer Lifetime: 
+
+ Note that if the Customer Churn rate is a monthly % or yearly %, then the Customer Lifetime will be for the same time period. Here is a monthly and annual example to illustrate the point:
+
+ a) If the Monthly customer churn rate is 3%, then the Customer Lifetime will be 1/0.03 which is 33 months.
+
+ b) if the Annual customer churn rate is 20%, then the Customer Lifetime will be 1/0.20 which is 5 years.
+
+ Lifetime Value of Customer
+
+ In the situation where there is no expansion revenue expected over the lifetime of a customer, you can use this simple formula: 
+
+which can also be expressed as follows:
+
+Once again if ARPA is monthly, the churn rate should be monthly.
+
+ To truly get an accurate picture of LTV, you should take into consideration Gross Margin. i.e.
+
+ However in most SaaS businesses, the gross margin % is high (above 80%), and it’s quite common to use the simpler version of the formula that is not Gross Margin adjusted.
+
+ Ron Gill, NetSuite: I’m surprised at how often I see a SaaS product architected in a way that means they’ll never clear a decent gross margin. Including GM in the calc is a great way for you to see there is a big lever on LTV/CAC that is worth focusing on. 
+
+ For NetSuite, we’ve not only calculated LTV/COCA, but also calculated r-squared of each of the components (to see what has driven improvement) and sensitivity analysis on them (to see what might drive it in the future). GM is an important component. 
+
+ More complex case 
+
+In the specific situation where you expect ARPA to change over the lifespan of the customer due to expansion revenue, this simple version of the formula will not work. We ran into this situation with ZenDesk, where there is a pretty reliable increase in revenue over the life of a customer.
+
+ Here’s a graph showing what would happen if you had a cohort of 100 customers that initially started paying you $100 a month, but increased their payment by $5 every month. The monthly Customer Churn Rate is 3%:
+
+ As you can see the expansion revenue initially is greater than the losses from churn, but over time the churn takes over and brings down the value of that cohort.
+
+ I asked my partner, Stan Reiss, to help with the math to calculate LTV in this more complex situation. Here is what he came up with:
+
+ Variables:
+
+a = initial ARPA per month ( x GM %, if you prefer)
+
+m = monthly growth in ARPA per account
+
+c = Customer Churn Rate % (in months)
+
+ (This formula makes an assumption that revenue increases at a roughly fixed rate every month for the entire lifetime of the customer. That probably doesn’t hold true for many SaaS businesses, but the goal is to get a rough idea, not to have the absolute perfect answer.)
+
+ LTV : CAC Ratio
+
+ Our guideline for a successful SaaS business is that this number should be higher than 3.
+
+ Ron Gill, NetSuite: It is most important to track this metric over time to make sure you’re driving improvement. And, look at investment and how it will impact. 
+
+ (The guideline assumes you are using the simpler LTV formula that does not include a Gross Margin adjustment, and that you have a Gross Margin of 80% or higher.)
+
+ Months to recover CAC
+
+ Months to Recover CAC is an excellent way to measure the capital efficiency of a business. If you have a low value for this metric, you will be able to grow your business rapidly while consuming far less capital than a company that has a high value. Your Profit and Loss statement will also look significantly better.
+
+ I believe that this metric is one of the two most important metrics to tell you the health of a SaaS business. (The other is NRR – Net Revenue Retention.) Get these two metrics in great shape, and you will know for sure that you have a great SaaS business. 
+
+ In the original SaaS Metrics 2.0 post , we provided a guideline suggesting that a good goal for Months to Recover CAC should be 12 months or less. However that post was written around 2011, when capital was expensive and it was hard to raise large amounts of capital. Since then SaaS businesses have been widely recognized as great businesses with high exit valuations when they succeed. That has made it a lot easier to raise large amounts of capital. This means that you can now afford to have a much longer time to recover CAC, and it is quite common to see very healthy SaaS businesses taking around 20 months to recover CAC. If you are above 24 months, I believe that you should aim to improve this number.
+
+ Sales Efficiency & “Magic Number”
+
+ Sales Efficiency and the “Magic Number” metrics are different ways of describing the same thing as Months to Recover CAC. I tend to prefer “Months to recover CAC” as the name of the metric is so self-explanatory, which makes everyone clear what it is that you are measuring. Sales Efficiency is exactly the same measurement as Magic Number. To compute Sales Efficiency, use the following formula:
+
+ The advantage of Sales Efficiency over Months to Recover CAC is that you can easily compute the metric for public companies. But if you know Sales Efficiency, you also know Months to Recover CAC. For example, (assuming for simplicity’s sake a 100% Gross Margin) if a company has a Sales Efficiency of 1, it will take 12 months to recover CAC. If it has a Sales Efficiency of 0.5 it will take 24 months to recover CAC. (Adjust accordingly for businesses with a lower Gross Margin %).
+
+ The Metrics to help understand Bookings
+
+ MRR 
+ The Monthly Recurring Revenue at the end of each month. Computed by taking the MRR from the previous month and adding Net New MRR. 
+
+ ARR 
+ Annualized Run Rate = MRR x 12ARR is annual run-rate of recurring revenue from the current installed base. This is annual recurring revenue for the coming twelve months if you don’t add or churn anything. 
+
+ ACV 
+ Annual Contract Value of a subscription agreement. 
+
+ New MRR/ACV 
+ The increase in MRR from new customers in the current month. 
+
+ Churned MRR/ACV 
+ The lost MRR from churning customers in the current month. 
+
+ Expansion MRR/ACV 
+ The increase in MRR from expansion in your installed base in the current month. 
+
+ Net New MRR/ACV 
+ Net New MRR = New MRR + Expansion MRR – Churned MRRThis is the sum of the three different components that will change MRR during each month. 
+
+ Bookings 
+ The total dollar value of all new contracts signed. Usually taken as an annualized number even if the contract period is longer than one year.Since the bookings number might have a mix of different durations (e.g. month-to-month; 6 months; 12 months) this number is not very helpful for understanding the business.To really understand what is going on in your SaaS Business, you should look at the following components: a) What happened with new customers: 
+
+- New MRR/ACV from new customer contracts
+
+ b) What happened in your installed base: 
+
+- Renewals
+
+- Churned MRR/ACV
+
+- Expansion bookings
+
+ The sum of all of the above: 
+
+- Net New MRR/ACV
+
+ Billings 
+ Billings is the amount that you have invoiced that is due for payment shortly. 
+
+ Revenue 
+ Revenue is amount of money that can be recognized according to accounting policy. Even if it is paid for upfront, usually subscription revenue can only be recognized ratably over time as the service is delivered.If more money has been paid than can be recognized, the difference goes into a balance sheet item called Deferred Revenue. 
+
+ Average Contract Length 
+ Assuming a mix of different contract lengths, this gives you the average duration in months or years. 
+
+ Months up front 
+ Average of months (or years) of payment received in-advance with new bookings. Getting paid in advance has a big positive impact on cash flow. This metric has been used at both HubSpot and NetSuite in the past as a way to incent sales people to get more paid up front when a new customer is signed. However asking for more money up front may turn off certain customers, and result in fewer new customers, so be careful how you balance these two conflicting goals. 
+
+ ARPA – Average monthly recurring Revenue per Account 
+ This number is tells you the average monthly revenue per customer. It is useful to look at this for just the new customers booked in the month. Plot a trend line to show you the average price point that your new customers have chosen. 
+
+ Bookings, Billings and Revenue – An example
+
+ Since there can be some confusion around the difference between bookings, billings and revenue, here is a simple example to help clarify them: Imagine you signed a new contract with a customer with a one year term, specifying that you provide your service to them for $1,000 per month, with an upfront payment of six months:
+
+- Your bookings would be $12,000 (the entire contract value)
+
+- You would bill $6,000 in the first month, then $1,000 per month from the seventh month onwards.
+
+- You would recognized $1,000 in revenue for each month of the contract. (This is dictated by GAAP accounting policy.)
+
+ For the example above, the balance sheet and income statement impact of these items is as follows:
+
+- Bookings do not affect either the balance sheet or the income statement.
+
+- When you bill $6,000 in the first month, but can only recognize $1,000 in revenue (income statement), and the other $5,000 goes into deferred revenue on the balance sheet (a liability).
+
+- Each month thereafter until another $1,000 can be recognized as revenue (income statement), and that reduces the deferred revenue liability on the balance sheet.
+
+ The Metrics for Churn
+
+ The following shows the metrics to understand Churn:
+
+ # of new Customers 
+ The number of new customers added this month 
+
+ # of churned Customers 
+ The number of customers lost due to churn this month 
+
+ Net New Customers 
+ Net New Customers = # of new Customers – # of churned CustomersThis is the net number of new customers added once lost customers due to churn has been taken into account. 
+
+ % Customer Churn 
+
+ % MRR Churn 
+ Defined as lost revenue due to churned customers as a percentage of total recurring revenue. (See below for a description of why this is different to % Customer Churn.) 
+
+ % MRR Expansion 
+ Defined as the expansion revenue from existing customers as a percentage of total revenue. 
+
+ % Net MRR Churn 
+ This is the number that will go negative if the Expansion revenue from existing customers starts to outstrip the lost revenue from churn.Getting to negative Net MRR Churn is a great goal for a SaaS company. 
+
+ % Renewal Rate (Customers) 
+ It can be confusing to look at both your renewal rate (which should be just 1- Churn) in addition to churn. However in a model where you have yearly contracts being renewed, the two numbers can actually be different. For example, in the early days of a startup, you might have low churn because many of your customers have not yet reached the point where they could drop your service because of the length of their contract. In that situation, your churn number will not accurately predict what is really going to happen when you reach steady state. So a better number to look at is how many of your customers are renewing at the point where their contract expires. That is what this number measures.
+
+ When you reach steady state, this number should be equal to 1 – % Customer Churn. 
+
+ % Renewal Rate ($’s) 
+
+Similar to the number above, but instead of looking at the number of customers, it looks at the dollar value of the renewed contracts. It’s important to look at both, as they each tell an useful part of the story. If you were losing a lot of customers, you’d want to know why. Similarly, if you were only losing a few customers, but they were your biggest $ value customers, you’d also want to know that as well. 
+
+ Want to stay updated?
+
+ - About Us 
+
+- Team 
+
+- Portfolio 
+
+ - About Us 
+
+- Team 
+
+- Portfolio 
+
+ ©2000-2021 Matrix Management Corporation

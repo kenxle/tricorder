@@ -1,0 +1,340 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "garry"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "cohort",
+      "retention",
+      "investors"
+     ],
+     "value": "I invested in Ikaria and feel like someone should speak up here.<p>I was early <em>investor</em> with Chrys Bader previously on his startup Secret. He was a YC batchmate of mine from 2008. I watched him build an initial prototype that had the chance to be a real social network that had very high long term <em>retention</em>, but in the end the company didn't invest deeply enough into moderation and the long term <em>retention</em> <em>cohorts</em> went down steeply past 6 months of use.<p>Chrys is a great designer and product manager who caught lightning in a bottle previously, and lost it. Founders often catch lightning in a bottle and then fail to keep it because scaling operations like moderation, or sometimes even just keeping the servers online, through hyper scale, is hard.<p>Many founders never find lightning in a bottle even once. Even in my experience I felt like we caught lightning in a bottle with Posterous and failed to properly bring it to the scale I wish we could have.<p>I realize I am going out on a limb to defend him here, but founders going back into the arena deserve at least a little bit of defense because it's hard enough to take the chance to make anything ever.<p>You'll hear more about how Ikaria really works, and I realize the post is light on details, but don't write this startup off before you actually try the software itself."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Secret\u2019s founder returns with anti-loneliness app Ikaria"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://techcrunch.com/2020/02/18/just-imagine-ikaria-secret/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_garry",
+    "story_22359350"
+   ],
+   "author": "garry",
+   "children": [
+    22363366,
+    22363474,
+    22364167,
+    22364187,
+    22365260,
+    22368980
+   ],
+   "comment_text": "I invested in Ikaria and feel like someone should speak up here.<p>I was early investor with Chrys Bader previously on his startup Secret. He was a YC batchmate of mine from 2008. I watched him build an initial prototype that had the chance to be a real social network that had very high long term retention, but in the end the company didn&#x27;t invest deeply enough into moderation and the long term retention cohorts went down steeply past 6 months of use.<p>Chrys is a great designer and product manager who caught lightning in a bottle previously, and lost it. Founders often catch lightning in a bottle and then fail to keep it because scaling operations like moderation, or sometimes even just keeping the servers online, through hyper scale, is hard.<p>Many founders never find lightning in a bottle even once. Even in my experience I felt like we caught lightning in a bottle with Posterous and failed to properly bring it to the scale I wish we could have.<p>I realize I am going out on a limb to defend him here, but founders going back into the arena deserve at least a little bit of defense because it&#x27;s hard enough to take the chance to make anything ever.<p>You&#x27;ll hear more about how Ikaria really works, and I realize the post is light on details, but don&#x27;t write this startup off before you actually try the software itself.",
+   "created_at": "2020-02-19T04:09:30Z",
+   "created_at_i": 1582085370,
+   "objectID": "22362973",
+   "parent_id": 22359350,
+   "story_id": 22359350,
+   "story_title": "Secret\u2019s founder returns with anti-loneliness app Ikaria",
+   "story_url": "https://techcrunch.com/2020/02/18/just-imagine-ikaria-secret/",
+   "updated_at": "2024-09-20T05:42:56Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "pjsugi"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "cohort",
+      "retention",
+      "investors"
+     ],
+     "value": "InVenture - Los Angeles, CA (Santa Monica) - Data Scientist - Full Time or Intern<p>InVenture is a world leader in providing direct loans and financial services in emerging markets. We are a global team with diverse backgrounds who are singularly focused on using technology, data and customer-centric approach to meet the financial needs of the 2+ billion people of the emerging global middle class.<p><em>Investors</em> include Lowercase Capital and Google Ventures.  We are Fast Company\u2019s #1 most innovative company in money, #13 overall.<p>We are looking for people to join our data science team who have the following qualities.\n- Problem solver.  You thrive on finding novel solutions to hard problems.  These problems may have ranged from extracting a new dataset from an unexpected source, to building <em>cohorts</em> for customer <em>retention</em> analysis, or the NY Times saturday crossword.\n- Expert.  You have domain expertise.  Tell us about the genetic algorithm you implemented to find a solution to your NP-hard problem, or the hobby that keeps you busy on nights and weekends.\n- Curious.  You aren\u2019t content until you understand why the features you have built have the explanatory power they do, and why they aren\u2019t just a spurious correlation.\n- Communicator.  You\u2019ll be the expert in your field.  Can you explain it to us in laymen\u2019s terms?\n- Education.  Masters degree in a quantitative field, or relevant experience and/or an impressive Kaggle profile.\n- Language.  We are language agnostic and have expertise in python, R, SQL, Spark, MATLAB, and Stata.  We build visualizations using d3, ggplot, matplotlib, seaborn.  Huge bonus points if you are fluent in Swahili ;).<p>Why should you join?\n- Take it from people who have build models and studied problems ranging from microfinance to global climate change: we are tackling an incredibly hard problem with huge social and financial impact.  The impact of our models is both intimidating and inspiring.\n- We leverage a unique, diverse, and deep data set.  You\u2019ll be surprised by what connections we\u2019ve found between our different data sources.  Surprise us by what you will find.\n- You will own a model, or multiple models, whether building a country-level credit model from scratch, or integrating new data sources into our existing underwriting models.\n- Amazing company culture. Our employees come first as indicated by our \u201cEmployee Awesomeness\u201d program. We do lunch and learns, provide a flexible work schedule, and have regular team outings and happy hours. Our smart, passionate team is the backbone of our culture, and is what differentiates us from others making it a special place to work.\n- And btw, our customers love us: inventure.com/love<p>Contact peter@inventure.com and please include the hacker news in the subject line."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Who is hiring? (May 2015)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_pjsugi",
+    "story_9471287"
+   ],
+   "author": "pjsugi",
+   "comment_text": "InVenture - Los Angeles, CA (Santa Monica) - Data Scientist - Full Time or Intern<p>InVenture is a world leader in providing direct loans and financial services in emerging markets. We are a global team with diverse backgrounds who are singularly focused on using technology, data and customer-centric approach to meet the financial needs of the 2+ billion people of the emerging global middle class.<p>Investors include Lowercase Capital and Google Ventures.  We are Fast Company\u2019s #1 most innovative company in money, #13 overall.<p>We are looking for people to join our data science team who have the following qualities.\n- Problem solver.  You thrive on finding novel solutions to hard problems.  These problems may have ranged from extracting a new dataset from an unexpected source, to building cohorts for customer retention analysis, or the NY Times saturday crossword.\n- Expert.  You have domain expertise.  Tell us about the genetic algorithm you implemented to find a solution to your NP-hard problem, or the hobby that keeps you busy on nights and weekends.\n- Curious.  You aren\u2019t content until you understand why the features you have built have the explanatory power they do, and why they aren\u2019t just a spurious correlation.\n- Communicator.  You\u2019ll be the expert in your field.  Can you explain it to us in laymen\u2019s terms?\n- Education.  Masters degree in a quantitative field, or relevant experience and&#x2F;or an impressive Kaggle profile.\n- Language.  We are language agnostic and have expertise in python, R, SQL, Spark, MATLAB, and Stata.  We build visualizations using d3, ggplot, matplotlib, seaborn.  Huge bonus points if you are fluent in Swahili ;).<p>Why should you join?\n- Take it from people who have build models and studied problems ranging from microfinance to global climate change: we are tackling an incredibly hard problem with huge social and financial impact.  The impact of our models is both intimidating and inspiring.\n- We leverage a unique, diverse, and deep data set.  You\u2019ll be surprised by what connections we\u2019ve found between our different data sources.  Surprise us by what you will find.\n- You will own a model, or multiple models, whether building a country-level credit model from scratch, or integrating new data sources into our existing underwriting models.\n- Amazing company culture. Our employees come first as indicated by our \u201cEmployee Awesomeness\u201d program. We do lunch and learns, provide a flexible work schedule, and have regular team outings and happy hours. Our smart, passionate team is the backbone of our culture, and is what differentiates us from others making it a special place to work.\n- And btw, our customers love us: inventure.com&#x2F;love<p>Contact peter@inventure.com and please include the hacker news in the subject line.",
+   "created_at": "2015-05-01T15:42:04Z",
+   "created_at_i": 1430494924,
+   "objectID": "9472164",
+   "parent_id": 9471287,
+   "points": null,
+   "story_id": 9471287,
+   "story_title": "Ask HN: Who is hiring? (May 2015)",
+   "updated_at": "2023-09-07T02:38:56Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "AdamN"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "cohort",
+      "retention",
+      "investors"
+     ],
+     "value": "A thoughtful <em>investor</em> will be more interested in paid active users and <em>cohort</em> analysis of <em>retention</em> (in terms of actual usage) rather than subscription numbers/revenue in absolute terms.<p>Engagement can always be monetized better in the future."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Fair Pricing"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://kagi.com/changelog#6155"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_AdamN",
+    "story_42944371"
+   ],
+   "author": "AdamN",
+   "children": [
+    42948169
+   ],
+   "comment_text": "A thoughtful investor will be more interested in paid active users and cohort analysis of retention (in terms of actual usage) rather than subscription numbers&#x2F;revenue in absolute terms.<p>Engagement can always be monetized better in the future.",
+   "created_at": "2025-02-05T13:02:11Z",
+   "created_at_i": 1738760531,
+   "objectID": "42947897",
+   "parent_id": 42947542,
+   "story_id": 42944371,
+   "story_title": "Fair Pricing",
+   "story_url": "https://kagi.com/changelog#6155",
+   "updated_at": "2025-02-11T23:17:06Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "nonameiguess"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "cohort",
+      "retention",
+      "investors"
+     ],
+     "value": "This is a good place for a brief intro to statistical literacy. I don't fault the report per se because they're measuring what is possible to measure, and framing it in the best possible light since the entire point of this slide deck is a pitch to <em>investors</em>. But it's riddled with nonsense that mirrors the challenges of social science and causes of the replication crisis we bemoan in non-profit research but seem to blink zero eyes over when it's industrial research.<p>Is user <em>retention</em> an ergodic process? Clearly no. From economic first principles, we know elasticity of demand is going to depend upon substitutability and disposable income of the user base. Both of these can and do change over time. From empirical results elsewhere, we can simply look at products that have existed for more than a single year and observe that user <em>retention</em> rates in 1995 did not always match <em>retention</em> rates for the same product in 2002.<p>Here we get measurement of a single <em>cohort</em> that has actually reached 50 weeks. Are they representative of a typical <em>cohort</em>? We have no way to know. And again, fair, this is the best the company can possibly do. They can't create data that doesn't exist and they can't draw conclusions that have no hard evidence for or against. But <i>you</i> don't need to draw unwarranted conclusions, either. It's also 15% at 50 weeks <em>retention</em> in that first <em>cohort</em>, not 20% at 52 weeks. Does that mean those 15% of users will stick around forever? We have no idea. Sort of. We actually know for certain they won't because they're mortal and will die. Setting that aside, might they at least become lifelong users? I suppose it's possible, but even real-world friendships rarely last a lifetime. Will the next <em>cohort</em> at least still show 15% at 50 weeks? We yet again have no idea."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "AI Market Clarity"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://blog.eladgil.com/p/ai-market-clarity"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_nonameiguess",
+    "story_44649817"
+   ],
+   "author": "nonameiguess",
+   "comment_text": "This is a good place for a brief intro to statistical literacy. I don&#x27;t fault the report per se because they&#x27;re measuring what is possible to measure, and framing it in the best possible light since the entire point of this slide deck is a pitch to investors. But it&#x27;s riddled with nonsense that mirrors the challenges of social science and causes of the replication crisis we bemoan in non-profit research but seem to blink zero eyes over when it&#x27;s industrial research.<p>Is user retention an ergodic process? Clearly no. From economic first principles, we know elasticity of demand is going to depend upon substitutability and disposable income of the user base. Both of these can and do change over time. From empirical results elsewhere, we can simply look at products that have existed for more than a single year and observe that user retention rates in 1995 did not always match retention rates for the same product in 2002.<p>Here we get measurement of a single cohort that has actually reached 50 weeks. Are they representative of a typical cohort? We have no way to know. And again, fair, this is the best the company can possibly do. They can&#x27;t create data that doesn&#x27;t exist and they can&#x27;t draw conclusions that have no hard evidence for or against. But <i>you</i> don&#x27;t need to draw unwarranted conclusions, either. It&#x27;s also 15% at 50 weeks retention in that first cohort, not 20% at 52 weeks. Does that mean those 15% of users will stick around forever? We have no idea. Sort of. We actually know for certain they won&#x27;t because they&#x27;re mortal and will die. Setting that aside, might they at least become lifelong users? I suppose it&#x27;s possible, but even real-world friendships rarely last a lifetime. Will the next cohort at least still show 15% at 50 weeks? We yet again have no idea.",
+   "created_at": "2025-07-22T18:29:28Z",
+   "created_at_i": 1753208968,
+   "objectID": "44651158",
+   "parent_id": 44650544,
+   "story_id": 44649817,
+   "story_title": "AI Market Clarity",
+   "story_url": "https://blog.eladgil.com/p/ai-market-clarity",
+   "updated_at": "2025-07-22T23:23:40Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "robenalt0"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "cohort",
+      "retention",
+      "investors"
+     ],
+     "value": "I just launched my SaaS business - called Simple <em>Cohort</em>. The core functionality is taking a CSV of raw transaction data and parsing it into cohorts. You can see your <em>retention</em> rate, LTV and gross margins once the file is parsed. You receive the cohorts in a CSV that you can download, so you can take the resulting cohorts and import them to Google Sheets. From there, you can use them to crunch numbers in any way you want. You can use them to prepare critical metrics for your data room for <em>investors</em>.<p>I built this tool as an internal tool for the company I am currently co-founder and CTO of. We are a VC-backed startup preparing for an A round. We use this tool every week and the data drives almost all of our decisions. We also use the data in our data room for <em>investors</em> - we just had a board meeting last week where we went over some data from the cohorts. I figured I'd spin up the tool into it's own business so other early stage startups can try it out.<p>It's free to try, you can run 3 cohorts without paying anything. After 3 cohorts, every additional <em>cohort</em> is $3. You can also buy in bulk for discounted pricing. There's a demo video on the homepage that shows you how to prepare the file you're importing to Simple <em>Cohort</em>. Please let me know if you use it, and if you have any questions!"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "[dead]"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_robenalt0",
+    "story_38259650"
+   ],
+   "author": "robenalt0",
+   "comment_text": "I just launched my SaaS business - called Simple Cohort. The core functionality is taking a CSV of raw transaction data and parsing it into cohorts. You can see your retention rate, LTV and gross margins once the file is parsed. You receive the cohorts in a CSV that you can download, so you can take the resulting cohorts and import them to Google Sheets. From there, you can use them to crunch numbers in any way you want. You can use them to prepare critical metrics for your data room for investors.<p>I built this tool as an internal tool for the company I am currently co-founder and CTO of. We are a VC-backed startup preparing for an A round. We use this tool every week and the data drives almost all of our decisions. We also use the data in our data room for investors - we just had a board meeting last week where we went over some data from the cohorts. I figured I&#x27;d spin up the tool into it&#x27;s own business so other early stage startups can try it out.<p>It&#x27;s free to try, you can run 3 cohorts without paying anything. After 3 cohorts, every additional cohort is $3. You can also buy in bulk for discounted pricing. There&#x27;s a demo video on the homepage that shows you how to prepare the file you&#x27;re importing to Simple Cohort. Please let me know if you use it, and if you have any questions!",
+   "created_at": "2023-11-14T05:53:17Z",
+   "created_at_i": 1699941197,
+   "objectID": "38259651",
+   "parent_id": 38259650,
+   "story_id": 38259650,
+   "story_title": "[dead]",
+   "updated_at": "2024-09-20T15:39:24Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tlb"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "cohort",
+      "retention",
+      "investors"
+     ],
+     "value": "See &quot;21. <em>Investors</em> don't like to say no.&quot; in <a href=\"http://paulgraham.com/guidetoinvestors.html\" rel=\"nofollow\">http://paulgraham.com/guidetoinvestors.html</a><p><em>Investors</em> often feel the need to give a made-up reason, but the real reason is that they're not as excited about you as about something else. Don't be discouraged -- even the most successful companies got many nos on the way to their first yes. Don't change your business strategy based on the reason any one investor gives you, although if several good <em>investors</em> give you the same reason, you might want to think about it.<p>BTW, it's normal to extrapolate <em>retention</em> to a yearly number using <em>cohort</em> analysis. Your claim is a bit like &quot;I can't have been going 80 MPH because I've only been driving for 30 minutes!&quot;"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: What's your best (worst) VC pass reason?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_tlb",
+    "story_17736277"
+   ],
+   "author": "tlb",
+   "children": [
+    17736523,
+    17736606
+   ],
+   "comment_text": "See &quot;21. Investors don&#x27;t like to say no.&quot; in <a href=\"http:&#x2F;&#x2F;paulgraham.com&#x2F;guidetoinvestors.html\" rel=\"nofollow\">http:&#x2F;&#x2F;paulgraham.com&#x2F;guidetoinvestors.html</a><p>Investors often feel the need to give a made-up reason, but the real reason is that they&#x27;re not as excited about you as about something else. Don&#x27;t be discouraged -- even the most successful companies got many nos on the way to their first yes. Don&#x27;t change your business strategy based on the reason any one investor gives you, although if several good investors give you the same reason, you might want to think about it.<p>BTW, it&#x27;s normal to extrapolate retention to a yearly number using cohort analysis. Your claim is a bit like &quot;I can&#x27;t have been going 80 MPH because I&#x27;ve only been driving for 30 minutes!&quot;",
+   "created_at": "2018-08-10T20:22:04Z",
+   "created_at_i": 1533932524,
+   "objectID": "17736464",
+   "parent_id": 17736277,
+   "story_id": 17736277,
+   "story_title": "Ask HN: What's your best (worst) VC pass reason?",
+   "updated_at": "2024-09-20T02:52:28Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "teripremise"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "cohort",
+      "retention",
+      "investors"
+     ],
+     "value": "Premise Data Corporation,San Francisco<p>------About Premise------\nPremise is building a novel information-gathering network on a global scale. The network harnesses the explosion in mobile technology, combined with sophisticated machine learning capabilities, to aggregate observations from users all around the world to deliver business, economic and human development data in real-time. We are growing the platform to sufficient scale where it will deliver any user-observable information on demand, whether that is the price of food staples at a Mumbai street market, or the length of a queue at a Walmart de M\u00e9xico parking lot.<p>We\u2019re a fast-growing startup \u2013 bolstered by the backing of significant \u2018smart money,\u2019 but still young enough such that you\u2019ll be a core member of the team that is reinventing how the human race understands its own economic activity. We\u2019re being helped in our mission by Silicon Valley\u2019s most creative and disruptive <em>investors</em>: Social+Capital Partnership, Google Ventures, Andreessen Horowitz and Harrison Metal.<p>Bottom line, this is an opportunity for someone who:<p>Wants to build something meaningful at a fast-growing and mission-driven startup\nWants to contribute to the amazing, messy evolution of the open-source ecosystem\nActually cares about social good enough to make Premise a permanent part of their resume\nRead more about Premise in TechCrunch, New York Times, Wired, The New Yorker, TheAtlantic, MIT Technology Review and The Wall Street Journal.<p>Benefits &amp; Perks\n<i>Great open office workspace in SF SoMa/Design District, near CalTrain, BART, 101/280.\n</i>Competitive salary and equity packages.\n<i>Health, dental, and vision benefits.\n</i>Open vacation policy. We hire folks who ship and love to code, no need to count days.\n<i>Create your ideal work environment.\n</i>Free healthy meals, snacks, and beverages.<p><i></i><i></i><i></i><i>Software Engineer- Data</i><i></i><i></i><i></i><p>Responsibilities:\n<i>Build data pipelines that analyze web content as well as user activity to drive features ranging from user-engagement, user-<em>retention</em>, notifications, targeting, geo-spatial applications, A/B-experimentation, <em>cohort</em>/session analytics\n</i>Develop &amp; launch algorithms to extract signals from data, develop recommenders, extract entities, generate product taxonomy, detect sentiment, improve search relevance and generate user preferences\n<i>Develop &amp; launch algorithms for time-series analysis, anomaly detection, analyze media, generate indices based on econometric models\n</i>Own release and quality assurance of data sets, including QA/side-by-side eval &amp; pipeline metrics<p>Required Qualifications:\n<i>Experience developing, releasing, and maintaining search/knowledge/data-mining applications (send us links to your projects)\n</i>BS, MS or PhD in Computer Science or equivalent work experience &amp; analytical skills\n<i>2+ years of experience in developing applications using one or more of: Java, Python, Scala\n</i>Deep understanding of Data Structures, Algorithms, Machine Learning, Statistical Methods\n<i>Working knowledge of at least two of: MySQL, Redis, Hadoop/Spark, MongoDB, Protocol Buffers/Avro, Play Framework\n</i>Passion for learning and sharing knowledge with the team around you<p>Bonus Qualifications:\n<i>Experience building consumer/marketplace products\n</i>Experience with one or more of NLP toolkits (Lucene, Solr/ElasticSearch, NLTK, Hadoop/Cascading/Scalding, Apache Tika)\n<i>Experience with graph databases &amp; computing models (Neo4j, Gigraph, Titan)\n</i>Passion for creating products; personal projects or other work (send us links to your GitHub repos)<p><i></i><i></i><i></i><i>Software Engineer- Computer Vision</i><i></i><i></i><i></i><p>Responsibilities:\n<i>Build data pipelines that analyze user-generated images and other media, to drive features ranging from automated quality control, user-engagement, user-<em>retention</em>, targeting, gamification\n</i>Develop &amp; launch algorithms to extract signals from time-varying text, numerical &amp; image data, develop recommenders, extract entities, generate product taxonomy, detect sentiment, improve search relevance and generate user preferences\n<i>Develop &amp; launch algorithms for time-series analysis, anomaly detection, analyze media\n</i>Own release and quality assurance of data sets, including QA/side-by-side eval &amp; pipeline metrics<p>Required Qualifications:\n<i>Experience developing, releasing, and maintaining vision/knowledge applications (send us links to your projects)\n</i>BS, MS or PhD in Computer Science or equivalent work experience &amp; analytical skills\n<i>2+ years of experience in developing applications using one or more of: Java, Python, Scala\n</i>Deep understanding of Data Structures, Algorithms, Machine Learning, Statistical Methods\n<i>Expert knowledge of vision related libraries such as OpenCV, SimpleCV, CCV as well a familiarity with NLP toolkits.\n</i>Passion for learning and sharing knowledge with the team around you<p><i></i><i></i><i></i><i>Software Engineer- Backend</i><i></i><i></i><i></i><p>Responsibilities:\n<i>Build backend applications that drive features ranging from user-engagement, user-<em>retention</em>, notifications, targeting, experimentation, analytics, and interfacing with external systems\n</i>Collaborate with frontend engineers to build clean &amp; well-documented APIs that drive fast &amp; highly relevant user experience.\n<i>Collaborate with data engineers to build scalable pipelines ranging from ingest content, cleaning web content, deriving signals that feedback into the application\n</i>Own release and quality assurance of backend components, automate testing infrastructure &amp; performance monitoring<p>Required Qualifications:\n<i>Experience developing, releasing, and maintaining backend Applications (send us links to your projects)\n</i>BS, MS or PhD in Computer Science or equivalent work experience &amp; analytical skills\n<i>2+ years of experience in developing backend applications using two or more of: Java, Python, Scala, Ruby, Node.js\n</i>Deep understanding of Data Structures, Algorithms, Distributed Computing, Storage Systems\n<i>Deep understanding of at least two of: MySQL, Redis, Hadoop/Spark, MongoDB, Protocol Buffers/Avro, Play Framework\n</i>Passion for learning and sharing knowledge with the team around you<p>Bonus Qualifications:\n<i>Experience building consumer products using Facebook, Twitter APIs\n</i>Experience building or interfacing with XMPP-based systems, or other messaging/notification platforms\n<i>Information Retrieval (Lucene, NLTK), data-mining, data-modeling\n</i>Experience building scalable mobile/web applications with HTML5 as well as server-side components using Python, Ruby, Scala, MySQL or similar technologies\n<i>Passion for creating products; personal projects or other work (send us links to your GitHub repos)\n</i>Maven, Intellij, Gradle, SBT, JUnit, Remote Debugging, JVM cpu &amp; memory profiling, Continuous Integration, Continuous Deployment"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Who is hiring? (July 2014)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_teripremise",
+    "story_7970366"
+   ],
+   "author": "teripremise",
+   "comment_text": "Premise Data Corporation,San Francisco<p>------About Premise------\nPremise is building a novel information-gathering network on a global scale. The network harnesses the explosion in mobile technology, combined with sophisticated machine learning capabilities, to aggregate observations from users all around the world to deliver business, economic and human development data in real-time. We are growing the platform to sufficient scale where it will deliver any user-observable information on demand, whether that is the price of food staples at a Mumbai street market, or the length of a queue at a Walmart de M\u00e9xico parking lot.<p>We\u2019re a fast-growing startup \u2013 bolstered by the backing of significant \u2018smart money,\u2019 but still young enough such that you\u2019ll be a core member of the team that is reinventing how the human race understands its own economic activity. We\u2019re being helped in our mission by Silicon Valley\u2019s most creative and disruptive investors: Social+Capital Partnership, Google Ventures, Andreessen Horowitz and Harrison Metal.<p>Bottom line, this is an opportunity for someone who:<p>Wants to build something meaningful at a fast-growing and mission-driven startup\nWants to contribute to the amazing, messy evolution of the open-source ecosystem\nActually cares about social good enough to make Premise a permanent part of their resume\nRead more about Premise in TechCrunch, New York Times, Wired, The New Yorker, TheAtlantic, MIT Technology Review and The Wall Street Journal.<p>Benefits &amp; Perks\n<i>Great open office workspace in SF SoMa&#x2F;Design District, near CalTrain, BART, 101&#x2F;280.\n</i>Competitive salary and equity packages.\n<i>Health, dental, and vision benefits.\n</i>Open vacation policy. We hire folks who ship and love to code, no need to count days.\n<i>Create your ideal work environment.\n</i>Free healthy meals, snacks, and beverages.<p><i></i><i></i><i></i><i>Software Engineer- Data</i><i></i><i></i><i></i><p>Responsibilities:\n<i>Build data pipelines that analyze web content as well as user activity to drive features ranging from user-engagement, user-retention, notifications, targeting, geo-spatial applications, A&#x2F;B-experimentation, cohort&#x2F;session analytics\n</i>Develop &amp; launch algorithms to extract signals from data, develop recommenders, extract entities, generate product taxonomy, detect sentiment, improve search relevance and generate user preferences\n<i>Develop &amp; launch algorithms for time-series analysis, anomaly detection, analyze media, generate indices based on econometric models\n</i>Own release and quality assurance of data sets, including QA&#x2F;side-by-side eval &amp; pipeline metrics<p>Required Qualifications:\n<i>Experience developing, releasing, and maintaining search&#x2F;knowledge&#x2F;data-mining applications (send us links to your projects)\n</i>BS, MS or PhD in Computer Science or equivalent work experience &amp; analytical skills\n<i>2+ years of experience in developing applications using one or more of: Java, Python, Scala\n</i>Deep understanding of Data Structures, Algorithms, Machine Learning, Statistical Methods\n<i>Working knowledge of at least two of: MySQL, Redis, Hadoop&#x2F;Spark, MongoDB, Protocol Buffers&#x2F;Avro, Play Framework\n</i>Passion for learning and sharing knowledge with the team around you<p>Bonus Qualifications:\n<i>Experience building consumer&#x2F;marketplace products\n</i>Experience with one or more of NLP toolkits (Lucene, Solr&#x2F;ElasticSearch, NLTK, Hadoop&#x2F;Cascading&#x2F;Scalding, Apache Tika)\n<i>Experience with graph databases &amp; computing models (Neo4j, Gigraph, Titan)\n</i>Passion for creating products; personal projects or other work (send us links to your GitHub repos)<p><i></i><i></i><i></i><i>Software Engineer- Computer Vision</i><i></i><i></i><i></i><p>Responsibilities:\n<i>Build data pipelines that analyze user-generated images and other media, to drive features ranging from automated quality control, user-engagement, user-retention, targeting, gamification\n</i>Develop &amp; launch algorithms to extract signals from time-varying text, numerical &amp; image data, develop recommenders, extract entities, generate product taxonomy, detect sentiment, improve search relevance and generate user preferences\n<i>Develop &amp; launch algorithms for time-series analysis, anomaly detection, analyze media\n</i>Own release and quality assurance of data sets, including QA&#x2F;side-by-side eval &amp; pipeline metrics<p>Required Qualifications:\n<i>Experience developing, releasing, and maintaining vision&#x2F;knowledge applications (send us links to your projects)\n</i>BS, MS or PhD in Computer Science or equivalent work experience &amp; analytical skills\n<i>2+ years of experience in developing applications using one or more of: Java, Python, Scala\n</i>Deep understanding of Data Structures, Algorithms, Machine Learning, Statistical Methods\n<i>Expert knowledge of vision related libraries such as OpenCV, SimpleCV, CCV as well a familiarity with NLP toolkits.\n</i>Passion for learning and sharing knowledge with the team around you<p><i></i><i></i><i></i><i>Software Engineer- Backend</i><i></i><i></i><i></i><p>Responsibilities:\n<i>Build backend applications that drive features ranging from user-engagement, user-retention, notifications, targeting, experimentation, analytics, and interfacing with external systems\n</i>Collaborate with frontend engineers to build clean &amp; well-documented APIs that drive fast &amp; highly relevant user experience.\n<i>Collaborate with data engineers to build scalable pipelines ranging from ingest content, cleaning web content, deriving signals that feedback into the application\n</i>Own release and quality assurance of backend components, automate testing infrastructure &amp; performance monitoring<p>Required Qualifications:\n<i>Experience developing, releasing, and maintaining backend Applications (send us links to your projects)\n</i>BS, MS or PhD in Computer Science or equivalent work experience &amp; analytical skills\n<i>2+ years of experience in developing backend applications using two or more of: Java, Python, Scala, Ruby, Node.js\n</i>Deep understanding of Data Structures, Algorithms, Distributed Computing, Storage Systems\n<i>Deep understanding of at least two of: MySQL, Redis, Hadoop&#x2F;Spark, MongoDB, Protocol Buffers&#x2F;Avro, Play Framework\n</i>Passion for learning and sharing knowledge with the team around you<p>Bonus Qualifications:\n<i>Experience building consumer products using Facebook, Twitter APIs\n</i>Experience building or interfacing with XMPP-based systems, or other messaging&#x2F;notification platforms\n<i>Information Retrieval (Lucene, NLTK), data-mining, data-modeling\n</i>Experience building scalable mobile&#x2F;web applications with HTML5 as well as server-side components using Python, Ruby, Scala, MySQL or similar technologies\n<i>Passion for creating products; personal projects or other work (send us links to your GitHub repos)\n</i>Maven, Intellij, Gradle, SBT, JUnit, Remote Debugging, JVM cpu &amp; memory profiling, Continuous Integration, Continuous Deployment",
+   "created_at": "2014-07-03T18:54:24Z",
+   "created_at_i": 1404413664,
+   "objectID": "7984928",
+   "parent_id": 7970366,
+   "points": null,
+   "story_id": 7970366,
+   "story_title": "Ask HN: Who is hiring? (July 2014)",
+   "updated_at": "2023-09-06T23:15:54Z"
+  }
+ ],
+ "hitsPerPage": 30,
+ "nbHits": 7,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=cohort+retention+investors&tags=comment&hitsPerPage=30&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 19,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 17
+  },
+  "afterFetch": {
+   "format": {
+    "highlighting": 1,
+    "total": 1
+   },
+   "merge": {
+    "total": 1
+   },
+   "total": 1
+  },
+  "fetch": {
+   "query": 12,
+   "scanning": 4,
+   "total": 17
+  },
+  "total": 19
+ },
+ "query": "cohort retention investors",
+ "serverTimeMS": 21
+}

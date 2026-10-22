@@ -1,0 +1,65 @@
+== monthly_metrics.csv
+rows 21 first 2025-01 last 2026-09
+columns ['month', 'mrr', 'arr', 'paying_accounts', 'accounts_created_cumulative', 'calls_handled']
+arr == 12 x mrr in every row: True
+last row {'month': '2026-09', 'mrr': '186739', 'arr': '2240868', 'paying_accounts': '212', 'accounts_created_cumulative': '357', 'calls_handled': '72149'}
+accounts_created_cumulative never decreases: True
+paying_accounts month-over-month decreases: 0
+== customer_mrr_by_month.csv
+rows 2132 columns ['month', 'customer_id', 'customer_name', 'locations', 'plan', 'product_type', 'mrr', 'one_time_fee', 'billings']
+distinct customers 251
+rows by product_type {'Onboarding': 250, 'Subscription': 1880, 'Pilot': 2}
+months 21 2025-01 2026-09
+last month subscription MRR 171739 subscription rows 212
+top1 ('C0087', 'Cedar & Pine Animal Hospitals', 36000) 21.0 percent
+top3 share 22.2 percent
+pilot rows in last month [('C0219', 'Marlow Veterinary Group', 15000)]
+subscription + pilot MRR in last month 186739
+rows where billings differ from mrr + one_time_fee: 209
+customers with more than one location in last month: 28
+== cohorts rebuilt from the customer file
+2025-01 customers 5 start 2651 end 1953
+2025-02 customers 6 start 4526 end 5276
+2025-03 customers 6 start 3196 end 2063
+2025-04 customers 7 start 4090 end 4311
+2025-05 customers 7 start 3693 end 2346
+2025-06 customers 7 start 3752 end 3856
+2025-07 customers 9 start 5277 end 4125
+2025-08 customers 10 start 5267 end 4608
+2025-09 customers 11 start 6250 end 5252
+nine cohorts: customers 68 NRR_12 87.3 GRR_12 73.4
+Cohorts tab row 14: ['All cohorts', 57, 32945, 33790, 1.025648808620428]
+Cohorts tab A2: Cohort = customers still active after onboarding
+Cohorts tab: columns beyond M0 present: ['Cohort (first invoice month)', 'Customers', 'Starting MRR', 'MRR after 12 months', 'Net revenue retention', 'M0', 'M1', 'M2']
+== sales and marketing spend and new customers
+P&L header ['Line', 'Section', '2025-01', '2025-02', '2025-03', '2025-04'] ... ['2027-07', '2027-08', '2027-09']
+model months 2025-01 2027-09
+window 2026-04 2026-09 new paying customers 101
+S&M all three lines 574342 CAC 5687 | without support specialists 452560 CAC 4481
+ARPA (subscription MRR / paying accounts) 810.09
+payback months all three lines deck 80% 8.8
+payback months all three lines rebuilt 58.1% 12.1
+payback months without support deck 80% 6.9
+payback months without support rebuilt 58.1% 9.5
+== customer file shape
+duplicate month, customer, product_type keys: 0
+subscription customers with a zero-revenue month between two paid months: 0
+subscription customers who have no paid month: 0
+customers whose last paid month is before 2026-09 : 38
+onboarding rows: mrr is zero in 250 of 250 ; one_time_fee values [500]
+Brookline Row rows with billings above zero: [('2026-06', '0', '500'), ('2026-06', '584', '7008')]
+== hiring plan, sales department
+planned hires 24 in Sales 5
+  H04 Account Executive 2026-11-01
+  H07 Director of Enterprise Sales 2027-01-01
+  H14 Account Executive 2027-04-01
+  H20 Account Executive 2027-07-12
+  H21 Solutions Engineer 2027-08-01
+== files in the room
+full room files 17 seed drop files 12
+pipeline []
+update []
+cohort []
+unit []
+kpi []
+dashboard []

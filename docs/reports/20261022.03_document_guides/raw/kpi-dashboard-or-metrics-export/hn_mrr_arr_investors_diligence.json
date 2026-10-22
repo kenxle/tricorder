@@ -1,0 +1,28 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [],
+ "hitsPerPage": 30,
+ "nbHits": 0,
+ "nbPages": 0,
+ "page": 0,
+ "params": "query=ARR+MRR+investors+diligence+founder+counted&tags=comment&hitsPerPage=30&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 61,
+ "processingTimingsMS": {
+  "_request": {
+   "queue": 111,
+   "roundTrip": 26
+  },
+  "fetch": {
+   "query": 59,
+   "total": 60
+  },
+  "total": 61
+ },
+ "query": "ARR MRR investors diligence founder counted",
+ "serverTimeMS": 173
+}

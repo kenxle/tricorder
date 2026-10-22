@@ -1,0 +1,1371 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "rahulgoel"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "Some thoughts as a strategy professional for a large tech co:<p>- Financial : DCFs, multiples, statements, esp what drives value of firms (Resource: Aswath Damodaran)<p>- Strategy: how firms create value (Resources: YC Startup School lectures esp Peter Theil\u2019 lec on YouTube)<p>- Ops: YC lecture on metrics <em>investors</em> want (<em>CAC</em>, <em>LTV</em>, diff biz models like aaS, etc)<p>- most important would be to check out your co\u2019s pitch decks, SEC filings (if public) to understand the core strategy, value prop, financial performance and most critical hypotheses"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: How to learn business being a software engineer?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_rahulgoel",
+    "story_34300896"
+   ],
+   "author": "rahulgoel",
+   "comment_text": "Some thoughts as a strategy professional for a large tech co:<p>- Financial : DCFs, multiples, statements, esp what drives value of firms (Resource: Aswath Damodaran)<p>- Strategy: how firms create value (Resources: YC Startup School lectures esp Peter Theil\u2019 lec on YouTube)<p>- Ops: YC lecture on metrics investors want (CAC, LTV, diff biz models like aaS, etc)<p>- most important would be to check out your co\u2019s pitch decks, SEC filings (if public) to understand the core strategy, value prop, financial performance and most critical hypotheses",
+   "created_at": "2023-01-08T23:50:50Z",
+   "created_at_i": 1673221850,
+   "objectID": "34304752",
+   "parent_id": 34300896,
+   "story_id": 34300896,
+   "story_title": "Ask HN: How to learn business being a software engineer?",
+   "updated_at": "2024-09-20T12:58:15Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "pkaler"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "&gt; Warning! The entire article is filled with arcane finance newspeak and obscure acronyms!<p>Boris Wertz is a SaaS/e-commerce <em>investor</em>.  <em>LTV</em>, <em>CAC</em>, ARPU, churn, etc are pretty standard metrics for those types of businesses.<p>Here is a good guide to SaaS Metrics:\n<a href=\"http://www.forentrepreneurs.com/saas-metrics/\" rel=\"nofollow\">http://www.forentrepreneurs.com/saas-metrics/</a><p>Here is Bessemer's SaaS Reporting Template:\n<a href=\"http://www.bvp.com/system/files/reporting_saas.xls?download=1\" rel=\"nofollow\">http://www.bvp.com/system/files/reporting_saas.xls?download=...</a><p>The Smart Bear blog has a good series of SaaS metrics articles:\n<a href=\"http://blog.asmartbear.com/?s=saas+metrics\" rel=\"nofollow\">http://blog.asmartbear.com/?s=saas+metrics</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Two Ways to Get to a $100 Million Valuation"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.betakit.com/super-angel-boris-wertz-says-theres-only-two-ways-to-get-to-a-100-million-valuation/?utm_source=rss&utm_medium=rss&utm_campaign=super-angel-boris-wertz-says-theres-only-two-ways-to-get-to-a-100-million-valuation"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_pkaler",
+    "story_6219216"
+   ],
+   "author": "pkaler",
+   "comment_text": "&gt; Warning! The entire article is filled with arcane finance newspeak and obscure acronyms!<p>Boris Wertz is a SaaS&#x2F;e-commerce investor.  LTV, CAC, ARPU, churn, etc are pretty standard metrics for those types of businesses.<p>Here is a good guide to SaaS Metrics:\n<a href=\"http://www.forentrepreneurs.com/saas-metrics/\" rel=\"nofollow\">http:&#x2F;&#x2F;www.forentrepreneurs.com&#x2F;saas-metrics&#x2F;</a><p>Here is Bessemer&#x27;s SaaS Reporting Template:\n<a href=\"http://www.bvp.com/system/files/reporting_saas.xls?download=1\" rel=\"nofollow\">http:&#x2F;&#x2F;www.bvp.com&#x2F;system&#x2F;files&#x2F;reporting_saas.xls?download=...</a><p>The Smart Bear blog has a good series of SaaS metrics articles:\n<a href=\"http://blog.asmartbear.com/?s=saas+metrics\" rel=\"nofollow\">http:&#x2F;&#x2F;blog.asmartbear.com&#x2F;?s=saas+metrics</a>",
+   "created_at": "2013-08-15T20:44:53Z",
+   "created_at_i": 1376599493,
+   "objectID": "6220475",
+   "parent_id": 6219992,
+   "points": null,
+   "story_id": 6219216,
+   "story_title": "Two Ways to Get to a $100 Million Valuation",
+   "story_url": "http://www.betakit.com/super-angel-boris-wertz-says-theres-only-two-ways-to-get-to-a-100-million-valuation/?utm_source=rss&utm_medium=rss&utm_campaign=super-angel-boris-wertz-says-theres-only-two-ways-to-get-to-a-100-million-valuation",
+   "updated_at": "2023-09-06T21:58:46Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "djhn"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "<em>CAC</em>-<em>LTV</em> by itself is not a great long term strategy. But it can appear like one in the short term to <em>investors</em>.<p>So there is a plethora of companies happily dumping investor money into paid customer acquisition.<p>Blue Apron was a classic example of borderline fraudulent growth metrics and a cash grab IPO before the customer acquisition funnel collapsed."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Predicting OpenAI's ad strategy"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://ossa-ma.github.io/blog/openads"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_djhn",
+    "story_46668021"
+   ],
+   "author": "djhn",
+   "comment_text": "CAC-LTV by itself is not a great long term strategy. But it can appear like one in the short term to investors.<p>So there is a plethora of companies happily dumping investor money into paid customer acquisition.<p>Blue Apron was a classic example of borderline fraudulent growth metrics and a cash grab IPO before the customer acquisition funnel collapsed.",
+   "created_at": "2026-01-18T22:19:45Z",
+   "created_at_i": 1768774785,
+   "objectID": "46672746",
+   "parent_id": 46669494,
+   "story_id": 46668021,
+   "story_title": "Predicting OpenAI's ad strategy",
+   "story_url": "https://ossa-ma.github.io/blog/openads",
+   "updated_at": "2026-03-05T23:27:40Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mustafabisic1"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "Lifecycle Lead @ OKX\nRemote/Worldwide\n$90k - $180k\nThis is a job in a organisation I partner closely with which will open up soon and if you're interested please email me with your resume and why you might be a great fit at mustafa.bisic@okcoin.com.<p>OKX is on a mission to make crypto investing and trading more accessible to anyone around the world. We are building the next generation of tools to help onboard the <em>investors</em> and traders who have been on the fence about crypto. We are a collective of engineers, product managers, and marketers with a common passion to help decentralize finance and level the economic playing field for everyone around the world.<p>What we\u2019re looking for: We\u2019re seeking a talented and passionate Lifecycle Marketing Lead to join our Growth team. Data analysis as well as ingenuity and creativity are vital as this role will  be driving improvements to our products, user experiences and marketing campaigns across all surfaces of our platform (email, push, in-app messages, web+app screens, retargeting banners).<p>Top responsibilities:\n- Manage team to develop, manage, and optimize promotional &amp; product email, push, and web campaigns\n- Manage execution &amp; strategy of data-driven campaigns to ensure business objectives are met across different products on the OKX platform\n- Work with data science to analyze campaign performance to provide actionable recommendations to the marketing &amp; product strategies based on lifecycle performance<p>You\u2019d be a great fit if you have the following skills:\n- 7+ years of managing a team of lifecycle marketers, ideally in the fintech space\n- Have delivered quantifiable improvements while working on large customer databases\n- Experience with AB Testing, experiment development and reporting presentation\n- Examples of utilizing data science to optimize complex promotions that improve <em>LTV</em>, reduce <em>CAC</em> and improve retention<p>What makes you stand out from the rest:\n- Bilingual in Mandarin/English\n- Crypto experience or a willingness to learn\n- HTML/MJML experience or a willingness to learn\n- Appetite to expand growth skills in email, push, or web marketing<p>mustafa.bisic@okcoin.com"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Who is hiring? (March 2023)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mustafabisic1",
+    "story_34983767"
+   ],
+   "author": "mustafabisic1",
+   "comment_text": "Lifecycle Lead @ OKX\nRemote&#x2F;Worldwide\n$90k - $180k\nThis is a job in a organisation I partner closely with which will open up soon and if you&#x27;re interested please email me with your resume and why you might be a great fit at mustafa.bisic@okcoin.com.<p>OKX is on a mission to make crypto investing and trading more accessible to anyone around the world. We are building the next generation of tools to help onboard the investors and traders who have been on the fence about crypto. We are a collective of engineers, product managers, and marketers with a common passion to help decentralize finance and level the economic playing field for everyone around the world.<p>What we\u2019re looking for: We\u2019re seeking a talented and passionate Lifecycle Marketing Lead to join our Growth team. Data analysis as well as ingenuity and creativity are vital as this role will  be driving improvements to our products, user experiences and marketing campaigns across all surfaces of our platform (email, push, in-app messages, web+app screens, retargeting banners).<p>Top responsibilities:\n- Manage team to develop, manage, and optimize promotional &amp; product email, push, and web campaigns\n- Manage execution &amp; strategy of data-driven campaigns to ensure business objectives are met across different products on the OKX platform\n- Work with data science to analyze campaign performance to provide actionable recommendations to the marketing &amp; product strategies based on lifecycle performance<p>You\u2019d be a great fit if you have the following skills:\n- 7+ years of managing a team of lifecycle marketers, ideally in the fintech space\n- Have delivered quantifiable improvements while working on large customer databases\n- Experience with AB Testing, experiment development and reporting presentation\n- Examples of utilizing data science to optimize complex promotions that improve LTV, reduce CAC and improve retention<p>What makes you stand out from the rest:\n- Bilingual in Mandarin&#x2F;English\n- Crypto experience or a willingness to learn\n- HTML&#x2F;MJML experience or a willingness to learn\n- Appetite to expand growth skills in email, push, or web marketing<p>mustafa.bisic@okcoin.com",
+   "created_at": "2023-03-01T19:40:50Z",
+   "created_at_i": 1677699650,
+   "objectID": "34987228",
+   "parent_id": 34983767,
+   "story_id": 34983767,
+   "story_title": "Ask HN: Who is hiring? (March 2023)",
+   "updated_at": "2024-09-20T13:31:15Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "TuringNYC"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "Not really, because MRR isnt the only metric.<p>We'd look at an objective function of  <em>LTV</em> to <em>CAC</em> ratio.<p>We'd ignore everything below a certain absolute MRR.<p>We'd also ignore anything below a certain MRR growth rate.<p>The ones we'd typically look at as an <em>investor</em> are: MRR/ARR, Churn, <em>CAC</em> and TLV.<p>TLV would be total lifetime value which includes the monthly revenue * months given churn.<p><em>CAC</em> would be the advertisement cost.<p>This basically means, how much $ are you spending to make what total $ per customer, and how what is the volume."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Tell HN: From $200/mo to $18k in 5 years as solo founder"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_TuringNYC",
+    "story_34520664"
+   ],
+   "author": "TuringNYC",
+   "comment_text": "Not really, because MRR isnt the only metric.<p>We&#x27;d look at an objective function of  LTV to CAC ratio.<p>We&#x27;d ignore everything below a certain absolute MRR.<p>We&#x27;d also ignore anything below a certain MRR growth rate.<p>The ones we&#x27;d typically look at as an investor are: MRR&#x2F;ARR, Churn, CAC and TLV.<p>TLV would be total lifetime value which includes the monthly revenue * months given churn.<p>CAC would be the advertisement cost.<p>This basically means, how much $ are you spending to make what total $ per customer, and how what is the volume.",
+   "created_at": "2023-01-25T19:26:55Z",
+   "created_at_i": 1674674815,
+   "objectID": "34522966",
+   "parent_id": 34522689,
+   "story_id": 34520664,
+   "story_title": "Tell HN: From $200/mo to $18k in 5 years as solo founder",
+   "updated_at": "2024-09-20T13:10:06Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "barrrrald"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "Venture valuations can be most simply understood as: potential exit value (reward) * probability of reaching that value (risk).<p>In this case the potential exit was big: owning checkout for the web is a multi-multi-$B business.<p>The risks, however, were also big. This was a highly competitive market, with lots of complicated technical and GTM problems to solve. But, <em>investors</em> seemed to believe in their vision + chutzpah + ability to execute, hence they discounted the risk and gave them a rich valuation.<p>As it turns out, the risks were very real! They successfully hired a big, seemingly-experienced team (something many companies struggle to do) but failed to make enough progress to justify their valuation, i.e., de-risk the business and demonstrate a higher probability of achieving a big exit to potential next-round <em>investors</em>. The product never worked well (actually 502 hard-crashed on launch day) and their team got bloated and slow. Their GTM strategy was fundamentally flawed (horrible <em>CAC</em>/<em>LTV</em> on small merchants) and the founder spent like a mad man. This wasn\u2019t foreseen but perhaps should have been especially by the pros at Stripe<p>Fast lived a short, insane life and will quickly fade into obscurity versus the more infamous WeWork and Theranos implosions. But I think it\u2019s a more relevant cautionary tale: Fast was backed by \u201cproper\u201d Valley institutions (Index, Stripe, etc.), was a pure software business, and from the outside had all the trappings of hypergrowth success. Lots to be learned by <em>investors</em>, employees, and founders here."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: How did Fast get a $580mm valuation?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_barrrrald",
+    "story_30998623"
+   ],
+   "author": "barrrrald",
+   "children": [
+    30998966,
+    30999308
+   ],
+   "comment_text": "Venture valuations can be most simply understood as: potential exit value (reward) * probability of reaching that value (risk).<p>In this case the potential exit was big: owning checkout for the web is a multi-multi-$B business.<p>The risks, however, were also big. This was a highly competitive market, with lots of complicated technical and GTM problems to solve. But, investors seemed to believe in their vision + chutzpah + ability to execute, hence they discounted the risk and gave them a rich valuation.<p>As it turns out, the risks were very real! They successfully hired a big, seemingly-experienced team (something many companies struggle to do) but failed to make enough progress to justify their valuation, i.e., de-risk the business and demonstrate a higher probability of achieving a big exit to potential next-round investors. The product never worked well (actually 502 hard-crashed on launch day) and their team got bloated and slow. Their GTM strategy was fundamentally flawed (horrible CAC&#x2F;LTV on small merchants) and the founder spent like a mad man. This wasn\u2019t foreseen but perhaps should have been especially by the pros at Stripe<p>Fast lived a short, insane life and will quickly fade into obscurity versus the more infamous WeWork and Theranos implosions. But I think it\u2019s a more relevant cautionary tale: Fast was backed by \u201cproper\u201d Valley institutions (Index, Stripe, etc.), was a pure software business, and from the outside had all the trappings of hypergrowth success. Lots to be learned by investors, employees, and founders here.",
+   "created_at": "2022-04-12T05:24:08Z",
+   "created_at_i": 1649741048,
+   "objectID": "30998921",
+   "parent_id": 30998623,
+   "story_id": 30998623,
+   "story_title": "Ask HN: How did Fast get a $580mm valuation?",
+   "updated_at": "2024-09-20T10:57:32Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mchusma"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "In my experience what the most helpful thing to <em>investors</em> and you will be bottoms up understanding of how the business looks with a somewhat reasonable set of assumptions. So make a tab full of your assumptions, number of customers, cost per customer, number of engineers, churn rate.<p>When do you collect cash from customers? When do you pay bills? How fast can you cycle cash? (Meaning if you pay back marketing over 2 years vs 2 months) a <em>LTV</em>/<em>CAC</em> ratio of 1.5 is not great, but if you have a 1 month payback you basically don't consume cash so that's cool (these can be signs of dads though). But I would just look online for comps for the specific inputs into your model.<p>If you want a template you can just look at PnLs online.<p>All forecasts for startups are wildly wrong. But I think of forecasting as a way of valididating a strategy. Lots of people dislike the &quot;if we get 1% of the market we will.be huge&quot; approach, but I like at least validating if that is the case (it is not always the case).<p>Forecasting can also help you understand pricing.  If your market size is about 10,000 buyers what do you need to charge to have a business."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Guides to Financial Forecasting?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mchusma",
+    "story_22281817"
+   ],
+   "author": "mchusma",
+   "children": [
+    22284576,
+    22287342
+   ],
+   "comment_text": "In my experience what the most helpful thing to investors and you will be bottoms up understanding of how the business looks with a somewhat reasonable set of assumptions. So make a tab full of your assumptions, number of customers, cost per customer, number of engineers, churn rate.<p>When do you collect cash from customers? When do you pay bills? How fast can you cycle cash? (Meaning if you pay back marketing over 2 years vs 2 months) a LTV&#x2F;CAC ratio of 1.5 is not great, but if you have a 1 month payback you basically don&#x27;t consume cash so that&#x27;s cool (these can be signs of dads though). But I would just look online for comps for the specific inputs into your model.<p>If you want a template you can just look at PnLs online.<p>All forecasts for startups are wildly wrong. But I think of forecasting as a way of valididating a strategy. Lots of people dislike the &quot;if we get 1% of the market we will.be huge&quot; approach, but I like at least validating if that is the case (it is not always the case).<p>Forecasting can also help you understand pricing.  If your market size is about 10,000 buyers what do you need to charge to have a business.",
+   "created_at": "2020-02-09T17:38:01Z",
+   "created_at_i": 1581269881,
+   "objectID": "22283233",
+   "parent_id": 22281817,
+   "story_id": 22281817,
+   "story_title": "Ask HN: Guides to Financial Forecasting?",
+   "updated_at": "2024-09-20T05:43:55Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "AmericanChopper"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "Not all negative cash flows are created equal. For most high valued companies that are cashflow negative, the deficit should represent a portion of their sales and marketing budget. In that case they are literally choosing to be cashflow negative as an investment in growth, and could choose to become cashflow positive at any point by reducing the sales and marketing budget. Obviously this depends on things like their <em>CAC</em> and <em>LTV</em> being healthy, but <em>investors</em> aren\u2019t stupid, and in isolation being cashflow negative isn\u2019t an indication about the sustainability of the company."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Why Positive Cashflow Matters"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://avc.com/2019/09/why-positive-cashflow-matters/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_AmericanChopper",
+    "story_20921271"
+   ],
+   "author": "AmericanChopper",
+   "children": [
+    20922589
+   ],
+   "comment_text": "Not all negative cash flows are created equal. For most high valued companies that are cashflow negative, the deficit should represent a portion of their sales and marketing budget. In that case they are literally choosing to be cashflow negative as an investment in growth, and could choose to become cashflow positive at any point by reducing the sales and marketing budget. Obviously this depends on things like their CAC and LTV being healthy, but investors aren\u2019t stupid, and in isolation being cashflow negative isn\u2019t an indication about the sustainability of the company.",
+   "created_at": "2019-09-09T21:10:54Z",
+   "created_at_i": 1568063454,
+   "objectID": "20922527",
+   "parent_id": 20922328,
+   "story_id": 20921271,
+   "story_title": "Why Positive Cashflow Matters",
+   "story_url": "https://avc.com/2019/09/why-positive-cashflow-matters/",
+   "updated_at": "2024-09-20T04:46:13Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "hhw3h"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "I don't know exactly why the industry has settled on a best practice of specifically 3:1. Good question.<p>My hunch is it has to do with the opportunity cost of <em>investors</em>. If a startup comes to an investor with a 1.1:1 ratio why would a rational investor invest? They can get that rate of return in less risky asset classes.<p>As a bootstrapper yes a lower <em>LTV</em>:<em>CAC</em> ratio could in theory be fine. But I would think like an investor. Instead of investing money you are investing your time. It would be better to iterate and tune what you're doing until you're getting a higher return on your time than you would working in a corporate job you could get or, if you do have capital, a higher return than you would get investing in less risky asset classes.<p>To your point, time to recover <em>CAC</em> is extremely important to bootstrappers. I recommending going after a niche in your market that can afford higher ticket pricing and will jump at annual deals in exchange for (say a 2 month) discount so that <em>CAC</em> is recovered in month 1. This is very doable but requires sales skills which many technical founders don't have. But they are very capable of mastering."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Non-VC backed founders, any tips on growth?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_hhw3h",
+    "story_19645363"
+   ],
+   "author": "hhw3h",
+   "children": [
+    19651103
+   ],
+   "comment_text": "I don&#x27;t know exactly why the industry has settled on a best practice of specifically 3:1. Good question.<p>My hunch is it has to do with the opportunity cost of investors. If a startup comes to an investor with a 1.1:1 ratio why would a rational investor invest? They can get that rate of return in less risky asset classes.<p>As a bootstrapper yes a lower LTV:CAC ratio could in theory be fine. But I would think like an investor. Instead of investing money you are investing your time. It would be better to iterate and tune what you&#x27;re doing until you&#x27;re getting a higher return on your time than you would working in a corporate job you could get or, if you do have capital, a higher return than you would get investing in less risky asset classes.<p>To your point, time to recover CAC is extremely important to bootstrappers. I recommending going after a niche in your market that can afford higher ticket pricing and will jump at annual deals in exchange for (say a 2 month) discount so that CAC is recovered in month 1. This is very doable but requires sales skills which many technical founders don&#x27;t have. But they are very capable of mastering.",
+   "created_at": "2019-04-12T21:20:26Z",
+   "created_at_i": 1555104026,
+   "objectID": "19649121",
+   "parent_id": 19648638,
+   "story_id": 19645363,
+   "story_title": "Ask HN: Non-VC backed founders, any tips on growth?",
+   "updated_at": "2024-09-20T04:05:27Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "corry"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "In early-stage SaaS, a rule of thumb I've often heard is that it's great if you're maintaining a 1:1 ratio of cash burned to ARR generated.<p>So if you net burn $6M cash from Day 1 to now, and get to =&gt;$6M ARR, you're doing great. Presumably that ARR has an <em>LTV</em>(lifetime value) that's some multiple of ARR.<p>But in early-stage, that &quot;net burn of cash&quot; figure includes both client acquisition costs, COGS, and initial R&amp;D costs. So it's a pretty messy metric IMO beyond a back-of-the-napkin kind of thing.<p>Almost immediately you'd expect to focus on the king of the &quot;classic&quot; SaaS metrics - <em>CAC</em>:<em>LTV</em>, where <em>LTV</em> takes into account gross margin, and making sure you're above the 3x line.<p>Investing big $ in R&amp;D for product expansion/improvement etc is almost a different question - it's its own ROI calculation.<p>Final point - in SaaS, the pay-back on the initial <em>CAC</em> cash outlay is also super important. If it's tight (good), you are &quot;re-cycling&quot; the initial <em>CAC</em> spend on add'l clients, and each is creating a stream of future cash flows.<p>In a perfect world, you're taking $100 of <em>investor</em> money, deploying it into <em>CAC</em> to produce x # new clients, which represents ARR streams, and who pay back the $100 <em>CAC</em> almost immediately. Then you re-deploy the $100 to get the next x # of new clients, etc.<p>This is the magic of compounding in SaaS.<p>--<p>All this to say - capital efficiency should be understood in context (in my examples above, capital efficiency in go to market has it's own rules and dynamics, whereas other uses of capital may be different)."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "On Startup Capital Efficiency"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://stevecheney.com/on-startup-capital-efficiency/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_corry",
+    "story_19606169"
+   ],
+   "author": "corry",
+   "comment_text": "In early-stage SaaS, a rule of thumb I&#x27;ve often heard is that it&#x27;s great if you&#x27;re maintaining a 1:1 ratio of cash burned to ARR generated.<p>So if you net burn $6M cash from Day 1 to now, and get to =&gt;$6M ARR, you&#x27;re doing great. Presumably that ARR has an LTV(lifetime value) that&#x27;s some multiple of ARR.<p>But in early-stage, that &quot;net burn of cash&quot; figure includes both client acquisition costs, COGS, and initial R&amp;D costs. So it&#x27;s a pretty messy metric IMO beyond a back-of-the-napkin kind of thing.<p>Almost immediately you&#x27;d expect to focus on the king of the &quot;classic&quot; SaaS metrics - CAC:LTV, where LTV takes into account gross margin, and making sure you&#x27;re above the 3x line.<p>Investing big $ in R&amp;D for product expansion&#x2F;improvement etc is almost a different question - it&#x27;s its own ROI calculation.<p>Final point - in SaaS, the pay-back on the initial CAC cash outlay is also super important. If it&#x27;s tight (good), you are &quot;re-cycling&quot; the initial CAC spend on add&#x27;l clients, and each is creating a stream of future cash flows.<p>In a perfect world, you&#x27;re taking $100 of investor money, deploying it into CAC to produce x # new clients, which represents ARR streams, and who pay back the $100 CAC almost immediately. Then you re-deploy the $100 to get the next x # of new clients, etc.<p>This is the magic of compounding in SaaS.<p>--<p>All this to say - capital efficiency should be understood in context (in my examples above, capital efficiency in go to market has it&#x27;s own rules and dynamics, whereas other uses of capital may be different).",
+   "created_at": "2019-04-08T19:32:27Z",
+   "created_at_i": 1554751947,
+   "objectID": "19608303",
+   "parent_id": 19606169,
+   "story_id": 19606169,
+   "story_title": "On Startup Capital Efficiency",
+   "story_url": "https://stevecheney.com/on-startup-capital-efficiency/",
+   "updated_at": "2024-09-20T03:59:15Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "zeroname"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "&gt; The author doesn\u2019t cite growth rates, customer acquisition costs of lifetime value of the customer and without that it\u2019s not clear they know what they\u2019re talking about. If <em>CAC</em> &lt;&lt; <em>LTV</em> and you have a high growth rate and your cost per ride is coming down then they should be doing exactly what they\u2019re doing.<p>If, if and if. There's no reason to believe that costs come down with significantly with (even larger) scale, or that people will prefer Uber over competitors or ordinary taxis, once they raise prices. The main reason why Uber has so little competition is that it's simply a bad business model, but massive growth in todays environment attracts enough <em>investors</em> to keep the ship above water for a long time.<p>&gt; The investor around the table are not dumb.<p>That's not implied, the idea is that enough greater fools will be found once the stock goes public.<p>&gt; There\u2019s a reason I don\u2019t even go to Lyft anymore\u2014Uber is way better than it was a few years ago.<p>Uber simply has more money to burn. Enjoy your rides while it lasts."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Uber Is Headed for a Crash"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://nymag.com/intelligencer/2018/12/will-uber-survive-the-next-decade.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_zeroname",
+    "story_18607509"
+   ],
+   "author": "zeroname",
+   "comment_text": "&gt; The author doesn\u2019t cite growth rates, customer acquisition costs of lifetime value of the customer and without that it\u2019s not clear they know what they\u2019re talking about. If CAC &lt;&lt; LTV and you have a high growth rate and your cost per ride is coming down then they should be doing exactly what they\u2019re doing.<p>If, if and if. There&#x27;s no reason to believe that costs come down with significantly with (even larger) scale, or that people will prefer Uber over competitors or ordinary taxis, once they raise prices. The main reason why Uber has so little competition is that it&#x27;s simply a bad business model, but massive growth in todays environment attracts enough investors to keep the ship above water for a long time.<p>&gt; The investor around the table are not dumb.<p>That&#x27;s not implied, the idea is that enough greater fools will be found once the stock goes public.<p>&gt; There\u2019s a reason I don\u2019t even go to Lyft anymore\u2014Uber is way better than it was a few years ago.<p>Uber simply has more money to burn. Enjoy your rides while it lasts.",
+   "created_at": "2018-12-05T17:51:34Z",
+   "created_at_i": 1544032294,
+   "objectID": "18610617",
+   "parent_id": 18610128,
+   "story_id": 18607509,
+   "story_title": "Uber Is Headed for a Crash",
+   "story_url": "http://nymag.com/intelligencer/2018/12/will-uber-survive-the-next-decade.html",
+   "updated_at": "2024-09-20T03:26:40Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "rdlecler1"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "The author doesn\u2019t cite growth rates, customer acquisition costs of lifetime value of the customer and without that it\u2019s not clear they know what they\u2019re talking about. If <em>CAC</em> &lt;&lt; <em>LTV</em> and you have a high growth rate and your cost per ride is coming down then they should be doing exactly what they\u2019re doing. The <em>investor</em> around the table are not dumb. They\u2019re probably some of the smartest people around and they can do the math themselves.<p>There\u2019s a reason I don\u2019t even go to Lyft anymore\u2014Uber is way better than it was a few years ago."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Uber Is Headed for a Crash"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://nymag.com/intelligencer/2018/12/will-uber-survive-the-next-decade.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_rdlecler1",
+    "story_18607509"
+   ],
+   "author": "rdlecler1",
+   "children": [
+    18610617
+   ],
+   "comment_text": "The author doesn\u2019t cite growth rates, customer acquisition costs of lifetime value of the customer and without that it\u2019s not clear they know what they\u2019re talking about. If CAC &lt;&lt; LTV and you have a high growth rate and your cost per ride is coming down then they should be doing exactly what they\u2019re doing. The investor around the table are not dumb. They\u2019re probably some of the smartest people around and they can do the math themselves.<p>There\u2019s a reason I don\u2019t even go to Lyft anymore\u2014Uber is way better than it was a few years ago.",
+   "created_at": "2018-12-05T17:03:39Z",
+   "created_at_i": 1544029419,
+   "objectID": "18610128",
+   "parent_id": 18607509,
+   "story_id": 18607509,
+   "story_title": "Uber Is Headed for a Crash",
+   "story_url": "http://nymag.com/intelligencer/2018/12/will-uber-survive-the-next-decade.html",
+   "updated_at": "2024-09-20T03:26:40Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "sharemywin"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "The problem with most Saas problems is capital. If most <em>investors</em> suggest a <em>LTV</em> of 3x <em>CAC</em> and if your average customer is $30 per month and your <em>LTV</em> is $360(3 yrs) then you need $120 per customer or $12,000 to invest in advertising to match what other Saas companies are doing to reach your goal."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Making $3000+ residual income monthly? Any tips/advice for a beginer?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_sharemywin",
+    "story_10716560"
+   ],
+   "author": "sharemywin",
+   "children": [
+    10721215
+   ],
+   "comment_text": "The problem with most Saas problems is capital. If most investors suggest a LTV of 3x CAC and if your average customer is $30 per month and your LTV is $360(3 yrs) then you need $120 per customer or $12,000 to invest in advertising to match what other Saas companies are doing to reach your goal.",
+   "created_at": "2015-12-11T13:42:28Z",
+   "created_at_i": 1449841348,
+   "objectID": "10717012",
+   "parent_id": 10716560,
+   "story_id": 10716560,
+   "story_title": "Ask HN: Making $3000+ residual income monthly? Any tips/advice for a beginer?",
+   "updated_at": "2024-09-19T22:31:37Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ig1"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "While these are all reasonable and valid points it's missing a key one: margin.<p>If you look at successful SaaS businesses users who pay &lt;$50/month are pretty much always loss leaders. Almost all the money in SaaS is in enterprise and large customers.<p>It's very hard to make subscription work for consumer SaaS businesses simply because the margin between <em>CAC</em> and <em>LTV</em> is so small. Gaming (ala World of Warcraft) has shifted away from subs to IAP because it's easier to lower <em>CAC</em> through making a product freemium than to increase <em>LTV</em>.<p>Commercially successful dating sites have become so through increasing <em>LTV</em> by locking customers into long term contract and reducing <em>CAC</em> via shady tactics to increase conversion. Neither of which many <em>investors</em> want to be associated with."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "investors"
+     ],
+     "value": "Why <em>investors</em> don\u2019t fund dating"
+    },
+    "story_url": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "investors"
+     ],
+     "value": "http://andrewchen.co/why-<em>investors</em>-dont-fund-dating/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ig1",
+    "story_9606572"
+   ],
+   "author": "ig1",
+   "children": [
+    9607558
+   ],
+   "comment_text": "While these are all reasonable and valid points it&#x27;s missing a key one: margin.<p>If you look at successful SaaS businesses users who pay &lt;$50&#x2F;month are pretty much always loss leaders. Almost all the money in SaaS is in enterprise and large customers.<p>It&#x27;s very hard to make subscription work for consumer SaaS businesses simply because the margin between CAC and LTV is so small. Gaming (ala World of Warcraft) has shifted away from subs to IAP because it&#x27;s easier to lower CAC through making a product freemium than to increase LTV.<p>Commercially successful dating sites have become so through increasing LTV by locking customers into long term contract and reducing CAC via shady tactics to increase conversion. Neither of which many investors want to be associated with.",
+   "created_at": "2015-05-26T19:52:39Z",
+   "created_at_i": 1432669959,
+   "objectID": "9607214",
+   "parent_id": 9606572,
+   "points": null,
+   "story_id": 9606572,
+   "story_title": "Why investors don\u2019t fund dating",
+   "story_url": "http://andrewchen.co/why-investors-dont-fund-dating/",
+   "updated_at": "2023-09-07T02:50:05Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "chatmasta"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "You could try an affiliate program, if you can make the offer payouts good enough. That way the affiliates front the ad cost and you only need to pay them for conversions.<p>Also, $80k is really not much when talking about investment. I would suggest talking to some angel <em>investors</em> and trying to raise a seed round with convertible notes, either $25k per investor or one or two <em>investors</em> at $100k, both of which are common deal sizes for early stage companies.<p>Show them the <em>CAC</em> and <em>LTV</em> numbers in the pitch meetings.<p>All that said... I would be looking for growth from non-advertising channels. Specifically I would be looking at partnerships with schools, which reduces your problem to negotiating deals with a finite number of institutions. I would just straight up cold call school administrators and pitch the product. If you do it right, each school could onboard multiple users (parents) to your platform. This way you only need to worry about reaching N/K schools, instead of N parents."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "America's Startup Scene Is Looking Anemic"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.bloomberg.com/view/articles/2018-06-07/america-s-startup-scene-is-looking-anemic"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_chatmasta",
+    "story_17255569"
+   ],
+   "author": "chatmasta",
+   "comment_text": "You could try an affiliate program, if you can make the offer payouts good enough. That way the affiliates front the ad cost and you only need to pay them for conversions.<p>Also, $80k is really not much when talking about investment. I would suggest talking to some angel investors and trying to raise a seed round with convertible notes, either $25k per investor or one or two investors at $100k, both of which are common deal sizes for early stage companies.<p>Show them the CAC and LTV numbers in the pitch meetings.<p>All that said... I would be looking for growth from non-advertising channels. Specifically I would be looking at partnerships with schools, which reduces your problem to negotiating deals with a finite number of institutions. I would just straight up cold call school administrators and pitch the product. If you do it right, each school could onboard multiple users (parents) to your platform. This way you only need to worry about reaching N&#x2F;K schools, instead of N parents.",
+   "created_at": "2018-06-07T15:12:24Z",
+   "created_at_i": 1528384344,
+   "objectID": "17256456",
+   "parent_id": 17256142,
+   "story_id": 17255569,
+   "story_title": "America's Startup Scene Is Looking Anemic",
+   "story_url": "https://www.bloomberg.com/view/articles/2018-06-07/america-s-startup-scene-is-looking-anemic",
+   "updated_at": "2024-09-20T02:37:05Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ryanwaggoner"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "Super curious about a bunch of things here:<p>1. Are those numbers inclusive of Apple taking a 30% cut?<p>2. You have a $15k per month content budget, but what about other overhead? Does the 15k subscriber number for profitability cover that too?<p>3. How is churn?<p>4. What's your <em>CAC</em> and <em>LTV</em>?<p>Most importantly: you talked to dozens of <em>investors</em>, some of them probably smart and experienced. Why did they say they didn't think it would work?<p>They might be wrong, obviously, but I'd be curious to hear their main objections."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "A Terrible, Horrible, No Good, Very Bad Hardbound Update"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://medium.com/@nbashaw/a-terrible-horrible-no-good-very-bad-hardbound-update-eacaf767db6a"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ryanwaggoner",
+    "story_14658760"
+   ],
+   "author": "ryanwaggoner",
+   "comment_text": "Super curious about a bunch of things here:<p>1. Are those numbers inclusive of Apple taking a 30% cut?<p>2. You have a $15k per month content budget, but what about other overhead? Does the 15k subscriber number for profitability cover that too?<p>3. How is churn?<p>4. What&#x27;s your CAC and LTV?<p>Most importantly: you talked to dozens of investors, some of them probably smart and experienced. Why did they say they didn&#x27;t think it would work?<p>They might be wrong, obviously, but I&#x27;d be curious to hear their main objections.",
+   "created_at": "2017-06-29T16:22:03Z",
+   "created_at_i": 1498753323,
+   "objectID": "14664486",
+   "parent_id": 14664403,
+   "story_id": 14658760,
+   "story_title": "A Terrible, Horrible, No Good, Very Bad Hardbound Update",
+   "story_url": "https://medium.com/@nbashaw/a-terrible-horrible-no-good-very-bad-hardbound-update-eacaf767db6a",
+   "updated_at": "2024-09-20T01:00:56Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "johnsimer"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "Depends on your <em>investors</em> - VC vs rich baseball player is different<p>Depends on DAU, MAU, time spent per day on app, estimated <em>CAC</em> and projected <em>LTV</em><p>I'm sure a niche social media app with <em>LTV</em> of $10k/user but only 5k users could raise money easily"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Do social media apps need to have 1M users to fundraise?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_johnsimer",
+    "story_19986186"
+   ],
+   "author": "johnsimer",
+   "comment_text": "Depends on your investors - VC vs rich baseball player is different<p>Depends on DAU, MAU, time spent per day on app, estimated CAC and projected LTV<p>I&#x27;m sure a niche social media app with LTV of $10k&#x2F;user but only 5k users could raise money easily",
+   "created_at": "2019-05-23T15:32:42Z",
+   "created_at_i": 1558625562,
+   "objectID": "19992668",
+   "parent_id": 19986186,
+   "story_id": 19986186,
+   "story_title": "Ask HN: Do social media apps need to have 1M users to fundraise?",
+   "updated_at": "2024-09-20T04:21:37Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "DanielRibeiro"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "Growing \u0010Virally (where virality coefficient and cycle are really important[1]) is different than growing with Paying Users (where Lifetime Value (<em>LTV</em>) and Cost to aqcuire customers (<em>CAC</em>) is really important[2]) that its different than growing through very high retention rates[3]. You can achieve P/M fit with any of them.<p>You can argue that you don't need growth. Which <em>investors</em> won't particularly like (in particular, VCs have LPs to give a return on investment[4]). But ultimately, if your company is not growing in any way, is any of your work actually making a difference? Are the people working on the company getting a return on investment on their <i>time</i> investment?<p>Growth also doesn't need to be about money (or eventual money, as it can be the case if you are growing virally). Think of Khan Academy (which is a Non Profit[5]): they can grow on more people using them, and on people using them more. They can also grow on impact they have on the students.<p>[1] <a href=\"http://www.forentrepreneurs.com/lessons-learnt-viral-marketing/\" rel=\"nofollow\">http://www.forentrepreneurs.com/lessons-learnt-viral-marketi...</a><p>[2] <a href=\"http://www.forentrepreneurs.com/startup-killer/\" rel=\"nofollow\">http://www.forentrepreneurs.com/startup-killer/</a><p>[3] <a href=\"http://larslofgren.com/marketingbasics/the-three-engines-of-growth-with-eric-ries\" rel=\"nofollow\">http://larslofgren.com/marketingbasics/the-three-engines-of-...</a><p>[4] <a href=\"http://www.danshapiro.com/blog/2010/08/vc-insanity-economics/\" rel=\"nofollow\">http://www.danshapiro.com/blog/2010/08/vc-insanity-economics...</a><p>[5] <a href=\"http://en.wikipedia.org/wiki/Khan_Academy\" rel=\"nofollow\">http://en.wikipedia.org/wiki/Khan_Academy</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Everpix, Snapchat, and the Startup Lie"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://subimage.com/blog/2013/11/07/everpix-snapchat-and-the-startup-lie/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_DanielRibeiro",
+    "story_6694674"
+   ],
+   "author": "DanielRibeiro",
+   "comment_text": "Growing \u0010Virally (where virality coefficient and cycle are really important[1]) is different than growing with Paying Users (where Lifetime Value (LTV) and Cost to aqcuire customers (CAC) is really important[2]) that its different than growing through very high retention rates[3]. You can achieve P&#x2F;M fit with any of them.<p>You can argue that you don&#x27;t need growth. Which investors won&#x27;t particularly like (in particular, VCs have LPs to give a return on investment[4]). But ultimately, if your company is not growing in any way, is any of your work actually making a difference? Are the people working on the company getting a return on investment on their <i>time</i> investment?<p>Growth also doesn&#x27;t need to be about money (or eventual money, as it can be the case if you are growing virally). Think of Khan Academy (which is a Non Profit[5]): they can grow on more people using them, and on people using them more. They can also grow on impact they have on the students.<p>[1] <a href=\"http://www.forentrepreneurs.com/lessons-learnt-viral-marketing/\" rel=\"nofollow\">http:&#x2F;&#x2F;www.forentrepreneurs.com&#x2F;lessons-learnt-viral-marketi...</a><p>[2] <a href=\"http://www.forentrepreneurs.com/startup-killer/\" rel=\"nofollow\">http:&#x2F;&#x2F;www.forentrepreneurs.com&#x2F;startup-killer&#x2F;</a><p>[3] <a href=\"http://larslofgren.com/marketingbasics/the-three-engines-of-growth-with-eric-ries\" rel=\"nofollow\">http:&#x2F;&#x2F;larslofgren.com&#x2F;marketingbasics&#x2F;the-three-engines-of-...</a><p>[4] <a href=\"http://www.danshapiro.com/blog/2010/08/vc-insanity-economics/\" rel=\"nofollow\">http:&#x2F;&#x2F;www.danshapiro.com&#x2F;blog&#x2F;2010&#x2F;08&#x2F;vc-insanity-economics...</a><p>[5] <a href=\"http://en.wikipedia.org/wiki/Khan_Academy\" rel=\"nofollow\">http:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Khan_Academy</a>",
+   "created_at": "2013-11-08T06:49:23Z",
+   "created_at_i": 1383893363,
+   "objectID": "6694846",
+   "parent_id": 6694793,
+   "points": null,
+   "story_id": 6694674,
+   "story_title": "Everpix, Snapchat, and the Startup Lie",
+   "story_url": "http://subimage.com/blog/2013/11/07/everpix-snapchat-and-the-startup-lie/",
+   "updated_at": "2023-09-06T22:37:12Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ericabiz"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "<em>Investors</em> love to spout this stuff. Unfortunately, it really isn't true (even though as a founder who generally prefers to bootstrap, I wish it was.)<p>FTA:\n&gt; If the cost of customer acquisition (<em>CAC</em>) is greater than the lifetime value (<em>LTV</em>), a startup can grow itself to death.<p>Oh, you mean like Salesforce? No, wait, they had an IPO and they <i>still</i> only rarely show a profit. And they hold their <em>LTV</em> very close to their chest, so we still have no idea if <em>CAC</em> is lower or higher than <em>LTV</em>.<p>&gt; When <em>investors</em> talk about growth, we\u2019re talking about sustainable growth.<p>No, you're not, because you continually fund companies that do the opposite. Salesforce, Webvan, Pets.com from the first boom. Instacart, Uber, Lyft, WeWork, HubSpot from the latest.<p>&gt; The period of cheap capital and billion dollar checks has ended.<p>Same thing we heard in 2001 and 2007.<p>&gt; In this capital constrained market, buying scale is no longer going to be a credible lever for the next generation of startups. ... Companies can no longer look to money as a performance enhancing drug for scale-up.<p>Until it is again. It wasn't OK to &quot;buy scale&quot; in 2001 or 2007, but it was in 1997-1999 and 2012-2014. And now in 2016, it's fallen out of fashion again.<p>Either we're going to have a raging depression, or the bubble will inflate again. Hypothetically, <i>both</i> of those scenarios could actually happen--a depression followed by bubble inflation yet again.<p>This is why I suggest that founders tune out the idiocy and focus on building a sustainable business. You probably won't build an Uber as quickly as Uber did. But you'll be hugely protected against the inevitable downfall, and won't find yourself cash-strapped and forced to switch gears quickly (notice Uber now singing the &quot;we plan to be profitable in most U.S. cities this year&quot; tune.) And, more importantly, you'll have built a life for yourself, your employees, and their families that are depending on you."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Why Uber Won"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://news.greylock.com/why-uber-won-5598a2a66561#.hz33sst9k"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ericabiz",
+    "story_11556349"
+   ],
+   "author": "ericabiz",
+   "children": [
+    11556778,
+    11556813,
+    11556862,
+    11556885,
+    11556920,
+    11556953,
+    11556992,
+    11557013,
+    11557100,
+    11557224
+   ],
+   "comment_text": "Investors love to spout this stuff. Unfortunately, it really isn&#x27;t true (even though as a founder who generally prefers to bootstrap, I wish it was.)<p>FTA:\n&gt; If the cost of customer acquisition (CAC) is greater than the lifetime value (LTV), a startup can grow itself to death.<p>Oh, you mean like Salesforce? No, wait, they had an IPO and they <i>still</i> only rarely show a profit. And they hold their LTV very close to their chest, so we still have no idea if CAC is lower or higher than LTV.<p>&gt; When investors talk about growth, we\u2019re talking about sustainable growth.<p>No, you&#x27;re not, because you continually fund companies that do the opposite. Salesforce, Webvan, Pets.com from the first boom. Instacart, Uber, Lyft, WeWork, HubSpot from the latest.<p>&gt; The period of cheap capital and billion dollar checks has ended.<p>Same thing we heard in 2001 and 2007.<p>&gt; In this capital constrained market, buying scale is no longer going to be a credible lever for the next generation of startups. ... Companies can no longer look to money as a performance enhancing drug for scale-up.<p>Until it is again. It wasn&#x27;t OK to &quot;buy scale&quot; in 2001 or 2007, but it was in 1997-1999 and 2012-2014. And now in 2016, it&#x27;s fallen out of fashion again.<p>Either we&#x27;re going to have a raging depression, or the bubble will inflate again. Hypothetically, <i>both</i> of those scenarios could actually happen--a depression followed by bubble inflation yet again.<p>This is why I suggest that founders tune out the idiocy and focus on building a sustainable business. You probably won&#x27;t build an Uber as quickly as Uber did. But you&#x27;ll be hugely protected against the inevitable downfall, and won&#x27;t find yourself cash-strapped and forced to switch gears quickly (notice Uber now singing the &quot;we plan to be profitable in most U.S. cities this year&quot; tune.) And, more importantly, you&#x27;ll have built a life for yourself, your employees, and their families that are depending on you.",
+   "created_at": "2016-04-23T18:23:01Z",
+   "created_at_i": 1461435781,
+   "objectID": "11556690",
+   "parent_id": 11556349,
+   "story_id": 11556349,
+   "story_title": "Why Uber Won",
+   "story_url": "https://news.greylock.com/why-uber-won-5598a2a66561#.hz33sst9k",
+   "updated_at": "2024-09-19T23:08:39Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ezxs"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "Many Cloud startups have built their business models assuming that the cost of acquiring a customer can be recouped in a reasonable amount of time through recurring revenue.   These calculations based on Customer Acquisition Costs (<em>CAC</em>) and Long Term Value of the customers (<em>LTV</em>) have omitted a major factor in running a recurring revenue business \u2013 Customer Management Costs (CMC).  As a result, a lot of the Cloud Startups are overvalued because <em>investors</em> incorrectly assume there will be little or no marginal cost to maintain recurring revenue from existing customers."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Most of the Cloud Business Models Have Been Wrong"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.mikebz.com/2016/02/most-of-cloud-business-models-have-been.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ezxs",
+    "story_11114448"
+   ],
+   "author": "ezxs",
+   "comment_text": "Many Cloud startups have built their business models assuming that the cost of acquiring a customer can be recouped in a reasonable amount of time through recurring revenue.   These calculations based on Customer Acquisition Costs (CAC) and Long Term Value of the customers (LTV) have omitted a major factor in running a recurring revenue business \u2013 Customer Management Costs (CMC).  As a result, a lot of the Cloud Startups are overvalued because investors incorrectly assume there will be little or no marginal cost to maintain recurring revenue from existing customers.",
+   "created_at": "2016-02-17T01:16:54Z",
+   "created_at_i": 1455671814,
+   "objectID": "11114451",
+   "parent_id": 11114448,
+   "story_id": 11114448,
+   "story_title": "Most of the Cloud Business Models Have Been Wrong",
+   "story_url": "http://www.mikebz.com/2016/02/most-of-cloud-business-models-have-been.html",
+   "updated_at": "2024-09-19T22:48:50Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "richmarr"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "Yeah, good comment. I had a few of these thoughts myself in the early days but I think you're missing the main value of it. Apologies for the over-wordy reply.<p>&gt; leveraging the fact that good drivers tend to know good drivers<p>I think humans might overestimate our ability to pick 'good' drivers. I wouldn't trust it very far... but it also doesn't matter much.<p>What matters is  badly underpriced drivers, for example your mate who drinks and drives but doesn't yet have a conviction for it. Don't invite him. Everyone else is broadly fine.<p>&gt; ...there could be a social pressure to not affect the group's members<p>That's a factor we're expecting to be able to measure, but it's not part of the business model per se.<p>&gt; The function of your company would be similar to that of the traditional insurer except all of the premiums go to the pool for claims and admin instead of also having to share it with shareholders/<em>investors</em>.<p>Yeah, broadly speaking. Guevara's revenue stream is a flat fee, compared to a conventional insurer whose income is your premiums... so Guevara isn't motivated to inflate your premium or to look for technicalities when handling claims.<p>&gt; when claims are more than what's already in the pool?<p>The UK motor insurance market requires policies to have uncapped liability, so you always need reinsurance. Even when you're insured through Admiral et al the larger claims are farmed out to Munich Re, Swiss Re, Trans Re, etc.<p>&gt; ... premiums would have to go up to cover the loss...<p>To an extent, yeah. You do get price volatility, but we cap it at 100% of your (competitive) Year 1 premium. Your premium can drop as low as 25-30% of your typical market rate in a good year, and averages out costing about 50%. You get that huge discount in exchange for taking that volatility.<p>That discount is effectively the underwriting profit that would normally go to the insurance company.<p>&gt; ...so you're banking on the fact that by group selection, claims will be less than the average.<p>We're not banking on group selection being meaningful to our claims rate. We <i>hope</i> for lower claims rates, and lower average claim size, but we'll be very successful without those things because it's simply a better business model. There's much less moral hazard, lower susceptibility to fraud, less information asymmetry... but more importantly (a) as you build up capital your premium drops, so you get a lower price and we get a higher <em>LTV</em> through reduced churn, and (b) we have a lower <em>CAC</em> compared to conventional insurers. I know I'm biased but I think it's a strong model even before any of the behavioural benefits.<p>I should add that I have now stepped back from Guevara (I can't commit enough time for family reasons), so my knowledge of product pricing, policy, and the rest of this stuff is dating rapidly."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Peer-to-Peer Insurance"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://en.wikipedia.org/wiki/Peer-to-peer_insurance"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_richmarr",
+    "story_10311357"
+   ],
+   "author": "richmarr",
+   "children": [
+    10316663,
+    10318250
+   ],
+   "comment_text": "Yeah, good comment. I had a few of these thoughts myself in the early days but I think you&#x27;re missing the main value of it. Apologies for the over-wordy reply.<p>&gt; leveraging the fact that good drivers tend to know good drivers<p>I think humans might overestimate our ability to pick &#x27;good&#x27; drivers. I wouldn&#x27;t trust it very far... but it also doesn&#x27;t matter much.<p>What matters is  badly underpriced drivers, for example your mate who drinks and drives but doesn&#x27;t yet have a conviction for it. Don&#x27;t invite him. Everyone else is broadly fine.<p>&gt; ...there could be a social pressure to not affect the group&#x27;s members<p>That&#x27;s a factor we&#x27;re expecting to be able to measure, but it&#x27;s not part of the business model per se.<p>&gt; The function of your company would be similar to that of the traditional insurer except all of the premiums go to the pool for claims and admin instead of also having to share it with shareholders&#x2F;investors.<p>Yeah, broadly speaking. Guevara&#x27;s revenue stream is a flat fee, compared to a conventional insurer whose income is your premiums... so Guevara isn&#x27;t motivated to inflate your premium or to look for technicalities when handling claims.<p>&gt; when claims are more than what&#x27;s already in the pool?<p>The UK motor insurance market requires policies to have uncapped liability, so you always need reinsurance. Even when you&#x27;re insured through Admiral et al the larger claims are farmed out to Munich Re, Swiss Re, Trans Re, etc.<p>&gt; ... premiums would have to go up to cover the loss...<p>To an extent, yeah. You do get price volatility, but we cap it at 100% of your (competitive) Year 1 premium. Your premium can drop as low as 25-30% of your typical market rate in a good year, and averages out costing about 50%. You get that huge discount in exchange for taking that volatility.<p>That discount is effectively the underwriting profit that would normally go to the insurance company.<p>&gt; ...so you&#x27;re banking on the fact that by group selection, claims will be less than the average.<p>We&#x27;re not banking on group selection being meaningful to our claims rate. We <i>hope</i> for lower claims rates, and lower average claim size, but we&#x27;ll be very successful without those things because it&#x27;s simply a better business model. There&#x27;s much less moral hazard, lower susceptibility to fraud, less information asymmetry... but more importantly (a) as you build up capital your premium drops, so you get a lower price and we get a higher LTV through reduced churn, and (b) we have a lower CAC compared to conventional insurers. I know I&#x27;m biased but I think it&#x27;s a strong model even before any of the behavioural benefits.<p>I should add that I have now stepped back from Guevara (I can&#x27;t commit enough time for family reasons), so my knowledge of product pricing, policy, and the rest of this stuff is dating rapidly.",
+   "created_at": "2015-10-01T21:24:35Z",
+   "created_at_i": 1443734675,
+   "objectID": "10314846",
+   "parent_id": 10312911,
+   "story_id": 10311357,
+   "story_title": "Peer-to-Peer Insurance",
+   "story_url": "https://en.wikipedia.org/wiki/Peer-to-peer_insurance",
+   "updated_at": "2024-09-19T22:19:52Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mikekoscinski"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "In addition to (or instead of) a 20% discount, a referral system might be interesting to you. 'Refer a friend and you each get one month free', or something to that effect.<p>Paid ads are pretty expensive in everything financial services because churns are low and thus <em>LTVs</em> are so high. So, if you want to grow this, paid ads will be tricky to make work. Never mind that you should stay organic as long as you <em>can</em>.<p>Serious <em>investors</em> seem to make a habit of knowing other serious <em>investors</em>. Often, in large quantities. There might be something interesting to explore there."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: IPOs.fyi \u2013 Missing Out on IPOs Was Frustrating, So I Fixed It"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://ipos.fyi"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mikekoscinski",
+    "story_23930591"
+   ],
+   "author": "mikekoscinski",
+   "comment_text": "In addition to (or instead of) a 20% discount, a referral system might be interesting to you. &#x27;Refer a friend and you each get one month free&#x27;, or something to that effect.<p>Paid ads are pretty expensive in everything financial services because churns are low and thus LTVs are so high. So, if you want to grow this, paid ads will be tricky to make work. Never mind that you should stay organic as long as you can.<p>Serious investors seem to make a habit of knowing other serious investors. Often, in large quantities. There might be something interesting to explore there.",
+   "created_at": "2020-07-23T21:32:24Z",
+   "created_at_i": 1595539944,
+   "objectID": "23932513",
+   "parent_id": 23930604,
+   "story_id": 23930591,
+   "story_title": "Show HN: IPOs.fyi \u2013 Missing Out on IPOs Was Frustrating, So I Fixed It",
+   "story_url": "https://ipos.fyi",
+   "updated_at": "2024-09-20T06:35:33Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "PragmaticPulp"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "&gt; Currently employees in reality, are provided 0.00001% of the company.<p>0.00001% of Amazon's entire revenue (not profit, but revenue) last year would be about $14,000.<p>Fortunately, every one of their full time employees is paid more than that. Entry level engineers make 10X that amount and the best engineers make 50X that or more.<p>At some of the most highly paid companies like Uber, paying employees according to the value they create would actually make salaries go <i>down</i> in every scenario, because the company is still fueled by <em>investor</em> funds and <em>can</em>'t self-sustain on revenue alone.<p>After round-tripping from IC to manager and back a couple times, I've come to realize that the value given to engineers especially is extremely high. Many initiatives in the tech industry don't ever turn a profit for the company or <em>investors</em>, yet we get paid six figures all the same.<p>If anything, I would expect such a hypothetical initiative to redistribute more of the wealth <i>away</i> from engineers like us and toward people like the customer support team who are fixing all of the problems created by products that don't work quite right. The person on the phone with grandma walking them through a support issue arguably contributes more to the <em>LTV</em> of that customer than anyone else.<p>Stepping outside of tech, I think people imagine profits to be much higher than they are in reality. Grocery stores are a common example of a business that has very narrow profit margins (some times a couple percent) that don't actually have large amounts of leftover profit to distribute to employees.<p>Regardless, it's all hypothetical. The employment market is supply and demand, and that's why engineers are paid so highly. End of story."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "A better way to divide the pie"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://insights.som.yale.edu/insights/better-way-to-divide-the-pie"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_PragmaticPulp",
+    "story_30743841"
+   ],
+   "author": "PragmaticPulp",
+   "comment_text": "&gt; Currently employees in reality, are provided 0.00001% of the company.<p>0.00001% of Amazon&#x27;s entire revenue (not profit, but revenue) last year would be about $14,000.<p>Fortunately, every one of their full time employees is paid more than that. Entry level engineers make 10X that amount and the best engineers make 50X that or more.<p>At some of the most highly paid companies like Uber, paying employees according to the value they create would actually make salaries go <i>down</i> in every scenario, because the company is still fueled by investor funds and can&#x27;t self-sustain on revenue alone.<p>After round-tripping from IC to manager and back a couple times, I&#x27;ve come to realize that the value given to engineers especially is extremely high. Many initiatives in the tech industry don&#x27;t ever turn a profit for the company or investors, yet we get paid six figures all the same.<p>If anything, I would expect such a hypothetical initiative to redistribute more of the wealth <i>away</i> from engineers like us and toward people like the customer support team who are fixing all of the problems created by products that don&#x27;t work quite right. The person on the phone with grandma walking them through a support issue arguably contributes more to the LTV of that customer than anyone else.<p>Stepping outside of tech, I think people imagine profits to be much higher than they are in reality. Grocery stores are a common example of a business that has very narrow profit margins (some times a couple percent) that don&#x27;t actually have large amounts of leftover profit to distribute to employees.<p>Regardless, it&#x27;s all hypothetical. The employment market is supply and demand, and that&#x27;s why engineers are paid so highly. End of story.",
+   "created_at": "2022-03-20T18:35:51Z",
+   "created_at_i": 1647801351,
+   "objectID": "30745298",
+   "parent_id": 30744838,
+   "story_id": 30743841,
+   "story_title": "A better way to divide the pie",
+   "story_url": "https://insights.som.yale.edu/insights/better-way-to-divide-the-pie",
+   "updated_at": "2024-09-20T10:45:53Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "acrooks"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "Their 2024 revenue was estimated at $16.8M [1] and $10.5M in 2023. If you extrapolate that growth rate +1 year you <em>can</em> assume it's now $26.9M. Another source estimates it at $15M in 2025 [2].<p>So if you assume their revenue is in that range, you're looking at 66x to 133x ARR multiple. In today's market that's quite a big markup. Standard SaaS right now is probably more like 5-15x. AI is a lot more (but Supabase isn't AI). But they are a key leader in their market, so probably get a meaningful bonus for that. And I'm sure a lot of big industry <em>investors</em> were competing against each other for the Supabase deal, so that definitely would have helped valuation too. Also, at their maturity today, they are probably showing some great success signing big enterprise deals and telling a story about how that will grow.<p>That being said, those factors alone don't answer 66-133x. Perhaps Supabase's strongest angle is their opportunity for product-led growth:<p>- They have a huge number of people on a free tier<p>- The growth rate of free tier users might be accelerating<p>- The conversion rate of free tier users to paid users might also be increasing<p>- They're adding more things that people <em>can</em> pay for, increasing <em>LTV</em> of customers. e.g., for my business, we probably 20x our Supabase cost in the last 6 months - most of that is due to our growth but also there are a lot of things we <em>can</em> buy from Supabase beyond compute.<p>So I would assume, in addition to the above, they're telling a story about their actual revenue growth rate will accelerate meaningfully because of all of these factors working together.<p>Lots of assumptions in here, but you <em>can</em> start to see how a lot of different factors + a hype multiple could lead to such a valuation.<p>[1] <a href=\"https://getlatka.com/companies/supabase.com#revenue\" rel=\"nofollow\">https://getlatka.com/companies/supabase.com#revenue</a><p>[2] <a href=\"https://leadiq.com/c/supabase/5ed1e4778a998f161ef62998\" rel=\"nofollow\">https://leadiq.com/c/supabase/5ed1e4778a998f161ef62998</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Supabase raises $200M Series D at $2B valuation"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://finance.yahoo.com/news/exclusive-supabase-raises-200-million-112154867.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_acrooks",
+    "story_43763225"
+   ],
+   "author": "acrooks",
+   "children": [
+    43773837
+   ],
+   "comment_text": "Their 2024 revenue was estimated at $16.8M [1] and $10.5M in 2023. If you extrapolate that growth rate +1 year you can assume it&#x27;s now $26.9M. Another source estimates it at $15M in 2025 [2].<p>So if you assume their revenue is in that range, you&#x27;re looking at 66x to 133x ARR multiple. In today&#x27;s market that&#x27;s quite a big markup. Standard SaaS right now is probably more like 5-15x. AI is a lot more (but Supabase isn&#x27;t AI). But they are a key leader in their market, so probably get a meaningful bonus for that. And I&#x27;m sure a lot of big industry investors were competing against each other for the Supabase deal, so that definitely would have helped valuation too. Also, at their maturity today, they are probably showing some great success signing big enterprise deals and telling a story about how that will grow.<p>That being said, those factors alone don&#x27;t answer 66-133x. Perhaps Supabase&#x27;s strongest angle is their opportunity for product-led growth:<p>- They have a huge number of people on a free tier<p>- The growth rate of free tier users might be accelerating<p>- The conversion rate of free tier users to paid users might also be increasing<p>- They&#x27;re adding more things that people can pay for, increasing LTV of customers. e.g., for my business, we probably 20x our Supabase cost in the last 6 months - most of that is due to our growth but also there are a lot of things we can buy from Supabase beyond compute.<p>So I would assume, in addition to the above, they&#x27;re telling a story about their actual revenue growth rate will accelerate meaningfully because of all of these factors working together.<p>Lots of assumptions in here, but you can start to see how a lot of different factors + a hype multiple could lead to such a valuation.<p>[1] <a href=\"https:&#x2F;&#x2F;getlatka.com&#x2F;companies&#x2F;supabase.com#revenue\" rel=\"nofollow\">https:&#x2F;&#x2F;getlatka.com&#x2F;companies&#x2F;supabase.com#revenue</a><p>[2] <a href=\"https:&#x2F;&#x2F;leadiq.com&#x2F;c&#x2F;supabase&#x2F;5ed1e4778a998f161ef62998\" rel=\"nofollow\">https:&#x2F;&#x2F;leadiq.com&#x2F;c&#x2F;supabase&#x2F;5ed1e4778a998f161ef62998</a>",
+   "created_at": "2025-04-22T16:59:57Z",
+   "created_at_i": 1745341197,
+   "objectID": "43764178",
+   "parent_id": 43763357,
+   "story_id": 43763225,
+   "story_title": "Supabase raises $200M Series D at $2B valuation",
+   "story_url": "https://finance.yahoo.com/news/exclusive-supabase-raises-200-million-112154867.html",
+   "updated_at": "2025-04-24T08:06:12Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "habosa"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "I personally did not even know that my membership entitled me to vote on anything, so it's possible I am not the only one.<p>REI is a great example of how you <em>can</em> invest in long-term customer loyalty rather than short-term gains and win.  I buy pretty much all of my camping/hiking/outdoor gear at REI because I know that even though I might save 10% elsewhere the people at REI will support my purchase forever and help me get the right gear.  I know a lot of other people who make the same decision.  It's one of the only shopping verticals where I don't aggressively price hunt because I am just so happy with the experience at REI.<p>I think we would see this type of corporate behavior in more industries  if <em>investors</em> had the patience for it.  You <em>can</em> massively increase customer <em>LTV</em> and reduce churn by spending some money to make people happy."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "As REI thrives, does it have members or merely shoppers?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.seattletimes.com/business/retail/as-rei-thrives-does-it-have-members-or-merely-shoppers/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_habosa",
+    "story_10962735"
+   ],
+   "author": "habosa",
+   "comment_text": "I personally did not even know that my membership entitled me to vote on anything, so it&#x27;s possible I am not the only one.<p>REI is a great example of how you can invest in long-term customer loyalty rather than short-term gains and win.  I buy pretty much all of my camping&#x2F;hiking&#x2F;outdoor gear at REI because I know that even though I might save 10% elsewhere the people at REI will support my purchase forever and help me get the right gear.  I know a lot of other people who make the same decision.  It&#x27;s one of the only shopping verticals where I don&#x27;t aggressively price hunt because I am just so happy with the experience at REI.<p>I think we would see this type of corporate behavior in more industries  if investors had the patience for it.  You can massively increase customer LTV and reduce churn by spending some money to make people happy.",
+   "created_at": "2016-01-25T18:25:20Z",
+   "created_at_i": 1453746320,
+   "objectID": "10968850",
+   "parent_id": 10962735,
+   "points": null,
+   "story_id": 10962735,
+   "story_title": "As REI thrives, does it have members or merely shoppers?",
+   "story_url": "http://www.seattletimes.com/business/retail/as-rei-thrives-does-it-have-members-or-merely-shoppers/",
+   "updated_at": "2023-09-07T00:39:24Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jgalt212"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "<em>LTV</em>.  That's the key.  With interest rates this low, you <em>can</em> pretty much justify any sales and marketing expense so long as customer attrition is low.<p>If New Relic has a USP (I am not qualified to weigh in on this), then I think they <em>can</em> go public and reward their <em>investors</em> with at least a market level return."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "New Relic files S-1 for IPO"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://newrelic.com/press-release/20141110"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_jgalt212",
+    "story_8587248"
+   ],
+   "author": "jgalt212",
+   "children": [
+    8588275
+   ],
+   "comment_text": "LTV.  That&#x27;s the key.  With interest rates this low, you can pretty much justify any sales and marketing expense so long as customer attrition is low.<p>If New Relic has a USP (I am not qualified to weigh in on this), then I think they can go public and reward their investors with at least a market level return.",
+   "created_at": "2014-11-11T04:06:29Z",
+   "created_at_i": 1415678789,
+   "objectID": "8588241",
+   "parent_id": 8587248,
+   "story_id": 8587248,
+   "story_title": "New Relic files S-1 for IPO",
+   "story_url": "http://newrelic.com/press-release/20141110",
+   "updated_at": "2024-09-19T21:21:25Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "robenalt0"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "I just launched my SaaS business - called Simple Cohort. The core functionality is taking a CSV of raw transaction data and parsing it into cohorts. You <em>can</em> see your retention rate, <em>LTV</em> and gross margins once the file is parsed. You receive the cohorts in a CSV that you <em>can</em> download, so you <em>can</em> take the resulting cohorts and import them to Google Sheets. From there, you <em>can</em> use them to crunch numbers in any way you want. You <em>can</em> use them to prepare critical metrics for your data room for <em>investors</em>.<p>I built this tool as an internal tool for the company I am currently co-founder and CTO of. We are a VC-backed startup preparing for an A round. We use this tool every week and the data drives almost all of our decisions. We also use the data in our data room for <em>investors</em> - we just had a board meeting last week where we went over some data from the cohorts. I figured I'd spin up the tool into it's own business so other early stage startups <em>can</em> try it out.<p>It's free to try, you <em>can</em> run 3 cohorts without paying anything. After 3 cohorts, every additional cohort is $3. You <em>can</em> also buy in bulk for discounted pricing. There's a demo video on the homepage that shows you how to prepare the file you're importing to Simple Cohort. Please let me know if you use it, and if you have any questions!"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "[dead]"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_robenalt0",
+    "story_38259650"
+   ],
+   "author": "robenalt0",
+   "comment_text": "I just launched my SaaS business - called Simple Cohort. The core functionality is taking a CSV of raw transaction data and parsing it into cohorts. You can see your retention rate, LTV and gross margins once the file is parsed. You receive the cohorts in a CSV that you can download, so you can take the resulting cohorts and import them to Google Sheets. From there, you can use them to crunch numbers in any way you want. You can use them to prepare critical metrics for your data room for investors.<p>I built this tool as an internal tool for the company I am currently co-founder and CTO of. We are a VC-backed startup preparing for an A round. We use this tool every week and the data drives almost all of our decisions. We also use the data in our data room for investors - we just had a board meeting last week where we went over some data from the cohorts. I figured I&#x27;d spin up the tool into it&#x27;s own business so other early stage startups can try it out.<p>It&#x27;s free to try, you can run 3 cohorts without paying anything. After 3 cohorts, every additional cohort is $3. You can also buy in bulk for discounted pricing. There&#x27;s a demo video on the homepage that shows you how to prepare the file you&#x27;re importing to Simple Cohort. Please let me know if you use it, and if you have any questions!",
+   "created_at": "2023-11-14T05:53:17Z",
+   "created_at_i": 1699941197,
+   "objectID": "38259651",
+   "parent_id": 38259650,
+   "story_id": 38259650,
+   "story_title": "[dead]",
+   "updated_at": "2024-09-20T15:39:24Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "eggie"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "This is the relevant bit:<p>&gt; Fed has created abnormal market conditions by printing money and keeping interest rates low. <em>Investors</em> are looking for growth anywhere they <em>can</em> find it and tech companies are good targets - at these values, however, all tech stocks are expensive - even looking at 5+ years of revenue growth down the road. This means that most value-driven <em>investors</em> have left the market and the remaining 5-10%+ increase in market value will be driven by momentum <em>investors</em>. At some point there won't be any momentum <em>investors</em> left buying at higher prices, and the market begins to tumble. May be 10-20% correction or something more significant, especially in tech stocks. Facebook has continued to perform in the market despite declining user engagement and pullback of brand advertising dollars -- largely due to mobile advertising performance - especially App Install advertisements. This is a huge red flag because it indicates that sustainable brand dollars have not yet moved to Facebook mobile platform and mobile revenue growth has been driven by technology companies (many of which are VC funded). VC dollars are being spent on user acquisition despite unknown <em>LTV</em> of users - a recipe for disaster. This props up Facebook share price and continues to justify VC investment in technology products based on abnormally large mkt cap companies (i.e. &quot;If this company attracts just 5% of users that FB has, it will be HUGE&quot; - fuels spend on user acquisition as user growth is tied to values). When the market for tech stocks cools, Facebook market cap will plummet, access to capital for unproven businesses will become inaccessible, and ad spend on user acquisition will rapidly decrease - compounding problems for Facebook and driving stock even lower. Instagram may be only saving grace if they are able to ramp advertising product fast enough. Total internet advertising spend cannot justify outsized valuations of social media products that derive revenue from advertising. Feed-based advertising units will plummet in value (in the case of Twitter, advertising spend may not move beyond experimental dollars) similar to earlier devaluing of Internet display advertising."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "How the second tech bubble will burst"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.goldworth.com/index.php/82-our-blog/7254-how-the-second-tech-bubble-will-burst-in-the-words-of-silicon-valley-s-poster-child-and-world-s-youngest"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_eggie",
+    "story_9617185"
+   ],
+   "author": "eggie",
+   "comment_text": "This is the relevant bit:<p>&gt; Fed has created abnormal market conditions by printing money and keeping interest rates low. Investors are looking for growth anywhere they can find it and tech companies are good targets - at these values, however, all tech stocks are expensive - even looking at 5+ years of revenue growth down the road. This means that most value-driven investors have left the market and the remaining 5-10%+ increase in market value will be driven by momentum investors. At some point there won&#x27;t be any momentum investors left buying at higher prices, and the market begins to tumble. May be 10-20% correction or something more significant, especially in tech stocks. Facebook has continued to perform in the market despite declining user engagement and pullback of brand advertising dollars -- largely due to mobile advertising performance - especially App Install advertisements. This is a huge red flag because it indicates that sustainable brand dollars have not yet moved to Facebook mobile platform and mobile revenue growth has been driven by technology companies (many of which are VC funded). VC dollars are being spent on user acquisition despite unknown LTV of users - a recipe for disaster. This props up Facebook share price and continues to justify VC investment in technology products based on abnormally large mkt cap companies (i.e. &quot;If this company attracts just 5% of users that FB has, it will be HUGE&quot; - fuels spend on user acquisition as user growth is tied to values). When the market for tech stocks cools, Facebook market cap will plummet, access to capital for unproven businesses will become inaccessible, and ad spend on user acquisition will rapidly decrease - compounding problems for Facebook and driving stock even lower. Instagram may be only saving grace if they are able to ramp advertising product fast enough. Total internet advertising spend cannot justify outsized valuations of social media products that derive revenue from advertising. Feed-based advertising units will plummet in value (in the case of Twitter, advertising spend may not move beyond experimental dollars) similar to earlier devaluing of Internet display advertising.",
+   "created_at": "2015-05-28T10:56:52Z",
+   "created_at_i": 1432810612,
+   "objectID": "9617194",
+   "parent_id": 9617185,
+   "story_id": 9617185,
+   "story_title": "How the second tech bubble will burst",
+   "story_url": "http://www.goldworth.com/index.php/82-our-blog/7254-how-the-second-tech-bubble-will-burst-in-the-words-of-silicon-valley-s-poster-child-and-world-s-youngest",
+   "updated_at": "2024-09-19T21:55:12Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "chrdlu"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "Evan Spiegel's view of everything got leaked with the Sony Hack. Take it for what its worth:<p>Fed has created abnormal market conditions by printing money and keeping interest rates low. <em>Investors</em> are looking for growth anywhere they <em>can</em> find it and tech companies are good targets - at these values, however, all tech stocks are expensive - even looking at 5+ years of revenue growth down the road. This means that most value-driven <em>investors</em> have left the market and the remaining 5-10%+ increase in market value will be driven by momentum <em>investors</em>. At some point there won't be any momentum <em>investors</em> left buying at higher prices, and the market begins to tumble. May be 10-20% correction or something more significant, especially in tech stocks. Facebook has continued to perform in the market despite declining user engagement and pullback of brand advertising dollars -- largely due to mobile advertising performance - especially App Install advertisements. This is a huge red flag because it indicates that sustainable brand dollars have not yet moved to Facebook mobile platform and mobile revenue growth has been driven by technology companies (many of which are VC funded). VC dollars are being spent on user acquisition despite unknown <em>LTV</em> of users - a recipe for disaster. This props up Facebook share price and continues to justify VC investment in technology products based on abnormally large mkt cap companies (i.e. &quot;If this company attracts just 5% of users that FB has, it will be HUGE&quot; - fuels spend on user acquisition as user growth is tied to values). When the market for tech stocks cools, Facebook market cap will plummet, access to capital for unproven businesses will become inaccessible, and ad spend on user acquisition will rapidly decrease - compounding problems for Facebook and driving stock even lower. Instagram may be only saving grace if they are able to ramp advertising product fast enough. Total internet advertising spend cannot justify outsized valuations of social media products that derive revenue from advertising. Feed-based advertising units will plummet in value (in the case of Twitter, advertising spend may not move beyond experimental dollars) similar to earlier devaluing of Internet display advertising."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "At Harvard, Wharton, Columbia, MBA startup fever takes hold"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://fortune.com/2015/01/03/business-school-startups-entrepreneurs/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_chrdlu",
+    "story_8835229"
+   ],
+   "author": "chrdlu",
+   "children": [
+    8836768
+   ],
+   "comment_text": "Evan Spiegel&#x27;s view of everything got leaked with the Sony Hack. Take it for what its worth:<p>Fed has created abnormal market conditions by printing money and keeping interest rates low. Investors are looking for growth anywhere they can find it and tech companies are good targets - at these values, however, all tech stocks are expensive - even looking at 5+ years of revenue growth down the road. This means that most value-driven investors have left the market and the remaining 5-10%+ increase in market value will be driven by momentum investors. At some point there won&#x27;t be any momentum investors left buying at higher prices, and the market begins to tumble. May be 10-20% correction or something more significant, especially in tech stocks. Facebook has continued to perform in the market despite declining user engagement and pullback of brand advertising dollars -- largely due to mobile advertising performance - especially App Install advertisements. This is a huge red flag because it indicates that sustainable brand dollars have not yet moved to Facebook mobile platform and mobile revenue growth has been driven by technology companies (many of which are VC funded). VC dollars are being spent on user acquisition despite unknown LTV of users - a recipe for disaster. This props up Facebook share price and continues to justify VC investment in technology products based on abnormally large mkt cap companies (i.e. &quot;If this company attracts just 5% of users that FB has, it will be HUGE&quot; - fuels spend on user acquisition as user growth is tied to values). When the market for tech stocks cools, Facebook market cap will plummet, access to capital for unproven businesses will become inaccessible, and ad spend on user acquisition will rapidly decrease - compounding problems for Facebook and driving stock even lower. Instagram may be only saving grace if they are able to ramp advertising product fast enough. Total internet advertising spend cannot justify outsized valuations of social media products that derive revenue from advertising. Feed-based advertising units will plummet in value (in the case of Twitter, advertising spend may not move beyond experimental dollars) similar to earlier devaluing of Internet display advertising.",
+   "created_at": "2015-01-04T23:12:49Z",
+   "created_at_i": 1420413169,
+   "objectID": "8836292",
+   "parent_id": 8836135,
+   "points": null,
+   "story_id": 8835229,
+   "story_title": "At Harvard, Wharton, Columbia, MBA startup fever takes hold",
+   "story_url": "http://fortune.com/2015/01/03/business-school-startups-entrepreneurs/",
+   "updated_at": "2023-09-06T23:11:49Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "asanwal"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ltv",
+      "cac",
+      "investors"
+     ],
+     "value": "I'm skeptical Box <em>can</em> course-correct.<p>They are in a hyper-competitive space with margin pressure and also seem to have pretty poor SaaS fundamentals (high Customer acquisition costs and illusory <em>LTV</em>)<p>Fred felt they could slash their cash burn to put the company on better footing but that kills the growth story that they were pitching to public market <em>investors</em>.<p>The good news in all of this is that it counters to some degree the notion of a bubble as companies with crappy fundamentals are not able to IPO."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The Valuation Trap"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://avc.com/2014/05/the-valuation-trap/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_asanwal",
+    "story_7693980"
+   ],
+   "author": "asanwal",
+   "children": [
+    7694649
+   ],
+   "comment_text": "I&#x27;m skeptical Box can course-correct.<p>They are in a hyper-competitive space with margin pressure and also seem to have pretty poor SaaS fundamentals (high Customer acquisition costs and illusory LTV)<p>Fred felt they could slash their cash burn to put the company on better footing but that kills the growth story that they were pitching to public market investors.<p>The good news in all of this is that it counters to some degree the notion of a bubble as companies with crappy fundamentals are not able to IPO.",
+   "created_at": "2014-05-04T13:06:59Z",
+   "created_at_i": 1399208819,
+   "objectID": "7694135",
+   "parent_id": 7693980,
+   "story_id": 7693980,
+   "story_title": "The Valuation Trap",
+   "story_url": "http://avc.com/2014/05/the-valuation-trap/",
+   "updated_at": "2024-09-19T20:49:43Z"
+  }
+ ],
+ "hitsPerPage": 30,
+ "nbHits": 48,
+ "nbPages": 2,
+ "page": 0,
+ "params": "query=LTV+CAC+investors&tags=comment&hitsPerPage=30&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 36,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 15
+  },
+  "afterFetch": {
+   "format": {
+    "highlighting": 2,
+    "total": 3
+   },
+   "merge": {
+    "mergeLoop": {
+     "prepareNextHit": 11,
+     "total": 11
+    },
+    "total": 12
+   },
+   "total": 13
+  },
+  "fetch": {
+   "query": 12,
+   "scanning": 10,
+   "total": 23
+  },
+  "total": 36
+ },
+ "query": "LTV CAC investors",
+ "serverTimeMS": 40
+}

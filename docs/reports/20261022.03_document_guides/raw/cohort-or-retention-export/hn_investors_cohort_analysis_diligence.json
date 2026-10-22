@@ -1,0 +1,28 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [],
+ "hitsPerPage": 30,
+ "nbHits": 0,
+ "nbPages": 0,
+ "page": 0,
+ "params": "query=investor+diligence+cohort+analysis+retention+revenue&tags=comment&hitsPerPage=30&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 151,
+ "processingTimingsMS": {
+  "_request": {
+   "queue": 1,
+   "roundTrip": 16
+  },
+  "fetch": {
+   "query": 150,
+   "total": 150
+  },
+  "total": 151
+ },
+ "query": "investor diligence cohort analysis retention revenue",
+ "serverTimeMS": 152
+}
