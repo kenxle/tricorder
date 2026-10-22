@@ -1692,17 +1692,20 @@ def build_deck():
     # 9 Competition
     page(9, "Competition")
     x = 48
-    for name, line in (("Answering services", "People read a script and take a message. No booking, no refills."),
-                       ("Generic AI receptionists", "Built for any business. They do not know a vet clinic's calls."),
-                       ("Practice software add-ons", "Tied to one system and rarely answer the phone well."),
-                       ("Hollis Voice", "Built for vet clinics: vaccine reminders, refills and emergency routing.")):
+    for name, line, examples in (("Answering services", "People read a script and take a message. No booking, no refills.", "Ambs Call Center, Specialty Answering Service"),
+                                 ("Generic AI receptionists", "Built for any business. They do not know a vet clinic's calls.", "Dialzara, MyAIFrontDesk"),
+                                 ("Practice software add-ons", "Tied to one system and rarely answer the phone well.", "VetRec AI Receptionist"),
+                                 ("Hollis Voice", "Built for vet clinics: vaccine reminders, refills and emergency routing.", None)):
         c.setFillColor(NAVY if name == "Hollis Voice" else LIGHT)
         c.roundRect(x, 190, 208, 220, 8, fill=1, stroke=0)
         c.setFillColor(colors.white if name == "Hollis Voice" else NAVY)
         c.setFont("Helvetica-Bold", 17)
         for i, ln in enumerate(simpleSplit(name, "Helvetica-Bold", 17, 176)):
             c.drawString(x + 16, 380 - i * 22, ln)
-        para(line, x + 16, 330, 176, 14, 19, color=colors.white if name == "Hollis Voice" else colors.black)
+        end_y = para(line, x + 16, 330, 176, 14, 19, color=colors.white if name == "Hollis Voice" else colors.black)
+        if examples:
+            para("For example:", x + 16, end_y - 10, 176, 11, 15, color=GREYTXT)
+            para(examples, x + 16, end_y - 26, 176, 13, 17, bold=True, color=NAVY)
         x += 224
     c.showPage()
 
