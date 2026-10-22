@@ -358,3 +358,9 @@ Added 2026-10-22 at 2:46 PM, on the same comment:
 > and we should actually set up a few different data rooms that will allow us to highlight different problems. the data rooms will need to be a little bit templated, so we can swap in new names on the fly, but we should make data rooms with hidden isseus in them, based on the problems we saw in the reserach. this can be on the roadmap
 
 Settled: the generator becomes a template engine (`room-templates` on the roadmap): a company profile swapped in on the fly, a library of hidden issues drawn from the research's problems, green flags and decoys, and saved recipes, one per problem story. Real-company rooms are built from it with the 2:44 PM safeguard.
+
+Added 2026-10-22 at 2:49 PM, Ken's closing note on the data-room research:
+
+> ok i'm done here. make sure my feedback propagates to all the correct docs. we want to have a list of YC companies and we'll pair them with fake data rooms and run live demos on them
+
+Settled: the demo pairs real YC companies (from a list Ken approves) with fake data rooms built from the room templates, and runs live: the outside-world scan reads each real company's public footprint during the demo, while the room's documents are invented and labelled synthetic. Hollis Voice and the second invented company stay as the controlled rooms whose planted flags are known. The product brief's demo section, the brand doc's pitch to judges, the founder brief's workflow, the roadmap's demo slices and the overview page's demo cards follow this.
