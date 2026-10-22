@@ -312,7 +312,7 @@ Hacking runs 10:30 to 4:30 by the schedule. The Luma page also says nine hours; 
 </tbody>
 </table></div>
 
-Written this week by agents, per the critics: the skeleton with the Claim schema and the readers stub, the blind room (plants-off switch, second seed, a sealed variant key), the cached signals readings, the social posts. Cut order when the morning runs long: the model readings, then comps, then the pitch video. The red-flag engine, the readout and its page are never cut.
+Written this week by agents, per the critics: the skeleton with the Claim schema and the readers stub, the blind room (plants-off switch, second seed, a sealed variant key), the cached signals readings, the social posts. Cut order when the morning runs long: the model readings, then market signals, then comps, then the pitch video; inside the page, the reorder buttons go first. The red-flag engine, the readout and its page are never cut ([ROADMAP.md](../../ongoing/ROADMAP.md), "Cut order").
 
 ## What the critics said
 

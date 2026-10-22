@@ -23,7 +23,7 @@ Alternatives, and why not:
 
 ## Folder layout
 
-One folder per person, so Saturday's pull requests do not touch the same files. Owners follow the feasibility research's Part 4.1, with market signals given to backend-and-data.
+One folder per person, so Saturday's pull requests do not touch the same files. Owners match the roadmap's "Who owns what" table, which is the source of truth when they differ.
 
 | Folder | What it holds | Owner on Saturday |
 |---|---|---|
@@ -31,11 +31,13 @@ One folder per person, so Saturday's pull requests do not touch the same files. 
 | `scans/memo/` | Merges the scan results into the readout. | captain |
 | `eval/` | Scores a readout against the answer key. | captain |
 | `demo/` | The demo script's files and the frozen outputs. | captain |
-| `readout/` | The React readout page. | frontend |
+| `readout/` | The React readout page, including the static market-signals panel. | frontend |
 | root files, `server/`, `bin/` | Dependency list, CI, `.env.example`, the FastAPI app, `bin/ci-py`, `bin/ci-web` and `bin/smoke`. | backend-and-data |
-| `scans/video/`, `scans/signals/` | Pitch video and market signals. | backend-and-data |
+| `schema/readers.py` | The shared file readers every scan and the quote checker import. | backend-and-data |
+| `scans/video/`, `scans/readings/` | Pitch video, and the model readings (the pilot clause and the cohort note; cut first). | backend-and-data |
+| `scans/signals/` | This week's cached competitor readings, which the readout page shows as a static panel. Written this week. | agent |
 | `scans/redflags/`, `scans/comps/` | Red-flag engine and comps. | design-and-finance |
-| `scans/frameworks/`, `scans/presence/`, `scans/founders/` | After Saturday. | agent |
+| `scans/frameworks/`, `scans/presence/`, `scans/founders/`, `scans/outside/` | After Saturday; `scans/outside/` is the associate's ten tabs. | agent |
 | `data_room/` | The generator, the two rooms (`hollis_voice/` and `hollis_voice_seed_drop/`) and the answer key `answer_key.json`. Written this week. | agent |
 | `cache/` | Outside data saved this week: Form D, XBRL facts, Akta pulls, pricing pages. | agent |
 | `sample_out/` | Hand-written example results, one per scan. | captain |
