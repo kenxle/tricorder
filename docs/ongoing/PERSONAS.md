@@ -281,6 +281,7 @@ Its evidence does not name a stage. It sits under Series A as the writers' brief
 
 This is a marketing question, separate from say, do and pay. It decides whom each message speaks to, not which problems carry the most signal.
 
+- **Two users at a fund: the one who prepares the memo and the ones who read it.** The associate puts it this way: "I still need to write a memo, walk into a partners’ meeting, and convince people who’ve never met you that we should do this deal." ([associate at a seed-focused fund, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)). The preparer, the operator, works in the readout and steers it into a memo. The readers are partners who have never met the founder; they need the memo to stand on its own, and they drill down or run their own what-ifs where they doubt it. Messages to each differ: the preparer is sold time and fewer missed checks, the readers are sold a memo they can verify.
 - **Funds.** A partner or principal decides and pays. The operator, the person working in the readout, is usually the associate who does the first pass today, and at some funds the partner.
 - **Angels.** The same person uses it and pays for it. They already pay for diligence by proxy; [the research gaps](../reports/20261022.02_research/research_gaps.md) look for what a first pass of their own would be worth per deal.
 - **Accelerators.** The screening staff would use it and the program would pay. The research found no program paying for a tool yet.
