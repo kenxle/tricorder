@@ -39,14 +39,14 @@ Each card is written to the recommendation. The alternative is there in case you
 
 ### The edge
 
-<div class="panel panel--cobalt"><p><b>Decided by you at 12:55 PM, from your comment on the product brief.</b> The readout starts as an overview of the company: each piece (traction and revenue, retention, burn and runway, unit economics, customers, market, comps, team, the pitch itself) marked looking strong or looking weak, with the reason in one line. One click drills into the claims behind a piece, and one more into each claim's source and every source that corroborates or contradicts it. Disagreements and red flags are reasons a piece reads weak, one level down. Sourcing alone is still table stakes; the overview plus the corroboration trail is the edge. Recorded in <a href="00_brief_for_writers.md">the writers' brief</a>; the other docs are being brought in line now.</p></div>
+<div class="panel panel--cobalt"><p><b>Decided by you at 12:55 PM and 1:09 PM, from your comment and your edit on the product brief.</b> The readout opens with the best green flags and the worst red flags. Then it breaks into the detail: an overview of the company in pieces (traction and revenue, retention, burn and runway, unit economics, customers, market, comps, team, the pitch itself), each marked looking strong or looking weak with the reason in one line. One click drills into the claims behind a piece, one more into each claim's source and every source that corroborates or contradicts it. Tricorder reads everything about the startup: the deck, the video, the financials and its online presence. Recorded in <a href="00_brief_for_writers.md">the writers' brief</a>; the other docs are being brought in line now.</p></div>
 
 ### The pitch line
 
 The brand doc proposes a tighter line for Saturday's first screen and the founder brief, and leaves the posted line on the network card as is ([BRAND.md](../../ongoing/BRAND.md), "The name and the line").
 
 <div class="options">
-<div class="option"><span class="badge badge--purple">Recommended</span><h4>The proposed line</h4><p>"Point it at a startup's data room, get a readout: what looks strong, what looks weak, and every number two clicks from its sources." Rewritten at 12:55 PM to your overview framing.</p></div>
+<div class="option"><span class="badge badge--purple">Recommended</span><h4>The proposed line</h4><p>"Point it at a startup, get a readout: the best green flags, the worst red flags, and every number two clicks from its sources." Rewritten at 1:09 PM to your edit.</p></div>
 <div class="option"><p class="eyebrow">Option B</p><h4>The posted line</h4><p>"Point it at a startup, get a readout. Thesis-driven sourcing plus a first-pass diligence memo with every claim sourced." Sourcing is in it, and the track is diligence.</p></div>
 </div>
 
@@ -76,14 +76,14 @@ The feasibility research ranked the scans by demo value for the effort. The road
 The roadmap proposed opening on a forwarded pitch email with the readout already waiting. The demo critic says no: the first 20 seconds would go on the one thing on screen that is not real, plus a sentence admitting it ([critique_demo.md](critique_demo.md), finding 2). The judge agrees that what wins is the thing seen working.
 
 <div class="options">
-<div class="option"><span class="badge badge--purple">Recommended</span><h4>Open on the overview, already waiting</h4><p>First screen: Hollis Voice as a scorecard of strong and weak pieces. Then drill into the weakest piece, revenue, where four ARR numbers disagree (about $3.0M said on video, $2.5M in the deck, $2.24M in the model, $2.06M in the billing rows), and into one strong piece whose number two sources corroborate. True, because the run finished before you walked up. The inbound forward becomes the closing "next" line.</p></div>
+<div class="option"><span class="badge badge--purple">Recommended</span><h4>Open on the readout, already waiting</h4><p>First screen: Hollis Voice's best green flags and worst red flags. Then the overview of pieces, then a drill into the weakest piece, revenue, where four ARR numbers disagree (about $3.0M said on video, $2.5M in the deck, $2.24M in the model, $2.06M in the billing rows), and into one strong piece whose number two sources corroborate. True, because the run finished before you walked up. The inbound forward becomes the closing "next" line.</p></div>
 <div class="option"><p class="eyebrow">Option B</p><h4>Open on the forwarded email</h4><p>Your "before you even ask" moment on screen first. Started by hand today, and you say so.</p></div>
 <div class="option"><p class="eyebrow">Option C</p><h4>Build the real forward on Saturday</h4><p>A small inbox-polling script needs no OAuth review. Only if the red-flag engine and the readout are done at the 2:30 cut call.</p></div>
 </div>
 
 <div class="choice" data-choice="demo-opening">
 <p class="choice-q">What is on screen first?</p>
-<button type="button" value="overview-first" data-recommended>The overview, then drill-downs</button>
+<button type="button" value="flags-then-overview" data-recommended>Top green and red flags, then the overview</button>
 <button type="button" value="email-first">The forwarded email</button>
 <button type="button" value="build-forward-saturday">Build the real forward if time allows</button>
 </div>

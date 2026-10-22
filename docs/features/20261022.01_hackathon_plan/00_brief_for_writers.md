@@ -183,3 +183,14 @@ Settled, and it replaces "disagreements first" as the shape of the readout and t
 - **Disagreements and red flags stay, one level down.** A disagreement between sources, or a planted red flag, is one of the reasons a piece reads weak; it sits inside that piece's drill-down. The red-flag engine still runs; its output feeds the overview.
 - **The edge** is the overview plus the corroboration trail: a partner sees at a glance what is strong and what is weak, and can check any number in two clicks. Sourcing alone is still table stakes.
 - **The demo** opens on the overview for Hollis Voice, then drills into the weakest piece (revenue: the four ARR numbers from video, deck, model and billing rows) and one strong piece, showing corroboration both ways. The product brief, brand, roadmap, frameworks, founder brief and the overview page's cards follow this.
+
+Added 2026-10-22 at 1:09 PM: Ken edited the product brief's "What it is" paragraph himself. His sentences, as applied:
+
+> Tricorder reads everything about a startup, from its pitch deck and video to its financials to its online presence. It runs a set of scans, each a piece of first-pass diligence. It ends in a readout that gives a partner a detailed understanding of what's great about the business, and where the red flags are. The readout starts with the best green flags and the worst red flags. Then it breaks into the detail.
+
+Settled, and it refines the 12:55 block:
+
+- **The first screen is the best green flags and the worst red flags.** A short headline list: the strongest corroborated positives and the most serious problems. A green flag is as much the product as a red flag.
+- **Then the detail**: the piece-by-piece overview (strong, weak, mixed, not enough in the room), then each piece's claims, then each claim's sources with what corroborates or contradicts it.
+- **The inputs are everything about the startup**: the deck, the video, the financials and its online presence, not the data room alone.
+- **The pitch line** becomes "Point it at a startup, get a readout: the best green flags, the worst red flags, and every number two clicks from its sources."
