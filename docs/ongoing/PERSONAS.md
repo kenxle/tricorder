@@ -10,9 +10,9 @@
 
 **Sources:**
 
-- [R1, voice of the customer](../reports/20261022.02_research/research_voice_of_customer.md), its quotes table and its counts from [voc_counts.py](../reports/20261022.02_research/voc_counts.py)
-- [R2, the landscape](../reports/20261022.02_research/research_landscape.md), for what each persona has tried and what it costs
-- [R4, the data room](../reports/20261022.02_research/research_data_room.md), for the proof on the demo room
+- [The voice-of-the-customer research](../reports/20261022.02_research/research_voice_of_customer.md), its quotes table and its counts from [voc_counts.py](../reports/20261022.02_research/voc_counts.py)
+- [The landscape research](../reports/20261022.02_research/research_landscape.md), for what each persona has tried and what it costs
+- [The data-room research](../reports/20261022.02_research/research_data_room.md), for the proof on the demo room
 - [The writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), for the personas-and-problems method
 
 ## How to read this
@@ -48,20 +48,20 @@ Two cautions on the top two. The partner's pay rating is inferred: both pieces o
 **What they have tried.**
 
 - A cursory review before the term sheet: "Basic financials and model review. But often only a cursory one." ([SaaS investor, Feb 2025](https://www.saastr.com/how-when-why-vcs-do-due-diligence-pre-and-post-term-sheet))
-- Building their own tool. A fund partner built a ten-agent diligence tool and retunes it when it misses a nuance (paraphrased from journalism, R1 row 27).
-- Generic chatbots, used to get past writer's block on memos (paraphrased from journalism, R1 row 28).
-- Buying a commercial tool that turns a data room into a memo with linked citations (paraphrased from a vendor case study, R1 row 25).
+- Building their own tool. A fund partner built a ten-agent diligence tool and retunes it when it misses a nuance (paraphrased from journalism, [the voice-of-the-customer research](../reports/20261022.02_research/research_voice_of_customer.md) row 27).
+- Generic chatbots, used to get past writer's block on memos (paraphrased from journalism, the voice-of-the-customer research row 28).
+- Buying a commercial tool that turns a data room into a memo with linked citations (paraphrased from a vendor case study, the voice-of-the-customer research row 25).
 
 **Why it failed them.**
 
-- A cursory review is where disagreements hide, and the deep checks wait until after the term sheet (R1, "What they do instead").
-- Chatbots cannot see the numbers that matter, because early-stage revenue, growth and retention are not public (paraphrased from journalism, R1 row 29).
+- A cursory review is where disagreements hide, and the deep checks wait until after the term sheet (the voice-of-the-customer research, "What they do instead").
+- Chatbots cannot see the numbers that matter, because early-stage revenue, growth and retention are not public (paraphrased from journalism, the voice-of-the-customer research row 29).
 - A home-built tool is a second job to maintain.
-- The commercial tools R2 found are quote-only enterprise contracts, and V7 Go's own page claims memos in 2 to 4 hours, not minutes. None of the 24 tools R2 checked shows market signals, comps and red flags together ([landscape_counts.py](../reports/20261022.02_research/landscape_counts.py)). The partner in R1 row 25 still clicks into each citation to check it.
+- The commercial tools [the landscape research](../reports/20261022.02_research/research_landscape.md) found are quote-only enterprise contracts, and V7 Go's own page claims memos in 2 to 4 hours, not minutes. None of the 24 tools the landscape research checked shows market signals, comps and red flags together ([landscape_counts.py](../reports/20261022.02_research/landscape_counts.py)). The partner in the voice-of-the-customer research row 25 still clicks into each citation to check it.
 
 **The moment Tricorder solves it.** The partner opens the readout before the second meeting. The first screen is the best green flags and the worst red flags. Under them is the overview: each piece of the company marked looking strong or looking weak, with the reason in one line. Revenue reads weak. One click shows why: the ARR the company reports in four places, side by side, each linked. The model, the deck and the founder's video disagree, and the pilot counted as ARR is named. A piece that reads strong shows the sources that agree on its number, so the partner also knows what holds up.
 
-**The proof we can show.** On the demo room: the model's ARR is $2,240,868, the deck says $2,500,000 and the founder says about $3,000,000 on video, while the true recurring figure is $2,060,868 (R4, from [data_room_design_numbers.py](../reports/20261022.02_research/data_room_design_numbers.py)). Tricorder finds the gap, finds the pilot that makes up part of it, and links the pilot agreement's notice clause.
+**The proof we can show.** On the demo room: the model's ARR is $2,240,868, the deck says $2,500,000 and the founder says about $3,000,000 on video, while the true recurring figure is $2,060,868 ([the data-room research](../reports/20261022.02_research/research_data_room.md), from [data_room_design_numbers.py](../reports/20261022.02_research/data_room_design_numbers.py)). Tricorder finds the gap, finds the pilot that makes up part of it, and links the pilot agreement's notice clause.
 
 **The objection to answer first.** Can I trust it, and where does my deal data go? The organisers' Track 3 names data leaving the firm as the biggest objection funds raise ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt)). The answer: every claim opens its source, Tricorder shows its own score on planted flags and decoys, and the investor can see and delete everything it pulled.
 
@@ -91,13 +91,13 @@ Two cautions on the top two. The partner's pay rating is inferred: both pieces o
 - Investing alongside an accelerator, and giving up upside for it (row 44).
 - Stopping, and becoming an LP in funds instead (row 53).
 
-**Why it failed them.** Each workaround avoids diligence rather than doing it. One angel's co-investors found the cause of her loss: "They discovered two sets of books: a made-up one for investors; the other with the real numbers." ([angel, May 2023](https://techcrunch.com/?p=2539424)). A full outside diligence costs far more than an angel check (a consultant priced one at about 100K, R1 row 41).
+**Why it failed them.** Each workaround avoids diligence rather than doing it. One angel's co-investors found the cause of her loss: "They discovered two sets of books: a made-up one for investors; the other with the real numbers." ([angel, May 2023](https://techcrunch.com/?p=2539424)). A full outside diligence costs far more than an angel check (a consultant priced one at about 100K, the voice-of-the-customer research row 41).
 
 **The moment Tricorder solves it.** Before writing the check, the angel forwards the founder's email. The readout comes back with the best green flags and the worst red flags, then an overview of which pieces look strong and which look weak. Under each weak piece are the places the deck and the model disagree and the questions to ask the founder.
 
-**The proof we can show.** The seed drop, the thin first tier a founder sends before a term sheet, catches five of the eight planted entries on its own (R4, Part 3.4).
+**The proof we can show.** The seed drop, the thin first tier a founder sends before a term sheet, catches five of the eight planted entries on its own (the data-room research, Part 3.4).
 
-**The objection to answer first.** Is this worth the cost for a check this size? In the angel's words: "Note that I'm an angel investor, so I try to make sure the cost of due diligence is proportional to the amount I'm investing." ([angel, Aug 2013](https://news.ycombinator.com/item?id=6202816)). Memo tools already sell at $12 a memo and $0 to $30 a month (R2, Part 1). Tricorder cannot win angels on price, and it cannot catch a consistent set of fake books; that needs a check with the bank.
+**The objection to answer first.** Is this worth the cost for a check this size? In the angel's words: "Note that I'm an angel investor, so I try to make sure the cost of due diligence is proportional to the amount I'm investing." ([angel, Aug 2013](https://news.ycombinator.com/item?id=6202816)). Memo tools already sell at $12 a memo and $0 to $30 a month (the landscape research, Part 1). Tricorder cannot win angels on price, and it cannot catch a consistent set of fake books; that needs a check with the bank.
 
 **Say, do, pay.** 14 rows in all (voc_counts.py).
 
@@ -129,7 +129,7 @@ Two cautions on the top two. The partner's pay rating is inferred: both pieces o
 
 **The proof we can show.** None yet beyond the demo room. Early applicants send thin material. A pre-seed partner: "As a VC who invests in Pre-Seed startups, often the data that we get from startups has pretty much nothing." ([pre-seed partner, early 2021, inferred](https://sacra.com/p/elizabeth-yin-hustlefund-interview/)). So the readout's gap list matters as much as its flags.
 
-**The objection to answer first.** We already built our own, cheaply. The program in row 61 did exactly that. There is no evidence in R1 that accelerators pay for a tool.
+**The objection to answer first.** We already built our own, cheaply. The program in row 61 did exactly that. There is no evidence in the voice-of-the-customer research that accelerators pay for a tool.
 
 **Say, do, pay.** 8 rows in all (voc_counts.py).
 
@@ -160,7 +160,7 @@ Two cautions on the top two. The partner's pay rating is inferred: both pieces o
 
 **The moment Tricorder solves it.** A deck arrives in the fund's inbox. Before the associate opens it, the ten tabs are already done: the market signals, the comps, and the red flags sit in one readout. The associate starts at the green and red flags and the overview, opens the weak pieces to see the disagreements behind them, checks the sources that back the strong ones, and walks into the partners' meeting with every claim linked.
 
-**The proof we can show.** On the demo room, the readout catches the deck's count of 357 clinics, which is the last value of a column that never decreases, against 212 paying accounts (R4, PF7). The associate sees both numbers and both files in one row.
+**The proof we can show.** On the demo room, the readout catches the deck's count of 357 clinics, which is the last value of a column that never decreases, against 212 paying accounts (the data-room research, PF7). The associate sees both numbers and both files in one row.
 
 **The objection to answer first.** If it is wrong, I am the one who looks bad in the partners' meeting. One fund worker wrote that their firm discussed whether software could replace analysts, and that accuracy was the worry ([fund staff, Jan 2025](https://news.ycombinator.com/item?id=42612506)). The answer: every claim opens its source, a claim whose quote cannot be found is dropped and listed, and a missing fact shows as a gap.
 
@@ -182,7 +182,7 @@ Two cautions on the top two. The partner's pay rating is inferred: both pieces o
 - "In addition to the standard diligence items, CVCs will spend more time validating areas of strategic overlap between the startup and the CVC’s corporate parent." ([corporate VC, Apr 2024](https://tdk-ventures.com/?p=2035))
 - "VCs began prioritizing speed and cutting corners on diligence, only to find – after interest rates rose and capital contracted – valuations falling in a reversion to the norm." ([corporate VC, Apr 2024](https://tdk-ventures.com/?p=2035))
 
-**What they have tried.** Nothing in R1's sample.
+**What they have tried.** Nothing in the voice-of-the-customer research's sample.
 
 **Why it failed them.** Not known from the research.
 
@@ -203,9 +203,9 @@ Two cautions on the top two. The partner's pay rating is inferred: both pieces o
 
 ## What the interviews need to fill
 
-R1 is a stand-in for interviews. Ken's two or three interviews this week ask the organisers' three questions. These gaps matter most for the ranking:
+The voice-of-the-customer research is a stand-in for interviews. Ken's two or three interviews this week ask the organisers' three questions. These gaps matter most for the ranking:
 
-- **How long a first-pass memo takes, in hours.** No trustworthy public number exists (R1, question 3).
-- **Hidden churn.** Every checklist names it, but no one in R1 told a regret story about it.
-- **Burn against the hiring plan.** The organisers name it; no public voice in R1 does.
+- **How long a first-pass memo takes, in hours.** No trustworthy public number exists (the voice-of-the-customer research, question 3).
+- **Hidden churn.** Every checklist names it, but no one in the voice-of-the-customer research told a regret story about it.
+- **Burn against the hiring plan.** The organisers name it; no public voice in the voice-of-the-customer research does.
 - **What the fund pays today, in the buyer's own words.** This would move the partner's rating from pay, inferred, to pay.

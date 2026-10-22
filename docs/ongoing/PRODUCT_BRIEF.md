@@ -12,11 +12,11 @@
 
 - [The writers' brief for the hackathon plan](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), with every "Added" block
 - [The organisers' problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt)
-- [R1, voice of the customer](../reports/20261022.02_research/research_voice_of_customer.md)
-- [R2, the landscape](../reports/20261022.02_research/research_landscape.md)
-- [R3, feasibility per scan](../reports/20261022.02_research/research_feasibility.md)
-- [R4, the data room](../reports/20261022.02_research/research_data_room.md)
-- [PERSONAS.md](PERSONAS.md), written from R1 alongside this file
+- [The voice-of-the-customer research](../reports/20261022.02_research/research_voice_of_customer.md)
+- [The landscape research](../reports/20261022.02_research/research_landscape.md)
+- [The feasibility research](../reports/20261022.02_research/research_feasibility.md)
+- [The data-room research](../reports/20261022.02_research/research_data_room.md)
+- [PERSONAS.md](PERSONAS.md), written from [the voice-of-the-customer research](../reports/20261022.02_research/research_voice_of_customer.md) alongside this file
 
 ## What it is
 
@@ -28,25 +28,25 @@ By identifying gaps, highlighting strengths, rigorously showing its work, and ad
 
 Deployers of capital who need to know if they're making the best possible investment. Venture funds at seed and Series A come first. Full personas, ranked by evidence, are in [PERSONAS.md](PERSONAS.md).
 
-- **Buyer and user.** The fund buys: a partner or principal decides and pays. The operator uses it: usually the associate who does the first pass today, and at some funds the partner, since one seed fund writes that its partners run diligence themselves (R1, row 11).
-- **Partner or principal (buyer).** Rated pay, inferred, in R1. Funds already pay for data and for commercial diligence tools (R1, "What they pay for"; R2, Part 1).
+- **Buyer and user.** The fund buys: a partner or principal decides and pays. The operator uses it: usually the associate who does the first pass today, and at some funds the partner, since one seed fund writes that its partners run diligence themselves (the voice-of-the-customer research, row 11).
+- **Partner or principal (buyer).** Rated pay, inferred, in the voice-of-the-customer research. Funds already pay for data and for commercial diligence tools (the voice-of-the-customer research, "What they pay for"; [the landscape research](../reports/20261022.02_research/research_landscape.md), Part 1).
 - **Associate (user).** Rated do. Does the work by hand today and pays for nothing.
-- **Solo angel.** Rated pay, but what angels pay for is avoiding diligence: they give up upside to an accelerator or become an LP in funds (R1, rows 44 and 53). That is a pricing warning. An angel product has to be cheaper than skipping the work, and R2 found memo tools already priced at $12 a memo (the Apify actor) and $0 to $30 a month (Energent).
-- **Accelerator screener.** Rated do. A real volume problem, but R1 found no evidence that programs pay for a tool, and one built its own.
+- **Solo angel.** Rated pay, but what angels pay for is avoiding diligence: they give up upside to an accelerator or become an LP in funds (the voice-of-the-customer research, rows 44 and 53). That is a pricing warning. An angel product has to be cheaper than skipping the work, and the landscape research found memo tools already priced at $12 a memo (the Apify actor) and $0 to $30 a month (Energent).
+- **Accelerator screener.** Rated do. A real volume problem, but the voice-of-the-customer research found no evidence that programs pay for a tool, and one built its own.
 - **Corporate VC.** Rated say, on two rows from one firm. Too thin to design for.
 
 ## The problem
 
-The organisers' statement, from VCs they spoke to: a first pass "still takes an associate days of pulling data, rebuilding numbers from a messy data room and spotting what does not add up" ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt)). R1's public sources say the same thing four ways.
+The organisers' statement, from VCs they spoke to: a first pass "still takes an associate days of pulling data, rebuilding numbers from a messy data room and spotting what does not add up" ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt)). The voice-of-the-customer research's public sources say the same thing four ways.
 
 - **The red flag investors name most is numbers that disagree.** A seed and Series A fund's guide: "When burn or revenue differs between the deck, the model and the accounting records, the gap suggests carelessness or something worse, and either reading damages the deal." ([seed fund guide, Aug 2026](https://www.crv.com/content/what-is-a-data-room)).
-- **The next is ARR that is not recurring.** Pilots, one-time deals and contracts the customer can cancel are counted as recurring (R1, question 2).
+- **The next is ARR that is not recurring.** Pilots, one-time deals and contracts the customer can cancel are counted as recurring (the voice-of-the-customer research, question 2).
 - **The slow part is gathering and checking, not writing.** A junior VC: "It took us weeks to sift through the data, ultimately which led to us losing momentum and conviction in the founders ability to execute (amongst other things)." ([junior VC, Dec 2022](https://williamleonard.substack.com/p/learnings-from-year-2-in-venture)).
 - **Volume makes it worse.** "As an associate at a VC fund, I review about 500 decks a year, speak with around 100 founders, go deep on maybe 15, and invest in only a few." ([associate, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)).
 
-The market leaves a gap. R2 checked 24 tools: 12 that funds use today and 12 AI diligence entrants and fund-operations tools. Its script ([landscape_counts.py](../reports/20261022.02_research/landscape_counts.py)) found that none of the 24 shows market signals, comps and red flags in financials together. The incumbents describe a company from the outside. The entrants read data rooms and write memos.
+The market leaves a gap. The landscape research checked 24 tools: 12 that funds use today and 12 AI diligence entrants and fund-operations tools. Its script ([landscape_counts.py](../reports/20261022.02_research/landscape_counts.py)) found that none of the 24 shows market signals, comps and red flags in financials together. The incumbents describe a company from the outside. The entrants read data rooms and write memos.
 
-"Every claim links to its source" is no longer open ground. Five of the 12 entrants claim it (same script), and R1's strongest pay signal is a $600M fund using one of them ([vendor case study, paraphrased in R1](https://www.v7labs.com/news/moderne-ventures-accelerates-due-diligence-with-v7-go)). Sourcing is table stakes. Tricorder's edge is the top green and red flags, the overview under them, and the corroboration trail. The operator sees first the best green flags and the worst red flags, then which pieces of the company look strong and which look weak. Any number is two clicks from its source and from every source that corroborates or contradicts it. The red-flag engine proves each flag with a script, and its flags feed the overview.
+"Every claim links to its source" is no longer open ground. Five of the 12 entrants claim it (same script), and the voice-of-the-customer research's strongest pay signal is a $600M fund using one of them ([vendor case study, paraphrased in the voice-of-the-customer research](https://www.v7labs.com/news/moderne-ventures-accelerates-due-diligence-with-v7-go)). Sourcing is table stakes. Tricorder's edge is the top green and red flags, the overview under them, and the corroboration trail. The operator sees first the best green flags and the worst red flags, then which pieces of the company look strong and which look weak. Any number is two clicks from its source and from every source that corroborates or contradicts it. The red-flag engine proves each flag with a script, and its flags feed the overview.
 
 ## The jobs to be done
 
@@ -57,7 +57,7 @@ The market leaves a gap. R2 checked 24 tools: 12 that funds use today and 12 AI 
 5. When I compare the startup with others, I want comparable companies and rounds with the reason each one is fair.
 6. When I watch the pitch video, I want to jump to each claim and see which ones disagree with the deck.
 7. When I write the memo for the partners' meeting, I want every claim tied to its source, so I can defend it to people who never met the founder.
-8. When I write a small check alone, I want a first pass whose cost fits the check (the angel's job; R1, row 47).
+8. When I write a small check alone, I want a first pass whose cost fits the check (the angel's job; the voice-of-the-customer research, row 47).
 
 ## What it does
 
@@ -70,11 +70,11 @@ Everything about a startup, from its pitch deck and video to its financials to i
 - **The startup's online presence.** Its website, public filings, hiring, traffic, reviews and pricing, read by the comps, market signals and online presence scans.
 - **The inbox.** A forwarding address first (such as deals@), because it needs no OAuth review. Then Gmail and Outlook through their official APIs. Tricorder pulls decks out of inbound mail: PDF attachments, and DocSend, Google Drive, Dropbox and Notion links. The feasibility of each path belongs to [ARCHITECTURE.md](ARCHITECTURE.md).
 
-**Diligence starts on the inbound, before anyone asks.** When a deck arrives, the scans run. By the time the investor opens the email, the readout is one click away, or the readout is the reply. This answers R1's finding that the slow part is gathering: the gathering is done before the person looks.
+**Diligence starts on the inbound, before anyone asks.** When a deck arrives, the scans run. By the time the investor opens the email, the readout is one click away, or the readout is the reply. This answers the voice-of-the-customer research's finding that the slow part is gathering: the gathering is done before the person looks.
 
 ### The scans
 
-Each scan is one piece of first-pass diligence. Each returns a list of claims, and each claim carries at least one source. The order below is R3's demo order, ranked by demo value for the build effort.
+Each scan is one piece of first-pass diligence. Each returns a list of claims, and each claim carries at least one source. The order below is [the feasibility research's](../reports/20261022.02_research/research_feasibility.md) demo order, ranked by demo value for the build effort.
 
 | Order | Scan | What it returns | When |
 |---|---|---|---|
@@ -98,8 +98,8 @@ The readout starts with the best green flags and the worst red flags. Then it br
 - **The best green flags and the worst red flags first.** The first screen is a short headline list: the strongest corroborated positives and the most serious problems, each with its number and source. A script picks them from the piece verdicts and the flags by a stated rule ([FRAMEWORKS.md](FRAMEWORKS.md), "Top green and red flags"). A green flag is as much the product as a red flag.
 - **Then the overview.** Under the headline list is the company in pieces: traction and revenue, retention, burn and runway, unit economics, customers, market, comps, team, the pitch itself. Each piece is marked looking strong, looking weak, mixed or not enough in the room. Each shows its reason in one line and how many sources corroborate and contradict it. A script sets each mark by a stated rule ([FRAMEWORKS.md](FRAMEWORKS.md), "Piece verdicts"). Strong pieces get the same space as weak ones.
 - **Two clicks to any source.** One click opens the claims behind a piece. One more opens a claim's source in place (the cell, the slide, the clause, the video second), with every other source that corroborates or contradicts it.
-- **Disagreements and flags sit one level down.** They are the reasons a piece reads weak. On the demo room, revenue reads weak, and its drill-down shows four ARR figures side by side: the true recurring $2,060,868 (answer key only), the model's $2,240,868, the deck's $2,500,000 and the founder's spoken figure of about $3,000,000 (R4, from [data_room_design_numbers.py](../reports/20261022.02_research/data_room_design_numbers.py)).
-- **Gaps shown as gaps.** A fact the room does not hold is labelled "not in the data room". A missing document is a question for the partner, not a flag by default (R4, Part 1.5).
+- **Disagreements and flags sit one level down.** They are the reasons a piece reads weak. On the demo room, revenue reads weak, and its drill-down shows four ARR figures side by side: the true recurring $2,060,868 (answer key only), the model's $2,240,868, the deck's $2,500,000 and the founder's spoken figure of about $3,000,000 ([the data-room research](../reports/20261022.02_research/research_data_room.md), from [data_room_design_numbers.py](../reports/20261022.02_research/data_room_design_numbers.py)).
+- **Gaps shown as gaps.** A fact the room does not hold is labelled "not in the data room". A missing document is a question for the partner, not a flag by default (the data-room research, Part 1.5).
 - **Every claim links to its source.** A footnote opens the deck page, the spreadsheet cell, the URL with the date it was read, or the video second.
 - **A "could not verify" box.** A script checks that each claim's quote appears in its source. A claim that fails drops out of the memo and is listed here.
 
@@ -116,23 +116,23 @@ Saturday's demo may show one steer on stage, if the overview page's card says so
 
 ### The demo
 
-The demo runs on R4's synthetic data room ([what a data room is](../reports/20261022.02_research/what_is_a_data_room.md)). The organisers require it: "Bring a synthetic data room; never upload a real company's confidential data." ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt)). The company is **Hollis Voice**, an invented phone agent for independent veterinary clinics, raising a $9,000,000 Series A. The room has 16 files, seven planted flags plus one variant, and three clean decoys (R4, counts from [data_room_tables.py](../reports/20261022.02_research/data_room_tables.py)). Four of the planted flags are the organisers' four examples. The other three are customer concentration, gross margin that leaves out delivery costs, and cumulative sign-ups shown as active customers. The demo opens on the top green and red flags, then the overview. It drills into the weakest piece (revenue, with its four ARR numbers) and then into one strong piece, showing the sources that agree in both directions ([writers' brief, 12:55 PM and 1:09 PM blocks](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)).
+The demo runs on the data-room research's synthetic data room ([what a data room is](../reports/20261022.02_research/what_is_a_data_room.md)). The organisers require it: "Bring a synthetic data room; never upload a real company's confidential data." ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt)). The company is **Hollis Voice**, an invented phone agent for independent veterinary clinics, raising a $9,000,000 Series A. The room has 16 files, seven planted flags plus one variant, and three clean decoys (the data-room research, counts from [data_room_tables.py](../reports/20261022.02_research/data_room_tables.py)). Four of the planted flags are the organisers' four examples. The other three are customer concentration, gross margin that leaves out delivery costs, and cumulative sign-ups shown as active customers. The demo opens on the top green and red flags, then the overview. It drills into the weakest piece (revenue, with its four ARR numbers) and then into one strong piece, showing the sources that agree in both directions ([writers' brief, 12:55 PM and 1:09 PM blocks](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)).
 
 ## What it is not
 
-- **Not a sourcing database.** It does not find companies. Affinity, Harmonic, PitchBook and the rest do that (R2, Part 1).
+- **Not a sourcing database.** It does not find companies. Affinity, Harmonic, PitchBook and the rest do that (the landscape research, Part 1).
 - **Not a CRM or a fund operations tool.**
-- **Not a chat window over documents.** A prior financial hackathon disqualified basic RAG apps (R2, Part 4). Tricorder's checks are scripts with numbers and tolerances.
+- **Not a chat window over documents.** A prior financial hackathon disqualified basic RAG apps (the landscape research, Part 4). Tricorder's checks are scripts with numbers and tolerances.
 - **Not a replacement for the partner's judgment.** It does the gathering and the checking. The partner decides.
-- **Not a fraud detector for consistent fakes.** R1's worst misses were faked books and forged bank statements. Tricorder catches documents that disagree with each other. A fully consistent fake needs a check with the bank, which stays with the investor.
-- **Not confirmatory diligence.** Reference calls, bank statements and legal review come after the term sheet (R1, "What they do instead").
+- **Not a fraud detector for consistent fakes.** The voice-of-the-customer research's worst misses were faked books and forged bank statements. Tricorder catches documents that disagree with each other. A fully consistent fake needs a check with the bank, which stays with the investor.
+- **Not confirmatory diligence.** Reference calls, bank statements and legal review come after the term sheet (the voice-of-the-customer research, "What they do instead").
 - **Not a Track 1 sourcing product.** The founder scan is one scan inside Tricorder, built after Saturday.
 
 ## The principles for choosing methods
 
 1. **Every claim links to its source.** A claim without a source a person can open does not reach the readout.
 2. **Green flags and red flags first, then the overview, strong and weak alike, gaps shown as gaps.** The readout opens on the best green flags and the worst red flags, then every piece of the company. A piece that looks strong counts as much as one that looks weak. A number two independent sources agree on is corroborated, and that is what makes a piece look strong. Disagreements and flags are reasons a piece looks weak, one click down. The readout never fills a missing fact with a plausible one.
-3. **A check a script can run beats a model's reading.** The script decides that a number is wrong. The model reads only what a script cannot: a deck's claims page, a contract clause, a tab note, a spoken number, a messy ledger line. R3 found three of the planted flags are pure script checks, and the rest need a model only to read text before a script compares (R3, Part 3.2).
+3. **A check a script can run beats a model's reading.** The script decides that a number is wrong. The model reads only what a script cannot: a deck's claims page, a contract clause, a tab note, a spoken number, a messy ledger line. The feasibility research found three of the planted flags are pure script checks, and the rest need a model only to read text before a script compares (the feasibility research, Part 3.2).
 4. **No real company's confidential data.** The demo room is synthetic. Public filings and public pages are fine.
 5. **Nothing is scraped against a site's terms.** LinkedIn's terms prohibit scraping, so the founder scan uses official APIs, consented exports, GitHub, personal sites and public talks. Reddit is read only from pages a person saved by hand. Where a source has an official API, Tricorder uses it.
 6. **Personas and problems, with say, do, pay.** Every persona is a specific problem in that person's own words. Say, do and pay are the three layers of evidence, weakest to strongest. What people pay to solve goes in the value proposition. See [PERSONAS.md](PERSONAS.md).
@@ -143,14 +143,14 @@ The demo runs on R4's synthetic data room ([what a data room is](../reports/2026
 - **Every claim links to the exact page, cell, URL or video second it came from.** One click opens it, and the quote checker runs over the final page.
 - **Every missing fact shows as a gap instead of a guess.**
 - **A steer never changes a script's number because someone asked.** Every rewrite keeps its sources and shows what changed.
-- **Tricorder reports its own misses.** On the demo room it shows how many planted flags it found and how many decoys it wrongly flagged, scored against R4's answer key.
+- **Tricorder reports its own misses.** On the demo room it shows how many planted flags it found and how many decoys it wrongly flagged, scored against the data-room research's answer key.
 - **The data rule above holds for every input.** The inbox makes it sharpest, so it is stated on the page where the inbox is connected.
 - **Saturday is build-only.** The organisers' instructions for this week say Saturday is for building only ([writers' brief, 10:18 AM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). This week is for everything else:
-  - the research (done: R1 to R4)
+  - the research (done: The voice-of-the-customer research to the data-room research)
   - two or three interviews with associates, principals and angels, asking the organisers' three questions
   - the one-page founder brief for the judges
   - the synthetic data room and its answer key
-  - the API keys (R3, Part 5)
+  - the API keys (the feasibility research, Part 5)
   - the prompts and schemas, written as entries in [FRAMEWORKS.md](FRAMEWORKS.md)
 
   No product code before Saturday unless Ken overrules on the overview page.
@@ -159,11 +159,11 @@ The demo runs on R4's synthetic data room ([what a data room is](../reports/2026
 
 Tricorder is a product after Saturday, so this section is written for a product. Numbers below are targets to set after the first pilot, not predictions.
 
-**First measure: the hackathon result.** A live demo on the synthetic room, judged by a panel of investors and agent builders. The organisers describe one judge as wanting both good code and a real business (R2, Part 3). The demo shows both: the readout catching planted flags live, and a named buyer who pays.
+**First measure: the hackathon result.** A live demo on the synthetic room, judged by a panel of investors and agent builders. The organisers describe one judge as wanting both good code and a real business (the landscape research, Part 3). The demo shows both: the readout catching planted flags live, and a named buyer who pays.
 
-**On the demo room, the score against the answer key.** Planted flags found out of the eight entries, and decoys wrongly flagged out of three (R4, Part 3.6). The seed drop alone should catch five of the eight; the full room the other three (R4, Part 3.4).
+**On the demo room, the score against the answer key.** Planted flags found out of the eight entries, and decoys wrongly flagged out of three (the data-room research, Part 3.6). The seed drop alone should catch five of the eight; the full room the other three (the data-room research, Part 3.4).
 
-**In the interviews this week.** R1 found no trustworthy public number for how long a first-pass memo takes. Ken's interviews need to get that number, because it is the baseline for the first pilot measure.
+**In the interviews this week.** The voice-of-the-customer research found no trustworthy public number for how long a first-pass memo takes. Ken's interviews need to get that number, because it is the baseline for the first pilot measure.
 
 **With a pilot fund, the measures a fund would judge it on:**
 
@@ -182,10 +182,10 @@ Each line is a recommendation this brief is written to, with the alternative.
 4. **Inbox input.** A forwarding address first, then Gmail and Outlook through their official APIs. Alternative: build the Gmail connection first.
 5. **Diligence on the inbound.** The scans start when a deck arrives, unasked. Alternative: scans start only when the investor asks.
 6. **Where the data goes.** Mailbox read for decks only, nothing stored beyond the readout and its sources, the investor sees and deletes everything. Alternative: a self-hosted version that keeps all data inside the fund.
-7. **Demo company.** Hollis Voice, R4's synthetic Series A room. Alternative: Brasswick, R4's plainer freight-invoice company.
+7. **Demo company.** Hollis Voice, the data-room research's synthetic Series A room. Alternative: Brasswick, the data-room research's plainer freight-invoice company.
 8. **After Saturday.** A product sold to funds; the partner or principal buys, the associate uses. Alternative: skills Ken sells on stclair.ai, or a hackathon entry that ends Saturday.
 9. **Angels.** Do not price for angels first; they pay to avoid diligence. Alternative: an angel tier from the start.
-10. **Persona order.** Keep R1's ranking (partner, angel, accelerator, associate, corporate VC). Alternative: rank the associate first because they are the user.
+10. **Persona order.** Keep the voice-of-the-customer research's ranking (partner, angel, accelerator, associate, corporate VC). Alternative: rank the associate first because they are the user.
 11. **Measures.** Set numeric targets after the first pilot. Alternative: state predicted numbers now.
 12. **Self-score on stage.** Show the answer-key score (flags found, decoys wrongly flagged) in the demo. Alternative: show the readout only.
 13. **This week.** No product code; research, interviews, founder brief, data room, keys and prompts. Alternative: pre-build module skeletons this week.
