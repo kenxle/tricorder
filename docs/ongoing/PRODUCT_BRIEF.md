@@ -20,7 +20,7 @@
 
 ## What it is
 
-Point it at a startup, get a readout. Tricorder reads everything about a startup, from its pitch deck and video to its financials to its online presence. It runs a set of scans, each a piece of first-pass diligence. It ends in a readout that gives a partner a detailed understanding of what's great about the business, and where the red flags are. The readout starts with the best green flags and the worst red flags. Then it breaks into the detail, described under [The readout](#the-readout).
+Point it at a startup, get a readout. Tricorder reads everything about a startup, from its pitch deck and video to its financials to its online presence. It runs a set of scans and analyses, creating a readout that gives the operator a detailed understanding of what's great about the business, and where the red flags are. This is not a final document, but something that the operator can actively dig through, drill down, and even steer, if they think areas need to be rewritten. The readout starts with the best green flags and the worst red flags. Then it breaks into the detail, described under [The readout](#the-readout).
 
 Tricorder answers Track 2 of Deal Flow, Diligence: "Underwrite a startup in an hour, not two weeks" ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt)). Saturday's version demos on a synthetic data room ([what a data room is](../reports/20261022.02_research/what_is_a_data_room.md)). After Saturday it is a product sold to venture funds.
 
@@ -45,12 +45,12 @@ The organisers' statement, from VCs they spoke to: a first pass "still takes an 
 
 The market leaves a gap. R2 checked 24 tools: 12 that funds use today and 12 AI diligence entrants and fund-operations tools. Its script ([landscape_counts.py](../reports/20261022.02_research/landscape_counts.py)) found that none of the 24 shows market signals, comps and red flags in financials together. The incumbents describe a company from the outside. The entrants read data rooms and write memos.
 
-"Every claim links to its source" is no longer open ground. Five of the 12 entrants claim it (same script), and R1's strongest pay signal is a $600M fund using one of them ([vendor case study, paraphrased in R1](https://www.v7labs.com/news/moderne-ventures-accelerates-due-diligence-with-v7-go)). Sourcing is table stakes. Tricorder's edge is the overview plus the corroboration trail. A partner sees at a glance which pieces of the company look strong and which look weak. Any number is two clicks from its source and from every source that corroborates or contradicts it. The red-flag engine proves each flag with a script, and its flags feed the overview.
+"Every claim links to its source" is no longer open ground. Five of the 12 entrants claim it (same script), and R1's strongest pay signal is a $600M fund using one of them ([vendor case study, paraphrased in R1](https://www.v7labs.com/news/moderne-ventures-accelerates-due-diligence-with-v7-go)). Sourcing is table stakes. Tricorder's edge is the top green and red flags, the overview under them, and the corroboration trail. A partner sees first the best green flags and the worst red flags, then which pieces of the company look strong and which look weak. Any number is two clicks from its source and from every source that corroborates or contradicts it. The red-flag engine proves each flag with a script, and its flags feed the overview.
 
 ## The jobs to be done
 
 1. When a deck lands in my inbox, I want the first pass done before I open it, so I can decide in minutes whether to take the meeting.
-2. When I open a data room, I want an overview of which pieces of the company look strong and which look weak, with the disagreements one click down, so I know what to ask in the second meeting.
+2. When I open a readout, I want the best green flags and the worst red flags first, then an overview of which pieces of the company look strong and which look weak, with the disagreements one click down, so I know what to ask in the second meeting.
 3. When a startup reports ARR, I want it rebuilt from the contracts and the revenue rows, so I know how much of it is truly recurring.
 4. When a fact is missing from the room, I want to see it marked as missing, so I ask for it instead of trusting a guess.
 5. When I compare the startup with others, I want comparable companies and rounds with the reason each one is fair.
@@ -62,8 +62,11 @@ The market leaves a gap. R2 checked 24 tools: 12 that funds use today and 12 AI 
 
 ### Inputs
 
+Everything about a startup, from its pitch deck and video to its financials to its online presence.
+
 - **An uploaded data room.** The deck, the financial model, the cap table, a metrics export, customer contracts, the hiring plan, founder bios and the website copy.
 - **A pitch video.** Transcribed with timestamps so every spoken claim keeps its second.
+- **The startup's online presence.** Its website, public filings, hiring, traffic, reviews and pricing, read by the comps, market signals and online presence scans.
 - **The inbox.** A forwarding address first (such as deals@), because it needs no OAuth review. Then Gmail and Outlook through their official APIs. Tricorder pulls decks out of inbound mail: PDF attachments, and DocSend, Google Drive, Dropbox and Notion links. The feasibility of each path belongs to [ARCHITECTURE.md](ARCHITECTURE.md).
 
 **Diligence starts on the inbound, before anyone asks.** When a deck arrives, the scans run. By the time the investor opens the email, the readout is one click away, or the readout is the reply. This answers R1's finding that the slow part is gathering: the gathering is done before the person looks.
@@ -75,7 +78,7 @@ Each scan is one piece of first-pass diligence. Each returns a list of claims, a
 | Order | Scan | What it returns | When |
 |---|---|---|---|
 | 1 | **Red-flag engine** | A ranked table of flags in the financials and metrics. Each row: what is wrong, the number the company claims, the number Tricorder computed, the severity, and links to both places. | Saturday |
-| 2 | **The readout** | The overview of the company in pieces, assembled from the scans' claims. Each piece is marked looking strong, looking weak, mixed or not enough in the room, with a one-line reason. Each piece drills down to its claims, and each claim to its sources. | Saturday |
+| 2 | **The readout** | The best green flags and the worst red flags, then the overview of the company in pieces, assembled from the scans' claims. Each piece is marked looking strong, looking weak, mixed or not enough in the room, with a one-line reason. Each piece drills down to its claims, and each claim to its sources. | Saturday |
 | 3 | **Pitch video** | The video's claims with timestamps. Claims that disagree with the deck are marked. | Saturday |
 | 4 | **Comps** | Comparable companies and recent rounds, each with the reason it is a fair comp and a source. Public filings from SEC EDGAR; private rounds from Form D. | Saturday |
 | 5 | **Market signals** | Hiring, web traffic, reviews, news and pricing for the company's real competitors, each number linked. | Saturday |
@@ -89,7 +92,8 @@ The framework entries are written in [FRAMEWORKS.md](FRAMEWORKS.md). The roadmap
 
 The readout is the product. Everything else feeds it.
 
-- **The overview first.** The first screen is the company in pieces: traction and revenue, retention, burn and runway, unit economics, customers, market, comps, team, the pitch itself. Each piece is marked looking strong, looking weak, mixed or not enough in the room. Each shows its reason in one line and how many sources corroborate and contradict it. A script sets each mark by a stated rule ([FRAMEWORKS.md](FRAMEWORKS.md), "Piece verdicts"). Strong pieces get the same space as weak ones.
+- **The best green flags and the worst red flags first.** The first screen is a short headline list: the strongest corroborated positives and the most serious problems, each with its number and source. A script picks them from the piece verdicts and the flags by a stated rule ([FRAMEWORKS.md](FRAMEWORKS.md), "Top green and red flags"). A green flag is as much the product as a red flag.
+- **Then the overview.** Under the headline list is the company in pieces: traction and revenue, retention, burn and runway, unit economics, customers, market, comps, team, the pitch itself. Each piece is marked looking strong, looking weak, mixed or not enough in the room. Each shows its reason in one line and how many sources corroborate and contradict it. A script sets each mark by a stated rule ([FRAMEWORKS.md](FRAMEWORKS.md), "Piece verdicts"). Strong pieces get the same space as weak ones.
 - **Two clicks to any source.** One click opens the claims behind a piece. One more opens a claim's source in place (the cell, the slide, the clause, the video second), with every other source that corroborates or contradicts it.
 - **Disagreements and flags sit one level down.** They are the reasons a piece reads weak. On the demo room, revenue reads weak, and its drill-down shows four ARR figures side by side: the true recurring $2,060,868 (answer key only), the model's $2,240,868, the deck's $2,500,000 and the founder's spoken figure of about $3,000,000 (R4, from [data_room_design_numbers.py](../reports/20261022.02_research/data_room_design_numbers.py)).
 - **Gaps shown as gaps.** A fact the room does not hold is labelled "not in the data room". A missing document is a question for the partner, not a flag by default (R4, Part 1.5).
@@ -98,7 +102,7 @@ The readout is the product. Everything else feeds it.
 
 ### The demo
 
-The demo runs on R4's synthetic data room. The organisers require it: "Bring a synthetic data room; never upload a real company's confidential data." ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt)). The company is **Hollis Voice**, an invented phone agent for independent veterinary clinics, raising a $9,000,000 Series A. The room has 16 files, seven planted flags plus one variant, and three clean decoys (R4, counts from [data_room_tables.py](../reports/20261022.02_research/data_room_tables.py)). Four of the planted flags are the organisers' four examples. The other three are customer concentration, gross margin that leaves out delivery costs, and cumulative sign-ups shown as active customers. The demo opens on the overview, drills into the weakest piece (revenue, with its four ARR numbers) and then into one strong piece, showing the sources that agree in both directions ([writers' brief, 12:55 PM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)).
+The demo runs on R4's synthetic data room. The organisers require it: "Bring a synthetic data room; never upload a real company's confidential data." ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt)). The company is **Hollis Voice**, an invented phone agent for independent veterinary clinics, raising a $9,000,000 Series A. The room has 16 files, seven planted flags plus one variant, and three clean decoys (R4, counts from [data_room_tables.py](../reports/20261022.02_research/data_room_tables.py)). Four of the planted flags are the organisers' four examples. The other three are customer concentration, gross margin that leaves out delivery costs, and cumulative sign-ups shown as active customers. The demo opens on the top green and red flags, then the overview. It drills into the weakest piece (revenue, with its four ARR numbers) and then into one strong piece, showing the sources that agree in both directions ([writers' brief, 12:55 PM and 1:09 PM blocks](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)).
 
 ## What it is not
 
@@ -113,7 +117,7 @@ The demo runs on R4's synthetic data room. The organisers require it: "Bring a s
 ## The principles for choosing methods
 
 1. **Every claim links to its source.** A claim without a source a person can open does not reach the readout.
-2. **The overview first, strong and weak alike, gaps shown as gaps.** The readout opens on every piece of the company. A piece that looks strong counts as much as one that looks weak. A number two independent sources agree on is corroborated, and that is what makes a piece look strong. Disagreements and flags are reasons a piece looks weak, one click down. The readout never fills a missing fact with a plausible one.
+2. **Green flags and red flags first, then the overview, strong and weak alike, gaps shown as gaps.** The readout opens on the best green flags and the worst red flags, then every piece of the company. A piece that looks strong counts as much as one that looks weak. A number two independent sources agree on is corroborated, and that is what makes a piece look strong. Disagreements and flags are reasons a piece looks weak, one click down. The readout never fills a missing fact with a plausible one.
 3. **A check a script can run beats a model's reading.** The script decides that a number is wrong. The model reads only what a script cannot: a deck's claims page, a contract clause, a tab note, a spoken number, a messy ledger line. R3 found three of the planted flags are pure script checks, and the rest need a model only to read text before a script compares (R3, Part 3.2).
 4. **No real company's confidential data.** The demo room is synthetic. Public filings and public pages are fine.
 5. **Nothing is scraped against a site's terms.** LinkedIn's terms prohibit scraping, so the founder scan uses official APIs, consented exports, GitHub, personal sites and public talks. Reddit is read only from pages a person saved by hand. Where a source has an official API, Tricorder uses it.
@@ -158,7 +162,7 @@ Tricorder is a product after Saturday, so this section is written for a product.
 Each line is a recommendation this brief is written to, with the alternative.
 
 1. **Track.** Track 2 only; the Track 1 founder scan is one scan inside Tricorder, built after Saturday. Alternative: put the founder scan in Saturday's demo.
-2. **The edge.** Decided by Ken at 12:55 PM ([writers' brief, 12:55 PM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). The edge is the overview plus the corroboration trail: which pieces look strong, which look weak, and every number two clicks from its sources. Disagreements and red flags stay, as reasons a piece looks weak. "Every claim sourced" alone is table stakes.
+2. **The edge.** Decided by Ken at 12:55 PM and refined at 1:09 PM ([writers' brief, 12:55 PM and 1:09 PM blocks](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). The edge is the readout's shape plus the corroboration trail: the best green flags and the worst red flags first, then which pieces look strong and which look weak, and every number two clicks from its sources. Disagreements and red flags stay, as reasons a piece looks weak. "Every claim sourced" alone is table stakes.
 3. **Saturday's scans.** Red-flag engine, readout, pitch video, comps, market signals; frameworks, founders and presence after Saturday. Alternative: add the frameworks scan on Saturday, since it is the cheapest to build.
 4. **Inbox input.** A forwarding address first, then Gmail and Outlook through their official APIs. Alternative: build the Gmail connection first.
 5. **Diligence on the inbound.** The scans start when a deck arrives, unasked. Alternative: scans start only when the investor asks.

@@ -194,3 +194,14 @@ Settled, and it refines the 12:55 block:
 - **Then the detail**: the piece-by-piece overview (strong, weak, mixed, not enough in the room), then each piece's claims, then each claim's sources with what corroborates or contradicts it.
 - **The inputs are everything about the startup**: the deck, the video, the financials and its online presence, not the data room alone.
 - **The pitch line** becomes "Point it at a startup, get a readout: the best green flags, the worst red flags, and every number two clicks from its sources."
+
+Added 2026-10-22 at 1:12 PM: Ken edited "What it is" again. His sentences, as applied:
+
+> It runs a set of scans and analyses, creating a readout that gives the operator a detailed understanding of what's great about the business, and where the red flags are. This is not a final document, but something that the operator can actively dig through, drill down, and even steer, if they think areas need to be rewritten.
+
+Settled:
+
+- **The person using it is the operator.** Write "the operator" where the docs say "the partner" or "the associate" about the person working in the readout. The buyer (partner or principal) and the personas stay as they are.
+- **The readout is a working surface, not a final document.** The operator digs through it and drills down, as before.
+- **The operator can steer it.** When the operator thinks a section is wrong or thin, they say so on that section (a comment or a short instruction, such as "rewrite the market piece using only the competitor filings" or "treat the pilot as non-recurring"), and Tricorder reruns the analysis behind that section and rewrites it, keeping the sources and showing what changed. The scripts' numbers do not change because someone asked; a steer changes what is read, how it is grouped or how it is worded, and any change in a verdict shows the claim that moved it. This is the same live-review loop Ken uses on Lahe pages.
+- **What it does** gains a "Steering the readout" feature. The roadmap carries it as an after-Saturday slice unless the critics think a single steer on stage (one section rewritten from one instruction) is worth a Saturday slot; the overview page gets a card. The architecture gets the shape: a steer is an instruction on a piece, the affected scans rerun on that piece's inputs, and the new piece replaces the old one with a visible diff.
