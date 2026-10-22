@@ -26,7 +26,7 @@ By identifying gaps, highlighting strengths, rigorously showing its work, and ad
 
 ## Who it is for
 
-Deployers of capital who need to know if they're making the best possible investment. Venture funds at seed and Series A come first. Full personas, ranked by evidence, are in [PERSONAS.md](PERSONAS.md).
+Deployers of capital who need to know if they're making the best possible investment. The personas are grouped by the stage they invest at, because the stage decides what is available about the company ([PERSONAS.md](PERSONAS.md)). Venture funds at seed and Series A come first. Full personas, ranked by evidence, are in [PERSONAS.md](PERSONAS.md).
 
 - **Buyer and user.** The fund buys: a partner or principal decides and pays. The operator uses it: usually the associate who does the first pass today, and at some funds the partner, since one seed fund writes that its partners run diligence themselves (the voice-of-the-customer research, row 11). Angels would use and pay for it themselves. Accelerators' screening staff would use it and the program would pay.
 
