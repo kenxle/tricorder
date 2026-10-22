@@ -1,0 +1,393 @@
+SOURCE: https://techcrunch.com/2019/03/05/startup-law-a-to-z-customer-contracts/
+
+Startup Law A to Z: Customer Contracts | TechCrunch 
+
+ –:–:–:– 
+
+ Buy One Founder Summit Ticket, Get a Second for Free. Register now. 
+
+ Disrupt doors open Oct. 13. Get your pass and bring someone with you at 50% off. REGISTER NOW. 
+
+ Close 
+
+ TechCrunch Desktop Logo 
+
+ TechCrunch Mobile Logo 
+
+ Search Submit 
+
+ Site Search Toggle 
+
+ Mega Menu Toggle 
+
+ Topics
+
+ Latest 
+
+ AI 
+
+ Amazon 
+
+ Apps 
+
+ Biotech & Health 
+
+ Climate 
+
+ Cloud Computing 
+
+ Commerce 
+
+ Crypto 
+
+ Enterprise 
+
+ EVs 
+
+ Fintech 
+
+ Fundraising 
+
+ Gadgets 
+
+ Gaming 
+
+ Google 
+
+ Government & Policy 
+
+ Hardware 
+
+ Instagram 
+
+ Layoffs 
+
+ Media & Entertainment 
+
+ Meta 
+
+ Microsoft 
+
+ Privacy 
+
+ Robotics 
+
+ Security 
+
+ Social 
+
+ Space 
+
+ Startups 
+
+ TikTok 
+
+ Transportation 
+
+ Venture 
+
+ More from TechCrunch
+
+ Staff 
+
+ Events 
+
+ Startup Battlefield 
+
+ StrictlyVC 
+
+ Newsletters 
+
+ Podcasts 
+
+ Videos 
+
+ Partner Content 
+
+ TechCrunch Brand Studio 
+
+ Contact Us 
+
+ Startup Law A to Z: Customer Contracts
+
+ Daniel McKenzie 
+
+ 3:07 PM PST · March 5, 2019 
+
+ Your startup needs customers to survive. If and when you make sales or generate installs, you are wading into the fast moving stream of commerce and exposing yourself to risk. Well-drafted customer contracts limit your liability and create legally enforceable rights to get paid for your work. In fact, contracts are actually dispute prevention mechanisms, forcing parties on either side to clearly define what is supposed to happen in advance, aligning expectations and increasing the likelihood that all goes according to plan.
+
+ So developing a working understanding of contracts generally, a deep understanding of your core customer contracts specifically, and hiring a competent lawyer to draft key contracts from the beginning, together represent an investment that will pay dividends over the life of your startup.
+
+ This article, the third in Extra Crunch’s exclusive “Startup Law A to Z” series, follows previous articles on intellectual property (IP) and corporate matters . If you are tuning in now, this series is designed to provide founders enough information to intelligently analyze business circumstances vis-à-vis certain common legal issues startups face. These articles are detailed and admittedly lengthy, but the concepts discussed are critical for founders to understand deeply.
+
+ If after reading this or other articles in the “Startup Law A to Z” series, you identify legal risks facing your startup, then other Extra Crunch resources can help. For example, the Verified Experts of Extra Crunch include detailed profiles of “Verified Expert Lawyers” – some of the most experienced and skilled startup lawyers in practice today. You can and should use these resources to identify attorneys focused on serving companies at your stage with experience in the particular matters at hand and simply reach out for further guidance.
+
+ The Customer Contracts checklist:
+
+ Contract Law Generally 
+
+ Contract Formation
+
+ Term and Termination
+
+ Breach and Remedies
+
+ Terms of Use vs. End User License Agreements 
+
+ Distinctions and Key Provisions
+
+ Enforceability through Click-Wrap Agreements
+
+ Notice of Amendments and Revisions
+
+ Privacy Policies 
+
+ State, Federal, International Laws : 
+
+ CCPA 
+
+ CalOPPA 
+
+ Required under Cal. Bus. & Prof. Code § 22575(a) 
+
+ FTC (COPPA, HIPAA, Gramm-Leach-Bliley Act) 
+
+ GDPR 
+
+ Disclosure and Enforceability
+
+ NDAs 
+
+ Mutual vs. One-Way
+
+ Definition of Confidential Information
+
+ Residual Clauses
+
+ Non-Solicit and Non-Competes
+
+ Master Services Agreements and Service Level Agreements 
+
+ Y-Combinator “Sales Agreement” / MSA Template
+
+ Deal Terms, Legal Terms, Boilerplate Terms
+
+ Legal Terms Explained:
+
+ Warranty and Disclaimer 
+
+ Indemnity (and Insurance) 
+
+ Limitation of Liability 
+
+ Contract law generally
+
+ What is a contract? Any law student preparing for the bar exam will tell you, in monotone: “a contract is a promise or set of promises, for breach of which the law provides a remedy, or the performance of which the law recognizes as a duty.”
+
+ Simple enough, but which law? For contracts, it is primarily the “common law” which governs contracts, that is, law derived from judicial decisions and not government-enacted statutes ( historical background courtesy of UC Berkeley ). That said, contracts for the sale of “ goods” are governed by specifically promulgated rules set forth in the Uniform Commercial Code (or “UCC”). And yes, in certain circumstances, courts have found that software may be considered “ goods ” for this purpose, see On Contracts .
+
+ While a full examination of contract law is beyond the scope of this article, there are a few key concepts to address which will help ground later discussion – particularly around issues of enforceability with respect to the electronic acceptance of website Terms of Use and Privacy Policies, for example.
+
+ Contract formation 
+
+ In order to form a contract, there are generally four main required elements:
+
+ Mutual assent: an objectively analyzed “meeting of the minds” must occur, usually arrived at through the process of an “offer” and an “acceptance.”
+
+ Valuable “consideration” (on both sides): there must be some “bargained-for exchange” between the parties; and whatever is “bargained for” must have real legal value. For example, if I simply promise to give you $100 this does not create a contract (there is no consideration on your side). If I promise to give you $100 in exchange for you giving me your used iPhone and you agree, however, then voila, contract formation in progress – my consideration is the $100 while yours is the used iPhone.
+
+ Capacity: parties must have the mental and legal ability to incur binding contractual obligations – minors under the age of 18, for example, typically do not (which is why most website ‘Terms of Use’ require users to be above the age of 18, or to otherwise receive parental consent).
+
+ Legal purpose: contracts are void if either the consideration or the subject matter is illegal in nature – that is, the contract violates the constitution, a law, or is declared against public policy by a court. In California, for example, agreements in restraint of trade (e.g., non-compete agreements) are unenforceable as against the public policy of the State.
+
+ A relevant side note here: a contract may also be unenforceable if it is “unconscionable” – that is, so remarkably unfair that it would “shock the conscience” to legally enforce it. Unconscionability can be found where there is severe unfairness, unequal bargaining power, and/or lack of notice with respect to the actual terms of the contract. For startups again, this most often comes up with respect to the website Terms of Use, Privacy Policy, or End User License Agreement, etc.
+
+ For more on contract formation and enforceability, see this Findlaw article for an overview .
+
+ Term and Termination 
+
+ With so much emphasis on getting deals done (contract formation), it is equally important to analyze and understand in what circumstances a deal may be terminated as well as the implications of termination – certainly one of the most important provisions for founders to understand.
+
+ In most contracts, the circumstances which may give rise to termination are usually set forth in a section called “Term and Termination” – though rights of termination can also arise from common law principles. The implications of termination, from a high level at least, are not simply that the contract ceases to exist, but rather, the contract remains in place with respect to accrued rights and obligations, yet all future rights and obligations of the parties are “discharged.”
+
+ Generally, contracts terminate either when the “Term” of the contract is over (presumably, when all obligations have been performed), or in certain cases, even before the obligations of the parties have been performed. For example, one party may want to terminate a contract early due to unsatisfactory performance by the other party, a serious breach of the contract itself, or because the contract is no longer a particularly good deal (i.e. cheaper goods or services are available elsewhere).
+
+ In general, there are two types of termination: (1) termination for cause (e.g., when there is a material breach of the contract); and (2) termination for convenience (essentially, termination for any reason). Termination for convenience can occur only if the contract specifically allows for it, since there is no common law rule supporting termination for convenience. With respect to termination for cause, a contract should always specify a certain procedure by which the breaching party may “cure” or fix their breach (usually within some stated period of time, such as 10 to 30 days after receiving notice from the other party), allowing the breaching party to save the contract from being terminated, if possible to cure the breach.
+
+ For more on contract termination, check out this post from Hellmuth and Johnson .
+
+ Breach and Remedies 
+
+ When a party fails to perform its duties under a contract, it is in breach. The breach can either be “minor” (i.e. the non-breaching party still gets the substantial benefit of the bargain) or “material” (i.e. the non-breaching party no longer receives the substantial benefit of the bargain made). If the breach is minor, the non-breaching party is not actually relieved of its duty to perform under the contract, though some “remedy” will likely be necessary, such as money damages or a negotiated “make good” of some kind. If the breach is material, however, the non-breaching party’s counter-performance is completely discharged and it may immediately seek all remedies for the breach.
+
+ Unless the parties have explicitly agreed on what the remedy for breach should be (i.e. through a liquidated damages clause), the main remedies available for commercial breach of contract are “compensatory damages” and “consequential damages” (“punitive damages” generally are not available in a commercial context, and “incidental damages” are sometimes just lumped in with “compensatory damages”).
+
+ Compensatory or “direct” damages are designed to affirm the terms of the breached contract, that is, to place the non-breaching party into the position she would have been in had the contract been performed without breach (insofar as money can accomplish this outcome).
+
+ Consequential damages may be available where the non-breaching party incurs further losses due to the breach, which any reasonable person would have foreseen are likely to occur, if the contract were breached, at the time the contract was made.
+
+ Notwithstanding these remedies for breach, the non-breaching party still has a “duty to mitigate” – that is, a duty to make reasonable efforts to limit the damage caused by of the other party’s breach; for example, by avoiding further expenditures and costs, finding substitute services at a fair price, etc. Importantly, losses which could have been avoided through reasonable mitigation by the non-breaching party will not ultimately be awarded as damages in a lawsuit for breach of contract, so the duty to mitigate is serious business.
+
+ Finally, while uncommon, should the legal remedies above (i.e., payment of money damages through compensatory or consequential damages) be inadequate to provide the non-breaching party with “the benefit of the bargain,” then the non-breaching party may seek “specific performance” (or an “injunction”) in equity rather than the legal remedies above. Specific performance might entail a court order to the breaching party that it must perform its obligations under the contract, for example, more on this from Upcounsel .
+
+ With this general understanding of contract law principles at our fingertips, let’s shift attention to those customer contracts most important to your startup’s success…
+
+ Terms of Use vs. End User License Agreements
+
+ One of the first contracts you’ll need to worry about is your “Terms of Use” or “Terms of Service” (“ToU”) which will set forth policies on how customers and users may actually use your website and related services. Now that software is commonly delivered as a service via the cloud, a comprehensive ToU for SaaS products often now includes certain provisions similar to those traditionally found only in the “End User License Agreement” (“EULA”) of the 1990s.
+
+ Thus, while the difference between a ToU and EULA is less stark today (with the ToU in many cases being sufficient on its own), generally speaking, EULAs are still used when software is actually downloaded and installed on a desktop or mobile device, as it is designed to provide the end user with a license to place a copy of that software on their device. A comprehensive ToU, in contrast, can be used for websites or web-based SaaS products. Of course, if you are providing software that can be downloaded and installed on a desktop or mobile device, you’ll probably also have a website, so you may want ToU for your website and EULAs for your software, or perhaps some hybrid agreement which covers both.
+
+ At a minimum, your ToU should: describe the services you provide, reserve ownership of intellectual property in those services, make necessary license grants (e.g., company grants users a limited license to use the services; users grant company a license to use the content they upload while using the services), prohibit use of the services in violation of law or third party rights (e.g., defamation, libel, copyright infringement, etc.), include a DMCA safe-harbor clause to indicate where the company can receive notice of copyright infringement claims, and require users to consent to a reasonable policy for monitoring user activity.
+
+ If you have a separate EULA, it can address additional terms to the extent not covered by your ToU, including for example: warranty provisions, disclaimers of implied warranties, limitations of direct damages, exclusion of indirect or consequential damages, choice of law, limitations on how the end user may use the software, prohibition against decompiling and reverse engineering the software, protections of trade secret information through confidentiality provisions, and obligations to maintain the confidentiality of any user accounts and passwords. Yet again, many of these provisions may actually go in your ToU depending on the nature of your services.
+
+ Today, excellent ToU forms are available online, such as those from Cooley Go . In order to craft a ToU specific to your business, however, it is generally necessary to consult with an attorney, especially if your application involves a structure that facilitates complex economic interactions between users (e.g., a marketplace), hosts user generated content, or any number of other sophisticated business models.
+
+ Even for the most simple websites, startups often get into trouble with their ToU and EULAs in one of two ways: (1) failure to implement the ToU or EULA in a way that actually creates an enforceable contract with users, either because proper notice is not given, or because affirmative assent is never provided by the user; and (2) amending or changing the ToU or EULA in a way that cannot be enforced against users who previously agreed to some prior version – typically again because proper notice is not provided.
+
+ In order to address these issues, keep in mind that both your ToU and EULAs (as well as privacy policies discussed below) are most likely to be enforceable when made through a “click-wrap” agreement, that is, where a contract is formed by the user’s affirmative action of clicking on a specific button or checkbox to indicate acceptance of the relevant terms.
+
+ Designing an enforceable “click-wrap” agreement is not completely straight forward, but some guidelines do exist: (a) users should be able to easily access the terms of use and review them later; (b) users should take affirmative action to indicate acceptance of the terms and be informed of the consequences of clicking the “I Agree” button; and (c) users should be able to reject the proposed terms (see, Kunz, Click-Through Agreements: Strategies for Avoiding Disputes on Validity of Assent ; see also, this article from the Venable law firm ). If you are hoping you can simply provide a link to your ToU via the sign-up dialogue (without displaying the full text), make sure to consult Meyer vs. Uber Technologies 2nd Cir 2017 868 F3d 66 and design to provide “reasonably conspicuous notice.”
+
+ Similarly, amendments made to your ToU or EULA must be done with care to ensure they will be enforceable against existing users. While many websites take the approach that changes can be made unilaterally simply by updating the ToU and posting the new version online, courts have generally taken a negative view of this approach, see for example Douglas v U.S. District Court . Similarly, your ToU cannot simply give your startup the power to bind your users to unknown future amendments and revisions, because there is no ability to assent to terms that do not yet exist.
+
+ E-mail notice of changed terms is definitely a good option; however, even the email notification itself must be properly designed to place the recipient on notice of important changes affecting their legal rights, e.g., by including notice in the email subject line, addressing the email directly to the user, etc.
+
+ Also, it may be necessary to provide a clear description of the modifications, or otherwise clearly show the user what changes have been made (e.g., using a highlighted version of the new terms), or both. Requiring the user to compare versions to identify changes themselves may not be sufficient to create a legally binding amendment. Also, if amendments to your ToU and EULA (or privacy policy) are meant to apply retroactively, then specific opt-in consent of the affected users may actually be required – meaning, for example, they will have to check the “I Agree” button again – see for example Gateway Learning Settles FTC Privacy Charges .
+
+ For more on Terms and Conditions, affirmative assent, and notice, check out this article from the American Bar Association .
+
+ Privacy Policies
+
+ With public scrutiny increasing, companies playing fast and loose with privacy issues do so at their own peril. From the very new California Consumer Privacy Act ( CCPA summary from Fenwick West ), the California Online Privacy Protection Act ( CalOPPA summary from Mintz Levin ), to the EU’s General Data Protection Regulation ( GDPR primer from Gibson Dunn ), data privacy will undoubtedly be a core focus of regulators going forward. In fact, online websites serving California consumers are legally obligated to develop and post a specific privacy policy on their websites ( CA Bus. & Prof. Code § 22575(a) ).
+
+ At the federal level (here in the US), there is yet no comprehensive privacy legislation; instead, the Federal Trade Commission has launched several privacy initiatives based on its general authority under the FTC Act to regulate unfair business practices, including specific rules for services used by children (see COPPA ), consumer health information (see HIPAA ), and financial services (see Gramm-Leach-Bliley Act )
+
+ Like the ToU and EULAs discussed above, a privacy policy is essentially a contract, which requires mutual assent to be enforceable and for which breach gives your customers and the FTC legal rights to hold you accountable. You should therefore reference your privacy policy via the same click wrap agreement through which users agree to your ToU and/or EULA and further make amendments consistent with the suggestions outlined above.
+
+ A good privacy policy must be directly tailored to your business model, taking into account your data collection practices and your subsequent use of the data collected. Data collection and use are either “opt-in” (users expressly consent to have their personal information used in ways described in the privacy policy) or “opt-out” (company may use personal information of users in ways described in the privacy policy unless they specifically request otherwise). Data may be collected through willing disclosure, or through other automatic means (such as cookies) and your privacy policy needs to address all of these issues.
+
+ While privacy policy form templates do exist online ( see again, Cooley Go ), these will not be specifically tailored to your business; therefore, consulting with an attorney is warranted in this area, particularly since it is ripe for increasing regulatory oversight.
+
+ For more information on crafting an effective privacy policy, see the FTC’s Protecting Consumer Privacy in an Era of Rapid Change , California’s Making Your Privacy Practices Public, and further resources from the ACLU’s California Technology & Civil Liberties Director , including this PDF .
+
+ One you have crafted a comprehensive, legally enforceable ToU, EULA, and Privacy Policy, it is time to start thinking about your next set of customer contracts: NDAs and MSAs.
+
+ Non-Disclosure Agreements
+
+ While no longer in favor with investors or in casual business contexts, between large enterprise businesses NDAs are still routinely used along the path to making a deal. Between businesses, the NDA is something like a very limited non-compete agreement, protecting a party from having its confidential information used by the other party in a manner not contemplated by the NDA, (the “permitted use” here is most often something quite general like “evaluating a potential business relationship”). It is also important to recognize that some NDAs may sneakily contain a host of other “non-standard” provisions which can be disastrous if not spotted from the outset; for more these provisions, I recommend “When an NDA isn’t just an NDA” from Larry Schroepfer .
+
+ If you are being asked to sign an NDA and plan to discuss non-public information about your own business, then it is reasonable for you to insist on a “mutual” NDA (which recognizes that both parties will be disclosing confidential information) rather than a “one-way” NDA (which provides protection only to a single, “disclosing party” while treating the other party merely as the “receiving party”). Even so, given the difficulty of enforcing NDA obligations, it is always wise to be circumspect about the information you disclose (even with a strong NDA in place), while nonetheless striking a proper balance so as not to appear overtly mistrustful.
+
+ Most NDAs will define what types of information should receive confidentiality protection and may also require that information be marked as “confidential” in some way to receive protection; generally speaking, it’s burdensome to specifically mark everything as “confidential” so here a broader clause is generally helpful. After the definition of “Confidential Information” is given, certain standard exceptions are applied, including:
+
+ information already public, or that becomes public without fault of the receiving party;
+
+ information already known to the receiving party at the time of disclosure;
+
+ information disclosed with the prior written consent of the disclosing party;
+
+ information rightfully received from a source other than the disclosing party without any confidentiality obligation; and
+
+ information developed by employees or agents of the receiving party who had no access to the confidential information of the disclosing party.
+
+ Most NDAs will also allow for disclosure of confidential information if disclosed pursuant to legal or governmental order, which is reasonable enough, though in this case, the disclosing party should at least be given notice and an opportunity to intervene (so it can seek a protective order limiting the scope of that disclosure).
+
+ Also, note that the last listed exception (5) above should be reviewed carefully, as it sometimes comes in slightly different formulations which are far more broad; for example, instead of “no access to…” you might see “developed independently of” or “without reference to” confidential information. This is much weaker language, so generally I try to avoid it.
+
+ Similarly, another provision to avoid (at least for the party disclosing confidential information) is known as a “residuals clause,” which provides that the receiving party may use for its own business purposes certain “general impressions” or “residual” information it retains via unaided memory from the confidential information itself. The risks for the disclosing party here are obvious, as it may be difficult to prove what information is “residual” and what is not; moreover, crafty lawyers can draft a residuals clause to be extremely broad, leaving little protection for confidential information. More on the residuals clause available here from the National Law Review .
+
+ Related to NDAs (sometimes included in them) are non-solicit and non-compete provisions. One point worth noting here: a well drafted non-solicit or non-compete provision will provide that the recipient of confidential information cannot use the specific confidential information itself (e.g., employee salary information, organizational structure, vendor and customer relationships, etc.) for competitive or solicitation purposes (e.g., to develop competitive products, raid the disclosing party of its best employees, or compete for customers).
+
+ This is important because many states (including California) will not enforce a general non-compete agreement (and even non-solicits often have trouble), but a well-drafted non-solicit or non-compete agreement that prohibits the use of confidential information for competitive purposes absolutely can be enforced.
+
+ Master Services Agreement and Service Level Agreements
+
+ If you are developing enterprise SaaS software, or otherwise providing businesses-to-business services, once you’ve gotten past the NDA, your customer deals will likely culminate in a “Master Software as a Service Agreement” (which often includes a “Service Level Agreement” as an exhibit) – often simply called the “MSA.”
+
+ If you are not familiar with how MSAs are structured (many first-time founders are not), take a moment to review this Form SaaS Agreement from Y-Combinator (they have called it “Sales Agreement” for simplicity, but SaaS is the thing being sold). The remainder of this section will refer back to this agreement repeatedly in order to ground the explanations to follow, so do take a quick look…
+
+ As the Y-Combinator example shows, the best MSAs typically include a simple cover page or “Order Form” summarizing basic business terms, followed by several pages of dense contract language. The contract language itself will usually include reference to some number of separately delineated exhibits (which are “ incorporated by reference ” into the MSA itself), including most often a “Service Level Agreement” which specifies system uptime and technical support requirements for the software being provided.
+
+ This format is one you should imitate – it works best because it allows the sales teams to focus on the Order Form (i.e., the deal points directly relevant to them), while separating out dense contract language for the lawyers. This format also makes the contract relatively more foolproof for founders and employees, who may edit the cover page, but for the most part will (hopefully) leave the contract language alone.
+
+ To best understand what is happening in the MSA, let’s break it into three component parts – what we might call: (1) Deal Terms (which include by extension the Order Form and all Exhibits), (2) Legal Terms , and (3) Boilerplate Terms .
+
+ Deal Terms: these describe or relate to what the parties are actually doing (or not doing) with respect to the business transaction, as well as how the business transaction may come to end. For example, in the Y-Combinator Agreement, the Deal Terms would include the “ Order Form ” (page one), Sections 1 through 5 of the “Terms and Conditions” (including “ 1. Saas Services and Support ,” “ 2. Restrictions and Responsibilities ,” “ 3. Confidentiality; Proprietary Rights ,” “ 4. Payment of Fees ,” “ 5. Term and Termination ”), as well as “Exhibit A” (“ Statement of Work ”), “Exhibit B” (“ Service Level Terms ”) and “Exhibit C” (“ Support Terms ”).
+
+ Legal Terms: these use various legal mechanisms to allocate risk and financial responsibility between the parties with respect to the contemplated business transaction. For example, in the Y-Combinator Agreement, the Legal Terms include Sections 6 through 8 of the “ Terms and Conditions ” (including “ 6. Warranty and Disclaimer ,” “ 7. Indemnity ,” “ 8. Limitation of Liability ”). These are complex terms with serious legal implications, which generally speaking, only your lawyers seem to care about (more on these below).
+
+ Boilerplate Terms: these are actually quite standard across nearly all commercial contracts and generally are present to address certain idiosyncrasies of common law contract principles, interpretation and enforcement. For example, in the Y-Combinator Agreement, the Boilerplate Terms have all been (rather impressively) stuffed into a single section within the “Terms and Conditions” (that is, “ 9. Miscellaneous ”). Again, for the most part, Boilerplate Terms are something in which only the lawyers truly seem interested and generally are standard, so rather than review Boilerplate Terms in detail here, these articles from Nolo located here and here provide an adequate overview.
+
+ As between the Deal Terms, Legal Terms, and Boilerplate Terms, my experience is that the Deal Terms will come most naturally to founders, followed by the Boilerplate Terms, and lastly, the Legal Terms. For that reason, we’ll take a closer look at the key Legal Terms in most contracts: Warranties and Disclaimers, Indemnity, and Limitation of Liability below.
+
+ However, you should read the Deal Terms of the Y-Combinator Agreement closely; with enough study, it should be fairly clear what these provisions are designed to do.
+
+ Warranties and Disclaimers 
+
+ Within a contract, a “warranty” can be understood as a promise that something will be true in the future, much like a guarantee, whereas a “representation” is essentially a statement that something is true as of the time the statement is made. Contracts typically include language like, “Each party represents and warrants that…” as well as certain “reps and warranties” that are specific to each party, depending on the particular nature of the transaction and the parties’ respective obligations with respect to that transaction.
+
+ Effectively, these “reps and warranties” are designed to provide factual assurances that will encourage the parties to enter the contract; for example, sellers of software products will typically warrant that their products will “work” in the manner described in their own documentation, that they own their own software (and therefore they can license it without much risk of an IP infringement claim from third-parties), or that services will be rendered in a “professional and workmanlike manner.”
+
+ If a warranty is breached, courts may impose money damages, or more likely, the parties will try to work something out through negotiation; but it is also possible for the parties to agree on certain remedies in advance. For example, sellers may promise to replace defective parts, fix buggy code, or otherwise compensate customers for certain losses through “make goods” or similar terms.
+
+ At the same time specific “reps and warranties” are made, sellers will want to disclaim other warranties, or disclaim responsibility for outcomes outside their control (such as a customer’s unauthorized modification of hardware or software components). Most of the time, these “warranty disclaimers” address what are known as “implied warranties” which are actually imposed by state law even without explicitly being written into the contract, including:
+
+ Implied warranty of merchantability: that is, the products will do what they are supposed to do, which is great for microwaves and TVs, but less clear for complex software which is much less understood, so often this is disclaimed by sellers;
+
+ Implied warranty of fitness for a particular purpose: that is, the products are appropriate for the particular needs of the customer, which again, for complex software cannot always be known from the outset, and therefore will often be disclaimed; and
+
+ Implied warranty of non-infringement: that is, products will not infringe the intellectual property rights of third parties – sellers of software may want to disclaim this warranty and provide protection to the customer through an indemnity provision instead (see below).
+
+ Disclaimers generally must be “conspicuous” in order to be enforceable. This is why in most contracts they are written in all caps.
+
+ For more on warranties and disclaimers, check out this article from the National Law Review (which also links to a relevant discussion of Terms of Service issues), as well as the full academic treatment from Cornell here .
+
+ Indemnity 
+
+ Indemnity clauses obligate one party (labeled the “Indemnifying Party”) to protect the other party (labeled the “Indemnified Party”) from certain lawsuits and claims, e.g., by hiring and paying lawyers to defend against those claims, or paying out settlements in litigation or actual court judgments if the litigation goes that far. By and large, this is what it means for the Indemnifying Party to “defend, indemnify, and hold harmless” the Indemnified Party.
+
+ Indemnity clauses are usually among the most contested and highly negotiated provisions in a contract because there is no standard agreement with respect to who should indemnify who for what. Indemnity is a risk allocation mechanism and generally the party with more leverage accepts less risk, through negotiation. That said, from a logical fairness standpoint, it generally makes sense for one party to indemnify the other party if this other party will face genuine legal risks of third-party claims (i.e., claims brought by those who are not a party to the contract itself) simply by virtue of doing business with the first party.
+
+ In the high tech industry, for example, simply by using software created by another firm, a company may expose itself to risks that the software infringes the intellectual property rights of a third party; therefore, it makes sense for the firm who developed the software to indemnify the other party against that particular risk, since the software firm is in the best position to know how the software was developed, control for possible infringement risks, research related patents, etc. For more on indemnity in general, see this article from Much Law .
+
+ That said, going back to leverage, if you are in a situation where the other party has more leverage and simply won’t budge on requiring broad indemnity protections from you, or won’t give you reasonable indemnity protection from those risks arising from its own business, the best option to manage your risk here is through insurance. Get the deal done and retain a knowledgeable insurance broker familiar with the types of commercial insurance policies available to high tech companies and then insure against the risks created by the indemnity obligation, to whatever extent is possible.
+
+ Limitation of Liability 
+
+ For those unfamiliar with contract law, many are surprised to learn that parties can actually cap their risk exposure under a contract through language in the contract itself – though to be sure, there are certain things for which you cannot contractually limit liability, such as intentional harm, willful misconduct, gross negligence.
+
+ For business losses, however, these “limitation of liability” clauses make sense, especially in the technology context, because in many industries the monetary damages which may result from certain business transactions can be much greater than what customers are willing to pay for the underlying services (if the full risk were factored into the price).
+
+ For example, let’s take hypothetical software for large construction projects, used to design Manhattan skyscrapers. This software might cost $15,000 itself, but can be used to design and construct assets valued well into the hundreds of millions of dollars. If the software developer has to risk a few hundred million dollars in losses with every $15,000 sale, then it doesn’t take much imagination to conceive a world in which there is no software available for skyscraper construction projects – who would start that business? This is the problem that limitation of liability provisions are designed to address.
+
+ Most well-drafted contracts limit liability in two ways: (1) a specific dollar cap on total liability under the contract (say, $1,000 in total, or all fees paid under the contract during the past 12 months); and (2) an exclusion against recovery for consequential or punitive damages (since these are difficult to predict and as in the example above, perhaps far greater than the value of the contemplated transaction). Just like warranty disclaimers, limitation of liability clauses must be “conspicuous” in order to be enforceable, which is why, again, in most contracts, they are always written in all caps.
+
+ It may also be appropriate for parties to agree, however, that with respect to certain forms of liability, no limitation of liability should apply. These forms of liability usually relate to liabilities explicitly created by the contract itself or which cannot be limited under the law anyway; for example, the limitation of liability clause may not apply to damages arising from a party’s breach of its confidentiality obligations, or to a party’s obligation to indemnify the other party under the contract, or to harm caused to persons through negligence. These liabilities are specifically bargained for under the contract, or to some extent directly within the control of the parties involved, so it makes sense for greater liability to apply in these cases, which is why limitation of liability clauses will often first start with certain exclusions.
+
+ For more on damages and limitation of liability provisions, check out these three articles from Morgan Lewis, here and here and here .
+
+ Especially in the beginning, when first drafting your standard customer MSA, but even much later on, when redlines are received back from the other side on various deals, it is wise to work with an experienced lawyer. Remember too that terms relating to licensing and ownership of intellectual property, contract assignment (a Boilerplate Term which may be relevant when another company wants to acquire you), representations and warranties, warranty disclaimers, indemnification, limitation of liability, and provisions around the duration and permissible termination of the contract, are especially important.
+
+ Conclusion
+
+ This article attempts to cover the primary types of legal contracts which as a founder you will typically encounter when trying to serve your customers or users. Contract law is certainly one of the more interesting and complex areas of law; therefore, it is one for which engaging a knowledgeable lawyer can be the most rewarding. Investing in this engagement early should pay dividends over the life of your startup with compounding interest, as you establish a solid, enduring legal framework to your limit liability and protect hard-earned revenue.
+
+ Daniel T. McKenzie, Esq. , manages the Law Office of Daniel McKenzie , specializing in the representation of startups and startup founders. Prior to establishing his law office, Daniel McKenzie co-founded and served as lead in-house counsel for Reelio, Inc., backed by eVentures, and acquired in 2018 by Fullscreen (a subsidiary of Otter Media and AT&T). 
+
+ DISCLAIMER: This post discusses general legal issues, but it does not constitute legal advice in any respect. No reader should act or refrain from acting on the basis of any information presented herein without seeking the advice of counsel in the relevant jurisdiction. TechCrunch and the author expressly disclaim all liability in respect of any actions taken or not taken based on any contents of this post. 
+
+ Topics
+
+ EC Future of Work , startup law , Startup Law A to Z , TC , Verified Experts 
+
+ When you purchase through links in our articles, we may earn a small commission . This doesn’t affect our editorial independence. 
+
+ Daniel McKenzie 
+
+ View Bio 
+
+ Loading the next article 
+
+ Error loading the next article

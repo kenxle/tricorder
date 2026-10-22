@@ -1,0 +1,89 @@
+SOURCE: https://www.crv.com/content/startup-traction
+
+CRV | Startup Traction: How to Measure It and What You Need 
+ Startup Traction: What It Is, How to Measure It and How Much to Raise
+ August 3, 2026 Most founders remember the moment a stranger comes back, uses the product again and then pays for it. Investors look for that same shift, and they test it by asking how many of those people pay you, return or expand. Your next round turns on the gap between numbers that look impressive and numbers that prove demand.
+ This guide covers which signals investors treat as real traction, how to measure it and how much you need at each funding stage.
+ What Is Startup Traction? 
+ Traction is what a founder can put on the table instead of a forecast. It's the record of customers finding the product, using it, coming back to it and, where the model calls for it, paying for it.
+ Revenue growth, the count of paying customers, retention curves and the conversion steps customers actually complete carry the most weight. A useful test separates these from softer counts, since real traction holds its shape when the company stops pushing on it.
+ Growth rate turns a static number into evidence, so both the slope and the base it compounds from belong in the same view. Traction and product-market fit describe different things: traction is the early reading that a market wants the product, while product-market fit is the settled condition where that demand carries itself. Founders reach the first without the second often enough that the two belong on separate scorecards.
+ The Metrics That Show Real Traction 
+ In venture diligence , revenue from customers with no ties to you carries the most weight, followed by retention, structured pre-revenue demand and the momentum of the team itself. Where your evidence lands on that hierarchy shapes both your valuation and how hard your claims get tested.
+ Paying Customers and Revenue 
+ A startup shows its strongest traction through paying unaffiliated customers . Money from friends, former colleagues or family proves loyalty, while payment from strangers in your addressable market proves what you're offering can travel. Context carries as much weight as the raw number: growing from zero to 1,000 customers in eight weeks says far more than "we have 1,000 customers" ever could.
+ Engagement and Retention 
+ Retention shows whether people love the product or merely tried it once. The shape of the curve carries the message: cohort retention curves that flatten out show a core group building a habit. Stickiness ratios add texture. The share of monthly active users (MAU) who show up as daily active users (DAU) is the common shorthand for daily dependence. Declining engagement is your earliest warning light, because it often shows up before churn does.
+ Waitlists, Pilots and Letters of Intent 
+ Pre-revenue startups can still show structured demand. Letters of intent (LOIs) with dollar figures attached, design partners testing weekly builds, pilot commitments and pre-orders all count. Each one puts a named company or an actual payment behind the interest. A waitlist you built from one tweet shows little. The stronger pre-revenue case names the buyer, specifies the use case and shows what the customer signed or paid for, with evidence the customer stayed engaged afterward.
+ Partnerships and Team Momentum 
+ Distribution partnerships count when they carry commitments, since a co-selling agreement or a named enterprise pilot puts another company's budget and staff time behind your product. Team momentum works the same way, and for technical founders the clearest version is how much you shipped relative to the time you've spent on the problem. Developer tools founders have an extra channel here, since open-source pull, active communities and repeated developer usage can read as early demand before classic revenue metrics mature.
+ How to Measure Startup Traction 
+ Consumer products usually live on weekly actives and retention, while software as a service (SaaS) companies lead with recurring revenue and net revenue retention. In marketplace diligence, completed transactions often become the decisive proof point. Whatever the model, five families of metrics come up in nearly every diligence conversation:
+ Monthly and annual recurring revenue (MRR and ARR) growth rate: ARR equals MRR times 12 and must exclude one-time services and implementation fees. We treat sustained double-digit monthly growth as solid at seed and low single-digit growth as a question mark.
+ Retention and churn: Monthly logo churn for business to business (B2B) SaaS companies should sit in the low single digits. Net revenue retention above 100 percent means existing customers expand faster than they cancel.
+ Engagement ratios: DAU divided by MAU shows whether product use has become habitual rather than occasional.
+ Customer acquisition cost (CAC) and lifetime value (LTV): The LTV:CAC ratio needs to run several multiples of acquisition cost. Payback periods that stretch past a year raise questions about whether growth can scale efficiently.
+ North star metric: A north star metric captures the value customers receive, such as nights booked for Airbnb or weekly hosted meetings for Zoom. Revenue is a risky north star before product-market fit because you can generate revenue while customer value stays thin.
+ None of these numbers carries much weight on its own, which is why investors read them as a set. Strong retention still fails the test when acquisition costs run past what a customer returns.
+ How Much Traction You Need at Each Funding Stage 
+ The traction bar rises at every stage: a working product can carry a pre seed round, while a Series A now expects seven figures of ARR. Seed to Series A graduation has become harder, so planning your raise against current benchmarks is the most useful preparation you can do before opening a data room .
+ Pre Seed 
+ Pre seed is the smallest institutional check most founders take. Founders normally structure it as a simple agreement for future equity (SAFE), and median dilution at this stage runs into the mid to high teens . Traction expectations are the lightest of any stage: a functional minimum viable product (MVP) or strong early validation clears the bar. Artificial intelligence (AI) has made the pre seed market more competitive, while the core bar remains evidence that a real customer problem is becoming sharper.
+ Seed 
+ At CRV , an early stage venture capital firm, we look for $500,000 to $1.5 million in ARR for a strong seed round in B2B SaaS. Pre-product or pre-revenue companies should raise at pre seed instead. Growth rate carries as much weight as the ARR figure itself, since a smaller base compounding at a double-digit monthly rate outruns a larger stagnant one.
+ Series A 
+ The median U.S. Series A reached $15 million in 2025, with the upper quartile at $25 million. Revenue expectations have climbed sharply, and our own benchmarks put the competitive floor for B2B SaaS at $2 million to $5 million. Scrutiny at this stage weighs quality alongside quantity, and it tests whether every dollar of claimed ARR ties back to a renewable contract. Founders who miss the window may need bridge financing to buy time on the way to a durable Series A.
+ How to Build Traction From a Standing Start 
+ For a first acquisition channel, the Bullseye Framework from the book Traction is a useful structure for most founders. The framework ranks your channel options before you spend on any of them, and it comes down to three moves::
+ A wide map of options: The list should include channels you would not naturally pick, such as search engine marketing and community building. A short hypothesis for each one keeps early bias from narrowing the field.
+ Ranked, time-boxed tests: Founders rank that list, then run cheap experiments on the most promising few in parallel. None of those tests needs a real budget to produce a signal.
+ One channel that earns the spend: The channel that clearly outperforms deserves the team's attention. By seed most investors want to see one channel working rather than five experiments at once.
+ Taken in that order, the three moves get a founder to a working channel with the least spend. Each channel eventually plateaus, and when one stops producing, the ranking exercise deserves a rerun rather than more spend on channels that already failed their first test.
+ Before any channel produces on its own, many founders still have to recruit customers by hand. DoorDash 's four founders ran their first market that way, taking orders through a Google Voice number routed to their cellphones and driving the deliveries themselves. CRV led DoorDash's first financing round, and that stretch is where founders learn what customers actually want before they spend money on channels.
+ The Traction Mistakes That Mislead Founders 
+ Founders make their most expensive mistake when they scale before retention holds. Weak product-market fit turns up in 43 percent of shutdowns among startups that closed since 2023, well ahead of any other root cause. Companies that add headcount, paid spend and infrastructure ahead of the retention evidence rarely reach a revenue base that holds. The arithmetic explains why: if new customers arrive only slightly faster than existing customers leave, most acquisition spend replaces churn instead of creating durable growth.
+ Cumulative numbers flatter you by construction. Total registered users and lifetime downloads can only go up, so they can't tell you whether things are getting better or worse, and they say nothing about revenue. Subsidies and discounts mislead the same way, since the demand can stop the day the incentive does. One launch week or one press cycle can shape a chart that reads differently from steady cohort-over-cohort progress, and the second is what survives a diligence review.
+ How to Present Traction to Investors 
+ Your growth chart gets read more closely than any other slide in the deck. Diligence tends to concentrate on three things:
+ The shape of the curve: The shape of growth shows whether growth is accelerating or slowing. A trend line reads better than a single headline number.
+ Definitions that hold up: ARR that quietly includes implementation fees or services revenue reads as sloppiness or inflation once your billing data gets unpacked. Neither reading produces a term sheet .
+ Consistency across rounds: Follow-on diligence tests gross retention and net retention first, then compares both with logo retention. Gaps that can slide at seed get examined at Series A.
+ Founders who can answer all three cleanly spend less of the diligence conversation defending their numbers.
+ The same metric definitions have to survive every diligence cycle, which is the pattern behind CRV's history with Vercel . CRV led Vercel's Series A and backed the company through its B, C, D and E rounds. Founders should also state plainly which commitments customers signed and which ones they only discussed.
+ What Separates Real Traction From Wishful Thinking 
+ Real traction holds up when a stranger pays for the product and when the numbers get pulled apart in a data room. Wishful thinking depends on the founder's own framing to look convincing, which is why it comes apart in diligence.
+ The founders who raise well in this market treat their metrics like exhibits for the data room: defined tightly and reported by cohort the same way every month. We've spent decades at CRV backing founders at exactly this point, when the evidence is early but honest and the story hasn't become obvious yet.
+ If you're an early stage founder looking for a lead investor who can move quickly and pressure-test your traction story, reach out to us to see if we'd be a good fit.
+ Frequently Asked Questions About Startup Traction 
+ What is good traction for a startup? 
+ Good traction shows quantitative evidence of market demand that keeps growing without constant pushing from the company. For SaaS, that usually means recurring revenue from unaffiliated customers compounding at a double-digit monthly rate, with retention curves that flatten instead of decay. The threshold rises with each stage, from early validation at pre seed to seven figures of ARR by Series A.
+ How do you show traction with no revenue? 
+ Structured demand substitutes for revenue: signed LOIs with dollar amounts, design partner commitments, pilot agreements and pre-orders from named companies. Quality beats volume, since a handful of engaged, identifiable customers outweighs a large anonymous waitlist. Progress against time also carries weight, so building something technically hard quickly counts as evidence in its own right.
+ What's the difference between traction and product-market fit? 
+ Traction shows early demand; product-market fit means that demand has become durable and accelerates on its own. Your retention curve offers a practical test: flattening at a healthy level suggests you're approaching fit, while a slide toward zero means you have activity without fit. A product-market fit survey that asks customers how disappointed they would be to lose your product adds another layer of measurement.
+ How much traction do you need to raise a seed round? 
+ For B2B SaaS in 2026, strong seed rounds typically show roughly $500,000 to $1.5 million in ARR from paying customers with no personal ties to the founders. Investors weigh the growth rate as heavily as the ARR number. Consumer companies without revenue lean on engagement and retention evidence instead. Founders who are still pre-product or pre-revenue should generally target pre seed instead of seed.
+
+ Congrats to Lotus AI and Outtake on Making Forbes Next Billion-Dollar Startups List
+ CRV proudly co-led Lotus AI’s Series A and our firm led Outtake’s Series A and joined the board in February 2025. We also backed Outtake during its Series B, so we’re thrilled to see both teams make this year’s list.” to “CRV proudly co-led Lotus AI’s Series A and our firm led Outtake’s Series A, joined the board and backed Outtake during its Series B, so we’re thrilled to see both teams make this year’s list.
+
+CRV invests in founding teams at the beginning of their journeys, leading Seed and Series A rounds in amazing companies. We’ve backed more than 750 companies early on including DoorDash (another Next-Billion alum), Mercury and Vercel .
+
+Congrats to both Lotus AI and Outtake on being named to Forbes’ Next-Billion Dollar Startups list .
+
+ Cookie Preferences
+ Necessary
+ Always on
+
+ These cookies are essential in order to use the website and use its features.
+
+ Analytics
+ Analytics consent 
+
+ Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics such as the number of visitors, bounce rate, traffic source, etc.
+
+ Save Preferences 
+ Your Privacy Matters to Us
+ We use cookies and similar technologies on this site, employed by CRV and our partners, to support core features and help us understand how visitors engage with our content. For details, please review our Privacy Policy 
+ Accept All Reject All Manage Preferences

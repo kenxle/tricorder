@@ -1,0 +1,17 @@
+vendor,category,booked_as,months_with_lines,total_usd,last_12_months_usd,over_threshold_last_12
+Ironbridge Payroll Services,payroll_engineering,R&D,21,1686228.62,1194789.36,True
+Ironbridge Payroll Services,payroll_sales_marketing,S&M,21,1027417.52,778965.16,True
+Gantry Workspace,rent,G&A,21,359310.0,256335.0,True
+Ironbridge Payroll Services,payroll_g_and_a,G&A,21,376919.38,237143.75,True
+Tallow Telecom,telephony,Cost of revenue,21,231244.34,206600.53,True
+Ironbridge Payroll Services,support_staff,S&M,15,220446.46,191364.29,True
+Deskwise Software,tools,G&A,21,154003.05,101087.02,True
+Halcyon Inference API,model_inference,R&D,21,110564.84,97969.03,True
+Pembry Legal Services,legal,G&A,21,144223.54,93112.34,True
+Marsh Speech Licensing,third_party_licences,Cost of revenue,21,77685.71,68958.46,True
+Brindle Cloud Hosting,cloud_hosting,R&D,21,65450.14,58342.77,True
+Pinewell Analytics,tools,G&A,21,82924.72,54431.48,True
+Dunmore Accounting Group,accounting,G&A,21,91350.32,52082.2,True
+Tern Travel Desk,travel,G&A,21,58959.25,38026.83,True
+Pennant Insurance Brokers,insurance,G&A,21,28982.07,17626.09,False
+Birchfield Supply,other,G&A,21,19620.28,10780.68,False

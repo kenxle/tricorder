@@ -1,0 +1,116 @@
+SOURCE: https://acquisitionstars.com/blog/ucc-lien-search-buying-a-business
+
+UCC Lien Search When Buying a Business: What to Do [2026] 
+ UCC Lien Search When Buying a Business: What It Is, How It Works, and What to Do When You Find Something 
+ The UCC search is the easiest part of the process to describe and the easiest to get wrong in practice. Here is what a UCC-1 financing statement actually is, where you have to search, and why finding a lien is the beginning of the work, not the end.
+ By Alex Lubyansky, Esq. • June 2026 • 9 min read 
+
+ Key Takeaways
+ ✓ What a UCC-1 is: A public-record filing that gives notice a creditor holds a security interest in identified collateral. Active at closing means the lender has a claim on those assets.
+ ✓ Where to search: The state of organization, not the state of operation. Under Article 9, the filing belongs in the debtor's formation state. There is no national database.
+ ✓ A Delaware entity points the search to Delaware: An LLC can be organized in Delaware regardless of where it operates. A search limited to the operating state can produce a false-clean result.
+ ✓ A lien without a UCC-3 termination is active: It does not matter what the seller tells you. Until a UCC-3 is filed or a payoff letter is in hand, the lien is live.
+ ✓ Resolution belongs before closing: Payoff letter or UCC-3 termination statement must be obtained and documented before the closing date. Post-close cleanup is avoidable and expensive.
+
+ In my practice, the UCC lien search is an item buyers can underestimate. They have heard of it. They know roughly what it is. Two things are easy to get wrong: where to run it, and what to do when the results come back with something in them.
+ This article covers the mechanics thoroughly. If you are planning to run the search yourself, read this first. The jurisdiction question and the interpretation question are each more complex than they first appear. By the end, you will have a precise picture of what the search involves and why the difficult part of the work begins after the results come in.
+ The UCC lien search is one component of the full public-record review every acquisition requires. For the other public-record searches, such as federal court cases, tax liens and entity records, see legal due diligence for business buyers: public-record searches .
+
+ Approaching LOI or in active due diligence? UCC scope and jurisdiction questions are where under-prepared searches fail. Request a consultation → 
+
+ What a UCC-1 Financing Statement Actually Is
+ A UCC-1 financing statement is a public-record document that a secured creditor files to give notice of its security interest in specified collateral. Under Article 9 of the Uniform Commercial Code, perfecting a security interest in most business personal property requires filing a UCC-1 with the Secretary of State. The filing does not create the security interest - the security agreement between the borrower and lender does that. The UCC-1 makes it public and establishes the creditor's priority against other creditors and subsequent purchasers.
+ When a business takes out a working capital line of credit, equipment financing, or a term loan, the lender typically files a UCC-1 naming the business as debtor and describing the collateral. A blanket lien covers "all assets, whether now owned or hereafter acquired." Equipment. Inventory. Accounts receivable. Intellectual property. Everything the business owns or will own.
+ That structure is normal financing. Secured debt is a normal way for a business to fund operations and growth. The problem arises specifically in an acquisition: if an active UCC-1 exists at closing and the buyer does not know about it, or has not negotiated its resolution, the buyer is acquiring assets that a lender still has a security interest in. The buyer's ownership is subordinate to the lienholder's security interest. That is not a theoretical risk. It is a structural problem that requires resolution before or at closing - not after.
+ UCC-1 vs. UCC-3: The Termination Filing
+ A UCC-3 is the amendment or termination statement that extinguishes an active UCC-1. When a loan is paid off, the lender is supposed to file a UCC-3 termination statement, which removes the financing statement from the public record.
+ The operational reality: lenders do not always file UCC-3 terminations promptly, or at all. A UCC-1 filed five years ago for a loan that was paid off three years ago still appears active in the Secretary of State's database if no UCC-3 was ever filed. To a buyer running a search, it looks identical to a live, active lien. The only way to know the difference is to contact the lienholder directly and confirm the status of the underlying obligation.
+
+ Where to Run the Search: The Jurisdiction Problem
+ One error in a self-conducted UCC search is running it in the wrong state. Under Article 9, a UCC-1 must be filed in the state where the debtor is organized - the state of formation - not the state where the business operates. These are frequently not the same.
+ An HVAC company operating entirely in Ohio, incorporated in Delaware, has its UCC filings in Delaware. A buyer who runs a UCC search only in Ohio receives results that show nothing. The Delaware filing - where the lender properly placed its UCC-1 - does not appear. The result looks clean. It is not.
+ In my practice, I scope the jurisdiction list before running a single search. For any acquisition, the correct jurisdiction set is:
+ ● The state of formation, confirmed from the entity's organizing documents - not from what the seller tells you verbally.
+ ● Every state where the entity is registered as a foreign entity.
+ ● States where the entity holds significant personal property, even if not formally registered there.
+ The number of jurisdictions depends on the entity. For businesses with any operational complexity - multiple locations, equipment financed across states, or a Delaware formation with operations elsewhere - the list can be longer and the scope judgment requires legal review, not assumption.
+ Why Delaware Deserves Special Attention
+ A business can be organized in Delaware regardless of where it operates. The state of formation is a choice made when the entity is created. It has nothing to do with geography.
+ The result when the target is a Delaware entity: a search that skips Delaware can return a clean result while the lien sits in Delaware. The lien is there. The search did not include Delaware. The result looked clean.
+ As enacted in Delaware, financing statements for most collateral are filed with the Secretary of State (6 Del. C. 9-501(a)(2)). As enacted in Delaware, the filing office issues, on request, a record that can be admitted into evidence in Delaware courts without extrinsic evidence of its authenticity (6 Del. C. 9-523(d)). As enacted in Delaware, a search report speaks as of a date and time specified by the filing office, not earlier than three business days before the filing office receives the request (6 Del. C. 9-523(c)(1)).
+
+ Determining the right jurisdictions for a UCC search is a legal judgment. If you are not certain where your target entity is organized, that is the starting point. Request a consultation → 
+
+ How to Interpret the Results
+ When a UCC search returns results, the work has not ended. It has shifted from search to analysis. A UCC-1 filing in the database tells you that a creditor filed at some point and that no corresponding UCC-3 termination appears. It does not tell you whether the underlying debt is still outstanding.
+ A UCC-1 filing that appears active can represent paid-off debt with a missing termination statement, or it can represent a live obligation. The filing looks identical in both cases. The difference requires follow-up. Under the official text of UCC Article 9, when no obligation is secured and no commitment to give value exists, the secured party must, within 20 days after receiving the debtor's authenticated demand, send the debtor a termination statement or file it (9-513(c)).
+ Scenario A: Stale Filing, Debt Paid Off
+ The UCC-1 was filed when the business took out a line of credit three years ago. The loan was paid off eighteen months ago. The lender never filed a UCC-3 termination.
+ The filing still appears active. 
+ Resolution: contact the lienholder, confirm the obligation is satisfied, and request a UCC-3 termination statement. Straightforward, but it requires follow-up and documentation before closing.
+
+ Scenario B: Active Filing, Live Debt
+ The UCC-1 was filed for a working capital line that the seller is still drawing against. The blanket lien covers all business assets. The seller did not disclose it in the purchase agreement.
+ The filing is active and the lien is real. 
+ Resolution: obtain a payoff letter, require the debt to be paid at closing from proceeds, and confirm the UCC-3 termination will be filed. Structure this in the closing mechanics. Do not rely on a verbal representation from the seller.
+
+ The follow-up steps are the same in both scenarios, only the urgency differs. In either case, you need written confirmation of the obligation's status from the lienholder, not from the seller. The documentation to obtain:
+ ● A payoff letter from the lienholder, specifying the amount required to satisfy the obligation and release the lien, dated within a commercially reasonable period of the closing date.
+ ● Alternatively, a UCC-3 termination statement already filed, confirming the lien has been extinguished.
+ ● If the lien is being resolved at closing, clear language in the closing mechanics specifying the payoff sequence: sale proceeds go first to retire the secured debt, then to the seller.
+ None of this is negotiable from a documentation standpoint. A seller's representation in the purchase agreement that there are no active liens is not a substitute for a confirmed payoff letter. The reps give you a lawsuit after the fact. The payoff letter gives you a clean asset before you close.
+ If this discovery happens after the LOI has already been signed rather than during upfront diligence, the resolution options are the same but the negotiating leverage is different. Our guide to what to do when a UCC lien is found after the LOI walks through the payoff, termination, and holdback paths available at that later stage.
+ How This Connects to the Full Legal Due Diligence Layer
+ The UCC search is one of five public-record searches a properly conducted legal due diligence review requires. The others - federal litigation and bankruptcy searches through PACER, tax and judgment lien searches at the state and county level, and entity good standing verification - address different questions but compound in importance when combined with UCC results.
+ A seller with an active UCC-1 blanket lien and an undisclosed federal judgment lien presents a layered title problem. The UCC lien is the more visible issue. The judgment lien, recorded at the county level in a state the buyer did not search, is the one that surfaces after closing. Both are findable with proper scope. Neither shows up in a search limited to the operating state.
+ For asset purchase transactions versus stock purchases , the UCC question differs in structure. In an asset purchase, lenders holding UCC-1 liens against the seller's assets must be addressed in the closing mechanics - paid off, released, or subordinated. In a stock purchase, those liens follow the entity and become the buyer's inherited obligations. This is one of several reasons the business acquisition process should involve legal review before the deal structure is finalized.
+ The role of the attorney in this work is not just running searches. It is determining which jurisdictions to search, running name variations that match all entity names and DBAs, interpreting active versus stale results, coordinating follow-up with lienholders, and producing a written report that documents the scope and results. An experienced attorney for buying a business can take on this work as part of buy-side due diligence.
+ The hub page lists each search type, where its record is kept, and what the search does not show: legal due diligence for business buyers: public-record searches .
+ Have a target entity with operations in multiple states, or organized in a state different from where it operates? The jurisdiction question requires a scoping call before any searches run. Request a consultation → 
+
+ Frequently Asked Questions
+ What is a UCC lien search and why does it matter when buying a business? A UCC lien search queries the Secretary of State's database in a specified state for Uniform Commercial Code financing statements - known as UCC-1 filings - recorded against a business entity. These filings give public notice that a creditor holds a security interest in identified collateral. In a business acquisition, an active UCC-1 from a lender typically means the buyer is acquiring assets that are already pledged as security for an outstanding debt obligation. A blanket UCC-1 - the kind that covers all business assets - means the lender's security interest covers all listed business assets: inventory, equipment, accounts receivable, and intellectual property. If that lien is not resolved before closing, the buyer does not own those assets free and clear.
+
+ Where do I run a UCC lien search for a business acquisition? Under Article 9 of the Uniform Commercial Code, a secured creditor must file its UCC-1 in the state where the debtor is organized - meaning the state of formation, not necessarily the state where the business operates. An Ohio HVAC company incorporated in Delaware requires a UCC search in Delaware, not Ohio. You must search: (1) the state of formation, (2) every state where the entity is registered as a foreign entity, and (3) states where the entity holds significant personal property. There is no single national UCC database. Skipping any of these jurisdictions produces results that look clean but may not be.
+
+ What should I do if the UCC lien search returns an active filing? Finding a UCC-1 filing does not end the deal. It requires follow-up. First, determine whether the underlying debt is still outstanding. A lien may appear active because the debt was paid years ago but the lender never filed a UCC-3 termination statement - the lien looks live even though the obligation is gone. If the debt is still outstanding, obtain a payoff letter from the lienholder and confirm the lien will be released at or before closing. If the debt is satisfied but no termination was filed, request that the lender file a UCC-3. All of this must be documented and completed before the closing date, not treated as a post-close cleanup item.
+
+ Why does a Delaware entity require a Delaware UCC search? A business running operations entirely in Texas may be incorporated in Delaware. Under the official text of UCC Article 9, a registered organization organized under a state's law is located in that state (9-307(e)). As enacted in Delaware, the rule is the same, and financing statements for most collateral are filed with the Delaware Secretary of State (6 Del. C. 9-307(e), 9-501(a)(2)). A buyer who searches only the operating state can miss a Delaware filing and receive a false-clean result.
+
+ Can I run a UCC lien search myself, or do I need an attorney? Under the official text of UCC Article 9, the filing office maintains filed records for public inspection and, if requested, issues a certificate or a record that can be admitted into evidence (9-519(a), 9-523(d)). In Michigan, all search requests must be submitted using UCC Online Services, and the online portal offers a certified UCC-11 search option, according to the Michigan Department of State. PACER provides electronic public access to federal court records. Beyond access, the work requires legal judgment: determining which jurisdictions to search, running the correct name variations, interpreting active versus stale filings, and knowing what follow-up documentation to demand. A search result shows what is on file. It does not by itself show whether the secured debt is still owed.
+
+ Related Resources
+ Hub Legal Due Diligence for Business Buyers
+ Which public-record searches buyers can run, what each record shows and does not show, and how a finding is read.
+ Related Asset Purchase vs. Stock Purchase
+ How the deal structure determines which UCC liens follow the transaction and which must be resolved at closing.
+ Related Attorney for Buying a Business
+ What buy-side legal representation covers, including public-record diligence scope determination and lien resolution.
+ Legal Services Due Diligence Attorney Services
+ UCC searches, jurisdiction scoping, and lien resolution for business acquisitions.
+
+ Legal counsel for this topic
+ Acquisition Stars handles M&A transactions nationwide and works with securities counsel on securities matters. Alex Lubyansky leads the M&A engagements.
+ Closest fit for this topic M&A attorney M&A attorney for mergers, acquisitions, and divestitures. M&A attorney services M&A counsel for mergers, acquisitions, and divestitures. Business acquisition lawyer Legal counsel for buyers from letter of intent through closing. Michigan service areas Acquisition Stars serves clients across Michigan and nationwide. 
+
+Request Engagement Assessment
+
+ UCC Search on Your Business Acquisition?
+ Alex Lubyansky leads every engagement, with an associate supporting.
+
+Request Engagement Assessment
+
+Or call directly: (248) 266-2790 
+
+ ) --> 
+Before you go
+
+Get a free consultation with an M&A attorney
+
+Talk through your transaction with Alex Lubyansky at no cost. Submit your transaction details and the team will confirm next steps.
+
+Request Your Free Consultation
+
+Or call (248) 266-2790 
+
+Not right now

@@ -1,0 +1,81 @@
+SOURCE: https://fossa.com/blog/copyleft-licenses-venture-capital-connection/
+
+Copyleft Licenses and the Venture Capital Connection | FOSSA Blog 
+ Skip to main content 
+ Log In 
+ Demo 
+
+ All Announcements SBOM Security Licensing Open Source Press 
+
+ Back to blog 
+ Copyleft Licenses and the Venture Capital Connection
+ June 8, 2021 · 8 min read · Andy Drukarev 
+ open-source
+ venture capital
+
+ The National Venture Capital Association (NVCA) is the “preeminent trade association” representing the venture capital community. Along with its role as a public policy advocate, the NVCA makes a variety of resources available to members and the general public, including several model legal documents that are used in many investment transactions.
+
+ One of these model documents is for a Stock Purchase Agreement, which is often used in financing transactions. The Stock Purchase Agreement Model Form covers quite a bit of ground, with sections on share price, indemnifications, tax purposes, and more. One of the form’s provisions (in the “Representations and Warranties” section) deals with open source software licenses .
+
+ More specifically, the provision (Item G in Section 2.8) requires companies to attest that they have not used any open source code licensed or distributed under copyleft open source licenses in a way that would “materially restrict” their ability to protect intellectual property. The clause ostensibly exists to protect venture capitalists from investing in an organization that may:
+
+ Be forced to open source their product’s codebase because it uses copyleft-licensed components in a manner that would require source code disclosure
+
+ Face legal exposure because it’s not meeting open source licensing requirements
+
+ In this blog, we’ll take a close look at this clause, including its real-world impact and how organizations can ensure it doesn’t end up being a roadblock to funding or an exit. We’ll also offer perspective from Kate Downing , an IP lawyer who specializes in helping software companies navigate areas like open source compliance.
+
+ MORE: Analyzing the Legal Implications of GitHub Copilot 
+
+ Breaking Down the Copyleft License Clause
+
+ Before diving into the clause’s phrasing, it’s important to understand why the NVCA Stock Purchase Agreement Model Form specifically mentions copyleft licenses. In contrast with permissive licenses (which have very few restrictions on the use of the licensed code), copyleft licenses generally come with more stringent requirements.
+
+ Copyleft licenses typically require both attribution and the provision of “covered source code” upon redistribution, but the scope of the source code that must be provided varies from license to license. “Weak copyleft” licenses merely require that source code for the OSS project itself and any direct modifications to it be provided, whereas “strong copyleft” licenses might require providing source code for all “derivative works” of the project.
+
+ For example, a company that distributes a product that links to a library licensed under GPL v2 (a strong copyleft license) would likely need to publish that product’s entire source code to comply with the license — or re-engineer the product to remove the library — which may mean a massive unexpected cost, which would devalue the company. So, while the majority of today’s open source software projects use permissive licenses, the Model Form Agreement focuses on copyleft because of the IP ramifications of shipping products with copyleft-licensed code.
+
+ With that as a backdrop, the NVCA Model Form actually includes two versions of a clause related to the use of copyleft-licensed code. The first (Bullet G of Section 2.8) is the default version and reads as follows:
+
+ The Company has not embedded, used or distributed any open source, copyleft or community source code (including but not limited to any libraries or code, software, technologies or other materials that are licensed or distributed under any General Public License, Lesser General Public License or similar license arrangement or other distribution model described by the Open Source Initiative at www.opensource.org, collectively “Open Source Software”) in connection with any of its products or services that are generally available or in development in any manner that would materially restrict the ability of the Company to protect its proprietary interests in any such product or service or in any manner that requires, or purports to require (i) any Company IP (other than the Open Source Software itself) be disclosed or distributed in source code form or be licensed for the purpose of making derivative works; (ii) any restriction on the consideration to be charged for the distribution of any Company IP; (iii) the creation of any obligation for the Company with respect to Company IP owned by the Company, or the grant to any third party of any rights or immunities under Company IP owned by the Company; or (iv) any other limitation, restriction or condition on the right of the Company with respect to its use or distribution of any Company IP. 
+
+ For investors interested in conducting a more thorough audit of a company’s open source usage, the Model Form also includes an alternate version of the copyleft license clause. This can be found in Footnote 26, and reads in part:
+
+ The Company has not embedded any open source, copyleft or community source code in any of its products generally available or in development, including but not limited to any libraries or code licensed under any General Public License, Lesser General Public License or similar license arrangement. 
+
+ As the Model Form notes: “The primary benefit of requiring this expanded disclosure is that the investors can perform their own diligence on the open source software rather than relying on the Company to properly disclose against the narrower representation.”
+
+ Anecdotally, it’s our understanding that the majority of Stock Purchase Agreements use the default version. Regardless of the version, its intent is generally the same.
+
+ “The goal of the clause is, essentially, to determine whether companies have copyleft-licensed code in distributable products,” Downing says. “Depending on how much copyleft-licensed code there is, how it’s used, and how integral it is to the value of the company’s product, a closer look might reveal that the company doesn’t actually have much proprietary code.”
+
+ Practical Implications of the Copyleft License Clause
+
+ If you’re the sole employee of a one-person startup, open source compliance probably isn’t your top priority. After all, you may not even have a product to distribute at that stage, let alone any meaningful revenue.
+
+ However, the more companies grow, and as they advance toward early-stage fundraising and beyond, the NVCA’s Stock Purchase Agreement Model Form copyleft license clause may enter the equation. Companies may also encounter provisions around the use of open source software in other financing and liquidity events.
+
+ “You typically see them any time a third party is trying to assess whether a company is worthwhile and its claims of IP ownership and the basis for which you’re evaluating a company are actually real,” Downing says. “So you see these come up in M&As, investment rounds, and a lot of other places."
+
+ “From the perspective of a venture capitalist or other investor, there’s no point in valuing a company for millions or billions if you figure out that what the company considers its core IP is actually open source copyrighted by someone else. Investors use clauses like the one in the NVCA Model Form to guard against such an event. Any time a company is looking at a potential exit or funding event, this discussion around open source use and compliance takes place.”
+
+ How to Avoid Open Source Licensing Issues
+
+ Even if you’re not in the midst of a fundraising round that would bring the NVCA Stock Purchase Agreement Model Form’s copyleft licensing clause to the forefront, there are benefits to keeping open source compliance top of mind.
+
+ For one, it’s always easier to inventory all open source libraries and licenses — and address any problematic copyleft-licensed components — when you’re working with a smaller codebase and a less mature product.
+
+ Plus, as Downing notes, open source compliance is best viewed as a process rather than a one-time, event-driven occurrence.
+
+ “There’s no point at which you can say I am compliant and just check the OSS compliance box,” Downing says. “It’s always a process, and you can always be better at it. It’s sort of like sanitizing a hospital. Are you ever really done sanitizing the hospital? No, there’s always more you can clean, there are better ways you can clean, there are stronger disinfectants you can use. That’s sort of how open source is — there’s no end to your compliance. Your process can just keep getting more and more sophisticated and better and better.”
+
+ And, while this may sound like a time-consuming, resource-intensive endeavor, a new generation of open source license compliance tools automates much of the heavy lifting. These tools scan your code and inventory open source components and licenses — including any copyleft licenses — in your products, offering full visibility into any issues. Plus, some of these compliance tools (such as FOSSA) have policy engines which enable teams to flag and break any build that pulls in problematic licenses. This helps companies avoid a scenario where they only discover that they’ve pulled in copyleft-licensed code at the last minute, jeopardizing a potential fundraising round in the worst-case scenario, or signaling a lack of competence and weakening the company’s negotiating position in the best-case scenario.
+
+ For more information on how FOSSA can help your organization steer clear of issues with copyleft licenses and open source compliance, feel free to get in touch with one of our OSS experts .
+
+ Note: Although we at FOSSA work closely with many legal teams, this post was not authored by a lawyer. If you are seeking legal advice, we suggest you speak directly to a legal team that specializes in open source licensing. 
+
+ Subscribe to our newsletter
+ Get the latest insights on open source license compliance and security delivered to your inbox.
+
+ Subscribe

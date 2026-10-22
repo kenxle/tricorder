@@ -1,0 +1,41 @@
+SOURCE: https://www.lathropgpm.com/insights/understanding-and-complying-with-open-source-software-licenses-why-when-and-how/
+
+Understanding and Complying with Open Source Software Licenses - Why, When and How - Lathrop GPM Skip to content 
+ Skip to primary sidebar 
+
+ Open global search Open global menu 
+
+ Legal Updates Understanding and Complying with Open Source Software Licenses – Why, When and How
+
+ July 14, 2021 | 3 minute read 
+ Toggle the social sharing tools SHARE 
+
+ PDF 
+
+ Auditing open source software license terms is easier said than done. Like any well-managed process, ongoing compliance is the best practice. This article briefly expands on earlier provided practical open source software compliance tips (see OSS an IP Perspective and Why Security Matters Even More for On-premise Software Vendors | The Privacy Hacker ).
+ Why Open Source?
+ Open source software can be used quickly, with low or no up-front monetary cost, to create new software or to modify and customize existing software. Open source software is typically thought of as a community-based development process, including the collaborative improvement of a project based on potential contributions and input from a diverse set of stakeholders. These stakeholders may have widely different training and backgrounds, providing distinctive ranges of community input. The open development process creates a beneficial programming approach that drives competition, resulting in better quality software products. Using and incorporating open source software components as part of an integrated office approach is already commonplace for organizations and projects of all sizes.
+ When Open Source Issues Come Up
+ Beyond the developer community, in the broader legal and business context, open source license compliance comes up relatively routinely in connection with financing (debt or equity funding) and M&A transactions, upon an IPO , and at other critical points for a project or business. This is often misunderstood, and as a result, dreaded – intellectual property due diligence during these points will likely include a review of all business-critical software components and their license terms, as well as any utilized open source components.
+ An ongoing open source compliance program maximizes value by reducing legal risk and providing certainty in intellectual property planning. Whether preparing for future investment, sale, or conducting diligence on a potential target for investment or purchase, any organization that interacts with open source needs to be mindful of compliance. [1] It may not be a walk in the park, but involving and educating relevant stakeholders before development is a must for an effective open source compliance program. 
+ How to Comply
+ The first step in complying with varying license obligations is to identify and track all use of software, including open source components. For larger organizations, this may require soliciting feedback from multiple departments and project groups and/or having third party code scans to identify all open source used in a project (such as Black Duck). Once all software components are identified, the next step is to centrally compile and review all license terms and understand the business purpose for each licensed component.
+ Examples of open source license terms to consider:
+ License Compatibility: Certain open source licenses are incompatible and combined modules may not be distributed at all if conflicting. For example, licenses that impose further restrictions may conflict with terms such as those of the GPL-2 [2] and GPL-3 [3] which requires licensees not to “impose any further restrictions on the exercise of the rights granted of affirmed” under the license.
+ Notice Requirements: Attribution and modification requirements are among the notice requirements that are often required to be retained even if integrated into commercial projects.
+ License Reciprocity and “Tainting” Issues: Integrated open source code licensed on a restrictive basis under certain licenses such as the GPL and AGPL could trigger the requirement to license otherwise proprietary projects on the same open source license terms as those integrated open source components.
+ Identifying compliance issues early allows remedial action to be taken to prevent ongoing and future issues, ideally implementing a vetted review and authorization process for using and integrating open source components moving forward. Even if one of these issues is not raised during such inflection points, requirements to provide representations and warranties on current and past compliance in financings and M&A agreements are typical. Despite warranties on past compliance, an offer of indemnity may not be sufficient to mitigate the loss of, or ability to utilize, entire intellectual property rights (copyright, patent or trade secret) in potentially business-critical assets. 
+ It is important to review license terms from a business and legal perspective and to involve relevant stakeholders in any open source audit and compliance process. In order to efficiently prepare for potential financings or sales, tracking the use of open source software and the compatibility of licenses on a regular basis prior to these events is crucial.
+ [1] The Linux Foundation’s OpenChain Project has established ISO 5230, the International Standard for open source compliance. This identifies the inflection points in business workflows where processes or policies should be implemented to reduce costs and increase efficiency when utilizing open source software. ( www.openchainproject.org ) 
+ [2] GNU General Public License v2.0 – GNU Project – Free Software Foundation 
+ [3] The GNU General Public License v3.0 – GNU Project – Free Software Foundation 
+
+ Related Services
+ Corporate & Business 
+ Licensing & Commercial Transactions 
+
+ Close 
+
+ Close 
+
+ Search

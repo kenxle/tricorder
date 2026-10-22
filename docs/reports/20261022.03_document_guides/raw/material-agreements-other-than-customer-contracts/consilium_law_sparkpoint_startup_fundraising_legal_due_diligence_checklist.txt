@@ -1,0 +1,325 @@
+SOURCE: https://consilium.law/sparkpoint/startup-fundraising-legal-due-diligence-checklist/
+
+Startup Fundraising Legal Due Diligence Checklist | SparkPoint by Consilium Law 
+
+ Capital Formation 
+ What Investor Counsel Will Find in Your Startup's Data Room 
+ What investor counsel actually checks in a startup data room: ownership, authorization, and evidence, staged by fundraising transaction phase. 
+ By Meetesh Patel 
+ · August 10, 2026 · 17 min read 
+
+ In this article 
+ A data room does not cure a missing board approval, an unsigned IP assignment, or a contract that says something different from your deck. It just makes the problem easier for someone else's lawyer to find, on their timeline instead of yours.
+
+ What does legal due diligence actually cover in a startup fundraise?
+
+ Investors size up a company on team, market, product, traction, and the financial model. None of that is what this article is about. The legal layer asks three narrow questions. Does the company legally own what it says it owns? Did it properly authorize what it issued? Can it back up its material obligations and disclosures with signed, current, internally consistent records? Substantive financial, commercial, accounting, tax, technical, and market diligence are separate exercises with their own reviewers. This article touches tax only where it intersects with legal readiness.
+
+ Investor counsel isn't grading your filing system. They're testing claims. Every folder exists to prove a proposition about the company. A proposition with no signed evidence behind it can become a diligence item, a closing condition, or a price conversation.
+
+ How should founders test their own records before investors do?
+
+ Here's the test I'd run on every category before anyone outside the company sees a document. Four questions, in this order.
+
+ What claim is the company making about itself? Write it as a sentence. We own this code. This stock was properly authorized.
+
+ Is there signed, current evidence for it? Signed, not drafted. Current, not superseded.
+
+ Is that evidence consistent with everything else? The cap table, board minutes, option grants, and customer contracts should describe the same company. Where they disagree, the disagreement is the finding.
+
+ If there's a gap, has it been properly remediated? Documented, corrected through valid means, disclosed where required. Never patched quietly.
+
+ Each category below names the claim, the evidence behind it, and the stage by which a founder can have it in hand.
+
+ Can you prove the company exists and authorized what it issued?
+
+ The claim: a real, current entity signed everything, and whoever signed had authority.
+
+ Start with a certificate of good standing from the state of incorporation, confirming the entity's current formation status. Delaware issues two versions, and its Division of Corporations publishes sample certificate wording . The short-form certificate confirms existence and status. The long-form certificate also lists the filings on file for the entity. Names, contents, and available forms vary by state, so confirm what your own filing office issues.
+
+ Then the authority chain: the charter, the bylaws, and the full record of board and stockholder consents behind every stock issuance, option grant, amendment, and the financing itself. What approval a given action required depends on the action, your governing documents, and your governing law. Your job is to assemble the record so the question can be answered at all.
+
+ Stage: before investor outreach. Confirm the company's franchise-tax status now, before diligence does.
+
+ What does the capitalization and prior-financing record need to show?
+
+ The claim: the cap table reconciles to the signed instruments and approvals behind it.
+
+ Pull together the current cap table; every SAFE, convertible note, and priced-round document; each option grant with the approval behind it; and confirmation that prior-round paperwork is complete and internally consistent. Signatures present. Conversion terms reconciled. No side letter living in someone's inbox. The NVCA model legal documents are widely used model forms for priced venture rounds, and the model set identifies the principal documents included in NVCA's priced-round forms.
+
+ Exemption choice, accredited-investor verification, Form D and state notice filings, cap-table red flags, and the 83(b) election deadline sit in our startup fundraising readiness checklist . For instrument mechanics, conversion, and dilution, go to our SAFE versus convertible note versus priced round comparison . The wider practice context lives on our capital formation page.
+
+ Stage: before investor outreach.
+
+ Does the company actually own its intellectual property?
+
+ The claim: the company, not a person or a prior entity, owns the code and the patents its valuation rests on.
+
+ Copyright ownership vests initially in the author under 17 U.S.C. Section 201(a) . A work becomes a "work made for hire" under 17 U.S.C. Section 101 in only two situations. One is work prepared by an employee within the scope of employment. The other is specially ordered or commissioned work that falls into one of the statute's nine enumerated categories and is covered by a signed written agreement saying it is a work made for hire. Those categories, explained in the Copyright Office's Circular 30 , include contributions to collective works, translations, compilations, and instructional texts. Computer software is not itself one of the nine named categories. Whether a particular commissioned deliverable fits one of those categories is a fact-specific question, so a founder should not rely on the work-for-hire label alone.
+
+ The practical effect is blunt. If you paid a contractor, an agency, or a pre-incorporation co-founder to build the product and the agreement just says "work for hire," the label alone may not get you ownership. An express, signed, present-tense assignment supplies a separate ownership-transfer route. Look for the assignment, not the label.
+
+ Patents add a recording question. Under 35 U.S.C. Section 261 , an assignment is void as against a later purchaser or mortgagee for valuable consideration without notice unless it was recorded at the USPTO within three months of its date or before that later purchase. Either one preserves priority. That is a priority rule between competing claimants, not a rule voiding the assignment between the original parties.
+
+ If your patents were filed through a prior entity, a university tech-transfer office, or an individual inventor, audit the public USPTO assignment record and close any gap in the chain. As of the USPTO fee schedule retrieved August 10, 2026, the USPTO fee for electronically recording each patent assignment was $0.
+
+ Stage: before investor outreach, because the fix depends on people who no longer work for you.
+
+ Which contract provisions can complicate a financing?
+
+ The claim: the revenue and the partnerships survive the transaction intact.
+
+ What follows is an inventory, not a doctrinal conclusion. Pull your material agreements and list five things:
+
+ Assignment provisions.
+
+ Merger and change-of-control provisions, reviewed separately. Some contracts define those events as assignments, some address them independently, and others do not address them expressly.
+
+ Consent and notice requirements.
+
+ Termination rights.
+
+ Restrictions that could constrain the financing, operations, growth, or a later transaction: exclusivity, most-favored-customer pricing, minimum commitments, renewal terms.
+
+ What any one provision permits, blocks, or requires depends on the specific language, the transaction structure, the governing law, and the rights affected. Build the list, flag the consent and notice triggers, and take the interpretation questions to counsel.
+
+ Stage: before serious diligence access, since consent timelines belong to the counterparty.
+
+ Do your people agreements support what you claim about your team and your IP?
+
+ The claim: the people who built the company were properly engaged, properly classified, and properly signed up on IP.
+
+ Three things get tested here, and they interact.
+
+ Invention assignment and confidentiality language in every employment and contractor agreement comes first. A misclassified contractor's work product is often the same work product whose ownership the IP file is trying to prove.
+
+ Classification comes second. The IRS evaluates employee versus independent contractor status for federal employment-tax purposes using three categories of evidence: behavioral control, financial control, and the type of relationship between the parties. That is the federal tax common-law framework, not a single universal test. Wage-and-hour law and state statutes apply their own tests, and a worker correctly classified for federal tax purposes is not automatically classified correctly everywhere else.
+
+ The trade-secret notice comes third. 18 U.S.C. Section 1833(b) gives individuals immunity for confidential disclosures of a trade secret to a government official or an attorney solely to report or investigate a suspected violation of law, or in a sealed court filing.
+
+ Section 1833(b)(3)(A) requires employers to give notice of that immunity in any agreement governing use of trade secrets or other confidential information, and allows a cross-reference to a policy document instead. Miss the notice, and the employer may not be awarded exemplary damages or attorney's fees against that employee in an action under the Defend Trade Secrets Act, per Section 1833(b)(3)(C). Contractors and consultants count as employees for this notice under Section 1833(b)(4). The requirement reaches agreements entered into or updated after May 11, 2016.
+
+ Here's what that means for cleanup. Updating your template fixes agreements signed from today forward. It doesn't touch the ones already signed. Those get reviewed one at a time, with counsel deciding what corrective action is available.
+
+ Gather equity-grant approvals, material compensation commitments such as severance and change-of-control acceleration, and material employment disputes while you're in there. Stage: before serious diligence access.
+
+ What debt, tax, insurance, litigation, and compliance records should be ready?
+
+ Readiness level only here. This isn't substantive tax, accounting, or insurance advice.
+
+ Have these assembled:
+
+ Outstanding debt instruments with their material covenants.
+
+ A litigation and claims summary covering pending, threatened, and resolved matters.
+
+ Outstanding regulatory correspondence or investigations.
+
+ A summary of material insurance coverage.
+
+ Confirmation that standard tax and compliance filings are current.
+
+ The reason to get these right is the paper you'll sign. Financing documents built on structures like the NVCA models ask for representations about these same topics, so the records have to support what the company represents. Anti-fraud exposure for material misstatements and omissions in an offering is covered in our startup fundraising readiness checklist .
+
+ Stage: before signing financing documents, refreshed at confirmatory diligence.
+
+ What privacy, security, and regulatory exposure gets tested?
+
+ For technology companies, be ready on data-privacy compliance posture, security practices and incident history, and sector-specific regulatory exposure. At readiness level, assemble the current privacy notices, data-processing terms, security policies, incident records, and any sector-specific licenses or regulatory correspondence that bear on the products and jurisdictions in scope. Then map each material compliance claim to current evidence, the same way you do everywhere else in the room.
+
+ AI-native companies face a more specific set of governance and technical-documentation questions, including systems inventory and model documentation. Our AI diligence package covers that territory, and there's no point repeating it here. Stage: before serious diligence access.
+
+ How should the data room itself be run?
+
+ A startup data room checklist for fundraising covers eight operating controls: a request index, signed-versus-draft version discipline, counsel review of privileged material, redaction, controlled and revocable access, an exceptions list, a correction trail, and complete and accurate disclosure of material information. The room is a process, not a folder. Here are the controls I'd put in place:
+
+ An index of requests with an owner, a status, and a last-updated field for every item.
+
+ Signed final documents kept separate from drafts and superseded versions. Label superseded versions rather than deleting or hiding them, under consistent file naming and version control.
+
+ Counsel review of potentially privileged material before upload. Privilege analysis is fact-specific, and a label does not by itself settle a document's status.
+
+ Redaction of unnecessary personal information and login credentials.
+
+ Controlled access with logs, role-based permissions, and the ability to revoke. Staged access is an information-security and process-control practice. It is never a way to keep material information from a reviewer entitled to see it.
+
+ An exceptions list naming every item that is missing, disputed, incomplete, or inconsistent, rather than quietly omitting it.
+
+ A correction trail showing what was fixed, when, and how.
+
+ Complete and accurate disclosure of material information where required.
+
+ Stage: index and exceptions list before serious diligence access; access controls from day one.
+
+ What should you do when you find a gap?
+
+ You'll find gaps. Finding them yourself is the point of starting early.
+
+ When you do, work in this order:
+
+ Identify and document the gap.
+
+ Preserve the existing historical record.
+
+ Get legal advice appropriate to the issue.
+
+ Take valid corrective or ratifying action if one is available.
+
+ Keep evidence of what was corrected, when, and under what authority.
+
+ Make accurate disclosures when disclosure is required.
+
+ Six moves are off the table in every circumstance: backdating an agreement or approval, manufacturing a missing document, reconstructing a historical approval and presenting it as contemporaneous, silently substituting a new version for the historical record, hiding a known material inconsistency, and using misleading file names, dates, or descriptions. A documented gap is a diligence item. A concealed one is a different category of problem.
+
+ Valid corrective mechanisms exist, and they're narrower than founders expect. For Delaware corporations, Delaware General Corporation Law Section 204 supplies a statutory process by which the board can ratify certain defective corporate acts, including putative stock issued without proper authorization. The ratifying resolutions identify the act, its date, and the nature of the failure of authorization. If the underlying act would have required stockholder approval, the ratification generally must also be submitted to stockholders, subject to the statute's exceptions.
+
+ Section 205 gives the Court of Chancery authority to determine the validity of a defective act or a ratification, and to validate one on conditions it sets.
+
+ Those sections address Delaware corporate-act and stock-validity problems. They do not cure a defective IP assignment, a contract gap, or an employment or tax defect. For a company incorporated elsewhere, check that jurisdiction's law before assuming an equivalent remedy exists.
+
+ And not every defect is curable retroactively. A missed 83(b) election, discussed in our startup fundraising readiness checklist , has no simple late-filing remedy. Some findings get disclosed and priced rather than fixed.
+
+ What does a staged readiness checklist look like?
+
+ A startup fundraising legal due diligence checklist runs in four stages: before investor outreach, before serious diligence access, before signing financing documents, and confirmatory and closing. Organized by where you are in the transaction, not by a countdown.
+
+ Before investor outreach. Pull the good-standing certificate and confirm state filings and franchise tax are current. Assemble the charter, bylaws, and complete consent record. Reconcile the cap table against every signed instrument. Confirm a signed present-tense IP assignment from everyone outside the payroll who built product. Audit the USPTO assignment record and record what is missing.
+
+ Before serious diligence access. Inventory assignment, change-of-control, consent, notice, termination, and restrictive provisions in material contracts. Review people agreements for invention assignment, confidentiality, classification exposure, and the Defend Trade Secrets Act notice in agreements signed since May 11, 2016. Build the request index, the exceptions list, and the access controls, and route privileged material to counsel before upload.
+
+ Before signing financing documents. Reconcile the debt, litigation, insurance, tax, and compliance summaries against the representations the company is being asked to make. Confirm every consent or notice trigger from the contract inventory has been addressed or disclosed.
+
+ Confirmatory and closing. Refresh the good-standing certificate and the cap table. Update the exceptions list and the correction trail. Confirm that what changed during the process reaches the disclosure schedules.
+
+ What this means for each seat at the table
+
+ Founders and CEOs own the claims. You sign the representations about ownership and authority, so the distance between what you believe and what the signed record proves is your exposure.
+
+ CFOs and operations leads own the evidence chain. The index, the exceptions list, version discipline, and cap-table reconciliation can get slower and costlier once a term sheet is live.
+
+ Boards are responsible for seeing that required approvals are actually documented, and the company itself is responsible for maintaining a complete corporate record. A consent discussed but never documented, or a grant approved in a meeting nobody minuted, can surface as a defective corporate act just when the company needs a clean answer.
+
+ Prior investors may hold executed financing documents or side letters the company needs to collect and reconcile. Their records are an input to your reconciliation, not a substitute for it.
+
+ Practical takeaways
+
+ Chase down a signed, present-tense IP assignment from everyone who built product and wasn't on your payroll. Computer software is not itself one of the nine commissioned-work categories in 17 U.S.C. Section 101, and whether a given deliverable fits one is a fact-specific question, so don't rely on the work-for-hire label alone.
+
+ Audit the public USPTO assignment record and close chain gaps now. On the USPTO fee schedule retrieved August 10, 2026, electronic recordation carried a $0 USPTO fee.
+
+ Inventory merger and change-of-control provisions separately from assignment provisions. Some contracts define those events as assignments, some address them independently, and others are silent, so reading only the assignment clause can miss a consent requirement.
+
+ Check every agreement governing trade secrets or confidential information signed since May 11, 2016 for the Defend Trade Secrets Act notice. Without the notice, the employer may not be awarded exemplary damages or attorney's fees under the DTSA in an action against that individual, and updating the template does not reach agreements already signed.
+
+ Reconcile the cap table against each signed instrument before outreach. A cap table is only as reliable as the signed instruments and approvals behind it.
+
+ Keep an exceptions list and put real items on it. Naming what is missing or disputed is a credibility asset; having a reviewer find it first is not.
+
+ Get advice on a defect before choosing a fix. Delaware Sections 204 and 205 address corporate-act and stock-validity problems. They do not cure IP, contract, employment, or tax defects, so the remedy depends on which kind of defect you have.
+
+ Frequently asked questions
+
+ What is legal due diligence in a startup fundraise? 
+
+ It is the review that tests whether a company legally owns what it claims to own, properly authorized what it issued, and can substantiate its material obligations and disclosures with signed, current, consistent records. It runs separately from financial, commercial, technical, and market diligence.
+
+ Does a work-for-hire clause in a contractor agreement mean the company owns the code? 
+
+ Not necessarily. Under 17 U.S.C. Section 101, commissioned work qualifies as a work made for hire only if it falls into one of nine enumerated categories and is covered by a signed written agreement. Computer software is not itself a named category, and whether a particular deliverable fits one is a fact-specific question. An express, signed present assignment of the resulting IP provides a separate ownership-transfer route.
+
+ When should a founder start preparing for legal diligence? 
+
+ Corporate, cap-table, and IP-ownership work belongs before investor outreach, because remediation often depends on former contractors and prior counsel. Contract, employment, and data-room controls come before serious diligence access, and the summaries supporting representations come before signing.
+
+ What should a startup do if it finds a missing approval or an unsigned agreement? 
+
+ Document the gap, preserve the existing record, get legal advice, take valid corrective action if one exists, keep evidence of the correction, and disclose accurately where required. Backdating, reconstructing an approval as contemporaneous, or quietly substituting a new version is off the table in every circumstance.
+
+ Can staged data-room access be used to keep problem documents out of diligence? 
+
+ No. Role-based, staged access is an information-security and process-control practice for managing who sees what and when. Using it to withhold material information from a reviewer entitled to see it is concealment, and that is a larger problem than the underlying defect.
+
+ Closing perspective
+
+ A clean diligence process doesn't require a company that has never had a defect. It requires knowing where the record is incomplete, preserving the history, using a valid correction path, and disclosing accurately where required.
+
+ Timing is one part founders can control. A gap found early may be a manageable work item. Depending on the defect, the response may involve ratification, assignment, disclosure, or pricing. The same gap found after a term sheet can become a closing condition with a wire date already on the calendar.
+
+ So start with the five biggest legal claims this company makes, and go find the signed evidence behind each one. Whatever can't be substantiated quickly belongs at the top of the readiness list.
+
+ This article is for informational purposes only and does not constitute legal advice. Every company's situation is different, and you should consult with qualified legal counsel before making compliance decisions based on the developments discussed here. 
+
+ In this article
+
+ Share this article and about the author
+ Share LinkedIn X Email 
+Copy link
+ Link copied 
+
+ Meetesh Patel 
+ Founder and Managing Attorney
+
+I write SparkPoint myself. I built and sold a law firm, ran a clean energy company as CEO, and spent a decade advising founders before building this practice.
+
+ More about the firm 
+
+ SparkPoint Briefings
+
+Regulatory analysis for builders in regulated markets.
+
+Weekly briefings on legal shifts that touch the companies the firm
+ works with.
+
+ Email address 
+
+Subscribe
+
+Subscribed. Welcome to SparkPoint Briefings.
+
+Something went wrong. Please try again.
+
+Responsible attorney: Meetesh Patel, Consilium Law LLC, 10490 Little
+ Patuxent Parkway, Suite 600, Columbia, Maryland 21044. This newsletter
+ does not constitute legal advice and does not create an attorney-client
+ relationship.
+
+ More from SparkPoint More from SparkPoint
+ Capital Formation · October 21, 2026 
+ An Investor Wants a SAFE Side Letter: What Should Founders Review Before Signing?
+ This guide walks founders through what to review before signing a SAFE side letter, including pro rata rights, assignment terms, and capitalization math.
+ 17 min read
+ Capital Formation · July 27, 2026 
+ SAFE vs Convertible Note vs Priced Round: How to Choose
+ How founders choose among a SAFE, a convertible note, and a priced round, what each one commits before a valuation is negotiated, and the filings that follow.
+ 16 min read
+ Capital Formation · April 9, 2026 
+ The SEC Just Changed What Counts as "Enforcement." Here's What Your Board Should Actually Do About It.
+ The SEC's FY25 numbers redefine what counts as enforcement. Which compliance line items just went stale, and what your board should reprioritize.
+ 12 min read
+
+View all SparkPoint articles
+
+ Related Practice and Industry 
+Where this work sits in the firm.
+
+ Practice
+ Capital Formation
+ Fundraising and investor relations.
+ Practice
+ M&A Transactions
+ Strategic acquisitions and exits.
+ Industry
+ Enterprise Technology
+ SaaS, cybersecurity, and B2B tech.
+
+ Contact 
+If this touches the work in front of you, start a conversation.
+
+Send a short note about what changed, what you are building, and where legal judgment needs to sit closer to the work.
+
+Contact Consilium Law
+
+ Disclaimer. 
+This article is provided for informational purposes only and does not constitute legal advice. Readers should consult independent counsel before acting on any analysis. The views expressed are solely those of the author and do not necessarily reflect the views of Consilium Law LLC.
+
+Start a Conversation

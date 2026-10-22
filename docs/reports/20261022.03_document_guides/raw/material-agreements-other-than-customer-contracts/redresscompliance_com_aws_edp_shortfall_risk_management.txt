@@ -1,0 +1,330 @@
+SOURCE: https://redresscompliance.com/aws-edp-shortfall-risk-management
+
+AWS EDP Shortfall: Forecast, Ramp and Contract Terms | Redress 
+
+ AWS EDP shortfall 
+ AWS EDP shortfall risk management. How to commit only to spend you will consume. 
+
+ How AWS measures and bills an EDP shortfall, how to forecast and ramp the commitment, how Marketplace spend counts, and which contract terms limit the exposure.
+
+ Contact Us 
+ Negotiation Advisory 
+ 500+ Enterprise clients
+
+ $2B+ Under advisory
+
+ Morten Andersen Co Founder · ex IBM, ex Oracle 
+ Published March 8, 2026 Updated September 24, 2026 
+
+ In this guide 
+
+ Contents Key takeaways How a shortfall works What we have seen Forecast accuracy Designing the ramp Marketplace spend Bigger commitment, bigger discount? Managing the true up Contract terms What to do next FAQ 
+ An AWS EDP shortfall is the unused part of your annual commitment, invoiced in full with no discount. Most of the risk is fixed at signature, through the forecast, the shape of the ramp and the relief terms you negotiate.
+
+ Key takeaways 
+
+ Shortfall is billed in full. The gap between commitment and consumption is invoiced at the start of the next contract year, with no discount and no usage in return.
+
+ Forecast conservatively. The commitment you sign sets the shortfall risk for the whole term, and optimistic growth assumptions are the usual cause of a gap.
+
+ Back load the ramp. A lower year one commitment with the same three year total follows the migration and cuts exposure when consumption is lowest.
+
+ Count Marketplace spend. Eligible third party software bought through AWS Marketplace retires commitment, subject to seller eligibility and a share cap in your agreement.
+
+ Negotiate relief terms before signing. Carry forward, a true down of up to 10 percent and a discount on any shortfall portion are all worth asking for in the addendum.
+
+ Review in Q3. AWS measures at each anniversary, so a review three months ahead leaves time to move purchases forward or raise the gap with AWS.
+
+ How does an AWS EDP shortfall work?
+
+ An AWS EDP shortfall is the amount by which your actual consumption falls below the annual spend you committed to. AWS invoices that gap as a straight charge, and it buys you no usage.
+
+ The Enterprise Discount Program, which AWS now also calls a Private Pricing Agreement (PPA), is a three to five year commitment to a fixed annual spend. In exchange you get a discount off AWS list pricing, from 5 percent at the small end up to 25 percent for larger committed spend. Our AWS advisory page covers the wider contract.
+
+ How AWS measures and bills the gap
+
+ Measurement. AWS compares consumption with the commitment at each contract anniversary.
+
+ Invoice. The shortfall is invoiced at the start of the next contract year.
+
+ Discount treatment. The shortfall is billed at face value, with no EDP discount applied to it.
+
+ Net effect. You have paid the full commitment and received no usage for the shortfall portion.
+
+ Read how your agreement defines consumption. EDP commitments are normally retired by net spend, after the discount is applied, so every point you win also lowers the spend that counts. A 10 percent discount on $5 million of list price usage retires only $4.5 million.
+
+ The three ways a shortfall happens
+
+ Forecast shortfall. You over forecast the workload at signature.
+
+ Migration delay shortfall. A planned workload migration slipped beyond the contract year.
+
+ Optimization shortfall. You cut spend through Reserved Instances, Savings Plans or rightsizing.
+
+ Why an optimization shortfall hurts the most
+
+ A company that tunes its AWS spend during the EDP term still owes the full commitment. AWS does not credit the saving against the commitment total, so good engineering discipline can produce a shortfall invoice.
+
+ A common cause is a wave of Savings Plans , which commit you to a dollar per hour spend for one or three years at up to 72 percent below On Demand rates. Forecast that optimization curve before you sign, and negotiate a clause that allows a downward adjustment at the annual true up.
+
+ Watch the briefing Episode 2 of 12 · 3:53 
+
+ Negotiating AWS 2: The Commitment, and the Measurement Rule
+
+ Watch the full 12 part AWS negotiation series 
+ Open this episode with transcript and chapters → 
+
+ What have we seen in recent AWS EDP negotiations?
+
+ Overcommitment caused far more loss than the discount rate did. Morten Andersen advised on roughly 25 to 35 AWS Enterprise Discount Program commitments in 2024 and 2025, and three patterns came up repeatedly.
+
+ Optimistic ramp. Forecasts assumed 25 to 45 percent annual growth that actual consumption missed, which left a shortfall gap.
+
+ Marketplace left out. Buyers overlooked that 10 to 30 percent of the commitment could have been met through AWS Marketplace spend.
+
+ Front loaded curve. Flat or front loaded ramps booked commitment before the workloads had migrated, which raised shortfall exposure in the first year.
+
+ All three were fixed at signature. A forecast error became a shortfall invoice only because the contract had no ramp, no carry forward and no Marketplace plan to absorb it.
+
+ How accurate does your AWS spend forecast need to be?
+
+ Accurate enough to be conservative, with a documented evidence trail behind every figure. The forecast at signature sets the commitment, and the commitment sets your shortfall risk for the whole term.
+
+ Three ways to build the forecast
+
+ Forecast methods and where each one goes wrong Method How it works Where it goes wrong 
+
+ Run rate plus migration Current AWS spend plus the migration backlog Treats every backlog item as certain and on schedule 
+
+ Workload by workload Bottom up forecast from each application owner Owners add headroom, so the total drifts upward 
+
+ Top down envelope Business plan target with a forecast range around it Reflects ambition more than engineering plans 
+
+ We use the first two together and treat the third as a ceiling. Where the run rate method and the bottom up total disagree by a wide margin, commit to the lower figure and cover the difference with ramp and flexibility terms.
+
+ Five questions to answer before you sign
+
+ How firm is the migration backlog? Separate workloads with executive sponsorship and a funded plan from the aspirational ones.
+
+ What will optimization look like over three years? Model Reserved Instances, Savings Plans and rightsizing as reductions to the run rate.
+
+ How much Marketplace spend can count? List the third party software you buy or plan to buy, and check which sellers qualify.
+
+ What is the worst case workload exit? A major customer loss, a divestiture or a program cancellation can remove a large block of spend.
+
+ Which flexibility clauses can you negotiate? Carry forward, true down and an exit clause each change how much forecast error you can absorb.
+
+ How should you design the AWS EDP ramp curve?
+
+ Shape the ramp to follow your workload migration, with a lower commitment in year one and higher commitments later. AWS usually opens with a flat commitment, and a ramp with the same total is a reasonable counter.
+
+ Flat and ramped commitment over three years Contract year Flat commitment Ramp commitment Effect on shortfall risk 
+
+ Year one $5 million $3 million $2 million lower commitment 
+
+ Year two $5 million $5 million No change 
+
+ Year three $5 million $7 million Higher commitment that matches expected consumption 
+
+ Total $15 million $15 million Identical aggregate 
+
+ Why a back loaded ramp lowers the risk
+
+ Year one is the migration year. A lower commitment matches the consumption you will have while workloads are still moving.
+
+ Year three carries the growth and the optimization. The higher commitment lands when migrated workloads are live, with headroom for growth, but it must also absorb the savings you plan.
+
+ The total stays the same. AWS sees the same three year figure, and you carry less shortfall risk.
+
+ A worked example with the same consumption under both curves
+
+ Say your net consumption comes in at $3.4 million in year one because two migrations slip, then reaches $4.9 million and $6.8 million. The table runs that one outcome against both commitment shapes.
+
+ Hypothetical shortfall under a flat and a ramped commitment Contract year Net consumption Flat: shortfall invoice Ramp: shortfall invoice 
+
+ Year one $3.4 million $1.6 million None ($0.4 million over) 
+
+ Year two $4.9 million $0.1 million $0.1 million 
+
+ Year three $6.8 million None ($1.8 million over) $0.2 million 
+
+ Total $15.1 million $1.7 million $0.3 million 
+
+ Under the flat commitment you pay $1.7 million for usage you never receive, and the year three overage does nothing to recover it. The ramp cuts the exposure to $0.3 million. With a carry forward clause that runs across the term, the $0.4 million year one surplus covers both later gaps and the shortfall falls to zero.
+
+ The ramp has its own downside. If year three consumption stalls at $5.5 million, the $7 million commitment produces a $1.5 million gap that the flat curve would have avoided. Model that case before you agree the final step.
+
+ A back loaded ramp ties the commitment to the migration timeline, while a front loaded curve books spend before the workloads that justify it have moved. 
+ How does AWS Marketplace spend reduce shortfall risk?
+
+ Eligible third party software bought through AWS Marketplace counts toward the EDP commitment. Routing software you already buy through Marketplace retires commitment without adding spend, which makes it the cheapest protection against a shortfall. Our Marketplace procurement guide covers the buying process.
+
+ What can count toward the commitment
+
+ Annual private offers. Contracts with sellers listed on AWS Marketplace.
+
+ SaaS subscriptions. Datadog, Snowflake, Databricks and MongoDB Atlas are common examples.
+
+ Container platforms. Red Hat OpenShift, Rancher and Tanzu bought through Marketplace.
+
+ Security software. CrowdStrike, Palo Alto, Wiz and Lacework.
+
+ Limits to check before you rely on it
+
+ Default rate. Marketplace spend with eligible listed sellers counts at 100 percent in most current agreements.
+
+ Seller carve outs. Some sellers exclude specific SKUs. Confirm the rate with the seller before you sign the private offer.
+
+ Deployment rule. Since May 1, 2025, Marketplace accepts SaaS products hosted anywhere. AWS says products fully deployed on AWS, which carry a "Deployed on AWS" badge, continue to count toward customer benefits. Treat a listing without the badge as not counting until your account team confirms otherwise in writing.
+
+ Share cap. Most agreements limit how much of the annual commitment Marketplace spend can retire. Find that percentage in your addendum before you build it into the forecast.
+
+ The buyer who negotiates the ramp, the flexibility clauses and the Marketplace plan carries less shortfall risk than the buyer who signs the standard flat commitment.
+
+ Is a bigger AWS EDP commitment worth the extra discount?
+
+ Usually it is not, once you price the shortfall it creates. Discounts do rise with commitment size and term, but one or two extra points on spend you cannot consume cost far more than they save.
+
+ Why we advise against stretching for the top tier
+
+ The standard advice is to commit to the highest tier you can justify, because a larger commitment buys a deeper discount. We disagree. In roughly 21 of the 30 EDP deals Morten reviewed in 2024 and 2025, the buyer chased one or two extra points and accepted a commitment 20 to 40 percent above realistic consumption.
+
+ Size the commitment to conservative growth instead. Then reach the figure AWS wants to see through Marketplace spend and a back loaded ramp, and confirm what counts on the Marketplace listing before signing.
+
+ Hypothetical company expecting $4.4 million a year of usage at list price (discount rates are illustrative) Line Option A Option B 
+
+ Annual commitment $4,000,000 $5,000,000 
+
+ Discount 9 percent 11 percent 
+
+ Net consumption $4,004,000 $3,916,000 
+
+ Shortfall invoice None $1,084,000 
+
+ Total paid per year $4,004,000 $5,000,000 
+
+ The two extra points are worth $88,000 a year on this usage. The shortfall they create costs $1,084,000, so Option B costs $996,000 more each year for the same workloads. Our EDP commitment calculator runs this comparison on your own figures.
+
+ How do you manage the true up during the contract year?
+
+ Track consumption against the commitment every quarter, so a gap shows up while you can still close it. AWS measures at the anniversary, and three actions during the year change what it finds.
+
+ Run a Q3 consumption review. Project the year end position three months ahead of the anniversary.
+
+ Bring forward Marketplace purchases. Annual subscriptions due within 90 days can be signed early so they count in the current year.
+
+ Time reserved capacity purchases. Reserved Instances and Savings Plans dated before the anniversary count toward the current year, and an All Upfront payment is charged in full when you buy.
+
+ Only pull forward spend you would make anyway. Buying Savings Plans you cannot use just to close a gap swaps a shortfall invoice for an unused commitment of similar cost.
+
+ How to check where you stand
+
+ AWS Cost Explorer. Report net unblended cost by month, which shows spend after discounts and sits closest to what retires the commitment.
+
+ Cost and Usage Report. In AWS Data Exports, the lineItem/NetUnblendedCost column gives after discount cost per line, and the Fee and SavingsPlanUpfrontFee line items show when upfront purchases were charged.
+
+ Marketplace invoices. Reconcile them against the eligible seller list and the share cap in your agreement.
+
+ The EDP addendum. It holds the commitment schedule, the measurement date and the definition of eligible spend. Ask the account team for their commitment tracking figure each quarter and compare it with yours.
+
+ Which contract terms reduce AWS EDP shortfall risk?
+
+ Five terms do most of the work, and every one is easier to win before signature than after. Ask for each in writing in the EDP addendum. Our EDP flexibility article covers the wording in more detail.
+
+ Ramp schedule. A year by year commitment that follows the migration plan, with a lower first year. Year one should match consumption you can prove.
+
+ Carry forward. Consumption above the commitment in year one rolls forward to year two. Ask for it to run across the whole term, so an early surplus protects every later year.
+
+ True down. The right to reduce the commitment at the annual checkpoint by up to 10 percent. It absorbs a lost customer or a successful optimization program.
+
+ Marketplace pull through. Written confirmation that spend with eligible listed sellers counts at 100 percent, with the share cap stated. Without it your Marketplace plan rests on assumptions.
+
+ Shortfall discount. A discount of 50 percent applied to any shortfall portion, which caps the cost of losing the discount. On the $1.6 million year one gap in the flat example, the invoice would fall to $0.8 million.
+
+ What the account team will say, and what to say back
+
+ "A larger commitment gets you into a better discount tier." Show them your net consumption forecast and ask what discount applies at a commitment you can meet with a ramp.
+
+ "Ramps need deal desk approval, so flat is faster." The three year total is identical. Ask them to submit the ramp and give you the answer in writing.
+
+ "Your Marketplace spend will cover any gap." Then the eligible share and seller list can go into the addendum, and you should ask for exactly that.
+
+ "We can sort out any shortfall at renewal." A renewal fix usually means a larger new commitment. Ask for carry forward and true down now, while you still have something AWS wants.
+
+ How the approach differs for a first EDP and a renewal
+
+ On a first EDP you have little consumption history, and migration delay is the most common reason for a year one gap. A conservative commitment and a back loaded ramp matter most here, because your forecast has not yet been tested.
+
+ At renewal AWS starts from your current run rate plus growth, and may offer to fold an existing shortfall into a larger new term. Separate the two conversations. Our EDP renewal guide and discount benchmarks show what current terms look like.
+
+ What to do next
+
+ Pull the AWS spend run rate. The last twelve months by service, as net cost after discounts.
+
+ Forecast the three year curve. Workload migration plus the optimization curve, with a downside case.
+
+ Map the Marketplace catalog. Identify the third party sellers in scope and check their eligibility.
+
+ Design the ramp curve. Match each year's commitment to the migration timing.
+
+ Negotiate the flexibility clauses. Carry forward, true down, Marketplace pull through and a shortfall discount.
+
+ Set the review cadence. Quarterly consumption against the commitment, with the Q3 review fixed in the calendar.
+
+ Get an independent review. We cover AWS contracts through Vendor Shield , the Renewal Program , the Benchmark Program and the Software Spend Assessment , with benchmarking behind the numbers. Read about us , find our locations , or contact us. We take no money from AWS.
+
+ Frequently asked questions
+
+ How does an AWS EDP shortfall work? At each contract anniversary AWS compares your eligible consumption with that year's committed amount. If you fall short, the difference arrives as a straight charge at the start of the next year. Because consumption is usually counted after your discount, a deeper discount makes the target harder to reach.
+
+ How accurate must our AWS forecast be? Accurate enough that the low end of your range still clears the commitment. Growth can miss by a wide margin without cost if the commitment sits below your downside case. Keep the evidence behind each figure, because you will need it when the account team proposes a higher number.
+
+ Does AWS Marketplace count toward the EDP? Yes, eligible purchases do, typically at full invoice value up to a cap written into your agreement. Many buyers overlook it and leave 10 to 30 percent of the commitment to be met by AWS consumption alone. Check each seller's eligibility and the Deployed on AWS badge before you plan on it.
+
+ How should we design the ramp curve? Set year one close to your current run rate plus the migrations already funded, then step up as workloads go live. Test the plan against a case where year three growth arrives late, because a steep back loaded ramp shifts the risk into the final year.
+
+ Can we renegotiate an AWS EDP mid term? Sometimes, usually alongside a larger commitment or a new strategic workload. AWS revisits terms when there is new spend on the table, so time any renegotiation to a real growth event and use it to add the carry forward or true down terms you missed at signature.
+
+ What true up routine protects us? Quarterly tracking of net consumption against the ramp, an early flag whenever a migration slips, and a written Marketplace plan with named renewals. The aim is to see a shortfall coming by the ninth month, while purchases can still be moved and AWS can still be asked for relief.
+
+ How big a discount does an EDP give? Discounts scale with commitment size and term, commonly in the low double digits for mid sized commitments. Weigh any extra points against the shortfall they risk. On spend you cannot consume, two points are worth a small fraction of the invoice they can produce.
+
+ When should we bring in independent advisors? Before you size the commitment. The commitment level, the ramp and the Marketplace plan are fixed at signing, and after that your options narrow to whatever the contract already allows. An advisor who has seen recent EDP terms can tell you which relief clauses AWS is granting.
+
+ AWS EDP signing or renewing soon? 
+ We test your forecast, model the ramp and shortfall exposure, and tell you which relief terms to ask AWS for. Fixed fee. No vendor ties.
+
+ Contact us 
+ Negotiation Advisory → 
+
+ Morten Andersen Co Founder, Redress Compliance 
+
+ Former IBM and Oracle licensing lead. Advises enterprise buyers on audits, renewals and contract terms across the major software publishers.
+
+ Full profile → 
+
+ Is your AWS quote inside the band? 
+ Check your quote free → Talk to the AWS negotiation team 
+
+ Newsletter Licensing news that changes what you pay
+ One email a week on vendor price moves, audit activity and what worked in recent renewals.
+
+ Subscribe 
+
+ Vendor Shield An advisor on call for every vendor conversation
+ Always on advisory for renewals, audits and contract questions across your software vendors.
+
+ Explore Vendor Shield 
+
+ Read next
+ AWS EDP discount benchmarks EDP discount bands by commitment size, and what counts as qualifying spend.
+
+ AWS EDP negotiation Buyer side negotiators who know the AWS playbook run the EDP with you, fixed fee or 25 percent of what we save.
+
+ The Vanishing Discount 2026 800 contracts show how far achieved discounts have fallen since 2019, vendor by vendor.
+
+ enterprise software licensing news, once a week.
+
+ Price changes, audit activity and what worked in recent renewals. No vendor spin.
+
+ Subscribe →
