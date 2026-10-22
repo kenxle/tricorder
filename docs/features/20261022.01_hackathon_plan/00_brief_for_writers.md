@@ -486,3 +486,9 @@ Added 2026-10-22 at 3:32 PM, Ken's note on the product brief, after he deleted t
 > yo i see in the architecture that you said steering the readout is after saturday and that is dead wrong. we're building all this by saturday
 
 Settled: everything in the product brief and FEATURES.md is built by the end of Saturday's demo. There is no "after Saturday" horizon for product features. Building starts now; the "This week (no scan logic)" rule from the 10:18 AM block is withdrawn. Steering the readout is in the Saturday build. Ken decides what fits; no plan drops a feature on a time estimate. The open question to the organisers (whether code written before Saturday is allowed) stays on Ken's board row; until they answer, Ken has chosen to build now.
+
+Added 2026-10-22 at 3:34 PM, Ken, on the same note:
+
+> just empty the architecture doc for now. we aren't to the point where you could have written a good one yet. we're still understanding our product direction. i also just asked someone else to rewrite the brand voice
+
+Settled: ARCHITECTURE.md holds only its charter and a status line until the product direction settles. BRAND.md belongs to whoever Ken asked to rewrite the brand voice; agents here leave it alone.
