@@ -2,7 +2,7 @@
 
 ## Charter
 
-**What belongs:** One persona per problem, each with the problem in the person's own words, what they have tried, why it failed them, the moment Tricorder solves it, the proof we can show, the objection to answer first, and say, do, pay evidence with a rating. Personas are ordered by rating. Who is the user and who is the buyer.
+**What belongs:** One persona per problem, each with the problem in the person's own words, what they have tried, why it failed them, the moment Tricorder solves it, the proof we can show, the objection to answer first, and say, do, pay evidence of how they deal with the problem today, with a rating. Personas are ordered by rating. Separately, for marketing: who uses the product and who buys it.
 
 **What does not:** What the product does (PRODUCT_BRIEF.md). How it talks (BRAND.md). New quotes without a primary link. Interview notes before they are written up.
 
@@ -17,21 +17,21 @@
 
 ## How to read this
 
-Each persona is a problem, not a job title. Say, do and pay are the three layers of evidence, from weakest to strongest. Say is what people write or tell. Do is what they already do about it. Pay is what they spend to solve it. A persona's rating is the highest layer with evidence. What people pay to solve is what goes in the value proposition.
+Each persona is a problem, not a job title. Say, do and pay measure how people deal with that problem today, from weakest signal to strongest. Say is what people write or tell about the problem. Do is what they already do about it, especially a workaround or a tool not built for it. Pay is what they spend, in money or in something they give up, to solve it. A persona's rating is the strongest layer with evidence. The quotes and behaviours that carry the most signal are what go into the value proposition, so the strongest evidence decides both the order of the personas and the words we use.
 
 The personas are ranked by their strongest evidence: pay first, then do, then say. When two personas reach the same layer, the one with more quotes behind it ranks higher. The quotes come from [the voice-of-the-customer research](../reports/20261022.02_research/research_voice_of_customer.md), and a script counts them ([voc_counts.py](../reports/20261022.02_research/voc_counts.py)). A reference such as "row 11" points to that research's quotes table.
 
-Two cautions on the top two. The partner's pay rating is inferred: both pieces of pay evidence come from a vendor case study and a pricing roundup, not from partners' own words. The angel's pay rating rests on two people, each handing diligence to someone else (YC, or funds as an LP). That is too little to say what angels in general would pay for.
+Two cautions on the top two. The partner's pay rating is inferred: both pieces of pay evidence come from a vendor case study and a pricing roundup, not from partners' own words. The angel's pay rating rests on two people, each solving the problem by handing diligence to someone else (YC, or funds as an LP). Two people are thin evidence.
 
-**User and buyer.** The fund is the buyer: a partner or principal decides and pays. The associate is the user. At some funds the partner is the user too (persona 1, Do). For angels the user and the buyer are the same person. For accelerators the screening staff are the users and the program would be the buyer, with no evidence yet that programs pay.
+| Rank | Persona | The problem | Strongest evidence |
+|---|---|---|---|
+| 1 | Partner or principal at a seed or Series A fund | Numbers that disagree, found too late | Pay (inferred) |
+| 2 | Solo angel | No time or team to do diligence at all | Pay (two people, thin) |
+| 3 | Accelerator screener | Too many applications to read | Do |
+| 4 | Associate at a seed fund | Days of gathering before any thinking | Do |
+| 5 | Corporate VC | Strategic overlap on top of standard diligence | Say, too thin to design for |
 
-| Rank | Persona | The problem | Rating | Role |
-|---|---|---|---|---|
-| 1 | Partner or principal at a seed or Series A fund | Numbers that disagree, found too late | Pay (inferred) | Buyer |
-| 2 | Solo angel | No time or team to do diligence at all | Pay (two people, thin) | User and buyer |
-| 3 | Accelerator screener | Too many applications to read | Do | User; no buyer evidence |
-| 4 | Associate at a seed fund | Days of gathering before any thinking | Do | User |
-| 5 | Corporate VC | Strategic overlap on top of standard diligence | Say | Too thin to design for |
+Who uses Tricorder and who buys it is a separate question, for marketing. It is answered in [Who uses it and who buys it](#who-uses-it-and-who-buys-it), after the personas.
 
 ---
 
@@ -70,7 +70,7 @@ Two cautions on the top two. The partner's pay rating is inferred: both pieces o
 - **Say (17 rows).** Numbers that disagree damage the deal (row 9). ARR is the riskiest metric (row 31). Founders cannot explain their own metrics (row 23).
 - **Do (9 rows).** Two or three customer calls and a cursory model review before the term sheet (rows 12, 13). Some partners run diligence themselves: "our partners run diligence themselves without handing it to junior staff." ([seed fund guide, Aug 2026](https://www.crv.com/content/what-is-a-data-room)). One partner built his own tool (row 27).
 - **Pay (2 rows).** A $600M fund uses a commercial data-room-to-memo tool (row 25, vendor case study, price not stated). Funds pay for data seats, such as $13,500 a year for one PitchBook seat (row 67, a third-party roundup).
-- **Rating: pay, inferred.** Both pay rows come from a vendor or a roundup, not the buyer's own words.
+- **Rating: pay, inferred.** Both pay rows come from a vendor or a roundup, not from partners' own words.
 
 ---
 
@@ -104,7 +104,7 @@ Two cautions on the top two. The partner's pay rating is inferred: both pieces o
 - **Say (8 rows).** Missed red flags and fake books (rows 50, 51). No time or skills (row 43). A full-time unpaid job (row 52).
 - **Do (4 rows).** Waits for a lead, shares diligence, sizes diligence to the check (rows 45 to 47).
 - **Pay (2 rows).** "Yes, I give up some upside because of how much YC already owns, but to me it's worth every penny for the service that YC provides to me as an investor and to the startup." ([angel, Jan 2022](https://news.ycombinator.com/item?id=30130146)). "Lastly, I became a Limited Partner (LP) in a handful of VC funds, basically paying professionals to do the investing on our behalf." ([angel, Apr 2025](https://halletecco.substack.com/p/why-i-stopped-angel-investing-after))
-- **Rating: pay, thin.** Two people pay, in upside or as an LP, to hand diligence to someone else. Whether angels would pay for a better first pass of their own is untested; the interviews should ask.
+- **Rating: pay, thin.** Two people pay, in upside or as an LP, to hand diligence to someone else. That is how they solve the problem today.
 
 ---
 
@@ -201,6 +201,14 @@ Two cautions on the top two. The partner's pay rating is inferred: both pieces o
 
 ---
 
+## Who uses it and who buys it
+
+This is a marketing question, separate from say, do and pay. It decides whom each message speaks to, not which problems carry the most signal.
+
+- **Funds.** A partner or principal decides and pays. The operator, the person working in the readout, is usually the associate who does the first pass today, and at some funds the partner.
+- **Angels.** The same person uses it and pays for it. Whether an angel would pay for a better first pass of their own is untested; the interviews ask.
+- **Accelerators.** The screening staff would use it and the program would pay. The research found no program paying for a tool yet.
+
 ## What the interviews need to fill
 
 The voice-of-the-customer research is a stand-in for interviews. Ken's two or three interviews this week ask the organisers' three questions. These gaps matter most for the ranking:
@@ -208,4 +216,4 @@ The voice-of-the-customer research is a stand-in for interviews. Ken's two or th
 - **How long a first-pass memo takes, in hours.** No trustworthy public number exists (the voice-of-the-customer research, question 3).
 - **Hidden churn.** Every checklist names it, but no one in the voice-of-the-customer research told a regret story about it.
 - **Burn against the hiring plan.** The organisers name it; no public voice in the voice-of-the-customer research does.
-- **What the fund pays today, in the buyer's own words.** This would move the partner's rating from pay, inferred, to pay.
+- **What funds pay today to solve the first-pass problem, in partners' own words.** This would move the partner's rating from pay, inferred, to pay.

@@ -209,3 +209,12 @@ Settled:
 Added 2026-10-22 at 1:21 PM, after Ken flagged "R1's" on the personas page ("we do not know what R1 is"):
 
 - **The labels R1 to R4, W1 to W5 and C1 to C3 are for this brief only.** No document a person reads cites them. Name the research by what it is ("the voice-of-the-customer research") and link it the first time it appears in a file. A reference such as "row 11" says which table it points to. Every agent briefed from here on gets this rule.
+
+Added 2026-10-22 at 1:24 PM, as a comment on the personas page:
+
+> you're mixing concepts. User vs buyer is important when you're figuring out what marketing value props you need. but say/do/pay is about how people solve their problems, and identifying what evidence, what quotes, what behaviors, carry the most signal and therefor should make it into your value prop. say/do/pay is NOT about who is using your product vs paying for it
+
+Settled, and it binds every writer:
+
+- **Say, do, pay** rates how people deal with a problem today: what they say about it, what they do about it, what they spend (money or something given up) to solve it. It decides which problems and which quotes carry the most signal, and so what goes into the value proposition. It says nothing about who uses or buys Tricorder.
+- **User and buyer** is a separate marketing question: whom each message speaks to. It lives in its own section and never sits in a rating, a persona's rank or a say, do, pay line.

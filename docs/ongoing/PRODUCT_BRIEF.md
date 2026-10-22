@@ -28,12 +28,9 @@ By identifying gaps, highlighting strengths, rigorously showing its work, and ad
 
 Deployers of capital who need to know if they're making the best possible investment. Venture funds at seed and Series A come first. Full personas, ranked by evidence, are in [PERSONAS.md](PERSONAS.md).
 
-- **Buyer and user.** The fund buys: a partner or principal decides and pays. The operator uses it: usually the associate who does the first pass today, and at some funds the partner, since one seed fund writes that its partners run diligence themselves (the voice-of-the-customer research, row 11).
-- **Partner or principal (buyer).** Rated pay, inferred, in the voice-of-the-customer research. Funds already pay for data and for commercial diligence tools (the voice-of-the-customer research, "What they pay for"; [the landscape research](../reports/20261022.02_research/research_landscape.md), Part 1).
-- **Associate (user).** Rated do. Does the work by hand today and pays for nothing.
-- **Solo angel.** Rated pay, on two people only. One angel invests almost only in YC companies because he lacks the time and skills for diligence and accepts giving up upside for it; another stopped investing directly and became an LP in funds (the voice-of-the-customer research, quotes table rows 44 and 53). Two people are not a pattern, and the interviews should test whether angels would pay for a better first pass. An angel product has to be cheaper than skipping the work, and the landscape research found memo tools already priced at $12 a memo (the Apify actor) and $0 to $30 a month (Energent).
-- **Accelerator screener.** Rated do. A real volume problem, but the voice-of-the-customer research found no evidence that programs pay for a tool, and one built its own.
-- **Corporate VC.** Rated say, on two rows from one firm. Too thin to design for.
+- **Buyer and user.** The fund buys: a partner or principal decides and pays. The operator uses it: usually the associate who does the first pass today, and at some funds the partner, since one seed fund writes that its partners run diligence themselves (the voice-of-the-customer research, row 11). Angels would use and pay for it themselves. Accelerators' screening staff would use it and the program would pay.
+
+The problems these people have, ranked by how strongly they act on them (say, do, pay), are in [PERSONAS.md](PERSONAS.md). In short: partners and principals pay to solve the first-pass problem today (inferred from a vendor case study and a pricing roundup); two angels hand diligence to YC or to funds; accelerator screeners and associates work around it by hand; corporate VCs only describe it, and too thinly to design for.
 
 ## The problem
 
@@ -185,7 +182,7 @@ Each line is a recommendation this brief is written to, with the alternative.
 7. **Demo company.** Hollis Voice, the data-room research's synthetic Series A room. Alternative: Brasswick, the data-room research's plainer freight-invoice company.
 8. **After Saturday.** A product sold to funds; the partner or principal buys, the associate uses. Alternative: skills Ken sells on stclair.ai, or a hackathon entry that ends Saturday.
 9. **Angels.** Price for funds first, because the fund evidence is stronger; the angel evidence is two people, so the interviews decide. Alternative: an angel tier from the start.
-10. **Persona order.** Keep the voice-of-the-customer research's ranking (partner, angel, accelerator, associate, corporate VC). Alternative: rank the associate first because they are the user.
+10. **Persona order.** Keep the ranking by strength of evidence (partner, angel, accelerator, associate, corporate VC). Who uses and who buys is a separate question and does not change it.
 11. **Measures.** Set numeric targets after the first pilot. Alternative: state predicted numbers now.
 12. **Self-score on stage.** Show the answer-key score (flags found, decoys wrongly flagged) in the demo. Alternative: show the readout only.
 13. **This week.** No product code; research, interviews, founder brief, data room, keys and prompts. Alternative: pre-build module skeletons this week.
