@@ -20,7 +20,7 @@
 
 ## What it is
 
-Point it at a startup, get a readout. Tricorder reads everything about a startup, from its pitch deck and video to its financials to its online presence. It runs a set of scans and analyses, creating a readout that gives the operator a detailed understanding of what's great about the business, and where the red flags are. The readout is not a read-only document, but something that the operator can actively dig through, drill down, and even steer, if they think areas need to be rewritten.
+Point it at a startup, get a readout. Tricorder reads everything about a startup, from its pitch deck and video to its financials to its online presence. It runs a set of scans and analyses, creating a readout that gives the operator a detailed understanding of what's great about the business, and where the red flags are. The readout is not a read-only document, but something that the operator can actively dig through, drill down, and even steer, updating areas that need to be rewritten or need more info.
 
 ## Who it is for
 
