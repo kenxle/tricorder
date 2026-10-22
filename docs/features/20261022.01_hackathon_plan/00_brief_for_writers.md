@@ -476,3 +476,7 @@ He rewrote the script principle as: "We use deterministic checks for math, not m
 On "Every claim links to its source" and "Identify strengths, weaknesses, and gaps and call them out": "these are committments".
 
 Settled: those two moved from principles to commitments. A three-way split governs model use: math goes to scripts; decisions (a yes or no, a label, a routing choice) go to Jev, TypeSafe's decision model, or another decision model; open judgment (reading, summarising, drafting) goes to an LLM. Architecture and roadmap follow this split.
+
+Added 2026-10-22 at 3:25 PM, Ken's next edit to the principles. He cut "No real company's confidential data" to its first two sentences and marked it "committment". He rewrote the personas principle as "Personas and problems. Focus on solving problems for personas. Engage persona agents to review solutions." He deleted "The data stays with the investor" from the principles.
+
+Settled: principles are now the script principle, no scraping, personas and problems, and defer to the operator. The confidential-data rule is a commitment. Persona agents (synthetic users built from PERSONAS.md) review designs and drafts before Ken does.

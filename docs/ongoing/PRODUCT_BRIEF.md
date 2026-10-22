@@ -80,16 +80,15 @@ The user stories that turn these jobs into features are in [USER_STORIES.md](USE
 ## The principles for choosing methods
 
 1. **We use deterministic checks for math, not model judgment.** A script decides that a number is wrong. The model reads only what a script cannot, such as a contract clause or a spoken number. Decisions are routed to Jev or decision models. Judgment is sent to LLMs.
-2. **No real company's confidential data.** Every room is synthetic. A room under a real company's name is labelled synthetic on every page, and its planted problems are named test plants.
-3. **Nothing is scraped against a site's terms.** No LinkedIn scraping. Reddit only from pages a person saved by hand. Official APIs wherever they exist.
-4. **Personas and problems, with say, do, pay.** Every persona is a specific problem in that person's own words, and what people already pay to solve is what goes in the value proposition ([PERSONAS.md](PERSONAS.md)).
-5. **The data stays with the investor.** Tricorder reads only what it is given, keeps only the readout and its sources, and the investor can see and delete everything it pulled.
-6. **Always defer to operator steering and judgment.** When the operator says a section is wrong, thin or framed badly, Tricorder follows the steer and shows what changed. The scripts' own figures stay on screen beside any change, so the operator decides with both in view.
+2. **Nothing is scraped against a site's terms.** No LinkedIn scraping. Reddit only from pages a person saved by hand. Official APIs wherever they exist.
+3. **Personas and problems.** Focus on solving problems for personas. Engage persona agents to review solutions.
+4. **Always defer to operator steering and judgment.** When the operator says a section is wrong, thin or framed badly, Tricorder follows the steer and shows what changed. The scripts' own figures stay on screen beside any change, so the operator decides with both in view.
 
 ## Commitments
 
 - **Every claim links to its source.** A claim without a source a person can open does not reach the readout.
 - **Identify strengths, weaknesses, and gaps and call them out.** A piece looks strong when two independent sources agree on its number. A missing fact shows as a gap, never a guess.
+- **No real company's confidential data.** Every room is synthetic.
 - A steer or a what-if never changes a script's number.
 - Tricorder reports its own misses against the answer key.
 - A bank account is read only with the founder's consent.
