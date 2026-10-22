@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reference Range style guide</title>
+<meta name="description" content="Tricorder style guide, Direction A: Reference Range.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Fragment+Mono&display=swap">
+<style>
+/* Tricorder, Direction A: Reference Range. Tokens first, then components. */
+:root {
+  color-scheme: light;
+  --paper: #f6f7fa;
+  --panel: #ffffff;
+  --sunk: #eef0f6;
+  --grid: #e4e8f2;
+  --ink: #12162a;
+  --ink-2: #3d4360;
+  --ink-3: #5f6682;
+  --rule: #d6dae6;
+  --rule-2: #a9afc4;
+  --accent: #2b41bf;
+  --accent-ink: #1f2f8f;
+  --on-accent: #ffffff;
+  --band: #dfe4f8;
+  --band-edge: #9fabe6;
+  --strong: #1b7a50;
+  --strong-bg: #e2f2e9;
+  --weak: #c4322a;
+  --weak-bg: #fbe5e2;
+  --mixed: #925c00;
+  --mixed-bg: #f7edd6;
+  --thin: #5b6072;
+  --thin-bg: #eceef3;
+
+  --f-display: "Bricolage Grotesque", "Avenir Next Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "Atkinson Hyperlegible", "Verdana", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --f-data: "Fragment Mono", "SFMono-Regular", "Menlo", "Consolas", "Liberation Mono", monospace;
+
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px;
+  --hair: 1px;
+  --gutter: 16px;
+  --max: 1240px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #0d1018;
+    --panel: #141824;
+    --sunk: #1b2030;
+    --grid: #1a1f2e;
+    --ink: #e7e9f1;
+    --ink-2: #b6bbce;
+    --ink-3: #8d93ab;
+    --rule: #2a3044;
+    --rule-2: #4a5270;
+    --accent: #8c9bff;
+    --accent-ink: #b8c1ff;
+    --on-accent: #0d1018;
+    --band: #1f2852;
+    --band-edge: #4a5aa8;
+    --strong: #52c98f;
+    --strong-bg: #11291e;
+    --weak: #ff7b6f;
+    --weak-bg: #341815;
+    --mixed: #e2ae4a;
+    --mixed-bg: #2e2411;
+    --thin: #a4a9ba;
+    --thin-bg: #1f2331;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #0d1018;
+  --panel: #141824;
+  --sunk: #1b2030;
+  --grid: #1a1f2e;
+  --ink: #e7e9f1;
+  --ink-2: #b6bbce;
+  --ink-3: #8d93ab;
+  --rule: #2a3044;
+  --rule-2: #4a5270;
+  --accent: #8c9bff;
+  --accent-ink: #b8c1ff;
+  --on-accent: #0d1018;
+  --band: #1f2852;
+  --band-edge: #4a5aa8;
+  --strong: #52c98f;
+  --strong-bg: #11291e;
+  --weak: #ff7b6f;
+  --weak-bg: #341815;
+  --mixed: #e2ae4a;
+  --mixed-bg: #2e2411;
+  --thin: #a4a9ba;
+  --thin-bg: #1f2331;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 15px;
+  line-height: 1.45;
+}
+a { color: var(--accent); text-underline-offset: 2px; text-decoration-thickness: 1px; }
+a:hover { color: var(--accent-ink); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
+}
+.num, .data, table, .strip { font-variant-numeric: tabular-nums; }
+.data, code, .chip, .kicker, .axis, .mono { font-family: var(--f-data); }
+h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 700; letter-spacing: -0.01em; margin: 0; line-height: 1.1; }
+p { margin: 0 0 var(--s3); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Kicker: the small chart-label above a section. */
+.kicker {
+  font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3);
+  display: flex; gap: var(--s2); align-items: center; margin-bottom: var(--s2);
+}
+.kicker::before { content: ""; width: 10px; height: 1px; background: currentColor; }
+
+/* Top bar */
+.bar { border-bottom: var(--hair) solid var(--rule); background: var(--panel); position: sticky; top: 0; z-index: 5; }
+.bar .wrap { display: flex; align-items: center; gap: var(--s4); min-height: 48px; flex-wrap: wrap; }
+.brand { font-family: var(--f-display); font-weight: 800; font-size: 20px; color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: var(--s2); letter-spacing: -0.02em; }
+.brand svg { display: block; }
+.nav { display: flex; gap: var(--s4); flex-wrap: wrap; font-size: 13px; margin-left: auto; align-items: center; }
+.nav a { color: var(--ink-2); text-decoration: none; }
+.nav a:hover { color: var(--accent); text-decoration: underline; }
+.theme-btn {
+  font: 12px var(--f-data); color: var(--ink-2); background: transparent; border: var(--hair) solid var(--rule-2);
+  border-radius: 0; padding: 4px 8px; cursor: pointer;
+}
+.theme-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Panels: square, hairline, no shadow. */
+.panel { background: var(--panel); border: var(--hair) solid var(--rule); }
+.panel-head {
+  display: flex; flex-wrap: wrap; gap: var(--s2) var(--s4); align-items: baseline; justify-content: space-between;
+  padding: var(--s2) var(--s3); border-bottom: var(--hair) solid var(--rule); background: var(--sunk);
+  font-family: var(--f-data); font-size: 12px; color: var(--ink-2);
+}
+.panel-body { padding: var(--s3); }
+.synthetic {
+  font-family: var(--f-data); font-size: 11.5px; color: var(--ink-2);
+  border: var(--hair) dashed var(--rule-2); padding: 2px 6px; display: inline-block;
+}
+
+/* Marks: shape plus word, never colour alone. */
+.mark {
+  display: inline-flex; align-items: center; gap: 6px; font-family: var(--f-data); font-size: 12px;
+  padding: 1px 6px 1px 4px; border: var(--hair) solid currentColor; white-space: nowrap; line-height: 1.5;
+}
+.mark .g { width: 10px; height: 10px; flex: none; display: inline-block; position: relative; }
+.m-strong { color: var(--strong); background: var(--strong-bg); }
+.m-strong .g { background: currentColor; }
+.m-weak { color: var(--weak); background: var(--weak-bg); }
+.m-weak .g { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 10px solid currentColor; }
+.m-mixed { color: var(--mixed); background: var(--mixed-bg); }
+.m-mixed .g { border: 1.5px solid currentColor; background: linear-gradient(90deg, currentColor 50%, transparent 50%); }
+.m-thin { color: var(--thin); background: var(--thin-bg); border-style: dashed; }
+.m-thin .g { border: 1.5px dashed currentColor; }
+.m-run { color: var(--ink-3); background: transparent; border-style: dotted; }
+.m-run .g { border: 1.5px solid currentColor; border-radius: 50%; border-right-color: transparent; }
+@media (prefers-reduced-motion: no-preference) {
+  .m-run .g { animation: spin 1.2s linear infinite; }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Source chip: file and place, in mono, one click to the source. */
+.chip {
+  font-size: 11.5px; color: var(--ink-2); background: var(--panel); border: var(--hair) solid var(--rule-2);
+  border-left: 3px solid var(--accent); border-radius: 0; padding: 0 6px; line-height: 1.6; cursor: pointer;
+  display: inline-block; margin: 1px 0; white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis; vertical-align: baseline;
+  text-decoration: none;
+}
+.chip:hover { color: var(--accent); border-color: var(--accent); }
+.chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: var(--s2); }
+
+/* Flag row: the headline list. A left rule carries the semantic colour; the mark carries the shape. */
+.flag { border: var(--hair) solid var(--rule); border-left: 3px solid var(--fc); background: var(--panel); padding: var(--s3); }
+.flag + .flag { margin-top: -1px; }
+.flag.green { --fc: var(--strong); }
+.flag.red { --fc: var(--weak); }
+.flag h4 { font-family: var(--f-body); font-size: 15px; font-weight: 700; margin: var(--s2) 0 var(--s1); line-height: 1.35; letter-spacing: 0; }
+.flag p { color: var(--ink-2); font-size: 14px; margin: 0; }
+.flag .top { display: flex; gap: var(--s2); align-items: center; flex-wrap: wrap; }
+
+/* The range strip: the signature. Track, normal band, ticks, out-of-range mark. */
+.strip { position: relative; margin: var(--s3) 0 var(--s1); padding: 24px 0 36px; }
+.strip .track { position: relative; height: 14px; border-top: var(--hair) solid var(--rule-2); border-bottom: var(--hair) solid var(--rule-2);
+  background-image: repeating-linear-gradient(90deg, var(--rule) 0 1px, transparent 1px 10%); }
+.strip .band { position: absolute; top: -1px; bottom: -1px; background: var(--band); border-left: var(--hair) solid var(--band-edge); border-right: var(--hair) solid var(--band-edge); min-width: 5px; }
+.strip .tick { position: absolute; top: -4px; height: 20px; width: 2px; margin-left: -1px; background: var(--ink); }
+.strip .tick.fuzzy { width: 14px; margin-left: -7px; background: repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 4px); opacity: 0.8; }
+.strip .oor { position: absolute; top: -9px; margin-left: -7px; width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 11px solid var(--weak); }
+.strip .oor + .tick { background: var(--weak); }
+.strip .lab { position: absolute; font-family: var(--f-data); font-size: 11px; color: var(--ink-2); white-space: nowrap; transform: translateX(-50%); line-height: 1.2; }
+.strip .lab.up { top: 0; }
+.strip .lab.dn { bottom: 18px; }
+.strip .lab.up { top: 2px; }
+.strip .lab.r { transform: translateX(-100%); }
+.strip .lab.l { transform: none; }
+.strip .lab.w { color: var(--weak); }
+.strip .axis { display: flex; justify-content: space-between; font-size: 10.5px; color: var(--ink-3); position: absolute; left: 0; right: 0; bottom: 0; border-top: var(--hair) dotted var(--rule); padding-top: 2px; }
+.strip .span { position: absolute; top: 18px; height: 8px; border: var(--hair) solid var(--ink-2); border-top: 0; }
+.strip-key { font-family: var(--f-data); font-size: 11px; color: var(--ink-3); margin-top: var(--s4); display: flex; flex-wrap: wrap; gap: var(--s1) var(--s4); }
+.strip-key span { display: inline-flex; gap: 6px; align-items: center; }
+.k-band { width: 18px; height: 8px; background: var(--band); border: var(--hair) solid var(--band-edge); display: inline-block; }
+.k-tick { width: 2px; height: 10px; background: var(--ink); display: inline-block; }
+.k-oor { width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 8px solid var(--weak); display: inline-block; }
+
+/* Tables: corroboration and disagreement. */
+.tbox { overflow-x: auto; border: var(--hair) solid var(--rule); background: var(--panel); }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { text-align: left; padding: 6px var(--s3); border-bottom: var(--hair) solid var(--rule); vertical-align: top; }
+th { font-family: var(--f-data); font-weight: 400; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); background: var(--sunk); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td.v { font-family: var(--f-data); font-size: 13px; text-align: right; white-space: nowrap; }
+th.v { text-align: right; }
+td.w { font-family: var(--f-data); font-size: 12px; color: var(--ink-2); white-space: nowrap; }
+.tcap { display: flex; flex-wrap: wrap; gap: var(--s2); align-items: center; padding: var(--s2) var(--s3); border: var(--hair) solid var(--rule); border-bottom: 0; background: var(--panel); }
+.tcap b { font-size: 14.5px; }
+.tfoot { border: var(--hair) solid var(--rule); border-top: 0; padding: var(--s2) var(--s3); background: var(--panel); font-size: 14px; color: var(--ink-2); }
+.tfoot p:last-child { margin: 0; }
+.ask { border-top: var(--hair) dashed var(--rule-2); padding-top: var(--s2); margin-top: var(--s2); color: var(--ink); }
+.ask b { font-family: var(--f-data); font-weight: 400; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-right: 6px; }
+
+/* Verdict lines: the overview, one channel per piece. */
+.channels { border: var(--hair) solid var(--rule); background: var(--panel); }
+.ch { display: grid; grid-template-columns: 11.5rem 1fr; gap: var(--s1) var(--s3); padding: var(--s2) var(--s3); border-bottom: var(--hair) solid var(--rule); align-items: baseline; }
+.ch:last-child { border-bottom: 0; }
+.ch .piece { font-weight: 700; font-size: 14px; }
+.ch .why { grid-column: 2; font-size: 13.5px; color: var(--ink-2); }
+.ch .lead { display: flex; flex-wrap: wrap; gap: 4px var(--s2); align-items: baseline; }
+@media (max-width: 640px) {
+  .ch { grid-template-columns: minmax(0, 1fr); }
+  .ch .why { grid-column: 1; }
+}
+
+/* Gap, clean check, steer note. */
+.note { border: var(--hair) solid var(--rule); background: var(--panel); padding: var(--s3); font-size: 14px; }
+.note.gap { border-style: dashed; border-color: var(--rule-2); }
+.note.clean { border-left: 3px solid var(--strong); }
+.note.steer { border-left: 3px solid var(--accent); background: var(--sunk); }
+.note .lbl { font-family: var(--f-data); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); display: flex; align-items: center; gap: 6px; margin-bottom: var(--s1); }
+.note dl { display: grid; grid-template-columns: 7.5rem 1fr; gap: 2px var(--s3); margin: var(--s2) 0 0; font-size: 13.5px; }
+.note dt { color: var(--ink-3); font-family: var(--f-data); font-size: 12px; padding-top: 1px; }
+.note dd { margin: 0; color: var(--ink-2); }
+@media (max-width: 480px) { .note dl { grid-template-columns: 1fr; } .note dd { margin-bottom: var(--s1); } }
+.g-gap { width: 10px; height: 10px; border: 1.5px dashed var(--thin); display: inline-block; }
+.g-clean { width: 10px; height: 6px; border-left: 2px solid var(--strong); border-bottom: 2px solid var(--strong); transform: rotate(-45deg) translateY(-2px); display: inline-block; }
+.g-steer { width: 10px; height: 10px; border: 1.5px solid var(--accent); border-top-color: transparent; border-right-color: transparent; display: inline-block; transform: rotate(-45deg); }
+
+/* Controls. */
+.btn {
+  font-family: var(--f-body); font-size: 14px; font-weight: 700; line-height: 1; border-radius: 0;
+  padding: 10px 14px; border: var(--hair) solid var(--accent); background: var(--accent); color: var(--on-accent);
+  cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: var(--s2); min-height: 38px;
+}
+.btn:hover { background: var(--accent-ink); border-color: var(--accent-ink); color: var(--on-accent); }
+.btn.sec { background: transparent; color: var(--accent); }
+.btn.sec:hover { background: var(--band); color: var(--accent-ink); }
+.btn.quiet { background: transparent; border-color: transparent; color: var(--ink-2); text-decoration: underline; padding-left: 4px; padding-right: 4px; }
+.btn.quiet:hover { color: var(--accent); }
+.btn[disabled] { opacity: 0.45; cursor: not-allowed; }
+.btn .arr { font-family: var(--f-data); font-weight: 400; }
+.field { display: grid; gap: var(--s1); }
+.field label { font-family: var(--f-data); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); }
+.field .row { display: flex; gap: 0; flex-wrap: wrap; }
+.input {
+  font: 15px var(--f-body); color: var(--ink); background: var(--panel); border: var(--hair) solid var(--rule-2); border-radius: 0;
+  padding: 9px 10px; min-height: 38px; flex: 1 1 220px; min-width: 0;
+}
+.input::placeholder { color: var(--ink-3); }
+.input:focus-visible { outline: 2px solid var(--accent); outline-offset: -1px; border-color: var(--accent); }
+.field .help { font-size: 12.5px; color: var(--ink-3); }
+
+/* Chart paper: faint grid, used only behind the hero and the strip demos. */
+.chartpaper {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: -1px -1px;
+}
+
+footer { border-top: var(--hair) solid var(--rule); margin-top: var(--s7); padding: var(--s5) 0 var(--s7); font-size: 13px; color: var(--ink-3); }
+footer .wrap { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); justify-content: space-between; }
+
+/* Disagreement: not a verdict, so it takes ink, not a semantic colour. Two ticks at different heights. */
+.m-dis { color: var(--ink-2); background: var(--sunk); }
+.m-dis .g { background: linear-gradient(90deg, currentColor 0 2px, transparent 2px 6px, currentColor 6px 8px, transparent 8px); background-size: 100% 100%; clip-path: polygon(0 30%, 2px 30%, 2px 100%, 6px 100%, 6px 0, 8px 0, 8px 100%, 0 100%); }
+
+/* Style guide layout. */
+.sg { display: grid; grid-template-columns: 13rem minmax(0, 1fr); gap: var(--s6); padding-top: var(--s5); }
+.toc { position: sticky; top: 64px; align-self: start; font-size: 13px; border-left: var(--hair) solid var(--rule); padding-left: var(--s3); }
+.toc a { display: block; color: var(--ink-2); text-decoration: none; padding: 3px 0; }
+.toc a:hover { color: var(--accent); }
+.toc .n { font-family: var(--f-data); font-size: 11px; color: var(--ink-3); margin-right: 6px; }
+.sg section { padding-bottom: var(--s7); }
+.sg h2 { font-size: clamp(24px, 2.6vw, 32px); border-bottom: var(--hair) solid var(--ink); padding-bottom: var(--s2); margin-bottom: var(--s4); display: flex; gap: var(--s3); align-items: baseline; }
+.sg h2 .n { font-family: var(--f-data); font-size: 12px; color: var(--ink-3); font-weight: 400; letter-spacing: 0; }
+.sg h3 { font-size: 20px; margin: var(--s5) 0 var(--s2); }
+.sg .lede { font-family: var(--f-display); font-size: clamp(22px, 2.6vw, 30px); line-height: 1.2; font-weight: 600; letter-spacing: -0.015em; max-width: 34ch; margin-bottom: var(--s4); }
+.sg .copy { max-width: 70ch; color: var(--ink-2); }
+.title-band { border-bottom: var(--hair) solid var(--rule); }
+.title-band .wrap { padding-top: var(--s6); padding-bottom: var(--s5); }
+.title-band h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 800; letter-spacing: -0.035em; }
+.title-band .sub { font-family: var(--f-data); font-size: 12px; color: var(--ink-3); margin-top: var(--s2); }
+
+.seed { width: 100%; }
+.seed td:first-child { font-family: var(--f-data); font-size: 12px; color: var(--ink-3); white-space: nowrap; }
+.seed td:nth-child(2) { font-weight: 700; }
+
+.sw { display: inline-block; width: 28px; height: 18px; border: var(--hair) solid rgba(128,128,128,0.45); vertical-align: middle; }
+.tok td { font-size: 13px; }
+.tok td.t { font-family: var(--f-data); font-size: 12px; white-space: nowrap; }
+.tok td.h { font-family: var(--f-data); font-size: 12px; white-space: nowrap; }
+.tok td.h .sw { margin-right: 6px; }
+.tok tr.grp td { background: var(--sunk); font-family: var(--f-data); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+
+.faces { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); border-top: var(--hair) solid var(--rule); border-left: var(--hair) solid var(--rule); background: var(--panel); }
+.faces > div { border-right: var(--hair) solid var(--rule); border-bottom: var(--hair) solid var(--rule); padding: var(--s3); }
+.faces .big { font-size: 44px; line-height: 1; margin: var(--s2) 0; }
+.faces .role { font-family: var(--f-data); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.faces p { font-size: 13.5px; color: var(--ink-2); margin: 0; }
+.scale td { vertical-align: middle; }
+.scale td.s { white-space: nowrap; }
+
+.spaces { display: flex; flex-wrap: wrap; gap: var(--s3); align-items: flex-end; }
+.spaces div { font-family: var(--f-data); font-size: 11px; color: var(--ink-3); display: grid; gap: 4px; justify-items: start; }
+.spaces i { display: block; background: var(--band); border: var(--hair) solid var(--band-edge); height: 16px; }
+.lines { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--s3); margin-top: var(--s4); }
+.lines > div { background: var(--panel); border: var(--hair) solid var(--rule); padding: var(--s3); font-size: 13px; color: var(--ink-2); }
+.lines .demo { height: 28px; margin-bottom: var(--s2); }
+
+.spec { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 15rem); gap: var(--s4); align-items: start; margin-bottom: var(--s5); }
+.spec .use { font-size: 13px; color: var(--ink-2); border-left: var(--hair) solid var(--rule); padding-left: var(--s3); }
+.spec .use b { display: block; font-family: var(--f-data); font-weight: 400; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 4px; }
+.markrow { display: flex; flex-wrap: wrap; gap: var(--s2); }
+.btnrow { display: flex; flex-wrap: wrap; gap: var(--s2); align-items: center; }
+.anat { position: relative; background: var(--panel); border: var(--hair) solid var(--rule); padding: var(--s3) var(--s4) var(--s5); }
+.anat ol { margin: var(--s4) 0 0; padding-left: 1.3em; font-size: 13.5px; color: var(--ink-2); }
+.anat ol li { margin-bottom: 4px; }
+
+.rules { counter-reset: r; border-top: var(--hair) solid var(--rule); }
+.rules li { list-style: none; display: grid; grid-template-columns: 3rem minmax(0, 1fr) minmax(0, 1fr); gap: var(--s3); padding: var(--s3) 0; border-bottom: var(--hair) solid var(--rule); font-size: 14px; }
+.rules li::before { counter-increment: r; content: "R" counter(r, decimal-leading-zero); font-family: var(--f-data); font-size: 12px; color: var(--accent); padding-top: 2px; }
+.rules .why { color: var(--ink-2); }
+.rules .why::before { content: "Why: "; font-family: var(--f-data); font-size: 11px; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.06em; }
+.rules ul, ol.rules { padding: 0; margin: 0; }
+
+@media (max-width: 900px) {
+  .sg { grid-template-columns: minmax(0, 1fr); gap: var(--s3); }
+  .toc { position: static; border-left: 0; padding-left: 0; display: flex; flex-wrap: wrap; gap: 2px var(--s3); border-bottom: var(--hair) solid var(--rule); padding-bottom: var(--s2); }
+  .spec { grid-template-columns: minmax(0, 1fr); }
+  .spec .use { border-left: 0; padding-left: 0; border-top: var(--hair) solid var(--rule); padding-top: var(--s2); }
+  .rules li { grid-template-columns: 2.6rem minmax(0, 1fr); }
+  .rules .why { grid-column: 2; }
+}
+
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="home.html"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect x="0.5" y="0.5" width="21" height="21" fill="none" stroke="currentColor"/><rect x="5" y="8" width="8" height="6" fill="var(--band)" stroke="var(--band-edge)"/><line x1="9" y1="4" x2="9" y2="18" stroke="currentColor" stroke-width="2"/><path d="M14.5 4 L19 4 L16.75 8 Z" fill="var(--weak)"/></svg>Tricorder</a>
+    <nav class="nav" aria-label="Page">
+      <a href="home.html">Sample homepage</a>
+      <a href="../index.html">All directions</a>
+      <button class="theme-btn" id="theme" type="button" aria-label="Change colour theme">Theme: auto</button>
+    </nav>
+  </div>
+</header>
+
+<div class="title-band chartpaper">
+  <div class="wrap">
+    <div class="kicker">Style guide, Direction A</div>
+    <h1>Reference Range</h1>
+    <div class="sub">Seed 2026-10-22T19:51:56Z, slice 4156dadf14cdfb03a2cf</div>
+  </div>
+</div>
+
+<div class="wrap sg">
+  <nav class="toc" aria-label="Sections">
+    <a href="#direction"><span class="n">01</span>Direction</a>
+    <a href="#colour"><span class="n">02</span>Colour</a>
+    <a href="#type"><span class="n">03</span>Type</a>
+    <a href="#space"><span class="n">04</span>Space, corners, lines</a>
+    <a href="#marks"><span class="n">05</span>Marks</a>
+    <a href="#strip"><span class="n">06</span>Range strip</a>
+    <a href="#flags"><span class="n">07</span>Flags</a>
+    <a href="#verdicts"><span class="n">08</span>Verdict lines</a>
+    <a href="#tables"><span class="n">09</span>Tables</a>
+    <a href="#notes"><span class="n">10</span>Gap, clean, steer</a>
+    <a href="#controls"><span class="n">11</span>Chips and controls</a>
+    <a href="#rules"><span class="n">12</span>Rules</a>
+  </nav>
+
+  <main>
+    <section id="direction" aria-labelledby="h-direction">
+      <h2 id="h-direction"><span class="n">01</span>The direction</h2>
+      <p class="lede">Every number sits against its range, the way a vital sign sits against its normal band. A red flag is the out-of-range mark: a small red triangle on the stated figure, with the rebuilt figure inside the band beside it.</p>
+      <p class="copy">It reads like a lab report and a bedside monitor, not like a hospital. That means hairlines, square corners, tabular figures, a reference column, and one mark for out of range. There are no crosses, no heartbeat lines and no scrubs green.</p>
+
+      <h3>How the seed shaped it</h3>
+      <div class="tbox">
+        <table class="seed">
+          <thead><tr><th scope="col">Seed pick</th><th scope="col">Value</th><th scope="col">Where it shows</th></tr></thead>
+          <tbody>
+            <tr><td>Motif</td><td>Medical chart and vitals monitor</td><td>The range strip, the out-of-range triangle as the weak mark, the overview drawn as channel rows, the faint chart-paper grid behind the hero.</td></tr>
+            <tr><td>Accent</td><td>Hue 231, #2b41bf</td><td>A clinical blue for action and reference only: buttons, links, focus, the normal band. It never marks a verdict, so blue never reads as a judgment.</td></tr>
+            <tr><td>Type</td><td>Bricolage Grotesque, Atkinson Hyperlegible, Fragment Mono</td><td>Bricolage for headings, where its slight irregularity gives the page a voice. Atkinson, a face drawn for low vision, for everything read. Fragment Mono for every figure and file name.</td></tr>
+            <tr><td>Density</td><td>Dense, a working instrument</td><td>15px body, 13px tables, 4px spacing unit, rows separated by hairlines rather than gaps. The overview fits seven pieces in one panel.</td></tr>
+            <tr><td>Ground</td><td>Light, dark too</td><td>Light is primary, a cool white with a hint of the accent. Dark is a monitor at night: near black with brighter marks.</td></tr>
+            <tr><td>Shape</td><td>Square corners and hairlines</td><td>Zero radius everywhere, including buttons and inputs. Panels are separated by a 1px rule, never a shadow. A 3px left edge carries a flag's colour.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="colour" aria-labelledby="h-colour">
+      <h2 id="h-colour"><span class="n">02</span>Colour tokens</h2>
+      <p class="copy">Every colour is a token on <code>:root</code>, redefined for dark. Verdict colours sit in their own group, apart from the accent, and each always travels with its shape and its word.</p>
+      <div class="tbox"><table class="tok"><thead><tr><th scope="col">Token</th><th scope="col">Light</th><th scope="col">Dark</th><th scope="col">Role</th></tr></thead><tbody><tr class="grp"><td colspan="4">Ground and ink</td></tr><tr><td class="t">--paper</td><td class="h"><span class="sw" style="background:#f6f7fa"></span>#f6f7fa</td><td class="h"><span class="sw" style="background:#0d1018"></span>#0d1018</td><td>Page ground. Cool white, a hint of the accent hue.</td></tr><tr><td class="t">--panel</td><td class="h"><span class="sw" style="background:#ffffff"></span>#ffffff</td><td class="h"><span class="sw" style="background:#141824"></span>#141824</td><td>Panels, tables, flags. Sits on paper with a hairline, no shadow.</td></tr><tr><td class="t">--sunk</td><td class="h"><span class="sw" style="background:#eef0f6"></span>#eef0f6</td><td class="h"><span class="sw" style="background:#1b2030"></span>#1b2030</td><td>Table heads, panel heads, the steer note. One step below panel.</td></tr><tr><td class="t">--grid</td><td class="h"><span class="sw" style="background:#e4e8f2"></span>#e4e8f2</td><td class="h"><span class="sw" style="background:#1a1f2e"></span>#1a1f2e</td><td>Chart-paper grid behind the hero and the call to action. Never behind data.</td></tr><tr><td class="t">--ink</td><td class="h"><span class="sw" style="background:#12162a"></span>#12162a</td><td class="h"><span class="sw" style="background:#e7e9f1"></span>#e7e9f1</td><td>Headings, figures, ticks on a strip.</td></tr><tr><td class="t">--ink-2</td><td class="h"><span class="sw" style="background:#3d4360"></span>#3d4360</td><td class="h"><span class="sw" style="background:#b6bbce"></span>#b6bbce</td><td>Body copy, reasons, table cells.</td></tr><tr><td class="t">--ink-3</td><td class="h"><span class="sw" style="background:#5f6682"></span>#5f6682</td><td class="h"><span class="sw" style="background:#8d93ab"></span>#8d93ab</td><td>Labels, axes, column heads. Passes 4.5:1 on panel.</td></tr><tr><td class="t">--rule</td><td class="h"><span class="sw" style="background:#d6dae6"></span>#d6dae6</td><td class="h"><span class="sw" style="background:#2a3044"></span>#2a3044</td><td>Hairlines between rows and around panels.</td></tr><tr><td class="t">--rule-2</td><td class="h"><span class="sw" style="background:#a9afc4"></span>#a9afc4</td><td class="h"><span class="sw" style="background:#4a5270"></span>#4a5270</td><td>Stronger hairline: input borders, dashed gap outlines, strip track edges.</td></tr><tr class="grp"><td colspan="4">Accent, hue 231</td></tr><tr><td class="t">--accent</td><td class="h"><span class="sw" style="background:#2b41bf"></span>#2b41bf</td><td class="h"><span class="sw" style="background:#8c9bff"></span>#8c9bff</td><td>Action and reference: links, buttons, focus ring, the source chip edge. Never a verdict.</td></tr><tr><td class="t">--accent-ink</td><td class="h"><span class="sw" style="background:#1f2f8f"></span>#1f2f8f</td><td class="h"><span class="sw" style="background:#b8c1ff"></span>#b8c1ff</td><td>Hover and pressed state of the accent.</td></tr><tr><td class="t">--on-accent</td><td class="h"><span class="sw" style="background:#ffffff"></span>#ffffff</td><td class="h"><span class="sw" style="background:#0d1018"></span>#0d1018</td><td>Text on a filled accent button.</td></tr><tr><td class="t">--band</td><td class="h"><span class="sw" style="background:#dfe4f8"></span>#dfe4f8</td><td class="h"><span class="sw" style="background:#1f2852"></span>#1f2852</td><td>The normal band on a range strip: sources within 1% of each other.</td></tr><tr><td class="t">--band-edge</td><td class="h"><span class="sw" style="background:#9fabe6"></span>#9fabe6</td><td class="h"><span class="sw" style="background:#4a5aa8"></span>#4a5aa8</td><td>The band’s two edges.</td></tr><tr class="grp"><td colspan="4">Verdict marks, each with a shape and a word</td></tr><tr><td class="t">--strong</td><td class="h"><span class="sw" style="background:#1b7a50"></span>#1b7a50</td><td class="h"><span class="sw" style="background:#52c98f"></span>#52c98f</td><td>Looking strong, green flag. Filled square.</td></tr><tr><td class="t">--strong-bg</td><td class="h"><span class="sw" style="background:#e2f2e9"></span>#e2f2e9</td><td class="h"><span class="sw" style="background:#11291e"></span>#11291e</td><td>Fill behind the strong mark only.</td></tr><tr><td class="t">--weak</td><td class="h"><span class="sw" style="background:#c4322a"></span>#c4322a</td><td class="h"><span class="sw" style="background:#ff7b6f"></span>#ff7b6f</td><td>Looking weak, red flag, the out-of-range triangle.</td></tr><tr><td class="t">--weak-bg</td><td class="h"><span class="sw" style="background:#fbe5e2"></span>#fbe5e2</td><td class="h"><span class="sw" style="background:#341815"></span>#341815</td><td>Fill behind the weak mark only.</td></tr><tr><td class="t">--mixed</td><td class="h"><span class="sw" style="background:#925c00"></span>#925c00</td><td class="h"><span class="sw" style="background:#e2ae4a"></span>#e2ae4a</td><td>Mixed. Half-filled square.</td></tr><tr><td class="t">--mixed-bg</td><td class="h"><span class="sw" style="background:#f7edd6"></span>#f7edd6</td><td class="h"><span class="sw" style="background:#2e2411"></span>#2e2411</td><td>Fill behind the mixed mark only.</td></tr><tr><td class="t">--thin</td><td class="h"><span class="sw" style="background:#5b6072"></span>#5b6072</td><td class="h"><span class="sw" style="background:#a4a9ba"></span>#a4a9ba</td><td>Not enough in the room. Dashed square, dashed border.</td></tr><tr><td class="t">--thin-bg</td><td class="h"><span class="sw" style="background:#eceef3"></span>#eceef3</td><td class="h"><span class="sw" style="background:#1f2331"></span>#1f2331</td><td>Fill behind the not-enough mark only.</td></tr></tbody></table></div>
+    </section>
+
+    <section id="type" aria-labelledby="h-type">
+      <h2 id="h-type"><span class="n">03</span>Type</h2>
+      <div class="faces">
+        <div>
+          <div class="role">Display</div>
+          <div class="big" style="font-family:var(--f-display);font-weight:800;letter-spacing:-0.03em">Readout</div>
+          <p>Bricolage Grotesque, 600 to 800. Page titles, section heads, block heads. 20px and up only.</p>
+        </div>
+        <div>
+          <div class="role">Body</div>
+          <div class="big" style="font-family:var(--f-body)">Readout</div>
+          <p>Atkinson Hyperlegible, 400 and 700. Every sentence a person reads: reasons, flags, notes, buttons.</p>
+        </div>
+        <div>
+          <div class="role">Data</div>
+          <div class="big" style="font-family:var(--f-data);font-size:36px">$2,240,868</div>
+          <p>Fragment Mono, 400. Figures, file names, cell names, labels, axes. Always tabular.</p>
+        </div>
+      </div>
+
+      <h3>Scale</h3>
+      <div class="tbox">
+        <table class="scale">
+          <thead><tr><th scope="col">Step</th><th scope="col">Size / line</th><th scope="col">Face</th><th scope="col">Used for</th></tr></thead>
+          <tbody>
+            <tr><td class="s" style="font-family:var(--f-display);font-weight:800;font-size:40px;letter-spacing:-0.03em;line-height:1">Line</td><td class="w">64 / 0.98, clamp from 36</td><td>Display 800</td><td>The line on the homepage. Once per page.</td></tr>
+            <tr><td class="s" style="font-family:var(--f-display);font-weight:700;font-size:30px">Section</td><td class="w">32 / 1.1</td><td>Display 700</td><td>Section heads, under a 1px ink rule.</td></tr>
+            <tr><td class="s" style="font-family:var(--f-display);font-weight:700;font-size:22px">Block</td><td class="w">22 / 1.15</td><td>Display 700</td><td>Persona blocks, style guide subheads.</td></tr>
+            <tr><td class="s" style="font-weight:700;font-size:15px">Flag title</td><td class="w">15 / 1.35</td><td>Body 700</td><td>Flag and verdict lead-ins.</td></tr>
+            <tr><td class="s" style="font-size:15px">Body</td><td class="w">15 / 1.45</td><td>Body 400</td><td>Reading text.</td></tr>
+            <tr><td class="s" style="font-size:13.5px">Small</td><td class="w">13.5 / 1.45</td><td>Body 400</td><td>Reasons, table cells, notes.</td></tr>
+            <tr><td class="s" style="font-family:var(--f-data);font-size:13px">$9,000,000</td><td class="w">13 / 1.4</td><td>Data</td><td>Figures in tables, right aligned.</td></tr>
+            <tr><td class="s" style="font-family:var(--f-data);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-3)">Label</td><td class="w">11 / 1.2, caps, +0.08em</td><td>Data</td><td>Kickers, column heads, chip text at 11.5.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="space" aria-labelledby="h-space">
+      <h2 id="h-space"><span class="n">04</span>Spacing, corners, lines</h2>
+      <p class="copy">A 4px unit. Inside a panel, steps 1 to 4. Between blocks, 5 to 8. Dense means rows touch and a hairline separates them.</p>
+      <div class="spaces" aria-label="Spacing scale">
+        <div><i style="width:4px"></i>s1 4</div>
+        <div><i style="width:8px"></i>s2 8</div>
+        <div><i style="width:12px"></i>s3 12</div>
+        <div><i style="width:16px"></i>s4 16</div>
+        <div><i style="width:24px"></i>s5 24</div>
+        <div><i style="width:32px"></i>s6 32</div>
+        <div><i style="width:48px"></i>s7 48</div>
+        <div><i style="width:64px"></i>s8 64</div>
+      </div>
+      <div class="lines">
+        <div><div class="demo" style="border:1px solid var(--rule)"></div><b>Hairline, 1px.</b> Panels, rows, inputs. Corners are 0 everywhere.</div>
+        <div><div class="demo" style="border:1px solid var(--rule);border-left:3px solid var(--weak)"></div><b>Edge, 3px left.</b> A flag's colour. The only thick line.</div>
+        <div><div class="demo" style="border:1px dashed var(--rule-2)"></div><b>Dashed.</b> Something absent: a gap, not enough, the synthetic label.</div>
+        <div><div class="demo" style="border:1px dotted var(--ink-3)"></div><b>Dotted.</b> Still running. Replaced when the scan ends.</div>
+        <div><div class="demo" style="border-bottom:1px solid var(--ink)"></div><b>Ink rule.</b> Under a section head. Once per section.</div>
+      </div>
+    </section>
+
+    <section id="marks" aria-labelledby="h-marks">
+      <h2 id="h-marks"><span class="n">05</span>Marks</h2>
+      <div class="spec">
+        <div>
+          <div class="markrow">
+            <span class="mark m-strong"><i class="g" aria-hidden="true"></i>looking strong</span>
+            <span class="mark m-weak"><i class="g" aria-hidden="true"></i>looking weak</span>
+            <span class="mark m-mixed"><i class="g" aria-hidden="true"></i>mixed</span>
+            <span class="mark m-thin"><i class="g" aria-hidden="true"></i>not enough in the room</span>
+            <span class="mark m-run"><i class="g" aria-hidden="true"></i>running</span>
+            <span class="mark m-dis"><i class="g" aria-hidden="true"></i>disagreement</span>
+          </div>
+        </div>
+        <div class="use"><b>Use</b>Filled square, out-of-range triangle, half square, dashed square. Each pairs a shape, a word and a colour, so it survives a greyscale print and a colour-blind reader. Disagreement is not a verdict, so it is drawn in ink.</div>
+      </div>
+    </section>
+
+    <section id="strip" aria-labelledby="h-strip">
+      <h2 id="h-strip"><span class="n">06</span>The range strip</h2>
+      <div class="spec">
+        <div class="anat">
+          <div class="strip" role="img" aria-label="Range strip anatomy: the check found 19 months inside the band; the stated 37 months is out of range.">
+            <div class="track">
+              <div class="band" style="left:47%;width:1%"></div>
+              <div class="tick" style="left:47.5%"></div>
+              <div class="oor" style="left:92.5%"></div>
+              <div class="tick" style="left:92.5%"></div>
+            </div>
+            <span class="lab dn" style="left:47.5%">found 19 mo</span>
+            <span class="lab up r w" style="left:92.5%">stated 37 mo</span>
+            <div class="axis"><span>0</span><span>20</span><span>40 months</span></div>
+          </div>
+          <ol>
+            <li>Track: the scale, with a light tick every tenth.</li>
+            <li>Band: where sources fall within 1% of each other, or the figure a check rebuilt. Accent tint.</li>
+            <li>Tick: one source's figure. A spoken figure ("about") is a hatched, wider tick.</li>
+            <li>Out-of-range mark: the red triangle over a stated figure the check did not rebuild.</li>
+            <li>Axis: the scale's ends and middle, in mono.</li>
+          </ol>
+        </div>
+        <div class="use"><b>Use</b>Under a green flag, a red flag or a disagreement, above its table. A disagreement draws no band, because the readout does not pick a winner. Labels may round ($2.24M); the table under the strip carries the exact figure.</div>
+      </div>
+    </section>
+
+    <section id="flags" aria-labelledby="h-flags">
+      <h2 id="h-flags"><span class="n">07</span>Green flag and red flag</h2>
+      <p><span class="synthetic">Synthetic data room for Deal Flow NYC 2026. Not a real company.</span></p>
+      <div class="spec">
+        <div>
+          <article class="flag green">
+            <div class="top"><span class="mark m-strong"><i class="g" aria-hidden="true"></i>Green flag</span></div>
+            <h4>Green flag: the round adds up.</h4>
+            <p>$9,000,000, stated in the deck and the same in the cap table and the model. Nothing in the room contradicts it.</p>
+            <div class="strip" role="img" aria-label="Range strip: deck, cap table and model all state 9,000,000 dollars, inside the band.">
+              <div class="track"><div class="band" style="left:20%;width:60%"></div><div class="tick" style="left:50%"></div></div>
+              <span class="lab up" style="left:50%">deck, cap table, model: $9,000,000</span>
+              <div class="axis"><span>$8.85M</span><span>$9.00M</span><span>$9.15M</span></div>
+            </div>
+            <div class="chips">
+              <button class="chip" type="button">pitch_deck.pdf, slide 13</button>
+              <button class="chip" type="button">cap_table.xlsx, Cap_Table, B24</button>
+              <button class="chip" type="button">financial_model.xlsx, SERIES_A_RAISE</button>
+            </div>
+          </article>
+          <article class="flag red">
+            <div class="top"><span class="mark m-weak"><i class="g" aria-hidden="true"></i>Red flag</span></div>
+            <h4>Red flag: runway leaves out most of the hiring plan.</h4>
+            <p>37 months stated; 19 months found with all 24 planned hires paid for. Burn and runway reads looking weak.</p>
+            <div class="chips">
+              <button class="chip" type="button">financial_model.xlsx, RUNWAY_MONTHS</button>
+              <button class="chip" type="button">pitch_deck.pdf, slide 11</button>
+              <button class="chip" type="button">hiring_plan.csv, rerun through Cash_Runway</button>
+            </div>
+          </article>
+        </div>
+        <div class="use"><b>Use</b>The headline list: green flags first, then red. Both are the same size, weight and length. The colour is on the 3px edge and the mark, never on the whole panel. A red flag at the top links to the same flag in its drill-down.</div>
+      </div>
+    </section>
+
+    <section id="verdicts" aria-labelledby="h-verdicts">
+      <h2 id="h-verdicts"><span class="n">08</span>Verdict lines</h2>
+      <div class="spec">
+        <div class="channels">
+          <div class="ch">
+            <div class="lead"><span class="piece">Market:</span></div>
+            <div class="lead"><span class="mark m-strong"><i class="g" aria-hidden="true"></i>looking strong</span></div>
+            <div class="why">Market size $252,000,000 on deck slide 8 and in the model (MARKET_TAM_USD). Both are the company's own estimate. [n] sources corroborate, [n] contradict.</div>
+          </div>
+          <div class="ch">
+            <div class="lead"><span class="piece">Traction and revenue:</span></div>
+            <div class="lead"><span class="mark m-weak"><i class="g" aria-hidden="true"></i>looking weak</span></div>
+            <div class="why">ARR is stated four ways, from about $3,000,000 on the pitch video to $2,060,868 in the subscription rows (pitch video, 0:35; customer_mrr_by_month.csv). [n] sources corroborate, [n] contradict.</div>
+          </div>
+          <div class="ch">
+            <div class="lead"><span class="piece">[Piece]:</span></div>
+            <div class="lead"><span class="mark m-mixed"><i class="g" aria-hidden="true"></i>mixed</span></div>
+            <div class="why">[The reason, in one sentence, with its number and source.] [n] sources corroborate, [n] contradict.</div>
+          </div>
+          <div class="ch">
+            <div class="lead"><span class="piece">[Piece]:</span></div>
+            <div class="lead"><span class="mark m-thin"><i class="g" aria-hidden="true"></i>not enough in the room</span></div>
+            <div class="why">[What the room is missing, named the way a gap is.] [n] sources corroborate, [n] contradict.</div>
+          </div>
+        </div>
+        <div class="use"><b>Use</b>The overview: one channel per piece, strong and weak alike, at the same length. The mark comes from the script's rule. Hollis Voice has no mixed or not-enough piece, so those two show the template. Counts come from the run.</div>
+      </div>
+    </section>
+
+    <section id="tables" aria-labelledby="h-tables">
+      <h2 id="h-tables"><span class="n">09</span>Corroboration and disagreement</h2>
+      <div class="spec">
+        <div>
+          <div class="tcap"><span class="mark m-strong"><i class="g" aria-hidden="true"></i>corroborated</span><b>Corroborated: Series A raise, $9,000,000</b></div>
+          <div class="tbox">
+            <table>
+              <thead><tr><th scope="col">Source</th><th scope="col" class="v">States</th><th scope="col">Where</th></tr></thead>
+              <tbody>
+                <tr><td>Deck</td><td class="v">$9,000,000</td><td class="w"><button class="chip" type="button">pitch_deck.pdf, slide 13</button></td></tr>
+                <tr><td>Cap table</td><td class="v">$9,000,000</td><td class="w"><button class="chip" type="button">cap_table.xlsx, Cap_Table, B24</button></td></tr>
+                <tr><td>Financial model</td><td class="v">$9,000,000</td><td class="w"><button class="chip" type="button">financial_model.xlsx, Assumptions, SERIES_A_RAISE</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tfoot"><p>3 independent sources agree. Nothing in the room contradicts it.</p></div>
+        </div>
+        <div class="use"><b>Use</b>Source, figure, place. Figures right aligned in mono so the digits line up. Repeats (deck, overview, video, website) show but count once.</div>
+      </div>
+      <div class="spec">
+        <div>
+          <div class="tcap"><span class="mark m-dis"><i class="g" aria-hidden="true"></i>disagreement</span><b>Disagreement: ARR</b></div>
+          <div class="panel" style="border-top:0;border-bottom:0;padding:0 var(--s3) var(--s2)">
+            <div class="strip" role="img" aria-label="Range strip: model, deck and pitch video state three different ARR figures. No band.">
+              <div class="track">
+                <div class="tick" style="left:21.9%"></div>
+                <div class="tick" style="left:45.45%"></div>
+                <div class="tick fuzzy" style="left:90.9%"></div>
+              </div>
+              <span class="lab dn" style="left:21.9%">model $2.24M</span>
+              <span class="lab up" style="left:45.45%">deck $2.50M</span>
+              <span class="lab dn r" style="left:93%">video, about $3.0M</span>
+              <div class="axis"><span>$2.0M</span><span>$2.55M</span><span>$3.1M</span></div>
+            </div>
+          </div>
+          <div class="tbox">
+            <table>
+              <thead><tr><th scope="col">Source</th><th scope="col" class="v">States</th><th scope="col">Where</th></tr></thead>
+              <tbody>
+                <tr><td>Pitch video</td><td class="v">about $3,000,000</td><td class="w"><button class="chip" type="button">pitch video, 0:35</button></td></tr>
+                <tr><td>Deck</td><td class="v">$2,500,000</td><td class="w"><button class="chip" type="button">pitch_deck.pdf, slide 3</button></td></tr>
+                <tr><td>Financial model</td><td class="v">$2,240,868</td><td class="w"><button class="chip" type="button">financial_model.xlsx, ARR_Build, ARR_TOTAL</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tfoot">
+            <p>Largest gap: about $760,000, between the video and the model. The deck is $259,132 above the model. The room does not explain either gap.</p>
+            <p class="ask"><b>Ask the founder</b>Which of these is ARR as of 2026-09-30, and can you walk us from the billing data to it?</p>
+          </div>
+        </div>
+        <div class="use"><b>Use</b>Sources side by side, no winner, no band on the strip. The ask line closes it, set off by a dashed rule and an accent label.</div>
+      </div>
+    </section>
+
+    <section id="notes" aria-labelledby="h-notes">
+      <h2 id="h-notes"><span class="n">10</span>Gap, clean check, steered piece</h2>
+      <div class="spec">
+        <div class="note gap">
+          <div class="lbl"><i class="g-gap" aria-hidden="true"></i>Gap</div>
+          <b>Not in the room: IP assignment agreements</b>
+          <dl>
+            <dt>Needed for</dt><dd>Confirming the founders and every contractor assigned their work to the company.</dd>
+            <dt>Ask for</dt><dd>Signed invention assignment agreements for both founders and every contractor who wrote code.</dd>
+          </dl>
+        </div>
+        <div class="use"><b>Use</b>A dashed outline in grey, never red. A gap is a question for the operator, not a flag.</div>
+      </div>
+      <div class="spec">
+        <div class="note clean">
+          <div class="lbl"><i class="g-clean" aria-hidden="true"></i>Clean check</div>
+          <b>Clean: cash reconciles.</b> Money raised before the Series A, less every month's net loss to 2026-09-30, was compared with the model's cash. The two differ by $0.24 on $1,800,000.
+          <div class="chips"><button class="chip" type="button">cap_table.xlsx</button><button class="chip" type="button">financial_model.xlsx</button></div>
+        </div>
+        <div class="use"><b>Use</b>Shown so the operator knows the check ran. A green edge and a tick, one paragraph.</div>
+      </div>
+      <div class="spec">
+        <div class="note steer">
+          <div class="lbl"><i class="g-steer" aria-hidden="true"></i>Steered piece</div>
+          <b>Rewritten on your instruction: "Lead with the pilot."</b> The pilot counted as ARR now opens the piece. Verdict unchanged. The checks' numbers are unchanged.
+        </div>
+        <div class="use"><b>Use</b>Sits at the top of the steered piece, on the sunk ground with an accent edge, because it records an action. The checks' figures stay on screen beside it.</div>
+      </div>
+    </section>
+
+    <section id="controls" aria-labelledby="h-controls">
+      <h2 id="h-controls"><span class="n">11</span>Source chip, buttons, text input</h2>
+      <div class="spec">
+        <div class="chips" style="margin:0">
+          <button class="chip" type="button">pitch_deck.pdf, slide 13</button>
+          <button class="chip" type="button">pitch video, 0:35</button>
+          <button class="chip" type="button">expense_ledger.csv</button>
+        </div>
+        <div class="use"><b>Use</b>File and place in mono, an accent edge on the left. One click opens the source. Every figure has one.</div>
+      </div>
+      <div class="spec">
+        <div class="btnrow">
+          <button class="btn" type="button">Open the readout</button>
+          <button class="btn sec" type="button">Ask for documents</button>
+          <button class="btn quiet" type="button">Show sources</button>
+          <button class="btn" type="button" disabled>Export memo</button>
+        </div>
+        <div class="use"><b>Use</b>One primary per view. Secondary is an accent outline. Quiet is an underlined word. All square, 38px tall at least.</div>
+      </div>
+      <div class="spec">
+        <form class="field" onsubmit="return false">
+          <label for="steer">Steer this piece</label>
+          <div class="row">
+            <input class="input" id="steer" type="text" placeholder="One sentence, for example: lead with the pilot">
+            <button class="btn" type="submit">Rewrite</button>
+            <button class="btn sec" type="button">Get more info</button>
+          </div>
+          <span class="help">The checks' numbers stay on screen beside the change.</span>
+        </form>
+        <div class="use"><b>Use</b>A label in mono caps above, help text below. The input and its buttons sit flush, square, sharing edges.</div>
+      </div>
+    </section>
+
+    <section id="rules" aria-labelledby="h-rules">
+      <h2 id="h-rules"><span class="n">12</span>Rules a builder can apply without asking</h2>
+      <ol class="rules">
+        <li><span>The accent marks action and reference only: links, buttons, focus, chip edges and the band.</span><span class="why">Blue must never read as a verdict.</span></li>
+        <li><span>Every verdict mark carries a shape, a word and a colour. Never colour alone.</span><span class="why">The memo is printed and read by colour-blind partners.</span></li>
+        <li><span>One shape, one meaning: filled square strong, triangle weak, half square mixed, dashed square not enough, open ring running.</span><span class="why">The triangle is the monitor's out-of-range mark. Reusing it elsewhere dilutes it.</span></li>
+        <li><span>Dashed means absent. Use it for gaps, not-enough, and the synthetic label, nothing else.</span><span class="why">Absence should look different from a finding.</span></li>
+        <li><span>Corners are 0. Panels separate with a 1px hairline. No shadows.</span><span class="why">At this density, shadows and rounding add noise without adding order.</span></li>
+        <li><span>Colour a flag on its 3px left edge and its mark, never on the whole panel.</span><span class="why">A page of red panels reads as alarm. The readout says a flag once, at the size it is.</span></li>
+        <li><span>Figures in tables, strips and chips are Fragment Mono, right aligned in tables. A figure inside a sentence stays in Atkinson, with tabular figures on.</span><span class="why">Columns of dollars have to line up to be compared, and a sentence should read as one voice. Atkinson's slashed zero still keeps 0 apart from O.</span></li>
+        <li><span>Every figure has a source chip beside it or in its row. A figure without one does not ship.</span><span class="why">Every claim links to its source. That is a product commitment.</span></li>
+        <li><span>Draw a band only where sources agree within 1%, or where a check rebuilt the figure. A disagreement gets no band.</span><span class="why">The readout lists sources side by side and does not pick a winner.</span></li>
+        <li><span>Green flags and red flags share one size, weight and length.</span><span class="why">A strength gets the same care as a problem.</span></li>
+        <li><span>Bricolage only at 20px and up. Anything read in sentences is Atkinson.</span><span class="why">Bricolage's character breaks down when small. Atkinson is built for legibility.</span></li>
+        <li><span>The chart-paper grid sits behind the hero and the call to action only, never behind data.</span><span class="why">Grid lines compete with the ticks on a strip.</span></li>
+        <li><span>No motion except the running ring, and none at all under reduced motion.</span><span class="why">A blinking monitor is an alarm. Tricorder states, it does not alarm.</span></li>
+      </ol>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>Tricorder. Direction A, Reference Range.</span>
+    <span><a href="home.html">Sample homepage</a> &nbsp; <a href="../index.html">All directions</a></span>
+  </div>
+</footer>
+<script>
+(function () {
+  var b = document.getElementById('theme');
+  var r = document.documentElement;
+  var order = ['auto', 'light', 'dark'];
+  var cur = 'auto';
+  try { cur = localStorage.getItem('tricorder-a-theme') || 'auto'; } catch (e) {}
+  function apply(v) {
+    cur = order.indexOf(v) < 0 ? 'auto' : v;
+    if (cur === 'auto') r.removeAttribute('data-theme'); else r.setAttribute('data-theme', cur);
+    if (b) b.textContent = 'Theme: ' + cur;
+    try { localStorage.setItem('tricorder-a-theme', cur); } catch (e) {}
+  }
+  apply(cur);
+  if (b) b.addEventListener('click', function () { apply(order[(order.indexOf(cur) + 1) % 3]); });
+})();
+</script>
+</body>
+</html>

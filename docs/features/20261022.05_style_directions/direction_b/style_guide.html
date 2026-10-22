@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tricorder Style, Manifest</title>
+<meta name="description" content="Style guide for Tricorder, direction B: Manifest. Tokens, type, spacing, readout components and rules.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cousine:wght@400;700&family=Libre+Caslon+Display&family=Libre+Franklin:ital,wght@0,300..700;1,400&display=swap">
+<style>
+/* Direction B, Manifest. Dark-first: bare :root is the dark theme, light mirrors it. */
+:root {
+  color-scheme: dark;
+  --ground: #0E1D24;        /* page: petrol, the dock at night */
+  --panel: #13262F;         /* square panels, the manifest sheet */
+  --panel-2: #183039;       /* inset rows, table heads */
+  --rule: #2A4652;          /* hairlines between lines */
+  --rule-strong: #46697A;   /* panel edges, box borders */
+  --ink: #E7EAE6;           /* body text */
+  --ink-2: #9DB0B6;         /* labels, line numbers, captions */
+  --accent: #F08B38;        /* signal lamp: actions, focus, the found column */
+  --accent-ink: #1A0E05;    /* text on an accent fill */
+  --accent-wash: rgba(240, 139, 56, 0.12);
+  --strong: #5FCB9A;        /* looking strong, green flag, clean */
+  --weak: #F2667F;          /* looking weak, red flag */
+  --mixed: #A3B4FF;         /* mixed */
+  --thin: #B4BFC2;          /* not enough in the room, gaps */
+  --strong-wash: rgba(95, 203, 154, 0.10);
+  --weak-wash: rgba(242, 102, 127, 0.10);
+  --mixed-wash: rgba(163, 180, 255, 0.10);
+  --lamp-glow: 0 0 0 4px rgba(240, 139, 56, 0.18), 0 0 18px rgba(240, 139, 56, 0.45);
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ground: #0E1D24; --panel: #13262F; --panel-2: #183039; --rule: #2A4652; --rule-strong: #46697A;
+  --ink: #E7EAE6; --ink-2: #9DB0B6; --accent: #F08B38; --accent-ink: #1A0E05; --accent-wash: rgba(240, 139, 56, 0.12);
+  --strong: #5FCB9A; --weak: #F2667F; --mixed: #A3B4FF; --thin: #B4BFC2;
+  --strong-wash: rgba(95, 203, 154, 0.10); --weak-wash: rgba(242, 102, 127, 0.10); --mixed-wash: rgba(163, 180, 255, 0.10);
+  --lamp-glow: 0 0 0 4px rgba(240, 139, 56, 0.18), 0 0 18px rgba(240, 139, 56, 0.45);
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --ground: #E9EEEE; --panel: #FBFCFC; --panel-2: #F0F4F4; --rule: #CBD6D8; --rule-strong: #8FA4AA;
+    --ink: #0E1D24; --ink-2: #465A62; --accent: #A14E0C; --accent-ink: #FFFFFF; --accent-wash: rgba(161, 78, 12, 0.09);
+    --strong: #12704A; --weak: #B0233C; --mixed: #3A4CB0; --thin: #56636A;
+    --strong-wash: rgba(18, 112, 74, 0.08); --weak-wash: rgba(176, 35, 60, 0.07); --mixed-wash: rgba(58, 76, 176, 0.07);
+    --lamp-glow: 0 0 0 4px rgba(161, 78, 12, 0.14);
+  }
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --ground: #E9EEEE; --panel: #FBFCFC; --panel-2: #F0F4F4; --rule: #CBD6D8; --rule-strong: #8FA4AA;
+  --ink: #0E1D24; --ink-2: #465A62; --accent: #A14E0C; --accent-ink: #FFFFFF; --accent-wash: rgba(161, 78, 12, 0.09);
+  --strong: #12704A; --weak: #B0233C; --mixed: #3A4CB0; --thin: #56636A;
+  --strong-wash: rgba(18, 112, 74, 0.08); --weak-wash: rgba(176, 35, 60, 0.07); --mixed-wash: rgba(58, 76, 176, 0.07);
+  --lamp-glow: 0 0 0 4px rgba(161, 78, 12, 0.14);
+}
+
+:root {
+  --f-display: "Libre Caslon Display", "Libre Caslon Text", "Big Caslon", "Iowan Old Style", Georgia, serif;
+  --f-body: "Libre Franklin", "Franklin Gothic Book", "Helvetica Neue", Arial, sans-serif;
+  --f-data: "Cousine", "Liberation Mono", "Courier New", ui-monospace, monospace;
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 72px; --s-9: 112px; --s-10: 160px;
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+  --measure: 36rem;
+  --wide: 72rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 17px;
+  line-height: 1.6;
+  font-weight: 400;
+  overflow-wrap: break-word;
+}
+a { color: inherit; text-decoration-color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.pill:focus-visible, .chip:focus-visible { border-radius: 999px; }
+
+.wrap { max-width: var(--wide); margin: 0 auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
+
+/* Type */
+.display, h1, h2 { font-family: var(--f-display); font-weight: 400; letter-spacing: -0.005em; line-height: 1.08; margin: 0; }
+h1 { font-size: clamp(2.6rem, 7.2vw, 5.6rem); }
+h2 { font-size: clamp(2rem, 4.4vw, 3.4rem); }
+h3 { font-family: var(--f-body); font-size: 1.05rem; font-weight: 650; margin: 0; line-height: 1.35; }
+.lede { font-size: clamp(1.1rem, 1.6vw, 1.3rem); line-height: 1.55; max-width: var(--measure); color: var(--ink); font-weight: 350; }
+.label {
+  font-family: var(--f-data); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-2); font-weight: 400;
+}
+.data, code, .num { font-family: var(--f-data); font-variant-numeric: tabular-nums; }
+.num { font-size: 0.95em; }
+p { margin: 0 0 var(--s-4); max-width: var(--measure); }
+
+/* The box label: every panel carries a customs-form box number */
+.box-no { display: inline-flex; gap: var(--s-2); align-items: baseline; }
+.box-no b { color: var(--accent); font-weight: 700; }
+
+/* Panels are square. Controls are pills. */
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--rule-strong);
+  border-radius: 0;
+  position: relative;
+}
+.panel-head {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s-2) var(--s-4);
+  padding: var(--s-3) var(--s-5); border-bottom: 1px solid var(--rule);
+}
+
+/* Manifest lines: a numbered gutter, a hairline, the content */
+.line {
+  display: grid; grid-template-columns: 4.2rem 1fr; border-top: 1px solid var(--rule);
+}
+.line:first-child { border-top: 0; }
+.line-no {
+  font-family: var(--f-data); font-size: 0.78rem; color: var(--ink-2); letter-spacing: 0.04em;
+  padding: var(--s-5) 0 var(--s-5) var(--s-5); border-right: 1px solid var(--rule);
+  font-variant-numeric: tabular-nums;
+}
+.line-body { padding: var(--s-5); min-width: 0; }
+.line-body p:last-child { margin-bottom: 0; }
+@media (max-width: 560px) {
+  .line { grid-template-columns: 1fr; }
+  .line-no { border-right: 0; padding: var(--s-3) var(--s-4) 0; }
+  .line-body { padding: var(--s-2) var(--s-4) var(--s-4); }
+  .panel-head { padding: var(--s-3) var(--s-4); }
+}
+
+/* Stamps: the mark a piece or a claim gets. Always a word, always a shape. */
+.stamp {
+  --c: var(--ink-2);
+  display: inline-flex; align-items: center; gap: 0.5em;
+  font-family: var(--f-data); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--c); border: 2px solid var(--c); padding: 0.28em 0.7em 0.24em;
+  box-shadow: inset 0 0 0 2px var(--panel), inset 0 0 0 3px var(--c);
+  transform: rotate(-1.5deg); white-space: nowrap; line-height: 1.3;
+  -webkit-mask-image: var(--grit); mask-image: var(--grit);
+}
+.stamp svg { width: 0.95em; height: 0.95em; flex: none; }
+.stamp.strong { --c: var(--strong); }
+.stamp.weak { --c: var(--weak); }
+.stamp.mixed { --c: var(--mixed); }
+.stamp.thin { --c: var(--thin); border-style: dashed; box-shadow: none; }
+.stamp.flat { transform: none; font-size: 0.7rem; }
+:root { --grit: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='60'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' seed='27'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1.1 1.75'/%3E%3C/filter%3E%3Crect width='160' height='60' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+/* Flag heads */
+.flag-head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3); margin-bottom: var(--s-3); }
+.flag-title { font-weight: 650; font-size: 1.08rem; line-height: 1.4; margin: 0 0 var(--s-2); }
+.line.flag.green { box-shadow: inset 3px 0 0 var(--strong); }
+.line.flag.red { box-shadow: inset 3px 0 0 var(--weak); }
+
+/* Stated beside found: the declared and inspected columns */
+.sf { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--rule); margin: var(--s-4) 0; }
+.sf > div { padding: var(--s-3) var(--s-4); min-width: 0; }
+.sf > div + div { border-left: 1px solid var(--rule); }
+.sf .big { font-family: var(--f-data); font-size: 1.5rem; font-variant-numeric: tabular-nums; line-height: 1.2; display: block; margin: var(--s-1) 0; }
+.sf .found { box-shadow: inset 0 3px 0 var(--accent); }
+.sf .found .label { color: var(--accent); }
+@media (max-width: 400px) { .sf .big { font-size: 1.25rem; } }
+
+/* Source chip */
+.chip {
+  display: inline-flex; align-items: center; gap: 0.45em; max-width: 100%;
+  font-family: var(--f-data); font-size: 0.76rem; line-height: 1.3; color: var(--ink);
+  border: 1px solid var(--rule-strong); border-radius: 999px; padding: 0.22em 0.75em 0.22em 0.6em;
+  background: var(--panel-2); text-decoration: none; vertical-align: baseline;
+  white-space: normal;
+}
+.chip::before { content: ""; width: 0.5em; height: 0.5em; border: 1px solid var(--accent); transform: rotate(45deg); flex: none; }
+.chip:hover { border-color: var(--accent); color: var(--ink); }
+.chips { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-3); }
+
+/* Tables */
+.table-box { overflow-x: auto; border: 1px solid var(--rule); margin: var(--s-4) 0; -webkit-overflow-scrolling: touch; }
+table { border-collapse: collapse; width: 100%; min-width: 30rem; font-size: 0.92rem; }
+caption { text-align: left; padding: var(--s-3) var(--s-4); caption-side: top; font-weight: 650; border-bottom: 1px solid var(--rule); }
+th, td { text-align: left; padding: var(--s-3) var(--s-4); border-bottom: 1px solid var(--rule); vertical-align: top; }
+thead th { font-family: var(--f-data); font-weight: 400; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); background: var(--panel-2); }
+tbody tr:last-child td, tbody tr:last-child th { border-bottom: 0; }
+td.n, th.n { font-family: var(--f-data); font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.where { font-family: var(--f-data); font-size: 0.8rem; color: var(--ink-2); }
+td.ln { font-family: var(--f-data); color: var(--ink-2); font-size: 0.78rem; width: 3.5rem; }
+
+/* Controls: pills */
+.pill {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.6em;
+  font-family: var(--f-body); font-size: 0.98rem; font-weight: 600; line-height: 1.2;
+  padding: 0.85em 1.5em; border-radius: 999px; border: 1.5px solid var(--accent);
+  text-decoration: none; cursor: pointer; background: transparent; color: var(--ink);
+  transition: background-color 120ms ease, color 120ms ease;
+}
+.pill.primary { background: var(--accent); color: var(--accent-ink); }
+.pill.primary:hover { color: var(--accent-ink); filter: brightness(1.08); }
+.pill:hover { background: var(--accent-wash); color: var(--ink); }
+.pill.quiet { border-color: var(--rule-strong); }
+.pill.small { font-size: 0.85rem; padding: 0.5em 1em; }
+.pill[disabled] { opacity: 0.45; cursor: not-allowed; }
+.pill .arrow { font-family: var(--f-data); }
+
+.field { display: grid; gap: var(--s-2); max-width: 32rem; }
+.field label { font-family: var(--f-data); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); }
+.input-row { display: flex; gap: var(--s-2); flex-wrap: wrap; }
+.input {
+  flex: 1 1 14rem; min-width: 0; font: inherit; font-size: 1rem; color: var(--ink); background: var(--panel-2);
+  border: 1.5px solid var(--rule-strong); border-radius: 999px; padding: 0.75em 1.2em;
+}
+.input::placeholder { color: var(--ink-2); opacity: 1; }
+.input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); border-radius: 999px; }
+.hint { font-size: 0.85rem; color: var(--ink-2); }
+
+/* The signal lamp */
+.lamp { display: inline-block; width: 0.6rem; height: 0.6rem; border-radius: 50%; background: var(--accent); box-shadow: var(--lamp-glow); flex: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .lamp.blink { animation: lamp 2.4s ease-in-out infinite; }
+  @keyframes lamp { 50% { opacity: 0.35; } }
+}
+
+/* Synthetic label */
+.synthetic {
+  display: flex; gap: var(--s-2); align-items: center; flex-wrap: wrap;
+  font-family: var(--f-data); font-size: 0.76rem; color: var(--ink); letter-spacing: 0.02em;
+  border: 1px dashed var(--rule-strong); padding: var(--s-2) var(--s-3); background: var(--panel-2);
+}
+.synthetic b { color: var(--accent); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* Utility strip and header */
+.strip { border-bottom: 1px solid var(--rule); font-family: var(--f-data); font-size: 0.74rem; color: var(--ink-2); }
+.strip .wrap { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-5); justify-content: space-between; padding-top: var(--s-2); padding-bottom: var(--s-2); }
+.strip a { color: var(--ink-2); }
+.strip nav { display: flex; gap: var(--s-4); flex-wrap: wrap; }
+
+.theme-toggle { font-family: var(--f-data); font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.4em 0.9em; border-radius: 999px; border: 1px solid var(--rule-strong); background: transparent; color: var(--ink); cursor: pointer; display: inline-flex; gap: 0.5em; align-items: center; }
+.theme-toggle:hover { border-color: var(--accent); }
+
+.skip { position: absolute; left: -999px; top: 0; }
+.skip:focus { left: var(--s-4); top: var(--s-4); background: var(--accent); color: var(--accent-ink); padding: var(--s-2) var(--s-4); border-radius: 999px; z-index: 10; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+html { scroll-behavior: smooth; }
+
+/* Style guide layout */
+.guide-head { padding: var(--s-9) 0 var(--s-8); border-bottom: 1px solid var(--rule); }
+.guide-head h1 { margin: var(--s-4) 0 var(--s-6); }
+.guide-head .lede { max-width: 40rem; }
+section.sg { padding: var(--s-8) 0; border-bottom: 1px solid var(--rule); }
+.sg-grid { display: grid; grid-template-columns: 13rem minmax(0, 1fr); gap: var(--s-7); }
+@media (max-width: 860px) { .sg-grid { grid-template-columns: minmax(0, 1fr); gap: var(--s-5); } section.sg { padding: var(--s-7) 0; } }
+.sg-index { border-top: 2px solid var(--accent); padding-top: 0.6rem; align-self: start; }
+.sg-index h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); margin-top: var(--s-3); }
+.sg h3 { margin: var(--s-7) 0 var(--s-3); }
+.sg h3:first-child { margin-top: 0; }
+.spec { margin: var(--s-4) 0 var(--s-6); }
+.spec > .label { display: block; margin-bottom: var(--s-2); }
+.stack > * + * { margin-top: var(--s-4); }
+
+.sw { display: inline-block; width: 1.6rem; height: 1.6rem; border: 1px solid rgba(128,128,128,.5); vertical-align: middle; }
+.tok td { vertical-align: middle; }
+.tok td.hex { font-family: var(--f-data); font-size: 0.82rem; white-space: nowrap; }
+.tok td.hex .sw { margin-right: 0.5em; }
+.tok code { font-size: 0.82rem; color: var(--ink); }
+
+.face { border: 1px solid var(--rule-strong); background: var(--panel); padding: var(--s-5); margin-bottom: var(--s-3); }
+.face .big { display: block; margin: var(--s-2) 0 var(--s-3); line-height: 1.15; }
+.face .meta { font-size: 0.88rem; color: var(--ink-2); margin: 0; }
+
+.space-row { display: grid; grid-template-columns: 4.5rem 4rem minmax(0, 1fr); align-items: center; gap: var(--s-3); padding: var(--s-1) 0; font-family: var(--f-data); font-size: 0.8rem; }
+.space-row i { display: block; height: 0.6rem; background: var(--accent); opacity: 0.8; }
+.space-row span:nth-child(2) { color: var(--ink-2); }
+
+.shapes { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: var(--s-4); }
+.shape-card { border: 1px solid var(--rule); padding: var(--s-4); min-width: 0; }
+.shape-card .demo { height: 3.5rem; display: flex; align-items: center; margin-bottom: var(--s-3); }
+.shape-card p { font-size: 0.9rem; margin: 0; }
+
+.verdict { display: grid; grid-template-columns: 4.2rem 1fr; border-top: 1px solid var(--rule); }
+.verdict:first-child { border-top: 0; }
+.verdict .line-body p { margin: var(--s-2) 0 0; }
+.verdict .piece { font-weight: 650; }
+@media (max-width: 560px) { .verdict { grid-template-columns: 1fr; } }
+
+.gap-box { border: 1.5px dashed var(--thin); padding: var(--s-5); background: transparent; }
+.gap-box ul, .flag-list { margin: var(--s-3) 0 0; padding-left: 1.1rem; }
+.gap-box li, .flag-list li { margin-bottom: var(--s-2); max-width: var(--measure); }
+.clean-row { display: flex; gap: var(--s-3); align-items: flex-start; border-left: 3px solid var(--strong); padding: var(--s-4) var(--s-5); background: var(--panel); }
+.clean-row svg { width: 1.1rem; height: 1.1rem; color: var(--strong); flex: none; margin-top: 0.3rem; }
+.clean-row p { margin: 0; }
+.steer { border: 1px solid var(--rule-strong); background: var(--panel); }
+.steer .panel-head { align-items: center; }
+.steer .body { padding: var(--s-4) var(--s-5); }
+.steer .body p { margin-bottom: var(--s-3); }
+.steer .body p > svg { width: 1rem; height: 1rem; color: var(--accent); vertical-align: -2px; margin-right: 0.4em; }
+.kept { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-4); font-family: var(--f-data); font-size: 0.8rem; color: var(--ink-2); border-top: 1px solid var(--rule); padding-top: var(--s-3); }
+.btn-row { display: flex; flex-wrap: wrap; gap: var(--s-3); align-items: center; }
+.agree-note { padding: var(--s-3) var(--s-4); margin: 0; border-top: 1px solid var(--rule); max-width: none; display: flex; gap: var(--s-3); align-items: center; flex-wrap: wrap; }
+.table-box.flush { margin: 0; border: 0; }
+
+.rules { list-style: none; margin: 0; padding: 0; counter-reset: r; border-top: 1px solid var(--rule); }
+.rules li { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); gap: var(--s-3); padding: var(--s-4) 0; border-bottom: 1px solid var(--rule); }
+.rules li::before { counter-increment: r; content: "R." counter(r, decimal-leading-zero); font-family: var(--f-data); font-size: 0.78rem; color: var(--accent); padding-top: 0.2rem; }
+.rules p { margin: 0; }
+.rules .why { color: var(--ink-2); font-size: 0.93rem; margin-top: var(--s-1); }
+footer.site { padding: var(--s-7) 0 var(--s-8); font-size: 0.9rem; color: var(--ink-2); }
+footer.site nav { display: flex; gap: var(--s-5); flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="m-strong" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="currentColor"/><path d="M4.6 8.3l2.2 2.2 4.6-4.8" fill="none" stroke-width="2" stroke-linecap="square" style="stroke: var(--panel)"/></symbol>
+  <symbol id="m-weak" viewBox="0 0 16 16"><path d="M1 2.5h14L8 14.5z" fill="currentColor"/></symbol>
+  <symbol id="m-mixed" viewBox="0 0 16 16"><path d="M8 1l7 7-7 7-7-7z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 1v14L1 8z" fill="currentColor"/></symbol>
+  <symbol id="m-thin" viewBox="0 0 16 16"><rect x="2" y="2" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="2.4 2"/></symbol>
+  <symbol id="m-clean" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5 8.2l2 2 4-4.2" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="m-flag-green" viewBox="0 0 16 16"><path d="M3 1v14" stroke="currentColor" stroke-width="1.6"/><path d="M3.8 2h10l-2.2 3.5L13.8 9h-10z" fill="currentColor"/></symbol>
+  <symbol id="m-flag-red" viewBox="0 0 16 16"><path d="M3 1v14" stroke="currentColor" stroke-width="1.6"/><path d="M3.8 2h10v7h-10z" fill="currentColor"/><path d="M8.8 3.6v2.6M8.8 7.2v.1" stroke-width="1.5" style="stroke: var(--panel)"/></symbol>
+  <symbol id="m-steer" viewBox="0 0 16 16"><path d="M2 13V8a4 4 0 0 1 4-4h7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10 1.2L13.4 4 10 6.8" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to the guide</a>
+
+<div class="strip">
+  <div class="wrap">
+    <span>Tricorder style guide. Direction B, Manifest.</span>
+    <nav aria-label="Directions">
+      <a href="../index.html">All directions</a>
+      <a href="home.html">Sample homepage</a>
+      <button class="theme-toggle" type="button" data-theme-toggle><span>Light</span></button>
+    </nav>
+  </div>
+</div>
+
+<main id="main">
+<header class="guide-head">
+  <div class="wrap">
+    <span class="label box-no"><b>B</b> Style direction, seeded 2026-10-22T19:51:56Z</span>
+    <h1>Manifest</h1>
+    <p class="lede">Every readout line is a manifest line: what the company stated, set beside what Tricorder found, with the stamp it earned. A petrol-dark ground, an amber that works like a signal lamp for the one thing to do next, Caslon for the statements and Cousine for every figure.</p>
+  </div>
+</header>
+
+<section class="sg" aria-labelledby="seed-title">
+  <div class="wrap sg-grid">
+    <div class="sg-index"><span class="label box-no"><b>01</b> Seed</span><h2 id="seed-title">How the seed shaped it</h2></div>
+    <div>
+      <p>The datetime hash picked six things. Each one became a working rule, not decoration.</p>
+      <div class="table-box" role="region" aria-label="Seed picks" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Line</th><th scope="col">Pick</th><th scope="col">What it became</th></tr></thead>
+          <tbody>
+            <tr><td class="ln">L.01</td><td>Motif: shipping manifest and customs</td><td>Numbered lines with a ruled gutter. Stated and found side by side, like declared and inspected. Box labels on panels. Verdicts as stamps. The words on screen stay the readout's own: stated, found, corroborated.</td></tr>
+            <tr><td class="ln">L.02</td><td>Accent hue 27</td><td>Signal-lamp amber, <span class="data">#F08B38</span> on dark and <span class="data">#A14E0C</span> on light. It marks the next action and the found value, never a verdict.</td></tr>
+            <tr><td class="ln">L.03</td><td>Libre Caslon Display, Libre Franklin, Cousine</td><td>Caslon for the big statements, like an engraved form header. Franklin for reading. Cousine for every figure, file name and line number.</td></tr>
+            <tr><td class="ln">L.04</td><td>Airy, one idea per screen</td><td>Marketing screens fill the viewport with one statement each. In the readout, one claim per line, with 24px of air inside every line.</td></tr>
+            <tr><td class="ln">L.05</td><td>Dark ground</td><td>Dark is the default theme. The dark is petrol, hue 197, so amber sits on its complement and reads as a lamp, not a highlighter.</td></tr>
+            <tr><td class="ln">L.06</td><td>Pill controls on square panels</td><td>Anything you read is a square sheet. Anything you press or type in is a pill. Source chips are pills because they open something.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sg" aria-labelledby="color-title">
+  <div class="wrap sg-grid">
+    <div class="sg-index"><span class="label box-no"><b>02</b> Colour</span><h2 id="color-title">Tokens</h2></div>
+    <div>
+      <p>Dark is defined on bare <code>:root</code>. Light mirrors every token under <code>prefers-color-scheme: light</code> and under <code>[data-theme="light"]</code>. Components use tokens only. Contrast is measured against <code>--ground</code>.</p>
+      <h3>Surfaces and text</h3>
+      <div class="table-box" role="region" aria-label="Surface tokens" tabindex="0">
+        <table class="tok">
+          <thead><tr><th scope="col">Token</th><th scope="col">Dark</th><th scope="col">Light</th><th scope="col">Role</th></tr></thead>
+          <tbody>
+            <tr><td><code>--ground</code></td><td class="hex"><span class="sw" style="background:#0E1D24"></span>#0E1D24</td><td class="hex"><span class="sw" style="background:#E9EEEE"></span>#E9EEEE</td><td>The page. Petrol on dark, cool grey on light. Never cream.</td></tr>
+            <tr><td><code>--panel</code></td><td class="hex"><span class="sw" style="background:#13262F"></span>#13262F</td><td class="hex"><span class="sw" style="background:#FBFCFC"></span>#FBFCFC</td><td>Square panels: the readout sheet, slips.</td></tr>
+            <tr><td><code>--panel-2</code></td><td class="hex"><span class="sw" style="background:#183039"></span>#183039</td><td class="hex"><span class="sw" style="background:#F0F4F4"></span>#F0F4F4</td><td>Table heads, inputs, chips, the synthetic label.</td></tr>
+            <tr><td><code>--rule</code></td><td class="hex"><span class="sw" style="background:#2A4652"></span>#2A4652</td><td class="hex"><span class="sw" style="background:#CBD6D8"></span>#CBD6D8</td><td>Hairlines between manifest lines and table rows.</td></tr>
+            <tr><td><code>--rule-strong</code></td><td class="hex"><span class="sw" style="background:#46697A"></span>#46697A</td><td class="hex"><span class="sw" style="background:#8FA4AA"></span>#8FA4AA</td><td>Panel edges, input borders, quiet buttons.</td></tr>
+            <tr><td><code>--ink</code></td><td class="hex"><span class="sw" style="background:#E7EAE6"></span>#E7EAE6</td><td class="hex"><span class="sw" style="background:#0E1D24"></span>#0E1D24</td><td>Body text. 14.2:1 on dark, 14.7:1 on light.</td></tr>
+            <tr><td><code>--ink-2</code></td><td class="hex"><span class="sw" style="background:#9DB0B6"></span>#9DB0B6</td><td class="hex"><span class="sw" style="background:#465A62"></span>#465A62</td><td>Labels, line numbers, captions, file paths. 7.6:1 and 6.2:1.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Accent</h3>
+      <div class="table-box" role="region" aria-label="Accent tokens" tabindex="0">
+        <table class="tok">
+          <thead><tr><th scope="col">Token</th><th scope="col">Dark</th><th scope="col">Light</th><th scope="col">Role</th></tr></thead>
+          <tbody>
+            <tr><td><code>--accent</code></td><td class="hex"><span class="sw" style="background:#F08B38"></span>#F08B38</td><td class="hex"><span class="sw" style="background:#A14E0C"></span>#A14E0C</td><td>Signal lamp, hue 27. Primary button, focus ring, the found column's label, ask-the-founder lines, box and line numbers that guide the eye. 6.9:1 on dark, 4.9:1 on light.</td></tr>
+            <tr><td><code>--accent-ink</code></td><td class="hex"><span class="sw" style="background:#1A0E05"></span>#1A0E05</td><td class="hex"><span class="sw" style="background:#FFFFFF"></span>#FFFFFF</td><td>Text on an accent fill. 7.6:1 on dark, 5.8:1 on light.</td></tr>
+            <tr><td><code>--accent-wash</code></td><td class="hex"><span class="sw" style="background:rgba(240,139,56,.12)"></span>accent 12%</td><td class="hex"><span class="sw" style="background:rgba(161,78,12,.09)"></span>accent 9%</td><td>Hover wash on pills. The found value gets a 3px accent bar instead, so it never turns muddy.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Marks</h3>
+      <p>Four marks, separate from the accent. Each one always carries its word and its shape as well as its colour.</p>
+      <div class="table-box" role="region" aria-label="Mark tokens" tabindex="0">
+        <table class="tok">
+          <thead><tr><th scope="col">Token</th><th scope="col">Dark</th><th scope="col">Light</th><th scope="col">Shape and word</th></tr></thead>
+          <tbody>
+            <tr><td><code>--strong</code></td><td class="hex"><span class="sw" style="background:#5FCB9A"></span>#5FCB9A</td><td class="hex"><span class="sw" style="background:#12704A"></span>#12704A</td><td><span class="stamp strong flat"><svg aria-hidden="true"><use href="#m-strong"/></svg>looking strong</span> Filled circle with a tick. Also green flag, corroborated and clean.</td></tr>
+            <tr><td><code>--weak</code></td><td class="hex"><span class="sw" style="background:#F2667F"></span>#F2667F</td><td class="hex"><span class="sw" style="background:#B0233C"></span>#B0233C</td><td><span class="stamp weak flat"><svg aria-hidden="true"><use href="#m-weak"/></svg>looking weak</span> Downward triangle. Also red flag, flag and disagreement. Rose, hue 350, so it never meets the amber.</td></tr>
+            <tr><td><code>--mixed</code></td><td class="hex"><span class="sw" style="background:#A3B4FF"></span>#A3B4FF</td><td class="hex"><span class="sw" style="background:#3A4CB0"></span>#3A4CB0</td><td><span class="stamp mixed flat"><svg aria-hidden="true"><use href="#m-mixed"/></svg>mixed</span> Half-filled diamond.</td></tr>
+            <tr><td><code>--thin</code></td><td class="hex"><span class="sw" style="background:#B4BFC2"></span>#B4BFC2</td><td class="hex"><span class="sw" style="background:#56636A"></span>#56636A</td><td><span class="stamp thin flat"><svg aria-hidden="true"><use href="#m-thin"/></svg>not enough in the room</span> Dashed empty square, dashed border. Also gaps.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sg" aria-labelledby="type-title">
+  <div class="wrap sg-grid">
+    <div class="sg-index"><span class="label box-no"><b>03</b> Type</span><h2 id="type-title">Three faces</h2></div>
+    <div>
+      <div class="face">
+        <span class="label">Display: Libre Caslon Display 400</span>
+        <span class="big display" style="font-size:clamp(2.2rem,5vw,3.6rem)">Point it at a startup, get a readout.</span>
+        <p class="meta">Headlines, screen statements, panel titles of 1.5rem and up, pull quotes. Fallback: Libre Caslon Text, Big Caslon, Iowan Old Style, Georgia, serif.</p>
+      </div>
+      <div class="face">
+        <span class="label">Body: Libre Franklin 300 to 700</span>
+        <span class="big" style="font-size:1.25rem;font-weight:350">The deck says 80% gross margin. The ledger gives 58.1% once hosting, inference, telephony and support are counted.</span>
+        <p class="meta">Reading text at 350 to 400, flag titles and piece names at 650, buttons at 600. Fallback: Franklin Gothic Book, Helvetica Neue, Arial, sans-serif.</p>
+      </div>
+      <div class="face">
+        <span class="label">Data: Cousine 400 and 700</span>
+        <span class="big data" style="font-size:1.5rem">$2,240,868 &nbsp;$2,060,868 &nbsp;L.03</span>
+        <p class="meta">Every figure, file name, cell reference, line number, box label and stamp. Always <code>tabular-nums</code>. Fallback: Liberation Mono, Courier New, ui-monospace, monospace.</p>
+      </div>
+      <h3>Scale</h3>
+      <div class="table-box" role="region" aria-label="Type scale" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Step</th><th scope="col">Face</th><th scope="col" class="n">Size</th><th scope="col">Use</th></tr></thead>
+          <tbody>
+            <tr><td>Display XL</td><td>Caslon</td><td class="n">clamp(2.6rem, 7.2vw, 5.6rem)</td><td>One per page: the hero line or the guide title.</td></tr>
+            <tr><td>Display L</td><td>Caslon</td><td class="n">clamp(2rem, 4.4vw, 3.4rem)</td><td>The one statement on each screen.</td></tr>
+            <tr><td>Display M</td><td>Caslon</td><td class="n">1.5rem to 1.8rem</td><td>Panel titles, pull quotes, the "not" cards.</td></tr>
+            <tr><td>Lede</td><td>Franklin 350</td><td class="n">1.1rem to 1.3rem</td><td>The sentence under a statement.</td></tr>
+            <tr><td>Body</td><td>Franklin 400</td><td class="n">17px / 1.6</td><td>Readout text, flag sentences. Measure 36rem.</td></tr>
+            <tr><td>Flag title</td><td>Franklin 650</td><td class="n">1.08rem</td><td>"Green flag: the round adds up."</td></tr>
+            <tr><td>Figure</td><td>Cousine</td><td class="n">1.5rem</td><td>Stated and found values.</td></tr>
+            <tr><td>Label</td><td>Cousine caps</td><td class="n">0.74rem, +0.08em</td><td>Box labels, column heads, line numbers.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sg" aria-labelledby="space-title">
+  <div class="wrap sg-grid">
+    <div class="sg-index"><span class="label box-no"><b>04</b> Form</span><h2 id="space-title">Spacing, corners, lines</h2></div>
+    <div>
+      <h3>Spacing</h3>
+      <div aria-label="Spacing scale">
+        <div class="space-row"><span>--s-2</span><span>8px</span><i style="width:8px"></i></div>
+        <div class="space-row"><span>--s-3</span><span>12px</span><i style="width:12px"></i></div>
+        <div class="space-row"><span>--s-4</span><span>16px</span><i style="width:16px"></i></div>
+        <div class="space-row"><span>--s-5</span><span>24px</span><i style="width:24px"></i></div>
+        <div class="space-row"><span>--s-6</span><span>32px</span><i style="width:32px"></i></div>
+        <div class="space-row"><span>--s-7</span><span>48px</span><i style="width:48px"></i></div>
+        <div class="space-row"><span>--s-8</span><span>72px</span><i style="width:72px"></i></div>
+        <div class="space-row"><span>--s-9</span><span>112px</span><i style="width:112px"></i></div>
+      </div>
+      <p class="hint" style="margin-top:var(--s-4)">Inside a manifest line: 24px. Between screens: 112px on desktop, 72px on a phone. The side gutter is never under 16px.</p>
+      <h3>Corners and lines</h3>
+      <div class="shapes">
+        <div class="shape-card"><div class="demo"><div style="width:5rem;height:2.6rem;border:1px solid var(--rule-strong);background:var(--panel)"></div></div><p><strong>Panel: square.</strong> 0 radius, 1px <code>--rule-strong</code> edge, no shadow.</p></div>
+        <div class="shape-card"><div class="demo"><span class="pill small" style="pointer-events:none">Control</span></div><p><strong>Control: pill.</strong> 999px radius. Buttons, inputs, chips, toggles.</p></div>
+        <div class="shape-card"><div class="demo" style="flex-direction:column;align-items:stretch;justify-content:center;gap:10px"><div style="border-top:1px solid var(--rule)"></div><div style="border-top:3px double var(--rule-strong)"></div></div><p><strong>Hairline and double rule.</strong> Hairline between lines. Double rule closes a slip, like a total on a form.</p></div>
+        <div class="shape-card"><div class="demo"><div style="width:5rem;height:2.6rem;border:1.5px dashed var(--thin)"></div></div><p><strong>Dashed means absent.</strong> Gaps, not enough in the room, the synthetic label. Nothing else.</p></div>
+        <div class="shape-card"><div class="demo"><div style="width:5rem;border-top:2px solid var(--accent)"></div></div><p><strong>Accent rule.</strong> 2px over a screen's index. The lamp's only line.</p></div>
+        <div class="shape-card"><div class="demo"><span class="stamp weak">Red flag</span></div><p><strong>Stamp.</strong> 2px border with an inset second line, ink grit, tilted 1.5 degrees at a line head.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sg" aria-labelledby="comp-title">
+  <div class="wrap sg-grid">
+    <div class="sg-index"><span class="label box-no"><b>05</b> Readout</span><h2 id="comp-title">Components, drawn for real</h2><p class="hint" style="margin-top:var(--s-3)">Figures from the Hollis Voice room. Synthetic data room for Deal Flow NYC 2026. Not a real company. Brackets mark what a run fills in.</p></div>
+    <div>
+
+      <h3>Green flag</h3>
+      <div class="panel">
+        <div class="line flag green">
+          <div class="line-no">L.01</div>
+          <div class="line-body">
+            <div class="flag-head"><span class="stamp strong"><svg aria-hidden="true"><use href="#m-flag-green"/></svg>Green flag</span></div>
+            <p class="flag-title">Green flag: the round adds up.</p>
+            <div class="sf">
+              <div><span class="label">Stated</span><span class="big">$9,000,000</span><span class="hint">in the deck</span></div>
+              <div class="found"><span class="label">Same in</span><span class="big">$9,000,000</span><span class="hint">cap table and model</span></div>
+            </div>
+            <p>$9,000,000, stated in the deck and the same in the cap table and the model (pitch_deck.pdf, slide 13; cap_table.xlsx, Cap_Table, B24; financial_model.xlsx, SERIES_A_RAISE). Nothing in the room contradicts it.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Red flag</h3>
+      <div class="panel">
+        <div class="line flag red">
+          <div class="line-no">L.02</div>
+          <div class="line-body">
+            <div class="flag-head"><span class="stamp weak"><svg aria-hidden="true"><use href="#m-flag-red"/></svg>Red flag</span></div>
+            <p class="flag-title">Red flag: runway leaves out most of the hiring plan.</p>
+            <div class="sf">
+              <div><span class="label">Stated</span><span class="big">37 months</span><span class="hint">model and deck</span></div>
+              <div class="found"><span class="label">Found</span><span class="big">19 months</span><span class="hint">all 24 planned hires paid for</span></div>
+            </div>
+            <p>37 months stated (financial_model.xlsx, RUNWAY_MONTHS; pitch_deck.pdf, slide 11); 19 months found with all 24 planned hires paid for (hiring_plan.csv, rerun through the Cash_Runway tab). Burn and runway reads looking weak.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Verdict lines, one per mark</h3>
+      <div class="panel">
+        <div class="verdict">
+          <div class="line-no">P.01</div>
+          <div class="line-body"><span class="stamp strong"><svg aria-hidden="true"><use href="#m-strong"/></svg>Looking strong</span><p><span class="piece">Customers: looking strong.</span> [The reason, in one sentence, with its number and source.] [n] sources corroborate, [n] contradict.</p></div>
+        </div>
+        <div class="verdict">
+          <div class="line-no">P.02</div>
+          <div class="line-body"><span class="stamp weak"><svg aria-hidden="true"><use href="#m-weak"/></svg>Looking weak</span><p><span class="piece">Traction and revenue: looking weak.</span> ARR is stated four ways, from about $3,000,000 on the pitch video to $2,060,868 in the subscription rows (pitch video, 0:35; customer_mrr_by_month.csv). [n] sources corroborate, [n] contradict.</p></div>
+        </div>
+        <div class="verdict">
+          <div class="line-no">P.03</div>
+          <div class="line-body"><span class="stamp mixed"><svg aria-hidden="true"><use href="#m-mixed"/></svg>Mixed</span><p><span class="piece">Retention: mixed.</span> [The reason, in one sentence, with its number and source.] [n] sources corroborate, [n] contradict.</p></div>
+        </div>
+        <div class="verdict">
+          <div class="line-no">P.04</div>
+          <div class="line-body"><span class="stamp thin"><svg aria-hidden="true"><use href="#m-thin"/></svg>Not enough in the room</span><p><span class="piece">Team: not enough in the room.</span> [What the room is missing, named the way a gap is.] [n] sources corroborate, [n] contradict.</p></div>
+        </div>
+      </div>
+
+      <h3>Corroboration table</h3>
+      <div class="panel">
+        <div class="table-box flush" role="region" aria-label="Corroborated: Series A raise" tabindex="0">
+          <table>
+            <caption><span class="stamp strong flat" style="margin-right:0.6em"><svg aria-hidden="true"><use href="#m-strong"/></svg>Corroborated</span> Series A raise, $9,000,000</caption>
+            <thead><tr><th scope="col">Source</th><th scope="col" class="n">States</th><th scope="col">Where</th></tr></thead>
+            <tbody>
+              <tr><td>Deck</td><td class="n">$9,000,000</td><td class="where">pitch_deck.pdf, slide 13</td></tr>
+              <tr><td>Cap table</td><td class="n">$9,000,000</td><td class="where">cap_table.xlsx, Cap_Table, B24</td></tr>
+              <tr><td>Financial model</td><td class="n">$9,000,000</td><td class="where">financial_model.xlsx, Assumptions, SERIES_A_RAISE</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="agree-note">3 independent sources agree. Nothing in the room contradicts it.</p>
+      </div>
+
+      <h3>Disagreement table</h3>
+      <div class="panel">
+        <div class="table-box flush" role="region" aria-label="Disagreement: ARR" tabindex="0">
+          <table>
+            <caption><span class="stamp weak flat" style="margin-right:0.6em"><svg aria-hidden="true"><use href="#m-weak"/></svg>Disagreement</span> ARR</caption>
+            <thead><tr><th scope="col">Source</th><th scope="col" class="n">States</th><th scope="col">Where</th></tr></thead>
+            <tbody>
+              <tr><td>Pitch video</td><td class="n">about $3,000,000</td><td class="where">pitch video, 0:35</td></tr>
+              <tr><td>Deck</td><td class="n">$2,500,000</td><td class="where">pitch_deck.pdf, slide 3</td></tr>
+              <tr><td>Financial model</td><td class="n">$2,240,868</td><td class="where">financial_model.xlsx, ARR_Build, ARR_TOTAL</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="padding:var(--s-4);border-top:1px solid var(--rule)">
+          <p>Largest gap: about $760,000, between the video and the model. The deck is $259,132 above the model. The room does not explain either gap.</p>
+          <p style="margin:0;display:flex;gap:var(--s-3);align-items:baseline"><span class="lamp" aria-hidden="true"></span><span><strong>Ask the founder:</strong> which of these is ARR as of 2026-09-30, and can you walk us from the billing data to it?</span></p>
+        </div>
+      </div>
+
+      <h3>Gap</h3>
+      <div class="gap-box">
+        <span class="stamp thin flat"><svg aria-hidden="true"><use href="#m-thin"/></svg>Gap</span>
+        <p class="flag-title" style="margin-top:var(--s-3)">Not in the room: IP assignment agreements</p>
+        <ul>
+          <li>Needed for: confirming the founders and every contractor assigned their work to the company.</li>
+          <li>Ask for: signed invention assignment agreements for both founders and every contractor who wrote code.</li>
+        </ul>
+      </div>
+
+      <h3>Clean check</h3>
+      <div class="clean-row">
+        <svg aria-hidden="true"><use href="#m-clean"/></svg>
+        <p><strong>Clean: cash reconciles.</strong> Money raised before the Series A, less every month's net loss to 2026-09-30, was compared with the model's cash. The two differ by $0.24 on $1,800,000. (cap_table.xlsx; financial_model.xlsx)</p>
+      </div>
+
+      <h3>Source chip</h3>
+      <div class="spec">
+        <div class="chips" style="margin:0">
+          <a class="chip" href="#comp-title">pitch_deck.pdf, slide 13</a>
+          <a class="chip" href="#comp-title">financial_model.xlsx, ARR_Build, ARR_TOTAL</a>
+          <a class="chip" href="#comp-title">pitch video, 0:35</a>
+        </div>
+        <p class="hint" style="margin-top:var(--s-3)">A pill, because it opens the source. The diamond is a customs seal. File and place in Cousine, exactly as the readout names them.</p>
+      </div>
+
+      <h3>Steered-piece note</h3>
+      <div class="steer">
+        <div class="panel-head"><span class="label box-no"><b>P.02</b> Traction and revenue</span><span class="stamp weak flat"><svg aria-hidden="true"><use href="#m-weak"/></svg>looking weak</span></div>
+        <div class="body">
+          <p><svg aria-hidden="true"><use href="#m-steer"/></svg><strong>Rewritten on your instruction: "Lead with the subscription-only ARR."</strong> The piece now opens on $2,060,868 from the subscription rows (customer_mrr_by_month.csv). Verdict unchanged. The checks' numbers are unchanged.</p>
+          <div class="kept"><span>Kept on screen</span><span>Model ARR $2,240,868</span><span>Deck ARR $2,500,000</span></div>
+        </div>
+      </div>
+
+      <h3>Buttons</h3>
+      <div class="btn-row spec">
+        <button class="pill primary" type="button">See the Hollis Voice readout</button>
+        <button class="pill" type="button">Bring a data room to the pilot</button>
+        <button class="pill quiet" type="button">Open sources</button>
+        <button class="pill small" type="button">Steer</button>
+        <button class="pill" type="button" disabled>Still running</button>
+      </div>
+
+      <h3>Text input</h3>
+      <div class="field spec">
+        <label for="steer-input">Steer this piece</label>
+        <div class="input-row">
+          <input class="input" id="steer-input" type="text" placeholder="Say what is wrong, thin or framed badly">
+          <button class="pill primary" type="button">Steer</button>
+        </div>
+        <span class="hint">One sentence. The checks' numbers stay on screen beside the change.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sg" aria-labelledby="rules-title">
+  <div class="wrap sg-grid">
+    <div class="sg-index"><span class="label box-no"><b>06</b> Rules</span><h2 id="rules-title">Apply without asking</h2></div>
+    <div>
+      <ol class="rules">
+        <li><div><p>Set every figure, file name, cell reference and line number in Cousine with <code>tabular-nums</code>.</p><p class="why">Stated and found values are compared digit by digit, so the digits must line up.</p></div></li>
+        <li><div><p>Put the stated value on the left and the found value on the right. Only the found side gets the 3px accent bar.</p><p class="why">The reader moves from what the company declared to what the check found, in that order, every time.</p></div></li>
+        <li><div><p>Use the accent for the next action and the found value only: the primary button, focus, the ask line, the found label, index numbers.</p><p class="why">Amber sits near red. A verdict in amber would read as a warning it is not.</p></div></li>
+        <li><div><p>Draw every mark as a stamp with its word and its shape. Never show a mark by colour alone.</p><p class="why">The partner may read a printout or be colour blind. The word and the shape still carry it.</p></div></li>
+        <li><div><p>Tilt a stamp 1.5 degrees only at the head of a line. Inside a sentence or a table, set it flat with <code>.flat</code>.</p><p class="why">At a line head the tilt reads as a stamp. Inside text it reads as a rendering error.</p></div></li>
+        <li><div><p>Make anything you read a square panel. Make anything you press, type in or open a pill.</p><p class="why">One look at a corner tells the operator whether it does something.</p></div></li>
+        <li><div><p>Number every readout line (L.01 for claims, P.01 for pieces) and give every panel a box label.</p><p class="why">Partners can say "line 2" in the meeting and everyone finds it.</p></div></li>
+        <li><div><p>Use dashed lines only for what is absent or not real: gaps, not enough in the room, the synthetic label.</p><p class="why">If dashes mean one thing, a missing document is visible at a glance.</p></div></li>
+        <li><div><p>Give each marketing screen one statement in Caslon and at most one supporting object. In the readout, one claim per line.</p><p class="why">The seed asked for air. Air also keeps a number from being read with its neighbour's source.</p></div></li>
+        <li><div><p>Use Caslon Display at 1.5rem and above only. Never for figures or running text.</p><p class="why">Its hairlines break up at small sizes, worst on a dark ground.</p></div></li>
+        <li><div><p>Show at most one accent fill on a screen.</p><p class="why">A signal lamp means one thing to do. Two lamps mean none.</p></div></li>
+        <li><div><p>Put the synthetic label, word for word, on every page and panel that shows Hollis Voice figures.</p><p class="why">A screenshot travels without its context. The label has to travel with it.</p></div></li>
+        <li><div><p>Use tokens only in components. Dark is the default; light is a mirror of the same tokens.</p><p class="why">A hex value in a component breaks the other theme without anyone noticing.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <nav aria-label="Footer">
+      <a href="home.html">Sample homepage, Direction B</a>
+      <a href="../index.html">All directions</a>
+    </nav>
+  </div>
+</footer>
+<script>
+(function () {
+  var root = document.documentElement;
+  var KEY = "tricorder-direction-b-theme";
+  try {
+    var saved = localStorage.getItem(KEY);
+    if (saved === "light" || saved === "dark") root.setAttribute("data-theme", saved);
+  } catch (e) { /* storage blocked: follow the system */ }
+  function current() {
+    var t = root.getAttribute("data-theme");
+    if (t) return t;
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+  }
+  function label() {
+    var next = current() === "dark" ? "light" : "dark";
+    document.querySelectorAll("[data-theme-toggle]").forEach(function (b) {
+      b.querySelector("span").textContent = next === "light" ? "Light" : "Dark";
+      b.setAttribute("aria-label", "Switch to the " + next + " theme");
+    });
+  }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest && e.target.closest("[data-theme-toggle]");
+    if (!b) return;
+    var next = current() === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem(KEY, next); } catch (err) { /* nothing to keep */ }
+    label();
+  });
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", label); else label();
+})();
+
+</script>
+</body>
+</html>
