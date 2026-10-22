@@ -281,7 +281,7 @@ Hacking runs 10:30 to 4:30 by the schedule. The Luma page also says nine hours; 
 <tr><td>readers</td><td>backend-and-data</td><td>1.0</td><td>The shared file readers every scan and the quote checker import</td></tr>
 <tr><td>claim-result</td><td>captain</td><td>1.0</td><td>The quote checker; the Claim schema is written this week with the skeleton</td></tr>
 <tr><td>redflag-engine</td><td>design-and-finance</td><td>3.0</td><td>Script checks on the model, the CSVs and the deck's claims page</td></tr>
-<tr><td>readout</td><td>captain</td><td>1.5</td><td>The memo built from the claims: disagreements, flags, gaps</td></tr>
+<tr><td>readout</td><td>captain</td><td>1.5</td><td>Groups the claims into pieces, marks each strong or weak by script, and picks the top green and red flags</td></tr>
 <tr><td>readout-page</td><td>frontend</td><td>4.25</td><td>The page the judges see, each claim opening its source in-page</td></tr>
 <tr><td>pitch-video</td><td>backend-and-data</td><td>2.5</td><td>Whisper transcript, claims with timestamps, the third ARR number</td></tr>
 <tr><td>redflag-readings</td><td>backend-and-data</td><td>1.0</td><td>The model readings (pilot clause, cohort note); first to be cut</td></tr>
