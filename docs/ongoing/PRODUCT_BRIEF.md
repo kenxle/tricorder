@@ -226,7 +226,7 @@ Ken's direction at 2:49 PM: "we want to have a list of YC companies and we'll pa
 
 Tricorder is a product after Saturday, so this section is written for a product. Numbers below are targets to set after the first pilot, not predictions.
 
-**First measure: the hackathon result.** A live demo on the synthetic rooms, with the outside-world scan running live on a real company, judged by a panel of investors and agent builders. The organisers describe one judge as wanting both good code and a real business (the landscape research, Part 3). The demo shows both: the readout catching planted flags live, and a named buyer who pays.
+**First measure: the hackathon result.** A live demo on the synthetic rooms, with the outside-world scan running live on a real company, judged by a panel of investors and agent builders. The organisers describe one judge as wanting both good code and a real business (the landscape research, Part 3). The demo shows the readout catching planted flags live, and says who would buy it (the fund, per seat). There is no paying customer yet, and the demo does not claim one; this is a demo.
 
 **On the demo room, the score against the answer key.** Planted flags found out of the eight entries, and decoys wrongly flagged out of three (the data-room research, Part 3.6). The seed drop alone should catch five of the eight; the full room the other three (the data-room research, Part 3.4). The same run on the sealed variant room and on the clean room shows the checks are not fitted to our own key.
 

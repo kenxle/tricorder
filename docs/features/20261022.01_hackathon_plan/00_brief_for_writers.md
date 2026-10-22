@@ -376,3 +376,9 @@ Added 2026-10-22 at 2:56 PM, on the landscape research's three most useful spons
 > yeah let's make sure that these are in our roadmap and features. we won't get access to them until day of but we can do the other stuff ahead of time
 
 Settled: Akta, Crunchbase and the Nicrron gateway are features (product brief, "The sponsor tools") and a this-week roadmap slice (`sponsor-adapters`): an adapter per sponsor built against its published docs with sample responses and an off, sample or live switch, so Saturday morning is pasting keys and flipping switches inside the existing 9:00 to 10:30 window.
+
+Added 2026-10-22 at 2:57 PM, on "a named buyer who pays" in the landscape research's list of what judges reward:
+
+> no we won't have that. this is about a demo
+
+Settled: Tricorder will not have a paying customer or a named buyer by Saturday. The pitch says who would buy it (a fund, per seat) and never implies a customer.

@@ -408,7 +408,7 @@ The scenario column always names the assumption the reader changed. It never rep
 | Every claim in the readout links to its source. | Track 2's fourth direction and the product rule. True of what we build. Not unique: five AI tools claim it. | [problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt), [landscape](../reports/20261022.02_research/research_landscape.md) |
 | On the pages we read, no tool shows market signals, comps and financial red flags together. | The landscape script's count over the tools mapped. Say "on the pages we read". | [landscape](../reports/20261022.02_research/research_landscape.md) |
 | The buyer is a partner or principal at a seed or Series A fund; the operator, usually the associate, uses it, and the partners read its memo. | Persona ranking by say, do and pay. The pay evidence is inferred from a vendor case study. | [voice of the customer](../reports/20261022.02_research/research_voice_of_customer.md), [PERSONAS.md](PERSONAS.md) |
-| The demo room is synthetic and nothing in it belongs to a real company. | The organisers' rule and the data room design. | [problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt), [data room](../reports/20261022.02_research/research_data_room.md) |
+| Every demo room is synthetic. Under a real company's name, only the public footprint is real; the room is ours, labelled on every page, and its problems are our test plants. | The organisers' rule, the data room design and Ken's 2:44 PM safeguard. | [problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt), [data room](../reports/20261022.02_research/research_data_room.md) |
 | The readout found [n] of the planted flags and wrongly flagged [n] of the decoys. | The answer key scored against Saturday's run. Use the numbers from that run, on that screen. | [data room](../reports/20261022.02_research/research_data_room.md), section 3.6 |
 
 **Claims we do not make yet:**
@@ -442,11 +442,26 @@ The spoken pitch is the three-minute core of the beat sheet in [ROADMAP.md, demo
 
 Say who wrote each one by role: a seed and Series A fund's guide, and a junior VC. If [the research gaps](../reports/20261022.02_research/research_gaps.md) turn up a better line in a person's or firm's own words, with its link, use it in place of the second.
 
-**The buyer, named, in one line at 2:30:** "The partner pays per seat." Behind it, for questions: the partner or principal at a seed to Series A fund pays. The operator, usually the associate, uses it every day, and the partners read the memo it drafts. Angels come next: they already buy diligence by proxy, in group dues, carry and per-deal fees, and one diligence tool already sells them a plan at $449 a month for up to 10 reports ([research gaps](../reports/20261022.02_research/research_gaps.md), section 2; [dev.ua](https://dev.ua/en/news/startup-due-dil-1787664994)).
+**Who would buy it, in one line at 2:30:** "A fund would pay per seat." There is no paying customer yet; never imply one. Behind it, for questions: the partner or principal at a seed to Series A fund pays. The operator, usually the associate, uses it every day, and the partners read the memo it drafts. Angels come next: they already buy diligence by proxy, in group dues, carry and per-deal fees, and one diligence tool already sells them a plan at $449 a month for up to 10 reports ([research gaps](../reports/20261022.02_research/research_gaps.md), section 2; [dev.ua](https://dev.ua/en/news/startup-due-dil-1787664994)).
 
-**The one workflow shown** (what the beat sheet puts on screen): the readout for Hollis Voice's full room is already on screen, because it ran before Ken walked up. It opens on the best green flags and the worst red flags. Under them is the overview: each piece of the company with its mark and its reason. Ken clicks the weakest piece, traction and revenue, and the four ARR numbers appear: about $3.0M said on video, $2.5M in the deck, $2.24M in the model, $2.06M in the billing rows ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), verdict). He clicks the video figure, then the model figure and the pilot clause, each opening in the page. Then he clicks one strong piece, the pitch itself: the deck's $9M at $45M pre-money, and the cap table that computes the same round, each source opening the other. Back on the overview: the other weak pieces' reasons, the gaps, and one line for the runs on the sealed variant room and the clean room. The forwarded pitch email is the closing "next" line.
+**The one workflow shown** (what the beat sheet puts on screen): the readout for Hollis Voice's full room is already on screen, because it ran before Ken walked up. It opens on the best green flags and the worst red flags. Under them is the overview: each piece of the company with its mark and its reason. Ken clicks the weakest piece, traction and revenue, and the four ARR numbers appear: about $3.0M said on video, $2.5M in the deck, $2.24M in the model, $2.06M in the billing rows ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), verdict). He clicks the video figure, then the model figure and the pilot clause, each opening in the page. Then he clicks one strong piece, the pitch itself: the deck's $9M at $45M pre-money, and the cap table that computes the same round, each source opening the other. Then the second tab: a real YC company from the list Ken approves, paired with a synthetic room. Its outside-world panel runs live while the judges watch: the company's website, Hacker News, the App Store and its SEC filings, each with the time it was read. Back on Hollis Voice, one line for the run on the sealed variant room. The forwarded pitch email is the closing "next" line. The gaps and the clean room's run come in the extension, if the slot allows.
 
-**Where the data goes, only when asked:** say the sentence in "Where the data goes" below, then: "Today's room is synthetic."
+**The live demo on a real company, said out loud at 2:00.** Ken says this every time, in these words or close to them:
+
+> This is [company], a real YC company from the spring batch. This part is live: its website, Hacker News, the App Store and its SEC filings, read just now. Its data room is not real. We wrote it, every page says so, and the problems in it are our test plants, not theirs.
+
+Never say or show anything that reads as a finding about the real company. If a live call fails, the panel shows this week's saved copy, and Ken says "saved on" its date instead of "just now".
+
+**The synthetic label.** Two wordings, each used exactly as written:
+
+- On every page and sheet of a room under a real company's name, and as a banner on its readout: "Synthetic test document. Not this company's data."
+- On every page and sheet of an invented company's room (Hollis Voice, Brasswick): "Synthetic data room for Deal Flow NYC 2026. Not a real company."
+
+A planted problem in a real company's room is called a test plant, on screen and out loud.
+
+**Where the data goes, only when asked:** say the sentence in "Where the data goes" below, then: "Today's data rooms are synthetic, including the ones under real company names."
+
+**The sealed room, at 2:30, just before the close:** "On a room someone outside the team planted and sealed, started when I began talking, it found X of N." Use the real numbers from that run.
 
 **The close, at 2:30:**
 
@@ -455,6 +470,7 @@ Say who wrote each one by role: a seed and Series A fund's guide, and a junior V
 **If a judge asks:**
 
 - *You built the company, planted the flags and wrote the answer key. What does it find in a data room you didn't make?* Answer with the two runs, not the room we planted ([critique_judge.md](../features/20261022.01_hackathon_plan/critique_judge.md), finding 1). Someone outside the team planted a second room this week and sealed its key until our 3:30 freeze; here's what it found there, with the real numbers. On the same company with nothing planted, here's everything it flagged.
+- *Is that real company's data? Do they know?* No. Only its public footprint is real: its website, Hacker News, the App Store and its SEC filings, read live. The data room is ours. We wrote it so the outside scan has a real company to read, every page says "Synthetic test document. Not this company's data.", and the problems in it are our test plants, not theirs.
 - *Isn't this a wrapper on a model?* The checks are code that rebuild each number from the raw files. The sealed variant room and the clean run are the test. The model reads contracts and labels where code can't.
 - *Others already link claims to sources.* Yes, and that's good news: funds already pay for it, and one fund partner built his own. We do that same job and add to it. Ours opens on the best green flags and the worst red flags, then an overview of what looks strong and what looks weak. It shows which sources agree on each number as well as which disagree, writes a gap as a gap, and ends with what to ask the founder for.
 - *Can it catch fraud?* No. It finds differences in reporting between files and against the outside world, and shows each one. A fake that agrees across every file gets through.
@@ -477,7 +493,8 @@ The hackathon gives $150 for the best social content posted during the day. Ken 
 **Do not post:**
 
 - Any judge's or teammate's words, or a teammate's name or face, without that person's consent. Ask first; tag them once they say yes.
-- Any real company's data, deck or name in a way that suggests we scanned it.
+- Any real company's data or deck.
+- A real company's name next to a synthetic room's numbers or flags. A post about the live demo names only what was read live from public pages, and says the room beside it is synthetic and ours.
 - The answer key file itself, which would let anyone see where the flags are planted.
 - A claim from the "do not make yet" table.
 
@@ -514,4 +531,4 @@ The hackathon gives $150 for the best social content posted during the day. Ken 
 
 > Tricorder reads only the documents you give it or the decks in mail you send it, keeps only the readout and its sources, and lets you see and delete everything it pulled.
 
-Use this sentence on the product page and, when a judge asks, in the pitch, word for word. On Saturday, add one more: "Today's data room is synthetic."
+Use this sentence on the product page and, when a judge asks, in the pitch, word for word. On Saturday, add one more: "Today's data rooms are synthetic, including the ones under real company names."
