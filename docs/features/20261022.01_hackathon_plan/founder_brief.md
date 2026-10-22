@@ -22,7 +22,7 @@ Funds already pay for this. A $600M fund uses a commercial tool that turns a dat
 
 We sell to the fund, per seat, yearly. We start from what funds pay for one data tool: Affinity lists $2,000 to $2,700 per user per year ([Affinity pricing](https://www.affinity.co/pricing)). It's a starting point, not a forecast. Our first pilot ends with a price.
 
-Angels come later, once interviews show what they would pay; memo tools already sell at $12 a memo.
+Angels come next: they already pay for diligence by proxy, and memo tools sell at $12 a memo.
 
 ## The one workflow we'll demo
 
@@ -47,7 +47,7 @@ The operator can steer any piece.
 Sources
 
 - [Product brief](../../ongoing/PRODUCT_BRIEF.md): the problem, buyer and user, the "none of 24" count, the demo room's numbers, the pilot ending with a price.
-- [Personas](../../ongoing/PERSONAS.md): the pay evidence and the angel warning.
+- [Personas](../../ongoing/PERSONAS.md): the pay evidence for funds and angels.
 - [Brand](../../ongoing/BRAND.md): the quote, the claims we can make, the data sentence and the closing line.
 - [Roadmap](../../ongoing/ROADMAP.md): "The one workflow we demo" and the Saturday slices.
 - [Landscape research](../../reports/20261022.02_research/research_landscape.md): Part 1 incumbent prices (Affinity), the $12 memo price, the 24-tool count; Part 3 on what judges reward.

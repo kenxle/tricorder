@@ -30,7 +30,7 @@ Deployers of capital who need to know if they're making the best possible invest
 
 - **Buyer and user.** The fund buys: a partner or principal decides and pays. The operator uses it: usually the associate who does the first pass today, and at some funds the partner, since one seed fund writes that its partners run diligence themselves (the voice-of-the-customer research, row 11). Angels would use and pay for it themselves. Accelerators' screening staff would use it and the program would pay.
 
-The problems these people have, ranked by how strongly they act on them (say, do, pay), are in [PERSONAS.md](PERSONAS.md). In short: partners and principals pay to solve the first-pass problem today (inferred from a vendor case study and a pricing roundup); two angels hand diligence to YC or to funds; accelerator screeners and associates work around it by hand; corporate VCs only describe it, and too thinly to design for.
+The problems these people have, ranked by how strongly they act on them (say, do, pay), are in [PERSONAS.md](PERSONAS.md). In short: partners and principals pay to solve the first-pass problem today (inferred from a vendor case study and a pricing roundup); angels want diligence but lack the time, and pay to get it by proxy from YC, a lead or a fund; accelerator screeners and associates work around it by hand; corporate VCs only describe it, and too thinly to design for.
 
 ## The problem
 
@@ -181,7 +181,7 @@ Each line is a recommendation this brief is written to, with the alternative.
 6. **Where the data goes.** Mailbox read for decks only, nothing stored beyond the readout and its sources, the investor sees and deletes everything. Alternative: a self-hosted version that keeps all data inside the fund.
 7. **Demo company.** Hollis Voice, the data-room research's synthetic Series A room. Alternative: Brasswick, the data-room research's plainer freight-invoice company.
 8. **After Saturday.** A product sold to funds; the partner or principal buys, the associate uses. Alternative: skills Ken sells on stclair.ai, or a hackathon entry that ends Saturday.
-9. **Angels.** Price for funds first, because the fund evidence is stronger; the angel evidence is two people, so the interviews decide. Alternative: an angel tier from the start.
+9. **Angels.** Angels already pay for diligence by proxy, which makes them a real market. Price for funds first only if the interviews show funds pay more per first pass. Alternative: an angel tier from the start.
 10. **Persona order.** Keep the ranking by strength of evidence (partner, angel, accelerator, associate, corporate VC). Who uses and who buys is a separate question and does not change it.
 11. **Measures.** Set numeric targets after the first pilot. Alternative: state predicted numbers now.
 12. **Self-score on stage.** Show the answer-key score (flags found, decoys wrongly flagged) in the demo. Alternative: show the readout only.

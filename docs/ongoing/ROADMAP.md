@@ -787,7 +787,7 @@ What makes Tricorder a product: the fund buys, the associate uses.
 
 **Waits on:** pilot; the overview page's cards on what Tricorder is after Saturday and on the name (the trademark note in [BRAND.md](BRAND.md)).
 
-**Includes:** pricing to the fund, not the associate. The voice-of-the-customer research found the associate is the user and the partner is the buyer, that funds already pay for data-room-to-memo tools, and only two angels' worth of evidence on what angels pay for ([research_voice_of_customer.md](../reports/20261022.02_research/research_voice_of_customer.md), personas). The [product brief](PRODUCT_BRIEF.md) carries the recommendation.
+**Includes:** pricing to the fund, not the associate. The voice-of-the-customer research found the associate is the user and the partner is the buyer, that funds already pay for data-room-to-memo tools, and that angels already pay to get diligence done by proxy ([research_voice_of_customer.md](../reports/20261022.02_research/research_voice_of_customer.md), personas). The [product brief](PRODUCT_BRIEF.md) carries the recommendation.
 
 **Who:** Ken.
 

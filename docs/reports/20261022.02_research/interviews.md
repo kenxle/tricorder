@@ -18,7 +18,7 @@ Two about the data room itself, from [what a data room is](what_is_a_data_room.m
 6. How do data rooms reach you today: a DocSend link, a Drive folder, attachments in the email?
 7. At what point in your process do you ask for one, and what do you open first?
 
-For angels, because the research has only two angels on what they pay for:
+For angels, who today get diligence by proxy from YC, a lead or a fund:
 
 8. Would you pay for a better first pass of your own, or do you rely on a lead, a syndicate or YC to do it? What would a first pass be worth to you per deal?
 

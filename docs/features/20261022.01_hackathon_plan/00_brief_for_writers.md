@@ -218,3 +218,9 @@ Settled, and it binds every writer:
 
 - **Say, do, pay** rates how people deal with a problem today: what they say about it, what they do about it, what they spend (money or something given up) to solve it. It decides which problems and which quotes carry the most signal, and so what goes into the value proposition. It says nothing about who uses or buys Tricorder.
 - **User and buyer** is a separate marketing question: whom each message speaks to. It lives in its own section and never sits in a rating, a persona's rank or a say, do, pay line.
+
+Added 2026-10-22 at 1:27 PM, on the angel evidence:
+
+> so effectively he IS doing due dilligence, just by proxy. he's letting yc do the diligence and then assuming their diligence is correct. what that means is that an angel still wants diligence, they just have less time for it. it's not that its thin evidence, i just disagree with your take
+
+Settled: angels want diligence and lack the time. Giving up upside to YC, following a lead, splitting with co-investors and becoming an LP are diligence bought by proxy. That is pay-layer evidence for the problem Tricorder solves, not avoidance of it.

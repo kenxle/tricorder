@@ -255,7 +255,7 @@ The brand doc's sentence: "Tricorder reads only the documents you give it or the
 
 ### Who we price for first
 
-The angel evidence is two people: one invests almost only in YC companies because he lacks the time and skills for diligence, and one stopped investing directly and became an LP. The fund evidence is stronger, though still second-hand until the interviews. The persona order it set: partner or principal, solo angel, accelerator screener, associate, corporate VC ([PERSONAS.md](../../ongoing/PERSONAS.md)).
+Angels want diligence but lack the time: one invests almost only in YC companies because YC has done it, another became an LP so funds do it. They pay for diligence by proxy, so they are a real market. The fund evidence is second-hand until the interviews. The persona order it set: partner or principal, solo angel, accelerator screener, associate, corporate VC ([PERSONAS.md](../../ongoing/PERSONAS.md)).
 
 <div class="choice" data-choice="price-first">
 <p class="choice-q">Who is the first paying customer?</p>

@@ -21,12 +21,12 @@ Each persona is a problem, not a job title. Say, do and pay measure how people d
 
 The personas are ranked by their strongest evidence: pay first, then do, then say. When two personas reach the same layer, the one with more quotes behind it ranks higher. The quotes come from [the voice-of-the-customer research](../reports/20261022.02_research/research_voice_of_customer.md), and a script counts them ([voc_counts.py](../reports/20261022.02_research/voc_counts.py)). A reference such as "row 11" points to that research's quotes table.
 
-Two cautions on the top two. The partner's pay rating is inferred: both pieces of pay evidence come from a vendor case study and a pricing roundup, not from partners' own words. The angel's pay rating rests on two people, each solving the problem by handing diligence to someone else (YC, or funds as an LP). Two people are thin evidence.
+Two cautions on the top two. The partner's pay rating is inferred: both pieces of pay evidence come from a vendor case study and a pricing roundup, not from partners' own words. The angel still wants diligence; what is short is time. Angels pay, in upside given up or as an LP, to get diligence done by proxy: they trust YC, a lead or a fund to have done it.
 
 | Rank | Persona | The problem | Strongest evidence |
 |---|---|---|---|
 | 1 | Partner or principal at a seed or Series A fund | Numbers that disagree, found too late | Pay (inferred) |
-| 2 | Solo angel | No time or team to do diligence at all | Pay (two people, thin) |
+| 2 | Solo angel | Wants diligence, has no time or team for it | Pay (buys diligence by proxy) |
 | 3 | Accelerator screener | Too many applications to read | Do |
 | 4 | Associate at a seed fund | Days of gathering before any thinking | Do |
 | 5 | Corporate VC | Strategic overlap on top of standard diligence | Say, too thin to design for |
@@ -91,7 +91,7 @@ Who uses Tricorder and who buys it is a separate question, for marketing. It is 
 - Investing alongside an accelerator, and giving up upside for it (row 44).
 - Stopping, and becoming an LP in funds instead (row 53).
 
-**Why it failed them.** Each workaround avoids diligence rather than doing it. One angel's co-investors found the cause of her loss: "They discovered two sets of books: a made-up one for investors; the other with the real numbers." ([angel, May 2023](https://techcrunch.com/?p=2539424)). A full outside diligence costs far more than an angel check (a consultant priced one at about 100K, the voice-of-the-customer research row 41).
+**Why it failed them.** Each workaround is diligence by proxy: the angel trusts that a lead, a co-investor, YC or a fund did the work, and cannot check it. One angel's co-investors found the cause of her loss: "They discovered two sets of books: a made-up one for investors; the other with the real numbers." ([angel, May 2023](https://techcrunch.com/?p=2539424)). A full outside diligence costs far more than an angel check (a consultant priced one at about 100K, the voice-of-the-customer research row 41).
 
 **The moment Tricorder solves it.** Before writing the check, the angel forwards the founder's email. The readout comes back with the best green flags and the worst red flags, then an overview of which pieces look strong and which look weak. Under each weak piece are the places the deck and the model disagree and the questions to ask the founder.
 
@@ -104,7 +104,7 @@ Who uses Tricorder and who buys it is a separate question, for marketing. It is 
 - **Say (8 rows).** Missed red flags and fake books (rows 50, 51). No time or skills (row 43). A full-time unpaid job (row 52).
 - **Do (4 rows).** Waits for a lead, shares diligence, sizes diligence to the check (rows 45 to 47).
 - **Pay (2 rows).** "Yes, I give up some upside because of how much YC already owns, but to me it's worth every penny for the service that YC provides to me as an investor and to the startup." ([angel, Jan 2022](https://news.ycombinator.com/item?id=30130146)). "Lastly, I became a Limited Partner (LP) in a handful of VC funds, basically paying professionals to do the investing on our behalf." ([angel, Apr 2025](https://halletecco.substack.com/p/why-i-stopped-angel-investing-after))
-- **Rating: pay, thin.** Two people pay, in upside or as an LP, to hand diligence to someone else. That is how they solve the problem today.
+- **Rating: pay.** Angels pay, in upside given up or as an LP, to have someone else do diligence they still want done. The problem is time, not interest.
 
 ---
 
@@ -206,7 +206,7 @@ Who uses Tricorder and who buys it is a separate question, for marketing. It is 
 This is a marketing question, separate from say, do and pay. It decides whom each message speaks to, not which problems carry the most signal.
 
 - **Funds.** A partner or principal decides and pays. The operator, the person working in the readout, is usually the associate who does the first pass today, and at some funds the partner.
-- **Angels.** The same person uses it and pays for it. Whether an angel would pay for a better first pass of their own is untested; the interviews ask.
+- **Angels.** The same person uses it and pays for it. They already pay for diligence by proxy; the interviews ask what a first pass of their own would be worth per deal.
 - **Accelerators.** The screening staff would use it and the program would pay. The research found no program paying for a tool yet.
 
 ## What the interviews need to fill
