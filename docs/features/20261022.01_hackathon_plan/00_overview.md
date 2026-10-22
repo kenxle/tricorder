@@ -4,7 +4,7 @@ Everything the factory built today for Deal Flow, NYC's first VC hackathon (Beta
 
 ## What I need from you
 
-- **Decide.** Seventeen cards in section 3, each with a recommendation. The critics settled three and added three more. Your 12:55 comment settled the edge.
+- **Decide.** Eighteen cards in section 3, each with a recommendation. The critics settled three and added three more. Your 12:55 comment settled the edge, and your 1:12 edit added the steering card.
 - **Do this week.** Your rows on [the board](../../BULLETIN.md): interviews, the founder brief in your words, the pitch video, the keys, who joined and their repo access, the organisers' questions, the Reddit pages.
 - **Read first.** The [one-page founder brief](founder_brief.md). It is what you hand the judges, and the organisers asked every team for it.
 
@@ -86,6 +86,21 @@ The roadmap proposed opening on a forwarded pitch email with the readout already
 <button type="button" value="flags-then-overview" data-recommended>Top green and red flags, then the overview</button>
 <button type="button" value="email-first">The forwarded email</button>
 <button type="button" value="build-forward-saturday">Build the real forward if time allows</button>
+</div>
+
+### Steering on stage
+
+Your 1:12 PM edit: the readout is a working surface the operator can steer, not a final document. An instruction on a section reruns that section's analysis and rewrites it, keeping sources and showing what changed ([the writers' brief](00_brief_for_writers.md), 1:12 PM block). Script numbers never change because someone asked; a steer changes what is read, how it is grouped or how it is worded.
+
+<div class="options">
+<div class="option"><span class="badge badge--purple">Recommended</span><h4>After Saturday, mentioned on stage</h4><p>Steering is an after-Saturday slice. On stage, one sentence in the closing "next" line. Every Saturday hour is already budgeted, and the buildability critic found no slack.</p></div>
+<div class="option"><p class="eyebrow">Option B</p><h4>One steer live on stage</h4><p>One section rewritten from one instruction, for example "treat the pilot as non-recurring" on the revenue piece. Memorable, and it shows the operator in control. Costs a Saturday slot: it would replace the model readings, the first thing in the cut order.</p></div>
+</div>
+
+<div class="choice" data-choice="steering-on-stage">
+<p class="choice-q">Does a steer go on stage Saturday?</p>
+<button type="button" value="after-saturday" data-recommended>After Saturday, mentioned on stage</button>
+<button type="button" value="one-live-steer">One steer live on stage</button>
 </div>
 
 ### The blind room
