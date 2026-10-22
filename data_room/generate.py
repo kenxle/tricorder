@@ -1061,6 +1061,7 @@ GREYTXT = colors.HexColor("#555555")
 LIGHT = colors.HexColor("#E8EEF4")
 SW, SH = 960, 540
 DECK = "01_overview/pitch_deck.pdf"
+CLAIMS_SIDECAR = "01_overview/claims.json"
 
 
 def deck_claims():
@@ -1346,6 +1347,7 @@ def build_deck():
         c.drawString(840, y, str(sl))
         y -= 22
     LOC["CLAIMS"] = [{"label": lab, "value": val, "slide": sl} for (lab, val, sl) in claims]
+    write_text(ROOM / CLAIMS_SIDECAR, json.dumps({"source": DECK, "slide": 14, "claims": LOC["CLAIMS"]}, indent=2, ensure_ascii=False) + "\n")
     for flag, lab in (("PF2", "ARR"), ("PF7", "Clinics on Hollis"), ("PF5", "Largest customer"), ("PF6", "Gross margin"),
                       ("PF3", "Net revenue retention"), ("PF4", "Runway")):
         row = [x for x in claims if x[0] == lab][0]
@@ -1695,7 +1697,7 @@ hello@hollisvoice.example
 # ---------------------------------------------------------------------------------------------
 # Answer key
 # ---------------------------------------------------------------------------------------------
-SEED_FILES = [rel for (rel, _w, tier) in ROOM_FILES if tier == "first"]
+SEED_FILES = [rel for (rel, _w, tier) in ROOM_FILES if tier == "first"] + [CLAIMS_SIDECAR]
 
 
 def build_answer_key():
@@ -1812,7 +1814,7 @@ def build_answer_key():
         "room_path": "data_room/hollis_voice",
         "seed_drop_path": "data_room/hollis_voice_seed_drop",
         "seed_drop_files": SEED_FILES,
-        "full_room_files": [r[0] for r in ROOM_FILES],
+        "full_room_files": [r[0] for r in ROOM_FILES] + [CLAIMS_SIDECAR],
         "flags": flags, "decoys": decoys,
         "deck_claims": LOC["CLAIMS"],
         "facts": {
@@ -1857,7 +1859,7 @@ def main():
     build_markdown()
     build_answer_key()
     copy_seed_drop()
-    print(f"Wrote {len(ROOM_FILES)} files to {ROOM}")
+    print(f"Wrote {len(ROOM_FILES) + 1} files to {ROOM}")
     print(f"Wrote {len(SEED_FILES)} files to {SEED_DROP}")
     print(f"Wrote {KEY_PATH}")
     print(f"True recurring ARR {F['true_arr']:,}; model {F['model_arr']:,}; deck {F['deck_arr']:,}; video {F['video_arr']:,}")

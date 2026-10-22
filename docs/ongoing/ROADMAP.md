@@ -43,11 +43,11 @@ The synthetic Hollis Voice data room, its generator and its answer key, built to
 
 **Includes:**
 
-- The layout from research Part 3.6 at the repo root: `data_room/generate.py`, `src/` (facts, plants, tables, workbook, pdfs, names, answer key), `tests/`, `out/hollis_series_a/` (the full room) and `out/hollis_seed_drop/` (the thin first tier).
+- The layout from research Part 3.6 at the repo root: `data_room/generate.py`, `src/` (facts, plants, tables, workbook, pdfs, names, answer key), `tests/`, `hollis_voice/` (the full room) and `hollis_voice_seed_drop/` (the thin first tier).
 - The 16 files in research Part 3.3, every one generated from one seeded simulation (seed 20261024).
 - The 8 planted entries (7 flags plus the video variant) and the 3 clean decoys in research Part 3.4.
-- `answer_key/planted_flags.json` outside `out/`, so Tricorder is never pointed at it. Each entry's `check` field uses the check names written in the [saturday-specs](#saturday-specs) slice, so Saturday's test can match a readout flag to a key entry.
-- A `claims.json` sidecar next to the deck with the deck's claims as data, the fallback the feasibility research recommends when PDF reading fails ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), 1.1 and 1.9).
+- `data_room/answer_key.json` outside both room folders, so Tricorder is never pointed at it. Each entry's `check` field uses the check names written in the [saturday-specs](#saturday-specs) slice, so Saturday's test can match a readout flag to a key entry.
+- `01_overview/claims.json` in both rooms, written by the generator from the same list as the deck's claims slide (slide 14), with the deck's claims as data, the fallback the feasibility research recommends when PDF reading fails ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), 1.1 and 1.9).
 - The footer "Synthetic data room for Deal Flow NYC 2026. Not a real company." on every page and sheet. Invented names only; emails on `example.com`.
 - A fresh web search for the company name before it appears anywhere public (research open point).
 
@@ -72,6 +72,9 @@ Ken records the founder's two-minute pitch on his phone from the script in the d
 - The recording from `01_overview/pitch_video_script.md`, with the planted line at about 0:35 saying about three million dollars in ARR, against the deck's $2,500,000 (research Part 3.4, PF2b).
 - The video file copied into both rooms beside the script.
 - A transcript made once by hand with whisper.cpp on the demo laptop and saved next to the video, so the demo has a result if the live run fails ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), 1.5).
+- whisper.cpp is not installed on the demo laptop yet. Install it this week and save the transcript.
+- A phone recording may be HEVC, which not every browser plays. Convert it once to H.264 MP4: `ffmpeg -i phone_recording.mov -c:v libx264 -pix_fmt yuv420p -c:a aac -movflags +faststart pitch_video.mp4`.
+- The video file stays out of git, because GitHub blocks files over 100 MiB. `.gitignore` lists `pitch_video.mp4` and `*.mov` under `data_room/`. Share the file outside git.
 
 **Done when:** the video plays on the demo laptop, and the saved transcript contains the ARR sentence with its timestamp.
 
@@ -133,6 +136,9 @@ The outside data the comps and market-signal scans read on Saturday, saved as fi
 - 10 to 20 Form D rounds chosen by hand as private comps.
 - 3 to 5 real competitors in voice AI for vet clinics, with every Akta signal the key allows and their pricing pages through Tavily.
 - Hacker News and app-store results for one or two of those competitors, run by hand.
+- Each comp candidate's 10-K Item 1 text, which the comp prompt (2.1) reads.
+- A saved page describing each Form D issuer, which the private-comp prompt (2.2) reads.
+- `cache/index.json`, which maps each URL to its saved file. The quote checker reads it to check URL sources.
 - Everything under `cache/` at the repo root, with the date each file was read.
 
 **Done when:** each file opens, and a short `cache/README.md` lists what each file is and where it came from.
@@ -156,6 +162,7 @@ The [FRAMEWORKS.md](FRAMEWORKS.md) entries and the hand-written examples that th
 - The memo ordering prompt: conflicts first, then flags by severity, then the other scans.
 - One hand-written example result file per Saturday scan, in the Claim schema, so the readout page can be built from 10:30 before any scan runs.
 - A static mock of the readout layout that Ken can edit (feasibility 1.8).
+- Each structured-output schema sent once this week in a real call, so any refusal shows up before Saturday. On Saturday each request carries one schema.
 
 **Done when:** each Saturday slice below names the spec entry it types in, and each example file validates against the Claim schema by eye and by the frameworks writer's check.
 
@@ -206,7 +213,7 @@ A decision card for the overview page: does an empty repo skeleton count as code
 **The two options:**
 
 - **A. The skeleton is code. Build it on Saturday.** The folder layout, the CI command and the typed Claim result are the first Saturday slices ([skeleton](#skeleton) and [claim-result](#claim-result)). They take the first half hour of two people. Before Saturday the repo holds only documents, `data_room/` and `cache/`. To a judge who asks what was built today, the answer is every line of product code. This roadmap is written to option A.
-- **B. The skeleton is setup. An agent writes it this week.** Empty folders and packages, `bin/ci`, the CI config, the dependency list, `.env.example`, and the Claim schema typed in from ARCHITECTURE.md, with no scan logic. The captain and backend-and-data each get half an hour back on Saturday, and that time goes first to slices that were cut. The risk: the organisers wrote "On Saturday you only build" and "Everything a founder does before writing code happens this week", and commits dated before Saturday are visible to anyone who looks.
+- **B. The skeleton is setup. An agent writes it this week.** Empty folders and packages, `bin/ci-py`, `bin/ci-web`, the CI config, the dependency list, `.env.example`, and the Claim schema typed in from ARCHITECTURE.md, with no scan logic. The captain and backend-and-data each get half an hour back on Saturday, and that time goes first to slices that were cut. The risk: the organisers wrote "On Saturday you only build" and "Everything a founder does before writing code happens this week", and commits dated before Saturday are visible to anyone who looks.
 
 **Who:** agent writes the card. Ken decides.
 
@@ -226,7 +233,7 @@ Each person owns folders, so pull requests do not touch the same files. This fol
 
 | Role | Folders | Slices | Build hours |
 |---|---|---|---|
-| captain | `schema/`, `prompts/`, `scans/memo/`, `eval/`, `demo/` | claim-result, readout, demo-freeze | 4.5 |
+| captain | `schema/`, `scans/memo/`, `eval/`, `demo/` | claim-result, readout, demo-freeze | 4.5 |
 | frontend | `readout/` | readout-page | 4.5 |
 | backend-and-data | repo root files, `server/`, `scans/video/`, `scans/signals/` | skeleton, pitch-video, market-signals | 4.5 |
 | design-and-finance | `scans/redflags/`, `scans/comps/` | redflag-engine, comps | 4.5 |
@@ -246,12 +253,12 @@ The empty repo the four people build in.
 - The folder layout in [ARCHITECTURE.md](ARCHITECTURE.md), with a code-owners file mapping each folder to its role.
 - One root dependency file listing everything known this week: the Anthropic SDK, Pydantic, FastAPI, the server runner, pdfplumber, openpyxl, pandas and an HTTP client.
 - The FastAPI app in `server/` with the three routes the feasibility research names (list scans, run a scan, serve a result file) and a health route.
-- `bin/ci`, which runs the Python tests and the readout page's type check and build, and the same command in the hosted CI.
+- `bin/ci-py`, which runs the Python tests, and `bin/ci-web`, which runs the readout page's type check and build. They are separate so a red TypeScript build does not block Python merges. The captain runs both before each merge, and the hosted CI runs the same two commands if one is set up.
 - `bin/smoke <room>`, which runs every scan that exists, then the memo, and prints which scans ran and which are missing.
 - `.env.example` with every variable in ARCHITECTURE.md, and `out/` ignored by git while `sample_out/` is kept.
 - The guardrails fields marked "Set by the first code slice" filled in: CI command, health check, smoke command ([guardrails.md](../../.claude/guardrails.md)).
 
-**Done when:** `bin/ci` exits 0 on a fresh clone, the health route answers, and `bin/smoke data_room/out/hollis_seed_drop` prints "no scans yet" without a crash.
+**Done when:** `bin/ci-py` and `bin/ci-web` exit 0 on a fresh clone, the health route answers, and `bin/smoke data_room/hollis_voice_seed_drop` prints "no scans yet" without a crash.
 
 **Who:** backend-and-data.
 
@@ -293,7 +300,7 @@ The red flags in the financials and metrics: the organisers' first direction, an
 **Includes:**
 
 - One check per planted flag in the data room research's Part 3.4: pilot booked as ARR, deck ARR against the model (1 percent tolerance), churn hidden in the cohort tab, burn against the hiring plan, customer concentration, gross margin without delivery costs, cumulative sign-ups shown as active clinics. The video-against-deck variant is found by the readout slice, because it needs the video scan's output.
-- Deck claims read from the PDF with pdfplumber and the deck prompt, with the `claims.json` sidecar as the fallback (feasibility 1.1 and 1.9).
+- Deck claims read from the PDF with pdfplumber and the deck prompt, with `01_overview/claims.json` as the fallback (feasibility 1.1 and 1.9).
 - The model reads text and explains; the script decides that a number is wrong (feasibility Part 3.2).
 - Each flag is a Claim with the claimed number, the computed number, a severity, and sources pointing at both places.
 - `python -m scans.redflags <room>` writes `out/<room>/redflags.json`.

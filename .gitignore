@@ -3,3 +3,7 @@ docs/reports/seneschal/
 .env
 .env.*
 reddit_corpus/raw/
+
+data_room/hollis_voice/01_overview/pitch_video.mp4
+data_room/hollis_voice_seed_drop/01_overview/pitch_video.mp4
+data_room/**/*.mov

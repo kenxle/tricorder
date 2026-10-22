@@ -28,25 +28,26 @@ One folder per person, so Saturday's pull requests do not touch the same files. 
 | Folder | What it holds | Owner on Saturday |
 |---|---|---|
 | `schema/` | The Claim models, the exported JSON Schema, generated TypeScript types in `schema/ts/`, the quote checker. Frozen at 11:00 AM. | captain |
-| `prompts/` | The prompts typed in from [FRAMEWORKS.md](FRAMEWORKS.md). | captain |
 | `scans/memo/` | Merges the scan results into the readout. | captain |
 | `eval/` | Scores a readout against the answer key. | captain |
 | `demo/` | The demo script's files and the frozen outputs. | captain |
 | `readout/` | The React readout page. | frontend |
-| root files, `server/`, `bin/` | Dependency list, CI, `.env.example`, the FastAPI app, `bin/ci` and `bin/smoke`. | backend-and-data |
+| root files, `server/`, `bin/` | Dependency list, CI, `.env.example`, the FastAPI app, `bin/ci-py`, `bin/ci-web` and `bin/smoke`. | backend-and-data |
 | `scans/video/`, `scans/signals/` | Pitch video and market signals. | backend-and-data |
 | `scans/redflags/`, `scans/comps/` | Red-flag engine and comps. | design-and-finance |
 | `scans/frameworks/`, `scans/presence/`, `scans/founders/` | After Saturday. | agent |
-| `data_room/` | The generator, the two rooms under `out/`, the answer key under `answer_key/`. Written this week. | agent |
+| `data_room/` | The generator, the two rooms (`hollis_voice/` and `hollis_voice_seed_drop/`) and the answer key `answer_key.json`. Written this week. | agent |
 | `cache/` | Outside data saved this week: Form D, XBRL facts, Akta pulls, pricing pages. | agent |
 | `sample_out/` | Hand-written example results, one per scan. | captain |
 | `out/` | Scan results, one folder per room. Ignored by git. | nobody; scans write it |
 
-Each scan keeps its tests inside its own folder (`scans/redflags/tests/`), so no shared test folder collects edits.
+Each scan keeps its tests inside its own folder (`scans/redflags/tests/`), so no shared test folder collects edits. Each scan also keeps its prompts, typed in from [FRAMEWORKS.md](FRAMEWORKS.md), in its own folder (`scans/redflags/prompts/`), so the scan's owner edits them and no shared `prompts/` folder collects edits.
 
 ## The Claim schema
 
 Every scan writes one ScanResult. The readout is built only from claims. The feasibility research's Pydantic sketch (Part 4.1) is the starting point; this version adds the value, the check and the confidence label.
+
+The JSON Schema in [FRAMEWORKS.md](FRAMEWORKS.md) ("The shared Claim") is the single source for every field type. The Pydantic models below follow it. If the two ever differ, FRAMEWORKS wins.
 
 ```python
 class Source(BaseModel):
@@ -56,12 +57,12 @@ class Source(BaseModel):
     start_s: float | None    # video only, copied from the transcript
     end_s: float | None
     quote: str               # the exact span; the quote checker looks for it at the locator
-    retrieved_at: str        # ISO date the source was read
+    retrieved_at: str | None # ISO date the source was read; null when not known
 
 class Value(BaseModel):
     number: float
-    unit: str                # "USD", "percent", "months", "accounts"
-    label: str               # "ARR", "gross margin", "runway"
+    unit: Literal["USD", "USD_per_month", "USD_per_year", "percent", "months", "days", "accounts", "count"]
+    label: Literal["arr", "mrr", "paying_accounts", "accounts_created", "nrr_12m", "grr_12m", "cohort_size", "gross_margin", "cost_of_revenue", "runway_months", "net_burn_monthly", "payroll_monthly", "hires", "headcount", "cash", "largest_customer_share", "top3_customer_share", "arpa", "acv", "cac", "payback_months", "ltv", "raise_amount", "pre_money", "post_money", "ownership", "tam", "sam", "som", "price", "contract_term", "notice_period", "signal", "other"]
     period: str | None       # "2026-09"
 
 class Check(BaseModel):
@@ -85,6 +86,11 @@ class Gap(BaseModel):
     why: str                 # "file missing", "link needs a viewer email", "Akta plan returns 403"
     would_need: str          # the source that would close it
 
+class Panel(BaseModel):
+    name: str                # "comps table", "signals grid", "video moments"
+    columns: list[str]       # column names
+    rows: list[list[str]]    # one list of strings per row
+
 class ScanResult(BaseModel):
     scan: str
     room: str
@@ -92,6 +98,7 @@ class ScanResult(BaseModel):
     inputs: list[str]        # files and calls the scan read
     claims: list[Claim]
     gaps: list[Gap]
+    panels: list[Panel] = [] # optional named tables or lists the page shows beside the claims
 ```
 
 **Confidence is a label, not a number.** `computed`: a script recomputed the number from the source. `quoted`: a model read it and the quote checker found the quote. `judged`: a model's reading with nothing to recompute, such as whether a cohort note hides churn. `unverified`: the quote checker could not find the quote; the readout puts the claim in a "could not verify" box instead of the memo.
@@ -103,7 +110,7 @@ class ScanResult(BaseModel):
 | Part | Rule |
 |---|---|
 | Function | `run(room_dir: Path) -> ScanResult` |
-| Command | `python -m scans.<name> <room_dir>`, for example `python -m scans.redflags data_room/out/hollis_seed_drop` |
+| Command | `python -m scans.<name> <room_dir>`, for example `python -m scans.redflags data_room/hollis_voice_seed_drop` |
 | Output | `out/<room>/<name>.json`, one ScanResult |
 | Inputs | Files in the room, files in `cache/`, and outside calls only when `TRICORDER_OFFLINE` is unset |
 | Isolation | No scan imports another scan. A scan never reads another scan's output; only the memo does. |
@@ -113,9 +120,9 @@ class ScanResult(BaseModel):
 
 ## The data room and the answer key
 
-The generator is the data room research's design (Part 3.6), and lives at `data_room/`. `generate.py --seed 20261024` runs one simulation (`src/facts.py`) and writes every file from it. Each plant is one function that takes a true fact, returns the shown value, and records where it wrote it. `--no-plants` writes a room that reconciles everywhere. Output: `out/hollis_series_a/` (16 files) and `out/hollis_seed_drop/` (the thin first tier).
+The generator is the data room research's design (Part 3.6), and lives at `data_room/`. `generate.py --seed 20261024` runs one simulation (`src/facts.py`) and writes every file from it. Each plant is one function that takes a true fact, returns the shown value, and records where it wrote it. `--no-plants` writes a room that reconciles everywhere. Output: `data_room/hollis_voice/` (the full room) and `data_room/hollis_voice_seed_drop/` (the thin first tier). Both rooms also hold `01_overview/claims.json`, the deck's claims page (slide 14) as data, written from the same list, so the claims can be read when PDF text extraction fails.
 
-The answer key, `answer_key/planted_flags.json`, sits outside `out/` so Tricorder is never pointed at it. It holds the 8 planted entries and the 3 decoys, each with its locations, the true value, the shown value, the check name and the tolerance (data room research, Part 3.6). The check names are the red-flag engine's check names, fixed this week in [FRAMEWORKS.md](FRAMEWORKS.md).
+The answer key, `data_room/answer_key.json`, sits outside both room folders so Tricorder is never pointed at it. It holds the 8 planted entries and the 3 decoys, each with its locations, the true value, the shown value, the check name and the tolerance (data room research, Part 3.6). The check names are the red-flag engine's check names, fixed this week in [FRAMEWORKS.md](FRAMEWORKS.md).
 
 **How the test compares.** `eval/score.py <room>` reads `out/<room>/readout.json` and the answer key. A planted entry counts as found when a readout claim with severity `flag` has the key's check name and cites at least one of the key's files. A decoy counts as wrongly flagged when a `flag` claim cites the decoy's file and location. It prints found of 8 and decoys flagged of 3, and the page shows that score. The data room research expects 5 entries from the seed drop and the other 3 from the full room (Part 3.4). The red-flag engine's own test in `scans/redflags/tests/` runs the same comparison on that scan alone.
 

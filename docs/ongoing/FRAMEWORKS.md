@@ -232,22 +232,22 @@ Some worked examples also show arithmetic on those figures: a gap, a ratio, a sh
 | Planted entry ([data_room_planted.csv](../reports/20261022.02_research/data_room_planted.csv)) | Entry that must catch it | Check name | Catchable from the seed drop, per the data-room research |
 |---|---|---|---|
 | PF1 Pilot booked as ARR | 1.2 ARR definition check | `arr_from_subscription_rows` | No, needs the full room |
-| PF2 Deck ARR disagrees with the model | 1.5 Deck-against-model reconciliation | `deck_model_match` | Yes |
-| PF2b Video ARR disagrees with the deck | 4.3 Three-way disagreement check | `video_deck_match` | Yes |
-| PF3 Churn hidden in the cohort tab | 1.3 Cohort retention rebuild | `cohort_rebuild` | No, needs the full room |
-| PF4 Burn and runway do not match the hiring plan | 1.4 Burn against the hiring plan and runway | `payroll_from_hiring_plan` | Yes |
+| PF2 Deck ARR disagrees with the model | 1.5 Deck-against-model reconciliation | `deck_claim_vs_named_cell` | Yes |
+| PF2b Video ARR disagrees with the deck | 4.3 Three-way disagreement check | `spoken_arr_vs_claims_page` | Yes |
+| PF3 Churn hidden in the cohort tab | 1.3 Cohort retention rebuild | `rebuild_cohorts_from_customer_file` | No, needs the full room |
+| PF4 Burn and runway do not match the hiring plan | 1.4 Burn against the hiring plan and runway | `payroll_from_hiring_plan_and_rerun_cash` | Yes |
 | PF5 Customer concentration | 1.6 Customer concentration | `top_customer_share` | No, needs the full room |
-| PF6 Gross margin excludes hosting, inference and support | 1.7 Gross margin composition | `gross_margin_full_cost` | Yes |
-| PF7 Cumulative sign-ups shown as active clinics | 1.8 Vanity metric check | `cumulative_shown_as_active` | Yes |
+| PF6 Gross margin excludes hosting, inference and support | 1.7 Gross margin composition | `gross_margin_from_ledger` | Yes |
+| PF7 Cumulative sign-ups shown as active clinics | 1.8 Vanity metric check | `cumulative_column_shown_as_active` | Yes |
 | DC1 Onboarding fee excluded from ARR correctly (decoy) | 1.2 must not flag its line | `arr_from_subscription_rows` | Yes |
 | DC2 Annual prepay counted as recurring correctly (decoy) | 1.2 must not flag its line | `arr_from_subscription_rows` | No, the order form is in the full room |
 | DC3 Clean cap table (decoy) | 1.10 must label it clear | `cap_table_reconcile` | Yes |
 
-The check names are the ones the answer key's `check` field and the test in [ARCHITECTURE.md](ARCHITECTURE.md) match on. `arr_from_subscription_rows` is the data-room research's own example name (3.6); the rest are set here. The seed-drop column comes from the table at the end of 3.4 in [research_data_room.md](../reports/20261022.02_research/research_data_room.md). The two decoy rows that table does not cover follow from [data_room_files.csv](../reports/20261022.02_research/data_room_files.csv): the cap table is in the seed drop and the Brookline Row order form is not.
+The check names are the ones the answer key's `check` field and the test in [ARCHITECTURE.md](ARCHITECTURE.md) match on. `arr_from_subscription_rows` is the data-room research's own example name (3.6). The other seven in the key are the names `data_room/generate.py` writes. Only `cap_table_reconcile` (DC3, a decoy with no `check` in the key) is set here. The seed-drop column comes from the table at the end of 3.4 in [research_data_room.md](../reports/20261022.02_research/research_data_room.md). The two decoy rows that table does not cover follow from [data_room_files.csv](../reports/20261022.02_research/data_room_files.csv): the cap table is in the seed drop and the Brookline Row order form is not.
 
 ### The parts of every entry
 
-Each entry has exactly seven parts, in this order: **Inputs**, **The questions it asks**, **Mechanical check**, **Model reading**, **Output shape**, **How the readout scores it**, **What it must not do**. Every output shape has the same five top-level fields (`framework`, `label`, `label_reason`, `claims`, `gaps`) plus the fields that entry needs. The scan writes the claims and gaps into its ScanResult, as [ARCHITECTURE.md](ARCHITECTURE.md) describes. `label_reason` names the rule that fired and the claim ids it rests on. It gives no motive.
+Each entry has exactly seven parts, in this order: **Inputs**, **The questions it asks**, **Mechanical check**, **Model reading**, **Output shape**, **How the readout scores it**, **What it must not do**. Every output shape has the same five top-level fields (`framework`, `label`, `label_reason`, `claims`, `gaps`) plus the fields that entry needs. The scan writes the claims and gaps into its ScanResult, as [ARCHITECTURE.md](ARCHITECTURE.md) describes, and the entry's own tables into the ScanResult's optional `panels`. `label_reason` names the rule that fired and the claim ids it rests on. It gives no motive.
 
 ---
 
@@ -262,7 +262,7 @@ Entry 1.1 runs before all of them. It turns the deck into claims the other entri
 **Inputs**
 
 - `01_overview/pitch_deck.pdf`, all 14 slides. Slide 14 is a claims page that lists every number with the slide where it first appears ([research_data_room.md](../reports/20261022.02_research/research_data_room.md), 3.3).
-- The sidecar `claims.json` the generator writes beside the deck, used when PDF text extraction fails ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), 1.1 and 1.9).
+- The sidecar `01_overview/claims.json` the generator writes in the room, used when PDF text extraction fails ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), 1.1 and 1.9).
 - `01_overview/company_overview.pdf` and `06_product/product_one_pager.pdf`, for numbers repeated outside the deck.
 - Slide 6 holds the cohort chart as an image. Reading it needs vision. The same numbers sit on the claims page as text ([research_data_room.md](../reports/20261022.02_research/research_data_room.md), 3.3).
 
@@ -511,7 +511,7 @@ Label rules:
 
 **Mechanical check**
 
-Check name: `cohort_rebuild`. The answer key uses it for PF3 (churn hidden in the cohort tab).
+Check name: `rebuild_cohorts_from_customer_file`. The answer key uses it for PF3 (churn hidden in the cohort tab).
 
 For each cohort c (customers whose first month with MRR above zero is month c), and for each customer i in it:
 
@@ -630,7 +630,7 @@ Propose the label using these rules, and name the rule and claim ids in "label_r
 
 **Mechanical check**
 
-Check name: `payroll_from_hiring_plan`. The answer key uses it for PF4 (burn and runway do not match the hiring plan).
+Check name: `payroll_from_hiring_plan_and_rerun_cash`. The answer key uses it for PF4 (burn and runway do not match the hiring plan).
 
 ```
 loaded_monthly_cost(hire) = base_pay × load_factor ÷ 12, from the hire's start month
@@ -746,13 +746,15 @@ CRV, a16z and Visible all name this flag ([research_data_room.md](../reports/202
 
 **Mechanical check**
 
-Check name: `deck_model_match`. The answer key uses it for PF2 (deck ARR disagrees with the model).
+Check name: `deck_claim_vs_named_cell`. The answer key uses it for PF2 (deck ARR disagrees with the model).
 
 ```
 pair every two claims with the same metric and period
 gap_rel = | value_a − value_b | ÷ | value_b |, where b is the model's figure, or the rebuilt figure when the pair includes one
 flag the pair if gap_rel > match_tolerance
 ```
+
+Convert before comparing: `GM_PCT` holds 0.8 in the model, the deck says 80%, and the schema stores percent points. Multiply the model's value by 100 so both read 80, or the check reports a false conflict.
 
 Worked example, Hollis Voice. The four ARR figures, from the table in 3.4 of [research_data_room.md](../reports/20261022.02_research/research_data_room.md):
 
@@ -971,7 +973,7 @@ Propose the label using these rules, and name the rule and claim ids in "label_r
 
 **Mechanical check**
 
-Check name: `gross_margin_full_cost`. The answer key uses it for PF6 (gross margin leaves out hosting, inference and support).
+Check name: `gross_margin_from_ledger`. The answer key uses it for PF6 (gross margin leaves out hosting, inference and support).
 
 ```
 cost_of_revenue_full = SUM of ledger lines tagged hosting, inference, telephony, embedded licence or support
@@ -1082,7 +1084,7 @@ Fill "lines" with one entry per line you classified. Propose the label using the
 
 **Mechanical check**
 
-Check name: `cumulative_shown_as_active`. The answer key uses it for PF7 (cumulative sign-ups shown as active clinics).
+Check name: `cumulative_column_shown_as_active`. The answer key uses it for PF7 (cumulative sign-ups shown as active clinics).
 
 ```
 for each numeric column x in monthly_metrics.csv:
@@ -2244,7 +2246,7 @@ The tier is the label for each moment. The tiers are an order of what a partner 
 
 **Mechanical check**
 
-Check name: `video_deck_match`. The answer key uses it for PF2b (video ARR disagrees with the deck).
+Check name: `spoken_arr_vs_claims_page`. The answer key uses it for PF2b (video ARR disagrees with the deck).
 
 ```
 for each metric m:
@@ -3383,5 +3385,5 @@ Each theme shows how many mentions it rests on and how many are first-hand.
 - **Column names.** The research names a few columns (`product_type`, `arr`, `paying_accounts`, `accounts_created_cumulative`). The generator fixes the rest. The prompts take whatever headers the `<doc>` blocks carry.
 - **CAC and market size on Hollis Voice.** The research does not fix sales and marketing spend or a count of clinics. Entries 1.9 and 5.6 return "Not in the room" for those until the generator or a cited source supplies them.
 - **`spoken_tolerance` and the signal flat band.** The team sets both before Saturday. The answer-key test keeps `spoken_tolerance` honest: PF2b must still be caught.
-- **Where an entry's label and tables live.** The ScanResult in [ARCHITECTURE.md](ARCHITECTURE.md) holds claims and gaps. It has no field for an entry's `label`, `label_reason` or its own tables (ARR lines, comps, canvas boxes, video moments). This doc carries the label into each claim's `severity` (see "The order of work inside a scan"). The tables still need a home: the simplest is to write each entry's full output beside the ScanResult as `out/<room>/<scan>.<framework>.json`, which the page reads for tables. The architecture owner decides.
+- **Where an entry's label and tables live.** The ScanResult in [ARCHITECTURE.md](ARCHITECTURE.md) has one optional field, `panels`, for them. Each panel has a `name`, a list of `columns` (names) and `rows` (each row a list of strings). The comps table, the signals grid and the video moments go there, so the page has a place for them. This doc carries the label into each claim's `severity` (see "The order of work inside a scan").
 - **Opus 5.5 request parameters.** The feasibility research notes it may reject `temperature` and forced tool choice, from a source it could not confirm on a public page. Test one call with each schema before Saturday ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), 1.10).

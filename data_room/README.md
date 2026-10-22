@@ -30,8 +30,8 @@ data_room/.venv/bin/python data_room/check.py
 
 ## What is written
 
-- `hollis_voice/` is the full Series A room, 16 files in six folders.
-- `hollis_voice_seed_drop/` holds copies of the 11 files of the thin first tier. This is what a founder sends before a term sheet.
+- `hollis_voice/` is the full Series A room, 17 files in six folders.
+- `hollis_voice_seed_drop/` holds copies of the 12 files of the thin first tier (the 11 first-tier files plus `claims.json`). This is what a founder sends before a term sheet.
 - `answer_key.json` lists every flag and decoy with its file and location, the shown value, the true value, the check that catches it, and which files a check needs. Do not point Tricorder at it.
 
 ## The files
@@ -42,6 +42,7 @@ data_room/.venv/bin/python data_room/check.py
 | `01_overview/pitch_deck.pdf` | 14 slides. Slide 14 lists every number with its slide | yes |
 | `01_overview/company_overview.pdf` | One-page overview: what, who, traction, ask | yes |
 | `01_overview/pitch_video_script.md` | Two-minute script to read on a phone. It states a third ARR figure | yes |
+| `01_overview/claims.json` | The 14 rows of slide 14 as data (label, value, slide), written from the same list. The fallback when PDF text extraction fails | yes |
 | `02_financials/financial_model.xlsx` | Assumptions, P&L, ARR build, cohorts, hiring plan, cash and runway, with named cells | yes |
 | `02_financials/cap_table.xlsx` | Fully diluted cap table, SAFE conversion and Series A. Clean | yes |
 | `02_financials/expense_ledger.csv` | Expense lines by month with vendor and category | no |
