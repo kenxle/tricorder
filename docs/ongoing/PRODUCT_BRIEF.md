@@ -69,6 +69,20 @@ Everything about a startup, from its pitch deck and video to its financials to i
 
 **Diligence starts on the inbound, before anyone asks.** When a deck arrives, the scans run. By the time the investor opens the email, the readout is one click away, or the readout is the reply. This answers the voice-of-the-customer research's finding that the slow part is gathering: the gathering is done before the person looks.
 
+### What Tricorder gathers before the data room is opened
+
+An associate describes her routine: "Before I even open your data room, I already have ten tabs up. I’m checking your traffic, reviews, investors, any co-founder issues, and whether your story matches what’s online." ([associate at a seed fund, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)). Tricorder opens those tabs for her, automatically, the moment a company comes in. Sources and their terms are in [the feasibility research](../reports/20261022.02_research/research_feasibility.md), Part 2.
+
+| What she checks | What Tricorder gathers | Where from | Piece it feeds |
+|---|---|---|---|
+| Traffic | Web traffic and its trend for the company and its competitors | Akta's web traffic signal (its paid plan) | Traction, market |
+| Reviews | Ratings and review counts, and what reviewers complain about | App store pages through Apple's Search API and Google Play's public pages, plus review sites found through Tavily or You.com search | Customers, the pitch itself |
+| Investors | Who has invested, how much and when | Crunchbase, SEC Form D filings, press found by search, checked against the cap table in the room | The pitch itself, comps |
+| Co-founder issues | How long the founders have worked together, who left and when, public disputes | Founder bios in the room, founders' GitHub, personal sites, talks and press; never LinkedIn scraping | Team |
+| Whether the story matches what's online | Each claim in the deck checked against the website, press, Hacker News and Product Hunt, with dates | The website, Hacker News through the Algolia API, Product Hunt's API, search | Every piece the claim belongs to |
+
+On Saturday the demo company is invented and has no online footprint, so these show as cached competitor readings and as gaps ("not found online"). The online-presence and founder-profile scans that run this for a real company come after Saturday ([ROADMAP.md](ROADMAP.md)).
+
 ### The scans
 
 Each scan is one piece of first-pass diligence. Each returns a list of claims, and each claim carries at least one source. The order below is [the feasibility research's](../reports/20261022.02_research/research_feasibility.md) demo order, ranked by demo value for the build effort.
