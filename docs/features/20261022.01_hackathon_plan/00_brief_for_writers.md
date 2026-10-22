@@ -402,3 +402,9 @@ Added 2026-10-22 at 3:01 PM, on the product brief's "The problem":
 > don't reference the organizers. write a very brief intro to the problems you're listing
 
 Settled: product docs do not cite the organisers as a source for the problem; they speak from investors' own words. "The problem" opens with a one-sentence intro to the list.
+
+Added 2026-10-22 at 3:02 PM, on the product brief's problem list: Ken renamed the first bullet "The red flags investors name most are financial sloppiness." and said:
+
+> this is the brief. we can link to research, but counts like this do not belong in the brief
+
+Settled: the product brief states findings and links to the research; research counts, row numbers and script names stay in the research files. This applies to every ongoing doc written for a reader (product brief, personas summary, brand), not to FRAMEWORKS or the checklist, whose numbers are working data.
