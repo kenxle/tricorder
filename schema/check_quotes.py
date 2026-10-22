@@ -23,8 +23,8 @@ _SPACE = re.compile(r"\s+")
 
 def _norm(text: str) -> str:
     # Spacing and case ignored; typographic quotes and dashes folded to ASCII.
-    text = text.replace("’", "'").replace("‘", "'").replace("“", '"').replace("”", '"')
-    text = text.replace("–", "-").replace("—", "-").replace(" ", " ")
+    text = text.replace("\u2019", "'").replace("\u2018", "'").replace("\u201c", '"').replace("\u201d", '"')
+    text = text.replace("\u2013", "-").replace("\u2014", "-").replace("\u00a0", " ")
     return _SPACE.sub(" ", text).strip().lower()
 
 

@@ -10,3 +10,4 @@
 
 **Sources:** the diagrams folder listing
 - [claims_workflow.md](claims_workflow.md): how claims are pulled from the deck and the pitch video, checked against every other document and the outside world, labelled supported, contradicted or unsupported, and fed into the readout.
+- [system.md](system.md): how a company's files pass through the scans, the merge and the server to the page, and where the model and the readers sit.
