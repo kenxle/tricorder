@@ -4,19 +4,20 @@ Everything the factory built today for Deal Flow, NYC's first VC hackathon (Beta
 
 ## What I need from you
 
-- **Decide.** Nineteen cards in section 3, each with a recommendation. The critics settled three and added three more. Your 12:55 comment settled the edge, and your 1:12 edit added the steering card.
-- **Do this week.** Your rows on [the board](../../BULLETIN.md): the founder brief in your words, the pitch video, the keys, who joined and their repo access, the organisers' questions, the Reddit pages.
+- **Decide.** The open cards in section 3. Two are new: which real YC companies to run live, and which Startup Due Dil ideas to adopt. Settled ones show as decided panels.
+- **Do this week.** Your rows on [the board](../../BULLETIN.md): the founder brief in your words, reading the pitch scripts into video, approving the YC companies, the keys, who joined and their repo access, the organisers' questions, the Reddit pages.
 - **Read first.** The [one-page founder brief](founder_brief.md). It is what you hand the judges, and the organisers asked every team for it.
 
-Written 2026-10-22 at 11:55 AM. Updated 2:24 PM: your review of the product brief, personas and research is folded into every doc, and the reconciliation pass is running.
+Written 2026-10-22 at 11:55 AM. Updated 2:59 PM: everything you said on the product brief, personas, research and this page is in the docs, and the roadmap's table of your asks passes its check.
 
 ## What exists now
 
-1. **Research.** [Voice of the customer](../../reports/20261022.02_research/research_voice_of_customer.md): what investors check first, the flags they regret, what they pay for. [The landscape](../../reports/20261022.02_research/research_landscape.md): the market map in the organisers' three columns, the sponsor tools, the judges, and every public feature of Startup Due Dil, the partner-built tool closest to ours. [Feasibility per scan](../../reports/20261022.02_research/research_feasibility.md): what four people can build, every data source with its terms. [The data room](../../reports/20261022.02_research/research_data_room.md) and [what a data room is](../../reports/20261022.02_research/what_is_a_data_room.md). [The gaps](../../reports/20261022.02_research/research_gaps.md): online answers to what interviews would have asked. [Real investment memos](../../reports/20261022.02_research/research_memos.md): 28 published memos and 6 templates.
-2. **The ongoing docs.** [Product brief](../../ongoing/PRODUCT_BRIEF.md), [personas](../../ongoing/PERSONAS.md) grouped by stage, [brand](../../ongoing/BRAND.md), [roadmap](../../ongoing/ROADMAP.md) with a table of every ask you made and where it is built, [architecture](../../ongoing/ARCHITECTURE.md), [frameworks](../../ongoing/FRAMEWORKS.md) (every check and prompt a scan runs), the [diligence checklist](../../ongoing/CHECKLIST.md) and the [memo template](../../ongoing/MEMO_TEMPLATE.md).
-3. **The synthetic data room.** [Hollis Voice](../../../data_room/README.md), an invented phone agent for vet clinics raising a Series A. A 17-file room, a 12-file seed drop, an answer key of 8 planted red flags, 3 decoys and the green flags, cash that reconciles, a clean room with no flags, and a switch for a sealed variant room ([SEALING.md](../../../data_room/SEALING.md)). Every name and number is fictional.
-4. **The founder brief.** [One page](founder_brief.md) in the organisers' four headings. Yours to edit.
-5. **The critics.** [The judge](critique_judge.md), [buildability](critique_buildability.md), [the demo](critique_demo.md). Their fixes are applied.
+1. **Research.** [Voice of the customer](../../reports/20261022.02_research/research_voice_of_customer.md): what investors check first, the flags they regret, what they pay for. [The landscape](../../reports/20261022.02_research/research_landscape.md): the market map, the sponsor tools, the judges, and every public feature of Startup Due Dil, the tool closest to ours (Part 5). [Feasibility per scan](../../reports/20261022.02_research/research_feasibility.md). [The data room](../../reports/20261022.02_research/research_data_room.md), now with DocSend's checklists, and [what a data room is](../../reports/20261022.02_research/what_is_a_data_room.md). [The gaps](../../reports/20261022.02_research/research_gaps.md): online answers to what interviews would have asked. [Real investment memos](../../reports/20261022.02_research/research_memos.md): 28 published memos and 6 templates. [Real YC spring companies](../../reports/20261022.02_research/research_demo_companies.md) for the live demo.
+2. **A guide for every data-room document.** Six research agents are writing 33 guides, one per document a seed or Series A room can hold: what it is, what a first pass checks, green and red flags with sources, and how Tricorder checks it ([the guides](../../reports/20261022.03_document_guides/00_brief.md)). The customer and contract guides are in; the rest are landing.
+3. **The ongoing docs.** [Product brief](../../ongoing/PRODUCT_BRIEF.md), [personas](../../ongoing/PERSONAS.md) with your two primary personas, [brand](../../ongoing/BRAND.md) with your 10:34 AM pitch line, [roadmap](../../ongoing/ROADMAP.md) with a table of every ask you made and where it is built, [architecture](../../ongoing/ARCHITECTURE.md), the [claims workflow](../../ongoing/diagrams/claims_workflow.md), [frameworks](../../ongoing/FRAMEWORKS.md), the [diligence checklist](../../ongoing/CHECKLIST.md) and the [memo template](../../ongoing/MEMO_TEMPLATE.md).
+4. **Two synthetic data rooms.** [Hollis Voice](../../../data_room/README.md), a Series A phone agent for vet clinics, with a seed drop, a clean room and a sealed-variant switch. [Brasswick](../../../data_room/README.md), a seed-stage freight-invoice company with five different planted problems, three decoys and three real green flags. Every name and number is fictional, and both pass their checks.
+5. **The founder brief.** [One page](founder_brief.md) in the organisers' four headings, with your pitch line. Yours to edit.
+6. **The critics.** [The judge](critique_judge.md), [buildability](critique_buildability.md), [the demo](critique_demo.md). Their fixes are applied.
 
 ## Decisions
 
@@ -92,7 +93,7 @@ Your 1:12 PM edit: the readout is a working surface the operator can steer, not 
 
 ### Green flags in the demo room
 
-Your readout opens with the best green flags, but the demo room was built to be caught. After the generator was fixed, three pieces read strong: the round's terms ($9,000,000 raise, agreeing in the deck, cap table and model), the market estimate ($252,000,000) and the team (17 staff today). Every other business piece holds a planted red flag, and any planted flag makes a piece weak ([the data room](../../../data_room/README.md)). The honest problem: those three are the company agreeing with itself. A partner would not call a founder's own market estimate a green flag.
+Brasswick, the second room, already has three real green flags, each a number two independent files agree on. This card is about Hollis Voice. Your readout opens with the best green flags, but Hollis Voice was built to be caught. After the generator was fixed, three pieces read strong: the round's terms ($9,000,000 raise, agreeing in the deck, cap table and model), the market estimate ($252,000,000) and the team (17 staff today). Every other business piece holds a planted red flag, and any planted flag makes a piece weak ([the data room](../../../data_room/README.md)). The honest problem: those three are the company agreeing with itself. A partner would not call a founder's own market estimate a green flag.
 
 <div class="options">
 <div class="option"><span class="badge badge--purple">Recommended</span><h4>Free one business piece</h4><p>Remove the customer-concentration flag, so customers reads strong: the order forms, the revenue-by-customer file and the metrics export are independent files that agree. Six red flags remain, including all four the organisers named. The demo gets one real green flag a partner cares about.</p></div>
@@ -191,11 +192,53 @@ The buildability critic recommends option B: every role is budgeted to the minut
 
 ### The demo company
 
-<div class="panel panel--cobalt"><p><b>Decided by you at 2:35 PM: two data rooms.</b> Both are built and pass their checks (<a href="../../../data_room/README.md">data_room/README.md</a>).</p>
+<div class="panel panel--cobalt"><p><b>Decided by you at 2:35 PM: two data rooms.</b> Both are built and pass their checks.</p>
 <p><b>Hollis Voice, Series A.</b> An AI phone agent for vet clinics, raising $9M. It shows a full room with the organisers' four red flags, opened first as its thin seed drop.</p>
 <p><b>Brasswick, seed.</b> Freight invoice matching, raising $3M. It shows a thin seed room on a different business with different mistakes: revenue counted gross, a chart that skips a fall, contractors left out of burn, and a prepayment booked as one month.</p></div>
 
+Both rooms, how to regenerate them and their answer keys: [data_room/README.md](../../../data_room/README.md).
+
 **Plus a live demo on real companies**, per your 2:44 to 2:49 PM comments. Real YC companies from the spring batch are each paired with a fake data room, and the outside-world scan reads the real company's public footprint live on stage. A research agent is proposing candidates with their public footprint, and the list comes to you for approval. No room is generated until you approve it. Every page of those rooms says "Synthetic test document. Not this company's data." Hollis Voice and Brasswick stay as the controlled rooms whose planted flags are known.
+
+### Real YC companies for the live demo
+
+The research found YC's spring 2026 batch (193 companies on YC's own directory) and ranked six candidates with a public footprint the ten tabs can read ([research_demo_companies.md](../../reports/20261022.02_research/research_demo_companies.md)). Each gets a fake data room, labelled synthetic on every page; only its public footprint is real.
+
+<div class="options">
+<div class="option"><span class="badge badge--purple">Recommended</span><h4>Ploy and Sazabi</h4><p>Ploy runs a company's website and marketing; New York office; its SEC filing matches its announced $27M seed. Sazabi is monitoring for AI-era software, with public prices and an $8M seed. Both have rich public footprints and low risk.</p></div>
+<div class="option"><p class="eyebrow">Option B</p><h4>Ploy, Tasklet and Sazabi</h4><p>Adds Tasklet: AI agents for office work, published revenue, a New York lead investor. Its founder is well known, so a fake room under its name carries more risk.</p></div>
+<div class="option"><p class="eyebrow">Option C</p><h4>Pick from the six</h4><p>Name your picks in a comment; the other three are TesterArmy, Minicor and Expanse.</p></div>
+</div>
+
+<div class="choice" data-choice="yc-companies">
+<p class="choice-q">Which real companies get fake rooms for the live demo?</p>
+<button type="button" value="ploy-sazabi" data-recommended>Ploy and Sazabi</button>
+<button type="button" value="ploy-tasklet-sazabi">Ploy, Tasklet and Sazabi</button>
+<button type="button" value="pick-own">I'll pick in a comment</button>
+</div>
+
+### Ideas from Startup Due Dil
+
+The partner-built tool closest to ours ([research_landscape.md](../../reports/20261022.02_research/research_landscape.md), Part 5). Three of its ideas could go on the roadmap. Each is a separate yes or no.
+
+<div class="choice" data-choice="sdd-yellow">
+<p class="choice-q">A yellow "needs clarification" tier between red and green flags?</p>
+<button type="button" value="yes" data-recommended>Yes</button>
+<button type="button" value="no">No</button>
+</div>
+
+<div class="choice" data-choice="sdd-rerun">
+<p class="choice-q">Rerun a piece automatically when it reads "not enough in the room" but more could be fetched?</p>
+<button type="button" value="yes" data-recommended>Yes</button>
+<button type="button" value="no">No</button>
+</div>
+
+<div class="choice" data-choice="sdd-founder-mode">
+<p class="choice-q">A founder mode, where a startup runs Tricorder on its own room before raising?</p>
+<button type="button" value="yes">Yes</button>
+<button type="button" value="later" data-recommended>Later</button>
+<button type="button" value="no">No</button>
+</div>
 
 ### The inbox
 
@@ -294,13 +337,13 @@ Hacking runs 10:30 to 4:30 by the schedule. The Luma page also says nine hours; 
 <tbody>
 <tr><td>readers</td><td>backend-and-data</td><td>1.0</td><td>The shared file readers every scan and the quote checker import</td></tr>
 <tr><td>claim-result</td><td>captain</td><td>1.0</td><td>The quote checker; the Claim schema is written this week with the skeleton</td></tr>
-<tr><td>redflag-engine</td><td>design-and-finance</td><td>3.0</td><td>Script checks on the model, the CSVs and the deck's claims page</td></tr>
+<tr><td>redflag-engine</td><td>design-and-finance</td><td>3.0</td><td>Script checks on the model, the CSVs and the deck's claims page, plus the cells behind the green flags</td></tr>
 <tr><td>readout</td><td>captain</td><td>1.5</td><td>Groups the claims into pieces, marks each strong or weak by script, and picks the top green and red flags</td></tr>
 <tr><td>readout-page</td><td>frontend</td><td>4.25</td><td>The page the judges see, each claim opening its source in-page</td></tr>
 <tr><td>pitch-video</td><td>backend-and-data</td><td>2.5</td><td>Whisper transcript, claims with timestamps, the third ARR number</td></tr>
 <tr><td>redflag-readings</td><td>backend-and-data</td><td>1.0</td><td>The model readings (pilot clause, cohort note); first to be cut</td></tr>
 <tr><td>comps</td><td>design-and-finance</td><td>1.5</td><td>Comparable companies and rounds, ranked by script from cached filings</td></tr>
-<tr><td>market-signals</td><td>frontend</td><td>0.25</td><td>A static panel of this week's cached competitor readings</td></tr>
+<tr><td>market-signals</td><td>frontend</td><td>0.25</td><td>A static panel of this week's cached competitor readings, and the slot for the live outside-world scan on an approved real company</td></tr>
 <tr><td>demo-freeze</td><td>captain, all four</td><td>2.0 + 0.75</td><td>Merge, score, freeze at 3:30, two rehearsals of the three-minute core</td></tr>
 </tbody>
 </table></div>
@@ -325,12 +368,12 @@ Three critics read everything with fresh eyes. Their full files: [the judge](cri
 
 All on [BULLETIN.md](../../BULLETIN.md), newest first:
 
+- **Answer the cards** on this page, including the real YC companies and the Startup Due Dil ideas.
 - **Edit the founder brief** in your own words ([founder_brief.md](founder_brief.md)).
-- **Get the two-minute pitch video recorded** from [the script](../../../data_room/hollis_voice/01_overview/pitch_video_script.md), voiced by someone other than the presenter, as the demo critic advised; it says "about $3 million" on purpose.
+- **Read a few pitch scripts into video, flatly, one per room**: Hollis Voice's [script](../../../data_room/hollis_voice/01_overview/pitch_video_script.md) now, Brasswick's from its room, and one per approved real-company room.
 - **Say who accepted the invites, and add them to the GitHub repo.**
-- **Answer the cards** on this page, including which Startup Due Dil ideas to adopt (in the landscape research, Part 5).
-- **Get the sponsor keys**: Akta (ask for a coupon; the useful signals are on the $50 plan), Nicrron, You.com, Tavily, an Anthropic key, a GitHub token, a contact address for the SEC's User-Agent rule.
-- **Ask the organisers** who Roundtable is, which fund D. J. Patel is with, whether Abeera Saeed is still at Plug and Play, and whether the build window is six hours or nine, and how long each team's demo slot is. Plus the track change from the other session's row.
+- **Get the keys**: Anthropic, Tavily, You.com and a GitHub token now; Akta, Crunchbase and Nicrron arrive on the day, and the sponsor adapters switch to live on Saturday morning.
+- **Ask the organisers** who Roundtable is, which fund D. J. Patel is with, whether Abeera Saeed is still at Plug and Play, whether the build window is six hours or nine, and how long each demo slot is. Plus the track change.
 - **Save the Reddit pages** the research listed: 20 in the voice-of-the-customer research and 15 in the gaps research. Not blocking.
 
 ## How this was built
