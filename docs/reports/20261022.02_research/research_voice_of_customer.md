@@ -1,6 +1,6 @@
 # Voice of the customer: first-pass diligence (R1)
 
-Written 2026-10-22 for the Tricorder hackathon plan. It answers the organisers' three interview questions from public sources, as a stand-in until Ken runs his own interviews.
+Written 2026-10-22 for the Tricorder hackathon plan. It answers the organisers' three questions from public sources. It is the primary source for the plan, and [the research gaps](research_gaps.md) fill its gaps.
 
 ## What this means for Tricorder
 
@@ -12,9 +12,9 @@ Written 2026-10-22 for the Tricorder hackathon plan. It answers the organisers' 
   - **A fund's deal team at seed and Series A** starts inside the room with four documents: the cap table, the financial model, the incorporation papers and the IP assignments.
   - **Pre-seed investors** say there is almost no data at that stage, so they judge the founder.
   - For Tricorder this means the first screen cannot assume one reader or one stage. A thin pre-seed room needs the founder and outside-world pieces up front; a Series A room needs the financial pieces.
-- **The slowest part is gathering and checking, not writing.** A partner who built his own tool says so, and a junior VC lost weeks to a messy data room. No independent source gives hours for a first-pass memo. Ken's interviews need to get that number. So Tricorder has to make checking and cross-checking fast and easy: every number one click from its source, and one more from every other source that agrees or disagrees.
+- **The slowest part is gathering and checking, not writing.** A partner who built his own tool says so, and a junior VC lost weeks to a messy data room. No independent source gives hours for a first-pass memo. [The research gaps](research_gaps.md) look for that number. So Tricorder has to make checking and cross-checking fast and easy: every number one click from its source, and one more from every other source that agrees or disagrees.
 - **Funds already pay for this, which validates the idea.** A $600M fund runs its diligence on a commercial AI tool that turns a whole data room into a memo, with every claim linked to its source. Tricorder does not need to be very different from that. It does the same core job and adds to it: the readout that opens on the best green flags and worst red flags, the red-flag engine with accounting mislabels, fast cross-checking of any number, and the scans beyond the room (the pitch video, comps, market signals).
-- **Angels pay to avoid diligence, not to do it better.** One angel gives up upside to YC because he cannot do diligence himself. Another stopped and became an LP in funds. Angels lean on lead investors.
+- **Angels want diligence and lack the time, so they buy it by proxy.** One angel puts almost every check into YC companies because he has no time or skills for diligence and YC has done it; he gives up upside for that. Others wait for a lead investor or split the work with co-investors. Each is diligence done by someone else that the angel trusts and cannot check. For Tricorder, that is a market: a first pass the angel can run in the time they have.
 - **Accelerators have a volume problem and build their own triage.** One program needs about four minutes per application, 24 working days in all, and built its own ChatGPT screener. No evidence here that accelerators pay for a tool.
 
 ## How this was gathered
@@ -52,7 +52,7 @@ First-person regret stories are rare in public. Investors write the lesson more 
 
 **Speed that skipped the checks.** "Term-sheets that were signed within 24-48 hours were not considered an unusual occurrence during those times (though not a widespread practice either, it is important to emphasize)." ([secondary fund partner, Jul 2023](https://calcalistech.com/ctechnews/article/b1jfcymt3)). A corporate VC made the same point a year later (table row 39).
 
-**A gap for the interviews.** The seed fund guide asks founders for cohort retention curves, and every checklist does. No public regret story about hidden churn turned up. Ask about it directly.
+**A gap left open.** The seed fund guide asks founders for cohort retention curves, and every checklist does. No public regret story about hidden churn turned up. [The research gaps](research_gaps.md) look for one.
 
 ## 3. How long does your first-pass memo take, and which part is slowest?
 
