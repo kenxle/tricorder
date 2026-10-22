@@ -4,7 +4,7 @@ Everything the factory built today for Deal Flow, NYC's first VC hackathon (Beta
 
 ## What I need from you
 
-- **Decide.** The open cards in section 3. Two are new: which real YC companies to run live, and which Startup Due Dil ideas to adopt. Settled ones show as decided panels.
+- **Decide.** The open cards in section 3. New since 3:44 PM: who plugs the agents' work into the team's code on Saturday, whether a pilot may use real decks, and the accounts and services building everything needs. Settled ones show as decided panels.
 - **Do this week.** Your rows on [the board](../../BULLETIN.md): the founder brief in your words, reading the pitch scripts into video, approving the YC companies, the keys, who joined and their repo access, the organisers' questions, the Reddit pages.
 - **Read first.** The [one-page founder brief](founder_brief.md). It is what you hand the judges, and the organisers asked every team for it.
 
@@ -317,6 +317,53 @@ The brand doc read the USPTO's records: CBS Studios holds a live registration on
 <p class="choice-q">When do the product's numeric targets get set?</p>
 <button type="button" value="after-pilot" data-recommended>After the first pilot</button>
 <button type="button" value="predict-now">State predictions now</button>
+</div>
+
+### Who plugs the agents' work in on Saturday
+
+Building everything by Saturday means agents build most slices between now and Friday night. Each one has a "Joins on Saturday" line naming the team slice it plugs into. No role's Saturday hours cover that plugging-in yet ([roadmap](../../ongoing/ROADMAP.md)).
+
+<div class="options">
+<div class="option"><span class="badge badge--purple">Recommended</span><h4>Agents build the team's slices ahead too</h4><p>Agents build the skeleton, the readers, the engine and the readout page before Saturday, with everything wired together. Saturday becomes testing, fixing, the live company and rehearsal. Depends on the organisers allowing code written before Saturday.</p></div>
+<div class="option"><p class="eyebrow">Option B</p><h4>One person integrates on Saturday</h4><p>The team builds its slices on the day as planned. One person, probably backend-and-data, spends the morning plugging the agents' work in. That person builds less of their own.</p></div>
+</div>
+
+<div class="choice" data-choice="saturday-integration">
+<p class="choice-q">Who plugs the agents' work into the team's code?</p>
+<button type="button" value="agents-build-all" data-recommended>Agents build it all ahead</button>
+<button type="button" value="one-integrator">One person integrates Saturday</button>
+</div>
+
+### A pilot with real decks
+
+The product brief's "How we know it works" names a pilot fund judging Tricorder. A pilot means a fund's real decks and data rooms go into it. The commitment "No real company's confidential data. Every room is synthetic." rules that out as written.
+
+<div class="options">
+<div class="option"><span class="badge badge--purple">Recommended</span><h4>Scope the commitment to the demo</h4><p>Reword it as "No real company's confidential data in the demo. Every demo room is synthetic." A pilot fund runs Tricorder on its own deals, on its own copy, under its own agreement with the founders.</p></div>
+<div class="option"><p class="eyebrow">Option B</p><h4>Pilot on synthetic rooms only</h4><p>The pilot fund judges readouts of synthetic rooms built from its real deal types. Keeps the commitment as written, but tests less.</p></div>
+</div>
+
+<div class="choice" data-choice="pilot-data">
+<p class="choice-q">May a pilot use a fund's real decks?</p>
+<button type="button" value="scope-to-demo" data-recommended>Yes; scope the rule to the demo</button>
+<button type="button" value="synthetic-only">No; synthetic rooms only</button>
+</div>
+
+### Accounts and services to set up
+
+Building every feature now needs these. Each line is my recommendation.
+
+- **Host:** Railway, as for your other apps.
+- **Domain:** a subdomain you already own, until the name is settled.
+- **Inbound mail for forwarded decks:** Postmark's inbound address, which turns an email into a call to our server.
+- **Mailbox connection:** Gmail's read scope needs Google's review for a public app. Until then the app runs in testing mode, which allows up to 100 named test users. That covers the demo and a pilot.
+- **Bank check:** a free Plaid account, used in its sandbox with a made-up bank, or the labelled sample statement from the bank card.
+- **Product Hunt and GitHub for the founder scan:** their official APIs only, within their terms. No scraping.
+
+<div class="choice" data-choice="accounts">
+<p class="choice-q">Go with these recommendations?</p>
+<button type="button" value="yes" data-recommended>Yes, set them up</button>
+<button type="button" value="talk">Talk through some first</button>
 </div>
 
 ## The Saturday plan in one table
