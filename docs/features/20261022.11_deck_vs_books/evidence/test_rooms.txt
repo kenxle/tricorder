@@ -1,0 +1,45 @@
+# Production deck_vs_books.check on the test rooms the tests build, in a scratch folder. data_room/ is never written.
+
+## starts_late
+  redflags-001 [flag] deck_revenue_vs_pnl: The deck's ARR of $2,500,000 (slide 3) differs from the P&L's $2,240,868 (12 x 'Recurring revenue (subscription plus pilot)' for 2026-09), a gap of 11.6%.
+  redflags-002 [info] deck_revenue_vs_pnl: The deck's revenue chart on slide 3 has 15 bars for 2025-07 to 2026-09; their shape matches 'Recurring revenue (subscription plus pilot)' in the P&L (largest difference 0.3 points of the tallest bar).
+  redflags-003 [watch] deck_history_vs_metrics: Shows part of the history: the revenue chart on slide 3 starts at 2025-07, 6 months after the first revenue month in the books (2025-01); the months left out, 2025-01 to 2025-06, hold the climb from $2,651 to $19,462, with no fall.
+  redflags-004 [info] deck_revenue_vs_pnl: The deck's plan growth of 3.5% a month (slide 11) matches the model's plan columns, which grow 3.50% to 3.50% a month. It is a plan, not a period the books hold as actuals.
+
+## quarterly
+  redflags-001 [flag] deck_revenue_vs_pnl: The deck's ARR of $2,500,000 (slide 3) differs from the P&L's $2,240,868 (12 x 'Recurring revenue (subscription plus pilot)' for 2026-09), a gap of 11.6%.
+  redflags-002 [info] deck_revenue_vs_pnl: The deck's revenue chart on slide 3 has 7 bars for 2025-01 to 2026-09; their shape matches 'Recurring revenue (subscription plus pilot)' in the P&L (largest difference 0.4 points of the tallest bar).
+  redflags-003 [watch] deck_history_vs_metrics: Shows part of the history: the revenue chart on slide 3 shows quarters where the books hold months; no month inside a quarter fell.
+  redflags-004 [info] deck_revenue_vs_pnl: The deck's plan growth of 3.5% a month (slide 11) matches the model's plan columns, which grow 3.50% to 3.50% a month. It is a plan, not a period the books hold as actuals.
+
+## unreadable
+  redflags-001 [flag] deck_revenue_vs_pnl: The deck's ARR of $2,500,000 (slide 3) differs from the P&L's $2,240,868 (12 x 'Recurring revenue (subscription plus pilot)' for 2026-09), a gap of 11.6%.
+  redflags-002 [info] deck_history_vs_metrics: The revenue chart on slide 3 starts at 2025-01, the first revenue month in the books, and runs to 2026-09 with no month left out.
+  redflags-003 [info] deck_revenue_vs_pnl: The deck's plan growth of 3.5% a month (slide 11) matches the model's plan columns, which grow 3.50% to 3.50% a month. It is a plan, not a period the books hold as actuals.
+  gap: Not in the room: a readable chart on slide 3 (chart image could not be read; piece traction_and_revenue)
+
+## before_books
+  redflags-001 [flag] deck_revenue_vs_pnl: The deck's ARR of $2,500,000 (slide 3) differs from the P&L's $2,240,868 (12 x 'Recurring revenue (subscription plus pilot)' for 2026-09), a gap of 11.6%.
+  redflags-002 [info] deck_history_vs_metrics: The revenue chart on slide 3 runs from 2024-10 to 2026-09; the books begin at 2025-01, and no month they hold is left out.
+  redflags-003 [info] deck_revenue_vs_pnl: The deck's plan growth of 3.5% a month (slide 11) matches the model's plan columns, which grow 3.50% to 3.50% a month. It is a plan, not a period the books hold as actuals.
+  gap: Not in the room: monthly revenue for 2024-10 to 2024-12, shown on slide 3 (not stated in the file; piece traction_and_revenue)
+
+## no_claims_page
+  redflags-001 [flag] deck_revenue_vs_pnl: The deck's ARR of $2,500,000 (slide 3) differs from the P&L's $2,240,868 (12 x 'Recurring revenue (subscription plus pilot)' for 2026-09), a gap of 11.6%.
+  redflags-002 [info] deck_revenue_vs_pnl: The deck's revenue chart on slide 3 has 21 bars for 2025-01 to 2026-09; their shape matches 'Recurring revenue (subscription plus pilot)' in the P&L (largest difference 0.4 points of the tallest bar).
+  redflags-003 [info] deck_history_vs_metrics: The revenue chart on slide 3 starts at 2025-01, the first revenue month in the books, and runs to 2026-09 with no month left out.
+  redflags-004 [info] deck_revenue_vs_pnl: The deck's plan growth of 3.5% a month (slide 11) matches the model's plan columns, which grow 3.50% to 3.50% a month. It is a plan, not a period the books hold as actuals.
+
+## starts_late, P&L missing
+  redflags-001 [info] deck_revenue_vs_pnl: The deck's ARR of $2,500,000 (slide 3) is not matched to the books: no P&L to match against.
+  redflags-002 [info] deck_revenue_vs_pnl: The deck's revenue chart (slide 3) is not matched to the books: no P&L to match against.
+  redflags-003 [watch] deck_history_vs_metrics: Shows part of the history: the revenue chart on slide 3 starts at 2025-07, 6 months after the first revenue month in the books (2025-01); the months left out, 2025-01 to 2025-06, hold the climb from $2,651 to $19,462, with no fall.
+  redflags-004 [info] deck_revenue_vs_pnl: The deck's plan growth of 3.5% a month (slide 11) is not matched to the books: no P&L to match against.
+  gap: Not in the room: the monthly P&L (02_financials/financial_model.xlsx, P&L tab) (file missing; piece traction_and_revenue)
+
+## P&L and revenue rows missing
+  redflags-001 [info] deck_revenue_vs_pnl: The deck's ARR of $2,500,000 (slide 3) is not matched to the books: no P&L to match against.
+  redflags-002 [info] deck_revenue_vs_pnl: The deck's revenue chart (slide 3) is not matched to the books: no P&L to match against.
+  redflags-003 [info] deck_revenue_vs_pnl: The deck's plan growth of 3.5% a month (slide 11) is not matched to the books: no P&L to match against.
+  gap: Not in the room: the monthly P&L (02_financials/financial_model.xlsx, P&L tab) (file missing; piece traction_and_revenue)
+

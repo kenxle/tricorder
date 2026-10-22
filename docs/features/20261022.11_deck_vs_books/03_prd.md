@@ -60,11 +60,11 @@ A label the table does not cover is unmatched (DVB-R5).
 :::
 
 ::: callout-req
-**DVB-R6. Chart bars against the books.** The check counts the chart's bars and measures each bar's height in pixels. It compares each bar's height as a share of the tallest bar with each period's revenue as a share of the largest period. The bars match when the count equals the number of periods and the largest difference is at most `chart_shape_tolerance` (a new setting, default 2 points of the tallest bar). A match is an `info` claim. A wrong count or shape is a `flag` claim. Both use `deck_revenue_vs_pnl`.
+**DVB-R6. Chart bars against the books.** The check counts the chart's bars and measures each bar's height in pixels. It compares each bar's height as a share of the tallest bar with each period's revenue as a share of the largest period. The bars match when the count equals the number of periods and the largest difference is at most `chart_shape_tolerance` (in `schema/settings.py`, default 0.02, that is 2 points of the tallest bar). A match is an `info` claim. A wrong count or shape is a `flag` claim. Both use `deck_revenue_vs_pnl`.
 :::
 
 ::: callout-req
-**DVB-R7. Partial history.** The first revenue month is the first actual month in which "Total revenue" is above zero. The check compares it with the chart's first month. It writes a `flag` claim, check name `deck_history_vs_metrics`, that starts "Shows part of the history:" when any of these hold:
+**DVB-R7. Partial history.** The first revenue month is the first actual month in which "Total revenue" is above zero. The check compares it with the chart's first month. It writes a claim, check name `deck_history_vs_metrics`, that starts "Shows part of the history:" when any of these hold. Its severity is `flag` when the hidden months hold a dip (a month-on-month fall, or a peak above the chart's first month) or a flat stretch (three months in a row within 1 percent of each other), when months are skipped, or when quarters hide a monthly fall. It is `watch` when the hidden months hold only a climb, or quarters hide no fall (Ken's decision, 2026-10-22, relayed by the coordinator):
 
 - the chart starts after the first revenue month. The claim lists the months left out and says what they hold: the peak and the fall from it to the chart's first month when revenue fell, or the climb from the first to the last left-out month when it did not;
 - the chart has fewer monthly bars than its window has months. The claim says how many are skipped;
@@ -127,10 +127,11 @@ No flag. `scans/redflags/scan.py` already lists `deck_vs_books` in `CHECKS` and 
 Open, for Ken or the owner named:
 
 - **Q1. The ARR overlap with PF2 (readout owner).** On Hollis Voice this feature flags the deck's $2,500,000 against the P&L's $2,240,868 (12 times recurring revenue for 2026-09), a gap of 11.6%. The engine's `deck_claim_vs_named_cell` flags the same deck figure against `ARR_TOTAL`, which holds the same $2,240,868. The scorer counts neither twice, because the check names differ. The readout could show two red lines for one problem. Recommendation: keep both claims, because they cite different sources, and have the readout group flag claims with the same label, unit and period into one top flag. Source: [spike/out/hollis_voice.txt](spike/out/hollis_voice.txt).
-- **Q2. Flag or watch when the hidden months hold nothing bad (Ken).** On the test deck the six months left out hold a climb from $2,651 to $19,462, with no fall. The associate's rule calls any partial history questionable, so this PRD writes a flag. A watch would be the softer reading. Source: [spike/out/hollis_voice_chart_starts_late.txt](spike/out/hollis_voice_chart_starts_late.txt).
 - **Q3. A `revenue` value label (schema owner).** `Value.label` has `arr` and `mrr` but no revenue key. A deck's "Revenue, last 12 months" and the partial-history count use `other`, so the memo cannot link them across sources. Recommendation: leave it for Saturday; add `revenue` after.
 
 Resolved:
+
+- **Q2, flag or watch when the hidden months hold nothing bad.** Ken decided on 2026-10-22: a `watch`. It stays a `flag` when the hidden months hold a dip or a flat stretch. On the test deck the six months left out hold a climb from $2,651 to $19,462, so it is a watch ([evidence/test_rooms.txt](evidence/test_rooms.txt)).
 
 - Which check name for partial history: `deck_history_vs_metrics`, because `answer_key_brasswick.json` uses it for BF2 and `eval.score` matches on it.
 - Where the chart's numbers come from: the pixels, scale free, because the bar values are not in the PDF text and the model is not on the main path. The spike read 21, 9, 15 and 7 bars correctly and matched shapes within 0.4 points ([02_interface_example.md](02_interface_example.md)).

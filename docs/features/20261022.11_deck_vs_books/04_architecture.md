@@ -17,7 +17,7 @@ Read from `origin/claude/project-thread-ce34ga` at revision `573567f`, with `git
 | `xlsx_sheet(path, sheet)`, `xlsx_cell(path, ref)` | `schema/readers.py` | The P&L tab, and each cell's value for a quote. |
 | `csv_rows(path)` | `schema/readers.py` | The revenue rows (DVB-R9). |
 | `LocatorError` | `schema/readers.py` | Raised on a bad locator. The check turns it into a gap, never a crash. |
-| `load()` | `schema/settings.py` | `match_tolerance` (default 0.01). This feature adds `chart_shape_tolerance` (default 0.02). |
+| `load()` | `schema/settings.py` | `match_tolerance` (default 0.01) and `chart_shape_tolerance` (default 0.02, added by this feature). |
 | `Ids` | `scans/base.py` | `ids()` gives each new claim id, `redflags-NNN`. |
 | `find(room, kind)` | `scans/base.py` | `find(room, "deck")`, `find(room, "deck_claims")`, `find(room, "model")`, `find(room, "customers")`. |
 | `gap(what, why, would_need, piece)` | `scans/base.py` | Every gap, with `piece="traction_and_revenue"`. |
@@ -106,7 +106,7 @@ flowchart LR
 | ARR's books figure | 12 times the P&L's recurring line for the as-of month | `ARR_TOTAL`: already the engine's PF2 check. The subscription line only: that is entry 1.2's rebuild. |
 | The books | The P&L tab | The metrics export `monthly_metrics.csv`: a company export, not the books. BF2's key cites it, but the scorer only needs the deck file, which the claim cites. |
 | Partial-history check name | `deck_history_vs_metrics` | A new name: `eval.score` would then miss BF2. |
-| The match table | In each claim's text | A `Panel`: `ScanResult` has panels, but the `check()` contract returns only claims and gaps, so a panel cannot pass through it. See "Points to confirm". |
+| The match table | A `Panel`, "deck against the books", returned as `check()`'s third element | Only in claim texts: what the first draft chose, because the first contract returned only claims and gaps. The framework now merges a third element into `ScanResult.panels`. |
 
 ## Failure modes
 
@@ -122,9 +122,10 @@ flowchart LR
 
 It reads only files inside the room folder. It writes nothing; the engine writes `out/<room>/redflags.json`. No network, no secrets, no personal data.
 
-## Points to confirm with the skeleton owner
+## Points settled with the skeleton owner
 
-1. **No panel through `check()`.** The contract returns `(claims, gaps)`. This design needs no panel, so it fits. If the readout wants the match table as a panel, the engine would need a third return value.
-2. **No image reader in `schema/readers.py`.** The module renders the chart itself with pdfplumber. If the readers owner prefers, a `pdf_page_images(path, page)` reader could move there.
-3. **A new setting.** `chart_shape_tolerance: 0.02` goes into `schema/settings.py` `DEFAULTS`. That file belongs to the skeleton owner.
-4. **Test-deck sources.** A test deck made by the test fixture lives in a temporary room folder (a copy of the needed files), so its uris stay relative and the quote checker can read them. The spike used an absolute path instead.
+1. **Panels.** `check()` may return `(claims, gaps, panels)`, and `scans/redflags/scan.py` merges the panels. This module returns one.
+2. **No image reader in `schema/readers.py`.** The module renders the chart itself with pdfplumber. Still open: the readers owner may move it into a `pdf_page_images(path, page)` reader.
+3. **The setting.** `chart_shape_tolerance: 0.02` is in `schema/settings.py` `DEFAULTS`, with a comment naming the spike as its source.
+4. **Test-deck sources.** The test fixture builds each test room in pytest's `tmp_path`, so every uri stays relative and the quote checker reads it.
+5. **The bar reader scans the bottom-most bar row.** A bar under 1 percent of the tallest may be one or two pixels high. Scanning one row higher, as the spike did, missed it and reported a skipped month that was not there.

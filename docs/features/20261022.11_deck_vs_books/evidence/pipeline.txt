@@ -1,0 +1,47 @@
+# TRICORDER_OUT_DIR pointed at a scratch folder, so nothing was written to out/ in the repo.
+$ python3 -m scans.redflags data_room/hollis_voice
+redflags: 10 claims, 4 gaps -> <out>/hollis_voice/redflags.json
+$ python3 -m scans.memo data_room/hollis_voice && python3 -m eval.score data_room/hollis_voice
+missed PF1 Pilot booked as ARR
+missed PF2 Deck ARR disagrees with the model
+missed PF2b Video ARR disagrees with the deck
+missed PF3 Churn hidden in the cohort tab
+missed PF4 Burn and runway do not match the hiring plan
+missed PF5 Customer concentration
+missed PF6 Gross margin excludes hosting, inference and support
+missed PF7 Cumulative sign-ups shown as active clinics
+clear   DC1 Onboarding fee excluded from ARR correctly (decoy)
+clear   DC2 Annual prepay counted as recurring correctly (decoy)
+clear   DC3 Clean cap table (decoy)
+hollis_voice: found 0 of 8; decoys flagged 0 of 3
+
+deck_vs_books claims in <out>/hollis_voice/readout.json:
+  redflags-007 [flag] deck_revenue_vs_pnl: The deck's ARR of $2,500,000 (slide 3) differs from the P&L's $2,240,868 (12 x 'Recurring revenue (subscription plus pilot)' for 2026-09), a gap of 11.6%.
+  redflags-008 [info] deck_revenue_vs_pnl: The deck's revenue chart on slide 3 has 21 bars for 2025-01 to 2026-09; their shape matches 'Recurring revenue (subscription plus pilot)' in the P&L (largest difference 0.4 points of the tallest bar).
+  redflags-009 [info] deck_history_vs_metrics: The revenue chart on slide 3 starts at 2025-01, the first revenue month in the books, and runs to 2026-09 with no month left out.
+  redflags-010 [info] deck_revenue_vs_pnl: The deck's plan growth of 3.5% a month (slide 11) matches the model's plan columns, which grow 3.50% to 3.50% a month. It is a plan, not a period the books hold as actuals.
+  unverified from this check: 0
+  panels: ['accounting mislabels: entry', 'accounting mislabels: checks', 'accounting mislabels: lines', 'deck against the books', 'checklist coverage', 'checklist coverage counts', 'checklist ask lines']
+
+$ python3 -m scans.redflags data_room/brasswick
+redflags: 11 claims, 2 gaps -> <out>/brasswick/redflags.json
+$ python3 -m scans.memo data_room/brasswick && python3 -m eval.score data_room/brasswick
+found  BF1 Recoveries counted at their gross amount
+found  BF2 The deck's revenue chart starts after a fall
+found  BF3 Contractors left out of burn and runway
+found  BF4 An annual prepayment booked as one month's revenue
+missed BF5 Spoken runway above the deck
+clear   DC1 Annual prepayment spread correctly (decoy)
+clear   DC2 A contractor the plan keeps (decoy)
+clear   DC3 A cumulative count labelled as cumulative (decoy)
+brasswick: found 4 of 5; decoys flagged 0 of 3
+
+deck_vs_books claims in <out>/brasswick/readout.json:
+  redflags-007 [info] deck_revenue_vs_pnl: The deck's Revenue, last 12 months of $943,340 (slide 4) matches the P&L's $943,340 (sum of 'Total revenue', 2025-10 to 2026-09), a gap of 0.0%.
+  redflags-008 [info] deck_revenue_vs_pnl: The deck's MRR, September 2026 of $84,810 (slide 4) matches the P&L's $84,810 ('Subscription revenue' for 2026-09), a gap of 0.0%.
+  redflags-009 [info] deck_revenue_vs_pnl: The deck's revenue chart on slide 4 has 9 bars for 2026-01 to 2026-09; their shape matches 'Total revenue' in the P&L (largest difference 0.2 points of the tallest bar).
+  redflags-010 [flag] deck_history_vs_metrics: Shows part of the history: the revenue chart on slide 4 starts at 2026-01, 8 months after the first revenue month in the books (2025-05); the months left out, 2025-05 to 2025-12, hold a peak of $84,090 in 2025-09; revenue then fell 28.2% to $60,400 in the chart's first month; revenue fell month on month in 2025-10, 2025-12.
+  redflags-011 [info] deck_revenue_vs_pnl: The deck says revenue grew every month in 2026 (slide 4); in the P&L 'Total revenue' rose in every month from 2026-01 to 2026-09, and changed by -$2,705 from 2025-12 to 2026-01.
+  unverified from this check: 0
+  panels: ['accounting mislabels: entry', 'accounting mislabels: checks', 'accounting mislabels: lines', 'deck against the books', 'checklist coverage', 'checklist coverage counts', 'checklist ask lines']
+

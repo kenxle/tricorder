@@ -1,0 +1,5 @@
+$ python3 -m pytest scans/redflags/tests/test_deck_vs_books.py
+43 passed in 11.46s
+
+$ python3 -m pytest   (whole suite, working tree at 2026-10-22T20:18Z)
+184 passed in 14.39s

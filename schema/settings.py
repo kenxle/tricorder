@@ -22,6 +22,10 @@ DEFAULTS: dict[str, object] = {
     "runway_floor": 18,             # months
     "top_green_flags": 3,
     "top_red_flags": 5,
+    # deck_vs_books: a chart bar's height read from pixels, as a share of the tallest bar, may
+    # differ from the books by this much. Set by the team from the spike, whose largest gap on
+    # the rooms' charts was 0.4 points (docs/features/20261022.11_deck_vs_books/02_interface_example.md).
+    "chart_shape_tolerance": 0.02,
 }
 
 
