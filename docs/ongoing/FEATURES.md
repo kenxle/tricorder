@@ -69,7 +69,7 @@ Each scan is one piece of first-pass diligence. Each returns a list of claims, a
 
 Each scan's checks, with their inputs, tolerances and output shape, are written as entries in [FRAMEWORKS.md](FRAMEWORKS.md).
 
-**Contract terms, on Saturday.** Every contract in the room is read for its terms (length, notice and cancellation period, auto-renewal, pilot terms and any duty to convert, price and payment terms) and compared with how it is counted. A contract the customer can leave in 30 days, counted as a year of revenue, becomes a flag ([FRAMEWORKS.md](FRAMEWORKS.md), entry 1.13). Slices: [redflag-readings](ROADMAP.md#redflag-readings) and [contract-terms](ROADMAP.md#contract-terms).
+**Contract terms, on Saturday.** Every contract in the room is read for its terms (length, notice and cancellation period, auto-renewal, pilot terms and any duty to convert, price and payment terms) and compared with how it is counted. A contract the customer can leave in 30 days, counted as a year of revenue, becomes a flag ([FRAMEWORKS.md](FRAMEWORKS.md), entry 1.13). Slices: [contract-terms-saturday](ROADMAP.md#contract-terms-saturday) and [contract-terms](ROADMAP.md#contract-terms).
 
 **The claims workflow.** The deck and the pitch video make the claims. Every other document and the outside world either support each claim, contradict it, or say nothing. Tricorder extracts each claim, normalises it, finds the evidence, compares by script, and labels it supported, contradicted or unsupported. The labels feed the pieces ([diagrams/claims_workflow.md](diagrams/claims_workflow.md)). Saturday runs it for the planted flags in the deck and the video. The roadmap's claim-support slice runs it on every claim.
 
@@ -130,24 +130,9 @@ The closest competitors validate the idea. Several AI entrants already turn a da
 
 ## The demo
 
-The demo shows two kinds of room: invented companies whose planted flags are known, and real YC companies paired with fake data rooms.
+Saturday's demo runs on two invented rooms, Hollis Voice and Brasswick, and on real YC companies paired with fake data rooms. The rooms, the beat sheet, what runs live and the fallbacks are in [DEMO.md](DEMO.md).
 
-**The controlled rooms.** Every room is synthetic. The organisers require it: "Bring a synthetic data room; never upload a real company's confidential data." ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt)). Two invented companies have rooms whose planted flags are known ([what a data room is](../reports/20261022.02_research/what_is_a_data_room.md)).
-
-- **Hollis Voice**, an invented phone agent for independent veterinary clinics, raising a $9,000,000 Series A. The room has 17 files, eight planted red flags (seven kinds, one of them also stated on video), three clean decoys and three green flags. The counts are the lengths of the `full_room_files`, `flags`, `decoys` and `green_flags` lists in [answer_key.json](../../data_room/answer_key.json). Four of the planted kinds are the organisers' four examples. The other three are customer concentration, gross margin that leaves out delivery costs, and cumulative sign-ups shown as active customers. The generator also writes a clean room with nothing planted and a variant room whose flags someone outside the build picks and seals ([SEALING.md](../../data_room/SEALING.md)).
-- **Brasswick**, an invented seed-stage company. Its room is one thin tier and carries different kinds of planted flags, with its own answer key (`data_room/answer_key_brasswick.json`).
-
-**Real companies, live.** Real YC companies from the spring 2026 batch, from a list Ken approves, are each paired with a fake data room. On stage, the outside-world scan reads one real company's public footprint live: its website, Hacker News, the App Store and SEC filings. The room's documents are invented. One safeguard holds throughout: an invented room under a real company's name must never read as a claim about that company.
-
-- Every page of those rooms carries "Synthetic test document. Not this company's data."
-- The numbers are invented and plausible, anchored only to what the company has published.
-- Planted problems are named test plants in the answer key and on screen, and the demo says so out loud.
-- The company's public facts (name, product, the founders' public bios, any announced round) come only from public pages, saved with links.
-- Ken picks the companies. A research agent proposes candidates with their public footprint, and the rooms are generated only after Ken chooses.
-
-**The order on stage.** The demo opens on Hollis Voice's readout, already waiting because the run finished before the captain walked up: the top green and red flags, then the overview. It drills into the weakest piece (revenue, with its four ARR numbers) and then into one strong piece, showing the sources that agree in both directions. Then it switches to the approved real company, whose outside-world scan runs live while the judges watch. If a live call fails, the panel shows the copy saved this week, with its date.
-
-**Built by:** [data-room](ROADMAP.md#data-room), [blind-room](ROADMAP.md#blind-room), [yc-rooms](ROADMAP.md#yc-rooms) and [demo-script](ROADMAP.md#demo-script) this week (the demo-script slice holds the beats); [demo-freeze](ROADMAP.md#demo-freeze) on Saturday; [room-templates](ROADMAP.md#room-templates) after Saturday.
+**Built by:** [data-room](ROADMAP.md#data-room), [blind-room](ROADMAP.md#blind-room), [yc-rooms](ROADMAP.md#yc-rooms) and [demo-script](ROADMAP.md#demo-script) this week; [demo-freeze](ROADMAP.md#demo-freeze) on Saturday; [room-templates](ROADMAP.md#room-templates) after Saturday.
 
 ## The rules every feature follows, in detail
 

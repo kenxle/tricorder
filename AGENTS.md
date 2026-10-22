@@ -39,6 +39,7 @@ Read these when the task touches them. Seneschal keeps the table current.
 | `docs/ongoing/USER_STORIES.md` | Building or changing a feature: the user story it serves, for the associate or the partner. |
 | `docs/ongoing/PERSONAS.md` | Writing for or building for a kind of investor: their problem in their words, the proof. |
 | `docs/ongoing/BRAND.md` | Writing any copy: the readout, the pitch, the demo, posts. |
+| `docs/ongoing/DEMO.md` | Preparing or rehearsing the Saturday demo: the rooms, the beat sheet, what runs live, the fallbacks. |
 | `docs/ongoing/ARCHITECTURE.md` | Touching code structure, module boundaries, data sources, environment variables. |
 | `docs/ongoing/STYLE_GUIDE.md` | Any frontend work. |
 | `docs/ongoing/TESTING.md` | Writing or running tests, or reading what the CI command runs. |
