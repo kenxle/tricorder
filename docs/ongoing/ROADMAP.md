@@ -1242,7 +1242,8 @@ The financial modeling Ken asked for in the 10:10 AM dictation. Saturday's [redf
 
 **Includes:**
 
-- The room's revenue, cost and headcount rows put into one monthly table with burn, cash and runway. Each cell links to the row it came from.
+- **Tricorder's own version of the model**, built from the raw data the way a Series A lead does ("a lead builds their own model from your raw data", [the data-room research](../reports/20261022.02_research/research_data_room.md), 1.3; Ken at 2:40 PM: "i was already planning on building our own versions of models"). The room's revenue, cost and headcount rows go into one monthly table with burn, cash and runway, and each cell links to the row it came from.
+- **Side by side with the company's model.** Every line of the company's model sits beside Tricorder's rebuilt line, and a difference beyond the match tolerance becomes a disagreement claim in the right piece.
 - Unit economics recomputed from the room's rows, by [FRAMEWORKS.md](FRAMEWORKS.md) entry 1.9.
 - The operator can change one assumption, such as a hire's start month or a churn rate, and see runway move. The script's own figure stays on screen beside it, and the operator's case is marked as theirs.
 - Market size, bottom-up, stays in [frameworks-scan](#frameworks-scan) (entry 5.6).
