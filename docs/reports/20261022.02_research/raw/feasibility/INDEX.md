@@ -14,6 +14,7 @@ Written by raw_index.py. Each line is one saved file.
 - [hn/](hn/INDEX.md)
 - [parsing/](parsing/INDEX.md)
 - [ph/](ph/INDEX.md)
+- [plaid/](plaid/INDEX.md)
 - [search/](search/INDEX.md)
 - [social/](social/INDEX.md)
 - [video/](video/INDEX.md)
