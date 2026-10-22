@@ -76,6 +76,8 @@ Three of the day's blocks are writing rules with nothing to build: the 1:21 PM b
 | Speed: start every scan as early as its input exists, readout fills in as results land | 2:19 PM | [inbound-unasked](#inbound-unasked) | After |
 | Steering easy enough for a partner who runs diligence: one plain sentence on the line that looks wrong, no setup, the answer on that line | 2:21 PM (Ken's edit to the product brief, "Steering the readout") | [steering](#steering) | After |
 | The claims workflow: extract claims from the deck and video, check whether the other documents support them | 2:41 PM | [claim-support](#claim-support) | After |
+| Templated data rooms with hidden issues, names swapped on the fly, one per problem story | 2:46 PM | [room-templates](#room-templates) | After |
+| Synthetic rooms for 2 or 3 real YC spring companies so the internet scan runs live | 2:44 PM | [room-templates](#room-templates) | After |
 
 ### Proposals waiting on Ken
 
@@ -1114,6 +1116,27 @@ Low priority: Ken is not sure Tricorder can take this on. Reference calls are ro
 - A list of people the operator could ask, drawn from the founder profiles and the outside-in tabs: former colleagues shown in dated sources, co-investors named in Form D or press, and customers named in the deck. Each person carries the source that names them.
 - A short question list for each person, drawn from the readout's weak pieces. Each question cites the claim it comes from.
 - Tricorder never contacts anyone. It finds no contact details beyond what the source that names the person already shows.
+
+**Who:** agent.
+
+**Judgment:** yes.
+
+### room-templates
+
+Templated data rooms with hidden issues ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:46 PM block). Ken: "we should actually set up a few different data rooms that will allow us to highlight different problems. the data rooms will need to be a little bit templated, so we can swap in new names on the fly, but we should make data rooms with hidden isseus in them, based on the problems we saw in the reserach." This week's generator already writes Hollis Voice, a second company, a clean room and a sealed variant; this slice turns it into a template engine.
+
+**Waits on:** this week's data-room work (Hollis Voice, the second company, the real-company rooms) merged.
+
+**Includes:**
+
+- **A company profile swapped in on the fly:** name, sector, product, stage, founders, round, and for a real company its public facts with their links. One command writes a full room from a profile.
+- **A library of hidden issues**, one plant per problem the research found: ARR that is not recurring, hidden cohort churn, burn out of line with the hiring plan, deck against model, deck revenue against the P&L and partial history, customer concentration, gross margin that leaves out costs, a vanity count, billings or deferred revenue shown as revenue, contractors left out of burn, contract terms that undercut how revenue is counted, cap-table problems. Each plant names the research it comes from, where it lives in the room, and the check that should catch it.
+- **Green flags and decoys** chosen the same way, so every room has real strengths and traps, not only problems.
+- **A room recipe:** a profile plus a set of plants, green flags and decoys, with a seed. Recipes for the demo (one per problem story Ken wants to tell) are saved and rerunnable.
+- Every room from a real company's profile carries "Synthetic test document. Not this company's data." on every page, and its plants are named test plants.
+- The answer key is written from the recipe, and `check.py` checks any room against its key.
+
+**Done when:** a new room is generated from a profile and a recipe in one command; three recipes highlight three different problem sets; each passes `check.py`; and swapping the profile changes every name and leaves every planted problem in place.
 
 **Who:** agent.
 

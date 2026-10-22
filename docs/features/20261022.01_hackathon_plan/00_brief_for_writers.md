@@ -350,3 +350,11 @@ Settled, with one safeguard:
 - **Two or three real YC companies from the spring 2026 batch** get synthetic data rooms, so the outside-world scan (the associate's ten tabs) runs live on real public footprints during the demo, while the room documents are invented.
 - **Safeguard.** An invented room under a real company's name must never read as a claim about that company. Every page of those rooms carries "Synthetic test document. Not this company's data." The numbers are invented and plausible, anchored only to what the company has published. Planted problems are named test plants in the answer key and on screen, and the demo says so out loud. The real company's public facts (name, product, founders' public bios, any announced round) come only from public pages, saved with links.
 - **Ken picks the companies.** A research agent proposes candidates with their public footprint; the overview page carries a card; the rooms are generated only after Ken chooses.
+
+Added 2026-10-22 at 2:46 PM, on the same comment:
+
+> yes they say don't use real confidential data, but to do internet scraping we have to use real companies. we'll just fake the data room
+
+> and we should actually set up a few different data rooms that will allow us to highlight different problems. the data rooms will need to be a little bit templated, so we can swap in new names on the fly, but we should make data rooms with hidden isseus in them, based on the problems we saw in the reserach. this can be on the roadmap
+
+Settled: the generator becomes a template engine (`room-templates` on the roadmap): a company profile swapped in on the fly, a library of hidden issues drawn from the research's problems, green flags and decoys, and saved recipes, one per problem story. Real-company rooms are built from it with the 2:44 PM safeguard.
