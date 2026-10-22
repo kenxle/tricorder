@@ -26,8 +26,9 @@ By identifying gaps, highlighting strengths, rigorously showing its work, and ad
 
 ## Who it is for
 
-**The buyer is the fund.** A partner or principal at a seed or Series A fund decides and pays. **The user is the associate** who does the first pass today. At some funds the partner does the first pass too; one seed fund writes that its partners run diligence themselves (R1, row 11). Full personas, ranked by evidence, are in [PERSONAS.md](PERSONAS.md).
+Investors deciding whether to put money into a startup, starting with venture funds at seed and Series A. Full personas, ranked by evidence, are in [PERSONAS.md](PERSONAS.md).
 
+- **Buyer and user.** The fund buys: a partner or principal decides and pays. The operator uses it: usually the associate who does the first pass today, and at some funds the partner, since one seed fund writes that its partners run diligence themselves (R1, row 11).
 - **Partner or principal (buyer).** Rated pay, inferred, in R1. Funds already pay for data and for commercial diligence tools (R1, "What they pay for"; R2, Part 1).
 - **Associate (user).** Rated do. Does the work by hand today and pays for nothing.
 - **Solo angel.** Rated pay, but what angels pay for is avoiding diligence: they give up upside to an accelerator or become an LP in funds (R1, rows 44 and 53). That is a pricing warning. An angel product has to be cheaper than skipping the work, and R2 found memo tools already priced at $12 a memo (the Apify actor) and $0 to $30 a month (Energent).
