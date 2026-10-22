@@ -10,7 +10,7 @@
 
 **Describes:** the code root named in Settings
 
-**Sources:** The feasibility research ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), the main source: stack, scans, data sources, keys, model calls), the data room research ([research_data_room.md](../reports/20261022.02_research/research_data_room.md): the generator, the plants, the answer key), the landscape research ([research_landscape.md](../reports/20261022.02_research/research_landscape.md): sponsor tools, what the panel will ask), the writers' brief ([00_brief_for_writers.md](../features/20261022.01_hackathon_plan/00_brief_for_writers.md): the inbox block and the data rule), the guardrails ([guardrails.md](../../.claude/guardrails.md)), and three official pages read on 2026-10-22 for the inbox design: Google's [Gmail API scopes](https://developers.google.com/workspace/gmail/api/auth/scopes), Microsoft's [Graph permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference) and Postmark's [inbound webhook](https://postmarkapp.com/developer/webhooks/inbound-webhook). No code exists yet; this doc is the design the [roadmap](ROADMAP.md) builds.
+**Sources:** The feasibility research ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), the main source: stack, scans, data sources, keys, model calls), the data room research ([research_data_room.md](../reports/20261022.02_research/research_data_room.md): the generator, the plants, the answer key), the landscape research ([research_landscape.md](../reports/20261022.02_research/research_landscape.md): sponsor tools, what the panel will ask), the research gaps ([research_gaps.md](../reports/20261022.02_research/research_gaps.md): how decks reach investors), the writers' brief ([00_brief_for_writers.md](../features/20261022.01_hackathon_plan/00_brief_for_writers.md): every "Added" block from 11:20 AM to 2:19 PM, for the inbox, the data rule, steering, contracts, the bank check, the ask list, the checklist, the memo, reader copies, multiplayer and speed), [PRODUCT_BRIEF.md](PRODUCT_BRIEF.md), [CHECKLIST.md](CHECKLIST.md) with [checklist.csv](checklist.csv), [MEMO_TEMPLATE.md](MEMO_TEMPLATE.md), the after-Saturday slices in [ROADMAP.md](ROADMAP.md), the overview page's skeleton card ([00_overview.md](../features/20261022.01_hackathon_plan/00_overview.md)), the guardrails ([guardrails.md](../../.claude/guardrails.md)), and four official pages: Google's [Gmail API scopes](https://developers.google.com/workspace/gmail/api/auth/scopes), Microsoft's [Graph permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference) and Postmark's [inbound webhook](https://postmarkapp.com/developer/webhooks/inbound-webhook), read on 2026-10-22, and Plaid's [Sandbox custom users](https://plaid.com/docs/sandbox/user-custom/) ([saved copy](../reports/20261022.02_research/raw/feasibility/plaid/sandbox_user_custom.md)). No product code exists yet. This doc is the design the [roadmap](ROADMAP.md) builds, starting with the empty skeleton an agent writes this week (option B on the overview page's skeleton card).
 
 ## The stack
 
@@ -40,6 +40,8 @@ One folder per person, so Saturday's pull requests do not touch the same files. 
 | `cache/` | Outside data saved this week: Form D, XBRL facts, Akta pulls, pricing pages. | agent |
 | `sample_out/` | Hand-written example results, one per scan. | captain |
 | `out/` | Scan results, one folder per room. Ignored by git. | nobody; scans write it |
+
+After Saturday the layout adds `store/` (saved readouts, per fund, with delete), `inbox/` (the forwarding webhook), `scans/bank/` (the bank check), `memo/` (the memo export, its versions and reader copies) and `scenarios/` (what-if recomputation). Contract terms and deck against the books stay inside `scans/redflags/`, because they are red-flag entries in [FRAMEWORKS.md](FRAMEWORKS.md).
 
 Each scan keeps its tests inside its own folder (`scans/redflags/tests/`), so no shared test folder collects edits. Each scan also keeps its prompts, typed in from [FRAMEWORKS.md](FRAMEWORKS.md), in its own folder (`scans/redflags/prompts/`), so the scan's owner edits them and no shared `prompts/` folder collects edits.
 
@@ -100,6 +102,8 @@ class Piece(BaseModel):
     claim_ids: list[str]     # every claim in the piece, for the drill-down
     corroborating_sources: int   # independent sources behind its corroborated claims
     contradicting_sources: int   # sources behind its contradicted or flagged claims
+    status: Literal["done", "running", "waiting_on_input"] = "done"  # the progressive readout; Saturday is always "done"
+    waiting_on: list[str] = []   # inputs the piece still needs, such as "financial model"
 
 class TopFlag(BaseModel):
     kind: Literal["green", "red"]
@@ -107,6 +111,15 @@ class TopFlag(BaseModel):
     rank: int                # 1 is the strongest green or the worst red
     text: str                # the one headline line, with its numbers and sources
     claim_ids: list[str]     # the claims behind it, for the click into the piece
+
+class AskItem(BaseModel):
+    what: str                # "Current monthly burn and the bank balance behind it"
+    why: str                 # the claim or gap it would settle, with its number
+    piece: str               # the piece it feeds
+    from_kind: Literal["gap", "weak_piece", "checklist"]
+    claim_ids: list[str] = []    # claims or gaps it would settle
+    checklist_id: str | None = None  # "C29", when it comes from a missing checklist item
+    if_you_have_it: bool = False     # the item is only "lighter" at the company's stage
 
 class ScanResult(BaseModel):
     scan: str
@@ -118,7 +131,9 @@ class ScanResult(BaseModel):
     panels: list[Panel] = [] # optional named tables or lists the page shows beside the claims
 ```
 
-**The readout file** (`out/<room>/readout.json`) holds the top green and red flags first, then the nine Pieces in a fixed order, then every claim and gap. The page draws the headline list from the TopFlags, the overview from the Pieces, and the drill-down from the claims each Piece lists. A Piece's verdict and the choice of top flags come from script rules, never a model ([FRAMEWORKS.md](FRAMEWORKS.md), "Piece verdicts" and "Top green and red flags").
+**The readout file** (`out/<room>/readout.json`) holds the top green and red flags first, then the nine Pieces, then every claim and gap, then the ask list. The page draws the headline list from the TopFlags, the overview from the Pieces, the drill-down from the claims each Piece lists, and the ask list from the AskItems. A Piece's verdict and the choice of top flags come from script rules, never a model ([FRAMEWORKS.md](FRAMEWORKS.md), "Piece verdicts" and "Top green and red flags").
+
+**The order of the pieces is a view, not data.** On Saturday the page shows them in one default order and the operator can move them up and down. After Saturday the default order depends on the company's stage (pre-seed, seed, Series A), from a stated table beside "Piece verdicts" in FRAMEWORKS.md, and each operator's own order is saved per stage ([ROADMAP.md](ROADMAP.md), stage-views). Changing the order never changes a verdict.
 
 **Confidence is a label, not a number.** `computed`: a script recomputed the number from the source. `quoted`: a model read it and the quote checker found the quote. `judged`: a model's reading with nothing to recompute, such as whether a cohort note hides churn. `unverified`: the quote checker could not find the quote; the readout puts the claim in a "could not verify" box instead of the memo.
 
@@ -131,11 +146,12 @@ class ScanResult(BaseModel):
 | Function | `run(room_dir: Path) -> ScanResult` |
 | Command | `python -m scans.<name> <room_dir>`, for example `python -m scans.redflags data_room/hollis_voice_seed_drop` |
 | Output | `out/<room>/<name>.json`, one ScanResult |
-| Inputs | Files in the room, files in `cache/`, and outside calls only when `TRICORDER_OFFLINE` is unset |
+| Inputs | Files in the room, files in `cache/`, and outside calls only when `TRICORDER_OFFLINE` is unset. A room can be partial: a deck alone, or a folder of contracts alone, is a valid room. |
+| Needs | Each scan declares the input kinds it needs (company name, deck, model, metrics, contracts, video). After Saturday the scheduler uses this to start it early. |
 | Isolation | No scan imports another scan. A scan never reads another scan's output; only the memo does. |
 | Failure | A missing input or a refused call is a Gap, and the scan still exits 0. A crash exits non-zero. |
 
-**How the readout merges them.** `scans/memo/` reads every `out/<room>/*.json` that exists and runs the quote checker again. It links claims that carry a Value with the same label, unit and period whose numbers differ by more than the tolerance (1 percent, the data room research's deck-against-model tolerance), and writes each link into both claims' `conflicts_with`. It also links claims from independent sources whose numbers agree within the same tolerance, and writes each link into both claims' `corroborated_by`. Then it groups the claims into the nine pieces and gives each piece its verdict, by the script rule in [FRAMEWORKS.md](FRAMEWORKS.md) ("Piece verdicts"). Last, it picks the best green flags and the worst red flags from the piece verdicts and the flags, by the script rule in [FRAMEWORKS.md](FRAMEWORKS.md) ("Top green and red flags"). The readout opens on those, then lists the pieces in a fixed order, strong and weak alike, and each piece lists its claims for the drill-down. One model pass writes connecting sentences, and each must cite claim ids or it is dropped (feasibility 1.8). It may shorten a piece's reason line, but never change its verdict. A scan with no output file becomes a gap in the readout. The result is `out/<room>/readout.json`, which the page renders.
+**How the readout merges them.** `scans/memo/` reads every `out/<room>/*.json` that exists and runs the quote checker again. It links claims that carry a Value with the same label, unit and period whose numbers differ by more than the tolerance (1 percent, the data room research's deck-against-model tolerance), and writes each link into both claims' `conflicts_with`. It also links claims from independent sources whose numbers agree within the same tolerance, and writes each link into both claims' `corroborated_by`. Then it groups the claims into the nine pieces and gives each piece its verdict, by the script rule in [FRAMEWORKS.md](FRAMEWORKS.md) ("Piece verdicts"). Last, it picks the best green flags and the worst red flags from the piece verdicts and the flags, by the script rule in [FRAMEWORKS.md](FRAMEWORKS.md) ("Top green and red flags"). The readout opens on those, then lists the pieces, strong and weak alike, and each piece lists its claims for the drill-down. Then a script builds the ask list: one AskItem per gap (from its `would_need`), one per weak or mixed piece whose reason more information could settle, and, after Saturday, one per checklist item expected at the company's stage that the room lacks. Two lines that ask for the same thing are merged. One model pass writes connecting sentences, and each must cite claim ids or it is dropped (feasibility 1.8). It may shorten a piece's reason line, but never change its verdict. A scan with no output file becomes a gap in the readout. The result is `out/<room>/readout.json`, which the page renders.
 
 ## The data room and the answer key
 
@@ -176,9 +192,48 @@ How a steer runs:
 
 A steer can change what is read, how claims are grouped and how they are worded. An instruction that asks for a different number from a script is not carried out; the revision says so in one line, and the script's number stays.
 
+## Contracts as an input
+
+Customer contracts arrive with the room or on their own. A folder that holds only contracts is a valid room. The model reads each contract's terms (length, notice and cancellation period, auto-renewal, pilot terms and any duty to convert, price, payment terms and clauses such as change of control), and each term is a claim that quotes its clause. A script then compares the terms with how each customer is counted in ARR, MRR, concentration and the model's revenue. The model never decides a number is wrong. The rules are [FRAMEWORKS.md](FRAMEWORKS.md), entry 1.13. On Saturday a model reads only the pilot clause, in the redflag-readings slice, and only if that slice is kept. The full entry is the [contract-terms](ROADMAP.md#contract-terms) slice.
+
+## The progressive readout (after Saturday)
+
+Every scan starts the moment the inputs it needs exist ([writers' brief, 2:19 PM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). A small scheduler watches the company's folder. When a file lands, it starts every scan whose needs are now met and that has not run on those inputs: the outside-world scans on the company's name, the deck scan on the deck, the model checks when the model arrives. Each finished ScanResult triggers a fresh merge, so the readout fills in as results land. Pieces still missing inputs carry `status: waiting_on_input` and name the input, which also goes on the ask list. A scan reruns only when one of its own inputs changes. This is the [inbound-unasked](ROADMAP.md#inbound-unasked) slice.
+
+## Checklist coverage (after Saturday)
+
+[CHECKLIST.md](CHECKLIST.md) and its [checklist.csv](checklist.csv) list every item a first pass looks for, with the stage it is expected at and the FRAMEWORKS entry that checks it. The merge reads the CSV, takes the company's stage (from the deck's round slide, changeable by the operator), and marks each item expected at that stage as found, checked or missing. The counts come from that script. Missing items feed the ask list as above. This is the [checklist-coverage](ROADMAP.md#checklist-coverage) slice.
+
+## The memo export, reader copies and scenarios (after Saturday)
+
+**The export.** `memo/` turns a readout into a draft memo in the sections and order of [MEMO_TEMPLATE.md](MEMO_TEMPLATE.md). Each line is one of the template's line kinds (claim, reading, gap, operator, scenario) and keeps the claim ids behind it. The quote checker runs again on export. It writes two forms from the same data:
+
+- **The interactive memo.** A page that reads top to bottom like a memo. From any line, one click opens its claims; from a claim, one more opens its source and the sources that agree or disagree, using the same drill-down as the readout page.
+- **The static PDF.** The same sections, with every claim footnoted to its file, locator, quoted text and date read. It is made from the shared version only.
+
+**Versions and overlays.** The operator's memo is the shared version. Each operator edit or steer makes a new numbered version with a change-log line. Each reader gets an overlay on one shared version: their own steers and their scenario inputs, stored apart from the shared version and never written into it. The reader's page is the shared version with their overlay applied, and it says which version it started from.
+
+```python
+class ReaderOverlay(BaseModel):
+    reader: str
+    base_version: int
+    steers: list[Steer]              # same Steer as the readout's
+    scenario_inputs: dict[str, float | bool]  # e.g. {"pilot_counts_as_arr": False, "monthly_churn": 0.02}
+```
+
+**Scenarios are recomputed by scripts.** A scenario input goes to the same scripts that rebuilt the numbers (the [financial-model](ROADMAP.md#financial-model) slice), which run on an in-memory copy of the room's rows. The room's files are never written; a test hashes them before and after. Each recomputed figure is a separate scenario value shown beside the company's figure and the rebuilt figure. It is never written into a Claim or a Piece, so it changes no verdict and no flag. This is the [memo-export](ROADMAP.md#memo-export) and [reader-scenarios](ROADMAP.md#reader-scenarios) slices.
+
+## The bank check (after Saturday)
+
+With the founder's consent, the company's bank account is connected through Plaid, the first banking connector ([writers' brief, 1:52 PM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). The founder signs in through Plaid Link, so the investor never sees the bank credentials. `scans/bank/` reads balances and transactions and runs three script checks: deposits against the revenue rows, outflows against the model's burn, and the balance against the model's cash. A model only sorts messy transaction descriptions. The bank counts as a source independent of the deck and the model, so a match corroborates and a difference contradicts. It finds differences in reporting, not fraud. Bank data is stored with the readout and deleted with it, and withdrawing consent deletes the connection and every transaction pulled. Plaid's Sandbox supports custom test users with configured accounts and transactions, so tests run on a recorded Sandbox response and CI never calls Plaid. This is the [bank-check](ROADMAP.md#bank-check) slice.
+
+## Multiplayer (uncertain)
+
+Ken is not sure this works ([writers' brief, 2:05 PM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). If an online check of how syndicate leads and angel groups split diligence says it is worth building, the shape is: one stored readout that several people work at once; each person claims checklist items or pieces; every steer, edit and finding carries its author; a co-investor sees only what the lead shares. Reader overlays stay private until shared. Nothing in the Saturday design depends on it. This is the [multiplayer](ROADMAP.md#multiplayer) slice.
+
 ## The inbox input (after Saturday)
 
-The brief makes the inbox an input and recommends a forwarding address first, because it needs no OAuth review. None of the research tracks covered the inbox, so the facts below come from the three official pages named in the Sources line.
+The brief makes the inbox an input and recommends a forwarding address first, because it needs no OAuth review. The research gaps found that investors who write about it prefer a PDF in the inbox, and that early data rooms are mostly Google Drive folders ([research_gaps.md](../reports/20261022.02_research/research_gaps.md), section 3), which suits a forwarding address. The facts on each path below come from the three official pages named in the Sources line.
 
 | Path | How it works | What it costs us |
 |---|---|---|
@@ -231,6 +286,8 @@ All secrets come from the environment and are never committed ([guardrails.md](.
 | `PRODUCT_HUNT_TOKEN` | Presence scan, if its terms allow | After |
 | `OPENAI_API_KEY` | Whisper API fallback only | Optional |
 | `INBOUND_WEBHOOK_SECRET` | Checks that an inbound mail call came from the mail service | After (inbox-forward) |
+| `PLAID_CLIENT_ID`, `PLAID_SECRET` | The banking connector | After (bank-check) |
+| `PLAID_ENV` | `sandbox` for tests and demos | After (bank-check) |
 
 Nicrron's gateway is not in the stack. It is OpenAI-compatible ([research_landscape.md](../reports/20261022.02_research/research_landscape.md), Part 2), and we have not checked that it passes Anthropic's structured-output setting through.
 

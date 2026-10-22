@@ -10,12 +10,16 @@
 
 **Sources:**
 
-- [The writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)
+- [The writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), with every "Added" block from 10:17 AM to 2:19 PM
+- [The board](../BULLETIN.md), for the network card's pitch and the track change
 - [The team-name workshop page](../reports/20261022.01_hackathon_sources/team_name_workshop.txt)
 - [The organisers' problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt)
 - [Voice of the customer research](../reports/20261022.02_research/research_voice_of_customer.md)
-- [Landscape research](../reports/20261022.02_research/research_landscape.md)
-- [Data room research](../reports/20261022.02_research/research_data_room.md)
+- [The research gaps](../reports/20261022.02_research/research_gaps.md), for what the research can and cannot support about time and price
+- [Landscape research](../reports/20261022.02_research/research_landscape.md), including Part 5 on Startup Due Dil
+- [Data room research](../reports/20261022.02_research/research_data_room.md) and the generated room's [answer_key.json](../../data_room/answer_key.json)
+- [PRODUCT_BRIEF.md](PRODUCT_BRIEF.md), [MEMO_TEMPLATE.md](MEMO_TEMPLATE.md) and [CHECKLIST.md](CHECKLIST.md), for what the readout and the memo hold
+- [ROADMAP.md](ROADMAP.md), "demo-script", for the three-minute beat sheet
 - [Ken's communication style guide](../../../personal/context/personal/communication_style.md)
 - USPTO trademark records, linked in "The name's origin and the trademark risk" below
 - The judge's and the demo critic's critiques ([critique_judge.md](../features/20261022.01_hackathon_plan/critique_judge.md), [critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md)), for the pitch's length, the margin's revenue base and the answer on a room we didn't make
@@ -24,23 +28,20 @@
 
 **The name is Tricorder.** It is settled and posted. This doc does not reopen it.
 
-**The posted pitch** (on the Team Match Network since 10:04 AM on 2026-10-22, per the [workshop page](../reports/20261022.01_hackathon_sources/team_name_workshop.txt)):
-
-> Point it at a startup, get a readout. Thesis-driven sourcing plus a first-pass diligence memo with every claim sourced.
-
-**Proposed line for Saturday:**
+**The line**, settled by Ken at 1:09 PM ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:09 PM block):
 
 > Point it at a startup, get a readout: the best green flags, the worst red flags, and every number two clicks from its sources.
 
-Why the change:
+Use it on the demo's first screen, in the founder brief, in the pitch and in posts.
 
-- It says what the readout opens with: the best green flags and the worst red flags. Ken settled that shape at 12:55 PM and 1:09 PM ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 12:55 PM and 1:09 PM blocks).
+Why it works:
+
+- It says what the readout opens with: the best green flags and the worst red flags.
 - It says "a startup", not "a data room". Tricorder reads everything about a startup, from its pitch deck and video to its financials to its online presence ([PRODUCT_BRIEF.md](PRODUCT_BRIEF.md), "What it is").
-- Sourcing is Track 1. The posted line spends its first words on it. The new line keeps sourcing only as the way a partner checks a number: two clicks. Five AI tools already claim to link every claim to a source ([landscape](../reports/20261022.02_research/research_landscape.md)), so sourcing cannot carry the line alone.
-- Track 2 asks for three things: market signals, comps and red flags ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt)). The line does not name them. They appear in the readout as red flags at the top and as pieces of the overview (market, comps).
-- The first sentence keeps the posted rhythm, so the team card and the demo still sound like the same product.
+- It keeps sourcing as the way a reader checks a number: two clicks. Several tools already link every claim to a source, which shows funds want it ([landscape](../reports/20261022.02_research/research_landscape.md)). The line leads with what Tricorder adds on top.
+- The first sentence keeps the posted rhythm, so the team card and the demo sound like the same product.
 
-**Decision for the overview page.** Recommendation: use the proposed line on the demo's first screen and in the founder brief. Leave the posted line on the network card; it does not need editing.
+**The network card.** The Team Match Network still shows the line posted at 10:04 AM: "Point it at a startup, get a readout. Thesis-driven sourcing plus a first-pass diligence memo with every claim sourced." ([workshop page](../reports/20261022.01_hackathon_sources/team_name_workshop.txt)). At 10:34 AM Ken chose a replacement for the card: "Point it at a startup, get a readout. Tricorder takes any data: decks, videos, spreadsheets, data rooms. It reveals insight you can trust, every claim sourced." ([board](../BULLETIN.md), TRI-new-pitch). Only the organiser can edit the card, so Ken is asking on Saturday (the board row TRI-track-fix, which also asks for the track change). That line is Ken's own and stays as he wrote it.
 
 ### The name's origin and the trademark risk
 
@@ -94,11 +95,21 @@ These rules apply to the readout, the demo screens, the pitch and the posts.
 - Bad: Critical: runway is dramatically overstated.
 - Good: Runway: 37 months in the model. 19 months with the full hiring plan.
 
+**9. A strength gets the same care as a problem.** A green flag has its number, its sources and its length, the same as a red flag.
+
+- Bad: The round looks solid.
+- Good: The round adds up: $9,000,000 at $45,000,000 pre-money in the deck, computed the same in the cap table (pitch_deck.pdf, slide 13; cap_table.xlsx, Series A rows).
+
+**10. Say "differences in reporting", never "fraud".** Tricorder compares files with each other and with the outside world. It cannot tell a faked document from a real one.
+
+- Bad: Possible fraud in the revenue figures.
+- Good: The deck's ARR is $259,132 above the model's. The room does not explain the gap.
+
 ## The readout's voice
 
-The readout has three levels. First, a short headline list: the best green flags and the worst red flags. Second, the overview: one verdict line per piece of the company. Third, under each piece, the drill-down holds its claims in five shapes: a corroboration, a disagreement, a flag, a gap and a clean check. Hollis Voice is the proposed synthetic demo company: an AI phone agent for vet clinics, raising a Series A. The disagreement, flag, gap and clean-check examples use the numbers from the [data room research](../reports/20261022.02_research/research_data_room.md) (Part 3), which come from that research's seeded design script. Differences in those examples were computed with Python from those figures. The green-flag, red-flag, verdict-line and corroboration examples use the generated room (`data_room/hollis_voice/`) and its answer key (`data_room/answer_key.json`), and name the file and cell for each number.
+The readout has three levels. First, a short headline list: the best green flags and the worst red flags. Second, the overview: one verdict line per piece of the company. Third, under each piece, the drill-down holds its claims in five shapes: a corroboration, a disagreement, a flag, a gap and a clean check. Hollis Voice is the synthetic demo company: an AI phone agent for vet clinics, raising a Series A. The disagreement, flag, gap and clean-check examples use the numbers from the [data room research](../reports/20261022.02_research/research_data_room.md) (Part 3), which come from that research's seeded design script. Differences in those examples were computed with Python from those figures. The green-flag, red-flag, verdict-line and corroboration examples use the generated room (`data_room/hollis_voice/`) and its answer key (`data_room/answer_key.json`), and name the file and cell for each number.
 
-Order in the readout: the best green flags and the worst red flags first. Then the overview, one verdict line per piece in a fixed order, strong and weak alike. Inside a piece, the claim behind the reason line comes first, then corroborations, disagreements, flags, gaps and clean checks. This follows the product brief's rule that the operator sees what is great and what is wrong first, then the whole company, and that a strong piece counts as much as a weak one ([PRODUCT_BRIEF.md](PRODUCT_BRIEF.md), principle 2).
+Order in the readout: the best green flags and the worst red flags first. Then the overview, one verdict line per piece, strong and weak alike, in the default order for the company's stage or the order the operator set. Inside a piece, the claim behind the reason line comes first, then corroborations, disagreements, flags, gaps and clean checks. This follows the product brief's rule that the operator sees what is great and what is wrong first, then the whole company, and that a strong piece counts as much as a weak one ([PRODUCT_BRIEF.md](PRODUCT_BRIEF.md), principle 2).
 
 **What each shape means:**
 
@@ -109,7 +120,9 @@ Order in the readout: the best green flags and the worst red flags first. Then t
 - **A disagreement** is two or more documents in the room stating different values for the same thing. The readout lists them side by side and does not pick a winner.
 - **A flag** is a check that rebuilds a number from the raw files and finds the stated number does not hold.
 - **A gap** is a document or fact the check needs that is not in the room.
-- **A clean check** is a check that ran and found nothing. It is shown, so the partner knows it was done.
+- **A clean check** is a check that ran and found nothing. It is shown, so the operator knows it was done.
+- **An ask-list line** is one thing to request from the founder, with the claim or gap it would settle.
+- **A scenario number** is a figure a reader recomputed from their own what-if. It sits beside the real figures and is marked as theirs.
 
 ### A green flag and a red flag, at the top
 
@@ -139,6 +152,7 @@ Rules for the headline list:
 - A green flag says the documents agree. It does not say the number is true; documents from the same founder can agree and still be wrong together ([FRAMEWORKS.md](FRAMEWORKS.md), 1.11).
 - A red flag at the top is the same flag as in its piece's drill-down, said in one line. It links to that full flag.
 - Neither list is a call on the deal. The partner decides.
+- While scans are still running, the list says so: "Still running: [scans]. Flags so far below." It never presents a partial list as complete.
 
 ### A piece's verdict line
 
@@ -166,7 +180,8 @@ Rules for a verdict line:
 - The reason carries a number and its source, like every other line (rule 1). A mark with no reason is rule 1's bad example.
 - A strong piece gets a line the same length as a weak one. The overview is not a list of problems.
 - "Not enough in the room" says what the room is missing, the way a gap does. It is not a soft "weak".
-- Every piece appears, in the same order, on every readout.
+- Every piece appears on every readout. The default order suits the company's stage, and the operator can change it. The order never changes a verdict.
+- A piece whose scans have not finished says "running" or "waiting on [input]", not a verdict.
 
 ### A corroboration
 
@@ -280,7 +295,7 @@ Filled:
 > - Needed for: confirming the founders and any contractors assigned their work to the company. A seed fund's guide puts these on the first-pass list.
 > - Ask for: signed invention assignment agreements for both founders and every contractor who wrote code.
 
-The readout writes "not in the room". It does not write "likely", "probably" or "appears to", and it does not fill the gap from the web. A missing document is a question for the partner, not a flag on its own, because funds disagree on what a room should hold at each stage ([data room research](../reports/20261022.02_research/research_data_room.md), section 1.5).
+The readout writes "not in the room". It does not write "likely", "probably" or "appears to", and it does not fill the gap from the web. A missing document is a question for the operator, not a flag on its own, because funds disagree on what a room should hold at each stage ([data room research](../reports/20261022.02_research/research_data_room.md), section 1.5).
 
 ### A clean check
 
@@ -304,6 +319,28 @@ A request for more info:
 
 If the verdict did not move, the line says "Verdict unchanged." If the instruction asked for a different number from a check, the line says "The check's number stays: [number] ([source])."
 
+### An ask-list line
+
+Template:
+
+> **Ask for: [document or number].** Why: [the claim or gap it would settle, with its number]. Feeds: [piece].
+
+Filled:
+
+> **Ask for: current monthly burn and the bank balance behind it.** Why: the burn rebuilt from the hiring plan is above the model's, and the model's $1,800,000 of cash rests on the model alone. Feeds: burn and runway.
+
+Rules: one request per line, said so the operator can paste it into an email to the founder. An item the stage only sometimes has is asked for "if you have it". The figures are in the answer key's `facts` and in [MEMO_TEMPLATE.md](MEMO_TEMPLATE.md)'s example.
+
+### A scenario number
+
+Template:
+
+> | [Metric] | Company's figure | Tricorder rebuilt | Your scenario: [assumption] |
+> |---|---|---|---|
+> | | [value] ([source]) | [value] ([script or rows]) | [value] |
+
+The scenario column always names the assumption the reader changed. It never replaces the other two columns, and it never changes a verdict or a flag. It appears only in that reader's copy ([MEMO_TEMPLATE.md](MEMO_TEMPLATE.md), "Each reader's copy and their scenarios").
+
 ## Words we use and words we avoid
 
 **The metaphor in one line.** A tricorder scans and reads out what it finds; the person holding it decides.
@@ -314,7 +351,13 @@ If the verdict did not move, the line says "Verdict unchanged." If the instructi
 
 | Word | Means |
 |---|---|
-| readout | What Tricorder returns: the first-pass memo with its sources. |
+| readout | What Tricorder returns: a working surface the operator digs through, drills into and steers. Not a final document. |
+| operator | The person working in the readout and preparing the memo: usually the associate, at some funds the partner. |
+| steer | A one-sentence instruction on a piece: rewrite it, or get more info for it. |
+| ask list | The documents and numbers to request from the founder, one line each. |
+| checklist, coverage | The items a first pass looks for at each stage, and which of them the room has: found, checked or missing. |
+| scenario | A reader's what-if on the model, shown beside the real figures and marked as theirs. |
+| difference in reporting | Two files, or a file and the outside world, that state different values for the same thing. |
 | overview | The readout's first screen: every piece of the company with its mark and its reason in one line. |
 | piece | One part of the company the overview marks: traction and revenue, retention, burn and runway, unit economics, customers, market, comps, team, the pitch itself. |
 | looking strong | A piece with at least one corroborated number and nothing contradicted. Not a call on the deal. |
@@ -331,7 +374,7 @@ If the verdict did not move, the line says "Verdict unchanged." If the instructi
 | source | The file and location, or the link, behind a claim. |
 | gap | Something a check needs that is not in the room. |
 | first pass | The work before a second meeting. Not full diligence. |
-| memo | The written form of the readout, in the order a partner reads. |
+| memo | The draft for the partners' meeting, made from the readout in the template's order. Interactive, with a static PDF. Each reader gets their own copy. |
 | data room | The documents a startup shares with investors. |
 | comps | Comparable companies and recent rounds, each with the reason it is fair. |
 | signals | Outside evidence about a company and its competitors: hiring, traffic, reviews, pricing, customer wins. |
@@ -350,6 +393,8 @@ If the verdict did not move, the line says "Verdict unchanged." If the instructi
 | accurate, reliable, catches everything | Not without a score from a test run. See the claims table. |
 | verified, confirmed (of a number) | Say "corroborated" and name the sources. Documents that agree can still be wrong together. |
 | invest, pass, recommend | The partner decides. |
+| fraud, fake, detects fraud | Say "differences in reporting". Tricorder cannot tell a faked document from a real one. |
+| beat, rival, killer, versus a named competitor | The tools that already turn a data room into a sourced memo validate the idea. Say what Tricorder adds. |
 | likely, probably, appears to (in the readout) | State what the document shows, or write a gap. |
 
 ## The claims we make and where each came from
@@ -359,12 +404,15 @@ If the verdict did not move, the line says "Verdict unchanged." If the instructi
 | Claim | What it rests on | Link |
 |---|---|---|
 | A first pass takes an associate days of pulling data and rebuilding numbers. | The organisers' Track 2 problem statement, from VCs they talked to. | [problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt) |
-| The slow part is gathering and checking the data, not writing the memo. | A junior VC on weeks lost to a messy room; a fund partner who built his own tool, paraphrased by a reporter. | [junior VC](https://williamleonard.substack.com/p/learnings-from-year-2-in-venture), [tech.eu](https://tech.eu/2026/08/25/inside-startup-due-dil-the-ai-tool-turning-hours-of-vc-diligence-into-10-minutes/), [voice of the customer](../reports/20261022.02_research/research_voice_of_customer.md) |
+| The slow part is gathering and checking the data, not writing the memo. | A junior VC on weeks lost to a messy room; a fund partner who built his own tool, paraphrased by a reporter; the research gaps, where no source names the writing as the slow part. | [junior VC](https://williamleonard.substack.com/p/learnings-from-year-2-in-venture), [tech.eu](https://tech.eu/2026/08/25/inside-startup-due-dil-the-ai-tool-turning-hours-of-vc-diligence-into-10-minutes/), [voice of the customer](../reports/20261022.02_research/research_voice_of_customer.md), [research gaps](../reports/20261022.02_research/research_gaps.md) |
+| Full diligence takes investors about 118 hours a deal on average. Say "full diligence", never "a first pass". | A survey of 885 VCs; 81 hours at early-stage firms. | [academic survey of VCs, 2016](https://www.nber.org/system/files/working_papers/w22587/w22587.pdf), [research gaps](../reports/20261022.02_research/research_gaps.md), section 1 |
+| Angels already pay for diligence, by proxy. | Group dues, carry to syndicate leads and per-deal fees; a diligence tool sells angels a plan at $449 a month for up to 10 reports. | [research gaps](../reports/20261022.02_research/research_gaps.md), section 2; [dev.ua](https://dev.ua/en/news/startup-due-dil-1787664994) |
+| Funds already pay for tools that turn a data room into a memo, and one fund partner built his own. That validates the idea. | A vendor case study; journalism on the partner's tool. | [landscape](../reports/20261022.02_research/research_landscape.md), Parts 1 and 5 |
 | Investors treat numbers that disagree between the deck and the model as a red flag. | A seed fund's data room guide; a16z's data room guide gives a deck-against-model example. | [CRV](https://www.crv.com/content/what-is-a-data-room), [a16z](https://a16z.com/the-insiders-guide-to-data-rooms-what-to-know-before-you-raise/) |
 | Founders count pilots and cancellable contracts as ARR. | Six VCs to a business magazine, paraphrased; a secondary fund partner's column. | [Fortune](https://fortune.com/2025/09/28/how-is-arr-calculated-startups-venture/), [Calcalist](https://calcalistech.com/ctechnews/article/b1jfcymt3) |
 | Every claim in the readout links to its source. | Track 2's fourth direction and the product rule. True of what we build. Not unique: five AI tools claim it. | [problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt), [landscape](../reports/20261022.02_research/research_landscape.md) |
 | On the pages we read, no tool shows market signals, comps and financial red flags together. | The landscape script's count over the tools mapped. Say "on the pages we read". | [landscape](../reports/20261022.02_research/research_landscape.md) |
-| The buyer is a partner or principal at a seed or Series A fund; the associate uses it. | Persona ranking by say, do and pay. The pay evidence is inferred from a vendor case study. | [voice of the customer](../reports/20261022.02_research/research_voice_of_customer.md) |
+| The buyer is a partner or principal at a seed or Series A fund; the operator, usually the associate, uses it, and the partners read its memo. | Persona ranking by say, do and pay. The pay evidence is inferred from a vendor case study. | [voice of the customer](../reports/20261022.02_research/research_voice_of_customer.md), [PERSONAS.md](PERSONAS.md) |
 | The demo room is synthetic and nothing in it belongs to a real company. | The organisers' rule and the data room design. | [problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt), [data room](../reports/20261022.02_research/research_data_room.md) |
 | The readout found [n] of the planted flags and wrongly flagged [n] of the decoys. | The answer key scored against Saturday's run. Use the numbers from that run, on that screen. | [data room](../reports/20261022.02_research/research_data_room.md), section 3.6 |
 
@@ -372,11 +420,12 @@ If the verdict did not move, the line says "Verdict unchanged." If the instructi
 
 | Claim | Why not | What would let us |
 |---|---|---|
-| Any speed in hours or minutes ("underwrite in an hour") | No independent source gives first-pass hours. The only figures are vendor claims. "In an hour" is the organisers' headline, not our measurement. | Timed runs on real rooms, and [the research gaps](../reports/20261022.02_research/research_gaps.md) on how long a first pass takes. |
+| Any speed in hours or minutes ("underwrite in an hour") | The research gaps found no trustworthy public number for a first pass. The survey's 118 hours cover full diligence. The other figures are vendor claims. "In an hour" is the organisers' headline, not our measurement. | A pilot that times the fund's own first pass, then Tricorder's, on the same deals ([research gaps](../reports/20261022.02_research/research_gaps.md), section 1). |
 | Accuracy as a percentage, or "catches every red flag" | One synthetic room with planted flags is a test, not a measure. | A scored set of rooms, reported with how many there were. |
 | "Trusted by funds", "used by investors" | No fund uses it. | A named fund that agrees to be named. |
 | "The only tool that links claims to sources" | Five entrants claim it. | Nothing. Drop it. |
-| "Detects fraud" | The worst misses in the research were faked books and bank records, which only a check with the bank catches. Tricorder reads what the room contains. | A bank or accounting data connection, and a test that shows it. |
+| "Detects fraud" | Tricorder finds differences in reporting. It cannot tell a faked document from a real one, and a fake that agrees across every file gets through. The bank check after Saturday finds differences between the bank and the books, which is still not fraud detection. | Nothing. Drop it. |
+| Better than, or beats, a named competitor | The tools that turn a data room into a sourced memo validate the idea. Tricorder does the same core job and adds to it. | Nothing. Say what Tricorder adds. |
 | "Replaces an associate" | Untested, and it insults the user. | Nothing. Say it saves the associate the gathering. |
 | Cheaper than a named competitor | Most enterprise tools quote on request. | Published prices for both. |
 
@@ -384,11 +433,11 @@ If the verdict did not move, the line says "Verdict unchanged." If the instructi
 
 Written for Ken to say. Plain, with contractions, no absolutes. "I" for what Ken decided, "we" for what the team built.
 
-The spoken pitch fits the three-minute beat sheet in [ROADMAP.md, demo-script](ROADMAP.md#demo-script). The slot is likely three minutes or less, and VC judges already know the problem, so the pitch carries the open sentence, the beats and the close, and nothing else ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), finding 11).
+The spoken pitch is the three-minute core of the beat sheet in [ROADMAP.md, demo-script](ROADMAP.md#demo-script), and nothing else. The slot is likely three minutes or less, and VC judges already know the problem ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), finding 11). The beat sheet's lines are the script. Everything below them in this section is for the page or for answers to questions, never added to the three minutes.
 
-**Open (one sentence), said at 0:00 while the green and red flags are on screen, before the beat sheet's first line:**
+**Open, inside the 0:00 beat, before its line:**
 
-> When a startup sends a data room, an associate spends days rebuilding its numbers before a partner sees anything; Tricorder does that first pass and shows the partner the best green flags and the worst red flags, with every number two clicks from its source.
+> An associate spends days rebuilding a startup's numbers before a partner sees anything. Tricorder does that first pass.
 
 **The problem, in investors' words (two quotes, for the page, not the spoken pitch):** the founder brief carries the first. Both are here for answers to questions.
 
@@ -398,9 +447,9 @@ The spoken pitch fits the three-minute beat sheet in [ROADMAP.md, demo-script](R
 
 Say who wrote each one by role: a seed and Series A fund's guide, and a junior VC. If [the research gaps](../reports/20261022.02_research/research_gaps.md) turn up a better line in a person's or firm's own words, with its link, use it in place of the second.
 
-**The buyer, named, in one line at 2:30:** "The partner pays per seat." Behind it: the partner or principal at a seed to Series A fund pays. The associate uses it every day. Angels come next: they already pay to get diligence done by proxy, and a first pass of their own fits their time.
+**The buyer, named, in one line at 2:30:** "The partner pays per seat." Behind it, for questions: the partner or principal at a seed to Series A fund pays. The operator, usually the associate, uses it every day, and the partners read the memo it drafts. Angels come next: they already buy diligence by proxy, in group dues, carry and per-deal fees, and one diligence tool already sells them a plan at $449 a month for up to 10 reports ([research gaps](../reports/20261022.02_research/research_gaps.md), section 2; [dev.ua](https://dev.ua/en/news/startup-due-dil-1787664994)).
 
-**The one workflow shown:** the readout for Hollis Voice's full room is already on screen, because it ran before Ken walked up. It opens on the best green flags and the worst red flags. Under them is the overview: each piece of the company with its mark and its reason. Ken clicks the weakest piece, traction and revenue, and the four ARR numbers appear: about $3.0M said on video, $2.5M in the deck, $2.24M in the model, $2.06M in the billing rows ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), verdict). He clicks the video figure, then the model figure and the pilot clause, each opening in the page. Then he clicks one strong piece, the pitch itself: the deck's $9M at $45M pre-money, and the cap table that computes the same round, each source opening the other. Back on the overview: the other weak pieces' reasons, the gaps, and one line for the runs on the sealed variant room and the clean room. The forwarded pitch email is the closing "next" line.
+**The one workflow shown** (what the beat sheet puts on screen): the readout for Hollis Voice's full room is already on screen, because it ran before Ken walked up. It opens on the best green flags and the worst red flags. Under them is the overview: each piece of the company with its mark and its reason. Ken clicks the weakest piece, traction and revenue, and the four ARR numbers appear: about $3.0M said on video, $2.5M in the deck, $2.24M in the model, $2.06M in the billing rows ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), verdict). He clicks the video figure, then the model figure and the pilot clause, each opening in the page. Then he clicks one strong piece, the pitch itself: the deck's $9M at $45M pre-money, and the cap table that computes the same round, each source opening the other. Back on the overview: the other weak pieces' reasons, the gaps, and one line for the runs on the sealed variant room and the clean room. The forwarded pitch email is the closing "next" line.
 
 **Where the data goes, only when asked:** say the sentence in "Where the data goes" below, then: "Today's room is synthetic."
 
@@ -412,7 +461,9 @@ Say who wrote each one by role: a seed and Series A fund's guide, and a junior V
 
 - *You built the company, planted the flags and wrote the answer key. What does it find in a data room you didn't make?* Answer with the two runs, not the room we planted ([critique_judge.md](../features/20261022.01_hackathon_plan/critique_judge.md), finding 1). Someone outside the team planted a second room this week and sealed its key until our 3:30 freeze; here's what it found there, with the real numbers. On the same company with nothing planted, here's everything it flagged.
 - *Isn't this a wrapper on a model?* The checks are code that rebuild each number from the raw files. The sealed variant room and the clean run are the test. The model reads contracts and labels where code can't.
-- *Others already link claims to sources.* Yes, several do. Ours opens on the best green flags and the worst red flags, then an overview of what looks strong and what looks weak. It shows which sources agree on each number as well as which disagree, and it writes a gap as a gap instead of filling it.
+- *Others already link claims to sources.* Yes, and that's good news: funds already pay for it, and one fund partner built his own. We do that same job and add to it. Ours opens on the best green flags and the worst red flags, then an overview of what looks strong and what looks weak. It shows which sources agree on each number as well as which disagree, writes a gap as a gap, and ends with what to ask the founder for.
+- *Can it catch fraud?* No. It finds differences in reporting between files and against the outside world, and shows each one. A fake that agrees across every file gets through.
+- *How long does a first pass take today?* Nobody has published a good number for the first pass. A survey of 885 VCs puts all the diligence on a deal at 118 hours on average. The slow part is getting the information, and that's the part we do before you look.
 - *What happens when a scan fails?* The readout says which check didn't run and why. It doesn't leave the section blank.
 
 ## Posting voice
