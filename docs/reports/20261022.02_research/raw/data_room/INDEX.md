@@ -21,6 +21,8 @@ Written by raw_index.py. Each line is one saved file.
 - [cooley_vc_dd_request_list.txt](cooley_vc_dd_request_list.txt)
 - [cooleygo_com_documents_sample_vc_due_diligence_request_list.txt](cooleygo_com_documents_sample_vc_due_diligence_request_list.txt)
 - [crv_com_content_what_is_a_data_room.txt](crv_com_content_what_is_a_data_room.txt)
+- [docsend_com_blog_4_types_of_documents_founders_must_have.txt](docsend_com_blog_4_types_of_documents_founders_must_have.txt)
+- [docsend_com_blog_due_diligence_checklist.txt](docsend_com_blog_due_diligence_checklist.txt)
 - [docsend_com_blog_virtual_data_room_for_startups.txt](docsend_com_blog_virtual_data_room_for_startups.txt)
 - [eaglerockcfo_com_blog_series_a_preparation_data_room_checklist.txt](eaglerockcfo_com_blog_series_a_preparation_data_room_checklist.txt)
 - [ellty_com_blog_how_investors_review_a_data_room.txt](ellty_com_blog_how_investors_review_a_data_room.txt)
