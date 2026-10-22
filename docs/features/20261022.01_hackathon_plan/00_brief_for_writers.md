@@ -454,3 +454,25 @@ Added 2026-10-22 at 3:22 PM, on the product brief's principles:
 > another: Always defer to operator steering and judgment
 
 Settled: principle 2 is Ken's wording; principle 8 is "Always defer to operator steering and judgment". It sits with the earlier rule that a steer never silently changes a script's number: Tricorder follows the operator, and keeps the scripts' figures on screen beside any change.
+
+Added 2026-10-22 at 3:17 PM, on contracts as a Saturday input. Ken's decision:
+
+> include contract terms for sat
+
+Settled: contract terms are Saturday work, with no added hours. What moved:
+
+- The old red-flag model readings slice (backend-and-data, 2:30 to 3:30 PM, one hour) is now `contract-terms-saturday`. The model reads every contract in the room, not only the Marlow pilot: Hollis Voice's three, and Brasswick's Corvane agreement, two order forms and the Norrgate statement of work. It reads length, the notice that ends a contract kept apart from the notice not to renew, pilot terms and any duty to convert, and price and discounts.
+- The script runs three of entry 1.13's six comparisons on both rooms, against the ARR build or revenue build, the MRR column and the largest customer's share: notice against ARR, a pilot with no duty to convert, and counted price against contract price. On Brasswick the price check should find Ostley Freight's $27,540 booked against a $2,295 monthly fee.
+- The cohort note reading moved to after Saturday, into the `financial-model` slice. It no longer fit in the hour.
+- The cut order changed. The memo's model pass is first. Contract terms moved from first to fourth, after comps. The Brasswick half of the hour goes before the Hollis Voice half if time runs short.
+- The after-Saturday `contract-terms` slice now holds the other three comparisons (plan revenue past a contract's end, signed but not live, counted line with no contract), the exclusivity, most-favoured-customer and change-of-control clauses, and contracts beyond the room's.
+- The asks table row for contracts now reads "Saturday" and links only `contract-terms-saturday`.
+- Saturday hours are unchanged: backend-and-data is still readers 1.0, pitch-video 2.5 and one hour on contracts.
+
+Added 2026-10-22 at 3:24 PM, Ken's edits to the product brief's principles:
+
+He rewrote the script principle as: "We use deterministic checks for math, not model judgment. A script decides that a number is wrong. The model reads only what a script cannot, such as a contract clause or a spoken number. Decisions are routed to Jev or decision models. Judgment is sent to LLMs."
+
+On "Every claim links to its source" and "Identify strengths, weaknesses, and gaps and call them out": "these are committments".
+
+Settled: those two moved from principles to commitments. A three-way split governs model use: math goes to scripts; decisions (a yes or no, a label, a routing choice) go to Jev, TypeSafe's decision model, or another decision model; open judgment (reading, summarising, drafting) goes to an LLM. Architecture and roadmap follow this split.
