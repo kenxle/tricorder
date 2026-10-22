@@ -20,7 +20,7 @@
 
 ## What it is
 
-Point it at a startup, get a readout. Tricorder reads everything about a startup, from its pitch deck and video to its financials to its online presence. It runs a set of scans and analyses, creating a readout that gives the operator a detailed understanding of what's great about the business, and where the red flags are. This is not a final document, but something that the operator can actively dig through, drill down, and even steer, if they think areas need to be rewritten. The readout starts with the best green flags and the worst red flags. Then it breaks into the detail, described under [The readout](#the-readout).
+Point it at a startup, get a readout. Tricorder reads everything about a startup, from its pitch deck and video to its financials to its online presence. It runs a set of scans and analyses, creating a readout that gives the operator a detailed understanding of what's great about the business, and where the red flags are. This is not a final document, but something that the operator can actively dig through, drill down, and even steer, if they think areas need to be rewritten.
 
 Tricorder answers Track 2 of Deal Flow, Diligence: "Underwrite a startup in an hour, not two weeks" ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt)). Saturday's version demos on a synthetic data room ([what a data room is](../reports/20261022.02_research/what_is_a_data_room.md)). After Saturday it is a product sold to venture funds.
 
@@ -45,7 +45,7 @@ The organisers' statement, from VCs they spoke to: a first pass "still takes an 
 
 The market leaves a gap. R2 checked 24 tools: 12 that funds use today and 12 AI diligence entrants and fund-operations tools. Its script ([landscape_counts.py](../reports/20261022.02_research/landscape_counts.py)) found that none of the 24 shows market signals, comps and red flags in financials together. The incumbents describe a company from the outside. The entrants read data rooms and write memos.
 
-"Every claim links to its source" is no longer open ground. Five of the 12 entrants claim it (same script), and R1's strongest pay signal is a $600M fund using one of them ([vendor case study, paraphrased in R1](https://www.v7labs.com/news/moderne-ventures-accelerates-due-diligence-with-v7-go)). Sourcing is table stakes. Tricorder's edge is the top green and red flags, the overview under them, and the corroboration trail. A partner sees first the best green flags and the worst red flags, then which pieces of the company look strong and which look weak. Any number is two clicks from its source and from every source that corroborates or contradicts it. The red-flag engine proves each flag with a script, and its flags feed the overview.
+"Every claim links to its source" is no longer open ground. Five of the 12 entrants claim it (same script), and R1's strongest pay signal is a $600M fund using one of them ([vendor case study, paraphrased in R1](https://www.v7labs.com/news/moderne-ventures-accelerates-due-diligence-with-v7-go)). Sourcing is table stakes. Tricorder's edge is the top green and red flags, the overview under them, and the corroboration trail. The operator sees first the best green flags and the worst red flags, then which pieces of the company look strong and which look weak. Any number is two clicks from its source and from every source that corroborates or contradicts it. The red-flag engine proves each flag with a script, and its flags feed the overview.
 
 ## The jobs to be done
 
@@ -92,6 +92,8 @@ The framework entries are written in [FRAMEWORKS.md](FRAMEWORKS.md). The roadmap
 
 The readout is the product. Everything else feeds it.
 
+The readout starts with the best green flags and the worst red flags. Then it breaks into the detail.
+
 - **The best green flags and the worst red flags first.** The first screen is a short headline list: the strongest corroborated positives and the most serious problems, each with its number and source. A script picks them from the piece verdicts and the flags by a stated rule ([FRAMEWORKS.md](FRAMEWORKS.md), "Top green and red flags"). A green flag is as much the product as a red flag.
 - **Then the overview.** Under the headline list is the company in pieces: traction and revenue, retention, burn and runway, unit economics, customers, market, comps, team, the pitch itself. Each piece is marked looking strong, looking weak, mixed or not enough in the room. Each shows its reason in one line and how many sources corroborate and contradict it. A script sets each mark by a stated rule ([FRAMEWORKS.md](FRAMEWORKS.md), "Piece verdicts"). Strong pieces get the same space as weak ones.
 - **Two clicks to any source.** One click opens the claims behind a piece. One more opens a claim's source in place (the cell, the slide, the clause, the video second), with every other source that corroborates or contradicts it.
@@ -99,6 +101,17 @@ The readout is the product. Everything else feeds it.
 - **Gaps shown as gaps.** A fact the room does not hold is labelled "not in the data room". A missing document is a question for the partner, not a flag by default (R4, Part 1.5).
 - **Every claim links to its source.** A footnote opens the deck page, the spreadsheet cell, the URL with the date it was read, or the video second.
 - **A "could not verify" box.** A script checks that each claim's quote appears in its source. A claim that fails drops out of the memo and is listed here.
+
+### Steering the readout
+
+The readout is a working surface, not a final document ([writers' brief, 1:12 PM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)).
+
+- **The operator steers a section.** On any piece, the operator leaves a comment or a short instruction, such as "rewrite the market piece using only the competitor filings" or "treat the pilot as non-recurring".
+- **Tricorder reruns that section.** The scans behind the piece run again on that piece's inputs, and the piece is rewritten.
+- **The change shows.** The new piece replaces the old one with a visible diff. If the verdict moves, the claim that moved it is named.
+- **A steer changes the reading, not the numbers.** It can change what is read, how claims are grouped and how they are worded. A script's number stays as the script computed it.
+
+Saturday's demo may show one steer on stage, if the overview page's card says so. The roadmap carries steering as an after-Saturday slice ([ROADMAP.md](ROADMAP.md), "steering").
 
 ### The demo
 
@@ -128,6 +141,7 @@ The demo runs on R4's synthetic data room. The organisers require it: "Bring a s
 
 - **Every claim links to the exact page, cell, URL or video second it came from.** One click opens it, and the quote checker runs over the final page.
 - **Every missing fact shows as a gap instead of a guess.**
+- **A steer never changes a script's number because someone asked.** Every rewrite keeps its sources and shows what changed.
 - **Tricorder reports its own misses.** On the demo room it shows how many planted flags it found and how many decoys it wrongly flagged, scored against R4's answer key.
 - **The data rule above holds for every input.** The inbox makes it sharpest, so it is stated on the page where the inbox is connected.
 - **Saturday is build-only.** The organisers' instructions for this week say Saturday is for building only ([writers' brief, 10:18 AM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). This week is for everything else:
