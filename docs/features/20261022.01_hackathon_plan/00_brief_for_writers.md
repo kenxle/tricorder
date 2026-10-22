@@ -446,3 +446,11 @@ Added 2026-10-22 at 3:15 PM, a sentence Ken added to the product brief's Inputs:
 Settled: a `founder-requests` roadmap slice drafts requests from the ask list, each with guidance from the document guides on what to submit; the operator sends them from their own email.
 
 Added 2026-10-22 at 3:18 PM: Ken removed a "Ken's direction at 2:49 PM: ..." line from the product brief's demo section. Settled: product docs (the brief, FEATURES, PERSONAS, BRAND) state things plainly and carry no provenance of Ken's chat or this brief's time stamps; that history stays here in the writers' brief. ROADMAP's asks table is the exception, because tracing each ask is its job.
+
+Added 2026-10-22 at 3:22 PM, on the product brief's principles:
+
+> Identify strengths, weaknesses, and gaps and call them out.
+
+> another: Always defer to operator steering and judgment
+
+Settled: principle 2 is Ken's wording; principle 8 is "Always defer to operator steering and judgment". It sits with the earlier rule that a steer never silently changes a script's number: Tricorder follows the operator, and keeps the scripts' figures on screen beside any change.
