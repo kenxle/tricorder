@@ -4,7 +4,7 @@ Everything the factory built today for Deal Flow, NYC's first VC hackathon (Beta
 
 ## What I need from you
 
-- **Decide.** Twenty cards in section 3, each with a recommendation. The critics settled three and added three more. Your 12:55 comment settled the edge, and your 1:12 edit added the steering card.
+- **Decide.** Nineteen cards in section 3, each with a recommendation. The critics settled three and added three more. Your 12:55 comment settled the edge, and your 1:12 edit added the steering card.
 - **Do this week.** Your rows on [the board](../../BULLETIN.md): the founder brief in your words, the pitch video, the keys, who joined and their repo access, the organisers' questions, the Reddit pages.
 - **Read first.** The [one-page founder brief](founder_brief.md). It is what you hand the judges, and the organisers asked every team for it.
 
@@ -43,18 +43,7 @@ Each card is written to the recommendation. The alternative is there in case you
 
 ### The pitch line
 
-The brand doc proposes a tighter line for Saturday's first screen and the founder brief, and leaves the posted line on the network card as is ([BRAND.md](../../ongoing/BRAND.md), "The name and the line").
-
-<div class="options">
-<div class="option"><span class="badge badge--purple">Recommended</span><h4>The proposed line</h4><p>"Point it at a startup, get a readout: the best green flags, the worst red flags, and every number two clicks from its sources." Rewritten at 1:09 PM to your edit.</p></div>
-<div class="option"><p class="eyebrow">Option B</p><h4>The posted line</h4><p>"Point it at a startup, get a readout. Thesis-driven sourcing plus a first-pass diligence memo with every claim sourced." Sourcing is in it, and the track is diligence.</p></div>
-</div>
-
-<div class="choice" data-choice="pitch-line">
-<p class="choice-q">Which line on Saturday?</p>
-<button type="button" value="proposed" data-recommended>The proposed line</button>
-<button type="button" value="posted">The posted line</button>
-</div>
+<div class="panel panel--cobalt"><p><b>Decided by you at 10:34 AM</b>, in the team-workshop session (board row TRI-new-pitch): "Point it at a startup, get a readout. Tricorder takes any data: decks, videos, spreadsheets, data rooms. It reveals insight you can trust, every claim sourced." It goes in the pitch, the founder brief and posts, and replaces the line on the network card when the organiser changes it (board row TRI-track-fix). The 1:09 PM line, "Point it at a startup, get a readout: the best green flags, the worst red flags, and every number two clicks from its sources.", is kept only as a proposal for the readout's first screen.</p></div>
 
 ### Saturday's scans
 

@@ -28,18 +28,13 @@
 
 **The name is Tricorder.** It is settled and posted. This doc does not reopen it.
 
-**The line**, settled by Ken at 1:09 PM ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:09 PM block):
+**The line**, chosen by Ken at 10:34 AM (board row TRI-new-pitch, from the team-workshop session):
 
-> Point it at a startup, get a readout: the best green flags, the worst red flags, and every number two clicks from its sources.
+> Point it at a startup, get a readout. Tricorder takes any data: decks, videos, spreadsheets, data rooms. It reveals insight you can trust, every claim sourced.
 
-Use it on the demo's first screen, in the founder brief, in the pitch and in posts.
+Use it in the pitch, the founder brief, posts and on the network card. Ken's words are the line; do not edit them. "Insight" is his word here and stays, even though the avoid list below steers other copy away from "insights".
 
-Why it works:
-
-- It says what the readout opens with: the best green flags and the worst red flags.
-- It says "a startup", not "a data room". Tricorder reads everything about a startup, from its pitch deck and video to its financials to its online presence ([PRODUCT_BRIEF.md](PRODUCT_BRIEF.md), "What it is").
-- It keeps sourcing as the way a reader checks a number: two clicks. Several tools already link every claim to a source, which shows funds want it ([landscape](../reports/20261022.02_research/research_landscape.md)). The line leads with what Tricorder adds on top.
-- The first sentence keeps the posted rhythm, so the team card and the demo sound like the same product.
+**A second line for the readout's first screen**, proposed at 1:09 PM to match Ken's edit of the product brief, and not chosen by Ken: "Point it at a startup, get a readout: the best green flags, the worst red flags, and every number two clicks from its sources." Use it only under the readout's title, where it says what the screen shows. If Ken says no, drop it.
 
 **The network card.** The Team Match Network still shows the line posted at 10:04 AM: "Point it at a startup, get a readout. Thesis-driven sourcing plus a first-pass diligence memo with every claim sourced." ([workshop page](../reports/20261022.01_hackathon_sources/team_name_workshop.txt)). At 10:34 AM Ken chose a replacement for the card: "Point it at a startup, get a readout. Tricorder takes any data: decks, videos, spreadsheets, data rooms. It reveals insight you can trust, every claim sourced." ([board](../BULLETIN.md), TRI-new-pitch). Only the organiser can edit the card, so Ken is asking on Saturday (the board row TRI-track-fix, which also asks for the track change). That line is Ken's own and stays as he wrote it.
 

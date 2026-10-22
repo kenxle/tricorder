@@ -221,7 +221,7 @@ Tricorder is a product after Saturday, so this section is written for a product.
 
 - **Track 2, diligence.** Ken is asking the organiser to change the team's listing to diligence (the board row TRI-track-fix). The founder scan from Track 1 is one scan inside Tricorder, built after Saturday.
 - **The edge and the readout's shape** ([writers' brief, 12:55 PM and 1:09 PM blocks](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). The best green flags and the worst red flags first, then which pieces look strong and which look weak, and every number two clicks from its sources. Disagreements and red flags stay, as reasons a piece looks weak.
-- **The pitch line** (1:09 PM block): "Point it at a startup, get a readout: the best green flags, the worst red flags, and every number two clicks from its sources."
+- **The pitch line**: Ken chose "Point it at a startup, get a readout. Tricorder takes any data: decks, videos, spreadsheets, data rooms. It reveals insight you can trust, every claim sourced." at 10:34 AM (board row TRI-new-pitch). The 1:09 PM line, "Point it at a startup, get a readout: the best green flags, the worst red flags, and every number two clicks from its sources.", is a proposal for the readout's first screen only.
 - **No interviews** (1:34 PM block). Online research only. [The research gaps](../reports/20261022.02_research/research_gaps.md) are done.
 - **Angels are a market** (1:27 PM block). They want diligence, lack the time, and buy it by proxy.
 - **Competitors validate the idea** (1:36 PM block). Tricorder does the same core job and adds to it.

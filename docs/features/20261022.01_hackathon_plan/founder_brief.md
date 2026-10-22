@@ -36,7 +36,7 @@ We open on the readout for Hollis Voice, an invented vet-clinic phone agent, alr
 
 **Where the data goes.** Tricorder reads only the documents you give it or the decks in mail you send it, keeps only the readout and its sources, and lets you see and delete everything it pulled. Today's data room is synthetic.
 
-> Point it at a startup, get a readout: the best green flags, the worst red flags, and every number two clicks from its sources.
+> Point it at a startup, get a readout. Tricorder takes any data: decks, videos, spreadsheets, data rooms. It reveals insight you can trust, every claim sourced.
 
 ---
 
