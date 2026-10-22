@@ -1,0 +1,12 @@
+# Saved pages: raw/feasibility/parsing
+
+Written by raw_index.py. Each line is one saved file.
+
+## Files
+
+- [openpyxl_readthedocs_io_en_stable_.dl](openpyxl_readthedocs_io_en_stable_.dl)
+- [raw_githubusercontent_com_exceljs_exceljs_master_README_md.dl](raw_githubusercontent_com_exceljs_exceljs_master_README_md.dl)
+- [raw_githubusercontent_com_jsvine_pdfplumber_stable_LICENSE_txt.dl](raw_githubusercontent_com_jsvine_pdfplumber_stable_LICENSE_txt.dl)
+- [raw_githubusercontent_com_jsvine_pdfplumber_stable_README_md.dl](raw_githubusercontent_com_jsvine_pdfplumber_stable_README_md.dl)
+- [raw_githubusercontent_com_mozilla_pdf_js_master_README_md.dl](raw_githubusercontent_com_mozilla_pdf_js_master_README_md.dl)
+- [raw_githubusercontent_com_pymupdf_PyMuPDF_main_README_md.dl](raw_githubusercontent_com_pymupdf_PyMuPDF_main_README_md.dl)

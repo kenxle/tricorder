@@ -15,7 +15,7 @@ Written 2026-10-22 for the Tricorder hackathon plan. It answers the organisers' 
 
 ## How this was gathered
 
-- Hacker News through the Algolia API, plus fetched pages from fund blogs, investor columns, accelerators, one interview, vendor case studies and two news stories. Everything read is saved in [raw/voc/](raw/voc/). The script counts the files below.
+- Hacker News through the Algolia API, plus fetched pages from fund blogs, investor columns, accelerators, one interview, vendor case studies and two news stories. Everything read is saved in [raw/voc/](raw/voc/INDEX.md). The script counts the files below.
 - Each quote or paraphrase is one row of [voc_quotes.csv](voc_quotes.csv). [voc_counts.py](voc_counts.py) does the counting. [voc_table.py](voc_table.py) renders the table. [hn_fetch.py](hn_fetch.py), [hn_digest.py](hn_digest.py) and [web_fetch.py](web_fetch.py) did the fetching.
 - Quotes come only from a person's or firm's own post, column, comment or interview page. News stories, podcast summaries and vendor case studies are paraphrased and marked.
 - Hacker News roles are self-described and cannot be checked. G2, Capterra and TrustRadius blocked fetches, so no tool reviews are quoted. Reddit was not fetched; the list for Ken is at the end.

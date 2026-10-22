@@ -1,6 +1,6 @@
 # R3: Feasibility per scan, the data sources, the data room and the stack
 
-Written 2026-10-22 by the feasibility researcher (R3) for the Tricorder hackathon plan. Pages I relied on are saved under [raw/feasibility/](raw/feasibility/). Every rate limit, price and free-tier claim below carries the link I read it on. Counts come from [formd_counts.py](raw/feasibility/formd/formd_counts.py). The data room design itself is R4's job, in [research_data_room.md](research_data_room.md); Part 3 here adds the detection split and the build facts, and keeps R4's file list so the two files agree.
+Written 2026-10-22 by the feasibility researcher (R3) for the Tricorder hackathon plan. Pages I relied on are saved under [raw/feasibility/](raw/feasibility/INDEX.md). Every rate limit, price and free-tier claim below carries the link I read it on. Counts come from [formd_counts.py](raw/feasibility/formd/formd_counts.py). The data room design itself is R4's job, in [research_data_room.md](research_data_room.md); Part 3 here adds the detection split and the build facts, and keeps R4's file list so the two files agree.
 
 ## Summary
 
@@ -232,7 +232,7 @@ Recommendation: the generator also writes a sidecar `claims.json` for the deck, 
 - **Structured outputs:** pass a JSON schema in `output_config.format`, or pass a Pydantic class to `client.messages.parse(...)` and read `parsed_output`. [Structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
 - **Rate limits** depend on the account's tier and are shown in the Console. [Rate limits](https://platform.claude.com/docs/en/api/rate-limits)
 - **Choice for the team:** Opus 5.5 for the red-flag reading and the memo pass; Haiku 5.5 for bulk classification (reviews, posts). The skill bundled with Claude Code says Opus 5.5 takes no `temperature`, no `top_p` and no forced `tool_choice`, and cannot turn thinking off. I did not find that on a public docs page, so test one call on Friday and drop any such parameter.
-- **Saved:** [raw/feasibility/claude_api/](raw/feasibility/claude_api/).
+- **Saved:** [raw/feasibility/claude_api/](raw/feasibility/claude_api/INDEX.md).
 
 ---
 

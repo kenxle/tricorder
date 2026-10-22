@@ -4,25 +4,21 @@ Everything the factory built today for Deal Flow, NYC's first VC hackathon (Beta
 
 ## What I need from you
 
-<div class="facts">
-<div><dt>Decide</dt><dd>Eighteen cards in section 3, each with a recommendation, the critics' three settled and three more added from their findings.</dd></div>
-<div><dt>Do this week</dt><dd>Seven rows on <a href="../../BULLETIN.md">the board</a>: interviews, the founder brief in your words, the pitch video, the keys, who joined, the organisers' questions, the Reddit pages.</dd></div>
-<div><dt>Read first</dt><dd>The <a href="founder_brief.md">one-page founder brief</a>. It is what you hand the judges, and the organisers asked every team for it.</dd></div>
-</div>
+- **Decide.** Eighteen cards in section 3, each with a recommendation. The critics settled three and added three more from their findings.
+- **Do this week.** Your rows on [the board](../../BULLETIN.md): interviews, the founder brief in your words, the pitch video, the keys, who joined and their repo access, the organisers' questions, the Reddit pages.
+- **Read first.** The [one-page founder brief](founder_brief.md). It is what you hand the judges, and the organisers asked every team for it.
 
-Written 2026-10-22 at 11:55 AM. Updated as the critics land and as you answer.
+Written 2026-10-22 at 11:55 AM. Updated 12:50 PM: the critics' fixes are applied and every link on this page opens.
 
 ## What exists now
 
 <div class="panel"><p><b>Saturday is build-only, so this week built everything but the product.</b> The organisers wrote "On Saturday you only build. Everything a founder does before writing code happens this week." The repo holds documents, research, the synthetic data room and prompts. It holds no product code.</p></div>
 
-<ol class="sequence sequence--rows">
-<li><div><h4>Research, four tracks</h4><p><a href="../../reports/20261022.02_research/research_voice_of_customer.md">Voice of the customer</a> (what investors check first, the flags they regret, what they pay for; 67 pieces of evidence, all linked, counted by its script). <a href="../../reports/20261022.02_research/research_landscape.md">The landscape</a> (the market map in the organisers' three columns, the sponsor tools, the judges). <a href="../../reports/20261022.02_research/research_feasibility.md">Feasibility per scan</a> (what four people can build in six hours, every data source with its terms). <a href="../../reports/20261022.02_research/research_data_room.md">The data room</a> (what a real one holds, the flags a first pass finds, the design of ours).</p></div></li>
-<li><div><h4>The ongoing docs</h4><p><a href="../../ongoing/PRODUCT_BRIEF.md">Product brief</a>, <a href="../../ongoing/PERSONAS.md">personas</a> (say, do, pay), <a href="../../ongoing/BRAND.md">brand</a> (how the readout talks, the pitch to judges, the posting voice), <a href="../../ongoing/ROADMAP.md">roadmap</a> (this week, Saturday hour by hour, after), <a href="../../ongoing/ARCHITECTURE.md">architecture</a> (the stack, the Claim schema, the inbox design), <a href="../../ongoing/FRAMEWORKS.md">frameworks</a> (28 entries by its script: every check and prompt a scan runs, typed in on Saturday).</p></div></li>
-<li><div><h4>The synthetic data room</h4><p><a href="../../../data_room/README.md">Hollis Voice</a>, an invented phone agent for vet clinics raising a Series A: 16 files, a thin 11-file seed drop, an answer key of 8 planted flags and 3 decoys, a generator with a fixed seed, and a check that passed 188 assertions. Every name and number is fictional.</p></div></li>
-<li><div><h4>The founder brief</h4><p><a href="founder_brief.md">One page</a> in the organisers' four headings: problem, customer, business model, the one workflow we demo. 445 words by its script. Yours to edit.</p></div></li>
-<li><div><h4>The critics</h4><p>Three are reading everything now: the judge, buildability, the demo. Their findings land in section 5 of this page.</p></div></li>
-</ol>
+1. **Research, four tracks.** [Voice of the customer](../../reports/20261022.02_research/research_voice_of_customer.md): what investors check first, the flags they regret, what they pay for, with 67 pieces of evidence, all linked, counted by its script. [The landscape](../../reports/20261022.02_research/research_landscape.md): the market map in the organisers' three columns, the sponsor tools, the judges. [Feasibility per scan](../../reports/20261022.02_research/research_feasibility.md): what four people can build in six hours, every data source with its terms. [The data room](../../reports/20261022.02_research/research_data_room.md): what a real one holds, the flags a first pass finds, the design of ours.
+2. **The ongoing docs.** [Product brief](../../ongoing/PRODUCT_BRIEF.md), [personas](../../ongoing/PERSONAS.md) with say, do, pay, [brand](../../ongoing/BRAND.md) (how the readout talks, the pitch to judges, the posting voice), [roadmap](../../ongoing/ROADMAP.md) (this week, Saturday hour by hour, after), [architecture](../../ongoing/ARCHITECTURE.md) (the stack, the Claim schema, the inbox design), [frameworks](../../ongoing/FRAMEWORKS.md) (28 entries by its script: every check and prompt a scan runs, typed in on Saturday).
+3. **The synthetic data room.** [Hollis Voice](../../../data_room/README.md), an invented phone agent for vet clinics raising a Series A. 17 files, a thin 12-file seed drop, an answer key of 8 planted flags and 3 decoys, and cash that reconciles. Also a clean room with no flags, and a switch that writes a variant room someone outside the build seals ([SEALING.md](../../../data_room/SEALING.md)). The checks passed on all three rooms, and reruns are byte-identical. Every name and number is fictional.
+4. **The founder brief.** [One page](founder_brief.md) in the organisers' four headings: problem, customer, business model, the one workflow we demo. 448 words by its script, revised to the critics. Yours to edit.
+5. **The critics.** [The judge](critique_judge.md), [buildability](critique_buildability.md), [the demo](critique_demo.md). What they said is in section 5; their fixes are applied.
 
 ## Decisions
 
