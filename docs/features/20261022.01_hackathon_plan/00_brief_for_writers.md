@@ -290,3 +290,13 @@ Added 2026-10-22 at 2:00 PM, as a comment on investors who discard the glossy me
 > this also means that we can deliver interactive memos that allow the readers to drill down as well
 
 Settled: the memo Tricorder helps write is interactive, not a static document. The partners who read it can drill down from any line to the claims behind it and from any claim to its source and the sources that agree or disagree, the same two clicks the operator has in the readout. It still reads as a normal memo top to bottom; the drill-downs sit behind it. A static PDF export stays available for funds that need one, with every claim footnoted to its source.
+
+Added 2026-10-22 at 2:01 PM, on the same paragraph:
+
+> in some ways the person prepping the memo may do steering and creating their final product, but the person reading may also want to tweak the financial model a couple ways and see what they can get it to look like for their own udnerstanding. so even the "final" memo may need to be something that can be independent to each user, and then steered
+
+Settled:
+
+- **Every reader gets their own copy to steer.** The operator's memo is the shared version. Each partner who opens it can steer their own copy (rewrite a section, ask for more information) without changing anyone else's. Their copy says what they changed and from which version.
+- **Readers can tweak the model.** A reader can change a few assumptions in the financial model (for example churn, price, hiring pace, the pilot counted or not) and see what the numbers become. Scripts recompute from the company's own model and rows; the source files never change. Every tweaked number is marked as the reader's scenario beside the company's figure and Tricorder's rebuilt figure, so nobody mistakes a what-if for a fact.
+- The product brief's steering and memo features, the memo template and the roadmap carry this; the architecture gets the shape (a shared memo version, per-reader overlays of steers and scenario inputs, recomputation by the same scripts).
