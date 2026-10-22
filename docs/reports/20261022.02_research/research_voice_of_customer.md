@@ -58,6 +58,8 @@ First-person regret stories are rare in public. Investors write the lesson more 
 
 ## 3. How long does your first-pass memo take, and which part is slowest?
 
+**Who the memo is for.** The partners who decide whether to go further. The associate writes it so she can "walk into a partners' meeting, and convince people who've never met you that we should do this deal" ([associate at a seed-focused fund, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)). a16z describes the data room's job the same way: giving investors what they need for diligence, to "eventually write an investment memo to discuss with the rest of their team" ([a16z](https://a16z.com/the-insiders-guide-to-data-rooms-what-to-know-before-you-raise/)). So the operator works in the readout, and what leaves it is a memo for the partners' meeting.
+
 **No trustworthy public number exists.** The only hour counts come from vendors. One says a private equity firm spent 12 to 15 hours of senior associate time per committee memo ([vendor claim, Mar 2026](https://agentman.ai/blog/ic-memo-that-wrote-itself)). Another's customer says work went from weeks to a day ([vendor case study, Jul 2026](https://www.v7labs.com/news/moderne-ventures-accelerates-due-diligence-with-v7-go)). Treat both as sales copy.
 
 **Volume sets the clock.** "As an associate at a VC fund, I review about 500 decks a year, speak with around 100 founders, go deep on maybe 15, and invest in only a few." ([associate, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)).
