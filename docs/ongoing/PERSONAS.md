@@ -44,7 +44,7 @@ Who uses Tricorder and who buys it is a separate question, for marketing. It is 
 **The problem in their own words.**
 
 - "When burn or revenue differs between the deck, the model and the accounting records, the gap suggests carelessness or something worse, and either reading damages the deal." ([seed fund guide, Aug 2026](https://www.crv.com/content/what-is-a-data-room))
-- "Beware of ARR - one of the indicators most prone to disasters and favored by entrepreneurs is the ARR (Annual Recurring Revenue)." ([secondary fund partner, Jul 2023](https://calcalistech.com/ctechnews/article/b1jfcymt3))
+- "Beware of ARR - one of the indicators most prone to disasters and favored by entrepreneurs is the ARR (Annual Recurring Revenue)." ([secondary fund partner, Jul 2023](https://calcalistech.com/ctechnews/article/b1jfcymt3)). Why a metric everyone loves is dangerous: there is no standard definition, so each company decides for itself what counts as recurring. In the same piece: "In fact, today, every company calculates its own ARR in the absence of a uniform standard." A pilot, a one-time fee or a contract the customer can cancel can be counted in, and the result "is not considered cheating because it falls within the realm of acceptable interpretation within the industry." She wrote it after Joonko, a startup whose fraud came to light that year. The Hollis Voice room plants exactly this: a six-month pilot counted as a year of revenue.
 - "Weird metrics like “Quarterly MRR” or odd ways to describe revenue are immediate flags." ([SaaS investor, Dec 2021](https://www.saastr.com/as-a-venture-capitalist-what-are-some-red-flags-that-would-make-you-reject-a-startup-immediately))
 
 **What they have tried.**
