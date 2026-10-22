@@ -113,6 +113,7 @@ The readout starts with the best green flags and the worst red flags. Then it br
 - **Gaps shown as gaps.** A fact the room does not hold is labelled "not in the data room". A missing document is a question for the partner, not a flag by default (the data-room research, Part 1.5).
 - **Every claim links to its source.** A footnote opens the deck page, the spreadsheet cell, the URL with the date it was read, or the video second.
 - **A "could not verify" box.** A script checks that each claim's quote appears in its source. A claim that fails drops out of the memo and is listed here.
+- **The operator sets the order.** The pieces show in an order the operator can change, so a pre-seed reader can put the founders and the outside world first and a Series A reader the financial pieces.
 
 ### Steering the readout
 
