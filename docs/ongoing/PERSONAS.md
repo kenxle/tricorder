@@ -23,13 +23,15 @@ The personas are ranked by their strongest evidence: pay first, then do, then sa
 
 Two cautions on the top two. The partner's pay rating is inferred: both pieces of pay evidence come from a vendor case study and a pricing roundup, not from partners' own words. The angel still wants diligence; what is short is time. Angels pay, in upside given up or as an LP, to get diligence done by proxy: they trust YC, a lead or a fund to have done it.
 
-| Rank | Persona | The problem | Strongest evidence |
+| Rank | Persona | The problem | In their words |
 |---|---|---|---|
-| 1 | Partner or principal at a seed or Series A fund | Numbers that disagree, found too late | Pay (inferred) |
-| 2 | Solo angel | Wants diligence, has no time or team for it | Pay (buys diligence by proxy) |
-| 3 | Accelerator screener | Too many applications to read | Do |
-| 4 | Associate at a seed fund | Days of gathering before any thinking | Do |
-| 5 | Corporate VC | Strategic overlap on top of standard diligence | Say, too thin to design for |
+| 1 | Partner or principal at a seed or Series A fund | Numbers that disagree, found too late | "Basic financials and model review. But often only a cursory one." ([SaaS investor, on pre-term-sheet diligence, Feb 2025](https://www.saastr.com/how-when-why-vcs-do-due-diligence-pre-and-post-term-sheet)) |
+| 2 | Solo angel | Wants diligence, has no time or team for it | "I don't have the time nor skills to do proper due diligence, but with YC I don't have to." ([angel, Jan 2022](https://news.ycombinator.com/item?id=30130146)) |
+| 3 | Accelerator screener | Too many applications to read | "A human takes around four minutes to screen each application. That’s 24 full working days for one person" ([MIT Solve, 2025](https://solve.mit.edu/articles/how-ai-helped-us-screen-applications-in-half-the-time)) |
+| 4 | Associate at a seed fund | Days of gathering before any thinking | "Before I even open your data room, I already have ten tabs up." ([associate, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)) |
+| 5 | Corporate VC | Strategic overlap on top of standard diligence | "In addition to the standard diligence items, CVCs will spend more time validating areas of strategic overlap between the startup and the CVC’s corporate parent." ([corporate VC, Apr 2024](https://tdk-ventures.com/?p=2035)) |
+
+Each quote was checked word for word against its source: four against the pages saved under [raw/voc/](../reports/20261022.02_research/raw/voc/INDEX.md), and the partner's against the live SaaStr page on 2026-10-22. Each persona's evidence layer is in its own section below.
 
 Who uses Tricorder and who buys it is a separate question, for marketing. It is answered in [Who uses it and who buys it](#who-uses-it-and-who-buys-it), after the personas.
 
