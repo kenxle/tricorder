@@ -432,3 +432,9 @@ Added 2026-10-22 at 3:11 PM, on the bank account input:
 > we can try this, we just need to see if one of these connectors has a trial account and test data. or we could rig it up and fake it, just say we'd connect this here, and here's a sample bank statement you might get
 
 Settled: try Plaid's sandbox first (free test accounts and custom test data); if it is not ready, the room carries a labelled sample bank statement and the readout shows where the connected account would plug in. The overview page's bank card gains that option.
+
+Added 2026-10-22 at 3:13 PM, on the product brief's detailed feature sections:
+
+> yo this is a BRIEF. put all this in roadmap and feature documentation, not in the brief. i need this document to be, you know. BRIEF
+
+Settled: the product brief is short (target under about 900 words). It holds what it is, who it is for, the problem, the jobs to be done, a one-line list of what it does, and the essentials of what it is not, its principles, its commitments and how we know it works. Feature detail lives in `docs/ongoing/FEATURES.md`, user stories in `USER_STORIES.md`, build order in `ROADMAP.md`, open decisions on the overview page.
