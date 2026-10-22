@@ -1,0 +1,181 @@
+SOURCE: https://www.flux.ai/
+FETCHED: 2026-10-22 10:22
+HTTP: 200
+
+ Flux AI - Design PCBs with AI
+ Teams Resources Company Pricing Search Done Search 
+ Log In Sign Up Go to Profile 
+ Resource Center Learn Hardware Engineering & PCB Design Documentation Learn how to use Flux 
+ PCB Design & Engineering Fundamentals AI & Prompt Engineering Component & Platform Guides Step-by-Step Projects & Templates Tool Comparisons & Migrations Hardware 101 Development Business & Strategy Library Mechanical design (MCAD) Electronics design (EDA) 
+ About us Manifesto Company News 
+ Careers Contact Support Partner Inquiries 
+ Teams 
+ Resources 
+ Resource Center Learn hardware engineering and PCB design 
+ Documentation Learn how to use Flux 
+PCB Design & Engineering Fundamentals 
+AI & Prompt Engineering 
+Component & Platform Guides 
+Step-by-Step Projects & Templates 
+Tool Comparisons & Migrations 
+Hardware 101 Development 
+Business & Strategy Library 
+Mechanical design (MCAD) 
+Electronics design (EDA) 
+ Company 
+ About us 
+ Manifesto 
+ Company News 
+Careers 
+Contact Support 
+Partner Inquiries Pricing Search Sign Up Log In Go to Profile 
+Create Hardware
+with AI 
+Flux helps you create your entire device, end to end. 
+SchematicPCBMechanical DesignManufacturingSimulation 
+ Start Creating with AI 
+Describe your idea.
+Flux makes it real. 
+Turn your idea into a schematic, a routed PCB, and fab-ready files with AI, right in your browser. 
+Engineer 
+Manufacturer 
+Designer 
+ Launch Flux 
+Any project. Any complexity. 
+Basic boards. 
+Flux helps you build simple sensor boards, LED controllers, breakouts, and basic microcontroller products that fit comfortably on two layers. 
+ Design time 5 hours 
+ ACUs used 60 
+ Design cost $119 
+ Example NF-Dual Output Buck View 
+Intermediate designs. 
+Flux works great for compact microcontroller boards, connected sensors, mixed-signal controllers, and general embedded products. 
+ Design time 10 hours 
+ ACUs used 117 
+ Design cost $235 
+ Example Modern Distortion Effects Pedal View 
+Advanced products. 
+Flux excels at compact designs with fine-pitch components and dense routing, such as wearables, processor boards, and camera or display electronics. 
+ Design time 18 hours 
+ ACUs used 147 
+ Design cost $295 
+ Example ESP32 x86 PC View 
+Builders love Flux. 
+ “Nothing was more satisfying than seeing our system working in the field, and we really have Flux to thank for it all.” 
+Michael van Niekerk, Agri-iO 
+ Read Case Study 
+ “Flux does not have an upper limit. It gets better every time, makes it easier with every version and not just more precise but also with checks and verifications.” 
+Dr. Juergen Kienhoefer, AIRcable 
+ Read Case Study 
+ “Flux helped kickstart my first PCB design, 
+50% faster than if I had to use KiCad by myself.” 
+Melker Wändahl, creator of Tilt Tracker 
+ Read Case Study 
+Flux is your
+AI hardware engineer. 
+ Brainstorm Tell Flux what you're trying to build and why. It asks questions, researches the approach with you, and turns the conversation into a real plan. Design Flux transforms the project plan into a working schematic, lays out components, and tests the design against engineering rules. Make Flux shows you what each part costs and how long it takes to arrive, then packages all files according to manufacturer specifications. 
+Take the hard
+out of hardware. 
+Flux does the engineering work that normally makes hardware hard. 
+Flux catches issues in real time by continuously running electrical and design rule checks. It grounds its decisions in the actual parts by reading datasheets. It handles the details – sizing passives, I²C pull-ups, and decoupling caps. Flux works dynamically instead of following a rigid plan, re-evaluating work after each step and course correcting. Read more ↓ 
+Now validating: 
+Schematic legibility
+Electrical rule check
+Design rule check 
+Order from your favorite manufacturers 
+Let’s start building. 
+Let’s build your idea together. All you need to do is describe what you want to make, or what problem you want to solve. Flux will work with you to make it a reality. Try it Free 
+Frequently asked questions 
+ What kinds of boards can I design in Flux? 
+Flux supports professional multi-layer PCBs up to eight layers used in IoT devices, wearables, and robotics. Built to go all the way from prototype to production. Featured projects 
+ Can AI design a PCB? 
+Yes. PCB design using AI automates heavy lifting. Flux delivers AI assisted PCB design by drafting schematics, researching parts, and routing traces. This AI based PCB design process lets you edit everything in your browser. 
+ Can I import projects from Altium, Cadence, or KiCad? 
+Yes. Flux imports complete projects from Altium, Cadence OrCAD and Allegro, KiCad, Siemens PADS and Xpedition, Zuken CADSTAR, Eagle, EasyEDA, and DipTrace (XML export). Schematics, parts, connections, board outlines, and placement come across. Labcenter Proteus netlist and board exports bring in parts, connections, board outlines, placement, and routing. Altium, OrCAD, PADS, KiCad, Eagle, EasyEDA, and DipTrace part libraries, Allegro footprints, and JEP30 part models become Flux parts.
+Importing projects from:
+Eagle to Flux
+Upverter to Flux
+KiCAD to Flux
+Altium to Flux
+EasyEDA to Flux 
+ Can I export for manufacturing? 
+Yes. Flux exports Gerbers, drill files, BoM, pick-and-place, and standard netlists for fabrication and downstream tools. Exporting projects 
+ Is my data secure? 
+Yes. Flux encrypts data in transit and at rest and runs on SOC 2-aligned cloud infrastructure with SSO and project-level permissions. Read more about privacy statement. 
+ How capable is the AI — and what are its limits? 
+Flux provides AI for PCB design that works alongside you. As a collaborative AI for electronics, it remains transparent: explaining changes, showing its reasoning, and checking in with you before key steps. 
+ How does Flux perform in the browser? 
+Flux is built to feel like a desktop-class tool without installs: large, multi-layer designs run smoothly in a modern browser, with real-time collaboration built in. Learn how to setup your browser to ensure the best possible experience. 
+ How much does Flux cost? 
+Eligible individual plans include a free trial; trial length and prices depend on your current offer. New Teams subscriptions start paid. See the pricing page for current terms. Enterprise pricing is available on request. Plans and pricing 
+ How do I get help if I’m stuck? 
+You’re not alone. Our team and community are available at help@flux.ai, with docs, Youtube videos, and fast support when you need it. 
+ How is Flux different from traditional ECAD tools? 
+Flux is full ECAD rebuilt for the AI era: browser-based, collaborative, connected to live parts data, and guided by explainable AI. See KiCAD vs. Flux, EasyEDA vs. Flux to learn about key differences. 
+Product 
+Featured Projects
+Documentation
+Teams
+Mechanical design (MCAD)
+Electronics design (EDA)
+Pricing 
+Guides 
+The Flux Method
+Copilot Prompts
+Video Tutorials 
+Solutions by industry 
+Consumer electronics
+Medical devices
+Robotics
+Industrial and connected devices
+Automotive and aerospace 
+Solutions by team 
+Design shops and consultants
+Machine shops
+Industrial design studios
+Startups
+Enterprise innovation teams
+Contract manufacturers
+Engineering leaders
+Firmware teams 
+Compare 
+Flux vs Altium
+Flux vs KiCad
+Flux vs EasyEDA
+Flux vs Cadence
+Flux vs Zuken
+Flux vs Fusion 360
+Flux vs SolidWorks
+Flux vs Siemens NX
+Flux vs CATIA
+Flux vs Claude Code
+Flux vs Codex 
+Learn 
+PCB Design & Engineering Fundamentals
+AI & Prompt Engineering
+Component & Platform Guides
+Step-by-Step Projects & Templates
+Tool Comparisons & Migrations
+Hardware 101 Development
+Business & Strategy Library
+Company News → 
+Sitemap 
+Overview
+Microcontrollers
+Reference Designs
+Common Parts Library
+Project Templates
+Manufacturers
+Active Components
+Passive Components
+Top Users
+Top Organizations 
+Tools & Calculators 
+Voltage Divider Calculator
+Resistor Color Code Calculator
+PCB Trace Width Calculator
+Online Gerber Viewer
+Via Current Capacity Calculator
+PCB Impedance Calculator
+Check out all available tools 
+ ©2026 Privacy Terms of services 

@@ -1,0 +1,252 @@
+SOURCE: https://blockconvey.com/
+FETCHED: 2026-10-22 10:23
+HTTP: 200
+
+AI Failure Detection and Testing | Block Convey
+Skip to content
+Block Convey
+Platform 
+PRISM overviewThe whole platform, end to end
+Test
+Synthetic ScenariosBetaScenarios you never thought to test
+EvaluatorsQuality as a check you can run again
+Observe and understand
+Agent IntelligenceSee what your AI keeps getting wrong
+Agent ObservabilityEvery step the agent took, in one view
+End User IntelligenceWhat users asked that nobody answered
+Improve and connect
+AI RemediationFrom failure to a clear next step
+IntegrationsConnect the stack you already use
+PRISM, free to start
+100 credits each monthStart free
+Solutions 
+Solutions overviewBuilt for the AI app in front of you
+For BuildersFrom working demo to real-user ready
+AI AgentsThe tool returned 200. The task still failed
+Conversational AITurn four is where conversations break
+RAG ApplicationsKnow whether retrieval or generation failedPricingDocs
+Sign inStart free
+Platform
+PRISM overviewThe whole platform, end to end
+Synthetic ScenariosBetaScenarios you never thought to test
+EvaluatorsQuality as a check you can run again
+Agent IntelligenceSee what your AI keeps getting wrong
+Agent ObservabilityEvery step the agent took, in one view
+End User IntelligenceWhat users asked that nobody answered
+AI RemediationFrom failure to a clear next step
+IntegrationsConnect the stack you already useSolutions
+Solutions overviewBuilt for the AI app in front of you
+For BuildersFrom working demo to real-user ready
+AI AgentsThe tool returned 200. The task still failed
+Conversational AITurn four is where conversations break
+RAG ApplicationsKnow whether retrieval or generation failedPricingDocsSign in
+PRISM · For AI agent builders
+Proof your agents work
+Find AI failures before users do. Discover the scenarios you missed, see exactly what broke, and know what to fix next.
+Run your first testSee how it works
+Free to start
+A
+Support Assistant
+Order helpOrder #4821 · Delivered yesterday
+User
+I need to return order #4821
+00:01
+Your assistant
+I found your order. I can help with the return.
+00:02
+User
+Actually, can I exchange it instead?
+00:03
+Your assistant
+Your refund is being processed.
+00:04
+process_refund 200 OK
+PRISM
+Intent changed at 00:03. But the assistant kept the first intent
+Expected
+Exchange
+Actual
+RefundOutcome mismatch
+From scenario to proof
+It passed your tests. Then it met a real user
+An average over everything your AI does hides the two things it does badly behind the six it does well. Here is the loop that finds them.
+One missed path is now one test you can keep.
+Run your first test
+1
+Understand
+2
+GenerateSynthetic Scenarios · Beta
+3
+Run
+4
+Find
+5
+Diagnose
+6
+Prove
+Synthetic Scenarios · Beta
+Test with users you have not met yet
+Tell us what your AI should do. We create real user situations so you can test more than the paths you already know.
+Request beta access
+Six people your AI has not met
+Priya R.Simulated
+“Actually, exchange it instead”
+Intent persistence
+Marcus B.Simulated
+“Can you update my order?”
+Slot filling
+Wen L.Simulated
+“It said confirmed but nothing happened”
+Error handling
+Sami A.Simulated
+“Just undo it”
+Ambiguity
+Tom H.Simulated
+“I have asked three times now”
+Tone resilience
+Elena V.Simulated
+“What is your policy on this?”
+Knowledge gap
+Production Intelligence
+See what real users teach you
+Connect your AI and see what users ask, where they get stuck, and what you should fix next.
+Connect my AI
+12.4k sessions · 7 daysSample data
+Order changes
+31%
+Refund status
+24%
+Account access
+17%
+Fastest growing issue
+Intent changed mid-session
++42% this week
+From failure to action
+See what happened. Know where to start
+Bring the conversation, trace, and outcome together so you can understand the issue and move toward a fix.
+See how it works
+Intent
+Latest intent
+Exchange
+Initial intent
+Refund
+State
+Active state
+Refund
+Expected state
+Exchange
+Retrieval
+Policy: Returns
+v2.3
+Order #4821
+Found
+Tool called
+process_refund
+200 OK
+Should call
+create_exchange
+Outcome
+Actual
+Refund started
+Expected
+Exchange started
+PRISM
+Diagnosis
+User changed intent at 00:03. Assistant continued with the first intent
+Why this happened
+The assistant did not update state after the intent change
+What to fix
+Confirm latest intent before processing irreversible actionsView recommended fix
+The continuous loop
+Every failure makes the next version better
+Create a scenario
+Synthetic Scenarios
+Run the app
+your app
+PRISM
+Find the issue
+Observability
+traces · sessions
+Agent Intelligence
+Production Intelligence
+Evaluators
+checks that re-run
+Make the change
+AI Remediation
+Run it again
+validated
+See the full platform
+Simple, usage-based pricing
+Start free. Use credits as you grow
+Use credits to analyze AI runs, understand failures, and create new AI-powered work. Choose a larger plan when you need more.
+Free
+$0
+100 credits each month
+For a solo builder or early team connecting its first AI app.
+Start free
+Most popular
+Builder
+$20
+400 credits each month
+For a small team shipping production AI.
+Choose Builder
+Growth
+$50
+1,000 credits each month
+For a growing team with real users and more workflows.
+Choose Growth
+Every plan includes the core platform, Knowledge Base, and every supported connector.
+View pricing
+Built for your stack
+Bring the tools you already use
+Connect your models, frameworks, data, and workflows. Start with one AI app and add more when you are ready.
+Technology integrations
+Models and cloud AI
+OpenAI
+Anthropic
+AWS Bedrock
+Azure AI
+Frameworks and tracing
+LangChain
+LangGraph
+OpenTelemetry
+Data and ML
+Databricks
+Snowflake
+MLflow
+Run your first test
+Start with one app and 100 credits each month.
+Start freeSee PRISM
+Block Convey helps teams test their AI before launch, understand how it behaves in production, and improve what users actually get.
+Product
+PRISM
+Synthetic Scenarios· Beta
+Agent Observability
+Agent Intelligence
+Evaluators
+AI Remediation
+End User Intelligence
+Integrations
+Pricing
+Solutions
+For Builders
+AI Agents
+Conversational AI
+RAG Applications
+Compliance
+EU AI Act
+NIST AI RMF
+ISO 42001
+HIPAA
+All frameworks
+Enterprise
+AI Reliability Program
+Security
+Contact sales
+Resources
+Guides
+Blog
+Glossary
+DocsAbout·Partnerships inquiry·Privacy·Terms·Subprocessors·Accessibility
+Block Convey© 2026 Block Convey, Inc.
+LinkedInXInstagramThreads

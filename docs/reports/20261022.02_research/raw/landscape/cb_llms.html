@@ -1,0 +1,542 @@
+# Access Crunchbase Data Documentation
+
+> Learn about Crunchbase data products -- the Crunchbase Open Data Map, Bulk CSV Exports, and the REST API.
+
+## Getting Started: Crunchbase Data
+- [Welcome to Crunchbase Data](https://data.crunchbase.com/docs/welcome-to-crunchbase-data.md): Connect with MCP or build with the REST API.
+- [Data Dictionary](https://data.crunchbase.com/docs/data-dictionary.md): This table shows all fields available through Crunchbase data delivery.
+
+## Getting Started: Mcp
+- [MCP Overview](https://data.crunchbase.com/docs/mcp-overview.md): Overview page for Crunchbase MCP documentation and setup guidance.
+- [Getting Started with MCP](https://data.crunchbase.com/docs/getting-started-with-mcp.md): Connect your AI assistant or application to live Crunchbase data.
+- [Connecting AI Tools](https://data.crunchbase.com/docs/connecting-ai-tools.md): Set up the Crunchbase MCP server in your AI tool of choice.
+- [Crunchbase MCP Skills](https://data.crunchbase.com/docs/crunchbase-mcp-skills.md)
+- [Managing MCP Access](https://data.crunchbase.com/docs/managing-mcp-access.md): Assign MCP seats to workspace team members.
+- [MCP Developer Reference](https://data.crunchbase.com/docs/mcp-developer-reference.md): Tools, parameters, and response formats for building with Crunchbase MCP.
+  - [Building a Crunchbase MCP Integration](https://data.crunchbase.com/docs/building-mcp-integrations.md): Connect your application, call Crunchbase tools, and track data-token usage.
+  - [Data-Token Metering](https://data.crunchbase.com/docs/mcp-data-token-metering.md): Read per-request data-token metadata, track workflow usage, and handle allowance errors in MCP integrations.
+  - [Reliability, Errors, and Pagination](https://data.crunchbase.com/docs/mcp-reliability-and-pagination.md): Handle errors, partial results, retries, and pagination in MCP integrations.
+  - [Known MCP Limitations](https://data.crunchbase.com/docs/mcp-known-limitations.md): Understand MCP tool constraints and design around them.
+
+## Getting Started: REST API
+- [Make your first API request](https://data.crunchbase.com/docs/make-your-first-api-request.md): Enter your existing key and try a live organization lookup.
+- [Understand the Crunchbase data model](https://data.crunchbase.com/docs/understand-the-crunchbase-data-model.md): Connect entities, fields, and cards in three requests.
+- [Using the API](https://data.crunchbase.com/docs/using-the-api.md)
+  - [Using Entity Lookup API](https://data.crunchbase.com/docs/using-entity-lookup-apis.md): Instructions on how to use Crunchbase's Entity Lookup API endpoints
+  - [Get More Results from Card_id](https://data.crunchbase.com/docs/getting-more-results-from-card_id.md): Instructions on how to use the Single Card entity lookup endpoint to paginate for more results from a card_id
+  - [Examples: Entity Lookup API](https://data.crunchbase.com/docs/examples-entity-lookup-api.md): Examples for using Crunchbase's Entity Lookup API endpoints
+  - [Using Search API](https://data.crunchbase.com/docs/using-search-apis.md): Instructions on how to use Crunchbase's Search API endpoints
+  - [Examples: Search API](https://data.crunchbase.com/docs/examples-search-api.md): Examples for using Crunchbase's Search API endpoints
+  - [Using Autocomplete API](https://data.crunchbase.com/docs/using-autocomplete-api.md): Instructions on how to use Crunchbase's Autocomplete endpoint
+  - [Examples: Autocomplete API](https://data.crunchbase.com/docs/examples-autocomplete-api.md): Examples for using Crunchbase's Autocomplete API endpoint
+  - [Using Deleted Entities API](https://data.crunchbase.com/docs/using-deleted-entities-api.md)
+
+## Getting Started: API Packages
+- [Overview](https://data.crunchbase.com/docs/api-packages-overview.md): Learn more about the available Crunchbase API Packages
+- [Fundamentals](https://data.crunchbase.com/docs/fundamentals.md): Historical firmographic and financial data
+- [Insights Data](https://data.crunchbase.com/docs/insights.md): AI-powered analyses of past and present private market activity
+- [Predictions Data](https://data.crunchbase.com/docs/predictions.md): AI-powered forecasts about milestone private market movements
+
+## Getting Started: API Starter Playbooks
+- [Define and Pull Your ICP ](https://data.crunchbase.com/docs/define-and-pull-your-icp-with-crunchbases-advanced-financials.md): With Crunchbase’s Advanced Financials
+- [Anticipate what’s next for your ICP-fit accounts](https://data.crunchbase.com/docs/anticipate-whats-next-for-your-icp-fit-accounts.md): Using Crunchbase’s Predictions and Insights - Funding Predicition
+- [Prioritize ICP predicted to experience growth](https://data.crunchbase.com/docs/prioritize-icp-predicted-to-experience-growth.md): Anticipate what’s next for your ICP-fit accounts using Crunchbase’s Predictions and Insights Growth Predicition
+- [Identify Emerging Wealth Creators](https://data.crunchbase.com/docs/identify-emerging-wealth-creators.md): Using Crunchbase's Advanced Financials
+- [Early Liquidity Event Prediction for Targeting & Research](https://data.crunchbase.com/docs/early-liquidity-event-prediction-for-targeting-research.md)
+- [Discover Early-Stage Investment Opportunities ](https://data.crunchbase.com/docs/discover-early-stage-investment-opportunities.md): Using Crunchbase’s Advanced Financials
+- [Forecast Investment Upside & Risk](https://data.crunchbase.com/docs/forecast-investment-upside-risk.md): with Predictions and Insights
+- [Build Market Landscapes and Streamline Workflows](https://data.crunchbase.com/docs/build-market-landscapes-and-streamline-workflows.md): with Crunchbase’s Advanced Financials
+- [Discover Look-Alike Accounts](https://data.crunchbase.com/docs/discover-look-alike-accounts-with-crunchbase-competitors.md): Using Crunchbase Predictions and Insights — Competitors
+- [Surface Competitors and Reasoning for Diligence Workflows](https://data.crunchbase.com/docs/surface-competitors-and-reasoning-for-diligence-workflows.md)
+
+## Getting Started: Legacy API Migration Guides
+- [Legacy Migration Overview](https://data.crunchbase.com/docs/legacy-migration-overview.md): Move your API calls, CSV workflows, and CRM enrichment to your new key.
+- [Legacy Exports](https://data.crunchbase.com/docs/legacy-export.md)
+  - [Updating Legacy CSV Workflows](https://data.crunchbase.com/docs/updating-legacy-csv-workflows.md): How to update your CSV export workflows with your new Crunchbase API key
+    - [Legacy CSV Field Mapping](https://data.crunchbase.com/docs/legacy-csv-field-mapping.md): Map legacy Crunchbase CSV fields to current API and static-export fields.
+- [Calling API Endpoints](https://data.crunchbase.com/docs/calling-api-endpoints.md): How to Update API Calls with your New Crunchbase API Key
+- [CRM Enrichment](https://data.crunchbase.com/docs/crm-enrichment.md): How to Update Your CRM Enrichment with Your New Crunchbase API Key
+- [Crunchbase Basic](https://data.crunchbase.com/docs/crunchbase-basic-getting-started.md)
+  - [Basic Export](https://data.crunchbase.com/docs/crunchbase-basic-export.md)
+  - [Basic APIs](https://data.crunchbase.com/docs/crunchbase-basic-using-api.md)
+  - [Organization Attributes for Basic API](https://data.crunchbase.com/docs/organizationsummary.md)
+
+## Getting Started: Terms and Conditions
+- [License Agreement](https://data.crunchbase.com/docs/license-agreement.md)
+- [Data Access Terms](https://data.crunchbase.com/docs/terms.md)
+
+## API Reference: Firmographics Package
+- Autocomplete
+  - [Suggests matching Identifier entities based on the query and entity_def_ids provided.](https://data.crunchbase.com/reference/autocompletes.md)
+- Deleted Entities
+  - [Retrieve deleted entities.](https://data.crunchbase.com/reference/getdeletedentities.md)
+  - [Retrieve deleted entities of a specific collection.](https://data.crunchbase.com/reference/getdeletedentitiesforcollection.md)
+- Entity
+  - [Lookup an Organization](https://data.crunchbase.com/reference/getorganization.md)
+  - [Lookup Organization's single card](https://data.crunchbase.com/reference/getorganizationcard.md): The following cards are available: [child_organizations, child_ownerships, event_appearances, founders, headquarters_address, parent_organization, parent_ownership]
+  - [Lookup a Person](https://data.crunchbase.com/reference/getperson.md)
+  - [Lookup Person's single card](https://data.crunchbase.com/reference/getpersoncard.md): The following cards are available: [degrees, event_appearances, founded_organizations, jobs, primary_job, primary_organization]
+  - [Lookup an Event](https://data.crunchbase.com/reference/getevent.md)
+  - [Lookup Event's single card](https://data.crunchbase.com/reference/geteventcard.md): The following cards are available: [address, appearances, contestants, exhibitors, organizers, speakers, sponsors]
+  - [Lookup an EventAppearance](https://data.crunchbase.com/reference/geteventappearance.md)
+  - [Lookup EventAppearance's single card](https://data.crunchbase.com/reference/geteventappearancecard.md): The following cards are available: [event, participant]
+  - [Lookup an Ipo](https://data.crunchbase.com/reference/getipo.md)
+  - [Lookup Ipo's single card](https://data.crunchbase.com/reference/getipocard.md): The following cards are available: [organization]
+  - [Lookup an Ownership](https://data.crunchbase.com/reference/getownership.md)
+  - [Lookup Ownership's single card](https://data.crunchbase.com/reference/getownershipcard.md): The following cards are available: [child_organization, parent_organization]
+  - [Lookup a Category](https://data.crunchbase.com/reference/getcategory.md)
+  - [Lookup a CategoryGroup](https://data.crunchbase.com/reference/getcategorygroup.md)
+  - [Lookup a Location](https://data.crunchbase.com/reference/getlocation.md)
+  - [Lookup a Job](https://data.crunchbase.com/reference/getjob.md)
+  - [Lookup Job's single card](https://data.crunchbase.com/reference/getjobcard.md): The following cards are available: [organization, person]
+  - [Lookup an Address](https://data.crunchbase.com/reference/getaddress.md)
+  - [Lookup Address's single card](https://data.crunchbase.com/reference/getaddresscard.md): The following cards are available: [event, organization]
+  - [Lookup a Degree](https://data.crunchbase.com/reference/getdegree.md)
+  - [Lookup Degree's single card](https://data.crunchbase.com/reference/getdegreecard.md): The following cards are available: [organization, person]
+  - [Lookup a DiversitySpotlight](https://data.crunchbase.com/reference/getdiversityspotlight.md)
+  - [Lookup a Principal](https://data.crunchbase.com/reference/getprincipal.md)
+- Search
+  - [Search Organization Entities](https://data.crunchbase.com/reference/searchorganizations.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Person Entities](https://data.crunchbase.com/reference/searchpeople.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Event Entities](https://data.crunchbase.com/reference/searchevents.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search EventAppearance Entities](https://data.crunchbase.com/reference/searcheventappearances.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Ipo Entities](https://data.crunchbase.com/reference/searchipos.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Ownership Entities](https://data.crunchbase.com/reference/searchownerships.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Category Entities](https://data.crunchbase.com/reference/searchcategories.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search CategoryGroup Entities](https://data.crunchbase.com/reference/searchcategorygroups.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Location Entities](https://data.crunchbase.com/reference/searchlocations.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Job Entities](https://data.crunchbase.com/reference/searchjobs.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Address Entities](https://data.crunchbase.com/reference/searchaddresses.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Degree Entities](https://data.crunchbase.com/reference/searchdegrees.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search DiversitySpotlight Entities](https://data.crunchbase.com/reference/searchdiversityspotlights.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Principal Entities](https://data.crunchbase.com/reference/searchprincipals.md): Can perform more complex filtering based on the query defined in the request body
+- Metadata
+  - [Retrieve OpenAPI specification document in yaml format](https://data.crunchbase.com/reference/getopenapispecyaml.md)
+  - [Retrieve OpenAPI specification document in json format](https://data.crunchbase.com/reference/getopenapispecjson.md)
+  - [Returns the list of fields for collections with type and description](https://data.crunchbase.com/reference/getfieldsmetadata.md)
+
+## API Reference: Core Financials Package
+- Autocomplete
+  - [Suggests matching Identifier entities based on the query and entity_def_ids provided.](https://data.crunchbase.com/reference/autocompletes-1.md)
+- Deleted Entities
+  - [Retrieve deleted entities.](https://data.crunchbase.com/reference/getdeletedentities-1.md)
+  - [Retrieve deleted entities of a specific collection.](https://data.crunchbase.com/reference/getdeletedentitiesforcollection-1.md)
+- Entity
+  - [Lookup an Organization](https://data.crunchbase.com/reference/getorganization-1.md)
+  - [Lookup Organization's single card](https://data.crunchbase.com/reference/getorganizationcard-1.md): The following cards are available: [child_organizations, child_ownerships, event_appearances, founders, headquarters_address, ipos, jobs, parent_organization, parent_ownership]
+  - [Lookup a Person](https://data.crunchbase.com/reference/getperson-1.md)
+  - [Lookup Person's single card](https://data.crunchbase.com/reference/getpersoncard-1.md): The following cards are available: [degrees, event_appearances, founded_organizations, jobs, primary_job, primary_organization]
+  - [Lookup an Investment](https://data.crunchbase.com/reference/getinvestment.md)
+  - [Lookup Investment's single card](https://data.crunchbase.com/reference/getinvestmentcard.md): The following cards are available: [investor, organization]
+  - [Lookup an Event](https://data.crunchbase.com/reference/getevent-1.md)
+  - [Lookup Event's single card](https://data.crunchbase.com/reference/geteventcard-1.md): The following cards are available: [address, appearances, contestants, exhibitors, organizers, speakers, sponsors]
+  - [Lookup an EventAppearance](https://data.crunchbase.com/reference/geteventappearance-1.md)
+  - [Lookup EventAppearance's single card](https://data.crunchbase.com/reference/geteventappearancecard-1.md): The following cards are available: [event, participant]
+  - [Lookup an Ipo](https://data.crunchbase.com/reference/getipo-1.md)
+  - [Lookup Ipo's single card](https://data.crunchbase.com/reference/getipocard-1.md): The following cards are available: [organization]
+  - [Lookup an Ownership](https://data.crunchbase.com/reference/getownership-1.md)
+  - [Lookup Ownership's single card](https://data.crunchbase.com/reference/getownershipcard-1.md): The following cards are available: [child_organization, parent_organization]
+  - [Lookup a Category](https://data.crunchbase.com/reference/getcategory-1.md)
+  - [Lookup a CategoryGroup](https://data.crunchbase.com/reference/getcategorygroup-1.md)
+  - [Lookup a Location](https://data.crunchbase.com/reference/getlocation-1.md)
+  - [Lookup a Job](https://data.crunchbase.com/reference/getjob-1.md)
+  - [Lookup Job's single card](https://data.crunchbase.com/reference/getjobcard-1.md): The following cards are available: [organization, person]
+  - [Lookup an Address](https://data.crunchbase.com/reference/getaddress-1.md)
+  - [Lookup Address's single card](https://data.crunchbase.com/reference/getaddresscard-1.md): The following cards are available: [event, organization]
+  - [Lookup a Degree](https://data.crunchbase.com/reference/getdegree-1.md)
+  - [Lookup Degree's single card](https://data.crunchbase.com/reference/getdegreecard-1.md): The following cards are available: [organization, person]
+  - [Lookup a DiversitySpotlight](https://data.crunchbase.com/reference/getdiversityspotlight-1.md)
+  - [Lookup a Principal](https://data.crunchbase.com/reference/getprincipal-1.md)
+- Search
+  - [Search Organization Entities](https://data.crunchbase.com/reference/searchorganizations-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Person Entities](https://data.crunchbase.com/reference/searchpeople-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Investment Entities](https://data.crunchbase.com/reference/searchinvestments.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Event Entities](https://data.crunchbase.com/reference/searchevents-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search EventAppearance Entities](https://data.crunchbase.com/reference/searcheventappearances-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Ipo Entities](https://data.crunchbase.com/reference/searchipos-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Ownership Entities](https://data.crunchbase.com/reference/searchownerships-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Category Entities](https://data.crunchbase.com/reference/searchcategories-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search CategoryGroup Entities](https://data.crunchbase.com/reference/searchcategorygroups-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Location Entities](https://data.crunchbase.com/reference/searchlocations-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Job Entities](https://data.crunchbase.com/reference/searchjobs-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Address Entities](https://data.crunchbase.com/reference/searchaddresses-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Degree Entities](https://data.crunchbase.com/reference/searchdegrees-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search DiversitySpotlight Entities](https://data.crunchbase.com/reference/searchdiversityspotlights-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Principal Entities](https://data.crunchbase.com/reference/searchprincipals-1.md): Can perform more complex filtering based on the query defined in the request body
+- Metadata
+  - [Retrieve OpenAPI specification document in yaml format](https://data.crunchbase.com/reference/getopenapispecyaml-1.md)
+  - [Retrieve OpenAPI specification document in json format](https://data.crunchbase.com/reference/getopenapispecjson-1.md)
+  - [Returns the list of fields for collections with type and description](https://data.crunchbase.com/reference/getfieldsmetadata-1.md)
+
+## API Reference: Advanced Financials Package
+- Autocomplete
+  - [Suggests matching Identifier entities based on the query and entity_def_ids provided.](https://data.crunchbase.com/reference/autocompletes-2.md)
+- Deleted Entities
+  - [Retrieve deleted entities.](https://data.crunchbase.com/reference/getdeletedentities-2.md)
+  - [Retrieve deleted entities of a specific collection.](https://data.crunchbase.com/reference/getdeletedentitiesforcollection-2.md)
+- Entity
+  - [Lookup an Organization](https://data.crunchbase.com/reference/getorganization-2.md)
+  - [Lookup Organization's single card](https://data.crunchbase.com/reference/getorganizationcard-2.md): The following cards are available: [acquiree_acquisitions, acquirer_acquisitions, child_organizations, child_ownerships, event_appearances, founders, headquarters_address, investors, ipos, jobs,…
+  - [Lookup a Person](https://data.crunchbase.com/reference/getperson-2.md)
+  - [Lookup Person's single card](https://data.crunchbase.com/reference/getpersoncard-2.md): The following cards are available: [degrees, event_appearances, founded_organizations, jobs, participated_funding_rounds, participated_funds, participated_investments, partner_funding_rounds,…
+  - [Lookup a FundingRound](https://data.crunchbase.com/reference/getfundinground.md)
+  - [Lookup FundingRound's single card](https://data.crunchbase.com/reference/getfundingroundcard.md): The following cards are available: [investments, investors, lead_investors, organization, partners, press_references]
+  - [Lookup an Acquisition](https://data.crunchbase.com/reference/getacquisition.md)
+  - [Lookup Acquisition's single card](https://data.crunchbase.com/reference/getacquisitioncard.md): The following cards are available: [acquiree_organization, acquirer_organization, press_references]
+  - [Lookup an Investment](https://data.crunchbase.com/reference/getinvestment-1.md)
+  - [Lookup Investment's single card](https://data.crunchbase.com/reference/getinvestmentcard-1.md): The following cards are available: [funding_round, investor, organization, partner]
+  - [Lookup an Event](https://data.crunchbase.com/reference/getevent-2.md)
+  - [Lookup Event's single card](https://data.crunchbase.com/reference/geteventcard-2.md): The following cards are available: [address, appearances, contestants, exhibitors, organizers, press_references, speakers, sponsors]
+  - [Lookup a PressReference](https://data.crunchbase.com/reference/getpressreference.md)
+  - [Lookup a Fund](https://data.crunchbase.com/reference/getfund.md)
+  - [Lookup Fund's single card](https://data.crunchbase.com/reference/getfundcard.md): The following cards are available: [investors, owner, press_references]
+  - [Lookup an EventAppearance](https://data.crunchbase.com/reference/geteventappearance-2.md)
+  - [Lookup EventAppearance's single card](https://data.crunchbase.com/reference/geteventappearancecard-2.md): The following cards are available: [event, participant]
+  - [Lookup an Ipo](https://data.crunchbase.com/reference/getipo-2.md)
+  - [Lookup Ipo's single card](https://data.crunchbase.com/reference/getipocard-2.md): The following cards are available: [organization, press_references]
+  - [Lookup an Ownership](https://data.crunchbase.com/reference/getownership-2.md)
+  - [Lookup Ownership's single card](https://data.crunchbase.com/reference/getownershipcard-2.md): The following cards are available: [child_organization, parent_organization, press_references]
+  - [Lookup a Category](https://data.crunchbase.com/reference/getcategory-2.md)
+  - [Lookup a CategoryGroup](https://data.crunchbase.com/reference/getcategorygroup-2.md)
+  - [Lookup a Location](https://data.crunchbase.com/reference/getlocation-2.md)
+  - [Lookup a Job](https://data.crunchbase.com/reference/getjob-2.md)
+  - [Lookup Job's single card](https://data.crunchbase.com/reference/getjobcard-2.md): The following cards are available: [organization, person]
+  - [Lookup an Address](https://data.crunchbase.com/reference/getaddress-2.md)
+  - [Lookup Address's single card](https://data.crunchbase.com/reference/getaddresscard-2.md): The following cards are available: [event, organization]
+  - [Lookup a Degree](https://data.crunchbase.com/reference/getdegree-2.md)
+  - [Lookup Degree's single card](https://data.crunchbase.com/reference/getdegreecard-2.md): The following cards are available: [organization, person]
+  - [Lookup a DiversitySpotlight](https://data.crunchbase.com/reference/getdiversityspotlight-2.md)
+  - [Lookup a Principal](https://data.crunchbase.com/reference/getprincipal-2.md)
+- Search
+  - [Search Organization Entities](https://data.crunchbase.com/reference/searchorganizations-2.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Person Entities](https://data.crunchbase.com/reference/searchpeople-2.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search FundingRound Entities](https://data.crunchbase.com/reference/searchfundingrounds.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Acquisition Entities](https://data.crunchbase.com/reference/searchacquisitions.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Investment Entities](https://data.crunchbase.com/reference/searchinvestments-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Event Entities](https://data.crunchbase.com/reference/searchevents-2.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search PressReference Entities](https://data.crunchbase.com/reference/searchpressreferences.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Fund Entities](https://data.crunchbase.com/reference/searchfunds.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search EventAppearance Entities](https://data.crunchbase.com/reference/searcheventappearances-2.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Ipo Entities](https://data.crunchbase.com/reference/searchipos-2.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Ownership Entities](https://data.crunchbase.com/reference/searchownerships-2.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Category Entities](https://data.crunchbase.com/reference/searchcategories-2.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search CategoryGroup Entities](https://data.crunchbase.com/reference/searchcategorygroups-2.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Location Entities](https://data.crunchbase.com/reference/searchlocations-2.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Job Entities](https://data.crunchbase.com/reference/searchjobs-2.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Address Entities](https://data.crunchbase.com/reference/searchaddresses-2.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Degree Entities](https://data.crunchbase.com/reference/searchdegrees-2.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search DiversitySpotlight Entities](https://data.crunchbase.com/reference/searchdiversityspotlights-2.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Principal Entities](https://data.crunchbase.com/reference/searchprincipals-2.md): Can perform more complex filtering based on the query defined in the request body
+- Metadata
+  - [Retrieve OpenAPI specification document in yaml format](https://data.crunchbase.com/reference/getopenapispecyaml-2.md)
+  - [Retrieve OpenAPI specification document in json format](https://data.crunchbase.com/reference/getopenapispecjson-2.md)
+  - [Returns the list of fields for collections with type and description](https://data.crunchbase.com/reference/getfieldsmetadata-2.md)
+
+## API Reference: Predictions & Insights Package
+- Autocomplete
+  - [Suggests matching Identifier entities based on the query and entity_def_ids provided.](https://data.crunchbase.com/reference/autocompletes-3.md)
+- Deleted Entities
+  - [Retrieve deleted entities.](https://data.crunchbase.com/reference/getdeletedentities-3.md)
+  - [Retrieve deleted entities of a specific collection.](https://data.crunchbase.com/reference/getdeletedentitiesforcollection-3.md)
+- Entity
+  - [Lookup an Organization](https://data.crunchbase.com/reference/getorganization-3.md)
+  - [Lookup Organization's single card](https://data.crunchbase.com/reference/getorganizationcard-3.md): The following cards are available: [acquiree_acquisitions, acquirer_acquisitions, acquisition_predictions, addresses, awards, child_organizations, child_ownerships, closure_predictions,…
+  - [Lookup a Person](https://data.crunchbase.com/reference/getperson-3.md)
+  - [Lookup Person's single card](https://data.crunchbase.com/reference/getpersoncard-3.md): The following cards are available: [degrees, event_appearances, founded_organizations, jobs, participated_funding_rounds, participated_funds, participated_investments, partner_funding_rounds,…
+  - [Lookup a FundingRound](https://data.crunchbase.com/reference/getfundinground-1.md)
+  - [Lookup FundingRound's single card](https://data.crunchbase.com/reference/getfundingroundcard-1.md): The following cards are available: [investments, investors, lead_investors, organization, partners, press_references]
+  - [Lookup an Acquisition](https://data.crunchbase.com/reference/getacquisition-1.md)
+  - [Lookup Acquisition's single card](https://data.crunchbase.com/reference/getacquisitioncard-1.md): The following cards are available: [acquiree_organization, acquirer_organization, press_references]
+  - [Lookup an Investment](https://data.crunchbase.com/reference/getinvestment-2.md)
+  - [Lookup Investment's single card](https://data.crunchbase.com/reference/getinvestmentcard-2.md): The following cards are available: [funding_round, investor, organization, partner]
+  - [Lookup an Event](https://data.crunchbase.com/reference/getevent-3.md)
+  - [Lookup Event's single card](https://data.crunchbase.com/reference/geteventcard-3.md): The following cards are available: [address, appearances, contestants, exhibitors, organizers, press_references, speakers, sponsors]
+  - [Lookup a PressReference](https://data.crunchbase.com/reference/getpressreference-1.md)
+  - [Lookup a Fund](https://data.crunchbase.com/reference/getfund-1.md)
+  - [Lookup Fund's single card](https://data.crunchbase.com/reference/getfundcard-1.md): The following cards are available: [investors, owner, press_references]
+  - [Lookup an EventAppearance](https://data.crunchbase.com/reference/geteventappearance-3.md)
+  - [Lookup EventAppearance's single card](https://data.crunchbase.com/reference/geteventappearancecard-3.md): The following cards are available: [event, participant]
+  - [Lookup an Ipo](https://data.crunchbase.com/reference/getipo-3.md)
+  - [Lookup Ipo's single card](https://data.crunchbase.com/reference/getipocard-3.md): The following cards are available: [organization, press_references]
+  - [Lookup an Ownership](https://data.crunchbase.com/reference/getownership-3.md)
+  - [Lookup Ownership's single card](https://data.crunchbase.com/reference/getownershipcard-3.md): The following cards are available: [child_organization, parent_organization, press_references]
+  - [Lookup a Category](https://data.crunchbase.com/reference/getcategory-3.md)
+  - [Lookup a CategoryGroup](https://data.crunchbase.com/reference/getcategorygroup-3.md)
+  - [Lookup a Location](https://data.crunchbase.com/reference/getlocation-3.md)
+  - [Lookup a Job](https://data.crunchbase.com/reference/getjob-3.md)
+  - [Lookup Job's single card](https://data.crunchbase.com/reference/getjobcard-3.md): The following cards are available: [organization, person]
+  - [Lookup a KeyEmployeeChange](https://data.crunchbase.com/reference/getkeyemployeechange.md)
+  - [Lookup a Layoff](https://data.crunchbase.com/reference/getlayoff.md)
+  - [Lookup an AcquisitionPrediction](https://data.crunchbase.com/reference/getacquisitionprediction.md)
+  - [Lookup an Address](https://data.crunchbase.com/reference/getaddress-3.md)
+  - [Lookup Address's single card](https://data.crunchbase.com/reference/getaddresscard-3.md): The following cards are available: [event, organization]
+  - [Lookup an Award](https://data.crunchbase.com/reference/getaward.md)
+  - [Lookup a ClosurePrediction](https://data.crunchbase.com/reference/getclosureprediction.md)
+  - [Lookup a Degree](https://data.crunchbase.com/reference/getdegree-3.md)
+  - [Lookup Degree's single card](https://data.crunchbase.com/reference/getdegreecard-3.md): The following cards are available: [organization, person]
+  - [Lookup a DiversitySpotlight](https://data.crunchbase.com/reference/getdiversityspotlight-3.md)
+  - [Lookup a FundingPrediction](https://data.crunchbase.com/reference/getfundingprediction.md)
+  - [Lookup a GrowthInsight](https://data.crunchbase.com/reference/getgrowthinsight.md)
+  - [Lookup a GrowthPrediction](https://data.crunchbase.com/reference/getgrowthprediction.md)
+  - [Lookup an InvestorInsight](https://data.crunchbase.com/reference/getinvestorinsight.md)
+  - [Lookup an InvestorMatch](https://data.crunchbase.com/reference/getinvestormatch.md)
+  - [Lookup an IpoPrediction](https://data.crunchbase.com/reference/getipoprediction.md)
+  - [Lookup a LayoffPrediction](https://data.crunchbase.com/reference/getlayoffprediction.md)
+  - [Lookup a LegalProceeding](https://data.crunchbase.com/reference/getlegalproceeding.md)
+  - [Lookup a MicroCategory](https://data.crunchbase.com/reference/getmicrocategory.md)
+  - [Lookup an OrgSimilarity](https://data.crunchbase.com/reference/getorgsimilarity.md)
+  - [Lookup a PartnershipAnnouncement](https://data.crunchbase.com/reference/getpartnershipannouncement.md)
+  - [Lookup a Principal](https://data.crunchbase.com/reference/getprincipal-3.md)
+  - [Lookup a Product](https://data.crunchbase.com/reference/getproduct.md)
+  - [Lookup a ProductLaunch](https://data.crunchbase.com/reference/getproductlaunch.md)
+  - [Lookup a ProductSimilarity](https://data.crunchbase.com/reference/getproductsimilarity.md)
+  - [Lookup a RemainPrivatePrediction](https://data.crunchbase.com/reference/getremainprivateprediction.md)
+  - [Lookup a ResearchInsight](https://data.crunchbase.com/reference/getresearchinsight.md)
+  - [Lookup Category's single card](https://data.crunchbase.com/reference/getcategorycard-1.md): The following cards are available: [market_insights]
+  - [Lookup CategoryGroup's single card](https://data.crunchbase.com/reference/getcategorygroupcard-1.md): The following cards are available: [market_insights]
+  - [Lookup a MarketInsight](https://data.crunchbase.com/reference/getmarketinsight-1.md)
+  - [Lookup MarketInsight's single card](https://data.crunchbase.com/reference/getmarketinsightcard-1.md): The following cards are available: [market_insight_reasons]
+  - [Lookup a MarketInsightReason](https://data.crunchbase.com/reference/getmarketinsightreason-1.md)
+  - [Lookup MicroCategory's single card](https://data.crunchbase.com/reference/getmicrocategorycard-1.md): The following cards are available: [market_insights]
+  - [Lookup a CurrentValuationEstimate](https://data.crunchbase.com/reference/getcurrentvaluationestimate-1.md)
+  - [Lookup a CurrentValuationComparable](https://data.crunchbase.com/reference/getcurrentvaluationcomparable.md)
+  - [Lookup CurrentValuationEstimate's single card](https://data.crunchbase.com/reference/getcurrentvaluationestimatecard.md): The following cards are available: [comparable_companies_table]
+  - [Lookup a GrowthEvent](https://data.crunchbase.com/reference/getgrowthevent.md)
+- Search
+  - [Search Organization Entities](https://data.crunchbase.com/reference/searchorganizations-3.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Person Entities](https://data.crunchbase.com/reference/searchpeople-3.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search FundingRound Entities](https://data.crunchbase.com/reference/searchfundingrounds-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Acquisition Entities](https://data.crunchbase.com/reference/searchacquisitions-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Investment Entities](https://data.crunchbase.com/reference/searchinvestments-2.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Event Entities](https://data.crunchbase.com/reference/searchevents-3.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search PressReference Entities](https://data.crunchbase.com/reference/searchpressreferences-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Fund Entities](https://data.crunchbase.com/reference/searchfunds-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search EventAppearance Entities](https://data.crunchbase.com/reference/searcheventappearances-3.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Ipo Entities](https://data.crunchbase.com/reference/searchipos-3.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Ownership Entities](https://data.crunchbase.com/reference/searchownerships-3.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Category Entities](https://data.crunchbase.com/reference/searchcategories-3.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search CategoryGroup Entities](https://data.crunchbase.com/reference/searchcategorygroups-3.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Location Entities](https://data.crunchbase.com/reference/searchlocations-3.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Job Entities](https://data.crunchbase.com/reference/searchjobs-3.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search KeyEmployeeChange Entities](https://data.crunchbase.com/reference/searchkeyemployeechanges.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Layoff Entities](https://data.crunchbase.com/reference/searchlayoffs.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search AcquisitionPrediction Entities](https://data.crunchbase.com/reference/searchacquisitionpredictions.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Address Entities](https://data.crunchbase.com/reference/searchaddresses-3.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Award Entities](https://data.crunchbase.com/reference/searchawards.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search ClosurePrediction Entities](https://data.crunchbase.com/reference/searchclosurepredictions.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Degree Entities](https://data.crunchbase.com/reference/searchdegrees-3.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search DiversitySpotlight Entities](https://data.crunchbase.com/reference/searchdiversityspotlights-3.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search FundingPrediction Entities](https://data.crunchbase.com/reference/searchfundingpredictions.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search GrowthInsight Entities](https://data.crunchbase.com/reference/searchgrowthinsights.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search GrowthPrediction Entities](https://data.crunchbase.com/reference/searchgrowthpredictions.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search InvestorInsight Entities](https://data.crunchbase.com/reference/searchinvestorinsights.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search InvestorMatch Entities](https://data.crunchbase.com/reference/searchinvestormatches.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search IpoPrediction Entities](https://data.crunchbase.com/reference/searchipopredictions.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search LayoffPrediction Entities](https://data.crunchbase.com/reference/searchlayoffpredictions.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search LegalProceeding Entities](https://data.crunchbase.com/reference/searchlegalproceedings.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search MicroCategory Entities](https://data.crunchbase.com/reference/searchmicrocategories.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search OrgSimilarity Entities](https://data.crunchbase.com/reference/searchorgsimilarities.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search PartnershipAnnouncement Entities](https://data.crunchbase.com/reference/searchpartnershipannouncements.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Principal Entities](https://data.crunchbase.com/reference/searchprincipals-3.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Product Entities](https://data.crunchbase.com/reference/searchproducts.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search ProductLaunch Entities](https://data.crunchbase.com/reference/searchproductlaunches.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search ProductSimilarity Entities](https://data.crunchbase.com/reference/searchproductsimilarities.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search RemainPrivatePrediction Entities](https://data.crunchbase.com/reference/searchremainprivatepredictions.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search ResearchInsight Entities](https://data.crunchbase.com/reference/searchresearchinsights.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search MarketInsight Entities](https://data.crunchbase.com/reference/searchmarketinsights-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search MarketInsightReason Entities](https://data.crunchbase.com/reference/searchmarketinsightreasons-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search CurrentValuationEstimate Entities](https://data.crunchbase.com/reference/searchcurrentvaluationestimates-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search CurrentValuationComparable Entities](https://data.crunchbase.com/reference/searchcurrentvaluationcomparables.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search GrowthEvent Entities](https://data.crunchbase.com/reference/searchgrowthevents.md): Can perform more complex filtering based on the query defined in the request body
+- Metadata
+  - [Retrieve OpenAPI specification document in yaml format](https://data.crunchbase.com/reference/getopenapispecyaml-3.md)
+  - [Retrieve OpenAPI specification document in json format](https://data.crunchbase.com/reference/getopenapispecjson-3.md)
+  - [Returns the list of fields for collections with type and description](https://data.crunchbase.com/reference/getfieldsmetadata-3.md)
+
+## API Reference: Predictions Only Package
+- Autocomplete
+  - [Suggests matching Identifier entities based on the query and entity_def_ids provided.](https://data.crunchbase.com/reference/autocompletes-5.md)
+- Deleted Entities
+  - [Retrieve deleted entities.](https://data.crunchbase.com/reference/getdeletedentities-5.md)
+  - [Retrieve deleted entities of a specific collection.](https://data.crunchbase.com/reference/getdeletedentitiesforcollection-5.md)
+- Entity
+  - [Lookup an Organization](https://data.crunchbase.com/reference/getorganization-5.md)
+  - [Lookup Organization's single card](https://data.crunchbase.com/reference/getorganizationcard-5.md): The following cards are available: [acquiree_acquisitions, acquirer_acquisitions, acquisition_predictions, addresses, child_organizations, child_ownerships, closure_predictions, event_appearances,…
+  - [Lookup a Person](https://data.crunchbase.com/reference/getperson-5.md)
+  - [Lookup Person's single card](https://data.crunchbase.com/reference/getpersoncard-5.md): The following cards are available: [degrees, event_appearances, founded_organizations, jobs, participated_funding_rounds, participated_funds, participated_investments, partner_funding_rounds,…
+  - [Lookup a FundingRound](https://data.crunchbase.com/reference/getfundinground-3.md)
+  - [Lookup FundingRound's single card](https://data.crunchbase.com/reference/getfundingroundcard-3.md): The following cards are available: [investments, investors, lead_investors, organization, partners, press_references]
+  - [Lookup an Acquisition](https://data.crunchbase.com/reference/getacquisition-3.md)
+  - [Lookup Acquisition's single card](https://data.crunchbase.com/reference/getacquisitioncard-3.md): The following cards are available: [acquiree_organization, acquirer_organization, press_references]
+  - [Lookup an Investment](https://data.crunchbase.com/reference/getinvestment-4.md)
+  - [Lookup Investment's single card](https://data.crunchbase.com/reference/getinvestmentcard-4.md): The following cards are available: [funding_round, investor, organization, partner]
+  - [Lookup an Event](https://data.crunchbase.com/reference/getevent-5.md)
+  - [Lookup Event's single card](https://data.crunchbase.com/reference/geteventcard-5.md): The following cards are available: [address, appearances, contestants, exhibitors, organizers, press_references, speakers, sponsors]
+  - [Lookup a PressReference](https://data.crunchbase.com/reference/getpressreference-3.md)
+  - [Lookup a Fund](https://data.crunchbase.com/reference/getfund-3.md)
+  - [Lookup Fund's single card](https://data.crunchbase.com/reference/getfundcard-3.md): The following cards are available: [investors, owner, press_references]
+  - [Lookup an EventAppearance](https://data.crunchbase.com/reference/geteventappearance-5.md)
+  - [Lookup EventAppearance's single card](https://data.crunchbase.com/reference/geteventappearancecard-5.md): The following cards are available: [event, participant]
+  - [Lookup an Ipo](https://data.crunchbase.com/reference/getipo-5.md)
+  - [Lookup Ipo's single card](https://data.crunchbase.com/reference/getipocard-5.md): The following cards are available: [organization, press_references]
+  - [Lookup an Ownership](https://data.crunchbase.com/reference/getownership-5.md)
+  - [Lookup Ownership's single card](https://data.crunchbase.com/reference/getownershipcard-5.md): The following cards are available: [child_organization, parent_organization, press_references]
+  - [Lookup a Category](https://data.crunchbase.com/reference/getcategory-5.md)
+  - [Lookup a CategoryGroup](https://data.crunchbase.com/reference/getcategorygroup-5.md)
+  - [Lookup a Location](https://data.crunchbase.com/reference/getlocation-5.md)
+  - [Lookup a Job](https://data.crunchbase.com/reference/getjob-5.md)
+  - [Lookup Job's single card](https://data.crunchbase.com/reference/getjobcard-5.md): The following cards are available: [organization, person]
+  - [Lookup an AcquisitionPrediction](https://data.crunchbase.com/reference/getacquisitionprediction-1.md)
+  - [Lookup an Address](https://data.crunchbase.com/reference/getaddress-5.md)
+  - [Lookup Address's single card](https://data.crunchbase.com/reference/getaddresscard-5.md): The following cards are available: [event, organization]
+  - [Lookup a ClosurePrediction](https://data.crunchbase.com/reference/getclosureprediction-1.md)
+  - [Lookup a Degree](https://data.crunchbase.com/reference/getdegree-5.md)
+  - [Lookup Degree's single card](https://data.crunchbase.com/reference/getdegreecard-5.md): The following cards are available: [organization, person]
+  - [Lookup a DiversitySpotlight](https://data.crunchbase.com/reference/getdiversityspotlight-5.md)
+  - [Lookup a FundingPrediction](https://data.crunchbase.com/reference/getfundingprediction-1.md)
+  - [Lookup a GrowthPrediction](https://data.crunchbase.com/reference/getgrowthprediction-1.md)
+  - [Lookup an IpoPrediction](https://data.crunchbase.com/reference/getipoprediction-1.md)
+  - [Lookup a LayoffPrediction](https://data.crunchbase.com/reference/getlayoffprediction-1.md)
+  - [Lookup a Principal](https://data.crunchbase.com/reference/getprincipal-5.md)
+  - [Lookup a RemainPrivatePrediction](https://data.crunchbase.com/reference/getremainprivateprediction-1.md)
+- Search
+  - [Search Organization Entities](https://data.crunchbase.com/reference/searchorganizations-5.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Person Entities](https://data.crunchbase.com/reference/searchpeople-5.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search FundingRound Entities](https://data.crunchbase.com/reference/searchfundingrounds-3.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Acquisition Entities](https://data.crunchbase.com/reference/searchacquisitions-3.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Investment Entities](https://data.crunchbase.com/reference/searchinvestments-4.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Event Entities](https://data.crunchbase.com/reference/searchevents-5.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search PressReference Entities](https://data.crunchbase.com/reference/searchpressreferences-3.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Fund Entities](https://data.crunchbase.com/reference/searchfunds-3.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search EventAppearance Entities](https://data.crunchbase.com/reference/searcheventappearances-5.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Ipo Entities](https://data.crunchbase.com/reference/searchipos-5.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Ownership Entities](https://data.crunchbase.com/reference/searchownerships-5.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Category Entities](https://data.crunchbase.com/reference/searchcategories-5.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search CategoryGroup Entities](https://data.crunchbase.com/reference/searchcategorygroups-5.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Location Entities](https://data.crunchbase.com/reference/searchlocations-5.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Job Entities](https://data.crunchbase.com/reference/searchjobs-5.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search AcquisitionPrediction Entities](https://data.crunchbase.com/reference/searchacquisitionpredictions-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Address Entities](https://data.crunchbase.com/reference/searchaddresses-5.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search ClosurePrediction Entities](https://data.crunchbase.com/reference/searchclosurepredictions-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Degree Entities](https://data.crunchbase.com/reference/searchdegrees-5.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search DiversitySpotlight Entities](https://data.crunchbase.com/reference/searchdiversityspotlights-5.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search FundingPrediction Entities](https://data.crunchbase.com/reference/searchfundingpredictions-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search GrowthPrediction Entities](https://data.crunchbase.com/reference/searchgrowthpredictions-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search IpoPrediction Entities](https://data.crunchbase.com/reference/searchipopredictions-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search LayoffPrediction Entities](https://data.crunchbase.com/reference/searchlayoffpredictions-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Principal Entities](https://data.crunchbase.com/reference/searchprincipals-5.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search RemainPrivatePrediction Entities](https://data.crunchbase.com/reference/searchremainprivatepredictions-1.md): Can perform more complex filtering based on the query defined in the request body
+- Metadata
+  - [Retrieve OpenAPI specification document in yaml format](https://data.crunchbase.com/reference/getopenapispecyaml-5.md)
+  - [Retrieve OpenAPI specification document in json format](https://data.crunchbase.com/reference/getopenapispecjson-5.md)
+  - [Returns the list of fields for collections with type and description](https://data.crunchbase.com/reference/getfieldsmetadata-5.md)
+
+## API Reference: Insights Only Package
+- Autocomplete
+  - [Suggests matching Identifier entities based on the query and entity_def_ids provided.](https://data.crunchbase.com/reference/autocompletes-4.md)
+- Deleted Entities
+  - [Retrieve deleted entities.](https://data.crunchbase.com/reference/getdeletedentities-4.md)
+  - [Retrieve deleted entities of a specific collection.](https://data.crunchbase.com/reference/getdeletedentitiesforcollection-4.md)
+- Entity
+  - [Lookup an Organization](https://data.crunchbase.com/reference/getorganization-4.md)
+  - [Lookup Organization's single card](https://data.crunchbase.com/reference/getorganizationcard-4.md): The following cards are available: [acquiree_acquisitions, acquirer_acquisitions, addresses, awards, child_organizations, child_ownerships, current_valuation_estimates, event_appearances, founders,…
+  - [Lookup a Person](https://data.crunchbase.com/reference/getperson-4.md)
+  - [Lookup Person's single card](https://data.crunchbase.com/reference/getpersoncard-4.md): The following cards are available: [degrees, event_appearances, founded_organizations, jobs, participated_funding_rounds, participated_funds, participated_investments, partner_funding_rounds,…
+  - [Lookup a FundingRound](https://data.crunchbase.com/reference/getfundinground-2.md)
+  - [Lookup FundingRound's single card](https://data.crunchbase.com/reference/getfundingroundcard-2.md): The following cards are available: [investments, investors, lead_investors, organization, partners, press_references]
+  - [Lookup an Acquisition](https://data.crunchbase.com/reference/getacquisition-2.md)
+  - [Lookup Acquisition's single card](https://data.crunchbase.com/reference/getacquisitioncard-2.md): The following cards are available: [acquiree_organization, acquirer_organization, press_references]
+  - [Lookup an Investment](https://data.crunchbase.com/reference/getinvestment-3.md)
+  - [Lookup Investment's single card](https://data.crunchbase.com/reference/getinvestmentcard-3.md): The following cards are available: [funding_round, investor, organization, partner]
+  - [Lookup an Event](https://data.crunchbase.com/reference/getevent-4.md)
+  - [Lookup Event's single card](https://data.crunchbase.com/reference/geteventcard-4.md): The following cards are available: [address, appearances, contestants, exhibitors, organizers, press_references, speakers, sponsors]
+  - [Lookup a PressReference](https://data.crunchbase.com/reference/getpressreference-2.md)
+  - [Lookup a Fund](https://data.crunchbase.com/reference/getfund-2.md)
+  - [Lookup Fund's single card](https://data.crunchbase.com/reference/getfundcard-2.md): The following cards are available: [investors, owner, press_references]
+  - [Lookup an EventAppearance](https://data.crunchbase.com/reference/geteventappearance-4.md)
+  - [Lookup EventAppearance's single card](https://data.crunchbase.com/reference/geteventappearancecard-4.md): The following cards are available: [event, participant]
+  - [Lookup an Ipo](https://data.crunchbase.com/reference/getipo-4.md)
+  - [Lookup Ipo's single card](https://data.crunchbase.com/reference/getipocard-4.md): The following cards are available: [organization, press_references]
+  - [Lookup an Ownership](https://data.crunchbase.com/reference/getownership-4.md)
+  - [Lookup Ownership's single card](https://data.crunchbase.com/reference/getownershipcard-4.md): The following cards are available: [child_organization, parent_organization, press_references]
+  - [Lookup a Category](https://data.crunchbase.com/reference/getcategory-4.md)
+  - [Lookup a CategoryGroup](https://data.crunchbase.com/reference/getcategorygroup-4.md)
+  - [Lookup a Location](https://data.crunchbase.com/reference/getlocation-4.md)
+  - [Lookup a Job](https://data.crunchbase.com/reference/getjob-4.md)
+  - [Lookup Job's single card](https://data.crunchbase.com/reference/getjobcard-4.md): The following cards are available: [organization, person]
+  - [Lookup a KeyEmployeeChange](https://data.crunchbase.com/reference/getkeyemployeechange-1.md)
+  - [Lookup a Layoff](https://data.crunchbase.com/reference/getlayoff-1.md)
+  - [Lookup an Address](https://data.crunchbase.com/reference/getaddress-4.md)
+  - [Lookup Address's single card](https://data.crunchbase.com/reference/getaddresscard-4.md): The following cards are available: [event, organization]
+  - [Lookup an Award](https://data.crunchbase.com/reference/getaward-1.md)
+  - [Lookup a Degree](https://data.crunchbase.com/reference/getdegree-4.md)
+  - [Lookup Degree's single card](https://data.crunchbase.com/reference/getdegreecard-4.md): The following cards are available: [organization, person]
+  - [Lookup a DiversitySpotlight](https://data.crunchbase.com/reference/getdiversityspotlight-4.md)
+  - [Lookup a GrowthInsight](https://data.crunchbase.com/reference/getgrowthinsight-1.md)
+  - [Lookup an InvestorInsight](https://data.crunchbase.com/reference/getinvestorinsight-1.md)
+  - [Lookup an InvestorMatch](https://data.crunchbase.com/reference/getinvestormatch-1.md)
+  - [Lookup a LegalProceeding](https://data.crunchbase.com/reference/getlegalproceeding-1.md)
+  - [Lookup a MicroCategory](https://data.crunchbase.com/reference/getmicrocategory-1.md)
+  - [Lookup an OrgSimilarity](https://data.crunchbase.com/reference/getorgsimilarity-1.md)
+  - [Lookup a PartnershipAnnouncement](https://data.crunchbase.com/reference/getpartnershipannouncement-1.md)
+  - [Lookup a Principal](https://data.crunchbase.com/reference/getprincipal-4.md)
+  - [Lookup a Product](https://data.crunchbase.com/reference/getproduct-1.md)
+  - [Lookup a ProductLaunch](https://data.crunchbase.com/reference/getproductlaunch-1.md)
+  - [Lookup a ProductSimilarity](https://data.crunchbase.com/reference/getproductsimilarity-1.md)
+  - [Lookup a ResearchInsight](https://data.crunchbase.com/reference/getresearchinsight-1.md)
+  - [Lookup Category's single card](https://data.crunchbase.com/reference/getcategorycard.md): The following cards are available: [market_insights]
+  - [Lookup CategoryGroup's single card](https://data.crunchbase.com/reference/getcategorygroupcard.md): The following cards are available: [market_insights]
+  - [Lookup a MarketInsight](https://data.crunchbase.com/reference/getmarketinsight.md)
+  - [Lookup MarketInsight's single card](https://data.crunchbase.com/reference/getmarketinsightcard.md): The following cards are available: [market_insight_reasons]
+  - [Lookup a MarketInsightReason](https://data.crunchbase.com/reference/getmarketinsightreason.md)
+  - [Lookup MicroCategory's single card](https://data.crunchbase.com/reference/getmicrocategorycard.md): The following cards are available: [market_insights]
+  - [Lookup a CurrentValuationEstimate](https://data.crunchbase.com/reference/getcurrentvaluationestimate.md)
+  - [Lookup a CurrentValuationComparable](https://data.crunchbase.com/reference/getcurrentvaluationcomparable-1.md)
+  - [Lookup CurrentValuationEstimate's single card](https://data.crunchbase.com/reference/getcurrentvaluationestimatecard-1.md): The following cards are available: [comparable_companies_table]
+  - [Lookup a GrowthEvent](https://data.crunchbase.com/reference/getgrowthevent-1.md)
+- Search
+  - [Search Organization Entities](https://data.crunchbase.com/reference/searchorganizations-4.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Person Entities](https://data.crunchbase.com/reference/searchpeople-4.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search FundingRound Entities](https://data.crunchbase.com/reference/searchfundingrounds-2.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Acquisition Entities](https://data.crunchbase.com/reference/searchacquisitions-2.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Investment Entities](https://data.crunchbase.com/reference/searchinvestments-3.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Event Entities](https://data.crunchbase.com/reference/searchevents-4.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search PressReference Entities](https://data.crunchbase.com/reference/searchpressreferences-2.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Fund Entities](https://data.crunchbase.com/reference/searchfunds-2.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search EventAppearance Entities](https://data.crunchbase.com/reference/searcheventappearances-4.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Ipo Entities](https://data.crunchbase.com/reference/searchipos-4.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Ownership Entities](https://data.crunchbase.com/reference/searchownerships-4.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Category Entities](https://data.crunchbase.com/reference/searchcategories-4.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search CategoryGroup Entities](https://data.crunchbase.com/reference/searchcategorygroups-4.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Location Entities](https://data.crunchbase.com/reference/searchlocations-4.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Job Entities](https://data.crunchbase.com/reference/searchjobs-4.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search KeyEmployeeChange Entities](https://data.crunchbase.com/reference/searchkeyemployeechanges-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Layoff Entities](https://data.crunchbase.com/reference/searchlayoffs-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Address Entities](https://data.crunchbase.com/reference/searchaddresses-4.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Award Entities](https://data.crunchbase.com/reference/searchawards-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Degree Entities](https://data.crunchbase.com/reference/searchdegrees-4.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search DiversitySpotlight Entities](https://data.crunchbase.com/reference/searchdiversityspotlights-4.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search GrowthInsight Entities](https://data.crunchbase.com/reference/searchgrowthinsights-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search InvestorInsight Entities](https://data.crunchbase.com/reference/searchinvestorinsights-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search InvestorMatch Entities](https://data.crunchbase.com/reference/searchinvestormatches-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search LegalProceeding Entities](https://data.crunchbase.com/reference/searchlegalproceedings-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search MicroCategory Entities](https://data.crunchbase.com/reference/searchmicrocategories-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search OrgSimilarity Entities](https://data.crunchbase.com/reference/searchorgsimilarities-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search PartnershipAnnouncement Entities](https://data.crunchbase.com/reference/searchpartnershipannouncements-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Principal Entities](https://data.crunchbase.com/reference/searchprincipals-4.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search Product Entities](https://data.crunchbase.com/reference/searchproducts-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search ProductLaunch Entities](https://data.crunchbase.com/reference/searchproductlaunches-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search ProductSimilarity Entities](https://data.crunchbase.com/reference/searchproductsimilarities-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search ResearchInsight Entities](https://data.crunchbase.com/reference/searchresearchinsights-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search MarketInsight Entities](https://data.crunchbase.com/reference/searchmarketinsights.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search MarketInsightReason Entities](https://data.crunchbase.com/reference/searchmarketinsightreasons.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search CurrentValuationEstimate Entities](https://data.crunchbase.com/reference/searchcurrentvaluationestimates.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search CurrentValuationComparable Entities](https://data.crunchbase.com/reference/searchcurrentvaluationcomparables-1.md): Can perform more complex filtering based on the query defined in the request body
+  - [Search GrowthEvent Entities](https://data.crunchbase.com/reference/searchgrowthevents-1.md): Can perform more complex filtering based on the query defined in the request body
+- Metadata
+  - [Retrieve OpenAPI specification document in yaml format](https://data.crunchbase.com/reference/getopenapispecyaml-4.md)
+  - [Retrieve OpenAPI specification document in json format](https://data.crunchbase.com/reference/getopenapispecjson-4.md)
+  - [Returns the list of fields for collections with type and description](https://data.crunchbase.com/reference/getfieldsmetadata-4.md)
+
+## Pages
+- [API Starter Playbooks](https://data.crunchbase.com/page/api-starter-playbooks.md)

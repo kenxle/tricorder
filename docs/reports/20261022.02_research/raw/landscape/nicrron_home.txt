@@ -1,0 +1,86 @@
+SOURCE: https://nicrronninoo.ai/
+FETCHED: 2026-10-22 10:23
+HTTP: 200
+
+Nicrron — An AI research company
+Skip to content
+NnNicrronNinoo
+ResearchProductsInfrastructureCareersGet started
+Nicrron — An AI research company
+From the model to the metal.
+Our mission is to make AI dependable enough to build real work on. We research and build every layer: a gateway to every major model, agents that write software, and the cloud and data centers they will run on. We publish what we learn as we go.
+Read our engineering notesSee the products
+Applications
+Ninoo Builder · Ninoo Code
+Platform
+Nicrron API · NiNI Cloud
+Core
+Nicroo Core
+NiNI Labs · research across every layer
+01 — Research
+Engineering notes.
+How the systems behind our products work, written by the team that built them.All research
+October 18, 2026 · Builder, Git
+Prompts side by side, each on its own branch
+In Ninoo Builder, several people can now prompt the same project at once. Each prompt after the first runs on its own git branch with its own live preview, and finished branches merge back into the live app, with the model combining changes that touch the same lines.Read the note 
+October 18, 2026 · Builder, Git
+Version history that only moves forward
+Every change to a Builder project, by the model, by hand or by a shell command, is now a commit in a git repository only Ninoo writes to. Undo, restore and revert all add new commits, so nothing in a project's history is ever rewritten.Read the note 
+October 18, 2026 · Git, Infrastructure
+Our own git server for Ninoo projects
+Every Ninoo Builder project now has a private repository on Ninoo Git, a git server we run ourselves. People sign in with their Ninoo account, clone and push from their own computer, and pushes come back into the live app.Read the note 
+August 24, 2026 · Gateway
+One endpoint, many model makers
+The Nicrron API puts every major model behind one OpenAI-compatible endpoint. Routing names such as nicrron/auto turn into ordered fallback chains, each model's endpoints are balanced by price and health, and repeat requests can be answered from a per-account cache at no charge.Read the note 
+NiNI Labs, our applied research lab, studies the computing systems that serve AI workloads.About the lab
+02 — Products
+What the research ships as.
+Two products you can use today, and two being built on what the lab learns.
+ApplicationsAvailable
+Ninoo
+Agents that build software: the Builder in your browser and Ninoo Code in your terminal.ninoo.ai
+PlatformAvailable
+Nicrron API
+Every major model behind one OpenAI-compatible API, with routing, fallbacks and caching.nicrron.ai
+PlatformWaitlist
+NiNI Cloud
+Serverless inference for agents: import a pipeline and the runtime schedules and scales it.About NiNI Cloud
+CorePlanned
+Nicroo Core
+Data centers designed around accelerators, the fabric between them and liquid cooling.About Nicroo Core
+One account and one usage ledger across the products that are live.
+03 — How we work
+Three habits.
+01
+Build in production
+Ideas are judged on live traffic, tail latency and cost, not on a benchmark slide.
+02
+Approval before action
+Our agents show the diff or the command and wait for a yes before they change anything.
+03
+Write it down
+When we build something worth explaining, we publish how it works and what surprised us.
+04 — Careers
+Work on the whole stack.
+We hire engineers who like to own a system from the model call down to the machine it runs on.
+See open rolesTalk to us
+NnNicrronNinoo
+An AI research company building the complete stack: gateway, agents, cloud and core infrastructure.
+Applications
+Ninoo Builder
+Ninoo Code
+Platform
+Nicrron API
+NiNI Cloud
+Research
+NiNI Labs
+Engineering notes
+Core
+Nicroo Core
+Company
+Careers
+Support
+Privacy
+Terms
+© 2026 Nicrron Inc. All rights reserved.
+nicrronninoo.ai · nicrron.ai · ninoo.ai

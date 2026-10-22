@@ -1,0 +1,2102 @@
+{
+ "props": {
+  "initialUserData": null,
+  "randomSeed": 0.35829386591743917,
+  "countryCode": "US",
+  "latitude": "40.73390",
+  "longitude": "-74.00540",
+  "initialLocale": null,
+  "initialMessages": null,
+  "squarePreview": false,
+  "pageProps": {
+   "initialData": {
+    "kind": "event",
+    "data": {
+     "api_id": "evt-jgbRmoj1BZ3pHOO",
+     "accepts_usdc_for_usd": false,
+     "calendar": {
+      "access_level": "public",
+      "api_id": "cal-EgB2GR8mpTeEXG1",
+      "avatar_url": "https://images.lumacdn.com/calendars/z9/29ec352d-c9c4-410e-ada4-910f19aab25e.jpg",
+      "coordinate": {
+       "longitude": -74.0059728,
+       "latitude": 40.7127753
+      },
+      "cover_image_url": "https://images.lumacdn.com/calendar-cover-images/o9/100dc0dc-850d-4a12-8d28-4e08b777755c.png",
+      "description_short": "Make NYC the biggest startup ecosystem in the world.",
+      "end_date": null,
+      "event_submission_restriction": "open",
+      "google_measurement_id": null,
+      "instagram_handle": null,
+      "is_blocked": false,
+      "is_verified": false,
+      "launch_status": "launched",
+      "linkedin_handle": "/in/somya-gupta-sg",
+      "location": {
+       "city": "New York",
+       "region": null,
+       "country": "United States",
+       "place_id": "ChIJOwg_06VPwokRYv534QaPC8g",
+       "timezone": "America/New_York",
+       "country_code": "US"
+      },
+      "luma_plan": "plus",
+      "luma_plus_active": true,
+      "meta_pixel_id": null,
+      "name": "localhost:nyc",
+      "personal_user_api_id": null,
+      "refund_policy": null,
+      "sends_unlocked_at": "2024-11-06T10:20:12.022Z",
+      "slug": "localhost-nyc",
+      "social_image_url": null,
+      "start_date": null,
+      "stripe_account_id": "acct_1TrKoxCw0BIwpXeU",
+      "tax_config": null,
+      "tiktok_handle": null,
+      "tint_color": "#AB46DD",
+      "track_meta_ads_from_luma": false,
+      "twitter_handle": null,
+      "website": "https://localhost-nyc.com/",
+      "youtube_handle": null,
+      "is_personal": false,
+      "personal_user": null,
+      "timezone": "America/New_York",
+      "charges_enabled": true,
+      "payment_methods": []
+     },
+     "meta_pixel_id": null,
+     "coupon": null,
+     "google_measurement_id": null,
+     "stripe_account_id": "acct_1TrKoxCw0BIwpXeU",
+     "payment_methods": [],
+     "tax_config": null,
+     "event": {
+      "api_id": "evt-jgbRmoj1BZ3pHOO",
+      "calendar_api_id": "cal-EgB2GR8mpTeEXG1",
+      "cover_url": "https://images.lumacdn.com/uploads/23/b8750d5b-bef3-408f-bf94-3b7eb6921f45.png",
+      "end_at": "2026-10-24T22:00:00.000Z",
+      "event_type": "independent",
+      "hide_rsvp": false,
+      "location_type": "offline",
+      "name": "Deal Flow: NYC's First VC Hackathon @ Betaworks",
+      "one_to_one": true,
+      "recurrence_id": null,
+      "show_guest_list": true,
+      "social_image_url": "https://images.lumacdn.com/event-social/ww/db984aa8-9a49-4082-adfe-afc53eb28b30.png",
+      "start_at": "2026-10-24T13:00:00.000Z",
+      "timezone": "America/New_York",
+      "url": "vc-hack-nyc",
+      "user_api_id": "usr-9kxrr6plDxM41e6",
+      "visibility": "public",
+      "virtual_info": {
+       "has_access": false
+      },
+      "geo_address_info": {
+       "mode": "obfuscated",
+       "city": "New York",
+       "city_state": "New York, NY",
+       "sublocality": "Meatpacking District",
+       "country": "United States",
+       "country_code": "US",
+       "region": "New York",
+       "region_short": "NY"
+      },
+      "geo_address_visibility": "guests-only",
+      "coordinate": {
+       "latitude": 40.740799422855694,
+       "longitude": -74.0096265252226
+      },
+      "waitlist_enabled": true,
+      "waitlist_status": "active"
+     },
+     "start_at": "2026-10-24T13:00:00.000Z",
+     "guest_data": {
+      "email": null,
+      "name": null,
+      "ticket_key": null,
+      "approval_status": null,
+      "proxy_key": null,
+      "event_tickets": [],
+      "payments": []
+     },
+     "featured_guests": [
+      {
+       "api_id": "usr-5lHrRjeKNnzbF9o",
+       "avatar_url": "https://cdn.lu.ma/avatars/os/2fdea518-ea33-4936-be1e-930b3d4313ce",
+       "bio_short": "Senior Program & Product Mgr: AI in Financial Services. Trading desk \u2192 tech. 15+ yrs building AI/data products and leading transformations",
+       "first_name": "Dennis",
+       "last_name": "Gonzalez",
+       "instagram_handle": null,
+       "is_verified": false,
+       "linkedin_handle": "/in/altastrategy",
+       "name": "Dennis Gonzalez",
+       "tiktok_handle": null,
+       "timezone": "America/New_York",
+       "twitter_handle": "AltaStrategy",
+       "username": "arbtrader",
+       "website": "https://altastrategylabs.com",
+       "youtube_handle": null
+      },
+      {
+       "api_id": "usr-ChvNAF9kNfCOaGY",
+       "avatar_url": "https://images.lumacdn.com/avatars/ql/b48eb84d-1b30-4db7-a53e-d709a2a5b834.jpg",
+       "bio_short": "Principal product manager",
+       "first_name": "Raz",
+       "last_name": "Bhimani",
+       "instagram_handle": "mr_razbee",
+       "is_verified": false,
+       "linkedin_handle": "/in/razbee",
+       "name": "Raz Bhimani",
+       "tiktok_handle": null,
+       "timezone": "America/New_York",
+       "twitter_handle": "raz_bhimani",
+       "username": null,
+       "website": null,
+       "youtube_handle": null
+      },
+      {
+       "api_id": "usr-CZ63XRrViRwHg4j",
+       "avatar_url": "https://images.lumacdn.com/avatars/cr/ecbea75a-de0a-4ca2-8649-052e5954f403.jpg",
+       "bio_short": "Co-founder @PROMPT. Curated 1:1s between early-stage founders & thesis-matched investors. Antler alum. PROMPT NYC: Nov 16\u201317.",
+       "first_name": "Emrah",
+       "last_name": "Kurtulmus",
+       "instagram_handle": "emrah.kurtulmus",
+       "is_verified": false,
+       "linkedin_handle": "/in/emrahkurtulmus",
+       "name": "Emrah Kurtulmus",
+       "tiktok_handle": null,
+       "timezone": "America/New_York",
+       "twitter_handle": "emrahkurtulmus",
+       "username": "prompt",
+       "website": "https://www.promptsessions.com/",
+       "youtube_handle": "promptsessions"
+      },
+      {
+       "api_id": "usr-h1eemYtQudaEZfa",
+       "avatar_url": "https://images.lumacdn.com/uploads/uw/613b3780-81f4-4ae5-8ca6-218e7e8fb7ca.jpg",
+       "bio_short": "",
+       "first_name": "Arjun",
+       "last_name": "Vaidya",
+       "instagram_handle": null,
+       "is_verified": false,
+       "linkedin_handle": "/in/vaidya-arjun",
+       "name": "Arjun Vaidya",
+       "tiktok_handle": null,
+       "timezone": "America/New_York",
+       "twitter_handle": null,
+       "username": null,
+       "website": null,
+       "youtube_handle": null
+      },
+      {
+       "api_id": "usr-HoYBEb04GwUY3Vj",
+       "avatar_url": "https://images.lumacdn.com/avatars/a4/d2ba835a-95e7-4b82-b7c9-07dc2547db87.jpg",
+       "bio_short": null,
+       "first_name": "Kelvin",
+       "last_name": "Le",
+       "instagram_handle": null,
+       "is_verified": false,
+       "linkedin_handle": "/in/knguyen1794",
+       "name": "Kelvin Le",
+       "tiktok_handle": null,
+       "timezone": "America/New_York",
+       "twitter_handle": null,
+       "username": null,
+       "website": null,
+       "youtube_handle": ""
+      },
+      {
+       "api_id": "usr-lvjEqeb3Df7cmUc",
+       "avatar_url": "https://images.lumacdn.com/avatars/ov/025e9cab-1734-45a3-ae83-9e4a648275d5",
+       "bio_short": "",
+       "first_name": "Nikhil",
+       "last_name": "Mahana",
+       "instagram_handle": "nikhilmahana",
+       "is_verified": false,
+       "linkedin_handle": "/in/nikhilmahana",
+       "name": "Nikhil Mahana",
+       "tiktok_handle": null,
+       "timezone": "America/New_York",
+       "twitter_handle": "nikhilmahana",
+       "username": "nikhilmahana",
+       "website": null,
+       "youtube_handle": ""
+      },
+      {
+       "api_id": "usr-nEXeHXddPQ1PjKJ",
+       "avatar_url": "https://images.lumacdn.com/uploads/56/edf2d4f3-8857-43fa-872c-95d52130686e.jpg",
+       "bio_short": "A ai founder in new york",
+       "first_name": "Stephen",
+       "last_name": "MO",
+       "instagram_handle": "stephen_vfxmovie",
+       "is_verified": false,
+       "linkedin_handle": "/in/xinming-mo-ab4b92322",
+       "name": "Stephen",
+       "tiktok_handle": null,
+       "timezone": "America/New_York",
+       "twitter_handle": "win1step",
+       "username": "win1step",
+       "website": "https://win1step.com",
+       "youtube_handle": null
+      },
+      {
+       "api_id": "usr-s7ZR4TKVreOZThz",
+       "avatar_url": "https://images.lumacdn.com/avatars/73/e2afee04-e693-41c9-8d7b-aa49f2ed9631",
+       "bio_short": "",
+       "first_name": "Xavier",
+       "last_name": "Barnes",
+       "instagram_handle": "xcbarnes",
+       "is_verified": false,
+       "linkedin_handle": "/in/xcbarnes",
+       "name": "Xavier Barnes",
+       "tiktok_handle": null,
+       "timezone": "America/New_York",
+       "twitter_handle": "xcbarnes",
+       "username": "xcbarnes",
+       "website": "https://xcbarnes.info/",
+       "youtube_handle": "xcbarnes"
+      },
+      {
+       "api_id": "usr-T5LK0FdVZDnRoyJ",
+       "avatar_url": "https://images.lumacdn.com/avatars/g8/4314f57e-bf32-473c-9833-44bb3b2bd787.png",
+       "bio_short": "",
+       "first_name": "Nicholas",
+       "last_name": "Sutin",
+       "instagram_handle": "nick_sutin",
+       "is_verified": false,
+       "linkedin_handle": "/in/nicholassutin",
+       "name": "Nicholas Sutin",
+       "tiktok_handle": null,
+       "timezone": "America/New_York",
+       "twitter_handle": null,
+       "username": "nicholassutin",
+       "website": "https://nicholassutin.com",
+       "youtube_handle": ""
+      },
+      {
+       "api_id": "usr-Z2ziuFv1Y4blkc2",
+       "avatar_url": "https://images.lumacdn.com/avatars/mn/da965ac0-5040-49b1-a8f5-33bdb3745e28.jpg",
+       "bio_short": null,
+       "first_name": "Maria",
+       "last_name": "Gusakova",
+       "instagram_handle": null,
+       "is_verified": false,
+       "linkedin_handle": "/in/maria-gusakova-1823b8389",
+       "name": "Maria",
+       "tiktok_handle": null,
+       "timezone": "America/New_York",
+       "twitter_handle": null,
+       "username": null,
+       "website": null,
+       "youtube_handle": null
+      }
+     ],
+     "has_available_ticket_types": true,
+     "refund_policy": null,
+     "guest_count": 503,
+     "ticket_count": 503,
+     "hosts": [
+      {
+       "api_id": "usr-9kxrr6plDxM41e6",
+       "avatar_url": "https://images.lumacdn.com/avatars/xp/4c4c26f4-bdba-4128-be26-0a99f800cfc9",
+       "bio_short": "Making NYC the biggest startup ecosystem in the world.",
+       "first_name": "Somya",
+       "last_name": "Gupta",
+       "instagram_handle": "somya_nyc",
+       "is_verified": false,
+       "linkedin_handle": "/in/somya-gupta-sg",
+       "name": "Somya Gupta",
+       "tiktok_handle": null,
+       "timezone": "America/New_York",
+       "twitter_handle": "somgupnyc",
+       "username": null,
+       "website": "https://localhost-nyc.com/",
+       "youtube_handle": null
+      },
+      {
+       "api_id": "usr-4XwSfbTIcQ6btjw",
+       "avatar_url": "https://images.lumacdn.com/avatars/4s/b1524c5d-cb48-4b70-b993-50a66f5e9b3f",
+       "bio_short": null,
+       "first_name": "Events",
+       "last_name": "NY",
+       "instagram_handle": null,
+       "is_verified": false,
+       "linkedin_handle": "/in/asvehaug",
+       "name": "Betaworks",
+       "tiktok_handle": null,
+       "timezone": "America/New_York",
+       "twitter_handle": "betaworks",
+       "username": "Betaworks",
+       "website": "https://www.betaworks.com/",
+       "youtube_handle": "betaworks872"
+      },
+      {
+       "api_id": "usr-VMYSJvWtn0D6ZtT",
+       "avatar_url": "https://images.lumacdn.com/uploads/94/6403e9e2-0c13-488a-8fd5-2ba008e591c2.jpg",
+       "bio_short": null,
+       "first_name": "Tracy",
+       "last_name": "Huang",
+       "instagram_handle": "tracyy_huang",
+       "is_verified": false,
+       "linkedin_handle": "/in/tracy-huang-3332761b0",
+       "name": "Tracy Huang",
+       "tiktok_handle": null,
+       "timezone": "America/New_York",
+       "twitter_handle": "TracyHuang8h6p",
+       "username": null,
+       "website": null,
+       "youtube_handle": null
+      },
+      {
+       "api_id": "usr-RmxqOOSUlSw7buR",
+       "avatar_url": "https://images.lumacdn.com/avatars/co/f9a85a3d-d4da-4eb4-9a9b-2bf746406e0e.jpg",
+       "bio_short": "Making tech a lil more human.",
+       "first_name": "Celia",
+       "last_name": "Davis",
+       "instagram_handle": "celiarrdavis",
+       "is_verified": false,
+       "linkedin_handle": "/in/celia-davis-network",
+       "name": "Celia Davis",
+       "tiktok_handle": "itscelia._",
+       "timezone": "America/New_York",
+       "twitter_handle": "celiasnetwork",
+       "username": null,
+       "website": "https://celiadavis.com",
+       "youtube_handle": null
+      },
+      {
+       "api_id": "usr-bPvv5UFudwRbAho",
+       "avatar_url": "https://images.lumacdn.com/uploads/o5/d3fcb403-252e-49df-973f-a10813ae1ad0.jpg",
+       "bio_short": "",
+       "first_name": "Dominic",
+       "last_name": "Smith",
+       "instagram_handle": "241_dom",
+       "is_verified": false,
+       "linkedin_handle": "/in/domedsmith",
+       "name": "Dominic Smith",
+       "tiktok_handle": null,
+       "timezone": "America/New_York",
+       "twitter_handle": "241_dom",
+       "username": null,
+       "website": "https://www.visionbrewinteractive.com",
+       "youtube_handle": null
+      },
+      {
+       "api_id": "usr-NDvBBQmRHUXlYo4",
+       "avatar_url": "https://images.lumacdn.com/uploads/ck/c47d98bb-72c7-4ec5-8b17-3daf0e6aabb5.jpg",
+       "bio_short": "Making AI innovation work across languages",
+       "first_name": "Olivia",
+       "last_name": "Iarmak",
+       "instagram_handle": null,
+       "is_verified": false,
+       "linkedin_handle": "/in/olivia-iarmak107",
+       "name": "Olivia Iarmak",
+       "tiktok_handle": null,
+       "timezone": "America/New_York",
+       "twitter_handle": null,
+       "username": null,
+       "website": null,
+       "youtube_handle": null
+      },
+      {
+       "api_id": "usr-HauvuKdG9L2PuQQ",
+       "avatar_url": "https://images.lumacdn.com/avatars/kz/8cf08efb-bf93-4ae4-a66c-8c07c1b8c6d1.png",
+       "bio_short": "",
+       "first_name": "Mitchell",
+       "last_name": "Itkin",
+       "instagram_handle": null,
+       "is_verified": false,
+       "linkedin_handle": "/in/mitchell-itkin",
+       "name": "Mitchell Itkin",
+       "tiktok_handle": null,
+       "timezone": "America/New_York",
+       "twitter_handle": null,
+       "username": null,
+       "website": null,
+       "youtube_handle": ""
+      },
+      {
+       "api_id": "usr-cspCH8GqaBDACw1",
+       "avatar_url": "https://cdn.lu.ma/avatars-default/avatar_15.png",
+       "bio_short": "",
+       "first_name": "Matthew",
+       "last_name": "Pisinski",
+       "instagram_handle": null,
+       "is_verified": false,
+       "linkedin_handle": "/in/matthew-pisinski-02a0ab210",
+       "name": "Matthew Pisinski",
+       "tiktok_handle": null,
+       "timezone": "America/New_York",
+       "twitter_handle": "pisinsk",
+       "username": null,
+       "website": null,
+       "youtube_handle": null
+      }
+     ],
+     "referred_by": null,
+     "cover_image": {
+      "colors": [
+       "#f7f6ee",
+       "#090909",
+       "#22f2bf",
+       "#f96234"
+      ],
+      "palette": {
+       "neutral": [
+        {
+         "color": "#090909",
+         "percentage": 21.16
+        },
+        {
+         "color": "#f7f6ee",
+         "percentage": 54.77
+        }
+       ],
+       "vibrant": [
+        {
+         "color": "#22f2bf",
+         "percentage": 7.33
+        },
+        {
+         "color": "#0740f2",
+         "percentage": 0.89
+        },
+        {
+         "color": "#f96234",
+         "percentage": 0.44
+        },
+        {
+         "color": "#d4eb3d",
+         "percentage": 0.41
+        }
+       ]
+      }
+     },
+     "cover_video": null,
+     "social_image": {
+      "cdn_url": "https://images.lumacdn.com/event-social/ww/db984aa8-9a49-4082-adfe-afc53eb28b30.png",
+      "width": 1200,
+      "height": 630,
+      "mime_type": "image/png"
+     },
+     "social_video": null,
+     "sessions": [],
+     "ticket_types": [
+      {
+       "api_id": "ttype-ZARrVcs56j15Wru",
+       "cents": null,
+       "currency": null,
+       "description": "",
+       "ethereum_token_requirements": [],
+       "event_api_id": "evt-jgbRmoj1BZ3pHOO",
+       "is_flexible": false,
+       "is_hidden": false,
+       "max_capacity": null,
+       "max_per_guest": null,
+       "membership_restriction": null,
+       "min_cents": null,
+       "position": "8",
+       "name": "Standard",
+       "require_approval": true,
+       "tint_color": null,
+       "type": "free",
+       "valid_end_at": null,
+       "valid_start_at": null,
+       "num_tickets_registered": 503,
+       "num_guests": 503,
+       "spots_remaining": null,
+       "is_disabled": false
+      }
+     ],
+     "featured_infos": [],
+     "categories": [
+      {
+       "api_id": "cat-tech",
+       "description": "Join a hackathon, jam on product design, and meet fellow tinkerers in the industry of tomorrow.",
+       "event_count": 4234,
+       "hero_image_desktop_url": "https://images.lumacdn.com/uploads/lg/3b7cf2a0-077f-40ca-aab8-1a8d07affbd1.png",
+       "icon_url": "https://images.lumacdn.com/uploads/v7/3f6baafa-d90d-4013-9853-0fa10331f796.png",
+       "name": "Tech",
+       "page_title": "Tech Events",
+       "simple_icon_url": "https://images.lumacdn.com/uploads/z8/cb71384a-87a9-4be7-bbdf-1c2d6381d872.png",
+       "slug": "tech",
+       "social_image_url": "https://images.lumacdn.com/uploads/3e/1908a653-edb9-431e-8ecf-b4d61249a446.png",
+       "subscriber_count": 81373,
+       "tint_color": "#5773CF"
+      }
+     ],
+     "ticket_info": {
+      "price": null,
+      "is_free": true,
+      "max_price": null,
+      "is_sold_out": true,
+      "spots_remaining": 0,
+      "is_near_capacity": false,
+      "require_approval": true
+     },
+     "registration_availability": "waitlist",
+     "subscribed_to_calendar": false,
+     "event_invite": null,
+     "manager_info": null,
+     "guest_info": null,
+     "host_info": null,
+     "sold_out": true,
+     "locale": "en",
+     "theme_meta": {
+      "theme": "grain-dark"
+     },
+     "ticket_transfer_enabled": false,
+     "tint_color": "#f5f5ee",
+     "can_register_for_multiple_tickets": false,
+     "font_title": "ivy-presto",
+     "description_mirror": {
+      "type": "doc",
+      "content": [
+       {
+        "type": "heading",
+        "attrs": {
+         "level": 2
+        },
+        "content": [
+         {
+          "text": "\ud83d\udccb Event Description",
+          "type": "text"
+         }
+        ]
+       },
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "text": "New York is getting its first VC hackathon, and you're building for the people who write the checks.",
+          "type": "text"
+         }
+        ]
+       },
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "text": "Deal Flow is a one-day, in-person hackathon hosted by localhost:nyc and VCLab. You get 9 hours to build working products for the real problems VCs face every day. Partners from NYC's top funds judge live, and the best teams leave with intros to those funds.",
+          "type": "text"
+         }
+        ]
+       },
+       {
+        "type": "heading",
+        "attrs": {
+         "level": 2
+        },
+        "content": [
+         {
+          "text": "Problem Statement",
+          "type": "text",
+          "marks": [
+           {
+            "type": "bold"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "text": "Venture capital runs on spreadsheets, gut feel and endless inbox triage. Firms move billions of dollars with tools that haven't changed in a decade. Your challenge is to build software that helps VCs find better companies, make faster decisions and support their founders after the check clears.",
+          "type": "text"
+         }
+        ]
+       },
+       {
+        "type": "heading",
+        "attrs": {
+         "level": 2
+        },
+        "content": [
+         {
+          "text": "The Challenge Theme",
+          "type": "text",
+          "marks": [
+           {
+            "type": "bold"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "bullet_list",
+        "content": [
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Sourcing: finding breakout founders before everyone else does",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Diligence: market maps, competitive analysis and memo drafting",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Portfolio ops: helping funds support their companies at scale",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "LP reporting: making fund updates less painful and more useful",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "heading",
+        "attrs": {
+         "level": 2
+        },
+        "content": [
+         {
+          "text": "What to Expect",
+          "type": "text",
+          "marks": [
+           {
+            "type": "bold"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "bullet_list",
+        "content": [
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "9 hours of focused building, 9 AM to 6 PM",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Real VC problems, with investors in the room to test your ideas against",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Teams of 4",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Time to meet founders, engineers and investors from across NYC",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Live demos to a panel of VC judges at the end of the day",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Food and drinks all day",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "heading",
+        "attrs": {
+         "level": 2
+        },
+        "content": [
+         {
+          "text": "Schedule",
+          "type": "text",
+          "marks": [
+           {
+            "type": "bold"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "bullet_list",
+        "content": [
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "9:00 AM - 10:00 AM: Breakfast, Mixer and Team Formation",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "10:00 AM - 10:20 AM: Intros and Demos",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "10:30 AM - 4:30 PM: Hacking + Lunch",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "4:30 PM - 5:30 PM: Judging",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "5:30 PM - 6:00 PM: Demos and Winner Announcement",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "heading",
+        "attrs": {
+         "level": 2
+        },
+        "content": [
+         {
+          "text": "Prizes",
+          "type": "text",
+          "marks": [
+           {
+            "type": "bold"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "bullet_list",
+        "content": [
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "500 USD cash prize for the winning team.",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "150 USD cash prize for the team with the best content put out on social media during the hackathon.",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "heading",
+        "attrs": {
+         "level": 2
+        },
+        "content": [
+         {
+          "text": "Judges",
+          "type": "text",
+          "marks": [
+           {
+            "type": "bold"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "bullet_list",
+        "content": [
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Abeera Saeed",
+              "type": "text",
+              "marks": [
+               {
+                "type": "link",
+                "attrs": {
+                 "href": "https://www.linkedin.com/in/abeera-saeed-a608ba134/"
+                }
+               },
+               {
+                "type": "bold"
+               }
+              ]
+             },
+             {
+              "text": " is the Ventures Principal at Plug and Play, investing in Enterprise & AI B2B SaaS companies from Pre-Seed to Series A.",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Michael Barone",
+              "type": "text",
+              "marks": [
+               {
+                "type": "link",
+                "attrs": {
+                 "href": "https://www.linkedin.com/in/michael-barone-0a5375241/?utm_source=luma"
+                }
+               },
+               {
+                "type": "bold"
+               }
+              ]
+             },
+             {
+              "text": " - ",
+              "type": "text",
+              "marks": [
+               {
+                "type": "bold"
+               }
+              ]
+             },
+             {
+              "text": "Associate at Everywhere Ventures, a global pre-seed venture capital firm.",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "D. J. Patel",
+              "type": "text",
+              "marks": [
+               {
+                "type": "link",
+                "attrs": {
+                 "href": "https://www.linkedin.com/in/djpat/?utm_source=luma"
+                }
+               },
+               {
+                "type": "bold"
+               }
+              ]
+             },
+             {
+              "text": " ",
+              "type": "text",
+              "marks": [
+               {
+                "type": "bold"
+               }
+              ]
+             },
+             {
+              "text": "- VC | 3x exited founder.",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Radhika Khandelwal",
+              "type": "text",
+              "marks": [
+               {
+                "type": "link",
+                "attrs": {
+                 "href": "https://www.linkedin.com/in/radhikaakhandelwal/"
+                }
+               },
+               {
+                "type": "bold"
+               }
+              ]
+             },
+             {
+              "text": " builds AI agents for a living as a product leader at Wand AI, and she's spent years in the VC world seeing what makes startups stick. She'll want to see both slick code and a real business.",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Bettina Sosa",
+              "type": "text",
+              "marks": [
+               {
+                "type": "link",
+                "attrs": {
+                 "href": "https://www.linkedin.com/in/bettina-sosa/"
+                }
+               },
+               {
+                "type": "bold"
+               }
+              ]
+             },
+             {
+              "text": " is co-founder and CEO of Yaven, building a local-first AI workforce for independent businesses.",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Arjun Padmajan",
+              "type": "text",
+              "marks": [
+               {
+                "type": "link",
+                "attrs": {
+                 "href": "https://www.linkedin.com/in/apadmajan/"
+                }
+               },
+               {
+                "type": "bold"
+               }
+              ]
+             },
+             {
+              "text": " ",
+              "type": "text",
+              "marks": [
+               {
+                "type": "bold"
+               }
+              ]
+             },
+             {
+              "text": "is CEO of Roundtable, where AI agents connect and work together.",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Erzs\u00e9bet (Elisabeth) \u00c1br\u00e1m",
+              "type": "text",
+              "marks": [
+               {
+                "type": "link",
+                "attrs": {
+                 "href": "https://www.linkedin.com/in/erzs%C3%A9bet-%C3%A1br%C3%A1m-073a14257/"
+                }
+               },
+               {
+                "type": "bold"
+               }
+              ]
+             },
+             {
+              "text": " - ",
+              "type": "text",
+              "marks": [
+               {
+                "type": "bold"
+               }
+              ]
+             },
+             {
+              "text": "Community Architect at the residency.",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Akhil A.",
+              "type": "text",
+              "marks": [
+               {
+                "type": "link",
+                "attrs": {
+                 "href": "https://www.linkedin.com/in/4khil4braham/"
+                }
+               },
+               {
+                "type": "bold"
+               }
+              ]
+             },
+             {
+              "text": " is a Staff Security engineer at Collectors, securing companies through their AI adoption, M&A and IPO Compliance journey.",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "heading",
+        "attrs": {
+         "level": 2
+        },
+        "content": [
+         {
+          "text": "Who Should Attend",
+          "type": "text",
+          "marks": [
+           {
+            "type": "bold"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "bullet_list",
+        "content": [
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Pre-seed and seed founders",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Engineers",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Builders who have felt the pain of fundraising firsthand",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Anyone curious about how venture capital actually works from the inside",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "text": "You don't need VC experience or a finished idea. Just show up ready to build.",
+          "type": "text"
+         }
+        ]
+       },
+       {
+        "type": "blockquote",
+        "content": [
+         {
+          "type": "paragraph",
+          "content": [
+           {
+            "text": "Attendance if first-come first-serve. Once we reach capacity, we won't be able to let you in.",
+            "type": "text",
+            "marks": [
+             {
+              "type": "italic"
+             },
+             {
+              "type": "bold"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "heading",
+        "attrs": {
+         "level": 2
+        },
+        "content": [
+         {
+          "text": "Main Sponsors",
+          "type": "text",
+          "marks": [
+           {
+            "type": "bold"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "bullet_list",
+        "content": [
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "SeedLegals",
+              "type": "text",
+              "marks": [
+               {
+                "type": "link",
+                "attrs": {
+                 "href": "https://seedlegals.com"
+                }
+               },
+               {
+                "type": "bold"
+               }
+              ]
+             },
+             {
+              "text": " is your one-stop legal platform from idea to Series A and beyond. Incorporate your Delaware C Corp or convert your LLC to a C Corp, raise with SAFEs, manage your cap table, give stock options to your team, do a priced round, all on one platform, for way less than paying lawyers, with an amazing team to help.",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Roundtable is a data platform that lets your AI agents talk to each other.",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Nicrron \u00d7 Ninoo",
+              "type": "text",
+              "marks": [
+               {
+                "type": "link",
+                "attrs": {
+                 "href": "https://nicrronninoo.ai/?utm_source=luma"
+                }
+               }
+              ]
+             },
+             {
+              "text": " provides a complete stack for working with AI. One account, one balance, and one API key give developers access to 65+ AI models from 10 providers, with routing, failover, and caching handled for them. With zero retention of prompts and completions and no markup on model costs, Nicrron helps teams build faster while staying in control of their data and costs.",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "heading",
+        "attrs": {
+         "level": 2
+        },
+        "content": [
+         {
+          "text": "Community Sponsors",
+          "type": "text",
+          "marks": [
+           {
+            "type": "bold"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "bullet_list",
+        "content": [
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "akta.pro",
+              "type": "text",
+              "marks": [
+               {
+                "type": "link",
+                "attrs": {
+                 "href": "https://akta.pro"
+                }
+               }
+              ]
+             },
+             {
+              "text": " provides company data, news, and signals\u00a0via API or MCP for agentic VC workflows \u2014 including deal sourcing, due diligence, and portfolio monitoring.",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Block Convey",
+              "type": "text",
+              "marks": [
+               {
+                "type": "link",
+                "attrs": {
+                 "href": "https://blockconvey.com/?utm_source=luma"
+                }
+               }
+              ]
+             },
+             {
+              "text": " is an AI reliability and observability platform for AI agents. It helps teams see what an agent is doing across model calls, tools, retrieval and decisions, identify where it fails, and improve it.",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "heading",
+        "attrs": {
+         "level": 2
+        },
+        "content": [
+         {
+          "text": "Hosts",
+          "type": "text",
+          "marks": [
+           {
+            "type": "bold"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "bullet_list",
+        "content": [
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "localhost:nyc",
+              "type": "text",
+              "marks": [
+               {
+                "type": "link",
+                "attrs": {
+                 "href": "https://localhost-nyc.com/?utm_source=luma"
+                }
+               },
+               {
+                "type": "bold"
+               }
+              ]
+             },
+             {
+              "text": ":",
+              "type": "text",
+              "marks": [
+               {
+                "type": "bold"
+               }
+              ]
+             },
+             {
+              "text": " Making NYC the biggest startup ecosystem in the world.",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Tracy Huang: ",
+              "type": "text",
+              "marks": [
+               {
+                "type": "bold"
+               }
+              ]
+             },
+             {
+              "text": "VC Lab and CEO of Interlink IQ",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "the residency",
+              "type": "text",
+              "marks": [
+               {
+                "type": "link",
+                "attrs": {
+                 "href": "https://www.livetheresidency.com/"
+                }
+               },
+               {
+                "type": "bold"
+               }
+              ]
+             },
+             {
+              "text": " ",
+              "type": "text",
+              "marks": [
+               {
+                "type": "bold"
+               }
+              ]
+             },
+             {
+              "text": "is an alternative college experience for the most ambitious (deep)tech founders who work on frontier solutions for humanity\u2019s biggest challenges. ",
+              "type": "text"
+             },
+             {
+              "text": "Apply here",
+              "type": "text",
+              "marks": [
+               {
+                "type": "link",
+                "attrs": {
+                 "href": "https://apply.livetheresidency.com/apply"
+                }
+               }
+              ]
+             },
+             {
+              "text": ".",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Olivia Iarmak",
+              "type": "text",
+              "marks": [
+               {
+                "type": "link",
+                "attrs": {
+                 "href": "https://www.linkedin.com/in/olivia-iarmak107/?utm_source=luma"
+                }
+               },
+               {
+                "type": "bold"
+               }
+              ]
+             },
+             {
+              "text": " ",
+              "type": "text",
+              "marks": [
+               {
+                "type": "bold"
+               }
+              ]
+             },
+             {
+              "text": "- Researcher | Meta Reality Labs.",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "ConnNext",
+              "type": "text",
+              "marks": [
+               {
+                "type": "link",
+                "attrs": {
+                 "href": "https://www.connnext.com/?utm_source=luma"
+                }
+               }
+              ]
+             },
+             {
+              "text": " is a next-gen mobile app and community built for career growth.",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Visionbrew",
+              "type": "text",
+              "marks": [
+               {
+                "type": "link",
+                "attrs": {
+                 "href": "https://visionbrewinteractive.com/"
+                }
+               }
+              ]
+             },
+             {
+              "text": " helps people be 2 places at once with 3D AI avatars.",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Pulse NYC AI",
+              "type": "text",
+              "marks": [
+               {
+                "type": "link",
+                "attrs": {
+                 "href": "https://pulsefoundry.ai/?utm_source=luma"
+                }
+               },
+               {
+                "type": "bold"
+               }
+              ]
+             },
+             {
+              "text": " ",
+              "type": "text",
+              "marks": [
+               {
+                "type": "bold"
+               }
+              ]
+             },
+             {
+              "text": "- A community, incubator, and venture fund built for founders, researchers, and technologists shaping the future of AI in New York City.",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "content": [
+             {
+              "text": "Matthew Pisinski",
+              "type": "text",
+              "marks": [
+               {
+                "type": "link",
+                "attrs": {
+                 "href": "https://www.linkedin.com/in/matthew-pisinski-02a0ab210/?utm_source=luma"
+                }
+               },
+               {
+                "type": "bold"
+               }
+              ]
+             },
+             {
+              "text": " - Fellow @ Columbia Startup Lab.",
+              "type": "text",
+              "marks": [
+               {
+                "type": "bold"
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "eth_address_requirement": null,
+     "faqs": null,
+     "name_requirement": "full-name",
+     "phone_number_requirement": null,
+     "solana_address_requirement": null,
+     "registration_questions": [
+      {
+       "id": "s80jqoe5",
+       "label": "Are you a",
+       "options": [
+        "Founder",
+        "Engineer",
+        "Operator",
+        "Student",
+        "Investor"
+       ],
+       "required": true,
+       "question_type": "select"
+      },
+      {
+       "id": "bzmsxpdh",
+       "label": "Company/Fund/Organization",
+       "required": true,
+       "question_type": "company",
+       "job_title_label": "What is your job title?",
+       "collect_job_title": true
+      },
+      {
+       "id": "px65uqtu",
+       "label": "What is your LinkedIn profile?",
+       "required": true,
+       "question_type": "linkedin"
+      },
+      {
+       "id": "pfwmueqs",
+       "label": "What is your GitHub username? Fill N/A if you don't have one",
+       "required": true,
+       "question_type": "github"
+      },
+      {
+       "id": "eqmj17i4",
+       "label": "Do you have a team already",
+       "options": [
+        "Yes, my team has four people",
+        "Yes, but we're looking for more people",
+        "No, match me with a team",
+        "I am coming to mentor/chill"
+       ],
+       "required": true,
+       "question_type": "select"
+      },
+      {
+       "id": "ng7ejct3",
+       "label": "If you have a team, mention their names and emails. Put N/A if you don't have a team",
+       "required": true,
+       "multiline": true,
+       "question_type": "text"
+      },
+      {
+       "id": "b3dpgx2f",
+       "label": "What will you bring to a team?",
+       "options": [
+        "Frontend",
+        "Backend",
+        "Design",
+        "AI/ML",
+        "Product",
+        "VC/finance background",
+        "Sales/GTM"
+       ],
+       "multiple": true,
+       "required": true,
+       "question_type": "select"
+      },
+      {
+       "id": "pnf6c5ca",
+       "label": "What VC problem would you want to build for? Describe your idea in a few lines. We'll use this to match you with teammates. Type N/A if you don't have an idea right now.",
+       "required": true,
+       "multiline": true,
+       "question_type": "text"
+      }
+     ],
+     "prefilled_answers": {},
+     "is_flagged": false,
+     "is_managing_calendar_admin": false,
+     "show_unlock_code_option": false,
+     "has_multiple_ticket_types": false,
+     "membership_tiers": [
+      {
+       "api_id": "calmemtier-unoyen9f8tiu3uk",
+       "access_info": {
+        "type": "free",
+        "require_approval": true
+       },
+       "description": "Get your brand in front of NYC\u2019s founders, builders, and investors. Help us make this city the world\u2019s biggest startup ecosystem.",
+       "registration_questions": [
+        {
+         "id": "jdd9m61g",
+         "label": "Company Name",
+         "required": true,
+         "question_type": "company",
+         "job_title_label": "What is your job title?",
+         "collect_job_title": true
+        },
+        {
+         "id": "fves2mtw",
+         "label": "LinkedIn",
+         "required": true,
+         "question_type": "url"
+        },
+        {
+         "id": "96h8jdw2",
+         "label": "Company Website",
+         "required": true,
+         "question_type": "url"
+        },
+        {
+         "id": "6m5velyn",
+         "label": "What would you like to achieve?",
+         "options": [
+          "Brand Awareness",
+          "Hiring",
+          "Product Adoption",
+          "Other"
+         ],
+         "multiple": true,
+         "required": true,
+         "question_type": "select"
+        },
+        {
+         "id": "me1atzis",
+         "label": "Who would you like to reach?",
+         "options": [
+          "Founders",
+          "Engineers",
+          "Investors",
+          "Operators",
+          "Others"
+         ],
+         "multiple": true,
+         "required": true,
+         "question_type": "select"
+        },
+        {
+         "id": "z5q4donf",
+         "label": "How would you like to support us?",
+         "options": [
+          "Cash",
+          "Food & Bevs",
+          "Tool Credits",
+          "Prizes",
+          "Others"
+         ],
+         "multiple": true,
+         "required": true,
+         "question_type": "select"
+        },
+        {
+         "id": "cikelr4e",
+         "label": "What budget range do you have in mind?",
+         "options": [
+          "Under $1k",
+          "$1k\u20135k",
+          "$5k\u201310k",
+          "$10k+",
+          "In-kind only",
+          "Let\u2019s discuss"
+         ],
+         "multiple": true,
+         "required": true,
+         "question_type": "select"
+        },
+        {
+         "id": "2wvzqu7c",
+         "label": "When would you like to get involved?",
+         "options": [
+          "This month",
+          "Next 3 months",
+          "Exploring for now"
+         ],
+         "required": true,
+         "question_type": "select"
+        },
+        {
+         "id": "tebkv7tu",
+         "label": "Anything else you\u2019d like us to know?",
+         "required": false,
+         "question_type": "text"
+        }
+       ],
+       "calendar_api_id": "cal-EgB2GR8mpTeEXG1",
+       "tint_color": "#25ac0f",
+       "name": "Sponsors"
+      },
+      {
+       "api_id": "calmemtier-n2swe4clfkywimt",
+       "access_info": {
+        "type": "free",
+        "require_approval": true
+       },
+       "description": "Got space? Bring NYC\u2019s founders, builders, and investors\u00a0together by hosting localhost:nyc hackathons.",
+       "registration_questions": [
+        {
+         "id": "1oy5vio2",
+         "label": "Company name?",
+         "required": true,
+         "question_type": "company",
+         "job_title_label": "What is your job title?",
+         "collect_job_title": true
+        },
+        {
+         "id": "d8at19j0",
+         "label": "What is your LinkedIn profile?",
+         "required": false,
+         "question_type": "linkedin"
+        },
+        {
+         "id": "0hwcj6w4",
+         "label": "Company website",
+         "required": false,
+         "question_type": "url"
+        },
+        {
+         "id": "3sp9bfj1",
+         "label": "Where\u2019s your space? (neighborhood/borough)",
+         "required": true,
+         "question_type": "text"
+        },
+        {
+         "id": "t0q6miyz",
+         "label": "How many people can it comfortably host?",
+         "required": true,
+         "question_type": "text"
+        },
+        {
+         "id": "0rsvfvpf",
+         "label": "When is it usually available?",
+         "options": [
+          "Weekday daytime",
+          "Weekday evenings",
+          "Weekends",
+          "Flexible"
+         ],
+         "multiple": true,
+         "required": true,
+         "question_type": "select"
+        },
+        {
+         "id": "fog0yt4h",
+         "label": "What amenities are available?",
+         "options": [
+          "Kitchen or catering area",
+          "Wi-Fi",
+          "Tables & seating",
+          "Screens or projector",
+          "Microphones"
+         ],
+         "multiple": true,
+         "required": true,
+         "question_type": "select"
+        },
+        {
+         "id": "7wkvmdit",
+         "label": "What hosting arrangement works for you?",
+         "options": [
+          "Complimentary space",
+          "Discounted rental",
+          "Paid rental",
+          "Let\u2019s discuss"
+         ],
+         "multiple": true,
+         "required": true,
+         "question_type": "select"
+        }
+       ],
+       "calendar_api_id": "cal-EgB2GR8mpTeEXG1",
+       "tint_color": "#AB46DD",
+       "name": "Venue Partners"
+      }
+     ],
+     "membership_info": null,
+     "waitlist_active": true,
+     "route": null,
+     "featured_city": null
+    }
+   }
+  }
+ },
+ "page": "/[...url]",
+ "query": {
+  "url": [
+   "vc-hack-nyc"
+  ]
+ },
+ "buildId": "c5-K0o5Ya2O9Sj6nxhtMy",
+ "isFallback": false,
+ "isExperimentalCompile": false,
+ "gip": true,
+ "appGip": true,
+ "scriptLoader": []
+}

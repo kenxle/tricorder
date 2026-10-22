@@ -1,0 +1,276 @@
+SOURCE: https://glama.ai/mcp/servers/iy82t1qk9j
+FETCHED: 2026-10-22 10:23
+HTTP: 200
+
+akta pro by akta-pro | GlamaSkip to main content
+Glama
+ServersConnectorsToolsClientsInspectorNew ChatSign Up
+Glama
+MCP
+Servers
+akta proOfficialFavorite1Research & DataSearch
+by akta-pro
+Claim
+OverviewSchemaSourceRelated ServersDiscussionsAdmin
+Remote
+Which integrations are available for this server?
+Provides employee reviews and ratings from Glassdoor, including overall and dimension scores.
+Provides live job postings from Indeed, including titles, locations, descriptions, compensation, experience level, and skills.
+akta.pro MCP Server
+Private company data, news, and signals API for AI agents
+akta.pro MCP gives AI agents structured access to public and private company data, entity-resolved news, targeted list generation, and alternative signals. Resolve companies, retrieve rich or concise profiles, monitor real-time and historical news, build company lists, and surface headcount, web traffic, hiring, social, employee-review, and product-review signals where the plan permits. Tools return synchronously through deterministic schemas with source attribution.
+Server URL: https://mcp.akta.pro/mcp
+Website: https://akta.pro · Docs: https://docs.akta.pro
+Transport: HTTP (Streamable HTTP / SSE-compatible) — remote server, no local install
+Auth: Claude Web/Desktop: native connector authentication. ChatGPT web: OAuth. API-key clients: x-api-key header.
+Overview
+akta.pro MCP connects Claude, ChatGPT, Cursor, VS Code, Claude Code, and other MCP clients to enterprise-grade private company data and real-time news signals. 20M+ entity-resolved companies, 70+ data points each, 30K+ sub-sectors monitored — pay-as-you-go.
+Point Claude, ChatGPT, Cursor, VS Code, or Claude Code at https://mcp.akta.pro/mcp and your agent can:
+Resolve any company by name, website, or UUID with entity resolution across 20M+ global entities.
+Enrich private companies across 70+ structured data points — firmographics, business model, product offering, management, financials, technology stack, industry codes, and (Enterprise) funding & M&A history.
+Monitor company, industry, or open-ended topic news in real time with AI summaries, sentiment scores, event-type classification, and source metadata. News is enriched with entity resolution, de-duplication, and named-entity extraction.
+Surface alternative signals (Subscription/Enterprise): headcount trends, website traffic, employee reviews, product reviews, live job posts, and company social posts.
+All tools are synchronous — data is returned immediately, no polling. Responses use deterministic schemas, compact payloads, and ship with source attribution so every claim is verifiable. company_data is billed per section, so agents only pay for what they ask for. Free resolve-first tools (company_search, industry_search, account_status, news_types, list_filters, get_filter_values) cost 0 credits.
+SOC 2 Type II certified, ISO 27001 compliant, end-to-end encrypted, and no customer data is used to train AI models.
+Related MCP server: FundzWatch MCP Server
+Data coverage
+20M+ globally entity-resolved private companies
+70+ structured data points per company
+30K+ sub-sectors monitored
+News enriched with entity resolution, de-duplication, AI summaries, sentiment, event classification, and source metadata
+Industry classifications supported: NAICS, SIC, IPTC, IAB
+Location fields normalized to country codes
+Tools
+All tools are synchronous (data returned immediately, no polling). company_data returns Markdown; every other tool returns JSON.
+Free resolve-first tools (0 credits)
+Tool
+Description
+company_search
+Resolve a company name or website to akta identifiers
+industry_search
+Resolve free-text industry or topic language to ranked industry codes
+account_status
+Return plan tier and remaining credit balance
+news_types
+Return the event-type taxonomy used to filter news_signals
+list_filters
+List available fields for generate_company_list, grouped by category
+get_filter_values
+Return allowed values for one or more list-generation filters, used to build a valid filters payload
+Company data
+Tool
+Description
+company_data
+Rich structured company profile as Markdown. Sections selected explicitly and billed per section.
+company_data_concise
+Condensed company overview in JSON. Flat rate, no section selection.
+News
+Tool
+Description
+news_signals
+Discover news filtered by company, industry, query, title, sentiment, event type, date, and other supported fields. Returns summaries and metadata, not full article body.
+news_detail
+Full article body for article IDs returned by news_signals (max 10 per call).
+List generation
+Tool
+Description
+generate_company_list
+Build a targeted company list from structured filters or a natural-language query, with optional per-company enrichment where supported.
+Alternative signals (Subscription or Enterprise)
+Tool
+Description
+headcount_trends
+Employee-count trends and functional breakdown.
+website_traffic
+Traffic and engagement estimates.
+employee_reviews
+Overall, dimension-level, and individual employee-review signals.
+product_reviews
+Product catalog and product-review signals.
+job_posts
+Live job-posting and hiring signals.
+social_posts
+Company social posts and engagement metadata.
+Install
+Server URL for every client: https://mcp.akta.pro/mcp
+Claude (Web / Desktop)
+Settings (or Customize) → Connectors → Add Connectors
+Name: akta-pro · Server URL: https://mcp.akta.pro/mcp
+Click Add, then complete the authentication.
+ChatGPT
+Settings → Plugins → Developer Mode → enable.
+Settings → Plugins → Browse Plugins → +.
+Name akta-pro, paste https://mcp.akta.pro/mcp, authentication = OAuth.
+Create and complete OAuth.
+Claude Code
+claude mcp add --transport http akta-pro https://mcp.akta.pro/mcp
+--header "x-api-key: <YOUR_API_KEY>"
+Cursor — ~/.cursor/mcp.json
+{
+ "mcpServers": {
+ "akta-pro": {
+ "url": "https://mcp.akta.pro/mcp",
+ "headers": { "x-api-key": "YOUR_AKTA_API_KEY" }
+ }
+ }
+}
+VS Code — .vscode/mcp.json
+{
+ "inputs": [
+ {
+ "type": "promptString",
+ "id": "akta-api-key",
+ "description": "akta.pro API key",
+ "password": true
+ }
+ ],
+ "servers": {
+ "akta-pro": {
+ "type": "http",
+ "url": "https://mcp.akta.pro/mcp",
+ "headers": { "x-api-key": "${input:akta-api-key}" }
+ }
+ }
+}
+OpenCode — opencode.json
+{
+ "$schema": "https://opencode.ai/config.json",
+ "mcp": {
+ "akta-pro": {
+ "type": "remote",
+ "url": "https://mcp.akta.pro/mcp",
+ "enabled": true,
+ "oauth": false,
+ "headers": { "x-api-key": "{env:AKTA_API_KEY}" }
+ }
+ }
+}
+Authentication
+Native connector auth — Claude Web/Desktop (no API key required).
+OAuth — ChatGPT.
+x-api-key header — Cursor, VS Code, Claude Code, OpenCode.
+API key signup: https://playground.akta.pro/signup
+API key management: https://playground.akta.pro/dashboard/manage/api-keys
+Pricing
+Pay-as-you-go — no minimum, credits purchased upfront, per-tool billing.
+Subscription — unlocks alternative-signal tools (headcount_trends, website_traffic, employee_reviews, product_reviews, job_posts, social_posts).
+Enterprise — unlocks funding_detail and mna_and_investment sections plus enterprise SLAs, bulk export, and dedicated support.
+Full pricing: https://akta.pro/pricing · MCP credits: https://docs.akta.pro/docs/developer-tools/mcp/credits
+Compliance & trust
+SOC 2 Type II certified
+ISO 27001 compliant
+End-to-end encrypted in transit and at rest
+No customer data is used to train AI models
+OpenAPI spec: https://docs.akta.pro/openapi.json
+LLM-friendly docs: https://docs.akta.pro/llms.txt · https://docs.akta.pro/llms-full.txt
+Links
+Website: https://akta.pro
+Documentation: https://docs.akta.pro
+Pricing: https://akta.pro/pricing
+Changelog: https://docs.akta.pro/changelog
+Contact / Sales: https://docs.akta.pro/contact
+LinkedIn: https://www.linkedin.com/company/akta-pro
+X / Twitter: https://x.com/akta_pro
+© 2026 Wokelo AI. All Rights Reserved. Commercial (proprietary). Free tier via pay-as-you-go credits.
+Deploy Server
+This server cannot be deployed
+One endpoint for every MCP toolRayrun runs every MCP server behind one URL and holds the credentials. Each call is decided per client, tool, and argument, then recorded.ray.runAd
+Maintenance
+ActivityMaintained
+ResponsivenessNo issues
+Resources
+Remote Server
+GitHub RepositoryNeed Help?Report IssueRelated Servers
+Related MCP Connectors
+Wokelo MCP Serverio.github.Wokelo-AI
+Company and market intelligence, news, enrichment, and agentic workflows for dealmakers.
+FinanceResearch & DataAgent Orchestration
+2
+Connect
+InspectorCopy URLAdd Connector
+pubrecordsBio.github.bch1212
+US public-records intelligence for AI agents — companies, SEC, courts, spending, licenses.
+Government DataOpen Data
+1021
+Connect
+InspectorCopy URLAdd Connector
+NeuralVergeBai.neuralverge
+Structured, cited, real-world data from 300+ sources and the open web for your AI agents.
+E-commerce & RetailSocial MediaWeb Scraping
+34211
+Connect
+InspectorCopy URLAdd Connector
+nordic-datacloud.nordicdata
+Global B2B intelligence for AI agents: 35M+ companies, 1.6M sanctions, KYB pack. 78 tools.
+Government DataOpen Data
+2
+Connect
+InspectorCopy URLAdd Connector
+Related MCP Servers
+Verilex DataGovernment DataLegal & ComplianceResearch & Data
+carrierone
+Alicense
+Bquality
+Cmaintenance
+Query 20 structured datasets from AI agents — healthcare providers (9M NPI records), SEC EDGAR filings, PACER federal courts, USPTO patents and trademarks, OFAC sanctions screening, crypto whale wallets, DeFi liquidation signals, Polymarket smart money, economic indicators (FRED/BLS), federal contracts, NOAA weather, and OTC shell risk scoring. Pay per query, no subscriptions
+ Updated 7 months ago (2026-03-18 09:25 UTC)
+75
+1
+MIT
+FundzWatch MCP ServerSearchMarketingResearch & Data
+Fund-z
+Alicense
+Aquality
+Cmaintenance
+Provides real-time business event intelligence and AI-scored sales leads to help users track funding rounds, acquisitions, and executive hires. It enables AI agents to generate strategic market briefs and manage company watchlists for predictive business insights.
+ Updated 2 months ago (2026-09-04 11:19 UTC)
+7
+29 npm
+3
+MIT
+ENTIA Entity VerificationofficialGovernment DataOpen DataResearch & Data
+ENTIA-IA
+Alicense
+Aquality
+Cmaintenance
+Structured business intelligence for AI agents. 11.3M verified entities, 40.3M BORME mercantile acts, EU VAT validation (VIES), GLEIF LEI and healthcare registries. 12 tools.
+ Updated 8 days ago (2026-10-14 08:40 UTC)
+6
+1
+MIT
+AgentDBRAG SystemsSearch
+AgentBC9000
+Alicense
+-Not gradedquality
+Dmaintenance
+Real-time curated knowledge API for AI agents. Updated Mon/Wed/Fri from 31 sources covering AI/tech, startups, alternative markets, and emerging markets — no scraping or storage required.
+ Updated 4 months ago (2026-06-11 10:35 UTC)
+1
+MIT
+Was this helpful?
+YesNo
+MCP
+MCP Servers
+MCP Connectors
+MCP Clients
+MCP Tools
+Best MCP Servers
+Products
+Chat
+MCP Directory API
+MCP Gateway
+MCP Hosting
+MCP Inspector
+Policies
+Terms of Service
+Privacy Policy
+VDP
+Resources
+Support
+Careers
+Blog
+Newsletter
+Advertise
+Glama – all-in-one AI workspace.
+All systems online
+Help

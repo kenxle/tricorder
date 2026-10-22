@@ -1,0 +1,72 @@
+SOURCE: https://data.crunchbase.com/docs/getting-started-with-mcp.md
+FETCHED: 2026-10-22 10:25
+HTTP: 200
+
+---
+updatedAt: 2026-10-15T22:56:51.000Z
+agentTools:
+ projectIndex: https://data.crunchbase.com/llms.txt
+---
+# Getting Started with MCP
+Connect your AI assistant or application to live Crunchbase data.
+# What is MCP?
+The Model Context Protocol (MCP) is an open standard that lets AI assistants like Claude and ChatGPT securely access external data sources and tools. 
+The Crunchbase MCP server gives your AI assistant direct access to **all **of Crunchbase's company, funding, investor, people, and predictive intelligence data, so you can research companies, analyze funding activity, build sourcing lists and much more through natural conversation.
+You don't need to know anything about the protocol itself to use it. If you can use an AI assistant, you can use the Crunchbase MCP server.
+# Before you begin
+You'll need:
+* **A Crunchbase account with MCP access.** 
+Access to the Crunchbase MCP is assigned per user by your workspace owner. If you do not yet have access to the Crunchbase MCP for your organization, please reach out to . 
+* **A supported AI tool.** 
+The Crunchbase MCP server works with Claude (web, desktop, and Claude Code), ChatGPT, VSCode Copilot Chat, Perplexity, Mistral AI, and any MCP-compliant client. See Connecting AI Tools for setup instructions for each.
+# How authentication works
+The Crunchbase MCP server uses OAuth 2.1. In practice, that means:
+1. When you add the Crunchbase connector in your AI tool, you're redirected to Crunchbase to sign in with your normal account credentials. You never enter your Crunchbase password into the AI tool itself.
+2. Crunchbase checks that your account has MCP access. If it does, the connection completes. 
+3. Your AI assistant can now query Crunchbase on your behalf.
+# Your first query
+The fastest path is Claude on the web, where you can add the Crunchbase MCP server even if you are on a free Claude plan. 
+If you use a different AI tool, follow the matching section in Connecting AI Tools, then come back to step 4.
+1. **Add the connector.** Crunchbase is available in Claude's connector directory, including on the free Claude plan.
+ 1. **Open the Crunchbase listing.** View Crunchbase in the Claude connector directory. You can also open Claude's connector directory and search for **Crunchbase**.
+2. **Add the connector.** Select **Crunchbase** and follow the prompt to add or connect it.
+3. **Connect your account.** Sign in with your Crunchbase account and choose **Allow** to approve access.
+4. **Run a test prompt.** Start a new chat and ask:
+ > What is Anthropic's total funding to date, and who led their most recent round?
+ You should get an answer with specific figures drawn from Crunchbase, and your AI tool will show that it called Crunchbase tools to get them.
+If the answer comes back with live Crunchbase data, you're connected. If something failed, see [Troubleshooting](#troubleshooting) below.
+# Writing effective prompts
+The Crunchbase MCP server does more than look up single companies. It can filter, screen, and build lists. A few patterns that consistently work well:
+**Be specific about stage, geography, and timeframe.** The more precise your criteria, the better your results.
+> Find US-headquartered fintech companies that raised a seed or Series A round in the last 60 days.
+**Chain research steps in one request.** Your assistant can resolve an entity, pull its profile, and act on the result.
+> Find Anthropic's latest funding round. Report round type, date, amount, and pre-money valuation. From its lead investors, pick the 3 with the highest total investment count. For each: investment stages, sectors, HQ, and their 5 most recent investments per Crunchbase.
+**Build and save lists.** Turn research into a reusable asset in Crunchbase.
+> Build a list of Series A cybersecurity companies founded in the last three years and save it to a Crunchbase list called "Cyber Watchlist."
+**Ask for a screening brief before a meeting.**
+> Give me a one-page brief on OpenAI: funding history, key people, and competitors.
+# Getting the Best Results
+A few habits that make a big difference when asking questions of Crunchbase data.
+## Be specific about what you want back
+"Tell me about this company's investors" can mean many things. "List the lead investors and where each is headquartered" gets you a clear, useful answer on the first try. If you know what the output should look like, describe it.
+## Specify how to choose
+If your question could have more than one right answer, say how to pick. "The biggest," "the most recent," or "the top 3 by number of investments" all give consistent results. Vague words like "best" or "most notable" leave the choice up to interpretation, so you may get a different answer each time you ask.
+## Prefer facts over summaries when accuracy matters
+Asking for specific facts ("their five most recent investments") keeps answers grounded in the data. Broad asks ("what are they known for") invite general commentary that may not come from Crunchbase at all. If you want data-only answers, say so: "use only Crunchbase data, and tell me if something is missing."
+## Start simple, then refine
+Ask a plain question first and see what comes back. If part of the answer is vague or inconsistent, tighten just that part and ask again. You rarely need a perfect prompt up front.
+## Reuse prompts that work
+When a prompt gives you exactly what you wanted, save it. A good prompt is repeatable: you or a teammate can run it next week or next quarter and get results in the same shape.
+> **Skills for Crunchbase MCP: coming soon.** 
+Skills are reusable instruction packages that teach your AI assistant complete workflows, turning the prompt patterns above into repeatable, expert-level research routines. 
+>
+> We're building a library of Crunchbase skills for common workflows like deal sourcing, market landscaping, and company deep dives, and you can always build your own on top of the tools in the Tool Reference. 
+Want a preview? Download our beta Venture Sourcing Analyst skill, which packages five sourcing workflows and a tested query playbook into a single install.
+# Troubleshooting
+**After successfully logging in, my AI agent is unable to use the MCP.** 
+* Your organization or user account might not have MCP access. Please check with your Crunchbase workspace owner that they have provisioned your user with access to the Crunchbase MCP server.
+**The connection loops or fails before the sign-in page.** 
+* Remove the connector from your AI tool, then add it again. If it persists, check that you entered the server URL exactly: `https://mcp.crunchbase.com`.
+**The assistant answers without using Crunchbase.** 
+* Ask it explicitly: "Use Crunchbase to answer this." Make sure that Crunchbase is chosen / active as a connector. If the connector doesn't appear in your tool's connector list, reconnect.
+Still stuck? Contact 

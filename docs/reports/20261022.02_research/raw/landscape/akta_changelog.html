@@ -1,0 +1,50 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://docs.akta.pro/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Changelog
+
+> New features, enhancements, and updates to the akta.pro API.
+
+**August 20, 2026**
+
+## List Generation API is now available
+
+akta.pro now offers a List Generation API for building targeted company lists directly from the company data index. Pass a natural language query, such as "SaaS companies in the US with Series A funding," or use structured filters across firmographics, business model, financials, location, technology, and funding to define your target list with precision. Results can be enriched with any Company Data section and sorted by revenue, valuation, headcount, total funding, or founded year. This is available on Subscription and Enterprise plans.
+
+[View Overview](/docs/list-generation/overview) · [View API Reference](/api-reference/listgen-api)
+
+**July 30, 2026**
+
+## Add companies missing from akta.pro with the Company Addition API
+
+If a company does not turn up in a Company Search API call, you can now submit it directly for addition using the new Company Addition API. Submit a company name and website, and akta.pro either returns the existing company details immediately or creates an addition request you can track through completion via the Request Status API or a webhook. This is a free, asynchronous endpoint available on Subscription and Enterprise plans.
+
+[View Overview](/docs/supporting-apis/company-addition) · [API Reference](/api-reference/supporting-apis/company-addition-api)
+
+**July 23, 2026**
+
+## akta.pro is now available as an MCP server and a terminal CLI
+
+You can now connect Claude, ChatGPT, Cursor, VS Code, Claude Code, and other MCP-compatible clients directly to akta.pro at `https://mcp.akta.pro/mcp` to pull company data, news, and alternative signals mid-conversation. For scripts, pipelines, and agents that need the same data outside a chat client, the new `akta-pro-cli` installs with pipx, uv, or pip and authenticates with a single command. Both interfaces call the same underlying REST API and are available to all users.
+
+[MCP Setup Guide](/docs/developer-tools/mcp/setup) · [CLI Setup Guide](/docs/developer-tools/cli/setup)
+
+**July 16, 2026**
+
+## Expanded sections and enterprise data in the Company Data API
+
+The Company Data API now returns structured company data across 16 sections, including firmographics, business model, financial estimates, management profiles, technology and AI capabilities, and more. You can request only the sections you need to keep responses lean and manage credit consumption. Enterprise plans also gain access to two additional sections, funding details and M\&A and investment history.
+
+[View Overview](/docs/company-data/overview) · [API Reference](/api-reference/company-data)
+
+**July 9, 2026**
+
+## Improved search, entities, and taxonomies in akta.pro News API
+
+The News API now supports open-ended query searches, so you can monitor any theme, narrative, or commodity without first anchoring to a company or industry. Every article is enriched with resolved entities (person, location, product, event) that you can filter on directly, and is classified across four taxonomies simultaneously: akta.pro proprietary news and industry taxonomies plus standard NAICS, SIC, IPTC, and IAB codes. This release also adds true event-level deduplication via group\_articles, relevance and sentiment filtering, and a richer article payload (article type, press-release/opinion/breaking flags, fully resolved company mentions, and more). One breaking change: the industry parameter now expects resolved codes instead of free text, so use the new free Industry Search API to resolve them.
+
+[View Full Blog](https://akta.pro/blog/updates-news-signals-api-july-2026)
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

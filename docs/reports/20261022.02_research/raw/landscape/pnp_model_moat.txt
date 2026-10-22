@@ -1,0 +1,87 @@
+SOURCE: https://pnpenterpriseai.substack.com/p/the-model-isnt-the-moat
+FETCHED: 2026-10-22 10:30
+HTTP: 200
+
+
+ The Model Isn't the Moat
+SubscribeSign in
+The Model Isn't the Moat
+Plug and Play Enterprise & AI team newsletter
+Amit, Enterprise & AI, Alde, and Arsham
+Jul 07, 2026
+6
+Share
+Subscribe
+What caught our attention:
+OpenAI and Broadcom announce Jalapeño, OpenAI’s first AI chip.
+Nine months from tape-out to announcement — against a typical two-to-three-year custom silicon cycle.
+OpenAI and Broadcom unveiled Jalapeño, OpenAI’s first custom inference chip. Strategically, the move makes sense. If OpenAI can control more of the compute stack, it gains more leverage over cost, performance, and supply — and less dependence on vendors like Nvidia. Amazon and Google have followed a similar path for years with Trainium and TPUs. Open AI is now making the same move.
+Broadcom says it’ll deploy at gigawatt scale, with Microsoft and others already lined up. The unresolved part is that OpenAI is touting big performance-per-watt gains with zero numbers attached, so the claim is a promise, not a result, and it’s worth remembering the difference until real benchmarks show up. The timing makes it even harder to ignore the narrative angle. OpenAI filed its confidential S-1 roughly three weeks before this announcement. This could be real engineering progress arriving on its own schedule. It could also be IPO positioning — a way of telling the market OpenAI isn’t just a model company anymore, it’s moving down-stack and claiming the economics that come with it. Probably some of both.
+The part worth watching isn’t the chip. It’s inference cost.
+Agentic AI runs on inference, and inference cost is the hidden constraint strangling a lot of these businesses. We see it constantly in AI SOC analyst startups, for example: the product demo works, the capability is real, but the margins get ugly fast because autonomous investigation and remediation consume a huge amount of tokens. If inference cost really drops by 50%, some of those businesses start to look a lot more viable. The unit economics get closer to working.
+That is why the real story is not the chip itself. It is whether Jalapeño can materially change the cost structure of inference-heavy products.
+Morgan Stanley reduced agent autonomy and improved an accuracy-critical workflow
+P&L reconciliation — one of banking’s most accuracy-critical workflows — is now handled with tighter human oversight, not less.
+Morgan Stanley cut its P&L reconciliation workload in half. The twist is how they made the agents less autonomous, not more. That inverts the playbooks, where the instinct is to push autonomy higher and pull humans out. Here, Morgan Stanley did the opposite. Humans stay tightly in the loop, correcting the AI in real time, and those corrections get converted into repeatable rules the agent applies going forward. It challenges a common assumption in enterprise AI: the more autonomous the agent, the more advanced the deployment. In this case, tighter oversight appears to have produced the better outcome.
+Two things made it work. First, the team did the unglamorous work of mapping the process in detail before deciding where AI actually fit. In some cases, the answer may be an agent. In others, it may be traditional automation or simply redesigning a broken step in the workflow. A lot of companies skip that diagnostic phase because it is easier to start with the model and work backward, but process clarity often matters as much as model quality. That is part of the reason workflow intelligence companies like Skan AI (portfolio company) have drawn so much enterprise interest from our ecosystem recently. More companies are realizing that understanding how work actually gets done is a prerequisite for deploying AI well. We’ve made a version of this point before (start at 22mins): having a deep understanding of your internal operating model is a critical first step for a successful AI deployment.
+Second, Morgan Stanley built human feedback directly into the system’s day-to-day operation — reviewing, correcting, teaching — so the system measurably improves and corrections become reusable rules over time.
+That feedback loop is the important part. The point is not simply to keep humans involved. It is to design a system that gets better through use, especially in workflows where accuracy matters more than autonomy for its own sake. 
+Deep Dive: AI systems that compound
+Every year at the Plug and Play Summit, we break down the macro-trends shaping AI. Our most recent presentation from last quarter underscored a pivotal shift echoed by industry leaders today: the move from merely adopting models to building AI systems that actually compound over time.
+You’ve probably felt this shift already, even if you haven’t put a name to it. And a lot of our thinking on this has been shaped by what our enterprise partners are seeing firsthand.
+If you listen closely, the executives being quoted this month are all describing the same thing, with different vocabulary. Some call it a “learning loop.” Others call it “memory” or a “context layer.” But they’re all pointing to the same underlying principle.
+If you’re chasing access to the latest frontier model, you’re optimizing for a commodity that gets cheaper every quarter. But if you’re building systems that remember, correct, and improve, you’re building the one thing that doesn’t depreciate. The gap between those two groups is where the real enterprise AI story is this year.
+THE LEARNING LOOP THESIS
+The model was never the moat — the loop around it is.
+Nadella’s essay has drawn tens of millions of views.
+Satya Nadella’s essay resonated because it gave language to something a lot of people in enterprise AI already feel. His framework splits enterprise value into “human capital” and “token capital,” arguing the two only matter together: a company should be able to swap out its underlying model without losing the judgment, workflow, and accumulated learning built on top of it. Box’s Aaron Levie backed the framing publicly, and Snowflake’s Sridhar Ramaswamy has made a version of the same argument for over a year, warning that frontier labs want every enterprise reduced to “a dumb data pipe.”
+That’s the tension at the center of this moment. Everyone says they want flexibility, portability, and independence from model vendors, while the ecosystem keeps concentrating around a few model providers.
+The irony: Microsoft’s own roughly $13 billion OpenAI investment is the exact dependency Nadella is telling everyone else to avoid. That contradiction doesn’t make his diagnosis wrong. It just means the company selling the cure also profits from the disease.
+You can already see how this plays out. Microsoft’s new Frontier Company push — backed by a $2.5 billion commitment and roughly 6,000 engineers focused on customer AI implementation — points to where enterprise value is likely to accrue. A customer may use multiple models and still end up deeply locked into a vendor’s control plane. That’s the layer frontier labs and hyperscalers are fighting to own because the lock-in doesn’t come from the model alone.
+THE MEMORY MOAT
+Enterprises don't need smarter models — they need models that don't forget.
+Paolo Alto Networks grew from ~$18B to ~$27B by late June 2026 under Nikesh Arora’s tenure. 
+Palo Alto Networks CEO Nikesh Arora makes the same point in a more practical way: the real advantage compounds through memory, not raw intelligence. The more context an agent holds, the more useful it becomes, and the harder it is to replace. That’s the switching cost most people still underestimate.
+He also framed it as a breadth-versus-depth problem: while consumers can tolerate AI mistakes, enterprises can’t, and closing that gap costs real money. His comparison to Waymo is useful here — tens of billions spent on proprietary data, just to reliably replace a single driver — and he applies the same math to enterprise agents. The argument is that enterprise agents may follow a similar pattern: if you want them to work reliably in complex environments, you have to invest in memory, feedback, context, and edge case training at a level of depth most companies still haven’t budgeted for.
+His optimist case is that “software with opinions” makes average employees better at their jobs rather than replacing them outright; his pessimist case is that most agentic enterprise products today are still not ready for the depth of work they claim to handle.
+That gap between what companies hope agents can do and what they can actually trust them to do is where a lot of Enterprise AI budgets are getting spent right now.
+There’s another tension in Arora’s view worth paying attention to. He predicts that half of general & administrative roles could disappear within three years, while also saying Palo Alto Networks needs more engineers, not fewer. This can be true only if the jobs disappearing and the jobs appearing require entirely different skills, which is a harder transition than most optimists are letting on (we spoke about this during our most recent presentation and plan to dive deeper in an upcoming post).
+THE SPRAWL PROBLEM
+The failure mode isn't too little AI — it's AI that doesn't talk to itself.
+60% of AI projects will be abandoned through 2026 for lack of AI-ready data — not lack of model capability, per Gartner.
+Here’s a pattern: a company puts an agent in sales, another in support, and another in customer success. Each one works fine in isolation. Then, quietly, you’ve got a stack of agents that don’t share context, don’t learn from each other, and don’t draw from the same source of truth. Scale stops compounding and starts dragging; the same workflows get mapped over and over, and the same mistakes resurface in different systems because nothing is actually accumulating.
+Atlan co-founder Prukalpa Sankar circulated a new Verizon and Gartner case study on this exact problem: agent sprawl. Its core point is simple: without a comprehensive operational context, agents don’t act reliably and don’t deliver much business value. The issue isn’t having agents. It’s having too many of them operating with fragmented context.
+If you want the generous interpretation, this is just a sequencing problem. Every company hits it eventually once deployment gets real. The uncomfortable read is that this is what “AI transformation” actually looks like at scale: ten small memories instead of one durable one, and companies paying repeatedly to teach different systems the same lessons.
+THE HARD TRUTH
+Right now, no one has fully figured out the right approach.
+That’s the part people don’t say enough. Building private evals, a unified enterprise context layer and learning loops is hard and not something most CFOs have budgeted for.
+Every executive making this argument — Nadella, Levie, Arora— is describing the destination without pricing the transition. A learning loop requires infrastructure most enterprises don’t have: pipelines that capture corrections, evaluation systems tied to business outcomes, and governance that keeps five different agents reading from one source of truth instead of five. None of this is simple, and it’s a multi-year commitment for any enterprise AI leader. There is another question underneath all of this: how do you incentivize technology leaders to take the risk of transition when they are the ones on the hook if something breaks?
+The companies positioned to win this transition aren’t the ones with the best model access — they’re the ones willing to re-architect before the ROI is obvious. That is the real bet.
+Everyone agrees on the thesis. The open question is how we get there, and who gets there first?
+ENGAGE WITH US
+If you’re a startup building for this shift, we’d love to connect. We’re always eager to meet founders building products enterprise customers genuinely love, and when that pull is already there, it tends to create real momentum across our network of 550+ corporations. You can email us at amit@pnptc.com
+And if you’re an enterprise leader looking to meet emerging companies, exchange ideas, or learn how peers are approaching AI adoption, please reach out to us. We’d be glad to get you involved.
+6
+Share
+A guest post by
+Amit
+Subscribe to Amit
+A guest post by
+Enterprise & AI
+Enterprise & AI team of PnP
+Subscribe to Enterprise
+A guest post by
+Alde
+Cybersecurity VC: https://www.linkedin.com/in/aldemaro-gonzalez
+Subscribe to Alde
+A guest post by
+Arsham
+VC at Plug and Play Enterprise AI team | https://www.linkedin.com/in/arsham-zolanvari/
+Subscribe to Arsham
+TopLatestDiscussions
+No posts
+Ready for more?
+Subscribe
+© 2026 Enterprise & AI · Privacy ∙ Terms ∙ Collection notice
+ Start your SubstackGet the app
+Substack is the home for great culture

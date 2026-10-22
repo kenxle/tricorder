@@ -1,0 +1,170 @@
+SOURCE: https://nicrron.ai/
+FETCHED: 2026-10-22 10:25
+HTTP: 200
+
+Nicrron — One API for every model
+Skip to content
+NNicrron
+Checking
+ModelsDocsFeaturesNinooSign inGet started
+Nicrron gateway
+One API for every model.
+Route, cache and observe your AI traffic through one OpenAI-compatible endpoint. Pay per token, no subscription.
+Get startedView models
+$10 to start · deposits matched up to $500 every 90 days · chat prompts never stored
+Node.jsPythoncURLCopyimport OpenAI from 'openai';
+const client = new OpenAI({
+ apiKey: process.env.NICRRON_API_KEY,
+ baseURL: 'https://api.nicrron.ai/v1',
+});
+const response = await client.chat.completions.create({
+ model: 'anthropic/claude-sonnet-5',
+ messages: [{ role: 'user', content: 'Hello!' }],
+});
+Live catalog
+Every price, before you send a token.
+Every model's price per million tokens, published before you send a request. No plans, no seats.
+models110
+model makers18
+modalities5
+cache hit, not billed12 ms
+Popular models and their prices per million tokens
+ModelContextInput / 1MOutput / 1M
+Claude Opus 5.5Anthropic1M$4.00$20.00
+GPT-6 SolOpenAI272k$2.00$10.00
+Claude Sonnet 5.5Anthropic1M$2.00$10.00
+DeepSeek V4 ProDeepSeek1M$1.32$3.96
+Kimi K3Moonshot AI1M$3.00$15.00
+GPT-6 LunaOpenAI272k$0.10$0.50
+US dollars per million tokens. Prices are each provider's list price. Requests paid from credits add a 5% platform fee.All 110 models
+01 — Routing modes
+Name the job, not the model.
+Five routing slugs pick the model per request. Pin a specific model whenever you need to, or hand the gateway an ordered fallback list.
+nicrron/auto sends long prompts to a heavy model and short ones to a fast one.
+Fallback arrays cascade on 429 or 5xx before the first streamed byte.
+Every request is one OpenAI-compatible call; nothing new to learn.Read the routing guide
+nicrron/auto
+Picks by prompt length: over 2,000 characters goes to Claude Opus 5.5, Claude Sonnet 5.5, GPT-6 Sol or DeepSeek V4 Pro; shorter prompts to Claude Haiku 5.5, GPT-6 Luna or DeepSeek Flash.
+nicrron/reasoning
+DeepSeek V4 Pro, GPT-6 Sol and Claude Opus 5.5, then Kimi K3 and GLM 5.3, for multi-step logic.
+nicrron/coding
+Claude Opus 5.5, Claude Sonnet 5.5 and Kimi K2.7 Code, then GLM 5.3, Codestral and GPT-6 Sol.
+nicrron/fastest
+Claude Haiku 5.5, GPT-6 Luna and DeepSeek Flash for the lowest latency.
+nicrron/cheapest
+Every chat model, cheapest list price first, so the first one that answers is the cheapest available.
+02 — Failover and caching
+Uptime you don't have to engineer.
+Provider health is scored continuously with an EWMA latency model and circuit breakers. Deterministic requests are served straight from Redis, in milliseconds, for free.
+If a provider rate-limits or fails, the request moves to the next one instantly.
+Exact-match cache: 12 ms and $0.00 on a hit, scoped to your account, keyed by the full request.
+Send temperature 0 or x-nicrron-cache: true to opt in per request.See observability
+Latency, same request
+Upstream provider~800 ms
+Nicrron cache hit12 ms
+cached requests are not billed
+03 — Retention
+We keep the bill, not your prompts.
+We never store chat prompts. Completions are cached for up to 24 hours, only for your account, when temperature is 0 or you opt in.
+Stored: latency, status, token counts and a hash of the request.
+Never stored: chat prompts, embedding inputs or vectors, audio.
+Send x-nicrron-cache: false and a completion is never cached.
+Generated video and images stay 30 days for download, then are deleted.Read the privacy policy
+Kept
+latency_ms
+status_code
+prompt_tokens · completion_tokens
+request_hash
+completion · 24 h cache
+Never kept
+messages[]
+embedding input and vectors
+audio input
+04 — Per-token billing
+One balance, every cent visible.
+Every request lands in your logs with its exact cost. Upstream prompt-cache discounts pass through automatically, and teams share one wallet with roles and alerts.
+Anthropic cache reads are 90% off, OpenAI cache reads 50% off, recorded in usage.
+Filter logs by date, model, provider and status; export to CSV or JSON.
+Owner, Admin, Developer and Viewer roles over a shared credit pool.See pricing per model
+alert.low_balanceHMAC-SHA256POST /hooks/nicrron HTTP/1.1
+X-Nicrron-Signature: sha256=9b4a1f…
+X-Nicrron-Event: alert.low_balance
+{
+ "event": "alert.low_balance",
+ "data": {
+ "currentBalance": 4.5,
+ "threshold": 10,
+ "currency": "USD"
+ }
+}
+05 — Also in the gateway
+More than chat completions.
+Model ArenaBenchmark two or three models on one prompt: TTFT, tokens per second and cost, with a blind mode.
+Teams and shared walletsOne credit pool per organization with Owner, Admin, Developer and Viewer roles.
+Balance and spend alertsAn email, plus an HMAC-SHA256 signed webhook if you add one, when the balance runs low or a day's spend passes your cap.
+Video and imagesGemini Omni, Seedance, Kling, Wan, Grok Imagine, PixVerse, MiniMax, FLUX and Hailuo video, and Nano Banana, GPT Image, FLUX, Seedream, Qwen Image, Ideogram and Recraft images, as async jobs, cost charged upfront and refunded on failure.
+AudioOpenAI TTS and Whisper transcription through the standard SDK, billed on true audio duration.
+EmbeddingsOpenAI, Mistral and Voyage embeddings behind /v1/embeddings with automatic failover.
+Providers
+Every major lab, one key.
+Frontier chat, reasoning, coding, embeddings, audio, image and video models behind a single endpoint.
+OpenAI27 models
+Anthropic13 models
+Z.ai11 models
+Mistral AI10 models
+Google9 models
+xAI8 models
+Voyage AI6 models
+ByteDance5 models
+Kling AI5 models
+Moonshot AI4 models
+MiniMax3 models
+Black-forest-labs2 models
+DeepSeek2 models
+Alibaba1 model
+Ideogram1 model
+Pixverse1 model
+Qwen1 model
+Recraft1 model
+Questions
+Frequently asked.
+What does a request cost?+
+Each model's list price, as shown in the catalog. Requests paid from credits add a 5% platform fee. With your own provider key, the provider bills you and we charge 5% of the list price. There is no subscription.How does the deposit match work?+
+We match deposits 1:1 in bonus credits, in $100 steps, up to $500 in bonus credits per rolling 90-day period. Each match is applied after a short account review, usually within 24 hours of the deposit. Bonus credits have no cash value; the terms have the details.Do you store my prompts?+
+We never store chat prompts. Completions are cached for up to 24 hours, only for your account, when temperature is 0 or you opt in. Send x-nicrron-cache: false to turn the cache off for a request. We keep latency, status, token counts and a hash of each request for billing. Embedding inputs and audio are never stored. Video and image jobs keep their prompt and output for 30 days so you can download the result, then both are deleted.How do the routing slugs work?+
+Send one of five slugs as the model: nicrron/auto picks by prompt length, nicrron/reasoning and nicrron/coding try a fixed list of strong models in order, nicrron/fastest prefers low-latency models, and nicrron/cheapest tries the cheapest chat models first. If a provider fails or rate-limits before answering, the next one is tried.Can I generate video, images and audio?+
+Yes. POST /v1/videos/generations runs Gemini Omni 1.1 Flash, Seedance 2.5, 2.0 and 1.0 Pro, Kling O3, 3.0 and 2.5, Wan 3.0, Grok Imagine 1.5, PixVerse V6, MiniMax H3 Max, FLUX 3 Max and Hailuo 02 as async jobs, charged upfront and refunded if they fail. /v1/images/generations serves Nano Banana, GPT Image 2.5, FLUX 3, Seedream 5, Qwen Image 3, Ideogram 4.5 and Recraft V4.1. /v1/audio/speech and /v1/audio/transcriptions give OpenAI TTS and Whisper through the standard OpenAI SDK.Do provider prompt-cache discounts reach me?+
+Yes. When a provider reports a prompt-cache read, you pay its cached rate: Anthropic cache reads are 90% off and OpenAI cache reads 50% off. The cached token counts appear in the response's usage.
+Developers
+Point your SDK at api.nicrron.ai.
+Two lines change: the base URL and the key. Every model, one balance.
+Create an accountQuickstart
+Builders
+Describe an app and watch it get built.
+Ninoo runs on the same account and balance, in the browser or in your terminal.
+Open the BuilderNinoo Code
+Nicrron is an AI research company with a full stack: gateway, agents, cloud and core models. About the company
+NNicrron
+One API for every model. Built by Nicrron, an AI research company with a full stack.
+Products
+Nicrron gateway
+Ninoo Code
+Ninoo Builder
+Model Arena
+Research
+Research
+NiNI Labs
+Platform
+Model catalog
+Documentation
+Gateway status
+NiNI Cloud
+Nicroo Core
+Company
+nicrronninoo.ai
+Careers
+Support
+Privacy
+Terms
+© 2026 Nicrron Inc. We never store chat prompts. Completions are cached for up to 24 hours, only for your account, when temperature is 0 or you opt in.
+DocsPrivacyConsole

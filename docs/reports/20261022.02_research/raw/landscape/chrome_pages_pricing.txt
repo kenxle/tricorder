@@ -1,0 +1,54 @@
+Text copied from pages read in a real browser on 2026-10-22 (the vendors block plain HTTP fetches). Only the parts used in research_landscape.md are kept. Nothing here is paraphrased.
+
+=== SOURCE: https://www.crunchbase.com/buy/select-product (title "Product Pricing"), read 2026-10-22 ===
+Crunchbase's private market data, now headless
+The full power of Crunchbase data & signals, made accessible to your agents, your workflows, and your apps.
+FOR INDIVIDUALS
+Pro
+Save 38% on Annual first Year
+For you and your agent. Research, discover, and act on private companies with trusted data and insights.
+Full private company profiles
+Market and valuation insights
+Private company forecasts
+AI Search, saved lists & exports
+MCP usage included
+$79.00 / $49 per month billed annually   (Try annual free)
+$99 per month billed monthly   (Try monthly free)
+FOR TEAMS
+Business
+For your team and its agents. Scale private-company research with more usage, shared workflows, and administrative control.
+Everything in Pro, plus: Higher MCP use for your agents; CRM and workflow integrations; More export capabilities; SSO and team management
+Starting at $199 per month billed annually (Talk to sales)
+FOR ORGANIZATIONS + APPLICATIONS
+Custom Data Solutions
+Enterprise MCP access; Scaled API access; Cloud storage delivery; Data warehouses delivery; Dedicated support
+Custom Pricing (Talk to sales)
+Comparison table rows (each listed as "Available to license" for Custom Data Solutions; Pro and Business columns show tick marks that the text read did not capture): Signals data access: Current signals (Pro), Current signals (Business), Current + Historical signals (Custom). Private-company insights: Company growth, news, and product insights; Market and micro-industry insights; Competitors and similar companies; Investor insights and likely investors; Current valuation estimates. Private-company forecasts: Funding and growth forecasts; Acquisition and IPO forecasts; Remain-private forecast. Also: Seats: Pro 1, Business 2+. Data exports: Pro 2,000 rows/month, Business 5,000 rows/month. Search results up to 1,000/search. MCP tool calls: Base / More / Configured allowance. Integrations: ChatGPT and Claude "Configured MCP access" on Custom.
+
+=== SOURCE: https://pitchbook.com/products (title "Products - Business Intelligence Tools - PitchBook"), read 2026-10-22 ===
+The page shows no price. Its only call to action is "Request a free trial". Paid add-ons listed: Direct Data (API, Data Feed, CRM integration), CRM Integration, Lumonic. https://pitchbook.com/products/pitchbook-pricing returns "404 - Page not found".
+
+=== SOURCE: https://carta.com/data/ (title "Data Desk by Carta: Private Market Insights"), read 2026-10-22 ===
+"Carta's round benchmarking tool enables you to query our proprietary dataset on deal sizes and valuations. Filter by stage, sector, and geography in order to get the most customized benchmark for your fundraising situation." (offered with "Try it out")
+"Carta helps more than 50,000 startups and over 1,700,000 security holders manage over $4.5 trillion in equity."
+"The customer data that we publish is aggregated and anonymized."
+Reports listed include "VC Fund Performance: Q2 2026" and "State of Pre-Seed: Q2 2026". No price shown on the page.
+
+=== SOURCE: https://akta.pro/pricing, read 2026-10-22 ===
+Pay as you go: "Only pay for what you use". No monthly subscription. Datasets: News yes, Company Enrichment yes, Company Discovery yes, Alt Data no, Company Addition no, Funding + Transactions data no. License type: Personal use only. Rate limit: 25 req / min.
+Subscription: MONTHLY $50 / month, 1,250 credits / mo. Alt Data yes, Company Addition yes, Funding + Transactions data yes (see footnote). License type: Limited commercial. Rate limit: 100 req / min.
+Enterprise: STARTING AT $2,000 / month, billed annually. Full commercial license. Custom rate limit.
+Footnote: "Company Enrichment on Pay-as-you-go and Subscription excludes funding and M&A data, available on Enterprise."
+(The docs page https://docs.akta.pro/getting-started/pricing.md says Funding Detail and M&A are on the subscription tier with limited access. The two akta pages disagree on this point.)
+
+=== SOURCE: https://akta.pro/ , read 2026-10-22 ===
+"Company data, news & signals API", "Pay-as-you-go | Works with any AI agent | Enterprise-ready", "TRY FOR FREE".
+"20M+ companies globally", "70+ data points per company", "~80% noise filtered from news".
+"Baked-in attribution: Every response ships with source metadata so everything is verifiable"
+"by Wokelo AI" appears in the footer.
+
+=== SOURCE: https://playground.akta.pro/signup, read 2026-10-22 (page read only, no account made) ===
+Fields: Full Name, Email ID, New Password, "Have a coupon code?", "Continue with Google". Text: "Company data and signals for agents", "Try for free! No credit card required".
+
+=== SOURCE: https://www.wokelo.ai/ , read 2026-10-22 ===
+Title: "Wokelo - AI Agents for Investment Research & Due Diligence". The page text read shows a customer quote and "75% Faster research turnaround". No pricing shown.

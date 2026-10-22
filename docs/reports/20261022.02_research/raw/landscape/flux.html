@@ -1,0 +1,1329 @@
+<!DOCTYPE html><html lang="en" data-wf-page data-wf-site="5f1af4c2e67caae8e13187f1"> <head><script>window.__FLUX_SHUTTLE_HEADLESS__=true</script><script>window.__fluxSubspaceHostBridge=1</script><script>window.__FLUX_SHUTTLE_DISCLOSURE__="public"</script><script>window.__FLUX_SUBSPACE_DEFAULTS__="prLink=github,identity=on"</script><script id="flux-shuttle-loader" defer src="https://subspace.internal.flux.ai/shuttle.js"></script><script>window.__FLUX_ENV__={"environmentName":"production","appEnv":"production","domainPrefix":"www","appVersion":"2026.43.0","appVersionExtended":"2026.43.0+production+79c45ce","commitSha":"79c45ce82b8c4c33df88f26c88f103580e535da2","commitDate":"2026-10-22T13:33:03Z","artifactHash":"15abaa37e2af4558","serviceKey":"marketing","flagArtifactSeed":{"ordinal":745,"contentHash":"0e3af04b560eed185878c91e745791cce54cd3cc","streamId":"app-flags:production","activationSequence":1075,"programHash":"bccddf3d131f1921f72c2d27909a3022bdf74cda","programFormat":"flux-flag-program","programVersion":1,"programMode":"serve"}};</script><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Flux AI - Design PCBs with AI</title><meta name="description" content="Introducing a new way to work: Give Flux a job and it plans, explains, and executes workflows inside a full browser-based eCAD you can edit anytime."><link rel="canonical" href="https://www.flux.ai/p"><!-- Site verification --><meta name="google-site-verification" content="wg2x562beFt07cx03DE2VMobB21CPbP8ZEviZVdJstw"><meta name="facebook-domain-verification" content="pioikqe6ewnqzhtwu4fryma0v3od7a"><!-- Open Graph --><meta property="og:site_name" content="Flux"><meta property="og:type" content="website"><meta property="og:title" content="Flux - Build. Working. Hardware."><meta property="og:description" content="Flux is your AI hardware engineer. It takes you from idea to PCB to prototype, right in your browser."><meta property="og:image" content="https://www.flux.ai/p/assets/opengraph-images/flux-og-hardware-era.jpg"><meta property="og:url" content="https://www.flux.ai/p"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@BuildWithFlux"><meta name="twitter:title" content="Flux - Build. Working. Hardware."><meta name="twitter:description" content="Flux is your AI hardware engineer. It takes you from idea to PCB to prototype, right in your browser."><meta name="twitter:image" content="https://www.flux.ai/p/assets/opengraph-images/flux-og-hardware-era.jpg"><!-- Favicon --><link rel="icon" type="image/png" href="/p/assets/site/5f1af4c2e67caae641318805_favicon-32x32.png?v=15abaa37e2af4558"><link rel="apple-touch-icon" href="/p/assets/site/5f242059c02c2062331c655c_webclip.png?v=15abaa37e2af4558"><!-- Page site stylesheet: explicit link so it loads before the inline overrides below --><link rel="stylesheet" href="/p/assets/home.CkucYRhu.css?v=15abaa37e2af4558"><!-- Self-hosted webfonts (Montserrat, Roboto, Ubuntu, Material Icons) --><link rel="preload" as="font" type="font/woff2" crossorigin href="/p/fonts/site-v2/figtree.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="/p/fonts/site-v2/roboto-mono.woff2"><style>/* Self-hosted marketing webfonts.
+ *
+ * These used to be pulled in by the Google `webfont.js` loader, which serialised
+ * three round trips before a single font byte arrived (loader script -> injected
+ * fonts.googleapis.com stylesheet -> fonts.gstatic.com woff2). On a throttled
+ * mobile connection the faces only became active 3-4s in, long after first paint,
+ * so every heading and paragraph relaid out when they swapped: that reflow was the
+ * dominant Cumulative Layout Shift source on the /p/* pages.
+ *
+ * Serving the faces from our own origin lets the two above-the-fold faces
+ * (Montserrat + Roboto, latin, upright) be preloaded with the document, so they
+ * are in place before first paint and nothing swaps afterwards. See Fonts.astro.
+ *
+ * Montserrat and Roboto are variable fonts, so one file per subset covers the whole
+ * 100-900 weight range. Same subsets (latin, latin-ext) and unicode ranges Google
+ * serves; the files are the same woff2 payloads, fetched from fonts.gstatic.com.
+ * `/p` is substituted with the configured base path by Fonts.astro,
+ * which inlines this file, so the faces and their preloads always agree.
+ *
+ * Montserrat and Ubuntu are licensed under the SIL Open Font License 1.1,
+ * Roboto and Material Icons under the Apache License 2.0. */
+
+/* Montserrat 100 900 italic - latin */
+@font-face {
+    font-family: "Montserrat";
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("/p/fonts/montserrat-italic-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+        U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+        U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Montserrat 100 900 italic - latin-ext */
+@font-face {
+    font-family: "Montserrat";
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("/p/fonts/montserrat-italic-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+        U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+        U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Montserrat 100 900 normal - latin */
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("/p/fonts/montserrat-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+        U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+        U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Montserrat 100 900 normal - latin-ext */
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("/p/fonts/montserrat-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+        U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+        U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Roboto 100 900 italic - latin */
+@font-face {
+    font-family: "Roboto";
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("/p/fonts/roboto-italic-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+        U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+        U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Roboto 100 900 italic - latin-ext */
+@font-face {
+    font-family: "Roboto";
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("/p/fonts/roboto-italic-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+        U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+        U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Roboto 100 900 normal - latin */
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("/p/fonts/roboto-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+        U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+        U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Roboto 100 900 normal - latin-ext */
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("/p/fonts/roboto-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+        U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+        U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Ubuntu 300 italic - latin */
+@font-face {
+    font-family: "Ubuntu";
+    font-style: italic;
+    font-weight: 300;
+    font-display: swap;
+    src: url("/p/fonts/ubuntu-italic-300-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+        U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+        U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Ubuntu 300 italic - latin-ext */
+@font-face {
+    font-family: "Ubuntu";
+    font-style: italic;
+    font-weight: 300;
+    font-display: swap;
+    src: url("/p/fonts/ubuntu-italic-300-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+        U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+        U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Ubuntu 400 italic - latin */
+@font-face {
+    font-family: "Ubuntu";
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/p/fonts/ubuntu-italic-400-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+        U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+        U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Ubuntu 400 italic - latin-ext */
+@font-face {
+    font-family: "Ubuntu";
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/p/fonts/ubuntu-italic-400-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+        U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+        U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Ubuntu 500 italic - latin */
+@font-face {
+    font-family: "Ubuntu";
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+    src: url("/p/fonts/ubuntu-italic-500-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+        U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+        U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Ubuntu 500 italic - latin-ext */
+@font-face {
+    font-family: "Ubuntu";
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+    src: url("/p/fonts/ubuntu-italic-500-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+        U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+        U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Ubuntu 700 italic - latin */
+@font-face {
+    font-family: "Ubuntu";
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/p/fonts/ubuntu-italic-700-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+        U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+        U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Ubuntu 700 italic - latin-ext */
+@font-face {
+    font-family: "Ubuntu";
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/p/fonts/ubuntu-italic-700-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+        U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+        U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Ubuntu 300 normal - latin */
+@font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("/p/fonts/ubuntu-300-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+        U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+        U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Ubuntu 300 normal - latin-ext */
+@font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("/p/fonts/ubuntu-300-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+        U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+        U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Ubuntu 400 normal - latin */
+@font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/p/fonts/ubuntu-400-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+        U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+        U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Ubuntu 400 normal - latin-ext */
+@font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/p/fonts/ubuntu-400-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+        U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+        U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Ubuntu 500 normal - latin */
+@font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("/p/fonts/ubuntu-500-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+        U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+        U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Ubuntu 500 normal - latin-ext */
+@font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("/p/fonts/ubuntu-500-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+        U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+        U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Ubuntu 700 normal - latin */
+@font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/p/fonts/ubuntu-700-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+        U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+        U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Ubuntu 700 normal - latin-ext */
+@font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/p/fonts/ubuntu-700-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+        U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+        U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Material Icons 400 normal - all */
+@font-face {
+    font-family: "Material Icons";
+    font-style: normal;
+    font-weight: 400;
+    /* Ligature font: `block` keeps the ligature text ("expand_more") invisible
+       until the icons arrive, rather than painting it as literal words. */
+    font-display: block;
+    src: url("/p/fonts/material-icons.woff2") format("woff2");
+}
+
+</style><!-- Prerender the app auth routes (Chromium only) --><script type="speculationrules">{"prerender":[{"urls":["/signup"],"eagerness":"immediate"},{"urls":["/login"],"eagerness":"moderate"}]}</script><!-- Warm the HTTP cache with the auth boot chunks (browsers without prerender) --><script type="module">const i="/auth-boot-manifest.json",s=["/signup","/login"];function c(){return"prerendering"in document}function a(){const e=navigator.connection;return e?e.saveData===!0||/2g/.test(e.effectiveType??""):!1}function f(e){const t=()=>{typeof requestIdleCallback=="function"?requestIdleCallback(()=>e(),{timeout:3e3}):setTimeout(e,1e3)};document.readyState==="complete"?t():window.addEventListener("load",t,{once:!0})}function u(e){return typeof e!="object"||e===null?!1:Object.values(e).every(t=>Array.isArray(t)&&t.every(n=>typeof n=="string"))}async function d(){const e=await fetch(i,{credentials:"same-origin"});if(!e.ok)return;const t=await e.json();if(!u(t))return;const n=new Set;for(const o of s)for(const r of t[o]??[])n.add(r);await Promise.all([...n].map(o=>fetch(o,{priority:"low",credentials:"same-origin"}).catch(()=>{})))}function l(){c()||a()||f(()=>{d().catch(()=>{})})}l();</script><!-- DNS prefetch for third-party services --><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://www.googletagmanager.com"><link rel="dns-prefetch" href="https://connect.facebook.net"><link rel="preconnect" href="https://connect.facebook.net"><link rel="preconnect" href="https://events-cdn.flux.ai"><link rel="dns-prefetch" href="https://cdn.mouseflow.com"><link rel="dns-prefetch" href="https://widget.intercom.io"><!-- Preload LCP image (starts fetching before the browser discovers it in the DOM) --><link rel="preload" as="image" href="/p/assets/homepage-v2/hero-bg-3200.avif?v=15abaa37e2af4558" type="image/avif" imagesrcset="/p/assets/homepage-v2/hero-bg-800.avif?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/hero-bg-1200.avif?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/hero-bg-1600.avif?v=15abaa37e2af4558 1600w, /p/assets/homepage-v2/hero-bg-2000.avif?v=15abaa37e2af4558 2000w, /p/assets/homepage-v2/hero-bg-2400.avif?v=15abaa37e2af4558 2400w, /p/assets/homepage-v2/hero-bg-3200.avif?v=15abaa37e2af4558 3200w" imagesizes="(min-width: 1680px) 100vw, (min-width: 1025px) 109vw, (min-width: 768px) 1410px, 1142px" media="(min-width: 768px)" fetchpriority="high"><script>(function(){const href = "/p/assets/homepage-v2/hero-bg.webp";
+const srcset = "/p/assets/homepage-v2/hero-bg-800.webp 800w, /p/assets/homepage-v2/hero-bg-1200.webp 1200w, /p/assets/homepage-v2/hero-bg-1600.webp 1600w, /p/assets/homepage-v2/hero-bg-2000.webp 2000w, /p/assets/homepage-v2/hero-bg-2400.webp 2400w, /p/assets/homepage-v2/hero-bg.webp 3200w";
+const sizes = "(min-width: 1680px) 100vw, (min-width: 1025px) 109vw, (min-width: 768px) 1410px, 1142px";
+const media = "(min-width: 768px)";
+
+                (function () {
+                    var probe = new Image();
+                    probe.onerror = function () {
+                        var link = document.createElement("link");
+                        link.rel = "preload";
+                        link.as = "image";
+                        link.type = "image/webp";
+                        link.href = href;
+                        if (srcset) link.setAttribute("imagesrcset", srcset);
+                        if (sizes) link.setAttribute("imagesizes", sizes);
+                        if (media) link.media = media;
+                        link.setAttribute("fetchpriority", "high");
+                        document.head.appendChild(link);
+                    };
+                    // 1x1 AVIF; decodes only where the hero's AVIF candidates would.
+                    probe.src =
+                        "data:image/avif;base64,AAAAHGZ0eXBhdmlmAAAAAG1pZjFhdmlmbWlhZgAAANZtZXRhAAAAAAAAACFoZGxyAAAAAAAAAABwaWN0AAAAAAAAAAAAAAAAAAAAACJpbG9jAAAAAERAAAEAAQAAAAAA+gABAAAAAAAAACAAAAAjaWluZgAAAAAAAQAAABVpbmZlAgAAAAABAABhdjAxAAAAAA5waXRtAAAAAAABAAAAVmlwcnAAAAA4aXBjbwAAAAxhdjFDgQAMAAAAABRpc3BlAAAAAAAAAAEAAAABAAAAEHBpeGkAAAAAAwgICAAAABZpcG1hAAAAAAAAAAEAAQOBAgMAAAAobWRhdBIACggYAAbICGg0IDISHEeHhd3AACwAAACQNY48fohQ";
+                })();
+            })();</script><!-- Structured data --><!-- Auth state bootstrap (sync, before paint) --><script>
+            (function () {
+                try {
+                    var m = document.cookie.match(/(?:^|;\s*)flux_user_handle=([^;]+)/);
+                    if (m) {
+                        document.documentElement.setAttribute('data-auth-state', 'authed');
+                        window.__flux_handle = decodeURIComponent(m[1]).replace(/^"(.+)"$/, '$1');
+                    } else {
+                        document.documentElement.setAttribute('data-auth-state', 'anon');
+                    }
+                } catch (e) {
+                    document.documentElement.setAttribute('data-auth-state', 'anon');
+                }
+            })();
+        </script><!-- Auth state CSS rules --><style>
+            [data-auth-show="authed"] { display: none !important; }
+            html[data-auth-state="authed"] [data-auth-show="authed"] { display: inline-block !important; }
+            html[data-auth-state="authed"] [data-auth-show="anon"] { display: none !important; }
+            /* Hide mobile-only "Go to Profile" on desktop — the auth !important above would override .only-on-responsive{display:none} */
+            html[data-auth-state="authed"] .only-on-responsive[data-auth-show="authed"] { display: none !important; }
+            @media screen and (max-width: 991px) {
+                html[data-auth-state="authed"] .only-on-responsive[data-auth-show="authed"] { display: inline-block !important; }
+            }
+        </style><!-- Layout-stability rules for images that declare their intrinsic size
+             via width/height attributes. The Webflow stylesheet sets
+             `img { max-width: 100% }` without `height: auto`, which would pin the
+             attribute height and squash the image; `height: auto` lets the browser
+             derive the aspect ratio from the attributes and reserve the box before
+             the image loads, so nothing below it shifts (CLS). --><style>
+            .logo-wrapper-grid img,
+            .nb-header_content_imagewrap img,
+            .nb-header_content_text_builders img {
+                height: auto;
+            }
+            /* Rendered at half its intrinsic width; the attributes carry the aspect ratio. */
+            .nb-header_content_text_builders img {
+                width: 71.5px;
+            }
+            /* The comparison hero's mobile image sits in an embed div that is a
+               shrink-to-fit flex item, so its `width: 100%` resolves against a
+               zero basis until the image itself supplies an intrinsic width.
+               Giving the embed the full row width lets the aspect ratio reserve
+               the box from first paint. */
+            .compare-header-right-wrap > .w-embed {
+                width: 100%;
+            }
+        </style><!-- Google Optimize anti-flicker --><style>
+            .anti-flicker, .anti-flicker * {visibility: hidden !important; opacity: 0 !important;}
+        </style><!-- Inline search icon SVGs as data URIs so they never depend on a
+             separate network request for the external SVG asset. The site CSS
+             sets background-image via an absolute URL which can intermittently
+             fail to load (CDN timing, cache miss, etc.), causing the magnifying
+             glass icon to silently disappear. Applies to both the nav search
+             (.search-field-test) and the blog search (.blogsearchfield). --><style>
+            .search-field-test,
+            .blogsearchfield {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E") !important;
+            }
+        </style><!-- Page-specific background overrides (from Webflow embedded styles) --><style>
+            .section.normal.stars {
+                background-image: url(/p/assets/other-pages/enterprise/background/stars-bg-optimized.webp?v=15abaa37e2af4558);
+                background-position: 50%;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            @media (max-width: 991px) {
+                .section.normal.stars {
+                    background-image: none !important;
+                }
+            }
+            .section.new-mast-head.universe {
+                z-index: 1;
+                background-image: url("/p/assets/homepage/header/purple-universe.webp?v=15abaa37e2af4558");
+                background-repeat: no-repeat;
+                background-size: cover;
+                justify-content: flex-start;
+                align-items: center;
+                height: 835px;
+                padding-top: 46px;
+                padding-bottom: 100px;
+                background-position: 50% center;
+            }
+            .section.vision {
+                background-image: url(/p/assets/other-pages/new-flux-manifesto-bg.webp?v=15abaa37e2af4558);
+                background-position: 50% 0;
+                background-repeat: no-repeat;
+                background-size: cover;
+                justify-content: flex-end;
+                align-items: center;
+                width: 100%;
+                height: 760px;
+            }
+        </style><!-- Dynamic select styling (prompt builder dropdowns) --><style>
+            .dynamic-select {
+                width: auto;
+                max-width: 100%;
+                display: inline-block;
+                flex: 0 0 auto;
+                transition: width .2s ease;
+                box-sizing: border-box;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                background: none;
+                border: none;
+                padding-right: 0 !important;
+                text-indent: 0;
+                text-overflow: '';
+            }
+            .dynamic-select::-ms-expand {
+                display: none;
+            }
+            /* The custom dropdown that replaces each native select: an inline
+               trigger so the selected value flows with the sentence and wraps
+               like ordinary text. Declared here rather than as inline styles so
+               the prerendered markup and native-interactions.js share one source
+               of truth (and so the geometry is identical before and after the
+               script upgrades the control). */
+            .custom-select-wrapper {
+                position: relative;
+                display: inline;
+            }
+            .custom-select-trigger {
+                display: inline;
+                /* The trigger keeps the original select's classes, so Webflow's
+                   `.w-select` base rule would otherwise apply vertical-align:
+                   middle and drop the value ~3px below the sentence baseline. */
+                vertical-align: baseline;
+                cursor: pointer;
+                padding: 0;
+                margin-right: 6px;
+                background: none;
+                border: none;
+                outline: none;
+                text-align: left;
+                white-space: normal;
+                overflow-wrap: break-word;
+                -webkit-box-decoration-break: clone;
+                box-decoration-break: clone;
+            }
+            /* Every trigger keeps the same 6px gap before the following word,
+               including the last one, whose select variant zeroes it. */
+            .dynamic-select.custom-select-trigger {
+                margin-right: 6px;
+            }
+        </style><!-- Nav dropdown column layout (Webflow runtime provides this dynamically; we need it statically) --><style>
+            .nav-dropdown-col { flex: 1; min-width: max-content; }
+        </style><!-- Hide Webflow form messages --><style>
+            .w-form-done, .w-form-fail { display: none; }
+        </style><style>
+            /* Code blocks: match production layout — wrap long lines, stay within postbody */
+            .postbody .w-embed, .categories-postbody .w-embed, .w-richtext .w-embed {
+                max-width: 100%;
+            }
+            .postbody pre, .categories-postbody pre, .w-richtext pre {
+                margin-top: 10px;
+                margin-bottom: 20px;
+                max-width: 100%;
+            }
+            .postbody pre code.hljs, .categories-postbody pre code.hljs, .w-richtext pre code.hljs {
+                display: block;
+                padding: 1em;
+                font-size: 14px;
+                line-height: 1.5;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+        </style><!-- Blog post CTA button fix: Finsweet-injected buttons sit outside <p> tags on prod,
+             but our build-time replacement places them inside <p>. The <p> constrains inline
+             sizing, creating a tiny green square. Force proper block display. --><style>
+            .w-richtext p > .button-inside-the-richtext {
+                display: block;
+                width: fit-content;
+                margin-top: 8px;
+                margin-bottom: 8px;
+            }
+            /* Section divider used in blog posts (replaces Finsweet {{underline}} embed) */
+            .underline {
+                background-color: var(--grey-900, #1a1a1a);
+                width: 100%;
+                height: 1px;
+                margin-top: 16px;
+                margin-bottom: 16px;
+            }
+        </style><!-- Accordion click target: only the question row toggles an item, but the shared
+             `.accordion-item { cursor: pointer }` rule also covers the expanded answer, so the
+             answer reads as clickable and its links lose their normal hover affordance. --><style>
+            .accordion-item-content {
+                cursor: auto;
+            }
+        </style><!-- Blog post FAQ accordion: shares the homepage accordion styling, but sits inside the
+             article column, so it drops the standalone-section padding, left-aligns its title and
+             sizes that title like the article's own h3 instead of the larger homepage section title. --><style>
+            .faq-section-pricing.blog-faq {
+                padding: 24px 0 40px;
+            }
+            .faq-section-pricing.blog-faq .faq-title.faq {
+                text-align: left;
+                font-size: 22px;
+                line-height: 130%;
+            }
+            @media screen and (max-width: 479px) {
+                .faq-section-pricing.blog-faq .faq-title.faq {
+                    font-size: 18px;
+                }
+            }
+            /* Answer links read as Flux green text rather than underlined links. */
+            .faq-section-pricing.blog-faq .faq-item-content a {
+                color: var(--flux-green, #1dfdc0);
+                text-decoration: none;
+            }
+        </style><!-- Blog post table styling (matches prod inline styles) --><style>
+            /* Hide <markdown> elements until after processing */
+            markdown { display: none; }
+            /* General table formatting */
+            .postbody table, .categories-postbody table, .afterpostbody table, .org-postbody table {
+                border-collapse: collapse;
+                font-weight: 300;
+                border: 1px solid #424242;
+                margin-top: 10px;
+                margin-bottom: 26px;
+                width: 100%;
+            }
+            .postbody th, .categories-postbody th, .afterpostbody th, .org-postbody th {
+                padding: 8px 16px;
+                background-color: #2a2a2a;
+                color: #ffffff;
+                border: 1px solid #424242;
+                font-size: 14px;
+                font-weight: 400;
+            }
+            .postbody td, .categories-postbody td, .afterpostbody td, .org-postbody td {
+                padding: 8px 16px;
+                border: 1px solid #424242;
+                font-size: 14px;
+                color: #a3a3a3;
+            }
+            .postbody tr, .categories-postbody tr, .afterpostbody tr, .org-postbody tr {
+                vertical-align: top;
+            }
+            /* .compare-table specific overrides */
+            .compare-table {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 0.9rem;
+            }
+            .compare-table th {
+                background: #212121;
+                text-align: left;
+                padding: 12px 16px;
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                font-weight: 600;
+            }
+            .compare-table td {
+                padding: 12px 16px;
+                vertical-align: top;
+            }
+            .compare-table tr:last-child td {
+                border-bottom: none;
+            }
+            /* Horizontal scroll container added around every blog table at build
+               time (see utils/wrapTablesForScroll.ts). The container clips to the
+               body width, so a table wider than the viewport scrolls inside it
+               instead of squeezing its columns or overflowing the page. */
+            .table-scroll {
+                max-width: 100%;
+                overflow-x: auto;
+                /* The table's own vertical margins live on the container instead,
+                   so the scrollbar sits against the last row rather than below
+                   the margin gap. Same values, so spacing is unchanged. */
+                margin-top: 10px;
+                margin-bottom: 26px;
+                /* The table's outer border lives on the container too, so the
+                   scrollbar is enclosed by it instead of sitting bare below the
+                   last row. Cell borders still draw the grid itself. */
+                border: 1px solid #424242;
+                -webkit-overflow-scrolling: touch;
+                /* Keep the table's width out of the ancestors' intrinsic sizing.
+                   The blog shell sizes several flex ancestors to fit-content, so
+                   without containment a wide table widens the whole page instead
+                   of scrolling inside this container. */
+                contain: inline-size;
+            }
+            /* min-width only pays off where containment keeps the overflow local */
+            @supports (contain: inline-size) {
+                @media only screen and (max-width: 991px) {
+                    /* --table-cols is the table's column count, set by the wrapper.
+                       Budgeting per column keeps a two-column table inside a phone
+                       and only scrolls the tables that actually need the room. */
+                    .table-scroll > table {
+                        min-width: calc(var(--table-cols, 4) * 160px);
+                    }
+                }
+            }
+            .table-scroll > table {
+                margin-top: 0;
+                margin-bottom: 0;
+                border: none;
+            }
+            /* The container draws the outer border, so the edge cells' own
+               borders would sit next to it and read as 2px. border-collapse
+               only merges borders within the table, not with the container, so
+               drop the outer edges and let the cell borders draw the grid only.
+               Sectioned selectors keep the header/body divider intact. */
+            .table-scroll > table > :first-child > tr:first-child > * {
+                border-top: none;
+            }
+            .table-scroll > table > :last-child > tr:last-child > * {
+                border-bottom: none;
+            }
+            .table-scroll > table tr > *:first-child {
+                border-left: none;
+            }
+            .table-scroll > table tr > *:last-child {
+                border-right: none;
+            }
+            @media only screen and (max-width: 767px) {
+                .compare-table th,
+                .compare-table td {
+                    line-height: 120%;
+                }
+            }
+            @media only screen and (max-width: 490px) {
+                .postbody th, .categories-postbody th, .afterpostbody th, .org-postbody th {
+                    font-size: 14px;
+                    padding: 4px 4px 4px 6px;
+                }
+                .postbody td, .categories-postbody td, .afterpostbody td, .org-postbody td {
+                    padding: 4px 4px 4px 6px;
+                }
+            }
+        </style><link rel="stylesheet" href="/p/assets/site-v2.BLanvx_a.css?v=15abaa37e2af4558"><link rel="preload" as="image" type="image/avif" href="/p/assets/homepage-v2/hero-mobile-device-3200.avif?v=15abaa37e2af4558" imagesrcset="/p/assets/homepage-v2/hero-mobile-device-800.avif?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/hero-mobile-device-1200.avif?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/hero-mobile-device-1600.avif?v=15abaa37e2af4558 1600w, /p/assets/homepage-v2/hero-mobile-device-2400.avif?v=15abaa37e2af4558 2400w, /p/assets/homepage-v2/hero-mobile-device-3200.avif?v=15abaa37e2af4558 3200w" imagesizes="1600px" media="(max-width: 767px)" fetchpriority="high"><link rel="stylesheet" href="/p/assets/home-enclosures-prompt-it-button.L5Xvh_Js.css?v=15abaa37e2af4558">
+<style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{color:#abb2bf;background:#282c34}.hljs-comment,.hljs-quote{color:#5c6370;font-style:italic}.hljs-doctag,.hljs-formula,.hljs-keyword{color:#c678dd}.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#e06c75}.hljs-literal{color:#56b6c2}.hljs-addition,.hljs-attribute,.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#98c379}.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#d19a66}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#61aeee}.hljs-built_in,.hljs-class .hljs-title,.hljs-title.class_{color:#e6c07b}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.hljs-link{text-decoration:underline}
+</style>
+<link rel="stylesheet" href="/p/assets/home-enclosures-prompt-it-button.DfKMKiNL.css?v=15abaa37e2af4558">
+<style>.hp2-faq .hp2-eyebrow{margin-bottom:22px}.hp2-faq h2{max-width:700px}.hp2-faq__list{max-width:980px;margin:58px auto 0}.hp2-faq__item{border-top:1px solid var(--hp2-line)}.hp2-faq__item:last-child{border-bottom:1px solid var(--hp2-line)}.hp2-faq__item h3{font-size:inherit;font-weight:400}.hp2-faq__item button{display:flex;width:100%;min-height:76px;align-items:center;justify-content:space-between;gap:20px;padding:18px 0;text-align:left;font-size:19px}.hp2-faq__item button img{width:23px;height:23px;flex:0 0 auto;transition:transform .3s var(--hp2-ease)}.hp2-faq__item.is-open button img{transform:rotate(45deg)}.hp2-faq__panel{height:0;overflow:hidden;color:var(--hp2-text);font-size:18px;line-height:1.5;transition:height .3s var(--hp2-ease)}.hp2-faq__item.is-open .hp2-faq__panel{height:auto;padding:0 48px 24px 0}.hp2-faq__panel a{color:var(--hp2-green)}.hp2 .hp2-faq__panel p{color:var(--hp2-text);font-size:16px;line-height:1.35}.hp2-faq h2{font-size:45px;line-height:1.2;letter-spacing:0}.hp2-faq__item button{font-size:16px;line-height:1.35}@media (prefers-reduced-motion: reduce){.hp2 .hp2-faq__panel{transition:none}}.hp2-faq{padding:100px 0;background:var(--hp2-bg)}.hp2-faq h2{max-width:636px;margin:0 auto;font-size:45px;text-align:center}.hp2-faq__frame{width:986px;min-height:867px;max-width:calc(100% - 40px);height:auto;position:relative;margin:68.6px auto 0;padding:30px 40px;overflow:hidden}.hp2-faq__frame{display:block}.hp2-faq__list{position:relative;width:745.096px;max-width:calc(100% - 80px);margin:79px auto 0}.hp2-faq__item,.hp2-faq__item:last-child{border:0}.hp2-faq__item{display:flex;flex-direction:column;gap:11.25px;margin:0 0 43.875px}.hp2-faq__item:last-child{margin-bottom:0}.hp2-faq__item button{position:relative;display:flex;width:100%;align-items:flex-start;justify-content:space-between;gap:20px;min-height:0;padding:0;color:var(--hp2-text);font:400 17.984px/1.5 var(--hp2-font-sans)}.hp2-faq__item button span{width:79.35%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.hp2-faq__item button img{width:29.117px;height:29.117px;margin-top:4.14px;margin-right:0;flex:0 0 auto}.hp2-faq__item.is-open .hp2-faq__panel{padding:0 49px 0 0}.hp2-faq__panel{height:0;overflow:hidden;color:var(--hp2-text);font:400 16px/1.35 var(--hp2-font-sans);transition:height .3s var(--hp2-ease)}.hp2-faq__panel p,.hp2-faq__panel li{color:var(--hp2-text);font:400 16px/1.35 var(--hp2-font-sans)}.hp2-faq__panel p{margin:0 0 8px}.hp2-faq__panel p:last-child{margin-bottom:0}.hp2-faq__panel ul{margin:8px 0;padding-left:1.25em;list-style:disc}.hp2-faq__panel a{color:inherit;font:inherit;text-decoration:underline;text-underline-offset:2px}@media (max-width: 899px){.hp2-faq__frame{margin-right:20px;margin-left:20px;padding:40px 20px}.hp2-faq__frame{min-height:0;height:auto}.hp2-faq__list{position:relative;top:auto;left:auto;width:100%;max-width:none;margin-top:0;transform:none}}.hp2-faq{background:var(--hp2-bg)}.hp2 .hp2-faq__item button{align-items:flex-start;text-align:left}.hp2 .hp2-faq__item button span{overflow:visible;text-overflow:clip;white-space:normal}@media (max-width: 767px){.hp2 .hp2-faq h2{font-size:34px;line-height:1.1;letter-spacing:-1px}.hp2 .hp2-faq>.hp2-container{padding-right:12px;padding-left:12px}.hp2 .hp2-faq__frame{width:100%;max-width:100%;margin-right:0;margin-left:0;padding:40px 12px}.hp2 .hp2-faq__list{margin-top:0}.hp2 .hp2-faq__item button span{width:auto;flex:1 1 auto}.hp2 .hp2-faq__item button{gap:12px}.hp2 .hp2-faq__item button span{font-size:17px}.hp2 .hp2-faq__item button img{width:20px;height:20px;margin-top:3px}}
+</style><script type="module" src="/p/assets/page.BLtQikpa.js?v=15abaa37e2af4558"></script><script type="application/json" id="flux-homepage-exposure">{"variant":"updated_mobile_version","ordinal":745,"programHash":"bccddf3d131f1921f72c2d27909a3022bdf74cda","contentHash":"0e3af04b560eed185878c91e745791cce54cd3cc"}</script></head> <body class="body">     <style>
+@font-face {
+  font-family: "Figtree HP2";
+  src: url("/p/fonts/site-v2/figtree.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto Mono HP2";
+  src: url("/p/fonts/site-v2/roboto-mono.woff2") format("woff2");
+  font-weight: 100 700;
+  font-display: swap;
+}
+</style> <div class="hp2 hp2-reset"> <svg class="hp2-svg-defs" aria-hidden="true" width="0" height="0"> <defs> <filter id="hp2-eyebrow-noise" x="0" y="0" width="1" height="1" filterUnits="objectBoundingBox" color-interpolation-filters="sRGB"> <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood> <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend> <feTurbulence type="fractalNoise" baseFrequency="7.5278196334838867 7.5278196334838867" stitchTiles="stitch" numOctaves="3" result="noise" seed="8826"></feTurbulence> <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise"></feColorMatrix> <feComponentTransfer in="alphaNoise" result="coloredNoise1"> <feFuncA type="discrete" tableValues="0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"></feFuncA> </feComponentTransfer> <feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped"></feComposite> <feFlood flood-color="#171717" result="color1Flood"></feFlood> <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1"></feComposite> <feMerge result="effect1_noise_0_10"> <feMergeNode in="shape"></feMergeNode> <feMergeNode in="color1"></feMergeNode> </feMerge> <feTurbulence type="fractalNoise" baseFrequency="0.99900001287460327 0.99900001287460327" numOctaves="3" seed="1111"></feTurbulence> <feDisplacementMap in="effect1_noise_0_10" scale="0.29224929213523865" xChannelSelector="R" yChannelSelector="G" result="displacedImage" width="200%" height="200%"></feDisplacementMap> <feMerge result="effect2_texture_0_10"> <feMergeNode in="displacedImage"></feMergeNode> </feMerge> </filter> </defs> </svg> <header class="hp2-nav hp2-nav--transparent hp2-reset" data-hp2-nav> <div class="hp2-nav__bar"> <div class="hp2-nav__row"> <a class="hp2-nav__logo" href="/p/" aria-label="Flux home"> <img src="/p/assets/site-v2/flux-logo-hinted.svg?v=15abaa37e2af4558" width="75" height="28" alt="Flux"> </a> <nav class="hp2-nav__desktop" aria-label="Primary navigation"> <a class="hp2-nav__item" href="/p/teams" data-teams-cta="main-nav" data-event-category="topnav" data-event-action="click" data-event-label="Teams" nav-click-event-label="Teams"> <img src="/p/assets/site-v2/icon-users.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-users.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true"> <span>Teams</span> </a> <a class="hp2-nav__item" href="/p/resources" aria-expanded="false" aria-controls="hp2-panel-resources" data-hp2-panel="resources" data-event-category="topnav" nav-click-event-label="Resources"> <img src="/p/assets/site-v2/icon-book-open-sharp.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-book-open-sharp.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true"> <span>Resources</span> </a> <a class="hp2-nav__item" href="/p/about" aria-expanded="false" aria-controls="hp2-panel-company" data-hp2-panel="company" data-event-category="topnav" nav-click-event-label="Company"> <img src="/p/assets/site-v2/icon-building-sharp.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-building-sharp.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true"> <span>Company</span> </a> <a class="hp2-nav__item" href="/p/pricing" data-event-category="topnav" nav-click-event-label="Pricing"> <img src="/p/assets/site-v2/icon-money-sharp.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-money-sharp.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true"> <span>Pricing</span> </a> <button class="hp2-nav__item hp2-nav__item--search ga-event" type="button" aria-expanded="false" aria-controls="hp2-nav-search" data-hp2-search-open data-event-category="topnav" nav-click-event-label="Search"> <img src="/p/assets/site-v2/icon-search-sharp.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-search-sharp.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true"> <span>Search</span> </button> <form class="hp2-nav__search" id="hp2-nav-search" role="search" action="/search" method="get" hidden data-hp2-search> <img class="hp2-nav__search-icon" src="/p/assets/site-v2/icon-search-sharp.svg?v=15abaa37e2af4558" alt="" aria-hidden="true"> <input class="hp2-nav__search-input" type="search" name="q" placeholder="Search projects, component, and users..." aria-label="Search projects, components, and users" autocomplete="off" enterkeyhint="search" data-hp2-search-input> <button class="hp2-nav__search-clear" type="button" aria-label="Clear search" hidden data-hp2-search-clear> <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"></path></svg> </button> <button class="hp2-nav__search-done" type="button" data-hp2-search-done>Done</button> <button class="hp2-nav__search-submit" type="submit" disabled data-hp2-search-submit>Search</button> </form> </nav> <div class="hp2-nav__actions"> <a id="nav-login-btn" class="hp2-pill hp2-pill--nav hp2-pill--nav-secondary hp2-nav__login trackclicks" href="/login" data-event-category="topnav" data-event-action="button click" data-event-label="Log In" nav-click-event-label="Log In" data-auth-show="anon" aria-label="Log In"><span class="hp2-pill__inner">Log In</span></a> <a id="nav-signup-btn" class="hp2-pill hp2-pill--nav trackclicks" href="/signup" data-signup-cta="nav" data-event-category="topnav" data-event-action="button click" data-event-label="Sign Up" nav-click-event-label="Sign Up" data-auth-show="anon" aria-label="Sign Up"><span class="hp2-pill__inner">Sign Up</span></a> <a class="hp2-pill hp2-pill--nav hp2-nav__app-link trackclicks" href="#" data-auth="userlink" data-auth-show="authed" data-auth-display="inline-flex" data-auth-variant="desktop" data-event-category="topnav" data-event-action="button click" data-event-label="Go to Profile" hidden><span class="hp2-pill__inner">Go to Profile</span></a> <button class="hp2-pill hp2-pill--nav hp2-pill--menu hp2-nav__burger" type="button" aria-expanded="false" aria-controls="hp2-drawer" aria-label="Open menu" data-hp2-burger> <span class="hp2-pill__inner" aria-hidden="true"><span></span><span></span><span></span></span> </button> </div> </div> <div class="hp2-nav__panels"> <div class="hp2-panel hp2-panel--resources" id="hp2-panel-resources" role="region" aria-label="Resources" hidden data-hp2-panel-content="resources"> <div class="hp2-panel__cards"> <a href="/p/resources" class="hp2-panel__card" data-event-category="topnav" nav-click-event-label="Resource Center"><picture>   <source type="image/avif" srcset="/p/assets/site-v2/panel-resources-250.avif?v=15abaa37e2af4558 250w, /p/assets/site-v2/panel-resources-500.avif?v=15abaa37e2af4558 500w" sizes="(min-width: 1025px) 250px, (min-width: 768px) 166px, 41px"> <img src="/p/assets/site-v2/panel-resources.webp?v=15abaa37e2af4558" srcset="/p/assets/site-v2/panel-resources-250.webp?v=15abaa37e2af4558 250w, /p/assets/site-v2/panel-resources.webp?v=15abaa37e2af4558 500w" sizes="(min-width: 1025px) 250px, (min-width: 768px) 166px, 41px" width="250" height="172" class="hp2-panel__card-img--chamfer" alt aria-hidden="true" loading="lazy" decoding="async"> </picture><span><strong>Resource Center</strong> Learn Hardware Engineering &amp;&nbsp;PCB Design</span></a> <a href="https://docs.flux.ai/" target="_blank" rel="noopener" class="hp2-panel__card" data-event-category="topnav" nav-click-event-label="Documentation"><picture>   <source type="image/avif" srcset="/p/assets/site-v2/panel-documentation-250.avif?v=15abaa37e2af4558 250w, /p/assets/site-v2/panel-documentation-500.avif?v=15abaa37e2af4558 500w" sizes="(min-width: 1025px) 250px, (min-width: 768px) 166px, 41px"> <img src="/p/assets/site-v2/panel-documentation.webp?v=15abaa37e2af4558" srcset="/p/assets/site-v2/panel-documentation-250.webp?v=15abaa37e2af4558 250w, /p/assets/site-v2/panel-documentation.webp?v=15abaa37e2af4558 500w" sizes="(min-width: 1025px) 250px, (min-width: 768px) 166px, 41px" width="250" height="172" class="hp2-panel__card-img--chamfer" alt aria-hidden="true" loading="lazy" decoding="async"> </picture><span><strong>Documentation</strong> Learn how to use Flux</span></a> </div> <div class="hp2-panel__tiles hp2-panel__tiles--resources"> <a href="/p/resources/pcb-design-fundamentals" data-event-category="topnav" nav-click-event-label="PCB Design & Engineering Fundamentals"><img src="/p/assets/site-v2/icon-cpu-sharp.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-cpu-sharp.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>PCB Design &amp; Engineering Fundamentals</span></a> <a href="/p/resources/ai-prompt-engineering" data-event-category="topnav" nav-click-event-label="AI & Prompt Engineering"><img src="/p/assets/site-v2/icon-float-left-sharp.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-float-left-sharp.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>AI &amp; Prompt Engineering</span></a> <a href="/p/resources/component-platform-guides" data-event-category="topnav" nav-click-event-label="Component & Platform Guides"><img src="/p/assets/site-v2/icon-frame.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-frame.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Component &amp; Platform Guides</span></a> <a href="/p/resources/projects-and-templates" data-event-category="topnav" nav-click-event-label="Step-by-Step Projects & Templates"><img src="/p/assets/site-v2/icon-sticky-note-sharp.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-sticky-note-sharp.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Step-by-Step Projects &amp; Templates</span></a> <a href="/p/resources/tool-comparisons" data-event-category="topnav" nav-click-event-label="Tool Comparisons & Migrations"><img src="/p/assets/site-v2/icon-analytics-sharp.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-analytics-sharp.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Tool Comparisons &amp; Migrations</span></a> <a href="/p/resources/hardware-development-101" data-event-category="topnav" nav-click-event-label="Hardware 101 Development"><img src="/p/assets/site-v2/icon-tools-solid.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-tools-solid.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Hardware 101 Development</span></a> <a href="/p/resources/business-strategy" data-event-category="topnav" nav-click-event-label="Business & Strategy Library"><img src="/p/assets/site-v2/icon-briefcases-sharp.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-briefcases-sharp.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Business &amp; Strategy Library</span></a> <a href="/p/mcad" data-event-category="topnav" nav-click-event-label="Mechanical design (MCAD)"><img src="/p/assets/site-v2/icon-tools-solid.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-tools-solid.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Mechanical design (MCAD)</span></a> <a href="/p/eda" data-event-category="topnav" nav-click-event-label="Electronics design (EDA)"><img src="/p/assets/site-v2/icon-cpu-sharp.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-cpu-sharp.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Electronics design (EDA)</span></a> </div> </div> <div class="hp2-panel hp2-panel--company" id="hp2-panel-company" role="region" aria-label="Company" hidden data-hp2-panel-content="company"> <div class="hp2-panel__cards"> <a href="/p/about" class="hp2-panel__card" data-event-category="topnav" nav-click-event-label="About us"><picture>   <source type="image/avif" srcset="/p/assets/site-v2/panel-about-250.avif?v=15abaa37e2af4558 250w, /p/assets/site-v2/panel-about-500.avif?v=15abaa37e2af4558 500w" sizes="(min-width: 1025px) 250px, (min-width: 768px) 166px, 41px"> <img src="/p/assets/site-v2/panel-about.webp?v=15abaa37e2af4558" srcset="/p/assets/site-v2/panel-about-250.webp?v=15abaa37e2af4558 250w, /p/assets/site-v2/panel-about.webp?v=15abaa37e2af4558 500w" sizes="(min-width: 1025px) 250px, (min-width: 768px) 166px, 41px" width="250" height="172" class="hp2-panel__card-img--chamfer" alt aria-hidden="true" loading="lazy" decoding="async"> </picture><span><strong>About us</strong></span></a> <a href="/p/manifesto" class="hp2-panel__card" data-event-category="topnav" nav-click-event-label="Manifesto"><picture>   <source type="image/avif" srcset="/p/assets/site-v2/panel-manifesto-250.avif?v=15abaa37e2af4558 250w, /p/assets/site-v2/panel-manifesto-500.avif?v=15abaa37e2af4558 500w" sizes="(min-width: 1025px) 250px, (min-width: 768px) 166px, 41px"> <img src="/p/assets/site-v2/panel-manifesto.webp?v=15abaa37e2af4558" srcset="/p/assets/site-v2/panel-manifesto-250.webp?v=15abaa37e2af4558 250w, /p/assets/site-v2/panel-manifesto.webp?v=15abaa37e2af4558 500w" sizes="(min-width: 1025px) 250px, (min-width: 768px) 166px, 41px" width="250" height="172" class="hp2-panel__card-img--chamfer" alt aria-hidden="true" loading="lazy" decoding="async"> </picture><span><strong>Manifesto</strong></span></a> <a href="/p/company-news" class="hp2-panel__card" data-event-category="topnav" nav-click-event-label="Company News"><picture>   <source type="image/avif" srcset="/p/assets/site-v2/panel-company-news-250.avif?v=15abaa37e2af4558 250w, /p/assets/site-v2/panel-company-news-500.avif?v=15abaa37e2af4558 500w" sizes="(min-width: 1025px) 250px, (min-width: 768px) 166px, 41px"> <img src="/p/assets/site-v2/panel-company-news.webp?v=15abaa37e2af4558" srcset="/p/assets/site-v2/panel-company-news-250.webp?v=15abaa37e2af4558 250w, /p/assets/site-v2/panel-company-news.webp?v=15abaa37e2af4558 500w" sizes="(min-width: 1025px) 250px, (min-width: 768px) 166px, 41px" width="250" height="172" class="hp2-panel__card-img--chamfer" alt aria-hidden="true" loading="lazy" decoding="async"> </picture><span><strong>Company News</strong></span></a> </div> <div class="hp2-panel__tiles hp2-panel__tiles--company"> <a href="https://jobs.ashbyhq.com/flux" target="_blank" rel="noopener" data-event-category="topnav" nav-click-event-label="Careers"><img src="/p/assets/site-v2/icon-briefcase-sharp.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Careers</span><svg class="hp2-nav__external" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3z"></path></svg></a> <a href="mailto:help@flux.ai" data-event-category="topnav" nav-click-event-label="Contact Support"><img src="/p/assets/site-v2/icon-phone.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Contact Support</span><svg class="hp2-nav__external" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3z"></path></svg></a> <a href="/p/contact-sales" data-event-category="topnav" nav-click-event-label="Partner Inquiries"><img src="/p/assets/site-v2/icon-users.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-users.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Partner Inquiries</span></a> </div> </div> </div> </div> <div class="hp2-nav__drawer" id="hp2-drawer" hidden data-hp2-drawer> <a class="hp2-nav__item" href="/p/teams" data-teams-cta="main-nav-mobile" data-event-category="topnav" data-event-action="click" data-event-label="Teams" nav-click-event-label="Teams"> <img src="/p/assets/site-v2/icon-users.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-users.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true" loading="lazy" decoding="async"> <span>Teams</span> </a> <div class="hp2-nav__drawer-group"> <button class="hp2-nav__item" type="button" aria-expanded="false" data-hp2-mobile-panel="resources" data-event-category="topnav"> <img src="/p/assets/site-v2/icon-book-open-sharp.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-book-open-sharp.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true" loading="lazy" decoding="async"> <span>Resources</span> <svg class="hp2-nav__chevron" viewBox="0 0 8.565 4.35" aria-hidden="true"><polyline points=".5,.5 4.2825,3.85 8.065,.5"></polyline></svg> </button> <ul hidden data-hp2-mobile-content="resources"> <li><a class="hp2-nav__drawer-card" href="/p/resources" data-event-category="topnav" nav-click-event-label="Resource Center"><picture>   <source type="image/avif" srcset="/p/assets/site-v2/panel-resources-250.avif?v=15abaa37e2af4558 250w, /p/assets/site-v2/panel-resources-500.avif?v=15abaa37e2af4558 500w" sizes="(min-width: 1025px) 250px, (min-width: 768px) 166px, 41px"> <img src="/p/assets/site-v2/panel-resources.webp?v=15abaa37e2af4558" srcset="/p/assets/site-v2/panel-resources-250.webp?v=15abaa37e2af4558 250w, /p/assets/site-v2/panel-resources.webp?v=15abaa37e2af4558 500w" sizes="(min-width: 1025px) 250px, (min-width: 768px) 166px, 41px" width="250" height="172" class="hp2-panel__card-img--chamfer" alt aria-hidden="true" loading="lazy" decoding="async"> </picture><span><strong>Resource Center</strong> Learn hardware engineering and PCB design</span></a></li> <li><a class="hp2-nav__drawer-card" href="https://docs.flux.ai/" target="_blank" rel="noopener" data-event-category="topnav" nav-click-event-label="Documentation"><picture>   <source type="image/avif" srcset="/p/assets/site-v2/panel-documentation-250.avif?v=15abaa37e2af4558 250w, /p/assets/site-v2/panel-documentation-500.avif?v=15abaa37e2af4558 500w" sizes="(min-width: 1025px) 250px, (min-width: 768px) 166px, 41px"> <img src="/p/assets/site-v2/panel-documentation.webp?v=15abaa37e2af4558" srcset="/p/assets/site-v2/panel-documentation-250.webp?v=15abaa37e2af4558 250w, /p/assets/site-v2/panel-documentation.webp?v=15abaa37e2af4558 500w" sizes="(min-width: 1025px) 250px, (min-width: 768px) 166px, 41px" width="250" height="172" class="hp2-panel__card-img--chamfer" alt aria-hidden="true" loading="lazy" decoding="async"> </picture><span><strong>Documentation</strong> Learn how to use Flux</span></a></li> <li><a class="hp2-nav__drawer-tile" href="/p/resources/pcb-design-fundamentals" data-event-category="topnav" nav-click-event-label="PCB Design & Engineering Fundamentals"><img src="/p/assets/site-v2/icon-cpu-sharp.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-cpu-sharp.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>PCB Design &amp; Engineering Fundamentals</span></a></li> <li><a class="hp2-nav__drawer-tile" href="/p/resources/ai-prompt-engineering" data-event-category="topnav" nav-click-event-label="AI & Prompt Engineering"><img src="/p/assets/site-v2/icon-float-left-sharp.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-float-left-sharp.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>AI &amp; Prompt Engineering</span></a></li> <li><a class="hp2-nav__drawer-tile" href="/p/resources/component-platform-guides" data-event-category="topnav" nav-click-event-label="Component & Platform Guides"><img src="/p/assets/site-v2/icon-frame.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-frame.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Component &amp; Platform Guides</span></a></li> <li><a class="hp2-nav__drawer-tile" href="/p/resources/projects-and-templates" data-event-category="topnav" nav-click-event-label="Step-by-Step Projects & Templates"><img src="/p/assets/site-v2/icon-sticky-note-sharp.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-sticky-note-sharp.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Step-by-Step Projects &amp; Templates</span></a></li> <li><a class="hp2-nav__drawer-tile" href="/p/resources/tool-comparisons" data-event-category="topnav" nav-click-event-label="Tool Comparisons & Migrations"><img src="/p/assets/site-v2/icon-analytics-sharp.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-analytics-sharp.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Tool Comparisons &amp; Migrations</span></a></li> <li><a class="hp2-nav__drawer-tile" href="/p/resources/hardware-development-101" data-event-category="topnav" nav-click-event-label="Hardware 101 Development"><img src="/p/assets/site-v2/icon-tools-solid.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-tools-solid.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Hardware 101 Development</span></a></li> <li><a class="hp2-nav__drawer-tile" href="/p/resources/business-strategy" data-event-category="topnav" nav-click-event-label="Business & Strategy Library"><img src="/p/assets/site-v2/icon-briefcases-sharp.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-briefcases-sharp.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Business &amp; Strategy Library</span></a></li> <li><a class="hp2-nav__drawer-tile" href="/p/mcad" data-event-category="topnav" nav-click-event-label="Mechanical design (MCAD)"><img src="/p/assets/site-v2/icon-tools-solid.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-tools-solid.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Mechanical design (MCAD)</span></a></li> <li><a class="hp2-nav__drawer-tile" href="/p/eda" data-event-category="topnav" nav-click-event-label="Electronics design (EDA)"><img src="/p/assets/site-v2/icon-cpu-sharp.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-cpu-sharp.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Electronics design (EDA)</span></a></li> </ul> </div> <div class="hp2-nav__drawer-group"> <button class="hp2-nav__item" type="button" aria-expanded="false" data-hp2-mobile-panel="company" data-event-category="topnav"> <img src="/p/assets/site-v2/icon-building-sharp.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-building-sharp.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true" loading="lazy" decoding="async"> <span>Company</span> <svg class="hp2-nav__chevron" viewBox="0 0 8.565 4.35" aria-hidden="true"><polyline points=".5,.5 4.2825,3.85 8.065,.5"></polyline></svg> </button> <ul hidden data-hp2-mobile-content="company"> <li><a class="hp2-nav__drawer-card" href="/p/about" data-event-category="topnav" nav-click-event-label="About us"><picture>   <source type="image/avif" srcset="/p/assets/site-v2/panel-about-250.avif?v=15abaa37e2af4558 250w, /p/assets/site-v2/panel-about-500.avif?v=15abaa37e2af4558 500w" sizes="(min-width: 1025px) 250px, (min-width: 768px) 166px, 41px"> <img src="/p/assets/site-v2/panel-about.webp?v=15abaa37e2af4558" srcset="/p/assets/site-v2/panel-about-250.webp?v=15abaa37e2af4558 250w, /p/assets/site-v2/panel-about.webp?v=15abaa37e2af4558 500w" sizes="(min-width: 1025px) 250px, (min-width: 768px) 166px, 41px" width="250" height="172" class="hp2-panel__card-img--chamfer" alt aria-hidden="true" loading="lazy" decoding="async"> </picture><span><strong>About us</strong></span></a></li> <li><a class="hp2-nav__drawer-card" href="/p/manifesto" data-event-category="topnav" nav-click-event-label="Manifesto"><picture>   <source type="image/avif" srcset="/p/assets/site-v2/panel-manifesto-250.avif?v=15abaa37e2af4558 250w, /p/assets/site-v2/panel-manifesto-500.avif?v=15abaa37e2af4558 500w" sizes="(min-width: 1025px) 250px, (min-width: 768px) 166px, 41px"> <img src="/p/assets/site-v2/panel-manifesto.webp?v=15abaa37e2af4558" srcset="/p/assets/site-v2/panel-manifesto-250.webp?v=15abaa37e2af4558 250w, /p/assets/site-v2/panel-manifesto.webp?v=15abaa37e2af4558 500w" sizes="(min-width: 1025px) 250px, (min-width: 768px) 166px, 41px" width="250" height="172" class="hp2-panel__card-img--chamfer" alt aria-hidden="true" loading="lazy" decoding="async"> </picture><span><strong>Manifesto</strong></span></a></li> <li><a class="hp2-nav__drawer-card" href="/p/company-news" data-event-category="topnav" nav-click-event-label="Company News"><picture>   <source type="image/avif" srcset="/p/assets/site-v2/panel-company-news-250.avif?v=15abaa37e2af4558 250w, /p/assets/site-v2/panel-company-news-500.avif?v=15abaa37e2af4558 500w" sizes="(min-width: 1025px) 250px, (min-width: 768px) 166px, 41px"> <img src="/p/assets/site-v2/panel-company-news.webp?v=15abaa37e2af4558" srcset="/p/assets/site-v2/panel-company-news-250.webp?v=15abaa37e2af4558 250w, /p/assets/site-v2/panel-company-news.webp?v=15abaa37e2af4558 500w" sizes="(min-width: 1025px) 250px, (min-width: 768px) 166px, 41px" width="250" height="172" class="hp2-panel__card-img--chamfer" alt aria-hidden="true" loading="lazy" decoding="async"> </picture><span><strong>Company News</strong></span></a></li> <li><a class="hp2-nav__drawer-tile" href="https://jobs.ashbyhq.com/flux" data-event-category="topnav" nav-click-event-label="Careers"><img src="/p/assets/site-v2/icon-briefcase-sharp.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Careers</span><svg class="hp2-nav__external" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3z"></path></svg></a></li> <li><a class="hp2-nav__drawer-tile" href="mailto:help@flux.ai" data-event-category="topnav" nav-click-event-label="Contact Support"><img src="/p/assets/site-v2/icon-phone.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Contact Support</span><svg class="hp2-nav__external" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3z"></path></svg></a></li> <li><a class="hp2-nav__drawer-tile" href="/p/contact-sales" data-event-category="topnav" nav-click-event-label="Partner Inquiries"><img src="/p/assets/site-v2/icon-users.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-users.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Partner Inquiries</span></a></li> </ul> </div> <a class="hp2-nav__item" href="/p/pricing" data-event-category="topnav" nav-click-event-label="Pricing"> <img src="/p/assets/site-v2/icon-money-sharp.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-money-sharp.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true"> <span>Pricing</span> </a> <a class="hp2-nav__item" href="/search" data-event-category="topnav" nav-click-event-label="Search"> <img src="/p/assets/site-v2/icon-search-sharp.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/icon-search-sharp.svg?v=15abaa37e2af4558)" alt="" aria-hidden="true"> <span>Search</span> </a> <a id="signup-btn-mobile" class="hp2-nav__item trackclicks" href="/signup" data-signup-cta="mobile" data-auth-show="anon" data-event-category="topnav" data-event-action="button click" nav-click-event-label="Sign Up"> <span>Sign Up</span> </a> <a id="login-btn-mobile" class="hp2-nav__item trackclicks" href="/login" data-auth-show="anon" data-event-category="topnav" data-event-action="button click" nav-click-event-label="Log In"> <span>Log In</span> </a> <a class="hp2-nav__item hp2-nav__app-link" href="/" data-auth="userlink" data-auth-show="authed" data-auth-variant="mobile" data-event-category="topnav" data-event-label="Go to Profile" hidden> <span>Go to Profile</span> </a> </div> </header> <script type="module" src="/p/assets/SiteNavV2.astro_astro_type_script_index_0_lang.B7ZMjF7A.js?v=15abaa37e2af4558"></script> <main class="hp2-main">   <section class="hp2-hero hp2-section hp2-hero--mobile-card hp2-hero--ai" aria-labelledby="hp2-hero-title" data-hp2-transparent-nav> <div class="hp2-hero__visual"> <picture> <source media="(max-width: 767px)" type="image/avif" srcset="/p/assets/homepage-v2/hero-mobile-device-800.avif?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/hero-mobile-device-1200.avif?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/hero-mobile-device-1600.avif?v=15abaa37e2af4558 1600w, /p/assets/homepage-v2/hero-mobile-device-2400.avif?v=15abaa37e2af4558 2400w, /p/assets/homepage-v2/hero-mobile-device-3200.avif?v=15abaa37e2af4558 3200w" sizes="1600px" width="3200" height="2130"> <source media="(max-width: 767px)" type="image/webp" srcset="/p/assets/homepage-v2/hero-mobile-device-800.webp?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/hero-mobile-device-1200.webp?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/hero-mobile-device-1600.webp?v=15abaa37e2af4558 1600w, /p/assets/homepage-v2/hero-mobile-device-2400.webp?v=15abaa37e2af4558 2400w, /p/assets/homepage-v2/hero-mobile-device.webp?v=15abaa37e2af4558 3200w" sizes="1600px" width="3200" height="2130"> <source type="image/avif" srcset="/p/assets/homepage-v2/hero-bg-800.avif?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/hero-bg-1200.avif?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/hero-bg-1600.avif?v=15abaa37e2af4558 1600w, /p/assets/homepage-v2/hero-bg-2000.avif?v=15abaa37e2af4558 2000w, /p/assets/homepage-v2/hero-bg-2400.avif?v=15abaa37e2af4558 2400w, /p/assets/homepage-v2/hero-bg-3200.avif?v=15abaa37e2af4558 3200w" sizes="(min-width: 1680px) 100vw, (min-width: 1025px) 109vw, (min-width: 768px) 1410px, 1142px"> <img src="/p/assets/homepage-v2/hero-bg.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/hero-bg-800.webp?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/hero-bg-1200.webp?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/hero-bg-1600.webp?v=15abaa37e2af4558 1600w, /p/assets/homepage-v2/hero-bg-2000.webp?v=15abaa37e2af4558 2000w, /p/assets/homepage-v2/hero-bg-2400.webp?v=15abaa37e2af4558 2400w, /p/assets/homepage-v2/hero-bg.webp?v=15abaa37e2af4558 3200w" sizes="(min-width: 1680px) 100vw, (min-width: 1025px) 109vw, (min-width: 768px) 1410px, 1142px" width="3200" height="2130" alt="Engineer holding a green Flux-designed circuit board over a workbench" fetchpriority="high" decoding="async"> </picture> <picture> <source media="(max-width: 767px)" type="image/avif" srcset="/p/assets/homepage-v2/hero-mobile-device-800.avif?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/hero-mobile-device-1200.avif?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/hero-mobile-device-1600.avif?v=15abaa37e2af4558 1600w, /p/assets/homepage-v2/hero-mobile-device-2400.avif?v=15abaa37e2af4558 2400w, /p/assets/homepage-v2/hero-mobile-device-3200.avif?v=15abaa37e2af4558 3200w" sizes="1600px" width="3200" height="2130"> <source media="(max-width: 767px)" type="image/webp" srcset="/p/assets/homepage-v2/hero-mobile-device-800.webp?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/hero-mobile-device-1200.webp?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/hero-mobile-device-1600.webp?v=15abaa37e2af4558 1600w, /p/assets/homepage-v2/hero-mobile-device-2400.webp?v=15abaa37e2af4558 2400w, /p/assets/homepage-v2/hero-mobile-device.webp?v=15abaa37e2af4558 3200w" sizes="1600px" width="3200" height="2130"> <source type="image/avif" srcset="/p/assets/homepage-v2/hero-bg-800.avif?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/hero-bg-1200.avif?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/hero-bg-1600.avif?v=15abaa37e2af4558 1600w, /p/assets/homepage-v2/hero-bg-2000.avif?v=15abaa37e2af4558 2000w, /p/assets/homepage-v2/hero-bg-2400.avif?v=15abaa37e2af4558 2400w, /p/assets/homepage-v2/hero-bg-3200.avif?v=15abaa37e2af4558 3200w" sizes="(min-width: 1680px) 100vw, (min-width: 1025px) 109vw, (min-width: 768px) 1410px, 1142px"> <img src="/p/assets/homepage-v2/hero-bg.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/hero-bg-800.webp?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/hero-bg-1200.webp?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/hero-bg-1600.webp?v=15abaa37e2af4558 1600w, /p/assets/homepage-v2/hero-bg-2000.webp?v=15abaa37e2af4558 2000w, /p/assets/homepage-v2/hero-bg-2400.webp?v=15abaa37e2af4558 2400w, /p/assets/homepage-v2/hero-bg.webp?v=15abaa37e2af4558 3200w" sizes="(min-width: 1680px) 100vw, (min-width: 1025px) 109vw, (min-width: 768px) 1410px, 1142px" width="3200" height="2130" class="hp2-hero__blur hp2-hero__blur--1" alt aria-hidden="true" decoding="async"> </picture><picture> <source media="(max-width: 767px)" type="image/avif" srcset="/p/assets/homepage-v2/hero-mobile-device-800.avif?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/hero-mobile-device-1200.avif?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/hero-mobile-device-1600.avif?v=15abaa37e2af4558 1600w, /p/assets/homepage-v2/hero-mobile-device-2400.avif?v=15abaa37e2af4558 2400w, /p/assets/homepage-v2/hero-mobile-device-3200.avif?v=15abaa37e2af4558 3200w" sizes="1600px" width="3200" height="2130"> <source media="(max-width: 767px)" type="image/webp" srcset="/p/assets/homepage-v2/hero-mobile-device-800.webp?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/hero-mobile-device-1200.webp?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/hero-mobile-device-1600.webp?v=15abaa37e2af4558 1600w, /p/assets/homepage-v2/hero-mobile-device-2400.webp?v=15abaa37e2af4558 2400w, /p/assets/homepage-v2/hero-mobile-device.webp?v=15abaa37e2af4558 3200w" sizes="1600px" width="3200" height="2130"> <source type="image/avif" srcset="/p/assets/homepage-v2/hero-bg-800.avif?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/hero-bg-1200.avif?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/hero-bg-1600.avif?v=15abaa37e2af4558 1600w, /p/assets/homepage-v2/hero-bg-2000.avif?v=15abaa37e2af4558 2000w, /p/assets/homepage-v2/hero-bg-2400.avif?v=15abaa37e2af4558 2400w, /p/assets/homepage-v2/hero-bg-3200.avif?v=15abaa37e2af4558 3200w" sizes="(min-width: 1680px) 100vw, (min-width: 1025px) 109vw, (min-width: 768px) 1410px, 1142px"> <img src="/p/assets/homepage-v2/hero-bg.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/hero-bg-800.webp?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/hero-bg-1200.webp?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/hero-bg-1600.webp?v=15abaa37e2af4558 1600w, /p/assets/homepage-v2/hero-bg-2000.webp?v=15abaa37e2af4558 2000w, /p/assets/homepage-v2/hero-bg-2400.webp?v=15abaa37e2af4558 2400w, /p/assets/homepage-v2/hero-bg.webp?v=15abaa37e2af4558 3200w" sizes="(min-width: 1680px) 100vw, (min-width: 1025px) 109vw, (min-width: 768px) 1410px, 1142px" width="3200" height="2130" class="hp2-hero__blur hp2-hero__blur--2" alt aria-hidden="true" decoding="async"> </picture><picture> <source media="(max-width: 767px)" type="image/avif" srcset="/p/assets/homepage-v2/hero-mobile-device-800.avif?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/hero-mobile-device-1200.avif?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/hero-mobile-device-1600.avif?v=15abaa37e2af4558 1600w, /p/assets/homepage-v2/hero-mobile-device-2400.avif?v=15abaa37e2af4558 2400w, /p/assets/homepage-v2/hero-mobile-device-3200.avif?v=15abaa37e2af4558 3200w" sizes="1600px" width="3200" height="2130"> <source media="(max-width: 767px)" type="image/webp" srcset="/p/assets/homepage-v2/hero-mobile-device-800.webp?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/hero-mobile-device-1200.webp?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/hero-mobile-device-1600.webp?v=15abaa37e2af4558 1600w, /p/assets/homepage-v2/hero-mobile-device-2400.webp?v=15abaa37e2af4558 2400w, /p/assets/homepage-v2/hero-mobile-device.webp?v=15abaa37e2af4558 3200w" sizes="1600px" width="3200" height="2130"> <source type="image/avif" srcset="/p/assets/homepage-v2/hero-bg-800.avif?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/hero-bg-1200.avif?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/hero-bg-1600.avif?v=15abaa37e2af4558 1600w, /p/assets/homepage-v2/hero-bg-2000.avif?v=15abaa37e2af4558 2000w, /p/assets/homepage-v2/hero-bg-2400.avif?v=15abaa37e2af4558 2400w, /p/assets/homepage-v2/hero-bg-3200.avif?v=15abaa37e2af4558 3200w" sizes="(min-width: 1680px) 100vw, (min-width: 1025px) 109vw, (min-width: 768px) 1410px, 1142px"> <img src="/p/assets/homepage-v2/hero-bg.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/hero-bg-800.webp?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/hero-bg-1200.webp?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/hero-bg-1600.webp?v=15abaa37e2af4558 1600w, /p/assets/homepage-v2/hero-bg-2000.webp?v=15abaa37e2af4558 2000w, /p/assets/homepage-v2/hero-bg-2400.webp?v=15abaa37e2af4558 2400w, /p/assets/homepage-v2/hero-bg.webp?v=15abaa37e2af4558 3200w" sizes="(min-width: 1680px) 100vw, (min-width: 1025px) 109vw, (min-width: 768px) 1410px, 1142px" width="3200" height="2130" class="hp2-hero__blur hp2-hero__blur--3" alt aria-hidden="true" decoding="async"> </picture><picture> <source media="(max-width: 767px)" type="image/avif" srcset="/p/assets/homepage-v2/hero-mobile-device-800.avif?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/hero-mobile-device-1200.avif?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/hero-mobile-device-1600.avif?v=15abaa37e2af4558 1600w, /p/assets/homepage-v2/hero-mobile-device-2400.avif?v=15abaa37e2af4558 2400w, /p/assets/homepage-v2/hero-mobile-device-3200.avif?v=15abaa37e2af4558 3200w" sizes="1600px" width="3200" height="2130"> <source media="(max-width: 767px)" type="image/webp" srcset="/p/assets/homepage-v2/hero-mobile-device-800.webp?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/hero-mobile-device-1200.webp?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/hero-mobile-device-1600.webp?v=15abaa37e2af4558 1600w, /p/assets/homepage-v2/hero-mobile-device-2400.webp?v=15abaa37e2af4558 2400w, /p/assets/homepage-v2/hero-mobile-device.webp?v=15abaa37e2af4558 3200w" sizes="1600px" width="3200" height="2130"> <source type="image/avif" srcset="/p/assets/homepage-v2/hero-bg-800.avif?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/hero-bg-1200.avif?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/hero-bg-1600.avif?v=15abaa37e2af4558 1600w, /p/assets/homepage-v2/hero-bg-2000.avif?v=15abaa37e2af4558 2000w, /p/assets/homepage-v2/hero-bg-2400.avif?v=15abaa37e2af4558 2400w, /p/assets/homepage-v2/hero-bg-3200.avif?v=15abaa37e2af4558 3200w" sizes="(min-width: 1680px) 100vw, (min-width: 1025px) 109vw, (min-width: 768px) 1410px, 1142px"> <img src="/p/assets/homepage-v2/hero-bg.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/hero-bg-800.webp?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/hero-bg-1200.webp?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/hero-bg-1600.webp?v=15abaa37e2af4558 1600w, /p/assets/homepage-v2/hero-bg-2000.webp?v=15abaa37e2af4558 2000w, /p/assets/homepage-v2/hero-bg-2400.webp?v=15abaa37e2af4558 2400w, /p/assets/homepage-v2/hero-bg.webp?v=15abaa37e2af4558 3200w" sizes="(min-width: 1680px) 100vw, (min-width: 1025px) 109vw, (min-width: 768px) 1410px, 1142px" width="3200" height="2130" class="hp2-hero__blur hp2-hero__blur--4" alt aria-hidden="true" decoding="async"> </picture> </div> <div class="hp2-hero__gradient" aria-hidden="true"></div> <div class="hp2-hero__copy"> <h1 id="hp2-hero-title">Create Hardware<br>with AI</h1> <p class="hp2-hero__intro">Flux helps you create your entire device, end to end.</p> <p class="hp2-hero__features"><span class="hp2-hero__features-line"><span class="hp2-hero__features-check"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 4.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Schematic</span><span class="hp2-hero__features-check"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 4.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>PCB</span><span class="hp2-hero__features-check"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 4.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Mechanical Design</span></span><span class="hp2-hero__features-line"><span class="hp2-hero__features-check"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 4.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Manufacturing</span><span class="hp2-hero__features-check"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 4.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Simulation</span></span></p> <div class="hp2-hero__cta" data-hp2-hero-cta>  <a class="hp2-hero__prompt" href="/signup" aria-label="Describe your project" data-hp2-hero-prompt data-signup-cta="hero-prompt" data-event-category="hero" data-event-action="prompt click" data-event-label="Prompt box"> <span class="hp2-hero__prompt-line" data-hp2-hero-prompt-line aria-hidden="true"><span data-hp2-hero-prompt-text></span><span class="hp2-hero__prompt-caret"></span><span class="hp2-hero__prompt-rest" data-hp2-hero-prompt-rest></span></span> </a> <a class="hp2-pill hp2-pill--primary hp2-hero__button" href="/signup" data-signup-cta="hero" data-event-category="hero" data-event-action="button click" data-event-label="Start creating with AI"><span class="hp2-pill__inner">Start Creating with AI</span></a>  </div> </div> </section> <script type="module" src="/p/assets/HeroV2.astro_astro_type_script_index_0_lang.BU1ZUXzf.js?v=15abaa37e2af4558"></script> <section class="hp2-jump hp2-section" aria-labelledby="hp2-jump-title"> <div class="hp2-container hp2-jump__inner"> <h2 id="hp2-jump-title">Describe your idea.<br>Flux makes it real.</h2> <p class="hp2-jump__copy">Turn your idea into a schematic, a routed PCB, and fab-ready files with AI, right in your browser.</p> <div class="hp2-jump__workspace"> <div class="hp2-jump__frame"> <picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/vision-browser-1024.avif?v=15abaa37e2af4558 1024w, /p/assets/homepage-v2/vision-browser-1536.avif?v=15abaa37e2af4558 1536w, /p/assets/homepage-v2/vision-browser-2048.avif?v=15abaa37e2af4558 2048w" sizes="(min-width: 1072px) 1024px, (min-width: 768px) calc(100vw - 48px), calc(100vw - 40px)"> <img src="/p/assets/homepage-v2/vision-browser.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/vision-browser-1024.webp?v=15abaa37e2af4558 1024w, /p/assets/homepage-v2/vision-browser-1536.webp?v=15abaa37e2af4558 1536w, /p/assets/homepage-v2/vision-browser.webp?v=15abaa37e2af4558 2048w" sizes="(min-width: 1072px) 1024px, (min-width: 768px) calc(100vw - 48px), calc(100vw - 40px)" width="2048" height="1114" class="hp2-jump__browser" alt="Flux AI PCB design workspace showing the Dashboard Compass project with agent chat and a 3D board view" loading="lazy" decoding="async"> </picture> </div> <div class="hp2-cursor hp2-cursor--engineer" data-hp2-cursor="Engineer"><img src="/p/assets/homepage-v2/cursor.svg?v=15abaa37e2af4558" alt="" loading="lazy" decoding="async"><span>Engineer</span></div> <div class="hp2-cursor hp2-cursor--manufacturer" data-hp2-cursor="Manufacturer"><img src="/p/assets/homepage-v2/cursor.svg?v=15abaa37e2af4558" alt="" loading="lazy" decoding="async"><span>Manufacturer</span></div> <div class="hp2-cursor hp2-cursor--designer" data-hp2-cursor="Designer"><img src="/p/assets/homepage-v2/cursor.svg?v=15abaa37e2af4558" alt="" loading="lazy" decoding="async"><span>Designer</span></div> </div> <div class="hp2-jump__button"> <a class="hp2-btn hp2-btn--grey hp2-jump__launch trackclicks" href="/signup" data-signup-cta="bottom" id="bottom-try-flux-for-free" data-event-category="jump" data-event-action="button click"><span class="hp2-btn__inner">Launch Flux</span></a> </div> </div> </section> <section class="hp2-threeup hp2-section" aria-labelledby="hp2-threeup-title"> <h2 id="hp2-threeup-title">Any project. Any complexity.</h2> <div class="hp2-carousel hp2-threeup__carousel" data-hp2-carousel="tiers" aria-label="Project complexity"> <div class="hp2-carousel__viewport"> <div class="hp2-threeup__grid hp2-carousel__track" data-hp2-track> <article class="hp2-tier" data-hp2-slide> <div class="hp2-tier__tall"> <div class="hp2-tier__surface"> <div class="hp2-tier__content"> <a class="hp2-tier__image" href="https://flux.ai/fatenerris/nf-dual-output-buck~cf" target="_blank" rel="noopener" data-event-category="threeup" data-event-label="View Project Image"> <picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/tier-basic-340.avif?v=15abaa37e2af4558 340w, /p/assets/homepage-v2/tier-basic-680.avif?v=15abaa37e2af4558 680w" sizes="(min-width: 1440px) 338px, (min-width: 1025px) 258px, (min-width: 768px) calc(50vw - 110px), 280px"> <img src="/p/assets/homepage-v2/tier-basic.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/tier-basic-340.webp?v=15abaa37e2af4558 340w, /p/assets/homepage-v2/tier-basic.webp?v=15abaa37e2af4558 680w" sizes="(min-width: 1440px) 338px, (min-width: 1025px) 258px, (min-width: 768px) calc(50vw - 110px), 280px" width="680" height="370" alt="Small two-layer USB-C board designed with AI in Flux" loading="lazy" decoding="async"> </picture> </a> <div class="hp2-tier__text"> <h3>Basic boards.</h3> <p>Flux helps you build simple sensor boards, LED controllers, breakouts, and basic microcontroller products that fit comfortably on two layers.</p> <dl class="hp2-tier__stats"> <div class="hp2-tier__stat"> <dt>Design time</dt> <dd>5 hours</dd> </div><div class="hp2-tier__stat"> <dt>ACUs used</dt> <dd>60</dd> </div><div class="hp2-tier__stat"> <dt>Design cost</dt> <dd>$119</dd> </div> </dl> </div> </div> </div> </div> <div class="hp2-tier__short"> <div class="hp2-tier__short-content"> <div class="hp2-tier__project"> <span>Example</span> <strong>NF-Dual Output Buck</strong> </div> <a class="hp2-btn hp2-btn--dark" href="https://flux.ai/fatenerris/nf-dual-output-buck~cf" target="_blank" rel="noopener" data-event-category="threeup" data-event-label="View Project"><span class="hp2-btn__inner">View</span></a> </div> </div> </article><article class="hp2-tier" data-hp2-slide> <div class="hp2-tier__tall"> <div class="hp2-tier__surface"> <div class="hp2-tier__content"> <a class="hp2-tier__image" href="https://flux.ai/cherepanyadima/modern-distortion-effect-pedal-v1~w0" target="_blank" rel="noopener" data-event-category="threeup" data-event-label="View Project Image"> <picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/tier-intermediate-340.avif?v=15abaa37e2af4558 340w, /p/assets/homepage-v2/tier-intermediate-680.avif?v=15abaa37e2af4558 680w" sizes="(min-width: 1440px) 338px, (min-width: 1025px) 258px, (min-width: 768px) calc(50vw - 110px), 280px"> <img src="/p/assets/homepage-v2/tier-intermediate.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/tier-intermediate-340.webp?v=15abaa37e2af4558 340w, /p/assets/homepage-v2/tier-intermediate.webp?v=15abaa37e2af4558 680w" sizes="(min-width: 1440px) 338px, (min-width: 1025px) 258px, (min-width: 768px) calc(50vw - 110px), 280px" width="680" height="370" alt="Distortion effects pedal PCB designed with AI in Flux" loading="lazy" decoding="async"> </picture> </a> <div class="hp2-tier__text"> <h3>Intermediate designs.</h3> <p>Flux works great for compact microcontroller boards, connected sensors, mixed-signal controllers, and general embedded products.</p> <dl class="hp2-tier__stats"> <div class="hp2-tier__stat"> <dt>Design time</dt> <dd>10 hours</dd> </div><div class="hp2-tier__stat"> <dt>ACUs used</dt> <dd>117</dd> </div><div class="hp2-tier__stat"> <dt>Design cost</dt> <dd>$235</dd> </div> </dl> </div> </div> </div> </div> <div class="hp2-tier__short"> <div class="hp2-tier__short-content"> <div class="hp2-tier__project"> <span>Example</span> <strong>Modern Distortion Effects Pedal</strong> </div> <a class="hp2-btn hp2-btn--dark" href="https://flux.ai/cherepanyadima/modern-distortion-effect-pedal-v1~w0" target="_blank" rel="noopener" data-event-category="threeup" data-event-label="View Project"><span class="hp2-btn__inner">View</span></a> </div> </div> </article><article class="hp2-tier" data-hp2-slide> <div class="hp2-tier__tall"> <div class="hp2-tier__surface"> <div class="hp2-tier__content"> <a class="hp2-tier__image" href="https://flux.ai/vasy_skral/esp32-x86-pc~rzy" target="_blank" rel="noopener" data-event-category="threeup" data-event-label="View Project Image"> <picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/tier-advanced-340.avif?v=15abaa37e2af4558 340w, /p/assets/homepage-v2/tier-advanced-680.avif?v=15abaa37e2af4558 680w" sizes="(min-width: 1440px) 338px, (min-width: 1025px) 258px, (min-width: 768px) calc(50vw - 110px), 280px"> <img src="/p/assets/homepage-v2/tier-advanced.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/tier-advanced-340.webp?v=15abaa37e2af4558 340w, /p/assets/homepage-v2/tier-advanced.webp?v=15abaa37e2af4558 680w" sizes="(min-width: 1440px) 338px, (min-width: 1025px) 258px, (min-width: 768px) calc(50vw - 110px), 280px" width="680" height="370" alt="ESP32 x86 PC board designed with AI in Flux" loading="lazy" decoding="async"> </picture> </a> <div class="hp2-tier__text"> <h3>Advanced products.</h3> <p>Flux excels at compact designs with fine-pitch components and dense routing, such as wearables, processor boards, and camera or display electronics.</p> <dl class="hp2-tier__stats"> <div class="hp2-tier__stat"> <dt>Design time</dt> <dd>18 hours</dd> </div><div class="hp2-tier__stat"> <dt>ACUs used</dt> <dd>147</dd> </div><div class="hp2-tier__stat"> <dt>Design cost</dt> <dd>$295</dd> </div> </dl> </div> </div> </div> </div> <div class="hp2-tier__short"> <div class="hp2-tier__short-content"> <div class="hp2-tier__project"> <span>Example</span> <strong>ESP32 x86 PC</strong> </div> <a class="hp2-btn hp2-btn--dark" href="https://flux.ai/vasy_skral/esp32-x86-pc~rzy" target="_blank" rel="noopener" data-event-category="threeup" data-event-label="View Project"><span class="hp2-btn__inner">View</span></a> </div> </div> </article> </div> </div> <div class="hp2-carousel__controls hp2-threeup__controls"> <div class="hp2-carousel__dots" role="group" aria-label="Complexity slides"> <button type="button" class="hp2-carousel__dot is-active" aria-label="Go to slide 1" aria-current="true" data-hp2-dot="0"></button><button type="button" class="hp2-carousel__dot" aria-label="Go to slide 2" data-hp2-dot="1"></button><button type="button" class="hp2-carousel__dot" aria-label="Go to slide 3" data-hp2-dot="2"></button> </div> <button type="button" class="hp2-carousel__arrow" aria-label="Next slide" data-hp2-next> <img src="/p/assets/homepage-v2/testimonial-arrow.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> </button> </div> </div> </section> <section class="hp2-testimonials hp2-section" aria-labelledby="hp2-testimonials-title"> <div class="hp2-container"> <h2 id="hp2-testimonials-title" class="hp2-testimonials__title">Builders love Flux.</h2> <div class="hp2-carousel" data-hp2-carousel="testimonials" aria-roledescription="carousel" aria-label="Testimonials"> <div class="hp2-carousel__viewport"> <div class="hp2-carousel__track" data-hp2-track> <article class="hp2-testimonial" data-hp2-slide aria-roledescription="slide" aria-label="1 of 3"> <div class="hp2-testimonial__media"> <picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/testimonial-1-640.avif?v=15abaa37e2af4558 640w, /p/assets/homepage-v2/testimonial-1-960.avif?v=15abaa37e2af4558 960w, /p/assets/homepage-v2/testimonial-1-1600.avif?v=15abaa37e2af4558 1600w" sizes="(min-width: 768px) 356px, calc(100vw - 84px)"> <img src="/p/assets/homepage-v2/testimonial-1.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/testimonial-1-640.webp?v=15abaa37e2af4558 640w, /p/assets/homepage-v2/testimonial-1-960.webp?v=15abaa37e2af4558 960w, /p/assets/homepage-v2/testimonial-1.webp?v=15abaa37e2af4558 1600w" sizes="(min-width: 768px) 356px, calc(100vw - 84px)" width="1600" height="1200" alt loading="lazy" decoding="async"> </picture> </div> <div class="hp2-testimonial__copy"> <div class="hp2-testimonial__lead"> <blockquote> “Nothing was more satisfying than seeing our system working in the field, and we really have Flux to thank for it all.” </blockquote> <p class="hp2-testimonial__name">Michael van Niekerk, Agri-iO</p> </div> <div class="hp2-testimonial__footer"> <a class="hp2-btn hp2-btn--grey hp2-testimonial__case-study" href="/p/blog/agri-io-revolutionizes-farming-with-flux" aria-label="Read case study: Michael van Niekerk, Agri-iO"><span class="hp2-btn__inner">Read Case Study</span></a> </div> </div> </article><article class="hp2-testimonial" data-hp2-slide aria-roledescription="slide" aria-label="2 of 3"> <div class="hp2-testimonial__media hp2-testimonial__media--secondary"> <picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/testimonial-2-boards-480.avif?v=15abaa37e2af4558 480w, /p/assets/homepage-v2/testimonial-2-boards-724.avif?v=15abaa37e2af4558 724w" sizes="(min-width: 768px) 356px, calc(100vw - 84px)"> <img src="/p/assets/homepage-v2/testimonial-2-boards.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/testimonial-2-boards-480.webp?v=15abaa37e2af4558 480w, /p/assets/homepage-v2/testimonial-2-boards.webp?v=15abaa37e2af4558 724w" sizes="(min-width: 768px) 356px, calc(100vw - 84px)" width="724" height="906" alt loading="lazy" decoding="async"> </picture> </div> <div class="hp2-testimonial__copy"> <div class="hp2-testimonial__lead"> <blockquote> “Flux does not have an upper limit. It gets better every time, makes it easier with every version and not just more precise but also with checks and verifications.” </blockquote> <p class="hp2-testimonial__name">Dr. Juergen Kienhoefer, AIRcable</p> </div> <div class="hp2-testimonial__footer"> <a class="hp2-btn hp2-btn--grey hp2-testimonial__case-study" href="/p/blog/why-dr-juergen-kienhoefer-switched-to-flux-after-15-years-of-eagle" aria-label="Read case study: Dr. Juergen Kienhoefer, AIRcable"><span class="hp2-btn__inner">Read Case Study</span></a> </div> </div> </article><article class="hp2-testimonial" data-hp2-slide aria-roledescription="slide" aria-label="3 of 3"> <div class="hp2-testimonial__media hp2-testimonial__media--board hp2-testimonial__media--secondary"> <picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/testimonial-3-468.avif?v=15abaa37e2af4558 468w" sizes="(min-width: 768px) 356px, calc(100vw - 84px)"> <img src="/p/assets/homepage-v2/testimonial-3.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/testimonial-3.webp?v=15abaa37e2af4558 468w" sizes="(min-width: 768px) 356px, calc(100vw - 84px)" width="468" height="588" alt loading="lazy" decoding="async"> </picture> </div> <div class="hp2-testimonial__copy"> <div class="hp2-testimonial__lead"> <blockquote> “Flux helped kickstart my first PCB design, <span class="hp2-testimonial__desktop-break"><br>50% faster</span> than if I had to use KiCad by myself.” </blockquote> <p class="hp2-testimonial__name">Melker Wändahl, creator of Tilt Tracker</p> </div> <div class="hp2-testimonial__footer"> <a class="hp2-btn hp2-btn--grey hp2-testimonial__case-study" href="/p/blog/building-tilt-tracker-first-pcb-in-flux" aria-label="Read case study: Melker Wändahl, creator of Tilt Tracker"><span class="hp2-btn__inner">Read Case Study</span></a> </div> </div> </article> </div> </div> <div class="hp2-carousel__controls"> <div class="hp2-carousel__dots" role="group" aria-label="Testimonial slides"> <button type="button" class="hp2-carousel__dot is-active" aria-label="Go to testimonial 1" aria-current="true" data-hp2-dot="0"></button><button type="button" class="hp2-carousel__dot" aria-label="Go to testimonial 2" data-hp2-dot="1"></button><button type="button" class="hp2-carousel__dot" aria-label="Go to testimonial 3" data-hp2-dot="2"></button> </div> <button type="button" class="hp2-carousel__arrow" aria-label="Next testimonial" data-hp2-next> <img src="/p/assets/homepage-v2/testimonial-arrow.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> </button> <img class="hp2-carousel__shadow" src="/p/assets/homepage-v2/testimonial-shadow.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> </div> </div> </div> </section> <section class="hp2-expertise hp2-section" aria-labelledby="hp2-expertise-title"> <div class="hp2-container"> <h2 id="hp2-expertise-title">Flux is your<br>AI hardware engineer.</h2> <div class="hp2-carousel hp2-expertise__carousel" data-hp2-carousel="expertise" aria-roledescription="carousel" aria-label="Engineering expertise"> <div class="hp2-carousel__viewport"> <div class="hp2-carousel__track" data-hp2-track> <article class="hp2-expertise__slide" data-hp2-slide aria-roledescription="slide" aria-label="1 of 3"> <div class="hp2-chat-visual"> <picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/engineer-card-1-800.avif?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/engineer-card-1-1400.avif?v=15abaa37e2af4558 1400w, /p/assets/homepage-v2/engineer-card-1-2628.avif?v=15abaa37e2af4558 2628w" sizes="(min-width: 1378px) 1322px, (min-width: 768px) calc(100vw - 56px), calc((100vw - 48px) * 1.83)"> <img src="/p/assets/homepage-v2/engineer-card-1.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/engineer-card-1-800.webp?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/engineer-card-1-1400.webp?v=15abaa37e2af4558 1400w, /p/assets/homepage-v2/engineer-card-1.webp?v=15abaa37e2af4558 2628w" sizes="(min-width: 1378px) 1322px, (min-width: 768px) calc(100vw - 56px), calc((100vw - 48px) * 1.83)" width="1322" height="546" alt="Flux AI agent planning an ESP32 retro PC and searching for components" loading="lazy" decoding="async"> </picture> </div> </article> <article class="hp2-expertise__slide" data-hp2-slide aria-roledescription="slide" aria-label="2 of 3"> <div class="hp2-expertise__design"> <picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/engineer-card-2-800.avif?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/engineer-card-2-1400.avif?v=15abaa37e2af4558 1400w, /p/assets/homepage-v2/engineer-card-2-2628.avif?v=15abaa37e2af4558 2628w" sizes="(min-width: 1378px) 1322px, (min-width: 768px) calc(100vw - 56px), calc((100vw - 48px) * 1.83)"> <img src="/p/assets/homepage-v2/engineer-card-2.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/engineer-card-2-800.webp?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/engineer-card-2-1400.webp?v=15abaa37e2af4558 1400w, /p/assets/homepage-v2/engineer-card-2.webp?v=15abaa37e2af4558 2628w" sizes="(min-width: 1378px) 1322px, (min-width: 768px) calc(100vw - 56px), calc((100vw - 48px) * 1.83)" width="1322" height="546" alt="3D view of an ESP32 PCB laid out and routed with AI in Flux" loading="lazy" decoding="async"> </picture> </div> </article> <article class="hp2-expertise__slide" data-hp2-slide aria-roledescription="slide" aria-label="3 of 3"> <div class="hp2-expertise__make"> <picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/engineer-card-3-800.avif?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/engineer-card-3-1400.avif?v=15abaa37e2af4558 1400w, /p/assets/homepage-v2/engineer-card-3-2628.avif?v=15abaa37e2af4558 2628w" sizes="(min-width: 1378px) 1322px, (min-width: 768px) calc(100vw - 56px), calc((100vw - 48px) * 1.83)"> <img src="/p/assets/homepage-v2/engineer-card-3.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/engineer-card-3-800.webp?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/engineer-card-3-1400.webp?v=15abaa37e2af4558 1400w, /p/assets/homepage-v2/engineer-card-3.webp?v=15abaa37e2af4558 2628w" sizes="(min-width: 1378px) 1322px, (min-width: 768px) calc(100vw - 56px), calc((100vw - 48px) * 1.83)" width="1322" height="546" alt="Engineer holding a finished PCB designed with Flux" loading="lazy" decoding="async"> </picture> </div> </article> </div> </div> </div> <div class="hp2-vp-list"> <button class="hp2-vp is-active" type="button" data-hp2-vp="0" aria-pressed="true"> <span class="hp2-vp__progress"><span></span></span> <span class="hp2-vp__heading">Brainstorm</span> <span class="hp2-vp__copy">Tell Flux what you&#39;re trying to build and why. It asks questions, researches the approach with you, and turns the conversation into a real plan.</span> </button><button class="hp2-vp" type="button" data-hp2-vp="1" aria-pressed="false"> <span class="hp2-vp__progress"><span></span></span> <span class="hp2-vp__heading">Design</span> <span class="hp2-vp__copy">Flux transforms the project plan into a working schematic, lays out components, and tests the design against engineering rules.</span> </button><button class="hp2-vp" type="button" data-hp2-vp="2" aria-pressed="false"> <span class="hp2-vp__progress"><span></span></span> <span class="hp2-vp__heading">Make</span> <span class="hp2-vp__copy">Flux shows you what each part costs and how long it takes to arrive, then packages all files according to manufacturer specifications.</span> </button> </div> </div> </section> <section class="hp2-reviews hp2-section" aria-labelledby="hp2-reviews-title" data-hp2-reviews> <div class="hp2-reviews__left"> <div class="hp2-chamfer hp2-reviews__copy-panel"> <div class="hp2-chamfer__inner"> <div class="hp2-reviews__copy"> <h2 id="hp2-reviews-title">Take the hard<br>out of hardware.</h2> <div class="hp2-corners hp2-corners--corner hp2-reviews__paragraph" data-hp2-read-more> <img class="hp2-corners__shape hp2-corners__shape--tl" src="/p/assets/homepage-v2/corner.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> <img class="hp2-corners__shape hp2-corners__shape--tr" src="/p/assets/homepage-v2/corner.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> <img class="hp2-corners__shape hp2-corners__shape--br" src="/p/assets/homepage-v2/corner.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> <img class="hp2-corners__shape hp2-corners__shape--bl" src="/p/assets/homepage-v2/corner.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> <p>Flux does the engineering work that normally makes hardware hard.</p> <p id="hp2-reviews-more" class="hp2-reviews__more">Flux catches issues in real time by continuously running electrical and design rule checks. It grounds its decisions in the actual parts by reading datasheets. It handles the details – sizing passives, I²C pull-ups, and decoupling caps. Flux works dynamically instead of following a rigid plan, re-evaluating work after each step and course correcting.</p> <button type="button" class="hp2-reviews__toggle" aria-expanded="false" aria-controls="hp2-reviews-more" data-hp2-read-more-toggle>Read more ↓</button> </div> </div> </div> </div> </div> <div class="hp2-reviews__right"> <div class="hp2-reviews__validation-panel"> <div class="hp2-validation" aria-label="Design validation status"> <div class="hp2-chamfer hp2-validation__header-card"> <div class="hp2-chamfer__inner"> <div class="hp2-validation__header"> <img src="/p/assets/homepage-v2/copilot-visor.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> <p>Now validating:</p> </div> </div> </div> <div class="hp2-chamfer hp2-validation__list-card"> <div class="hp2-chamfer__inner"> <div class="hp2-validation__viewport"> <ul data-hp2-review-list> <li><span>Schematic legibility</span></li><li class="is-done"><span>Electrical rule check</span></li><li><span>Design rule check</span></li> </ul> </div> </div> </div> </div> </div> </div> </section> <section class="hp2-manufacturers hp2-section" aria-label="Order from your favorite manufacturers"> <p class="hp2-manufacturers__eyebrow">Order from your favorite manufacturers</p> <div class="hp2-container"> <div class="hp2-marquee" role="group" aria-label="Manufacturing partners"> <div class="hp2-marquee__track"> <ul> <li><picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/logo-1-260.avif?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-1-450.avif?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px"> <img src="/p/assets/homepage-v2/logo-1.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/logo-1-260.webp?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-1.webp?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px" width="450" height="225" alt role="presentation" loading="eager" decoding="async"> </picture></li><li><picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/logo-2-260.avif?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-2-450.avif?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px"> <img src="/p/assets/homepage-v2/logo-2.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/logo-2-260.webp?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-2.webp?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px" width="450" height="225" alt role="presentation" loading="eager" decoding="async"> </picture></li><li><picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/logo-3-260.avif?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-3-450.avif?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px"> <img src="/p/assets/homepage-v2/logo-3.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/logo-3-260.webp?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-3.webp?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px" width="450" height="225" alt role="presentation" loading="eager" decoding="async"> </picture></li><li><picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/logo-4-260.avif?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-4-450.avif?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px"> <img src="/p/assets/homepage-v2/logo-4.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/logo-4-260.webp?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-4.webp?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px" width="450" height="225" alt role="presentation" loading="eager" decoding="async"> </picture></li><li><picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/logo-5-260.avif?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-5-450.avif?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px"> <img src="/p/assets/homepage-v2/logo-5.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/logo-5-260.webp?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-5.webp?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px" width="450" height="225" alt role="presentation" loading="eager" decoding="async"> </picture></li><li><picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/logo-6-260.avif?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-6-450.avif?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px"> <img src="/p/assets/homepage-v2/logo-6.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/logo-6-260.webp?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-6.webp?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px" width="450" height="225" alt role="presentation" loading="eager" decoding="async"> </picture></li><li><picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/logo-7-260.avif?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-7-450.avif?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px"> <img src="/p/assets/homepage-v2/logo-7.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/logo-7-260.webp?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-7.webp?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px" width="450" height="225" alt role="presentation" loading="eager" decoding="async"> </picture></li> </ul> <ul aria-hidden="true"> <li><picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/logo-1-260.avif?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-1-450.avif?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px"> <img src="/p/assets/homepage-v2/logo-1.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/logo-1-260.webp?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-1.webp?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px" width="450" height="225" alt role="presentation" loading="eager" decoding="async"> </picture></li><li><picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/logo-2-260.avif?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-2-450.avif?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px"> <img src="/p/assets/homepage-v2/logo-2.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/logo-2-260.webp?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-2.webp?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px" width="450" height="225" alt role="presentation" loading="eager" decoding="async"> </picture></li><li><picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/logo-3-260.avif?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-3-450.avif?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px"> <img src="/p/assets/homepage-v2/logo-3.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/logo-3-260.webp?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-3.webp?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px" width="450" height="225" alt role="presentation" loading="eager" decoding="async"> </picture></li><li><picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/logo-4-260.avif?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-4-450.avif?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px"> <img src="/p/assets/homepage-v2/logo-4.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/logo-4-260.webp?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-4.webp?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px" width="450" height="225" alt role="presentation" loading="eager" decoding="async"> </picture></li><li><picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/logo-5-260.avif?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-5-450.avif?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px"> <img src="/p/assets/homepage-v2/logo-5.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/logo-5-260.webp?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-5.webp?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px" width="450" height="225" alt role="presentation" loading="eager" decoding="async"> </picture></li><li><picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/logo-6-260.avif?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-6-450.avif?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px"> <img src="/p/assets/homepage-v2/logo-6.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/logo-6-260.webp?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-6.webp?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px" width="450" height="225" alt role="presentation" loading="eager" decoding="async"> </picture></li><li><picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/logo-7-260.avif?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-7-450.avif?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px"> <img src="/p/assets/homepage-v2/logo-7.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/logo-7-260.webp?v=15abaa37e2af4558 260w, /p/assets/homepage-v2/logo-7.webp?v=15abaa37e2af4558 450w" sizes="(min-width: 768px) 191px, 102px" width="450" height="225" alt role="presentation" loading="eager" decoding="async"> </picture></li> </ul> </div> <div class="hp2-marquee__fade" aria-hidden="true"></div> </div> </div> </section> <section class="hp2-mission hp2-section" aria-labelledby="hp2-mission-title"> <div class="hp2-mission__copy-panel hp2-chamfer"> <div class="hp2-chamfer__inner"> <div class="hp2-mission__copy"> <h2 id="hp2-mission-title">Let’s start building.</h2> <div class="hp2-corners hp2-corners--corner hp2-mission__paragraph"> <img class="hp2-corners__shape hp2-corners__shape--tl" src="/p/assets/homepage-v2/corner.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> <img class="hp2-corners__shape hp2-corners__shape--tr" src="/p/assets/homepage-v2/corner.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> <img class="hp2-corners__shape hp2-corners__shape--br" src="/p/assets/homepage-v2/corner.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> <img class="hp2-corners__shape hp2-corners__shape--bl" src="/p/assets/homepage-v2/corner.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> <p>Let’s build your idea together. All you need to do is describe what you want to make, or what problem you want to solve. Flux will work with you to make it a reality.</p> </div> <a class="hp2-pill hp2-pill--primary trackclicks" href="/signup" data-signup-cta="bottom" data-event-category="mission" data-event-action="button click"><span class="hp2-pill__inner">Try it Free</span></a> </div> </div> </div> <div class="hp2-chamfer hp2-mission__visual"> <div class="hp2-chamfer__inner"> <picture>   <source type="image/avif" srcset="/p/assets/homepage-v2/mission-visual-800.avif?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/mission-visual-1200.avif?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/mission-visual-1600.avif?v=15abaa37e2af4558 1600w" sizes="(min-width: 1440px) 664px, (min-width: 1025px) calc(48vw - 1px), calc(100vw - 2px)"> <img src="/p/assets/homepage-v2/mission-visual.webp?v=15abaa37e2af4558" srcset="/p/assets/homepage-v2/mission-visual-800.webp?v=15abaa37e2af4558 800w, /p/assets/homepage-v2/mission-visual-1200.webp?v=15abaa37e2af4558 1200w, /p/assets/homepage-v2/mission-visual.webp?v=15abaa37e2af4558 1600w" sizes="(min-width: 1440px) 664px, (min-width: 1025px) calc(48vw - 1px), calc(100vw - 2px)" width="1600" height="1780" alt="Close-up of a Flux-designed printed circuit board" loading="lazy" decoding="async"> </picture> </div> </div> </section> <section class="hp2-faq hp2-section" aria-labelledby="hp2-faq-title"> <div class="hp2-container"> <h2 id="hp2-faq-title">Frequently asked questions</h2> <div class="hp2-corners hp2-faq__frame"> <img class="hp2-corners__shape hp2-corners__shape--tl" src="/p/assets/homepage-v2/shape-1.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> <img class="hp2-corners__shape hp2-corners__shape--tr" src="/p/assets/homepage-v2/shape-2.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> <img class="hp2-corners__shape hp2-corners__shape--br" src="/p/assets/homepage-v2/shape-3.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> <img class="hp2-corners__shape hp2-corners__shape--bl" src="/p/assets/homepage-v2/shape-4.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> <div class="hp2-faq__list"> <div class="hp2-faq__item"> <h3> <button type="button" id="hp2-faq-btn-1" aria-expanded="false" aria-controls="hp2-faq-panel-1" data-hp2-faq-trigger> <span>What kinds of boards can I design in Flux?</span> <img src="/p/assets/homepage-v2/icon-plus.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> </button> </h3> <div id="hp2-faq-panel-1" role="region" aria-labelledby="hp2-faq-btn-1" class="hp2-faq__panel" hidden> <div><p>Flux supports professional multi-layer PCBs up to eight layers used in IoT devices, wearables, and robotics. Built to go all the way from prototype to production. <a href="/p/projects">Featured projects</a></p></div> </div> </div><div class="hp2-faq__item"> <h3> <button type="button" id="hp2-faq-btn-2" aria-expanded="false" aria-controls="hp2-faq-panel-2" data-hp2-faq-trigger> <span>Can AI design a PCB?</span> <img src="/p/assets/homepage-v2/icon-plus.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> </button> </h3> <div id="hp2-faq-panel-2" role="region" aria-labelledby="hp2-faq-btn-2" class="hp2-faq__panel" hidden> <div><p>Yes. PCB design using AI automates heavy lifting. Flux delivers AI assisted PCB design by drafting schematics, researching parts, and routing traces. This AI based PCB design process lets you edit everything in your browser.</p></div> </div> </div><div class="hp2-faq__item"> <h3> <button type="button" id="hp2-faq-btn-3" aria-expanded="false" aria-controls="hp2-faq-panel-3" data-hp2-faq-trigger> <span>Can I import projects from Altium, Cadence, or KiCad?</span> <img src="/p/assets/homepage-v2/icon-plus.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> </button> </h3> <div id="hp2-faq-panel-3" role="region" aria-labelledby="hp2-faq-btn-3" class="hp2-faq__panel" hidden> <div><p>Yes. Flux imports complete projects from Altium, Cadence OrCAD and Allegro, KiCad, Siemens PADS and Xpedition, Zuken CADSTAR, Eagle, EasyEDA, and DipTrace (XML export). Schematics, parts, connections, board outlines, and placement come across. Labcenter Proteus netlist and board exports bring in parts, connections, board outlines, placement, and routing. Altium, OrCAD, PADS, KiCad, Eagle, EasyEDA, and DipTrace part libraries, Allegro footprints, and JEP30 part models become Flux parts.</p><p>Importing projects from:</p><ul role="list"><li><a href="https://docs.flux.ai/Introduction/eagle-to-flux---migration-guide">Eagle to Flux</a></li><li><a href="https://docs.flux.ai/Introduction/upverter-to-flux">Upverter to Flux</a></li><li><a href="https://docs.flux.ai/Introduction/kicad-to-flux">KiCAD to Flux</a></li><li><a href="https://docs.flux.ai/Introduction/flux-to-altium-migration-doc">Altium to Flux</a></li><li><a href="https://docs.flux.ai/Introduction/easyeda-to-flux">EasyEDA to Flux</a></li></ul></div> </div> </div><div class="hp2-faq__item"> <h3> <button type="button" id="hp2-faq-btn-4" aria-expanded="false" aria-controls="hp2-faq-panel-4" data-hp2-faq-trigger> <span>Can I export for manufacturing?</span> <img src="/p/assets/homepage-v2/icon-plus.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> </button> </h3> <div id="hp2-faq-panel-4" role="region" aria-labelledby="hp2-faq-btn-4" class="hp2-faq__panel" hidden> <div><p>Yes. Flux exports Gerbers, drill files, BoM, pick-and-place, and standard netlists for fabrication and downstream tools. <a href="https://docs.flux.ai/Introduction/getting-started-in-flux-manufacturing">Exporting projects</a></p></div> </div> </div><div class="hp2-faq__item"> <h3> <button type="button" id="hp2-faq-btn-5" aria-expanded="false" aria-controls="hp2-faq-panel-5" data-hp2-faq-trigger> <span>Is my data secure?</span> <img src="/p/assets/homepage-v2/icon-plus.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> </button> </h3> <div id="hp2-faq-panel-5" role="region" aria-labelledby="hp2-faq-btn-5" class="hp2-faq__panel" hidden> <div><p>Yes. Flux encrypts data in transit and at rest and runs on SOC 2-aligned cloud infrastructure with SSO and project-level permissions. Read more about <a href="https://docs.flux.ai/legal/privacy-statement">privacy statement.</a></p></div> </div> </div><div class="hp2-faq__item"> <h3> <button type="button" id="hp2-faq-btn-6" aria-expanded="false" aria-controls="hp2-faq-panel-6" data-hp2-faq-trigger> <span>How capable is the AI — and what are its limits?</span> <img src="/p/assets/homepage-v2/icon-plus.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> </button> </h3> <div id="hp2-faq-panel-6" role="region" aria-labelledby="hp2-faq-btn-6" class="hp2-faq__panel" hidden> <div><p>Flux provides AI for PCB design that works alongside you. As a collaborative AI for electronics, it remains transparent: explaining changes, showing its reasoning, and checking in with you before key steps.</p></div> </div> </div><div class="hp2-faq__item"> <h3> <button type="button" id="hp2-faq-btn-7" aria-expanded="false" aria-controls="hp2-faq-panel-7" data-hp2-faq-trigger> <span>How does Flux perform in the browser?</span> <img src="/p/assets/homepage-v2/icon-plus.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> </button> </h3> <div id="hp2-faq-panel-7" role="region" aria-labelledby="hp2-faq-btn-7" class="hp2-faq__panel" hidden> <div><p>Flux is built to feel like a desktop-class tool without installs: large, multi-layer designs run smoothly in a modern browser, with real-time collaboration built in. Learn how to <a href="https://docs.flux.ai/Introduction/set-up-your-browser">setup your browser </a>to ensure the best possible experience.</p></div> </div> </div><div class="hp2-faq__item"> <h3> <button type="button" id="hp2-faq-btn-8" aria-expanded="false" aria-controls="hp2-faq-panel-8" data-hp2-faq-trigger> <span>How much does Flux cost?</span> <img src="/p/assets/homepage-v2/icon-plus.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> </button> </h3> <div id="hp2-faq-panel-8" role="region" aria-labelledby="hp2-faq-btn-8" class="hp2-faq__panel" hidden> <div><p>Eligible individual plans include a free trial; trial length and prices depend on your current offer. New Teams subscriptions start paid. See the pricing page for current terms. Enterprise pricing is available on request. <a href="/p/pricing" target="_blank" rel="noreferrer">Plans and pricing</a></p></div> </div> </div><div class="hp2-faq__item"> <h3> <button type="button" id="hp2-faq-btn-9" aria-expanded="false" aria-controls="hp2-faq-panel-9" data-hp2-faq-trigger> <span>How do I get help if I’m stuck?</span> <img src="/p/assets/homepage-v2/icon-plus.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> </button> </h3> <div id="hp2-faq-panel-9" role="region" aria-labelledby="hp2-faq-btn-9" class="hp2-faq__panel" hidden> <div><p>You’re not alone. Our team and community are available at <a href="mailto:help@flux.ai">help@flux.ai</a>, with <a href="https://docs.flux.ai/" target="_blank" rel="noreferrer">docs</a>, <a href="https://www.youtube.com/@buildwithflux" target="_blank" rel="noreferrer">Youtube videos</a>, and fast <a href="mailto:support@flux.ai" target="_blank" rel="noreferrer">support</a> when you need it.</p></div> </div> </div><div class="hp2-faq__item"> <h3> <button type="button" id="hp2-faq-btn-10" aria-expanded="false" aria-controls="hp2-faq-panel-10" data-hp2-faq-trigger> <span>How is Flux different from traditional ECAD tools?</span> <img src="/p/assets/homepage-v2/icon-plus.svg?v=15abaa37e2af4558" alt="" aria-hidden="true" loading="lazy" decoding="async"> </button> </h3> <div id="hp2-faq-panel-10" role="region" aria-labelledby="hp2-faq-btn-10" class="hp2-faq__panel" hidden> <div><p>Flux is full ECAD rebuilt for the AI era: browser-based, collaborative, connected to live parts data, and guided by explainable AI. See <a href="/p/blog/flux-vs-kicad-5-key-differences" target="_blank" rel="noreferrer">KiCAD vs. Flux</a>, <a href="/p/blog/easyeda-vs-flux" target="_blank" rel="noreferrer">EasyEDA vs. Flux</a> to learn about key differences.</p></div> </div> </div> </div> </div> </div> </section> <script type="module">function f(c){const o=Array.from(c.querySelectorAll(".hp2-faq__item")),s=o.map(e=>e.querySelector("[data-hp2-faq-trigger]")).filter(e=>e!==null),l=window.matchMedia("(prefers-reduced-motion: reduce)"),a=(e,i,r=!0)=>{const n=e.querySelector("[data-hp2-faq-trigger]"),t=e.querySelector(".hp2-faq__panel");if(!(!n||!t))if(e.classList.toggle("is-open",i),n.setAttribute("aria-expanded",String(i)),i){if(t.hidden=!1,!r){t.style.height="auto";return}if(l.matches){t.style.height="auto";return}t.style.height="0px",requestAnimationFrame(()=>{t.style.height=`${t.scrollHeight}px`}),window.setTimeout(()=>{e.classList.contains("is-open")&&(t.style.height="auto")},300)}else{if(l.matches){t.hidden=!0;return}t.style.height=`${t.scrollHeight}px`,requestAnimationFrame(()=>{t.style.height="0px"}),window.setTimeout(()=>{e.classList.contains("is-open")||(t.hidden=!0)},300)}},d=()=>{const e=location.hash.slice(1);if(!e)return;const i=c.querySelector(`.hp2-faq__item[id="${CSS.escape(e)}"]`);i&&(a(i,!0,!1),i.scrollIntoView({block:"start"}))},h=o.find(e=>e.classList.contains("is-open"));h&&a(h,!0),o.forEach(e=>{e.querySelector("[data-hp2-faq-trigger]")?.addEventListener("click",()=>{a(e,!e.classList.contains("is-open"))})}),s.forEach((e,i)=>{e.addEventListener("keydown",r=>{let n;r.key==="ArrowDown"&&(n=(i+1)%s.length),r.key==="ArrowUp"&&(n=(i-1+s.length)%s.length),r.key==="Home"&&(n=0),r.key==="End"&&(n=s.length-1),n!==void 0&&(r.preventDefault(),s[n].focus())})}),d(),window.addEventListener("hashchange",d)}function u(){f(document.body)}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",u,{once:!0}):u();</script> <script type="module" src="/p/assets/HomePageV2.astro_astro_type_script_index_0_lang.CneopoAq.js?v=15abaa37e2af4558"></script> </main> <footer class="hp2-footer hp2-reset"> <div class="hp2-container"> <div class="hp2-footer__top"> <a href="/p/" aria-label="Flux home"><img src="/p/assets/site-v2/flux-logo-hinted.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/flux-logo-hinted.svg?v=15abaa37e2af4558)" alt="Flux" width="150" height="56" data-hp2-pixel-snap loading="lazy" decoding="async"></a> <div class="hp2-footer__socials"> <a href="https://www.facebook.com/BuildwithFlux" target="_blank" rel="noopener" aria-label="Flux on Facebook" data-event-category="footer" nav-click-event-label="Facebook"> <img src="/p/assets/site-v2/social-facebook.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/social-facebook.svg?v=15abaa37e2af4558)" alt="" role="presentation" width="32" height="32" loading="lazy" decoding="async"> </a><a href="https://www.instagram.com/buildwithflux/" target="_blank" rel="noopener" aria-label="Flux on Instagram" data-event-category="footer" nav-click-event-label="Instagram"> <img src="/p/assets/site-v2/social-instagram.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/social-instagram.svg?v=15abaa37e2af4558)" alt="" role="presentation" width="32" height="32" loading="lazy" decoding="async"> </a><a href="https://x.com/BuildWithFlux" target="_blank" rel="noopener" aria-label="Flux on X" data-event-category="footer" nav-click-event-label="X"> <img src="/p/assets/site-v2/social-x.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/social-x.svg?v=15abaa37e2af4558)" alt="" role="presentation" width="32" height="32" loading="lazy" decoding="async"> </a><a href="https://www.youtube.com/@buildwithflux" target="_blank" rel="noopener" aria-label="Flux on YouTube" data-event-category="footer" nav-click-event-label="YouTube"> <img src="/p/assets/site-v2/social-youtube.svg?v=15abaa37e2af4558" style="--hp2-icon: url(/p/assets/site-v2/social-youtube.svg?v=15abaa37e2af4558)" alt="" role="presentation" width="32" height="32" loading="lazy" decoding="async"> </a> </div> </div> <div class="hp2-footer__columns"> <div class="hp2-footer__stack"> <div class="hp2-footer__column"> <p class="hp2-footer__heading">Product</p> <ul> <li><a href="/p/projects" data-event-category="footer" nav-click-event-label="Featured Projects">Featured Projects</a></li><li><a href="https://docs.flux.ai" target="_blank" rel="noopener" data-event-category="footer" nav-click-event-label="Documentation">Documentation</a></li><li><a href="/p/teams" data-event-category="footer" nav-click-event-label="Teams">Teams</a></li><li><a href="/p/mcad" data-event-category="footer" nav-click-event-label="Mechanical design (MCAD)">Mechanical design (MCAD)</a></li><li><a href="/p/eda" data-event-category="footer" nav-click-event-label="Electronics design (EDA)">Electronics design (EDA)</a></li><li><a href="/p/pricing" data-event-category="footer" nav-click-event-label="Pricing">Pricing</a></li> </ul> </div><div class="hp2-footer__column"> <p class="hp2-footer__heading">Guides</p> <ul> <li><a href="/p/the-flux-method" data-event-category="footer" nav-click-event-label="The Flux Method">The Flux Method</a></li><li><a href="/p/blog/amazing-flux-copilot-prompts" data-event-category="footer" nav-click-event-label="Copilot Prompts">Copilot Prompts</a></li><li><a href="https://www.youtube.com/@buildwithflux" target="_blank" rel="noopener" data-event-category="footer" nav-click-event-label="Video Tutorials">Video Tutorials</a></li> </ul> </div> </div><div class="hp2-footer__stack"> <div class="hp2-footer__column"> <p class="hp2-footer__heading">Solutions by industry</p> <ul> <li><a href="/p/industries/consumer-electronics" data-event-category="footer" nav-click-event-label="Consumer electronics">Consumer electronics</a></li><li><a href="/p/industries/medical-devices" data-event-category="footer" nav-click-event-label="Medical devices">Medical devices</a></li><li><a href="/p/industries/robotics" data-event-category="footer" nav-click-event-label="Robotics">Robotics</a></li><li><a href="/p/industries/industrial" data-event-category="footer" nav-click-event-label="Industrial and connected devices">Industrial and connected devices</a></li><li><a href="/p/industries/automotive-aerospace" data-event-category="footer" nav-click-event-label="Automotive and aerospace">Automotive and aerospace</a></li> </ul> </div><div class="hp2-footer__column"> <p class="hp2-footer__heading">Solutions by team</p> <ul> <li><a href="/p/teams/design-shops" data-event-category="footer" nav-click-event-label="Design shops and consultants">Design shops and consultants</a></li><li><a href="/p/teams/machine-shops" data-event-category="footer" nav-click-event-label="Machine shops">Machine shops</a></li><li><a href="/p/teams/industrial-design-studios" data-event-category="footer" nav-click-event-label="Industrial design studios">Industrial design studios</a></li><li><a href="/p/teams/startups" data-event-category="footer" nav-click-event-label="Startups">Startups</a></li><li><a href="/p/teams/enterprise-innovation" data-event-category="footer" nav-click-event-label="Enterprise innovation teams">Enterprise innovation teams</a></li><li><a href="/p/teams/contract-manufacturers" data-event-category="footer" nav-click-event-label="Contract manufacturers">Contract manufacturers</a></li><li><a href="/p/teams/engineering-leaders" data-event-category="footer" nav-click-event-label="Engineering leaders">Engineering leaders</a></li><li><a href="/p/teams/firmware" data-event-category="footer" nav-click-event-label="Firmware teams">Firmware teams</a></li> </ul> </div> </div><div class="hp2-footer__stack"> <div class="hp2-footer__column"> <p class="hp2-footer__heading">Compare</p> <ul> <li><a href="/p/compare/flux-vs-altium" data-event-category="footer" nav-click-event-label="Flux vs Altium">Flux vs Altium</a></li><li><a href="/p/compare/flux-vs-kicad" data-event-category="footer" nav-click-event-label="Flux vs KiCad">Flux vs KiCad</a></li><li><a href="/p/compare/flux-vs-easyeda" data-event-category="footer" nav-click-event-label="Flux vs EasyEDA">Flux vs EasyEDA</a></li><li><a href="/p/compare/flux-vs-cadence" data-event-category="footer" nav-click-event-label="Flux vs Cadence">Flux vs Cadence</a></li><li><a href="/p/compare/flux-vs-zuken" data-event-category="footer" nav-click-event-label="Flux vs Zuken">Flux vs Zuken</a></li><li><a href="/p/compare/flux-vs-fusion-360" data-event-category="footer" nav-click-event-label="Flux vs Fusion 360">Flux vs Fusion 360</a></li><li><a href="/p/compare/flux-vs-solidworks" data-event-category="footer" nav-click-event-label="Flux vs SolidWorks">Flux vs SolidWorks</a></li><li><a href="/p/compare/flux-vs-siemens-nx" data-event-category="footer" nav-click-event-label="Flux vs Siemens NX">Flux vs Siemens NX</a></li><li><a href="/p/compare/flux-vs-catia" data-event-category="footer" nav-click-event-label="Flux vs CATIA">Flux vs CATIA</a></li><li><a href="/p/compare/flux-vs-claude" data-event-category="footer" nav-click-event-label="Flux vs Claude Code">Flux vs Claude Code</a></li><li><a href="/p/compare/flux-vs-codex" data-event-category="footer" nav-click-event-label="Flux vs Codex">Flux vs Codex</a></li> </ul> </div> </div><div class="hp2-footer__stack"> <div class="hp2-footer__column"> <p class="hp2-footer__heading">Learn</p> <ul> <li><a href="/p/resources/pcb-design-fundamentals" data-event-category="footer" nav-click-event-label="PCB Design &#38; Engineering Fundamentals">PCB Design &amp; Engineering Fundamentals</a></li><li><a href="/p/resources/ai-prompt-engineering" data-event-category="footer" nav-click-event-label="AI &#38; Prompt Engineering">AI &amp; Prompt Engineering</a></li><li><a href="/p/resources/component-platform-guides" data-event-category="footer" nav-click-event-label="Component &#38; Platform Guides">Component &amp; Platform Guides</a></li><li><a href="/p/resources/projects-and-templates" data-event-category="footer" nav-click-event-label="Step-by-Step Projects &#38; Templates">Step-by-Step Projects &amp; Templates</a></li><li><a href="/p/resources/tool-comparisons" data-event-category="footer" nav-click-event-label="Tool Comparisons &#38; Migrations">Tool Comparisons &amp; Migrations</a></li><li><a href="/p/resources/hardware-development-101" data-event-category="footer" nav-click-event-label="Hardware 101 Development">Hardware 101 Development</a></li><li><a href="/p/resources/business-strategy" data-event-category="footer" nav-click-event-label="Business &#38; Strategy Library">Business &amp; Strategy Library</a></li><li><a href="/p/company-news" data-event-category="footer" nav-click-event-label="Company News →">Company News →</a></li> </ul> </div> </div><div class="hp2-footer__stack"> <div class="hp2-footer__column"> <p class="hp2-footer__heading">Sitemap</p> <ul> <li><a href="https://www.flux.ai/sitemap" data-event-category="footer" nav-click-event-label="Overview">Overview</a></li><li><a href="https://www.flux.ai/sitemap/microcontrollers" data-event-category="footer" nav-click-event-label="Microcontrollers">Microcontrollers</a></li><li><a href="https://www.flux.ai/sitemap/reference-designs-by-application" data-event-category="footer" nav-click-event-label="Reference Designs">Reference Designs</a></li><li><a href="https://www.flux.ai/sitemap/common-parts-library" data-event-category="footer" nav-click-event-label="Common Parts Library">Common Parts Library</a></li><li><a href="https://www.flux.ai/sitemap/project-templates" data-event-category="footer" nav-click-event-label="Project Templates">Project Templates</a></li><li><a href="https://www.flux.ai/sitemap/manufacturers" data-event-category="footer" nav-click-event-label="Manufacturers">Manufacturers</a></li><li><a href="https://www.flux.ai/sitemap/active-components" data-event-category="footer" nav-click-event-label="Active Components">Active Components</a></li><li><a href="https://www.flux.ai/sitemap/passive-components" data-event-category="footer" nav-click-event-label="Passive Components">Passive Components</a></li><li><a href="https://www.flux.ai/sitemap/accounts/users" data-event-category="footer" nav-click-event-label="Top Users">Top Users</a></li><li><a href="https://www.flux.ai/sitemap/accounts/orgs" data-event-category="footer" nav-click-event-label="Top Organizations">Top Organizations</a></li> </ul> </div> </div><div class="hp2-footer__stack"> <div class="hp2-footer__column"> <p class="hp2-footer__heading">Tools &amp; Calculators</p> <ul> <li><a href="/p/tools/voltage-divider-calculator" data-event-category="footer" nav-click-event-label="Voltage Divider Calculator">Voltage Divider Calculator</a></li><li><a href="/p/tools/resistor-color-code-calculator" data-event-category="footer" nav-click-event-label="Resistor Color Code Calculator">Resistor Color Code Calculator</a></li><li><a href="/p/tools/trace-width-calculator" data-event-category="footer" nav-click-event-label="PCB Trace Width Calculator">PCB Trace Width Calculator</a></li><li><a href="/p/tools/online-gerber-viewer" data-event-category="footer" nav-click-event-label="Online Gerber Viewer">Online Gerber Viewer</a></li><li><a href="/p/tools/pcb-via-size-calculator" data-event-category="footer" nav-click-event-label="Via Current Capacity Calculator">Via Current Capacity Calculator</a></li><li><a href="/p/tools/pcb-impedance-calculator" data-event-category="footer" nav-click-event-label="PCB Impedance Calculator">PCB Impedance Calculator</a></li><li><a href="/p/tools" data-event-category="footer" nav-click-event-label="Check out all available tools">Check out all available tools</a></li> </ul> </div> </div> </div> <div class="hp2-footer__bottom"> <span>©2026</span> <a href="https://docs.flux.ai/legal/privacy-statement" data-event-category="footer" nav-click-event-label="Privacy">Privacy</a> <a href="https://docs.flux.ai/legal/terms-of-service" data-event-category="footer" nav-click-event-label="Terms of services">Terms of services</a> </div> </div> </footer> </div>   <!-- Google Tag Manager --><script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({"gtm.start": new Date().getTime(), event: "gtm.js"});
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-5X7TQ5H");
+</script> <!-- Google Analytics 4 (via gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-SZ17792FZ5"></script> <script>
+    (function (w, i, g) { w[g] = w[g] || []; if (typeof w[g].push == 'function') w[g].push.apply(w[g], Array.isArray(i) ? i : [i]); })(window, ['G-5P2F9QK46C'], 'google_tags_first_party');
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("set", "developer_id.dZGVlNj", true);
+    gtag("set", "developer_id.dYWYxNW", true);
+    gtag("config", "G-SZ17792FZ5");
+    gtag("config", "G-5P2F9QK46C");
+</script> <!-- Facebook Pixel --><script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.agent='plwebflow';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '299714497907475');
+    fbq('track', 'PageView');
+</script> <!-- Microsoft Clarity (session replay and heatmaps), sampled --><script>
+    // Clarity installs click listeners.
+    // These listeners added about 30 ms of work to each tap on a mid-range phone.
+    // Each visitor gets one stable random value.
+    // Clarity records the sessions of 10% of the visitors.
+    (function () {
+        var SAMPLE_RATE = 0.1;
+        var KEY = "flux.sessionReplay.coin";
+        if (window.location.hostname !== "www.flux.ai" && window.location.hostname !== "flux.ai") return;
+        var coin;
+        try {
+            var stored = localStorage.getItem(KEY);
+            coin = stored === null ? NaN : parseFloat(stored);
+            if (!(coin >= 0 && coin < 1)) {
+                coin = Math.random();
+                localStorage.setItem(KEY, String(coin));
+            }
+        } catch (e) {
+            coin = Math.random();
+        }
+        if (coin >= SAMPLE_RATE) return;
+        // The tag script is deferred until the page is idle: Clarity installs
+        // click listeners whose startup work lands in the critical window and
+        // replays only lose the first seconds of a session.
+        function whenIdle(fn) {
+            var run = function () {
+                if ("requestIdleCallback" in window) requestIdleCallback(fn, {timeout: 2000});
+                else setTimeout(fn, 2000);
+            };
+            if (document.readyState === "complete") run();
+            else window.addEventListener("load", run);
+        }
+        whenIdle(function () {
+            (function (c, l, a, r, i, t, y) {
+                c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+                t = l.createElement(r);
+                t.async = 1;
+                t.src = "https://www.clarity.ms/tag/" + i;
+                y = l.getElementsByTagName(r)[0];
+                y.parentNode.insertBefore(t, y);
+            })(window, document, "clarity", "script", "xiew2nilpp");
+        });
+    })();
+</script> <!-- Segment --><script>
+    if (
+        window.location.hostname === "www.flux.ai" ||
+        window.location.hostname === "flux.ai"
+    ) {
+        !(function () {
+            var analytics = (window.analytics = window.analytics || []);
+            if (!analytics.initialize)
+                if (analytics.invoked)
+                    window.console && console.error && console.error("Segment snippet included twice.");
+                else {
+                    analytics.invoked = !0;
+                    analytics.methods = [
+                        "trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset",
+                        "group","track","ready","alias","debug","page","screen","once","off","on",
+                        "addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware","register",
+                    ];
+                    analytics.factory = function (e) {
+                        return function () {
+                            if (window.analytics.initialized) return window.analytics[e].apply(window.analytics, arguments);
+                            var i = Array.prototype.slice.call(arguments);
+                            if (["track","screen","alias","group","page","identify"].indexOf(e) > -1) {
+                                var c = document.querySelector("link[rel='canonical']");
+                                i.push({ __t: "bpc", c: (c && c.getAttribute("href")) || void 0, p: location.pathname, u: location.href, s: location.search, t: document.title, r: document.referrer });
+                            }
+                            i.unshift(e);
+                            analytics.push(i);
+                            return analytics;
+                        };
+                    };
+                    for (var i = 0; i < analytics.methods.length; i++) {
+                        var key = analytics.methods[i];
+                        analytics[key] = analytics.factory(key);
+                    }
+                    analytics.load = function (key, i) {
+                        var t = document.createElement("script");
+                        t.type = "text/javascript";
+                        t.async = !0;
+                        t.src = "https://events-cdn.flux.ai/analytics.js/v1/" + key + "/analytics.min.js";
+                        var n = document.getElementsByTagName("script")[0];
+                        n.parentNode.insertBefore(t, n);
+                        analytics._loadOptions = i;
+                    };
+                    analytics._writeKey = "XxpoiGFxHzMknRDQ5ZX7H38WFZuimnvb";
+                    analytics.SNIPPET_VERSION = "5.2.0";
+                    analytics.load("XxpoiGFxHzMknRDQ5ZX7H38WFZuimnvb", {
+                        integrations: {
+                            "Segment.io": {
+                                apiHost: "events-api.flux.ai/v1",
+                                // keepalive lets a track call finish when the click navigates away.
+                                deliveryStrategy: { strategy: "standard", config: { keepalive: true } },
+                            },
+                        },
+                    });
+                }
+        })();
+    }
+</script> <!-- Amplitude Experiment --><script async src="https://cdn.amplitude.com/script/ba1124c22475150f03a5ba50de714d2e.experiment.js"></script> <script type="module" src="/p/assets/Analytics.astro_astro_type_script_index_0_lang.BHQf0gyd.js?v=15abaa37e2af4558"></script> <!-- Woorank --><script>
+    window.woorankAssistantOptions = window.woorankAssistantOptions || {};
+    window.woorankAssistantOptions.url = "flux.ai";
+    window.woorankAssistantOptions.assistantPublicKey = "83a50781e642fb25835989b4c022c0c5d0930a23";
+    // The SEO assistant is not tracking, so its script load waits for idle time
+    // rather than competing with page-level tracking during the load window.
+    function whenIdle(fn) {
+        var run = function () {
+            if ("requestIdleCallback" in window) requestIdleCallback(fn, {timeout: 2000});
+            else setTimeout(fn, 2000);
+        };
+        if (document.readyState === "complete") run();
+        else window.addEventListener("load", run);
+    }
+    whenIdle(function () {
+        var wl = document.createElement("script");
+        wl.type = "text/javascript";
+        wl.async = true;
+        wl.src = "https://assistant.woorank.com/hydra/assistantLoader.latest.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(wl, s);
+    });
+</script> <!-- Optibase --><script src="https://app.optibase.io/script.js" public-api-key="cm73k3l520381xkaeu46shi18"></script> <!-- Intercom --><script>
+    window.intercomSettings = {
+        app_id: "ur1q6bag",
+        custom_launcher_selector: '.live-chat-trigger',
+        alignment: 'right',
+        horizontal_padding: 20,
+        vertical_padding: 20
+    };
+</script> <script>
+    (function(){var w=window;var d=document;var loaded=false;var l=function(){if(loaded)return;loaded=true;var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/ur1q6bag';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var events=['pointerdown','touchstart','keydown','scroll','mousemove'];var onFirst=function(){events.forEach(function(e){w.removeEventListener(e,onFirst,true);});l();};events.forEach(function(e){w.addEventListener(e,onFirst,{capture:true,passive:true});});d.addEventListener('click',function(ev){var t=ev.target;if(t&&typeof t.closest==='function'&&t.closest('.live-chat-trigger')&&!w.Intercom.booted){ev.preventDefault();l();w.Intercom('show');}},true);}})();
+</script> <!-- GA click tracking for all anchor tags (one delegated listener).
+     For taps that stay on the page the event is sent after the tap's paint; for
+     navigating taps it is sent synchronously so it cannot be lost on unload. --><script>
+    (() => {
+        const trackClassName = "ga-event";
+        const topNavLinkClass = "nav-link";
+        const footerLinkClass = "footer-link";
+        const socialLinkClass = "social-link-block";
+        const buttonClass = "w-button";
+
+        document.addEventListener(
+            "click",
+            function (event) {
+                if (!("gtag" in window)) return;
+                const target = event.target;
+                if (!target || typeof target.closest !== "function") return;
+                const el = target.closest("a, ." + trackClassName);
+                if (!el) return;
+                const eventCategory = el.getAttribute("data-event-category")
+                    ? el.getAttribute("data-event-category")
+                    : el.classList.contains(topNavLinkClass)
+                      ? "topnav"
+                      : el.classList.contains(footerLinkClass) || el.classList.contains(socialLinkClass)
+                        ? "footer"
+                        : "";
+                const eventAction = el.getAttribute("data-event-action")
+                    ? el.getAttribute("data-event-action")
+                    : el.classList.contains(buttonClass)
+                      ? "button click"
+                      : "click";
+                const eventLabel = el.getAttribute("data-event-label")
+                    ? el.getAttribute("data-event-label")
+                    : el.getAttribute("nav-click-event-label");
+                const eventValue = el.getAttribute("data-event-value");
+                const href = el.getAttribute("href");
+                const navigatesAway =
+                    el.tagName === "A" &&
+                    href &&
+                    !href.startsWith("#") &&
+                    el.getAttribute("target") !== "_blank" &&
+                    !el.hasAttribute("download");
+                if (navigatesAway) {
+                    // The page is about to unload; a deferred call could be lost.
+                    gtag("event", eventAction, {event_category: eventCategory, event_label: eventLabel, value: eventValue});
+                } else {
+                    // Let the tap paint first; GTM's synchronous tag evaluation
+                    // then runs outside the interaction.
+                    setTimeout(function () {
+                        gtag("event", eventAction, {event_category: eventCategory, event_label: eventLabel, value: eventValue});
+                    }, 0);
+                }
+            },
+            true,
+        );
+    })();
+</script> <!-- Segment signup CTA tracking (one delegated listener) --><script>
+    (() => {
+        const EVENT_NAME = "signup_cta_clicked";
+        const LOCATION_ATTRIBUTE = "data-signup-cta";
+
+        function isSignupHref(href) {
+            try {
+                return new URL(href, window.location.href).pathname.replace(/\/+$/, "") === "/signup";
+            } catch (e) {
+                return false;
+            }
+        }
+
+        // Sends `signup_cta_clicked` to Segment. Segment adds the visitor `anonymousId`
+        // to the event, so the click can be joined to the later signup.
+        function trackSignupCta(element, ctaText) {
+            const analytics = window.analytics;
+            if (!analytics || typeof analytics.track !== "function") return;
+            const text = (ctaText || element.textContent || "").replace(/\s+/g, " ").trim();
+            analytics.track(EVENT_NAME, {
+                page: window.location.pathname.replace(/\/+$/, "") || "/",
+                cta_location: element.getAttribute(LOCATION_ATTRIBUTE) || "other",
+                cta_text: text || undefined,
+            });
+        }
+        window.fluxTrackSignupCta = trackSignupCta;
+
+        document.addEventListener(
+            "click",
+            function (event) {
+                const target = event.target;
+                if (!target || typeof target.closest !== "function") return;
+                const link = target.closest("a[href]");
+                if (!link || !isSignupHref(link.getAttribute("href"))) return;
+                trackSignupCta(link);
+            },
+            true,
+        );
+    })();
+</script> <!-- Segment click-ID helpers (Facebook, Google Ads, LinkedIn, OpenAI) --><script>
+    function getCookieValue(cookieName) {
+        const cookies = document.cookie.split("; ");
+        for (const cookie of cookies) {
+            const eqIndex = cookie.indexOf("=");
+            if (eqIndex === -1) continue;
+            const name = cookie.substring(0, eqIndex);
+            const value = cookie.substring(eqIndex + 1);
+            if (name === cookieName) return decodeURIComponent(value);
+        }
+        return undefined;
+    }
+    function getQueryParam(param) {
+        const queryParams = [...new URLSearchParams(window.location.search)];
+        return queryParams.filter(([k, v]) => k === param && v)?.map(([_k, v]) => v)[0];
+    }
+    const fbClickIds = (origParams = {}) => {
+        const fbp = getCookieValue("_fbp");
+        const fbclid = getQueryParam("fbclid");
+        let relevantIds = {};
+        if (fbp) relevantIds.fbp = fbp;
+        if (fbclid) {
+            relevantIds.fbclid = fbclid;
+            relevantIds.fbclid_formatted = `fb.1.${Date.now()}.${fbclid}`;
+        }
+        return {...origParams, ...relevantIds};
+    };
+    const gadClickIds = (origParams = {}) => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const paramsToReport = ["gclid", "dclid"];
+        const relevantIds = [...urlParams.entries()]
+            .filter(([key]) => paramsToReport.includes(key) || key.startsWith("gad") || key.startsWith("utm"))
+            .reduce((acc, [key, value]) => { acc[key] = value; return acc; }, {});
+        return {...origParams, ...relevantIds};
+    };
+    const linkedInClickIds = (origParams = {}) => {
+        const li_adsid = getCookieValue("li_adsid");
+        const li_fat_id = getQueryParam("li_fat_id");
+        let ids = {};
+        if (li_adsid) ids.li_adsid = li_adsid;
+        if (li_fat_id) ids.li_fat_id = li_fat_id;
+        return {...origParams, ...ids};
+    };
+    // OpenAI Ads click reference (`?oppref=...` on ad landing URLs) — echoed raw to their Conversions API
+    const openAiClickIds = (origParams = {}) => {
+        const oppref = getQueryParam("oppref");
+        let ids = {};
+        if (oppref) ids.oppref = oppref;
+        return {...origParams, ...ids};
+    };
+    // Microsoft Ads (Bing) click ID: `?msclkid=...` from auto-tagging, with the
+    // UET tag's `_uetmsclkid` cookie as fallback (value is prefixed with "_uet").
+    const microsoftClickIds = (origParams = {}) => {
+        const fromUrl = getQueryParam("msclkid");
+        const rawCookie = getCookieValue("_uetmsclkid");
+        const fromCookie = rawCookie && rawCookie.startsWith("_uet") ? rawCookie.slice(4) : rawCookie;
+        const msclkid = fromUrl || fromCookie;
+        let ids = {};
+        if (msclkid) ids.msclkid = msclkid;
+        return {...origParams, ...ids};
+    };
+
+    // Stitch UTM params and click IDs into the anonymous Segment profile,
+    // then fire the page call. identify() must precede page() so the
+    // Marketing page event carries UTM context in Segment destinations.
+    // This replaces the identity-stitching that the Webflow JS runtime
+    // performed automatically before the Astro migration (PR #22747).
+    if (
+        window.location.hostname === "www.flux.ai" ||
+        window.location.hostname === "flux.ai"
+    ) {
+        var traits = microsoftClickIds(openAiClickIds(linkedInClickIds(fbClickIds(gadClickIds()))));
+        if (Object.keys(traits).length > 0 && window.analytics) {
+            window.analytics.identify(traits);
+        }
+        if (window.analytics) {
+            window.analytics.page("Marketing");
+        }
+    }
+</script> <!-- GTM noscript fallback (placed at start of body via slot) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5X7TQ5H" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> <script>(function () {
+    if (!window.PerformanceObserver || !navigator.sendBeacon) return;
+    var ENDPOINT = "https://topics.fleet.flux.ai/telemetry/perf?st=rum_pk_marketing_5e8a03c6f1d9";
+    // Headroom below the queue cap is reserved for the vitals events appended
+    // at flush time, so a resource-heavy page cannot crowd them out.
+    var MAX_EVENTS = 500;
+    var queue = [];
+    var sessionId = randomId();
+    var pagePath = location.pathname;
+
+    function push(type, time, value, details) {
+        if (queue.length >= MAX_EVENTS) return;
+        queue.push(makeEvent(type, time, value, details));
+    }
+
+    function makeEvent(type, time, value, details) {
+        var item = {type: type, time: time};
+        if (typeof value === "number" && isFinite(value)) item.value = value;
+        if (details) item.details = details;
+        return item;
+    }
+
+    function randomId() {
+        return window.crypto && crypto.randomUUID
+            ? crypto.randomUUID()
+            : String(Date.now()) + "-" + Math.random().toString(16).slice(2);
+    }
+
+    function browserId() {
+        try {
+            var key = "flux.rum.browserId";
+            var id = localStorage.getItem(key);
+            if (!id) {
+                id = randomId();
+                localStorage.setItem(key, id);
+            }
+            return id;
+        } catch (e) {
+            return undefined;
+        }
+    }
+
+    function describeTarget(node) {
+        if (!node || node.nodeType !== 1) return undefined;
+        var id = node.id ? "#" + node.id : "";
+        var className = typeof node.className === "string" ? node.className.trim() : "";
+        var cls = className ? "." + className.split(/\s+/).slice(0, 3).join(".") : "";
+        return (node.tagName ? node.tagName.toLowerCase() : "") + id + cls;
+    }
+
+    function observe(type, options, handler) {
+        try {
+            if (
+                !PerformanceObserver.supportedEntryTypes ||
+                PerformanceObserver.supportedEntryTypes.indexOf(type) === -1
+            )
+                return;
+            var observer = new PerformanceObserver(function (list) {
+                handler(list.getEntries());
+            });
+            observer.observe(Object.assign({type: type, buffered: true}, options));
+        } catch (e) {
+            // Unsupported entry type — skip
+        }
+    }
+
+    // Resource + navigation timing: same event shape as the app's
+    // telemetry-browser network plugin (type/time/value/details).
+    observe("resource", {}, function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+            push("network.resource", entries[i].startTime, entries[i].duration, entries[i].toJSON());
+        }
+    });
+    observe("navigation", {}, function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+            push("network.navigation", entries[i].startTime, entries[i].duration, entries[i].toJSON());
+            if (entries[i].responseStart > 0) {
+                push("vitals.ttfb", entries[i].responseStart, entries[i].responseStart);
+            }
+        }
+    });
+    observe("paint", {}, function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+            if (entries[i].name === "first-contentful-paint") {
+                push("vitals.fcp", entries[i].startTime, entries[i].startTime);
+            }
+        }
+    });
+
+    // LCP accumulates until first flush; it only applies to the initial load.
+    var lcp;
+    observe("largest-contentful-paint", {}, function (entries) {
+        var last = entries[entries.length - 1];
+        if (last) lcp = last;
+    });
+
+    // CLS session-window model: shifts group into windows capped at 5s with a
+    // 1s gap; the reported value is the worst window (standard CLS).
+    var clsWorst = 0;
+    var clsWindow = 0;
+    var clsWindowStart = 0;
+    var clsWindowLast = 0;
+    observe("layout-shift", {}, function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+            var entry = entries[i];
+            if (entry.hadRecentInput) continue;
+            if (
+                clsWindow > 0 &&
+                entry.startTime - clsWindowLast < 1000 &&
+                entry.startTime - clsWindowStart < 5000
+            ) {
+                clsWindow += entry.value;
+            } else {
+                clsWindow = entry.value;
+                clsWindowStart = entry.startTime;
+            }
+            clsWindowLast = entry.startTime;
+            if (clsWindow > clsWorst) clsWorst = clsWindow;
+        }
+    });
+
+    // INP: longest duration per interaction, reporting the high-percentile
+    // estimate (skip one longest interaction per 50) as in web-vitals.
+    var interactions = {};
+    var interactionMeta = {};
+    var interactionCount = 0;
+    observe("event", {durationThreshold: 40}, function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+            var entry = entries[i];
+            if (!entry.interactionId) continue;
+            if (!(entry.interactionId in interactions)) {
+                interactionCount++;
+                interactions[entry.interactionId] = 0;
+            }
+            if (entry.duration > interactions[entry.interactionId]) {
+                interactions[entry.interactionId] = entry.duration;
+                interactionMeta[entry.interactionId] = {name: entry.name, target: describeTarget(entry.target)};
+            }
+        }
+    });
+
+    function inpCandidate() {
+        var ids = Object.keys(interactions);
+        if (ids.length === 0) return undefined;
+        ids.sort(function (a, b) {
+            return interactions[b] - interactions[a];
+        });
+        var index = Math.min(ids.length - 1, Math.floor(interactionCount / 50));
+        return {id: ids[index], value: interactions[ids[index]]};
+    }
+
+    function resetVitals() {
+        lcp = undefined;
+        clsWorst = 0;
+        clsWindow = 0;
+        interactions = {};
+        interactionMeta = {};
+        interactionCount = 0;
+    }
+
+    // Batches whose sendBeacon() call was rejected (pending-beacon quota);
+    // each is retried on later flush triggers with its original path intact.
+    var pendingPayloads = [];
+    var MAX_PENDING = 4;
+
+    function flush() {
+        var now = performance.now();
+        var events = queue.slice();
+        if (lcp) events.push(makeEvent("vitals.lcp", lcp.startTime, lcp.startTime));
+        if (clsWorst > 0) events.push(makeEvent("vitals.cls", now, clsWorst));
+        var inp = inpCandidate();
+        if (inp && inp.value > 0) {
+            var inpMeta = interactionMeta[inp.id];
+            events.push(
+                makeEvent("vitals.inp", now, inp.value, inpMeta ? {eventName: inpMeta.name, target: inpMeta.target} : undefined),
+            );
+        }
+        if (events.length > 0) {
+            var payload = {
+                data: events,
+                timeOrigin: new Date(performance.timeOrigin).toISOString(),
+                // Tag values are strings (the ingest sanitizer drops non-strings);
+                // undefined entries are omitted by JSON.stringify.
+                tags: {
+                    "browser.id": browserId(),
+                    "telemetry.sessionId": sessionId,
+                    "telemetry.location": pagePath,
+                    "telemetry.userAgent.cpu.cores":
+                        navigator.hardwareConcurrency ? String(navigator.hardwareConcurrency) : undefined,
+                    "telemetry.userAgent.memory.total": navigator.deviceMemory ? String(navigator.deviceMemory) : undefined,
+                    "telemetry.userAgent.connection.effectiveType":
+                        navigator.connection && navigator.connection.effectiveType
+                            ? String(navigator.connection.effectiveType)
+                            : undefined,
+                },
+            };
+            // The active batch always joins the retry queue (so a terminal
+            // pagehide flush can never strand it); when the queue is over
+            // capacity the oldest batches are evicted, bounding memory while
+            // keeping the newest telemetry.
+            pendingPayloads.push(JSON.stringify(payload));
+            while (pendingPayloads.length > MAX_PENDING) pendingPayloads.shift();
+            queue = [];
+            resetVitals();
+        }
+        var unsent = [];
+        for (var i = 0; i < pendingPayloads.length; i++) {
+            if (!navigator.sendBeacon(ENDPOINT, new Blob([pendingPayloads[i]], {type: "text/plain"}))) {
+                unsent.push(pendingPayloads[i]);
+            }
+        }
+        pendingPayloads = unsent;
+    }
+
+    // SPA route change (docs): flush the finished route's batch under its own
+    // path, then start a fresh batch for the new route.
+    function onRouteChange() {
+        if (location.pathname === pagePath) return;
+        flush();
+        pagePath = location.pathname;
+    }
+    if (window.history && history.pushState) {
+        var pushState = history.pushState;
+        history.pushState = function () {
+            var result = pushState.apply(this, arguments);
+            onRouteChange();
+            return result;
+        };
+        var replaceState = history.replaceState;
+        history.replaceState = function () {
+            var result = replaceState.apply(this, arguments);
+            onRouteChange();
+            return result;
+        };
+        window.addEventListener("popstate", onRouteChange);
+    }
+
+    document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "hidden") flush();
+    });
+    window.addEventListener("pagehide", flush);
+    // Back/forward-cache restore: the page lives again, keep collecting and
+    // flush whatever accumulates on the next lifecycle transition.
+    window.addEventListener("pageshow", function (event) {
+        if (event.persisted) resetVitals();
+    });
+})();</script> <script type="module" src="/p/assets/MarketingLayout.astro_astro_type_script_index_0_lang.C5EaslGK.js?v=15abaa37e2af4558"></script> <!-- Session recording (cross-site unified SDK) --> <script type="module" src="/p/assets/MarketingLayout.astro_astro_type_script_index_1_lang.2RqduVgI.js?v=15abaa37e2af4558"></script> <!-- Auth state hydration --> <script>
+            (function boot(){
+                function getCookie(name) {
+                    var row = document.cookie.split('; ').find(function(r) { return r.startsWith(name + '='); });
+                    if (!row) return null;
+                    try {
+                        var raw = decodeURIComponent(row.substring(row.indexOf('=') + 1) || '').trim();
+                        var unwrapped = raw.replace(/^"(.+)"$/, '$1');
+                        return unwrapped || null;
+                    } catch(e) { return null; }
+                }
+                function hydrate(handle) {
+                    var links = document.querySelectorAll('[data-auth="userlink"]');
+                    if (handle) {
+                        var enc = encodeURIComponent(handle);
+                        links.forEach(function(a) { a.setAttribute('href', '/' + enc); });
+                    }
+                }
+                var last = getCookie('flux_user_handle');
+                document.documentElement.setAttribute('data-auth-state', last ? 'authed' : 'anon');
+                hydrate(last);
+                function refresh() {
+                    var curr = getCookie('flux_user_handle');
+                    if (curr !== last) {
+                        last = curr || null;
+                        document.documentElement.setAttribute('data-auth-state', curr ? 'authed' : 'anon');
+                        hydrate(curr);
+                    }
+                }
+                window.addEventListener('storage', function(e) { if (e.key === 'flux_user_handle') refresh(); });
+                var pollId = setInterval(refresh, 1000);
+                document.addEventListener('visibilitychange', function() { if (document.visibilityState === 'visible') refresh(); });
+                var cleanup = function() { clearInterval(pollId); };
+                window.addEventListener('pagehide', cleanup, { once: true });
+                window.addEventListener('beforeunload', cleanup, { once: true });
+            })();
+        </script> <!-- Highlight.js runtime for syntax-colored code blocks in blog posts --> <script type="module" src="/p/assets/MarketingLayout.astro_astro_type_script_index_2_lang.B0uVEAyB.js?v=15abaa37e2af4558"></script> <!-- Native interactions: accordion, prompt selects, nav, projects filter, tabs, sliders --> <!-- Replaces jQuery + Webflow runtime JS + Finsweet (~328KB eliminated) --> <script src="/p/site/native-interactions.js?v=15abaa37e2af4558"></script> <!--
+          Global Schema.org Organization block. Emitted on every page to match
+          the Webflow production build (which also emits an inline Organization
+          block on every page). This is separate from the per-page `jsonLd`
+          prop, which carries page-specific structured data (AboutPage /
+          CollectionPage / @graph entries / etc.).
+        --> <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "Organization",
+                "name": "Flux.ai",
+                "url": "https://flux.ai",
+                "address": "",
+                "sameAs": [
+                    "https://www.facebook.com/BuildwithFlux",
+                    "https://twitter.com/BuildWithFlux",
+                    "https://www.linkedin.com/company/67182657/",
+                    "https://www.instagram.com/buildwithflux",
+                    "https://www.youtube.com/channel/UC5CsglCHQBd4-WFrZmqzVyw"
+                ]
+            }
+        </script> </body> </html> <script type="module" src="/p/assets/SiteLayoutV2.astro_astro_type_script_index_0_lang.DpUFN_Xv.js?v=15abaa37e2af4558"></script>

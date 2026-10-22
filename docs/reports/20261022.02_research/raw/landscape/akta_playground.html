@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" class="dark" style="color-scheme: dark">
+  <head>
+    <style>#splash{z-index:9999;background:#0a0a0a;justify-content:center;align-items:center;transition:opacity .3s;display:flex;position:fixed;inset:0}#splash.fade-out{opacity:0;pointer-events:none}#splash-dots{align-items:center;gap:8px;display:flex}#splash-dots span{background:oklch(72% .08 185);border-radius:50%;width:10px;height:10px;animation:1.2s ease-in-out infinite splash-wave;display:block}#splash-dots span:first-child{animation-delay:0s}#splash-dots span:nth-child(2){animation-delay:.15s}#splash-dots span:nth-child(3){animation-delay:.3s}#splash-dots span:nth-child(4){animation-delay:.45s}#splash-dots span:nth-child(5){animation-delay:.6s}@keyframes splash-wave{0%,to{transform:translateY(0)}50%{transform:translateY(-12px)}}</style>
+    <!-- Google Tag Manager -->
+    <script>
+      ((w, d, s, l, i) => {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": Date.now(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l !== "dataLayer" ? `"&l${l}` : "";
+        j.async = true;
+        j.src = `https://www.googletagmanager.com/gtm.js?id=${i}${dl}`;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KHT7PDD3");
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>akta.pro by Wokelo AI</title>
+    <!--
+      Keep non-production deployments (dev/staging/preview hosts, e.g.
+      playground.devwk.com) out of search engines. Only the production
+      akta.pro hostnames should ever be indexed. This is a runtime check
+      (not build-time) so it holds regardless of which env vars a given
+      pipeline happens to inject.
+    -->
+    <script>
+      ((d, host) => {
+        const isProd = host === "akta.pro" || host.endsWith(".akta.pro");
+        if (isProd) return;
+        const meta = d.createElement("meta");
+        meta.name = "robots";
+        meta.content = "noindex, nofollow, noarchive";
+        d.head.appendChild(meta);
+      })(document, window.location.hostname);
+    </script>
+    <script type="module" crossorigin src="/assets/main-DCHDtsAF.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/Configuration-BxYNcsAu.js">
+    <link rel="modulepreload" crossorigin href="/assets/esm-C1gi5cLj.js">
+    <link rel="modulepreload" crossorigin href="/assets/replayStats-BsUIIwpR.js">
+    <link rel="stylesheet" crossorigin href="/assets/main-bfHeAMOr.css">
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KHT7PDD3"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+        title="Google Tag Manager"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="splash">
+      <div id="splash-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div id="root"></div>
+  </body>
+</html>

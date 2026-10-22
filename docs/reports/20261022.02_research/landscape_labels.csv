@@ -1,0 +1,45 @@
+tool,group,capability,evidence_file,evidence_text
+Affinity,incumbent,market_signals,affinity_pricing.txt,headcount and leadership signals
+Harmonic,incumbent,market_signals,harmonic_home.txt,Find companies at the earliest signals
+Specter,incumbent,market_signals,specter_pricing.txt,Talent Signals
+Grata,incumbent,comps,grata_pricing.txt,Public Comps
+Grata,incumbent,market_signals,grata_pricing.txt,Seller intent signals
+Crunchbase,incumbent,market_signals,chrome_pages_pricing.txt,Market and valuation insights
+Crunchbase,incumbent,comps,chrome_pages_pricing.txt,Competitors and similar companies
+Tracxn,incumbent,market_signals,tracxn_pricing.txt,Signals from key growth metrics
+Tracxn,incumbent,comps,tracxn_pricing.txt,Instant Competitors
+Dealroom,incumbent,market_signals,dealroom_home.txt,the signals on who is rising next
+CB Insights,incumbent,market_signals,cbinsights_pricing.txt,Predictive signals
+CB Insights,incumbent,claim_to_source,cbinsights_pricing.txt,responses with citations
+Carta (data side),incumbent,comps,chrome_pages_pricing.txt,round benchmarking tool
+Clay,incumbent,market_signals,clay_pricing.txt,Track job changes
+Wokelo,entrant,market_signals,wokelo_blog.txt,hiring patterns
+Wokelo,entrant,memo,wokelo_blog.txt,Investment Memo Generation
+Wokelo,entrant,claim_to_source,wokelo_blog.txt,source attribution
+Keye,entrant,reads_deck_or_data_room,keye.txt,raw deal files
+Keye,entrant,financial_red_flags,keye.txt,anomaly detection
+Keye,entrant,claim_to_source,keye.txt,links every output to its raw source
+Termina,entrant,financial_red_flags,termina.txt,Average Net Churn
+askRIA,entrant,reads_deck_or_data_room,askria.txt,Analyse data rooms
+askRIA,entrant,financial_red_flags,askria.txt,Identify red flags
+askRIA,entrant,memo,askria.txt,investment committee memos
+V7 Go,entrant,reads_deck_or_data_room,v7_vc.txt,Data Room Documents
+V7 Go,entrant,financial_red_flags,v7_vc.txt,Risk Factor Identification
+V7 Go,entrant,comps,v7_vc.txt,comparable analysis
+V7 Go,entrant,memo,v7_vc.txt,investment memos
+V7 Go,entrant,claim_to_source,v7_vc.txt,directly linked to source documents
+Energent,entrant,reads_deck_or_data_room,energent.txt,analyze data rooms
+Energent,entrant,financial_red_flags,energent.txt,red flag identification
+Energent,entrant,memo,energent.txt,Automated Investment Memos
+Decile Hub,entrant,memo,decile.txt,Deal Memo builder
+Apify AI Dealflow Analysis,entrant,reads_deck_or_data_room,apify_dealflow.txt,data room
+Apify AI Dealflow Analysis,entrant,financial_red_flags,apify_dealflow.txt,red flags
+Apify AI Dealflow Analysis,entrant,comps,apify_dealflow.txt,comparable transactions
+Apify AI Dealflow Analysis,entrant,memo,apify_dealflow.txt,investment memo
+Apify AI Dealflow Analysis,entrant,claim_to_source,apify_dealflow.txt,Every claim is cross-checked against live web sources
+Flybridge memo generator,entrant,reads_deck_or_data_room,flybridge.txt,ingesting a pitch deck
+Flybridge memo generator,entrant,memo,flybridge.txt,Investment Memorandum Generator
+Diligent (open source),entrant,memo,diligent_readme.txt,one-page investment memo
+Diligent (open source),entrant,claim_to_source,diligent_readme.txt,Every sentence in the memo cites a finding
+Diligent (open source),entrant,financial_red_flags,diligent_readme.txt,Red Flags
+Diligent (open source),entrant,comps,diligent_readme.txt,Competitors

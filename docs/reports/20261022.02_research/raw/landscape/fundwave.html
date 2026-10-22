@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Encoding declared early -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://fundwave.com/" />
+
+  <!-- Google verification -->
+  <meta name="google-site-verification" content="zgJS-9oGuYSzjHpiJSTPVJJAB-thnjkmxjeXTIUeuwg" />
+
+  <!-- Meta tags for SEO -->
+  <meta name="title" content="Fund Administration Software for Private Equity and VC funds">
+  <meta name="description" content="Fund management software for Venture Capital and Private Equity Firms. Track your investments and report to your investors.">
+  <meta name="keywords" content="fund management, private equity, venture capital, corporate venture capital, venture capital software, private equity software, venture capital portfolio management, angel invest, fund administration software, fund admin software, vc fund administration software, portfolio management software, fund manager, investor portal, vc investor portal, vc portfolio management, fund administration, fund manager software, fund management software, portfolio management system, fund administration private equity">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="1 days">
+
+  <!-- Viewport for responsive design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Cache control -->
+  <meta http-equiv="Cache-Control" content="max-age=370000" />
+
+  <!-- Page title -->
+  <title>Fundwave | Software for Venture Capital and Private Equity</title>
+
+  <!-- Styles -->
+  <link href="/assets/css/page.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="icon" href="/assets/img/favicon.png">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Fundwave | Software for Venture Capital and Private Equity">
+  <meta property="og:description" content="Software for Venture Capital, Private Equity, Institutional Investors and Fund Administrators">
+  <meta property="og:image" content="https://fundwave.com/assets/img/logo-blue-ribbon-wave.png">
+  <meta property="og:image:width" content="152">
+  <meta property="og:image:height" content="152">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:url" content="https://fundwave.com">
+  <meta property="og:site_name" content="Fundwave Pte. Ltd.">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fundwave | Software for Venture Capital and Private Equity">
+  <meta name="twitter:description" content="Software for Venture Capital, Private Equity, Institutional Investors, Fund Administrators">
+  <meta name="twitter:image" content="https://fundwave.com/assets/img/logo-blue-ribbon-wave.png">
+  <meta name="twitter:url" content="https://fundwave.com">
+
+  <style>
+    .scrolling-container {
+      position: relative;
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+    }
+
+    .scrolling-container .col {
+      width: 60%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      position: sticky;
+      /* top: calc(50% - 350px); */
+      top: 0%;
+      transform: scale(1) translateX(0);
+    }
+
+    .scrolling-container .copy-blocks {
+      width: 40%;
+      height: 100%;
+      position: relative;
+    }
+
+    .scrolling-container .copy-block {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .scrolling-container .copy-block .copy-block-wrapper {
+      display: block;
+    }
+
+    @media (max-width: 991px) {
+      .scrolling-container .col {
+        width: 100%;
+        display: none !important;
+      }
+
+      .scrolling-container .copy-blocks {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        align-items: center;
+      }
+
+      .scrolling-container .copy-block {
+        max-height: unset;
+        width: 100%;
+        height: 100%;
+        margin-top: 10vh;
+        margin-bottom: 10vh;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .scrolling-container .col {
+        padding-right: 120px;
+      }
+
+      .product-block-image {
+        display: none !important;
+      }
+    }
+  </style>
+
+  <!-- Redirect script -->
+  <script>
+
+    if (location.origin === "https://docs.fundwave.com/") location.href = "https://fundwave.com/support#docs";
+
+    (function () {
+
+      var WHITELISTED_DOMAINS = ["fundwave.app","fundwave.com","getfundwave.com","fundwave.cloud","dealflow.app"];
+
+      function isWhitelisted(url) {
+        try {
+          var parsed = new URL(url);
+          var hostname = parsed.hostname;
+          return WHITELISTED_DOMAINS.some(function (domain) {
+            return hostname === domain || hostname.endsWith("." + domain);
+          });
+        } catch (e) {
+          return false;
+        }
+      }
+
+      var params = new URLSearchParams(location.search);
+      var redirectUri = params.get("redirectUri");
+      if (redirectUri) {
+        redirectUri = redirectUri.replace(/^(?:https?:\/\/)?/i, "https://");
+        var target = decodeURIComponent(redirectUri);
+        if (isWhitelisted(target)) {
+          location.replace(target);
+        } else {
+          params.delete("redirectUri");
+          window.history.replaceState({}, '', location.pathname + (params.toString() ? "?" + params.toString() : ""));
+        }
+      }
+    })();
+
+  </script>
+
+  <!-- Lazy load -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+
+  <script src="assets/js/animation.js"></script>
+
+  <script type="text/javascript">
+
+    var products = ["fund-admin", "jcurve", "portal", "dealflow"];
+    var visibleProduct;
+    var scrollPos = 0;
+    let scrollingDirection;
+    var yOffset = window.innerHeight * 0.40;
+
+    document.addEventListener('scroll', scrollFunction);
+
+    // function scrollFunction() {
+    //   //check if scrolling-container is on viewport
+    //   let scrollingContainer = document.getElementById('product-scrolling-container');
+    //   if(isContainerVisible(scrollingContainer,yOffset)) {
+
+    //     //detect scrolling direction
+    //     let data = getScrollingDirection(scrollPos);
+    //     let direction = data.direction;
+    //     scrollPos = data.scrollPos;
+
+    //     if(!scrollingDirection || scrollingDirection !== direction) {
+    //       scrollingDirection = direction;
+
+    //       if(scrollingDirection === "down")
+    //         yOffset = window.innerHeight * 0.40;
+    //       else
+    //         yOffset = window.innerHeight * 0.60;
+    //     }
+
+    //     //detect current visible element
+    //     let currentVisibleProduct = getCurrentVisibleProduct();
+
+    //     if(visibleProduct !== currentVisibleProduct) {
+    //       visibleProduct = currentVisibleProduct;
+
+    //       //change image accordingly
+    //       setImage(visibleProduct);
+    //     }
+    //   }
+    // }
+
+    function getCurrentVisibleProduct() {
+      if (visibleProduct) {
+        //check for the same visible product
+        let visibleProductElement = document.getElementById(visibleProduct);
+
+        if (isElementVisible(visibleProductElement, yOffset))
+          return visibleProduct;
+        else {
+          let index = products.indexOf(visibleProduct);
+
+          if (scrollingDirection === "up" && index > 0)
+            index -= 1;
+          else if (scrollingDirection === "down" && index < products.length - 1)
+            index += 1;
+
+          let newProduct = products[index];
+
+          return newProduct;
+        }
+      }
+      else {
+        //check for all products
+        for (let product of products) {
+          let visibleProductElement = document.getElementById(product);
+          if (isElementVisible(visibleProductElement, yOffset))
+            return product;
+        }
+      }
+    }
+
+    function setImage(product) {
+      let imageElement = document.getElementById('product-image');
+
+      let source = "", altText = "";
+      switch (product) {
+        case "fund-admin":
+          source = "/assets/img/financial_data.png";
+          altText = "Fund Administration by Fundwave";
+          break;
+
+        case "jcurve":
+          source = "/assets/img/projections.png";
+          altText = "JCurve Portfolio Management by Fundwave";
+          break;
+
+        case "portal":
+          source = "/assets/img/timeline.png";
+          altText = "Investor Portal by Fundwave";
+          break;
+
+        case "dealflow":
+          source = "/assets/img/dealflow-index.svg";
+          altText = "Dealflow by Fundwave";
+          break;
+
+        default:
+          break;
+      }
+
+      // let fadeDirection = scrollingDirection === "up" ? "fade-up" : "fade-down";
+
+      imageElement.setAttribute("src", source);
+      imageElement.setAttribute("alt", altText);
+      imageElement.setAttribute("title", altText);
+      // imageElement.setAttribute("data-aos",fadeDirection);
+    }
+
+  </script>
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Fundwave",
+        "url": "https://fundwave.com/",
+        "logo": "https://fundwave.com/assets/img/logo-blue-ribbon-wave.png",
+        "sameAs": [
+          "https://www.facebook.com/getfundwave/",
+          "https://twitter.com/getfundwave",
+          "https://www.youtube.com/channel/UCNsxfKQ9rzqDM2NchLuPNaw",
+          "https://www.linkedin.com/company/fundwave/about/",
+          "https://github.com/getfundwave"
+        ]
+      }
+  </script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div class="navbar navbar-frame-light homepage-navbar"></div>
+
+  <!-- Header with H1 -->
+  <header id="homepage-header" class="header fw-header df-fade-in">
+    <div class="df-banner-container">
+      <div class="col-lg-7">
+        <h1 class="display-2 df-text-center"><strong class="fw-heading fw-heading-light">Everything you need to run your venture fund</strong></h1>
+        <p class="lead-3 mt-2 df-text-center fw-500">
+          Fundwave unites your deal, investment and investor relations teams into one, single platform
+        </p>
+        <!-- <p id="header-signup-btn" class="gap-xy df-cta-buttons-container show-trial">
+          <a class="lead-3 fw-btn btn-lg mw-200 btn-primary df-btn-primary" href="/signup">
+            <span>Get Started. It's FREE</span>
+          </a>
+        </p> -->
+        <p id="header-signup-btn" class="gap-xy df-cta-buttons-container show-demo">
+          <a class="lead-3 fw-btn btn-lg mw-200 btn-primary df-btn-primary " href="/schedule-demo/">
+            Schedule a demo
+          </a>
+        </p>
+        <p id="header-demo-link" class="gap-xy df-cta-buttons-container show-trial">
+          <a class="lead-1 fw-500 pt-1"
+            style="color:rgba(255, 255, 255, 0.792); border-bottom: 1px solid rgba(255, 255, 255, 0.792); line-height: 1.3;"
+            href="/schedule-demo/">
+            Need a demo first?
+          </a>
+        </p>
+        <!-- <div class="gap-xy mt-4">
+            <img src="/assets/img/Dashboard_Header.png" class="hero-image" alt="Fund Empowering" title="Fundwave">
+          </div> -->
+      </div>
+    </div>
+  </header>
+
+  <!-- /Header -->
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section id="video" class="section pt-0 pb-0 text-center">
+      <div class="container" style="width: 73%; min-width: 350px">
+        <div class="video-wrapper ratio-16x9 rounded shadow-6 mt-8 mt-lg-0">
+          <iframe class="embed-responsive-item"
+            src="https://www.youtube.com/embed/4iu0eioVI9c?si=wAooSNAQJDFs0KNH&rel=0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section pt-0 pb-0">
+      <div class="container" style="width: 100%;">
+        <div class="feature-list row">
+          <div class="feature-card " id="capital-calls-content-btn" onclick="selectFeature('capital-calls-content')">
+            <p class="feature-card-icon text-warning far fa-file-text" aria-hidden="true"
+              id="capital-calls-content-icon"></p>
+            <h4 class="feature-card-heading">Capital Calls</h4>
+          </div>
+
+          <div class="feature-card feature-card-selected" id="investment-content-btn"
+            onclick="selectFeature('investment-content')">
+            <p class="feature-card-icon text-primary fa fa-money feature-card-icon-selected" aria-hidden="true"
+              id="investment-content-icon"></p>
+            <h4 class="feature-card-heading">Portfolio IRRs</h4>
+          </div>
+
+
+          <div class="feature-card" id="deals-content-btn" onclick="selectFeature('deals-content')">
+            <p class="feature-card-icon text-danger far fa-handshake" aria-hidden="true" id="deals-content-icon"></p>
+            <h4 class="feature-card-heading">Deal Pipeline</h4>
+          </div>
+
+          <div class="feature-card" id="investorportal-content-btn" onclick="selectFeature('investorportal-content')">
+            <p class="feature-card-icon text-success far fa-user" aria-hidden="true" id="investorportal-content-icon">
+            </p>
+            <h4 class="feature-card-heading">Investor Portal</h4>
+          </div>
+          <div class="feature-card" id="kpi-content-btn" onclick="selectFeature('kpi-content')">
+            <p class="feature-card-icon text-warning fa fa-line-chart" aria-hidden="true" id="kpi-content-icon"></p>
+            <h4 class="feature-card-heading">Captables & KPIs</h4>
+          </div>
+          <div class="feature-card" id="exit-model-content-btn" onclick="selectFeature('exit-model-content')">
+            <p class="feature-card-icon text-success fa fa-tachometer" aria-hidden="true" id="exit-model-content-icon">
+            </p>
+            <h4 class="feature-card-heading">Exit Modelling</h4>
+          </div>
+          <div class="feature-card" id="reports-content-btn" onclick="selectFeature('reports-content')">
+            <p class="feature-card-icon text-danger fa fa-area-chart" aria-hidden="true" id="reports-content-icon"></p>
+            <h4 class="feature-card-heading">Reports</h4>
+          </div>
+        </div>
+        <div class="feature-card-text text-center df-hidden" id="capital-calls-content-heading">
+          <span>Build next-gen, beautiful capital notices.&nbsp</span>
+          <a class="text-warning" href="/features/capital-calls">
+            <span>Learn More </span>
+            <div class="fa fa-arrow-right"></div>
+          </a>
+        </div>
+        <div class="feature-card-text text-center df-hidden" id="kpi-content-heading">
+          <span>Metrics. Files. Captables. All together.&nbsp</span>
+          <a class="text-warning" href="/features/kpis">
+            <span>Learn More </span>
+            <div class="fa fa-arrow-right"></div>
+          </a>
+        </div>
+        <div class="feature-card-text text-center df-hidden" id="exit-model-content-heading">
+          <span>Real-time analytics for swift, informed decisions.&nbsp</span>
+          <a class="text-success" href="/features/scenario-modelling">
+            <span>Learn More </span>
+            <div class="fa fa-arrow-right"></div>
+          </a>
+        </div>
+        <div class="feature-card-text text-center" id="investment-content-heading">
+          <span>Track your portfolio cashflows & valuations.&nbsp</span>
+          <a class="text-primary" href="/features/cashflows">
+            <span>Learn More </span>
+            <div class="fa fa-arrow-right"></div>
+          </a>
+        </div>
+        <div class="feature-card-text text-center df-hidden" id="investorportal-content-heading">
+          <span>Give your investors everything they need, instantly.&nbsp</span>
+          <a class="text-success" href="/features/investor-portal">
+            <span>Learn More </span>
+            <div class="fa fa-arrow-right"></div>
+          </a>
+        </div>
+        <div class="feature-card-text text-center df-hidden" id="deals-content-heading">
+          <span>Organise your deal data and interactions.&nbsp</span>
+          <a class="text-danger" href="/features/dealflow">
+            <span>Learn More </span>
+            <div class="fa fa-arrow-right"></div>
+          </a>
+        </div>
+        <div class="feature-card-text text-center df-hidden" id="reports-content-heading">
+          <span>Beautiful LP reporting at your fingertips.&nbsp</span>
+          <a class="text-danger" href="/solutions/venture-capital">
+            <span>Learn More </span>
+            <div class="fa fa-arrow-right"></div>
+          </a>
+        </div>
+        <div class="feature-image-border">
+          <div class="df-hidden" id="capital-calls-content">
+            <img class="feature-image" src="/assets/img/capital-calls-all.png" />
+          </div>
+          <div class="df-hidden" id="kpi-content">
+            <img class="feature-image" src="/assets/img/kpi-dashboard.png" />
+          </div>
+          <div class="df-hidden" id="exit-model-content">
+            <img class="feature-image" src="/assets/img/round-forecast.png" />
+          </div>
+          <div id="investment-content">
+            <img class="feature-image" src="/assets/img/portfolio-summary.png" />
+          </div>
+          <div class="df-hidden" id="investorportal-content">
+            <img class="feature-image" src="/assets/img/portal-homepage.png" />
+          </div>
+          <div class="df-hidden" id="deals-content">
+            <img class="feature-image" src="/assets/img/dealflow-kanban.png" />
+          </div>
+          <div class="df-hidden" id="reports-content">
+            <img class="feature-image" style="width: 75%;" src="/assets/img/fund-performance.png" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Featured Customers -->
+    <div class="customers-frame customers"></div>
+
+    <section id="signup-middle" class="fw-header df-fade-in">
+      <div class="df-banner-container">
+        <div class="col-lg-7">
+          <h1 class="display-2 df-text-center"><strong class="fw-heading fw-heading-light">Supercharge your fund
+              operations</strong></h1>
+          <p class="lead-3 mt-2 df-text-center fw-500" style="color: white">
+            Save time and get more done
+          </p>
+
+          <!-- <p id="signup-middle-btn" class="gap-xy df-cta-buttons-container show-trial">
+            <a class="lead-3 fw-btn btn-lg mw-200 btn-primary df-btn-primary " href="/signup">
+              <span>Get Started. It's FREE</span>
+            </a>
+          </p> -->
+          <p id="middle-demo-link" class="gap-xy df-cta-buttons-container show-trial">
+            <a class="lead-1 fw-500 pt-1"
+              style="color:rgba(255, 255, 255, 0.792); border-bottom: 1px solid rgba(255, 255, 255, 0.792); line-height: 1.3;"
+              href="/schedule-demo/">
+              Need a demo first?
+            </a>
+          </p>
+          <p id="signup-middle-btn" class="gap-xy df-cta-buttons-container show-demo">
+            <a class="lead-3 fw-btn btn-lg mw-200 btn-primary df-btn-primary " href="/schedule-demo/">
+              Schedule a demo
+            </a>
+          </p>
+          
+          <!-- <div class="gap-xy mt-4 mb-10">
+          <img src="/assets/img/Dashboard_Header.png" class="hero-image" alt="Fund Empowering" title="Fundwave">
+        </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Teams -->
+    <section id="teams" class="section pt-0 pb-0">
+      <div class="container">
+        <h2 class="display-4 df-text-center"><strong class="fw-heading">Built for all funds</strong></h2>
+        <p class="lead df-text-center fw-500">Get started fast.<br>Easily customize Fundwave as your fund evolves.</p>
+        <div class="feature-list team-list row gap-y mt-6 mb-4">
+
+          <div class="feature-card text-center" id="impact-fund-content-btn"
+            onclick="selectTeam('impact-fund-content')">
+            <p class="feature-card-icon text-primary fa fa-envira" aria-hidden="true" id="impact-fund-content-icon"></p>
+            <h4 class="team-card-heading">Impact Funds</h4>
+          </div>
+          <div class="feature-card text-center" id="fof-content-btn" onclick="selectTeam('fof-content')">
+            <p class="feature-card-icon text-primary fa fa-sitemap" aria-hidden="true" id="fof-content-icon"></p>
+            <h4 class="team-card-heading">Fund of Funds</h4>
+          </div>
+          <div class="feature-card text-center feature-card-selected" id="venture-capital-content-btn"
+            onclick="selectTeam('venture-capital-content')">
+            <p class="feature-card-icon feature-card-icon-selected text-primary fa fa-rocket" aria-hidden="true"
+              id="venture-capital-content-icon"></p>
+            <h4 class="team-card-heading">Venture Capital</h4>
+          </div>
+          <div class="feature-card text-center" id="private-equity-content-btn"
+            onclick="selectTeam('private-equity-content')">
+            <p class="feature-card-icon text-primary fa fa-bank" aria-hidden="true" id="private-equity-content-icon">
+            </p>
+            <h4 class="team-card-heading">Private Equity</h4>
+          </div>
+          <div class="feature-card text-center" id="corporate-vc-content-btn"
+            onclick="selectTeam('corporate-vc-content')">
+            <p class="feature-card-icon text-primary fa fa-building" aria-hidden="true" id="corporate-vc-content-icon">
+            </p>
+            <h4 class="team-card-heading">Corporate VC</h4>
+          </div>
+          <div class="feature-card text-center" id="family-office-content-btn"
+            onclick="selectTeam('family-office-content')">
+            <p class="feature-card-icon text-primary fa fa-users" aria-hidden="true" id="family-office-content-icon">
+            </p>
+            <h4 class="team-card-heading">Family Office</h4>
+          </div>
+          <div class="feature-card text-center" id="spv-content-btn" onclick="selectTeam('spv-content')">
+            <p class="feature-card-icon text-primary fa fa-th" aria-hidden="true" id="spv-content-icon"></p>
+            <h4 class="team-card-heading">SPVs</h4>
+          </div>
+        </div>
+        <div class="team-cards">
+
+
+          <div class=" team-card-detail-border" id="venture-capital-content">
+            <div class="row team-card-detail-container">
+              <div class="col-md-7 team-card-detail">
+                <div class="team-card-mobile text-primary">
+                  <span class="team-card-icon fa fa-rocket" aria-hidden="true"></span>
+                  <span class="team-card-heading">Venture Capital</span>
+                </div>
+                <p class="team-card-detail-heading">The complete VC fund ops solution</p>
+                <p class="team-card-detail-text">The all-in-one platform for modern VC funds.</p>
+                <ul class="fa-ul team-card-detail-text">
+                  <li class="team-card-detail-list"><span class="fa-li"><i
+                        class="fa fa-check-circle-o"></i></span>Manage deal pipeline across your fund</li>
+                  <li class="team-card-detail-list"><span class="fa-li"><i
+                        class="fa fa-check-circle-o"></i></span>Reduce LP reporting time with in-built templates</li>
+                  <li class="team-card-detail-list"><span class="fa-li"><i
+                        class="fa fa-check-circle-o"></i></span>Automate portfolio captables and KPI collection</li>
+                </ul>
+                <div class="row testimonial-parent">
+                  <div class="col-lg-3 col-md-3 col-xs-12" style="align-self:center;">
+                    <img class="rounded-circle lozad" height="250" width="250"
+                      src="/portfolio-management-software/assets/img/thumb/Picture4.jpeg"
+                      alt="Vela Georgiev, Tenacious Ventures" title="Vela Georgiev, Tenacious Ventures" />
+                    <img class="grayscale-image customer-logo"
+                      src="fund-administration-software/assets/img/tenacious-ventures-bnw-logo.png"
+                      alt="Tenacious Ventures logo" title="Tenacious Ventures" height="20px" width="100px" />
+                  </div>
+                  <div class="col-lg-9 col-md-9 col-xs-12">
+                    <div class="customer-testimonial">
+                      <p>"I am very grateful that as a VC firm we have decided to invest in a fund admin package like
+                        Fundwave. It is feature rich on the fund admin side, the level of reporting and querying of data
+                        is fantastic, and their customer support team is super responsive. I can't believe that other
+                        firms are using spreadsheets for this kind of work!&#128561;"</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-md-5 team-card-feature-container signup-btn-mobile">
+                <div class="team-card-feature-group">
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-pie-chart"
+                        aria-hidden="true"></i></span>
+                    Pipeline and Portfolio Management
+                  </div>
+
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-paper-plane"
+                        aria-hidden="true"></i></span>
+                    LP Communication and Reporting
+                  </div>
+
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-tachometer"
+                        aria-hidden="true"></i></span>
+                    Insights and Dashboards
+                  </div>
+
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-tasks"
+                        aria-hidden="true"></i></span>
+                    Tasks, Notes, Emails and more
+                  </div>
+                </div>
+                <div class="team-card-feature-button">
+                  <a class="btn btn-lg btn-primary fw-btn df-btn-primary show-demo" href="/schedule-demo/">
+                    Schedule a demo
+                  </a>
+                </div>
+                <!-- <div class=" gap-xy team-card-signup-button">
+              <a class="btn btn-lg mw-200 btn-primary  df-btn-primary" href="/signup">
+                <span>Get Started</span>
+              </a>
+            </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="hidden team-card-detail-border" id="private-equity-content">
+            <div class="row team-card-detail-container">
+              <div class="col-md-7 team-card-detail">
+                <div class="team-card-mobile text-primary">
+                  <span class="team-card-icon fa fa-bank" aria-hidden="true"></span>
+                  <span class="team-card-heading">Private Equity</span>
+                </div>
+                <p class="team-card-detail-heading">One central workspace for your PE operations</p>
+                <p class="team-card-detail-text">The all-in-one platform for Private Equity funds.</p>
+                <ul class="fa-ul team-card-detail-text">
+                  <li class="team-card-detail-list"><span class="fa-li"><i
+                        class="fa fa-check-circle-o"></i></span>Manage deal pipeline across your fund</li>
+                  <li class="team-card-detail-list"><span class="fa-li"><i
+                        class="fa fa-check-circle-o"></i></span>Streamline LP reports with custom templates</li>
+                  <li class="team-card-detail-list"><span class="fa-li"><i
+                        class="fa fa-check-circle-o"></i></span>Automate portfolio KPIs and exit modelling</li>
+                </ul>
+                <div class="row testimonial-parent">
+                  <div class="col-lg-3 col-md-3 col-xs-12" style="align-self:center;">
+                    <img class="rounded-circle lozad" height="210" width="210"
+                      src="/portfolio-management-software/assets/img/thumb/Picture1.jpg"
+                      alt="Martin'O Regan, Solas Fiduciary Services" title="Martin'O Regan, Solas Fiduciary Services" />
+                    <img class="grayscale-image customer-logo" src="fund-administration-software/assets/img/solas.png"
+                      alt="Solas Fiduciary Services logo" title="Solas Fiduciary Services"
+                      style="width: 70px;height: 70px;" />
+                  </div>
+                  <div class="col-lg-9 col-md-9 col-xs-12">
+                    <div class="customer-testimonial">
+                      <p>"Fundwave combines the best parts of other products on the market."</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-md-5 team-card-feature-container signup-btn-mobile">
+                <div class="team-card-feature-group">
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-pie-chart"
+                        aria-hidden="true"></i></span>
+                    Pipeline and Portfolio Management
+                  </div>
+
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-paper-plane"
+                        aria-hidden="true"></i></span>
+                    LP Communication and Reporting
+                  </div>
+
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-tachometer"
+                        aria-hidden="true"></i></span>
+                    Insights and Dashboards
+                  </div>
+
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-tasks"
+                        aria-hidden="true"></i></span>
+                    Tasks, Notes, Emails and more
+                  </div>
+
+                </div>
+                <!-- <div class="team-card-feature-button">
+                  <a class="btn btn-lg btn-primary fw-btn df-btn-primary" href="/signup">
+                    <span>Get Started</span>
+                  </a>
+                </div> -->
+                <div class="team-card-feature-button">
+                  <a class="btn btn-lg btn-primary fw-btn df-btn-primary show-demo" href="/schedule-demo/">
+                    Schedule a demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hidden team-card-detail-border" id="corporate-vc-content">
+            <div class="row team-card-detail-container">
+              <div class="col-md-7 team-card-detail">
+                <div class="team-card-mobile text-primary">
+                  <span class="team-card-icon fa fa-building" aria-hidden="true"></span>
+                  <span class="team-card-heading">Corporate VC</span>
+                </div>
+                <p class="team-card-detail-heading">Track, manage and report, all at one place</p>
+                <p class="team-card-detail-text">The all-in-one platform for corporate venture funds.
+                </p>
+                <ul class="fa-ul team-card-detail-text">
+                  <li class="team-card-detail-list"><span class="fa-li"><i
+                        class="fa fa-check-circle-o"></i></span>Manage deal pipeline across your fund</li>
+                  <li class="team-card-detail-list"><span class="fa-li"><i
+                        class="fa fa-check-circle-o"></i></span>Simplify portfolio reporting with
+                    in-built templates</li>
+                  <li class="team-card-detail-list"><span class="fa-li"><i
+                        class="fa fa-check-circle-o"></i></span>Automate and integrate across your tech stack</li>
+                </ul>
+                <div class="row testimonial-parent">
+                  <div class="col-lg-3 col-md-3 col-xs-12" style="align-self:center;">
+                    <img class="rounded-circle lozad" height="250" width="250"
+                      src="/portfolio-management-software/assets/img/thumb/Picture4.jpeg"
+                      alt="Vela Georgiev, Tenacious Ventures" title="Vela Georgiev, Tenacious Ventures" />
+                    <img class="grayscale-image customer-logo"
+                      src="fund-administration-software/assets/img/tenacious-ventures-bnw-logo.png"
+                      alt="Tenacious Ventures logo" title="Tenacious Ventures" height="20px" width="100px" />
+                  </div>
+                  <div class="col-lg-9 col-md-9 col-xs-12">
+                    <div class="customer-testimonial">
+                      <p>"I am very grateful that as a VC firm we have decided to invest in a fund admin package like
+                        Fundwave. It is feature rich on the fund admin side, the level of reporting and querying of data
+                        is fantastic, and their customer support team is super responsive. I can't believe that other
+                        firms are using spreadsheets for this kind of work!&#128561;"</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-md-5 team-card-feature-container signup-btn-mobile">
+                <div class="team-card-feature-group">
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-pie-chart"
+                        aria-hidden="true"></i></span>Pipeline and Portfolio Management
+                  </div>
+
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-line-chart"
+                        aria-hidden="true"></i></span>
+                    Round Forecasting and Projections
+                  </div>
+
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-tachometer"
+                        aria-hidden="true"></i></span>
+                    Portfolio Reporting and Analytics
+                  </div>
+
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-tasks"
+                        aria-hidden="true"></i></span>
+                    Tasks, Notes, Emails and more
+                  </div>
+
+                </div>
+                <div class="team-card-feature-button">
+                  <!-- <a class="btn btn-lg btn-primary fw-btn df-btn-primary" href="/signup">
+                    <span>Get Started</span>
+                  </a> -->
+                  <a class="btn btn-lg btn-primary fw-btn df-btn-primary show-demo" href="/schedule-demo/">
+                    Schedule a demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hidden team-card-detail-border" id="spv-content">
+            <div class="row team-card-detail-container">
+              <div class="col-md-7 team-card-detail">
+                <div class="team-card-mobile text-primary">
+                  <span class="team-card-icon fa fa-th" aria-hidden="true"></span>
+                  <span class="team-card-heading">SPVs</span>
+                </div>
+                <p class="team-card-detail-heading">The complete SPV administration solution</p>
+                <p class="team-card-detail-text">The all-in-one platform for your SPVs.</p>
+                <ul class="fa-ul team-card-detail-text">
+                  <li class="team-card-detail-list"><span class="fa-li"><i
+                        class="fa fa-check-circle-o"></i></span>Manage deal pipeline across your team</li>
+                  <li class="team-card-detail-list"><span class="fa-li"><i
+                        class="fa fa-check-circle-o"></i></span>Automate carry and management fees
+                    allocations</li>
+                  <li class="team-card-detail-list"><span class="fa-li"><i
+                        class="fa fa-check-circle-o"></i></span>Consolidated LP reporting for all your SPVs</li>
+                </ul>
+                <div class="row testimonial-parent">
+                  <div class="col-lg-3 col-md-3 col-xs-12" style="align-self:center;">
+                    <img class="rounded-circle lozad" height="250" width="250"
+                      src="/portfolio-management-software/assets/img/thumb/Picture5.jpeg"
+                      alt="Craig Holden, Tidal Ventures" title="Craig Holden, Tidal Ventures" />
+                    <img class="grayscale-image customer-logo"
+                      src="fund-administration-software/assets/img/tidal-ventures-logo.png" alt="Tidal Ventures logo"
+                      title="Tidal Ventures" height="20px" width="100px" />
+                  </div>
+                  <div class="col-lg-9 col-md-9 col-xs-12">
+                    <div class="customer-testimonial">
+                      <p>"We have used Fundwave for a number of years now for our Fund and Investment management.
+                        Administration tasks are very simple and intuitive especially investments across multiple funds
+                        and revaluations. What sets this solution apart from other enterprise software products is the
+                        support we receive from the team. They are extremely responsive and attentive to the client's
+                        needs."</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-md-5 team-card-feature-container signup-btn-mobile">
+                <div class="team-card-feature-group">
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-pie-chart"
+                        aria-hidden="true"></i></span>
+                    Pipeline and Portfolio Management
+                  </div>
+
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-paper-plane"
+                        aria-hidden="true"></i></span>
+                    LP Communication and Reporting
+                  </div>
+
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-tachometer"
+                        aria-hidden="true"></i></span>
+                    Insights and Dashboards
+                  </div>
+
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-tasks"
+                        aria-hidden="true"></i></span>
+                    Tasks, Notes, Emails and more
+                  </div>
+
+                </div>
+                <div class="team-card-feature-button">
+                  <!-- <a class="btn btn-lg btn-primary df-btn-primary" href="/signup">
+                    <span>Get Started</span>
+                  </a> -->
+                  <a class="btn btn-lg btn-primary fw-btn df-btn-primary show-demo" href="/schedule-demo/">
+                    Schedule a demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hidden team-card-detail-border" id="impact-fund-content">
+            <div class="row team-card-detail-container">
+              <div class="col-md-7 team-card-detail">
+                <div class="team-card-mobile text-primary">
+                  <span class="team-card-icon fa fa-envira" aria-hidden="true"></span>
+                  <span class="team-card-heading">Impact Funds</span>
+                </div>
+                <p class="team-card-detail-heading">More focus on impact, less busy work</p>
+                <p class="team-card-detail-text">Your end-to-end impact measurement platform.</p>
+                <ul class="fa-ul team-card-detail-text">
+                  <li class="team-card-detail-list"><span class="fa-li"><i
+                        class="fa fa-check-circle-o"></i></span>Manage equity and debt portfolio</li>
+                  <li class="team-card-detail-list"><span class="fa-li"><i
+                        class="fa fa-check-circle-o"></i></span>Streamline LP financial and impact reporting</li>
+                  <li class="team-card-detail-list"><span class="fa-li"><i class="fa fa-check-circle-o"></i></span>Track
+                    key impact and ESG metrics</li>
+                </ul>
+                <div class="row testimonial-parent">
+                  <div class="col-lg-3 col-md-3 col-xs-12" style="align-self:center;">
+                    <img class="rounded-circle lozad" height="250" width="250"
+                      src="/portfolio-management-software/assets/img/thumb/Picture2.png"
+                      alt="Marcel Neutel, C4D Partners" title="Marcel Neutel, C4D Partners" />
+                    <img class="grayscale-image customer-logo"
+                      src="fund-administration-software/assets/img/c4d-logo.png" alt="C4D Partners logo"
+                      title="C4D Partners" height="20px" width="100px" />
+                  </div>
+                  <div class="col-lg-9 col-md-9 col-xs-12">
+                    <div class="customer-testimonial">
+                      <p>"Very nice module. Love the new dashboards."</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-md-5 team-card-feature-container signup-btn-mobile">
+                <div class="team-card-feature-group">
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-pie-chart"
+                        aria-hidden="true"></i></span>
+                    Pipeline and Portfolio Management
+                  </div>
+
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-paper-plane"
+                        aria-hidden="true"></i></span>
+                    LP Communication and Reporting
+                  </div>
+
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-tachometer"
+                        aria-hidden="true"></i></span>
+                    Insights and Dashboards
+                  </div>
+
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-tasks"
+                        aria-hidden="true"></i></span>
+                    Tasks, Notes, Emails and more
+                  </div>
+
+                </div>
+                <div class="team-card-feature-button">
+                  <!-- <a class="btn btn-lg btn-primary df-btn-primary" href="/signup">
+                    <span>Get Started</span>
+                  </a> -->
+                  <a class="btn btn-lg btn-primary fw-btn df-btn-primary show-demo" href="/schedule-demo/">
+                    Schedule a demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hidden team-card-detail-border" id="family-office-content">
+            <div class="row team-card-detail-container">
+              <div class="col-md-7 team-card-detail">
+                <div class="team-card-mobile text-primary">
+                  <span class="team-card-icon fa fa-users" aria-hidden="true"></span>
+                  <span class="team-card-heading">Family Office</span>
+                </div>
+                <p class="team-card-detail-heading">The complete Family Office solution</p>
+                <p class="team-card-detail-text">The all-in-one platform for all your asset classes, across the world.
+                </p>
+                <ul class="fa-ul team-card-detail-text">
+                  <li class="team-card-detail-list"><span class="fa-li"><i
+                        class="fa fa-check-circle-o"></i></span>Manage deal pipeline across your family office</li>
+                  <li class="team-card-detail-list"><span class="fa-li"><i class="fa fa-check-circle-o"></i></span>Track
+                    cashflows across asset classes</li>
+                  <li class="team-card-detail-list"><span class="fa-li"><i
+                        class="fa fa-check-circle-o"></i></span>Visualize portfolio performance and reporting</li>
+                </ul>
+                <div class="row testimonial-parent">
+                  <div class="col-lg-3 col-md-3 col-xs-12" style="align-self:center;">
+                    <img class="rounded-circle lozad" height="250" width="250"
+                      src="/portfolio-management-software/assets/img/thumb/Picture2.png"
+                      alt="Marcel Neutel, C4D Partners" title="Marcel Neutel, C4D Partners" />
+                    <img class="grayscale-image customer-logo"
+                      src="fund-administration-software/assets/img/c4d-logo.png" alt="C4D Partners logo"
+                      title="C4D Partners" height="20px" width="100px" />
+                  </div>
+                  <div class="col-lg-9 col-md-9 col-xs-12">
+                    <div class="customer-testimonial">
+                      <p>"Very nice module. Love the new dashboards."</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-md-5 team-card-feature-container signup-btn-mobile">
+                <div class="team-card-feature-group">
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-pie-chart"
+                        aria-hidden="true"></i></span>
+                    Pipeline and Portfolio Management
+                  </div>
+
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-tachometer"
+                        aria-hidden="true"></i></span>
+                    Insights and Dashboards
+                  </div>
+
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-cogs"
+                        aria-hidden="true"></i></span>
+                    Integrate with your investor portal tools
+                  </div>
+
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-tasks"
+                        aria-hidden="true"></i></span>
+                    Tasks, Notes, Emails and more
+                  </div>
+                </div>
+                <div class="team-card-feature-button">
+                  <!-- <a class="btn btn-lg btn-primary df-btn-primary" href="/signup">
+                    <span>Get Started</span>
+                  </a> -->
+                  <a class="btn btn-lg btn-primary fw-btn df-btn-primary show-demo" href="/schedule-demo/">
+                    Schedule a demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hidden team-card-detail-border" id="fof-content">
+            <div class="row team-card-detail-container">
+              <div class="col-md-7 team-card-detail">
+                <div class="team-card-mobile text-primary">
+                  <span class="team-card-icon fa fa-sitemap" aria-hidden="true"></span>
+                  <span class="team-card-heading">Fund of Funds</span>
+                </div>
+                <p class="team-card-detail-heading">The complete Fund of Funds solution</p>
+                <p class="team-card-detail-text">The all-in-one platform for Fund of Funds.</p>
+                <ul class="fa-ul team-card-detail-text">
+                  <li class="team-card-detail-list"><span class="fa-li"><i
+                        class="fa fa-check-circle-o"></i></span>Manage deal pipeline across your fund</li>
+                  <li class="team-card-detail-list"><span class="fa-li"><i
+                        class="fa fa-check-circle-o"></i></span>Reduce LP reporting time with in-built templates</li>
+                  <li class="team-card-detail-list"><span class="fa-li"><i
+                        class="fa fa-check-circle-o"></i></span>Automate portfolio captables and KPI collection</li>
+                </ul>
+                <div class="row testimonial-parent">
+                  <div class="col-lg-3 col-md-3 col-xs-12" style="align-self:center;">
+                    <img class="rounded-circle lozad" height="250" width="250" src="assets/img/thumb/nuance_ngaio.jpg"
+                      alt="Ngaio Merrick, Nuance" title="Ngaio Merrick, Nuance" />
+                    <img class="grayscale-image customer-logo" src="fund-administration-software/assets/img/nuance.png"
+                      alt="Nuance logo" title="Nuance" height="20px" width="100px" />
+                  </div>
+                  <div class="col-lg-9 col-md-9 col-xs-12">
+                    <div class="customer-testimonial">
+                      <p>"Phenomenal level of service."</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-md-5 team-card-feature-container signup-btn-mobile">
+                <div class="team-card-feature-group">
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-pie-chart"
+                        aria-hidden="true"></i></span>
+                    Pipeline and Portfolio Management
+                  </div>
+
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-paper-plane"
+                        aria-hidden="true"></i></span>
+                    LP Communication and Reporting
+                  </div>
+
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-tachometer"
+                        aria-hidden="true"></i></span>
+                    Insights and Dashboards
+                  </div>
+
+                  <div class="team-card-detail-feature">
+                    <span class="text-center text-primary list-icon"><i class="fa fa-tasks"
+                        aria-hidden="true"></i></span>
+                    Tasks, Notes, Emails and more
+                  </div>
+
+                </div>
+                <div class="team-card-feature-button">
+                  <!-- <a class="btn btn-lg btn-primary df-btn-primary" href="/signup">
+                    <span>Get Started</span>
+                  </a> -->
+                  <a class="btn btn-lg btn-primary fw-btn df-btn-primary show-demo" href="/schedule-demo/">
+                    Schedule a demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Quotes -->
+    <!-- <div class="testimonials-carousal-frame"></div> -->
+
+
+
+    <section id="signup-footer" class="fw-header  df-fade-in">
+      <div class="df-banner-container">
+        <div class="col-lg-8">
+          <h1 class="display-2 df-text-center"><strong class="fw-heading fw-heading-light">Get started with Fundwave
+              today</strong>
+          </h1>
+          <p class="lead mt-2 df-text-center fw-500 show-trial" style="color:white">
+            No Credit Card Required</p>
+          </p>
+
+          <!-- <p id="signup-footer-btn" class="gap-xy df-cta-buttons-container show-trial">
+            <a class="lead-3 btn fw-btn btn-sm mw-200 homepage-button btn-white" href="/signup">
+              <span>Sign up - it's FREE!</span>
+            </a>
+          </p> -->
+          <p id="footer-demo-link" class="gap-xy df-cta-buttons-container show-trial">
+            <a class="lead-1 fw-500 pt-1"
+              style="color:rgba(255, 255, 255, 0.792); border-bottom: 1px solid rgba(255, 255, 255, 0.792); line-height: 1.3;"
+              href="/schedule-demo/">
+              Need a demo first?
+            </a>
+          </p>
+          <p id="signup-footer-btn" class="gap-xy df-cta-buttons-container show-demo">
+            <a class="lead-3 btn fw-btn btn-sm mw-200 homepage-button btn-white" href="/schedule-demo/">
+              Schedule a demo
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+      | Services
+      |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+      !-->
+    <!-- <section class="section bg-gray">
+        <div class="container">
+          <header class="section-header">
+            <h2>Choose your investment style</h2>
+            <hr>
+          </header>
+
+          <div class="row gap-y">
+
+            <div class="col-md-6 col-xl-3">
+              <div class="card card-body shadow-3 text-center bg-success text-white">
+                <p class="my-5"><i class="icon-browser lead-6"></i></p>
+                <h5 class="mb-5 fw-500"><a href="https://portfolio-management-software.app">Private Equity</a></h5>
+                <p>Buyouts, Debt or Bridge. Find a tool that speaks your language and report in compliant standards.</p>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3">
+              <div class="card card-body shadow-3 text-center">
+                <p class="my-5"><i class="icon-mobile lead-6"></i></p>
+                <h5 class="mb-5 fw-500"><a href="https://vcfund.app">Venture Capital</a></h5>
+                <p>Early stage to Series D investor? See how Fundwave keeps you focused on creating the next unicorn.</p>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3">
+              <div class="card card-body shadow-3 text-center bg-info text-white">
+                <p class="my-5"><i class="icon-linegraph lead-6"></i></p>
+                <h5 class="mb-5 fw-500"><a href="https://investorportal.app">Institutional Investor</a></h5>
+                <p>Research, benchmark and track your alternative portfolio. Roll-up underyling assets or take a deep dive.</p>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3">
+              <div class="card card-body shadow-3 text-center">
+                <p class="my-5"><i class="icon-megaphone lead-6"></i></p>
+                <h5 class="mb-5 fw-500"><a href="https://www.fundwave.com">Fund administrator</a></h5>
+                <p>Serve varied fund structures and reporting requirements. Faster, more reliably, at a fraction of cost.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section> -->
+
+    <!--
+      |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+      | Partner
+      |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+      !-->
+
+  </main>
+
+  <!-- Footer -->
+  <div class="footer-frame" id="footer-frame"></div>
+
+
+
+  <script>
+
+    const features = ["capital-calls-content", "kpi-content", "exit-model-content", "investment-content", "investorportal-content", "deals-content", "reports-content"];
+    function selectFeature(feature) {
+      features.map((loopFeature) => {
+        document.getElementById(loopFeature).classList.add("df-hidden");
+        document.getElementById(`${loopFeature}-heading`).classList.add("df-hidden");
+        document.getElementById(`${loopFeature}-btn`).classList.remove("feature-card-selected");
+        document.getElementById(`${loopFeature}-icon`).classList.remove("feature-card-icon-selected");
+      })
+      document.getElementById(`${feature}`).classList.remove("df-hidden");
+      document.getElementById(`${feature}-heading`).classList.remove("df-hidden");
+      document.getElementById(`${feature}-btn`).classList.add("feature-card-selected");
+      document.getElementById(`${feature}-icon`).classList.add("feature-card-icon-selected");
+    }
+
+  </script>
+
+  <script>
+
+    const teams = ["venture-capital-content", "private-equity-content", "impact-fund-content", "family-office-content", "fof-content", "corporate-vc-content", "spv-content"];
+    function selectTeam(team) {
+      teams.map((loopTeam) => {
+        document.getElementById(loopTeam).classList.add("hidden");
+        document.getElementById(`${loopTeam}-btn`).classList.remove("feature-card-selected");
+        document.getElementById(`${loopTeam}-icon`).classList.remove("feature-card-icon-selected");
+      })
+      document.getElementById(`${team}`).classList.remove("hidden");
+      document.getElementById(`${team}-btn`).classList.add("feature-card-selected");
+      document.getElementById(`${team}-icon`).classList.add("feature-card-icon-selected");
+    }
+  </script>
+
+  <!-- <script>
+    AOS.init({
+      startEvent: 'load'
+    });
+  </script> -->
+
+  <!-- Scripts -->
+  <script>
+    const observer = lozad();
+    observer.observe();
+  </script>
+
+  <!-- Scripts -->
+  <script src="assets/js/custom.min.js"></script>
+  <script src="assets/js/page.min.js" defer></script>
+
+</body>
+
+</html>

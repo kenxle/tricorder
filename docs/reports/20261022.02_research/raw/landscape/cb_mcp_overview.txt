@@ -1,0 +1,41 @@
+SOURCE: https://data.crunchbase.com/docs/mcp-overview.md
+FETCHED: 2026-10-22 10:25
+HTTP: 200
+
+---
+updatedAt: 2026-10-21T16:25:29.000Z
+agentTools:
+ projectIndex: https://data.crunchbase.com/llms.txt
+---
+# MCP Overview
+Overview page for Crunchbase MCP documentation and setup guidance.
+The Crunchbase MCP server connects AI assistants directly to live Crunchbase data. Using the Model Context Protocol, an open standard supported by Claude, ChatGPT, and other AI platforms, your team can research companies, analyze funding activity, and build sourcing lists through natural conversation, with every answer drawn from Crunchbase.
+Ready to connect? Jump to Getting Started with MCP.
+## What you can do
+Ask your AI assistant questions supported by the available Crunchbase tools and your account’s access. Some of the ways teams use it:
+* **Research companies.** Ask for a pre-meeting brief on a target and get funding history, leadership, and competitors in one response, sourced from the profile your team already trusts.
+* **Screen and source at scale.** Describe your thesis in plain language ("US fintech companies that raised a seed or Series A between 2026-08-16 and 2026-10-14") and get a filtered list, not a summary of one.
+* **Analyze funding and investor activity.** Trace who's investing in a space, how round sizes are trending, and which portfolios are most active.
+* **Map market landscapes.** Build a view of a segment, assess how crowded or funded it is, and identify the companies your keyword searches would miss.
+* **Turn research into pipeline.** Save results directly to Crunchbase lists for follow-up in the platform. Team access depends on list sharing settings and permissions.
+These are just starting points. Because your assistant composes tools freely, workflows we never anticipated work too: combine Crunchbase with your CRM through another connector, monitor a watchlist on a schedule, or enrich a spreadsheet as you build it.
+## How it works: Expert and structured tools
+The server gives your AI assistant two complementary ways to work with Crunchbase data.
+**Expert tools** handle plain language. Ask a question and the expert tools answer it with live data, or translate your description of what you're looking for into a precise Crunchbase search, no query syntax involved. This is the fastest path for exploratory questions and one-off research.
+**Structured tools** offer precision and repeatability. Your assistant can look up a specific company, person, or investor; run exact searches with explicit criteria across stage, geography, dates, amounts, and dozens more fields; and create and manage Crunchbase lists. These are the building blocks for workflows you'll run again and again.
+You don't choose between them; your assistant picks the right tool for each request automatically. See the Developer Reference for the full catalog with parameters and examples.
+## Crunchbase data available through MCP
+The MCP server exposes company profiles, funding rounds, people, investors, acquisitions, predictions, and insights through its available tools. Accessible entities, fields, relationships, and limits depend on the signed-in user and the integration arrangement. Discover the live tool schemas and `cb_reference` metadata; do not assume every REST API operation has a corresponding MCP tool.
+## Supported AI tools
+The server works with Claude (web, desktop, and Claude Code), ChatGPT, VS Code with GitHub Copilot, Perplexity, Mistral Vibe, and other clients with compatible Streamable HTTP and OAuth support. Setup takes a few minutes; see Connecting AI Tools for step-by-step instructions per client.
+## Access
+MCP is purchased per workspace and access is assigned per user as an MCP seat by your workspace admin. An MCP seat includes Crunchbase's highest level of data access, including predictions and insights. Users connect by signing in with their own Crunchbase account. See Managing MCP Access for seat assignment and administration, or contact your account team to add MCP to your workspace.
+Data access for applications built on the Crunchbase MCP server differs from individual seat access. If you're building an application, contact your account team.
+## Data-token allowance
+Data-returning workflows consume Crunchbase data tokens. Your assistant can use `cb_metering_get_state` to inspect the current user’s allowance and reset time when available. This is separate from your AI provider’s token usage and does not describe every access restriction or rate limit. See [Data-Token Metering](https://data.crunchbase.com/docs/mcp-data-token-metering) for response metadata, usage tracking, and allowance errors.
+## Get started
+* **Have an MCP seat?** Follow Getting Started with MCP to connect your AI tool and run your first query in about five minutes.
+* **Admin setting up your team?** See Managing MCP Access to assign seats.
+* **Don't have MCP yet?** Contact your account team to add it to your workspace.
+## Building an integration
+For application developers, see [Building a Crunchbase MCP Integration](https://data.crunchbase.com/docs/building-mcp-integrations), [Reliability, Errors, and Pagination](https://data.crunchbase.com/docs/mcp-reliability-and-pagination), and [Known MCP Limitations](https://data.crunchbase.com/docs/mcp-known-limitations).

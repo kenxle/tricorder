@@ -1,0 +1,340 @@
+SOURCE: https://you.com/apis
+FETCHED: 2026-10-22 10:23
+HTTP: 200
+
+Web Search API for AI Agents & LLMs | You.com
+Skip to main content
+NEW! Knowledge for Web Search: live stock prices, crypto, weather, and prediction markets. Same $5 CPM.Learn More
+APIs
+Learn more about Web Search API
+Web Search API
+Learn more about Contents API
+Contents API
+Learn more about Answer API
+Answer API
+Learn more about Research API
+Research API
+Learn more about Finance Research API
+Finance Research API
+Learn more about MCP Server
+MCP Server
+Learn more about MCP Server
+Agent Skills
+Docs
+Pricing
+Benchmarks
+Company
+About You.com
+About
+View Careers
+Careers
+View Partnerships
+Partnerships
+View Events
+Events
+View Startup Grant Program
+Startup Grant Program
+Blog
+Sign in to Chat Platform
+Sign in to Chat Platform
+Sign in to API Platform
+Sign in to API Platform
+Book a demo
+Book a demo
+Sign in
+API Platform
+API Platform
+Chat
+Chat
+Contact Sales
+Contact Sales
+Ground your AI in the live webWeb Search API
+Market-leading accuracy and latency, with live web and news results purpose-built for AI.
+Try the Web Search API free
+Try it now
+Request a demo
+Request a demo
+POST
+ydc-index.io/v1/search
+Live web + news
+Request bodyCopy curl{
+ "query": "Latest EU regulations on AI",
+ "freshness": "month",
+ "count": 5
+}
+Response200 OK{
+ "results": {
+ "web": [{
+ "title": "AI Act | Shaping Europe's digital future",
+ "url": "https://digital-strategy.ec.europa.eu/...",
+ "snippets": ["The AI Act is the first-ever legal..."],
+ "page_age": "2026-09-02T08:30:00"
+ }],
+ "news": […]
+ },
+ "metadata": { "latency": 0.538 }
+}
+Latency 538 ms
+Cost $0.005
+Citations + timestamps
+Trusted by global leaders
+Built for AI agents
+Everything your AI agents need from a web search API (and nothing they don't)
+Real-time data
+Live news and continuously recrawled pages keep answers grounded in what's happening now.
+Best-in-class accuracy
+Scored 92% accuracy with 1,048 ms p50 latency on SimpleQA.Learn more
+First-party crawler & index
+No reseller layer means your search isn't dependent on another provider's roadmap.
+Control over every search
+Set sources, freshness, geography, language, content depth, and more per request.
+Context without clutter
+Get relevant, detailed highlights. Don't make your model sift through legacy search clutter.
+No model lock-in
+Use the LLM that fits each task without changing your web search setup.
+How it works
+How our Web Search API works
+Go from query to live web and news results in sub-1,000ms.
+01
+Send a query
+Add filters for recency, location, language, and more, whatever your agent needs.
+query: "EU AI Act"
+freshness: "week"
+country: "DE"
+02
+We find the latest web & news results
+You.com searches our own indexes for web and news with citations and timestamps.
+Web
+3d
+News
+2h
+03
+Get LLM-ready context
+Choose detailed highlights for fast answers or full page content for deep research.
+Highlights
+Full page
+View the Web Search API quickstart guide
+View quickstart guide
+Search controls
+Fine-tune every search
+Built-in controls make it easy to get the exact results your AI needs.
+Sources
+Include, exclude, or boost domains to shape where results come from.
+Freshness
+Control recency from the last 24 hours to any custom date range.
+Content depth
+Choose detailed highlights for focus or full-page content for deeper context.
+Location & language
+Target by country and language, with configurable SafeSearch settings.
+Explore the Web Search API playground
+Explore the playground
+POST/v1/search
+{
+ "query": "semiconductor export controls",
+ "include_domains": ["reuters.com", "ft.com"],Sources
+ "freshness": "2026-07-01to2026-09-24",Freshness
+ "extraction": { "extraction_mode": "highlights" },Content depth
+ "country": "US", "language": "EN",Location & language
+ "safesearch": "moderate"
+}
+Benchmarks
+The proof is in the benchmarks
+Our Web Search API leads on the metrics that matter most for AI web search.*
+AccuracyLatency
+The leader on factual accuracy
+Better facts in means better answers out.
+92.1%
+SimpleQA accuracy with You.com Web Search + full page
+Provider
+Accuracy
+p50 latency
+You.com Web Search + full page
+92.1%
+1,048 ms
+Exa search + text
+90.1%
+1,176 ms
+Parallel search (basic)
+89.8%
+1,902 ms
+Tavily (advanced)
+86.3%
+3,190 ms
+You.com Web Search (snippets)
+84.8%
+538 ms
+Google SERP
+80.2%
+1,347 ms
+Tavily (basic)
+59.1%
+1,340 ms
+Faster search without the tradeoff
+Relevance, quality, and confidence, at a fraction of the response time.
+538 ms
+p50 latency with You.com Web Search (snippets)
+Provider
+p50 latency
+Accuracy
+You.com Web Search (snippets)
+538 ms
+84.8%
+You.com Web Search + full page
+1,048 ms
+92.1%
+Exa search + text
+1,176 ms
+90.1%
+Tavily (basic)
+1,340 ms
+59.1%
+Google SERP
+1,347 ms
+80.2%
+Parallel search (basic)
+1,902 ms
+89.8%
+Tavily (advanced)
+3,190 ms
+86.3%
+Run the benchmarks on GitHub (opens in a new tab)
+Run the benchmarks
+View the benchmark methodology
+View methodology
+Evaluation methodology
+Best Paper Award, AAAI 2026 FAST Workshop
+*Results from the open-source You.com Web Search Eval Harness using fixed third-party models and original benchmark scoring.
+Enterprise-readyVisit the Trust Center
+SOC 2 certified
+Zero Data Retention
+No model training on your data
+DPA-ready
+Custom QPS for high-volume workloads
+Pricing
+Simple pricing that scales
+Pay as you go, with no minimums or commitments.
+free credits
+Highlights
+$5
+per 1,000 calls
+Live web and news results with query-relevant highlights, ready for your model.
+Add-on
+Full-page content
+$1
+per 1,000 pages
+Clean Markdown or HTML of the full page when your agent needs deeper context.
+Estimate your monthly cost
+Searches per month100,000
+Full pages extracted per month25,000
+Estimated monthly cost$525
+Web & news included
+Up to 100 results per call
+Volume discounts & annual pricing available. Contact sales
+Try the Web Search API free
+Try it now
+See full API pricing
+See full pricing
+“We cut P50 web search latency from over five seconds to sub-one second and pushed our success rate to three 9s or higher.”
+Jonathan Lucuix-Andre
+Technical Staff, Factory
+5x
+lower P50 web search latency
+99.9%+
+search success rateRead the Factory story
+Resources
+Build with the Web Search API
+Guides, benchmarks, and head-to-head comparisons to help you evaluate and ship.
+Explainer
+What is a web search API?
+What a web search API returns, how it grounds LLMs, and how to choose a provider.
+Read more
+Tutorial
+Web Search API in Python
+Install the SDK, run your first search, and add freshness and domain filters.
+Read more
+Guide
+Build RAG with web search
+An end-to-end pipeline for retrieval, extraction, chunking, and citations.
+Read more
+Guide
+Real-time search that stays fresh
+How live indexing works and how to test a provider's freshness yourself.
+Read more
+Migration
+Choosing a Bing Search API alternative
+Replace retired Bing endpoints with field mappings and migration code.
+Read more
+Benchmark
+Run the Web Search Eval Harness
+Benchmark any provider on SimpleQA, FRAMES, BrowseComp, and DeepSearchQA.
+Read more
+Compare You.com
+You.com vs. ExaYou.com vs. TavilyYou.com vs. ParallelYou.com vs. BraveYou.com vs. Perplexity
+FAQs about the You.com Web Search API
+What is a web search API?
+A web search API lets software query the live web programmatically and get structured results back as JSON, including titles, URLs, snippets, and metadata. The alternative is scraping HTML search pages, which is fragile. Developers use web search APIs to power search features, research tools, and monitoring. For AI teams, a web search API is the retrieval layer that grounds LLMs and AI agents in real-time information, which reduces hallucinations and keeps answers current beyond a model's training cutoff.
+What is the best web search API for AI agents and LLMs?
+The best web search API for AI agents returns fresh, structured results that are ready for an LLM, runs on an independent index, and gives you control over sources and recency. The You.com Web Search API is built for this. It combines web and news results in one call, can extract full-page content as Markdown, and lets you filter domains and freshness per request. It also connects to agents directly through MCP. You can check its quality yourself with the open-source eval harness.
+Is the Web Search API the same as the You.com Search API?
+Yes. It is the same product, with the same endpoint (/v1/search) and the same you.search method in the SDKs. We call it the Web Search API because that's what it does: it searches the open web and live news in real time and returns structured results your application or agent can use directly.
+What does a Web Search API call return?
+Each call returns unified web search and news results as structured JSON. Every result includes the URL, title, description, snippets, publication age, thumbnail, and favicon. When you enable content extraction, results also include query-relevant highlights or full page content in clean Markdown or HTML. That output drops straight into a RAG pipeline or LLM context window, so you don't need a separate scraper or web crawler API.
+Can I use the Web Search API for RAG and LLM grounding?
+Yes. Retrieval-augmented generation (RAG) and LLM grounding are the core use cases. The API returns live web results with snippets or full-page Markdown, so your model answers from current, citable sources instead of stale training data. Domain filters and freshness controls let you ground responses in the sources you trust, and every result carries a URL for citations.
+Do you run your own search index?
+Yes. You.com operates its own web crawler, web index, and news index. Results are not resold from Google, Bing, or any other third-party search engine. Nothing upstream can deprecate, rate-limit, or reprice your integration, which matters for a production search API that your product depends on.
+Is the You.com Web Search API a Bing Search API alternative?
+Yes. Microsoft retired the Bing Search APIs in August 2025, and many teams that built on Bing, or on resellers of Bing results, needed a replacement. The You.com Web Search API is a drop-in alternative for web and news search. It runs on an independent index and returns structured JSON with snippets, metadata, and optional full-page content. New accounts can start migrating with $100 in free credits.
+How is a web search API different from a SERP API?
+A SERP API scrapes and parses another search engine's results page, usually Google's, so you depend on that engine's layout, terms, and pricing. A web search API like You.com's queries its own index and returns structured data by design. That approach is more stable and has no scraping risk. It also adds features SERP scrapers can't offer, such as full-page content extraction and per-request domain controls.
+How fresh are the search results?
+Results are real time. The index is continuously recrawled, and a dedicated news index covers breaking stories. You control recency on each request with the freshness parameter: day, week, month, year, or an exact date range such as 2026-01-01to2026-03-31. Every result includes page_age, so your agent can judge how current a source is.
+Can I configure which sites my agent searches?
+Yes. include_domains restricts results to an allowlist, exclude_domains removes domains you don't want, and boost_domains ranks preferred sources higher. Each supports up to 500 domains. You can combine them with freshness, country, language, and content depth on every request to build a custom search engine for your agent without maintaining an index. Enterprise customers can also discuss vertical and custom indexes.
+How do I connect the Web Search API to Claude, Cursor, or other AI tools with MCP?
+Point any MCP-enabled client at api.you.com/mcp. That includes Claude, Cursor, VS Code, and agent frameworks that support the Model Context Protocol. The free profile (api.you.com/mcp?profile=free) gives you 100 web searches a day with no signup or API key. For higher volume, add your API key to use your account credits.
+Is there a free web search API tier?
+There are two. New accounts get $100 in free credits, roughly 20,000 web searches, with no credit card required. Any MCP-enabled tool can also use the free endpoint at api.you.com/mcp?profile=free for 100 queries a day with no signup. You can prototype, run evals, and ship a proof of concept before paying anything.
+How much does the Web Search API cost?
+The Web Search API costs $5.00 per 1,000 calls. Each call returns up to 100 results, and news results are included. Full page content extraction costs $1.00 per 1,000 pages. Pricing is pay as you go with no minimums or commitments, and volume discounts and annual pricing are available for high-throughput applications.
+How does You.com benchmark against other web search APIs?
+We benchmark in the open. The You.com Web Search Eval Harness is open source and runs SimpleQA, FRAMES, BrowseComp, and DeepSearchQA, with fixed third-party models doing the grading. Current results are published on GitHub. Your free credits cover running the harness on your own queries, so you can compare search API accuracy for your use case instead of relying on vendor claims.
+Is my data used to train models?
+No. Queries and results are never used for model training. Zero Data Retention (ZDR) automatically purges request and response content. The platform is SOC 2 certified and DPA-ready, which meets the security and compliance requirements enterprise AI teams need from a search API provider.
+Make better web search your AI advantage
+Connect your AI to the live web and news with the leading web search API for AI.
+Try the Web Search API free
+Try it now
+Request a demo
+Request a demo
+Footer
+Search, extract, and synthesize information from the web with APIs built for AI systems.
+APIs
+Web Search API
+Contents API
+Answer API
+Research API
+Finance Research API
+MCP Server
+Agent Skills
+Company
+About
+Careers
+Partnerships
+Events
+Startup Grant Program
+Resources
+Developer Docs
+Benchmarks
+MCP Server
+Trust Center
+Blog
+Terms and Policies
+Privacy Policy
+Do Not Sell or Share My Personal Information
+Privacy Requests
+Terms & Conditions
+Master Services Agreement
+Data Processing Addendum
+© 2026 You.com / All rights reserved
+llms.txtfor.you.com

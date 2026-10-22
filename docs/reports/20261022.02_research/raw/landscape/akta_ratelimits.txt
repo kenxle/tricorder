@@ -1,0 +1,71 @@
+SOURCE: https://docs.akta.pro/getting-started/rate-limits.md
+FETCHED: 2026-10-22 10:23
+HTTP: 200
+
+> ## Documentation Index
+> Fetch the complete documentation index at: https://docs.akta.pro/llms.txt
+> Use this file to discover all available pages before exploring further.
+# akta.pro API Rate limits
+> Default API rate limits for akta.pro plans and endpoints
+Rate limits depend on your active plan. Every plan has a global per-minute request limit, and most endpoints also have their own daily or monthly cap. Higher-tier plans include higher throughput, while Enterprise plans can be configured with custom limits based on committed usage, endpoint requirements, and deployment needs.
+## Rate limits by plan
+Select a plan type below to see its global rate limit and the default limit for every endpoint.
+**Pay as you go**
+Pay as you go is a top-up, credit-based plan with a single set of limits.
+| API | Endpoint | Limit |
+| :- | :- | :- |
+| — | **Global rate limit** | 25 / minute |
+| List Filters | `/api/v1/filters/list/` | 25 / day |
+| Filter Options | `/api/v1/filters/options/` | 50 / day |
+| Company Search | `/api/v1/company/search/` | 100 / day |
+| Industry Search | `/api/v1/industry/search/` | 100 / day |
+| Company Data | `/api/v1/company/enrichment/`\* | 100 / month |
+| Company Addition | `/api/v1/company/addition-requests/` | Not available |
+| Filter Builder | `/api/v1/list/filter-builder/` | † |
+| Job Posts | `/api/v1/company/jobs/` | Not available |
+| Social Posts | `/api/v1/company/posts/` | Not available |
+| Product Reviews | `/api/v1/company/product-reviews/` | Not available |
+| Website Traffic | `/api/v1/company/website-traffic/` | Not available |
+| Employee Reviews | `/api/v1/company/employee-reviews/` | Not available |
+| Headcount Trends | `/api/v1/company/headcount-trends/` | Not available |
+| List Generation | `/api/v1/list/generate/companies/` | 100 / month |
+| News Signals | `/api/v1/news/` | 10,000 / month |
+> [!NOTE]
+>
+> Alternative data endpoints (Job Posts, Social Posts, Product Reviews, Website Traffic, Employee Reviews, Headcount Trends) and Company Addition are not included on Pay as you go.
+**Subscription**
+Subscription plans are tiered by monthly usage volume: 50, 100, 200, 500, and 1000.
+| API | Endpoint | Sub 50 | Sub 100 | Sub 200 | Sub 500 | Sub 1000 |
+| :- | :- | :- | :- | :- | :- | :- |
+| — | **Global rate limit** | 100 / min | 150 / min | 200 / min | 250 / min | 300 / min |
+| List Filters | `/api/v1/filters/list/` | 25 / day | 50 / day | 100 / day | 200 / day | 400 / day |
+| Filter Options | `/api/v1/filters/options/` | 50 / day | 100 / day | 200 / day | 400 / day | 800 / day |
+| Company Search | `/api/v1/company/search/` | 400 / day | 800 / day | 1,500 / day | 2,000 / day | 3,000 / day |
+| Industry Search | `/api/v1/industry/search/` | 400 / day | 800 / day | 1,500 / day | 2,000 / day | 3,000 / day |
+| Company Data | `/api/v1/company/enrichment/`\* | 1,500 / mo | 3,000 / mo | 6,000 / mo | 15,000 / mo | 30,000 / mo |
+| Company Addition | `/api/v1/company/addition-requests/` | 100 / mo | 150 / mo | 200 / mo | 300 / mo | 500 / mo |
+| Filter Builder | `/api/v1/list/filter-builder/` | † | † | † | † | † |
+| Job Posts | `/api/v1/company/jobs/` | 10/min · 750/mo | 15/min · 1,500/mo | 20/min · 3,000/mo | 25/min · 7,500/mo | 30/min · 15,000/mo |
+| Social Posts | `/api/v1/company/posts/` | 10/min · 750/mo | 15/min · 1,500/mo | 20/min · 3,000/mo | 25/min · 7,500/mo | 30/min · 15,000/mo |
+| Product Reviews | `/api/v1/company/product-reviews/` | 10/min · 750/mo | 15/min · 1,500/mo | 20/min · 3,000/mo | 25/min · 7,500/mo | 30/min · 15,000/mo |
+| Website Traffic | `/api/v1/company/website-traffic/` | 10/min · 750/mo | 15/min · 1,500/mo | 20/min · 3,000/mo | 25/min · 7,500/mo | 30/min · 15,000/mo |
+| Employee Reviews | `/api/v1/company/employee-reviews/` | 10/min · 750/mo | 15/min · 1,500/mo | 20/min · 3,000/mo | 25/min · 7,500/mo | 30/min · 15,000/mo |
+| Headcount Trends | `/api/v1/company/headcount-trends/` | 10/min · 750/mo | 15/min · 1,500/mo | 20/min · 3,000/mo | 25/min · 7,500/mo | 30/min · 15,000/mo |
+| List Generation | `/api/v1/list/generate/companies/` | 100 / mo | 150 / mo | 400 / mo | 750 / mo | 1000 / mo |
+| News Signals | `/api/v1/news/` | 25,000 / mo | 50,000 / mo | 100,000 / mo | 250,000 / mo | 500,000 / mo |
+**Enterprise**
+Enterprise ships with custom rate limits. Contact sales to configure custom throughput for your account.
+\* Includes the markdown, concise, and feature variants (firmographic, peers, swot, financial\_estimate, location, management\_profile, product\_offering, partnerships, customer\_profile, industry, technology, funding\_detail, mna\_and\_investment) of this endpoint — they share the same limit. † No separate limit is configured for this endpoint beyond the plan's global per-minute limit.
+> [!NOTE]
+>
+> "Not available" means the endpoint is not included in that plan and requests to it return a 403. Where both a per-minute and a per-month limit apply to the same endpoint, both are enforced — whichever is reached first will throttle the request.
+## What counts as a request?
+Each request to the News Signals, Company Data, List Generation, Alternative Data (Job Posts, Social Posts, Product Reviews, Website Traffic, Employee Reviews, Headcount Trends), and supporting endpoints (Company Search, Industry Search, Filter Builder, Company Addition) counts toward your plan's rate limit.
+> [!NOTE]
+>
+> Usage for all endpoints is charged in credits. Rate limits control request throughput; credit usage controls billing.
+## Pricing
+Rate limits are separate from pricing. For cost information, see [Pricing](/getting-started/pricing).
+## Need higher limits?
+If you need higher throughput, custom endpoints, de-duplicated feeds, or committed-volume pricing, contact [sales@akta.pro](mailto:sales@akta.pro) with your expected usage volume and requirements.
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

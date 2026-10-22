@@ -1,0 +1,182 @@
+SOURCE: https://docs.you.com/
+FETCHED: 2026-10-22 10:23
+HTTP: 200
+
+API Docs | Real-Time Web Intelligence for AI Apps | You.com | Documentation
+For AI agents: a documentation index is available at the root level at /llms.txt. Append /llms.txt to any URL for a page-level index, or .md for the markdown version of any page.
+Search
+/Ask AI
+Platform
+DocumentationIntegrationsAPI reference
+Search
+/Ask AISkip to navigation
+Getting started
+Build agentic apps with real-time web intelligence.
+Ask a question|View as Markdown|Open in Claude|More actions
+With the You.com suite of tools, your agent can search the web, extract webpage content, generate grounded answers and execute deep research with better accuracy, freshness, and performance.
+Get startedConnect your agent
+Search coreSearchContents
+Agentic searchAnswerResearchFinance ResearchGo to Platform
+Python
+from youdotcom import You
+from youdotcom.models import Extraction, ExtractionMode
+with You() as you:
+ res = you.search(
+ query="best practices for scaling microservices architecture in production",
+ extraction=Extraction(extraction_mode=ExtractionMode.HIGHLIGHTS),
+ )
+ # Each result contains a title, URL, query-relevant highlights, and more
+ if res.results and res.results.web:
+ for result in res.results.web:
+ print(f"Title: {result.title}")
+ print(f"URL: {result.url}")
+ if result.contents and result.contents.highlights:
+ print(f"Highlight: {result.contents.highlights[0]}\n")
+try it free
+Connect Your Agent
+MCP ServerDocs MCP ServerSkillsPython SDK
+Give your agent access to the live web. Start for free without an account or API key.
+Claude CodeClaude CodeCodexCursorVS Code
+$claude mcp add --transport http youdotcom "https://api.you.com/mcp?profile=free"
+Advanced configurations
+the platform
+Five APIs, One Platform
+Shared auth, SDKs, and dashboards. Compose them to build complex agentic workflows.
+Web Search APIReturns real-time, LLM-ready web and news resultsContents APIClean Markdown or HTML from any URL you provideAnswer APIReturns a cited, synthesized answer from a single queryResearch APIAgentic multi-step research with cited synthesisFinance Research APIAgentic research, focused on financial and numerical dataChoose the Right APICompare job fit, latency, and price across all five
+integrate anywhere
+Use With The Best Tools and FrameworksSee all integrations
+LangChainLlamaIndexcrewAIVercel AI SDKn8nZapierGPT OSSClaudeCursorPydanticReplitx402
+use cases
+What Developers Are Building With You.com
+Each pattern has runnable code and an open GitHub repo.See all
+Web Search APIsEndpoints, parameters, and response schemas, with an interactive playgroundBuild with your agentMCP servers, skills, and harnesses for Claude Code, Cursor, Codex, and morePython SDKTyped Python client for all five APIs, plus the CLI and OpenAPI specs
+Was this page helpful?
+YesNo
+Next
+Choose the Right APIBuilt with
+DocumentationIntegrationsAPI reference
+Getting started
+Welcome
+Choose the Right API
+Quickstart
+Build With Agents
+MCP Server
+Docs MCP Server
+Skills
+Plugins
+Agent Harnesses
+OpenAPI Spec
+Rate Limits
+Pricing
+APIs
+Web Search API
+Quickstart
+Overview
+Features
+Knowledge
+Page Content Extraction
+News Search
+Controls and Filters
+Search Operators
+Guides
+Contents API
+Answer API
+Research API
+Finance Research API
+Use cases
+Examples
+Runnable examples
+Recipes
+Administration
+Account
+Billing
+API Keys
+Team Management
+SSO & SCIM
+Zero Data Retention
+Machine Payments
+Support
+Troubleshooting
+Get Help
+Additional resources
+Platform
+Support
+Resources
+System Status
+Changelog
+Welcome
+Choose the Right API
+Quickstart
+Build With Agents
+MCP Server
+Docs MCP Server
+Skills
+Plugins
+Agent Harnesses
+Claude Code
+Cursor
+Factory Droid
+Codex CLI
+OpenCode
+Windsurf
+Gemini CLI
+VS Code
+JetBrains IDEs
+Zed
+Pi
+Cecli
+Jan
+DeepSeek Harness
+GitHub Copilot CLI
+Grok Build
+Kimi Code
+Hermes Agent
+Rate Limits
+Quickstart
+Overview
+Knowledge
+Page Content Extraction
+News Search
+Controls and Filters
+Search Operators
+Evaluating Web Search
+Web Search for Agents
+Grounding with Citations
+Quickstart
+Overview
+Quickstart
+Overview
+Search Controls
+Quickstart
+Overview
+Background Requests
+Structured Output
+Source Control
+Quickstart
+Overview
+Structured Output
+Examples
+Simple Search
+Deep Search
+Research Agent
+Biomedical Research Brief
+Contents Extraction
+Deep Research Example
+Competitive Intel Example
+News & Events Example
+Fact Check Example
+Financial Research Example
+Research Recipe Example
+Account
+Billing
+API Keys
+Team Management
+SSO & SCIM
+Zero Data Retention
+Machine Payments
+x402
+MPP
+Nevermined
+Troubleshooting
+Get Help
+Changelog

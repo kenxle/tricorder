@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script>
+(function() {
+  /* The site is light only. Nothing is read from storage and nothing chooses:
+     the attribute is pinned before first paint so there is no flash, and an OS
+     dark preference or a stale 'dealroom-theme' value in an old browser cannot
+     reach the page. Charts and decks are excluded from this injection and keep
+     their own two-theme handling.
+
+     The attribute must always be PRESENT. css/dealroom-theme-3da7d8e.css has no
+     bare :root colour block - every colour token is defined under
+     html[data-theme="light"] / html[data-theme="dark"]. Drop the attribute and
+     every var(--navy)/var(--white)/var(--text-light) resolves to nothing and the
+     page loses its colour entirely. */
+  document.documentElement.dataset.theme = 'light';
+  document.documentElement.style.colorScheme = 'light';
+})();
+</script>
+<link rel="stylesheet" href="/css/dealroom-theme-3da7d8e.css?v=fd27458a3ebe3337">
+<script defer src="/js/dealroom-theme-3da7d8e.js?v=49e8712854452243"></script>
+<link rel="stylesheet" href="/css/nav-search.css?v=7bf8a5aa470d74ac">
+<script defer src="/js/nav-search.js?v=ab5f01efdd98377e" data-results-css="/css/search-results.css?v=6b9bce8019b58564" data-results-js="/js/search-results.js?v=2b1def41ea41d712" data-crop-src="/charts/preview-crop.js?v=a923b24416b443eb" data-radial-src="/js/mafia-radial-thumb.js?v=670b59a854bb2e79"></script>
+<script defer src="/js/newsletter-subscribe.js?v=61e4cf097704a186"></script>
+<script defer src="/js/demo-pill.js?v=28b8a5e769c2424c"></script>
+<style>
+  html.is-embed body > nav, html.is-embed nav.site-nav, html.is-embed .mobile-nav, html.is-embed .family-subnav, html.is-embed #footer-placeholder, html.is-embed body > footer { display: none !important; }
+  html.is-embed main { padding-top: 0 !important; }
+</style>
+<script>(function(){try{var e=new URLSearchParams(location.search).get('embed')==='true';if(!e&&window.self!==window.top){try{e=window.top.location.origin!==location.origin;}catch(x){e=true;}}if(e)document.documentElement.classList.add('is-embed');}catch(x){}})();</script><!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NJB04M1NSN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  // Google Consent Mode v2. Two things were broken before this block existed:
+  //   1. No consent default, so GA wrote its cookies on first paint - before
+  //      the visitor had been asked anything.
+  //   2. The popup's grant fired once, in that tab only: dr_cookie_consent was
+  //      written and then never read by anything, so an accepted choice was
+  //      forgotten on the very next page view.
+  // Denied by default; the stored decision is re-applied on every page load,
+  // before config, so no analytics cookie exists without an explicit accept.
+  gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
+  try{
+    var drc=null; try{ drc=localStorage.getItem('dr_cookie_consent'); }catch(e){}
+    if(!drc){ drc=(document.cookie.match(/(?:^|;\s*)dr_consent=([^;]+)/)||[])[1]||null; }
+    if(drc==='accepted'||drc==='analytics') gtag('consent','update',{analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+  }catch(e){}
+  gtag('js', new Date());
+  gtag('config', 'G-NJB04M1NSN', {allow_google_signals:false,allow_ad_personalization_signals:false});
+</script><!-- HubSpot tracking (consent-gated) -->
+<script>
+(function(){
+  // HubSpot also mounts chat. Embedded charts share the host's widget.
+  if(window.self!==window.top) return;
+  var loaded=false;
+  function load(){
+    if(loaded) return; loaded=true;
+    var s=document.createElement('script');
+    s.id='hs-script-loader'; s.async=true; s.defer=true;
+    s.src='https://js.hs-scripts.com/6645497.js';
+    document.head.appendChild(s);
+  }
+  window.__drHubSpotLoad=load;
+  try{
+    var drc=null; try{ drc=localStorage.getItem('dr_cookie_consent'); }catch(e){}
+    if(!drc){ drc=(document.cookie.match(/(?:^|;\s*)dr_consent=([^;]+)/)||[])[1]||null; }
+    if(drc==='accepted'||drc==='marketing') load();
+  }catch(e){}
+})();
+</script><!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-tRieqOHLtYp4suYZ-eHQI.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init();
+  (function(){
+    var sent=false,timer=null,events=['pointermove','pointerdown','touchstart','keydown','scroll','wheel'];
+    function send(){ if(sent) return; sent=true; stop(); try{ plausible('Human'); }catch(e){} }
+    function stop(){ events.forEach(function(t){ removeEventListener(t,send,true); }); document.removeEventListener('visibilitychange',arm); if(timer){ clearTimeout(timer); timer=null; } }
+    function arm(){ if(document.visibilityState==='visible'){ if(!timer) timer=setTimeout(send,10000); } else if(timer){ clearTimeout(timer); timer=null; } }
+    events.forEach(function(t){ addEventListener(t,send,{capture:true,passive:true}); });
+    document.addEventListener('visibilitychange',arm); arm();
+  })();
+</script>
+
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Dealroom.co</title>
+    <link rel="canonical" href="https://dealroom.co/pricing/">
+    <meta name="description" content="Dealroom pricing per seat per month, billed annually. Pick your team size and request a quote with the numbers already filled in.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Source+Sans+3:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/footer.css?v=861bfdfea33dd805">
+    <style>
+        :root {
+            --navy: #141B2D; /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+            --navy-light: #1E2A45; /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+            --navy-lighter: #2A3A5A; /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+            --blue: #3B82F6; /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+            --blue-hover: #2563EB; /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+            --blue-light: rgba(59, 130, 246, 0.1); /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+            --teal: #10B981; /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+            --purple: #8B5CF6; /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+            --amber: #F59E0B; /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+            --white: #FFFFFF; /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+            --gray-50: #F9FAFB; /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+            --gray-100: #F3F4F6; /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+            --gray-200: #E5E7EB; /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+            --gray-300: #D1D5DB; /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+            --gray-400: #9CA3AF; /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+            --gray-500: #6B7280; /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+            --gray-600: #4B5563; /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+            --text-light: rgba(255, 255, 255, 0.7); /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+            --text-lighter: rgba(255, 255, 255, 0.5); /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+            --border-light: rgba(255, 255, 255, 0.1); /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--navy);
+            color: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .serif {
+            font-family: var(--font-display, 'Source Sans 3', system-ui, sans-serif);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0 2rem;
+            background: rgba(20, 27, 45, 0.95); /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .nav-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 28px;
+            width: auto;
+        }
+
+        .nav-center {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.15s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--white);
+            background: var(--navy-light);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.625rem 1.25rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-light);
+        }
+
+        .btn-ghost:hover {
+            color: var(--white);
+            background: var(--navy-light);
+        }
+
+        .btn-primary {
+            background: var(--blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--blue-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--navy);
+        }
+
+        .btn-white:hover {
+            background: var(--gray-100);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid var(--border-light);
+        }
+
+        .btn-outline:hover {
+            background: var(--navy-light);
+            border-color: var(--navy-lighter);
+        }
+
+
+        /* ── v3: mockup layout, site tokens ───────────────────────────── */
+        .pv3 { --pv3-navy: var(--surface-inverse); --pv3-on-navy: var(--text-on-inverse); --pv3-on-navy-muted: var(--text-on-inverse-muted); }
+        .pv3-wrap { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+
+        /* hero band */
+        .pv3-hero {
+            background: var(--pv3-navy);
+            color: var(--pv3-on-navy);
+            padding: 9rem 2rem 6rem;
+        }
+        .pv3-hero-inner { max-width: 820px; margin: 0 auto 2.5rem; text-align: center; }
+        .pv3-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+        .pv3-hero p { font-size: 1.25rem; line-height: 1.5; color: var(--pv3-on-navy-muted); font-weight: 500; }
+        .pv3-currency { margin-top: 0.75rem; font-size: 0.875rem; color: var(--pv3-on-navy-muted); }
+        .pv3-currency a { color: var(--pv3-on-navy); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+        /* seat panel */
+        .seat-panel {
+            max-width: 880px;
+            margin: 0 auto;
+            background: var(--surface-card);
+            color: var(--white);
+            border-radius: 16px;
+            padding: 1.75rem 2rem;
+            box-shadow: var(--shadow-xl);
+            text-align: left;
+        }
+        .seat-head { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+        .seat-label { display: block; font-size: 0.9375rem; font-weight: 700; color: var(--text-light); }
+        .seat-hint { font-size: 0.875rem; color: var(--text-faint); margin-top: 0.125rem; }
+        .seat-stepper { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+        .seat-btn {
+            width: 44px; height: 44px; border-radius: 10px;
+            border: 1px solid var(--border-mid); background: var(--surface-card); color: var(--white);
+            font-size: 1.375rem; font-weight: 600; cursor: pointer; transition: border-color 0.15s, color 0.15s;
+        }
+        .seat-btn:hover { border-color: var(--blue); color: var(--blue); }
+        .seat-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+        .seat-count { font-family: var(--font-display); min-width: 96px; text-align: center; font-size: 2.5rem; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
+        .seat-range { width: 100%; height: 44px; margin: 0.75rem 0 0; accent-color: var(--blue); cursor: pointer; }
+        .seat-foot { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem; }
+        .seat-quick { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .seat-pill {
+            height: 44px; padding: 0 1rem; border-radius: 999px;
+            border: 1px solid var(--border-mid); background: var(--surface-card); color: var(--white);
+            font-size: 0.875rem; font-weight: 700; cursor: pointer; transition: all 0.15s;
+        }
+        .seat-pill:hover { border-color: var(--pv3-navy); }
+        .seat-pill.active { background: var(--pv3-navy); border-color: var(--pv3-navy); color: var(--pv3-on-navy); }
+        .saving-badge {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            font-size: 0.875rem; font-weight: 700; color: var(--blue-ink); background: var(--blue-light);
+            padding: 0.5rem 0.875rem; border-radius: 999px;
+        }
+        .saving-badge svg { width: 16px; height: 16px; }
+        .saving-badge[hidden] { display: none; }
+
+        /* plans overlapping the hero */
+        .pv3-plans { margin-top: -3rem; }
+        .pv3-plans-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+        .pv3-card {
+            position: relative;
+            background: var(--surface-card);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 2rem;
+            display: flex; flex-direction: column; gap: 1.5rem;
+            box-shadow: var(--shadow-md);
+        }
+        .pv3-card.popular { border: 2px solid var(--blue); }
+        .pv3-card.enterprise { background: var(--navy-light); box-shadow: none; }
+        .pv3-badge {
+            position: absolute; top: -14px; left: 2rem;
+            background: var(--blue); color: var(--text-on-inverse);
+            font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+            padding: 0.375rem 0.75rem; border-radius: 999px;
+        }
+        .pv3-plan-name { font-size: 1.375rem; font-weight: 700; margin-bottom: 0.375rem; }
+        .pv3-plan-desc { font-size: 0.9375rem; line-height: 1.4; color: var(--text-light); }
+        .pv3-price-row { display: flex; align-items: baseline; gap: 0.375rem; flex-wrap: wrap; }
+        .pv3-price { font-family: var(--font-display); font-size: 2.75rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
+        .pv3-price-period { font-size: 0.9375rem; font-weight: 600; color: var(--text-light); }
+        .pv3-price-sub { display: block; font-size: 0.875rem; color: var(--text-faint); margin-top: 0.375rem; min-height: 1.25rem; }
+        .pv3-cta {
+            display: flex; align-items: center; justify-content: center; height: 48px; border-radius: 10px;
+            background: var(--blue); color: var(--text-on-inverse); text-decoration: none; font-size: 1rem; font-weight: 700;
+            transition: background 0.15s;
+        }
+        .pv3-cta:hover { background: var(--blue-hover); }
+        .pv3-cta.navy { background: var(--pv3-navy); }
+        .pv3-cta.navy:hover { background: var(--surface-inverse-raised); }
+        .pv3-features { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9375rem; }
+        .pv3-features li { display: flex; align-items: flex-start; gap: 0.625rem; }
+        .pv3-features svg { width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; color: var(--blue); }
+        .pv3-card.enterprise .pv3-features svg { color: var(--pv3-navy); }
+
+        /* API strip */
+        .pv3-addon { margin-top: 1.5rem; }
+        .pv3-addon-box {
+            border: 1px solid var(--border-light); border-radius: 16px; padding: 1.5rem 2rem;
+            display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+        }
+        .pv3-addon-box h3 { font-size: 1.125rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .pv3-addon-box p { font-size: 0.9375rem; color: var(--text-light); line-height: 1.5; }
+        .pv3-btn-outline {
+            flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 1.25rem;
+            border-radius: 10px; border: 1px solid var(--pv3-navy); color: var(--pv3-navy);
+            text-decoration: none; font-size: 0.9375rem; font-weight: 700; transition: background 0.15s, color 0.15s;
+        }
+        .pv3-btn-outline:hover { background: var(--pv3-navy); color: var(--pv3-on-navy); }
+
+        /* section headings */
+        .pv3-section { margin-top: 1.5rem; }
+        .pv3-section h2 { font-family: var(--font-display); font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.25rem; }
+        .pv3-section .pv3-lede { font-size: 1rem; color: var(--text-light); margin-bottom: 1.75rem; }
+
+        /* Features comparison: same block as /pricing/ v1, four columns */
+        .comparison-section {
+            padding: 6rem 2rem;
+            background: var(--navy-light);
+        }
+
+        .comparison-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .comparison-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .comparison-header h2 {
+            font-family: var(--font-display, 'Source Sans 3', system-ui, sans-serif);
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .comparison-header p {
+            color: var(--text-light);
+            font-size: 1.125rem;
+        }
+
+        .comparison-table {
+            background: var(--navy);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+        }
+
+        .table-header {
+            display: grid;
+            grid-template-columns: 2fr repeat(4, 1fr);
+            background: rgba(59, 130, 246, 0.1); /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .table-header-cell {
+            padding: 1.5rem 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .table-header-cell:first-child {
+            text-align: left;
+            padding-left: 2rem;
+        }
+
+        .table-header-cell.highlight {
+            background: var(--blue);
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr repeat(4, 1fr);
+            border-bottom: 1px solid var(--border-light);
+            transition: background 0.2s;
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        .table-row:hover {
+            background: rgba(59, 130, 246, 0.05); /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+        }
+
+        .table-cell {
+            padding: 1.25rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .table-cell:first-child {
+            justify-content: flex-start;
+            padding-left: 2rem;
+            color: var(--text-light);
+        }
+
+        .table-cell.highlight {
+            background: rgba(59, 130, 246, 0.05); /* theme-guardrail-allow: inherited from /pricing/ v1 stylesheet */
+        }
+
+        .check-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .check-icon svg {
+            width: 14px;
+            height: 14px;
+            color: var(--white);
+        }
+
+        .dash {
+            width: 12px;
+            height: 2px;
+            background: var(--gray-500);
+            border-radius: 1px;
+        }
+
+        .cell-value {
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .comparison-section { margin-top: 1.5rem; padding-top: 3.5rem; padding-bottom: 3.5rem; }
+        .comparison-table .table-header,
+        .comparison-table .table-row { grid-template-columns: 2fr repeat(3, 1fr); }
+        @media (max-width: 1024px) {
+            .comparison-table .table-header,
+            .comparison-table .table-row { grid-template-columns: 2fr repeat(3, 1fr); }
+            .comparison-table .table-header-cell:nth-child(n),
+            .comparison-table .table-cell:nth-child(n) { display: flex; }
+        }
+
+        /* FAQ */
+        .pv3-faq { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 3rem; margin-top: 1.75rem; }
+        .pv3-faq h3 { font-size: 1.0625rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .pv3-faq p { font-size: 0.9375rem; line-height: 1.55; color: var(--text-light); }
+        .pv3-faq a { color: var(--blue); }
+
+        /* closing CTA */
+        .pv3-close {
+            margin: 5.5rem 0 0; padding: 3rem; background: var(--pv3-navy); color: var(--pv3-on-navy); border-radius: 16px;
+            display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+        }
+        .pv3-close h2 { font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.375rem; }
+        .pv3-close p { font-size: 1rem; color: var(--pv3-on-navy-muted); }
+        .pv3-close-actions { flex-shrink: 0; display: flex; align-items: center; gap: 1.25rem; }
+        .pv3-link { color: var(--pv3-on-navy); text-decoration: none; font-size: 1rem; font-weight: 700; padding: 0.75rem 0.25rem; }
+        .pv3-btn-white {
+            display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 1.5rem; border-radius: 10px;
+            background: var(--surface-card); color: var(--pv3-navy); text-decoration: none; font-size: 1rem; font-weight: 700;
+        }
+        .pv3-btn-white:hover { background: var(--navy-light); }
+
+        .pv3-bottom-space { height: 2.5rem; }
+
+        @media (max-width: 1024px) {
+            .pv3-plans-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+        }
+        @media (max-width: 768px) {
+            .pv3-hero { padding: 7rem 1rem 4rem; }
+            .pv3-wrap { padding: 0 1rem; }
+            .seat-panel { padding: 1.25rem; }
+            .seat-head { flex-direction: column; align-items: flex-start; }
+            .seat-stepper { align-self: center; }
+            .pv3-addon-box { flex-direction: column; align-items: flex-start; }
+            .pv3-btn-outline { width: 100%; }
+            .comparison-section { padding: 3rem 1rem; }
+            .comparison-header h2 { font-size: 1.75rem; }
+            .comparison-header { margin-bottom: 2rem; }
+            .comparison-table .table-header,
+            .comparison-table .table-row { grid-template-columns: 1.5fr repeat(3, 1fr); }
+            .table-header-cell, .table-cell { padding: 0.875rem 0.5rem; font-size: 0.8125rem; }
+            .table-cell:first-child, .table-header-cell:first-child { padding-left: 1rem; }
+            .pv3-faq { grid-template-columns: 1fr; }
+            .pv3-close { flex-direction: column; align-items: flex-start; padding: 2rem; }
+            .pv3-close-actions { width: 100%; flex-direction: column; align-items: stretch; }
+            .pv3-btn-white, .pv3-link { text-align: center; }
+        }
+        /* Footer */
+        footer {
+            padding: 4rem 2rem 2rem;
+            background: var(--navy);
+            border-top: 1px solid var(--border-light);
+        }
+
+        .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-lighter);
+            font-size: 0.875rem;
+            margin-top: 1rem;
+            max-width: 280px;
+            line-height: 1.6;
+        }
+
+        .footer-column h4 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-lighter);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.625rem;
+        }
+
+        .footer-column a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.15s;
+        }
+
+        .footer-column a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8125rem;
+            color: var(--text-lighter);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pricing-card.popular {
+                transform: none;
+            }
+
+            .pricing-card.popular:hover {
+                transform: translateY(-8px);
+            }
+
+            .table-header,
+            .table-row {
+                grid-template-columns: 2fr repeat(2, 1fr);
+            }
+
+            .table-header-cell:nth-child(4),
+            .table-header-cell:nth-child(5),
+            .table-cell:nth-child(4),
+            .table-cell:nth-child(5) {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+        /* Responsive button text */
+        .short-text {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-center {
+                display: none;
+            }
+
+            .full-text {
+                display: none;
+            }
+
+            .short-text {
+                display: inline;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+
+            .table-header,
+            .table-row {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .table-header-cell:nth-child(3),
+            .table-cell:nth-child(3) {
+                display: none;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        /* ── v2: seat selector ─────────────────────────────── */
+        .hero { padding-bottom: 3rem; }
+        .hero-subtitle { max-width: 720px; }
+
+        .seat-panel {
+            max-width: 880px;
+            margin: 0 auto;
+            background: var(--surface-card, var(--navy-light));
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 1.75rem 2rem;
+            text-align: left;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            z-index: 1;
+        }
+
+        .seat-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .seat-label {
+            font-size: 1rem;
+            font-weight: 600;
+            display: block;
+        }
+
+        .seat-hint {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-top: 0.125rem;
+        }
+
+        .seat-stepper {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .seat-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            border: 1px solid var(--border-mid, var(--border-light));
+            background: transparent;
+            color: inherit;
+            font-size: 1.375rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.15s, border-color 0.15s;
+        }
+
+        .seat-btn:hover { border-color: var(--blue); color: var(--blue); }
+        .seat-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+        .seat-count {
+            font-family: var(--font-display, 'Source Sans 3', system-ui, sans-serif);
+            min-width: 84px;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 600;
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+
+        .seat-range {
+            width: 100%;
+            height: 44px;
+            margin: 0;
+            accent-color: var(--blue);
+            cursor: pointer;
+        }
+
+        .seat-foot {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 0.75rem;
+        }
+
+        .seat-quick { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+        .seat-pill {
+            height: 40px;
+            padding: 0 1rem;
+            border-radius: 999px;
+            border: 1px solid var(--border-mid, var(--border-light));
+            background: transparent;
+            color: inherit;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .seat-pill:hover { border-color: var(--blue); color: var(--blue); }
+        .seat-pill.active { background: var(--blue); border-color: var(--blue); color: var(--text-on-inverse); }
+
+        .saving-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--teal);
+            background: var(--blue-light);
+            padding: 0.5rem 0.875rem;
+            border-radius: 999px;
+        }
+
+        .saving-badge svg { width: 16px; height: 16px; }
+        .saving-badge[hidden] { display: none; }
+
+        /* ── v2: three plans ─────────────────────────────── */
+        .pricing-grid.plans-3 {
+            max-width: 1100px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .price-sub {
+            display: block;
+            font-size: 0.8125rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+            min-height: 1.25rem;
+        }
+
+        .pricing-card .card-btn { margin-top: auto; }
+
+        /* ── v2: API add-on strip ─────────────────────────── */
+        .addon-section { padding: 0 2rem 6rem; }
+
+        .addon-strip {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            padding: 1.5rem 2rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-light);
+            background: var(--surface-card, var(--navy-light));
+        }
+
+        .addon-strip h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .addon-strip p {
+            font-size: 0.9375rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        .addon-strip .btn { flex-shrink: 0; }
+
+        /* ── v2: compare table with 3 plans ──────────────── */
+        .comparison-table.plans-3 .table-header,
+        .comparison-table.plans-3 .table-row {
+            grid-template-columns: 2fr repeat(3, 1fr);
+        }
+
+        .comparison-header p.compare-note {
+            font-size: 1rem;
+        }
+
+        .table-cell .muted { color: var(--text-lighter); }
+
+        /* ── v2: CTA with two paths ──────────────────────── */
+        .cta-buttons .btn-outline { border-color: var(--text-on-inverse); }
+
+        @media (max-width: 1024px) {
+            .pricing-grid.plans-3 { grid-template-columns: 1fr; max-width: 520px; }
+            .comparison-table.plans-3 .table-header,
+            .comparison-table.plans-3 .table-row { grid-template-columns: 2fr repeat(3, 1fr); }
+            .comparison-table.plans-3 .table-header-cell:nth-child(4),
+            .comparison-table.plans-3 .table-cell:nth-child(4) { display: flex; }
+        }
+
+        @media (max-width: 768px) {
+            .seat-panel { padding: 1.25rem; }
+            .seat-head { flex-direction: column; align-items: flex-start; }
+            .seat-stepper { align-self: center; }
+            .addon-strip { flex-direction: column; align-items: flex-start; }
+            .addon-strip .btn { width: 100%; }
+            .comparison-table.plans-3 .table-header,
+            .comparison-table.plans-3 .table-row { grid-template-columns: 1.6fr repeat(3, 1fr); }
+            .table-header-cell, .table-cell { padding: 0.875rem 0.5rem; font-size: 0.8125rem; }
+            .table-cell:first-child, .table-header-cell:first-child { padding-left: 1rem; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+        }
+    </style>
+    <link rel="stylesheet" href="/css/mobile-nav.css?v=2f273654">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="logo">
+                <img src="/images/DR_logo_white@8x.png?v=2" alt="Dealroom.co">
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-center">
+                <a href="/solutions/" class="nav-link">Product</a>
+                <a href="/reports.html" class="nav-link">Reports</a>
+                <a href="/resources.html" class="nav-link">Resources</a>
+                <a href="/pricing/" class="nav-link active">Pricing</a>
+            </div>
+            <div class="nav-right">
+                <a href="https://app.dealroom.co/login" class="btn btn-ghost">Login</a>
+                <a href="/book-demo/" class="btn btn-primary"><span class="full-text">Book a demo</span><span class="short-text">Demo</span></a>
+            </div>
+        </div>
+    </nav><script src="/js/mobile-nav.js?v=864a19a61492a1a0"></script>
+
+    <!-- Mobile Navigation Dropdown -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="/solutions/" class="mobile-nav-link">Product</a>
+        <a href="/reports.html" class="mobile-nav-link">Reports</a>
+        <a href="/resources.html" class="mobile-nav-link">Resources</a>
+        <a href="/pricing/" class="mobile-nav-link">Pricing</a>
+        <a href="https://app.dealroom.co/login" class="mobile-nav-link">Login</a>
+        <a href="/book-demo/" class="mobile-nav-cta">Book a demo</a>
+    </div>
+
+    <main class="pv3">
+    <!-- Hero + seat selector -->
+    <div class="pv3-hero">
+        <div class="pv3-hero-inner">
+            <h1>Simple per-seat pricing. Get your quote in one click.</h1>
+            <p>Priced per seat, billed annually. Every seat gets full data access and its own export credits. Pick your team size below and request a quote with the numbers already filled in.</p>
+            <p class="pv3-currency">Prices in EUR · <a href="/pricing-usd">See USD pricing</a></p>
+        </div>
+        <div class="seat-panel" id="seatPanel">
+            <div class="seat-head">
+                <div>
+                    <label class="seat-label" for="seats">How many seats does your team need?</label>
+                    <div class="seat-hint">Minimum 3 seats. The per-seat rate drops as your team grows.</div>
+                </div>
+                <div class="seat-stepper">
+                    <button type="button" class="seat-btn" id="seatDec" aria-label="Remove a seat">&minus;</button>
+                    <div class="seat-count" id="seatCount" aria-live="polite">10</div>
+                    <button type="button" class="seat-btn" id="seatInc" aria-label="Add a seat">+</button>
+                </div>
+            </div>
+            <input class="seat-range" id="seats" type="range" min="3" max="25" step="1" value="10" aria-label="Number of seats">
+            <div class="seat-foot">
+                <div class="seat-quick" id="seatQuick">
+                    <button type="button" class="seat-pill" data-seats="3">3 seats</button>
+                    <button type="button" class="seat-pill" data-seats="5">5 seats</button>
+                    <button type="button" class="seat-pill active" data-seats="10">10 seats</button>
+                    <button type="button" class="seat-pill" data-seats="20">20 seats</button>
+                </div>
+                <div class="saving-badge" id="savingBadge">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span id="savingLabel">Volume rate: 29% below the 3-seat price</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Plans -->
+    <section class="pv3-plans">
+        <div class="pv3-wrap">
+            <div class="pv3-plans-grid">
+                <div class="pv3-card">
+                    <div>
+                        <div class="pv3-plan-name">Premium</div>
+                        <div class="pv3-plan-desc">Dealroom's core data and exports for growing teams</div>
+                    </div>
+                    <div>
+                        <div class="pv3-price-row">
+                            <span class="pv3-price" data-price="premium">€250</span>
+                            <span class="pv3-price-period">per seat / month</span>
+                        </div>
+                        <span class="pv3-price-sub" data-sub="premium">10 seats · €30,000 / year, billed annually</span>
+                    </div>
+                    <a href="/pricing/quote/?plan=premium&amp;seats=10" class="pv3-cta" data-cta="premium">Get a quote for 10 seats</a>
+                    <ul class="pv3-features">
+                    <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Premium access to Dealroom</span></li>
+                    <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>10,000 export credits per seat</span></li>
+                    <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>3-day free trial, no card required</span></li>
+                    <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Email support</span></li>
+                    </ul>
+                </div>
+
+                <div class="pv3-card popular">
+                    <span class="pv3-badge">Most popular</span>
+                    <div>
+                        <div class="pv3-plan-name">Premium Plus</div>
+                        <div class="pv3-plan-desc">Contacts, higher limits and an MCP connection for your AI tools</div>
+                    </div>
+                    <div>
+                        <div class="pv3-price-row">
+                            <span class="pv3-price" data-price="plus">€325</span>
+                            <span class="pv3-price-period">per seat / month</span>
+                        </div>
+                        <span class="pv3-price-sub" data-sub="plus">10 seats · €39,000 / year, billed annually</span>
+                    </div>
+                    <a href="/pricing/quote/?plan=premium-plus&amp;seats=10" class="pv3-cta" data-cta="plus">Get a quote for 10 seats</a>
+                    <ul class="pv3-features">
+                    <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Everything in Premium</span></li>
+                    <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>30,000 export credits per seat</span></li>
+                    <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>3,000 business email credits</span></li>
+                    <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>MCP connection for Claude, Cursor and VS Code</span></li>
+                    <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Priority support</span></li>
+                    </ul>
+                </div>
+
+                <div class="pv3-card enterprise">
+                    <div>
+                        <div class="pv3-plan-name">Enterprise</div>
+                        <div class="pv3-plan-desc">For 20+ seats, SSO and analyst support</div>
+                    </div>
+                    <div>
+                        <div class="pv3-price-row">
+                            <span class="pv3-price">Custom</span>
+                        </div>
+                        <span class="pv3-price-sub">Volume pricing for large teams and full-company rollouts</span>
+                    </div>
+                    <a href="/pricing/quote/?plan=enterprise&amp;seats=10" class="pv3-cta navy" data-cta="enterprise">Get a custom quote</a>
+                    <ul class="pv3-features">
+                    <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Everything in Premium Plus</span></li>
+                    <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Unlimited export credits</span></li>
+                    <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Hosted MCP server for AI agents</span></li>
+                    <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>SSO sign-in</span></li>
+                    <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Analyst access, 2h per quarter</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- API add-on -->
+            <div class="pv3-addon">
+                <div class="pv3-addon-box">
+                    <div>
+                        <h3>Add the API to any plan</h3>
+                        <p>RESTful API access for your own software and AI agents, with real-time sync and custom rate limits. Priced on call volume, on top of any plan.</p>
+                    </div>
+                    <a href="/pricing/quote/?plan=premium-plus&amp;seats=10&amp;addon=api" class="pv3-btn-outline" data-cta="api">Add the API to my quote</a>
+                </div>
+            </div>
+
+            <!-- Compare -->
+            <section class="comparison-section">
+                <div class="comparison-inner">
+                    <div class="comparison-header">
+                        <h2>Compare all features</h2>
+                        <p>Everything you need to know about each plan</p>
+                    </div>
+                    <div class="comparison-table">
+                        <div class="table-header">
+                            <div class="table-header-cell">Features</div>
+                            <div class="table-header-cell">Premium</div>
+                            <div class="table-header-cell highlight">Premium Plus</div>
+                            <div class="table-header-cell">Enterprise</div>
+                        </div>
+                <div class="table-row">
+                    <div class="table-cell">Price per seat / month</div>
+                    <div class="table-cell"><span class="cell-value"><span data-price="premium">€250</span></span></div>
+                    <div class="table-cell highlight"><span class="cell-value"><span data-price="plus">€325</span></span></div>
+                    <div class="table-cell"><span class="cell-value">Custom</span></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">Seats</div>
+                    <div class="table-cell"><span class="cell-value">3 – 20</span></div>
+                    <div class="table-cell highlight"><span class="cell-value">3 – 20</span></div>
+                    <div class="table-cell"><span class="cell-value">20+</span></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">Export credits per seat</div>
+                    <div class="table-cell"><span class="cell-value">10,000</span></div>
+                    <div class="table-cell highlight"><span class="cell-value">30,000</span></div>
+                    <div class="table-cell"><span class="cell-value">Unlimited</span></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">Business email credits</div>
+                    <div class="table-cell"><span class="dash"></span></div>
+                    <div class="table-cell highlight"><span class="cell-value">3,000</span></div>
+                    <div class="table-cell"><span class="cell-value">10,000</span></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">CRM integration</div>
+                    <div class="table-cell"><span class="dash"></span></div>
+                    <div class="table-cell highlight"><span class="check-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
+                    <div class="table-cell"><span class="check-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">MCP connection</div>
+                    <div class="table-cell"><span class="dash"></span></div>
+                    <div class="table-cell highlight"><span class="check-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
+                    <div class="table-cell"><span class="check-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">API access</div>
+                    <div class="table-cell"><span class="cell-value">Add-on</span></div>
+                    <div class="table-cell highlight"><span class="cell-value">Add-on</span></div>
+                    <div class="table-cell"><span class="cell-value">Add-on</span></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">SSO authentication</div>
+                    <div class="table-cell"><span class="dash"></span></div>
+                    <div class="table-cell highlight"><span class="dash"></span></div>
+                    <div class="table-cell"><span class="check-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">Dedicated analyst support</div>
+                    <div class="table-cell"><span class="dash"></span></div>
+                    <div class="table-cell highlight"><span class="dash"></span></div>
+                    <div class="table-cell"><span class="cell-value">2h/quarter</span></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">Support</div>
+                    <div class="table-cell"><span class="cell-value">Email</span></div>
+                    <div class="table-cell highlight"><span class="cell-value">Priority</span></div>
+                    <div class="table-cell"><span class="cell-value">Dedicated</span></div>
+                </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="pv3-section">
+                <h2>Frequently asked questions</h2>
+                <div class="pv3-faq">
+                <div>
+                    <h3>Is this really per month?</h3>
+                    <p>Prices are shown per seat per month so they are easy to compare, but plans are billed annually. You pay for 12 months up front and can pay by card, bank transfer or invoice.</p>
+                </div>
+                <div>
+                    <h3>Can I add seats later?</h3>
+                    <p>Yes. Add seats at any time and pay the prorated difference. Every seat on your account moves to the lower rate as your team grows, so adding seats never costs more per seat than you are paying today.</p>
+                </div>
+                <div>
+                    <h3>What's included in the free trial?</h3>
+                    <p>A 3-day free trial with full Premium access, 50 export credits and every company profile and funding round. No credit card required.</p>
+                </div>
+                <div>
+                    <h3>Can I connect Dealroom to my AI assistant?</h3>
+                    <p>Yes. Premium Plus and Enterprise include our hosted MCP server, so Claude, Cursor, VS Code and Codex can query company, investor and funding data in plain language. It is read-only and returns only the data your licence permits. See the <a href="/mcp/">setup guide</a>.</p>
+                </div>
+                <div>
+                    <h3>How is the API priced?</h3>
+                    <p>The API is an add-on to any plan, priced on the volume of calls you need rather than on seats. Tick the API add-on when you request your quote and we will price it alongside your seats.</p>
+                </div>
+                <div>
+                    <h3>Do you offer discounts for startups or nonprofits?</h3>
+                    <p>Yes. Qualified startups and nonprofit organisations get special pricing. Contact sales to check eligibility.</p>
+                </div>
+                </div>
+            </section>
+
+            <!-- Closing CTA -->
+            <div class="pv3-close">
+                <div>
+                    <h2>Want to see it before you decide?</h2>
+                    <p>Book a 30-minute walkthrough, or start a 3-day free trial with full Premium access. No card required.</p>
+                </div>
+                <div class="pv3-close-actions">
+                    <a href="/book-demo/" class="pv3-link">Book a demo</a>
+                    <a href="/book-demo/" class="pv3-btn-white">Start free trial</a>
+                </div>
+            </div>
+            <div class="pv3-bottom-space"></div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer (loaded from partial) -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Load footer
+        fetch('/partials/footer.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer-placeholder').innerHTML = html;
+            })
+            .catch(err => console.error('Error loading footer:', err));
+    </script>
+    <script>
+        // Seat selector: annual price points from the internal seat table,
+        // seat counts in between interpolated linearly, extended at the last
+        // marginal rate above 20 seats. Per seat / month = annual / 12 / seats.
+        (function () {
+            const TABLE = {
+                premium: [[3, 12600], [4, 15600], [5, 18000], [10, 30000], [15, 36500], [20, 41000]],
+                plus:    [[3, 17000], [4, 20700], [5, 24000], [10, 39000], [15, 47500], [20, 54000]]
+            };
+            const MIN = 3, MAX = 25;
+            const range = document.getElementById('seats');
+            const count = document.getElementById('seatCount');
+            const dec = document.getElementById('seatDec');
+            const inc = document.getElementById('seatInc');
+            const pills = Array.from(document.querySelectorAll('.seat-pill'));
+            const badge = document.getElementById('savingBadge');
+            const savingLabel = document.getElementById('savingLabel');
+            const prices = Array.from(document.querySelectorAll('[data-price]'));
+            const subs = Array.from(document.querySelectorAll('[data-sub]'));
+            const ctas = Array.from(document.querySelectorAll('[data-cta]'));
+
+            const fmt = n => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+            function annual(rows, seats) {
+                const last = rows[rows.length - 1];
+                if (seats >= last[0]) {
+                    const prev = rows[rows.length - 2];
+                    const marginal = (last[1] - prev[1]) / (last[0] - prev[0]);
+                    return last[1] + (seats - last[0]) * marginal;
+                }
+                for (let i = 0; i < rows.length - 1; i++) {
+                    const a = rows[i], b = rows[i + 1];
+                    if (seats >= a[0] && seats <= b[0]) {
+                        return a[1] + (b[1] - a[1]) * (seats - a[0]) / (b[0] - a[0]);
+                    }
+                }
+                return rows[0][1];
+            }
+
+            function render(seats) {
+                seats = Math.max(MIN, Math.min(MAX, seats));
+                range.value = seats;
+                count.textContent = seats;
+                dec.disabled = seats <= MIN;
+                inc.disabled = seats >= MAX;
+                pills.forEach(p => p.classList.toggle('active', Number(p.dataset.seats) === seats));
+
+                const perSeat = {
+                    premium: annual(TABLE.premium, seats) / 12 / seats,
+                    plus: annual(TABLE.plus, seats) / 12 / seats
+                };
+                const yearly = {
+                    premium: annual(TABLE.premium, seats),
+                    plus: annual(TABLE.plus, seats)
+                };
+                prices.forEach(el => { el.textContent = '€' + fmt(perSeat[el.dataset.price]); });
+                subs.forEach(el => {
+                    el.textContent = seats + ' seats · €' + fmt(yearly[el.dataset.sub]) + ' / year, billed annually';
+                });
+
+                const listRate = TABLE.premium[0][1] / 12 / 3;
+                const saving = Math.round((1 - perSeat.premium / listRate) * 100);
+                badge.hidden = seats <= MIN;
+                savingLabel.textContent = 'Volume rate: ' + saving + '% below the 3-seat price';
+
+                const planSlug = { premium: 'premium', plus: 'premium-plus', enterprise: 'enterprise', api: 'premium-plus' };
+                ctas.forEach(el => {
+                    const key = el.dataset.cta;
+                    const url = new URL(el.getAttribute('href'), location.origin);
+                    url.searchParams.set('plan', planSlug[key]);
+                    url.searchParams.set('seats', seats);
+                    el.setAttribute('href', url.pathname + url.search);
+                    if (key === 'premium' || key === 'plus') {
+                        el.textContent = 'Get a quote for ' + seats + ' seats';
+                    }
+                });
+            }
+
+            range.addEventListener('input', () => render(Number(range.value)));
+            dec.addEventListener('click', () => render(Number(range.value) - 1));
+            inc.addEventListener('click', () => render(Number(range.value) + 1));
+            pills.forEach(p => p.addEventListener('click', () => render(Number(p.dataset.seats))));
+
+            const fromUrl = Number(new URLSearchParams(location.search).get('seats'));
+            render(fromUrl >= MIN && fromUrl <= MAX ? fromUrl : 10);
+        })();
+
+    </script>
+<script src="/js/newsletter.js"></script>
+    
+<style>
+#dr-consent{position:fixed;left:16px;bottom:16px;z-index:99991;max-width:340px;
+background:var(--navy);color:var(--white);border:1px solid var(--border-light);
+border-radius:12px;box-shadow:0 16px 40px -14px rgba(0,0,0,.28);padding:14px 16px;
+font-family:var(--font-sans,'DM Sans',sans-serif);font-size:.8rem;line-height:1.5}
+#dr-consent p{margin:0 0 10px;color:var(--text-light)}
+#dr-consent a{color:var(--blue-ink)}
+#dr-consent .dr-c-btns{display:flex;gap:8px}
+#dr-consent button{flex:1;padding:.42rem .7rem;border-radius:8px;font-size:.78rem;font-weight:600;
+cursor:pointer;border:1px solid transparent;font-family:inherit}
+#dr-c-yes{background:var(--blue);color:#fff}
+#dr-c-no{background:transparent;color:var(--text-light);border-color:var(--border-light)}
+#dr-c-no:hover,#dr-c-manage:hover{color:var(--white);border-color:var(--border-mid)}
+#dr-c-manage,#dr-c-save{background:transparent;color:var(--text-light);border-color:var(--border-light)}
+#dr-c-prefs{margin:0 0 10px;padding:0;border:0}
+#dr-c-prefs label{display:flex;gap:8px;align-items:flex-start;margin:0 0 8px;color:var(--text-light);cursor:pointer}
+#dr-c-prefs label b{color:var(--white);font-weight:600}
+#dr-c-prefs input{margin-top:3px}
+#dr-c-prefs .dr-c-btns{margin-top:4px}
+@media (max-width:520px){#dr-consent{left:12px;right:12px;bottom:12px;max-width:none}}
+</style>
+<div id="dr-consent" role="region" aria-label="Cookie consent" style="display:none">
+  <p>We use cookies for analytics and marketing, only with your consent. You can choose per category. See our <a href="/cookie-policy" target="_blank">cookie policy</a>.</p>
+  <fieldset id="dr-c-prefs" hidden>
+    <label><input type="checkbox" checked disabled><span><b>Strictly necessary</b><br>Security and remembering your choice. Always on.</span></label>
+    <label><input type="checkbox" id="dr-c-analytics"><span><b>Analytics</b><br>Google Analytics, to see how the site is used.</span></label>
+    <label><input type="checkbox" id="dr-c-marketing"><span><b>Marketing</b><br>HubSpot, to recognise returning visitors and link visits to our contact records.</span></label>
+    <div class="dr-c-btns"><button id="dr-c-save">Save choices</button></div>
+  </fieldset>
+  <div class="dr-c-btns">
+    <button id="dr-c-no">Reject all</button>
+    <button id="dr-c-manage">Choose</button>
+    <button id="dr-c-yes">Accept all</button>
+  </div>
+</div>
+<script defer src="/js/cookie-consent.js?v=266b98566b47058a"></script><script>window.__CF$cv$params={r:'a4e925946935a4a0',t:'MTc5MjY3ODg2OQ==',u:'01a163fcb94576a2ab5004d63f34267f',ut:'U405U94xMdXJKyEzOWvI2MM6huF7o9CO5iMl9O6laRQ-1792678869-1.2.1.1-k0wKuHCxlEBPhOsdpoZGLu3XiKG18ytS4mR4zDmp9n1p3cvxq9EJFGyYIMew_RCkaJwdHhoi_WP6fd4CbQv9v.BgVTR0nDD41R2ZFbp9W00',i:60};(function(){if(!document.body)return;var s=document.createElement('script');s.src='/cdn-cgi/challenge-platform/scripts/precursor/main.js';document.head.appendChild(s);})();</script></body>
+</html>

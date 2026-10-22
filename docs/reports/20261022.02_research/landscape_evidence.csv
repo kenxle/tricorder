@@ -1,0 +1,145 @@
+tool,group,capability,shown_on_pages_read
+Affinity,incumbent,market_signals,yes
+Affinity,incumbent,comps,not_shown
+Affinity,incumbent,financial_red_flags,not_shown
+Affinity,incumbent,reads_deck_or_data_room,not_shown
+Affinity,incumbent,memo,not_shown
+Affinity,incumbent,claim_to_source,not_shown
+Harmonic,incumbent,market_signals,yes
+Harmonic,incumbent,comps,not_shown
+Harmonic,incumbent,financial_red_flags,not_shown
+Harmonic,incumbent,reads_deck_or_data_room,not_shown
+Harmonic,incumbent,memo,not_shown
+Harmonic,incumbent,claim_to_source,not_shown
+Specter,incumbent,market_signals,yes
+Specter,incumbent,comps,not_shown
+Specter,incumbent,financial_red_flags,not_shown
+Specter,incumbent,reads_deck_or_data_room,not_shown
+Specter,incumbent,memo,not_shown
+Specter,incumbent,claim_to_source,not_shown
+Grata,incumbent,market_signals,yes
+Grata,incumbent,comps,yes
+Grata,incumbent,financial_red_flags,not_shown
+Grata,incumbent,reads_deck_or_data_room,not_shown
+Grata,incumbent,memo,not_shown
+Grata,incumbent,claim_to_source,not_shown
+PitchBook,incumbent,market_signals,not_shown
+PitchBook,incumbent,comps,not_shown
+PitchBook,incumbent,financial_red_flags,not_shown
+PitchBook,incumbent,reads_deck_or_data_room,not_shown
+PitchBook,incumbent,memo,not_shown
+PitchBook,incumbent,claim_to_source,not_shown
+Crunchbase,incumbent,market_signals,yes
+Crunchbase,incumbent,comps,yes
+Crunchbase,incumbent,financial_red_flags,not_shown
+Crunchbase,incumbent,reads_deck_or_data_room,not_shown
+Crunchbase,incumbent,memo,not_shown
+Crunchbase,incumbent,claim_to_source,not_shown
+Tracxn,incumbent,market_signals,yes
+Tracxn,incumbent,comps,yes
+Tracxn,incumbent,financial_red_flags,not_shown
+Tracxn,incumbent,reads_deck_or_data_room,not_shown
+Tracxn,incumbent,memo,not_shown
+Tracxn,incumbent,claim_to_source,not_shown
+Dealroom,incumbent,market_signals,yes
+Dealroom,incumbent,comps,not_shown
+Dealroom,incumbent,financial_red_flags,not_shown
+Dealroom,incumbent,reads_deck_or_data_room,not_shown
+Dealroom,incumbent,memo,not_shown
+Dealroom,incumbent,claim_to_source,not_shown
+CB Insights,incumbent,market_signals,yes
+CB Insights,incumbent,comps,not_shown
+CB Insights,incumbent,financial_red_flags,not_shown
+CB Insights,incumbent,reads_deck_or_data_room,not_shown
+CB Insights,incumbent,memo,not_shown
+CB Insights,incumbent,claim_to_source,yes
+Carta (data side),incumbent,market_signals,not_shown
+Carta (data side),incumbent,comps,yes
+Carta (data side),incumbent,financial_red_flags,not_shown
+Carta (data side),incumbent,reads_deck_or_data_room,not_shown
+Carta (data side),incumbent,memo,not_shown
+Carta (data side),incumbent,claim_to_source,not_shown
+NFX Signal,incumbent,market_signals,not_shown
+NFX Signal,incumbent,comps,not_shown
+NFX Signal,incumbent,financial_red_flags,not_shown
+NFX Signal,incumbent,reads_deck_or_data_room,not_shown
+NFX Signal,incumbent,memo,not_shown
+NFX Signal,incumbent,claim_to_source,not_shown
+Clay,incumbent,market_signals,yes
+Clay,incumbent,comps,not_shown
+Clay,incumbent,financial_red_flags,not_shown
+Clay,incumbent,reads_deck_or_data_room,not_shown
+Clay,incumbent,memo,not_shown
+Clay,incumbent,claim_to_source,not_shown
+Wokelo,entrant,market_signals,yes
+Wokelo,entrant,comps,not_shown
+Wokelo,entrant,financial_red_flags,not_shown
+Wokelo,entrant,reads_deck_or_data_room,not_shown
+Wokelo,entrant,memo,yes
+Wokelo,entrant,claim_to_source,yes
+Keye,entrant,market_signals,not_shown
+Keye,entrant,comps,not_shown
+Keye,entrant,financial_red_flags,yes
+Keye,entrant,reads_deck_or_data_room,yes
+Keye,entrant,memo,not_shown
+Keye,entrant,claim_to_source,yes
+Termina,entrant,market_signals,not_shown
+Termina,entrant,comps,not_shown
+Termina,entrant,financial_red_flags,yes
+Termina,entrant,reads_deck_or_data_room,not_shown
+Termina,entrant,memo,not_shown
+Termina,entrant,claim_to_source,not_shown
+askRIA,entrant,market_signals,not_shown
+askRIA,entrant,comps,not_shown
+askRIA,entrant,financial_red_flags,yes
+askRIA,entrant,reads_deck_or_data_room,yes
+askRIA,entrant,memo,yes
+askRIA,entrant,claim_to_source,not_shown
+V7 Go,entrant,market_signals,not_shown
+V7 Go,entrant,comps,yes
+V7 Go,entrant,financial_red_flags,yes
+V7 Go,entrant,reads_deck_or_data_room,yes
+V7 Go,entrant,memo,yes
+V7 Go,entrant,claim_to_source,yes
+Energent,entrant,market_signals,not_shown
+Energent,entrant,comps,not_shown
+Energent,entrant,financial_red_flags,yes
+Energent,entrant,reads_deck_or_data_room,yes
+Energent,entrant,memo,yes
+Energent,entrant,claim_to_source,not_shown
+Decile Hub,entrant,market_signals,not_shown
+Decile Hub,entrant,comps,not_shown
+Decile Hub,entrant,financial_red_flags,not_shown
+Decile Hub,entrant,reads_deck_or_data_room,not_shown
+Decile Hub,entrant,memo,yes
+Decile Hub,entrant,claim_to_source,not_shown
+Fundwave,entrant,market_signals,not_shown
+Fundwave,entrant,comps,not_shown
+Fundwave,entrant,financial_red_flags,not_shown
+Fundwave,entrant,reads_deck_or_data_room,not_shown
+Fundwave,entrant,memo,not_shown
+Fundwave,entrant,claim_to_source,not_shown
+Visible,entrant,market_signals,not_shown
+Visible,entrant,comps,not_shown
+Visible,entrant,financial_red_flags,not_shown
+Visible,entrant,reads_deck_or_data_room,not_shown
+Visible,entrant,memo,not_shown
+Visible,entrant,claim_to_source,not_shown
+Apify AI Dealflow Analysis,entrant,market_signals,not_shown
+Apify AI Dealflow Analysis,entrant,comps,yes
+Apify AI Dealflow Analysis,entrant,financial_red_flags,yes
+Apify AI Dealflow Analysis,entrant,reads_deck_or_data_room,yes
+Apify AI Dealflow Analysis,entrant,memo,yes
+Apify AI Dealflow Analysis,entrant,claim_to_source,yes
+Flybridge memo generator,entrant,market_signals,not_shown
+Flybridge memo generator,entrant,comps,not_shown
+Flybridge memo generator,entrant,financial_red_flags,not_shown
+Flybridge memo generator,entrant,reads_deck_or_data_room,yes
+Flybridge memo generator,entrant,memo,yes
+Flybridge memo generator,entrant,claim_to_source,not_shown
+Diligent (open source),entrant,market_signals,not_shown
+Diligent (open source),entrant,comps,yes
+Diligent (open source),entrant,financial_red_flags,yes
+Diligent (open source),entrant,reads_deck_or_data_room,not_shown
+Diligent (open source),entrant,memo,yes
+Diligent (open source),entrant,claim_to_source,yes

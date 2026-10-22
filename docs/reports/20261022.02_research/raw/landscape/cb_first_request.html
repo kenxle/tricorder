@@ -1,0 +1,110 @@
+---
+updatedAt: 2026-10-20T23:54:26.000Z
+agentTools:
+  projectIndex: https://data.crunchbase.com/llms.txt
+---
+
+# Make your first API request
+
+Enter your existing key and try a live organization lookup.
+
+Retrieve the Crunchbase company profile, check the response, then choose which fields to return. You can follow along in the interactive API reference or use cURL.
+
+**Before you start:** you need a provisioned Crunchbase REST API key and a browser or terminal. No application code is required.
+
+## 1. Have your API key ready
+
+If your API access is already provisioned, open <a href="https://www.crunchbase.com/account/integrations/crunchbase-api" target="_blank" rel="noopener noreferrer">your Crunchbase API integrations settings</a>, sign in, and select **Show Key**. If you cannot find your key, contact your account team.
+
+New REST API access is available through <a href="https://about.crunchbase.com/products/data-licensing" target="_blank" rel="noopener noreferrer">the Crunchbase sales team</a>. An MCP seat is a separate access arrangement; this request requires a REST API key.
+
+## 2. Open the interactive request
+
+<a href="https://data.crunchbase.com/reference/getorganization" target="_blank" rel="noopener noreferrer">Open Lookup an Organization →</a>
+
+In the reference page:
+
+1. Under **CREDENTIALS**, enter your API key in the **Header** input. ReadMe uses it as the `X-cb-user-key` request header. Enter only the key, without a header name or a Bearer prefix.
+2. Under **Path Params**, set **entity\_id** to `crunchbase`.
+3. Leave the optional **field\_ids** and **card\_ids** inputs empty for this first request.
+4. Choose a code language if you want to see the equivalent request.
+5. Click **Try It!** to send the request.
+
+The request URL should be:
+
+```text
+https://api.crunchbase.com/v4/data/entities/organizations/crunchbase
+```
+
+This basic request works with all current REST API packages. For additional fields and cards, choose the reference matching your <a href="https://data.crunchbase.com/docs/api-packages-overview" target="_blank" rel="noopener noreferrer">licensed package</a>.
+
+## 3. Check the live response
+
+After clicking **Try It!**, look for **HTTP 200** in the live response. The response includes the following values (excerpt; other fields omitted):
+
+```json
+{
+  "properties": {
+    "identifier": {
+      "uuid": "43ac6c2f-65ec-5b40-89d6-ab9d4c4988ef",
+      "value": "Crunchbase",
+      "permalink": "crunchbase"
+    }
+  }
+}
+```
+
+* **`uuid`** is the organization's stable identifier. Store it when linking Crunchbase data to your records.
+* **`value`** is its display name.
+* **`permalink`** is the readable identifier used in this request's URL.
+
+Other fields can vary as data changes. A schema-generated example containing values such as `string` is not evidence of a live request: click **Try It!** and inspect the returned HTTP status and response.
+
+## Alternatively, use cURL
+
+Set `CRUNCHBASE_API_KEY` to your provisioned key in your local environment, then run:
+
+```bash
+curl --request GET \
+  'https://api.crunchbase.com/v4/data/entities/organizations/crunchbase' \
+  --header "X-cb-user-key: $CRUNCHBASE_API_KEY" \
+  --header 'Accept: application/json'
+```
+
+## 4. Choose the fields you need
+
+Now request the company's identifier, short description, and website.
+
+In the same interactive reference, keep **entity\_id** set to `crunchbase`. Under **field\_ids**, click **ADD STRING** and select `identifier`. Repeat for `short_description` and `website_url`, adding each as a separate item. Leave **card\_ids** empty, then click **Try It!** again.
+
+Or run:
+
+```bash
+curl --request GET \
+  'https://api.crunchbase.com/v4/data/entities/organizations/crunchbase?field_ids=identifier,short_description,website_url' \
+  --header "X-cb-user-key: $CRUNCHBASE_API_KEY" \
+  --header 'Accept: application/json'
+```
+
+Check for **HTTP 200** and the three requested fields under `properties`. The website is `https://www.crunchbase.com`; the description may change as the company profile is updated.
+
+`field_ids` selects fields on the organization. To retrieve related records, such as founders or funding rounds, learn about cards in <a href="https://data.crunchbase.com/docs/using-entity-lookup-apis" target="_blank" rel="noopener noreferrer">Entity Lookup</a>.
+
+## If the request fails
+
+| Result                                    | What to check                                                                                                                                                                                                                                                                             |
+| ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **401** (`Unauthorized user_key`)         | Confirm the provisioned key was entered without extra spaces and is being sent in `X-cb-user-key`.                                                                                                                                                                                        |
+| **404**                                   | Confirm `entity_id` is `crunchbase`, not the literal placeholder `entity_id`.                                                                                                                                                                                                             |
+| **429**                                   | Pause and follow the <a href="https://data.crunchbase.com/docs/using-the-api#request-limits-and-retries" target="_blank" rel="noopener noreferrer">rate-limit and retry guidance</a>.                                                                                                     |
+| **200, but an expected field is missing** | Check the spelling against the reference for your <a href="https://data.crunchbase.com/docs/api-packages-overview" target="_blank" rel="noopener noreferrer">licensed package</a>. An unknown field may be omitted rather than returning an error. Retry with the exact fields in step 4. |
+| **Other error**                           | Read the response message, clear optional field/card selections, and retry the minimal request. If it still fails, contact your account team with the status and error message; do not include your API key.                                                                              |
+| **No HTTP response**                      | Check connectivity and browser extensions. Try the equivalent cURL request to help distinguish a browser issue from an API response.                                                                                                                                                      |
+
+## Next steps
+
+* [Understand the Crunchbase data model](https://data.crunchbase.com/docs/understand-the-crunchbase-data-model): follow an organization’s founders card to a person record.
+* <a href="https://data.crunchbase.com/docs/using-search-apis" rel="noopener noreferrer">Search for matching companies</a>.
+* <a href="https://data.crunchbase.com/docs/using-entity-lookup-apis" rel="noopener noreferrer">Retrieve fields and relationships</a>.
+* <a href="https://data.crunchbase.com/docs/api-packages-overview" rel="noopener noreferrer">Explore available data and packages</a>.
+* <a href="https://data.crunchbase.com/docs/using-the-api" rel="noopener noreferrer">Review authentication, limits, and retries</a>.

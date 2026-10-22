@@ -1,0 +1,315 @@
+SOURCE: https://github.com/dforwardfeed/memo_generator
+FETCHED: 2026-10-22 10:29
+HTTP: 200
+
+
+ GitHub - dforwardfeed/memo_generator: Tool that generates AI startup investment memorandums · GitHub
+ Skip to content
+Navigation Menu
+Sign in
+Appearance settings
+Platform
+AI CODE CREATION
+GitHub CopilotWrite better code with AI
+GitHub Copilot appDirect agents from issue to merge
+MCP RegistryIntegrate external tools
+DEVELOPER WORKFLOWS
+ActionsAutomate any workflow
+CodespacesInstant dev environments
+IssuesPlan and track work
+Code ReviewManage code changes
+Code QualityEnforce quality at merge
+APPLICATION SECURITY
+GitHub Advanced SecurityFind and fix vulnerabilities
+Code securitySecure your code as you build
+Secret protectionStop leaks before they start
+EXPLORE
+Why GitHub
+Documentation
+Blog
+Changelog
+Marketplace
+View all features
+Solutions
+BY COMPANY SIZE
+Enterprises
+Small and medium teams
+Startups
+Nonprofits
+BY USE CASE
+App Modernization
+DevSecOps
+DevOps
+CI/CD
+View all use cases
+BY INDUSTRY
+Healthcare
+Financial services
+Manufacturing
+Government
+View all industries
+View all solutions
+Resources
+EXPLORE BY TOPIC
+AI
+Software Development
+DevOps
+Security
+View all topics
+EXPLORE BY TYPE
+Customer stories
+Events & webinars
+Ebooks & reports
+Business insights
+GitHub Skills
+SUPPORT & SERVICES
+Documentation
+Customer support
+Community forum
+Trust center
+Partners
+View all resources
+Open Source
+COMMUNITY
+GitHub SponsorsFund open source developers
+PROGRAMS
+Security Lab
+Maintainer Community
+GitHub Stars
+Archive Program
+REPOSITORIES
+Topics
+Trending
+Collections
+Enterprise
+ENTERPRISE SOLUTIONS
+Enterprise platformAI-powered developer platform
+AVAILABLE ADD-ONS
+GitHub Advanced SecurityEnterprise-grade security features
+Copilot for BusinessEnterprise-grade AI features
+Premium SupportEnterprise-grade 24/7 support
+Pricing
+Search/
+Sign inSign up
+Appearance settings
+ You signed in with another tab or window. Reload to refresh your session.
+ You signed out in another tab or window. Reload to refresh your session.
+ You switched accounts on another tab or window. Reload to refresh your session.
+Dismiss alert
+{{ message }}
+dforwardfeed
+memo_generator
+Repository navigation
+Code
+Issues
+Pull requests1 (1)
+Actions
+Projects
+Security and quality
+Insights
+More items
+memo_generatorPublic
+NotificationsYou must be signed in to change notification settings
+Fork37 (37)
+Star96 (96)You must be signed in to star a repository
+About
+Tool that generates AI startup investment memorandums 
+Resources
+Readme
+MIT license
+Activity
+Stars
+96 stars
+Watchers
+10 watching
+Forks
+37 forks
+Report repository
+main
+BranchesTags
+Go to fileCode
+Open more actions menu
+Latest commit
+History10 Commits
+10 Commits
+Folders and files
+NameName
+Last commit message
+Last commit date
+attached_assets
+attached_assets
+image
+image
+public/images
+public/images
+src
+src
+uploads
+uploads
+.env.example
+.env.example
+.gitignore
+.gitignore
+.prettierignore
+.prettierignore
+.replit
+.replit
+LICENSE
+LICENSE
+README.md
+README.md
+agents.py
+agents.py
+generated-icon.png
+generated-icon.png
+index.html
+index.html
+index.js
+index.js
+main.py
+main.py
+node
+node
+package-lock.json
+package-lock.json
+package.json
+package.json
+replit.nix
+replit.nix
+requirements.txt
+requirements.txt
+tsconfig.json
+tsconfig.json
+vite.config.js
+vite.config.js
+View all files
+Repository files navigation
+README
+MIT license
+More items
+Flybridge Investment Memorandum Generator
+Overview
+The Flybridge memo generator tool helps turn decks, business plans, and call notes into a first-draft VC investment memo for AI startups. For founders, it offers insights into how VCs might evaluate your business and simplifies the process of presenting your company to investors by creating a draft memo based on the information provided. To get the most accurate results, provide as much context as possible. A helpful tip is to record your pitch and upload the transcript along with any supporting materials.
+Limitations
+The memo generator produces a strong draft addressing key investor considerations but serves as a starting point, not a finished product. It covers 50-60% of the work, requiring human input for nuance and judgment. The tool may reflect biases in the input and is limited by OpenAI's o1 model. Competitor analysis provides initial insights but should be supplemented with additional research, and market size estimates should include a separate bottoms-up analysis. This tool is for informational purposes only.
+Features
+Smart Document Processing
+Support for multiple document formats (PDF, Word, scanned documents)
+Built-in OCR capability for processing scanned materials
+Web content integration through URL processing
+Agentic research analysis
+Automated market research and competitor analysis
+Market size and growth rate calculations
+Team Analysis
+LinkedIn profile integration for founder background analysis
+Memorandum Generation
+Auto-generated comprehensive investment memorandums
+Feedback and Observability
+Integration with Portkey's feedback API for quality monitoring
+Getting Started
+Prerequisites
+Node.js (v16.x or higher)
+Python (v3.8 or higher)
+npm (Node Package Manager)
+pip (Python Package Manager)
+Google Cloud SDK (for managing Google Cloud resources)
+You'll need to set up the following API keys in your environment variables:
+OpenAI API Key
+Portkey API Key
+EXA AI API Key
+Proxycurl API Key
+Google Cloud Vision API credentials JSON file
+Installation
+Clone the Repository
+git clone https://github.com/danielp1234/memo-generator.git
+cd memo-generator
+Install Node.js Dependencies
+npm install
+Install Python Dependencies
+pip install -r requirements.txt
+pip install 'crewai[tools]'
+Build the Project
+npm run build
+Set Up Environment Variables
+Rename the .env.example file to simply .env and fill in the below environment variables (see below for instructions):
+OPENAI_API_KEY=your-openai-api-key
+EXA_API_KEY==your-exa-api-key
+PROXYCURL_API_KEY=your-proxycurl-api-key
+GOOGLE_APPLICATION_CREDENTIALS=./path-to-your-google-cloud-credentials.json
+PORTKEY_API_KEY=your-portkey-api-key
+PORT=3002
+GOOGLE_CLOUD_PROJECT_ID=flybridgememo-generator
+Set Up Google Cloud Vision API
+Create a Google Cloud Project: Ensure you have a Google Cloud project. If you don't have one, create it in the Google Cloud Console.
+Enable the Cloud Vision API
+Navigate to APIs & Services > Library in the Google Cloud Console.
+Search for Cloud Vision API and enable it.
+Create a Cloud Storage Bucket
+Navigate to Cloud Storage > Click Create Bucket and Name the bucket (e.g., memo-generator) -Click Create.
+Set Up Service Account Permissions
+Navigate to IAM & Admin > IAM.
+Locate your service account (e.g., your-service-account@your-project-id.iam.gserviceaccount.com).
+Click the Edit (pencil) icon next to the service account.
+Click Add Another Role and assign the following roles:
+Storage Object Admin (roles/storage.objectAdmin)
+Storage Object Creator (roles/storage.objectCreator)
+Storage Object Viewer (roles/storage.objectViewer)
+Cloud Vision AI Service Agent (roles/visionai.serviceAgent)
+Obtain your Google Cloud Vision API credentials JSON file. Ensure you enable
+Cloud Vision API
+Place the JSON file in the root directory of the project under file name: cloud-credentials.json
+Usage
+Development
+To start the development server, which runs both the backend and frontend concurrently:
+npm run dev
+Production
+To build and start the production server:
+npm run build
+npm start
+Project Structure
+index.js: The main Node.js server file.
+src/: Contains the React frontend code.
+components/: React components used in the frontend.
+main.py: Python script for market analysis.
+agents.py: Python script defining agents for market research.
+tasks.py: Additional Python script for tasks.
+public/: Contains static assets and the index.html file.
+.env: Environment variables configuration file.
+package.json: Node.js dependencies and scripts.
+requirements.txt: Python dependencies.
+System Diagram
+Bellow is diagram that explain the components of the application
+See example output memo Link
+License
+Released under the MIT License. See the LICENSE file for more details.
+About
+Tool that generates AI startup investment memorandums 
+Resources
+Readme
+MIT license
+Activity
+Stars
+96 stars
+Watchers
+10 watching
+Forks
+37 forks
+Report repository
+Releases
+Packages
+Used by
+Contributors
+Languages
+Footer
+ © 2026 GitHub, Inc.
+Footer navigation
+ Terms
+ Privacy
+ Security
+ Status
+ Community
+ Docs
+ Contact
+ Manage cookies
+ Do not share my personal information
+ You can’t perform that action at this time.

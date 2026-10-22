@@ -1,0 +1,439 @@
+SOURCE: https://apify.com/mrbridge/ai-dealflow-analysis
+FETCHED: 2026-10-22 10:22
+HTTP: 200
+
+AI due diligence: pitch deck to investment memo · Apify
+Skip to content
+Get startedLog in
+Product
+Back
+Start here!
+Ready-to-run tools for your AI agents and apps. Just pick one and go.
+Browse 95,033 Actors
+Apify platform
+Apify Store
+Actors for any job on the web
+Actors
+Build and run serverless programs
+Integrations
+Connect with apps and services
+MCP
+Give your AI access to Actors
+Anti-blocking
+Anti-blocking
+Scrape without getting blocked
+Proxy
+Rotate scraper IP addresses
+Open source
+Crawlee
+Web scraping and crawling library
+Solutions
+Back
+MCP server configuration
+Configure your Apify MCP server with Actors and tools for seamless integration with MCP clients.
+Start building
+Apify for
+Enterprise
+Startups
+Universities
+Nonprofits
+Use cases
+Data for generative AI
+Data for AI agents
+Lead generation
+Market research
+View more →
+Consulting
+Professional services
+Apify Partners
+Developers
+Back
+Documentation
+Full reference for the Apify platform
+Get started
+Actor templates
+Python, JavaScript, and TypeScript
+Web scraping academy
+Courses for beginners and experts
+Monetize your code
+Publish your Actors and get paid
+Learn
+API reference
+CLI
+SDK
+MCP
+Crawlee
+Earn from your code
+$1.7M paid out last month. Many developers earn over $3k.
+Start earning now
+Resources
+Back
+Help and support
+Advice and answers about Apify
+Actor ideas
+Get inspired to build Actors
+Changelog
+See what’s new on Apify
+Customer stories
+Find out how others use Apify
+Company
+About Apify
+Contact us
+Blog
+Live events
+Doing Good
+Jobs
+We're hiring!
+Join our Discord
+Talk to other builders
+Pricing
+Contact sales
+AI Dealflow Analysis: investment memo in minutes
+Pricing
+$12,000.00 / 1,000 analysis completes
+Try for free
+Go to Apify Store
+AI Dealflow Analysis: investment memo in minutes
+mrbridge/ai-dealflow-analysis
+Try for free
+Copy setup promptCopied
+Upload a pitch deck and get a full investment memo in minutes: unit economics, valuation, market sizing, competition, team verification and red flags. Every claim is cross-checked against live web sources, and the report comes back structured for your investment committee. By MrBridge
+Pricing
+$12,000.00 / 1,000 analysis completes
+Rating
+0.0
+(0)
+Developer
+MrBridgeMaintained by Community
+Actor stats
+0
+Bookmarked
+7
+Total users
+0
+Monthly active users
+2 months ago
+Last modified
+Categories
+Agents
+AI
+Share
+README
+Input
+Output
+Pricing
+API
+Issues
+Tasks11
+🎯 AI Dealflow Analysis
+AI Dealflow Analysis is an AI agent that processes a startup pitch deck (PDF, PPTX, DOCX, XLSX) and produces a complete investment memo with cross-checked financials, market sizing, competition, team verification, and red flags. A seven-agent reasoning pipeline (CFO, CRO, Investigator, Challenger, Writer, Director) replicates the work of a junior IC team — in 15 to 30 minutes per deal.
+🔍 Extracts entities, financials, traction, team, and claims from the deck
+🧠 Cross-checks every claim against public web sources (Google, company sites, LinkedIn, Crunchbase, press)
+💲 Audits unit economics, valuation, TAM/SAM/SOM, competitive landscape, and pricing
+🎯 Returns a publishable Markdown / DOCX memo plus a structured JSON for deal screening
+What does AI Dealflow Analysis do?
+AI Dealflow Analysis ingests a pitch deck (and optionally a financial model, LOI, term sheet, founder notes, or extra URLs) and runs a multi-stage agent pipeline that produces an IC-ready investment memo. The output covers:
+💰 Unit economics — CAC, LTV, LTV/CAC ratio, payback period, gross margin
+📈 Revenue quality — MRR/ARR coherence, growth rate validation, net revenue retention
+🔮 Projections — bear / base / bull scenarios with assumption critique and sector benchmarks
+🔥 Burn & runway — current burn rate, months of runway, capital efficiency
+💎 Valuation analysis — revenue multiples, comparable transactions, dilution impact
+🌍 Market sizing — TAM / SAM / SOM with methodology critique
+🥊 Competitive landscape — including competitors not mentioned in the deck
+🛒 Go-to-market — channels, sales cycle, scalability
+🧲 Product-market fit signals — retention, expansion, customer evidence
+🔎 Claims verification — each deck claim rated confirmed / exaggerated / false / unverifiable
+👥 Founder due diligence — LinkedIn verification, background check, career coherence
+🚩 Red flags — flagged with severity, evidence, and resolution path
+How it works
+AI Dealflow Analysis runs a seven-stage agent pipeline. The financial and commercial audits run in parallel; the quality review can send earlier stages back for rework (up to 2 iterations) before finalizing.
+[Deck + context] → Extraction → Analyst → CFO + CRO (parallel)
+ ↓
+ Investigator → Web research → Challenger → Writer → Director
+ ↓
+ [Memo + DOCX + Dataset]
+Stage 1 — Extraction
+PDF and PPTX go through Claude Vision (native multimodal). DOCX uses mammoth, XLSX uses xlsx. Text, tables, and figures are preserved as structured input for downstream agents.
+Stage 2 — Analyst
+Extracts named entities (company, founders, investors), financials (MRR, ARR, burn, runway, valuation), traction metrics, and pricing model. Output is a strict JSON schema consumed by every downstream agent.
+Stage 3 — CFO + CRO (parallel, Promise.allSettled)
+The CFO audits unit economics, valuation, projections, and burn. The CRO audits market sizing, competition, GTM, and product-market fit. If one fails on a transient API issue, the successful one is checkpointed so the resume only re-runs the failed agent.
+Stage 4 — Investigator
+Plans the web research: fact-check queries (CFO/CRO red flags), competitor queries (gaps in the deck), founder queries (LinkedIn targets). Output is a structured research plan.
+Stage 5 — Web research
+Executes Google searches (SerpAPI → Apify fallback) and scrapes 30+ URLs (ZenRows → Tavily → Firecrawl → Apify fallback chain). LinkedIn profiles are pulled when cookies are provided.
+Stage 6 — Challenger
+Cross-references every claim in the deck against the web evidence. Rates each claim and identifies inconsistencies, suspicious metrics, and omitted competitors.
+Stage 7 — Writer
+Synthesizes everything into an 11-section investment memo (Markdown), with full source citations from a shared SourceRegistry. The Writer is a "Senior Partner" persona.
+Stage 8 — Director (3 phases)
+The Director (Opus 4.7 with extended thinking) reviews the memo, requests rework if needed, polishes the final version, and extracts the structured JSON summary for the dataset.
+Partial failures don't block the final output — successful stages produce a usable artifact, missing stages are flagged with null fields.
+Sample output
+Each run produces three artifacts. The structured JSON pushed to the dataset:
+{
+ "company_name": "EcoTrack Solutions",
+ "industry_sector": "ClimateTech / SaaS",
+ "one_line_summary": "Carbon accounting platform for mid-market manufacturers",
+ "investment_score": 6,
+ "signal": "NEUTRAL",
+ "recommended_action": "INVESTIGATE",
+ "deck_confidence_score": 72,
+ "deal_quality_score": 7,
+ "fund_fit_score": 8,
+ "key_risks": [
+ "CAC of $48K appears high vs. stated $120K ARR target — payback >24 months",
+ "Two of three competitor 'wins' cited in deck are unverifiable on the web",
+ "Lead founder LinkedIn shows 14 months in role vs. 'serial entrepreneur' framing"
+ ],
+ "key_strengths": [
+ "MRR grew 3.1x in 12 months, confirmed via Stripe screenshots in data room",
+ "Technical team includes two ex-Stripe engineers (LinkedIn verified)",
+ "Carbon Disclosure Project regulation 2026 creates regulatory tailwind"
+ ],
+ "director_verdict": "Solid PMF signals but valuation tension. The 24-month CAC payback is the dealbreaker unless the team can articulate a credible compression path. Recommend a deep dive call with the CFO before IC.",
+ "memo_url": "https://api.apify.com/v2/key-value-stores/<KV_STORE_ID>/records/memo-ecotrack-solutions-2026-05-20.md",
+ "analysis_date": "2026-05-20T14:32:00Z",
+ "processing_time_seconds": 1247
+}
+The full memo (Markdown + DOCX) is stored separately in the key-value store — see Output below for the exact record keys.
+How much will AI Dealflow Analysis cost you?
+AI Dealflow Analysis uses a pay-per-event pricing model with two layers of cost. You're charged only on successful events (failed or aborted runs cost $0 on Layer 1).
+Layer 1 — Agent PPE event
+EventWhen chargedPrice
+analysis-completePer successful analysis (memo + dataset + DOCX delivered)$12.00
+See the Pricing tab for the full per-tier table by Apify subscription (Free, Starter, Scale, Business).
+💡 Cost predictability: analysis-complete charges only on success. Empty input, validation failure, Anthropic API outage, or any pipeline error bills $0 on Layer 1. You may still incur small Layer 2 costs (see below) if the run reaches the web-research stage before failing.
+💡 Spending limit: set ACTOR_MAX_TOTAL_CHARGE_USD per run in the Apify Console to cap your maximum spend. The Actor exits gracefully if the limit is below $12.
+Layer 2 — Optional Apify sub-Actor pass-through
+When the primary web-research providers (ZenRows, Tavily, Firecrawl) fail or are not configured, AI Dealflow Analysis falls back to public Apify Actors that bill directly to your Apify account:
+apify/google-search-scraper — fallback for Google searches. Bills against searches run.
+apify/website-content-crawler — fallback for website scraping. Bills against pages crawled.
+curious_coder/linkedin-profile-scraper — invoked only if you provide LINKEDIN_COOKIES. Bills per profile scraped.
+Layer 2 cost is typically $0 when all three external scraping providers (ZenRows / Tavily / Firecrawl) are healthy. Worst case (all three failing on the same run with 30 URLs): ≈ $0.10–$0.40 in Apify CU.
+For programmatic spending caps, see Apify usage limits.
+When to use / not to use AI Dealflow Analysis
+✅ Best fit when…
+You're a VC partner, analyst, or family-office associate reviewing 5+ decks per week
+You need a defensible written memo (not just a chat output) ready to share with your IC
+You want web-verified claims, not just LLM summarization of what the deck says
+You're triaging early-stage deals (pre-seed, seed, Series A) where standardized analysis saves hours
+You want a Fund Fit Score against your written mandate (Deal Quality + Fund Fit dual scoring)
+❌ Not the right tool if…
+You need real-time market data fresher than 5 minutes — the agent uses web search results that may be hours/days stale
+You have fewer than 2 decks per month — manual analysis is cheaper at very low volume
+The deck is in a highly specialized vertical with limited public web coverage (frontier biotech, hard-tech with classified IP) — claims-verification quality degrades when web evidence is sparse
+You need legal, tax, or regulatory advice on the deal — this is investment-analysis informational only
+You need to keep the analysis fully on-premises (this Actor sends the deck to Anthropic for LLM processing)
+For real-time market data, consider pairing with a SerpAPI-based or Crunchbase-based Actor. For on-premises analysis, run the open-source equivalent yourself.
+⬇️ Input
+FieldTypeDescription
+Files to analyzeFile uploadPitch deck, financial model, data room extract (PDF, PPTX, DOCX, XLSX). Recommended ≤ 50 MB total.
+Additional contextTextFounder emails, meeting notes, reference calls, internal notes
+Additional URLsURL listCompany website, Crunchbase, press articles (max 10). Web research also runs automatically.
+Fund mandateTextYour fund's investment criteria. Unlocks dual scoring: deal quality + fund fit.
+Memo languageSelectOutput language. Default: English. Input documents can be in any language.
+At least one file or text context is required to start the analysis. See the Input tab for the full schema.
+Input example
+{
+ "uploadedFiles": ["pitch-deck.pdf", "financial-model.xlsx"],
+ "contextText": "Warm intro from John Doe (Sequoia). First call went well. Founder has good clarity on GTM but vague on competitive moat.",
+ "additionalUrls": ["https://company.com", "https://www.crunchbase.com/organization/company-name"],
+ "fundMandate": "Fund: Stage Series A. Ticket: $2-5M. Sectors: B2B SaaS, ClimateTech. Excluded: consumer, hardware. Geo: EU + US.",
+ "memoLanguage": "en"
+}
+💡 Input quality matters. A complete pitch deck + financial model produces sharper analysis than a deck alone. Adding the fund mandate unlocks Fund Fit scoring.
+⬆️ Output
+AI Dealflow Analysis produces four output surfaces.
+🧠 Main output: the investment memo
+The full memo is delivered as a Markdown artifact in the Apify key-value store, under the record key:
+memo-{company-slug}-{YYYY-MM-DD}.md
+A Word (.docx) version is generated in parallel for IC distribution:
+memo-{company-slug}-{YYYY-MM-DD}.docx
+Access via the Apify API:
+https://api.apify.com/v2/key-value-stores/{KV_STORE_ID}/records/memo-{company-slug}-{YYYY-MM-DD}.md
+The memo has 11 sections: Executive Summary, Company Overview, Founding Team, Product, Market, Competition, Go-to-market, Financials & Unit Economics, Valuation, Red Flags & Due Diligence Questions, Managing Partner View.
+📊 Executive HTML report
+A single-page HTML executive summary is stored as report.html (linked from the Output tab in the Console). Optimized for sharing with internal stakeholders who don't want to read the full memo.
+🗂️ Structured dataset
+One item per analysis is pushed to the dataset with the structured JSON shown in Sample output. See .actor/dataset_schema.json for the full schema with field types and constraints.
+📁 Accessing raw data
+Three surfaces let you audit and post-process the analysis:
+Dataset tab — structured scores, signals, risks, strengths (one row per analyzed deal). Filterable and sortable in the Console.
+Key-value store — full memo (Markdown + DOCX), executive HTML report, and a live-status.html for in-progress runs.
+Run log — per-agent timing, token usage (including cached tokens), web research counters, and any rework iterations.
+For programmatic post-processing, query the dataset via the Apify API:
+GET https://api.apify.com/v2/datasets/{DATASET_ID}/items?token=$APIFY_TOKEN
+Integrate into your workflow
+API integration
+Call AI Dealflow Analysis programmatically using the Apify API.
+Node.js:
+import { ApifyClient } from 'apify-client';
+const client = new ApifyClient({ token: 'YOUR_APIFY_TOKEN' });
+const run = await client.actor('mrbridge/AI-dealflow-analysis').call({
+ uploadedFiles: ['pitch-deck.pdf'],
+ fundMandate: 'Early-stage B2B SaaS, $1-5M tickets',
+ memoLanguage: 'en',
+});
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+console.log(items[0].investment_score, items[0].recommended_action);
+// Download the full memo
+const kv = client.keyValueStore(run.defaultKeyValueStoreId);
+const memo = await kv.getRecord(`memo-${items[0].company_name.toLowerCase()}-${items[0].analysis_date.slice(0,10)}.md`);
+console.log(memo.value);
+Python:
+from apify_client import ApifyClient
+client = ApifyClient("YOUR_APIFY_TOKEN")
+run = client.actor("mrbridge/AI-dealflow-analysis").call(run_input={
+ "uploadedFiles": ["pitch-deck.pdf"],
+ "fundMandate": "Early-stage B2B SaaS, $1-5M tickets",
+ "memoLanguage": "en",
+})
+for item in client.dataset(run["defaultDatasetId"]).iterate_items():
+ print(f"Score: {item['investment_score']} — {item['recommended_action']}")
+No-code integrations
+PlatformWhat it doesSetup
+ZapierTrigger analysis on new deal → send memo to Slack / emailApify Zapier connector
+MakeAutomate deal pipeline: receive deck → analyze → notify teamApify Make module
+n8nSelf-hosted deal flow automationApify n8n node
+Google SheetsExport deal scores and signals to a spreadsheetIntegrations tab
+Webhooks
+Go to the Actor's Integrations tab in the Apify Console
+Select event: Run succeeded
+Enter your endpoint URL
+Receive the memo URL, investment score, and recommendation automatically
+About this workflow
+Built by MrBridge — see the Dealflow Analysis overview or all AI workflows. Once you've shortlisted deals, run them through the Pitch Deck Credibility Analyzer.
+Frequently asked questions
+What LLM does AI Dealflow Analysis use?
+AI Dealflow Analysis uses Claude Sonnet 4.6 (claude-sonnet-4-6) for document extraction, structured data analysis, web research planning, and memo writing — and Claude Opus 4.7 (claude-opus-4-7) with adaptive extended thinking for judgment-heavy stages: financial audit (CFO), commercial audit (CRO), claims challenger, and final director review. Effort level is high for CFO/CRO/Challenger and xhigh for the Director Phase 1 review. System prompts are cached across rework iterations via Anthropic's prompt caching (cache_control: ephemeral). All Claude API costs are paid by the Actor maintainer and included in the $12 flat fee.
+How accurate is the analysis?
+The agent verifies every numerical claim in the deck against public web sources and rates each as confirmed, exaggerated, false, or unverifiable. Unverifiable claims are flagged, not invented. Founder LinkedIn data is cross-checked against the deck's narrative. That said, the analysis is informational — always review the Top 3 red flags and the Director's verdict manually before any consequential decision.
+Can the AI make mistakes?
+Yes. LLMs hallucinate occasionally — AI Dealflow Analysis mitigates this with an anti-hallucination policy ("UNVERIFIABLE" / "INSUFFICIENT DATA" outputs are preferred over guessing), a dedicated Challenger agent whose only job is to stress-test claims, and a Director review that can trigger rework. For high-stakes deals, also run a manual due diligence call.
+How does this compare to running ChatGPT or Claude on the same deck?
+AI Dealflow Analysis differs from a one-shot chat prompt by: (1) orchestrating seven specialized agents with role-specific system prompts, (2) running 90+ web searches and scraping 30+ URLs to verify deck claims (Claude.ai and ChatGPT cannot scrape at scale), (3) producing a publishable Markdown + DOCX memo plus a structured JSON for portfolio screening, (4) running on Apify infrastructure with reproducible outputs, checkpoint recovery on container migration, and a complete audit trail of all sources cited.
+What happens to my deck after the analysis?
+The deck is processed in an ephemeral Apify container. Apify's default key-value store retention is 7 days (configurable). Document content is never logged — only file metadata (name, size) appears in the run log. Your fund mandate and deal materials are not used to train any AI model. Anthropic processes the deck content per their data handling policy (no training on API customer data).
+Is the analysis deterministic?
+No. Claude Sonnet 4.6 and Opus 4.7 use adaptive thinking — re-running with the same input produces semantically equivalent but lexically different memos. Investment scores typically vary by ±1 point across runs. Web research results also vary because Google's ranking changes over time.
+Can I use AI Dealflow Analysis via MCP?
+Yes. The Actor can be accessed by AI clients (Claude Desktop, ChatGPT, Cursor) through the Apify MCP server. Connect to mcp.apify.com and add mrbridge/AI-dealflow-analysis to the tools parameter.
+How do I see my usage and costs?
+Apify Console → Billing → Usage by Actor. Filter by mrbridge/AI-dealflow-analysis for per-run Layer 1 charges; check sub-Actor entries for Layer 2 totals if any fallback Actors were invoked.
+Can I customize the agent prompts?
+Not currently. Memo language is configurable (11 options). Effort levels, model selection, and agent prompts are fixed. Contact the maintainer for custom variants.
+Your feedback
+We're always working on improving the performance of our Actors. So if you've got any technical feedback for AI Dealflow Analysis or simply found a bug, please create an issue on the Actor's Issues tab.
+Legal & responsible use
+AI Dealflow Analysis processes user-provided documents (pitch decks, financial models, data room extracts) using LLMs and verifies claims against public web sources. You are responsible for ensuring your use complies with the source documents' confidentiality terms, your fiduciary obligations, and any applicable data-protection regulation (GDPR in the EU, CCPA in California, similar elsewhere).
+Data handling:
+Input retention: documents are processed in an ephemeral Apify container; key-value store retention follows Apify's default policy (7 days for unnamed storages, configurable in the Console).
+LLM provider: Anthropic processes deck content for model inference. See Anthropic's privacy and data handling policy.
+No training: Your input data is not used to train any AI model.
+No third-party sharing: AI Dealflow Analysis does not share your data with parties beyond the LLM provider and the public web-research providers listed in the Pricing section.
+Web research: the Investigator queries public sources (Google search, company websites, LinkedIn public profiles, Crunchbase public pages) using your fund's reputation, not the founder's name in a way that triggers privacy concerns.
+The output is informational and should be reviewed by a qualified investment professional before any consequential decision (investment, term sheet issuance, IC vote). LLM outputs can contain factual errors, biased reasoning, or out-of-date market data. The Actor is not a substitute for legal, tax, or regulatory advice.
+You might also like
+Latest News MCP Server: free news API for AI
+mrbridge/latest-news-mcp-server
+Free news API for AI assistants: 14 MCP tools aggregating 27 public APIs. Get global news from Reuters, AP, BBC, CNN, Al Jazeera, Bloomberg and GDELT in 65+ languages, plus crypto markets, weather, earthquakes, Reddit, Hacker News and Wikipedia trends. No API key needed. By MrBridge (mr-bridge.com)
+MrBridge
+111
+Pap.fr $1💰| URL Search | Keyword Filters | Rich Output
+abotapi/pap-fr-scraper
+From $1/1k. Extract property listings from pap.fr. Get fully-detailed listings with price, address, rooms, area, photo gallery, description, and arrondissement/department/region geography.
+Abot API
+36
+Commercial Property AU Scraper - Listings & Agents
+abotapi/realcommercial-au-scraper
+Scrape Australian commercial property listings with full detail data. Extract descriptions, highlights, property attributes, GPS coordinates, nearby places, agents, agencies, images and rich listing metadata.
+Abot API
+53
+Carsales.com.au Scraper - Bypass 440-Car Limit, 30+ Fields
+abotapi/carsales-au-scraper
+Scrape structured vehicle listings from Carsales.com.au from $1 per 1K results. Built to bypass the 20-page / 440-car search cap with deep filtering. Returns clean JSON with 30+ fields per listing, ideal for dealers, analysts, pricing tools, and real-time vehicle data pipelines.
+Abot API
+36
+ESPN MCP Server: live scores and sports API
+mrbridge/espn-mcp-server
+Connect Claude, ChatGPT, Cursor and other AI assistants to ESPN sports data through MCP. Get live scores, standings, box scores, play-by-play, rosters, schedules, odds, athlete stats, rankings and news across NFL, NBA, MLB, NHL, soccer, F1 and UFC, with no ESPN API key. By MrBridge (mr-bridge.com)
+MrBridge
+253
+Priceline hotel scraper: prices, ratings, deals
+mrbridge/priceline-hotel-scraper
+Extract hotel prices, ratings, amenities, star levels and deals from Priceline.com. Search any destination with date, room and guest filters, sort by price, rating or stars, and return up to 500 results per search. Export data, run via API, schedule runs, or integrate with other tools. By MrBridge
+MrBridge
+11
+AI Web Scraper
+apify/ai-web-scraper
+AI-first web scraper that extracts structured data from any website using natural-language prompts. 
+No programming knowledge required.
+No hard-coded logic that breaks when a website changes.
+Apify
+10K
+4.9
+(15)
+AI SEO & GEO MCP Server: SERP API and keywords
+mrbridge/seo-geo-mcp
+Connect Claude, ChatGPT and Cursor to live SERP, keyword, backlink and site audit data through one MCP endpoint, with no SEO data account to open. Track Google rankings and generative engine visibility together, so you see where a brand stands in search and in AI answers. By MrBridge
+MrBridge
+6
+DraftKings Odds API - Real-Time Lines & Player Props
+zen-studio/draftkings-odds
+Extract real-time DraftKings sportsbook odds for 28 sports and 280+ leagues. Get spreads, moneylines, totals, player props, and futures in 3 odds formats. Always-on HTTP API. Live in-play odds with scores. NBA, NFL, MLB, NHL, EPL, and more. No login required.
+Zen Studio
+415
+Todoist MCP Server: AI task management tools
+mrbridge/todoist-ai-assistant
+Connect Claude, ChatGPT and Cursor to Todoist through MCP. 35 tools cover tasks, projects, sections, labels and comments, plus AI features such as smart prioritization, focus mode, daily digest and overdue analysis. Works with Claude Code, Claude Desktop and any MCP client. By MrBridge
+MrBridge
+14
+Related articles
+Alternative data for hedge funds: From raw web data to trading signals
+Read more
+10 best AI tools for real estate investors: Complete 2026 guide
+Read more
+Product
+Apify Store
+Integrations
+Proxy
+MCP
+Crawlee
+Developers
+Documentation
+Actor templates
+API reference
+Get paid on Apify
+Consulting
+Professional services
+Apify Partners
+Resources
+Help & support
+Submit your ideas
+Forum
+Agent interface
+Onboard your AI agent
+Spotlight
+APIs
+What is web scraping?
+Best web scraping tools
+Python web scraping libraries
+Scrapers
+Company
+About Apify
+Contact us
+Events
+Blog
+JobsWe're hiring!
+Brand
+Socials
+Security
+Reviews
+Loading status...
+Imprint
+Terms of use
+Privacy policy
+Cookie policy
+Cookies
+© 2026 Apify

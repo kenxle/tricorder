@@ -1,0 +1,376 @@
+SOURCE: https://www.tryspecter.com/
+FETCHED: 2026-10-22 10:31
+HTTP: 200
+
+Specter | AI-Powered Startup Data & Deal Sourcing Platform
+Specter Agents are now live.—Learn more about agents for private markets→
+Specter
+Platform 
+Platform overview
+The full platform at a glance
+Data
+Companies
+55M live startup profiles
+People
+550M talents mapped
+Investors
+300K investor profiles
+Transactions
+Every funding and M&A event
+Features
+Talent Signals
+Key moves and hiring trends
+Interest Signals
+Predict funding & M&A activity
+News
+Real-time market updates
+Revenue
+Modeled revenue, every company
+Valuation
+A live price between rounds
+New: Revenue & ValuationA live price for every private companyExplore Revenue & Valuation
+Agents
+API
+Integrations 
+Connect
+All Integrations
+Browse every connection
+CRM
+Sync and enrich your data
+Network Tracking
+See who knows whom
+Chrome Extension
+Data wherever you browse
+Delivery Methods
+API
+Build seamless integrations
+Bulk Data
+Ingest data anywhere
+Specter MCPNew
+Talk to your AI
+Pricing
+Get started
+Log inGet started
+Source the deal of the decade.
+Specter offers unrivalled insight into private markets, powering over 400 teams in VC, PE, M&A and GTM.
+Book a demo
+Specter
+3
+BrowseAgent
+Quick Search⌘K
+Searches2
+Lists
+My CRM
+My Network
+Companies
+Company DB
+People
+People DB
+Talent Signals
+Investors
+Investor DB
+Interest Signals
+Transactions
+Funding Rounds
+Acquisitions
+IPOs
+Acme Corp.
+Companies/Database55M+ companies
+Export
+All Companies
+Clear Search
+Save Search
+Sort by Rank
+Status
+Add Filter
+1
+Growth Stage
+is
+Pre-seed / Seed
+Company
+Tagline
+Growth Stage
+HQ Location
+Employee Count
+3m
+Web Visits
+3m
+Total Funding Amount
+VendraVendra provides AI vendor and project management for hardware teams.Pre-seed / SeedSan Francisco, US9+80%12,795+6,670%$500K
+Beyond Reach Labs (YC W26)Beyond Reach Labs develops deployable high-expansion structures.Pre-seed / SeedNew York City, US11+450%7,910+80%$10.5M
+PhoebePhoebe schedules care providers automatically, reducing burnout.Pre-seed / SeedNew York City, US27+145%16,121+70%$9.5M
+Autosana (YC S25)Autosana automates mobile app end-to-end testing using AI.Pre-seed / SeedSan Francisco, US7+75%12,077+101%$3.2M
+VignetimVignetim simplifies European vignette and toll purchases.Pre-seed / SeedAlmere Stad, NL11+57%5,765+619%—
+BLINQ AppBLINQ provides digital business cards for instant contact sharing.Pre-seed / SeedMountain View, US——1,340,752+14%$100K
+Amity RoboticsAmity Robotics provides AI-powered robotic platforms.Pre-seed / SeedBangkok, TH19+36%19,273+4,893%$7M
+GojiberryAIGojiberryAI finds high-intent leads for B2B companies.Pre-seed / SeedParis, FR14+56%264,904+15%$500K
+Dialogue AIDialogue AI conducts AI-assisted customer interviews at scale.Pre-seed / SeedLos Angeles, US16+14%121,897+208%$6M
+FortFort is a wearable for strength training and rehabilitation.Pre-seed / SeedSan Francisco, US6+20%28,705+155%$500K
+ComplirComplir automates retail product compliance with AI.Pre-seed / SeedCopenhagen, DK19+19%10,585+510%$2.6M
+Carrot CreditCarrot Credit offers asset-backed lines of credit.Pre-seed / SeedSuleja, NG16+14%15,250+336%$4.2M
+UltraUltra builds intelligent warehouse robots for e-commerce.Pre-seed / SeedNew York City, US26+63%11,605+211%$500K
+PalmierPalmier provides autonomous AI coding agents.Pre-seed / SeedSan Francisco, US20%202,717+2,209%$500K
+Agent
+Map the fastest-growing competitors of Modal
+@
+#
+/
+AgentMCP
+API
+logs-acme-app▾
+24H
+sum(signals_processed)1,247
+»16:04:00cron talent-scan triggered · schedule */15 * * * · run #4,812
+›16:04:00GET/v1/talent?signal_date_after=2026-08-2020096ms
+›16:04:01worker enrich-queue · 2 people queued
+›16:04:01GET/v1/people/per_7d21…200132ms
+›16:04:01GET/v1/people/per_7d21…/talent-signals20088ms
+›16:04:02GET/v1/people/per_a4c8…200121ms
+›16:04:02PATCH/v1/people/lists/e2d4…91af20074ms
+λ16:04:02edge fn signal-digest invoked · iad1 · 41ms
+✓16:04:022 talent signals processed · watchlist +2
+»16:04:03cron competitor-refresh triggered · run #1,096
+›16:04:03POST/v1/companies200412ms
+›16:04:04GET/v1/companies/64f1c9…/latest-revenue200187ms
+›16:04:05GET/v1/companies/64f1c9…/latest-valuation20078ms
+›16:04:05GET/v1/companies/64f1c9…/funding-rounds200104ms
+›16:04:06GET/v1/companies/64f1c9…/people200143ms
+›16:04:06PATCH/v1/companies/lists/7c9e…8b1720096ms
+✓16:04:06Modal competitor set refreshed · 62 tracked · 0 changes missed
+›16:04:07GET/v1/organization/credits20054ms
+›16:04:07GET/v1/companies/lists/7c9e…8b17/results200168ms
+λ16:04:08edge fn signals-webhook delivered · 202 · 38ms
+✓16:04:08cycle complete · 0 errors · next runs in 15m
+Build on top of our dataExplore API
+Deals get crowded by the time you see them. Specter gets you to the table first.
+Private markets run on information asymmetry and most database platforms sit on the wrong side of it with stale data. Specter solves this with live intelligence on every private company refreshed whenever data moves.
+One workspace for the whole market.
+Search 55M+ companies, follow live signal feeds, and see your team's warmest path into every deal.
+Explore the platform
+Stealth
+ex-Paradigm and Coinbase
+Fred Ehrsam is now in Stealth.now
+Growth
+Hired 3 Engineers
+Browserbase hired from Mux and Amazon.22 min
+Product
+Product Reviews Surge
+PostHog is trending on G2.1 hr
+DataSignalsSourcingMonitor
+One workspace for the whole market.
+Search 55M+ companies, follow live signal feeds, and see your team's warmest path into every deal.Explore the platform
+Stealth
+ex-Paradigm and Coinbase
+Fred Ehrsam is now in Stealth.now
+Growth
+Hired 3 Engineers
+Browserbase hired from Mux and Amazon.22 min
+Product
+Product Reviews Surge
+PostHog is trending on G2.1 hr
+Ask anything. Agents do the work.
+Specter's private markets agent plans the research, runs the tools, and comes back with answers and sources.Meet Specter Agents
+Agent
+Which AI infra companies look likely to raise next quarter?
+Searching Specter for "AI infrastructure"
+Reading investor interest
+Ranking by raise likelihood
+21 companies ranked by confidence
+Sources attached · saved to a list
+Ask a question...
+@#/
+Every data point, one call away.
+The dataset behind the platform, delivered through the most complete and best priced API on the market.Explore the API
+GET/companies/{companyId}
+{"organization_name": "Stripe","employee_count": 15841,"investor_count": 72,"total_funding_usd": 10440247725,"growth_stage": "late"}
+DataSignalsSourcingMonitor
+Data
+Specter is the most complete platform for private markets: 55M+ companies, 550M+ people, 330K+ investors, and 1M+ transactions.
+Every discovery is backed by four core datasets — companies, people, investors, and transactions — refreshed as the market moves.
+Companies Data
+55M+ companies
+Firmographics & funding
+Growth metrics
+Revenue & valuation estimates
+250+ data points
+People Data
+550M+ people
+Profiles & career history
+Education & network
+Investment activity
+Founder highlights
+Investors Data
+330K+ investors
+Check sizes & AUM
+Portfolios & exits
+Follow-on rates
+Curated fund profiles
+Transactions Data
+1M+ transactions
+Funding rounds
+Acquisitions
+IPOs
+150+ per day
+Signals
+Talent and interest signals surface movers first — new founders, job changes, and VC interest as they happen.
+Meet founders on day zero.
+1,000+ talent signals a day — new founders, stealth activity, job changes, and promotions, each with a full profile.
+Previous roles
+MetaProduct Lead
+Character.AIFounding Engineer
+Sanjiv Rao
+Stealth Founder
+Stealth AI Startup
+Consumer social with LLM agents
+New Company Signal
+Sanjiv is launching a stealth AI startup building a consumer social product with LLM agents.
+See which investors are circling.
+7,000+ interest signals a week — VC, PE, and M&A interest mapped to the companies you follow.
+VC Interest
+3 Signals from Tier-1 VCs
+General Catalyst is interested in Glean.now
+PE Interest
+2 Signals from PE Firms
+Thoma Bravo is interested in Harvey.1 hr
+CVC Interest
+2 Signals from CVCs
+Salesforce is interested in Black Forest Labs.3 hrs
+Sourcing
+Be the reason your fund wins the deal of the decade — 97% of firms using Specter triage deals faster.
+Zero in on your thesis.
+Track education alumni, university spinouts, founder networks, ex-Stripe operators, repeat founders, accelerator cohorts — and just about anything else you can think of.
+Deep, logical taxonomy.
+Industries, tech verticals, business models, growth stages, and 250+ data points — filtering depth that matches how you actually slice a market.
+Source with agents.
+Specter's in-app AI agent plans the search, runs the filters, and comes back with a ranked, sourced list.
+Monitor
+Monitor every move that matters — talent shifts, investor interest, and growth signals in real time.
+“We continually evaluate tools on the market, and Specter repeatedly stands out with its highly differentiated UX and comprehensive data.”
+Andrea Gurnari
+Partner at 2100 VenturesCase Study →
+“We are embedding Specter into all our workstreams, and it is showing significant promise as part of our strategy to find the next company we will back.”
+Ozge Sevim
+Investor at 212 VenturesCase Study →
+“Specter enhances the efficiency of our operations, and contributes to the in-house data systems we build to generate alpha. Covering both bases makes it a highly versatile and valued part of our tech stack.”
+Abhijay Thacker
+VP at Picus CapitalCase Study →
+“Specter allows me to narrow or expand the scope of searches at will, without needing to build or maintain any of the data pipelines and infrastructure myself. Using it on a daily basis is super powerful.”
+Timothy Chen
+Partner at Essence VCCase Study →
+Workflow
+Specter fits the workflow you already run — your CRM, your network, your browser, and your stack.See all integrations
+Your CRM, always current.
+Native two-way sync for Salesforce, Attio, Affinity, HubSpot, and more — pull setup defines exactly what flows in.
+Tap into your team's network.
+Specter graphs your team's connections and shows the warmest path to the deal, and alerts you when someone in that network moves.
+LinkedIn — Connected
+Your 5,639 connections are synced.
+Lovable Hired From Your Network
+Erik Lindblad joined Lovable.
+Marco is connected
+Phil is connected
+Linda Apsley — Senior Advisor
+Started advisory role at RunPod.
+Phil is connected
+Varun Mohan — CEO at Windsurf
+3 team connections.
+Marco is connected
+Phil is connected
+Alex is connected
+Specter on every page.
+The Chrome extension reads the company you're browsing and lays its full Specter profile alongside.
+The dataset, delivered in bulk.
+Full refreshes straight to AWS S3, Google Cloud, or Snowflake — the same data underneath the platform.
+Every data point, one call away.
+REST endpoints for companies, people, investors, and signals — 250+ data points per call.Learn more about Specter's API
+Plug your agents into Specter.
+Specter MCP puts job-oriented tools inside Claude, Cursor, and any agent your team runs.More on Specter MCP
+Agents
+Put Agents on it — the in-app agent that plans the work, runs the tools, and answers with sources.More on Agents
+Powering over 400 teams in VC, PE, M&A and GTM
+Specter quickly became the go-to platform for modern data-driven investors.
+Teams looking for an edge in private markets run Specter as their data layer: 55M+ companies, 550M+ people and 1M+ transactions, refreshed in real time — with exclusive signals delivered straight into the tools they already use.
+Book a demo
+“Now we spend far less time on infrastructure and spend more of our time building those relationships and investing behind the best founders in our ecosystems. I think Specter will become table stakes for any fund that wants to be in the top quartile.”
+Richard Dulude
+Partner at Underscore VC
+“In a short period of time, Specter has become an integral part of how we ensure we have 100% coverage of the markets we operate in.”
+Gideon Hayden
+Partner at Leaders Fund
+“We've already found one of our investments through Specter! That being said, its value extends beyond pure sourcing. Signals provide a level of intelligence that's valuable throughout the entire investment lifecycle.”
+Pietro Invernizzi
+Founder of firedropCase Study →
+“Specter's performance-based signals draw us towards the right startups at the right time, so we're prepared as we can be to make the right decision.”
+Danny Chepenko
+Corporate VC at inDriveCase Study →
+“Tools like Specter surface early talent signals, company foundations, team moves, and nascent traction, beyond what internal scouts can manually track. We see companies we wouldn't see otherwise.”
+Ben Urwin
+Data at Giant VenturesCase Study →
+“Specter is my go-to for founder outreach before anything else. My time on LinkedIn is substantially reduced; I open Specter, run our saved searches, look at Talent and Investor signals, and reach out”
+Aarushi Sharma
+Investor at BEENEXTCase Study →
+“We've invested in a founder with roots at Stanford and Wharton. They were a rising star in their industry with a strong technical background. We found them as a Stealth signal through Specter.”
+Iynna Halilou
+Partner at The MBA FundCase Study →
+“Specter has been a useful addition to our sourcing stack - it's surfaced interesting companies we might have otherwise missed and helps keep our pipeline fresh.”
+Dominique Yadegar
+VP at Bonfire Ventures
+Trusted by 400+ elite firms
+Specter
+Real-time deal sourcing for 55M+ companies and 550M+ people. Surface hidden startups and track market signals as they happen.
+Book a demo
+Ask AI about Specter
+Ask ChatGPT about SpecterAsk ChatGPTAsk Perplexity about SpecterAsk PerplexityAsk Grok about SpecterAsk GrokAsk Claude about SpecterAsk ClaudeAsk Google AI Mode about SpecterAsk Gemini
+Data
+Companies
+People
+Investors
+Transactions
+Features
+AgentsNew
+Revenue Modelling
+Valuation Estimates
+Talent Signals
+Interest Signals
+News
+Integrations
+CRM
+Network Tracking
+Chrome Extension
+Delivery Methods
+API
+MCPNew
+Bulk Data
+Company
+Careers
+Partners
+Case Studies
+Insights
+Data
+Companies
+People
+Investors
+Transactions
+Features
+AgentsNew
+Revenue Modelling
+Valuation Estimates
+Talent Signals
+Interest Signals
+News
+Integrations
+CRM
+Network Tracking
+Chrome Extension
+Delivery Methods
+API
+MCPNew
+Bulk Data
+Company
+Careers
+Partners
+Case Studies
+Insights
+© 2026 Specter Labs OÜ. All rights reserved.
+Privacy PolicyPrivacy RightsTerms & Conditions
+LinkedInTwitter

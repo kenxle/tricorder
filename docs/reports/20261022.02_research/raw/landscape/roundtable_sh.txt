@@ -1,0 +1,55 @@
+SOURCE: https://roundtable.sh
+FETCHED: 2026-10-22 10:38
+HTTP: 200
+
+
+A council of frontier models · Roundtable
+Skip to main content
+Roundtable
+Get StartedDocsSupport
+Roundtable
+A council of frontier models — for the decisions that matter.
+Six frontier models. Answered in parallel. One decided answer.
+installeruvpiphomebrew
+$curl -fsSL https://roundtable.sh/install.sh | bashCopy
+The canonical one-line install. Works on macOS and Linux.
+Get StartedView on GitHub
+Roundtable is a free command-line tool that convenes a council of six frontier AI models — Grok, Codex/OpenAI, GLM, MiniMax, Claude, and Gemini — answering in parallel and optionally deliberating to consensus, so you get one decided answer.
+Six seats at the table
+Grok
+Codex / OpenAI
+GLM
+MiniMax
+Claude
+Gemini
+Run as a one-round advisory panel, or as a chaired deliberation that revises across rounds until a Claude chair declares consensus. How it works →
+Why convene a council?
+A single model has a single set of blind spots. Roundtable seats up to six frontier reasoners, each from a different lab and a different training run. So the takes that matter don't all lean the same way. When a decision is expensive to get wrong, breadth beats a confident monologue. You see where the models agree, where they split, and why — then Roundtable hands you one recommendation instead of six tabs to reconcile by hand.
+How it works
+Ask a question and Roundtable fans it out to every configured head in parallel. In advisory mode — the default — each head answers blind. It never sees the others, so you get every independent take side by side, plus a synthesis. In deliberation mode the heads run several rounds. After round one, each head sees the whole table and revises. A dedicated Claude chair reads the room and decides whether the council has reached consensus or should run again. Consensus ends it early; --rounds N is just the ceiling.
+Runs on your own keys
+There is no hosted account, no SSO, and nothing to sign up for. Roundtable runs on plain provider API keys you already hold. Add at least one with roundtable auth and the matching seat fills. Heads with no key skip gracefully, so the council runs with whatever subset you have. It also ships an MCP server (roundtable mcp serve), so coding harnesses like Claude Code, Cursor, and the Codex CLI can call the council as a tool. It's free and open-source under the MIT license — a Frontier Infra project.
+Install & run your first council →
+Frequently asked questions
+What is Roundtable?Roundtable is a free, open-source command-line tool that convenes a council of up to six frontier AI models — Grok, Codex/OpenAI, GLM, MiniMax, Claude, and Gemini — answering your question in parallel and optionally deliberating to consensus, so you get one decided answer.
+Which models sit at the table?Six heads: Grok (xAI), Codex/OpenAI, GLM (Z.ai), MiniMax, Claude (Anthropic), and Gemini (Google). Each head is optional — configure the keys you have and the council runs with whatever subset is available.
+How do I install Roundtable?Run the one-line installer curl -fsSL https://roundtable.sh/install.sh | bash, or install with uv (uv tool install roundtable), pip (pip install roundtable), or Homebrew (brew install frontier-infra/tap/roundtable).
+Do I need API keys or local CLIs?You need at least one provider API key. Roundtable runs on plain keys with no hosted account or SSO. Where an authenticated local CLI such ascodex is present it is preferred, but no vendor CLI is required.
+What is the difference between advisory and deliberation mode?Advisory is one round where each head answers blind and you get every independent take plus a synthesis. Deliberation runs multiple rounds where each head sees the whole table and revises until a Claude chair declares consensus.
+Docs
+Get Started
+How it works
+The heads
+CLI reference
+Project
+GitHub
+Support & help
+Install script
+For agents (AGENTS.md)
+Frontier Infra
+frontierinfra.org
+github.com/frontier-infra
+A Frontier Infra project · MIT License · © 2026
+Get help & support — ask the council
+Get help on GitHub →Support & help
+Part of Frontier InfraAgent view of this page

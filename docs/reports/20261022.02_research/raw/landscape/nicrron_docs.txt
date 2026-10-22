@@ -1,0 +1,97 @@
+SOURCE: https://nicrron.ai/docs
+FETCHED: 2026-10-22 10:25
+HTTP: 200
+
+
+Skip to content
+NNicrron
+Checking
+ModelsDocsFeaturesNinooSign inGet started
+Search docs⌘K
+Esc
+Search every docs page: endpoints, parameters, error codes, models.
+Get started
+Overview
+Quickstart
+Authentication
+SDKs
+API
+API reference
+Models and routing
+Capabilities
+Embeddings
+Video and images
+Audio
+Model Arena
+Operate
+Teams and alerts
+Observability
+Data privacyDocs · Overview
+Get started
+Overview
+Quickstart
+Authentication
+SDKs
+API
+API reference
+Models and routing
+Capabilities
+Embeddings
+Video and images
+Audio
+Model Arena
+Operate
+Teams and alerts
+Observability
+Data privacy
+Documentation
+Build on Nicrron.
+One OpenAI-compatible endpoint for chat, embeddings, audio, image and video models. If you already use the OpenAI SDK, you change the base URL and the key.
+cURL — your first requestCopycurl https://api.nicrron.ai/v1/chat/completions \
+ -H "Authorization: Bearer $NICRRON_API_KEY" \
+ -H "Content-Type: application/json" \
+ -d '{
+ "model": "nicrron/auto",
+ "messages": [{ "role": "user", "content": "Hello!" }]
+ }'
+Get started
+QuickstartPoint the OpenAI SDK at Nicrron and send a first request.
+AuthenticationAPI keys, your own provider keys, and keeping them safe.
+SDKsOpenAI SDKs for Python and TypeScript, and LangChain.
+API
+API referenceEvery endpoint, parameter, header and error code.
+Models and routingThe live catalog with prices, the routing slugs, and provider data terms.
+Capabilities
+EmbeddingsOpenAI, Mistral and Voyage behind /v1/embeddings.
+Video and imagesAsync generation jobs, charged upfront, refunded on failure.
+AudioText to speech and Whisper transcription.
+Model ArenaCompare models on one prompt for speed and cost.
+Operate
+Teams and alertsShared wallets, roles, and email and signed webhook alerts.
+ObservabilityLogs, latency, provider health and export.
+Data privacyWhat is kept, what never is, and each provider's terms.NextQuickstart →
+NNicrron
+One API for every model. Built by Nicrron, an AI research company with a full stack.
+Products
+Nicrron gateway
+Ninoo Code
+Ninoo Builder
+Model Arena
+Research
+Research
+NiNI Labs
+Platform
+Model catalog
+Documentation
+Gateway status
+NiNI Cloud
+Nicroo Core
+Company
+nicrronninoo.ai
+Careers
+Support
+Privacy
+Terms
+© 2026 Nicrron Inc. We never store chat prompts. Completions are cached for up to 24 hours, only for your account, when temperature is 0 or you opt in.
+DocsPrivacyConsole
+Documentation | Nicrron

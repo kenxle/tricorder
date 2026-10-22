@@ -1,0 +1,44 @@
+SOURCE: https://www.michaeljbarone.com/signals/pacing-the-frontier
+FETCHED: 2026-10-22 10:26
+HTTP: 200
+
+
+Signals and Startups (No. 6) → Pacing the Frontier
+Signals and Startups (No. 6) → Pacing the Frontier
+Search
+Home
+Ideas
+Signals
+Book Recs
+Home
+ ❯ 
+Signals
+ ❯ 
+Signals and Startups (No. 6) → Pacing the Frontier
+Signals and Startups (No. 6) → Pacing the Frontier
+Sep 18, 20265 min read
+Connecting research and open source to emerging themes across the startup ecosystem.
+For those who watched the Apocalyptimist doc, the current debate will feel familiar. The past few weeks were filled with a myriad of AI policy developments and proposals with no clear path forward yet. Dario Amodei published We Must Pace the Frontier, laying out a more formal case for stronger safeguards around frontier AI as capabilities continue to advance, especially around third-party evaluators and geographical coordination. He received surprisingly broad support from Sam Altman, Elon Musk, and Demis Hassabis, while others like Jenson Huang continued to dig their heels in and emphasize the risk of slowing U.S. AI development and ceding ground to global competitors.
+The case for the AI optimist:
+Local models are performing at 90% efficiency as compared to the foundations (up from 23%). Intelligence per watt rose 5.3x (better models and better prem). And on-prem also cuts energy by 80%. New companies are emerging, such as Trajectory that builds continuous learning infra; River AI, which has an API for fine-tuned models; and of course, Fireworks, where Lin Qiao reported that 43T tokens come from models that have been specialized. Competition is a driving force for this shift on OpenRouter; at the beginning of 2026, we saw 9% of all token volume was through DeepSeek, nearly doubling to 18% this summer. Other providers, including Alibaba’s Qwen, Moonshot AI’s Kimi, MiniMax, Xiaomi, Tencent, and Z.ai’s GLM, are increasingly competing for market share. Furthermore, in late 2024, OpenRouter offered access to roughly 100+ models, and by August 2026, it was processing more than 10 trillion tokens per day across 400+ models. To paint the picture further, OpenRouter’s entire 2025 State of AI analysis covered roughly 100 trillion tokens from November 2024 to November 2025, equivalent to only about ten days of traffic at today’s run rate. I think the competition, not just in the US but globally, has become akin to an arms race and the risk itself. As the market pushes providers to move faster, Jensen Huang’s argument that AI safety should be left largely to engineers rather than regulators captures just how much faith the industry is placing in self-governance.
+The case for the AI pessimist:
+I think by now everyone in tech, or not, is aware of OpenAI agents going rogue and hacking Hugging Face. The research models circumvented isolation controls during cyber evaluations and exploited vulnerabilities to access the public internet. Anthropic subsequently disclosed four separate incidents in which Claude models gained unauthorized access to real third-party systems during evaluations, and the UK AI Security Institute reported another case involving Claude taking unauthorized actions on the live internet. Jacob Coxon, a former AI researcher who spent three years working at both Anthropic and OpenAI, resigned from Anthropic in September 2026 and published a viral warning that leading AI labs are “gambling with our lives”. To the point that so many of these “pessimists” are trying to make at the crux of it is the imbalance between the rate of acceleration and the number of individuals prioritizing safety. For example, Tristan Harris has pointed out that fewer than 200 people work full-time on AI safety, compared with more than 20,000 working to build AGI. Until that gap has shrunk or engineers are more equipped on safety, as Jenson recommends, the debate between optimists and pessimists will endure.
+…And if the arms-race analogy felt abstract, researchers just used Claude to break into5 OpenAI.
+Paper of the week (HardFlow6)
+MIT researchers developed a method called HardFlow that helps generative AI models obey hard constraints in safety-critical settings. Key use cases are robotics and physical systems where violating a rule could cause an accident. Instead of forcing the model to satisfy every constraint through the entire generation process, HardFlow lets the model explore freely and only guarantees that the final output satisfies the requirements, instead of forcing every intermediate step in the generation process to obey the constraint. That gives the model more room to find a better solution.
+The team turned constrained generation into a trajectory-optimization problem using ideas from optimal control. The algorithm makes small corrections to the model’s generation path so the final result lands inside the allowed set. A key characteristic is that HardFlow does not require retraining the underlying model; it works at inference/deployment time with pretrained flow-matching models, making it more practical as an added control layer on existing systems.
+Why this is important: I think HardFlow is a great example of AI safety, albeit in physical AI, moving away from debt and into engineering practice. Rather than relying on model behavior and monitoring, it introduces a technical control layer that can enforce non-negotiable constraints. You can see flavors of Jensen’s point here - empower engineers to build safety directly into the system.
+Recent funding snapshot…
+Metacognition AI: Builds an operating layer that adds guardrails, memory, and reasoning beneath language models so AI agents can safely control robots and complex systems. Raised a $10 million pre-seed funding round in September 2026, backed by Main Sequence.
+Eve Security: Builds runtime security software that monitors autonomous AI agents, enforces security policies, and blocks risky actions before they reach corporate systems. Raised a $4.5 million seed extension in September 2026, bringing its seed funding to $7.5 million, led by Run Ventures with participation from Dreamit Ventures, Blu Ventures, and LiveOak Ventures.
+Exein: Builds embedded runtime cybersecurity software for physical AI and connected devices, providing protection at the kernel level across industrial automation, automotive, aerospace, and other sectors. Raised a $270 million Series D funding round in September 2026, led by Headline.
+5. wsj.com/tech/ai/hackers-used-anthropics-claude-to-break-into-openai
+6. news.mit.edu/2026/new-method-enables-ai-safety-critical-situations-0914
+Read more on Michael’s Substack
+Graph View
+Backlinks
+Michael Barone
+Signals
+Created with Quartz v4.5.2 © 2026
+GitHub
+Discord Community

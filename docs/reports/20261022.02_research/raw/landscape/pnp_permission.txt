@@ -1,0 +1,92 @@
+SOURCE: https://pnpenterpriseai.substack.com/p/deep-dive-permission-not-power
+FETCHED: 2026-10-22 10:26
+HTTP: 200
+
+
+ Deep Dive: Permission, Not Power
+SubscribeSign in
+Deep Dive: Permission, Not Power
+Plug and Play Enterprise & AI team newsletter 
+Enterprise & AI, Alde, Abeera Saeed, and Arsham
+Oct 07, 2026
+2
+Share
+Data centers can now build their own power faster and cheaper than the grid can deliver it. The harder problem is getting communities to agree to host them.
+Data Center developers have announced ~90 GW of behind-the-meter generation to power data centers. Yet, only about 2 GW of that is actually running today, with only about 1 GW more under construction. In short, we are currently building less capacity than we’ve already installed.
+Image source: Bypassing the Grid: How Data Center Developers Are Building Their Own Power Plants (Cleanview)
+You’d expect the explanation to be cost or supply chain bottlenecks, but neither explanation really holds up anymore since the cost fight is essentially over.
+In July, NY Governor Hochul signed the first statewide moratorium on new hyperscale data centers, along with a proceeding to force operators to either pay more for power or supply their own. A dozen other states are building separate rate classes so that data centers carry the cost of the transmission built to serve them.
+Under the old model, a transmission line built for a single data center goes into the shared rate base, one pool of costs that every customer pays into. An allocation formula splits it among homes, businesses, industry and the data center, so everyone’s bill goes up. A separate rate class creates a second pool. The line is charged only to the data center class that caused it, the data center pays for it in full, and everyone else’s bill stays the same.
+Texas Governor Abbott halted new grid connections in Texas pending audits, and the White House’s Ratepayer Protection Pledge asked operators to build, bring, or buy every megawatt they need. As the image above shows, self-supply facilities build, contract for, or operate their own dedicated power rather than relying entirely on the local grid. Regulators have endorsed this as the path forward, so why has construction stalled?
+The real bottleneck is not power, it’s consent.
+A Gallup poll found that 71% of Americans oppose local data center construction and 48% opposed it strongly. Crucially, only 15% of opponents say anything about higher utility bills. Their real grievances center on water usage, grid strain, and the ordinary complaints of anyone who lives near a large industrial facility: noise, traffic, and lost open space.
+Relying on traditional grid power is becoming an expensive headache, marked by separate rate classes, lost tax exemptions, new infrastructure surcharges, and multi-year queue delays. When waiting costs more than generating, self-supply becomes a strategic bet on speed and certainty.
+Image source: Bypassing the Grid: How Data Center Developers Are Building Their Own Power Plants (Cleanview)
+Two things moved over the past eighteen months that changed the self-supply playbook:
+On-Site Generation: Bloom Energy can install its fuel cells on-site in roughly 90 days. Because the power is generated where it’s consumed, there’s no need for new high-voltage line nor interconnection queue: no multi-year sequence of utility studies to determine which grid upgrades the connection triggers and who pays for them. That speed is why Oracle contracted 1.2 GW under an agreement that runs up to 2.8 GW. Against a queue measured in years, the opportunity cost is years of revenue against years of waiting.
+Inside-the-Fence Hardware: Next-generation equipment like Heron Power’s solid-state transformers convert medium voltage down to the 800V required by modern AI racks. By stripping out roughly 70% of conventional hardware - including uninterruptible power supplies - developers can save significant capital inside the building, regardless of where the electricity originates.
+Together, these technologies turned self-supply from a green PR play into a hard-nosed strategy for cost avoidance and execution speed.
+Other alternatives offer varying timelines:
+Geothermal: Companies like Fervo Energy and Sage Geosystems offer true baseload power. Fervo’s 500 MW Cape Station project is expected to deliver its first power late this year, while Sage holds a 150 MW agreement with Meta.
+Nuclear: Hyperscalers have committed almost 10 GW across 13 announced deals, including Microsoft’s 835 MW Three Mile Island restart targeted for 2027. Radiant is building microreactors against real customer agreements. None of it is cheap, and almost none arrives before 2028. Nuclear is how hyperscalers solve for 2032. It does not solve the problem they have now.
+The Limits of Behind-the-Meter Power:
+Behind-the-meter generation bypasses the grid queue, but it doesn’t bypass local permitting or public pushback.
+Look at Memphis. The city hosts most of the currently operating self-supplied capacity, including xAI’s Colossus facility, which relies on roughly 1.5 GW of gas turbines. It is also ground zero for community opposition. On-site combustion still draws water, occupies local real estate, and emits noise and pollution.
+Local objections fall into five main categories:
+When Gallup asked opponents why, most answers fell into four groups: the effect on resources including water and grid strain (50%), quality of life such as traffic, land use and property values (22%), cost associated with utility bills (20%), and pollution, mainly noise (16%).
+Water
+Issue: Most large data centers cool servers by evaporating water, and up to 85% of it never returns to the local supply. U.S. data centers used about 17 billion gallons directly in 2023, a figure that could double by 2028.
+Example: Google’s campus in The Dalles, Oregon, used 355 million gallons in 2021, about 29% of the city’s water. The public learned this only after the city dropped a lawsuit to keep it confidential.
+Validity: Locally, yes; nationally, overstated. In Virginia, the world’s largest data center market, data centers used under 0.5% of state water withdrawals in 2023, and closed-loop cooling uses far less. Water is a reason to scrutinize specific sites, not to oppose data centers everywhere.
+Grid strain
+Issue: Demand is rising faster than new plants and lines can be built. The North American Electric Reliability Corporation (NERC) raised its 10-year peak demand forecast 69% in a year and flagged adequacy risks in 13 of 23 regions.
+Example: PJM Interconnection’s market monitor tied $16.6 billion in capacity costs to data center load.
+Validity: In the near term, yes; over the long term, overstated. Forecasts likely double-count speculative “ghost” requests, and a Duke study found the grid could absorb about 76 GW of new load if data centers cut back just 85 hours a year. This is the one objection that self-supply and flexible load answer directly.
+Quality of life and noise
+Issue: Campuses bring construction traffic, lost open space and new transmission lines, plus a constant low-frequency hum from cooling equipment that noise ordinances rarely catch. Virginia fines top out at $500.
+Example: Loudoun residents are fighting 185-foot transmission towers near homes, and Chandler, Arizona, residents complained about noise for about a decade before the city tightened zoning. Prince William County’s 2,100-acre Digital Gateway died in July after courts voided its rezoning over skipped public notice.
+Validity: Yes for the homes closest to a site, but overstated as a general objection. Brookings found nearby home prices rise 2% to 5%, and JLARC found most sites draw no noise complaints. Both are siting and design problems: industrial zoning keeps campuses away from homes, and acoustic shrouds, quieter chillers and immersion cooling cut the hum.
+Electricity bills
+Issue: Residents fear data centers will push up their power costs.
+Example: The Joint Legislative Audit and Review Commission (JLARC) projects a typical Dominion customer in Virginia could pay $14 to $37 more a month by 2040 for infrastructure built largely for data centers.
+Validity: Wrong about the past, increasingly right about the future. The Electric Power Research Institute found data centers modestly lowered rates from 2015 to 2024 by spreading fixed costs. As spare capacity runs out, that reverses, which is what the new rate classes are meant to address.
+Air quality
+Issue: Most data centers burn little on site, but developers building their own gas plants emit nitrogen oxides, which form ozone.
+Example: xAI ran up to 35 gas turbines in Memphis for over a year before 15 were permitted, with an estimated 900 tons of nitrogen oxide emissions a year in an area already out of compliance on ozone. The local National Association for the Advancement of Colored People (NAACP) chapter has appealed.
+Validity: Yes where developers burn gas, but it’s a turbine problem, not a self-supply problem. Oracle’s Project Jupiter switched to Bloom fuel cells after air quality objections and cut projected emissions about 92%. This is the one objection self-supply can make worse, and technology choice decides whether it does.
+Who got it right?
+Loudoun County, Virginia. Data centers occupy about 4% of its commercial land but generate 38% of its general fund revenue, roughly $1.1 billion in 2026. The county has used that money to cut its real property tax rate every year for a decade, from $1.145 per $100 of assessed value in 2016 to $0.805 in 2026, now the lowest in Northern Virginia. Residents see the benefit on every tax bill.
+Some companies are adopting the same logic. Microsoft has committed to pay its full share of local property taxes rather than seek lower rates, cover the full cost of its power, and fund local water upgrades itself, including more than $25 million in water and sewer work in Leesburg, Virginia.
+Where the trade-off is harder to sell
+States offer data center incentives deliberately; industry voices argue that without them, many projects simply don’t get built. Forgone sales tax is not a new cost, and the facilities still generate property, utility and other taxes, along with construction jobs, follow-on investment and a shot at becoming an AI hub. The question is less whether to offer incentives than who bears the cost and who sees the benefit. Deals draw the most local resistance when the host community gives up its own long-term revenue for few permanent jobs:
+Amazon Web Services received a 30-year abatement in New Albany, Ohio: a full exemption for 15 years, then a 75% reduction for 15 more. The city did negotiate guaranteed minimum annual payments in return.
+Rockland County, New York granted JPMorganChase’s data center a $77 million sales tax exemption for a single permanent job.
+In The Dalles, Oregon, Google’s property tax abatements cost the local school district $7.8 million in 2024, or $2,764 per student. A $140 million school bond later failed.
+Virginia shows both sides. The state exempts sales tax to attract builders, while Loudoun keeps the property tax and returns it to residents. Where data center revenue visibly lowers residents’ own taxes, consent tends to follow. Where the local share is given away before ground is broken, opposition is more likely to build.
+Software as a Counterweight
+Self-supply isn’t the only way around grid constraints. Software-driven load flexibility offers a complementary alternative.
+Startups like Emerald AI manage data center workloads as flexible demand rather than fixed draw. By pausing batch training jobs during peak grid stress, shifting compute across regions, and coordinating on-site battery storage with utility signals, software can buy meaningful capacity back from the grid. In Phoenix, it cut peak draw by 25%, and the company claims flexibility could unlock up to 100 GW on the existing grid.
+This creates a clear operational divide:
+Training: AI model training can pause when grid demand peaks, making flexible load software faster and cheaper than building new generation assets. (Companies like LōD already manage ~1,000 MW across 100+ sites, executing curtailment on-device in under 30 seconds.)
+Inference: User-facing inference workloads demand low latency and uninterrupted uptime. They cannot be curtailed, making dedicated on-site power non-negotiable.
+The Bottom Line
+Fast on-site generation and compact hardware are already well-understood and priced into the market. Power availability is no longer the hardest variable to solve.
+The primary bottleneck today is community consent—managing noise, water use, traffic, and tax structures that residents perceive as unfair. Developers who treat community alignment as a core engineering metric rather than a late-stage permitting hurdle will be the ones who actually get to build.
+The best deals skip the abatement and let residents see the revenue, in lower tax bills and lower power bills (as PG&E’s 11% rate cut since 2024 shows). Where the grid runs out of room, self-supply fills the gap, and flexibility software helps the grid absorb the rest.
+Engage with Us
+The AI infrastructure bottleneck is increasingly becoming an energy problem. As data center demand accelerates, the question is no longer simply how to secure more power, but how to build the infrastructure, power generation, and software needed to make that power available faster and more efficiently. 
+We want to meet founders building the next generation of AI energy infrastructure: on-site generation, grid flexibility, energy optimization, cooling, and software that helps data centers become more efficient and responsive to the grid.
+If you’re building a company at the intersection of AI and data center infrastructure, we’d love to hear from you.
+Reach out to us at amit@pnptc.com or alde@pnptc.com or a.zolanvari@pnptc.com
+Subscribe
+2
+Share
+Discussion about this post
+CommentsRestacks
+TopLatestDiscussions
+No posts
+Ready for more?
+Subscribe
+© 2026 Enterprise & AI · Privacy ∙ Terms ∙ Collection notice
+ Start your SubstackGet the app
+Substack is the home for great culture
