@@ -4,17 +4,23 @@
 Run after generate.py, with the room's virtual environment:
 
     data_room/.venv/bin/python data_room/check.py
+    data_room/.venv/bin/python data_room/check.py --room data_room/hollis_voice_clean --key data_room/answer_key_clean.json
+    data_room/.venv/bin/python data_room/check.py --room data_room/hollis_voice_variant --key <path to the sealed variant key>
 
-It reads answer_key.json and the files under data_room/hollis_voice/. For each flag it checks that the shown
-value is where the key says it is, then recomputes the true value from the raw files (the way a diligence
-scan would) and checks it matches the key. It exits with a non-zero status if anything is missing or wrong.
+It reads an answer key and the files of the room it names (the main room and answer_key.json by default).
+For each flag the key lists, it checks that the shown value is where the key says it is, then recomputes the
+true value from the raw files (the way a diligence scan would) and checks it matches the key. For each flag
+the key does not list, it checks that the room is honest on that point. It also checks that the cash
+reconciles and that the room does not look built to be caught. It exits with a non-zero status on any miss.
 
 Workbooks are read with openpyxl. Formula cells are read for their stored values, which xlsxwriter writes.
 PDFs are read with pdfplumber. CSV files are read with the csv module.
 """
+import argparse
 import csv
 import json
 import re
+import statistics
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -23,9 +29,20 @@ import openpyxl
 import pdfplumber
 
 HERE = Path(__file__).resolve().parent
-KEY = json.loads((HERE / "answer_key.json").read_text(encoding="utf-8"))
-ROOM = HERE / "hollis_voice"
-SEED_DROP = HERE / "hollis_voice_seed_drop"
+_ap = argparse.ArgumentParser(description="Check a generated Hollis Voice data room against its answer key.")
+_ap.add_argument("--room", default=str(HERE / "hollis_voice"), help="the room folder (default: data_room/hollis_voice)")
+_ap.add_argument("--key", default=None, help="the answer key (default: answer_key.json, or none if --room is not the main room)")
+_args = _ap.parse_args()
+ROOM = Path(_args.room).expanduser().resolve()
+if _args.key is None:
+    if ROOM != (HERE / "hollis_voice").resolve():
+        sys.exit("Give --key with --room.")
+    _args.key = str(HERE / "answer_key.json")
+KEY = json.loads(Path(_args.key).expanduser().read_text(encoding="utf-8"))
+SEED_DROP = ROOM.parent / f"{ROOM.name}_seed_drop"
+PLANTS = set(KEY["plants"])
+ALL_FLAGS = ["PF1", "PF2", "PF2b", "PF3", "PF4", "PF5", "PF6", "PF7"]
+FACTS = KEY["facts"]
 
 PASSES, FAILS = [], []
 
@@ -167,7 +184,7 @@ def cust_rows():
 def claims():
     out = {}
     for line in pdf_pages("01_overview/pitch_deck.pdf")[13].splitlines():
-        m = re.match(r"^(.*?)\s+(\$?[\d,\.]+%?(?: months| \(12 months\))?|under 9% of ARR)\s+(\d+)$", line.strip())
+        m = re.match(r"^(.*?)\s+(\$?[\d,\.]+%?(?: months| \(12 months\))?|(?:under )?\d+% of ARR)\s+(\d+)$", line.strip())
         if m:
             out[m.group(1)] = (m.group(2), int(m.group(3)))
     return out
@@ -190,7 +207,12 @@ def check_claims_page():
     deck = pdf_pages("01_overview/pitch_deck.pdf")
     for label, (val, slide) in want.items():
         if label in ("ARR", "Calls handled, September 2026", "Largest customer", "Net revenue retention", "Clinics on Hollis"):
-            probe = {"ARR": "$2.5M", "Largest customer": "9% of ARR"}.get(label, val.split(" ")[0])
+            if label == "ARR":
+                probe = f"${num(val) / 1e6:.3g}M"
+            elif label == "Largest customer":
+                probe = val.replace("under ", "")
+            else:
+                probe = val.split(" ")[0]
             ok(f"claims row '{label}' appears on slide {slide}", probe in deck[slide - 1], probe)
 
 
@@ -232,8 +254,9 @@ def check_pf2b():
     m = re.search(r"\*\*0:35[^\n]*\n\n(.*?)\n\n\*\*", text, re.S)
     ok("PF2b script has a 0:35 section", bool(m))
     para = m.group(1) if m else ""
-    spoken = 3_000_000 if "three million dollars in annual recurring revenue" in para else None
-    ok("PF2b spoken ARR is about three million dollars", spoken == f["shown"]["value"])
+    phrase = FACTS["arr_video_phrase"]
+    spoken = f["shown"]["value"] if f"about {phrase} dollars in annual recurring revenue" in para else None
+    ok(f"PF2b spoken ARR is about {phrase} dollars", spoken == f["shown"]["value"])
     deck = num(claims()["ARR"][0])
     ok("PF2b spoken ARR differs from the deck beyond the tolerance", spoken is not None and abs(spoken - deck) / deck > f["tolerance"] and deck == f["true"]["value"])
     words = len(" ".join(l for l in text.splitlines() if l and not l.startswith(("**", "#", "Read this", "---", "Synthetic"))).split())
@@ -270,8 +293,8 @@ def check_pf3():
     n_true = sum(r["n"] for r in res)
     ok("PF3 rebuilt net retention matches the key", near(nrr, f["true"]["value"], f["tolerance"] / 5), f"{nrr:.4f}")
     ok("PF3 rebuilt gross retention matches the key", near(grr, f["true"]["details"]["gross_revenue_retention"], f["tolerance"] / 5), f"{grr:.4f}")
-    ok("PF3 rebuilt customer count is 68", n_true == f["true"]["details"]["customers"])
-    ok("PF3 Cohorts tab customer total is the shown 57", named(wb, "COHORT_CUSTOMERS") == f["shown"]["details"]["customers"])
+    ok("PF3 rebuilt customer count matches the key", n_true == f["true"]["details"]["customers"])
+    ok("PF3 Cohorts tab customer total is the shown count", named(wb, "COHORT_CUSTOMERS") == f["shown"]["details"]["customers"])
     ok("PF3 Cohorts tab net retention is the shown value", near(named(wb, "NRR_12M"), f["shown"]["value"], f["tolerance"] / 5))
     tab = wb["Cohorts"]
     first_col = [tab.cell(row=r, column=1).value for r in range(5, 14)]
@@ -308,7 +331,7 @@ def rerun_cash(wb, hires):
         burns.append(burn)
         if cash <= 0 and runway is None:
             runway = t - 1
-    return runway, sum(burns[:12]) / 12
+    return (60 if runway is None else runway), sum(burns[:12]) / 12
 
 
 def check_pf4():
@@ -323,9 +346,9 @@ def check_pf4():
     ok("PF4 the model's eight hires are the first eight in the plan", model_roles == csv_roles)
     runway_true, burn_true = rerun_cash(wb, hires)
     runway_model, burn_model = rerun_cash(wb, hires[:8])
-    ok("PF4 runway rerun with all 24 hires matches the key (19)", runway_true == f["true"]["value"], str(runway_true))
+    ok("PF4 runway rerun with all 24 hires matches the key", runway_true == f["true"]["value"], str(runway_true))
     ok("PF4 average burn rerun with all 24 hires matches the key", near(burn_true, f["true"]["details"]["avg_net_burn_first_12_months"], 1.0), f"{burn_true:.0f}")
-    ok("PF4 rerun with the model's 8 hires reproduces Cash_Runway (37)", runway_model == named(wb, "RUNWAY_MONTHS") == f["shown"]["value"], str(runway_model))
+    ok("PF4 rerun with the model's 8 hires reproduces Cash_Runway", runway_model == named(wb, "RUNWAY_MONTHS") == f["shown"]["value"], str(runway_model))
     ok("PF4 model average burn matches the key", near(named(wb, "AVG_NET_BURN_12M"), f["shown"]["details"]["avg_net_burn_first_12_months"], 1.0))
     claim = claims()
     ok("PF4 deck claims-page runway is the shown value", claim["Runway"][0] == f"{f['shown']['value']} months")
@@ -342,9 +365,10 @@ def check_pf5():
     top1, top3 = mrr[0] / total, sum(mrr[:3]) / total
     ok("PF5 top customer share matches the key", near(top1, f["true"]["value"], 0.0005), f"{top1:.4f}")
     ok("PF5 top-three share matches the key", near(top3, f["true"]["details"]["top3_share"], 0.0005), f"{top3:.4f}")
-    big = [r for r in rows if r["customer_id"] == "C-BIG"]
-    ok("PF5 the largest customer is C-BIG, Cedar & Pine, 17 locations", len(big) == 1 and int(big[0]["mrr"]) == mrr[0] and big[0]["locations"] == "17"
-       and big[0]["customer_name"] == "Cedar & Pine Animal Hospitals")
+    big_id = f["true"]["details"]["largest_customer_id"]
+    big = [r for r in rows if r["customer_id"] == big_id]
+    ok("PF5 the largest customer is Cedar & Pine, with the id the key gives", len(big) == 1 and int(big[0]["mrr"]) == mrr[0]
+       and big[0]["locations"] == str(FACTS["big_customer_locations"]) and big[0]["customer_name"] == "Cedar & Pine Animal Hospitals")
     ok("PF5 deck claims the largest customer is under 9%", claims()["Largest customer"][0] == "under 9% of ARR" and top1 > f["shown"]["value"])
 
 
@@ -355,8 +379,7 @@ def check_pf6():
     for r in read_csv("02_financials/expense_ledger.csv"):
         if r["month"] == "2026-09":
             led[r["category"]] += float(r["amount_usd"])
-    rows = [r for r in cust_rows() if r["month"] == "2026-09" and r["product_type"] in ("Subscription", "Pilot")]
-    basis = sum(int(r["mrr"]) for r in rows)
+    basis = int(next(r for r in read_csv("03_metrics/monthly_metrics.csv") if r["month"] == "2026-09")["mrr"])
     shown = 1 - (led["telephony"] + led["third_party_licences"]) / basis
     true = 1 - (led["telephony"] + led["third_party_licences"] + led["cloud_hosting"] + led["model_inference"] + led["support_staff"]) / basis
     ok("PF6 ledger gross margin with only telephony and licences is the shown 80%", near(shown, f["shown"]["value"], 0.0005), f"{shown:.4f}")
@@ -392,60 +415,228 @@ def check_pf7():
 def check_decoys():
     wb = workbook("02_financials/financial_model.xlsx")
     ws = wb["ARR_Build"]
-    row = next(r for r in range(1, 40) if ws.cell(row=r, column=1).value == "Onboarding fees (one-time, excluded)")
+    row = next(r for r in range(1, 40) if ws.cell(row=r, column=1).value == "Onboarding fees")
     ok("DC1 onboarding fees row adds nothing to ARR", ws.cell(row=row, column=5).value == 0)
+    ok("DC1 the row label does not say the fee is excluded", "exclud" not in str(ws.cell(row=row, column=1).value).lower())
     fees = [r for r in cust_rows() if r["product_type"] == "Onboarding"]
     ok("DC1 onboarding rows carry fees and no MRR", fees and all(int(r["mrr"]) == 0 and int(r["one_time_fee"]) == 500 for r in fees))
-    ok("DC1 the Subscription ARR rebuild is unaffected by onboarding rows",
-       12 * sum(int(r["mrr"]) for r in cust_rows() if r["month"] == "2026-09" and r["product_type"] == "Subscription") == flag("PF1")["true"]["value"])
+    sub_arr = 12 * sum(int(r["mrr"]) for r in cust_rows() if r["month"] == "2026-09" and r["product_type"] == "Subscription")
+    ok("DC1 the Subscription ARR rebuild is unaffected by onboarding rows", sub_arr == FACTS["arr_true_recurring"])
 
-    loc = next(l for l in KEY["decoys"][1]["locations"] if "customer_name" in l)
+    dc2 = next(d for d in KEY["decoys"] if d["id"] == "DC2")
+    loc = next(l for l in dc2["locations"] if "customer_name" in l)
     months = [r for r in cust_rows() if r["customer_name"] == loc["customer_name"] and r["product_type"] == "Subscription"]
     idx = sorted(month_index(r["month"]) for r in months)
     ok("DC2 Brookline Row has an unbroken run of Subscription months at one price, through 2026-09",
        idx and idx[-1] == 20 and idx == list(range(idx[0], 21)) and len({r["mrr"] for r in months}) == 1)
+    annual, monthly = dc2["details"]["annual_fee"], dc2["details"]["monthly_revenue"]
+    ok("DC2 the annual fee is 12 times the monthly revenue and under 12 times list", annual == 12 * monthly < 12 * dc2["details"]["list_price"])
     t = squash("\n".join(pdf_pages("04_customers/order_form_brookline_row.pdf")))
-    ok("DC2 order form is an annual prepay worth 12 months of the monthly price", "$7,788" in t and "once, in advance" in t and int(months[0]["mrr"]) * 12 == 7788)
+    ok("DC2 order form is an annual prepay at a discount to list", f"${annual:,}" in t and "once, in advance" in t and "off the" in t)
     ok("DC2 order form is a 12-month term with no pilot or exit-at-will clause", "12 months" in t and "pilot" not in t.lower() and "any reason" not in t)
+    bill = {r["month"]: int(r["billings"]) for r in months}
+    ok("DC2 billings show the whole annual fee in one month and nothing in the other months",
+       bill[dc2["details"]["billings_month"]] == annual and sum(v for k, v in bill.items() if k != dc2["details"]["billings_month"]) == 0)
+    ok("DC2 the billings month is a cash spike well above the clinic's revenue that month", bill[dc2["details"]["billings_month"]] > 10 * monthly)
 
     cap = workbook("02_financials/cap_table.xlsx")["Cap_Table"]
-    shares = [cap.cell(row=r, column=3).value for r in range(5, 12)]
-    total = cap.cell(row=12, column=3).value
-    ok("DC3 cap table holders add to the total", sum(shares) == total)
-    ok("DC3 holder percentages add to 100.00 percent", near(sum(cap.cell(row=r, column=4).value for r in range(5, 12)), 1.0, 1e-9))
-    ok("DC3 pro forma percentages add to 100.00 percent", near(sum(cap.cell(row=r, column=6).value for r in range(5, 12)), 1.0, 1e-9))
-    price = 12_000_000 / total
-    s1, s2 = cap.cell(row=16, column=6).value, cap.cell(row=17, column=6).value
-    ok("DC3 SAFE shares equal amount over the cap price", near(s1, 1_200_000 / price, 0.5) and near(s2, 800_000 / price, 0.5))
-    ok("DC3 SAFEs own 2M over 12M of the company", near((s1 + s2) / total, 2_000_000 / 12_000_000, 1e-9))
-    ok("DC3 the Series A is 9M of 54M post-money", near(cap.cell(row=26, column=2).value, 9_000_000 / 54_000_000, 1e-9))
+    rows = {cap.cell(row=r, column=1).value: r for r in range(1, 60) if isinstance(cap.cell(row=r, column=1).value, str)}
+    r_tot = rows["Total"]
+    holders = range(5, r_tot)           # the holders, then the Series A investors row with no shares yet
+    total = cap.cell(row=r_tot, column=3).value
+    ok("DC3 cap table holders add to the total", sum(cap.cell(row=r, column=3).value for r in holders) == total)
+    ok("DC3 holder percentages add to 100.00 percent", near(sum(cap.cell(row=r, column=4).value for r in holders), 1.0, 1e-9))
+    ok("DC3 pro forma percentages add to 100.00 percent", near(sum(cap.cell(row=r, column=6).value for r in holders), 1.0, 1e-9))
+    safe_rows = range(rows["Investor"] + 1, rows["Total SAFEs"])
+    amts = [cap.cell(row=r, column=2).value for r in safe_rows]
+    caps = [cap.cell(row=r, column=3).value for r in safe_rows]
+    shares = [cap.cell(row=r, column=6).value for r in safe_rows]
+    ok("DC3 each SAFE's shares equal its amount over its cap price", all(near(sh, a * total / c, 0.5) for sh, a, c in zip(shares, amts, caps)))
+    holder_safe = [cap.cell(row=r, column=3).value for r in holders if "SAFE converted" in str(cap.cell(row=r, column=1).value)]
+    ok("DC3 the holder table carries the SAFE shares from the conversion table", holder_safe == shares)
+    ok("DC3 the SAFEs own their amounts over their caps", near(sum(shares) / total, sum(a / c for a, c in zip(amts, caps)), 1e-6))
+    ok("DC3 the SAFE amounts add to the money the key says was raised", sum(amts) == FACTS["raised_before_series_a"])
+    pre, new = cap.cell(row=rows["Pre-money valuation (USD)"], column=2).value, cap.cell(row=rows["New money (USD)"], column=2).value
+    ok("DC3 the Series A ownership is new money over post-money", near(cap.cell(row=rows["Series A ownership"], column=2).value, new / (pre + new), 1e-6))
+
+
+# ---- the cash reconciles ------------------------------------------------------------------------
+def check_cash():
+    wb = workbook("02_financials/financial_model.xlsx")
+    pl = wb["P&L"]
+    op_row = next(r for r in range(1, 40) if str(pl.cell(row=r, column=1).value).startswith("Operating result"))
+    loss = -sum(pl.cell(row=op_row, column=c).value for c in range(3, 24))
+    raised = FACTS["raised_before_series_a"]
+    pre = named(wb, "NET_LOSS_BEFORE_2025_USD")
+    cash = named(wb, "CASH_START")
+    ok("CASH raised less all losses equals cash at 2026-09-30, within a dollar", near(raised - pre - loss, cash, 1.0), f"{raised - pre - loss:,.2f} vs {cash:,}")
+    ok("CASH the bridge sheet's difference is under a dollar", abs(named(wb, "CASH_BRIDGE_DIFF")) < 1.0)
+    ok("CASH the loss before 2025 is a plausible 2024 spend", 100_000 <= pre <= 1_500_000, str(pre))
+    revenue = sum(int(r["mrr"]) + int(r["one_time_fee"]) for r in cust_rows())
+    spend = sum(float(r["amount_usd"]) for r in read_csv("02_financials/expense_ledger.csv"))
+    ok("CASH the P&L losses equal the ledger spend less the customer file's revenue", near(loss, spend - revenue, 1.0), f"{loss:,.2f} vs {spend - revenue:,.2f}")
+
+
+# ---- the room does not look built to be caught --------------------------------------------------
+def check_realism():
+    ids = [r["customer_id"] for r in cust_rows()]
+    ok("every customer id follows the pattern C and four digits, the large customer and the pilot included", all(re.fullmatch(r"C\d{4}", i) for i in ids))
+    ok("the ids of the large customer and the pilot are the ones the key names", FACTS["big_customer_id"] in ids and FACTS["pilot_customer_id"] in ids)
+    deck13 = pdf_pages("01_overview/pitch_deck.pdf")[13]
+    ok("deck slide 14 is titled Appendix: key metrics", "Appendix: key metrics" in deck13 and "Claims page" not in deck13)
+    cover = squash("\n".join(pdf_pages("00_welcome/cover_note_and_index.pdf")))
+    ok("cover note puts the second tier after a first meeting, with no term sheet", "on request after a first meeting" in cover and "term sheet" not in cover)
+    ok("cover note does not promise every number ties", "ties to a file" not in cover and "every number" not in cover.lower())
+    pl = workbook("02_financials/financial_model.xlsx")["P&L"]
+    gm_row = next(r for r in range(1, 40) if pl.cell(row=r, column=1).value == "Gross margin")
+    gms = [pl.cell(row=gm_row, column=c).value for c in range(3, 24)]
+    ok("gross margin in the 21 actual months varies (at least 15 distinct values, spread over a point)",
+       len({round(g, 4) for g in gms}) >= 15 and max(gms) - min(gms) > 0.01, f"{min(gms):.3f} to {max(gms):.3f}")
+    pay_row = next(r for r in range(1, 40) if pl.cell(row=r, column=1).value == "Payroll")
+    pay = [pl.cell(row=pay_row, column=c).value for c in range(3, 24)]
+    steps = {round(b - a, 2) for a, b in zip(pay, pay[1:]) if b > a}
+    ok("payroll does not rise by one fixed amount per hire", len(steps) >= 8, f"{len(steps)} distinct rises")
+    ledger = read_csv("02_financials/expense_ledger.csv")
+    ok("ledger has no vendor called Various and has more than 12 lines a month", all(r["vendor"] != "Various" for r in ledger) and len(ledger) > 21 * 12 + 60)
+    rent = [float(r["amount_usd"]) for r in ledger if r["category"] == "rent"]
+    ok("office rent moves in a few lease steps, not every month", len(set(rent)) <= 6, f"{len(set(rent))} values")
+    prices = {int(r["mrr"]) for r in cust_rows() if r["month"] == "2026-09" and r["product_type"] == "Subscription"}
+    ok("customer prices are not just the list prices (at least 15 distinct values)", len(prices) >= 15, str(len(prices)))
+    locs = [int(r["locations"]) for r in cust_rows() if r["month"] == "2026-09" and r["product_type"] == "Subscription"]
+    ok("some ordinary customers have more than one location", sum(1 for x in locs if x > 1) >= 10)
+    big = next(r for r in cust_rows() if r["customer_id"] == FACTS["big_customer_id"] and r["month"] == "2026-09")
+    pilot = next(r for r in cust_rows() if r["customer_id"] == FACTS["pilot_customer_id"] and r["month"] == "2026-09")
+    ok("the large customer and the pilot are priced per location at or below Pro list ($1,099)",
+       int(big["mrr"]) / int(big["locations"]) <= 1099 and int(pilot["mrr"]) / int(pilot["locations"]) < int(big["mrr"]) / int(big["locations"]))
+    salaries = [int(r["base_salary_usd"]) for r in read_csv("05_team/hiring_plan.csv")]
+    ok("hiring plan salaries are not all multiples of 5,000", sum(1 for x in salaries if x % 5000) >= 12)
+    days = {r["start_date"][-2:] for r in read_csv("05_team/hiring_plan.csv")}
+    ok("hire start dates are not all the first of the month", len(days) > 2)
+    cap = workbook("02_financials/cap_table.xlsx")["Cap_Table"]
+    total_row = next(r for r in range(1, 40) if cap.cell(row=r, column=1).value == "Total")
+    total_shares = cap.cell(row=total_row, column=3).value
+    ok("cap table share total is not a round number of millions", total_shares % 1_000_000 != 0, str(total_shares))
+    bios = squash("\n".join(pdf_pages("05_team/founder_bios.pdf")))
+    ok("the two founders do not share one GitHub handle", bios.count("github.com/") <= 1)
+
+
+# ---- flags the room does not plant: the room must be honest on the point -----------------------
+def deck_text():
+    return pdf_pages("01_overview/pitch_deck.pdf")
+
+
+def clean_pf1():
+    wb = workbook("02_financials/financial_model.xlsx")
+    rows = cust_rows()
+    sub = sum(int(r["mrr"]) for r in rows if r["month"] == "2026-09" and r["product_type"] == "Subscription")
+    ok("PF1 clean: model ARR equals 12 times subscription MRR, with the pilot left out", named(wb, "ARR_TOTAL") == 12 * sub)
+    m = {r["month"]: r for r in read_csv("03_metrics/monthly_metrics.csv")}
+    ok("PF1 clean: monthly_metrics arr (2026-09) leaves the pilot out", int(m["2026-09"]["arr"]) == 12 * sub)
+
+
+def clean_pf2():
+    wb = workbook("02_financials/financial_model.xlsx")
+    ok("PF2 clean: deck ARR equals the model's ARR_TOTAL", num(claims()["ARR"][0]) == named(wb, "ARR_TOTAL"))
+
+
+def clean_pf2b():
+    text = (ROOM / "01_overview/pitch_video_script.md").read_text(encoding="utf-8")
+    m = re.search(r"\*\*0:35[^\n]*\n\n(.*?)\n\n\*\*", text, re.S)
+    para = m.group(1) if m else ""
+    phrase = FACTS["arr_video_phrase"]
+    deck = num(claims()["ARR"][0])
+    ok("PF2b clean: the spoken ARR is a fair round-down of the deck's ARR", f"just over {phrase} dollars" in para and 0 <= deck - FACTS["arr_video"] < 500_000)
+
+
+def clean_pf3():
+    wb = workbook("02_financials/financial_model.xlsx")
+    res = cohorts_from_csv()
+    ts = sum(r["start"] for r in res)
+    nrr = sum(r["end"] for r in res) / ts
+    ok("PF3 clean: the Cohorts tab counts every customer", named(wb, "COHORT_CUSTOMERS") == sum(r["n"] for r in res))
+    ok("PF3 clean: the Cohorts tab net retention equals the rebuilt figure", near(named(wb, "NRR_12M"), nrr, 0.001))
+    ok("PF3 clean: the deck shows the same retention", f"{named(wb, 'NRR_12M') * 100:.1f}%" in deck_text()[5])
+
+
+def clean_pf4():
+    wb = workbook("02_financials/financial_model.xlsx")
+    hires = hires_from_csv()
+    runway, burn = rerun_cash(wb, hires)
+    ok("PF4 clean: the model pays for every hire in the hiring plan", named(wb, "HIRES_COUNTED") == len(hires))
+    ok("PF4 clean: model runway equals the rerun with all hires", runway == named(wb, "RUNWAY_MONTHS"), f"{runway} vs {named(wb, 'RUNWAY_MONTHS')}")
+    ok("PF4 clean: the deck shows the model's runway and burn", claims()["Runway"][0] == f"{named(wb, 'RUNWAY_MONTHS')} months"
+       and near(num(claims()["Average monthly net burn, next 12 months"][0]), burn, 1.0))
+
+
+def clean_pf5():
+    rows = [int(r["mrr"]) for r in cust_rows() if r["month"] == "2026-09" and r["product_type"] == "Subscription"]
+    top1 = max(rows) / sum(rows)
+    ok("PF5 clean: the deck states the largest customer's real share", claims()["Largest customer"][0] == f"{round(top1 * 100)}% of ARR")
+
+
+def clean_pf6():
+    wb = workbook("02_financials/financial_model.xlsx")
+    led = defaultdict(float)
+    for r in read_csv("02_financials/expense_ledger.csv"):
+        if r["month"] == "2026-09":
+            led[r["category"]] += float(r["amount_usd"])
+    basis = int(next(r for r in read_csv("03_metrics/monthly_metrics.csv") if r["month"] == "2026-09")["mrr"])
+    true = 1 - sum(led[k] for k in ("telephony", "third_party_licences", "cloud_hosting", "model_inference", "support_staff")) / basis
+    ok("PF6 clean: model gross margin counts hosting, inference and support", near(named(wb, "GM_PCT"), true, 0.001), f"{named(wb, 'GM_PCT'):.4f} vs {true:.4f}")
+    ws = wb["P&L"]
+    labels = {ws.cell(row=r, column=1).value: ws.cell(row=r, column=2).value for r in range(1, 40)}
+    ok("PF6 clean: hosting and support sit under cost of revenue", labels.get("Cloud hosting and model inference") == "COGS" and labels.get("Customer support specialists") == "COGS")
+    ok("PF6 clean: the deck shows the true margin", claims()["Gross margin"][0] == f"{round(true * 100)}%")
+
+
+def clean_pf7():
+    paying = int(next(r for r in read_csv("03_metrics/monthly_metrics.csv") if r["month"] == "2026-09")["paying_accounts"])
+    ok("PF7 clean: the deck clinic count is the paying count", num(claims()["Clinics on Hollis"][0]) == paying)
 
 
 def check_key_shape():
-    ok("answer key has 8 flags and 3 decoys", len(KEY["flags"]) == 8 and len(KEY["decoys"]) == 3)
+    ok("the key's counts match its lists", KEY["counts"]["flags"] == len(KEY["flags"]) and KEY["counts"]["decoys"] == len(KEY["decoys"]) == 3)
+    ok("the key's plants are the flags it lists", PLANTS == {f["id"] for f in KEY["flags"]} and set(KEY["plants"]) <= set(ALL_FLAGS))
+    if KEY["mode"] == "main":
+        ok("main key: 8 flags and 3 decoys", len(KEY["flags"]) == 8 and len(KEY["decoys"]) == 3)
+        seed = {f["id"] for f in KEY["flags"] if f["catchable_from_seed_drop"]}
+        ok("main key: five flags are catchable from the seed drop", seed == {"PF2", "PF2b", "PF4", "PF6", "PF7"})
+    if KEY["mode"] == "clean":
+        ok("clean key: no flags and it says so", not KEY["flags"] and KEY["clean_room"] is True)
     ok("every flag names a file location, a shown value, a true value and a check",
        all(f["locations"] and "value" in f["shown"] and "value" in f["true"] and f["check"] for f in KEY["flags"]))
-    seed = {f["id"] for f in KEY["flags"] if f["catchable_from_seed_drop"]}
-    ok("five flags are catchable from the seed drop", seed == {"PF2", "PF2b", "PF4", "PF6", "PF7"})
     ok("every file a seed-drop flag needs is in the seed drop",
        all(x in KEY["seed_drop_files"] for f in KEY["flags"] if f["catchable_from_seed_drop"] for x in f["files_needed"]))
     ok("flags needing the full room name a file outside the seed drop",
        all(any(x not in KEY["seed_drop_files"] for x in f["files_needed"]) for f in KEY["flags"] if not f["catchable_from_seed_drop"]))
 
 
+FLAG_CHECKS = {"PF1": check_pf1, "PF2": check_pf2, "PF2b": check_pf2b, "PF3": check_pf3, "PF4": check_pf4,
+               "PF5": check_pf5, "PF6": check_pf6, "PF7": check_pf7}
+CLEAN_CHECKS = {"PF1": clean_pf1, "PF2": clean_pf2, "PF2b": clean_pf2b, "PF3": clean_pf3, "PF4": clean_pf4,
+                "PF5": clean_pf5, "PF6": clean_pf6, "PF7": clean_pf7}
+
+
 def main():
+    print(f"Checking {ROOM} against the key with plants: {', '.join(sorted(PLANTS)) or 'none'}")
     check_files()
     check_formulas_have_values()
     check_locations()
     check_claims_page()
-    check_pf1(); check_pf2(); check_pf2b(); check_pf3(); check_pf4(); check_pf5(); check_pf6(); check_pf7()
+    for fid in ALL_FLAGS:
+        (FLAG_CHECKS if fid in PLANTS else CLEAN_CHECKS)[fid]()
     check_decoys()
+    check_cash()
+    check_realism()
     check_key_shape()
     print(f"\n{len(PASSES)} passed, {len(FAILS)} failed")
     if FAILS:
         print("FAILED: " + "; ".join(FAILS))
         sys.exit(1)
-    print("All planted flags and decoys are in the room exactly as the answer key says.")
+    if PLANTS:
+        print("All planted flags and decoys are in the room exactly as the answer key says.")
+    else:
+        print("The room is clean: no flag is planted, and every number a scan could test is honest.")
 
 
 if __name__ == "__main__":

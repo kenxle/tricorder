@@ -5,21 +5,28 @@ Everything here is invented. Hollis Voice, its people, its clinics and its numbe
 
 Run with the room's own virtual environment:
 
-    data_room/.venv/bin/python data_room/generate.py
+    data_room/.venv/bin/python data_room/generate.py                         the main room
+    data_room/.venv/bin/python data_room/generate.py --plants off            a clean room, no planted flags
+    data_room/.venv/bin/python data_room/generate.py --seed 77 --plants PF1,PF3,PF6
+                                                                              a variant room (see SEALING.md)
 
-It is rerunnable. The seed is fixed, so the CSV, PDF and Markdown files come out byte for byte the
+It is rerunnable. The seeds are fixed, so the CSV, PDF and Markdown files come out byte for byte the
 same each time, and the workbooks hold the same cell values. Files are overwritten in place. The
 script never deletes anything.
 
-Outputs:
-    data_room/hollis_voice/            the full Series A room (16 files, six folders)
-    data_room/hollis_voice_seed_drop/  copies of the 11 files of the thin first tier
+Outputs for the main room:
+    data_room/hollis_voice/            the full Series A room (17 files, seven folders)
+    data_room/hollis_voice_seed_drop/  copies of the 12 files of the thin first tier
     data_room/answer_key.json          every planted flag and decoy, with locations and numbers
+The clean room goes to hollis_voice_clean/ with answer_key_clean.json. A variant room goes to
+hollis_voice_variant/ with answer_key_variant.json (or the path given to --key-out).
 
-The numbers come from the research's seeded simulation (docs/reports/20261022.02_research/
-data_room_design_numbers.py). The simulation below is copied from it unchanged, so the room
-matches the research. The script stops with an error if a key number drifts from the research.
+The numbers of the main room come from the research's seeded simulation (docs/reports/
+20261022.02_research/data_room_design_numbers.py). The simulation below is copied from it, and the
+seeded noise on prices, costs and pay is added on top of it with its own random streams, so the
+planted numbers hold. The script stops with an error if a key number drifts from the research.
 """
+import argparse
 import calendar
 import csv
 import datetime
@@ -50,12 +57,18 @@ ROOM = HERE / "hollis_voice"
 SEED_DROP = HERE / "hollis_voice_seed_drop"
 KEY_PATH = HERE / "answer_key.json"
 
+# The planted flags. A room carries the flags in PLANTS and is clean on the rest.
+ALL_FLAGS = ["PF1", "PF2", "PF2b", "PF3", "PF4", "PF5", "PF6", "PF7"]
+PLANTS = set(ALL_FLAGS)
+MODE = "main"        # main, clean or variant
+
 FOOTER = "Synthetic data room for Deal Flow NYC 2026. Not a real company."
 
 # ---------------------------------------------------------------------------------------------
 # The simulation, copied from the research's data_room_design_numbers.py
 # ---------------------------------------------------------------------------------------------
 SEED = 20261024
+RUN_SEED = SEED       # the seed of this run; it differs from SEED only for a variant room
 N_MONTHS = 21  # 2025-01 .. 2026-09
 PLAN_PRICE = {"Starter": 349, "Standard": 649, "Pro": 1099}
 PLAN_ORDER = ["Starter", "Standard", "Pro"]
@@ -82,9 +95,10 @@ UPGRADE_P = 0.04
 ONBOARDING_FEE = 500
 
 BIG = {"name": "Cedar & Pine Animal Hospitals", "start": 10, "mrr_start": 18000,
-       "expand_at": 15, "mrr_after": 36000}
+       "expand_at": 15, "mrr_after": 36000, "locations_start": 20, "locations_now": 40}
 PILOT = {"name": "Marlow Veterinary Group", "monthly_fee": 15000, "months": 6,
-         "start": 19, "termination_days": 30}
+         "start": 19, "termination_days": 30, "locations": 20}
+ANNUAL_DISCOUNT = 0.10      # the discount for paying a year in advance
 
 
 def simulate(rng):
@@ -96,6 +110,7 @@ def simulate(rng):
             cid += 1
             plan = rng.choices(PLAN_ORDER, weights=[45, 40, 15])[0]
             customers.append({"id": f"C{cid:04d}", "start": m, "plan": plan, "mrr": [0] * N_MONTHS,
+                              "plans": [None] * N_MONTHS,
                               "churn": None, "kind": "standard", "first_plan": plan})
     for c in customers:
         plan = c["plan"]
@@ -108,11 +123,14 @@ def simulate(rng):
                 if rng.random() < UPGRADE_P and PLAN_ORDER.index(plan) < 2:
                     plan = PLAN_ORDER[PLAN_ORDER.index(plan) + 1]
             c["mrr"][m] = PLAN_PRICE[plan]
+            c["plans"][m] = plan
         c["plan"] = plan
-    big = {"id": "C-BIG", "start": BIG["start"], "plan": "Group", "mrr": [0] * N_MONTHS,
+    big = {"id": "BIG", "start": BIG["start"], "plan": "Group", "mrr": [0] * N_MONTHS,
+           "plans": [None] * N_MONTHS,
            "churn": None, "kind": "big", "first_plan": "Group"}
     for m in range(BIG["start"], N_MONTHS):
         big["mrr"][m] = BIG["mrr_start"] if m < BIG["expand_at"] else BIG["mrr_after"]
+        big["plans"][m] = "Group"
     customers.append(big)
     return customers
 
@@ -125,6 +143,7 @@ SERIES_A_MONTH = 3          # month 3 of the plan is 2026-12; the money lands in
 SERIES_A_PRE = 45_000_000
 SAFE_AMOUNT = 2_000_000
 SAFE_CAP = 12_000_000
+SEED_SAFE_CAP = 28_000_000
 HEADCOUNT_NOW = 17
 BASE_NOW = 140_000
 LOAD = 1.28
@@ -226,19 +245,33 @@ BROOKLINE = "Brookline Row Veterinary"
 
 CEO = {"name": "Imogen Tarrant", "title": "Chief Executive Officer and co-founder"}
 CTO = {"name": "Teodoro Brandt", "title": "Chief Technology Officer and co-founder"}
-FOUNDER_GITHUB = {CEO["name"]: "hollis-voice-demo", CTO["name"]: "hollis-voice-demo"}   # placeholder handles; swap for the demo organisation's
+FOUNDER_GITHUB = {CTO["name"]: "hollis-voice-demo"}   # placeholder handle (only the CTO lists one); swap for the demo organisation's
 SENIOR = [
     ("Marguerite Dunleavy", "Head of Sales"),
-    ("Anselm Okoye-Ruiz", "Head of Customer Success"),
+    ("Nolan Okafor", "Head of Customer Success"),
     ("Hallie Vandermeer", "Controller (part time)"),
-    ("Lucan Faraday-Moss", "Lead Voice Engineer"),
+    ("Lucas Feldman", "Lead Voice Engineer"),
 ]
 SAFE_A_NAME = "Tidewater Seed Fund I, LP"
-SAFE_B_NAME = "Anselm Hartley (angel)"
+SAFE_B_NAME = "Winifred Hartley (angel)"
+SAFE_C_NAME = "Ostrander Lane Ventures II, LP"
 SERIES_A_LEAD = "Series A investors (new)"
 
-# Registry of planted locations for the answer key.
-LOC = defaultdict(list)
+class Registry(defaultdict):
+    """Planted locations for the answer key. Entries for a flag the room does not plant are dropped."""
+
+    def __getitem__(self, key):
+        if key.startswith("PF") and key not in PLANTS:
+            return []
+        return super().__getitem__(key)
+
+
+LOC = Registry(list)
+
+
+def on(flag_id):
+    """True when this room plants the flag."""
+    return flag_id in PLANTS
 
 
 def money(n):
@@ -252,42 +285,87 @@ def pct(x, d=1):
 # ---------------------------------------------------------------------------------------------
 # Facts
 # ---------------------------------------------------------------------------------------------
-def build_facts():
-    rng = random.Random(SEED)
-    customers = simulate(rng)
-    namer = random.Random(SEED + 1)
-    F["customers"] = customers
+# Price noise. Most clinics pay list price. Some get a discount, a few pay for add-ons.
+PRICE_CHOICES = [(1.0, 70), (0.95, 4), (0.90, 3), (0.85, 1), (1.05, 8), (1.10, 8), (1.15, 6)]
 
-    mrr_total = [sum(c["mrr"][m] for c in customers) for m in range(N_MONTHS)]
-    paying = [sum(1 for c in customers if c["mrr"][m] > 0) for m in range(N_MONTHS)]
-    ever = len(customers)
-    true_mrr = mrr_total[LAST]
-    true_arr = 12 * true_mrr
-    pilot_arr = 12 * PILOT["monthly_fee"]
-    model_arr = true_arr + pilot_arr
-    deck_arr = math.ceil(model_arr * 1.10 / 100_000) * 100_000
-    video_arr = math.ceil((deck_arr + 250_000) / 500_000) * 500_000
-    F.update(mrr_total=mrr_total, paying=paying, ever=ever, true_mrr=true_mrr, true_arr=true_arr,
-             pilot_arr=pilot_arr, model_arr=model_arr, deck_arr=deck_arr, video_arr=video_arr)
 
-    # Pilot months: the pilot pays from PILOT start to the end of the history
-    pilot_mrr = [PILOT["monthly_fee"] if m >= PILOT["start"] else 0 for m in range(N_MONTHS)]
-    rec = [mrr_total[m] + pilot_mrr[m] for m in range(N_MONTHS)]    # recurring revenue as the books show it
-    F["pilot_mrr"], F["rec"] = pilot_mrr, rec
-    F["rec_now"] = rec[LAST]
+def set_prices(c, mult):
+    """Set a customer's monthly price in every month it pays: its plan's list price times its multiplier."""
+    c["mult"] = mult
+    for m in range(N_MONTHS):
+        pl = c["plans"][m]
+        c["mrr"][m] = 0 if pl is None else round(PLAN_PRICE[pl] * mult)
 
-    # Concentration
-    mrrs = sorted((c["mrr"][LAST] for c in customers if c["mrr"][LAST] > 0), reverse=True)
-    F["big_share"] = BIG["mrr_after"] / true_mrr
-    F["top3"] = sum(mrrs[:3]) / true_mrr
-    F["claimed_share"] = 0.09
 
-    # Vanity metric
-    cum_ever = [sum(1 for c in customers if c["start"] <= m) for m in range(N_MONTHS)]
-    F["cum_created"] = [round(x / TRIAL_CONVERSION) for x in cum_ever]
-    F["accounts_cum"] = F["cum_created"][LAST]
+def apply_pricing(customers, mrng, balance_to):
+    """Give each standard customer a price multiplier, a location count and a billing term.
 
-    # Cohorts
+    All draws use their own random stream (mrng), so the simulation's numbers do not move. When
+    balance_to is set, a few customers' multipliers are nudged until the September 2026 MRR equals it
+    exactly, which keeps the research's ARR figures.
+    """
+    standard = [c for c in customers if c["kind"] == "standard"]
+    for c in standard:
+        c["annual"], c["brook"], c["mult"], c["locations"] = False, False, 1.0, 1
+    pool = [c for c in standard if c["churn"] is None and c["first_plan"] == "Standard" and c["plan"] == "Standard"
+            and c["start"] == 17]
+    if not pool:
+        pool = [c for c in standard if c["churn"] is None and c["first_plan"] == "Standard" and c["plan"] == "Standard"
+                and 9 <= c["start"] <= 19]
+    brook = pool[mrng.randrange(len(pool))]
+    brook["brook"] = brook["annual"] = True
+    mults = [m for m, _w in PRICE_CHOICES]
+    weights = [w for _m, w in PRICE_CHOICES]
+    for c in standard:
+        a_draw, l_draw = mrng.random(), mrng.random()
+        mult = mrng.choices(mults, weights=weights)[0]
+        if c is not brook and c["churn"] is None and c["start"] <= 19 and a_draw < 0.12:
+            c["annual"] = True
+        if c["annual"]:
+            mult = round(1 - ANNUAL_DISCOUNT, 3)
+        elif c["plan"] == "Pro" and mult > 1:
+            mult = 1.0
+        if c["plan"] != "Starter" and not c["brook"]:
+            c["locations"] = 2 if l_draw < 0.13 else 3 if l_draw < 0.20 else 1
+        set_prices(c, mult)
+    if balance_to is None:
+        return brook
+    adjustable = [c for c in standard if c["mrr"][LAST] > 0 and not c["annual"]]
+    order = adjustable[:]
+    mrng.shuffle(order)
+    res = balance_to - sum(c["mrr"][LAST] for c in customers)
+    i = guard = 0
+    while abs(res) > 6 and guard < 6000:
+        c = order[i % len(order)]
+        i += 1
+        guard += 1
+        step = 0.05 if abs(res) > 150 else 0.01      # tidy steps first, then fine ones
+        m2 = round(c["mult"] + (step if res > 0 else -step), 3)
+        if 0.80 <= m2 <= (1.0 if c["plan"] == "Pro" else 1.15):
+            before = c["mrr"][LAST]
+            set_prices(c, m2)
+            res -= c["mrr"][LAST] - before
+    if res != 0:
+        for c in order:
+            hi = 1.0 if c["plan"] == "Pro" else 1.15
+            for k in range(0, 100):
+                m2 = round(0.80 + 0.005 * k, 3)
+                if m2 > hi:
+                    break
+                if round(PLAN_PRICE[c["plans"][LAST]] * m2) - c["mrr"][LAST] == res:
+                    set_prices(c, m2)
+                    res = 0
+                    break
+            if res == 0:
+                break
+    if sum(c["mrr"][LAST] for c in customers) != balance_to:
+        raise RuntimeError("Could not balance the September 2026 MRR")
+    return brook
+
+
+def cohort_stats(customers, drop_early):
+    """The nine 2025 cohorts. With drop_early, customers who leave within two months are left out of the
+    reported figures (flag PF3); without it the reported figures count everyone."""
     rows = []
     for start in range(0, LAST - 11):
         cohort = [c for c in customers if c["start"] == start and c["kind"] == "standard"]
@@ -296,7 +374,7 @@ def build_facts():
         end_mrr = sum(c["mrr"][end_m] for c in cohort)
         capped = sum(min(c["mrr"][end_m], c["mrr"][start]) for c in cohort)
         early = [c for c in cohort if c["churn"] is not None and c["churn"] - c["start"] <= 2]
-        kept = [c for c in cohort if c not in early]
+        kept = [c for c in cohort if c not in early] if drop_early else cohort
         kept_start = sum(c["mrr"][start] for c in kept)
         kept_end = sum(c["mrr"][end_m] for c in kept)
         curve = [sum(c["mrr"][start + k] for c in kept) / kept_start for k in range(13)]
@@ -304,12 +382,121 @@ def build_facts():
                      "start_mrr": start_mrr, "end_mrr": end_mrr, "capped_end": capped,
                      "rep_customers": len(kept), "rep_start": kept_start, "rep_end": kept_end, "curve": curve})
     ts = sum(r["start_mrr"] for r in rows)
-    F["cohorts"] = rows
-    F["nrr_true"] = sum(r["end_mrr"] for r in rows) / ts
-    F["grr_true"] = sum(r["capped_end"] for r in rows) / ts
-    F["nrr_rep"] = sum(r["rep_end"] for r in rows) / sum(r["rep_start"] for r in rows)
-    F["cohort_true"] = sum(r["customers"] for r in rows)
-    F["cohort_rep"] = sum(r["rep_customers"] for r in rows)
+    return {"rows": rows, "nrr_true": sum(r["end_mrr"] for r in rows) / ts,
+            "grr_true": sum(r["capped_end"] for r in rows) / ts,
+            "nrr_rep": sum(r["rep_end"] for r in rows) / sum(r["rep_start"] for r in rows),
+            "cohort_true": sum(r["customers"] for r in rows), "cohort_rep": sum(r["rep_customers"] for r in rows)}
+
+
+def top_shares(customers):
+    mrrs = sorted((c["mrr"][LAST] for c in customers if c["mrr"][LAST] > 0), reverse=True)
+    total = sum(mrrs)
+    return mrrs[0] / total, sum(mrrs[:3]) / total
+
+
+def assign_ids(customers):
+    """Ids run in order of start month for every customer, the large group and the pilot included."""
+    irng = random.Random(RUN_SEED + 11)
+    pilot = {"kind": "pilot", "start": PILOT["start"]}
+    special = [c for c in customers if c["kind"] == "big"] + [pilot]
+    seq = []
+    for m in range(N_MONTHS):
+        block = [c for c in customers if c["start"] == m and c["kind"] == "standard"]
+        for sp in special:
+            if sp["start"] == m:
+                block.insert(irng.randrange(len(block) + 1), sp)
+        seq += block
+    for i, e in enumerate(seq, 1):
+        e["id"] = f"C{i:04d}"
+    F["pilot_id"] = pilot["id"]
+    F["big_id"] = next(c["id"] for c in customers if c["kind"] == "big")
+    customers.sort(key=lambda c: c["id"])
+
+
+def perturb_hires():
+    """Move base pay within each pair of hires so salaries are not all multiples of 5,000. A pair's total
+    stays the same, so payroll month by month and the runway numbers do not move."""
+    hrng = random.Random(RUN_SEED + 30)
+    new = []
+    for i in range(0, len(HIRES), 2):
+        a, b = HIRES[i], HIRES[i + 1]
+        s = 500 * hrng.randint(-9, 9)
+        new.append((a[0], a[1], a[2], a[3] + s))
+        new.append((b[0], b[1], b[2], b[3] - s))
+    HIRES[:] = new
+    F["hire_days"] = [(1 if i % 2 == 0 else hrng.choice([1, 1, 5, 8, 12, 15])) for i in range(len(HIRES))]
+
+
+def build_facts():
+    rng = random.Random(RUN_SEED)
+    customers = simulate(rng)
+    namer = random.Random(RUN_SEED + 1)
+    default_run = RUN_SEED == SEED
+    F["customers"] = customers
+
+    # Price noise. On the main seed, retry the noise stream until the research's rounded numbers hold.
+    balance_to = RESEARCH["mrr_true"] if default_run else None
+    attempts = 400 if default_run else 1
+    for attempt in range(attempts):
+        try:
+            brook = apply_pricing(customers, random.Random(RUN_SEED + 10 + 7919 * attempt), balance_to)
+        except RuntimeError:
+            if not default_run:
+                raise
+            continue
+        st = cohort_stats(customers, True)
+        top1, top3 = top_shares(customers)
+        if not default_run:
+            break
+        if (round(st["nrr_true"], 3), round(st["grr_true"], 3), round(st["nrr_rep"], 3), round(top3, 3)) == \
+                (RESEARCH["nrr_true"], RESEARCH["grr_true"], RESEARCH["nrr_reported"], RESEARCH["top3"]):
+            break
+    else:
+        sys.exit("No noise stream keeps the research's retention and concentration numbers")
+    F["noise_attempt"] = attempt
+    assign_ids(customers)
+    perturb_hires()
+    F["brook"] = brook
+
+    mrr_total = [sum(c["mrr"][m] for c in customers) for m in range(N_MONTHS)]
+    paying = [sum(1 for c in customers if c["mrr"][m] > 0) for m in range(N_MONTHS)]
+    ever = len(customers)
+    true_mrr = mrr_total[LAST]
+    true_arr = 12 * true_mrr
+    pilot_arr = 12 * PILOT["monthly_fee"]
+    model_arr = true_arr + (pilot_arr if on("PF1") else 0)
+    deck_arr = math.ceil(model_arr * 1.10 / 100_000) * 100_000 if on("PF2") else model_arr
+    video_arr = (math.ceil((deck_arr + 250_000) / 500_000) * 500_000 if on("PF2b")
+                 else math.floor(deck_arr / 500_000) * 500_000)
+    F.update(mrr_total=mrr_total, paying=paying, ever=ever, true_mrr=true_mrr, true_arr=true_arr,
+             pilot_arr=pilot_arr, model_arr=model_arr, deck_arr=deck_arr, video_arr=video_arr)
+
+    # Pilot months: the pilot pays from PILOT start to the end of the history
+    pilot_mrr = [PILOT["monthly_fee"] if m >= PILOT["start"] else 0 for m in range(N_MONTHS)]
+    # Recurring revenue as the books show it. With flag PF1 the pilot is counted in it.
+    rec = [mrr_total[m] + (pilot_mrr[m] if on("PF1") else 0) for m in range(N_MONTHS)]
+    F["pilot_mrr"], F["rec"] = pilot_mrr, rec
+    F["rec_now"] = rec[LAST]
+    F["onb"] = [ONBOARDING_FEE * sum(1 for c in customers if c["start"] == m) for m in range(N_MONTHS)]
+
+    # Concentration
+    F["big_share"] = BIG["mrr_after"] / true_mrr
+    F["top3"] = top3
+    F["claimed_share"] = 0.09
+
+    # Vanity metric
+    cum_ever = [sum(1 for c in customers if c["start"] <= m) for m in range(N_MONTHS)]
+    F["cum_created"] = [round(x / TRIAL_CONVERSION) for x in cum_ever]
+    F["accounts_cum"] = F["cum_created"][LAST]
+    F["deck_clinics"] = F["accounts_cum"] if on("PF7") else paying[LAST]
+
+    # Cohorts
+    st_true = cohort_stats(customers, True)       # the figures the research used
+    st = st_true if on("PF3") else cohort_stats(customers, False)
+    F["cohorts"] = st["rows"]
+    F["nrr_true"], F["grr_true"] = st["nrr_true"], st["grr_true"]
+    F["nrr_rep"] = st["nrr_rep"]
+    F["cohort_true"], F["cohort_rep"] = st["cohort_true"], st["cohort_rep"]
 
     # Customer names
     combos = [(a, b, s) for a in CLINIC_A for b in CLINIC_B for s in CLINIC_S]
@@ -318,90 +505,160 @@ def build_facts():
     names = {}
     for c, (a, b, s) in zip(standard, combos):
         names[c["id"]] = f"{a} {b} {s}"
-    names["C-BIG"] = BIG["name"]
-    # Brookline Row: an ordinary customer on the Standard plan, active now, with a first annual term in force
-    pool = [c for c in standard if c["churn"] is None and c["first_plan"] == "Standard" and c["plan"] == "Standard"
-            and 9 <= c["start"] <= 19]
-    brook = pool[namer.randrange(len(pool))]
+    names[F["big_id"]] = BIG["name"]
     names[brook["id"]] = BROOKLINE
-    F["names"], F["brook"] = names, brook
+    F["names"] = names
 
-    # Gross margin from the ledger numbers (built in build_ledger)
+    # Cost lines and gross margin from the ledger numbers (built in build_ledger)
     build_ledger()
-    last_basis = rec[LAST]
     led = F["ledger_last"]
     cogs_shown = led["telephony"] + led["third_party_licences"]
     cogs_true = cogs_shown + led["cloud_hosting"] + led["model_inference"] + led["support_staff"]
-    F["gm_shown"] = 1 - cogs_shown / last_basis
-    F["gm_true"] = 1 - cogs_true / last_basis
+    F["gm_shown"] = 1 - cogs_shown / rec[LAST]
+    F["gm_true"] = 1 - cogs_true / rec[LAST]
+    F["gm_deck"] = F["gm_shown"] if on("PF6") else F["gm_true"]
 
-    # Forward plan
-    model_hires = [(1 + i // 2, h[2], h[3]) for i, h in enumerate(HIRES[:MODELED_HIRES])]
+    # Forward plan. With flag PF4 the model pays for only the first eight hires.
+    n_model = MODELED_HIRES if on("PF4") else PLANNED_HIRES
+    model_hires = [(1 + i // 2, h[2], h[3]) for i, h in enumerate(HIRES[:n_model])]
     all_hires = [(1 + i // 2, h[2], h[3]) for i, h in enumerate(HIRES)]
-    F["model_hires"], F["all_hires"] = model_hires, all_hires
+    F["model_hires"], F["all_hires"], F["n_model_hires"] = model_hires, all_hires, n_model
     shown_rows, shown_runway = forecast(model_hires, 60)
     true_rows, true_runway = forecast(all_hires, 60)
     F.update(fc_shown=shown_rows, runway_shown=shown_runway, fc_true=true_rows, runway_true=true_runway,
              burn_shown=sum(r["burn"] for r in shown_rows[:12]) / 12,
              burn_true=sum(r["burn"] for r in true_rows[:12]) / 12)
 
-    drift = {
-        "customers_ever": F["ever"], "paying_now": paying[LAST], "mrr_true": true_mrr, "arr_true": true_arr,
-        "arr_model": model_arr, "arr_deck": deck_arr, "arr_video": video_arr,
-        "big_share": round(F["big_share"], 3), "top3": round(F["top3"], 3),
-        "gm_shown": round(F["gm_shown"], 3), "gm_true": round(F["gm_true"], 3),
-        "nrr_true": round(F["nrr_true"], 3), "grr_true": round(F["grr_true"], 3),
-        "nrr_reported": round(F["nrr_rep"], 3), "cohort_true": F["cohort_true"],
-        "cohort_reported": F["cohort_rep"], "accounts_cum": F["accounts_cum"],
-        "runway_shown": shown_runway, "runway_true": true_runway,
-        "burn_shown": round(F["burn_shown"]), "burn_true": round(F["burn_true"]),
-    }
-    bad = {k: (drift[k], RESEARCH[k]) for k in RESEARCH if drift[k] != RESEARCH[k]}
-    if bad:
-        sys.exit(f"Numbers drifted from the research: {bad}")
+    # Cash: what was raised, and what the company has lost since it began
+    costs = defaultdict(float)
+    for (label, _d, _v, _desc, _cat, _b, amt) in F["ledger"]:
+        costs[label] += amt
+    F["net_loss_actual"] = sum(costs[MONTH_LABELS[m]] - (mrr_total[m] + pilot_mrr[m] + F["onb"][m]) for m in range(N_MONTHS))
+    seed_safe = max(1_000_000, math.ceil((F["net_loss_actual"] + CASH_START + 500_000 - SAFE_AMOUNT) / 100_000) * 100_000)
+    F["seed_safe"] = seed_safe
+    F["raised_total"] = SAFE_AMOUNT + seed_safe
+    F["net_loss_pre2025"] = round(F["raised_total"] - CASH_START - F["net_loss_actual"])
+    F["raised_text"] = (f"{money(F['raised_total'])} in SAFEs: {money(SAFE_AMOUNT)} on a {money(SAFE_CAP)} post-money cap "
+                        f"and {money(seed_safe)} on a {money(SEED_SAFE_CAP)} post-money cap")
+
+    if default_run and PLANTS == set(ALL_FLAGS):
+        drift = {
+            "customers_ever": F["ever"], "paying_now": paying[LAST], "mrr_true": true_mrr, "arr_true": true_arr,
+            "arr_model": model_arr, "arr_deck": deck_arr, "arr_video": video_arr,
+            "big_share": round(F["big_share"], 3), "top3": round(F["top3"], 3),
+            "gm_shown": round(F["gm_shown"], 3), "gm_true": round(F["gm_true"], 3),
+            "nrr_true": round(F["nrr_true"], 3), "grr_true": round(F["grr_true"], 3),
+            "nrr_reported": round(F["nrr_rep"], 3), "cohort_true": F["cohort_true"],
+            "cohort_reported": F["cohort_rep"], "accounts_cum": F["accounts_cum"],
+            "runway_shown": shown_runway, "runway_true": true_runway,
+            "burn_shown": round(F["burn_shown"]), "burn_true": round(F["burn_true"]),
+        }
+        bad = {k: (drift[k], RESEARCH[k]) for k in RESEARCH if drift[k] != RESEARCH[k]}
+        if bad:
+            sys.exit(f"Numbers drifted from the research: {bad}")
+    check_plants_are_material()
+
+
+def check_plants_are_material():
+    """A planted flag has to be a real gap. A variant seed can shrink one below the line; stop if so."""
+    problems = []
+    if on("PF3") and F["nrr_rep"] - F["nrr_true"] <= 0.10:
+        problems.append("PF3 (the retention gap is 10 points or less)")
+    if on("PF4") and F["runway_shown"] - F["runway_true"] < 12:
+        problems.append("PF4 (the runway gap is under 12 months)")
+    if on("PF5") and F["big_share"] <= 0.12:
+        problems.append("PF5 (the largest customer is 12% of ARR or less)")
+    if on("PF6") and F["gm_shown"] - F["gm_true"] <= 0.15:
+        problems.append("PF6 (the margin gap is 15 points or less)")
+    if on("PF7") and F["accounts_cum"] == F["paying"][LAST]:
+        problems.append("PF7 (the two clinic counts match)")
+    if problems:
+        sys.exit(f"Seed {RUN_SEED} does not give a valid room: {'; '.join(problems)}. Try another seed.")
+    if not 150_000 <= F["net_loss_pre2025"] <= 1_500_000:
+        sys.exit(f"Seed {RUN_SEED} gives a net loss before 2025 of {F['net_loss_pre2025']:,}; try another seed.")
 
 
 # ---------------------------------------------------------------------------------------------
 # Tables
 # ---------------------------------------------------------------------------------------------
 HC = [round(4 + 13 * m / 20) for m in range(N_MONTHS)]    # head count by month; 17 in the last month
+# The order in which the first 17 people joined, by department. After 17 hires the counts are 7, 6, 2, 2.
+HIRE_ORDER = ["rd", "rd", "sm", "ga", "rd", "sm", "rd", "sup", "sm", "rd", "sm", "rd", "sup", "sm", "rd", "ga", "sm"]
+RENT_STEPS = [(0, 9_850.00), (6, 14_625.00), (12, 21_790.00), (18, 27_240.00)]   # lease steps as the office grows
+GA_OTHER_CATS = ("rent", "tools", "legal", "insurance", "accounting", "travel", "other")
 
 
 def build_ledger():
+    lr = random.Random(RUN_SEED + 20)
     rows = []
     rec = F["rec"]
+    ga_cats = {"rent": "Office rent", "tools": "Software subscriptions and tools"}
+
+    # Pay by person: each person's pay is a little different, and the mean of each department is the average.
+    factors = {}
+    for dk, (n, _base) in DEPTS_NOW.items():
+        f = [1 + lr.uniform(-0.12, 0.12) for _ in range(n)]
+        mean = sum(f) / n
+        factors[dk] = [x / mean for x in f]
+
+    def dept_cost(dk, m):
+        count = sum(1 for x in HIRE_ORDER[:HC[m]] if x == dk)
+        n, base = DEPTS_NOW[dk]
+        raise_ = 1.0 if m >= 12 else 1 / 1.04        # a pay rise in January 2026
+        eps = 0.0 if m == LAST else lr.gauss(0, 0.012)
+        return round(sum(factors[dk][:count]) * base * LOAD / 12 * raise_ * (1 + eps), 2), count
+
     for m in range(N_MONTHS):
         label = MONTH_LABELS[m]
+        last_day = calendar.monthrange(2025 + m // 12, m % 12 + 1)[1]
         basis = rec[m]
         scale = HC[m] / HEADCOUNT_NOW
-        tel = round(TELEPHONY_PCT * basis, 2)
-        lic = round(LICENCES_PCT * basis, 2)
-        infra = round(INFRA_PCT * basis, 2)
-        host = round(0.04 * basis, 2)
+        fade = 1 - m / LAST
+        if m < LAST:
+            tel = round(basis * (TELEPHONY_PCT + 0.014 * fade) * (1 + lr.gauss(0, 0.03)), 2)
+            lic = round(basis * (LICENCES_PCT + 0.010 * fade) * (1 + lr.gauss(0, 0.05)), 2)
+            infra = round(basis * (INFRA_PCT + 0.030 * fade) * (1 + lr.gauss(0, 0.04)), 2)
+        else:
+            tel = round(basis * TELEPHONY_PCT * (1 + lr.gauss(0, 0.03)), 2)
+            lic = round(round((TELEPHONY_PCT + LICENCES_PCT) * basis, 2) - tel, 2)
+            infra = round(INFRA_PCT * basis, 2)
+        host = round(infra * (0.36 + lr.gauss(0, 0.03)), 2)
         inf = round(infra - host, 2)
-        rows.append((label, "Tallow Telecom", "Phone minutes and SIP trunking", "telephony", "Cost of revenue", tel))
-        rows.append((label, "Marsh Speech Licensing", "Speech recognition and voice licences", "third_party_licences", "Cost of revenue", lic))
-        rows.append((label, "Brindle Cloud Hosting", "Cloud compute and storage", "cloud_hosting", "R&D", host))
-        rows.append((label, "Halcyon Inference API", "Language model and speech API usage", "model_inference", "R&D", inf))
-        sup = round(2 * 95_000 * LOAD / 12 * scale, 2)
-        rows.append((label, "Ironbridge Payroll Services", "Customer support specialists, salaries and benefits", "support_staff", "S&M", sup))
-        for key, cat, booked, desc in (("rd", "payroll_engineering", "R&D", "Engineering and product, salaries and benefits"),
-                                       ("sm", "payroll_sales_marketing", "S&M", "Sales, marketing and implementation, salaries and benefits"),
-                                       ("ga", "payroll_g_and_a", "G&A", "General and administrative, salaries and benefits")):
-            n, base = DEPTS_NOW[key]
-            rows.append((label, "Ironbridge Payroll Services", desc, cat, booked, round(n * base * LOAD / 12 * scale, 2)))
-        other = round(RENT_ETC * (0.4 + 0.6 * HC[m] / HEADCOUNT_NOW), 2)
-        rent = round(other * 0.45, 2)
-        tools = round(other * 0.25, 2)
-        legal = round(other * 0.15, 2)
-        rest = round(other - rent - tools - legal, 2)
-        rows.append((label, "Gantry Workspace", "Office rent", "rent", "G&A", rent))
-        rows.append((label, "Deskwise Software", "Software subscriptions and tools", "tools", "G&A", tools))
-        rows.append((label, "Pembry Legal Services", "Legal and filing fees", "legal", "G&A", legal))
-        rows.append((label, "Various", "Insurance, travel and other", "other", "G&A", rest))
+
+        def add(day, vendor, desc, cat, booked, amt):
+            rows.append((label, f"{label}-{day:02d}", vendor, desc, cat, booked, round(amt, 2)))
+
+        add(lr.randint(3, 9), "Tallow Telecom", "Phone minutes and SIP trunking", "telephony", "Cost of revenue", tel)
+        add(lr.randint(1, 4), "Marsh Speech Licensing", "Speech recognition and voice licences", "third_party_licences", "Cost of revenue", lic)
+        add(lr.randint(10, 20), "Brindle Cloud Hosting", "Cloud compute and storage", "cloud_hosting", "Cost of revenue" if not on("PF6") else "R&D", host)
+        add(lr.randint(10, 20), "Halcyon Inference API", "Language model and speech API usage", "model_inference", "Cost of revenue" if not on("PF6") else "R&D", inf)
+        for dk, cat, booked, desc in (("rd", "payroll_engineering", "R&D", "Engineering and product, salaries and benefits"),
+                                      ("sm", "payroll_sales_marketing", "S&M", "Sales, marketing and implementation, salaries and benefits"),
+                                      ("ga", "payroll_g_and_a", "G&A", "General and administrative, salaries and benefits"),
+                                      ("sup", "support_staff", "Cost of revenue" if not on("PF6") else "S&M", "Customer support specialists, salaries and benefits")):
+            total, count = dept_cost(dk, m)
+            if count == 0:
+                continue
+            first = round(total * (0.5 + lr.gauss(0, 0.004)), 2)
+            add(15, "Ironbridge Payroll Services", desc + " (first run)", cat, booked, first)
+            add(last_day, "Ironbridge Payroll Services", desc + " (second run)", cat, booked, round(total - first, 2))
+        rent = [v for (s0, v) in RENT_STEPS if m >= s0][-1]
+        add(1, "Gantry Workspace", "Office rent", "rent", "G&A", rent)
+        tools = RENT_ETC * 0.25 * (0.4 + 0.6 * HC[m] / HEADCOUNT_NOW) * (1 + lr.gauss(0, 0.06))
+        add(lr.randint(1, 6), "Deskwise Software", "Software subscriptions and tools", "tools", "G&A", tools * 0.65)
+        add(lr.randint(6, 12), "Pinewell Analytics", "Analytics and call-review tools", "tools", "G&A", tools * 0.35)
+        pick = lr.random()
+        legal = lr.uniform(1500, 3500) if pick < 0.35 else lr.uniform(5000, 9000) if pick < 0.85 else lr.uniform(14000, 26000)
+        add(lr.randint(8, 24), "Pembry Legal Services", "Legal and filing fees", "legal", "G&A", legal)
+        add(lr.randint(1, 5), "Pennant Insurance Brokers", "Insurance premiums", "insurance", "G&A", (1150 if m < 6 else 1480) * (1 + lr.gauss(0, 0.02)))
+        add(lr.randint(20, last_day), "Dunmore Accounting Group", "Bookkeeping and tax preparation", "accounting", "G&A",
+            3400 + (2800 if (m % 12) % 3 == 2 else 0) + lr.uniform(-150, 150))
+        add(lr.randint(5, 25), "Tern Travel Desk", "Travel and client visits", "travel", "G&A", lr.uniform(800, 7500) * (0.4 + 0.6 * scale))
+        add(lr.randint(1, 28), "Birchfield Supply", "Office supplies and catering", "other", "G&A", lr.uniform(300, 1800))
+    rows.sort(key=lambda r: (r[0], r[1]))
     F["ledger"] = rows
     by = defaultdict(float)
-    for (label, _v, _d, cat, _b, amt) in rows:
+    for (label, _day, _v, _d, cat, _b, amt) in rows:
         by[(label, cat)] += amt
     F["ledger_by"] = by
     F["ledger_last"] = {cat: by[(MONTH_LABELS[LAST], cat)] for cat in
@@ -424,28 +681,40 @@ def write_text(path, text):
 
 def build_tables():
     customers, names = F["customers"], F["names"]
-    # customer_mrr_by_month.csv
+    # customer_mrr_by_month.csv. mrr is revenue for the month; billings is what was invoiced that month.
     rows = []
+
+    def locs(c, m):
+        if c["kind"] == "big":
+            return BIG["locations_now"] if m >= BIG["expand_at"] else BIG["locations_start"]
+        return c["locations"]
+
+    def billed(c, m, v):
+        if c["kind"] == "standard" and c["annual"]:
+            return 12 * v if m in (c["start"], c["start"] + 12) else 0
+        return v
+
     for m in range(N_MONTHS):
         label = MONTH_LABELS[m]
         for c in customers:
             if c["start"] == m:
-                rows.append((label, c["id"], names[c["id"]], 17 if c["kind"] == "big" else 1,
-                             c["first_plan"], "Onboarding", 0, ONBOARDING_FEE))
+                rows.append((label, c["id"], names[c["id"]], locs(c, m), c["first_plan"], "Onboarding", 0, ONBOARDING_FEE, ONBOARDING_FEE))
+        month = []
         for c in customers:
             v = c["mrr"][m]
             if v > 0:
-                plan = "Group" if c["kind"] == "big" else PRICE_PLAN[v]
-                rows.append((label, c["id"], names[c["id"]], 17 if c["kind"] == "big" else 1,
-                             plan, "Subscription", v, 0))
+                plan = "Group" if c["kind"] == "big" else c["plans"][m]
+                month.append((label, c["id"], names[c["id"]], locs(c, m), plan, "Subscription", v, 0, billed(c, m, v)))
         if m >= PILOT["start"]:
-            rows.append((label, "P-MARLOW", PILOT["name"], 4, "Pilot", "Pilot", PILOT["monthly_fee"], 0))
+            month.append((label, F["pilot_id"], PILOT["name"], PILOT["locations"], "Pilot", "Pilot", PILOT["monthly_fee"], 0, PILOT["monthly_fee"]))
+        month.sort(key=lambda r: r[1])
+        rows += month
     write_csv(ROOM / "03_metrics/customer_mrr_by_month.csv",
-              ["month", "customer_id", "customer_name", "locations", "plan", "product_type", "mrr", "one_time_fee"], rows)
+              ["month", "customer_id", "customer_name", "locations", "plan", "product_type", "mrr", "one_time_fee", "billings"], rows)
     F["cust_rows"] = rows
 
     # monthly_metrics.csv
-    crng = random.Random(SEED + 2)
+    crng = random.Random(RUN_SEED + 2)
     rows = []
     calls = []
     for m in range(N_MONTHS):
@@ -460,14 +729,14 @@ def build_tables():
 
     # expense_ledger.csv
     write_csv(ROOM / "02_financials/expense_ledger.csv",
-              ["month", "vendor", "description", "category", "booked_as", "amount_usd"],
-              [(a, b, c, d, e, f"{amt:.2f}") for (a, b, c, d, e, amt) in F["ledger"]])
+              ["month", "date", "vendor", "description", "category", "booked_as", "amount_usd"],
+              [(a, b, c, d, e, f, f"{amt:.2f}") for (a, b, c, d, e, f, amt) in F["ledger"]])
 
     # hiring_plan.csv
     rows = []
     for i, (role, dept, _k, base) in enumerate(HIRES):
         t = 1 + i // 2
-        rows.append((f"H{i + 1:02d}", role, dept, f"{mlabel(N_MONTHS - 1 + t)}-01", base))
+        rows.append((f"H{i + 1:02d}", role, dept, f"{mlabel(N_MONTHS - 1 + t)}-{F['hire_days'][i]:02d}", base))
     write_csv(ROOM / "05_team/hiring_plan.csv", ["hire_id", "role", "department", "start_date", "base_salary_usd"], rows)
     F["hire_rows"] = rows
 
@@ -534,6 +803,7 @@ def build_model():
     ws_coh = wb.add_worksheet("Cohorts")
     ws_hire = wb.add_worksheet("Hiring_Plan")
     ws_cash = wb.add_worksheet("Cash_Runway")
+    ws_bridge = wb.add_worksheet("Cash_Bridge")
 
     # ---- README
     ws_readme.set_column(0, 0, 110)
@@ -548,6 +818,7 @@ def build_model():
         ("Cohorts: 12-month revenue retention of customer cohorts.", None),
         ("Hiring_Plan: the hires the plan pays for.", None),
         ("Cash_Runway: monthly cash and the number of months the cash lasts.", None),
+        ("Cash_Bridge: money raised, less losses since the company began, equals cash at the data date.", None),
         ("", None),
         ("Definitions", "bold"),
         ("ARR: monthly recurring revenue from signed, live agreements, times 12. One-time fees are left out.", None),
@@ -577,12 +848,16 @@ def build_model():
         ("AVG_BASE_NOW", "Average base pay today (USD a year)", BASE_NOW, "name", "Across the 17 current staff."),
         ("TELEPHONY_PCT", "Telephony as a share of recurring revenue", TELEPHONY_PCT, "namep", "Booked in cost of revenue."),
         ("LICENCES_PCT", "Software licences as a share of recurring revenue", LICENCES_PCT, "namep", "Booked in cost of revenue."),
-        ("HOSTING_USD_MONTH", "Cloud hosting and model inference (USD a month)", round(INFRA_PCT * F["rec_now"], 2), "name", "Booked under R&D. Held at the September 2026 level in the plan."),
+        ("HOSTING_USD_MONTH", "Cloud hosting and model inference (USD a month)", round(INFRA_PCT * F["rec_now"], 2), "name",
+         ("Booked under R&D." if on("PF6") else "Booked in cost of revenue.") + " Held at the September 2026 level in the plan."),
         ("RENT_ETC_USD_MONTH", "Rent, tools, legal and other (USD a month)", RENT_ETC, "name", "Booked under G&A. Held flat."),
         ("PROGRAMS_USD_MONTH", "Marketing programs after the raise (USD a month)", PROGRAMS, "name", "Starts the month the Series A closes."),
         ("SERIES_A_RAISE", "Series A raise (USD)", SERIES_A, "name", "Lands in plan month 4 (2027-01)."),
         ("SERIES_A_PLAN_MONTH", "Plan month the Series A cash arrives", SERIES_A_MONTH + 1, "name", "Plan month 1 is 2026-10."),
         ("REV_START_USD_MONTH", "Recurring revenue in the last actual month (USD)", F["rec_now"], "name", "From P&L, 2026-09."),
+        ("RAISED_PRESEED_SAFE_USD", "Raised in 2024: pre-seed SAFEs (USD)", SAFE_AMOUNT, "name", f"Two SAFEs on a {money(SAFE_CAP)} post-money cap. See the cap table."),
+        ("RAISED_SEED_SAFE_USD", "Raised in 2025: seed SAFE (USD)", F["seed_safe"], "name", f"One SAFE on a {money(SEED_SAFE_CAP)} post-money cap. See the cap table."),
+        ("NET_LOSS_BEFORE_2025_USD", "Net loss before 2025-01 (USD)", F["net_loss_pre2025"], "name", "Spend in 2024 before the first paying clinic. Cash_Bridge ties this to cash."),
     ]
     ASS_CELL = {}
     for i, (nm, label, val, fmt, note) in enumerate(assum):
@@ -618,29 +893,41 @@ def build_model():
         ws_pl.write(4, 2 + j, "Actual" if j < N_MONTHS else "Plan", fm["head"])
 
     R = {}
+    pilot_label = "Pilot revenue" if on("PF1") else "Pilot revenue (not recurring)"
+    rec_label = "Recurring revenue (subscription plus pilot)" if on("PF1") else "Recurring revenue (subscription)"
     layout = [
         ("sec_rev", "Revenue", "", "sect"),
         ("sub", "Subscription revenue", "Revenue", None),
-        ("pilot", "Pilot revenue", "Revenue", None),
+        ("pilot", pilot_label, "Revenue", None),
         ("onb", "Onboarding fees (one-time)", "Revenue", None),
-        ("rec", "Recurring revenue (subscription plus pilot)", "Revenue", None),
+        ("rec", rec_label, "Revenue", None),
         ("tot", "Total revenue", "Revenue", None),
         ("sec_cogs", "Cost of revenue", "", "sect"),
         ("tel", "Telephony", "COGS", None),
         ("lic", "Third-party software licences", "COGS", None),
+    ]
+    if not on("PF6"):
+        layout += [("host", "Cloud hosting and model inference", "COGS", None),
+                   ("sup", "Customer support specialists", "COGS", None)]
+    layout += [
         ("cogs", "Total cost of revenue", "COGS", None),
         ("gp", "Gross profit (recurring revenue less cost of revenue)", "", None),
         ("gm", "Gross margin", "", None),
         ("sec_opex", "Operating expenses", "", "sect"),
         ("p_rd", "Payroll: engineering and product", "R&D", None),
-        ("host", "Cloud hosting and model inference", "R&D", None),
-        ("p_sm", "Payroll: sales, marketing and implementation", "S&M", None),
-        ("sup", "Customer support specialists", "S&M", None),
+    ]
+    if on("PF6"):
+        layout.append(("host", "Cloud hosting and model inference", "R&D", None))
+    layout.append(("p_sm", "Payroll: sales, marketing and implementation", "S&M", None))
+    if on("PF6"):
+        layout.append(("sup", "Customer support specialists", "S&M", None))
+    layout += [
         ("prog", "Marketing programs", "S&M", None),
         ("p_ga", "Payroll: general and administrative", "G&A", None),
         ("rent", "Rent, tools, legal and other", "G&A", None),
         ("opex", "Total operating expenses", "", None),
-        ("op", "Operating result (gross profit plus onboarding fees less operating expenses)", "", None),
+        ("op", "Operating result (gross profit plus onboarding fees less operating expenses)" if on("PF1")
+         else "Operating result (gross profit plus pilot and onboarding fees less operating expenses)", "", None),
         ("sec_memo", "Memo", "", "sect"),
         ("payroll", "Payroll", "Memo", None),
         ("burn", "Net burn (negative of operating result)", "Memo", None),
@@ -675,11 +962,12 @@ def build_model():
             put("p_sm", j, led[(label, "payroll_sales_marketing")]); put("sup", j, led[(label, "support_staff")])
             put("prog", j, 0)
             put("p_ga", j, led[(label, "payroll_g_and_a")])
-            put("rent", j, round(sum(led[(label, c)] for c in ("rent", "tools", "legal", "other")), 2))
+            put("rent", j, round(sum(led[(label, c)] for c in GA_OTHER_CATS), 2))
             put("heads", j, HC[j])
         else:
             r_ = fc[j - N_MONTHS]
             put("rec", j, r_["rev"])
+            put("pilot", j, 0)
             put("onb", j, 0)
             put("tel", j, r_["tel"]); put("lic", j, r_["lic"])
             put("p_rd", j, r_["dept"]["rd"]); put("host", j, r_["hosting"])
@@ -697,25 +985,37 @@ def build_model():
         if actual:
             ws_pl.write_number(R["sub"], c, V[("sub", j)], fm["usd"])
             ws_pl.write_number(R["pilot"], c, V[("pilot", j)], fm["usd"])
-            rec = V[("sub", j)] + V[("pilot", j)]
-            ws_pl.write_formula(R["rec"], c, f"={col('sub')}+{col('pilot')}", fm["usd"], rec)
+            if on("PF1"):
+                rec = V[("sub", j)] + V[("pilot", j)]
+                ws_pl.write_formula(R["rec"], c, f"={col('sub')}+{col('pilot')}", fm["usd"], rec)
+            else:
+                rec = V[("sub", j)]
+                ws_pl.write_formula(R["rec"], c, f"={col('sub')}", fm["usd"], rec)
         else:
             rec = V[("rec", j)]
             ws_pl.write_number(R["rec"], c, rec, fm["usd"])
         put("rec", j, rec)
-        tot = rec + V[("onb", j)]
-        ws_pl.write_formula(R["tot"], c, f"={col('rec')}+{col('onb')}", fm["usd"], tot)
-        cogs = V[("tel", j)] + V[("lic", j)]
-        ws_pl.write_formula(R["cogs"], c, f"={col('tel')}+{col('lic')}", fm["usd"], cogs)
+        pilot_extra = 0 if on("PF1") else V[("pilot", j)]
+        tot = rec + pilot_extra + V[("onb", j)]
+        if on("PF1"):
+            ws_pl.write_formula(R["tot"], c, f"={col('rec')}+{col('onb')}", fm["usd"], tot)
+        else:
+            ws_pl.write_formula(R["tot"], c, f"={col('rec')}+{col('pilot')}+{col('onb')}", fm["usd"], tot)
+        cogs_keys = ["tel", "lic"] if on("PF6") else ["tel", "lic", "host", "sup"]
+        opex_keys = ["p_rd", "host", "p_sm", "sup", "prog", "p_ga", "rent"] if on("PF6") else ["p_rd", "p_sm", "prog", "p_ga", "rent"]
+        cogs = sum(V[(k, j)] for k in cogs_keys)
+        ws_pl.write_formula(R["cogs"], c, "=" + "+".join(col(k) for k in cogs_keys), fm["usd"], cogs)
         gp = rec - cogs
         ws_pl.write_formula(R["gp"], c, f"={col('rec')}-{col('cogs')}", fm["usdb"], gp)
         gm = gp / rec
         ws_pl.write_formula(R["gm"], c, f"={col('gp')}/{col('rec')}", fm["pct"], gm)
-        opex = sum(V[(k, j)] for k in ("p_rd", "host", "p_sm", "sup", "prog", "p_ga", "rent"))
-        ws_pl.write_formula(R["opex"], c, f"={col('p_rd')}+{col('host')}+{col('p_sm')}+{col('sup')}+{col('prog')}+{col('p_ga')}+{col('rent')}",
-                            fm["usdb"], opex)
-        op = gp + V[("onb", j)] - opex
-        ws_pl.write_formula(R["op"], c, f"={col('gp')}+{col('onb')}-{col('opex')}", fm["usdb"], op)
+        opex = sum(V[(k, j)] for k in opex_keys)
+        ws_pl.write_formula(R["opex"], c, "=" + "+".join(col(k) for k in opex_keys), fm["usdb"], opex)
+        op = gp + pilot_extra + V[("onb", j)] - opex
+        if on("PF1"):
+            ws_pl.write_formula(R["op"], c, f"={col('gp')}+{col('onb')}-{col('opex')}", fm["usdb"], op)
+        else:
+            ws_pl.write_formula(R["op"], c, f"={col('gp')}+{col('pilot')}+{col('onb')}-{col('opex')}", fm["usdb"], op)
         payroll = V[("p_rd", j)] + V[("p_sm", j)] + V[("sup", j)] + V[("p_ga", j)]
         ws_pl.write_formula(R["payroll"], c, f"={col('p_rd')}+{col('p_sm')}+{col('sup')}+{col('p_ga')}", fm["usd"], payroll)
         ws_pl.write_formula(R["burn"], c, f"=-{col('op')}", fm["usd"], -op)
@@ -767,18 +1067,23 @@ def build_model():
     ws_arr.write(r, 0, "Marlow Veterinary Group (pilot)")
     ws_arr.write(r, 1, "Pilot")
     ws_arr.write_number(r, 2, 1, fm["int"])
-    ws_arr.write_number(r, 3, PILOT["monthly_fee"], fm["usd"])
-    ws_arr.write_formula(r, 4, f"=D{r + 1}*12", fm["usd"], PILOT["monthly_fee"] * 12)
-    ws_arr.write(r, 5, "Six-month pilot signed 2026-08-01. Counted at $15,000 a month times 12.", fm["note"])
+    if on("PF1"):
+        ws_arr.write_number(r, 3, PILOT["monthly_fee"], fm["usd"])
+        ws_arr.write_formula(r, 4, f"=D{r + 1}*12", fm["usd"], PILOT["monthly_fee"] * 12)
+        ws_arr.write(r, 5, "Six-month pilot signed 2026-08-01. Counted at $15,000 a month times 12.", fm["note"])
+    else:
+        ws_arr.write_number(r, 3, 0, fm["usd"])
+        ws_arr.write_number(r, 4, 0, fm["usd"])
+        ws_arr.write(r, 5, "Six-month pilot signed 2026-08-01, $15,000 a month. A trial with no duty to convert, so not counted in ARR.", fm["note"])
     pilot_row = r
     r += 1
     n_new = sum(1 for c in F["customers"] if c["start"] == LAST)
-    ws_arr.write(r, 0, "Onboarding fees (one-time, excluded)")
+    ws_arr.write(r, 0, "Onboarding fees")
     ws_arr.write(r, 1, "Onboarding")
     ws_arr.write_number(r, 2, n_new, fm["int"])
     ws_arr.write_number(r, 3, 0, fm["usd"])
     ws_arr.write_number(r, 4, 0, fm["usd"])
-    ws_arr.write(r, 5, f"$500 per new clinic. September 2026: {n_new} new clinics, ${ONBOARDING_FEE * n_new:,} in fees. One-time, so not counted in ARR.", fm["note"])
+    ws_arr.write(r, 5, f"$500 per new clinic. September 2026: {n_new} new clinics, ${ONBOARDING_FEE * n_new:,} in fees.", fm["note"])
     onb_row = r
     r += 1
     ws_arr.write(r, 0, "ARR total", fm["bold"])
@@ -789,19 +1094,22 @@ def build_model():
     reg("PF1", "ARR_Build", a1(pilot_row, 0), expect="Marlow Veterinary Group (pilot)", label="pilot row label")
     reg("PF1", "ARR_Build", a1(pilot_row, 4), expect=F["pilot_arr"], label="pilot counted as ARR")
     reg("PF2", "ARR_Build", a1(r, 4), name="ARR_TOTAL", expect=F["model_arr"], label="model ARR total")
-    LOC["DC1"].append({"file": rel, "sheet": "ARR_Build", "cell": a1(onb_row, 0), "expect": "Onboarding fees (one-time, excluded)",
-                       "label": "onboarding row, correctly excluded"})
+    LOC["DC1"].append({"file": rel, "sheet": "ARR_Build", "cell": a1(onb_row, 0), "expect": "Onboarding fees",
+                       "label": "onboarding row, correctly left out of ARR"})
     LOC["DC1"].append({"file": rel, "sheet": "ARR_Build", "cell": a1(onb_row, 4), "expect": 0, "label": "ARR counted for the fee"})
     r += 2
     ws_arr.write(r, 0, "Monthly history", fm["bold"])
     r += 1
-    ws_arr.write_row(r, 0, ["Month", "", "Subscription MRR", "Pilot MRR", "ARR (total MRR times 12)"], fm["headl"])
+    ws_arr.write_row(r, 0, ["Month", "", "Subscription MRR", "Pilot MRR", "ARR (total MRR times 12)" if on("PF1") else "ARR (subscription MRR times 12)"], fm["headl"])
     r += 1
     for m in range(N_MONTHS):
         ws_arr.write(r, 0, MONTH_LABELS[m])
         ws_arr.write_number(r, 2, F["mrr_total"][m], fm["usd"])
         ws_arr.write_number(r, 3, F["pilot_mrr"][m], fm["usd"])
-        ws_arr.write_formula(r, 4, f"=(C{r + 1}+D{r + 1})*12", fm["usd"], 12 * F["rec"][m])
+        if on("PF1"):
+            ws_arr.write_formula(r, 4, f"=(C{r + 1}+D{r + 1})*12", fm["usd"], 12 * F["rec"][m])
+        else:
+            ws_arr.write_formula(r, 4, f"=C{r + 1}*12", fm["usd"], 12 * F["rec"][m])
         r += 1
     ws_arr.write(r + 1, 0, FOOTER, fm["note"])
 
@@ -810,7 +1118,7 @@ def build_model():
     ws_coh.set_column(1, 4, 16)
     ws_coh.set_column(5, 17, 8)
     ws_coh.write(0, 0, "Cohorts: 12-month revenue retention", fm["title"])
-    ws_coh.write(1, 0, "Cohort = customers still active after onboarding", fm["note"])
+    ws_coh.write(1, 0, "Cohort = customers still active after onboarding" if on("PF3") else "Cohort = every customer whose first invoice fell in the month", fm["note"])
     ws_coh.write_row(3, 0, ["Cohort (first invoice month)", "Customers", "Starting MRR", "MRR after 12 months",
                             "Net revenue retention"], fm["headl"])
     for k in range(13):
@@ -851,7 +1159,7 @@ def build_model():
     ws_hire.write_row(3, 0, ["Role", "Department", "Start month", "Base pay (USD a year)", "Loaded cost (USD a month)"], fm["headl"])
     r = 4
     first = r
-    for i, (role, dept, _k, base) in enumerate(HIRES[:MODELED_HIRES]):
+    for i, (role, dept, _k, base) in enumerate(HIRES[:F["n_model_hires"]]):
         t = 1 + i // 2
         ws_hire.write(r, 0, role)
         ws_hire.write(r, 1, dept)
@@ -860,18 +1168,18 @@ def build_model():
         ws_hire.write_formula(r, 4, f"=D{r + 1}*LOAD_FACTOR/12", fm["usd"], base * LOAD / 12)
         r += 1
     ws_hire.write(r, 0, "Hires in this plan", fm["bold"])
-    ws_hire.write_formula(r, 1, f"=COUNTA(A{first + 1}:A{r})", fm["name"], MODELED_HIRES)
+    ws_hire.write_formula(r, 1, f"=COUNTA(A{first + 1}:A{r})", fm["name"], F["n_model_hires"])
     wb.define_name("HIRES_COUNTED", f"=Hiring_Plan!$B${r + 1}")
     reg("PF4", "Hiring_Plan", a1(r, 1), name="HIRES_COUNTED", expect=MODELED_HIRES, label="hires the model pays for")
     ws_hire.write(r + 1, 0, "Staff after these hires", fm["bold"])
-    ws_hire.write_formula(r + 1, 1, f"=STAFF_NOW+B{r + 1}", fm["int"], HEADCOUNT_NOW + MODELED_HIRES)
+    ws_hire.write_formula(r + 1, 1, f"=STAFF_NOW+B{r + 1}", fm["int"], HEADCOUNT_NOW + F["n_model_hires"])
     ws_hire.write(r + 3, 0, FOOTER, fm["note"])
 
-    # ---- Cash_Runway (48 plan months)
+    # ---- Cash_Runway (60 plan months)
     ws_cash.set_column(0, 0, 44)
     ws_cash.set_column(1, 9, 16)
     ws_cash.write(0, 0, "Cash and runway (USD)", fm["title"])
-    rows48, runway48 = forecast(F["model_hires"], 48)
+    rows48, runway48 = forecast(F["model_hires"], 60)
     ws_cash.write(2, 0, "Runway (months of cash from the data date)", fm["bold"])
     ws_cash.write(3, 0, "Average net burn, plan months 1 to 12 (USD a month)", fm["bold"])
     ws_cash.write(4, 0, "Cash at the data date (USD)", fm["bold"])
@@ -909,6 +1217,34 @@ def build_model():
     ws_cash.write(last_t + 1, 0, FOOTER, fm["note"])
     F["model_runway"], F["model_avg12"] = runway48, avg12
     F["ass_cell"] = ASS_CELL
+
+    # ---- Cash_Bridge: what was raised, less what was lost, equals the cash in the bank
+    ws_bridge.set_column(0, 0, 58)
+    ws_bridge.set_column(1, 1, 18)
+    ws_bridge.set_column(2, 2, 90)
+    ws_bridge.write(0, 0, "Cash bridge: money raised to cash at the data date (USD)", fm["title"])
+    ws_bridge.write(1, 0, "Cash burn is taken as the operating result in the P&L. The model does not track working capital timing.", fm["note"])
+    ws_bridge.write_row(3, 0, ["Line", "USD", "Note"], fm["headl"])
+    op_range = f"'P&L'!{a1(R['op'], 2)}:{a1(R['op'], 1 + N_MONTHS)}"
+    assert abs(sum(V[("burn", j)] for j in range(N_MONTHS)) - F["net_loss_actual"]) < 0.5, "P&L losses differ from the ledger"
+    bridge = [
+        ("Raised in 2024: pre-seed SAFEs", "=RAISED_PRESEED_SAFE_USD", SAFE_AMOUNT, "usd", "Two SAFEs. See the cap table."),
+        ("Raised in 2025: seed SAFE", "=RAISED_SEED_SAFE_USD", F["seed_safe"], "usd", "One SAFE. See the cap table."),
+        ("Total raised before the Series A", "=B5+B6", F["raised_total"], "usdb", ""),
+        ("Less: net loss before 2025-01", "=NET_LOSS_BEFORE_2025_USD", F["net_loss_pre2025"], "usd", "2024 spend, before the first paying clinic."),
+        ("Less: net loss 2025-01 to 2026-09", f"=-SUM({op_range})", F["net_loss_actual"], "usd", "Sum of the P&L operating result over the 21 actual months."),
+        ("Cash at 2026-09-30 from the bridge", "=B7-B8-B9", F["raised_total"] - F["net_loss_pre2025"] - F["net_loss_actual"], "usdb", ""),
+        ("Cash at 2026-09-30 in Assumptions", "=CASH_START", CASH_START, "usd", "Bank balance."),
+        ("Difference", "=B10-B11", F["raised_total"] - F["net_loss_pre2025"] - F["net_loss_actual"] - CASH_START, "usd2", "Rounding only: the loss before 2025 is stated in whole dollars."),
+    ]
+    for i, (lab, form, val, fmt, note) in enumerate(bridge):
+        ws_bridge.write(4 + i, 0, lab, fm["bold"] if fmt == "usdb" else None)
+        ws_bridge.write_formula(4 + i, 1, form, fm[fmt], val)
+        if note:
+            ws_bridge.write(4 + i, 2, note, fm["note"])
+    wb.define_name("CASH_BRIDGE_DIFF", "=Cash_Bridge!$B$12")
+    F["bridge_diff"] = bridge[-1][2]
+    ws_bridge.write(14, 0, FOOTER, fm["note"])
     wb.close()
 
 
@@ -924,15 +1260,24 @@ def build_cap_table():
     ws.write(0, 0, "Hollis Voice, Inc.: fully diluted cap table", fm["title"])
     ws.write(1, 0, "As of 2026-09-30. SAFEs shown as converted at their cap. Pro forma shows the Series A.", fm["note"])
     ws.write_row(3, 0, ["Holder", "Class", "Shares", "% fully diluted", "Pro forma shares", "Pro forma %"], fm["headl"])
-    pool_total = 2_000_000
-    holders = [
-        (CEO["name"] + " (CEO)", "Common", 4_400_000),
-        (CTO["name"] + " (CTO)", "Common", 3_600_000),
-        ("Options granted (11 holders)", "Option pool, granted", 1_150_000),
-        ("Options available", "Option pool, unissued", pool_total - 1_150_000),
-        (SAFE_A_NAME + " (SAFE converted)", "Preferred (from SAFE)", 1_200_000),
-        (SAFE_B_NAME + " (SAFE converted)", "Preferred (from SAFE)", 800_000),
+    safes = [(SAFE_A_NAME, 1_200_000, SAFE_CAP), (SAFE_B_NAME, 800_000, SAFE_CAP), (SAFE_C_NAME, F["seed_safe"], SEED_SAFE_CAP)]
+    plain = [
+        (CEO["name"] + " (CEO)", "Common", 4_437_000),
+        (CTO["name"] + " (CTO)", "Common", 3_598_000),
+        ("Options granted (11 holders)", "Option pool, granted", 1_148_000),
+        ("Options available", "Option pool, unissued", 1_034_000),
     ]
+    # A post-money SAFE owns amount / cap of the company just before the priced round, so the share
+    # total has to include the SAFE shares themselves. Solve for it, with whole shares.
+    nonsafe = sum(h[2] for h in plain)
+    tot_guess = round(nonsafe / (1 - sum(a / c for (_n, a, c) in safes)))
+    for _ in range(50):
+        nxt = nonsafe + sum(round(a / c * tot_guess) for (_n, a, c) in safes)
+        if nxt == tot_guess:
+            break
+        tot_guess = nxt
+    safe_shares = [round(a / c * tot_guess) for (_n, a, c) in safes]
+    holders = plain + [(n + " (SAFE converted)", "Preferred (from SAFE)", sh) for (n, _a, _c), sh in zip(safes, safe_shares)]
     r = 4
     first = r
     total = sum(h[2] for h in holders)
@@ -969,21 +1314,21 @@ def build_cap_table():
     ws.write_row(r, 0, ["Investor", "Purchase amount (USD)", "Post-money cap (USD)", "Ownership", "Conversion price (USD)", "Shares"], fm["headl"])
     r += 1
     safe_first = r
-    price = SAFE_CAP / total
-    for (name, amt, sh) in ((SAFE_A_NAME, 1_200_000, 1_200_000), (SAFE_B_NAME, 800_000, 800_000)):
+    for (name, amt, cap), sh in zip(safes, safe_shares):
+        price = cap / total
         ws.write(r, 0, name)
         ws.write_number(r, 1, amt, fm["usd"])
-        ws.write_number(r, 2, SAFE_CAP, fm["usd"])
-        ws.write_formula(r, 3, f"=B{r + 1}/C{r + 1}", fm["pct2"], amt / SAFE_CAP)
+        ws.write_number(r, 2, cap, fm["usd"])
+        ws.write_formula(r, 3, f"=B{r + 1}/C{r + 1}", fm["pct2"], amt / cap)
         ws.write_formula(r, 4, f"=C{r + 1}/C${tot_row + 1}", fm["dec"], price)
-        ws.write_formula(r, 5, f"=B{r + 1}/E{r + 1}", fm["int"], amt / price)
-        LOC["DC3"].append({"file": rel, "sheet": "Cap_Table", "cell": a1(r, 5), "expect": amt / price,
-                           "label": f"shares from the {name} SAFE at the cap"})
+        ws.write_formula(r, 5, f"=ROUND(B{r + 1}/E{r + 1},0)", fm["int"], sh)
+        LOC["DC3"].append({"file": rel, "sheet": "Cap_Table", "cell": a1(r, 5), "expect": sh,
+                           "label": f"shares from the {name} SAFE at its cap"})
         r += 1
     ws.write(r, 0, "Total SAFEs", fm["bold"])
-    ws.write_formula(r, 1, f"=SUM(B{safe_first + 1}:B{r})", fm["usdb"], SAFE_AMOUNT)
-    ws.write_formula(r, 3, f"=SUM(D{safe_first + 1}:D{r})", fm["pctb"], SAFE_AMOUNT / SAFE_CAP)
-    ws.write_formula(r, 5, f"=SUM(F{safe_first + 1}:F{r})", fm["intb"], SAFE_AMOUNT / price)
+    ws.write_formula(r, 1, f"=SUM(B{safe_first + 1}:B{r})", fm["usdb"], sum(a for (_n, a, _c) in safes))
+    ws.write_formula(r, 3, f"=SUM(D{safe_first + 1}:D{r})", fm["pctb"], sum(a / c for (_n, a, c) in safes))
+    ws.write_formula(r, 5, f"=SUM(F{safe_first + 1}:F{r})", fm["intb"], sum(safe_shares))
     r += 2
     ws.write(r, 0, "Series A", fm["bold"])
     r += 1
@@ -1005,7 +1350,7 @@ def build_cap_table():
     LOC["DC3"].append({"file": rel, "sheet": "Cap_Table", "cell": a1(r + 5, 1), "expect": round(new_shares / post, 6), "label": "Series A ownership"})
     ws.write(r + 8, 0, FOOTER, fm["note"])
     wb.close()
-    F["cap"] = {"total_pre": total, "new_shares": new_shares, "post": post, "price_safe": price}
+    F["cap"] = {"total_pre": total, "new_shares": new_shares, "post": post, "safe_shares": safe_shares}
 
 
 # ---------------------------------------------------------------------------------------------
@@ -1064,15 +1409,27 @@ DECK = "01_overview/pitch_deck.pdf"
 CLAIMS_SIDECAR = "01_overview/claims.json"
 
 
+def LARGEST_TEXT():
+    return "under 9% of ARR" if on("PF5") else f"{round(F['big_share'] * 100)}% of ARR"
+
+
+def GM_DECK_PCT():
+    return round(F["gm_deck"] * 100)
+
+
+def ARR_SHORT():
+    return f"${F['deck_arr'] / 1e6:.3g}M"
+
+
 def deck_claims():
     """Every number the deck states, with the slide it first appears on."""
     mkt_clinics, mkt_acv = 28_000, 9_000
     return [
         ("ARR", money(F["deck_arr"]), 3),
-        ("Clinics on Hollis", f"{F['accounts_cum']}", 3),
+        ("Clinics on Hollis", f"{F['deck_clinics']}", 3),
         ("Calls handled, September 2026", f"{F['calls'][LAST]:,}", 3),
-        ("Largest customer", "under 9% of ARR", 4),
-        ("Gross margin", "80%", 5),
+        ("Largest customer", LARGEST_TEXT(), 4),
+        ("Gross margin", f"{GM_DECK_PCT()}%", 5),
         ("Net revenue retention", f"{pct(F['nrr_rep'])} (12 months)", 6),
         ("US independent clinics (company estimate)", f"{mkt_clinics:,}", 8),
         ("Market size (company estimate)", money(mkt_clinics * mkt_acv), 8),
@@ -1093,6 +1450,20 @@ def build_deck():
     c.setAuthor("Hollis Voice (synthetic)")
     c.setSubject(FOOTER)
 
+    def logo(x, y, size, word_color=colors.white, word=True):
+        """The Hollis Voice mark: a teal tile with a sound wave, and the name beside it."""
+        c.setFillColor(TEAL)
+        c.roundRect(x, y, size, size, size * 0.22, fill=1, stroke=0)
+        c.setFillColor(colors.white)
+        for i, hgt in enumerate((0.30, 0.62, 0.44, 0.74, 0.34)):
+            bw = size * 0.10
+            bx = x + size * 0.14 + i * size * 0.165
+            c.roundRect(bx, y + size * (0.5 - hgt / 2), bw, size * hgt, bw / 2, fill=1, stroke=0)
+        if word:
+            c.setFillColor(word_color)
+            c.setFont("Helvetica-Bold", size * 0.62)
+            c.drawString(x + size * 1.25, y + size * 0.24, "Hollis Voice")
+
     def frame(n, title):
         c.setFillColor(colors.white)
         c.rect(0, 0, SW, SH, fill=1, stroke=0)
@@ -1101,6 +1472,7 @@ def build_deck():
         c.setFillColor(colors.white)
         c.setFont("Helvetica-Bold", 30)
         c.drawString(48, SH - 54, title)
+        logo(SW - 196, SH - 58, 30)
         c.setFillColor(GREYTXT)
         c.setFont("Helvetica", 9)
         c.drawString(48, 22, FOOTER)
@@ -1140,6 +1512,7 @@ def build_deck():
     # 1 Title
     c.setFillColor(NAVY)
     c.rect(0, 0, SW, SH, fill=1, stroke=0)
+    logo(60, 410, 64, word=False)
     c.setFillColor(colors.white)
     c.setFont("Helvetica-Bold", 64)
     c.drawString(60, 330, "Hollis Voice")
@@ -1172,40 +1545,57 @@ def build_deck():
              "It books the appointment into the clinic's calendar.",
              "It sends refill requests to staff to approve.",
              "It texts the pet owner a confirmation."], 500, 385, 420, 18, 25)
+    c.setFillColor(LIGHT)
+    c.roundRect(48, 44, 864, 108, 8, fill=1, stroke=0)
+    c.setFillColor(NAVY)
+    c.setFont("Helvetica-Bold", 12)
+    c.drawString(64, 134, "Example call, Tuesday 4:47 pm")
+    c.setFillColor(colors.black)
+    c.setFont("Helvetica", 12)
+    for i, ln in enumerate(("Caller: Hi, I need to refill my dog's heart medicine.",
+                            "Hollis Voice: Happy to help. Which pet is it for?",
+                            "Caller: Biscuit, the beagle.",
+                            "Hollis Voice: Thanks. I sent the refill request to the clinic staff and will text you when it is ready.")):
+        c.drawString(64, 114 - i * 19, ln)
     c.showPage()
 
     # 3 Where we are
     page(3, "Where we are")
-    stat(48, 410, "$2.5M", "ARR")
-    stat(48, 310, f"{F['accounts_cum']}", "Clinics on Hollis")
+    stat(48, 410, ARR_SHORT(), "ARR")
+    stat(48, 310, f"{F['deck_clinics']}", "Clinics on Hollis")
     stat(48, 210, f"{F['calls'][LAST]:,}", "Calls handled in September 2026", 40)
     image(chart_mrr(), 360, 80, 560, 315)
     c.setFillColor(GREYTXT)
     c.setFont("Helvetica", 11)
     c.drawString(360, 62, "Monthly recurring revenue, January 2025 to September 2026.")
-    LOC["PF2"].append({"file": DECK, "page": 3, "text": "$2.5M", "expect": F["deck_arr"], "label": "deck ARR on the traction slide"})
+    LOC["PF2"].append({"file": DECK, "page": 3, "text": ARR_SHORT(), "expect": F["deck_arr"], "label": "deck ARR on the traction slide"})
     LOC["PF7"].append({"file": DECK, "page": 3, "text": "Clinics on Hollis", "label": "deck label"})
-    LOC["PF7"].append({"file": DECK, "page": 3, "text": f"{F['accounts_cum']}", "expect": F["accounts_cum"], "label": "deck clinic count"})
+    LOC["PF7"].append({"file": DECK, "page": 3, "text": f"{F['deck_clinics']}", "expect": F["accounts_cum"], "label": "deck clinic count"})
     c.showPage()
 
     # 4 Customers
     page(4, "Customers")
     c.setFont("Helvetica-Bold", 30)
     c.setFillColor(NAVY)
-    c.drawString(48, 420, "No customer above 9% of ARR")
+    head4 = "No customer above 9% of ARR" if on("PF5") else f"Our largest customer is {round(F['big_share'] * 100)}% of ARR"
+    c.drawString(48, 420, head4)
     bullets(["A broad base of independent clinics, from one-room practices to hospital groups.",
-             "Cedar & Pine Animal Hospitals runs Hollis Voice across 17 locations.",
+             f"Cedar & Pine Animal Hospitals runs Hollis Voice across {BIG['locations_now']} locations.",
              "Marlow Veterinary Group started a pilot in August 2026.",
-             "Brookline Row Veterinary and other clinics pay once a year, in advance."], 48, 360, 860, 20, 28)
+             "Brookline Row Veterinary and other clinics pay once a year, in advance, at a discount."], 48, 360, 860, 20, 28)
     LOC["PF5"].append({"file": DECK, "page": 4, "text": "No customer above 9% of ARR", "label": "deck concentration claim"})
     c.showPage()
 
     # 5 Unit economics
     page(5, "Unit economics")
-    stat(48, 400, "80%", "Gross margin", 72)
-    bullets(["Cost of revenue is phone minutes and speech software licences.",
-             "Phone minutes are 15% of revenue. Licences are 5%.",
-             "Plans start at $349 a month."], 48, 290, 860, 20, 28)
+    stat(48, 400, f"{GM_DECK_PCT()}%", "Gross margin", 72)
+    if on("PF6"):
+        cogs_bullets = ["Cost of revenue is phone minutes and speech software licences.",
+                        "Phone minutes are 15% of revenue. Licences are 5%."]
+    else:
+        cogs_bullets = ["Cost of revenue is phone minutes, speech software licences, cloud hosting, model usage and support staff.",
+                        "Gross margin is recurring revenue less all of those costs."]
+    bullets(cogs_bullets + ["Plans start at $349 a month."], 48, 290, 860, 20, 28)
     LOC["PF6"].append({"file": DECK, "page": 5, "text": "80%", "label": "deck gross margin"})
     LOC["PF6"].append({"file": DECK, "page": 5, "text": "Gross margin", "label": "deck label"})
     c.showPage()
@@ -1213,11 +1603,15 @@ def build_deck():
     # 6 Cohort chart
     page(6, "Retention")
     stat(48, 400, pct(F["nrr_rep"]), "Net revenue retention", 60)
-    para("Twelve months after the first invoice, cohorts pay more than they did at the start.", 48, 310, 330, 18, 25)
+    if F["nrr_rep"] >= 1:
+        para("Twelve months after the first invoice, cohorts pay more than they did at the start.", 48, 310, 330, 18, 25)
+    else:
+        para(f"Twelve months after the first invoice, cohorts pay {F['nrr_rep'] * 100:.0f}% of what they paid at the start.", 48, 310, 330, 18, 25)
     image(chart_cohorts(), 400, 70, 520, 292)
     c.setFillColor(GREYTXT)
     c.setFont("Helvetica", 11)
-    c.drawString(400, 52, "Cohorts count customers still active after onboarding. Nine cohorts, January to September 2025.")
+    c.drawString(400, 52, ("Cohorts count customers still active after onboarding." if on("PF3") else "Cohorts count every customer who started in the month.")
+                 + " Nine cohorts, January to September 2025.")
     LOC["PF3"].append({"file": DECK, "page": 6, "text": pct(F["nrr_rep"]), "label": "deck net revenue retention"})
     LOC["PF3"].append({"file": DECK, "page": 6, "text": "Cohorts count customers still active after onboarding.", "label": "chart caption"})
     c.showPage()
@@ -1226,8 +1620,8 @@ def build_deck():
     page(7, "Pricing")
     x = 48
     for name, price, desc in (("Starter", "$349", "One location, basic call answering"),
-                              ("Standard", "$649", "Booking and refill requests"),
-                              ("Pro", "$1,099", "Everything, with priority support"),
+                              ("Standard", "$649", "Booking and refill requests, up to 3 locations"),
+                              ("Pro", "$1,099", "Everything, with priority support, up to 3 locations"),
                               ("Group", "Custom", "Multi-location hospitals")):
         c.setFillColor(LIGHT)
         c.roundRect(x, 190, 208, 210, 8, fill=1, stroke=0)
@@ -1241,7 +1635,7 @@ def build_deck():
         c.drawString(x + 16, 285, "a month" if price != "Custom" else "per agreement")
         para(desc, x + 16, 250, 176, 14, 19, color=colors.black)
         x += 224
-    para("A one-time onboarding fee of $500 applies to each new clinic. It is not part of recurring revenue.", 48, 150, 860, 16, 22)
+    para("A one-time onboarding fee of $500 applies to each new clinic. It is not part of recurring revenue. Clinics that pay a year in advance get 10% off.", 48, 150, 860, 16, 22)
     c.showPage()
 
     # 8 Market
@@ -1328,10 +1722,10 @@ def build_deck():
     c.showPage()
 
     # 14 Claims
-    page(14, "Claims page")
+    page(14, "Appendix: key metrics")
     c.setFont("Helvetica", 11)
     c.setFillColor(GREYTXT)
-    c.drawString(48, 438, "Every number in this deck, with the slide where it first appears.")
+    c.drawString(48, 438, "Key metrics from this deck, with the slide where each appears.")
     c.setFont("Helvetica-Bold", 12)
     c.setFillColor(NAVY)
     c.drawString(48, 414, "Claim")
@@ -1412,7 +1806,7 @@ def date_add_months(y, m, n):
 
 ROOM_FILES = [
     ("00_welcome/cover_note_and_index.pdf", "Cover note and a numbered index of the room.", "first"),
-    ("01_overview/pitch_deck.pdf", "Pitch deck, 14 slides. Slide 14 lists every number with its slide.", "first"),
+    ("01_overview/pitch_deck.pdf", "Pitch deck, 14 slides. Slide 14 is an appendix of key metrics.", "first"),
     ("01_overview/company_overview.pdf", "One-page company overview.", "first"),
     ("01_overview/pitch_video_script.md", "Two-minute script for the pitch video.", "first"),
     ("02_financials/financial_model.xlsx", "Financial model: assumptions, P&L, ARR build, cohorts, hiring plan, cash.", "first"),
@@ -1435,8 +1829,7 @@ def build_cover_note():
              P("Data room for the Series A. Data as of 2026-09-30."),
              P("Thank you for your time. This room has two tiers. The first tier is the deck, the model, the cap table, the metrics, the team "
                "and the product. The second tier is the detail behind the numbers: revenue by customer, the expense ledger and the customer "
-               "agreements. We share the second tier after a term sheet. Every number in the deck ties to a file in this room, and the deck's "
-               "last slide lists each one."),
+               "agreements. We share the second tier on request after a first meeting. The index below lists every file and its tier."),
              P("Imogen Tarrant, Chief Executive Officer", S_SMALL),
              Spacer(1, 10)]
     rows = [["#", "File", "What it is", "Tier"]]
@@ -1453,13 +1846,13 @@ def build_overview():
              P("Who", S_H2),
              P(f"{CEO['name']} (CEO) and {CTO['name']} (CTO) founded the company. {HEADCOUNT_NOW} people work there today."),
              P("Traction", S_H2),
-             P(f"ARR: {money(F['deck_arr'])}. Clinics on Hollis: {F['accounts_cum']}. Gross margin: 80%. Net revenue retention over 12 months: {pct(F['nrr_rep'])}. "
-               f"Largest customer: under 9% of ARR. Calls handled in September 2026: {F['calls'][LAST]:,}. All figures are as of 2026-09-30."),
+             P(f"ARR: {money(F['deck_arr'])}. Clinics on Hollis: {F['deck_clinics']}. Gross margin: {GM_DECK_PCT()}%. Net revenue retention over 12 months: {pct(F['nrr_rep'])}. "
+               f"Largest customer: {LARGEST_TEXT()}. Calls handled in September 2026: {F['calls'][LAST]:,}. All figures are as of 2026-09-30."),
              P("The ask", S_H2),
              P(f"We are raising {money(SERIES_A)} in a Series A at {money(SERIES_A_PRE)} pre-money. We plan to hire {PLANNED_HIRES} people over the next 12 months and "
                f"expect {F['runway_shown']} months of runway."),
              P("Earlier funding", S_H2),
-             P(f"{money(SAFE_AMOUNT)} in SAFEs on a {money(SAFE_CAP)} post-money cap."),
+             P(F["raised_text"] + "."),
              P("Contact: hello@hollisvoice.example", S_SMALL)]
     make_pdf("01_overview/company_overview.pdf", story, "Hollis Voice: company overview")
     for flag in ("PF2", "PF7"):
@@ -1477,8 +1870,10 @@ def build_bios():
               "He holds a master's degree in computer science from Lakeshore Institute of Technology. He co-founded Hollis Voice in 2024."),
     ]
     for p, text in bios:
-        story += [P(p["name"], S_H2), P(p["title"], S_SMALL), P(text),
-                  P(f"GitHub: github.com/{FOUNDER_GITHUB[p['name']]}", S_SMALL), Spacer(1, 8)]
+        story += [P(p["name"], S_H2), P(p["title"], S_SMALL), P(text)]
+        if p["name"] in FOUNDER_GITHUB:
+            story.append(P(f"GitHub: github.com/{FOUNDER_GITHUB[p['name']]}", S_SMALL))
+        story.append(Spacer(1, 8))
     story.append(PageBreak())
     story.append(P("Senior team", S_H1))
     texts = {
@@ -1500,11 +1895,11 @@ def build_one_pager():
              P("Pricing", S_H2),
              tbl([["Plan", "Price a month", "Who it is for"],
                   ["Starter", "$349", "One location, basic call answering"],
-                  ["Standard", "$649", "Booking and refill requests"],
-                  ["Pro", "$1,099", "Everything, with priority support"],
+                  ["Standard", "$649", "Booking and refill requests, up to 3 locations"],
+                  ["Pro", "$1,099", "Everything, with priority support, up to 3 locations"],
                   ["Group", "Custom", "Multi-location hospitals"]], [90, 100, 300]),
              Spacer(1, 6),
-             P("A one-time onboarding fee of $500 applies to each new clinic. Annual plans can be paid once a year in advance."),
+             P("A one-time onboarding fee of $500 applies to each new clinic. Annual plans are paid once a year in advance and cost 10% less."),
              P("Works with", S_H2),
              P("Common veterinary practice management systems through calendar sync. Standard phone lines and SIP trunks. Text messages to pet owners."),
              P("Contact: hello@hollisvoice.example", S_SMALL)]
@@ -1518,7 +1913,7 @@ def build_orders():
              P("Between Hollis Voice, Inc. (the Provider) and Cedar & Pine Animal Hospitals (the Customer). Effective date: 2025-11-01."),
              tbl([["Item", "Detail"],
                   ["Plan", "Group"],
-                  ["Locations", "9 at signing. 17 from 2026-04-01 (see Amendment No. 1)."],
+                  ["Locations", f"{BIG['locations_start']} at signing. {BIG['locations_now']} from 2026-04-01 (see Amendment No. 1)."],
                   ["Monthly fee", "$18,000 until 2026-03-31. $36,000 from 2026-04-01."],
                   ["Initial term", "24 months, from 2025-11-01 to 2027-10-31."],
                   ["Renewal", "Renews for 12 months at a time unless either party gives 90 days written notice before the term ends."],
@@ -1534,8 +1929,8 @@ def build_orders():
              P("5. Service levels. The Provider aims for 99.5% monthly availability of the phone agent."),
              PageBreak(),
              P("Amendment No. 1", S_H1),
-             P("Effective 2026-04-01. The Customer adds 8 locations, for a total of 17. The monthly fee becomes $36,000 for the rest of the initial term. "
-               "All other terms stay the same."),
+             P(f"Effective 2026-04-01. The Customer adds {BIG['locations_now'] - BIG['locations_start']} locations, for a total of {BIG['locations_now']}. "
+               "The monthly fee becomes $36,000 for the rest of the initial term. All other terms stay the same."),
              Spacer(1, 18),
              P("Signed for the Provider: Imogen Tarrant, Chief Executive Officer"),
              P("Signed for the Customer: Delia Marchetti-Owens, Chief Operating Officer")]
@@ -1545,7 +1940,7 @@ def build_orders():
     # Marlow pilot: 3 pages, clauses 2, 7, 8 are the ones that matter
     story = [P("Pilot Agreement: Marlow Veterinary Group", S_H1),
              P("Between Hollis Voice, Inc. (the Provider) and Marlow Veterinary Group (the Customer). Effective date: 2026-08-01."),
-             P("1. Pilot. The Provider will run a pilot of its AI phone agent at 4 Customer locations. The pilot is a trial of the service. "
+             P(f"1. Pilot. The Provider will run a pilot of its AI phone agent at {PILOT['locations']} Customer locations. The pilot is a trial of the service. "
                "It is not a subscription."),
              P("2. Term and fees. The pilot runs for six (6) months, from 2026-08-01 to 2027-01-31. The Customer pays $15,000 a month, "
                "$90,000 in total, invoiced monthly."),
@@ -1571,7 +1966,10 @@ def build_orders():
     y0 = 2025 + bk["start"] // 12
     m0 = bk["start"] % 12 + 1
     ey, em = date_add_months(y0, m0, 12)
-    annual = 12 * PLAN_PRICE["Standard"]
+    monthly = bk["mrr"][LAST]
+    annual = 12 * monthly
+    list_price = PLAN_PRICE["Standard"]
+    discount_pct = round((1 - monthly / list_price) * 100)
     d_start = f"{y0}-{m0:02d}-01"
     last_day = (datetime.date(ey, em, 1) - datetime.timedelta(days=1)).isoformat()
     story = [P("Order Form: Brookline Row Veterinary", S_H1),
@@ -1579,7 +1977,8 @@ def build_orders():
              tbl([["Item", "Detail"],
                   ["Plan", "Standard, 1 location"],
                   ["Term", f"12 months, from {d_start} to {last_day}."],
-                  ["Annual fee", f"{money(annual)}, invoiced once, in advance (12 months at {money(PLAN_PRICE['Standard'])} a month)."],
+                  ["Annual fee", f"{money(annual)}, invoiced once, in advance. That is 12 months at {money(monthly)} a month, "
+                                 f"{discount_pct}% off the {money(list_price)} list price for paying a year up front."],
                   ["Renewal", "Renews for 12 months at a time unless either party gives 30 days written notice."],
                   ["Onboarding fee", "$500, one time."]], [110, 380]),
              PageBreak(),
@@ -1593,14 +1992,34 @@ def build_orders():
     make_pdf("04_customers/order_form_brookline_row.pdf", story, "Order form: Brookline Row Veterinary")
     LOC["DC2"].append({"file": "04_customers/order_form_brookline_row.pdf", "page": 1, "text": money(annual), "label": "annual prepaid fee"})
     LOC["DC2"].append({"file": "03_metrics/customer_mrr_by_month.csv", "customer_name": BROOKLINE, "customer_id": bk["id"],
-                       "product_type": "Subscription", "mrr": PLAN_PRICE["Standard"], "label": "customer row for Brookline Row Veterinary"})
-    F["brook_annual"] = annual
+                       "product_type": "Subscription", "mrr": monthly, "billings_month": MONTH_LABELS[bk["start"]],
+                       "billings": annual, "label": "customer row for Brookline Row Veterinary"})
+    F["brook_annual"], F["brook_monthly"] = annual, monthly
 
 
 # ---------------------------------------------------------------------------------------------
 # Markdown files
 # ---------------------------------------------------------------------------------------------
+MILLION_WORDS = {1_000_000: "one million", 1_500_000: "one and a half million", 2_000_000: "two million",
+                 2_500_000: "two and a half million", 3_000_000: "three million", 3_500_000: "three and a half million",
+                 4_000_000: "four million", 4_500_000: "four and a half million", 5_000_000: "five million"}
+NUMBER_WORDS = {36: "thirty-six", 40: "forty", 44: "forty-four", 30: "thirty", 32: "thirty-two", 38: "thirty-eight"}
+
+
 def build_markdown():
+    arr_phrase = f"about {MILLION_WORDS[F['video_arr']]}" if on("PF2b") else f"just over {MILLION_WORDS[F['video_arr']]}"
+    arr_sentence = f"we're at {arr_phrase} dollars in annual recurring revenue"
+    if F["nrr_rep"] >= 1:
+        retention_sentence = "Net revenue retention is a little over one hundred percent, so the clinics we win spend more over time."
+    else:
+        retention_sentence = (f"Net revenue retention is about {F['nrr_rep'] * 100:.0f} percent over twelve months, "
+                              "and we are working on early churn.")
+    if on("PF5"):
+        big_sentence = (f"Our biggest customer runs Hollis Voice across {NUMBER_WORDS[BIG['locations_now']]} locations, and it is still under nine percent of ARR. "
+                        "The base is spread out.")
+    else:
+        big_sentence = (f"Our biggest customer runs Hollis Voice across {NUMBER_WORDS[BIG['locations_now']]} locations and is about "
+                        f"{round(F['big_share'] * 100)} percent of ARR, so we watch concentration closely.")
     script = f"""# Hollis Voice: two-minute pitch script
 
 Read this out loud on your phone. Keep a steady pace. Each time stamp marks where that part should begin.
@@ -1615,11 +2034,11 @@ Hollis Voice is an AI phone agent. It answers every call, day and night. It book
 
 **0:35 Traction**
 
-We started charging in January 2025. Since then we have grown every quarter. Today we're at about three million dollars in annual recurring revenue.
+We started charging in January 2025. Since then we have grown every quarter. Today {arr_sentence}.
 
 **0:50 Clinics, retention and our largest customer**
 
-That is {F['accounts_cum']} clinics on Hollis. Net revenue retention is a little over one hundred percent, so the clinics we win spend more over time. Our biggest customer runs Hollis Voice across seventeen locations, and it is still under nine percent of ARR. The base is spread out.
+That is {F['deck_clinics']} clinics on Hollis. {retention_sentence} {big_sentence}
 
 **1:10 Why we win**
 
@@ -1646,9 +2065,9 @@ Thank you. I'm {CEO['name'].split()[0]}, and I would love to show you a live cal
         sys.exit(f"Video script has {words} spoken words; expected about 300")
     F["script_words"] = words
     write_text(ROOM / "01_overview/pitch_video_script.md", script)
-    LOC["PF2b"].append({"file": "01_overview/pitch_video_script.md", "time": "0:35", "text": "we're at about three million dollars in annual recurring revenue",
+    LOC["PF2b"].append({"file": "01_overview/pitch_video_script.md", "time": "0:35", "text": arr_sentence,
                         "expect": F["video_arr"], "label": "spoken ARR"})
-    LOC["PF7"].append({"file": "01_overview/pitch_video_script.md", "time": "0:50", "text": f"{F['accounts_cum']} clinics on Hollis", "label": "spoken clinic count"})
+    LOC["PF7"].append({"file": "01_overview/pitch_video_script.md", "time": "0:50", "text": f"{F['deck_clinics']} clinics on Hollis", "label": "spoken clinic count"})
 
     web = f"""# Hollis Voice
 
@@ -1656,7 +2075,7 @@ Thank you. I'm {CEO['name'].split()[0]}, and I would love to show you a live cal
 
 Hollis Voice is the AI phone agent for independent veterinary clinics. It answers every call, books the appointment and sends refill requests to your staff.
 
-Trusted by {F['accounts_cum']} independent veterinary clinics.
+Trusted by {F['deck_clinics']} independent veterinary clinics.
 
 ## How it works
 
@@ -1676,11 +2095,11 @@ Trusted by {F['accounts_cum']} independent veterinary clinics.
 | Plan | Price | Who it is for |
 |---|---|---|
 | Starter | $349 a month | One location, basic call answering |
-| Standard | $649 a month | Booking and refill requests |
-| Pro | $1,099 a month | Everything, with priority support |
+| Standard | $649 a month | Booking and refill requests, up to 3 locations |
+| Pro | $1,099 a month | Everything, with priority support, up to 3 locations |
 | Group | Custom | Multi-location hospitals |
 
-There is a one-time onboarding fee of $500 for each new clinic. Annual plans can be paid once a year in advance.
+There is a one-time onboarding fee of $500 for each new clinic. Annual plans are paid once a year in advance and cost 10% less.
 
 ## Contact
 
@@ -1691,7 +2110,7 @@ hello@hollisvoice.example
 {FOOTER}
 """
     write_text(ROOM / "06_product/website_copy.md", web)
-    LOC["PF7"].append({"file": "06_product/website_copy.md", "text": f"Trusted by {F['accounts_cum']} independent veterinary clinics.", "label": "website repeats the clinic count"})
+    LOC["PF7"].append({"file": "06_product/website_copy.md", "text": f"Trusted by {F['deck_clinics']} independent veterinary clinics.", "label": "website repeats the clinic count"})
 
 
 # ---------------------------------------------------------------------------------------------
@@ -1766,8 +2185,8 @@ def build_answer_key():
          "organiser_direction": "an additional published flag",
          "locations": LOC["PF5"],
          "shown": {"value": f["claimed_share"], "unit": "ratio", "label": "deck claim: no customer above 9% of ARR"},
-         "true": {"value": round(f["big_share"], 3), "unit": "ratio", "label": "largest customer share of MRR (customer C-BIG)",
-                  "details": {"top3_share": round(f["top3"], 3)}},
+         "true": {"value": round(f["big_share"], 3), "unit": "ratio", "label": f"largest customer share of MRR (customer {f['big_id']}, Cedar & Pine)",
+                  "details": {"top3_share": round(f["top3"], 3), "largest_customer_id": f["big_id"]}},
          "check": "top_customer_share",
          "check_description": "Top-one and top-three share of 2026-09 subscription MRR from customer_mrr_by_month.csv; compare with the deck claim.",
          "tolerance": 0.001,
@@ -1796,23 +2215,29 @@ def build_answer_key():
          "files_needed": ["03_metrics/monthly_metrics.csv", "01_overview/pitch_deck.pdf"],
          "catchable_from_seed_drop": True},
     ]
+    flags = [x for x in flags if x["id"] in PLANTS]
     for fl in flags:
         fl["decoy"] = False
         fl["in_seed_drop_files"] = [x for x in fl["files_needed"] if x in SEED_FILES]
     decoys = [
         {"id": "DC1", "name": "Onboarding fee excluded from ARR correctly", "locations": LOC["DC1"], "must_not_flag": True,
-         "why": "The $500 one-time fee is shown in ARR_Build with zero ARR counted. A checker must not flag it as ARR."},
+         "why": "The $500 one-time fee is a row called 'Onboarding fees' in ARR_Build with zero ARR counted, and rows with product_type Onboarding in the customer file. A checker must not flag it as ARR."},
         {"id": "DC2", "name": "Annual prepay counted as recurring correctly", "locations": LOC["DC2"], "must_not_flag": True,
-         "why": "Brookline Row pays once a year in advance. Revenue is spread monthly and ARR counts it once, at 12 times the monthly price."},
+         "details": {"customer_id": f["brook"]["id"], "annual_fee": f["brook_annual"], "monthly_revenue": f["brook_monthly"],
+                     "list_price": PLAN_PRICE["Standard"], "billings_month": MONTH_LABELS[f["brook"]["start"]]},
+         "why": f"Brookline Row pays {money(f['brook_annual'])} once a year in advance, 10 percent under list. The billings column shows the whole fee in {MONTH_LABELS[f['brook']['start']]} and nothing in the months after. Revenue is {money(f['brook_monthly'])} a month and ARR counts it once, at 12 times that, which is the annual fee. A checker that reads the billings spike as revenue or ARR is wrong."},
         {"id": "DC3", "name": "Clean cap table", "locations": LOC["DC3"], "must_not_flag": True,
          "why": "Holders add to 100 percent and the SAFE conversion at the stated cap is right."},
     ]
     key = {
         "company": "Hollis Voice (fictional)",
         "synthetic_notice": FOOTER,
-        "seed": SEED, "as_of": "2026-09-30",
-        "room_path": "data_room/hollis_voice",
-        "seed_drop_path": "data_room/hollis_voice_seed_drop",
+        "seed": RUN_SEED, "as_of": "2026-09-30",
+        "mode": MODE,
+        "plants": [x["id"] for x in flags],
+        "clean_room": not flags,
+        "room_path": f"data_room/{ROOM.name}",
+        "seed_drop_path": f"data_room/{SEED_DROP.name}",
         "seed_drop_files": SEED_FILES,
         "full_room_files": [r[0] for r in ROOM_FILES] + [CLAIMS_SIDECAR],
         "flags": flags, "decoys": decoys,
@@ -1821,6 +2246,11 @@ def build_answer_key():
             "customers_ever_paying": f["ever"], "paying_accounts": f["paying"][LAST], "mrr_subscription": f["true_mrr"],
             "arr_true_recurring": f["true_arr"], "arr_model": f["model_arr"], "arr_deck": f["deck_arr"], "arr_video": f["video_arr"],
             "ask": SERIES_A, "pre_money": SERIES_A_PRE, "cash": CASH_START, "staff_now": HEADCOUNT_NOW,
+            "raised_before_series_a": f["raised_total"], "pre_seed_safes": SAFE_AMOUNT, "seed_safe": f["seed_safe"],
+            "net_loss_before_2025": f["net_loss_pre2025"], "net_loss_2025_01_to_2026_09": round(f["net_loss_actual"], 2),
+            "cash_bridge_difference": round(f["bridge_diff"], 2),
+            "big_customer_id": f["big_id"], "big_customer_locations": BIG["locations_now"], "pilot_customer_id": f["pilot_id"], "brookline_customer_id": f["brook"]["id"],
+            "arr_video_phrase": MILLION_WORDS[f["video_arr"]],
             "staff_after_hiring": HEADCOUNT_NOW + PLANNED_HIRES,
             "model_avg_net_burn_12m": round(f["burn_shown"], 2), "true_avg_net_burn_12m": round(f["burn_true"], 2),
         },
@@ -1830,9 +2260,11 @@ def build_answer_key():
         "notes": [
             "The deck's market figures (28,000 clinics and a $252,000,000 market) are labelled company estimates and are not planted flags.",
             "The company overview and website copy repeat the deck's ARR and clinic count. They are the same planted claims, not new ones.",
-            "Founder GitHub handles are placeholders. Replace them with the demo organisation's handle in generate.py (FOUNDER_GITHUB).",
-            "The data room gives no cash history, only cash at 2026-09-30, so it does not claim to reconcile cash since inception.",
-        ],
+            "The CTO's GitHub handle is a placeholder. Replace it with the demo organisation's handle in generate.py (FOUNDER_GITHUB).",
+            "Cash reconciles: money raised before the Series A, less the net loss before 2025 and the sum of the 21 monthly operating results, equals cash at 2026-09-30 (sheet Cash_Bridge in the model). The net loss before 2025 is stated in whole dollars, so the difference is under one dollar. Working capital timing is not modelled.",
+            "The billings column in customer_mrr_by_month.csv is cash invoiced in the month. For clinics that pay a year in advance it spikes in the start month and the anniversary month. Revenue (mrr) is spread evenly.",
+            "Prices carry seeded noise: some clinics pay a discount or an add-on, annual payers get 10 percent off, and cost and pay lines vary month to month. Gross margin is not a flat figure in the history.",
+        ] + (["This is a clean room. No flag is planted. A correct scan reports no red flags. The three decoys are still here and must not be flagged."] if not flags else []),
     }
     KEY_PATH.write_text(json.dumps(key, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
@@ -1844,8 +2276,49 @@ def copy_seed_drop():
         shutil.copyfile(ROOM / rel, dst)
 
 
-def main():
+def parse_args(argv=None):
+    ap = argparse.ArgumentParser(description="Generate a synthetic data room for Hollis Voice (fictional).")
+    ap.add_argument("--plants", default="all",
+                    help="all (the default), off (a clean room with no planted flags), or a comma-separated list of flag ids "
+                         f"from {', '.join(ALL_FLAGS)}")
+    ap.add_argument("--seed", type=int, default=None,
+                    help=f"a seed for a variant room (the main room uses {SEED})")
+    ap.add_argument("--key-out", default=None,
+                    help="where to write the answer key instead of the default path; point it somewhere private for a sealed variant")
+    return ap.parse_args(argv)
+
+
+def configure(args):
+    """Set the plants, the seed and the output paths for this run."""
+    global ROOM, SEED_DROP, KEY_PATH, RUN_SEED, PLANTS, MODE
+    ids = {x.lower(): x for x in ALL_FLAGS}
+    spec = args.plants.strip()
+    if spec.lower() == "all":
+        PLANTS = set(ALL_FLAGS)
+    elif spec.lower() == "off":
+        PLANTS = set()
+    else:
+        wanted = [x.strip().lower() for x in spec.split(",") if x.strip()]
+        unknown = [x for x in wanted if x not in ids]
+        if unknown or not wanted:
+            sys.exit(f"Unknown flag ids {unknown or spec!r}. Use all, off, or a list from {', '.join(ALL_FLAGS)}.")
+        PLANTS = {ids[x] for x in wanted}
+    RUN_SEED = args.seed if args.seed is not None else SEED
+    if spec.lower() == "off":
+        MODE, folder, key_name = "clean", "hollis_voice_clean", "answer_key_clean.json"
+    elif RUN_SEED == SEED and PLANTS == set(ALL_FLAGS):
+        MODE, folder, key_name = "main", "hollis_voice", "answer_key.json"
+    else:
+        MODE, folder, key_name = "variant", "hollis_voice_variant", "answer_key_variant.json"
+    ROOM = HERE / folder
+    SEED_DROP = HERE / f"{folder}_seed_drop"
+    KEY_PATH = Path(args.key_out).expanduser().resolve() if args.key_out else HERE / key_name
+
+
+def main(argv=None):
+    configure(parse_args(argv))
     ROOM.mkdir(parents=True, exist_ok=True)
+    KEY_PATH.parent.mkdir(parents=True, exist_ok=True)
     build_facts()
     build_tables()
     build_model()
@@ -1859,11 +2332,18 @@ def main():
     build_markdown()
     build_answer_key()
     copy_seed_drop()
-    print(f"Wrote {len(ROOM_FILES) + 1} files to {ROOM}")
+    n_folders = len({Path(r[0]).parts[0] for r in ROOM_FILES})
+    print(f"Wrote {len(ROOM_FILES) + 1} files in {n_folders} folders to {ROOM}")
     print(f"Wrote {len(SEED_FILES)} files to {SEED_DROP}")
     print(f"Wrote {KEY_PATH}")
+    if MODE == "variant":
+        print("Variant room written. Keep the answer key sealed until the demo (see SEALING.md).")
+        return
     print(f"True recurring ARR {F['true_arr']:,}; model {F['model_arr']:,}; deck {F['deck_arr']:,}; video {F['video_arr']:,}")
-    print(f"Runway shown {F['runway_shown']} true {F['runway_true']}; gross margin shown {F['gm_shown']:.3f} true {F['gm_true']:.3f}")
+    print(f"Runway shown {F['runway_shown']} true {F['runway_true']}; gross margin shown {F['gm_shown']:.3f} true {F['gm_true']:.3f}; in the deck {F['gm_deck']:.3f}")
+    print(f"Raised before the Series A {F['raised_total']:,}; net loss before 2025 {F['net_loss_pre2025']:,}; "
+          f"net loss 2025-01 to 2026-09 {F['net_loss_actual']:,.0f}; cash {CASH_START:,}; bridge difference {F['bridge_diff']:.2f}")
+    print(f"Planted flags: {', '.join(sorted(PLANTS)) or 'none (clean room)'}")
 
 
 if __name__ == "__main__":

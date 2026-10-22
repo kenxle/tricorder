@@ -24,11 +24,11 @@ Trusted by 357 independent veterinary clinics.
 | Plan | Price | Who it is for |
 |---|---|---|
 | Starter | $349 a month | One location, basic call answering |
-| Standard | $649 a month | Booking and refill requests |
-| Pro | $1,099 a month | Everything, with priority support |
+| Standard | $649 a month | Booking and refill requests, up to 3 locations |
+| Pro | $1,099 a month | Everything, with priority support, up to 3 locations |
 | Group | Custom | Multi-location hospitals |
 
-There is a one-time onboarding fee of $500 for each new clinic. Annual plans can be paid once a year in advance.
+There is a one-time onboarding fee of $500 for each new clinic. Annual plans are paid once a year in advance and cost 10% less.
 
 ## Contact
 

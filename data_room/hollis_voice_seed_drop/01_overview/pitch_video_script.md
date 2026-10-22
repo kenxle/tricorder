@@ -16,7 +16,7 @@ We started charging in January 2025. Since then we have grown every quarter. Tod
 
 **0:50 Clinics, retention and our largest customer**
 
-That is 357 clinics on Hollis. Net revenue retention is a little over one hundred percent, so the clinics we win spend more over time. Our biggest customer runs Hollis Voice across seventeen locations, and it is still under nine percent of ARR. The base is spread out.
+That is 357 clinics on Hollis. Net revenue retention is a little over one hundred percent, so the clinics we win spend more over time. Our biggest customer runs Hollis Voice across forty locations, and it is still under nine percent of ARR. The base is spread out.
 
 **1:10 Why we win**
 

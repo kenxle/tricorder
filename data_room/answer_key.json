@@ -3,6 +3,18 @@
   "synthetic_notice": "Synthetic data room for Deal Flow NYC 2026. Not a real company.",
   "seed": 20261024,
   "as_of": "2026-09-30",
+  "mode": "main",
+  "plants": [
+    "PF1",
+    "PF2",
+    "PF2b",
+    "PF3",
+    "PF4",
+    "PF5",
+    "PF6",
+    "PF7"
+  ],
+  "clean_room": false,
   "room_path": "data_room/hollis_voice",
   "seed_drop_path": "data_room/hollis_voice_seed_drop",
   "seed_drop_files": [
@@ -238,7 +250,7 @@
           "sheet": "Cohorts",
           "cell": "E14",
           "named_cell": "NRR_12M",
-          "expect": 1.025897,
+          "expect": 1.025649,
           "label": "12-month net revenue retention"
         },
         {
@@ -442,9 +454,10 @@
       "true": {
         "value": 0.21,
         "unit": "ratio",
-        "label": "largest customer share of MRR (customer C-BIG)",
+        "label": "largest customer share of MRR (customer C0087, Cedar & Pine)",
         "details": {
-          "top3_share": 0.222
+          "top3_share": 0.222,
+          "largest_customer_id": "C0087"
         }
       },
       "check": "top_customer_share",
@@ -614,8 +627,8 @@
           "file": "02_financials/financial_model.xlsx",
           "sheet": "ARR_Build",
           "cell": "A14",
-          "expect": "Onboarding fees (one-time, excluded)",
-          "label": "onboarding row, correctly excluded"
+          "expect": "Onboarding fees",
+          "label": "onboarding row, correctly left out of ARR"
         },
         {
           "file": "02_financials/financial_model.xlsx",
@@ -626,7 +639,7 @@
         }
       ],
       "must_not_flag": true,
-      "why": "The $500 one-time fee is shown in ARR_Build with zero ARR counted. A checker must not flag it as ARR."
+      "why": "The $500 one-time fee is a row called 'Onboarding fees' in ARR_Build with zero ARR counted, and rows with product_type Onboarding in the customer file. A checker must not flag it as ARR."
     },
     {
       "id": "DC2",
@@ -635,20 +648,29 @@
         {
           "file": "04_customers/order_form_brookline_row.pdf",
           "page": 1,
-          "text": "$7,788",
+          "text": "$7,008",
           "label": "annual prepaid fee"
         },
         {
           "file": "03_metrics/customer_mrr_by_month.csv",
           "customer_name": "Brookline Row Veterinary",
-          "customer_id": "C0185",
+          "customer_id": "C0193",
           "product_type": "Subscription",
-          "mrr": 649,
+          "mrr": 584,
+          "billings_month": "2026-06",
+          "billings": 7008,
           "label": "customer row for Brookline Row Veterinary"
         }
       ],
       "must_not_flag": true,
-      "why": "Brookline Row pays once a year in advance. Revenue is spread monthly and ARR counts it once, at 12 times the monthly price."
+      "details": {
+        "customer_id": "C0193",
+        "annual_fee": 7008,
+        "monthly_revenue": 584,
+        "list_price": 649,
+        "billings_month": "2026-06"
+      },
+      "why": "Brookline Row pays $7,008 once a year in advance, 10 percent under list. The billings column shows the whole fee in 2026-06 and nothing in the months after. Revenue is $584 a month and ARR counts it once, at 12 times that, which is the annual fee. A checker that reads the billings spike as revenue or ARR is wrong."
     },
     {
       "id": "DC3",
@@ -657,7 +679,7 @@
         {
           "file": "02_financials/cap_table.xlsx",
           "sheet": "Cap_Table",
-          "cell": "D12",
+          "cell": "D13",
           "named_cell": "CAP_TOTAL_PCT",
           "expect": 1.0,
           "label": "holders add to 100 percent"
@@ -665,28 +687,35 @@
         {
           "file": "02_financials/cap_table.xlsx",
           "sheet": "Cap_Table",
-          "cell": "C12",
-          "expect": 12000000,
+          "cell": "C13",
+          "expect": 14424000,
           "label": "fully diluted shares before the Series A"
         },
         {
           "file": "02_financials/cap_table.xlsx",
           "sheet": "Cap_Table",
-          "cell": "F16",
-          "expect": 1200000.0,
-          "label": "shares from the Tidewater Seed Fund I, LP SAFE at the cap"
-        },
-        {
-          "file": "02_financials/cap_table.xlsx",
-          "sheet": "Cap_Table",
           "cell": "F17",
-          "expect": 800000.0,
-          "label": "shares from the Anselm Hartley (angel) SAFE at the cap"
+          "expect": 1442400,
+          "label": "shares from the Tidewater Seed Fund I, LP SAFE at its cap"
         },
         {
           "file": "02_financials/cap_table.xlsx",
           "sheet": "Cap_Table",
-          "cell": "B26",
+          "cell": "F18",
+          "expect": 961600,
+          "label": "shares from the Winifred Hartley (angel) SAFE at its cap"
+        },
+        {
+          "file": "02_financials/cap_table.xlsx",
+          "sheet": "Cap_Table",
+          "cell": "F19",
+          "expect": 1803000,
+          "label": "shares from the Ostrander Lane Ventures II, LP SAFE at its cap"
+        },
+        {
+          "file": "02_financials/cap_table.xlsx",
+          "sheet": "Cap_Table",
+          "cell": "B28",
           "expect": 0.166667,
           "label": "Series A ownership"
         }
@@ -779,6 +808,17 @@
     "pre_money": 45000000,
     "cash": 1800000,
     "staff_now": 17,
+    "raised_before_series_a": 5500000,
+    "pre_seed_safes": 2000000,
+    "seed_safe": 3500000,
+    "net_loss_before_2025": 592499,
+    "net_loss_2025_01_to_2026_09": 3107501.24,
+    "cash_bridge_difference": -0.24,
+    "big_customer_id": "C0087",
+    "big_customer_locations": 40,
+    "pilot_customer_id": "C0219",
+    "brookline_customer_id": "C0193",
+    "arr_video_phrase": "three million",
     "staff_after_hiring": 41,
     "model_avg_net_burn_12m": 374461.81,
     "true_avg_net_burn_12m": 480061.81
@@ -792,7 +832,9 @@
   "notes": [
     "The deck's market figures (28,000 clinics and a $252,000,000 market) are labelled company estimates and are not planted flags.",
     "The company overview and website copy repeat the deck's ARR and clinic count. They are the same planted claims, not new ones.",
-    "Founder GitHub handles are placeholders. Replace them with the demo organisation's handle in generate.py (FOUNDER_GITHUB).",
-    "The data room gives no cash history, only cash at 2026-09-30, so it does not claim to reconcile cash since inception."
+    "The CTO's GitHub handle is a placeholder. Replace it with the demo organisation's handle in generate.py (FOUNDER_GITHUB).",
+    "Cash reconciles: money raised before the Series A, less the net loss before 2025 and the sum of the 21 monthly operating results, equals cash at 2026-09-30 (sheet Cash_Bridge in the model). The net loss before 2025 is stated in whole dollars, so the difference is under one dollar. Working capital timing is not modelled.",
+    "The billings column in customer_mrr_by_month.csv is cash invoiced in the month. For clinics that pay a year in advance it spikes in the start month and the anniversary month. Revenue (mrr) is spread evenly.",
+    "Prices carry seeded noise: some clinics pay a discount or an add-on, annual payers get 10 percent off, and cost and pay lines vary month to month. Gross margin is not a flat figure in the history."
   ]
 }

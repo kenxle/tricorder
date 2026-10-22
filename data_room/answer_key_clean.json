@@ -1,0 +1,265 @@
+{
+  "company": "Hollis Voice (fictional)",
+  "synthetic_notice": "Synthetic data room for Deal Flow NYC 2026. Not a real company.",
+  "seed": 20261024,
+  "as_of": "2026-09-30",
+  "mode": "clean",
+  "plants": [],
+  "clean_room": true,
+  "room_path": "data_room/hollis_voice_clean",
+  "seed_drop_path": "data_room/hollis_voice_clean_seed_drop",
+  "seed_drop_files": [
+    "00_welcome/cover_note_and_index.pdf",
+    "01_overview/pitch_deck.pdf",
+    "01_overview/company_overview.pdf",
+    "01_overview/pitch_video_script.md",
+    "02_financials/financial_model.xlsx",
+    "02_financials/cap_table.xlsx",
+    "03_metrics/monthly_metrics.csv",
+    "05_team/founder_bios.pdf",
+    "05_team/hiring_plan.csv",
+    "06_product/product_one_pager.pdf",
+    "06_product/website_copy.md",
+    "01_overview/claims.json"
+  ],
+  "full_room_files": [
+    "00_welcome/cover_note_and_index.pdf",
+    "01_overview/pitch_deck.pdf",
+    "01_overview/company_overview.pdf",
+    "01_overview/pitch_video_script.md",
+    "02_financials/financial_model.xlsx",
+    "02_financials/cap_table.xlsx",
+    "02_financials/expense_ledger.csv",
+    "03_metrics/monthly_metrics.csv",
+    "03_metrics/customer_mrr_by_month.csv",
+    "04_customers/order_form_cedar_pine.pdf",
+    "04_customers/pilot_agreement_marlow.pdf",
+    "04_customers/order_form_brookline_row.pdf",
+    "05_team/founder_bios.pdf",
+    "05_team/hiring_plan.csv",
+    "06_product/product_one_pager.pdf",
+    "06_product/website_copy.md",
+    "01_overview/claims.json"
+  ],
+  "flags": [],
+  "decoys": [
+    {
+      "id": "DC1",
+      "name": "Onboarding fee excluded from ARR correctly",
+      "locations": [
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "ARR_Build",
+          "cell": "A14",
+          "expect": "Onboarding fees",
+          "label": "onboarding row, correctly left out of ARR"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "ARR_Build",
+          "cell": "E14",
+          "expect": 0,
+          "label": "ARR counted for the fee"
+        }
+      ],
+      "must_not_flag": true,
+      "why": "The $500 one-time fee is a row called 'Onboarding fees' in ARR_Build with zero ARR counted, and rows with product_type Onboarding in the customer file. A checker must not flag it as ARR."
+    },
+    {
+      "id": "DC2",
+      "name": "Annual prepay counted as recurring correctly",
+      "locations": [
+        {
+          "file": "04_customers/order_form_brookline_row.pdf",
+          "page": 1,
+          "text": "$7,008",
+          "label": "annual prepaid fee"
+        },
+        {
+          "file": "03_metrics/customer_mrr_by_month.csv",
+          "customer_name": "Brookline Row Veterinary",
+          "customer_id": "C0193",
+          "product_type": "Subscription",
+          "mrr": 584,
+          "billings_month": "2026-06",
+          "billings": 7008,
+          "label": "customer row for Brookline Row Veterinary"
+        }
+      ],
+      "must_not_flag": true,
+      "details": {
+        "customer_id": "C0193",
+        "annual_fee": 7008,
+        "monthly_revenue": 584,
+        "list_price": 649,
+        "billings_month": "2026-06"
+      },
+      "why": "Brookline Row pays $7,008 once a year in advance, 10 percent under list. The billings column shows the whole fee in 2026-06 and nothing in the months after. Revenue is $584 a month and ARR counts it once, at 12 times that, which is the annual fee. A checker that reads the billings spike as revenue or ARR is wrong."
+    },
+    {
+      "id": "DC3",
+      "name": "Clean cap table",
+      "locations": [
+        {
+          "file": "02_financials/cap_table.xlsx",
+          "sheet": "Cap_Table",
+          "cell": "D13",
+          "named_cell": "CAP_TOTAL_PCT",
+          "expect": 1.0,
+          "label": "holders add to 100 percent"
+        },
+        {
+          "file": "02_financials/cap_table.xlsx",
+          "sheet": "Cap_Table",
+          "cell": "C13",
+          "expect": 14351639,
+          "label": "fully diluted shares before the Series A"
+        },
+        {
+          "file": "02_financials/cap_table.xlsx",
+          "sheet": "Cap_Table",
+          "cell": "F17",
+          "expect": 1435164,
+          "label": "shares from the Tidewater Seed Fund I, LP SAFE at its cap"
+        },
+        {
+          "file": "02_financials/cap_table.xlsx",
+          "sheet": "Cap_Table",
+          "cell": "F18",
+          "expect": 956776,
+          "label": "shares from the Winifred Hartley (angel) SAFE at its cap"
+        },
+        {
+          "file": "02_financials/cap_table.xlsx",
+          "sheet": "Cap_Table",
+          "cell": "F19",
+          "expect": 1742699,
+          "label": "shares from the Ostrander Lane Ventures II, LP SAFE at its cap"
+        },
+        {
+          "file": "02_financials/cap_table.xlsx",
+          "sheet": "Cap_Table",
+          "cell": "B28",
+          "expect": 0.166667,
+          "label": "Series A ownership"
+        }
+      ],
+      "must_not_flag": true,
+      "why": "Holders add to 100 percent and the SAFE conversion at the stated cap is right."
+    }
+  ],
+  "deck_claims": [
+    {
+      "label": "ARR",
+      "value": "$2,060,868",
+      "slide": 3
+    },
+    {
+      "label": "Clinics on Hollis",
+      "value": "212",
+      "slide": 3
+    },
+    {
+      "label": "Calls handled, September 2026",
+      "value": "72,149",
+      "slide": 3
+    },
+    {
+      "label": "Largest customer",
+      "value": "21% of ARR",
+      "slide": 4
+    },
+    {
+      "label": "Gross margin",
+      "value": "57%",
+      "slide": 5
+    },
+    {
+      "label": "Net revenue retention",
+      "value": "87.3% (12 months)",
+      "slide": 6
+    },
+    {
+      "label": "US independent clinics (company estimate)",
+      "value": "28,000",
+      "slide": 8
+    },
+    {
+      "label": "Market size (company estimate)",
+      "value": "$252,000,000",
+      "slide": 8
+    },
+    {
+      "label": "Runway",
+      "value": "19 months",
+      "slide": 11
+    },
+    {
+      "label": "Average monthly net burn, next 12 months",
+      "value": "$493,525",
+      "slide": 11
+    },
+    {
+      "label": "Planned hires, next 12 months",
+      "value": "24",
+      "slide": 12
+    },
+    {
+      "label": "Staff after hiring",
+      "value": "41",
+      "slide": 12
+    },
+    {
+      "label": "Series A raise",
+      "value": "$9,000,000",
+      "slide": 13
+    },
+    {
+      "label": "Pre-money valuation",
+      "value": "$45,000,000",
+      "slide": 13
+    }
+  ],
+  "facts": {
+    "customers_ever_paying": 250,
+    "paying_accounts": 212,
+    "mrr_subscription": 171739,
+    "arr_true_recurring": 2060868,
+    "arr_model": 2060868,
+    "arr_deck": 2060868,
+    "arr_video": 2000000,
+    "ask": 9000000,
+    "pre_money": 45000000,
+    "cash": 1800000,
+    "staff_now": 17,
+    "raised_before_series_a": 5400000,
+    "pre_seed_safes": 2000000,
+    "seed_safe": 3400000,
+    "net_loss_before_2025": 501801,
+    "net_loss_2025_01_to_2026_09": 3098199.08,
+    "cash_bridge_difference": -0.08,
+    "big_customer_id": "C0087",
+    "big_customer_locations": 40,
+    "pilot_customer_id": "C0219",
+    "brookline_customer_id": "C0193",
+    "arr_video_phrase": "two million",
+    "staff_after_hiring": 41,
+    "model_avg_net_burn_12m": 493524.84,
+    "true_avg_net_burn_12m": 493524.84
+  },
+  "counts": {
+    "flags": 0,
+    "decoys": 3,
+    "flags_catchable_from_seed_drop": 0,
+    "flags_needing_full_room": 0
+  },
+  "notes": [
+    "The deck's market figures (28,000 clinics and a $252,000,000 market) are labelled company estimates and are not planted flags.",
+    "The company overview and website copy repeat the deck's ARR and clinic count. They are the same planted claims, not new ones.",
+    "The CTO's GitHub handle is a placeholder. Replace it with the demo organisation's handle in generate.py (FOUNDER_GITHUB).",
+    "Cash reconciles: money raised before the Series A, less the net loss before 2025 and the sum of the 21 monthly operating results, equals cash at 2026-09-30 (sheet Cash_Bridge in the model). The net loss before 2025 is stated in whole dollars, so the difference is under one dollar. Working capital timing is not modelled.",
+    "The billings column in customer_mrr_by_month.csv is cash invoiced in the month. For clinics that pay a year in advance it spikes in the start month and the anniversary month. Revenue (mrr) is spread evenly.",
+    "Prices carry seeded noise: some clinics pay a discount or an add-on, annual payers get 10 percent off, and cost and pay lines vary month to month. Gross margin is not a flat figure in the history.",
+    "This is a clean room. No flag is planted. A correct scan reports no red flags. The three decoys are still here and must not be flagged."
+  ]
+}
