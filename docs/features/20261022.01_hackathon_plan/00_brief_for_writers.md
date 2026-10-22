@@ -230,3 +230,9 @@ Added 2026-10-22 at 1:32 PM, as a comment on "ARR that is not recurring" in the 
 > this is good. we should look for this specifically, but also any other accounting mislabeling
 
 Settled: the red-flag engine checks ARR that is not recurring by name, and also a family of accounting mislabels, each a number filed under a label it does not earn. The frameworks doc gets an "Accounting mislabels" entry listing each kind with its mechanical check, starting with: non-recurring revenue counted as ARR or MRR; bookings or billings shown as revenue; gross merchandise value or pass-through money shown as revenue (gross against net); cost of revenue filed as operating expense, which inflates gross margin; contractors left out of headcount and burn; capitalised costs that keep spend off the P&L; deferred revenue counted as earned; and one-time fees counted in recurring metrics. Each kind names which data-room file and column a script reads, and what a gap looks like when the room does not hold that file.
+
+Added 2026-10-22 at 1:33 PM, as a comment on faked documents in the voice-of-the-customer research:
+
+> we can't identify faked books, but we can identify differences in reporting
+
+Settled: no document claims Tricorder detects fraud or fake books. It finds differences in reporting between files and against the outside world, and shows each one. A fake that is consistent across every file gets through; say so where it matters (What it is not, the pitch's answer to "can it catch fraud").
