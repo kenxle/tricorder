@@ -1,0 +1,286 @@
+SOURCE: https://www.hustlefund.vc/post/angel-squad-is-angel-investing-worth-it-the-time-vs-money-equation
+
+Is Angel Investing Worth It? Breaking Down the Math | Hustle Fund 
+
+ CLOSE
+ Learn what it takes to angel invest ‍
+Ever wondered what goes into angel investing and how you can get started? This kit will help you understand key investment concepts and frameworks.
+
+ Download the Kit 
+
+ dealflow
+ Is Angel Investing Worth It? Breaking Down the Math
+
+ By
+ Brian Nichols
+
+ Brian Nichols is the co-founder of Angel Squad , a community where you’ll learn how to angel invest and get a chance to invest as little as $1k into Hustle Fund's top performing early-stage startups 
+ Angel investing math works differently than most investment math. Traditional diversification reduces volatility while maintaining expected returns. Angel investing diversification is about capturing outliers that drive all the returns in an extremely skewed distribution.
+ This is the mathematical reality of angel investing broken down to help you understand what you're actually signing up for.
+ The Fundamental Math: Power Law Distribution 
+ Normal distribution assumption: Most investment returns cluster around an average with some variation. A few do better, a few do worse, most are near the middle.
+ Power law reality: Angel investing returns follow extreme distribution where small number of investments generate nearly all returns. The "average" is meaningless because distribution is so skewed.
+ Practical implication: In a portfolio of 20 investments, 1-2 investments will likely generate 80-90% of total returns. The other 18-19 investments are essentially paying for lottery tickets to find those winners.
+ The math: If 2 investments out of 20 return 20x while 18 return 0, portfolio returns 2x overall. The 18 failures aren't really failures in portfolio context. They're the cost of capturing the winners.
+ As Elizabeth Yin, co-founder and GP of Hustle Fund, explains: "Most of your investments will return $0. You will lose money. So it's important to have great portfolio construction."
+ The math confirms this: 60-70% returning zero is feature of the model, not bug in your selection.
+ Failure Rate Mathematics 
+ Expected failure rate: 60-70% of angel investments return $0. This isn't pessimism or poor selection. This is baseline reality across all angel portfolios regardless of investor skill.
+ Modest return rate: 20-30% of investments return 0.5-3x. These cover some losses but don't drive portfolio returns.
+ Winner rate: 5-15% of investments return 5x+. These drive all meaningful portfolio returns.
+ Outlier rate: 1-5% of investments return 10x+. These determine whether portfolio achieves top quartile performance.
+ Portfolio math example: 
+ 20 investments at $1,000 each = $20,000 total
+ 13 investments return $0 = $0
+ 5 investments return 1.5x average = $7,500
+ 2 investments return 10x average = $20,000
+ Total returned: $27,500
+ Portfolio multiple: 1.375x
+ This example shows modest positive return despite 65% failure rate because winners compensate for failures.
+ Portfolio Size Mathematics 
+ The probability problem: With small portfolios, you might miss winners entirely by random chance. With larger portfolios, you're more likely to capture representative distribution including crucial outliers.
+ 20 investments: Reasonable chance of capturing 1-2 meaningful winners. Adequate minimum for diversification.
+ 30 investments: Better probability of capturing outlier distribution. Recommended target for serious angels.
+ 50+ investments: High probability of capturing representative outcomes. Institutional approach.
+ Under 15 investments: Significant risk of missing winners entirely. Outcomes become more random than skill-based.
+ The math: If outlier rate is 5%, probability of capturing at least one outlier:
+ 10 investments: 40% chance
+ 20 investments: 64% chance
+ 30 investments: 79% chance
+ 50 investments: 92% chance
+ Portfolio size directly affects probability of success.
+ As Eric Bahn, co-founder and GP of Hustle Fund, emphasizes: "For beginners, a bigger startup portfolio is better. It helps with diversification and helps you learn and get reps in. Investing requires practice like everything else."
+ The math supports bigger portfolios for better outcome probability.
+
+ Angel Squad Local Meetup Expected Value Calculation 
+ Simple expected value model: 
+ Assumptions:
+ 65% of investments return 0x
+ 25% of investments return 1.5x average
+ 8% of investments return 5x average
+ 2% of investments return 20x average
+ Expected value per $1 invested:
+ (0.65 × $0) + (0.25 × $1.50) + (0.08 × $5) + (0.02 × $20)
+ = $0 + $0.375 + $0.40 + $0.40
+ = $1.175
+ Expected portfolio multiple: 1.175x (17.5% total return over full period)
+ Annualized over 8 years: Approximately 2% annually
+ The uncomfortable truth: Expected value suggests modest positive return, but below many alternative investments. The variance is enormous, meaning actual outcomes range from total loss to 5x+ returns.
+
+ Time Value Adjustments 
+ The illiquidity discount: Angel investments are locked for 7-10 years. This illiquidity has real cost compared to liquid investments.
+ Opportunity cost calculation: $20,000 in S&P 500 index fund for 8 years at historical 10% annual return = approximately $43,000.
+ Angel investing hurdle: Portfolio needs to return 2.15x just to match index fund expected returns. Based on expected value calculation above (1.175x), median angel investor underperforms index funds.
+ When angels outperform: Top quartile angels achieving 2.5x+ returns beat index funds. This requires either skill advantage, deal flow advantage, or favorable luck.
+ Check Size Mathematics 
+ Consistent sizing rationale: If you can't predict which investments will succeed, varying check sizes based on conviction is mathematically suboptimal.
+ Example comparison: 
+ Conviction-based sizing (varying $500-$3,000):
+ Investment A: $3,000 (high conviction) → returns 0x = $0
+ Investment B: $500 (low conviction) → returns 20x = $10,000
+ Net: $10,000 from $3,500 = 2.86x on those two
+ Consistent sizing ($1,750 each):
+ Investment A: $1,750 → returns 0x = $0
+ Investment B: $1,750 → returns 20x = $35,000
+ Net: $35,000 from $3,500 = 10x on those two
+ The math: Since conviction doesn't reliably predict outcomes, consistent sizing captures more upside from unexpected winners.
+ As Shiyan Koh, co-founder and GP of Hustle Fund, notes: "Great founders can look like anyone and come from anywhere."
+ Mathematically, this means winners can't be predicted, so consistent allocation is optimal strategy.
+ The Break-Even Calculation 
+ Question: What return rate on winners is needed to break even given failure rates?
+ Scenario: 20 investments at $1,000 each. 14 fail (70%). 6 return something.
+ Break-even requirement: Those 6 investments must return $20,000 total to break even, meaning average of 3.33x each.
+ For 2x portfolio return: Those 6 investments must return $40,000 total, meaning average of 6.67x each.
+ The implication: You need at least some investments returning 5x+ to achieve meaningful portfolio returns. Investments returning 1-2x barely move the needle.
+ Comparing to Other Asset Classes 
+ Public equities (S&P 500): 
+ Expected annual return: 8-10%
+ Liquidity: High
+ Time horizon: Flexible
+ Risk: Moderate, diversifiable
+ Angel investing: 
+ Expected annual return: 2-5% (median), 15-25% (top quartile)
+ Liquidity: None for 7-10 years
+ Time horizon: Fixed, long
+ Risk: Very high, partially diversifiable
+ Real estate: 
+ Expected annual return: 6-10%
+ Liquidity: Low but better than angel
+ Time horizon: Flexible
+ Risk: Moderate
+ Mathematical conclusion: Angel investing only makes sense mathematically if you achieve top quartile returns OR if you value non-financial benefits (learning, networks) highly.
+ The Minimum Viable Portfolio Math 
+ Target: Build portfolio likely to achieve at least break-even with reasonable probability of meaningful returns.
+ Recommended structure: 
+ 20+ investments minimum (25-30 preferred)
+ Consistent check sizes ($1,000-2,000)
+ Deployed over 2-3 years (temporal diversification)
+ Total capital: $20,000-40,000
+ Expected outcome range: 
+ Bottom quartile: 0.5-0.8x (lose money)
+ Median: 1.0-1.5x (roughly break even)
+ Top quartile: 2.5-4x (meaningful returns)
+ Probability assessment: With 25+ investments and quality deal flow, probability of at least breaking even is approximately 60-70%.
+ Making the Math Work 
+ Improve outcome probability through: 
+ Portfolio size: More investments capture more representative distribution. Target 25-30 minimum.
+ Deal flow quality: Better input quality improves all outcome probabilities. Community access to institutional pipeline matters.
+ Consistency: Discipline in check sizing and deployment prevents mathematical mistakes from conviction-based variation.
+ Patience: Full 7-10 year timeline allows winners to mature. Early exits miss compounding.
+ Angel Squad improves the math: curated deal flow from Hustle Fund's pipeline improves quality probability, $1,000 minimums enable building larger portfolios for better diversification math, consistent approach through community structure prevents costly mathematical errors, and education teaches portfolio construction discipline.
+ The Mathematical Bottom Line 
+ Is angel investing worth it mathematically? 
+ For median investor: Probably not. Expected returns are modest and below alternatives when accounting for illiquidity and risk.
+ For top quartile investor: Yes. Returns of 2.5-4x+ represent meaningful outperformance that justifies illiquidity and risk.
+ The determining factors: Portfolio size, deal flow quality, and discipline. These are more important than selection skill.
+ The honest math: Angel investing is a high-variance activity where portfolio construction determines outcomes more than individual selection. Build the math correctly (25+ investments, consistent sizing, quality deal flow) or the numbers will work against you.
+
+ Who else needs to read this?
+ Copied to clipboard!
+
+ Hey, we’ve got super cool newsletters, wanna join?
+
+ SIGN UP 
+
+ Keep Learning
+ dealflow
+
+ Private Equity Investment Platforms: A Buyer’s Checklist
+ BY
+ Brian Nichols
+
+ TIME
+ 10
+ MIN READ
+
+ Tax implications of selling shares in a private company
+ BY
+ Brian Nichols
+
+ TIME
+ 11
+ MIN READ
+
+ How to Create a Market Map for Startup Deal Sourcing
+ BY
+ Brian Nichols
+
+ TIME
+ 11
+ MIN READ
+
+ Can this check return the fund?
+ BY
+ Brian Nichols
+
+ TIME
+ 5
+ MIN READ
+
+ Get tactical, BS-free content delivered weekly.
+
+ The Founder Playbook - for founders 
+ Small Bets - for investors 
+
+ Thanks for signing up!
+
+ oopsie! Check your email & try again
+
+ Building something hilariously early?
+ Tell us what you’re hustling. We make decisions quickly and love meeting founders before the story looks obvious.
+
+ What are you hustling? 
+
+ 1180 San Carlos Ave
+Suite 337
+San Carlos, CA 94070
+
+ Explore
+ Meet the Portfolio Small Bets Pitch Interview Prep Founder FAQ Meet the Team Sponsorship 
+ Community
+ Hustle Commons Angel Squad 
+
+ © Hustle Fund™
+ Terms of Use 
+
+ PITCH US! 
+
+ Founders
+
+ Meet the Portfolio
+
+ Pitch Interview Prep
+
+ Founder FAQ
+
+ Angel Squad
+
+ Resources
+
+ Small Bets
+
+ Hustle Commons
+
+ About Us
+
+ Meet our Nerdy Team
+
+ Hustle Drip (Merch)
+
+ Hustle Drip (Merch)
+
+ Sponsor Hustle Fund
+
+ Founders
+
+ Meet the Portfolio
+
+ Pitch Interview Prep
+
+ Founder FAQ
+
+ Angel Squad
+
+ Resources
+
+ Small Bets
+
+ Hustle Commons
+
+ ABOUT US
+
+ Meet our Nerdy Team
+
+ Hustle Drip (Merch)
+
+ Sponsor Hustle Fund
+
+ CLOSE
+ Subscribe to Small Bets ‍
+Small Bets is a free newsletter that demystifies angel investing so you can learn from our mistakes
+
+ Two ways to get closer to startups
+
+ Join the community or start with our free weekly newsletter.
+
+ Apply to Angel Squad
+ Recommended
+
+ Join 2,500+ leaders from Apple, Google, Stripe, and OpenAI who are interested in startups: investing in them, learning about them, and supporting founders.
+ Featured in NY Times and TechCrunch
+
+ Apply 
+
+ Get Small Bets newsletter
+
+ 60,000+ readers. Free weekly insights on angel investing.
+
+ Subscribe 
+
+ Not ready? Just keep reading 
+ Close
+
+ × FREE INTERACTIVE DEMO
+ Set your expectations before you write the first check.
+ See how Angel Squad pairs portfolio tools, investor education, and peer discussion around the risk of startup investing. The interactive demo takes two minutes. No signup needed.
+ Start the demo → →

@@ -1,0 +1,181 @@
+SOURCE: https://kjlabuz.substack.com/p/fast
+
+#119 - Fast: An Autopsy - by Kevin LaBuz - Below the Line 
+
+ Below the Line 
+
+ Subscribe Sign in 
+
+ #119 - Fast: An Autopsy
+ Another Win for Arithmetic
+
+ Kevin LaBuz 
+ Apr 17, 2022 
+
+ 8
+
+ 8
+
+ Share
+
+ Hi 👋 - Failure is a great teacher. Fast, a high profile one-click checkout startup backed by Stripe, went belly up on April 5th. The company’s failure offers lessons for investors and operators. Thanks for reading. 
+
+ “How did you go bankrupt?"
+ “Two ways. Gradually, then suddenly.”
+ - Ernest Hemingway, The Sun Also Rises
+
+ Fast 101: Passwords Don’t Scale 
+
+ Stripped to the chassis, business is basic arithmetic: cash in versus cash out. At some point, the former needs to exceed the later. If not, the lights go out. Fast, a now defunct one-click checkout startup, is a case study on the cold logic of this basic arithmetic. 
+ Fast was founded in March 2019 by Domm Holland, a brash Australian entrepreneur and skydiving enthusiast 1 , and Allison Barr Allen, who led Global Product Operations for the Money Team at Uber 2 . Over its short lifespan, the company raised over $120 million and was valued at $580 million 3 . Investors included payments giant Stripe, which led both the Series A and Series B, as well as prominent venture firms like Index Ventures, Kleiner Perkins, and Susa Ventures.  
+ Holland pitched Fast as bringing Amazon’s one-click checkout to the rest of the internet. The company’s goal was to speed up e-commerce transactions. Its one-click checkout button launched in September 2020 with 100 merchants 4 . The key to speed is solving identity: knowing a customer’s shipping address, payment credentials, and the other information required to complete an online transaction. With Fast, customers just needed to fill out their credentials once. After that, they could checkout in Fast’s merchant network with one-click. In the blue sky scenario, Fast eliminates the need for a checkout form. Instead of creating an account for each merchant, customers would only need one account to shop online.  
+ One of Fast’s benefits was letting shoppers checkout directly from a product page, avoiding the checkout flow entirely. More than 50% of Fast checkouts happened this way 5 . Another was batching. By integrating with merchant’s backend systems, Fast allowed customers to add to their order post-purchase, helping merchants upsell and save on shipping by aggregating multiple items in one box 6 .  
+
+ Source: Bolt, Product Page Checkout Button . Note: Here’s an example of direct product page checkout from Bolt, a Fast competitor. Fast offered a similar service but its website is KIA . 
+ One-click checkout has strong commercial logic. Shopping cart abandonment is a major headache for online merchants. For consumers, creating (and remembering) accounts and passwords is a cumbersome process. Each additional step in a conversion funnel - entering your credit card, entering your address, entering a coupon code - is an invitation to not complete the transaction. Less friction means higher conversion . Small increases in checkout speeds can have a large boost to sales.    
+ Fast wasn’t the only company to understand this logic. Checkout is a crowded field with both incumbent tech giants like Apple, Google, PayPal, and Shopify and startups like Bolt, Checkout.com, and Rapyd. Amazon’s patent on one-click checkout expired in 2017, causing an increase in competition. In January 2021, checkout infrastructure startups raised over $900 million 7 . Additionally, most merchants opt for multiple checkout options.    
+ Business Model: Margin Neutral 
+
+ Fast’s business model was simple: it charged merchants a fee on the payment volume running through its checkout. The fee differed by merchant, lower for large merchants and higher for small merchants. Fast’s pricing philosophy was to be margin neutral 8 , meaning it matched a merchant’s existing payment processing fees. These likely averaged roughly 2.5% to 3%. Given an average order value of $220 9 , the company made $5.50 to $6.60 of revenue per order. 
+ Payments is a game of scale. For Fast to succeed, it needed to process billions in payment volume. It never got there. One reason for this is that Fast’s go-to-market strategy focused on small- and medium-sized merchants (SMBs). Given lower volume per merchant, acquiring SMBs successfully requires developing excellent self-serve products, which Fast didn’t develop. 
+ Until recently, little was known about Fast’s financial and operating metrics. As is typically with startups, disclosures were ad hoc and cherry-picked. The company’s average order value was $220, there were 2.4 items per order, and merchants that adopted one-click checkout saw a 60% boost to conversion 10 . In February 2022, it was working with over a thousand merchants and its share of checkout across its merchant network was 31% 11 . A teardown of its Series A deck presciently suggests that adding some numbers might help 12 : 
+ Fast proves that it’s not only backed by serious investors, but also by its community of users. Seeing they were raising to develop their payment solution, it’s good to demonstrate a need and urgency from the market. As soon as you have tangible traction, however, switch to numbers. Qualitative feedback tends to be biased. Numbers don’t lie.
+
+ Source: Nicholas Cateron on Medium, Pitch Deck Teardown: Fast, December 9 , 2020. Note: Fast’s user acceptance slides in its Series A deck. Not mentioned: any numbers.  
+ Share 
+ Failing Fast: The Burn Is Too Damn High 
+
+ With the luxury of hindsight, there's a good reason why the company didn’t show many numbers in its Series A deck: sales were lousy. According to The Information , 2021 revenue was $600,000 (including revenue from selling branded hooded sweatshirts for $1). Based on the fee assumptions above, this implies that Fast processed around 90,000 to 110,000 orders in 2021. Payments is a game of scale; 100,000 orders isn’t scale.   
+ In contrast to meager revenue, Fast had massive expenses. By the end of 2021, it was burning $10 million of cash per month 13 . Holland admits that burn doubled over the last two quarters of 2021, in part due to ballooning headcount 14 . The number of employees more than quadrupled from 90 in 2020 to around 400 in 2021. Engineers aren’t cheap. Charitably, $600,000 in annual revenue covers the salary of five junior software engineers in the United States. Investors needed to pick up the tab for the other 395 employees. To breakeven, Fast needed to generate 1.5 million to 1.8 million orders per month (compared to 90,000 to 110,000 orders in all of 2021). You don’t need to hire Ernst & Young to realize this isn’t sustainable. 
+
+ Source: AOV from The Make it Big Podcast, Episode 8: Optimizing Checkout for a Frictionless User Experience with Fast , October 2021. Monthly cash burn per Dead Cat, Imploding Fast (w/Kate Clark) , April 12, 2022.  
+ While headcount is typically the largest expense line item for a tech startup, Fast wasn’t pinching pennies in other areas 15 : 
+ "With Fast," said one former employee who requested anonymity out of fear of retaliation. "It was like, 'how quickly can we set money on fire?'" 
+
+ Holland had a taste for celebrity endorsements and athletic sponsorships. For example, NPR reported that Fast contracted the electronic duo The Chainsmokers to play at a New York retail conference for $1 million (1.7x 2021 revenue). The contract also included a promotional video with the artists and Holland 16 . It feels a little Adam Neumann Lite.  
+
+ domm @ domm 
+
+ Tampa is now the @fast -est city 
+
+ 6:12 PM · Aug 5, 2021 
+
+ 4 Reposts · 46 Likes 
+
+ With lackluster revenue growth and extravagant cash burn, Fast had three options: raise more money, drastically slash costs, or shut down. A cooling fundraising environment took away the first option. Running out of cash, the company shut off the lights on April 5, 2022, with Affirm, the buy-now-pay-later app, extending employment offers to most Fast engineers. 
+
+ Fast @ fast 
+
+ 5:44 PM · Apr 5, 2022 
+
+ 271 Reposts · 1.45K Likes 
+
+ Gradually, Then Suddenly: Lessons from Fast’s Failure 
+
+ Fast’s failure offers some lessons for investors and operators:
+ The Need for Healthy Skepticism : A few months prior to shutting down, Holland gave interviews about the company's fast growth and ambitious 2022 plans. Shenanigans occur in public markets too (see: Enron), but regular regulatory filings and audit requirements mean there are more people capable of calling BS. The private markets are more of the Wild West.  Drastic claims require drastic evidence, so a lack of numbers is a red flag. A big valuation doesn’t imply a sustainable business model (or even $1 million in revenue).  
+
+ The Dangers of Hero Worship : Nobody’s perfect. Buffett whiffed on Precision Castparts. Stripe whiffed on Fast. Investing is hard. Participation from high profile investors doesn’t guarantee success.  
+
+ Strategic Investor ≠ Financial Investor : Presumably Stripe didn’t invest in Fast expecting it to go belly up. Still, strategic investors have motives other than financial returns when making venture investments. Despite the poor outcome, Stripe could have still gleaned valuable data or market intelligence from its investment. That’s unlikely to be the case for financial investors.  
+
+ Revenue vs. Expenses (Spreadsheets vs. Reality) : Things that look easy on a spreadsheet are often hard in real life. Projected expenses show up with a far higher degree of confidence than projected revenue.  
+
+ Watch The Pendulum : Because they’re driven by humans, markets are cyclical and prone to extremes. The pendulum swings back and forth between greed and fear as attitudes to risk change. When things are going well, marginal businesses can raise boatloads of money. At the other extreme, strong businesses can struggle for funding. Fast raised money during a go-go time for tech startups and seemed to operate under the assumption that it could always raise another round. As the fundraising environment cooled, this proved to be a fatal assumption.  
+
+ If you’re finding this content valuable, consider sharing it with friends or coworkers. ❤️
+ Share 
+ For more like this once a week, consider subscribing. ❤️
+
+ Subscribe 
+
+ More Good Reads 
+
+ NPR’s investigation into Domm Honald’s checkered business past. Eric Newcomer and friends on Fast’s implosion and the current startup funding landscape 17 . Below the Line’s autopsy on Casper. 
+
+ Photo by Jason Blackeye on Unsplash 
+
+ 1 Holland is a licensed skydiver. He started skydiving in late 2020 and by October 2021 had done 51 jumps, roughly one per week. 
+
+ 2 There was another cofounder, Australian entrepreneur Joshua Abulafia, but his stint at the company was short-lived. It’s reported he was pushed out after disagreements with Holland about finances and strategy. 
+
+ 3 TechCrunch, Fast Shuts Doors After Slow Growth, High Burn Precluded Fundraising Options , April 5, 2022. 
+
+ 4 This Week in Startups with Jason Calacanis, E1103: Domm Holland on launching Fast to the public, creating a one-click checkout for the entire Internet , taking on Apple Pay & more, September 2020. 
+
+ 5 The Make it Big Podcast, Episode 8: Optimizing Checkout for a Frictionless User Experience with Fast , October 2021. 
+
+ 6 The Make it Big Podcast, Episode 8: Optimizing Checkout for a Frictionless User Experience with Fast , October 2021. 
+
+ 7 TechCrunch, Fast Raises $102 Million as the Online Checkout Wars Continue to Attract Huge Investment , January 26, 2021. 
+
+ 8  Re:platform - Ecommerce CX and Technology Podcast, EP114: One-Click Checkout - Interview with Fast CEO Domm Holland on Gaining Ecommerce Wallet Share , February 22, 2022. 
+
+ 9 The Make it Big Podcast, Episode 8: Optimizing Checkout for a Frictionless User Experience with Fast , October 2021. 
+
+ 10 The Make it Big Podcast, Episode 8: Optimizing Checkout for a Frictionless User Experience with Fast , October 2021. 
+
+ 11  Re:platform - Ecommerce CX and Technology Podcast, EP114: One-Click Checkout - Interview with Fast CEO Domm Holland on Gaining Ecommerce Wallet Share , February 22, 2022. 
+
+ 12 Nicholas Cateron on Medium, Pitch Deck Teardown: Fast, December 9 , 2020. 
+
+ 13 Dead Cat, Imploding Fast (w/Kate Clark) , April 12, 2022. 
+
+ 14 VC20, Fast’s Dom Holland on What Really Happened at Fast , April 13, 2022. 
+
+ 15 NPR, Fast, the easy checkout startup, shuts down after burning through investors' money , April 5, 2022. 
+
+ 16 NPR, Fast, the easy checkout startup, shuts down after burning through investors' money , April 5, 2022. 
+
+ 17 Thanks for the suggestion DD. 🎉 
+
+ 8
+
+ 8
+
+ Share
+
+ Previous Next 
+
+ Discussion about this post
+ Comments Restacks 
+
+ Nick Deshpande 
+
+ May 5, 2022 
+
+Liked by Kevin LaBuz 
+
+ I think a graceful exit would have included a sale to Bolt or other, and offering current customers the ability to transition to another rapid checkout system with little or no disruption. Presumably, they let support contracts run out? Anyway, excellent post as per. 
+
+ Reply
+
+ Share
+
+ 2 replies by Kevin LaBuz and others 
+
+ Nick Deshpande 
+
+ May 5, 2022 
+
+Liked by Kevin LaBuz 
+
+ Wowza. "Given lower volume per merchant, acquiring SMBs successfully requires developing excellent self-serve products, which Fast didn’t develop." >>> huge for product leaders, who must ask "do we ship x" or "do we ship the thing that lets them do x (and y and z). Latter means having a platform mindset. Lots up front, but pays huge dividends on uptake. Sticky. 
+
+ Reply
+
+ Share
+
+ 6 more comments... 
+
+ Top Latest Discussions 
+
+ No posts
+
+ Ready for more?
+
+ Subscribe 
+
+ © 2026 Kevin LaBuz · Privacy ∙ Terms ∙ Collection notice 
+ Start your Substack Get the app 
+ Substack is the home for great culture

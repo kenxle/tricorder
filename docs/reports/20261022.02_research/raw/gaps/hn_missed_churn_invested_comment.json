@@ -1,0 +1,500 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tekknik"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "missed",
+      "churn",
+      "invested"
+     ],
+     "value": "I think you <em>missed</em> the point and have some misunderstanding that the self taught engineer doesn\u2019t follow standards, which then points back to the elitism.<p>To put it more simply, you have a misunderstanding that going to school means your better in an age when every bit of knowledge is available online for free.<p>I\u2019ve worked with so many engineers with degrees that just <em>churn</em> out code. None of them seemed to care about maintainability or anything other than checking the boxes for the next promotion. A self taught engineer cares so much about the craft to teach it to themselves. The knowledge gained is the same, and syllabuses from major colleges are available online for free. The only thing missing is passing the tests for the piece of paper that says you passed the tests. That\u2019s it. I\u2019ve also found that most people with a degree only care so much about the craft as they care about not having to go back to school to learn a new one, or to put it another way, they are only financially <em>invested</em>.<p>&gt; Where I come from we'd never entertain the idea for a moment.<p>Where exactly is this so I know not to visit? I\u2019m one of those degenerates that are self taught so you should let me know so I stay out and don\u2019t offend you."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Self-taught engineers often outperform (2024)"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://michaelbastos.com/blog/why-self-taught-engineers-often-outperform"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_tekknik",
+    "story_44593972"
+   ],
+   "author": "tekknik",
+   "comment_text": "I think you missed the point and have some misunderstanding that the self taught engineer doesn\u2019t follow standards, which then points back to the elitism.<p>To put it more simply, you have a misunderstanding that going to school means your better in an age when every bit of knowledge is available online for free.<p>I\u2019ve worked with so many engineers with degrees that just churn out code. None of them seemed to care about maintainability or anything other than checking the boxes for the next promotion. A self taught engineer cares so much about the craft to teach it to themselves. The knowledge gained is the same, and syllabuses from major colleges are available online for free. The only thing missing is passing the tests for the piece of paper that says you passed the tests. That\u2019s it. I\u2019ve also found that most people with a degree only care so much about the craft as they care about not having to go back to school to learn a new one, or to put it another way, they are only financially invested.<p>&gt; Where I come from we&#x27;d never entertain the idea for a moment.<p>Where exactly is this so I know not to visit? I\u2019m one of those degenerates that are self taught so you should let me know so I stay out and don\u2019t offend you.",
+   "created_at": "2025-07-22T02:35:26Z",
+   "created_at_i": 1753151726,
+   "objectID": "44642718",
+   "parent_id": 44629858,
+   "story_id": 44593972,
+   "story_title": "Self-taught engineers often outperform (2024)",
+   "story_url": "https://michaelbastos.com/blog/why-self-taught-engineers-often-outperform",
+   "updated_at": "2025-07-23T02:23:41Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "zanny"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "missed",
+      "churn",
+      "invested"
+     ],
+     "value": "I'm a software dude, not an economist, but as a guy on the Internet who reads reddit and hacker news, I feel 15% qualified to answer this question!<p>I want to quote some passages from the article, which is kind of long, and I think <em>misses</em> some of the point. All personal internet nerd opinion.<p>&gt; Unemployment would drive wages down until, at some certain level, workers would be so cheap to hire that once again, men would be put to work and growth could return.<p>I think this is still true. The problem is that the price for human labor right now is below the rate of a living wage. Since your productivity goes to your bosses, but there are so many laborers looking for income, the ratio is that all labor roles can be filled by those already subsiding on other income sources, so the real value of labor is abysmal. How else do you have a massive dine in restaurant industry where waiters are paid $3.50 an hour and hope for the charity of their customers to make ends meet?<p>When human labor is no longer worth the cost of living, people just don't work. So even if you make more $7.25 jobs, there is little incentive to pursue them, especially through picking up and moving across city lines, because you will still be in the red and still stuck in a perpetual cycle of debt and despair.<p>&gt;  Only one thing makes entrepreneurs expand capacity and that has nothing to do with government tax policy.<p>Tax policy has a <i>huge</i> impact on expanding a business. Taxes are, in the short run, a direct percentage loss of productivity. You take a portion of profits and that directly influences future hiring gains. The taxes might long term provide benefits beyond the short term costs (ie, roads, power, police) but those are not in the span at which businesses make hiring decisions. However, reducing taxes today doesn't cause a hiring boom if there is no demand. It is a downward cycle of a dozen factors, but tax rates <i>are</i> a factor on the bottom line behavior of businesses and consumers. Taking their money by gunpoint to use it elsewhere only works if the elsewhere gets you some significant returns on your investment, from an economics perspective. A <i>lot</i> of government spending doesn't do that if it is for the purpose of playing empire or placating special interests.<p>&gt;  I favor government spending targeted on making the lives of citizens richer and more cultured. Some may say, this is elitist of me, to which I reply, what is wrong with elitism?<p>I strongly diagree with this on the principle that culture is relative. I may not want your culture. You argue your culture matters because it contains the <i>wealth and power</i>. Which I feel is the root cause, and back to your topic, why basic income is relevant.<p>Money has concentrated itself <i>so heavily</i> away from the masses and into the owners of the means of production and the capital that supports it that it causes the majority of economic slowdown because people spend incrementally less on incrementally less immediate things the richer they are. You eventually get to the point where the wealthiest are putting their money not in immediate goods and services that <em>churn</em> money and keep the engine going but into longer term finances like bonds or dividend investment. Investing money doesn't have the immediate return effects spending it does, especially when the best companies to invest in are also the ones <i>flooded</i> with money, with no demand to grow their business into (because the only people with the income to realistically grow their profits by real percentages are already the wealthy sponsors of the business) so they can just sit on troves of money and the dividends that come out are the slow siphoning of capital out of the abundant laborers and into the rich, because they don't recoup the absurd amount of money they make their employers through the combined productivity of technology and automation.<p>Automation isn't any different than how the green revolution worked. You take the work of many and, with machines, are able to perform it with many fewer. The reason for basic income is that we, economically, have collectively agreed <i>we don't need idle hands anymore</i>. We don't have hay to bale, we don't have crops to pick, we don't have anything we are willing to spend a living wage on to pay anyone for to have them exert their meat bag appendages to perform basic tasks.<p>Which drops the floor out of the middle class, because as the article describes, the entire system of the 60s / 70s worker boom was the ability to walk into town and find a dozen windows looking for fleshy arms to move and interact with things. Today, your machines do that.<p>Principally, the solution is that everyone should have equal shares in all businesses and from there profit off the productive gains all this innovation and automation gives society. If everyone was equally <em>invested</em> in automated work that produced more than the labor is worth, and gained equally the fruits of this process, there would be no recession, everyone would be getting checks from the productive overhead of society. That would also drive up labor wages, because if you don't have to slave for food, you probably won't. If you have a choice, you will demand more for the trace menial work left, where every year more and more of it is being sent to obsolescence.<p>However, we don't have that. We have an absurdly imbalanced class system where the supermajority of people hold no assets of any form and live day to day on whatever they can scavenge, and we have very few who control the capital, infrastructure, and productivity, and also gain all its fruits.<p>I think the root problem is inheritance. Entirely. If resources were redistributed through the masses when someones life ends, then their remnant productivity goes back into the collective, and each person has an opportunity, from a foundation of plenty, to collect more of that prosperity and concentrate it for accomplishing great innovations or productive gains. If you can be born into wealth and plenty, it perpetuates the concentration of wealth and plenty over generations. The richest today can sometimes be traced back to the richest of a thousand or more years ago - prosperity breeds prosperity, and you get the cards stacked profusely in your favor when you are raised amongst plenty in a society of scarcity.<p>But just eliminating inheritance today doesn't solve the problem, because the problem is that too much is concentrated in too few. Inheritance <i>caused</i> it (in the way Bill Gates became the wealthiest man in the world by virtue of his parents already being wealthy, that combined with a brilliant intellect and probably well instructed business sense available only to the already prosperous was able to create Microsoft - so if you are born genius with rich parents, you have a much better shot at becoming the richest man in the world, though I won't argue there aren't outliers).<p>Likewise, I'm not arguing &quot;boo hoo, Bobby got his Dad's millions and I just got the furniture and funeral costs&quot;. It is that by being privileged, and being able to pass that on to your children, over <i>centuries</i>, enables class, and that enables the powerful elite to out-compete the rest by virtue of status, and by having an elite, they can restrict new admission to prosperity through their own connections and back doors. They get not just the equity, they get the networking, which is cultural, and spans generations. If everyone got reset, the elite culture would be the entrepreneurs and geniuses that can move the world, not the ones who rolled a good set of birth parents and got beyond-world-class education.<p>So the problem at hand is how to peacefully get that absurd concentration of capital reversed, but market economics won't do it, because we are already beyond a threshold where consumers had any power in the relationship. Globalization infused the powerful with absurd amounts more markets to extract revenue from, and the article touches on this, but I don't think reaches the critical aspect - globalization enabled the privileged of small spaces to extend their reach, <i>economically</i> over the entire world, where previously they could only extend their reach in that way <i>militarily</i>.<p>So the problem is getting the prosperity of society back into the hands of everyone, because if everyone were investing, buying, and providing goods and services, the economy would be at its peak efficiency.<p>It isn't just employment that contributes to economic growth, it is the prosperity and wealth of everyone. The article documents clearly how debt artificially grew the economy, but that is the negative of wealth, and it stripped the middle class bare. Now we are entering another spree of concentrated wealth and the means of production by automating the creation of goods and services, so that whoever holds the keys to the machine makes all the money. That is honestly unsolvable in traditional economics, and the article also hits that - the economics of last century don't apply to the modern global economy, and you have to question your assumptions.<p>PS: 1600 words. Might be my HN record. Fuck."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Post-Scarcity Economics"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://lareviewofbooks.org/article.php?id=1845&fulltext=1"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_zanny",
+    "story_6042711"
+   ],
+   "author": "zanny",
+   "children": [
+    6043313,
+    6043979,
+    6044418
+   ],
+   "comment_text": "I&#x27;m a software dude, not an economist, but as a guy on the Internet who reads reddit and hacker news, I feel 15% qualified to answer this question!<p>I want to quote some passages from the article, which is kind of long, and I think misses some of the point. All personal internet nerd opinion.<p>&gt; Unemployment would drive wages down until, at some certain level, workers would be so cheap to hire that once again, men would be put to work and growth could return.<p>I think this is still true. The problem is that the price for human labor right now is below the rate of a living wage. Since your productivity goes to your bosses, but there are so many laborers looking for income, the ratio is that all labor roles can be filled by those already subsiding on other income sources, so the real value of labor is abysmal. How else do you have a massive dine in restaurant industry where waiters are paid $3.50 an hour and hope for the charity of their customers to make ends meet?<p>When human labor is no longer worth the cost of living, people just don&#x27;t work. So even if you make more $7.25 jobs, there is little incentive to pursue them, especially through picking up and moving across city lines, because you will still be in the red and still stuck in a perpetual cycle of debt and despair.<p>&gt;  Only one thing makes entrepreneurs expand capacity and that has nothing to do with government tax policy.<p>Tax policy has a <i>huge</i> impact on expanding a business. Taxes are, in the short run, a direct percentage loss of productivity. You take a portion of profits and that directly influences future hiring gains. The taxes might long term provide benefits beyond the short term costs (ie, roads, power, police) but those are not in the span at which businesses make hiring decisions. However, reducing taxes today doesn&#x27;t cause a hiring boom if there is no demand. It is a downward cycle of a dozen factors, but tax rates <i>are</i> a factor on the bottom line behavior of businesses and consumers. Taking their money by gunpoint to use it elsewhere only works if the elsewhere gets you some significant returns on your investment, from an economics perspective. A <i>lot</i> of government spending doesn&#x27;t do that if it is for the purpose of playing empire or placating special interests.<p>&gt;  I favor government spending targeted on making the lives of citizens richer and more cultured. Some may say, this is elitist of me, to which I reply, what is wrong with elitism?<p>I strongly diagree with this on the principle that culture is relative. I may not want your culture. You argue your culture matters because it contains the <i>wealth and power</i>. Which I feel is the root cause, and back to your topic, why basic income is relevant.<p>Money has concentrated itself <i>so heavily</i> away from the masses and into the owners of the means of production and the capital that supports it that it causes the majority of economic slowdown because people spend incrementally less on incrementally less immediate things the richer they are. You eventually get to the point where the wealthiest are putting their money not in immediate goods and services that churn money and keep the engine going but into longer term finances like bonds or dividend investment. Investing money doesn&#x27;t have the immediate return effects spending it does, especially when the best companies to invest in are also the ones <i>flooded</i> with money, with no demand to grow their business into (because the only people with the income to realistically grow their profits by real percentages are already the wealthy sponsors of the business) so they can just sit on troves of money and the dividends that come out are the slow siphoning of capital out of the abundant laborers and into the rich, because they don&#x27;t recoup the absurd amount of money they make their employers through the combined productivity of technology and automation.<p>Automation isn&#x27;t any different than how the green revolution worked. You take the work of many and, with machines, are able to perform it with many fewer. The reason for basic income is that we, economically, have collectively agreed <i>we don&#x27;t need idle hands anymore</i>. We don&#x27;t have hay to bale, we don&#x27;t have crops to pick, we don&#x27;t have anything we are willing to spend a living wage on to pay anyone for to have them exert their meat bag appendages to perform basic tasks.<p>Which drops the floor out of the middle class, because as the article describes, the entire system of the 60s &#x2F; 70s worker boom was the ability to walk into town and find a dozen windows looking for fleshy arms to move and interact with things. Today, your machines do that.<p>Principally, the solution is that everyone should have equal shares in all businesses and from there profit off the productive gains all this innovation and automation gives society. If everyone was equally invested in automated work that produced more than the labor is worth, and gained equally the fruits of this process, there would be no recession, everyone would be getting checks from the productive overhead of society. That would also drive up labor wages, because if you don&#x27;t have to slave for food, you probably won&#x27;t. If you have a choice, you will demand more for the trace menial work left, where every year more and more of it is being sent to obsolescence.<p>However, we don&#x27;t have that. We have an absurdly imbalanced class system where the supermajority of people hold no assets of any form and live day to day on whatever they can scavenge, and we have very few who control the capital, infrastructure, and productivity, and also gain all its fruits.<p>I think the root problem is inheritance. Entirely. If resources were redistributed through the masses when someones life ends, then their remnant productivity goes back into the collective, and each person has an opportunity, from a foundation of plenty, to collect more of that prosperity and concentrate it for accomplishing great innovations or productive gains. If you can be born into wealth and plenty, it perpetuates the concentration of wealth and plenty over generations. The richest today can sometimes be traced back to the richest of a thousand or more years ago - prosperity breeds prosperity, and you get the cards stacked profusely in your favor when you are raised amongst plenty in a society of scarcity.<p>But just eliminating inheritance today doesn&#x27;t solve the problem, because the problem is that too much is concentrated in too few. Inheritance <i>caused</i> it (in the way Bill Gates became the wealthiest man in the world by virtue of his parents already being wealthy, that combined with a brilliant intellect and probably well instructed business sense available only to the already prosperous was able to create Microsoft - so if you are born genius with rich parents, you have a much better shot at becoming the richest man in the world, though I won&#x27;t argue there aren&#x27;t outliers).<p>Likewise, I&#x27;m not arguing &quot;boo hoo, Bobby got his Dad&#x27;s millions and I just got the furniture and funeral costs&quot;. It is that by being privileged, and being able to pass that on to your children, over <i>centuries</i>, enables class, and that enables the powerful elite to out-compete the rest by virtue of status, and by having an elite, they can restrict new admission to prosperity through their own connections and back doors. They get not just the equity, they get the networking, which is cultural, and spans generations. If everyone got reset, the elite culture would be the entrepreneurs and geniuses that can move the world, not the ones who rolled a good set of birth parents and got beyond-world-class education.<p>So the problem at hand is how to peacefully get that absurd concentration of capital reversed, but market economics won&#x27;t do it, because we are already beyond a threshold where consumers had any power in the relationship. Globalization infused the powerful with absurd amounts more markets to extract revenue from, and the article touches on this, but I don&#x27;t think reaches the critical aspect - globalization enabled the privileged of small spaces to extend their reach, <i>economically</i> over the entire world, where previously they could only extend their reach in that way <i>militarily</i>.<p>So the problem is getting the prosperity of society back into the hands of everyone, because if everyone were investing, buying, and providing goods and services, the economy would be at its peak efficiency.<p>It isn&#x27;t just employment that contributes to economic growth, it is the prosperity and wealth of everyone. The article documents clearly how debt artificially grew the economy, but that is the negative of wealth, and it stripped the middle class bare. Now we are entering another spree of concentrated wealth and the means of production by automating the creation of goods and services, so that whoever holds the keys to the machine makes all the money. That is honestly unsolvable in traditional economics, and the article also hits that - the economics of last century don&#x27;t apply to the modern global economy, and you have to question your assumptions.<p>PS: 1600 words. Might be my HN record. Fuck.",
+   "created_at": "2013-07-15T02:10:13Z",
+   "created_at_i": 1373854213,
+   "objectID": "6043272",
+   "parent_id": 6043046,
+   "points": null,
+   "story_id": 6042711,
+   "story_title": "Post-Scarcity Economics",
+   "story_url": "http://lareviewofbooks.org/article.php?id=1845&fulltext=1",
+   "updated_at": "2023-09-06T21:45:08Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "nirvana"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "missed",
+      "churn",
+      "invested"
+     ],
+     "value": "I'm accepting your first part for the sake of argument so we can focus on the second part:<p>\"there are many charismatic people around who can make their teams really believe in a mission without any fact at all to backup this belief,\"<p>I believe your perspective is in error when you get to the part about \"without any fact at all to backup this belief\".  I believe that Steve Jobs was certainly charismatic, and probably one of the great people at getting his team to believe in a mission-- but I don't think this is \"reality distortion\", nor do I believe this was \"without any fact at all to backup this belief\".<p>In fact, I believe the reason he was so good was because he did have facts-- facts that the mainstream may not have been aware of-- but that were true.  The thing is, many people still dispute these facts. (Eg: \"The iPad is just a big iPod touch\" disputes the killer app of the iPad, but the reality of iPad sales shows that they were wrong.)<p>Lets take some key products where Jobs got his team to believe in a mission to make something that was significantly different:<p>The Macintosh, NeXTSTEP & the iPhone.<p>For the Macintosh:\nThe facts: Most computers were difficult to use.  Apple had strong experience with this for the apple // which was command line based.  The Mac team went to Xerox and saw some of the key technology working and saw how it was more efficient (technology that Apple had a license to with the deal).  Another Fact:  The Apple // was a very integrated computer for its time, but a competing company (I forget the name at the time) had gone one step further and integrated the monitor with the computer.   Thus the mission of the Macintosh: An integrated computer with the footprint of a phonebook that was sold like an appliance and that anyone could use because of its GUI, was not a distortion of reality, nor did it lack \"any fact at all\" to back up the mission.  All the key elements existed elsewhere, though of course the schedule was completely unrealistic (but back then the fact that software was always late was not as widely accepted as it is now.)<p>NeXTSTEP:\nThe facts: Unix is powerful, multi-tasking is powerful. Object Oriented Software allows for component re-use.  The mission: Build a unix workstation at reasonable cost that allows for rapid application development using object oriented software.  True, NeXTSTEP was the first OO operating system (like the Mac was the first real GUI) and so there was some leap of faith to think they could do it or that it could be successful, but this is not based on a distortion of reality.  Pre-emptive multitasking is really useful, and OO can allow for code re-use, and in the NeXT environment (and now OS X and iOS it really is a force multiplier for developers.)   I don't see how he distorted reality or the facts there-- except, again, he set a deadline for delivery based on the fact that they were a startup.  The deadline was unrealistic, because software takes too long and they <em>missed</em> it.<p>The iPhone:\nThe facts: The phone market was a mess. People hated their phones. (I did some research in this area, and found the <em>churn</em> rate was something like %83 and the dissatisfaction with ones phone was something like %70, though I may have those numbers reversed.)  The software market for phones was locked down by carriers.  The interfaces were terrible- often just a numeric keypad and if you had a full qwerty keyboard it made the phone unwieldy.  A touch interface would be better, obviously ,right?  Well, Apple bought Fingerworks.  They knew touch interfaces could work because Fingerworks <em>invented</em> them.  People hating their phones, the software being locked down by carriers, bad interfaces and limited usability due to physical keyboards are all things that you can't really dispute.  There was a leap of faith in believing a completely touch based phone would work, and they spent many years working on it (and the iPad project which was started earlier).  And again the timing for when they thought they could ship it was unrealistic and they had to bring in engineers from the OS X side of things to make their date.   Did Jobs distort reality to get the team to work on the iPhone?  I don't see why we should believe that. Did he get them to work on a mission without \"any facts at all\" to backup the belief that it could work? I don't think so-- that the phone industry was broken was obvious to a lot of people.  I myself worked on a completely voice driven phone project in the late 1990s, but stopped due to being unable to get sufficient horsepower in a battery powered device to do the voice recognition.<p>In all three cases the market need was pretty clear.  The technology precedents were visible.  Both of these are facts that back up the belief in the mission.   Neither of these rely on a distortion of reality.<p>All projects for new products require some faith. But getting people to believe something is possible, even when it hasn't been done before, doesn't mean necessarily doing it without any fact,s and in these cases, the facts to support the project were there.<p>If his crime is making people believe that the software won't take as long as it actually does, I can't fault him, and to be honest, he seems to be no worse in that regard than any manager I've ever had. (many of whom were deliberate about it.)<p>At Microsoft, for instance, when I worked there it was common practice to name the next release of windows something like \"Windows 93\" so that the employees all knew it had to come out in 1993, even though management knew it wouldn't be ready til 1997.  Didn't want them to slack off thinking they had 4 years to get it done!"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Walter Isaacson\u2019s \u2018Steve Jobs\u2019"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://daringfireball.net/2012/02/walter_isaacson_steve_jobs"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_nirvana",
+    "story_3592688"
+   ],
+   "author": "nirvana",
+   "children": [
+    3593038
+   ],
+   "comment_text": "I'm accepting your first part for the sake of argument so we can focus on the second part:<p>\"there are many charismatic people around who can make their teams really believe in a mission without any fact at all to backup this belief,\"<p>I believe your perspective is in error when you get to the part about \"without any fact at all to backup this belief\".  I believe that Steve Jobs was certainly charismatic, and probably one of the great people at getting his team to believe in a mission-- but I don't think this is \"reality distortion\", nor do I believe this was \"without any fact at all to backup this belief\".<p>In fact, I believe the reason he was so good was because he did have facts-- facts that the mainstream may not have been aware of-- but that were true.  The thing is, many people still dispute these facts. (Eg: \"The iPad is just a big iPod touch\" disputes the killer app of the iPad, but the reality of iPad sales shows that they were wrong.)<p>Lets take some key products where Jobs got his team to believe in a mission to make something that was significantly different:<p>The Macintosh, NeXTSTEP &#38; the iPhone.<p>For the Macintosh:\nThe facts: Most computers were difficult to use.  Apple had strong experience with this for the apple // which was command line based.  The Mac team went to Xerox and saw some of the key technology working and saw how it was more efficient (technology that Apple had a license to with the deal).  Another Fact:  The Apple // was a very integrated computer for its time, but a competing company (I forget the name at the time) had gone one step further and integrated the monitor with the computer.   Thus the mission of the Macintosh: An integrated computer with the footprint of a phonebook that was sold like an appliance and that anyone could use because of its GUI, was not a distortion of reality, nor did it lack \"any fact at all\" to back up the mission.  All the key elements existed elsewhere, though of course the schedule was completely unrealistic (but back then the fact that software was always late was not as widely accepted as it is now.)<p>NeXTSTEP:\nThe facts: Unix is powerful, multi-tasking is powerful. Object Oriented Software allows for component re-use.  The mission: Build a unix workstation at reasonable cost that allows for rapid application development using object oriented software.  True, NeXTSTEP was the first OO operating system (like the Mac was the first real GUI) and so there was some leap of faith to think they could do it or that it could be successful, but this is not based on a distortion of reality.  Pre-emptive multitasking is really useful, and OO can allow for code re-use, and in the NeXT environment (and now OS X and iOS it really is a force multiplier for developers.)   I don't see how he distorted reality or the facts there-- except, again, he set a deadline for delivery based on the fact that they were a startup.  The deadline was unrealistic, because software takes too long and they missed it.<p>The iPhone:\nThe facts: The phone market was a mess. People hated their phones. (I did some research in this area, and found the churn rate was something like %83 and the dissatisfaction with ones phone was something like %70, though I may have those numbers reversed.)  The software market for phones was locked down by carriers.  The interfaces were terrible- often just a numeric keypad and if you had a full qwerty keyboard it made the phone unwieldy.  A touch interface would be better, obviously ,right?  Well, Apple bought Fingerworks.  They knew touch interfaces could work because Fingerworks invented them.  People hating their phones, the software being locked down by carriers, bad interfaces and limited usability due to physical keyboards are all things that you can't really dispute.  There was a leap of faith in believing a completely touch based phone would work, and they spent many years working on it (and the iPad project which was started earlier).  And again the timing for when they thought they could ship it was unrealistic and they had to bring in engineers from the OS X side of things to make their date.   Did Jobs distort reality to get the team to work on the iPhone?  I don't see why we should believe that. Did he get them to work on a mission without \"any facts at all\" to backup the belief that it could work? I don't think so-- that the phone industry was broken was obvious to a lot of people.  I myself worked on a completely voice driven phone project in the late 1990s, but stopped due to being unable to get sufficient horsepower in a battery powered device to do the voice recognition.<p>In all three cases the market need was pretty clear.  The technology precedents were visible.  Both of these are facts that back up the belief in the mission.   Neither of these rely on a distortion of reality.<p>All projects for new products require some faith. But getting people to believe something is possible, even when it hasn't been done before, doesn't mean necessarily doing it without any fact,s and in these cases, the facts to support the project were there.<p>If his crime is making people believe that the software won't take as long as it actually does, I can't fault him, and to be honest, he seems to be no worse in that regard than any manager I've ever had. (many of whom were deliberate about it.)<p>At Microsoft, for instance, when I worked there it was common practice to name the next release of windows something like \"Windows 93\" so that the employees all knew it had to come out in 1993, even though management knew it wouldn't be ready til 1997.  Didn't want them to slack off thinking they had 4 years to get it done!",
+   "created_at": "2012-02-15T04:12:18Z",
+   "created_at_i": 1329279138,
+   "objectID": "3592989",
+   "parent_id": 3592919,
+   "story_id": 3592688,
+   "story_title": "Walter Isaacson\u2019s \u2018Steve Jobs\u2019",
+   "story_url": "http://daringfireball.net/2012/02/walter_isaacson_steve_jobs",
+   "updated_at": "2024-09-19T18:21:33Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Brajeshwar"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "missed",
+      "churn",
+      "invested"
+     ],
+     "value": "I would not consider me as much of an authority to give advice, but here are my highly personal take. I believe that this is more about focus and the ability to do a task with high intention. Also, I stopped active professional programming quite a while back, and hence this is me, a developer turned designer turned business person talking.<p>In my twenties, I can <em>churn</em> out things pretty much non-stop. I think I was trying to &quot;prove it&quot; and I could clock extras in the evening and weekends to move ahead. I could do something repeatedly until it was better than the last. I also tend to take on other people's tasks a lot.<p>In my thirties, I was still shuffling, not just me and my task but many other people too. I loved the messiness of deadlines, the near-<em>misses</em>, taking on new things, and being in the front of the battle, fighting in it and not flying over it.<p>I have now hit my forties; I realize I like to take time but do it right the first or second time. I also want to selectively do things with an outsized return on my time <em>invested</em>.<p>In short, I would have liked a Gatling gun in my younger days, but now I want precise sharpshooters. I'm of the opinion that it is OK to slow down, breathe, and take more targeted precision strikes."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: I'm 40 and feel my mental ability declining. Programming seems harder."
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Brajeshwar",
+    "story_34324567"
+   ],
+   "author": "Brajeshwar",
+   "comment_text": "I would not consider me as much of an authority to give advice, but here are my highly personal take. I believe that this is more about focus and the ability to do a task with high intention. Also, I stopped active professional programming quite a while back, and hence this is me, a developer turned designer turned business person talking.<p>In my twenties, I can churn out things pretty much non-stop. I think I was trying to &quot;prove it&quot; and I could clock extras in the evening and weekends to move ahead. I could do something repeatedly until it was better than the last. I also tend to take on other people&#x27;s tasks a lot.<p>In my thirties, I was still shuffling, not just me and my task but many other people too. I loved the messiness of deadlines, the near-misses, taking on new things, and being in the front of the battle, fighting in it and not flying over it.<p>I have now hit my forties; I realize I like to take time but do it right the first or second time. I also want to selectively do things with an outsized return on my time invested.<p>In short, I would have liked a Gatling gun in my younger days, but now I want precise sharpshooters. I&#x27;m of the opinion that it is OK to slow down, breathe, and take more targeted precision strikes.",
+   "created_at": "2023-01-10T14:51:23Z",
+   "created_at_i": 1673362283,
+   "objectID": "34325677",
+   "parent_id": 34324567,
+   "story_id": 34324567,
+   "story_title": "Ask HN: I'm 40 and feel my mental ability declining. Programming seems harder.",
+   "updated_at": "2024-09-20T13:00:41Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "throw0101c"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "missed",
+      "churn",
+      "invested"
+     ],
+     "value": "&gt; <i>And it\u2019s not just execs, but the whole corporate machinery that takes 3\u20136 weeks after quarter end to <em>churn</em> out reports.</i><p>Release early, release often.<p>If you want corporate machinery to run more smoothly with less effort, force it to operate <i>more frequently</i> not less: when TLS certs had 2-3 year lifespans there was all sorts of manual methods that people forgot how to do; then it was maximum one year. We then got free certs from LE (using ACME), but they were 90 days, so that made automation much more necessary.<p>Now with certs from <i>public CAs</i> having a max time of 47 days soon (not that I'm necessarily a fan) automation is all but a must.<p>So if you want less onerous effort on corporate reporting, your workflows and processes need to be much more automated: that's one of the reason why computers were <em>invented</em> after-all, to make computations faster.<p>And one way to <i>force</i> automation is to insist on <i>more frequent</i> reporting, not less; Barry Ritholtz:<p>&gt; <i>This is exactly backward: More frequent reporting makes the data less significant. In the real world, human behavior emphasizes what occurs less often\u2014meaning doing something less frequently gives it an even greater significance than something that becomes routine or common.</i><p>&gt; <i>That is the difference between a New Year\u2019s Eve celebration and a married couple\u2019s weekly date night.</i><p>&gt; <i>Twice-a-year earnings reporting will make the event so momentous, with such focus on it, that any company that <em>misses</em> analysts\u2019 forecasts will find their stock price shellacked. The twice-yearly focus on making the per-share number will become overwhelmingly intense.</i><p>* <a href=\"https://www.fa-mag.com/news/reporting-profits-daily-would-end-short-termism-40430.html?section=232&amp;page=1\" rel=\"nofollow\">https://www.fa-mag.com/news/reporting-profits-daily-would-en...</a><p>Move from quarter / every-3-months to <i>monthly</i> reporting: companies will be forced to automate their &quot;corporate machinery&quot;. And each report will be much less 'momentous' because the time between samples will be much less."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "US SEC preparing to scrap quarterly reporting requirement"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.reuters.com/business/finance/us-sec-preparing-eliminate-quarterly-reporting-requirement-wsj-says-2026-03-16/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_throw0101c",
+    "story_47406779"
+   ],
+   "author": "throw0101c",
+   "children": [
+    47407234,
+    47407290,
+    47407456,
+    47407691,
+    47407693,
+    47407694,
+    47407867,
+    47408033
+   ],
+   "comment_text": "&gt; <i>And it\u2019s not just execs, but the whole corporate machinery that takes 3\u20136 weeks after quarter end to churn out reports.</i><p>Release early, release often.<p>If you want corporate machinery to run more smoothly with less effort, force it to operate <i>more frequently</i> not less: when TLS certs had 2-3 year lifespans there was all sorts of manual methods that people forgot how to do; then it was maximum one year. We then got free certs from LE (using ACME), but they were 90 days, so that made automation much more necessary.<p>Now with certs from <i>public CAs</i> having a max time of 47 days soon (not that I&#x27;m necessarily a fan) automation is all but a must.<p>So if you want less onerous effort on corporate reporting, your workflows and processes need to be much more automated: that&#x27;s one of the reason why computers were invented after-all, to make computations faster.<p>And one way to <i>force</i> automation is to insist on <i>more frequent</i> reporting, not less; Barry Ritholtz:<p>&gt; <i>This is exactly backward: More frequent reporting makes the data less significant. In the real world, human behavior emphasizes what occurs less often\u2014meaning doing something less frequently gives it an even greater significance than something that becomes routine or common.</i><p>&gt; <i>That is the difference between a New Year\u2019s Eve celebration and a married couple\u2019s weekly date night.</i><p>&gt; <i>Twice-a-year earnings reporting will make the event so momentous, with such focus on it, that any company that misses analysts\u2019 forecasts will find their stock price shellacked. The twice-yearly focus on making the per-share number will become overwhelmingly intense.</i><p>* <a href=\"https:&#x2F;&#x2F;www.fa-mag.com&#x2F;news&#x2F;reporting-profits-daily-would-end-short-termism-40430.html?section=232&amp;page=1\" rel=\"nofollow\">https:&#x2F;&#x2F;www.fa-mag.com&#x2F;news&#x2F;reporting-profits-daily-would-en...</a><p>Move from quarter &#x2F; every-3-months to <i>monthly</i> reporting: companies will be forced to automate their &quot;corporate machinery&quot;. And each report will be much less &#x27;momentous&#x27; because the time between samples will be much less.",
+   "created_at": "2026-03-17T00:51:35Z",
+   "created_at_i": 1773708695,
+   "objectID": "47407209",
+   "parent_id": 47407002,
+   "story_id": 47406779,
+   "story_title": "US SEC preparing to scrap quarterly reporting requirement",
+   "story_url": "https://www.reuters.com/business/finance/us-sec-preparing-eliminate-quarterly-reporting-requirement-wsj-says-2026-03-16/",
+   "updated_at": "2026-04-06T08:20:18Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "time_management"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "missed",
+      "churn",
+      "invested"
+     ],
+     "value": "A few things <em>missed</em> by this overly simplistic analysis:<p>Alternative energy <em>invest</em>ment, to name one of many examples in Obama's economic plan, isn't \"make work\". This sort of research is necessary if our society is going to survive the inevitable oil depletion problem, and will create wealth in the long-term. Improving our infrastructure, which is in desperate need of repair, isn't make work. No one that I am aware of is seriously proposing make-work.<p>Bush's war and no-bid contracts to his buddies look a lot more like \"make work\" than anything Obama is proposing.<p>Also, these problems are too complex to frame in terms of creation or destruction of wealth. Is wealth being destroyed as real estate prices revert to fairer values? Perhaps, but this is a <i>good</i> \"destruction\". Also, adding to the aggregate wealth while destroying jobs (without replacement; job \"<em>churn</em>\" would be a great thing if this society were better at training people up) and creating inequality is a very bad thing. Finally, the wealth of the wrong people (such as the uncouth trashy real-estate nouveaux who destroy culture everywhere they go) is a horrible thing and must be destroyed."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Making Work, Destroying Wealth"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.cato-at-liberty.org/2009/01/12/making-work-destroying-wealth/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_time_management",
+    "story_437529"
+   ],
+   "author": "time_management",
+   "children": [
+    438473,
+    438636
+   ],
+   "comment_text": "A few things missed by this overly simplistic analysis:<p>Alternative energy investment, to name one of many examples in Obama's economic plan, isn't \"make work\". This sort of research is necessary if our society is going to survive the inevitable oil depletion problem, and will create wealth in the long-term. Improving our infrastructure, which is in desperate need of repair, isn't make work. No one that I am aware of is seriously proposing make-work.<p>Bush's war and no-bid contracts to his buddies look a lot more like \"make work\" than anything Obama is proposing.<p>Also, these problems are too complex to frame in terms of creation or destruction of wealth. Is wealth being destroyed as real estate prices revert to fairer values? Perhaps, but this is a <i>good</i> \"destruction\". Also, adding to the aggregate wealth while destroying jobs (without replacement; job \"churn\" would be a great thing if this society were better at training people up) and creating inequality is a very bad thing. Finally, the wealth of the wrong people (such as the uncouth trashy real-estate nouveaux who destroy culture everywhere they go) is a horrible thing and must be destroyed.",
+   "created_at": "2009-01-17T05:05:50Z",
+   "created_at_i": 1232168750,
+   "objectID": "437774",
+   "parent_id": 437529,
+   "story_id": 437529,
+   "story_title": "Making Work, Destroying Wealth",
+   "story_url": "http://www.cato-at-liberty.org/2009/01/12/making-work-destroying-wealth/",
+   "updated_at": "2024-09-19T16:30:33Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jonnathanson"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "missed",
+      "churn",
+      "invested"
+     ],
+     "value": "Allow me to introduce my client, the devil. I'll be representing him in the following few bullet points. Mainly as an intellectual exercise, but hopefully, a worthwhile exercise.<p>- First: This is a very thoughtful and well-written article, and it raises some very valid points. Sequelmania is a creatively bankrupt strategy in the long run. (That being said, I'm a big fan of what Marvel has been able to do with its franchises, and I'm not convinced that its films are the sort of anti-creative schlock it's become trendy to describe them as. Full disclosure: a good friend is fairly high up the food chain at Marvel, and he's a brilliant and awesome exec.)<p>- Second: It's also a monetarily lucrative strategy. More important, it's a de-risking strategy. One sees the same pattern in the video games industry, where the decision to <em>churn</em> out <i>Call of Duty 327.5</i> is a no-brainer, destined to reap at least a billion dollars in revenue, and the decision to make a daring, idiosyncratic, artful, niche game is liable to get a studio head fired.<p>- Third: In the good old days, studios were a total mess. They took wild swings in profitability, their shareholders were often fleeced, and their executives lived high on the hog. This was generally accepted as the cost of doing business in a creatively driven industry. Today, not <i>too</i> much has changed: but the execs currently in power are much more adept at managing brands and franchises. They're also better businesspeople (with some notable exceptions). This is actually a good thing, if you're a shareholder in a movie studio.<p>- Fourth: About those shareholders. Over the last 20-odd years, and especially over the last decade, Hollywood has received more and more <em>invest</em>ment capital from hedge funds and i-banks. What do finance guys want to see? For one thing, the books. &quot;Hollywood accounting&quot; is actually on the wane, and that's a good thing. They also want to see results. ROI. Predictable ROI, if at all possible. This goal often stands at odds with free-reined creativity and risk-taking, with plenty of the unfortunate consequences that the author points out. But it also forces studios to think more like businesses, and less like social clubs. Executives should be held accountable for their financial results, not their popularity at Soho House.<p>- Fifth: The indie film, the risky film, the daringly trashy film, and the eccentric film are far from dead. Big studios aren't making them anymore, but as means of production and distribution continue to democratize, <i>especially</i> at the small-time level, you'll see more and more true indies step in to fill this gap in the market. My off-the-cuff prediction: big studios double down on the franchise business\u2014which, when you think about it, is probably what a &quot;big&quot; studio <i>should</i> be focusing on. Little and mid-sized players, in addition to foreign players, focus on the niche and arthouse fare. Globalization, plus interesting new distribution technology, allows these players to punch above their weight as never before.<p>- Sixth: By <i>FAR</i> the best combination creative/business executive Hollywood has had in my lifetime was Michael Eisner. This guy gets a lot of shit for the whole Michael Ovitz debacle at Disney, and it's tarnished his legacy considerably. But he almost singlehandedly revitalized and rebuilt the Disney machine. Disney is the Apple of the movie business, and he was (kinda sorta) its Steve Jobs. (Steve Jobs himself was later involved in Disney, as we know.) He had his <em>misses</em>, as well as his hits. But he's the sort of exec Hollywood needs more of, not less. Its development and production aspects should be run by creative executives, and its overall business units should be run by true business executives. Whenever the twain shall meet--very rarely--these people should run the shop. I'd love to say that Hollywood selects for combination creative-business people, but it doesn't. It selects for good politicians on the creative side, and good bean-counters on the business side. It needs to rethink its talent-cultivation pipeline, and I'd be lying if I said I knew where to begin."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Hollywood's toxic addiction to franchises"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://grantland.com/features/2014-hollywood-blockbusters-franchises-box-office/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_jonnathanson",
+    "story_8828155"
+   ],
+   "author": "jonnathanson",
+   "comment_text": "Allow me to introduce my client, the devil. I&#x27;ll be representing him in the following few bullet points. Mainly as an intellectual exercise, but hopefully, a worthwhile exercise.<p>- First: This is a very thoughtful and well-written article, and it raises some very valid points. Sequelmania is a creatively bankrupt strategy in the long run. (That being said, I&#x27;m a big fan of what Marvel has been able to do with its franchises, and I&#x27;m not convinced that its films are the sort of anti-creative schlock it&#x27;s become trendy to describe them as. Full disclosure: a good friend is fairly high up the food chain at Marvel, and he&#x27;s a brilliant and awesome exec.)<p>- Second: It&#x27;s also a monetarily lucrative strategy. More important, it&#x27;s a de-risking strategy. One sees the same pattern in the video games industry, where the decision to churn out <i>Call of Duty 327.5</i> is a no-brainer, destined to reap at least a billion dollars in revenue, and the decision to make a daring, idiosyncratic, artful, niche game is liable to get a studio head fired.<p>- Third: In the good old days, studios were a total mess. They took wild swings in profitability, their shareholders were often fleeced, and their executives lived high on the hog. This was generally accepted as the cost of doing business in a creatively driven industry. Today, not <i>too</i> much has changed: but the execs currently in power are much more adept at managing brands and franchises. They&#x27;re also better businesspeople (with some notable exceptions). This is actually a good thing, if you&#x27;re a shareholder in a movie studio.<p>- Fourth: About those shareholders. Over the last 20-odd years, and especially over the last decade, Hollywood has received more and more investment capital from hedge funds and i-banks. What do finance guys want to see? For one thing, the books. &quot;Hollywood accounting&quot; is actually on the wane, and that&#x27;s a good thing. They also want to see results. ROI. Predictable ROI, if at all possible. This goal often stands at odds with free-reined creativity and risk-taking, with plenty of the unfortunate consequences that the author points out. But it also forces studios to think more like businesses, and less like social clubs. Executives should be held accountable for their financial results, not their popularity at Soho House.<p>- Fifth: The indie film, the risky film, the daringly trashy film, and the eccentric film are far from dead. Big studios aren&#x27;t making them anymore, but as means of production and distribution continue to democratize, <i>especially</i> at the small-time level, you&#x27;ll see more and more true indies step in to fill this gap in the market. My off-the-cuff prediction: big studios double down on the franchise business\u2014which, when you think about it, is probably what a &quot;big&quot; studio <i>should</i> be focusing on. Little and mid-sized players, in addition to foreign players, focus on the niche and arthouse fare. Globalization, plus interesting new distribution technology, allows these players to punch above their weight as never before.<p>- Sixth: By <i>FAR</i> the best combination creative&#x2F;business executive Hollywood has had in my lifetime was Michael Eisner. This guy gets a lot of shit for the whole Michael Ovitz debacle at Disney, and it&#x27;s tarnished his legacy considerably. But he almost singlehandedly revitalized and rebuilt the Disney machine. Disney is the Apple of the movie business, and he was (kinda sorta) its Steve Jobs. (Steve Jobs himself was later involved in Disney, as we know.) He had his misses, as well as his hits. But he&#x27;s the sort of exec Hollywood needs more of, not less. Its development and production aspects should be run by creative executives, and its overall business units should be run by true business executives. Whenever the twain shall meet--very rarely--these people should run the shop. I&#x27;d love to say that Hollywood selects for combination creative-business people, but it doesn&#x27;t. It selects for good politicians on the creative side, and good bean-counters on the business side. It needs to rethink its talent-cultivation pipeline, and I&#x27;d be lying if I said I knew where to begin.",
+   "created_at": "2015-01-02T20:52:28Z",
+   "created_at_i": 1420231948,
+   "objectID": "8828483",
+   "parent_id": 8828155,
+   "points": null,
+   "story_id": 8828155,
+   "story_title": "Hollywood's toxic addiction to franchises",
+   "story_url": "http://grantland.com/features/2014-hollywood-blockbusters-franchises-box-office/",
+   "updated_at": "2023-09-06T23:11:05Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "dv_dt"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "missed",
+      "churn",
+      "invested"
+     ],
+     "value": "My point is once the stock on the exchange, all the <em>churn</em>, the purchases and sales, the futures and options have an increasingly tenuous link with encouraging capital to select for better fundamental productivity. Worse, by the time a company is publicly traded, you're really often just in the 'execution' phase of expanding an already established process. This isn't terrible, it's useful - but my main concern is capitalization of fundamental improvements in our economy at an earlier stage than a stock is 'bottlenecked' at the moment and so the financial market has a limited set of options of truly productive places to apply excess capital.<p>Part of that is large companies (with a handful of exceptions) perform  optimization focused on accounting measurements and predictions to maximize their existing margins. This makes perfect logical measurable sense, except that over multiple decades of refined MBA practices, it makes almost all them good some local optimization, and increasingly bad at new ventures(or fundamentally changing their approach to existing ventures). Then to break out of that local optimization, some increased <em>invest</em>ment is required that large companies are punished for if/when their profit margin drops.<p>So local optimizations are explored to a endpoint, and capital starts chasing higher returns - we get rentier behivior, or capital flows into bubble assets that pop up or get chased around the world in various categories - all while produtivity and growth slowly flatlines... or at least <em>misses</em> its potential.<p>This has been recognized for a while w.r.t large companies, and so the generally accepted approach is for many of them to acquire new companies to get new capability. So we get to VCs. They don't want to <em>invest</em> in junk, but when VCs apply quantitative filters to because they want a sure thing <em>invest</em>ment - but moving the same quantitive model to uncertain ventures just moves that some of same 'large company' problem to an earlier stage. I'm not saying to get rid of VCs, they perform a reasonable function now, but something feels off.<p>I'll leave off a whole discussion of where new companies can come from outside of VCs, but there are some factors holding that back (and others helping), but in general it think that's in decline and that our larger markets depended on that creation more than they realize.<p>So to me, it feels like the overall financial system is missing opportunities - and that part is possibly hinted at in data, at least at the gross productivity growth falloff of the economy."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Crony capitalism may be cannibalizing productive capitalism in the U.S."
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.bloomberg.com/view/articles/2017-06-21/the-wrong-kind-of-entrepreneurs-flourish-in-america"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_dv_dt",
+    "story_14619861"
+   ],
+   "author": "dv_dt",
+   "comment_text": "My point is once the stock on the exchange, all the churn, the purchases and sales, the futures and options have an increasingly tenuous link with encouraging capital to select for better fundamental productivity. Worse, by the time a company is publicly traded, you&#x27;re really often just in the &#x27;execution&#x27; phase of expanding an already established process. This isn&#x27;t terrible, it&#x27;s useful - but my main concern is capitalization of fundamental improvements in our economy at an earlier stage than a stock is &#x27;bottlenecked&#x27; at the moment and so the financial market has a limited set of options of truly productive places to apply excess capital.<p>Part of that is large companies (with a handful of exceptions) perform  optimization focused on accounting measurements and predictions to maximize their existing margins. This makes perfect logical measurable sense, except that over multiple decades of refined MBA practices, it makes almost all them good some local optimization, and increasingly bad at new ventures(or fundamentally changing their approach to existing ventures). Then to break out of that local optimization, some increased investment is required that large companies are punished for if&#x2F;when their profit margin drops.<p>So local optimizations are explored to a endpoint, and capital starts chasing higher returns - we get rentier behivior, or capital flows into bubble assets that pop up or get chased around the world in various categories - all while produtivity and growth slowly flatlines... or at least misses its potential.<p>This has been recognized for a while w.r.t large companies, and so the generally accepted approach is for many of them to acquire new companies to get new capability. So we get to VCs. They don&#x27;t want to invest in junk, but when VCs apply quantitative filters to because they want a sure thing investment - but moving the same quantitive model to uncertain ventures just moves that some of same &#x27;large company&#x27; problem to an earlier stage. I&#x27;m not saying to get rid of VCs, they perform a reasonable function now, but something feels off.<p>I&#x27;ll leave off a whole discussion of where new companies can come from outside of VCs, but there are some factors holding that back (and others helping), but in general it think that&#x27;s in decline and that our larger markets depended on that creation more than they realize.<p>So to me, it feels like the overall financial system is missing opportunities - and that part is possibly hinted at in data, at least at the gross productivity growth falloff of the economy.",
+   "created_at": "2017-06-23T18:00:51Z",
+   "created_at_i": 1498240851,
+   "objectID": "14621260",
+   "parent_id": 14620946,
+   "story_id": 14619861,
+   "story_title": "Crony capitalism may be cannibalizing productive capitalism in the U.S.",
+   "story_url": "https://www.bloomberg.com/view/articles/2017-06-21/the-wrong-kind-of-entrepreneurs-flourish-in-america",
+   "updated_at": "2024-09-20T00:56:47Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "red_admiral"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "missed",
+      "churn",
+      "invested"
+     ],
+     "value": "Good article in general, but I have some hairs to split.<p>First, since my D&amp;D party's skin was saved in their last adventure by a lucky critical hit from our party's arqebus, I don't agree that (high) fantasy avoids gunpowder altogether. And we're the good guys, right? But on to more serious things.<p>&gt; With a bow, or even a crossbow, skill and personal <em>invest</em>ment requirements are significant; by contrast, musket drill could be learned in weeks. \n&gt; ...\n&gt; Likewise, short bow, long bow and crossbow are tactically extremely similar.<p>Nonononono.<p>Longbows required extensive training (quoth one King Edward, &quot;If you want to train a good longbowman, start with his grandfather.&quot;). Crossbows, once manufactured, could be taught to your average vassal in a day or so. This is one reason that the Catholic Church tried to ban them in 1096 [1], as an untrained peasant could take down a noble armoured knight (at least in mail rather than plate armor). While there were highly trained crossbow armies, such as Genoese mercenaries, the crossbow could greatly increase the deadliness of your average conscript - in less time than it takes to train someone on the musket. Whether you had the resources to outfit a large unit of crossbowmen was another matter, but if you could, training was not the bottleneck.<p>The average crossbow these days shoots something in the range of 60 yards, with high-end models getting &quot;up to 100 yards&quot; according to one manufacturer. If we allow for past war crossbows being beefier constructs - they had windlasses to help load them, after all - then maybe we can add a bit to the maximum and say 200 yards shooting in an arc, but the Book of the Crossbow [2] suggests an effective range of medieval crossbows of around 40 yards. After all, you want your shots to kill, not just go &quot;plink&quot; on someone's helmet.<p>Longbow range is generally given as something like 500-1000 feet, so 160 to 320 yards approximately - Encyclopaedia Britannica [3] gives an effective range of around 200 yards for the longbow (but this was presumably against <em>massed</em> targets, in the &quot;rain arrows from the sky&quot; style). That's more than double what you're getting from the crossbow.<p>So tactically, longbow and crossbow are very much not the same thing.<p>[1] <a href=\"https://www.wearethemighty.com/mighty-history/catholic-church-banned-crossbow-warfare/\" rel=\"nofollow noreferrer\">https://www.wearethemighty.com/mighty-history/catholic-<em>churc</em>...</a> (Note that I don't agree with the article's claim that crossbows had a greater _range_ than longbows. They generally had more kinetic energy on discharge (what we would today call &quot;muzzle&quot; energy) but _shorter_ effective range due to higher air resistance from thicker bolts. They were more handgun than sniper rifle, siege ballistas excepted. But they were very deadly at close distances.)<p>[2] <a href=\"https://www.amazon.co.uk/Book-Crossbow-Military-History-Weapons/dp/0486287203\" rel=\"nofollow noreferrer\">https://www.amazon.co.uk/Book-Crossbow-Military-History-Weap...</a><p>[3] <a href=\"https://www.britannica.com/technology/English-longbow\" rel=\"nofollow noreferrer\">https://www.britannica.com/technology/English-longbow</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Why Fantasy Avoids Gunpowder"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://warfantasy.wordpress.com/2023/08/20/why-fantasy-avoids-gunpowder/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_red_admiral",
+    "story_37196648"
+   ],
+   "author": "red_admiral",
+   "comment_text": "Good article in general, but I have some hairs to split.<p>First, since my D&amp;D party&#x27;s skin was saved in their last adventure by a lucky critical hit from our party&#x27;s arqebus, I don&#x27;t agree that (high) fantasy avoids gunpowder altogether. And we&#x27;re the good guys, right? But on to more serious things.<p>&gt; With a bow, or even a crossbow, skill and personal investment requirements are significant; by contrast, musket drill could be learned in weeks. \n&gt; ...\n&gt; Likewise, short bow, long bow and crossbow are tactically extremely similar.<p>Nonononono.<p>Longbows required extensive training (quoth one King Edward, &quot;If you want to train a good longbowman, start with his grandfather.&quot;). Crossbows, once manufactured, could be taught to your average vassal in a day or so. This is one reason that the Catholic Church tried to ban them in 1096 [1], as an untrained peasant could take down a noble armoured knight (at least in mail rather than plate armor). While there were highly trained crossbow armies, such as Genoese mercenaries, the crossbow could greatly increase the deadliness of your average conscript - in less time than it takes to train someone on the musket. Whether you had the resources to outfit a large unit of crossbowmen was another matter, but if you could, training was not the bottleneck.<p>The average crossbow these days shoots something in the range of 60 yards, with high-end models getting &quot;up to 100 yards&quot; according to one manufacturer. If we allow for past war crossbows being beefier constructs - they had windlasses to help load them, after all - then maybe we can add a bit to the maximum and say 200 yards shooting in an arc, but the Book of the Crossbow [2] suggests an effective range of medieval crossbows of around 40 yards. After all, you want your shots to kill, not just go &quot;plink&quot; on someone&#x27;s helmet.<p>Longbow range is generally given as something like 500-1000 feet, so 160 to 320 yards approximately - Encyclopaedia Britannica [3] gives an effective range of around 200 yards for the longbow (but this was presumably against massed targets, in the &quot;rain arrows from the sky&quot; style). That&#x27;s more than double what you&#x27;re getting from the crossbow.<p>So tactically, longbow and crossbow are very much not the same thing.<p>[1] <a href=\"https:&#x2F;&#x2F;www.wearethemighty.com&#x2F;mighty-history&#x2F;catholic-church-banned-crossbow-warfare&#x2F;\" rel=\"nofollow noreferrer\">https:&#x2F;&#x2F;www.wearethemighty.com&#x2F;mighty-history&#x2F;catholic-churc...</a> (Note that I don&#x27;t agree with the article&#x27;s claim that crossbows had a greater _range_ than longbows. They generally had more kinetic energy on discharge (what we would today call &quot;muzzle&quot; energy) but _shorter_ effective range due to higher air resistance from thicker bolts. They were more handgun than sniper rifle, siege ballistas excepted. But they were very deadly at close distances.)<p>[2] <a href=\"https:&#x2F;&#x2F;www.amazon.co.uk&#x2F;Book-Crossbow-Military-History-Weapons&#x2F;dp&#x2F;0486287203\" rel=\"nofollow noreferrer\">https:&#x2F;&#x2F;www.amazon.co.uk&#x2F;Book-Crossbow-Military-History-Weap...</a><p>[3] <a href=\"https:&#x2F;&#x2F;www.britannica.com&#x2F;technology&#x2F;English-longbow\" rel=\"nofollow noreferrer\">https:&#x2F;&#x2F;www.britannica.com&#x2F;technology&#x2F;English-longbow</a>",
+   "created_at": "2023-08-21T12:19:46Z",
+   "created_at_i": 1692620386,
+   "objectID": "37208466",
+   "parent_id": 37196648,
+   "story_id": 37196648,
+   "story_title": "Why Fantasy Avoids Gunpowder",
+   "story_url": "https://warfantasy.wordpress.com/2023/08/20/why-fantasy-avoids-gunpowder/",
+   "updated_at": "2024-09-20T14:55:00Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "gregjor"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "missed",
+      "churn",
+      "invested"
+     ],
+     "value": "I\u2019ve contracted/freelanced exclusively since 2008, mostly W-2 employee before then. In the software business for 40 years.<p>You want to make as much of your work time as possible billable. Stuff like government paperwork (incorporation), time tracking, invoicing, taxes, banking, marketing, contracts can take up time you don\u2019t get paid for. I see a lot of freelancers spending their time and money trying to look like a \u201creal\u201d business but not working enough billable hours. Don\u2019t worry about all of that, do the simplest thing possible, which most likely means sole proprietor. If you do business using your own name you don\u2019t need any government registration.<p>An LLC may have some benefits, mainly providing some protection of your personal assets from lawsuits. Note that LLCs do not protect you from criminal acts such as fraud. The IRS considers single-owner LLCs as pass-through entities, meaning the income just goes to your schedule C (business income and expenses), just like a sole proprietor. S and C corp setups involve significant paperwork and ongoing management, and probably won\u2019t give you much benefit unless you have employees, inventory, lots of income or outside <em>invest</em>ment. Consult an accountant and/or lawyer but keep in mind their freelancing business amounts to creating and managing business structures which you may not need.<p>To replace your W-2 salary you start by figuring out what you need to make annually, adding in the cost of paying all of your Social Security and Medicare taxes yourself, the cost of providing your own health insurance, divide by 2,000 (or however many hours per year you think you can work) to get a rough hourly rate. For example if you make $100K salary as a W-2 employee, with the employer paying half of your Social Security and Medicare and providing group health insurance, that\u2019s $50/hr plus whatever those taxes and benefits come out to. You probably won\u2019t work 40 hrs/week (2,000 hrs/year) at first, or all the time, so figure out what you need to make to live on, add in those taxes and health insurance costs, then divide by however many hours you expect to work. That\u2019s the minimum hourly rate you will charge or base your estimates on. My rule of thumb is W-2 annual salary + 30% for taxes/insurance, divided by 2,000 (or less depending on how many hours/year you realistically expect to work).<p>Few contractors/freelancers work 40 hrs/week (2,000 hrs/year) regularly. The more unbillable time and busywork you do the less time you get paid for. Someone starting out with no customers will put in a lot of non-billable time and experience big income fluctuations. That\u2019s scary at first, coming from the security of a regular paycheck, and too often leads to accepting the first gig that comes along, undervaluing your time and work, and committing to vague unspecified projects to get a deposit or up-front payment. Try to avoid getting into that situation. You\u2019re safer building up a six-month minimum cushion of cash from your W-2 job unless you have customers and work already lined up.<p>Contracts for typical software dev work basically spell out the schedule, the work contracted for (the more specific the better), the payment terms, and some other stuff like ownership of the completed product. The boilerplate in such contracts is mostly covered by law anyway. Disputes will go to mediation automatically in most states and you will then find that the exact wording of the contract may not matter much \u2014 mediators usually try to start with the original intent. I\u2019ve never had these problems myself but I know other freelancers who have, they are always civil breach of contract suits where the customer alleges the developer failed to deliver, and/or the developer claims they didn\u2019t get paid. Mediators tend to split the difference, lots of time gets wasted and money spent on lawyers. You want to avoid these situations rather than try to come up with an ironclad contract. If you get into a dispute with a customer you\u2019ve already lost.<p>Don\u2019t work for customers you get a bad feeling about. Don\u2019t work for customers who ask for ridiculous or sketchy things (\u201cI want an eBay clone for $5,000\u201d). If you don\u2019t feel you can trust someone don\u2019t work with them. Don\u2019t work for free unless you have a good reason (getting your foot in the door is probably not a good reason). Don\u2019t work on spec. Most of all don\u2019t get yourself into a situation where the customer owes you a lot of money (\u201ca lot\u201d meaning you would sue to get paid), or where the customer has given you a lot of money up-front (\u201ca lot\u201d meaning they will sue if you don\u2019t deliver).<p>I avoid big vague green-fields projects unless I already know the customer. I work with the customer to define the scope and requirements and break the project into specific deliverables I can estimate reliably, then charge for each deliverable. I charge for the time we spend nailing down requirements. Until I feel I have a good understanding of the project and can break it down to tasks I can attach estimates to I don\u2019t begin work. I do charge the customer for my analysis time. This approach means I\u2019m never building up big receivables and my customer is not paying a lot in advance. I iterate on the deliverables, my customer sees frequent progress, I get paid as I deliver something tangible, the project doesn\u2019t get derailed and no one is <em>pissed</em> off months down the road.<p>The best way to find customers (not gigs, unless you want the constant <em>churn</em> of piecework on Upwork, Fiverr, etc., which is mostly a waste of time) is through word of mouth and your professional network and contacts. You can also find customers through recruiters and job postings. Many jobs posted looking for f/t people represent opportunities for a freelancer/contractor, especially with smaller less-sexy companies that struggle to attract and hire anyone. You can\u2019t be shy, you have to sell yourself as someone who can solve business problems. Unless you like to <em>churn</em> your customers and rack up lots of non-billable hours looking for gigs, focus on cultivating a handful of customers who give you steady work. Choose a niche or vertical that you can make a name in. Ask your satisfied customers to recommend you to their network.<p>I have worked through an agency since 2014, they take care of marketing, contracts, billing, payment, and some customer service for me, for a 15% cut of my gross. They usually get better rates than I was getting through my own negotiating skills so it works out. You might want to look into that.<p>I have some articles about freelancing on my web site typicalprogrammer.com (free, no ads or affiliate links or pop-ups).<p>Good luck."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Switching from W2 Employee to Contractor \u2013 what do I need to know?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_gregjor",
+    "story_33008610"
+   ],
+   "author": "gregjor",
+   "children": [
+    33024069
+   ],
+   "comment_text": "I\u2019ve contracted&#x2F;freelanced exclusively since 2008, mostly W-2 employee before then. In the software business for 40 years.<p>You want to make as much of your work time as possible billable. Stuff like government paperwork (incorporation), time tracking, invoicing, taxes, banking, marketing, contracts can take up time you don\u2019t get paid for. I see a lot of freelancers spending their time and money trying to look like a \u201creal\u201d business but not working enough billable hours. Don\u2019t worry about all of that, do the simplest thing possible, which most likely means sole proprietor. If you do business using your own name you don\u2019t need any government registration.<p>An LLC may have some benefits, mainly providing some protection of your personal assets from lawsuits. Note that LLCs do not protect you from criminal acts such as fraud. The IRS considers single-owner LLCs as pass-through entities, meaning the income just goes to your schedule C (business income and expenses), just like a sole proprietor. S and C corp setups involve significant paperwork and ongoing management, and probably won\u2019t give you much benefit unless you have employees, inventory, lots of income or outside investment. Consult an accountant and&#x2F;or lawyer but keep in mind their freelancing business amounts to creating and managing business structures which you may not need.<p>To replace your W-2 salary you start by figuring out what you need to make annually, adding in the cost of paying all of your Social Security and Medicare taxes yourself, the cost of providing your own health insurance, divide by 2,000 (or however many hours per year you think you can work) to get a rough hourly rate. For example if you make $100K salary as a W-2 employee, with the employer paying half of your Social Security and Medicare and providing group health insurance, that\u2019s $50&#x2F;hr plus whatever those taxes and benefits come out to. You probably won\u2019t work 40 hrs&#x2F;week (2,000 hrs&#x2F;year) at first, or all the time, so figure out what you need to make to live on, add in those taxes and health insurance costs, then divide by however many hours you expect to work. That\u2019s the minimum hourly rate you will charge or base your estimates on. My rule of thumb is W-2 annual salary + 30% for taxes&#x2F;insurance, divided by 2,000 (or less depending on how many hours&#x2F;year you realistically expect to work).<p>Few contractors&#x2F;freelancers work 40 hrs&#x2F;week (2,000 hrs&#x2F;year) regularly. The more unbillable time and busywork you do the less time you get paid for. Someone starting out with no customers will put in a lot of non-billable time and experience big income fluctuations. That\u2019s scary at first, coming from the security of a regular paycheck, and too often leads to accepting the first gig that comes along, undervaluing your time and work, and committing to vague unspecified projects to get a deposit or up-front payment. Try to avoid getting into that situation. You\u2019re safer building up a six-month minimum cushion of cash from your W-2 job unless you have customers and work already lined up.<p>Contracts for typical software dev work basically spell out the schedule, the work contracted for (the more specific the better), the payment terms, and some other stuff like ownership of the completed product. The boilerplate in such contracts is mostly covered by law anyway. Disputes will go to mediation automatically in most states and you will then find that the exact wording of the contract may not matter much \u2014 mediators usually try to start with the original intent. I\u2019ve never had these problems myself but I know other freelancers who have, they are always civil breach of contract suits where the customer alleges the developer failed to deliver, and&#x2F;or the developer claims they didn\u2019t get paid. Mediators tend to split the difference, lots of time gets wasted and money spent on lawyers. You want to avoid these situations rather than try to come up with an ironclad contract. If you get into a dispute with a customer you\u2019ve already lost.<p>Don\u2019t work for customers you get a bad feeling about. Don\u2019t work for customers who ask for ridiculous or sketchy things (\u201cI want an eBay clone for $5,000\u201d). If you don\u2019t feel you can trust someone don\u2019t work with them. Don\u2019t work for free unless you have a good reason (getting your foot in the door is probably not a good reason). Don\u2019t work on spec. Most of all don\u2019t get yourself into a situation where the customer owes you a lot of money (\u201ca lot\u201d meaning you would sue to get paid), or where the customer has given you a lot of money up-front (\u201ca lot\u201d meaning they will sue if you don\u2019t deliver).<p>I avoid big vague green-fields projects unless I already know the customer. I work with the customer to define the scope and requirements and break the project into specific deliverables I can estimate reliably, then charge for each deliverable. I charge for the time we spend nailing down requirements. Until I feel I have a good understanding of the project and can break it down to tasks I can attach estimates to I don\u2019t begin work. I do charge the customer for my analysis time. This approach means I\u2019m never building up big receivables and my customer is not paying a lot in advance. I iterate on the deliverables, my customer sees frequent progress, I get paid as I deliver something tangible, the project doesn\u2019t get derailed and no one is pissed off months down the road.<p>The best way to find customers (not gigs, unless you want the constant churn of piecework on Upwork, Fiverr, etc., which is mostly a waste of time) is through word of mouth and your professional network and contacts. You can also find customers through recruiters and job postings. Many jobs posted looking for f&#x2F;t people represent opportunities for a freelancer&#x2F;contractor, especially with smaller less-sexy companies that struggle to attract and hire anyone. You can\u2019t be shy, you have to sell yourself as someone who can solve business problems. Unless you like to churn your customers and rack up lots of non-billable hours looking for gigs, focus on cultivating a handful of customers who give you steady work. Choose a niche or vertical that you can make a name in. Ask your satisfied customers to recommend you to their network.<p>I have worked through an agency since 2014, they take care of marketing, contracts, billing, payment, and some customer service for me, for a 15% cut of my gross. They usually get better rates than I was getting through my own negotiating skills so it works out. You might want to look into that.<p>I have some articles about freelancing on my web site typicalprogrammer.com (free, no ads or affiliate links or pop-ups).<p>Good luck.",
+   "created_at": "2022-09-28T16:44:06Z",
+   "created_at_i": 1664383446,
+   "objectID": "33010071",
+   "parent_id": 33008610,
+   "story_id": 33008610,
+   "story_title": "Switching from W2 Employee to Contractor \u2013 what do I need to know?",
+   "updated_at": "2024-09-20T12:08:43Z"
+  }
+ ],
+ "hitsPerPage": 40,
+ "nbHits": 10,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=missed+churn+invested&tags=comment&hitsPerPage=40&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 54,
+ "processingTimingsMS": {
+  "_request": {
+   "queue": 3,
+   "roundTrip": 20
+  },
+  "afterFetch": {
+   "format": {
+    "highlighting": 5,
+    "total": 5
+   },
+   "merge": {
+    "mergeLoop": {
+     "prepareNextHit": 2,
+     "total": 3
+    },
+    "total": 3
+   },
+   "total": 3
+  },
+  "fetch": {
+   "query": 30,
+   "scanning": 19,
+   "total": 50
+  },
+  "total": 54
+ },
+ "query": "missed churn invested",
+ "serverTimeMS": 64,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=missed+churn+invested&tags=comment&hitsPerPage=40"
+}

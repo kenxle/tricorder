@@ -1,0 +1,411 @@
+SOURCE: https://www.affinity.co/guides/vc-ai-tools
+
+10 AI tools transforming venture capital in 2026 
+
+ — GTM injects async, which reintroduces the exact
+ layout shift this prevents.
+
+ The GTM tag also re-runs the queue-object snippet below. That's harmless
+ (the w[q]=w[q]||... guard means it won't clobber this one) so the tag does
+ not need editing. Side benefit: the tag's waitForQualified UTM-identify
+ poll now resolves on the first tick instead of waiting on GTM, and the
+ traits buffer in the queue until qualified.js loads.
+
+ DO NOT add async or defer to docking.js. It must parse synchronously.
+ DO NOT move this below block 5 — it has to run before GTM fires qualified.js.
+
+ defaultDocked is TRUE via Q_DOCK (2026-09-29). This depends on TWO things:
+ 1. Qualified theme = "Opened Pinned" (Ava).
+ 2. GTM "Qualified Chatbot" tag fires on "Initialization - All Pages"
+ (GTM version 224). docking.js reserves the gutter immediately and
+ gives qualified.js only 10 seconds (its internal init_qualified
+ timeout) to claim it. On the old "Window Loaded" trigger that was
+ too late: the gutter tore down and Ava fell back to the bubble.
+ ⚠️ If either of those changes (theme back to floating, or the GTM tag
+ moved back to Window Loaded / DOM Ready), set Q_DOCK = false first.
+
+ TESTING: ?q_dock=1 forces defaultDocked: true for one page view (kept
+ for QA). docking.js remembers each visitor's last dock state in a
+ __q_state_* cookie, so always test in a fresh incognito window and
+ confirm Ava is still pinned 15s+ after load.
+ Known edge case: visitors whose ad blocker blocks js.qualified.com see
+ an empty right column until the 10s timeout removes it.
+
+ Per Qualified's docs, once the theme starts in Opened Pinned mode you
+ can no longer use an experience override to start the messenger in a
+ different position, because the gutter does not dynamically tear down.
+
+ dockUnderHeader is intentionally omitted (defaults to false) so the whole
+ page shrinks, nav included. The true variant needs real / /
+ landmarks, which this build doesn't guarantee.
+
+ Docking is desktop-only (768px+). Mobile layout is untouched.
+
+ ENV-GATED (2026-09-17) — but only the init() call, see below.
+ qualified.js (the actual Ava widget) loads from the GTM tag, which is
+ now off on non-prod. Without this gate the docking half would still run
+ on staging and reserve a gutter that Ava can never fill. Gating init()
+ keeps both halves in sync: staging gets no widget AND no gutter.
+ Side benefit: staging stops creating phantom visitor records in Qualified.
+ Use ?gtm_debug=1 on staging to load the whole thing for QA.
+
+ WHY THE 
+
+ Schema markup: full node (featureList + per-plan offers) on
+ /product/affinity-pricing only, a lite node (no offers) on /product/* pages.
+ KEEP THE OFFERS ON /product/affinity-pricing IN SYNC WHEN LIST PRICES CHANGE.
+ If marketing sources a real G2 aggregateRating, add it to those nodes.
+ TODO: add G2 / Capterra / Crunchbase profile URLs to sameAs once marketing
+ confirms the canonical URLs.
+ Do not change these @id values without updating every page referencing them.
+ Not consent-gated and not env-gated: inert markup, no tracking, no network
+ calls, and the @id values are absolute so they stay correct on staging. -->
+
+ , and meta description) -->
+
+ Skip to main content
+
+ Products
+
+ Products
+
+ Ascend
+ Agents that act on your data
+
+ Artificial intelligence
+ AI embedded in every workflow
+
+ CRM
+ The CRM built for deal teams
+
+ Activity capture
+ Data permissions
+ Relationship intelligence
+ Affinity mobile
+ Data enrichment
+ Analytics & reporting
+ Integrations
+ Security & trust
+ APIs and open platform
+
+ NEW
+ ROI Calculator 
+ Calculate your team's recoverable time & cost
+ Calculate your team's recoverable time & cost
+
+ Solutions
+
+ Industries
+
+ Private equity
+ Venture capital
+ Private credit
+ Corporate venture capital
+ Investment banking
+ Asset management
+ Family office
+ Fund of funds
+ Accelerators & incubators
+
+ Workflows
+
+ Deal sourcing
+ Deal management
+ Portfolio support
+ Investor relations
+ Fundraising
+
+ Roles
+
+ Data science
+ Investors
+ Portfolio management
+ Investor relations & capital raising
+ Operations & data management
+
+ Resources
+
+ Resources
+
+ Blog
+ The latest industry insights
+
+ Events & webinars
+ Join us in-person and online
+
+ Customer stories
+ Success stories from customers
+
+ ROI calculator
+ Calculate your team's recoverable time & cost
+
+ Guides & reports
+ Help center & support
+ Compare Affinity
+ What is relationship intelligence
+
+ Featured
+
+ The Private Equity Benchmark Report: 2026 Edition
+ How do the best PE firms source and build relationships? Affinity's 2026 Private Equity Benchmark Report reveals the data behind the deals.
+
+ Pricing
+
+ Search
+
+ Search
+ Search 
+
+ Sign in
+
+ Get started
+ Get started
+
+ Products
+
+ Products
+
+ Ascend
+ Agents that act on your data
+
+ Artificial intelligence
+ AI embedded in every workflow
+
+ CRM
+ The CRM built for deal teams
+
+ Activity capture
+ Data permissions
+ Relationship intelligence
+ Affinity mobile
+ Data enrichment
+ Analytics & reporting
+ Integrations
+ Security & trust
+ APIs and open platform
+
+ NEW
+ ROI Calculator 
+ Calculate your team's recoverable time & cost
+ Calculate your team's recoverable time & cost
+
+ Solutions
+
+ Industries
+
+ Private equity
+ Venture capital
+ Private credit
+ Corporate venture capital
+ Investment banking
+ Asset management
+ Family office
+ Fund of funds
+ Accelerators & incubators
+
+ Workflows
+
+ Deal sourcing
+ Deal management
+ Portfolio support
+ Investor relations
+ Fundraising
+
+ Roles
+
+ Data science
+ Investors
+ Portfolio management
+ Investor relations & capital raising
+ Operations & data management
+
+ Resources
+
+ Resources
+
+ Blog
+ The latest industry insights
+
+ Events & webinars
+ Join us in-person and online
+
+ Customer stories
+ Success stories from customers
+
+ ROI calculator
+ Calculate your team's recoverable time & cost
+
+ Guides & reports
+ Help center & support
+ Compare Affinity
+ What is relationship intelligence
+
+ Featured
+
+ The Private Equity Benchmark Report: 2026 Edition
+ How do the best PE firms source and build relationships? Affinity's 2026 Private Equity Benchmark Report reveals the data behind the deals.
+
+ Pricing
+
+ Search
+
+ Search
+ Search 
+
+ Sign in
+
+ Get started
+ Get started
+
+ Home 
+
+ 10 AI tools transforming venture capital in 2026 
+
+ table of contents
+
+ Text Link 
+ Text Link 
+
+ The best deal you’ll lose this year won’t go to a smarter investor. It’ll go to a faster one. AI has collapsed the time between sourcing a startup and sitting across from its founder, and the firms that haven’t retooled are showing up to conversations that are already over.
+ Affinity’s survey of nearly 300 private capital dealmakers found that 85% now use AI to automate daily tasks , which is up from 76% just a year earlier. These are the ten AI tools reshaping how the most competitive venture capital firms operate in 2026.
+
+ Key takeaways
+ AI now touches every phase of the VC workflow, from deal sourcing and due diligence to portfolio monitoring and LP reporting. Adoption is accelerating fast, with 82% of firms using AI for deal sourcing research .
+ General-purpose AI assistants like Claude and ChatGPT have become core infrastructure for investment teams, handling everything from memo drafting to financial modeling to market research.
+ Purpose-built VC platforms like Affinity, Harmonic, and Standard Metrics layer AI on top of industry-specific data, giving investors an edge that generic tools alone can’t deliver.
+ How artificial intelligence tools can improve operations in venture capital firms
+ IIncreasing operational efficiency
+ AI is giving investors back hundreds of hours a year by automating the manual work that used to consume half the week. Bessemer Venture Partners reclaimed 234 hours per analyst after integrating AI into their workflows, and BlackRock achieved a 5× increase in research throughput. They now analyze 10-15 companies daily versus the 2-3 that were possible with manual processes.
+ Speaking during a recent webinar on how AI will transform dealmaking , Andre Retterath, Partner at Earlybird Ventures described the experience of his firm:
+ “We’ve seen that we can leverage AI across the tech stack, so for every single task that we do, we can use AI to become more efficient, more effective, and also leverage data-driven approaches and AI to become more inclusive.”—Andre Retterath, Partner at Earlybird Ventures
+ Improving decision-making
+ AI surfaces investment insights from vast datasets , like founder track records, market signals, competitive landscapes, and hiring trends. It would take weeks to assemble this data manually. Instead of relying on gut instinct and a handful of reference calls, VCs can now process data at institutional scale and still move at startup speed. The all gives investors better raw materials to make judgement calls with.
+ Monitoring performance
+ AI-powered monitoring eliminates the quarterly data chase. Instead of emailing founders for updates and normalizing spreadsheets by hand, monitoring tools now auto-collect financial and operational data. They also alert investors to risks and opportunities as they emerge, rather than weeks after the fact.
+
+ Key use cases for AI in venture capital
+ AI adoption in VC breaks down into five core workflows. Each one reclaims time from manual work and redirects it toward the relationship-driven decisions that actually move deals forward.
+ Deal flow automation
+ The edge in deal sourcing comes from finding the right companies, and finding them first. AI-driven sourcing tools parse millions of data points to surface opportunities before mainstream databases catch up . Then, it ranks them against your investment thesis so your team focuses on deals that actually fit rather than sifting through noise.
+ Data entry automation
+ Every hour spent updating CRM records is an hour not spent building relationships. AI-powered CRMs now automatically capture interactions from email, calendar, and meetings, creating and enriching contact and company records. That means your relationship data is always current, and your team can redirect hundreds of hours annually from data entry to deal work .
+ Learn more about how this works in our guide to the best CRMs for automatic email and meeting capture .
+ Startup evaluation and due diligence
+ AI compresses weeks of due diligence into hours by analyzing financial data, market positioning, competitive dynamics, and founder backgrounds simultaneously. As Adam Perelman, Engineering Manager of ChatGPT at OpenAI explains, AI is particularly powerful at processing “unstructured data” to extract “different signals.”
+ "You want to evaluate tons of different founder profiles, you want to evaluate a market, or you want to understand user feedback, things like that. AI can play a really powerful role here.”—Adam Perelman, Engineering Manager of ChatGPT at OpenAI.
+ Portfolio management and monitoring
+ Skip the spreadsheets. AI now aggregates portfolio data from multiple sources, flags anomalies automatically, and generates the benchmarked reports that power partner meetings, LP updates, valuations, and audits . It does this without the manual work that used to consume entire analyst weeks.
+ Deal negotiation and term sheet generation
+ Walk into every term sheet negotiation armed with market context. Language models now draft term sheets, analyze comparable deal structures, and flag non-standard provisions in seconds, giving investors a data-driven starting point instead of negotiating from a blank page.
+
+ {{estimate-your-savings-plum="/rt-components"}}
+ 10 VC tools powered by AI that investors are actually using
+ Andre Retterath at Earlybird Ventures recommends an “80/20 approach” to AI adoption: pursue off-the-shelf tools that solve 80% of your needs rather than building custom solutions, keep your tech stack simple , and prioritize tools that serve as unified sources of information.
+ "I would go for an 80/20 approach because there's a lot available off the shelf today. There’s less need to build stuff yourself versus five years back. And there are tools like Affinity that are very close to offering a single source of truth that unifies different information.”—Andre Retterath, Earlybird Ventures
+ The ten VC tools below reflect this philosophy. Each one solves a specific, high-value problem for investment teams today. While this list focuses on venture capital, many of these tools are equally relevant for private equity firms looking to bring AI into their deal sourcing, due diligence, and portfolio management workflows.
+ 1. Claude
+ Claude has become the AI assistant of choice for investors who need depth over speed. In due diligence, depth wins. Built by Anthropic, Claude’s long context windows let it process entire pitch decks, partnership agreements, and financial models in a single prompt, so you can upload your full diligence package and get comprehensive analysis without summarizing or chunking documents first.
+ How VCs use it: Investment teams use Claude to draft structured memos (complete with team, product, traction, and risk sections), model financial scenarios, analyze portfolio company performance, and conduct deep market research. Notable Capital uses Claude with MCP integrations to manage 500+ BD intros annually with just a two-person team. World Innovation Lab runs Claude locally to power 70+ different investor workflows while maintaining compliance.
+ 2. Granola
+ Granola is the AI notepad that’s taken the VC world by storm, largely through word of mouth among investors. Unlike traditional meeting transcription tools that drop a bot into your call (which can feel awkward in sensitive deal conversations), Granola runs privately on your device and enhances the notes you’re already taking with AI-powered context from the conversation.
+ How VCs use it: Investors use Granola to capture meeting notes that automatically include key details they might have missed, generate follow-up action items, and build a searchable archive of every founder conversation. The privacy-first approach—no bot joining calls, no audio uploaded to the cloud—makes it particularly suited to the confidential nature of deal discussions. Granola raised $43M at a $250M valuation in 2025, with VCs themselves as its most vocal champions.
+ 3. Affinity
+ Affinity is the AI-first private capital CRM, and its AI capabilities have expanded significantly. The platform automatically captures relationship data from your team’s emails, calendars, and meetings, then layers AI on top to surface deal insights, prep you for meetings, and identify the warmest path to any founder or LP.
+ With Affinity Ascend, agents built for private capital take on routine work. Meeting Prep delivers a brief before each meeting, Data Update suggests CRM field updates from meeting notes for your team to review and apply, and Warm Intro ranks intro paths and drafts outreach without sending it. Affinity’s MCP server also brings your firm’s relationship data into Claude, ChatGPT, and other AI tools your team already uses.
+ How VCs use it: Affinity’s AI suite now includes Affinity AI Chat (ask “prep me for Acme” or “who has the strongest path in” and get answers in seconds instead of hours), natural language pipeline queries (“show me all Series B deals closing this quarter”), File Analyzer (drop in a deck, memo, or tearsheet and get key details extracted and contextualized against your pipeline), and Tear Sheets (compile deal context, relationships, and activity into a shareable PDF in seconds). 
+ On the platform side, Affinity offers its MCP server, the most powerful in private capital, which serves as the data layer for Claude, ChatGPT, Gemini, and Microsoft Copilot out of the box, Snowflake and modern APIs for self-serve data access without engineering resources, Team Privacy to isolate teams across lists, notes, and deals, and Network Security with IP-based access controls and enterprise-grade posture built in. SpeedInvest uses Affinity to manage 357 LP relationships across six offices, and World Innovation Lab achieved 95%+ accuracy in AI-powered deal categorization through Affinity’s workflows.
+ 4. ChatGPT
+ ChatGPT remains one of the most widely used AI tools across venture capital because it hits the sweet spot between capability and ease of adoption. For firms building AI into their workflows for the first time, its broad capabilities and large plugin ecosystem make it the lowest-friction starting point available.
+ How VCs use it: Investment teams use ChatGPT for drafting investor outreach and cold emails, reviewing and summarizing pitch decks, analyzing market trends and forecasting sector dynamics, and generating reports and term sheet drafts. Its versatility across the deal lifecycle—from first outreach to final memo—is what keeps it in daily rotation even as more specialized tools emerge.
+ 5. Perplexity
+ Perplexity is a research-first AI assistant that distinguishes itself through citation-backed answers. Every claim comes with a source, so you can verify what you’re reading. For investors conducting due diligence, that traceability is invaluable.
+ How VCs use it: VCs use Perplexity for rapid market landscape research, competitive analysis, and fact-checking claims from pitch decks. When a founder says they’re “the only platform doing X,” Perplexity can validate or challenge that assertion in seconds, with receipts. Many firms pair Perplexity with Claude: Perplexity for broad research and fact-finding, Claude for deep analysis and document processing.
+ 6. Harmonic
+ Harmonic specializes in finding companies before anyone else does. The platform indexes over 30 million companies and tracks founder movements, hiring signals, and early traction indicators to surface pre-seed and stealth-stage startups before formal fundraising processes even begin.
+ How VCs use it: Hundreds of VC teams use Harmonic to get ahead of competitive deal processes by identifying promising founders and companies at the earliest possible stage. The platform’s ability to detect signals like key hires, domain registrations, and founder departures from established companies gives investors a sourcing edge that traditional databases can’t match. Harmonic reached a $1.45B valuation in 2025, reflecting just how central early-stage sourcing intelligence has become.
+ 7. Gamma
+ Gamma has emerged as the AI-powered alternative to traditional presentation software, and its adoption among VC teams has been striking. Gamma boasts 70 million users and $100M in ARR as of late 2025.
+ How VCs use it: Investment teams use Gamma to quickly build polished presentations for LP updates, partner meetings, and internal deal reviews. Rather than spending hours formatting slides, investors describe what they need and Gamma generates a structured, visually clean deck that can be refined from there. It’s particularly useful for the recurring presentation work that eats into analyst and associate time, like quarterly reviews, portfolio summaries, and sector overviews.
+ 8. Tracxn
+ Tracxn is an AI-powered research platform tracking over three million companies across sectors and geographies, providing the comprehensive data coverage that sector-focused investors need for mapping and discovery.
+ How VCs use it: VCs rely on Tracxn for sector landscaping, identifying companies across specific verticals, and tracking funding rounds and competitor movements globally. This breadth means you won’t miss emerging competitors in fragmented sectors or overlook promising founders in underindexed geographies. This is important when your thesis depends on finding gaps before the rest of the market catches on.
+ 9. Grata
+ Grata takes a different approach to deal sourcing by applying machine learning and natural language processing to a dataset of 1.2 billion web pages and three years of historical data, enabling investors to discover private companies based on what they actually do rather than how they’re categorized.
+ How VCs use it: Grata’s natural language search surfaces companies that keyword-matched databases miss. This is especially helpful in earlier-stage sourcing where your edge depends on finding founders before they hit mainstream deal lists. Investors describe a business model or market niche in plain language, and Grata returns relevant private companies that conventional platforms haven’t indexed yet. The platform then connects you directly with company executives, so you can turn that discovery into a first-meeting advantage.
+ 10. Standard Metrics
+ Standard Metrics automates the portfolio data collection and reporting process that has traditionally been one of the most time-consuming parts of VC operations.
+ How VCs use it: The platform automatically collects financial and operational data from portfolio companies, benchmarks performance against relevant comparables, and generates the reports that power partner meetings, LP updates, valuations, and audits. For firms managing large portfolios, Standard Metrics eliminates the manual spreadsheet work that used to consume entire analyst weeks while increasing the accuracy and consistency of portfolio data.
+ {{request-demo-short="/rt-components"}}
+ Find, manage, and close more deals with Affinity
+ The most effective VC teams build workflows around a central CRM built on relationship intelligence that connects everything. Without that integration layer, you end up with tooling debt instead of efficiency gains. Affinity, the AI-first private capital CRM, serves as that connective layer, eliminating the manual work of tracking who knows whom, surfacing the warmest paths to founders and LPs , and centralizing deal management so nothing falls through the cracks. Combined with AI capabilities like Affinity Ascend agents, Affinity AI Chat, File Analyzer, and natural language pipeline queries, it gives investment teams the infrastructure to move faster on better deals.
+ Request a demo to see how Affinity can power your firm’s deal flow.
+
+ VC AI tool FAQs
+ How can you use AI for VC? 
+ AI accelerates every phase of the venture capital workflow. General-purpose assistants like Claude and ChatGPT handle memo drafting, market research, and financial modeling. Specialized tools like Harmonic and Grata automate deal sourcing by surfacing companies before they hit mainstream databases. CRM platforms like Affinity use AI to capture relationship data automatically and surface deal insights. And portfolio monitoring tools like Standard Metrics eliminate the manual work of collecting and benchmarking company data, freeing investors to focus on the decisions that actually require human judgment.
+ How will AI affect venture capital? 
+ AI is already reshaping VC by helping smaller teams to operate with the reach and rigor of much larger firms. A two-person BD team at Notable Capital manages 500+ intros annually with AI-powered workflows. BlackRock’s research team increased throughput 5× through AI integration. The firms that adopt AI effectively are giving their investors better information, faster, so they can spend more time on the relationship-driven work that actually wins deals.
+ Can these AI tools be used for private equity too? 
+ Many of them, yes. AI for private equity follows similar patterns. Deal sourcing, due diligence, portfolio monitoring, and LP reporting all benefit from the same AI capabilities. Tools like Claude, ChatGPT, and Perplexity are industry-agnostic and work just as well for PE workflows. Affinity, the AI-first private capital CRM, is purpose-built for the broader private capital industry, serving both VC and PE firms with relationship intelligence, deal flow management, and AI-powered research. Specialized sourcing tools like Grata are particularly relevant for PE firms focused on middle-market deals where private company discovery is critical.
+ How can AI automate deal sourcing for VC and PE firms?
+ AI automates deal sourcing by scanning thousands of data points—from funding announcements to patent filings—to surface companies that match a firm's investment thesis. Tools like Affinity go further by analyzing relationship data across your network to identify warm introduction paths to the founders and companies competitors miss.
+ What AI tools integrate with venture capital CRM systems?
+ Several AI tools are designed to work alongside VC CRM platforms. Affinity natively combines CRM and AI capabilities, offering automated data capture, relationship intelligence, Affinity Notetaker for meeting notes, and Affinity Ascend agents that prepare meeting briefs and suggest CRM updates. Other tools like Granola (meeting transcription) and ChatGPT (research and memo drafting) can complement your CRM workflow through integrations.
+ How are VC firms using AI for pitch deck analysis?
+ VC firms use AI to extract key metrics from pitch decks, compare them against portfolio benchmarks, and flag potential concerns automatically. AI tools can analyze financial projections, market sizing, and competitive positioning within minutes. This gives analysts more time to focus on the qualitative aspects of founder evaluation and market dynamics.
+
+ Other guides
+
+ 12 AI tools for private equity: what PE teams use at each stage of the deal
+
+ Venture capital management software: A complete guide for modern VCs
+
+ Venture capital due diligence best practices
+
+ Products
+
+ CRM Ascend Artificial intelligence Activity capture Relationship intelligence Data enrichment Integrations APIs Data permissions Affinity mobile Analytics & reporting What is relationship intelligence Security & trust 
+
+ Solutions
+
+ Industries 
+ Private equity Venture capital Private credit Corporate venture capital Investment banking Asset management Family offices Fund of funds Accelerator & incubators 
+
+ Workflows 
+ Deal management Deal sourcing Portfolio support Investor relations Fundraising 
+
+ Roles 
+ Data science Investors Investor relations & capital raising Operations & data management Portfolio management 
+
+ Resources
+
+ Blog Customer stories Compare Affinity Events & webinars Guides & reports Help center and support API documentation Newsletter 
+
+ Company
+
+ About us Careers Leadership Newsroom 
+
+ Terms Do not sell my info Security Privacy Cookie Policy Contact us Affinity Status 
+ © 2026 Affinity
+
+ mobile URL (dq=576&pinq=true)
+ data-vf-desktop -> desktop URL (dq=1080&pinq=true)
+
+ Why two: Vidzflow's pinq=true hard-caps the rendition, so dq is a
+ permanent ceiling, not a starting point. One shared URL therefore
+ means either a soft-looking desktop video or a 3MB mobile download.
+ Picking per viewport gives us both.
+
+ The selector deliberately requires BOTH data-video-id and :not([src]).
+ It must NOT match src="" - the homepage heroes use src="" plus
+ data-src and are armed by their own HERO_VIDEO_PAIRS script, which
+ already picks desktop vs mobile per element. Matching them here
+ would arm both heroes at once and re-introduce the double fetch.
+ ================================================================== -->
+
+ element (muted, plays once when
+ ~50% scrolled into view). Same pattern as the rich-text-tables mod:
+ plain-text placeholder parsed client-side, so it survives the rich
+ text field's HTML sanitizer. Checks figcaption too, since a caption
+ under a figure/image is a common place to drop the placeholder.
+ ================================================================== -->

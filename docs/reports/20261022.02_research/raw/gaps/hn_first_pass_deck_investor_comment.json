@@ -1,0 +1,79 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "chinhqtran"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "first",
+      "pass",
+      "deck",
+      "investor"
+     ],
+     "value": "Ha good question and a fair one.<p>We ran it. Scored 71 on the <em>first pass</em>. The analyzer flagged traction as the weakest dimension which is accurate. We have users but early revenue so the metrics aren't there yet. It also flagged that our moat narrative was asserted not demonstrated. Also fair. Data flywheel defensibility is real but we hadn't quantified it properly in the <em>deck</em>.<p>We fixed both. Rescored at 79. Still not above the <em>investor</em> visibility threshold which is the point honestly. The tool doesn't let you charm your way past weak fundamentals. You either have the business or you don't.<p>Worth noting we're not actively raising right now so there's no incentive to game it. We ran it because we wanted to know where the actual gaps were. Turns out the score told us the same thing our customers were telling us anyway.<p>The things it couldn't penalize us for are the things that are actually strong. The framework is built on a real investment rubric we use at 3P Ventures. The problem is real and well documented. The team has the right background for it.\nSo short answer: the pitch has the same weaknesses the business has right now. Early traction, real product, credible framework. The score reflects that pretty accurately"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "deck"
+     ],
+     "value": "Is the pitch <em>deck</em> culture making founders worse at building businesses?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_chinhqtran",
+    "story_47729641"
+   ],
+   "author": "chinhqtran",
+   "comment_text": "Ha good question and a fair one.<p>We ran it. Scored 71 on the first pass. The analyzer flagged traction as the weakest dimension which is accurate. We have users but early revenue so the metrics aren&#x27;t there yet. It also flagged that our moat narrative was asserted not demonstrated. Also fair. Data flywheel defensibility is real but we hadn&#x27;t quantified it properly in the deck.<p>We fixed both. Rescored at 79. Still not above the investor visibility threshold which is the point honestly. The tool doesn&#x27;t let you charm your way past weak fundamentals. You either have the business or you don&#x27;t.<p>Worth noting we&#x27;re not actively raising right now so there&#x27;s no incentive to game it. We ran it because we wanted to know where the actual gaps were. Turns out the score told us the same thing our customers were telling us anyway.<p>The things it couldn&#x27;t penalize us for are the things that are actually strong. The framework is built on a real investment rubric we use at 3P Ventures. The problem is real and well documented. The team has the right background for it.\nSo short answer: the pitch has the same weaknesses the business has right now. Early traction, real product, credible framework. The score reflects that pretty accurately",
+   "created_at": "2026-04-12T04:45:42Z",
+   "created_at_i": 1775969142,
+   "objectID": "47736226",
+   "parent_id": 47735044,
+   "story_id": 47729641,
+   "story_title": "Is the pitch deck culture making founders worse at building businesses?",
+   "updated_at": "2026-04-12T04:48:26Z"
+  }
+ ],
+ "hitsPerPage": 40,
+ "nbHits": 1,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=%22first+pass%22+deck+investor&tags=comment&hitsPerPage=40&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 24,
+ "processingTimingsMS": {
+  "_request": {
+   "queue": 115,
+   "roundTrip": 29
+  },
+  "afterFetch": {
+   "merge": {
+    "total": 5
+   },
+   "total": 5
+  },
+  "fetch": {
+   "query": 11,
+   "scanning": 6,
+   "total": 18
+  },
+  "total": 25
+ },
+ "query": "\"first pass\" deck investor",
+ "serverTimeMS": 140,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=%22first+pass%22+deck+investor&tags=comment&hitsPerPage=40&advancedSyntax=true"
+}

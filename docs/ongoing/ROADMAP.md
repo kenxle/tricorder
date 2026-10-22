@@ -8,7 +8,7 @@
 
 **Level of detail:** One slice per heading, with short lists. A builder can pick up a slice and know what done looks like.
 
-**Sources:** The writers' brief ([00_brief_for_writers.md](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), every "Added" block through 2026-10-22 at 11:20 AM, the 12:55 PM block that makes the readout an overview, the 1:09 PM block that puts the best green flags and the worst red flags first, and the 1:12 PM block on steering), the organisers' tracks ([problem_tracks.txt](../reports/20261022.01_hackathon_sources/problem_tracks.txt)), the feasibility research ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), the main source for scan order, stack, folder owners and keys), the data room research ([research_data_room.md](../reports/20261022.02_research/research_data_room.md)), the landscape research ([research_landscape.md](../reports/20261022.02_research/research_landscape.md)), the voice-of-the-customer research ([research_voice_of_customer.md](../reports/20261022.02_research/research_voice_of_customer.md)), the guardrails ([guardrails.md](../../.claude/guardrails.md)), the board ([BULLETIN.md](../BULLETIN.md)) and the three critiques ([judge](../features/20261022.01_hackathon_plan/critique_judge.md), [buildability](../features/20261022.01_hackathon_plan/critique_buildability.md), [demo](../features/20261022.01_hackathon_plan/critique_demo.md)), which set the Saturday slices, the demo opening and the beat sheet. The shape is copied from My Text Reminders' [ROADMAP.md](../../../my-text-reminders/docs/ongoing/ROADMAP.md). Hour budgets come from [the schedule](../features/20261022.01_hackathon_plan/00_brief_for_writers.md) and were added up by a script, not by hand.
+**Sources:** The writers' brief ([00_brief_for_writers.md](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), every "Added" block through 2026-10-22 at 11:20 AM, the 12:55 PM block that makes the readout an overview, the 1:09 PM block that puts the best green flags and the worst red flags first, the 1:12 PM block on steering, the 1:33 PM block on differences in reporting, the 1:38 PM block on stages, and the 1:52 PM block that adds the bank check), Ken's comments on the voice-of-the-customer research at 1:47 PM (the outside-in slice) and 1:50 PM (reference checks, low priority), the product brief's "What Tricorder gathers before the data room is opened" ([PRODUCT_BRIEF.md](PRODUCT_BRIEF.md)), the saved Plaid Sandbox page ([sandbox_user_custom.md](../reports/20261022.02_research/raw/feasibility/plaid/sandbox_user_custom.md)), the organisers' tracks ([problem_tracks.txt](../reports/20261022.01_hackathon_sources/problem_tracks.txt)), the feasibility research ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), the main source for scan order, stack, folder owners and keys), the data room research ([research_data_room.md](../reports/20261022.02_research/research_data_room.md)), the landscape research ([research_landscape.md](../reports/20261022.02_research/research_landscape.md)), the voice-of-the-customer research ([research_voice_of_customer.md](../reports/20261022.02_research/research_voice_of_customer.md)), the guardrails ([guardrails.md](../../.claude/guardrails.md)), the board ([BULLETIN.md](../BULLETIN.md)) and the three critiques ([judge](../features/20261022.01_hackathon_plan/critique_judge.md), [buildability](../features/20261022.01_hackathon_plan/critique_buildability.md), [demo](../features/20261022.01_hackathon_plan/critique_demo.md)), which set the Saturday slices, the demo opening and the beat sheet. The shape is copied from My Text Reminders' [ROADMAP.md](../../../my-text-reminders/docs/ongoing/ROADMAP.md). Hour budgets come from [the schedule](../features/20261022.01_hackathon_plan/00_brief_for_writers.md) and were added up by a script, not by hand.
 
 ## How to read a slice
 
@@ -440,6 +440,7 @@ The top green and red flags, the overview and its drill-downs, assembled from th
 - Picks the best green flags and the worst red flags from the piece verdicts and the flags, by the stated script rule ([FRAMEWORKS.md](FRAMEWORKS.md), "Top green and red flags"), and puts them first in `readout.json`.
 - One model pass that writes connecting sentences. Each sentence must cite claim ids; a sentence with none is dropped. This pass is first in the cut order: the script's top flags, pieces and verdicts are enough for the demo. On the demo laptop it shows as frozen output.
 - A missing scan becomes a gap in the readout, not an error.
+- The ask list at the end of `readout.json`: what the operator should request from the founder ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:54 PM block). A script builds it from each gap's `would_need` field and each weak piece's reason. Each line says what to ask for, the claim or gap it would settle, and the piece it feeds. No model call.
 - Writes `out/<room>/readout.json`.
 
 **Done when:**
@@ -731,7 +732,7 @@ The business frameworks: lean canvas, jobs to be done and the rest in [FRAMEWORK
 
 A card per founder from GitHub, personal sites and talks. LinkedIn is never scraped.
 
-**Waits on:** Ken reads GitHub's terms on persona accounts before any demo account is made (feasibility open point).
+**Waits on:** Ken reads GitHub's terms on persona accounts before any demo account is made (feasibility open point); [outside-in](#outside-in), for the company resolver, the founder names it pulls from the deck, and the GitHub client and cache it builds.
 
 **Includes:** the GitHub user and repo data, and a founder-market fit note scored against the rubric in FRAMEWORKS.md. Each line linked to its source.
 
@@ -739,11 +740,160 @@ A card per founder from GitHub, personal sites and talks. LinkedIn is never scra
 
 **Judgment:** yes.
 
+### outside-in
+
+**The associate's ten tabs, opened automatically.** An associate at Flyer One Ventures describes her first step on a deal: "Before I even open your data room, I already have ten tabs up. I’m checking your traffic, reviews, investors, any co-founder issues, and whether your story matches what’s online." ([Startups Magazine, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal); the [voice-of-the-customer research](../reports/20261022.02_research/research_voice_of_customer.md), row 1). Her routine is Tricorder's market-signal and presence scans, done by hand. This slice opens her tabs for her. It runs before the data room is opened, so it works on an inbound that holds only a company name and a deck. At the earliest stage there is often no data room at all, and these tabs carry the first pass ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:38 PM block). It builds the table in the product brief's "What Tricorder gathers before the data room is opened" ([PRODUCT_BRIEF.md](PRODUCT_BRIEF.md)). Every source term, limit and price below comes from the feasibility research's 1.3, 1.6, 1.7 and Part 2 ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md)), with the page that research read.
+
+**Waits on:** the board row TRI-sponsor-keys (get the sponsor API keys before Saturday): Akta, Tavily, You.com, a GitHub token, the EDGAR User-Agent, and a Product Hunt token if Ken approves its terms; traffic and Akta's review signals also need Akta's Subscription plan or a sponsor coupon, and without it they run as gaps; [readout-store](#readout-store), so each company's pulled pages and claims outlive one laptop and the operator can see and delete them; the Saturday slices claim-result (the quote checker), readout (the linking and the piece verdicts) and cached-data (the `cache/index.json` rule), merged; Ken approves the two real companies for the live run under Done when; a decision on Product Hunt, whose API terms say non-commercial use (shared with online-presence); [steering](#steering), for the "get more info" steers only, since the tabs ship without it.
+
+**Includes:**
+
+- **The input.** A company folder that may hold only a deck, or only an inbound email with a deck attached. A resolver reads four things and writes them to `company.json`, each with the locator it came from (a slide, or an email header line), so the quote checker can check the inputs too.
+  - The company name: from the deck's cover slide, the email subject or the signature.
+  - The domain: from URLs on the deck and the sender's address. Free mail domains (a list kept as a setting) never count as the company's domain.
+  - The city: from the deck or the signature.
+  - The founder names: from the team slide and the signature. When a room exists, also from the bios.
+  - The operator can correct any field before the tabs run.
+- **Resolving the right company.** Domain first, then name plus city.
+  - Domain first: the scan fetches the home page on the domain. The company resolves when that page names it.
+  - Then name plus city: search results, Akta Company Search (100 a day on pay-as-you-go, [Akta rate limits](https://docs.akta.pro/getting-started/rate-limits)) and the Form D issuer table (name, state and year of incorporation, [Form D data sets](https://www.sec.gov/data-research/sec-markets-data/form-d-data-sets)). A candidate resolves when its name and its city or state match in one source.
+  - On an ambiguous match, it shows the candidates and never guesses. Ambiguous means two or more candidates fit, or the domain's page names a different company. The readout lists each candidate with its name, domain, city and the source that found it, and asks the operator to pick. No tab runs until they pick.
+  - Every result a tab fetches is kept only when it ties to the resolved company by domain, or by name plus city. A same-named company elsewhere is dropped and listed in the run log.
+- **The scan.** `scans/outside/`, a new after-Saturday folder beside `scans/presence/` and `scans/founders/` ([ARCHITECTURE.md](ARCHITECTURE.md), "Folder layout").
+  - `run(company_dir) -> ScanResult`, run as `python -m scans.outside <company_dir>`, writing `out/<company>/outside.json`. It follows the scan interface in ARCHITECTURE.md.
+  - One check name per tab: `outside_traffic`, `outside_reviews`, `outside_investors`, `outside_cofounders`, `outside_story`.
+  - Each tab runs alone and fails alone. A source that refuses or times out becomes a gap, and the scan still exits 0.
+  - Each source's client stays under that source's published limit, listed under each tab below.
+  - Each run records the calls and credits it spent per source in the ScanResult's `inputs`. The cost of one company comes from that log, not from a guess.
+  - Keys come from the environment variables in ARCHITECTURE.md: `AKTA_API_KEY`, `TAVILY_API_KEY`, `YOU_API_KEY`, `GITHUB_TOKEN`, `PRODUCT_HUNT_TOKEN`, `EDGAR_USER_AGENT`. A missing key makes that source `not_checked`, with a gap that names the variable.
+  - With `TRICORDER_OFFLINE=1` it reads `cache/` only and makes no outside call.
+- **The cache, for every tab.**
+  - Every page and API response is saved under `cache/outside/<company>/<tab>/`, with the date it was read.
+  - `cache/index.json` maps each URL, or each API call (the endpoint and its parameters, never the key), to its saved file and date. This is the rule from the [cached-data](#cached-data) slice.
+  - The quote checker checks every URL and API source against its saved copy through `cache/index.json`. A claim whose source is not in the index is `unverified` and goes to the "could not verify" box.
+  - A rerun reads the cache. It reads fresh only when the operator asks, or when the saved copy is older than a setting the team sets (`outside_max_age_days`).
+  - readout-store's delete removes the company's saved files and their index entries.
+- **Traffic.**
+  - Source: Akta's Website Traffic signal, REST at `api.akta.pro` with the `x-api-key` header. Pay-as-you-go returns 403 on it. The Subscription 50 tier allows alternative signals at 10 a minute and 750 a month each ([Akta rate limits](https://docs.akta.pro/getting-started/rate-limits)), at $0.04 a credit against $0.05 on pay-as-you-go ([Akta credits](https://docs.akta.pro/getting-started/pricing)). Akta's slowest signals have a p99 latency past 55 seconds ([Akta latency](https://docs.akta.pro/getting-started/performance)), so the call runs in the background with a timeout and the readout never waits on it. The research names no second traffic source.
+  - Fetches: traffic for the company's domain, and for the competitors named on the deck's competition slide.
+  - Claims: one claim per dated reading, label `signal`, unit `count`, period the month. It runs entry 3.1's check in [FRAMEWORKS.md](FRAMEWORKS.md): a direction (rising, flat, falling) needs two dated readings, and one reading is `one_reading`. The company's own readings feed **traction and revenue**. The competitors' readings feed **market**.
+  - Corroboration: there is one source, so a traffic claim is never marked corroborated, and the page shows "one source" beside it. It can contradict a deck claim about visitors only when label, unit and period match.
+  - Gap: "Not in the room: web traffic for <company> (Akta plan returns 403)", or (no Akta key), or (no data for this domain). A 403 is `no_signal`, never zero.
+  - Never: estimate traffic from anything else, such as search rank or Hacker News points. Never read a 403 or an empty answer as zero. Never claim a direction from one reading.
+  - Get more info: "add <competitor> to the traffic comparison"; "take a fresh traffic reading" (which gives a direction once the earlier reading is from another month).
+- **Reviews.**
+  - Sources: Apple's Search and Lookup API, official, no key, about 20 calls a minute "subject to change", free ([Apple Search API](https://performance-partners.apple.com/search-api)). Lookup gives `averageUserRating`, `userRatingCount` and `currentVersionReleaseDate` ([saved sample](../reports/20261022.02_research/raw/feasibility/appstores/itunes_apple_com_lookup_id_284882215_country_us.txt)). Akta's Product Reviews and Employee Reviews, on the Subscription plan only, as for traffic. Review sites found through Tavily: free 1,000 credits a month with no card, a basic search 1 credit and an advanced one 2, a development key 100 requests a minute ([Tavily credits](https://docs.tavily.com/documentation/api-credits), [Tavily rate limits](https://docs.tavily.com/documentation/rate-limits)). Or through You.com: Web Search $5 per 1,000 calls, Contents $1 per 1,000 pages, or the keyless MCP profile at 100 queries a day ([You.com pricing](https://you.com/pricing), [You.com rate limits](https://you.com/docs/rate-limits)).
+  - Off by default: Apple's customer-review feed answered the research's test but Apple does not document it ([saved sample](../reports/20261022.02_research/raw/feasibility/appstores/rss_reviews_sample.json)). It stays off until Ken decides. Google Play's official reviews API reads only reviews for your own apps ([Google Play Developer API](https://developers.google.com/android-publisher/reply-to-reviews)), and its public listings have no official API, so Google Play is skipped.
+  - Fetches: the company's app, matched only when Apple's record names the company as the developer or links to its domain (the builder checks those field names in Apple's reference first); its rating, rating count and last release date; review pages found by search; Akta's review signals when the plan allows.
+  - Claims: ratings and counts as `signal` claims. A rating needs a unit the schema lacks, so this slice adds `rating` to the unit list in FRAMEWORKS.md, the source for every field. Review themes come from entry 3.1's model reading: each theme quotes at least one review sentence with its date and rating, and shows how many reviews it rests on. Product reviews feed **customers**. A theme that contradicts a product claim in the deck feeds **the pitch itself**. Employee review themes feed **team**.
+  - Corroboration: when the deck states a rating or a review count, Apple's Lookup value corroborates it within `match_tolerance`. The deck is the company's own words and Apple is not, so the two count as independent. A theme counts as recurring only when at least two reviews show it, and as corroborated only when two separate review sources show it.
+  - Gap: "Not in the room: an app for <company>"; "Not in the room: product reviews for <company> (Akta plan returns 403)"; "Not in the room: reviews on a review site". No app is common for a business product and is never a weakness.
+  - Never: treat a handful of reviews as the market's view. Never name or profile a reviewer. Never use Apple's review feed before Ken decides. Never read Google Play pages.
+  - Get more info: "read the reviews on <URL>"; "look for the app under <other name>"; "only reviews since <date>".
+- **Investors.**
+  - Sources: the SEC's Form D data sets, quarterly ZIP files, free, no key, normal EDGAR fair access; the SEC says it cannot guarantee their accuracy ([Form D data sets](https://www.sec.gov/data-research/sec-markets-data/form-d-data-sets)). The issuer and offering tables hold name, state, year of incorporation, industry bucket, offering size, amount sold and sale date, and no business description. Every EDGAR request sends a declared User-Agent with a contact address plus `Accept-Encoding: gzip, deflate`, at no more than 10 requests a second, from the server because there is no CORS ([Accessing EDGAR data](https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data), [EDGAR API documentation](https://www.sec.gov/edgar/sec-api-documentation)). EDGAR full-text search ([search page](https://www.sec.gov/edgar/search/), [FAQ](https://www.sec.gov/edgar/search/efts-faq.html)); its JSON endpoint is undocumented, so when it breaks the tab falls back to cached results. Akta News Signals, which work on pay-as-you-go at 10,000 a month, and Akta Company Data at 100 a month ([Akta rate limits](https://docs.akta.pro/getting-started/rate-limits)); the research did not check which funding fields Company Data returns, so the builder reads one response first. Press found through Tavily or You.com. The cap table and the deck's round slide, when the room holds them.
+  - Not used: Crunchbase. Its Basic API is closed and access goes through its sales team ([Using the API](https://data.crunchbase.com/docs/using-the-api), [Basic](https://data.crunchbase.com/docs/crunchbase-basic-getting-started)). It is used only after an arrangement that covers apps, as in comps-deep.
+  - Fetches: the company's own Form D rows, matched by issuer name, state and year of incorporation, from the same quarterly files comps-deep downloads; funding news; the company's own announcement pages.
+  - Claims: each earlier round's amount and date, with the round named before a colon ("Seed: raised"), label `raise_amount`; each named investor as a claim with no value, quoting the source that names them. They feed **the pitch itself**. The round also shows beside the comps table as context, and is never counted as a comp.
+  - Corroboration: a round's amount is corroborated when two of these agree within `match_tolerance`: the Form D amount sold, the cap table, and an outlet's own reporting. The deck and the company's own announcement count as one source. An investor's name is corroborated when outside press and the cap table name the same holder for the same round.
+  - A difference, such as the deck's "raised to date" against the Form D amount sold, is shown with both quotes and no reason, as every difference is.
+  - Gap: "Not in the room: a Form D filing matching <company>"; "Not in the room: press naming the <round> investors". No Form D is never a flag.
+  - Never: name an investor no source names. Never take the deck's list of backers as confirmed. Never use Crunchbase data without an arrangement. Never read a missing filing as hiding something.
+  - Get more info: "check Form D filings back to <year>"; "find press on the <round>"; "read the cap table from the full room".
+- **Co-founder issues.**
+  - Sources: the founder names from the input. GitHub REST for each founder's user and repos: `login`, `company`, `bio`, `public_repos`, `followers` and `created_at` ([GitHub Users API](https://docs.github.com/en/rest/users/users)); 60 requests an hour without a token and 5,000 with one, search 30 a minute with a token, a secondary limit of 900 points a minute ([REST limits](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api), [Search](https://docs.github.com/en/rest/search/search)). Personal sites, talks and posts found through Tavily or You.com, saved with URL and date. arXiv, one request every three seconds and one connection at a time ([arXiv terms](https://info.arxiv.org/help/api/tou.html)). Akta News Signals for arrivals and departures.
+  - Linked only: X charges $0.005 a post read and $0.010 a user read ([X pricing](https://docs.x.com/x-api/getting-started/pricing)), so the tab links a founder's handle and reads nothing.
+  - LinkedIn is never scraped; the organisers' tracks say its terms prohibit it ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt)). A LinkedIn export the founder shares with consent may be read.
+  - Fetches: for each founder, dated sources that name the company and a role; dated sources that show two founders worked together before (an earlier employer named in two places, a shared repo, a co-written paper or talk); press naming a founder's arrival or departure; the company's team page today.
+  - Claims: who each source names as a founder, with its date; "worked together before", with the dated sources; a departure named in a dated outside source. They feed **team**.
+  - Corroboration: a founder's role is corroborated when the deck and a dated outside source agree, such as press, a talk host's page or GitHub organisation membership. The founders' own posts and the company's own site count as one source with the deck. Time together is shown only from dated sources that name both founders.
+  - Differences: a person named as a co-founder in a dated outside source and missing from the deck's team slide, or a founding date that differs between sources. Each is shown with both quotes and severity `watch`, as a question for the operator. The script never makes it a flag, and nothing gives a reason for it.
+  - Gap: "No public evidence found" for a founder, printed as that, never as a negative.
+  - Never: scrape LinkedIn. Never infer anything in the "not fair" column of [FRAMEWORKS.md](FRAMEWORKS.md), Scan 6 (age, gender, ethnicity, nationality, religion, politics, health, family, or anything from a photo, voice or accent). Never read missing GitHub activity as a weakness. Never guess why a founder left. Never match a person by name alone: the source must also name the company or its domain. Never quote personal posts that are not about the company.
+  - Get more info: "look up <person> named in <URL>"; "read this talk: <URL>"; "read the LinkedIn export the founder sent".
+- **Whether the story matches what is online.**
+  - Sources: the company's website, extracted through Tavily or You.com Contents ($1 per 1,000 pages, [You.com pricing](https://you.com/pricing)) and saved with its date. Hacker News through the Algolia API, no key, 10,000 requests an hour per IP ([HN Algolia API](https://hn.algolia.com/api)). Product Hunt's GraphQL API with a token; its limit is not published and its docs say it "must not be used for commercial purposes" ([Product Hunt API](https://api.producthunt.com/v2/docs)), so it stays `not_checked` until Ken's decision. Press found through Tavily, You.com and Akta News Signals. Apple Lookup for claims about the app. Customers' own pages, for customers the deck names.
+  - Fetches: for each claim on the deck (entry 1.1's claim extraction), the same metric or fact on the website, in press, on Hacker News and on Product Hunt, each with its date. That covers numbers, customers named, the launch date, the founding date and the product's claims.
+  - Claims: each outside statement as a claim carrying the deck claim's label, so the memo links them. Each feeds **whichever piece its label belongs to**. The website-against-deck number check is entry 7.1's, extended to press and customers' pages.
+  - Corroboration: the company's website, blog, press releases and the founders' own posts join the narrative set in "Piece verdicts", so the website agreeing with the deck is one source. A deck claim is corroborated only by a source the company did not write: an outlet's own reporting, a customer's own page, a Form D row, an Apple record, or a Hacker News post by someone outside the company. A press release is marked `company_own_claim`, as in entry 3.2.
+  - Differences: a website number that differs from the deck beyond `match_tolerance` is a conflict (entry 7.1's `site_disagrees_with_deck`). An older public figure is compared with a newer deck figure only with both dates named. This finds differences in reporting. It never calls anything fraud or fake ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:33 PM block).
+  - Gap: `none_found` per source. An empty footprint is shown as a finding (`footprint_empty`), never as a flag.
+  - Never: read a small footprint as a weak company. Never profile commenters. Never fetch reddit.com; Reddit is read only from pages Ken saved, through online-presence. Never use Product Hunt data in a paid product before Ken's decision.
+  - Get more info: "check the customer logos on slide <n> against the customers' own sites"; "search Hacker News for <old product name>"; "read the company's blog".
+- **Where it shows in the readout.**
+  - A new rule in Step 1 of "Piece verdicts" in FRAMEWORKS.md: a claim from this scan goes to the piece its tab names above, as a claim from Scan 2 goes to comps.
+  - A "Before the data room" panel through the ScanResult's `panels`: one row per tab, with its status (found, one reading, none found, not checked), its sources and the date each was read. The page groups this scan's gaps under "Not found online"; each gap's `what` still starts "Not in the room:", as the schema requires.
+  - The top green and red flags draw on these claims by the same script rule as every other claim. Nothing missing online becomes a red flag.
+- **The FRAMEWORKS.md entries it adds.** A "Scan 8. Outside-in" section. Investors and co-founder issues get new entries in the seven parts. Traffic and reviews run entry 3.1 on the company itself. The story tab runs entry 7.1, extended to press and customers' pages. The `rating` unit, the wider narrative set and the Step 1 rule go in the same change.
+- **How it relates to the other slices.**
+  - [market-signals](#market-signals) stays a separate Saturday slice and is unchanged, Waits on included. It shows this week's cached competitor readings. This slice is its live version for the company itself, and it keeps the competitor rows. Making the signals panel read live rows is part of this slice.
+  - [online-presence](#online-presence) stays separate and now waits on this slice. This slice builds the company resolver, the cache, and the Hacker News and Apple clients, so online-presence reuses those instead of building them again. What online-presence alone adds is the Reddit mini-browser and the Facebook page text the investor pastes.
+  - [founder-profiles](#founder-profiles) stays separate and now waits on this slice. It judges each founder's fit and commitment (FRAMEWORKS.md, Scan 6). The co-founder tab asks a different question: the team's history together, and whether the sources agree on who the founders are. Both read the same GitHub and page fetches through the one cache built here.
+  - [comps-deep](#comps-deep) stays separate. Both read the same Form D quarterly files. This slice reads the company's own rows; comps-deep ranks other companies.
+  - [inbound-unasked](#inbound-unasked) is unchanged. Once it exists, this scan is the first to run on an inbound, because it needs only a name and a deck.
+
+**Done when:**
+
+- A recorded fixture under `scans/outside/tests/fixtures/` holds saved responses from every source (Akta, including a 403; Tavily; You.com; Hacker News; Apple Lookup; GitHub; Form D rows; EDGAR; Product Hunt), a fixture company, and a matching `cache/index.json`.
+- Every test runs with `TRICORDER_OFFLINE=1` and a network guard that fails any outside call, so CI never calls the network.
+- Resolution tests pass: the domain resolves the company; name plus city resolves it; a free mail sender's domain is ignored; two same-named candidates produce a candidate list, no fetch from any tab, and no claim.
+- On the fixture, each tab writes its claims and gaps, and each claim lands in the piece its tab names.
+- The Akta 403 in the fixture produces a `no_signal` gap and no claim with a value of zero.
+- A fixture company with no footprint produces gaps only. No claim has severity "flag", and no piece verdict moves to looking weak because of it.
+- A test shows the fetch client refuses any linkedin.com or reddit.com address.
+- A fixture with a co-founder named in a dated outside article and missing from the deck produces a `watch` claim with both quotes, no reason, and no flag.
+- A fixture where the deck's round amount matches the Form D amount sold marks the claim corroborated. A fixture where the deck matches only the company's own website does not.
+- A folder holding only a deck PDF, and a folder holding only an inbound email, each produce `outside.json`.
+- A live run on two real companies Ken approves, each chosen for having a public footprint. One is a US company listed on a stock exchange, with an app on Apple's App Store and SEC filings; its public investor presentation stands in for the deck. The other is a venture-backed private US company with a Form D filing in the last four quarters, a public website and at least one Hacker News post; it runs with no deck, and its story tab reports "no deck claims to check" as a gap. On both, every tab returns claims or a gap with its reason, and every claim's source opens from `cache/index.json`.
+- The quote checker passes on every claim, from the fixture and from both live runs.
+- The run on Hollis Voice reports every outside source as none found or not checked, each with its reason, and every piece verdict is the same as in the run without this scan.
+- The ScanResult lists the calls and credits spent per source.
+- readout-store's delete removes the company's saved files and index entries.
+- Once steering exists, each tab's "get more info" steer on the fixture adds claims marked new, and the diff names any verdict it moved.
+
+**Who:** agent, with Ken for the keys, approving the two live companies, and the Product Hunt and Apple review feed decisions.
+
+**Judgment:** yes.
+
+### bank-check
+
+**Compare the bank account with the books.** With the founder's consent, the investor connects the company's bank account through a banking connector. Tricorder compares deposits with the revenue rows, and outflows with the model's burn, and shows each difference as a claim with its sources ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:52 PM block). It is a check for differences in reporting, never fraud detection (1:33 PM block). A set of books that is fake but consistent with the bank can still get through, and the readout says so.
+
+**Waits on:** [readout-store](#readout-store), so bank data is stored with the readout and deleted with it; a Plaid developer account, which is a board row for Ken.
+
+**Includes:**
+
+- **The connector: Plaid first.** Its Sandbox offers custom test users whose data covers Balance, Identity and Transactions, among other products ([Plaid Sandbox custom users](https://plaid.com/docs/sandbox/user-custom/), [saved copy](../reports/20261022.02_research/raw/feasibility/plaid/sandbox_user_custom.md)). No other connector is named here, because no other connector's sandbox docs have been read and saved. Plaid's production terms and pricing have not been read either; the builder reads them before any real account is connected.
+- **The consent step.** The founder, not the investor, signs in to the bank through Plaid Link, Plaid's own sign-in flow, so the investor never sees the bank credentials. The page states what is read (balances and transactions, read only), for which accounts and for how long. Tricorder records the consent with its date. The founder can withdraw it, and withdrawing deletes the connection and every transaction pulled, under the data rule from the 11:20 AM block.
+- **The checks.** Each is a script; a model only sorts messy transaction descriptions into categories.
+  - Deposits against the revenue rows: deposits per month, matched to the revenue file's rows by customer and month, within `match_tolerance`.
+  - Outflows against the model's burn: outflows per month against the model's net burn for the same months.
+  - The bank balance at the as-of date against the model's cash. On Hollis Voice the model's cash rests on the model alone today, because no bank statement is in the room ([FRAMEWORKS.md](FRAMEWORKS.md), "Piece verdicts", worked example).
+  - New check names in [FRAMEWORKS.md](FRAMEWORKS.md): `bank_deposits_vs_revenue_rows`, `bank_outflows_vs_model_burn`, `bank_balance_vs_model_cash`, written in the seven parts.
+- **The pieces it feeds.** Deposits feed **traction and revenue**. Outflows and the balance feed **burn and runway**. The bank counts as a source independent of the narrative set and of the model, so a match corroborates and a difference contradicts.
+- **The gap when no bank is connected.** "Not in the room: bank transactions (no bank connected)", with `would_need` "the founder connects the company's account". It is never a flag.
+- **The demo path.** A Plaid Sandbox custom user with configured accounts, created in Sandbox Studio or with `/sandbox/public_token/create`. The limits from the saved page: a configuration larger than about 55 KB, or about 250 transactions, may make the sign-in fail, and more than ten accounts on one custom user fails. Use a non-OAuth test bank such as First Platypus Bank. `roll_dates_forward` keeps the dates current, and the generator leaves it off when a test needs exact dates.
+- **The Hollis Voice bank feed.** The data-room generator writes a bank feed from the same simulation, within those limits. Its deposits disagree with the revenue file in one planted place. The plant goes in the answer key with its location, true value, shown value and check name. It is written only with a generator option and kept out of the Saturday rooms, so Saturday's score of found entries and decoys does not change.
+
+**Done when:**
+
+- On the Hollis Voice bank feed, `bank_deposits_vs_revenue_rows` finds the planted difference and nothing else.
+- With the plant switched off, no bank check fires.
+- On the Sandbox custom user, the bank's balance and transactions arrive through Plaid and match the generated feed.
+- With no bank connected, the readout shows the gap and no flag.
+- Withdrawing consent deletes the connection and every pulled transaction, and readout-store's list for the company shows none.
+- Every claim passes the quote checker against the saved transaction data.
+- Tests run on a recorded Sandbox response, so CI never calls Plaid.
+
+**Who:** agent, with Ken for the Plaid account.
+
+**Judgment:** yes.
+
 ### online-presence
 
 The company's footprint: web, Hacker News, Product Hunt, app stores, Reddit, Facebook.
 
-**Waits on:** founder-profiles; someone reads Reddit's rules (the feasibility research did not); a decision on Product Hunt, whose API terms say non-commercial use.
+**Waits on:** [outside-in](#outside-in), for the company resolver, the cache and the Hacker News and Apple clients it builds; someone reads Reddit's rules (the feasibility research did not); a decision on Product Hunt, whose API terms say non-commercial use.
 
 **Includes:**
 
@@ -790,3 +940,19 @@ What makes Tricorder a product: the fund buys, the associate uses.
 **Who:** Ken.
 
 **Judgment:** n/a.
+
+### reference-checks
+
+Low priority: Ken is not sure Tricorder can take this on. Reference calls are routine, and investors say they do them poorly: "Most VCs do reference calls. From my conversations, few feel like they do them very well." ([seed investor, Jun 2025](https://formventures.substack.com/p/team-talks-ii-founder-reference-calls); the [voice-of-the-customer research](../reports/20261022.02_research/research_voice_of_customer.md), section 1). Tricorder prepares the calls. It never makes them.
+
+**Waits on:** [outside-in](#outside-in); [founder-profiles](#founder-profiles).
+
+**Includes:**
+
+- A list of people the operator could ask, drawn from the founder profiles and the outside-in tabs: former colleagues shown in dated sources, co-investors named in Form D or press, and customers named in the deck. Each person carries the source that names them.
+- A short question list for each person, drawn from the readout's weak pieces. Each question cites the claim it comes from.
+- Tricorder never contacts anyone. It finds no contact details beyond what the source that names the person already shows.
+
+**Who:** agent.
+
+**Judgment:** yes.

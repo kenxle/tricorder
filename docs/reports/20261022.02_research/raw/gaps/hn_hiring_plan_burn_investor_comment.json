@@ -1,0 +1,115 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "rchaudhary"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hiring",
+      "plan",
+      "burn",
+      "investor"
+     ],
+     "value": "The biggest shift from a frontline manager to Head of Engineering at an early-stage startup is that your success becomes tied to outcomes, not output. You move from managing sprints and people to managing uncertainty, tradeoffs, and company direction. A few things to expect:<p>* You will need to be both strategic and hands-on - There is rarely enough headcount to delegate everything, so you will spend part of your day writing code or unblocking engineers, and another part setting technical vision, hiring, and negotiating priorities with the founders.<p>* You will represent engineering in every company decision - You will be the voice of technical reality, balancing product ambition, delivery timelines, and team health. This often means saying \u201cno\u201d diplomatically and helping non-technical founders understand tradeoffs without losing trust.<p>* You will need to build systems, not inherit them - Processes, culture, and hiring practices will not exist yet. You will define what \u201cgood engineering\u201d looks like. It is both liberating and exhausting.<p>* Your job security will tie closely to company health - Startups are volatile, and even great leaders get caught in external turbulence. What makes it different this time is that you will have agency. You will help shape the runway, the <em>hiring plan</em>, and the company\u2019s technical credibility.<p>When evaluating the offer, ask the founders candidly about:<p>* <em>Burn</em> rate and fundraising timeline<p>* How they make decisions today<p>* What success looks like for engineering in the next 12 months<p>* How much equity is being offered, and what percentage of the company it represents on a fully diluted basis<p>* What the vesting schedule looks like and whether there is a cliff<p>* How the company handles refresh grants or top-ups as it grows<p>* Whether there is an employee option pool increase planned in the next round<p>* How liquidation preferences or <em>investor</em> terms might affect eventual outcomes<p>If they can answer these questions with clarity and alignment, that is a strong sign you will be able to lead rather than just survive."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Startup Head of Engineering"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_rchaudhary",
+    "story_45889013"
+   ],
+   "author": "rchaudhary",
+   "comment_text": "The biggest shift from a frontline manager to Head of Engineering at an early-stage startup is that your success becomes tied to outcomes, not output. You move from managing sprints and people to managing uncertainty, tradeoffs, and company direction. A few things to expect:<p>* You will need to be both strategic and hands-on - There is rarely enough headcount to delegate everything, so you will spend part of your day writing code or unblocking engineers, and another part setting technical vision, hiring, and negotiating priorities with the founders.<p>* You will represent engineering in every company decision - You will be the voice of technical reality, balancing product ambition, delivery timelines, and team health. This often means saying \u201cno\u201d diplomatically and helping non-technical founders understand tradeoffs without losing trust.<p>* You will need to build systems, not inherit them - Processes, culture, and hiring practices will not exist yet. You will define what \u201cgood engineering\u201d looks like. It is both liberating and exhausting.<p>* Your job security will tie closely to company health - Startups are volatile, and even great leaders get caught in external turbulence. What makes it different this time is that you will have agency. You will help shape the runway, the hiring plan, and the company\u2019s technical credibility.<p>When evaluating the offer, ask the founders candidly about:<p>* Burn rate and fundraising timeline<p>* How they make decisions today<p>* What success looks like for engineering in the next 12 months<p>* How much equity is being offered, and what percentage of the company it represents on a fully diluted basis<p>* What the vesting schedule looks like and whether there is a cliff<p>* How the company handles refresh grants or top-ups as it grows<p>* Whether there is an employee option pool increase planned in the next round<p>* How liquidation preferences or investor terms might affect eventual outcomes<p>If they can answer these questions with clarity and alignment, that is a strong sign you will be able to lead rather than just survive.",
+   "created_at": "2025-11-11T21:56:16Z",
+   "created_at_i": 1762898176,
+   "objectID": "45893436",
+   "parent_id": 45889013,
+   "story_id": 45889013,
+   "story_title": "Ask HN: Startup Head of Engineering",
+   "updated_at": "2026-03-05T23:02:05Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jedberg"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hiring",
+      "plan",
+      "burn",
+      "investor"
+     ],
+     "value": "Most of the good ones start with their most current blurb &quot;we make X for Y&quot;, which helps me remember who they are and also makes sure I'm on message when I talk to others about them.<p>Then it has runway and <em>burn</em> rate (how long will they still be alive if nothing changes).<p>Then it has KPIs that matter to their business, usually the ones they are tracking for themselves.  Monthly active users, change in daily actives, number of widgets produced, etc.<p>Then sometimes a <em>hiring plan</em>.  If they tell me who they are looking for I can sometimes help.<p>Then highlights, lowlights, and asks.<p>Those are usually the best ones because it means they are tracking these things and it also means if there is a place where I can help I can get it from the <em>investor</em> update."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Startup Mortality Rates"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://avc.xyz/startup-mortality-rates"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_jedberg",
+    "story_41512181"
+   ],
+   "author": "jedberg",
+   "comment_text": "Most of the good ones start with their most current blurb &quot;we make X for Y&quot;, which helps me remember who they are and also makes sure I&#x27;m on message when I talk to others about them.<p>Then it has runway and burn rate (how long will they still be alive if nothing changes).<p>Then it has KPIs that matter to their business, usually the ones they are tracking for themselves.  Monthly active users, change in daily actives, number of widgets produced, etc.<p>Then sometimes a hiring plan.  If they tell me who they are looking for I can sometimes help.<p>Then highlights, lowlights, and asks.<p>Those are usually the best ones because it means they are tracking these things and it also means if there is a place where I can help I can get it from the investor update.",
+   "created_at": "2024-09-14T21:06:36Z",
+   "created_at_i": 1726347996,
+   "objectID": "41542957",
+   "parent_id": 41542393,
+   "story_id": 41512181,
+   "story_title": "Startup Mortality Rates",
+   "story_url": "https://avc.xyz/startup-mortality-rates",
+   "updated_at": "2024-09-20T17:49:00Z"
+  }
+ ],
+ "hitsPerPage": 40,
+ "nbHits": 2,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=%22hiring+plan%22+burn+investor&tags=comment&hitsPerPage=40&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 16,
+ "processingTimingsMS": {
+  "_request": {
+   "queue": 2,
+   "roundTrip": 20
+  },
+  "fetch": {
+   "query": 8,
+   "scanning": 6,
+   "total": 15
+  },
+  "total": 16
+ },
+ "query": "\"hiring plan\" burn investor",
+ "serverTimeMS": 18,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=%22hiring+plan%22+burn+investor&tags=comment&hitsPerPage=40&advancedSyntax=true"
+}

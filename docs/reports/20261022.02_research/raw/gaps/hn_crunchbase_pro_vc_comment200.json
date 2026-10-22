@@ -1,0 +1,212 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "threeseed"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "crunchbase",
+      "pro",
+      "vc"
+     ],
+     "value": "a) This is very incomplete. Australia has more than just two <em>VC</em>.<p>b) If you're looking for a complete list just signup for a <em>Crunchbase</em> <em>Pro</em> trial, scrape the site and then cancel it. Or just invest in it if you are seriously fundraising."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "vc"
+     ],
+     "value": "<em>VC</em> List"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://docs.google.com/spreadsheets/d/1c5zoCzjQKlzdDW-6cctRm71ZiCmLQ7EJFZJtp_6cbeI/edit?rm=minimal#gid=428940999"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_threeseed",
+    "story_22042111"
+   ],
+   "author": "threeseed",
+   "children": [
+    22045105,
+    22047930
+   ],
+   "comment_text": "a) This is very incomplete. Australia has more than just two VC.<p>b) If you&#x27;re looking for a complete list just signup for a Crunchbase Pro trial, scrape the site and then cancel it. Or just invest in it if you are seriously fundraising.",
+   "created_at": "2020-01-14T12:22:04Z",
+   "created_at_i": 1579004524,
+   "objectID": "22044108",
+   "parent_id": 22042111,
+   "story_id": 22042111,
+   "story_title": "VC List",
+   "story_url": "https://docs.google.com/spreadsheets/d/1c5zoCzjQKlzdDW-6cctRm71ZiCmLQ7EJFZJtp_6cbeI/edit?rm=minimal#gid=428940999",
+   "updated_at": "2024-09-20T05:29:50Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "rjcantrell"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "crunchbase",
+      "pro",
+      "vc"
+     ],
+     "value": "Kabbage - San Francisco, CA and Atlanta, GA - <a href=\"http://www.kabbage.com\" rel=\"nofollow\">http://www.kabbage.com</a><p>Kabbage has successfully created a new market niche in providing short-term cash advances to small businesses via a completely-automated underwriting system. After linking Kabbage to a marketplace account, accounting system, or business checking account, users can have funds in their PayPal account in minutes. Data science and machine learning approaches underlie the underwriting model and provide a fertile bed for deeper understanding of (and potentially further products targeting) the SMB ecosystem.<p>Kabbage has received a metric ton of good press and awards from TechCrunch et al, the fintech industry, and the founders have been on Bloomberg TV and Fox News several times. Investors and board members include former Yahoo! CEOs, Square co-founders, UPS, and a veritable who's who in the <em>VC</em> community -- <a href=\"http://www.crunchbase.com/organization/kabbage\" rel=\"nofollow\">http://www.<em>crunchbase</em>.com/organization/kabbage</a><p>Badass .NET jockeys sought in Atlanta, and badass data scientists sought in SF. Familiarity with the entire stack not necessary if the ability to learn it quickly is demonstrated.<p>Stats:<p><pre><code>  - Stack: ASP.NET MVC / REST WebAPI / EF / SQL Server\n  - Employees: 80ish\n  - Office doors: zero\n  - Responsibility, ambition, development pace, salaries: all high\n  - Provided hardware: MacBook <em>Pro</em> Retina (or PC equivalent), plus as many Thunderbolt displays as you dare daisy-chain\n  - Lunch, snacks, drinks, parking: free!\n  - Kegs: 2\n  - Patents: 2 (plus four more applications)\n  - People who've beat Ghosts n' Goblins on the multicade cabinet: ZERO AAARGH\n</code></pre>\nI am an alumni of the company and therefore do not speak in an official capacity, but I'm happy to answer your questions or give feedback on your resume: rj@rjcantrell.com<p>More position info: <a href=\"https://www.kabbage.com/company/careers\" rel=\"nofollow\">https://www.kabbage.com/company/careers</a> (I would rather you send me your resume, but if you contact them directly, tell them RJ sent you)"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Who is hiring? (May 2014)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_rjcantrell",
+    "story_7679431"
+   ],
+   "author": "rjcantrell",
+   "comment_text": "Kabbage - San Francisco, CA and Atlanta, GA - <a href=\"http://www.kabbage.com\" rel=\"nofollow\">http:&#x2F;&#x2F;www.kabbage.com</a><p>Kabbage has successfully created a new market niche in providing short-term cash advances to small businesses via a completely-automated underwriting system. After linking Kabbage to a marketplace account, accounting system, or business checking account, users can have funds in their PayPal account in minutes. Data science and machine learning approaches underlie the underwriting model and provide a fertile bed for deeper understanding of (and potentially further products targeting) the SMB ecosystem.<p>Kabbage has received a metric ton of good press and awards from TechCrunch et al, the fintech industry, and the founders have been on Bloomberg TV and Fox News several times. Investors and board members include former Yahoo! CEOs, Square co-founders, UPS, and a veritable who&#x27;s who in the VC community -- <a href=\"http://www.crunchbase.com/organization/kabbage\" rel=\"nofollow\">http:&#x2F;&#x2F;www.crunchbase.com&#x2F;organization&#x2F;kabbage</a><p>Badass .NET jockeys sought in Atlanta, and badass data scientists sought in SF. Familiarity with the entire stack not necessary if the ability to learn it quickly is demonstrated.<p>Stats:<p><pre><code>  - Stack: ASP.NET MVC &#x2F; REST WebAPI &#x2F; EF &#x2F; SQL Server\n  - Employees: 80ish\n  - Office doors: zero\n  - Responsibility, ambition, development pace, salaries: all high\n  - Provided hardware: MacBook Pro Retina (or PC equivalent), plus as many Thunderbolt displays as you dare daisy-chain\n  - Lunch, snacks, drinks, parking: free!\n  - Kegs: 2\n  - Patents: 2 (plus four more applications)\n  - People who&#x27;ve beat Ghosts n&#x27; Goblins on the multicade cabinet: ZERO AAARGH\n</code></pre>\nI am an alumni of the company and therefore do not speak in an official capacity, but I&#x27;m happy to answer your questions or give feedback on your resume: rj@rjcantrell.com<p>More position info: <a href=\"https://www.kabbage.com/company/careers\" rel=\"nofollow\">https:&#x2F;&#x2F;www.kabbage.com&#x2F;company&#x2F;careers</a> (I would rather you send me your resume, but if you contact them directly, tell them RJ sent you)",
+   "created_at": "2014-05-01T15:46:29Z",
+   "created_at_i": 1398959189,
+   "objectID": "7680463",
+   "parent_id": 7679431,
+   "story_id": 7679431,
+   "story_title": "Ask HN: Who is hiring? (May 2014)",
+   "updated_at": "2024-09-19T20:48:26Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "lobstersammich"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "crunchbase",
+      "pro",
+      "vc"
+     ],
+     "value": "Does anyone have a good alternative to Privacy.com where your virtual credit card transaction data isn't sold to Wall Street? If you're unfamiliar with what a &quot;virtual [credit] card&quot; is here's the page from Privacy.com's website: <a href=\"https://privacy.com/virtual-card\" rel=\"nofollow\">https://privacy.com/virtual-card</a> I use the Privacy app on my mobile phone to create virtual cards (primarily for work subscriptions). <em>Pro</em>-tip: since each Privacy card can have its own name put a tag such as `[WORK_RECURRING]` into the card name and then you can search your email inbox for `[WORK_RECURRING]`, quickly and easily finding all of the transactions / charges that you may want to submit to your workplace for reimbursement.<p>Privacy is owned / created by Lithic, but if you look at Lithic's investors you'll see that the plurality of the company's investors are in the private equity or <em>VC</em> space: Bessemer Ventures, Tusk Partner Ventures, Index Ventures, etc. You can see the Privacy.com / Privacy mobile app's funders here:\n<a href=\"https://www.crunchbase.com/organization/lithic-pay\" rel=\"nofollow\">https://www.<em>crunchbase</em>.com/organization/lithic-pay</a><p>Thus, I have no doubt that my transactions on cleverly-named Privacy app are being gifted or sold to Wall Street so that hedge funds can squeeze out a few addition drops of 'signal' from consumer purchase pattern data that would otherwise remain dark. (I'd imagine that many folks use the Privacy app to buy things that they'd rather not have show up on their regular credit card bills: 'adult websites', marijuana or tobacco products, etc.<p>So, two questions:<p>(1) Does anyone have a privacy-respecting alternative to Privacy.com's virtual credit cards?<p>(2) Does anyone know of a recent blog post where these virtual credit card services are compared / contrasted by<p>- the services that they offer,\n- the cost: free, paid, etc.,\n- the terms of service: how your data is re-sold / who your data is transmitted to"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Detect breaches with Canary credit cards"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://blog.thinkst.com/2023/01/swipe-right-on-our-new-credit-card-tokens.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_lobstersammich",
+    "story_34476507"
+   ],
+   "author": "lobstersammich",
+   "children": [
+    34482329,
+    34482676
+   ],
+   "comment_text": "Does anyone have a good alternative to Privacy.com where your virtual credit card transaction data isn&#x27;t sold to Wall Street? If you&#x27;re unfamiliar with what a &quot;virtual [credit] card&quot; is here&#x27;s the page from Privacy.com&#x27;s website: <a href=\"https:&#x2F;&#x2F;privacy.com&#x2F;virtual-card\" rel=\"nofollow\">https:&#x2F;&#x2F;privacy.com&#x2F;virtual-card</a> I use the Privacy app on my mobile phone to create virtual cards (primarily for work subscriptions). Pro-tip: since each Privacy card can have its own name put a tag such as `[WORK_RECURRING]` into the card name and then you can search your email inbox for `[WORK_RECURRING]`, quickly and easily finding all of the transactions &#x2F; charges that you may want to submit to your workplace for reimbursement.<p>Privacy is owned &#x2F; created by Lithic, but if you look at Lithic&#x27;s investors you&#x27;ll see that the plurality of the company&#x27;s investors are in the private equity or VC space: Bessemer Ventures, Tusk Partner Ventures, Index Ventures, etc. You can see the Privacy.com &#x2F; Privacy mobile app&#x27;s funders here:\n<a href=\"https:&#x2F;&#x2F;www.crunchbase.com&#x2F;organization&#x2F;lithic-pay\" rel=\"nofollow\">https:&#x2F;&#x2F;www.crunchbase.com&#x2F;organization&#x2F;lithic-pay</a><p>Thus, I have no doubt that my transactions on cleverly-named Privacy app are being gifted or sold to Wall Street so that hedge funds can squeeze out a few addition drops of &#x27;signal&#x27; from consumer purchase pattern data that would otherwise remain dark. (I&#x27;d imagine that many folks use the Privacy app to buy things that they&#x27;d rather not have show up on their regular credit card bills: &#x27;adult websites&#x27;, marijuana or tobacco products, etc.<p>So, two questions:<p>(1) Does anyone have a privacy-respecting alternative to Privacy.com&#x27;s virtual credit cards?<p>(2) Does anyone know of a recent blog post where these virtual credit card services are compared &#x2F; contrasted by<p>- the services that they offer,\n- the cost: free, paid, etc.,\n- the terms of service: how your data is re-sold &#x2F; who your data is transmitted to",
+   "created_at": "2023-01-22T19:55:09Z",
+   "created_at_i": 1674417309,
+   "objectID": "34481564",
+   "parent_id": 34476507,
+   "story_id": 34476507,
+   "story_title": "Detect breaches with Canary credit cards",
+   "story_url": "https://blog.thinkst.com/2023/01/swipe-right-on-our-new-credit-card-tokens.html",
+   "updated_at": "2024-09-20T13:06:44Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "manquer"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "crunchbase",
+      "pro",
+      "vc"
+     ],
+     "value": "Likely a16z exercised their <em>pro</em>-rata as a16z is also listed in their Series B on <em>Crunchbase</em> along with the seed.<p>There are any number of reasons a lead investor in your seed doesn't lead your Series B, and there is no way to know a16z did not want to lead in the first place. A different fund may give a larger check/different terms/ a partner you want on board and you may accept that instead etc.<p>There are many companies with outsized valuations that do not justify the revenue or any other metric, it is neither new to this wave (or even the dotcom wave) nor is it all that uncommon. On the surface it doesn't look like there is anything out of ordinary Kagan has done yet.<p>It is high risk industry after all, if investors put strong filtering criteria then they risk loosing on deals which were actually legitimate or became legit with funding, it is risk <em>VC</em>s are quite aware of and willing to take.<p>A Buyer should be beware of what he is getting into, accreditation is a thin shield,With Increasing SPAC listings and inflated markets even public listing won't protect them from early stage startup shenanigans these days companies like Nikola (anyone can invest ) do exist."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Can a $310M startup avoid due diligence?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://svgossip.substack.com/p/can-a-310m-startup-avoid-due-diligence"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_manquer",
+    "story_30248282"
+   ],
+   "author": "manquer",
+   "comment_text": "Likely a16z exercised their pro-rata as a16z is also listed in their Series B on Crunchbase along with the seed.<p>There are any number of reasons a lead investor in your seed doesn&#x27;t lead your Series B, and there is no way to know a16z did not want to lead in the first place. A different fund may give a larger check&#x2F;different terms&#x2F; a partner you want on board and you may accept that instead etc.<p>There are many companies with outsized valuations that do not justify the revenue or any other metric, it is neither new to this wave (or even the dotcom wave) nor is it all that uncommon. On the surface it doesn&#x27;t look like there is anything out of ordinary Kagan has done yet.<p>It is high risk industry after all, if investors put strong filtering criteria then they risk loosing on deals which were actually legitimate or became legit with funding, it is risk VCs are quite aware of and willing to take.<p>A Buyer should be beware of what he is getting into, accreditation is a thin shield,With Increasing SPAC listings and inflated markets even public listing won&#x27;t protect them from early stage startup shenanigans these days companies like Nikola (anyone can invest ) do exist.",
+   "created_at": "2022-02-07T20:27:17Z",
+   "created_at_i": 1644265637,
+   "objectID": "30250554",
+   "parent_id": 30249619,
+   "story_id": 30248282,
+   "story_title": "Can a $310M startup avoid due diligence?",
+   "story_url": "https://svgossip.substack.com/p/can-a-310m-startup-avoid-due-diligence",
+   "updated_at": "2024-09-20T10:26:38Z"
+  }
+ ],
+ "hitsPerPage": 200,
+ "nbHits": 4,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=crunchbase+pro+VC&tags=comment&hitsPerPage=200&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 18,
+ "processingTimingsMS": {
+  "_request": {
+   "queue": 17,
+   "roundTrip": 14
+  },
+  "fetch": {
+   "query": 11,
+   "scanning": 4,
+   "total": 16
+  },
+  "total": 18
+ },
+ "query": "crunchbase pro VC",
+ "serverTimeMS": 36,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=crunchbase+pro+VC&tags=comment&hitsPerPage=200"
+}

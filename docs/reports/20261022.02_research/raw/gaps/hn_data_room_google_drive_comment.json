@@ -1,0 +1,85 @@
+{
+ "exhaustive": {
+  "nbHits": true,
+  "typo": true
+ },
+ "exhaustiveNbHits": true,
+ "exhaustiveTypo": true,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "rdl"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "data",
+      "room",
+      "google",
+      "drive"
+     ],
+     "value": "I've been testing Dropbox, box.net, <em>Google Drive</em>, and AeroFS head to head for the past month or so (I guess I should add SpiderOak, Wuala, Bitcasa, and maybe something else I don't know about)<p>They all do pretty well for small datasets (1-10GB of text files, office documents, mp3s, and sometimes 1-2GB video files and similar files) on OSX and Windows 7.  I haven't tried them on Linux or mobile devices much.  They all kind of suck with multi-user access (which I simulated by putting clients on all my machines and using them randomly), larger files, etc.<p>None have particularly good performance (fucking Comcast Business; reasonably good on the colo LAN but still not what I'd consider great).  Even with the LAN Sync options turned on, adding a new large file with a few client devices on the same LAN causes pain (multiple trips up and down...).  A per-client 1/10 of the link size throttle isn't really helpful with 10 clients.  AeroFS is different (since it's peer to peer), but is a lot slower than the LAN speed in my experience to sync.  Having clients on VPN sometimes makes the whole thing even weirder, since machines on the same LAN aren't on the same network, so syncing traffic goes over a (potentially remote) VPN.  And then there's the lulz caused by sync-over-cellular, which admittedly isn't transparent to the client (mifi hotspot sometimes).<p>Looking forward to just getting an 8x4TB Synology or FreeNAS for home, syncing with some combination of physical drives and rsync to/from the colo, and using disk in the colo.  iSCSI seems like the best solution.<p>In the long run, I think what's needed is a smarter client -- it should be smart about syncing based on what network I'm on (VPN, LTE, etc.), pre-caching some files and not others (either explicitly or predictively, and maybe different on different devices)<p>There's also the huge mess of security -- both confidentiality and versioning/availability.  For multi-user, you can't just layer truecrypt on top.  It's depressing that someone yesterday asked \"what's the best way to manage corporate documents without putting a copy on every laptop...\" (<em>data room</em> style) and the best answer in 2012 seems to be SharePoint :("
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "google",
+      "drive"
+     ],
+     "value": "Going back to Dropbox from <em>Google Drive</em>"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://productforums.google.com/forum/#!topic/drive/pVFlN_rfdqc"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_rdl",
+    "story_4710366"
+   ],
+   "author": "rdl",
+   "children": [
+    4710983,
+    4711062,
+    4711157
+   ],
+   "comment_text": "I've been testing Dropbox, box.net, Google Drive, and AeroFS head to head for the past month or so (I guess I should add SpiderOak, Wuala, Bitcasa, and maybe something else I don't know about)<p>They all do pretty well for small datasets (1-10GB of text files, office documents, mp3s, and sometimes 1-2GB video files and similar files) on OSX and Windows 7.  I haven't tried them on Linux or mobile devices much.  They all kind of suck with multi-user access (which I simulated by putting clients on all my machines and using them randomly), larger files, etc.<p>None have particularly good performance (fucking Comcast Business; reasonably good on the colo LAN but still not what I'd consider great).  Even with the LAN Sync options turned on, adding a new large file with a few client devices on the same LAN causes pain (multiple trips up and down...).  A per-client 1/10 of the link size throttle isn't really helpful with 10 clients.  AeroFS is different (since it's peer to peer), but is a lot slower than the LAN speed in my experience to sync.  Having clients on VPN sometimes makes the whole thing even weirder, since machines on the same LAN aren't on the same network, so syncing traffic goes over a (potentially remote) VPN.  And then there's the lulz caused by sync-over-cellular, which admittedly isn't transparent to the client (mifi hotspot sometimes).<p>Looking forward to just getting an 8x4TB Synology or FreeNAS for home, syncing with some combination of physical drives and rsync to/from the colo, and using disk in the colo.  iSCSI seems like the best solution.<p>In the long run, I think what's needed is a smarter client -- it should be smart about syncing based on what network I'm on (VPN, LTE, etc.), pre-caching some files and not others (either explicitly or predictively, and maybe different on different devices)<p>There's also the huge mess of security -- both confidentiality and versioning/availability.  For multi-user, you can't just layer truecrypt on top.  It's depressing that someone yesterday asked \"what's the best way to manage corporate documents without putting a copy on every laptop...\" (data room style) and the best answer in 2012 seems to be SharePoint :(",
+   "created_at": "2012-10-29T01:41:46Z",
+   "created_at_i": 1351474906,
+   "objectID": "4710683",
+   "parent_id": 4710366,
+   "points": null,
+   "story_id": 4710366,
+   "story_title": "Going back to Dropbox from Google Drive",
+   "story_url": "http://productforums.google.com/forum/#!topic/drive/pVFlN_rfdqc",
+   "updated_at": "2023-09-06T21:25:14Z"
+  }
+ ],
+ "hitsPerPage": 40,
+ "nbHits": 1,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=%22data+room%22+%22google+drive%22&tags=comment&hitsPerPage=40&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 10,
+ "processingTimingsMS": {
+  "_request": {
+   "queue": 60,
+   "roundTrip": 23
+  },
+  "fetch": {
+   "scanning": 8,
+   "total": 9
+  },
+  "total": 10
+ },
+ "query": "\"data room\" \"google drive\"",
+ "serverTimeMS": 71,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=%22data+room%22+%22google+drive%22&tags=comment&hitsPerPage=40&advancedSyntax=true"
+}

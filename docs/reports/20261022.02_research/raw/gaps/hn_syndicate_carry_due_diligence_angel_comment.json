@@ -1,0 +1,85 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "memossy"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "syndicate",
+      "carry",
+      "due",
+      "diligence",
+      "angel"
+     ],
+     "value": "It looks to be a pretty smart strategy, take the top 50 <em>syndicate</em> leads, put avg $400k behind them in year 1 ($20m investment).<p>This grows platform, in year 2 put $500k behind top 100 <em>syndicate</em> leads ($50m investment) as more money available for <em>syndicate</em> leads.<p><em>Angel</em>List takes the management fee on the $400m ($4m a year say as a &quot;fund of funds&quot; at 1%), 5% <em>carry</em> on the <em>syndicate</em>. Note 99 max investors per<p>The <em>syndicate</em> leads take the <em>carry</em> and do most of the <em>due diligence</em>, CSC Upshot gets to follow on on whatever deals they like most."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "angel"
+     ],
+     "value": "<em>Angel</em>List Announces $400M Early-Stage Fund"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.wsj.com/article_email/coming-soon-from-china-a-400-million-bonanza-for-u-s-startups-1444622462-lMyQjAxMTE1NTEwMjgxMjI2Wj"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_memossy",
+    "story_10372739"
+   ],
+   "author": "memossy",
+   "children": [
+    10375464
+   ],
+   "comment_text": "It looks to be a pretty smart strategy, take the top 50 syndicate leads, put avg $400k behind them in year 1 ($20m investment).<p>This grows platform, in year 2 put $500k behind top 100 syndicate leads ($50m investment) as more money available for syndicate leads.<p>AngelList takes the management fee on the $400m ($4m a year say as a &quot;fund of funds&quot; at 1%), 5% carry on the syndicate. Note 99 max investors per<p>The syndicate leads take the carry and do most of the due diligence, CSC Upshot gets to follow on on whatever deals they like most.",
+   "created_at": "2015-10-12T10:15:40Z",
+   "created_at_i": 1444644940,
+   "objectID": "10373554",
+   "parent_id": 10372739,
+   "story_id": 10372739,
+   "story_title": "AngelList Announces $400M Early-Stage Fund",
+   "story_url": "http://www.wsj.com/article_email/coming-soon-from-china-a-400-million-bonanza-for-u-s-startups-1444622462-lMyQjAxMTE1NTEwMjgxMjI2Wj",
+   "updated_at": "2024-09-19T22:26:07Z"
+  }
+ ],
+ "hitsPerPage": 40,
+ "nbHits": 1,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=%22syndicate%22+carry+%22due+diligence%22+angel&tags=comment&hitsPerPage=40&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 9,
+ "processingTimingsMS": {
+  "_request": {
+   "queue": 64,
+   "roundTrip": 15
+  },
+  "afterFetch": {
+   "total": 1
+  },
+  "fetch": {
+   "query": 6,
+   "total": 7
+  },
+  "total": 9
+ },
+ "query": "\"syndicate\" carry \"due diligence\" angel",
+ "serverTimeMS": 73,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=%22syndicate%22+carry+%22due+diligence%22+angel&tags=comment&hitsPerPage=40&advancedSyntax=true"
+}

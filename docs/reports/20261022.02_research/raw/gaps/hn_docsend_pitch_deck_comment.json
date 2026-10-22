@@ -1,0 +1,795 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "GrimLabs"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "pitch",
+      "deck"
+     ],
+     "value": "Built this because I was paying $45/user/month for <em>DocSend</em> to share <em>pitch</em> <em>decks</em>. That's it. Serve pages as images, count the views, charge a fortune.\nPapermark is the obvious open-source answer but it's AGPL -- if you want to embed a secure doc viewer in a commercial product, that's a dealbreaker. And there's no npm package for this anywhere. If you want secure document viewing in your app today, you're writing it from scratch.\nCloakShare is MIT, API-first, and ships an embeddable Web Component. Upload a file, get a tracked link. Recipients hit an email gate, view pages rendered on canvas with per-session watermarks (email + session ID baked in), you get webhooks for every page turn and time spent. Revoke anytime.\nAlso handles video -- HLS streaming with adaptive quality tiers and watermark overlays. <em>DocSend</em> doesn't do this at all.\nA few choices worth mentioning if you want to dig in:\nHono over Express -- runs on Node, Bun, Deno, and edge runtimes. SQLite/Turso over Postgres -- zero config for self-hosting, Turso when you need distributed. Poppler over MuPDF because MuPDF is AGPL and would poison the license. Canvas rendering over PDF.js because PDF.js hands the raw file to the browser -- no watermarks, no analytics, no access control.\nOn the watermark question: yes, you can screenshot. Canvas watermarks make leaks traceable and casual sharing inconvenient -- they're not DRM. Same as <em>DocSend</em>. I'd rather say that upfront than have someone find out and call it snake oil.\nSelf-hosted version is MIT, no feature gates. Cloud version (coming) handles the ops. That's the business model. <a href=\"https://www.cloakshare.dev/\" rel=\"nofollow\">https://www.cloakshare.dev/</a>"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "docsend"
+     ],
+     "value": "CloakShare \u2013 Open-source <em>DocSend</em> alternative with video streaming (MIT)"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://github.com/cloakshare/cloakshare"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_GrimLabs",
+    "story_47286949"
+   ],
+   "author": "GrimLabs",
+   "comment_text": "Built this because I was paying $45&#x2F;user&#x2F;month for DocSend to share pitch decks. That&#x27;s it. Serve pages as images, count the views, charge a fortune.\nPapermark is the obvious open-source answer but it&#x27;s AGPL -- if you want to embed a secure doc viewer in a commercial product, that&#x27;s a dealbreaker. And there&#x27;s no npm package for this anywhere. If you want secure document viewing in your app today, you&#x27;re writing it from scratch.\nCloakShare is MIT, API-first, and ships an embeddable Web Component. Upload a file, get a tracked link. Recipients hit an email gate, view pages rendered on canvas with per-session watermarks (email + session ID baked in), you get webhooks for every page turn and time spent. Revoke anytime.\nAlso handles video -- HLS streaming with adaptive quality tiers and watermark overlays. DocSend doesn&#x27;t do this at all.\nA few choices worth mentioning if you want to dig in:\nHono over Express -- runs on Node, Bun, Deno, and edge runtimes. SQLite&#x2F;Turso over Postgres -- zero config for self-hosting, Turso when you need distributed. Poppler over MuPDF because MuPDF is AGPL and would poison the license. Canvas rendering over PDF.js because PDF.js hands the raw file to the browser -- no watermarks, no analytics, no access control.\nOn the watermark question: yes, you can screenshot. Canvas watermarks make leaks traceable and casual sharing inconvenient -- they&#x27;re not DRM. Same as DocSend. I&#x27;d rather say that upfront than have someone find out and call it snake oil.\nSelf-hosted version is MIT, no feature gates. Cloud version (coming) handles the ops. That&#x27;s the business model. <a href=\"https:&#x2F;&#x2F;www.cloakshare.dev&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.cloakshare.dev&#x2F;</a>",
+   "created_at": "2026-03-07T12:14:45Z",
+   "created_at_i": 1772885685,
+   "objectID": "47286950",
+   "parent_id": 47286949,
+   "story_id": 47286949,
+   "story_title": "CloakShare \u2013 Open-source DocSend alternative with video streaming (MIT)",
+   "story_url": "https://github.com/cloakshare/cloakshare",
+   "updated_at": "2026-03-07T12:19:32Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "eminfaliyev1991"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "pitch",
+      "deck"
+     ],
+     "value": "While fundraising, I got frustrated with <em>pitch</em> <em>deck</em> tools:<p>PDFs = no version control or visibility.<p><em>DocSend</em> = pricey, limited analytics.<p>Others felt rigid or overpriced.<p>So I built PitchRaft\n \u2014 think <em>DocSend</em> + Hotjar for <em>pitch</em> decks:<p>Heatmaps: see what slides investors read, skip, or re-watch.<p>FOMO overlays: subtle nudges like \u201c10 investors are viewing.\u201d<p>Engagement metrics: time per slide, replays, click-throughs.<p>Always updated: change decks without breaking links.<p>Not just tracking views \u2014 it helps founders craft better decks based on real investor behavior. Using it ourselves has improved our fundraising and led to more follow-up meetings.<p>Curious what this community thinks: would you use this over PDFs / <em>DocSend</em>? Any pitfalls you see in investor-facing analytics?"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "docsend",
+      "pitch"
+     ],
+     "value": "PitchRaft \u2013 <em>DocSend</em> Meets Hotjar for <em>Pitch</em> Decks"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://pitchraft.com/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_eminfaliyev1991",
+    "story_45439537"
+   ],
+   "author": "eminfaliyev1991",
+   "comment_text": "While fundraising, I got frustrated with pitch deck tools:<p>PDFs = no version control or visibility.<p>DocSend = pricey, limited analytics.<p>Others felt rigid or overpriced.<p>So I built PitchRaft\n \u2014 think DocSend + Hotjar for pitch decks:<p>Heatmaps: see what slides investors read, skip, or re-watch.<p>FOMO overlays: subtle nudges like \u201c10 investors are viewing.\u201d<p>Engagement metrics: time per slide, replays, click-throughs.<p>Always updated: change decks without breaking links.<p>Not just tracking views \u2014 it helps founders craft better decks based on real investor behavior. Using it ourselves has improved our fundraising and led to more follow-up meetings.<p>Curious what this community thinks: would you use this over PDFs &#x2F; DocSend? Any pitfalls you see in investor-facing analytics?",
+   "created_at": "2025-10-01T16:17:09Z",
+   "created_at_i": 1759335429,
+   "objectID": "45439538",
+   "parent_id": 45439537,
+   "story_id": 45439537,
+   "story_title": "PitchRaft \u2013 DocSend Meets Hotjar for Pitch Decks",
+   "story_url": "https://pitchraft.com/",
+   "updated_at": "2026-03-05T22:48:00Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "DayneRathbone"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "pitch",
+      "deck"
+     ],
+     "value": "Karma | Software Engineer | Canberra, Australia | www.karma.wiki<p>Karma\u2019s vision is to make it easy to learn about any person. We\u2019re a small team of 3 founders, our product is in beta, we\u2019ve raised a seed round of investment, and we\u2019re ramping up for our launch in March.<p>Ideal candidate has experience in web development (front or back end), and is able to work full-time &amp; on-site. However, we will consider all applicants. Remuneration is negotiable, and will include cash and equity.<p>Learn more about us here:\n* Blog: <a href=\"https://blog.karma.wiki/\" rel=\"nofollow\">https://blog.karma.wiki/</a>\n* <em>Pitch</em> <em>deck</em>: <a href=\"https://docsend.com/view/ejkkpwd\" rel=\"nofollow\">https://<em>docsend</em>.com/view/ejkkpwd</a>\n* Founder\u2019s Karma bios: <a href=\"http://tinyurl.com/ClydeKarmaBio\" rel=\"nofollow\">http://tinyurl.com/ClydeKarmaBio</a>, <a href=\"http://tinyurl.com/MonishKarmaBio\" rel=\"nofollow\">http://tinyurl.com/MonishKarmaBio</a>, <a href=\"http://tinyurl.com/DayneKarmaBio\" rel=\"nofollow\">http://tinyurl.com/DayneKarmaBio</a><p>Contact: dayne@karma.wiki"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Who is hiring? (December 2016)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_DayneRathbone",
+    "story_13080280"
+   ],
+   "author": "DayneRathbone",
+   "comment_text": "Karma | Software Engineer | Canberra, Australia | www.karma.wiki<p>Karma\u2019s vision is to make it easy to learn about any person. We\u2019re a small team of 3 founders, our product is in beta, we\u2019ve raised a seed round of investment, and we\u2019re ramping up for our launch in March.<p>Ideal candidate has experience in web development (front or back end), and is able to work full-time &amp; on-site. However, we will consider all applicants. Remuneration is negotiable, and will include cash and equity.<p>Learn more about us here:\n* Blog: <a href=\"https:&#x2F;&#x2F;blog.karma.wiki&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;blog.karma.wiki&#x2F;</a>\n* Pitch deck: <a href=\"https:&#x2F;&#x2F;docsend.com&#x2F;view&#x2F;ejkkpwd\" rel=\"nofollow\">https:&#x2F;&#x2F;docsend.com&#x2F;view&#x2F;ejkkpwd</a>\n* Founder\u2019s Karma bios: <a href=\"http:&#x2F;&#x2F;tinyurl.com&#x2F;ClydeKarmaBio\" rel=\"nofollow\">http:&#x2F;&#x2F;tinyurl.com&#x2F;ClydeKarmaBio</a>, <a href=\"http:&#x2F;&#x2F;tinyurl.com&#x2F;MonishKarmaBio\" rel=\"nofollow\">http:&#x2F;&#x2F;tinyurl.com&#x2F;MonishKarmaBio</a>, <a href=\"http:&#x2F;&#x2F;tinyurl.com&#x2F;DayneKarmaBio\" rel=\"nofollow\">http:&#x2F;&#x2F;tinyurl.com&#x2F;DayneKarmaBio</a><p>Contact: dayne@karma.wiki",
+   "created_at": "2016-12-04T23:57:15Z",
+   "created_at_i": 1480895835,
+   "objectID": "13102466",
+   "parent_id": 13080280,
+   "story_id": 13080280,
+   "story_title": "Ask HN: Who is hiring? (December 2016)",
+   "updated_at": "2024-09-20T00:00:11Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "CharlesMerriam2"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "pitch",
+      "deck"
+     ],
+     "value": "Other references for <em>pitchdeck</em>s:<p>The statistically recommended <em>pitch deck</em> breakdown: \n <a href=\"https://docsend.com/view/p8jxsqr\" rel=\"nofollow\">https://<em>docsend</em>.com/view/p8jxsqr</a><p>The original FaceBook <em>pitch deck</em>, including a keg stand:\n<a href=\"https://slidebean.com/blog/startups/facebook-pitch-deck\" rel=\"nofollow\">https://slidebean.com/blog/startups/facebook-<em>pitch-deck</em></a>"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "deck"
+     ],
+     "value": "YC Seed <em>Deck</em> Template"
+    },
+    "story_url": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "deck"
+     ],
+     "value": "https://blog.ycombinator.com/intro-to-the-yc-seed-<em>deck</em>/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_CharlesMerriam2",
+    "story_16568546"
+   ],
+   "author": "CharlesMerriam2",
+   "comment_text": "Other references for pitchdecks:<p>The statistically recommended pitch deck breakdown: \n <a href=\"https:&#x2F;&#x2F;docsend.com&#x2F;view&#x2F;p8jxsqr\" rel=\"nofollow\">https:&#x2F;&#x2F;docsend.com&#x2F;view&#x2F;p8jxsqr</a><p>The original FaceBook pitch deck, including a keg stand:\n<a href=\"https:&#x2F;&#x2F;slidebean.com&#x2F;blog&#x2F;startups&#x2F;facebook-pitch-deck\" rel=\"nofollow\">https:&#x2F;&#x2F;slidebean.com&#x2F;blog&#x2F;startups&#x2F;facebook-pitch-deck</a>",
+   "created_at": "2018-03-12T16:13:00Z",
+   "created_at_i": 1520871180,
+   "objectID": "16569100",
+   "parent_id": 16568546,
+   "story_id": 16568546,
+   "story_title": "YC Seed Deck Template",
+   "story_url": "https://blog.ycombinator.com/intro-to-the-yc-seed-deck/",
+   "updated_at": "2024-09-20T02:12:08Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mtlynch"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "pitch",
+      "deck"
+     ],
+     "value": "Where did this data come from?<p>I had to dig five links deep before I got an answer. <em>DocSend</em> is a service that allows founding teams to send <em>pitch</em> <em>decks</em> to investors. <em>DocSend</em> invited founding teams to participate in this research.[0] It's worth noting that they don't seem like they asked for consent from the VCs whose browsing behavior they observed for this study.<p>In <em>DocSend</em>'s privacy policy[1], the VCs are Viewers, whereas the founding team is the User. <em>DocSend</em> apparently allows Users to give consent on behalf of the Viewers:<p>&gt;<i>If you are a Viewer who views Content you receive from a User via the Service, we automatically collect information about your interaction with such Content and our Service. The information we collect includes: Whether or not a you have viewed or are viewing Content; Date and time you viewed the Content; Number of times and length of time Content was viewed; Which portions of the Content were viewed; and Your IP address and location.</i><p>[0] <a href=\"https://docsend.com/view/my4w3gf\" rel=\"nofollow\">https://<em>docsend</em>.com/view/my4w3gf</a><p>[1] <a href=\"https://www.docsend.com/privacy-policy/\" rel=\"nofollow\">https://www.<em>docsend</em>.com/privacy-policy/</a>"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "pitch",
+      "deck"
+     ],
+     "value": "VC bias in viewing <em>pitch</em> <em>decks</em> can affect fundraising success"
+    },
+    "story_url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "pitch",
+      "deck"
+     ],
+     "value": "https://www.<em>docsend</em>.com/blog/how-vc-bias-in-viewing-<em>pitch</em>-<em>decks</em>-can-affect-fundraising-success/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mtlynch",
+    "story_24164570"
+   ],
+   "author": "mtlynch",
+   "children": [
+    24165542,
+    24165562,
+    24165662,
+    24165818
+   ],
+   "comment_text": "Where did this data come from?<p>I had to dig five links deep before I got an answer. DocSend is a service that allows founding teams to send pitch decks to investors. DocSend invited founding teams to participate in this research.[0] It&#x27;s worth noting that they don&#x27;t seem like they asked for consent from the VCs whose browsing behavior they observed for this study.<p>In DocSend&#x27;s privacy policy[1], the VCs are Viewers, whereas the founding team is the User. DocSend apparently allows Users to give consent on behalf of the Viewers:<p>&gt;<i>If you are a Viewer who views Content you receive from a User via the Service, we automatically collect information about your interaction with such Content and our Service. The information we collect includes: Whether or not a you have viewed or are viewing Content; Date and time you viewed the Content; Number of times and length of time Content was viewed; Which portions of the Content were viewed; and Your IP address and location.</i><p>[0] <a href=\"https:&#x2F;&#x2F;docsend.com&#x2F;view&#x2F;my4w3gf\" rel=\"nofollow\">https:&#x2F;&#x2F;docsend.com&#x2F;view&#x2F;my4w3gf</a><p>[1] <a href=\"https:&#x2F;&#x2F;www.docsend.com&#x2F;privacy-policy&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.docsend.com&#x2F;privacy-policy&#x2F;</a>",
+   "created_at": "2020-08-15T02:28:00Z",
+   "created_at_i": 1597458480,
+   "objectID": "24165373",
+   "parent_id": 24164570,
+   "story_id": 24164570,
+   "story_title": "VC bias in viewing pitch decks can affect fundraising success",
+   "story_url": "https://www.docsend.com/blog/how-vc-bias-in-viewing-pitch-decks-can-affect-fundraising-success/",
+   "updated_at": "2024-09-20T06:48:32Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "papertigerau"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "pitch",
+      "deck"
+     ],
+     "value": "Do you need to raise capital in order to make payroll and keep your company alive? If yes, welcome to one of the most stressful periods of your business. In my experience this is a terrifying 3am-stare-at-the-ceiling territory level stress because it combines the prospect of your idea failing + damaging the great people who have quit other good jobs to come work for you. Spend as little time here as possible. Get an independent coach / therapist that can help you process this level of stress.<p>If you\u2019re company is default alive and doesn\u2019t NEED to raise right now then (congratulations, and) some of the below things might help you deal with the stress of fundraising:<p>1. Adopt the mindset that when fundraising it\u2019s just as much YOUR job to say no to a potential investor as it is their job to say no to you. Most investors are not a fit for you. It\u2019s your job to find the ones that are a fit for your business. Understand that the investor is incentivised to preserve optionality and give you an indefinite \u201cmaybe\u201d rather than a quick no. In my experience great investors will give you a quick no with good specific feedback about why - that then lets you then calibrate if they missed an important point about your business (which means you need to level up how you communicate the story) or that you\u2019re just not a fit for how they see the world (which is fine as early stage investing is more opinion than science).<p>2. View fundraising as a process - and structure that process in a way that best serves you. For me this means doing a lot of research up front about who might be a good investor for my business, preparing outreach messages and then crunching everything into a 90-day period from initial outreach to close (all money in the bank). The nice thing about how competitive VC has gotten is that they are all forced to broadcast their investment thesis in order to try and get inbound deal flow. Ideally target not just a fund but which General Partner at that fund so that you can draft initial messages that can say things like \u201cHi you\u2019ve invested in X, and tweeted Y and Z which means we might be a fit for you\u201d. It\u2019s a three line email max. Use <em>docsend</em> for a teaser (max 10 slides) <em>pitch</em> <em>deck</em> so you know if they hit it. Understand that many investors will look at this on their phone so AVOID tiny text. If they hit the <em>pitch</em> <em>deck</em> but don't reply within 3 days email them again ask for a meeting. For a first round I like to have ideally at least 100 targets before I press the go button to send out all the prepared messages. If you\u2019ve done great research then this should net you at least 20 first meetings as you search for a Lead (to price the round and set terms). Ideally jam ALL of these first conversations into the same 2 week window. If you let this stretch out over an extended period then some might be 3 meetings deep with you in DD while others you\u2019re just taking the first meetings.  This makes it hard for you to run a good process and having competing term sheets turn up within the same reasonable time window.<p>3. During the first meeting ask them lots of questions that let you qualify if they are a fit for you. It\u2019s hard to have a list of generic questions to ask them as it depends on the context of your business but things like \u201cdo you Lead?\u201d \u201cwhat is your ideal investment size?\u201d \u201cdo you have a target ownership percentage?\u201d \u201ccan you give me examples of when you have led rounds in companies like mine?\u201d \u201cwhat is the decision making and approval process in your fund?\u201d \u201cnormally how long do you take to go from first meeting to term sheet?\u201d. If they don\u2019t have good answers to these questions (or balk at answering them) then qualify them out as \u201cNot a Lead\u201d and move on. Stop talking to them until you have found a lead.<p>4. Do not believe positive language until someone gives you a term sheet. Words are free. I\u2019ve seen VCs go 5+ meetings deep, repeatedly say things like \u201cI will lead this round\u201d and then say no. See my earlier point about their incentives to preserve optionality. Do not get your hopes up. The phrase &quot;I am interested&quot; is your enemy. Start to feel hope only if they send you a term sheet.<p>5. If you get a no ask for feedback - do not let them off the hook with things like \u201cyou need more traction\u201d - push them to be specific about why they don't believe you will be successful enough for the risk you're asking them to take.<p>6. If you find a lead (and hopefully multiple competing leads) then negotiate terms, sign the term sheet and circle back to all the investors on your original list and invite them to Follow (if there is space in the round). If you don\u2019t have a strong network or are doing this for the first time then lean on your Lead to help you. Great investors will do serious work to help you close a round fast. If you ask for help and your lead doesn\u2019t lean in this is a red flag that they might be a bad investor for you.<p>7. Find ways to share the emotional burden. Getting told \u201cno\u201d over and over sucks no matter who you are. Find a way to share SOME of how bad this feels with your team (and then also share with them what about your idea that gives you the resilience to keeps you going). Authentic vulnerability helps build trust. If you know other early founders who are 12-24 months ahead of you then talk to them as well so you can vent and potentially learn some tips from them.<p>8. Good luck. This is a lottery if you are a first time founder without a good network."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: How do I deal with the stress of fundraising?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_papertigerau",
+    "story_30768307"
+   ],
+   "author": "papertigerau",
+   "comment_text": "Do you need to raise capital in order to make payroll and keep your company alive? If yes, welcome to one of the most stressful periods of your business. In my experience this is a terrifying 3am-stare-at-the-ceiling territory level stress because it combines the prospect of your idea failing + damaging the great people who have quit other good jobs to come work for you. Spend as little time here as possible. Get an independent coach &#x2F; therapist that can help you process this level of stress.<p>If you\u2019re company is default alive and doesn\u2019t NEED to raise right now then (congratulations, and) some of the below things might help you deal with the stress of fundraising:<p>1. Adopt the mindset that when fundraising it\u2019s just as much YOUR job to say no to a potential investor as it is their job to say no to you. Most investors are not a fit for you. It\u2019s your job to find the ones that are a fit for your business. Understand that the investor is incentivised to preserve optionality and give you an indefinite \u201cmaybe\u201d rather than a quick no. In my experience great investors will give you a quick no with good specific feedback about why - that then lets you then calibrate if they missed an important point about your business (which means you need to level up how you communicate the story) or that you\u2019re just not a fit for how they see the world (which is fine as early stage investing is more opinion than science).<p>2. View fundraising as a process - and structure that process in a way that best serves you. For me this means doing a lot of research up front about who might be a good investor for my business, preparing outreach messages and then crunching everything into a 90-day period from initial outreach to close (all money in the bank). The nice thing about how competitive VC has gotten is that they are all forced to broadcast their investment thesis in order to try and get inbound deal flow. Ideally target not just a fund but which General Partner at that fund so that you can draft initial messages that can say things like \u201cHi you\u2019ve invested in X, and tweeted Y and Z which means we might be a fit for you\u201d. It\u2019s a three line email max. Use docsend for a teaser (max 10 slides) pitch deck so you know if they hit it. Understand that many investors will look at this on their phone so AVOID tiny text. If they hit the pitch deck but don&#x27;t reply within 3 days email them again ask for a meeting. For a first round I like to have ideally at least 100 targets before I press the go button to send out all the prepared messages. If you\u2019ve done great research then this should net you at least 20 first meetings as you search for a Lead (to price the round and set terms). Ideally jam ALL of these first conversations into the same 2 week window. If you let this stretch out over an extended period then some might be 3 meetings deep with you in DD while others you\u2019re just taking the first meetings.  This makes it hard for you to run a good process and having competing term sheets turn up within the same reasonable time window.<p>3. During the first meeting ask them lots of questions that let you qualify if they are a fit for you. It\u2019s hard to have a list of generic questions to ask them as it depends on the context of your business but things like \u201cdo you Lead?\u201d \u201cwhat is your ideal investment size?\u201d \u201cdo you have a target ownership percentage?\u201d \u201ccan you give me examples of when you have led rounds in companies like mine?\u201d \u201cwhat is the decision making and approval process in your fund?\u201d \u201cnormally how long do you take to go from first meeting to term sheet?\u201d. If they don\u2019t have good answers to these questions (or balk at answering them) then qualify them out as \u201cNot a Lead\u201d and move on. Stop talking to them until you have found a lead.<p>4. Do not believe positive language until someone gives you a term sheet. Words are free. I\u2019ve seen VCs go 5+ meetings deep, repeatedly say things like \u201cI will lead this round\u201d and then say no. See my earlier point about their incentives to preserve optionality. Do not get your hopes up. The phrase &quot;I am interested&quot; is your enemy. Start to feel hope only if they send you a term sheet.<p>5. If you get a no ask for feedback - do not let them off the hook with things like \u201cyou need more traction\u201d - push them to be specific about why they don&#x27;t believe you will be successful enough for the risk you&#x27;re asking them to take.<p>6. If you find a lead (and hopefully multiple competing leads) then negotiate terms, sign the term sheet and circle back to all the investors on your original list and invite them to Follow (if there is space in the round). If you don\u2019t have a strong network or are doing this for the first time then lean on your Lead to help you. Great investors will do serious work to help you close a round fast. If you ask for help and your lead doesn\u2019t lean in this is a red flag that they might be a bad investor for you.<p>7. Find ways to share the emotional burden. Getting told \u201cno\u201d over and over sucks no matter who you are. Find a way to share SOME of how bad this feels with your team (and then also share with them what about your idea that gives you the resilience to keeps you going). Authentic vulnerability helps build trust. If you know other early founders who are 12-24 months ahead of you then talk to them as well so you can vent and potentially learn some tips from them.<p>8. Good luck. This is a lottery if you are a first time founder without a good network.",
+   "created_at": "2022-03-22T20:15:53Z",
+   "created_at_i": 1647980153,
+   "objectID": "30770929",
+   "parent_id": 30768307,
+   "story_id": 30768307,
+   "story_title": "Ask HN: How do I deal with the stress of fundraising?",
+   "updated_at": "2024-09-20T10:48:02Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "coherentpony"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "pitch",
+      "deck"
+     ],
+     "value": "&quot;<em>DocSend</em>, a startup that provides people with a secure and private way of sharing files like offer letters or legal agreements, studied more than 200 <em>pitchdeck</em>s ...&quot;<p>If it's private, how were they able to study them?"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "pitch",
+      "deck"
+     ],
+     "value": "Investors don\u2019t look at <em>pitch deck</em>s for very long"
+    },
+    "story_url": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "pitch",
+      "deck"
+     ],
+     "value": "http://techcrunch.com/2015/06/08/lessons-from-a-study-of-perfect-<em>pitch-deck</em>s-vcs-spend-an-average-of-3-minutes-44-seconds-on-them/#.fmsjk4:mTM4"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_coherentpony",
+    "story_9687696"
+   ],
+   "author": "coherentpony",
+   "children": [
+    9688355,
+    9688361
+   ],
+   "comment_text": "&quot;DocSend, a startup that provides people with a secure and private way of sharing files like offer letters or legal agreements, studied more than 200 pitchdecks ...&quot;<p>If it&#x27;s private, how were they able to study them?",
+   "created_at": "2015-06-09T20:26:27Z",
+   "created_at_i": 1433881587,
+   "objectID": "9688322",
+   "parent_id": 9687696,
+   "points": null,
+   "story_id": 9687696,
+   "story_title": "Investors don\u2019t look at pitch decks for very long",
+   "story_url": "http://techcrunch.com/2015/06/08/lessons-from-a-study-of-perfect-pitch-decks-vcs-spend-an-average-of-3-minutes-44-seconds-on-them/#.fmsjk4:mTM4",
+   "updated_at": "2023-09-07T02:56:19Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mfts0"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "pitch",
+      "deck"
+     ],
+     "value": "First about the comparison with <em>DocSend</em>. Papermark is<p>1. Open source-first: Papermark is 100% open-source and open to contributions. Host it yourself, fork it, modify it to your desire! Document infrastructure as never been so open and accessible!<p>2. Fully customizable: you can use custom domains to share a <em>pitch</em> <em>deck</em> or documents and custom branding.<p>3. Real-time analytics: we use Tinybird's Clickhouse under the hood to enable real-time analytics. We will also add more advanced analytics like heatmaps.<p>4. AI-driven: this is very much in experimentation, but we aim to add create specific usecases like creating summaries, memos, asking the document questions to Papermark.<p>To your second question, we are working on a clean REST API that developers can use to access the full suite of Papermark programmatically. This will enable new usecases and integrate much better with existing applications and tools. We are still looking for design partners before we launch it."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "docsend"
+     ],
+     "value": "Show HN: Papermark \u2013 the open-source <em>DocSend</em> alternative with custom domains"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.papermark.io/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mfts0",
+    "story_37984167"
+   ],
+   "author": "mfts0",
+   "comment_text": "First about the comparison with DocSend. Papermark is<p>1. Open source-first: Papermark is 100% open-source and open to contributions. Host it yourself, fork it, modify it to your desire! Document infrastructure as never been so open and accessible!<p>2. Fully customizable: you can use custom domains to share a pitch deck or documents and custom branding.<p>3. Real-time analytics: we use Tinybird&#x27;s Clickhouse under the hood to enable real-time analytics. We will also add more advanced analytics like heatmaps.<p>4. AI-driven: this is very much in experimentation, but we aim to add create specific usecases like creating summaries, memos, asking the document questions to Papermark.<p>To your second question, we are working on a clean REST API that developers can use to access the full suite of Papermark programmatically. This will enable new usecases and integrate much better with existing applications and tools. We are still looking for design partners before we launch it.",
+   "created_at": "2023-10-23T16:25:24Z",
+   "created_at_i": 1698078324,
+   "objectID": "37987937",
+   "parent_id": 37987196,
+   "story_id": 37984167,
+   "story_title": "Show HN: Papermark \u2013 the open-source DocSend alternative with custom domains",
+   "story_url": "https://www.papermark.io/",
+   "updated_at": "2024-09-20T15:30:02Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Duhck"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "pitch",
+      "deck"
+     ],
+     "value": "Adding our failed Series A <em>pitch</em> <em>deck</em> because I think its interesting for this crowd:<p><a href=\"https://docsend.com/view/bm5za5w\" rel=\"nofollow\">https://<em>docsend</em>.com/view/bm5za5w</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Circadian lighting with Home Assistant: Like f.lux, but for your house"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://tylercipriani.com/blog/2022/10/17/whole-house-circadian-lighting-with-home-assistant/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Duhck",
+    "story_33509282"
+   ],
+   "author": "Duhck",
+   "children": [
+    33515189,
+    33515766,
+    33515910
+   ],
+   "comment_text": "Adding our failed Series A pitch deck because I think its interesting for this crowd:<p><a href=\"https:&#x2F;&#x2F;docsend.com&#x2F;view&#x2F;bm5za5w\" rel=\"nofollow\">https:&#x2F;&#x2F;docsend.com&#x2F;view&#x2F;bm5za5w</a>",
+   "created_at": "2022-11-07T22:33:08Z",
+   "created_at_i": 1667860388,
+   "objectID": "33513500",
+   "parent_id": 33510339,
+   "story_id": 33509282,
+   "story_title": "Circadian lighting with Home Assistant: Like f.lux, but for your house",
+   "story_url": "https://tylercipriani.com/blog/2022/10/17/whole-house-circadian-lighting-with-home-assistant/",
+   "updated_at": "2024-09-20T12:23:53Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "marksdhillon"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "pitch",
+      "deck"
+     ],
+     "value": "Hi HN!<p>We've been building startups for close to a decade now and the part we always hated was the dreaded fundraise. Countless of our friends have burned out multiple times, with some even giving up on what they're building (it's demoralizing).<p>Over the past 8 months we worked with 1000+ early stage founders deeply learning their pain points, helped write over 500 investment memos, and even used our own product to raise from other founders around the world (the ultimate dog food).<p>Our key takeaways were:<p>- Founders use on average 5 - 7 different tools to raise a round (operational mess)<p>- Founders have a very hard time fully articulating their company's story using a <em>pitch</em> <em>deck</em><p>- Cycle through dozens of <em>pitch</em> templates before picking the &quot;right one&quot;<p>- Are constantly worried about <em>deck</em> aesthetics versus telling their story<p>- Always distracted by nervously visiting <em>DocSend</em> to gauge investor interest<p>- Constantly caught in &quot;15 minute Zoom hell&quot; with investors (are they really interested?)<p>So we set out with the goal to:<p>- Streamline operations (all-in-one)<p>- Build a more asynchronous process (saves time)<p>- Create something simple &amp; intuitive (looks good)<p>Here's a quick demo video:\n<a href=\"https://www.youtube.com/watch?v=FJ9bSk7tZG4\" rel=\"nofollow\">https://www.youtube.com/watch?v=FJ9bSk7tZG4</a><p>Over the next month we'll be investing deeply into our Slack App and '/' commands to make the process even more asynchronous.<p>Happy to answer any questions, take feedback, and criticisms."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Async Fundraising \u2013 Raise your seed round from Slack"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.buildmemo.com/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_marksdhillon",
+    "story_31226727"
+   ],
+   "author": "marksdhillon",
+   "children": [
+    31245832
+   ],
+   "comment_text": "Hi HN!<p>We&#x27;ve been building startups for close to a decade now and the part we always hated was the dreaded fundraise. Countless of our friends have burned out multiple times, with some even giving up on what they&#x27;re building (it&#x27;s demoralizing).<p>Over the past 8 months we worked with 1000+ early stage founders deeply learning their pain points, helped write over 500 investment memos, and even used our own product to raise from other founders around the world (the ultimate dog food).<p>Our key takeaways were:<p>- Founders use on average 5 - 7 different tools to raise a round (operational mess)<p>- Founders have a very hard time fully articulating their company&#x27;s story using a pitch deck<p>- Cycle through dozens of pitch templates before picking the &quot;right one&quot;<p>- Are constantly worried about deck aesthetics versus telling their story<p>- Always distracted by nervously visiting DocSend to gauge investor interest<p>- Constantly caught in &quot;15 minute Zoom hell&quot; with investors (are they really interested?)<p>So we set out with the goal to:<p>- Streamline operations (all-in-one)<p>- Build a more asynchronous process (saves time)<p>- Create something simple &amp; intuitive (looks good)<p>Here&#x27;s a quick demo video:\n<a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=FJ9bSk7tZG4\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=FJ9bSk7tZG4</a><p>Over the next month we&#x27;ll be investing deeply into our Slack App and &#x27;&#x2F;&#x27; commands to make the process even more asynchronous.<p>Happy to answer any questions, take feedback, and criticisms.",
+   "created_at": "2022-05-01T17:16:52Z",
+   "created_at_i": 1651425412,
+   "objectID": "31226729",
+   "parent_id": 31226727,
+   "story_id": 31226727,
+   "story_title": "Show HN: Async Fundraising \u2013 Raise your seed round from Slack",
+   "story_url": "https://www.buildmemo.com/",
+   "updated_at": "2024-09-20T11:01:49Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "hiddencache"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "pitch",
+      "deck"
+     ],
+     "value": "HBR analyzed 200 startups which raised $360m, and concluded that the most viewed slide of any <em>pitch</em> <em>deck</em> was the team one.<p><a href=\"https://docsend.com/view/p8jxsqr\" rel=\"nofollow\">https://<em>docsend</em>.com/view/p8jxsqr</a>"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "pitch"
+     ],
+     "value": "Ask HN: What's your one important advice about <em>pitch</em> decks?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_hiddencache",
+    "story_28185888"
+   ],
+   "author": "hiddencache",
+   "children": [
+    28196091
+   ],
+   "comment_text": "HBR analyzed 200 startups which raised $360m, and concluded that the most viewed slide of any pitch deck was the team one.<p><a href=\"https:&#x2F;&#x2F;docsend.com&#x2F;view&#x2F;p8jxsqr\" rel=\"nofollow\">https:&#x2F;&#x2F;docsend.com&#x2F;view&#x2F;p8jxsqr</a>",
+   "created_at": "2021-08-15T04:48:29Z",
+   "created_at_i": 1629002909,
+   "objectID": "28186343",
+   "parent_id": 28185888,
+   "story_id": 28185888,
+   "story_title": "Ask HN: What's your one important advice about pitch decks?",
+   "updated_at": "2024-09-20T09:12:46Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "btown"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "pitch",
+      "deck"
+     ],
+     "value": "This is a really great idea, kudos!<p>You might want to look at <em>Docsend</em> for feature and marketing inspiration - they started by allowing mainly startup <em>pitch</em>/sales <em>decks</em> to be tracked in much the same way your audio clips are, but have since expanded to a wide variety of enterprise use cases. I can only imagine that the music industry has many such use cases, including enterprise-style auditing/reporting needs and the ability to limit an audio file's distribution to within an organization. Not for the faint of heart to approach that, but there could be real opportunities there.<p>Some other random thoughts: This would be a perfect UI to standardize the pattern a lot of YouTube ads do: a ~5 second teaser clip that pre-plays the full material. With this and other network features as you grow (say, &quot;submit demos to my SongBox drop box, and then I can quick-review my inbound SongBox feed&quot;), you could gain the reputation of - &quot;if I receive a demo on SongBox, it means that the sender is being highly respectful of my time.&quot; You might not want to build all that social-network functionality, of course, but it's a possible direction to go!<p>Also, custom subdomains (and beyond just removing branding, letting people add branding) could be a high-ROI way to add another pricing tier!"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: After 2.5 years on my side project, it has hit \u00a3500/month revenue"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_btown",
+    "story_25372464"
+   ],
+   "author": "btown",
+   "children": [
+    25375379
+   ],
+   "comment_text": "This is a really great idea, kudos!<p>You might want to look at Docsend for feature and marketing inspiration - they started by allowing mainly startup pitch&#x2F;sales decks to be tracked in much the same way your audio clips are, but have since expanded to a wide variety of enterprise use cases. I can only imagine that the music industry has many such use cases, including enterprise-style auditing&#x2F;reporting needs and the ability to limit an audio file&#x27;s distribution to within an organization. Not for the faint of heart to approach that, but there could be real opportunities there.<p>Some other random thoughts: This would be a perfect UI to standardize the pattern a lot of YouTube ads do: a ~5 second teaser clip that pre-plays the full material. With this and other network features as you grow (say, &quot;submit demos to my SongBox drop box, and then I can quick-review my inbound SongBox feed&quot;), you could gain the reputation of - &quot;if I receive a demo on SongBox, it means that the sender is being highly respectful of my time.&quot; You might not want to build all that social-network functionality, of course, but it&#x27;s a possible direction to go!<p>Also, custom subdomains (and beyond just removing branding, letting people add branding) could be a high-ROI way to add another pricing tier!",
+   "created_at": "2020-12-10T15:40:27Z",
+   "created_at_i": 1607614827,
+   "objectID": "25374822",
+   "parent_id": 25372464,
+   "story_id": 25372464,
+   "story_title": "Show HN: After 2.5 years on my side project, it has hit \u00a3500/month revenue",
+   "updated_at": "2024-09-20T07:31:40Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "aerosmile"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "pitch",
+      "deck"
+     ],
+     "value": "&gt; you shouldn't share that stuff with investors without having a conversation<p>&gt; I rarely open <em>docsend</em> docs and never on cold <em>pitches</em><p>Therein lies the conundrum: we are both right and wrong, depending on the context.<p>Scenario A: you just completed a hackathon and have no connections or existing investors to help you reach other investors =&gt; in this case you should reduce the barrier of distribution in any way possible.<p>Scenario B: you are running a seed funded startup and have enough traction to raise the A round =&gt; you will be getting warm introductions, and investors will be opening your links.<p>Most founders fall somewhere in between those two scenarios, starting at the Scenario A at the beginning of their careers, and slowly making their way towards the Scenario B. The nice thing about using <em>DocSend</em> is that it will tell you exactly if you're ready for it =&gt; just look at the open rate of your links.<p>&gt; I do like having the <em>deck</em> in my inbox so that when the <em>pitch</em> changes I can see what they once did. Lots of founders will do multiple companies and abandon failures early, and I want to be able to see what they pitched me on six months ago.<p>This is what I meant with one-sided. Nobody disputes the value of that information to the investor. From the founder's perspective, however, you get this set of options:<p>1. the slide <em>deck</em> you were pitching 1/2/3 years ago materialized exactly how you predicted =&gt; congratulations, you're in Scenario B, and investors will be reading your <em>deck</em> no matter how you present it to them.<p>2. your old slide <em>deck</em> was overly optimistic, and you either underperformed, pivoted, or abandoned your startup altogether. Do you really want everyone out there to have this dirt on you?"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Raising a seed round instead of a Series A"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.atrium.co/blog/seed-stage-funding-startups/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_aerosmile",
+    "story_17095323"
+   ],
+   "author": "aerosmile",
+   "children": [
+    17102026
+   ],
+   "comment_text": "&gt; you shouldn&#x27;t share that stuff with investors without having a conversation<p>&gt; I rarely open docsend docs and never on cold pitches<p>Therein lies the conundrum: we are both right and wrong, depending on the context.<p>Scenario A: you just completed a hackathon and have no connections or existing investors to help you reach other investors =&gt; in this case you should reduce the barrier of distribution in any way possible.<p>Scenario B: you are running a seed funded startup and have enough traction to raise the A round =&gt; you will be getting warm introductions, and investors will be opening your links.<p>Most founders fall somewhere in between those two scenarios, starting at the Scenario A at the beginning of their careers, and slowly making their way towards the Scenario B. The nice thing about using DocSend is that it will tell you exactly if you&#x27;re ready for it =&gt; just look at the open rate of your links.<p>&gt; I do like having the deck in my inbox so that when the pitch changes I can see what they once did. Lots of founders will do multiple companies and abandon failures early, and I want to be able to see what they pitched me on six months ago.<p>This is what I meant with one-sided. Nobody disputes the value of that information to the investor. From the founder&#x27;s perspective, however, you get this set of options:<p>1. the slide deck you were pitching 1&#x2F;2&#x2F;3 years ago materialized exactly how you predicted =&gt; congratulations, you&#x27;re in Scenario B, and investors will be reading your deck no matter how you present it to them.<p>2. your old slide deck was overly optimistic, and you either underperformed, pivoted, or abandoned your startup altogether. Do you really want everyone out there to have this dirt on you?",
+   "created_at": "2018-05-18T10:28:51Z",
+   "created_at_i": 1526639331,
+   "objectID": "17100261",
+   "parent_id": 17098497,
+   "story_id": 17095323,
+   "story_title": "Raising a seed round instead of a Series A",
+   "story_url": "https://www.atrium.co/blog/seed-stage-funding-startups/",
+   "updated_at": "2024-09-20T02:26:16Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "joshu"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "pitch",
+      "deck"
+     ],
+     "value": "These are dreadful reasons. The first is silly, for the second you shouldn't share that stuff with investors without having a conversation, and the third is a problem whatever the transmission system (unethical people aren't going to be stopped that easily).<p>Especially since <em>Docsend</em> supposedly let you download PDFs if you log in.<p>I rarely open <em>docsend</em> docs and never on cold <em>pitches</em>. Using other tracking links is an automatic fail. You already can imagine why.<p>I do like having the <em>deck</em> in my inbox so that when the <em>pitch</em> changes I can see what they once did. Lots of founders will do multiple companies and abandon failures early, and I want to be able to see what they pitched me on six months ago.<p>I don't think you necessarily need to put all of that stuff in the <em>deck</em> (and certainly not proprietary data) but you are effectively sending people a shortened URL for your stuff that will die in a few weeks."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Raising a seed round instead of a Series A"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.atrium.co/blog/seed-stage-funding-startups/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_joshu",
+    "story_17095323"
+   ],
+   "author": "joshu",
+   "children": [
+    17100261
+   ],
+   "comment_text": "These are dreadful reasons. The first is silly, for the second you shouldn&#x27;t share that stuff with investors without having a conversation, and the third is a problem whatever the transmission system (unethical people aren&#x27;t going to be stopped that easily).<p>Especially since Docsend supposedly let you download PDFs if you log in.<p>I rarely open docsend docs and never on cold pitches. Using other tracking links is an automatic fail. You already can imagine why.<p>I do like having the deck in my inbox so that when the pitch changes I can see what they once did. Lots of founders will do multiple companies and abandon failures early, and I want to be able to see what they pitched me on six months ago.<p>I don&#x27;t think you necessarily need to put all of that stuff in the deck (and certainly not proprietary data) but you are effectively sending people a shortened URL for your stuff that will die in a few weeks.",
+   "created_at": "2018-05-18T03:37:19Z",
+   "created_at_i": 1526614639,
+   "objectID": "17098497",
+   "parent_id": 17098234,
+   "story_id": 17095323,
+   "story_title": "Raising a seed round instead of a Series A",
+   "story_url": "https://www.atrium.co/blog/seed-stage-funding-startups/",
+   "updated_at": "2024-09-20T02:30:00Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "joshu"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "pitch",
+      "deck"
+     ],
+     "value": "I'm an investor and I don't love clicking on the <em>docsend</em> links, but I will. I really dislike clicking on linktracked links, especially from a cold <em>pitch</em>.<p>The worst part of <em>docsend</em> for me is I will get an email saying &quot;check out our new thing&quot; and then I click on it sometime later to look at it again and it's already expired. Or I remember, &quot;hey that <em>deck</em> about xxxyyy, other investor zzz should talk to them&quot; and I can't search for it because there was zero content in the email."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "pitch"
+     ],
+     "value": "VC bias in viewing <em>pitch</em> decks can affect fundraising success"
+    },
+    "story_url": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "docsend",
+      "pitch"
+     ],
+     "value": "https://www.<em>docsend</em>.com/blog/how-vc-bias-in-viewing-<em>pitch</em>-decks-can-affect-fundraising-success/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_joshu",
+    "story_24164570"
+   ],
+   "author": "joshu",
+   "comment_text": "I&#x27;m an investor and I don&#x27;t love clicking on the docsend links, but I will. I really dislike clicking on linktracked links, especially from a cold pitch.<p>The worst part of docsend for me is I will get an email saying &quot;check out our new thing&quot; and then I click on it sometime later to look at it again and it&#x27;s already expired. Or I remember, &quot;hey that deck about xxxyyy, other investor zzz should talk to them&quot; and I can&#x27;t search for it because there was zero content in the email.",
+   "created_at": "2020-08-15T03:53:03Z",
+   "created_at_i": 1597463583,
+   "objectID": "24165769",
+   "parent_id": 24165643,
+   "story_id": 24164570,
+   "story_title": "VC bias in viewing pitch decks can affect fundraising success",
+   "story_url": "https://www.docsend.com/blog/how-vc-bias-in-viewing-pitch-decks-can-affect-fundraising-success/",
+   "updated_at": "2024-09-20T06:48:32Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "nivertech"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "pitch",
+      "deck"
+     ],
+     "value": "If you present in person, then it can be anything really.<p>The best <em>pitches</em> are just conversation with the investors.<p>But usually they will ask you to send a formal <em>deck</em> and/or one-pager. Some VCs/angels have preferred <em>deck</em> formats, so it's better to check their websites/blogs. Otherwise use one of the standard formats, i.e. Problem/Solution/TAM/Team, etc. It should be an attachment in the PDF format, not password-protected link like with <em>DocSend</em> or alike."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "deck"
+     ],
+     "value": "Does a startup <em>deck</em> necessary mean it is a presentation or slideshow?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_nivertech",
+    "story_32836666"
+   ],
+   "author": "nivertech",
+   "comment_text": "If you present in person, then it can be anything really.<p>The best pitches are just conversation with the investors.<p>But usually they will ask you to send a formal deck and&#x2F;or one-pager. Some VCs&#x2F;angels have preferred deck formats, so it&#x27;s better to check their websites&#x2F;blogs. Otherwise use one of the standard formats, i.e. Problem&#x2F;Solution&#x2F;TAM&#x2F;Team, etc. It should be an attachment in the PDF format, not password-protected link like with DocSend or alike.",
+   "created_at": "2022-09-14T14:41:18Z",
+   "created_at_i": 1663166478,
+   "objectID": "32837926",
+   "parent_id": 32836666,
+   "story_id": 32836666,
+   "story_title": "Does a startup deck necessary mean it is a presentation or slideshow?",
+   "updated_at": "2024-09-20T12:01:33Z"
+  }
+ ],
+ "hitsPerPage": 40,
+ "nbHits": 16,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=docsend+pitch+deck&tags=comment&hitsPerPage=40&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 52,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 25
+  },
+  "afterFetch": {
+   "format": {
+    "highlighting": 1,
+    "total": 2
+   },
+   "merge": {
+    "mergeLoop": {
+     "prepareNextHit": 20,
+     "total": 20
+    },
+    "total": 28
+   },
+   "total": 28
+  },
+  "fetch": {
+   "query": 13,
+   "scanning": 9,
+   "total": 23
+  },
+  "total": 52
+ },
+ "query": "docsend pitch deck",
+ "serverTimeMS": 55,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=docsend+pitch+deck&tags=comment&hitsPerPage=40"
+}

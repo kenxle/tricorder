@@ -1,0 +1,29 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [],
+ "hitsPerPage": 40,
+ "nbHits": 0,
+ "nbPages": 0,
+ "page": 0,
+ "params": "query=%22investment+memo%22+hours&tags=comment&hitsPerPage=40&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 5,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 14
+  },
+  "fetch": {
+   "query": 2,
+   "scanning": 2,
+   "total": 5
+  },
+  "total": 5
+ },
+ "query": "\"investment memo\" hours",
+ "serverTimeMS": 6,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=%22investment+memo%22+hours&tags=comment&hitsPerPage=40&advancedSyntax=true"
+}

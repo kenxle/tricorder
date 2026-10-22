@@ -1,0 +1,28 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [],
+ "hitsPerPage": 40,
+ "nbHits": 0,
+ "nbPages": 0,
+ "page": 0,
+ "params": "query=cohort+churn+hidden+investors&tags=comment&hitsPerPage=40&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 20,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 27
+  },
+  "fetch": {
+   "query": 18,
+   "total": 19
+  },
+  "total": 20
+ },
+ "query": "cohort churn hidden investors",
+ "serverTimeMS": 20,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=cohort+churn+hidden+investors&tags=comment&hitsPerPage=40"
+}

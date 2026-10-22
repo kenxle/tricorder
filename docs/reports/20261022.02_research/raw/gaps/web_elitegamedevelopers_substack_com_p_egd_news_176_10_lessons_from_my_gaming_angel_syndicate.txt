@@ -1,0 +1,101 @@
+SOURCE: https://elitegamedevelopers.substack.com/p/egd-news-176-10-lessons-from-my-gaming-angel-syndicate
+
+10 lessons from my gaming angel syndicate 
+
+ Elite Game Developers 
+
+ Subscribe Sign in 
+
+ 10 lessons from my gaming angel syndicate
+
+ Joakim Achren 
+ Mar 17, 2023 
+
+ Share
+
+ I’ve been angel investing in gaming since 2019. In 2020, I started an angel syndicate, EGD Angel Syndicate , focusing on gaming. Last year I wrote a piece about the first year of the syndicate in early 2022, but since there have been so many lessons learned in the last two years, I wanted to cover them in a new piece. 
+ Let’s start by giving a quick rundown on how the syndicate operates: it’s an investment club, where the lead investor presents the deals, and the other club members participate voluntarily in deals they like.
+ Here’s another take. The following is what I send to new members to describe how the syndicate works.
+ I announce the deals on our Slack channel to all the members. There are over 200 people there, most with a gaming background.The deals on the syndicate range from 50k to 200k USD, depending on the allocation I’ve gotten in the funding round of the game studio. The minimum check per syndicate member is 2.5k and no maximum. I charge a one-time fee, per deal, per participating member of 500 USD for operational costs. There will be a signed contract with the deal terms. One of the terms grants me the lead status and 20% of carried interest.As a member, it’s free to join, and there’s no obligation to participate in any deals, but if anything interesting comes up, the member would DM me and say they’re in. When an investment happens, there is an SPV created per deal. Each member who participates will become a shareholder of the SPV and will own % based on how much of the allocation they took. For the last year or so, I’ve been using Odin to set up the SPV in the UK. 
+ Here are ten lessons I’ve learned about managing an angel syndicate.
+ 1. Being a syndicate lead is great 
+
+ If you want to become an active “fund manager” of other people’s capital, running a syndicate is the best way to learn. I’ve picked up so many things that are similar to becoming a VC. With the deal-by-deal carry structure , one big exit will become a huge win, versus a VC fund where standard VC fund terms require the manager to return the entire fund before they can start taking the carry, in other words, make a profit. 
+ If the deal-per-deal carry was challenging to decode, let me explain it through an example:
+ My syndicate invests 200K into a company. That company exists three years later, and that investment is now worth 20X, making 4 million for the syndicate. With the carry, the manager gets 4,000K - 200K = 3,800K * 20% = 760K.
+ My hypothetical VC fund of 20 million invests 200K into the same company and gets the same outcome of 4 million. If the fund hasn’t yet broken even, meaning returned the 20 million, I don't get anything yet. If it's the first exit, the fund still needs 16 million before it becomes profitable and I can start taking carry.
+ Summary: The manager of the syndicate pockets 760K immediately. The VC fund manager still needs to make other exits worth 16 million before the next exits start giving a profit.
+ 2. Utilizing my network 
+
+ The syndicate has some 222 members as of writing this post. 109 members have invested so far. I’ve intentionally built the group so that everyone works in gaming or is heavily involved in the games industry. This way, we can have the best possible “value add” to the portfolio companies. We aren’t a faceless group of people putting money out there.
+ In the 25 deals we’ve done as a group, in most companies, our group has interacted in many ways with the founders post-investment. It’s not just me who is spending time with the founders; many people are helping with hiring, marketing, sourcing deals, and helping in any way they can. Since everyone has a gaming background, there are always ways to contribute.
+ 3. Appetite for angel investing is more volatile 
+
+ Allocations we got and how much the group invested. 
+ In 2021, startup investing was momentum-driven, which then in 2022 shifted to a more cautionary mode. The caution has clearly materialized on a micro level in the syndicate.
+ In 2021, a lot more syndicate investors were willing to write bigger cheques and more of those cheques. If I had a deal for $200,000 in the syndicate, that could be filled up in a matter of days. To contrast that too early 2023, a $200,000 allocation in a pre-seed company without KPIs barely reaches $50,000. The momentum of 2021 went away, and many people have stopped investing.
+ 4. Long-time members can reach their cap at some point 
+
+ There’s also another reason for the lack of investment appetite. Many people have realized that an exit would take five or more years to know if the investment will work.
+ Another possibility is that the members have their angel portfolio built up. They had decided that they were going to invest in four or five companies, maybe allocating 25,000 or 5k per company. And then they used up the budget. And they might not do more until you see an exit. So, many might be looking at the deals, but they have made most of their investment for now.
+ What could increase the syndicate’s activity? Diversity of deals. People would get more different kinds of companies in their angel investment portfolio. Increase the possibility for members to interact with the founders and send frequent investor updates. These could decrease volatility.
+ 5. Fees are tricky to manage 
+
+ When I launched the syndicate in 2020, I didn’t charge any fees from the members. I was covering all the setup fees for the SPV.
+ Quick explanation on SPV: the Special Purpose Vehicle is a holding company which contains terms regarding ownership of the SPV, termination clauses, etc. There are two primary purposes for creating SPVs when a syndicate invests:
+ 1) Funds from dozens of individuals are funneled into the SPV, which then proceeds to invest all the proceeds into the startup.
+ 2) When an exit happens, the SPV has terms stipulated on how the SPV is liquidated, who gets how much, and how the carry works.
+ The fees to start and maintain SPV vary. First, I created them in Finland, but it was one of the most expensive places to have SPVs. The cumulative cost would be in the tens of thousands over five to ten years of operations, often even longer, as startups might sometimes take 15-20 years to exit.
+ In 2021, I started doing the SPVs in the UK through a provider called Odin. The fees are much more manageable, with an upfront cost of half of what the Finnish SPV would cost. Still, the costs were racking up quite intensely over 2021, and I decided to start invoicing a participation fee from investors participating in an investment.
+ First, I billed 500 euros, a fixed participation fee. In 2023, I changed the fee policy to a 7% of the invested capital model, which was more lenient towards angels who were investing smaller tickets.
+ Besides the carry, the syndicate lead's job doesn't usually have a regular salary. Compared to a VC fund, where managers commonly take an annual management fee of 2% of the fund size, e.g. $50M fund would have $1M in fees. VCs are paying themselves a salary from the fees.
+ 6. Chasing investors, missing wires 
+
+ Closing an investment takes two weeks, minimum. The first week starts when I present the deal to the syndicate. I’ve carefully prepared a memo about the company where we are investing. I believe it’s an excellent place to invest the challenges and risks that I see in the investment and then lay out the deal terms. I usually give people one week to invest, then close the deal.
+ The real work starts when members participating in the deal are wiring the funds. It can often take weeks to hunt down a wire that has gotten lost in archaic banking systems. Euros being sent to USD accounts, vice versa. It's a lot of chasing, and it often requires daily management.
+ 7. Be clear about rules 
+
+ When I started the Syndicate slack, I always created deal-based channels to discuss the deal. I quickly noticed that some people were aggressively pushing down a deal, whereas some were praising it.
+ I felt that this wasn’t good for making the deals more neutral and that some influential people could easily sway a deal into a negative light.
+ It was a question of transparent discussion versus take-it-or-leave-it deals. I chose the latter.
+ Following is what I wrote in the syndicate rules:
+ If you’re not joining a deal, think the valuation is too rich, or the team is not good, then just quietly opt-out. If people ask you, then feel free to tell them in DM but don’t broadcast. The Slack should never become a soapbox. If you are a subject matter expert and there is something factually wrong, please correct the record in a DM to Joakim.But if you disagree with the founders’ outlook or on the read of the trends, then quietly opt-out. It is not up to the syndicate to vet these deals by committee.There will be no more channels opened up for the deals. Having a Q&A is great, but leaving Q for the syndicate and the A for Joakim and the founders.
+ 8. Syndicate lead doesn’t make decisions 
+
+ Compared to being an angel investor and a VC, the syndicate lead doesn’t have much control over the faith of a deal and how it goes. The deal memo and convincing people about the deal goes only so far.
+ I’ll give you an example: I’ve scouted a fantastic founder, this person is 24, and he sold his gaming startup two years ago. Now he is back at it, building a new gaming studio. He has learned what could have gone better with his first company and is coming back with force. His game idea is at an early stage, but it shows potential and is very different from your cookie-cutter casual games. I bring this company to the syndicate. Only a few angels want to invest in “founder bets.”
+ With a VC fund, a manager can invest without much convincing, as long as their partners in the fund agree that it’s a bet worth taking.
+ I’ve talked to many group members about their interest in investing and what they are looking for. Many look for proven KPIs. Many look for differentiation from what they’ve already invested in. Many are doing crypto, many aren’t, and the list goes on.
+ 9. Privacy 
+
+ I’ve lost some deals because founders fear their deck will leak when shared with 200 members. There are many reasons why founders don’t want to share their decks semi-publicly: founders are still working for a big company, the idea has novelty, and they don’t want the competition to see it, etc.
+ The concern is valid. It's over 200 people and you don't know most of them.
+ I have gone to lengths to mitigate this issue. Using Docsend with email and password, with watermarking the presentation, has made it less of a struggle for the founders to share the deck.
+ 10. All of us being from gaming is a tremendous value add 
+
+ The syndicate is the most amazing thing I’ve ever started. It’s a group of over 200 people from the games industry, angel investing in new gaming companies. What could be better?
+ We are still in the early days of founders understanding the value of raising from such a big pool of gaming angels. One of the reasons is that I’ve just recently started to share more about the syndicate. I’ve created a LinkedIn page for the syndicate and have asked members to sign up as members of the group on LinkedIn. All this activity should help founders see what kind of members we have. 
+ Testimonials should also help. Here’s what Emily Yim from Superbloom says about the group. We invested in January 2022. 
+ EGD Angel Syndicate has been a huge value add for Superbloom. With one line in the cap table, we got genuinely helpful group of angel investors who have the most relevant backgrounds from gaming. I have casual catch ups with some of them getting advices and sharing notes, was introduced to other founders and relevant people in the industry, one of our key hires came from syndicate investor’s network, the examples go on and on. Joakim has been a true supporter for us from day 1, advising and helping us hands on. I couldn’t recommend getting investment through EGDAS highly enough.
+ Final words 
+
+ The syndicate has a page now on LinkedIn . You can follow it by going here. 
+ If you’d want to pitch to the syndicate, don’t hesitate to contact me. Most of the syndicate’s investments have happened when a VC fund is leading, but we would like to do more games at an earlier stage.
+ ( Photo by Kaboompics ) 
+
+ Share
+
+ Discussion about this post
+ Comments Restacks 
+
+ Top Latest Discussions 
+
+ No posts
+
+ Ready for more?
+
+ Subscribe 
+
+ © 2026 Joakim Achren · Privacy ∙ Terms ∙ Collection notice 
+ Start your Substack Get the app 
+ Substack is the home for great culture

@@ -1,0 +1,133 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "memossy"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "angellist",
+      "syndicate",
+      "lead",
+      "diligence"
+     ],
+     "value": "It looks to be a pretty smart strategy, take the top 50 <em>syndicate</em> <em>leads</em>, put avg $400k behind them in year 1 ($20m investment).<p>This grows platform, in year 2 put $500k behind top 100 <em>syndicate</em> <em>leads</em> ($50m investment) as more money available for <em>syndicate</em> <em>leads</em>.<p><em>AngelList</em> takes the management fee on the $400m ($4m a year say as a &quot;fund of funds&quot; at 1%), 5% carry on the <em>syndicate</em>. Note 99 max investors per<p>The <em>syndicate</em> <em>leads</em> take the carry and do most of the due <em>diligence</em>, CSC Upshot gets to follow on on whatever deals they like most."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "angellist"
+     ],
+     "value": "<em>AngelList</em> Announces $400M Early-Stage Fund"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.wsj.com/article_email/coming-soon-from-china-a-400-million-bonanza-for-u-s-startups-1444622462-lMyQjAxMTE1NTEwMjgxMjI2Wj"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_memossy",
+    "story_10372739"
+   ],
+   "author": "memossy",
+   "children": [
+    10375464
+   ],
+   "comment_text": "It looks to be a pretty smart strategy, take the top 50 syndicate leads, put avg $400k behind them in year 1 ($20m investment).<p>This grows platform, in year 2 put $500k behind top 100 syndicate leads ($50m investment) as more money available for syndicate leads.<p>AngelList takes the management fee on the $400m ($4m a year say as a &quot;fund of funds&quot; at 1%), 5% carry on the syndicate. Note 99 max investors per<p>The syndicate leads take the carry and do most of the due diligence, CSC Upshot gets to follow on on whatever deals they like most.",
+   "created_at": "2015-10-12T10:15:40Z",
+   "created_at_i": 1444644940,
+   "objectID": "10373554",
+   "parent_id": 10372739,
+   "story_id": 10372739,
+   "story_title": "AngelList Announces $400M Early-Stage Fund",
+   "story_url": "http://www.wsj.com/article_email/coming-soon-from-china-a-400-million-bonanza-for-u-s-startups-1444622462-lMyQjAxMTE1NTEwMjgxMjI2Wj",
+   "updated_at": "2024-09-19T22:26:07Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "prostoalex"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "angellist",
+      "syndicate",
+      "lead",
+      "diligence"
+     ],
+     "value": "In the absence of access to good deals it would be fair to say 'yes', and view crowdfunding as the method of last resort when VC or angel deals don't work out.<p>With that said, <em>AngelList</em> did a round for Uber, FundersClub did Instacart, and Wefunder did Zenefits, so the dealflow might not be of the quality that a brand-name VC/angel would get, but it's also not 100% reverse selection bias all the way.<p>One troubling indicator is how quickly all of crowdfunding models converged to <em>syndicate</em> models. While it's helpful and time-efficient to have the <em>lead</em> do proper due <em>diligence</em>, the incentives for a popular <em>syndicate</em> <em>lead</em> is to do as many deals as possible, featuring the winners and sweeping the failures under the rug."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Is crowdfunding the new tech bubble? Or just a good old-fashioned junk bond?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.theglobeandmail.com/report-on-business/small-business/sb-digital/innovation/is-crowdfunding-the-new-tech-bubble-or-just-a-good-old-fashioned-junk-bond/article23823686/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_prostoalex",
+    "story_9790208"
+   ],
+   "author": "prostoalex",
+   "comment_text": "In the absence of access to good deals it would be fair to say &#x27;yes&#x27;, and view crowdfunding as the method of last resort when VC or angel deals don&#x27;t work out.<p>With that said, AngelList did a round for Uber, FundersClub did Instacart, and Wefunder did Zenefits, so the dealflow might not be of the quality that a brand-name VC&#x2F;angel would get, but it&#x27;s also not 100% reverse selection bias all the way.<p>One troubling indicator is how quickly all of crowdfunding models converged to syndicate models. While it&#x27;s helpful and time-efficient to have the lead do proper due diligence, the incentives for a popular syndicate lead is to do as many deals as possible, featuring the winners and sweeping the failures under the rug.",
+   "created_at": "2015-06-27T15:39:15Z",
+   "created_at_i": 1435419555,
+   "objectID": "9790465",
+   "parent_id": 9790208,
+   "points": null,
+   "story_id": 9790208,
+   "story_title": "Is crowdfunding the new tech bubble? Or just a good old-fashioned junk bond?",
+   "story_url": "http://www.theglobeandmail.com/report-on-business/small-business/sb-digital/innovation/is-crowdfunding-the-new-tech-bubble-or-just-a-good-old-fashioned-junk-bond/article23823686/",
+   "updated_at": "2023-09-07T03:04:31Z"
+  }
+ ],
+ "hitsPerPage": 40,
+ "nbHits": 2,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=angellist+syndicate+lead+diligence&tags=comment&hitsPerPage=40&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 26,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 19
+  },
+  "afterFetch": {
+   "merge": {
+    "total": 1
+   },
+   "total": 1
+  },
+  "fetch": {
+   "query": 23,
+   "scanning": 1,
+   "total": 25
+  },
+  "total": 26
+ },
+ "query": "angellist syndicate lead diligence",
+ "serverTimeMS": 27,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=angellist+syndicate+lead+diligence&tags=comment&hitsPerPage=40"
+}

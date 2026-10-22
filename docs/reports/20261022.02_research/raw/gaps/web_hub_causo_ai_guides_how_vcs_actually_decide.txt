@@ -1,0 +1,187 @@
+SOURCE: https://hub.causo.ai/guides/how-vcs-actually-decide
+
+How VCs make decisions: the IC memo deconstructed (2026) | Causo Hub 
+ 🦝 We're live on Product Hunt today. Live on Product Hunt today If anything here was useful, an upvote would mean a lot. 
+ ▲ Upvote on Product Hunt × 
+
+ 🦝 Causo Hub Guides Deadlines Events Lists Templates Tools Brain 
+
+ Try Causo 
+
+ Hub / Guides / vc-process / How VCs make decisions: inside the IC memo 
+
+ vc-process · 8 min read · Updated Oct 7, 2026 
+ How VCs make decisions: inside the IC memo
+ Four published IC memos, deconstructed. The shared structure, the conviction language, and the deck moves that make the memo writable.
+ D By Dawid Baranowski Co-founder, Causo 
+ How VCs make decisions: inside the IC memo
+
+ How VCs make decisions runs through a single artifact: the investment committee memo. A point partner writes 3–30 pages covering team, market, product, traction, and risks. The partnership reads it before the meeting and votes on the memo, not the pitch. Founders who pre-write the memo's hard sections inside their deck dramatically increase their odds.
+
+ Most founders pitch as if the partner they're meeting decides. They don't. They write a memo, and the partnership decides on the memo.
+
+ That distinction is the whole game. The partner you spent two hours with becomes your internal advocate, sitting at a table with five colleagues who've never met you, defending a document. The job of your deck is not to wow the room; it's to make that memo easy to write and hard to attack. Read four published IC memos side by side (Sequoia's writeups on Airbnb, YouTube, and Zoom, plus USV's thesis-driven memos) and the shared scaffolding becomes obvious. Once you see the shape, you can pre-empt almost every section.
+
+ The VC decision process is a two-stage filter
+
+ The first stage is the partner's personal conviction. The second is the partnership's collective sign-off, mediated by a written memo.
+
+ According to First Round Review , most partnerships require a point partner to write an investment memo of 3 to 30 pages that other partners read before the meeting. By the time you're in the room for "the partner meeting," the deal has already been pre-sold in writing. Your live performance moves things at the margin. The memo does the heavy lifting.
+
+ This is why the partner who likes you the most isn't always the one who can get you funded. A junior partner with low internal credibility can write a beautiful memo and watch it die. A senior partner can write a thin memo and get a yes on reputation. Optimize for the partner's ability to push the memo through, not for the partner's personal enthusiasm. 
+
+ Stage one, the conviction build: Two to four meetings, light diligence, reference calls, partner test-drives the thesis internally.
+
+ Stage two, the memo and the vote: Memo circulates 24–72 hours before the IC meeting. Partners come in pre-loaded. The room argues the contested sections, not the easy ones.
+
+ What founders see: The "partner meeting" invite. What's actually happening: the memo is being defended in real time.
+
+ What's in an IC memo: six sections, every time
+
+ Every published memo follows roughly the same skeleton. Pre-write each section inside your deck and the partner copy-pastes you into the document.
+
+ Here's the structure that shows up in the Sequoia memos for Airbnb (2009), YouTube (2005), and Zoom (2017), and in USV's thesis-driven writeups:
+
+ Company summary. One paragraph. What it is, what it does, why now. The partner often quotes your one-liner here verbatim. If your one-liner is bad, the memo opens badly.
+
+ Team. Founder backgrounds, why this team for this problem, prior outcomes, technical depth. The "founder-market fit" argument lives here.
+
+ Product. What it does, what's novel, screenshots or demo notes. For technical products, a paragraph on the actual technical wedge.
+
+ Market. Size, growth, current incumbents, why this is a moment. Bottom-up math is preferred over TAM-from-Gartner because partners trust math they can audit.
+
+ Business model and traction. Revenue, growth rate, retention, unit economics, pipeline. At seed, the absence of revenue gets replaced by usage and engagement.
+
+ Risks and mitigations. The section that does the real work. More on this below.
+
+ A founder who structures their deck in roughly this order makes the partner's life ten times easier. A founder who buries the business model on slide 14 forces the partner to hunt, and the memo gets written more slowly, more reluctantly, and with less conviction.
+
+ The conviction language partners actually use
+
+ Read enough memos and the high-conviction phrases start to repeat. They cluster around three things: founder, market timing, and inevitability.
+
+ On founders, the recurring phrase is some version of "This is the team that will win this market." Sequoia's Airbnb memo singled out the founders' obsessive customer focus; the Zoom memo emphasized Eric Yuan's prior execution at WebEx. The pattern: a specific, evidenced claim about why this human, in this market, now. Generic founder praise ("strong team, technical chops") is the language of a memo the partner is writing to be polite, not to win.
+
+ On markets, the conviction signal is "this is a step-function moment, not an incremental one." USV's thesis memos repeatedly framed investments around platform shifts (mobile, social graph, crypto) rather than feature wins. The partner needs a sentence that explains why the next ten years of this market won't look like the last ten.
+
+ On inevitability, the highest-conviction memos contain some version of "if this team doesn't build this, someone else will, and we'd rather back this one." That phrase is the partner telling the partnership: I'd regret passing more than I'd regret backing. The deck's job is to give the partner that exact sentence. 
+
+ The risks and mitigations section is where the deal lives or dies
+
+ Every memo has a risks section. Most founders think it's a checkbox. It's the opposite: it's where the partnership decides whether the partner has actually thought about this deal or just fallen in love with it.
+
+ The structure is always the same. Three to six risks, each with a one-paragraph mitigation. The risks the partner names tell you what the partnership will challenge. The mitigations tell you whether the partner has answers.
+
+ ✅ Good: "Risk: enterprise sales cycles will be 9–12 months and burn cash before validation. Mitigation: founder closed two design partners pre-seed at $40k each on 30-day cycles, indicating bottoms-up motion is viable; we underwrite one full year of runway assuming top-down sales fail entirely." Specific, numeric, falsifiable.
+
+ ❌ Bad: "Risk: market timing. Mitigation: team is experienced and will adapt." Generic risk, generic mitigation, signals zero diligence. A partner reading this writes "weak" in the margin.
+
+ The market context for 2026 makes this section harder than ever. Carta's State of Private Markets Q2 2024 shows the seed-stage bridge financing rate sitting at 41%, meaning investors are heavily focused on downside protection and runway. Carta's Q1 2024 data puts roughly 23% of new rounds as down rounds, which forces memos to spend real estate on valuation paths and dilution scenarios. If your deck doesn't address runway, dilution, and a credible bridge plan, the partner has to invent answers, and partners hate inventing answers.
+
+ The single highest-leverage edit a seed founder can make: write the partner's risks-and-mitigations section yourself, on slide 13 of the deck, in their voice.
+
+ Pre-write the memo inside your deck
+
+ The deck moves that make a memo writable are mechanical. Do them.
+
+ Open with the one-liner the memo's company summary will use. If you can't write a 25-word version of what you do, the partner can't either, and the memo opens with a hedge.
+
+ Put founder-market fit in concrete prior outcomes, not adjectives. "Two prior exits in payments infrastructure" beats "deeply experienced fintech operators." Specific facts get copy-pasted into memos. Adjectives get rewritten or cut.
+
+ Show bottom-up market math, not a TAM slide from a research report. A partner can defend math they can rebuild on a napkin. They can't defend a Gartner number against a skeptical colleague.
+
+ Name your top three risks before the partner asks. If you don't, the partnership will surface the worst-case version. If you do, the partner anchors on your framing.
+
+ Identify likely co-investors by name. Per Crunchbase News Q1 2024 , active firms like a16z remain aggressive in the current environment, making the identification of likely co-investors a persuasive element in internal memos. Telling the partner "Initialized and Founders Fund are the natural co-leads here" saves them the hunt.
+
+ Show sector signal where it exists. Crunchbase's Q1 2024 data shows investors continue to back large deals in AI and energy even in cautious markets. If you're in one of those sectors, lead with the macro tailwind. If you're not, don't pretend.
+
+ What this means for your next partner meeting
+
+ Stop thinking of the partner meeting as a pitch. Think of it as a working session for the memo.
+
+ Ask the partner directly, in meeting two: "What sections of the memo are hardest to write right now?" Most partners will answer honestly. That answer is your homework list before the IC. If you're sending more than 30 of these targeted updates a week, tools like Causo handle the personalization layer automatically; for lower volumes, a spreadsheet and a calendar reminder will do.
+
+ The founders who get funded in 2026 are not the ones with the slickest decks. They're the ones whose memos write themselves.
+
+ FAQ
+
+ How do VCs decide to invest? 
+A point partner builds conviction over 2–4 meetings, then writes a memo for the partnership covering thesis, team, market, traction, and risks. The other partners read it before the IC meeting and either back the deal, push back on specific risks, or kill it. The memo, not the pitch, is what most partners actually vote on.
+
+ What's in an IC memo? 
+Six sections in almost every public memo: company summary, team, product, market, business model and traction, and risks with mitigations. Sequoia's memos for Airbnb, YouTube, and Zoom all follow this shape. Length runs 3 to 30 pages depending on stage and firm.
+
+ How much does the partner matter vs the firm? 
+At seed and Series A, the point partner matters more than the firm brand. They write the memo, defend it, and earn or lose internal credibility on it. The firm sets the thesis and the bar; the partner picks the deal and pushes it through. If the partner isn't a believer, the firm logo on your cap table won't appear.
+
+ Do VCs use a checklist? 
+Implicitly, yes. Most memos cover the same six dimensions, and many firms have internal scoring rubrics for team, market, and traction. But pattern matching against the partner's prior wins usually beats any checklist. The checklist is what gets written down; pattern recognition is what actually drives conviction.
+
+ Related on the hub
+
+ How to find investors for your startup (2026) — Related vc process guide.
+
+ The VC fundraising process in 2026: inside the firm — Related vc process guide.
+
+ The 12-slide seed pitch deck that raised $187M: real teardowns — Related pitch deck guide.
+
+ ★ Causo · Start free
+ Run this raise inside Causo.
+ Match to the best-fit partner at 1,000+ funds, draft a hyper-specific email, and send from your own inbox, in one place.
+
+ Start free 
+ Keep reading
+ All guides → 
+ Guide · vc-process
+ The VC fundraising process in 2026: inside the firm
+ The VC fundraising process in 2026, inverted. IC memos, partner meetings, reference calls, and the internal artifacts that decide whether your deal clears.
+ Guide · vc-process
+ VC partner meeting: what changes at the full partner room
+ Your VC partner meeting is not a bigger first call. Your champion stops advocating, the skeptic runs the room, and the term-sheet question gets real.
+ Guide · cold-outreach
+ How to cold email VCs in 2026: the tactical playbook
+ Cold email VC outreach in 2026: subject patterns, three-paragraph body, follow-up cadence, and 18 good/bad example pairs to copy this quarter.
+ Guide · post-raise
+ Seed board meeting playbook 2026: agenda and materials
+ The seed board meeting playbook 2026: the 60-minute agenda, the 8-12 slide deck, the consent agenda mechanic, and the four asks that turn boards into work.
+
+ While you're here The funds behind these numbers
+ Accel Seed · Very active 
+ Andreessen Horowitz Seed · Very active 
+ Benchmark Seed · Very active 
+ Find your best-fit investors
+ See all 1,176 investors or browse the 50-fund shortlist → 🦝 From Causo
+ ★ Try it
+ Grade your email
+ Our LLM has read 40,000 cold emails. It'll rewrite yours in 30 seconds.
+ Open Grader 
+ Starter templates
+ Cold email — seed, AI Cold email — seed, fintech Follow-up — 1st nudge Rejection response 
+
+ Related
+ Active seed AI VCs · EU All 343 guides 
+
+ 🦝 Causo Hub 
+ Fundraising intel for founders. Free, no signup. Built and maintained by the team at Causo .
+
+ Hub
+ Guides 
+ Deadlines 
+ Events 
+ Lists 
+ Templates 
+ Tools 
+ Comparisons 
+
+ Popular
+ Cold email guide 
+ Seed valuation 
+ 12-slide deck 
+ SAFE vs priced round 
+ Active AI seed funds 
+
+ Causo
+ Start fundraising 
+
+ © 2026 Causo Terms · Privacy hub.causo.ai · Updated continuously

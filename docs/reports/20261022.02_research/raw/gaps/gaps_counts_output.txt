@@ -1,0 +1,62 @@
+QUOTE CHECK (verbatim quotes against saved page text)
+  quotes found verbatim: 69
+  quotes not found: 0 []
+  quotes with no saved page: 0 []
+  paraphrases: 13, with a saved page: 13
+
+FILES AND ROWS
+  saved page text files in raw/gaps: 73
+  saved Hacker News comment files in raw/gaps: 11
+  saved Hacker News search files in raw/gaps: 34
+  total rows: 82
+  by kind: {'quote': 69, 'paraphrase': 13}
+  distinct source links: 52
+
+QUESTION x LAYER (rows)
+  question                say      do       pay      context  total
+  q1_memo_time            6        8        0        3        17
+  q2_angel_pay            4        3        10       5        22
+  q3_data_room_delivery   8        4        0        4        16
+  q4_regret               7        1        0        2        10
+  q5_fund_pay             2        5        5        5        17
+
+PERSONA x LAYER (rows)
+  persona                 say      do       pay      context  total
+  partner_principal       9        5        4        0        18
+  angel_group             2        3        6        0        11
+  third_party             0        0        0        9        9
+  solo_angel              3        4        1        0        8
+  vendor_claim            0        0        0        8        8
+  syndicate_lead          1        2        3        0        6
+  vc_survey               2        3        0        0        5
+  fund_ops                3        2        0        0        5
+  observer                4        0        0        0        4
+  associate               2        1        0        0        3
+  outsourced_diligence    1        1        0        0        2
+  journalism              0        0        0        2        2
+  fund_buyers_mixed       0        0        1        0        1
+
+PAY-LAYER ROWS BY QUESTION
+  q2_angel_pay: 10
+  q5_fund_pay: 5
+
+SOURCE TYPES: {'academic_survey': 3, 'own_words': 33, 'interview': 2, 'community_comment': 14, 'vendor_case_study': 2, 'vendor_data': 3, 'third_party_guide': 7, 'association_research': 1, 'association_blog': 1, 'case_study': 1, 'association_guide': 2, 'vendor_price_page': 3, 'vendor_blog': 2, 'third_party_newsletter': 2, 'survey': 4, 'journalism': 1, 'third_party_roundup': 1}
+
+ROWS BY YEAR: {2007: 3, 2009: 3, 2010: 1, 2013: 1, 2015: 3, 2016: 3, 2018: 3, 2019: 1, 2020: 7, 2022: 3, 2023: 13, 2024: 5, 2025: 7, 2026: 19, None: 10}
+  dated rows: 72; from 2025 or later: 26 (36%); before 2020: 18 (25%)
+  undated rows: 10
+
+FIGURES USED IN THE WRITE-UP (inputs are from the cited sources)
+  118 survey hours as 8-hour working days: 14.8
+  81 early-stage hours as 8-hour working days: 10.1
+  120 hours (Strebulaev) as 8-hour working days: 15.0
+  250 hours (Strebulaev, all deals) as 8-hour working days: 31.2
+  angel median 20 hours as 8-hour working days: 2.5
+  New York Angels dues as a share of the expected yearly investment: 8% (4,000 / 50,000)
+  37 Angels dues as a share of the one required 25,000 investment: 12% later years, 20% first year
+  Syndicate lead's 500 fee as a share of the 2,500 minimum check: 20%; the later 7% fee on the same check: 175 dollars
+  Angel Squad 3,500 spread over one year of shared deals (3 to 5 a month): 58 to 97 dollars per deal shown
+  Per-deal cash prices for diligence in the sources: Lagos network about 600; report service 4,900 (2007)
+  Sydecar per-SPV cost range with the 2,000 regulatory fee: 4,500 to 14,500 dollars
+
+RESULT: all quotes verified

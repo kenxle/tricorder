@@ -1,0 +1,28 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [],
+ "hitsPerPage": 40,
+ "nbHits": 0,
+ "nbPages": 0,
+ "page": 0,
+ "params": "query=angel+syndicate+carry+fee+diligence&tags=comment&hitsPerPage=40&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 34,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 21
+  },
+  "fetch": {
+   "query": 33,
+   "total": 34
+  },
+  "total": 34
+ },
+ "query": "angel syndicate carry fee diligence",
+ "serverTimeMS": 35,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=angel+syndicate+carry+fee+diligence&tags=comment&hitsPerPage=40"
+}

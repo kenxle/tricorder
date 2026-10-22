@@ -1,0 +1,29 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [],
+ "hitsPerPage": 40,
+ "nbHits": 0,
+ "nbPages": 0,
+ "page": 0,
+ "params": "query=%22write+a+memo%22+VC+partners&tags=comment&hitsPerPage=40&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 16,
+ "processingTimingsMS": {
+  "_request": {
+   "queue": 1,
+   "roundTrip": 14
+  },
+  "fetch": {
+   "query": 15,
+   "total": 16
+  },
+  "total": 16
+ },
+ "query": "\"write a memo\" VC partners",
+ "serverTimeMS": 18,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=%22write+a+memo%22+VC+partners&tags=comment&hitsPerPage=40&advancedSyntax=true"
+}

@@ -1,0 +1,160 @@
+{
+ "exhaustive": {
+  "nbHits": true,
+  "typo": true
+ },
+ "exhaustiveNbHits": true,
+ "exhaustiveTypo": true,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "rchaudhary"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hiring",
+      "plan",
+      "burn"
+     ],
+     "value": "The biggest shift from a frontline manager to Head of Engineering at an early-stage startup is that your success becomes tied to outcomes, not output. You move from managing sprints and people to managing uncertainty, tradeoffs, and company direction. A few things to expect:<p>* You will need to be both strategic and hands-on - There is rarely enough headcount to delegate everything, so you will spend part of your day writing code or unblocking engineers, and another part setting technical vision, hiring, and negotiating priorities with the founders.<p>* You will represent engineering in every company decision - You will be the voice of technical reality, balancing product ambition, delivery timelines, and team health. This often means saying \u201cno\u201d diplomatically and helping non-technical founders understand tradeoffs without losing trust.<p>* You will need to build systems, not inherit them - Processes, culture, and hiring practices will not exist yet. You will define what \u201cgood engineering\u201d looks like. It is both liberating and exhausting.<p>* Your job security will tie closely to company health - Startups are volatile, and even great leaders get caught in external turbulence. What makes it different this time is that you will have agency. You will help shape the runway, the <em>hiring plan</em>, and the company\u2019s technical credibility.<p>When evaluating the offer, ask the founders candidly about:<p>* <em>Burn</em> rate and fundraising timeline<p>* How they make decisions today<p>* What success looks like for engineering in the next 12 months<p>* How much equity is being offered, and what percentage of the company it represents on a fully diluted basis<p>* What the vesting schedule looks like and whether there is a cliff<p>* How the company handles refresh grants or top-ups as it grows<p>* Whether there is an employee option pool increase planned in the next round<p>* How liquidation preferences or investor terms might affect eventual outcomes<p>If they can answer these questions with clarity and alignment, that is a strong sign you will be able to lead rather than just survive."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Startup Head of Engineering"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_rchaudhary",
+    "story_45889013"
+   ],
+   "author": "rchaudhary",
+   "comment_text": "The biggest shift from a frontline manager to Head of Engineering at an early-stage startup is that your success becomes tied to outcomes, not output. You move from managing sprints and people to managing uncertainty, tradeoffs, and company direction. A few things to expect:<p>* You will need to be both strategic and hands-on - There is rarely enough headcount to delegate everything, so you will spend part of your day writing code or unblocking engineers, and another part setting technical vision, hiring, and negotiating priorities with the founders.<p>* You will represent engineering in every company decision - You will be the voice of technical reality, balancing product ambition, delivery timelines, and team health. This often means saying \u201cno\u201d diplomatically and helping non-technical founders understand tradeoffs without losing trust.<p>* You will need to build systems, not inherit them - Processes, culture, and hiring practices will not exist yet. You will define what \u201cgood engineering\u201d looks like. It is both liberating and exhausting.<p>* Your job security will tie closely to company health - Startups are volatile, and even great leaders get caught in external turbulence. What makes it different this time is that you will have agency. You will help shape the runway, the hiring plan, and the company\u2019s technical credibility.<p>When evaluating the offer, ask the founders candidly about:<p>* Burn rate and fundraising timeline<p>* How they make decisions today<p>* What success looks like for engineering in the next 12 months<p>* How much equity is being offered, and what percentage of the company it represents on a fully diluted basis<p>* What the vesting schedule looks like and whether there is a cliff<p>* How the company handles refresh grants or top-ups as it grows<p>* Whether there is an employee option pool increase planned in the next round<p>* How liquidation preferences or investor terms might affect eventual outcomes<p>If they can answer these questions with clarity and alignment, that is a strong sign you will be able to lead rather than just survive.",
+   "created_at": "2025-11-11T21:56:16Z",
+   "created_at_i": 1762898176,
+   "objectID": "45893436",
+   "parent_id": 45889013,
+   "story_id": 45889013,
+   "story_title": "Ask HN: Startup Head of Engineering",
+   "updated_at": "2026-03-05T23:02:05Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "enra"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hiring",
+      "plan",
+      "burn"
+     ],
+     "value": "Karri from Linear here.<p>I wrote this to challenge the common dichotomy that startups are either VC-backed money-burning machines or anti-VC/profitably bootstrapped. It doesn\u2019t have to be that binary. There\u2019s a spectrum, a middle ground. You can retain control by being profitable while still using funding as leverage or as a safety net if things don\u2019t go as planned.<p>One of the paradoxes of fundraising is that it\u2019s easiest when you don\u2019t need the money\u2014and almost impossible when you do. By keeping the company mostly profitable, you never have to need it, giving you full control over timing and the ability to choose the right deal. But having that funding can enable you some more leverage or add more risk business you could afford while being bootstrapped. In our case we raised the funding for the conservative case, but the reality turned much better than expected.<p>Another misconception is that sustainable growth comes from spending or hiring. In reality, many great products take off first and because they take off, any amount of hiring becomes justified. Some of these companies are even profitable before they go on a hiring spree. The problem is that the typical approach isn\u2019t nuanced or intentional enough. You might decide to hire 100 engineers before knowing how the next 10 engineers impact your trajectory. If you cut the <em>hiring plan</em> in half\u2014or even to a quarter\u2014it might not affect growth at all. But there\u2019s often an assumption that growing the team is also good, and maybe it comes from a time in the 90s or something when you had hire people to man the phones to take orders.<p>What I believe is that startup\u2019s growth is primarily driven by product superiority and market fit, not just by headcount or marketing spend. Those things can amplify success, and in some cases, they can even mask a bad market fit through sheer force of sales and marketing.<p>A less cynical take on VCs is that they\u2019re not necessarily pushing companies to <em>burn</em> cash they just want founders to double down when they see a company working. But whether you can truly scale depends on your market dynamics. Sometimes, you need time to learn or to land the right deals in a segment before pouring money into growth.<p>The problem is that the current thinking is often too simplistic. Since you're startup and have cash, the spending more is always the right move. Going all the way 100 when you could dial it down to 50 or 30 and regain control and de-risk the changes of complete flare out."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The Profitable Startup"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://linear.app/blog/the-profitable-startup"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_enra",
+    "story_43130480"
+   ],
+   "author": "enra",
+   "children": [
+    43133595,
+    43133659,
+    43133938
+   ],
+   "comment_text": "Karri from Linear here.<p>I wrote this to challenge the common dichotomy that startups are either VC-backed money-burning machines or anti-VC&#x2F;profitably bootstrapped. It doesn\u2019t have to be that binary. There\u2019s a spectrum, a middle ground. You can retain control by being profitable while still using funding as leverage or as a safety net if things don\u2019t go as planned.<p>One of the paradoxes of fundraising is that it\u2019s easiest when you don\u2019t need the money\u2014and almost impossible when you do. By keeping the company mostly profitable, you never have to need it, giving you full control over timing and the ability to choose the right deal. But having that funding can enable you some more leverage or add more risk business you could afford while being bootstrapped. In our case we raised the funding for the conservative case, but the reality turned much better than expected.<p>Another misconception is that sustainable growth comes from spending or hiring. In reality, many great products take off first and because they take off, any amount of hiring becomes justified. Some of these companies are even profitable before they go on a hiring spree. The problem is that the typical approach isn\u2019t nuanced or intentional enough. You might decide to hire 100 engineers before knowing how the next 10 engineers impact your trajectory. If you cut the hiring plan in half\u2014or even to a quarter\u2014it might not affect growth at all. But there\u2019s often an assumption that growing the team is also good, and maybe it comes from a time in the 90s or something when you had hire people to man the phones to take orders.<p>What I believe is that startup\u2019s growth is primarily driven by product superiority and market fit, not just by headcount or marketing spend. Those things can amplify success, and in some cases, they can even mask a bad market fit through sheer force of sales and marketing.<p>A less cynical take on VCs is that they\u2019re not necessarily pushing companies to burn cash they just want founders to double down when they see a company working. But whether you can truly scale depends on your market dynamics. Sometimes, you need time to learn or to land the right deals in a segment before pouring money into growth.<p>The problem is that the current thinking is often too simplistic. Since you&#x27;re startup and have cash, the spending more is always the right move. Going all the way 100 when you could dial it down to 50 or 30 and regain control and de-risk the changes of complete flare out.",
+   "created_at": "2025-02-21T21:00:57Z",
+   "created_at_i": 1740171657,
+   "objectID": "43132897",
+   "parent_id": 43130480,
+   "story_id": 43130480,
+   "story_title": "The Profitable Startup",
+   "story_url": "https://linear.app/blog/the-profitable-startup",
+   "updated_at": "2025-11-01T04:24:46Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jedberg"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hiring",
+      "plan",
+      "burn"
+     ],
+     "value": "Most of the good ones start with their most current blurb &quot;we make X for Y&quot;, which helps me remember who they are and also makes sure I'm on message when I talk to others about them.<p>Then it has runway and <em>burn</em> rate (how long will they still be alive if nothing changes).<p>Then it has KPIs that matter to their business, usually the ones they are tracking for themselves.  Monthly active users, change in daily actives, number of widgets produced, etc.<p>Then sometimes a <em>hiring plan</em>.  If they tell me who they are looking for I can sometimes help.<p>Then highlights, lowlights, and asks.<p>Those are usually the best ones because it means they are tracking these things and it also means if there is a place where I can help I can get it from the investor update."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Startup Mortality Rates"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://avc.xyz/startup-mortality-rates"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_jedberg",
+    "story_41512181"
+   ],
+   "author": "jedberg",
+   "comment_text": "Most of the good ones start with their most current blurb &quot;we make X for Y&quot;, which helps me remember who they are and also makes sure I&#x27;m on message when I talk to others about them.<p>Then it has runway and burn rate (how long will they still be alive if nothing changes).<p>Then it has KPIs that matter to their business, usually the ones they are tracking for themselves.  Monthly active users, change in daily actives, number of widgets produced, etc.<p>Then sometimes a hiring plan.  If they tell me who they are looking for I can sometimes help.<p>Then highlights, lowlights, and asks.<p>Those are usually the best ones because it means they are tracking these things and it also means if there is a place where I can help I can get it from the investor update.",
+   "created_at": "2024-09-14T21:06:36Z",
+   "created_at_i": 1726347996,
+   "objectID": "41542957",
+   "parent_id": 41542393,
+   "story_id": 41512181,
+   "story_title": "Startup Mortality Rates",
+   "story_url": "https://avc.xyz/startup-mortality-rates",
+   "updated_at": "2024-09-20T17:49:00Z"
+  }
+ ],
+ "hitsPerPage": 40,
+ "nbHits": 3,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=%22hiring+plan%22+%22burn%22&tags=comment&hitsPerPage=40&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 4,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 24
+  },
+  "fetch": {
+   "scanning": 3,
+   "total": 4
+  },
+  "total": 4
+ },
+ "query": "\"hiring plan\" \"burn\"",
+ "serverTimeMS": 5,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=%22hiring+plan%22+%22burn%22&tags=comment&hitsPerPage=40&advancedSyntax=true"
+}

@@ -1,0 +1,1194 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "franze"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "churn",
+      "investors",
+      "growth",
+      "hid"
+     ],
+     "value": "I wrote about it here <a href=\"https://medium.com/@franz.enzenhofer/about-targeted-list-landing-page-hashes-9dd719df7068?source=friends_link&amp;sk=a03ea42c32b9331226828d340ada0579\" rel=\"nofollow\">https://medium.com/@franz.enzenhofer/about-targeted-list-lan...</a> and played around with the model since then a lot.<p>As long as a company does not have organic <em>growth</em>. Meaning Referral (existing customers bring in new customers) &gt; <em>Churn</em> (losing customers) there just is no scenario where it will end well for the company.<p>Adding <em>investor</em> money for paid <em>growth</em> is at best a halfway decent accelerator, at worst noise that <em>hid</em>es the real performance of a company."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The Unicorns Fell into a Ditch"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.bloomberg.com/opinion/articles/2020-05-18/the-unicorns-fell-into-a-ditch"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_franze",
+    "story_23225147"
+   ],
+   "author": "franze",
+   "children": [
+    23226691
+   ],
+   "comment_text": "I wrote about it here <a href=\"https:&#x2F;&#x2F;medium.com&#x2F;@franz.enzenhofer&#x2F;about-targeted-list-landing-page-hashes-9dd719df7068?source=friends_link&amp;sk=a03ea42c32b9331226828d340ada0579\" rel=\"nofollow\">https:&#x2F;&#x2F;medium.com&#x2F;@franz.enzenhofer&#x2F;about-targeted-list-lan...</a> and played around with the model since then a lot.<p>As long as a company does not have organic growth. Meaning Referral (existing customers bring in new customers) &gt; Churn (losing customers) there just is no scenario where it will end well for the company.<p>Adding investor money for paid growth is at best a halfway decent accelerator, at worst noise that hides the real performance of a company.",
+   "created_at": "2020-05-18T18:31:48Z",
+   "created_at_i": 1589826708,
+   "objectID": "23226497",
+   "parent_id": 23226045,
+   "story_id": 23225147,
+   "story_title": "The Unicorns Fell into a Ditch",
+   "story_url": "https://www.bloomberg.com/opinion/articles/2020-05-18/the-unicorns-fell-into-a-ditch",
+   "updated_at": "2024-09-20T06:12:06Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "DaniFong"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "churn",
+      "investors",
+      "growth",
+      "hid"
+     ],
+     "value": "This post is derived from a similar post I made on TopCoder.<p>There's a simple model of stock pricing that's even cleaner than price earnings ratios. Adjusted for risk and inflation, stocks are priced, in an efficient market, based on the estimation of all future profits.<p>This is actually a terrific mental model for long term trading, and holding companies such as Berkshire-Hathaway use similar models. <p>However if all you are trading are shares of real companies proving regular goods or services, then trading in the short term implies that you're making a bet regarding the first derivative of its market price.<p>In recent years there is a lot of trading in what are called derivatives. The prices of the derivatives themselves estimate value at some future date, and short term funding of <i>these</i> is then dependent on the second derivatives of equities. <p>The system blows up and becomes non-linear very quickly: in particular many of the nice properties that are derived from the efficient market hypothesis become less and less valid, and short term gains become quite accessible.<p>Additionally, the managers of big money funds (venture capital, private equity, hedge funds) have asymmetric incentives: that is, given a choice between an investing making 30% on average with a 1% SD, or an investment making 28% with a 10% SD, they'll take the latter. Why? Performance fees are structured so that fund managers receive some percentage of the profits each year (around 20% - 50%, in some cases), while they do not have to pay any of their own money on a downswing (indeed, they would still incur a management fee on the original principal!). <p>As a result, short-term traders, as represented by say, hedge funds, do not trade towards new future income, and do not, in many cases, such as in financial bubbles and credit crunches, move the market any closer towards the efficient model commonly described and referenced to, in both finance and academia. The following article here documents a slice of these phenomena in time: <a href=\"http://www.princeton.edu/~markus/research/papers/hedgefunds_bubble.htm\" rel=\"nofollow\">http://www.princeton.edu/~markus/research/papers/hedgefunds_...</a><p>In particular, the housing bubble and subsequent credit crunch was largely aided by the new lending model the banks had devised. In previous years, the banks would lend their own money to home owners, and as a result were less likely to take risks funding mortgages that might not be paid-off, for property at unusual values.<p>In the new model (as described in the topic post), banks would appraise the property and, in a sense, broker a deal through a mortgage bond market. Like brokers there are incentives to '<em>churn</em>' deals - to move more volume to grab fees. Now the mortgage bond market itself was open to public investment to the stock market, and quickly swelled due to short term investments.<p>Hedge funds, largely computerized, would notice a <em>hi</em>gh-<em>growth</em>, <em>hi</em>gh-beta (volatility uncorrelated with the existing portfolio) stock and feed into the bond market, yielding billions in performance fees for the industry (the first movers were particularly satisfied).<p>Unfortunately, mortgage bond markets are very unlike normal public companies, where at least there's quarterly financial reporting, and many other windows into operations as well. The risk depends, in aggregate, on the risk of funding all these individual home owners. It turns out that the banks had done a poor job vetting home owners, because many started, well, not paying. Additionally, since the housing prices, exposed inadvertently to the public market's fickle derivative pricing schemes, had <em>hi</em>t a peak and started to turn downwards, many people were left with <i>negative</i> equity on their homes. Human nature being what it is, many refused to pay mortgage on negative equity, which rapidly accelerated the spiral.<p>The hedge funds, rather quickly, pulled out of the mortgage bond market, and then most of the mortgage bonds went bankrupt.<p>Some might blame human nature, or say it was just a strange market inefficiency, but it was bound to happen really. The consequences of investment were not aligned to the risks, and short term <em>investors</em> could make a fortune without improving the economy as a whole.<p>I think this summarizes my picture of corporations as well. When they represent small groups, risks are quite commensurate with effort and rewards. As they get larger, many corporations more resemble the structure of fascist governments, rather than free markets, internally, and the decisions are often not made to maximize the welfare of the corporation, nor the economy as a whole, but rather the comfort of the individuals within the system's constraints. At the turn of the century, that meant Enron's and WorldCom's shenanigans, this summer, it meant hedge fund managers selling short on the mortgage bond market after pumping them up, and sometime later, it's going to mean people being individually greedy on the circus that is the financial markets."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The US sub-prime crisis in graphics"
+    },
+    "story_url": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "hid"
+     ],
+     "value": "http://news.bbc.co.uk/1/<em>hi</em>/business/7073131.stm"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_DaniFong",
+    "story_90726"
+   ],
+   "author": "DaniFong",
+   "comment_text": "This post is derived from a similar post I made on TopCoder.<p>There's a simple model of stock pricing that's even cleaner than price earnings ratios. Adjusted for risk and inflation, stocks are priced, in an efficient market, based on the estimation of all future profits.<p>This is actually a terrific mental model for long term trading, and holding companies such as Berkshire-Hathaway use similar models. <p>However if all you are trading are shares of real companies proving regular goods or services, then trading in the short term implies that you're making a bet regarding the first derivative of its market price.<p>In recent years there is a lot of trading in what are called derivatives. The prices of the derivatives themselves estimate value at some future date, and short term funding of <i>these</i> is then dependent on the second derivatives of equities. <p>The system blows up and becomes non-linear very quickly: in particular many of the nice properties that are derived from the efficient market hypothesis become less and less valid, and short term gains become quite accessible.<p>Additionally, the managers of big money funds (venture capital, private equity, hedge funds) have asymmetric incentives: that is, given a choice between an investing making 30% on average with a 1% SD, or an investment making 28% with a 10% SD, they'll take the latter. Why? Performance fees are structured so that fund managers receive some percentage of the profits each year (around 20% - 50%, in some cases), while they do not have to pay any of their own money on a downswing (indeed, they would still incur a management fee on the original principal!). <p>As a result, short-term traders, as represented by say, hedge funds, do not trade towards new future income, and do not, in many cases, such as in financial bubbles and credit crunches, move the market any closer towards the efficient model commonly described and referenced to, in both finance and academia. The following article here documents a slice of these phenomena in time: <a href=\"http://www.princeton.edu/~markus/research/papers/hedgefunds_bubble.htm\" rel=\"nofollow\">http://www.princeton.edu/~markus/research/papers/hedgefunds_...</a><p>In particular, the housing bubble and subsequent credit crunch was largely aided by the new lending model the banks had devised. In previous years, the banks would lend their own money to home owners, and as a result were less likely to take risks funding mortgages that might not be paid-off, for property at unusual values.<p>In the new model (as described in the topic post), banks would appraise the property and, in a sense, broker a deal through a mortgage bond market. Like brokers there are incentives to 'churn' deals - to move more volume to grab fees. Now the mortgage bond market itself was open to public investment to the stock market, and quickly swelled due to short term investments.<p>Hedge funds, largely computerized, would notice a high-growth, high-beta (volatility uncorrelated with the existing portfolio) stock and feed into the bond market, yielding billions in performance fees for the industry (the first movers were particularly satisfied).<p>Unfortunately, mortgage bond markets are very unlike normal public companies, where at least there's quarterly financial reporting, and many other windows into operations as well. The risk depends, in aggregate, on the risk of funding all these individual home owners. It turns out that the banks had done a poor job vetting home owners, because many started, well, not paying. Additionally, since the housing prices, exposed inadvertently to the public market's fickle derivative pricing schemes, had hit a peak and started to turn downwards, many people were left with <i>negative</i> equity on their homes. Human nature being what it is, many refused to pay mortgage on negative equity, which rapidly accelerated the spiral.<p>The hedge funds, rather quickly, pulled out of the mortgage bond market, and then most of the mortgage bonds went bankrupt.<p>Some might blame human nature, or say it was just a strange market inefficiency, but it was bound to happen really. The consequences of investment were not aligned to the risks, and short term investors could make a fortune without improving the economy as a whole.<p>I think this summarizes my picture of corporations as well. When they represent small groups, risks are quite commensurate with effort and rewards. As they get larger, many corporations more resemble the structure of fascist governments, rather than free markets, internally, and the decisions are often not made to maximize the welfare of the corporation, nor the economy as a whole, but rather the comfort of the individuals within the system's constraints. At the turn of the century, that meant Enron's and WorldCom's shenanigans, this summer, it meant hedge fund managers selling short on the mortgage bond market after pumping them up, and sometime later, it's going to mean people being individually greedy on the circus that is the financial markets.",
+   "created_at": "2007-12-19T08:32:09Z",
+   "created_at_i": 1198053129,
+   "objectID": "91076",
+   "parent_id": 90726,
+   "points": null,
+   "story_id": 90726,
+   "story_title": "The US sub-prime crisis in graphics",
+   "story_url": "http://news.bbc.co.uk/1/hi/business/7073131.stm",
+   "updated_at": "2023-09-06T19:07:19Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "yourapostasy"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "churn",
+      "investors",
+      "growth",
+      "hid"
+     ],
+     "value": "&gt; ...just low level unskilled dirty manufacturing.<p>Okay, odds are good that as a manufacturing layperson, I'm just a dummy for not seeing this, but the &quot;climb up the value ladder&quot; implementation in American business has never made sense to me. <i>Especially</i> with automation.<p>Here is how I see it as a value <em>investor</em>, so please tell me where I'm wrong.<p>&quot;Climb up the value ladder, and let someone else occupy all those pesky 'low-value' rungs.&quot;<p>That's what I see many American management subscribe to. The part I didn't understand: those rungs are your &quot;innovation feedstock&quot;, the raw material if you will, where you find your next innovation iterations. It's like saying, &quot;meh, I'll let someone else deal with those pesky metallurgy details, and <em>churn</em> out jet turbines with the latest in metallurgy advances&quot;. It's a belief that innovation is a &quot;home-run&quot;, &quot;big bang&quot; phenomena, and not Edison's &quot;99% perspiration&quot;, daily grind-it-out, fight-for-every-inch iteration, that sometimes accretes into an edifice taken as a whole that is only much later celebrated as an &quot;overnight success&quot;. If I rely upon general metallurgy advances to inform my design team of what's metallurgic-ally possible, then aren't my competitors availed of the exact same advances at the same time? Whereas, if I have my engineers, materials scientists, and &quot;dirty&quot; forging plant workers come together, asking themselves, &quot;if we need a turbine that has these qualities, it must have a metal with those properties, then what will it take to come up with the materials science and forging techniques to reach that design goal&quot;, that's a trade secret that no trivial or even modest amount of reverse engineering is going to ever reveal.<p>It certainly has been this way for me personally in software and coding, so maybe I'm mistakenly ascribing and generalizing that experience with <em>hi</em>gh-complexity endeavors to manufacturing. I certainly concede that for <em>investors</em>, the numbers show innovation is best modeled as a home-run, big-bang phenomena, and it doesn't make sense to invest in accretion. That's how the entire VC business model is presented, at least. But startups are a tiny fraction of the overall business universe. The successful stories in startups are the <em>hi</em>ghest <em>growth</em> for sure, and the most exciting-shiny-chrome, but for index-investing boring-but-certain-profits level moats of defensible businesses, I see more opportunities in a model where I vertically integrate the value ladder, so the value ladder strategy is instead stated as:<p>&quot;Climb up the value ladder, and vertically-integrate the entire value chain to capture all accretion benefits to a value equation greater than the sum of all its parts.&quot;<p>The above was my thinking since the 80's when I first heard about the value ladder approach of abandoning &quot;low-value&quot; rungs, when automation wasn't the big deal it is today. With automation now on everyone's mind, now I'm left wondering if the accretion benefits aren't amplified many-fold: exactly who is positioned with the expertise and knowledge base to actually automate, the organizations doing the manufacturing, or the ones who are focused on design (including &quot;<em>hi</em>gh-end&quot; manufacturing), management, sales, and marketing (DMSM)? The <em>growth</em> during the onrushing automation ramp-up is likely in the automation and not the DMSM activities. If I am only junior-grade with my DMSM but I have figured out automation, then my COGS drops to the floor and I have a window of time during which I plow my profits into learning and getting my DMSM story straight to out-compete conventional DMSM shops, and take over their market niches. That window can be a hell of a long time if that automation is nearly perfectly opaque to outsiders, because it isn't &quot;just&quot; code, but data that drives the automation around machine learning, data that you can't get unless you actually were doing the original manufacturing at scale (ruling out replicating the automation by building a pilot plant, which only yields automation-delivering-unacceptable-quality)."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The China Cultural Clash"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://stratechery.com/2019/the-china-cultural-clash/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_yourapostasy",
+    "story_21194083"
+   ],
+   "author": "yourapostasy",
+   "comment_text": "&gt; ...just low level unskilled dirty manufacturing.<p>Okay, odds are good that as a manufacturing layperson, I&#x27;m just a dummy for not seeing this, but the &quot;climb up the value ladder&quot; implementation in American business has never made sense to me. <i>Especially</i> with automation.<p>Here is how I see it as a value investor, so please tell me where I&#x27;m wrong.<p>&quot;Climb up the value ladder, and let someone else occupy all those pesky &#x27;low-value&#x27; rungs.&quot;<p>That&#x27;s what I see many American management subscribe to. The part I didn&#x27;t understand: those rungs are your &quot;innovation feedstock&quot;, the raw material if you will, where you find your next innovation iterations. It&#x27;s like saying, &quot;meh, I&#x27;ll let someone else deal with those pesky metallurgy details, and churn out jet turbines with the latest in metallurgy advances&quot;. It&#x27;s a belief that innovation is a &quot;home-run&quot;, &quot;big bang&quot; phenomena, and not Edison&#x27;s &quot;99% perspiration&quot;, daily grind-it-out, fight-for-every-inch iteration, that sometimes accretes into an edifice taken as a whole that is only much later celebrated as an &quot;overnight success&quot;. If I rely upon general metallurgy advances to inform my design team of what&#x27;s metallurgic-ally possible, then aren&#x27;t my competitors availed of the exact same advances at the same time? Whereas, if I have my engineers, materials scientists, and &quot;dirty&quot; forging plant workers come together, asking themselves, &quot;if we need a turbine that has these qualities, it must have a metal with those properties, then what will it take to come up with the materials science and forging techniques to reach that design goal&quot;, that&#x27;s a trade secret that no trivial or even modest amount of reverse engineering is going to ever reveal.<p>It certainly has been this way for me personally in software and coding, so maybe I&#x27;m mistakenly ascribing and generalizing that experience with high-complexity endeavors to manufacturing. I certainly concede that for investors, the numbers show innovation is best modeled as a home-run, big-bang phenomena, and it doesn&#x27;t make sense to invest in accretion. That&#x27;s how the entire VC business model is presented, at least. But startups are a tiny fraction of the overall business universe. The successful stories in startups are the highest growth for sure, and the most exciting-shiny-chrome, but for index-investing boring-but-certain-profits level moats of defensible businesses, I see more opportunities in a model where I vertically integrate the value ladder, so the value ladder strategy is instead stated as:<p>&quot;Climb up the value ladder, and vertically-integrate the entire value chain to capture all accretion benefits to a value equation greater than the sum of all its parts.&quot;<p>The above was my thinking since the 80&#x27;s when I first heard about the value ladder approach of abandoning &quot;low-value&quot; rungs, when automation wasn&#x27;t the big deal it is today. With automation now on everyone&#x27;s mind, now I&#x27;m left wondering if the accretion benefits aren&#x27;t amplified many-fold: exactly who is positioned with the expertise and knowledge base to actually automate, the organizations doing the manufacturing, or the ones who are focused on design (including &quot;high-end&quot; manufacturing), management, sales, and marketing (DMSM)? The growth during the onrushing automation ramp-up is likely in the automation and not the DMSM activities. If I am only junior-grade with my DMSM but I have figured out automation, then my COGS drops to the floor and I have a window of time during which I plow my profits into learning and getting my DMSM story straight to out-compete conventional DMSM shops, and take over their market niches. That window can be a hell of a long time if that automation is nearly perfectly opaque to outsiders, because it isn&#x27;t &quot;just&quot; code, but data that drives the automation around machine learning, data that you can&#x27;t get unless you actually were doing the original manufacturing at scale (ruling out replicating the automation by building a pilot plant, which only yields automation-delivering-unacceptable-quality).",
+   "created_at": "2019-10-09T10:38:02Z",
+   "created_at_i": 1570617482,
+   "objectID": "21201819",
+   "parent_id": 21198688,
+   "story_id": 21194083,
+   "story_title": "The China Cultural Clash",
+   "story_url": "https://stratechery.com/2019/the-china-cultural-clash/",
+   "updated_at": "2024-09-20T04:54:26Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "trjordan"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "churn",
+      "investors",
+      "growth",
+      "hid"
+     ],
+     "value": "A LOT of sales conversations (VC or otherwise) are about eliminating reasons to say no. Revenue is a hugely thorny subject, and getting revenue <em>growth</em> to look uncontentious is hard. You need <em>hi</em>gh <em>growth</em>, low <em>churn</em>, lots of expansion, a plausible path to find new customers, and specifically for giphy, a story about why you couldn't monetize the entire market immediately (why do you need time to ramp up? <em>hi</em>ring sales reps, implement the same feature on different platforms, what?). Lots of details, lots of speed bumps that would tank an otherwise compelling story.<p>On the other hand, it's not easy to sell without revenue, but if you find somebody who's a believer in the space, you've eliminated a TON of questions. So it's not easier per se, because a lot of <em>investors</em> will turn you down for not having revenue, but among those who say yes, there's no further questions, because there's nothing to dig into."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Giphy Closes $55M Series C at a $300M Post-Money Valuation"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://techcrunch.com/2016/02/16/giphy-closes-55-million-series-c-at-a-300-million-post-money-valuation/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_trjordan",
+    "story_11110828"
+   ],
+   "author": "trjordan",
+   "comment_text": "A LOT of sales conversations (VC or otherwise) are about eliminating reasons to say no. Revenue is a hugely thorny subject, and getting revenue growth to look uncontentious is hard. You need high growth, low churn, lots of expansion, a plausible path to find new customers, and specifically for giphy, a story about why you couldn&#x27;t monetize the entire market immediately (why do you need time to ramp up? hiring sales reps, implement the same feature on different platforms, what?). Lots of details, lots of speed bumps that would tank an otherwise compelling story.<p>On the other hand, it&#x27;s not easy to sell without revenue, but if you find somebody who&#x27;s a believer in the space, you&#x27;ve eliminated a TON of questions. So it&#x27;s not easier per se, because a lot of investors will turn you down for not having revenue, but among those who say yes, there&#x27;s no further questions, because there&#x27;s nothing to dig into.",
+   "created_at": "2016-02-16T17:36:43Z",
+   "created_at_i": 1455644203,
+   "objectID": "11111578",
+   "parent_id": 11111498,
+   "story_id": 11110828,
+   "story_title": "Giphy Closes $55M Series C at a $300M Post-Money Valuation",
+   "story_url": "http://techcrunch.com/2016/02/16/giphy-closes-55-million-series-c-at-a-300-million-post-money-valuation/",
+   "updated_at": "2024-09-19T22:48:31Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "revolutukr"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "churn",
+      "investors",
+      "growth",
+      "hid"
+     ],
+     "value": "If you aren't a 25 year old kid trying to win the startup lottery at a future unicorn, or getting fat at FAANG, then these jobs are great. They move slower, so their processes are often very well refined, the <em>churn</em> is low and the change/velocity is even.<p>There are few fires to fight in a stable company with moderate <em>growth</em>, a low change rate, and predictable customer behaviors. Disorganization and exhaustion is usually a side effect of hyper <em>growth</em>.<p>When I <em>hi</em>t 40 or so, I accepted I wasn't going to be a billionaire and that I was too old and too mediocre to get a job at a unicorn. I still provided a lot of value for my customers in last few years of work before I retired from tech.<p>If you are ready to transition from &quot;My life is my work! I'm going to kill it, crush it, and get my lamb&quot; .. Then look for a stable, low <em>growth</em> company which disappointed <em>investors</em> but not customers."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "investors"
+     ],
+     "value": "Ask HN: How do angel <em>investors</em>/VCs deal with \u201czombie companies\u201d?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_revolutukr",
+    "story_33165350"
+   ],
+   "author": "revolutukr",
+   "comment_text": "If you aren&#x27;t a 25 year old kid trying to win the startup lottery at a future unicorn, or getting fat at FAANG, then these jobs are great. They move slower, so their processes are often very well refined, the churn is low and the change&#x2F;velocity is even.<p>There are few fires to fight in a stable company with moderate growth, a low change rate, and predictable customer behaviors. Disorganization and exhaustion is usually a side effect of hyper growth.<p>When I hit 40 or so, I accepted I wasn&#x27;t going to be a billionaire and that I was too old and too mediocre to get a job at a unicorn. I still provided a lot of value for my customers in last few years of work before I retired from tech.<p>If you are ready to transition from &quot;My life is my work! I&#x27;m going to kill it, crush it, and get my lamb&quot; .. Then look for a stable, low growth company which disappointed investors but not customers.",
+   "created_at": "2022-10-12T05:49:07Z",
+   "created_at_i": 1665553747,
+   "objectID": "33173348",
+   "parent_id": 33172928,
+   "story_id": 33165350,
+   "story_title": "Ask HN: How do angel investors/VCs deal with \u201czombie companies\u201d?",
+   "updated_at": "2024-12-24T20:18:50Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "themodelplumber"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "churn",
+      "investors",
+      "growth",
+      "hid"
+     ],
+     "value": "IDK much, and I can't speak to reserve currency status, but in your given scenario I'd expect huge capital transfers. Volatility would be the bet there. You'd be crazy to bet against <em>churn</em>. Traditional value <em>investors</em> would get torched, albeit more slowly torched than <em>growth</em>.<p>However the USA has an underappreciated stability-focused foundation which helps power its tight <em>hi</em>storic focus on systems of subjective ethics. You'd think the ethics would push the stability around, but IMO it's the exact reverse. So I personally look around and I see lots of stability-focused people mostly looking to buy the dip and get on with their lives the best way they know how (the united way).<p>A similar lesson is true with the USA and economic <em>growth</em>. The lesson people are taking out of <em>hi</em>gh gas prices and inflation isn't &quot;the system is broken, so what needs to happen is...&quot; (objective) so much as &quot;stop messing with my life, what I need is...&quot; (subjective) and this latter position rewards government stability.<p>From a technical perspective the top charts for the US economy are showing an expected relief period, comparable to the duty cycle concept.<p>Crypto <em>growth</em>, even given the USD-exit mindset, correlates amusingly well with bull markets for US economic <em>growth</em> leaders. I'd say there is at least some considerable disincentive to desire a coup, on the crypto-focused side, for that reason alone, even if the USD or reserve currency concept is annoying.<p>I see considerable technical reasons to expect US markets to come out very strong after the current breather. There are some massively impressive businesses and tech behind this as well, and businesses are learning to take better care of employees, broadly speaking.<p>Plus right now we are right in the middle of a panic-focused news cycle so there is systemic bias looking in that direction on even a month-to-month level. Sector rotation seems normal as well.<p>Tons of new traders and even retail <em>investors</em> are also looking to BTD ASAP which also says a lot. They saw how COVID turned out and want to position for another springboard for personal returns.<p>Just some thoughts..."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: What happens to the global financial system if the USA has a coup?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_themodelplumber",
+    "story_31611179"
+   ],
+   "author": "themodelplumber",
+   "comment_text": "IDK much, and I can&#x27;t speak to reserve currency status, but in your given scenario I&#x27;d expect huge capital transfers. Volatility would be the bet there. You&#x27;d be crazy to bet against churn. Traditional value investors would get torched, albeit more slowly torched than growth.<p>However the USA has an underappreciated stability-focused foundation which helps power its tight historic focus on systems of subjective ethics. You&#x27;d think the ethics would push the stability around, but IMO it&#x27;s the exact reverse. So I personally look around and I see lots of stability-focused people mostly looking to buy the dip and get on with their lives the best way they know how (the united way).<p>A similar lesson is true with the USA and economic growth. The lesson people are taking out of high gas prices and inflation isn&#x27;t &quot;the system is broken, so what needs to happen is...&quot; (objective) so much as &quot;stop messing with my life, what I need is...&quot; (subjective) and this latter position rewards government stability.<p>From a technical perspective the top charts for the US economy are showing an expected relief period, comparable to the duty cycle concept.<p>Crypto growth, even given the USD-exit mindset, correlates amusingly well with bull markets for US economic growth leaders. I&#x27;d say there is at least some considerable disincentive to desire a coup, on the crypto-focused side, for that reason alone, even if the USD or reserve currency concept is annoying.<p>I see considerable technical reasons to expect US markets to come out very strong after the current breather. There are some massively impressive businesses and tech behind this as well, and businesses are learning to take better care of employees, broadly speaking.<p>Plus right now we are right in the middle of a panic-focused news cycle so there is systemic bias looking in that direction on even a month-to-month level. Sector rotation seems normal as well.<p>Tons of new traders and even retail investors are also looking to BTD ASAP which also says a lot. They saw how COVID turned out and want to position for another springboard for personal returns.<p>Just some thoughts...",
+   "created_at": "2022-06-03T17:44:51Z",
+   "created_at_i": 1654278291,
+   "objectID": "31611440",
+   "parent_id": 31611179,
+   "story_id": 31611179,
+   "story_title": "Ask HN: What happens to the global financial system if the USA has a coup?",
+   "updated_at": "2024-09-20T11:14:29Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "cr0sh"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "churn",
+      "investors",
+      "growth",
+      "hid"
+     ],
+     "value": "What should really be the shocking thing is that somehow, 10 billion is considered &quot;low&quot;.<p>I don't live in SV, and I'm just a software engineer making under 6 figures, but living comfortably all the same. I am ignorant about this &quot;<em>hi</em>gh finance&quot; stuff - and honestly, I'm probably better for it; less stress and all. Not saying others shouldn't do it if that's what they like, just that I don't think it's for me.<p>Still - it seems ridiculous to me that a company self-valued at 10 billion, that there is something wrong with that? Maybe it's that I don't understand the financial <em>hi</em>story of <em>hi</em>storical tech companies, but it &quot;feels&quot; to me that such companies had no where near such value?<p>Part of the problem is that I can't think of such <em>hi</em>storical companies that were similar to WeWork or other &quot;gig-style&quot; companies - that were contemporary with, say, 1960s Fairchild or IBM? Those companies, and other similar companies of that era and into the 1980s (like Sun and SGI and Motorola and Intel, etc) - they were probably valued pretty <em>hi</em>ghly (had they done such thing as an IPO - I don't think that was an available thing then, though - but they probably did have <em>investors</em>, and &quot;ground-up&quot; <em>growth</em>).<p>But they actually created products - physical things you could touch - as well as software (depending on the company); they weren't just using or repurposing existing tech on a large scale to solve a problem via a form of contract labor. Maybe a better model that would have been contemporary to those companies would be larger-scale construction contractors of the era? Were they ever valued in a similar manner?<p>To me - in my ignorance - it just seems like all of this exists to make a quick (overvalued) dollar and get out. I don't expect WeWork (or Lyft, Uber, etc) to be around in 20 years. We'll just continue to have this &quot;<em>churn</em>&quot; of companies, no loyalty or building of a base of customers that last ages and are almost &quot;passed down&quot; through generations.<p>Think about a company like IBM - arguably, it dates back to the late 19th century, but even discounting that, it is a computing and software company that is close to 100 years old; will any of today's &quot;well known&quot; tech companies be able to weather the years like IBM has (albeit with ups and downs, and with scandals and such)?<p>I can see Apple doing it - maybe. Perhaps Microsoft and probably Google. Amazon? I guess it could become akin to Sears or Montgomery Wards. Of course, no one probably thought of those older brands as having the staying power that they've shown, either - and there were plenty that one would have thought should have stayed around that didn't, and others that did that have imploded (ahem - Sears and Montgomery Wards - for instance).<p>I don't know if I am making my point clear enough - other than to say that it feels like these &quot;companies&quot; only exist - or were created - as &quot;get rich schemes&quot; for their creators and owners - not because those involved are really in it to make a &quot;real difference&quot; in the world (whether that would be a good or bad thing is debatable).<p>I guess I miss seeing purpose and organic <em>growth</em>, and a valuation in line with that, and heads or owners of such companies in it for a reason other than &quot;getting rich and getting out&quot;."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "WeWork considers IPO valuation of as low as $10B"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.reuters.com/article/us-wework-ipo-valuation-exclusive/exclusive-wework-considers-ipo-valuation-of-as-low-as-10-billion-sources-idUSKCN1VY1PB"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_cr0sh",
+    "story_20962720"
+   ],
+   "author": "cr0sh",
+   "comment_text": "What should really be the shocking thing is that somehow, 10 billion is considered &quot;low&quot;.<p>I don&#x27;t live in SV, and I&#x27;m just a software engineer making under 6 figures, but living comfortably all the same. I am ignorant about this &quot;high finance&quot; stuff - and honestly, I&#x27;m probably better for it; less stress and all. Not saying others shouldn&#x27;t do it if that&#x27;s what they like, just that I don&#x27;t think it&#x27;s for me.<p>Still - it seems ridiculous to me that a company self-valued at 10 billion, that there is something wrong with that? Maybe it&#x27;s that I don&#x27;t understand the financial history of historical tech companies, but it &quot;feels&quot; to me that such companies had no where near such value?<p>Part of the problem is that I can&#x27;t think of such historical companies that were similar to WeWork or other &quot;gig-style&quot; companies - that were contemporary with, say, 1960s Fairchild or IBM? Those companies, and other similar companies of that era and into the 1980s (like Sun and SGI and Motorola and Intel, etc) - they were probably valued pretty highly (had they done such thing as an IPO - I don&#x27;t think that was an available thing then, though - but they probably did have investors, and &quot;ground-up&quot; growth).<p>But they actually created products - physical things you could touch - as well as software (depending on the company); they weren&#x27;t just using or repurposing existing tech on a large scale to solve a problem via a form of contract labor. Maybe a better model that would have been contemporary to those companies would be larger-scale construction contractors of the era? Were they ever valued in a similar manner?<p>To me - in my ignorance - it just seems like all of this exists to make a quick (overvalued) dollar and get out. I don&#x27;t expect WeWork (or Lyft, Uber, etc) to be around in 20 years. We&#x27;ll just continue to have this &quot;churn&quot; of companies, no loyalty or building of a base of customers that last ages and are almost &quot;passed down&quot; through generations.<p>Think about a company like IBM - arguably, it dates back to the late 19th century, but even discounting that, it is a computing and software company that is close to 100 years old; will any of today&#x27;s &quot;well known&quot; tech companies be able to weather the years like IBM has (albeit with ups and downs, and with scandals and such)?<p>I can see Apple doing it - maybe. Perhaps Microsoft and probably Google. Amazon? I guess it could become akin to Sears or Montgomery Wards. Of course, no one probably thought of those older brands as having the staying power that they&#x27;ve shown, either - and there were plenty that one would have thought should have stayed around that didn&#x27;t, and others that did that have imploded (ahem - Sears and Montgomery Wards - for instance).<p>I don&#x27;t know if I am making my point clear enough - other than to say that it feels like these &quot;companies&quot; only exist - or were created - as &quot;get rich schemes&quot; for their creators and owners - not because those involved are really in it to make a &quot;real difference&quot; in the world (whether that would be a good or bad thing is debatable).<p>I guess I miss seeing purpose and organic growth, and a valuation in line with that, and heads or owners of such companies in it for a reason other than &quot;getting rich and getting out&quot;.",
+   "created_at": "2019-09-13T16:10:45Z",
+   "created_at_i": 1568391045,
+   "objectID": "20963377",
+   "parent_id": 20962720,
+   "story_id": 20962720,
+   "story_title": "WeWork considers IPO valuation of as low as $10B",
+   "story_url": "https://www.reuters.com/article/us-wework-ipo-valuation-exclusive/exclusive-wework-considers-ipo-valuation-of-as-low-as-10-billion-sources-idUSKCN1VY1PB",
+   "updated_at": "2024-09-20T04:50:12Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mathattack"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "churn",
+      "investors",
+      "growth",
+      "hid"
+     ],
+     "value": "Let's assume you're meaning an exit with a <em>hi</em>gh multiple on returns, rather than an acquihire.  In this case there are 2 models:<p>1)  Game changing technology.  These are very hard to measure, especially from the outside.  You have to ask yourself, &quot;Is this technology for real?&quot; and &quot;Could a large company monetize this?&quot;  This is what's happening in the autonomous car market.  Let's step aside from this.<p>2)  Companies that are growing well and fast on their own.  In this case there are 3 metrics that matter:  Revenue, Revenue <em>Growth</em> (new business minus <em>churn</em>) and Margins.  Revenue is the base for valuation, and <em>Growth</em> and Margins determines the multiple.  A weak rule of thumb that answers your question is that once a SaaS business <em>hi</em>ts 50mm in ARR, <em>Growth</em> Plus Margins should equal 50%.  (It's ok to lose 10% of revenue in margins if you're growing 50% per year.  If you're only growing 20% per year, you should have 30% profitability.)  If it has this it's trending towards a positive exit.<p>Three caveats:<p>1) In case 2, if the company has external venture money, they are more likely to exit. (The VC funds need to return money to <em>investors</em>) If they are self-funded, they can stay private much longer.<p>2) Very few companies pull off the <em>hi</em>gh multiple exit or IPO.  It is hard to maintain <em>growth</em>, and hard to eventually turn a profit when you are growing fast.<p>3) There are a small subset of VC firms and specific VC partners with disproportionately outsized success.  In the absence of other information, an investment by them is a good signal.  (But smart money won't help a bad business)"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: What are some indicators that a company will have an IPO or exit?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mathattack",
+    "story_14848919"
+   ],
+   "author": "mathattack",
+   "comment_text": "Let&#x27;s assume you&#x27;re meaning an exit with a high multiple on returns, rather than an acquihire.  In this case there are 2 models:<p>1)  Game changing technology.  These are very hard to measure, especially from the outside.  You have to ask yourself, &quot;Is this technology for real?&quot; and &quot;Could a large company monetize this?&quot;  This is what&#x27;s happening in the autonomous car market.  Let&#x27;s step aside from this.<p>2)  Companies that are growing well and fast on their own.  In this case there are 3 metrics that matter:  Revenue, Revenue Growth (new business minus churn) and Margins.  Revenue is the base for valuation, and Growth and Margins determines the multiple.  A weak rule of thumb that answers your question is that once a SaaS business hits 50mm in ARR, Growth Plus Margins should equal 50%.  (It&#x27;s ok to lose 10% of revenue in margins if you&#x27;re growing 50% per year.  If you&#x27;re only growing 20% per year, you should have 30% profitability.)  If it has this it&#x27;s trending towards a positive exit.<p>Three caveats:<p>1) In case 2, if the company has external venture money, they are more likely to exit. (The VC funds need to return money to investors) If they are self-funded, they can stay private much longer.<p>2) Very few companies pull off the high multiple exit or IPO.  It is hard to maintain growth, and hard to eventually turn a profit when you are growing fast.<p>3) There are a small subset of VC firms and specific VC partners with disproportionately outsized success.  In the absence of other information, an investment by them is a good signal.  (But smart money won&#x27;t help a bad business)",
+   "created_at": "2017-07-25T18:23:52Z",
+   "created_at_i": 1501007032,
+   "objectID": "14850469",
+   "parent_id": 14848919,
+   "story_id": 14848919,
+   "story_title": "Ask HN: What are some indicators that a company will have an IPO or exit?",
+   "updated_at": "2024-09-20T01:08:36Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "webwright"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "churn",
+      "investors",
+      "growth",
+      "hid"
+     ],
+     "value": "\"I think the pitfall you are alluding to is <em>hi</em>tting ramen profitability and then spending all day fire fighting rather than creating new features.\"<p>I don't think that's what he's alluding to at all.  He's talking about business success, not how you spend your time.  There are plenty of people who create products for small markets and can't make the <em>growth</em> jump past that early small market into a larger one.  This isn't always (or even OFTEN) a feature-creation problem.<p>Here's some cool math: If your acquisition is linear (\"we sign up 3 paying customers every day\") and your <em>churn</em> is percentage (\"we lose 8% of our paying customers every month\") you will eventually <em>hi</em>t a point where your <em>growth</em> STOPS (unless you can fix one of those two stats).  The zombie state Drew is talking about (I think) it where your revenue is largely not growing, you can feed yourself but no one is ever going to buy you, and you've run out of \"move-the-needle\" features/efforts that can improve acquisition or retention.  \"Walking Dead\" is what <em>investors</em> call it."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ramen Profitable"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://paulgraham.com/ramenprofitable.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_webwright",
+    "story_726544"
+   ],
+   "author": "webwright",
+   "children": [
+    727536
+   ],
+   "comment_text": "\"I think the pitfall you are alluding to is hitting ramen profitability and then spending all day fire fighting rather than creating new features.\"<p>I don't think that's what he's alluding to at all.  He's talking about business success, not how you spend your time.  There are plenty of people who create products for small markets and can't make the growth jump past that early small market into a larger one.  This isn't always (or even OFTEN) a feature-creation problem.<p>Here's some cool math: If your acquisition is linear (\"we sign up 3 paying customers every day\") and your churn is percentage (\"we lose 8% of our paying customers every month\") you will eventually hit a point where your growth STOPS (unless you can fix one of those two stats).  The zombie state Drew is talking about (I think) it where your revenue is largely not growing, you can feed yourself but no one is ever going to buy you, and you've run out of \"move-the-needle\" features/efforts that can improve acquisition or retention.  \"Walking Dead\" is what investors call it.",
+   "created_at": "2009-07-28T02:37:06Z",
+   "created_at_i": 1248748626,
+   "objectID": "727322",
+   "parent_id": 726737,
+   "story_id": 726544,
+   "story_title": "Ramen Profitable",
+   "story_url": "http://paulgraham.com/ramenprofitable.html",
+   "updated_at": "2024-09-19T16:39:09Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "heysidjain"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "churn",
+      "investors",
+      "growth",
+      "hid"
+     ],
+     "value": "<em>Hi</em> HN,<p>Over the past few weeks, we've been studying retention data from over 2,100 SaaS businesses. We\u2019ve been digging for retention trends, patterns, and insights. Sharing some key takeaways from our research here:<p>1) Retention in 2022 was harder than ever. More than half of SaaS businesses had lower retention rates in 2022 when compared to 2021. This is in sharp contrast to 2021 during which we saw almost 70% of businesses having a <em>hi</em>gher retention rate vs. 2020.<p>2) Companies with best-in-class retention grow at least 1.5-3x faster than their peers. SaaS businesses with a net retention rate of over 100% grow 43.6% per year. Businesses with a net retention rate of less than 60% grow at just 13.1% per annum.<p>3) B2B SaaS businesses enjoy <em>hi</em>gher net retention than B2C SaaS. Only 2.7% of SaaS businesses with an avg. revenue per account (ARPA) less than $10/month have net retention over 100%. In contrast, 41.1% of businesses with an ARPA over $500/month have net retention of over 100%.<p>4) Retention becomes more important as SaaS businesses enter the post-PMF <em>growth</em> phase. Businesses with ARR in the range of $1-3m have a top quartile net retention rate of 94%. Those in the $3-15m ARR range have it at 99%, and those at scale ($15-30m ARR range) have it at 105%.<p>5) Best-in-class net revenue retention is in the ~110/120% range. <em>Hi</em>gh net retention is usually a result of a <em>hi</em>gh gross retention + strong expansion loop. <em>Hi</em>gh retention also means better <em>growth</em>, a more capital-efficient business, and even <em>hi</em>gher valuations from <em>investors</em>.<p>6) Expansion is the key driver of <em>hi</em>gher net retention at <em>hi</em>gher ARRs. 37.1% of revenue added for SaaS business with ARR in the range of $15-30m comes from expansion. At scale, if you are not upselling or cross-selling to your existing customers you are missing out.<p>7) A net retention rate over 100% does not mean that you can organically grow forever. Retention starts to decay in year two. This is because of <em>hi</em>gher <em>churn</em> and lower expansion revenue in year two when compared to year one.<p>8) Best-in-class B2B SaaS businesses are not only able to retain new business revenue but also able to grow it from day one. The top quartile of SaaS businesses with an ARPA over $100/month have a 3 and 12 months new business net retention of over 100%.<p>I'm happy to answer any questions you might have."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Retention Benchmarks and Insights from Studying over 2,100 SaaS Businesses"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://chartmogul.com/blog/retention-benchmarks-and-insights/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_heysidjain",
+    "story_34982467"
+   ],
+   "author": "heysidjain",
+   "comment_text": "Hi HN,<p>Over the past few weeks, we&#x27;ve been studying retention data from over 2,100 SaaS businesses. We\u2019ve been digging for retention trends, patterns, and insights. Sharing some key takeaways from our research here:<p>1) Retention in 2022 was harder than ever. More than half of SaaS businesses had lower retention rates in 2022 when compared to 2021. This is in sharp contrast to 2021 during which we saw almost 70% of businesses having a higher retention rate vs. 2020.<p>2) Companies with best-in-class retention grow at least 1.5-3x faster than their peers. SaaS businesses with a net retention rate of over 100% grow 43.6% per year. Businesses with a net retention rate of less than 60% grow at just 13.1% per annum.<p>3) B2B SaaS businesses enjoy higher net retention than B2C SaaS. Only 2.7% of SaaS businesses with an avg. revenue per account (ARPA) less than $10&#x2F;month have net retention over 100%. In contrast, 41.1% of businesses with an ARPA over $500&#x2F;month have net retention of over 100%.<p>4) Retention becomes more important as SaaS businesses enter the post-PMF growth phase. Businesses with ARR in the range of $1-3m have a top quartile net retention rate of 94%. Those in the $3-15m ARR range have it at 99%, and those at scale ($15-30m ARR range) have it at 105%.<p>5) Best-in-class net revenue retention is in the ~110&#x2F;120% range. High net retention is usually a result of a high gross retention + strong expansion loop. High retention also means better growth, a more capital-efficient business, and even higher valuations from investors.<p>6) Expansion is the key driver of higher net retention at higher ARRs. 37.1% of revenue added for SaaS business with ARR in the range of $15-30m comes from expansion. At scale, if you are not upselling or cross-selling to your existing customers you are missing out.<p>7) A net retention rate over 100% does not mean that you can organically grow forever. Retention starts to decay in year two. This is because of higher churn and lower expansion revenue in year two when compared to year one.<p>8) Best-in-class B2B SaaS businesses are not only able to retain new business revenue but also able to grow it from day one. The top quartile of SaaS businesses with an ARPA over $100&#x2F;month have a 3 and 12 months new business net retention of over 100%.<p>I&#x27;m happy to answer any questions you might have.",
+   "created_at": "2023-03-01T14:01:33Z",
+   "created_at_i": 1677679293,
+   "objectID": "34982468",
+   "parent_id": 34982467,
+   "story_id": 34982467,
+   "story_title": "Retention Benchmarks and Insights from Studying over 2,100 SaaS Businesses",
+   "story_url": "https://chartmogul.com/blog/retention-benchmarks-and-insights/",
+   "updated_at": "2024-09-20T13:30:44Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ttul"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "churn",
+      "investors",
+      "growth",
+      "hid"
+     ],
+     "value": "30 / 4 = about 7x ARR. That's a very <em>hi</em>gh SaaS valuation multiple, but not ridiculous vs comparables like loss-making Salesforce (9-10x).<p>Spotify presumably is being valued like this because <em>investors</em> are betting that their strong customer <em>growth</em> will allow them to find new ways of generating profits - such as signing their own artists directly to cut out license fees, much like how Netflix started funding their own shows.<p>If customers were unsatisfied with Spotify, then their <em>churn</em> would be <em>hi</em>gher - for instance defecting to Apple Music, which by many measures is &quot;better&quot; because of Apple's heft and reach into their devices."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Spotify opens on NYSE, valuing company at almost $30B"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://techcrunch.com/2018/04/03/spotify-opens-at-165-90-valuing-company-at-30-billion/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ttul",
+    "story_16746680"
+   ],
+   "author": "ttul",
+   "comment_text": "30 &#x2F; 4 = about 7x ARR. That&#x27;s a very high SaaS valuation multiple, but not ridiculous vs comparables like loss-making Salesforce (9-10x).<p>Spotify presumably is being valued like this because investors are betting that their strong customer growth will allow them to find new ways of generating profits - such as signing their own artists directly to cut out license fees, much like how Netflix started funding their own shows.<p>If customers were unsatisfied with Spotify, then their churn would be higher - for instance defecting to Apple Music, which by many measures is &quot;better&quot; because of Apple&#x27;s heft and reach into their devices.",
+   "created_at": "2018-04-03T17:49:09Z",
+   "created_at_i": 1522777749,
+   "objectID": "16747194",
+   "parent_id": 16746988,
+   "story_id": 16746680,
+   "story_title": "Spotify opens on NYSE, valuing company at almost $30B",
+   "story_url": "https://techcrunch.com/2018/04/03/spotify-opens-at-165-90-valuing-company-at-30-billion/",
+   "updated_at": "2024-09-20T02:14:51Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "dayjah"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "churn",
+      "investors",
+      "growth",
+      "hid"
+     ],
+     "value": "Twitch.tv / YC / great <em>investors</em> / great partnerships / CEO is a YC board member / crazy <em>growth</em> / cool industry / Downtown San Francisco<p>Many positions! Help us continue to push watching both pro and personal video gaming main stream. We've <em>hi</em>t on a strong product market fit and we're growing hand over fist right now. As such we have need for:<p>- backend engineers[1]<p>- product engineers[2]<p>We're analytical about the work that we do and you should be too. You should also care about getting things done right, and be pragmatic about when to choose speed over quality, if you opt for the former you're the type of engineer that makes a note that you shorted on quality and you'll come back and fix that up.<p>We keep small engineering teams (usually no more than 10 people per team), this permits us to own what we work on. It is one of the best things about working here in my experience!<p>The low down on the positions:<p>[1] - Backend Engineers<p>With 30m MAU (last published number... it is bigger now!) our backend engineers work to keep our service humming along with five nines of uptime. Your work would include not only improving core pieces of infrastructure but also envisaging new pieces that we do not have yet that will help take us to the next level. Some examples of things that have been done recently:<p>- migration to ruby 1.9<p>- built out a new IRC chat server which handles ~1000 qps. Best thing here is we slotted this in and no one noticed (except that chat was more stable, etc).<p>- Created a brand new API to access our data, this is used by Activision (Call of Duty: Black Ops II), EA (EA origin) and PlanetSide II, Smite, amongst a wide array of other game devs.<p>- Replaced a core piece of infrastructure used to let us know what streams are live, and what content they have on them. Again, this has been done without anyone noticing - its main win was taking us from needing 8 app servers to being able to handle all the load on one, but we run a couple of resilience.. naturally<p>We've a bunch of other coolness in the pipeline.<p>[2] - Product Engineers<p>One of the reasons we're growing so fast is that we're starting to <em>churn</em> out <em>hi</em>gh quality features and general product improvements. There is still so far to go, the twitch you see now is as a result of dedicating much of our engineering work to scaling, in that time we've <em>hi</em>red some kick ass product engineers and they're starting to push us forwards.  Some things we've worked on recently:<p>- migrating site over to emberjs<p>- \"Turbo\" - ad free watching on all channels<p>- key product improvements: vod watching, vod creation<p>- new flash player - faster, less resource intensive, easier to build new features on<p>- payment provider integrations - aiming to make it as easy to pay in various geos as is possible.<p>We've a bunch of other coolness in the pipeline! (yes, there is an echo in here...).<p>Feel free to <em>hi</em>t me up if you're interested / have questions / want a tshirt, etc, I head up our engineering team: ossareh at twitch.tv"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "hid"
+     ],
+     "value": "Ask HN: Who is <em>hi</em>ring? (May 2013)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_dayjah",
+    "story_5637663"
+   ],
+   "author": "dayjah",
+   "comment_text": "Twitch.tv / YC / great investors / great partnerships / CEO is a YC board member / crazy growth / cool industry / Downtown San Francisco<p>Many positions! Help us continue to push watching both pro and personal video gaming main stream. We've hit on a strong product market fit and we're growing hand over fist right now. As such we have need for:<p>- backend engineers[1]<p>- product engineers[2]<p>We're analytical about the work that we do and you should be too. You should also care about getting things done right, and be pragmatic about when to choose speed over quality, if you opt for the former you're the type of engineer that makes a note that you shorted on quality and you'll come back and fix that up.<p>We keep small engineering teams (usually no more than 10 people per team), this permits us to own what we work on. It is one of the best things about working here in my experience!<p>The low down on the positions:<p>[1] - Backend Engineers<p>With 30m MAU (last published number... it is bigger now!) our backend engineers work to keep our service humming along with five nines of uptime. Your work would include not only improving core pieces of infrastructure but also envisaging new pieces that we do not have yet that will help take us to the next level. Some examples of things that have been done recently:<p>- migration to ruby 1.9<p>- built out a new IRC chat server which handles ~1000 qps. Best thing here is we slotted this in and no one noticed (except that chat was more stable, etc).<p>- Created a brand new API to access our data, this is used by Activision (Call of Duty: Black Ops II), EA (EA origin) and PlanetSide II, Smite, amongst a wide array of other game devs.<p>- Replaced a core piece of infrastructure used to let us know what streams are live, and what content they have on them. Again, this has been done without anyone noticing - its main win was taking us from needing 8 app servers to being able to handle all the load on one, but we run a couple of resilience.. naturally<p>We've a bunch of other coolness in the pipeline.<p>[2] - Product Engineers<p>One of the reasons we're growing so fast is that we're starting to churn out high quality features and general product improvements. There is still so far to go, the twitch you see now is as a result of dedicating much of our engineering work to scaling, in that time we've hired some kick ass product engineers and they're starting to push us forwards.  Some things we've worked on recently:<p>- migrating site over to emberjs<p>- \"Turbo\" - ad free watching on all channels<p>- key product improvements: vod watching, vod creation<p>- new flash player - faster, less resource intensive, easier to build new features on<p>- payment provider integrations - aiming to make it as easy to pay in various geos as is possible.<p>We've a bunch of other coolness in the pipeline! (yes, there is an echo in here...).<p>Feel free to hit me up if you're interested / have questions / want a tshirt, etc, I head up our engineering team: ossareh at twitch.tv",
+   "created_at": "2013-05-01T18:37:07Z",
+   "created_at_i": 1367433427,
+   "objectID": "5639922",
+   "parent_id": 5637663,
+   "story_id": 5637663,
+   "story_title": "Ask HN: Who is hiring? (May 2013)",
+   "updated_at": "2024-09-19T19:30:35Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "kjellsbells"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "churn",
+      "investors",
+      "growth",
+      "hid"
+     ],
+     "value": "I follow what the operators tell Wall St, because the executives have large personal financial stakes in getting it right (modulo fraud, but lets trust for now).<p>For example, at the last <em>investor</em> day that AT&amp;T held, they indicated [0:pdf] that their <em>growth</em> plans are in broadband fiber, not building more 5G capacity to serve a surge in traffic. Reading their charts and knowing how AT&amp;T traditionally worked, I believe that they are going to try to cut the expense of running the 5G network via various optimizations and redirect capital heavily to go after the fiber broadband market instead, using convergence (ahem: price bundling) to win subscribers.<p>(I bet it really stuck in their craw that Comcast mastered the bundle so well that they even built a successful MVNO on the back of their xfinity customer base and parked their tanks on AT&amp;Ts lawn while the latter was futzing about with HBO.)<p>However, bundling is a price compression game, not an ARPU <em>growth</em> game. If you start at $100 a month and then begin chipping away with autopay discounts, mobile convergence, free visa gift cards and all that nonsense, pretty soon you are selling broadband for $35 a month and can't make it work except with truly cruddy service, which leads to <em>hi</em>gh <em>churn</em> rates. So we'll see how this turns out.<p>[0:pdf] <a href=\"https://investors.att.com/~/media/Files/A/ATT-IR-V2/reports-and-presentations/2024-analyst-day-with-notes.pdf\" rel=\"nofollow\">https://<em>investors</em>.att.com/~/media/Files/A/ATT-IR-V2/reports-...</a>"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "growth"
+     ],
+     "value": "5G networks meet consumer needs as mobile data <em>growth</em> slows"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://spectrum.ieee.org/5g-bandwidth"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_kjellsbells",
+    "story_43027266"
+   ],
+   "author": "kjellsbells",
+   "children": [
+    43032052
+   ],
+   "comment_text": "I follow what the operators tell Wall St, because the executives have large personal financial stakes in getting it right (modulo fraud, but lets trust for now).<p>For example, at the last investor day that AT&amp;T held, they indicated [0:pdf] that their growth plans are in broadband fiber, not building more 5G capacity to serve a surge in traffic. Reading their charts and knowing how AT&amp;T traditionally worked, I believe that they are going to try to cut the expense of running the 5G network via various optimizations and redirect capital heavily to go after the fiber broadband market instead, using convergence (ahem: price bundling) to win subscribers.<p>(I bet it really stuck in their craw that Comcast mastered the bundle so well that they even built a successful MVNO on the back of their xfinity customer base and parked their tanks on AT&amp;Ts lawn while the latter was futzing about with HBO.)<p>However, bundling is a price compression game, not an ARPU growth game. If you start at $100 a month and then begin chipping away with autopay discounts, mobile convergence, free visa gift cards and all that nonsense, pretty soon you are selling broadband for $35 a month and can&#x27;t make it work except with truly cruddy service, which leads to high churn rates. So we&#x27;ll see how this turns out.<p>[0:pdf] <a href=\"https:&#x2F;&#x2F;investors.att.com&#x2F;~&#x2F;media&#x2F;Files&#x2F;A&#x2F;ATT-IR-V2&#x2F;reports-and-presentations&#x2F;2024-analyst-day-with-notes.pdf\" rel=\"nofollow\">https:&#x2F;&#x2F;investors.att.com&#x2F;~&#x2F;media&#x2F;Files&#x2F;A&#x2F;ATT-IR-V2&#x2F;reports-...</a>",
+   "created_at": "2025-02-13T02:20:13Z",
+   "created_at_i": 1739413213,
+   "objectID": "43032020",
+   "parent_id": 43027266,
+   "story_id": 43027266,
+   "story_title": "5G networks meet consumer needs as mobile data growth slows",
+   "story_url": "https://spectrum.ieee.org/5g-bandwidth",
+   "updated_at": "2025-02-13T05:44:58Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "cperciva"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "churn",
+      "investors",
+      "growth",
+      "hid"
+     ],
+     "value": "No, I don't want Tarsnap to be something I run by myself.  I want Tarsnap to be something which <i>runs itself</i>.  I just spent two weeks at conferences and didn't log into any of the Tarsnap servers even once -- and when I spent 36 hours travelling from one to the other (Ottawa to Brisbane -- 23 hours in the air!) I was worried about whether my suitcase would make all the connections, not whether Tarsnap would break while I lacking internet connectivity.<p>But getting to what I think you were really trying to ask: Yes, Tarsnap is much smaller than Dropbox, and I'm happy that I haven't taken money from VCs (or any <em>investors</em> for that matter) who would push for faster <em>growth</em>.  I'd rather have <i>better</i> product than <i>more</i> product; I will probably <em>hi</em>re other people to help with Tarsnap at some point, but the question I'll have to answer is not \"can this person do useful work\" or even \"can this person do task X better than I'm currently doing it\"; rather, the question will be \"can this person do task X sufficiently better to overcome the cost of my no longer understanding it\".<p>Tarsnap is first and foremost about security.  Security is about getting details right.  And getting details right... well, that requires a level of understanding of how all the different pieces fit together which simply wouldn't be possible if I were <em>hi</em>ring dozens of people and throwing them into teams to <em>churn</em> out new features every week."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Favorite HN threads of all time"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_cperciva",
+    "story_3996652"
+   ],
+   "author": "cperciva",
+   "comment_text": "No, I don't want Tarsnap to be something I run by myself.  I want Tarsnap to be something which <i>runs itself</i>.  I just spent two weeks at conferences and didn't log into any of the Tarsnap servers even once -- and when I spent 36 hours travelling from one to the other (Ottawa to Brisbane -- 23 hours in the air!) I was worried about whether my suitcase would make all the connections, not whether Tarsnap would break while I lacking internet connectivity.<p>But getting to what I think you were really trying to ask: Yes, Tarsnap is much smaller than Dropbox, and I'm happy that I haven't taken money from VCs (or any investors for that matter) who would push for faster growth.  I'd rather have <i>better</i> product than <i>more</i> product; I will probably hire other people to help with Tarsnap at some point, but the question I'll have to answer is not \"can this person do useful work\" or even \"can this person do task X better than I'm currently doing it\"; rather, the question will be \"can this person do task X sufficiently better to overcome the cost of my no longer understanding it\".<p>Tarsnap is first and foremost about security.  Security is about getting details right.  And getting details right... well, that requires a level of understanding of how all the different pieces fit together which simply wouldn't be possible if I were hiring dozens of people and throwing them into teams to churn out new features every week.",
+   "created_at": "2012-05-20T04:46:45Z",
+   "created_at_i": 1337489205,
+   "objectID": "3997963",
+   "parent_id": 3997924,
+   "story_id": 3996652,
+   "story_title": "Ask HN: Favorite HN threads of all time",
+   "updated_at": "2024-09-19T18:40:25Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Jugurtha"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "churn",
+      "investors",
+      "growth",
+      "hid"
+     ],
+     "value": "&gt;<i>How would you start consulting in a sector you have no experience or proven track record with?</i><p>Like billions of people, since time immemorial, have started at their first job ever. How would they start at a job in a sector they have no experience or proven track record with? That argument cuts deeper with directly creating a product with no experience or proven track record.<p>The point of my original reply wasn't that of mutual exclusion, it was that of &quot;<i>de-risking</i>&quot;, and a lot of the work is about reducing risk. Heck many if not most questions <em>investors</em> ask are about figuring out risks and their types. What's your story? (i.e: expertise and relevance of why you think you might be onto something or right about something or seeing a pattern, etc) Interviews? Do you have traction? Sales? Sign-ups? Usage? <em>Growth</em> rate? <em>Churn</em>?<p>Many technical people start coding right away because it's easier for them, but that's precisely why coding might have to come later: the technical risk is lower for an engineer than the other types of risk, so they should check those first. Is that a problem people know is a problem in the first place? That means prospects need &quot;information/education&quot;, which impacts on your marketing and on your sales process (instantly becomes <em>hi</em>gh-touch). It could obviously mean you're creating a whole new market, and <i>if</i> you win, you could win <i>big</i>, but it adds risk. Have they spent spent money trying to fix it? How did it go?<p>You can start building the product right away, then hope people know about it, love it, and buy it. Knowing people people have fallen off buildings and survived will not entice me to try my luck.<p>Even in consulting, this is useful. When the founder and CTO left, ~65% of employees left and I took over. I killed about a dozen projects we were involved in that were not generating revenue and were only a distraction. I was a contributor in practically all of them and, for some, was the main person (i.e: 70% of the code, and support, client relation, invoicing, ensuring we <i>get</i> the check, and you bet cashing it). The first thing I pushed for was revamping the very way we were doing &quot;consulting&quot; starting with qualifying prospects before anything is done, then understanding the problem before a word describing a potential solution is uttered, and it took as long as it needed until we got the problem down, and iteratively scoping, managing expectations, being aligned on what &quot;success looked like&quot; and pushing for all the stakeholders to be involved (execs/economic buyers <i>and</i> the users, including those who were adamantly against our &quot;intervention&quot; and understanding all the politics of whichever enterprise client we were serving), extracting a set of features, prioritizing for impact and usefulness, etc. and <i>then</i> and only <i>then</i>, we'd start building. All these steps were carried out while explaining the rationale of thought processes so the team could understand the whole process (and eventually each member would be able to operate on the whole life-cycle, create a company, build product, etc). Then extracting all this experience into a scoping document we'd send a prospective client so <i>they</i> do this effort, as opposed to doing ten or more meetings to come up with this (and our clients thanked us, saying that that document, which was a set of questions, really helped them pin-point their own problem and clarify what it is they were after). <i>Then</i>, the second mutation (the first was overhauling our consulting process), was product.<p>The &quot;valuation&quot; of the company was multiplied by a very large number, people turnover was ridiculously reduced, there was almost no-one leaving, and the service revenue generated in one year with mainly two people surpassed the <i>almost 20 people, combined multi-year revenue since company creation</i>.<p>There's a famous Antoine de Saint-Exup\u00e9ry quote that guides this effort: &quot;Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.&quot;<p>PS: Excuse me for the muddle-head reply, I have something cooking."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Raise less, build more"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://trohan.com/2023/08/20/raise-less-build-more/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Jugurtha",
+    "story_37298665"
+   ],
+   "author": "Jugurtha",
+   "children": [
+    37326187
+   ],
+   "comment_text": "&gt;<i>How would you start consulting in a sector you have no experience or proven track record with?</i><p>Like billions of people, since time immemorial, have started at their first job ever. How would they start at a job in a sector they have no experience or proven track record with? That argument cuts deeper with directly creating a product with no experience or proven track record.<p>The point of my original reply wasn&#x27;t that of mutual exclusion, it was that of &quot;<i>de-risking</i>&quot;, and a lot of the work is about reducing risk. Heck many if not most questions investors ask are about figuring out risks and their types. What&#x27;s your story? (i.e: expertise and relevance of why you think you might be onto something or right about something or seeing a pattern, etc) Interviews? Do you have traction? Sales? Sign-ups? Usage? Growth rate? Churn?<p>Many technical people start coding right away because it&#x27;s easier for them, but that&#x27;s precisely why coding might have to come later: the technical risk is lower for an engineer than the other types of risk, so they should check those first. Is that a problem people know is a problem in the first place? That means prospects need &quot;information&#x2F;education&quot;, which impacts on your marketing and on your sales process (instantly becomes high-touch). It could obviously mean you&#x27;re creating a whole new market, and <i>if</i> you win, you could win <i>big</i>, but it adds risk. Have they spent spent money trying to fix it? How did it go?<p>You can start building the product right away, then hope people know about it, love it, and buy it. Knowing people people have fallen off buildings and survived will not entice me to try my luck.<p>Even in consulting, this is useful. When the founder and CTO left, ~65% of employees left and I took over. I killed about a dozen projects we were involved in that were not generating revenue and were only a distraction. I was a contributor in practically all of them and, for some, was the main person (i.e: 70% of the code, and support, client relation, invoicing, ensuring we <i>get</i> the check, and you bet cashing it). The first thing I pushed for was revamping the very way we were doing &quot;consulting&quot; starting with qualifying prospects before anything is done, then understanding the problem before a word describing a potential solution is uttered, and it took as long as it needed until we got the problem down, and iteratively scoping, managing expectations, being aligned on what &quot;success looked like&quot; and pushing for all the stakeholders to be involved (execs&#x2F;economic buyers <i>and</i> the users, including those who were adamantly against our &quot;intervention&quot; and understanding all the politics of whichever enterprise client we were serving), extracting a set of features, prioritizing for impact and usefulness, etc. and <i>then</i> and only <i>then</i>, we&#x27;d start building. All these steps were carried out while explaining the rationale of thought processes so the team could understand the whole process (and eventually each member would be able to operate on the whole life-cycle, create a company, build product, etc). Then extracting all this experience into a scoping document we&#x27;d send a prospective client so <i>they</i> do this effort, as opposed to doing ten or more meetings to come up with this (and our clients thanked us, saying that that document, which was a set of questions, really helped them pin-point their own problem and clarify what it is they were after). <i>Then</i>, the second mutation (the first was overhauling our consulting process), was product.<p>The &quot;valuation&quot; of the company was multiplied by a very large number, people turnover was ridiculously reduced, there was almost no-one leaving, and the service revenue generated in one year with mainly two people surpassed the <i>almost 20 people, combined multi-year revenue since company creation</i>.<p>There&#x27;s a famous Antoine de Saint-Exup\u00e9ry quote that guides this effort: &quot;Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.&quot;<p>PS: Excuse me for the muddle-head reply, I have something cooking.",
+   "created_at": "2023-08-29T20:26:58Z",
+   "created_at_i": 1693340818,
+   "objectID": "37313497",
+   "parent_id": 37304979,
+   "story_id": 37298665,
+   "story_title": "Raise less, build more",
+   "story_url": "https://trohan.com/2023/08/20/raise-less-build-more/",
+   "updated_at": "2024-09-20T14:57:44Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "gtmtg"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "churn",
+      "investors",
+      "growth",
+      "hid"
+     ],
+     "value": "Actively | Software Engineers (full-stack &amp; backend/data infra) | Full-time | NYC | Onsite<p>I'm one of the founders of Actively \u2014 our vision is to turn every knowledge worker into a data scientist by building interactive ML tools that combine human expertise with machine intelligence. Here's [more on us](<a href=\"https://actively-ai.notion.site/About-Actively-9dabd208d3a54d388ea65887745acc0c\" rel=\"nofollow\">https://actively-ai.notion.site/About-Actively-9dabd208d3a54...</a>) + a demo of some of the core tech if you're curious :)<p>We're based in NYC and are well-funded by top <em>investors</em>; our (paying!) customers are analytical business teams (think <em>growth</em>, sales, marketing, etc.) at Series C through IPO companies who have tons of questions to answer but very limited access to data scientists.<p>We think of our first product as a &quot;metrics optimization platform&quot; where business users connect to their data, plug in any KPI they care about as an aggregation over that data, and define their levers, and then we continuously optimize that business metric (conversion, <em>churn</em>, upsell, activation, etc.) -- incredibly quickly and without the need for a data scientist.<p>Our thesis is that the two barriers to widespread adoption of AI/ML among business teams are (1) lack of clarity around ROI upfront and (2) the large amount of effort/time required to implement a solution (<em>hi</em>re a data scientist, build a bunch of data infra, have them work for a few months, etc.). We solve these by building the right abstractions and human-in-the-loop interfaces to make it incredibly quick for business teams to unlock value from their data -- so quick that we can plug into their data and show them the ROI within a few minutes!<p>We're fairly small (our current team comes from Stanford/Google/Waymo/Scale AI/Microsoft) but are growing the team based on customer demand and looking for entrepreneurial, experienced product and infrastructure engineers who are also excited to work closely with customers + dig in on product &amp; across the business! I'd love to chat: mihir [at] actively.ai!<p>Keywords: AI, ML, machine learning, active learning, explainable AI, causal inference, data science, full-stack, product engineering, data infrastructure"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "hid"
+     ],
+     "value": "Ask HN: Who is <em>hi</em>ring? (March 2023)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_gtmtg",
+    "story_34983767"
+   ],
+   "author": "gtmtg",
+   "comment_text": "Actively | Software Engineers (full-stack &amp; backend&#x2F;data infra) | Full-time | NYC | Onsite<p>I&#x27;m one of the founders of Actively \u2014 our vision is to turn every knowledge worker into a data scientist by building interactive ML tools that combine human expertise with machine intelligence. Here&#x27;s [more on us](<a href=\"https:&#x2F;&#x2F;actively-ai.notion.site&#x2F;About-Actively-9dabd208d3a54d388ea65887745acc0c\" rel=\"nofollow\">https:&#x2F;&#x2F;actively-ai.notion.site&#x2F;About-Actively-9dabd208d3a54...</a>) + a demo of some of the core tech if you&#x27;re curious :)<p>We&#x27;re based in NYC and are well-funded by top investors; our (paying!) customers are analytical business teams (think growth, sales, marketing, etc.) at Series C through IPO companies who have tons of questions to answer but very limited access to data scientists.<p>We think of our first product as a &quot;metrics optimization platform&quot; where business users connect to their data, plug in any KPI they care about as an aggregation over that data, and define their levers, and then we continuously optimize that business metric (conversion, churn, upsell, activation, etc.) -- incredibly quickly and without the need for a data scientist.<p>Our thesis is that the two barriers to widespread adoption of AI&#x2F;ML among business teams are (1) lack of clarity around ROI upfront and (2) the large amount of effort&#x2F;time required to implement a solution (hire a data scientist, build a bunch of data infra, have them work for a few months, etc.). We solve these by building the right abstractions and human-in-the-loop interfaces to make it incredibly quick for business teams to unlock value from their data -- so quick that we can plug into their data and show them the ROI within a few minutes!<p>We&#x27;re fairly small (our current team comes from Stanford&#x2F;Google&#x2F;Waymo&#x2F;Scale AI&#x2F;Microsoft) but are growing the team based on customer demand and looking for entrepreneurial, experienced product and infrastructure engineers who are also excited to work closely with customers + dig in on product &amp; across the business! I&#x27;d love to chat: mihir [at] actively.ai!<p>Keywords: AI, ML, machine learning, active learning, explainable AI, causal inference, data science, full-stack, product engineering, data infrastructure",
+   "created_at": "2023-03-02T05:43:23Z",
+   "created_at_i": 1677735803,
+   "objectID": "34992426",
+   "parent_id": 34983767,
+   "story_id": 34983767,
+   "story_title": "Ask HN: Who is hiring? (March 2023)",
+   "updated_at": "2024-09-20T13:31:46Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "api"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "churn",
+      "investors",
+      "growth",
+      "hid"
+     ],
+     "value": "It\u2019s not even <em>growth</em> or ROI. It\u2019s that reliably recurring revenue is valued at a much <em>hi</em>gher multiple than non recurring revenue.<p>VCs and other <em>investors</em> including public markets would rather see $1M ARR recurring through subscriptions with low <em>churn</em> than a single year with $10M revenue and no subscriptions. Even multiple years of <em>growth</em> in non recurring revenue will often be valued lower than less <em>growth</em> in subscription revenue.<p>This is why SaaS type models have taken over and why every other business is trying to desperately shoehorn in some kind of subscription revenue. The latter gives us car companies with subscription cloud unlock services, etc."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Dear startups: I hate subscription services (2021)"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://fangdaddy.medium.com/dear-startups-i-hate-subscription-services-aecefeb0f089"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_api",
+    "story_32285242"
+   ],
+   "author": "api",
+   "comment_text": "It\u2019s not even growth or ROI. It\u2019s that reliably recurring revenue is valued at a much higher multiple than non recurring revenue.<p>VCs and other investors including public markets would rather see $1M ARR recurring through subscriptions with low churn than a single year with $10M revenue and no subscriptions. Even multiple years of growth in non recurring revenue will often be valued lower than less growth in subscription revenue.<p>This is why SaaS type models have taken over and why every other business is trying to desperately shoehorn in some kind of subscription revenue. The latter gives us car companies with subscription cloud unlock services, etc.",
+   "created_at": "2022-07-30T13:23:31Z",
+   "created_at_i": 1659187411,
+   "objectID": "32286598",
+   "parent_id": 32286391,
+   "story_id": 32285242,
+   "story_title": "Dear startups: I hate subscription services (2021)",
+   "story_url": "https://fangdaddy.medium.com/dear-startups-i-hate-subscription-services-aecefeb0f089",
+   "updated_at": "2024-09-20T11:44:24Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ineedasername"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "churn",
+      "investors",
+      "growth",
+      "hid"
+     ],
+     "value": "Brain Drain:<p>Set aside any issues with employees not wanting to work for a Musk-run Twitter if they believe would be more toxic.  I would still expect a lot of employees to look for the exit right now.<p>First is simply the uncertainty involved: Large restructuring, reassignments, or layoffs could occur and it's always nicer to find a new job before you begin to hate your old one or lose it all together.<p>Second is compensation: Equity via stock options or awards boosts total compensation, but it's much more complicated in private companies. There's been a commitment to the same benefit plan for the next year, but beyond that no new ones can be issued after the deal closes until Musk decides what they will look like. If he doesn't commit to keeping a similar vesting &amp; award schedule then it will be a problem. Then there's liquidity. You can't sell private equity the same way you can with a public company. Again, if Musk doesn't commit to preserving the same liquidity as employees would have in a public company by allowing stock sales back to the company at-will then it will be a downgrade in compensation.<p>SpaceX uses an internal market to provide liquidity to employees for this, but Twitter will be more uncertain. It will depending on how many current <em>investors</em> decide to stick around &amp; their appetite for increasing their shares. SpaceX is also on a strong <em>growth</em> track, giving awards &amp; options a likely increased value in the future while Twitter is on much more uncertain footing, especially with Musk emphasizing that it's not an economic investment for <em>hi</em>m. A stock grant equal to $50k today at SpaceX might grow to $100k by the time an employee wants to sell, whereas the same grant at Twitter may not have the same expected <em>growth</em>.<p>It will also be difficult to <em>hi</em>re new people until this is settled. Anyone accepting a job right now will have no idea when or how they'll be able to cash in any stock compensation promised in the benefits package.<p>As for the ideological issues, that may balance out. People leaving for such reasons by could be offset by new employees seeking jobs because they like the new content direction, although the extra <em>churn</em> will still make operations more turbulent for some time."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Twitter set to accept Musk's $43B offer \u2013 sources"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.reuters.com/technology/exclusive-twitter-set-accept-musks-best-final-offer-sources-2022-04-25/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ineedasername",
+    "story_31153277"
+   ],
+   "author": "ineedasername",
+   "comment_text": "Brain Drain:<p>Set aside any issues with employees not wanting to work for a Musk-run Twitter if they believe would be more toxic.  I would still expect a lot of employees to look for the exit right now.<p>First is simply the uncertainty involved: Large restructuring, reassignments, or layoffs could occur and it&#x27;s always nicer to find a new job before you begin to hate your old one or lose it all together.<p>Second is compensation: Equity via stock options or awards boosts total compensation, but it&#x27;s much more complicated in private companies. There&#x27;s been a commitment to the same benefit plan for the next year, but beyond that no new ones can be issued after the deal closes until Musk decides what they will look like. If he doesn&#x27;t commit to keeping a similar vesting &amp; award schedule then it will be a problem. Then there&#x27;s liquidity. You can&#x27;t sell private equity the same way you can with a public company. Again, if Musk doesn&#x27;t commit to preserving the same liquidity as employees would have in a public company by allowing stock sales back to the company at-will then it will be a downgrade in compensation.<p>SpaceX uses an internal market to provide liquidity to employees for this, but Twitter will be more uncertain. It will depending on how many current investors decide to stick around &amp; their appetite for increasing their shares. SpaceX is also on a strong growth track, giving awards &amp; options a likely increased value in the future while Twitter is on much more uncertain footing, especially with Musk emphasizing that it&#x27;s not an economic investment for him. A stock grant equal to $50k today at SpaceX might grow to $100k by the time an employee wants to sell, whereas the same grant at Twitter may not have the same expected growth.<p>It will also be difficult to hire new people until this is settled. Anyone accepting a job right now will have no idea when or how they&#x27;ll be able to cash in any stock compensation promised in the benefits package.<p>As for the ideological issues, that may balance out. People leaving for such reasons by could be offset by new employees seeking jobs because they like the new content direction, although the extra churn will still make operations more turbulent for some time.",
+   "created_at": "2022-04-26T19:32:39Z",
+   "created_at_i": 1651001559,
+   "objectID": "31172090",
+   "parent_id": 31153277,
+   "story_id": 31153277,
+   "story_title": "Twitter set to accept Musk's $43B offer \u2013 sources",
+   "story_url": "https://www.reuters.com/technology/exclusive-twitter-set-accept-musks-best-final-offer-sources-2022-04-25/",
+   "updated_at": "2024-09-20T11:01:19Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "cromwellian"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "churn",
+      "investors",
+      "growth",
+      "hid"
+     ],
+     "value": "There's a difference between the informal culture of rank and file employees, how they see themselves and their peers, and the upper management. Culture at the bottom can get diluted by <em>hi</em>ring too rapidly and a <em>hi</em>gh degree of <em>churn</em>, which doesn't yield sufficient time for new <em>hi</em>res to be assimilated into culture, gradually weakening it.<p>But at the top, for a public company, the only culture that truly exists is the next quarterly report. Once you're on the &quot;must show XX% quarterly <em>growth</em>&quot; treadmill, your decisions will be dictated by strategies to further that. Unless you have a crazy person at the top willing to burn money and <em>investor</em> sentiment (e.g. Elon Musk, Zuckerberg, Jobs. Google doesn't have crazy founders running it anymore, which is why Google Bets are kind of a joke, and why the company continually kills stuff that you need to be in the long hall for to make a success (e.g. gaming studios, red studios -- they finally got a <em>hi</em>t Cobra Kai -- and killed it, etc)<p>That's why some of the earlier comments about understanding Apple's App Store behavior as &quot;good intentioned&quot; is off. That MAY have been the original reason behind Jobs wanting it, to gate keep the platform and protect brand image and quality, but it is NOT the reason for charging <em>hi</em>gh fees today.<p>Apple made $72 billion on App Store revenue in 2020. Their total revenue was $274 billion, so 26% of all revenue came from the App Store. That is the reason for the inertia in keeping the Store exactly the way it is.<p>The App Store's purported benefits to the platform: security, quality, etc could all be maintained for a fraction of that. Apple is not spending $72 billion a year on store maintenance. It's very clear this is about money, not <em>hi</em>gh minded principle."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Apple\u2019s Mistake (2009)"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.paulgraham.com/apple.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_cromwellian",
+    "story_30417819"
+   ],
+   "author": "cromwellian",
+   "comment_text": "There&#x27;s a difference between the informal culture of rank and file employees, how they see themselves and their peers, and the upper management. Culture at the bottom can get diluted by hiring too rapidly and a high degree of churn, which doesn&#x27;t yield sufficient time for new hires to be assimilated into culture, gradually weakening it.<p>But at the top, for a public company, the only culture that truly exists is the next quarterly report. Once you&#x27;re on the &quot;must show XX% quarterly growth&quot; treadmill, your decisions will be dictated by strategies to further that. Unless you have a crazy person at the top willing to burn money and investor sentiment (e.g. Elon Musk, Zuckerberg, Jobs. Google doesn&#x27;t have crazy founders running it anymore, which is why Google Bets are kind of a joke, and why the company continually kills stuff that you need to be in the long hall for to make a success (e.g. gaming studios, red studios -- they finally got a hit Cobra Kai -- and killed it, etc)<p>That&#x27;s why some of the earlier comments about understanding Apple&#x27;s App Store behavior as &quot;good intentioned&quot; is off. That MAY have been the original reason behind Jobs wanting it, to gate keep the platform and protect brand image and quality, but it is NOT the reason for charging high fees today.<p>Apple made $72 billion on App Store revenue in 2020. Their total revenue was $274 billion, so 26% of all revenue came from the App Store. That is the reason for the inertia in keeping the Store exactly the way it is.<p>The App Store&#x27;s purported benefits to the platform: security, quality, etc could all be maintained for a fraction of that. Apple is not spending $72 billion a year on store maintenance. It&#x27;s very clear this is about money, not high minded principle.",
+   "created_at": "2022-02-21T22:52:50Z",
+   "created_at_i": 1645483970,
+   "objectID": "30421793",
+   "parent_id": 30419403,
+   "story_id": 30417819,
+   "story_title": "Apple\u2019s Mistake (2009)",
+   "story_url": "http://www.paulgraham.com/apple.html",
+   "updated_at": "2025-09-01T00:27:21Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Recruiting_Team"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "churn",
+      "investors",
+      "growth",
+      "hid"
+     ],
+     "value": "About Remote\nRemote is solving global remote organizations\u2019 biggest challenge: employing anyone anywhere compliantly. We make it possible for businesses big and small to employ a global team by handling global payroll, benefits, taxes, and compliance (learn more about how it works). We're backed by A+ <em>investors</em> and our team is world-class, literally and figuratively, as we're all scattered around the world.<p>Please check out our public handbook to learn more about our culture. We encourage folks from all ethnic groups, genders, sexuality, age and abilities to apply. You can also check out independent reviews by other candidates on Glassdoor. If this job description resonates with you, we want to hear from you!<p>All of our Positions are fully remote. You do not have to relocate to join us!<p>How we work\nRemote is fully remote (ah!) and we love Working Async. This means you get to do your own schedule no matter the timezone. The Remote Engineering team uses a simple approach to productivity and task management and you can read more about it in The Remote Flow.<p>The Position\nThis is an exciting time to join Remote and make a personal difference in the global employment space as a Campaign Manager, joining our <em>Growth</em> team.<p>We are looking for an excellent Campaign Manager with hands-on experience with drip campaigns, nurtures, events, marketing automation, etc.<p>You should have a love for lifecycle management, customer journeys, and implementation of email marketing campaigns, to enable us to convert our leads to customers and upsell our other products to existing customers.<p>You will be working with <em>growth</em> and cross-functional teams, collaborating strategically, and sharing/supporting technical expertise.<p>Key Responsibilities\nManage day-to-day operations of marketing campaigns such as email nurtures, newsletters, and events.\nManage and automate leads from different sources, and align this across all stakeholders\nWork closely with a cross-functional team on how to create and run operational campaigns efficiently.\nContinue to improve email marketing campaign activity, transactional, nurtures, features and performance.\nCreating a solid process to simplify technical setup for recurring campaign activities.\nBuild a sophisticated approach to customer/employee retention through research, and marketing campaigns to reduce <em>churn</em>.\nMap and continue to update customer journeys, and ensure we are targeting our data based on their current journey.\nKeep up-to-date with trends and developments in the industry, ensuring Remote stays ahead of the game in our strategy to engage and grow our customer database.\nRequirements\nSkilled with email marketing and lead management: behavioural and lifecycle management (3+ years of experience).\nExperience and <em>hi</em>ghly skilled with Marketing CRM tools, Eloqua, HubSpot, Salesforce, or similar.\nExperience in marketing automation and love for mapping customer journeys.\nProficient in HTML, CSS.\nUnderstand and identify target audiences through segmentation and campaign performance.\nEnjoys working cross-functionally.\nA kind, empathic, and patient person.\nSomeone who loves working with people and solving problems with them.\nOne who cares deeply about diversity and inclusion.\nFluent written and spoken English.\nIt's not required to have experience working remotely, but considered a plus.\nRemote Compensation Philosophy\nRemote\u2019s Total Rewards philosophy is to ensure fair unbiased compensation and fair pay along with competitive benefits in all locations in which we operate. We do not agree to or encourage cheap-labour practices and therefore pay a minimum annual salary of USD 40,000 per year, in all locations throughout the world. Actual compensation may vary based upon geographical location, experience, and/or skill level. However, it will never be below our minimum global compensation mentioned."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "[dead]"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Recruiting_Team",
+    "story_29173447"
+   ],
+   "author": "Recruiting_Team",
+   "comment_text": "About Remote\nRemote is solving global remote organizations\u2019 biggest challenge: employing anyone anywhere compliantly. We make it possible for businesses big and small to employ a global team by handling global payroll, benefits, taxes, and compliance (learn more about how it works). We&#x27;re backed by A+ investors and our team is world-class, literally and figuratively, as we&#x27;re all scattered around the world.<p>Please check out our public handbook to learn more about our culture. We encourage folks from all ethnic groups, genders, sexuality, age and abilities to apply. You can also check out independent reviews by other candidates on Glassdoor. If this job description resonates with you, we want to hear from you!<p>All of our Positions are fully remote. You do not have to relocate to join us!<p>How we work\nRemote is fully remote (ah!) and we love Working Async. This means you get to do your own schedule no matter the timezone. The Remote Engineering team uses a simple approach to productivity and task management and you can read more about it in The Remote Flow.<p>The Position\nThis is an exciting time to join Remote and make a personal difference in the global employment space as a Campaign Manager, joining our Growth team.<p>We are looking for an excellent Campaign Manager with hands-on experience with drip campaigns, nurtures, events, marketing automation, etc.<p>You should have a love for lifecycle management, customer journeys, and implementation of email marketing campaigns, to enable us to convert our leads to customers and upsell our other products to existing customers.<p>You will be working with growth and cross-functional teams, collaborating strategically, and sharing&#x2F;supporting technical expertise.<p>Key Responsibilities\nManage day-to-day operations of marketing campaigns such as email nurtures, newsletters, and events.\nManage and automate leads from different sources, and align this across all stakeholders\nWork closely with a cross-functional team on how to create and run operational campaigns efficiently.\nContinue to improve email marketing campaign activity, transactional, nurtures, features and performance.\nCreating a solid process to simplify technical setup for recurring campaign activities.\nBuild a sophisticated approach to customer&#x2F;employee retention through research, and marketing campaigns to reduce churn.\nMap and continue to update customer journeys, and ensure we are targeting our data based on their current journey.\nKeep up-to-date with trends and developments in the industry, ensuring Remote stays ahead of the game in our strategy to engage and grow our customer database.\nRequirements\nSkilled with email marketing and lead management: behavioural and lifecycle management (3+ years of experience).\nExperience and highly skilled with Marketing CRM tools, Eloqua, HubSpot, Salesforce, or similar.\nExperience in marketing automation and love for mapping customer journeys.\nProficient in HTML, CSS.\nUnderstand and identify target audiences through segmentation and campaign performance.\nEnjoys working cross-functionally.\nA kind, empathic, and patient person.\nSomeone who loves working with people and solving problems with them.\nOne who cares deeply about diversity and inclusion.\nFluent written and spoken English.\nIt&#x27;s not required to have experience working remotely, but considered a plus.\nRemote Compensation Philosophy\nRemote\u2019s Total Rewards philosophy is to ensure fair unbiased compensation and fair pay along with competitive benefits in all locations in which we operate. We do not agree to or encourage cheap-labour practices and therefore pay a minimum annual salary of USD 40,000 per year, in all locations throughout the world. Actual compensation may vary based upon geographical location, experience, and&#x2F;or skill level. However, it will never be below our minimum global compensation mentioned.",
+   "created_at": "2021-11-10T11:17:37Z",
+   "created_at_i": 1636543057,
+   "objectID": "29173448",
+   "parent_id": 29173447,
+   "story_id": 29173447,
+   "story_title": "[dead]",
+   "updated_at": "2024-09-20T09:50:17Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "nitrogen"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "churn",
+      "investors",
+      "growth",
+      "hid"
+     ],
+     "value": "&quot;Everyone who grew up here and works an Xth-percentile job can still afford to live here, plus we have room for more&quot; is a lot better than &quot;GTFO natives, I've got more money than you.&quot;  America (after the obvious colonial invasion) was also founded on principles of democracy and republicanism, where representation and self-determination belong to locals, not outsiders.<p>It's <i>really</i> bad for a community and a country when there is massive forced migration due to price pressure.<p>When new graduates are detached from their support networks, they have to pay more for things and services they could have shared with their family/friends/community.  When new couples are detached from their support networks, they and their kids suffer from <em>hi</em>gher costs and reduced mentorship from extended family.<p>When there is a constant flux in and out, like I saw while I was living in SF, nobody has any commitment to the area, and nobody has lived there long enough to know what &quot;normal&quot; is.<p>When people who invest their entire lives into a community are forced out of it, and/or their kids are displaced by lucky rich in-migrants, you amplify people's natural defensiveness and, whatever points you may have had, they will oppose you on everything.  Those communities are desirable places to live <i>because</i> of the years of time invested by those who came before, and they deserve not to be forced out by people with no prior stake.<p>When every avenue for just starting a life, let alone advancing it, is closed off to people, especially because of outsiders trouncing in with no appreciation for the <em>hi</em>story of a place, you have all the ingredients for revolt and revolution.<p>----<p>In places where there is ample land (like my native Utah), but supply targeted at natural <em>growth</em> can't keep up with in-migration and <em>investor</em> speculation, I would favor policies that significantly bias toward natives.  Keeping <em>churn</em> low, but not zero, is absolutely essential for the health of communities.<p>- Favoring live-in owners over landlords, but still allowing for some renting<p>- Very strongly favoring live-in first-home owners over <em>investors</em> through tax, HOA, and zoning policy<p>- Breaking up the very large parcels currently owned by and being developed for billionaires -- hating on single-family housing is a scapegoat for this real issue"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "54% of San Francisco homes are in buildings that would be illegal to build today"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://sfzoning.deapthoughts.com/illegal_homes.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_nitrogen",
+    "story_26665097"
+   ],
+   "author": "nitrogen",
+   "children": [
+    26677101
+   ],
+   "comment_text": "&quot;Everyone who grew up here and works an Xth-percentile job can still afford to live here, plus we have room for more&quot; is a lot better than &quot;GTFO natives, I&#x27;ve got more money than you.&quot;  America (after the obvious colonial invasion) was also founded on principles of democracy and republicanism, where representation and self-determination belong to locals, not outsiders.<p>It&#x27;s <i>really</i> bad for a community and a country when there is massive forced migration due to price pressure.<p>When new graduates are detached from their support networks, they have to pay more for things and services they could have shared with their family&#x2F;friends&#x2F;community.  When new couples are detached from their support networks, they and their kids suffer from higher costs and reduced mentorship from extended family.<p>When there is a constant flux in and out, like I saw while I was living in SF, nobody has any commitment to the area, and nobody has lived there long enough to know what &quot;normal&quot; is.<p>When people who invest their entire lives into a community are forced out of it, and&#x2F;or their kids are displaced by lucky rich in-migrants, you amplify people&#x27;s natural defensiveness and, whatever points you may have had, they will oppose you on everything.  Those communities are desirable places to live <i>because</i> of the years of time invested by those who came before, and they deserve not to be forced out by people with no prior stake.<p>When every avenue for just starting a life, let alone advancing it, is closed off to people, especially because of outsiders trouncing in with no appreciation for the history of a place, you have all the ingredients for revolt and revolution.<p>----<p>In places where there is ample land (like my native Utah), but supply targeted at natural growth can&#x27;t keep up with in-migration and investor speculation, I would favor policies that significantly bias toward natives.  Keeping churn low, but not zero, is absolutely essential for the health of communities.<p>- Favoring live-in owners over landlords, but still allowing for some renting<p>- Very strongly favoring live-in first-home owners over investors through tax, HOA, and zoning policy<p>- Breaking up the very large parcels currently owned by and being developed for billionaires -- hating on single-family housing is a scapegoat for this real issue",
+   "created_at": "2021-04-02T21:38:06Z",
+   "created_at_i": 1617399486,
+   "objectID": "26676258",
+   "parent_id": 26675177,
+   "story_id": 26665097,
+   "story_title": "54% of San Francisco homes are in buildings that would be illegal to build today",
+   "story_url": "https://sfzoning.deapthoughts.com/illegal_homes.html",
+   "updated_at": "2024-09-20T08:18:03Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "shkkmo"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "churn",
+      "investors",
+      "growth",
+      "hid"
+     ],
+     "value": "&gt; Rent control for existing properties raises market rents by encouraging existing tenants to stay even if their apartment is bigger than they need anymore and they might otherwise move to a smaller one or e.g. retire to Florida or Arizona, thereby keeping those units off the market and requiring the remaining demand to be satisfied by fewer units.<p>Rent would only be cheaper in &quot;rent-controlled&quot; properties during periods of extreme <em>growth</em> in market rents. The primary issue in such cases is not &quot;mis-matched&quot; tenants (if anything, reducing <em>churn</em> should increase effective supply). While it would provide less incentive for retirees to move out of the city , it also limits the degree to which the impoverished are forced to leave the city. Once the period of extreme <em>growth</em> passes, all rents will stabilize back at the market price.<p>So yes, this can lead to slightly <em>hi</em>gher market rents for new tenants during periods of extreme <em>growth</em>, but it does this because fewer people are forced out of the city.<p>&gt; And the prospect of rent control at any point in the future lowers the net present value of those investments by the corresponding amount, causing reduced investment in building new housing.<p>You think you can predict accurately which cities will have rent-control laws 15 years from now? While I can see how current or near-term rent control can affect a properties value, the incredibly marginal effects of this 15 years out is complete washed out by the much larger unknowns that affect the value of the property 15 years from now. One could has plausibly even argue that seeing a law like Oregon's being passed reduces the chance of seeing more draconian rent control laws introduced, which should INCREASE the attractiveness of investing in rentals in Oregon.<p>&gt; Worse, if the old buildings have rent control and the new ones don't, the tenants will prefer a rent controlled apartment, driving rents up in the old buildings and down in the new buildings (because, unlike <em>investors</em>, tenants do specifically need housing in that city so the relative difference matters), which both increases rents on existing buildings and reducing the incentive to build new buildings.<p>&gt;Worse, if the old buildings have rent control and the new ones don't, the tenants will prefer a rent controlled apartment, driving rents up in the old buildings and down in the new buildings (because, unlike <em>investors</em>, tenants do specifically need housing in that city so the relative difference matters), which both increases rents on existing buildings and reducing the incentive to build new buildings.<p>This is completely wrong and confused.<p>Somehow you have created a situation where in your mind where:<p>1) the tenants expects to pay less rent (over the next X years) on OLD buildings<p>somehow implies<p>2) the investor expects to be paid less rent (over the next X years)on NEW buildings.<p>Obviously, one of those expectations must be wrong which means your argument is invalid.<p>If you do see lower initial rents on newer buildings, you only see them offered to the degree that landlords expect to make up the difference in the following years.<p>If you do see higher initial rents on older buildings, you only see them paid to the degree that renters expect to make up the difference in the following years."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Oregon passed sweeping housing crisis laws"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.latimes.com/california/story/2019-07-19/oregon-lessons-california-housing-crisis"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_shkkmo",
+    "story_20485014"
+   ],
+   "author": "shkkmo",
+   "comment_text": "&gt; Rent control for existing properties raises market rents by encouraging existing tenants to stay even if their apartment is bigger than they need anymore and they might otherwise move to a smaller one or e.g. retire to Florida or Arizona, thereby keeping those units off the market and requiring the remaining demand to be satisfied by fewer units.<p>Rent would only be cheaper in &quot;rent-controlled&quot; properties during periods of extreme growth in market rents. The primary issue in such cases is not &quot;mis-matched&quot; tenants (if anything, reducing churn should increase effective supply). While it would provide less incentive for retirees to move out of the city , it also limits the degree to which the impoverished are forced to leave the city. Once the period of extreme growth passes, all rents will stabilize back at the market price.<p>So yes, this can lead to slightly higher market rents for new tenants during periods of extreme growth, but it does this because fewer people are forced out of the city.<p>&gt; And the prospect of rent control at any point in the future lowers the net present value of those investments by the corresponding amount, causing reduced investment in building new housing.<p>You think you can predict accurately which cities will have rent-control laws 15 years from now? While I can see how current or near-term rent control can affect a properties value, the incredibly marginal effects of this 15 years out is complete washed out by the much larger unknowns that affect the value of the property 15 years from now. One could has plausibly even argue that seeing a law like Oregon&#x27;s being passed reduces the chance of seeing more draconian rent control laws introduced, which should INCREASE the attractiveness of investing in rentals in Oregon.<p>&gt; Worse, if the old buildings have rent control and the new ones don&#x27;t, the tenants will prefer a rent controlled apartment, driving rents up in the old buildings and down in the new buildings (because, unlike investors, tenants do specifically need housing in that city so the relative difference matters), which both increases rents on existing buildings and reducing the incentive to build new buildings.<p>&gt;Worse, if the old buildings have rent control and the new ones don&#x27;t, the tenants will prefer a rent controlled apartment, driving rents up in the old buildings and down in the new buildings (because, unlike investors, tenants do specifically need housing in that city so the relative difference matters), which both increases rents on existing buildings and reducing the incentive to build new buildings.<p>This is completely wrong and confused.<p>Somehow you have created a situation where in your mind where:<p>1) the tenants expects to pay less rent (over the next X years) on OLD buildings<p>somehow implies<p>2) the investor expects to be paid less rent (over the next X years)on NEW buildings.<p>Obviously, one of those expectations must be wrong which means your argument is invalid.<p>If you do see lower initial rents on newer buildings, you only see them offered to the degree that landlords expect to make up the difference in the following years.<p>If you do see higher initial rents on older buildings, you only see them paid to the degree that renters expect to make up the difference in the following years.",
+   "created_at": "2019-07-23T19:20:51Z",
+   "created_at_i": 1563909651,
+   "objectID": "20509414",
+   "parent_id": 20488342,
+   "story_id": 20485014,
+   "story_title": "Oregon passed sweeping housing crisis laws",
+   "story_url": "https://www.latimes.com/california/story/2019-07-19/oregon-lessons-california-housing-crisis",
+   "updated_at": "2024-09-20T04:34:09Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ftio"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Peloton's business model is breathtakingly good, but I wonder about the size of their TAM and their ability to have sustained, multiplicative growth in the future.<p>First, the business model. They sell you a $2000+ bike, which includes a year of live classes with some of the best spin instructors in the world. Afterwards, you pay for a $40/month subscription in perpetuity to make your $2000 investment more than a boring (although very high quality) stationary bike. Whether you're hooked on the (excellent) service or not, if you're the kind of person who's willing to drop $2000 on a bike, you're very, very likely to be the kind of person who's willing to pay <i>just</i> $40/month to make sure your bike retains its value (i.e., access to live classes), even if you're not using it that much. Doesn't hurt that in-person spin classes regularly cost $30-40 for a single class.<p>I imagine Peloton's subscription churn is extremely low. This is excellent, and I'm jealous.<p>But, growth.<p>How big is the market of people who are willing to spend $2000 on and have space for an indoor bike? What happens when Peloton captures nearly all the market? What happens when a lower-priced version of Peloton comes in and eats their lunch at the &quot;bottom end&quot; (so to speak) of it?<p>Once you've effectively exhausted the market for selling new bikes (when new customer acquisition slows), you've got three options: find a new market, sell new things to your existing customers, or charge them more for the same things.<p>Peloton's already doing the first two. They're trying to show investors that they can cross-sell and/or establish new markets: they sell a $4000 treadmill. (My theory about the treadmill is that nearly 100% of its purpose is to show the market that cross-sell is possible \u2014 I have doubts about whether they're selling). I have extreme doubts about the viability of this. I mean, how many workout machines are you going to put in your house? Rough estimate: this segment is no more than 10% of Peloton's existing customer base.<p>In addition to all this, they could (obviously) also raise prices, but at $50-60/month for the subscription, you start to put those great churn numbers at risk.<p>Either way, really interested to see what they do."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Peloton Confidentially Files Statement for Proposed IPO"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.prnewswire.com/news-releases/peloton-announces-confidential-submission-of-draft-registration-statement-for-proposed-initial-public-offering-300862485.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ftio",
+    "story_20104738"
+   ],
+   "author": "ftio",
+   "children": [
+    20108636,
+    20108723,
+    20108892
+   ],
+   "comment_text": "Peloton&#x27;s business model is breathtakingly good, but I wonder about the size of their TAM and their ability to have sustained, multiplicative growth in the future.<p>First, the business model. They sell you a $2000+ bike, which includes a year of live classes with some of the best spin instructors in the world. Afterwards, you pay for a $40&#x2F;month subscription in perpetuity to make your $2000 investment more than a boring (although very high quality) stationary bike. Whether you&#x27;re hooked on the (excellent) service or not, if you&#x27;re the kind of person who&#x27;s willing to drop $2000 on a bike, you&#x27;re very, very likely to be the kind of person who&#x27;s willing to pay <i>just</i> $40&#x2F;month to make sure your bike retains its value (i.e., access to live classes), even if you&#x27;re not using it that much. Doesn&#x27;t hurt that in-person spin classes regularly cost $30-40 for a single class.<p>I imagine Peloton&#x27;s subscription churn is extremely low. This is excellent, and I&#x27;m jealous.<p>But, growth.<p>How big is the market of people who are willing to spend $2000 on and have space for an indoor bike? What happens when Peloton captures nearly all the market? What happens when a lower-priced version of Peloton comes in and eats their lunch at the &quot;bottom end&quot; (so to speak) of it?<p>Once you&#x27;ve effectively exhausted the market for selling new bikes (when new customer acquisition slows), you&#x27;ve got three options: find a new market, sell new things to your existing customers, or charge them more for the same things.<p>Peloton&#x27;s already doing the first two. They&#x27;re trying to show investors that they can cross-sell and&#x2F;or establish new markets: they sell a $4000 treadmill. (My theory about the treadmill is that nearly 100% of its purpose is to show the market that cross-sell is possible \u2014 I have doubts about whether they&#x27;re selling). I have extreme doubts about the viability of this. I mean, how many workout machines are you going to put in your house? Rough estimate: this segment is no more than 10% of Peloton&#x27;s existing customer base.<p>In addition to all this, they could (obviously) also raise prices, but at $50-60&#x2F;month for the subscription, you start to put those great churn numbers at risk.<p>Either way, really interested to see what they do.",
+   "created_at": "2019-06-05T20:09:03Z",
+   "created_at_i": 1559765343,
+   "objectID": "20108588",
+   "parent_id": 20104738,
+   "story_id": 20104738,
+   "story_title": "Peloton Confidentially Files Statement for Proposed IPO",
+   "story_url": "https://www.prnewswire.com/news-releases/peloton-announces-confidential-submission-of-draft-registration-statement-for-proposed-initial-public-offering-300862485.html",
+   "updated_at": "2024-09-20T04:20:30Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "TylerJewell"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Disclaimer - I am CEO of WSO2, a pure open source company. We philosophically oppose open core business models.<p>The author is speaking to the differences between the open core and open source business models. I've been writing increasingly about the differences between these models on my Medium blog about WSO2's growth story, our thoughts on the MULE acquisition by CRM (another open core vendor), and our open source business model.<p>WSO2 is a pure open source business model and we believe that it's more honest, efficient, and scalable. Also, if executed in the right manner, there is no risk from IP exploitation. We have been able to demonstrate that as we are growing on an ARR basis faster than MULE with an equal customer net dollar retention with negative churn, while getting to cash flow positive operations.<p>Our biggest rationale on why this is the case is that our internal teams do not compromise productivity by perpetually wrestling with where the \u201cfor free/for pay\u201d line must be drawn. It is expensive for an enterprise vendor to determine the best model of where for-fee options reside. Not only does the vendor have to develop a strategy, but they must communicate this to all their employees and then justify it to the open market. This is evidenced in this thread and in the many HN threads for Gitlab - their management team has to invest time and energy into explaining the philosophy that was used to establish the line. It's rarely intuitive, so some non-zero effort goes into that education internally and externally.<p>These costs are passed along to customers and require significantly higher forms of capital from investors. This line does not stay static, either. The nature of open source is that is erodes and impedes upon the areas where a vendor is selling their proprietary extensions. This means the \u201cfor free/for pay\u201d line must be periodically rethought. This is a continual process, and this is time where inefficiencies are introduced.<p>In the pure open source model, we just tell our developers to design and build. And we can focus on a single pricing solution of value in and around that overall platform. It saves us a lot of emotional capital, too, because people get very committed on where they think the free / for pay line must be drawn.<p>Finally, it lets us be more up front with customers. They know that our sales reps have nothing to gain by suggesting one tech stack over another. Customers can use the entire stack before they talk to us and so if they are really engaged, then we are engaged for a value added subscription for all of the right reasons, and we don't have to lengthen the sales cycle while they try to decide which route they want to take - open source or proprietary.<p>[1] <a href=\"https://blog.usejournal.com/wso2s-growth-story-and-why-open-source-is-the-only-way-to-solve-your-integration-challenges-32a72b173e0a\" rel=\"nofollow\">https://blog.usejournal.com/wso2s-growth-story-and-why-open-...</a><p>[2] <a href=\"https://blog.usejournal.com/salesforces-acquisition-of-mulesoft-is-a-triumph-for-investors-disaster-for-open-source-2e5252005860\" rel=\"nofollow\">https://blog.usejournal.com/salesforces-acquisition-of-mules...</a><p>[3] <a href=\"https://blog.usejournal.com/wso2s-open-source-business-model-3ffea58feb8b\" rel=\"nofollow\">https://blog.usejournal.com/wso2s-open-source-business-model...</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "GitLab Isn\u2019t Really Open-Source"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://akr.am/blog/posts/gitlab-isnt-really-open-source"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_TylerJewell",
+    "story_17229940"
+   ],
+   "author": "TylerJewell",
+   "comment_text": "Disclaimer - I am CEO of WSO2, a pure open source company. We philosophically oppose open core business models.<p>The author is speaking to the differences between the open core and open source business models. I&#x27;ve been writing increasingly about the differences between these models on my Medium blog about WSO2&#x27;s growth story, our thoughts on the MULE acquisition by CRM (another open core vendor), and our open source business model.<p>WSO2 is a pure open source business model and we believe that it&#x27;s more honest, efficient, and scalable. Also, if executed in the right manner, there is no risk from IP exploitation. We have been able to demonstrate that as we are growing on an ARR basis faster than MULE with an equal customer net dollar retention with negative churn, while getting to cash flow positive operations.<p>Our biggest rationale on why this is the case is that our internal teams do not compromise productivity by perpetually wrestling with where the \u201cfor free&#x2F;for pay\u201d line must be drawn. It is expensive for an enterprise vendor to determine the best model of where for-fee options reside. Not only does the vendor have to develop a strategy, but they must communicate this to all their employees and then justify it to the open market. This is evidenced in this thread and in the many HN threads for Gitlab - their management team has to invest time and energy into explaining the philosophy that was used to establish the line. It&#x27;s rarely intuitive, so some non-zero effort goes into that education internally and externally.<p>These costs are passed along to customers and require significantly higher forms of capital from investors. This line does not stay static, either. The nature of open source is that is erodes and impedes upon the areas where a vendor is selling their proprietary extensions. This means the \u201cfor free&#x2F;for pay\u201d line must be periodically rethought. This is a continual process, and this is time where inefficiencies are introduced.<p>In the pure open source model, we just tell our developers to design and build. And we can focus on a single pricing solution of value in and around that overall platform. It saves us a lot of emotional capital, too, because people get very committed on where they think the free &#x2F; for pay line must be drawn.<p>Finally, it lets us be more up front with customers. They know that our sales reps have nothing to gain by suggesting one tech stack over another. Customers can use the entire stack before they talk to us and so if they are really engaged, then we are engaged for a value added subscription for all of the right reasons, and we don&#x27;t have to lengthen the sales cycle while they try to decide which route they want to take - open source or proprietary.<p>[1] <a href=\"https:&#x2F;&#x2F;blog.usejournal.com&#x2F;wso2s-growth-story-and-why-open-source-is-the-only-way-to-solve-your-integration-challenges-32a72b173e0a\" rel=\"nofollow\">https:&#x2F;&#x2F;blog.usejournal.com&#x2F;wso2s-growth-story-and-why-open-...</a><p>[2] <a href=\"https:&#x2F;&#x2F;blog.usejournal.com&#x2F;salesforces-acquisition-of-mulesoft-is-a-triumph-for-investors-disaster-for-open-source-2e5252005860\" rel=\"nofollow\">https:&#x2F;&#x2F;blog.usejournal.com&#x2F;salesforces-acquisition-of-mules...</a><p>[3] <a href=\"https:&#x2F;&#x2F;blog.usejournal.com&#x2F;wso2s-open-source-business-model-3ffea58feb8b\" rel=\"nofollow\">https:&#x2F;&#x2F;blog.usejournal.com&#x2F;wso2s-open-source-business-model...</a>",
+   "created_at": "2018-06-04T23:44:53Z",
+   "created_at_i": 1528155893,
+   "objectID": "17233705",
+   "parent_id": 17229940,
+   "story_id": 17229940,
+   "story_title": "GitLab Isn\u2019t Really Open-Source",
+   "story_url": "https://akr.am/blog/posts/gitlab-isnt-really-open-source",
+   "updated_at": "2024-09-20T02:34:47Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "highCs"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Just in case you got trapped, this is mostly a boilerplate which goal is not to help you but the author to get the appropriate image that would allow him to invest in companies that are doing well.<p>&gt; How do competitors view you? Think about your 2-3 closest competitors. If you asked their CEOs to truthfully describe your company's strengths and vulnerabilities<p>Well, your 6 months old startup has no &quot;strengths and vulnerabilities&quot;. It should also not have direct competitors. Only big companies have this kind of things. You have code, users and growth.<p>&gt; Are you ready for a Series A?\n&gt; Imagine that instead of being the founder of your company, you're an investor<p>You already ask yourself these questions.<p>&gt; The debate from hell<p>This one is decent and I'm nice. You already did this with your cofounder most of the time.<p>&gt; Was your MVP truly minimal?<p>Who cares, you've survived.<p>&gt; Stomach-churning churn numbers<p>You will stress automatically about churn.<p>&gt; The missing key<p>Don't hire &quot;key role&quot;. Only big companies do that.<p>&gt; Laughed out of the room<p>Decent and I'm nice.<p>&gt; Unexpectedly large market<p>By the way, only investors say <i>market</i> when talking about startups. While this has sense, it's kinda a concept for big companies again. Your startup has early users and say pool / niche of those.<p>&gt; Unexpectedly small market<p>You rarely have an unexpectedly small market. Most of the time you have no market at all: you have built something people don't want.<p>&gt; How does the trajectory of the world over the next 5-10 years align (or misalign) with what you're doing?<p>If you're growing, you're &quot;aligned&quot;.<p>And on and on. The intention is not really to help you here I believe."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Thought Experiments to De-Risk Your Startup"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://codingvc.com/how-to-use-thought-experiments-to-de-risk-your-startup/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_highCs",
+    "story_13184587"
+   ],
+   "author": "highCs",
+   "children": [
+    13185984,
+    13187420
+   ],
+   "comment_text": "Just in case you got trapped, this is mostly a boilerplate which goal is not to help you but the author to get the appropriate image that would allow him to invest in companies that are doing well.<p>&gt; How do competitors view you? Think about your 2-3 closest competitors. If you asked their CEOs to truthfully describe your company&#x27;s strengths and vulnerabilities<p>Well, your 6 months old startup has no &quot;strengths and vulnerabilities&quot;. It should also not have direct competitors. Only big companies have this kind of things. You have code, users and growth.<p>&gt; Are you ready for a Series A?\n&gt; Imagine that instead of being the founder of your company, you&#x27;re an investor<p>You already ask yourself these questions.<p>&gt; The debate from hell<p>This one is decent and I&#x27;m nice. You already did this with your cofounder most of the time.<p>&gt; Was your MVP truly minimal?<p>Who cares, you&#x27;ve survived.<p>&gt; Stomach-churning churn numbers<p>You will stress automatically about churn.<p>&gt; The missing key<p>Don&#x27;t hire &quot;key role&quot;. Only big companies do that.<p>&gt; Laughed out of the room<p>Decent and I&#x27;m nice.<p>&gt; Unexpectedly large market<p>By the way, only investors say <i>market</i> when talking about startups. While this has sense, it&#x27;s kinda a concept for big companies again. Your startup has early users and say pool &#x2F; niche of those.<p>&gt; Unexpectedly small market<p>You rarely have an unexpectedly small market. Most of the time you have no market at all: you have built something people don&#x27;t want.<p>&gt; How does the trajectory of the world over the next 5-10 years align (or misalign) with what you&#x27;re doing?<p>If you&#x27;re growing, you&#x27;re &quot;aligned&quot;.<p>And on and on. The intention is not really to help you here I believe.",
+   "created_at": "2016-12-15T16:19:11Z",
+   "created_at_i": 1481818751,
+   "objectID": "13185643",
+   "parent_id": 13184587,
+   "story_id": 13184587,
+   "story_title": "Thought Experiments to De-Risk Your Startup",
+   "story_url": "https://codingvc.com/how-to-use-thought-experiments-to-de-risk-your-startup/",
+   "updated_at": "2024-09-20T00:09:11Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "nostrademons"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Employees do have access to an investment to an investment nobody else does.  It's just that they need to do due diligence on par with or better than an investor to avoid getting taken advantage of.<p>I've turned down more startup jobs than I can count.  When I interview at a startup, I thoroughly research their market, their competitors, their product, and their business model.  I ask questions about how they came up with the idea, and how they know other people want it, and what questions they asked when they did their market research, and how the idea has evolved in response to new information.  How did the team meet?  What's the company culture like, and what do they value?  I ask about financials - are they profitable?  What's their runway?  What's their revenue and revenue growth rate?  Is it recurring revenue or revenue for one-off contracts?  What's their churn rate?  I ask about funding - who is their VC?  How many rounds have they taken, what's the preference overhang, how many more do they anticipate taking?  (And then in my head, I'm running over the financials to see if this squares with their growth &amp; revenue plans.)<p>If they're cagey about this, I walk.  Some companies are, and that's their right, and I'm not going to work for them.  Others are very impressed that I'm doing this level of due diligence, because it shows that I view my time there as an investment, and will invest the same level of diligence and effort into the job itself.<p>Equity compensation itself is not the problem.  Equity itself is great for employees - they have an information advantage over every other shareholder of the company (including the VCs), and if they're an early hire, they can have a meaningful effect on the value of that equity.  But to take advantage of this, they need to do due diligence <i>as if they were an investor</i> - they are, after all, they're investing their time, which is far more valuable than a VC's money.  Equity is much more highly levered than salary - its value depends on how events play out, not just on what you've agreed beforehand - and so you should make sure you have enough information to make a reasonable guess at its value before accepting it."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "When a Unicorn Startup Stumbles, Its Employees Get Hurt"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.nytimes.com/2015/12/27/technology/when-a-unicorn-start-up-stumbles-its-employees-get-hurt.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_nostrademons",
+    "story_10783711"
+   ],
+   "author": "nostrademons",
+   "children": [
+    10784648,
+    10785173,
+    10785450
+   ],
+   "comment_text": "Employees do have access to an investment to an investment nobody else does.  It&#x27;s just that they need to do due diligence on par with or better than an investor to avoid getting taken advantage of.<p>I&#x27;ve turned down more startup jobs than I can count.  When I interview at a startup, I thoroughly research their market, their competitors, their product, and their business model.  I ask questions about how they came up with the idea, and how they know other people want it, and what questions they asked when they did their market research, and how the idea has evolved in response to new information.  How did the team meet?  What&#x27;s the company culture like, and what do they value?  I ask about financials - are they profitable?  What&#x27;s their runway?  What&#x27;s their revenue and revenue growth rate?  Is it recurring revenue or revenue for one-off contracts?  What&#x27;s their churn rate?  I ask about funding - who is their VC?  How many rounds have they taken, what&#x27;s the preference overhang, how many more do they anticipate taking?  (And then in my head, I&#x27;m running over the financials to see if this squares with their growth &amp; revenue plans.)<p>If they&#x27;re cagey about this, I walk.  Some companies are, and that&#x27;s their right, and I&#x27;m not going to work for them.  Others are very impressed that I&#x27;m doing this level of due diligence, because it shows that I view my time there as an investment, and will invest the same level of diligence and effort into the job itself.<p>Equity compensation itself is not the problem.  Equity itself is great for employees - they have an information advantage over every other shareholder of the company (including the VCs), and if they&#x27;re an early hire, they can have a meaningful effect on the value of that equity.  But to take advantage of this, they need to do due diligence <i>as if they were an investor</i> - they are, after all, they&#x27;re investing their time, which is far more valuable than a VC&#x27;s money.  Equity is much more highly levered than salary - its value depends on how events play out, not just on what you&#x27;ve agreed beforehand - and so you should make sure you have enough information to make a reasonable guess at its value before accepting it.",
+   "created_at": "2015-12-23T17:53:49Z",
+   "created_at_i": 1450893229,
+   "objectID": "10784541",
+   "parent_id": 10784329,
+   "points": null,
+   "story_id": 10783711,
+   "story_title": "When a Unicorn Startup Stumbles, Its Employees Get Hurt",
+   "story_url": "http://www.nytimes.com/2015/12/27/technology/when-a-unicorn-start-up-stumbles-its-employees-get-hurt.html",
+   "updated_at": "2023-09-07T00:23:51Z"
+  }
+ ],
+ "hitsPerPage": 200,
+ "nbHits": 26,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=churn+investors+growth+hid&tags=comment&hitsPerPage=200&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 61,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 19
+  },
+  "afterFetch": {
+   "format": {
+    "highlighting": 4,
+    "total": 4
+   },
+   "merge": {
+    "mergeLoop": {
+     "prepareNextHit": 13,
+     "total": 14
+    },
+    "total": 14
+   },
+   "total": 14
+  },
+  "fetch": {
+   "query": 22,
+   "scanning": 23,
+   "total": 46
+  },
+  "total": 61
+ },
+ "query": "churn investors growth hid",
+ "serverTimeMS": 67,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=churn+investors+growth+hid&tags=comment&hitsPerPage=200"
+}

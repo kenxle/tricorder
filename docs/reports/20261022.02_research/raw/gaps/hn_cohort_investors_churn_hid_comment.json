@@ -1,0 +1,29 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [],
+ "hitsPerPage": 40,
+ "nbHits": 0,
+ "nbPages": 0,
+ "page": 0,
+ "params": "query=%22cohort%22+investors+%22churn%22+hid&tags=comment&hitsPerPage=40&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 15,
+ "processingTimingsMS": {
+  "_request": {
+   "queue": 49,
+   "roundTrip": 20
+  },
+  "fetch": {
+   "query": 13,
+   "total": 14
+  },
+  "total": 15
+ },
+ "query": "\"cohort\" investors \"churn\" hid",
+ "serverTimeMS": 64,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=%22cohort%22+investors+%22churn%22+hid&tags=comment&hitsPerPage=40&advancedSyntax=true"
+}

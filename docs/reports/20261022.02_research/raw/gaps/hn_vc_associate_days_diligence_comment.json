@@ -1,0 +1,75 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "alain94040"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "vc",
+      "associate",
+      "days",
+      "diligence"
+     ],
+     "value": "I love this! It will indeed drive some of the VCs nuts. And it's the ultimate test. Everyone's money is the same. What can you bring to the table beyond a check? Tell me something smart and I might take your money.<p>It's the right way for a founder to do due <em>diligence</em>, and it puts the relationship upside down with VCs. I'd love to be in that position. I got my share of calls from <em>VC</em> <em>associates</em>, but the real VCs I care about barely give me more than the time of <em>day</em>."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "How Not to Pitch to a Startup"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://particletree.com/features/how-not-to-pitch-to-a-startup/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_alain94040",
+    "story_487311"
+   ],
+   "author": "alain94040",
+   "comment_text": "I love this! It will indeed drive some of the VCs nuts. And it's the ultimate test. Everyone's money is the same. What can you bring to the table beyond a check? Tell me something smart and I might take your money.<p>It's the right way for a founder to do due diligence, and it puts the relationship upside down with VCs. I'd love to be in that position. I got my share of calls from VC associates, but the real VCs I care about barely give me more than the time of day.",
+   "created_at": "2009-02-20T03:12:20Z",
+   "created_at_i": 1235099540,
+   "objectID": "488249",
+   "parent_id": 487649,
+   "story_id": 487311,
+   "story_title": "How Not to Pitch to a Startup",
+   "story_url": "http://particletree.com/features/how-not-to-pitch-to-a-startup/",
+   "updated_at": "2024-09-19T16:35:18Z"
+  }
+ ],
+ "hitsPerPage": 40,
+ "nbHits": 1,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=VC+associate+days+diligence&tags=comment&hitsPerPage=40&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 32,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 23
+  },
+  "fetch": {
+   "query": 26,
+   "scanning": 5,
+   "total": 32
+  },
+  "total": 32
+ },
+ "query": "VC associate days diligence",
+ "serverTimeMS": 33,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=VC+associate+days+diligence&tags=comment&hitsPerPage=40"
+}

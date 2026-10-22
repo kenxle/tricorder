@@ -1,0 +1,372 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "joshu"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "link",
+      "deck",
+      "investors"
+     ],
+     "value": "I'm an <em>investor</em> and I don't love clicking on the <em>docsend</em> <em>links</em>, but I will. I really dislike clicking on linktracked <em>links</em>, especially from a cold pitch.<p>The worst part of <em>docsend</em> for me is I will get an email saying &quot;check out our new thing&quot; and then I click on it sometime later to look at it again and it's already expired. Or I remember, &quot;hey that <em>deck</em> about xxxyyy, other <em>investor</em> zzz should talk to them&quot; and I can't search for it because there was zero content in the email."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "VC bias in viewing pitch decks can affect fundraising success"
+    },
+    "story_url": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "docsend"
+     ],
+     "value": "https://www.<em>docsend</em>.com/blog/how-vc-bias-in-viewing-pitch-decks-can-affect-fundraising-success/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_joshu",
+    "story_24164570"
+   ],
+   "author": "joshu",
+   "comment_text": "I&#x27;m an investor and I don&#x27;t love clicking on the docsend links, but I will. I really dislike clicking on linktracked links, especially from a cold pitch.<p>The worst part of docsend for me is I will get an email saying &quot;check out our new thing&quot; and then I click on it sometime later to look at it again and it&#x27;s already expired. Or I remember, &quot;hey that deck about xxxyyy, other investor zzz should talk to them&quot; and I can&#x27;t search for it because there was zero content in the email.",
+   "created_at": "2020-08-15T03:53:03Z",
+   "created_at_i": 1597463583,
+   "objectID": "24165769",
+   "parent_id": 24165643,
+   "story_id": 24164570,
+   "story_title": "VC bias in viewing pitch decks can affect fundraising success",
+   "story_url": "https://www.docsend.com/blog/how-vc-bias-in-viewing-pitch-decks-can-affect-fundraising-success/",
+   "updated_at": "2024-09-20T06:48:32Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mtlynch"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "link",
+      "deck",
+      "investors"
+     ],
+     "value": "Where did this data come from?<p>I had to dig five <em>links</em> deep before I got an answer. <em>DocSend</em> is a service that allows founding teams to send pitch <em>decks</em> to <em>investors</em>. <em>DocSend</em> invited founding teams to participate in this research.[0] It's worth noting that they don't seem like they asked for consent from the VCs whose browsing behavior they observed for this study.<p>In <em>DocSend</em>'s privacy policy[1], the VCs are Viewers, whereas the founding team is the User. <em>DocSend</em> apparently allows Users to give consent on behalf of the Viewers:<p>&gt;<i>If you are a Viewer who views Content you receive from a User via the Service, we automatically collect information about your interaction with such Content and our Service. The information we collect includes: Whether or not a you have viewed or are viewing Content; Date and time you viewed the Content; Number of times and length of time Content was viewed; Which portions of the Content were viewed; and Your IP address and location.</i><p>[0] <a href=\"https://docsend.com/view/my4w3gf\" rel=\"nofollow\">https://<em>docsend</em>.com/view/my4w3gf</a><p>[1] <a href=\"https://www.docsend.com/privacy-policy/\" rel=\"nofollow\">https://www.<em>docsend</em>.com/privacy-policy/</a>"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "deck"
+     ],
+     "value": "VC bias in viewing pitch <em>decks</em> can affect fundraising success"
+    },
+    "story_url": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "docsend",
+      "deck"
+     ],
+     "value": "https://www.<em>docsend</em>.com/blog/how-vc-bias-in-viewing-pitch-<em>decks</em>-can-affect-fundraising-success/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mtlynch",
+    "story_24164570"
+   ],
+   "author": "mtlynch",
+   "children": [
+    24165542,
+    24165562,
+    24165662,
+    24165818
+   ],
+   "comment_text": "Where did this data come from?<p>I had to dig five links deep before I got an answer. DocSend is a service that allows founding teams to send pitch decks to investors. DocSend invited founding teams to participate in this research.[0] It&#x27;s worth noting that they don&#x27;t seem like they asked for consent from the VCs whose browsing behavior they observed for this study.<p>In DocSend&#x27;s privacy policy[1], the VCs are Viewers, whereas the founding team is the User. DocSend apparently allows Users to give consent on behalf of the Viewers:<p>&gt;<i>If you are a Viewer who views Content you receive from a User via the Service, we automatically collect information about your interaction with such Content and our Service. The information we collect includes: Whether or not a you have viewed or are viewing Content; Date and time you viewed the Content; Number of times and length of time Content was viewed; Which portions of the Content were viewed; and Your IP address and location.</i><p>[0] <a href=\"https:&#x2F;&#x2F;docsend.com&#x2F;view&#x2F;my4w3gf\" rel=\"nofollow\">https:&#x2F;&#x2F;docsend.com&#x2F;view&#x2F;my4w3gf</a><p>[1] <a href=\"https:&#x2F;&#x2F;www.docsend.com&#x2F;privacy-policy&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.docsend.com&#x2F;privacy-policy&#x2F;</a>",
+   "created_at": "2020-08-15T02:28:00Z",
+   "created_at_i": 1597458480,
+   "objectID": "24165373",
+   "parent_id": 24164570,
+   "story_id": 24164570,
+   "story_title": "VC bias in viewing pitch decks can affect fundraising success",
+   "story_url": "https://www.docsend.com/blog/how-vc-bias-in-viewing-pitch-decks-can-affect-fundraising-success/",
+   "updated_at": "2024-09-20T06:48:32Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "eminfaliyev1991"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "link",
+      "deck",
+      "investors"
+     ],
+     "value": "While fundraising, I got frustrated with pitch <em>deck</em> tools:<p>PDFs = no version control or visibility.<p><em>DocSend</em> = pricey, limited analytics.<p>Others felt rigid or overpriced.<p>So I built PitchRaft\n \u2014 think <em>DocSend</em> + Hotjar for pitch decks:<p>Heatmaps: see what slides <em>investors</em> read, skip, or re-watch.<p>FOMO overlays: subtle nudges like \u201c10 <em>investors</em> are viewing.\u201d<p>Engagement metrics: time per slide, replays, click-throughs.<p>Always updated: change decks without breaking <em>links</em>.<p>Not just tracking views \u2014 it helps founders craft better decks based on real investor behavior. Using it ourselves has improved our fundraising and led to more follow-up meetings.<p>Curious what this community thinks: would you use this over PDFs / <em>DocSend</em>? Any pitfalls you see in investor-facing analytics?"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "docsend"
+     ],
+     "value": "PitchRaft \u2013 <em>DocSend</em> Meets Hotjar for Pitch Decks"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://pitchraft.com/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_eminfaliyev1991",
+    "story_45439537"
+   ],
+   "author": "eminfaliyev1991",
+   "comment_text": "While fundraising, I got frustrated with pitch deck tools:<p>PDFs = no version control or visibility.<p>DocSend = pricey, limited analytics.<p>Others felt rigid or overpriced.<p>So I built PitchRaft\n \u2014 think DocSend + Hotjar for pitch decks:<p>Heatmaps: see what slides investors read, skip, or re-watch.<p>FOMO overlays: subtle nudges like \u201c10 investors are viewing.\u201d<p>Engagement metrics: time per slide, replays, click-throughs.<p>Always updated: change decks without breaking links.<p>Not just tracking views \u2014 it helps founders craft better decks based on real investor behavior. Using it ourselves has improved our fundraising and led to more follow-up meetings.<p>Curious what this community thinks: would you use this over PDFs &#x2F; DocSend? Any pitfalls you see in investor-facing analytics?",
+   "created_at": "2025-10-01T16:17:09Z",
+   "created_at_i": 1759335429,
+   "objectID": "45439538",
+   "parent_id": 45439537,
+   "story_id": 45439537,
+   "story_title": "PitchRaft \u2013 DocSend Meets Hotjar for Pitch Decks",
+   "story_url": "https://pitchraft.com/",
+   "updated_at": "2026-03-05T22:48:00Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "nivertech"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "link",
+      "deck",
+      "investors"
+     ],
+     "value": "If you present in person, then it can be anything really.<p>The best pitches are just conversation with the <em>investors</em>.<p>But usually they will ask you to send a formal <em>deck</em> and/or one-pager. Some VCs/angels have preferred <em>deck</em> formats, so it's better to check their websites/blogs. Otherwise use one of the standard formats, i.e. Problem/Solution/TAM/Team, etc. It should be an attachment in the PDF format, not password-protected <em>link</em> like with <em>DocSend</em> or alike."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "deck"
+     ],
+     "value": "Does a startup <em>deck</em> necessary mean it is a presentation or slideshow?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_nivertech",
+    "story_32836666"
+   ],
+   "author": "nivertech",
+   "comment_text": "If you present in person, then it can be anything really.<p>The best pitches are just conversation with the investors.<p>But usually they will ask you to send a formal deck and&#x2F;or one-pager. Some VCs&#x2F;angels have preferred deck formats, so it&#x27;s better to check their websites&#x2F;blogs. Otherwise use one of the standard formats, i.e. Problem&#x2F;Solution&#x2F;TAM&#x2F;Team, etc. It should be an attachment in the PDF format, not password-protected link like with DocSend or alike.",
+   "created_at": "2022-09-14T14:41:18Z",
+   "created_at_i": 1663166478,
+   "objectID": "32837926",
+   "parent_id": 32836666,
+   "story_id": 32836666,
+   "story_title": "Does a startup deck necessary mean it is a presentation or slideshow?",
+   "updated_at": "2024-09-20T12:01:33Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "aerosmile"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "link",
+      "deck",
+      "investors"
+     ],
+     "value": "&gt; you shouldn't share that stuff with <em>investors</em> without having a conversation<p>&gt; I rarely open <em>docsend</em> docs and never on cold pitches<p>Therein lies the conundrum: we are both right and wrong, depending on the context.<p>Scenario A: you just completed a hackathon and have no connections or existing <em>investors</em> to help you reach other <em>investors</em> =&gt; in this case you should reduce the barrier of distribution in any way possible.<p>Scenario B: you are running a seed funded startup and have enough traction to raise the A round =&gt; you will be getting warm introductions, and <em>investors</em> will be opening your <em>links</em>.<p>Most founders fall somewhere in between those two scenarios, starting at the Scenario A at the beginning of their careers, and slowly making their way towards the Scenario B. The nice thing about using <em>DocSend</em> is that it will tell you exactly if you're ready for it =&gt; just look at the open rate of your <em>links</em>.<p>&gt; I do like having the <em>deck</em> in my inbox so that when the pitch changes I can see what they once did. Lots of founders will do multiple companies and abandon failures early, and I want to be able to see what they pitched me on six months ago.<p>This is what I meant with one-sided. Nobody disputes the value of that information to the investor. From the founder's perspective, however, you get this set of options:<p>1. the slide <em>deck</em> you were pitching 1/2/3 years ago materialized exactly how you predicted =&gt; congratulations, you're in Scenario B, and <em>investors</em> will be reading your <em>deck</em> no matter how you present it to them.<p>2. your old slide <em>deck</em> was overly optimistic, and you either underperformed, pivoted, or abandoned your startup altogether. Do you really want everyone out there to have this dirt on you?"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Raising a seed round instead of a Series A"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.atrium.co/blog/seed-stage-funding-startups/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_aerosmile",
+    "story_17095323"
+   ],
+   "author": "aerosmile",
+   "children": [
+    17102026
+   ],
+   "comment_text": "&gt; you shouldn&#x27;t share that stuff with investors without having a conversation<p>&gt; I rarely open docsend docs and never on cold pitches<p>Therein lies the conundrum: we are both right and wrong, depending on the context.<p>Scenario A: you just completed a hackathon and have no connections or existing investors to help you reach other investors =&gt; in this case you should reduce the barrier of distribution in any way possible.<p>Scenario B: you are running a seed funded startup and have enough traction to raise the A round =&gt; you will be getting warm introductions, and investors will be opening your links.<p>Most founders fall somewhere in between those two scenarios, starting at the Scenario A at the beginning of their careers, and slowly making their way towards the Scenario B. The nice thing about using DocSend is that it will tell you exactly if you&#x27;re ready for it =&gt; just look at the open rate of your links.<p>&gt; I do like having the deck in my inbox so that when the pitch changes I can see what they once did. Lots of founders will do multiple companies and abandon failures early, and I want to be able to see what they pitched me on six months ago.<p>This is what I meant with one-sided. Nobody disputes the value of that information to the investor. From the founder&#x27;s perspective, however, you get this set of options:<p>1. the slide deck you were pitching 1&#x2F;2&#x2F;3 years ago materialized exactly how you predicted =&gt; congratulations, you&#x27;re in Scenario B, and investors will be reading your deck no matter how you present it to them.<p>2. your old slide deck was overly optimistic, and you either underperformed, pivoted, or abandoned your startup altogether. Do you really want everyone out there to have this dirt on you?",
+   "created_at": "2018-05-18T10:28:51Z",
+   "created_at_i": 1526639331,
+   "objectID": "17100261",
+   "parent_id": 17098497,
+   "story_id": 17095323,
+   "story_title": "Raising a seed round instead of a Series A",
+   "story_url": "https://www.atrium.co/blog/seed-stage-funding-startups/",
+   "updated_at": "2024-09-20T02:26:16Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "dabojula"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "link",
+      "deck",
+      "investors"
+     ],
+     "value": "Building pitchwise.se - a cost effective <em>Docsend</em> alternative for sending <em>decks</em> and Data Rooms as secure branded <em>links</em> and see real <em>investor</em> signals -- slide-level analytics, return visits, forwards, etc.<p>Get a feel for it here: <a href=\"https://app.pitchwise.se/v/founder-pack\" rel=\"nofollow\">https://app.pitchwise.se/v/founder-pack</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: What are you working on? (January 2026)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_dabojula",
+    "story_46577242"
+   ],
+   "author": "dabojula",
+   "comment_text": "Building pitchwise.se - a cost effective Docsend alternative for sending decks and Data Rooms as secure branded links and see real investor signals -- slide-level analytics, return visits, forwards, etc.<p>Get a feel for it here: <a href=\"https:&#x2F;&#x2F;app.pitchwise.se&#x2F;v&#x2F;founder-pack\" rel=\"nofollow\">https:&#x2F;&#x2F;app.pitchwise.se&#x2F;v&#x2F;founder-pack</a>",
+   "created_at": "2026-01-15T13:22:41Z",
+   "created_at_i": 1768483361,
+   "objectID": "46632107",
+   "parent_id": 46577242,
+   "story_id": 46577242,
+   "story_title": "Ask HN: What are you working on? (January 2026)",
+   "updated_at": "2026-03-05T23:24:55Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "joshu"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "docsend",
+      "link",
+      "deck",
+      "investors"
+     ],
+     "value": "These are dreadful reasons. The first is silly, for the second you shouldn't share that stuff with <em>investors</em> without having a conversation, and the third is a problem whatever the transmission system (unethical people aren't going to be stopped that easily).<p>Especially since <em>Docsend</em> supposedly let you download PDFs if you log in.<p>I rarely open <em>docsend</em> docs and never on cold pitches. Using other tracking <em>links</em> is an automatic fail. You already can imagine why.<p>I do like having the <em>deck</em> in my inbox so that when the pitch changes I can see what they once did. Lots of founders will do multiple companies and abandon failures early, and I want to be able to see what they pitched me on six months ago.<p>I don't think you necessarily need to put all of that stuff in the <em>deck</em> (and certainly not proprietary data) but you are effectively sending people a shortened URL for your stuff that will die in a few weeks."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Raising a seed round instead of a Series A"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.atrium.co/blog/seed-stage-funding-startups/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_joshu",
+    "story_17095323"
+   ],
+   "author": "joshu",
+   "children": [
+    17100261
+   ],
+   "comment_text": "These are dreadful reasons. The first is silly, for the second you shouldn&#x27;t share that stuff with investors without having a conversation, and the third is a problem whatever the transmission system (unethical people aren&#x27;t going to be stopped that easily).<p>Especially since Docsend supposedly let you download PDFs if you log in.<p>I rarely open docsend docs and never on cold pitches. Using other tracking links is an automatic fail. You already can imagine why.<p>I do like having the deck in my inbox so that when the pitch changes I can see what they once did. Lots of founders will do multiple companies and abandon failures early, and I want to be able to see what they pitched me on six months ago.<p>I don&#x27;t think you necessarily need to put all of that stuff in the deck (and certainly not proprietary data) but you are effectively sending people a shortened URL for your stuff that will die in a few weeks.",
+   "created_at": "2018-05-18T03:37:19Z",
+   "created_at_i": 1526614639,
+   "objectID": "17098497",
+   "parent_id": 17098234,
+   "story_id": 17095323,
+   "story_title": "Raising a seed round instead of a Series A",
+   "story_url": "https://www.atrium.co/blog/seed-stage-funding-startups/",
+   "updated_at": "2024-09-20T02:30:00Z"
+  }
+ ],
+ "hitsPerPage": 40,
+ "nbHits": 7,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=docsend+link+deck+investors&tags=comment&hitsPerPage=40&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 26,
+ "processingTimingsMS": {
+  "_request": {
+   "queue": 146,
+   "roundTrip": 16
+  },
+  "afterFetch": {
+   "format": {
+    "highlighting": 1,
+    "total": 1
+   },
+   "merge": {
+    "total": 2
+   },
+   "total": 2
+  },
+  "fetch": {
+   "query": 19,
+   "scanning": 3,
+   "total": 23
+  },
+  "total": 26
+ },
+ "query": "docsend link deck investors",
+ "serverTimeMS": 174,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=docsend+link+deck+investors&tags=comment&hitsPerPage=40"
+}

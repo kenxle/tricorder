@@ -1,0 +1,29 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [],
+ "hitsPerPage": 40,
+ "nbHits": 0,
+ "nbPages": 0,
+ "page": 0,
+ "params": "query=%22due+diligence%22+%22few+hours%22+angel&tags=comment&hitsPerPage=40&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 20,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 15
+  },
+  "fetch": {
+   "query": 14,
+   "scanning": 5,
+   "total": 20
+  },
+  "total": 20
+ },
+ "query": "\"due diligence\" \"few hours\" angel",
+ "serverTimeMS": 21,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=%22due+diligence%22+%22few+hours%22+angel&tags=comment&hitsPerPage=40&advancedSyntax=true"
+}

@@ -1,0 +1,463 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "hncommenter13"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo",
+      "hours"
+     ],
+     "value": "Exactly this.  I worked in <em>investment</em> banking in NY and SF before moving over to VC/growth equity (and now a hedge fund).<p>Not only are bankers by definition terrible managers, but there's absolutely zero incentive for them to try to treat the junior people below them well.  Junior people's time is viewed as an consumable resource like an oil well or a coal seam.<p>As a result, the sort of &quot;pizza-sized team&quot; project management that is the heartbeat of software companies is just a total unknown on the corporate finance/M&amp;A side of <em>investment</em> banks.  (Less so in consulting.)<p>Worse, there is no concern for what we used to call &quot;yield loss:&quot; slides or analyses that we'd create because a senior banker demanded them that were never presented to the client or in which they client had no interest.  Countless times I've been the creator of and recipient of extensive presentations of which maybe one slide was relevant.  I recall numerous instances of sending such books by messenger or FedEx to hotels/partners' houses, only to learn that they were never even picked up, let alone looked at.<p>As a VC/private equity guy, the presentations and <em>investment</em> <em>memos</em> that were no doubt largely written between 2 and 5 AM were mostly discarded; I extracted the few numbers I needed and tossed them, as I wanted the raw data from management and not the bankers' glossy sales pitch.  I had stacks of these things in my office.<p>I'm not of the opinion that <em>investment</em> banking adds no value.  But I firmly believe that the culture and habits of <em>investment</em> banks result in piles of unnecessary work that just burns out everyone associated with the enterprise and is not in any meaningful way related to the quality or value of the service delivered.<p>Clients don't care how many <em>hours</em> you worked, they care about the end results.<p>(I make exception here for situations with real economic deadlines like M&amp;A auctions, but the biggest issues are not usually financial--they're business issues that bankers don't actually help much with compared to strategy consultants--I was one of those for a summer too, and the <em>hours</em> were long but reasonable.)"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Pushed to the limit as a banking intern"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.bbc.co.uk/news/business-24049679"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_hncommenter13",
+    "story_6373899"
+   ],
+   "author": "hncommenter13",
+   "comment_text": "Exactly this.  I worked in investment banking in NY and SF before moving over to VC&#x2F;growth equity (and now a hedge fund).<p>Not only are bankers by definition terrible managers, but there&#x27;s absolutely zero incentive for them to try to treat the junior people below them well.  Junior people&#x27;s time is viewed as an consumable resource like an oil well or a coal seam.<p>As a result, the sort of &quot;pizza-sized team&quot; project management that is the heartbeat of software companies is just a total unknown on the corporate finance&#x2F;M&amp;A side of investment banks.  (Less so in consulting.)<p>Worse, there is no concern for what we used to call &quot;yield loss:&quot; slides or analyses that we&#x27;d create because a senior banker demanded them that were never presented to the client or in which they client had no interest.  Countless times I&#x27;ve been the creator of and recipient of extensive presentations of which maybe one slide was relevant.  I recall numerous instances of sending such books by messenger or FedEx to hotels&#x2F;partners&#x27; houses, only to learn that they were never even picked up, let alone looked at.<p>As a VC&#x2F;private equity guy, the presentations and investment memos that were no doubt largely written between 2 and 5 AM were mostly discarded; I extracted the few numbers I needed and tossed them, as I wanted the raw data from management and not the bankers&#x27; glossy sales pitch.  I had stacks of these things in my office.<p>I&#x27;m not of the opinion that investment banking adds no value.  But I firmly believe that the culture and habits of investment banks result in piles of unnecessary work that just burns out everyone associated with the enterprise and is not in any meaningful way related to the quality or value of the service delivered.<p>Clients don&#x27;t care how many hours you worked, they care about the end results.<p>(I make exception here for situations with real economic deadlines like M&amp;A auctions, but the biggest issues are not usually financial--they&#x27;re business issues that bankers don&#x27;t actually help much with compared to strategy consultants--I was one of those for a summer too, and the hours were long but reasonable.)",
+   "created_at": "2013-09-13T07:26:51Z",
+   "created_at_i": 1379057211,
+   "objectID": "6379145",
+   "parent_id": 6374279,
+   "story_id": 6373899,
+   "story_title": "Pushed to the limit as a banking intern",
+   "story_url": "http://www.bbc.co.uk/news/business-24049679",
+   "updated_at": "2024-09-19T20:04:56Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "marcelk123"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo",
+      "hours"
+     ],
+     "value": "Hi HN,<p>We recently launched Valedex, a tool for automating the first pass of private market deal evaluation.<p><em>Investment</em> teams reviewing CIMs (Confidential Information Memorandums) often spend <em>hours</em> manually reconstructing financials from messy PDFs before they can even start evaluating the deal.<p>Valedex extracts financial metrics directly from CIMs, computes key ratios, and surfaces structural risk signals across the deal.<p>The goal isn't to replace analyst judgment, but to remove the mechanical work so teams can focus on decision-making.<p>We're currently opening a small number of early pilots with <em>investment</em> teams that regularly review CIMs.<p>Would love feedback from anyone who works with financial documents, <em>investment</em> <em>memos</em>, or messy PDFs."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Valedex \u2013 Extract financial metrics from CIM PDFs for private market deals"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.valedex.com/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_marcelk123",
+    "story_47318498"
+   ],
+   "author": "marcelk123",
+   "children": [
+    47318608
+   ],
+   "comment_text": "Hi HN,<p>We recently launched Valedex, a tool for automating the first pass of private market deal evaluation.<p>Investment teams reviewing CIMs (Confidential Information Memorandums) often spend hours manually reconstructing financials from messy PDFs before they can even start evaluating the deal.<p>Valedex extracts financial metrics directly from CIMs, computes key ratios, and surfaces structural risk signals across the deal.<p>The goal isn&#x27;t to replace analyst judgment, but to remove the mechanical work so teams can focus on decision-making.<p>We&#x27;re currently opening a small number of early pilots with investment teams that regularly review CIMs.<p>Would love feedback from anyone who works with financial documents, investment memos, or messy PDFs.",
+   "created_at": "2026-03-10T02:38:41Z",
+   "created_at_i": 1773110321,
+   "objectID": "47318499",
+   "parent_id": 47318498,
+   "story_id": 47318498,
+   "story_title": "Valedex \u2013 Extract financial metrics from CIM PDFs for private market deals",
+   "story_url": "https://www.valedex.com/",
+   "updated_at": "2026-03-10T02:56:11Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "pembrook"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo",
+      "hours"
+     ],
+     "value": "&gt; <i>what is keeping them back, though: Money? Compute? Skills? Training data?</i><p>All of the above and more. Everything holding Mistral back is the same thing that has held Europe back from competing in the entire digital revolution. See this 1991 article lamenting the loss of any viable European PC manufacturer: <a href=\"https://www.nytimes.com/1991/04/22/business/europe-stumbles-in-computers.html\" rel=\"nofollow\">https://www.nytimes.com/1991/04/22/business/europe-stumbles-...</a><p>Mistral being in Europe is disadvantaged with:<p>1. <i>Money:</i> less diverse private pension fund environment = less LPs to invest in VC funds = less VC dollars to invest in new ventures. European money is vacuumed out of the private sector into state pension funds and dumped into low yielding government bonds. This starves the private sector of capital while inflating the % of GDP driven by government spending every year (government pension funds buying government bonds in circular fashion enable runaway deficit spending...just like circular AI infrastructure spending).<p>2. <i>Talent &amp; compute:</i> due to #1, Silicon Valley can outbid Europe for the best talent and hardware. Watch an OpenAI launch video and listen to all the European accents.<p>3. <i>Local market fragmentation:</i> Europe is a collection of countries that pretend to work together while not even having a unified capital market. The average EU citizen can barely communicate with their neighbor in a common language beyond the level of a toddler (english fluency is massively overstated by Americans who only experience tourist capitals).<p>4. <i>Regulatory disadvantages:</i> In everything from company regs, employee regs, unions, privacy regs, data portability regs, etc.<p>It's not &quot;culture&quot; or Europeans being &quot;lazy&quot; as most people would claim. There's currently thousands of young french people working 80 <em>hour</em> weeks creating dumb consulting powerpoints or legacy <em>investment</em> banking deal <em>memos</em> as we speak. Ambitious people exist everywhere in equal proportion, they're just working on the wrong things.<p>Europe can't compete in the digital revolution the same way they could compete in the industrial revolution due to various system design choices.  Culture is simply the aesthetically observed byproducts of system design."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Notes from the Mistral AI Now Summit"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://koenvangilst.nl/lab/mistral-ai-now-summit"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_pembrook",
+    "story_48325340"
+   ],
+   "author": "pembrook",
+   "children": [
+    48331423,
+    48332326,
+    48333211,
+    48333914,
+    48336339,
+    48338950,
+    48339334
+   ],
+   "comment_text": "&gt; <i>what is keeping them back, though: Money? Compute? Skills? Training data?</i><p>All of the above and more. Everything holding Mistral back is the same thing that has held Europe back from competing in the entire digital revolution. See this 1991 article lamenting the loss of any viable European PC manufacturer: <a href=\"https:&#x2F;&#x2F;www.nytimes.com&#x2F;1991&#x2F;04&#x2F;22&#x2F;business&#x2F;europe-stumbles-in-computers.html\" rel=\"nofollow\">https:&#x2F;&#x2F;www.nytimes.com&#x2F;1991&#x2F;04&#x2F;22&#x2F;business&#x2F;europe-stumbles-...</a><p>Mistral being in Europe is disadvantaged with:<p>1. <i>Money:</i> less diverse private pension fund environment = less LPs to invest in VC funds = less VC dollars to invest in new ventures. European money is vacuumed out of the private sector into state pension funds and dumped into low yielding government bonds. This starves the private sector of capital while inflating the % of GDP driven by government spending every year (government pension funds buying government bonds in circular fashion enable runaway deficit spending...just like circular AI infrastructure spending).<p>2. <i>Talent &amp; compute:</i> due to #1, Silicon Valley can outbid Europe for the best talent and hardware. Watch an OpenAI launch video and listen to all the European accents.<p>3. <i>Local market fragmentation:</i> Europe is a collection of countries that pretend to work together while not even having a unified capital market. The average EU citizen can barely communicate with their neighbor in a common language beyond the level of a toddler (english fluency is massively overstated by Americans who only experience tourist capitals).<p>4. <i>Regulatory disadvantages:</i> In everything from company regs, employee regs, unions, privacy regs, data portability regs, etc.<p>It&#x27;s not &quot;culture&quot; or Europeans being &quot;lazy&quot; as most people would claim. There&#x27;s currently thousands of young french people working 80 hour weeks creating dumb consulting powerpoints or legacy investment banking deal memos as we speak. Ambitious people exist everywhere in equal proportion, they&#x27;re just working on the wrong things.<p>Europe can&#x27;t compete in the digital revolution the same way they could compete in the industrial revolution due to various system design choices.  Culture is simply the aesthetically observed byproducts of system design.",
+   "created_at": "2026-05-29T22:43:53Z",
+   "created_at_i": 1780094633,
+   "objectID": "48330303",
+   "parent_id": 48327591,
+   "story_id": 48325340,
+   "story_title": "Notes from the Mistral AI Now Summit",
+   "story_url": "https://koenvangilst.nl/lab/mistral-ai-now-summit",
+   "updated_at": "2026-07-10T17:40:51Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "blue_devil"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo",
+      "hours"
+     ],
+     "value": "We've created a lightweight app that creates a custom format of audio + photo + your metadata (tags, notes etc): <a href=\"https://play.google.com/store/apps/details?id=app.pointo\" rel=\"nofollow\">https://play.google.com/store/apps/details?id=app.pointo</a><p>You can share a specific recording by creating a link valid for 24 <em>hours</em>, intended for p2p sharing.<p>We've heard people use this for similar things: teachers teaching kids, journaling, voice <em>memos</em>, tracking <em>investment</em> decisions, recipes etc. Limitation is that there's one photo per recording atm."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: We made a web app so that our parents can keep reading to our daughter"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://readastorytome.com/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_blue_devil",
+    "story_22836940"
+   ],
+   "author": "blue_devil",
+   "comment_text": "We&#x27;ve created a lightweight app that creates a custom format of audio + photo + your metadata (tags, notes etc): <a href=\"https:&#x2F;&#x2F;play.google.com&#x2F;store&#x2F;apps&#x2F;details?id=app.pointo\" rel=\"nofollow\">https:&#x2F;&#x2F;play.google.com&#x2F;store&#x2F;apps&#x2F;details?id=app.pointo</a><p>You can share a specific recording by creating a link valid for 24 hours, intended for p2p sharing.<p>We&#x27;ve heard people use this for similar things: teachers teaching kids, journaling, voice memos, tracking investment decisions, recipes etc. Limitation is that there&#x27;s one photo per recording atm.",
+   "created_at": "2020-04-11T10:35:00Z",
+   "created_at_i": 1586601300,
+   "objectID": "22840935",
+   "parent_id": 22840073,
+   "story_id": 22836940,
+   "story_title": "Show HN: We made a web app so that our parents can keep reading to our daughter",
+   "story_url": "http://readastorytome.com/",
+   "updated_at": "2024-09-20T06:01:17Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mikeyouse"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo",
+      "hours"
+     ],
+     "value": "&gt; The Bushes and Clintons did not derive political power from wealth. \n&gt; though they certainly are wealthy, they're not in the same universe of, say, Donald Sterling.<p>GWB's great grandfather was a wealthy industrialist that was business partners with one of the wealthiest people in the country, E.H. Harriman (Director of Union Pacific, Southern Pacific, and Wells Fargo). GWB's grandfather, Prescott, made his fortune as VP and Partner at Brown Brothers Harriman, a bank that eventually would employ Prescott's son George HW Bush, as well as Alan Greenspan and several other senators and cabinet members. BBH spun out a division that was ultimately Drexel Burnham Lambert -- the 5th largest I-Bank in the country until Michael Milken blew it up. HW Bush's maternal grandfather started an <em>investment</em> bank that was eventually sold to Merrill Lynch, and was also a director at Harriman brothers. HW's maternal grandfather was president of McCall's (publisher of Popular Mechanics, Redbook, and McCalls before selling them to Hearst).<p>George HW Bush's business career started at an oil equipment company, Dresser Industries a subsidiary of BBH, where his father had been Director for 20 years. Dresser formed a spin-out JV with Ingersol-Rand and still operates as Dresser-Rand (Mkt Cap: $4.5B).  Dresser Industries would go on to be purchased by Halliburton via a Dick Cheney-negotiated deal for ~$8 billion.  Some years later, HW Bush would co-found Zapata Petroleum Corporation (with a recently retired CIA agent) and Zapata Offshore (funded largely by Phillip Graham, the owner of WaPo), which he would lead until 1966. Zapata Petroleum became Pennzoil (worth an estimated $4.2B in 1998). Zapata Offshore would eventually rebrand as Harbinger Group (Mkt Cap: $2.4B).<p>Zapata has a great history if anyone's in the mood for some conspiracy theories: <a href=\"http://en.wikipedia.org/wiki/Harbinger_Group\" rel=\"nofollow\">http://en.wikipedia.org/wiki/Harbinger_Group</a>.<p>Tl;dr:<p>* Most of their SEC and disclosure records from the 1960's were accidentally destroyed just after HW Bush was appointed to be VP.<p>* Zapata owned off-shore rigs that served as bases of operations for anti-Castro missions<p>* The CIA's official codenames for the three boats used in the Bay of Pigs invasion were was <i>actually</i> 'Barbara', 'Houston', and 'Zapata'.<p>* Within 24 <em>Hours</em> of JFK's assassination, before he had ever ran for office, HW Bush is mentioned by name in a <em>memo</em> prepared by J. Edgar Hoover.<p>* Bill Liedtke, co-founder of Zapata Petroleum, and then-current Chairman of Pennzoil, personally flew nearly $1M of money laundered through a Mexican bank, to DC to beat the impending campaign finance disclosure midnight deadline on behalf of Richard Nixon. $89,000 of that money ended up in the bank account of one of the Watergate burglars.<p>George W. Bush, much like Donald Sterling, owned a Major Sports Franchise, though granted it was with an ownership group that only netted him tens of millions when it was sold. I'll ignore all the earlier failures GWB saw when he was backed by US and Saudi billionaires (William Draper, Lewis Leherman, Salem bin Laden, Khalid bin Mahfouz).<p>So I guess being scions to a family that's spawned multiple billion dollar businesses with activities in banking, venture capital, machinery, railroads, oil and gas, and airlines and being family friends with billionaies had nothing to do with their political power?"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Summers on Piketty"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.democracyjournal.org/32/the-inequality-puzzle.php?page=all"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mikeyouse",
+    "story_7779300"
+   ],
+   "author": "mikeyouse",
+   "children": [
+    7782320
+   ],
+   "comment_text": "&gt; The Bushes and Clintons did not derive political power from wealth. \n&gt; though they certainly are wealthy, they&#x27;re not in the same universe of, say, Donald Sterling.<p>GWB&#x27;s great grandfather was a wealthy industrialist that was business partners with one of the wealthiest people in the country, E.H. Harriman (Director of Union Pacific, Southern Pacific, and Wells Fargo). GWB&#x27;s grandfather, Prescott, made his fortune as VP and Partner at Brown Brothers Harriman, a bank that eventually would employ Prescott&#x27;s son George HW Bush, as well as Alan Greenspan and several other senators and cabinet members. BBH spun out a division that was ultimately Drexel Burnham Lambert -- the 5th largest I-Bank in the country until Michael Milken blew it up. HW Bush&#x27;s maternal grandfather started an investment bank that was eventually sold to Merrill Lynch, and was also a director at Harriman brothers. HW&#x27;s maternal grandfather was president of McCall&#x27;s (publisher of Popular Mechanics, Redbook, and McCalls before selling them to Hearst).<p>George HW Bush&#x27;s business career started at an oil equipment company, Dresser Industries a subsidiary of BBH, where his father had been Director for 20 years. Dresser formed a spin-out JV with Ingersol-Rand and still operates as Dresser-Rand (Mkt Cap: $4.5B).  Dresser Industries would go on to be purchased by Halliburton via a Dick Cheney-negotiated deal for ~$8 billion.  Some years later, HW Bush would co-found Zapata Petroleum Corporation (with a recently retired CIA agent) and Zapata Offshore (funded largely by Phillip Graham, the owner of WaPo), which he would lead until 1966. Zapata Petroleum became Pennzoil (worth an estimated $4.2B in 1998). Zapata Offshore would eventually rebrand as Harbinger Group (Mkt Cap: $2.4B).<p>Zapata has a great history if anyone&#x27;s in the mood for some conspiracy theories: <a href=\"http://en.wikipedia.org/wiki/Harbinger_Group\" rel=\"nofollow\">http:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Harbinger_Group</a>.<p>Tl;dr:<p>* Most of their SEC and disclosure records from the 1960&#x27;s were accidentally destroyed just after HW Bush was appointed to be VP.<p>* Zapata owned off-shore rigs that served as bases of operations for anti-Castro missions<p>* The CIA&#x27;s official codenames for the three boats used in the Bay of Pigs invasion were was <i>actually</i> &#x27;Barbara&#x27;, &#x27;Houston&#x27;, and &#x27;Zapata&#x27;.<p>* Within 24 Hours of JFK&#x27;s assassination, before he had ever ran for office, HW Bush is mentioned by name in a memo prepared by J. Edgar Hoover.<p>* Bill Liedtke, co-founder of Zapata Petroleum, and then-current Chairman of Pennzoil, personally flew nearly $1M of money laundered through a Mexican bank, to DC to beat the impending campaign finance disclosure midnight deadline on behalf of Richard Nixon. $89,000 of that money ended up in the bank account of one of the Watergate burglars.<p>George W. Bush, much like Donald Sterling, owned a Major Sports Franchise, though granted it was with an ownership group that only netted him tens of millions when it was sold. I&#x27;ll ignore all the earlier failures GWB saw when he was backed by US and Saudi billionaires (William Draper, Lewis Leherman, Salem bin Laden, Khalid bin Mahfouz).<p>So I guess being scions to a family that&#x27;s spawned multiple billion dollar businesses with activities in banking, venture capital, machinery, railroads, oil and gas, and airlines and being family friends with billionaies had nothing to do with their political power?",
+   "created_at": "2014-05-22T01:53:23Z",
+   "created_at_i": 1400723603,
+   "objectID": "7781732",
+   "parent_id": 7780452,
+   "points": null,
+   "story_id": 7779300,
+   "story_title": "Summers on Piketty",
+   "story_url": "http://www.democracyjournal.org/32/the-inequality-puzzle.php?page=all",
+   "updated_at": "2023-09-06T22:57:41Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ivansavz"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo",
+      "hours"
+     ],
+     "value": "This connects with something I've always wanted to have as a &quot;metadata&quot; signal provided with any text. I'm thinking of some low-key information channel like text background color that would communicate how much time it took me to produce this sentence. Darker text used for passages that are &quot;highly polished&quot; (a lot of research and edits where made to fact-check and fine-tune the content and the wording).<p>Perhaps there might be some &quot;metric&quot; that can be calculated automatically from git commit history, but it would be nicer if the author can manually allocate &quot;weight&quot; to each passage of the text, based on what they perceive is most important (read the dark regions for the the deepest insights).<p>--<p>Use Case 1: Emphasis in office communications. \nWhen employee A communicates with employee B, they can use the text background to communicate the energy invested by employee A to produce the email/report/<em>memo</em>/doc in question.<p>Example 1: Developer spent 1 month rewriting the login system to a clean, feature-identical, drop-in replacement Auth API. When he announces to the CTO, the text is in solid grey, communicating the number of <em>hours</em> that went into this project and hence it's importance (better read all the details).\ndark highlight = I invested a lot of energy in this; I know you're a business person now, but I need you to read this and act on it!<p>(current alternative way to &quot;highlight&quot; actions is to link them to financial benefits for the company, e.g. the new Auth API will save us <em>hours</em> of dev time and allow us to integrate with platforms X, Y, Z, but I think the &quot;number of <em>hours</em> I put into this&quot; would be a good metric to show as well. It's proximal to the developer's emotional <em>investment</em> in the thing)<p>--<p>Use Case 2: Emphasize key ideas in educational text.\nEducators can communicate the relative importance of different parts of the text. Instead of &quot;energy that went into creating this text,&quot; the more useful signal would be to tell readers how much mental energy it will take them to understand a given concept. A sentence that explains some key concept can be shown in dark background to say &quot;this is deep&quot; and also &quot;this is worth learning about specifically within this section.&quot;\nExample 2: An author explains a sequence of 10 complicated steps that are part of some process, and indicates by text background color which steps are important and which are just technical minutiae.<p>* I write math and science textbooks, and I'd love to have such a sidechannel to the reader to communicate &quot;importance&quot; ... I hack by marking some key stences as bold, but it could be better.<p>--<p>Use Case 3: Ethical labelling of genAI output.\nIt is now commonplace within the academic world to require disclosure of genAI use when creating scientific publications and other docs. This is a good practice, but it leaves too much degrees of freedom to the author about the level of disclosure they make. A word-for-word provenance metadata &quot;channel&quot; in parallel with the final text of the document could be a very useful thing to have (in an ideal world). In the real world, few academic would admit to heavily leaning on genAI, but at least we can shame them for not providing the &quot;detailed provenance&quot; track along with their text.<p>In contrast, people who are using genAI unashamedly (half the population) could prove how un-ashamed of their genAI usage they are by specifying &quot;All genAI&quot; in the &quot;provenance channel&quot; for all the posts they publish. If you like the SLOP or you think you can control the SLOP, I won't judge you, but please let me know so I read the text differently...<p>Example 3: Author A asks editor E to review a book draft. The manuscript clearly shows which parts of the book were written by the author and which parts are genAI. The editor knows which parts to focus their attention on (what the author is saying), and which parts are just filler. For bonus points, the author could also disclose the harness+context+prompt they used to produce the text (like a view source affordance that comes with any genAI text passage)."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Proving a human wrote something"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://gjtorikian.online/posts/proving-a-human-wrote-something/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ivansavz",
+    "story_49038059"
+   ],
+   "author": "ivansavz",
+   "comment_text": "This connects with something I&#x27;ve always wanted to have as a &quot;metadata&quot; signal provided with any text. I&#x27;m thinking of some low-key information channel like text background color that would communicate how much time it took me to produce this sentence. Darker text used for passages that are &quot;highly polished&quot; (a lot of research and edits where made to fact-check and fine-tune the content and the wording).<p>Perhaps there might be some &quot;metric&quot; that can be calculated automatically from git commit history, but it would be nicer if the author can manually allocate &quot;weight&quot; to each passage of the text, based on what they perceive is most important (read the dark regions for the the deepest insights).<p>--<p>Use Case 1: Emphasis in office communications. \nWhen employee A communicates with employee B, they can use the text background to communicate the energy invested by employee A to produce the email&#x2F;report&#x2F;memo&#x2F;doc in question.<p>Example 1: Developer spent 1 month rewriting the login system to a clean, feature-identical, drop-in replacement Auth API. When he announces to the CTO, the text is in solid grey, communicating the number of hours that went into this project and hence it&#x27;s importance (better read all the details).\ndark highlight = I invested a lot of energy in this; I know you&#x27;re a business person now, but I need you to read this and act on it!<p>(current alternative way to &quot;highlight&quot; actions is to link them to financial benefits for the company, e.g. the new Auth API will save us hours of dev time and allow us to integrate with platforms X, Y, Z, but I think the &quot;number of hours I put into this&quot; would be a good metric to show as well. It&#x27;s proximal to the developer&#x27;s emotional investment in the thing)<p>--<p>Use Case 2: Emphasize key ideas in educational text.\nEducators can communicate the relative importance of different parts of the text. Instead of &quot;energy that went into creating this text,&quot; the more useful signal would be to tell readers how much mental energy it will take them to understand a given concept. A sentence that explains some key concept can be shown in dark background to say &quot;this is deep&quot; and also &quot;this is worth learning about specifically within this section.&quot;\nExample 2: An author explains a sequence of 10 complicated steps that are part of some process, and indicates by text background color which steps are important and which are just technical minutiae.<p>* I write math and science textbooks, and I&#x27;d love to have such a sidechannel to the reader to communicate &quot;importance&quot; ... I hack by marking some key stences as bold, but it could be better.<p>--<p>Use Case 3: Ethical labelling of genAI output.\nIt is now commonplace within the academic world to require disclosure of genAI use when creating scientific publications and other docs. This is a good practice, but it leaves too much degrees of freedom to the author about the level of disclosure they make. A word-for-word provenance metadata &quot;channel&quot; in parallel with the final text of the document could be a very useful thing to have (in an ideal world). In the real world, few academic would admit to heavily leaning on genAI, but at least we can shame them for not providing the &quot;detailed provenance&quot; track along with their text.<p>In contrast, people who are using genAI unashamedly (half the population) could prove how un-ashamed of their genAI usage they are by specifying &quot;All genAI&quot; in the &quot;provenance channel&quot; for all the posts they publish. If you like the SLOP or you think you can control the SLOP, I won&#x27;t judge you, but please let me know so I read the text differently...<p>Example 3: Author A asks editor E to review a book draft. The manuscript clearly shows which parts of the book were written by the author and which parts are genAI. The editor knows which parts to focus their attention on (what the author is saying), and which parts are just filler. For bonus points, the author could also disclose the harness+context+prompt they used to produce the text (like a view source affordance that comes with any genAI text passage).",
+   "created_at": "2026-07-27T02:20:42Z",
+   "created_at_i": 1785118842,
+   "objectID": "49064512",
+   "parent_id": 49038059,
+   "story_id": 49038059,
+   "story_title": "Proving a human wrote something",
+   "story_url": "https://gjtorikian.online/posts/proving-a-human-wrote-something/",
+   "updated_at": "2026-07-27T02:27:14Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "d4nt"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo",
+      "hours"
+     ],
+     "value": "I'd like to believe we're hitting a productivity limit, but I'm skeptical. Historically, we still work shorter <em>hours</em>, take more holidays and have more leasure activity than our ancestors.<p>I guess what is different is that we've automated lots of mechanical/clerical tasks like finding a file, duplicating and delivering a <em>memo</em> or compiling a report. Executives used to need a large staff to do that for them but there are fewer jobs like that now. In a way, we've all become executives. And to operate at that level can be draining, especially if you're not doing something you love because it takes much more emotional <em>investment</em>."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "We're in a New Energy Crisis. This One is Personal."
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://blogs.hbr.org/schwartz/2011/03/were-in-a-new-energy-crisis-th.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_d4nt",
+    "story_2359059"
+   ],
+   "author": "d4nt",
+   "children": [
+    2359530
+   ],
+   "comment_text": "I'd like to believe we're hitting a productivity limit, but I'm skeptical. Historically, we still work shorter hours, take more holidays and have more leasure activity than our ancestors.<p>I guess what is different is that we've automated lots of mechanical/clerical tasks like finding a file, duplicating and delivering a memo or compiling a report. Executives used to need a large staff to do that for them but there are fewer jobs like that now. In a way, we've all become executives. And to operate at that level can be draining, especially if you're not doing something you love because it takes much more emotional investment.",
+   "created_at": "2011-03-23T14:31:58Z",
+   "created_at_i": 1300890718,
+   "objectID": "2359513",
+   "parent_id": 2359059,
+   "points": null,
+   "story_id": 2359059,
+   "story_title": "We're in a New Energy Crisis. This One is Personal.",
+   "story_url": "http://blogs.hbr.org/schwartz/2011/03/were-in-a-new-energy-crisis-th.html",
+   "updated_at": "2023-09-06T19:32:40Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "rconti"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo",
+      "hours"
+     ],
+     "value": "The more time a person spends analyzing their debts and trying to find the optimal repayment or refinancing strategy also brings the unpleasant debt to the foreground. I think people prefer to pretend that it's not even there. It hurts them financially in the long run, but avoids confronting a painful reality.<p>When I got out of college, I had some debts to repay (car loan, credit cards, student loans). Someone who I thought was a friend ended up bringing her manager with her to hard sell me on starting a retirement account with them.<p>Partially because I was stubborn and annoyed at being tricked into the sales call, I simply stonewalled for 3 painful <em>hours</em>. I tried to be nice (I suppose I am too nice), so I didn't kick them out. I simply kept insisting that I was better off putting $0 into <em>investments</em> until my higher interest debts were paid off. They pulled out a bunch of lines about &quot;starting a pattern of saving&quot; and so on, that are definitely correct on some level, but I stood by the math.<p>Eventually they got the <em>memo</em>, and left. Once my debts were paid off, I started putting money towards my 401k and short term savings. Every time I've gotten a raise or a big bump from switching jobs over the past 10 years, virtually every additional dime has gone into savings.<p>Have good principles. Then stick by your principles."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Why Don't People Manage Debt Better?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://blogs.scientificamerican.com/mind-guest-blog/why-don-t-people-manage-debt-better/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_rconti",
+    "story_11133584"
+   ],
+   "author": "rconti",
+   "comment_text": "The more time a person spends analyzing their debts and trying to find the optimal repayment or refinancing strategy also brings the unpleasant debt to the foreground. I think people prefer to pretend that it&#x27;s not even there. It hurts them financially in the long run, but avoids confronting a painful reality.<p>When I got out of college, I had some debts to repay (car loan, credit cards, student loans). Someone who I thought was a friend ended up bringing her manager with her to hard sell me on starting a retirement account with them.<p>Partially because I was stubborn and annoyed at being tricked into the sales call, I simply stonewalled for 3 painful hours. I tried to be nice (I suppose I am too nice), so I didn&#x27;t kick them out. I simply kept insisting that I was better off putting $0 into investments until my higher interest debts were paid off. They pulled out a bunch of lines about &quot;starting a pattern of saving&quot; and so on, that are definitely correct on some level, but I stood by the math.<p>Eventually they got the memo, and left. Once my debts were paid off, I started putting money towards my 401k and short term savings. Every time I&#x27;ve gotten a raise or a big bump from switching jobs over the past 10 years, virtually every additional dime has gone into savings.<p>Have good principles. Then stick by your principles.",
+   "created_at": "2016-02-20T00:41:40Z",
+   "created_at_i": 1455928900,
+   "objectID": "11137945",
+   "parent_id": 11133584,
+   "story_id": 11133584,
+   "story_title": "Why Don't People Manage Debt Better?",
+   "story_url": "http://blogs.scientificamerican.com/mind-guest-blog/why-don-t-people-manage-debt-better/",
+   "updated_at": "2024-09-19T22:51:08Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "apaprocki"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo",
+      "hours"
+     ],
+     "value": "Anecdata, I have also successfully used it to unearth complicated bugs that I already knew must exist, but didn\u2019t have a good way to find.<p>Think of a query like: Find all calls to function A that have an output pointer-pointer of type B in the last argument position and also have a boolean return type, verify the input dereferenced B is NULL, then verify that iff A assigns output to B that the return type is false and that the <i>calling frame</i> also includes a later call to function C to clean up B. This type of thing run on millions of lines of code.<p>This can get as crazy as you want it to be and <i>did</i> work, but there is a \u201cbut.\u201d The query language is so verbose and powerful, there were many, many ways to represent the same query that all had drastically different performance profiles. The docs were woefully underwhelming in that regard \u2014 they simply stated what a member did, but not anything at all related to memory or performance implications. That, coupled with the fact that nearly every complex query during dev hit the wall of the JVM killing it for taking too much time/<em>mem</em>, it became apparent that they <i>must</i> have tooling for the tooling to analyze performance and memory profiles of queries (not unlike all the effort put into SQL over the years). Also, no debugger; resorted to \u201cdatalog printf debugging\u201d (ie, including internal clauses as outputs and chopping off later parts of the query...)<p>I spent a few weeks only writing queries and in every non-trivial one I needed a senior person there to review/rearrange a few clauses to go from e.g. 30 minute runtime to 15 seconds. That left me with a feeling that I was constantly fighting the docs and lack of tooling and would constantly need their help to tune things. Nothing was fundamentally wrong with the queries \u2014 it was just not documented anywhere that some filtering should be done caller-&gt;down vs. other kinds of checks in the same query should be callee-&gt;up.<p>I had questions regarding scaling up to 1B+ LoC like others in the thread but didn\u2019t really get that far.<p>It did successfully find the C/C++ bugs I was looking for once the queries had <em>hours</em> of <em>investment</em> from both sides, and we were also able to find bugs in a large custom JS codebase by mocking all the things it would need to understand to eval the code. Whether or not that <em>investment</em> makes sense is an individual/team/org question, but if they ever seriously invest in a query debugger and profiling, they\u2019ll be pretty hard to beat."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Welcoming Semmle to GitHub"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://github.blog/2019-09-18-github-welcomes-semmle/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_apaprocki",
+    "story_21007776"
+   ],
+   "author": "apaprocki",
+   "children": [
+    21017357
+   ],
+   "comment_text": "Anecdata, I have also successfully used it to unearth complicated bugs that I already knew must exist, but didn\u2019t have a good way to find.<p>Think of a query like: Find all calls to function A that have an output pointer-pointer of type B in the last argument position and also have a boolean return type, verify the input dereferenced B is NULL, then verify that iff A assigns output to B that the return type is false and that the <i>calling frame</i> also includes a later call to function C to clean up B. This type of thing run on millions of lines of code.<p>This can get as crazy as you want it to be and <i>did</i> work, but there is a \u201cbut.\u201d The query language is so verbose and powerful, there were many, many ways to represent the same query that all had drastically different performance profiles. The docs were woefully underwhelming in that regard \u2014 they simply stated what a member did, but not anything at all related to memory or performance implications. That, coupled with the fact that nearly every complex query during dev hit the wall of the JVM killing it for taking too much time&#x2F;mem, it became apparent that they <i>must</i> have tooling for the tooling to analyze performance and memory profiles of queries (not unlike all the effort put into SQL over the years). Also, no debugger; resorted to \u201cdatalog printf debugging\u201d (ie, including internal clauses as outputs and chopping off later parts of the query...)<p>I spent a few weeks only writing queries and in every non-trivial one I needed a senior person there to review&#x2F;rearrange a few clauses to go from e.g. 30 minute runtime to 15 seconds. That left me with a feeling that I was constantly fighting the docs and lack of tooling and would constantly need their help to tune things. Nothing was fundamentally wrong with the queries \u2014 it was just not documented anywhere that some filtering should be done caller-&gt;down vs. other kinds of checks in the same query should be callee-&gt;up.<p>I had questions regarding scaling up to 1B+ LoC like others in the thread but didn\u2019t really get that far.<p>It did successfully find the C&#x2F;C++ bugs I was looking for once the queries had hours of investment from both sides, and we were also able to find bugs in a large custom JS codebase by mocking all the things it would need to understand to eval the code. Whether or not that investment makes sense is an individual&#x2F;team&#x2F;org question, but if they ever seriously invest in a query debugger and profiling, they\u2019ll be pretty hard to beat.",
+   "created_at": "2019-09-19T12:19:09Z",
+   "created_at_i": 1568895549,
+   "objectID": "21015455",
+   "parent_id": 21012859,
+   "story_id": 21007776,
+   "story_title": "Welcoming Semmle to GitHub",
+   "story_url": "https://github.blog/2019-09-18-github-welcomes-semmle/",
+   "updated_at": "2024-09-20T04:55:17Z"
+  }
+ ],
+ "hitsPerPage": 200,
+ "nbHits": 9,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=investment+memo+hours&tags=comment&hitsPerPage=200&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 31,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 18
+  },
+  "afterFetch": {
+   "format": {
+    "highlighting": 1,
+    "total": 1
+   },
+   "merge": {
+    "mergeLoop": {
+     "prepareNextHit": 2,
+     "total": 2
+    },
+    "total": 2
+   },
+   "total": 2
+  },
+  "fetch": {
+   "query": 12,
+   "scanning": 15,
+   "total": 28
+  },
+  "total": 31
+ },
+ "query": "investment memo hours",
+ "serverTimeMS": 33,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=investment+memo+hours&tags=comment&hitsPerPage=200"
+}
