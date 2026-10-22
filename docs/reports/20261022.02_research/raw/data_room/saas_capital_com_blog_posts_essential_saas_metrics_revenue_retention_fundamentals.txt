@@ -1,0 +1,130 @@
+SOURCE: https://www.saas-capital.com/blog-posts/essential-saas-metrics-revenue-retention-fundamentals/
+
+Essential SaaS Metrics: Revenue Retention Fundamentals - SaaS Capital 
+
+- 
+- 
+- 
+
+- 
+
+ Essential SaaS Metrics: Revenue Retention Fundamentals - SaaS Capital 
+ - 
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+- 
+- 
+- 
+- 
+- 
+
+- - 
+- 
+
+ Skip to Main Content 
+
+ Essential SaaS Metrics: Revenue Retention Fundamentals
+
+ November 12, 2015
+
+ Update 01/17/2019: Originally posted in 2015, Essential SaaS Metrics: Revenue Retention Fundamentals has been updated for 2019 with current information for SaaS companies as well as a downloadable retention tracking template. 
+
+ One of the key metrics we look at when deciding whether or not to provide capital to a SaaS company is retention.  It is so important, in fact, it is a standard covenant in our committed credit facilities.
+
+ There are many ways to measure churn, and below we outline the most common metrics we see in use today, along with their relative strengths and weaknesses. This should be viewed as “Retention 101,” and will help define some frequently used reporting metrics, but is by no means an exhaustive list.
+
+ Net Revenue Retention
+
+ Net revenue retention is the “macro” metric that most companies track and public SaaS companies report.  It measures the total change in recurring revenue from a pool of customers over time and is calculated as follows:
+
+ a. The company’s monthly recurring revenue (MRR) one year ago
+
+ b. The current MRR from that same group of customers
+
+ Net Revenue Retention equals b/a
+
+ Implicitly, net revenue retention captures the negative impact of lost customers, but also the positive impact of price changes, cross-sells, up-sells, and growth in usage or seats within the installed base of customers. For established SaaS companies, net revenue retention typically ranges from 60% (really bad) to 150% (really good), while younger companies can see even higher numbers.
+
+Net revenue retention is the most comprehensive churn metric because it actually tells the complete revenue story of the installed base of customers.  It answers the question of what the company’s top-line revenue would do if it did not gain one more customer.
+
+ It is important to understand that not all “95% net revenue retention businesses” are the same. A company churning a lot of customers, but offsetting the losses with cross-selling or price increases, faces very different challenges and opportunities than a business that is retaining 95% of its customers but not selling them additional value.
+
+In addition, SaaS company management teams are typically attacking underlying customer churn with different tools and people than they are dedicating to cross-selling and up-selling.  Tracking the impact of both efforts in one metric like net churn will not give the visibility required to properly manage either effort.
+
+ Gross Revenue Retention
+
+ Gross revenue retention eliminates the impact of cross-selling, up-selling, price-increases, and organic customer growth within the installed customer base.  It is a better indicator of how the company is really doing in retaining revenue from its customers over time. Gross revenue retention is always equal to, or lower than, net revenue retention and cannot be greater than 100%.
+
+The basic calculation is the same as net revenue retention, however, the MRR for each individual customer in the current month cannot exceed the MRR for that customer from one year ago. This approach eliminates the impact of all the factors mentioned above.
+
+ Customer Count Retention
+
+ Customer count retention is another metric sometimes used in conjunction with net revenue retention to get better visibility into underlying customer dynamics.  It is simply based on a count of the customers active one year ago, and how many of those customers remain active today.
+
+ The deficiency of this metric is that it treats all customers as financial equals, which can be misleading if the company has a wide variety of customer sizes.  More often than not, the smaller, less consequential, customers churn more frequently, so this metric tends to overstate the impact of churn from a financial perspective.
+
+ Monthly Churn
+
+ Monthly churn is a straightforward calculation of last month’s lost MRR divided by last month’s total MRR.  While it can provide a more immediate indication of churn than some of the other metrics, it is not a “static pool” analysis and is subject to distortion.
+
+If the business is growing quickly, and therefore a significant portion of MRR is new, the monthly churn number does not truly reflect underlying retention simply because of the newness of the customers and the growth in the denominator. It is also a fairly volatile metric that can vary by orders of magnitude each month and mask long-term trends. Therefore, monthly churn is our least favorite metric.
+
+ Cohort Analysis
+
+ Cohort analysis is not a specific churn metric, but is the measurement of the gross or net churn of a specific group or “cohort” of customers over time. Most often, the cohort is defined by the date the customer was acquired. For example there might be a “November 2012” cohort of customers, and a “June 2012” cohort of customers.
+
+ The company can compare the attrition rates of the two groups at their respective 6, 12, and 18-month intervals and so on.  Cohort analysis can provide insight into customer success and onboarding programs. It can also help the company understand if it is trending toward acquiring customers who are more, or less, likely to churn.  Cohorts are also frequently refined based on customer size, or type, to add further clarity to their fundamental churn characteristics.
+
+ As mentioned before, these are the baseline metrics for calculating and reporting churn.  Most SaaS businesses with some level of scale are calculating these numbers, as well as many other more granular and company-specific metrics.  Nonetheless, this is a good spot to start.
+
+ For more in-depth discussions of churn, and data from SaaS Capital’s 2015 survey of 400 SaaS companies, see the resources below:
+
+- What’s a Good SaaS Retention Rate? – This Research Brief examines retention rates compared to the average selling price of products, the age of the company, and the average contract length.
+
+- No Churn: Keep Customers and Improve Your SaaS Company Valuation – 2015 Update – This white paper provides churn benchmarks, quantifies the impact of customer churn on a SaaS company’s valuation, and empirically demonstrates that revenue retention rates directly impact valuations.
+
+ SaaS Capital
+
+ SaaS Capital® pioneered alternative lending to SaaS. Since 2007 we have spoken to thousands of companies, reviewed hundreds of financials, and funded 80+ companies. We can make quick decisions. The typical time from first “hello” to funding is just 5 weeks. Learn more about our philosophy.
+
+ Our Approach
+
+ Who Is SaaS Capital?
+
+ SaaS Capital® is the leading provider of long-term Credit Facilities to SaaS companies.
+
+ Read More 
+
+ Subscribe
+
+ Get SaaS Capital® research delivered to your inbox.
+
+ Related Articles
+
+ What Should a SaaS Income Statement Look Like in 2025?
+
+ A SaaS Profit & Loss (P&L) statement needs to be organized in order to be meaningful to both internal stakeholders and potential external partners, such as capital providers. As the SaaS business model has evolved, it is worth examining what an income statement should look like in 2025. 
+
+ Read More 
+
+ What Should be Included in COGS for My SaaS Business in 2025?
+
+ Surprisingly, GAAP does not clearly define what should be included in a SaaS company’s Cost of Sales (COS; a.k.a. Cost of Revenue, COR, but most commonly known by the traditional term Cost of Goods Sold, COGS) so each company is pretty much left to its own judgment on what should be included. Below is our considered opinion on what to include in COGS for a privately-held SaaS company.
+
+ Read More 
+
+ What is a “Good” Retention Rate for a SaaS Company?
+
+ Over the years, we have analyzed thousands of SaaS companies and we firmly believe the best metric for benchmarking churn is gross revenue retention which should be benchmarked against companies with similar annual contract values or revenue values per customer.
+
+ Read More 
+
+ View More

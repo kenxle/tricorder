@@ -1,0 +1,17 @@
+path,format,what,tier
+00_welcome/cover_note_and_index.pdf,"PDF, 1 page",Cover note and a numbered index of the room.,seed + A
+01_overview/pitch_deck.pdf,"PDF, 14 slides",Deck with a claims page (slide 14) listing every number with its slide.,seed + A
+01_overview/company_overview.pdf,"PDF, 1 page","One-page company overview: what, who, traction, ask.",seed + A
+01_overview/pitch_video_script.md,"Markdown, about 300 words",Two-minute script for Ken to record on his phone; says an ARR figure that differs from the deck.,seed + A
+02_financials/financial_model.xlsx,Excel,"Tabs: README, Assumptions, P&L, ARR_Build, Cohorts, Hiring_Plan, Cash_Runway.",seed + A
+02_financials/cap_table.xlsx,Excel,Fully diluted cap table with two SAFEs and an option pool; clean (decoy).,seed + A
+02_financials/expense_ledger.csv,CSV,Expense lines by month with vendor and category; lets a checker recompute gross margin.,A
+03_metrics/monthly_metrics.csv,"CSV, 21 months","MRR, ARR, paying accounts, accounts created (cumulative), calls handled.",seed + A
+03_metrics/customer_mrr_by_month.csv,CSV,"One row per customer per month with plan, MRR and product_type.",A
+04_customers/order_form_cedar_pine.pdf,"PDF, 3 pages","Largest customer: 17 locations, 24-month term.",A
+04_customers/pilot_agreement_marlow.pdf,"PDF, 3 pages","Six-month pilot, 30 days notice to end, no duty to convert.",A
+04_customers/order_form_brookline_row.pdf,"PDF, 2 pages",Ordinary annual prepaid subscription (decoy).,A
+05_team/founder_bios.pdf,"PDF, 2 pages",Two invented founders and the senior team.,seed + A
+05_team/hiring_plan.csv,"CSV, 24 rows","Role, department, start month, base pay.",seed + A
+06_product/product_one_pager.pdf,"PDF, 1 page","What the product does, pricing tiers, integrations.",seed + A
+06_product/website_copy.md,Markdown,Home page and pricing copy for the web scan.,seed + A

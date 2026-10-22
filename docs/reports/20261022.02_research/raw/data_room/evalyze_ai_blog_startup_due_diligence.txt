@@ -1,0 +1,625 @@
+SOURCE: https://www.evalyze.ai/blog/startup-due-diligence
+
+- - - - - - - - - - - - - - Startup Due Diligence: Checklists, Tools & AI Guide – Evalyze.ai - - 
+
+ Tools & AI May 17, 2026 
+ Startup Due Diligence: Checklists, Tools & AI Guide
+ Master startup due diligence in process, stage-by-stage checklists, AI tools, red flags investors look for, and a YC-style data room template.
+ Evalyze
+ @ Evalyze_ai
+
+ Three weeks into investor diligence, the partner asks for your MRR cohort retention by acquisition month across the last 18 months. Your data isn't organized that way. Then, legal notices a missing IP assignment from a contractor you hired two years ago. Every delay erodes the firm's confidence in the deal.
+That is what startup due diligence looks like in practice: a review of the financial, legal, operational, and technical decisions behind the company.
+
+ Key Takeaways 
+
+- Modern AI scans now compress document review by 40-70%, leaving no room for manual errors.
+
+- One-third of deals collapse at the final hurdle due to preventable cap table or history gaps.
+
+- Compliance standards like SOC 2 and AI bias audits are now mandatory at the Seed stage.
+
+- Using tools like Evalyze lets you resolve "deal-killers" before investors ever spot them.
+
+- A structured, README-led data room acts as an immediate signal of founder excellence.
+
+ What Is Startup Due Diligence?
+
+ Startup due diligence is the process investors use to verify a company's financials, legal structure, product, market claims, operations, and team before investing.
+
+ Most startup diligence processes last between 4 and 10 weeks, depending on stage, and deal delays often come from issues founders overlooked, such as incomplete financial reporting, outdated contracts, or missing IP assignments.
+
+ The process has become faster, not lighter. Modern investor workflows and AI-assisted review tools, including platforms like Evalyze Data Room , surface cap table errors, compliance gaps, customer churn patterns, and legal inconsistencies much earlier in the fundraising process.
+
+ The 7 Categories of Startup Due Diligence
+
+ Every diligence process breaks into the same seven buckets. Investors weigh them differently depending on stage and sector, but no one skips any of them.
+
+ 1. Financial Due Diligence
+
+ Investors use this phase to audit your past, present, and projected capital. They scrutinize P&L statements, balance sheets, cash flow, burn rate, and unit economics to verify your financial health.
+
+- Seed Stage focus: Investors prioritize unit economics and burn discipline.
+
+- Series A+ focus: Scrutiny shifts to cohort retention, gross margins, and the accuracy of forecasts compared to your trailing 12-month performance.
+
+ 💡The Founder’s Blindspot: The cap table audit is often underestimated. Investors re-model every SAFE, option grant, and convertible note from scratch. A messy cap table is the most frequent reason a "clean" deal is delayed by two weeks or more.
+
+ When planning your capital needs, understanding how much to raise at the pre-seed stage is a high-authority starting point for ensuring your financial model remains defensible.
+
+ 2. Legal Due Diligence
+
+ This phase verifies your company’s existence, ownership, and liability. Investors confirm that no employees, contractors, or former co-founders have valid claims against your assets.
+
+- Core Audit: Covers incorporation, governance, active contracts, and regulatory compliance.
+
+- Deal Killers: Open or unresolved litigation is a major flag that typically ends a deal.
+
+- The "Delaware Standard": For C-corps, you must provide incorporation certificates, bylaws, board/stockholder consents, and stockholder agreements.
+
+ 💡Critical Checklist Item: Missing 83(b) elections for founders remain a frequent and preventable friction point during legal review.
+
+ 3. Intellectual Property (IP) Due Diligence
+
+ Investors must confirm that your company holds absolute ownership of its assets, including patents, trademarks, copyrights, and trade secrets. For software startups, the priority is verifying that every line of code is owned by the entity.
+
+- Contractor Risk: Agreements lacking explicit IP assignment clauses are the most frequent red flag in this category.
+
+- Open-Source Hazards: License compliance is often overlooked. A single GPL violation can force a company to relicense its entire codebase.
+
+ 💡Audit Focus: Ensure every employee and contractor who has touched the product has a signed IP assignment on file to avoid ownership disputes during the raise.
+
+ 4. Technical Due Diligence
+
+ Investors audit your architecture, code quality, and security to ensure the product is scalable and defensible.
+
+- Seed Stage: Usually a 90-minute call with the CTO.
+
+- Series A+: A formal audit by an outside firm, often resulting in a 30-50 page report.
+
+- High-Scrutiny Sectors: Cybersecurity and AI/ML startups face this rigor earlier.
+
+ 💡What’s Checked: Expect deep dives into your infrastructure, engineering roadmap, and data security to ensure the platform supports your growth projections.
+
+ 5. Commercial & Market Due Diligence
+
+ Investors verify your traction by analyzing retention, NPS, churn, sales pipeline, and competitive positioning. They will call your customers to validate your claims.
+
+- The Outreach: Your five largest customers will be asked how they use the product, their likelihood to renew, and their perception of its value.
+
+- The Risk: Reference calls are frequently where confident pitches fail.
+
+ 6. Operational Due Diligence
+
+ Internal processes, supply chain, vendor relationships, key dependencies, and operational KPIs. Light at seed. Heavy at Series B and later, especially for hardware, marketplaces, and physical goods companies.
+
+ 7. Team & HR Due Diligence
+
+ Investors audit founder backgrounds, key hires, equity agreements, vesting schedules, and retention.
+
+- Verification: Funds run background checks and verify LinkedIn claims against employer records.
+
+- Reference Checks: Investors speak with former colleagues to validate your history.
+
+- The Consequences: Any inflated CV details that get caught typically result in a dead deal.
+
+ The Complete Startup Due Diligence Checklist
+
+ This is the version a Series A fund would expect to see in your data room. If you're at pre-seed or seed, the items marked [Early] are non-negotiable. The rest become standard from Series A onward.
+
+ Financial Documents
+
+- [Early] Profit and loss statement (monthly, last 12 months minimum)
+
+- [Early] Balance sheet (current month + prior year-end)
+
+- [Early] Cash flow statement
+
+- [Early] Burn rate and runway model
+
+- [Early] Cap table with every SAFE, note, and option grant accounted for
+
+- [Early] Unit economics (CAC, LTV, payback period, gross margin)
+
+- Revenue cohort analysis (MRR or ARR retention by acquisition cohort)
+
+- Customer-level revenue breakdown
+
+- Accounts receivable and accounts payable aging
+
+- Trailing tax filings and tax compliance status
+
+- Bank statements (last 6 months)
+
+- Financial forecast (next 3 years, monthly for year 1)
+
+ Legal Documents
+
+- [Early] Certificate of incorporation and bylaws
+
+- [Early] Founder stock purchase agreements with vesting
+
+- [Early] 83(b) election confirmations for all founders
+
+- [Early] Board consents and stockholder consents to date
+
+- [Early] All SAFE, convertible note, and equity financing documents
+
+- Employee and contractor agreements with IP assignment
+
+- Customer contracts (top 10 by ARR)
+
+- Supplier and vendor agreements
+
+- Office lease or co-working agreements
+
+- Open or threatened litigation summary
+
+- Regulatory compliance certifications (GDPR, CCPA, HIPAA, SOC 2, where relevant)
+
+ IP Documents
+
+- [Early] IP assignment agreements signed by every employee and contractor who touched the codebase
+
+- Patent applications and grants
+
+- Trademark registrations
+
+- Open-source license inventory and compliance audit
+
+- Trade secret and confidentiality protections
+
+- Licensing agreements (in and out)
+
+ Product & Technical Documents
+
+- [Early] Product roadmap (next 12 months)
+
+- Technical architecture overview
+
+- Codebase size, language breakdown, and dependency tree
+
+- Security audit or penetration test results
+
+- Disaster recovery and business continuity plan
+
+- Hosting and infrastructure agreements
+
+- Key engineering hires and retention plan
+
+ Commercial Documents
+
+- [Early] Customer list with key contacts, contract value, and renewal dates
+
+- [Early] Sales pipeline with probability-weighted forecast
+
+- Top 5 customer case studies or testimonials
+
+- Churn analysis and reasons-for-churn data
+
+- Competitive analysis
+
+- Market sizing model (TAM/SAM/SOM with defensible sources)
+
+- Marketing and growth channel attribution
+
+ Team & HR Documents
+
+- [Early] Founders' resumes and LinkedIn profiles aligned with claimed history
+
+- [Early] Org chart with key hires and open roles
+
+- [Early] Employment agreements with equity and vesting terms
+
+- Options pool, grant history, and unallocated balance
+
+- Compensation benchmarks against the market
+
+- HR policies, employee handbook
+
+- Reference contacts for founders and senior team
+
+ Operational Documents
+
+- Supplier and vendor list with key dependencies flagged
+
+- Operational KPIs and dashboards
+
+- Process documentation for critical workflows
+
+- Insurance policies (general liability, D&O, E&O, cyber)
+
+ Due Diligence By Funding Stage
+
+ What gets checked at pre-seed isn't what gets checked at Series C. Misreading the stage is how founders over-prepare on the wrong things and under-prepare on the rest.
+
+ Pre-Seed & Seed Due Diligence
+
+ At the pre-seed stage, there are no audited financials. There's barely a P&L. Diligence focuses almost entirely on founder credibility, problem-solution fit, and the smallest signals of traction. A pre-seed lead is buying the founder more than the company.
+
+ What pre-seed investors check: 
+
+- Founder background and prior outcomes (verified through references, not LinkedIn alone)
+
+- Does problem framing help the founder understand it deeply enough to find a non-obvious angle?
+
+- Early customer or design partner interest, even if unpaid
+
+- Cap table simplicity, clean structure, no co-founders, with 5% leftover from an earlier project
+
+- Basic legal hygiene incorporated correctly, 83(b)s filed, no surprise IP claims
+
+ At seed, traction starts to matter. Customer logos, signed pilots, $10K MRR if you have it. The diligence is light by Series A standards, but the bar on financial hygiene moved up. Expect a cap table audit and an IP assignment review even at $1M raises.
+
+ To ensure you are fully prepared, review our pre-seed fundraising readiness checklist for a perfect match of the intent needed for early-stage rounds.
+
+ Series A Due Diligence
+
+ The real diligence. 6-10 weeks is now standard. The fund's analyst will live in your data room. The partner will call 5-10 of your customers. The legal counsel will produce a 20-page issues list.
+
+ What changes at Series A: 
+
+- Cohort retention is the single most-scrutinized metric
+
+- Sales pipeline gets stress-tested against historical close rates
+
+- Customer reference calls become formal, not casual
+
+- Technical architecture gets reviewed by an outside CTO advisor
+
+- Security and compliance reviews start (SOC 2 questions for SaaS, HIPAA for healthtech)
+
+ 💡The two biggest reasons Series A diligence stalls: messy cap tables (SAFE conversions modeled wrong, options not granted on schedule) and customer references that contradict the pitch.
+
+ Before you reach this stage, ensure you've completed the full startup fundraising checklist to bridge the gap between initial preparation and final verification.
+
+ Series B Due Diligence
+
+ By Series B, the company is a real business, and diligence reflects that. Expect:
+
+- Full quality-of-earnings analysis by a third-party accounting firm
+
+- Sales efficiency benchmarks against the fund's portfolio (magic number, CAC payback)
+
+- Management background checks and 360-style reference calls
+
+- Detailed technical and security audit
+
+- Commercial diligence with 15-25 customer reference calls
+
+ This is where late-stage funds run market-validation studies on your category before they wire. If your TAM model doesn't hold up to a McKinsey-style stress test, the deal slows.
+
+ Series C & Growth-Stage Due Diligence
+
+ The same as Series B, plus public-company-grade disclosure. Cybersecurity, ESG, and regulatory posture become first-class concerns. Quality of earnings is mandatory. Insurance review is mandatory.
+
+ For cybersecurity startups specifically, late-stage diligence now standardly includes a financial-controls penetration test verifying the finance team's processes against fraud and ransomware exposure before funding closes.
+
+ Acquisition Due Diligence
+
+ Acquirer diligence is more aggressive than any investor's diligence, because the buyer takes all the risk. Expect:
+
+- Comprehensive financial audit, including tax exposure analysis
+
+- Deep IP review, including patent landscape and freedom-to-operate
+
+- Customer contract assignment analysis (which contracts survive the acquisition, which don't)
+
+- Employee retention plans and key-person risk assessment
+
+- Cultural and operational integration assessment
+
+- Full QofE report
+
+ 💡The single biggest acquisition deal-killer: change-of-control clauses in customer contracts. Top 10 customers with these clauses can require renegotiation before the deal closes, and that's where the price gets cut.
+
+ Sector-Specific Due Diligence
+
+ The sector matters more now than it did three years ago. Investors specialized in a sector check things generalists wouldn't even know to ask about.
+
+ AI and AI-Healthcare Startups
+
+ AI-specific diligence questions investors ask:
+
+- What's the provenance of your training data, and do you have rights to all of it?
+
+- How do you handle model drift and retraining?
+
+- What's your dependency on third-party foundation models (OpenAI, Anthropic, Google)?
+
+- Have you audited your model for bias, especially in regulated use cases?
+
+- What's your defensibility if a foundation model commoditizes your wrapper?
+
+ For AI healthcare specifically, add HIPAA compliance, FDA classification (is your model a regulated medical device?), clinical validation evidence, and informed-consent processes for any patient data used in training.
+
+ This is checked at seed, not Series A. The bar moved.
+
+ Cybersecurity Startups
+
+ Cybersecurity diligence at later stages now standardly includes:
+
+- A penetration test on your own product (yes, your security product gets pen-tested)
+
+- SOC 2 Type II report
+
+- Vulnerability disclosure history
+
+- Customer breach history involving your product
+
+- Financial-controls audit (the late-stage standard added in 2025)
+
+ 💡Founders here often forget: your own internal security posture matters as much as the product's. A cybersecurity company with weak internal MFA discipline gets penalized.
+
+ Fintech Startups
+
+ Licensing review dominates fintech diligence. Money transmitter licenses by state, MSB registration with FinCEN, BSA/AML compliance, and partnership agreements with banks all get reviewed. For lending products, add state lending licenses and disclosure compliance. For payments, add PCI DSS attestation.
+
+ SaaS startups
+
+ SaaS gets the cleanest diligence template because the metrics are standardized: ARR, NDR, GRR, magic number, CAC payback, gross margin, and rule of 40. Where SaaS deals slow:
+
+- Customer concentration above 20% from a single account
+
+- NDR below 105% at Series A+
+
+- Long enterprise sales cycles are dragging the close-rate forecast
+
+- Self-serve products with weak retention beyond month 3
+
+ Red Flags That Kill Startup Deals
+
+ These are the patterns that consistently end deals in the last week of diligence. From analyzing 8,000+ fundraisers at Evalyze, these are the ones that show up over and over.
+
+- Cap table inconsistencies. 
+
+ SAFE notes were never converted on the books. Option grants were made verbally and never papered. Co-founders with vested equity from a project that never separated cleanly. Investors model the cap table from scratch, and gaps surface fast.
+
+- Customer references that contradict the pitch. 
+
+ "We're seeing 95% retention" → customer says, "we're not renewing." This is the single most common late-stage deal killer.
+
+- Unassigned IP. 
+
+ Contractor wrote 30% of the codebase in 2022 with no IP assignment agreement. Investors will require remediation before close, and sometimes the contractor uses the opportunity to renegotiate.
+
+- Founder background discrepancies. 
+
+ LinkedIn says "VP at Stripe." Stripe says "contractor for 4 months." This ends deals, every time.
+
+- Open litigation that wasn't disclosed. 
+
+ Anything not surfaced by the founder that the investor finds via a court records search is a trust killer.
+
+- Stale customer contracts. 
+
+ The MSA expired in 2023, no one renewed it formally, and the customer relationship runs on a handshake. Acquirers especially hate this.
+
+- Aggressive financial projections without trailing data to support them. 
+
+ A 5x year-over-year forecast against trailing 1.5x growth is a credibility hit.
+
+- Misrepresented traction. 
+
+ Counting paid pilots as ARR. Counting LOI revenue as committed revenue. Counting freemium users as customers. Investors verify the definitions you used.
+
+ For a deeper breakdown of the patterns that cause a round to collapse, read 5 reasons why startups fail at fundraising to understand these broader failure trends.
+
+ The Best Due Diligence Tools
+
+ Founders ask which tools to use to prepare for diligence. Investors ask which tools to use to run diligence on you. The two lists overlap more than you'd think.
+
+ Comparison Of Leading Due Diligence Tools
+
+ Tool Primary use Built for Standout feature Best for 
+ Evalyze.ai Pre-DD readiness Founders Investor Readiness Score + red-flag detection across 8,000+ fundraises + Data room Founders running pre-DD self-check 
+ DiligenceVault DD workflow + AI document review Investors (LPs, GPs) AI-powered DD questionnaires + response analytics Funds running structured DD at scale 
+ Kira Systems Contract analysis Law firms, investors ML-trained contract clause extraction across 1,000+ clause types Legal DD on complex contracts 
+ Carta Cap table + equity management Founders + investors Auto-generated 409A valuations and cap table audits Cap table hygiene before DD 
+ DocSend Data room + analytics Founders Per-page deck and document analytics Data room sharing with read tracking 
+ Papermark Open-source data room Founders (technical) Self-hosted DocSend alternative with deck analytics Cost-sensitive founders who want control 
+ Crunchbase Investor research + DD prep Both Funding history + investor activity tracking Sourcing-side DD on competitors 
+ PitchBook Institutional DD data Investors (institutional) Deal terms, valuations, comparables Comparables analysis at Series B+ 
+ Harmonic.ai AI-native startup discovery Investors (VCs) 20M+ company graph with signal-based scoring Sourcing and competitive benchmarking 
+ Tracxn Sector-specific market mapping Investors Live-updated sector and country reports Market-validation DD in specific verticals 
+ Synaptic Alternative data on private companies Investors Web traffic, employee headcount, sentiment data Quant-driven DD on growth-stage companies 
+ Specter Private company alternative data Investors Real-time growth signals across 50M+ companies Pre-deal sourcing + DD validation 
+ Grata Private company search PE, M&A teams Inverse-search on private companies by description M&A target screening 
+ SourceScrub Bootstrapped company data PE, growth equity Conference attendee + private company data Diligence on bootstrapped acquisition targets 
+ People Data Labs People + company data API Investors, sales API access to 3B+ people profiles Background verification on founders + key hires 
+ Dealroom European startup database Investors Strongest European data coverage DD on European startups + ecosystems 
+ Affinity Relationship intelligence CRM Investors Email + meeting graph to map warm intros Mapping DD network and references 
+
+ How to Use These Tools As a Founder
+
+ Investors will likely screen your company through platforms like Harmonic, Specter, Synaptic, or Tracxn before your first meeting. They use these to cross-check headcount via People Data Labs and monitor your hiring velocity, web traffic, and sentiment scores.
+
+- The Reality: You cannot control external databases, but you can ensure your data room aligns with what these tools surface.
+
+- Founder Essentials: Use Evalyze for deck analysis and data room, Carta for cap table hygiene, and DocSend or Papermark for secure data room sharing before you start raising.
+
+ Build your investor-ready data room →
+
+ How AI Is Changing Startup Due Diligence
+
+ The shift in the last 18 months: AI moved from "useful at the margin" to "default for first-pass review." Here's what that actually looks like.
+
+- Document review. 
+
+ AI tools scan thousands of pages of contracts, financials, and corporate documents in minutes, flagging inconsistencies, unusual clauses, and missing items. What used to be the associate's week-one task is now the associate's hour-one task.
+
+- Financial inconsistency detection. 
+
+ AI cross-references statements across documents, bank statements vs. P&L, cap table vs. board consents, customer list vs. revenue breakdown, and surfaces gaps automatically.
+
+- Market validation. 
+
+ AI tools compare a startup's market claims against real-time industry data, traffic patterns, and competitor signals. The phrase "we're growing 30% month-over-month" gets checked against alternative data sources before the meeting ends.
+
+- Pitch deck pre-screening. 
+
+ AI agents like Evalyze.ai simulate an investment committee, scoring decks against patterns from successful fundraises. Founders use this before sending; investors use this after receiving. Of 8,000 decks Evalyze analyzed, 67% had at least one issue that would surface as a flag in formal DD, most commonly missing competitive moat detail, unclear unit economics, or aggressive financial projections without supporting cohort data.
+
+- Background verification. 
+
+ AI cross-references founder claims against multiple data sources (LinkedIn, court records, employment databases, news archives) faster than any human background check.
+
+ How To Build a Y Combinator-Style Data Room
+
+ The YC standard is the closest thing to a universal data room template that founders raising should follow. It's organized for the way investors actually read, not the way founders organize files.
+
+ The folder structure that works: 
+
+ 01- Overview 
+
+- Pitch deck (current version, dated)
+
+- Executive summary (1 page)
+
+- Pitch deck (prior versions, for transparency)
+
+ 02- Financials 
+
+- Historical P&L (monthly, 24 months)
+
+- Balance sheet (last 3 quarters)
+
+- Cash flow statement
+
+- Financial model (3-year forecast, downloadable .xlsx)
+
+- Unit economics summary
+
+- Cohort retention analysis
+
+ 03- Cap_Table_and_Equity 
+
+- Current cap table
+
+- Cap table model with proposed round
+
+- All SAFE and note documents
+
+- Option pool history
+
+- 409A valuation
+
+ 04- Corporate_and_Legal 
+
+- Certificate of incorporation
+
+- Bylaws
+
+- Stockholder agreements
+
+- Board consents (chronological)
+
+- 83(b) elections
+
+- Material contracts
+
+ 05- IP 
+
+- IP assignment agreements (employees + contractors)
+
+- Patent filings
+
+- Trademark registrations
+
+- Open-source compliance audit
+
+ 06- Product_and_Tech 
+
+- Product roadmap
+
+- Architecture overview
+
+- Security and compliance certifications
+
+ 07- Commercial 
+
+- Customer list (with contract values and renewal dates)
+
+- Top 10 customer case studies
+
+- Sales pipeline
+
+- Churn analysis
+
+- Market sizing model
+
+ 08- Team 
+
+- Founder bios
+
+- Org chart
+
+- Key hire resumes
+
+- Employment agreements
+
+- Reference contacts
+
+ 09- References_and_Press 
+
+- Investor and customer references
+
+- Press coverage
+
+- Awards and recognition
+
+ Two principles to follow: 
+
+- Every document is dated (in the filename, not just inside the doc),
+
+- And every folder has a one-line README explaining what's inside and what's missing.
+
+ Investors form an opinion about your operational quality in the first five minutes of opening the data room. A clean, dated, README-d structure is a free five-minute trust deposit.
+
+ For more on what makes investors say yes before they even reach the data room, read What Are Investors Looking For in Pitch Decks? .
+
+ What To Do Next
+
+ Most founders discover diligence issues three weeks into a six-week process when they are already too expensive to fix. Pre-diligence work allows you to resolve red flags while you still control the narrative.
+
+- Analyze Your Deck: Get your Investor Readiness Score in 2 minutes as Evalyze scans your deck against patterns from 8,000+ fundraises.
+
+- Manage Your Data Room: Use the Evalyze Data Room to select and manage your pitch decks based on key features, ensuring your documentation is airtight.
+
+- Pre-empt Red Flags: Surface the issues investors will flag before they ever open your data room.
+
+ Run Your Free Pre-DD Check →
+
+ FAQ
+
+ What is startup due diligence in simple terms? 
+
+ How long does startup due diligence take? 
+
+ Who runs due diligence on a startup? 
+
+ What's the difference between due diligence on a startup and an established company? 
+
+ What are the red flags in startup due diligence? 
+
+ What documents do startups need for due diligence? 
+
+ How do I prepare for venture capital due diligence? 
+
+ What's the best AI tool for startup due diligence? 
+
+ Can AI replace due diligence? 
+
+ What is a due diligence questionnaire (DDQ)? 
+
+ More Articles
+
+ How to Create an Investor Campaign with Evalyze.ai
+ Simplify and Enhance Your Fundraising with AI-Driven Investor Matching.
+
+ July 10, 2025
+
+ The Evalyze 12-Step Pitch Deck Process
+ Get a complete walkthrough of Evalyze’s smart pitch analysis system and how it drives better results.
+
+ July 7, 2025

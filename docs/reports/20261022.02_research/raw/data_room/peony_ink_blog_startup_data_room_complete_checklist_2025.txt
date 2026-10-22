@@ -1,0 +1,436 @@
+SOURCE: https://www.peony.ink/blog/startup-data-room-complete-checklist-2025
+
+- - - - - - - - Startup Data Room Checklist: 60 Documents VCs Expect (2026) — Peony - - - - - - - 
+ Impress Investors
+ Create a professional data room that helps you close rounds faster.
+ Impress Investors 
+
+ Startup Data Room Checklist: 60 Documents VCs Expect (2026)
+
+ Deqian Jia • March 24, 2026 • Updated September 9, 2026 
+ Co-founder and CEO at Peony. I built the data room platform with a background in document security, file systems, and AI. Founded Peony in 2021 in San Francisco.
+ Connect with me on LinkedIn! I want to help you :) More from Deqian → 
+
+ Data Rooms Startups Fundraising Due Diligence Checklists Venture Capital Cap Table SAFE 
+
+ Startup Data Room Checklist: The 60-Document Standard VCs Expect in 2026
+
+ Last updated: March 2026 
+
+ I run Peony , a data room platform, and I have helped set up hundreds of startup data rooms for seed rounds, Series A raises, and early-stage due diligence. The pattern I see over and over is this: founders either show up with a messy Google Drive link and lose credibility in the first 30 seconds, or they build a polished data room and compress the timeline from first meeting to term sheet by weeks.
+
+ This checklist is the exact document set I walk founders through when they set up a Peony data room for a startup fundraise. It covers 60 documents across 8 categories, organized by fundraising stage, with the specific mistakes I have seen kill deals. Once the inventory is assembled, one companion read: the narrative data room guide — how to add a start-here memo and a guided reading order on top of these documents, so the room argues your thesis instead of just filing it.
+
+ Raising a round, not selling the company? You are in the right place — this is the startup fundraising checklist. Running an M&A sell-side or a full buyer due-diligence process instead? Use the complete Data Room Checklist (174 documents) , which covers the deeper diligence set acquirers and their counsel expect.
+
+ TL;DR: VCs expect 50-70 documents across 8 categories in a startup data room. 68% of failed deals cite incomplete or disorganized documentation as a primary factor ( CB Insights ). Companies with organized data rooms close deals 35% faster ( Harvard Business Review ). The median seed round takes 3-6 months to close; a ready data room compresses that by 2-4 weeks. Peony (free, $0) uses AI auto-indexing to sort your documents into the standard 8-category structure in under 3 minutes, with page-level analytics showing which VCs are actually engaged and enterprise security ( screenshot protection and NDA gates ) included at $30/admin/month, plus dynamic watermarks on the Data Room plan ($52/admin/month). Task walkthrough: build a data room with AI .
+
+ Why This Startup Data Room Checklist Exists
+
+ Last year, a Series A founder I was working with showed up to a partner meeting at a top-tier firm. The partners were ready to move. They asked for the cap table, IP assignments, and financial model. The founder pulled up a Google Drive folder with 140 files, no folder structure, and file names like deck_final_v3_FINAL_USE_THIS.pdf . The partner politely said they would follow up. They never did.
+
+ Three weeks later, a different founder — same stage, similar traction — shared a Peony data room link. Clean folders, numbered categories, every document named with dates and version numbers. The partner meeting turned into a term sheet discussion in the same week.
+
+ The difference was not the company. It was the data room.
+
+ This startup data room checklist ensures you are the second founder, not the first. It is the same standard behind the rooms that founders run on Peony — now 8,000+ customers safeguarding $44.7B in client assets across fundraises and deals.
+
+ By the Numbers: Startup Fundraising and Data Rooms
+
+ Metric Value Source 
+ Failed deals citing documentation issues 68% CB Insights 
+ Time saved with organized data rooms 35% faster deal close Harvard Business Review 
+ Median US seed round size (2025) $3.0M Carta State of Private Markets Q3 2024 
+ Median time to close seed round 3-6 months Founders Fund, industry surveys 
+ Data breaches involving human element 68% Verizon 2024 DBIR 
+ Global VDR market size (2025) $3.4 billion Fortune Business Insights 
+ Bidder questions from poor data room organization 20-30% Admincontrol / DataRooms.org 
+ Average VC time spent in data room before decision 2-3 hours Industry surveys, Peony internal data 
+
+ What to Include in Your Startup Data Room
+
+ This checklist covers 60 documents across 8 categories, synthesized from hundreds of startup fundraising processes I have reviewed. Not every document applies to every stage — I have marked each one as Seed , Series A , or Both so you can prioritize.
+
+ 1. Corporate Documents (8 Documents)
+
+ These prove your company legally exists and is properly structured. VCs will not wire money to an entity that cannot demonstrate clean corporate governance.
+
+ Document Stage Why VCs Want It 
+ Certificate of Incorporation Both Confirms legal existence, state of incorporation, authorized shares 
+ Bylaws or Operating Agreement Both Shows governance rules, board structure, voting rights 
+ Board resolutions and minutes Series A Demonstrates active governance and proper authorization 
+ Good standing certificate Both Proves the entity is current on state filings 
+ Stockholder agreements Series A Reveals existing rights, restrictions, and obligations 
+ Organizational chart (current) Both Shows reporting structure and team composition 
+ Company overview / one-pager Both Quick reference for partners who join diligence late 
+ Foreign qualification filings Series A Required if operating in multiple states 
+
+ Common mistake I see: Founders incorporate in Delaware but operate in California and never file a foreign qualification. VCs catch this, and it creates a legal cleanup that delays closing by 2-4 weeks.
+
+ 2. Financial Documents (10 Documents)
+
+ Financials are where VCs spend the most time. Peony's page-level analytics consistently show that the financial model and P&L receive the longest view times — often 3-4x longer than any other section.
+
+ Document Stage Why VCs Want It 
+ Monthly P&L (trailing 12-24 months) Both Shows revenue trajectory, expense discipline, seasonality 
+ Balance sheet (current) Both Reveals assets, liabilities, and cash position 
+ Cash flow statement Series A Demonstrates actual cash movements vs. accrual accounting 
+ Financial model (3-year projections) Both Tests assumptions: growth rate, margins, hiring plan 
+ Monthly burn rate analysis Both Answers the most basic question: how long is the runway? 
+ Bank statements (trailing 3-6 months) Both Verifies cash position matches what the model claims 
+ Revenue by customer or cohort Series A Shows concentration risk and retention 
+ Unit economics breakdown (CAC, LTV, payback) Series A Proves the business model works at the unit level 
+ AR and AP aging reports Series A Flags collection issues or vendor dependencies 
+ 409A valuation (most recent) Both Required for option pricing; signals tax compliance 
+
+ Common mistake I see: Founders present a financial model with 10x growth assumptions but no bottom-up justification. VCs want to see the math: how many sales reps, at what quota, with what conversion rates, equals what revenue. If your model is a top-down guess, it signals you have not done the work.
+
+ 3. Legal and Contracts (9 Documents)
+
+ Legal documents protect the company and reveal hidden risks. A missing IP assignment or an unfavorable change-of-control clause can kill a deal.
+
+ Document Stage Why VCs Want It 
+ Material customer contracts (top 5-10) Both Shows revenue quality, contract terms, renewal risk 
+ Vendor contracts (over $25k/year) Series A Reveals cost structure and vendor lock-in 
+ Employment agreements (founders + key hires) Both Confirms non-compete, non-solicit, IP assignment terms 
+ Advisor agreements Both Shows equity obligations and scope of advisor roles 
+ Partnership or channel agreements Series A Reveals strategic relationships and obligations 
+ Lease agreements Series A Identifies fixed cost commitments 
+ Pending or threatened litigation Both Discloses legal risk — hiding this is a red flag 
+ Insurance policies (D&O, E&O, cyber) Series A Shows risk management maturity 
+ Data processing agreements Series A Required for GDPR compliance; signals data maturity 
+
+ The IP assignment story: A seed-stage founder I worked with had two co-founders and three early contractors. None of them had signed IP assignment agreements. The VC's legal team flagged it in week one of diligence. The founder had to chase down a former contractor who had moved to another country. It took 6 weeks to resolve, and the original term sheet expired. They eventually raised, but at a lower valuation and after losing their best lead investor. This is the single most avoidable mistake in startup fundraising.
+
+ 4. Intellectual Property (6 Documents)
+
+ IP documents prove the company owns what it claims to own. For tech startups, this category is often the difference between a clean close and a months-long legal cleanup.
+
+ Document Stage Why VCs Want It 
+ IP assignment agreements (founders + contractors) Both Proves the company owns its core technology 
+ Patent applications and grants Both Shows defensible innovation (if applicable) 
+ Trademark registrations Both Protects brand assets 
+ Domain name ownership records Both Confirms control of web properties 
+ Open-source license compliance audit Series A Identifies license contamination risk (GPL, AGPL) 
+ Trade secret protection policies Series A Documents how proprietary information is safeguarded 
+
+ What VCs actually check: A partner at a well-known fund once told me, "I do not care how many patents you have filed. I care whether every person who ever wrote a line of code signed an IP assignment. That is the document that matters." He was right. Missing IP assignments are the number one legal issue I see in startup data rooms and the top reason due diligence stalls.
+
+ 5. Team and HR (7 Documents)
+
+ VCs invest in teams as much as products. These documents show who is on the team, how they are compensated, and whether key people are locked in.
+
+ Document Stage Why VCs Want It 
+ Founder bios and resumes Both Background, relevant experience, domain expertise 
+ Organizational chart with reporting lines Both Shows team structure and hiring priorities 
+ Key hire employment agreements Series A Confirms retention terms and non-competes 
+ Equity incentive plan (option pool) Both Shows how equity is allocated and what remains 
+ Hiring plan (next 12-18 months) Series A Ties to financial model headcount assumptions 
+ Employee handbook Series A Demonstrates HR maturity and policy compliance 
+ Contractor agreements (active) Both Identifies contractor dependency and IP risk 
+
+ 6. Product and Metrics (7 Documents)
+
+ Product documents demonstrate traction and technical viability. VCs want to see evidence that the product works, customers use it, and the roadmap is credible.
+
+ Document Stage Why VCs Want It 
+ Pitch deck (current version) Both The anchor document — problem, solution, traction, ask 
+ Executive summary / one-pager Both For partners who want a quick overview before deep-diving 
+ Product roadmap with milestones Both Shows vision, prioritization, and execution cadence 
+ Key metrics dashboard (MRR, churn, DAU) Both Proves product-market fit with real numbers 
+ Customer case studies or testimonials (2-3) Series A Social proof and use-case validation 
+ Technical architecture overview Series A Demonstrates scalability and engineering maturity 
+ Competitive analysis matrix Both Shows market awareness and positioning clarity 
+
+ 7. Cap Table and Equity (7 Documents)
+
+ The cap table is the single most scrutinized document in any fundraising data room. VCs need to understand exactly who owns what, what rights exist, and how the proposed round changes the structure.
+
+ Document Stage Why VCs Want It 
+ Cap table (fully diluted) Both Shows current ownership, option pool, and dilution impact 
+ SAFE agreements (all outstanding) Both Reveals conversion terms, valuation caps, and total exposure 
+ Convertible note agreements Both Interest rates, maturity dates, conversion mechanics 
+ Prior round term sheets Series A Shows historical valuation and investor terms 
+ Stock purchase agreements Series A Confirms issued shares match the cap table 
+ 83(b) election filings (founders) Both Tax compliance for founder restricted stock 
+ Pro forma cap table (post-investment) Both Models the proposed round's dilution impact 
+
+ What I have learned from analytics: Using Peony's page-level tracking , I have seen that VCs spend an average of 8-12 minutes on the cap table and SAFE agreements alone — more than double the time they spend on any single product document. If your cap table is messy, unclear, or missing SAFEs, that is the first thing VCs will flag.
+
+ 8. Tax and Compliance (6 Documents)
+
+ Tax documents confirm the company is in good standing with federal and state authorities. Missing tax filings or unresolved compliance issues create closing delays.
+
+ Document Stage Why VCs Want It 
+ Federal tax returns (trailing 2-3 years) Both Confirms filing compliance and reported income 
+ State tax returns (all jurisdictions) Series A Identifies nexus issues and state-level obligations 
+ Sales tax nexus analysis Series A Critical for SaaS companies selling across state lines 
+ 409A valuation report (current) Both Required for option pricing compliance 
+ Regulatory licenses and permits Both Industry-specific compliance (fintech, healthcare, etc.) 
+ Data privacy compliance documentation Series A GDPR, CCPA, HIPAA, SOC 2 readiness — increasingly non-negotiable 
+
+ Stage-Specific Priorities
+
+ Not every document is critical at every stage. Here is how I recommend founders prioritize based on their round. At seed, five files do most of the closing work — the seed round data room template is the tab-by-tab build spec for that operator core.
+
+ Seed Stage (Pre-seed through $3M)
+
+ Must-have (30-40 documents): 
+
+- Pitch deck, executive summary, financial model, monthly P&L
+
+- Cap table, all SAFE agreements, 83(b) elections
+
+- Certificate of incorporation, bylaws, good standing
+
+- IP assignment agreements (founders + contractors)
+
+- Founder employment agreements, equity incentive plan
+
+- Key metrics dashboard, product roadmap
+
+- 409A valuation, federal tax returns
+
+ Nice-to-have: 
+
+- Customer contracts, vendor agreements, hiring plan
+
+- Technical architecture, competitive analysis, case studies
+
+ Series A ($3M-$15M)
+
+ Must-have (55-65 documents): 
+
+- Everything from Seed, plus:
+
+- 24 months of detailed financials (P&L, balance sheet, cash flow)
+
+- Revenue by customer, unit economics, AR/AP aging
+
+- All material contracts (customer, vendor, partnership)
+
+- Complete IP portfolio and open-source audit
+
+- Board resolutions and minutes, stockholder agreements
+
+- Full hiring plan, employee handbook, key hire agreements
+
+- State tax returns, sales tax nexus analysis, compliance docs
+
+ Nice-to-have: 
+
+- Insurance policies, data processing agreements
+
+- Detailed competitive intelligence, market sizing research
+
+ Peony vs. Google Drive vs. Notion vs. Legacy VDR for Startup Data Rooms
+
+ I get asked this constantly: "Can I just use Google Drive?" You can. But here is what you are giving up.
+
+ Feature Peony Google Drive Notion Legacy VDR (iDeals, Datasite) 
+ Starting price Free ($0) Free (15 GB) Free (limited) $500-$2,500+/mo 
+ Setup time Under 5 minutes 20-40 hours manual 10-20 hours manual Days to weeks (sales process) 
+ AI auto-indexing Yes No No Partial (some platforms) 
+ Page-level analytics Yes — per viewer No No Aggregate only (most) 
+ Dynamic watermarks Yes — per viewer No No Yes (enterprise tiers) 
+ Screenshot protection Yes — blocks and logs No No Some platforms 
+ NDA gates Yes No No Yes (most) 
+ E-signatures Built-in No No Add-on or third-party 
+ AI Q&A workflow Yes No No No 
+ Per-folder permissions Yes Limited Limited Yes 
+ Custom branding Yes No Partial Yes (enterprise) 
+ Link revocation Instant Manual per-user Manual Yes 
+ Best for Seed through Series B Internal docs only Internal wiki only Enterprise M&A ($50M+ deals) 
+
+ The core issue with Google Drive and Notion is not features — it is signal. When a VC opens a Google Drive link, they immediately categorize you as a founder who has not thought about data security, access control, or professional presentation. When they open a branded Peony data room , they see a founder who executes.
+
+ 5 Common Mistakes That Kill Startup Data Rooms
+
+ Mistake 1: Missing IP Assignment Agreements
+
+ I covered this above, but it bears repeating because I see it in roughly 1 out of every 4 startup data rooms. If a founder, co-founder, contractor, or early employee wrote code, designed the product, or created any IP before formally joining the company, you need a signed assignment agreement. Without it, the company may not own its core technology. VCs will not close until this is resolved.
+
+ Mistake 2: Using One Access Level for All Investors
+
+ Not every investor should see every document. An angel investor who expressed casual interest does not need your detailed cap table, customer contracts, or employment agreements. Use staged access:
+
+- Level 1 (Initial interest): Pitch deck, executive summary, high-level financials, product overview
+
+- Level 2 (Serious diligence): Full financials, cap table, material contracts, IP portfolio
+
+- Level 3 (Term sheet): Employment agreements, tax documents, detailed compliance docs
+
+ Peony's multi-level access gating handles this with per-folder permissions and NDA gates. You set it once, and each investor sees only what they should.
+
+ Mistake 3: Outdated Documents
+
+ Nothing signals sloppiness like a financial model dated 8 months ago or a cap table missing your most recent SAFE. Update your data room monthly. Version your files with dates: 2026-03_Financial_Model_v4.xlsx , not Financial Model FINAL.xlsx .
+
+ Mistake 4: No Analytics
+
+ If you are sharing a Google Drive link, you have no idea which investors are actually reading your materials. I worked with a founder who spent weeks following up with a VC who had never opened the data room. Meanwhile, another investor had spent 45 minutes deep-diving into the financials and cap table — and the founder had no idea. With Peony's page-level analytics , you know exactly who is serious and who is just being polite.
+
+ Mistake 5: Waiting Until Investors Ask
+
+ The founders who close fastest are the ones who have their data room ready before the first meeting. When a VC says "this is interesting, can you send us more?", you should be able to share a link in under 60 seconds. Not scramble for a week to find documents, build folders, and figure out permissions. Peony Free lets you set up your room before you start fundraising — at no cost.
+
+ How to Set Up Your Startup Data Room in Peony (Step by Step)
+
+ Here is the exact process I walk founders through. It takes under 5 minutes.
+
+ Step 1: Create your data room. Sign up at peony.ink and click "New Data Room." Name it something professional: "[Company Name] — Series A Data Room."
+
+ Step 2: Bulk upload your documents. Drag and drop all your files — PDFs, spreadsheets, presentations, everything. You do not need to organize them first.
+
+ Step 3: Let AI auto-index. Peony's AI auto-indexing analyzes every document and sorts them into the standard 8-category folder structure automatically. In my experience, it takes under 3 minutes for a typical startup document set. The last time I timed it with a founder who uploaded 200 documents, the AI sorted them in 2 minutes and 40 seconds. It miscategorized 3 documents, which we moved manually in under a minute.
+
+ Step 4: Review and adjust. Check each folder, rename any files that need clearer names, and move any documents the AI placed incorrectly. This usually takes 5-10 minutes.
+
+ Step 5: Configure security. Enable dynamic watermarks (viewer email stamped on every page), screenshot protection , and NDA gates for sensitive folders. Set per-folder permissions for staged access. If your financials or contracts contain PII, use AI redaction to flag and redact sensitive data before sharing.
+
+ Step 6: Set up e-signatures if needed. If you want investors to sign an NDA before accessing the room, Peony has built-in e-signatures with AI-powered field detection — no third-party tool required.
+
+ Step 7: Share the link. Generate a branded link and send it to your investors. Manage your links from one dashboard — revoke access, set expirations, and track who opened what. Each viewer gets a unique session, so analytics track engagement per person.
+
+ Step 8: Monitor engagement. Check page-level analytics daily during active fundraising. Investors who spend 20+ minutes in your data room — especially on financials and cap table — are your warmest leads. Prioritize follow-ups accordingly.
+
+ For a more detailed walkthrough of the general data room setup process, see our guide: How to Set Up a Data Room (Skip the 40-Hour Trap) .
+
+ Using Analytics to Prioritize Investor Follow-Ups
+
+ One of the most underused advantages of a proper data room is engagement data. Here is how I coach founders to use Peony's analytics during fundraising.
+
+ High interest signals: 
+
+- Spent 20+ minutes total in the data room
+
+- Viewed the cap table and financial model multiple times
+
+- Returned to the data room on multiple days
+
+- Multiple viewers from the same firm (indicates internal sharing)
+
+ Low interest signals: 
+
+- Opened the link but viewed only the pitch deck
+
+- Spent fewer than 5 minutes total
+
+- Never returned after the first visit
+
+ A founder I worked with last quarter had 12 VCs with data room access. Based on Peony analytics, she identified 3 who had each spent over 30 minutes across multiple sessions, focusing heavily on financials and cap table. She prioritized those 3 for follow-up calls. Two of them submitted term sheets within 10 days. The other 9 investors never made it past the pitch deck — and she saved weeks of pointless follow-up meetings.
+
+ Honest Limitations of Peony
+
+ I believe Peony is the best data room for startup fundraising. The one caveat: if your investors or acquirer's counsel pick tools based on brand legacy rather than speed and capability, Peony may not be the right fit — and that is fine. For everyone else — founders who care about how fast deals move and how much visibility they get into investor behavior — it is the best tool I have found, and I built it because nothing else came close.
+
+ Bottom Line: Tiered Recommendations
+
+ Pre-seed and seed founders ($0 budget): Start with Peony Free . Upload your documents, let AI auto-index them, and share a professional data room link at no cost. Upgrade to Business ($30/admin/month) when you need page-level analytics and NDA gates , with dynamic watermarks on the Data Room plan ($52/admin/month). You are in good company: 8,000+ customers run their rooms on Peony , safeguarding $44.7B in client assets .
+
+ Series A founders (need full analytics and security): Peony Data Room at $52/admin/month gives you everything: AI auto-indexing , page-level analytics per investor, screenshot protection , dynamic watermarks , NDA gates , built-in e-signatures , AI Q&A workflows , and AI document extraction . This is what I recommend for any startup in active fundraising.
+
+ Late-stage or M&A exits (enterprise requirements): If your acquirer or late-stage investor specifically requires a legacy VDR brand, iDeals ($500+/month) and Firmex ($650+/month) are the mid-market defaults. But test Peony first — most founders find it covers everything they need at a fraction of the cost.
+
+ Frequently Asked Questions
+
+ How many documents should be in a startup data room?
+
+ A well-prepared startup data room contains 50 to 70 documents across 8 categories: corporate, financial, legal, IP, team, product, cap table, and tax. Seed-stage rooms skew toward 40 to 50 documents, while Series A rooms typically need 60 to 70. Peony's AI auto-indexing sorts bulk uploads into these 8 categories in under 3 minutes, so you do not have to build folders from scratch.
+
+ What is the difference between a startup data room and a Google Drive folder?
+
+ A startup data room provides enterprise security ( dynamic watermarks , screenshot protection , NDA gates ), page-level analytics showing which investors read which documents and for how long, and structured access controls. Google Drive offers none of these. VCs reviewing 200+ companies per year associate consumer tools with operational immaturity. Peony includes all data room security features starting free and sets up in under 5 minutes.
+
+ When should a startup set up its data room?
+
+ Set up your data room 4 to 6 weeks before you start investor outreach. Having a polished room ready when a VC expresses interest signals operational maturity and accelerates the process from first meeting to term sheet. Peony Free lets you build and maintain your room at no cost until you need to share it, with AI auto-indexing that organizes your documents in under 5 minutes.
+
+ What documents do VCs request first during due diligence?
+
+ VCs almost always request the cap table, financial model, articles of incorporation, and IP assignment agreements first. These four documents reveal ownership structure, unit economics, legal foundation, and whether the company actually owns its technology. Peony's page-level analytics confirm this pattern: cap table and financials consistently receive the longest view times in startup data rooms I have helped set up.
+
+ How do I organize a startup data room for fundraising?
+
+ Use 8 top-level folders: Corporate, Financial, Legal and Contracts, IP and Technology, Team and HR, Product and Metrics, Cap Table and Equity, and Tax and Compliance. Number them 01 through 08 so they sort correctly. Within each folder, use consistent file naming with dates and version numbers. Peony creates this exact structure automatically — upload your documents in bulk and the AI auto-indexing categorizes everything in under 3 minutes.
+
+ What is the most common mistake in startup data rooms?
+
+ Missing IP assignment agreements. If founders or early contractors never signed assignments transferring their work to the company, the startup may not legally own its core technology. This is a deal-killer that surfaces during legal due diligence and can delay or tank a round. Peony's AI auto-indexing flags missing document categories when it organizes your uploads, helping you catch gaps before investors do.
+
+ How much does a startup data room cost?
+
+ Startup data rooms range from $0 to $500+ per month. Peony starts free with 2 GB of storage, page-level analytics , and link sharing. The Business plan at $30 per admin per month adds screenshot protection and NDA gates , and the Data Room plan at $52 per admin per month adds dynamic watermarking , AI auto-indexing and unlimited rooms. Legacy VDRs like iDeals ($500+/month) and Datasite ($50,000+/year) are designed for enterprise M&A, not startup fundraising.
+
+ Should I use different data rooms for different investors?
+
+ No. Use one data room with tiered permissions. Share high-level materials (pitch deck, executive summary, top-line financials) with all interested investors, then grant deeper access to detailed financials, contracts, and cap table only after they sign an NDA. Peony supports multi-level access gating with NDA gates, password protection , and per-folder permissions — all from a single room.
+
+ How do I track which VCs are actually reviewing my data room?
+
+ You need page-level analytics , not just link open rates. Peony shows exactly which pages each investor read, how long they spent per document, and where they dropped off. If a VC spends 15 minutes on your financial model and cap table but skips the product roadmap, you know exactly what to address in the follow-up call. This is the difference between guessing and knowing who is serious.
+
+ What security features should a startup data room have?
+
+ Essential security includes dynamic per-viewer watermarks , screenshot protection that blocks and logs capture attempts, NDA gates before any content is visible, email authentication, granular view and download and print permissions, link expiration, and full audit logs. Peony includes all of these on the Business plan at $30 per admin per month — features that legacy VDRs typically gate behind enterprise tiers costing $500+ per month.
+
+ Related Resources
+
+- SAFE vs Convertible Note: Differences, Dilution Math and Stacking — the instrument comparison line by line, the post-money stacking arithmetic with a worked scenario and a free calculator, the QSBS holding-period question, and the UK, French and German equivalents
+
+- Best Data Rooms for Startups (I Tested All 10) 
+
+- How to Set Up a Data Room (Skip the 40-Hour Trap) 
+
+- How to Convert Your Pitch Deck Into a Data Room (5-Step Sequence) 
+
+- Due Diligence Data Room Checklist (174 Documents) 
+
+- Your Data Room Through a VC's Eyes 
+
+- How to Send Your Pitch Deck to Investors 
+
+- Seed Funding for Startups Guide 
+
+- How to Track Pitch Deck Engagement 
+
+- How to Protect Your Pitch Deck 
+
+- Startup Due Diligence Guide (Both Sides of the Table) 
+
+- Series A Data Room: The Step-Change Round — the round-specific standard this checklist is graded against at Series A
+
+- M&A Due Diligence Process (The 6-Phase Playbook) 
+
+- VC Fund Data Room Checklist 
+
+- VC Fund Data Room Checklist 
+
+- Venture Debt Data Room — the lender-facing version, when you raise debt instead of equity
+
+- Startup Solutions 
+
+- Fundraising Data Rooms 
+
+- Venture Capital Data Rooms 
+
+- Data Room Features 
+
+- Peony Pricing 
+
+ You might also like
+ Oct 6, 2026
+ Best Data Rooms for Startups & Fundraising in 2026 (13 Tested & Ranked)
+ Data Rooms Startups 
+ Mar 25, 2026
+ Startup Fundraising Rounds Explained (Seed to Series C) in 2026
+ Fundraising Venture Capital 
+ Mar 24, 2026
+ Startup Due Diligence Guide (Both Sides of the Table) in 2026
+ Due Diligence Startups 
+
+ Previous
+ M&A Due Diligence: 6-Phase Playbook + 8 Workstreams in 2026
+
+ Next
+ Startup Due Diligence Guide (Both Sides of the Table) in 2026

@@ -1,0 +1,31 @@
+document,pre_seed,seed,series_a,who_asks,first_pass,basis,sources
+Cover note and document index,Y,Y,Y,The founder volunteers it; investors reward it,Uses the index to find the cap table and model in seconds,sourced,V;Ellty
+Pitch deck,Y,Y,Y,Every investor; a16z lists it first,Treats each number as a claim and looks for the file that proves it,sourced,a16z;PeonyA;V
+One-page summary,Y,Y,Y,Every investor; YC says one or two pages is enough at seed,"Reads stage, ask and traction",sourced,YC;V
+Founder video or recorded intro,L,L,L,"Partner, optional",Hears the founder state the numbers in their own voice (our use: compare with the deck),sourced + inferred,V
+"Cap table, fully diluted",Y,Y,Y,Deal team and investor counsel; a16z lists it right after the deck; first on CRV's first-pass list,"Checks that holders add to 100 percent, SAFEs are converted, and the option pool is shown",sourced,a16z;CRV;PeonyA
+"Financial model, 3 to 5 years",Y,Y,Y,Deal team; a16z says detailed projections can wait for consumer seed; NFX says 24 months monthly plus 3 years annual,Reads it against the deck; at Series A an associate rebuilds it,sourced,V;CRV;PeonyA;a16z;NFX
+"Historical P&L, balance sheet, cash flow (monthly)",L,Y,Y,Deal team; Kruze lists three years of statements,"Reads revenue lines, cost of revenue lines, payroll, and computes burn",sourced,a16z;Kruze;V
+Audited or reviewed financials,N,N,L,"Series A lead, accountants",Compares reviewed numbers with management numbers,sourced,V
+"KPI dashboard or metrics export (MRR, ARR, customers, churn)",L,Y,Y,Deal team,Compares each headline number with the deck and the definition used,sourced,V;Hustle
+Monthly revenue by customer,-,L*,Y*,BCV names it as one of two key items; Hustle and First Round also ask,"Builds customer cohorts and concentration, and sets them against sales and marketing spend",sourced,BCV;Hustle;FR
+Cohort or retention export,N,L,Y,Deal team; CRV lists cohort retention curves as proof,Rebuilds retention from raw data and checks the retention claim in the deck,sourced,V;CRV;PeonyA
+"Unit economics (CAC, LTV, payback)",N,L,Y,Deal team; a16z lists LTV/CAC and payback last of its five,Recomputes from spend and customer counts,sourced,V;a16z
+Bank statements (3 to 12 months),N,L,Y,Deal team before wiring; Papermark puts them at the pre-wire step of a seed,Checks that revenue in the deck reaches the bank,sourced,V;PM
+409A valuation,N,L,Y,Investor counsel and Kruze's tax list,Files it; checks the date,sourced,V;Kruze
+Customer contracts and order forms (top ten),N,L,Y,"Series A lead; Kruze asks for top ten invoices and contracts; Peony A adds anything above about $20,000","Checks term, renewal and termination, and whether ARR rests on the paper",sourced + inferred,V;Kruze;PeonyA;Fortune
+Customer references and letters of intent,N,L,Y,Series A lead; First Round runs 5 to 15 diligence conversations,Calls them,sourced,V;PeonyA;FR
+Sales pipeline snapshot,N,L,Y,Deal team,Compares stage counts with the growth plan,sourced,V;FR
+Incorporation documents and bylaws,Y,Y,Y,Investor counsel; Cooley section B,Confirms they exist and match the cap table,sourced,Cooley;V;CRV
+"Prior financing: SAFEs, notes, term sheets",Y,Y,Y,Investor counsel; Cooley section C,Matches each instrument to a cap table row,sourced,Cooley;V;Hustle
+IP and invention assignment agreements,L,Y,Y,Investor counsel; on CRV's first-pass list,Checks every founder and contractor signed,sourced,CRV;Cooley;V
+Board and stockholder minutes,L,Y,Y,Investor counsel; Cooley section A; a16z does not pore over them unless it has a question,Skims for financing approvals,sourced,V;a16z
+Founder bios,Y,Y,Y,Partner; a16z says it uses LinkedIn instead,Reads for founder-market fit,sourced,V;a16z
+Key team bios and org chart,L,Y,Y,Partner,Checks that the people in the plan exist,sourced,V
+Hiring plan and future org,L,Y,Y,Deal team; Kruze asks for a three-year hiring plan,Multiplies hires by loaded cost and compares the result with the burn in the model,sourced + inferred,V;Kruze;KruzeCash
+"Employment, advisory and option grant records",N,L,Y,Investor counsel; SeedLegals lists founder service agreements and key employment agreements,Matches grants to the cap table,sourced,V;SL
+Investor update archive,N,L,Y,Deal team; CRV recommends including them at seed,Reads the trend and compares earlier numbers with today's,sourced + inferred,V;CRV
+Product roadmap and demo,Y,Y,Y,Partner,Watches the demo; reads the roadmap against the use of funds,sourced,V
+Market sizing and competitive landscape,Y,Y,Y,Partner; a16z says it does its own sizing,Skims; investors build their own,sourced,V;a16z
+Tax returns (three years),-,-,Y*,Investor accountants; Kruze says a professional investor will ask,Checks they were filed,sourced,Kruze
+"Disclosure of claims, disputes and regulatory inquiries",Y*,Y*,Y*,"Investor counsel; Cooley section D, Hustle's pre-seed baseline",Reads the list,sourced,Cooley;Hustle
