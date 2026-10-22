@@ -1,0 +1,37 @@
+/* Placeholder tokens until STYLE_GUIDE.md settles. Change values here only;
+   components use the variables. */
+:root {
+  --bg: #ffffff;
+  --fg: #16181d;
+  --muted: #5d6470;
+  --line: #e3e5e8;
+  --green: #1f7a4d;
+  --red: #b3261e;
+  --amber: #8a5a00;
+  --font: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #111317; --fg: #e8eaed; --muted: #9aa1ab; --line: #2a2e35; --green: #5cc48d; --red: #ff8a80; --amber: #f0b44c; }
+}
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 var(--font); }
+.page { max-width: 960px; margin: 0 auto; padding: 16px; }
+.masthead { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.masthead h1 { margin: 0 auto 0 0; font-size: 22px; }
+.banner { border: 1px solid var(--amber); color: var(--amber); padding: 6px 10px; border-radius: 6px; }
+.note { color: var(--muted); }
+.link { background: none; border: 0; padding: 0; color: inherit; font: inherit; cursor: pointer; text-align: left; }
+.flags, .pieces, .claims { list-style: none; padding: 0; }
+.flag { padding: 6px 0; border-left: 4px solid; padding-left: 10px; margin: 6px 0; }
+.flag.green { border-color: var(--green); }
+.flag.red { border-color: var(--red); }
+.piece { border-top: 1px solid var(--line); padding: 10px 0; }
+.piece-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.piece-row .counts { margin-left: auto; color: var(--muted); font-size: 14px; }
+.piece.looking_strong strong { color: var(--green); }
+.piece.looking_weak strong { color: var(--red); }
+.reason { margin: 4px 0 0; color: var(--muted); }
+.claim { margin: 6px 0 6px 16px; }
+.claim.flag { color: var(--red); }
+.panel { display: block; margin: 6px 0; padding: 8px; border: 1px solid var(--line); border-radius: 6px; }
+.panel pre { white-space: pre-wrap; font: 13px/1.4 var(--mono); max-height: 240px; overflow: auto; }
