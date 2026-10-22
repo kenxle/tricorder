@@ -364,3 +364,9 @@ Added 2026-10-22 at 2:49 PM, Ken's closing note on the data-room research:
 > ok i'm done here. make sure my feedback propagates to all the correct docs. we want to have a list of YC companies and we'll pair them with fake data rooms and run live demos on them
 
 Settled: the demo pairs real YC companies (from a list Ken approves) with fake data rooms built from the room templates, and runs live: the outside-world scan reads each real company's public footprint during the demo, while the room's documents are invented and labelled synthetic. Hollis Voice and the second invented company stay as the controlled rooms whose planted flags are known. The product brief's demo section, the brand doc's pitch to judges, the founder brief's workflow, the roadmap's demo slices and the overview page's demo cards follow this.
+
+Added 2026-10-22 at 2:51 PM, a note on the overview page:
+
+> for the data room prep, we'll need to ask me to read a few scripts into a video. i'll just read them flatly, nothing crazy
+
+Settled: Ken records the pitch videos himself, one flat reading per room's script (Hollis Voice, the second invented company, each approved real-company room). This replaces the demo critic's suggestion of an off-stage voice. On stage the clip plays as audio over the deck slides with captions. Each room's generator writes its script; the board row lists them.

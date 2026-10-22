@@ -176,13 +176,13 @@ A room Tricorder has never seen, and a room with nothing planted. The team wrote
 
 ### record-pitch-video
 
-The founder's two-minute pitch, recorded as a voiceover over the deck slides by someone who is not on stage Saturday. The script opens "Hi, I'm Imogen Tarrant", and judges who see the presenter play the founder stop believing the room ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), finding 5).
+Ken reads a few pitch scripts into video himself, flatly ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:51 PM block): "for the data room prep, we'll need to ask me to read a few scripts into a video. i'll just read them flatly, nothing crazy." One script per room: Hollis Voice, the second invented company, and each approved real-company room. The demo critic had suggested someone off stage record it, since judges who see the presenter play the founder may stop believing the room ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), finding 5). Ken's decision stands; showing the clip as audio over the deck slides with captions, rather than his face, keeps that risk small.
 
 **Waits on:** data-room (the script is written after the deck's claims page exists, research Part 3.6, step 7).
 
 **Includes:**
 
-- The voiceover from `01_overview/pitch_video_script.md`, over the deck slides, with the planted line at about 0:35 saying about three million dollars in ARR, against the deck's $2,500,000 (research Part 3.4, PF2b).
+- Ken's flat reading of each room's script (Hollis Voice: `01_overview/pitch_video_script.md`), over the deck slides, with the planted line at about 0:35 saying about three million dollars in ARR, against the deck's $2,500,000 (research Part 3.4, PF2b).
 - A five-second clip of the 0:35 sentence, with burned-in captions, as an H.264 MP4. This clip is what plays on stage. The line is framed as the ladder: against the billing rows' $2,060,868, three million is 46% more (demo critique, finding 5).
 - The video file copied into both rooms beside the script.
 - A transcript made once by hand with whisper.cpp on the demo laptop and saved next to the video, so the demo has a result if the live run fails ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), 1.5).
