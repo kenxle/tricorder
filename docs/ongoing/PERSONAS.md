@@ -21,14 +21,14 @@ Each persona is a problem, not a job title. Say, do and pay are the three layers
 
 The personas are ranked by their strongest evidence: pay first, then do, then say. When two personas reach the same layer, the one with more quotes behind it ranks higher. The quotes come from [the voice-of-the-customer research](../reports/20261022.02_research/research_voice_of_customer.md), and a script counts them ([voc_counts.py](../reports/20261022.02_research/voc_counts.py)). A reference such as "row 11" points to that research's quotes table.
 
-Two cautions on the top two. The partner's pay rating is inferred: both pieces of pay evidence come from a vendor case study and a pricing roundup, not from partners' own words. The angel's pay rating is first-hand, but what angels pay for is avoiding diligence, not doing it better.
+Two cautions on the top two. The partner's pay rating is inferred: both pieces of pay evidence come from a vendor case study and a pricing roundup, not from partners' own words. The angel's pay rating rests on two people, each handing diligence to someone else (YC, or funds as an LP). That is too little to say what angels in general would pay for.
 
 **User and buyer.** The fund is the buyer: a partner or principal decides and pays. The associate is the user. At some funds the partner is the user too (persona 1, Do). For angels the user and the buyer are the same person. For accelerators the screening staff are the users and the program would be the buyer, with no evidence yet that programs pay.
 
 | Rank | Persona | The problem | Rating | Role |
 |---|---|---|---|---|
 | 1 | Partner or principal at a seed or Series A fund | Numbers that disagree, found too late | Pay (inferred) | Buyer |
-| 2 | Solo angel | No time or team to do diligence at all | Pay (to avoid diligence) | User and buyer; a pricing warning |
+| 2 | Solo angel | No time or team to do diligence at all | Pay (two people, thin) | User and buyer |
 | 3 | Accelerator screener | Too many applications to read | Do | User; no buyer evidence |
 | 4 | Associate at a seed fund | Days of gathering before any thinking | Do | User |
 | 5 | Corporate VC | Strategic overlap on top of standard diligence | Say | Too thin to design for |
@@ -104,7 +104,7 @@ Two cautions on the top two. The partner's pay rating is inferred: both pieces o
 - **Say (8 rows).** Missed red flags and fake books (rows 50, 51). No time or skills (row 43). A full-time unpaid job (row 52).
 - **Do (4 rows).** Waits for a lead, shares diligence, sizes diligence to the check (rows 45 to 47).
 - **Pay (2 rows).** "Yes, I give up some upside because of how much YC already owns, but to me it's worth every penny for the service that YC provides to me as an investor and to the startup." ([angel, Jan 2022](https://news.ycombinator.com/item?id=30130146)). "Lastly, I became a Limited Partner (LP) in a handful of VC funds, basically paying professionals to do the investing on our behalf." ([angel, Apr 2025](https://halletecco.substack.com/p/why-i-stopped-angel-investing-after))
-- **Rating: pay.** The angel pays to avoid diligence, not to do it better. That is a pricing warning, not a buying signal for Tricorder.
+- **Rating: pay, thin.** Two people pay, in upside or as an LP, to hand diligence to someone else. Whether angels would pay for a better first pass of their own is untested; the interviews should ask.
 
 ---
 

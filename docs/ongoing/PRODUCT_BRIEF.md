@@ -31,7 +31,7 @@ Deployers of capital who need to know if they're making the best possible invest
 - **Buyer and user.** The fund buys: a partner or principal decides and pays. The operator uses it: usually the associate who does the first pass today, and at some funds the partner, since one seed fund writes that its partners run diligence themselves (the voice-of-the-customer research, row 11).
 - **Partner or principal (buyer).** Rated pay, inferred, in the voice-of-the-customer research. Funds already pay for data and for commercial diligence tools (the voice-of-the-customer research, "What they pay for"; [the landscape research](../reports/20261022.02_research/research_landscape.md), Part 1).
 - **Associate (user).** Rated do. Does the work by hand today and pays for nothing.
-- **Solo angel.** Rated pay, but what angels pay for is avoiding diligence: they give up upside to an accelerator or become an LP in funds (the voice-of-the-customer research, rows 44 and 53). That is a pricing warning. An angel product has to be cheaper than skipping the work, and the landscape research found memo tools already priced at $12 a memo (the Apify actor) and $0 to $30 a month (Energent).
+- **Solo angel.** Rated pay, on two people only. One angel invests almost only in YC companies because he lacks the time and skills for diligence and accepts giving up upside for it; another stopped investing directly and became an LP in funds (the voice-of-the-customer research, quotes table rows 44 and 53). Two people are not a pattern, and the interviews should test whether angels would pay for a better first pass. An angel product has to be cheaper than skipping the work, and the landscape research found memo tools already priced at $12 a memo (the Apify actor) and $0 to $30 a month (Energent).
 - **Accelerator screener.** Rated do. A real volume problem, but the voice-of-the-customer research found no evidence that programs pay for a tool, and one built its own.
 - **Corporate VC.** Rated say, on two rows from one firm. Too thin to design for.
 
@@ -184,7 +184,7 @@ Each line is a recommendation this brief is written to, with the alternative.
 6. **Where the data goes.** Mailbox read for decks only, nothing stored beyond the readout and its sources, the investor sees and deletes everything. Alternative: a self-hosted version that keeps all data inside the fund.
 7. **Demo company.** Hollis Voice, the data-room research's synthetic Series A room. Alternative: Brasswick, the data-room research's plainer freight-invoice company.
 8. **After Saturday.** A product sold to funds; the partner or principal buys, the associate uses. Alternative: skills Ken sells on stclair.ai, or a hackathon entry that ends Saturday.
-9. **Angels.** Do not price for angels first; they pay to avoid diligence. Alternative: an angel tier from the start.
+9. **Angels.** Price for funds first, because the fund evidence is stronger; the angel evidence is two people, so the interviews decide. Alternative: an angel tier from the start.
 10. **Persona order.** Keep the voice-of-the-customer research's ranking (partner, angel, accelerator, associate, corporate VC). Alternative: rank the associate first because they are the user.
 11. **Measures.** Set numeric targets after the first pilot. Alternative: state predicted numbers now.
 12. **Self-score on stage.** Show the answer-key score (flags found, decoys wrongly flagged) in the demo. Alternative: show the readout only.
