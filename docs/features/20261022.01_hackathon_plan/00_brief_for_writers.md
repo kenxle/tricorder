@@ -414,3 +414,15 @@ Added 2026-10-22 at 3:07 PM, on the product brief's first problem:
 > this is still more of a feature level detail. the problem is really that due diligence is required to understand if you've got a good investment, and lying or stretching the truth is very common because so much money is on the line
 
 Settled: the product brief states problems at the level of the investor's situation, not the checks Tricorder runs. The first problem is that diligence is how an investor learns whether an investment is good, and stretching the truth is common because so much money is on the line. Specific red flags (padded ARR, numbers that disagree) belong in the feature and framework docs.
+
+Added 2026-10-22 at 3:10 PM, on the product brief's jobs to be done:
+
+> these are user stories, which belong in feature documentation. jobs to be done are the high level jobs
+> - deploy capital to trustworthy founders
+> - deploy capital to companies that will create ROI
+> - deploy capital to companies that will become extremely valuable
+> - understand the risk profile of a company
+> - understand the fundamentals of a company
+> - communicate the fundamentals and risk to a group for a group decision
+
+Settled: the product brief's jobs to be done are Ken's six high-level jobs. The "when I ..., I want ..." lines are user stories and live in `docs/ongoing/USER_STORIES.md`, grouped by the associate, the partner and secondary personas.

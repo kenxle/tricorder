@@ -35,6 +35,7 @@ Read these when the task touches them. Seneschal keeps the table current.
 | `docs/ongoing/FRAMEWORKS.md` | Building or changing a scan: the frameworks each scan runs, their inputs, their output shape. |
 | `docs/ongoing/CHECKLIST.md` | Building or changing a scan, the coverage panel or the ask list: every item Tricorder looks for, by stage. |
 | `docs/ongoing/MEMO_TEMPLATE.md` | Building the memo export, the interactive memo, reader copies or scenarios: the memo's sections in order, what fills each, and what stays the operator's. |
+| `docs/ongoing/USER_STORIES.md` | Building or changing a feature: the user story it serves, for the associate or the partner. |
 | `docs/ongoing/PERSONAS.md` | Writing for or building for a kind of investor: their problem in their words, the proof. |
 | `docs/ongoing/BRAND.md` | Writing any copy: the readout, the pitch, the demo, posts. |
 | `docs/ongoing/ARCHITECTURE.md` | Touching code structure, module boundaries, data sources, environment variables. |

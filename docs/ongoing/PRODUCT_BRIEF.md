@@ -49,16 +49,16 @@ Investors have to check a startup before they put money in, and checking is slow
 
 ## The jobs to be done
 
-1. When a deck lands in my inbox, I want the first pass done before I open it, so I can decide in minutes whether to take the meeting.
-2. When I open a readout, I want the best green flags and the worst red flags first, then an overview of which pieces of the company look strong and which look weak, with the disagreements one click down, so I know what to ask in the second meeting.
-3. When a startup reports ARR, I want it rebuilt from the contracts and the revenue rows, so I know how much of it is truly recurring.
-4. When a fact is missing from the room, I want to see it marked as missing and put on a list of what to ask the founder for, so I ask for it instead of trusting a guess.
-5. When I compare the startup with others, I want comparable companies and rounds with the reason each one is fair.
-6. When I watch the pitch video, I want to jump to each claim and see which ones disagree with the deck.
-7. When I write the memo for the partners' meeting, I want every claim tied to its source, so I can defend it to people who never met the founder.
-8. When I write a small check alone, I want a first pass whose cost fits the check (the angel's job; the voice-of-the-customer research).
-9. When a piece of the readout looks wrong or thin, I want to say so in one sentence and get it rewritten or filled in, with no setup.
-10. When I read a memo on a deal I did not work, I want to drill from any line to its sources and try my own what-ifs on the model, so I can trust it without redoing the work (the partners who read the memo).
+The high-level jobs an investor hires Tricorder for, in Ken's words:
+
+- Deploy capital to trustworthy founders.
+- Deploy capital to companies that will create ROI.
+- Deploy capital to companies that will become extremely valuable.
+- Understand the risk profile of a company.
+- Understand the fundamentals of a company.
+- Communicate the fundamentals and risk to a group for a group decision.
+
+The user stories that turn these jobs into features are in [USER_STORIES.md](USER_STORIES.md).
 
 ## What it does
 
