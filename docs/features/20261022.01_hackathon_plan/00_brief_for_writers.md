@@ -390,3 +390,9 @@ Added 2026-10-22 at 3:00 PM: Ken rewrote the end of the product brief's "What it
 > The deliverable memo is shared with others within the firm, but rather than a fixed document, this is still interactive, allowing drilldowns, and even allowing partners to alter growth models and see how they could change, themselves.
 
 This matches the settled flow: the associate (the operator) steers the readout into the memo; the partners read an interactive memo and run their own what-ifs on the growth model.
+
+Added 2026-10-22 at 3:01 PM, as a comment on the product brief's "Who it is for":
+
+> completely delete and start this section over. i've narrowed in to seed and series A firms, associates preparing, and partners reading.
+
+Settled: "Who it is for" is rewritten from scratch to seed and Series A firms and their two users, the associate who prepares the memo and the partner who reads it. Angels, accelerators and corporate VCs are no longer named in the product brief's audience; PERSONAS.md keeps them as secondary.

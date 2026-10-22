@@ -31,13 +31,12 @@ By identifying gaps, highlighting strengths, rigorously showing its work, and ad
 
 ## Who it is for
 
-Deployers of capital who need to know if they're making the best possible investment. The personas are grouped by the stage they invest at, because the stage decides what is available about the company ([PERSONAS.md](PERSONAS.md)). Venture funds at seed and Series A come first. The two primary personas are the associate who prepares the memo and the partner or principal who reads it; angels, accelerators and corporate VCs are secondary. Full personas, ranked by evidence, are in [PERSONAS.md](PERSONAS.md).
+Seed and Series A venture firms. At each firm, two people use Tricorder.
 
-- **Buyer and user.** The fund buys: a partner or principal decides and pays. There are two users: the operator who prepares the memo and the partners who read it, people who have never met the founder (see [PERSONAS.md](PERSONAS.md), Who uses it and who buys it). The operator uses it: usually the associate who does the first pass today, and at some funds the partner, since one seed fund writes that its partners run diligence themselves (the voice-of-the-customer research, row 11). Angels would use and pay for it themselves. Accelerators' screening staff would use it and the program would pay.
+- **The associate who prepares the memo.** Their problem is days of gathering and checking before any thinking: "Before I even open your data room, I already have ten tabs up." ([associate at a seed-focused fund, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)). They work in the readout, check what it found, and steer it into the deliverable memo.
+- **The partner who reads the memo and decides.** Their problem is a first pass that is thin where it matters: "Basic financials and model review. But often only a cursory one." ([SaaS investor, on pre-term-sheet diligence, Feb 2025](https://www.saastr.com/how-when-why-vcs-do-due-diligence-pre-and-post-term-sheet)). They read the interactive memo, drill into any line they doubt, and change the growth model themselves to see what it takes.
 
-The problems these people have, ranked by how strongly they act on them (say, do, pay), are in [PERSONAS.md](PERSONAS.md). In short: partners and principals pay to solve the first-pass problem today (inferred from a vendor case study and a pricing roundup). Accelerator screeners and associates work around it by hand. Corporate VCs only describe it, and too thinly to design for.
-
-Angels are a market that already buys diligence by proxy. They want diligence and lack the time, so they give up upside to YC, follow a lead, pay group dues and per-deal fees, give carry to a syndicate lead, or become LPs ([the research gaps](../reports/20261022.02_research/research_gaps.md), section 2). A diligence tool already sells them a plan: Startup Due Dil, built by a fund partner for his own work, charges business angels $449 a month for up to 10 reports ([dev.ua](https://dev.ua/en/news/startup-due-dil-1787664994); [the landscape research](../reports/20261022.02_research/research_landscape.md), Part 5).
+The firm buys it, per seat. The evidence behind both personas is in [PERSONAS.md](PERSONAS.md).
 
 ## The problem
 
