@@ -1,0 +1,342 @@
+SOURCE: https://resources.rework.com/libraries/startup-terms/employee-option-pool
+FETCHED: 2026-10-22
+
+- 
+ - 
+ - 
+ - 
+ - 
+ - 
+ - 
+
+ - 
+
+ - 
+ - 
+ - 
+
+ What Is an Employee Stock Option Pool? - - - 
+
+ - Home 
+- Business Hub 
+- AI Agents 
+- Customers 
+- Newsletters 
+
+ Startup Terms 
+
+ Market & Strategy 
+ - What Is TAM, SAM and SOM? Sizing a Market 
+ - What Is a Beachhead Market? 
+ - What Is a Wedge Strategy? 
+ - What Is an Unfair Advantage? 
+ - What Is Market Timing and Why It Matters for Startups? 
+ - What Is Category Creation? 
+ - What Is Hockey-Stick Growth? 
+ - What Is Blitzscaling? 
+
+ Funding & Investors 
+ - What Is a SAFE (Simple Agreement for Future Equity)? 
+ - What Is a Convertible Note? 
+ - What Is a Term Sheet? 
+ - What Is an Angel Investor? 
+ - What Is Venture Capital? How VC Funds Work 
+ - What Is a Seed Round? 
+ - Series A, B and C Funding Explained 
+ - What Is a Bridge Round? 
+ - What Is a Down Round? 
+ - What Is Due Diligence in Startup Investing? 
+ - What Is a Lead Investor? 
+ - What Is a Liquidation Preference? 
+
+ Equity & Ownership 
+ - What Is Vesting? Vesting Schedules and Cliffs Explained 
+ - What Is a Cap Table? 
+ - What Is Dilution? How Funding Rounds Change Ownership 
+ - Pre-Money vs Post-Money Valuation Explained 
+ - What Is an Employee Stock Option Pool? 
+ - Stock Options vs RSUs: Key Differences 
+ - What Is Founder Equity? 
+ - What Are Pro Rata Rights? 
+
+ Startup Ecosystem 
+ - Accelerator vs Incubator: What Is the Difference? 
+ - What Is a Unicorn Startup? 
+ - What Is an Acqui-Hire? 
+ - What Is a Demo Day? 
+ - What Is Corporate Venture Capital? 
+ - What Is a Startup Ecosystem? 
+ - What Is an IPO? How Companies Go Public 
+ - What Is a Venture Studio? 
+
+ Growth Metrics 
+ - What Is Burn Multiple? 
+ - What Is the SaaS Magic Number? 
+ - What Is the SaaS Quick Ratio? 
+ - What Does Default Alive Mean? 
+
+ What Is an Employee Stock Option Pool?
+ By Brian Tr · Updated Oct 3, 2026 
+
+ Turn this article into takeaways for your work.
+
+ Summarize with ChatGPT 
+
+ Summarize with Claude 
+
+ Each assistant summarizes the article only for you and suggests best practices for your work.
+
+ An employee stock option pool is a block of a company's shares that's reserved for future grants of stock options (and sometimes other equity awards) to employees, advisors and other service providers. Cooley GO defines it as shares of stock reserved for issuance to service providers under options and other equity incentives. The pool isn't owned by anyone yet. It's a reserve that the board draws down as people are hired or promoted.
+
+ Founders run into the option pool at a very specific moment: the term sheet for a priced round. Investors usually want the pool sized and in place before they invest, and the way that's written can quietly change what a "valuation" is worth to the people already holding shares. That is what the "option pool shuffle" refers to, and we'll work through the arithmetic below.
+
+ This is reference material, not legal or tax advice. Terms, tax rules and securities law vary by jurisdiction and by deal, so have counsel and a tax adviser review any real plan or term sheet.
+
+ Why Companies Create an Option Pool
+
+ Early-stage companies can rarely match big-company salaries. Options let a hire share in the company's upside if it's later sold or goes public, which is the trade Cooley GO describes in its definition of the pool. The pool exists so the company can promise that upside without issuing new shares and amending its charter every time it hires someone.
+
+ In practice the pool does three jobs:
+
+- Recruiting. Offers can include a number of options alongside salary.
+
+- Retention. Options vest over time, so staying has a financial reward.
+
+- Planning. A reserved number of shares forces the founders and the board to think about how many hires the next stage requires.
+
+ The pool is usually created by a board resolution and a stock plan, and increasing it typically needs stockholder approval. Venture financings are the usual moment when it's expanded, per the same Cooley GO glossary entry.
+
+ How Big Should the Pool Be?
+
+ There's no fixed formula. Cooley GO's guidance on negotiating the option pool says investors may think a 20% pool is "standard" for a Series A company based on their experience with other startups, and recommends building an option budget instead. The budget starts from the hires needed over roughly the next 12 to 18 months to hit the operating plan presented to investors, and it usually produces a pool that's frequently lower than the abstract percentage investors think they need.
+
+ So, rather than quoting a "typical" percentage, think of pool size as the output of a hiring plan:
+
+- List the roles you expect to fill before the next financing.
+
+- Assign each a rough equity grant, based on seniority and market practice.
+
+- Add the grants up, add a small cushion, and express the total as a percentage of the company after the round closes.
+
+ Any figure you see quoted as normal for seed or Series A is an average of other people's deals. Your own plan is the better anchor.
+
+ The Option Pool Shuffle: Pre-Money vs Post-Money
+
+ The size of the pool matters less than where it sits in the math. Cooley GO explains that most investors require the full post-closing pool percentage to be treated as part of the pre-closing capitalization when calculating their price per share, which means it only dilutes existing holders and not the new investors' shares. That's the shuffle. The headline pre-money valuation stays the same, but the effective pre-money value for existing holders drops.
+
+ Y Combinator's post-money SAFE user guide draws a similar line for SAFEs. It explains that the post-money valuation cap is "post" the options and option pool that exist before the equity financing, but isn't "post" the new or increased pool adopted as part of that financing. You can read the wording in the YC documents .
+
+ A Worked Example (Illustrative)
+
+ The numbers below are made up to show the mechanics. They aren't data from any real company.
+
+ Assume existing holders (founders and early team) own 8,000,000 shares and there's no pool yet. An investor offers $2M at an $8M pre-money valuation, so the post-money valuation is $10M and the investor expects 20%. The investors also want a 10% unissued pool, measured on the post-closing capitalization.
+
+ Scenario A: the pool is in the pre-money (the shuffle). After closing, the investor holds 20%, the pool holds 10%, and existing holders get what's left: 70%.
+
+- Total post-closing shares: 8,000,000 / 0.70 = about 11,428,571
+
+- Pool: 10% = about 1,142,857 shares
+
+- Investor: 20% = about 2,285,714 shares
+
+- Price per share: $2,000,000 / 2,285,714 = $0.875
+
+ Existing holders' 8,000,000 shares are valued at 8,000,000 x $0.875 = $7M. The "$8M pre-money" turned into a $7M effective pre-money for them.
+
+ Scenario B: the pool is created after the investment (post-money). The investor buys 20% of the company first, at $1.00 a share (2,000,000 new shares into 10,000,000 total). Then the pool is added so it equals 10% of the final total, which dilutes everyone, including the investor.
+
+- Final total: 10,000,000 / 0.90 = about 11,111,111 shares
+
+- Pool: about 1,111,111 shares (10%)
+
+- Investor: 2,000,000 shares, which is 18%
+
+- Existing holders: 8,000,000 shares, which is 72%
+
+ Metric 
+ A: pool in pre-money 
+ B: pool after investment 
+
+ Price per share 
+ $0.875 
+ $1.00 
+
+ Existing holders own 
+ 70% 
+ 72% 
+
+ Investor owns 
+ 20% 
+ 18% 
+
+ Pool 
+ 10% 
+ 10% 
+
+ Effective pre-money value to existing holders 
+ $7M 
+ $8M 
+
+ The pool is the same size in both cases. What changes is who pays for it. In practice, term sheets land somewhere between these two ends, and the investor's target ownership is often what's negotiated. Treat the example as a way to see the lever, not as a market benchmark.
+
+ Key Facts: Employee Stock Option Pool 
+
+- An option pool is a reserve of shares set aside for future option grants to employees, advisors and other service providers ( Cooley GO ).
+
+- Most investors treat the post-closing pool as part of the pre-closing capitalization, so it dilutes only existing holders ( Cooley GO ).
+
+- In the illustrative example above, a 10% pool in the pre-money turns an $8M headline into a $7M effective pre-money for existing holders.
+
+- A common vesting convention is four years with a one-year cliff, then monthly vesting ( WilmerHale ).
+
+- Under the US tax code, an incentive stock option can't have a strike price below fair market value at grant ( 26 U.S.C. 422 ).
+
+- Pool size should come from a hiring plan, not a rule of thumb.
+
+ Vesting: How Options Are Earned
+
+ Options aren't usable all at once. They vest, meaning the holder earns the right to exercise them over time. WilmerHale's startup practice describes the usual convention in its piece on founder stock vesting : a four-year schedule with a one-year cliff, so 25% vests after one year, followed by month-to-month vesting for the remaining three years. That article is written about founder stock. Employee option grants often follow a similar pattern, but the actual schedule is set by each company's plan and grant agreement, and it varies.
+
+ A one-year cliff means someone who leaves in month eleven vests nothing. After the cliff, each month adds a slice. Unvested options usually return to the pool when someone leaves, which is part of why a pool can be recycled.
+
+ Strike Price and 409A
+
+ An option gives the holder the right to buy shares at a fixed price, called the strike price or exercise price. For the option to be worth something, the shares need to be worth more than the strike when it's exercised.
+
+ Strike price isn't a free choice. For a non-qualified option to stay outside the US deferred compensation rules, Treasury regulation 26 CFR 1.409A-1 says the exercise price may never be less than the fair market value of the underlying stock on the grant date, and the number of shares must be fixed at grant. For private companies, the same regulation sets out a presumption of reasonableness for certain valuation methods, including an independent appraisal that's no more than 12 months old at the time it's applied. The regulation also lets the IRS rebut that presumption if the method or its application was grossly unreasonable.
+
+ That's why US startups commonly commission an independent valuation, often called a 409A valuation, before granting options and refresh it after a financing or other material event. The valuation of common stock is usually lower than the preferred price investors pay, since preferred carries extra rights like a liquidation preference .
+
+ ISOs vs NSOs
+
+ US options come in two tax categories.
+
+ Incentive stock option (ISO) 
+ Nonstatutory stock option (NSO) 
+
+ Who can get them 
+ Employees only 
+ Employees, advisors, contractors, directors 
+
+ Tax at exercise 
+ Generally no regular income tax; may trigger alternative minimum tax 
+ Spread (fair market value minus exercise price) is generally taxable at exercise when value isn't readily determinable 
+
+ Tax at sale 
+ Generally capital gain if holding requirements are met 
+ Capital gain or loss on later change in value 
+
+ Dollar cap 
+ $100,000 of stock first exercisable per year 
+ None 
+
+ The IRS summary on stock options says that for an ISO you generally don't include any amount in income when you receive or exercise the option, that it can be subject to alternative minimum tax in the year of exercise, and that special holding periods apply. For NSOs without a readily determinable value, it says the spread is taxed at exercise. The statute behind ISOs, 26 U.S.C. 422 , adds the conditions: the option price can't be below fair market value at grant, the option can't be exercisable after ten years, and options first exercisable in a calendar year above $100,000 in stock value are treated as non-ISOs. There's also a special rule for holders of more than 10% of voting power.
+
+ Employees outside the US face different rules, and many countries tax options differently. Get local advice before designing a plan for an international team.
+
+ Refreshes: Topping the Pool Up Later
+
+ A pool is finite. As the company hires and grants options, the unissued part shrinks, and investors in the next round often ask for it to be topped up. That top-up is called a refresh. It usually happens in the same pre-money position as the original, so the same shuffle logic applies each time.
+
+ A few practical habits help:
+
+- Track the unissued pool , not just the total. A pool that's 10% on paper but already 80% granted gives little room.
+
+- Use a hiring plan to justify the refresh size, as Cooley GO suggests for the initial pool.
+
+- Model each refresh in the cap table before agreeing to a term sheet, so you see the dilution for founders before it happens.
+
+ Common Mistakes
+
+- Negotiating valuation only. A higher headline price with a large pre-money pool can leave existing holders with less than a lower price and a smaller pool.
+
+- Sizing from a rule of thumb. A percentage borrowed from someone else's deal isn't a hiring plan.
+
+- Granting options without a current valuation. In the US, a strike price below fair market value can create tax problems for the option holder.
+
+- Ignoring departures. Unvested options from people who leave should return to the pool, so check the plan allows it.
+
+- Treating the pool as free. Every granted option dilutes everyone else when exercised, so each grant is a cost.
+
+ How It Relates to Other Terms
+
+- Valuation . The headline number. The pool shuffle shows why the effective value to existing holders can differ.
+
+- Down round . A lower-priced round can leave options underwater, which makes refreshes and re-pricing harder conversations.
+
+- Lead investor . Usually the party that sets pool size in the term sheet.
+
+- Pre-money and post-money. The two framings that decide who bears the dilution.
+
+ Frequently Asked Questions about Employee Option Pools
+
+ What is an employee stock option pool? 
+
+ It's a block of shares reserved for future option grants to employees, advisors and other service providers. The shares aren't owned by anyone until granted, and the board draws them down as it hires.
+
+ What is the option pool shuffle? 
+
+ It's the practice of counting the post-closing option pool as part of the pre-closing capitalization when pricing a round. The headline pre-money valuation doesn't change, but the effective pre-money value to existing holders falls, because only they absorb the pool's dilution. In the illustrative example above, an $8M headline became $7M.
+
+ How big should an option pool be? 
+
+ It depends on the hiring plan. Cooley GO recommends building an option budget from the hires needed over the next 12 to 18 months rather than accepting a percentage because an investor calls it standard.
+
+ What does a four-year vesting schedule with a one-year cliff mean? 
+
+ Nothing vests for the first year, then 25% vests at the one-year mark, and the rest vests monthly over the following three years. It's a common convention, but each company's plan sets its own terms.
+
+ What's the difference between ISOs and NSOs? 
+
+ ISOs are available to employees only and get special US tax treatment if holding requirements are met, but are limited to $100,000 of stock first exercisable per year. NSOs can go to employees and non-employees and are generally taxed on the spread at exercise.
+
+ What is a 409A valuation? 
+
+ It's an independent valuation of a private company's common stock used to set option strike prices. Treasury regulations set a presumption of reasonableness for an independent appraisal no more than 12 months old, which is why US startups usually refresh it after a financing.
+
+ Related Reading
+
+- What Is a Cap Table? 
+
+- What Is Equity Dilution? 
+
+- What Is Founder Equity? 
+
+- What Is a Liquidation Preference? 
+
+- What Is a Down Round? 
+
+- What Is a Lead Investor? 
+
+- Valuation 
+
+- Seed Stage Startup 
+
+ About the author
+
+ Brian Tr 
+ Co-Founder & COO
+ Brian Tr is Co-Founder and COO of Rework, with 12+ years in B2B go-to-market and operations. Brian scaled Rework from 0 to 10,000+ B2B customers across CRM and productivity tools. Brian writes for founders and owner-CEOs: startup fundamentals, founder-led and family businesses, partnerships, and how SaaS, marketplace, AI and EdTech companies grow.
+ View full profile 
+ LinkedIn
+
+ Brian Tr 
+ Co-Founder & COO
+
+ On this page
+
+ - Why Companies Create an Option Pool 
+- How Big Should the Pool Be? 
+- The Option Pool Shuffle: Pre-Money vs Post-Money 
+- 
+ A Worked Example (Illustrative) 
+- Vesting: How Options Are Earned 
+- Strike Price and 409A 
+- ISOs vs NSOs 
+- Refreshes: Topping the Pool Up Later 
+- Common Mistakes 
+- How It Relates to Other Terms 
+- Related Reading 
+
+ error-ui

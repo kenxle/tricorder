@@ -1,0 +1,178 @@
+SOURCE: https://thedataroom.substack.com/p/how-a-vc-does-due-diligence-on-your-company
+
+How a VC Does Due Diligence on Your Company 
+
+ The Data Room 
+
+ Subscribe Sign in 
+
+ How a VC Does Due Diligence on Your Company
+ The investment memo I built before writing a check, what I was actually looking for, what won or lost founders deals, and how VCs make their final decision.
+
+ Jonathan Hua 
+ Sep 23, 2026 
+
+ 8
+
+ 2
+
+ Share
+
+ We spent the last month going through some of the most important documents that will make or break your fundraising process like the one-pager, the term sheet, the cap table, and the pitch deck. But why do founders need to spend weeks or even months building out these files? Simply put: to survive the scrutiny of a due diligence process . This entire time we’ve been talking about one side of the proverbial fundraising table, the operators. Now let’s switch seats and talk about the other side, the investors. 
+ I built due diligence decks for years, first at SVG Ventures-THRIVE, then at Scrum Ventures, primarily evaluating early-stage opportunities. In this article, I’ve decided to walk through the investment memo template I used, section-by-section, to give founders an inside look at how VCs are thinking about your company through a diligence process. I wouldn’t say this memo template is revolutionary at all, but it’s certainly more detailed than the average VC memo. The memos I used to write felt like they were on the more extreme side of the length spectrum (sometimes ~100 slides long), but I’ve seen memos from other firms be as short as a 2-page word doc, and as long as a book. Regardless of the length or the format, every investment memo boils down to a single argument: whether to invest or not. As an investor, my job was to build the most honest case for AND against investing, in the same document, and then defend the entire thing to Partners who would make the final decision at IC (investment committee). 
+ Some of what’s below is information you’d never see as a founder. I want to help you unwrap some of the mystique around how a fund scores your deal against the four other deals on the docket that week and what has to be true for the memo to clear IC. I’m including those parts on purpose, because the conversation happening in my head while I read your deck is the conversation that actually decides whether you get a check, and most founders I know have never seen it from this side. To get the most out of this guide, follow along with the free template on my website jonathanhua.com/resources . 
+ Thanks for reading The Data Room! Subscribe for free to receive new posts and support my work.
+
+ Subscribe 
+
+ Section 1. Framing. 
+ This is the section a busy Partner will read right before they step into an IC meeting. If they don’t read any other part of the due diligence memo, they will almost certainly at least spend a few minutes going through this section to help inform the opinion they are developing in their head.
+ Summary. I write this section first and last. First, because forcing myself to synthesize an entire business into three lines, purpose, problem, solution , exposes whether I actually understand the business enough to explain it to others. Last, because my understanding of how the business works always changes throughout the course of a diligence process. If I can effectively say what a company does in one succinct sentence in as plain terms as possible, and the problem reads as a real, expensive pain point rather than just a nice-to-solve issue dressed up as a noble challenge, then I’m already ahead of the curve compared to how most other memos start. 
+ Executive Summary. Right under that sits the section built to fit two slides: the one-line thesis for why this company and why now, 3-5 key facts that I want to highlight to a Partner who only has time to skim through the exec summary, the round terms, and my recommendation. That compression is the whole discipline of the investment due diligence job. If I can’t say why a company deserves a check in one sentence, then I didn’t make a strong enough case and probably don’t have a strong enough conviction in the company. Here, I’m asking myself: what is the tightest version of the argument, and where is it weakest? 
+ Key Merits and Risks. This section examines what makes me want to invest, and what would make me kill the deal. This isn’t merely a formality. The discipline is forcing myself to write real risks, and sorting each one into one of two buckets: an existential risk , meaning something that ends the company outright if it goes wrong (a platform dependency that gets shut off, a regulatory change that guts the market), versus an execution risk , meaning something that slows the company down but doesn’t kill it (a slow sales hire, a delayed launch). Then I ask of each one whether it’s knowable now or only provable over time. Don’t be fooled by a thin risks column. All that signals is that somebody didn’t dig deep enough to actually care. 
+ Founder pitfall: treating every risk as an execution risk in conversation, even the ones that are actually existential. I notice immediately when a founder minimizes a structural threat by talking about it the way they’d talk about a hiring delay. 
+
+ Real example: confidential memos obviously don’t get published, but investors sometimes say in public roughly what they’d write in private, and Bill Gurley’s commentary around Benchmark’s 2011 Series A into Uber is as close as it gets. He pointed to a specific, checkable merit rather than a vibe: “the product is so good, there is no one spending hundreds of thousands of dollars on marketing.” A real Key Merits line sounds like that: a claim carrying its own number or mechanism, without relying on a string of superlatives. 
+
+ Since VC is an exercise in risk management, here’s what I’m actually asking myself while I build this section: what is the one risk that, if it goes wrong, makes everything else in this memo irrelevant? The goal is isolating the one that matters more than the rest combined. 
+ That question is also where the excitement I might be carrying into the room does the most emotional lifting. A deal that’s going well produces genuine attraction, and attraction is a real bias. It makes the risks column feel like a formality instead of the main point, makes a vague answer feel well formed, and makes me want the next reference call to confirm what I already hope is true. In reality, the Key Merits and Risks slide is more emotional than it is analytical. You’d be wise to understand that, and you can use that to your advantage in diligence meetings. 
+ Round Summary. The last piece of Framing is the outline of the mechanics of the round: amount, valuation, structure, lead, use of funds, our proposed check, etc. A template example makes it concrete: raising $6.0M as a priced Series A at a $30M pre-money, $36M post, with a named lead already committed and our proposed check at $3.0M for roughly 8%, buying about 24 months of runway. I want to see that the founder knows exactly what this round is for, what milestones it funds, and how this raise bridges them to their next major fundraising round (in this case, the Series B). A raise with no clear milestone is a raise to survive, and survival (or put more plainly, desperation) isn’t a story I can sell to my Partners. The question in my head : does this round get them to a milestone that justifies the next round at a higher price? 
+
+ Section 2. The Company. 
+ These three parts are a litmus test for whether the business is real, beyond the impression a company makes in a first meeting. 
+ Problem and Solution. I try to describe the problem in the customer’s own words, and quantify the status quo it’s replacing by outlining how things are currently done and why it no longer works. On this slide, a picture of the broken workflow beats a string of adjectives every time. Then, I hold the solution up against it and ask whether it’s an obvious win or just a marginal improvement. This is one of the slides that’s most informed by the conversation I’m having with a founder. I’m listening for whether they can walk me through a customer’s actual before-and-after picture, in specific enough detail that I can feel the customer’s frustration and then relief myself (as if I were there). The question in my head : is this a painkiller or a vitamin, and can they prove which? 
+ Customer Flow. This is the full journey, mapped step by step. 
+ Awareness : how a customer even hears about this, and whether that channel scales. 
+
+ Purchase : who actually pays and how long the decision takes. 
+
+ Usage : what they do day to day and where the moment of value lands. 
+
+ Retention and advocacy : why they stay and whether they bring others. 
+
+ I map the whole thing because the friction is never where the pitch says it is. The pitch shows the product while customer flow shows the adoption drop-offs. A founder who can walk me through the ugly middle steps, and not just the polished ends, is a founder who actually knows their own business.
+ Progress Since Last Round. This one section of the memo is deceptively simple: what did you promise in the last raise, and did you actually deliver. Here, I lay out the promised milestones next to the delivered ones, side by side, and analyze the gaps in between. This slide tells me more about a founder’s self-awareness than almost anything else in the memo. 
+ A founder who missed a milestone and says so plainly and honestly, with a real and appropriate explanation, earns more respect from me than a founder who claims to hit every number exactly as promised, but refuses to show the audit trail. A perfect record makes me suspect the targets got quietly rewritten after the fact. That’s not a good look. The question in my head : did they make good on the last round, and if they didn’t, do they own it? 
+
+ Section 3. The Market. 
+ This is the section I want to emphasize the most to founders. It is the section that gets read most carefully, if time allows, because the numbers here are the ones the industry inflates the most and the ones I trust the least at face value.
+ Competition. I rank competitors from most to least threatening, including the status quo and whatever internal spreadsheet or manual process the customer uses today, not necessarily just funded startups. A founder who says they have no competition has either not looked, or doesn’t understand the market at all. Both are red flags. The real question is why this company still wins once a well-funded incumbent finally notices them. 
+ Market Overview. I care more about direction and why-now than the headline size. A smaller market growing fast because of a real structural shift beats a huge market that has looked the same for a decade. I want to understand the growth drivers pushing the market up, the barriers holding it back, and at least one industry trend that answers “Why Now?” (instead of five years ago or five years from now). 
+ Market Size, Top-Down. This is the published, analyst-sized view, cited to a credible third-party source (usually some market research report from somewhere like IBISWorld or Pitchbook, etc.). A template example: an $80B TAM, a $21B SAM once you carve out the company’s actual wedge, and a $1.5B SOM once you get honest about what’s feasibly obtainable. I use top-down as a sanity check, never as the proof. A lone giant TAM number with nothing behind it reads as lazy and disingenuous, and I discount it instantly each time. Don’t forget to cite your sources. 
+ Market Size, Bottoms-Up. This is the number I actually trust, because it’s built from the company’s own pricing and pipeline instead of an analyst’s report. A template example makes the mechanics concrete: 40,000 realistic target customers within reach, x $3,600 in ACV each = a $144M obtainable market. That’s the number I underwrite. It’s usually smaller and more defensible than the top-down slide, which is exactly why I trust it more. This is the slide where I ask myself whether the market still big enough. 
+ Market Map and Segmentation. A market map shows positioning at a glance: the segments of the industry and which one the company actually owns, versus which one it’s hoping to grow into. I want to see the company own a defensible quadrant with a credible path to the next (open) one. Ten similar names crowded into the same quadrant is a weaker story, no matter how you slice and dice it. 
+ Industry Issues. Every industry has landmines. Examples include regulatory or compliance risks that could disrupt the entire business, adoption friction that slows customers down even when the product is better, or structural forces like channel power or incumbent lock-in working against the company from the outside. I list them plainly and note which ones the company controls and which are out of their control. Just be honest about your headwinds. Don’t make us find them ourselves and then wonder why you decided to hide them or nervously dance around them. 
+ Founder pitfall: presenting the top-down TAM as if it were the bottoms-up number, hoping nobody does the math to separate them. I always do the math. 
+
+ Section 4. The Product. 
+ This section moves in one direction across six parts, from what the product actually does today, down through how it’s built, what protects it, where it’s headed, and whether the unit economics hold up once you strip away the growth story.
+ Product: Functionality. I explain each core function in terms of the customer outcome it produces (the actual utility it produces for a real customer). I separate what’s already built today from what’s still unbuilt on the roadmap because founders often like passing off future features as currently live or in production, in order to make the product seem farther along than it actually is. The question in my head : what does this actually do today, and would a customer miss it if it disappeared from their operations tomorrow? 
+ Product: Architecture. I want to understand what’s genuinely proprietary versus what’s glued together from other people’s tools. Both can work as a business. They imply very different moats, and founders who don’t know the difference usually haven’t been pressure-tested on it yet. 
+ This is where I lean hardest on pattern recognition from actually sitting with hard technical problems years before the industry solved them. At THRIVE, Walt Duflock and I spent real time evaluating robotic strawberry-harvesting technology alongside Driscoll’s, and the honest conclusion, across every solution we looked at, was that none had reached a viable technology readiness level for commercial deployment at scale. That gap between how a pitch sounds and what the technology can actually do is the exact test I still run on any “hard tech” claim in a memo: whether the hard part is actually solved, or whether it just sounds hard in a controlled demo . 
+
+ Product: Research and Defensibility. I separate a unique approach from unique technology, because plenty of strong companies have neither a patent nor genuinely novel tech and still win on execution and a compounding data flywheel instead. I spell out plainly which kind of moat this is (i.e. patents, proprietary data, network effects) and how deep it actually runs. Founders call almost anything defensible. I want to know whether a well-funded competitor could rebuild it in a year. 
+ Product: Roadmap and Milestones. I read the roadmap for focus. A tight roadmap tied directly to revenue reads as a team that knows its priorities, and a sprawling one chasing every inbound customer request usually just means they haven’t figured things out yet (or are trying to boil the ocean). The order matters as much as the list: does the roadmap deepen the moat, or just widen the product’s surface area without making it harder to copy? 
+ Product: Unit Economics. I build this from the ground up: revenue per unit, cost of goods, gross profit, and how each line moves as volume grows. A template example: $12,000 in revenue per customer - $4,300 in cost of goods = $7,700 in gross profit, a 64% margin trending toward a 72% target as the cost side falls with scale, with an 11-month CAC payback that’s shortening. If the margins don’t improve as volume grows, the business doesn’t get better by getting bigger. That’s a fundamentals problem masquerading as a scaling problem, and the two get confused constantly. 
+
+ Product: Pricing. I look at whether the company anchors pricing to the value it delivers, or just to what competitors happen to charge. Pricing power, meaning room to raise the price without losing the customer, is one of the clearest signals of a real verifiable moat. A company that can’t raise its price is a company the market doesn’t yet truly need. Could they double the price tomorrow and keep most of their customers? That answer tells me more than the pricing page itself does. 
+
+ Section 5. Traction. 
+ I want the trend, not a snapshot, and I want to know which dollars are proven (and in the bank) and which are still just based on hope.
+ Sales: Revenue Pathways. I break out every distinct way the company earns and how each stream actually works: a template example is 70% from core subscription revenue, proven, 20% from services and implementation, also proven, and 10% from a usage-based platform layer that’s still a hypothesis. I flag plainly which streams are real today versus which belong on next year’s slide instead of this one. 
+ Sales: Traction. I want revenue and growth shown over time, monthly or quarterly across at least four to six months, and never as a single cumulative total. Cumulative charts are where founders hide a slowing month, because the line only ever goes up even when the pace underneath it is falling. I pull out the three to five numbers I’ll actually repeat to my Partners: a template shape is something like 18% month-over-month growth over the last six months, 121% net revenue retention, and under 2% monthly logo churn. Retention and repeat usage are the truest signal of product-market fit I have. 
+
+ Sales: Customer Pipeline. Pipeline tells me whether the next few quarters are real or hopeful, and I discount it heavily by stage, because early-stage pipeline is mostly optimism, formatted to look like a forecast. I want coverage well above the target, several multiples of it, because most of what’s in the pipeline today won’t close on the timeline the plan assumes. 
+ Sales: Customer Deep-Dive. One real customer case study, told in full detail, is worth more than ten logos on a slide. I want the whole account: the problem they actually had, the alternatives they rejected and why, the deal terms, and whether the relationship is expanding or flat. This is also where customer concentration shows up as a real risk worth naming on its own: a single customer worth 40% of revenue raises the big question of what happens to this company if that one relationship goes sideways. Concentration rarely kills a deal by itself. It reliably earns a much sharper set of follow-up questions than I’d otherwise ask. The question in my head : is this customer a template for the next hundred, or a lucky, unrepeatable one-off? 
+
+ Section 6. Financials. 
+ This is the section, in three key parts, where the story either reconciles with the paper trail or it doesn’t, and where I’ve learned to read a messy cap table as a character question as much as a math question.
+ Financials: Historical. I read the historicals to check that the story and the numbers tell the same tale. When the pitch and the P&L disagree, the P&L wins, every time, no exceptions. I look at burn against progress: a team that did a lot on a little earns real trust, and a team that burned a lot to produce very little earns uncompromising scrutiny. Capital efficiency is a true virtue in managing a business. 
+ I take this section unusually seriously because I’ve sat on the other side of it. As Head of Investor Relations at GrubMarket, I had to build financial models that held up to Tier-1 banking standards ahead of an IPO-readiness push, and be able to explain the model line by line and defend every single number in the file, not just the top-line story. That experience is exactly what I’m listening for when a founder walks me through their own numbers. Can a founder defend the specific line item, the way a banker would ask them to, or only recite the headline story off of a script furnished by their finance lead?
+
+ Revenue Model and Projections. I ignore the polish of the model and go straight to the two or three assumptions that actually drive everything. A template example: a plan that takes revenue from $5M to $13M to $30M over three years is really a bet on rep productivity holding at plan, pipeline coverage staying at roughly three times the target, and gross margin climbing from 66% to 73% as cost of goods falls with scale. I pressure-test those specific assumptions, because a projection is only as honest as its inputs. I want to be able to understand how the plan breaks if the two most important assumptions are wrong. 
+ Cap Table. I want a clean, fully diluted cap table where the founders still own enough to stay hungry and incentivized for a decade of grinding. This is also where the data room tells me whether the story matches the paper trail, more than anywhere else in the memo. A deck that claims 55% founder ownership and a cap table that shows 48% fully diluted registers as the first real crack in credibility, and is far more damaging than a simple rounding error would be. Once I’ve found one discrepancy, I read everything after it more skeptically, actively looking for the next one. 
+
+ A few patterns show up often enough in cap tables that I’ve learned to read them as tells about the founder more than as isolated entries in a spreadsheet. Co-founder ownership below 40% at Series A usually traces back to one of three things: aggressive early fundraising, a large advisor grant nobody negotiated hard on, or a co-founder buyout that happened behind the scenes. Key personnel with almost no equity , like a VP of Engineering holding 0.1% fully diluted at a company raising a Series C, is a huge retention risk I’ll price into the term sheet whether the founder addresses it or not. Advisor equity that never got attached to deliverables , such as eight advisors holding 2% each with vesting schedules that already expired, signals a judgment problem more than a cap table problem. Don’t make me start wondering what else you’ve let slip through the cracks. 
+ None of these individually kill a deal. What kills a deal is a founder who, when I raise one of these, gets defensive instead of specific. And underneath the analysis, there’s a real feeling attached to this section that I don’t pretend isn’t there: the moment something doesn’t reconcile (i.e. the cap table that doesn’t match the deck), it produces a specific kind of sharp feeling of dread because it means the story I was starting to believe might not hold, and now I have to find out how much of it doesn’t.
+
+ Section 7. The Team. 
+ This section is pretty self-explanatory, but it’s one of the sections Partners care about the most because at the early stage, I’m betting on the team more than the idea. The idea will change. The team is the constant behind it.
+ Team. I look for founder-market fit: the unfair edge or lived experience that makes these specific people right for this specific problem, not just qualified in general. I heavily weigh how they’ve handled adversity about as much as their pedigree from their resumes. Their resume only tells me what they’ve already done, while adversity tells me what they’ll do when things inevitably get tough. 
+ My conversations with the founder heavily inform how I build this slide. Here, I’m listening for whether founders know their own weakest number cold, or whether they get vague exactly at the moment I’d expect a founder who truly knows their business to get specific. A founder who says “our biggest risk is X, and here’s what we’re doing about it” before I ask has just done more for their round than an hour of polished slides. Vague or defensive responses read as evasion, even when they aren’t, and kill whatever relational momentum gets built up from the rest of the diligence process.
+ The question in my head : is there a real reason it has to be these founders, or could reasonably capable people do this instead? 
+
+ Section 8. The Return. 
+ The tone and focus of the memo shifts here. It stops being about the business as it exists today and starts being about what the fund actually gets back if everything works out the way we hope it does.
+ Exit. I rank likely acquirers by two things: 1) why they’d actually want the company (i.e. filling a product gap, buying the team, consolidating a fragmented category) and 2) precedent transactions, meaning actual deals that already happened in the space, and at what multiple. Acquisition is the far more common outcome, and the memo should be honest about that rather than leaning on an aspirational IPO slide. 
+ Founder pitfall: naming an acquirer with no real strategic logic attached, such as saying “Google could buy us,” with nothing connecting the product to a gap Google actually has. I’ve heard some version of this exact sentence from a dozen different founders about a dozen different companies. It’s empty and careless. 
+
+ Return Analysis. This is where EV/Revenue , or enterprise value divided by revenue, does its work. The revenue multiple is the yardstick that lets me compare exit outcomes across companies of very different sizes on the same scale. I pull comparable exit multiples for the category (mostly publicly-traded companies with easily accessible info, or private companies I can reasonably analyze), strip out the outliers, and anchor the base case somewhere in what’s left. A template example makes this easier to understand: five comps exit at 4x, 6x, 9x, 12x, and 26x EV/Revenue. The 26x is an outlier, most likely a company with a genuinely unusual growth rate or strategic premium. Strip it out and the remaining comps cluster from 4x to 12x. I anchor the base case around 8-9x, the middle of that range rather than a false-precision average. At a realistic six years to exit, that multiple applied to a reasonable revenue projection is what turns a company into a number I can actually underwrite and model to the Partners. 
+
+ Valuation. This slide works backward from the return math on the previous slide to today’s price. I build three scenarios: base, bull, and bear. In a base case, an entry at $30M pre-money against an exit revenue of $120M at a 9x multiple returns roughly 9x on the investment. In a bull case, the same $30M entry against $300M exit revenue at 10x returns roughly 24x. In a bear case, $30M against $40M exit revenue at a compressed 5x multiple returns roughly 1x, essentially a wash. Keep in mind that all of this is after expected dilution from later rounds. The question in my head : is the entry price low enough to survive the mistakes this company will inevitably make? Every fund is quietly measuring your round against a fund-returning outcome , meaning a single investment whose proceeds alone could return the entire fund to its own investors. Not every check has to hit that bar, but every Partner in the room runs that math whether they say so or not. 
+ Founder pitfall: treating valuation as a negotiation over ego instead of a negotiation over the return math both sides are running in the background. Founders who understand roughly how an investor is modeling the exit negotiate very differently than founders who only blindly know their own biased number. 
+
+ Reference Calls. This is the section I trust the most, because it’s what people say when the founder isn’t in the room. Customer references confirm or deny the value the pitch claims. Founder references, people who worked with them before, tell me how they behave under pressure and with people who don’t answer to them. Domain experts tell me whether someone who actually knows the space believes the timing is right. The question in my head during every one of these calls: what do people say when they think it can’t get back to the founder? A founder who’s built real trust gets references that sound consistent with the pitch. One who’s been managing perception instead of building it usually doesn’t, and the gap is obvious inside the first two minutes of the call. 
+ Founder pitfall: only offering references who are direct beneficiaries of your success, an investor, a close friend, a subordinate. I always ask for at least one reference outside the people you’d naturally choose. 
+
+ There’s a real tension that lives inside this section, in the seconds right before someone picks up the phone. I’ve had calls flip my recommendation mid-conversation, and unwinding conviction I’d already started building is genuinely uncomfortable. I just wanted to put that out there because I don’t want to pretend that a due diligence process is purely mechanical the whole way through. My opinion can be swayed at any point in the process, even (or especially) at the very end.
+
+ Section 9. The Decision. 
+ Founders almost never see this section. This section covers how I stop evaluating the company on its own and start testing it against everything else competing for the same limited amount of dollars we are deploying.
+ Alternative Investments. I lay this deal next to the two or three most comparable deals I’m seeing at the same stage, and I have to answer, honestly, why this one is a better use of the fund’s capital and my own attention than the others. This is opportunity cost , made explicit: every dollar and every hour I spend on your company is a dollar and an hour I didn’t spend on the next best deal on my desk. A great company can still lose to a slightly better one that showed up the same month. 
+ Fund Support and Value-Add. This is where I have to stop making generic promises and name something I can actually help with (i.e. what do I bring to the table as an investor other than just $) like three specific warm intros to named enterprise buyers, a real hiring pipeline for the next two GTM hires, or two later-stage funds already lined up for the follow-on round conversation. That last one matters more than founders realize: funds hold reserves , capital set aside specifically to keep investing in their existing portfolio companies at later rounds, and how much reserve capacity a fund has left for you is a real signal of how much conviction they actually have in your business. Vague promises here (”we’ll be helpful”) are a tell that the fund hasn’t actually thought through what it brings besides the check. These tend to be pure financial investors, and not folks who will meaningfully elevate your company through any value-add support. There’s a time and place for financial investors, but at the earlier stages, you want to optimize for investors who punch above their weight and go to bat to help their portfolio companies succeed. 
+ Diligence Checklist. The checklist itself is a data point. Every document requested gets tracked: received, or still outstanding. What’s still missing after multiple requests is rarely benign. The question in my head : what did they resist handing over, and why? A founder who’s slow on IP assignments or security documentation because the company genuinely hasn’t gotten to it yet is different from a founder who’s slow because the answer is uncomfortable. I usually can’t tell which from the outside, and that ambiguity itself becomes something I have to underwrite. 
+ Requirements for Next Stage. Before the recommendation goes to the Investment Committee, one more section forces another thought exercise: what has to be true, in concrete terms, for this company to earn its next round. But it can’t sound too aspirational. These need to be specific milestones like a revenue number, a retention threshold, or a proof point. This is the section that keeps a fund honest about what it’s actually underwriting, because it’s the same list I’ll come back to in eighteen months to check whether the thesis held. 
+ Business Summary and Final Risks. The memo ends where the executive summary began, but heavier. A clean, complete summary of the business as I now understand it, a final risk register with the risks I’m choosing to accept and my mitigation for each, and a recommendation. Underneath all the structure, the entire memo is really answering one question, and I try to hold myself to answering it honestly: knowing everything I now know, would I put my own money in? 
+ That question carries a weight founders never see, because they never see the room it gets asked in. It’s the specific vulnerability of standing in front of Partners whose whole job is finding the hole in your argument, and defending a recommendation you know isn’t certain. The question has to survive being said out loud, to people who will remember many years from now if you were wrong.
+
+ What actually wins and loses founders points 
+ Pull back from the individual sections and a few patterns hold across almost every memo I’ve built.
+ Wins points: 
+ Naming your own weakest number before I find it. 
+
+ A reference who describes you the same way you describe yourself. 
+
+ Missing a milestone and explaining exactly what you learned from missing it. 
+
+ Answering a hard question with a number instead of a narrative. 
+
+ Documents that arrive complete and organized, because that’s a preview of what working with you looks like after the check clears.
+
+ Loses points: 
+ Getting defensive when a real risk gets named. 
+
+ A cap table that doesn’t reconcile with the deck. 
+
+ References that sound like they’re reading from a script you gave them.
+
+ A market slide with no math behind the headline number. 
+
+ Silence, or vague deflection, on the documents that took the longest to arrive.
+
+ None of this is about being perfect. I have never built a memo with a clean risk column, and I’d distrust one that had it. What I’m actually underwriting is whether the founder is a reliable narrator of their own company. Due diligence is an exercise in de-risking a company. The sooner you know that, the easier it is to see due diligence as a collaborative process rather than an interrogation that works against you. Most investors who go through an entire painstaking due diligence process truly want to back you, so don’t make it harder for them to make the case than it needs to be. 
+ The full VC Diligence Memo template that this article is based on is free at jonathanhua.com/resources. 
+ Thanks for reading The Data Room! This post is public so feel free to share it.
+
+ Share 
+
+ 8
+
+ 2
+
+ Share
+
+ Discussion about this post
+ Comments Restacks 
+
+ Top Latest Discussions 
+
+ No posts
+
+ Ready for more?
+
+ Subscribe 
+
+ © 2026 Jonathan Hua · Privacy ∙ Terms ∙ Collection notice 
+ Start your Substack Get the app 
+
+ Substack is the home for great culture

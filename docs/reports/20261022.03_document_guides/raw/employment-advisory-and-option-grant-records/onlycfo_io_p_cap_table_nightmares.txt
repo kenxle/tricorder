@@ -1,0 +1,297 @@
+SOURCE: https://www.onlycfo.io/p/cap-table-nightmares
+FETCHED: 2026-10-22
+
+- 
+
+ Most Common Cap Table Issues - OnlyCFO's Newsletter 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ OnlyCFO’s Newsletter 
+
+ Subscribe Sign in 
+
+ Cap Table Nightmares
+ The most common cap table issues, how to fix them, and how to avoid them.
+ Sep 14, 2025 
+
+ 52
+
+ 3
+ 5
+
+ Share
+
+ Spend smarter and move faster with Brex , today’s sponsor. 
+
+ CFOs finally get speed AND control. 
+ Control usually means red tape, speed usually means chaos. CFOs have been forced into that tradeoff for too long. Brex rewrites the rules: expenses flow in real time, categorized automatically, with full visibility baked in. It’s why 30,000+ global businesses, including 250+ public companies, trust Brex’s intelligent finance platform to spend smarter and move faster. Join them in breaking the tradeoff . 
+ Spend Smarter with Brex 
+
+ The Most Common Cap Table Issues 
+
+ The above scene from Silicon Valley, the TV show, is exactly what happens to many founders/CFOs during diligence.
+ Peter Gregory (the VC) shouts “ What did I buy ?”. Peter then told Monica (his VC associate) “This is going very poorly. He doesn’t seem to know what he is doing” 
+ Richard didn’t know what a cap table was so he went to Wikipedia to find out.
+ I have seen some truly terrifying cap table mistakes. The kind that would literally haunt my dreams if I was the one responsible for them.
+ Some things don’t matter if you wait to clean up, but cap table issues almost always get worse the longer you wait. If you are a founder, in-house legal, CFO, HR, etc….you will want to read this and make sure you don’t have these hidden disasters waiting to show up at the perfectly wrong time.
+ These issues are VERY painful to fix and your employees/investors won’t be happy…
+ I asked my favorite in-house legal counsel to write a guest post on this topic: the most common cap table issues, how to avoid them, and how to fix them if they’ve already happened. 
+ »Subscribe to OnlyLawyer for all the important legal stuff in tech. 
+
+ Cap tables are supposed to be simple: who owns what, how much, and under what terms. Instead, too many look like a middle-school science fair project with messy spreadsheets, half-finished notes, and a “trust me, it’s accurate” shrug from finance. 
+ The mistakes never surface at a convenient time. They surface: 
+ - During diligence , when potential acquirers are poking holes in everything. 
+
+- During financing rounds , when “oops” suddenly means a down-round. 
+
+- Or worse, when an early employee calls HR furious that their “1% ownership” doesn’t actually exist. 
+
+ The usual suspects?
+ - Phantom grants : promised but never board-approved. 
+
+- Stale valuations : options priced off last year’s 409A 
+
+- Zombie exercises : employees “exercising” expired options. 
+
+- Spreadsheets from hell : multiple versions, none trustworthy. 
+
+ Every one of these mistakes turns into late-night calls, angry investors/employees, and a legal bill that reads like a ransom note.
+ The GC (or CFO) who prevents these disasters is the adult in the room that keeps the company from looking like it was founded in a dorm room (even if it was).
+ Disaster #1: The Phantom Grant 
+
+ How it happens: Usually happens because 1) an admin error causes a grant (or batch of grants) to not get included on the list that the board approves or 2) a founder promises equity but never formalizes it. Maybe there’s an email. Maybe it’s written on a bar napkin. But it’s not approved by the board. 
+ What’s wrong: No board approval = no grant. The equity is as real as a participation trophy. The board can only grant stock options at the current fair market value (FMV), so simply granting the stock options later isn’t a solution when the FMV increased 100x. 
+ Mini-case: A Series B company discovered, mid-diligence, that three engineers thought they had 1% each. The CEO had “promised it.” The board had not. Cleaning it up meant issuing new grants at higher strike prices. The engineers were furious, the investors were spooked, and the GC spent two months acting like a marriage counselor. 
+ The fix: In theory, it’s simple: no board approval, no grant. But in practice, phantom grants slip through all the time. Maybe the CEO said yes, maybe HR added it to the cap table, maybe the employee even exercised before anyone realized the board never blessed it. 
+ Now what? You’ve got a menu of imperfect fixes: 
+ - Re-grant at current FMV. Clean on paper, brutal in reality. If the valuation has jumped, the employee gets fewer options and feels shortchanged. 
+
+- Top-up grants. Give more options to make the math work. The employee is happy (maybe). Everyone else is diluted. (Good luck explaining that at the next board meeting.) 
+
+- Restricted Stock Awards (RSAs). Can patch past mistakes, but come with quirky tax consequences that can also be a nightmare. 
+
+- Cash Bonus : Give some cash to make up for potential tax consequences and/or change in FMV. 
+
+- Advisory role workaround. If the employee already left, you can sometimes re-engage them as an “advisor” and issue equity that way. Creative? Yes. Elegant? Absolutely not. 
+
+ The ugliest scenario: The grant was never approved, the options were exercised, and the employee already left. Now you’re in refund-and-make-whole territory. That usually means returning the exercise money and paying out some version of the “lost” value…sometimes via bonus, sometimes via settlement, sometimes via gritted teeth. 
+ Legal obligation? Not always. Practical obligation? Unless you enjoy lawsuits and Glassdoor reviews titled “Company Promised Me Monopoly Stock,” you’ll probably need to make them whole. 
+ Disaster #2: The Stale Valuation 
+
+ How it happens: Options are issued using an expired 409A valuation. Usually it’s not malice or stinginess. It’s just that nobody remembered the “12 months or post-financing” rule. The valuation sat there like old yogurt in the back of the fridge, and someone kept serving it anyway. 
+ What’s wrong: If your strike price is below FMV, it’s a Section 409A violation. Translation: the IRS shows up, employees owe surprise taxes and penalties, and suddenly “stock options” sound less like a perk and more like a punishment. 
+ Mini-case: A company used a January 2025 409A for June 2025 option grants. In February 2025, they closed a $40M Series C, but the company forgot they needed to refresh the 409A. The IRS found out. Employees got tax bills they didn’t expect… 
+ The fix: Stale 409As are different from phantom grants. Those never existed. These existed but they were wrong. Here’s how cleanup usually works: 
+ - Cancel & re-grant: The board cancels the invalid options and issues new ones at the correct FMV. Clean, but painful if the valuation jumped. 
+
+- Make employees whole: To soften the blow, companies may add extra options, issue RSUs, or grant a cash bonus (“gross-up”) to cover the tax mess. Expensive, but sometimes cheaper than losing your entire engineering team. 
+
+- IRS correction programs: In rare cases, you can apply for Section 409A correction relief. It’s not fun, and it won’t save you from all pain, but it beats writing “oops” checks. 
+
+- Prevention: Set reminders like it’s a dental appointment. 409As expire every 12 months, or immediately after any fundraising. “We’ll fix it later” is not a strategy. It’s a lawsuit-in-progress. 
+
+ Bottom line: With phantom grants, the problem was that the equity was a mirage. With stale 409As, the equity is real…just rotten. Both leave you cleaning up a mess, but this one comes with the IRS asking awkward questions. 
+ Disaster #3: The Zombie Exercise 
+
+ How it happens: Expired options should be dead. But sometimes they claw their way back. An employee tries to exercise, HR or your equity management tool doesn’t flag it, payroll processes the check, and suddenly you’ve got zombie shares wandering around your cap table. 
+ What’s wrong: 
+ - If the plan says expired, the exercise is void. There’s no IRS “gotcha” tax because nothing legally happened. All you owe is a refund and a sheepish explanation.
+
+- If the company’s mistake created the problem (like leaving the option “open” in the system), things get murkier. The employee may argue they relied on the company’s error. You’re not strictly obligated to make them whole, but in practice, many companies do—by re-granting equity at current FMV or offering some cash settlement.
+
+ Mini-case: At a fintech, a VP exercised two months after expiration. Payroll dutifully processed the check, issued shares, and everyone moved on. During a financing, an investor’s counsel flagged it. Result: the company refunded the VP, canceled the phantom shares, and had to explain why their cap table looked like it was managed by Craigslist interns. In another startup, the mistake was on the company. The equity management software didn’t mark the grant as expired. When the employee exercised, they thought it was valid. To keep goodwill, the company paid out a settlement for the mistake. Painful cash payment, but better than a lawsuit. 
+ The fix: 
+ - If it’s the employee’s fault: Refund the money, cancel the “shares,” and move on. They don’t own what doesn’t exist. 
+
+- If it’s the company’s fault: Consider a make-whole grant (at today’s FMV), a settlement agreement, or an advisory grant if they’ve already left. Not legally required, but often the practical choice. 
+
+ Prevention: Track expirations like you track domain renewals or driver’s licenses. Use alerts, dashboards, whatever it takes. If people can exercise expired options, your equity admin isn’t “managing” the cap table, they’re running improv night. 
+ Bottom line: Phantom grants are imaginary. Stale 409As are rotten. Zombie exercises? They’re fake shares, walking around until some very expensive lawyer finally shoots them in the head. 
+ Disaster #4: The Spreadsheet from Hell 
+
+ How it happens: The cap table “lives” in Excel. Which means it doesn’t really live anywhere. Everyone has their own version. The CEO has one. HR has another. Outside counsel has one called CapTable_Final_v7_USETHISONE.xlsx. And the intern? They’ve got Final_REALLYFINAL_v9_NO_SERIOUSLY.xlsx. 
+ What’s wrong: Multiple truths = no truth. If two versions exist, investors assume there’s a third one with even scarier numbers. Nothing kills trust faster than inconsistent equity math. 
+ Mini-case: A startup sent a cap table to a VC during diligence. Then the CFO followed up with an “updated one.” The numbers didn’t match. The VC cut $10M from the valuation, citing “governance concerns.” Translation: “If you can’t add, we don’t trust you with our money.” 
+ The fix: 
+ - Step one: Burn the spreadsheets. Seriously. They are the cockroaches of corporate governance. 
+
+- Step two: Move to a cap table platform (Carta, Pulley, LTSE, take your pick). 
+
+- Step three: Reconcile quarterly and lock down permissions so your cap table isn’t treated like a group project. 
+
+- Step four: Make it part of your diligence hygiene. A clean, single-source-of-truth cap table is the difference between a smooth raise and a nine-figure haircut. 
+
+ Bottom line: If your fundraising depends on a Google Sheet with 16 editors, you’re not running a company, you’re running a group project. 
+ The GC / CFO Cap Table Toolkit 
+
+ So how do you prevent all this? By building boring discipline into the system.
+ - Board Approvals or Bust – No approval, no grant. Bar napkin ≠ equity. And no, your outside counsel can’t always “204 it” later. Delaware Section 204 lets you ratify some defective corporate acts (like grants intended but missed in board minutes, pool increases that slipped the consent, plan adoptions where everyone "assumed" approval). It’s a useful tool, but not a get-out-of-jail-free card (like grants priced off stale 409As, grants issued before someone's start date, or "phantom promises" that were never documented). If the grant never made it onto HR’s radar, never hit payroll, and was never documented? There’s nothing to “ratify.” That’s just vapor. 
+
+- Fresh Valuations – 409As are milk. Treat them like it. They expire after 12 months or the moment you raise new money. So if you’ve closed a financing, or you’re at the one-year mark, refresh. Anything else is asking for stale prices and 409A nightmares. 
+
+- Expiration Tracking – If your lawyers can track CLE credits, you can track option expirations. Miss them, and you’re explaining to employees why their options quietly zombified. 
+
+- One Cap Table to Rule Them All – Not Final_v7.xlsx. Not “Legal Version” vs “Finance Version” vs “Recruiting Version.” One platform. One source of truth. Lock it down. And yes, equity admin software errors happen too. Wrong share counts, missed terminations, or employees exercising after leaving. If it’s a pure admin error, the fix is usually refund the money and correct the records. There’s no legal duty to “make the employee whole.” But if the company caused the mess and it feels unfair, expect to negotiate a “practical” solution (new grant, cash settlement, or creative advisory role). 
+
+- Quarterly (or monthly) Reconciliation – Align the cap table with board minutes, payroll, and HR records. HR is often where grants and terminations fall through the cracks (“nobody told us they left,” “nobody told us they got a grant”). If it’s not in both places, assume it doesn’t exist. 
+
+- Equity Bands – Stop handing out percentages like Halloween candy. Document role-based equity ranges by stage and stick to them. 
+
+- Employee Education – Educate your employees. The more they understand how it works, the fewer ugly surprises you’ll be explaining in diligence. 
+ Mini-case: At a startup, an engineer early-exercised 100,000 options and assumed their 83(b) was filed. Five years later, on the eve of an IPO, tax counsel discovered there was no record. Result: the IRS treated the full vesting spread as ordinary income. Their tax bill was larger than their salary. The company wasn’t legally on the hook, but morale collapsed and every other employee suddenly wanted to know, “Do you have my filing on record?” 
+
+- Fix Early, Fix Cheap – Errors in year one are awkward. Errors in year five are catastrophic. Many things can be patched with a Section 204 ratification, corrective grants, or top-ups if caught early. But by the time you’re in diligence, those “we’ll fix it later” items become investor discounts on your valuation. 
+
+ Why This Matters for GCs & CFOs 
+
+ Cap table errors don’t just mess up paperwork. They mess up:
+ - Culture – employees feel lied to. 
+
+- Finances – investors cut valuations. 
+
+- Reputation – auditors start treating you like a case study in what not to do. 
+
+ The GC who says “our cap table is clean” isn’t just giving legal comfort. They’re delivering business credibility. These mistakes can cause $100K+ in legal fees to sort out the mess, financial audit restatements, huge payouts to make employees whole (and/or a lot more dilution than planned), and A LOT of wasted time. Get it right early!
+ Closing Thought 
+
+ Cap tables are like plumbing. No one praises them when they work, but when they break, the entire house stinks.
+ Yes, lawyers can sometimes paper over mistakes with ratifications and clean-up grants. But they can’t turn “nobody ever approved it” into “this was valid all along.” The earlier you catch and correct, the less it costs.
+ If you want to avoid being the lawyer with a mop in the middle of diligence, build the system right the first time. Because the only thing worse than a cap table disaster…is explaining to investors why your equity records look like they were maintained by a freshman econ class armed with Excel.
+
+ Footnotes: 
+
+ - Get CFO-specific playbooks, templates, and advice in the CFO Corner from Brex (today's sponsor) 
+
+- Go check out OnlyLawyer and send to your legal team 
+
+ *Nothing in this article constitutes legal, tax, or investment advice. 
+
+ Subscribe 
+
+ 52
+
+ 3
+ 5
+
+ Share
+
+ Previous Next 
+
+ Discussion about this post
+ Comments Restacks 
+
+ Jeff Brines 
+
+ Sep 17, 2025 
+
+Liked by OnlyCFO 
+
+ Highly underrated substack. Keep it up. 
+
+ Reply
+
+ Share
+
+ 2 replies by OnlyCFO and others 
+
+ 2 more comments... 
+
+ Top Latest Discussions 
+
+ No posts
+
+ Ready for more?
+
+ Subscribe 
+
+ © 2026 OnlyCFO · Privacy ∙ Terms ∙ Collection notice 
+ Start your Substack Get the app 
+
+ Substack is the home for great culture

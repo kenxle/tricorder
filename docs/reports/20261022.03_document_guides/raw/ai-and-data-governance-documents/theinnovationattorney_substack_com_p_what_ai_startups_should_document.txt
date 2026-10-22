@@ -1,0 +1,182 @@
+SOURCE: https://theinnovationattorney.substack.com/p/what-ai-startups-should-document
+FETCHED: 2026-10-22
+
+- 
+
+ What AI Startups Should Document Before A Funding Round 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ - 
+
+ The Innovation Attorney 
+
+ Subscribe Sign in 
+
+ The Innovation Attorney Podcast
+ What AI Startups Should Document Before A Funding Round
+
+ 1 ×
+
+ 0:00
+ Current time : 0:00 / Total time : -11:33
+
+ -11:33
+
+ Audio playback is not supported on your browser. Please upgrade. 
+
+ What AI Startups Should Document Before A Funding Round
+ Bartz v. Anthropic Shows Why AI Startups Must License Training Data
+
+ The Innovation Attorney 
+ Oct 01, 2026 
+
+ Share
+ Transcript
+
+ Training data licensing, model output ownership, and open source compliance are the three gaps a founder’s counsel must close before financing, as Bartz v. Anthropic now confirms. The Northern District of California approved a $1.5 billion settlement in that case on July 20, 2026, paying roughly $3,000 per copyrighted work, four times the statutory minimum, after the court found that training on purchased books was fair use but training on pirated copies was not. Thomson Reuters Enterprise Centre GmbH v. Ross Intelligence Inc. had already rejected a fair use defense outright on February 11, 2025, when a Delaware court found that Ross’s competing legal research product made the use a market substitute, not a fair use. Together the two rulings tell a founder exactly what a diligence team will ask: where the data came from, whether it was purchased or scraped, and whether a competing product sits on the other side of the license.
+ Turley Law’s 2026 fifteen point legal checklist for artificial intelligence startups names training data licensing, model output ownership, and open source license compliance as the items most often missing before a product launch. The checklist sits alongside the Delaware C corporation formation and the stock option plan that most founders already handle correctly. The three items that get skipped are the ones that require someone to sit down with the actual training pipeline, the actual customer contract, and the actual dependency tree, not a template.
+ A training data audit means producing a list of every source, a license or receipt for each, and a note on where the scraped and public domain material sits. Reliance on publicly available material that still carries a copyright is not protection on its own: Bartz distinguished the purchased library from the shadow library that Anthropic’s engineers had also assembled, and the shadow library is what cost four times the statutory minimum per work. A founder who can show a signed license agreement for every commercial dataset, and a documented fair use analysis for everything else, walks into due diligence with an answer instead of an apology.
+ Model output ownership carries a second layer of difficulty that training data licensing does not: the Copyright Office will not protect the output at all unless a human did more than type a prompt. The Supreme Court left that rule standing on March 2, 2026, when it denied certiorari in Thaler v. Perlmutter, closing the appeal of an inventor who had registered artwork generated entirely by his own AI system. The courts below had already found that even detailed prompting, in that case more than 624 separate text instructions, does not amount to the selection, arrangement, or editing that copyright law treats as authorship. A customer contract that promises to assign the vendor’s rights in generated output to the customer is only half the solution. The other half is a record, kept inside the product itself if possible, of who selected, arranged, or revised the material the model produced, because that record is what will separate a protectable deliverable from material anyone can copy.
+ Open source license compliance is the least glamorous of the three items and the one with the fewest excuses. Turley Law’s checklist puts it bluntly: GPL licensed code inside an AI pipeline creates a contamination risk, and the fix is to map every dependency and flag every copyleft license before an investor’s own technical diligence team does it first. The risk is not confined to training. Doe v. GitHub, the litigation over GitHub Copilot, survived a motion to dismiss on its open source license breach and Digital Millennium Copyright Act Section 1202 claims in the Northern District of California in 2024, even after the broader infringement theory was narrowed. A model that reproduces a recognizable block of GPL code inside a customer’s closed product does not need a court to rule on whether the model itself is GPL licensed. The customer’s own obligation attaches the moment that code ships, and the startup that sold the product is the one who will hear about it first.
+ In three decades of closing technology financings, the diligence requests that add a month to a term sheet are never the ones about the cap table. They are the ones where the data room has no license file for the training corpus and no audit of the open source dependency tree, so counsel on both sides spends that month reconstructing what should have been documented before the data scientist wrote the first line of training code.
+ None of this is abstract to the people actually signing the checks. A venture investor’s representations and warranties schedule now routinely asks a startup to confirm that no open source use compels disclosure of proprietary code and that every contributor has signed a valid assignment. An enterprise procurement team negotiating an AI vendor addendum is asking the same question from the other direction: who owns the output, and what happens if it turns out to contain someone else’s code. A founder who has already run the open source audit, already inventoried the training data, and already written the output ownership clause into the standard customer agreement is the founder who closes the round on schedule and signs the contract without a redline fight over indemnification caps.
+ Three questions remain for any startup watching this from the outside. New York Times Co. v. OpenAI is set for cross motions for summary judgment before Judge Sidney H. Stein in the Southern District of New York, with reply briefs due November 6, 2026, and that ruling will say whether Bartz’s fair use finding survives contact with scraped journalism the way it survived contact with purchased books. Whether GPL obligations can attach to a trained model itself, separate from its output, is a theory no court has yet tested directly, and a ruling either way would change how much it costs to clean a contaminated pipeline. And whether the Copyright Office will ever recognize a documented editing process, short of a full rewrite, as enough human authorship to protect an AI assisted deliverable is a question every enterprise customer buying generated content is also asking. The next piece in this series takes up that third question directly: how much human editing a generated contract, a generated brief, or a generated deliverable actually needs before a court will call it a work its owner can defend.
+ Interested in analysis about the intersection of tech, policy and the law? Check out my Substack channel. https://theinnovationattorney.substack.com/
+
+ Discussion about this episode
+ Comments Restacks 
+
+ The Innovation Attorney Podcast
+ The Innovation Attorney is a publication about the intersection of venture capital, technology, public policy and law.
+ The Innovation Attorney is a publication about the intersection of venture capital, technology, public policy and law. 
+
+ Subscribe 
+
+ Listen on
+
+ Substack App
+
+ Apple Podcasts
+
+ Spotify
+
+ RSS Feed
+
+ Appears in episode
+
+ The Innovation Attorney 
+
+ Recent Episodes
+
+ Grid Enhancing Technologies 
+ 19 hrs ago • The Innovation Attorney 
+
+ What Did the Army ML-1 Reactor Teach SMR Developers 
+ Oct 19 • The Innovation Attorney 
+
+ Fracking Technology Made Geothermal Energy Commercially Viable 
+ Oct 18 • The Innovation Attorney 
+
+ Coding Agents Drive 93 Percent of Intercom Pull Requests 
+ Oct 17 • The Innovation Attorney 
+
+ How Should a Synthetic Biology Startup Plan Fermentation Capacity 
+ Oct 16 • The Innovation Attorney 
+
+ Own Your Agent Loop: GPT 6.1 at $2 Rewards Cache Control 
+ Oct 15 • The Innovation Attorney 
+
+ FTC AI Probe Means Agent Startups Need Records Now 
+ Oct 14 • The Innovation Attorney 
+
+ EU Article 50 AI Act Duties Already Bind US Startups 
+ Oct 13 • The Innovation Attorney 
+
+ Ready for more?
+
+ Subscribe 
+
+ © 2026 Michael Kimball · Privacy ∙ Terms ∙ Collection notice 
+ Start your Substack Get the app 
+ Substack is the home for great culture

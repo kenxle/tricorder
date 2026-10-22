@@ -1,0 +1,377 @@
+SOURCE: https://www.revera.legal/?p=8249
+FETCHED: 2026-10-22
+
+AI startup under investor scrutiny: what investors check during due diligence before a deal - revera.legal 
+
+- 
+- 
+
+ - 
+
+- 
+- 
+- 
+
+- 
+- 
+- 
+
+- - - 
+
+- 
+- 
+- 
+- 
+
+ AI startup under investor scrutiny: what investors check during due diligence before a deal
+
+ 1. The AI Asset Transactions Market: What is Happening in 2024–2026
+
+ Over the past two years, AI has evolved from a mere buzzword into the primary magnet for capital. According to McKinsey’s estimates, as early as 2024, 65% of companies reported regularly using generative AI—nearly double the share from the previous year. Furthermore, 67% of respondents expected AI investments to grow over the next three years, a trend fully supported by current market dynamics.
+
+ The scale of funding for this technology is even more impressive:
+
+- PitchBook Data: In 2024, generative AI companies raised approximately $56 billion in venture capital globally, setting a record and representing roughly a 92% increase compared to 2023.
+
+- Crunchbase Analytics: The total funding for AI startups in 2024 surpassed $100 billion, accounting for nearly a third of the global venture market.
+
+ This investment surge is also reshaping the M&A landscape. Experts estimate that in 2025, the global value of M&A transactions reached approximately $3.5 trillion, with a significant share of the largest deals heavily focused on AI. Looking ahead, the projected volume of investment into AI infrastructure between 2026 and 2030 is estimated at $5–8 trillion.
+
+ In such an environment, even an early-stage deal with an AI startup is no longer viewed as an experiment. Instead, it is increasingly treated as a strategic acquisition of core assets: models, data, and talent. This shift directly impacts the depth and overall focus of the due diligence process.
+
+ 2. Why Due Diligence of AI Companies Is Different
+
+ Whether you are a founder preparing for a financing round or sale, or an investor evaluating an AI company, traditional due diligence is no longer sufficient. In addition to the standard areas of review (corporate structure, intellectual property, finance, and taxation), AI transactions require a range of specialized assessments that directly impact valuation, deal certainty, risk allocation, and the scope of representations and warranties.
+
+ Investors and buyers are not interested merely in whether the company has a product and generates revenue. They want to understand:
+
+- Who actually owns the models and datasets;
+
+- Whether training processes and data usage are legally compliant and sustainable;
+
+- How the company fits into the emerging regulatory framework (including the EU AI Act);
+
+- Whether there are hidden risks in agreements with developers, contractors, and customers;
+
+ How dependent the business is on third-party providers and open-source technologies.
+
+ Mistakes in these areas can be extremely costly. Improperly documented rights to models or datasets may result in future litigation, licensing disputes, or a reassessment of transaction terms.
+
+ In this article, we examine the structure of comprehensive due diligence for AI companies—from traditional review areas to AI-specific issues that founders and investors should carefully assess. In the next article of this series, we will discuss how identified risks are reflected in transaction documents through representations and warranties (R&Ws), indemnities, and closing conditions.
+
+ 3. Practical Due Diligence Workstreams for AI Companies
+
+ Workstream 1. Intellectual Property: Models, Datasets, and Algorithms
+
+ For an AI target, the central question is who truly owns the models, source code, and data—and whether the company has the legal right to transfer or exploit these assets in the context of a transaction. Unlike traditional software businesses, AI companies often combine proprietary models, fine-tuned third-party models, external libraries, and licensed datasets.
+
+ Investors will seek a clear chain of title: who developed the models, under what arrangements (employees, contractors, consultants), whether open-source components were incorporated, and whether all relevant assignments and agreements have been properly executed. They will also review licensing restrictions, including whether the model may be sold, used in SaaS products, fine-tuned using customer data, or sublicensed in future transactions.
+
+ For founders, this means ensuring in advance that all key models, code, and datasets are properly assigned to the company rather than remaining with individual developers, contractors, or founders themselves.
+
+ Workstream 2. Training Data: Sources, Licensing, and GDPR Compliance
+
+ The second cornerstone of AI due diligence is the legality and governance of the data used to train and operate AI models. Investors want to understand where the data originated – whether it is proprietary, customer-provided, publicly available, purchased, scraped from the web, or sourced from third-party datasets – and under what terms it was used.
+
+ From a regulatory perspective, particular attention is paid to compliance with GDPR and similar privacy regimes:
+
+- Is there a lawful basis for processing personal data?
+
+- Have the principles of data minimization, transparency, and retention been followed?
+
+- Are mechanisms in place to facilitate access, correction, and deletion requests?
+
+- Have restrictions on cross-border data transfers been observed?
+
+ For AI products serving European markets, additional scrutiny is given to the use of customer data for model training and fine-tuning. Investors will assess how consent is obtained, whether customers can opt out, and whether customer-specific datasets can be isolated. A robust data governance framework and a well-maintained dataset inventory can positively influence valuation.
+
+ Importantly, case law concerning the use of data for AI training is developing rapidly. In February 2025, the decision in Thomson Reuters v. Ross Intelligence became one of the first major rulings to find that the use of protected content for AI model training constituted copyright infringement, significantly increasing the importance of verifying the provenance of training data. We will discuss the contractual implications of such risks in the next article of this series.
+
+ Workstream 3. Regulatory Compliance: EU AI Act and Risk Classification
+
+ Since 2024, the EU AI Act has become the cornerstone of AI regulation in Europe. The framework adopts a risk-based approach, categorizing AI systems as prohibited, high-risk, or limited-risk.
+
+ For investors, understanding where a target’s AI system falls within this framework is critical because it directly affects compliance costs, operational requirements, and implementation timelines.
+
+ During due diligence, the following issues are assessed:
+
+- The intended purpose and context of the AI system;
+
+- Whether the system operates in regulated sectors such as healthcare, finance, employment, or cybersecurity;
+
+- The existence of meaningful human oversight mechanisms.
+
+ For high-risk AI systems, investors will evaluate whether the company has a credible plan for complying with EU AI Act requirements, including risk management, data quality and traceability, technical documentation, transparency obligations, registration requirements, and post-market monitoring.
+
+ The impact of AI regulatory status on transaction documentation and representations and warranties will be explored in the next article of this series.
+
+ Workstream 4. Contracts: Developers, Partners, and Customers
+
+ Contracts in AI businesses extend well beyond traditional software licensing arrangements. They often involve a complex network of relationships with developers, data providers, cloud infrastructure vendors, and strategic partners. Due diligence focuses on contractual issues that could significantly affect valuation or even prevent a transaction from closing.
+
+ With respect to key developers and contractors, investors will focus on:
+
+- Assignment of intellectual property rights;
+
+- Non-compete and non-solicitation obligations;
+
+- Hidden option agreements, equity incentives, or bonus arrangements that could dilute ownership or create post-closing conflicts.
+
+ Customer contracts are reviewed to determine:
+
+- Ownership and licensing of AI-generated outputs;
+
+- Restrictions on the use of customer data for model training or improvement;
+
+- Service-level commitments and liability allocation for model errors and system failures;
+
+- Whether anonymized customer data and usage logs may be used to improve existing models or develop new products;
+
+ Whether major customers have been granted overly broad rights to customized models or datasets.
+
+ Workstream 5. Technology and Dependencies (Open Source and Vendor Lock-In)
+
+ The technology review in AI transactions increasingly resembles a technical stress test. Investors seek to determine how resilient the technology stack is, which components provide genuine competitive differentiation, and which could be easily replicated by competitors with access to similar models and infrastructure.
+
+ Open-source usage requires particular scrutiny. Investors review:
+
+- The libraries and models used;
+
+- Applicable license terms;
+
+- Potential copyleft risks;
+
+- Compliance with attribution requirements.
+
+ Improper combinations of licenses can create legal uncertainty and, in some cases, require substantial restructuring of the product.
+
+ Another critical issue is vendor lock-in. Investors assess how dependent the company is on a single cloud provider or API provider and whether migration to alternative infrastructure is technically feasible.
+
+ Finally, attention is paid to documentation quality, testing practices, observability, and monitoring capabilities, all of which help evaluate operational risks, model degradation, system downtime, and long-term maintenance costs.
+
+ Authors: Viktoria Markova, Matsvei Kliuchankov.
+
+ Message our lawyer to learn more 
+
+ Message our lawyer 
+
+ Viktoria Markova 
+
+ Leading Associate
+
+ Matsvei Kliuchankov 
+
+ Associate
+
+ Publications
+
+ REVERA protected the rights of a Cypriot game studio and settled the dispute out of court 
+
+ 15.10.2026 
+
+ Announcements 
+
+ REVERA and SCALE’HER Launch Cooperation to Support Women Founders of Deep-Tech Companies in Europe 
+
+ 01.10.2026 
+
+ REVERA Kazakhstan strengthens its position: Andrey Artyushenko’s team joins the group 
+
+ 30.09.2026 
+
+ Analytical materials 
+
+ How a US AI facial recognition company ended up fined in four countries at once 
+
+ 17.09.2026 
+
+ Articles 
+
+ UK tribunal approves Google’s GBP 260 million settlement with app developers, closing the case without a ruling on the merits 
+
+ 17.09.2026 
+
+ Articles 
+
+ EU Kids Act: European Commission Set to Propose Limits on Minors’ Access to Social Media, AI Companions and Games 
+
+ 16.09.2026 
+
+ +375 44 500-15-10 
+ Belarus 
+
+ +357 25 261-000 
+ Cyprus 
+
+ +7 727 357-30-46 
+ Kazakhstan 
+
+ +995 551 11-80-69 
+ Georgia 
+
+ +48 453 306-911 
+ Poland 
+
+ Write to us 
+
+ - Our offices 
+
+ - Cyprus 
+
+ - Poland 
+
+ - Georgia 
+
+ - Kazakhstan 
+
+ - Belarus 
+
+ - UAE legal desk 
+
+ - Armenia legal desk 
+
+ - Uzbekistan legal desk 
+
+ - Kyrgyzstan legal desk 
+
+ - Serbia legal desk 
+
+- Projects 
+
+- Team 
+
+- About us 
+
+- Events 
+
+- Info center 
+
+ - News and analytical materials 
+
+ - Reviews 
+
+- Contacts 
+
+ Write to us 
+
+ Services
+
+ Directions 
+
+ - 
+ Promotion and Advertising 
+
+ - 
+ Corporate law and M&A 
+
+ - 
+ Dispute resolution 
+
+ - 
+ Labour law 
+
+ - 
+ International arbitration 
+
+ - 
+ Investment projects 
+
+ - 
+ Taxes 
+
+ - 
+ Intellectual Property 
+
+ - 
+ Economic sanctions (restrictive measures). Sanction compliance 
+
+ - 
+ Expanding your business abroad 
+
+ - 
+ Private Clients 
+
+ - 
+ Corporate Governance 
+
+ - 
+ Personal Data Protection 
+
+ Industries 
+
+ - 
+ Construction industry 
+
+ - 
+ IT 
+
+ - 
+ Real estate 
+
+ - 
+ Energy and natural resources 
+
+ - 
+ Commercial business and consumer goods 
+
+ - 
+ Banks and Finance 
+
+ - 
+ Pharmaceutics and public health service 
+
+ - 
+ Gambling and IGaming Business 
+
+ - 
+ Crypto&Blockchain 
+
+ Write to us 
+
+ Full Name * 
+
+ Phone * 
+
+ Email * 
+
+ Company * 
+
+ Topic * 
+
+ Choose topic Request for legal assistance Commentary for the mass media Leave a complaint or make a suggestion Another matter 
+
+ Comment
+
+ Attach file
+
+ How did you hear about us?
+
+ Recommendation Event Media (article or commentary) Search engine (Google, Yandex, etc.) AI tools (ChatGPT, Perplexity, Gemini, etc.) Existing client Personal connection with a REVERA lawyer Social media Email / Newsletter Advertising Other 
+
+ I accept the terms of the Privacy Policy 
+
+ Send request 
+
+ Full Name * 
+
+ Phone * 
+
+ Email * 
+
+ Company * 
+
+ Topic * 
+
+ Choose topic Request for legal assistance Commentary for the mass media Leave a complaint or make a suggestion Another matter 
+
+ Comment
+
+ Attach file
+
+ How did you hear about us?
+
+ Recommendation Event Media (article or commentary) Search engine (Google, Yandex, etc.) AI tools (ChatGPT, Perplexity, Gemini, etc.) Existing client Personal connection with a REVERA lawyer Social media Email / Newsletter Advertising Other 
+
+ I accept the terms of the Privacy Policy 
+
+ Find →

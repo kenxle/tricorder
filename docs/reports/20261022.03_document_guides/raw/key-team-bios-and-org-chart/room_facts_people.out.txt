@@ -1,0 +1,47 @@
+hiring_plan.csv rows: 24
+hires by department: {'Engineering': 10, 'Customer Success': 3, 'Sales': 5, 'Support': 3, 'Marketing': 1, 'G&A': 2}
+headcount_after_hire first/last: 18 41
+sum base pay of all hires: 3960000
+min/max base pay: 119000 211000
+first/last start date: 2026-10-01 2027-09-08
+hires with a start date on the 1st of a month: 18
+columns in hiring_plan.csv: ['hire_id', 'role', 'department', 'start_date', 'base_salary_usd', 'headcount_after_hire']
+roles in the model's Hiring_Plan tab: 8
+columns in model Hiring_Plan tab: ['Role', 'Department', 'Start month', 'Base pay (USD a year)', 'Loaded cost (USD a month)']
+model roles equal the first rows of the CSV: True
+shares total: 14424000 pro forma total: 17308800
+options granted shares: 1148000 pct fully diluted: 7.96
+options available shares: 1034000 pct fully diluted: 7.17
+whole pool shares: 2182000 pct before A: 15.13 pct after A: 12.61
+available pool shares per planned hire: 43083
+available pool pct after A per planned hire: 0.249
+rows on the cap table naming an advisor: 0
+Halcyon Inference API lines: 21 total usd: 110564.84 category: {'model_inference'} booked_as: {'R&D'}
+Marsh Speech Licensing lines: 21 total usd: 77685.71 category: {'third_party_licences'} booked_as: {'Cost of revenue'}
+Tallow Telecom lines: 21 total usd: 231244.34 category: {'telephony'} booked_as: {'Cost of revenue'}
+distinct vendors: 13
+ledger lines mentioning an AI model provider, privacy, or security vendor by description: ['Legal and filing fees', 'Legal and filing fees', 'Legal and filing fees', 'Legal and filing fees', 'Legal and filing fees']
+people named in the bios and deck: 6
+staff today: 17
+staff not named anywhere in the bios: 11
+option holders on the cap table (from the row label): 11
+current titles: ['Chief Executive Officer and co-founder', 'Chief Technology Officer and co-founder', 'Head of Sales', 'Head of Customer Success', 'Controller (part time)', 'Lead Voice Engineer']
+planned titles: ['Account Executive', 'Backend Engineer', 'Customer Success Manager', 'Data Engineer', 'Director of Enterprise Sales', 'Engineering Manager', 'Finance Manager', 'Frontend Engineer', 'Implementation Specialist', 'Machine Learning Engineer', 'Marketing Manager', 'Product Manager', 'QA Engineer', 'Recruiter', 'Security Engineer', 'Senior Voice Engineer', 'Solutions Engineer', 'Support Lead', 'Support Specialist']
+planned roles equal to a current title: []
+hires starting before the Series A cash arrives (plan month 4, 2027-01): 6 ['H01', 'H02', 'H03', 'H04', 'H05', 'H06']
+hires starting in 2027-01 or later: 18
+planned hires per quarter if spread evenly over four quarters: 6.0
+deck slide 12 breakdown: {'Engineering': 10, 'Sales': 5, 'Customer Success': 3, 'Support': 3, 'Marketing': 1, 'G&A': 2}
+deck breakdown equals the CSV department counts: True
+deck breakdown sums to: 24
+---- AI and data governance facts ----
+order_form_cedar_pine.pdf lines naming recordings, data, privacy, retention or training: 1 ['4. Data. The Customer owns its call recordings and appointment data. The Provider uses them only to run']
+pilot_agreement_marlow.pdf lines naming recordings, data, privacy, retention or training: 0 []
+order_form_brookline_row.pdf lines naming recordings, data, privacy, retention or training: 0 []
+planned hire: H03 Machine Learning Engineer 2026-11-01 189000
+planned hire: H11 Security Engineer 2027-03-01 194500
+planned hire: H17 Machine Learning Engineer 2027-06-01 188000
+planned hire: H18 Finance Manager 2027-06-01 142000
+files in the full room whose name mentions privacy, security, model, policy, SOC, DPA or AI: []
+number of files in the full room: 17
+expense lines for Halcyon Inference API booked in R&D, share of all ledger spend: 2.33 percent

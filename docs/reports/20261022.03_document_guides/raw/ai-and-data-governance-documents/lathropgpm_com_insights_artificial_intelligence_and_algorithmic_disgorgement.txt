@@ -1,0 +1,41 @@
+SOURCE: https://www.lathropgpm.com/insights/artificial-intelligence-and-algorithmic-disgorgement/
+FETCHED: 2026-10-22
+
+- Artificial Intelligence and Algorithmic Disgorgement - Lathrop GPM - - - - - - Skip to content 
+- Skip to primary sidebar 
+ Legal Updates Artificial Intelligence and Algorithmic Disgorgement
+
+ January 29, 2024 | 4 minute read 
+ - Toggle the social sharing tools SHARE - 
+- 
+- 
+- 
+
+- PDF 
+
+ Algorithmic disgorgement is the process in which illegally obtained data is removed from an AI model, and the destruction of any models or algorithms built using such data. However, since it is often extremely difficult or impossible to delete such data, algorithmic disgorgement can result in the destruction of the entire model. For some basic context, AI is trained by feeding huge amounts of data into a model architecture. This process is known as machine learning since the model makes predictions or generates outputs based upon the data sets. These data sets are often obtained from various sources and there is risk that the data set may contain data that is obtained without consent, illegally obtained, or is otherwise found to be invalid. 
+ Algorithmic disgorgement traces back to the Cambridge Analytica scandal of 2019. In the Cambridge Analytica case, the Federal Trade Commission (“FTC”) used its broad authority to regulate certain aspects of AI. Section 5 of the FTC Act prohibits “unfair or deceptive acts or practices in or affecting commerce.” In the Matter of Cambridge Analytica , the FTC initiated an administrative complaint against Cambridge Analytica, a data analytics company using such broad authority to regulate their practices as deceptive. The accusations against the company, as well as its former CEO and app developer, centered on claims of employing misleading techniques to amass personal data from a large contingent of Facebook users, for the purpose of voter profiling and the facilitation of targeted political campaigns. In the settlement between the FTC and Cambridge Analytica, the FTC ordered that “any algorithms or equations, that originated, in whole or in part, from data that had been illegally collected from Facebook users had to be deleted.” In short, Cambridge Analytica was required to delete the data it illegally obtained from Facebook users. 
+ The FTC, like most other regulators at the time of this article, have not settled on an official definition of AI . In a report to Congress, the FTC opined that Congress was more concerned with the outputs and consequences of AI, adopting a broader approach that includes “automated detection tools” or “automated decisions systems” (recently discussed in Newly Proposed CCPA Regulations Target Artificial Intelligence ). Since 2019, the FTC has used its authority on other occasions to bring complaints against companies relating to AI that ultimately resulted in a settlement whereby the company was subject to algorithmic disgorgement.
+ In the Matter of Everalbum , the FTC settlement with Everalbum focused on Everalbum’s facial recognition technology. The application allowed users to store photos and videos in the cloud. Everalbum used facial recognition technology to group “friends” based on similarities among faces that appeared in the images. The FTC claimed Everalbum deceived users by retaining images of users who deleted their accounts, despite Evaralbum claiming to have deleted such images “indefinitely,” and in Everalbum claiming to use such facial recognition only with user consent. The settlement required Everalbum to delete the following: (1) all photos and videos in deactivated accounts; (2) face data derived from photos of users who did not provide consent; and (3) all algorithms and models developed or derived from biometric information collected from users .
+ In USA v. Kurbo Inc. and WW International , the FTC reached a settlement with WW International, Inc. (formerly known as Weight Watchers) (“WW”), in response to allegations WW collected children’s information (under the age of 13) without parental consent in violation of the Children’s Online Privacy Protection Act (“COPPA”). The complaint alleged that Kurbo (an app produced by WW) marketed its services to children. More specifically, the signup process encouraged users to falsely claim they were over the age of 13 (see here ).
+ The settlement with WW requires it to ensure verifiable parental consent is obtained (in compliance with COPPA), it destroyed all personal information obtained in violation of COPPA, including any models or algorithms based on that information, and pay a civil penalty of $1.5 million. FTC Chair Lina Khan said in a statement, “Our order against these companies requires them to delete their ill-gotten data, destroy any algorithms derived from it, and pay a penalty for their lawbreaking.” 
+ In FTC v. Ring , the FTC reached a settlement regarding allegations that Ring, the internet-connected doorbell and home security system owned by Amazon, compromised its customers’ privacy by allowing its employees to access and view its customers private videos (including in intimate areas of the home), and failing to implement basic security protections, which permitted hackers to access its customers’ videos, cameras, and accounts. Consequently, the FTC and Ring agreed to $5.8 million penalty that will be applied as customer refunds, and it will also require Ring to delete any customer videos, face embedding, and face data collected prior to 2018 and any products derived from such data (e.g., AI models). 
+ In USA v. Edmodo , the FTC reached a settlement against Edmodo, an education platform used by schools, regarding allegations Edmodo collected children’s information without parent consent and then sold that information for advertising. As a result, the FTC and Edmodo agreed to a permanent injunction, $6 million civil penalty, and for Edmodo to delete models and algorithms developed using ill-gotten personal information to resolve the alleged violations of COPPA and the FTC Act .
+ The foregoing cases illustrate the FTC has no hesitation in requiring algorithmic disgorgement to purge illegally obtained personal information from AI models. In practice, this purging of illegally obtained personal information may result in ruining the entire model and it is expensive and time consuming. Thus it is vitally important that all personal information in data sets used to train AI is obtained legally. Depending on the jurisdiction of the consumer or data subject the legal requirements will vary (e.g., providing a consumer with notice with an opportunity to opt-out of such use or obtaining the consent of a data subject may be required). As a result of the costly consequences of algorithmic disgorgement, developments are being made in improving algorithmic disgorgement (i.e., without having to completely destruct the model). These improvements include retraining, compartmentalization, dataset emulation, and differential privacy. These methods of “ machine unlearning ” or data minimization are nascent (see Google’s Machine Unlearning Challenge ).
+ Please reach out to us if you would like assistance in determining what privacy, commercial and technology laws apply to your business or if you have other privacy, commercial or technology related concerns related to your business.
+ For more information, please contact Chiara Portner .
+
+ Related People
+ - 
+
+ Related Services
+ - Data Privacy & Cybersecurity Compliance 
+
+ Close 
+
+ - 
+- 
+
+ Close 
+
+ Search

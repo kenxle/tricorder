@@ -1,0 +1,267 @@
+SOURCE: https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/
+FETCHED: 2026-10-22
+
+- 
+
+ EU AI Act Omnibus Agreement — Postponed High-Risk Deadlines and Other Key Changes - Gibson Dunn 
+
+ EU AI Act Omnibus Agreement — Postponed High-Risk Deadlines and Other Key Changes - Gibson Dunn 
+
+ - 
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+- 
+
+- 
+
+- 
+- 
+- 
+
+- 
+
+- 
+- 
+- 
+
+ Skip to content 
+
+ EU AI Act Omnibus Agreement — Postponed High-Risk Deadlines and Other Key Changes
+
+ Client Alert | May 27, 2026
+
+ Formal adoption and publication in the Official Journal are expected in the coming weeks, in advance of the 2 August 2026 deadline. 
+
+ Key Takeaways 
+
+- The EU institutions have reached a provisional political agreement on the Digital Omnibus on AI that would amend the EU AI Act in several targeted respects, most significantly by postponing the applicability of high-risk AI obligations.
+
+- High-risk obligations for stand-alone Annex III systems are deferred to 2 December 2027 ; for AI embedded in regulated products under Annex I, to 2 August 2028 .
+
+- A new prohibition on AI-generated non-consensual intimate imagery (“nudifiers”) and child sexual abuse material is introduced into Article 5 of the AI Act.
+
+- These changes only take legal effect upon formal adoption and publication of the Omnibus in the Official Journal, expected before 2 August 2026.
+
+- 2 August 2026 remains an active compliance date. The Article 50 transparency obligations for AI systems largely remain on the original schedule. Businesses who are subject to those obligations must stay ready for that date regardless of the Omnibus.
+
+ 1. Background 
+
+ The EU AI Act entered into force on 1 August 2024, establishing the world’s first comprehensive horizontal regulatory framework for artificial intelligence. Its obligations roll out in staggered phases, with the most consequential provisions — covering high-risk AI systems (HRAIS) — originally set to apply from 2 August 2026 (for Annex III HRAIS) and 2 August 2027 (for Annex I HRAIS). By late 2025, implementation was visibly off track, prompting the European Commission to table the Digital Omnibus on AI on 19 November 2025 (see our previous client alert on the Commission’s Digital Omnibus proposal ). The proposal contained a set of targeted amendments, most prominently a conditional delay mechanism for high-risk obligations.
+
+ After an initial round of trilogue negotiations on 28 April ended without success, the institutions returned to the table and reached a provisional political agreement on 6 May, subsequently confirmed by Member State representatives in the Council on 13 May. Formal adoption and publication in the Official Journal are expected in the coming weeks, in advance of the 2 August 2026 deadline.
+
+ 2. What Was Agreed: Key Changes 
+
+ The provisional trilogue agreement on the Omnibus is set to introduce targeted amendments across several areas of the AI Act, all subject to formal enactment expected before 2 August 2026.
+
+ High-Risk AI Obligations Delayed to 2027 and 2028 
+
+ Under the proposal, high-risk AI system obligations under the AI Act will be postponed by over a year compared to the original timeline: stand-alone Annex III systems (covering, among others, recruitment, credit scoring, law enforcement, education, and border control tools) will now need to comply by 2 December 2027 , and AI embedded in regulated products under Annex I — such as medical devices, machinery, and vehicles — by 2 August 2028 . The agreed text replaces the Commission’s originally proposed conditional trigger mechanism with these fixed dates.
+
+ New Ban: “Nudifiers” and CSAM 
+
+ A newly proposed prohibition under Article 5 would ban AI systems that generate or manipulate non-consensual intimate images, video, audio or similar material, or child sexual abuse material (CSAM). For providers, the prohibition extends beyond systems intended for such use to any system where such generation is a reasonably foreseeable and reproducible outcome, without requiring significant technical modification, and the system lacks reasonable and adequate technical safeguards to reliably prevent it. Providers of general-purpose image- or video-generation tools must therefore actively assess foreseeable misuse risks at the design and deployment stage. The new prohibition is subject to a transitional period until 2 December 2026.
+
+ Watermarking Grace Period for Existing Systems 
+
+ Under the proposal, AI systems that have been placed on the market before 2 August 2026 will benefit from a four-month grace period (until 2 December 2026) before the watermarking obligation under Article 50(2) — which requires providers to embed machine-readable markers in AI-generated content — applies to them. The broader Article 50 transparency obligations, including the requirement to disclose to users when they are interacting with AI systems, remain unaffected and proceed as scheduled from 2 August 2026.
+
+ AI in Regulated Products: Duplicative Requirements May Be Limited 
+
+ For AI systems embedded in products already covered by EU sectoral safety legislation under Annex I — such as medical devices and toys — the agreement introduces a compromise mechanism aimed at avoiding double regulation: The Commission is empowered to limit the application of specific AI Act requirements where sectoral legislation already imposes equivalent obligations. Furthermore, AI systems embedded in products covered by the Machinery Regulation will be largely exempted from the AI Act obligations. The agreement also narrows the definition of “safety component” so that AI systems used solely for non-safety related aspects of user assistance, performance optimization, service efficiency, automation or convenience, or quality control do not fall within the high-risk category by virtue of being embedded in regulated products, unless their failure or malfunctioning would endanger health and safety.
+
+ Bias Detection: Broader Scope, Strict Standard 
+
+ The agreement extends the existing legal basis for processing special-category personal data for bias detection and correction — previously limited to providers of high-risk systems — to all AI systems and general-purpose AI models, subject to a strict necessity standard in line with the approach recommended by the EDPB and EDPS in their Joint Opinion 1/2026.
+
+ AI Regulatory Sandboxes: Establishment Deadline Postponed 
+
+ The agreement aims at postponing the deadline for member states to establish AI regulatory sandboxes by national competent authorities to 2 August 2027 (one year later than originally scheduled) and at expanding the possibility for real-world testing outside sandboxes to Annex I high-risk AI systems.
+
+ EU AI Office: Supervisory Role and Enforcement Powers 
+
+ The agreement clarifies and reinforces the supervisory role of the EU AI Office. The AI Office is given exclusive competence over AI systems built on general-purpose AI (GPAI) models where the model and the system are developed by the same provider, as well as over AI systems integrated into VLOPs/VLOSEs under the Digital Services Act. National authorities remain competent for law enforcement, border management, judicial authorities, and financial institutions. The AI Office is also equipped with new enforcement tools, including powers to conduct investigations and on-site inspections, accept binding commitments, and impose fines.
+
+ AI Literacy Obligation: Retained but Softened 
+
+ The Article 4 AI literacy obligation, which has applied since 2 February 2025, is proposed to be softened: providers and deployers would be required to support the development of AI literacy among their staff, rather than to guarantee a specific level of literacy.
+
+ 3. Updated AI Act Applicability Timeline 
+
+ The table below provides an integrated overview of all key AI Act milestones — those already in force, those proceeding as originally scheduled, and those proposed to be deferred by the Omnibus agreement.
+
+ Date 
+ Key Provisions 
+ Status 
+ Note 
+
+ 1 Aug 2024 
+ AI Act enters into force (Article 113). 
+ In Force 
+ No change. 
+
+ 2 Feb 2025 
+ Unacceptable-risk prohibitions apply (Article 5); AI literacy obligations begin (Article 4). 
+ In Force 
+ No change of date. New nudifier/CSAM ban proposed to be added to Article 5 (with a transitional period until 2 Dec 2026) and Article 4 obligation to be softened in substance. 
+
+ 2 Aug 2025 
+ GPAI model obligations apply (Articles 51–56); AI Office becomes operational. 
+ In Force 
+ No change to date. AI Office competence scope proposed to be clarified and enforcement powers reinforced by Omnibus agreement. 
+
+ 2 Aug 2026 
+ Article 50 transparency obligations for AI-generated content apply. 
+ Partially Deferred 
+ Article 50 transparency proceeds as scheduled, with a proposed four-month grace period for existing systems under Article 50(2). Annex III HRAIS obligations and sandbox establishment deadline were originally due from this date but are proposed to be deferred. 
+
+ 2 Dec 2026 
+ Proposed Article 50(2) watermarking grace period ends for existing systems; newly proposed Article 5 NCII/CSAM prohibition transitional period ends. 
+ New 
+ / 
+
+ 2 Aug 2027 
+ Deadline for member states to establish AI regulatory sandboxes (Article 57). 
+ New 
+ Annex I HRAIS obligations were originally due from this date but are proposed to be deferred to 2 Aug 2028. 
+
+ 2 Dec 2027 
+ Annex III HRAIS obligations proposed to apply. 
+ New 
+ / 
+
+ 2 Aug 2028 
+ Annex I HRAIS obligations proposed to apply. 
+ New 
+ / 
+
+ 4. What This Means for Businesses 
+
+ The deferral of high-risk applicability dates reflects a pragmatic acknowledgment that the regulatory infrastructure needed to make those obligations operable has not materialized on schedule. It is, however, a deferral rather than a dismantling: the fundamental architecture of the AI Act — its risk-based approach, its governance structure, and its core obligations — remains intact. Formal adoption is expected before 2 August 2026, but businesses should note that the new dates only bind once the Omnibus is published in the Official Journal.
+
+ For businesses, the key takeaways are:
+
+- 2 August 2026 remains a live compliance date . The Article 50 transparency obligations are largely unaffected by the Omnibus. Businesses who are subject to those obligations should continue preparing for that date.
+
+- Use the additional time — do not wait for it . The 2027/2028 dates for high-risk AI systems provide real headroom, but a compliance framework takes time to build properly. Organizations should treat the agreement as a signal to commence or continue, not as a reason to defer.
+
+- Monitor formal adoption closely . The amended dates do not bind until formal adoption and Official Journal publication.
+
+ Gibson Dunn’s Privacy, Cybersecurity & Data Innovation and Artificial Intelligence practices regularly advise on AI Act compliance and will continue to monitor developments closely. If you have questions about how the Omnibus agreement affects your business, please do not hesitate to reach out to the authors of this alert. 
+
+ The following Gibson Dunn lawyers prepared this update: Ahmed Baladi, Kai Gesing, Joel Harrison, Vera Lukic, Robert Spano, Yannick Oberacker, and Victor Thonke.
+
+ Gibson Dunn’s lawyers are available to assist with any questions you may have regarding these developments. Please contact the Gibson Dunn lawyer with whom you usually work, the authors, or any leader or member of the firm’s Artificial Intelligence or Privacy, Cybersecurity & Data Innovation practice groups:
+
+ Ahmed Baladi – Paris (+33 1 56 43 13 00, abaladi@gibsondunn.com )
+
+Kai Gesing – Munich (+49 89 189 33 285, kgesing@gibsondunn.com )
+
+Joel Harrison – London (+44 20 7071 4289, jharrison@gibsondunn.com )
+
+Vera Lukic – Paris (+33 1 56 43 13 00, vlukic@gibsondunn.com )
+
+Robert Spano – London/Paris (+33 1 56 43 13 00, rspano@gibsondunn.com )
+
+Yannick Oberacker – Munich (+49 89 189 33 282, yoberacker@gibsondunn.com )
+
+Victor A. Thonke – Frankfurt (+49 69 247 411 526, vthonke@gibsondunn.com )
+
+ Artificial Intelligence :
+
+Cassandra L. Gaedt-Sheckter – Palo Alto (+1 650.849.5203, cgaedt-sheckter@gibsondunn.com )
+
+Vivek Mohan – Palo Alto (+1 650.849.5345, vmohan@gibsondunn.com )
+
+Robert Spano – London/Paris (+33 1 56 43 13 00, rspano@gibsondunn.com )
+
+Eric D. Vandevelde – Los Angeles (+1 213.229.7186, evandevelde@gibsondunn.com )
+
+ Privacy, Cybersecurity & Data Innovation :
+
+Ahmed Baladi – Paris (+33 1 56 43 13 00, abaladi@gibsondunn.com )
+
+Ashlie Beringer – Palo Alto (+1 650.849.5327, aberinger@gibsondunn.com )
+
+Joel Harrison – London (+44 20 7071 4289, jharrison@gibsondunn.com )
+
+Jane C. Horvath – Washington, D.C. (+1 202.955.8505, jhorvath@gibsondunn.com )
+
+ © 2026 Gibson, Dunn & Crutcher LLP. All rights reserved. For contact and other information, please visit us at www.gibsondunn.com.
+
+ Attorney Advertising: These materials were prepared for general informational purposes only based on information available at the time of publication and are not intended as, do not constitute, and should not be relied upon as, legal advice or a legal opinion on any specific facts or circumstances. Gibson Dunn (and its affiliates, attorneys, and employees) shall not have any liability in connection with any use of these materials. The sharing of these materials does not establish an attorney-client relationship with the recipient and should not be relied upon as an alternative for advice from qualified counsel. Please note that facts and circumstances may vary, and prior results do not guarantee a similar outcome.
+
+ Download PDF 
+
+ Share 
+
+ Related People
+
+ - 
+ Ahmed Baladi 
+
+ - 
+ Kai Gesing 
+
+ - 
+ Joel Harrison 
+
+ - 
+ Vera Lukic 
+
+ - 
+ Robert Spano 
+
+ - 
+ Yannick Oberacker 
+
+ - 
+ Victor A. Thonke 
+
+ Related Capabilities
+
+ - 
+ Artificial Intelligence 
+
+ - 
+ Privacy, Cybersecurity, and Data Innovation 
+
+ -->
+
+ - People 
+
+- Capabilities 
+
+- Insights 
+
+ - Insights & Analysis 
+
+ - Resources 
+
+- Firm News 
+
+- Locations 
+
+- About 
+
+ - Our Firm 
+
+ - Alumni 
+
+ - Diversity & Inclusion 
+
+ - Pro Bono 
+
+ - Annual Report 2025 
+
+- Careers 
+
+ - Contact

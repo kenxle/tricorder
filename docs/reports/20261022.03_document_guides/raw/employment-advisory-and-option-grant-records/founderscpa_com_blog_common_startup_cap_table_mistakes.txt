@@ -1,0 +1,135 @@
+SOURCE: https://founderscpa.com/blog/common-startup-cap-table-mistakes
+FETCHED: 2026-10-22
+
+Cap Tables: The Complete Guide for Startups 
+
+ - 
+
+- 
+- 
+- 
+- 
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
+ CFO 
+
+ Cap Tables: The Complete Guide for Startups 
+
+ - 
+- 
+
+ A capitalization table is, mechanically, just a ledger of who owns what: every security your company has issued — shares, options, warrants, convertibles — and the ownership percentages they represent. What makes it worth a complete guide is that this "just a table" is the single source of truth for every equity decision the company will ever make, and errors in it don't announce themselves. They sit quietly until a financing or an exit, at which point a discrepancy between the cap table and the legal record becomes a diligence problem measured in legal fees, delayed closings, and occasionally in someone's ownership. Here's what belongs in it, the mechanics founders most often misunderstand, and the mistakes we see repeatedly from the accounting side of diligence.
+
+ What's Actually In a Cap Table
+
+ A complete cap table tracks every claim on the company's equity, current and contingent:
+
+- Common stock — founders and employees.
+
+- Preferred stock — by series, with its rights and preferences.
+
+- Options — granted, vested, and the unallocated pool.
+
+- Warrants — outstanding rights to purchase shares.
+
+- Convertible instruments — SAFEs and notes that will become equity at the next priced round.
+
+ Each entry carries the security's terms: share counts, price paid, vesting schedule, and dates. Two views matter and are routinely conflated: issued and outstanding ownership versus fully diluted ownership, which assumes every option, warrant, and convertible converts. Investors think and negotiate fully diluted; founders who track only outstanding shares consistently overestimate their own stake — usually discovering the difference at the moment it's most expensive to learn.
+
+ Dilution: The Mechanic Worth Actually Understanding
+
+ Dilution isn't a fee charged by investors; it's arithmetic. When new shares are issued, every existing holder's percentage falls, because the pie gains slices — the question is whether your smaller percentage of a more valuable company is worth more than your larger percentage of a less valuable one, which is the entire economic content of a financing decision. Three dilution mechanics deserve founder fluency before the first term sheet:
+
+- Option pool shuffle: investors typically require the option pool expanded pre-money , which means the pool's dilution lands on existing holders rather than being shared with the new money — a negotiating point disguised as an administrative one, and worth modeling both ways.
+
+- SAFE stacking: convertibles don't dilute when signed, they dilute all at once when they convert, and founders who stack SAFEs across multiple caps without modeling the conversion routinely get their first accurate look at their ownership on the pro-forma cap table of the Series A — as a surprise.
+
+- Anti-dilution provisions: preferred stock usually carries protection that shifts down-round pain onto common holders; know which flavor (broad-based weighted average is standard; full ratchet is not) before signing, not after.
+
+ Why It Has to Be Right: The Three Audiences
+
+ Like the books themselves, the cap table serves audiences who each punish different failures:
+
+- Investors diligence it against the legal record before wiring money — every discrepancy is friction, and a messy table reads as a governance signal.
+
+- Employees depend on it for their grants: options issued beyond the authorized pool, or without proper board approval, are the classic cleanup that requires ratification and awkward conversations.
+
+- Tax and compliance runs through it constantly — 409A valuations that set option strike prices, ISO limits, 83(b) elections, and at exit, the waterfall that determines who receives what, where §1202 QSBS eligibility (tracked per share, from original issuance, with a five-year clock) can be worth up to $10M+ per holder in excluded gain — but only if the acquisition history supporting it is documented.
+
+ The cap table is where all of that documentation either exists or doesn't.
+
+ Building One: Start Formal, However Small You Are
+
+ Every cap table starts the same way — founders agree on a split, shares are issued, and the table has two rows. The mistakes start immediately after, in the gap between conversation and paper. The founding discipline: every equity arrangement exists as an executed document (stock purchase agreements with vesting, board consents for every issuance and grant), the cap table records what the documents say rather than what anyone remembers agreeing to, and the awkward conversations — unequal splits reflecting unequal contributions, vesting for founders (yes, including you; your co-founder's unvested departure is the scenario vesting exists for) — happen at formation while the stakes are small. A handshake 50/50 with no vesting and no paper is the most expensive simple thing in startup formation.
+
+ Maintaining It: The Practices That Prevent the Cleanup
+
+ Cap table hygiene compresses to four habits:
+
+- Update on every event — issuance, grant, exercise, transfer, repurchase, convertible signed — the same week it happens, never batched "before the round".
+
+- Reconcile periodically against the legal record — board consents, stock ledger, grant agreements — because the table is a summary of documents and drifts from them exactly like unreconciled books drift from the bank.
+
+- Authorize before issuing — every grant needs board approval and room in the authorized pool before the offer letter promises it.
+
+- Model before signing — every term sheet and SAFE gets a pro-forma showing fully diluted ownership after conversion, so dilution is a decision rather than a discovery.
+
+ Past a handful of shareholders, run it on purpose-built software rather than a spreadsheet — the comparison of platforms is in our cap table software guide — and past your first priced round, the modeling work (scenarios, waterfalls, 409A coordination) is standard scope for a fractional CFO engagement .
+
+ The Mistakes We Actually See
+
+ From the diligence trenches, in descending frequency: option grants promised in offer letters but never board-approved or issued (found years later, at exercise or exit); SAFEs never modeled, converting into a Series A surprise; the spreadsheet cap table with version-control archaeology — three files, none authoritative; 83(b) elections missed on founder restricted stock (a thirty-day window with no cure, converting cheap early gains into ordinary income later); the fully-diluted blind spot described above; and QSBS eligibility never documented until an acquirer's counsel asks for proof nobody kept. Every one of these is trivial to prevent in the week it arises and expensive to remediate in the year it surfaces — the same compounding pattern as every other record-keeping failure in a startup, with more zeroes attached. If your table currently lives in a spreadsheet with a history you're not sure of, the reconciliation project is worth doing before the next financing makes it urgent; it's a cleanup we run regularly , and it's never gotten cheaper by waiting.
+
+ Related Articles
+
+ Cash Flow & Runway Analysis for Startups
+
+ Jose Garcia
+
+ • 
+
+ Jun 23, 2025, 2:20:54 PM 
+
+ Startup Fundraising Due Diligence: What Startups Need to Know
+
+ Patrick Shannon
+
+ • 
+
+ May 14, 2025, 3:23:18 PM 
+
+ Best Cap Table Management Software for Startups
+
+ Jamey Marelli
+
+ • 
+
+ Jan 22, 2025, 2:56:23 PM 
+
+ Controller vs. CFO: What's Right for Your Startup?
+
+ Jill Wade
+
+ • 
+
+ Aug 27, 2024, 10:33:06 AM 
+
+ Privacy Policy | Terms of Service | Web Accessibility | Careers | Blog | Contact Us 
+
+ Copyright © 2026 FPSG LLC, dba Founder's CPA. All Rights Reserved.

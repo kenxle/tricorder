@@ -1,0 +1,165 @@
+SOURCE: https://hub.causo.ai/guides/team-slide-first-time-founder
+FETCHED: 2026-10-22
+
+- - - - - - - Team slide pitch deck: first-time founder playbook | Causo Hub - - - - - - - 
+ Hub / Guides / pitch-deck / The team slide pitch deck fix for first-time founders 
+
+ The team slide pitch deck fix for first-time founders
+
+ The team slide pitch deck problem for first-time founders is that you have no exits to anchor credibility. The fix is not to hide this, it is to swap exits for four founder-market fit signals: domain-obsession tenure, customer proximity, technical depth proof, and a hard thing you already shipped. Investors fund these, and they fit on one slide.
+
+ Most first-time founder decks lose the team slide before the investor finishes the first bio. The pattern is predictable: three logos, a line about "passion for the space," and a stock headshot. A partner sees twenty of these a week and remembers none.
+
+ The bar went up. First-time financings in 2024 concentrated in higher-quality opportunities with deeper technical or market signals, not the widest logo sprays ( PitchBook-NVCA Venture Monitor Q3 2024 ). The good news: the money is still there. 3,004 first-time financings closed for $13.6 billion year-to-date by Q3 2024 alone ( PitchBook-NVCA Venture Monitor Q3 2024 ). You just have to use the slide real estate better than the person pitching before you.
+
+ Here is the exact swap.
+
+ How to build a first-time founder team slide: 5 steps
+
+ This is the featured-snippet version. Scan it, then read the why.
+
+- Open each bio with a founder-market fit signal , not a title or a logo. One of: domain-obsession tenure, customer proximity, technical depth proof, hard thing already shipped.
+
+- Pick one signal per founder , the strongest one, and cut the rest. Two sharp lines beat six fuzzy ones.
+
+- Quantify the signal with a year count, a system scale, a customer count, or a specific artifact. "7 years" reads. "Deeply experienced" does not.
+
+- Show a ship-reference for the current company. One line on something non-trivial you already built or sold in the last 90 days. This is your "we are not planning, we are executing" proof.
+
+- Move advisors, investors, and early hires to the appendix. The main slide has at most four faces.
+
+ What investors read on a pitch deck team page
+
+ A seed partner gives the team slide under 15 seconds on the first pass. They are scanning for one question: why is this team going to solve this problem before a smarter one does it first?
+
+ The answer is not a logo. Ex-Google does not tell them why you specifically will win freight brokering, or ocular diagnostics, or stablecoin rails. Investors increased the selection bar in 2024, and closed deals trended toward teams with stronger proof points rather than stronger resumes ( PitchBook-NVCA Venture Monitor Q2 2024 ). Proof points on a team slide look like specificity: the years you spent inside a buyer, the system you built at scale, the pilot you closed last week.
+
+ Do this, not that:
+
+ ✅ Good: "Maria, CEO. 6 years as a radiology tech at Mount Sinai, read 40,000+ scans, co-authored 3 papers on missed findings at the shift handoff." The bio names the buyer persona, quantifies exposure, and hints at the wedge.
+
+ ❌ Bad: "Maria, CEO. Passionate about using AI to transform healthcare. Previously at a major hospital." Three lines of nothing. Any founder could have written this.
+
+ The founder team slide, four signals that replace exits
+
+ This is the core move. Pick the strongest signal per person and write the bio around it.
+
+ Signal 
+ What it proves 
+ What the line looks like 
+
+ Domain-obsession tenure 
+ You have lived in this problem long enough to see what's wrong with the obvious fixes. 
+ "8 years operating warehouses at [specific company type]." 
+
+ Customer proximity 
+ You know the buyer's day, not just the market's TAM. 
+ "Sold to 120+ dentists as an SDR and then AE between 2019 and 2024." 
+
+ Technical depth proof 
+ You can actually build what your deck is promising. 
+ "Built the payment orchestration layer at Series C fintech, processed $4B in 2024." 
+
+ Hard thing already shipped 
+ You ship in this company, not just in prior ones. 
+ "Signed 3 paid design-partner contracts in the first 90 days, before raising." 
+
+ Rules of thumb:
+
+- One signal per founder: If you list two, the second dilutes the first. Partners remember one thing per person, pick the one.
+
+- Quantify always: "7 years" and "180M events/day" stick. "Deep experience" and "production-grade" do not.
+
+- Match the signal to the problem: A deeptech CEO leading with customer proximity reads weaker than leading with technical depth proof. Choose the signal the market you're attacking actually rewards.
+
+ How to format a bio slide in an investor deck
+
+ The layout carries almost as much weight as the copy. A two-column grid with a headshot, a name, a role, and two lines of signal beats a dense paragraph every time.
+
+ For each founder: name, role, one signal line, one ship-reference line. That's it. No logo row unless the logo is actually load-bearing (Stripe is relevant if you are building developer infra, irrelevant if you are building AI legal tools).
+
+ ✅ Good: "Arun, CTO. Built and shipped the real-time fraud pipeline at a Series C fintech, processed 180M events/day. First commit on our core matching engine was Jan 2025." Specific prior system + current ship.
+
+ ❌ Bad: "Arun, CTO. Ex-Stripe, ex-Uber, ex-Airbnb. 10x engineer. Passionate about ML." Five logos, zero signal.
+
+ Two-person founding teams are the most common pattern among startups that closed rounds on Carta in 2025, representing 36% of them ( Carta Founder Ownership Report 2026 ). One or two faces is not a weakness. Do not pad the slide with people who aren't full-time founders just to fill space.
+
+ Team slide first time founder FAQ: preparing for the partner meeting
+
+ The slide is the cold artifact. The meeting is where the team narrative actually gets tested. First-time founders should lean on their point partner at the firm and rehearse the team story explicitly, because partner-meeting questions go deeper than the bullets on your slide ( First Round Review ).
+
+ Prepare for these three questions, because every first-time team gets them:
+
+- "Why you, for this problem?" Answer in 30 seconds with the exact signal from your bio line, expanded with one anecdote. Do not drift into vision.
+
+- "What's the biggest risk in this team?" Name it before they do. A known gap with a stated plan (a CTO search, a clinical advisor) beats a defensive "we've got it covered."
+
+- "What have you shipped together in the last 90 days?" The answer is your ship-reference line from the slide. If you can't answer this, the slide is premature and the round is premature.
+
+ If you are sending more than 20 decks a week, tools like Causo handle the per-investor deck personalization and follow-up timing. For lower volumes, a checklist is enough.
+
+ FAQ
+
+ What should I put on the team slide of a pitch deck for seed investors? 
+Names, roles, a one-line founder-market fit signal for each person, and a visible reference to something you already shipped. Skip logos unless the prior job is directly relevant to what you're now building. The goal is to answer "why this team, for this problem" in under 10 seconds of reading.
+
+ How do I write a team slide with no exits as a first-time founder? 
+Replace the exit line with one of four signals: domain tenure (years obsessed with this problem), customer proximity (how close you've been to the buyer), technical depth proof (a specific system you built at scale), or a hard thing you already shipped on this company. Pick the strongest one per founder and cut the rest.
+
+ Should advisors be listed on my main team slide or a separate slide? 
+Separate slide, or the appendix. Putting advisors on the main team slide signals you're padding. The only exception is if an advisor is investing at the seed and writing a meaningful check, in which case mention them once by name in small type.
+
+ How many team members should I show on a seed-stage pitch deck team slide? 
+Founders plus any full-time technical lead, capped at four faces. Two-person teams are the most common pattern among startups that closed rounds on Carta in 2025, so one or two bios is the norm, not a weakness. Early hires without equity belong in the appendix.
+
+ Related on the hub
+
+- The 12-slide seed pitch deck that raised $187M: real teardowns — Related pitch deck guide.
+
+- How to cold email VCs in 2026: the tactical playbook — Related cold outreach guide.
+
+- How to apply to 500 Global in 2026 — Related accelerators guide.
+
+ Good 
+ Jane, CEO. Spent 7 years as the #3 operator at a regional freight broker, built the dispatch tool we now sell back to the industry. Left in 2024 to start this.
+ Domain-obsession tenure bio
+
+ Bad 
+ Jane, CEO. Ex-Google, ex-Stripe. Passionate about logistics and excited to build the future of freight.
+ The generic-resume bio
+
+ ★ Causo · Start free
+ Run this raise inside Causo.
+ Match to the best-fit partner at 1,000+ funds, draft a hyper-specific email, and send from your own inbox, in one place.
+
+ Start free 
+ Keep reading
+ All guides → 
+ Guide · pitch-deck
+ The problem slide pitch deck fix: stop sounding like 3 other startups
+ Your problem slide pitch deck is broken if it could belong to three other startups. Three framings with before/after examples from funded seed decks.
+ Guide · pitch-deck
+ The 12-slide seed pitch deck that raised $187M: real teardowns
+ Teardowns of 5 public seed pitch deck examples that raised real money, slide by slide, with the 12-slide structure and 2026 traction benchmarks to hit.
+ Guide · pitch-deck
+ The why now slide pitch deck founders get wrong
+ The why now slide pitch deck founders botch most often, five timing patterns VCs recognize, and how to turn a trend into a defensible catalyst argument.
+ Guide · pitch-deck
+ Traction slide pitch deck: 6 chart patterns that close seed rounds
+ The traction slide pitch deck patterns that actually close seed rounds in 2026: six chart formats, when to use each, and the ones investors scroll past.
+
+ While you're here The funds behind these numbers
+ - Accel Seed · Very active 
+- Andreessen Horowitz Seed · Very active 
+- Benchmark Seed · Very active 
+ Find your best-fit investors
+ See all 1,176 investors or browse the 50-fund shortlist → 🦝 From Causo
+ ★ Try it
+ Grade your email
+ Our LLM has read 40,000 cold emails. It'll rewrite yours in 30 seconds.
+ Open Grader 
+ Starter templates
+ Cold email — seed, AI Cold email — seed, fintech Follow-up — 1st nudge Rejection response 
+
+ Related
+ Active seed AI VCs · EU All 343 guides

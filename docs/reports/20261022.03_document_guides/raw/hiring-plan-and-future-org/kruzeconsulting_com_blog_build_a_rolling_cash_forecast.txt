@@ -1,0 +1,563 @@
+SOURCE: https://kruzeconsulting.com/blog/build-a-rolling-cash-forecast/
+FETCHED: 2026-10-22
+
+- 
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+- 
+
+ Build a Rolling Cash Forecast to Maximize Startup Runway 
+
+- 
+
+ Big Tax Changes for Startups! 
+ The new tax bill could impact your startup. What should you do next? 
+ Read the Blog → 
+
+ Burn Rate and Runway: Build a Rolling 18‑Month Cash Forecast for Your Startup
+
+ by
+
+ Kruze Consulting
+
+ Published: February 22, 2026 
+
+ If you’re running a venture‑backed startup, you’re not just managing a product roadmap, you’re also managing a clock. That clock is your runway : how many months of cash you have left before you need to raise funds, cut spending, or change direction. Burn rate is how fast that clock is ticking down.
+
+ Your investors, board, and potential acquirers all look at these numbers to decide how risky you are, how disciplined your team is, and whether you’re ready for the next round. Get them wrong, and you can end up fundraising in a bad market, accepting unfavorable terms, or making painful last‑minute cuts. Get them right, and you can pick your moment, negotiate from strength, and align your team around clear milestones.
+
+ It’s not enough to “kind of know” your burn and runway. You need a clear, rolling 18‑month cash forecast to help you plan better and make more strategic decisions. This guide walks you through how to build that important startup tool.
+
+ Burn rate and runway: simple definitions founders can use
+
+ Let’s start by demystifying the jargon:
+
+- 
+ Gross burn: The total amount of cash going out the door each month. This is everything: payroll, contractors, AWS, SaaS tools, marketing, rent, legal, loan payments – if it leaves your bank account, it’s in gross burn.
+
+- 
+ Net burn: Cash out minus cash in. Net burn = monthly cash disbursements − monthly cash receipts (revenue, interest income, rebates, etc.). This is the number most investors focus on.
+
+- 
+ Runway: How many months you can keep going at your current net burn before you hit zero cash. Runway (months) = current cash balance ÷ current monthly net burn.
+
+ Here’s a simple example:
+
+- Cash in bank: $4,200,000
+
+- Average monthly net burn: $350,000
+
+ Runway = $4,200,000 ÷ $350,000 = 12 months.
+
+ If you trim expenses so net burn drops to $280,000, your runway jumps to 15 months. That extra three months might be the difference between a rushed fundraise and a strong funding round after you hit a key milestone.
+
+ The point is, burn and runway aren’t abstract finance concepts. They directly shape your strategy, hiring, and fundraising timing.
+
+ Step 1: Start with an accurate baseline
+
+ Every good 18‑month forecast starts with an honest look at where you are today. This is important – not starting with solid numbers is how “plans” drift away from reality. Here’s how to ground your model:
+
+ Use cash, not just your P&L
+
+ Your income statement is accrual‑based and great for understanding profitability, but investors care about cash, and your startup’s survival depends on it. Pull actual cash in and cash out from your bank accounts (or cash flow statement ), month by month, for at least the last three to six months.
+
+ Remove obvious one‑offs
+
+ Look through those months and flag anything non‑recurring or unusual, such as:
+
+- A large legal bill for financing
+
+- One‑time recruiting fees
+
+- Annual prepayment for a big SaaS contract
+
+- Office build‑out costs
+
+ You don’t ignore these in the forecast, but you don’t want them inflating your idea of “normal” burn.
+
+ Bucket spend into a handful of intuitive categories
+
+ Instead of 200 general ledger (GL) accounts, group your spending into buckets that match how you think about the business:
+
+- Payroll and benefits
+
+- Contractors and agencies
+
+- Cloud and software
+
+- Sales and marketing programs
+
+- General & Administrative (legal, rent, insurance, finance, HR, etc.)
+
+- Capital expenditures and one‑time investments
+
+ This makes patterns pop out. If cloud expenses are creeping up 10% every month, you’ll see it. If marketing is flat despite big growth goals, that stands out too.
+
+ Calculate your average monthly net burn
+
+ Take the average net burn over the last 3-6 months. That smooths out irregular months and gives you a realistic starting point.
+
+ The goal here is alignment. You want your CEO, co‑founders, and board to look at this baseline and say, “Yes, this actually reflects how we’re running today.”
+
+ Step 2: Turn your hiring plan into numbers
+
+ For most venture‑backed startups, people are the biggest expense. Headcount is often 60-80% of total burn. So if your forecast doesn’t model hiring clearly, it’s basically a guess. Here’s how to connect your org chart to your bank account:
+
+ Create a simple headcount grid
+
+ Open a spreadsheet and build a tab with:
+
+- Months across the top (next 18+ months)
+
+- Roles down the side (existing team and planned hires)
+
+ For each role, include:
+
+- Name or placeholder (e.g., “Account Executive #3”)
+
+- Department (Engineering, Product, Sales, Operations, G&A)
+
+- Location (important for cost and taxes)
+
+- Base salary
+
+- Start date (or target hire date)
+
+ Model fully‑loaded cost, not just salary
+
+ Salary is only part of the story. To avoid surprises, add:
+
+- Employer payroll taxes 
+
+- Benefits and health insurance
+
+- 401(k) match or similar
+
+- Stipends (home office, wellness, etc.)
+
+- Commissions and variable compensation where applicable
+
+ According to the US Small Business Administration , a rough rule of thumb for many U.S. companies is 1.25-1.4 times base salary for fully loaded cost, but your actual multiplier will depend on your benefits and locations.
+
+ Be realistic about hiring timing
+
+ Founders love aggressive hiring timelines: “We’ll hire five engineers next month.” In practice, recruiting takes time. Candidates back out. Offers slip. Build some slack into your model and assume most future hires start a month or two later than you would like. This tends to make your near‑term burn more accurate and your runway a bit less scary.
+
+ Once this headcount tab is in place, you’ll have monthly payroll totals by department. That becomes the backbone of your 18‑month forecast.
+
+ Step 3: Model non‑payroll expenses without overcomplicating it
+
+ Next, you layer on the rest of your operating expenses. You don’t need a hundred lines, but you do need to be thoughtful about how these costs scale.
+
+ Start from your current run‑rate
+
+ Using your cleaned‑up history, record your current monthly spend in categories like:
+
+- Cloud and hosting
+
+- SaaS tools
+
+- Paid marketing (ads, sponsorships, events)
+
+- Rent and office
+
+- Professional services (legal, accounting, HR, security)
+
+- Travel and entertainment
+
+ Decide what scales and what stays mostly flat
+
+ For each category, ask: as we grow, what drives this cost?
+
+- Scales with users or volume: Cloud, some support tools, transactional fees
+
+- Scales with headcount: SaaS seats, office space, equipment, HR tools
+
+- Mostly fixed or stepped: Some legal retainers, insurance, certain SaaS tiers
+
+ Then translate that into simple rules in your model. For example:
+
+- Hosting = baseline × (projected active users growth)
+
+- SaaS = baseline + (X per new employee)
+
+- Marketing = fixed monthly spend that increases when you launch a new region or product
+
+ Don’t forget irregular but predictable costs
+
+ Some costs don’t show up every month but are still predictable, like:
+
+- Annual insurance premiums
+
+- Large annual software renewals
+
+- Planned events or conferences
+
+ Schedule these in the specific months where they’ll hit. That’s often the difference between a month that looks fine on average and a month where cash dips more than expected.
+
+ The goal isn’t a perfect crystal ball. It’s a transparent, editable structure where everyone can see what drives the spend.
+
+ Step 4: Forecast revenue and other inflows conservatively
+
+ Even if you’re pre‑revenue, you should model cash inflows . And if you are already selling, this is the part of the model where optimism tends to quietly shrink your runway.
+
+ Pick a revenue driver that matches how you actually sell
+
+ A few examples:
+
+- B2B subscription SaaS: number of customers, average revenue per customer, churn
+
+- Usage‑based: active accounts, average usage per account, rate per unit
+
+- Marketplace: Gross merchandise volume (GMV), take rate, and seasonality
+
+ Use your current funnel metrics (even if rough) as a starting point, then build a simple path for how those improve over time.
+
+ Model cash timing, not just bookings
+
+ Revenue recognition and cash collection can be very different:
+
+- Monthly subscriptions: small delays between invoice and payment
+
+- Annual contracts: sometimes big upfront cash when the contract is signed
+
+- Enterprise deals: longer payment terms, milestones, acceptance criteria
+
+ Your cash tab should capture when money actually hits the bank, not when your sales deck says “closed‑won.”
+
+ Include non‑revenue cash
+
+ Beyond customers, money can come from:
+
+- Interest income on your cash balance
+
+- Tax credits (like R&D credits or other incentives )
+
+- Rebates or customer prepayments
+
+ These might not be huge, but they can add a couple of months of runway. When in doubt, be conservative on inflows and a bit pessimistic on outflows. It’s much nicer to be surprised on the upside than to discover you’re six months short.
+
+ Step 5: Assemble your rolling 18‑month cash forecast
+
+ Now it’s time to pull it all together into one tab that answers the two questions every board member cares about: “What’s your runway?” and “When do we need to raise?”
+
+ Your 18‑month cash forecast should show, for each month:
+
+- Beginning cash balance
+
+- Cash collected (customers + other inflows)
+
+- Cash paid out:
+
+- Payroll and benefits
+
+- Non‑payroll operating expenses
+
+- Capital expenses and one‑off items
+
+- Net cash change (inflows - outflows)
+
+- Ending cash balance
+
+- Projected net burn for that month
+
+- Projected runway at that point (cash ÷ current net burn)
+
+ When you look across the next 18 months, a few things should be easy to see:
+
+- The month your cash balance dips below a threshold you’re not comfortable with (for example, six months of runway).
+
+- How hiring decisions move that date earlier or later.
+
+- How aggressive growth plans affect your fundraising deadline.
+
+ For a lot of founders, the first time they see this all laid out can be sobering, but also empowering. You go from “I think we’re okay until next summer” to “We need to start serious fundraising conversations in November, and we shouldn’t add that extra salesperson until we see X in the pipeline.”
+
+ Step 6: Keep it rolling, not stale
+
+ The “rolling” part of a rolling 18‑month forecast is where discipline comes in. A model you build once for a fundraise and never touch again is basically a pretty slide deck, not a decision tool.
+
+ Here’s an easy process that works well:
+
+ Close and update monthly
+
+- At the end of each month, replace the forecasted numbers for that month with actuals from your bank and accounting system.
+
+- Recalculate your actual net burn and updated runway.
+
+- Note any big variances between forecast and actual.
+
+ Always look at least 18 months ahead
+
+ Every time you roll in a new month of actuals, add one more month to the end of the forecast. You always want a full 18‑month (or more) view of cash.
+
+ Refresh key assumptions quarterly
+
+ Once a quarter, step back and ask:
+
+- Are we actually hiring at the pace we modeled?
+
+- Are conversion rates, churn, and deal sizes tracking close to plan, or are we off?
+
+- Are we consistently overspending in certain categories (like cloud or marketing) compared to plan?
+
+ Update the model based on reality, not what you hoped would happen. Then use that updated view to drive decisions about hiring, pricing, go-to-market experiments, and fundraising timing.
+
+ When you treat the model as a living document, it becomes less about “finance homework” and more about how you run the company.
+
+ How investors interpret your burn and runway
+
+ One important point: Investors don’t just look at how much you’re burning. They look at what you’re getting for that burn. Some of the questions they’re quietly asking:
+
+- For this burn, what milestones will you hit before you need more capital? (Revenue, product, usage, regulatory approvals, etc.)
+
+- Is your burn profile typical and reasonable for a company at this stage and in this business model?
+
+- If the market turns or metrics slip, how quickly can you adjust your spend?
+
+- Does the leadership team clearly understand its numbers, or are they hand‑waving?
+
+ A clear, defensible 18‑month forecast signals professionalism and competence. It tells investors, “We know exactly how much time we have, what we plan to accomplish with that time, and what levers we can pull if things change.”
+
+ That’s a very different message from, “We think we have about a year of runway.”
+
+ When to bring in expert help
+
+ You don’t need a full‑time CFO to get this right, especially at early stages. But you do need clean data, a reasonable model, and someone who can check your assumptions.
+
+ That’s where a specialist partner like Kruze Consulting comes in. We help venture‑backed startups :
+
+- Clean up historical books so burn and runway numbers are actually trustworthy
+
+- Build headcount and expense models that reflect how your specific business grows
+
+- Connect tools (bank, accounting, payroll) so updating the forecast each month is fast, not painful
+
+- Build board‑ready reporting that ties your runway to product and revenue milestones
+
+ Founders have enough to worry about, like customers, product, team, and market. A well‑built, rolling 18‑month cash forecast takes one source of anxiety off your plate. You’ll know, in black and white, how much time you have and what you can do with it, and that makes every other decision a little clearer
+
+ Categories: 
+ Financial Strategy and Planning ,
+
+ Startup CFO .
+
+ Tags: 
+ Cash Flow Management .
+
+ Contact Us for a Free Consultation
+
+ Get the information you need
+
+ Get in Touch 
+
+ Startup CEO Salary Calculator
+
+ US Based Companies that have raised under $125M
+
+ Select Stage 
+ Seed 
+ Seed Extension -->
+ Series A 
+ Series B 
+ Series C 
+
+ Select Industry 
+ Biotech / Pharma 
+ Communications / Entertainment 
+ E-Commerce 
+ FinTech 
+ Hardware 
+ Healthcare 
+ Marketplace 
+ Media 
+ Other 
+ Software / SaaS 
+
+ Redirecting to results 
+
+ calculate 
+
+ Top Articles
+
+- 
+
+ Pre-Seed Funding + Top 20 Funds
+
+- 
+
+ eCommerce Accounting
+
+- 
+
+ Accounts Receivable Loans
+
+- 
+
+ What is the 2% and 20% VC fee structure?
+
+- 
+
+ How much does a 409A valuation cost?
+
+- 
+
+ What are Your VC’s Return Expectations Depending on the Stage of Investment?
+
+- 
+
+ Fractional CFOS
+
+ Kruze on LinkedIn
+
+ Kruze on Reddit
+
+ Email Us
+
+ RSS
+
+ How much can your startup save in payroll taxes?
+
+ Estimate your R&D tax credit using our free calculator.
+
+ r&d tax calculator
+
+ Popular pages
+
+- 
+
+ SaaS accounting 101
+
+- 
+
+ Best accounting software
+
+- 
+
+ Top banks for startups
+
+- 
+
+ How to account for convertible note
+
+- 
+
+ Average CEO Pay
+
+- 
+
+ Startup Tax Returns
+
+- 
+
+ Best VC Pitch Decks
+
+ Related content:
+
+ Revenue Recognition for Startups: A Plain-English Guide to ASC 606
+
+ Mon, 21 September 2026 
+
+ Net Operating Losses for Startups: How Founders Can Turn NOLs Into Future Tax Savings
+
+ Wed, 1 April 2026 
+
+ A 60‑Minute Monthly Finance Review Checklist: Keep Your Startup On Track
+
+ Tue, 27 January 2026 
+
+ Cash vs. Accrual Accounting: When Should Your Startup Switch?
+
+ Thu, 15 January 2026 
+
+ Also read:
+
+ How Do Part-Time CFOs Help Startups?
+
+ Learn how part-time CFOs help startups monitor cash burn, control costs, and optimize liquidity to drive stronger, more sustainable growth.
+
+ Wed, 12 November 2025 
+
+ 5 Reasons VC-Funded Startups Use Fractional CFOs
+
+ Hire a fractional CFO to boost fundraising, compliance, forecasting, and investor communication at a fraction of the full-time cost for your stage.
+
+ Wed, 12 November 2025 
+
+ How Outsourced CFOs Communicate Startup Value 
+
+ Tell a stronger financial story—learn how outsourced CFOs communicate startup value with metrics, narratives, and investor-ready reporting.
+
+ Wed, 12 November 2025 
+
+ 5 Things to do after You Raise Venture Capital
+
+ Learn the five critical things every founder should do after raising venture capital – from banking and hiring to accounting, board prep, and venture debt.
+
+ Thu, 23 October 2025 
+
+ Kruze is a leader in accounting services for startups
+
+ With over $15 billion in funding raised by our clients, Kruze is a leader in helping funded startups with accounting, tax, finance and HR strategies.
+
+ Thank you!
+
+ ✅ Your request has been submitted.
+We will contact you shortly.
+
+ Enter your name 
+
+ Enter Company name 
+
+ Enter Phone number 
+
+ Enter Email 
+
+ I agree to receive marketing emails from Kruze Consulting 
+
+ Enter Message 
+
+ Contact Us 
+
+ By providing a telephone number and submitting this form you are consenting to be contacted by SMS text message from Kruze Consulting. Type of messages will include notifications, reminders, etc. Message & data rates may apply. Message frequency may vary. Privacy Policy . Reply Help for more information. You can reply STOP to opt-out of further messaging.
+
+ ×
+
+ Talk to a leading startup CPA
+
+- 
+
+- 
+
+ Is the content on this page useful?
+
+- 
+
+ Thank you!
+
+ Your feedback is very important.
+
+ ×
+
+ Loading search... 
+
+ Initializing search...
+
+ Search
+
+ Search 
+
+ Submit -->
+
+ × clear 
+
+ Recent searches:
+
+ ×

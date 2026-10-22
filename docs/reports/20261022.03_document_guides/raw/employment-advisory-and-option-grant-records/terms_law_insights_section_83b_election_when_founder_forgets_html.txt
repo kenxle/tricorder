@@ -1,0 +1,73 @@
+SOURCE: https://terms.law/insights/section-83b-election-when-founder-forgets.html
+FETCHED: 2026-10-22
+
+Section 83(b) Elections and What Happens When the Founder Forgets | Terms.Law Insights 
+
+- 
+- 
+- 
+- 
+- 
+- 
+
+- 
+- 
+- 
+- 
+- 
+
+ Language: 
+ 🇺🇸 
+ 🇲🇽 
+ 🇷🇺 
+
+ Founder and Equity Disputes · Memo
+
+ Section 83(b) Elections and What Happens When the Founder Forgets
+
+ The 83(b) election is a thirty-day deadline that, missed, can produce six or seven figures of unanticipated tax exposure at exit. I will walk through what the election does, what happens when it is missed, and the limited remediation paths.
+
+ Internal Revenue Code section 83 governs the taxation of property transferred in connection with the performance of services. Restricted stock issued to a founder is, for tax purposes, property transferred subject to a substantial risk of forfeiture. The default rule under section 83(a) is that the founder recognizes ordinary income as the stock vests, measured by the difference between the fair market value at vesting and the price paid. For a founder whose stock vests over four years and whose company appreciates rapidly, the default rule produces a tax bill spread over four years that tracks the company's increasing valuation.
+ The section 83(b) election under section 83(b) of the Code allows the founder to elect, within thirty days of the property transfer, to be taxed at the time of transfer rather than at vesting. The founder recognizes ordinary income on the spread between the fair market value at transfer and the price paid (typically zero or negligible for early-stage founder stock). Subsequent appreciation is taxed at capital gains rates upon sale. For founder stock issued at incorporation when the fair market value is close to zero, the 83(b) election produces a near-zero current tax bill and converts future appreciation into capital gains.
+ The thirty-day deadline
+ The election must be filed with the Internal Revenue Service within thirty days of the transfer. The deadline is statutory and the Service has been strict in enforcing it. Treas. Reg. section 1.83-2(c) provides the filing requirements: the election is filed with the IRS service center where the founder files her federal income tax return, signed by the founder, identifying the property, the date of transfer, the fair market value, the amount paid, the calculation of income, and other specified information. A copy must also be furnished to the person for whom services are performed (typically the company).
+ The thirty-day clock begins on the date of transfer of the property. For founder stock issued at incorporation, the date of transfer is the date the stock is actually issued to the founder, which may be the date of incorporation or a later date depending on the company's stock-issuance procedure. Counsel should confirm the actual issuance date rather than assume it is the date of incorporation.
+ What happens when the founder misses the window
+ The default rule of section 83(a) applies. The founder recognizes ordinary income at each vesting event. For a founder whose company appreciates rapidly, the tax consequences are unpleasant.
+ An illustrative scenario. Founder receives one million shares of stock at incorporation, valued at $0.001 per share. The fair market value at issuance is $1,000. Founder fails to file the 83(b) election. The stock vests over four years. By month thirteen, the company raises a seed round and the fair market value of the common stock is determined under a 409A valuation to be $0.10 per share. Founder vests two hundred fifty thousand shares (the first twenty-five percent at the cliff). The taxable income at the cliff is two hundred fifty thousand shares times $0.10, or $25,000. By the end of year four, the company has raised a Series A at $0.50 per share common, and the remaining shares vest at that price. The total ordinary income recognized over the vesting period is approximately $250,000 to $500,000 depending on the trajectory. None of that income produces actual cash to the founder; the founder owes tax on the spread without having sold the shares.
+ For a founder whose company subsequently appreciates further (Series B, Series C, exit), the missed 83(b) election compounds. Each vesting tranche is taxed at ordinary rates on the spread at that vesting date. The future appreciation does not benefit from the long-term capital gains treatment that the election would have secured. The net tax differential at exit can be hundreds of thousands of dollars or more.
+ The limited remediation paths
+ The Code does not provide for a late 83(b) election. The Service has consistently rejected requests for relief outside narrow circumstances. Counsel evaluating a missed election should manage expectations: the election cannot generally be salvaged.
+ The narrow paths that have been recognized:
+ - Section 9100 relief. Treas. Reg. section 301.9100-3 provides for discretionary extensions of time to make certain elections. The Service has, in private letter rulings, granted section 9100 relief for missed 83(b) elections in limited circumstances. The standard requires the taxpayer to show that the taxpayer acted reasonably and in good faith, and that granting relief will not prejudice the interests of the Government. The relief is fact-specific and the Service's grants have been selective. Counsel should not rely on section 9100 relief as a planning matter; it is a remedial possibility, not a planning strategy.
+- Reissuance. If the stock has been issued but the company is willing to cooperate, the founder may surrender the stock and have it reissued with a new transfer date. The reissuance restarts the thirty-day clock. This requires that the cliff has not yet been hit and that the company's fair market value is still close to the original issuance price. If the company has appreciated, the reissuance produces a new ordinary-income recognition event at the higher value, which defeats the purpose.
+- Conversion to options. If the founder has not yet vested in any of the stock and the company is willing to cooperate, the unvested stock can be canceled and replaced with stock options. Stock options have different tax treatment under section 421 (for ISOs) or section 83 (for NSOs). The conversion does not recover the original 83(b) benefit but can mitigate some of the going-forward exposure.
+ The drafting moves to prevent the miss
+ For company counsel issuing founder stock, the operational steps that prevent the miss:
+ - Issue stock with a written stock-purchase agreement that includes 83(b) election instructions. The agreement should reference the election, attach a form 83(b) election, and provide step-by-step filing instructions including the thirty-day deadline.
+- Provide the founder with the form 83(b) election at signing. The form should be pre-populated with the founder's information, the stock details, and the calculation. The founder needs only to sign and file.
+- Document delivery. The company should obtain confirmation that the founder has received the form and the instructions. A signed acknowledgment from the founder is good practice.
+- Calendar the deadline. The company's outside counsel or general counsel should calendar the thirty-day deadline and follow up with the founder before the deadline expires.
+- Obtain proof of filing. The founder should provide the company with a copy of the filed 83(b) election, including the certified-mail return receipt or other proof of filing. The company's records should reflect the filing.
+ These steps do not eliminate the risk; a founder who refuses to file is still exposed. But they reduce the most common cause of the miss, which is that the founder did not know about the election or did not understand the deadline.
+ The Service's procedural posture
+ The Service has, since 2016, permitted electronic submission of certain tax filings, and the 83(b) election can be filed by certified mail or by the IRS's electronic submission portal (where available for the specific service center). The certified-mail return receipt is the documentary evidence I would not skip. The Service has been known to lose 83(b) filings, and a missing filing is a strong argument for section 9100 relief but is not a guaranteed argument. The certified-mail receipt establishes the filing date.
+ What I would not assume
+ The 83(b) election is straightforward as a planning matter and unforgiving as a remediation matter. Counsel handling founder stock should treat the election as a critical-path item that must be completed within thirty days, with documentation. The cost of forgetting is high, the cost of remembering is trivial, and the asymmetry should drive counsel's process. Outcomes in remediation matters depend on the specific facts, the Service's posture, and the willingness of the company to cooperate. The remediation paths exist but should not be relied on. Calendar the deadline.
+
+ Related practice pages 
+
+- Founder and equity disputes practice 
+
+- Cross-border US-Asia deals 
+
+- SaaS contracts 
+
+- Business demand letters 
+
+ Founder stock issuance or 83(b) issue on your matter?
+ If you are issuing founder stock and want a stock-purchase package with the 83(b) election pre-prepared and the deadline calendared, or evaluating a missed election for remediation paths, email owner@terms.law .
+
+ Sergei Tokmakov, Esq., CA Bar #279869. This memo is attorney commentary on legal questions and is not legal advice. Reading it does not create an attorney-client relationship. Past matter outcomes depend on facts and the responding party; nothing here is a prediction of result.
+
+-

@@ -1,0 +1,672 @@
+SOURCE: https://venturehacks.com/option-pool-shuffle
+FETCHED: 2026-10-22
+
+The Option Pool Shuffle 
+
+ The Option Pool Shuffle - Venture Hacks 
+
+ - 
+ - 
+
+ - 
+
+ - 
+
+ - 
+ - 
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+- - - 
+
+- 
+- 
+
+- 
+- 
+- 
+
+- 
+
+- 
+
+ Venture Hacks 
+
+ Advice for startups 
+
+ ← Reactions to Venture Hacks 
+ Focus on your share price, not your valuation → 
+
+ -->
+
+ The Option Pool Shuffle 
+
+ Nivi 
+
+ ·
+
+ April 10th, 2007 
+
+ Hiring , Option Pool , Valuation -->
+
+ “Follow the money card!”
+
+ – The Inside Man, Three-Card Shuffle 
+
+ Summary: Don’t let your investors determine the size of the option pool for you. Use a hiring plan to justify a small option pool, increase your share price, and increase your effective valuation.
+
+ If you don’t keep your eyes on the option pool while you’re negotiating valuation, your investors will have you playing (and losing) a game that we like to call:
+
+ Option Pool Shuffle 
+
+ You have successfully negotiated a $2M investment on a $8M pre-money valuation by pitting the famous Blue Shirt Capital against Herd Mentality Management. Triumphant, you return to your company’s tastefully decorated loft or bombed-out garage to tell the team that their hard work has created $8M of value.
+
+ Your teammates ask what their shares are worth. You explain that the company currently has 6M shares outstanding so the investors must be valuing the company’s stock at $1.33/share:
+
+ $8M pre-money ÷ 6M existing shares = $1.33/share.
+
+ Later that evening you review the term sheet from Blue Shirt. It states that the share price is $1.00… this must be a mistake! Reading on, the term sheet states, “The $8 million pre-money valuation includes an option pool equal to 20% of the post-financing fully diluted capitalization.” 
+
+ You call your lawyer: “What the fuck?!”
+
+ As your lawyer explains that the so-called pre-money valuation always includes a large unallocated option pool for new employees, your stomach sinks. You feel duped and are left wondering, “How am I going to explain this to the team?”
+
+ If you don’t keep your eyes on the option pool, your investors will slip it in the pre-money and cost you millions of dollars of effective valuation. Don’t lose this game.
+
+ The option pool lowers your effective valuation.
+
+ Your investors offered you a $8M pre-money valuation. What they really meant was,
+
+ “We think your company is worth $6M. But let’s create $2M worth of new options, add that to the value of your company, and call their sum your $8M ‘pre-money valuation’.”
+
+ For all of you MIT and IIT students out there:
+
+ $6M effective valuation + $2M new options + $2M cash = $10M post
+
+ or
+
+ 60% effective valuation + 20% new options + 20% cash = 100% total.
+
+ Slipping the option pool in the pre-money lowers your effective valuation to $6M. The actual value of the company you have built is $6M, not $8M. Likewise, the new options lower your company’s share price from $1.33/share to $1.00/share:
+
+ $8M pre ÷ (6M existing shares + 2M new options) = $1/share.
+
+ Update : Check out our $9 cap table which calculates the effect of the option pool shuffle on your effective valuation.
+
+ The shuffle puts pre-money into your investor’s pocket.
+
+ Proper respect must go out to the brainiac who invented the option pool shuffle. Putting the option pool in the pre-money benefits the investors in three different ways!
+
+ First, the option pool only dilutes the common stockholders. If it came out of the post-money, the option pool would dilute the common and preferred shareholders proportionally.
+
+ Second, the option pool eats into the pre-money more than it would seem. It seems smaller than it is because it is expressed as a percentage of the post-money even though it is allocated from the pre-money. In our example, the new option pool is 20% of the post-money but 25% of the pre-money :
+
+ $2M new options ÷ $8M pre-money= 25%.
+
+ Third, if you sell the company before the Series B, all un-issued and un-vested options will be cancelled. This reverse dilution benefits all classes of stock proportionally even though the common stock holders paid for all of the initial dilution in the first place! In other words, when you exit, some of your pre-money valuation goes into the investor’s pocket.
+
+ More likely, you will raise a Series B before you sell the company. In that case, you and the Series A investors will have to play option pool shuffle against the Series B investors. However, all the unused options that you paid for in the Series A will go into the Series B option pool. This allows your existing investors to avoid playing the game and, once again, avoid dilution at your expense.
+
+ Solution: Use a hiring plan to size the option pool.
+
+ You can beat the game by creating the smallest option pool possible. First, ask your investors why they think the option pool should be 20% of the post-money. Reasonable responses include
+
+- “That should cover us for the next 12-18 months.”
+
+- “That should cover us until the next financing.”
+
+- “It’s standard,” is not a reasonable answer. (We’ll cover your response in a future hack.) 
+
+ Next, make a hiring plan for the next 12 months. Add up the options you need to give to the new hires. Almost certainly, the total will be much less than 20% of the post-money. Now present the plan to your investors:
+
+ “We only need a 10% option pool to cover us for the next 12 months. By your reasoning we only need to create a 10% option pool.”
+
+ Reducing the option pool from 20% to 10% increases the company’s effective valuation from $6M to $7M:
+
+ $7M effective valuation + $1M new options + $2M cash = $10M post
+
+ or
+
+ 70% effective valuation + 10% new options + 20% cash = 100% total
+
+ A few hours of work creating a hiring plan increases your share price by 17% to $1.17:
+
+ $7M effective valuation ÷ 6M existing shares = $1.17/share.
+
+ How do you create an option pool from a hiring plan? # 
+
+ To allocate the option pool from the hiring plan, use these current ranges for option grants in Silicon Valley:
+
+ Title 
+ Range (%) 
+
+ CEO 
+ 5 – 10 
+
+ COO 
+ 2 – 5 
+
+ VP 
+ 1 – 2 
+
+ Independent Board Member 
+ 1 
+
+ Director 
+ 0.4 – 1.25 
+
+ Lead Engineer 
+ 0.5 – 1 
+
+ 5+ years experience Engineer 
+ 0.33 – 0.66 
+
+ Manager or Junior Engineer 
+ 0.2 – 0.33 
+
+ These are rough ranges – not bell curves – for new hires once a company has raised its Series A. Option grants go down as the company gets closer to its Series B, starts making money, and otherwise reduces risk.
+
+ The top end of these ranges are for proven elite contributors. Most option grants are near the bottom of the ranges. Many factors affect option allocations including the quality of the existing team, the size of the opportunity, and the experience of the new hire.
+
+ If your company already has a CEO in place, you should be able to reduce the option pool to about 10% of the post-money. If the company needs to hire a new CEO soon , you should be able to reduce the option pool to about 15% of the post-money.
+
+ Bring up your hiring plan before you discuss valuation.
+
+ Discuss your hiring plan with your prospective investors before you discuss valuation and the option pool. They may offer the truism that “you can’t hire good people as fast as you think.” You should respond, “Okay, let’s slow down the hiring plan… (and shrink the option pool).”
+
+ You have to play option pool shuffle.
+
+ The only way to win at option pool shuffle is to not play at all. Put the option pool in the post-money instead of the pre-money. This benefits you and your investors because it aligns your interests with respect to the hiring plan and the size of the option pool.
+
+ Still, don’t try to put the option pool in the post-money. We’ve tried – it doesn’t work.
+
+ Your investor’s norm is that the option pool goes in the pre-money. When your opponent has different norms than you do, you either have to attack his norms or ask for an exception based on the facts of your case. Both straits are difficult to navigate.
+
+ Instead, skillful negotiators use their opponent’s standards and norms to advance their own arguments. Fancy negotiators call this normative leverage . You apply normative leverage in the option pool shuffle by using a hiring plan to justify a small option pool.
+
+ You can’t avoid playing option pool shuffle. But you can track the pre-money as it gets shuffled into the option pool and back into the investor’s pocket, you can prepare a hiring plan before the game starts, and you can keep your eye on the money card.
+
+ Sign up for updates
+
+ Topics Hiring · Option Pool · Valuation 
+
+35 comments 
+
+·
+
+ Show 
+
+ Comments RSS -->
+
+ - 
+
+ dispatches from TJICistan » Blog Archive » how much stock do you give to key personnel ? 
+ // Apr 11, 2007 at 4:29 am 
+
+ […] http://venturehacks-dev.mystagingwebsite.com/articles/opt&#8230 ; […]
+
+ Reply 
+
+ - 
+
+ Adam 
+ // Apr 12, 2007 at 11:39 am 
+
+ Very informative article, this applies to us directly too (we’re reviewing Series A term sheets right now). While the above is presented as a somewhat combativitve strategy, I think the result of using the above and focusing on the hiring plan result in both the VC and the Entrepreneurs feeling better about the post-deal plan. Thanks!
+
+ Reply 
+
+ - 
+
+ Naval 
+ // Apr 13, 2007 at 6:45 pm 
+
+ Adam, let them chase you a little bit too. Most VCs can appreciate an entrepreneur who is focused on building his business and doesn’t want to raise money full-time. If a VC is asking for an inordinate amount of diligence and meetings, forget them and move on. They’ll be even worse once they’re on your board. If you need to get in touch with people who can decide quickly (even if the decision is no), drop me a note at myfirstname at mylastname dot com
+
+ Reply 
+
+ - 
+
+ Deva Hazarika 
+ // Apr 13, 2007 at 3:41 pm 
+
+ One negotiation tactic I’ve used successfully when there’s unreasonable pushback regarding size of the option pool is to propose that upon an acquisition all unallocated/unvested options that would be cancelled instead convert into common shares (obviously, various ways to implement mechanics of that that don’t all require actual conversion). I’ve never seen this actually get implemented, but I’ve found that this helps cut straight to the chase and reach a compromise number that works for both sides.
+
+ Reply 
+
+ - 
+
+ Nivi 
+ // Apr 13, 2007 at 8:02 pm 
+
+ Hi Deva, Thanks for the comment.
+
+ What do you mean by “convert into common shares”? Do you mean the shares go to the founders?
+
+ That does work if the company gets sold before another round of financing. But if you do another round of financing first, those unallocated shares will go into a new option pool. This allows your existing investors to avoid playing option pool shuffle against any new investors and avoid dilution at your expense.
+
+ This is another case of investors looking one step ahead of the entrepreneur.
+
+ Reply 
+
+ - 
+
+ Deva Hazarika 
+ // Apr 14, 2007 at 4:14 pm 
+
+ Nivi,
+
+ I meant create a device such that the cancelled shares get allocated back pro-rata to common shareholders. This can be done on any financing or M&A event. Honestly, the mechanics don’t really matter. I’ve had this discussion about five times with various investors of companies I’ve been involved with.
+
+ The key is to reframe the discussion in a manner that gets to the core motivations of different parties. The rationale behind allocating more of an option pool is often basically “better safe than sorry” rather than “let’s artificially increase equity stake of investors.” If that’s the real reason, then there should be no exception to basically rolling back all unallocated options into the common pool rather than having them simply vanish. The entrepreneur is saying “hey, we’ll give as many out of common as needed, but if they aren’t used, we don’t want to take that hit.”
+
+ As you know, it all really comes down to the investor wanting to limit his dilution in future rounds by having an option pool that will not need to be topped up much in future rounds. But they are never going to admit to that. So you sometimes have to reframe the parameters of the discussion, which is exactly what you guys suggest in your article. My suggestion was just another way of doing basically the same thing if people still face objections after the bottoms-up rationalization you advise.
+
+ I’ve never seen an investor actually go for a structure like this. But I’ve multiple times seen them become willing to accept a much more reasonably sized option pool. I’ve seen the discussion go like this:
+
+ VC: Carve out a 25% option pool.
+
+ We only need 7%.
+
+ VC:You should do 22% for blah blah blah
+
+ OK, we’ll do 22%, but any unused shares convert back rather than rolling over or being cancelled. Or we can just do 10% standard terms.
+
+ VC: How about 12%?
+
+ Deal.
+
+ Reply 
+
+ - 
+
+ Hooshyar Naraghi 
+ // Apr 15, 2007 at 3:38 pm 
+
+ The option pool raised a question for me, if you could kindly comment. What if the founder already included an option pool in the existing shares outstanding? For example, assume 5M shares outstanding out of which 20% (or 1M shares) is reserved for employee stock options.
+
+ Let us further assume that the pre-money valuation is agreed at $5M, can we claim effective share price is $5M/5M or $1/share?
+
+ My understanding is in your scenario, new shares had to be issued, but not in my scenario. Am I correct?
+
+ Reply 
+
+ - 
+
+ Naval 
+ // Apr 16, 2007 at 10:59 am 
+
+ Hooshyar,
+
+ Correct – in your scenario, most likely, no new options would have to be issued since you already have a 20% pre-money pool allocated. Your pre-money would be $5M, but on an apples-to-apples basis to how we’re encouraging you to think about pre-money (the value of the stock allocated to the people who are already shareholders of the company), it’s $4M. But, this is basically just semantics. The key question is how much the new investors are valuing the contributions of the existing shareholder, and in that sense, even in your scenario, it’s at $4M.
+
+ Reply 
+
+ - 
+
+ Nattybumpo 
+ // Apr 26, 2007 at 7:27 pm 
+
+ This is very helpful. My question is — what if you are still fluid in terms of how much money you are raising for your Series A. As an example, let’s say all you really need is $2M, but there’s enough interest in the market to raise $5M — and ultimately they will be similarly dilutive. That being the case, one would have a markedly different Use of Funds and hiring plan for the $2M vs. $5M scenario. Any thoughts on how to have a raise-independent approach?
+
+ Reply 
+
+ - 
+
+ Nivi 
+ // Apr 29, 2007 at 3:51 pm 
+
+ Nattybumpo,
+
+ Here is my suggestion. Make a hiring plan that is consistent with the amount of money you are asking for. If you end up raising more money, your investors may or may not ask you to revise the hiring plan before the financing. If they don’t, hooray for you.
+
+ Another interesting note: Although the dilution is the same whether you are doing $2M on $2M pre-money or $5M on $5M pre-money, the share price is higher in the $5M situation. In theory, you should be able to issue fewer shares to new employees because the share price is higher. So you should be able to get away with a smaller option pool.
+
+ However, in practice, options for new employees tend to be calculated as a percentage of post-money, not as a total share value.
+
+ Reply 
+
+ - 
+
+ Yokum Taku 
+ // Apr 28, 2007 at 3:27 pm 
+
+ One corollary to the Option Pool Shuffle is “What’s in the fully-diluted shares outstanding if you have convertible notes or warrants outstanding?” The issue is whether shares issuable upon conversion of a convertible bridge note or warrants issued in connection with the bridge should be considered part of the pre-money fully-diluted shares outstanding in calculating price per share of the Series A. Remember, more fully-diluted shares outstanding drives the Series A price per share down, resulting in more dilution to the founders.
+
+ Given that many companies are doing convertible note bridge financings as their seed round, this seems to come up relatively often.
+
+ VCs will take the position that all of the shares issuable upon the conversion of the bridge note and any warrants granted will be part of the denominator for calculating the price per share of the Series A.
+
+ At first glance, it seems like there is a good argument on behalf of the company that the shares issuable upon the bridge note are no different from shares issued in the Series A, and should not be included in the pre-money fully-diluted shares outstanding. In addition, warrants issued in connection with the note typically have an exercise price equal to the Series A price, so these warrants are not dilutive like cheap founders common shares.
+
+ The response from the VC is (1) the money from the bridge is gone and the value created by that money is reflected in the pre-money valuation, so the shares issuable upon conversion of the bridge count against fully-diluted shares, (2) in any event, there is a conversion discount on the note conversion so these shares are dilutive to the Series A, and (3) even though the warrants aren’t dilutive today with an exercise price at the Series A price, they will be dilutive in the future in the next round of financing, so the pre-Series A investors should bear that dilution.
+
+ Of course, with respect to (1), if there is still money in the bank at the time of Series A, perhaps some portion of the shares issuable upon conversion of the bridge should be taken out of the pre-money fully-diluted share number to the extent of the money left in the bank.
+
+ And with respect to (2), perhaps the discount portion of the conversion shares should be included in the pre-money fully-diluted share number, but the rest (to the extent there is money left in the bank) should not.
+
+ Finally, with respect to (3), perhaps the warrant overhang is not too different from multiple closings on a Series A round, where the price is set at the first closing, and second closings seem to go on for long periods of time after the first closing at the same price per share as the first closing.
+
+ I’d be curious in the VC reaction to this, because the last time I tried this, I lost arguments (1) and (2) (with not too much more logic than “no, those shares are in the denominator” – end of argument) and item (3) warrants was not applicable.
+
+ I’m going to have to reuse this comment in a slightly different form on my own site. Typical disclaimers about legal advice apply to this comment.
+
+ Aside from the swipe about startup company lawyers not negotiating hard against the VCs (which I vehemently disagree with as a WSGR partner), I think you’ve done a great job educating entrepreneurs about subtle nuances in negotiations with VCs.
+
+ Reply 
+
+ - 
+
+ Anon 
+ // May 5, 2007 at 7:42 am 
+
+ Yokum,
+
+ We were able to get our bridge note shares not included as part of the premoney fully-diluted shares outstanding. In our case, it was a bargaining chip used in conjunction with a decision to take slightly more money, not unlike raising the valuation to take additional funds. Only difference is that we had agreed to a certain valuation and a certain amount raised, and then one investor didn’t pan out in the final stages (with definitives written up), so we said we’d take less money at the same valuation. We were given the choice of doing that or upping the premoney full-diluted.
+
+ Reply 
+
+ - 
+
+ John Galt 
+ // Jun 25, 2007 at 3:11 pm 
+
+ we’re looking at doing a series a preferred and a note with granted shares at the same time. for example, we are raising $1 million in Series A and issuing $1 million in notes. the debt holder wants free equity equal to half the equity the Series A will get.
+
+ how do you think the series a share price should be calculated? should we take dilution on the shares granted to the debt? or, since we havent received benefit from those yet, they should be excluded – even though no new “equity” is coming in from the debt?
+
+ post response here or email me at johngalt@jubii.co.uk .
+
+ thanks.
+
+ Reply 
+
+ - 
+
+ DC 
+ // Jun 25, 2007 at 7:18 pm 
+
+ OK…saw the chart on
+
+“How do you create an option pool from a hiring plan?”
+
+ Is it correct to assume that the %s shown are post A round share %s?
+
+ Also if CEO, COO, etc are also founders and have founders shares…do they double dip and get the %s shown in addition to founders shares?
+
+ Reply 
+
+ - 
+
+ Nivi 
+ // Jul 23, 2007 at 7:02 pm 
+
+ The figures are post-A and rough.
+
+ No you don’t double dip. You are already compensated through your founder’s shares.
+
+ Reply 
+
+ - 
+
+ Charlie Crystle 
+ // Nov 18, 2007 at 3:10 pm 
+
+ I disagree, Nivi. I think founders get founding shares for forming the idea, pulling a company together, and creating value. Then they play roles that otherwise would cost dilution to shareholders through options. Replacement of the founders in their respective roles also creates dilution to shareholders through options. It’s entirely reasonable for the founders to expect compensation for ongoing work; there should be no expectation of philanthropy to other shareholders.
+
+ Reply 
+
+ - 
+
+ Nivi 
+ // Nov 18, 2007 at 7:41 pm 
+
+ Charlie, you are welcome to disagree but that is not the norm. 🙂
+
+ Even “worse”, the founder’s shares are subject to vesting.
+
+ Reply 
+
+ - 
+
+ Xobni Man Walking » Blog Archive » Raising Money, Letters to Graduating YC Companies, Letter 2 
+ // Aug 8, 2007 at 2:41 am 
+
+ […] You want a small option pool. The investors will tell you that the company needs a large option pool. Balony. The debate is really about who pays for the option pool. VentureHacks has a relevant article. […]
+
+ Reply 
+
+ - 
+
+ Jason Noclue 
+ // Sep 27, 2007 at 10:44 pm 
+
+ One question occurred to me after reading your article, if you could kindly shed some light on it. In your example, if the option pool is lowered to 10%, let’s suppose it be a round number of $1M new options, shouldn’t the post-value be:
+
+ $6M effective valuation + $1M new options + $2M cash = $9M
+
+ Why would the VC’s ever want to raise the real value of the company to $7M if they think the company is worth only $6M? Keeping it at $6M would certainly also increase their percentage, wouldn’t it?
+
+ Thanks.
+
+ Reply 
+
+ - 
+
+ Nivi 
+ // Oct 3, 2007 at 10:04 am 
+
+ What you are proposing is rational, but that is not the way it is done. 🙂
+
+ An investor’s offer will define the pre-money which includes an option pool. So if you reduce the size of the option pool, the “effective pre-money” increases so the pre-money your investor offered can stay the same.
+
+ Reply 
+
+ - 
+
+ Madhavan Thirumalai 
+ // Apr 11, 2008 at 7:15 am 
+
+ We are launching a company that will require 4 rounds of funding over say 4 years. We have two choices:
+
+1. Allocate a single option pool up front for all hiring for the next 4 years
+
+2. Allocate an option pool that will be cover hiring only up to the next round
+
+ Which dilutes the founder less? My intuition says that the second option is better because the early investors are diluted along with the founders during the creation of the new option pools.
+
+ Got a spreadsheet that models multiple rounds of funding and option pool creation?
+
+ Reply 
+
+ - 
+
+ Nivi 
+ // Apr 11, 2008 at 7:28 am 
+
+ Option 2 is better.
+
+ Reply 
+
+ - 
+
+ Anonymous 
+ // Jul 17, 2008 at 2:08 am 
+
+ Hi,
+
+ I was wondering if the posted ranges for option grants in Silicon Valley are still current and how/where did you get them?
+
+ Many Thanks!
+
+ Reply 
+
+ - 
+
+ SeatGeek Blog 
+ // Nov 9, 2009 at 11:06 am 
+
+ […] Venture Hack’s post on option pools, which provides some handy equity ranges for different types of hires […]
+
+ Reply 
+
+ - 
+
+ Don't blow up your Series A term sheet by over-optimizing terms | A View from the Valley 
+ // Mar 31, 2010 at 8:47 am 
+
+ […] a legal one. Much information is available on the web. Make sure you understand the effect of including the option pool in the pre-money valuation. Think about alternatives to simply changing the valuation, such as using […]
+
+ Reply 
+
+ - 
+
+ Stock Plans: Give the People What They Want 
+ // May 3, 2010 at 2:26 pm 
+
+ […] piece of the pie and do not intend for the stock or stock options to be handed out in reality (word is out on this one, guys), or (b) you only give out stock and stock options carefully and then only to those officers, […]
+
+ Reply 
+
+ - 
+
+ How VCs Calculate Valuation (And How It’s Different From The Way Founders Do It) | TechsZone 
+ // Aug 17, 2010 at 10:09 am 
+
+ […] This starts with understanding how VCs and entrepreneurs often see valuation differently. And no prizes for guessing which side of the table really understands the right answer. I’m not sure I really even need to write this at length because Nivi absolutely nailed the topic in his article “The Option Pool Shuffle.” […]
+
+ Reply 
+
+ - 
+
+ Venugopal 
+ // Aug 24, 2010 at 6:38 pm 
+
+ Hi Nivi,
+
+ Excellent post. Makes interesting reading.
+
+ Can you kindly mention what are the typical ranges for the founder’s shares ( Options ) taking a used case scenario.
+
+ That would be very helpful.
+
+ Thanks in advance.
+
+ Cheers,
+
+ Venugopal
+
+Vengo Ventures
+
+ Reply 
+
+ - 
+
+ Stock options – everybody in the pool « Jay Caplan on Medical Devices 
+ // Aug 25, 2010 at 8:38 pm 
+
+ […] I totally agree with Mark Suster: Nivi at VentureHacks nails the options topic in his post “The Option Pool Shuffle.” Fundamentally, providing stock options to employees dilutes the ownership percentage of […]
+
+ Reply 
+
+ - 
+
+ Mihir 
+ // Nov 9, 2010 at 11:41 am 
+
+ Nivi and Naval, found your article helpful.
+
+ A quick question as I am prepare the terms sheet; since me (CEO) and my partner (VP Tech) are the founders and majority shareholders, would there be a benefit in reserving ANY stock options for ourselves?
+
+ I am thinking of suggesting 4.5% pool, (2.5% for all the directors and an additional 2% for two hires that we are planning).
+
+ Will appreciate your comments. Thanks, Mihir
+
+ Reply 
+
+ - 
+
+ Raj 
+ // Nov 19, 2010 at 8:07 pm 
+
+ This is a great post . When bringing in a CEO on board in a Non Funded , prerevenue generating company which is ready to launch after a year plus of product development do you give options or common stock ? what is preferred and why?
+
+ Any advice is greatly appreciated.
+
+ Reply 
+
+ - 
+
+ Bjorn Hendricks 
+ // Dec 6, 2010 at 8:13 am 
+
+ GREAT ARTICLE! I sincerely appreciate the resources you all have made available for entrepreneurs through VentureHacks.
+
+ This article brings up a question for me: Since shares are vested….when using the hiring plan to determine the size of the option pool, can (or should) you get granular to look at how many shares will be VESTED during the period before the next round of funding or just look at the total figure of shares you are allocating in a new employee’s hiring contract? (eg. a VP joining the team is getting 5% total which will be reflected in their contract BUT only .1% may be vested by the time the next round of funding comes, etc)
+
+ Reply 
+
+ - 
+
+ sex 
+ // Jan 2, 2011 at 1:48 am 
+
+ “Why would LeBron waste his talent on a team like the Chicago Bulls…stupid”
+
+ Reply 
+
+ - 
+
+ How to Evaluate an Offer from a Startup Incubator | Startup Lawyer 
+ // Feb 4, 2011 at 6:18 pm 
+
+ […] incubators may want to set up an option pool. If so, the startup’s founders need to know this option pool lowers your pre-money valuation. Using the previous example, if an incubator wants your startup to set up a 15% option pool as part […]
+
+ Reply 
+
+ - 
+
+ Quora 
+ // Feb 22, 2011 at 7:07 pm 
+
+ Why are companies always chasing growth?… 
+
+ The answer is different for public companies, startups, small businesses, family businesses, and so on. For public companies The value of a company is significantly tied to growth, because the current stock price reflects what investors anticipate futu…
+
+ Reply 
+
+ - Search
+
+ Archives 
+
+- Top Posts
+
+ - How to make a cap table 
+- The Option Pool Shuffle 
+- How to pick a co-founder 
+
+- Subscribe
+
+ RSS 
+
+- About Us
+
+ We're Nivi and Naval , co-founders of AngelList .
+
+ - 
+
+ Contact 
+
+ Powered by WordPress, Hosted by Pressable 
+
+ © 2007-2026 Venture Hacks (not including the pictures)
+
+-->
+ Sitemap — -->

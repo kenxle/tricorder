@@ -1,0 +1,112 @@
+SOURCE: https://www.dwt.com/blogs/privacy--security-law-blog/2022/03/ftc-coppa-disgorgement
+FETCHED: 2026-10-22
+
+FTC COPPA Settlement Requires Deletion of Children's Personal Information | Davis Wright Tremaine 
+- 
+
+- 
+- 
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+ Skip to content 
+
+ People
+
+ Services
+
+ Insights
+
+ About
+
+ Offices
+
+ Careers
+
+ Menu Search 
+
+ Search 
+
+ Perform Search 
+
+Insights 
+
+ Technology + Privacy & Security
+
+ FTC COPPA Settlement Requires Deletion of Children's Personal Information and "Affected Work Product"
+
+ By Alexander Sisto, Nancy Libin , and John D. Seiver 
+
+ 03.09.22
+
+ Share 
+
+ Print this page
+
+ Disgorgement is back in the spotlight at the FTC, this time in connection with a recently announced settlement with WW International, Inc., formerly known as Weight Watchers (WW), and a subsidiary called Kurbo, Inc. (Kurbo) for alleged violations of the Children's Online Privacy Protection Act (COPPA) in connection with advertising, marketing, and distributing a weight-management program for children and teens throughout the United States.
+
+The settlement requires the defendants to pay a $1.5 million penalty and take a number of remedial actions with regard to data retention and parental consent, and includes a requirement to delete any personal information collected from children prior to the date of the settlement as well as any "affected work product" that would include any "models or algorithms" that the defendants developed using data that the FTC asserts was improperly obtained. 
+
+The settlement is significant because it shows that the FTC is continuing to focus on what one FTC Commissioner in a previous settlement referred to as "ill-gotten" data, and that algorithmic and related model disgorgement may become a standard penalty in FTC settlements, even when the use of such algorithms or models is not the real issue. 
+
+ Here, there were no allegations that Kurbo trained or used algorithms with the ill-gotten data, 1 that any models or algorithms were used improperly, or that there were any biased or discriminatory outcomes. Moreover, the settlement only referenced the requirement to "delete or destroy" any affected work product that was defined to include "models" and "algorithms" derived from children's data collected by Kurbo, although no "affected work product" had been identified. 
+
+ History of FTC's AI Enforcement Activity
+
+The FTC has signaled in recent years that it intends to regulate unfair and deceptive uses and development of artificial intelligence (AI). The FTC has been grappling with the issue since at least 2020, when it issued informal guidance outlining principles and best practices surrounding transparency, explainability, bias, and robust data models.
+
+Later, in 2021, the FTC announced a groundbreaking enforcement action against Everalbum, a photo storage app, that the FTC alleged had improperly used customers' data to train its facial recognition AI. As a part of that settlement, the FTC required Everalbum to delete data, models, and algorithms that it had developed by using photos and videos uploaded by its users without their express consent. (For further discussion, see our blog post here .)
+
+Next, in April 2021, the FTC released a blog post containing guidance on developing AI tools and notifying companies that it intended to use its authority under existing laws to take enforcement action against companies that sell or use algorithms or AI technology that results in discrimination by race or other legally protected classes. Finally, in late 2021, the FTC issued a notice that it intends to undertake a new rulemaking process to, among other things, 'ensure that algorithmic decision-making does not result in unlawful discrimination.'
+
+ WW International, Inc. Settlement
+
+ The Complaint in this case , filed on behalf of the FTC by the Department of Justice, alleged that since 2014, WW and Kurbo used a weight loss app and website to collect personal information of children under 13 without properly notifying the children's parents or obtaining verifiable parental consent as required by COPPA.
+
+When registering for a new account, the app allowed users to indicate that they were either a parent signing up their child, or that they were at least 13 years old. The Complaint asserts that 'this non-neutral age gate signaled to children that they could register without involving a parent by indicating they were at least 13 years old.'
+
+Additionally, the Complaint alleges that '[u]ntil November 2019, the app did not provide any form of notice to parents that [WW and Kurbo] were collecting personal information from children, or seek to obtain parents' consent for that collection,' and that when notice was provided, it was located in a series of hyperlinks that parents were not required to click on and 'did not specify all of the categories of personal information collected from the child, as opposed to the parent.'
+
+Furthermore, even after providing notice, the app did not have a mechanism for obtaining parental consent. In addition, the FTC alleges that WW and Kurbo violated COPPA's requirement to retain children's data for only as long as reasonably necessary to fulfil the purpose for which it was collected.
+
+The Settlement Order (Order) imposes monetary penalties and injunctions related to both the future collection of personal information from children and children's information previously collected. Specifically, the Order requires WW and Kurbo, jointly and severally, to pay a civil penalty of $1.5 million; take the necessary steps to comply with COPPA by ensuring parents receive direct notice; post a prominent and clearly labeled link to an online privacy notice; obtain verifiable parental consent; and not retain personal information longer than necessary to fulfill the purpose for which it was collected.
+
+With respect to children's personal information previously collected, the order requires WW and Kurbo to:
+
+ - Refrain from disclosing, using, or benefitting from personal information collected from children prior to the entry of the order;
+
+ - Delete any previously collected data from accounts that have not received direct notice and provided parental consent;
+
+ - Provide a written statement to the FTC that describes the process through which WW and Kurbo provided direct notice, details the number of accounts to which notice was given, and confirms that information related to accounts for which parental consent was not obtained has been destroyed;
+
+ - Adhere to a data retention schedule that requires the deletion of personal information no more than one year after a customer last uses the app; and
+
+ - Delete or destroy any 'Affected Work Product' (i.e., 'models or algorithms developed in whole or in part using Personal Information Collected from Children') and submit a sworn statement under penalty of perjury confirming such deletion or destruction.
+
+ Algorithmic Disgorgement as a Penalty—Even When Algorithms Are Not at Issue
+
+ The FTC broke new ground in this settlement. Unlike in the Everalbum matter, which concerned the use of data collected from consumers to develop facial recognition technology, none of the FTC's allegations here relate to defendants' use of algorithms or the development of AI in targeting children or failing to obtain proper consent. Indeed, the FTC's Complaint included just one count—defendants' alleged violation of the COPPA Rule by allegedly failing to provide direct notice to and obtain consent from parents before collecting their children's personal information and by retaining such data for longer than necessary.
+
+The FTC's penalties, however, went beyond addressing the alleged COPPA violation and sought to penalize the defendants' possible secondary use of the data, treating that data as the 'fruit of a poisonous tree.' This settlement indicates that the FTC may push for disgorgement or destruction of algorithms and other data-dependent building blocks of products or services regardless of whether the underlying violation involves those products and services.
+
+ FOOTNOTE
+
+ 1 Statement of FTC Commissioner Rohit Chopra, In the Matter of Everalbum and Paravision , F.T.C. No. 1923172 (Jan. 8, 2021), available at https://www.ftc.gov/system/files/documents/public_statements/1585858/updated_final_chopra_statement_on_everalbum_for_circulation.pdf . See also https://www.dwt.com/blogs/privacy--security-law-blog/2021/03/ftc-chair-slaughter-enforcement-priorities . 
+
+ Related Insights
+
+ Close 
+
+ Close 
+
+ CAUTION - Before you proceed, please note: By clicking "accept" you agree that our review of the information contained in your e-mail and any attachments will not create an attorney-client relationship, and will not prevent any lawyer in our firm from representing a party in any matter where that information is relevant, even if you submitted the information in good faith to retain us. 
+
+ I Accept
+
+ I Decline

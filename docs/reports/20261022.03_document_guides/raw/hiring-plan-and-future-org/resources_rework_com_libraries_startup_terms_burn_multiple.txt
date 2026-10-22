@@ -1,0 +1,281 @@
+SOURCE: https://resources.rework.com/libraries/startup-terms/burn-multiple
+FETCHED: 2026-10-22
+
+- 
+ - 
+ - 
+ - 
+ - 
+ - 
+ - 
+
+ - 
+
+ - 
+ - 
+ - 
+
+ "What Is Burn Multiple?" - - - 
+
+ - Home 
+- Business Hub 
+- AI Agents 
+- Customers 
+- Newsletters 
+
+ Startup Terms 
+
+ Market & Strategy 
+ - What Is TAM, SAM and SOM? Sizing a Market 
+ - What Is a Beachhead Market? 
+ - What Is a Wedge Strategy? 
+ - What Is an Unfair Advantage? 
+ - What Is Market Timing and Why It Matters for Startups? 
+ - What Is Category Creation? 
+ - What Is Hockey-Stick Growth? 
+ - What Is Blitzscaling? 
+
+ Funding & Investors 
+ - What Is a SAFE (Simple Agreement for Future Equity)? 
+ - What Is a Convertible Note? 
+ - What Is a Term Sheet? 
+ - What Is an Angel Investor? 
+ - What Is Venture Capital? How VC Funds Work 
+ - What Is a Seed Round? 
+ - Series A, B and C Funding Explained 
+ - What Is a Bridge Round? 
+ - What Is a Down Round? 
+ - What Is Due Diligence in Startup Investing? 
+ - What Is a Lead Investor? 
+ - What Is a Liquidation Preference? 
+
+ Equity & Ownership 
+ - What Is Vesting? Vesting Schedules and Cliffs Explained 
+ - What Is a Cap Table? 
+ - What Is Dilution? How Funding Rounds Change Ownership 
+ - Pre-Money vs Post-Money Valuation Explained 
+ - What Is an Employee Stock Option Pool? 
+ - Stock Options vs RSUs: Key Differences 
+ - What Is Founder Equity? 
+ - What Are Pro Rata Rights? 
+
+ Startup Ecosystem 
+ - Accelerator vs Incubator: What Is the Difference? 
+ - What Is a Unicorn Startup? 
+ - What Is an Acqui-Hire? 
+ - What Is a Demo Day? 
+ - What Is Corporate Venture Capital? 
+ - What Is a Startup Ecosystem? 
+ - What Is an IPO? How Companies Go Public 
+ - What Is a Venture Studio? 
+
+ Growth Metrics 
+ - What Is Burn Multiple? 
+ - What Is the SaaS Magic Number? 
+ - What Is the SaaS Quick Ratio? 
+ - What Does Default Alive Mean? 
+
+ What Is Burn Multiple?
+ By Brian Tr · Updated Oct 4, 2026 
+
+ Turn this article into takeaways for your work.
+
+ Summarize with ChatGPT 
+
+ Summarize with Claude 
+
+ Each assistant summarizes the article only for you and suggests best practices for your work.
+
+ Burn multiple is a capital efficiency metric for startups. It divides net burn by net new annual recurring revenue (ARR) over the same period, and it answers one question: how many dollars did the company spend to add one dollar of recurring revenue? A lower number means growth is cheaper. A higher number means the company is paying a lot for every unit of growth.
+
+ The metric is simple enough to compute on the back of an envelope, which is a big part of why founders and investors use it. It also folds several problems into one number: weak sales efficiency, heavy cost of goods, churn and overspending all push it up.
+
+ Where the Term Comes From
+
+ The name comes from David Sacks, co-founder of Craft Ventures. He introduced it in an April 2020 post titled The Burn Multiple , written as the economic crisis was deepening and capital efficiency was becoming a more pressing issue for startups. In that post he describes two existing measures: the Hype Ratio (capital raised or burned, divided by ARR) and Bessemer's Efficiency Score (net new ARR divided by net burn). He says Bessemer had the right idea, but he preferred to flip the numerator and denominator. His version puts the focus on burn, measured as a multiple of revenue growth.
+
+ So the burn multiple is the inverse of Bessemer's efficiency score. It's worth knowing both, because you'll see founders and investors use either framing.
+
+ The Formula
+
+ Burn multiple = Net burn / Net new ARR 
+
+- Net burn is the cash the company loses in the period: cash going out minus cash coming in. If you're unsure how it differs from gross burn, see burn rate .
+
+- Net new ARR is the change in annual recurring revenue over the period: new customers plus expansion, minus churn and contraction. For background on how ARR and MRR are defined, see that article.
+
+ Both numbers must cover the same window. Burn for a quarter goes with net new ARR for that quarter.
+
+ A worked example (illustrative numbers)
+
+ Take a hypothetical startup with round numbers. In a quarter, it burns $2 million and its ARR grows from $4 million to $5 million, so net new ARR is $1 million.
+
+ Burn multiple = $2M / $1M = 2x 
+
+ The company spent two dollars for each new dollar of ARR. Now change one input. If the same company had burned $5 million to add the same $1 million, the multiple would be 5x. Same growth, far worse efficiency. Sacks uses this same pair of examples in his post: a $2M burn for $1M of new ARR is a 2x multiple he calls reasonable for an early-stage startup, while a $5M burn for $1M is a terrible 5x. The numbers here are illustrative, not a real company's results.
+
+ How to Read the Number
+
+ Sacks published a rules-of-thumb table in the original post, aimed at venture-stage startups. These are his ranges, not an industry standard, and he labels them as rules of thumb.
+
+ Burn multiple (Sacks) 
+ His label 
+
+ Under 1x 
+ Amazing 
+
+ 1x to 1.5x 
+ Great 
+
+ 1.5x to 2x 
+ Good 
+
+ 2x to 3x 
+ Suspect 
+
+ Over 3x 
+ Bad 
+
+ Two points make the table more useful.
+
+ Stage matters. Sacks writes that the burn multiple should improve as a startup matures. His example: a seed-stage company might sit around 3 because it has only just started selling, drop to around 2 after a Series A, and face higher expectations after a Series B. Eventually, a company can only become profitable if burn reaches zero, which means the multiple should trend toward zero over time.
+
+ It reads as a product-market fit signal. Sacks argues that a startup generating $1M of ARR for $2M of burn looks like a market pulling the product out of the company, while one that needs $5M of burn looks like it's pushing the product onto the market. Investors may draw conclusions about product-market fit accordingly. He also says that needing extraordinary investment, which he defines as a 3x burn or more, to deliver growth suggests something is off.
+
+ Why the Metric Catches So Many Problems
+
+ Sacks calls it a catch-all, because any serious problem eventually shows up as higher burn, lower net new ARR, or both. His examples include a gross margin problem (heavy cost of delivery raises burn as the company scales), a sales efficiency problem (rising customer acquisition cost), a churn problem (churn reduces net new ARR), and a stalled-growth problem (spending on discounts and promotions to compensate).
+
+ That's a strength and a weakness. The number tells you something is wrong, but not what. To find the cause you need to break it apart into CAC payback , gross margin, churn and net revenue retention.
+
+ Burn Multiple vs Related Metrics
+
+ Metric 
+ What it measures 
+ How it differs 
+
+ Burn rate 
+ Cash lost per month 
+ An absolute amount with no link to growth. A $500K burn could be excellent or terrible depending on growth 
+
+ Runway 
+ Months of cash left 
+ Tells you how long you can survive, not whether spending is productive 
+
+ Burn multiple 
+ Burn per dollar of new ARR 
+ Links spending to growth 
+
+ SaaS magic number 
+ Revenue growth relative to sales and marketing spend 
+ Looks at go-to-market spend only, not total burn 
+
+ Rule of 40 
+ Growth rate plus profit margin 
+ A percentage-based blend, usually for larger companies 
+
+ Runway and burn rate are about survival. Burn multiple is about whether the money is buying growth.
+One thing Sacks highlights is that the multiple adjusts to the most recent period. In his words, it doesn't care about sunk costs. Founders can improve it by cutting costs, and the Hype Ratio, which is based on total capital raised, can't be repaired that way.
+
+ Limitations
+
+ The burn multiple is a rule of thumb, not a verdict. Watch for these issues.
+
+- ARR definition. Companies count ARR differently. Whether you include usage-based revenue, one-time services, multi-year deals or signed-but-not-live contracts changes the denominator, and so changes the result. Compare like with like.
+
+- Early-stage noise. If a company is pre-revenue, net new ARR is zero and the ratio doesn't compute. Sacks says as much, and notes that a "bad" multiple is most acceptable in the earliest years while the product is still being built. With tiny ARR, one deal moves the number a lot.
+
+- Period choice and smoothing. A single quarter can mislead if a big contract closes late or a hiring wave lands early. Many teams look at trailing periods or compare several quarters before drawing a conclusion. Sacks himself frames it as a way to judge burn in any given month, quarter or year, so the window is a choice you have to make deliberately.
+
+- Non-SaaS businesses. The metric assumes recurring revenue. Marketplaces, hardware companies, services firms and consumer businesses don't have ARR in the same sense, so the formula either doesn't apply or needs an adaptation that you should state openly.
+
+ Common Mistakes
+
+- Using gross burn instead of net burn. The formula calls for net burn, after revenue collected.
+
+- Mixing time windows. Dividing quarterly burn by annual change in ARR gives a number that isn't comparable to anything.
+
+- Counting gross new ARR. The denominator is net of churn and contraction. Leaving churn out flatters the result.
+
+- Optimizing the ratio at the expense of growth. Cutting everything can improve the multiple while damaging the business. Sacks does note that it may be worth giving up some revenue if that brings burn to a healthier level, but that's a judgment call, not a rule.
+
+ Key Facts
+
+- Burn multiple is net burn divided by net new ARR, a formula introduced by David Sacks in an April 2020 post ( Sacks, The Burn Multiple ).
+
+- It is the inverse of Bessemer's Efficiency Score (net new ARR divided by net burn), which Sacks describes in the same post ( Sacks ).
+
+- Sacks's rules of thumb for venture-stage startups: under 1x is amazing, 1x to 1.5x great, 1.5x to 2x good, 2x to 3x suspect, and over 3x bad ( Sacks ).
+
+- In his example, a $2M quarterly burn adding $1M of ARR is a 2x multiple, and a $5M burn for the same ARR is 5x ( Sacks ).
+
+- He says the multiple should improve as a startup matures and approach zero as the company nears profitability ( Sacks ).
+
+- Pre-revenue companies can't compute it, since net new ARR is zero ( Sacks ).
+
+ Frequently Asked Questions about Burn Multiple
+
+ What is a good burn multiple? 
+
+ By David Sacks's published rules of thumb for venture-stage startups, under 1x is amazing, 1x to 1.5x is great, 1.5x to 2x is good, 2x to 3x is suspect, and over 3x is bad. Those are his ranges, not a universal standard, and he expects the number to improve as a company matures.
+
+ How do you calculate burn multiple? 
+
+ Divide net burn by net new ARR over the same period. If a company burns $2 million in a quarter and adds $1 million of net new ARR, its burn multiple is 2x. Use net burn, and net new ARR after churn and contraction.
+
+ What is the difference between burn rate and burn multiple? 
+
+ Burn rate is the amount of cash a company loses per period. Burn multiple compares that loss with the new recurring revenue it bought. Two companies can burn the same amount while one is far more efficient at turning that cash into ARR.
+
+ Is burn multiple the same as the efficiency score? 
+
+ They use the same inputs, flipped. Bessemer's Efficiency Score is net new ARR divided by net burn, so higher is better. Sacks's burn multiple is net burn divided by net new ARR, so lower is better. Sacks says he preferred the flipped version because it puts the focus on burn.
+
+ Does burn multiple work for non-SaaS companies? 
+
+ Not directly. The formula needs recurring revenue to define net new ARR. Marketplaces, hardware and services businesses can adapt it, but they should say how they've defined the denominator and avoid comparing their result with SaaS ranges.
+
+ Related Reading
+
+- Burn Rate 
+
+- Runway 
+
+- ARR and MRR 
+
+- SaaS Magic Number 
+
+- Rule of 40 Optimization 
+
+- CAC Payback Optimization 
+
+- Default Alive 
+
+- Series A, B and C Funding 
+
+ About the author
+
+ Brian Tr 
+ Co-Founder & COO
+ Brian Tr is Co-Founder and COO of Rework, with 12+ years in B2B go-to-market and operations. Brian scaled Rework from 0 to 10,000+ B2B customers across CRM and productivity tools. Brian writes for founders and owner-CEOs: startup fundamentals, founder-led and family businesses, partnerships, and how SaaS, marketplace, AI and EdTech companies grow.
+ View full profile 
+ LinkedIn
+
+ Brian Tr 
+ Co-Founder & COO
+
+ On this page
+
+ - Where the Term Comes From 
+- The Formula 
+- 
+ A worked example (illustrative numbers) 
+- How to Read the Number 
+- Why the Metric Catches So Many Problems 
+- Burn Multiple vs Related Metrics 
+- Limitations 
+- Common Mistakes 
+- Key Facts 
+- Related Reading 
+
+ error-ui

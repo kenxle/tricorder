@@ -1,0 +1,185 @@
+SOURCE: https://www.launchrock.com/library/expert-advice/hiring-plan
+FETCHED: 2026-10-22
+
+- - - - - - - - - - - - - - - - Hiring Plan: definition, the role-by-role roadmap that drives capital, and how to build one that actually gets used | Startups.com 
+
+ How it Works Browse Pricing Education Community 
+
+ About Support Signup Sign In 
+
+ Signup
+
+ Sign In
+
+ How it Works 
+ Browse 
+ Pricing 
+
+ Education Founder 
+
+ Idea 
+
+ Formation 
+
+ Planning 
+
+ Product 
+
+ Marketing 
+
+ Team 
+
+ Funding 
+
+ Operations 
+
+ Community Discussions 
+
+ Podcast 
+
+ About Mission 
+
+ Jobs 
+
+ Culture 
+
+ Support 
+
+ Hiring Plan
+ May 26th, 2026 | By: Ryan Rutan CMO | Tags: Cofounders & Team , First Hire , Recruiting Strategy , Option Pool , Option Pool Refresh , Burn Rate 
+
+ Hiring Plan
+ A hiring plan is a structured roadmap of roles to fill over a defined period (typically 12-18 months), with role-by-role timing, costs, and dependencies. For each role, the plan documents the expected start date, function/department, level (IC, manager, senior leader), total compensation (cash plus equity), and dependencies (e.g., "this role starts after we close Series A" or "this role depends on hitting $5M ARR"). The plan is used both for internal execution (recruiting team works against it) and external capital planning (the option pool refresh and financing-round size are calibrated against it). It is one of the most-used and least-formalized operational tools at startups, and the document that determines both who joins the company and how much capital the company needs.
+ The components of a useful hiring plan:
+ Role-by-role detail :
+ - Role name and function : VP Sales, Senior Software Engineer, Customer Success Manager, etc.
+- Expected start date : by quarter or month over the 12-18 month horizon.
+- Level : IC, manager, director, VP, C-suite. Determines compensation structure.
+- Expected total comp : cash (base salary), equity (in BPS of fully diluted or absolute share count), variable (bonus, commission). Important for financial modeling.
+- Department/team : where the role sits organizationally.
+- Reason for the role : what business need or milestone does this role enable?
+ Dependencies and triggers :
+ - Some roles are "must hire" regardless of conditions; others are "hire if revenue hits $X" or "hire after Series A closes." Document the dependency.
+- Layered hiring sequences: a VP must come first, then their direct reports. The hiring plan reflects this ordering.
+ Capital implications :
+ - Total cash cost per quarter: sum of all hired-or-active employees' cash compensation. Feeds burn rate.
+- Total equity cost: option grants per quarter. Feeds option pool size for financing rounds.
+- Departmental cost breakdown: how much of the burn is going to each function.
+ Usage of the hiring plan :
+ For recruiting execution :
+ - Recruiting team works against the plan. Each role has an explicit timeline and assigned recruiter.
+- Hiring managers know what they should be doing when (sourcing, interviewing, closing).
+- Progress is tracked against the plan; misses (we're behind on hiring X) become visible.
+ For capital planning :
+ - The financing round size is calibrated against the hiring plan: total cash burn through the next round determines the raise amount needed.
+- The option pool refresh in a priced round is sized based on equity grants in the hiring plan (every role grants equity; the pool needs to cover all expected grants plus margin).
+- This is why the hiring plan matters in pre-money vs post-money option pool negotiations: investors push for pre-money pool based on "your hiring plan," so the hiring plan effectively determines how much founder dilution happens.
+ For board communications :
+ - Boards review hiring plans regularly. The plan shows the company's growth trajectory and capital efficiency.
+- Variances against the plan (under-hired, over-hired, behind on specific roles) become board topics.
+ The common failure modes :
+ - No hiring plan : company hires reactively. Decisions get made one by one without holistic view. Option pool exhausts mid-cycle. Capital efficiency suffers.
+- Aspirational hiring plan : company writes a plan with too many roles too fast. Plan doesn't reflect realistic recruiting velocity or capital availability. Plan diverges from reality within months.
+- Static hiring plan : company writes a plan and doesn't update it. Plan becomes stale within a quarter. Misses important shifts in business priorities.
+- Hiring plan disconnected from financials : company has a hiring plan but doesn't tie it to burn-rate or runway models. Plan and financial model diverge.
+ Worked example: a Series A SaaS hiring plan, 12 months. Just-closed $12M Series A at $50M post-money. Current team: 8 (3 product, 2 engineering, 1 founder-CEO, 1 founder-CTO, 1 ops). Plan: hire 15 over four quarters; cash burn and equity grants below are blended annual averages.
+ Quarter New hires Cash cost (annualized) Equity (BPS of post-A) Cumulative team 
+ Q1 Sr. Eng × 3, AE × 1 $750K 30 12 
+ Q2 Sr. Eng × 2, AE × 1, CSM × 1, PM × 1 $1.1M 35 17 
+ Q3 VP Sales, AE × 2, SE × 1, Sr. Eng × 1 $1.4M 90 (VP) + 30 = 120 22 
+ Q4 Sr. Eng × 1, AE × 1, CSM × 1, Recruiter × 1 $750K 30 26 
+ 12-month totals 15 hires ~$4.0M cash ~215 BPS (2.15%) 26 people 
+ Two numbers from this plan immediately drive other decisions. Cash: at $4M annualized hiring cost plus existing payroll plus non-payroll burn, total annual burn lands around $7.5M, which means the $12M raise buys 18-20 months of runway. That target was set against the hiring plan, not the other way around. Equity: 215 BPS of grants over 12 months means the option pool refresh at this Series A needed to be roughly 250-300 BPS to cover this plan plus margin for adjustments. Founders who didn't model the hiring plan into the option pool refresh end up running out of pool mid-cycle, which forces an off-cycle board-approved pool top-off, which dilutes founders again, between rounds.
+ Ryan's Take
+ Hiring plan is one of those documents that sounds boring and
+turns out to be one of the most-leveraged tools in early-stage
+company operations. Without a real hiring plan, you hire
+reactively, blow through your option pool faster than expected,
+and discover capital constraints in the middle of a recruiting
+push. With a good hiring plan, recruiting becomes predictable,
+capital planning becomes rigorous, and the option-pool
+conversation with investors becomes a data-driven negotiation
+rather than a guess. The discipline: build the plan with
+realistic recruiting velocity (you'll hire fewer than you
+think; assume 1-2 roles per recruiter per quarter at most),
+tie it explicitly to burn-rate and runway models, update it
+quarterly, and treat variances as board topics. The plan
+becomes the operational backbone for both team-building and
+capital planning.
+ What founders get wrong: Either operating without a real hiring plan (and hiring reactively, blowing through option pool, creating capital surprises) or building an aspirational hiring plan that doesn't match realistic recruiting velocity (and then misses targets by 50%+, creating credibility issues with board and team). The right discipline: build a realistic plan with conservative recruiting assumptions, tie it explicitly to financial models, update it quarterly, and use it as the basis for option-pool sizing at financing rounds. The plan is a tool; using it well delivers significant operational value.
+ Related: [ First Hire ] · [ Recruiting Strategy ] · [ Option Pool ] · [ Option Pool Refresh ] · [ Burn Rate ]
+ FAQ
+ What is a hiring plan? 
+A structured roadmap of roles a company intends to fill over a defined period (typically 12-18 months), specifying for each role the expected start date, function, level, total compensation, and dependencies. Used for both internal execution (recruiting against the plan) and external capital planning (option pool sizing and financing-round size).
+ Why does the hiring plan matter for financing rounds? 
+Because the option pool refresh at a priced round is sized based on equity grants in the hiring plan. Investors push for pre-money option pool sized to cover expected grants. The hiring plan effectively determines how much founder dilution happens in the round, making it a key negotiation document, not just an HR tool.
+ How often should I update the hiring plan? 
+Quarterly at minimum. Business priorities shift, recruiting velocity varies from expectations, and capital plans evolve. A stale hiring plan diverges from reality fast. Treat updating the plan as a regular operational discipline, with variances against prior plan as a topic for board discussion.
+
+ About the Author
+
+ Ryan Rutan
+ Founding Partner @ Startups.com platform | Clarity.fm , Launchrock, Fundable, Zirtual, and Co-Host of The Startup Therapy Podcast. Ryan has 15 years of experience as a Founder, Advisor, Mentor, and Investor — the quintessential startup guerrilla. He works with 100's of the best startups every year on everything from ideation, idea validation, early marketing traction, customer acquisition to fundraising, scaling, and operations.
+
+ Discuss this Article
+
+ Comments
+
+ x 
+
+ POST 
+
+ Related Articles
+
+ Timing Isn't Everything
+
+ with Sheila Marcelo 
+
+ The Co-Founder and CEO of Care.com talks about the winding road she took — from a small coconut farm in the Philippines to becoming one of a handful women CEOs leading a publicly traded company. 
+ Continue 
+
+ Expecting Chaos
+
+ with Reid Hoffman 
+
+ The prolific internet entrepreneur and investor shares stories about the hard-fought success at PayPal, discusses his failures and what it was like at the very peak of the dot com bubble. 
+ Continue 
+
+ Against Considerable Odds
+
+ with Tristan Walker 
+
+ Founder & CEO of Walker & Company on courage, patience, and building things that solve problems.
+ Continue 
+
+ Unlock Startups Unlimited 
+
+ Access 20,000+ Startup Experts, 650+ masterclass videos, 1,000+ in-depth guides, and all the software tools you need to launch and grow quickly.
+
+ Learn More 
+
+ Already a member? Sign in 
+
+ Education 
+ Validate Your Idea Acquire Customers View All 
+ Community 
+ Startup Therapy 
+ Company 
+ Pricing About Us 
+ Legal 
+ Terms of Service Privacy Policy 
+ Follow 
+
+ the startups.com platform
+
+ Community
+
+ Planning
+
+ Mentors
+
+ Funding
+
+ Customers
+
+ Copyright © 2026 Startups.com LLC. All rights reserved.
