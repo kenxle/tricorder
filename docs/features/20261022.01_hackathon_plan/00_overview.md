@@ -278,19 +278,20 @@ Hacking runs 10:30 to 4:30 by the schedule. The Luma page also says nine hours; 
 <div class="scrollx"><table class="boxed">
 <thead><tr><th>Slice</th><th>Who</th><th>Hours</th><th>What it is</th></tr></thead>
 <tbody>
-<tr><td>skeleton</td><td>backend-and-data</td><td>0.5</td><td>Folder layout, server, CI, smoke command</td></tr>
-<tr><td>claim-result</td><td>captain</td><td>1.0</td><td>The Claim schema, frozen at 11:00, and the quote checker</td></tr>
-<tr><td>redflag-engine</td><td>design-and-finance</td><td>3.0</td><td>The checks on the model, the CSVs and the deck's claims</td></tr>
+<tr><td>readers</td><td>backend-and-data</td><td>1.0</td><td>The shared file readers every scan and the quote checker import</td></tr>
+<tr><td>claim-result</td><td>captain</td><td>1.0</td><td>The quote checker; the Claim schema is written this week with the skeleton</td></tr>
+<tr><td>redflag-engine</td><td>design-and-finance</td><td>3.0</td><td>Script checks on the model, the CSVs and the deck's claims page</td></tr>
 <tr><td>readout</td><td>captain</td><td>1.5</td><td>The memo built from the claims: disagreements, flags, gaps</td></tr>
-<tr><td>readout-page</td><td>frontend</td><td>4.5</td><td>The page the judges see, each claim opening its source</td></tr>
+<tr><td>readout-page</td><td>frontend</td><td>4.25</td><td>The page the judges see, each claim opening its source in-page</td></tr>
 <tr><td>pitch-video</td><td>backend-and-data</td><td>2.5</td><td>Whisper transcript, claims with timestamps, the third ARR number</td></tr>
-<tr><td>comps</td><td>design-and-finance</td><td>1.5</td><td>Comparable companies and rounds with the reason each is fair</td></tr>
-<tr><td>market-signals</td><td>backend-and-data</td><td>1.5</td><td>Hiring, traffic, reviews for the company and its competitors</td></tr>
-<tr><td>demo-freeze</td><td>captain, all four</td><td>2.0 + 0.75</td><td>Merge, score, freeze at 3:30, two rehearsals</td></tr>
+<tr><td>redflag-readings</td><td>backend-and-data</td><td>1.0</td><td>The model readings (pilot clause, cohort note); first to be cut</td></tr>
+<tr><td>comps</td><td>design-and-finance</td><td>1.5</td><td>Comparable companies and rounds, ranked by script from cached filings</td></tr>
+<tr><td>market-signals</td><td>frontend</td><td>0.25</td><td>A static panel of this week's cached competitor readings</td></tr>
+<tr><td>demo-freeze</td><td>captain, all four</td><td>2.0 + 0.75</td><td>Merge, score, freeze at 3:30, two rehearsals of the three-minute core</td></tr>
 </tbody>
 </table></div>
 
-Cut order when the morning runs long: market signals, then comps, then the pitch video. The red-flag engine, the readout and its page are never cut.
+Written this week by agents, per the critics: the skeleton with the Claim schema and the readers stub, the blind room (plants-off switch, second seed, a sealed variant key), the cached signals readings, the social posts. Cut order when the morning runs long: the model readings, then comps, then the pitch video. The red-flag engine, the readout and its page are never cut.
 
 ## What the critics said
 
