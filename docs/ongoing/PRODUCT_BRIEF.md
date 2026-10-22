@@ -62,41 +62,40 @@ The user stories that turn these jobs into features are in [USER_STORIES.md](USE
 
 ## What it does
 
-- [Reads everything about a startup](FEATURES.md#inputs): the deck, the video, the financials, the contracts, the inbox and its online presence, starting on each as it arrives.
-- [Sends the company quick requests](FEATURES.md#inputs) for what is missing, with guidance on what to submit, drawn from the ask list.
-- [Opens the associate's usual tabs for her](FEATURES.md#what-tricorder-gathers-before-the-data-room-is-opened): traffic, reviews, investors, co-founder history, and whether the story matches what's online.
-- [Runs scans](FEATURES.md#the-scans) that find red flags in the numbers by script and check every claim in the deck and video against the other sources.
-- [Builds a readout](FEATURES.md#the-readout): the best green flags and the worst red flags, then which pieces look strong and which look weak, with every number two clicks from its sources.
-- [Helps write an interactive memo](FEATURES.md#the-readout) that partners can drill into and run their own what-ifs on.
-- [Lets the operator steer](FEATURES.md#steering-the-readout) any piece of the readout in one plain sentence.
+- [Reads everything about a startup](FEATURES.md#inputs) as it arrives: the deck, video, financials, contracts, inbox and online presence.
+- [Asks the company for what is missing](FEATURES.md#inputs), with guidance on what to submit.
+- [Opens the associate's usual tabs](FEATURES.md#what-tricorder-gathers-before-the-data-room-is-opened): traffic, reviews, investors, founders, and whether the story matches what's online.
+- [Runs scans](FEATURES.md#the-scans) that flag problems in the numbers and the contract terms, and check every deck and video claim against the other sources.
+- [Builds a readout](FEATURES.md#the-readout): the best green and worst red flags, then which pieces look strong or weak, with every number two clicks from its source.
+- [Helps write an interactive memo](FEATURES.md#the-readout) that partners can drill into and run what-ifs on.
+- [Lets the operator steer](FEATURES.md#steering-the-readout) any piece in one plain sentence.
 - [More checks come after Saturday](FEATURES.md#later-checks).
 
 ## What it is not
 
-- Not a sourcing database, a CRM or a fund operations tool.
-- Not a chat window over documents. Its checks are scripts with numbers.
+- Not a sourcing database or a CRM.
+- Not a chat window over documents.
 - Not a replacement for the partner's judgment.
 - Not a fraud detector. It finds differences in reporting.
-- Not confirmatory diligence, such as reference calls and legal review.
+- Not confirmatory diligence.
 
 ## The principles for choosing methods
 
 1. Every claim links to its source.
-2. Green and red flags first, then the overview, strong and weak alike, with gaps shown as gaps.
-3. A check a script can run beats a model's reading.
-4. No real company's confidential data. Every demo room is synthetic.
+2. Green and red flags first, then strong and weak pieces alike, with gaps shown as gaps.
+3. A script's check beats a model's reading.
+4. No real company's confidential data.
 5. Nothing is scraped against a site's terms.
-6. The data stays with the investor, who can see and delete what was pulled.
+6. The investor can see and delete everything pulled.
 
 ## Commitments
 
-- Every claim opens the exact page, cell, URL or video second it came from.
-- Every missing fact shows as a gap instead of a guess.
-- A steer or a what-if never changes a script's number or the company's files.
-- On the demo room, Tricorder reports its own misses against the answer key.
+- A missing fact shows as a gap, not a guess.
+- A steer or a what-if never changes a script's number.
+- Tricorder reports its own misses against the answer key.
 - A bank account is read only with the founder's consent.
 - No scan logic before Saturday.
 
 ## How we know it works
 
-On Saturday, a panel of investors and agent builders judges a live demo. Tricorder is scored on the planted flags it finds and the decoys it wrongly flags, on the demo room, a sealed room and a clean room. After Saturday, a pilot fund judges it on [time to a first-pass memo, flags the partner agrees with, and whether the fund pays](FEATURES.md#how-we-measure-it). Tricorder claims no time saving until a pilot measures one.
+On Saturday, investors and agent builders judge a live demo. Tricorder is scored against the answer key. After Saturday, a pilot fund [judges it on speed, flags the partner agrees with, and whether it pays](FEATURES.md#how-we-measure-it). No time saving is claimed until a pilot measures one.
