@@ -224,3 +224,9 @@ Added 2026-10-22 at 1:27 PM, on the angel evidence:
 > so effectively he IS doing due dilligence, just by proxy. he's letting yc do the diligence and then assuming their diligence is correct. what that means is that an angel still wants diligence, they just have less time for it. it's not that its thin evidence, i just disagree with your take
 
 Settled: angels want diligence and lack the time. Giving up upside to YC, following a lead, splitting with co-investors and becoming an LP are diligence bought by proxy. That is pay-layer evidence for the problem Tricorder solves, not avoidance of it.
+
+Added 2026-10-22 at 1:32 PM, as a comment on "ARR that is not recurring" in the voice-of-the-customer research:
+
+> this is good. we should look for this specifically, but also any other accounting mislabeling
+
+Settled: the red-flag engine checks ARR that is not recurring by name, and also a family of accounting mislabels, each a number filed under a label it does not earn. The frameworks doc gets an "Accounting mislabels" entry listing each kind with its mechanical check, starting with: non-recurring revenue counted as ARR or MRR; bookings or billings shown as revenue; gross merchandise value or pass-through money shown as revenue (gross against net); cost of revenue filed as operating expense, which inflates gross margin; contractors left out of headcount and burn; capitalised costs that keep spend off the P&L; deferred revenue counted as earned; and one-time fees counted in recurring metrics. Each kind names which data-room file and column a script reads, and what a gap looks like when the room does not hold that file.

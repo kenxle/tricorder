@@ -75,7 +75,7 @@ Each scan is one piece of first-pass diligence. Each returns a list of claims, a
 
 | Order | Scan | What it returns | When |
 |---|---|---|---|
-| 1 | **Red-flag engine** | A ranked table of flags in the financials and metrics. Each row: what is wrong, the number the company claims, the number Tricorder computed, the severity, and links to both places. | Saturday |
+| 1 | **Red-flag engine** | A ranked table of flags in the financials and metrics, including accounting mislabels: a number filed under a label it does not earn, such as non-recurring revenue counted as ARR, billings shown as revenue, or cost of revenue filed as operating expense. Each row: what is wrong, the number the company claims, the number Tricorder computed, the severity, and links to both places. | Saturday |
 | 2 | **The readout** | The best green flags and the worst red flags, then the overview of the company in pieces, assembled from the scans' claims. Each piece is marked looking strong, looking weak, mixed or not enough in the room, with a one-line reason. Each piece drills down to its claims, and each claim to its sources. | Saturday |
 | 3 | **Pitch video** | The video's claims with timestamps. Claims that disagree with the deck are marked. | Saturday |
 | 4 | **Comps** | Comparable companies and recent rounds, each with the reason it is a fair comp and a source. Public filings from SEC EDGAR; private rounds from Form D. | Saturday |
