@@ -1,0 +1,7 @@
+{
+  "note": "Test fixture in whisper.cpp's -oj shape.",
+  "transcription": [
+    {"offsets": {"from": 35000, "to": 39100}, "text": " We started charging in January 2025."},
+    {"offsets": {"from": 39100, "to": 44800}, "text": " Today we're at about three million dollars in annual recurring revenue."}
+  ]
+}

@@ -1,0 +1,15 @@
+[project]
+name = "tricorder"
+version = "0.1.0"
+description = "Point it at a startup, get a readout."
+requires-python = ">=3.11"
+# The demo laptop installs these once: pip install -r requirements.txt
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["schema", "scans", "server", "eval"]
+addopts = "-q"
