@@ -8,7 +8,7 @@
 
 **Level of detail:** One slice per heading, with short lists. A builder can pick up a slice and know what done looks like.
 
-**Sources:** The writers' brief ([00_brief_for_writers.md](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), every "Added" block through 2026-10-22 at 11:20 AM, the 12:55 PM block that makes the readout an overview, the 1:09 PM block that puts the best green flags and the worst red flags first, the 1:12 PM block on steering, the 1:33 PM block on differences in reporting, the 1:38 PM block on stages, the 1:52 PM block that adds the bank check, the 1:54 PM block that adds the ask list, the 1:27 PM block on angels, the 1:32 PM block on accounting mislabels, the 1:34 PM block on online research, the 1:36 PM block on competitors, the 1:53 PM block on contracts, the 1:56 PM block that adds the checklist, and the 1:58 PM block on the memo template), the overview page's cards ([00_overview.md](../features/20261022.01_hackathon_plan/00_overview.md)), Ken's comments on the voice-of-the-customer research at 1:47 PM (the outside-in slice) and 1:50 PM (reference checks, low priority), the product brief's "What Tricorder gathers before the data room is opened" ([PRODUCT_BRIEF.md](PRODUCT_BRIEF.md)), the saved Plaid Sandbox page ([sandbox_user_custom.md](../reports/20261022.02_research/raw/feasibility/plaid/sandbox_user_custom.md)), the organisers' tracks ([problem_tracks.txt](../reports/20261022.01_hackathon_sources/problem_tracks.txt)), the feasibility research ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), the main source for scan order, stack, folder owners and keys), the data room research ([research_data_room.md](../reports/20261022.02_research/research_data_room.md)), the landscape research ([research_landscape.md](../reports/20261022.02_research/research_landscape.md)), the voice-of-the-customer research ([research_voice_of_customer.md](../reports/20261022.02_research/research_voice_of_customer.md)), the guardrails ([guardrails.md](../../.claude/guardrails.md)), the board ([BULLETIN.md](../BULLETIN.md)) and the three critiques ([judge](../features/20261022.01_hackathon_plan/critique_judge.md), [buildability](../features/20261022.01_hackathon_plan/critique_buildability.md), [demo](../features/20261022.01_hackathon_plan/critique_demo.md)), which set the Saturday slices, the demo opening and the beat sheet. The shape is copied from My Text Reminders' [ROADMAP.md](../../../my-text-reminders/docs/ongoing/ROADMAP.md). Hour budgets come from [the schedule](../features/20261022.01_hackathon_plan/00_brief_for_writers.md) and were added up by a script, not by hand.
+**Sources:** The writers' brief ([00_brief_for_writers.md](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), every "Added" block through 2026-10-22 at 11:20 AM, the 12:55 PM block that makes the readout an overview, the 1:09 PM block that puts the best green flags and the worst red flags first, the 1:12 PM block on steering, the 1:33 PM block on differences in reporting, the 1:38 PM block on stages, the 1:52 PM block that adds the bank check, the 1:54 PM block that adds the ask list, the 1:27 PM block on angels, the 1:32 PM block on accounting mislabels, the 1:34 PM block on online research, the 1:36 PM block on competitors, the 1:53 PM block on contracts, the 1:56 PM block that adds the checklist, the 1:58 PM block on the memo template, the 2:00 PM block on interactive memos, and the 2:01 PM block on per-reader copies and scenarios), the overview page's cards ([00_overview.md](../features/20261022.01_hackathon_plan/00_overview.md)), Ken's comments on the voice-of-the-customer research at 1:47 PM (the outside-in slice) and 1:50 PM (reference checks, low priority), the product brief's "What Tricorder gathers before the data room is opened" ([PRODUCT_BRIEF.md](PRODUCT_BRIEF.md)), the saved Plaid Sandbox page ([sandbox_user_custom.md](../reports/20261022.02_research/raw/feasibility/plaid/sandbox_user_custom.md)), the organisers' tracks ([problem_tracks.txt](../reports/20261022.01_hackathon_sources/problem_tracks.txt)), the feasibility research ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), the main source for scan order, stack, folder owners and keys), the data room research ([research_data_room.md](../reports/20261022.02_research/research_data_room.md)), the landscape research ([research_landscape.md](../reports/20261022.02_research/research_landscape.md)), the voice-of-the-customer research ([research_voice_of_customer.md](../reports/20261022.02_research/research_voice_of_customer.md)), the guardrails ([guardrails.md](../../.claude/guardrails.md)), the board ([BULLETIN.md](../BULLETIN.md)) and the three critiques ([judge](../features/20261022.01_hackathon_plan/critique_judge.md), [buildability](../features/20261022.01_hackathon_plan/critique_buildability.md), [demo](../features/20261022.01_hackathon_plan/critique_demo.md)), which set the Saturday slices, the demo opening and the beat sheet. The shape is copied from My Text Reminders' [ROADMAP.md](../../../my-text-reminders/docs/ongoing/ROADMAP.md). Hour budgets come from [the schedule](../features/20261022.01_hackathon_plan/00_brief_for_writers.md) and were added up by a script, not by hand.
 
 ## How to read a slice
 
@@ -69,6 +69,7 @@ Three of the day's blocks are writing rules with nothing to build: the 1:21 PM b
 | A diligence checklist | 1:56 PM | [checklist](#checklist) | This week |
 | Coverage against the checklist, and an ask list from missing items at the company's stage | 1:56 PM | [checklist-coverage](#checklist-coverage) | After |
 | Help write the partners' memo: an interactive memo with drill-downs, plus a static PDF with footnotes, in a template built from real published memos | 1:58 PM and 2:00 PM | [memo-export](#memo-export) | After |
+| Each reader gets their own steerable copy of the memo, and can try what-if changes on the model, marked as scenarios | 2:01 PM | [reader-scenarios](#reader-scenarios) | After |
 | A blind room and a clean room against "rigged" | overview page card, "The blind room" | [blind-room](#blind-room), [demo-freeze](#demo-freeze) | This week, then Saturday |
 
 ## The one workflow we demo
@@ -1207,6 +1208,31 @@ Tricorder helps the operator write the memo for the partners' meeting ([writers'
 - In the interactive memo, every line reaches its claims in one click and a claim's source in two.
 - In the PDF, every claim carries a footnote that names its source and locator.
 - Every claim in both forms passes the quote checker.
+
+**Who:** agent.
+
+**Judgment:** yes.
+
+### reader-scenarios
+
+Each reader of the memo gets their own copy to steer, and can try what-if changes on the financial model ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:01 PM block). The operator's memo is the shared version. A partner's changes stay in the partner's copy.
+
+**Waits on:** [memo-export](#memo-export); [steering](#steering); [financial-model](#financial-model), whose scripts do the recomputing.
+
+**Includes:**
+
+- A shared memo version, and one copy per reader laid over it. A reader steers their copy (rewrite a section, ask for more information) by the same rules as [steering](#steering), without changing anyone else's.
+- Each copy says what the reader changed and which shared version it started from.
+- What-if inputs on the model: a reader changes a few assumptions, such as churn, price, hiring pace, or the pilot counted or not, and sees what the numbers become.
+- The same scripts recompute from the company's own model and rows. The source files never change.
+- Every tweaked number is marked as the reader's scenario, shown beside the company's figure and Tricorder's rebuilt figure, so nobody mistakes a what-if for a fact.
+
+**Done when:**
+
+- Two readers steer their own copies of the Hollis Voice memo differently. Each sees only their own changes, and the shared version is unchanged.
+- A reader who sets "pilot not counted" sees ARR recomputed by the script, marked as their scenario, beside the company's figure and the rebuilt figure.
+- After any scenario, the room's files are byte for byte the same as before.
+- A new shared version shows each reader which version their copy started from.
 
 **Who:** agent.
 
