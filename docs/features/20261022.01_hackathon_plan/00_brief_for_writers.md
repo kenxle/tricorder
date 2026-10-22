@@ -300,3 +300,11 @@ Settled:
 - **Every reader gets their own copy to steer.** The operator's memo is the shared version. Each partner who opens it can steer their own copy (rewrite a section, ask for more information) without changing anyone else's. Their copy says what they changed and from which version.
 - **Readers can tweak the model.** A reader can change a few assumptions in the financial model (for example churn, price, hiring pace, the pilot counted or not) and see what the numbers become. Scripts recompute from the company's own model and rows; the source files never change. Every tweaked number is marked as the reader's scenario beside the company's figure and Tricorder's rebuilt figure, so nobody mistakes a what-if for a fact.
 - The product brief's steering and memo features, the memo template and the roadmap carry this; the architecture gets the shape (a shared memo version, per-reader overlays of steers and scenario inputs, recomputation by the same scripts).
+
+Added 2026-10-22 at 2:05 PM, as comments on angels borrowing a lead's diligence and on YC's volunteer readers:
+
+> there's something interesting here. we can make this multiplayer while building, so that more than one person can accelerate the diligence process. i'm not sure that would work though
+
+> another share the work example
+
+Settled: a `multiplayer` slice on the roadmap, marked uncertain. Several people (a lead, teammates, co-investors the lead invites) build one readout at once and split the checklist; each person's work carries their name. Before building it, an online check of how syndicate leads and angel groups split diligence today decides whether it goes ahead.
