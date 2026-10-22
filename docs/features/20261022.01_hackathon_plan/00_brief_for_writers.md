@@ -248,3 +248,9 @@ Added 2026-10-22 at 1:36 PM, as a comment on the competitor that turns a data ro
 > this is validation of our idea. we do not need to make ourselves substantially different than this competitor, just add some extra stuff
 
 Settled: the competitors that already turn a data room into a sourced memo validate the idea. Tricorder does that same core job and adds to it (the green-and-red-flags readout, the red-flag engine with accounting mislabels, fast cross-checking, and the scans beyond the room). No document frames sourcing as "no longer open ground" or calls the competitor something we must beat. Their strongest points plus ours is the method.
+
+Added 2026-10-22 at 1:38 PM, as a comment on accelerators in the voice-of-the-customer research:
+
+> accelerators are working at the earliest parts of the fundraising, like angels. funds are working at different stages. we should break our personas out by which stage they focus on, as that makes a difference in what is available about the company
+
+Settled: the personas are grouped by the stage of company they focus on, because the stage decides what information exists. Earliest (pre-seed and accelerator applications): angels, accelerator screeners, pre-seed funds; little or no data room, so the deck, the founders, a video and the company's online presence carry the first pass. Seed: seed funds' partners and associates; a deck, a model, a cap table and some metrics. Series A: Series A funds and corporate VCs; a full room with monthly financials, cohorts and contracts. Each stage section says what is usually available (from the data-room research's stage table), which scans matter most at that stage, and which personas sit there. Say, do, pay stays per persona and is unchanged in meaning.
