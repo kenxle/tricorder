@@ -1,0 +1,356 @@
+
+Team name and pitch workshop
+VC Hackathon NYC 2026 · Team Match Network · 22 Oct 2026
+Tricorder is live on the Team Match Network; pick who to invite
+You named the team Tricorder and posted it as captain. This page now tracks what other participants see about you and who is looking for a team. Nothing gets sent without a button press or a yes from you.
+What I need from you
+Section 1
+Invites.
+ Press Invite or Skip for each person in 
+section 7
+. You can have three invites waiting at once, and four people are looking.
+The name and role are settled: Tricorder, role product. The workshop that got there stays below in sections 2 to 4.
+Who sees the result.
+ The team name, pitch, track and needs are shown to everyone at the event through the network: applicants, the organiser and the admin. Nobody outside VC Hackathon NYC 2026 sees it.
+Four directions from the seed
+Section 2
+Your profile on the network says: track 
+sourcing, diligence
+, idea 
+"good skills we could productize for reliable sourcing and diligence"
+, roles fullstack, product, business. Every pitch below points at that.
+Maritime navigation → harbor pilots
+Harbor Pilot
+Pitch.
+ A harbor pilot for deal flow. Boards every inbound company and guides it from first contact to a diligence memo partners trust.
+Why it fits.
+ A pilot is the expert who knows the local water. Diligence is the same job: someone has to bring each deal safely in.
+Also: 
+Sandy Hook
+ (where NY pilots board), 
+Pilot Boat
+Risk: nautical names are common in fintech.
+Recommended
+Astronomy → the transit method
+Transit
+Pitch.
+ Find startups the way astronomers find planets: by the faint signals they leave. Thesis-driven sourcing plus source-cited diligence.
+Why it fits.
+ Covers both halves of your track. Sourcing is detection from indirect signal; diligence is confirming the find.
+Also: 
+Transit Method
+, 
+Occultation
+ (the rarer cousin)
+Risk: "Transit" reads as transportation at first glance.
+NYC places → The Battery
+The Battery
+Pitch.
+ The lookout at the tip of Manhattan. Spots incoming deals early and runs the same auditable diligence on every one.
+Why it fits.
+ Local to the event, and a battery is also a bank of instruments firing together, which is what a team is.
+Also: 
+Castle Clinton
+, 
+Battery Lookout
+Risk: the organiser may read "battery" as energy or hardware.
+Films → heist crews
+Casing
+Pitch.
+ Diligence the way a heist crew does it. Case the company, map every exit, hand partners the plan with sources attached.
+Why it fits.
+ A heist crew is exactly a 4-to-5 person team with complementary roles. The pitch sells the team as much as the product.
+Also: 
+The Walkthrough
+, 
+Inside Job
+Risk: playful; may read as less serious to VC judges.
+Which direction?
+Harbor Pilot
+Transit
+The Battery
+Casing
+None, run another pass
+How the seed chose these
+Method
+Clock reading from calc-mcp: 
+2026-10-22T09:52:47.604-04:00
+. SHA-256 of that string: 
+1cefea653f1cf8db5512984b70dce66e6c8df63e46f8b05a1c701392dafc6364
+.
+Source list, indexed 0 to 9: books, films, workflows and crafts, mythology, NYC places, music, scientific instruments, card games, maritime navigation, astronomy. The first four bytes mod 10 picked the sources; the next four bytes mod 5 picked a direction inside each. "Another pass" continues from byte 9.
+Byte
+Value
+Picks
+1c
+mod 10 = 8
+maritime navigation
+ef
+mod 10 = 9
+astronomy
+ea
+mod 10 = 4
+NYC places
+65
+mod 10 = 1
+films
+1c
+mod 5 = 3
+maritime: harbor pilots
+f8
+mod 5 = 3
+astronomy: transit method
+db
+mod 5 = 4
+NYC: The Battery
+55
+mod 5 = 0
+films: heist crews
+12
+mod 5 = 3
+books: science writing
+98
+mod 5 = 2
+films: sci-fi
+4b
+mod 5 = 0
+crafts: carpentry
+70
+mod 5 = 2
+mythology: Egyptian
+dc
+mod 5 = 0
+NYC: Grand Central
+e6
+mod 5 = 0
+music: jazz
+6e
+mod 5 = 0
+instruments: microscope
+6c
+mod 5 = 3
+card games: blackjack
+8d
+mod 5 = 1
+maritime: lighthouses
+f6
+mod 5 = 1
+astronomy: telescopes
+Three names from every category
+Section 3
+Bytes 9 to 18 of the seed picked one direction inside each of the ten categories. Three names per direction, each with the angle its pitch would take. Comment on a row to pick it or riff on it.
+Category → direction
+Name
+Angle for the pitch
+Books → science writing
+Field Notes
+Every observation about a company written down with its source, the way a field scientist works.
+Replication
+Diligence that tries to reproduce the founder's claims before anyone believes them.
+Peer Review
+Deal memos built to survive a hostile reader.
+Films → sci-fi
+Precog
+Sees the raise before it happens. Sourcing from early signal.
+Tricorder
+Chosen
+Point it at a startup, get a readout. Instant first-pass diligence.
+Deckard
+Tells the real from the replicant. Diligence as the Voight-Kampff test for pitch decks.
+Crafts → carpentry
+Plumb
+Checks whether every claim is true and vertical before you build on it.
+Dovetail
+How a thesis and a company lock together. Sourcing by fit.
+Measure Twice
+Diligence before the cut. The slogan is the product.
+Mythology → Egyptian
+Ma'at
+Truth and order. The heart weighed against a feather: diligence as the weighing.
+Thoth
+The scribe who records the verdict. Memos with a full written record.
+Feather and Scale
+The two halves: the standard and the measurement.
+NYC → Grand Central
+Track 61
+The hidden platform. Deals that never hit the public board.
+Whispering Gallery
+Hear a quiet signal from across the room. Sourcing from faint chatter.
+Main Concourse
+Where every line meets. One desk that sees all inbound flow.
+Music → jazz
+Changes
+Know the chord changes and you can improvise. Structured diligence that still flexes.
+Standards
+The tunes every player knows. The same diligence on every deal, so partners can compare.
+Blue Note
+The off note that makes it work. Finding the deal everyone else passed on.
+Instruments → microscope
+Objective
+The lens, and the word. Diligence without the founder's framing.
+Aperture
+How much light you let in decides what you can see. Sourcing breadth, diligence depth.
+Resolve
+Resolving power: two things that looked like one. Also what partners need to do.
+Card games → blackjack
+Card Counter
+Edge from tracking what's already been dealt. Sourcing from the market's history.
+Basic Strategy
+The table you follow on every hand. Repeatable diligence, no gut calls.
+Double Down
+Know when the count is in your favor. Conviction with the math behind it.
+Maritime → lighthouses
+Fresnel
+The lens that makes a small light carry for miles. Amplifying weak signal.
+Keeper
+The one who tends the light every night. Diligence as a discipline, not an event.
+Montauk
+New York's first lighthouse. Local, and first to see what's coming.
+Astronomy → telescopes
+First Light
+A telescope's first observation. The first real look at a company.
+Finder Scope
+The small scope you aim the big one with. Sourcing before diligence.
+Palomar
+The observatory that mapped the sky for decades. The long, patient survey.
+Your listed role
+Section 4
+The network lists one role per captain. Your profile already carries fullstack, product and business, so applicants see all three either way. This is the one that shows on the team card.
+product
+You own the what and why; you're hunting for builders. Needs stay backend, frontend, data, design.
+fullstack
+You're a builder too (Rails). Signals you'll ship code, not just direct.
+pitch
+You present. Pairs with your presentations skill; signals a strong demo.
+Which role on the team card?
+product
+fullstack
+pitch
+What gets posted
+Section 5
+Posted 10:04 AM. Tricorder is live on the network as team 2, you are captain, 4 spots open.
+This is the record on the network. Applicants will show up on the 30-minute watch; I'll list everyone waiting with the role each fills and you choose who to accept.
+Field
+Value
+name
+Tricorder
+track
+sourcing, diligence
+pitch
+Point it at a startup, get a readout. Thesis-driven sourcing plus a first-pass diligence memo with every claim sourced.
+role
+product
+have
+1 (you)
+needs
+backend, frontend, data, design
+Post Tricorder to the network?
+Post it
+Not yet
+State of the network.
+ Tricorder is the only team listed. Four people are looking (
+section 7
+). A 30-minute watch is running in this session; it reports new people, applications and answers, and never acts without your yes.
+What other participants see about you
+Section 6
+Read from the network at 10:15 AM using the same lists other participants' agents read. I can only look through your account, so this is the shared data, not a screenshot of someone else's view.
+Everyone at the event
+Your team card. This is the main thing people see about you now.
+Not shown to others
+Your profile. You left the "people looking" list when you opened a team.
+Teammates, organiser, admin
+Your full profile, including the old idea text and your GitHub and LinkedIn.
+Your team card, as every participant sees it
+Public
+Field
+What it says
+Team
+Tricorder
+Captain
+Ken St. Clair
+Track
+sourcing, diligence
+Pitch
+Point it at a startup, get a readout. Thesis-driven sourcing plus a first-pass diligence memo with every claim sourced.
+Members
+Ken St. Clair, product
+Size
+1 of 5, 4 spots left, forming, open
+Needs
+backend, frontend, data, design
+Fit
+Each viewer's agent also sees its own score for how well its person fills your open roles.
+Your full profile, seen by teammates, organiser and admin
+Limited
+Field
+What it says
+Roles
+fullstack, product, business
+Skills
+ruby on rails, presentations, ux, research, project management, full stack dev
+Level
+senior
+Track
+sourcing, diligence
+Idea
+i have some good skills we could productize for reliable sourcing and diligence 
+Won't update
+Goal
+both (win and learn)
+Hackathons
+veteran
+Availability
+all of the event
+Wants beside you
+backend, frontend, data, design
+Team size
+either
+Links
+github.com/kenxle, linkedin.com/in/kenstclair (shown as text, never opened by the service)
+About the idea field.
+ I tried twice to replace it with the Tricorder tagline. The network answered "ok" both times and kept the old text. Since only teammates and organisers see it, the team card's pitch is what does the selling.
+People looking for a team, ranked for Tricorder
+Section 7
+As captain you can invite. You can have three invites waiting at once. Benjamin, Sumit and Alex together would fill frontend, backend, data and design. John arrived at 10:15 AM and is the strongest match on what he wants, but he overlaps Benjamin on frontend. Press a button per person; I'll send the invite with a short note and report their answer.
+Recommended
+Benjamin Schachter
+Roles frontend, fullstack, mobile. Skills TypeScript, React Native, Postgres. Senior, some hackathons, available all event, wants to win and learn.
+Fills 
+frontend
+, and can cover backend through Postgres.
+Wants ml, data, design, domain beside him. No track or idea listed.
+Recommended
+Sumit kumar
+Roles backend, ml, data. Skills Python, ML, AI, SQL, C#, automation, data analytics. Mid level, some hackathons, available all event, wants to win and learn.
+Fills 
+backend
+ and 
+data
+. The ML skills matter for a readout product.
+Wants design, domain, finance beside him. No track or idea listed.
+Recommended
+Alex Ly
+Roles design, finance, business. Skills Python, valuation, R, Tableau, Power BI, Excel. Junior, some hackathons, available all event, here to learn.
+Fills 
+design
+. Valuation and finance are the domain half of diligence.
+Wants fullstack, ml, devops beside them. Weakest fit score, strongest domain match.
+New at 10:15 AM
+John
+Roles fullstack, mobile, product. Skills Next.js, React Native, Supabase, Python, LangGraph. Mid level, veteran, available all event, wants to win and learn.
+Fills 
+frontend
+ and some backend. LangGraph means he has built agent workflows, which is what Tricorder is.
+Wants pitch, finance, business beside him: that's you. Overlaps Benjamin, so likely one or the other.
+Invite Benjamin Schachter as frontend?
+Invite
+Skip
+Invite Sumit kumar as backend?
+Invite
+Skip
+Invite Alex Ly as design?
+Invite
+Skip
+Invite John as fullstack?
+Invite
+Skip

@@ -1,0 +1,5 @@
+docs/reports/seneschal/
+.claude-commit*
+.env
+.env.*
+reddit_corpus/raw/

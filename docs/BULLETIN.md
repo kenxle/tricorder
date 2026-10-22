@@ -1,0 +1,16 @@
+# Tricorder board
+
+The task board for this repo. Newest first. `[ ]` open, `[>]` claimed, `[x]` done, `[!]` blocked. Rows for `@ken` are things only he can do. Rows for `@anyone` are for the next agent or teammate that opens the repo. "What's next" means: the top open row for your handle.
+
+The plan this board came from: [the hackathon plan overview](features/20261022.01_hackathon_plan/00_overview.md) (written after the research and the critics finish). The brief behind it: [00_brief_for_writers.md](features/20261022.01_hackathon_plan/00_brief_for_writers.md). The hackathon is Saturday 2026-10-24, 9:00 AM to 6:00 PM, at Betaworks.
+
+## Board
+
+- [ ] @ken 2026-10-22 TRI-interviews -- **Run two or three short diligence interviews before Saturday.** The organisers ask every team to talk to people with the problem before build day, and give three questions: what do you check first when you open a data room; which red flag did you once miss and regret; how long does your first-pass memo take, and which part is the slowest. Associates, principals or angels you know (Columbia, the networking board, Everywhere Ventures contacts). Write each answer into [docs/reports/20261022.02_research/interviews.md](reports/20261022.02_research/interviews.md), one section per person, role only, no names in the public copy. The readout's red-flag list is built from these first.
+- [ ] @ken 2026-10-22 TRI-team-status -- **Say who accepted the invites.** The team workshop recommended Benjamin Schachter (frontend), Sumit Kumar (backend and data) and Alex Ly (design and finance). The roadmap assigns Saturday slices to those roles; if someone else joins, say their skills and the assignments move.
+- [ ] @ken 2026-10-22 TRI-sponsor-keys -- **Get the sponsor API keys before Saturday.** The track names the Akta API from Wokelo, Crunchbase, You.com and Tavily as the data to start with, and Nicrron × Ninoo gives model access through one key. Sign up for each, put the keys in a local `.env` (never committed), and say on this row which ones you have. The feasibility research says which are free and which need a sponsor code from the organisers.
+- [>] @agent 2026-10-22 TRI-research -- (claimed 2026-10-22 10:17 by the orchestrating session) **Run the three research tracks**: voice of the customer, the landscape and the judges, feasibility per scan. Into `docs/reports/20261022.02_research/`. Brief: [00_brief_for_writers.md](features/20261022.01_hackathon_plan/00_brief_for_writers.md).
+- [ ] @agent 2026-10-22 TRI-ongoing-docs -- **Write the ongoing docs from the research**: product brief and personas, brand, roadmap and architecture, frameworks. Waits on: TRI-research.
+- [ ] @agent 2026-10-22 TRI-critics -- **Three critics read the plan**: the judge, buildability, the demo. Waits on: TRI-ongoing-docs.
+- [ ] @agent 2026-10-22 TRI-overview-page -- **Write the overview page with the decision cards and serve it to Ken on Lahe.** Waits on: TRI-critics.
+- [x] @agent 2026-10-22 TRI-scaffold -- **Scaffold the repo with Seneschal, write the brief, open the GitHub remote.** Done 2026-10-22.
