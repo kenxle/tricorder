@@ -1,0 +1,100 @@
+Welcome to Crunchbase Data
+For AI agents: the docs index is at https://data.crunchbase.com/llms.txt. Append .md to any documentation page URL to get its markdown version.
+Jump to Content
+Getting StartedMCPAPI ReferenceAPI Starter Playbooks
+HomeGetting StartedAPI Referencev3.1v4.0 (Legacy)v4.0 (Current)Getting StartedMCPAPI ReferenceAPI Starter PlaybooksAbout UsGo to Crunchbase
+Getting Started
+Search
+About UsGo to Crunchbase
+v4.0 (Current)
+Getting StartedWelcome to Crunchbase DataWelcome to Crunchbase Data
+Crunchbase Data
+Welcome to Crunchbase Data
+Data Dictionary
+Mcp
+MCP Overview
+Getting Started with MCP
+Connecting AI Tools
+Crunchbase MCP Skills
+Managing MCP Access
+MCP Developer Reference
+Building a Crunchbase MCP Integration
+Data-Token Metering
+Reliability, Errors, and Pagination
+Known MCP Limitations
+REST API
+Make your first API request
+Understand the Crunchbase data model
+Using the API
+Using Entity Lookup API
+Get More Results from Card_id
+Examples: Entity Lookup API
+Using Search API
+Paginating through the Search API
+Examples: Search API
+Using Autocomplete API
+Examples: Autocomplete API
+Using Deleted Entities API
+API FAQs
+API Packages
+Overview
+Fundamentals
+Insights Data
+Predictions Data
+API Starter Playbooks
+Define and Pull Your ICP 
+Anticipate what’s next for your ICP-fit accounts
+Prioritize ICP predicted to experience growth
+Identify Emerging Wealth Creators
+Early Liquidity Event Prediction for Targeting & Research
+Discover Early-Stage Investment Opportunities 
+Forecast Investment Upside & Risk
+Build Market Landscapes and Streamline Workflows
+Discover Look-Alike Accounts
+Surface Competitors and Reasoning for Diligence Workflows
+Legacy API Migration Guides
+Legacy Migration Overview
+Legacy Exports
+Updating Legacy CSV Workflows
+Legacy CSV Field Mapping
+Calling API Endpoints
+CRM Enrichment
+Crunchbase Basic
+Basic Export
+Basic APIs
+Organization Attributes for Basic API
+Terms and Conditions
+License Agreement
+Data Use Addendum
+Data Access Terms
+Copy Page
+Welcome to Crunchbase Data
+Connect with MCP or build with the REST API.
+Bring Crunchbase company, funding, people, Insights, and Predictions data into your work. Choose MCP to work through an AI assistant, or use the REST API to retrieve data directly in your applications and pipelines.
+Choose how to connect
+Use Crunchbase in your AI tools with MCP
+Connect your AI assistant to Crunchbase to research companies, explore funding activity, and build lists through natural-language requests.
+Start here: Getting Started with MCP.
+Choose your client: Connecting AI Tools.
+Access: Sign in with your Crunchbase account. Individual access requires an MCP seat assigned by your workspace admin. See Managing MCP Access, or contact your account team if your workspace does not have MCP.
+Building an application using MCP? See Building a Crunchbase MCP Integration and contact your account team about application access.
+Explore the MCP overview →
+Build applications and data pipelines with the REST API
+Make HTTP requests to search collections, look up entities and relationships, and retrieve data for enrichment, analysis, and your own integrations.
+Start here: Make your first API request using your existing key in the interactive reference. See Using the API for authentication, rate limits, and retries.
+Understand the data: Learn how entities, fields, and cards fit together.
+Find an endpoint: API Reference.
+Follow a workflow: API Starter Playbooks.
+Access: You need a provisioned REST API key. See API access and key retrieval.
+MCP seat access and REST API access are different access arrangements. An MCP seat does not replace the API key required for REST requests, and a REST API key is not the sign-in method for an individual MCP connection.
+Explore Crunchbase data
+Fundamentals: Company profiles, people, relationships, and financial records.
+Insights: Analyses and signals that help explain company and market activity.
+Predictions: Forecasts of outcomes such as funding, acquisition, IPO, growth, layoffs, closure, and remaining private.
+For REST API package details and available reference definitions, see API Packages Overview. Use the Data Dictionary to explore API and CSV fields. For data exposed through MCP tools, see the MCP Overview and Developer Reference.
+Note: AI content may contain mistakes and is not legal, financial or investment advice.
+Updated 1 day ago 
+Data Dictionary
+Did this page help you?
+Yes
+No

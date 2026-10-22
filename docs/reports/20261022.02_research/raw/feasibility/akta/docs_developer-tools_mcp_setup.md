@@ -1,0 +1,142 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://docs.akta.pro/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# MCP Setup
+
+> Connect Claude, ChatGPT, Cursor, VS Code, Claude Code, and other MCP clients to the akta.pro MCP server at `https://mcp.akta.pro/mcp`.
+
+Complete setup guide for akta.pro MCP server.
+
+akta.pro MCP connects AI assistants to our company-intelligence stack, including company search, structured company profiles, news monitoring, and alternative signals like headcount, traffic, and reviews.
+
+# Installation
+
+akta.pro MCP server can be installed in any MCP client with the server URL:
+
+```text theme={null}
+https://mcp.akta.pro/mcp
+```
+
+> **[Install in Cursor](https://cursor.com/en/install-mcp?name=akta%20mcp\&config=eyJ1cmwiOiJodHRwczovL21jcC5ha3RhLnByby9tY3AifQ==)**
+>
+> One-click install for Cursor
+
+> **[Install in VS Code](https://insiders.vscode.dev/redirect/mcp/install?name=akta%20mcp\&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.akta.pro%2Fmcp%22%7D)**
+>
+> One-click install for VS Code
+
+**Claude Web, Desktop**
+
+1. Open Claude and click **Settings** (or **Customize**) from the sidebar
+2. Go to **Connectors → Add Connectors**
+3. Enter the name `akta-pro` and the server URL `https://mcp.akta.pro/mcp`
+4. Click **Add**, then complete the authentication
+
+**ChatGPT**
+
+1. Go to Settings → Plugins → Developer Mode, then enable Developer Mode.
+2. Open Settings→ Plugins → Browse Plugins and click on + icon to add a new plugin
+3. Name it "akta-pro" and paste the Server URL above, with OAuth as the authentication.
+4. Click Create and complete authentication when prompted.
+
+**Cursor**
+
+Add to `~/.cursor/mcp.json`:
+
+```json theme={null}
+{
+  "mcpServers": {
+    "akta-pro": {
+      "url": "https://mcp.akta.pro/mcp",
+      "headers": {
+        "x-api-key": "YOUR_AKTA_API_KEY"
+      }
+    }
+  }
+}
+```
+
+**VS Code**
+
+Add to `.vscode/mcp.json` in your project root:
+
+```json theme={null}
+{
+  "servers": {
+    "akta-pro": {
+      "type": "http",
+      "url": "https://mcp.akta.pro/mcp",
+      "headers": {
+        "x-api-key": "YOUR_AKTA_API_KEY"
+      }
+    }
+  }
+}
+```
+
+**Claude Code**
+
+Run in terminal:
+
+```bash theme={null}
+claude mcp add --transport http akta-pro https://mcp.akta.pro/mcp --header "x-api-key: <YOUR_API_KEY>"
+```
+
+**OpenCode**
+
+Add  to `opencode.json` in your project root (or `~/.config/opencode/opencode.json` for a global config):
+
+```json theme={null}
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "akta-pro": {
+      "type": "remote",
+      "url": "https://mcp.akta.pro/mcp",
+      "enabled": true,
+      "oauth": false,
+      "headers": {
+        "x-api-key": "YOUR_AKTA_API_KEY"
+      }
+    }
+  }
+}
+```
+
+# API Key
+
+> **[Get your akta.pro API key](https://playground.akta.pro/dashboard/manage/api-keys)**
+
+Your key resolves to a plan tier such as **pay-as-you-go**, **subscription**, or **enterprise**,  which determines what the tools below can return. Call `account_status` at any time to check your tier and remaining credit balance.
+
+# Resources
+
+> **Usage Examples**
+>
+> **Company Overview**
+>
+> ```text theme={null}
+> Tell me about Stripe — recent news, headcount, and product lineup.
+> ```
+>
+> **Structured Company Data**
+>
+> ```text theme={null}
+> Pull the firmographic and management profile for Anthropic.
+> ```
+>
+> **Filtered News**
+>
+> ```text theme={null}
+> Show me only M&A news on Adobe from the last quarter.
+> ```
+>
+> **Alternative Signals**
+>
+> ```text theme={null}
+> How has Notion's headcount trended over the past year, and what's their current hiring look like?
+> ```
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

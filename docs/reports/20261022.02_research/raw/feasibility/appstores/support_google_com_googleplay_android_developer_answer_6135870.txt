@@ -1,0 +1,1187 @@
+Download and export monthly reports - Play Console Help       Skip to main content 
+Play Console Help
+Sign in
+Google Help
+Help Center
+Play Console Help
+Policy Center
+Community
+Play Console
+Privacy Policy
+Terms of Service
+Submit feedback   
+Send feedback on...
+This help content & information
+General Help Center experience
+CloseNext
+Help Center
+Community
+Announcements
+Play Console
+Play Console Help
+Get startedPopular articlesManage your developer accountCreate, upload, and publishDistribute your appRun tests and check performanceProtect your appComply with Google Play policiesFix an issueAndroid developer verificationDesign for multiple form factorsCentral Play Help Center
+Policy Center
+Restricted ContentIntellectual PropertyPrivacy, Deception and Device AbuseUse of SDKs In AppsMalwareImpersonationMobile Unwanted SoftwareMonetization and AdsStore Listing and PromotionSpam, Functionality, and User ExperienceOther ProgramsFamiliesEnforcementUpdates and Other ResourcesHow Google Play Works for Developers
+View reports, statistics, and insights
+Statistics & insights
+Download and export monthly reports   
+Notification    
+You can now request help from the Help page in your Play Console account.  If you don't have access to Play Console, ask your account admin for an invite.           
+Download and export monthly reports
+Starting in October 2026, we are updating the Fee Description column in the earnings and invoice-based billing reports.
+To reflect the new service fee structures, the Fee Description column will now include the following values wherever applicable:
+APPS_GAMES_PROGRAM
+APPS_GAMES_PROGRAM_NEW_INSTALL
+If you use automated workflows that rely on exact matches for values, you may need to make updates. Review and update your workflows accordingly.
+You can use Play Console to download monthly reports about individual apps to help you track and understand your app's performance.
+Types of reports
+Detailed reports
+Detailed reports include data on individual events:
+Reviews
+Financial: estimated sales, earnings, rewarded products, and Korean Play balance funded
+Aggregated reports
+Aggregated reports include consolidated data (averages, daily totals, and so on) for app statistics:
+Statistics: installs, crashes, ratings, and subscriptions
+User acquisition: retained installers, buyers (7 days after install), and subscribers
+Download reports
+Open Play Console.
+Click Download reports , and select Reviews, Statistics, or Financial.
+Under "Select an application," type and select your app's name.
+Select the year and month of the report you want to download.
+Note: Financial reports include all apps in your account.
+Download reports from Google Cloud Storage
+Reports are available from Google Cloud Storage. Data is captured daily and posted within 3 to 7 days in monthly CSV files. Reports are stored in a private Google Cloud Storage bucket for your Google Play Developer account.
+You can access reports using Google Cloud Storage on your browser or programmatically using gsutil. You can also use other tools to programmatically access your Cloud Storage bucket. We recommend building systems that don't depend on the exports being updated at a specific time.
+Tip: If you want to import your reports from Google Cloud Storage into BigQuery, you need to convert the CSV files from UTF-16 to UTF-8.
+Find your Google Cloud Storage URI
+You can copy your Google Cloud Storage URI by clicking the Copy Cloud Storage URI button next to the corresponding section header on the Download reports pages.
+Your Cloud Storage URI begins with pubsite_prod_rev (For example,pubsite_prod_rev_01234567890987654321).
+Download reports using a command line tool
+Install the gsutil tool.
+Be sure to authenticate your account using an account with access toPlay Console.
+During the setup process, if you're using gsutil for the first time and don't have any other projects configured in Google Cloud Storage, you can type your app's name when you're prompted for a project ID.
+Find your reporting bucket ID by clicking the Copy Cloud Storage URI button next to the corresponding section header on the Download reports pages.
+Your Cloud Storage URI begins with: pubsite_prod_rev (For example, pubsite_prod_rev_01234567890987654321).
+Use the gsutil cp command to download reports.
+For additional commands to help you access your reports, go to the gsutil documentation.
+Reports are organized in directories named after each type of report. CSV file names include the type of report, package name, time period, and the dimension (if applicable).
+Download reports using a client library and service account
+Step 1: Create a service account
+Open Google Developers Console.
+If you already have a project, use the drop-down to select a project. If you don't have a project listed or want to create a new one, click Create project.
+Select the Menu icon  > Permissions > Service accounts > Create service account.
+Follow the on-screen instructions and select Create.
+Copy the email address listed.
+Example: accountName@project.iam.gserviceaccount.com
+Step 2: Add the service account on Play Console
+Open Play Console.
+Select User and permissions > Invite new User.
+Paste or type the email address associated with your service account.
+Based on the types of reports needed, select permissions.
+Tip: Read the Add developer account users and manage permissions article to understand the different access levels users have and the rights that different permissions grant them.
+Click Add user. Your service account will be added to your account.
+Step 3: Fetch reports using an API call
+Install the API client library for your preferred code language.
+Configure the code performing the API call to use OAuth2 server-to-server authentication and to request permission to the OAuth2 scope (https://www.googleapis.com/auth/devstorage.read_only).
+Issue authenticated API calls to fetch reports.
+  See an example (Python)
+If you used Python to fetch reports, here's a code example:
+import json
+from httplib2 import Http
+from oauth2client.client import SignedJwtAssertionCredentials
+from apiclient.discovery import build
+# Change these variables to fit your case
+client_email = 'your service account here' 
+json_file = 'path_to_json_file_obtained_when_creating_the_service_account'
+cloud_storage_bucket = 'pubsite_prod_rev_…'
+report_to_download = ‘earnings/earnings_….zip’
+private_key = json.loads(open(json_file).read())['private_key']
+credentials = SignedJwtAssertionCredentials(client_email, private_key,
+   'https://www.googleapis.com/auth/devstorage.read_only')
+storage = build('storage', 'v1', http=credentials.authorize(Http()))
+print storage.objects().get(
+   bucket=cloud_storage_bucket,
+   object=report_to_download).execute()
+Control access to Google Cloud Storage
+Reports available on Google Cloud Storage use the same access restrictions that control data access in Play Console. This means account users with access to areas of a Play Console account have access to the corresponding reports in Google Cloud Storage.
+Account owners can update permissions for individual users at any time.
+To access bulk reports, your "View app information" permission must be set to "Global."
+To download financial reports, your "View financial data" permission must be set to "Global."
+Commands and file formats for detailed reports
+Crashes and ANRs
+As of May 2018, you can no longer download detailed reports for crashes and ANRs.
+Reviews
+Reviews
+Command
+gs://[developer_bucket_id]/reviews/reviews_[package_name]_YYYYMM.csv
+File format
+        Field
+        Format
+        Optional
+        Examples and notes
+        Package Name
+        String
+        NO
+        com.company.app
+        App Version Code
+        integer
+        YES
+        Production APKs only
+        App Version Name
+        String
+        YES
+        Reviewer Language
+        String - ISO 639-1 two-letter abbreviation
+        YES
+        en
+        Device
+        String
+        YES
+        hammerhead
+        Review Submit Date and Time
+        ISO_8601 including time, UTC timezone
+        NO
+        2014-06-19T19:12:32Z
+        Review Submit Millis Since Epoch
+        integer, milliseconds since epoch
+        NO
+        Review Last Update Date and Time
+        ISO_8601 including time, UTC timezone
+        YES
+        2014-06-19T19:12:32Z
+        Review Last Update Millis Since Epoch
+        integer, milliseconds since epoch
+        YES
+        Star Rating
+        integer (between 1 and 5)
+        NO
+        Review Title
+        String, in the reviewer's local language (stripping newlines)
+        YES
+        Review Text
+        String, in the reviewer's local language (stripping newlines)
+        YES
+        Developer Reply Date and Time
+        ISO_8601 including time, UTC timezone
+        YES
+        2014-06-19T19:12:32Z
+        Developer Reply Millis Since Epoch
+        integer, milliseconds since epoch
+        YES
+        Developer Reply Text
+        String (stripping newlines and compressing whitespace)
+        YES
+        Review Link
+        String
+        YES
+        https://play.google.com/apps/publish/?dev_acc=<...>#ReviewPlace:id=<..>
+Example
+If you want to download all reports generated in 2014 from the report bucket id pubsite_prod_rev_0123456789 for your app with the package name com.example.app, the command is:
+  gsutil cp -r gs://pubsite_prod_rev_0123456789/reviews/reviews_com.example.app_2014* /your/local/directory
+Financial reports
+Estimated sales
+We recommend that you don’t rely on the number of columns in the CSV files for your automated reports.
+About
+You can use the estimated sales report to view low latency information about app, in-app product, or subscription sales. This report contains the amount paid by buyers and doesn't deduct taxes or Google fees from the totals.
+You can use this report for analytics or trend analysis, but it's not recommended for accounting. Instead, see the Earnings report.
+You may notice differences between this report and your earnings for a number of reasons. For example, the estimated sales report doesn't take into account withholding taxes or chargebacks. This report contains amounts paid by buyers in their local currency and doesn't contain converted amounts in your payout currency.
+Note: You can also access the order information by using the Orders API .
+Command
+gs://[developer_bucket_id]/sales/salesreport_YYYYMM.zip
+Example
+If you want to download all reports generated in 2014 from the report bucket id pubsite_prod_rev_0123456789 for your app with the package name com.example.app, the command is:
+gsutil cp -r gs://pubsite_prod_rev_0123456789/sales/salesreport_2014* /your/local/directory 
+File format
+        Field
+        Format
+        Optional
+        Examples and notes
+Order Number
+String
+No
+GPA.1234-1234-1234-12345
+Subscription order IDs include the renewal cycle number at the end (for example, the first renewal is GPA.1234-1234-1234-12345..0, second renewal is GPA.1234-1234-1234-12345..1, and so on).
+Order Charged Date
+String
+No
+2016-11-30
+Date of this order based on the UTC time zone (in YYYY-MM-DD format).
+Order Charged Timestamp
+Integer
+No
+1480507200
+The UNIX timestamp when the order was charged to the user. Measured in seconds since epoch.
+Financial Status
+String
+No
+charged, refund, partial refund,  and so on.
+If you fully refund an order after issuing a partial refund:
+The partial refund appears on a separate line
+The full refund line shows the remaining balance
+Device Model
+String
+No
+mako, and so on.
+Android device model used to make the purchase. For subscription orders, this refers to the device used for the original purchase.
+Product Title
+String
+No
+coins, monthly subscription, and so on.
+Developer-specified name of the product. Displayed in the buyer's locale.
+Package ID
+String
+No
+com.example.app
+Package name of the app where the product was sold.
+Product Type
+String
+No
+Subscription, One-time product, Paid app
+Used to identify the type of product sold.
+SKU ID
+String
+No
+treasure_chest_for_new_users
+Developer-specified unique ID of the product.
+Currency of Sale
+String
+No
+USD, EUR, THB, and so on.
+Item Price
+Integer
+No
+12,345.67
+Shown in the buyer's local currency. With “,” as a thousands separator.
+Taxes Collected
+Integer
+Yes
+12,345.67
+In the buyer's local currency. With “,” as a thousands separator.
+Charged Amount
+Integer
+No
+12,345.67
+In the buyer's local currency. This is the sum of the item price and taxes collected. With “,” as a thousands separator.
+City of Buyer
+String
+Yes
+Boston, Toronto, and so on.
+Only populated for sales where you are the merchant of record.
+State of Buyer
+String
+Yes
+MA, ON, and so on.
+Postcode of Buyer
+String
+Yes
+02140, M5B 1L6, and so on.
+Only populated for sales where you are the merchant of record.
+Country of Buyer
+String
+No
+US, CA, and so on.
+Base Plan or Purchase Option ID
+String
+Yes
+weekly
+The base plan ID of the subscription. Learn more.
+The purchase option ID of the one-time product. Learn more.
+Offer ID
+String
+Yes
+spring-offer
+The offer ID of the subscription. Learn more.
+The offer ID of the one-time product. Learn more.
+        Group ID
+        Integer
+        Yes
+1234567891234567890
+Unique ID is given when a developer account group is created. Learn more.
+        First USD 1M Eligible
+        String
+        Yes
+Yes, No
+Populated only when a developer account group is set up. Learn more.
+        Promotion ID
+        String
+        Yes
+PP.C2fy7Ns0/+e2w, PP.P2fy7Ns0/+e2w, Points used only
+        Only populated for sales related to Play Points. Prefixes “PP.C” and “PP.P” define orders involving coupons and in-app product promotions respectively. Orders where play points are spent directly are also shown. Learn more.
+        Coupon Value
+        Integer
+        Yes
+3.00
+Shown in the buyer’s local currency. With “,” as a thousands separator. Only populated for sales related to Play Points coupons. Learn more.
+        Discount Rate
+        Integer
+        Yes
+45, 55, 70
+% discount rate used to specify the saving made by the user by spending Play Points compared to spending money. Only populated for sales related to Play Points. Learn more.
+Featured Products ID
+Integer
+Yes
+1234567891234567890
+Unique ID is given when a developer creates a featured product. Learn more.
+        Price Experiment ID
+        String
+        Yes
+5697329857888256(Variant B)
+Price Experiment ID and experiment arm
+        Sales Channel
+        String
+        Yes
+In-app, PC emulator, Native PC, Play store, Outside Play store
+Shows where the transaction originated from. Recurring subscriptions are left blank.
+Earnings
+The Invoice ID column in your invoice-based billing reports distinctly reflects the service fee invoice ID for Google fee transactions and the tax invoice ID for Tax transactions. The Invoice ID column for User charge transactions will remain empty. This ensures your reports accurately align with the actual PDF invoices you receive for financial reconciliation.
+We recommend that you don’t rely on the number of columns in the CSV files for your automated reports.
+About
+You can use the earnings report to understand your payout and transactions. Each line in the report represents a type of transaction, such as when you charge a customer money or pay Google a fee, along with the original and converted amounts.
+Earnings reports contain transactions from the prior month. You'll receive the payout several weeks after the earnings report becomes available.
+The earnings report is generated once per month, and is typically available by the fifth of the following month. Occasionally, Google may make adjustments to your earnings to correct miscalculations. If this happens, we'll contact you to inform you of the issue and create an additional earnings file that contains only the adjusted transactions for your records.
+Notes:
+Google fees are now visible for all transactions, regardless of whether Google is Merchant of Record for products sold.
+Chargeback amounts include the purchase price minus Play's service fee. These display at the order level and appear in the subsequent month's earnings report billing cycle. 
+Chargeback fees include associated chargeback fees charged by financial institutions. These display as an aggregated monthly total for all orders after chargeback disputes are resolved.
+A single file is generated for the earning report for transactions each month.
+Taiwan withholding tax is paid out in the prior month to when it’s reported.
+Command
+gs://[developer_bucket_id]/earnings/earnings_YYYYMM.zip
+Example
+If you want to download all reports generated in 2014 from the report bucket id pubsite_prod_rev_0123456789 for your app with the package name com.example.app, the command is:
+gsutil cp -r gs://pubsite_prod_rev_0123456789/earnings/earnings_2014* /your/local/directory
+File format
+        Field
+        Format
+        Optional
+        Examples and notes
+Description
+String
+No
+GPA.1234-1234-1234-12345
+Subscription order IDs include the renewal cycle number at the end (for example, the first renewal is GPA.1234-1234-1234-12345..0, second renewal is GPA.1234-1234-1234-12345..1, and so on).
+Transaction Date
+String
+No
+Nov 30, 2016
+Date of this order based on the Pacific Time Zone (in MMM DD, YYYY format). Note that the transaction timestamp may have the following month recorded since reports are generated by issue timestamp.
+Transaction Time 
+String
+No
+12:00:00 PM PDT
+Tax Type
+String
+Yes
+Third-party tax
+Blank for non-tax lines.
+Transaction Type
+String
+No
+Charge, Google fee, Tax, Charge refund, Google fee refund, Charge rebill, Tax rebill, Google fee rebill, Adjustment.
+Refund Type
+String
+Yes
+Full, Partial
+Refunds where the buyer was reimbursed their full spend will be marked as 'Full'. Refunds for part of a user’s payment amount will be marked as 'Partial'. 
+Product Title
+String
+No
+coins, monthly subscription, and so on.
+Developer-specified name of the product. Shown in the buyer's locale.
+        Package ID
+String
+No
+com.example.app
+Package name of the app where the product was sold.
+Product Type
+String
+No
+Subscription, One-time product, Paid app
+Used to identify the type of product sold.
+SKU ID
+String
+No
+treasure_chest_for_new_users
+Developer-specified unique ID of the product.
+Hardware
+String
+No
+mako, and so on.
+Android device model used to make the purchase. For subscription orders, this refers to the model used for the original purchase.
+Buyer Country
+String
+No
+US, CA, and so on.
+Buyer State
+String
+Yes
+MA, ON, and so on.
+Buyer Postcode
+String
+Yes
+02140, M5B 1L6, and so on.
+Buyer Currency
+String
+No
+USD, EUR, THB, and so on.
+Amount (Buyer Currency)
+Integer
+No
+12345.67
+Total amount for this invoice line before currency conversion.
+Currency Conversion Rate
+Integer
+No
+0.56789
+Exchange rate used when converting buyer amounts to payout amounts in merchant currency.
+        Merchant Currency
+        String
+        No
+USD, EUR, THB, and so on.
+Currency to which the order was converted. This is the local currency you are paid in.
+        Amount (Merchant Currency)
+        Integer
+        No
+12345.67
+Total amount for this invoice line after currency conversion.
+        Base Plan or Purchase Option ID
+String
+Yes
+weekly
+The base plan ID of the subscription. Learn more.
+The purchase option ID of the one-time product. Learn more.
+Offer ID
+String
+Yes
+spring-offer
+The offer ID of the subscription. Learn more.
+The offer ID of the one-time product. Learn more.
+        Group ID
+        Integer 
+        Yes
+1234567891234567890
+Unique ID is given when a developer account group is created. Learn more.
+        First USD 1M Eligible
+         String
+        Yes
+Yes, No
+Populated only when a developer account group is set up. Learn more.
+Service Fee %
+Integer
+        Yes
+        15, 20, 25, 30
+        Fee Description
+        String
+        Yes
+SUBSCRIPTIONS, NEW_INSTALL, EXTERNAL_WEB_LINK, APPS_GAMES_PROGRAM, APPS_GAMES_PROGRAM_NEW_INSTALL
+Detail given for the Google service fee calculation. 
+Note: Values depend on the new service fee structures being gradually rolled out by region.
+        Promotion ID
+        String
+        Yes
+PP.C_x0a08trvC1, PP.PdYfn342Ox10, pass-QbTfn350O810. Used by Points and Pass
+Only populated for sales related to Play Points and Play Pass.
+Prefixes "PP.C" and "PP.P" define orders involving Play Points coupons and in-app product promotions respectively. Orders where Play Points are spent directly are also shown. Prefix "pass" defines orders where users applied vouchers that were provided as a part of their Play Pass subscription.
+        Sales Channel
+        String
+        Yes
+In-app, PC emulator, Native PC, Play store, Outside Play store
+Shows where the transaction originated from. Recurring subscriptions are left blank.
+Invoice billing
+The Invoice ID column in your invoice-based billing reports distinctly reflects the service fee invoice ID for Google fee transactions and the tax invoice ID for Tax transactions. The Invoice ID column for User charge transactions will remain empty. This ensures your reports accurately align with the actual PDF invoices you receive for financial reconciliation.
+We recommend that you don’t rely on the number of columns in the CSV files for your automated reports.
+About
+If you have enrolled in alternative billing or external offers programs, and have reported transactions to Google Play, you can use the Invoice billing report to understand your transactions and Google service fee dues that are invoiced to you.
+The Invoice billing report contains transactions from the prior month in a single CSV file. The report provides a per-transaction breakdown of user charge, Google service fee and tax amount if applicable. Information such as service fee percentage and currency conversion rate are included to help understand how the invoice amount of service fees are calculated.
+Note:
+The invoice billing report is generated once per month, and is typically available by the 5th of the following month.
+Google fee or tax lines rounded to zero in billing currency are excluded from the report.
+Command
+gsutil cp -r gs://[developer_bucket_id]/invoice_billing_reports/invoice_billing_report_YYYYMM.zip /your/local/directory
+Example
+If you want to download all reports generated in 2024 from the report bucket id pubsite_prod_rev_0123456789, the command is:
+gsutil cp -r gs://pubsite_prod_rev_0123456789/invoice_billing_reports/invoice_billing_report_2024* /your/local/directory
+File format
+Date of the transaction based on the Pacific Time Zone.
+        Field
+        Format
+        Optional
+        Examples and notes
+Invoice ID
+String
+No
+1234567890
+ID that aligns with the number displayed on your invoice.
+Program
+String
+Yes
+User Choice Billing, Alternative Billing Only, External Offers
+Only set for Google fee lines.
+External Transaction ID
+String
+No
+com.example.app:1a2b3c4e5f
+Transaction Date
+String
+No
+July 1, 2024
+Date of the transaction based on the Pacific Time Zone.
+Transaction Timestamp
+Integer
+No
+1719849600
+The UNIX timestamp of the transaction. Measured in seconds since epoch.
+Transaction Type
+String
+No
+        User charge, Google fee, Tax, User charge refund, Google fee refund, Tax refund, User charge partial refund, Google fee partial refund, Tax partial refund
+Tax Type
+String
+Yes
+VAT / GST
+Only set for tax lines.
+SKU Type
+String
+No
+In-app product, Subscription
+Package ID
+String
+No
+com.example.app
+Package name of the app where the product was sold.
+Sale Country
+String
+No
+US, KR, and so on.
+Tax-exclusive Item Price (Sale Currency)
+Decimal
+Yes
+12.34
+Price of the product in sale currency excluding tax. Only set for User charge lines.
+Sale Currency
+String
+No
+USD, KRW, and so on.
+Buyer's local currency.
+Amount Due (Sale Currency)
+Decimal
+Yes
+1.23 or -1.23
+Amount due in sale currency. Only set for Google fee and Tax lines. Positive for charged amount and negative for refund or partial refund amounts.
+Currency Conversion Rate
+Decimal
+No
+1.076
+Exchange rate used when converting the amount due from sale currency to billing currency.
+Billing Currency
+String
+No
+USD, EUR, and so on.
+Amount Due (Billing Currency)
+Decimal
+Yes
+1.32
+Amount due in billing currency. Only set for Google fee and Tax lines. Positive for charged amount and negative for refund or partial refund amounts.
+Group ID
+Integer
+Yes
+1234567891234567890
+Unique ID is given when a developer account group is created. Learn more.
+First USD 1M Eligible
+String
+Yes
+Yes, No
+Populated only when a developer account group is set up. Learn more.
+Service Fee %
+Integer
+Yes
+        10, 11, 15, 20, 25, 26, and so on
+Fee Description
+String
+Yes
+SUBSCRIPTIONS, MEDIA_PARTNERSHIPS, NEW_INSTALL, EXTERNAL_WEB_LINK, and so on
+Detail given for the Google service fee calculation.
+Note: Values depend on the new service fee structures being gradually rolled out by region.
+Korean Play balance funded
+About
+If you are a merchant that is required to issue cash receipts in South Korea under applicable rules and regulations, or if you voluntarily have registered to issue cash receipts, then you must issue cash receipts upon request by app purchasers for a paid app or in-app product purchases made with Google Play Gift Cards in Korean Won (KRW).
+The Korean Play balance funded report contains sales made in Korean Won that are fully or partially funded by Play balance. You can use this report to send a cash receipt to the user.
+Note: Users can add to Play balance from multiple sources, including promotional credit from Google or our partners. Before issuing a cash receipt, it's important to ensure that the user added to their balance using a cash equivalent (for example, a gift card).
+Command
+gs://[developer_bucket_id]/play_balance_krw/play_balance_krw_YYYYMM.zip
+Example
+If you want to download all reports generated in 2018 from the report bucket ID pubsite_prod_rev_0123456789 for your app with the package name com.example.app, the command is:
+gsutil cp -r gs://pubsite_prod_rev_0123456789/play_balance_krw/play_balance_krw_2018* /your/local/directory
+File format
+        Field
+        Format
+        Optional
+        Examples and notes
+Order Number
+Integer
+No
+GPA.1234-1234-1234-12345
+Subscription order IDs include the renewal cycle number at the end (for example, the first renewal is GPA.1234-1234-1234-12345..0, second renewal is GPA.1234-1234-1234-12345..1, and so on).
+Order Charged Date
+String
+No
+2016-11-30
+Date of this order based on the UTC time zone (in YYYY-MM-DD format).
+Financial Status
+String
+No
+Charged, Refund, and so on.
+Play Balance Funding Amount
+String
+No
+12,345.67
+Amount of the transaction.
+        Play Balance Currency
+        String
+        No
+        KRW
+        For Korean Play balance funded reports, this is always Korean Won (KRW).
+        Order Charged Timestamp
+        Integer
+        No
+        1480507200
+The UNIX timestamp when the order was charged to the user. Measured in seconds since epoch.
+Subscriptions
+Cancellation survey responses
+Command
+gs://[developer_bucket_id]/subscriptions/cancellations/freeform_[package_name].csv
+File format
+        Field
+        Format
+        Optional
+        Examples and notes
+        Cancellation Date
+        String
+        No
+        2016-11-30
+        SKU ID
+        String
+        Yes
+        treasure_chest_for_new_users
+        Developer-specified unique ID of the product.
+        Country
+        String
+        No
+        US, CA, etc.
+        Response
+        String
+        No
+Commands and file formats for aggregated reports
+Statistics
+Installs
+Command
+gs://[developer_bucket_id]/stats/installs/installs_[package_name]_yyyyMM_[dimension].csv
+File format
+        Field
+        Format
+        Optional
+        Example
+        Date
+        YYYY-mm-dd
+        NO
+        2014-06-19
+        Package Name
+        String
+        NO
+        com.my.app
+        Device (or any other supported dimension)
+        String
+        YES
+        hammerhead
+        Current Device Installs
+        integer
+        NO
+        Installs on active devices
+        integer
+        NO
+        Daily Device Installs
+        integer
+        NO
+        Daily Device Uninstalls
+        integer
+        NO
+        Daily Device Upgrades
+        integer
+        NO
+        Current User Installs
+        integer
+        NO
+        Total User Installs
+        integer
+        NO
+        Daily User Installs
+        integer
+        NO
+        Daily User Uninstalls
+        integer
+        NO
+Supported dimensions
+        Dimension
+        File name
+        App Version Code
+        ..._app_version.csv
+        Carrier
+        ..._carrier.csv
+        Country
+        ..._country.csv
+        Device
+        ..._device.csv
+        Language
+        ..._language.csv
+        Android OS Version
+        ..._os_version.csv
+Example
+If you want to download all reports generated in 2014 from the report bucket id pubsite_prod_rev_0123456789 for your app with the package name com.example.app, the command is:
+  gsutil cp -r gs://pubsite_prod_rev_0123456789/stats/installs/installs_com.example.app_2014* /your/local/directory 
+Crashes
+Note: As of January 2018, exports include data from the new data source and match the information on your app's Statistics page. Exports from before January 2018 are only available for data collected from the previous data source.
+Command
+gs://[developer_bucket_id]/stats/crashes/crashes_[package_name]_yyyyMM_[dimension].csv
+File format
+        Field
+        Format
+        Optional
+        Example
+        Date
+        YYYY-mm-dd
+        NO
+        2014-06-19
+        Package Name
+        String
+        NO
+        com.my.app
+        Device (or any other supported dimension)
+        String
+        YES
+        hammerhead
+        Daily Crashes
+        integer
+        NO
+        Daily ANRs
+        integer
+        NO
+Supported dimensions
+        Dimension
+        File name
+        App Version Code
+        ..._app_version.csv
+        Device
+        ..._device.csv
+        Android OS Version
+        ..._os_version.csv
+Example
+If you want to download all reports generated in 2014 from the report bucket id pubsite_prod_rev_0123456789 for your app with the package name com.example.app, the command is:
+  gsutil cp -r gs://pubsite_prod_rev_0123456789/stats/crashes/crashes_com.example.app_2014* /your/local/directory 
+Ratings
+Command
+gs://[developer_bucket_id]/stats/ratings/ratings_[package_name]_yyyyMM_[dimension].csv
+File format
+        Field
+        Format
+        Optional
+        Example
+        Date
+        YYYY-mm-dd
+        NO
+        2014-06-19
+        Package Name
+        String
+        NO
+        com.my.app
+        Device (or any other supported dimension)
+        String
+        YES
+        hammerhead
+        Daily Average Rating
+        %.2f
+        YES
+        Total Average Rating
+        %.2f
+        Yes
+        4.16
+Supported dimensions
+        Dimension
+        File name
+        App Version Code
+        ..._app_version.csv
+        Carrier
+        ..._carrier.csv
+        Country
+        ..._country.csv
+        Device
+        ..._device.csv
+        Language
+        ..._language.csv
+        Android OS Version
+        ..._os_version.csv
+Example
+If you want to download all reports generated in 2014 from the report bucket id pubsite_prod_rev_0123456789 for your app with the package name com.example.app, the command is:
+  gsutil cp -r gs://pubsite_prod_rev_0123456789/stats/ratings/ratings_com.example.app_2014* /your/local/directory
+Subscriptions
+Command
+gs://[developer_bucket_id]/financial-stats/subscriptions/subscriptions_[package_name]_[product_id]_yyyyMM_[dimension].csv
+File format
+        Field
+        Format
+        Optional
+        Examples and notes
+        Date
+        YYYY-MM-DD
+        NO
+2022-01-01
+Date of this order based on the UTC time zone (in YYYY-MM-DD format)
+        Package Name
+        String
+        NO
+        com.example.app
+        Product ID
+        String
+        NO
+        Premium access
+        Country
+        String
+        NO
+US, CA,and so on.
+        New Subscriptions
+        Number
+        NO
+        1234
+        Canceled Subscriptions
+        Number
+        NO
+        1234
+        Active Subscriptions
+        Number
+        NO
+        1234
+        Base Plan ID
+        String
+        NO
+        weekly
+        Offer ID
+        String
+        NO
+        spring-offer
+Note: For more information on new, canceled, and active subscription statistics, go to review your app's revenue andbuyer data.
+Supported dimensions
+        Dimension
+        File name
+        Country
+        ..._country.csv
+User Acquisition
+The Retained Installers and Buyers reports provide programmatic access to data for the old acquisition report. This export has been replaced by a new programmatic export, which includes data for the Store analysis and Conversion analysis pages in Play Console. It became available in March 2021.
+The old reports were removed in October 2021.
+Make sure to read How do I download acquisition data? to know more.
+Note: The Subscribers report is no longer supported as of November 2019. To know more, make sure to read  about acquisition sources and metrics.
+Retained Installers (Old export – available until August 2021)
+Command
+gs://[developer_bucket_id]/acquisition/retained_installers/retained_installers_[package_name]_yyyyMM_[dimension].csv
+File format
+        Field
+        Format
+        Optional
+        Examples and notes
+        Date
+        YYYY-mm-dd
+        NO
+Date the user visited your store listing
+Note: Adding unique Store Listing Visitors across several days will result in a higher number of Store Listing Visitors than what you see in weekly or monthly cohort views. Weekly and monthly cohort views count each visitor once, even if they visit multiple times.
+        Acquisition Channel
+        String
+        YES
+Organic, Google Ads, UTM-Tagged
+Present for "Acquisition channel" dimension
+Note: "Play Store (organic)" channel is the sum of "Play Store (organic) search" and "Play Store (organic) browse." To avoid double-counting visitors in this report, ignore either the total "Play Store (organic)" row or both search and browse rows.
+        Country
+        String
+        YES
+        Present for "Country" and "Country (Play Store organic)" dimensions
+        UTM source/campaign
+        String
+        YES
+Present for "Tracked channels (UTM)" dimension
+        Keyword
+        String
+        YES
+Example: "games"
+Present for "Play Store Search (organic)"
+        Store Listing Visitors
+        Integer
+        NO
+        Installers
+        Integer
+        NO
+        Visitor-to-Installer conversion rate
+        Decimal
+        NO
+        Median Visitor to Installer conversion rate benchmark
+        Decimal
+        YES
+Not populated as of August 2019. An updated set of benchmarks, using a new calculation, is available on the Acquisition reports page.
+To know more, make sure to read, Conversion rate peer comparison for Play Store traffic.
+        Installers retained for 1 day
+        Integer
+        NO
+        Installer-to-1 day retention rate
+        Decimal
+        NO
+        Installers retained for 7 days
+        Integer
+        NO
+        Installer-to-7 days retention rate
+        Decimal
+        NO
+        Installers retained for 15 days
+        Integer
+        NO
+        Installer-to-15 days retention rate
+        Decimal
+        NO
+        Installers retained for 30 days
+        Integer
+        NO
+        Installer-to-30 days retention rate
+        Decimal
+        NO
+Supported dimensions
+        Dimension
+        File name
+        Acquisition channel *
+        ..._channel.csv
+        Country
+        ..._country.csv
+        Country (Play Store organic)
+        ..._play_country.csv
+        Play Store (organic) search
+        ..._play_search.csv
+        Tracked channels (UTM)
+        ..._utm_tagged.csv
+* Note: The "Play Store (organic)" channel is the sum of "Play Store (organic) search" and "Play Store (organic) browse." To avoid double-counting visitors in this report, ignore either the total "Play Store (organic)" row or both search and browse rows. 
+The Google Search (organic) dimension is no longer supported as of June 2019.
+Store Performance (New export – available March 2021)
+CSV names
+Each CSV file available contains data for one month and a breakdown. CSVs are given structured names that reflect which year, month, and report breakdown they cover, according to the following pattern:
+File name format: store_performance_[package_name]_[yyyyMM]_[breakdown].csv
+Notes:
+The package name will be included in the file name as is, with any special characters if present  ("." or "_").
+yyyyMM represents the year and month, e.g. 202101.
+Command
+gs://[developer_bucket_id]/stats/store_performance/store_performance_[package_name]_[yyyyMM]_[breakdown].csv
+File format
+        Field
+        Format
+        Optional
+        Example
+        Description
+        Date
+        YYYY-mm-dd
+        NO
+        2021-01-01
+Date the user visited your store listing
+        Package name
+        String
+        NO
+        com.example.app
+        The package name owning the report data
+        Country/region
+        String
+        NO
+        UK
+        The country or region where the user’s Google account is registered
+        Traffic source
+        String
+        NO
+        Google Play search
+How the user got to your store listing:
+Google Play search
+Third-party referrals
+Google Play explore
+Note: Can be Other if this value does not reach certain minimum thresholds
+        Search term
+        String
+        YES
+        app store
+The term the user searched for before navigating to your store listing. Only available for Google Play search.
+Note: Can be Other if this value does not reach certain minimum thresholds
+        UTM source
+        String
+        YES
+        google
+The value of the utm_source URL parameter in deep links to your store listing. Only available for third-party referrals
+Note: Can be Other if this value does not reach certain minimum thresholds
+        UTM campaign
+        String
+        YES
+        campaign
+The value of the utm_campaign URL parameter in deep links to your store listing. Only available for third-party referrals.
+        Note: Can be Other if this value does not reach certain minimum thresholds
+        Store listing acquisitions
+        Integer
+        NO
+        10
+        The number of users who visited your store listing and installed your app, who didn’t have it installed on any other devices at the time
+        Store listing visitors
+        Integer
+        NO
+        100
+        The number of users who visited your store listing who didn’t already have your app installed on any of their devices
+        Store listing conversion rate
+        Decimal
+        NO
+        0.1
+The percentage of store listing visitors who installed your app 
+Note: Does not include visits or installs from users who already have your app installed on another device
+Available breakdown structure
+The following breakdowns are available:
+        Breakdown name
+        Fields in each CSV (in order):
+country
+Example file name:
+store_performance_com.example.app_202012_country.csv
+        Date, Package name, Country, Store listing acquisitions, Store listing visitors, Store listing conversion rate
+traffic_source
+Example file name:
+store_performance_com.example.app_202012_traffic_source.csv
+        Date, Package name, Traffic source, Search term, UTM source, UTM campaign, Store listing acquisitions, Store listing visitors, Store listing conversion rate
+Escaping scheme
+Double up any doublequotes. (" -> "")
+If a cell contains any tabs, newlines, doublequotes, or commas, put doublequotes around the cell. (... -> "...")
+Example
+If you want to download all reports generated in 2020 from the report bucket id pubsite_prod_0123456789 for you app with the package name com.example.app, the command is
+gsutil cp -r gs://pubsite_prod_0123456789/stats/store_performance/store_performance_com.example.app_2020* /your/local/directory
+Buyers (7 days after install - available until August 2021)
+Command
+gs://[developer_bucket_id]/acquisition/buyers_7d/buyers_7d_[package_name]_yyyyMM_[dimension].csv
+File format
+        Field
+        Format
+        Optional
+        Examples and notes
+        Date
+        YYYY-mm-dd
+        NO
+Date the user visited your store listing
+Note: Adding unique Store Listing Visitors across several days will result in a higher number of Store Listing Visitors than what you see in weekly or monthly cohort views. Weekly and monthly cohort views count each visitor once, even if they visit multiple times.
+        Acquisition Channel
+        String
+        YES
+Organic, Google Ads, UTM-Tagged
+Present for "Acquisition channel" dimension
+Note: "Play Store (organic)" channel is the sum of "Play Store (organic) search" and "Play Store (organic) browse." To avoid double-counting visitors in this report, ignore either the total "Play Store (organic)" row or both search and browse rows.
+        Country
+        String
+        YES
+        Present for "Country" and "Country (Play Store organic)" dimensions
+        UTM source/campaign
+        String
+        YES
+        Present for "Tracked channels (UTM)" dimension
+        Keyword
+        String
+        YES
+Example: "games"
+Present for "Play Store Search (organic)"
+        Store Listing Visitors
+        Integer
+        NO
+        Installers
+        Integer
+        NO
+        Visitor to Installer conversion rate
+        Decimal
+        NO
+        Median Visitor to Installer conversion rate benchmark
+        Decimal
+        YES
+Not populated as of August 2019. An updated set of benchmarks, using a new calculation, is available on the Acquisition reports page.
+To know more, make sure to read, Conversion rate peer comparison for Play Store traffic.
+        Buyers
+        Integer
+        NO
+        Installer to Buyer conversion rate
+        Decimal
+        NO
+        Repeat Buyers
+        Integer
+        NO
+        Installer to Repeat Buyer conversion rate
+        Decimal
+        NO
+        Buyer to Repeat Buyer conversion rate
+        Integer
+        NO
+Supported dimensions
+        Dimension
+        File name
+        Acquisition channel *
+        ..._channel.csv
+Country
+        ..._country.csv
+Country (Play Store organic)
+        ..._play_country.csv
+        Play Store (organic) search
+        ..._play_search.csv
+        Tracked channels (UTM)
+        ..._utm_tagged.csv
+* Note: The "Play Store (organic)" channel is the sum of "Play Store (organic) search" and "Play Store (organic) browse." To avoid double-counting visitors in this report, ignore either the total "Play Store (organic)" row or both search and browse rows. 
+The Google Search (organic) dimension is no longer supported as of June 2019.
+Was this helpful?
+How can we improve it?
+YesNo
+Submit
+Need more help? 
+Try these next steps:    
+   Post to the help community    Get answers from community members            
+ Contact us  Tell us more and we’ll help you get there                  
+true 
+Statistics & insights
+1 of 20View app statistics
+2 of 20Understanding recent changes to report metrics
+3 of 20Changes to your Play Console data
+4 of 20Use Play Console app to track app performance
+5 of 20View and analyze your app's ratings and reviews
+6 of 20Measure your app's acquisition and retention
+7 of 20Understand and grow your app's user base
+8 of 20Review your app's data per release
+9 of 20Troubleshoot app statistics problems
+10 of 20Monitor your app and get recommendations on the Monitor and improve overview
+11 of 20Monitor your app's technical quality with Android vitals
+12 of 20Compare your app’s Android vitals and ratings with custom peer groups
+13 of 20View crashes and application not responding errors
+14 of 20Download and export monthly reports
+15 of 20Optimize your game with performance insights from Android Performance Tuner
+16 of 20Get started with performance insights
+17 of 20Understand more about Android Performance Tuner
+18 of 20Troubleshoot Android Performance Tuner issues and FAQs
+19 of 20Understand monetization metrics with strategic guidance
+20 of 20Delete an app          
+  ©2026 Google   
+  Privacy Policy   
+  Terms of Service             Language   Afrikaans‎català‎dansk‎Deutsch‎eesti‎English (United Kingdom)‎español‎español (Latinoamérica)‎Filipino‎français‎français (Canada)‎Gaeilge‎hrvatski‎Indonesia‎isiZulu‎italiano‎Kiswahili‎latviešu‎lietuvių‎magyar‎Malti‎Melayu‎Nederlands‎norsk‎polski‎português‎português (Brasil)‎română‎slovenčina‎slovenščina‎suomi‎svenska‎Tiếng Việt‎Türkçe‎čeština‎Ελληνικά‎български‎русский‎српски‎українська‎‏עברית‏اردو‏العربيةहिन्दी‎தமிழ்‎ಕನ್ನಡ‎ไทย‎አማርኛ‎中文（简体）‎中文（繁體）‎中文（香港）‎日本語‎한국어‎ English‎      
+Enable Dark Mode         
+Send feedback on... This help content & information General Help Center experience                   
+Search
+Clear search
+Close search
+Google apps
+Main menu                
+8303580437706672188                                                         
+true                         
+Search Help Center   
+false   
+true    
+true    
+true                                                                                       
+true   
+true   
+92637                                                                                                     
+false    
+false                                                                                                                                                               
+false   
+false                                                          
+false  

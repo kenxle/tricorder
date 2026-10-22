@@ -1,0 +1,106 @@
+# Wokelo Docs
+
+- [Home](https://docs.wokelo.ai/home.md): Build with Wokelo
+- [Introduction](https://docs.wokelo.ai/introduction.md): Wokelo's API suite is purpose-built for developers building dealmaking AI infrastructure. It delivers structured, processed intelligence at the quality standard investment and advisory workflows demand. The underlying data is purpose-built for AI pipelines:
+- [Choosing the right API](https://docs.wokelo.ai/choosing-the-right-api.md)
+- [Getting started](https://docs.wokelo.ai/getting-started.md)
+- [Credits](https://docs.wokelo.ai/credits.md)
+- [How Async APIs work](https://docs.wokelo.ai/how-async-apis-work.md)
+- [Company Instant Enrichment](https://docs.wokelo.ai/company-instant-enrichment-doc.md): Retrieve structured firmographic, funding, financial, M&A, headcount, and web traffic data for any company from Wokelo's native database of 20M+ cached companies — synchronously for a single company, or asynchronously in batch for multiple companies at once.
+- [Alternative Datasets](https://docs.wokelo.ai/alternative-datasets.md): Access proprietary alternative datasets on any company — G2 product reviews with star distributions and individual review text, and Glassdoor employee reviews with aggregate sentiment ratings and individual review records — returned synchronously with flexible pagination.
+- [Company Filings and Transcripts](https://docs.wokelo.ai/company-filings-and-transcripts.md): Access SEC filings (10-K, 10-Q, 8-K, and more) and earnings call transcripts for public companies — returned synchronously with full document content and flexible filtering by form type and date range.
+- [Company Instant Enrichment (Batch)](https://docs.wokelo.ai/company-instant-enrichment-doc-batch.md)
+- [Company Deep Intelligence](https://docs.wokelo.ai/company-deep-intelligence-doc.md): Generate on-demand AI-synthesised intelligence on one or more companies simultaneously — selectively requesting product portfolios, launch timelines, strategic initiatives, partnerships, business models, key customers, leadership profiles, and employee or product sentiment in a single composable req…
+- [Industry Deep Intelligence](https://docs.wokelo.ai/industry-deep-intelligence-doc.md): Generate on-demand structured intelligence on any industry — selectively requesting market sizing, quantitative insights, M&A and fundraising activity, innovation trends, tier-1 research, partnerships, regulations, and case studies in a single composable request.
+- [Get Company Jobs](https://docs.wokelo.ai/jobs.md): Fetch the latest open job postings for any company — including job title, location, work-type, salary metadata, and the job_id needed to retrieve full job details — returned synchronously with simple page-based pagination.
+- [Company Job Details](https://docs.wokelo.ai/job-details.md): Fetch the full details of a single job posting by its job ID — title, location, full description, employment type, salary, industries, job functions, and experience level — returned synchronously.
+- [Market Map](https://docs.wokelo.ai/market-map-doc.md): Discover and map all companies competing in a specific market or product category using AI — returns a ranked, enriched list of companies with firmographic, financial, and AI-scored fit data.
+- [Target Screening](https://docs.wokelo.ai/target-screening-doc.md): Identify and score potential acquisition targets for a defined acquirer using AI — returns a ranked list of strategic and bolt-on targets with deal feasibility scores, synergy analysis, and full firmographic and financial data.
+- [Buyer Screening](https://docs.wokelo.ai/buyer-screening-doc.md): Identify and score potential acquirers for a target company using AI — returns a ranked list of strategic and financial buyers with deal feasibility scores, synergy analysis, and full firmographic and financial data.
+- [Competitor List](https://docs.wokelo.ai/competitor-list-doc.md): Generate a long list of companies similar to a given company using AI — returns a ranked, enriched peer set with firmographic, financial, and AI-scored similarity data.
+- [M&A Activity](https://docs.wokelo.ai/acquisitions-doc.md): Retrieve structured mergers and acquisitions data for a defined market or report — returns a complete transaction record set with deal amounts, acquirer and target profiles, deal status, and news context.
+- [Fundraise Activity](https://docs.wokelo.ai/fundraise-doc.md): Retrieve structured fundraising and investment activity data for a defined market or report — returns a complete funding round record set with amounts, stages, investor profiles, company firmographics, and news context.
+- [Company News Monitoring](https://docs.wokelo.ai/company-news-monitoring-doc.md): Fetch the latest news articles for any company, enriched with AI-generated summaries, event categories, sentiment signals, publisher metadata, and full article text — returned synchronously with flexible date, category, and publisher filtering.
+- [Industry News Monitoring](https://docs.wokelo.ai/industry-news-monitoring-doc.md): Fetch the latest news articles for any industry topic or sector, enriched with AI-generated summaries and geographic tags — returned synchronously with flexible date, geography, and publisher filtering.
+- [Newsfeed](https://docs.wokelo.ai/newsfeed-doc.md): Fetch a curated, signal-filtered news feed across any combination of industries, event categories, sentiment, geography, and breaking news — returned synchronously with all filters applied simultaneously in a single POST request.
+- [Company Research](https://docs.wokelo.ai/company-research-doc.md): Generate a comprehensive, source-cited company intelligence report — covering firmographics, executive summary, key insights, product portfolio, and M&A activity — as a structured JSON, PDF, DOCX, or PPT deliverable.
+- [Industry Research](https://docs.wokelo.ai/industry-research-doc.md): Generate a comprehensive, source-cited sector intelligence report — covering market overview, executive summary, key insights, trends and innovations, and select transaction activity — as a structured JSON, PDF, DOCX, or PPT deliverable.
+- [Peer Comparison](https://docs.wokelo.ai/peer-comparison-doc.md): Generate a comprehensive side-by-side benchmarking report for 2–5 companies — covering firmographics, financials, product offerings, feature matrices, business models, employee sentiment, hiring trends, and online visibility — as structured JSON, PDF, DOCX, or PPT.
+- [Earnings Analysis](https://docs.wokelo.ai/earnings-analysis.md)
+- [Custom Workflow](https://docs.wokelo.ai/custom-workflow-automation-doc.md): Trigger any of Wokelo's pre-built specialist workflows — IC memos, CIM reviews, deal factsheets, M&A opportunity identification, value chain analysis, market sizing, and more — via API, using the same async submit-poll-download pattern as all Workflow APIs.
+- [Supporting APIs](https://docs.wokelo.ai/supporting-apis-doc.md)
+- [Getting started](https://docs.wokelo.ai/getting-started-mcp.md)
+- [Getting started](https://docs.wokelo.ai/getting-started-mcp-copied-1.md)
+- [Use cases](https://docs.wokelo.ai/mcp-use-cases.md)
+- [Additional resources](https://docs.wokelo.ai/additional-resources.md)
+- [ISO Country Codes](https://docs.wokelo.ai/iso-country-codes.md)
+- [News categories](https://docs.wokelo.ai/news-categories.md)
+- [Glossary](https://docs.wokelo.ai/glossary.md)
+- [FAQs](https://docs.wokelo.ai/faqs.md)
+- [Taxonomy](https://docs.wokelo.ai/taxonomy.md): List of resources used across API documentation
+- [Industry Names](https://docs.wokelo.ai/industry-names.md)
+- [Affinity](https://docs.wokelo.ai/affinity.md)
+- [Airtable](https://docs.wokelo.ai/airtable.md)
+- [Box](https://docs.wokelo.ai/box.md)
+- [DealCloud](https://docs.wokelo.ai/deal-cloud.md)
+- [Dropbox](https://docs.wokelo.ai/dropbox.md)
+- [Dynamic 365](https://docs.wokelo.ai/dynamic-365.md)
+- [Email Automation](https://docs.wokelo.ai/email-automation.md)
+- [Google Drive](https://docs.wokelo.ai/google-drive.md)
+- [OneDrive](https://docs.wokelo.ai/onedrive.md)
+- [Salesforce](https://docs.wokelo.ai/salesforce.md)
+- [Slack](https://docs.wokelo.ai/slack.md)
+- [Zapier](https://docs.wokelo.ai/zapier.md)
+- [Overview](https://docs.wokelo.ai/overview.md)
+- [Login](https://docs.wokelo.ai/authentication.md): Obtain a JSON Web Token (JWT) for subsequent API authentication
+- [Company Instant Enrichment](https://docs.wokelo.ai/company-instant-enrichment.md): Delivers structured data for a single company across sections such as firmographics, , funding, headcount, and more. Returns the enriched data directly in the response.
+- [Company Instant Enrichment (Batch)](https://docs.wokelo.ai/company-instant-enrichment-batch.md): Delivers / data for one or more companies. Returns a `request_id` for async polling.
+- [Company Deep Intelligence](https://docs.wokelo.ai/company-deep-intelligence.md): Delivers / data for one or more companies. Returns a `request_id` for async polling.
+- [Industry Deep Intelligence](https://docs.wokelo.ai/industry-deep-intelligence.md): Generates structured insights for a given industry or sector. Returns a `request_id` for async polling.
+- [Product Reviews](https://docs.wokelo.ai/product-reviews.md): Fetch G2 product reviews for a given company.
+- [Fetch Filings Data](https://docs.wokelo.ai/company-filings.md): Fetch SEC filings (10-K, 10-Q, 8-K, etc.) for a public company.
+- [Employee Reviews](https://docs.wokelo.ai/employee-reviews.md): Fetch Glassdoor employee reviews for a company.
+- [Fetch Earnings Transcripts](https://docs.wokelo.ai/earnings-transcripts.md): Fetch earnings call transcripts for a public company. Supports year-range filtering via `from_year` and `to_year`.
+- [Get Company Jobs](https://docs.wokelo.ai/jobs-1.md)
+- [Company Job Details](https://docs.wokelo.ai/job-details-1.md)
+- [Market Map](https://docs.wokelo.ai/market-map.md): Generates a long list of companies operating in a given market, enriched with structured data. Supports filtering by geography, company type, employee count, funding stage, financial metrics, and more. Returns a `request_id` for async polling.
+- [Target Screening](https://docs.wokelo.ai/target-screening.md): Identifies potential acquisition targets for an acquirer company based on strategic criteria. Returns a `request_id` for async polling.
+- [Buyer Screening](https://docs.wokelo.ai/buyer-screening.md): Identifies potential acquirers for a target company based on strategic fit criteria. Returns a `request_id` for async polling.
+- [Competitor List](https://docs.wokelo.ai/competitor-enrich.md): Generates a long list of companies similar to a given company, enriched with structured data. Supports filtering by geography, company type, employee count, funding stage, financial metrics, and more. Returns a `request_id` for async polling.
+- [M&A Activity](https://docs.wokelo.ai/acquisitions.md): Starts generating an Acquisitions workflow report for a specific company, providing structured intelligence on acquisition activity, target companies, and M&A landscape.
+- [Fundraising Activity](https://docs.wokelo.ai/fundraise.md): Starts generating a Fundraise workflow report for a specific company, providing insights into fundraising activity, funding stages, and investor landscape.
+- [Company News Monitoring](https://docs.wokelo.ai/company-news-monitoring.md): Fetches the latest news articles for a given company, enriched with AI-generated summaries, categories and publisher details.
+- [Industry News Monitoring](https://docs.wokelo.ai/company-industry-monitoring.md): Fetches the latest news articles for a given industry topic enriched with AI-generated summaries, categories and publisher details.
+- [Newsfeed](https://docs.wokelo.ai/newsfeed.md): Fetches the latest news articles based on user-defined filters such as sentiment, geography, date range, and more. Results are returned directly in the response.
+- [Fetch News Details](https://docs.wokelo.ai/company-news-monitoring-copied-1.md): Fetch full content and metadata for a specific news article by URL or article ID. Use after get_company_news to read a complete article beyond the summary.
+- [[Legacy] Fetch News Report](https://docs.wokelo.ai/legacy-fetch-news-report.md)
+- [[Legacy] Initiate News Report](https://docs.wokelo.ai/legacy-initiate-news-report.md)
+- [Company Research](https://docs.wokelo.ai/company-research.md)
+- [Industry Research](https://docs.wokelo.ai/industry-research.md)
+- [Peer Comparison](https://docs.wokelo.ai/peer-comparison.md)
+- [Custom Workflows](https://docs.wokelo.ai/custom-workflows.md)
+- [Company Search](https://docs.wokelo.ai/company-search.md): Search for companies using name, website, or ticker. Returns a list of companies with their permalink and other attributes.
+- [Upload File](https://docs.wokelo.ai/upload-file.md): Upload files to Wokelo to supplement research reports with proprietary data. Each uploaded file receives a unique identifier (`fileName`) that can be referenced in the `custom_files` parameter when creating reports.
+- [Request Status](https://docs.wokelo.ai/request-status.md): Retrieves the current status of a previously submitted async API request.
+- [Request Cancel](https://docs.wokelo.ai/request-cancel.md): Cancels a request already submitted. Pass the unique `request_id` to cancel a pending or in-progress async request.
+- [Request Result](https://docs.wokelo.ai/request-result.md): Retrieves the final JSON result of a COMPLETED async request.
+- [Get Report Status](https://docs.wokelo.ai/get-report-status.md): Retrieves the current status of a previously triggered report using its unique ID. Poll this endpoint until the status is `Completed`, `Exported`, or `No Data Found`.
+- [Download Report](https://docs.wokelo.ai/download-report.md): Downloads the generated report in the required format. Supported formats: `pdf`, `docx`, and `json`.
+- [Notebook Configuration](https://docs.wokelo.ai/notebook-configuration.md): Retrieves and returns the settings originally configured while initiating the report. Pass the `notebook_id` (report ID) to get all initial configuration attributes used when triggering the workflow.
+- [Add Company](https://docs.wokelo.ai/add-company.md)
+- [Credit Balance](https://docs.wokelo.ai/credit-balance.md)
+- [Credit Logs](https://docs.wokelo.ai/credit-logs.md)
+- [2026](https://docs.wokelo.ai/2026.md)
+- [2025](https://docs.wokelo.ai/2025.md)
+- [Contact](https://docs.wokelo.ai/contact.md): Get in touch with Wokelo
+- [AGENTS](https://docs.wokelo.ai/AGENTS.md)
+- [Credit Logs](https://docs.wokelo.ai/credit-balance-1.md)
+- [Form Type Filters](https://docs.wokelo.ai/form-type-filters.md)
+
+## OpenAPI Specs
+
+- [openapi](/openapi.json)
+- [openapi(1)](/openapi(1).json)
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

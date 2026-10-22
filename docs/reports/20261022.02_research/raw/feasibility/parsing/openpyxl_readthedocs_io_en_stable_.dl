@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>openpyxl - A Python library to read/write Excel 2010 xlsx/xlsm files &#8212; openpyxl 3.1.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=def86cc0" />
+    
+    
+    <script src="_static/jquery.js?v=5d32c60e"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="_static/documentation_options.js?v=eaea8fc6"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorial" href="tutorial.html" /> 
+  
+<!-- RTD Extra Head -->
+
+
+
+<script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "builder": "sphinx", "canonical_url": null, "docroot": "/doc/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "en", "page": "index", "programming_language": "py", "project": "openpyxl", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "default", "user_analytics_code": "", "version": "stable"}</script>
+
+<!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+-->
+<script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script>
+
+
+
+<!-- end RTD <extrahead> -->
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="openpyxl" /><meta name="readthedocs-version-slug" content="stable" /><meta name="readthedocs-resolver-filename" content="/" /><meta name="readthedocs-http-status" content="200" /></head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tutorial.html" title="Tutorial"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">openpyxl 3.1.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">openpyxl - A Python library to read/write Excel 2010 xlsx/xlsm files</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="openpyxl-a-python-library-to-read-write-excel-2010-xlsx-xlsm-files">
+<h1>openpyxl - A Python library to read/write Excel 2010 xlsx/xlsm files<a class="headerlink" href="#openpyxl-a-python-library-to-read-write-excel-2010-xlsx-xlsm-files" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Eric Gazoni, Charlie Clark</p>
+</dd>
+<dt class="field-even">Source code<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://foss.heptapod.net/openpyxl/openpyxl">https://foss.heptapod.net/openpyxl/openpyxl</a></p>
+</dd>
+<dt class="field-odd">Issues<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://foss.heptapod.net/openpyxl/openpyxl/-/issues">https://foss.heptapod.net/openpyxl/openpyxl/-/issues</a></p>
+</dd>
+<dt class="field-even">Generated<span class="colon">:</span></dt>
+<dd class="field-even"><p>May 29, 2024</p>
+</dd>
+<dt class="field-odd">License<span class="colon">:</span></dt>
+<dd class="field-odd"><p>MIT/Expat</p>
+</dd>
+<dt class="field-even">Version<span class="colon">:</span></dt>
+<dd class="field-even"><p>3.1.3</p>
+</dd>
+</dl>
+<a class="reference external image-reference" href="https://coveralls.io/bitbucket/openpyxl/openpyxl?branch=default"><img alt="coverage status" src="https://coveralls.io/repos/bitbucket/openpyxl/openpyxl/badge.svg?branch=default" /></a>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>openpyxl is a Python library to read/write Excel 2010 xlsx/xlsm/xltx/xltm files.</p>
+<p>It was born from lack of existing library to read/write natively from Python
+the Office Open XML format.</p>
+<p>All kudos to the PHPExcel team as openpyxl was initially based on PHPExcel.</p>
+</section>
+<section id="security">
+<h2>Security<a class="headerlink" href="#security" title="Link to this heading"></a></h2>
+<p>By default openpyxl does not guard against quadratic blowup or billion laughs
+xml attacks. To guard against these attacks install defusedxml.</p>
+</section>
+<section id="mailing-list">
+<h2>Mailing List<a class="headerlink" href="#mailing-list" title="Link to this heading"></a></h2>
+<p>The user list can be found on <a class="reference external" href="http://groups.google.com/group/openpyxl-users">http://groups.google.com/group/openpyxl-users</a></p>
+<p>Sample code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">openpyxl</span> <span class="kn">import</span> <span class="n">Workbook</span>
+<span class="n">wb</span> <span class="o">=</span> <span class="n">Workbook</span><span class="p">()</span>
+
+<span class="c1"># grab the active worksheet</span>
+<span class="n">ws</span> <span class="o">=</span> <span class="n">wb</span><span class="o">.</span><span class="n">active</span>
+
+<span class="c1"># Data can be assigned directly to cells</span>
+<span class="n">ws</span><span class="p">[</span><span class="s1">&#39;A1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">42</span>
+
+<span class="c1"># Rows can also be appended</span>
+<span class="n">ws</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="c1"># Python types will automatically be converted</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="n">ws</span><span class="p">[</span><span class="s1">&#39;A2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+<span class="c1"># Save the file</span>
+<span class="n">wb</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;sample.xlsx&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading"></a></h2>
+<p>The documentation is at: <a class="reference external" href="https://openpyxl.readthedocs.io">https://openpyxl.readthedocs.io</a></p>
+<ul class="simple">
+<li><p>installation methods</p></li>
+<li><p>code examples</p></li>
+<li><p>instructions for contributing</p></li>
+</ul>
+<p>Release notes: <a class="reference external" href="https://openpyxl.readthedocs.io/en/stable/changes.html">https://openpyxl.readthedocs.io/en/stable/changes.html</a></p>
+</section>
+<section id="support">
+<h2>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h2>
+<p>This is an open source project, maintained by volunteers in their spare time.
+This may well mean that particular features or functions that you would like
+are missing. But things don’t have to stay that way. You can contribute the
+project <a class="reference internal" href="development.html"><span class="doc">Development</span></a> yourself or contract a developer for particular
+features.</p>
+<p>Professional support for openpyxl is available from
+<a class="reference external" href="http://www.clark-consulting.eu/">Clark Consulting &amp; Research</a> and
+<a class="reference external" href="http://www.adimian.com">Adimian</a>. Donations to the project to support further
+development and maintenance are welcome.</p>
+<p>Bug reports and feature requests should be submitted using the <a class="reference external" href="https://foss.heptapod.net/openpyxl/openpyxl/-/issues">issue tracker</a>. Please provide a full
+traceback of any error you see and if possible a sample file. If for reasons
+of confidentiality you are unable to make a file publicly available then
+contact of one the developers.</p>
+<p>The repository is being provided by <a class="reference external" href="https://octobus.net/">Octobus</a> and
+<a class="reference external" href="https://clever-cloud.com/">Clever Cloud</a>.</p>
+</section>
+<section id="how-to-contribute">
+<h2>How to Contribute<a class="headerlink" href="#how-to-contribute" title="Link to this heading"></a></h2>
+<p>Any help will be greatly appreciated, just follow those steps:</p>
+<blockquote>
+<div><p>1.
+Please join the group and create a branch (<a class="reference external" href="https://foss.heptapod.net/openpyxl/openpyxl/">https://foss.heptapod.net/openpyxl/openpyxl/</a>) and
+follow the <a class="reference external" href="https://heptapod.net/pages/quick-start-guide.html">Merge Request Start Guide</a>.
+for each independent feature, don’t try to fix all problems at the same
+time, it’s easier for those who will review and merge your changes ;-)</p>
+<p>2.
+Hack hack hack</p>
+<p>3.
+Don’t forget to add unit tests for your changes! (YES, even if it’s a
+one-liner, changes without tests will <strong>not</strong> be accepted.) There are plenty
+of examples in the source if you lack know-how or inspiration.</p>
+<p>4.
+If you added a whole new feature, or just improved something, you can
+be proud of it, so add yourself to the AUTHORS file :-)</p>
+<p>5.
+Let people know about the shiny thing you just implemented, update the
+docs!</p>
+<p>6.
+When it’s done, just issue a pull request (click on the large “pull
+request” button on <em>your</em> repository) and wait for your code to be
+reviewed, and, if you followed all theses steps, merged into the main
+repository.</p>
+</div></blockquote>
+<p>For further information see <a class="reference internal" href="development.html"><span class="doc">Development</span></a></p>
+<section id="other-ways-to-help">
+<h3>Other ways to help<a class="headerlink" href="#other-ways-to-help" title="Link to this heading"></a></h3>
+<p>There are several ways to contribute, even if you can’t code (or can’t code well):</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>triaging bugs on the bug tracker: closing bugs that have already been
+closed, are not relevant, cannot be reproduced, …</p></li>
+<li><p>updating documentation in virtually every area: many large features have
+been added (mainly about charts and images at the moment) but without any
+documentation, it’s pretty hard to do anything with it</p></li>
+<li><p>proposing compatibility fixes for different versions of Python: we support
+3.6, 3.7, 3.8 and 3.9.</p></li>
+</ul>
+</div></blockquote>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+<section id="api-documentation">
+<h2>API Documentation<a class="headerlink" href="#api-documentation" title="Link to this heading"></a></h2>
+<section id="key-classes">
+<h3>Key Classes<a class="headerlink" href="#key-classes" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="api/openpyxl.workbook.workbook.html#openpyxl.workbook.workbook.Workbook" title="openpyxl.workbook.workbook.Workbook"><code class="xref py py-class docutils literal notranslate"><span class="pre">openpyxl.workbook.workbook.Workbook</span></code></a></p></li>
+<li><p><a class="reference internal" href="api/openpyxl.worksheet.worksheet.html#openpyxl.worksheet.worksheet.Worksheet" title="openpyxl.worksheet.worksheet.Worksheet"><code class="xref py py-class docutils literal notranslate"><span class="pre">openpyxl.worksheet.worksheet.Worksheet</span></code></a></p></li>
+<li><p><a class="reference internal" href="api/openpyxl.cell.cell.html#openpyxl.cell.cell.Cell" title="openpyxl.cell.cell.Cell"><code class="xref py py-class docutils literal notranslate"><span class="pre">openpyxl.cell.cell.Cell</span></code></a></p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="#">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="#">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">openpyxl - A Python library to read/write Excel 2010 xlsx/xlsm files</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#security">Security</a></li>
+<li><a class="reference internal" href="#mailing-list">Mailing List</a></li>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
+<li><a class="reference internal" href="#support">Support</a></li>
+<li><a class="reference internal" href="#how-to-contribute">How to Contribute</a><ul>
+<li><a class="reference internal" href="#other-ways-to-help">Other ways to help</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#api-documentation">API Documentation</a><ul>
+<li><a class="reference internal" href="#key-classes">Key Classes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="tutorial.html"
+                          title="next chapter">Tutorial</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tutorial.html" title="Tutorial"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">openpyxl 3.1.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">openpyxl - A Python library to read/write Excel 2010 xlsx/xlsm files</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2010 - 2024, See AUTHORS.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    </div>
+  </body>
+</html>

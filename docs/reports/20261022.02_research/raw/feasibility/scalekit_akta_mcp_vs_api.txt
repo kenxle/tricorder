@@ -1,0 +1,397 @@
+Akta Pro MCP vs API for AI Agents: How to Choose
+Announcing CIMD support for MCP Client registration Learn more
+Start for free
+PRODUCTS
+Agentkit
+MCP Gateway for agents
+Connectors & Tools
+500+ apps, plus your own
+Auth & credentials
+Per-user tokens, handled
+Virtual MCP servers
+Scope tools by agent role
+Triggers
+Run agents on events
+Logs
+Every call, attributed
+Enterprise
+BYOK, VPC, and compliance
+Also from scalekit
+MCP Auth
+OAuth 2.1 for MCP servers
+Auth for saas
+SSO, SCIM & RBAC for B2B
+Agent gateway
+Control team agent access 
+connector catalog
+customers
+PRICING
+resources
+COMPARE
+Pick the right agent integrations platform 
+VS COMPOSIO
+Credentials, scoping and enterprise controls
+VS NANGO
+Managed connectors vs code you maintain
+Guides & research
+Interactive Guide
+Build or buy agent integrations?
+Score 8 questions, get a build-or-buy decision framework
+new report
+Agents on the clock
+See what a month of tool calls reveals
+DOCS
+Talk to us
+Start for free
+Agentic Authentication
+Oct 11, 2026
+Akta Pro MCP vs Akta Pro API for AI Agents
+Vinayak Ravi
+Head of Marketing
+Open in ChatGPT
+Open in ChatGPT
+Ask questions about this page
+Open in Claude
+Ask questions about this page
+TL;DR
+Akta Pro's hosted MCP server (live since July 23, 2026) ships 17 tools. Company Addition with webhooks, Filter Builder, and website-keyed JSON profiles are REST-only.
+Outside the Claude and ChatGPT app connectors, both paths authenticate identically: a per-user Akta API key in the x-api-key header.
+That key is also a plan tier, a credit balance, and a rate limit. Share one key and every user shares 25 requests per minute on pay-as-you-go.
+MCP suits interactive research agents; its resolve-first tools and compact news payloads are built for models. The API suits enrichment pipelines, CRM writes, and batch jobs.
+Scalekit ships both as connectors, vaults each user's key, logs every tool call against that user, and scopes tools per agent role with Virtual MCP.
+Choosing How Your Agent Talks to Akta Pro
+Your agent needs Akta Pro: resolve a company, pull its profile, track its news, maybe build a target list. Akta ships a hosted Model Context Protocol (MCP) server alongside its REST API, and both are official. They are not interchangeable. They differ in which endpoints exist, how company identity gets resolved, what each payload costs in tokens and credits, and how much plan-tier logic lands in your code. Here's how to pick between Akta Pro MCP and the Akta Pro API.
+What Akta Pro MCP and Akta Pro API Actually Are
+Both interfaces sit on the same dataset from Akta, a Wokelo AI product: company profiles, entity-resolved news, and alternative signals such as headcount and web traffic. What differs is the surface your agent talks to.
+Akta Pro MCP
+Akta hosts the MCP server itself as a remote endpoint over Streamable HTTP, so there is nothing to run locally. It launched on July 23, 2026, is available to all users, and, according to Akta's changelog, calls the same REST API underneath. Auth depends on the client: native connector auth in Claude's web and desktop apps, OAuth in ChatGPT, and an x-api-key header everywhere else, including Cursor, VS Code, and Claude Code.
+The server exposes 17 synchronous tools. Only company_data returns Markdown; the rest return JSON. Setup steps live in the Akta Pro MCP server setup guide.
+Akta Pro API
+The REST API covers news signals, company data billed per section, list generation, six alternative-signal endpoints (headcount, web traffic, job posts, social posts, employee reviews, product reviews), and supporting endpoints for company search, industry search, company addition, request status, and filter building. Every request carries an API key in the x-api-key header. Each Akta account creates its own keys in Akta's playground, and a key is shown only once.
+Billing is in credits: $0.05 per credit on pay-as-you-go, $0.04 on Subscription, and custom pricing on Enterprise. The reference lives in the Akta Pro API documentation.
+Comparing Them Where It Matters for Agents
+Four dimensions decide this for an Akta Pro agent: what it can call, how it authenticates, what you operate in production, and which workload you are actually building.
+What Your Agent Can Actually Do
+MCP covers the research loop. The REST API owns asynchronous and pipeline work.
+Capability
+Akta Pro MCP
+Akta Pro API
+Resolve company to UUID
+company_search, free
+Company Search, free
+Company profile input
+UUID only
+Website or UUID
+Company profile output
+Markdown, or concise JSON
+JSON, all sections by default
+News with sentiment
+Compact news_signals
+Full article text inline
+Full article body
+news_detail, 10 IDs per call
+In every news result
+Company list generation
+Yes, see schema note
+filters or natural-language query
+Alternative signals
+Subscription or Enterprise
+Subscription or Enterprise
+Add a missing company
+No
+Company Addition
+Async status and webhooks
+No, all tools synchronous
+Request Status or webhook
+Plan and credit check
+account_status, free
+credits_consumed per response
+Prebuilt Scalekit tools
+17 (aktapromcp_*)
+1 (aktapro_search_news)
+Where the MCP Surface Stops
+The gaps cluster around two things the MCP server deliberately avoids: asynchronous work and implicit entity resolution. Every MCP tool is synchronous, so Company Addition, which queues a missing company and reports completion through polling or a webhook, has no MCP equivalent. When an MCP agent can't resolve a company, the tool descriptions tell it to say the company isn't covered rather than guess. A pipeline on the REST API can submit the company instead, on Subscription and Enterprise plans.
+Filter Builder is REST-only too. It turns a plain-language description into a structured filters object for 2.5 credits per run. On MCP, the agent assembles filters itself from the free list_filters and get_filter_values tools.
+What the MCP Server Makes Easier
+MCP bakes Akta's usage protocol into its tool descriptions. company_search is free and effectively mandatory, because every other company tool rejects names and websites and accepts only the UUID it returns. That looks like friction until one domain maps to several entities; the descriptions cite stripe.com resolving to Stripe, Stripe Capital, and Stripe Atlas. The REST API accepts a website directly and quietly makes that disambiguation call for you.
+Payloads follow the same design. company_data requires an explicit section list, and news_signals stays compact while news_detail fetches article bodies on demand. The REST news endpoint returns full_text on every article, so a direct-API agent needs a low limit or a stripping step.
+The Auth Path Each One Puts You On
+On the MCP path, auth depends on the client. Claude's web and desktop apps use native connector auth, ChatGPT runs OAuth, and every other client sends an API key in the x-api-key header. Akta documents OAuth only for ChatGPT, so a production agent you host should plan on the key.
+The REST API is simpler still: every endpoint takes the same x-api-key header, and there is no OAuth grant to delegate. On either path, each end user brings their own Akta key, created in their own account and shown to them once.
+An Akta Key Is a Plan, a Quota, and a Wallet
+This is the Akta-specific twist. Every key resolves to a plan tier, and the tier decides what the tools return. Alternative-signal endpoints return 403 below Subscription on both paths. On MCP, Enterprise-only company_data sections are skipped silently, with a note in the Markdown. Documented rate limits are per plan: pay-as-you-go allows 25 requests per minute, 100 company searches per day, and 100 Company Data calls per month.
+So per-user keys mean per-user capability surfaces, and the same agent behaves differently for two users on different plans. Shared keys are worse, because every user draws on one quota and one credit balance. Both paths require per-user credential isolation, and neither stores, rotates, or revokes keys for you.
+What You Own in Production
+On MCP, Akta owns the tool schemas, the Markdown rendering, and the resolve-first protocol. You own key storage, plan awareness per user, and credit spend, because the model decides which paid tools to call. Two failure modes are silent. An invented filter value matches zero companies instead of erroring, and a dropped value broadens a list without failing. The tool descriptions tell the agent to read warnings; your code should enforce it.
+Capacity follows the key, not the interface. Akta's rate-limit table counts the Markdown and concise variants of Company Data against the same cap as the JSON endpoint, and those are the formats the MCP tools return.
+On the Direct API, You Own the Defaults
+On the API, you own everything: parameter construction, pagination, retries when a rate limit trips, payload trimming, and the section list. The defaults are expensive. Omit sections on Company Data and the API returns every section your plan allows, billed per section. The 14 standard sections add up to about 17 credits per company, roughly $0.85 on pay-as-you-go, against a flat 8 credits for the MCP server's company_data_concise.
+Schema Drift Is Already Visible
+MCP schemas change when the provider changes the server, and Akta's are moving. Akta's MCP docs describe generate_company_list as accepting structured filters or a natural-language query, with optional per-company enrichment. The schema published on the Scalekit connector page takes filters only, requires at least one, and returns identity fields per company with no enrichment option. Build against the tools/list response your client receives, not a docs summary. On Claude's MCP connector, the mcp-client-2026-09-15 beta can pin a server's tool list for a conversation.
+REST changes arrive as dated changelog entries instead. The July 9, 2026 News release, for example, switched industry to resolved codes, a breaking change. For a broader look at MCP vs. direct API tradeoffs, see MCP is up to 32× more expensive than CLI. Here's why we still use it.
+When to Use MCP, When to Use the API
+The split follows the workload, not the data. Use Akta Pro MCP when:
+Your agent is interactive: an analyst asks Claude Code or a chat assistant to profile a company and triage its news, and entity ambiguity gets settled in conversation.
+You want Akta's usage rules enforced by the tools themselves: free resolution first, explicit sections, compact news, and account_status before gated calls.
+You are prototyping a research or diligence agent and want 17 LLM-ready tools without writing schemas.
+Akta is one of several tools in a multi-tool agent, where one protocol keeps orchestration uniform across vendors.
+When the Direct API Is the Right Call
+Use the Akta Pro API directly when:
+Your agent runs headless: nightly CRM enrichment, portfolio news monitoring, or scheduled list refreshes with nobody in the loop.
+You need JSON you can write into a CRM or warehouse field by field, keyed by the website you already store.
+You need REST-only endpoints: Company Addition with webhook callbacks, Request Status, or Filter Builder for reviewable, cacheable filter sets.
+You run high-volume jobs where your code, not a model, sets limit, sections, and pagination on every call.
+The Credential Problem That Exists on Both Paths
+Pick either path and you still hold one Akta key per user. Neither path gives you a vault, rotation, or revocation.
+N Users, N Keys, N Plans
+In a multi-tenant agent, every end user connects their own Akta account. That is N keys to store encrypted, N plan tiers to track, and N credit balances that can run dry mid-task. Keys are shown once at creation, so a key lost from your store means asking the user for a new one. Offboarding is on you too: when a customer leaves, their key has to come out of wherever your agent kept it. The credential type is the same on both paths, and so is the infrastructure problem.
+The Shared-Key Shortcut
+The shortcut is tempting. You put one Subscription key in an environment variable, ship a research agent to five customer teams, and the demo works. A month later, one team starts a bulk enrichment job, the key hits its plan's per-minute limit, and every other team's agent starts failing mid-task. Nobody can say which customer spent the credits, because every call came from one account. Shared credentials are a single-user solution. They do not survive a second user. For a deeper look at why static credentials fail at scale, see OAuth vs API keys for AI agents.
+Where Scalekit Fits
+Scalekit's Akta Pro connectors collect each user's key through a hosted form, keep it in an encrypted per-tenant vault, and inject it at call time on both the MCP and API paths, so the path decision doesn't change your credential infrastructure.
+Building an Akta Pro Agent with Scalekit
+The build below uses Python, the Scalekit SDK, and Claude through the Anthropic SDK. It covers both paths: the aktapro API connector in a tool-use loop, and the aktapromcp connector behind a Virtual MCP server. Scalekit's docs show the same pattern for LangChain, Google ADK, CrewAI, and Mastra, starting from the Anthropic integration guide.
+Prerequisites
+Create the Akta Pro and Akta Pro MCP connections in the Scalekit dashboard under AgentKit > Connections, and copy your credentials from Developers > API Credentials. The code uses the connection names from the connector docs, aktapro and aktapromcp. Every connection_name must match the dashboard exactly; a mismatch is the most common integration error. The two connectors are separate connections, so a user who uses both connects a key to each.
+pip install scalekit-sdk-python anthropic python-dotenv
+# .env
+SCALEKIT_ENVIRONMENT_URL=<your-environment-url>
+SCALEKIT_CLIENT_ID=<your-client-id>
+SCALEKIT_CLIENT_SECRET=<your-client-secret>
+ANTHROPIC_API_KEY=<your-anthropic-api-key>
+Step 1: Connect Each User's Akta Pro Key
+A connected account is the per-user record that holds the key. For an API-key connector like Akta Pro, get_authorization_link returns a link to a Scalekit-hosted form where the user pastes their own key, so the key never passes through your agent code or the model's context.
+import os
+from dotenv import load_dotenv
+from scalekit import ScalekitClient
+load_dotenv()
+scalekit_client = ScalekitClient(
+    env_url=os.getenv("SCALEKIT_ENVIRONMENT_URL"),
+    client_id=os.getenv("SCALEKIT_CLIENT_ID"),
+    client_secret=os.getenv("SCALEKIT_CLIENT_SECRET"),
+)
+actions = scalekit_client.actions
+# Connection names must match AgentKit > Connections in the dashboard exactly
+API_CONNECTION = "aktapro"
+MCP_CONNECTION = "aktapromcp"
+IDENTIFIER = "user_123"  # an opaque user ID from your app
+def ensure_connected(connection_name: str, identifier: str) -> None:
+    account = actions.get_or_create_connected_account(
+        connection_name=connection_name,
+        identifier=identifier,
+    ).connected_account
+    if account.status == "ACTIVE":
+        return
+    # For API key connectors, the hosted page is a form that collects the
+    # user's own Akta Pro API key. Your code never sees the key.
+    link = actions.get_authorization_link(
+        connection_name=connection_name,
+        identifier=identifier,
+    )
+    print(f"Connect your Akta Pro API key: {link.link}")
+    input("Press Enter after submitting the form...")
+    account = actions.get_or_create_connected_account(
+        connection_name=connection_name,
+        identifier=identifier,
+    ).connected_account
+    if account.status != "ACTIVE":
+        raise RuntimeError(f"{connection_name} is {account.status}, not ACTIVE")
+# Connect only the connections this agent actually uses
+ensure_connected(API_CONNECTION, IDENTIFIER)
+ensure_connected(MCP_CONNECTION, IDENTIFIER)
+In production, replace input() with your own UI flow, and subscribe to the connected_account.status_updated webhook to catch accounts that leave ACTIVE.
+Step 2: Run the API Path with a Scoped Tool List
+The agent does not load a connector catalog. list_scoped_tools returns only the tools this user's connected account is authorized to call, filtered here to the aktapro connection. For the API connector, that surface is a single tool, aktapro_search_news, whose 23 parameters map one to one onto the REST News Signals endpoint's query parameters. Understanding agent tool calling auth patterns will help you structure this loop correctly for production.
+import json
+import anthropic
+from google.protobuf.json_format import MessageToDict
+claude = anthropic.Anthropic()
+# Retrieve only the tools this user's connected account is authorized to call
+scoped_response, _ = actions.tools.list_scoped_tools(
+    identifier=IDENTIFIER,
+    filter={"connection_names": [API_CONNECTION]},
+    page_size=100,
+)
+llm_tools = []
+for scoped_tool in scoped_response.tools:
+    definition = MessageToDict(scoped_tool.tool).get("definition", {})
+    llm_tools.append({
+        "name": definition.get("name"),
+        "description": definition.get("description", ""),
+        "input_schema": definition.get("input_schema", {}),
+    })
+Execution happens in the loop. Claude picks the tool and its arguments; execute_tool resolves the user's key server-side and calls Akta.
+messages = [{
+    "role": "user",
+    "content": (
+        "Find the 10 most recent negative-sentiment articles where stripe.com "
+        "is the primary company, then summarize the recurring themes."
+    ),
+}]
+while True:
+    response = claude.messages.create(
+        model="claude-sonnet-5-5",
+        max_tokens=2048,
+        tools=llm_tools,
+        messages=messages,
+    )
+    if response.stop_reason != "tool_use":
+        print("".join(b.text for b in response.content if b.type == "text"))
+        break
+    tool_results = []
+    for block in response.content:
+        if block.type == "tool_use":
+            result = actions.execute_tool(
+                tool_name=block.name,
+                tool_input=block.input,
+                connection_name=API_CONNECTION,
+                identifier=IDENTIFIER,
+            )
+            tool_results.append({
+                "type": "tool_result",
+                "tool_use_id": block.id,
+                "content": json.dumps(result.data, default=str),
+            })
+    messages.append({"role": "assistant", "content": response.content})
+    messages.append({"role": "user", "content": tool_results})
+Each execute_tool call returns an execution_id and lands in AgentKit's tool call log under this user's identifier.
+Step 3: Define a Virtual MCP Server Once per Agent Role
+A Virtual MCP server is a scoped endpoint: you declare which connections and tools it exposes, once per agent role, and get back a static URL. Continuing the same script, this definition exposes 7 of the 17 Akta tools: four free lookup tools, the two news tools, and the flat-rate concise profile. Per-section company_data, list generation, and the Subscription-only signal tools stay off this agent's surface.
+from scalekit.actions.models.mcp_config import McpConfigConnectionToolMapping
+# Setup: run once per agent role, not once per user. Persist both values.
+vmcp = actions.mcp.create_config(
+    name="akta-research-triage",
+    description="Company resolution, news triage, and concise profiles",
+    connection_tool_mappings=[
+        McpConfigConnectionToolMapping(
+            connection_name=MCP_CONNECTION,
+            tools=[
+                "aktapromcp_account_status",
+                "aktapromcp_company_search",
+                "aktapromcp_industry_search",
+                "aktapromcp_news_types",
+                "aktapromcp_news_signals",
+                "aktapromcp_news_detail",
+                "aktapromcp_company_data_concise",
+            ],
+        ),
+    ],
+)
+config_id = vmcp.config.id
+mcp_server_url = vmcp.config.mcp_server_url
+Step 4: Mint a Session Token and Run the Agent
+Before each run, confirm the user's connections are active, then mint a short-lived session token bound to that user. The Virtual MCP setup guide also covers listing, updating, and deleting servers.
+from datetime import timedelta
+# Runtime: before every agent run
+auth_state = actions.mcp.list_mcp_connected_accounts(
+    config_id=config_id,
+    identifier=IDENTIFIER,
+    include_auth_link=True,
+)
+for account in auth_state.connected_accounts:
+    if account.connected_account_status != "ACTIVE":
+        raise RuntimeError(
+            f"{account.connection_name} needs a key: {account.authentication_link}"
+        )
+session_token = actions.mcp.create_session_token(
+    mcp_config_id=config_id,
+    identifier=IDENTIFIER,
+    expiry=timedelta(minutes=30),
+).token
+response = claude.beta.messages.create(
+    model="claude-sonnet-5-5",
+    max_tokens=2048,
+    messages=[{
+        "role": "user",
+        "content": "Resolve Stripe, pull its concise profile, and triage its latest news.",
+    }],
+    mcp_servers=[{
+        "type": "url",
+        "url": mcp_server_url,
+        "name": "akta",
+        "authorization_token": session_token,
+    }],
+    tools=[{"type": "mcp_toolset", "mcp_server_name": "akta"}],
+    betas=["mcp-client-2025-11-20"],
+)
+print("".join(b.text for b in response.content if b.type == "text"))
+Anthropic's API calls the Virtual MCP server directly, so there is no loop to write. Tokens default to about an hour, and a host holding an expired token fails at its next tool call, not at startup, so mint one per run. Scalekit's Node SDK doesn't mint session tokens yet; TypeScript agents mint them on a Python backend.
+Reaching REST Endpoints the Prebuilt Tool Doesn't Cover
+The aktapro connector ships one prebuilt tool, but the connected account works for the rest of the REST API too. actions.request proxies a call to a provider path and injects the user's key server-side, which is how a pipeline reaches Company Data, List Generation, or Company Addition without holding raw keys. Wrap each endpoint in a tool contract shaped around your agent's intent; the custom tools guide shows the pattern.
+Why the Scalekit Path Matters for Akta Pro Agents
+Credential custody is the baseline AgentKit covers. Two capabilities matter more once an Akta Pro agent reaches real users.
+Every Downstream Tool Call Is Attributable
+AgentKit writes every tool call to a tool call log with its timestamp, connection, tool name, user identifier, latency, and error details. The identifier is the end user who triggered the call, not the agent process. Failures are split by origin, so an inactive connected account reads differently from an Akta-side error, and per-connector success rates flag a degrading connector before users do. For Akta, that answers what a shared key can't: which user spent the credits, which calls hit a plan wall, and whose run failed overnight. Scalekit's Akta Pro connector page cites 90 days of call history, exportable to a SIEM. More on agent tool observability and how to keep every action traceable in production.
+Virtual MCP for Multi-Tool Agents
+Akta is rarely the only tool. A diligence agent pairs it with a CRM, and a news agent posts to Slack. One Virtual MCP server can map tools from several connections, so the agent gets one endpoint and one token instead of an MCP client per vendor. Scoping matters more than usual here, because Akta's tool descriptions carry its whole usage protocol: generate_company_list alone runs past 300 words. At roughly 200 tokens per tool, a 40-tool server burns about 8,000 tokens before the agent does any work, and scoping to 5 to 10 tools cuts that by 80%. Scope caps spend too: an agent that can't see per-section company_data can't bill 17 credits per company.
+Virtual MCP for Multi-Tenant Agents
+One server definition serves every tenant. Before each run you mint a session token bound to one user's connected accounts, so tenant A's run resolves tenant A's key and spends tenant A's credits, never tenant B's. Because Akta keys carry plan tiers, you can also define one server per role and plan: a pay-as-you-go research agent without the six Subscription-only tools, and a Subscription variant with them. The endpoint is static; the identity is per user. What a user's plan can't do, their agent never sees. For the broader pattern, see access control for multi-tenant AI agents.
+Start from an Agent Template
+If you are building a GTM or research agent around Akta, these templates cover the surrounding workflow: the competitive intelligence briefing agent, the sales call prep agent, the outbound prospecting agent, and the deal intelligence agent. AgentKit plans are on the Scalekit pricing page.
+Recommended reading: the Apollo MCP vs Apollo API and ZoomInfo MCP vs ZoomInfo API breakdowns cover the same decision for adjacent company-data tools.
+Which One to Build Against
+If your Akta Pro agent is interactive, an analyst in Claude Code or a chat assistant researching companies and triaging news, build against the MCP server. Its resolve-first tools and compact payloads are designed for a model to drive. If your agent is a pipeline that enriches records keyed by website, needs JSON, or must add companies Akta doesn't cover yet, build against the REST API and wrap the endpoints you need.
+Either way, you are managing one Akta key per user, and every key is also a plan and a credit balance. That is the part that needs production-grade infrastructure. For teams navigating the same credential challenges across many tool providers, credential ownership patterns for agent tool calling covers the design tradeoffs in depth.
+Get Immediate Help Building Your Akta Pro Agent
+Building an Akta Pro agent for multiple customers? Talk to us for immediate help with connected accounts, Virtual MCP design, and plan-aware tool scoping.
+Browse the Akta Pro connector for AI agents, the Akta Pro API connector docs, the Akta Pro MCP connector docs, or all Scalekit connectors.
+No items found.
+Agent
+Auth Quickstart
+Add auth to your AI agents
+Open in ChatGPT
+Open in ChatGPT
+Ask questions about this page
+Open in Claude
+Ask questions about this page
+On this page
+Introduction
+‍
+This is some text inside of a div block.
+This is some text inside of a div block.
+Share this article
+Copy link
+Agent
+Auth Quickstart
+Add auth to your AI agents
+Related posts
+SEE All
+Agentic Authentication
+Agent Tool Observability: Your Agent Is Running. Is It Actually Working?
+May 20, 2026
+Agentic Authentication
+Access Control for Multi-Tenant AI Agents
+Mar 23, 2026
+Agentic Authentication
+Who Holds the Token? Credential Ownership Across Agent Tool-Calling Patterns
+May 19, 2026
+Acquire enterprise customers with
+‍zero upfront cost.
+Every feature unlocked. No hidden fees.
+Start building free
+Get Detailed Pricing
+The auth stack for agents.
+hi@scalekit.com
+Scalekit Inc
+2261 Market Street, STE 86971
+San Francisco, CA 94114
+Join our community
+Anonymously - no Slack account required
+Agentkit
+Connectors & toolsTriggersAuth & credentialsLogsVirtual MCP serversEnterpriseFor teamsAgentKit pricing
+Connectors
+marketingcrm & salesproject managementAccounting & financeproductivity
+all categories
+Resources
+blogdocsQuickstartSDKscode samplesAgent templatesBuild vs buy guide NewAgents on the clock NewApi referencegithubchange logpodcast
+Compare Agentkit
+vs composiovs arcadevs nangovs paragonvs pipedreamvs mergevs membranealternatives
+Auth for SaaS 
+SSOMCP authpasswordlessAuth for saas pricingvs workosvs Auth0vs Cognito
+company
+customerstrust centerself-hostedlegal
+COMPLIANCE
+© 2026 SCALEKIT, INC.
+All systems operational
+We use cookies, so things load fast, we learn what to fix, and you can always reach us on chat
+Okay, got it! 

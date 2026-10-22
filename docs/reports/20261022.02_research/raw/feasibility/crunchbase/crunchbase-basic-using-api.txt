@@ -1,0 +1,87 @@
+Basic APIs
+For AI agents: the docs index is at https://data.crunchbase.com/llms.txt. Append .md to any documentation page URL to get its markdown version.
+Jump to Content
+Getting StartedMCPAPI ReferenceAPI Starter Playbooks
+HomeGetting StartedAPI Referencev3.1v4.0 (Legacy)v4.0 (Current)Getting StartedMCPAPI ReferenceAPI Starter PlaybooksAbout UsGo to Crunchbase
+Getting Started
+Search
+About UsGo to Crunchbase
+v4.0 (Current)
+Getting StartedBasic APIsBasic APIs
+Crunchbase Data
+Welcome to Crunchbase Data
+Data Dictionary
+Mcp
+MCP Overview
+Getting Started with MCP
+Connecting AI Tools
+Crunchbase MCP Skills
+Managing MCP Access
+MCP Developer Reference
+Building a Crunchbase MCP Integration
+Data-Token Metering
+Reliability, Errors, and Pagination
+Known MCP Limitations
+REST API
+Make your first API request
+Understand the Crunchbase data model
+Using the API
+Using Entity Lookup API
+Get More Results from Card_id
+Examples: Entity Lookup API
+Using Search API
+Paginating through the Search API
+Examples: Search API
+Using Autocomplete API
+Examples: Autocomplete API
+Using Deleted Entities API
+API FAQs
+API Packages
+Overview
+Fundamentals
+Insights Data
+Predictions Data
+API Starter Playbooks
+Define and Pull Your ICP 
+Anticipate what’s next for your ICP-fit accounts
+Prioritize ICP predicted to experience growth
+Identify Emerging Wealth Creators
+Early Liquidity Event Prediction for Targeting & Research
+Discover Early-Stage Investment Opportunities 
+Forecast Investment Upside & Risk
+Build Market Landscapes and Streamline Workflows
+Discover Look-Alike Accounts
+Surface Competitors and Reasoning for Diligence Workflows
+Legacy API Migration Guides
+Legacy Migration Overview
+Legacy Exports
+Updating Legacy CSV Workflows
+Legacy CSV Field Mapping
+Calling API Endpoints
+CRM Enrichment
+Crunchbase Basic
+Basic Export
+Basic APIs
+Organization Attributes for Basic API
+Terms and Conditions
+License Agreement
+Data Use Addendum
+Data Access Terms
+Copy Page
+Basic APIs
+🚧
+Legacy Basic API documentation
+Crunchbase no longer offers new Basic API keys. This page describes legacy Basic access for existing key holders. See Crunchbase Basic for availability details. For a current API package or a newly provisioned key, follow Using the API and the reference for your provisioned package; do not apply these legacy paths to a new key.
+With Crunchbase Basic, you have access to a limited set of Organization data fields (as covered in Organization Attributes) using the 3 API endpoints below:
+Organization Search endpoint: https://api.crunchbase.com/api/v4/searches/organizations
+Organization Entity Lookup endpoint: https://api.crunchbase.com/api/v4/entities/organizations/{permalink}
+Autocomplete endpoint: https://api.crunchbase.com/api/v4/autocompletes
+🚧
+Access depends on your API package
+Legacy Basic keys have limited access. For current offerings, review API Packages and contact Crunchbase to confirm the endpoints and fields included in your provisioned package.
+Updated 7 days ago 
+Basic Export
+Organization Attributes for Basic API
+Did this page help you?
+Yes
+No

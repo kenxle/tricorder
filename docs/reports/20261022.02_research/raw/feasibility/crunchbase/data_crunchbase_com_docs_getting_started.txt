@@ -1,0 +1,502 @@
+Getting Started
+For AI agents: the docs index is at https://data.crunchbase.com/llms.txt. Append .md to any documentation page URL to get its markdown version.
+Jump to Content
+Getting StartedMCPAPI ReferenceAPI Starter Playbooks
+HomeGetting StartedAPI Referencev3.1v4.0 (Legacy)v4.0 (Current)Getting StartedMCPAPI ReferenceAPI Starter PlaybooksAbout UsGo to Crunchbase
+API Reference
+Search
+About UsGo to Crunchbase
+v4.0 (Current)
+API ReferenceGetting Started
+Firmographics Package
+Autocomplete
+Suggests matching Identifier entities based on the query and entity_def_ids provided.get
+Deleted Entities
+Retrieve deleted entities.get
+Retrieve deleted entities of a specific collection.get
+Entity
+Lookup an Organizationget
+Lookup Organization's single cardget
+Lookup a Personget
+Lookup Person's single cardget
+Lookup an Eventget
+Lookup Event's single cardget
+Lookup an EventAppearanceget
+Lookup EventAppearance's single cardget
+Lookup an Ipoget
+Lookup Ipo's single cardget
+Lookup an Ownershipget
+Lookup Ownership's single cardget
+Lookup a Categoryget
+Lookup a CategoryGroupget
+Lookup a Locationget
+Lookup a Jobget
+Lookup Job's single cardget
+Lookup an Addressget
+Lookup Address's single cardget
+Lookup a Degreeget
+Lookup Degree's single cardget
+Lookup a DiversitySpotlightget
+Lookup a Principalget
+Search
+Search Organization Entitiespost
+Search Person Entitiespost
+Search Event Entitiespost
+Search EventAppearance Entitiespost
+Search Ipo Entitiespost
+Search Ownership Entitiespost
+Search Category Entitiespost
+Search CategoryGroup Entitiespost
+Search Location Entitiespost
+Search Job Entitiespost
+Search Address Entitiespost
+Search Degree Entitiespost
+Search DiversitySpotlight Entitiespost
+Search Principal Entitiespost
+Metadata
+Retrieve OpenAPI specification document in yaml formatget
+Retrieve OpenAPI specification document in json formatget
+Returns the list of fields for collections with type and descriptionget
+Core Financials Package
+Autocomplete
+Suggests matching Identifier entities based on the query and entity_def_ids provided.get
+Deleted Entities
+Retrieve deleted entities.get
+Retrieve deleted entities of a specific collection.get
+Entity
+Lookup an Organizationget
+Lookup Organization's single cardget
+Lookup a Personget
+Lookup Person's single cardget
+Lookup an Investmentget
+Lookup Investment's single cardget
+Lookup an Eventget
+Lookup Event's single cardget
+Lookup an EventAppearanceget
+Lookup EventAppearance's single cardget
+Lookup an Ipoget
+Lookup Ipo's single cardget
+Lookup an Ownershipget
+Lookup Ownership's single cardget
+Lookup a Categoryget
+Lookup a CategoryGroupget
+Lookup a Locationget
+Lookup a Jobget
+Lookup Job's single cardget
+Lookup an Addressget
+Lookup Address's single cardget
+Lookup a Degreeget
+Lookup Degree's single cardget
+Lookup a DiversitySpotlightget
+Lookup a Principalget
+Search
+Search Organization Entitiespost
+Search Person Entitiespost
+Search Investment Entitiespost
+Search Event Entitiespost
+Search EventAppearance Entitiespost
+Search Ipo Entitiespost
+Search Ownership Entitiespost
+Search Category Entitiespost
+Search CategoryGroup Entitiespost
+Search Location Entitiespost
+Search Job Entitiespost
+Search Address Entitiespost
+Search Degree Entitiespost
+Search DiversitySpotlight Entitiespost
+Search Principal Entitiespost
+Metadata
+Retrieve OpenAPI specification document in yaml formatget
+Retrieve OpenAPI specification document in json formatget
+Returns the list of fields for collections with type and descriptionget
+Advanced Financials Package
+Autocomplete
+Suggests matching Identifier entities based on the query and entity_def_ids provided.get
+Deleted Entities
+Retrieve deleted entities.get
+Retrieve deleted entities of a specific collection.get
+Entity
+Lookup an Organizationget
+Lookup Organization's single cardget
+Lookup a Personget
+Lookup Person's single cardget
+Lookup a FundingRoundget
+Lookup FundingRound's single cardget
+Lookup an Acquisitionget
+Lookup Acquisition's single cardget
+Lookup an Investmentget
+Lookup Investment's single cardget
+Lookup an Eventget
+Lookup Event's single cardget
+Lookup a PressReferenceget
+Lookup a Fundget
+Lookup Fund's single cardget
+Lookup an EventAppearanceget
+Lookup EventAppearance's single cardget
+Lookup an Ipoget
+Lookup Ipo's single cardget
+Lookup an Ownershipget
+Lookup Ownership's single cardget
+Lookup a Categoryget
+Lookup a CategoryGroupget
+Lookup a Locationget
+Lookup a Jobget
+Lookup Job's single cardget
+Lookup an Addressget
+Lookup Address's single cardget
+Lookup a Degreeget
+Lookup Degree's single cardget
+Lookup a DiversitySpotlightget
+Lookup a Principalget
+Search
+Search Organization Entitiespost
+Search Person Entitiespost
+Search FundingRound Entitiespost
+Search Acquisition Entitiespost
+Search Investment Entitiespost
+Search Event Entitiespost
+Search PressReference Entitiespost
+Search Fund Entitiespost
+Search EventAppearance Entitiespost
+Search Ipo Entitiespost
+Search Ownership Entitiespost
+Search Category Entitiespost
+Search CategoryGroup Entitiespost
+Search Location Entitiespost
+Search Job Entitiespost
+Search Address Entitiespost
+Search Degree Entitiespost
+Search DiversitySpotlight Entitiespost
+Search Principal Entitiespost
+Metadata
+Retrieve OpenAPI specification document in yaml formatget
+Retrieve OpenAPI specification document in json formatget
+Returns the list of fields for collections with type and descriptionget
+Predictions & Insights Package
+Autocomplete
+Suggests matching Identifier entities based on the query and entity_def_ids provided.get
+Deleted Entities
+Retrieve deleted entities.get
+Retrieve deleted entities of a specific collection.get
+Entity
+Lookup an Organizationget
+Lookup Organization's single cardget
+Lookup a Personget
+Lookup Person's single cardget
+Lookup a FundingRoundget
+Lookup FundingRound's single cardget
+Lookup an Acquisitionget
+Lookup Acquisition's single cardget
+Lookup an Investmentget
+Lookup Investment's single cardget
+Lookup an Eventget
+Lookup Event's single cardget
+Lookup a PressReferenceget
+Lookup a Fundget
+Lookup Fund's single cardget
+Lookup an EventAppearanceget
+Lookup EventAppearance's single cardget
+Lookup an Ipoget
+Lookup Ipo's single cardget
+Lookup an Ownershipget
+Lookup Ownership's single cardget
+Lookup a Categoryget
+Lookup a CategoryGroupget
+Lookup a Locationget
+Lookup a Jobget
+Lookup Job's single cardget
+Lookup a KeyEmployeeChangeget
+Lookup a Layoffget
+Lookup an AcquisitionPredictionget
+Lookup an Addressget
+Lookup Address's single cardget
+Lookup an Awardget
+Lookup a ClosurePredictionget
+Lookup a Degreeget
+Lookup Degree's single cardget
+Lookup a DiversitySpotlightget
+Lookup a FundingPredictionget
+Lookup a GrowthInsightget
+Lookup a GrowthPredictionget
+Lookup an InvestorInsightget
+Lookup an InvestorMatchget
+Lookup an IpoPredictionget
+Lookup a LayoffPredictionget
+Lookup a LegalProceedingget
+Lookup a MicroCategoryget
+Lookup an OrgSimilarityget
+Lookup a PartnershipAnnouncementget
+Lookup a Principalget
+Lookup a Productget
+Lookup a ProductLaunchget
+Lookup a ProductSimilarityget
+Lookup a RemainPrivatePredictionget
+Lookup a ResearchInsightget
+Lookup Category's single cardget
+Lookup CategoryGroup's single cardget
+Lookup a MarketInsightget
+Lookup MarketInsight's single cardget
+Lookup a MarketInsightReasonget
+Lookup MicroCategory's single cardget
+Lookup a CurrentValuationEstimateget
+Lookup a CurrentValuationComparableget
+Lookup CurrentValuationEstimate's single cardget
+Lookup a GrowthEventget
+Search
+Search Organization Entitiespost
+Search Person Entitiespost
+Search FundingRound Entitiespost
+Search Acquisition Entitiespost
+Search Investment Entitiespost
+Search Event Entitiespost
+Search PressReference Entitiespost
+Search Fund Entitiespost
+Search EventAppearance Entitiespost
+Search Ipo Entitiespost
+Search Ownership Entitiespost
+Search Category Entitiespost
+Search CategoryGroup Entitiespost
+Search Location Entitiespost
+Search Job Entitiespost
+Search KeyEmployeeChange Entitiespost
+Search Layoff Entitiespost
+Search AcquisitionPrediction Entitiespost
+Search Address Entitiespost
+Search Award Entitiespost
+Search ClosurePrediction Entitiespost
+Search Degree Entitiespost
+Search DiversitySpotlight Entitiespost
+Search FundingPrediction Entitiespost
+Search GrowthInsight Entitiespost
+Search GrowthPrediction Entitiespost
+Search InvestorInsight Entitiespost
+Search InvestorMatch Entitiespost
+Search IpoPrediction Entitiespost
+Search LayoffPrediction Entitiespost
+Search LegalProceeding Entitiespost
+Search MicroCategory Entitiespost
+Search OrgSimilarity Entitiespost
+Search PartnershipAnnouncement Entitiespost
+Search Principal Entitiespost
+Search Product Entitiespost
+Search ProductLaunch Entitiespost
+Search ProductSimilarity Entitiespost
+Search RemainPrivatePrediction Entitiespost
+Search ResearchInsight Entitiespost
+Search MarketInsight Entitiespost
+Search MarketInsightReason Entitiespost
+Search CurrentValuationEstimate Entitiespost
+Search CurrentValuationComparable Entitiespost
+Search GrowthEvent Entitiespost
+Metadata
+Retrieve OpenAPI specification document in yaml formatget
+Retrieve OpenAPI specification document in json formatget
+Returns the list of fields for collections with type and descriptionget
+Predictions Only Package
+Autocomplete
+Suggests matching Identifier entities based on the query and entity_def_ids provided.get
+Deleted Entities
+Retrieve deleted entities.get
+Retrieve deleted entities of a specific collection.get
+Entity
+Lookup an Organizationget
+Lookup Organization's single cardget
+Lookup a Personget
+Lookup Person's single cardget
+Lookup a FundingRoundget
+Lookup FundingRound's single cardget
+Lookup an Acquisitionget
+Lookup Acquisition's single cardget
+Lookup an Investmentget
+Lookup Investment's single cardget
+Lookup an Eventget
+Lookup Event's single cardget
+Lookup a PressReferenceget
+Lookup a Fundget
+Lookup Fund's single cardget
+Lookup an EventAppearanceget
+Lookup EventAppearance's single cardget
+Lookup an Ipoget
+Lookup Ipo's single cardget
+Lookup an Ownershipget
+Lookup Ownership's single cardget
+Lookup a Categoryget
+Lookup a CategoryGroupget
+Lookup a Locationget
+Lookup a Jobget
+Lookup Job's single cardget
+Lookup an AcquisitionPredictionget
+Lookup an Addressget
+Lookup Address's single cardget
+Lookup a ClosurePredictionget
+Lookup a Degreeget
+Lookup Degree's single cardget
+Lookup a DiversitySpotlightget
+Lookup a FundingPredictionget
+Lookup a GrowthPredictionget
+Lookup an IpoPredictionget
+Lookup a LayoffPredictionget
+Lookup a Principalget
+Lookup a RemainPrivatePredictionget
+Search
+Search Organization Entitiespost
+Search Person Entitiespost
+Search FundingRound Entitiespost
+Search Acquisition Entitiespost
+Search Investment Entitiespost
+Search Event Entitiespost
+Search PressReference Entitiespost
+Search Fund Entitiespost
+Search EventAppearance Entitiespost
+Search Ipo Entitiespost
+Search Ownership Entitiespost
+Search Category Entitiespost
+Search CategoryGroup Entitiespost
+Search Location Entitiespost
+Search Job Entitiespost
+Search AcquisitionPrediction Entitiespost
+Search Address Entitiespost
+Search ClosurePrediction Entitiespost
+Search Degree Entitiespost
+Search DiversitySpotlight Entitiespost
+Search FundingPrediction Entitiespost
+Search GrowthPrediction Entitiespost
+Search IpoPrediction Entitiespost
+Search LayoffPrediction Entitiespost
+Search Principal Entitiespost
+Search RemainPrivatePrediction Entitiespost
+Metadata
+Retrieve OpenAPI specification document in yaml formatget
+Retrieve OpenAPI specification document in json formatget
+Returns the list of fields for collections with type and descriptionget
+Insights Only Package
+Autocomplete
+Suggests matching Identifier entities based on the query and entity_def_ids provided.get
+Deleted Entities
+Retrieve deleted entities.get
+Retrieve deleted entities of a specific collection.get
+Entity
+Lookup an Organizationget
+Lookup Organization's single cardget
+Lookup a Personget
+Lookup Person's single cardget
+Lookup a FundingRoundget
+Lookup FundingRound's single cardget
+Lookup an Acquisitionget
+Lookup Acquisition's single cardget
+Lookup an Investmentget
+Lookup Investment's single cardget
+Lookup an Eventget
+Lookup Event's single cardget
+Lookup a PressReferenceget
+Lookup a Fundget
+Lookup Fund's single cardget
+Lookup an EventAppearanceget
+Lookup EventAppearance's single cardget
+Lookup an Ipoget
+Lookup Ipo's single cardget
+Lookup an Ownershipget
+Lookup Ownership's single cardget
+Lookup a Categoryget
+Lookup a CategoryGroupget
+Lookup a Locationget
+Lookup a Jobget
+Lookup Job's single cardget
+Lookup a KeyEmployeeChangeget
+Lookup a Layoffget
+Lookup an Addressget
+Lookup Address's single cardget
+Lookup an Awardget
+Lookup a Degreeget
+Lookup Degree's single cardget
+Lookup a DiversitySpotlightget
+Lookup a GrowthInsightget
+Lookup an InvestorInsightget
+Lookup an InvestorMatchget
+Lookup a LegalProceedingget
+Lookup a MicroCategoryget
+Lookup an OrgSimilarityget
+Lookup a PartnershipAnnouncementget
+Lookup a Principalget
+Lookup a Productget
+Lookup a ProductLaunchget
+Lookup a ProductSimilarityget
+Lookup a ResearchInsightget
+Lookup Category's single cardget
+Lookup CategoryGroup's single cardget
+Lookup a MarketInsightget
+Lookup MarketInsight's single cardget
+Lookup a MarketInsightReasonget
+Lookup MicroCategory's single cardget
+Lookup a CurrentValuationEstimateget
+Lookup a CurrentValuationComparableget
+Lookup CurrentValuationEstimate's single cardget
+Lookup a GrowthEventget
+Search
+Search Organization Entitiespost
+Search Person Entitiespost
+Search FundingRound Entitiespost
+Search Acquisition Entitiespost
+Search Investment Entitiespost
+Search Event Entitiespost
+Search PressReference Entitiespost
+Search Fund Entitiespost
+Search EventAppearance Entitiespost
+Search Ipo Entitiespost
+Search Ownership Entitiespost
+Search Category Entitiespost
+Search CategoryGroup Entitiespost
+Search Location Entitiespost
+Search Job Entitiespost
+Search KeyEmployeeChange Entitiespost
+Search Layoff Entitiespost
+Search Address Entitiespost
+Search Award Entitiespost
+Search Degree Entitiespost
+Search DiversitySpotlight Entitiespost
+Search GrowthInsight Entitiespost
+Search InvestorInsight Entitiespost
+Search InvestorMatch Entitiespost
+Search LegalProceeding Entitiespost
+Search MicroCategory Entitiespost
+Search OrgSimilarity Entitiespost
+Search PartnershipAnnouncement Entitiespost
+Search Principal Entitiespost
+Search Product Entitiespost
+Search ProductLaunch Entitiespost
+Search ProductSimilarity Entitiespost
+Search ResearchInsight Entitiespost
+Search MarketInsight Entitiespost
+Search MarketInsightReason Entitiespost
+Search CurrentValuationEstimate Entitiespost
+Search CurrentValuationComparable Entitiespost
+Search GrowthEvent Entitiespost
+Metadata
+Retrieve OpenAPI specification document in yaml formatget
+Retrieve OpenAPI specification document in json formatget
+Returns the list of fields for collections with type and descriptionget
+Reference Data & Info
+Acquisition Types/Terms/Status/Disposition
+Available Field Types & Operators
+UUID
+Date Precision
+Datetime
+Currency Codes & Exchange Rate
+Funding Types & Funding Stages
+Stock Exchanges
+API Error Codes
+Copy Page
+Getting Started
+Set up the welcome page for your API to help users make their first call.
+1Pick a language
+ShellNodeRubyPHPPythonJavaC#
+2Try It!
+LoadingLoading…
+Response 
+Click Try It! to start a request and see the response here!
+Popular Endpoints
+Last 24 Hours
+LoadingLoading…
+Did this page help you?
+Yes
+No

@@ -1,0 +1,111 @@
+Rate Limits - Tavily Docs
+Documentation Index
+Fetch the complete documentation index at: /llms.txt
+Use this file to discover all available pages before exploring further.
+Skip to main content
+Tavily Docs home page
+Search...⌘KAsk Assistant⌘I
+Support
+Get an API key
+Get an API key
+Search...
+Navigation
+API keys & credits
+Rate Limits
+Get started
+API Reference
+Integrations
+Examples
+Changelog
+API Playground
+Community
+Blog
+Get started
+Quickstart
+MCP
+Agent Skills
+Claude
+Tavily CLI
+Python SDK
+JavaScript SDK
+Coding agents
+Cursor
+OpenCode
+Hermes Agent
+Pi
+NanoClaw
+OpenClaw
+Grok Build
+API keys & credits
+Try Tavily Without an API Key
+API Key Management
+Headers & Authentication
+Credits & Pricing
+Rate Limits
+Best practices
+Search
+Extract
+Crawl
+Research
+Help
+Frequently Asked Questions
+Help Center
+On this page
+Crawl Endpoint Rate Limits
+Research Endpoint Rate Limits
+Usage Endpoint Rate Limits
+Handling Rate Limit Responses
+API keys & credits
+Rate Limits
+Copy pageCopy page
+Learn about Tavily’s API rate limits for both  development and production environments.
+Copy pageCopy page
+We offer two types of rate limits based on the environment associated with your API key.
+Get your API key
+Create your Development or Production API keys.
+EnvironmentRequests per minute (RPM)
+Development100
+Production1,000
+​
+Crawl Endpoint Rate Limits
+The crawl endpoint has a separate rate limit that applies to both development and production keys:
+EnvironmentRequests per minute (RPM)
+Development100
+Production100
+​
+Research Endpoint Rate Limits
+The research endpoint has a separate rate limit that applies to both development and production keys for creating research tasks. Note that polling requests to retrieve the status of ongoing research tasks follow the default rate limits as decribed above.
+EnvironmentRequests per minute (RPM)
+Development20
+Production20
+​
+Usage Endpoint Rate Limits
+The usage endpoint has a separate rate limit that applies to both development and production keys:
+EnvironmentRequests per 10 minutes
+Development10
+Production10
+​
+Handling Rate Limit Responses
+When an API-key request exceeds a rate limit, the API returns 429 Too Many Requests. If the response includes Retry-After, wait the indicated number of seconds before retrying. For example:
+HTTP/2 429 Too Many Requests
+Content-Type: application/json
+Retry-After: 60
+{
+  "detail": {
+    "error": "Your request has been blocked due to excessive requests. Please reduce the rate of requests."
+  }
+}
+The 60-second delay is an example; use the value returned in the response. Error messages can vary by the limit reached; use the HTTP status and header for retry handling rather than matching the message text. Keyless access uses a different error format and separate limits.
+Access to production keys requires either an active Paid Plan or PAYGO enabled. More information can be found here.
+When using the REST API, ensure you include your API key in the header to apply the correct rate limits.
+Credits & Pricing
+Previous
+Best Practices for Search
+Next
+Tavily Docs home page
+linkedinxgithubyoutube
+ResourcesGet startedTavily Search CrawlerTavily Status
+LegalSecurity & CompliancePrivacy PolicyWebsite Terms of UsePlatform Terms of UseCookie Notice
+linkedinxgithubyoutube
+Assistant
+Responses are generated using AI and may contain mistakes.

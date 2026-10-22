@@ -1,0 +1,95 @@
+# akta.pro API Documentation
+
+- [Home](https://docs.akta.pro/home.md): Build with akta.pro
+- [akta.pro API Overview](https://docs.akta.pro/getting-started/overview.md): Introduction to the akta.pro API platform, its data products, and how to start building.
+- [akta.pro API Credits](https://docs.akta.pro/getting-started/pricing.md): Credit consumption per API, cost per credit, and plan details.
+- [akta.pro API Rate limits](https://docs.akta.pro/getting-started/rate-limits.md): Default API rate limits for akta.pro plans and endpoints
+- [Error codes](https://docs.akta.pro/getting-started/error-codes.md): Reference for API error responses and their meanings.
+- [akta.pro API Latency](https://docs.akta.pro/getting-started/performance.md): Reference latency for every akta.pro API endpoint, in p50, p90, and p99 percentiles.
+- [News Signals API Overview](https://docs.akta.pro/docs/news-signals/overview.md): Fetch news articles enriched with AI summaries, event types, sentiment, industry tags, named entities, and company mentions, scoped by company, industry, open-ended query, or any other filter.
+- [News Signals API Quickstart](https://docs.akta.pro/docs/news-signals/quick-start.md): Make your first News Signals call; all filters are optional and open-ended query is supported.
+- [News Signals API Use cases](https://docs.akta.pro/docs/news-signals/use-cases.md): Company monitoring, industry intelligence, open-ended topic monitoring, and entity tracking.
+- [News Signals API Best Practices](https://docs.akta.pro/docs/news-signals/best-practices.md): Best practices for using news api.
+- [Company Data API Overview](https://docs.akta.pro/docs/company-data/overview.md): Structured company data across 16 sections
+- [Company Data API Quickstart](https://docs.akta.pro/docs/company-data/quick-start.md): Making your first Company Data API call.
+- [Company Data API Use cases](https://docs.akta.pro/docs/company-data/use-cases.md): Usecases walkthrough - deal screening, CRM enrichment and batch enrichment.
+- [Company Data API Best Practices](https://docs.akta.pro/docs/company-data/best-practices.md): Best practices for using company data API.
+- [List Generation API Overview](https://docs.akta.pro/docs/list-generation/overview.md): Generate targeted lists of companies using open ended query or filters.
+- [List Generation API Quickstart](https://docs.akta.pro/docs/list-generation/quickstart.md): Make your first List Generation call and return a filtered list of matching companies.
+- [List Generation API Use cases](https://docs.akta.pro/docs/list-generation/use-cases.md): Usecases walkthough- Prospecting lists, companies by business model, open ended search
+- [List Generation API Best Practices](https://docs.akta.pro/docs/list-generation/best-practices.md): Best practices for using list generation API.
+- [Headcount Trends API Overview](https://docs.akta.pro/docs/alternative-data/headcount-trends/overview.md): Obtain total employee count, historical growth trends, and a functional breakdown of the workforce.
+- [Headcount Trends API Quickstart](https://docs.akta.pro/docs/alternative-data/headcount-trends/quick-start.md): Make your first Headcount Trends call and read total employees and growth rates.
+- [Headcount Trends API Use cases](https://docs.akta.pro/docs/alternative-data/headcount-trends/use-cases.md): Growth snapshots, historical trend charting, function-level breakdown, and competitive benchmarking.
+- [Website Traffic API Overview](https://docs.akta.pro/docs/alternative-data/website-traffic/overview.md): Website traffic signals — engagement metrics, historical monthly visit estimates, and a breakdown of traffic by acquisition source.
+- [Website Traffic API Quickstart](https://docs.akta.pro/docs/alternative-data/website-traffic/quick-start.md): Make your first Website Traffic call and read visits and engagement metrics.
+- [Website Traffic API Use cases](https://docs.akta.pro/docs/alternative-data/website-traffic/use-cases.md): Engagement snapshots, trend analysis, traffic channel mix, and competitive benchmarking.
+- [Job Posts API Overview](https://docs.akta.pro/docs/alternative-data/job-posts/overview.md): Live job listings — title, location, description, compensation, experience level, and extracted key skills.
+- [Job Posts API Quickstart](https://docs.akta.pro/docs/alternative-data/job-posts/quick-start.md): Make your first Job Posts call and list a company's open roles.
+- [Job Posts API Use cases](https://docs.akta.pro/docs/alternative-data/job-posts/use-cases.md): Open roles snapshots, hiring by function and location, skills demand analysis, and compensation benchmarking.
+- [Social Posts API Overview](https://docs.akta.pro/docs/alternative-data/social-posts/overview.md): Social media posts published by a company — content type, text, publish date, paid/repost flags, an AI classification, and detailed engagement metrics.
+- [Social Posts API Quickstart](https://docs.akta.pro/docs/alternative-data/social-posts/quick-start.md): Make your first Social Posts call and read post content and engagement.
+- [Social Posts API Use cases](https://docs.akta.pro/docs/alternative-data/social-posts/use-cases.md): Use cases walkthrough - Content mix by classification and format, engagement performance, and posting cadence.
+- [Employee Review API Overview](https://docs.akta.pro/docs/alternative-data/employee-reviews/overview.md): Aggregated employee review signals — overall rating, eight dimension-level scores, and more.
+- [Employee Review API Quickstart](https://docs.akta.pro/docs/alternative-data/employee-reviews/quick-start.md): Make your first Employee Reviews call and read overall and dimension-level ratings.
+- [Employee Review API Use cases](https://docs.akta.pro/docs/alternative-data/employee-reviews/use-cases.md): Aggregate sentiment snapshots, reading individual reviews, and competitive benchmarking.
+- [Product Reviews API Overview](https://docs.akta.pro/docs/alternative-data/product-reviews/overview.md): Fetch a company's full product catalog and detailed per-product reviews including ratings, star distributions, pros and cons and more.
+- [Product Reviews API Quickstart](https://docs.akta.pro/docs/alternative-data/product-reviews/quick-start.md): Make your first Product Reviews call and read a company's product catalog and ratings.
+- [Product Reviews API Use cases](https://docs.akta.pro/docs/alternative-data/product-reviews/use-cases.md): Aggregate rating snapshots, reading individual reviews, and competitive benchmarking across products.
+- [Product Reviews API Best Practices](https://docs.akta.pro/docs/alternative-data/product-reviews/best-practices.md): Best practices for using product reviews API.
+- [Company Search](https://docs.akta.pro/docs/supporting-apis/company-search.md): Resolve a company by name, website, or UUID and obtain the UUID used by other endpoints.
+- [Industry Search](https://docs.akta.pro/docs/supporting-apis/industry-search.md): Resolve an industry from a free-text query into matching industry codes ranked by similarity.
+- [Company Addition](https://docs.akta.pro/docs/supporting-apis/company-addition.md): Submit a company that isn't yet in akta.pro's database for addition; a free, asynchronous two-step endpoint tracked via the Request Status API or a webhook.
+- [Request Status](https://docs.akta.pro/docs/supporting-apis/request-status-api.md): Poll the status of an asynchronous request, such as a Company Addition request, by its request ID.
+- [Filter Builder](https://docs.akta.pro/docs/supporting-apis/filterbuilder.md): Resolve free-text filter criteria into the structured filter values accepted by List Generation endpoint.
+- [References](https://docs.akta.pro/references.md): List of resources used across API documentation
+- [MCP Setup](https://docs.akta.pro/docs/developer-tools/mcp/setup.md): Connect Claude, ChatGPT, Cursor, VS Code, Claude Code, and other MCP clients to the akta.pro MCP server at `https://mcp.akta.pro/mcp`.
+- [MCP Tools](https://docs.akta.pro/docs/developer-tools/mcp/tools.md): Reference for all synchronous MCP tools — resolve-first tools, company data, news, and Subscription/Enterprise-only alternative signal tools.
+- [MCP Credits](https://docs.akta.pro/docs/developer-tools/mcp/credits.md): Credit consumption per MCP tool call.
+- [CLI Setup](https://docs.akta.pro/docs/developer-tools/cli/setup.md): Install guide for CLI
+- [CLI Commands](https://docs.akta.pro/docs/developer-tools/cli/commands.md): Complete reference for the akta CLI
+- [CLI Credits](https://docs.akta.pro/docs/developer-tools/cli/credits.md): Credit consumption for each akta CLI command.
+- [Playground](https://docs.akta.pro/playground.md)
+- [Discord](https://docs.akta.pro/discord.md)
+- [akta.pro Website](https://docs.akta.pro/website.md)
+- [M49 Region Codes](https://docs.akta.pro/region-codes.md): List of all UN M49 region and sub-region codes
+- [Company Data Dictionary](https://docs.akta.pro/company-data-dictionary.md): Reference schema for every field returned across Akta company data sections
+- [IPTC Code List](https://docs.akta.pro/iptc-codes.md): List of all IPTC media topic codes
+- [News Types](https://docs.akta.pro/news-types.md): List of all news type tag codes used to filter news signals by category and kind
+- [NAICS Code List](https://docs.akta.pro/naics-codes.md): List of all North American Industry Classification System (NAICS) codes
+- [ISO Country Codes](https://docs.akta.pro/country-codes.md): List of all 3 letter ISO Country codes
+- [SIC Code List](https://docs.akta.pro/sic-codes.md): List of all Standard Industrial Classification (SIC) codes
+- [IAB Code List](https://docs.akta.pro/iab-codes.md): List of all IAB content taxonomy codes
+- [News Signals API](https://docs.akta.pro/api-reference/news-signals.md): Fetches news articles enriched with AI-generated summaries, event types, publisher metadata, sentiment, industry tags, company mentions and full article text.
+- [Company Data API](https://docs.akta.pro/api-reference/company-data.md): Enriches a company with firmographics, business model, headcount, traffic, funding, financials, acquisitions and investment data.
+- [List Generation API](https://docs.akta.pro/api-reference/listgen-api.md): Build targeted company lists using structured filters or natural language query, with optional data enrichment.
+- [Headcount Trends API](https://docs.akta.pro/api-reference/alternative-data/headcount-trends.md): Fetches a company's LinkedIn-sourced headcount data, including total employee count, historical growth trends, and a functional breakdown of the workforce.
+- [Website Traffic API](https://docs.akta.pro/api-reference/alternative-data/website-traffic.md): Fetches a company's website traffic signals, including engagement metrics, historical monthly visit estimates, and a breakdown of traffic by acquisition source.
+- [Job Posts API](https://docs.akta.pro/api-reference/alternative-data/job-posts.md): Fetches live LinkedIn and Indeed job listings for a company, including title, location, description, compensation, experience level, and extracted key skills.
+- [Social Posts API](https://docs.akta.pro/api-reference/alternative-data/social-posts.md): Fetches social media posts published by a company, including content type, text, publish date, paid/repost flags, an AI classification, and detailed engagement metrics.
+- [Employee Reviews API](https://docs.akta.pro/api-reference/alternative-data/employee-reviews.md): Fetches a company's employee review data including overall ratings, dimension-level ratings (culture, work-life balance, senior management and more) and individual employee reviews.
+- [Product Reviews API](https://docs.akta.pro/api-reference/alternative-data/product-reviews.md): Fetches a company's product catalog and detailed reviews per product including ratings, star distribution, pros, cons, pricing and individual review content.
+- [Company Search API](https://docs.akta.pro/api-reference/supporting-apis/company-search.md): Resolves a company by name, website or UUID and returns core identity and classification fields.
+- [Industry Search API](https://docs.akta.pro/api-reference/supporting-apis/industry-search.md): Resolves an industry from a free-text query and returns matching industry codes ranked by similarity.
+- [Company Addition API](https://docs.akta.pro/api-reference/supporting-apis/company-addition-api.md): Submits a company that is not yet in akta.pro's database to be added, returning a request ID to track, or the existing company if it is already present.
+- [Request Status API](https://docs.akta.pro/api-reference/supporting-apis/status-api.md): Returns the current status of an asynchronous request, such as a company addition request, by its request ID.
+- [Filter Builder API](https://docs.akta.pro/api-reference/supporting-apis/filter-builder.md): Convert a natural language description of target companies into a structured filters object for use with the List Generation API.
+- [Changelog](https://docs.akta.pro/changelog.md): New features, enhancements, and updates to the akta.pro API.
+- [Contact](https://docs.akta.pro/contact.md): Get in touch with Wokelo
+- [AGENTS](https://docs.akta.pro/AGENTS.md)
+- [Company Enrichment](https://docs.akta.pro/company-enrichment-1.md): Enrich a company with firmographics, go-to-market details, headcount, website traffic, funding, financials, acquisitions, and investments.
+- [Company News](https://docs.akta.pro/company-news.md): Fetch recent company news articles enriched with AI summaries, event categories, publisher metadata, sentiment, industry tags, and article text.
+- [Company News](https://docs.akta.pro/company-news-doc.md): Fetch recent company news articles enriched with AI summaries, event categories, publisher metadata, sentiment, industry tags, and article text.
+- [Employee Reviews](https://docs.akta.pro/employee-reviews-1.md): Fetch employee review ratings for a company, including overall rating, CEO approval, business outlook, recommendation score, and workplace category ratings.
+- [Industry News (coming soon)](https://docs.akta.pro/industry-news-doc.md)
+- [Product Reviews](https://docs.akta.pro/product-reviews-1.md): Fetch product-level reviews for a company, including ratings, star distributions, and individual review summaries.
+- [NAICS Code List](https://docs.akta.pro/testing-1.md): List of all North American Industry Classification System (NAICS) codes
+- [Quick Start](https://docs.akta.pro/untitled-page.md)
+
+## OpenAPI Specs
+
+- [openapi](/api-reference/openapi.json)
+- [openapi](/openapi.json)
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

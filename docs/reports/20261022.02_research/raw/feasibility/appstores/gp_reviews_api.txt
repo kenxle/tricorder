@@ -1,0 +1,351 @@
+
+      Reply to Reviews  |  Google Play Developer API  |  Google for Developers
+      Skip to main content
+    Google
+  Play Developer API
+            /
+      English
+      Deutsch
+      Español
+      Español – América Latina
+      Français
+      Indonesia
+      Italiano
+      Polski
+      Português – Brasil
+      Tiếng Việt
+      Türkçe
+      Русский
+      עברית
+      العربيّة
+      فارسی
+      हिंदी
+      বাংলা
+      ภาษาไทย
+      中文 – 简体
+      中文 – 繁體
+      日本語
+      한국어
+              Sign in
+    Guides
+    Reference
+    Samples
+    Google
+  Play Developer API
+      Guides
+      Reference
+      Samples
+Overview
+Getting Started
+Quotas
+Edits
+APKs and Tracks
+Download generated APKs
+Reply to Reviews API
+Voided Purchases API
+API Usage Instructions
+Uploading Files
+Concurrency Considerations
+Deprecated APIs
+          Home
+          Products
+          Google Play Developer API
+      Reply to Reviews
+      Stay organized with collections
+      Save and categorize content based on your preferences.
+Page Summary
+        outlined_flag
+The Google Play Developer Reply to Reviews API allows developers to view and reply to user feedback for their production apps directly or through customer support tools.
+To use the API, authorization is required through an OAuth client or service account with the "Reply to reviews" permission enabled.
+Developers can retrieve lists of recent reviews or individual reviews, and the API supports translation of review text.
+Replies to reviews can be submitted using a POST request with the reply text (up to 350 characters) in JSON format.
+The API has quotas for both GET (200 per hour) and POST (2000 per day) requests, which can be increased upon request.
+The Google Play Developer Reply to Reviews API allows you to view user feedback
+for your app and reply to this feedback. You can use this API to interact with
+users directly within your existing customer support toolkit, such as a CRM
+system.
+The Reply to Reviews API allows you to access feedback only for production
+versions of your app. If you want to see feedback on alpha or beta versions of
+your app, use the Google Play Console instead. Also, note that the API
+shows only the reviews that include comments. If a user rates your app but does
+not provide a comment, their feedback is not accessible from the API.
+Gaining Access
+To work with the Reply to Reviews API, you provide authorization using either an
+OAuth client or a service account. If you're using a service account, enable the
+"Reply to reviews" permission within this account. For more information about
+establishing authorized access to this API, see
+Setting Up API Access Clients.
+Retrieving Reviews
+When using the Reply to Reviews API, you can retrieve a list of all recent
+reviews for your app, or you can see an individual review.
+Retrieving a set of reviews
+Use the GET method to request a list of reviews for your app. In your request,
+include the fully-qualified package name for your app—such as
+com.google.android.apps.maps—and the authorization token you received when
+gaining access to the API.
+GET https://www.googleapis.com/androidpublisher/v3/applications/your_package_name/reviews?
+access_token=your_auth_token
+The response is a JSON string that contains a list of reviews for your app. The
+first result in the list shows the user comment that was most recently created
+or modified.
+In the following example, the first review shows metadata that appears in all
+results, and the second review shows metadata that appears only in some results:
+{
+  "reviews": [
+    {
+      "reviewId": "12345678",
+      "authorName": "Jane Bloggs",
+      "comments": [
+        {
+          "userComment": {
+            "text": "This is the best app ever!",
+            "lastModified": {
+              "seconds": "1443676826",
+              "nanos": 713000000
+            },
+            "starRating": 5
+          }
+        }
+      ]
+    },
+    {
+      "reviewId": "11223344",
+      "authorName": "John Doe",
+      "comments": [
+        {
+          "userComment": {
+            "text": "I love using this app!",
+            "lastModified": {
+              "seconds": "141582134",
+              "nanos": 213000000
+            },
+            "starRating": 5,
+            "reviewerLanguage": "en",
+            "device": "trltecan",
+            "androidOsVersion": 21,
+            "appVersionCode": 12345,
+            "appVersionName": "1.2.3",
+            "thumbsUpCount": 10,
+            "thumbsDownCount": 3,
+            "deviceMetadata": {
+              "productName": "E5333 (Xperia™ C4 Dual)",
+              "manufacturer": "Sony",
+              "deviceClass": "phone",
+              "screenWidthPx": 1080,
+              "screenHeightPx": 1920,
+              "nativePlatform": "armeabi-v7a,armeabi,arm64-v8a",
+              "screenDensityDpi": 480,
+              "glEsVersion": 196608,
+              "cpuModel": "MT6752",
+              "cpuMake": "Mediatek",
+              "ramMb": 2048
+            }
+          }
+        },
+        {
+          "developerComment": {
+            "text": "That's great to hear!",
+            "lastModified": {
+              "seconds": "1423101467",
+              "nanos": 813000000
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "tokenPagination": {
+    "nextPageToken": "12334566"
+  }
+}
+Each result includes the following metadata:
+reviewId
+Uniquely identifies this review. It also indicates a specific user's
+review, since users can write only one review for a particular app.
+authorName
+The name of the user who writes the review.
+  Note: In rare cases, the authorName might
+  not appear in a given result.
+comments
+A list that includes the user's feedback on the app. If this
+review includes a title, then this title and the review's body text both appear
+in the text element, and a tab character separates the title and body text.
+The lastModified element indicates the time at which the user most recently
+submitted their review.
+If you have already responded to this review, your feedback appears as the
+second element in the list of comments.
+starRating
+The user's evaluation of your app on a 1 to 5 scale. A score of 5
+indicates that the user is highly satisfied with your app.
+By default, 10 reviews appear on each page. You can display up to 100 reviews
+per page by setting the maxResults parameter in your request.
+If the list of reviews continues onto another page, the API includes a
+tokenPagination element in the response. When requesting the next page of
+reviews, include the token element. Set this element’s value to the
+nextPageToken value, which appears in the original response.
+Note: You can retrieve only the reviews that users have created
+or modified within the last week. If you want to retrieve all reviews for your
+app since the beginning of time, you can download
+your reviews as a CSV file using the Google Play Console.
+The following example of a GET request displays the next page of reviews. This
+request assumes that the current page of reviews (as shown in the response of
+the previous request) contains a nextPageToken value of "12334566". The
+request also indicates that the next page should show up to 50 reviews.
+GET https://www.googleapis.com/androidpublisher/v3/applications/your_package_name/reviews?
+access_token=your_auth_token&token=12334566&maxResults=50
+Retrieving an individual review
+You can also use the GET method to retrieve an individual review. You provide
+the same URL as the one used for
+retrieving a set of reviews, except that you
+also include the review_id corresponding to the review that you wish to see:
+GET https://www.googleapis.com/androidpublisher/v3/applications/your_package_name/reviews/
+review_id?access_token=your_auth_token
+The corresponding response is a JSON string that contains content and metadata
+for a single review:
+{
+  "reviewId": "87654321",
+  "authorName": "Joan Smith",
+  "comments": [
+    {
+      "userComment": {
+        "text": "This app is awesome!",
+        "lastModified": {
+          "seconds": "1452114723",
+          "nanos": 913000000
+        },
+        "starRating": 5
+      }
+    }
+  ]
+}
+Translating Review Text
+Review text can be automatically translated before being returned from the
+reviews API. When retrieving either a list of reviews or a single review, add
+a translationLanguage parameter to the query. For example:
+GET https://www.googleapis.com/androidpublisher/v3/applications/your_package_name/reviews?
+access_token=your_auth_token&translationLanguage=en
+The translationLanguage parameter can specify a language with or without
+country. For example, both "en" and "en_GB" are valid.
+If you specify a translation language that is different than the original
+text, the system returns the translated text in the text property and the
+original text in the originalText property. Here's an example:
+    {
+      "reviewId": "12345678",
+      "authorName": "Jane Bloggs",
+      "comments": [
+        {
+          "userComment": {
+            "text": "This is the best app ever!",
+            "lastModified": {
+              "seconds": "1443676826",
+              "nanos": 713000000
+            },
+            "starRating": 5,
+            "originalText": "Dies ist die beste App überhaupt!"
+          }
+        }
+      ]
+    }
+Replying to Reviews
+You can also engage with your app's users by replying to their reviews. After
+you submit your reply, the user receives a notification, indicating that you
+have responded to their feedback.
+We discourage the use of automated replies to reviews, with the intention of
+updating those replies manually at a later time. Also, although you can reply to
+a review as many times as you'd like, the user receives a notification only
+after the first time you reply to a created or modified review. The following
+table illustrates how the user is notified during your interactions with them:
+User-Developer Interaction
+Notification Sent to User?
+User writes review; developer submits reply
+Yes
+Developer updates reply to original review
+No
+User updates review; developer updates reply
+Yes
+Note: Because your replies to reviews appear publicly on the
+app store page, it's important that you don't include sensitive information
+about users when you write these replies.
+To submit a reply to a user review, use the POST method. In your request,
+indicate that the Content-Type is application/json, and include a JSON
+document that contains your reply:
+POST https://www.googleapis.com/androidpublisher/v3/applications/your_package_name/reviews/
+review_id:reply?access_token=your_access_token
+Content-Type: application/json
+{
+  "replyText": "Thanks for your feedback!"
+}
+Note: The replyText that you include with your
+POST request can contain at most 350 characters. You should use
+plain text in your reply; well-formed HTML tags are removed and are not
+included in the character count for your reply. The content that you place
+inside well-formed HTML tags is preserved, however.
+If your request succeeds, you receive the following JSON string as a response.
+The lastEdited element indicates the time at which the API records your reply
+to the user's review.
+{
+  "result": {
+    "replyText": "Thanks for your feedback!",
+    "lastEdited": {
+      "seconds": "1453978803",
+      "nanos": 796000000
+    }
+  }
+}
+If your POST request is invalid, however, the response displays one of the
+following error codes instead:
+400 Bad Reply Request
+The replyText is too long or is missing.
+404 Not Found
+The review with the given review_id does not exist.
+Quotas
+As a courtesy to other developers, the Reply to Reviews API enforces several
+quotas. These quotas are enforced separately on a per-app basis:
+GET requests (for retrieving lists of reviews and individual reviews) – 200
+per hour
+POST requests (for replying to reviews) – 2000 per day
+If your app needs to retrieve or reply to a higher volume of reviews than these
+quotas allow, send a
+request
+to increase your app's quota.
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-12-18 UTC.
+      [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-12-18 UTC."],[],["The Google Play Developer Reply to Reviews API allows viewing and responding to user feedback on production app versions. Access is granted via OAuth or service accounts with \"Reply to reviews\" permission.  Reviews, containing user comments and metadata, are retrieved using `GET` requests, either as a list or individually by `review_id`.  Review text can be translated. Developers can reply to reviews using `POST` requests, with a 350-character limit per reply. Quotas include 200 `GET` requests per hour and 2000 `POST` requests per day, per app.\n"]]
+Product Info
+            Terms of Service
+Related Links
+            Google Play Console
+            Get Started with Publishing
+Related APIs
+            Play Games Services
+          Android
+          Chrome
+          Firebase
+          Google Cloud Platform
+          Google AI
+          All products
+          Terms
+          Privacy
+          Manage cookies
+      English
+      Deutsch
+      Español
+      Español – América Latina
+      Français
+      Indonesia
+      Italiano
+      Polski
+      Português – Brasil
+      Tiếng Việt
+      Türkçe
+      Русский
+      עברית
+      العربيّة
+      فارسی
+      हिंदी
+      বাংলা
+      ภาษาไทย
+      中文 – 简体
+      中文 – 繁體
+      日本語
+      한국어

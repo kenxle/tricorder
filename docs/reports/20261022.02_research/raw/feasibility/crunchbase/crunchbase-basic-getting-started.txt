@@ -1,0 +1,92 @@
+Crunchbase Basic
+For AI agents: the docs index is at https://data.crunchbase.com/llms.txt. Append .md to any documentation page URL to get its markdown version.
+Jump to Content
+Getting StartedMCPAPI ReferenceAPI Starter Playbooks
+HomeGetting StartedAPI Referencev3.1v4.0 (Legacy)v4.0 (Current)Getting StartedMCPAPI ReferenceAPI Starter PlaybooksAbout UsGo to Crunchbase
+Getting Started
+Search
+About UsGo to Crunchbase
+v4.0 (Current)
+Getting StartedCrunchbase BasicCrunchbase Basic
+Crunchbase Data
+Welcome to Crunchbase Data
+Data Dictionary
+Mcp
+MCP Overview
+Getting Started with MCP
+Connecting AI Tools
+Crunchbase MCP Skills
+Managing MCP Access
+MCP Developer Reference
+Building a Crunchbase MCP Integration
+Data-Token Metering
+Reliability, Errors, and Pagination
+Known MCP Limitations
+REST API
+Make your first API request
+Understand the Crunchbase data model
+Using the API
+Using Entity Lookup API
+Get More Results from Card_id
+Examples: Entity Lookup API
+Using Search API
+Paginating through the Search API
+Examples: Search API
+Using Autocomplete API
+Examples: Autocomplete API
+Using Deleted Entities API
+API FAQs
+API Packages
+Overview
+Fundamentals
+Insights Data
+Predictions Data
+API Starter Playbooks
+Define and Pull Your ICP 
+Anticipate what’s next for your ICP-fit accounts
+Prioritize ICP predicted to experience growth
+Identify Emerging Wealth Creators
+Early Liquidity Event Prediction for Targeting & Research
+Discover Early-Stage Investment Opportunities 
+Forecast Investment Upside & Risk
+Build Market Landscapes and Streamline Workflows
+Discover Look-Alike Accounts
+Surface Competitors and Reasoning for Diligence Workflows
+Legacy API Migration Guides
+Legacy Migration Overview
+Legacy Exports
+Updating Legacy CSV Workflows
+Legacy CSV Field Mapping
+Calling API Endpoints
+CRM Enrichment
+Crunchbase Basic
+Basic Export
+Basic APIs
+Organization Attributes for Basic API
+Terms and Conditions
+License Agreement
+Data Use Addendum
+Data Access Terms
+Copy Page
+Crunchbase Basic
+🚧
+We are no longer offering our Basic API.
+If you have already generated a Basic API Key, you may still view it but you will no longer be able to regenerate new ones. If you are interested in our other API offerings, please visit our data page or talk with sales.
+There are 2 ways in which you can explore the Crunchbase Basic data:
+Exporting data in CSV Format
+Using the Rest API
+Using the Crunchbase Basic Dataset
+We encourage you to leverage this dataset to power your own applications.  There are no limitations on using the data beyond the terms and restrictions stated in the License Agreement and Data Access Terms and the below Attribution Requirements).
+Attribution Requirements
+You are required to attribute Crunchbase when using this dataset. This prompts others to contribute to Crunchbase and improves the Crunchbase database for everyone’s benefit.
+Attribution must state “Powered by Crunchbase” and be accompanied by a hyperlink to Crunchbase (http://www.crunchbase.com)
+If content being attributed is primarily about one entity, link must point to that entity on Crunchbase
+Link is in close proximity to the attributed data
+Link is visible to Internet spiders (e.g. Googlebot)
+Link does not include the “nofollow” tag"
+Updated 7 days ago 
+CRM Enrichment
+Basic Export
+Did this page help you?
+Yes
+No

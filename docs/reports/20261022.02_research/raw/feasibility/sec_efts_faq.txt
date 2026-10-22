@@ -1,0 +1,118 @@
+
+  SEC.gov | EDGAR Full Text Search FAQ
+Skip to Main Content
+            SEC.gov
+            EDGAR
+FAQ
+Other Search Tools
+Questions
+What is Full-Text Search?
+What kinds of searches can I do on Full-Text Search?
+How do I do a basic search on Full-Text Search?
+Is there an advanced search feature on Full-Text Search?
+Are wildcard searches supported?
+Can I do boolean (AND, OR, NOT, NEAR) Full-Text Searches?
+Is there an auto-complete feature available to help me quickly find an entity?
+Can I search by specific form type?
+Can I search by company name?
+Can I search by Central Index Key (CIK)?
+Can I limit my search results by date?
+How do I run a search where all my terms are included in the document?
+How do I search for an exact phrase, such as "Fiduciary Product"?
+How do I exclude a term from my results documents?
+I want to search for a proper name. Should I capitalize the name?
+The filing I was looking for did not show up at the top of the results. Why not?
+How can I make suggestions for enhancements to Full-Text Search?
+I still need help. What do I do?
+Full-Text Search Frequently Asked Questions (FAQs)
+Welcome to Full-Text Search!
+These FAQs will help you use Full-Text Search more effectively.
+We will continue to enhance this service on the basis of user feedback. Please email your comments and suggestions for improvement to textsearch@sec.gov.
+What is Full-Text Search?
+Full-Text Search will allow you to search the full text of all EDGAR filings submitted electronically since 2001. The full text of a filing includes all data in the filing itself as well as all attachments (such as exhibits) to the filing.
+What kinds of searches can I do on Full-Text Search?
+You can search by keyword, ticker, company name, CIK number, and/or reporter’s last name—individually or in combination.
+Boolean operators allow for searches where all words entered are required to be in the resulting documents, exact phrases matching, exclude terms, OR logic clauses, and wildcards. Any of these can be combined in a single search.
+Note: Natural language search capabilities are not currently supported.
+How do I do a basic search on Full-Text Search?
+Type your search in the search field and click the "Search" button. If you would like to enter a new search, click the "Clear All" button and type your new search in the search field. Your search results will be presented in a table. To view a specific document, click on the form type link (within the “Form & File” column of search results table) next to your selected document.
+Is there an advanced search feature on Full-Text Search?
+Yes. Full-Text Search provides an advanced search feature.
+To use this feature, click the "More Search Options" link below the search field. Additional optional search fields will appear, helping you further narrow your search. After you have entered information in any of these additional fields, click the "Search" button.
+When you receive your search results, click on the form type link (within the “Form & File” column of search results table) next to your selected document to view the full document.
+Are wildcard searches supported?
+Wildcard searches on stem words are supported by appending a "*" to a keyword.  The wildcard can not be used at the beginning or in the middle of a word, and is not supported in exact phrase matches or in boolean searches.
+Example—
+            gas*
+All resulting documents will contain gas or gasoline or other words beginning with gas.
+Can I do boolean (AND, OR, NOT, NEAR) Full-Text Searches?
+By default, all search words and phrases are required, so the AND command is neither required nor recognized.
+            Search terms and phrases preceded by a capitalised NOT or prefixed by a hyphen (-) must not appear the document text for it to be included in the results.
+            At least one of the search terms or phrases separated by a capitalised OR must be in the document text to appear in the results.
+Search separated by a capitalized NEAR() will return search if the two search terms are in the document and are separated by 10 words or less.  Proximities other than the default can be specified by providing an integer, as shown in the example below.
+Example 1:  Gasoline "Sacramento CA" OR "San Francisco CA"
+            All resulting documents will contain gasoline and either the phrase Sacramento CA or the phrase San Francisco CA.
+Example 2:  Gasoline NEAR(5) "San Francisco"
+            All resulting documents will contain gasoline within 5 word of the phrase San Francisco.  065453
+Is there an auto-complete feature available to help me quickly find an entity?
+Yes. Begin typing characters into the main search field. A drop-down menu appears listing entities that match the characters you have typed. The list displayed continues to refine as you enter additional characters. If you see the entity you’re looking for, click to select it and the search will be run on the selected entity.
+Can I search by specific form type?
+Yes. Click the "More Search Options" link. To limit your search to a specific form type, use the "Browse Filing Types” link above the “Filing Types” pull-down menu to select a form type from the list provided. For information about form types, click on this link.
+Can I search by company name?
+Yes. To search by company name, enter the name in the main search field and click the “Search” button.
+Can I search by Central Index Key (CIK)?
+Yes. To search by CIK, enter the CIK in the main search field and click the “Search” button. 
+Can I limit my search results by date?
+Yes—you may search by date or by date range. First, click the "More Search Options” link to expand the search form. Then use the “date range” drop-down to select a pre-determined range. Options include:
+“All (since 2001)”
+“Last 5 Years”
+“Last Year”
+“Last 30 Days” or
+“Custom”
+To search using a custom date range, type the earlier date in the "Start Date" and the later date in the "End Date" boxes. Remember to type the date in the format shown, i.e., yyyy-mm-dd.
+How do I run a search where all my terms are included in the document?
+EDGAR Full Text Search uses an implied AND Boolean operator between query terms, so there’s no need to enter AND in the query. To narrow your search by telling the search system that all terms must be contained anywhere in a document and in any order in the document (but not necessarily in the same sentence or paragraph), enter the terms in the search field. The terms are treated as if there is an AND between them.
+Example—
+		  Software hardware
+All resulting documents will contain software and hardware anywhere in the document content.  Also see Boolean Searches for additional search commands.
+How do I search for an exact phrase, such as "Fiduciary Product"?
+Enter the exact phrase in quotation marks to tell the system to find all the words and in the exact order
+Example—
+		  "Fiduciary Product"
+The use of quotation marks will find documents containing the exact phrase "Securities and Exchange Commission." The exact words have to be in the document, and they have to be in the specified order.
+How do I exclude a term from my results documents?
+By using a - (hyphen or dash) or the capitalized NOT keyword immediately preceding a query term, you can tell the search system that terms must not be contained anywhere in a document.
+Example—
+          software -hardware
+All resulting documents will contain software, but not hardware, anywhere in the document content.
+Also see boolean searches for additional options.
+I want to search for a proper name. Should I capitalize the name?
+No, search is case insensitive, so capitalization will not impact relevancy. 
+For example, “Department of Energy” is the same search as “department of energy.”
+The filing I was looking for did not show up at the top of the results. Why not?
+After you click "Search," the results returned by the search engine based on how relevant the document is to the query and applied search criteria. For example, if the user searches on a term and that term is found multiple times in the document content and multiple metadata fields, it considers that document to be more relevant to the query term than a document that only has that term once.
+You can narrow the results by adding new search terms, selecting a form type, or selecting a date range for the filing.
+How can I make suggestions for enhancements to Full-Text Search?
+We welcome your feedback. Please send your ideas and suggestions to textsearch@sec.gov.
+I still need help. What do I do?
+Send an email to textsearch@sec.gov, telling us what you're trying to find and how you've been searching for it.
+      Top
+            Accessibility
+            Budget & Performance
+            Careers
+            Contact
+            Contracts
+            Data
+            FOIA
+            Inspector General
+            Investor.gov
+            No FEAR Act & EEO Data
+            Ombudsman
+            Plain Writing
+            Privacy
+             Related Sites
+            Site Map
+            USA.gov
+            Votes
+            Vulnerability Disclosure Policy
+            Whistleblower Protection

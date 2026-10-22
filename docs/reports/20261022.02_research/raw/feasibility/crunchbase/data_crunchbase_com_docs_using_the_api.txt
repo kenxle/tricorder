@@ -1,0 +1,137 @@
+Using the API
+For AI agents: the docs index is at https://data.crunchbase.com/llms.txt. Append .md to any documentation page URL to get its markdown version.
+Jump to Content
+Getting StartedMCPAPI ReferenceAPI Starter Playbooks
+HomeGetting StartedAPI Referencev3.1v4.0 (Legacy)v4.0 (Current)Getting StartedMCPAPI ReferenceAPI Starter PlaybooksAbout UsGo to Crunchbase
+Getting Started
+Search
+About UsGo to Crunchbase
+v4.0 (Current)
+Getting StartedUsing the APIUsing the API
+Crunchbase Data
+Welcome to Crunchbase Data
+Data Dictionary
+Mcp
+MCP Overview
+Getting Started with MCP
+Connecting AI Tools
+Crunchbase MCP Skills
+Managing MCP Access
+MCP Developer Reference
+Building a Crunchbase MCP Integration
+Data-Token Metering
+Reliability, Errors, and Pagination
+Known MCP Limitations
+REST API
+Make your first API request
+Understand the Crunchbase data model
+Using the API
+Using Entity Lookup API
+Get More Results from Card_id
+Examples: Entity Lookup API
+Using Search API
+Paginating through the Search API
+Examples: Search API
+Using Autocomplete API
+Examples: Autocomplete API
+Using Deleted Entities API
+API FAQs
+API Packages
+Overview
+Fundamentals
+Insights Data
+Predictions Data
+API Starter Playbooks
+Define and Pull Your ICP 
+Anticipate what’s next for your ICP-fit accounts
+Prioritize ICP predicted to experience growth
+Identify Emerging Wealth Creators
+Early Liquidity Event Prediction for Targeting & Research
+Discover Early-Stage Investment Opportunities 
+Forecast Investment Upside & Risk
+Build Market Landscapes and Streamline Workflows
+Discover Look-Alike Accounts
+Surface Competitors and Reasoning for Diligence Workflows
+Legacy API Migration Guides
+Legacy Migration Overview
+Legacy Exports
+Updating Legacy CSV Workflows
+Legacy CSV Field Mapping
+Calling API Endpoints
+CRM Enrichment
+Crunchbase Basic
+Basic Export
+Basic APIs
+Organization Attributes for Basic API
+Terms and Conditions
+License Agreement
+Data Use Addendum
+Data Access Terms
+Copy Page
+Using the API
+Build applications and integrate Crunchbase data into your workflows with the REST API. The Crunchbase API is a read-only RESTful service for approved developers.
+See the API Reference for endpoint details and example responses.
+Accessing the REST API
+API access is available through the Crunchbase sales team. If you already have access, retrieve your provisioned key from Crunchbase API integrations and select Show Key. If you cannot locate it, contact [email protected].
+Your key grants access to your licensed fields and collections. See API Packages Overview for the package-to-reference mapping. Crunchbase Basic licensees should use Using the Basic API.
+For a guided walkthrough, start with Make your first API request.
+Authentication
+Include your API key with every request. The recommended method is the X-cb-user-key request header:
+HTTP
+GET /v4/data/entities/organizations/crunchbase HTTP/1.1
+Host: api.crunchbase.com
+X-cb-user-key: INSERT_YOUR_API_KEY_HERE
+Accept: application/json
+The equivalent cURL request is:
+Bash
+curl --request GET 'https://api.crunchbase.com/v4/data/entities/organizations/crunchbase' \
+  --header 'X-cb-user-key: INSERT_YOUR_API_KEY_HERE' \
+  --header 'Accept: application/json'
+The API also accepts the user_key query parameter:
+Text
+https://api.crunchbase.com/v4/data/entities/organizations/crunchbase?user_key=INSERT_YOUR_API_KEY_HERE
+Prefer the header method because URLs can appear in browser history, logs, and monitoring systems. Keep API keys out of source control and redact them from logs and support messages.
+Your API key identifies your access and is used to enforce applicable limits and quotas. Missing or invalid credentials, exceeded limits, and exhausted quotas can result in errors.
+HTTPS and API base URL
+All API requests require HTTPS. Requests without HTTPS return HTTP 426 Upgrade Required.
+The API base URL is:
+Text
+https://api.crunchbase.com/v4/data/
+Request limits and retries
+Each Crunchbase Enterprise API key has two independent limits:
+LimitMaximum
+Request rate200 requests per minute per key
+Concurrency3 requests in progress at the same time per key
+You can reach the concurrency limit even when you are below the per-minute limit. For example, if you send 10 requests simultaneously and they overlap, up to seven could receive an HTTP 429 Too Many Requests response because of the concurrency limit.
+The API can also return HTTP 429 during periods of high platform load, even when your key is within both limits. This protects platform stability and is separate from your key’s usage limits.
+Stay within both limits
+Allow no more than three requests in progress across all workers using the same API key. Use a shared worker pool or semaphore, and queue additional requests.
+Separately control the request rate to stay within 200 requests per minute. A concurrency limit alone does not enforce this limit.
+For large jobs, spread requests steadily rather than sending bursts. Include retries in your request-rate budget.
+Handle HTTP 429 responses
+If a response includes a Retry-After header, wait at least that long before retrying. Otherwise, use exponential backoff—for example, wait 1 second, then 2 seconds, then 4 seconds—with a small random delay added to each wait.
+Send retries through the same rate and concurrency controls as other requests. Limit retries by attempt count or elapsed time. If HTTP 429 responses persist, pause the job and contact your Customer Success Manager with the request timestamps and redacted error details. Never include your API key.
+These limits apply to the Crunchbase Enterprise REST API. Do not assume they also apply to MCP connections.
+Collections
+Use the endpoint type that fits your workflow:
+Retrieve a specific entity: use the Entity Lookup API.
+Search for entities or page through matching records: use the Search API.
+Find suggested entities by name: use the Autocomplete API.
+Terms and attribution for using the API
+We encourage you to leverage the API for your internal business and research needs. Unless otherwise noted in your license (see License Agreement and Data Access Terms), you may not license, sublicense, sell, offer to sell, distribute or otherwise provide any of the Crunchbase data to any third parties.
+Attribution requirements
+When sharing information about the data, follow these attribution requirements:
+Attribution must be accompanied by a hyperlink to Crunchbase.
+If the content being attributed is primarily about one entity, the link must point to that entity on Crunchbase.
+The link must be plainly visible to the end user.
+The link must be in close proximity to the attributed data.
+The link must be visible to Internet spiders (e.g. Googlebot).
+The link cannot include the “nofollow” tag.
+Updated 7 days ago 
+What’s Next
+Using Entity Lookup API
+Using Search API
+Using Autocomplete API
+Did this page help you?
+Yes
+No
