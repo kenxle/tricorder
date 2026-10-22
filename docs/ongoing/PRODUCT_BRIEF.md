@@ -80,7 +80,7 @@ The user stories that turn these jobs into features are in [USER_STORIES.md](USE
 ## The principles for choosing methods
 
 1. **Every claim links to its source.** A claim without a source a person can open does not reach the readout.
-2. **Green and red flags first, then strong and weak pieces alike, with gaps shown as gaps.** A piece looks strong when two independent sources agree on its number. A missing fact is never filled with a guess.
+2. **Identify strengths, weaknesses, and gaps and call them out.** A piece looks strong when two independent sources agree on its number. A missing fact is never filled with a guess.
 3. **A script's check beats a model's reading.** The script decides that a number is wrong. The model reads only what a script cannot, such as a contract clause or a spoken number.
 4. **No real company's confidential data.** Every room is synthetic. A room under a real company's name is labelled synthetic on every page, and its planted problems are named test plants.
 5. **Nothing is scraped against a site's terms.** No LinkedIn scraping. Reddit only from pages a person saved by hand. Official APIs wherever they exist.
