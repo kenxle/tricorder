@@ -91,31 +91,31 @@ First-person regret stories are rare in public. Investors write the lesson more 
 
 Ordered by the highest layer with evidence (pay, then do, then say), per [voc_counts.py](voc_counts.py). Within a layer, the persona with more rows comes first. Row numbers point to the quotes table.
 
-**1. Partner or principal at a seed or Series A fund. Highest layer: pay, inferred.**
+**1. Partner or principal at a seed or Series A fund.**
 - Problem, in their words: "When burn or revenue differs between the deck, the model and the accounting records, the gap suggests carelessness or something worse, and either reading damages the deal." ([seed fund guide, Aug 2026](https://www.crv.com/content/what-is-a-data-room))
 - Say: ARR is the riskiest metric (row 31). Founders cannot explain their own metrics (row 23).
 - Do: two or three customer calls and a cursory model review before the term sheet (rows 12, 13). One partner built his own AI tool (row 27).
 - Pay: a commercial data-room-to-memo tool (row 25) and data seats (row 67). Both come from a vendor or a roundup, not the buyers' own posts, so the pay rating is inferred.
 
-**2. Solo angel. Highest layer: pay.**
+**2. Solo angel.**
 - Problem, in their words: "I don't have the time nor skills to do proper due diligence, but with YC I don't have to." ([angel, Jan 2022](https://news.ycombinator.com/item?id=30130146))
 - Say: missed red flags and fake books (rows 50, 51).
 - Do: waits for a lead, splits diligence with co-investors, sizes diligence to the check (rows 45 to 47).
 - Pay: gives up upside to YC (row 44), becomes an LP instead (row 53). This is paying to avoid diligence. It is a warning for pricing.
 
-**3. Accelerator screener. Highest layer: do.**
+**3. Accelerator screener.**
 - Problem, in their words: "A human takes around four minutes to screen each application. That’s 24 full working days for one person–a huge time investment for a lean, non-profit team, even when the work is split between several staff members." ([challenge program, mid-2025, inferred](https://solve.mit.edu/articles/how-ai-helped-us-screen-applications-in-half-the-time))
 - Say: partners read about 100 applications a day (row 56).
 - Do: built a ChatGPT triage tool (row 61), recruited alumni readers (row 59).
 - Pay: no evidence found.
 
-**4. Associate at a seed fund. Highest layer: do.**
+**4. Associate at a seed fund.**
 - Problem, in their words: "Before I even open your data room, I already have ten tabs up. I’m checking your traffic, reviews, investors, any co-founder issues, and whether your story matches what’s online." ([associate, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal))
 - Say: a messy room cost weeks (row 5).
 - Do: manual web checks, Notion as a CRM, phone calls (rows 1, 6, 7).
 - Pay: none. The associate is Tricorder's user; the partner is its buyer.
 
-**5. Corporate VC. Highest layer: say.**
+**5. Corporate VC.**
 - Problem, in their words: "In addition to the standard diligence items, CVCs will spend more time validating areas of strategic overlap between the startup and the CVC’s corporate parent." ([corporate VC, Apr 2024](https://tdk-ventures.com/?p=2035))
 - Two rows, both from one firm's report. Too thin to design for.
 
