@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checklist Coverage Prototype</title>
+<style>
+/* Neutral, token-based. The style guide is not chosen yet; swap these tokens for it. */
+:root {
+  --bg: #f7f7f5; --surface: #ffffff; --surface-2: #f0f0ed; --border: #dcdcd6;
+  --text: #1d1d1b; --text-2: #5a5a55; --text-3: #8a8a84;
+  --accent: #2f5d8a; --accent-soft: #e3ecf5;
+  --st-checked: #2e6b45; --st-checked-bg: #e2f0e6;
+  --st-found: #2f5d8a; --st-found-bg: #e3ecf5;
+  --st-missing: #8a5a12; --st-missing-bg: #f6ead6;
+  --st-notchecked: #5a5a55; --st-notchecked-bg: #ececea;
+  --st-notexpected: #8a8a84; --st-notexpected-bg: #f4f4f2;
+  --new: #2e6b45; --warn-bg: #fff6e0; --warn-border: #e8cf8f;
+  --radius: 8px; --gap: 16px; --font: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161615; --surface: #1f1f1e; --surface-2: #2a2a28; --border: #3a3a37;
+    --text: #ecece8; --text-2: #b4b4ae; --text-3: #85857f;
+    --accent: #8db6dd; --accent-soft: #23313f;
+    --st-checked: #8fd1a6; --st-checked-bg: #1f3327;
+    --st-found: #8db6dd; --st-found-bg: #23313f;
+    --st-missing: #e7b866; --st-missing-bg: #3a2d16;
+    --st-notchecked: #b4b4ae; --st-notchecked-bg: #2c2c2a;
+    --st-notexpected: #85857f; --st-notexpected-bg: #242422;
+    --new: #8fd1a6; --warn-bg: #2f2814; --warn-border: #6b5a2a;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #161615; --surface: #1f1f1e; --surface-2: #2a2a28; --border: #3a3a37;
+  --text: #ecece8; --text-2: #b4b4ae; --text-3: #85857f;
+  --accent: #8db6dd; --accent-soft: #23313f;
+  --st-checked: #8fd1a6; --st-checked-bg: #1f3327;
+  --st-found: #8db6dd; --st-found-bg: #23313f;
+  --st-missing: #e7b866; --st-missing-bg: #3a2d16;
+  --st-notchecked: #b4b4ae; --st-notchecked-bg: #2c2c2a;
+  --st-notexpected: #85857f; --st-notexpected-bg: #242422;
+  --new: #8fd1a6; --warn-bg: #2f2814; --warn-border: #6b5a2a;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 var(--font); }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 16px; }
+.banner { background: var(--warn-bg); border: 1px solid var(--warn-border); border-radius: var(--radius); padding: 10px 14px; font-size: 14px; }
+h1 { font-size: 22px; margin: 18px 0 4px; }
+h2 { font-size: 17px; margin: 0 0 10px; }
+.sub { color: var(--text-2); margin: 0 0 14px; }
+.controls { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; }
+.ctl-label { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--text-3); margin-right: 6px; }
+.seg { display: inline-flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+.seg button { background: var(--surface); color: var(--text); border: 0; border-right: 1px solid var(--border); padding: 6px 12px; font: inherit; cursor: pointer; }
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--surface); }
+.seg button:focus-visible, button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.stage-note { font-size: 13px; color: var(--text-2); }
+.stage-note.override { color: var(--st-missing); }
+.linkbtn { background: none; border: 0; color: var(--accent); cursor: pointer; font: inherit; padding: 0; text-decoration: underline; }
+.grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: var(--gap); margin-top: var(--gap); }
+@media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; min-width: 0; }
+.counts { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.count { border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; background: var(--surface); cursor: pointer; font: inherit; color: var(--text); text-align: left; }
+.count b { display: block; font-size: 20px; line-height: 1.1; }
+.count span { font-size: 12px; color: var(--text-2); }
+.count[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.bar { display: flex; height: 10px; border-radius: 5px; overflow: hidden; background: var(--surface-2); margin: 4px 0 6px; }
+.bar i { display: block; height: 100%; }
+.legend-note { font-size: 12px; color: var(--text-3); margin: 0 0 12px; }
+details.group { border-top: 1px solid var(--border); }
+details.group summary { cursor: pointer; padding: 8px 2px; display: flex; justify-content: space-between; gap: 8px; list-style: none; }
+details.group summary::-webkit-details-marker { display: none; }
+details.group summary .gname { font-weight: 600; }
+details.group summary .gcount { font-size: 12px; color: var(--text-2); white-space: nowrap; }
+.item { display: grid; grid-template-columns: 46px minmax(0, 1fr) auto; gap: 8px; padding: 7px 2px; border-top: 1px dashed var(--border); align-items: start; }
+.item .id { font: 12px var(--mono); color: var(--text-3); padding-top: 2px; }
+.item .name { font-size: 14px; }
+.item .detail { font-size: 12px; color: var(--text-2); margin-top: 2px; overflow-wrap: anywhere; }
+.pill { font-size: 12px; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.s-checked { color: var(--st-checked); background: var(--st-checked-bg); }
+.s-found { color: var(--st-found); background: var(--st-found-bg); }
+.s-missing { color: var(--st-missing); background: var(--st-missing-bg); }
+.s-not_checked { color: var(--st-notchecked); background: var(--st-notchecked-bg); }
+.s-not_expected { color: var(--st-notexpected); background: var(--st-notexpected-bg); }
+.tag { font-size: 11px; border: 1px solid var(--border); border-radius: 4px; padding: 0 5px; color: var(--text-2); margin-left: 4px; white-space: nowrap; }
+.ask-group { margin-top: 12px; }
+.ask-group h3 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--text-3); margin: 0 0 4px; }
+.ask { padding: 8px 0; border-top: 1px solid var(--border); }
+.ask.flash { animation: flash 1.6s ease-out; }
+@keyframes flash { from { background: var(--accent-soft); } to { background: transparent; } }
+@media (prefers-reduced-motion: reduce) { .ask.flash { animation: none; background: var(--accent-soft); } }
+.ask .what { font-size: 14px; }
+.ask .why { font-size: 12px; color: var(--text-2); margin-top: 2px; overflow-wrap: anywhere; }
+.ask .meta { margin-top: 3px; }
+.ask.new .what::before { content: "New at this stage. "; color: var(--new); font-weight: 600; }
+.diff { font-size: 13px; background: var(--surface-2); border-radius: 6px; padding: 8px 10px; margin-bottom: 10px; }
+.diff ul { margin: 4px 0 0 18px; padding: 0; }
+.toolbar { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+button.primary { background: var(--accent); color: var(--surface); border: 0; border-radius: 6px; padding: 6px 12px; font: inherit; cursor: pointer; }
+.status-msg { font-size: 13px; color: var(--text-2); min-height: 1.5em; }
+.unknown { text-align: center; padding: 30px 10px; }
+.unknown .seg { margin-top: 10px; }
+footer { color: var(--text-3); font-size: 12px; margin: 24px 0 8px; }
+code { font: 12px var(--mono); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="banner" role="note"><b>Synthetic data. Prototype.</b> Hollis Voice is a made-up company; every file in its room is test data. "Checked" is projected: no scan has run. A check row reads "checked" here when its FRAMEWORKS entry exists and every file it reads is in the room. Data is the spike's real output, inlined.</div>
+  <h1>Coverage and ask list</h1>
+  <p class="sub">The end of the readout: what the room holds for the company's stage, and what to ask the founder for.</p>
+
+  <div class="controls">
+    <div><span class="ctl-label">Room</span>
+      <span class="seg" id="room-seg" role="group" aria-label="Room">
+        <button data-room="seed_drop" aria-pressed="true">Seed drop (12 files)</button>
+        <button data-room="full_room" aria-pressed="false">Full room (17 files)</button>
+      </span></div>
+    <div><span class="ctl-label">Stage</span>
+      <span class="seg" id="stage-seg" role="group" aria-label="Company stage">
+        <button data-stage="pre_seed" aria-pressed="false">Pre-seed</button>
+        <button data-stage="seed" aria-pressed="false">Seed</button>
+        <button data-stage="series_a" aria-pressed="true">Series A</button>
+      </span></div>
+    <div class="stage-note" id="stage-note" aria-live="polite"></div>
+    <div><button class="linkbtn" id="sim-unknown">Show the "stage unknown" state</button></div>
+  </div>
+
+  <div class="grid" id="main">
+    <section class="card" aria-labelledby="cov-h">
+      <h2 id="cov-h">Coverage</h2>
+      <div class="counts" id="counts"></div>
+      <div class="bar" id="bar" aria-hidden="true"></div>
+      <p class="legend-note" id="legend-note"></p>
+      <div id="groups"></div>
+    </section>
+    <section class="card" aria-labelledby="ask-h">
+      <div class="toolbar">
+        <h2 id="ask-h" style="margin:0">Ask the founder</h2>
+        <button class="primary" id="copy">Copy as email text</button>
+      </div>
+      <div class="status-msg" id="copy-msg" aria-live="polite"></div>
+      <div id="diff"></div>
+      <div id="asks"></div>
+    </section>
+  </div>
+  <section class="card unknown" id="unknown" hidden>
+    <h2>Pick the company's stage</h2>
+    <p class="sub" id="unknown-reason"></p>
+    <p class="sub">Coverage and the ask list depend on the stage. Tricorder does not guess it.</p>
+    <span class="seg" role="group" aria-label="Pick a stage">
+      <button data-pick="pre_seed">Pre-seed</button><button data-pick="seed">Seed</button><button data-pick="series_a">Series A</button>
+    </span>
+  </section>
+
+  <footer>Built by <code>docs/features/20261022.13_checklist_coverage/spike/run_all.sh</code> from <code>docs/ongoing/checklist.csv</code> and <code>data_room/</code>. Ask text comes from each document guide's "If it is missing" line in <code>docs/reports/20261022.03_document_guides/</code>. The seed drop's four scan gaps are hand-written from FRAMEWORKS.md, "Ask list", worked example, to show dedupe before any scan runs.</footer>
+</div>
+<script>
+const DATA = /*__DATA__*/null;
+const STAGE_NAMES = { pre_seed: "Pre-seed", seed: "Seed", series_a: "Series A" };
+const STATUS = [
+  ["checked", "Checked", "--st-checked"], ["found", "Found", "--st-found"], ["missing", "Missing", "--st-missing"],
+  ["not_checked", "Not checked yet", "--st-notchecked"], ["not_expected", "Not expected at this stage", "--st-notexpected"],
+];
+const PIECE_NAMES = {
+  traction_and_revenue: "Traction and revenue", retention: "Retention", burn_and_runway: "Burn and runway",
+  unit_economics: "Unit economics", customers: "Customers", market: "Market", comps: "Comps", team: "Team",
+  the_pitch_itself: "The pitch itself", null: "Company records (no readout piece yet)",
+};
+const PIECE_ORDER = ["traction_and_revenue", "retention", "burn_and_runway", "unit_economics", "customers", "market", "comps", "team", "the_pitch_itself", null];
+const state = { room: "seed_drop", stage: DATA.deck_stage.stage, filter: "missing", prev: null, unknown: false };
+
+const $ = (s) => document.querySelector(s);
+const esc = (t) => String(t ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const run = () => DATA[`${state.room}:${state.stage}`];
+const askKey = (a) => `${a.checklist_id}|${a.what}`;
+
+function render() {
+  const unknown = state.unknown;
+  $("#main").hidden = unknown; $("#unknown").hidden = !unknown;
+  document.querySelectorAll("#stage-seg button").forEach((b) => b.setAttribute("aria-pressed", String(!unknown && b.dataset.stage === state.stage)));
+  document.querySelectorAll("#room-seg button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.room === state.room)));
+  const deck = DATA.deck_stage;
+  const note = $("#stage-note");
+  if (unknown) {
+    $("#unknown-reason").textContent = DATA.stage_unknown.label_reason + " (Simulated: the spike was run with --stage series_b.)";
+    note.textContent = "Stage unknown."; note.className = "stage-note override"; return;
+  }
+  if (state.stage === deck.stage) {
+    note.innerHTML = `From the deck: <b>${esc(deck.source.quote.replace(/\s*\|$/, ""))}</b>, ${esc(deck.source.uri)}, ${esc(deck.source.locator)}.`;
+    note.className = "stage-note";
+  } else {
+    note.innerHTML = `Set by you. The deck says ${esc(STAGE_NAMES[deck.stage])}. <button class="linkbtn" id="reset-stage">Use the deck's stage</button>`;
+    note.className = "stage-note override";
+    $("#reset-stage").onclick = () => setStage(deck.stage);
+  }
+  renderCoverage(run()); renderAsks(run());
+}
+
+function renderCoverage(d) {
+  const c = d.counts;
+  const expected = c.expected;
+  $("#counts").innerHTML = STATUS.map(([k, label]) =>
+    `<button class="count" data-filter="${k}" aria-pressed="${state.filter === k}"><b>${c[k]}</b><span>${label}</span></button>`).join("") +
+    `<button class="count" data-filter="all" aria-pressed="${state.filter === "all"}"><b>${c.items}</b><span>All items</span></button>`;
+  $("#bar").innerHTML = STATUS.slice(0, 4).map(([k, , v]) => `<i style="width:${(100 * c[k] / expected).toFixed(2)}%;background:var(${v})" title="${k}"></i>`).join("");
+  $("#legend-note").textContent = `${expected} of ${c.items} checklist items are expected at ${STAGE_NAMES[d.stage]} (${c.expected_yes} expected, ${c.expected_lighter} if the company has them). The bar shows those ${expected}. ${c.checked_projected} "checked" are projected. Counts from coverage_spike.py.`;
+  document.querySelectorAll(".count").forEach((b) => b.onclick = () => { state.filter = b.dataset.filter; renderCoverage(run()); });
+  const groups = {};
+  d.coverage.forEach((r) => { (groups[r.checklist_piece] ||= []).push(r); });
+  $("#groups").innerHTML = Object.entries(groups).map(([piece, rows]) => {
+    const shown = rows.filter((r) => state.filter === "all" || r.status === state.filter);
+    if (!shown.length) return "";
+    const miss = rows.filter((r) => r.status === "missing").length;
+    return `<details class="group" ${state.filter !== "all" ? "open" : ""}><summary><span class="gname">${esc(piece[0].toUpperCase() + piece.slice(1))}</span><span class="gcount">${shown.length} shown, ${miss} missing</span></summary>${shown.map(itemRow).join("")}</details>`;
+  }).join("") || `<p class="sub">No item has this status.</p>`;
+  document.querySelectorAll("[data-goto]").forEach((a) => a.onclick = (e) => { e.preventDefault(); gotoAsk(a.dataset.goto); });
+}
+
+function itemRow(r) {
+  const label = STATUS.find(([k]) => k === r.status)[1];
+  let detail = "";
+  if (r.status === "found") detail = `In the room: ${r.found_in.slice(0, 3).map(esc).join(", ")}${r.found_in.length > 3 ? ", ..." : ""}${r.found_note ? ` (${esc(r.found_note)})` : ""}`;
+  else if (r.status === "checked") detail = `Would be checked by ${esc(r.check_entry)}. Not run.`;
+  else if (r.status === "missing" && r.kind === "check") detail = `Cannot run: needs ${r.missing_inputs.map(esc).join(", ")}, not in the room.`;
+  else if (r.status === "missing" && r.kind === "ask") detail = "Only the founder can give this.";
+  else if (r.status === "missing") detail = "Not in the room.";
+  else if (r.status === "not_checked") detail = r.found_note ? `Cannot run: ${esc(r.found_note)}.` : "No check is built for this item yet.";
+  else detail = `Expected at this stage: ${esc(r.expected)}.`;
+  const ask = r.ask ? ` <a href="#${r.ask}" data-goto="${r.ask}">Asked in ${r.ask.replace("ask-", "line ")}</a>` : "";
+  const lighter = r.expected === "lighter" ? `<span class="tag">if they have it</span>` : "";
+  return `<div class="item"><span class="id">${esc(r.item_id)}</span><div><div class="name">${esc(r.item)}<span class="tag">${esc(r.kind)}</span>${lighter}</div><div class="detail">${detail}${ask}</div></div><span class="pill s-${r.status}">${label}</span></div>`;
+}
+
+function renderAsks(d) {
+  const prev = state.prev && DATA[state.prev];
+  const prevKeys = prev ? new Set(prev.asks.map(askKey)) : null;
+  const nowKeys = new Set(d.asks.map(askKey));
+  let diff = "";
+  if (prev && state.prev !== `${state.room}:${state.stage}`) {
+    const added = d.asks.filter((a) => !prevKeys.has(askKey(a)));
+    const removed = prev.asks.filter((a) => !nowKeys.has(askKey(a)));
+    const [pr, ps] = state.prev.split(":");
+    const from = pr === state.room ? STAGE_NAMES[ps] : `the ${pr === "seed_drop" ? "seed drop" : "full room"}`;
+    diff = `<div class="diff" role="status">Compared with ${esc(from)}: ${added.length} line${added.length === 1 ? "" : "s"} added, ${removed.length} removed.` +
+      (removed.length ? `<ul>${removed.map((a) => `<li>No longer asked: ${esc(short(a.what))}${a.checklist_id ? ` (${a.checklist_id})` : ""}</li>`).join("")}</ul>` : "") + `</div>`;
+  }
+  if (d.suppressed_asks && d.suppressed_asks.length) {
+    diff += `<div class="diff">Not asked at ${STAGE_NAMES[d.stage]}, because the stage does not expect it: ${d.suppressed_asks.map((s) => esc(s.gap.replace("Not in the room: ", "")) + ` (${s.covers.join(", ")})`).join("; ")}. The gap still shows in the readout.</div>`;
+  }
+  $("#diff").innerHTML = diff;
+  const by = {};
+  d.asks.forEach((a) => (by[a.piece] ||= []).push(a));
+  $("#asks").innerHTML = `<p class="sub">${d.counts.ask_lines} lines: ${d.counts.ask_lines_required} to ask for, ${d.counts.ask_lines_if_you_have_it} "if you have it", ${d.counts.ask_lines_after_term_sheet} after the term sheet. ${d.counts.duplicate_requests} repeated requests.</p>` +
+    PIECE_ORDER.filter((p) => by[p]).map((p) => `<div class="ask-group"><h3>${esc(PIECE_NAMES[p])}</h3>${by[p].map((a) => {
+      const isNew = prevKeys && state.prev !== `${state.room}:${state.stage}` && !prevKeys.has(askKey(a));
+      const tags = [a.from_kind === "gap" ? "from a scan gap" : "from the checklist", a.if_you_have_it ? "if you have it" : "", a.ask_stage === "after_term_sheet" ? "after the term sheet" : ""].filter(Boolean)
+        .map((t) => `<span class="tag">${t}</span>`).join("");
+      return `<div class="ask${isNew ? " new" : ""}" id="${a.id}"><div class="what"><b>Ask for:</b> ${esc(a.what)}</div><div class="why">Why: ${esc(a.why)}</div><div class="meta">${tags}<span class="tag">covers ${a.covers.map(esc).join(", ") || "none"}</span></div></div>`;
+    }).join("")}</div>`).join("");
+}
+
+const short = (t) => (t.length > 90 ? t.slice(0, 87) + "..." : t);
+
+function gotoAsk(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center" });
+  el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");
+}
+
+function setStage(s) { state.prev = `${state.room}:${state.stage}`; state.stage = s; state.unknown = false; render(); }
+function setRoom(r) { state.prev = `${state.room}:${state.stage}`; state.room = r; state.unknown = false; render(); }
+
+document.querySelectorAll("#stage-seg button").forEach((b) => b.onclick = () => setStage(b.dataset.stage));
+document.querySelectorAll("#room-seg button").forEach((b) => b.onclick = () => setRoom(b.dataset.room));
+document.querySelectorAll("[data-pick]").forEach((b) => b.onclick = () => setStage(b.dataset.pick));
+$("#sim-unknown").onclick = () => { state.unknown = true; render(); };
+$("#copy").onclick = async () => {
+  const d = run();
+  const lines = d.asks.filter((a) => a.ask_stage !== "after_term_sheet").map((a, i) => `${i + 1}. ${a.what}${a.if_you_have_it && !/^if /i.test(a.what) ? " (if you have it)" : ""}`);
+  const text = `Thanks for sharing the room. Could you send these when you can?\n\n${lines.join("\n")}`;
+  try { await navigator.clipboard.writeText(text); $("#copy-msg").textContent = `Copied ${lines.length} lines. Lines for after the term sheet are left out.`; }
+  catch (e) { $("#copy-msg").textContent = "Copy was blocked by the browser. Select the lines by hand."; }
+};
+render();
+</script>
+</body>
+</html>
