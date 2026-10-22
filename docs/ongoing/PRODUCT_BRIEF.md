@@ -40,7 +40,7 @@ The firm buys it, per seat. The evidence behind both personas is in [PERSONAS.md
 
 ## The problem
 
-The organisers' statement, from VCs they spoke to: a first pass "still takes an associate days of pulling data, rebuilding numbers from a messy data room and spotting what does not add up" ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt)). The voice-of-the-customer research's public sources say the same thing four ways.
+A first pass on a startup takes days, and most of that time goes to finding the numbers and checking that they hold up. Four problems stand out in what investors say:
 
 - **The red flags investors name most are ARR that is not really recurring, then numbers that disagree.** In the voice-of-the-customer research's quotes, ARR comes up in 9 rows from 6 sources, and disagreeing numbers in 5 rows from 3 sources ([red_flag_counts.py](../reports/20261022.02_research/red_flag_counts.py)). The two overlap: padded ARR usually shows as a deck that disagrees with the billing. On disagreement, a seed and Series A fund's guide: "When burn or revenue differs between the deck, the model and the accounting records, the gap suggests carelessness or something worse, and either reading damages the deal." ([seed fund guide, Aug 2026](https://www.crv.com/content/what-is-a-data-room)).
 - **What makes ARR not recurring.** Pilots, one-time deals and contracts the customer can cancel are counted as recurring (the voice-of-the-customer research, question 2).

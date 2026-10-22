@@ -396,3 +396,9 @@ Added 2026-10-22 at 3:01 PM, as a comment on the product brief's "Who it is for"
 > completely delete and start this section over. i've narrowed in to seed and series A firms, associates preparing, and partners reading.
 
 Settled: "Who it is for" is rewritten from scratch to seed and Series A firms and their two users, the associate who prepares the memo and the partner who reads it. Angels, accelerators and corporate VCs are no longer named in the product brief's audience; PERSONAS.md keeps them as secondary.
+
+Added 2026-10-22 at 3:01 PM, on the product brief's "The problem":
+
+> don't reference the organizers. write a very brief intro to the problems you're listing
+
+Settled: product docs do not cite the organisers as a source for the problem; they speak from investors' own words. "The problem" opens with a one-sentence intro to the list.
