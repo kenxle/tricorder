@@ -334,3 +334,9 @@ Added 2026-10-22 at 2:38 PM, as a comment on the 30-document table in the data-r
 > ok this is a great list and we're focusing on seed and series a so we need to have custom reference documents written for every single one of these. we will need to send out research agents to uncover the pitfalls and red flags and green flags for each of these documents
 
 Settled: one reference guide per data-room document a seed or Series A room can hold, 33 in all (the research table's 30 plus use of funds, non-customer material agreements, and AI and data governance from DocSend's checklist). Each covers what it is, what changes between seed and Series A, what a first pass checks, green flags, red flags and pitfalls with sources, how Tricorder checks it (script, model reading, or left to the operator), the pieces it feeds, the ask-list line if missing, and what the Hollis Voice room holds. Six research agents write them into `docs/reports/20261022.03_document_guides/` from the brief there. The checklist and FRAMEWORKS draw on them; the roadmap carries the work of turning their proposed checks into checks.
+
+Added 2026-10-22 at 2:41 PM, as a comment on the research's scan order (read the deck first, its claims are the list to check):
+
+> this is a feature workflow that needs to be documented. extract claims from the pitch deck and video, and see if the other docs support
+
+Settled: the claims workflow is documented in `docs/ongoing/diagrams/claims_workflow.md` (extract, normalise, find evidence, compare by script, label supported, contradicted or unsupported, feed the pieces), linked from ARCHITECTURE.md, and built by Saturday's deck and video scans for the planted flags and by the `claim-support` roadmap slice in full.

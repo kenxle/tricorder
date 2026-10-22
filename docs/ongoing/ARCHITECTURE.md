@@ -141,6 +141,10 @@ class ScanResult(BaseModel):
 
 **The quote checker** (`schema/check_quotes.py`) opens each source at its locator and looks for the quote with spacing and case ignored: PDF page text through pdfplumber, spreadsheet cells through openpyxl with cached values, CSV rows, markdown lines, transcript segments for video. URL and API sources are checked against the copy saved in `cache/`. It needs no model (feasibility Part 4.1).
 
+## The claims workflow
+
+The deck and the pitch video make the claims; every other document and the outside world either support each claim, contradict it, or say nothing. Extract, normalise, find evidence, compare by script, label as supported, contradicted or unsupported, then feed the pieces. The full flow and its steps: [diagrams/claims_workflow.md](diagrams/claims_workflow.md).
+
 ## The scan interface
 
 | Part | Rule |

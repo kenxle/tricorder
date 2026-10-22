@@ -9,4 +9,4 @@
 **Level of detail:** One line each. Keep it in step with the folder.
 
 **Sources:** the diagrams folder listing
-Not written. Seneschal's draft step writes this.
+- [claims_workflow.md](claims_workflow.md): how claims are pulled from the deck and the pitch video, checked against every other document and the outside world, labelled supported, contradicted or unsupported, and fed into the readout.

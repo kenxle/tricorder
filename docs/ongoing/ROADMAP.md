@@ -75,6 +75,7 @@ Three of the day's blocks are writing rules with nothing to build: the 1:21 PM b
 | Deck revenue against the P&L, and decks that show only part of the history | 2:19 PM | [deck-vs-books](#deck-vs-books) | After |
 | Speed: start every scan as early as its input exists, readout fills in as results land | 2:19 PM | [inbound-unasked](#inbound-unasked) | After |
 | Steering easy enough for a partner who runs diligence: one plain sentence on the line that looks wrong, no setup, the answer on that line | 2:21 PM (Ken's edit to the product brief, "Steering the readout") | [steering](#steering) | After |
+| The claims workflow: extract claims from the deck and video, check whether the other documents support them | 2:41 PM | [claim-support](#claim-support) | After |
 
 ### Proposals waiting on Ken
 
@@ -1113,6 +1114,26 @@ Low priority: Ken is not sure Tricorder can take this on. Reference calls are ro
 - A list of people the operator could ask, drawn from the founder profiles and the outside-in tabs: former colleagues shown in dated sources, co-investors named in Form D or press, and customers named in the deck. Each person carries the source that names them.
 - A short question list for each person, drawn from the readout's weak pieces. Each question cites the claim it comes from.
 - Tricorder never contacts anyone. It finds no contact details beyond what the source that names the person already shows.
+
+**Who:** agent.
+
+**Judgment:** yes.
+
+### claim-support
+
+The claims workflow in full ([diagrams/claims_workflow.md](diagrams/claims_workflow.md); [writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:41 PM block): every claim in the deck and the pitch video, checked against every other document and the outside world. Saturday does this for the deck's appendix claims and the video's transcript against the model and the revenue rows; this slice widens it.
+
+**Waits on:** [readout](#readout) and [pitch-video](#pitch-video) merged; [checklist-coverage](#checklist-coverage) for where each claim's evidence should live.
+
+**Includes:**
+
+- Claim extraction from every slide (text, charts, the appendix) and every transcript sentence with a number or a checkable fact, each with its slide and position or video second and the quoted span.
+- Normalising each claim to one unit, period and definition, with spoken figures marked as spoken and rounded.
+- An evidence map per claim kind (from the checklist and the document guides) saying which documents and outside sources should support it.
+- A label per claim: supported (two independent sources agree), contradicted (a source disagrees, both shown), or unsupported (a gap with an ask-list line).
+- A claims table in the readout's drill-down: every claim, its label, and its sources.
+
+**Done when:** on both demo rooms, every numeric claim on every slide and in the video script has a label; each planted contradiction is labelled contradicted with both sources; each green flag's claim is labelled supported with its two sources; and the quote checker passes on every claim.
 
 **Who:** agent.
 
