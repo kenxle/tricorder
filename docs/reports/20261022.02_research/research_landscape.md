@@ -1,4 +1,4 @@
-# R2: The landscape for Tricorder
+# The landscape for Tricorder
 
 Written 2026-10-22 for the Deal Flow hackathon (Saturday 2026-10-24, Betaworks). Track 2, Diligence. Every page I relied on is saved under [raw/landscape/](raw/landscape/INDEX.md) so no one has to fetch it again. Every count and every computed price comes from a script beside this file: [landscape_counts.py](landscape_counts.py) (reads [landscape_labels.csv](landscape_labels.csv), writes [landscape_evidence.csv](landscape_evidence.csv)) and [landscape_price_math.py](landscape_price_math.py).
 

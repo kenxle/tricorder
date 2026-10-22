@@ -1,4 +1,4 @@
-# R3: Feasibility per scan, the data sources, the data room and the stack
+# Feasibility per scan, the data sources, the data room and the stack
 
 Written 2026-10-22 by the feasibility researcher (R3) for the Tricorder hackathon plan. Pages I relied on are saved under [raw/feasibility/](raw/feasibility/INDEX.md). Every rate limit, price and free-tier claim below carries the link I read it on. Counts come from [formd_counts.py](raw/feasibility/formd/formd_counts.py). The data room design itself is R4's job, in [research_data_room.md](research_data_room.md); Part 3 here adds the detection split and the build facts, and keeps R4's file list so the two files agree.
 

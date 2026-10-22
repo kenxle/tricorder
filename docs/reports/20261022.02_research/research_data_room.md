@@ -1,4 +1,4 @@
-# R4: The data room, the red flags in it, and the one we will build
+# The data room, the red flags in it, and the one we will build
 
 Written 2026-10-22 by the data-room researcher (R4) for the Tricorder hackathon plan. Counts in this file come from [data_room_tables.py](data_room_tables.py). The demo company's numbers come from [data_room_design_numbers.py](data_room_design_numbers.py) (seed 20261024). Pages I relied on are saved under `raw/data_room/`; the first line of each saved file is its URL.
 
