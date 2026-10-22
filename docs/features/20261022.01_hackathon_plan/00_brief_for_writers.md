@@ -426,3 +426,9 @@ Added 2026-10-22 at 3:10 PM, on the product brief's jobs to be done:
 > - communicate the fundamentals and risk to a group for a group decision
 
 Settled: the product brief's jobs to be done are Ken's six high-level jobs. The "when I ..., I want ..." lines are user stories and live in `docs/ongoing/USER_STORIES.md`, grouped by the associate, the partner and secondary personas.
+
+Added 2026-10-22 at 3:11 PM, on the bank account input:
+
+> we can try this, we just need to see if one of these connectors has a trial account and test data. or we could rig it up and fake it, just say we'd connect this here, and here's a sample bank statement you might get
+
+Settled: try Plaid's sandbox first (free test accounts and custom test data); if it is not ready, the room carries a labelled sample bank statement and the readout shows where the connected account would plug in. The overview page's bank card gains that option.

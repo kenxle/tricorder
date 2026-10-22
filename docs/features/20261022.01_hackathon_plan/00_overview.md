@@ -115,12 +115,14 @@ Your 1:52 PM idea: compare the company's bank account with its books through a b
 <div class="options">
 <div class="option"><span class="badge badge--purple">Recommended</span><h4>After Saturday, mentioned on stage</h4><p>A roadmap slice. On stage, one line in "what's next": the bank feed is the next source we cross-check. Saturday's hours are already spoken for.</p></div>
 <div class="option"><p class="eyebrow">Option B</p><h4>A sandbox bank feed on stage</h4><p>The generator writes the feed this week; on Saturday a short slice reads it from Plaid's sandbox and shows deposits disagreeing with the revenue file. Strong answer to "do you check the bank?". Costs a Plaid developer account this week and a Saturday slot.</p></div>
+<div class="option"><p class="eyebrow">Option C</p><h4>A sample statement, shown as where the bank would plug in</h4><p>Your 3:11 PM idea: no connector on Saturday. The room carries a labelled sample bank statement, and the readout says this is where the connected account would plug in. Cheapest; no Plaid account needed this week.</p></div>
 </div>
 
 <div class="choice" data-choice="bank-check">
 <p class="choice-q">Does the bank check go on stage Saturday?</p>
 <button type="button" value="after-saturday" data-recommended>After Saturday, mentioned on stage</button>
 <button type="button" value="sandbox-on-stage">A sandbox bank feed on stage</button>
+<button type="button" value="sample-statement">A sample statement on stage</button>
 </div>
 
 ### The blind room
