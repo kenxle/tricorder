@@ -27,8 +27,8 @@ Read from branch `claude/project-thread-ce34ga` with `git show` on 2026-10-22, a
 
 | Component | Change | Owner |
 |---|---|---|
-| `scans/memo/coverage.py` | New. The merge step. | this slice |
-| `scans/memo/checklist.py` | New. Loads and validates checklist.csv; the pattern, input and same-request tables; guide ask lines. Pure functions the step and the ask-list step both import. | this slice |
+| `scans/memo/coverage.py` | Built. The merge step; writes Panels "checklist coverage", "checklist coverage counts" and "checklist ask lines". | this slice |
+| `scans/memo/checklist.py` | Built. Loads and validates checklist.csv; the pattern, contained-in, input, entry-check and same-request tables; guide ask lines; `items_for_gap` and `gap_is_asked`. | this slice |
 | `scans/memo/asks.py` | The ask-list step (readout slice, Saturday). Must keep coverage's lines and call `checklist.items_for_gap()` for dedupe. A seam, not owned here. | captain |
 | `scans/cap_notes/` | New scan for 1.10's model question 4 (cap table notes naming a grant with no row). Optional; see Plan slice 4. | this slice |
 | `scans/memo/tests/test_coverage.py`, `test_checklist.py` | New tests. | this slice |
@@ -115,6 +115,8 @@ apply(readout, room_dir):
 ```
 
 ### The seam with the ask-list step
+
+**As built (2026-10-22).** `scans/memo/asks.py` does not exist yet. So coverage writes the line for every gap that names a checklist item (`checklist.items_for_gap`), in the gap's own words, with `from_kind="gap"` and `checklist_id` set. Gaps that name no checklist item are left to the ask-list step. That step's one duty toward coverage: before writing a gap line, call `checklist.gap_is_asked(readout.asks, gap)` and skip the gap when it returns true; and keep every line coverage wrote. The original design below is kept for the record.
 
 The ask-list step runs next. It owns the gap and weak-piece lines and the final order. Its contract with coverage:
 

@@ -111,7 +111,11 @@ No flag. The merge skips a step whose module does not exist (`scans/memo/merge.p
 
 ## Questions
 
-Open, for Ken (from [02_prototype_decision.md](02_prototype_decision.md)):
+**Defaults set 2026-10-22, which Ken can override** (recorded in [02_prototype_decision.md](02_prototype_decision.md)): 1, "not stated" items are asked "if you have it" (this widens CC-R8 and CC-R10: "expected" means yes, lighter or not stated); 2, legal, cap table and AI governance lines go under "the pitch itself"; 3, one line for all SAFEs, naming each (CC-R13); 4, after-term-sheet lines kept, tagged and collapsed under their own heading (CC-R19); 5, the full list grouped by piece with the top five pinned (CC-R21); 6, build only the guide checks that run on the demo rooms and mark the rest as left to the operator (CC-R17).
+
+- **CC-R21. Top five.** The five required lines for before the second meeting that settle the most checklist items are ranked 1 to 5 and pinned at the top of the page. Ties go in the overview's piece order.
+
+First asked of Ken (from [02_prototype_decision.md](02_prototype_decision.md)), now answered by the defaults:
 
 1. "Not stated" items: never asked (recommended) or "if you have it".
 2. Lines with no readout piece: under "the pitch itself" for Saturday (recommended), or a new group.

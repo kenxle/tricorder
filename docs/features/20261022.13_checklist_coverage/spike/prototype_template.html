@@ -61,7 +61,11 @@ h2 { font-size: 17px; margin: 0 0 10px; }
 .stage-note.override { color: var(--st-missing); }
 .linkbtn { background: none; border: 0; color: var(--accent); cursor: pointer; font: inherit; padding: 0; text-decoration: underline; }
 .grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: var(--gap); margin-top: var(--gap); }
-@media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+@media (max-width: 860px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+.controls > div { min-width: 0; max-width: 100%; }
+.seg { flex-wrap: wrap; max-width: 100%; }
+.stage-note, .banner, .sub, footer { overflow-wrap: anywhere; }
+a { color: var(--accent); }
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; min-width: 0; }
 .counts { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
 .count { border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; background: var(--surface); cursor: pointer; font: inherit; color: var(--text); text-align: left; }
@@ -87,6 +91,12 @@ details.group summary .gcount { font-size: 12px; color: var(--text-2); white-spa
 .s-not_checked { color: var(--st-notchecked); background: var(--st-notchecked-bg); }
 .s-not_expected { color: var(--st-notexpected); background: var(--st-notexpected-bg); }
 .tag { font-size: 11px; border: 1px solid var(--border); border-radius: 4px; padding: 0 5px; color: var(--text-2); margin-left: 4px; white-space: nowrap; }
+.ask .meta { display: flex; flex-wrap: wrap; gap: 4px; }
+.ask .meta .tag { margin-left: 0; }
+.ask .meta .tag.covers { white-space: normal; overflow-wrap: anywhere; max-width: 100%; }
+.pinned { border: 1px solid var(--accent); border-radius: 6px; padding: 4px 10px 8px; margin: 8px 0; background: var(--accent-soft); }
+.pinned h3 { color: var(--accent); }
+details.late summary { cursor: pointer; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--text-3); padding: 8px 0; }
 .ask-group { margin-top: 12px; }
 .ask-group h3 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--text-3); margin: 0 0 4px; }
 .ask { padding: 8px 0; border-top: 1px solid var(--border); }
@@ -110,7 +120,7 @@ code { font: 12px var(--mono); }
 </head>
 <body>
 <div class="wrap">
-  <div class="banner" role="note"><b>Synthetic data. Prototype.</b> Hollis Voice is a made-up company; every file in its room is test data. "Checked" is projected: no scan has run. A check row reads "checked" here when its FRAMEWORKS entry exists and every file it reads is in the room. Data is the spike's real output, inlined.</div>
+  <div class="banner" role="note"><b>Synthetic data. Prototype.</b> Hollis Voice is a made-up company; every file in its room is test data. The data is the real output of the coverage step (<code>scans/memo/coverage.py</code>), run on each room with the red-flag scan's real claims and gaps. "Checked" means a real claim from that scan; only the red-flag checks built so far can check anything.</div>
   <h1>Coverage and ask list</h1>
   <p class="sub">The end of the readout: what the room holds for the company's stage, and what to ask the founder for.</p>
 
@@ -157,7 +167,7 @@ code { font: 12px var(--mono); }
     </span>
   </section>
 
-  <footer>Built by <code>docs/features/20261022.13_checklist_coverage/spike/run_all.sh</code> from <code>docs/ongoing/checklist.csv</code> and <code>data_room/</code>. Ask text comes from each document guide's "If it is missing" line in <code>docs/reports/20261022.03_document_guides/</code>. The seed drop's four scan gaps are hand-written from FRAMEWORKS.md, "Ask list", worked example, to show dedupe before any scan runs.</footer>
+  <footer>Built by <code>docs/features/20261022.13_checklist_coverage/spike/build_prototype.py</code> from <code>scans/memo/coverage.py</code>, <code>docs/ongoing/checklist.csv</code>, <code>data_room/</code> and the red-flag scan's output on each room. Ask text comes from each document guide's "If it is missing" line in <code>docs/reports/20261022.03_document_guides/</code>. Defaults Ken can override: "not stated" items asked "if you have it"; legal and cap table asks under the pitch itself; one line for all SAFEs; after-term-sheet asks collapsed under their own heading; the top five pinned.</footer>
 </div>
 <script>
 const DATA = /*__DATA__*/null;
@@ -169,46 +179,43 @@ const STATUS = [
 const PIECE_NAMES = {
   traction_and_revenue: "Traction and revenue", retention: "Retention", burn_and_runway: "Burn and runway",
   unit_economics: "Unit economics", customers: "Customers", market: "Market", comps: "Comps", team: "Team",
-  the_pitch_itself: "The pitch itself", null: "Company records (no readout piece yet)",
+  the_pitch_itself: "The pitch itself (with company records)",
 };
-const PIECE_ORDER = ["traction_and_revenue", "retention", "burn_and_runway", "unit_economics", "customers", "market", "comps", "team", "the_pitch_itself", null];
+const PIECE_ORDER = ["traction_and_revenue", "retention", "burn_and_runway", "unit_economics", "customers", "market", "comps", "team", "the_pitch_itself"];
 const state = { room: "seed_drop", stage: DATA.deck_stage.stage, filter: "missing", prev: null, unknown: false };
-
 const $ = (s) => document.querySelector(s);
 const esc = (t) => String(t ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const run = () => DATA[`${state.room}:${state.stage}`];
 const askKey = (a) => `${a.checklist_id}|${a.what}`;
+const short = (t) => (t.length > 90 ? t.slice(0, 87) + "..." : t);
 
 function render() {
   const unknown = state.unknown;
   $("#main").hidden = unknown; $("#unknown").hidden = !unknown;
   document.querySelectorAll("#stage-seg button").forEach((b) => b.setAttribute("aria-pressed", String(!unknown && b.dataset.stage === state.stage)));
   document.querySelectorAll("#room-seg button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.room === state.room)));
-  const deck = DATA.deck_stage;
-  const note = $("#stage-note");
+  const deck = DATA.deck_stage, note = $("#stage-note");
   if (unknown) {
-    $("#unknown-reason").textContent = DATA.stage_unknown.label_reason + " (Simulated: the spike was run with --stage series_b.)";
+    $("#unknown-reason").textContent = DATA.stage_unknown.counts.label_reason + " (Simulated: the operator file says series_b.)";
     note.textContent = "Stage unknown."; note.className = "stage-note override"; return;
   }
   if (state.stage === deck.stage) {
-    note.innerHTML = `From the deck: <b>${esc(deck.source.quote.replace(/\s*\|$/, ""))}</b>, ${esc(deck.source.uri)}, ${esc(deck.source.locator)}.`;
-    note.className = "stage-note";
+    note.innerHTML = `From the deck: <b>${esc(deck.source)}</b>`; note.className = "stage-note";
   } else {
     note.innerHTML = `Set by you. The deck says ${esc(STAGE_NAMES[deck.stage])}. <button class="linkbtn" id="reset-stage">Use the deck's stage</button>`;
-    note.className = "stage-note override";
-    $("#reset-stage").onclick = () => setStage(deck.stage);
+    note.className = "stage-note override"; $("#reset-stage").onclick = () => setStage(deck.stage);
   }
   renderCoverage(run()); renderAsks(run());
 }
 
 function renderCoverage(d) {
-  const c = d.counts;
-  const expected = c.expected;
+  const c = d.counts, n = (k) => Number(c[k] || 0), expected = n("expected");
+  const yes = d.coverage.filter((r) => r.expected === "yes").length;
   $("#counts").innerHTML = STATUS.map(([k, label]) =>
-    `<button class="count" data-filter="${k}" aria-pressed="${state.filter === k}"><b>${c[k]}</b><span>${label}</span></button>`).join("") +
-    `<button class="count" data-filter="all" aria-pressed="${state.filter === "all"}"><b>${c.items}</b><span>All items</span></button>`;
-  $("#bar").innerHTML = STATUS.slice(0, 4).map(([k, , v]) => `<i style="width:${(100 * c[k] / expected).toFixed(2)}%;background:var(${v})" title="${k}"></i>`).join("");
-  $("#legend-note").textContent = `${expected} of ${c.items} checklist items are expected at ${STAGE_NAMES[d.stage]} (${c.expected_yes} expected, ${c.expected_lighter} if the company has them). The bar shows those ${expected}. ${c.checked_projected} "checked" are projected. Counts from coverage_spike.py.`;
+    `<button class="count" data-filter="${k}" aria-pressed="${state.filter === k}"><b>${n(k)}</b><span>${label}</span></button>`).join("") +
+    `<button class="count" data-filter="all" aria-pressed="${state.filter === "all"}"><b>${n("items")}</b><span>All items</span></button>`;
+  $("#bar").innerHTML = STATUS.slice(0, 4).map(([k, , v]) => `<i style="width:${(100 * n(k) / Math.max(expected, 1)).toFixed(2)}%;background:var(${v})" title="${k}"></i>`).join("");
+  $("#legend-note").textContent = `${expected} of ${n("items")} items are expected at ${STAGE_NAMES[state.stage]}: ${yes} expected, ${expected - yes} "if you have it" (lighter or not stated). ${d.claims_from_scan} claims from the red-flag scan. Counts from scans/memo/coverage.py.`;
   document.querySelectorAll(".count").forEach((b) => b.onclick = () => { state.filter = b.dataset.filter; renderCoverage(run()); });
   const groups = {};
   d.coverage.forEach((r) => { (groups[r.checklist_piece] ||= []).push(r); });
@@ -223,66 +230,62 @@ function renderCoverage(d) {
 
 function itemRow(r) {
   const label = STATUS.find(([k]) => k === r.status)[1];
-  let detail = "";
-  if (r.status === "found") detail = `In the room: ${r.found_in.slice(0, 3).map(esc).join(", ")}${r.found_in.length > 3 ? ", ..." : ""}${r.found_note ? ` (${esc(r.found_note)})` : ""}`;
-  else if (r.status === "checked") detail = `Would be checked by ${esc(r.check_entry)}. Not run.`;
-  else if (r.status === "missing" && r.kind === "check") detail = `Cannot run: needs ${r.missing_inputs.map(esc).join(", ")}, not in the room.`;
-  else if (r.status === "missing" && r.kind === "ask") detail = "Only the founder can give this.";
-  else if (r.status === "missing") detail = "Not in the room.";
-  else if (r.status === "not_checked") detail = r.found_note ? `Cannot run: ${esc(r.found_note)}.` : "No check is built for this item yet.";
-  else detail = `Expected at this stage: ${esc(r.expected)}.`;
-  const ask = r.ask ? ` <a href="#${r.ask}" data-goto="${r.ask}">Asked in ${r.ask.replace("ask-", "line ")}</a>` : "";
-  const lighter = r.expected === "lighter" ? `<span class="tag">if they have it</span>` : "";
-  return `<div class="item"><span class="id">${esc(r.item_id)}</span><div><div class="name">${esc(r.item)}<span class="tag">${esc(r.kind)}</span>${lighter}</div><div class="detail">${detail}${ask}</div></div><span class="pill s-${r.status}">${label}</span></div>`;
+  const ask = r.ask_line ? ` <a href="#ask-${r.ask_line}" data-goto="ask-${r.ask_line}">Asked in line ${r.ask_line}</a>` : "";
+  const lighter = r.expected === "lighter" || r.expected === "not stated" ? `<span class="tag">if they have it</span>` : "";
+  return `<div class="item"><span class="id">${esc(r.id)}</span><div><div class="name">${esc(r.item)}<span class="tag">${esc(r.kind)}</span>${lighter}</div><div class="detail">${esc(r.detail)}${ask}</div></div><span class="pill s-${r.status}">${label}</span></div>`;
+}
+
+function askRow(a, isNew) {
+  const tags = [a.from_kind === "gap" ? "from a scan gap" : "from the checklist", a.if_you_have_it ? "if you have it" : "", a.ask_stage === "after_term_sheet" ? "after the term sheet" : ""]
+    .filter(Boolean).map((t) => `<span class="tag">${t}</span>`).join("");
+  return `<div class="ask${isNew ? " new" : ""}" id="ask-${a.n}"><div class="what"><b>${a.n}. Ask for:</b> ${esc(a.what)}</div><div class="why">Why: ${esc(a.why)}</div><div class="meta">${tags}<span class="tag covers">covers ${a.covers.map(esc).join(", ")}</span></div></div>`;
 }
 
 function renderAsks(d) {
-  const prev = state.prev && DATA[state.prev];
+  const key = `${state.room}:${state.stage}`;
+  const prev = state.prev && state.prev !== key && DATA[state.prev];
   const prevKeys = prev ? new Set(prev.asks.map(askKey)) : null;
   const nowKeys = new Set(d.asks.map(askKey));
   let diff = "";
-  if (prev && state.prev !== `${state.room}:${state.stage}`) {
+  if (prev) {
     const added = d.asks.filter((a) => !prevKeys.has(askKey(a)));
     const removed = prev.asks.filter((a) => !nowKeys.has(askKey(a)));
     const [pr, ps] = state.prev.split(":");
     const from = pr === state.room ? STAGE_NAMES[ps] : `the ${pr === "seed_drop" ? "seed drop" : "full room"}`;
     diff = `<div class="diff" role="status">Compared with ${esc(from)}: ${added.length} line${added.length === 1 ? "" : "s"} added, ${removed.length} removed.` +
-      (removed.length ? `<ul>${removed.map((a) => `<li>No longer asked: ${esc(short(a.what))}${a.checklist_id ? ` (${a.checklist_id})` : ""}</li>`).join("")}</ul>` : "") + `</div>`;
+      (removed.length ? `<ul>${removed.map((a) => `<li>No longer asked: ${esc(short(a.what))} (${a.checklist_id})</li>`).join("")}</ul>` : "") + `</div>`;
   }
-  if (d.suppressed_asks && d.suppressed_asks.length) {
-    diff += `<div class="diff">Not asked at ${STAGE_NAMES[d.stage]}, because the stage does not expect it: ${d.suppressed_asks.map((s) => esc(s.gap.replace("Not in the room: ", "")) + ` (${s.covers.join(", ")})`).join("; ")}. The gap still shows in the readout.</div>`;
-  }
+  const held = Number(d.counts.gap_asks_held_back || 0);
+  if (held) diff += `<div class="diff">${held} scan gap${held === 1 ? " is" : "s are"} not asked at ${STAGE_NAMES[state.stage]}, because the stage does not expect the document. The gaps still show in the readout.</div>`;
   $("#diff").innerHTML = diff;
-  const by = {};
-  d.asks.forEach((a) => (by[a.piece] ||= []).push(a));
-  $("#asks").innerHTML = `<p class="sub">${d.counts.ask_lines} lines: ${d.counts.ask_lines_required} to ask for, ${d.counts.ask_lines_if_you_have_it} "if you have it", ${d.counts.ask_lines_after_term_sheet} after the term sheet. ${d.counts.duplicate_requests} repeated requests.</p>` +
-    PIECE_ORDER.filter((p) => by[p]).map((p) => `<div class="ask-group"><h3>${esc(PIECE_NAMES[p])}</h3>${by[p].map((a) => {
-      const isNew = prevKeys && state.prev !== `${state.room}:${state.stage}` && !prevKeys.has(askKey(a));
-      const tags = [a.from_kind === "gap" ? "from a scan gap" : "from the checklist", a.if_you_have_it ? "if you have it" : "", a.ask_stage === "after_term_sheet" ? "after the term sheet" : ""].filter(Boolean)
-        .map((t) => `<span class="tag">${t}</span>`).join("");
-      return `<div class="ask${isNew ? " new" : ""}" id="${a.id}"><div class="what"><b>Ask for:</b> ${esc(a.what)}</div><div class="why">Why: ${esc(a.why)}</div><div class="meta">${tags}<span class="tag">covers ${a.covers.map(esc).join(", ") || "none"}</span></div></div>`;
-    }).join("")}</div>`).join("");
+  const isNew = (a) => prevKeys && !prevKeys.has(askKey(a));
+  const top = d.asks.filter((a) => a.top).sort((a, b) => a.top - b.top);
+  const now = d.asks.filter((a) => a.ask_stage !== "after_term_sheet");
+  const late = d.asks.filter((a) => a.ask_stage === "after_term_sheet");
+  const by = {}; now.forEach((a) => (by[a.piece] ||= []).push(a));
+  const c = d.counts;
+  $("#asks").innerHTML = `<p class="sub">${c.ask_lines} lines: ${Number(c.ask_lines) - Number(c.ask_lines_if_you_have_it)} to ask for, ${c.ask_lines_if_you_have_it} "if you have it", ${c.ask_lines_after_term_sheet} after the term sheet.</p>` +
+    (top.length ? `<div class="pinned"><h3>Top five: the requests that unblock the most checks</h3>${top.map((a) => `<div class="why"><a href="#ask-${a.n}" data-goto="ask-${a.n}">${a.n}. ${esc(short(a.what))}</a> (covers ${a.covers.length})</div>`).join("")}</div>` : "") +
+    PIECE_ORDER.filter((p) => by[p]).map((p) => `<div class="ask-group"><h3>${esc(PIECE_NAMES[p])}</h3>${by[p].map((a) => askRow(a, isNew(a))).join("")}</div>`).join("") +
+    (late.length ? `<details class="late"><summary>After the term sheet (${late.length})</summary>${late.map((a) => askRow(a, isNew(a))).join("")}</details>` : "");
+  document.querySelectorAll("#asks [data-goto]").forEach((a) => a.onclick = (e) => { e.preventDefault(); gotoAsk(a.dataset.goto); });
 }
-
-const short = (t) => (t.length > 90 ? t.slice(0, 87) + "..." : t);
 
 function gotoAsk(id) {
   const el = document.getElementById(id);
   if (!el) return;
+  const det = el.closest("details"); if (det) det.open = true;
   el.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center" });
   el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");
 }
-
 function setStage(s) { state.prev = `${state.room}:${state.stage}`; state.stage = s; state.unknown = false; render(); }
 function setRoom(r) { state.prev = `${state.room}:${state.stage}`; state.room = r; state.unknown = false; render(); }
-
 document.querySelectorAll("#stage-seg button").forEach((b) => b.onclick = () => setStage(b.dataset.stage));
 document.querySelectorAll("#room-seg button").forEach((b) => b.onclick = () => setRoom(b.dataset.room));
 document.querySelectorAll("[data-pick]").forEach((b) => b.onclick = () => setStage(b.dataset.pick));
 $("#sim-unknown").onclick = () => { state.unknown = true; render(); };
 $("#copy").onclick = async () => {
-  const d = run();
-  const lines = d.asks.filter((a) => a.ask_stage !== "after_term_sheet").map((a, i) => `${i + 1}. ${a.what}${a.if_you_have_it && !/^if /i.test(a.what) ? " (if you have it)" : ""}`);
+  const lines = run().asks.filter((a) => a.ask_stage !== "after_term_sheet").map((a, i) => `${i + 1}. ${a.what}${a.if_you_have_it && !/^if /i.test(a.what) ? " (if you have it)" : ""}`);
   const text = `Thanks for sharing the room. Could you send these when you can?\n\n${lines.join("\n")}`;
   try { await navigator.clipboard.writeText(text); $("#copy-msg").textContent = `Copied ${lines.length} lines. Lines for after the term sheet are left out.`; }
   catch (e) { $("#copy-msg").textContent = "Copy was blocked by the browser. Select the lines by hand."; }

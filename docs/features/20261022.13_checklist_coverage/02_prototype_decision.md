@@ -2,7 +2,9 @@
 
 Prototype: [02_prototype/prototype.html](02_prototype/prototype.html). One self-contained file: inline CSS and JS, no fetches, light and dark. Open it in any browser.
 
-All data in it is synthetic. Hollis Voice is a made-up company. The data is the spike's real output on `data_room/hollis_voice_seed_drop` and `data_room/hollis_voice`, inlined by `spike/build_prototype.py`. Rebuild it with `sh docs/features/20261022.13_checklist_coverage/spike/run_all.sh` from the repo root.
+All data in it is synthetic. Hollis Voice is a made-up company. Since 2026-10-22 evening the data is the product step's output (`scans/memo/coverage.py`) on `data_room/hollis_voice_seed_drop` and `data_room/hollis_voice`, with the red-flag scan's real claims and gaps, inlined by `spike/build_prototype.py`. Rebuild: `TRICORDER_OUT_DIR=<dir> python3 -m scans.redflags <room>` for both rooms, then `TRICORDER_OUT_DIR=<dir> python3 docs/features/20261022.13_checklist_coverage/spike/build_prototype.py`.
+
+Screenshots, from headless Chromium after the build: [desktop, light](02_prototype/screenshot.png) and [phone width, dark](02_prototype/screenshot_phone_dark.png). The phone shot is the page in a 390px iframe, because headless Chromium will not open a window narrower than 500px.
 
 ## What it shows
 
@@ -17,7 +19,18 @@ All data in it is synthetic. Hollis Voice is a made-up company. The data is the 
 
 ## The numbers it shows
 
-From `spike/print_counts.py` after `spike/run_all.sh`:
+Product step with the red-flag scan's real output (from `spike/build_prototype.py`'s printout, 2026-10-22):
+
+| Room and stage | Expected | Checked | Found | Missing | Not checked yet | Not expected | Ask lines | If you have it | After term sheet | Gap asks held back |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Seed drop, Series A | 109 | 3 | 15 | 65 | 26 | 0 | 25 | 7 | 3 | 0 |
+| Seed drop, seed | 107 | 3 | 15 | 63 | 26 | 2 | 24 | 17 | 2 | 0 |
+| Seed drop, pre-seed | 82 | 3 | 15 | 38 | 26 | 27 | 17 | 13 | 1 | 1 |
+| Full room, Series A | 109 | 11 | 16 | 40 | 42 | 0 | 21 | 7 | 3 | 0 |
+
+"Expected" now includes "not stated" items (Ken's default 1). "Checked" counts only rows a real red-flag claim checked: C02, C19 and C20 on the seed drop; eleven rows on the full room.
+
+The first version, from the spike, `spike/print_counts.py` after `spike/run_all.sh` ("checked" projected, "not stated" not expected):
 
 | Room and stage | Expected | Checked (projected) | Found | Missing | Not checked yet | Ask lines | Of which "if you have it" | After term sheet | Gap requests held back |
 |---|---|---|---|---|---|---|---|---|---|
@@ -35,7 +48,18 @@ From `spike/print_counts.py` after `spike/run_all.sh`:
 - **"Missing" as the default filter.** With "all", the panel is 109 rows. With "missing", it is the list an associate acts on.
 - **Two kinds of missing need different words.** A missing document says "Not in the room". A missing check says "Cannot run: needs C03, not in the room". Both link to the same ask line.
 
-## Open design questions for Ken
+## Defaults set 2026-10-22 (Ken can override each)
+
+The coordinator recorded these defaults while Ken was away. The code and the prototype follow them.
+
+1. "Not stated" items are asked "if you have it" (`EXPECTED` in `scans/memo/checklist.py`).
+2. Legal and cap table asks go under "the pitch itself" (`PIECES` in `scans/memo/checklist.py`). AI governance rows go there too.
+3. One line for all SAFEs, naming each holder (`_ask_lines` in `scans/memo/coverage.py`). The gaps stay one per SAFE.
+4. After-term-sheet asks are kept, tagged, and collapsed under their own heading on the page.
+5. The full list, grouped by piece, with the top five pinned at the top. Top five: required lines for before the second meeting, ranked by how many checklist items each settles.
+6. Build only the guide checks that run on the demo rooms; mark the rest as left to the operator (Plan slice 4).
+
+## Open design questions for Ken (as first asked; superseded by the defaults above)
 
 1. **Items marked "not stated" for a stage.** FRAMEWORKS treats them as not expected, so they are never asked. At Series A that is 13 items, including all 8 AI and data governance rows (`docs/ongoing/checklist_counts.py`). Ask them "if you have it" instead? Recommendation: keep them out of the ask list and show them in the panel as "not expected", because the research names no stage for them.
 2. **Ask lines with no readout piece.** The schema's `AskItem.piece` must be one of the nine readout pieces. The checklist's "legal and cap table" and "AI and data governance" rows have no piece. On the seed drop at Series A, 11 of the 23 lines are company records like these (`spike/out/seed_drop_series_a.json`, lines whose `piece` is null). Options: put them under "the pitch itself", which already holds the cap table (FRAMEWORKS 1.10); or add a tenth group, "company records", which changes the frozen schema. Recommendation: "the pitch itself" for Saturday, a proper group after.
@@ -49,8 +73,15 @@ Design questions the prototype could not settle without the style guide: color a
 
 **Pending.** The persona-review agents are being built in a parallel thread. When they exist, run the associate and the partner personas on this prototype at the seed drop, Series A, and record findings and dispositions here.
 
+## Fixes after the first screenshots
+
+- The "covers C03, C05, ..." chip overflowed the ask panel. Chips now wrap (`.ask .meta` is a wrapping flex row; the covers chip wraps inside).
+- At phone width a long code span in the banner pushed the page wider than the screen; long text now wraps. Measured in headless Chromium: page width 485px in a 500px window, no element past the edge.
+- Links were default blue on the dark background; they now use the accent token.
+- The red-flag scan's real output has two gaps both named "Not in the room: an expense ledger". They made two ask lines. They now make one (`test_two_gaps_for_one_document_ask_once`).
+
 ## Prototype status
 
 Throwaway. The product panel is a React component in `readout/` (the readout-page slice). The prototype is the UI acceptance baseline for its behavior, not its look: the stage control and its source line, the default filter, the fold of missing checks into one request, the diff box after a stage change, the copy button's honest message.
 
-No screenshot was taken: the build container has no browser. The page's script was run under Node against a stubbed DOM for every room, stage and filter, with no error (`/tmp/claude-0/.../scratchpad/proto_smoke.js`, a throwaway outside the repo).
+Screenshots are linked at the top.
