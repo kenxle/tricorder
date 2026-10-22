@@ -197,6 +197,7 @@ def make_room(tmp_path: Path, kind: str, leave_out: tuple[str, ...] = ()) -> Pat
 # Generic slide replacement, for any room ------------------------------------
 
 def _deck_size(src: Path) -> tuple[float, float]:
+    need_deck_tools()
     from pypdf import PdfReader
     return tuple(float(x) for x in PdfReader(str(src / DECK)).pages[0].mediabox[2:])
 
