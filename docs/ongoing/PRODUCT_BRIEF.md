@@ -63,6 +63,7 @@ The closest competitors validate the idea. Five of the 12 entrants turn a data r
 Everything about a startup, from its pitch deck and video to its financials to its online presence.
 
 - **An uploaded data room.** The deck, the financial model, the cap table, a metrics export, customer contracts, the hiring plan, founder bios and the website copy.
+- **Customer contracts, on their own or in the room.** Every order form, pilot agreement and master agreement is read for its terms: length, notice and cancellation period, auto-renewal, pilot terms and any duty to convert, price and payment terms. Each is compared with how it is counted, so a contract the customer can leave in 30 days is not counted as a year of revenue without a flag.
 - **A pitch video.** Transcribed with timestamps so every spoken claim keeps its second.
 - **The startup's online presence.** Its website, public filings, hiring, traffic, reviews and pricing, read by the comps, market signals and online presence scans.
 - **The inbox.** A forwarding address first (such as deals@), because it needs no OAuth review. Then Gmail and Outlook through their official APIs. Tricorder pulls decks out of inbound mail: PDF attachments, and DocSend, Google Drive, Dropbox and Notion links. The feasibility of each path belongs to [ARCHITECTURE.md](ARCHITECTURE.md).
