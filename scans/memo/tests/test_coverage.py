@@ -127,10 +127,11 @@ def test_stage_outside_three_is_unknown(_out):  # CC-R3
 def test_every_item_has_one_status():  # CC-R4
     r = coverage.apply(_readout(SEED, gaps=_sample_gaps()), SEED)
     recs = _records(r)
-    assert len(recs) == 109
+    total = len(checklist.load())
+    assert len(recs) == total
     assert {rec["status"] for rec in recs.values()} <= set(coverage.STATUSES)
     c = _counts(r)
-    assert sum(int(c[s]) for s in coverage.STATUSES) == 109
+    assert sum(int(c[s]) for s in coverage.STATUSES) == total
 
 
 def test_load_rejects_unknown_level(tmp_path):  # CC-R4
