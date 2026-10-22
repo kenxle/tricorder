@@ -126,6 +126,7 @@ The readout is a working surface, not a read-only document ([writers' brief, 1:1
 - **Rewrite a section.** For example, "rewrite the market piece using only the competitor filings" or "treat the pilot as non-recurring". The scans behind the piece run again on that piece's inputs, and the piece is reworded.
 - **Get more info for a section.** For example, "read the full room, not the seed drop", "pull the competitor's pricing pages" or "find their latest filing". Tricorder fetches or reads the new sources for that piece, runs its scans on them, and adds the new claims, marked as new.
 - **The change shows.** Either way, the new piece replaces the old one with a visible diff. If the verdict moves, the claim that moved it is named.
+- **Easy enough for a partner.** Some partners run diligence themselves: "our partners run diligence themselves without handing it to junior staff." ([seed fund guide, Aug 2026](https://www.crv.com/content/what-is-a-data-room)). Accurate sourcing and interpretation matter most to them, so a steer is one plain sentence on the line that looks wrong, with no setup and no menus, and the answer comes back on that line.
 - **A steer changes the reading, not the numbers.** It can change what is read, how claims are grouped and how they are worded. A script's number stays as the script computed it.
 
 Saturday's demo may show one steer on stage, if the overview page's card says so. The roadmap carries steering as an after-Saturday slice ([ROADMAP.md](ROADMAP.md), "steering").
