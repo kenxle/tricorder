@@ -18,19 +18,21 @@
 
 ## How to read this
 
+**Two primary personas, decided by Ken at 2:35 PM.** Tricorder focuses on seed and Series A funds, and on the two people there who touch the memo: the associate who prepares it and the partner or principal who reads it and decides. Everyone else in this doc (angels, accelerator screeners, corporate VCs) is secondary: real, kept, and served later.
+
 Each persona is a problem, not a job title. Say, do and pay measure how people deal with that problem today, from weakest signal to strongest. Say is what people write or tell about the problem. Do is what they already do about it, especially a workaround or a tool not built for it. Pay is what they spend, in money or in something they give up, to solve it. A persona's rating is the strongest layer with evidence. The quotes and behaviours that carry the most signal are what go into the value proposition, so the strongest evidence decides both the order of the personas and the words we use.
 
 Within each stage, the personas are ranked by their strongest evidence: pay first, then do, then say. When two personas reach the same layer, the one with more quotes behind it ranks higher. The quotes come from [the voice-of-the-customer research](../reports/20261022.02_research/research_voice_of_customer.md), and a script counts them ([voc_counts.py](../reports/20261022.02_research/voc_counts.py)). A reference such as "row 11" points to that research's quotes table.
 
 Two cautions on the partner and the angel. The partner's pay rating is inferred: both pieces of pay evidence come from a vendor case study and a pricing roundup, not from partners' own words. The angel still wants diligence; what is short is time. Angels pay, in upside given up or as an LP, to get diligence done by proxy: they trust YC, a lead or a fund to have done it.
 
-| Stage | Rank in stage | Persona | The problem | In their words |
-|---|---|---|---|---|
-| Earliest | 1 | Solo angel | Wants diligence, has no time or team for it | "I don't have the time nor skills to do proper due diligence, but with YC I don't have to." ([angel, Jan 2022](https://news.ycombinator.com/item?id=30130146)) |
-| Earliest | 2 | Accelerator screener | Too many applications to read | "A human takes around four minutes to screen each application. That’s 24 full working days for one person" ([MIT Solve, 2025](https://solve.mit.edu/articles/how-ai-helped-us-screen-applications-in-half-the-time)) |
-| Seed | 1 | Associate at a seed fund | Days of gathering before any thinking | "Before I even open your data room, I already have ten tabs up." ([associate, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)) |
-| Series A | 1 | Partner or principal at a seed or Series A fund | Numbers that disagree, found too late | "Basic financials and model review. But often only a cursory one." ([SaaS investor, on pre-term-sheet diligence, Feb 2025](https://www.saastr.com/how-when-why-vcs-do-due-diligence-pre-and-post-term-sheet)) |
-| Series A | 2 | Corporate VC | Strategic overlap on top of standard diligence | "In addition to the standard diligence items, CVCs will spend more time validating areas of strategic overlap between the startup and the CVC’s corporate parent." ([corporate VC, Apr 2024](https://tdk-ventures.com/?p=2035)) |
+| Focus | Stage | Rank in stage | Persona | The problem | In their words |
+|---|---|---|---|---|---|
+| Secondary | Earliest | 1 | Solo angel | Wants diligence, has no time or team for it | "I don't have the time nor skills to do proper due diligence, but with YC I don't have to." ([angel, Jan 2022](https://news.ycombinator.com/item?id=30130146)) |
+| Secondary | Earliest | 2 | Accelerator screener | Too many applications to read | "A human takes around four minutes to screen each application. That’s 24 full working days for one person" ([MIT Solve, 2025](https://solve.mit.edu/articles/how-ai-helped-us-screen-applications-in-half-the-time)) |
+| **Primary** | Seed | 1 | Associate at a seed fund | Days of gathering before any thinking | "Before I even open your data room, I already have ten tabs up." ([associate, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)) |
+| **Primary** | Series A | 1 | Partner or principal at a seed or Series A fund | Numbers that disagree, found too late | "Basic financials and model review. But often only a cursory one." ([SaaS investor, on pre-term-sheet diligence, Feb 2025](https://www.saastr.com/how-when-why-vcs-do-due-diligence-pre-and-post-term-sheet)) |
+| Secondary | Series A | 2 | Corporate VC | Strategic overlap on top of standard diligence | "In addition to the standard diligence items, CVCs will spend more time validating areas of strategic overlap between the startup and the CVC’s corporate parent." ([corporate VC, Apr 2024](https://tdk-ventures.com/?p=2035)) |
 
 Each quote was checked word for word against its source: four against the pages saved under [raw/voc/](../reports/20261022.02_research/raw/voc/INDEX.md), and the partner's against the live SaaStr page on 2026-10-22. Each persona's evidence layer is in its own section below.
 

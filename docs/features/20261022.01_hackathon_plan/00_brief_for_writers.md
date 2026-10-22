@@ -322,3 +322,9 @@ Added 2026-10-22 at 2:19 PM, on the junior VC who lost momentum after weeks sift
 Settled: every scan starts the moment its input exists (the company name, the deck, the model), not after the whole room arrives. The readout fills in as results land, each piece shows running, done or waiting on an input, and the operator sees the first green and red flags early. The `inbound-unasked` slice carries it.
 
 Added 2026-10-22 at 2:33 PM, correcting the 1:09 PM block's pitch line: Ken chose the pitch at 10:34 AM in the team-workshop session (board row TRI-new-pitch): "Point it at a startup, get a readout. Tricorder takes any data: decks, videos, spreadsheets, data rooms. It reveals insight you can trust, every claim sourced." That is the line. The 1:09 PM line was this session's proposal and Ken never chose it; it survives only as an optional line for the readout's first screen.
+
+Added 2026-10-22 at 2:35 PM, as a comment on the personas table:
+
+> ok, these are our two primary personas. the others are secondary. we're focusing on seed and series a funds, and the people who prep the memo and the people who read the memo
+
+Settled: the primary personas are the associate at a seed or Series A fund who prepares the memo, and the partner or principal who reads it and decides. Angels, accelerator screeners and corporate VCs are secondary. Everything built first serves the two primary personas.
