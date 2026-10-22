@@ -280,6 +280,10 @@ Some worked examples also show arithmetic on those figures: a gap, a ratio, a sh
 | No planted entry: contractors | 1.12 kind e returns clear with a gap | `contractor_spend_vs_headcount_and_burn` | No, the ledger is in the full room |
 | No planted entry: capitalised costs | 1.12 kind f returns clear with a gap | `capitalised_spend_vs_pnl_and_cash` | No, the ledger is in the full room |
 | No planted entry: gross against net revenue | 1.12 kind c, after Saturday | `gross_vs_net_revenue` | Not run |
+| PF1 Pilot booked as ARR, third read from the pilot agreement | 1.13 checks 1, 2 and 3 | `cancellable_within_notice_vs_arr`, `pilot_without_duty_to_convert_vs_recurring`, `plan_revenue_past_term_end` | No, the pilot agreement is in the full room |
+| DC2 Annual prepay, the Brookline Row order form (third check) | 1.13 must not flag it | all six 1.13 check names | No, the order form is in the full room |
+| PF5 Customer concentration, the Cedar & Pine order form | 1.13 returns clear on it, with its terms as info claims | `cancellable_within_notice_vs_arr`, `contract_price_vs_counted_price` | No, the order form is in the full room |
+| No planted entry: counted lines with no contract | 1.13 returns gaps | `counted_line_without_contract` | No, the customer file is in the full room |
 
 The check names are the ones the answer key's `check` field and the test in [ARCHITECTURE.md](ARCHITECTURE.md) match on. `arr_from_subscription_rows` is the data-room research's own example name (3.6). The other seven in the key are the names `data_room/generate.py` writes. Only `cap_table_reconcile` (DC3, a decoy with no `check` in the key) is set here. The seed-drop column comes from the table at the end of 3.4 in [research_data_room.md](../reports/20261022.02_research/research_data_room.md). The two decoy rows that table does not cover follow from [data_room_files.csv](../reports/20261022.02_research/data_room_files.csv): the cap table is in the seed drop and the Brookline Row order form is not.
 
@@ -291,7 +295,7 @@ Each entry has exactly seven parts, in this order: **Inputs**, **The questions i
 
 ## Scan 1. The red-flag engine (Saturday)
 
-The organisers' first direction: "churn hidden in cohort charts, revenue counted as ARR when it is not recurring, burn that does not match the hiring plan, numbers that disagree between the deck and the model" ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt), Track 2). Entries 1.2 to 1.5 are those four. Entries 1.6 to 1.8 are the three extra flags the data-room research found on published lists. Entries 1.9 and 1.10 are the brief's unit economics and the cap table a first pass opens first. Entry 1.11 holds the flags investors regret most, which no file in the room can settle. Entry 1.12 checks a family of accounting mislabels, numbers filed under a label they do not earn, and points back to 1.2 and 1.7 for the two kinds they already cover.
+The organisers' first direction: "churn hidden in cohort charts, revenue counted as ARR when it is not recurring, burn that does not match the hiring plan, numbers that disagree between the deck and the model" ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt), Track 2). Entries 1.2 to 1.5 are those four. Entries 1.6 to 1.8 are the three extra flags the data-room research found on published lists. Entries 1.9 and 1.10 are the brief's unit economics and the cap table a first pass opens first. Entry 1.11 holds the flags investors regret most, which no file in the room can settle. Entry 1.12 checks a family of accounting mislabels, numbers filed under a label they do not earn, and points back to 1.2 and 1.7 for the two kinds they already cover. Entry 1.13 reads every customer contract and compares its terms with how the customer is counted, and points back to 1.2 and 1.6 for the contract checks they already hold.
 
 Entry 1.1 runs before all of them. It turns the deck into claims the other entries check.
 
@@ -439,7 +443,7 @@ flag the total if excess_share > match_tolerance
 Line test, for each line counted in `ARR_TOTAL`:
 
 - Flag the line if its `product_type` is anything other than "Subscription".
-- Flag the line if its contract term is under `min_contract_months` (12) or its notice period is `short_notice_days` (90) or less.
+- Flag the line if its contract term is under `min_contract_months` (12) or the notice that ends the running contract is `short_notice_days` (90) or less. Notice not to renew is a different term and does not count here; entry 1.13 reads the two apart, so Brookline Row's renewal notice does not trip this test.
 - An annual prepaid subscription counts once as recurring. Cash arriving up front does not make it a flag.
 
 Worked example, Hollis Voice:
@@ -526,6 +530,8 @@ Label rules:
 - `cannot_check`: `ARR_Build` is missing. With the seed drop only, the customer file and the pilot agreement are absent. The entry then returns `watch` if a counted line's label names a pilot, and otherwise `cannot_check`. The data-room research counts the full PF1 catch as needing the full room.
 
 Its claims feed the overview's **traction and revenue** piece ([The readout](#the-readout-saturday), "Piece verdicts"). See also [1.12 Accounting mislabels](#112-accounting-mislabels), which reads the `mrr` column and the other labels that can hide non-recurring money.
+
+See also [1.13 Contract terms](#113-contract-terms), which reads every customer contract and compares its terms with how each customer is counted. It keeps notice that ends a running contract apart from notice not to renew.
 
 **What it must not do**
 
@@ -1000,6 +1006,8 @@ Propose the label using these rules, and name the rule and claim ids in "label_r
 - `cannot_check`: the customer file is missing. The data-room research counts PF5 as needing the full room.
 
 Its claims feed the overview's **customers** piece ([The readout](#the-readout-saturday), "Piece verdicts").
+
+See also [1.13 Contract terms](#113-contract-terms), which reads every customer contract, the largest customer's included, and compares its terms with how it is counted.
 
 **What it must not do**
 
@@ -1830,6 +1838,359 @@ Each sub-check's claims belong to the piece named in its table row. Kinds a, b, 
 - Treat a ledger that ties to the P&L as proof that no contractor exists. It is a founder file (entry 1.11).
 - Use a benchmark as a pass or fail.
 - Invent a figure for a kind the room cannot test. It returns the gap.
+
+### 1.13 Contract terms
+
+A contract says what a customer owes and when it can leave. The books count that customer as ARR, as MRR, as a share of concentration and as a line of the model's revenue. A gap is any place the counting runs ahead of the paper. Ken asked for customer contracts as an input, read for gaps such as cancellation periods ([writers' brief, 1:53 PM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). This entry reads every contract in the room and compares each one with how it is counted. It finds differences between the paper and the books. It does not say any contract is fake ([writers' brief, 1:33 PM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). A contract that was changed to match the books gets through, and the readout says so wherever it matters.
+
+Entries 1.2 and 1.6 keep their own checks and point here. Entry 1.2 reads the pilot clause for the ARR lines. Entry 1.6 reads the largest customer's term and exit. This entry holds the full comparison for every contract.
+
+**Scope: Saturday only as far as the model-reading slice reaches.** The roadmap's [redflag-readings](ROADMAP.md#redflag-readings) slice has the model read `pilot_agreement_marlow.pdf`, and it is first in the cut order. The Marlow reading is therefore the Saturday part. Reading the other two contracts takes the same prompt and schema once more for each, and the roadmap's list names one contract, so the slice needs a line added before they count as Saturday scope. The six comparisons below are scripts, but they run on the model's typed terms. If the slice is cut, this whole entry moves to after Saturday. The pilot flag still shows then, from the script check in 1.2 (`arr_from_subscription_rows`), without the clause quotes.
+
+| Check name | The gap it looks for | Terms it uses | Compared with | Feeds the piece |
+|---|---|---|---|---|
+| `cancellable_within_notice_vs_arr` | A customer who can leave within `short_notice_days` is counted as a year of ARR | notice that ends a running contract, term end, auto-renewal, term length | `customer_mrr_by_month.csv` column `mrr`; `ARR_Build` and `ARR_TOTAL`; `monthly_metrics.csv` columns `mrr` and `arr` | traction and revenue |
+| `pilot_without_duty_to_convert_vs_recurring` | A pilot or trial with no duty to convert is counted as recurring | pilot or trial wording, duty to convert, fee schedule | the same files, and the P&L row "Recurring revenue (subscription plus pilot)" | traction and revenue |
+| `plan_revenue_past_term_end` | The plan keeps a contract's revenue after its term ends, with no renewal right or an automatic renewal treated as certain | term end, renewal, notice not to renew | the P&L plan columns; `Assumptions` | traction and revenue |
+| `signed_not_live_vs_revenue` | A signed contract or amendment that has not started is counted as revenue | effective dates, amendment dates | the first month with `mrr` in the customer file | traction and revenue |
+| `contract_price_vs_counted_price` | The counted price differs from the contract's price, or ignores a discount the contract gives | fee schedule, discount, list price | `customer_mrr_by_month.csv` column `mrr`; the P&L actual revenue rows; the largest customer's share in 1.6 | traction and revenue, customers |
+| `counted_line_without_contract` | A counted line has no contract in the room | none | each `ARR_Build` line and the customer file | customers |
+
+**Inputs**
+
+- `04_customers/`: every customer contract in the room. On Hollis Voice that is `order_form_cedar_pine.pdf` (with Amendment No. 1 on page 3), `pilot_agreement_marlow.pdf` and `order_form_brookline_row.pdf`. Contracts can come with the room or be uploaded on their own.
+- `03_metrics/customer_mrr_by_month.csv`: columns `month`, `customer_id`, `customer_name`, `locations`, `plan`, `product_type`, `mrr`, `one_time_fee` and `billings`. Full room only.
+- `03_metrics/monthly_metrics.csv`: columns `mrr` and `arr`.
+- `02_financials/financial_model.xlsx`: tab `ARR_Build` (the lines, `ARR_TOTAL`), tab `P&L` (actual rows "Subscription revenue" and "Pilot revenue", and the plan columns of "Recurring revenue (subscription plus pilot)") and tab `Assumptions` (recurring revenue growth per month, and the recurring revenue in the last actual month).
+- The claims of entries 1.2 and 1.6, so the readout can put a contract claim beside the claim it explains.
+- Settings: `short_notice_days`, `min_contract_months` and `match_tolerance`.
+- Not in the Hollis Voice room: a subscription order form for Marlow Veterinary Group, and a contract for any other customer. The checks that need them return a gap.
+
+**The questions it asks**
+
+1. What are the start and end dates and the length of each contract?
+2. How much notice ends it while it runs, and can either party end it without cause? Notice that ends a running contract is a different thing from notice not to renew at the end of the term. Read them apart.
+3. Does it renew by itself, for how long, and with what notice not to renew?
+4. Is it a pilot, trial or evaluation, and does anything make the customer buy afterwards?
+5. What is the price, by period? Is there a discount, a list price, a payment schedule or a one-time fee?
+6. Does it hold an exclusivity clause, a most-favoured-customer clause or a change-of-control clause? Does it hold any other clause that changes what the customer pays or when it can leave?
+7. For each contract, how is the customer counted: in ARR, in MRR, in the largest-customer share, in the model's revenue and in the plan?
+8. Where does the count run ahead of the paper?
+9. Which counted lines have no contract in the room?
+
+**Mechanical check**
+
+The work runs in four steps. A script lists the contracts and the counted lines. The model reads the contracts and returns typed terms. The quote checker looks for each term's quote at its page and drops any it cannot find. A script then compares the typed terms with the counting files and sets the label. A term whose quote is not found is not used, and every check that needs it returns `cannot_check` for that contract. For a number or a date, the script also checks that the value appears in the quote, as digits or as a date it can parse. A term where it does not is kept as a judged reading.
+
+The script matches a contract to its counted rows by customer name, after it lowercases, joins "&" and "and", and removes punctuation. A contract with no match gets the gap "Not in the room: a customer row for <name>" and no check. The customer's cohort line in `ARR_Build` is the line whose quarter holds the customer's first subscription month. Settings used: `short_notice_days` (90), `min_contract_months` (12) and `match_tolerance` (1 percent). Check 3 also uses `match_tolerance` as the smallest share of plan revenue worth a watch.
+
+Terms used in the formulas:
+
+```
+as_of           = the room's as-of date
+last_notice_day = term_end − non_renewal_notice_days
+earliest_exit   = as_of + convenience_notice_days        if a party may end the contract without cause while it runs
+                  term_end                               otherwise, if last_notice_day is after as_of or the contract does not renew
+                  term_end + renewal_months              otherwise (the day to give notice has passed)
+days_to_exit    = earliest_exit − as_of, in days
+counted_mrr(c)  = customer c's MRR in the as-of month, product types other than Onboarding
+counted_arr(c)  = 12 × counted_mrr(c)
+plan_share(c)   = counted_mrr(c) ÷ the recurring revenue in the last actual month (Assumptions)
+```
+
+The plan multiplies one starting figure, the last actual month's recurring revenue, by one growth rate each month. That starting figure holds every counted contract. A contract's part of any plan month is therefore its `plan_share` of that month.
+
+**1. Cancellable within the notice window but counted as a year of ARR (Saturday).** Check name: `cancellable_within_notice_vs_arr`. It uses `short_notice_days` and `min_contract_months`, the same settings as the line test in 1.2.
+
+```
+flag  if counted_mrr(c) > 0 and days_to_exit(c) ≤ short_notice_days
+watch if no flag and term_months(c) < min_contract_months and counted_mrr(c) > 0
+```
+
+Notice not to renew does not count as a way out of a running contract. It sets the exit at the end of the term. This is the one change from the line test in 1.2, and the two examples below (Cedar & Pine at 90 days, Brookline Row at 30 days) show why it matters.
+
+**2. A pilot with no duty to convert counted as recurring (Saturday).** Check name: `pilot_without_duty_to_convert_vs_recurring`.
+
+```
+flag if is_pilot_or_trial(c) = true
+        and duty_to_convert(c) is false or not_stated
+        and counted_mrr(c) > 0 in ARR_TOTAL, in monthly_metrics.mrr,
+            or in the P&L row "Recurring revenue (subscription plus pilot)"
+contract_total(c)  = SUM of the fee schedule over the term
+excess_arr(c)      = counted_arr(c) − contract_total(c)
+remaining_fees(c)  = monthly fee × months from as_of to term_end
+```
+
+A pilot becomes recurring when a signed subscription order form starts. The script looks for that order form under the same customer name. If it is in the room, the model reads it as one more contract. If it is not, the check returns the gap "Not in the room: a subscription order form for <customer>".
+
+**3. Plan revenue past the end of a contract (Saturday).** Check name: `plan_revenue_past_term_end`. It covers a contract with no renewal right, and an automatic renewal the plan treats as certain.
+
+```
+after(c)  = plan months later than term_end(c), from the P&L plan columns
+resting(c) = plan_share(c) × SUM(plan recurring revenue over after(c))
+flag  if the contract has no renewal right and after(c) is not empty
+watch if the contract renews by itself, after(c) is not empty, plan_share(c) > match_tolerance,
+         and Assumptions states no non-renewal rate
+```
+
+An automatic renewal ends only if a party gives notice, so no document makes it certain. A contract whose `plan_share` is below `match_tolerance` is too small to move the plan, and the check returns `clear` with an info claim. If the deck or the model calls the revenue "contracted", "committed" or "locked in" past the term end, the model reading adds a judged claim that quotes the sentence.
+
+**4. A signed contract that has not gone live counted as revenue (Saturday).** Check name: `signed_not_live_vs_revenue`.
+
+```
+live_from(c)    = the contract's effective date, or an amendment's effective date for the change it makes
+first_month(c)  = the first month with mrr > 0 for customer c in customer_mrr_by_month.csv
+flag if first_month(c) is earlier than the month of live_from(c)
+     or a fee or location change that takes effect after as_of is already in the as-of month's mrr
+```
+
+**5. A contract price the counted price does not match (Saturday).** Check name: `contract_price_vs_counted_price`.
+
+```
+scheduled(c, t) = the fee in effect in month t from the fee schedule, with an annual fee ÷ 12
+gap(c, t)       = mrr(c, t) − scheduled(c, t)
+flag  if gap(c, t) ÷ scheduled(c, t) > match_tolerance in any month (counted above the contract)
+watch if gap(c, t) ÷ scheduled(c, t) < −match_tolerance in any month (counted below the contract)
+discount: if the contract states a discount and a list price, then
+          list × (1 − discount) must sit within match_tolerance of scheduled(c, t)
+```
+
+Cash invoiced is not a price. An annual fee paid up front shows in `billings`, and entries 1.12 (kinds b and g) own that. This check reads `mrr`. For the largest customer it also confirms the top of the share in 1.6: the file's MRR for that customer must equal the contract's fee.
+
+**6. A counted line with no contract in the room (Saturday).** Check name: `counted_line_without_contract`. A gap, never a flag.
+
+```
+for each ARR_Build line, and each customer in customer_mrr_by_month.csv with counted_mrr > 0:
+    if no contract in the room matches it, write the gap
+        "Not in the room: the contract for <line label>"
+covered_mrr = SUM of counted_mrr over customers that have a contract in the room
+coverage    = covered_mrr ÷ monthly_metrics.mrr(as_of)
+```
+
+The gap is written once per `ARR_Build` line, naming the line's customer count from column C. It is not written once per customer. The coverage figure goes in one info claim, so the reader sees how much of the counted MRR rests on paper the room holds.
+
+**Worked example, Hollis Voice**
+
+The three contracts and the counting files are in `data_room/hollis_voice/`. The key facts are in `data_room/answer_key.json` (`facts`: `arr_true_recurring`, `arr_model`, `big_customer_id`, `pilot_customer_id`, `brookline_customer_id`; and flag PF1, whose `true.details` give the pilot's contracted total and notice days). The arithmetic on the files (days, sums, shares) was run by a Python script over them, not by hand. The as-of date is 2026-09-30. Page numbers are the PDF's. Quotes are shown with the PDF's line breaks joined.
+
+*Marlow Veterinary Group, `pilot_agreement_marlow.pdf` (the planted pilot, PF1)*
+
+- Terms read. Page 1, clause 1: "The pilot is a trial of the service. It is not a subscription." Page 1, clause 2: "The pilot runs for six (6) months, from 2026-08-01 to 2027-01-31. The Customer pays $15,000 a month, $90,000 in total, invoiced monthly." Page 2, clause 7: "Either party may end this pilot at any time, for any reason, by giving thirty (30) days written notice." Page 2, clause 8: "Nothing in this agreement requires the Customer to buy a subscription when the pilot ends. Any subscription needs a separate order form signed by both parties." Not stated: renewal, discount, list price, exclusivity, most-favoured-customer, change of control.
+- Counted as. Customer `C0219`, product type Pilot, `mrr` 15,000 in 2026-08 and 2026-09. `ARR_Build` row 13, "Marlow Veterinary Group (pilot)", cell E13 = 12 × 15,000 = 180,000 (PF1 `expect`). `ARR_TOTAL` is 2,240,868. `monthly_metrics.csv` shows `mrr` of 186,739 and `arr` of 2,240,868 for 2026-09. The P&L shows 15,000 of "Pilot revenue" in 2026-08 and 2026-09.
+- Check 1, `flag`. The contract can be ended without cause on 30 days notice, so `earliest_exit` is 2026-10-30 and `days_to_exit` is 30, within the 90-day line. Counted: 180,000 of ARR.
+- Check 2, `flag`. It is a trial, with no duty to convert. Counted ARR of 180,000 against 90,000 of total fees in the contract: 90,000 more than the contract can pay. Fees still to come at the as-of date: 4 months × 15,000 = 60,000. Fees paid so far: 30,000. No subscription order form is in the room, so the gap is "Not in the room: a subscription order form for Marlow Veterinary Group".
+- Check 3, `flag`. The term ends 2027-01-31, 123 days after the as-of date, and the contract has no renewal clause. The plan starts from 186,739 (`Assumptions`, the recurring revenue in the last actual month), which includes the pilot's 15,000, 8.0% of it. The plan grows that figure 3.5% a month (`Assumptions`) and has no step down at 2027-01-31. Plan months after the end: 2027-02 to 2027-09, eight of them. Plan revenue resting on the pilot in those months: $161,258, of which $17,815 is in 2027-02.
+- Check 4, `clear`. Effective 2026-08-01; the first month with `mrr` is 2026-08.
+- Check 5, `clear`. The fee of 15,000 equals the file's `mrr` and the P&L's "Pilot revenue" in both months.
+- Said together: one pilot, counted in the ARR build, the MRR column and the P&L. The readout shows these claims beside the PF1 claim from 1.2 and the `mrr` claim from 1.12 (kind a), because they have one cause.
+
+*Cedar & Pine Animal Hospitals, `order_form_cedar_pine.pdf` (the largest customer, PF5; clean on the points this entry checks)*
+
+- Terms read. Page 1: "Initial term 24 months, from 2025-11-01 to 2027-10-31." Page 1: "Renews for 12 months at a time unless either party gives 90 days written notice before the term ends." Page 1: "$18,000 until 2026-03-31. $36,000 from 2026-04-01." Page 2: "Either party may end this order form for a material breach that is not fixed within 30 days of written notice. The Customer has no other right to end the order form during the initial term." Page 2: "Fees are fixed for the initial term. The Provider will not raise them during the initial term." Page 3 (Amendment No. 1, effective 2026-04-01): "The Customer adds 20 locations, for a total of 40. The monthly fee becomes $36,000 for the rest of the initial term." Payment is monthly in advance, net 30 days. Not stated: a pilot, a discount, a list price (the plan is Group, "Custom" on deck slide 7), exclusivity, most-favoured-customer, change of control, termination without cause.
+- Counted as. Customer `C0087`, 40 locations, `mrr` 36,000 in 2026-09, so 12 × 36,000 = 432,000 of ARR. It sits inside `ARR_Build` row 8, "Subscriptions signed 2025 Q4" (MRR 54,072 in cell D8), where it is 66.6% of the line. It is 21.0% of subscription MRR (36,000 ÷ 171,739), the PF5 figure. It is 19.3% of the plan's starting figure.
+- Check 1, `clear`. There is no right to end without cause, so `earliest_exit` is the term end, 2027-10-31, 396 days after the as-of date. The 90 days is a notice not to renew, and the last day to give it is 2027-08-02. Read as a way out, the 90 days would sit on `short_notice_days` and raise a false flag. The contract has 13 months left (2026-10 to 2027-10), longer than the year counted.
+- Check 2, `clear`. It is not a pilot.
+- Check 3, `clear`. The term ends after the last plan month (2027-09), so no plan month rests on a renewal. The last day to give notice, 2027-08-02, falls inside the plan window. The readout shows it as an info claim.
+- Check 4, `clear`. The amendment takes effect 2026-04-01 and the file steps from 18,000 (2025-11 to 2026-03) to 36,000 in 2026-04.
+- Check 5, `clear`. The contract's fee equals the file's `mrr` in all eleven months. The numerator of the 21.0% share in 1.6 rests on a fee the contract states. The contract states no discount.
+- What it holds: the largest customer's revenue is locked for 396 days, and the only way out before 2027-10-31 is a breach left unfixed for 30 days. Label `clear`.
+
+*Brookline Row Veterinary, `order_form_brookline_row.pdf` (the annual prepay, DC2; must not be flagged)*
+
+- Terms read. Page 1: "Term 12 months, from 2026-06-01 to 2027-05-31." Page 1: "Annual fee $7,008, invoiced once, in advance. That is 12 months at $584 a month, 10% off the $649 list price for paying a year up front." Page 1: "Renews for 12 months at a time unless either party gives 30 days written notice." Page 1: the onboarding fee is $500, one time. Page 2: "Either party may end this order form for a material breach that is not fixed within 30 days of written notice." Not stated: a pilot, exclusivity, most-favoured-customer, change of control, termination without cause.
+- Counted as. Customer `C0193`, Standard plan, `mrr` 584 in 2026-06 to 2026-09, `billings` 7,008 in 2026-06 and 0 after. It sits inside `ARR_Build` row 10, "Subscriptions signed 2026 Q2", at 12 × 584 = 7,008 of ARR.
+- Check 1, `clear`. There is no right to end without cause, so `earliest_exit` is the term end, 2027-05-31, 243 days after the as-of date. The 30 days is a notice not to renew, due by 2027-05-01. The term is 12 months, which meets `min_contract_months`.
+- Check 2, `clear`. It is not a pilot.
+- Check 3, `clear`. The term ends inside the plan window, and four plan months (2027-06 to 2027-09) come after it, so they rest on the automatic renewal. Brookline Row is 0.31% of the plan's starting figure, below the 1 percent line. Plan revenue resting on it is $3,355 over those four months. The readout shows one info claim with the term, the renewal and the notice.
+- Check 4, `clear`. Effective 2026-06-01; the first month with `mrr` is 2026-06.
+- Check 5, `clear`. 584 equals the fee ÷ 12 (7,008 ÷ 12). The list price of 649 less 10% is 584.10, a gap of 0.10, or 0.02%, inside `match_tolerance`. The counted price already carries the discount. The June billings of 7,008 are cash and get no claim here (1.12 owns them).
+- Label `clear`. A flag on Brookline Row is a false positive.
+
+*Across the room*
+
+- Check 6. Of the 212 subscription customers counted in 2026-09, the room holds a contract for two (Cedar & Pine in row 8 and Brookline Row in row 10). With Marlow, the three contracts cover 36,000 + 15,000 + 584 = 51,584 of the 186,739 counted MRR, which is 27.6%. The gaps are seven, one per cohort line in `ARR_Build` rows 5 to 11, for example "Not in the room: the contract for Subscriptions signed 2025 Q1 (13 customers)". The Marlow line has its contract. Its gap is the missing subscription order form in check 2.
+- The entry's label on Hollis Voice is `flag`, because of Marlow. The other two contracts are `clear`.
+- On the seed drop there is no `04_customers/` folder and no customer file. The entry returns `cannot_check` with the gap "Not in the room: customer contracts". The row label "Marlow Veterinary Group (pilot)" in `ARR_Build` is still visible, and 1.2 reports it.
+
+| Contract | 1. `cancellable_within_notice_vs_arr` | 2. `pilot_without_duty_to_convert_vs_recurring` | 3. `plan_revenue_past_term_end` | 4. `signed_not_live_vs_revenue` | 5. `contract_price_vs_counted_price` | Contract label |
+|---|---|---|---|---|---|---|
+| Marlow Veterinary Group | flag (30 days to exit, 180,000 counted) | flag (no duty to convert, 180,000 against 90,000) | flag (no renewal; 8 plan months) | clear | clear | flag |
+| Cedar & Pine Animal Hospitals | clear (396 days to exit) | clear | clear (term ends after the plan) | clear | clear | clear |
+| Brookline Row Veterinary | clear (243 days to exit) | clear | clear (0.31% of the plan) | clear | clear | clear |
+
+**Model reading**
+
+Only a model can find a termination right, a renewal clause or a pilot's wording in contract language, and tell notice that ends a running contract from notice not to renew.
+
+```text
+Task: read every customer contract in this data room and report its terms. A script compares them with how the company counts each customer. You do not compare, count or judge.
+
+Documents:
+{{docs: every PDF in 04_customers/, by page}}
+
+Script results: none. The script compares after the quote check.
+
+Fill one entry in "contracts" for each document. If a document has an amendment, put its changes in "amendments" and its fees in "fee_schedule".
+
+For each term, use this shape: status "stated" with a value, a quote and a page, or status "not_stated" with all three set to null. Rules:
+1. Write dates as YYYY-MM-DD. Copy a number as the document gives it. If you work a number out from two dates, say so in the claim text and start it with "Reading:".
+2. term_months and term_end_date are for the initial term. effective_date is the day the contract or amendment takes effect.
+3. Keep two notices apart. non_renewal_notice_days is the notice a party must give to stop an automatic renewal. convenience_notice_days is the notice that lets a party end the contract while it runs, for any reason. A right to end for a breach that is not fixed is neither. Put its cure period in breach_cure_days.
+4. termination_for_convenience is true only when a party may end the contract during its term without cause. If the document says the customer has no other right to end it, set the term to "stated" with value false and quote that sentence.
+5. is_pilot_or_trial is true when the document calls itself a pilot, trial or evaluation, or says it is not a subscription. duty_to_convert is true when the customer must buy afterwards, false when the document says nothing requires it, and not_stated otherwise.
+6. fee_schedule has one line for each price in effect: the amount in USD, whether it is per month, per year or for the whole term, the dates it applies from and to (null if the document gives none), the number of locations if stated, and the quote. An amendment's new fee is its own line.
+7. discount_percent and list_price_usd_per_month are set only when the document states them.
+8. exclusivity, most_favoured_customer and change_of_control are "stated" with value true and a quote when the document has such a clause, and "not_stated" when it does not.
+9. other_clauses holds any other clause that changes what the customer pays or when it can leave: a fee freeze or cap, a minimum commitment, a refund or credit, a usage-based fee. Leave out confidentiality, governing law, data ownership and similar boilerplate.
+10. A term the document does not state is not a gap. Mark it "not_stated" and do not guess. Add a gap only if a document cannot be read, with "what" set to "Not in the room: a readable copy of <contract>".
+
+Write one claim for each term that is stated, using the contract's name and then a colon at the start of the claim text, for example "Cedar & Pine Animal Hospitals order form: ...". Set value.label to "contract_term" with unit "months" for a term length, "notice_period" with unit "days" for a notice, and "other" for any amount of money (unit "USD" or "USD_per_month"). Give no value to any other claim. Use the quote and page you used for the term.
+
+Quote the exact span you relied on for every stated term. Do not say whether the contract is good or bad for either side. Do not assume a pilot will convert or a contract will renew. Do not say why a term was written.
+
+Return "contracts", "claims" and "gaps". The script sets the label and writes the comparisons.
+```
+
+**Output shape**
+
+Add these three definitions beside the shared `$defs` before use. The call to the model uses this schema without `label`, `label_reason` and `comparisons`. The script fills those three, and adds its own claims and gaps with `check.kind` "script" and each check's name. The model's claims carry `check.name` "contract_terms.read".
+
+```json
+{
+  "$defs": {
+    "Term": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "value", "quote", "page"],
+      "properties": {
+        "status": {"type": "string", "enum": ["stated", "not_stated"]},
+        "value": {"anyOf": [{"type": "string"}, {"type": "number"}, {"type": "boolean"}, {"type": "null"}], "description": "Dates as YYYY-MM-DD. Null when not_stated."},
+        "quote": {"anyOf": [{"type": "string"}, {"type": "null"}], "description": "The exact span relied on. Null when not_stated."},
+        "page": {"anyOf": [{"type": "integer"}, {"type": "null"}]}
+      }
+    },
+    "FeeLine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["amount_usd", "per", "from_date", "to_date", "locations", "quote", "page"],
+      "properties": {
+        "amount_usd": {"type": "number"},
+        "per": {"type": "string", "enum": ["month", "year", "term"]},
+        "from_date": {"anyOf": [{"type": "string"}, {"type": "null"}]},
+        "to_date": {"anyOf": [{"type": "string"}, {"type": "null"}]},
+        "locations": {"anyOf": [{"type": "integer"}, {"type": "null"}]},
+        "quote": {"type": "string"},
+        "page": {"type": "integer"}
+      }
+    },
+    "NamedClause": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "summary", "effective_date", "quote", "page"],
+      "properties": {
+        "name": {"type": "string"},
+        "summary": {"type": "string", "description": "One plain sentence. For an amendment, the change it makes."},
+        "effective_date": {"anyOf": [{"type": "string"}, {"type": "null"}], "description": "For an amendment, the day it takes effect. Null for other clauses."},
+        "quote": {"type": "string"},
+        "page": {"type": "integer"}
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["framework", "label", "label_reason", "claims", "gaps", "contracts", "comparisons"],
+  "properties": {
+    "framework": {"type": "string", "const": "contract_terms"},
+    "label": {"type": "string", "enum": ["flag", "watch", "clear", "cannot_check"]},
+    "label_reason": {"type": "string"},
+    "claims": {"type": "array", "items": {"$ref": "#/$defs/Claim"}},
+    "gaps": {"type": "array", "items": {"$ref": "#/$defs/Gap"}},
+    "contracts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["uri", "customer_name", "kind", "effective_date", "term_end_date", "term_months", "auto_renews", "renewal_months", "non_renewal_notice_days", "termination_for_convenience", "convenience_notice_days", "breach_cure_days", "is_pilot_or_trial", "duty_to_convert", "fee_schedule", "discount_percent", "list_price_usd_per_month", "payment_terms", "one_time_fee_usd", "exclusivity", "most_favoured_customer", "change_of_control", "other_clauses", "amendments"],
+        "properties": {
+          "uri": {"type": "string"},
+          "customer_name": {"$ref": "#/$defs/Term"},
+          "kind": {"type": "string", "enum": ["order_form", "pilot_agreement", "subscription_agreement", "other"]},
+          "effective_date": {"$ref": "#/$defs/Term"},
+          "term_end_date": {"$ref": "#/$defs/Term"},
+          "term_months": {"$ref": "#/$defs/Term"},
+          "auto_renews": {"$ref": "#/$defs/Term"},
+          "renewal_months": {"$ref": "#/$defs/Term"},
+          "non_renewal_notice_days": {"$ref": "#/$defs/Term"},
+          "termination_for_convenience": {"$ref": "#/$defs/Term"},
+          "convenience_notice_days": {"$ref": "#/$defs/Term"},
+          "breach_cure_days": {"$ref": "#/$defs/Term"},
+          "is_pilot_or_trial": {"$ref": "#/$defs/Term"},
+          "duty_to_convert": {"$ref": "#/$defs/Term"},
+          "fee_schedule": {"type": "array", "items": {"$ref": "#/$defs/FeeLine"}},
+          "discount_percent": {"$ref": "#/$defs/Term"},
+          "list_price_usd_per_month": {"$ref": "#/$defs/Term"},
+          "payment_terms": {"$ref": "#/$defs/Term"},
+          "one_time_fee_usd": {"$ref": "#/$defs/Term"},
+          "exclusivity": {"$ref": "#/$defs/Term"},
+          "most_favoured_customer": {"$ref": "#/$defs/Term"},
+          "change_of_control": {"$ref": "#/$defs/Term"},
+          "other_clauses": {"type": "array", "items": {"$ref": "#/$defs/NamedClause"}},
+          "amendments": {"type": "array", "items": {"$ref": "#/$defs/NamedClause"}}
+        }
+      }
+    },
+    "comparisons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["check_name", "contract_uri", "customer_name", "label", "contract_says", "counted_as", "counted_where", "claim_ids"],
+        "properties": {
+          "check_name": {"type": "string", "enum": ["cancellable_within_notice_vs_arr", "pilot_without_duty_to_convert_vs_recurring", "plan_revenue_past_term_end", "signed_not_live_vs_revenue", "contract_price_vs_counted_price", "counted_line_without_contract"]},
+          "contract_uri": {"anyOf": [{"type": "string"}, {"type": "null"}], "description": "Null for counted_line_without_contract."},
+          "customer_name": {"type": "string"},
+          "label": {"type": "string", "enum": ["flag", "watch", "clear", "cannot_check"]},
+          "contract_says": {"type": "string", "description": "One plain sentence with the term and its page."},
+          "counted_as": {"type": "string", "description": "One plain sentence with the amount and where it is counted."},
+          "counted_where": {"type": "string", "description": "File and cell, row or column, for example 'financial_model.xlsx ARR_Build!E13'."},
+          "claim_ids": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}
+```
+
+Claims use the shared Claim. Every amount of money in a claim uses `value.label` "other", because the memo never links an `other` claim and so never sets a per-contract amount against a total. Term lengths use `contract_term` and notice periods use `notice_period`. The claim text starts with the contract's name and a colon, so a claim links only with another claim about the same contract (the memo's rule for `contract_term` and `notice_period`). Claims from the script carry the check's name in `check.name`.
+
+**How the readout scores it**
+
+The script sets each comparison's label, then the entry's label as the worst of them.
+
+- `flag`: check 1 fired, check 2 fired, check 3 fired for a contract with no renewal right, check 4 fired, or check 5 found the counted price above the contract's. Every claim that fired gets severity "flag".
+- `watch`: no flag, but check 1 found a term under `min_contract_months`, check 3 found an automatic renewal the plan treats as certain, or check 5 found the counted price below the contract's.
+- `clear`: every contract in the room passes every check. Gaps from check 6 sit beside a clear, and Hollis Voice has seven of them.
+- `cannot_check`: no contract is in the room, or no quote could be found. Contracts uploaded without a room still produce the terms table and the term claims. The five comparisons then return `cannot_check` with the gap "Not in the room: the ARR build or the customer file to compare with".
+
+On Hollis Voice the entry's label is `flag`, from Marlow Veterinary Group. The Cedar & Pine and Brookline Row contracts are `clear`, and each shows its terms as info claims.
+
+Which piece each part feeds ([The readout](#the-readout-saturday), "Piece verdicts"):
+
+- **Traction and revenue.** Claims from checks 1 to 5. Their amounts use the label `other`, so the memo sends them to the piece named here.
+- **Customers.** The term and notice claims, which carry `contract_term` and `notice_period`, and the gaps and the coverage claim from check 6. Check 5's confirmation of the largest customer's fee also sits here.
+
+The flag claims from this entry state no pair of numbers that disagree, so the headline ranking in "Top green and red flags" does not rank them. They appear when the operator opens traction and revenue, beside the pilot claims from 1.2 and 1.12, and they do not change that piece's verdict on Hollis Voice. The piece is already looking weak from PF1, PF2, PF2b and PF7.
+
+**What it must not do**
+
+- Give a reason the pilot was counted, or suggest intent. Nothing in the room states one.
+- Treat a notice not to renew as a right to leave during the term. The Cedar & Pine and Brookline Row contracts are why.
+- Flag Cedar & Pine or Brookline Row. Both are clean on every point this entry checks.
+- Assume a pilot converts or an automatic renewal happens.
+- Say a contract is fake, altered or fraudulent. It reports where the paper and the books differ.
+- Judge a clause as good or bad terms, or say a discount is wrong. It shows what the contract says.
+- Guess at a term the contract does not state, or at a contract that is not in the room.
+- Repeat the line test in 1.2, the share in 1.6 or the billings checks in 1.12. It uses their files and points to them.
 
 ## Scan 2. The comp builder (Saturday)
 
