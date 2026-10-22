@@ -5,7 +5,7 @@ Everything the factory built today for Deal Flow, NYC's first VC hackathon (Beta
 ## What I need from you
 
 - **Decide.** Nineteen cards in section 3, each with a recommendation. The critics settled three and added three more. Your 12:55 comment settled the edge, and your 1:12 edit added the steering card.
-- **Do this week.** Your rows on [the board](../../BULLETIN.md): interviews, the founder brief in your words, the pitch video, the keys, who joined and their repo access, the organisers' questions, the Reddit pages.
+- **Do this week.** Your rows on [the board](../../BULLETIN.md): the founder brief in your words, the pitch video, the keys, who joined and their repo access, the organisers' questions, the Reddit pages.
 - **Read first.** The [one-page founder brief](founder_brief.md). It is what you hand the judges, and the organisers asked every team for it.
 
 Written 2026-10-22 at 11:55 AM. Updated 12:50 PM: the critics' fixes are applied and every link on this page opens.
@@ -255,7 +255,7 @@ The brand doc's sentence: "Tricorder reads only the documents you give it or the
 
 ### Who we price for first
 
-Angels want diligence but lack the time: one invests almost only in YC companies because YC has done it, another became an LP so funds do it. They pay for diligence by proxy, so they are a real market. The fund evidence is second-hand until the interviews. The persona order it set: partner or principal, solo angel, accelerator screener, associate, corporate VC ([PERSONAS.md](../../ongoing/PERSONAS.md)).
+Angels want diligence but lack the time: one invests almost only in YC companies because YC has done it, another became an LP so funds do it. They pay for diligence by proxy, so they are a real market. The fund evidence is second-hand; the online research on the gaps looks for funds saying what they pay in their own words. The persona order it set: partner or principal, solo angel, accelerator screener, associate, corporate VC ([PERSONAS.md](../../ongoing/PERSONAS.md)).
 
 <div class="choice" data-choice="price-first">
 <p class="choice-q">Who is the first paying customer?</p>
@@ -315,7 +315,7 @@ Written this week by agents, per the critics: the skeleton with the Claim schema
 Three critics read everything with fresh eyes. Their full files: [the judge](critique_judge.md), [buildability](critique_buildability.md), [the demo](critique_demo.md). The cards above already carry their recommendations. What each said in one line, and the must-fix findings being applied now:
 
 <div class="cards">
-<div class="card"><h4>The judge</h4><p>Shortlisted, not yet the winner. The one change: run it on a room it has never seen. Also: only one of the three asks on screen, and no buyer has spoken yet because the interviews have not happened.</p></div>
+<div class="card"><h4>The judge</h4><p>Shortlisted, not yet the winner. The one change: run it on a room it has never seen. Also: only one of the three asks on screen, and no buyer has spoken in their own words yet. You chose online research only, so a research track is looking for that now.</p></div>
 <div class="card"><h4>Buildability</h4><p>Builds by 3:30 only with changes, because every role is budgeted to its last minute. Make the engine scripts only, give the shared file readers one owner, write the skeleton this week, cut live signals before 10:30. The score would have read 2 of 8 because six check names disagreed; being fixed.</p></div>
 <div class="card"><h4>The demo</h4><p>Lands if it opens on the four ARR numbers and runs on the full room. The slot is likely three minutes, not five. The room's cash does not add up ($2.9M of losses unexplained against $2M raised), two customer ids and the "Claims page" look built to be caught, two decoys catch nothing, and the numbers are too tidy. All being fixed in the generator.</p></div>
 </div>
@@ -330,7 +330,6 @@ All on [BULLETIN.md](../../BULLETIN.md), newest first:
 
 - **Edit the founder brief** in your own words ([founder_brief.md](founder_brief.md)).
 - **Record the two-minute pitch video** from [the script](../../../data_room/hollis_voice/01_overview/pitch_video_script.md); it says "about $3 million" on purpose.
-- **Run two or three interviews** with the organisers' three questions, into [interviews.md](../../reports/20261022.02_research/interviews.md).
 - **Say who accepted the invites.**
 - **Get the sponsor keys**: Akta (ask for a coupon; the useful signals are on the $50 plan), Nicrron, You.com, Tavily, an Anthropic key, a GitHub token, a contact address for the SEC's User-Agent rule.
 - **Ask the organisers** who Roundtable is, which fund D. J. Patel is with, whether Abeera Saeed is still at Plug and Play, and whether the build window is six hours or nine. Plus the track change from the other session's row.
