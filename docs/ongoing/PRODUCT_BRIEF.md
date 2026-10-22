@@ -78,6 +78,8 @@ Everything about a startup, from its pitch deck and video to its financials to i
 
 **Every scan starts as soon as its input exists.** The outside-world checks start on the company's name, the deck scan on the deck, and the model checks when the model lands. Nobody waits for the whole room. The readout fills in as results arrive. Each piece shows whether it is running, done, or waiting on an input, and the operator sees the first green and red flags early. Speed matters because slow diligence costs momentum, as the junior VC above says. The roadmap's inbound-unasked slice builds it ([ROADMAP.md](ROADMAP.md)).
 
+While compiling the data room, there are quick ways to send messages to the company asking them for information, with guidance on what they should submit.
+
 ### What Tricorder gathers before the data room is opened
 
 An associate describes her routine: "Before I even open your data room, I already have ten tabs up. I’m checking your traffic, reviews, investors, any co-founder issues, and whether your story matches what’s online." ([associate at a seed fund, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)). Tricorder opens those tabs for her, automatically, the moment a company comes in. This matters most at seed. A seed room is thin by design: a deck, a model, a cap table, a few metrics and founder bios. Y Combinator's seed guide calls an executive summary and a deck enough. So the outside world carries much of a seed first pass, and that is why Tricorder pulls signals from the internet ([the data-room research](../reports/20261022.02_research/research_data_room.md), Part 1). Sources and their terms are in [the feasibility research](../reports/20261022.02_research/research_feasibility.md), Part 2.
