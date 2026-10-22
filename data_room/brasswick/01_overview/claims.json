@@ -1,0 +1,86 @@
+{
+  "source": "01_overview/pitch_deck.pdf",
+  "slide": 12,
+  "claims": [
+    {
+      "label": "Revenue, last 12 months",
+      "value": "$943,340",
+      "slide": 4
+    },
+    {
+      "label": "MRR, September 2026",
+      "value": "$84,810",
+      "slide": 4
+    },
+    {
+      "label": "Paying brokers",
+      "value": "14",
+      "slide": 4
+    },
+    {
+      "label": "Monthly revenue chart",
+      "value": "2026-01 to 2026-09",
+      "slide": 4
+    },
+    {
+      "label": "Brokers still paying",
+      "value": "14 of 15",
+      "slide": 5
+    },
+    {
+      "label": "Largest customer",
+      "value": "20% of subscription revenue",
+      "slide": 5
+    },
+    {
+      "label": "Carrier invoices audited, September 2026",
+      "value": "75,337",
+      "slide": 5
+    },
+    {
+      "label": "Carrier invoices audited since launch",
+      "value": "799,114",
+      "slide": 5
+    },
+    {
+      "label": "Recovery fee",
+      "value": "30% of money recovered",
+      "slide": 6
+    },
+    {
+      "label": "Market size (company estimate)",
+      "value": "$194,400,000",
+      "slide": 7
+    },
+    {
+      "label": "Full-time employees",
+      "value": "7",
+      "slide": 9
+    },
+    {
+      "label": "Average monthly net burn, next 12 months",
+      "value": "$113,684",
+      "slide": 10
+    },
+    {
+      "label": "Runway",
+      "value": "29 months",
+      "slide": 10
+    },
+    {
+      "label": "Employees after the seed hires",
+      "value": "14",
+      "slide": 10
+    },
+    {
+      "label": "Seed raise",
+      "value": "$3,000,000",
+      "slide": 11
+    },
+    {
+      "label": "Pre-money valuation",
+      "value": "$16,000,000",
+      "slide": 11
+    }
+  ]
+}

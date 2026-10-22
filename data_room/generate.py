@@ -9,6 +9,8 @@ Run with the room's own virtual environment:
     data_room/.venv/bin/python data_room/generate.py --plants off            a clean room, no planted flags
     data_room/.venv/bin/python data_room/generate.py --seed 77 --plants PF1,PF3,PF6
                                                                               a variant room (see SEALING.md)
+    data_room/.venv/bin/python data_room/generate.py --company brasswick    the second company, a seed room
+                                                                              (built by brasswick_room.py)
 
 It is rerunnable. The seeds are fixed, so the CSV, PDF and Markdown files come out byte for byte the
 same each time, and the workbooks hold the same cell values. Files are overwritten in place. The
@@ -1856,7 +1858,7 @@ ROOM_FILES = [
     ("01_overview/company_overview.pdf", "One-page company overview.", "first"),
     ("01_overview/pitch_video_script.md", "Two-minute script for the pitch video.", "first"),
     ("02_financials/financial_model.xlsx", "Financial model: assumptions, P&L, ARR build, cohorts, hiring plan, cash.", "first"),
-    ("02_financials/cap_table.xlsx", "Fully diluted cap table with the two SAFEs and the option pool.", "first"),
+    ("02_financials/cap_table.xlsx", "Fully diluted cap table with the three SAFEs and the option pool.", "first"),
     ("02_financials/expense_ledger.csv", "Expense lines by month with vendor and category.", "second"),
     ("03_metrics/monthly_metrics.csv", "Monthly metrics: MRR, ARR, paying accounts, accounts created, calls.", "first"),
     ("03_metrics/customer_mrr_by_month.csv", "Revenue by customer by month, with plan and product type.", "second"),
@@ -2352,6 +2354,9 @@ def parse_args(argv=None):
                     help=f"a seed for a variant room (the main room uses {SEED})")
     ap.add_argument("--key-out", default=None,
                     help="where to write the answer key instead of the default path; point it somewhere private for a sealed variant")
+    ap.add_argument("--company", choices=["hollis", "brasswick"], default="hollis",
+                    help="hollis (the default) writes the Hollis Voice Series A rooms; brasswick writes the Brasswick seed room "
+                         "to data_room/brasswick/ and answer_key_brasswick.json (see brasswick_room.py)")
     return ap.parse_args(argv)
 
 
@@ -2383,7 +2388,12 @@ def configure(args):
 
 
 def main(argv=None):
-    configure(parse_args(argv))
+    args = parse_args(argv)
+    if args.company == "brasswick":
+        import brasswick_room
+        brasswick_room.main(args)
+        return
+    configure(args)
     ROOM.mkdir(parents=True, exist_ok=True)
     KEY_PATH.parent.mkdir(parents=True, exist_ok=True)
     build_facts()

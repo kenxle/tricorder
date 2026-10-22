@@ -1,0 +1,450 @@
+month,date,vendor,description,category,booked_as,amount_usd
+2025-05,2025-05-01,Dockyard Commons Workspace,Office rent,rent,G&A,2150.00
+2025-05,2025-05-02,Ferrous Cloud Services,"Cloud compute, storage and database",cloud_hosting,Cost of revenue,1469.49
+2025-05,2025-05-04,Ravelston Insurance Brokers,Insurance premiums,insurance,G&A,636.45
+2025-05,2025-05-04,Tallyhouse Tools,Software subscriptions and tools,tools,G&A,940.74
+2025-05,2025-05-08,Brimley Office Supply,Office supplies and team meals,other,G&A,658.41
+2025-05,2025-05-11,Gullwing Travel,Travel to customers and freight conferences,travel,G&A,1554.17
+2025-05,2025-05-11,Lantern Document AI,"Document reading API, pages processed",document_ai,Cost of revenue,425.25
+2025-05,2025-05-15,Gristmill Payroll,"Engineering, salaries and benefits (first run)",payroll_engineering,R&D,10394.31
+2025-05,2025-05-15,Gristmill Payroll,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,5389.82
+2025-05,2025-05-16,Velloway Language API,Language model API usage,language_model_api,Cost of revenue,256.44
+2025-05,2025-05-18,Thistlewood Legal LLP,Legal and filing fees,professional_services,G&A,6675.73
+2025-05,2025-05-31,Gristmill Payroll,"Engineering, salaries and benefits (second run)",payroll_engineering,R&D,10502.85
+2025-05,2025-05-31,Gristmill Payroll,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,5378.29
+2025-06,2025-06-01,Dockyard Commons Workspace,Office rent,rent,G&A,2150.00
+2025-06,2025-06-01,Tallyhouse Tools,Software subscriptions and tools,tools,G&A,952.69
+2025-06,2025-06-04,Ravelston Insurance Brokers,Insurance premiums,insurance,G&A,648.18
+2025-06,2025-06-06,Ferrous Cloud Services,"Cloud compute, storage and database",cloud_hosting,Cost of revenue,1486.93
+2025-06,2025-06-09,Lantern Document AI,"Document reading API, pages processed",document_ai,Cost of revenue,788.01
+2025-06,2025-06-10,Gullwing Travel,Travel to customers and freight conferences,travel,G&A,2672.53
+2025-06,2025-06-15,Gristmill Payroll,"Engineering, salaries and benefits (first run)",payroll_engineering,R&D,13241.53
+2025-06,2025-06-15,Gristmill Payroll,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,5476.68
+2025-06,2025-06-15,Velloway Language API,Language model API usage,language_model_api,Cost of revenue,536.52
+2025-06,2025-06-16,Kelderton Freight Partners,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,7180.52
+2025-06,2025-06-17,Thistlewood Legal LLP,Legal and filing fees,professional_services,G&A,2198.44
+2025-06,2025-06-19,Corvane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,15423.98
+2025-06,2025-06-25,Brimley Office Supply,Office supplies and team meals,other,G&A,721.04
+2025-06,2025-06-30,Gristmill Payroll,"Engineering, salaries and benefits (second run)",payroll_engineering,R&D,13283.75
+2025-06,2025-06-30,Gristmill Payroll,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,5406.09
+2025-07,2025-07-01,Dockyard Commons Workspace,Office rent,rent,G&A,2150.00
+2025-07,2025-07-01,Ravelston Insurance Brokers,Insurance premiums,insurance,G&A,641.37
+2025-07,2025-07-03,Ferrous Cloud Services,"Cloud compute, storage and database",cloud_hosting,Cost of revenue,1679.26
+2025-07,2025-07-05,Norrgate Software Studio,"Contract engineering, SOW 1, July 2025",professional_services,G&A,19800.00
+2025-07,2025-07-05,Tallyhouse Tools,Software subscriptions and tools,tools,G&A,947.02
+2025-07,2025-07-08,Lantern Document AI,"Document reading API, pages processed",document_ai,Cost of revenue,799.99
+2025-07,2025-07-09,Velloway Language API,Language model API usage,language_model_api,Cost of revenue,509.87
+2025-07,2025-07-12,Corvane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,21620.24
+2025-07,2025-07-14,Thistlewood Legal LLP,Legal and filing fees,professional_services,G&A,993.36
+2025-07,2025-07-15,Gristmill Payroll,"Engineering, salaries and benefits (first run)",payroll_engineering,R&D,13332.87
+2025-07,2025-07-15,Gristmill Payroll,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,5503.44
+2025-07,2025-07-15,Kelderton Freight Partners,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,9818.09
+2025-07,2025-07-20,Gullwing Travel,Travel to customers and freight conferences,travel,G&A,1185.64
+2025-07,2025-07-20,Ludgate Transport Brokers,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,2733.14
+2025-07,2025-07-27,Brimley Office Supply,Office supplies and team meals,other,G&A,731.78
+2025-07,2025-07-31,Gristmill Payroll,"Engineering, salaries and benefits (second run)",payroll_engineering,R&D,13262.43
+2025-07,2025-07-31,Gristmill Payroll,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,5523.04
+2025-08,2025-08-01,Dockyard Commons Workspace,Office rent,rent,G&A,2150.00
+2025-08,2025-08-01,Norrgate Software Studio,"Contract engineering, SOW 1, August 2025",professional_services,G&A,19800.00
+2025-08,2025-08-02,Ravelston Insurance Brokers,Insurance premiums,insurance,G&A,641.95
+2025-08,2025-08-03,Ferrous Cloud Services,"Cloud compute, storage and database",cloud_hosting,Cost of revenue,1893.19
+2025-08,2025-08-04,Tallyhouse Tools,Software subscriptions and tools,tools,G&A,1086.19
+2025-08,2025-08-07,Thistlewood Legal LLP,Legal and filing fees,professional_services,G&A,1604.77
+2025-08,2025-08-11,Lantern Document AI,"Document reading API, pages processed",document_ai,Cost of revenue,1082.10
+2025-08,2025-08-13,Gullwing Travel,Travel to customers and freight conferences,travel,G&A,2583.52
+2025-08,2025-08-13,Kelderton Freight Partners,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,9950.56
+2025-08,2025-08-15,Gristmill Payroll,"Customer success and implementation, salaries and benefits (first run)",payroll_customer_success,Cost of revenue,4494.74
+2025-08,2025-08-15,Gristmill Payroll,"Engineering, salaries and benefits (first run)",payroll_engineering,R&D,13411.31
+2025-08,2025-08-15,Gristmill Payroll,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,5481.53
+2025-08,2025-08-16,Corvane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,21675.12
+2025-08,2025-08-16,Velloway Language API,Language model API usage,language_model_api,Cost of revenue,720.09
+2025-08,2025-08-17,Pinnock Freight Group,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3697.46
+2025-08,2025-08-21,Ludgate Transport Brokers,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3640.84
+2025-08,2025-08-21,Norrgate Software Studio,"Additional engineering hours, August 2025",professional_services,G&A,4593.08
+2025-08,2025-08-27,Brimley Office Supply,Office supplies and team meals,other,G&A,535.48
+2025-08,2025-08-31,Gristmill Payroll,"Customer success and implementation, salaries and benefits (second run)",payroll_customer_success,Cost of revenue,4418.33
+2025-08,2025-08-31,Gristmill Payroll,"Engineering, salaries and benefits (second run)",payroll_engineering,R&D,13315.33
+2025-08,2025-08-31,Gristmill Payroll,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,5533.82
+2025-09,2025-09-01,Dockyard Commons Workspace,Office rent,rent,G&A,2150.00
+2025-09,2025-09-02,Norrgate Software Studio,"Contract engineering, SOW 1, September 2025",professional_services,G&A,19800.00
+2025-09,2025-09-02,Ravelston Insurance Brokers,Insurance premiums,insurance,G&A,659.14
+2025-09,2025-09-03,Ferrous Cloud Services,"Cloud compute, storage and database",cloud_hosting,Cost of revenue,1864.42
+2025-09,2025-09-03,Tallyhouse Tools,Software subscriptions and tools,tools,G&A,1142.17
+2025-09,2025-09-05,Gullwing Travel,Travel to customers and freight conferences,travel,G&A,1992.16
+2025-09,2025-09-11,Lantern Document AI,"Document reading API, pages processed",document_ai,Cost of revenue,1209.37
+2025-09,2025-09-12,Marrowgate Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,7695.70
+2025-09,2025-09-13,Corvane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,15164.74
+2025-09,2025-09-13,Velloway Language API,Language model API usage,language_model_api,Cost of revenue,791.15
+2025-09,2025-09-14,Kelderton Freight Partners,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,7259.48
+2025-09,2025-09-15,Gristmill Payroll,"Customer success and implementation, salaries and benefits (first run)",payroll_customer_success,Cost of revenue,4921.12
+2025-09,2025-09-15,Gristmill Payroll,"Engineering, salaries and benefits (first run)",payroll_engineering,R&D,13265.41
+2025-09,2025-09-15,Gristmill Payroll,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,5619.84
+2025-09,2025-09-17,Thistlewood Legal LLP,Legal and filing fees,professional_services,G&A,1870.60
+2025-09,2025-09-18,Pinnock Freight Group,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,4999.06
+2025-09,2025-09-19,Brimley Office Supply,Office supplies and team meals,other,G&A,894.81
+2025-09,2025-09-22,Ludgate Transport Brokers,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3703.15
+2025-09,2025-09-25,Fernway Contractor Payments,"Contractor payout: invoice labelling, T. Brennan",professional_services,G&A,3106.24
+2025-09,2025-09-28,Fernway Contractor Payments,"Contractor payout: invoice labelling, A. Kirwan",professional_services,G&A,3990.93
+2025-09,2025-09-30,Gristmill Payroll,"Customer success and implementation, salaries and benefits (second run)",payroll_customer_success,Cost of revenue,4984.01
+2025-09,2025-09-30,Gristmill Payroll,"Engineering, salaries and benefits (second run)",payroll_engineering,R&D,13615.85
+2025-09,2025-09-30,Gristmill Payroll,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,5541.83
+2025-10,2025-10-01,Dockyard Commons Workspace,Office rent,rent,G&A,2150.00
+2025-10,2025-10-05,Norrgate Software Studio,"Contract engineering, SOW 1, October 2025",professional_services,G&A,19800.00
+2025-10,2025-10-05,Ravelston Insurance Brokers,Insurance premiums,insurance,G&A,658.14
+2025-10,2025-10-06,Ferrous Cloud Services,"Cloud compute, storage and database",cloud_hosting,Cost of revenue,1969.97
+2025-10,2025-10-06,Tallyhouse Tools,Software subscriptions and tools,tools,G&A,1104.25
+2025-10,2025-10-09,Lantern Document AI,"Document reading API, pages processed",document_ai,Cost of revenue,1398.10
+2025-10,2025-10-13,Kelderton Freight Partners,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,2133.29
+2025-10,2025-10-14,Velloway Language API,Language model API usage,language_model_api,Cost of revenue,920.92
+2025-10,2025-10-15,Gristmill Payroll,"Customer success and implementation, salaries and benefits (first run)",payroll_customer_success,Cost of revenue,4968.06
+2025-10,2025-10-15,Gristmill Payroll,"Engineering, salaries and benefits (first run)",payroll_engineering,R&D,13423.51
+2025-10,2025-10-15,Gristmill Payroll,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,5555.26
+2025-10,2025-10-16,Gullwing Travel,Travel to customers and freight conferences,travel,G&A,2753.90
+2025-10,2025-10-16,Marrowgate Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,10143.40
+2025-10,2025-10-16,Pinnock Freight Group,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,4967.28
+2025-10,2025-10-19,Ludgate Transport Brokers,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,2762.96
+2025-10,2025-10-20,Corvane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3499.74
+2025-10,2025-10-21,Ashby Fenwick Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3383.51
+2025-10,2025-10-24,Brimley Office Supply,Office supplies and team meals,other,G&A,527.64
+2025-10,2025-10-24,Norrgate Software Studio,"Additional engineering hours, October 2025",professional_services,G&A,4326.19
+2025-10,2025-10-25,Fernway Contractor Payments,"Contractor payout: invoice labelling, T. Brennan",professional_services,G&A,3894.67
+2025-10,2025-10-29,Fernway Contractor Payments,"Contractor payout: invoice labelling, A. Kirwan",professional_services,G&A,3856.23
+2025-10,2025-10-31,Gristmill Payroll,"Customer success and implementation, salaries and benefits (second run)",payroll_customer_success,Cost of revenue,4936.26
+2025-10,2025-10-31,Gristmill Payroll,"Engineering, salaries and benefits (second run)",payroll_engineering,R&D,13393.42
+2025-10,2025-10-31,Gristmill Payroll,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,5394.29
+2025-11,2025-11-01,Dockyard Commons Workspace,Office rent,rent,G&A,2150.00
+2025-11,2025-11-02,Abbotsford Finance Partners,"Fractional controller, monthly retainer",accounting,G&A,2950.00
+2025-11,2025-11-02,Ferrous Cloud Services,"Cloud compute, storage and database",cloud_hosting,Cost of revenue,1878.42
+2025-11,2025-11-02,Ravelston Insurance Brokers,Insurance premiums,insurance,G&A,649.79
+2025-11,2025-11-02,Tallyhouse Tools,Software subscriptions and tools,tools,G&A,1273.46
+2025-11,2025-11-03,Norrgate Software Studio,"Contract engineering, SOW 1, November 2025",professional_services,G&A,19800.00
+2025-11,2025-11-06,Gullwing Travel,Travel to customers and freight conferences,travel,G&A,1810.16
+2025-11,2025-11-09,Lantern Document AI,"Document reading API, pages processed",document_ai,Cost of revenue,1356.96
+2025-11,2025-11-14,Velloway Language API,Language model API usage,language_model_api,Cost of revenue,924.46
+2025-11,2025-11-15,Gristmill Payroll,"Customer success and implementation, salaries and benefits (first run)",payroll_customer_success,Cost of revenue,5074.04
+2025-11,2025-11-15,Gristmill Payroll,"Engineering, salaries and benefits (first run)",payroll_engineering,R&D,13430.12
+2025-11,2025-11-15,Gristmill Payroll,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,5518.69
+2025-11,2025-11-15,Gristmill Payroll,"Sales, salaries and benefits (first run)",payroll_sales,S&M,2634.63
+2025-11,2025-11-16,Corvane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3286.03
+2025-11,2025-11-17,Brimley Office Supply,Office supplies and team meals,other,G&A,709.43
+2025-11,2025-11-19,Pinnock Freight Group,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3637.56
+2025-11,2025-11-20,Norrgate Software Studio,"Additional engineering hours, November 2025",professional_services,G&A,1293.34
+2025-11,2025-11-20,Varrick Lane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,2543.81
+2025-11,2025-11-21,Kelderton Freight Partners,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,2014.00
+2025-11,2025-11-21,Marrowgate Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,10092.13
+2025-11,2025-11-22,Ashby Fenwick Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,4509.87
+2025-11,2025-11-22,Ludgate Transport Brokers,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,816.31
+2025-11,2025-11-25,Fernway Contractor Payments,"Contractor payout: invoice labelling, T. Brennan",professional_services,G&A,4454.95
+2025-11,2025-11-30,Fernway Contractor Payments,"Contractor payout: invoice labelling, A. Kirwan",professional_services,G&A,3281.57
+2025-11,2025-11-30,Gristmill Payroll,"Customer success and implementation, salaries and benefits (second run)",payroll_customer_success,Cost of revenue,5090.10
+2025-11,2025-11-30,Gristmill Payroll,"Engineering, salaries and benefits (second run)",payroll_engineering,R&D,13277.02
+2025-11,2025-11-30,Gristmill Payroll,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,5441.24
+2025-11,2025-11-30,Gristmill Payroll,"Sales, salaries and benefits (second run)",payroll_sales,S&M,2627.31
+2025-12,2025-12-01,Dockyard Commons Workspace,Office rent,rent,G&A,2150.00
+2025-12,2025-12-01,Norrgate Software Studio,"Contract engineering, SOW 1, December 2025",professional_services,G&A,19800.00
+2025-12,2025-12-01,Ravelston Insurance Brokers,Insurance premiums,insurance,G&A,635.63
+2025-12,2025-12-01,Tallyhouse Tools,Software subscriptions and tools,tools,G&A,1257.22
+2025-12,2025-12-03,Abbotsford Finance Partners,"Fractional controller, monthly retainer",accounting,G&A,2950.00
+2025-12,2025-12-03,Ferrous Cloud Services,"Cloud compute, storage and database",cloud_hosting,Cost of revenue,1920.50
+2025-12,2025-12-07,Thistlewood Legal LLP,Legal and filing fees,professional_services,G&A,1776.35
+2025-12,2025-12-09,Brimley Office Supply,Office supplies and team meals,other,G&A,896.72
+2025-12,2025-12-11,Lantern Document AI,"Document reading API, pages processed",document_ai,Cost of revenue,1245.20
+2025-12,2025-12-12,Ludgate Transport Brokers,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,858.82
+2025-12,2025-12-13,Varrick Lane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3106.77
+2025-12,2025-12-14,Marrowgate Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,7429.25
+2025-12,2025-12-15,Gristmill Payroll,"Customer success and implementation, salaries and benefits (first run)",payroll_customer_success,Cost of revenue,4904.87
+2025-12,2025-12-15,Gristmill Payroll,"Engineering, salaries and benefits (first run)",payroll_engineering,R&D,13513.79
+2025-12,2025-12-15,Gristmill Payroll,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,5487.78
+2025-12,2025-12-15,Gristmill Payroll,"Sales, salaries and benefits (first run)",payroll_sales,S&M,5673.85
+2025-12,2025-12-16,Corvane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3329.85
+2025-12,2025-12-16,Kelderton Freight Partners,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,2071.76
+2025-12,2025-12-16,Velloway Language API,Language model API usage,language_model_api,Cost of revenue,907.75
+2025-12,2025-12-17,Gullwing Travel,Travel to customers and freight conferences,travel,G&A,1089.41
+2025-12,2025-12-22,Ashby Fenwick Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,4396.25
+2025-12,2025-12-27,Norrgate Software Studio,"Additional engineering hours, December 2025",professional_services,G&A,3874.09
+2025-12,2025-12-29,Fernway Contractor Payments,"Contractor payout: invoice labelling, A. Kirwan",professional_services,G&A,4000.89
+2025-12,2025-12-29,Fernway Contractor Payments,"Contractor payout: invoice labelling, T. Brennan",professional_services,G&A,3732.05
+2025-12,2025-12-31,Gristmill Payroll,"Customer success and implementation, salaries and benefits (second run)",payroll_customer_success,Cost of revenue,4973.33
+2025-12,2025-12-31,Gristmill Payroll,"Engineering, salaries and benefits (second run)",payroll_engineering,R&D,13330.42
+2025-12,2025-12-31,Gristmill Payroll,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,5477.06
+2025-12,2025-12-31,Gristmill Payroll,"Sales, salaries and benefits (second run)",payroll_sales,S&M,5648.18
+2026-01,2026-01-01,Dockyard Commons Workspace,Office rent,rent,G&A,4680.00
+2026-01,2026-01-02,Abbotsford Finance Partners,"Fractional controller, monthly retainer",accounting,G&A,2950.00
+2026-01,2026-01-02,Ferrous Cloud Services,"Cloud compute, storage and database",cloud_hosting,Cost of revenue,2016.95
+2026-01,2026-01-03,Tallyhouse Tools,Software subscriptions and tools,tools,G&A,1230.71
+2026-01,2026-01-04,Ravelston Insurance Brokers,Insurance premiums,insurance,G&A,916.72
+2026-01,2026-01-05,Norrgate Software Studio,"Contract engineering, SOW 1, January 2026",professional_services,G&A,19800.00
+2026-01,2026-01-08,Gullwing Travel,Travel to customers and freight conferences,travel,G&A,445.63
+2026-01,2026-01-10,Thistlewood Legal LLP,Legal and filing fees,professional_services,G&A,1931.40
+2026-01,2026-01-12,Brimley Office Supply,Office supplies and team meals,other,G&A,887.53
+2026-01,2026-01-13,Ashby Fenwick Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3268.41
+2026-01,2026-01-13,Lantern Document AI,"Document reading API, pages processed",document_ai,Cost of revenue,1538.73
+2026-01,2026-01-14,Corvane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3357.13
+2026-01,2026-01-14,Ludgate Transport Brokers,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,838.24
+2026-01,2026-01-15,Gristmill Payroll,"Customer success and implementation, salaries and benefits (first run)",payroll_customer_success,Cost of revenue,5152.10
+2026-01,2026-01-15,Gristmill Payroll,"Engineering, salaries and benefits (first run)",payroll_engineering,R&D,13651.88
+2026-01,2026-01-15,Gristmill Payroll,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,5675.79
+2026-01,2026-01-15,Gristmill Payroll,"Sales, salaries and benefits (first run)",payroll_sales,S&M,5882.44
+2026-01,2026-01-16,Velloway Language API,Language model API usage,language_model_api,Cost of revenue,1028.87
+2026-01,2026-01-19,Kelderton Freight Partners,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1900.53
+2026-01,2026-01-20,Varrick Lane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3229.88
+2026-01,2026-01-21,Marrowgate Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,2145.89
+2026-01,2026-01-21,Norrgate Software Studio,"Additional engineering hours, January 2026",professional_services,G&A,2498.51
+2026-01,2026-01-21,Quellby Haulage,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1212.85
+2026-01,2026-01-28,Fernway Contractor Payments,"Contractor payout: invoice labelling, T. Brennan",professional_services,G&A,3798.22
+2026-01,2026-01-29,Fernway Contractor Payments,"Contractor payout: invoice labelling, A. Kirwan",professional_services,G&A,4013.46
+2026-01,2026-01-31,Gristmill Payroll,"Customer success and implementation, salaries and benefits (second run)",payroll_customer_success,Cost of revenue,5175.44
+2026-01,2026-01-31,Gristmill Payroll,"Engineering, salaries and benefits (second run)",payroll_engineering,R&D,13504.95
+2026-01,2026-01-31,Gristmill Payroll,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,5743.81
+2026-01,2026-01-31,Gristmill Payroll,"Sales, salaries and benefits (second run)",payroll_sales,S&M,5765.48
+2026-02,2026-02-01,Dockyard Commons Workspace,Office rent,rent,G&A,4680.00
+2026-02,2026-02-03,Abbotsford Finance Partners,"Fractional controller, monthly retainer",accounting,G&A,2950.00
+2026-02,2026-02-04,Ravelston Insurance Brokers,Insurance premiums,insurance,G&A,881.46
+2026-02,2026-02-05,Ferrous Cloud Services,"Cloud compute, storage and database",cloud_hosting,Cost of revenue,2054.50
+2026-02,2026-02-05,Norrgate Software Studio,"Contract engineering, SOW 1, February 2026",professional_services,G&A,19800.00
+2026-02,2026-02-05,Tallyhouse Tools,Software subscriptions and tools,tools,G&A,1191.31
+2026-02,2026-02-10,Brimley Office Supply,Office supplies and team meals,other,G&A,614.77
+2026-02,2026-02-11,Velloway Language API,Language model API usage,language_model_api,Cost of revenue,1128.11
+2026-02,2026-02-12,Lantern Document AI,"Document reading API, pages processed",document_ai,Cost of revenue,1725.95
+2026-02,2026-02-12,Marrowgate Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,2338.58
+2026-02,2026-02-13,Dunsmore Carriers Brokerage,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3268.92
+2026-02,2026-02-13,Ludgate Transport Brokers,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,839.57
+2026-02,2026-02-15,Gristmill Payroll,"Customer success and implementation, salaries and benefits (first run)",payroll_customer_success,Cost of revenue,5098.67
+2026-02,2026-02-15,Gristmill Payroll,"Engineering, salaries and benefits (first run)",payroll_engineering,R&D,13806.12
+2026-02,2026-02-15,Gristmill Payroll,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,5574.41
+2026-02,2026-02-15,Gristmill Payroll,"Sales, salaries and benefits (first run)",payroll_sales,S&M,5864.50
+2026-02,2026-02-18,Corvane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3437.60
+2026-02,2026-02-18,Gullwing Travel,Travel to customers and freight conferences,travel,G&A,2175.47
+2026-02,2026-02-18,Kelderton Freight Partners,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1837.09
+2026-02,2026-02-19,Ashby Fenwick Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1113.32
+2026-02,2026-02-19,Varrick Lane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,2695.87
+2026-02,2026-02-20,Thistlewood Legal LLP,Legal and filing fees,professional_services,G&A,9461.27
+2026-02,2026-02-21,Quellby Haulage,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1538.51
+2026-02,2026-02-27,Fernway Contractor Payments,"Contractor payout: invoice labelling, A. Kirwan",professional_services,G&A,3276.20
+2026-02,2026-02-28,Fernway Contractor Payments,"Contractor payout: invoice labelling, T. Brennan",professional_services,G&A,3563.66
+2026-02,2026-02-28,Gristmill Payroll,"Customer success and implementation, salaries and benefits (second run)",payroll_customer_success,Cost of revenue,5218.18
+2026-02,2026-02-28,Gristmill Payroll,"Engineering, salaries and benefits (second run)",payroll_engineering,R&D,13655.50
+2026-02,2026-02-28,Gristmill Payroll,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,5532.86
+2026-02,2026-02-28,Gristmill Payroll,"Sales, salaries and benefits (second run)",payroll_sales,S&M,5953.47
+2026-03,2026-03-01,Abbotsford Finance Partners,"Fractional controller, monthly retainer",accounting,G&A,2950.00
+2026-03,2026-03-01,Dockyard Commons Workspace,Office rent,rent,G&A,4680.00
+2026-03,2026-03-02,Norrgate Software Studio,"Contract engineering, SOW 1, March 2026",professional_services,G&A,19800.00
+2026-03,2026-03-03,Ravelston Insurance Brokers,Insurance premiums,insurance,G&A,912.68
+2026-03,2026-03-04,Ferrous Cloud Services,"Cloud compute, storage and database",cloud_hosting,Cost of revenue,2137.19
+2026-03,2026-03-05,Gullwing Travel,Travel to customers and freight conferences,travel,G&A,2202.33
+2026-03,2026-03-06,Brimley Office Supply,Office supplies and team meals,other,G&A,525.39
+2026-03,2026-03-06,Tallyhouse Tools,Software subscriptions and tools,tools,G&A,1468.16
+2026-03,2026-03-11,Lantern Document AI,"Document reading API, pages processed",document_ai,Cost of revenue,1682.84
+2026-03,2026-03-12,Corvane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3259.86
+2026-03,2026-03-12,Dunsmore Carriers Brokerage,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3846.93
+2026-03,2026-03-15,Gristmill Payroll,"Customer success and implementation, salaries and benefits (first run)",payroll_customer_success,Cost of revenue,5204.29
+2026-03,2026-03-15,Gristmill Payroll,"Engineering, salaries and benefits (first run)",payroll_engineering,R&D,22382.16
+2026-03,2026-03-15,Gristmill Payroll,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,5623.55
+2026-03,2026-03-15,Gristmill Payroll,"Sales, salaries and benefits (first run)",payroll_sales,S&M,5970.97
+2026-03,2026-03-16,Marrowgate Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,2421.75
+2026-03,2026-03-16,Velloway Language API,Language model API usage,language_model_api,Cost of revenue,1002.42
+2026-03,2026-03-17,Ashby Fenwick Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1031.25
+2026-03,2026-03-17,Kelderton Freight Partners,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,2018.77
+2026-03,2026-03-17,Ludgate Transport Brokers,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,827.82
+2026-03,2026-03-17,Varrick Lane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1669.73
+2026-03,2026-03-20,Abbotsford Finance Partners,2025 tax returns and year-end close,accounting,G&A,3400.00
+2026-03,2026-03-20,Tessmore Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1522.07
+2026-03,2026-03-21,Norrgate Software Studio,"Additional engineering hours, March 2026",professional_services,G&A,2561.10
+2026-03,2026-03-22,Quellby Haulage,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1497.91
+2026-03,2026-03-27,Fernway Contractor Payments,"Contractor payout: invoice labelling, T. Brennan",professional_services,G&A,3301.80
+2026-03,2026-03-29,Fernway Contractor Payments,"Contractor payout: invoice labelling, A. Kirwan",professional_services,G&A,4550.05
+2026-03,2026-03-31,Gristmill Payroll,"Customer success and implementation, salaries and benefits (second run)",payroll_customer_success,Cost of revenue,5220.11
+2026-03,2026-03-31,Gristmill Payroll,"Engineering, salaries and benefits (second run)",payroll_engineering,R&D,22206.21
+2026-03,2026-03-31,Gristmill Payroll,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,5567.22
+2026-03,2026-03-31,Gristmill Payroll,"Sales, salaries and benefits (second run)",payroll_sales,S&M,5809.94
+2026-04,2026-04-01,Abbotsford Finance Partners,"Fractional controller, monthly retainer",accounting,G&A,2950.00
+2026-04,2026-04-01,Dockyard Commons Workspace,Office rent,rent,G&A,4680.00
+2026-04,2026-04-03,Tallyhouse Tools,Software subscriptions and tools,tools,G&A,1375.40
+2026-04,2026-04-04,Norrgate Software Studio,"Contract engineering, SOW 1, April 2026",professional_services,G&A,19800.00
+2026-04,2026-04-05,Ravelston Insurance Brokers,Insurance premiums,insurance,G&A,918.93
+2026-04,2026-04-06,Ferrous Cloud Services,"Cloud compute, storage and database",cloud_hosting,Cost of revenue,2133.28
+2026-04,2026-04-12,Ashby Fenwick Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1179.30
+2026-04,2026-04-13,Marrowgate Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,2438.84
+2026-04,2026-04-14,Lantern Document AI,"Document reading API, pages processed",document_ai,Cost of revenue,1848.45
+2026-04,2026-04-14,Varrick Lane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1649.68
+2026-04,2026-04-15,Brimley Office Supply,Office supplies and team meals,other,G&A,581.33
+2026-04,2026-04-15,Gristmill Payroll,"Customer success and implementation, salaries and benefits (first run)",payroll_customer_success,Cost of revenue,5273.58
+2026-04,2026-04-15,Gristmill Payroll,"Engineering, salaries and benefits (first run)",payroll_engineering,R&D,22551.96
+2026-04,2026-04-15,Gristmill Payroll,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,5710.95
+2026-04,2026-04-15,Gristmill Payroll,"Sales, salaries and benefits (first run)",payroll_sales,S&M,5896.43
+2026-04,2026-04-15,Ludgate Transport Brokers,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1754.92
+2026-04,2026-04-15,Velloway Language API,Language model API usage,language_model_api,Cost of revenue,1209.63
+2026-04,2026-04-16,Dunsmore Carriers Brokerage,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3865.97
+2026-04,2026-04-16,Tessmore Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1870.04
+2026-04,2026-04-19,Corvane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3266.70
+2026-04,2026-04-20,Gullwing Travel,Travel to customers and freight conferences,travel,G&A,484.10
+2026-04,2026-04-21,Quellby Haulage,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1237.99
+2026-04,2026-04-22,Kelderton Freight Partners,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1898.77
+2026-04,2026-04-22,Thistlewood Legal LLP,Legal and filing fees,professional_services,G&A,1250.53
+2026-04,2026-04-28,Fernway Contractor Payments,"Contractor payout: invoice labelling, A. Kirwan",professional_services,G&A,3787.89
+2026-04,2026-04-28,Fernway Contractor Payments,"Contractor payout: invoice labelling, T. Brennan",professional_services,G&A,3775.62
+2026-04,2026-04-30,Gristmill Payroll,"Customer success and implementation, salaries and benefits (second run)",payroll_customer_success,Cost of revenue,5216.38
+2026-04,2026-04-30,Gristmill Payroll,"Engineering, salaries and benefits (second run)",payroll_engineering,R&D,22410.05
+2026-04,2026-04-30,Gristmill Payroll,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,5718.87
+2026-04,2026-04-30,Gristmill Payroll,"Sales, salaries and benefits (second run)",payroll_sales,S&M,5903.16
+2026-05,2026-05-01,Dockyard Commons Workspace,Office rent,rent,G&A,4680.00
+2026-05,2026-05-02,Abbotsford Finance Partners,"Fractional controller, monthly retainer",accounting,G&A,2950.00
+2026-05,2026-05-03,Norrgate Software Studio,"Contract engineering, SOW 1, May 2026",professional_services,G&A,19800.00
+2026-05,2026-05-04,Ferrous Cloud Services,"Cloud compute, storage and database",cloud_hosting,Cost of revenue,2256.57
+2026-05,2026-05-04,Ravelston Insurance Brokers,Insurance premiums,insurance,G&A,899.13
+2026-05,2026-05-04,Tallyhouse Tools,Software subscriptions and tools,tools,G&A,1382.85
+2026-05,2026-05-11,Velloway Language API,Language model API usage,language_model_api,Cost of revenue,1403.04
+2026-05,2026-05-13,Hethersett Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3706.15
+2026-05,2026-05-13,Lantern Document AI,"Document reading API, pages processed",document_ai,Cost of revenue,1889.08
+2026-05,2026-05-13,Tessmore Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1818.69
+2026-05,2026-05-14,Corvane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3361.73
+2026-05,2026-05-14,Thistlewood Legal LLP,Legal and filing fees,professional_services,G&A,1814.02
+2026-05,2026-05-15,Gristmill Payroll,"Customer success and implementation, salaries and benefits (first run)",payroll_customer_success,Cost of revenue,5128.09
+2026-05,2026-05-15,Gristmill Payroll,"Engineering, salaries and benefits (first run)",payroll_engineering,R&D,22150.94
+2026-05,2026-05-15,Gristmill Payroll,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,5665.39
+2026-05,2026-05-15,Gristmill Payroll,"Sales, salaries and benefits (first run)",payroll_sales,S&M,5786.93
+2026-05,2026-05-16,Varrick Lane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1822.23
+2026-05,2026-05-18,Gullwing Travel,Travel to customers and freight conferences,travel,G&A,2613.76
+2026-05,2026-05-18,Ludgate Transport Brokers,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1656.55
+2026-05,2026-05-20,Dunsmore Carriers Brokerage,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3093.24
+2026-05,2026-05-20,Quellby Haulage,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,646.12
+2026-05,2026-05-21,Kelderton Freight Partners,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,2121.74
+2026-05,2026-05-22,Ashby Fenwick Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1091.40
+2026-05,2026-05-22,Marrowgate Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,2221.50
+2026-05,2026-05-26,Brimley Office Supply,Office supplies and team meals,other,G&A,471.01
+2026-05,2026-05-27,Fernway Contractor Payments,"Contractor payout: invoice labelling, T. Brennan",professional_services,G&A,3154.73
+2026-05,2026-05-28,Fernway Contractor Payments,"Contractor payout: invoice labelling, A. Kirwan",professional_services,G&A,3260.00
+2026-05,2026-05-31,Gristmill Payroll,"Customer success and implementation, salaries and benefits (second run)",payroll_customer_success,Cost of revenue,5184.96
+2026-05,2026-05-31,Gristmill Payroll,"Engineering, salaries and benefits (second run)",payroll_engineering,R&D,22447.16
+2026-05,2026-05-31,Gristmill Payroll,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,5669.66
+2026-05,2026-05-31,Gristmill Payroll,"Sales, salaries and benefits (second run)",payroll_sales,S&M,5926.72
+2026-06,2026-06-01,Dockyard Commons Workspace,Office rent,rent,G&A,4680.00
+2026-06,2026-06-02,Ravelston Insurance Brokers,Insurance premiums,insurance,G&A,892.09
+2026-06,2026-06-03,Abbotsford Finance Partners,"Fractional controller, monthly retainer",accounting,G&A,2950.00
+2026-06,2026-06-03,Norrgate Software Studio,"Contract engineering, SOW 1, June 2026",professional_services,G&A,19800.00
+2026-06,2026-06-04,Ferrous Cloud Services,"Cloud compute, storage and database",cloud_hosting,Cost of revenue,2226.99
+2026-06,2026-06-05,Tallyhouse Tools,Software subscriptions and tools,tools,G&A,1511.21
+2026-06,2026-06-07,Brimley Office Supply,Office supplies and team meals,other,G&A,764.43
+2026-06,2026-06-08,Lantern Document AI,"Document reading API, pages processed",document_ai,Cost of revenue,2041.72
+2026-06,2026-06-12,Varrick Lane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1776.50
+2026-06,2026-06-13,Corvane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3292.98
+2026-06,2026-06-14,Marrowgate Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,2389.39
+2026-06,2026-06-14,Quellby Haulage,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,684.55
+2026-06,2026-06-14,Tessmore Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1505.50
+2026-06,2026-06-14,Velloway Language API,Language model API usage,language_model_api,Cost of revenue,1596.92
+2026-06,2026-06-15,Gristmill Payroll,"Customer success and implementation, salaries and benefits (first run)",payroll_customer_success,Cost of revenue,8422.64
+2026-06,2026-06-15,Gristmill Payroll,"Engineering, salaries and benefits (first run)",payroll_engineering,R&D,22030.15
+2026-06,2026-06-15,Gristmill Payroll,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,5598.59
+2026-06,2026-06-15,Gristmill Payroll,"Sales, salaries and benefits (first run)",payroll_sales,S&M,5983.97
+2026-06,2026-06-16,Ashby Fenwick Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1107.20
+2026-06,2026-06-16,Hethersett Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,4717.17
+2026-06,2026-06-18,Gullwing Travel,Travel to customers and freight conferences,travel,G&A,3551.72
+2026-06,2026-06-19,Dunsmore Carriers Brokerage,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1835.06
+2026-06,2026-06-20,Kelderton Freight Partners,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1983.45
+2026-06,2026-06-21,Ludgate Transport Brokers,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1539.43
+2026-06,2026-06-22,Wexcombe Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1624.55
+2026-06,2026-06-28,Fernway Contractor Payments,"Contractor payout: invoice labelling, T. Brennan",professional_services,G&A,4184.68
+2026-06,2026-06-29,Fernway Contractor Payments,"Contractor payout: invoice labelling, A. Kirwan",professional_services,G&A,4476.54
+2026-06,2026-06-30,Gristmill Payroll,"Customer success and implementation, salaries and benefits (second run)",payroll_customer_success,Cost of revenue,8601.02
+2026-06,2026-06-30,Gristmill Payroll,"Engineering, salaries and benefits (second run)",payroll_engineering,R&D,21947.55
+2026-06,2026-06-30,Gristmill Payroll,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,5683.23
+2026-06,2026-06-30,Gristmill Payroll,"Sales, salaries and benefits (second run)",payroll_sales,S&M,5857.25
+2026-07,2026-07-01,Dockyard Commons Workspace,Office rent,rent,G&A,4680.00
+2026-07,2026-07-02,Ferrous Cloud Services,"Cloud compute, storage and database",cloud_hosting,Cost of revenue,2618.55
+2026-07,2026-07-02,Ravelston Insurance Brokers,Insurance premiums,insurance,G&A,919.36
+2026-07,2026-07-03,Abbotsford Finance Partners,"Fractional controller, monthly retainer",accounting,G&A,2950.00
+2026-07,2026-07-05,Norrgate Software Studio,"Contract engineering, SOW 2, July 2026",professional_services,G&A,26500.00
+2026-07,2026-07-07,Tallyhouse Tools,Software subscriptions and tools,tools,G&A,1510.70
+2026-07,2026-07-10,Lantern Document AI,"Document reading API, pages processed",document_ai,Cost of revenue,2462.32
+2026-07,2026-07-12,Corvane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3660.54
+2026-07,2026-07-13,Hethersett Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,4938.57
+2026-07,2026-07-13,Tessmore Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,922.50
+2026-07,2026-07-14,Marrowgate Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,2117.56
+2026-07,2026-07-14,Quellby Haulage,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,636.60
+2026-07,2026-07-14,Velloway Language API,Language model API usage,language_model_api,Cost of revenue,1481.63
+2026-07,2026-07-15,Gristmill Payroll,"Customer success and implementation, salaries and benefits (first run)",payroll_customer_success,Cost of revenue,9489.26
+2026-07,2026-07-15,Gristmill Payroll,"Engineering, salaries and benefits (first run)",payroll_engineering,R&D,22070.67
+2026-07,2026-07-15,Gristmill Payroll,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,5738.38
+2026-07,2026-07-15,Gristmill Payroll,"Sales, salaries and benefits (first run)",payroll_sales,S&M,5825.05
+2026-07,2026-07-15,Ludgate Transport Brokers,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1435.38
+2026-07,2026-07-15,Varrick Lane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1656.37
+2026-07,2026-07-16,Dunsmore Carriers Brokerage,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1877.65
+2026-07,2026-07-17,Ashby Fenwick Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1105.90
+2026-07,2026-07-18,Wexcombe Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,2024.27
+2026-07,2026-07-20,Gullwing Travel,Travel to customers and freight conferences,travel,G&A,1050.66
+2026-07,2026-07-21,Kelderton Freight Partners,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1980.78
+2026-07,2026-07-21,Tarrow Brokerage,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1288.99
+2026-07,2026-07-23,Brimley Office Supply,Office supplies and team meals,other,G&A,738.79
+2026-07,2026-07-27,Fernway Contractor Payments,"Contractor payout: invoice labelling, T. Brennan",professional_services,G&A,3982.51
+2026-07,2026-07-29,Fernway Contractor Payments,"Contractor payout: invoice labelling, A. Kirwan",professional_services,G&A,4507.34
+2026-07,2026-07-31,Gristmill Payroll,"Customer success and implementation, salaries and benefits (second run)",payroll_customer_success,Cost of revenue,9487.94
+2026-07,2026-07-31,Gristmill Payroll,"Engineering, salaries and benefits (second run)",payroll_engineering,R&D,22045.65
+2026-07,2026-07-31,Gristmill Payroll,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,5686.88
+2026-07,2026-07-31,Gristmill Payroll,"Sales, salaries and benefits (second run)",payroll_sales,S&M,5911.80
+2026-08,2026-08-01,Dockyard Commons Workspace,Office rent,rent,G&A,4680.00
+2026-08,2026-08-01,Ravelston Insurance Brokers,Insurance premiums,insurance,G&A,943.59
+2026-08,2026-08-02,Abbotsford Finance Partners,"Fractional controller, monthly retainer",accounting,G&A,2950.00
+2026-08,2026-08-02,Tallyhouse Tools,Software subscriptions and tools,tools,G&A,1500.19
+2026-08,2026-08-03,Brimley Office Supply,Office supplies and team meals,other,G&A,351.25
+2026-08,2026-08-05,Norrgate Software Studio,"Contract engineering, SOW 2, August 2026",professional_services,G&A,26500.00
+2026-08,2026-08-06,Ferrous Cloud Services,"Cloud compute, storage and database",cloud_hosting,Cost of revenue,2571.85
+2026-08,2026-08-11,Lantern Document AI,"Document reading API, pages processed",document_ai,Cost of revenue,2528.76
+2026-08,2026-08-12,Tessmore Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1052.06
+2026-08,2026-08-12,Velloway Language API,Language model API usage,language_model_api,Cost of revenue,1510.71
+2026-08,2026-08-13,Fennimore Shipping Group,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,2860.89
+2026-08,2026-08-13,Ludgate Transport Brokers,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1674.50
+2026-08,2026-08-13,Marrowgate Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,2281.92
+2026-08,2026-08-15,Gristmill Payroll,"Customer success and implementation, salaries and benefits (first run)",payroll_customer_success,Cost of revenue,9620.34
+2026-08,2026-08-15,Gristmill Payroll,"Engineering, salaries and benefits (first run)",payroll_engineering,R&D,22674.22
+2026-08,2026-08-15,Gristmill Payroll,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,5686.69
+2026-08,2026-08-15,Gristmill Payroll,"Sales, salaries and benefits (first run)",payroll_sales,S&M,5837.39
+2026-08,2026-08-16,Corvane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3202.97
+2026-08,2026-08-16,Quellby Haulage,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,676.91
+2026-08,2026-08-16,Tarrow Brokerage,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1540.93
+2026-08,2026-08-17,Varrick Lane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1958.10
+2026-08,2026-08-17,Wexcombe Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1939.34
+2026-08,2026-08-18,Dunsmore Carriers Brokerage,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1839.58
+2026-08,2026-08-19,Gullwing Travel,Travel to customers and freight conferences,travel,G&A,3263.05
+2026-08,2026-08-19,Hethersett Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3982.71
+2026-08,2026-08-20,Kelderton Freight Partners,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,2337.78
+2026-08,2026-08-21,Ashby Fenwick Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1192.04
+2026-08,2026-08-28,Fernway Contractor Payments,"Contractor payout: invoice labelling, T. Brennan",professional_services,G&A,3885.70
+2026-08,2026-08-30,Fernway Contractor Payments,"Contractor payout: invoice labelling, A. Kirwan",professional_services,G&A,3338.46
+2026-08,2026-08-31,Gristmill Payroll,"Customer success and implementation, salaries and benefits (second run)",payroll_customer_success,Cost of revenue,9599.42
+2026-08,2026-08-31,Gristmill Payroll,"Engineering, salaries and benefits (second run)",payroll_engineering,R&D,22448.21
+2026-08,2026-08-31,Gristmill Payroll,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,5705.07
+2026-08,2026-08-31,Gristmill Payroll,"Sales, salaries and benefits (second run)",payroll_sales,S&M,5843.77
+2026-09,2026-09-01,Dockyard Commons Workspace,Office rent,rent,G&A,4680.00
+2026-09,2026-09-01,Ravelston Insurance Brokers,Insurance premiums,insurance,G&A,900.01
+2026-09,2026-09-02,Ferrous Cloud Services,"Cloud compute, storage and database",cloud_hosting,Cost of revenue,2621.78
+2026-09,2026-09-03,Abbotsford Finance Partners,"Fractional controller, monthly retainer",accounting,G&A,2950.00
+2026-09,2026-09-05,Norrgate Software Studio,"Contract engineering, SOW 2, September 2026",professional_services,G&A,26500.00
+2026-09,2026-09-05,Tallyhouse Tools,Software subscriptions and tools,tools,G&A,1527.95
+2026-09,2026-09-12,Lantern Document AI,"Document reading API, pages processed",document_ai,Cost of revenue,2415.04
+2026-09,2026-09-12,Tessmore Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,898.85
+2026-09,2026-09-13,Corvane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3441.21
+2026-09,2026-09-13,Dunsmore Carriers Brokerage,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1840.43
+2026-09,2026-09-13,Varrick Lane Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1805.70
+2026-09,2026-09-13,Velloway Language API,Language model API usage,language_model_api,Cost of revenue,1550.53
+2026-09,2026-09-14,Hethersett Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,2240.62
+2026-09,2026-09-14,Kelderton Freight Partners,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,2198.71
+2026-09,2026-09-15,Gristmill Payroll,"Customer success and implementation, salaries and benefits (first run)",payroll_customer_success,Cost of revenue,9520.07
+2026-09,2026-09-15,Gristmill Payroll,"Engineering, salaries and benefits (first run)",payroll_engineering,R&D,22309.56
+2026-09,2026-09-15,Gristmill Payroll,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,5687.73
+2026-09,2026-09-15,Gristmill Payroll,"Sales, salaries and benefits (first run)",payroll_sales,S&M,5892.66
+2026-09,2026-09-16,Gullwing Travel,Travel to customers and freight conferences,travel,G&A,1976.19
+2026-09,2026-09-19,Quellby Haulage,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,690.09
+2026-09,2026-09-19,Wexcombe Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1606.70
+2026-09,2026-09-20,Ashby Fenwick Freight,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1167.09
+2026-09,2026-09-21,Fennimore Shipping Group,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,3519.59
+2026-09,2026-09-21,Ludgate Transport Brokers,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1663.91
+2026-09,2026-09-21,Tarrow Brokerage,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,1511.24
+2026-09,2026-09-22,Marrowgate Logistics,Remittance of carrier refunds recovered for the customer,recovery_remittance,Cost of revenue,2187.27
+2026-09,2026-09-23,Thistlewood Legal LLP,Legal and filing fees,professional_services,G&A,1441.01
+2026-09,2026-09-24,Brimley Office Supply,Office supplies and team meals,other,G&A,744.43
+2026-09,2026-09-27,Fernway Contractor Payments,"Contractor payout: invoice labelling, T. Brennan",professional_services,G&A,3875.71
+2026-09,2026-09-30,Fernway Contractor Payments,"Contractor payout: invoice labelling, A. Kirwan",professional_services,G&A,4333.26
+2026-09,2026-09-30,Gristmill Payroll,"Customer success and implementation, salaries and benefits (second run)",payroll_customer_success,Cost of revenue,9537.86
+2026-09,2026-09-30,Gristmill Payroll,"Engineering, salaries and benefits (second run)",payroll_engineering,R&D,22204.68
+2026-09,2026-09-30,Gristmill Payroll,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,5621.67
+2026-09,2026-09-30,Gristmill Payroll,"Sales, salaries and benefits (second run)",payroll_sales,S&M,5835.61

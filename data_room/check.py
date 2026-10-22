@@ -6,6 +6,7 @@ Run after generate.py, with the room's virtual environment:
     data_room/.venv/bin/python data_room/check.py
     data_room/.venv/bin/python data_room/check.py --room data_room/hollis_voice_clean --key data_room/answer_key_clean.json
     data_room/.venv/bin/python data_room/check.py --room data_room/hollis_voice_variant --key <path to the sealed variant key>
+    data_room/.venv/bin/python data_room/check.py --company brasswick          the second company (check_brasswick.py)
 
 It reads an answer key and the files of the room it names (the main room and answer_key.json by default).
 For each flag the key lists, it checks that the shown value is where the key says it is, then recomputes the
@@ -32,7 +33,15 @@ HERE = Path(__file__).resolve().parent
 _ap = argparse.ArgumentParser(description="Check a generated Hollis Voice data room against its answer key.")
 _ap.add_argument("--room", default=str(HERE / "hollis_voice"), help="the room folder (default: data_room/hollis_voice)")
 _ap.add_argument("--key", default=None, help="the answer key (default: answer_key.json, or none if --room is not the main room)")
+_ap.add_argument("--company", choices=["hollis", "brasswick"], default=None,
+                 help="brasswick checks the Brasswick seed room (default room data_room/brasswick, key answer_key_brasswick.json); "
+                      "a key whose company is Brasswick picks it too")
 _args = _ap.parse_args()
+_key_company = json.loads(Path(_args.key).expanduser().read_text(encoding="utf-8")).get("company", "") if _args.key else ""
+if _args.company == "brasswick" or _key_company.startswith("Brasswick"):
+    import check_brasswick
+    _bw_room = _args.room if _args.room != str(HERE / "hollis_voice") else str(HERE / "brasswick")
+    sys.exit(check_brasswick.run(_bw_room, _args.key or str(HERE / "answer_key_brasswick.json")))
 ROOM = Path(_args.room).expanduser().resolve()
 if _args.key is None:
     if ROOM != (HERE / "hollis_voice").resolve():

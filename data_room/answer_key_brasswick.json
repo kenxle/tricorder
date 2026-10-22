@@ -1,0 +1,912 @@
+{
+  "company": "Brasswick (fictional)",
+  "synthetic_notice": "Synthetic data room for Deal Flow NYC 2026. Not a real company.",
+  "seed": 20261025,
+  "as_of": "2026-09-30",
+  "mode": "main",
+  "stage": "seed",
+  "plants": [
+    "BF1",
+    "BF2",
+    "BF3",
+    "BF4",
+    "BF5"
+  ],
+  "clean_room": false,
+  "room_path": "data_room/brasswick",
+  "seed_drop_path": null,
+  "seed_drop_files": [],
+  "full_room_files": [
+    "00_welcome/cover_note_and_index.pdf",
+    "01_overview/pitch_deck.pdf",
+    "01_overview/pitch_video_script.md",
+    "02_financials/financial_model.xlsx",
+    "02_financials/cap_table.xlsx",
+    "02_financials/expense_ledger.csv",
+    "03_metrics/monthly_metrics.csv",
+    "03_metrics/revenue_by_customer.csv",
+    "04_contracts/msa_corvane_logistics.pdf",
+    "04_contracts/order_form_ostley_freight.pdf",
+    "04_contracts/order_form_tessmore_freight.pdf",
+    "04_contracts/sow_norrgate_software_studio.pdf",
+    "05_team/founder_bios.pdf",
+    "01_overview/claims.json"
+  ],
+  "flags": [
+    {
+      "id": "BF1",
+      "name": "Recoveries counted at their gross amount",
+      "mislabel_kind": "c. Gross merchandise value or pass-through money shown as revenue",
+      "piece": "traction and revenue",
+      "locations": [
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "P&L",
+          "cell": "A8",
+          "expect": "Recovery revenue",
+          "label": "row label: recoveries counted as revenue"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "P&L",
+          "cell": "A11",
+          "expect": "Recoveries paid to customers",
+          "label": "row label: the customers' share in cost of revenue"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "P&L",
+          "cell": "H9:S9",
+          "label": "total revenue, 2025-10 to 2026-09"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 12,
+          "claims_row": "Revenue, last 12 months",
+          "text": "Revenue, last 12 months $943,340 4",
+          "slide_ref": 4,
+          "label": "appendix row 'Revenue, last 12 months'"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 6,
+          "text": "We keep 30% of the money recovered.",
+          "label": "the deck itself says Brasswick keeps only 30%"
+        },
+        {
+          "file": "04_contracts/msa_corvane_logistics.pdf",
+          "page": 2,
+          "text": "4. Recovery services.",
+          "label": "refunds belong to the customer; Brasswick keeps 30%"
+        },
+        {
+          "file": "02_financials/expense_ledger.csv",
+          "category": "recovery_remittance",
+          "months": [
+            "2025-10",
+            "2025-11",
+            "2025-12",
+            "2026-01",
+            "2026-02",
+            "2026-03",
+            "2026-04",
+            "2026-05",
+            "2026-06",
+            "2026-07",
+            "2026-08",
+            "2026-09"
+          ],
+          "expect": 264214.66,
+          "label": "remittances to brokers, 2025-10 to 2026-09"
+        },
+        {
+          "file": "03_metrics/revenue_by_customer.csv",
+          "columns": [
+            "recovered_from_carriers",
+            "recovery_fee",
+            "remitted_to_customer"
+          ],
+          "label": "per-broker recoveries, Brasswick's fee and the broker's share"
+        }
+      ],
+      "shown": {
+        "value": 943340,
+        "unit": "USD",
+        "label": "deck revenue, last 12 months (P&L total revenue, 2025-10 to 2026-09)",
+        "details": {
+          "recovered_from_carriers_ltm": 377450,
+          "pass_through_counted": 264215
+        }
+      },
+      "true": {
+        "value": 679125,
+        "unit": "USD",
+        "label": "the same 12 months with the brokers' 70% share taken out",
+        "details": {
+          "revenue_ltm_fully_net": 653880,
+          "fully_net_note": "Also removes BF4's undelivered months of the Ostley Freight invoice.",
+          "gross_to_net_ratio": 1.389
+        }
+      },
+      "check": "gross_vs_net_revenue",
+      "check_description": "Sum remitted_to_customer in revenue_by_customer.csv (or the recovery_remittance lines in expense_ledger.csv) over the 12 months and subtract it from the deck's revenue. The agreement's section 4 says refunds belong to the customer, so only the 30% fee is Brasswick's revenue.",
+      "tolerance": 0.01,
+      "files_needed": [
+        "01_overview/pitch_deck.pdf",
+        "02_financials/financial_model.xlsx",
+        "03_metrics/revenue_by_customer.csv",
+        "02_financials/expense_ledger.csv",
+        "04_contracts/msa_corvane_logistics.pdf"
+      ],
+      "catchable_from_seed_drop": null,
+      "decoy": false
+    },
+    {
+      "id": "BF2",
+      "name": "The deck's revenue chart starts after a fall",
+      "mislabel_kind": "Partial history: a chart that starts after the first revenue month and hides a dip",
+      "piece": "traction and revenue",
+      "locations": [
+        {
+          "file": "03_metrics/monthly_metrics.csv",
+          "row_key": {
+            "month": "2025-05"
+          },
+          "column": "total_revenue",
+          "expect": 16625.0,
+          "label": "first month of revenue in the metrics export"
+        },
+        {
+          "file": "03_metrics/monthly_metrics.csv",
+          "row_key": {
+            "month": "2025-09"
+          },
+          "column": "total_revenue",
+          "expect": 84090.2,
+          "label": "highest month before the deck's chart begins"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 12,
+          "claims_row": "Monthly revenue chart",
+          "text": "Monthly revenue chart 2026-01 to 2026-09 4",
+          "slide_ref": 4,
+          "label": "appendix row 'Monthly revenue chart'"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 4,
+          "text": "Monthly revenue, January 2026 to September 2026",
+          "label": "chart caption"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 4,
+          "text": "Revenue grew every month in 2026.",
+          "label": "the claim the short chart supports"
+        }
+      ],
+      "shown": {
+        "value": 8,
+        "unit": "first month index",
+        "label": "chart from 2026-01 to 2026-09, 'Revenue grew every month in 2026.'",
+        "details": {
+          "chart_start": "2026-01",
+          "months_shown": 9
+        }
+      },
+      "true": {
+        "value": 0,
+        "unit": "first month index",
+        "label": "revenue history starts 2025-05",
+        "details": {
+          "history_start": "2025-05",
+          "months_hidden": 8,
+          "hidden_peak_month": "2025-09",
+          "hidden_peak_total_revenue": 84090.2,
+          "first_chart_month_total_revenue": 60399.89,
+          "fall_from_peak": 0.282,
+          "why": "Back-audit recoveries for the first brokers peaked in 2025 and then ran out."
+        }
+      },
+      "check": "deck_history_vs_metrics",
+      "check_description": "Compare the chart's first month with the first month of revenue in monthly_metrics.csv. List the months left out and test whether revenue fell in them: the highest month before the chart against the chart's first month.",
+      "tolerance": 0,
+      "files_needed": [
+        "01_overview/pitch_deck.pdf",
+        "03_metrics/monthly_metrics.csv"
+      ],
+      "catchable_from_seed_drop": null,
+      "decoy": false
+    },
+    {
+      "id": "BF3",
+      "name": "Contractors left out of burn and runway",
+      "mislabel_kind": "e. Contractors left out of headcount and burn",
+      "piece": "burn and runway",
+      "locations": [
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Assumptions",
+          "cell": "B12",
+          "named_cell": "PROF_SERVICES_USD_MONTH",
+          "expect": 2800,
+          "label": "plan professional services: legal only"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "P&L",
+          "cell": "A23",
+          "expect": "Professional services",
+          "label": "row that holds the contractors in the actual months"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "P&L",
+          "cell": "S23",
+          "expect": 36149.98,
+          "label": "professional services, 2026-09 actual"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "P&L",
+          "cell": "T23",
+          "expect": 2800,
+          "label": "professional services, 2026-10 plan"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Cash_Runway",
+          "cell": "B3",
+          "named_cell": "RUNWAY_MONTHS",
+          "expect": 29,
+          "label": "runway in months"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Cash_Runway",
+          "cell": "B4",
+          "named_cell": "AVG_NET_BURN_12M",
+          "expect": 113684.09,
+          "label": "average net burn, plan months 1 to 12"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Cash_Runway",
+          "cell": "H9:H20",
+          "label": "professional services, plan months 1 to 12"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 12,
+          "claims_row": "Average monthly net burn, next 12 months",
+          "text": "Average monthly net burn, next 12 months $113,684 10",
+          "slide_ref": 10,
+          "label": "appendix row 'Average monthly net burn, next 12 months'"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 12,
+          "claims_row": "Runway",
+          "text": "Runway 29 months 10",
+          "slide_ref": 10,
+          "label": "appendix row 'Runway'"
+        },
+        {
+          "file": "04_contracts/sow_norrgate_software_studio.pdf",
+          "page": 1,
+          "text": "$26,500 a month",
+          "label": "contract engineering fee"
+        },
+        {
+          "file": "04_contracts/sow_norrgate_software_studio.pdf",
+          "page": 1,
+          "text": "ninety (90) days written notice",
+          "label": "cannot end before plan month 4"
+        },
+        {
+          "file": "04_contracts/sow_norrgate_software_studio.pdf",
+          "page": 1,
+          "text": "12 months, from 2026-07-01 to 2027-06-30",
+          "label": "runs through the first nine plan months"
+        },
+        {
+          "file": "02_financials/expense_ledger.csv",
+          "vendor": "Norrgate Software Studio",
+          "month": "2026-09",
+          "expect": 26500,
+          "label": "contract engineering, 2026-09"
+        },
+        {
+          "file": "02_financials/expense_ledger.csv",
+          "vendor": "Fernway Contractor Payments",
+          "month": "2026-09",
+          "expect": 8208.97,
+          "label": "labelling contractors, 2026-09"
+        }
+      ],
+      "shown": {
+        "value": 29,
+        "unit": "months",
+        "label": "runway in the model and deck",
+        "details": {
+          "avg_net_burn_first_12_months": 113684,
+          "plan_professional_services": 2800
+        }
+      },
+      "true": {
+        "value": 23,
+        "unit": "months",
+        "label": "runway when the contractors paid in 2026-09 stay on",
+        "details": {
+          "avg_net_burn_first_12_months": 148393,
+          "contractor_spend_2026_09": 34708.97,
+          "studio_2026_09": 26500,
+          "labellers_2026_09": 8208.97,
+          "full_time_equivalents_left_out": 6,
+          "sow_notice_days": 90,
+          "sow_end": "2027-06-30"
+        }
+      },
+      "check": "contractor_spend_vs_headcount_and_burn",
+      "check_description": "Find contractor lines in expense_ledger.csv (vendor and description: contract engineering, contractor payouts). Add the 2026-09 run rate to the plan's professional services, rerun the cash plan from Cash_Runway and compare runway and average burn with the deck.",
+      "tolerance": 0.01,
+      "files_needed": [
+        "02_financials/expense_ledger.csv",
+        "02_financials/financial_model.xlsx",
+        "01_overview/pitch_deck.pdf",
+        "04_contracts/sow_norrgate_software_studio.pdf"
+      ],
+      "catchable_from_seed_drop": null,
+      "decoy": false
+    },
+    {
+      "id": "BF4",
+      "name": "An annual prepayment booked as one month's revenue",
+      "mislabel_kind": "g. Deferred revenue counted as earned",
+      "piece": "traction and revenue",
+      "locations": [
+        {
+          "file": "03_metrics/monthly_metrics.csv",
+          "row_key": {
+            "month": "2026-09"
+          },
+          "column": "subscription_revenue",
+          "expect": 84810,
+          "label": "metrics subscription revenue, 2026-09, with the annual invoice booked whole"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "P&L",
+          "cell": "S7",
+          "named_cell": "SUB_REVENUE_2026_09",
+          "expect": 84810,
+          "label": "P&L subscription revenue, 2026-09"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Revenue_Build",
+          "cell": "F18",
+          "expect": 27540,
+          "label": "Ostley Freight's annual invoice booked as September revenue"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Revenue_Build",
+          "cell": "E18",
+          "expect": 2295,
+          "label": "Ostley Freight's monthly fee under the contract"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Revenue_Build",
+          "cell": "F21",
+          "named_cell": "MRR_2026_09",
+          "expect": 84810,
+          "label": "model MRR, September 2026"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Cash_Bridge",
+          "cell": "B10",
+          "named_cell": "DEFERRED_REVENUE_USD",
+          "expect": 8640,
+          "label": "deferred revenue holds only Tessmore; Ostley's eleven undelivered months are missing"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 12,
+          "claims_row": "MRR, September 2026",
+          "text": "MRR, September 2026 $84,810 4",
+          "slide_ref": 4,
+          "label": "appendix row 'MRR, September 2026'"
+        },
+        {
+          "file": "04_contracts/order_form_ostley_freight.pdf",
+          "page": 1,
+          "text": "$27,540, invoiced once, in advance",
+          "label": "annual fee paid ahead"
+        },
+        {
+          "file": "04_contracts/order_form_ostley_freight.pdf",
+          "page": 2,
+          "text": "The service is delivered in every month of the term.",
+          "label": "earned month by month"
+        }
+      ],
+      "shown": {
+        "value": 84810,
+        "unit": "USD",
+        "label": "deck and model MRR, September 2026",
+        "details": {
+          "ostley_booked_2026_09": 27540,
+          "deferred_revenue_on_bridge": 8640
+        }
+      },
+      "true": {
+        "value": 59565,
+        "unit": "USD",
+        "label": "subscription revenue earned in September 2026, from the customer file",
+        "details": {
+          "ostley_earned_2026_09": 2295,
+          "ostley_undelivered": 25245,
+          "deferred_revenue_should_be": 33885
+        }
+      },
+      "check": "deferred_revenue_vs_earned",
+      "check_description": "Sum subscription_revenue in revenue_by_customer.csv for 2026-09 and compare with the P&L and the deck's MRR. The month's P&L figure equals billings, not revenue. Ostley Freight's order form bills a year in advance for service delivered month by month.",
+      "tolerance": 0.01,
+      "files_needed": [
+        "01_overview/pitch_deck.pdf",
+        "02_financials/financial_model.xlsx",
+        "03_metrics/revenue_by_customer.csv",
+        "04_contracts/order_form_ostley_freight.pdf"
+      ],
+      "catchable_from_seed_drop": null,
+      "decoy": false
+    },
+    {
+      "id": "BF5",
+      "name": "Spoken runway above the deck",
+      "mislabel_kind": "A spoken number that disagrees with the deck",
+      "piece": "burn and runway",
+      "locations": [
+        {
+          "file": "01_overview/pitch_video_script.md",
+          "time": "1:35",
+          "text": "With the hires in our plan, that gives us close to three years of runway.",
+          "label": "spoken runway, about 36 months"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 12,
+          "claims_row": "Runway",
+          "text": "Runway 29 months 10",
+          "slide_ref": 10,
+          "label": "appendix row 'Runway'"
+        }
+      ],
+      "shown": {
+        "value": 36,
+        "unit": "months",
+        "label": "spoken in the pitch video at 1:35: close to three years of runway"
+      },
+      "true": {
+        "value": 29,
+        "unit": "months",
+        "label": "deck and model runway",
+        "details": {
+          "runway_with_contractors": 23
+        }
+      },
+      "check": "spoken_number_vs_claims_page",
+      "check_description": "Transcribe the video, find the runway sentence and compare it with the deck's appendix row Runway.",
+      "tolerance": 0.1,
+      "files_needed": [
+        "01_overview/pitch_video_script.md",
+        "01_overview/pitch_deck.pdf"
+      ],
+      "catchable_from_seed_drop": null,
+      "decoy": false,
+      "note": "The script stands in for the video until Ken records it. Hollis Voice's spoken number is ARR; Brasswick's is runway, so the video scan has to read a different claim."
+    }
+  ],
+  "decoys": [
+    {
+      "id": "DC1",
+      "name": "Annual prepayment spread correctly",
+      "locations": [
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Revenue_Build",
+          "cell": "F13",
+          "expect": 2160,
+          "label": "Tessmore Freight booked at its monthly fee"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Cash_Bridge",
+          "cell": "B10",
+          "named_cell": "DEFERRED_REVENUE_USD",
+          "expect": 8640,
+          "label": "deferred revenue: Tessmore's months not yet delivered"
+        },
+        {
+          "file": "04_contracts/order_form_tessmore_freight.pdf",
+          "page": 1,
+          "text": "$25,920, invoiced once, in advance",
+          "label": "annual fee paid ahead"
+        },
+        {
+          "file": "03_metrics/revenue_by_customer.csv",
+          "row_key": {
+            "month": "2026-02",
+            "customer_id": "C1010"
+          },
+          "column": "billings",
+          "expect": 25920,
+          "label": "the whole annual fee billed in 2026-02"
+        },
+        {
+          "file": "03_metrics/revenue_by_customer.csv",
+          "row_key": {
+            "month": "2026-02",
+            "customer_id": "C1010"
+          },
+          "column": "subscription_revenue",
+          "expect": 2160,
+          "label": "revenue in 2026-02 is one month"
+        }
+      ],
+      "must_not_flag": true,
+      "details": {
+        "customer_id": "C1010",
+        "annual_fee": 25920,
+        "monthly_revenue": 2160,
+        "billings_month": "2026-02",
+        "deferred_at_2026_09_30": 8640
+      },
+      "why": "Tessmore Freight paid a year in advance in 2026-02. The billings column shows the whole fee that month, revenue is one twelfth a month, and the cash bridge carries the four undelivered months as deferred revenue. It is the same kind of contract as BF4, booked the right way. A scan that flags it, or reads its billings spike as revenue, is wrong."
+    },
+    {
+      "id": "DC2",
+      "name": "A contractor the plan keeps",
+      "locations": [
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Assumptions",
+          "cell": "B13",
+          "named_cell": "ACCOUNTING_USD_MONTH",
+          "expect": 2950,
+          "label": "plan keeps the fractional controller"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Cash_Runway",
+          "cell": "I9:I20",
+          "label": "accounting held in every plan month"
+        },
+        {
+          "file": "02_financials/expense_ledger.csv",
+          "vendor": "Abbotsford Finance Partners",
+          "month": "2026-09",
+          "expect": 2950,
+          "label": "fractional controller, 2026-09"
+        }
+      ],
+      "must_not_flag": true,
+      "details": {
+        "vendor": "Abbotsford Finance Partners",
+        "monthly_retainer": 2950
+      },
+      "why": "The fractional controller is paid as a contractor, and the plan keeps the retainer in every month. A scan that flags every contractor line is wrong. Only the contract engineers and labellers are left out."
+    },
+    {
+      "id": "DC3",
+      "name": "A cumulative count labelled as cumulative",
+      "locations": [
+        {
+          "file": "03_metrics/monthly_metrics.csv",
+          "row_key": {
+            "month": "2026-09"
+          },
+          "column": "carrier_invoices_audited_since_launch",
+          "expect": 799114,
+          "label": "cumulative column, labelled as such"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 12,
+          "claims_row": "Carrier invoices audited since launch",
+          "text": "Carrier invoices audited since launch 799,114 5",
+          "slide_ref": 5,
+          "label": "appendix row 'Carrier invoices audited since launch'"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 5,
+          "text": "Carrier invoices audited since launch: 799,114.",
+          "label": "deck labels the cumulative count as cumulative"
+        }
+      ],
+      "must_not_flag": true,
+      "details": {
+        "since_launch": 799114,
+        "september": 75337
+      },
+      "why": "The deck gives carrier invoices audited since launch, says so, and gives the September count beside it. The metrics file's column is named since_launch and is the running sum of the monthly column. It is not shown as an active count. A vanity-metric scan that flags any deck number equal to a cumulative column is wrong."
+    }
+  ],
+  "green_flags": [
+    {
+      "id": "GF1",
+      "piece": "the pitch itself",
+      "name": "The round adds up",
+      "label": "raise_amount",
+      "number": 3000000,
+      "unit": "USD",
+      "tolerance": 0.01,
+      "locations": [
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Assumptions",
+          "cell": "B16",
+          "named_cell": "SEED_RAISE",
+          "value": 3000000,
+          "label": "seed raise in the model"
+        },
+        {
+          "file": "02_financials/cap_table.xlsx",
+          "sheet": "Cap_Table",
+          "cell": "B24",
+          "value": 3000000,
+          "label": "seed new money in the cap table"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 11,
+          "text": "$3,000,000",
+          "value": 3000000,
+          "label": "deck seed raise, slide 11"
+        }
+      ],
+      "independent_sources": 3,
+      "sources_note": "The deck (slide 11), the cap table and the model are three different files."
+    },
+    {
+      "id": "GF2",
+      "piece": "retention",
+      "name": "Brokers stay",
+      "label": "paying_brokers",
+      "number": 14,
+      "unit": "count",
+      "tolerance": 0.01,
+      "locations": [
+        {
+          "file": "03_metrics/revenue_by_customer.csv",
+          "count_rows": {
+            "month": "2026-09"
+          },
+          "where_positive": "subscription_revenue",
+          "value": 14,
+          "label": "customers with subscription revenue in 2026-09"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Revenue_Build",
+          "cell": "C19",
+          "named_cell": "PAYING_BROKERS",
+          "value": 14,
+          "label": "paying brokers in the model"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 5,
+          "text": "14 of the 15 brokers who have paid us still do.",
+          "value": 14,
+          "label": "deck: brokers still paying, slide 5"
+        }
+      ],
+      "independent_sources": 3,
+      "sources_note": "The deck says 14 of 15. The customer file has 15 brokers ever and 14 paying in 2026-09, and the model's Revenue_Build counts the same 14."
+    },
+    {
+      "id": "GF3",
+      "piece": "customers",
+      "name": "The largest account is on paper",
+      "label": "largest_customer_monthly_fee",
+      "number": 11850,
+      "unit": "USD",
+      "tolerance": 0.01,
+      "locations": [
+        {
+          "file": "03_metrics/revenue_by_customer.csv",
+          "row_key": {
+            "month": "2026-09",
+            "customer_id": "C1001"
+          },
+          "column": "subscription_revenue",
+          "value": 11850,
+          "label": "largest customer's September revenue"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Revenue_Build",
+          "cell": "E5",
+          "value": 11850,
+          "label": "largest customer's monthly fee in the model"
+        },
+        {
+          "file": "04_contracts/msa_corvane_logistics.pdf",
+          "page": 1,
+          "text": "$11,850 a month",
+          "value": 11850,
+          "label": "platform fee in the signed agreement"
+        }
+      ],
+      "independent_sources": 3,
+      "sources_note": "The signed agreement, the customer file and the model's Revenue_Build all give the same fixed fee, for every month since 2025-05."
+    }
+  ],
+  "green_flags_note": "Positives. Each is a number three different files state the same way. Each sits in a piece with no planted flag: the pitch itself, retention and customers.",
+  "deck_claims": [
+    {
+      "label": "Revenue, last 12 months",
+      "value": "$943,340",
+      "slide": 4
+    },
+    {
+      "label": "MRR, September 2026",
+      "value": "$84,810",
+      "slide": 4
+    },
+    {
+      "label": "Paying brokers",
+      "value": "14",
+      "slide": 4
+    },
+    {
+      "label": "Monthly revenue chart",
+      "value": "2026-01 to 2026-09",
+      "slide": 4
+    },
+    {
+      "label": "Brokers still paying",
+      "value": "14 of 15",
+      "slide": 5
+    },
+    {
+      "label": "Largest customer",
+      "value": "20% of subscription revenue",
+      "slide": 5
+    },
+    {
+      "label": "Carrier invoices audited, September 2026",
+      "value": "75,337",
+      "slide": 5
+    },
+    {
+      "label": "Carrier invoices audited since launch",
+      "value": "799,114",
+      "slide": 5
+    },
+    {
+      "label": "Recovery fee",
+      "value": "30% of money recovered",
+      "slide": 6
+    },
+    {
+      "label": "Market size (company estimate)",
+      "value": "$194,400,000",
+      "slide": 7
+    },
+    {
+      "label": "Full-time employees",
+      "value": "7",
+      "slide": 9
+    },
+    {
+      "label": "Average monthly net burn, next 12 months",
+      "value": "$113,684",
+      "slide": 10
+    },
+    {
+      "label": "Runway",
+      "value": "29 months",
+      "slide": 10
+    },
+    {
+      "label": "Employees after the seed hires",
+      "value": "14",
+      "slide": 10
+    },
+    {
+      "label": "Seed raise",
+      "value": "$3,000,000",
+      "slide": 11
+    },
+    {
+      "label": "Pre-money valuation",
+      "value": "$16,000,000",
+      "slide": 11
+    }
+  ],
+  "facts": {
+    "customers_ever_paying": 15,
+    "paying_accounts": 14,
+    "subscription_revenue_2026_09": 59565,
+    "mrr_shown_2026_09": 84810,
+    "revenue_ltm_shown": 943339.5,
+    "revenue_ltm_net_of_pass_through": 679124.84,
+    "revenue_ltm_fully_net": 653879.84,
+    "recovery_fee_share": 0.3,
+    "ask": 3000000,
+    "pre_money": 16000000,
+    "cash": 641318,
+    "employees_now": 7,
+    "employees_after_hiring": 14,
+    "raised_before_seed": 1700000,
+    "angel_safes": 500000,
+    "pre_seed_safe": 1200000,
+    "net_loss_before_2025_05": 134609,
+    "net_loss_2025_05_to_2026_09": 932712.79,
+    "deferred_revenue_on_bridge": 8640,
+    "cash_bridge_difference": 0.21,
+    "big_customer_id": "C1001",
+    "big_customer_share": 0.199,
+    "ostley_customer_id": "C1015",
+    "tessmore_customer_id": "C1010",
+    "churned_customer_id": "C1004",
+    "contractor_run_rate_2026_09": 34708.97,
+    "model_avg_net_burn_12m": 113684.09,
+    "true_avg_net_burn_12m": 148393.06,
+    "runway_shown": 29,
+    "runway_true": 23,
+    "plan_growth": [
+      0.03,
+      0.015,
+      0.01
+    ],
+    "plan_programs_usd_month": 30000,
+    "plan_other_usd_month": 9800.0,
+    "plan_office_step": [
+      7,
+      3900
+    ],
+    "seed_plan_month": 2,
+    "load_factor": 1.22,
+    "team": [
+      {
+        "name": "Celia Brandvold",
+        "title": "Chief Executive Officer and co-founder"
+      },
+      {
+        "name": "Marcus Ashdown",
+        "title": "Chief Technology Officer and co-founder"
+      },
+      {
+        "name": "Lena Haverkamp",
+        "title": "Founding Engineer"
+      },
+      {
+        "name": "Owen Tierney",
+        "title": "Customer Success Lead"
+      }
+    ]
+  },
+  "counts": {
+    "flags": 5,
+    "decoys": 3,
+    "green_flags": 3,
+    "flags_catchable_from_seed_drop": null,
+    "flags_needing_full_room": null
+  },
+  "notes": [
+    "Brasswick is a seed company. Its room is one thin tier, sent before a first meeting, so there is no separate seed drop.",
+    "Four planted flags are of kinds the Hollis Voice room does not carry: gross against net revenue (BF1), a partial-history chart (BF2), contractors left out of burn (BF3) and deferred revenue counted as earned (BF4). The fifth, a spoken number above the deck (BF5), is the same family as Hollis Voice's PF2b, but on runway, not ARR.",
+    "BF3 and BF5 both touch runway. The deck says 29 months, the video says close to three years, and with the contractors kept on the cash lasts 23 months.",
+    "BF1 and BF4 both raise the deck's revenue. Each flag's true value removes only its own error. facts.revenue_ltm_fully_net removes both.",
+    "Cash reconciles: money raised, less the loss before 2025-05 and the 17 monthly operating results, plus Tessmore's undelivered months, equals cash at 2026-09-30 (sheet Cash_Bridge). The ledger agrees: total spend less billings and recoveries collected equals the P&L loss less the deferred revenue.",
+    "The deck's market figures are labelled company estimates and are not planted flags."
+  ]
+}
