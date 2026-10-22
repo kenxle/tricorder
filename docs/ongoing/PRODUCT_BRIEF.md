@@ -76,7 +76,6 @@ The user stories that turn these jobs into features are in [USER_STORIES.md](USE
 - Not a sourcing database or a CRM.
 - Not a chat window over documents.
 - Not a replacement for the partner's judgment.
-- Not a fraud detector. It finds differences in reporting.
 - Not confirmatory diligence.
 
 ## The principles for choosing methods
