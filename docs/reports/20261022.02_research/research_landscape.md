@@ -266,3 +266,52 @@ I found few results. Deal Flow bills itself as NYC's first VC hackathon, and I f
 - **Prices behind blocked pages.** PitchBook, Carta's pricing page and Akta's own site returned 403 to plain fetches. I read PitchBook's products page, Carta's data page and Akta's pricing page in a browser. PitchBook shows no price. Carta's pricing page I could not read.
 - **Third-party price figures** (Vendr, CostBench) come from small samples. Vendr's Harmonic figure rests on 3 purchases. CostBench's CB Insights and PitchBook pages are single-source and labelled limited confidence. Treat them as rough.
 - **Wokelo's price.** A search summary mentioned a figure from a podcast page. I could not find that text on the page, so I left it out.
+
+---
+
+## Part 5: A closer look at Startup Due Dil
+
+Added 2026-10-22 at Ken's request: take every feature we can from the fund partner's home-built tool and any other public information about it. The tool is Startup Due Dil, built by Vlad Tislenko, a partner at SMRK VC, a Ukrainian venture fund. Sources, all saved: the [Tech.eu article](https://tech.eu/2026/08/25/inside-startup-due-dil-the-ai-tool-turning-hours-of-vc-diligence-into-10-minutes/) (Aug 2026, saved in [raw/voc/](raw/voc/INDEX.md)), the [dev.ua article](https://dev.ua/en/news/startup-due-dil-1787664994) and the [Kosht article](https://kosht.media/ukrainskyy-investor-zapustyv-shi-servis-dlia-perevirky-startapiv-pered-investytsiiamy/) (saved in [raw/landscape/](raw/landscape/INDEX.md)). Every quote below was checked word for word against the saved pages.
+
+### Its features
+
+| Feature | What the sources say |
+|---|---|
+| **Speed** | "Startup Due Dil is designed to produce an initial structured report in approximately 10 minutes." (Tech.eu) |
+| **Ten agents** | Nine specialists, one per area: team and founders, market, competitors, technology and product, traction and financials, business model, regulatory compliance, ownership structure and cap table, legal considerations. (Tech.eu) |
+| **An orchestrator that reruns weak work** | The tenth agent, Oracle, plans the work and checks completeness: "If the analysis of a particular area is insufficient, Oracle can rerun the relevant agent with additional context." (Tech.eu) |
+| **Deck only, or more** | "To begin an analysis, a user only needs to upload the startup's pitch deck." For a deeper review the user adds financial statements, a cap table, legal documents, written comments and links. (Tech.eu) |
+| **Claims checked against public sources** | "The platform compares claims made in the submitted materials with information from public sources." (Tech.eu) |
+| **Cited report with three flag colours** | "The final report includes source citations, while key findings are organised into red, yellow, and green flags", from material risks and inconsistencies, to areas needing clarification, to verified positive signals. (Tech.eu) |
+| **What it finds most** | Founders overestimating market size: "Quite often, Startup Due Dil cannot verify those numbers." (Tech.eu) |
+| **Tuned by the partner** | When it misses a nuance, he updates that agent and reruns it to confirm the fix. (Tech.eu, paraphrased) |
+| **A mode for founders** | "Startups can also run a one-off analysis before raising capital to assess their readiness for investor due diligence." (Tech.eu) |
+| **Data handling** | "Administrative dashboards do not display private workspace content, and developers do not have access to user files or reports." Models are called through third-party APIs. (Tech.eu) |
+| **Models** | "The current version of Startup Due Dil uses the OpenAI API, although its architecture also supports Anthropic." (Tech.eu) |
+| **Cost to build** | "The platform cost less than €1,000 to build." (Tech.eu) |
+| **Price** | "The cost of a single report is $49." "Monthly subscriptions are also available: $449 for business angels (up to 10 reports) and $999 for funds (up to 25 reports)." (dev.ua) Payments run through Paddle (dev.ua). |
+| **Who uses it** | In use at SMRK's investment work and being tested by other investors; built for VC and private equity firms, especially early stage. (Tech.eu) |
+| **Its framing** | "The goal is not to replace the investor, but to provide a more complete evidence base for decision-making and reduce the risk of overlooking an important signal" (Tech.eu). Reference checks and talking to the founder stay with the investor. |
+
+### What it validates
+
+- **The whole idea.** A partner built it for his own work because "the most time-consuming part is finding, verifying, and structuring information" (Tech.eu). That is the slow part the voice-of-the-customer research found.
+- **Angels pay.** It sells a plan for business angels at $449 a month for up to 10 reports (dev.ua). That supports Ken's reading that angels want diligence and would pay for it if it were accessible.
+- **The flag readout.** Red, yellow and green flags with citations is close to Tricorder's top green and red flags.
+- **A price point.** $49 a report sits between the $12-a-memo tool and the enterprise tools in Part 1.
+
+### What Tricorder takes from it
+
+- **A yellow tier.** "Needs clarification" sits between red and green; in Tricorder it is a weak or mixed piece whose question goes on the ask list.
+- **Rerun when thin.** Oracle reruns an agent when its area is insufficient. Tricorder's "get more info" steer does this on the operator's request; it could also do it on its own when a piece reads "not enough in the room" but more could be fetched.
+- **Specialist areas.** Its nine areas map closely onto Tricorder's pieces. Regulatory compliance and legal are two Tricorder covers only through the checklist's legal and cap table items.
+- **A founder mode.** Startups run it on themselves before raising. Tricorder could offer the same: a founder runs the readout on their own room and fixes what disagrees before an investor sees it.
+
+### What Tricorder adds
+
+- Numbers decided by scripts, not by a model's reading, with the readout's verdicts set by a stated rule.
+- Corroboration shown both ways: every number two clicks from the sources that agree and the ones that disagree.
+- Accounting mislabels and contract terms checked against how each contract is counted.
+- An ask list for the founder, and coverage against a published-checklist list of what should be there.
+- An interactive memo for the partners, which each reader can steer and run what-ifs on.
+- The scans beyond the room: the pitch video, comps, and the associate's ten tabs.
