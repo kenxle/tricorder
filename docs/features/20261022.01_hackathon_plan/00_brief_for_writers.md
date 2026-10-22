@@ -242,3 +242,9 @@ Added 2026-10-22 at 1:34 PM, as a comment on "Ken's interviews need to get that 
 > we're only doing online research
 
 Settled, and it replaces the interviews: there are no interviews before Saturday. Every place that says "the interviews should ask", "Ken's interviews", or waits on interviews changes to online research. The gaps the interviews were meant to fill become a fifth research track, `research_gaps.md`, done online: how long a first-pass memo takes and which part is slowest, whether angels would pay for a first pass of their own and what it is worth per deal, how data rooms reach investors and what they open first, regret stories about hidden churn and about burn against the hiring plan, and what funds pay for first-pass diligence in their own words. The interview sheet is retired. The board row for interviews closes with that reason.
+
+Added 2026-10-22 at 1:36 PM, as a comment on the competitor that turns a data room into a sourced memo:
+
+> this is validation of our idea. we do not need to make ourselves substantially different than this competitor, just add some extra stuff
+
+Settled: the competitors that already turn a data room into a sourced memo validate the idea. Tricorder does that same core job and adds to it (the green-and-red-flags readout, the red-flag engine with accounting mislabels, fast cross-checking, and the scans beyond the room). No document frames sourcing as "no longer open ground" or calls the competitor something we must beat. Their strongest points plus ours is the method.
