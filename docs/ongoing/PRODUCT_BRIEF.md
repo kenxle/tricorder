@@ -22,6 +22,8 @@
 
 Point it at a startup, get a readout. Tricorder reads everything about a startup, from its pitch deck and video to its financials to its online presence. It runs a set of scans and analyses, creating a readout that gives the operator a detailed understanding of what's great about the business, and where the red flags are. The readout is not a read-only document, but something that the operator can actively dig through, drill down, and even steer, updating areas that need to be rewritten or need more info.
 
+By identifying gaps, highlighting strengths, rigorously showing its work, and adjusting on the fly, the Tricorder is the best tool for the partner deploying capital.
+
 ## Who it is for
 
 **The buyer is the fund.** A partner or principal at a seed or Series A fund decides and pays. **The user is the associate** who does the first pass today. At some funds the partner does the first pass too; one seed fund writes that its partners run diligence themselves (R1, row 11). Full personas, ranked by evidence, are in [PERSONAS.md](PERSONAS.md).
@@ -102,11 +104,11 @@ The readout starts with the best green flags and the worst red flags. Then it br
 
 ### Steering the readout
 
-The readout is a working surface, not a final document ([writers' brief, 1:12 PM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)).
+The readout is a working surface, not a read-only document ([writers' brief, 1:12 PM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). On any piece, the operator leaves a comment or a short instruction. A steer is one of two kinds.
 
-- **The operator steers a section.** On any piece, the operator leaves a comment or a short instruction, such as "rewrite the market piece using only the competitor filings" or "treat the pilot as non-recurring".
-- **Tricorder reruns that section.** The scans behind the piece run again on that piece's inputs, and the piece is rewritten.
-- **The change shows.** The new piece replaces the old one with a visible diff. If the verdict moves, the claim that moved it is named.
+- **Rewrite a section.** For example, "rewrite the market piece using only the competitor filings" or "treat the pilot as non-recurring". The scans behind the piece run again on that piece's inputs, and the piece is reworded.
+- **Get more info for a section.** For example, "read the full room, not the seed drop", "pull the competitor's pricing pages" or "find their latest filing". Tricorder fetches or reads the new sources for that piece, runs its scans on them, and adds the new claims, marked as new.
+- **The change shows.** Either way, the new piece replaces the old one with a visible diff. If the verdict moves, the claim that moved it is named.
 - **A steer changes the reading, not the numbers.** It can change what is read, how claims are grouped and how they are worded. A script's number stays as the script computed it.
 
 Saturday's demo may show one steer on stage, if the overview page's card says so. The roadmap carries steering as an after-Saturday slice ([ROADMAP.md](ROADMAP.md), "steering").
