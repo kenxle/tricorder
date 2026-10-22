@@ -13,7 +13,7 @@ CSV = Path(__file__).with_name("checklist.csv")
 
 PIECES = ["traction and revenue", "retention", "burn and runway", "unit economics",
           "customers and contracts", "market", "comps", "team", "the pitch itself",
-          "legal and cap table", "outside world"]
+          "legal and cap table", "AI and data governance", "outside world"]
 STAGES = [("pre_seed", "Pre-seed"), ("seed", "Seed"), ("series_a", "Series A")]
 LEVELS = ["yes", "lighter", "no", "not stated"]
 STATUSES = ["Saturday", "after Saturday", "not checked yet"]

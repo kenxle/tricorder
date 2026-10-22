@@ -8,7 +8,7 @@
 
 **Level of detail:** One entry per framework, written so a builder turns it into one prompt and one schema without asking.
 
-**Sources:** [the writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), [the organisers' problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt), [research_data_room.md](../reports/20261022.02_research/research_data_room.md) with [data_room_flags.csv](../reports/20261022.02_research/data_room_flags.csv), [data_room_planted.csv](../reports/20261022.02_research/data_room_planted.csv), [data_room_files.csv](../reports/20261022.02_research/data_room_files.csv), [data_room_design_numbers.py](../reports/20261022.02_research/data_room_design_numbers.py) and [data_room_design_numbers.json](../reports/20261022.02_research/data_room_design_numbers.json), [research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), [research_voice_of_customer.md](../reports/20261022.02_research/research_voice_of_customer.md), [research_landscape.md](../reports/20261022.02_research/research_landscape.md).
+**Sources:** [the writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), [the organisers' problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt), [research_data_room.md](../reports/20261022.02_research/research_data_room.md) with [data_room_flags.csv](../reports/20261022.02_research/data_room_flags.csv) and [data_room_files.csv](../reports/20261022.02_research/data_room_files.csv), the generated data room (`data_room/hollis_voice/`, [data_room/README.md](../../data_room/README.md)) and its answer key (`data_room/answer_key.json`), which are the only source for Hollis Voice figures, [ROADMAP.md](ROADMAP.md) for which entries run on Saturday, [CHECKLIST.md](CHECKLIST.md), [research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), [research_voice_of_customer.md](../reports/20261022.02_research/research_voice_of_customer.md), [research_landscape.md](../reports/20261022.02_research/research_landscape.md).
 
 **Also used by entry 1.12 (accounting mislabels):** [a16z, 16 Startup Metrics](https://a16z.com/16-startup-metrics/) (sections 1, 2, 4, 6 and 7), [a16z, 16 More Startup Metrics](https://a16z.com/16-more-startup-metrics/), [Kruze, rolling cash forecast](https://kruzeconsulting.com/blog/build-a-rolling-cash-forecast/), [Kruze, startup runway](https://kruzeconsulting.com/blog/startup-runway/), [Peony, data room checklist](https://www.peony.ink/blog/startup-data-room-complete-checklist-2025), [Eagle Rock CFO, Series A data room checklist](https://www.eaglerockcfo.com/blog/series-a-preparation/data-room-checklist). Saved copies are in [raw/data_room](../reports/20261022.02_research/raw/data_room/).
 
@@ -20,7 +20,7 @@
 - **Labels, never probabilities.** Each entry scores itself with a short set of labels, and each label has a written rule. No entry outputs a number that pretends to be a probability. No entry says invest or pass.
 - **Hollis Voice is the worked example.** The fictional company in the synthetic data room carries eight planted entries and three clean decoys. The table under "Where each planted flag is caught" maps each one to the entry that must catch it.
 - **The readout opens on the best green flags and the worst red flags, then the overview.** Two script entries under [The readout](#the-readout-saturday) group every claim into nine pieces of the company, mark each piece looking strong, looking weak, mixed or not enough in the room, and pick the headline flags. Every Saturday entry names the piece its claims feed.
-- **The first four scans are for Saturday.** The red-flag engine, the comp builder, market signals and the pitch video. Business frameworks, founder profiles and online presence come after Saturday.
+- **What runs on Saturday follows the roadmap.** On Saturday the red-flag engine runs as scripts, the comp builder ranks cached filings, market signals show this week's saved competitor readings, the pitch video becomes claims, and the readout builds the pieces, the top flags and the ask list. Some entries inside those scans run only after Saturday. Business frameworks, founder profiles and online presence come after Saturday. The table under "When each entry runs" gives every entry's horizon and its roadmap slice.
 
 ## How every entry works
 
@@ -106,7 +106,7 @@ Paste this `$defs` block into every entry's schema before use. It belongs in `sc
     "Piece": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["name", "verdict", "reason", "reason_claim_ids", "claim_ids", "corroborating_sources", "contradicting_sources"],
+      "required": ["name", "verdict", "reason", "reason_claim_ids", "claim_ids", "corroborating_sources", "contradicting_sources", "status", "waiting_on"],
       "properties": {
         "name": {"type": "string", "enum": ["traction_and_revenue", "retention", "burn_and_runway", "unit_economics", "customers", "market", "comps", "team", "the_pitch_itself"]},
         "verdict": {"type": "string", "enum": ["looking_strong", "looking_weak", "mixed", "not_enough_in_the_room"]},
@@ -114,7 +114,9 @@ Paste this `$defs` block into every entry's schema before use. It belongs in `sc
         "reason_claim_ids": {"type": "array", "items": {"type": "string"}},
         "claim_ids": {"type": "array", "items": {"type": "string"}, "description": "Every claim in the piece, for the drill-down."},
         "corroborating_sources": {"type": "integer"},
-        "contradicting_sources": {"type": "integer"}
+        "contradicting_sources": {"type": "integer"},
+        "status": {"type": "string", "enum": ["done", "running", "waiting_on_input"], "description": "The progressive readout after Saturday. On Saturday always 'done'."},
+        "waiting_on": {"type": "array", "items": {"type": "string"}, "description": "Inputs the piece still needs, such as 'financial model'. Empty on Saturday."}
       }
     },
     "TopFlag": {
@@ -127,6 +129,20 @@ Paste this `$defs` block into every entry's schema before use. It belongs in `sc
         "rank": {"type": "integer", "description": "1 is the strongest green or the worst red."},
         "text": {"type": "string"},
         "claim_ids": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "AskItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["what", "why", "piece", "from_kind", "claim_ids", "checklist_id", "if_you_have_it"],
+      "properties": {
+        "what": {"type": "string", "description": "What to request, in words the operator can paste into an email."},
+        "why": {"type": "string", "description": "The claim or gap it would settle, with its number."},
+        "piece": {"type": "string", "enum": ["traction_and_revenue", "retention", "burn_and_runway", "unit_economics", "customers", "market", "comps", "team", "the_pitch_itself"]},
+        "from_kind": {"type": "string", "enum": ["gap", "weak_piece", "checklist"]},
+        "claim_ids": {"type": "array", "items": {"type": "string"}, "description": "Claims or gaps it would settle."},
+        "checklist_id": {"anyOf": [{"type": "string"}, {"type": "null"}], "description": "For example 'C29', when the line comes from a missing checklist item. After Saturday."},
+        "if_you_have_it": {"type": "boolean", "description": "True when the item is only 'lighter' at the company's stage. After Saturday."}
       }
     }
   }
@@ -175,7 +191,7 @@ Every prompt below receives its inputs in `<doc>` blocks. The script that builds
 </doc>
 ```
 
-Cell addresses, row numbers and segment ids in braces are placeholders; the generator and the transcriber record the real ones. The cell values shown are Hollis Voice figures: 180,000 is the annualized pilot (PF1) and 36,000 is the largest customer's monthly fee (`BIG` in [data_room_design_numbers.py](../reports/20261022.02_research/data_room_design_numbers.py)). The column names in these examples are the ones [research_data_room.md](../reports/20261022.02_research/research_data_room.md) names (`product_type`, `arr`, `paying_accounts`, `accounts_created_cumulative`). The generator fixes the rest.
+Cell addresses, row numbers and segment ids in braces are placeholders; the generator and the transcriber record the real ones. The cell values shown are Hollis Voice figures: 180,000 is the annualized pilot (PF1) and 36,000 is the largest customer's monthly fee (PF5's order-form location in `data_room/answer_key.json`). The column names in these examples are the generated files' own (`product_type`, `arr`, `paying_accounts`, `accounts_created_cumulative`).
 
 Script results reach the model in one block:
 
@@ -215,8 +231,8 @@ Thresholds are settings, not facts. The research says so for each one: "Threshol
 
 | Setting | Default | Where the default comes from |
 |---|---|---|
-| `match_tolerance` | 1 percent, relative | The PF2 check in [data_room_planted.csv](../reports/20261022.02_research/data_room_planted.csv) |
-| `spoken_tolerance` | Set by the team. It must sit below the 20 percent gap of PF2b so the answer key still catches it, and at or above `match_tolerance`. | PF2b in [data_room_planted.csv](../reports/20261022.02_research/data_room_planted.csv); the 20 percent is arithmetic on its two figures (3,000,000 against 2,500,000) |
+| `match_tolerance` | 1 percent, relative | PF2's `tolerance` in `data_room/answer_key.json` |
+| `spoken_tolerance` | Set by the team. It must sit below the 20 percent gap of PF2b so the answer key still catches it, and at or above `match_tolerance`. | PF2b in `data_room/answer_key.json`; the 20 percent is arithmetic on its shown and true figures (3,000,000 against 2,500,000) |
 | `short_notice_days` | 90 days | Six VCs told a business magazine that some booked ARR sits on contracts the customer can cancel within three months ([research_voice_of_customer.md](../reports/20261022.02_research/research_voice_of_customer.md), row 34) |
 | `min_contract_months` | 12 months | RF2 in [data_room_flags.csv](../reports/20261022.02_research/data_room_flags.csv): "Flag any ARR line whose contract is under 12 months" |
 | `concentration_line` | 20 percent of MRR for the largest customer | MicroVentures' rule of thumb, via RF5 in [research_data_room.md](../reports/20261022.02_research/research_data_room.md). It says 30 to 40 percent can change valuation or deal structure. a16z gives the definition and no line. |
@@ -228,40 +244,41 @@ Thresholds are settings, not facts. The research says so for each one: "Threshol
 
 ### Hollis Voice, the numbers the examples use
 
-Hollis Voice is the fictional company in the synthetic data room: an AI phone agent for independent veterinary clinics, raising a Series A, with data as of 2026-09-30 ([research_data_room.md](../reports/20261022.02_research/research_data_room.md), 3.2). Every figure in the worked examples comes from one of three files, named in each example:
+Hollis Voice is the fictional company in the synthetic data room: an AI phone agent for independent veterinary clinics, based in Brooklyn, founded in 2024, raising a Series A, with data as of 2026-09-30 ([company overview](../../data_room/hollis_voice/01_overview/company_overview.pdf)). Every Hollis Voice figure in the worked examples comes from one of two places, named in each example:
 
-- [data_room_planted.csv](../reports/20261022.02_research/data_room_planted.csv): where each flag is planted, its true value and its shown value.
-- [data_room_design_numbers.json](../reports/20261022.02_research/data_room_design_numbers.json): the simulation's outputs (true MRR, true ARR, retention, runway and the rest).
-- [data_room_design_numbers.py](../reports/20261022.02_research/data_room_design_numbers.py): the simulation's assumptions (plan prices, load factor, hire pay, cost shares).
+- `data_room/answer_key.json`: each planted flag's shown and true value (`flags`), the decoys (`decoys`), the green flags (`green_flags`), the deck's claims (`deck_claims`) and the simulation's key figures (`facts`).
+- The generated files in `data_room/hollis_voice/`, cited by file and cell, row or page.
 
-Some worked examples also show arithmetic on those figures: a gap, a ratio, a share. That arithmetic was run by a Python script over the JSON and the constants in the `.py` file, not by hand, and each one is written out as a formula so a spreadsheet person can redo it.
+Some worked examples also show arithmetic on those figures: a gap, a ratio, a share. That arithmetic was run by a Python script over the key and the files, not by hand, and each one is written out as a formula so a spreadsheet person can redo it. [check_frameworks_numbers.py](check_frameworks_numbers.py) checks that the figures this doc quotes for the planted flags, the decoys and the green flags match the answer key.
 
 | Figure | Value | Source |
 |---|---|---|
-| True subscription MRR, 2026-09 | $171,739 | `mrr_true` in the JSON |
-| True recurring ARR | $2,060,868 | `arr_true_recurring` in the JSON; PF1 true value |
+| Subscription MRR, 2026-09 | $171,739 | `facts.mrr_subscription`; P&L "Subscription revenue", 2026-09 |
+| Recurring ARR, rebuilt from the subscription rows | $2,060,868 | `facts.arr_true_recurring`; PF1 true value |
 | Model ARR (`ARR_TOTAL`) | $2,240,868 | PF1 shown value |
 | Deck ARR (slides 3 and 14) | $2,500,000 | PF2 shown value |
 | Spoken ARR in the video, about 0:35 | about $3,000,000 | PF2b shown value |
-| Pilot fee, Marlow Veterinary Group | $15,000 a month, six months, 30 days notice | `PILOT` in the `.py`; PF1 |
-| Paying accounts now | 212 | `paying_clinics_now` in the JSON; PF7 true value |
+| Pilot fee, Marlow Veterinary Group | $15,000 a month, six months, $90,000 in total, 30 days notice | PF1 `details`; `pilot_agreement_marlow.pdf`, clauses 2 and 7 |
+| Paying accounts now | 212 | `facts.paying_accounts`; PF7 true value |
 | Accounts created, cumulative, shown as clinics | 357 | PF7 shown value |
-| 12-month net retention, rebuilt and shown | 87.3% rebuilt; 102.6% shown | PF3 |
-| 12-month gross retention, rebuilt | 73.4% | PF3 |
-| Customers in the nine measurable cohorts | 68 rebuilt; 57 shown | PF3 |
+| 12-month net retention | 87.3% rebuilt; 102.6% shown | PF3 |
+| 12-month gross retention, rebuilt | 73.4% | PF3 `details` |
+| Customers in the nine measurable cohorts | 68 rebuilt; 57 shown; 11 dropped | PF3 |
 | Hires in the plan and in the model | 24 and 8 | PF4 |
-| Runway | 19 months rebuilt; 37 months in the model | PF4 |
+| Runway | 19 months rebuilt; 37 months in the model and the deck | PF4 |
 | Average net burn, next 12 months | $480,062 rebuilt; $374,462 in the model | PF4 |
-| Largest customer share of MRR | 21.0% (top three 22.2%); deck says no customer above 9% of ARR | PF5 |
-| Gross margin | 58.1% rebuilt; 80% in deck and model | PF6 |
-| Cash at the as-of date | $1,800,000 | `cash_at_as_of_date` in the JSON |
-| Raise | $9,000,000 at $45,000,000 pre-money, $54,000,000 post | the JSON |
-| SAFEs | $2,000,000 on a $12,000,000 post-money cap | the JSON |
-| Plan prices | Starter $349, Standard $649, Pro $1,099 a month | `PLAN_PRICE` in the `.py` |
+| Largest customer share of MRR | 21.0% (top three 22.2%); the deck says no customer is above 9% of ARR | PF5 |
+| Gross margin | 58.1% rebuilt; 80% in the deck and the model | PF6 |
+| Cash at the as-of date | $1,800,000 | `facts.cash`; Assumptions `CASH_START` |
+| Raise | $9,000,000 at $45,000,000 pre-money, $54,000,000 post-money | GF1; `facts.ask`, `facts.pre_money`; cap table rows 23 to 25 |
+| SAFEs before the Series A | $5,500,000: $2,000,000 on a $12,000,000 post-money cap (two SAFEs) and $3,500,000 on a $28,000,000 post-money cap (one SAFE) | `facts.pre_seed_safes`, `facts.seed_safe`; cap table rows 17 to 20 |
+| Staff | 17 today; 41 after the 24 hires | GF3 and its `also_agree` |
+| Market size, company estimate | 28,000 clinics × $9,000 a year = $252,000,000 | GF2; Market tab `MARKET_CLINICS`, `MARKET_ACV_USD`, `MARKET_TAM_USD`; deck slide 8 |
+| Plan prices | Starter $349, Standard $649, Pro $1,099 a month; Group by agreement | product one-pager; deck slide 7 |
 
 ### Where each planted flag is caught
 
-| Planted entry ([data_room_planted.csv](../reports/20261022.02_research/data_room_planted.csv)) | Entry that must catch it | Check name | Catchable from the seed drop, per the data-room research |
+| Planted entry (`data_room/answer_key.json`) | Entry that must catch it | Check name | Catchable from the seed drop (the key's `catchable_from_seed_drop`) |
 |---|---|---|---|
 | PF1 Pilot booked as ARR | 1.2 ARR definition check | `arr_from_subscription_rows` | No, needs the full room |
 | PF2 Deck ARR disagrees with the model | 1.5 Deck-against-model reconciliation | `deck_claim_vs_named_cell` | Yes |
@@ -285,11 +302,47 @@ Some worked examples also show arithmetic on those figures: a gap, a ratio, a sh
 | PF5 Customer concentration, the Cedar & Pine order form | 1.13 returns clear on it, with its terms as info claims | `cancellable_within_notice_vs_arr`, `contract_price_vs_counted_price` | No, the order form is in the full room |
 | No planted entry: counted lines with no contract | 1.13 returns gaps | `counted_line_without_contract` | No, the customer file is in the full room |
 
-The check names are the ones the answer key's `check` field and the test in [ARCHITECTURE.md](ARCHITECTURE.md) match on. `arr_from_subscription_rows` is the data-room research's own example name (3.6). The other seven in the key are the names `data_room/generate.py` writes. Only `cap_table_reconcile` (DC3, a decoy with no `check` in the key) is set here. The seed-drop column comes from the table at the end of 3.4 in [research_data_room.md](../reports/20261022.02_research/research_data_room.md). The two decoy rows that table does not cover follow from [data_room_files.csv](../reports/20261022.02_research/data_room_files.csv): the cap table is in the seed drop and the Brookline Row order form is not.
+The check names are the ones the answer key's `check` field and the test in [ARCHITECTURE.md](ARCHITECTURE.md) match on. `arr_from_subscription_rows` is the data-room research's own example name (3.6). The other seven in the key are the names `data_room/generate.py` writes. Only `cap_table_reconcile` (DC3, a decoy with no `check` in the key) is set here. The seed-drop column for the flags is the key's `catchable_from_seed_drop`. For the decoys it follows from the key's `seed_drop_files`: the cap table is in the seed drop and the Brookline Row order form is not.
+
+On Saturday the first eleven rows run: the eight planted entries and the three decoys, through the red-flag engine's scripts and, for PF2b, the readout. The rows for entry 1.12's second checks and for entry 1.13 run after Saturday, as "When each entry runs" says. The one exception is the Marlow pilot reading, which Saturday's redflag-readings slice does first in the cut order.
 
 ### The parts of every entry
 
 Each entry has exactly seven parts, in this order: **Inputs**, **The questions it asks**, **Mechanical check**, **Model reading**, **Output shape**, **How the readout scores it**, **What it must not do**. Every output shape has the same five top-level fields (`framework`, `label`, `label_reason`, `claims`, `gaps`) plus the fields that entry needs. The scan writes the claims and gaps into its ScanResult, as [ARCHITECTURE.md](ARCHITECTURE.md) describes, and the entry's own tables into the ScanResult's optional `panels`. `label_reason` names the rule that fired and the claim ids it rests on. It gives no motive.
+
+### When each entry runs
+
+The roadmap decides what is built on Saturday ([ROADMAP.md](ROADMAP.md)). On Saturday the red-flag engine is scripts only, and the only model readings are the pilot clause and the cohort note, which are first in the cut order. This table follows the roadmap. Where it and a section heading below seem to differ, this table is right.
+
+| Entry | When | Roadmap slice |
+|---|---|---|
+| 1.1 Deck claim extraction | Saturday: the claims page (slide 14) by regex, with `claims.json` as the fallback. The model reading of the other slides is after Saturday. | redflag-engine |
+| 1.2 ARR definition check | Saturday: the script. The model's reading of the pilot agreement is Saturday too, first in the cut order. | redflag-engine, redflag-readings |
+| 1.3 Cohort retention rebuild | Saturday: the script. The model's reading of the cohort note is Saturday too, first in the cut order. | redflag-engine, redflag-readings |
+| 1.4 Burn against the hiring plan and runway | Saturday: the script | redflag-engine |
+| 1.5 Deck-against-model reconciliation | Saturday: the script, on the claims page's rows and the named cells | redflag-engine |
+| 1.6 Customer concentration | Saturday: the script | redflag-engine |
+| 1.7 Gross margin composition | Saturday: the script | redflag-engine |
+| 1.8 Vanity metric check | Saturday: the script | redflag-engine |
+| 1.9 Unit economics recompute | After Saturday | financial-model |
+| 1.10 Cap table reconciliation | Saturday: the sum and round check, which also reads the cells behind the round's green flag. The model reading is after Saturday. | redflag-engine |
+| 1.11 What the room cannot settle | After Saturday | checklist-coverage |
+| 1.12 Accounting mislabels | Saturday: kinds a and d, through entries 1.2 and 1.7. After Saturday: the `mrr` column check and kinds b, c, e, f, g and h. | redflag-engine, accounting-mislabels |
+| 1.13 Contract terms | After Saturday, except the model's reading of the Marlow pilot agreement, which is Saturday's redflag-readings slice and first in the cut order | redflag-readings, contract-terms |
+| 2.1 Public comps from EDGAR | Saturday, from this week's cached filings. The "why fair" sentence shows as frozen output. | comps |
+| 2.2 Recent private rounds | Saturday, from this week's cached Form D files | comps |
+| 3.1 Hiring, web traffic and reviews | This week, for competitors, saved as readings. Saturday shows them as a static panel. The company's own signals are after Saturday. | signals-readings, market-signals, outside-in |
+| 3.2 Pricing changes and customer wins | As 3.1 | signals-readings, market-signals, outside-in |
+| 4.1 Claim extraction with timestamps | Saturday | pitch-video |
+| 4.2 Interesting moments | After Saturday | video-moments |
+| 4.3 Three-way disagreement check | Saturday, in the readout | readout |
+| Piece verdicts | Saturday | readout |
+| Top green and red flags | Saturday | readout |
+| Ask list | Saturday | readout, readout-page |
+| Checklist coverage | After Saturday | checklist-coverage |
+| 5.1 to 5.6 Business frameworks | After Saturday | frameworks-scan; 1.9 and 5.6 also feed financial-model |
+| 6.1 and 6.2 Founder profiles | After Saturday | founder-profiles |
+| 7.1 and 7.2 Online presence | After Saturday | online-presence, outside-in |
 
 ---
 
@@ -298,6 +351,8 @@ Each entry has exactly seven parts, in this order: **Inputs**, **The questions i
 The organisers' first direction: "churn hidden in cohort charts, revenue counted as ARR when it is not recurring, burn that does not match the hiring plan, numbers that disagree between the deck and the model" ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt), Track 2). Entries 1.2 to 1.5 are those four. Entries 1.6 to 1.8 are the three extra flags the data-room research found on published lists. Entries 1.9 and 1.10 are the brief's unit economics and the cap table a first pass opens first. Entry 1.11 holds the flags investors regret most, which no file in the room can settle. Entry 1.12 checks a family of accounting mislabels, numbers filed under a label they do not earn, and points back to 1.2 and 1.7 for the two kinds they already cover. Entry 1.13 reads every customer contract and compares its terms with how the customer is counted, and points back to 1.2 and 1.6 for the contract checks they already hold.
 
 Entry 1.1 runs before all of them. It turns the deck into claims the other entries check.
+
+On Saturday this scan is scripts only. Entries 1.9 and 1.11, the model readings other than the pilot clause and the cohort note, most of 1.12 and all of 1.13 but the pilot reading come after Saturday ("When each entry runs").
 
 ### 1.1 Deck claim extraction
 
@@ -323,7 +378,7 @@ Entry 1.1 runs before all of them. It turns the deck into claims the other entri
 - For each row, search the cited slide's text for the same value string. Record found or not found.
 - For each claim the model returns, re-parse its quote to a number and compare it with the claim's `value`. If they differ, the claim is marked `unverified`. This stops the model from turning "$2.5M" into a different number.
 
-Worked example, Hollis Voice. The claims rows that later entries check, from [data_room_planted.csv](../reports/20261022.02_research/data_room_planted.csv):
+Worked example, Hollis Voice. The claims rows that later entries check, from the answer key's `deck_claims` and each flag's `claims_row` location:
 
 | Claims-page row | Slide | Shown value | Checked by |
 |---|---|---|---|
@@ -332,9 +387,7 @@ Worked example, Hollis Voice. The claims rows that later entries check, from [da
 | Largest customer | 4 | no customer above 9% of ARR | 1.6 (PF5) |
 | Gross margin | 5 | 80% | 1.7 (PF6) |
 | Net revenue retention | 6 | 102.6% | 1.3 (PF3) |
-| Runway | 11 | the deck's runway figure | 1.4 (PF4) |
-
-The PF4 row in the CSV gives the model's runway (37 months) and does not state the deck's figure on its own. The script reads the deck's figure from slide 11.
+| Runway | 11 | 37 months | 1.4 (PF4) |
 
 **Model reading**
 
@@ -448,9 +501,9 @@ Line test, for each line counted in `ARR_TOTAL`:
 
 Worked example, Hollis Voice:
 
-- `ARR_recurring` = 12 × $171,739 = $2,060,868 (`mrr_true` and `arr_true_recurring` in [data_room_design_numbers.json](../reports/20261022.02_research/data_room_design_numbers.json)).
-- `ARR_TOTAL` = $2,240,868 (PF1 shown value, [data_room_planted.csv](../reports/20261022.02_research/data_room_planted.csv)).
-- `excess` = $2,240,868 − $2,060,868 = $180,000. That is 12 × $15,000, the pilot fee annualized (`pilot_fee_per_month` and `pilot_arr_counted` in the JSON).
+- `ARR_recurring` = 12 × $171,739 = $2,060,868 (`facts.mrr_subscription` and `facts.arr_true_recurring` in the answer key).
+- `ARR_TOTAL` = $2,240,868 (PF1 shown value).
+- `excess` = $2,240,868 − $2,060,868 = $180,000. That is 12 × $15,000, the pilot fee annualized (PF1 `details.pilot_arr_counted`; `ARR_Build!E13`).
 - `excess_share` = $180,000 ÷ $2,060,868 = 8.7%, above the 1 percent tolerance (scripted arithmetic on the figures above).
 - The pilot line fails the line test three ways: product type is a pilot, the term is six months, and notice is 30 days. Its total contracted fees are $90,000, which is 6 × $15,000 (PF1 true value).
 - Decoy DC1: the $500 onboarding fee sits on its own row marked excluded. It is not in `ARR_TOTAL`. The line test passes it.
@@ -578,11 +631,11 @@ The sums run over cohorts with 12 months of data. Then:
 - Compare `NRR_12` with the tab's NRR row and the deck's claim.
 - Run a16z's test: for each month k, compare the retention of later cohorts at month k with earlier cohorts at month k.
 
-Worked example, Hollis Voice (PF3 in [data_room_planted.csv](../reports/20261022.02_research/data_room_planted.csv)):
+Worked example, Hollis Voice (PF3 in the answer key):
 
-- Nine cohorts have 12 months of data (`cohorts_with_12m_data` in [data_room_design_numbers.json](../reports/20261022.02_research/data_room_design_numbers.json)). They are the cohorts that start in 2025-01 through 2025-09, per the month labels in [data_room_design_numbers.py](../reports/20261022.02_research/data_room_design_numbers.py).
-- Raw: 68 customers, `NRR_12` 87.3%, `GRR_12` 73.4%.
-- Tab: 57 customers, NRR 102.6%. The 11 customers missing (68 − 57) are the ones who left within two months.
+- Nine cohorts have 12 months of data: the 2025 cohorts that start in 2025-01 through 2025-09 (PF3's check description: "Rebuild the nine 2025 cohorts").
+- Raw: 68 customers, `NRR_12` 87.3%, `GRR_12` 73.4% (PF3 true value and `details`).
+- Tab: 57 customers (`COHORT_CUSTOMERS`), NRR 102.6% (`NRR_12M`, 1.025649). The 11 customers dropped (PF3 `details.customers_dropped`) are the ones the tab's note leaves out: "Cohort = customers still active after onboarding".
 - The tab's NRR is 15.3 points above the rebuilt NRR (102.6 − 87.3, scripted arithmetic).
 - `GRR_12` of 73.4% is under the `grr_line` of 80 percent.
 
@@ -695,11 +748,11 @@ Run the cash roll twice. First with the model's own payroll. Then with `payroll_
 
 Worked example, Hollis Voice:
 
-- The plan holds 24 hires. The model counts 8 (PF4 in [data_room_planted.csv](../reports/20261022.02_research/data_room_planted.csv)). That leaves 16 hires missing (24 − 8, scripted arithmetic).
-- One planned hire costs $165,000 × 1.28 ÷ 12 = $17,600 a month (`hire_base` and `load` in [data_room_design_numbers.py](../reports/20261022.02_research/data_room_design_numbers.py); scripted arithmetic). Once all 16 have started, the missing hires come to 16 × $17,600 = $281,600 a month (scripted arithmetic).
-- Cash at 2026-09-30 is $1,800,000. The $9,000,000 Series A lands in 2027-01 in the simulation ([data_room_design_numbers.json](../reports/20261022.02_research/data_room_design_numbers.json) and the `.py`).
+- The plan holds 24 hires. The model counts 8 (PF4; `HIRES_COUNTED`). They are the plan's first eight rows, H01 to H08, so 16 hires are missing: H09 to H24 in `hiring_plan.csv` (scripted arithmetic).
+- The missing hires' base pay runs from $127,000 to $203,000 a year. At the model's load factor of 1.28 (`LOAD_FACTOR`), they come to $281,600 a month once all 16 have started: SUM(base pay, H09 to H24) × 1.28 ÷ 12 (scripted arithmetic on `hiring_plan.csv`).
+- Cash at 2026-09-30 is $1,800,000 (`CASH_START`). The $9,000,000 Series A lands in plan month 4, 2027-01 (`SERIES_A_RAISE`, `SERIES_A_PLAN_MONTH`).
 - Rebuilt runway: 19 months. The model's runway: 37 months (PF4). The gap is 18 months (scripted arithmetic).
-- Average net burn over the next 12 months: $480,062 rebuilt against $374,462 in the model (PF4). The gap is $105,600 a month (scripted arithmetic).
+- Average net burn over the next 12 months: $480,062 rebuilt against $374,462 in the model (PF4; `AVG_NET_BURN_12M`). The gap is $105,600 a month (scripted arithmetic).
 - The load factor of 1.28 sits inside Kruze's range. The rebuilt 19 months sits inside NFX's 18 to 24. So the level is not the flag here. The disagreement is.
 
 **Model reading**
@@ -810,7 +863,7 @@ flag the pair if gap_rel > match_tolerance
 
 Convert before comparing: `GM_PCT` holds 0.8 in the model, the deck says 80%, and the schema stores percent points. Multiply the model's value by 100 so both read 80, or the check reports a false conflict.
 
-Worked example, Hollis Voice. The four ARR figures, from the table in 3.4 of [research_data_room.md](../reports/20261022.02_research/research_data_room.md):
+Worked example, Hollis Voice. The four ARR figures, from the answer key (`facts`: `arr_true_recurring`, `arr_model`, `arr_deck`, `arr_video`):
 
 | Source | ARR | Against the model (scripted arithmetic) |
 |---|---|---|
@@ -819,7 +872,7 @@ Worked example, Hollis Voice. The four ARR figures, from the table in 3.4 of [re
 | Deck, slides 3 and 14 | $2,500,000 | $259,132 higher, 11.6% |
 | Founder video, about 0:35 | about $3,000,000 | handled in 4.3 |
 
-- Deck against model: $2,500,000 ÷ $2,240,868 − 1 = 11.6%, above the 1 percent tolerance. This is PF2. The gap of $259,132 is the figure in [data_room_planted.csv](../reports/20261022.02_research/data_room_planted.csv). Nothing in the room explains it (data-room research, 3.4).
+- Deck against model: $2,500,000 ÷ $2,240,868 − 1 = 11.6%, above the 1 percent tolerance. This is PF2. The gap of $259,132 is PF2's `details.gap_to_model`. Nothing in the room explains it.
 - Deck against rebuilt: $2,500,000 ÷ $2,060,868 − 1 = 21.3% (scripted arithmetic).
 - Gross margin: the deck and `GM_PCT` both say 80% (PF6). The pair agrees. The rebuild in 1.7 says 58.1%. So the pattern is "deck and model agree, raw data disagrees", and the readout shows it that way.
 - Clinics: the deck says 357. `paying_accounts` says 212 (PF7). The labels differ. The model reading decides whether "clinics on Hollis" means paying accounts; 1.8 then tests the column.
@@ -904,7 +957,7 @@ Its claims feed the overview piece their `value.label` names ([The readout](#the
 **Inputs**
 
 - `03_metrics/customer_mrr_by_month.csv`, as-of month, including customer `C0087`, the largest (ids are ordinary; the generator reviser renamed `C-BIG` and `P-MARLOW` to `C0087` and `C0219`).
-- `04_customers/order_form_cedar_pine.pdf`: the largest customer, 40 locations, a 24-month term ([research_data_room.md](../reports/20261022.02_research/research_data_room.md), 3.3).
+- `04_customers/order_form_cedar_pine.pdf`: the largest customer, 40 locations (`facts.big_customer_locations`), a 24-month initial term (page 1).
 - `01_overview/pitch_deck.pdf`, slide 4 and the claims row "Largest customer".
 
 **The questions it asks**
@@ -928,10 +981,10 @@ mark the concentration_line if share_top1 > 20 percent
 
 Group rows that share a parent before ranking. A customer with 40 locations is one customer.
 
-Worked example, Hollis Voice (PF5 in [data_room_planted.csv](../reports/20261022.02_research/data_room_planted.csv)):
+Worked example, Hollis Voice (PF5 in the answer key):
 
-- `share_top1` = $36,000 ÷ $171,739 = 21.0% (`mrr_after` of `BIG` in [data_room_design_numbers.py](../reports/20261022.02_research/data_room_design_numbers.py) and `mrr_true` in the JSON; scripted arithmetic).
-- `share_top3` = 22.2% (PF5).
+- `share_top1` = $36,000 ÷ $171,739 = 21.0% (the Cedar & Pine fee from PF5's order-form location, "$36,000 from 2026-04-01", and `facts.mrr_subscription`; scripted arithmetic).
+- `share_top3` = 22.2% (PF5 `details.top3_share`).
 - The deck says no customer is above 9% of ARR.
 - The deck's figure is "of ARR", so the script also runs it on the model's ARR: $36,000 × 12 ÷ $2,240,868 = 19.3% (scripted arithmetic). The flag holds on either basis.
 - 21.0% is above the 20 percent line, and below the 30 to 40 percent band MicroVentures says can change deal terms.
@@ -1043,14 +1096,14 @@ compare gross_margin_rebuilt with GM_PCT and with the deck
 
 With the seed drop only, there is no ledger. The script then rebuilds from the P&L rows: it moves "Cloud hosting and model inference" and "Customer support specialists" into cost of revenue and recomputes. The data-room research counts PF6 as catchable from the seed drop this way.
 
-Worked example, Hollis Voice. The cost shares come from [data_room_design_numbers.py](../reports/20261022.02_research/data_room_design_numbers.py). The results are PF6 in [data_room_planted.csv](../reports/20261022.02_research/data_room_planted.csv). The dollar lines are scripted arithmetic on both.
+Worked example, Hollis Voice, 2026-09. The lines are the generated P&L's rows and the ledger's lines for that month. The results are PF6 in the answer key. The sums are scripted arithmetic on the files.
 
 | Line | Monthly amount | In shown cost of revenue? |
 |---|---|---|
-| Revenue basis: subscription MRR $171,739 plus the pilot fee $15,000 | $186,739 | |
-| Telephony (15%) and embedded licences (5%) | $37,347.80 | Yes |
-| Cloud hosting and model inference (11%) | $20,541.29 | No, under R&D |
-| Support: 2 people × $95,000 × 1.28 ÷ 12 | $20,266.67 | No, under S&M |
+| Revenue basis: P&L "Recurring revenue (subscription plus pilot)", $171,739 plus $15,000 | $186,739 | |
+| Telephony ($28,298.55) and third-party software licences ($9,049.25): P&L "Total cost of revenue" | $37,347.80 | Yes |
+| Cloud hosting ($8,512.88) and model inference ($12,028.41): P&L "Cloud hosting and model inference" | $20,541.29 | No, under R&D |
+| Support staff: P&L "Customer support specialists"; ledger category `support_staff` | $20,266.67 | No, under S&M |
 
 - Shown: 1 − $37,347.80 ÷ $186,739 = 80%. The deck and `GM_PCT` both say 80%.
 - Rebuilt: 1 − ($37,347.80 + $20,541.29 + $20,266.67) ÷ $186,739 = 58.1%.
@@ -1159,7 +1212,7 @@ flag if the claim matches a column that is cumulative by name or definition,
 
 A growing company's paying count can also never fall. So `never_falls` only marks candidates. The column name and the model reading decide which column is the cumulative one and which is the active one.
 
-Worked example, Hollis Voice (PF7 in [data_room_planted.csv](../reports/20261022.02_research/data_room_planted.csv)):
+Worked example, Hollis Voice (PF7 in the answer key):
 
 - The deck says 357 clinics on slide 3.
 - 357 is the last value of `accounts_created_cumulative`, a column that never falls.
@@ -1272,10 +1325,10 @@ When 1.7 moves support staff out of S&M and into cost of revenue, take the same 
 
 Worked example, Hollis Voice:
 
-- ARPA = $171,739 ÷ 212 = $810.09 a month (`mrr_true` and `paying_clinics_now` in [data_room_design_numbers.json](../reports/20261022.02_research/data_room_design_numbers.json); scripted arithmetic). The plan prices run $349, $649 and $1,099 a month, and the largest customer pays $36,000, so the average sits above the middle plan ([data_room_design_numbers.py](../reports/20261022.02_research/data_room_design_numbers.py)).
+- ARPA = $171,739 ÷ 212 = $810.09 a month (`facts.mrr_subscription` and `facts.paying_accounts`; scripted arithmetic). The plan prices run $349, $649 and $1,099 a month (product one-pager), and the largest customer pays $36,000, so the average sits above the middle plan.
 - Gross profit per account per month: $810.09 × 80% = $648.07 on the deck's margin; $810.09 × 58.1% = $470.66 on the rebuilt margin (scripted arithmetic).
 - So any payback period on the rebuilt margin is 1.38 times the one on the deck's margin (0.80 ÷ 0.581, scripted arithmetic).
-- CAC: the research does not fix Hollis's sales and marketing spend. The generator's P&L will. Until it does, CAC returns "Not in the room".
+- CAC: the generated P&L holds the sales and marketing rows ("Payroll: sales, marketing and implementation", "Marketing programs"), and the customer file gives new paying customers by month. The script computes CAC from them when this entry is built. This doc quotes no CAC figure.
 
 **Model reading**
 
@@ -1355,8 +1408,8 @@ Its claims feed the overview's **unit economics** piece ([The readout](#the-read
 
 **Inputs**
 
-- `02_financials/cap_table.xlsx`: fully diluted, with two SAFEs and an option pool.
-- The SAFE terms as the room states them ($2,000,000 of SAFEs on a $12,000,000 post-money cap).
+- `02_financials/cap_table.xlsx`: fully diluted, with three SAFE conversions, an option pool and the Series A pro forma.
+- The SAFE terms as the room states them: $2,000,000 in two SAFEs on a $12,000,000 post-money cap and $3,500,000 in one SAFE on a $28,000,000 post-money cap (cap table rows 17 to 20; the company overview).
 - `01_overview/pitch_deck.pdf`, slide 13 (the ask).
 
 CRV puts the cap table first on its first-pass list ([research_data_room.md](../reports/20261022.02_research/research_data_room.md), 1.3). On Hollis Voice it is a clean decoy, DC3. The point of this entry on Saturday is to stay quiet.
@@ -1380,12 +1433,14 @@ series_a_ownership = raise ÷ post-money
 post_money         = pre-money + raise
 ```
 
-Worked example, Hollis Voice (DC3, [research_data_room.md](../reports/20261022.02_research/research_data_room.md), 3.4; figures from [data_room_design_numbers.json](../reports/20261022.02_research/data_room_design_numbers.json); scripted arithmetic):
+Worked example, Hollis Voice (DC3 in the answer key; cells from `cap_table.xlsx`; scripted arithmetic):
 
-- SAFE ownership: $2,000,000 ÷ $12,000,000 = 16.67% before the Series A.
-- Series A ownership: $9,000,000 ÷ $54,000,000 = 16.67%.
-- Post-money: $45,000,000 + $9,000,000 = $54,000,000.
-- The data-room research states holders add to 100.00 percent and the SAFE conversion is right. The expected label is `clear`.
+- SAFE ownership before the Series A: $1,200,000 ÷ $12,000,000 = 10.0% (Tidewater Seed Fund I), $800,000 ÷ $12,000,000 = 6.67% (an angel), $3,500,000 ÷ $28,000,000 = 12.5% (Ostrander Lane Ventures II). Together 29.17% (row 20).
+- Holders add to 100% fully diluted (`CAP_TOTAL_PCT`, D13), on 14,424,000 shares before the Series A (C13).
+- Series A ownership: $9,000,000 ÷ $54,000,000 = 16.67% (`Cap_Table!B28`, 0.166667).
+- Post-money: $45,000,000 + $9,000,000 = $54,000,000 (rows 23 to 25).
+- The answer key says holders add to 100 percent and the SAFE conversion at the stated cap is right. The expected label is `clear`.
+- The same cells give the round's green flag: the raise of $9,000,000 in the cap table, the model (`SERIES_A_RAISE`) and deck slide 13 (GF1). On Saturday the red-flag engine reads them by script.
 
 **Model reading**
 
@@ -1465,9 +1520,11 @@ Its claims feed the overview's **the pitch itself** piece ([The readout](#the-re
 
 The regret stories investors tell in public are mostly about documents that were made up. An angel lost money to a founder who kept two sets of books, one made up for investors. A 2026 fraud case put forged bank statements in a data room. A SaaS investor says the bank check usually waits until after the term sheet ([research_voice_of_customer.md](../reports/20261022.02_research/research_voice_of_customer.md), section 2, rows 14, 50, 51 and 64). Every file in a data room comes from the founder. So no check on those files can rule this out. This entry says so, and says what to ask for.
 
+It runs after Saturday, in the roadmap's checklist-coverage slice. On Saturday the ask list is built from the scans' gaps and the weak pieces only (see "Ask list"). The roadmap's bank-check slice adds a live check of deposits against revenue, with the founder's consent, after Saturday.
+
 **Inputs**
 
-- The room's file list ([data_room_files.csv](../reports/20261022.02_research/data_room_files.csv) on Hollis Voice).
+- The room's file list (the answer key's `full_room_files` on Hollis Voice).
 - Bank statements, if the room holds them. A Series A room often does; a seed room may not ([research_data_room.md](../reports/20261022.02_research/research_data_room.md), 1.2, row 13).
 - The P&L revenue line and the financing events from the model.
 - Flagged claims from 1.2 to 1.9, which set what the partner should ask the founder to walk through.
@@ -1491,7 +1548,7 @@ if bank statements are present, for each month t:
     flag month t if | tie_gap(t) | ÷ revenue(t) > match_tolerance
 ```
 
-Worked example, Hollis Voice. The 16 files in [data_room_files.csv](../reports/20261022.02_research/data_room_files.csv) hold no bank statements, no accountant-prepared statements, no tax returns, no IP assignments and no reference list. So every `present` test is false. The tie-out does not run. The entry returns one ask per missing item, plus one walk-through ask for each flag from 1.2 to 1.9.
+Worked example, Hollis Voice. The 17 files in the full room (the answer key's `full_room_files`) hold no bank statements, no accountant-prepared statements, no tax returns, no IP assignments and no reference list. So every `present` test is false. The tie-out does not run. The entry returns one ask per missing item, plus one walk-through ask for each flag from 1.2 to 1.9.
 
 **Model reading**
 
@@ -1570,16 +1627,16 @@ A mislabel is a number filed under a label it does not earn. The organisers name
 
 | Kind | Label claimed | What the number really is | File and column a script reads | Check name | Scope | Feeds the piece |
 |---|---|---|---|---|---|---|
-| a. Non-recurring revenue as ARR or MRR | ARR, MRR | A pilot, a one-time fee, services or a usage fee | `customer_mrr_by_month.csv` columns `product_type`, `mrr`; `monthly_metrics.csv` column `mrr` | `arr_from_subscription_rows` (entry 1.2), `mrr_column_vs_subscription_rows` | Saturday | traction and revenue |
-| b. Bookings or billings as revenue | Revenue, ARR | Contract value signed, or cash invoiced | `customer_mrr_by_month.csv` columns `billings`, `mrr`; model `P&L` row "Subscription revenue" | `billings_vs_recognised_revenue` | Saturday | traction and revenue |
+| a. Non-recurring revenue as ARR or MRR | ARR, MRR | A pilot, a one-time fee, services or a usage fee | `customer_mrr_by_month.csv` columns `product_type`, `mrr`; `monthly_metrics.csv` column `mrr` | `arr_from_subscription_rows` (entry 1.2), `mrr_column_vs_subscription_rows` | Saturday for entry 1.2; the `mrr` column check after Saturday | traction and revenue |
+| b. Bookings or billings as revenue | Revenue, ARR | Contract value signed, or cash invoiced | `customer_mrr_by_month.csv` columns `billings`, `mrr`; model `P&L` row "Subscription revenue" | `billings_vs_recognised_revenue` | After Saturday | traction and revenue |
 | c. GMV or pass-through as revenue | Revenue | The whole value of the transactions, or money collected and paid on | A revenue export with a volume or pass-through column; ledger lines paid on at cost | `gross_vs_net_revenue` | After Saturday | traction and revenue |
 | d. Cost of revenue as operating expense | R&D, S&M or G&A cost | A cost of delivering the product | `expense_ledger.csv` columns `category`, `booked_as` | `gross_margin_from_ledger` (entry 1.7) | Saturday | unit economics |
-| e. Contractors left out of headcount and burn | Headcount, burn | People and spend outside the staff count and the P&L | `expense_ledger.csv` columns `vendor`, `description`, `amount_usd`; model `P&L` totals; `STAFF_NOW` | `contractor_spend_vs_headcount_and_burn` | Saturday | burn and runway, team |
-| f. Capitalised costs off the P&L | Expense, burn | Cash spent and recorded as an asset | `expense_ledger.csv` columns `booked_as`, `category`; model `P&L` totals; `Cash_Bridge` | `capitalised_spend_vs_pnl_and_cash` | Saturday | burn and runway |
-| g. Deferred revenue as earned | Revenue, ARR | Cash or an invoice for service not yet delivered | `customer_mrr_by_month.csv` columns `billings`, `mrr`, `one_time_fee`; model `ARR_Build` | `deferred_revenue_vs_earned` | Saturday | traction and revenue |
-| h. One-time fees in recurring metrics | MRR, ARR, "recurring revenue" | A setup or onboarding fee paid once | `customer_mrr_by_month.csv` columns `product_type`, `one_time_fee`; `monthly_metrics.csv` column `mrr`; model `ARR_Build` | `one_time_fees_in_recurring_metrics` | Saturday | traction and revenue |
+| e. Contractors left out of headcount and burn | Headcount, burn | People and spend outside the staff count and the P&L | `expense_ledger.csv` columns `vendor`, `description`, `amount_usd`; model `P&L` totals; `STAFF_NOW` | `contractor_spend_vs_headcount_and_burn` | After Saturday | burn and runway, team |
+| f. Capitalised costs off the P&L | Expense, burn | Cash spent and recorded as an asset | `expense_ledger.csv` columns `booked_as`, `category`; model `P&L` totals; `Cash_Bridge` | `capitalised_spend_vs_pnl_and_cash` | After Saturday | burn and runway |
+| g. Deferred revenue as earned | Revenue, ARR | Cash or an invoice for service not yet delivered | `customer_mrr_by_month.csv` columns `billings`, `mrr`, `one_time_fee`; model `ARR_Build` | `deferred_revenue_vs_earned` | After Saturday | traction and revenue |
+| h. One-time fees in recurring metrics | MRR, ARR, "recurring revenue" | A setup or onboarding fee paid once | `customer_mrr_by_month.csv` columns `product_type`, `one_time_fee`; `monthly_metrics.csv` column `mrr`; model `ARR_Build` | `one_time_fees_in_recurring_metrics` | After Saturday | traction and revenue |
 
-Saturday means the roadmap's Saturday red-flag engine runs it: kinds a and d, through entries 1.2 and 1.7. The Hollis Voice room also holds the data for kinds b, e, f, g and h, but the red-flag engine's Saturday hours are full, so the roadmap's [accounting-mislabels](ROADMAP.md#accounting-mislabels) slice builds them after Saturday. Kind c has nothing in the room to run on.
+Saturday means the roadmap's Saturday red-flag engine runs it: kinds a and d, through entries 1.2 and 1.7, and nothing else in this entry. The Hollis Voice room also holds the data for the `mrr` column check and kinds b, e, f, g and h, but the red-flag engine's Saturday hours are full, so the roadmap's [accounting-mislabels](ROADMAP.md#accounting-mislabels) slice builds them after Saturday. Kind c has nothing in the room to run on.
 
 **Inputs**
 
@@ -1613,7 +1670,7 @@ ledger_total(t) = SUM(amount_usd) over expense_ledger.csv rows where month = t
 tie_gap(t)      = ledger_total(t) − ( P&L "Total cost of revenue"(t) + P&L "Total operating expenses"(t) )
 ```
 
-**a. Non-recurring revenue counted as ARR or MRR (Saturday).** The ARR side is entry 1.2 and its check `arr_from_subscription_rows`. It is not repeated here. This entry adds the `mrr` column, which investors read as often as the ARR line. Check name: `mrr_column_vs_subscription_rows`.
+**a. Non-recurring revenue counted as ARR or MRR (the ARR side Saturday, through entry 1.2; the `mrr` column after Saturday).** The ARR side is entry 1.2 and its check `arr_from_subscription_rows`. It is not repeated here. This entry adds the `mrr` column, which investors read as often as the ARR line. Check name: `mrr_column_vs_subscription_rows`.
 
 ```
 mrr_subscription(t) = SUM(mrr) over customer_mrr_by_month.csv rows
@@ -1660,7 +1717,7 @@ The model also reads the deck for a figure labelled GMV, volume, gross bookings 
 - Hollis Voice: not in the room. `customer_mrr_by_month.csv` has three product types: Subscription (1,880 rows), Onboarding (250) and Pilot (2). It has no volume or pass-through column. `ARR_Build` has no resale line. The gap is "Not in the room: a revenue export that separates pass-through money".
 - This sub-check needs a room built around a marketplace or a resale line. Hollis Voice is neither, so there is nothing to run on Saturday.
 
-**d. Cost of revenue filed as operating expense (Saturday).** Claimed: R&D, sales or G&A. Really: a cost of delivering the product. Entry 1.7 owns this, with the check `gross_margin_from_ledger`. It reads `expense_ledger.csv` columns `category` and `booked_as`. This entry adds no check.
+**d. Cost of revenue filed as operating expense (Saturday, through entry 1.7).** Claimed: R&D, sales or G&A. Really: a cost of delivering the product. Entry 1.7 owns this, with the check `gross_margin_from_ledger`. It reads `expense_ledger.csv` columns `category` and `booked_as`. This entry adds no check.
 
 - Hollis Voice: in 2026-09 the ledger has delivery costs booked outside cost of revenue. Hosting and model inference of $20,541.29 are booked as R&D. Support staff of $20,266.67 are booked as S&M.
 - The deck and the model show a gross margin of 80%. With every delivery cost in, it is 58.1% (PF6, gross margin leaves out delivery costs).
@@ -1845,7 +1902,7 @@ A contract says what a customer owes and when it can leave. The books count that
 
 Entries 1.2 and 1.6 keep their own checks and point here. Entry 1.2 reads the pilot clause for the ARR lines. Entry 1.6 reads the largest customer's term and exit. This entry holds the full comparison for every contract.
 
-**Scope: Saturday only as far as the model-reading slice reaches.** The roadmap's [redflag-readings](ROADMAP.md#redflag-readings) slice has the model read `pilot_agreement_marlow.pdf`, and it is first in the cut order. The Marlow reading is therefore the Saturday part. Reading the other two contracts takes the same prompt and schema once more for each, and the roadmap's list names one contract, so the slice needs a line added before they count as Saturday scope. The six comparisons below are scripts, but they run on the model's typed terms. If the slice is cut, this whole entry moves to after Saturday. The pilot flag still shows then, from the script check in 1.2 (`arr_from_subscription_rows`), without the clause quotes.
+**Scope: after Saturday, except the pilot reading.** On Saturday the roadmap's [redflag-readings](ROADMAP.md#redflag-readings) slice has the model read `pilot_agreement_marlow.pdf` with entry 1.2's prompt (term, termination, no duty to convert), and that slice is first in the cut order. Everything else here is the roadmap's [contract-terms](ROADMAP.md#contract-terms) slice, after Saturday: this entry's typed-terms prompt, the other two contracts, and the six comparisons. If the pilot reading is cut, the pilot flag still shows on Saturday, from the script check in 1.2 (`arr_from_subscription_rows`), without the clause quotes.
 
 | Check name | The gap it looks for | Terms it uses | Compared with | Feeds the piece |
 |---|---|---|---|---|
@@ -1900,7 +1957,7 @@ plan_share(c)   = counted_mrr(c) ÷ the recurring revenue in the last actual mon
 
 The plan multiplies one starting figure, the last actual month's recurring revenue, by one growth rate each month. That starting figure holds every counted contract. A contract's part of any plan month is therefore its `plan_share` of that month.
 
-**1. Cancellable within the notice window but counted as a year of ARR (Saturday).** Check name: `cancellable_within_notice_vs_arr`. It uses `short_notice_days` and `min_contract_months`, the same settings as the line test in 1.2.
+**1. Cancellable within the notice window but counted as a year of ARR (after Saturday).** Check name: `cancellable_within_notice_vs_arr`. It uses `short_notice_days` and `min_contract_months`, the same settings as the line test in 1.2.
 
 ```
 flag  if counted_mrr(c) > 0 and days_to_exit(c) ≤ short_notice_days
@@ -1909,7 +1966,7 @@ watch if no flag and term_months(c) < min_contract_months and counted_mrr(c) > 0
 
 Notice not to renew does not count as a way out of a running contract. It sets the exit at the end of the term. This is the one change from the line test in 1.2, and the two examples below (Cedar & Pine at 90 days, Brookline Row at 30 days) show why it matters.
 
-**2. A pilot with no duty to convert counted as recurring (Saturday).** Check name: `pilot_without_duty_to_convert_vs_recurring`.
+**2. A pilot with no duty to convert counted as recurring (after Saturday).** Check name: `pilot_without_duty_to_convert_vs_recurring`.
 
 ```
 flag if is_pilot_or_trial(c) = true
@@ -1923,7 +1980,7 @@ remaining_fees(c)  = monthly fee × months from as_of to term_end
 
 A pilot becomes recurring when a signed subscription order form starts. The script looks for that order form under the same customer name. If it is in the room, the model reads it as one more contract. If it is not, the check returns the gap "Not in the room: a subscription order form for <customer>".
 
-**3. Plan revenue past the end of a contract (Saturday).** Check name: `plan_revenue_past_term_end`. It covers a contract with no renewal right, and an automatic renewal the plan treats as certain.
+**3. Plan revenue past the end of a contract (after Saturday).** Check name: `plan_revenue_past_term_end`. It covers a contract with no renewal right, and an automatic renewal the plan treats as certain.
 
 ```
 after(c)  = plan months later than term_end(c), from the P&L plan columns
@@ -1935,7 +1992,7 @@ watch if the contract renews by itself, after(c) is not empty, plan_share(c) > m
 
 An automatic renewal ends only if a party gives notice, so no document makes it certain. A contract whose `plan_share` is below `match_tolerance` is too small to move the plan, and the check returns `clear` with an info claim. If the deck or the model calls the revenue "contracted", "committed" or "locked in" past the term end, the model reading adds a judged claim that quotes the sentence.
 
-**4. A signed contract that has not gone live counted as revenue (Saturday).** Check name: `signed_not_live_vs_revenue`.
+**4. A signed contract that has not gone live counted as revenue (after Saturday).** Check name: `signed_not_live_vs_revenue`.
 
 ```
 live_from(c)    = the contract's effective date, or an amendment's effective date for the change it makes
@@ -1944,7 +2001,7 @@ flag if first_month(c) is earlier than the month of live_from(c)
      or a fee or location change that takes effect after as_of is already in the as-of month's mrr
 ```
 
-**5. A contract price the counted price does not match (Saturday).** Check name: `contract_price_vs_counted_price`.
+**5. A contract price the counted price does not match (after Saturday).** Check name: `contract_price_vs_counted_price`.
 
 ```
 scheduled(c, t) = the fee in effect in month t from the fee schedule, with an annual fee ÷ 12
@@ -1957,7 +2014,7 @@ discount: if the contract states a discount and a list price, then
 
 Cash invoiced is not a price. An annual fee paid up front shows in `billings`, and entries 1.12 (kinds b and g) own that. This check reads `mrr`. For the largest customer it also confirms the top of the share in 1.6: the file's MRR for that customer must equal the contract's fee.
 
-**6. A counted line with no contract in the room (Saturday).** Check name: `counted_line_without_contract`. A gap, never a flag.
+**6. A counted line with no contract in the room (after Saturday).** Check name: `counted_line_without_contract`. A gap, never a flag.
 
 ```
 for each ARR_Build line, and each customer in customer_mrr_by_month.csv with counted_mrr > 0:
@@ -2194,6 +2251,8 @@ The flag claims from this entry state no pair of numbers that disagree, so the h
 
 ## Scan 2. The comp builder (Saturday)
 
+On Saturday both entries read this week's cached filings only, the script ranks the comps, and the model's "why this is a fair comp" sentence shows as frozen output on the demo laptop (roadmap, comps).
+
 The organisers' second direction: "a comp builder that picks comparable companies and recent rounds, and explains why each one is a fair comp" ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt), Track 2). The landscape research found that the incumbents that show comps present competitor lists, public multiples or aggregate round benchmarks, and that none of their pages say why a comp is fair ([research_landscape.md](../reports/20261022.02_research/research_landscape.md), Part 1). The reason is the product here.
 
 ### The selection rules both comp entries use
@@ -2246,7 +2305,7 @@ A public comp never matches on stage, and almost never on revenue band. Its job 
 
 Worked example, Hollis Voice:
 
-- Profile: an AI phone agent for independent veterinary clinics, sold as a monthly subscription at $349, $649 or $1,099 ([research_data_room.md](../reports/20261022.02_research/research_data_room.md), 3.2; [data_room_design_numbers.py](../reports/20261022.02_research/data_room_design_numbers.py)). Series A. Rebuilt recurring ARR $2,060,868. Based in Brooklyn.
+- Profile: an AI phone agent for independent veterinary clinics, sold as a monthly subscription at $349, $649 or $1,099 (the product one-pager; the company overview). Series A. Rebuilt recurring ARR $2,060,868 (`facts.arr_true_recurring`). Based in Brooklyn (the company overview).
 - Search phrases come from the profile: veterinary practice software, phone answering, voice agents for small practices.
 - The rebuilt gross margin of 58.1% from 1.7 is the number a public comp most helps a partner read. A comp's margin from its own filings sits beside it, with the comp's scale ratio.
 - The feasibility research found that EDGAR cannot describe a private company, and that a synthetic company has no true public comps. The fallback is the pre-pulled set, chosen by hand this week (feasibility research, 1.2).
@@ -2449,11 +2508,13 @@ Its claims feed the overview's **comps** piece ([The readout](#the-readout-satur
 - Read the total offering amount as a valuation, or the amount sold as a closed round. Both are reported as filed.
 - Use Crunchbase data in the shipped readout until its terms allow it.
 
-## Scan 3. Market signals (Saturday)
+## Scan 3. Market signals (run this week, shown Saturday)
 
 The organisers' third direction: "a market signal tracker for a company and its competitors: hiring, web traffic, reviews, pricing changes, customer wins" ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt), Track 2). An associate quoted in the voice-of-customer research opens about ten browser tabs on traffic, reviews and the online story before opening a data room ([research_voice_of_customer.md](../reports/20261022.02_research/research_voice_of_customer.md), row 1). This scan is those tabs.
 
 Hollis Voice is synthetic, so it has no outside signals. The scan runs on 3 to 5 real competitors chosen and pre-pulled this week (feasibility research, 1.3). For the target, the only signals are the ones the room holds: its hiring plan, its website copy and its pricing tiers.
+
+On Saturday nothing here calls an outside source. An agent runs these entries this week and saves the competitor grid as `cache/signals/signals.json`, and the readout page shows it as a static panel with the date of each reading (roadmap, signals-readings and market-signals). Live readings, and readings for the company itself, come after Saturday in the roadmap's outside-in slice.
 
 Which source carries which signal:
 
@@ -2498,7 +2559,7 @@ for reviews: average rating and review count at each date; new reviews between t
 
 A change needs two dated readings. The first reading is taken this week when the files are pre-pulled. A single reading gets the label `one_reading`, never `flat`. A 403 from Akta is recorded as `no_signal` with the reason "plan does not include it", never as zero.
 
-Worked example, Hollis Voice: the target has no outside footprint by design (feasibility research, 1.6). The scan reports the room's own hiring plan as the company-side signal: 24 planned hires on top of 17 staff today, to 41 (`headcount_now` and `headcount_after_hiring_plan` in [data_room_design_numbers.json](../reports/20261022.02_research/data_room_design_numbers.json)). Every outside signal for Hollis returns `no_signal` with "Not in the room: no public footprint for a synthetic company". The competitor rows carry the real readings from the pre-pulled files. The research gives no competitor figures yet, so this example has none.
+Worked example, Hollis Voice: the target has no outside footprint by design (feasibility research, 1.6). The scan reports the room's own hiring plan as the company-side signal: 24 planned hires on top of 17 staff today, to 41 (GF3 and its `also_agree` in the answer key; the last row of `hiring_plan.csv`). Every outside signal for Hollis returns `no_signal` with "Not in the room: no public footprint for a synthetic company". The competitor rows carry the real readings from the pre-pulled files. The research gives no competitor figures yet, so this example has none.
 
 **Model reading**
 
@@ -2602,7 +2663,7 @@ wins:    count news items labeled customer_win per company in the window,
          keeping one item per customer name and date
 ```
 
-Worked example, Hollis Voice. The room's plans are Starter $349, Standard $649 and Pro $1,099 a month ([data_room_design_numbers.py](../reports/20261022.02_research/data_room_design_numbers.py)). A year on each is $4,188, $7,788 and $13,188 (12 times each price, scripted arithmetic). The script checks that `website_copy.md` and `product_one_pager.pdf` state the same three prices. With one snapshot, the pricing label is `one_snapshot`. Customer wins for Hollis are `not_checked`: a synthetic company has no news. The research holds no competitor pricing or news yet.
+Worked example, Hollis Voice. The room's plans are Starter $349, Standard $649 and Pro $1,099 a month, and Group by agreement (the product one-pager; deck slide 7). A year on each is $4,188, $7,788 and $13,188 (12 times each price, scripted arithmetic). The script checks that `website_copy.md` and `product_one_pager.pdf` state the same three prices. With one snapshot, the pricing label is `one_snapshot`. Customer wins for Hollis are `not_checked`: a synthetic company has no news. The research holds no competitor pricing or news yet.
 
 **Model reading**
 
@@ -2706,7 +2767,7 @@ Its claims feed the overview's **market** piece ([The readout](#the-readout-satu
 
 The video scan hears the founder state the numbers in their own voice and sets them against the deck and the model. A founder video is an optional item in a data room at every stage ([research_data_room.md](../reports/20261022.02_research/research_data_room.md), 1.2, row 4). On Hollis Voice it carries one planted entry, PF2b.
 
-Until Ken records the video, `01_overview/pitch_video_script.md` stands in for the transcript (data-room research, 3.7). Its beats, from [research_data_room.md](../reports/20261022.02_research/research_data_room.md), 3.6:
+Until the video is recorded, `01_overview/pitch_video_script.md` stands in for the transcript (data-room research, 3.7). Its beats, from the generated script:
 
 | At | Beat |
 |---|---|
@@ -2750,7 +2811,7 @@ Then, for each claim the model returns:
 - Check that the quote appears in the text of the cited segments. If not, the claim is `unverified`.
 - Parse spoken numbers to values ("three million dollars" is 3,000,000). Keep the hedge word beside the value.
 
-Worked example, Hollis Voice. The planted sentence at about 0:35 is "we're at about three million dollars in annual recurring revenue" (data-room research, 3.6). The claim's value has label `arr` and number 3,000,000, with the hedge "about" and the segment's seconds in its source. The deck states $2,500,000 for the same metric (PF2b in [data_room_planted.csv](../reports/20261022.02_research/data_room_planted.csv)). Entry 4.3 compares them.
+Worked example, Hollis Voice. The planted sentence at about 0:35 is "we're at about three million dollars in annual recurring revenue" (PF2b's location in the answer key). The claim's value has label `arr` and number 3,000,000, with the hedge "about" and the segment's seconds in its source. The deck states $2,500,000 for the same metric (PF2b true value). Entry 4.3 compares them.
 
 **Model reading**
 
@@ -2825,6 +2886,8 @@ Its claims feed the overview piece their `value.label` names ([The readout](#the
 
 ### 4.2 Interesting moments
 
+After Saturday, in the roadmap's video-moments slice. On Saturday the page jumps to each claim's second, with no ranking.
+
 **Inputs**
 
 - The claims from 4.1, with their seconds.
@@ -2857,9 +2920,9 @@ Each claim gets one tier, by the first rule it meets:
 
 Moments are ordered by tier, then by time. A moment's thumbnail is the last scene-change frame at or before its start; if none exists, the frame at its start. The page jumps to a moment with a media fragment such as `pitch.mp4#t=35` (feasibility research, 1.5).
 
-Worked example, Hollis Voice, using the beats in the data-room research's script:
+Worked example, Hollis Voice, using the beats in the generated script:
 
-- 0:35, ARR "about three million dollars": tier 1. It is 20.0% above the deck's $2,500,000 and 33.9% above the model's $2,240,868 (3,000,000 ÷ 2,500,000 − 1 and 3,000,000 ÷ 2,240,868 − 1, scripted arithmetic on PF2b and PF1).
+- 0:35, ARR "about three million dollars": tier 1. It is 20.0% above the deck's $2,500,000 and 33.9% above the model's $2,240,868 (3,000,000 ÷ 2,500,000 − 1 and 3,000,000 ÷ 2,240,868 − 1, scripted arithmetic on the key's `facts`).
 - 0:50, clinics, retention and the largest customer, matching the deck: tier 2, because 1.8, 1.3 and 1.6 flag those deck figures (PF7, PF3, PF5).
 - 1:10, why we win: tier 3, if it holds no number the room can check.
 - 1:45, the ask and how long the money lasts: tier 2 if it states the deck's runway, which 1.4 flags (PF4). Otherwise tier 4.
@@ -2966,7 +3029,7 @@ for each metric m:
     set the pattern label from which pairs agree
 ```
 
-Worked example, Hollis Voice. ARR, from the table in 3.4 of [research_data_room.md](../reports/20261022.02_research/research_data_room.md); gaps are scripted arithmetic on those figures:
+Worked example, Hollis Voice. ARR, from the answer key's `facts`; gaps are scripted arithmetic on those figures:
 
 | Pair | Values | Gap |
 |---|---|---|
@@ -2977,7 +3040,7 @@ Worked example, Hollis Voice. ARR, from the table in 3.4 of [research_data_room.
 
 Every pair disagrees. The pattern is `all_differ`, and each figure is higher than the one under it. This is PF2b with PF2 and PF1 behind it.
 
-Clinics: the deck says 357, and the founder's 0:50 beat matches the deck (data-room research, 3.6). The rebuilt paying count is 212 (PF7). The pattern is `deck_and_video_agree_room_differs`.
+Clinics: the deck says 357, and the founder's 0:50 beat matches the deck ("357 clinics on Hollis", PF7's video location in the key). The paying count is 212 (PF7 true value). The pattern is `deck_and_video_agree_room_differs`.
 
 **Model reading**
 
@@ -3058,7 +3121,7 @@ Its claims feed the overview piece their `value.label` names ([The readout](#the
 
 ## The readout (Saturday)
 
-The memo turns every scan's claims into the readout. Its first screen is the best green flags and the worst red flags. Under them is the overview: the company in nine pieces, each with a verdict and a reason in one line. One click opens a piece's claims; one more opens a claim's sources, with every source that corroborates or contradicts it ([writers' brief, 12:55 PM and 1:09 PM blocks](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). Two entries set it up, both pure scripts: "Piece verdicts" groups the claims and marks each piece, and "Top green and red flags" picks the headline list from those marks and the flags.
+The memo turns every scan's claims into the readout. Its first screen is the best green flags and the worst red flags. Under them is the overview: the company in nine pieces, each with a verdict and a reason in one line. One click opens a piece's claims; one more opens a claim's sources, with every source that corroborates or contradicts it ([writers' brief, 12:55 PM and 1:09 PM blocks](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). Three entries set it up, all pure scripts: "Piece verdicts" groups the claims and marks each piece, "Top green and red flags" picks the headline list from those marks and the flags, and "Ask list" turns the gaps and weak pieces into requests for the founder.
 
 ### Piece verdicts
 
@@ -3187,7 +3250,7 @@ None. The verdict, the reason and the counts are a script's. The memo's one mode
 - `built`: every Saturday scan wrote its output, and every piece has a verdict.
 - `partial`: at least one scan's output is missing. The pieces it feeds are still marked, from what exists, and the missing scan shows as a gap in each of them.
 
-The overview shows all nine pieces in the table's order, strong and weak alike, each with its verdict, its reason and its two counts.
+The overview shows all nine pieces in the table's order, strong and weak alike, each with its verdict, its reason and its two counts. The operator can move a piece up or down on the page. That changes only the order shown, never a verdict or a count (roadmap, readout-page).
 
 **What it must not do**
 
@@ -3195,7 +3258,7 @@ The overview shows all nine pieces in the table's order, strong and weak alike, 
 - Give the company an overall score, weight the pieces, or say invest or pass.
 - Count a repeat as corroboration. The deck and the overview saying the same number are one source.
 - Present looking strong as proof. Founder files that agree can still be a consistent fake (1.11).
-- Hide a piece, or sort weak pieces above strong ones.
+- Hide a piece, or sort weak pieces above strong ones on its own. Only the operator reorders.
 
 ### Top green and red flags
 
@@ -3294,9 +3357,163 @@ The headline list is the first thing on the page: green flags first, then red. E
 - Show two flags from one piece in the headline list.
 - Say anything about the company as a whole, or invest or pass.
 
+### Ask list
+
+The readout ends with a list of what the operator should ask the founder for: the documents and numbers that would settle a gap or a weak piece ([writers' brief, 1:54 PM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). What Tricorder cannot fetch, it asks the operator to request. On Saturday it is a pure script in the readout slice, and the readout page shows it with a copy button.
+
+**Inputs**
+
+- Every gap from every Saturday scan, with its `what`, `why` and `would_need`.
+- The nine pieces from "Piece verdicts", with each piece's verdict, reason and `reason_claim_ids`.
+- Every claim with severity "flag".
+- After Saturday, also the missing checklist items at the company's stage ("Checklist coverage") and entry 1.11's asks.
+
+**The questions it asks**
+
+1. Which documents or numbers would settle a gap?
+2. Which flagged numbers in a weak piece should the founder walk through from the source data?
+3. Which piece does each request feed, and which claim or gap does it settle?
+
+**Mechanical check**
+
+Check name: `ask_list`.
+
+```
+for each gap g:
+    one AskItem: what = g.would_need; why = g.what; piece = the piece g feeds; from_kind = "gap"
+for each piece p with verdict looking_weak or mixed:
+    for each claim c in p.reason_claim_ids with severity "flag":
+        one AskItem: what = "the source data behind " + c's stated figure; why = c.text;
+                     piece = p; from_kind = "weak_piece"; claim_ids = [c.id]
+merge items whose what is the same text after lowercasing, keeping every claim and gap they settle
+order: pieces in the overview's order; inside a piece, gaps first, then weak-piece items
+on Saturday: checklist_id is null and if_you_have_it is false on every item
+```
+
+A line names no reason for a gap and no motive for a flag. A document the room already holds is never asked for.
+
+Worked example, Hollis Voice. On the seed drop, the Saturday scans write gaps for the second-tier files they need: the customer file (for entries 1.2, 1.3 and 1.6), the Marlow pilot agreement (1.2), the largest customer's order form (1.6) and the expense ledger (1.7). After merging, the list asks for the expense ledger, monthly revenue by customer, the Marlow pilot agreement and the Cedar & Pine order form, each with the gap or weak-piece claim it would settle. These are the four lines the roadmap's readout slice tests for. The file list comes from the answer key's `seed_drop_files` and `full_room_files`.
+
+**Model reading**
+
+None on Saturday. The memo's model pass may shorten a line if it keeps the line's claim ids and gap text.
+
+**Output shape**
+
+```json
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["framework", "label", "label_reason", "claims", "gaps", "asks"],
+  "properties": {
+    "framework": {"type": "string", "const": "ask_list"},
+    "label": {"type": "string", "enum": ["built", "empty"]},
+    "label_reason": {"type": "string"},
+    "claims": {"type": "array", "items": {"$ref": "#/$defs/Claim"}},
+    "gaps": {"type": "array", "items": {"$ref": "#/$defs/Gap"}},
+    "asks": {"type": "array", "items": {"$ref": "#/$defs/AskItem"}}
+  }
+}
+```
+
+`claims` and `gaps` stay empty: this entry writes no new claims. `asks` is the AskItem list that `readout.json` carries last ([ARCHITECTURE.md](ARCHITECTURE.md), "The readout file").
+
+**How the readout scores it**
+
+- `built`: at least one line.
+- `empty`: no gap and no weak piece. The page says "Nothing to ask for" in one line.
+
+The list sits at the end of the readout. Each line opens the piece it feeds.
+
+**What it must not do**
+
+- Ask for a document the room already holds.
+- Write a line that suggests fraud or gives a reason for a gap.
+- List the same request twice.
+- Treat a missing document as a red flag. It is a question for the operator.
+
 ## After Saturday
 
 The scans below are Ken's additions to Track 2. The feasibility research ranks them below the Saturday four for demo value: business frameworks are cheap to build and easy to copy, founder profiles have one clean source (public GitHub), and a synthetic company has no online footprint ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), Summary). They follow the same rules as everything above. Their worked examples use Hollis Voice where the room holds the input, and say "not in the room" where it does not.
+
+## Checklist coverage
+
+After Saturday, in the roadmap's checklist-coverage slice. The items, their stages and the entries that check them are in [CHECKLIST.md](CHECKLIST.md) and [checklist.csv](checklist.csv) ([writers' brief, 1:56 PM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)).
+
+**Inputs**
+
+- `checklist.csv`: each item's id, its stage columns (`pre_seed`, `seed`, `series_a`), `kind`, `checked_by` and `hollis_voice_file`.
+- The company's stage, read from the deck's round slide. The operator can change it.
+- The room's file list, and every claim and gap in the readout.
+
+**The questions it asks**
+
+1. Which items does the company's stage lead an investor to expect?
+2. For each expected item: is it in the room, was it checked, or is it missing?
+3. Which missing items become requests to the founder?
+
+**Mechanical check**
+
+Check name: `checklist_coverage`.
+
+```
+expected(i)  = item i's column for the stage is "yes" or "lighter"
+checked(i)   = a readout claim's check.name belongs to an entry that i's checked_by names
+found(i)     = a file in the room matches i (document rows), or an outside source returned it
+status(i)    = "checked" if checked(i); else "found" if found(i); else "missing" if expected(i); else "not_expected"
+ask line     = every missing item marked "yes"; a missing item marked "lighter" is asked for "if you have it"
+```
+
+Each ask line joins the "Ask list". A request that a gap already makes is not repeated.
+
+Worked example, Hollis Voice. The deck's round slide says Series A (slide 13). The `hollis_voice_file` column says where each document sits in the demo room, so the script needs no reading to mark found. The counts per status come from the script when the slice is built; this doc quotes none.
+
+**Model reading**
+
+None. Matching a file to a document item uses the file names in `hollis_voice_file`, or the room's own index (the cover note).
+
+**Output shape**
+
+```json
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["framework", "label", "label_reason", "claims", "gaps", "stage", "coverage"],
+  "properties": {
+    "framework": {"type": "string", "const": "checklist_coverage"},
+    "label": {"type": "string", "enum": ["built", "stage_unknown"]},
+    "label_reason": {"type": "string"},
+    "claims": {"type": "array", "items": {"$ref": "#/$defs/Claim"}},
+    "gaps": {"type": "array", "items": {"$ref": "#/$defs/Gap"}},
+    "stage": {"type": "string", "enum": ["pre_seed", "seed", "series_a"]},
+    "coverage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["item_id", "status", "claim_ids", "ask"],
+        "properties": {
+          "item_id": {"type": "string"},
+          "status": {"type": "string", "enum": ["checked", "found", "missing", "not_expected"]},
+          "claim_ids": {"type": "array", "items": {"type": "string"}},
+          "ask": {"anyOf": [{"type": "string"}, {"type": "null"}]}
+        }
+      }
+    }
+  }
+}
+```
+
+**How the readout scores it**
+
+- `built`: the stage is known and every item has a status. The coverage panel shows the counts by status.
+- `stage_unknown`: no round slide states a stage and the operator has not set one. The panel asks the operator to pick.
+
+**What it must not do**
+
+- Ask for an item expected only at a later stage.
+- Treat a missing item as a red flag. It is a question for the founder.
+- Mark an item checked when its check returned `cannot_check`.
 
 ## Scan 5. Business frameworks
 
@@ -3347,11 +3564,11 @@ metrics check  = for each metric in the Key metrics box, look up its label from 
 
 Worked example, Hollis Voice:
 
-- Problem: the video's first beat is that clinics miss calls (data-room research, 3.6).
-- Solution: the product answers calls, books appointments and sends refill requests to staff ([research_data_room.md](../reports/20261022.02_research/research_data_room.md), 3.2).
-- Revenue streams: three subscription plans at $349, $649 and $1,099 a month, a one-time $500 onboarding fee, and the Marlow pilot at $15,000 a month ([data_room_design_numbers.py](../reports/20261022.02_research/data_room_design_numbers.py)). The pilot item is `contradicted` if the room presents it as recurring, because 1.2 flags it (PF1).
+- Problem: the video's first beat is that clinics miss calls (`pitch_video_script.md`, 0:00).
+- Solution: the product answers calls, books appointments and sends refill requests to staff (the company overview; the product one-pager).
+- Revenue streams: three subscription plans at $349, $649 and $1,099 a month and a Group plan by agreement, a one-time $500 onboarding fee (the product one-pager), and the Marlow pilot at $15,000 a month (PF1). The pilot item is `contradicted` if the room presents it as recurring, because 1.2 flags it (PF1).
 - Key metrics: the deck's ARR, clinics, net retention and gross margin. All four are `contradicted` by 1.5, 1.8, 1.3 and 1.7 (PF2, PF7, PF3, PF6).
-- Unfair advantage: the research does not say what the deck claims here. If the room holds nothing, the box is `gap`.
+- Unfair advantage: deck slide 9 says Hollis Voice is "Built for vet clinics: vaccine reminders, refills and emergency routing". The box is `stated`; no script result touches it.
 
 **Model reading**
 
@@ -3445,7 +3662,7 @@ for each job:
 customer_share = jobs with at least one customer source ÷ all jobs
 ```
 
-Worked example, Hollis Voice. The founder side is clear: clinics miss calls, and the product answers them, books appointments and sends refill requests (data-room research, 3.2 and 3.6). The customer side is thin: the room holds three order forms and no customer interviews, and a synthetic company has no reviews or Reddit threads. So every job is likely `founder_stated`, and the readout says so plainly.
+Worked example, Hollis Voice. The founder side is clear: clinics miss calls, and the product answers them, books appointments and sends refill requests (the video script, 0:00 and 0:20; the company overview). The customer side is thin: the room holds three order forms and no customer interviews, and a synthetic company has no reviews or Reddit threads. So every job is likely `founder_stated`, and the readout says so plainly.
 
 **Model reading**
 
@@ -3538,7 +3755,7 @@ key partners:    rank ledger vendors by spend in cost of revenue; each top vendo
 revenue streams: every product type in ARR_Build must appear as a block item
 ```
 
-Worked example, Hollis Voice. The design script sets telephony at 15%, embedded licences at 5% and hosting with model inference at 11% of the revenue basis ([data_room_design_numbers.py](../reports/20261022.02_research/data_room_design_numbers.py)). So the telephony and model providers are key partners whether or not the deck names them. If the deck does not, they are `room_only`. Revenue streams must hold subscriptions, the onboarding fee and the pilot, because `ARR_Build` holds all three (data-room research, 3.4). The ledger's vendor names are set by the generator; the research does not fix them.
+Worked example, Hollis Voice. The ledger names four delivery-cost vendors: Tallow Telecom (telephony) and Marsh Speech Licensing (licences), booked in cost of revenue, and Halcyon Inference API (model inference) and Brindle Cloud Hosting (cloud hosting), booked under R&D (`expense_ledger.csv`). Deck slide 5 names the costs ("phone minutes and speech software licences") but no vendor, so each vendor is a `room_only` key partner. Revenue streams must hold subscriptions, the onboarding fee and the pilot, because `ARR_Build` holds all three (rows 13 and 14, and the subscription rows).
 
 **Model reading**
 
@@ -3631,9 +3848,9 @@ substitutes:    current alternatives named in 5.2
 
 Worked example, Hollis Voice:
 
-- Buyer power: the largest customer is 21.0% of MRR (PF5), on a 24-month term (data-room research, 3.3).
-- Supplier power: telephony is 15% and embedded licences 5% of the revenue basis, and hosting with model inference 11% (the design script). Which vendor holds each share waits on the generator's ledger.
-- Rivalry: the data-room research notes that a web search shows vendors already selling voice AI to vet clinics (data-room research, 3.1, option B). The check is whether slide 9 names them. The names come from Scan 3's pre-pulled competitors.
+- Buyer power: the largest customer is 21.0% of MRR (PF5), on a 24-month initial term with no right to end it early except for an unfixed breach (`order_form_cedar_pine.pdf`, pages 1 and 2).
+- Supplier power: in 2026-09 the largest delivery-cost vendor is Tallow Telecom, $28,298.55 of the $78,155.76 full cost of revenue from 1.7, or 36.2% (`expense_ledger.csv`; scripted arithmetic).
+- Rivalry: deck slide 9 names categories, not companies: answering services, generic AI receptionists and practice software add-ons. The data-room research notes that a web search shows vendors already selling voice AI to vet clinics (data-room research, 3.1). The check is whether slide 9's categories cover them. The names come from Scan 3's pre-pulled competitors.
 
 **Model reading**
 
@@ -3728,7 +3945,7 @@ for each SWOT item:
 orphans = items with no surviving claim id; they are dropped and listed
 ```
 
-Worked example, Hollis Voice. Weaknesses the room shows: gross margin of 58.1% once delivery costs are in (PF6), 12-month gross retention of 73.4% (PF3), and the largest customer at 21.0% of MRR (PF5). Strengths the room shows: 212 paying accounts and $2,060,868 of recurring ARR rebuilt from raw data (PF7 and PF1 true values). Opportunities and threats wait on the competitor scans; the research holds no competitor figures yet.
+Worked example, Hollis Voice. Weaknesses the room shows: gross margin of 58.1% once delivery costs are in (PF6), 12-month gross retention of 73.4% (PF3), and the largest customer at 21.0% of MRR (PF5). Strengths the room shows: 212 paying accounts and $2,060,868 of recurring ARR rebuilt from raw data (PF7 and PF1 true values), and the three green flags in the answer key (the round, the market estimate stated the same way twice, and the staff count). Opportunities and threats wait on the competitor scans; the research holds no competitor figures yet.
 
 **Model reading**
 
@@ -3823,9 +4040,9 @@ deck_gap  = deck TAM ÷ bottom-up TAM
 
 Worked example, Hollis Voice:
 
-- ACV = $2,060,868 ÷ 212 = $9,721 a year (`arr_true_recurring` and `paying_clinics_now` in [data_room_design_numbers.json](../reports/20261022.02_research/data_room_design_numbers.json); scripted arithmetic). The largest customer counts as one account across 40 locations, so ACV per location is lower than this. A per-location ACV needs a location count per account from the generator.
-- Count of independent veterinary clinics: not in the research. The scan returns "Not in the room: a cited count of target customers" until someone attaches a source page. It does not use a number from memory.
-- The deck's market figure on slide 8 is not given in the research either. The generator sets it.
+- ACV = $2,060,868 ÷ 212 = $9,721 a year (`facts.arr_true_recurring` and `facts.paying_accounts`; scripted arithmetic). The largest customer counts as one account across 40 locations, so ACV per location is lower than this. The customer file's `locations` column gives a per-location figure.
+- The deck's market figure: about 28,000 independent clinics × about $9,000 a year = about $252,000,000, both labelled company estimates (deck slide 8; the model's Market tab, `MARKET_CLINICS`, `MARKET_ACV_USD`, `MARKET_TAM_USD`; GF2). It is built bottom-up in form, but its count cites no source.
+- Count of independent veterinary clinics from a cited source: none in the room. The scan returns "Not in the room: a cited count of target customers" until someone attaches a source page. It does not use a number from memory.
 
 **Model reading**
 
@@ -3922,7 +4139,7 @@ What is fair to infer, and what is not:
 
 **Inputs**
 
-- `05_team/founder_bios.pdf`: two invented founders and the senior team (data-room research, 3.3).
+- `05_team/founder_bios.pdf`: two invented founders and the senior team.
 - GitHub user and repos for each handle in the bios.
 - Saved personal sites, talks, posts and papers, each with URL and date.
 - A LinkedIn export, only if the founder shared it.
@@ -3948,7 +4165,7 @@ domain_repos:      repos whose name, description or topics carry a domain keywor
 predates_company:  artifacts tagged to the domain and dated before the company's founding
 ```
 
-Worked example, Hollis Voice. The founders are invented, and the research fixes no facts about them (data-room research, 3.3). Until the generator writes the bios, every question returns "Not in the room". The feasibility research adds an open point: GitHub's terms on persona accounts were not read, and the safe route is a GitHub organisation Ken owns with repos he commits to ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), 1.7). The company was founded in 2024 (data-room research, 3.2), so `predates_company` tests for domain artifacts dated before 2024.
+Worked example, Hollis Voice. The founders are invented. `founder_bios.pdf` says the CEO ran operations for a regional veterinary group for nine years, and the CTO spent eleven years building speech and telephony systems at a telecom software company. Those are the company's own words, quoted from the bio, with no outside source behind them; a synthetic founder has none. The CTO's GitHub handle is a placeholder (the answer key's `notes`). The feasibility research adds an open point: GitHub's terms on persona accounts were not read, and the safe route is a GitHub organisation Ken owns with repos he commits to ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), 1.7). The company was founded in 2024 (the company overview; the bios), so `predates_company` tests for domain artifacts dated before 2024.
 
 **Model reading**
 
@@ -4056,7 +4273,7 @@ label per signal:   shown       if count ≥ 2 and span_months > 0
 
 The rubric reports evidence. It never adds the five signals into a score.
 
-Worked example, Hollis Voice. The research fixes no founder facts, so every signal returns `none_found` with "Not in the room: public artifacts for <founder>" until the generator's bios and the GitHub organisation exist (feasibility research, 1.7). The founding year 2024 (data-room research, 3.2) is the line for `predates`.
+Worked example, Hollis Voice. The bios give tenure in words only, with no dated public artifact, so every signal returns `none_found` with "Not in the room: public artifacts for <founder>" until the GitHub organisation exists (feasibility research, 1.7). The founding year 2024 (the company overview) is the line for `predates`.
 
 **Model reading**
 
@@ -4164,7 +4381,7 @@ Apple:   averageUserRating, userRatingCount and currentVersionReleaseDate from L
 
 The Apple field names are the ones in the feasibility research's saved Lookup sample ([sample](../reports/20261022.02_research/raw/feasibility/appstores/itunes_apple_com_lookup_id_284882215_country_us.txt)).
 
-Worked example, Hollis Voice. The website copy's prices are matched against the product one-pager's ($349, $649 and $1,099 a month, from [data_room_design_numbers.py](../reports/20261022.02_research/data_room_design_numbers.py)). Every outside source returns `none_found` with "Not in the room: no public footprint for a synthetic company". The competitor rows come from the pre-pulled files.
+Worked example, Hollis Voice. The website copy's prices are matched against the product one-pager's ($349, $649 and $1,099 a month in both, `website_copy.md` lines 26 to 28 and the one-pager's pricing table). The site's "Trusted by 357 independent veterinary clinics" repeats the deck's planted count (PF7). Every outside source returns `none_found` with "Not in the room: no public footprint for a synthetic company". The competitor rows come from the pre-pulled files.
 
 **Model reading**
 
@@ -4333,7 +4550,7 @@ Each theme shows how many mentions it rests on and how many are first-hand.
 ## Open points for builders
 
 - **Column names.** The research names a few columns (`product_type`, `arr`, `paying_accounts`, `accounts_created_cumulative`). The generator fixes the rest. The prompts take whatever headers the `<doc>` blocks carry.
-- **CAC and market size on Hollis Voice.** The research does not fix sales and marketing spend or a count of clinics. Entries 1.9 and 5.6 return "Not in the room" for those until the generator or a cited source supplies them.
+- **CAC and market size on Hollis Voice.** The generated P&L now holds sales and marketing spend, so entry 1.9 computes CAC when it is built. Entry 5.6 still has no cited count of clinics, and the deck's count-times-price figure rests on an uncited count. Its label list has no value for that case. The builder adds one, such as `uncited_count`, when the frameworks-scan slice is built.
 - **`spoken_tolerance` and the signal flat band.** The team sets both before Saturday. The answer-key test keeps `spoken_tolerance` honest: PF2b must still be caught.
 - **Where an entry's label and tables live.** The ScanResult in [ARCHITECTURE.md](ARCHITECTURE.md) has one optional field, `panels`, for them. Each panel has a `name`, a list of `columns` (names) and `rows` (each row a list of strings). The comps table, the signals grid and the video moments go there, so the page has a place for them. This doc carries the label into each claim's `severity` (see "The order of work inside a scan").
 - **Matching needs periods and names.** `conflicts_with` and `corroborated_by` both match on label, unit and period. A deck claim with a null period cannot meet a model cell dated 2026-09, and two holders' `ownership` cannot be told apart by label alone. "Piece verdicts" sets two rules for Saturday: a null period on a "today" claim takes the room's as-of month, and five labels match only on the same name before the colon. After Saturday, a `subject` field on Value would replace the colon rule.
