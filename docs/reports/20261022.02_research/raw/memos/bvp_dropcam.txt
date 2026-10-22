@@ -1,0 +1,109 @@
+SOURCE: https://www.bvp.com/memos/dropcam
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+- Dropcam | Bessemer Venture Partners
+-
+
+Search
+/
+
+[](https://www.linkedin.com/company/bessemer-venture-partners/)[](https://x.com/BessemerVP)[](https://www.instagram.com/bessemer.venture.partners/)[](https://www.youtube.com/@BessemerVenturePartners)
+
+Memo
+
+# Dropcam
+
+To BVP Group
+From David Cowan, James Cham, and Ethan Kurzweil
+Date January 30, 2009
+Re Dropcam
+Dropcam first logo
+[image]
+
+We recommend a $200k seed investment in Dropcam, a developer of an Internet camera service for consumers. Dropcam has developed a prototype of software that overwrites the firmware of a typical net camera and streams it live over the Internet via the user’s WiFi connection. By overwriting off the shelf net cameras, the company initially will not need to build hardware or take inventory risk. Their goal is to be the iPod of Internet cameras through focusing on streamlining the user experience to make the process of purchasing and setting up an Internet camera extremely simple.
+The company is raising a $1-2m seed round, targeting a mix of angels and early-stage VCs. They have soft circled a syndicate of angels who are interested in a $1 million round and would propose that we participate in that syndicate. They are also talking to early-stage VCs about a $2 million Series A investment and are presenting to partnerships this week. We believe they would be better served by a smaller round with an eye towards a higher valued Series A in the future. A smaller round allows them to build the engineering team to develop and test market a working product. We would like to participate in this round as we continue to track their progress – positioning us to lead an eventual Series A if they succeed in developing a complete solution. We have been extremely impressed with the founders’ thoughtfulness in thinking through user acquisition and user experience, and feel they have a very good chance of creating a category-defining product that expands the netcam market.
+
+## Dropcam Product
+
+[image]
+
+Dropcam plans to market a complete solution where users sign up on their website for a camera and associated online DVR package “in just 30 seconds.” Users will choose from a limited number of plan choices. All will allow access to live video streams but will vary in terms of how much storage they provide with the basic package storing only the last 24 hours of activity and increasing from there. The company believes they can offer up to a month of storage at a very attractive price-point (initially $10/month). They will also offer choice in terms of camera – with models that pivot, zoom and offer other functionality.
+Once the order is complete, Dropcam will have the camera hardware drop-shipped directly from Amazon, thereby never taking any inventory risk themselves.
+
+[image]
+
+During the ordering process, users will download and install Dropcam software onto their machine. The software then automatically captures the identity of the user’s wireless router and continually scans for the IP camera that has been ordered. Once the user receives the camera, all they do is turn it on and Dropcam’s software finds it and connects to it directly, overwriting the camera’s firmware and establishing a direct connection between the camera and the user’s wireless router. At this point, the camera is directly connected to the Internet and no further intervention by the user (or their computer) is required.
+Eventually, they plan to overwrite the camera’s firmware prior to shipping so that all the user needs to do is turn the camera on and it automatically connects to their router based on settings established during the ordering process. This technique requires enough volume that the camera manufacturers will work with them to perform this installation prior to shipping. Dropcam has had preliminary conversations with camera manufacturers that indicate this will be possible, although we haven’t verified they will be able to do this without taking possession of the device at some point during the process.
+Dropcam did a limited test of acquiring users through Google AdWords. Over a 3-day period, they bought several keywords related to wireless cameras and saw a 20% sign up rate. Admittedly, they merely asked each user for their name and email address – rather than taking them through the full ordering process including inputting payment information. However, they were pleased with this level of conversion and believe with additional optimization they can get to a user acquisition cost of less than $30.
+
+## Product Extensions
+
+The team has a grand vision beyond live streaming and recording to offer a variety of extra services such as event detection and surveillance solutions that would allow Dropcam to tap into the $33 billion home security market. They also believe they can build pattern recognition technology to detect people’s faces that they can use to provide extra functionality for users. For instance, they could email you a picture of everyone that appeared at your front door during a given day. They also believe they can build machine learning systems that will be able to detect anomalies and alert you to them in real-time (e.g., the bookshelf just got shaken).
+In addition, the team also believes they can develop a destination site with the more interesting streams that users allow them to broadcast. Once they get to 64,000 users, they will have as much video footage as YouTube. Most of it is unexciting (e.g., the view of your front yard), they think there will be enough interest clips among the general noise to attract an audience.
+While we hope they can deliver on some of these more far-fetched plans, they don’t put much stock in them at this point and in fact are most excited by the core ability to seamlessly upload and store video on the Web seamlessly.
+
+## Competition
+
+WiLife – WiLife, now part of Logitech, offers complete video surveillance solutions for personal and business use, selling through retailers like Amazon, Best Buy and Staples. Although WiLife also claims an easy installation and setup process, it required more manual work by the user. We are investigating the company’s results and performance further.
+Dropcam will also be competing indirectly with IP camera vendors like Axis, Panasonic, and Trendnet – all of whom may offer live streaming/direct uploading to the Internet as Logitech does with its WiLife offering. These vendors would have an advantage over Dropcam in terms of retail distribution, but would most likely be very poor competitors on the Internet.
+And if Dropcam is successful, they may ultimately compete with security companies like ADT and Brinks who offer more robust surveillance systems along with monitoring services for upwards of $60 a month. However, this would require Dropcam to build a 24/7 monitoring team and as such is not something we are counting on.
+
+## Team
+
+Greg Duffy, CEO, was formerly Principal Engineer at Xobni where he built Xobni search and the analytics tool. Prior to this he was lead software engineer at NCF Technologies, a telecom startup that built analog to VoIP telecom switches. And he’s done short stints at Microsoft and IBM as well. In our limited interactions with Greg, we’ve found him to be very solid technically and former colleagues of his at Xobni describe him as “brilliant.”
+Aamir Virani, is Greg’s co-founder and the only other team member currently. He previously worked as Lead Software Engineer at Xobni. Prior to this, he was an engineer at PowerReviews and NeuroPace. He started his career at National Instruments as a Hardware Engineer, which may be helpful to Dropcam’s goal to work with a variety of IP cameras. He has a Masters in EE from Stanford.
+
+## Risks / Additional Questions to Pursue Prior to Series A
+
+We would segment the additional proof points we’d be looking for into five general areas:
+**Technology:** While they have developed an early prototype, it is still an open question as to whether than can build a system that is able to capture, encode, compress, and upload a video stream in real-time without unacceptable latency or degradation in quality. The current prototype leaves much to be desired here – although they have only just begun their work. They claim to have identified a codec that will meet the needs of the system and even allow streaming in HD if enough bandwidth is available.
+**User Experience:** The process of connecting the camera to one’s router wirelessly is fraught with potential points of failure. Will they be able to architect an installation process that identifies these proactively and offers a clear flow while at the same time remediating problems as they arise?
+**Customer Support:** Given that they are targeting mainstream consumers, it is likely that many will require customer support, possibly at multiple times. Will they be able to serve their customers effectively while at the same time minimizing the support cost to Dropcam?
+**Marketing and Sales:** The team is currently limited in their marketing beyond acquiring Google AdWords. They realize that mass media may be an effective channel for them but have no experience in mass marketing. They will look to hire this expertise, but there is risk that they may not be able to find and attract the right marketing talent.
+**Team:** The team is made up of two engineers. While they are both very sharp, they have little management experience and no experience building a company around them.
+
+## Conclusion
+
+Dropcam is currently pitching a mix of VCs and angel groups on a Series A of up to $2m with the exact amount to be determined based on interest. We are very excited about the concept of out-of-the-box Internet cameras and find this team to be the most thoughtful of any we have seen concerning technology, user experience and design. We’d like to participate in their large angel round in order to buy us access to what will most likely be a very competitive Series A once they build a working product and begin to acquire customers. We recommend this $200k seed investment.
+
+To BVP Group
+From David Cowan, James Cham, and Ethan Kurzweil
+Date January 30, 2009
+Re Dropcam
+Dropcam first logo
+[image]
+
+## Keep digging.
+
+[image]
+Memo
+
+### Toast
+
+Toast Series B IR
+
+[image]
+Memo
+
+### Velo3D
+
+Velo3D Series A IR
+
+[image]
+Memo
+
+### ServiceTitan
+
+ServiceTitan Series A Flash

@@ -1,0 +1,178 @@
+SOURCE: https://www.bvp.com/memos/velo3d
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+- Velo3D | Bessemer Venture Partners
+-
+
+Search
+/
+
+[](https://www.linkedin.com/company/bessemer-venture-partners/)[](https://x.com/BessemerVP)[](https://www.instagram.com/bessemer.venture.partners/)[](https://www.youtube.com/@BessemerVenturePartners)
+
+Memo
+
+# Velo3D
+
+To BVP Group
+From David Cowan and Sunil Nagaraj
+Date May 23, 2015
+Re Velo3D Series A IR
+Velo3D first logo
+[image]
+
+On Monday morning, Velo3D co-founder and CEO Benny Buller will present from Menlo Park. His one year old Santa Clara-based startup promises to transform metallic manufacturing by developing the first 3D metal printer that does not require support structures to hold up the material, overcoming what is arguably the single largest hurdle to printing metal parts at scale.
+“Supports” are necessary but time-consuming structures added to 3D models to enable the printing of certain geometries and to help with heat transfer. Supports make metal 3D printing significantly more time consuming, complex, and expensive. We were introduced to Velo3D by Rocket Lab CEO Peter Beck, who covets support-free printing for his rocket engine parts. Velo3D initially raised a $4m loan convertible at $12M pre, and his seed investors Lightspeed, Khosla, and Formation8 have all independently offered to lead the company’s Series A round; but Peter Beck, Dan Berkenstock and even Velo3D seed investor Pierre Lamond (formerly with Khosla) have convinced the founders that they should get BVP as their lead.
+We are considering a deal where we invest about $8M of a $15M round at a fully diluted $40.4M post-money valuation with a 10% option pool. Formation8 would invest $5M (though they have not yet agreed to be cut back this much) and strategic investor Autodesk would take the remaining $2M. We are still completing our diligence but are positive given the strong team and how disruptive this technology can be in the already rapidly growing metal-printing market.
+
+## Additive Manufacturing (“3D printing”) Market Size and Growth
+
+3D printing is a $4B market, with a 6-to-1 ratio of plastics-to-metal, and a 5-to-2 ratio of prototyping to manufacturing. The manufacturing segment is growing fast – now a third of the plastic printing market – but it still represents only an eighth of the metal printing market.
+
+[image]
+
+Last year, about 500 metal 3D printers were sold at an average of $700K each, totaling $350M of revenue. Growth has started to inflect in recent years as this market grew by over 60% in 2013 and again in 2014. This is in contrast to the overall additive manufacturing market which grew 25%. The primary industries purchasing metal 3D printers are Industrial machining, Aerospace, Dental/Medical, Academic, and Automotive. The market for metal 3D printers is dominated by 4 European companies: EOS Systems, Concept Laser, SLM, and Arcam.
+
+[image]
+
+Benny’s singular goal is to expand metal 3D printing from a $350M market printing mostly metal prototypes into a larger piece of the broader $500B metal machining market by enabling the printing of production metal parts.
+
+## How 3D Metal Printing Works
+
+The most common method is called Direct Metal Laser Sintering (DMLS). A layer of metal powder is deposited on a build platform by a recoating blade. A very powerful laser then very precisely melts certain areas of the powder to fuse the metal powder to the metallic build platform. The build platform is then lowered 75 microns and the recoating blade pushes another layer of fresh powder onto the build platform. The laser then fuses this second layer to the first in a very specific pattern. These steps of recoating, lowering the build platform, and lasering continues until the part is complete (1,000 passes or more). At the end, the part is removed from the deep chamber of powder surrounding it. The most common metal powders are aluminum, cobalt chrome alloy, nickel alloy, stainless steel, and titanium. These each have different melting points and other mechanical properties so they are used for various reasons and in different industries.
+By virtue of the additive nature of this process where parts are built layer by layer from the bottom up, metal 3D printed parts need “supports”. Supports generally provide temporary support for a geometry that will be strong when complete but is weak during the build process. These geometries generally have horizontal overhanging surfaces, so they would collapse or be impossible to build through bottoms-up layering. Supports also serve an important role in dissipating heat from the newly-formed geometry. This prevents warping during the rapid melting and cooling process. Here is an example of a metal 3D printed part for the dental industry and all the supports necessary to enable its printing (left is before support removal, right is after):
+
+[image]
+
+This example underscores the complexity that supports add to a metal 3D build. Supports must be painstakingly added to the CAD model manually based on judgements of where the geometry requires it. This is a bit of an art because the supports also serve a thermal role. As a result, parts requiring supports must be printed and studied several times with small iterations on the number and location of supports, consuming a significant amount of time on a very expensive machine. In fact, most metal 3D printed parts are actually designed with the constraints of the printing process in mind from the beginning, compromising some combination of material cost, weight, and strength. Once a suitable design with the appropriate supports has been reached and the part is completely printed, supports must be manually removed through wire cutting or machined off with CNC equipment. In sum, supports are a very painful but required feature of metal 3D printing today. We have spoken with several metal 3D printing experts and customers and there is very clear consensus that supports are a major issue holding back this market.
+
+## Product: Supportless 3D metal printing
+
+Velo3D is building a metal 3D printer as well as a cloud-based service to process CAD models into machine instructions. These 2 offerings work closely in concert to enable support-free 3D printing. There are four major problems with support-free printing:
+
+- Any horizontal (or close to horizontal) overhangs will not be printable or will collapse under their own weight without a support.
+
+- Without supports, the heat differential in the chamber causes the part to crack while printing.
+
+- If the object isn’t firmly supported during printing, then as the top most layer of metal cools and therefore contracts, it pulls in the edges, causing an upward curl, or warp, of the object.
+
+- The re-coating mechanism, which pushes powder over the build after each layer is created, jostles the unsupported powder particles underneath so that they are too uneven to reliably fuse.
+Velo3D’s magic is that one by one it solves each of these problems. To protect the company’s intellectual property, the solutions to these problems are not included here. Rather, they will be presented orally on Monday morning.
+
+## Velo3D Product Benefits
+
+- **Less pre-processing/preparation before printing:** Designers will be able to print any part imaginable, free from the constraints of the underlying printing process. This allows for the creation of parts that would be previously unprintable and eliminates the need to compromise weight and strength.
+
+- **No need to determine where to place supports:** Support placement is usually determined with an iterative process that requires a lot of designer time and several full builds before the supports are appropriately placed.
+
+- **Faster builds with less material:** The build takes 50% less time because the laser does not have to continually re-position to random XY locations to build up a support. Skipping the support build will also save powder, reducing material costs by 15%.
+
+- **Less post-processing and yield loss:** Supports no longer need to be painstakingly sawed off from the part. Parts are often ruined during the support removal process.
+This innovation will be particularly valuable for low-volume, high-value parts; as additive manufacturing becomes sufficiently viable, fast and cheap, Velo3D expects Aerospace, Medical, Energy/Oil, Automotive and Machinery businesses to adopt it in their production lines. Today, this is rare because of the time and complexity involved with a process fraught with supports. We have heard from customers in a few of these industries that the weight reduction, quicker turnaround, and lower cost are very attractive.
+For example, this turbine (from the SpaceX Falcon 9) is incredibly difficult to make with any printer other than Velo3D:
+
+[image]
+
+Eventually, Velo3D believes that more standard metal parts, even those that might have been machined, will be redesigned to take advantage of 3D printing. For example, part weights can be reduced while strength and stiffness are increased through the use of internal structures (such as lattices) rather than a completely solid part. Below is an example of an airline seat buckle before and after this process:
+This redesign changed the weight of this airline seat buckle from 140 grams to 68 grams without compromising any strength. For an Airbus A380 with 853 seats, this totals 74 kg of weight savings. This leads to almost 1 million gallons of fuel savings over the lifetime of the aircraft.
+
+[image]
+
+## Intellectual Property
+
+Velo3D is pursuing a novel strategy for legally protecting their IP. Rather than patent all the mechanical details of their approach, they are patenting the signature that is left in parts made using their process. In this way, if a competitor infringes on their invention, they can sue anyone in the customer’s supply chain rather than just the printer manufacturer (who may be in China). It also limits how much of the secret sauce needs to be disclosed in the patent filings. As of today, they have filed 5 provisional patents that they expect to split into many more full patent filings.
+
+## Financials/Traction
+
+From here, the company hopes to use $15M of new funding to grow the team from 12 to 34 and start alpha testing on their first machine by mid-2016. They hope to ship beta units to customers in November of 2016 and have general availability by January 2017. This round takes them through April 2017 with an average gross monthly burn of $700K. It’s an aggressive schedule that we expect to slip, requiring another round in early 2017.
+
+[image]
+
+Velo3D is still iterating on their pricing strategy. They believe they can build a machine for $350K (based mostly on COGS of existing printers) and sell it for $700K as their competitors do. To extract a premium for the support-less feature, they hope to add a $200K annual recurring SaaS fee for use of their processing cloud to turn CAD models into instructions for their machine (it’s a computationally expensive operation). Using these assumptions, they plan to sell $10M, $24M, and $79M in 2017, 2018, and 2019 at close to a 60% gross margin, achieving 5% market share in metal 3D printers:
+
+[image]
+
+Since raising their $4M seed round in July 2014, Velo3D has demonstrated support-less printing for basic shapes by printing several parts that were previously impossible to print. They have also recruited a talented team of 12. The team has also built early relationships with 4 prospective customers but this is very nascent. One of them, Proto-labs is one of the biggest players in this space (traded on Nasdaq).
+
+## Competition
+
+The metal 3D printing market has several competitors that we are still working to understand better. From what we can tell, Velo3D will be the world’s only support-free printing with laser sintering. The only competition that claims to offer support-free printing is Arcam, a Swedish company that targets the aerospace and medical industries. Arcam has a $1M machine based on electron beam welding technology, rather than lasers. As a result, their machine heats up the entire powder reserve to 1,100C and must complete the build in a vaccuum. They use the build powder as a kind of support, but this powder turns into a substance like sandstone that must later be picked away. Then, by heating everything, they remove the thermal concerns that also drives the need for supports. In certain instances, the build speed can be faster but the “resolution” of the part is lower so the acurracy and surface finish is lower. In addition, they cannot work with aluminum as a material. They sold roughly 40 units last year.
+There are several other competitors:
+
+- EOS Systems is based in Germany and has 400 employees, half of whom work on their metal printers.
+
+- Concept Laser is based in Germany and has 500 employees, 20% of whom work on their metal printers.
+
+- 3D Systems is based in Valencia, California and has over 1,000 employees, 5% of whom work on their metal printers.
+
+- SLM is based in Germany and has 65 employees.
+
+- Renishaw is based in England and has over 3,000 employees, 2% of whom work on metal printers.
+
+[image]
+
+## Team
+
+Velo3D has a team of 12 talented engineers, technicians, and material scientists.
+Benny Buller is co-founder and CEO of Velo3D. He is a graduate of Technion in Israel after which he spent 10 years in the Intelligence Technology Unit of the Israeli Defense Force (Unit 8100). He then spent 4 years at Applied Materials as Director of Electron Beam Pattern Generation Systems and 1.5 years at Solyndra as VP of Product Development where he invented the company’s core technology. Most recently he was VP of Module Technology Integration at First Solar for 4 years and spent 2 years at Khosla as a Principal. He is a named inventor on 120 US patents. In the short time we’ve known Benny, he has impressed us with his intelligence and transparency. We find him to be an ideal combination of hungry entrepreneur and talented engineer.
+Erel Milshtein is co-founder and VP of R&D for Velo3D. He spent 8 years at Applied Materials in technical roles ranging from Physicist to Technology Team Leader. He then spent 2 years at Solyndra where he met Benny. Benny then pulled him over to First Solar where he was Director of Engineering for 6 years.
+It is also worth noting that Ofer Shochet, formerly VP of Products of leading 3D printing company Stratasys, is on the board of Velo3D.
+
+## Risks
+
+We see several major risks for Velo3D:
+
+- **Technology:** As you’ll hear on Monday morning, Velo3D has been able to print several previously unprintable geometries with their prototype machine. However, they still have many technical problems to overcome before they have a working machine that can reliably deliver a metal 3D printed part. The company has allocated the next 10-12 months to working through these challenges but it could take longer.
+
+- **Market:** While the metal 3D printing market is $350M today and growing 50-60% annually, this investment will only be attractive if Velo3D can attract new business from customers who appreciate the support-free printing solution. We believe that Velo3D has a chance at massively increasing the addressable market by making it viable to print production parts for a number of industries but the company has not focused on customer sales to date.
+
+- **Competition:** There are roughly 10 companies who offer metal 3D printing technology, but with the exception of Arcam, none of them offer support-free printing. We believe that the number and size of changes they would have to make to their machines will keep them out of Velo3D’s crosshairs for several years. In addition, Velo3D will have a strong IP position. With regard to Arcam, we are still digging into this further but believe the low accuracy and vacuum requirement of their machine limits their applicability, and their customers still have to extract the fused powder, limiting the printable geometries.
+
+## Outcomes Table **
+
+[image]
+
+## Summary
+
+We are excited to invest in an early-stage company that is revolutionizing the fast-growing market for metal 3D printing by removing the need for supports. In doing so, Velo3D has the potential to print production parts in a variety of industries, disrupting the $500B annual market for metal manufacturing. We recommend this investment.
+
+To BVP Group
+From David Cowan and Sunil Nagaraj
+Date May 23, 2015
+Re Velo3D Series A IR
+Velo3D first logo
+[image]
+
+## Keep digging.
+
+[image]
+Memo
+
+### Toast
+
+Toast Series B IR
+
+[image]
+Memo
+
+### ServiceTitan
+
+ServiceTitan Series A Flash
+
+[image]
+Memo
+
+### Rocket Lab
+
+Rocket Lab Series B Flash

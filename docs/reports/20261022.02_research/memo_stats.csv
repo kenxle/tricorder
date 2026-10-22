@@ -1,0 +1,35 @@
+file,kind,fund,stage,body_words,sections,opening_words,has_to_from_date_re,recommendation_in_first_150_words,recommendation_anywhere,outbound_links,reference_mentions,numbers_in_body,has_risk_section,risk_section_words,risk_section_labelled_items,risk_section_bullets,risk_section_mentions_mitigation,risk_section_has_open_questions,opens_with_summary,has_numbers_section,images_in_body,outcomes_section_image_only,has_outcomes_section,has_diligence_section
+bvp_yelp,memo,Bessemer Venture Partners,first venture round after a $1M angel round (round not named),2458,11,16,1,0,1,3,2,39,1,180,0,4,0,0,1,0,7,1,1,0
+bvp_lifelock,memo,Bessemer Venture Partners,Series A,4702,5,235,1,1,1,0,5,99,1,759,0,0,0,0,1,0,5,0,0,0
+bvp_linkedin,memo,Bessemer Venture Partners,Series C,3022,10,18,1,0,0,0,3,94,1,258,3,3,1,0,1,1,6,0,1,0
+bvp_wix,memo,Bessemer Venture Partners,seed (second seed round),2482,11,133,1,1,1,1,0,26,1,123,4,0,0,0,1,0,6,0,1,0
+bvp_dropcam,memo,Bessemer Venture Partners,seed,1638,6,287,1,1,1,0,0,19,1,278,5,0,0,1,1,0,4,0,0,0
+bvp_twilio,memo,Bessemer Venture Partners,seed (extension),1414,8,184,1,1,1,0,0,24,0,0,0,0,0,0,1,1,4,0,0,0
+bvp_mindbody,memo,Bessemer Venture Partners,$11M preferred round (round not named),3469,12,23,1,1,1,0,0,137,1,600,0,3,0,1,1,1,10,1,1,0
+bvp_shopify,memo,Bessemer Venture Partners,Series A,3605,12,865,1,1,1,0,1,83,0,0,0,0,0,0,1,1,11,0,1,0
+bvp_medi-assist,memo,Bessemer Venture Partners,management buyout (growth),2589,9,23,1,1,1,0,0,96,1,263,0,0,0,0,1,0,6,0,0,0
+bvp_fiverr,memo,Bessemer Venture Partners,"first venture round, alongside angels (round not named)",2915,8,22,1,1,1,0,0,55,1,667,2,0,0,1,1,1,7,0,0,0
+bvp_pinterest,memo,Bessemer Venture Partners,Series A,2145,9,398,1,0,1,4,2,34,1,182,4,0,0,1,1,1,9,0,1,0
+bvp_sendgrid,memo,Bessemer Venture Partners,Series B,3138,14,145,1,1,1,0,1,87,1,241,0,0,0,0,1,1,6,1,1,1
+bvp_twitch,memo,Bessemer Venture Partners,Series B,4732,13,26,1,1,1,1,3,84,1,676,4,0,0,0,1,1,14,1,1,0
+bvp_auth0,memo,Bessemer Venture Partners,seed,2829,8,213,1,0,1,0,1,54,1,177,3,3,0,1,1,1,12,1,1,0
+bvp_pagerduty,memo,Bessemer Venture Partners,Series B,3546,13,499,1,1,1,0,1,95,0,0,0,0,0,0,1,1,12,1,1,0
+bvp_rocket-lab,memo,Bessemer Venture Partners,Series B,2948,7,472,1,0,1,0,1,55,0,0,0,0,0,0,1,1,8,0,0,0
+bvp_servicetitan,memo,Bessemer Venture Partners,Series A,4310,10,296,1,0,1,0,6,109,1,195,0,5,0,1,1,1,3,0,0,1
+bvp_velo3d,memo,Bessemer Venture Partners,Series A,2625,11,269,1,0,1,0,0,74,1,243,4,3,0,0,1,1,11,1,1,0
+bvp_toast,memo,Bessemer Venture Partners,Series B (first institutional round),3468,9,360,1,1,1,0,2,87,1,58,1,3,0,0,1,1,5,0,0,0
+rootvc_esper,memo,Root Ventures,seed,1480,5,110,0,0,0,6,0,10,1,860,1,2,0,0,1,0,0,0,0,0
+rootvc_meroxa,memo,Root Ventures,seed,1812,10,26,0,0,0,2,0,20,0,0,0,0,0,0,0,1,0,0,0,1
+rootvc_daily,memo,Root Ventures,seed (the round before Series A),1413,11,0,0,0,0,7,2,10,0,0,0,0,0,0,0,1,0,0,0,1
+rootvc_okteto,memo,Root Ventures,seed,1235,8,33,0,0,0,6,0,30,0,0,0,0,0,0,1,1,0,0,0,1
+rootvc_privacy_dynamics,memo,Root Ventures,seed (raising $3.5M; round not named),2190,9,0,0,0,0,14,1,25,0,0,0,0,0,0,1,0,0,0,0,1
+rootvc_superconductive,memo,Root Ventures,seed,2088,9,0,0,0,0,4,1,16,0,0,0,0,0,0,0,1,0,0,0,1
+rootvc_zed,memo,Root Ventures,seed (post-money cap),1837,7,18,0,0,1,14,0,37,0,0,0,0,0,0,1,0,0,0,0,1
+ledwards_esper_angel,memo,"Lee Edwards (angel, later Root Ventures partner)",seed (angel check),687,1,228,0,0,0,2,0,5,0,0,0,0,0,0,1,0,0,0,0,0
+blackbird_zoox,memo,Blackbird Ventures,"seed (first round, $1.3M)",1019,2,2,0,1,1,3,0,6,0,0,0,0,0,0,1,0,3,0,0,0
+tpl_hustlefund,template,Hustle Fund (Angel Squad),"pre-seed and seed, angels",1031,14,39,0,0,0,1,4,5,1,127,12,11,1,1,1,1,0,0,1,0
+tpl_pointnine_gdoc,template,Point Nine Capital,seed,839,9,891,0,0,0,0,3,1,0,0,0,0,0,0,1,1,0,0,0,1
+tpl_dempsey_gdoc,template,Compound (Michael Dempsey),seed,345,10,340,0,0,0,0,1,5,1,0,0,0,0,0,1,1,0,0,0,0
+tpl_nextview,template,NextView Ventures (David Beisel),seed,984,11,993,0,0,0,7,2,7,1,0,0,0,0,0,1,1,0,0,1,1
+tpl_aca_basics_dd,template,Angel Capital Association (board member's workshop deck),angel groups,963,15,1003,0,0,0,0,0,21,1,0,0,0,0,0,1,1,0,0,1,0
+tpl_visible,template,Visible.vc (written for founders),seed and Series A,220,9,227,0,0,0,1,0,0,0,0,0,0,0,0,1,1,0,0,0,0

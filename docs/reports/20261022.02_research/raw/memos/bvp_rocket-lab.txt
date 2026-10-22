@@ -1,0 +1,143 @@
+SOURCE: https://www.bvp.com/memos/rocket-lab
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+- Rocket Lab | Bessemer Venture Partners
+-
+
+Search
+/
+
+[](https://www.linkedin.com/company/bessemer-venture-partners/)[](https://x.com/BessemerVP)[](https://www.instagram.com/bessemer.venture.partners/)[](https://www.youtube.com/@BessemerVenturePartners)
+
+Memo
+
+# Rocket Lab
+
+To BVP Group
+From David Cowan and Sunil Nagaraj
+Date October 18, 2014
+Re Rocket Lab Series B Flash
+Rocket Lab first logo
+[image]
+
+On Monday, Rocket Lab CEO Peter Beck will be presenting from Menlo Park in slot 1. New Zealand-based Rocket Lab is building rockets capable of sending 100kg payloads, the size of Skybox Imaging’s satellites and smaller, to low-earth orbit and doing so on a weekly schedule at a price of $5M per rocket. Over the last 7 years, the company has successfully launched 89 sounding rockets, which carry scientific instruments to suborbital altitudes before they descend. They did this as part of development programs with Lockheed Martin and DARPA but in the last year have taken venture capital and broadened their ambitions. Now they are using their considerable expertise to provide much needed launch capability to the burgeoning nanosatellite and microsatellite market (945 launches needed in the next 5 years). As we know all too well from Skybox Imaging, launch options for small and medium-sized payloads are hard to find and suffer from unreliable schedules. SpaceX has gone up-market, where their Falcon-9 rocket lifts payloads of 6,000kg, while Ukrainian Dnepr rockets have unreliable launch schedules and are slowly being exhausted as the supply of old ICBMs runs low. For Rocket Lab’s new rocket, “Electron”, they have made several technical innovations, including an all carbon composite rocket, electric turbopumps, and customer-side payload integrations to make launches frequent and an attractive price point. Peter touts that you will be able to launch a payload to orbit with the same amount of fuel it takes for a commercial airliner to fly from San Francisco to Los Angeles. We recommend watching their 2-minute introduction video.
+The company is right on schedule with their plan and is now raising a $20M Series B to execute 3 test flights and their first commercial flight. Peter’s current plan is to make this the last capital he raises, and though he has hit all timelines to date, we are encouraging him to plan for inevitable delays. In terms of legal structure, Peter has already set up Rocket Lab to have a Delaware-based US parent company which is what we will be investing in. While the entire team is in New Zealand today, he plans to eventually grow a small team in the US as well. Of the many benefits of being in New Zealand, most notable to the financing is that the New Zealand government refunds, in cash, 20% of company’s expenses up to $25M so this $20M of capital will actually enable $24M of spending. At the Series A, Peter added a New Zealand strategic, K One W One, to that last round and would like to do the same this time. Lockheed Martin and In-Q-Tel are both in diligence to join this Series B.
+
+## Market
+
+Rocket launches to-date have been an expensive and unpredictable affair. Last year, there were 19 launches from American soil at an average cost of $132M. Over half of these were government-related, but even SpaceX only had 3 launches of their Falcon-9 rocket which costs $65M and launches 6,000kg to orbit. Smaller payloads are forced to “rideshare” as secondary payloads on a rocket from SpaceX, Falcon-9, or Ukrainian Dnepr. As a secondary payload, you go when the primary payload goes, where the primary payload goes (orbital altitude and inclination), and can easily get bumped for a variety of issues. It is exactly for these issues that our launches at Skybox were delayed several times.
+By Peter’s calculations, there are 945 100kg satellites that require launch by 2020 but have no launch options today beyond ridesharing and even that is in short supply. These payloads have increasingly commercial purposes so they demand predictability in timeline. In addition, they want to select non-standard orbits (altitude and inclination) so they would deeply value being a primary payload.
+
+[image]
+
+As a result, there is a major shortage of launch options for small and medium-sized payloads. We’ve spoken to several of Rocket Lab’s early customers, and they have verified this. Space Flight Services, the leading secondary payload aggregator that brokers deals and integrates payloads on to launch providers, brokered 87 payloads in September which were all between 5kg and 50kg. Close to half of these are from smaller upstarts (such as Planet Labs) so that demand is growing but may be less certain in the long term. They also see sub 100kg demand coming from universities and the government sector because there is a shortage of launch supply. Below is a snapshot of emerging satellite companies that market research firm Spaceworks has seen as of 2013:
+
+[image]
+
+## Product
+
+Rocket Lab has designed a rocket for high volume build and launch of 100-150kg payloads to low-earth orbit. Their rocket, “Electron” is 18 meters long and utilizes their learnings from the last 7 years they’ve spent on rocket development. Electrons will cost $1M to build and will sell for $4.9M. This price point of $49K/kg of payload has been purposely set at what launch customers pay today for rideshare, but with Electron there will finally be capacity available. In addition, the majority of payload customers can buy their own rocket and serve as the primary payload.
+
+[image]
+
+Electrons can launch 100kg to a 500-km sun synchronous orbit, which is an orbital inclination that is particularly good for earth observation because it allows you to image the same part of earth at the same time of day all year long. Their launch capacity varies with inclination because you are either using Earth’s rotation to help you gain launch speed or you are fighting it as you do with a sun-synchronous orbit which is 98 degrees (8 degrees retrograde). For reference, the international space station is at a 52-degree inclination.
+
+[image]
+
+To-date, Rocket Lab has launched all of their sounding rockets from a privately owned island, 30-minute flight from Auckland. Given Electron’s targeted launch frequency of once/week, this island location is not ideal because the rocket and propellants would constantly need to be shipped over across uncertain waters. Rocket Labs has commenced a launch site search now to identify, purchase, and build a launch site from the ground up. The leading candidate is in Eastland, near the Eastern tip of the North Island of New Zealand. Launches in New Zealand only have a $400 government fee vs. the $700K fee in the US. In addition, they will launch under an FAA license so they will be indemnified from any ground damage they create provided they comply with the FAA rules.
+The Electron rocket itself is a 2-stage liquid oxygen kerosene rocket. The rocket has been designed to simplify manufacturing, assembly and integration with payloads in order to enable volume production – it’s the T Model Ford of space. For example, parts are standardized as much as possible in the design so that there is only type of bolt for the entire craft, and even one type of computer module with upgradeable firmware for navigation, telemetry, etc.
+One of the main innovations is that they use an electric turbo pump to feed the engines which demand high pressure fuel at a tremendous rate. Typically turbo pumps are powered by a secondary gas-fed engine, but Rocket Lab is reducing cost and complexity by using battery-powered high-powered turbo pumps. No one has made electric turbo pumps work before but this has been a focus of their Series A runway and they tell us they have working turbopumps. This will be a key area of diligence for our technical consultant. Given that the rocket has powerful batteries on board for the turbopumps, Rocket Lab has also chosen to use electromechanical actuators (in blue in the photo below) to control the direction/vector of thrust (TVC). They can gimbal each of the 9 engines 2 dimensions to steer. While this element is uncommon, Rocket Lab is not the first to do electric TVC. Hydraulic TVC is more common because you don’t have a supply of power.
+
+[image]
+
+Another innovation is the heavy use of 3D printing for the creation of most of the Electron’s engines. This is very sophisticated laser-based 3D-printing, unlike the plastics-based 3d printing you may have seen from MakerBot and others. 3D printing is not only a cost savings, but it means Never Having to Say You’re Sorry, You’re Waiting For a Part. The engine is shown in the above photo and includes the 3D-printed thrust chamber, injector, and elements of the turbo pumps. Rocket Lab has provisional patents on the 3d-printed thrust chamber, injector, and electric turbo pumps. Electron will also feature all carbon-composite tanks which are 40% lighter than aluminum.
+One of Rocket Lab’s final innovations is the ability to have customers integrate their payloads on their own site before sending anything to the launch site. Customers are sent faring halves where the payload can be inserted and hermetically sealed in advance. This faring system suspends the payload and dampens vibrations during launch and releases the payload upon reaching orbit. This Plug and Play approach to payload integration is a key process innovation: by shifting the job to the customer’s site, the customers feel more control of the process, and Rocket Labs can improve their frequency of launch because many ready-to-fly sealed farings will be at the launch site. If a customer pulls their launch on a given week, they can pull another payload off the shelf and send that one instead.
+
+## Customer Traction/Feedback
+
+To-date, Rocket Lab has secured commitments for over 40 launches. This includes signed MOUs from Planet Labs, Surrey Satellites, Weathernews, Outernet, and Space Flight Services. Planet Labs is interested in 20 launches. Space Flight Services, the secondary payload aggregator, would like to do 6 launches in the first year. Weathernews is interested in launching 2 45-kg satellites. Rocket Lab is currently in discussions with Skybox to help launch the remainder of their constellation. We have had conversations with 3 of these customers to date and heard the following:
+
+- Curt Blake at Space Flight Services, the leading secondary payload aggregator that brokers deals and integrates payloads on to launch providers, believes they could fill up an Electron with 100kg of payload every 2 weeks given the demand they see directly. Space Flight Services has had experts diligence Rocket Lab and thinks that they are the new launch provider most likely to be successful. In the end, they don’t really care how the tech works as long as the payloads get into orbit reliably.
+
+- Peter Wenger at Blacksky, a new imaging satellite company, believes that Rocket Lab’s new launch capacity is much needed.
+
+- Robbie Schlinger at Planet Labs hopes to do 20 launches. He believes that they need to be a primary payload going forward given the importance of predictable launch schedules to their business. Robbie has been out to New Zealand to vet the technology and believes that Rocket Lab is “an order of magnitude ahead of any other new launch vehicles.”
+
+## Timeline/Financials/Fundraising
+
+Within their Series A funding, Rocket Lab believes they have addressed all high risk elements of their launch vehicle. They have designed and built electric turbopumps, tested high-capacity batteries, designed and built carbon composite tanks, and written their initial flight navigation code for their flight computer.
+
+[image]
+
+Their next step is to begin vehicle construction in 3-4 months and launch their first test vehicle in late 2015. This will be followed by 2 more test flights and then their first commercial launch in mid-2016. They aim to get to 13 launches before the end of Fiscal Year 2016 (which ends March 2017).
+A key next step in our diligence is to have our space consultant, Strategic Space Design, review their rollout timing and financial plan. The plan seems aggressive overall, driven entirely by the number of launches, but Peter has designed this vehicle to be a weekly launcher from the beginning.
+The company is now raising a $20M Series B to finish building their first rocket, conduct 3 test flights as well as their first commercial flight. By this point, the company expects to be generating cash and will not need to raise additional capital.
+In his presentation, Peter will bring up that once Rocket Lab is successful, they plan to take another disruptive step (but it is likely beyond the period of BVP’s investment so we are not really planning for it). Right now used rockets burn up, along with all their radios, navigations systems, etc. so Peter would like to design an integrated launch vehicle/satellite that repurposes the rocket components in a satellite.
+
+## Team
+
+Though we have only met CEO Peter Beck to-date, the 25-person Rocket Lab team seems to be seasoned in all aspects of rocket design and manufacturing. 25% of the team has a PhD.
+Peter Beck, CEO
+Peter Beck founded Rocket Lab in 2007 following almost a decade and a half of propulsion research and market development in the international space community. Peter is an acclaimed scientist and engineer, having been awarded a Meritorious Medal from the Royal Aeronautical Society for service of an exceptional nature in New Zealand aviation, and the Cooper Medal, presented by the Royal Society bi-annually to those deemed to have published the best single account of research in physics and engineering. In our interactions with Peter so far, we have found him to have an inspiring combination of vision and no-nonsense execution. We will conduct reference checks as part of our continuing diligence.
+Shaun O’Donnell, GNC Lead
+As head of the Guidance Navigation and Control (GNC) division, Shaun O’Donnell has broad responsibility over all electronic and software systems on board Electron. Shaun has been involved with Rocket Lab since 2007, where he was solely responsible for all electronics and software systems. Prior to Rocket Lab, Shaun worked with a small start-up designing electronics for GPS-based systems, following which he started the specialist electronics company Novitas Technology Development, which creates turn-key electronics solutions using the latest technology available.
+Dr Sandy Tirtey, Vehicle Lead
+Dr Sandy Tirtey has 12 years of experience with hypersonic technologies and planetary re-entry vehicles. He started his career in 2002, working on the Mars Sample-Return Orbiter vehicle and more particularly investigating the impact of a Mars planetary aero-capture manoeuvre on the vehicle thermal protection system. He has then developed three in-flight experimental payload on-board of the European EXPERT (European eXPErimental Re- entry Testbed) vehicle. By the end of his PhD thesis, he was recognized for his expertise in planetary re-entry critical. He has also served as the Technical Lead and Project Manager of the Scramspace I Scramjet Propulsion free-flight experiment which, along with 12 others international partners, successfully built and flew the Scramspace I vehicle in September 2013.
+Solomon Westerman GNC Engineer
+Solomon is a highly-skilled GNC (guidance and navigation control) engineer having worked at Space X, NASA Marshall Space Flight Centre & Boeing Space Exploration. At SpaceX, he was part of the GNC team on the Falcon 1, Falcon 9 v1.1 and Falcon Heavy launch vehicles. He then led GNC for the Crewed Dragon capsule, moving the design through conceptual design to PDR for the abort engines. His specialties are Dynamics & Control and Rocket Propulsion. He also has extensive mission operation experience including, but not limited to Dragon C1, (primary operator Cape Canaveral), GNC operator for Dragon C2, Falcon 9 and Dragon C2.
+
+## Competition
+
+Rocket Lab faces competition from heavy payload launchers like SpaceX’s Falcon 9, Orbital Sciences, and Russian/Ukrainian launch vehicles. Both customers and Skybox have told us that launch capacity is rare and undependable but this rideshare offering will remain an alternative for Rocket Lab’s customers.
+Rocket Lab also has yet-to-launch rocket companies:
+
+- Virgin Galactic, the same company that offers consumers sub-orbital flights to space for $200K, is also working on Launcher One. This will replace the “white knight” passenger vehicle you may have seen with a payload launcher. The design is still to have a plane lift Launcher One to high-altitude flight and then release Launcher One and trigger its rocket power. We have heard they have a 12-person team working on Launcher One, but its economics depend on the consumer business thriving.
+
+- Firefly is an Austin-based team hoping to build a 400-kg payload launch vehicle. They are 24 months or more behind Rocket Lab, and though their CEO was a top propulsion lead from SpaceX, we find the rest of the team to lack space and rocket experience. They have never built a complete rocket and are just now beginning to design their rocket, so there is significant risk. They will offer more capacity given their 400-kg – and eventually 1,000-kg payloads – at a much more attractive price point, but this means that Rocket Lab’s target customers are probably not the likely primary payloads on these rockets.
+We expect generally that competition will heat up, and that different players will have different strengths. Rocket Labs will be weak in payload capacity and cost, but we see no one on the horizon who plan to compete with Rocket Lab on volume and schedule reliability. From our Skybox experience, these are the key factors for smaller Low Earth Orbit Satellites.
+
+## Summary
+
+We believe Rocket Lab will bring online much needed small satellite launch capability. The team has years of experience with this problem and is at an attractive stage for investment, if our expert consultants confirm that the key technical milestones are behind them, and that we have properly sized the demand landscape. We look forward to your feedback on this investment.
+
+To BVP Group
+From David Cowan and Sunil Nagaraj
+Date October 18, 2014
+Re Rocket Lab Series B Flash
+Rocket Lab first logo
+[image]
+
+## Keep digging.
+
+[image]
+Memo
+
+### Toast
+
+Toast Series B IR
+
+[image]
+Memo
+
+### Velo3D
+
+Velo3D Series A IR
+
+[image]
+Memo
+
+### ServiceTitan
+
+ServiceTitan Series A Flash

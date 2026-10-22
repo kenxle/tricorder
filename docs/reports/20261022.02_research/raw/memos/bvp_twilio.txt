@@ -1,0 +1,102 @@
+SOURCE: https://www.bvp.com/memos/twilio
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+- Twilio | Bessemer Venture Partners
+-
+
+Search
+/
+
+[](https://www.linkedin.com/company/bessemer-venture-partners/)[](https://x.com/BessemerVP)[](https://www.instagram.com/bessemer.venture.partners/)[](https://www.youtube.com/@BessemerVenturePartners)
+
+Memo
+
+# Twilio
+
+To BVP Group
+From David Cowan, Ethan Kurzweil, James Cham, and Mark Lurie
+Date November 6, 2009
+Re Twilio Seed Investment - $125,000
+Twilio first logo
+[image]
+
+We recommend that BVP participate along with Mitch Kapor in a $125,000 extension to Twilio’s $800,000 seed round led by Founders Fund and Mitch Kapor in Q1 of this year. Twilio has created a simple XML-like web service API for building hosted IVR and PBX telephone applications. While growth has not been explosive (they are currently doing about $20k of MRR 9 months after launch), we’ve been very impressed with the company’s rapid product development pace and think they are on the cusp of landing some very large accounts (Google, Best Buy, Deutsche Bank) that would significantly accelerate their growth. The company is currently seeking a full $3m Series A but we’d like to see market validation of the new features they are rolling out and the sales impact of the large accounts before making this size commitment. This extension to the seed round buys the company more time before they need to raise a Series A.
+
+## Product
+
+The Twilio product makes the process of building a voice application extremely simple for web developers without any specialized training or need to deal with telecom companies or specialized integration service providers. Similar to consumer web apps, customers can sign up for an account with Twilio, pick a phone number (or port over an existing one), learn the five simple building blocks that make up the basis of Twilio, and start building voice applications right away. The five core verbs – architected to emulate XML – allow you to do much of the most commonly requested voice features, like gather a number from the caller (e.g., Press 1 to speak in English; 2 for Spanish; etc.), listen for voice input from the user (e.g., record a message), transfer a call, play a message, or disconnect the line. We built all of the functionality inherent in Grand Central (get one central number that transfers to all of your various lines) in about 5 minutes while on the phone with the CEO.
+They are in the process of rolling out more advanced functionality, like asynchronous call redirecting (connect you to one party and then once that call has ended, transfer you to another), SMS, and 3-way conferencing as these features were frequently requested by early adopters. We’ve been extremely impressed with the speed at which they’ve rolled out new products and can pivot the company’s development efforts based on feedback from the developer community. The company has also continued to build more complex functionality without straying from the simple and intuitive core building blocks that make up their markup language.
+
+## Sales and Marketing
+
+The company has targeted the web development community in the hopes of getting web developers to build new voice applications using their system. At the same time, they have scored some early wins in getting web developers to rebuild existing voice applications using Twilio as often the original architect of the voice application is long gone when programming changes are needed. One early example of this is Earth911, which runs a national call-in number where you input your zip code and the system provides you with options on the nearest recycling center. The non-profit group needed to change some of the underlying logic of their voice application but didn’t have any of the original developers on staff. Rather than paying to get it reprogrammed, their web team rebuilt the entire application in less than a day using Twilio. It’s been up now for more than 6 months at 1-800-CLEANUP with positive results.
+The company’s initial sales and marketing approach has been to use contests, promotions and social marketing targeting the web development community to generate viral buzz and word-of-mouth referrals. They have a part-time contractor on staff that focuses on direct sales but this has not been an active focus for the company. Likewise, they haven’t put in place any channel sales efforts – but see many opportunities to build indirect sales channels once they have the time and capital to focus here. As a result, the company’s sales ramp has been slow (see appendix 2) but they have grown steadily to $17k in MRR.
+The company has just landed Mobile Commons as a customer to build a custom application for the DNC where you can key in your zip code and the system will provide you with an issue to lobby for and then automatically dial all of your elected officials (one after the other). At the end of the call, it asks you to provide your friends’ numbers and the system ropes them into the same loop. This is an example of using Twilio’s new asynchronous call redirecting capabilities. Most importantly, they are all on the verge of landing three very high profile clients: Google’s new lead generation effort (Google picked Twilio over their own internal Google Voice team), Best Buy / Support Space, and Deutsche Bank. We’re very encouraged by these high-profile reference customers but haven’t yet evaluated if they are just testing the service in a limited fashion or more committed to it.
+
+## Unit Economics
+
+At the same time, they’ve been able to bring down their unit cost significantly to the point now where each minute costs them .6 cents while they can charge close to 3 cents (discounts accrue with volume). This has resulted in a blended gross margin of 56%. See appendix 3 for a historical look at infrastructure costs.
+
+## Team
+
+The company’s CEO **Jeff Lawson** is a serial entrepreneur who started Versity.com in 1999 during the bubble. Versity was a platform where college students uploaded their class notes and other students who missed the class could pay to download that launched at Stanford (no comment as to whether one of the authors of this memo may have used the service). He was then the founding CTO of StubHub before leaving StubHub to join Amazon as a Product Manager. His last entrepreneurial venture was a chain of Skateboarding and Snowboarding shops based in Southern California called Nine Star. He left in January 2008 to begin working on Twilio.
+We haven’t met the other two members of the founding team at this point but they have similar entrepreneurial backgrounds to Jeff.
+
+## Financing
+
+Jeff recently approached us to consider leading a Series A of $2.5-3m. He says he had been planning to raise the round early next year but was approached by another reputable firm about doing it now. Based on our relationship with Jeff (we’ve been tracking the company since they publicly launched last October), we believe his preference is to work with us over the other firm. He is proposing a convertible note with a 10% discount to the next round and an $8.5m pre-money cap, targeting $300-500k for this extension. This is a modest increase to the original $800k angel round which was a convertible note that converts at a 20% discount and a pre-money valuation cap of $3.5m. We think the increase is justified given the progress the company has made since the original financing and the slow but steady increases in sales over the past 6 months.
+During this time, we’ll be evaluating the efficacy of the company’s direct and channel sales efforts and undertaking a more rigorous evaluation of the total market size. While the voice application telephony market is big enough to support a large profitable business, we haven’t dug deep enough into the market dynamics to get comfort around what percentage of the pie will be addressable by Twilio. Most importantly, we’ll see the results of their engagements with Google, Best Buy, and Deutsche Bank – companies that we believe to be good leading indicators as to broader adoption of the Twilio platform.
+
+## Conclusion
+
+Twilio is a promising young company with a bold vision to make voice applications as easy to set up and maintain as web applications. They’ve built a clever, intuitive interface that simplifies the extreme complexities involved in building IVR and PBX capabilities and have received many early accolades from prominent Internet influencers. We’d like the opportunity to review more data before making a determination on the full Series A and therefore strongly recommend making this angel investment.
+
+## Appendix 2: Sales
+
+[image]
+
+## Appendix 3: Costs and Gross Margin
+
+[image]
+
+To BVP Group
+From David Cowan, Ethan Kurzweil, James Cham, and Mark Lurie
+Date November 6, 2009
+Re Twilio Seed Investment - $125,000
+Twilio first logo
+[image]
+
+## Keep digging.
+
+[image]
+Memo
+
+### Toast
+
+Toast Series B IR
+
+[image]
+Memo
+
+### Velo3D
+
+Velo3D Series A IR
+
+[image]
+Memo
+
+### ServiceTitan
+
+ServiceTitan Series A Flash

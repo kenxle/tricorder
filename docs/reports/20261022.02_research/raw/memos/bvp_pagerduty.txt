@@ -1,0 +1,186 @@
+SOURCE: https://www.bvp.com/memos/pagerduty
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+- PagerDuty | Bessemer Venture Partners
+-
+
+Search
+/
+
+[](https://www.linkedin.com/company/bessemer-venture-partners/)[](https://x.com/BessemerVP)[](https://www.instagram.com/bessemer.venture.partners/)[](https://www.youtube.com/@BessemerVenturePartners)
+
+Memo
+
+# PagerDuty
+
+To BVP Group
+From Trevor Oelschig, Ethan Kurzweil
+Date July 21, 2014
+Re PagerDuty Series B IR
+PagerDuty first logo
+[image]
+
+Following PagerDuty CEO Alex Solomon’s presentation to the partnership on June 16th, we signed a term sheet to lead the company’s Series B with an investment of $19.6m out of a $27.2m round at a $180m pre-money valuation (14x June ARR) with a 5% unallocated option pool. In addition, we will purchase $6m of Series FF shares directly from the founders; these shares convert into Series B once we purchase them.
+As a refresher, PagerDuty is the leading incident management system / command center for IT operations. Since its launch in 2009, PagerDuty has rocketed to the #1 position in the space on account of a well-designed, easy-to-use product and a lack of any strong competition until recently. SaaS metrics are off the charts. Most metrics are in the right column of our framework—136% YoY growth, 0.5% gross MRR churn, 103-104% monthly net negative churn with upsells, and gross margin in the high 80s%. The company ended June on a $12.6m ARR.
+After the company presented to the partnership, we’ve spoken to a large number of customers and companies using competing products and spent more time with the founders and broader exec team—CFO, VP Sales and VP Marketing. We continue to be very excited about an investment here, as it is clear that the company has hit a sweet spot and very quickly cemented itself as the de facto solution for managing, routing and measuring alerts—not just among early adopter tech companies but mainstream enterprises. The big bet is that PagerDuty can expand from being an alerting tool to a full platform for IT operations that provides cross-platform and app-specific intelligence and analytics. If the company is successful here, we see a path to them establishing a new category of IT operations performance software and comprising a dominant position within it. Even without achieving this bigger vision, there are a large number of potential acquirers from old-school software vendors like IBM, HP and BMC to newer players like ServiceNow (which just completed its second ~$100m acquisition), Splunk and SolarWinds that help mitigate the downside risk.
+We’ve been very positive about the quality of the broader executive team that Alex has assembled - and the company’s finance, marketing and sales processes are further along than we anticipated. While there is still work to do on all fronts, the company is just beginning to reap the rewards from these investments and we’re confident that their current trajectory isn’t a fluke and there is a great deal more opportunity even without expanding the product too much beyond the current core alerting capabilities. At the same time, our diligence has highlighted the risk that competition from startups like VictorOps and incumbents has finally begun to wake up to the magnitude of this opportunity and the company will have to turn its attention back to product innovation to stay ahead of the pack.
+
+## Original Summary
+
+Think of the product as a 9-1-1 dispatch system for IT operations teams in that it connects to all systems and routes alerts to whichever employees are on call for that particular type of alert – according to pre-defined rules that companies set up in PagerDuty. While the general problem of alerting ops teams to system failures sounds relatively basic, there is a great deal of complexity to it in that most enterprises and startups have dozens of systems that each can fail or exhibit performance issues in dozens of ways. Some issues are irrelevant, some are worthy of batched alerts that should be reviewed in bulk at the end of a shift, some require immediate notification, and some require immediate attention and action by a SWAT team of engineers and the attention of the CEO. Configuring and routing alerts according to the severity and type of problem to the right person based on their shift is hard to do at scale without a SaaS product in the middle to manage it. PagerDuty goes beyond this basic level of functionality to also provide analytics and reporting on past incidents so that companies can evaluate which systems are causing the most issues and how strong their operations teams are at resolving issues. Most companies hold their ops team (and even specific people within it) to an SLA which is made easy to measure in PagerDuty.
+After the usual YC process of selling to other YC startups, PagerDuty has now had success selling to startups and enterprises alike – and lately has penetrated non-tech enterprises. Their customer list is too long to list here but it spans the gamut, including consumer tech, financial services, educational institutions, retailers, media companies, and even government sites.
+Founder Alex Solomon graduated from University of Waterloo in 2006 after which he worked on the Amazon operations team for two years – handling incidents with the core Amazon.com e-commerce site, which apparently has a number of well-designed internal tools for handling this type of alerting. If we have any concern, it’s that despite a vision well beyond an IT ops command center, the company has made little progress at attacking it beyond adding support for more sophisticated rules and routing – and a lot of support for mobile which for obvious reasons is the main medium for receiving alerts. It’s hard to argue with that prioritization though as they clearly are in the sweet spot of having found product/market fit and being in the fortunate position of scaling up sales and marketing to capitalize on it.
+
+## Topline Metrics
+
+For the month of June, both new MRR and net new MRR came in strong at $39k and $73k, respectively. PagerDuty is now at $1.05m in MRR and continues to grow at 6-7% per month. (See APPENDIX for a detailed look into the metrics.)
+
+[image]
+
+## Customers & Users
+
+PagerDuty’s core customers are small and medium-sized businesses. However, over time, they have found themselves moving upstream into large enterprises such as MasterCard, Capital One, IBM and Apple. Customers are relatively sticky, especially in the context of SMBs. The average customer churn is 1.0% per month. Gross MRR churn is 0.5% per month, while net MRR churn is negative and is running between -3% and -4%, thanks to tremendous account expansion.
+Core users are IT Ops and DevOps teams. However, broader parts of an enterprise’s organization are also users and include SysAdmins, DBAs, network engineers, IT support, developers, and QA as well as various managers up to the VP of Operations and VP of Engineering. In some cases, users also include the VP of Support, VP of Sales and the CEO.
+
+## Go-to-market: Land and Expand
+
+The model is a combination of self-serve and inside sales. Leads come in through a combination of word-of-mouth and AdWords. Most then convert to paid customers via credit card without ever speaking with a person, although PagerDuty is now ramping its inside sales team, which now stands at 9 quota-carrying reps.
+The fully-loaded CAC payback on new initial MRR has averaged roughly 19 months over the last six months, although it’s spiked as they’ve ramped marketing spend on lead volume ahead of the rate of hiring new sales reps. Once signed up, accounts expand consistently. By month twelve, initial MRR across customer cohorts has grown by 75%. And by month 24, revenue has grown by 260% (see APPENDIX). Based on our analysis, the effect of this is that the CAC payback for the April’14 customer cohort is more like 9-10 months.
+As accounts have expanded, PagerDuty is starting to see meaningfully-sized deals. A retail customer started with 2 users paying $40 per month with a credit card and now pays $10,000 per month (they are still paying with a credit card). One tech media company moved from 300 users at $40,000 per year to 900 users at $150,000 per year. These are not one-offs. PagerDuty is seeing this type of expansion across the board.
+
+## Sales Execution
+
+The sales team appears to be productive. By and large, they are hitting their quotas and are bringing in MRR that’s above what we’ve seen for inside sales reps at similar companies. On average, PagerDuty’s reps are closing $6.4k in new and expansion MRR ($77k in new ARR) per month. By comparison, typical targets for reps are in the range of $4-5k per (or $50-60k) per month. We’ve included the expansion MRR in this analysis given their focus on landing new accounts with a small toehold and then focusing aggressively on the upsell.
+
+### New and expansion MRR bookings:
+
+[image]
+
+New customer signups have been growing at an annualized rate that’s in the range of 35-50% over the last 18 months. These signups haven’t kept up with lead volume which is growing at a much faster rate (see below). As we’ve talked through this with the team and analyzed the sales team’s productivity, we believe that there are two reasons for this. First, signups tend to lag site visits and trials by 30-60 days. This has meant that the ramp in trials in the last two months, in particular, has yet to be borne out in new customers, although we think that the impact of the lag is modest. Second and most importantly, we think that the sales team has been understaffed – especially in the area of farming leads. On average, it frequently takes the team 24 hours to respond to a warm lead. While this latency has been improving over time, a response time in hours and not minutes is far from world class. To address this, the VP of Sales is in the midst of a farming test and has shifted 3 of his 9 reps away from hunting and into farming roles. You’ll see above the impact from this in the jump in new and expansion MRR generated by Reps 5, 6 and 7.
+Generally, it’s harder to scale lead volume than to grow a sales organization. The good news is that PagerDuty is consistently growing leads at a rate greater than new customers. One of the uses of this fundraise will be to ramp the sales team to handle the increased lead flow.
+
+### Sales funnel:
+
+[image]
+
+[image]
+
+[image]
+
+## Product
+
+To monitor and manage their systems, companies use a variety of tools—like Nagios for server monitoring, Pingdom for website monitoring, and New Relic for Application performance. It’s not uncommon for a large enterprise to have 100s of monitoring tools. The average PagerDuty customer uses 7 different tools. Each tool sends its own alerts. Typically, alerts are blasted to one person or a whole IT Ops team, with no prioritization or filtering or mechanism to escalate and route alerts to the right person. Not only do the critical alerts get lost in the noise but alert fatigue itself becomes an issue with the noise of continual false positives constantly hitting the inbox or SMS account of the dev-ops person.
+PagerDuty ingests incoming alerts from virtually every monitoring tool. It’s a ‘Switzerland’ strategy and in total, it has 75 different integrations. As alerts are ingested, PagerDuty de-duplicates and normalizes them to cut down on noise. More sophisticated correlation and clustering is on the roadmap.
+From an end-user perspective, the product has several components:
+
+### Incident Management and Alerting
+
+PagerDuty automatically routes incident calls to the right person based on schedule and the underlying system that’s in trouble. Ops people receive alerts via email, SMS, automated phone calls, and push notifications via PagerDuty’s mobile app. The product isn’t mobile-first, but is mobile-centric, since much of the workflow occurs while a person is away from the office.
+Escalation policies re-route alerts to the standby on-call engineer if the primary person doesn’t answer or respond quickly enough. There is simple prioritization in place today. PagerDuty is building more sophisticated rules and routing as well as technology to correlate and cluster alerts to reduce alert noise.
+When IT Ops teams are working to triage an incident, PagerDuty doesn’t have much in the way of collaboration capabilities, but it’s on the roadmap. Today, teams typically use generic chat tools like Atlassian’s HipChat, Slack or Google Hangouts. PagerDuty’s roadmap calls for a purpose-built Ops collaboration tool, which will do things like visualize similar incidents from the past, how they were resolved, and any other relevant data.
+In speaking with customers (and companies using competing products), we’ve heard that IT Ops teams are often reinventing the wheel and providing a central knowledge base is a big missing capability. Teams today are largely using Atlassian’s Confluence product or maintaining a Google Doc that captures and organizes information about prior incidents and how they were resolved.
+
+### Analytics Dashboard
+
+Today, the product provides basic reporting. Slated for release next month is more sophisticated analytics that will answer questions like “How is my IT Ops team performing?” and “How are my systems performing?” Also added will be a post-mortem analysis on what went wrong and if it’s a recurring problem.
+The company started by building a straightforward incident alerting tool. In doing so, it’s now found itself sitting at the center of both the flow of information and day-to-day activities of an IT operations team. We think that this is a very strategic position and puts PagerDuty in a good position to create an entirely new product category—IT Operations Performance Software. Essentially, it wants to be the platform that teams use across the entire lifecycle of an incident. This is something that none of the incumbent vendors own today.
+
+### PagerDuty's vision—IT operations performance platform:
+
+[image]
+
+The longer-term idea is to then extend PagerDuty to business users such as marketing and customer support. For example, when a system goes down, marketing is alerted and can immediately get on Twitter to communicate with customers – or even provide basic status communications automatically. While there’s risk that the market won’t latch onto this, we think that this vision is pretty compelling and our only concern is that the company’s rapid growth will prevent them from ever getting to it.
+
+## Team
+
+PagerDuty was founded in 2009 by Alex Solomon (CEO), Andrew Miklas (CTO), and Baskar Puvanathasan (senior engineer), three Waterloo-grads who worked together after college as infrastructure engineers at Amazon. All are typical software developer founders. They’ve lived the problem and are product-oriented. We’ve spent quite a bit of time with Alex and Andrew. Alex is self-aware and while we’re not yet sure it’s necessary, he has asked how we would think about bringing on-board a coach to help him grow.
+Historically, there hasn’t been much of a management team. However, in just the last year, the company has filled out all of the major roles:
+VP of Sales (joined Aug’13): Trenton Truitt, former VP Sales at Appcelerator.
+VP of Marketing (joined Nov’13): Nisha Ahluwalia, former VP Product Marketing at RingCentral and previous marketing experience at WebEx.
+CFO (joined 8 weeks ago): Charles Frerer, former CFO at Rafter.
+VP of Product (joined 6 weeks ago): Jonathan Wilkinson, former Director of Product Mgmt at Websense.
+There are 89 employees today.
+We’ve spent time with most of the execs. The VP of Marketing is impressive. She is the brainchild behind PagerDuty’s expanded product positioning. We like the VP of Sales as well and based on the productivity of the team, he appears to be doing a great job. We’ve also interacted with the new CFO through the course of diligence and he seems very strong as well and likely able to handle an IPO. We’ve yet to meet the VP of Product; this will be an especially important role towards realizing the expanded product vision.
+
+## Competition
+
+There isn’t much in the way of meaningful direct competition besides a handful of smaller startups. Ops teams at most companies simply put up with a flurry of alerts from the various monitoring tools that they’ve deployed without any central command center to organize them. A few large companies like Google, Facebook and Amazon have built their own systems. There is one direct competitor, xMatters, and another new upstart, VictorOps. xMatters is a 10-year old company whose product is generalized and spans emergency mass notifications and IT operations; it’s largely deployed on-premise. Boulder-based VictorOps, which has raised $6.5m from Foundry, is much smaller but has a slick looking product and strong team. VictorOps has not been able to get out from under PagerDuty’s shadow to date and has been much less aggressive about ramping but will definitely be credible competition in the future. We’ve heard through the grapevine that several companies have tried to acquire VictorOps but the team hasn’t been interested in selling.
+The competitor that we worry most about is ServiceNow. The product suite is broad. In general, it’s used by IT departments within large companies to do such things as: (1) manage trouble tickets created by employees or customers (e.g., when an application is slow or when a password needs to be reset), (2) track all of the software and hardware assets and vendors within a company, or (3) manage the change process around internal IT projects. ServiceNow has ~2,200 customers, which are almost all enterprises. With an ASP of ~$230k and a number of $1m+ deals, ServiceNow is very much big enterprise-focused.
+While it’s very rare for PagerDuty to compete head-to-head, ServiceNow does have an alerting product called “Notify” that’s sold as part of a suite of ServiceNow products. This product is generally more difficult to setup and can’t be used on a standalone basis. And as ServiceNow is an older company – the product architecture is single-tenant not multi-tenant which presents a challenge in the mid- and lower-end of the market. However, ServiceNow is a formidable competitor and so we don’t want to discount it too much. SerivceNow is on a tear. It did $425m in revenue last year and is growing at 50%+ per year and has an $8bn market cap.
+We’re much less worried about the “big four” incumbents—HP OpenView, CA, BMC and IBM. Their products have been cobbled together over years of M&A. There is a good history of startups taking on these players and winning. PagerDuty almost never sees them come up as competition.
+
+## Financials
+
+PagerDuty is projecting $13m in revenue for 2014. Based on the month of June, the current ARR is $12.6m (+137% YoY) and the company is forecasting to end 2014 with $19m in ARR. Given the predictability of PagerDuty’s growth, we believe these numbers.
+PagerDuty is burning about $800k per month on a P&L basis, but because about 35% of customers are paying annually upfront, the actual cash burn has been more modest. In June, its operating cash flow was actually positive at $250k. At closing, PagerDuty will have about $34m in cash.
+The preliminary plan for 2015 is to do $27mm in revenue with an aggressive ramp in expenses, particularly around engineering. Admittedly, there isn’t much precision around the 2015 plan since the new CFO has only been in place for about 2 months. There may be additional upside on the topline if marketing continues to perform well at demand generation but it’s too early to say for sure.
+
+### Summary P&L:
+
+[image]
+
+The company ended the first half of 2014 3% behind plan on the topline but way underspent (18%) and so had an operating loss of $3.5m vs. a plan of $5.2m:
+
+### 2014 YTD: Actual vs. Budget
+
+[image]
+
+## Deal
+
+There are two parts to the deal. The first is a Series B investment of $27.2m. BVP will invest $19.6m. Existing investor Andreessen Horowitz will invest $5.5m (or 77% of their pro rata). The Series B security is straight preferred and pari passu with the Series A and Series Seed. The available option pool will be topped up to 5% and included in the pre-money valuation. The pre-money is $180m and post-closing of the primary piece of our investment, BVP will own 9.5%.
+Soon after the close of the Series B, we anticipate a $6m secondary purchase of Series FF stock at the same price as the Series B share price. After the purchase, these shares will convert immediately into Series B Preferred Stock with all of the Series B rights. We have pushed for the entire amount and so we are seeking approval for this purchase in addition to the primary Series B. Assuming that the secondary goes forward, BVP will have invested $25.6m and own 12.4%.
+In total, PagerDuty will have raised $39.8m. However, its total preferences are $45.8m. The delta represents the $6m worth of Series FF shares purchased that will convert into Series B shares.
+
+## Outcomes Analysis
+
+[image]
+
+## Conclusion
+
+Over the past 2-3 years, PagerDuty has grown quickly to become the leading infrastructure alerting platform with a reputation for high reliability and easy integration with third-party services. We’re excited by the company’s roadmap for the next phase to become the leading IT ops performance platform benefitting from the strong rise of the DevOps movement impacting startups and big companies alike. We find the valuation compelling given the size of the market opportunity and the company’s strong performance on all meaningful SaaS metrics. We highly recommend this investment.
+
+## Appendix: MRR Expansion by Cohorts
+
+[image]
+
+To BVP Group
+From Trevor Oelschig, Ethan Kurzweil
+Date July 21, 2014
+Re PagerDuty Series B IR
+PagerDuty first logo
+[image]
+
+## Keep digging.
+
+[image]
+Memo
+
+### Toast
+
+Toast Series B IR
+
+[image]
+Memo
+
+### Velo3D
+
+Velo3D Series A IR
+
+[image]
+Memo
+
+### ServiceTitan
+
+ServiceTitan Series A Flash

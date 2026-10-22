@@ -1,0 +1,167 @@
+SOURCE: https://www.bvp.com/memos/sendgrid
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+- SendGrid | Bessemer Venture Partners
+-
+
+Search
+/
+
+[](https://www.linkedin.com/company/bessemer-venture-partners/)[](https://x.com/BessemerVP)[](https://www.instagram.com/bessemer.venture.partners/)[](https://www.youtube.com/@BessemerVenturePartners)
+
+Memo
+
+# SendGrid
+
+To BVP Group
+From Byron Deeter, Ethan Kurzweil, Peter Lee, Rahul Jaswa, & Jeff Epstein
+Date December 16, 2011
+Re SendGrid Series B IR
+SendGrid first logo
+[image]
+
+We recommend a $13.2mm investment in the $21.2mm BVP-led Series B financing of SendGrid. SendGrid is an e-mail Platform-as-a-Service (PaaS) company that presented to the partnership from Menlo Park several weeks ago. After receiving very positive feedback from the partnership, we gained the support of the SendGrid team and board to allow an outsider into the round. After a long back-and-forth process, we ultimately signed a term sheet with the company to lead a plain vanilla round at a $60mm pre-money valuation, including $4.9mm of founder liquidity (we will receive preference protection on the full amount). Including the effect of this share buyback, the resulting post-money valuation is $76.3mm, and BVP will own 17.3% of the company.
+
+## Introduction
+
+SendGrid is an email PaaS that allows web developers to reliably send their transactional emails at large volumes. The business has been experiencing tremendous growth; launched via the August 2009 TechStars class, they have signed up over 57,000 customers and are on track to exit 2011 at a $10.2mm ARR run rate. Current CMRR is ~$850k which is up from ~$200k in 2010 and maps to an impressive double-digit average MoM CMRR growth rate. There are many parallels to Twilio which have us excited, including their consumer-like growth rate, their PaaS disruption of a large established industry, and their huge popularity with the developer community and correspondingly efficient developer-oriented marketing efforts.
+While it may seem that sending emails reliably is a solved problem, many challenges come with scale particularly for sending automated emails at large as navigating overeager spam detection systems is beyond the core competence of most web developers. SendGrid allows these developers to outsource email delivery for all automated, transactional messages (account updates, notifications, password resets, etc.) tied to their applications and is also building an application ecosystem for third party ISVs to build complete email applications (e.g., generating marketing newsletters).
+
+## Market
+
+The SendGrid vision is to be the email platform of choice for the billions of automated, non-spam emails that are sent each month. With a multi-tenant cloud infrastructure, they can offer a lower TCO than the roll-your-own systems prevalent today, as well as deliverability assurances that would be out of reach or cost-prohibitive for most use cases.
+A truly massive amount of email is sent around the world each month, with most estimates in the hundreds of billions for non-spam emails (e.g., one estimate pegs it at 188B messages/day to 2.9B email accounts. In the online gaming world, Zynga has an 8 person team managing the infrastructure that sends out 3B emails per month; they’ve told SendGrid they would have outsourced it to them if SendGrid had existed when they were starting. Forrester estimates that $1.5B will be spent on email marketing in 2011with a 10% CAGR through 2016. For comparison, SendGrid has sent over 20B emails to date and is rapidly approaching the 100M emails per day milestone.
+As a firm and a cloud computing practice specifically, we have largely stayed away from the email marketing space due to fear of competition and commoditization, but in hindsight this appears to be a market that we over-thought. It’s a huge and (amazingly, still) growing category, and has proven to support dozens of successful businesses including Constant Contact, ExactTarget, and MailChimp as well as producing multiple large acquisition outcomes. We are now excited at the opportunity to participate in this market through a disruptive entrant.
+
+## Product
+
+Developers sign up for the service by applying for an account (only 10% of customers end up needing to contact the two-person inside sales team.) After a short verification process (to cull out the spammers) developers can be up and running that same day, choosing between several pricing tiers:
+
+- Free – includes all features, but is capped at 200 emails / day
+
+- Lite – includes only the sending of mail, priced at $0.10 per thousand emails sent
+
+- Bronze – adds reporting to Lite, priced at $0.25 per thousand emails sent
+
+- Silver/Gold/Platinum – adds dedicated IP addresses (needed to develop an email reputation), priced from $0.57-$0.80 per thousand emails sent
+
+- High Volume Pricing – same features as Platinum but with steeper discounts
+Developers can then send their email to be delivered by SendGrid via a variety of APIs, as well as monitor and report on key metrics like open rate, click rate, unsubscribe rate, report as spam rate, etc.
+90% of provisioned customers are in the Free plans. Paying customers are split evenly between the Lite / Bronze tiers and the Silver / Gold / Platinum, with 95% of revenues coming from the Silver / Gold / Platinum / High Volume tiers.
+
+## Competition
+
+Of the competitors, Amazon Web Services (AWS) is the one to watch most closely as their Simple Email Services (SES) offering most closely mirrors SendGrid functionality (specifically SendGrid’s lite tier). They launched in January 2011 and make it especially easy by plugging directly into their EC2 infrastructure. Features and functionality-wise, it is a low-end offering lacking dedicated IP addresses and much of the administrative and reporting layer in particular. But Amazon clearly enjoys a large developer community who may go for the good-enough solution. Shortly after the AWS announcement, SendGrid announced the Lite tier to directly compete with SES on price, as well as Rackspace and Softlayer partnerships to tap into their cloud developer ecosystems. So far, SendGrid hasn’t seen any material impact to their acquisition or attrition rates due to SES, but they are monitoring Amazon’s offerings closely.
+On the higher end of the stack, Constant Contact, ExactTarget, MailChimp and others will likely make further efforts to open up their platforms based on their existing infrastructure and lure developers to their platform. MailChimp is making one of the stronger plays in the space, having opened up an API last fall, and offering a private beta “Mandrill” service for high-volume customers to send transactional email. We need to do more research on Mandrill’s current traction, but we believe it to be pretty nascent. ExactTarget is a very large and well-funded email marketing vendor that is also making moves into the PaaS market and should be taken seriously.
+On the infrastructure side alongside SendGrid, there have been many new entrants, most notably Mailgun, Postmark, and Mailjet that we will need to watch as well although they haven’t yet made a dent in SendGrid’s trajectory.
+
+## Partnerships
+
+SendGrid has developed partnerships with several players in the hosting (Rackspace, Softlayer) and platform-as-a-service (Heroku) ecosystem who contribute 10k+ free accounts but very few paid accounts. However, these partnerships could expand considerably and there have even been real discussions where SendGrid would, in the near-term, be the default transactional e-mail service provider for every Rackspace customer. Monthly, Heroku contributes $8.4k MRR (30% revenue share to Heroku), Rackspace contributes $2.9k MRR (no revenue share to Rackspace) and Softlayer contributes only $0.15k MRR (70% revenue share to Softlayer who handles all support requirements). They are also pursuing a formalized relationship with Amazon where they would be the default upgrade from Amazon’s lite SES service, though they are walking a fine line between competition and cooperation there.
+These partnerships have largely been opportunistic and, as you can see from the vastly different economic terms, do not constitute a coherent channel sales strategy. The company realizes this but doesn’t have a resource dedicated to partnerships yet and has chosen instead to experiment with different arrangements and measure the results before adding business development resources here.
+
+## Financial Metrics
+
+Sendgrid has ~60,000 “customers,” ~ 6,000 of which are paying, for an aggregate CMRR of ~$850k, and an annual subscription revenue run rate (ARR) of ~$10.2m. They are on track to hit their 2011 budget of $6.7mm in subscription revenue, up from 1.4mm in 2010, and project $17mm and $34mm in 2012 and 2013. Because customers pay up-front for an e-mail allowance and pay the overages at the end of the month, SendGrid has strong predictability on the first day of a month. November’s absolute floor, for instance, was $790k and the company ended with $810k due to ~$20k in overages. In 2011, the average MoM CMRR growth rate was and continues to be in the double digits: they grew 11.7% between September and October and 8.7% between October and November.
+Their gross-margins are ~63% (and improving, November was just shy of 70%) which is good for PaaS at this stage, and may even go up further because:
+
+- ~25% of that is in headcount for technical support agents who primarily help to close sales (and so on a non-GAAP basis could be considered an operating expense).
+
+- They only use 15-20% of the capacity they purchase from Rackspace so their hosting costs will hold flat for the foreseeable future (they agreed to a monthly floor as part of their partnership negotiations).
+Longer term, it is possible that they need to build out more of a marketing services function in the company (as other ESP’s have done) to accommodate a wider range of email inquiries, which could add to the cost structure. However, we have been encouraged thus far that their API-centric, developer sponsored sales cycle results in fewer services calls per customer and therefore like Twilio they will have lower S&M costs in their long term business model.
+
+[image]
+
+## Unit Economics
+
+The company’s SaaS metrics are extraordinary and the vast majority of their growth continues to originate from organic sources (word-of-mouth, direct search, etc.).
+
+[image]
+
+However, they have experimented with several marketing channels for the last few quarters and already have solid metrics around a material amount of marketing spend (10k+ in several different channels). For instance, Quantcast, Extole and AdWords all generate CACs below $100, but the average customer is contributing $117/month in recurring revenue. These are early experiments and we aren’t sure to what extent they are scalable but they are actually ahead of where Twilio was at this point in that they are starting these experiments now. We’ve included a marketing spend analysis in Appendix A.
+Their Customer Acquisition Cost (CAC) ratio (inclusive of all S&M expense and headcount) for Q1 was 5.24 (pre-marketing), for Q2 was 2.8 (start of marketing) and for Q3 was 2.02 mapping to fully loaded payback periods of under 6 months. Gross customer “logo” churn is 3% monthly (stabilizing in the mid-to-low-70’s), however their cohort analyses point steeply upwards on a net dollar basis. Compared to the 1st month, cohort revenue contribution in months 12 and 18 are 136% and 186%! This theoretically maps to a massive Customer Lifetime Value (CLTV). The combination of low CAC and high CLTV has us quite excited and our additional diligence has only confirmed our excitement around these financial metrics.
+
+## Customer Diligence
+
+The company sent us a list consisting of customers ranging in size and industry. We did many reference calls and received enthusiastic confirmation (often with colorfully positive language!) that customers have an unusually deep adoration for SendGrid’s product. In summary, it allows them to forget about email and focus on core areas of the business, is significantly underpriced compared to other e-mail alternatives, is extraordinarily easy to implement and use, and comes with amazing and free customer support. Most customers did agree that competitive pricing would cause them to think twice, but barring extremely drastic underpricing, the cost savings alone would not overwhelm the features SendGrid provides and that they have come to love.
+We have begun but haven’t yet completed calling their top customers and customers who discontinued the service. However, they have never lost a customer from their highest spending tier except by kicking them out for bad e-mail practice (too much spam). Additionally, a cursory look through their list of customers who have spent more than $1,000 in aggregate and no longer use the service reveals almost entirely unrecognizable companies that are in most cases extremely small, unsophisticated, and in some cases, now defunct.
+
+## Team
+
+The team is constituted by three founders and several professional management execs brought in by Foundry and Techstars. The founders all met at UC Riverside where they were administrators for the e-mail application and infrastructure provided by the school to students. Isaac Saldana was initially the CEO and is an extremely talented product visionary who has guided product development to building the best possible product for developers. His co-founder Tim Jenkins is responsible for the back-end infrastructure and they have beefed up the engineering team with the addition of VP Engineering Tom Albers.
+There is solid outside leadership in the form of Jim Franklin (CEO) and Chad Varra (CFO). Jim and Chad have continuously engaged with us competently and we believe they are extremely trustworthy and receptive to our input. They have also brought in professional marketing and sales executives who strike us as solid for this stage of company.
+Jim Franklin, CEO - Jim was brought in by Foundry Group and Techstars, where he has worked extensively with the Boulder tech community. He is a former VP/General Manager at Oracle, a VP/General Manager at Hyperion, a VP at Crystal Ball, a CEO at Decisioneering (an enterprise software company which he left and then rejoined as CEO 4 years later), CFO at Vericept (venture backed network monitoring company), and CFO at Webfamilies.com (a consumer facing image sharing website).
+Chad Varra, CFO – Chad was also brought in by Foundry Group and Techstars from Rally Software, one of the largest private enterprise software companies in Boulder, where he was the VP of Finance and Accounting. He was previously an accountant at Arthur Andersen and a financial controller at ChannelPoint.
+Joe Scharf, VP of Operations – Joe runs the support and operations team at SendGrid and serves as its postmaster. He was promoted from a director level position in the support and ops department of SendGrid, and was previously a consultant at a software development consultancy called Obility, a program director at Techstars, and a software engineer at Ball Aerospace and Carrier Access.
+Robert Phillips, VP of Marketing – Robert has many years of experience in marketing including as director of Marketing at Memeo, Director of Marketing at Solatube International, Marketing Manager at Netflix, Senior Marketing Manager at PeoplePC, and 6 years of experience at advertising agencies, where he began his career.
+Tom Albers, VP of Engineering – Tom is a really passionate agile software development leader. He was formerly a CTO at a consulting company called StoryLeaders, a Web Development Manager at MySpace, the director of engineering at an e-commerce software company called Direct EDI, and a VP at Health Management Systems.
+Isaac Saldana, Head of Product – Isaac is the principal founder of SendGrid and like his other co-founders learned e-mail as the e-mail server administrator at UC Riverside. He graduated in 2003 with degrees in computer science and electrical engineering, and worked as a software engineer at Advatech Pacific (a mobile communications company), and then founded a series of startups where he was primarily responsible for infrastructure and backend software development.
+Denise Hulce, VP of Sales and Business Development – Denise was formerly a Senior Director of Sales and Marketing at 3Dconnexion (a Logitech company), Director of International Operations at @Last Software (acq. Google) and held various manager and director level positions at DoubleClick and MessageMedia.
+
+## Key Risks
+
+While the company has exhibited tremendous financial momentum and all of its metrics are trending in the right direction, there are still several remaining risks that we are sensitive to:
+-Potential for slowing organic growth/customer acquisition – while the company’s organic growth and amazing virality throughout the developer community is very encouraging and exciting, that market is not unlimited and eventually SendGrid’s ability to rapidly acquire new customers who fit the savvy techie startup profile will diminish. The company needs to quickly identify scalable marketing channels to reach customers that don’t fit the “Web 2.0” profile.
+-Inability to reach established enterprises – SendGrid leaves a very significant chunk of market and high-value customers untouched with their current strategy of going after only newly formed companies and growing with them. If SendGrid is incapable of implementing a technology development strategy that eventually compels large existing organizations to switch their internal email infrastructure over to SendGrid, the company’s growth may abruptly hit a brick wall and significantly diminish their maximum potential.
+-Commoditization – there are some meaningful technical barriers to entry around delivering e-mail at scale, and delivering a high quality product that manages a complex transactional process on the back-end while appearing dead simple to the customer. However, hacking together a basic e-mail solution requires relatively little engineering sophistication, and so new market entrants, or incumbents (e-mail marketing companies moving downstream), could significantly undercut SendGrid, slashing their margins and stealing market share.
+
+## Deal
+
+After receiving positive feedback from the partnership, we offered a term sheet for an investment of $13-15m at a $55m pre-money valuation and $5m in liquidity for the founders. We suggested below pro rata investments of $2-7m from the insiders Highway 12 and Foundry. This was enthusiastically received by the management team but wholly rejected by the insiders who were actually hoping to buy up ownership in this financing and offered their own term sheet for a $10m financing at a similar pre-money.
+After a long courtship, the insiders finally expressed some willingness to step back from their original hopes but would not back far off pro-rata. We were finally able to get the insiders to sign off on a plain vanilla $21mm Series B led by BVP with a $13.2mm investment at a $60mm pre-money valuation. $4.9mm is allocated towards secondary (each of the 3 founders will redeem 30% of their equity through a company buyback). The resulting post-money valuation is $76.3mm, resulting in 17.3% BVP ownership.
+
+## Outcomes Analysis
+
+[image]
+
+## Conclusion
+
+We are quite excited by the company’s extraordinary early momentum and progress, and like the similarities to Twilio in low sales and marketing overhead given their developer focus. We also feel that this is the right stage for an investment like this – as they’ve mitigated product, team and distribution risks but we can still buy 17%+ ownership at a sane valuation. While we have some concerns around commoditization potential and market size, we feel those risks are priced into the deal. We’ve been positively encouraged by the team and metrics each step of the way, and have almost fully completed our diligence without any red or yellow flags. We strongly recommend this investment and look forward to the group’s feedback. Barring any objections from the partnership, we’ll plan to swiftly complete our final legal and business diligence and complete the investment in very early January.
+
+## Appendix A
+
+### Marketing Spend Analysis
+
+[image]
+
+To BVP Group
+From Byron Deeter, Ethan Kurzweil, Peter Lee, Rahul Jaswa, & Jeff Epstein
+Date December 16, 2011
+Re SendGrid Series B IR
+SendGrid first logo
+[image]
+
+## Keep digging.
+
+[image]
+Memo
+
+### Toast
+
+Toast Series B IR
+
+[image]
+Memo
+
+### Velo3D
+
+Velo3D Series A IR
+
+[image]
+Memo
+
+### ServiceTitan
+
+ServiceTitan Series A Flash
