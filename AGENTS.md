@@ -33,6 +33,7 @@ Read these when the task touches them. Seneschal keeps the table current.
 | `docs/ongoing/PRODUCT_BRIEF.md` | Any feature: what Tricorder is, who it is for, the scans, the principles. |
 | `docs/ongoing/ROADMAP.md` | Picking the next slice to build, or checking what a slice must include. |
 | `docs/ongoing/FRAMEWORKS.md` | Building or changing a scan: the frameworks each scan runs, their inputs, their output shape. |
+| `docs/ongoing/CHECKLIST.md` | Building or changing a scan, the coverage panel or the ask list: every item Tricorder looks for, by stage. |
 | `docs/ongoing/PERSONAS.md` | Writing for or building for a kind of investor: their problem in their words, the proof. |
 | `docs/ongoing/BRAND.md` | Writing any copy: the readout, the pitch, the demo, posts. |
 | `docs/ongoing/ARCHITECTURE.md` | Touching code structure, module boundaries, data sources, environment variables. |
