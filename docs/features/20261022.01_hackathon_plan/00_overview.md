@@ -5,7 +5,7 @@ Everything the factory built today for Deal Flow, NYC's first VC hackathon (Beta
 ## What I need from you
 
 <div class="facts">
-<div><dt>Decide</dt><dd>Fourteen cards in section 3, each with a recommendation. The three the critics are still weighing are marked.</dd></div>
+<div><dt>Decide</dt><dd>Eighteen cards in section 3, each with a recommendation, the critics' three settled and three more added from their findings.</dd></div>
 <div><dt>Do this week</dt><dd>Seven rows on <a href="../../BULLETIN.md">the board</a>: interviews, the founder brief in your words, the pitch video, the keys, who joined, the organisers' questions, the Reddit pages.</dd></div>
 <div><dt>Read first</dt><dd>The <a href="founder_brief.md">one-page founder brief</a>. It is what you hand the judges, and the organisers asked every team for it.</dd></div>
 </div>
@@ -88,15 +88,87 @@ The feasibility research ranked the scans by demo value for the effort. The road
 
 ### The demo opening
 
-<div class="panel panel--purple"><p><b>The demo critic is weighing this now.</b> The roadmap recommends opening on a forwarded pitch email with the readout already waiting (your "before you even ask" moment), then loading the full room. On stage you say the forward is started by hand today, because the forwarding address is an after-Saturday slice. The other form opens on the upload and shows nothing that is not built. Buttons appear when the critic's verdict is in.</p></div>
+The roadmap proposed opening on a forwarded pitch email with the readout already waiting. The demo critic says no: the first 20 seconds would go on the one thing on screen that is not real, plus a sentence admitting it ([critique_demo.md](critique_demo.md), finding 2). The judge agrees that what wins is the thing seen working.
+
+<div class="options">
+<div class="option"><span class="badge badge--purple">Recommended</span><h4>Open on the readout, already waiting</h4><p>First screen: the four ARR numbers in a ladder (about $3.0M said on video, $2.5M in the deck, $2.24M in the model, $2.06M in the billing rows), each with its source chip. True, because the run finished before you walked up. The inbound forward becomes the closing "next" line.</p></div>
+<div class="option"><p class="eyebrow">Option B</p><h4>Open on the forwarded email</h4><p>Your "before you even ask" moment on screen first. Started by hand today, and you say so.</p></div>
+<div class="option"><p class="eyebrow">Option C</p><h4>Build the real forward on Saturday</h4><p>A small inbox-polling script needs no OAuth review. Only if the red-flag engine and the readout are done at the 2:30 cut call.</p></div>
+</div>
+
+<div class="choice" data-choice="demo-opening">
+<p class="choice-q">What is on screen first?</p>
+<button type="button" value="readout-first" data-recommended>The readout, ARR ladder first</button>
+<button type="button" value="email-first">The forwarded email</button>
+<button type="button" value="build-forward-saturday">Build the real forward if time allows</button>
+</div>
+
+### The blind room
+
+The judge's strongest finding: the team wrote the room, planted the flags, wrote the answer key, then wrote one check per flag. A perfect score on your own exam proves nothing to a partner ([critique_judge.md](critique_judge.md), finding 1). The demo critic adds that a clean room that comes back clean is the strongest ten seconds against "rigged".
+
+<div class="options">
+<div class="option"><span class="badge badge--purple">Recommended</span><h4>A sealed variant room, plus a plants-off run</h4><p>The generator gets a plants-off switch and a second seed. This week, someone outside the build (a teammate who is not writing the engine, or a friend) picks which flags the variant room carries and seals the key. On stage: the readout runs on the variant room, then on the clean room, and the real numbers are read out.</p></div>
+<div class="option"><p class="eyebrow">Option B</p><h4>A judge edits one number live</h4><p>Hand a judge the model, let them change a cell, run again. Strongest proof, and a live model-free script check can do it. Riskier on stage.</p></div>
+<div class="option"><p class="eyebrow">Option C</p><h4>Our room only</h4><p>Show the score as a test with the real number, even if it is 7 of 8. No extra work this week.</p></div>
+</div>
+
+<div class="choice" data-choice="blind-room">
+<p class="choice-q">How do we prove the checks are not fitted to the key?</p>
+<button type="button" value="variant-plus-clean" data-recommended>Sealed variant room and a plants-off run</button>
+<button type="button" value="judge-edits-live">A judge edits a number live</button>
+<button type="button" value="our-room-only">Our room only</button>
+</div>
 
 ### The score on stage
 
-<div class="panel panel--purple"><p><b>The demo critic is weighing this now.</b> The product brief recommends showing the answer-key score (planted flags found out of eight, decoys wrongly flagged out of three) at the end of the demo. The risk is that it tells judges the room was built to be caught. Buttons appear when the critic's verdict is in.</p></div>
+<div class="choice" data-choice="score-on-stage">
+<p class="choice-q">Show the answer-key score at the end?</p>
+<button type="button" value="one-line-real-number" data-recommended>One line, the real number, as a test</button>
+<button type="button" value="readout-only">Show the readout only</button>
+</div>
+
+### Market signals and comps on screen
+
+The judge found only one of Track 2's three asks (red flags) would be on screen, while the founder brief claims no tool shows signals, comps and red flags together, and signals and comps are the first cut ([critique_judge.md](critique_judge.md), finding 2). The buildability critic found the demo company has no outside footprint and Akta's free plan refuses the useful signals, so live market signals cannot show much ([critique_buildability.md](critique_buildability.md), finding 9).
+
+<div class="options">
+<div class="option"><span class="badge badge--purple">Recommended</span><h4>Comps live from cached data; signals as a static cached panel</h4><p>Comps stays a Saturday slice, ranked by script from this week's cached filings. Market signals becomes a panel of this week's saved competitor readings, built in minutes, so all three asks are on screen and the backend hours go to the readers and the video.</p></div>
+<div class="option"><p class="eyebrow">Option B</p><h4>Keep both as live slices</h4><p>The roadmap as written. First to be cut when the morning runs long.</p></div>
+<div class="option"><p class="eyebrow">Option C</p><h4>Red flags only</h4><p>The sharpest demo, and one of three asks.</p></div>
+</div>
+
+<div class="choice" data-choice="signals-comps">
+<p class="choice-q">How do comps and signals appear on Saturday?</p>
+<button type="button" value="comps-live-signals-static" data-recommended>Comps live, signals static</button>
+<button type="button" value="both-live">Both live slices</button>
+<button type="button" value="red-flags-only">Red flags only</button>
+</div>
+
+### Saturday's red-flag engine: scripts only
+
+The buildability critic: the junior finance person has 3 hours for 7 checks plus a model call nobody else owns, so this slice breaks first. Every planted flag already has a script check; the deck's claims page parses by regex ([critique_buildability.md](critique_buildability.md), finding 2).
+
+<div class="choice" data-choice="engine-scripts-only">
+<p class="choice-q">Is Saturday's red-flag engine scripts only, with model readings moved to backend-and-data or after Saturday?</p>
+<button type="button" value="scripts-only" data-recommended>Scripts only on Saturday</button>
+<button type="button" value="scripts-plus-model">Scripts plus the model readings</button>
+</div>
 
 ### The repo skeleton this week
 
-<div class="panel panel--purple"><p><b>The buildability critic is weighing this now.</b> Option A: the skeleton is code, build it on Saturday in the first half hour (the roadmap is written to this). Option B: an agent writes the empty folders, the CI command and the Claim schema this week, with no scan logic, and two people get half an hour back on Saturday; the risk is that commits dated before Saturday are visible to anyone who looks. Buttons appear when the critic's verdict is in.</p></div>
+The buildability critic recommends option B: every role is budgeted to the minute, option A spends the first half hour of two people and puts the team behind the 11:00 freeze, and example files cannot be checked against a schema that does not exist ([critique_buildability.md](critique_buildability.md), finding 7). Its condition: ask the organisers first and tell the judges plainly.
+
+<div class="options">
+<div class="option"><span class="badge badge--purple">Recommended</span><h4>B. An agent writes the empty skeleton this week</h4><p>Folders, packages, the CI commands, `.env.example`, the Claim schema and the shared file readers, with no scan logic. Two people get half an hour back. You ask the organisers at the mixer and say so to the judges.</p></div>
+<div class="option"><p class="eyebrow">Option A</p><h4>A. The skeleton is code, build it Saturday</h4><p>The roadmap as first written. To a judge who asks what was built today, the answer is every line. Cut market signals at 10:20 to pay for it.</p></div>
+</div>
+
+<div class="choice" data-choice="skeleton">
+<p class="choice-q">Who writes the skeleton?</p>
+<button type="button" value="agent-this-week" data-recommended>B. An agent, this week</button>
+<button type="button" value="team-saturday">A. The team, Saturday</button>
+</div>
 
 ### The demo company
 
@@ -222,7 +294,17 @@ Cut order when the morning runs long: market signals, then comps, then the pitch
 
 ## What the critics said
 
-<div class="panel"><p><b>Pending.</b> The judge, the buildability critic and the demo critic are reading now. Their findings and the three cards they settle land here.</p></div>
+Three critics read everything with fresh eyes. Their full files: [the judge](critique_judge.md), [buildability](critique_buildability.md), [the demo](critique_demo.md). The cards above already carry their recommendations. What each said in one line, and the must-fix findings being applied now:
+
+<div class="cards">
+<div class="card"><h4>The judge</h4><p>Shortlisted, not yet the winner. The one change: run it on a room it has never seen. Also: only one of the three asks on screen, and no buyer has spoken yet because the interviews have not happened.</p></div>
+<div class="card"><h4>Buildability</h4><p>Builds by 3:30 only with changes, because every role is budgeted to its last minute. Make the engine scripts only, give the shared file readers one owner, write the skeleton this week, cut live signals before 10:30. The score would have read 2 of 8 because six check names disagreed; being fixed.</p></div>
+<div class="card"><h4>The demo</h4><p>Lands if it opens on the four ARR numbers and runs on the full room. The slot is likely three minutes, not five. The room's cash does not add up ($2.9M of losses unexplained against $2M raised), two customer ids and the "Claims page" look built to be caught, two decoys catch nothing, and the numbers are too tidy. All being fixed in the generator.</p></div>
+</div>
+
+**Being applied now, no decision needed:** the check names unified to one set; the stale paths in the architecture and roadmap corrected; the Claim schema made one source; the cash reconciled in the generator; ordinary customer ids; slide 14 retitled "Appendix: key metrics"; two decoys given teeth; seeded noise on costs and salaries; the cover note's "after a term sheet" changed to "after a first meeting"; the demo script cut to a three-minute core with a five-minute extension and the beat sheet from the demo critique; source clicks rendered in-page instead of launching Excel; the pitch to judges trimmed to fit; the video re-planned as an off-stage voiceover with a captioned clip; the slot-length question added to your organisers row.
+
+**The question the judge says the plan cannot answer** is in [critique_judge.md](critique_judge.md), last section. Read it before Saturday.
 
 ## Your rows on the board
 
