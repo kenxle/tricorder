@@ -1,0 +1,378 @@
+39 hits
+=== 8828521 | devonkim | 2015-01-02 | https://news.ycombinator.com/item?id=8828521 | src=hn_affinity_crm_vc_comment.json
+TITLE: Why Deleting Sensitive Information from GitHub Doesn't Save You
+URL: 
+Funny, we just had this just hit the front page against environment variables for secrets. https://news.ycombinator.com/item?id=8826024
+It's not clear from the doc you linked that you would support AWS STS, which is probably the right way to approach minimal privilege and to reduce the time window that an attacker would have the privileges of the entity compromised. Wish I had a way to calculate that out from the tools I had which helps drastically during an investigation to sift through network logs.
+What you seem to have built so far is what could be used to build a more modern shared secret access stack rather than being a full solution itself. Most companies that want to pay for something want to have something that will rotate out keys & passwords or enforce secrets policies like separation of keys across different nodes in your high availability solution for them (eg. the DB, root, and LDAP cached passwords should not be stored on the same data node even in encrypted form). Otherwise, a lot of companies have built equivalent solutions like Conjur already (to varying degrees of success depending upon how dysfunctional their IT already is). A lot of the custom solutions I'm familiar with in Defense / IC space are starting to use Apache Accumulo to enforce a great deal of sharing an
+
+=== 6202816 | ganeumann | 2013-08-12 | https://news.ycombinator.com/item?id=6202816 | src=hn_angel_investor_diligence_comment.json
+TITLE: Investor Herd Dynamics
+URL: 
+Sigh. I do this all the time as an early-stage investor. But I don't do it to game the valuation, I do it so we can share the task of due diligence. Maybe I understand the market/customer and the other VC knows the founders, or vice-versa. It's nothing sinister, it's just a more efficient way to get the information I need quickly and cheaply.
+There is a lot more than gut judgement involved in deciding to give somebody I just recently met a large sum of my money. I don't let other VCs dilute my judgement but I certainly listen to them when they have more knowledge of the relevant facts about a company, its people, its product, or its market.
+Note that I'm an angel investor, so I try to make sure the cost of due diligence is proportional to the amount I'm investing. If I were a fund and writing million dollar checks, I would spend the time to do all the due diligence myself.
+
+
+=== 30130146 | jedberg | 2022-01-29 | https://news.ycombinator.com/item?id=30130146 | src=hn_angel_investor_diligence_comment.json
+TITLE: “Y Combinator is not worth it”
+URL: 
+I'm a small time angel investor (I write 8-10 $100K checks a year), so YC is really important to me.  Almost all my checks are in YC companies.  I don't have the time nor skills to do proper due diligence, but with YC I don't have to.  Investing in a YC company provides me with already vetted founders who I know will have an incredible support network and are already well connected.  Yes, I give up some upside because of how much YC already owns, but to me it's worth every penny for the service that YC provides to me as an investor and to the startup.
+That's the investor side of the equation, which if you believe this thread is his main complaint -- that it's too investor friendly.
+But I also get to see the founder side of the equation.  Since I'm writing such small checks, a lot of my value to the company is offering help at the early stage, often with architecture review or product reviews, and sometimes even interviewing engineering candidates for them.  Because of the close relationship, sometimes I end up becoming friends with the founders I invest in.  Which lets me see how YC helps them as founders.
+Need help connecting with someone at company X?  There's almost always another YC founder who can make the intro.  Need more money?  YC has got VCs on speed dial for you.  Need media coverage?  There are j
+
+=== 27368570 | jaxomlotus | 2021-06-02 | https://news.ycombinator.com/item?id=27368570 | src=hn_angel_investor_diligence_comment.json
+TITLE: Show HN: Burner Page – Validate ideas with burner pages before you code
+URL: 
+Hi HN! I'm Avi, and I'm excited to show you a new platform I'm launching called BurnerPage, which lets you create burner pages to rapidly validate ideas before building them.
+My goal is to let people build these pages in under 60 seconds, as I demonstrate in this video: https://www.youtube-nocookie.com/embed/r_QHvDCsb4U
+Why it matters
+I think there is a good segment of entrepreneurs and product managers who don't do proper validation before running with an idea and investing their time, energy and resources in it. This is wildly risky. I can tell you from experience that if you are not using burner pages or some other form of upfront validation, you are probably not as successful as you could have been, likely by orders of magnitude.
+The entire point of the app is speed and efficiency through intentional design of a single type of workflow. Instead of needing to separately learn and piece together a webpage builder, a survey builder, an analytics tool and reporting functionality, and an ad campaign manager,  everything takes place in one single workflow designed for this experience.
+With no code experience you should be able to:
+1. Build a responsive page in under 60 seconds, with a survey and performance metrics already built in. In short, see if your target audie
+
+=== 20923273 | FesterCluck | 2019-09-09 | https://news.ycombinator.com/item?id=20923273 | src=hn_angel_investor_diligence_comment.json
+TITLE: Jeffrey Epstein used MIT to launder his image
+URL: 
+Epstein was a horrific person.
+Joi Ito and MIT accepted donations from a wealthy donor. So what? They logged them as anonymous. They had no part in advertising any good will gained by Epstein. Epstein also helped broker other donations. This is a good move for any institution. I've yet to see any evidence of Epstein exerting control over the curriculum or management of MIT.
+If Epstein was able to drum up press from his donations, where was the due diligence of those that reported on him? Why not bring up the accusations then?
+The idea that no one had any idea about this until the court records were unsealed is utter nonsense, as is this attack on Ito. Before being at MIT he was an angel investor known for finding unlikely funding sources. He continued that tradition at MIT.
+
+
+=== 19218335 | nyrulez | 2019-02-21 | https://news.ycombinator.com/item?id=19218335 | src=hn_angel_investor_diligence_comment.json
+TITLE: Elizabeth Holmes' Final Months at Theranos
+URL: 
+This entire story makes me much more curious about the enablers of this kind of behavior i.e. the investors and not Holmes herself. Are the big investors really that incomplete or "naive" in their diligence if pumping a big sum like $50M or more ?
+If I was in that situation (i.e I was a VC), I would at least ask for a working demo of their tech (where I was present to see it go through even if that took an entire day) along with corroboration of their results with conventional tech before I decide to give them a dime. I mean I did this even when I invested just $15K as an angel investor in a company long time ago.
+This seems obvious to me - why isn't this a thing for big name investors?
+
+
+=== 1003033 | ScottWhigham | 2009-12-18 | https://news.ycombinator.com/item?id=1003033 | src=hn_angel_investor_diligence_comment.json
+TITLE: Ask HN: A competitor is part of the angel group I want to pitch to
+URL: 
+There is no way that I would pitch to them. I wouldn't even pitch to any of the members individually because your pitch will likely get back to the competitor. And I'd be especially wary of getting a lot of interest, then going down the path of due diligence, only to get rejected later (while all of your IP and mojo got passed on to the angel).
+Does it sound like I'm paranoid? Sure, but I don't think that doing my competitor's work for them is a good strategy. I've been around long enough to know that angels share with one another; there just isn't enough deal flow anywhere in the world that one or two angel investors can find and develop on their own. As an angel, you need to develop a lot of contacts and to do that, that means sharing deal flow and helping out friends whenever possible. Be careful.
+
+
+=== 16425967 | lpolovets | 2018-02-21 | https://news.ycombinator.com/item?id=16425967 | src=hn_angel_investor_diligence_comment.json
+TITLE: How Justin Kan fundraises
+URL: 
+First, thanks for the thoughtful reply. Second, I agree that sometimes VCs aren't that interested but still waste a founder's time. That really sucks. I also agree with you that I have much more data on founder behavior vs. investor behavior because I rarely work with other investors directly. Inversely, founders often have a better view of investor behavior.
+Where my opinions differ:
+> Asking questions in a meeting is one thing, but following up in an e-mail with an itemized list of; "how do you think about [x], what about [y] competitor, have you thought about [z]" is a surefire indicator that an investor's not willing to move right now
+That's not true in my case, and also not true for many funds I sometimes share notes with (w/the founder's permission). I often see Q&A email exchanges that either the founder or an investor in a startup forwards to me. So I can see firsthand that other investors are asking email questions (and then making investments), too.
+Furthermore, how much follow-up there is depends on check size. If someone is investing $15k or $50k as an angel, they might make a decision after a single meeting because that meeting is often their sole shot to meaningfully interact with a founder. But if a fund is writing a $400k or $1m check, more diligence will be required. My fund can't write a $1m c
+
+=== 7206020 | throwaway985023 | 2014-02-09 | https://news.ycombinator.com/item?id=7206020 | src=hn_angel_investor_diligence_comment.json
+TITLE: The importance of co-founder due diligence
+URL: 
+I'm working for a startup where the primary founder did not perform enough due diligence on his co-founder and the results have been disastrous.
+The co-founder constantly brags about his employment history at major tech companies in the area. Only later did we all learn that: 1) His roles weren't as important or high-ranking as he claims and 2) He was fired for non-performance from his last two positions. Both of those points are becoming big thorns in our fundraising as investors want to speak with both founders' former bosses.
+This co-founder did work hard for a brief period when the company was started and managed to produce some good initial funding. But when the funding hit our bank, he became a victim of his own success and spent more time empire building than working on the company. Within months of our initial funding he was already working his way into adviser positions with local startups and spending our marketing budget on having a PR firm get puff-piece articles about him into major publications. I think he's spent less than a thousand dollars on customer acquisition and advertising for our product.
+He rarely comes in to the office any more, and when he does he can often be found watching ESPN or Hulu in the conference room. He some times doesn't even bother to stop watching hi
+
+=== 47321613 | vintagedave | 2026-03-10 | https://news.ycombinator.com/item?id=47321613 | src=hn_arr_not_recurring_comment.json
+TITLE: AI C-Suite – Chat with a fictional leadership team (1-on-1 or group chat)
+URL: 
+This is specifically AIs modeling the 99 Helpers C-level team? I was interested in a fictional chat representing 'a' C-level suite, to ask questions about any company or approach.
+That said, I selected all of your characters and asked:
+> Ok, you're looking for investment. Why, and what questions that I have can you answer right now?
+Hoping for something solid. My prompt may not have been strong enough, but if I was an investor I'd be asking, say, revenue stats or questions leading to diligence answers, etc.
+What I expected was some kind of group chat in terms of some people replying, not everyone, or one person and then another riffing off them, rather like you would in a meeting.
+What I got was eight separate replies, ie everyone replied. All were long, three lengthy paragraphs at least each -- this was far too much to read as a group chat. I skimread it all. All inhabited their persona well. None of them were particularly detailed. One of the best was Marcus, who replied (among lots of other text):
+> I can also elaborate on our current MRR and ARR, our churn rates, and our burn rate and runway.
+So I moved to a 1:1 chat, quoted him, and asked for info. Again a verbose reply but it included:
+> Our current Monthly Recurring Revenue (MRR) stands at $85,000, which transla
+
+=== 8546724 | uchooseyourself | 2014-11-02 | https://news.ycombinator.com/item?id=8546724 | src=hn_arr_not_recurring_comment.json
+TITLE: [dead]
+URL: 
+My reasoning was "what if an HN reader is trying to rent their apartment in Paris". The probability is so low, but for problems that are not usually recurring, you can find help in the most unexpected places.
+PS: I am not relying on HN for this, I am using other rent specialised services as well. This was just a message sent out in the universe, if caught by the right eye I'll go from 0 to 1, otherwise, I am staying in 0, not going to -1.
+Thanks!
+
+
+=== 5376620 | JOnAgain | 2013-03-14 | https://news.ycombinator.com/item?id=5376620 | src=hn_as_an_angel_i_diligence_comment.json
+TITLE: The Handshake Deal Protocol
+URL: 
+>> Finally, it isn't possible to add conditions to a handshake deal. For example, there is no way for an investor to use this protocol to offer, as some investors try to do, to invest if other people will—e.g. to say that they'll invest as part of a larger round if you can find a lead.
+I disagree with this statement -- specifically about having a lead. As an angel, I would use this condition because I wouldn't invest without a lead institutional investor. What they bring to the table is:
+a) diligence during the investment period
+b) lawyers that know what they're doing
+c) taking a seat on the board
+I feel these add material value to a deal (when it's the right lead, there can be bad ones). I hope I'm adding value, both with money and with advice / monitorship / whatever, but I'm not going to in a positon to look after legal, finance, or accounting issues, I'm probably not going to insist on auditing books, I am probably not interested in a board seat, etc. etc.
+There are definitely angels and institutions who invest largely on social proof. But there are real reasons to want a "real lead". I will probably never invest in a party round unless it's really a friends and family round.
+I will say "$X with $Y cap, but only with a lead". As a "small time" investor, I am not willing to set or negotiate the valuation. I am
+
+=== 15915320 | rficcaglia | 2017-12-13 | https://news.ycombinator.com/item?id=15915320 | src=hn_as_an_angel_i_diligence_comment.json
+TITLE: SEC Shuts Down Munchee ICO
+URL: 
+Allow me to clarify. I 100% agree with requiring accredited investors for ICO participation (or IPO or CryptoKitty speculation, etc). My blue collar parents could hardly be expected to spend the full time effort required to do due diligence on an ICO while they were working 2 jobs to make ends meet. In fact they did quite well investing in mutual funds and receiving a pension from a stable employer.
+As an aside, I disagree that the current accreditation is a good measure of being "qualified" - anyone who inherited $1M can be accredited - but it's what we got; at least one bad investment decision won't bankrupt a foolish heir.
+Investing in an ICO has essentially the same risks as investing as an angel or VC.  I have both invested and received investment and the due diligence process varies greatly from firm to firm, angel to angel. The good ones make good decisions, largely based on lots of hard work.  Anyone interested in investing in an ICO could do the same. I have looked at many ICOs and have probably spent over 100 hours of hard work doing due diligence on the few ICOs that looked legit. I pulled the trigger on one, and passed on many more.
+To me what ICOs represent are a fundamental shift in the marketplace from a closed door, network based, "clubby" process to a transparent, data rich, open process.  Not
+
+=== 43880555 | alexeichemenda | 2025-05-03 | https://news.ycombinator.com/item?id=43880555 | src=hn_as_an_angel_i_diligence_comment.json
+TITLE: Why I stopped angel investing after 15 years, and what I'm doing instead
+URL: 
+>Best approach would be to make very few investments
+Top VCs—who see the best deals and run deep diligence—still only have a 1–5% hit rate. As an angel, you don’t have that level of access or time. Even if you get strong referrals, you’d need to be 10–15x better than elite VCs to pick winners in a small portfolio. Unless you’re investing in at least 10 companies, it’s statistically a losing game.
+My experience: I invested in ~200 companies early stage (with some winners like HuggingFace, Checkr & more).
+
+
+=== 1867232 | chipsy | 2010-11-04 | https://news.ycombinator.com/item?id=1867232 | src=hn_as_an_angel_i_diligence_comment.json
+TITLE: From Employee To Entrepreneur or Investor?
+URL: 
+It's (mostly) a tradeoff of time, investment size, and risk/type of risk. Your investment strategy also determines your lifestyle to some extent. If you're completely hands-off with your money, you may get bored very quickly.
+If you're very distant from a company(e.g. a publicly traded stock) you are only required to put money in a portfolio and start clicking "buy" and "sell." All time apart from that is in the research and due diligence that will make buy/sell actions profitable. This is simple enough if you're working with a portfolio of large-cap, heavily traded companies.
+But if you try to achieve a return similar to an early-stage startup on the markets, you generally have to look at tiny companies with low information and regulatory scrutiny; and the market for a penny stock is rarely fair and orderly, it's more likely to become an explosive, melodramatic war involving some combination of institutional manipulators(hedge funds and colluding market-makers), a corrupt company CEO, paid promoters and bashers on message boards, and stock flippers that rush in trying for the quick money. i.e. it's great if you enjoy  theatrics with your gambling, or wish to learn the feeling of being a bag-holder.
+(I excluded day-trading from this analysis; it's both so difficult to learn that most people dismiss i
+
+=== 14557202 | andreshb | 2017-06-15 | https://news.ycombinator.com/item?id=14557202 | src=hn_as_an_angel_i_diligence_comment.json
+TITLE: Ask HN: My company has been acquired and I'm kicked out. What should I do now?
+URL: 
+You made money to live for a year, that's great!
+Things you can do for 6-9 months (save at least 3 months as emergency fund) before you decide your next step and could possibly lead to either a new startup or new job:
+- Entrepreneur in Residence or Mentor to an accelerator (not sure where you are)
+- Mentor or Advisor to local seed stage startups
+- Advisor to local angel group or fund to help in technical due diligence and general advise
+- All of the above but in different countries (Happy to help in Latin America)
+Your experience can help founders tremendously, as a former serial entrepreneur and an investor now I find that my experience in what NOT to do is very valuable to founders. In the process you might find a company you can join or your next idea, or perhaps find the investment side of things interesting and start a career there.
+Here are some options that your experience brings:
+- VP of Product / Product Manager at post-A companies: A PM is like a running a mini company, they need to know marketing, engineering, product and a bit of finance to make a product team work well.
+- Founder Again: You have more money left than what most founders start out with, as an investor I like backing founders with failures in the past.
+- Venture Partner / EIR: Dependin
+
+=== 28497843 | AndrewKemendo | 2021-09-12 | https://news.ycombinator.com/item?id=28497843 | src=hn_as_an_angel_i_diligence_comment.json
+TITLE: The Changing Venture Landscape
+URL: 
+I really like Mark and think he does a service to the community with these posts.
+I recently did a Due Diligence call on a company that was trying to raise a $1M pre-seed round, and had previously taken 250k with basically nothing to show for it. I thought this was silly, for both the amount and the name (esp for first time founders).
+Apparently though according to this, a "pre-seed" at $1-3M is actually a thing. This seems insane to me because at least from when I started being involved in startups around 2011, traction was king before you found a cent outside of friends and family or Angels if you were well connected, or had a previous exit.
+This whole post though does reflect what we are seeing as a venture fund (I'm an LP in a tiny fund) with people asking for a LOT of money for basically no market proof and there being no real way to win if you're investing at the $3-10M level. I think that is kind of crazy to be honest but I assume if I were raising money again I might be tempted to do that.
+I think what is different in my mind from 2011 is that there used to be hope that someone could unseat Google, MSFT, Amazon, WalMart etc... the same way Apple, Amazon and Google did to IBM, DEC and Sun. I don't think anyone truly believes there's a startup that is hatching today that will unseat Amazon in the 
+
+=== 2592561 | ChuckMcM | 2011-05-27 | https://news.ycombinator.com/item?id=2592561 | src=hn_as_an_angel_i_diligence_comment.json
+TITLE: Why should anyone ever use a Google API again?
+URL: 
+I think you can state this in a different way, "Why would I invest in a company which will be killed by Google changing its mind about an API?" I imagine (but it's pure speculation) that folks like YC, other Angels, or early stage VC's should as their due diligence point out this risk and without a reasonable mitigation option pass on funding.
+This would 'self correct' folks who weren't doing the extra work.
+However for things where there isn't really a credible way to come up with an alternative you are kind of screwed. But then it would become a Google problem if they didn't get API adoption without offering some sort of indemnification in the event they need to take it back.
+I presume the 'translation abuse' is people using it to send spam in 141 different languages.
+
+
+=== 33581311 | lordnacho | 2022-11-13 | https://news.ycombinator.com/item?id=33581311 | src=hn_bank_statements_diligence_investors_comment.json
+TITLE: FTX balance sheet, revealed
+URL: 
+I worked for a fund that lost a lot of money once. It was all legit, nothing shady, just dumb investments gone wrong.
+We phoned one of these well known investors to tell them what had happened. By that of course I mean the person in charge of the little piece of the massive fund that was allocated to us.
+On the call the guy goes "when I tell my boss in 5 minutes, I'm going to get fired for investing in you". He wasn't wrong.
+The thing that shocks me is the due diligence. There's a heck of a lot of things you have to do to get Ontario to invest in your fund. All sorts of documents, double signature statements from banks, meetings where you wear a suit. We'd have lost the investments if we were playing video games, there's no doubt about that. Maybe culture changed but it seems really odd, because part of due diligence is qualitative: does this team seem like serious people?
+
+
+=== 25988567 | 1experience | 2021-02-01 | https://news.ycombinator.com/item?id=25988567 | src=hn_bank_statements_diligence_investors_comment.json
+TITLE: A Short Seller’s Warning Helped to Expose Luckin Coffee's Accounting Fraud
+URL: 
+//Coffee’s for Closers: How a Short Seller’s Warning Helped Take Down Luckin Coffee
+‘A new generation of Chinese Fraud 2.0 has emerged,’ the report said In January, days after the shares of Luckin Coffee Inc. hit a record high on the Nasdaq Stock Market, giving the company a $12 billion valuation, a cryptic email arrived in the inboxes of multiple short sellers.
+“A new generation of Chinese Fraud 2.0 has emerged,” it said. “Companies that start off as fundamentally and structurally flawed business model [sic] that evolves into fraud.” The author offered to share customer receipts and videos from Luckin Coffee outlets, attached a long report about the company and said the short sellers could publish and take credit for it.
+Several American money managers reviewed the report, which accused Luckin of inflating its sales. Carson Block of Muddy Waters LLC published it, posting the 89-page report on Twitter on Jan. 31.
+Luckin’s auditor subsequently discovered that several employees had faked revenue and expenses and on April 2, the company disclosed that as much as $310 million of its 2019 sales was fabricated. Its shares collapsed, less than 11 months after the company went public, and will soon be delisted.
+The stunning fall of Luckin, an upstart rival t
+
+=== 25085660 | JMTQp8lwXL | 2020-11-13 | https://news.ycombinator.com/item?id=25085660 | src=hn_cohort_churn_investor_comment.json
+TITLE: DoorDash S-1
+URL: 
+As an investor, I worry about churn. Year 2...N customers are more profitable. Great. But what happens when <New Startup X> throws billions into blitzscaling their new delivery app? There goes your most profitable cohort, to the next (temporarily cheaper) delivery platform. And food delivery apps aren't a classically 'sticky' business: it's centered on ephemeral transactions.
+
+
+=== 29389031 | temp7536 | 2021-11-30 | https://news.ycombinator.com/item?id=29389031 | src=hn_data_room_diligence_comment.json
+TITLE: Accepted and ghosted: interviewing for a leadership position at Stripe
+URL: 
+I'm sorry but no. Patrick, we met with you once, Gaybrick and Claire multiple times and opened up a data room to you all. I then emailed you (and the others) three followups over a couple weeks only to see them opened but never replied. Your team then sent targeted cold emails to multiple people on our team. I've validated this experience with multiple founders.
+You also had Moritz and Sequoia renege on Finix's term sheet after they already had it signed and wired (I guess props to Sequoia for branding it as "giving it away")[1]. You've also had your team get diligence materials from Sequoia and nuke deals.
+You've clearly crushed it in the business and developer brand space, hats off to you. You want feedback - I (and the broader founder community) just wish you stop the dance of pretending and just admit you all are sharks, and it works for you! Just own it.
+But I will admit, the HN comment was a bit trolly and written in frustration. But you have to admit - you are documented as proofreading every one of PGs posts, are a huge LP in YC and are friends with a lot of people there. You can't believe that the conspiracy theories are purely in "bad faith"....
+And yes - this is out of place in HN comments, I'm sorry. But sadly there aren't very many other options.
+[1] - https:/
+
+=== 21665737 | throwawaybeebs | 2019-11-29 | https://news.ycombinator.com/item?id=21665737 | src=hn_data_room_diligence_comment.json
+TITLE: Ask HN: Burning Out
+URL: 
+I'm recovering from a severe burnout that sounds similar.
+I started at a small company about three years ago. I had about 17-18 years of experience and had spent the prior five years working as a freelance consultant/engineer helping big companies build private and public clouds using open source stacks. The entire team was comprised of developers with much less experience, mostly fresh grads/bootcampers/web developers who'd worked on small projects, and the CTO had no technical expertise. I became interested in staying after working with them for a few months because they had big, multinational conglomerates as customers for some reason and I thought I saw some potential. So I buckled down, found the right project to introduce a solid REST API built on simple, boring technology that was easy to maintain. I became the engineering manager out of necessity: the CTO had no experience writing, maintaining, operating software and no clue with what it took to hire, mentor, and train developers. It became my passion project: could I build up a team to meet the challenge?
+I think I mostly did do that. The platform I had built for that initial project now powers everything. It took a lot of convincing to get the development team on board with building a REST API to begin with but once our customers started asking us to integr
+
+=== 41960615 | trod123 | 2024-10-27 | https://news.ycombinator.com/item?id=41960615 | src=hn_data_room_first_thing_comment.json
+TITLE: Canvas Fingerprinting
+URL: 
+It uniquely identifies you out of all the people on the planet, and through that identification it allows correlation of a number of highly personal and related information points including related persons, roommates, their information, etc.
+By linking information together it gets increasingly more unique. They don't need to know your name it uses a building a bridge strategy where related data gets backfilled, and devices, and dossiers get re-targeted based to new devices on the fly based on these unique signatures, proximity, and too many other ways to count.
+Some SMART street lights for example record and send back voice data to Qualcomm for processing. The advertised signature matching for this is shot-spotter, but it can be done for any audio signature server side or pushed out to the nodes in the dumb remote sensor networks for potential realtime tracking (1984). Every Tesla that catches you while you are out in public registers you in its data which is sent to a centralized system capable of tracking your every move over time, just like ALPR cameras. Roving sensor networks track everything you do, everywhere you go, what your interests are, your history...
+This can include your related and semi-related device nodes, and equipment, phone, car, anything with a microprocessor and a connected network.
+Your devices ov
+
+=== 16426678 | lpolovets | 2018-02-21 | https://news.ycombinator.com/item?id=16426678 | src=hn_diligence_associate_comment.json
+TITLE: How Justin Kan fundraises
+URL: 
+> Sure: but let's dig in. I'm interested. Out of those 65 investments, how many did you explicitly lead?
+Our first fund wrote $200k-$300k checks and made 40+ investments. Those checks were small parts of seed rounds, and we only led about 10% of the time.
+The current fund writes ~$750k checks and has done 20+ investments, and we've led (or co-led) about 50% of the time.
+> (1) What's a meeting to you? Keep in mind that your Principals and / or Associates conducting meetings and diligence should not qualify as meetings.
+They count for my fund :). Generally we do 2 smaller meetings (maybe associate the first time and partner the second time, maybe partner the first time and partner+associate the second time, etc), then a full partnership meeting.
+The rough theme of these meetings are Get to know each other (1st meeting), Dig in more deeply (2nd meeting), and Crowdsourced Q&A (3rd meeting).
+> If it's not with a GP it's not really a fundraising meeting and no founder should reasonably consider it such.
+It's part of our process. If you don't do well with the first meeting -- regardless of whether it's with a partner, associate, or both -- the process ends. If you do well, again regardless of whom it's with, we'll ask to do a 2nd meeting where we can go deeper.
+> How many of these investments had a term sheet after only on
+
+=== 16426246 | keithwhor | 2018-02-21 | https://news.ycombinator.com/item?id=16426246 | src=hn_diligence_associate_comment.json
+TITLE: How Justin Kan fundraises
+URL: 
+> FWIW, my fund has made ~65 investments in the last 5+ years. Exactly one of those investment offers was made during the first meeting while the founder was in the room. The majority of investments took 2-4 meetings, a few email questions between meetings, and several reference calls. From what I know, most funds that write $250k+ checks work in a similar manner.
+Sure: but let's dig in. I'm interested. Out of those 65 investments, how many did you explicitly lead? Sure: the majority took 2-4 meetings. But...
+(1) What's a meeting to you? Keep in mind that your Principals and / or Associates conducting meetings and diligence should not qualify as meetings. If it's not with a GP it's not really a fundraising meeting and no founder should reasonably consider it such. Yes, I'm adding a semantic layer here, but this semantic layer is extremely important to founder psychology and how we classify meetings, fundraising success and more.
+(2) How many of these investments had a term sheet after only one meeting? Not necessarily with the founder in the room, but this is, for all intents and purposes, functionally equivalent to an investment offer made in the room?
+On top of that, is the a correlation between leading an investment round and a fewer number of meetings with a founding team before investing? My intuition based on 
+
+=== 1634989 | gyardley | 2010-08-26 | https://news.ycombinator.com/item?id=1634989 | src=hn_diligence_associate_comment.json
+TITLE: Ask HN: A VC wants to talk to us, what to expect?
+URL: 
+First, don't be nervous.  You've got some publicity, you've got paying clients, things are going well and will continue to go well if you have this call or not.
+Second, only raise money when you're ready to raise money.  I'd make it clear from the start that you're not raising at the moment so the VC doesn't interpret your conversation as a week pitch.  Tell the VC that when you're starting your fundraising process you'll naturally get in touch with them.
+Third, who's actually calling?  Is this a partner or is this an associate?  Associates are often just gathering information about areas they think might be interesting - they're just looking to get educated / educate their firm, and they figure you'll be willing to help them out for free.  Sometimes associates are doing due diligence on a potential investment by calling up competitors and seeing if they say the same things about the market.
+In general, the conversation won't be that technical.  They'll want to understand what you do at a high level, get your opinion on the size of the market you're in, figure out if you're going to need to raise, figure out how you're making money / plan to make money, etc.  Don't feel compelled to tell them anything you wouldn't be comfortable telling everybody.
+Also, it's a two-way street!  Ask them a ton of 
+
+=== 7512853 | newfund | 2014-04-02 | https://news.ycombinator.com/item?id=7512853 | src=hn_diligence_associate_comment.json
+TITLE: Ask HN: Who is hiring? (April 2014)
+URL: 
+Fast-growing group of companies / investment fund looking for analysts / associates
+Business Analyst and Associate (San Francisco Preferred) Intern (SF Preferred, Remote could be ok for the right candidate)
+We are a few entrepreneurs/investors looking for a hard-working, jack of all trades to help us scale our business operations. We have a seed-stage investment fund, a small hedge fund, and three startups (one consumer internet, one enterprise financial services, and one consumer packaged goods) - you will have the opportunity to work on all of them. Our backgrounds are varied - one former venture capitalist, one hedge fund analyst, one former consultant with a successful startup exit, one corporate / M&A lawyer, one Ph.D, and one musician/startup junkie. We all are friends and started working together in the past year - we have a lot of fun together which makes work a breeze.
+You should be results-driven and analytical, with a willingness to learn new skills: For the intern and analyst role, we need people to be sales-driven who write web content, collect customer feedback, and research markets. The associate role is for someone who can establish partnerships, help investment diligence, and get dirty building models in excel.
+Like the rest of us on the team, you should be in love with the Internet and everyt
+
+=== 7324841 | newfund | 2014-03-01 | https://news.ycombinator.com/item?id=7324841 | src=hn_diligence_associate_comment.json
+TITLE: Ask HN: Who is hiring? (March 2014)
+URL: 
+Business Analyst and Associate (San Francisco Preferred)
+Intern (SF Preferred, Remote could be ok for the right candidate)
+We are a few entrepreneurs/investors looking for a hard-working, jack of all trades to help us scale our business operations. We have a seed-stage investment fund, a small hedge fund, and three startups (one consumer internet, one enterprise financial services, and one consumer packaged goods) - you will have the opportunity to work on all of them. Our backgrounds are varied - one former venture capitalist, one hedge fund analyst, one former consultant with a successful startup exit, one lawyer, and one musician/startup junkie. We all are friends and started working together in the past year - we have a lot of fun together which makes work a breeze.
+You should be sales-oriented and results-driven, with a willingness to learn new skills: To varying degrees depending on the role, we need people to write web content, collect customer feedback, research markets, establish partnerships, help investment diligence, and get dirty building models.
+Like the rest of us on the team, you should be in love with the Internet and everything you can do with it. You should enjoy solving tricky problems and be a great communicator, in person, on the phone and in writing. We're looking for a few different rol
+
+=== 4410665 | Kell | 2012-08-21 | https://news.ycombinator.com/item?id=4410665 | src=hn_diligence_would_have_caught_comment.json
+TITLE: Legal myths about the Assange extradition
+URL: 
+Well. You actually cast some doubts on my knowledge of French procedural law... so since, France is a civil law country I went to the Code de Procédure Pénale. So small class about what happen when a Judge d'Instruction (which in France is an independent judge who is charged of preparing the case to be judged in a formal court. But only on serious crimes affairs, or when it's a complex affair. So it's like an "expert" prosecutor for serious cases which job is not to actually prosecute... but to really gather the evidence for a fair trial (he has the mission of searching evidences for and against the suspect) I will use JI to refer to this judge) want to speak to someone.
+3 cases :
+1 - The person is not seriously suspected of being the perpetrator of the crime investigated. He can be forced to present itself to the JI if the JI wants it. Then he will be considered a witness. This is Art. 101 of the CPP (Code of Penal Procedure) In the case of an external impossibility (meaning that it's not just the guy not wanting to come) the JI can actually go to the witness or hear the witness by any mean (Art. 109 CPP). So even if you are a just a witness you can be forced to come.
+2 - An assisted witness Art.113-1 CPP (that's when there is some possibility that you are going to be indicted because you are a sus
+
+=== 44930649 | chrisjin73 | 2025-08-17 | https://news.ycombinator.com/item?id=44930649 | src=hn_due_diligence_startup_investor_comment.json
+TITLE: [dead]
+URL: 
+We're excited to announce the launch of Stealth AI Startup Radar, a curated platform connecting US VCs and investors with US-ready cross-border startups in AI, Robotics, and Frontier Tech.
+*What we do:*
+- Scout and validate global AI startups that are prepared for US market entry
+- Provide curated deal flow for US investors seeking international innovation
+- Bridge the gap between promising global founders and US investment opportunities
+- Offer strategic guidance for cross-border market expansion
+*Why this matters:*
+The AI startup ecosystem is increasingly global, but many promising international companies struggle to access US capital markets due to:
+- Limited visibility among US investors
+- Cultural and regulatory barriers
+- Lack of local market knowledge
+- Complex cross-border legal frameworks
+*Our approach:*
+We've built a network of AI startup scouts across key innovation hubs (Asia-Pacific, Europe, Israel) who identify and validate companies that have:
+- Proven product-market fit in their local markets
+- Scalable technology with global potential
+- US market entry readiness
+- Strong founding teams with international experience
+*Current focus areas:*
+- AI/ML infrastructure and applications
+- Robotics and automation
+- Frontier technologies (quantum, biotech, space)
+- Enterprise AI solutions
+- AI-powered healthcare and f
+
+=== 6379145 | hncommenter13 | 2013-09-13 | https://news.ycombinator.com/item?id=6379145 | src=hn_investment_memo_comment.json
+TITLE: Pushed to the limit as a banking intern
+URL: 
+Exactly this.  I worked in investment banking in NY and SF before moving over to VC/growth equity (and now a hedge fund).
+Not only are bankers by definition terrible managers, but there's absolutely zero incentive for them to try to treat the junior people below them well.  Junior people's time is viewed as an consumable resource like an oil well or a coal seam.
+As a result, the sort of "pizza-sized team" project management that is the heartbeat of software companies is just a total unknown on the corporate finance/M&A side of investment banks.  (Less so in consulting.)
+Worse, there is no concern for what we used to call "yield loss:" slides or analyses that we'd create because a senior banker demanded them that were never presented to the client or in which they client had no interest.  Countless times I've been the creator of and recipient of extensive presentations of which maybe one slide was relevant.  I recall numerous instances of sending such books by messenger or FedEx to hotels/partners' houses, only to learn that they were never even picked up, let alone looked at.
+As a VC/private equity guy, the presentations and investment memos that were no doubt largely written between 2 and 5 AM were mostly discarded; I extracted the few numbers I needed and tossed them, as I wanted the raw data from mana
+
+=== 46014799 | kees99 | 2025-11-22 | https://news.ycombinator.com/item?id=46014799 | src=hn_investment_memo_comment.json
+TITLE: Google tells employees it must double capacity every 6 months to meet AI demand
+URL: 
+> So now I am wondering what will be available once the AI investment implodes.
+Memory/RAM. See also:
+https://news.ycombinator.com/item?id=45934619
+
+
+=== 38516163 | IuliiaShnai | 2023-12-04 | https://news.ycombinator.com/item?id=38516163 | src=hn_investment_memo_story.json
+TITLE: Show HN: AI assistant to chat with shared documents
+URL: https://www.papermark.io/ai
+We built AI assistant to chat with not just any docs, but the one shared with yu.
+Some of use cases: 
+As an investor, you can chat with pitchdecks and other documents.
+■ Turn a pitchdeck into an investment memo
+■ Find information without reading the document
+■ Summarize and analyze documents
+■ Compare different pitchdecks
+As founder, improve your pitchdeck or sales deck before sharing it
+■ Improve the content and structure
+■ Check the grammar or other errors
+■ Compare different version
+
+
+=== 9174017 | rlucas | 2015-03-09 | https://news.ycombinator.com/item?id=9174017 | src=hn_red_flag_startup_investor_comment.json
+TITLE: Ask HN: A potential investor in my startup asked me to sign an NDA. Should I?
+URL: 
+The problem here is confusing something that might be "standard fair in the business world" with something that is very much out of market in the startup investor world.
+If OP is entertaining a commercial relationship with an established, larger company -- and there might be an investment component alongside that (a "strategic" investor) -- then it generally makes sense to play normal commercial relationship rules.  And one of those is that a BigCo generally gets what it wants in terms of NDAs, within reason, before it opens up.
+But if OP's investor purports to be a "real" investor (financial and serial) then there are serious yellow/red flags.
+(A "real" investor is one who is financially motivated but also has interest in doing several deals in the community into the future -- hence, they have a reputation to protect and they will tend to hew closer to market norms.)
+From the VC perspective, if I had a good customer lead (in my portfolio or otherwise) for a new application of an unfunded startup's technology, I would unhesitatingly make the intro.  It benefits me several ways: 1. it may help the customer; 2. seeing how the customer responds is extra diligence information to help me form an investment perspective; 3. if it works out, I am viewed favorably by the s
+
+=== 10952145 | jacquesm | 2016-01-22 | https://news.ycombinator.com/item?id=10952145 | src=hn_vc_associate_diligence_comment.json
+TITLE: As Angel Investors Pull Back, Valuations Take a Hit
+URL: 
+> So due diligence is happening after they decided to invest, right?
+Yes, usually this happens after the terms sheet is signed (and for smaller investments after a letter of intent is signed or a handshake deal is agreed upon). Up to that point it is read as true that everything the founder says will check out.
+The due-diligence process is there for two reasons: to fulfill the 'duty to research' for a VC to cover their backs in case a deal goes bad after investment and LPs wonder how the hell they got suckered in like that as well as to simply protect the funds.
+For angels the situation is worse here because they don't have the funds or the organization to do this properly.
+> What about before?
+Typically a VC has a number of analyists that assess the companies that pitch them to see how solid the various commercial claims are. The accent there is usually on the numbers and the commercial side of things, which is reflected in the education of the associates (typically: finance, accounting and/or a bit of legal and commercial).
+Angels tend to do this part by themselves.
+Angels and VCs do roughly the same thing, only angels do it earlier on (when the risk is higher, companies are cheaper and the deals are much smaller so they can still participate), the biggest difference is dictated by the 
+
+=== 38902906 | callalex | 2024-01-07 | https://news.ycombinator.com/item?id=38902906 | src=hn_vc_associate_memo_comment.json
+TITLE: Show HN: I made an app that consolidated 18 apps (doc, sheet, form, site, chat…)
+URL: 
+Edit: I want to start with something nice since this discussion seems like it could be overwhelming you. Nice job on the name, it’s short, memorable, and works in many languages while not already being associated with something else.
+If I build my business on your platform but your funding dries up next year because you didn’t 10x enough times to hold gnat/VC attention what happens to all my stuff?
+
+
+=== 19317175 | jillesvangurp | 2019-03-06 | https://news.ycombinator.com/item?id=19317175 | src=hn_vc_associate_memo_comment.json
+TITLE: Ask HN: How to create a service similar to Patreon?
+URL: 
+I was pondering doing a stellar based platform for this a few weeks ago. It wouldn't be that hard to do technically but there are many legal and practical hurdles.
+Using something like stellar would sidestep some of the financial headaches around trying to do this through the existing financial system at the cost of being less user friendly. IMHO particularly recurring payments would be a big headache (like monthly donations). On the flipside, any fiat interactions, and the associated tax consequences would be offloaded to exchanges and users.
+One cool thing that you could do with stellar is use so-called federated accounts to represent content owners and users. This simply means you have a database with accounts that you map incoming payments (from stellar) to based on a memo that is attached to the transaction. So, this allows us to have lots of accounts represented by a single stellar wallet. More importantly, it allows most of the users/owners to sidestep the issue of wallet and key management until they have to care. And finally it allows us to do micro payments. Imagine distributing 5$ worth of XLM or whatever token on stellar across hundreds of content owners based on likes or preferences of the user.
+Another thing you could do is represent content owners preemptively (i.e. before 
+
+=== 50027807 | charm137 | 2026-10-09 | https://news.ycombinator.com/item?id=50027807 | src=hn_vc_associate_memo_comment.json
+TITLE: Typesafe AI raises $870M at $7.5B
+URL: 
+I see Typeface AI have 30-40 people working for them on LinkedIn (some are VC advisors / board members), a lot of them being engineers. Their openings suggest a strong developer market focus (to begin with). I don't necessarily see a lot of people at the company with enterprise sales channel  experience, but they already claim to have several Fortune 500 companies as clients (maybe the VCs are helping there or there is natural dev-driven traction).
+So they clearly have a product, a strategy around it and perhaps the compliance scaffolding (SOC2 Type II etc) that may be needed before actually being able to charge money for it. They also have the right brand names associated with the founding team. Execution, so far, seems good enough to create a splash, at least.
+As an investor, the question(s) to ask is (in my view): "How do they make money? Will that way to make money survive?". The answer to the first: selling input tokens and perhaps subscriptions/credits eventually.The answer to the second: "Yes, but with the risk of unit revenues declining faster than their unit costs". How can they mitigate this problem: by being big (scale / mindshare etc) so that their unit costs (including for customer acq) fall faster than their unit revenues will - I believe that is the question most AI companies are trying to tackle
+

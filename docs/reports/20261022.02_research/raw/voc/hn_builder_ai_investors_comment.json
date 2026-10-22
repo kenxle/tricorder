@@ -1,0 +1,862 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "pyman"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai",
+      "investors"
+     ],
+     "value": "StarCoder is an open-source LLM for code, not text. <em>Builder.ai</em> told <em>investors</em> they were building a virtual assistant called &quot;Natasha&quot;, not a code assistant.<p>I'm just telling you what I read online. <em>Builder.ai</em> wasn't competing with GitHub Copilot, Cody, or CodeWhisperer. Those are code assistants for developers. <em>Builder.ai</em> was building a virtual assistant for customers. It meant to &quot;talk&quot; to clients, gather requirements and automate parts of the build process. Very different space.<p>And like I said before, creating a dedicated, pre-trained foundation model is expensive. Not to mention a full LLM."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai"
+     ],
+     "value": "<em>Builder.ai</em> Collapses: $1.5B 'AI' Startup Exposed as 'Indians'?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.ibtimes.co.uk/builderai-collapses-15bn-ai-startup-exposed-actually-indians-pretending-bots-1734784"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_pyman",
+    "story_44169759"
+   ],
+   "author": "pyman",
+   "children": [
+    44182246
+   ],
+   "comment_text": "StarCoder is an open-source LLM for code, not text. Builder.ai told investors they were building a virtual assistant called &quot;Natasha&quot;, not a code assistant.<p>I&#x27;m just telling you what I read online. Builder.ai wasn&#x27;t competing with GitHub Copilot, Cody, or CodeWhisperer. Those are code assistants for developers. Builder.ai was building a virtual assistant for customers. It meant to &quot;talk&quot; to clients, gather requirements and automate parts of the build process. Very different space.<p>And like I said before, creating a dedicated, pre-trained foundation model is expensive. Not to mention a full LLM.",
+   "created_at": "2025-06-03T22:44:09Z",
+   "created_at_i": 1748990649,
+   "objectID": "44175572",
+   "parent_id": 44175393,
+   "story_id": 44169759,
+   "story_title": "Builder.ai Collapses: $1.5B 'AI' Startup Exposed as 'Indians'?",
+   "story_url": "https://www.ibtimes.co.uk/builderai-collapses-15bn-ai-startup-exposed-actually-indians-pretending-bots-1734784",
+   "updated_at": "2025-06-04T16:05:34Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "pyman"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai",
+      "investors"
+     ],
+     "value": "I did a bit of research\u2026<p><em>Builder.ai</em> didn't tell <em>investors</em> they were competing with GitHub Copilot, Cody, or CodeWhisperer. Those are code assistants for developers. They told <em>investors</em> they were building a virtual assistant for customers. This assistant was meant to &quot;talk&quot; to clients, gather requirements and automate parts of the build process. Very different space.<p>And like I said in another comment, creating a dedicated, pre-trained foundation model is expensive. Not to mention a full LLM.<p>Questions:<p>1. Did Craig Saunders, the VP of AI (and ex-Amazon), ever show <em>investors</em> or clients any working demo of Natasha? Or a product roadmap?<p>2. Was there a technical team behind Saunders capable of building such a model?<p>3. Was the goal really to build a domain-specific foundation model, or was that just a narrative to attract investment?"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai"
+     ],
+     "value": "<em>Builder.ai</em> Collapses: $1.5B 'AI' Startup Exposed as 'Indians'?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.ibtimes.co.uk/builderai-collapses-15bn-ai-startup-exposed-actually-indians-pretending-bots-1734784"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_pyman",
+    "story_44169759"
+   ],
+   "author": "pyman",
+   "children": [
+    44175767
+   ],
+   "comment_text": "I did a bit of research\u2026<p>Builder.ai didn&#x27;t tell investors they were competing with GitHub Copilot, Cody, or CodeWhisperer. Those are code assistants for developers. They told investors they were building a virtual assistant for customers. This assistant was meant to &quot;talk&quot; to clients, gather requirements and automate parts of the build process. Very different space.<p>And like I said in another comment, creating a dedicated, pre-trained foundation model is expensive. Not to mention a full LLM.<p>Questions:<p>1. Did Craig Saunders, the VP of AI (and ex-Amazon), ever show investors or clients any working demo of Natasha? Or a product roadmap?<p>2. Was there a technical team behind Saunders capable of building such a model?<p>3. Was the goal really to build a domain-specific foundation model, or was that just a narrative to attract investment?",
+   "created_at": "2025-06-03T23:01:36Z",
+   "created_at_i": 1748991696,
+   "objectID": "44175696",
+   "parent_id": 44175628,
+   "story_id": 44169759,
+   "story_title": "Builder.ai Collapses: $1.5B 'AI' Startup Exposed as 'Indians'?",
+   "story_url": "https://www.ibtimes.co.uk/builderai-collapses-15bn-ai-startup-exposed-actually-indians-pretending-bots-1734784",
+   "updated_at": "2025-06-05T08:59:22Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "rvz"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai",
+      "investors"
+     ],
+     "value": "&gt; It's very similar to crypto in that people pumping it up for financial gain or because they enjoy being part of the current hype are overconfident in how much of an impact it's going to have. Unlike crypto my workplace is very into it for our domain, so it's something we have to deal with.<p>The worst part is that many people (<em>investors</em>) who are actively pushing such a narrative (crypto, AI, etc) not only most have an <i>undisclosed</i> position, but in private they are doing / saying the exact opposite.<p>That is the reason why you see them publicly screaming such nonsensical predictions and you then get companies like <em>builder.ai</em> collapsing. (You won't see any investor in <em>builder.ai</em> proudly announcing this news in their portfolio).<p>This won't be the last of frauds in AI."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "I am disappointed in the AI discourse"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://steveklabnik.com/writing/i-am-disappointed-in-the-ai-discourse/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_rvz",
+    "story_44118520"
+   ],
+   "author": "rvz",
+   "comment_text": "&gt; It&#x27;s very similar to crypto in that people pumping it up for financial gain or because they enjoy being part of the current hype are overconfident in how much of an impact it&#x27;s going to have. Unlike crypto my workplace is very into it for our domain, so it&#x27;s something we have to deal with.<p>The worst part is that many people (investors) who are actively pushing such a narrative (crypto, AI, etc) not only most have an <i>undisclosed</i> position, but in private they are doing &#x2F; saying the exact opposite.<p>That is the reason why you see them publicly screaming such nonsensical predictions and you then get companies like builder.ai collapsing. (You won&#x27;t see any investor in builder.ai proudly announcing this news in their portfolio).<p>This won&#x27;t be the last of frauds in AI.",
+   "created_at": "2025-05-28T17:59:56Z",
+   "created_at_i": 1748455196,
+   "objectID": "44118825",
+   "parent_id": 44118713,
+   "story_id": 44118520,
+   "story_title": "I am disappointed in the AI discourse",
+   "story_url": "https://steveklabnik.com/writing/i-am-disappointed-in-the-ai-discourse/",
+   "updated_at": "2025-05-29T14:37:40Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "alephnerd"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai",
+      "investors"
+     ],
+     "value": "Not all Arab <em>investors</em> are bad - for example, funds associated with the Emirate of Abu Dhabi (eg. ADIA, Mubadala) has been extremely successful in their investments explicitly because Tahnoon studied engineering in San Diego (and rolled at Gracie's gym) back in the day.<p>Additonally, for every failed investment like <em>builder.ai</em> a fund like QIA and MS Ventures has had multiple other successful investments.<p>The perception of &quot;shadiness&quot; in the London VC scene arises simply because a subset of non-American VC simply does not care about value investing and product-led growth.<p>Additonally, it's not like the UK doesn't have good VCs and Growth Equity <em>investors</em> - for example Index Ventures and Ballie Guiffold both have a solid track record.<p>Being overly congratulatory and being overly pessimistic about the UK scene does more harm than good."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "How London became the rest of the world\u2019s startup capital"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.economist.com/britain/2026/01/26/how-london-became-the-rest-of-the-worlds-startup-capital"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_alephnerd",
+    "story_46789180"
+   ],
+   "author": "alephnerd",
+   "children": [
+    46839426
+   ],
+   "comment_text": "Not all Arab investors are bad - for example, funds associated with the Emirate of Abu Dhabi (eg. ADIA, Mubadala) has been extremely successful in their investments explicitly because Tahnoon studied engineering in San Diego (and rolled at Gracie&#x27;s gym) back in the day.<p>Additonally, for every failed investment like builder.ai a fund like QIA and MS Ventures has had multiple other successful investments.<p>The perception of &quot;shadiness&quot; in the London VC scene arises simply because a subset of non-American VC simply does not care about value investing and product-led growth.<p>Additonally, it&#x27;s not like the UK doesn&#x27;t have good VCs and Growth Equity investors - for example Index Ventures and Ballie Guiffold both have a solid track record.<p>Being overly congratulatory and being overly pessimistic about the UK scene does more harm than good.",
+   "created_at": "2026-01-29T03:03:06Z",
+   "created_at_i": 1769655786,
+   "objectID": "46805235",
+   "parent_id": 46802823,
+   "story_id": 46789180,
+   "story_title": "How London became the rest of the world\u2019s startup capital",
+   "story_url": "https://www.economist.com/britain/2026/01/26/how-london-became-the-rest-of-the-worlds-startup-capital",
+   "updated_at": "2026-03-05T23:25:35Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "alephnerd"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai",
+      "investors"
+     ],
+     "value": "Having a London domicile often leads to an overstating in venture capital raised <i>for</i> the UK ecosystem.<p>For example, I've funded Polish and Indian startups that chose the UK as their legal domicile because we couldn't be bothered to hire a legal team to draft a contract to Polish or Indian specifications.<p><em>Builder.ai</em> [0] is a great example of that - it was an Indian startup that was domiciled in London to simplify raising capital from Gulf <em>investors</em>.<p>[0] - <a href=\"https://www.ft.com/content/926f4969-fda7-4e78-b106-4888c8704bda\" rel=\"nofollow\">https://www.ft.com/content/926f4969-fda7-4e78-b106-4888c8704...</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "How London became the rest of the world\u2019s startup capital"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.economist.com/britain/2026/01/26/how-london-became-the-rest-of-the-worlds-startup-capital"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_alephnerd",
+    "story_46789180"
+   ],
+   "author": "alephnerd",
+   "children": [
+    46802823,
+    46803073
+   ],
+   "comment_text": "Having a London domicile often leads to an overstating in venture capital raised <i>for</i> the UK ecosystem.<p>For example, I&#x27;ve funded Polish and Indian startups that chose the UK as their legal domicile because we couldn&#x27;t be bothered to hire a legal team to draft a contract to Polish or Indian specifications.<p>Builder.ai [0] is a great example of that - it was an Indian startup that was domiciled in London to simplify raising capital from Gulf investors.<p>[0] - <a href=\"https:&#x2F;&#x2F;www.ft.com&#x2F;content&#x2F;926f4969-fda7-4e78-b106-4888c8704bda\" rel=\"nofollow\">https:&#x2F;&#x2F;www.ft.com&#x2F;content&#x2F;926f4969-fda7-4e78-b106-4888c8704...</a>",
+   "created_at": "2026-01-28T22:38:57Z",
+   "created_at_i": 1769639937,
+   "objectID": "46802656",
+   "parent_id": 46802105,
+   "story_id": 46789180,
+   "story_title": "How London became the rest of the world\u2019s startup capital",
+   "story_url": "https://www.economist.com/britain/2026/01/26/how-london-became-the-rest-of-the-worlds-startup-capital",
+   "updated_at": "2026-03-05T23:25:14Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "aprilthird2021"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai",
+      "investors"
+     ],
+     "value": "They admitted themselves to this fraud. Try reading the article you are posting under:<p>&gt; Less than two months ago, <em>Builder.ai</em> admitted to revising down core sales numbers and engaging auditors to inspect its financials for the past two years. This came amidst concerns from former employees who suggested sales performance had been inflated during prior <em>investor</em> briefings.<p>It doesn't get more textbook fraud than lying to <em>investors</em> about how many sales you've recorded"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai"
+     ],
+     "value": "<em>Builder.ai</em> Collapses: $1.5B 'AI' Startup Exposed as 'Indians'?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.ibtimes.co.uk/builderai-collapses-15bn-ai-startup-exposed-actually-indians-pretending-bots-1734784"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_aprilthird2021",
+    "story_44169759"
+   ],
+   "author": "aprilthird2021",
+   "children": [
+    44205561
+   ],
+   "comment_text": "They admitted themselves to this fraud. Try reading the article you are posting under:<p>&gt; Less than two months ago, Builder.ai admitted to revising down core sales numbers and engaging auditors to inspect its financials for the past two years. This came amidst concerns from former employees who suggested sales performance had been inflated during prior investor briefings.<p>It doesn&#x27;t get more textbook fraud than lying to investors about how many sales you&#x27;ve recorded",
+   "created_at": "2025-06-06T14:37:02Z",
+   "created_at_i": 1749220622,
+   "objectID": "44201382",
+   "parent_id": 44178885,
+   "story_id": 44169759,
+   "story_title": "Builder.ai Collapses: $1.5B 'AI' Startup Exposed as 'Indians'?",
+   "story_url": "https://www.ibtimes.co.uk/builderai-collapses-15bn-ai-startup-exposed-actually-indians-pretending-bots-1734784",
+   "updated_at": "2025-06-14T12:08:51Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "pyman"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai",
+      "investors"
+     ],
+     "value": "I agree. But using the &quot;your data is secure&quot; analogy, BuilderAI never actually told customers that development was done using AI, that's something people made up. If you look at their website (<em>builder.ai</em>) they explain that their virtual assistant &quot;Natasha&quot; assigns a developer (I assume from India). That part doesn\u2019t sound like fraud to me, and it's the part everyone seems to be focusing on.<p>The company went into insolvency because the CEO and CFO were misleading <em>investors</em> by significantly inflating sales figures through questionable financial practices. According to the Financial Times, the Indian founders and accountants reportedly engaged in round-tripping with VerSe Innovation. That raised red flags for <em>investors</em>, regulators, and prosecutors, and led to bankruptcy proceedings."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai"
+     ],
+     "value": "<em>Builder.ai</em> Collapses: $1.5B 'AI' Startup Exposed as 'Indians'?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.ibtimes.co.uk/builderai-collapses-15bn-ai-startup-exposed-actually-indians-pretending-bots-1734784"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_pyman",
+    "story_44169759"
+   ],
+   "author": "pyman",
+   "comment_text": "I agree. But using the &quot;your data is secure&quot; analogy, BuilderAI never actually told customers that development was done using AI, that&#x27;s something people made up. If you look at their website (builder.ai) they explain that their virtual assistant &quot;Natasha&quot; assigns a developer (I assume from India). That part doesn\u2019t sound like fraud to me, and it&#x27;s the part everyone seems to be focusing on.<p>The company went into insolvency because the CEO and CFO were misleading investors by significantly inflating sales figures through questionable financial practices. According to the Financial Times, the Indian founders and accountants reportedly engaged in round-tripping with VerSe Innovation. That raised red flags for investors, regulators, and prosecutors, and led to bankruptcy proceedings.",
+   "created_at": "2025-06-04T09:31:30Z",
+   "created_at_i": 1749029490,
+   "objectID": "44178820",
+   "parent_id": 44178157,
+   "story_id": 44169759,
+   "story_title": "Builder.ai Collapses: $1.5B 'AI' Startup Exposed as 'Indians'?",
+   "story_url": "https://www.ibtimes.co.uk/builderai-collapses-15bn-ai-startup-exposed-actually-indians-pretending-bots-1734784",
+   "updated_at": "2025-06-05T09:05:52Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "pyman"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai",
+      "investors"
+     ],
+     "value": "The short answer is no, their website doesn't claim that development is done using AI.<p>My gut feeling is that a lot of people, including developers, are posting hate messages and spreading fake news because of their fear of AI, which they see as a threat to their jobs.<p>If you look at their website, <em>builder.ai</em>, they tell customers that their virtual assistant, &quot;Natasha&quot;, assigns a developer (I assume from India):<p>&gt; Natasha recommends the best suited developer for your app project, who then customises your code on our virtual desktop. We also use facial recognition to check that the developer working on your code is the same one Natasha picked.<p>Source: <a href=\"https://www.builder.ai/how-it-works\" rel=\"nofollow\">https://www.<em>builder.ai</em>/how-it-works</a><p>They also have another page explaining how they use deep learning and transformers for speech-to-text processing. They list a bunch of libraries like MetaPath2Vec, Node2Vec, GraphSage, and Flair:<p>Source: <a href=\"https://www.builder.ai/under-the-hood\" rel=\"nofollow\">https://www.<em>builder.ai</em>/under-the-hood</a><p>It sounds impressive, but listing libraries doesn't prove they built an actual LLM.<p>So, the questions that remain unanswered are:<p>1. Did Craig Saunders, the Head of AI at <em>Builder.ai</em> (and ex-Director of AI at Amazon), ever show <em>investors</em> or clients a working demo of Natasha, or a product roadmap? How do we know Natasha was actually an LLM and not just someone sitting in a call centre in India?<p>2. Was there a technical team behind Saunders capable of building such a model?<p>3. Was the goal really to build a domain-specific foundation model, or was that just a narrative to attract investment?<p>Having said that, the company went into insolvency because the CEO and CFO were misleading <em>investors</em> by significantly inflating sales figures through questionable financial practices. According to the Financial Times, BuilderAI reportedly engaged in &quot;round-tripping&quot; with VerSe Innovation. This raised red flags for <em>investors</em>, regulators and prosecutors, and led to bankruptcy proceedings"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai"
+     ],
+     "value": "<em>Builder.ai</em> Collapses: $1.5B 'AI' Startup Exposed as 'Indians'?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.ibtimes.co.uk/builderai-collapses-15bn-ai-startup-exposed-actually-indians-pretending-bots-1734784"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_pyman",
+    "story_44169759"
+   ],
+   "author": "pyman",
+   "comment_text": "The short answer is no, their website doesn&#x27;t claim that development is done using AI.<p>My gut feeling is that a lot of people, including developers, are posting hate messages and spreading fake news because of their fear of AI, which they see as a threat to their jobs.<p>If you look at their website, builder.ai, they tell customers that their virtual assistant, &quot;Natasha&quot;, assigns a developer (I assume from India):<p>&gt; Natasha recommends the best suited developer for your app project, who then customises your code on our virtual desktop. We also use facial recognition to check that the developer working on your code is the same one Natasha picked.<p>Source: <a href=\"https:&#x2F;&#x2F;www.builder.ai&#x2F;how-it-works\" rel=\"nofollow\">https:&#x2F;&#x2F;www.builder.ai&#x2F;how-it-works</a><p>They also have another page explaining how they use deep learning and transformers for speech-to-text processing. They list a bunch of libraries like MetaPath2Vec, Node2Vec, GraphSage, and Flair:<p>Source: <a href=\"https:&#x2F;&#x2F;www.builder.ai&#x2F;under-the-hood\" rel=\"nofollow\">https:&#x2F;&#x2F;www.builder.ai&#x2F;under-the-hood</a><p>It sounds impressive, but listing libraries doesn&#x27;t prove they built an actual LLM.<p>So, the questions that remain unanswered are:<p>1. Did Craig Saunders, the Head of AI at Builder.ai (and ex-Director of AI at Amazon), ever show investors or clients a working demo of Natasha, or a product roadmap? How do we know Natasha was actually an LLM and not just someone sitting in a call centre in India?<p>2. Was there a technical team behind Saunders capable of building such a model?<p>3. Was the goal really to build a domain-specific foundation model, or was that just a narrative to attract investment?<p>Having said that, the company went into insolvency because the CEO and CFO were misleading investors by significantly inflating sales figures through questionable financial practices. According to the Financial Times, BuilderAI reportedly engaged in &quot;round-tripping&quot; with VerSe Innovation. This raised red flags for investors, regulators and prosecutors, and led to bankruptcy proceedings",
+   "created_at": "2025-06-04T08:42:36Z",
+   "created_at_i": 1749026556,
+   "objectID": "44178542",
+   "parent_id": 44177171,
+   "story_id": 44169759,
+   "story_title": "Builder.ai Collapses: $1.5B 'AI' Startup Exposed as 'Indians'?",
+   "story_url": "https://www.ibtimes.co.uk/builderai-collapses-15bn-ai-startup-exposed-actually-indians-pretending-bots-1734784",
+   "updated_at": "2025-06-05T08:58:25Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "paxys"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai",
+      "investors"
+     ],
+     "value": "&gt; Less than two months ago, <em>Builder.ai</em> admitted to revising down core sales numbers and engaging auditors to inspect its financials for the past two years. This came amidst concerns from former employees who suggested sales performance had been inflated during prior <em>investor</em> briefings.<p>I was hoping for something interesting, but it is just plain old fashioned accounting fraud."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai"
+     ],
+     "value": "<em>Builder.ai</em> Collapses: $1.5B 'AI' Startup Exposed as 'Indians'?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.ibtimes.co.uk/builderai-collapses-15bn-ai-startup-exposed-actually-indians-pretending-bots-1734784"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_paxys",
+    "story_44169759"
+   ],
+   "author": "paxys",
+   "children": [
+    44175884
+   ],
+   "comment_text": "&gt; Less than two months ago, Builder.ai admitted to revising down core sales numbers and engaging auditors to inspect its financials for the past two years. This came amidst concerns from former employees who suggested sales performance had been inflated during prior investor briefings.<p>I was hoping for something interesting, but it is just plain old fashioned accounting fraud.",
+   "created_at": "2025-06-03T22:59:20Z",
+   "created_at_i": 1748991560,
+   "objectID": "44175678",
+   "parent_id": 44169759,
+   "story_id": 44169759,
+   "story_title": "Builder.ai Collapses: $1.5B 'AI' Startup Exposed as 'Indians'?",
+   "story_url": "https://www.ibtimes.co.uk/builderai-collapses-15bn-ai-startup-exposed-actually-indians-pretending-bots-1734784",
+   "updated_at": "2025-06-07T10:38:44Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "pyman"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai",
+      "investors"
+     ],
+     "value": "Can you imagine <em>Builder.ai</em> using a model that argues with their clients or discriminates against them? I don't think so. GPT-2 is like bringing a knife to a gunfight in 2025.<p>If you want to compete with the likes of GPT-4, Claude, or Gemini today, you're looking at billions, just for training, not counting infra, data pipelines, evals, red teaming, and everything else that comes with it.<p><em>Builder.ai</em> wasn't able to use GenAI to actually build software. And when the money ran out and no model was ever announced, <em>investors</em> lost trust and clients lost patience."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai"
+     ],
+     "value": "<em>Builder.ai</em> Collapses: $1.5B 'AI' Startup Exposed as 'Indians'?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.ibtimes.co.uk/builderai-collapses-15bn-ai-startup-exposed-actually-indians-pretending-bots-1734784"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_pyman",
+    "story_44169759"
+   ],
+   "author": "pyman",
+   "comment_text": "Can you imagine Builder.ai using a model that argues with their clients or discriminates against them? I don&#x27;t think so. GPT-2 is like bringing a knife to a gunfight in 2025.<p>If you want to compete with the likes of GPT-4, Claude, or Gemini today, you&#x27;re looking at billions, just for training, not counting infra, data pipelines, evals, red teaming, and everything else that comes with it.<p>Builder.ai wasn&#x27;t able to use GenAI to actually build software. And when the money ran out and no model was ever announced, investors lost trust and clients lost patience.",
+   "created_at": "2025-06-03T21:30:23Z",
+   "created_at_i": 1748986223,
+   "objectID": "44174956",
+   "parent_id": 44174878,
+   "story_id": 44169759,
+   "story_title": "Builder.ai Collapses: $1.5B 'AI' Startup Exposed as 'Indians'?",
+   "story_url": "https://www.ibtimes.co.uk/builderai-collapses-15bn-ai-startup-exposed-actually-indians-pretending-bots-1734784",
+   "updated_at": "2025-06-05T01:43:50Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "nikcub"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai",
+      "investors"
+     ],
+     "value": "I expect the <em>builder.ai</em> story will break into the mainstream via a book / documentary. There are some insane details and it's the first large-scale AI hype failure - which people are hungry to get the details on - and some big names involved.<p>Another failure of dd - I really wonder how high-profile <em>investors</em> pour hundreds of millions into a co without doing something simple like ordering an app using a burner account."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai"
+     ],
+     "value": "<em>Builder.ai</em> Collapses: $1.5B 'AI' Startup Exposed as 'Indians'?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.ibtimes.co.uk/builderai-collapses-15bn-ai-startup-exposed-actually-indians-pretending-bots-1734784"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_nikcub",
+    "story_44169759"
+   ],
+   "author": "nikcub",
+   "children": [
+    44174098,
+    44174991
+   ],
+   "comment_text": "I expect the builder.ai story will break into the mainstream via a book &#x2F; documentary. There are some insane details and it&#x27;s the first large-scale AI hype failure - which people are hungry to get the details on - and some big names involved.<p>Another failure of dd - I really wonder how high-profile investors pour hundreds of millions into a co without doing something simple like ordering an app using a burner account.",
+   "created_at": "2025-06-03T19:58:26Z",
+   "created_at_i": 1748980706,
+   "objectID": "44174027",
+   "parent_id": 44173995,
+   "story_id": 44169759,
+   "story_title": "Builder.ai Collapses: $1.5B 'AI' Startup Exposed as 'Indians'?",
+   "story_url": "https://www.ibtimes.co.uk/builderai-collapses-15bn-ai-startup-exposed-actually-indians-pretending-bots-1734784",
+   "updated_at": "2025-06-04T06:47:14Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mrweasel"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai",
+      "investors"
+     ],
+     "value": "Also it can't have been fast. Didn't customers and <em>investors</em> feel that it was weird that CoPilot spits out code as fast as you can type, but <em>Builder.ai</em> needs days or weeks to generate your app. Or where these Indian developers just really really fast?"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai"
+     ],
+     "value": "<em>Builder.ai</em> Collapses: $1.5B 'AI' Startup Exposed as 'Indians'?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.ibtimes.co.uk/builderai-collapses-15bn-ai-startup-exposed-actually-indians-pretending-bots-1734784"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mrweasel",
+    "story_44169759"
+   ],
+   "author": "mrweasel",
+   "children": [
+    44173637
+   ],
+   "comment_text": "Also it can&#x27;t have been fast. Didn&#x27;t customers and investors feel that it was weird that CoPilot spits out code as fast as you can type, but Builder.ai needs days or weeks to generate your app. Or where these Indian developers just really really fast?",
+   "created_at": "2025-06-03T19:16:40Z",
+   "created_at_i": 1748978200,
+   "objectID": "44173571",
+   "parent_id": 44172169,
+   "story_id": 44169759,
+   "story_title": "Builder.ai Collapses: $1.5B 'AI' Startup Exposed as 'Indians'?",
+   "story_url": "https://www.ibtimes.co.uk/builderai-collapses-15bn-ai-startup-exposed-actually-indians-pretending-bots-1734784",
+   "updated_at": "2025-06-04T19:16:34Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "greatgib"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai",
+      "investors"
+     ],
+     "value": "<p><pre><code>   <em>Builder.ai</em> was then able to raise $75mn from some of its existing shareholders to try to fix its balance sheet, according to two people familiar with its finances.\n</code></pre>\nI'm just trying to imagine the kind of funds or <em>investor</em> for who 75m dollars is just a comma in a report and that can give them so easily despite the obvious high probability to lose it."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai"
+     ],
+     "value": "Microsoft-backed UK tech unicorn <em>Builder.ai</em> collapses into insolvency"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.ft.com/content/9fdb4e2b-93ea-436d-92e5-fa76ee786caa"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_greatgib",
+    "story_44080640"
+   ],
+   "author": "greatgib",
+   "comment_text": "<p><pre><code>   Builder.ai was then able to raise $75mn from some of its existing shareholders to try to fix its balance sheet, according to two people familiar with its finances.\n</code></pre>\nI&#x27;m just trying to imagine the kind of funds or investor for who 75m dollars is just a comma in a report and that can give them so easily despite the obvious high probability to lose it.",
+   "created_at": "2025-05-25T12:19:05Z",
+   "created_at_i": 1748175545,
+   "objectID": "44087290",
+   "parent_id": 44080640,
+   "story_id": 44080640,
+   "story_title": "Microsoft-backed UK tech unicorn Builder.ai collapses into insolvency",
+   "story_url": "https://www.ft.com/content/9fdb4e2b-93ea-436d-92e5-fa76ee786caa",
+   "updated_at": "2025-05-28T20:02:03Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tuyguntn"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai",
+      "investors"
+     ],
+     "value": "Why is this a big news, didn't we already learn that most startups/companies fail and <em>investors</em> are just betting to find their next unicorn?<p>contrary to <em>builder.ai</em>, we now have success stories in this area: lovable, cursor, replit agents and so on"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai"
+     ],
+     "value": "Microsoft-backed UK tech unicorn <em>Builder.ai</em> collapses into insolvency"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.ft.com/content/9fdb4e2b-93ea-436d-92e5-fa76ee786caa"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_tuyguntn",
+    "story_44080640"
+   ],
+   "author": "tuyguntn",
+   "children": [
+    44081163,
+    44081691
+   ],
+   "comment_text": "Why is this a big news, didn&#x27;t we already learn that most startups&#x2F;companies fail and investors are just betting to find their next unicorn?<p>contrary to builder.ai, we now have success stories in this area: lovable, cursor, replit agents and so on",
+   "created_at": "2025-05-24T13:45:16Z",
+   "created_at_i": 1748094316,
+   "objectID": "44081087",
+   "parent_id": 44080640,
+   "story_id": 44080640,
+   "story_title": "Microsoft-backed UK tech unicorn Builder.ai collapses into insolvency",
+   "story_url": "https://www.ft.com/content/9fdb4e2b-93ea-436d-92e5-fa76ee786caa",
+   "updated_at": "2025-05-25T09:51:54Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "rvz"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai",
+      "investors"
+     ],
+     "value": "The entire company and its $500M has been &quot;deleted&quot; [0] over fraud and cooking their books.<p>A great candidate for the Theranos of AI, even with Microsoft involved as an <em>investor</em>.<p>We'll see a new wave of fraud(stars) being exposed out of this AI hype.<p>[0] <a href=\"https://builder.ai\" rel=\"nofollow\">https://<em>builder.ai</em></a>"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai"
+     ],
+     "value": "Microsoft-backed UK tech unicorn <em>Builder.ai</em> collapses into insolvency"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.ft.com/content/9fdb4e2b-93ea-436d-92e5-fa76ee786caa"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_rvz",
+    "story_44080640"
+   ],
+   "author": "rvz",
+   "children": [
+    44081040
+   ],
+   "comment_text": "The entire company and its $500M has been &quot;deleted&quot; [0] over fraud and cooking their books.<p>A great candidate for the Theranos of AI, even with Microsoft involved as an investor.<p>We&#x27;ll see a new wave of fraud(stars) being exposed out of this AI hype.<p>[0] <a href=\"https:&#x2F;&#x2F;builder.ai\" rel=\"nofollow\">https:&#x2F;&#x2F;builder.ai</a>",
+   "created_at": "2025-05-24T13:27:24Z",
+   "created_at_i": 1748093244,
+   "objectID": "44080968",
+   "parent_id": 44080640,
+   "story_id": 44080640,
+   "story_title": "Microsoft-backed UK tech unicorn Builder.ai collapses into insolvency",
+   "story_url": "https://www.ft.com/content/9fdb4e2b-93ea-436d-92e5-fa76ee786caa",
+   "updated_at": "2025-05-25T12:23:39Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "triptivermaa01"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai",
+      "investors"
+     ],
+     "value": "The software startup <em>Builder.ai</em>, founded by Sachin Dev Duggal, has seen an incredible increase in valuation, marking a significant advancement. The company's worth has increased by an amazing 1.8 times thanks to a large $250 million investment from the Qatar Investment Authority (QIA).<p>Groundbreaking Investment: <em>Builder.ai's</em> revolutionary effect on the digital environment is demonstrated by QIA's large investment. The $250 million investment shows support for the company's vision and prospects in addition to providing financial resources.<p>Technological Innovation Rewarded: Sachin Duggal has received widespread praise for his groundbreaking contribution in democratizing app development. The company's rising worth is a reflection of <em>investors</em>' confidence in its future undertakings as well as its existing performance."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "builder",
+      ".",
+      "ai"
+     ],
+     "value": "Sachin Dev Duggal's <em>Builder.ai</em> Soars Up Valuation by 1.8X as QIA Invests $250M"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.business-standard.com/companies/news/builder-ai-gets-250-mn-from-qatar-investment-authority-valuation-up-1-8x-123052300777_1.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_triptivermaa01",
+    "story_38456345"
+   ],
+   "author": "triptivermaa01",
+   "comment_text": "The software startup Builder.ai, founded by Sachin Dev Duggal, has seen an incredible increase in valuation, marking a significant advancement. The company&#x27;s worth has increased by an amazing 1.8 times thanks to a large $250 million investment from the Qatar Investment Authority (QIA).<p>Groundbreaking Investment: Builder.ai&#x27;s revolutionary effect on the digital environment is demonstrated by QIA&#x27;s large investment. The $250 million investment shows support for the company&#x27;s vision and prospects in addition to providing financial resources.<p>Technological Innovation Rewarded: Sachin Duggal has received widespread praise for his groundbreaking contribution in democratizing app development. The company&#x27;s rising worth is a reflection of investors&#x27; confidence in its future undertakings as well as its existing performance.",
+   "created_at": "2023-11-29T06:47:19Z",
+   "created_at_i": 1701240439,
+   "objectID": "38456346",
+   "parent_id": 38456345,
+   "story_id": 38456345,
+   "story_title": "Sachin Dev Duggal's Builder.ai Soars Up Valuation by 1.8X as QIA Invests $250M",
+   "story_url": "https://www.business-standard.com/companies/news/builder-ai-gets-250-mn-from-qatar-investment-authority-valuation-up-1-8x-123052300777_1.html",
+   "updated_at": "2024-09-20T15:49:40Z"
+  }
+ ],
+ "hitsPerPage": 50,
+ "nbHits": 16,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=Builder.ai+investors&tags=comment&hitsPerPage=50&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 70,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 16
+  },
+  "afterFetch": {
+   "format": {
+    "highlighting": 1,
+    "total": 1
+   },
+   "merge": {
+    "mergeLoop": {
+     "prepareNextHit": 2,
+     "total": 2
+    },
+    "total": 2
+   },
+   "total": 2
+  },
+  "fetch": {
+   "query": 14,
+   "scanning": 51,
+   "total": 66
+  },
+  "total": 70
+ },
+ "query": "Builder.ai investors",
+ "serverTimeMS": 72,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=Builder.ai+investors&tags=comment&hitsPerPage=50"
+}

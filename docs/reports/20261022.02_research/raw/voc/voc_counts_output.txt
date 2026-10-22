@@ -1,0 +1,55 @@
+saved HN query files: 48
+saved web page text files: 35
+total rows: 67
+by kind: {'quote': 53, 'paraphrase': 14}
+rows with a link: 67
+verbatim quotes with a link: 53
+verbatim quotes from the person's or firm's own publication or own comment: 53
+
+persona x layer (rows):
+persona                 say      do       pay      context  total
+partner_principal       17       9        2        0        28
+solo_angel              8        4        2        0        14
+accelerator_screener    4        4        0        0        8
+associate               4        3        0        0        7
+outsourced_diligence    1        0        2        0        3
+corporate_vc            2        0        0        0        2
+observer                0        0        0        2        2
+fund_staff_unstated     1        0        0        0        1
+vendor_claim            0        0        0        1        1
+fund_buyers_mixed       0        0        1        0        1
+
+highest layer with evidence, customer personas (pay > do > say):
+  partner_principal: highest=pay (2 rows at that layer, 28 rows in all)
+  solo_angel: highest=pay (2 rows at that layer, 14 rows in all)
+  accelerator_screener: highest=do (4 rows at that layer, 8 rows in all)
+  associate: highest=do (3 rows at that layer, 7 rows in all)
+  corporate_vc: highest=say (2 rows at that layer, 2 rows in all)
+
+rows by question:
+  q3_memo_time: 19
+  q2_red_flag: 18
+  q1_first_check: 16
+  do_workaround: 7
+  pay: 7
+
+rows by year:
+  2009: 2
+  2011: 1
+  2012: 1
+  2013: 4
+  2014: 1
+  2016: 2
+  2018: 2
+  2019: 1
+  2021: 3
+  2022: 4
+  2023: 9
+  2024: 4
+  2025: 14
+  2026: 19
+rows before 2020: 14 of 67 (21%)
+source types of rows before 2020: {'community_comment': 13, 'own_words': 1}
+rows from 2025 or later: 33 of 67 (49%)
+
+source types: {'own_words': 34, 'community_comment': 20, 'podcast_summary': 2, 'interview': 1, 'vendor_case_study': 3, 'journalism': 6, 'third_party_roundup': 1}

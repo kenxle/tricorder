@@ -1,0 +1,223 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "rjcantrell"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "crunchbase",
+      "pro",
+      "data"
+     ],
+     "value": "Kabbage - San Francisco, CA and Atlanta, GA - <a href=\"http://www.kabbage.com\" rel=\"nofollow\">http://www.kabbage.com</a><p>Kabbage has successfully created a new market niche in providing short-term cash advances to small businesses via a completely-automated underwriting system. After linking Kabbage to a marketplace account, accounting system, or business checking account, users can have funds in their PayPal account in minutes. <em>Data</em> science and machine learning approaches underlie the underwriting model and provide a fertile bed for deeper understanding of (and potentially further products targeting) the SMB ecosystem.<p>Kabbage has received a metric ton of good press and awards from TechCrunch et al, the fintech industry, and the founders have been on Bloomberg TV and Fox News several times. Investors and board members include former Yahoo! CEOs, Square co-founders, UPS, and a veritable who's who in the VC community -- <a href=\"http://www.crunchbase.com/organization/kabbage\" rel=\"nofollow\">http://www.<em>crunchbase</em>.com/organization/kabbage</a><p>Badass .NET jockeys sought in Atlanta, and badass <em>data</em> scientists sought in SF. Familiarity with the entire stack not necessary if the ability to learn it quickly is demonstrated.<p>Stats:<p><pre><code>  - Stack: ASP.NET MVC / REST WebAPI / EF / SQL Server\n  - Employees: 80ish\n  - Office doors: zero\n  - Responsibility, ambition, development pace, salaries: all high\n  - Provided hardware: MacBook <em>Pro</em> Retina (or PC equivalent), plus as many Thunderbolt displays as you dare daisy-chain\n  - Lunch, snacks, drinks, parking: free!\n  - Kegs: 2\n  - Patents: 2 (plus four more applications)\n  - People who've beat Ghosts n' Goblins on the multicade cabinet: ZERO AAARGH\n</code></pre>\nI am an alumni of the company and therefore do not speak in an official capacity, but I'm happy to answer your questions or give feedback on your resume: rj@rjcantrell.com<p>More position info: <a href=\"https://www.kabbage.com/company/careers\" rel=\"nofollow\">https://www.kabbage.com/company/careers</a> (I would rather you send me your resume, but if you contact them directly, tell them RJ sent you)"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Who is hiring? (May 2014)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_rjcantrell",
+    "story_7679431"
+   ],
+   "author": "rjcantrell",
+   "comment_text": "Kabbage - San Francisco, CA and Atlanta, GA - <a href=\"http://www.kabbage.com\" rel=\"nofollow\">http:&#x2F;&#x2F;www.kabbage.com</a><p>Kabbage has successfully created a new market niche in providing short-term cash advances to small businesses via a completely-automated underwriting system. After linking Kabbage to a marketplace account, accounting system, or business checking account, users can have funds in their PayPal account in minutes. Data science and machine learning approaches underlie the underwriting model and provide a fertile bed for deeper understanding of (and potentially further products targeting) the SMB ecosystem.<p>Kabbage has received a metric ton of good press and awards from TechCrunch et al, the fintech industry, and the founders have been on Bloomberg TV and Fox News several times. Investors and board members include former Yahoo! CEOs, Square co-founders, UPS, and a veritable who&#x27;s who in the VC community -- <a href=\"http://www.crunchbase.com/organization/kabbage\" rel=\"nofollow\">http:&#x2F;&#x2F;www.crunchbase.com&#x2F;organization&#x2F;kabbage</a><p>Badass .NET jockeys sought in Atlanta, and badass data scientists sought in SF. Familiarity with the entire stack not necessary if the ability to learn it quickly is demonstrated.<p>Stats:<p><pre><code>  - Stack: ASP.NET MVC &#x2F; REST WebAPI &#x2F; EF &#x2F; SQL Server\n  - Employees: 80ish\n  - Office doors: zero\n  - Responsibility, ambition, development pace, salaries: all high\n  - Provided hardware: MacBook Pro Retina (or PC equivalent), plus as many Thunderbolt displays as you dare daisy-chain\n  - Lunch, snacks, drinks, parking: free!\n  - Kegs: 2\n  - Patents: 2 (plus four more applications)\n  - People who&#x27;ve beat Ghosts n&#x27; Goblins on the multicade cabinet: ZERO AAARGH\n</code></pre>\nI am an alumni of the company and therefore do not speak in an official capacity, but I&#x27;m happy to answer your questions or give feedback on your resume: rj@rjcantrell.com<p>More position info: <a href=\"https://www.kabbage.com/company/careers\" rel=\"nofollow\">https:&#x2F;&#x2F;www.kabbage.com&#x2F;company&#x2F;careers</a> (I would rather you send me your resume, but if you contact them directly, tell them RJ sent you)",
+   "created_at": "2014-05-01T15:46:29Z",
+   "created_at_i": 1398959189,
+   "objectID": "7680463",
+   "parent_id": 7679431,
+   "story_id": 7679431,
+   "story_title": "Ask HN: Who is hiring? (May 2014)",
+   "updated_at": "2024-09-19T20:48:26Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "pro"
+     ],
+     "value": "<em>Pro</em>_bity"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "crunchbase",
+      "data"
+     ],
+     "value": "We built People+ with the understanding that <em>CrunchBase</em> was a Creative Commons resource, that the startup community has contributed to for years and believing all the promotion that has been put out encouraging people to develop on the platform.<p>We are pretty shocked when we were told that AOL considered this information their property and that we needed to stop using the <em>data</em> because we were a &quot;competitor&quot;."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "crunchbase"
+     ],
+     "value": "AOL Smacks Startup for Using <em>CrunchBase</em> Content It Gave Away"
+    },
+    "story_url": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "crunchbase"
+     ],
+     "value": "http://www.wired.com/threatlevel/2013/11/aol-<em>crunchbase</em>-cc-flap/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Pro_bity",
+    "story_6675492"
+   ],
+   "author": "Pro_bity",
+   "comment_text": "We built People+ with the understanding that CrunchBase was a Creative Commons resource, that the startup community has contributed to for years and believing all the promotion that has been put out encouraging people to develop on the platform.<p>We are pretty shocked when we were told that AOL considered this information their property and that we needed to stop using the data because we were a &quot;competitor&quot;.",
+   "created_at": "2013-11-05T16:12:37Z",
+   "created_at_i": 1383667957,
+   "objectID": "6675841",
+   "parent_id": 6675492,
+   "points": null,
+   "story_id": 6675492,
+   "story_title": "AOL Smacks Startup for Using CrunchBase Content It Gave Away",
+   "story_url": "http://www.wired.com/threatlevel/2013/11/aol-crunchbase-cc-flap/",
+   "updated_at": "2023-09-06T22:35:43Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "lobstersammich"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "crunchbase",
+      "pro",
+      "data"
+     ],
+     "value": "Does anyone have a good alternative to Privacy.com where your virtual credit card transaction <em>data</em> isn't sold to Wall Street? If you're unfamiliar with what a &quot;virtual [credit] card&quot; is here's the page from Privacy.com's website: <a href=\"https://privacy.com/virtual-card\" rel=\"nofollow\">https://privacy.com/virtual-card</a> I use the Privacy app on my mobile phone to create virtual cards (primarily for work subscriptions). <em>Pro</em>-tip: since each Privacy card can have its own name put a tag such as `[WORK_RECURRING]` into the card name and then you can search your email inbox for `[WORK_RECURRING]`, quickly and easily finding all of the transactions / charges that you may want to submit to your workplace for reimbursement.<p>Privacy is owned / created by Lithic, but if you look at Lithic's investors you'll see that the plurality of the company's investors are in the private equity or VC space: Bessemer Ventures, Tusk Partner Ventures, Index Ventures, etc. You can see the Privacy.com / Privacy mobile app's funders here:\n<a href=\"https://www.crunchbase.com/organization/lithic-pay\" rel=\"nofollow\">https://www.<em>crunchbase</em>.com/organization/lithic-pay</a><p>Thus, I have no doubt that my transactions on cleverly-named Privacy app are being gifted or sold to Wall Street so that hedge funds can squeeze out a few addition drops of 'signal' from consumer purchase pattern <em>data</em> that would otherwise remain dark. (I'd imagine that many folks use the Privacy app to buy things that they'd rather not have show up on their regular credit card bills: 'adult websites', marijuana or tobacco products, etc.<p>So, two questions:<p>(1) Does anyone have a privacy-respecting alternative to Privacy.com's virtual credit cards?<p>(2) Does anyone know of a recent blog post where these virtual credit card services are compared / contrasted by<p>- the services that they offer,\n- the cost: free, paid, etc.,\n- the terms of service: how your <em>data</em> is re-sold / who your <em>data</em> is transmitted to"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Detect breaches with Canary credit cards"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://blog.thinkst.com/2023/01/swipe-right-on-our-new-credit-card-tokens.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_lobstersammich",
+    "story_34476507"
+   ],
+   "author": "lobstersammich",
+   "children": [
+    34482329,
+    34482676
+   ],
+   "comment_text": "Does anyone have a good alternative to Privacy.com where your virtual credit card transaction data isn&#x27;t sold to Wall Street? If you&#x27;re unfamiliar with what a &quot;virtual [credit] card&quot; is here&#x27;s the page from Privacy.com&#x27;s website: <a href=\"https:&#x2F;&#x2F;privacy.com&#x2F;virtual-card\" rel=\"nofollow\">https:&#x2F;&#x2F;privacy.com&#x2F;virtual-card</a> I use the Privacy app on my mobile phone to create virtual cards (primarily for work subscriptions). Pro-tip: since each Privacy card can have its own name put a tag such as `[WORK_RECURRING]` into the card name and then you can search your email inbox for `[WORK_RECURRING]`, quickly and easily finding all of the transactions &#x2F; charges that you may want to submit to your workplace for reimbursement.<p>Privacy is owned &#x2F; created by Lithic, but if you look at Lithic&#x27;s investors you&#x27;ll see that the plurality of the company&#x27;s investors are in the private equity or VC space: Bessemer Ventures, Tusk Partner Ventures, Index Ventures, etc. You can see the Privacy.com &#x2F; Privacy mobile app&#x27;s funders here:\n<a href=\"https:&#x2F;&#x2F;www.crunchbase.com&#x2F;organization&#x2F;lithic-pay\" rel=\"nofollow\">https:&#x2F;&#x2F;www.crunchbase.com&#x2F;organization&#x2F;lithic-pay</a><p>Thus, I have no doubt that my transactions on cleverly-named Privacy app are being gifted or sold to Wall Street so that hedge funds can squeeze out a few addition drops of &#x27;signal&#x27; from consumer purchase pattern data that would otherwise remain dark. (I&#x27;d imagine that many folks use the Privacy app to buy things that they&#x27;d rather not have show up on their regular credit card bills: &#x27;adult websites&#x27;, marijuana or tobacco products, etc.<p>So, two questions:<p>(1) Does anyone have a privacy-respecting alternative to Privacy.com&#x27;s virtual credit cards?<p>(2) Does anyone know of a recent blog post where these virtual credit card services are compared &#x2F; contrasted by<p>- the services that they offer,\n- the cost: free, paid, etc.,\n- the terms of service: how your data is re-sold &#x2F; who your data is transmitted to",
+   "created_at": "2023-01-22T19:55:09Z",
+   "created_at_i": 1674417309,
+   "objectID": "34481564",
+   "parent_id": 34476507,
+   "story_id": 34476507,
+   "story_title": "Detect breaches with Canary credit cards",
+   "story_url": "https://blog.thinkst.com/2023/01/swipe-right-on-our-new-credit-card-tokens.html",
+   "updated_at": "2024-09-20T13:06:44Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "dan_zaitsev"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "crunchbase",
+      "pro",
+      "data"
+     ],
+     "value": "Hello HN<p>We are a team of independent makers from Ukraine. Today, three of us are launching Catchar 2.0 and we would like to showcase our updated version to HN. Please feel free to share your feedback or any suggestions.<p>What is Catchar 2.0?<p>Catchar 2.0 is the world's largest community and hub where creators and companies build, share and support the best Augmented &amp; Mixed Reality projects that change the ways we interact with digital content and information.<p>What problem do we solve?<p>First of all, Catchar helps creators and companies to organize and showcase their Augmented and Mixed Reality portfolios online. As a result, their portfolios and profiles can be searchable across the web and on our website. Catchar also helps to connect brands with creators and companies. And definitely, you will be able to find and get lots of different  AR/MR related projects and articles that can be sorted by date, rating and category.<p>About us<p>My name is Dan Zaitsev and I\u2019m a hustler (CEO) and founder of Catchar. I jumped into the Augmented and Mixed Reality space approx 7 years ago when I was developing apps for Google Glasses, then I joined Looksery that was acquired by Snap Inc. After I worked  on ROAR, a cloud-based platform that allows you to create your own AR experiences. At the end of 2018 I started working on Catchar. Also, in the team is Dmytro Zolotar who is our hacker and co-founder and Sergey Lagodzinsky is our lead hipster ;) / designer and co-founder.<p>Business model and investments<p>Currently, Catchar is a 100% bootstrapping startup that we have built and supported without investments / investors. In terms of business models, all creators and companies have to pay membership fees (once) to be listed on Catchar. In addition, we have paid options that help to promote AR/MR projects and experiences. And also we are experimenting with a <em>PRO</em> subscription.<p>How I started with version 1.0 and my challenges<p>I started Catchar 1.5 years ago as a side-project and was the solo-founder during the first year. One friend of mine helped me to build the basic MVP based on React_js. We have chosen Prisma_io as a solution for back-end and user management. Also, we connected and used Mailchimp as a notification and newsletter service. The first version was a simple, curated directory where users were able to share their projects. I\u2019ve got some transactions and feedback but honestly, the first 4 to 8 months were very tough for me. First of all, it was difficult in terms of activity and traffic, secondly, I had a lack of features and resources. I even tried to learn React_js and Node_js to improve the core features but had no time to mix marketing, management, design and also do my full-time job. Anyway, I didn't stop working on marketing, SEO and AR content. Also, I was talking to users to get feedback and collect more XR projects. I felt that I had problems in PMF so I was looking and thinking about new ideas for Catchar.<p>Changes and profit<p>In 2019 I came up with an idea to transform Catchar into a community-based startup / project. In summer 2019 I met my new co-founders and we started working on the 2.0 version. Our main goal was to build something for AR/MR creators and to be more focused on people rather than on projects. And this worked well. Also, I jumped into Startupschool by YC in the summer of 2019. It helped me to change my mindset a little bit and think more about KPIs and PMF. The first positive feedback was received when we got a spike of pre-registrations for the 2.0 version and our first donations.<p>Tech stack that we use in version 2.0<p>Website is written on PHP and Javascript, using Laravel framework for back-end and Vue.js on the public. Server instance has Ubuntu 18 and MySQL 5.7 <em>data</em>base. We use Redis for caching and Pusher for broadcasting events. For the instant notifications we have connected Mailgun service. Payments are going through Stripe. Hosted everything on GCP.<p>Support<p>Since Catchar is a community-based startup, anyone can share and contribute AR/MR content, similar to Wikipedia, <em>Crunchbase</em>, etc. However, Catchar needs some support in terms of approving content and users that fit community rules. In these terms, some of my friends help me to moderate the community properly. Also, we are working on a new role, named Community Leader. As a result, our CLs would be able to help us to support and moderate the community.<p>Our stats<p>We have fully launched version 2.0 in December 2019 and to this day we have around 2,550 registered creators, companies and basic users. Before December we were in the pre-launch phase for approximately an additional 2 months. During this time we collected our first 30% of users and got some payments. This gave us some nice motivation and a boost to our mentality. In terms of projects, we have 950 submitted AR/MR apps, lenses and experiences. Some projects were submitted and contributed to the first version of Catchar. We migrated them from 1.0 into the 2.0 version. In terms of revenue, up until today we have earned approx $976.<p>How much we spend per month:<p>Support - $140/mo (I have a friend of mine who works with us on a part-time basis. He helps us in terms of moderating the community properly)\nHosting - $0/mo (Trial by Google Cloud Platform)\nContent - $50/mo (Proofreading of EN articles, posts, etc.)\nSEO - $100/mo (We are also working with 1 guy who helps us in terms of SEO)<p>How much I spent in one year<p>Currently, I\u2019m investing in Catchar with my own funds. Please note I\u2019m not an investor but it\u2019s necessary in terms of supporting, marketing, etc. So, if someone thinks that they can build a startup or side-project with 0 investment, I would say it\u2019s possible but will be difficult. During the last year and 3 months, I have invested around $1,529.<p>Our plans for 2.0<p>We have to finish and polish lots of new features. First of all, we have to work on the improvements of the subcommunity pages (i.e. SparkAR, Magic Leap, Lens Studio, ARKit, etc.). Our goal is to help creators to focus on the tech stack that they follow and specialize in. The next step is to release a collaborative module. And definitely add the ability to edit profiles, projects and release password recovery feature :P Also, we have to scale our revenue streams.<p>So guys, I hope you liked our story. My main question to you is what do you think about Catchar? \nCan we turn it into a $1B company or will Catchar remain in the side-project phase? :)"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Bootstrapping a community-based startup for AR creators. Catchar 2.0"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.catchar.io/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_dan_zaitsev",
+    "story_22366135"
+   ],
+   "author": "dan_zaitsev",
+   "comment_text": "Hello HN<p>We are a team of independent makers from Ukraine. Today, three of us are launching Catchar 2.0 and we would like to showcase our updated version to HN. Please feel free to share your feedback or any suggestions.<p>What is Catchar 2.0?<p>Catchar 2.0 is the world&#x27;s largest community and hub where creators and companies build, share and support the best Augmented &amp; Mixed Reality projects that change the ways we interact with digital content and information.<p>What problem do we solve?<p>First of all, Catchar helps creators and companies to organize and showcase their Augmented and Mixed Reality portfolios online. As a result, their portfolios and profiles can be searchable across the web and on our website. Catchar also helps to connect brands with creators and companies. And definitely, you will be able to find and get lots of different  AR&#x2F;MR related projects and articles that can be sorted by date, rating and category.<p>About us<p>My name is Dan Zaitsev and I\u2019m a hustler (CEO) and founder of Catchar. I jumped into the Augmented and Mixed Reality space approx 7 years ago when I was developing apps for Google Glasses, then I joined Looksery that was acquired by Snap Inc. After I worked  on ROAR, a cloud-based platform that allows you to create your own AR experiences. At the end of 2018 I started working on Catchar. Also, in the team is Dmytro Zolotar who is our hacker and co-founder and Sergey Lagodzinsky is our lead hipster ;) &#x2F; designer and co-founder.<p>Business model and investments<p>Currently, Catchar is a 100% bootstrapping startup that we have built and supported without investments &#x2F; investors. In terms of business models, all creators and companies have to pay membership fees (once) to be listed on Catchar. In addition, we have paid options that help to promote AR&#x2F;MR projects and experiences. And also we are experimenting with a PRO subscription.<p>How I started with version 1.0 and my challenges<p>I started Catchar 1.5 years ago as a side-project and was the solo-founder during the first year. One friend of mine helped me to build the basic MVP based on React_js. We have chosen Prisma_io as a solution for back-end and user management. Also, we connected and used Mailchimp as a notification and newsletter service. The first version was a simple, curated directory where users were able to share their projects. I\u2019ve got some transactions and feedback but honestly, the first 4 to 8 months were very tough for me. First of all, it was difficult in terms of activity and traffic, secondly, I had a lack of features and resources. I even tried to learn React_js and Node_js to improve the core features but had no time to mix marketing, management, design and also do my full-time job. Anyway, I didn&#x27;t stop working on marketing, SEO and AR content. Also, I was talking to users to get feedback and collect more XR projects. I felt that I had problems in PMF so I was looking and thinking about new ideas for Catchar.<p>Changes and profit<p>In 2019 I came up with an idea to transform Catchar into a community-based startup &#x2F; project. In summer 2019 I met my new co-founders and we started working on the 2.0 version. Our main goal was to build something for AR&#x2F;MR creators and to be more focused on people rather than on projects. And this worked well. Also, I jumped into Startupschool by YC in the summer of 2019. It helped me to change my mindset a little bit and think more about KPIs and PMF. The first positive feedback was received when we got a spike of pre-registrations for the 2.0 version and our first donations.<p>Tech stack that we use in version 2.0<p>Website is written on PHP and Javascript, using Laravel framework for back-end and Vue.js on the public. Server instance has Ubuntu 18 and MySQL 5.7 database. We use Redis for caching and Pusher for broadcasting events. For the instant notifications we have connected Mailgun service. Payments are going through Stripe. Hosted everything on GCP.<p>Support<p>Since Catchar is a community-based startup, anyone can share and contribute AR&#x2F;MR content, similar to Wikipedia, Crunchbase, etc. However, Catchar needs some support in terms of approving content and users that fit community rules. In these terms, some of my friends help me to moderate the community properly. Also, we are working on a new role, named Community Leader. As a result, our CLs would be able to help us to support and moderate the community.<p>Our stats<p>We have fully launched version 2.0 in December 2019 and to this day we have around 2,550 registered creators, companies and basic users. Before December we were in the pre-launch phase for approximately an additional 2 months. During this time we collected our first 30% of users and got some payments. This gave us some nice motivation and a boost to our mentality. In terms of projects, we have 950 submitted AR&#x2F;MR apps, lenses and experiences. Some projects were submitted and contributed to the first version of Catchar. We migrated them from 1.0 into the 2.0 version. In terms of revenue, up until today we have earned approx $976.<p>How much we spend per month:<p>Support - $140&#x2F;mo (I have a friend of mine who works with us on a part-time basis. He helps us in terms of moderating the community properly)\nHosting - $0&#x2F;mo (Trial by Google Cloud Platform)\nContent - $50&#x2F;mo (Proofreading of EN articles, posts, etc.)\nSEO - $100&#x2F;mo (We are also working with 1 guy who helps us in terms of SEO)<p>How much I spent in one year<p>Currently, I\u2019m investing in Catchar with my own funds. Please note I\u2019m not an investor but it\u2019s necessary in terms of supporting, marketing, etc. So, if someone thinks that they can build a startup or side-project with 0 investment, I would say it\u2019s possible but will be difficult. During the last year and 3 months, I have invested around $1,529.<p>Our plans for 2.0<p>We have to finish and polish lots of new features. First of all, we have to work on the improvements of the subcommunity pages (i.e. SparkAR, Magic Leap, Lens Studio, ARKit, etc.). Our goal is to help creators to focus on the tech stack that they follow and specialize in. The next step is to release a collaborative module. And definitely add the ability to edit profiles, projects and release password recovery feature :P Also, we have to scale our revenue streams.<p>So guys, I hope you liked our story. My main question to you is what do you think about Catchar? \nCan we turn it into a $1B company or will Catchar remain in the side-project phase? :)",
+   "created_at": "2020-02-19T15:16:39Z",
+   "created_at_i": 1582125399,
+   "objectID": "22366156",
+   "parent_id": 22366135,
+   "story_id": 22366135,
+   "story_title": "Show HN: Bootstrapping a community-based startup for AR creators. Catchar 2.0",
+   "story_url": "https://www.catchar.io/",
+   "updated_at": "2024-09-20T05:43:21Z"
+  }
+ ],
+ "hitsPerPage": 50,
+ "nbHits": 4,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=crunchbase+pro+data&tags=comment&hitsPerPage=50&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 20,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 13
+  },
+  "afterFetch": {
+   "format": {
+    "highlighting": 1,
+    "total": 1
+   },
+   "merge": {
+    "total": 1
+   },
+   "total": 2
+  },
+  "fetch": {
+   "query": 12,
+   "scanning": 4,
+   "total": 17
+  },
+  "total": 20
+ },
+ "query": "crunchbase pro data",
+ "serverTimeMS": 21,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=crunchbase+pro+data&tags=comment&hitsPerPage=50"
+}

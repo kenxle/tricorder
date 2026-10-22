@@ -1,0 +1,131 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "bfein2313"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ai",
+      "due",
+      "diligence",
+      "venture"
+     ],
+     "value": "Do you buy into the hype around <em>AI</em> and <em>AI</em> agents? I work in private equity and <em>venture</em> capital, and we recently had an internal discussion about whether <em>AI</em> could eventually replace analysts and deal sourcing employees for investment screening and <em>due</em> <em>diligence</em>. It would obviously save firms a ton of money and time, but there's concern about the accuracy. What\u2019s your take?"
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "ai"
+     ],
+     "value": "Do you buy into the hype around <em>AI</em> and <em>AI</em> agents?"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_bfein2313",
+    "story_42612506",
+    "ask_hn"
+   ],
+   "author": "bfein2313",
+   "children": [
+    42612762
+   ],
+   "created_at": "2025-01-06T17:11:40Z",
+   "created_at_i": 1736183500,
+   "num_comments": 2,
+   "objectID": "42612506",
+   "points": 1,
+   "story_id": 42612506,
+   "story_text": "Do you buy into the hype around AI and AI agents? I work in private equity and venture capital, and we recently had an internal discussion about whether AI could eventually replace analysts and deal sourcing employees for investment screening and due diligence. It would obviously save firms a ton of money and time, but there&#x27;s concern about the accuracy. What\u2019s your take?",
+   "title": "Do you buy into the hype around AI and AI agents?",
+   "updated_at": "2025-01-07T01:25:41Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "yurikoif"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ai",
+      "due",
+      "diligence",
+      "venture"
+     ],
+     "value": "TL;DR: Web search open router that routes agent web search across providers (Exa, Parallel, Tavily, Brave, SerpAPI etc.), and traces web search results with quality metrics, so you can visualize whether a bad agent run is a web search problem or a reasoning problem.<p>I work in <em>venture</em> capital, and before that I worked in information retrieval. When agents went viral, I built a <em>due</em> <em>diligence</em> agent for my day job. I vibe-coded the first version. It was pretty bad.\nMy first reaction is to blame the model.\nI tried to change backend models, maybe because Fable doesn't want to help me do people search? Maybe because GPT 5.5 overthinks things? I tried DeepSeek, Kimi, Qwen; I changed prompts again and again, no good.\nThen I stopped just simply checking the final answer and started reading the actual trajectories: what did the agent search for? What came back? What pages did it read? At what point agents were off the rail?<p>Pretty interesting:\nSometimes the agent is stuck and confused because the information provided is irrelevant or even wrong;\nSometimes the agent keeps iterate the same query, like &quot;XXX lab UCB CS PhD founder 2026&quot; &quot;2026 XXX lab machine learning systems students startup&quot; because the web search provider is not up-to-date;\nSometimes sub-agents give up too early because the agent's intelligence is not enough or too &quot;guardrailed&quot;;\nSometimes everything is just slow. A run jeopardized at minute 1 but still ran for another 10 before returning nonsense. That's because of bad searches, but nothing reveals it.<p>So I built two things:<p>1. Web Search/Fetch router: One gateway for Exa, Parallel, Tavily, Brave, Ceramic, Linkup, Seltz, You, SerpAPI, etc. You or your agent can pick one or query several concurrently, and the responses come back in a homogeneous format.\n2. Web Search Observability: Trace every search your agent (and its sub-agents) makes with an evaluator scoring relevance, diversity, and a few other things. Point is to answer one question: is your pipeline broken because the web search is bad? If so, where?<p>Everything is agent-operated. All u need to do is to run this shell script: &lt;curl -fsSL <a href=\"https://docs.telem.ai/alpha_install.sh\" rel=\"nofollow\">https://docs.telem.<em>ai</em>/alpha_install.sh</a> | sh&gt;\nPlease give it a try, any feedback/suggestion would be great! Especially I\u2019d like to ask: how are you debugging search/retrieval failures nowadays?"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Telem \u2013 Route agent web search across providers and inspect the traces"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "ai"
+     ],
+     "value": "https://telem.<em>ai</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_yurikoif",
+    "story_49469804",
+    "show_hn"
+   ],
+   "author": "yurikoif",
+   "children": [
+    49470750
+   ],
+   "created_at": "2026-08-27T19:13:57Z",
+   "created_at_i": 1787858037,
+   "num_comments": 2,
+   "objectID": "49469804",
+   "points": 8,
+   "story_id": 49469804,
+   "story_text": "TL;DR: Web search open router that routes agent web search across providers (Exa, Parallel, Tavily, Brave, SerpAPI etc.), and traces web search results with quality metrics, so you can visualize whether a bad agent run is a web search problem or a reasoning problem.<p>I work in venture capital, and before that I worked in information retrieval. When agents went viral, I built a due diligence agent for my day job. I vibe-coded the first version. It was pretty bad.\nMy first reaction is to blame the model.\nI tried to change backend models, maybe because Fable doesn&#x27;t want to help me do people search? Maybe because GPT 5.5 overthinks things? I tried DeepSeek, Kimi, Qwen; I changed prompts again and again, no good.\nThen I stopped just simply checking the final answer and started reading the actual trajectories: what did the agent search for? What came back? What pages did it read? At what point agents were off the rail?<p>Pretty interesting:\nSometimes the agent is stuck and confused because the information provided is irrelevant or even wrong;\nSometimes the agent keeps iterate the same query, like &quot;XXX lab UCB CS PhD founder 2026&quot; &quot;2026 XXX lab machine learning systems students startup&quot; because the web search provider is not up-to-date;\nSometimes sub-agents give up too early because the agent&#x27;s intelligence is not enough or too &quot;guardrailed&quot;;\nSometimes everything is just slow. A run jeopardized at minute 1 but still ran for another 10 before returning nonsense. That&#x27;s because of bad searches, but nothing reveals it.<p>So I built two things:<p>1. Web Search&#x2F;Fetch router: One gateway for Exa, Parallel, Tavily, Brave, Ceramic, Linkup, Seltz, You, SerpAPI, etc. You or your agent can pick one or query several concurrently, and the responses come back in a homogeneous format.\n2. Web Search Observability: Trace every search your agent (and its sub-agents) makes with an evaluator scoring relevance, diversity, and a few other things. Point is to answer one question: is your pipeline broken because the web search is bad? If so, where?<p>Everything is agent-operated. All u need to do is to run this shell script: &lt;curl -fsSL <a href=\"https:&#x2F;&#x2F;docs.telem.ai&#x2F;alpha_install.sh\" rel=\"nofollow\">https:&#x2F;&#x2F;docs.telem.ai&#x2F;alpha_install.sh</a> | sh&gt;\nPlease give it a try, any feedback&#x2F;suggestion would be great! Especially I\u2019d like to ask: how are you debugging search&#x2F;retrieval failures nowadays?",
+   "title": "Show HN: Telem \u2013 Route agent web search across providers and inspect the traces",
+   "updated_at": "2026-08-28T06:01:20Z",
+   "url": "https://telem.ai/"
+  }
+ ],
+ "hitsPerPage": 50,
+ "nbHits": 2,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=AI+due+diligence+venture&tags=story&hitsPerPage=50&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 18,
+ "processingTimingsMS": {
+  "_request": {
+   "queue": 1,
+   "roundTrip": 21
+  },
+  "fetch": {
+   "query": 15,
+   "scanning": 1,
+   "total": 17
+  },
+  "total": 18
+ },
+ "query": "AI due diligence venture",
+ "serverTimeMS": 20,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=AI+due+diligence+venture&tags=story&hitsPerPage=50"
+}

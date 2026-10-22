@@ -1,0 +1,28 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [],
+ "hitsPerPage": 50,
+ "nbHits": 0,
+ "nbPages": 0,
+ "page": 0,
+ "params": "query=deal+flow+spreadsheet+airtable&tags=comment&hitsPerPage=50&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 29,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 20
+  },
+  "fetch": {
+   "query": 27,
+   "total": 28
+  },
+  "total": 29
+ },
+ "query": "deal flow spreadsheet airtable",
+ "serverTimeMS": 29,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=deal+flow+spreadsheet+airtable&tags=comment&hitsPerPage=50"
+}

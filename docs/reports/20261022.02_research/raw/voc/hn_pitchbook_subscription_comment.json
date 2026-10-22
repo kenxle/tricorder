@@ -1,0 +1,72 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "vmurthy"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "pitchbook",
+      "subscription"
+     ],
+     "value": "The story mentions a few stories and it might be a lead indicator but I tend to &quot;follow the money&quot; ;-) and this is what the money tells me[1]:<p>&quot;Last year, VCs invested just over $200 million in various podcast platforms and related businesses, per the <em>PitchBook</em> Platform. That includes a $50 million funding for the online radio app  TuneIn, about $20 million for Gimlet Media and another $20 million for HowStuffWorks, the company behind the popular show &quot;Stuff You Should Know&quot; as well as other original podcast content.<p>So far this year, VCs have shelled out $64 million on companies in the space, including a $40 million NEA-led round for Luminary Media, the operator of a <em>subscription</em>-based podcast platform, and a $13.5 million Series B for podcast startup Castbox&quot;<p>[1] <a href=\"https://pitchbook.com/news/articles/vcs-love-fundingand-hostingpodcasts\" rel=\"nofollow\">https://<em>pitchbook</em>.com/news/articles/vcs-love-fundingand-host...</a><p>The implication to me at-least is that the tools to launch podcasts will continue to proliferate (how else will all those platforms for podcasts make money?) and we can expect a lot more podcasts in the future. Would love to hear differing views."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Have We Hit Peak Podcast?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.nytimes.com/2019/07/18/style/why-are-there-so-many-podcasts.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_vmurthy",
+    "story_20469141"
+   ],
+   "author": "vmurthy",
+   "comment_text": "The story mentions a few stories and it might be a lead indicator but I tend to &quot;follow the money&quot; ;-) and this is what the money tells me[1]:<p>&quot;Last year, VCs invested just over $200 million in various podcast platforms and related businesses, per the PitchBook Platform. That includes a $50 million funding for the online radio app  TuneIn, about $20 million for Gimlet Media and another $20 million for HowStuffWorks, the company behind the popular show &quot;Stuff You Should Know&quot; as well as other original podcast content.<p>So far this year, VCs have shelled out $64 million on companies in the space, including a $40 million NEA-led round for Luminary Media, the operator of a subscription-based podcast platform, and a $13.5 million Series B for podcast startup Castbox&quot;<p>[1] <a href=\"https:&#x2F;&#x2F;pitchbook.com&#x2F;news&#x2F;articles&#x2F;vcs-love-fundingand-hostingpodcasts\" rel=\"nofollow\">https:&#x2F;&#x2F;pitchbook.com&#x2F;news&#x2F;articles&#x2F;vcs-love-fundingand-host...</a><p>The implication to me at-least is that the tools to launch podcasts will continue to proliferate (how else will all those platforms for podcasts make money?) and we can expect a lot more podcasts in the future. Would love to hear differing views.",
+   "created_at": "2019-07-19T12:43:56Z",
+   "created_at_i": 1563540236,
+   "objectID": "20478137",
+   "parent_id": 20469141,
+   "story_id": 20469141,
+   "story_title": "Have We Hit Peak Podcast?",
+   "story_url": "https://www.nytimes.com/2019/07/18/style/why-are-there-so-many-podcasts.html",
+   "updated_at": "2024-09-20T04:39:32Z"
+  }
+ ],
+ "hitsPerPage": 50,
+ "nbHits": 1,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=pitchbook+subscription&tags=comment&hitsPerPage=50&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 13,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 14
+  },
+  "fetch": {
+   "query": 11,
+   "total": 12
+  },
+  "total": 13
+ },
+ "query": "pitchbook subscription",
+ "serverTimeMS": 13,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=pitchbook+subscription&tags=comment&hitsPerPage=50"
+}

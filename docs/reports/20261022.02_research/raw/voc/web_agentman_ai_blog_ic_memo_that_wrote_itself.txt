@@ -1,0 +1,195 @@
+SOURCE: https://agentman.ai/blog/ic-memo-that-wrote-itself
+
+The IC Memo That Wrote Itself: How One Firm Saved 10+ Hours on a Single Deal | Agentman Blog Agentman 
+
+ Medman Medman agents 4 live · 3 beta 
+ Overview Payer directory Compare options Pricing 
+ Live
+ Eligibility 
+ Inbox Triage 
+ Prior Authorization 
+ AI Receptionist 
+ Beta
+ Denials 
+ Claims Coding 
+ Claims Submission 
+
+ Platform Products
+ Built for you Medman Medical back-office automation, live in clinics Medman agents 4 live · 3 beta 
+ Overview Payer directory Compare options Pricing 
+
+ Live
+ Eligibility Inbox Triage Prior Authorization AI Receptionist Beta
+ Denials Claims Coding Claims Submission 
+
+ Build with us Agentic Harnesses Custom agentic workflows we orchestrate around your expertise Agentic Harnesses 3 pages 
+ Overview Pricing 
+
+ Legal — Debt & M&A Healthcare — Medman 
+
+ Platform
+ Build yourself
+ Agent Skills Capture & share expertise Agent Skills 4 pages 
+ Overview Pricing 
+
+ Skill Library Skills Showcase Claude Skills 
+
+ Connectors & Plugins Connect your tools to Claude, ChatGPT and your agents Connectors & Plugins 3 pages 
+ Overview MCP Connectors Claude Plugins 
+
+ Agent Builder Assemble working agents visually, no code Agent Builder 5 pages 
+ Overview Pricing Security & Governance 
+
+ Agent Testing Agent Insights MCP Connectors Claude Plugins 
+
+ Pricing Overview Products
+ Built for you Medman Per agent pricing Build with us Agentic Harnesses Custom co-build engagements 
+ Platform
+ Build yourself
+ Agent Skills Free, Team, Business, Enterprise Plans Agent Builder Free, Team, Enterprise, Partner Plans 
+
+ About Login 
+ Open menu 
+
+ Blog / Private equity 
+ The IC Memo That Wrote Itself: How One Firm Saved 10+ Hours on a Single Deal
+ IC memo preparation consumes partner weekends. One PE firm used Agentman's IC Memo Generator skill chain to cut memo prep from 15 hours to 2 — with better citations and firm-specific formatting.
+ Debby Wang
+ March 13, 2026 · 7 min read
+
+ Run this play in a portfolio company
+ We scope one workflow, prove it, then repeat it across the portfolio.
+
+ Start a conversation On this page
+ The Weekend Tax on Every Deal 
+ Structured Intelligence, Not Generic Summarization 
+ The Workflow Chain: From Raw Documents to Polished Draft 
+ What Ten Hours Actually Buys You 
+ Your Memo Format, Not a Generic One 
+ Building Your Own IC Memo Skill 
+ On this page The Weekend Tax on Every Deal 
+ Structured Intelligence, Not Generic Summarization 
+ The Workflow Chain: From Raw Documents to Polished Draft 
+ What Ten Hours Actually Buys You 
+ Your Memo Format, Not a Generic One 
+ Building Your Own IC Memo Skill 
+ In private equity, the investment committee memo is where conviction meets scrutiny. It's the document that synthesizes months of diligence into a narrative clear enough for partners to stake capital on — and rigorous enough to withstand the toughest questions in the room.
+
+ It's also the document that consumes partner weekends. The one that sends associates scrambling through scattered CIMs, financial models, and diligence reports at 11 PM on a Sunday, stitching together a coherent story from dozens of disconnected sources. For most firms, IC memo preparation remains one of the most labor-intensive, high-stakes workflows in the deal cycle.
+
+ One mid-market PE firm decided to change that. Using Agentman's IC Memo Generator skill, they reduced a single memo's preparation time by more than ten hours — without sacrificing the rigor their investment committee demands.
+
+ The Weekend Tax on Every Deal
+
+ The pain isn't the writing. Partners and associates know how to write. The pain is the assembly.
+
+ A typical IC memo draws from a sprawling constellation of source material: the confidential information memorandum, management presentations, third-party diligence reports, internal financial models, market research, comparable transaction analyses, and notes from dozens of management calls. Each source lives in a different format, a different folder, sometimes a different decade of filing convention.
+
+ Before the memo can even begin to take shape, someone has to locate every relevant data point, cross-reference claims against source documents, ensure financial figures reconcile across models, and format everything according to the firm's specific template. This assembly work — mechanical, error-prone, and deeply tedious — is what turns a Friday afternoon into a Sunday night.
+
+ For the firm in question, IC memo prep typically consumed 12 to 15 hours of senior associate time per deal. Multiply that across a year's pipeline, and the cost becomes staggering — not just in hours, but in the cognitive load it places on the team members who should be focused on investment judgment, not document logistics.
+
+ Structured Intelligence, Not Generic Summarization
+
+ The IC Memo Generator isn't a chatbot that summarizes documents. It's a structured skill — a codified procedure that follows the firm's exact memo format, section by section, with full awareness of what belongs where and why.
+
+ This distinction matters. Generic AI summarization produces generic output. It doesn't know that your firm's IC memo leads with the investment thesis before the company overview. It doesn't know that your risk section requires explicit mitigation strategies, not just a list of concerns. It doesn't know that your financial analysis section cross-references management projections against independently modeled scenarios.
+
+ A skill knows all of this. The IC Memo Generator was configured to follow the firm's specific template — their section order, their formatting conventions, their level of detail per section. When the skill processes source documents, it doesn't just extract information; it organizes that information according to the firm's established structure.
+
+ The result is a first draft that reads like it was written by someone who has prepared fifty memos at that firm, not by an AI that has read fifty memos from fifty different firms.
+
+ The Workflow Chain: From Raw Documents to Polished Draft
+
+ What makes this approach particularly powerful is not a single skill operating in isolation, but a chain of specialized skills working in sequence.
+
+ The process begins with the CIM Analyzer, which ingests the confidential information memorandum and extracts structured data — company overview, financial highlights, market positioning, growth drivers, and key risks. Rather than producing a flat summary, it creates a structured dataset that downstream skills can reference precisely.
+
+ Next, the Financial Extractor processes the financial model and supplementary financial documents, pulling out revenue projections, margin trends, capital expenditure assumptions, and valuation metrics. Every extracted figure carries a citation back to its source cell or page.
+
+ The Risk Factor Extractor then works through diligence reports, management presentations, and market research to identify and categorize risk factors — operational, financial, market, regulatory — each tagged with its source document and page reference.
+
+ Finally, the IC Memo Generator takes these structured outputs and assembles them into the firm's memo template. It weaves together the investment thesis, populates the financial analysis with extracted figures, maps risks to mitigations, and ensures every factual claim in the memo links back to a specific source document.
+
+ The entire chain runs in a fraction of the time it would take a human to perform the same assembly manually. More importantly, the citation engine ensures that every claim in the final memo can be traced to its origin — a requirement that manual memo preparation often fulfills inconsistently.
+
+ What Ten Hours Actually Buys You
+
+ The firm reported that their first memo using the skill chain took approximately two hours of total human time — reviewing the AI-generated draft, refining the investment narrative, and adding the qualitative judgment calls that no skill can replicate. Their previous baseline for the same work was twelve to fifteen hours.
+
+ But the value of those reclaimed hours extends beyond simple time savings. When associates spend less time on document assembly, they spend more time on what actually matters: sharpening the investment thesis, pressure-testing assumptions, preparing for committee questions, and — critically — sleeping before the Monday morning IC meeting.
+
+ The quality of the output also improved in a measurable way. Citation completeness — the percentage of factual claims in the memo linked to specific source documents — went from roughly 60 percent in manually prepared memos to over 95 percent with the skill-generated draft. For a firm whose IC members regularly challenge the sourcing of specific claims, this alone justified the approach.
+
+ Your Memo Format, Not a Generic One
+
+ One of the most common objections to AI-assisted document preparation is the fear of homogenization. Partners don't want a memo that reads like it was generated by the same tool every other firm is using. They want their firm's memo — the one with the section order their IC expects, the formatting their partners prefer, and the analytical depth their investment process demands.
+
+ This is precisely why the skill-based approach matters. The IC Memo Generator is not a one-size-fits-all template. It's configured to each firm's specifications. Section order, heading conventions, required subsections, citation format, even the level of narrative versus tabular presentation — all of it is encoded in the skill's structure.
+
+ When a firm clones the base IC Memo Generator skill, they customize it to match their exact requirements. The result is a tool that doesn't just automate memo preparation — it automates their memo preparation, preserving the institutional knowledge and formatting conventions that make their IC process work.
+
+ Run this play in a portfolio company
+ We scope one workflow, prove it, then repeat it across the portfolio.
+
+ Start a conversation 
+ Building Your Own IC Memo Skill
+
+ The IC Memo Generator and its supporting skills — CIM Analyzer, Financial Extractor, Risk Factor Extractor — are available on myAgentSkills.ai. Each can be used independently or chained together for end-to-end memo automation.
+
+ For firms ready to reclaim their weekends without compromising their standards, the path forward is straightforward: browse the skill registry, clone the skills that match your workflow, customize them to your firm's specifications, and deploy them where your team already works.
+
+ The ten hours you save on the next memo are just the beginning. Multiply that across every deal in your pipeline, and you're looking at a fundamental shift in how your team allocates its most valuable resource — judgment, not assembly.
+
+ More in Agent Skills 
+
+ More from the Agentman blog
+
+ Agent Skills
+ Agent Skills, Relaunched: The Team Layer for Your Claude Skills 
+ Prasad Thammineni · Jul 6, 2026 
+
+ Agent Skills
+ From 1 Skill to 100: How Agent Skills Compound Into Enterprise Intelligence 
+ Debby Wang · Jun 12, 2026 
+
+ Healthcare
+ Prior Authorization Is Broken: How Agent Skills Cut 13 Hours a Week to Minutes 
+ Debby Wang · May 8, 2026 
+
+ Put agentic capacity into your portfolio
+ Start with one workflow in one company, and measure what it returns.
+ Start a conversation See how it works 
+
+ Expert work, productized.
+ (650) 285-1019 Our AI receptionist answers. 
+
+ Products
+ Medman 
+ Payer Directory 
+ Compare Options 
+ Agentic Harnesses 
+
+ Platform
+ Agent Skills 
+ Agent Builder 
+ MCP Connectors 
+ Claude Plugins 
+
+ Resources
+ Learn / Academy 
+ Showcase 
+ Skills Library 
+ Claude Skills 
+ Use Cases 
+ Help Center 
+
+ Company
+ About 
+ Blog 
+ Pricing 
+ Security & Governance 
+ Contact 
+
+ © 2026 Agentman (Chain of Agents, Inc.). Crafted with ❤️ in SF
+ Privacy Terms

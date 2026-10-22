@@ -1,0 +1,2284 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jacquesm"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "There are substantial differences between angel investors and <em>VC</em>s from a practical point of view, even if both will get you access to capital:<p>- Angels rarely do <em>due</em> <em>diligence</em>, <em>VC</em>s almost always do.<p>- Angels tend to look much more at who else is investing in the company, almost never want to be 'alone' or 'first'.<p>- Also they are typically much less experienced as investors and having them on-board can be a pain, especially when you're doing a start-up outside of their field of expertise<p>- <em>VC</em>s investment tends to come with some visibility perks<p>- it is usually easier to get investment from a group of angel investors than it is to get investment from a <em>VC</em>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Burn Baby Burn"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://avc.com/2014/09/burn-baby-burn/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_jacquesm",
+    "story_8324047"
+   ],
+   "author": "jacquesm",
+   "children": [
+    8325115,
+    8327911
+   ],
+   "comment_text": "There are substantial differences between angel investors and VCs from a practical point of view, even if both will get you access to capital:<p>- Angels rarely do due diligence, VCs almost always do.<p>- Angels tend to look much more at who else is investing in the company, almost never want to be &#x27;alone&#x27; or &#x27;first&#x27;.<p>- Also they are typically much less experienced as investors and having them on-board can be a pain, especially when you&#x27;re doing a start-up outside of their field of expertise<p>- VCs investment tends to come with some visibility perks<p>- it is usually easier to get investment from a group of angel investors than it is to get investment from a VC",
+   "created_at": "2014-09-16T15:40:03Z",
+   "created_at_i": 1410882003,
+   "objectID": "8325008",
+   "parent_id": 8324945,
+   "story_id": 8324047,
+   "story_title": "Burn Baby Burn",
+   "story_url": "http://avc.com/2014/09/burn-baby-burn/",
+   "updated_at": "2024-09-19T21:04:56Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Kansensus"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "Kansensus.com and www.fuzuck.org is a social network that gives 100% of its equity to users.\nNot 10%. Not 50%. Everything.<p>The Model<p>Traditional social networks extract value from users. We're flipping it. Every user owns shares in Kansensus (www.kansensus.com), calculated by this formula:<p>Your_Stake = 60% referrals + 15% join_time + 10% activity + 15% commitment\n* Referrals (60%): Bring users, earn equity. Your network building = your ownership.\n* Join Time (15%): Early adopters get rewarded like early Bitcoin miners. User #1,000 gets 100x what user #10,000,000 gets.\n* Activity (10%): Active users &gt; lurkers. No zombie accounts diluting stakes.\n* Commitment (15%): At 10M users, we activate this. Delete Facebook/Twitter/Instagram, gain 15% more equity. Your choice<p>The Product<p>For now it's simple: a voting platform for global issues. In the future it\u2019s all social media formats in one super app.\n Download the app, use it in guest mode without registering. Like what you see? Sign up to earn equity.\nEvery vote, every issue posted, every referral tracked. Real-time analytics show global consensus broken down by demographics. The world's opinion, transparent and owned by the world.<p>The Math<p>Facebook: $1 trillion value \u00f7 3 billion users = $333 per user locked in Zuckerberg's vault.\nKansensus at 100M users (3% of Facebook's size) with 1/10th the per-user value = $3,330 per average user. Early users and builders could have 10-100x that.\nAt 1B users, we're talking life-changing money.<p>The Growth Hack<p>www.fuzuck.org - our campaign site. The message is simple: delete Meta, Tiktok, Instagram, Twitter and join Kansensus, own what you build.\nWhen we hit 100M users, we trigger the commitment score. Imagine millions deleting Big Tech accounts simultaneously for 15% more equity. That's a news cycle you can't buy.\nWhy Now?\nLenin said capitalists will sell us the rope to hang them. We're using capitalism's own rules - ownership, incentives, network effects - against platform monopolies.\nThe coordination game theory is beautiful: everyone wins by growing the network they own.<p>The <em>VC</em> Exception<p>We might consider one <em>VC</em> for roughly 10% - but only if they meet three criteria:\n1. They see how Kansensus becomes a trillion-dollar global platform owned by the people, making their 10% worth $100B+\n2. They hate Zuckerberg and Elon as much as we do (not negotiable)\n3. They have actual critical thinking skills (rare in <em>VC</em> land, caz\u2019 they\u2019re clowns who don\u2019t even know how to do <em>due</em> <em>diligence</em>)\nMost VCs want control. We want a partner who understands that giving power to users is the ultimate moat. If you're a <em>VC</em> reading this and your first thought is &quot;but how do you maintain control?&quot; - you're not the one.<p>The Ask<p>I need engineers who see it. No salary (I have none). Your code contribution % = your ownership %. Pure meritocracy.\nCurrent status:\n* App is live but basic\n* 1 year of runway left\n* Unique revenue model \n jahangir.y86@gmail.com<p>The Bet<p>Either users can coordinate to own their platforms, or they can't. Both outcomes teach us something fundamental about human coordination at scale.\nDownload it. Break it. Tell me why it won't work. Or help me prove it will.\nBecause if we pull this off - if we get to critical mass - we don't just build another social network.\nWe prove users can own the internet they create.\nP.S. Yes, I know the regulatory nightmare. Yes, I know the scaling challenges. That's precisely why it might work. The impossible ideas are the only ones worth pursuing."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "I'm giving away 100% equity to users \u2013 here's the math"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.fuzuck.org/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Kansensus",
+    "story_45121205"
+   ],
+   "author": "Kansensus",
+   "comment_text": "Kansensus.com and www.fuzuck.org is a social network that gives 100% of its equity to users.\nNot 10%. Not 50%. Everything.<p>The Model<p>Traditional social networks extract value from users. We&#x27;re flipping it. Every user owns shares in Kansensus (www.kansensus.com), calculated by this formula:<p>Your_Stake = 60% referrals + 15% join_time + 10% activity + 15% commitment\n* Referrals (60%): Bring users, earn equity. Your network building = your ownership.\n* Join Time (15%): Early adopters get rewarded like early Bitcoin miners. User #1,000 gets 100x what user #10,000,000 gets.\n* Activity (10%): Active users &gt; lurkers. No zombie accounts diluting stakes.\n* Commitment (15%): At 10M users, we activate this. Delete Facebook&#x2F;Twitter&#x2F;Instagram, gain 15% more equity. Your choice<p>The Product<p>For now it&#x27;s simple: a voting platform for global issues. In the future it\u2019s all social media formats in one super app.\n Download the app, use it in guest mode without registering. Like what you see? Sign up to earn equity.\nEvery vote, every issue posted, every referral tracked. Real-time analytics show global consensus broken down by demographics. The world&#x27;s opinion, transparent and owned by the world.<p>The Math<p>Facebook: $1 trillion value \u00f7 3 billion users = $333 per user locked in Zuckerberg&#x27;s vault.\nKansensus at 100M users (3% of Facebook&#x27;s size) with 1&#x2F;10th the per-user value = $3,330 per average user. Early users and builders could have 10-100x that.\nAt 1B users, we&#x27;re talking life-changing money.<p>The Growth Hack<p>www.fuzuck.org - our campaign site. The message is simple: delete Meta, Tiktok, Instagram, Twitter and join Kansensus, own what you build.\nWhen we hit 100M users, we trigger the commitment score. Imagine millions deleting Big Tech accounts simultaneously for 15% more equity. That&#x27;s a news cycle you can&#x27;t buy.\nWhy Now?\nLenin said capitalists will sell us the rope to hang them. We&#x27;re using capitalism&#x27;s own rules - ownership, incentives, network effects - against platform monopolies.\nThe coordination game theory is beautiful: everyone wins by growing the network they own.<p>The VC Exception<p>We might consider one VC for roughly 10% - but only if they meet three criteria:\n1. They see how Kansensus becomes a trillion-dollar global platform owned by the people, making their 10% worth $100B+\n2. They hate Zuckerberg and Elon as much as we do (not negotiable)\n3. They have actual critical thinking skills (rare in VC land, caz\u2019 they\u2019re clowns who don\u2019t even know how to do due diligence)\nMost VCs want control. We want a partner who understands that giving power to users is the ultimate moat. If you&#x27;re a VC reading this and your first thought is &quot;but how do you maintain control?&quot; - you&#x27;re not the one.<p>The Ask<p>I need engineers who see it. No salary (I have none). Your code contribution % = your ownership %. Pure meritocracy.\nCurrent status:\n* App is live but basic\n* 1 year of runway left\n* Unique revenue model \n jahangir.y86@gmail.com<p>The Bet<p>Either users can coordinate to own their platforms, or they can&#x27;t. Both outcomes teach us something fundamental about human coordination at scale.\nDownload it. Break it. Tell me why it won&#x27;t work. Or help me prove it will.\nBecause if we pull this off - if we get to critical mass - we don&#x27;t just build another social network.\nWe prove users can own the internet they create.\nP.S. Yes, I know the regulatory nightmare. Yes, I know the scaling challenges. That&#x27;s precisely why it might work. The impossible ideas are the only ones worth pursuing.",
+   "created_at": "2025-09-03T22:48:42Z",
+   "created_at_i": 1756939722,
+   "objectID": "45121206",
+   "parent_id": 45121205,
+   "story_id": 45121205,
+   "story_title": "I'm giving away 100% equity to users \u2013 here's the math",
+   "story_url": "https://www.fuzuck.org/",
+   "updated_at": "2026-03-05T22:38:13Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "throwup238"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "With the amount of <em>due</em> <em>diligence</em> tech <em>VC</em>s do, their job could be done with a magic sorting hat, where everyone in the room just pretends its magic and goes along with it."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Marc Andreessen Says One Job Is Mostly Safe from AI: Venture Capitalist"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://gizmodo.com/marc-andreessen-says-one-job-is-mostly-safe-from-ai-venture-capitalist-2000596506"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_throwup238",
+    "story_43851585"
+   ],
+   "author": "throwup238",
+   "comment_text": "With the amount of due diligence tech VCs do, their job could be done with a magic sorting hat, where everyone in the room just pretends its magic and goes along with it.",
+   "created_at": "2025-05-01T03:05:19Z",
+   "created_at_i": 1746068719,
+   "objectID": "43853296",
+   "parent_id": 43851585,
+   "story_id": 43851585,
+   "story_title": "Marc Andreessen Says One Job Is Mostly Safe from AI: Venture Capitalist",
+   "story_url": "https://gizmodo.com/marc-andreessen-says-one-job-is-mostly-safe-from-ai-venture-capitalist-2000596506",
+   "updated_at": "2025-05-07T00:03:33Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ungreased0675"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "Maybe I should start a company to do technical <em>due</em> <em>diligence</em> for <em>VC</em> firms that are tech-illiterate.<p>What kind of checking did they do before investing millions?"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Fintech founder charged with fraud; AI app found to be humans in the Philippines"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://techcrunch.com/2025/04/10/fintech-founder-charged-with-fraud-after-ai-shopping-app-found-to-be-powered-by-humans-in-the-philippines/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ungreased0675",
+    "story_43648950"
+   ],
+   "author": "ungreased0675",
+   "children": [
+    43651383
+   ],
+   "comment_text": "Maybe I should start a company to do technical due diligence for VC firms that are tech-illiterate.<p>What kind of checking did they do before investing millions?",
+   "created_at": "2025-04-11T05:09:49Z",
+   "created_at_i": 1744348189,
+   "objectID": "43650679",
+   "parent_id": 43648950,
+   "story_id": 43648950,
+   "story_title": "Fintech founder charged with fraud; AI app found to be humans in the Philippines",
+   "story_url": "https://techcrunch.com/2025/04/10/fintech-founder-charged-with-fraud-after-ai-shopping-app-found-to-be-powered-by-humans-in-the-philippines/",
+   "updated_at": "2025-04-11T19:17:56Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "suking"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "Because you can't do the <em>due</em> <em>diligence</em> a <em>VC</em> firm does when you invest in 250 companies."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "500 Startups Raises New $50M Fund, Adds 4 New Partners. 250 investments to date"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://techcrunch.com/2012/04/06/500-startups-new-fund-new-partners/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_suking",
+    "story_3807988"
+   ],
+   "author": "suking",
+   "children": [
+    3808656,
+    3808982
+   ],
+   "comment_text": "Because you can't do the due diligence a VC firm does when you invest in 250 companies.",
+   "created_at": "2012-04-06T19:14:08Z",
+   "created_at_i": 1333739648,
+   "objectID": "3808469",
+   "parent_id": 3808387,
+   "points": null,
+   "story_id": 3807988,
+   "story_title": "500 Startups Raises New $50M Fund, Adds 4 New Partners. 250 investments to date",
+   "story_url": "http://techcrunch.com/2012/04/06/500-startups-new-fund-new-partners/",
+   "updated_at": "2023-09-06T21:26:08Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "blueboo"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "They do but it\u2019s a matter of time\nconstraints. Pace. Deal flow. Take too long to scrutinise a good thing and it\u2019ll be snapped up from under you. The group that poached might have even less time to do proper <em>due</em> <em>diligence</em>. <em>VC</em>s tap expertise for <em>due</em> <em>diligence</em> in all sorts of mostly-informal ways. But for proper, compensated investigations there\u2019s almost never enough time to build a case you\u2019d stake your reputation on"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "A messaging app startup that raised $200M shuts down afters users were 95% fake"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://fortune.com/2023/06/25/irl-shutting-down-startup-admits-95-percent-of-messaging-app-users-were-fake/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_blueboo",
+    "story_36475376"
+   ],
+   "author": "blueboo",
+   "comment_text": "They do but it\u2019s a matter of time\nconstraints. Pace. Deal flow. Take too long to scrutinise a good thing and it\u2019ll be snapped up from under you. The group that poached might have even less time to do proper due diligence. VCs tap expertise for due diligence in all sorts of mostly-informal ways. But for proper, compensated investigations there\u2019s almost never enough time to build a case you\u2019d stake your reputation on",
+   "created_at": "2023-06-27T08:02:15Z",
+   "created_at_i": 1687852935,
+   "objectID": "36490148",
+   "parent_id": 36480806,
+   "story_id": 36475376,
+   "story_title": "A messaging app startup that raised $200M shuts down afters users were 95% fake",
+   "story_url": "https://fortune.com/2023/06/25/irl-shutting-down-startup-admits-95-percent-of-messaging-app-users-were-fake/",
+   "updated_at": "2024-09-20T14:30:49Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jjeaff"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "I don't think most commercial users are in the business of purposefully breaking licensing agreements. Even small startups have to worry about this because it generally comes up in <em>due</em> <em>diligence</em> for <em>VC</em> investment. The risk of a future lawsuit, even if small, generally outweigh the savings."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Dragonfly, a startup developing a \u2018drop-in\u2019 replacement for Redis, raises $21M"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://techcrunch.com/2023/03/21/dragonfly-a-database-startup-developing-a-drop-in-replacement-for-redis-raises-21m/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_jjeaff",
+    "story_35248179"
+   ],
+   "author": "jjeaff",
+   "comment_text": "I don&#x27;t think most commercial users are in the business of purposefully breaking licensing agreements. Even small startups have to worry about this because it generally comes up in due diligence for VC investment. The risk of a future lawsuit, even if small, generally outweigh the savings.",
+   "created_at": "2023-03-21T17:15:26Z",
+   "created_at_i": 1679418926,
+   "objectID": "35249277",
+   "parent_id": 35248350,
+   "story_id": 35248179,
+   "story_title": "Dragonfly, a startup developing a \u2018drop-in\u2019 replacement for Redis, raises $21M",
+   "story_url": "https://techcrunch.com/2023/03/21/dragonfly-a-database-startup-developing-a-drop-in-replacement-for-redis-raises-21m/",
+   "updated_at": "2024-09-20T13:38:22Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "thephyber"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "&gt; what happened in the 70s<p>Do you mean the early 1970s when the US moved off the gold standard and there was a massive oil shock?<p>Or the late 1970s when inflation made an attempt for a runaway spiral?<p>&gt; get lower and things resume as normal<p>The last few years (2008-present) have been anything but \u201cnormal\u201d.<p>The Fed has been full throttle on the lowest interest rate for years and Quantitative Easing / asset purchase programs. Stocks and <em>VC</em>s have been juiced with cheap money causing massive distortions in many markets.<p>Normal would involve checking and savings accounts paying a non-trivial interest rate. It would involve actual <em>due</em> <em>diligence</em> in <em>VC</em>, not rubber stamping FOMO. Your \u201cnormal\u201d probably needs some recalibration."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Can the West\u2019s perplexing employment miracle continue?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.economist.com/finance-and-economics/2023/03/05/can-the-wests-perplexing-employment-miracle-continue"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_thephyber",
+    "story_35035297"
+   ],
+   "author": "thephyber",
+   "children": [
+    35046735
+   ],
+   "comment_text": "&gt; what happened in the 70s<p>Do you mean the early 1970s when the US moved off the gold standard and there was a massive oil shock?<p>Or the late 1970s when inflation made an attempt for a runaway spiral?<p>&gt; get lower and things resume as normal<p>The last few years (2008-present) have been anything but \u201cnormal\u201d.<p>The Fed has been full throttle on the lowest interest rate for years and Quantitative Easing &#x2F; asset purchase programs. Stocks and VCs have been juiced with cheap money causing massive distortions in many markets.<p>Normal would involve checking and savings accounts paying a non-trivial interest rate. It would involve actual due diligence in VC, not rubber stamping FOMO. Your \u201cnormal\u201d probably needs some recalibration.",
+   "created_at": "2023-03-06T05:03:27Z",
+   "created_at_i": 1678079007,
+   "objectID": "35037678",
+   "parent_id": 35035792,
+   "story_id": 35035297,
+   "story_title": "Can the West\u2019s perplexing employment miracle continue?",
+   "story_url": "https://www.economist.com/finance-and-economics/2023/03/05/can-the-wests-perplexing-employment-miracle-continue",
+   "updated_at": "2024-09-20T13:25:28Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "blippage"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "Brit here, so it's always interesting to see how things operate across the pond. We have an AIM market in the UK, which is a junior market. There are some good quality companies on there, mixed-in with a hell of a lot of the worst dreck imaginable.<p>The US has a lot more entrepreneurship than the UK, and I think it is something that us Brits could well do more of. In the UK we're too conservative, whilst the US plays it much more fast-an-loose. The UK has its fair share of financial scandals, mind.<p>I get the impression that in the US there has been far too much money chasing after far too opportunities. Blasting through $10b in a single business seems, shall we say, &quot;quite an achievement.&quot;<p>I mean, Juicero, what was that crap, anyway? And then there was the whole Elizabeth Holmes thing. It would have been a large-cap company by UK standards. It seems that there's a lot of US &quot;businesses&quot; out there who are looking to hoover a lot of that sweet sweet <em>VC</em> lolly. I'm not sure what &quot;<em>due</em> <em>diligence</em>&quot; the <em>VC</em> guys are doing, but it doesn't seem much.<p>Another thing I have noticed is that, fairly recently, <em>VC</em> has seemed to switch into reverse gear. Now growth seems to be de-emphasised. It's like the whole Venture Capital market has collectively woken up one day and decided that they are much more sceptical about funding growth opportunities. What has changed really, though? It seems that just because Facebook and a couple of other titans decided to have a round of layoffs, that everyone else should, too. It's not really logical when you think about it. Sure, there's the whole Covid and Russian conflict thing throwing a spanner in the works, but have things really changed that much? It seems more a case of a lack of &quot;animal spirit&quot; compared to formerly that is causing the problems rather than any real problems themselves."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "WeWork\u2019s once robust cash reserves have dwindled, raising chances of default"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.wsj.com/articles/weworks-once-robust-cash-reserves-have-dwindled-raising-chances-of-default-11670905533"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_blippage",
+    "story_34017070"
+   ],
+   "author": "blippage",
+   "children": [
+    34019538,
+    34019556,
+    34019563,
+    34020369,
+    34020378
+   ],
+   "comment_text": "Brit here, so it&#x27;s always interesting to see how things operate across the pond. We have an AIM market in the UK, which is a junior market. There are some good quality companies on there, mixed-in with a hell of a lot of the worst dreck imaginable.<p>The US has a lot more entrepreneurship than the UK, and I think it is something that us Brits could well do more of. In the UK we&#x27;re too conservative, whilst the US plays it much more fast-an-loose. The UK has its fair share of financial scandals, mind.<p>I get the impression that in the US there has been far too much money chasing after far too opportunities. Blasting through $10b in a single business seems, shall we say, &quot;quite an achievement.&quot;<p>I mean, Juicero, what was that crap, anyway? And then there was the whole Elizabeth Holmes thing. It would have been a large-cap company by UK standards. It seems that there&#x27;s a lot of US &quot;businesses&quot; out there who are looking to hoover a lot of that sweet sweet VC lolly. I&#x27;m not sure what &quot;due diligence&quot; the VC guys are doing, but it doesn&#x27;t seem much.<p>Another thing I have noticed is that, fairly recently, VC has seemed to switch into reverse gear. Now growth seems to be de-emphasised. It&#x27;s like the whole Venture Capital market has collectively woken up one day and decided that they are much more sceptical about funding growth opportunities. What has changed really, though? It seems that just because Facebook and a couple of other titans decided to have a round of layoffs, that everyone else should, too. It&#x27;s not really logical when you think about it. Sure, there&#x27;s the whole Covid and Russian conflict thing throwing a spanner in the works, but have things really changed that much? It seems more a case of a lack of &quot;animal spirit&quot; compared to formerly that is causing the problems rather than any real problems themselves.",
+   "created_at": "2022-12-16T19:36:51Z",
+   "created_at_i": 1671219411,
+   "objectID": "34019106",
+   "parent_id": 34017070,
+   "story_id": 34017070,
+   "story_title": "WeWork\u2019s once robust cash reserves have dwindled, raising chances of default",
+   "story_url": "https://www.wsj.com/articles/weworks-once-robust-cash-reserves-have-dwindled-raising-chances-of-default-11670905533",
+   "updated_at": "2024-09-20T12:48:02Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "nirvana"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "This is a great article and it reinforces for me, the importance of the concept of \"ramen profitable\".  If you're Ramen profitable, you're putting essentially all of the profits you could be making into growing the business. You're not running at a loss, and thus not in the situation where a lack of ability to raise funds would kill your runway.  But you're also in the situation where, if some invested were interested in plugging $10M into the company you should already have the mechanisms to manage that money and financial prudence to give the investor a high expectation that you'll put that money into growth.<p>Its really easy to spend other people's money and have no profits, and also have that show up as high growth.  You can turn <em>VC</em> dollars into revenue thru a variety of ways that are unsound for the business in the long term.  A trivial example is taking the <em>VC</em> money and then buying your own products on the open market. This would likely be considered fraud, but there's a variety of \"partnerships\" and inefficient advertising methods whereby you can do the same thing.    If you just want to show growth.<p>But if you're ramen profitable, and have traction, you've shown the business is viable on its own terms.  This is akin to finding product market-fit.  They might not happen at the same time, but being ramen profitable is a lot easier once you've found product-market fit.<p>Of course investors, generally <em>VC</em> types, want to see massive growth and are not as concerned about profits.  But as a founder you have to look out for he business... and there might not be as much <em>VC</em> interest as you would like, and in my experience with VCs they are known to drag out deals.<p>In fact, in several of the deals, during <em>due</em> <em>diligence</em> the <em>VC</em> determined the amount of cash we had on hand.  They also made it known that they wanted us to start spending more on certain initiatives, and to not worry bout it, we'd close well before there was a cash crunch.  Yet in both times, by the time we did close, they had us over a barrel because we were about to run out of cash <em>due</em> to taking their advice.<p>So, I think ramen profitability is a good balance.  You're not wasting gross margin by banking profits, you're turning it all into, hopefully, an investment in future growth.  You're less dependent on VCs, but have also shown the discipline to have compelling examples of how you can turn their money into growth, since you've been doing it with your gross margin so far."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Suster: Should Startups Focus on Profitability or Not?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.bothsidesofthetable.com/2011/12/27/should-startups-focus-on-profitability-or-not/?awesm=bothsid.es_GkX&utm_campaign=&utm_medium=bothsid.es-twitter&utm_source=t.co&utm_content=awesm-publisher"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_nirvana",
+    "story_3396330"
+   ],
+   "author": "nirvana",
+   "comment_text": "This is a great article and it reinforces for me, the importance of the concept of \"ramen profitable\".  If you're Ramen profitable, you're putting essentially all of the profits you could be making into growing the business. You're not running at a loss, and thus not in the situation where a lack of ability to raise funds would kill your runway.  But you're also in the situation where, if some invested were interested in plugging $10M into the company you should already have the mechanisms to manage that money and financial prudence to give the investor a high expectation that you'll put that money into growth.<p>Its really easy to spend other people's money and have no profits, and also have that show up as high growth.  You can turn VC dollars into revenue thru a variety of ways that are unsound for the business in the long term.  A trivial example is taking the VC money and then buying your own products on the open market. This would likely be considered fraud, but there's a variety of \"partnerships\" and inefficient advertising methods whereby you can do the same thing.    If you just want to show growth.<p>But if you're ramen profitable, and have traction, you've shown the business is viable on its own terms.  This is akin to finding product market-fit.  They might not happen at the same time, but being ramen profitable is a lot easier once you've found product-market fit.<p>Of course investors, generally VC types, want to see massive growth and are not as concerned about profits.  But as a founder you have to look out for he business... and there might not be as much VC interest as you would like, and in my experience with VCs they are known to drag out deals.<p>In fact, in several of the deals, during due diligence the VC determined the amount of cash we had on hand.  They also made it known that they wanted us to start spending more on certain initiatives, and to not worry bout it, we'd close well before there was a cash crunch.  Yet in both times, by the time we did close, they had us over a barrel because we were about to run out of cash due to taking their advice.<p>So, I think ramen profitability is a good balance.  You're not wasting gross margin by banking profits, you're turning it all into, hopefully, an investment in future growth.  You're less dependent on VCs, but have also shown the discipline to have compelling examples of how you can turn their money into growth, since you've been doing it with your gross margin so far.",
+   "created_at": "2011-12-27T19:34:08Z",
+   "created_at_i": 1325014448,
+   "objectID": "3397044",
+   "parent_id": 3396330,
+   "points": null,
+   "story_id": 3396330,
+   "story_title": "Suster: Should Startups Focus on Profitability or Not?",
+   "story_url": "http://www.bothsidesofthetable.com/2011/12/27/should-startups-focus-on-profitability-or-not/?awesm=bothsid.es_GkX&utm_campaign=&utm_medium=bothsid.es-twitter&utm_source=t.co&utm_content=awesm-publisher",
+   "updated_at": "2023-09-06T20:52:24Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "strangattractor"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "&quot;fundamentals were largely missing from WeWork\u2019s operations, despite the vetting and <em>due</em> <em>diligence</em> that <em>VC</em> does prior to investment.&quot;<p><em>VC</em> do vetting and <em>due</em> <em>diligence</em>? She must live in Bizzaro Silicon Valley. Seat of the pants investing has always been the norm.  Like how much &quot;<em>due</em> <em>diligence</em>&quot; did Draper Fisher Jurvetson do on Theranos. Soft Bank must spend all of 5 minutes and a night out in a Karaoke Bar to make their decisions."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "What the \u201cCult of the Founder\u201d Gets Wrong"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://switchthefuture.com/2022/09/29/what-the-cult-of-the-founder-gets-wrong/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_strangattractor",
+    "story_33027792"
+   ],
+   "author": "strangattractor",
+   "children": [
+    33029933
+   ],
+   "comment_text": "&quot;fundamentals were largely missing from WeWork\u2019s operations, despite the vetting and due diligence that VC does prior to investment.&quot;<p>VC do vetting and due diligence? She must live in Bizzaro Silicon Valley. Seat of the pants investing has always been the norm.  Like how much &quot;due diligence&quot; did Draper Fisher Jurvetson do on Theranos. Soft Bank must spend all of 5 minutes and a night out in a Karaoke Bar to make their decisions.",
+   "created_at": "2022-09-30T01:10:54Z",
+   "created_at_i": 1664500254,
+   "objectID": "33029594",
+   "parent_id": 33027792,
+   "story_id": 33027792,
+   "story_title": "What the \u201cCult of the Founder\u201d Gets Wrong",
+   "story_url": "https://switchthefuture.com/2022/09/29/what-the-cult-of-the-founder-gets-wrong/",
+   "updated_at": "2024-09-20T12:11:03Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "cj"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "Lawyers (of the company) typically don't get involved in reviewing pitch decks for accuracy at least in the early stages. And even if they did, the lawyers only know what the founders tell them. Additionally, lawyers typically avoid asking probing questions of founders. especially if there is risk that the answer they get may be troubling - it's much easier to defend and advise a client when you're not explicitly aware of every dirty secret.<p>But you're not totally off base. It's absolutely the responsibility of <em>VC</em>s to do their own <em>due</em> <em>diligence</em>. <em>VC</em>s usually are investing <i>other people's</i> money. It's not a good look for <em>VC</em>s to invest in scams, so <em>VC</em>s typically do some degree of <em>due</em> <em>diligence</em> (which could be virtually zero <em>diligence</em> at seed stage / Series A, to quite a lot of <em>diligence</em> at later stages as the amount of money involved increases)."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "SF poop-testing startup, once compared to Theranos, charged in $60M fraud scheme"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.sfgate.com/crime/article/ubiome-richman-apte-sec-filing-charges-fraud-16042042.php"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_cj",
+    "story_26531087"
+   ],
+   "author": "cj",
+   "comment_text": "Lawyers (of the company) typically don&#x27;t get involved in reviewing pitch decks for accuracy at least in the early stages. And even if they did, the lawyers only know what the founders tell them. Additionally, lawyers typically avoid asking probing questions of founders. especially if there is risk that the answer they get may be troubling - it&#x27;s much easier to defend and advise a client when you&#x27;re not explicitly aware of every dirty secret.<p>But you&#x27;re not totally off base. It&#x27;s absolutely the responsibility of VCs to do their own due diligence. VCs usually are investing <i>other people&#x27;s</i> money. It&#x27;s not a good look for VCs to invest in scams, so VCs typically do some degree of due diligence (which could be virtually zero diligence at seed stage &#x2F; Series A, to quite a lot of diligence at later stages as the amount of money involved increases).",
+   "created_at": "2021-03-21T17:12:02Z",
+   "created_at_i": 1616346722,
+   "objectID": "26531961",
+   "parent_id": 26531729,
+   "story_id": 26531087,
+   "story_title": "SF poop-testing startup, once compared to Theranos, charged in $60M fraud scheme",
+   "story_url": "https://www.sfgate.com/crime/article/ubiome-richman-apte-sec-filing-charges-fraud-16042042.php",
+   "updated_at": "2024-09-20T08:10:38Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mbesto"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "I do <em>due</em> <em>diligence</em> on <em>VC</em>/PE projects for a living. Either their <em>diligence</em> partner is really poor or they simply ignored their advice. Despite having $300MM on the line, you'd be surprised how often either situation happens."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "JustFab: The Billion Dollar Startup with a Dark Past"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.buzzfeed.com/sapna/justfab-the-billion-dollar-startup-with-a-dark-past#.wfgpk3DY5"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mbesto",
+    "story_10278697"
+   ],
+   "author": "mbesto",
+   "comment_text": "I do due diligence on VC&#x2F;PE projects for a living. Either their diligence partner is really poor or they simply ignored their advice. Despite having $300MM on the line, you&#x27;d be surprised how often either situation happens.",
+   "created_at": "2015-09-25T18:31:18Z",
+   "created_at_i": 1443205878,
+   "objectID": "10279829",
+   "parent_id": 10279700,
+   "story_id": 10278697,
+   "story_title": "JustFab: The Billion Dollar Startup with a Dark Past",
+   "story_url": "http://www.buzzfeed.com/sapna/justfab-the-billion-dollar-startup-with-a-dark-past#.wfgpk3DY5",
+   "updated_at": "2024-09-19T22:23:41Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "dang"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "&gt; But is there anything wrong with his arguments?<p>Yes. His sources are a WSJ article and &quot;the loss numbers quoted in UBeam\u2019s patent applications&quot;. That's probably not enough information to derive an accurate description of what the company is trying to do, so there's a good chance he's dismissing a straw man.<p>He claims that this investment took place &quot;without even the slightest sanity check&quot; and that &quot;no one is doing the hour\u2019s worth of basic math&quot;. How does he know this? He doesn't; he assumes it. The odds are low that neither A16Z nor anyone else would have asked for a sanity check (Stanford is down the street, after all), so a charitable approach (<a href=\"http://philosophy.lander.edu/oriental/charity.html\" rel=\"nofollow\">http://philosophy.lander.edu/oriental/charity.html</a>) would pause to question this assumption. For a nice example of how to think charitably, see <a href=\"https://news.ycombinator.com/item?id=8542253\" rel=\"nofollow\">https://news.ycombinator.com/item?id=8542253</a> from the previous thread.<p>But the ranting language in the article indicates that he doesn't want to be charitable. His purpose is not to investigate wireless power transmission, it's to confirm the angry worldview he recites at the end, complete with vaccines, yogurt enemas, and clueless <em>VC</em>s. Such articles resonate with others with similar angry worldviews. That's the real dynamic of discussions like this. It has nothing to do with physics; physics was just the kindling this time.<p>Who knows if UBeam will work or will make it to market. If it doesn't, though, this will likely be for some reason other than an obviously stupid mistake that a throng of internet commenters saw through in a few minutes.<p>Let's not forget that investors like A16Z and others are <i>supposed</i> to invest in things that don't work in the end. If they don't, they're not doing their job, which is to take enough risk to reach the borderline of what's possible. (Let's also not forget how another common complaint is that <em>VC</em>s never invest in anything hard. Internet commenters get to have it both ways.) If they're doing their job well, the likely outcome is still that this investment will fail, because most do. In that case you can expect these sproutlings of dismissal to yield a full harvest of I-told-you-so's\u2014but they'll still likely be wrong, because the <em>due</em> <em>diligence</em> of any <em>VC</em> doing a good job would include precisely the sanity checks and basic math being wielded here. <i>Are</i> they doing their job? I don't know, and neither does any other commenter here, and in such cases it's the Principle of Charity we should all fall back on.<p>Wishful thinking about the stupidity of others is a dangerous thing to take pleasure in. It stops up the mind, and makes for mediocre Hacker News threads."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "How putting $10M into UBeam illustrates what is wrong with tech investing (2014)"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://lookatmeimdanny.tumblr.com/post/101432017159/how-putting-10m-into-ubeam-illustrates-everything"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_dang",
+    "story_9990484"
+   ],
+   "author": "dang",
+   "children": [
+    9992155
+   ],
+   "comment_text": "&gt; But is there anything wrong with his arguments?<p>Yes. His sources are a WSJ article and &quot;the loss numbers quoted in UBeam\u2019s patent applications&quot;. That&#x27;s probably not enough information to derive an accurate description of what the company is trying to do, so there&#x27;s a good chance he&#x27;s dismissing a straw man.<p>He claims that this investment took place &quot;without even the slightest sanity check&quot; and that &quot;no one is doing the hour\u2019s worth of basic math&quot;. How does he know this? He doesn&#x27;t; he assumes it. The odds are low that neither A16Z nor anyone else would have asked for a sanity check (Stanford is down the street, after all), so a charitable approach (<a href=\"http:&#x2F;&#x2F;philosophy.lander.edu&#x2F;oriental&#x2F;charity.html\" rel=\"nofollow\">http:&#x2F;&#x2F;philosophy.lander.edu&#x2F;oriental&#x2F;charity.html</a>) would pause to question this assumption. For a nice example of how to think charitably, see <a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=8542253\" rel=\"nofollow\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=8542253</a> from the previous thread.<p>But the ranting language in the article indicates that he doesn&#x27;t want to be charitable. His purpose is not to investigate wireless power transmission, it&#x27;s to confirm the angry worldview he recites at the end, complete with vaccines, yogurt enemas, and clueless VCs. Such articles resonate with others with similar angry worldviews. That&#x27;s the real dynamic of discussions like this. It has nothing to do with physics; physics was just the kindling this time.<p>Who knows if UBeam will work or will make it to market. If it doesn&#x27;t, though, this will likely be for some reason other than an obviously stupid mistake that a throng of internet commenters saw through in a few minutes.<p>Let&#x27;s not forget that investors like A16Z and others are <i>supposed</i> to invest in things that don&#x27;t work in the end. If they don&#x27;t, they&#x27;re not doing their job, which is to take enough risk to reach the borderline of what&#x27;s possible. (Let&#x27;s also not forget how another common complaint is that VCs never invest in anything hard. Internet commenters get to have it both ways.) If they&#x27;re doing their job well, the likely outcome is still that this investment will fail, because most do. In that case you can expect these sproutlings of dismissal to yield a full harvest of I-told-you-so&#x27;s\u2014but they&#x27;ll still likely be wrong, because the due diligence of any VC doing a good job would include precisely the sanity checks and basic math being wielded here. <i>Are</i> they doing their job? I don&#x27;t know, and neither does any other commenter here, and in such cases it&#x27;s the Principle of Charity we should all fall back on.<p>Wishful thinking about the stupidity of others is a dangerous thing to take pleasure in. It stops up the mind, and makes for mediocre Hacker News threads.",
+   "created_at": "2015-08-02T19:14:00Z",
+   "created_at_i": 1438542840,
+   "objectID": "9991975",
+   "parent_id": 9990728,
+   "points": null,
+   "story_id": 9990484,
+   "story_title": "How putting $10M into UBeam illustrates what is wrong with tech investing (2014)",
+   "story_url": "http://lookatmeimdanny.tumblr.com/post/101432017159/how-putting-10m-into-ubeam-illustrates-everything",
+   "updated_at": "2023-09-07T03:21:25Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "sachinag"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "The issue with IPOs as the marker of \"success\" is that public market investors are much more hostile to companies without the <em>VC</em> stamp of approval - they're relying on the implicit <em>due</em> <em>diligence</em> of the <em>VC</em> firms to make sure that there are no issues with the technology, the patent landscape, and other various hangups.  (This applies much more to health care companies, where my <em>VC</em> experience was, but the mentality is the same as the public market investors <i>are the same</i> regardless of industry.)"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "  What Have VCs Really Done for Innovation? "
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.techcrunch.com/2009/09/20/what-have-vcs-really-done-for-innovation/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_sachinag",
+    "story_833234"
+   ],
+   "author": "sachinag",
+   "children": [
+    833416
+   ],
+   "comment_text": "The issue with IPOs as the marker of \"success\" is that public market investors are much more hostile to companies without the VC stamp of approval - they're relying on the implicit due diligence of the VC firms to make sure that there are no issues with the technology, the patent landscape, and other various hangups.  (This applies much more to health care companies, where my VC experience was, but the mentality is the same as the public market investors <i>are the same</i> regardless of industry.)",
+   "created_at": "2009-09-20T18:25:50Z",
+   "created_at_i": 1253471150,
+   "objectID": "833355",
+   "parent_id": 833332,
+   "story_id": 833234,
+   "story_title": "  What Have VCs Really Done for Innovation? ",
+   "story_url": "http://www.techcrunch.com/2009/09/20/what-have-vcs-really-done-for-innovation/",
+   "updated_at": "2024-09-19T16:41:17Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mikeho1999"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "All very good points... but one additional thing to add: what is his/her reputation with former co-workers / companies that s/he has worked with?<p>I had one co-founder who (we thought) had a very celebrated career at a very large (e.g. publicly traded) eCommerce-based company, making his way up to Sr. Director, etc.  Considering we were starting similar type of company, it seemed like a perfect fit to bring him in as our chief executive.<p>However, we never asked for contacts / references with people he had worked with, VPs he worked under, etc.<p>When it came time to raising an institutional round, we were in <em>due</em> <em>diligence</em> with a <em>VC</em> that <i>did</i> look up those references, and it wasn't pretty.  Turned out he had gotten fired by the company because he was using insider knowledge to basically try and start a competing company.  Through his time there, he lost the trust of most of his co-workers and alienated everyone around him.<p>As our <em>VC</em> had then told us -- our CEO was a poison pill.  <i>Any</i> <em>VC</em> we would talk to in the valley would have connections at this company, and would definitely follow up with their contacts at the company to find out more about our CEO, and every <em>VC</em> will come up with the same conclusion, that he is not to be trusted.<p>Had we known about all of this at the beginning (including how detrimental his relationships and his reputation has become), we would've never co-founded with him.<p>Definitely a tough lesson learned."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "due",
+      "diligence"
+     ],
+     "value": "The importance of co-founder <em>due</em> <em>diligence</em>"
+    },
+    "story_url": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "due",
+      "diligence"
+     ],
+     "value": "http://chrisjamieson.me/the-importance-of-co-founder-<em>due</em>-<em>diligence</em>"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mikeho1999",
+    "story_7205644"
+   ],
+   "author": "mikeho1999",
+   "children": [
+    7206133,
+    7207259
+   ],
+   "comment_text": "All very good points... but one additional thing to add: what is his&#x2F;her reputation with former co-workers &#x2F; companies that s&#x2F;he has worked with?<p>I had one co-founder who (we thought) had a very celebrated career at a very large (e.g. publicly traded) eCommerce-based company, making his way up to Sr. Director, etc.  Considering we were starting similar type of company, it seemed like a perfect fit to bring him in as our chief executive.<p>However, we never asked for contacts &#x2F; references with people he had worked with, VPs he worked under, etc.<p>When it came time to raising an institutional round, we were in due diligence with a VC that <i>did</i> look up those references, and it wasn&#x27;t pretty.  Turned out he had gotten fired by the company because he was using insider knowledge to basically try and start a competing company.  Through his time there, he lost the trust of most of his co-workers and alienated everyone around him.<p>As our VC had then told us -- our CEO was a poison pill.  <i>Any</i> VC we would talk to in the valley would have connections at this company, and would definitely follow up with their contacts at the company to find out more about our CEO, and every VC will come up with the same conclusion, that he is not to be trusted.<p>Had we known about all of this at the beginning (including how detrimental his relationships and his reputation has become), we would&#x27;ve never co-founded with him.<p>Definitely a tough lesson learned.",
+   "created_at": "2014-02-09T16:05:11Z",
+   "created_at_i": 1391961911,
+   "objectID": "7205879",
+   "parent_id": 7205644,
+   "story_id": 7205644,
+   "story_title": "The importance of co-founder due diligence",
+   "story_url": "http://chrisjamieson.me/the-importance-of-co-founder-due-diligence",
+   "updated_at": "2024-09-19T20:30:47Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "zaroth"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "There are some interesting characteristics of the arrangement between FC and the investors. Obviously it's a free market, and if FC is the best way a <em>VC</em>/accredited investor can get access to a startup they want to invest it, then maybe it's worth the cost, but IMO FC is taking a pretty big cut (from the <em>VC</em>) for their <em>due</em> <em>diligence</em>, making an introduction and pooling money. Personally, I discount the \"<em>due</em> dilligence\" aspect because a <em>VC</em> that doesn't do their <i>own</i> <em>due</em> <em>diligence</em> isn't a <em>VC</em>, and isn't someone you want investing in your company.<p>They do make things pretty easy on the startup. Having gone through a Reg D/504, it does take time to deal with the EDGAR and state-specific filing requirements, but it's not exactly rocket science either, and personally I found it fun to learn the system and successfully close a round on my own.<p>There are some interesting terms attached... In particular:\n- They vote all the shares on behalf of the investors,\n- They take up to 30% of the profits as carried interest,\n- They can resell on secondary markets if they become available,\n- And they can fully withhold their shares from an offer they don't like. For comparison, YC Series AA term sheet requires consent of 50% of the preferred to sell, and they can participate pro-rata. TechStars Series AA term sheet simply allows the preferred to participate pro-rata.\n- No mention of if their standard liquidation preference is participating, or anti-dilution clauses, neither of which [a startup] would typically want in a Series AA, but that's irrelevant to the SEC.<p>Quoting their letter to the SEC:<p>- FC Management manages the investment funds of which it is the manager. FC Management exercises any management rights negotiated with the start-up company (for example advisory board status, rights to review books and records, access to board materials, and/or access to management).<p>- FC Management has the ability to vote the investment fund's shares in any matter requiring a vote of the start-up company's shareholders. FC Management has the ability, subject to the terms of its agreement with the start-up company and applicable federal and state securities laws, to offer or sell its securities\nin the start-up company in the secondary market (if such a market exists or develops), or to offer or\nsell those securities back to the start-up company or to other existing investors in the start-up company.<p>- If the start-up company is the subject of a tender offer, FC Management has the right to decide whether or\nnot to tender the shares owned by the investment fund.<p>Upon the liquidation of such a fund,the proceeds of the fund would be disbursed as follows:<p>(1)first any remaining out-of-pocket third-party expenses of the investment fund, to the extent not already paid out of the administrative fee, would be paid;<p>(2) second, the capital contributions of each of the investors in the investment fund would be repaid; and then<p>(3) third, any remaining profits of the investment fund would be distributed on a pro-rata basis, with a percentage to be paid on a pro-rata basis to the investors who had made capital contributions to the investment fund, and the remaining percentage to be paid to FC Management, Inc. in return for its role\nin organizing and managing the investment fund. The amount of this \"carried interest\" to be earned by FC Management would be disclosed to all investors in the fund at the time of the organization of the fund. We anticipate that amount of carried interest in most cases would be 20% or less of the profits of the investment fund, but in no event would the amount of carried interest exceed 30%."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "SEC Greenlights One Style Of Equity Crowdfunding For Startups"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://techcrunch.com/2013/03/28/equity-crowdfunding-sec/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_zaroth",
+    "story_5456981"
+   ],
+   "author": "zaroth",
+   "comment_text": "There are some interesting characteristics of the arrangement between FC and the investors. Obviously it's a free market, and if FC is the best way a VC/accredited investor can get access to a startup they want to invest it, then maybe it's worth the cost, but IMO FC is taking a pretty big cut (from the VC) for their due diligence, making an introduction and pooling money. Personally, I discount the \"due dilligence\" aspect because a VC that doesn't do their <i>own</i> due diligence isn't a VC, and isn't someone you want investing in your company.<p>They do make things pretty easy on the startup. Having gone through a Reg D/504, it does take time to deal with the EDGAR and state-specific filing requirements, but it's not exactly rocket science either, and personally I found it fun to learn the system and successfully close a round on my own.<p>There are some interesting terms attached... In particular:\n- They vote all the shares on behalf of the investors,\n- They take up to 30% of the profits as carried interest,\n- They can resell on secondary markets if they become available,\n- And they can fully withhold their shares from an offer they don't like. For comparison, YC Series AA term sheet requires consent of 50% of the preferred to sell, and they can participate pro-rata. TechStars Series AA term sheet simply allows the preferred to participate pro-rata.\n- No mention of if their standard liquidation preference is participating, or anti-dilution clauses, neither of which [a startup] would typically want in a Series AA, but that's irrelevant to the SEC.<p>Quoting their letter to the SEC:<p>- FC Management manages the investment funds of which it is the manager. FC Management exercises any management rights negotiated with the start-up company (for example advisory board status, rights to review books and records, access to board materials, and/or access to management).<p>- FC Management has the ability to vote the investment fund's shares in any matter requiring a vote of the start-up company's shareholders. FC Management has the ability, subject to the terms of its agreement with the start-up company and applicable federal and state securities laws, to offer or sell its securities\nin the start-up company in the secondary market (if such a market exists or develops), or to offer or\nsell those securities back to the start-up company or to other existing investors in the start-up company.<p>- If the start-up company is the subject of a tender offer, FC Management has the right to decide whether or\nnot to tender the shares owned by the investment fund.<p>Upon the liquidation of such a fund,the proceeds of the fund would be disbursed as follows:<p>(1)first any remaining out-of-pocket third-party expenses of the investment fund, to the extent not already paid out of the administrative fee, would be paid;<p>(2) second, the capital contributions of each of the investors in the investment fund would be repaid; and then<p>(3) third, any remaining profits of the investment fund would be distributed on a pro-rata basis, with a percentage to be paid on a pro-rata basis to the investors who had made capital contributions to the investment fund, and the remaining percentage to be paid to FC Management, Inc. in return for its role\nin organizing and managing the investment fund. The amount of this \"carried interest\" to be earned by FC Management would be disclosed to all investors in the fund at the time of the organization of the fund. We anticipate that amount of carried interest in most cases would be 20% or less of the profits of the investment fund, but in no event would the amount of carried interest exceed 30%.",
+   "created_at": "2013-03-28T20:42:20Z",
+   "created_at_i": 1364503340,
+   "objectID": "5457463",
+   "parent_id": 5456981,
+   "story_id": 5456981,
+   "story_title": "SEC Greenlights One Style Of Equity Crowdfunding For Startups",
+   "story_url": "http://techcrunch.com/2013/03/28/equity-crowdfunding-sec/",
+   "updated_at": "2024-09-19T19:28:47Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Eridrus"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "&gt; You should read up on what a risk retention group is and how it works. To me, it's even worse than you think.<p>I did some basic reading but don't really see anything particularly wrong with them.<p>AFAICT, the argument being advanced against Corgi is that insured customers might be doing risky things assuming their insurance will bail them out. This just doesn't ring true to me because I think most startup founders are just willing to accept more risk and accept that sometimes that includes legal risk.<p>When you look at Corgi's marketing, e.g. <a href=\"https://www.corgi.insure/ai\" rel=\"nofollow\">https://www.corgi.insure/ai</a> what you'll see in the common risk triggers is basically compliance: AI Safety Audits, <em>VC</em> <em>due</em> <em>diligence</em>, EU Regulation. It's basically all about showing other people that you're &quot;doing something&quot;, not because you think you need or want insurance.<p>I think the comparison to Delve is actually quite apt: startups generally do not care about SOC 2, they just need the checkbox that their customers are asking for. And startup's customers often themselves don't really care, they are just doing it to satisfy their own SOC 2 requirements, ad infinitum.<p>I think the main people that are being potentially deceived here are not Corgi's customers, those customers' customers, but I don't think they truly care either and are also checking a box."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "LARP \u2013 Revenue infrastructure for serious founders"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.larp.website/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Eridrus",
+    "story_48882569"
+   ],
+   "author": "Eridrus",
+   "comment_text": "&gt; You should read up on what a risk retention group is and how it works. To me, it&#x27;s even worse than you think.<p>I did some basic reading but don&#x27;t really see anything particularly wrong with them.<p>AFAICT, the argument being advanced against Corgi is that insured customers might be doing risky things assuming their insurance will bail them out. This just doesn&#x27;t ring true to me because I think most startup founders are just willing to accept more risk and accept that sometimes that includes legal risk.<p>When you look at Corgi&#x27;s marketing, e.g. <a href=\"https:&#x2F;&#x2F;www.corgi.insure&#x2F;ai\" rel=\"nofollow\">https:&#x2F;&#x2F;www.corgi.insure&#x2F;ai</a> what you&#x27;ll see in the common risk triggers is basically compliance: AI Safety Audits, VC due diligence, EU Regulation. It&#x27;s basically all about showing other people that you&#x27;re &quot;doing something&quot;, not because you think you need or want insurance.<p>I think the comparison to Delve is actually quite apt: startups generally do not care about SOC 2, they just need the checkbox that their customers are asking for. And startup&#x27;s customers often themselves don&#x27;t really care, they are just doing it to satisfy their own SOC 2 requirements, ad infinitum.<p>I think the main people that are being potentially deceived here are not Corgi&#x27;s customers, those customers&#x27; customers, but I don&#x27;t think they truly care either and are also checking a box.",
+   "created_at": "2026-07-15T20:00:30Z",
+   "created_at_i": 1784145630,
+   "objectID": "48926317",
+   "parent_id": 48889257,
+   "story_id": 48882569,
+   "story_title": "LARP \u2013 Revenue infrastructure for serious founders",
+   "story_url": "https://www.larp.website/",
+   "updated_at": "2026-07-15T20:02:37Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "realsarm"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "You can call it a bait but where is <em>VC</em>s <em>due</em> <em>diligence</em> for this. Most <em>VC</em>s where out there defending their infra layers investment. Just look at YC batches and see the inflated number of infra startups."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "AI OSS tool repo goes archived over night after raising $7.3M Seed"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://github.com/tensorzero/tensorzero"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_realsarm",
+    "story_48516504"
+   ],
+   "author": "realsarm",
+   "children": [
+    48517309,
+    48517486,
+    48517584,
+    48517639
+   ],
+   "comment_text": "You can call it a bait but where is VCs due diligence for this. Most VCs where out there defending their infra layers investment. Just look at YC batches and see the inflated number of infra startups.",
+   "created_at": "2026-06-13T13:40:34Z",
+   "created_at_i": 1781358034,
+   "objectID": "48517252",
+   "parent_id": 48517120,
+   "story_id": 48516504,
+   "story_title": "AI OSS tool repo goes archived over night after raising $7.3M Seed",
+   "story_url": "https://github.com/tensorzero/tensorzero",
+   "updated_at": "2026-06-13T21:50:38Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "willio58"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "And just like that you\u2019ve done more <em>due</em> <em>diligence</em> than the <em>VC</em>s who just threw money at this."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "PgDog is funded and coming to a database near you"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://pgdog.dev/blog/our-funding-announcement"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_willio58",
+    "story_48476466"
+   ],
+   "author": "willio58",
+   "children": [
+    48486930
+   ],
+   "comment_text": "And just like that you\u2019ve done more due diligence than the VCs who just threw money at this.",
+   "created_at": "2026-06-10T21:38:51Z",
+   "created_at_i": 1781127531,
+   "objectID": "48483088",
+   "parent_id": 48480957,
+   "story_id": 48476466,
+   "story_title": "PgDog is funded and coming to a database near you",
+   "story_url": "https://pgdog.dev/blog/our-funding-announcement",
+   "updated_at": "2026-06-11T08:50:42Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mburaksayici"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "- <i>Location:</i> Istanbul, Turkey  \n  - <i>Remote:</i> Yes \u2014 working for US companies and global teams remotely for 4 years  \n  - <i>Willing to relocate:</i> Open to travels, not relocation<p>---<p>- <i>Technologies:</i>  \n  LLM, AI-Agents, Python, PyTorch, TensorFlow, NumPy, pandas, scikit-learn, OpenCV, Hugging Face Transformers, FastAPI, Gradio, SQL, SQLite, PostgreSQL, MSSQL, REST APIs, Git, GitHub, Docker, Argo Workflows, Celery, RabbitMQ, Pinecone, OpenAI API, LangChain, Weaviate, RAG pipelines, CNNs, Transformers, MLOps, AutoML, XAI, MLflow, Streamlit, Flask, AWS, Jupyter, matplotlib, seaborn, pytest, shell scripting, CI/CD, Web scraping<p>---<p>- <i>R\u00e9sum\u00e9 / CV:</i>  \n  [Google Drive](<a href=\"https://drive.google.com/file/d/13-noXqbAhYvcUoqENXFSf_OZuMk\" rel=\"nofollow\">https://drive.google.com/file/d/13-noXqbAhYvcUoqENXFSf_OZuMk</a>...) | [LinkedIn](<a href=\"https://www.linkedin.com/in/mehmet-burak-sayici-a45294126/\" rel=\"nofollow\">https://www.linkedin.com/in/mehmet-burak-sayici-a45294126/</a>)<p>---<p>- <i>Email:</i>  \n  mburaksayici@gmail.com<p>---<p>- <i>Highlights:</i>  \n  - Built <i>Gesund\u2019s MLOps platform</i> as first engineer; company later named to <i>CB Insights AI 100 (2024)</i> alongside OpenAI.  \n  - Managed <i>$400k+ software contracts</i>, represented Gesund in meetings with <i>FDA &amp; White House officials</i>.  \n  - Co-authored a <i>Stanford-affiliated AI paper</i> during internship at Stanford Biomedical Data Science.  \n  - Currently lead the <i>AI Interview App at Career.io (5,000+ MAU)</i>, integrating LLMs, vector search (Chroma), and agent-based feedback loops.  \n  - Built <i>two LLM+RAG apps</i> post-Gesund: <em>VC</em> <em>due</em>-<em>diligence</em> tool and YC-style growth tooling (built without LangChain).  \n  - Created <i>MLOps system for energy forecasting</i> across 8 cities (Python, PostgreSQL, weather APIs, LightGBM/XGBoost, MLflow).  \n  - Built a <i>YouTube channel (15k+ subs)</i> and a <i>Udemy course</i> on practical CNNs.<p>---<p>- <i>Portfolio Links:</i>  \n  - Stanford Biomedical Data Science Preprint: [arXiv](<a href=\"https://arxiv.org/abs/2002.04836v1\" rel=\"nofollow\">https://arxiv.org/abs/2002.04836v1</a>)  \n  - AI Interview Simulation App (5k+ MAU): [Career.io](<a href=\"https://career.io/interview-prep\" rel=\"nofollow\">https://career.io/interview-prep</a>)  \n  - Gesund.ai (First Engineer, 3 years, CB Insights AI 100 2024): [gesund.ai](<a href=\"https://gesund.ai\" rel=\"nofollow\">https://gesund.ai</a>)  \n  - Open Source XAI Library: [GitHub](<a href=\"https://github.com/mburaksayici/Why\" rel=\"nofollow\">https://github.com/mburaksayici/Why</a>)  \n  - Blog on LLMs/MLOps: [mburaksayici.com/blog](<a href=\"https://mburaksayici.com/blog\" rel=\"nofollow\">https://mburaksayici.com/blog</a>)  \n  - Udemy Course \u2014 Beyond MNIST Example: Practical Convolutional NNs: [Udemy](<a href=\"https://www.udemy.com/course/beyond-mnist-example-practical-convolutional-nns/\" rel=\"nofollow\">https://www.udemy.com/course/beyond-mnist-example-practical-...</a>)  \n  - YouTube Channel (13k+ subs, 500k+ views): [MakineOgrenmesi](<a href=\"https://www.youtube.com/MakineOgrenmesi\" rel=\"nofollow\">https://www.youtube.com/MakineOgrenmesi</a>)"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Who wants to be hired? (November 2025)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mburaksayici",
+    "story_45800464"
+   ],
+   "author": "mburaksayici",
+   "comment_text": "- <i>Location:</i> Istanbul, Turkey  \n  - <i>Remote:</i> Yes \u2014 working for US companies and global teams remotely for 4 years  \n  - <i>Willing to relocate:</i> Open to travels, not relocation<p>---<p>- <i>Technologies:</i>  \n  LLM, AI-Agents, Python, PyTorch, TensorFlow, NumPy, pandas, scikit-learn, OpenCV, Hugging Face Transformers, FastAPI, Gradio, SQL, SQLite, PostgreSQL, MSSQL, REST APIs, Git, GitHub, Docker, Argo Workflows, Celery, RabbitMQ, Pinecone, OpenAI API, LangChain, Weaviate, RAG pipelines, CNNs, Transformers, MLOps, AutoML, XAI, MLflow, Streamlit, Flask, AWS, Jupyter, matplotlib, seaborn, pytest, shell scripting, CI&#x2F;CD, Web scraping<p>---<p>- <i>R\u00e9sum\u00e9 &#x2F; CV:</i>  \n  [Google Drive](<a href=\"https:&#x2F;&#x2F;drive.google.com&#x2F;file&#x2F;d&#x2F;13-noXqbAhYvcUoqENXFSf_OZuMk\" rel=\"nofollow\">https:&#x2F;&#x2F;drive.google.com&#x2F;file&#x2F;d&#x2F;13-noXqbAhYvcUoqENXFSf_OZuMk</a>...) | [LinkedIn](<a href=\"https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;mehmet-burak-sayici-a45294126&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;mehmet-burak-sayici-a45294126&#x2F;</a>)<p>---<p>- <i>Email:</i>  \n  mburaksayici@gmail.com<p>---<p>- <i>Highlights:</i>  \n  - Built <i>Gesund\u2019s MLOps platform</i> as first engineer; company later named to <i>CB Insights AI 100 (2024)</i> alongside OpenAI.  \n  - Managed <i>$400k+ software contracts</i>, represented Gesund in meetings with <i>FDA &amp; White House officials</i>.  \n  - Co-authored a <i>Stanford-affiliated AI paper</i> during internship at Stanford Biomedical Data Science.  \n  - Currently lead the <i>AI Interview App at Career.io (5,000+ MAU)</i>, integrating LLMs, vector search (Chroma), and agent-based feedback loops.  \n  - Built <i>two LLM+RAG apps</i> post-Gesund: VC due-diligence tool and YC-style growth tooling (built without LangChain).  \n  - Created <i>MLOps system for energy forecasting</i> across 8 cities (Python, PostgreSQL, weather APIs, LightGBM&#x2F;XGBoost, MLflow).  \n  - Built a <i>YouTube channel (15k+ subs)</i> and a <i>Udemy course</i> on practical CNNs.<p>---<p>- <i>Portfolio Links:</i>  \n  - Stanford Biomedical Data Science Preprint: [arXiv](<a href=\"https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2002.04836v1\" rel=\"nofollow\">https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2002.04836v1</a>)  \n  - AI Interview Simulation App (5k+ MAU): [Career.io](<a href=\"https:&#x2F;&#x2F;career.io&#x2F;interview-prep\" rel=\"nofollow\">https:&#x2F;&#x2F;career.io&#x2F;interview-prep</a>)  \n  - Gesund.ai (First Engineer, 3 years, CB Insights AI 100 2024): [gesund.ai](<a href=\"https:&#x2F;&#x2F;gesund.ai\" rel=\"nofollow\">https:&#x2F;&#x2F;gesund.ai</a>)  \n  - Open Source XAI Library: [GitHub](<a href=\"https:&#x2F;&#x2F;github.com&#x2F;mburaksayici&#x2F;Why\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;mburaksayici&#x2F;Why</a>)  \n  - Blog on LLMs&#x2F;MLOps: [mburaksayici.com&#x2F;blog](<a href=\"https:&#x2F;&#x2F;mburaksayici.com&#x2F;blog\" rel=\"nofollow\">https:&#x2F;&#x2F;mburaksayici.com&#x2F;blog</a>)  \n  - Udemy Course \u2014 Beyond MNIST Example: Practical Convolutional NNs: [Udemy](<a href=\"https:&#x2F;&#x2F;www.udemy.com&#x2F;course&#x2F;beyond-mnist-example-practical-convolutional-nns&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.udemy.com&#x2F;course&#x2F;beyond-mnist-example-practical-...</a>)  \n  - YouTube Channel (13k+ subs, 500k+ views): [MakineOgrenmesi](<a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;MakineOgrenmesi\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;MakineOgrenmesi</a>)",
+   "created_at": "2025-11-03T17:04:20Z",
+   "created_at_i": 1762189460,
+   "objectID": "45801352",
+   "parent_id": 45800464,
+   "story_id": 45800464,
+   "story_title": "Ask HN: Who wants to be hired? (November 2025)",
+   "updated_at": "2026-03-05T22:55:47Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "notahacker"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "I'd also say that their grants <i>aren't</i> unusually burdensome and grantmaking is arms length compared with a lot of other bodies.<p>Yes, some of the questions are weird, but I'd really rather write a bit confirming that the AI system being developed isn't going to be racist or Skynet than jump through some other hoops that exist (and that absolutely includes <em>VC</em> <em>due</em> <em>diligence</em>). The actual biggest issue with European funds is they get way more competent applications than they can fund anyway."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "EuroLLM: LLM made in Europe built to support all 24 official EU languages"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://eurollm.io/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_notahacker",
+    "story_45733707"
+   ],
+   "author": "notahacker",
+   "comment_text": "I&#x27;d also say that their grants <i>aren&#x27;t</i> unusually burdensome and grantmaking is arms length compared with a lot of other bodies.<p>Yes, some of the questions are weird, but I&#x27;d really rather write a bit confirming that the AI system being developed isn&#x27;t going to be racist or Skynet than jump through some other hoops that exist (and that absolutely includes VC due diligence). The actual biggest issue with European funds is they get way more competent applications than they can fund anyway.",
+   "created_at": "2025-10-28T19:46:37Z",
+   "created_at_i": 1761680797,
+   "objectID": "45738065",
+   "parent_id": 45737250,
+   "story_id": 45733707,
+   "story_title": "EuroLLM: LLM made in Europe built to support all 24 official EU languages",
+   "story_url": "https://eurollm.io/",
+   "updated_at": "2026-03-05T22:57:13Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mburaksayici"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "- *Location:* Istanbul, Turkey  \n- *Remote:* Yes \u2014 working for US companies and global teams remotely for 4 years  \n- *Willing to relocate:* Open to travels, not relocation<p>- *Technologies:*  \n  LLM, AI-Agents, Python, PyTorch, TensorFlow, NumPy, pandas, scikit-learn, OpenCV, Hugging Face Transformers, FastAPI, Gradio, SQL, SQLite, PostgreSQL, MSSQL, REST APIs, Git, GitHub, Docker, Argo Workflows, Celery, RabbitMQ, Pinecone, OpenAI API, LangChain, Weaviate, RAG pipelines, CNNs, Transformers, MLOps, AutoML, XAI, MLflow, Streamlit, Flask, AWS, Jupyter, matplotlib, seaborn, pytest, shell scripting, CI/CD, Web scraping<p>- *R\u00e9sum\u00e9 / CV:*  \n  [Google Drive](<a href=\"https://drive.google.com/file/d/13-noXqbAhYvcUoqENXFSf_OZuMk\" rel=\"nofollow\">https://drive.google.com/file/d/13-noXqbAhYvcUoqENXFSf_OZuMk</a>...) | [LinkedIn](<a href=\"https://www.linkedin.com/in/mehmet-burak-sayici-a45294126/\" rel=\"nofollow\">https://www.linkedin.com/in/mehmet-burak-sayici-a45294126/</a>)<p>- *Email:* mburaksayici@gmail.com<p>- *Highlights:*  \n  - Built *Gesund\u2019s MLOps platform* as first engineer; company later named to *CB Insights AI 100 (2024)* alongside OpenAI.  \n  - Managed *$400k+ software contracts*, represented Gesund in meetings with *FDA &amp; White House officials*.  \n  - Co-authored a *Stanford-affiliated AI paper* during internship at Stanford Biomedical Data Science.  \n  - Currently lead the *AI Interview App at Career.io (5,000+ MAU)*, integrating LLMs, vector search (Chroma), and agent-based feedback loops.  \n  - Built *two LLM+RAG apps* post-Gesund: <em>VC</em> <em>due</em> <em>diligence</em> tool and YC-style growth tooling (built without LangChain).  \n  - Created *MLOps system for energy forecasting* across 8 cities (Python, PostgreSQL, weather APIs, LightGBM/XGBoost, MLflow).  \n  - Built a *YouTube channel (15k+ subs)* and a *Udemy course* on practical CNNs.<p>- *Portfolio Links:*  \n  - Stanford Biomedical Data Science Preprint: [arXiv](<a href=\"https://arxiv.org/abs/2002.04836v1\" rel=\"nofollow\">https://arxiv.org/abs/2002.04836v1</a>)  \n  - AI Interview Simulation App (5k+ MAU): [Career.io](<a href=\"https://career.io/interview-prep\" rel=\"nofollow\">https://career.io/interview-prep</a>)  \n  - Gesund.ai (First Engineer, 3 years, CB Insights AI 100 2024): [gesund.ai](<a href=\"https://gesund.ai\" rel=\"nofollow\">https://gesund.ai</a>)  \n  - Open Source XAI Library: [GitHub](<a href=\"https://github.com/mburaksayici/Why\" rel=\"nofollow\">https://github.com/mburaksayici/Why</a>)  \n  - Blog on LLMs/MLOps: [mburaksayici.com/blog](<a href=\"https://mburaksayici.com/blog\" rel=\"nofollow\">https://mburaksayici.com/blog</a>)  \n  - Udemy Course \u2014 <i>Beyond MNIST Example: Practical Convolutional NNs</i>: [Udemy](<a href=\"https://www.udemy.com/course/beyond-mnist-example-practical-\" rel=\"nofollow\">https://www.udemy.com/course/beyond-mnist-example-practical-</a>...)  \n  - YouTube Channel (13k+ subs, 500k+ views): [MakineOgrenmesi](<a href=\"https://www.youtube.com/MakineOgrenmesi\" rel=\"nofollow\">https://www.youtube.com/MakineOgrenmesi</a>)"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Who wants to be hired? (October 2025)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mburaksayici",
+    "story_45438501"
+   ],
+   "author": "mburaksayici",
+   "comment_text": "- *Location:* Istanbul, Turkey  \n- *Remote:* Yes \u2014 working for US companies and global teams remotely for 4 years  \n- *Willing to relocate:* Open to travels, not relocation<p>- *Technologies:*  \n  LLM, AI-Agents, Python, PyTorch, TensorFlow, NumPy, pandas, scikit-learn, OpenCV, Hugging Face Transformers, FastAPI, Gradio, SQL, SQLite, PostgreSQL, MSSQL, REST APIs, Git, GitHub, Docker, Argo Workflows, Celery, RabbitMQ, Pinecone, OpenAI API, LangChain, Weaviate, RAG pipelines, CNNs, Transformers, MLOps, AutoML, XAI, MLflow, Streamlit, Flask, AWS, Jupyter, matplotlib, seaborn, pytest, shell scripting, CI&#x2F;CD, Web scraping<p>- *R\u00e9sum\u00e9 &#x2F; CV:*  \n  [Google Drive](<a href=\"https:&#x2F;&#x2F;drive.google.com&#x2F;file&#x2F;d&#x2F;13-noXqbAhYvcUoqENXFSf_OZuMk\" rel=\"nofollow\">https:&#x2F;&#x2F;drive.google.com&#x2F;file&#x2F;d&#x2F;13-noXqbAhYvcUoqENXFSf_OZuMk</a>...) | [LinkedIn](<a href=\"https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;mehmet-burak-sayici-a45294126&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;mehmet-burak-sayici-a45294126&#x2F;</a>)<p>- *Email:* mburaksayici@gmail.com<p>- *Highlights:*  \n  - Built *Gesund\u2019s MLOps platform* as first engineer; company later named to *CB Insights AI 100 (2024)* alongside OpenAI.  \n  - Managed *$400k+ software contracts*, represented Gesund in meetings with *FDA &amp; White House officials*.  \n  - Co-authored a *Stanford-affiliated AI paper* during internship at Stanford Biomedical Data Science.  \n  - Currently lead the *AI Interview App at Career.io (5,000+ MAU)*, integrating LLMs, vector search (Chroma), and agent-based feedback loops.  \n  - Built *two LLM+RAG apps* post-Gesund: VC due diligence tool and YC-style growth tooling (built without LangChain).  \n  - Created *MLOps system for energy forecasting* across 8 cities (Python, PostgreSQL, weather APIs, LightGBM&#x2F;XGBoost, MLflow).  \n  - Built a *YouTube channel (15k+ subs)* and a *Udemy course* on practical CNNs.<p>- *Portfolio Links:*  \n  - Stanford Biomedical Data Science Preprint: [arXiv](<a href=\"https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2002.04836v1\" rel=\"nofollow\">https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2002.04836v1</a>)  \n  - AI Interview Simulation App (5k+ MAU): [Career.io](<a href=\"https:&#x2F;&#x2F;career.io&#x2F;interview-prep\" rel=\"nofollow\">https:&#x2F;&#x2F;career.io&#x2F;interview-prep</a>)  \n  - Gesund.ai (First Engineer, 3 years, CB Insights AI 100 2024): [gesund.ai](<a href=\"https:&#x2F;&#x2F;gesund.ai\" rel=\"nofollow\">https:&#x2F;&#x2F;gesund.ai</a>)  \n  - Open Source XAI Library: [GitHub](<a href=\"https:&#x2F;&#x2F;github.com&#x2F;mburaksayici&#x2F;Why\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;mburaksayici&#x2F;Why</a>)  \n  - Blog on LLMs&#x2F;MLOps: [mburaksayici.com&#x2F;blog](<a href=\"https:&#x2F;&#x2F;mburaksayici.com&#x2F;blog\" rel=\"nofollow\">https:&#x2F;&#x2F;mburaksayici.com&#x2F;blog</a>)  \n  - Udemy Course \u2014 <i>Beyond MNIST Example: Practical Convolutional NNs</i>: [Udemy](<a href=\"https:&#x2F;&#x2F;www.udemy.com&#x2F;course&#x2F;beyond-mnist-example-practical-\" rel=\"nofollow\">https:&#x2F;&#x2F;www.udemy.com&#x2F;course&#x2F;beyond-mnist-example-practical-</a>...)  \n  - YouTube Channel (13k+ subs, 500k+ views): [MakineOgrenmesi](<a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;MakineOgrenmesi\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;MakineOgrenmesi</a>)",
+   "created_at": "2025-10-01T22:53:57Z",
+   "created_at_i": 1759359237,
+   "objectID": "45444585",
+   "parent_id": 45438501,
+   "story_id": 45438501,
+   "story_title": "Ask HN: Who wants to be hired? (October 2025)",
+   "updated_at": "2026-03-05T22:48:18Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mburaksayici"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "*Location:* Istanbul, Turkey  \n*Remote:* Yes, working for US companies and global teams remotely for 4 years.  \n*Willing to relocate:* Open to travels but not relocation.<p>*Technologies:*  \nLLM, AI-Agents, Python, PyTorch, TensorFlow, NumPy, pandas, scikit-learn, OpenCV, Hugging Face Transformers, FastAPI, Gradio, SQL, SQLite, PostgreSQL, MSSQL, REST APIs, Git, GitHub, Docker, Argo Workflows, Celery, RabbitMQ, Pinecone, OpenAI API, LangChain, Weaviate, RAG pipelines, CNNs, Transformers, MLOps, AutoML, XAI, MLflow, Streamlit, Flask, AWS, Jupyter, matplotlib, seaborn, pytest, shell scripting, CI/CD, Web scraping<p>*R\u00e9sum\u00e9/CV:*  \n<a href=\"https://drive.google.com/file/d/13-noXqbAhYvcUoqENXFSf_OZuMkGpzsq/view?usp=sharing\" rel=\"nofollow\">https://drive.google.com/file/d/13-noXqbAhYvcUoqENXFSf_OZuMk...</a>  \n<a href=\"https://www.linkedin.com/in/mehmet-burak-sayici-a45294126/\" rel=\"nofollow\">https://www.linkedin.com/in/mehmet-burak-sayici-a45294126/</a><p>*Email:* mburaksayici@gmail.com<p>*Highlights:*  \n- Built Gesund\u2019s entire MLOps platform as the first engineer; the company was later named to CB Insights\u2019 AI 100 in 2024, alongside OpenAI and other global AI leaders.  \n- Managed $400k+ in software contracts and represented Gesund in meetings with FDA and White House officials.  \n- Co-authored a Stanford-affiliated AI paper during an internship at Stanford Biomedical Data Science.  \n- Currently lead the AI Interview App at Career.io (5,000+ MAU), integrating LLMs, vector search (Chroma), and agent-based feedback loops.  \n- Developed two LLM+RAG applications post-Gesund: one for <em>VC</em> <em>due</em> <em>diligence</em>, another for growth-focused YC-style tooling, built without LangChain.  \n- Created an MLOps system for forecasting electricity in 8 cities using Python, PostgreSQL, weather APIs, LightGBM/XGBoost, and MLflow.  \n- Built a YouTube channel with 15k+ subscribers and a Udemy course on applied computer vision and deep learning.<p>*Portfolio Links:*  \n- Preprint of an internship placed at Stanford Biomedical Data Science Faculty &quot;Analysis Of Multi Field Of View Cnn And Attention Cnn On H&amp;E Stained Whole-slide Images On Hepatocellular Carcinoma&quot; : <a href=\"https://arxiv.org/abs/2002.04836v1\" rel=\"nofollow\">https://arxiv.org/abs/2002.04836v1</a>  \n- AI Interview Simulation app, 5k MAU+ : <a href=\"https://career.io/interview-prep\" rel=\"nofollow\">https://career.io/interview-prep</a>  \n- First engineer at gesund.ai for 3 years, listed in CB Insights AI 100 2024 along with OpenAI. Managing 500k$ contracts, demoing to White House/FDA/senates. Healthcare MLOps Evaluation platform for FDA Approvals : <a href=\"https://gesund.ai\" rel=\"nofollow\">https://gesund.ai</a>  \n- Open Source XAI Library : <a href=\"https://github.com/mburaksayici/Why\" rel=\"nofollow\">https://github.com/mburaksayici/Why</a>  \n- Blog on LLMs/MLOps : <a href=\"https://mburaksayici.com/blog\" rel=\"nofollow\">https://mburaksayici.com/blog</a>  \n- Udemy course I've published at 2018, on practical usages of CNNs, entitled &quot;Beyond MNIST Example: Practical Convolutional NNs&quot; : <a href=\"https://www.udemy.com/course/beyond-mnist-example-practical-\" rel=\"nofollow\">https://www.udemy.com/course/beyond-mnist-example-practical-</a>...  \n- Multilingual Youtube channel on ML/DL Theory/Applications that has 13.000 subscribers and more than half million views : <a href=\"https://www.youtube.com/MakineOgrenmesi\" rel=\"nofollow\">https://www.youtube.com/MakineOgrenmesi</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Freelancer? Seeking freelancer? (September 2025)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mburaksayici",
+    "story_45093191"
+   ],
+   "author": "mburaksayici",
+   "comment_text": "*Location:* Istanbul, Turkey  \n*Remote:* Yes, working for US companies and global teams remotely for 4 years.  \n*Willing to relocate:* Open to travels but not relocation.<p>*Technologies:*  \nLLM, AI-Agents, Python, PyTorch, TensorFlow, NumPy, pandas, scikit-learn, OpenCV, Hugging Face Transformers, FastAPI, Gradio, SQL, SQLite, PostgreSQL, MSSQL, REST APIs, Git, GitHub, Docker, Argo Workflows, Celery, RabbitMQ, Pinecone, OpenAI API, LangChain, Weaviate, RAG pipelines, CNNs, Transformers, MLOps, AutoML, XAI, MLflow, Streamlit, Flask, AWS, Jupyter, matplotlib, seaborn, pytest, shell scripting, CI&#x2F;CD, Web scraping<p>*R\u00e9sum\u00e9&#x2F;CV:*  \n<a href=\"https:&#x2F;&#x2F;drive.google.com&#x2F;file&#x2F;d&#x2F;13-noXqbAhYvcUoqENXFSf_OZuMkGpzsq&#x2F;view?usp=sharing\" rel=\"nofollow\">https:&#x2F;&#x2F;drive.google.com&#x2F;file&#x2F;d&#x2F;13-noXqbAhYvcUoqENXFSf_OZuMk...</a>  \n<a href=\"https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;mehmet-burak-sayici-a45294126&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;mehmet-burak-sayici-a45294126&#x2F;</a><p>*Email:* mburaksayici@gmail.com<p>*Highlights:*  \n- Built Gesund\u2019s entire MLOps platform as the first engineer; the company was later named to CB Insights\u2019 AI 100 in 2024, alongside OpenAI and other global AI leaders.  \n- Managed $400k+ in software contracts and represented Gesund in meetings with FDA and White House officials.  \n- Co-authored a Stanford-affiliated AI paper during an internship at Stanford Biomedical Data Science.  \n- Currently lead the AI Interview App at Career.io (5,000+ MAU), integrating LLMs, vector search (Chroma), and agent-based feedback loops.  \n- Developed two LLM+RAG applications post-Gesund: one for VC due diligence, another for growth-focused YC-style tooling, built without LangChain.  \n- Created an MLOps system for forecasting electricity in 8 cities using Python, PostgreSQL, weather APIs, LightGBM&#x2F;XGBoost, and MLflow.  \n- Built a YouTube channel with 15k+ subscribers and a Udemy course on applied computer vision and deep learning.<p>*Portfolio Links:*  \n- Preprint of an internship placed at Stanford Biomedical Data Science Faculty &quot;Analysis Of Multi Field Of View Cnn And Attention Cnn On H&amp;E Stained Whole-slide Images On Hepatocellular Carcinoma&quot; : <a href=\"https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2002.04836v1\" rel=\"nofollow\">https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2002.04836v1</a>  \n- AI Interview Simulation app, 5k MAU+ : <a href=\"https:&#x2F;&#x2F;career.io&#x2F;interview-prep\" rel=\"nofollow\">https:&#x2F;&#x2F;career.io&#x2F;interview-prep</a>  \n- First engineer at gesund.ai for 3 years, listed in CB Insights AI 100 2024 along with OpenAI. Managing 500k$ contracts, demoing to White House&#x2F;FDA&#x2F;senates. Healthcare MLOps Evaluation platform for FDA Approvals : <a href=\"https:&#x2F;&#x2F;gesund.ai\" rel=\"nofollow\">https:&#x2F;&#x2F;gesund.ai</a>  \n- Open Source XAI Library : <a href=\"https:&#x2F;&#x2F;github.com&#x2F;mburaksayici&#x2F;Why\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;mburaksayici&#x2F;Why</a>  \n- Blog on LLMs&#x2F;MLOps : <a href=\"https:&#x2F;&#x2F;mburaksayici.com&#x2F;blog\" rel=\"nofollow\">https:&#x2F;&#x2F;mburaksayici.com&#x2F;blog</a>  \n- Udemy course I&#x27;ve published at 2018, on practical usages of CNNs, entitled &quot;Beyond MNIST Example: Practical Convolutional NNs&quot; : <a href=\"https:&#x2F;&#x2F;www.udemy.com&#x2F;course&#x2F;beyond-mnist-example-practical-\" rel=\"nofollow\">https:&#x2F;&#x2F;www.udemy.com&#x2F;course&#x2F;beyond-mnist-example-practical-</a>...  \n- Multilingual Youtube channel on ML&#x2F;DL Theory&#x2F;Applications that has 13.000 subscribers and more than half million views : <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;MakineOgrenmesi\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;MakineOgrenmesi</a>",
+   "created_at": "2025-09-02T08:10:13Z",
+   "created_at_i": 1756800613,
+   "objectID": "45100332",
+   "parent_id": 45093191,
+   "story_id": 45093191,
+   "story_title": "Ask HN: Freelancer? Seeking freelancer? (September 2025)",
+   "updated_at": "2026-03-05T22:36:32Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mburaksayici"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "<p><pre><code>  Location: Istanbul, Turkey\n  Remote: Yes, working for US companies and global teams remotely for 4 years. \n  Willing to relocate: open to travels but not relocation. \n  Technologies: LLM, AI-Agents, Python, PyTorch, TensorFlow, NumPy, pandas, scikit-learn, OpenCV, Hugging Face Transformers, FastAPI, Gradio, SQL, SQLite, PostgreSQL, MSSQL, REST APIs, Git, GitHub, Docker, Argo Workflows, Celery, RabbitMQ, Pinecone, OpenAI API, LangChain, Weaviate, RAG pipelines, CNNs, Transformers, MLOps, AutoML, XAI, MLflow, Streamlit, Flask, AWS, Jupyter, matplotlib, seaborn, pytest, shell scripting, CI/CD, Web scraping\n\n  R\u00e9sum\u00e9/CV:  https://drive.google.com/file/d/13-noXqbAhYvcUoqENXFSf_OZuMkGpzsq/view?usp=sharing ,  https://www.linkedin.com/in/mehmet-burak-sayici-a45294126/ \n  Email: mburaksayici@gmail.com </code></pre>\n- Built Gesund\u2019s entire MLOps platform as the first engineer; the company was later named to CB Insights\u2019 AI 100 in 2024, alongside OpenAI and other global AI leaders. - Managed $400k+ in software contracts and represented Gesund in meetings with FDA and White House officials. - Co-authored a Stanford-affiliated AI paper during an internship at Stanford Biomedical Data Science. - Currently lead the AI Interview App at Career.io (5,000+ MAU), integrating LLMs, vector search (Chroma), and agent-based feedback loops. Developed two LLM+RAG applications post-Gesund: one for <em>VC</em> <em>due</em> <em>diligence</em>, another for growth-focused YC-style tooling, built without LangChain. - Created an MLOps system for forecasting electricity in 8 cities using Python, PostgreSQL, weather APIs, LightGBM/XGBoost, and MLflow. - Built a YouTube channel with 15k+ subscribers and a Udemy course on applied computer vision and deep learning.\nPortfolio Links:\n- Preprint of an internship placed at Stanford Biomedical Data Science Faculty &quot;Analysis Of Multi Field Of View Cnn And Attention Cnn On H&amp;E Stained Whole-slide Images On Hepatocellular Carcinoma&quot; : <a href=\"https://arxiv.org/abs/2002.04836v1\" rel=\"nofollow\">https://arxiv.org/abs/2002.04836v1</a> - AI Interview Simulation app, 5k MAU+ : career.io/interview-prep - First engineer at gesund.ai for 3 years, listed in CB Insights AI 100 2024 along with OpenAI. Managing 500k$ contracts, demoing to White House/FDA/senates. Healthcare MLOps Evaluation platform for FDA Approvals : gesund.ai - Open Source XAI Library : <a href=\"https://github.com/mburaksayici/Why\">https://github.com/mburaksayici/Why</a> - Blog on LLMs/MLOps : mburaksayici.com/blog - Udemy course I've published at 2018, on practical usages of CNNs, entitled &quot;Beyond MNIST Example: Practical Convolutional NNs&quot; : <a href=\"https://www.udemy.com/course/beyond-mnist-example-practical-\" rel=\"nofollow\">https://www.udemy.com/course/beyond-mnist-example-practical-</a>... - Multilingual Youtube channel on ML/DL Theory/Applications that has 13.000 subscribers and more than half million views : <a href=\"https://www.youtube.com/MakineOgrenmesi\" rel=\"nofollow\">https://www.youtube.com/MakineOgrenmesi</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Freelancer? Seeking freelancer? (August 2025)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mburaksayici",
+    "story_44757793"
+   ],
+   "author": "mburaksayici",
+   "comment_text": "<p><pre><code>  Location: Istanbul, Turkey\n  Remote: Yes, working for US companies and global teams remotely for 4 years. \n  Willing to relocate: open to travels but not relocation. \n  Technologies: LLM, AI-Agents, Python, PyTorch, TensorFlow, NumPy, pandas, scikit-learn, OpenCV, Hugging Face Transformers, FastAPI, Gradio, SQL, SQLite, PostgreSQL, MSSQL, REST APIs, Git, GitHub, Docker, Argo Workflows, Celery, RabbitMQ, Pinecone, OpenAI API, LangChain, Weaviate, RAG pipelines, CNNs, Transformers, MLOps, AutoML, XAI, MLflow, Streamlit, Flask, AWS, Jupyter, matplotlib, seaborn, pytest, shell scripting, CI&#x2F;CD, Web scraping\n\n  R\u00e9sum\u00e9&#x2F;CV:  https:&#x2F;&#x2F;drive.google.com&#x2F;file&#x2F;d&#x2F;13-noXqbAhYvcUoqENXFSf_OZuMkGpzsq&#x2F;view?usp=sharing ,  https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;mehmet-burak-sayici-a45294126&#x2F; \n  Email: mburaksayici@gmail.com </code></pre>\n- Built Gesund\u2019s entire MLOps platform as the first engineer; the company was later named to CB Insights\u2019 AI 100 in 2024, alongside OpenAI and other global AI leaders. - Managed $400k+ in software contracts and represented Gesund in meetings with FDA and White House officials. - Co-authored a Stanford-affiliated AI paper during an internship at Stanford Biomedical Data Science. - Currently lead the AI Interview App at Career.io (5,000+ MAU), integrating LLMs, vector search (Chroma), and agent-based feedback loops. Developed two LLM+RAG applications post-Gesund: one for VC due diligence, another for growth-focused YC-style tooling, built without LangChain. - Created an MLOps system for forecasting electricity in 8 cities using Python, PostgreSQL, weather APIs, LightGBM&#x2F;XGBoost, and MLflow. - Built a YouTube channel with 15k+ subscribers and a Udemy course on applied computer vision and deep learning.\nPortfolio Links:\n- Preprint of an internship placed at Stanford Biomedical Data Science Faculty &quot;Analysis Of Multi Field Of View Cnn And Attention Cnn On H&amp;E Stained Whole-slide Images On Hepatocellular Carcinoma&quot; : <a href=\"https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2002.04836v1\" rel=\"nofollow\">https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2002.04836v1</a> - AI Interview Simulation app, 5k MAU+ : career.io&#x2F;interview-prep - First engineer at gesund.ai for 3 years, listed in CB Insights AI 100 2024 along with OpenAI. Managing 500k$ contracts, demoing to White House&#x2F;FDA&#x2F;senates. Healthcare MLOps Evaluation platform for FDA Approvals : gesund.ai - Open Source XAI Library : <a href=\"https:&#x2F;&#x2F;github.com&#x2F;mburaksayici&#x2F;Why\">https:&#x2F;&#x2F;github.com&#x2F;mburaksayici&#x2F;Why</a> - Blog on LLMs&#x2F;MLOps : mburaksayici.com&#x2F;blog - Udemy course I&#x27;ve published at 2018, on practical usages of CNNs, entitled &quot;Beyond MNIST Example: Practical Convolutional NNs&quot; : <a href=\"https:&#x2F;&#x2F;www.udemy.com&#x2F;course&#x2F;beyond-mnist-example-practical-\" rel=\"nofollow\">https:&#x2F;&#x2F;www.udemy.com&#x2F;course&#x2F;beyond-mnist-example-practical-</a>... - Multilingual Youtube channel on ML&#x2F;DL Theory&#x2F;Applications that has 13.000 subscribers and more than half million views : <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;MakineOgrenmesi\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;MakineOgrenmesi</a>",
+   "created_at": "2025-08-01T16:15:24Z",
+   "created_at_i": 1754064924,
+   "objectID": "44758903",
+   "parent_id": 44757793,
+   "story_id": 44757793,
+   "story_title": "Ask HN: Freelancer? Seeking freelancer? (August 2025)",
+   "updated_at": "2025-08-01T16:18:34Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mburaksayici"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "<p><pre><code>  Location: Istanbul, Turkey\n  Remote: Yes, working for US companies and global teams remotely for 4 years. \n  Willing to relocate: open to travels but not relocation. \n  Technologies: LLM, AI-Agents, Python, PyTorch, TensorFlow, NumPy, pandas, scikit-learn, OpenCV, Hugging Face Transformers, FastAPI, Gradio, SQL, SQLite, PostgreSQL, MSSQL, REST APIs, Git, GitHub, Docker, Argo Workflows, Celery, RabbitMQ, Pinecone, OpenAI API, LangChain, Weaviate, RAG pipelines, CNNs, Transformers, MLOps, AutoML, XAI, MLflow, Streamlit, Flask, AWS, Jupyter, matplotlib, seaborn, pytest, shell scripting, CI/CD, Web scraping\n\n  R\u00e9sum\u00e9/CV:  https://drive.google.com/file/d/13-noXqbAhYvcUoqENXFSf_OZuMkGpzsq/view?usp=sharing ,  https://www.linkedin.com/in/mehmet-burak-sayici-a45294126/ \n  Email: mburaksayici@gmail.com \n</code></pre>\n- Built Gesund\u2019s entire MLOps platform as the first engineer; the company was later named to CB Insights\u2019 AI 100 in 2024, alongside OpenAI and other global AI leaders.<p>- Managed $400k+ in software contracts and represented Gesund in meetings with FDA and White House officials.<p>- Co-authored a Stanford-affiliated AI paper during an internship at Stanford Biomedical Data Science.<p>- Currently lead the AI Interview App at Career.io (5,000+ MAU), integrating LLMs, vector search (Chroma), and agent-based feedback loops.<p>- Developed two LLM+RAG applications post-Gesund: one for <em>VC</em> <em>due</em> <em>diligence</em>, another for growth-focused YC-style tooling, built without LangChain.<p>- Created an MLOps system for forecasting electricity in 8 cities using Python, PostgreSQL, weather APIs, LightGBM/XGBoost, and MLflow.<p>- Built a YouTube channel with 15k+ subscribers and a Udemy course on applied computer vision and deep learning.<p>Portfolio Links:<p>- Preprint of an internship placed at Stanford Biomedical Data Science Faculty &quot;Analysis Of Multi Field Of View Cnn And Attention Cnn On H&amp;E Stained Whole-slide Images On Hepatocellular Carcinoma&quot; : <a href=\"https://arxiv.org/abs/2002.04836v1\" rel=\"nofollow\">https://arxiv.org/abs/2002.04836v1</a><p>- AI Interview Simulation app, 5k MAU+ : career.io/interview-prep<p>- First engineer at gesund.ai for 3 years, listed in CB Insights AI 100 2024 along with OpenAI. Managing 500k$ contracts, demoing to White House/FDA/senates. Healthcare MLOps Evaluation platform for FDA Approvals : gesund.ai<p>- Open Source XAI Library : <a href=\"https://github.com/mburaksayici/Why\">https://github.com/mburaksayici/Why</a><p>- Blog on LLMs/MLOps : mburaksayici.com/blog<p>- Udemy course I've published at 2018, on practical usages of CNNs, entitled &quot;Beyond MNIST Example: Practical Convolutional NNs&quot; : <a href=\"https://www.udemy.com/course/beyond-mnist-example-practical-convolutional-nns/\" rel=\"nofollow\">https://www.udemy.com/course/beyond-mnist-example-practical-...</a><p>- Multilingual Youtube channel on  ML/DL Theory/Applications that has 13.000 subscribers and more than half million views : <a href=\"https://www.youtube.com/MakineOgrenmesi\" rel=\"nofollow\">https://www.youtube.com/MakineOgrenmesi</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Who wants to be hired? (August 2025)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mburaksayici",
+    "story_44757792"
+   ],
+   "author": "mburaksayici",
+   "comment_text": "<p><pre><code>  Location: Istanbul, Turkey\n  Remote: Yes, working for US companies and global teams remotely for 4 years. \n  Willing to relocate: open to travels but not relocation. \n  Technologies: LLM, AI-Agents, Python, PyTorch, TensorFlow, NumPy, pandas, scikit-learn, OpenCV, Hugging Face Transformers, FastAPI, Gradio, SQL, SQLite, PostgreSQL, MSSQL, REST APIs, Git, GitHub, Docker, Argo Workflows, Celery, RabbitMQ, Pinecone, OpenAI API, LangChain, Weaviate, RAG pipelines, CNNs, Transformers, MLOps, AutoML, XAI, MLflow, Streamlit, Flask, AWS, Jupyter, matplotlib, seaborn, pytest, shell scripting, CI&#x2F;CD, Web scraping\n\n  R\u00e9sum\u00e9&#x2F;CV:  https:&#x2F;&#x2F;drive.google.com&#x2F;file&#x2F;d&#x2F;13-noXqbAhYvcUoqENXFSf_OZuMkGpzsq&#x2F;view?usp=sharing ,  https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;mehmet-burak-sayici-a45294126&#x2F; \n  Email: mburaksayici@gmail.com \n</code></pre>\n- Built Gesund\u2019s entire MLOps platform as the first engineer; the company was later named to CB Insights\u2019 AI 100 in 2024, alongside OpenAI and other global AI leaders.<p>- Managed $400k+ in software contracts and represented Gesund in meetings with FDA and White House officials.<p>- Co-authored a Stanford-affiliated AI paper during an internship at Stanford Biomedical Data Science.<p>- Currently lead the AI Interview App at Career.io (5,000+ MAU), integrating LLMs, vector search (Chroma), and agent-based feedback loops.<p>- Developed two LLM+RAG applications post-Gesund: one for VC due diligence, another for growth-focused YC-style tooling, built without LangChain.<p>- Created an MLOps system for forecasting electricity in 8 cities using Python, PostgreSQL, weather APIs, LightGBM&#x2F;XGBoost, and MLflow.<p>- Built a YouTube channel with 15k+ subscribers and a Udemy course on applied computer vision and deep learning.<p>Portfolio Links:<p>- Preprint of an internship placed at Stanford Biomedical Data Science Faculty &quot;Analysis Of Multi Field Of View Cnn And Attention Cnn On H&amp;E Stained Whole-slide Images On Hepatocellular Carcinoma&quot; : <a href=\"https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2002.04836v1\" rel=\"nofollow\">https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2002.04836v1</a><p>- AI Interview Simulation app, 5k MAU+ : career.io&#x2F;interview-prep<p>- First engineer at gesund.ai for 3 years, listed in CB Insights AI 100 2024 along with OpenAI. Managing 500k$ contracts, demoing to White House&#x2F;FDA&#x2F;senates. Healthcare MLOps Evaluation platform for FDA Approvals : gesund.ai<p>- Open Source XAI Library : <a href=\"https:&#x2F;&#x2F;github.com&#x2F;mburaksayici&#x2F;Why\">https:&#x2F;&#x2F;github.com&#x2F;mburaksayici&#x2F;Why</a><p>- Blog on LLMs&#x2F;MLOps : mburaksayici.com&#x2F;blog<p>- Udemy course I&#x27;ve published at 2018, on practical usages of CNNs, entitled &quot;Beyond MNIST Example: Practical Convolutional NNs&quot; : <a href=\"https:&#x2F;&#x2F;www.udemy.com&#x2F;course&#x2F;beyond-mnist-example-practical-convolutional-nns&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.udemy.com&#x2F;course&#x2F;beyond-mnist-example-practical-...</a><p>- Multilingual Youtube channel on  ML&#x2F;DL Theory&#x2F;Applications that has 13.000 subscribers and more than half million views : <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;MakineOgrenmesi\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;MakineOgrenmesi</a>",
+   "created_at": "2025-08-01T16:08:38Z",
+   "created_at_i": 1754064518,
+   "objectID": "44758818",
+   "parent_id": 44757792,
+   "story_id": 44757792,
+   "story_title": "Ask HN: Who wants to be hired? (August 2025)",
+   "updated_at": "2025-08-02T11:05:50Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "rdlecler1"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "YC is putting through 200+ companies per batch and making a tiny investment. It\u2019s far more efficient to swallow the occasional bad bet than to do a lot <em>due</em> <em>diligence</em>\u2026 Now the <em>VC</em>s that came in after\u2026 that\u2019s another story."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "YC criticized for backing AI startup that simply cloned another AI startup"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://techcrunch.com/2024/09/30/y-combinator-is-being-criticized-after-it-backed-an-ai-startup-that-admits-it-basically-cloned-another-ai-startup/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_rdlecler1",
+    "story_41707495"
+   ],
+   "author": "rdlecler1",
+   "comment_text": "YC is putting through 200+ companies per batch and making a tiny investment. It\u2019s far more efficient to swallow the occasional bad bet than to do a lot due diligence\u2026 Now the VCs that came in after\u2026 that\u2019s another story.",
+   "created_at": "2024-10-01T16:39:15Z",
+   "created_at_i": 1727800755,
+   "objectID": "41710794",
+   "parent_id": 41710247,
+   "story_id": 41707495,
+   "story_title": "YC criticized for backing AI startup that simply cloned another AI startup",
+   "story_url": "https://techcrunch.com/2024/09/30/y-combinator-is-being-criticized-after-it-backed-an-ai-startup-that-admits-it-basically-cloned-another-ai-startup/",
+   "updated_at": "2024-10-01T23:11:13Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Aeroi"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "As crappy as this is... There's a hard case the CEO would have never raised a dollar if there was 15% of zombie equity on the cap table, making this guys 15% stake worthless anyway.<p>However, if he refused to sell his 15% stake, there's absolutely no reason why you wouldn't incorporate a separate business all together, especially if you were on the cusp of fundraising a massive round.<p>Summary: Bad business by the CEO, poor thinking by the stakeholder, Bad <em>due</em>-<em>diligence</em> by the <em>VC</em> firms. /end"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "StabilityAI cofounder says CEO tricked him into selling stake for $100"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.forbes.com/sites/kenrickcai/2023/07/13/stability-ai-cofounder-says-emad-mostaque-tricked-him-into-selling-stake-for-100/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Aeroi",
+    "story_36714869"
+   ],
+   "author": "Aeroi",
+   "comment_text": "As crappy as this is... There&#x27;s a hard case the CEO would have never raised a dollar if there was 15% of zombie equity on the cap table, making this guys 15% stake worthless anyway.<p>However, if he refused to sell his 15% stake, there&#x27;s absolutely no reason why you wouldn&#x27;t incorporate a separate business all together, especially if you were on the cusp of fundraising a massive round.<p>Summary: Bad business by the CEO, poor thinking by the stakeholder, Bad due-diligence by the VC firms. &#x2F;end",
+   "created_at": "2023-07-14T18:58:11Z",
+   "created_at_i": 1689361091,
+   "objectID": "36728372",
+   "parent_id": 36714869,
+   "story_id": 36714869,
+   "story_title": "StabilityAI cofounder says CEO tricked him into selling stake for $100",
+   "story_url": "https://www.forbes.com/sites/kenrickcai/2023/07/13/stability-ai-cofounder-says-emad-mostaque-tricked-him-into-selling-stake-for-100/",
+   "updated_at": "2024-09-20T14:35:59Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "pxmpxm"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "I somehow doubt that the number of github stars is part of <em>VC</em> <em>due</em> <em>diligence</em>."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Pushing through when no one cares"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://elpha.com/posts/vbuzm9rg/pushing-through-when-no-one-cares"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_pxmpxm",
+    "story_35998731"
+   ],
+   "author": "pxmpxm",
+   "children": [
+    36026796
+   ],
+   "comment_text": "I somehow doubt that the number of github stars is part of VC due diligence.",
+   "created_at": "2023-05-21T16:18:06Z",
+   "created_at_i": 1684685886,
+   "objectID": "36022412",
+   "parent_id": 36022370,
+   "story_id": 35998731,
+   "story_title": "Pushing through when no one cares",
+   "story_url": "https://elpha.com/posts/vbuzm9rg/pushing-through-when-no-one-cares",
+   "updated_at": "2024-09-20T14:09:00Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "twic"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "There's an HTML, non-Scribd, version of the mentioned book (pamphlet?) by David Black here:<p><a href=\"https://wn.rudolfsteinerelib.org/RelArtic/BlackDavid/DB1981/CmpAhr_index.html\" rel=\"nofollow\">https://wn.rudolfsteinerelib.org/RelArtic/BlackDavid/DB1981/...</a><p>Seems the author does technical <em>due</em> <em>diligence</em> at a <em>VC</em> firm now:<p><a href=\"https://www.blackliszt.com/2021/10/what-is-technical-due-diligence-for-venture-capital.html\" rel=\"nofollow\">https://www.blackliszt.com/2021/10/what-is-technical-<em>due</em>-dil...</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Four questions concerning the internet"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://paulkingsnorth.substack.com/p/the-universal"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_twic",
+    "story_35765783"
+   ],
+   "author": "twic",
+   "children": [
+    35768363
+   ],
+   "comment_text": "There&#x27;s an HTML, non-Scribd, version of the mentioned book (pamphlet?) by David Black here:<p><a href=\"https:&#x2F;&#x2F;wn.rudolfsteinerelib.org&#x2F;RelArtic&#x2F;BlackDavid&#x2F;DB1981&#x2F;CmpAhr_index.html\" rel=\"nofollow\">https:&#x2F;&#x2F;wn.rudolfsteinerelib.org&#x2F;RelArtic&#x2F;BlackDavid&#x2F;DB1981&#x2F;...</a><p>Seems the author does technical due diligence at a VC firm now:<p><a href=\"https:&#x2F;&#x2F;www.blackliszt.com&#x2F;2021&#x2F;10&#x2F;what-is-technical-due-diligence-for-venture-capital.html\" rel=\"nofollow\">https:&#x2F;&#x2F;www.blackliszt.com&#x2F;2021&#x2F;10&#x2F;what-is-technical-due-dil...</a>",
+   "created_at": "2023-05-01T00:32:38Z",
+   "created_at_i": 1682901158,
+   "objectID": "35767862",
+   "parent_id": 35765783,
+   "story_id": 35765783,
+   "story_title": "Four questions concerning the internet",
+   "story_url": "https://paulkingsnorth.substack.com/p/the-universal",
+   "updated_at": "2024-09-20T14:02:19Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tptacek"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "You don't, just like you don't know whether a \"front-door\" reference would <i>really</i> hire the candidate again, or is in fact just being nice. The whole references thing is frought with peril; I got tanked on (one, longshot) <em>VC</em> <em>due</em> <em>diligence</em> thing from a bad back-door reference. A friend of mine I recruited for a company I worked for got tanked on her back-door reference. She went on to be a total rock-star at the job she got instead of us.<p>On the other hand, I have stories about back-door references that were collected too late to avoid tragic mistakes.<p>You want to do both. The back-door reference is harder. The idea that you're getting real information from \"10-15\" fast reference checks from friends and family seems crazy."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "World's Best Rails Rails Hiring Process"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://startups.learnhub.com/lesson/page/1061-worlds-best-rails-hiring-process"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_tptacek",
+    "story_348975"
+   ],
+   "author": "tptacek",
+   "children": [
+    349712
+   ],
+   "comment_text": "You don't, just like you don't know whether a \"front-door\" reference would <i>really</i> hire the candidate again, or is in fact just being nice. The whole references thing is frought with peril; I got tanked on (one, longshot) VC due diligence thing from a bad back-door reference. A friend of mine I recruited for a company I worked for got tanked on her back-door reference. She went on to be a total rock-star at the job she got instead of us.<p>On the other hand, I have stories about back-door references that were collected too late to avoid tragic mistakes.<p>You want to do both. The back-door reference is harder. The idea that you're getting real information from \"10-15\" fast reference checks from friends and family seems crazy.",
+   "created_at": "2008-10-31T04:59:48Z",
+   "created_at_i": 1225429188,
+   "objectID": "349664",
+   "parent_id": 349655,
+   "points": null,
+   "story_id": 348975,
+   "story_title": "World's Best Rails Rails Hiring Process",
+   "story_url": "http://startups.learnhub.com/lesson/page/1061-worlds-best-rails-hiring-process",
+   "updated_at": "2023-09-06T19:26:51Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "neilv"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "You might see whether your local community college has good classes that supplement what you already know, and what companies hire software interns/co-ops/newgrads from there.  (Long ago, this, and luck, was how I jumped from self-taught, to a co-op student at a first-rate engineering company, and maybe it can still work.)<p>And some colleges/universities have options for students outside of a Bachelor's degree program.  These might or might not teach better than a community college.  (But &quot;Harvard Extension School&quot;, for example, will probably get past more resume screeners than a community college.)  Both might teach you more than a bootcamp.  And, again, look for something set up for internships, or with relationships with specific employers.<p>Beware that the field is absolutely flooded by everyone in their dog, and it's hard to distinguish yourself.  I suppose the upside is that there's so much not-so-stellar work being done, that a newbie could their foot in the door at a typical place, survive while they contribute, and grow from there.<p>But this flood also means that people hiring will reach for a kind of gatekeeping (to narrow down the pool of candidates, and to try to cement themselves as a superior in-group), which, at the moment, means you probably need to practice for Leetcode hazings.<p>If you have a lot of time, doing open source is an option to eventually stand out, but if you do this, pick something in a space where people are hiring.  (&quot;I wrote a JIT compiler for a dynamic dialect of Haskell that targets GPU&quot; wouldn't even get you considered for 99% of jobs, and most of the remaining 1% would insist you regurgitate Leetcode algorithm as performance art so they can &quot;verify that you know algorithms&quot; or so that they &quot;can see how you think&quot;.  &quot;Yes, I looked at your GitHub, and it didn't have many stars.&quot; :)<p>Also keep in mind that Copilot-like tools integrated into IDEs are going to let a lot of low-skilled developers launder open source code, to pass off as their own (justifying it as &quot;I let the tool do the boilerplate, so I can focus on the more difficult, higher-level problems&quot;).  I don't know how the near-term evolution of this will play out, but it might be best as a force multiplier for low-skilled, low-quality work.  You might want to be thinking about how to be on a path to eventually stand out for high-quality work, for which companies won't trust this generation of automation (even if they were willing to gamble with a Copilot-induced GPL lawsuit, and <em>VC</em> <em>due</em> <em>diligence</em> doesn't start smacking down for this)."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: How does a hobby programmer get hired?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_neilv",
+    "story_34206559"
+   ],
+   "author": "neilv",
+   "children": [
+    34212480
+   ],
+   "comment_text": "You might see whether your local community college has good classes that supplement what you already know, and what companies hire software interns&#x2F;co-ops&#x2F;newgrads from there.  (Long ago, this, and luck, was how I jumped from self-taught, to a co-op student at a first-rate engineering company, and maybe it can still work.)<p>And some colleges&#x2F;universities have options for students outside of a Bachelor&#x27;s degree program.  These might or might not teach better than a community college.  (But &quot;Harvard Extension School&quot;, for example, will probably get past more resume screeners than a community college.)  Both might teach you more than a bootcamp.  And, again, look for something set up for internships, or with relationships with specific employers.<p>Beware that the field is absolutely flooded by everyone in their dog, and it&#x27;s hard to distinguish yourself.  I suppose the upside is that there&#x27;s so much not-so-stellar work being done, that a newbie could their foot in the door at a typical place, survive while they contribute, and grow from there.<p>But this flood also means that people hiring will reach for a kind of gatekeeping (to narrow down the pool of candidates, and to try to cement themselves as a superior in-group), which, at the moment, means you probably need to practice for Leetcode hazings.<p>If you have a lot of time, doing open source is an option to eventually stand out, but if you do this, pick something in a space where people are hiring.  (&quot;I wrote a JIT compiler for a dynamic dialect of Haskell that targets GPU&quot; wouldn&#x27;t even get you considered for 99% of jobs, and most of the remaining 1% would insist you regurgitate Leetcode algorithm as performance art so they can &quot;verify that you know algorithms&quot; or so that they &quot;can see how you think&quot;.  &quot;Yes, I looked at your GitHub, and it didn&#x27;t have many stars.&quot; :)<p>Also keep in mind that Copilot-like tools integrated into IDEs are going to let a lot of low-skilled developers launder open source code, to pass off as their own (justifying it as &quot;I let the tool do the boilerplate, so I can focus on the more difficult, higher-level problems&quot;).  I don&#x27;t know how the near-term evolution of this will play out, but it might be best as a force multiplier for low-skilled, low-quality work.  You might want to be thinking about how to be on a path to eventually stand out for high-quality work, for which companies won&#x27;t trust this generation of automation (even if they were willing to gamble with a Copilot-induced GPL lawsuit, and VC due diligence doesn&#x27;t start smacking down for this).",
+   "created_at": "2023-01-01T15:51:44Z",
+   "created_at_i": 1672588304,
+   "objectID": "34207264",
+   "parent_id": 34206559,
+   "story_id": 34206559,
+   "story_title": "Ask HN: How does a hobby programmer get hired?",
+   "updated_at": "2024-09-20T12:56:58Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "dotnet00"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "People will still trust them with their money because social accountability mechanisms are not that great, PR is a thing and people are even more prone to FOMO and skipping <em>due</em> <em>diligence</em> than even <em>VC</em> investors have been here."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The United States of America vs. Samuel Bankman-Fried Indictment [pdf]"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.justice.gov/usao-sdny/press-release/file/1557571/download"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_dotnet00",
+    "story_33969896"
+   ],
+   "author": "dotnet00",
+   "comment_text": "People will still trust them with their money because social accountability mechanisms are not that great, PR is a thing and people are even more prone to FOMO and skipping due diligence than even VC investors have been here.",
+   "created_at": "2022-12-14T03:28:48Z",
+   "created_at_i": 1670988528,
+   "objectID": "33979677",
+   "parent_id": 33979486,
+   "story_id": 33969896,
+   "story_title": "The United States of America vs. Samuel Bankman-Fried Indictment [pdf]",
+   "story_url": "https://www.justice.gov/usao-sdny/press-release/file/1557571/download",
+   "updated_at": "2024-09-20T12:53:15Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "rexreed"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "Acquisition <em>due</em> <em>diligence</em> is not the same as funding <em>due</em> <em>diligence</em>. There are definitely differences in the two and different reasons for doing it. For acquisition, <em>due</em> <em>diligence</em> is part of the legal and compliance requirements. For <em>VC</em>, <em>due</em> <em>diligence</em> is supposed to be part of the deal vetting process, but it's usually a headache for everyone, and goes out the window when they want to move fast."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "FTX Contagion"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.mollywhite.net/etc/ftx-contagion"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_rexreed",
+    "story_33877587"
+   ],
+   "author": "rexreed",
+   "children": [
+    33880193,
+    33883978
+   ],
+   "comment_text": "Acquisition due diligence is not the same as funding due diligence. There are definitely differences in the two and different reasons for doing it. For acquisition, due diligence is part of the legal and compliance requirements. For VC, due diligence is supposed to be part of the deal vetting process, but it&#x27;s usually a headache for everyone, and goes out the window when they want to move fast.",
+   "created_at": "2022-12-06T13:45:30Z",
+   "created_at_i": 1670334330,
+   "objectID": "33879577",
+   "parent_id": 33878632,
+   "story_id": 33877587,
+   "story_title": "FTX Contagion",
+   "story_url": "https://www.mollywhite.net/etc/ftx-contagion",
+   "updated_at": "2024-09-20T12:43:09Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "bjelkeman-again"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "So where is the <em>due</em> <em>diligence</em> that the <em>VC</em>s talk so much about, especially in the case with FTX, which supposedly didn\u2019t have any appropriate financial management?"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "BlockFi files for bankruptcy as FTX fallout spreads"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.cnbc.com/2022/11/28/blockfi-files-for-bankruptcy-as-ftx-fallout-spreads.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_bjelkeman-again",
+    "story_33774822"
+   ],
+   "author": "bjelkeman-again",
+   "children": [
+    33784515
+   ],
+   "comment_text": "So where is the due diligence that the VCs talk so much about, especially in the case with FTX, which supposedly didn\u2019t have any appropriate financial management?",
+   "created_at": "2022-11-29T04:11:40Z",
+   "created_at_i": 1669695100,
+   "objectID": "33783601",
+   "parent_id": 33778258,
+   "story_id": 33774822,
+   "story_title": "BlockFi files for bankruptcy as FTX fallout spreads",
+   "story_url": "https://www.cnbc.com/2022/11/28/blockfi-files-for-bankruptcy-as-ftx-fallout-spreads.html",
+   "updated_at": "2024-09-20T12:41:29Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "davidgerard"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "Whenever you hear of a <em>VC</em>'s &quot;<em>due</em> <em>diligence</em>&quot;, remember this."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Sam Bankman-Fried Has a Savior Complex\u2013and Maybe You Should Too"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://web.archive.org/web/20221110031633/https://www.sequoiacap.com/article/sam-bankman-fried-spotlight/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_davidgerard",
+    "story_33672924"
+   ],
+   "author": "davidgerard",
+   "children": [
+    33674048,
+    33674099,
+    33674130
+   ],
+   "comment_text": "Whenever you hear of a VC&#x27;s &quot;due diligence&quot;, remember this.",
+   "created_at": "2022-11-19T19:23:38Z",
+   "created_at_i": 1668885818,
+   "objectID": "33673654",
+   "parent_id": 33672924,
+   "story_id": 33672924,
+   "story_title": "Sam Bankman-Fried Has a Savior Complex\u2013and Maybe You Should Too",
+   "story_url": "https://web.archive.org/web/20221110031633/https://www.sequoiacap.com/article/sam-bankman-fried-spotlight/",
+   "updated_at": "2024-09-20T12:41:17Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "matrix_overload"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "The <em>VC</em> <em>due</em> <em>diligence</em> is not about corporate governance or a viable business model. Everyone does shady stuff to some extent and everyone aims to &quot;exit&quot; before turning in the first profitable quarter.<p>The <em>due</em> <em>diligence</em> is about the founder's connections and the ability to use them to skirt regulatory oversight. This checked out - both Sam and his girlfriend came from well-connected families and so far acted the part (including the massive political donations). Whether it's going to save them remains to be seen. I hope we won't sink to a new low of bailing out Ponzi schemes with taxpayer money, but I wouldn't be surprised too much."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "FTX used corporate funds to purchase employee homes, new filing shows"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.cnbc.com/2022/11/17/ftx-used-corporate-funds-to-purchase-employee-homes-new-filing-shows.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_matrix_overload",
+    "story_33639103"
+   ],
+   "author": "matrix_overload",
+   "comment_text": "The VC due diligence is not about corporate governance or a viable business model. Everyone does shady stuff to some extent and everyone aims to &quot;exit&quot; before turning in the first profitable quarter.<p>The due diligence is about the founder&#x27;s connections and the ability to use them to skirt regulatory oversight. This checked out - both Sam and his girlfriend came from well-connected families and so far acted the part (including the massive political donations). Whether it&#x27;s going to save them remains to be seen. I hope we won&#x27;t sink to a new low of bailing out Ponzi schemes with taxpayer money, but I wouldn&#x27;t be surprised too much.",
+   "created_at": "2022-11-17T18:39:48Z",
+   "created_at_i": 1668710388,
+   "objectID": "33643514",
+   "parent_id": 33641736,
+   "story_id": 33639103,
+   "story_title": "FTX used corporate funds to purchase employee homes, new filing shows",
+   "story_url": "https://www.cnbc.com/2022/11/17/ftx-used-corporate-funds-to-purchase-employee-homes-new-filing-shows.html",
+   "updated_at": "2024-09-20T12:37:18Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "bombcar"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "Nobody wants to admit that a vast majority of <em>VC</em> <em>due</em> <em>diligence</em> is just assuming that the other VCs did <em>due</em> <em>diligence</em>."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "FTX used corporate funds to purchase employee homes, new filing shows"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.cnbc.com/2022/11/17/ftx-used-corporate-funds-to-purchase-employee-homes-new-filing-shows.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_bombcar",
+    "story_33639103"
+   ],
+   "author": "bombcar",
+   "children": [
+    33644480
+   ],
+   "comment_text": "Nobody wants to admit that a vast majority of VC due diligence is just assuming that the other VCs did due diligence.",
+   "created_at": "2022-11-17T17:56:50Z",
+   "created_at_i": 1668707810,
+   "objectID": "33642860",
+   "parent_id": 33641736,
+   "story_id": 33639103,
+   "story_title": "FTX used corporate funds to purchase employee homes, new filing shows",
+   "story_url": "https://www.cnbc.com/2022/11/17/ftx-used-corporate-funds-to-purchase-employee-homes-new-filing-shows.html",
+   "updated_at": "2024-09-20T12:37:09Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "dolla_tree"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "<em>VC</em>s\u2018 <em>due</em> <em>diligence</em> is not \u201cdoes it actually work\u201d but \u201ccan it be pawned off to public coffers\u201d (updating medicare \u201cbest practice\u201d guidelines, inserting this tech into some gov procedure like maybe in criminal justice etc) so they might still be in the run, especially with bureaucrat-hypnotizing press-magnet \u201ctech\u201d like this.  The money printer can keep up illusions of scientific progress for longer than we think."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Reconstructing images a person sees via non-invasive brain scans"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://mind-vis.github.io/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_dolla_tree",
+    "story_33632337"
+   ],
+   "author": "dolla_tree",
+   "comment_text": "VCs\u2018 due diligence is not \u201cdoes it actually work\u201d but \u201ccan it be pawned off to public coffers\u201d (updating medicare \u201cbest practice\u201d guidelines, inserting this tech into some gov procedure like maybe in criminal justice etc) so they might still be in the run, especially with bureaucrat-hypnotizing press-magnet \u201ctech\u201d like this.  The money printer can keep up illusions of scientific progress for longer than we think.",
+   "created_at": "2022-11-17T08:43:45Z",
+   "created_at_i": 1668674625,
+   "objectID": "33636390",
+   "parent_id": 33635461,
+   "story_id": 33632337,
+   "story_title": "Reconstructing images a person sees via non-invasive brain scans",
+   "story_url": "https://mind-vis.github.io/",
+   "updated_at": "2024-09-20T12:36:20Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "belter"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "What does that say about <em>VC</em>'s <em>due</em> <em>diligence</em>?"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "FTX investor Sequoia removed its glowing profile of Sam Bankman-Fried"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.businessinsider.com/ftx-investor-sequoia-removes-sam-bankman-fried-profile-2022-11"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_belter",
+    "story_33571734"
+   ],
+   "author": "belter",
+   "children": [
+    33572709
+   ],
+   "comment_text": "What does that say about VC&#x27;s due diligence?",
+   "created_at": "2022-11-12T12:52:53Z",
+   "created_at_i": 1668257573,
+   "objectID": "33572563",
+   "parent_id": 33572438,
+   "story_id": 33571734,
+   "story_title": "FTX investor Sequoia removed its glowing profile of Sam Bankman-Fried",
+   "story_url": "https://www.businessinsider.com/ftx-investor-sequoia-removes-sam-bankman-fried-profile-2022-11",
+   "updated_at": "2024-09-20T12:30:46Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "NickC25"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "That's terrifying.  Guy is just casually spouting bullshit while playing LoL, and one of the top <em>VC</em>s are just tripping over themselves to throw money at him.<p>i can only hope the actual <em>due</em> <em>diligence</em> at top <em>VC</em>s is much, much more robust and deep than this.  If this isn't an extreme outlier and is more the norm than I realized, well, I had way too high hopes for the so-called gatekeepers of the top echelons of society."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Sam Bankman-Fried Has a Savior Complex"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.sequoiacap.com/article/sam-bankman-fried-spotlight/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_NickC25",
+    "story_33549059"
+   ],
+   "author": "NickC25",
+   "children": [
+    33554087
+   ],
+   "comment_text": "That&#x27;s terrifying.  Guy is just casually spouting bullshit while playing LoL, and one of the top VCs are just tripping over themselves to throw money at him.<p>i can only hope the actual due diligence at top VCs is much, much more robust and deep than this.  If this isn&#x27;t an extreme outlier and is more the norm than I realized, well, I had way too high hopes for the so-called gatekeepers of the top echelons of society.",
+   "created_at": "2022-11-10T19:13:43Z",
+   "created_at_i": 1668107623,
+   "objectID": "33551540",
+   "parent_id": 33550431,
+   "story_id": 33549059,
+   "story_title": "Sam Bankman-Fried Has a Savior Complex",
+   "story_url": "https://www.sequoiacap.com/article/sam-bankman-fried-spotlight/",
+   "updated_at": "2024-09-20T12:28:38Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "vkou"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "It's different in a lot of ways. The most important one that you've missed is that banks don't need to have enough liquidity to cover customer deposits, but they do need to have enough <i>assets</i>. If a bank's assets ever drop below its liabilities, it is <i>immediately liquidated</i>, the shareholders lose everything, and insurance steps in to fix any gaps.<p>SBF has neither liquidity nor assets sufficient to cover its deposits, because most of his assets was a pile of worthless fartcoin that he printed for himself, but pretended that it was worth billions. And because he was not properly audited[1], his equity wasn't immediately liquidated to cover the gap, when the gap could still be covered.<p>... Also, reserve requirements have nothing to do with this particular failure case. They have everything to do with issuing loans, and the rate at which money is created (inflation!), but this wasn't a failure caused by issuing loans.<p>[1] It's weird how <em>VC</em> <em>due</em> <em>diligence</em> seems to go out the window as soon as their money starts funding a hot new crypto scam. It's almost as if they are playing a heads-we-win-big, tails-we-lose-nothing-but-our-investment game..."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "FTX tapped into customer accounts to fund risky bets, setting up its downfall"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.wsj.com/articles/ftx-tapped-into-customer-accounts-to-fund-risky-bets-setting-up-its-downfall-11668093732"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_vkou",
+    "story_33547863"
+   ],
+   "author": "vkou",
+   "children": [
+    33551349
+   ],
+   "comment_text": "It&#x27;s different in a lot of ways. The most important one that you&#x27;ve missed is that banks don&#x27;t need to have enough liquidity to cover customer deposits, but they do need to have enough <i>assets</i>. If a bank&#x27;s assets ever drop below its liabilities, it is <i>immediately liquidated</i>, the shareholders lose everything, and insurance steps in to fix any gaps.<p>SBF has neither liquidity nor assets sufficient to cover its deposits, because most of his assets was a pile of worthless fartcoin that he printed for himself, but pretended that it was worth billions. And because he was not properly audited[1], his equity wasn&#x27;t immediately liquidated to cover the gap, when the gap could still be covered.<p>... Also, reserve requirements have nothing to do with this particular failure case. They have everything to do with issuing loans, and the rate at which money is created (inflation!), but this wasn&#x27;t a failure caused by issuing loans.<p>[1] It&#x27;s weird how VC due diligence seems to go out the window as soon as their money starts funding a hot new crypto scam. It&#x27;s almost as if they are playing a heads-we-win-big, tails-we-lose-nothing-but-our-investment game...",
+   "created_at": "2022-11-10T18:28:49Z",
+   "created_at_i": 1668104929,
+   "objectID": "33550934",
+   "parent_id": 33550716,
+   "story_id": 33547863,
+   "story_title": "FTX tapped into customer accounts to fund risky bets, setting up its downfall",
+   "story_url": "https://www.wsj.com/articles/ftx-tapped-into-customer-accounts-to-fund-risky-bets-setting-up-its-downfall-11668093732",
+   "updated_at": "2024-09-20T12:28:33Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Pwnguinz"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "due",
+      "diligence",
+      "vc"
+     ],
+     "value": "I think that's an approach that--on the outset--anyone can agree with. But the problem is that any decent professional of a field capable of doing that are also not the ones willing to sit in the patent office merely reviewing applications.<p>It's the same principle as PG mentioned in his essay that first rate technical people do not hire themselves out to do <em>due</em> <em>diligence</em> work for <em>VC</em>'s, and as a result the \"experts\" <em>VC</em>'s do send over are generally a joke. What's to prevent the same from happening in the patent review office?"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Medical Patents Must Die"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://marginalrevolution.com/marginalrevolution/2011/12/medical-patents-must-die.html#hn"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Pwnguinz",
+    "story_3338322"
+   ],
+   "author": "Pwnguinz",
+   "children": [
+    3338706
+   ],
+   "comment_text": "I think that's an approach that--on the outset--anyone can agree with. But the problem is that any decent professional of a field capable of doing that are also not the ones willing to sit in the patent office merely reviewing applications.<p>It's the same principle as PG mentioned in his essay that first rate technical people do not hire themselves out to do due diligence work for VC's, and as a result the \"experts\" VC's do send over are generally a joke. What's to prevent the same from happening in the patent review office?",
+   "created_at": "2011-12-10T22:35:40Z",
+   "created_at_i": 1323556540,
+   "objectID": "3338689",
+   "parent_id": 3338539,
+   "story_id": 3338322,
+   "story_title": "Medical Patents Must Die",
+   "story_url": "http://marginalrevolution.com/marginalrevolution/2011/12/medical-patents-must-die.html#hn",
+   "updated_at": "2024-09-19T18:12:39Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tptacek"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "This really reads more like 5 legal tips to get you into a lawyer's office before there's any real need.<p>(1) The open source business models in this article weren't locked down until years after the products were successful. SourceFire and Tenable, in my industry, are both examples of extremely successful companies that simply shipped straight GPL until they were ready to start making money (on Snort and Nessus, respectively).<p>(2) There's little you can reasonably do in a 3-month old company to bulletproof yourself from a bad-faith partner who is going to make claims on your IP; also, you have bigger problems; also, if it looks like you're going to make money, VC probably doesn't care. I've been through VC due diligence a bunch of times, and I never saw them take out the fine-toothed comb.<p>(3) It seems equally likely to me that by posting a FAQ and \"policing\" your content, you set up the expectation with content providers and with the courts that you're <i>obligated</i> to do that.<p>(4) Ok. Don't sign ROFR's. Gotcha. Why didn't he just offer the real advice, which is, \"don't sign any contract complicated enough to have a ROFR clause, or anything else you could call a 'clause', without a lawyer\"?<p>(5) Have any of you bothered to register trademarks?"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "5 Legal Tips To Save Startups Money & Headaches"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://gigaom.com/2008/10/05/5-legal-tips-to-save-startups-money-headache/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_tptacek",
+    "story_324217"
+   ],
+   "author": "tptacek",
+   "comment_text": "This really reads more like 5 legal tips to get you into a lawyer's office before there's any real need.<p>(1) The open source business models in this article weren't locked down until years after the products were successful. SourceFire and Tenable, in my industry, are both examples of extremely successful companies that simply shipped straight GPL until they were ready to start making money (on Snort and Nessus, respectively).<p>(2) There's little you can reasonably do in a 3-month old company to bulletproof yourself from a bad-faith partner who is going to make claims on your IP; also, you have bigger problems; also, if it looks like you're going to make money, VC probably doesn't care. I've been through VC due diligence a bunch of times, and I never saw them take out the fine-toothed comb.<p>(3) It seems equally likely to me that by posting a FAQ and \"policing\" your content, you set up the expectation with content providers and with the courts that you're <i>obligated</i> to do that.<p>(4) Ok. Don't sign ROFR's. Gotcha. Why didn't he just offer the real advice, which is, \"don't sign any contract complicated enough to have a ROFR clause, or anything else you could call a 'clause', without a lawyer\"?<p>(5) Have any of you bothered to register trademarks?",
+   "created_at": "2008-10-05T19:22:40Z",
+   "created_at_i": 1223234560,
+   "objectID": "324253",
+   "parent_id": 324217,
+   "points": null,
+   "story_id": 324217,
+   "story_title": "5 Legal Tips To Save Startups Money & Headaches",
+   "story_url": "http://gigaom.com/2008/10/05/5-legal-tips-to-save-startups-money-headache/",
+   "updated_at": "2023-09-06T19:24:55Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Daniel_Newby"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "> One founder wanted to negotiate out of having to pay $10K in lawyer fees.<p>Are these fees for the VC's due diligence investigation, or are they for putting together good paperwork for the company? For the former, the company has just bartered legal services and needs to issue an IRS form 1099 to the VC who has to pay taxes, and may be committing securities fraud by colluding to book the fees as basis cost rather than operating expense.<p>Anybody know?"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Term Sheet Negotiation Tells"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://permanentrecord.firstround.com/2011/10/31/term-sheet-negotiation-tells/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Daniel_Newby",
+    "story_3179663"
+   ],
+   "author": "Daniel_Newby",
+   "children": [
+    3180938
+   ],
+   "comment_text": "&#62; One founder wanted to negotiate out of having to pay $10K in lawyer fees.<p>Are these fees for the VC's due diligence investigation, or are they for putting together good paperwork for the company? For the former, the company has just bartered legal services and needs to issue an IRS form 1099 to the VC who has to pay taxes, and may be committing securities fraud by colluding to book the fees as basis cost rather than operating expense.<p>Anybody know?",
+   "created_at": "2011-11-01T04:17:29Z",
+   "created_at_i": 1320121049,
+   "objectID": "3180601",
+   "parent_id": 3179663,
+   "story_id": 3179663,
+   "story_title": "Term Sheet Negotiation Tells",
+   "story_url": "http://permanentrecord.firstround.com/2011/10/31/term-sheet-negotiation-tells/",
+   "updated_at": "2024-09-19T18:07:10Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "dekhn"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "I read the entire article and I didn't see anything in there that would convince me this author is anything other than an amateur programmer (I can't parse the section about bruker- is the &quot;amateur programmer&quot; also a director at Bruker who ddevelops medical devices full-time&quot;?).<p>Please be assured that I put a fair amount of thought into this - for example, I used to do due diligence for a VC firm evaluating proposals like this all the time and we had to reject most of them because the founders didn't understand the basic rules of deploying medical technology in highly regulated environments like the US.<p>Based on my interactions with the author in the various parts this post, I continue to conclude this individual is lacking core knowledge and wisdom required to execute a project like this successfully at scale."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "\u201cAmateur\u201d programmer fought cancer with 50 Nvidia Geforce 1080Ti"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://howardchen.substack.com/p/this-amateur-programmer-fought-cancer"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_dekhn",
+    "story_31449147"
+   ],
+   "author": "dekhn",
+   "children": [
+    31452182
+   ],
+   "comment_text": "I read the entire article and I didn&#x27;t see anything in there that would convince me this author is anything other than an amateur programmer (I can&#x27;t parse the section about bruker- is the &quot;amateur programmer&quot; also a director at Bruker who ddevelops medical devices full-time&quot;?).<p>Please be assured that I put a fair amount of thought into this - for example, I used to do due diligence for a VC firm evaluating proposals like this all the time and we had to reject most of them because the founders didn&#x27;t understand the basic rules of deploying medical technology in highly regulated environments like the US.<p>Based on my interactions with the author in the various parts this post, I continue to conclude this individual is lacking core knowledge and wisdom required to execute a project like this successfully at scale.",
+   "created_at": "2022-05-20T20:06:18Z",
+   "created_at_i": 1653077178,
+   "objectID": "31451917",
+   "parent_id": 31451492,
+   "story_id": 31449147,
+   "story_title": "\u201cAmateur\u201d programmer fought cancer with 50 Nvidia Geforce 1080Ti",
+   "story_url": "https://howardchen.substack.com/p/this-amateur-programmer-fought-cancer",
+   "updated_at": "2024-09-20T11:10:29Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jasode"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "<i>&gt;For the 1000th time, a total of 0 (zero) VCs that most people would associate with &quot;silicon valley&quot; invested in Theranos</i><p>Well, Tim Draper is a VC that people would associate with &quot;Silicon Valley&quot;.  (portfolio:  <a href=\"https://www.dfj.com/\" rel=\"nofollow\">https://www.dfj.com/</a>)<p>The first $500k seed came from DFJ.[1]<p>But somewhat to your point, Elizabeth Holmes did not get his backing via the typical &quot;VC due diligence&quot; channel.  Instead, she was childhood friends with Draper's daughter.  Apparently, her charm completely bypassed his VC radar for detecting bullshit.<p>[1] <a href=\"https://news.crunchbase.com/news/theranos-elizabeth-holmes-trial-investors-board/#:~:text=other%20business%20ties.-,Theranos'%20investors,June%202004%2C%20according%20to%20Crunchbase\" rel=\"nofollow\">https://news.crunchbase.com/news/theranos-elizabeth-holmes-t...</a>."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Elizabeth Holmes is on trial for fraud, but don't forget about her VC enablers"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.sfchronicle.com/opinion/openforum/article/Elizabeth-Holmes-is-on-trial-for-fraud-but-16546832.php"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_jasode",
+    "story_28955433"
+   ],
+   "author": "jasode",
+   "children": [
+    28956022,
+    28956289,
+    28956850,
+    28958019
+   ],
+   "comment_text": "<i>&gt;For the 1000th time, a total of 0 (zero) VCs that most people would associate with &quot;silicon valley&quot; invested in Theranos</i><p>Well, Tim Draper is a VC that people would associate with &quot;Silicon Valley&quot;.  (portfolio:  <a href=\"https:&#x2F;&#x2F;www.dfj.com&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.dfj.com&#x2F;</a>)<p>The first $500k seed came from DFJ.[1]<p>But somewhat to your point, Elizabeth Holmes did not get his backing via the typical &quot;VC due diligence&quot; channel.  Instead, she was childhood friends with Draper&#x27;s daughter.  Apparently, her charm completely bypassed his VC radar for detecting bullshit.<p>[1] <a href=\"https:&#x2F;&#x2F;news.crunchbase.com&#x2F;news&#x2F;theranos-elizabeth-holmes-trial-investors-board&#x2F;#:~:text=other%20business%20ties.-,Theranos&#x27;%20investors,June%202004%2C%20according%20to%20Crunchbase\" rel=\"nofollow\">https:&#x2F;&#x2F;news.crunchbase.com&#x2F;news&#x2F;theranos-elizabeth-holmes-t...</a>.",
+   "created_at": "2021-10-22T11:36:25Z",
+   "created_at_i": 1634902585,
+   "objectID": "28955994",
+   "parent_id": 28955905,
+   "story_id": 28955433,
+   "story_title": "Elizabeth Holmes is on trial for fraud, but don't forget about her VC enablers",
+   "story_url": "https://www.sfchronicle.com/opinion/openforum/article/Elizabeth-Holmes-is-on-trial-for-fraud-but-16546832.php",
+   "updated_at": "2024-09-20T09:41:07Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "smackeyacky"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "This is the most likely answer.  There would have been a few other warning signs durung the due diligence but most VCs who have rejected me have used some incredibly lame excuse instead of being honest.<p>It wouldn't hurt them to simply say &quot;we don't understand this and that makes us uncomfortable&quot; instead of bullshit like &quot;doesn't fit our investment profile&quot; or the tech stack is wrong.<p>Trying to educate VCs in something out of their comfort zone is like trying to teach a pig to tapdance.  Most of them I have had dealings with have such limited life experience they will never really understand agtech or biotech."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Rejected from a VC due to tech stack"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.indiehackers.com/post/rejected-from-a-vc-due-to-tech-stack-481189d9f8"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_smackeyacky",
+    "story_27489143"
+   ],
+   "author": "smackeyacky",
+   "comment_text": "This is the most likely answer.  There would have been a few other warning signs durung the due diligence but most VCs who have rejected me have used some incredibly lame excuse instead of being honest.<p>It wouldn&#x27;t hurt them to simply say &quot;we don&#x27;t understand this and that makes us uncomfortable&quot; instead of bullshit like &quot;doesn&#x27;t fit our investment profile&quot; or the tech stack is wrong.<p>Trying to educate VCs in something out of their comfort zone is like trying to teach a pig to tapdance.  Most of them I have had dealings with have such limited life experience they will never really understand agtech or biotech.",
+   "created_at": "2021-06-13T08:17:45Z",
+   "created_at_i": 1623572265,
+   "objectID": "27490793",
+   "parent_id": 27490657,
+   "story_id": 27489143,
+   "story_title": "Rejected from a VC due to tech stack",
+   "story_url": "https://www.indiehackers.com/post/rejected-from-a-vc-due-to-tech-stack-481189d9f8",
+   "updated_at": "2024-09-20T08:48:24Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "prpon"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "A story from meeting Donald Knuth.\nDuring the dotcom days, our startup team was sent to meet Donald Knuth for due diligence by some VC.\nOur startup was doing Location based stuff before it was cool. \nOur CTO went on and on about all the potential applications of location based services. \nProf. Knuth cut him off in the middle and said, \n'You would use all these services because you are part of the lunatic fringe'. :)"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Donald Knuth never told Steve Jobs that he was full of shit"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.catonmat.net/blog/don-knuth-steve-jobs/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_prpon",
+    "story_2634635"
+   ],
+   "author": "prpon",
+   "comment_text": "A story from meeting Donald Knuth.\nDuring the dotcom days, our startup team was sent to meet Donald Knuth for due diligence by some VC.\nOur startup was doing Location based stuff before it was cool. \nOur CTO went on and on about all the potential applications of location based services. \nProf. Knuth cut him off in the middle and said, \n'You would use all these services because you are part of the lunatic fringe'. :)",
+   "created_at": "2011-06-08T20:14:12Z",
+   "created_at_i": 1307564052,
+   "objectID": "2634819",
+   "parent_id": 2634635,
+   "points": null,
+   "story_id": 2634635,
+   "story_title": "Donald Knuth never told Steve Jobs that he was full of shit",
+   "story_url": "http://www.catonmat.net/blog/don-knuth-steve-jobs/",
+   "updated_at": "2023-09-06T19:56:58Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "EGreg"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Tyler, this is really innovative. The VC model needs rethinking, aligning more with founders, and along the lines of what you're doing here. Your mentor model works great also.<p>As a founder of a company that has gotten to 8 MM users across 95+ countries, and $1M in revenues, and \nthere is a lot more I can tell you in a private conversation. We've applied to VCs along the way, but the model is not always aligned with companies like ours, which make revenue from the beginning rather than hockey stick growth and zero revenues.<p>One of the major reasons is that these kind of startups often need small amounts to get to the next level, but the due diligence of a VC sometimes costs more than that amount. If there was a &quot;roadmap&quot; model that VC would fund, say, $10K to get to the next level, then $20K, <i>etc.</i> and if it falls short, then they have to seek another such VC and syndicate. A bit like taking on lenders except it would be more along the lines of your Shared Earnings Agreement + Equity. Everything would be clearly spelled out, and rather than spending tons of time on due diligence, it would just be about a history of execution.<p><i>PS: We filled out your &quot;regular&quot; application in early April, please check email from @qbix.com ... would love to talk next week.</i><p><i>PPS: If you're a startup founder chime in and add your 2c, does your own experience in early stages resonate with what I've said? That if you were able to break down what you need to get to the next level, in $10K and $20K increments, with a second or third chance on slightly worse terms, you'd be happy to be funded in that manner, and work hard to make serious progress and document it.</i>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Earnest Capital Trailhead"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://earnestcapital.com/trailhead/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_EGreg",
+    "story_23180522"
+   ],
+   "author": "EGreg",
+   "children": [
+    23185997
+   ],
+   "comment_text": "Tyler, this is really innovative. The VC model needs rethinking, aligning more with founders, and along the lines of what you&#x27;re doing here. Your mentor model works great also.<p>As a founder of a company that has gotten to 8 MM users across 95+ countries, and $1M in revenues, and \nthere is a lot more I can tell you in a private conversation. We&#x27;ve applied to VCs along the way, but the model is not always aligned with companies like ours, which make revenue from the beginning rather than hockey stick growth and zero revenues.<p>One of the major reasons is that these kind of startups often need small amounts to get to the next level, but the due diligence of a VC sometimes costs more than that amount. If there was a &quot;roadmap&quot; model that VC would fund, say, $10K to get to the next level, then $20K, <i>etc.</i> and if it falls short, then they have to seek another such VC and syndicate. A bit like taking on lenders except it would be more along the lines of your Shared Earnings Agreement + Equity. Everything would be clearly spelled out, and rather than spending tons of time on due diligence, it would just be about a history of execution.<p><i>PS: We filled out your &quot;regular&quot; application in early April, please check email from @qbix.com ... would love to talk next week.</i><p><i>PPS: If you&#x27;re a startup founder chime in and add your 2c, does your own experience in early stages resonate with what I&#x27;ve said? That if you were able to break down what you need to get to the next level, in $10K and $20K increments, with a second or third chance on slightly worse terms, you&#x27;d be happy to be funded in that manner, and work hard to make serious progress and document it.</i>",
+   "created_at": "2020-05-14T17:49:44Z",
+   "created_at_i": 1589478584,
+   "objectID": "23182881",
+   "parent_id": 23180567,
+   "story_id": 23180522,
+   "story_title": "Earnest Capital Trailhead",
+   "story_url": "https://earnestcapital.com/trailhead/",
+   "updated_at": "2024-09-20T06:15:53Z"
+  }
+ ],
+ "hitsPerPage": 50,
+ "nbHits": 786,
+ "nbPages": 16,
+ "page": 0,
+ "params": "query=due+diligence+VC&tags=comment&hitsPerPage=50&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 39,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 19
+  },
+  "afterFetch": {
+   "format": {
+    "highlighting": 4,
+    "total": 4
+   },
+   "merge": {
+    "mergeLoop": {
+     "prepareNextHit": 16,
+     "total": 16
+    },
+    "total": 17
+   },
+   "total": 17
+  },
+  "fetch": {
+   "query": 8,
+   "scanning": 12,
+   "total": 21
+  },
+  "total": 39
+ },
+ "query": "due diligence VC",
+ "serverTimeMS": 45,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=due+diligence+VC&tags=comment&hitsPerPage=50"
+}

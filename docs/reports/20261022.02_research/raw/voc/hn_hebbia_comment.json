@@ -1,0 +1,2183 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "a-priori"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "(Disclaimer: I work for the Blue Brain Project. What I say is my own opinion.)<p>It's not just an ANN like you may have learned in school. They refer to their model as \"single-compartment phenomenological spiking neurons, learning synapses with spike-timing dependent plasticity, and axonal delays\" in their <i>The cat is out of the bag</i> article.<p>In simpler language, it's a spike-based model (when someone says \"artificial neural network\" they usually mean a rate-based model) where they adjust synaptic weights based on the correlations of spikes (Google: spike-timing dependent plasticity), and add a transmission delay before a spike arrives at the post-synaptic cell.<p>It sounds very much like the model described in <i><em>Hebbia</em>n learning and spiking neurons</i> (Gerstner et al., 1999).<p>This is a more sophisticated model than most neural network models, but it's still very much abstracted from biology. For starters, it doesn't sound like they model a diversity of neuron structures, nor even ion channels or dendrites.<p>This is where this \"Blue Matter\" project differs from the Blue Brain Project, which is attempting to model the biology is as fine detail as the science (and the computing hardware!) allows.<p>EDIT (forgot to get to the point):<p>Is it a scam? That's open to interpretation, but I agree with Dr. Markram that they are making fantastic claims and  glossing over the fact that they are <i>not</i> modelling anything resembling a cat's brain except in neuron count."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Darpa\u2019s Simulated Cat Brain Project a \u2018Scam\u2019: Top Scientist"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.wired.com/dangerroom/2009/11/darpas-simulated-cat-brain-project-a-scam-top-neuroscientist/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_a-priori",
+    "story_959122"
+   ],
+   "author": "a-priori",
+   "children": [
+    959779
+   ],
+   "comment_text": "(Disclaimer: I work for the Blue Brain Project. What I say is my own opinion.)<p>It's not just an ANN like you may have learned in school. They refer to their model as \"single-compartment phenomenological spiking neurons, learning synapses with spike-timing dependent plasticity, and axonal delays\" in their <i>The cat is out of the bag</i> article.<p>In simpler language, it's a spike-based model (when someone says \"artificial neural network\" they usually mean a rate-based model) where they adjust synaptic weights based on the correlations of spikes (Google: spike-timing dependent plasticity), and add a transmission delay before a spike arrives at the post-synaptic cell.<p>It sounds very much like the model described in <i>Hebbian learning and spiking neurons</i> (Gerstner et al., 1999).<p>This is a more sophisticated model than most neural network models, but it's still very much abstracted from biology. For starters, it doesn't sound like they model a diversity of neuron structures, nor even ion channels or dendrites.<p>This is where this \"Blue Matter\" project differs from the Blue Brain Project, which is attempting to model the biology is as fine detail as the science (and the computing hardware!) allows.<p>EDIT (forgot to get to the point):<p>Is it a scam? That's open to interpretation, but I agree with Dr. Markram that they are making fantastic claims and  glossing over the fact that they are <i>not</i> modelling anything resembling a cat's brain except in neuron count.",
+   "created_at": "2009-11-24T16:09:55Z",
+   "created_at_i": 1259078995,
+   "objectID": "959437",
+   "parent_id": 959221,
+   "story_id": 959122,
+   "story_title": "Darpa\u2019s Simulated Cat Brain Project a \u2018Scam\u2019: Top Scientist",
+   "story_url": "http://www.wired.com/dangerroom/2009/11/darpas-simulated-cat-brain-project-a-scam-top-neuroscientist/",
+   "updated_at": "2024-09-19T16:50:24Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "seiji"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "&gt; feed forward networks do not have immediate state. Not in any relevant sense.<p>Feed-forward networks do have state, but all the useful parts all obtained through explicit training (ye olde backprop, ye older <em>hebbia</em>n).  The typical scenario is &quot;train model (write mode), deploy model (read-only mode),&quot; which as you point out, has no &quot;thought&quot; since at runtime, no changes or introspections are happening.<p>&gt; So therefore they can never have thought.<p>The key idea here would be: generative models.  Most current AI fads are driven by discriminative models (image recognition, speech recognition, etc) which provide very narrow &quot;faster than human&quot; output, but, as you point out, have no thought or will or motives of their own.<p>But, once you have a sufficiently connected network, you can start to ask it open-ended questions (&quot;draw a cat for me&quot;) in the form of sampling from the network (gibbs sampling, MCMC, ...) and it fills in the blanks.<p>The extra oomph of providing actual agency and intent and desire to the model is an exercise left to the reader.<p>&gt; (which should be a slower, longer term process).<p>Sleep is a requirement of all things with neural network based brains as far as we know."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The Unreasonable Effectiveness of Recurrent Neural Networks"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://karpathy.github.io/2015/05/21/rnn-effectiveness/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_seiji",
+    "story_9584325"
+   ],
+   "author": "seiji",
+   "comment_text": "&gt; feed forward networks do not have immediate state. Not in any relevant sense.<p>Feed-forward networks do have state, but all the useful parts all obtained through explicit training (ye olde backprop, ye older hebbian).  The typical scenario is &quot;train model (write mode), deploy model (read-only mode),&quot; which as you point out, has no &quot;thought&quot; since at runtime, no changes or introspections are happening.<p>&gt; So therefore they can never have thought.<p>The key idea here would be: generative models.  Most current AI fads are driven by discriminative models (image recognition, speech recognition, etc) which provide very narrow &quot;faster than human&quot; output, but, as you point out, have no thought or will or motives of their own.<p>But, once you have a sufficiently connected network, you can start to ask it open-ended questions (&quot;draw a cat for me&quot;) in the form of sampling from the network (gibbs sampling, MCMC, ...) and it fills in the blanks.<p>The extra oomph of providing actual agency and intent and desire to the model is an exercise left to the reader.<p>&gt; (which should be a slower, longer term process).<p>Sleep is a requirement of all things with neural network based brains as far as we know.",
+   "created_at": "2015-05-21T21:12:28Z",
+   "created_at_i": 1432242748,
+   "objectID": "9585409",
+   "parent_id": 9584602,
+   "points": null,
+   "story_id": 9584325,
+   "story_title": "The Unreasonable Effectiveness of Recurrent Neural Networks",
+   "story_url": "http://karpathy.github.io/2015/05/21/rnn-effectiveness/",
+   "updated_at": "2023-09-07T02:48:24Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "sbpayne"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "I feel his explanation of activity vectors closely resembles/indicates <em>Hebbia</em>n learning rules (due to the dependence on co-occurrences).<p>Pierre Balid from UCI has a paper coming soon about the theory behind learning rules; I think it might present some interesting ideas for this work from Hinton."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Aetherial Symbols"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://drive.google.com/file/d/0B8i61jl8OE3XdHRCSkV1VFNqTWc/edit?pli=1"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_sbpayne",
+    "story_9432601"
+   ],
+   "author": "sbpayne",
+   "comment_text": "I feel his explanation of activity vectors closely resembles&#x2F;indicates Hebbian learning rules (due to the dependence on co-occurrences).<p>Pierre Balid from UCI has a paper coming soon about the theory behind learning rules; I think it might present some interesting ideas for this work from Hinton.",
+   "created_at": "2015-04-24T20:23:39Z",
+   "created_at_i": 1429907019,
+   "objectID": "9435806",
+   "parent_id": 9432601,
+   "points": null,
+   "story_id": 9432601,
+   "story_title": "Aetherial Symbols",
+   "story_url": "https://drive.google.com/file/d/0B8i61jl8OE3XdHRCSkV1VFNqTWc/edit?pli=1",
+   "updated_at": "2023-09-07T02:36:03Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "a-priori"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "<i>This is not scientific fact since it is conceivable that real neurons are much more powerful than artificial neurons, but real neurons may also turn out to be much less powerful than artificial neurons. In any event, the above is certainly a plausible hypothesis.</i><p>Biological neurons are indeed more powerful than (most) artificial neural network models because these models discard important characteristics of biological neurons:<p>* Spiking: Most artificial models are 'rate-based', where they gloss over the spiking behaviour of neurons by only modelling the firing rate. This discards all the various kinds of spiking behaviours (intrinsically spiking, resonators, bursting, etc.) as well as the relative timing of spikes. The relative timing is the basis for spike-timing dependent plasticity (STDP), which enables <em>Hebbia</em>n learning and long-term potentiation -- two of the ways that networks learn to wire themselves together and process information.<p>* Conduction delays: Biological neural networks have a delay between when a spike is generated at the axon hillock and when it arrives at the postsynaptic neuron's dendritic arbour. This delay acts as a kind of like delay line memory in computers, where information can be 'stored' in-transit for short periods of time (in the ballpark of 0.5-40ms). And because different axons have different delays, information can be integrated over time by having one axon with a short delay and one with a long delay both end up at the same postsynaptic neuron."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "A Brief Overview of Deep Learning"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://yyue.blogspot.com/2015/01/a-brief-overview-of-deep-learning.html?m=1"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_a-priori",
+    "story_9025709"
+   ],
+   "author": "a-priori",
+   "children": [
+    9027858,
+    9028767,
+    9030491
+   ],
+   "comment_text": "<i>This is not scientific fact since it is conceivable that real neurons are much more powerful than artificial neurons, but real neurons may also turn out to be much less powerful than artificial neurons. In any event, the above is certainly a plausible hypothesis.</i><p>Biological neurons are indeed more powerful than (most) artificial neural network models because these models discard important characteristics of biological neurons:<p>* Spiking: Most artificial models are &#x27;rate-based&#x27;, where they gloss over the spiking behaviour of neurons by only modelling the firing rate. This discards all the various kinds of spiking behaviours (intrinsically spiking, resonators, bursting, etc.) as well as the relative timing of spikes. The relative timing is the basis for spike-timing dependent plasticity (STDP), which enables Hebbian learning and long-term potentiation -- two of the ways that networks learn to wire themselves together and process information.<p>* Conduction delays: Biological neural networks have a delay between when a spike is generated at the axon hillock and when it arrives at the postsynaptic neuron&#x27;s dendritic arbour. This delay acts as a kind of like delay line memory in computers, where information can be &#x27;stored&#x27; in-transit for short periods of time (in the ballpark of 0.5-40ms). And because different axons have different delays, information can be integrated over time by having one axon with a short delay and one with a long delay both end up at the same postsynaptic neuron.",
+   "created_at": "2015-02-10T15:34:18Z",
+   "created_at_i": 1423582458,
+   "objectID": "9027700",
+   "parent_id": 9025709,
+   "points": null,
+   "story_id": 9025709,
+   "story_title": "A Brief Overview of Deep Learning",
+   "story_url": "http://yyue.blogspot.com/2015/01/a-brief-overview-of-deep-learning.html?m=1",
+   "updated_at": "2023-09-07T02:04:45Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tormeh"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Well, a neuron can either fire or not fire; 0 or 1. For a neuron to fire, enough of its' synapses need to fire. How likely a single neuron is to do so based on an incoming action potential varies over time according to <em>Hebbia</em>n learning. Once x synapses fire, the input is linearly summed to determine if the neuron as a whole fires. That's a neat abstraction and it is pretty descriptive. But it's also a little too neat to be true. The summation is, of course, not linear and neurons react to incoming signals even if they don't fire. How likely a neuron is to fire also depends on how much it has fired recently, as the synapses &quot;get tired&quot; (the concentration of certain molecules are temporarily exhausted), but for some neurons, likelihood increases as a result of previous firings before it decreases. <em>Hebbia</em>n learning increases the strength of the connection to neurons that participates in successfully firing the neuron, but connections under a certain strength threshold decay with time, while those over it are stable (inability to create these stable connections is connected to alzheimers).<p>That's what I remember and I just took some neuroscience courses. There are multiple books out there attempting only to describe behaviour mathematically, let alone describing the underlying mechanisms, which is true &quot;here be dragons&quot; territory."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "How a Blind Person Programs"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://blog.freecodecamp.com/2015/01/a-vision-of-coding-without-opening-your-eyes.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_tormeh",
+    "story_8965048"
+   ],
+   "author": "tormeh",
+   "comment_text": "Well, a neuron can either fire or not fire; 0 or 1. For a neuron to fire, enough of its&#x27; synapses need to fire. How likely a single neuron is to do so based on an incoming action potential varies over time according to Hebbian learning. Once x synapses fire, the input is linearly summed to determine if the neuron as a whole fires. That&#x27;s a neat abstraction and it is pretty descriptive. But it&#x27;s also a little too neat to be true. The summation is, of course, not linear and neurons react to incoming signals even if they don&#x27;t fire. How likely a neuron is to fire also depends on how much it has fired recently, as the synapses &quot;get tired&quot; (the concentration of certain molecules are temporarily exhausted), but for some neurons, likelihood increases as a result of previous firings before it decreases. Hebbian learning increases the strength of the connection to neurons that participates in successfully firing the neuron, but connections under a certain strength threshold decay with time, while those over it are stable (inability to create these stable connections is connected to alzheimers).<p>That&#x27;s what I remember and I just took some neuroscience courses. There are multiple books out there attempting only to describe behaviour mathematically, let alone describing the underlying mechanisms, which is true &quot;here be dragons&quot; territory.",
+   "created_at": "2015-01-30T12:57:27Z",
+   "created_at_i": 1422622647,
+   "objectID": "8971752",
+   "parent_id": 8971654,
+   "points": null,
+   "story_id": 8965048,
+   "story_title": "How a Blind Person Programs",
+   "story_url": "http://blog.freecodecamp.com/2015/01/a-vision-of-coding-without-opening-your-eyes.html",
+   "updated_at": "2023-09-06T23:24:00Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "therobot24"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "You're going to get most of these from a simple Google search, if you're going to build a list of what to read you should at least put some effort into it. Currently, this list is missing a lot of history behind deep learning - only 3 papers listed!<p>if you want a good set of papers that starts with perceptrons and <em>hebbia</em>n learning to multi-layered neural nets and the emergence of what we now refer to as deep networks checkout <a href=\"http://deeplearning.cs.cmu.edu/\" rel=\"nofollow\">http://deeplearning.cs.cmu.edu/</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Deep Learning Reading List"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://jmozah.github.io/links/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_therobot24",
+    "story_8813484"
+   ],
+   "author": "therobot24",
+   "children": [
+    8813566
+   ],
+   "comment_text": "You&#x27;re going to get most of these from a simple Google search, if you&#x27;re going to build a list of what to read you should at least put some effort into it. Currently, this list is missing a lot of history behind deep learning - only 3 papers listed!<p>if you want a good set of papers that starts with perceptrons and hebbian learning to multi-layered neural nets and the emergence of what we now refer to as deep networks checkout <a href=\"http://deeplearning.cs.cmu.edu/\" rel=\"nofollow\">http:&#x2F;&#x2F;deeplearning.cs.cmu.edu&#x2F;</a>",
+   "created_at": "2014-12-30T06:01:05Z",
+   "created_at_i": 1419919265,
+   "objectID": "8813531",
+   "parent_id": 8813484,
+   "story_id": 8813484,
+   "story_title": "Deep Learning Reading List",
+   "story_url": "http://jmozah.github.io/links/",
+   "updated_at": "2024-09-19T21:24:18Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "roundsquare"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "<i>our system is anti-<em>Hebbia</em>n</i><p>From what I can tell from the description, thats not quite right.  Its <em>Hebbia</em>n between groups but anti-<em>Hebbia</em>n within a group.  Am I reading this correctly?"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "New Mathematical Model Suggests How The Brain Might Stay In Balance"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.sciencedaily.com/releases/2009/09/090927152049.htm"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_roundsquare",
+    "story_861603"
+   ],
+   "author": "roundsquare",
+   "comment_text": "<i>our system is anti-Hebbian</i><p>From what I can tell from the description, thats not quite right.  Its Hebbian between groups but anti-Hebbian within a group.  Am I reading this correctly?",
+   "created_at": "2009-10-05T12:18:15Z",
+   "created_at_i": 1254745095,
+   "objectID": "861630",
+   "parent_id": 861603,
+   "story_id": 861603,
+   "story_title": "New Mathematical Model Suggests How The Brain Might Stay In Balance",
+   "story_url": "http://www.sciencedaily.com/releases/2009/09/090927152049.htm",
+   "updated_at": "2024-09-19T16:44:06Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "sushirain"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "<em>Hebbia</em>n learning is the little idea we do have. We don't know much more: how memories are represented by neurons, control, consciousness, vision, and almost anything."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Machine-Learning Maestro Michael Jordan on the Delusions of Big Data and Others"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://spectrum.ieee.org/robotics/artificial-intelligence/machinelearning-maestro-michael-jordan-on-the-delusions-of-big-data-and-other-huge-engineering-efforts"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_sushirain",
+    "story_8484560"
+   ],
+   "author": "sushirain",
+   "comment_text": "Hebbian learning is the little idea we do have. We don&#x27;t know much more: how memories are represented by neurons, control, consciousness, vision, and almost anything.",
+   "created_at": "2014-10-21T22:24:58Z",
+   "created_at_i": 1413930298,
+   "objectID": "8490516",
+   "parent_id": 8487710,
+   "points": null,
+   "story_id": 8484560,
+   "story_title": "Machine-Learning Maestro Michael Jordan on the Delusions of Big Data and Others",
+   "story_url": "http://spectrum.ieee.org/robotics/artificial-intelligence/machinelearning-maestro-michael-jordan-on-the-delusions-of-big-data-and-other-huge-engineering-efforts",
+   "updated_at": "2023-09-06T22:39:17Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tormeh"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "&gt;In the brain, we have precious little idea how learning is actually taking place.<p>It's <em>Hebbia</em>n learning. When a post-synaptic neuron fires shortly after a pre-synaptic one fires, the synapse in question is strengthened (the surface area actually becomes larger). I hope he's talking about higher level concepts of learning, because otherwise he's wrong."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Machine-Learning Maestro Michael Jordan on the Delusions of Big Data and Others"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://spectrum.ieee.org/robotics/artificial-intelligence/machinelearning-maestro-michael-jordan-on-the-delusions-of-big-data-and-other-huge-engineering-efforts"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_tormeh",
+    "story_8484560"
+   ],
+   "author": "tormeh",
+   "children": [
+    8490516
+   ],
+   "comment_text": "&gt;In the brain, we have precious little idea how learning is actually taking place.<p>It&#x27;s Hebbian learning. When a post-synaptic neuron fires shortly after a pre-synaptic one fires, the synapse in question is strengthened (the surface area actually becomes larger). I hope he&#x27;s talking about higher level concepts of learning, because otherwise he&#x27;s wrong.",
+   "created_at": "2014-10-21T15:08:25Z",
+   "created_at_i": 1413904105,
+   "objectID": "8487710",
+   "parent_id": 8484560,
+   "points": null,
+   "story_id": 8484560,
+   "story_title": "Machine-Learning Maestro Michael Jordan on the Delusions of Big Data and Others",
+   "story_url": "http://spectrum.ieee.org/robotics/artificial-intelligence/machinelearning-maestro-michael-jordan-on-the-delusions-of-big-data-and-other-huge-engineering-efforts",
+   "updated_at": "2023-09-06T22:38:58Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "scottlocklin"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Think about it; biological neurons most definitely don't use backprop. Physical neurons can't backprop linearly if they forward prop nonlinearly. I think Hinton pointed this out, though almost all ANN researchers agree.<p><em>Hebbia</em>n learning .... maybe. I never thought too much about contrastive divergence.<p>It doesn't really matter; brains most certainly don't work like ANNs, except maybe in some weird mean field sense for a few things like liquid state machines. It would be a huge coincidence if LeCun or Hinton or whoever magically wrote down the brain equation...."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Machine-Learning Maestro Michael Jordan on the Delusions of Big Data and Others"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://spectrum.ieee.org/robotics/artificial-intelligence/machinelearning-maestro-michael-jordan-on-the-delusions-of-big-data-and-other-huge-engineering-efforts"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_scottlocklin",
+    "story_8484560"
+   ],
+   "author": "scottlocklin",
+   "comment_text": "Think about it; biological neurons most definitely don&#x27;t use backprop. Physical neurons can&#x27;t backprop linearly if they forward prop nonlinearly. I think Hinton pointed this out, though almost all ANN researchers agree.<p>Hebbian learning .... maybe. I never thought too much about contrastive divergence.<p>It doesn&#x27;t really matter; brains most certainly don&#x27;t work like ANNs, except maybe in some weird mean field sense for a few things like liquid state machines. It would be a huge coincidence if LeCun or Hinton or whoever magically wrote down the brain equation....",
+   "created_at": "2014-10-21T03:14:12Z",
+   "created_at_i": 1413861252,
+   "objectID": "8485748",
+   "parent_id": 8485698,
+   "points": null,
+   "story_id": 8484560,
+   "story_title": "Machine-Learning Maestro Michael Jordan on the Delusions of Big Data and Others",
+   "story_url": "http://spectrum.ieee.org/robotics/artificial-intelligence/machinelearning-maestro-michael-jordan-on-the-delusions-of-big-data-and-other-huge-engineering-efforts",
+   "updated_at": "2023-09-06T22:38:47Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "sitkack"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Drone wars are a new continuous flow, always on, Kanban killing process.<p>Probably get some sort of Office 360 interface so we can kill from home. Maybe a new version of Python called KillScript that has some <em>Hebbia</em>n learning libraries built in. TFIDF says it is a good time to be average."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Use of Drones for Killings Risks a War Without End"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.nytimes.com/2014/06/26/world/use-of-drones-for-killings-risks-a-war-without-end-panel-concludes-in-report.html?action=click&contentCollection=Health&region=Footer&module=TopNews&pgtype=Blogs"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_sitkack",
+    "story_7949048"
+   ],
+   "author": "sitkack",
+   "comment_text": "Drone wars are a new continuous flow, always on, Kanban killing process.<p>Probably get some sort of Office 360 interface so we can kill from home. Maybe a new version of Python called KillScript that has some Hebbian learning libraries built in. TFIDF says it is a good time to be average.",
+   "created_at": "2014-06-26T14:00:02Z",
+   "created_at_i": 1403791202,
+   "objectID": "7949638",
+   "parent_id": 7949048,
+   "story_id": 7949048,
+   "story_title": "Use of Drones for Killings Risks a War Without End",
+   "story_url": "http://www.nytimes.com/2014/06/26/world/use-of-drones-for-killings-risks-a-war-without-end-panel-concludes-in-report.html?action=click&contentCollection=Health&region=Footer&module=TopNews&pgtype=Blogs",
+   "updated_at": "2024-09-19T20:56:44Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ssdfsdf"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "While I think the hypergraph is a great data structure, and I agree graph rewrite rules, written as graphs have a lovely symmetry, this approach feels too low level to me. Sure you can have graphs representing both data and process ala &quot;To Dissect a Mockingbird&quot;, but it feels that this interesting interplay of data and process is sitting too high up in the hierarchy of structure, I think you want this happening at a very low level, giving more space for emergence (whatever that may be).<p>There is not enough symmetry, I think the correct solution to this problem is going to look obvious.\nI don't think this is an engineering problem, I think it is a radical re-imagining of what intelligence is.\nMy hope is with reservoir computing.<p>I think what we need to do is a mashup of reward modulated <em>hebbia</em>n learning and reservoir style techniques. We need to take a gigantic sledge hammer and smash apart the incoming stream of data, spray it as far across the space as possible and then linearly compose the pieces to construct something that looks right. Combine this with <em>hebbia</em>n learning so that those mutated, fragmented, mutated pieces of the incoming object which are useful for the purpose of the device are made more likely to occur within the network.<p>So you need a structure where it is possible to enhance the probability of some perturbation of the data through some global learning rule. Then you need a way of bringing those pieces together to reconstruct either the object itself or an object of use. And you need lots of it, billions of active processing elements and trillions of sparse connections.<p>Just my rant, perhaps it will spark something in a mind elsewhere, just passing on the pieces of the puzzle that I have smashed apart in my head.\nPerhaps we need to flip this all around, the patterns come from the world, they take root in our head and use the substrate to evolve, before passing out into the world again. what an GAI needs to do is provide a place for these patterns to take root and evolve according to the GAI specific objective function..."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Why Hypergraphs? (2013)"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://blog.opencog.org/2013/03/24/why-hypergraphs/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ssdfsdf",
+    "story_7914571"
+   ],
+   "author": "ssdfsdf",
+   "comment_text": "While I think the hypergraph is a great data structure, and I agree graph rewrite rules, written as graphs have a lovely symmetry, this approach feels too low level to me. Sure you can have graphs representing both data and process ala &quot;To Dissect a Mockingbird&quot;, but it feels that this interesting interplay of data and process is sitting too high up in the hierarchy of structure, I think you want this happening at a very low level, giving more space for emergence (whatever that may be).<p>There is not enough symmetry, I think the correct solution to this problem is going to look obvious.\nI don&#x27;t think this is an engineering problem, I think it is a radical re-imagining of what intelligence is.\nMy hope is with reservoir computing.<p>I think what we need to do is a mashup of reward modulated hebbian learning and reservoir style techniques. We need to take a gigantic sledge hammer and smash apart the incoming stream of data, spray it as far across the space as possible and then linearly compose the pieces to construct something that looks right. Combine this with hebbian learning so that those mutated, fragmented, mutated pieces of the incoming object which are useful for the purpose of the device are made more likely to occur within the network.<p>So you need a structure where it is possible to enhance the probability of some perturbation of the data through some global learning rule. Then you need a way of bringing those pieces together to reconstruct either the object itself or an object of use. And you need lots of it, billions of active processing elements and trillions of sparse connections.<p>Just my rant, perhaps it will spark something in a mind elsewhere, just passing on the pieces of the puzzle that I have smashed apart in my head.\nPerhaps we need to flip this all around, the patterns come from the world, they take root in our head and use the substrate to evolve, before passing out into the world again. what an GAI needs to do is provide a place for these patterns to take root and evolve according to the GAI specific objective function...",
+   "created_at": "2014-06-19T08:55:57Z",
+   "created_at_i": 1403168157,
+   "objectID": "7915254",
+   "parent_id": 7914571,
+   "story_id": 7914571,
+   "story_title": "Why Hypergraphs? (2013)",
+   "story_url": "http://blog.opencog.org/2013/03/24/why-hypergraphs/",
+   "updated_at": "2024-09-19T20:53:11Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "sdgsdgsdg"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Perhaps the brain just provides a place for the patterns to live? Perhaps it is not so much searching for patterns of activity which allow it to predict the future, but allowing the patterns of activity induced by the world to grow and evolve together. Then all it has to do is modulate this evolution when the organism gets something it likes. Reward modulated <em>hebbia</em>n learning I believe it is called. I've not read the whole paper, but it seems overly complicated and unnecessary when you consider the above conception..."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Predictive brains, situated agents and future of cognitive science (2013) [pdf]"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://dl.dropboxusercontent.com/u/280585369/2013-clark.pdf"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_sdgsdgsdg",
+    "story_7787789"
+   ],
+   "author": "sdgsdgsdg",
+   "comment_text": "Perhaps the brain just provides a place for the patterns to live? Perhaps it is not so much searching for patterns of activity which allow it to predict the future, but allowing the patterns of activity induced by the world to grow and evolve together. Then all it has to do is modulate this evolution when the organism gets something it likes. Reward modulated hebbian learning I believe it is called. I&#x27;ve not read the whole paper, but it seems overly complicated and unnecessary when you consider the above conception...",
+   "created_at": "2014-05-23T07:20:27Z",
+   "created_at_i": 1400829627,
+   "objectID": "7788319",
+   "parent_id": 7787789,
+   "story_id": 7787789,
+   "story_title": "Predictive brains, situated agents and future of cognitive science (2013) [pdf]",
+   "story_url": "https://dl.dropboxusercontent.com/u/280585369/2013-clark.pdf",
+   "updated_at": "2024-09-19T20:49:33Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "a-priori"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "As far as anyone knows, synaesthesia is a fundamental property of how some people's brains are wired, where the interconnections between two areas of sensory cortex are abnormally strong. Thus, when one area is activated (by perceiving a letter, for example), the activation spreads to the other area (for perceiving a colour). It's something that would develop very early on (probably <i>in utero</i>, and surely by soon after birth).<p>In adults, you might theoretically be able to induce permanent synaesthesia by repeated Tetanic stimulation of the two areas of cortex simultaneously. This may induce a strengthening of the connections between the two areas via <em>Hebbia</em>n learning.<p>On the other hand, this might destroy your ability to perceive both letters and colour, or cause other brain damage. There would be no guarantee that the results would be of any use to you at all (remember that synaesthesics grow up experiencing the world this way). And that's assuming you could even identify the appropriate areas. Needless to say, no surgeon would do this.<p>Sorry, LSD is still your best bet. :)"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Synesthesia Encyclopedia"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://cytowic.net/Synesthesia/Synesth__Encyclo_/synesth__encyclo_.HTM"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_a-priori",
+    "story_767136"
+   ],
+   "author": "a-priori",
+   "comment_text": "As far as anyone knows, synaesthesia is a fundamental property of how some people's brains are wired, where the interconnections between two areas of sensory cortex are abnormally strong. Thus, when one area is activated (by perceiving a letter, for example), the activation spreads to the other area (for perceiving a colour). It's something that would develop very early on (probably <i>in utero</i>, and surely by soon after birth).<p>In adults, you might theoretically be able to induce permanent synaesthesia by repeated Tetanic stimulation of the two areas of cortex simultaneously. This may induce a strengthening of the connections between the two areas via Hebbian learning.<p>On the other hand, this might destroy your ability to perceive both letters and colour, or cause other brain damage. There would be no guarantee that the results would be of any use to you at all (remember that synaesthesics grow up experiencing the world this way). And that's assuming you could even identify the appropriate areas. Needless to say, no surgeon would do this.<p>Sorry, LSD is still your best bet. :)",
+   "created_at": "2009-08-17T08:05:18Z",
+   "created_at_i": 1250496318,
+   "objectID": "767593",
+   "parent_id": 767294,
+   "story_id": 767136,
+   "story_title": "Synesthesia Encyclopedia",
+   "story_url": "http://cytowic.net/Synesthesia/Synesth__Encyclo_/synesth__encyclo_.HTM",
+   "updated_at": "2024-09-19T16:42:35Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "therobot24"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "CNNs are great, but so prone to overfitting, thankfully that last few years have been good to the deep learning community - dropout, jitter, etc. - in combating these problems.  Hopefully in the next few years more books are published to help dumb-down the material since reading a lot of these papers (in terms of trying to implement/expand/critique the material - just the history alone is interesting - hopfield nets, perceptrons, <em>hebbia</em>n learning, ... ) is still very tough as results are difficult to reproduce"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ConvNet Features off-the-shelf: an Astounding Baseline for Object Recognition"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://arxiv.org/abs/1403.6382"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_therobot24",
+    "story_7529477"
+   ],
+   "author": "therobot24",
+   "comment_text": "CNNs are great, but so prone to overfitting, thankfully that last few years have been good to the deep learning community - dropout, jitter, etc. - in combating these problems.  Hopefully in the next few years more books are published to help dumb-down the material since reading a lot of these papers (in terms of trying to implement&#x2F;expand&#x2F;critique the material - just the history alone is interesting - hopfield nets, perceptrons, hebbian learning, ... ) is still very tough as results are difficult to reproduce",
+   "created_at": "2014-04-04T07:13:16Z",
+   "created_at_i": 1396595596,
+   "objectID": "7529804",
+   "parent_id": 7529477,
+   "points": null,
+   "story_id": 7529477,
+   "story_title": "ConvNet Features off-the-shelf: an Astounding Baseline for Object Recognition",
+   "story_url": "http://arxiv.org/abs/1403.6382",
+   "updated_at": "2023-09-06T22:35:56Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "waveman2"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Two comments<p>1. Machine learning is moving more and more towards indirect programming i.e. you program the computer with a learning algorithm and let it work out what to do. Google reinforcement learning, or machine learning. This greatly reduces the programming bottleneck.<p>2. People underestimate how much processing power the human brain has. Think 100,000,000,000 neurons, each with 1,000 active connections on average and perhaps 10,000 latent connections (which are being updated via <em>Hebbia</em>n learning). The connections (axons and dendrites) are the active processing units. The cycle time is .01 seconds or so. Only the very largest computers are anywhere near this processing power (~10^16 operations/second). My current desktop is about 10,000 times less powerful. Now imagine trying to build a tractor with a 1/100 horsepower motor - such a difference is beyond being a gap, it is a qualitative difference.<p>Given the limited processing power available it is amazing computers can do what they can. Back in the 1980s a large bank was run on the equivalent of (1/10 of a millimeter of brain tissue)^3."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The Stupidity of Computers"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://nplusonemag.com/the-stupidity-of-computers"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_waveman2",
+    "story_7195889"
+   ],
+   "author": "waveman2",
+   "children": [
+    7200998
+   ],
+   "comment_text": "Two comments<p>1. Machine learning is moving more and more towards indirect programming i.e. you program the computer with a learning algorithm and let it work out what to do. Google reinforcement learning, or machine learning. This greatly reduces the programming bottleneck.<p>2. People underestimate how much processing power the human brain has. Think 100,000,000,000 neurons, each with 1,000 active connections on average and perhaps 10,000 latent connections (which are being updated via Hebbian learning). The connections (axons and dendrites) are the active processing units. The cycle time is .01 seconds or so. Only the very largest computers are anywhere near this processing power (~10^16 operations&#x2F;second). My current desktop is about 10,000 times less powerful. Now imagine trying to build a tractor with a 1&#x2F;100 horsepower motor - such a difference is beyond being a gap, it is a qualitative difference.<p>Given the limited processing power available it is amazing computers can do what they can. Back in the 1980s a large bank was run on the equivalent of (1&#x2F;10 of a millimeter of brain tissue)^3.",
+   "created_at": "2014-02-08T10:32:25Z",
+   "created_at_i": 1391855545,
+   "objectID": "7200871",
+   "parent_id": 7196903,
+   "points": null,
+   "story_id": 7195889,
+   "story_title": "The Stupidity of Computers",
+   "story_url": "http://nplusonemag.com/the-stupidity-of-computers",
+   "updated_at": "2023-09-06T22:07:41Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "agravier"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Deep learning, as in &quot;series of individually trained autoencoders&quot;? It's a quite specific learning technique. Even if it's currently trendy, there is no particular evidence that any part of the brain works like that. Sure, you can always forget as many details as you need and come back to the basics and say &quot;it's all <em>Hebbia</em>n learning anyway, QED&quot;, but that's not deep learning anymore."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Computer Chips That Work Like a Brain Are Coming \u2013 Just Not Yet"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.wired.com/wiredenterprise/2013/12/qualcomm-zeroth/?cid=co16492854"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_agravier",
+    "story_6994916"
+   ],
+   "author": "agravier",
+   "comment_text": "Deep learning, as in &quot;series of individually trained autoencoders&quot;? It&#x27;s a quite specific learning technique. Even if it&#x27;s currently trendy, there is no particular evidence that any part of the brain works like that. Sure, you can always forget as many details as you need and come back to the basics and say &quot;it&#x27;s all Hebbian learning anyway, QED&quot;, but that&#x27;s not deep learning anymore.",
+   "created_at": "2014-01-01T17:20:23Z",
+   "created_at_i": 1388596823,
+   "objectID": "6995536",
+   "parent_id": 6995485,
+   "story_id": 6994916,
+   "story_title": "Computer Chips That Work Like a Brain Are Coming \u2013 Just Not Yet",
+   "story_url": "http://www.wired.com/wiredenterprise/2013/12/qualcomm-zeroth/?cid=co16492854",
+   "updated_at": "2024-09-19T20:29:20Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "wfn"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "For starters - see <em>Hebbia</em>n theory. [1]<p>Backprop falls within the class of 'supervised learning' which can indeed be said not to be very biologically realistic. However, reinforcement learning is observed, so the overall picture is probably much more complex: e.g. associative/recurrent/etc networks with Hebb-like unsupervised learning developing neuronal group testing and selection systems that involve reinforcement learning. (see first lecture/talk in [3].)<p>Perhaps worth a watch is a very nice talk by Geoffrey Hinton [2], which is oft referred to on HN. (Hinton does refer to the notion of biological plausibility etc. in this talk as far as I recall, but the focus is elsewhere (developing next generation state-of-the-art (mostly unsupervised) machine learning techniques/systems.))<p>[1]: <a href=\"https://en.wikipedia.org/wiki/Hebbian_theory\" rel=\"nofollow\">https://en.wikipedia.org/wiki/<em>Hebbia</em>n_theory</a><p>[2]: <a href=\"https://www.youtube.com/watch?v=AyzOUbkUf3M\" rel=\"nofollow\">https://www.youtube.com/watch?v=AyzOUbkUf3M</a><p>[3]: <a href=\"http://kostas.mkj.lt/almaden2006/agenda.shtml\" rel=\"nofollow\">http://kostas.mkj.lt/almaden2006/agenda.shtml</a> (The original summary HTML file is gone from the original source, so this is a mirror; the links to videos and slides do work, though.) The first and the second talks are somewhat relevant (particularly the first one, re: bio plausibility etc (&quot;Nobelist Gerald Edelman, The Neurosciences Institute: From Brain Dynamics to Consciousness: A Prelude to the Future of Brain-Based Devices&quot;)), but all are great. Rather heavy, though. (Also, skip the intros.)<p><i>edit</i> that first talk/lecture from Almaden (Edelman's) is actually a very nice exposure of the whole paradigm in which {cognitive,computational,etc} neuroscience rests; it does get hairy later on; overall, it's a great talk for the truly curious."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Basic Neural Network on Python"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://danielfrg.github.io/blog/2013/07/03/basic-neural-network-python/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_wfn",
+    "story_5994851"
+   ],
+   "author": "wfn",
+   "comment_text": "For starters - see Hebbian theory. [1]<p>Backprop falls within the class of &#x27;supervised learning&#x27; which can indeed be said not to be very biologically realistic. However, reinforcement learning is observed, so the overall picture is probably much more complex: e.g. associative&#x2F;recurrent&#x2F;etc networks with Hebb-like unsupervised learning developing neuronal group testing and selection systems that involve reinforcement learning. (see first lecture&#x2F;talk in [3].)<p>Perhaps worth a watch is a very nice talk by Geoffrey Hinton [2], which is oft referred to on HN. (Hinton does refer to the notion of biological plausibility etc. in this talk as far as I recall, but the focus is elsewhere (developing next generation state-of-the-art (mostly unsupervised) machine learning techniques&#x2F;systems.))<p>[1]: <a href=\"https://en.wikipedia.org/wiki/Hebbian_theory\" rel=\"nofollow\">https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Hebbian_theory</a><p>[2]: <a href=\"https://www.youtube.com/watch?v=AyzOUbkUf3M\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=AyzOUbkUf3M</a><p>[3]: <a href=\"http://kostas.mkj.lt/almaden2006/agenda.shtml\" rel=\"nofollow\">http:&#x2F;&#x2F;kostas.mkj.lt&#x2F;almaden2006&#x2F;agenda.shtml</a> (The original summary HTML file is gone from the original source, so this is a mirror; the links to videos and slides do work, though.) The first and the second talks are somewhat relevant (particularly the first one, re: bio plausibility etc (&quot;Nobelist Gerald Edelman, The Neurosciences Institute: From Brain Dynamics to Consciousness: A Prelude to the Future of Brain-Based Devices&quot;)), but all are great. Rather heavy, though. (Also, skip the intros.)<p><i>edit</i> that first talk&#x2F;lecture from Almaden (Edelman&#x27;s) is actually a very nice exposure of the whole paradigm in which {cognitive,computational,etc} neuroscience rests; it does get hairy later on; overall, it&#x27;s a great talk for the truly curious.",
+   "created_at": "2013-07-06T11:21:12Z",
+   "created_at_i": 1373109672,
+   "objectID": "5998588",
+   "parent_id": 5997336,
+   "story_id": 5994851,
+   "story_title": "Basic Neural Network on Python",
+   "story_url": "http://danielfrg.github.io/blog/2013/07/03/basic-neural-network-python/",
+   "updated_at": "2024-09-19T19:46:46Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jerlendds"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "I completely agree. I'm betting on physical learning systems via reservoir computing personally. Will be going back to school to study nanotechnology soon to pursue this formally in addition to some experiments Ill be funding and running on my own dime as well. Have you ever seen steel ball bearings submerged in castor oil? If you apply an electrical current to that what do you think will happen? The most fascinating thing occurs, the ball bearings self organize into a network that can even display properties of <em>hebbia</em>n learning if set up correctly! I suspect experiments such as these will eventually even raise the bigger question of, what is life actually? Another way to think about the potential of this area of technology is to think of a biological synapse, its about 1 micron in size right? Well, how many &quot;neural atoms&quot; can we fit in that space? 1000x1000x1000!! Its marvelous how much space there is when you shrink things down. Ill even go so far as to speculate that to create genuine superintelligence, youll need this technology Ill be working on to mature and form into some.new form of stochastic processor/computer"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The baffling intelligence of a single cell (2024)"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://jsomers.net/e-coli-chemotaxis/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_jerlendds",
+    "story_50041866"
+   ],
+   "author": "jerlendds",
+   "comment_text": "I completely agree. I&#x27;m betting on physical learning systems via reservoir computing personally. Will be going back to school to study nanotechnology soon to pursue this formally in addition to some experiments Ill be funding and running on my own dime as well. Have you ever seen steel ball bearings submerged in castor oil? If you apply an electrical current to that what do you think will happen? The most fascinating thing occurs, the ball bearings self organize into a network that can even display properties of hebbian learning if set up correctly! I suspect experiments such as these will eventually even raise the bigger question of, what is life actually? Another way to think about the potential of this area of technology is to think of a biological synapse, its about 1 micron in size right? Well, how many &quot;neural atoms&quot; can we fit in that space? 1000x1000x1000!! Its marvelous how much space there is when you shrink things down. Ill even go so far as to speculate that to create genuine superintelligence, youll need this technology Ill be working on to mature and form into some.new form of stochastic processor&#x2F;computer",
+   "created_at": "2026-10-15T01:53:33Z",
+   "created_at_i": 1792029213,
+   "objectID": "50098171",
+   "parent_id": 50071949,
+   "story_id": 50041866,
+   "story_title": "The baffling intelligence of a single cell (2024)",
+   "story_url": "https://jsomers.net/e-coli-chemotaxis/",
+   "updated_at": "2026-10-15T01:56:45Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "FeepingCreature"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Predict activations in adjacent neurons, roughly; the relevant keyword is &quot;<em>Hebbia</em>n learning&quot; (and &quot;predictive coding&quot; at a higher level)."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Claude discovers a novel enzyme system with CRISPR-like repeats"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_FeepingCreature",
+    "story_49820134"
+   ],
+   "author": "FeepingCreature",
+   "children": [
+    49826793
+   ],
+   "comment_text": "Predict activations in adjacent neurons, roughly; the relevant keyword is &quot;Hebbian learning&quot; (and &quot;predictive coding&quot; at a higher level).",
+   "created_at": "2026-09-23T22:51:24Z",
+   "created_at_i": 1790203884,
+   "objectID": "49823722",
+   "parent_id": 49823255,
+   "story_id": 49820134,
+   "story_title": "Claude discovers a novel enzyme system with CRISPR-like repeats",
+   "story_url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
+   "updated_at": "2026-09-24T06:06:51Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ACCount39"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "That's the thing: we ripped the entire idea of learning connectionist networks straight out of the brain - but our implementation of that idea is very different.<p>The asynchronous nature of BNNs? The brain does that because its neurons are slow and synchronization is unnatural. The predictive <em>Hebbia</em>n learning hybrid that the brain uses? Loses to backprop if you have what it takes to implement backprop.<p>There are a lot of mediocre or unapplicable ideas in the brain for every good one. Figuring out how the brain does the things it does is hard enough - but making use of that is even harder. It's why ANNs and BNNs diverge so much in form even as they converge in function."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Two parallel neural ectoderm progenitors contribute to the developing brain"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://med.stanford.edu/news/all-news/2026/09/two-separate-brains.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ACCount39",
+    "story_49763697"
+   ],
+   "author": "ACCount39",
+   "comment_text": "That&#x27;s the thing: we ripped the entire idea of learning connectionist networks straight out of the brain - but our implementation of that idea is very different.<p>The asynchronous nature of BNNs? The brain does that because its neurons are slow and synchronization is unnatural. The predictive Hebbian learning hybrid that the brain uses? Loses to backprop if you have what it takes to implement backprop.<p>There are a lot of mediocre or unapplicable ideas in the brain for every good one. Figuring out how the brain does the things it does is hard enough - but making use of that is even harder. It&#x27;s why ANNs and BNNs diverge so much in form even as they converge in function.",
+   "created_at": "2026-09-20T22:10:24Z",
+   "created_at_i": 1789942224,
+   "objectID": "49780600",
+   "parent_id": 49775720,
+   "story_id": 49763697,
+   "story_title": "Two parallel neural ectoderm progenitors contribute to the developing brain",
+   "story_url": "https://med.stanford.edu/news/all-news/2026/09/two-separate-brains.html",
+   "updated_at": "2026-09-20T22:13:56Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "feerfreeflight"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "I made this: <a href=\"https://sisuonspeaks.com\" rel=\"nofollow\">https://sisuonspeaks.com</a><p><em>Hebbia</em>n, analogies, agent monitoring and self pruning. Look at it or don\u2019t, but I made it and I\u2019m proud of it and I\u2019m tired of marketing tactic-ese for self promotion.<p>For how it works, <a href=\"https://gist.github.com/adromero/e6a776e6a6100d53116f4053677427b8\" rel=\"nofollow\">https://gist.github.com/adromero/e6a776e6a6100d53116f4053677...</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Douglas Hofstadter: Analogy as the Core of Cognition [video]"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.youtube.com/watch?v=n8m7lFQ3njk"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_feerfreeflight",
+    "story_49587121"
+   ],
+   "author": "feerfreeflight",
+   "comment_text": "I made this: <a href=\"https:&#x2F;&#x2F;sisuonspeaks.com\" rel=\"nofollow\">https:&#x2F;&#x2F;sisuonspeaks.com</a><p>Hebbian, analogies, agent monitoring and self pruning. Look at it or don\u2019t, but I made it and I\u2019m proud of it and I\u2019m tired of marketing tactic-ese for self promotion.<p>For how it works, <a href=\"https:&#x2F;&#x2F;gist.github.com&#x2F;adromero&#x2F;e6a776e6a6100d53116f4053677427b8\" rel=\"nofollow\">https:&#x2F;&#x2F;gist.github.com&#x2F;adromero&#x2F;e6a776e6a6100d53116f4053677...</a>",
+   "created_at": "2026-09-11T10:38:42Z",
+   "created_at_i": 1789123122,
+   "objectID": "49656167",
+   "parent_id": 49587121,
+   "story_id": 49587121,
+   "story_title": "Douglas Hofstadter: Analogy as the Core of Cognition [video]",
+   "story_url": "https://www.youtube.com/watch?v=n8m7lFQ3njk",
+   "updated_at": "2026-09-11T10:43:55Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "roandejager5"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Hey HN! I am Roan, and I built Hillock: a 100% local, offline neuro-symbolic memory engine built for consumer hardware (runs in &lt;1.2 GB VRAM on a GTX 1070 or on pure CPU laptops).\nWhy not standard vector RAG?<p>Dense vector databases and 8B+ extraction models are heavy on local hardware, suffer from semantic drift, and still hallucinate when out of context. Hillock explores a deterministic alternative:<p><pre><code>    SQLite Knowledge Graph: Stores ground-truth facts as relational Subject-Predicate-Object triples (zero vector drift).\n\n    <em>Hebbia</em>n Plasticity Engine: Gradient-free associative learning across turns to surface primed context.\n\n    10,000-D Hyperdimensional Computing (VSA/HDC): Sub-millisecond similarity gating directly on CPU in discrete bipolar space.\n\n    TALON Extraction Stack: 3-stage local extraction (Fastcoref + MiniLM + GLiREL) with type-constrained schema validation, running offline without cloud calls.\n</code></pre>\nRefusal is Control Flow (Not Prompting)<p>Instead of prompting an LLM to &quot;only answer if you know&quot;, Hillock's gate is an actual programmatic check. If candidate facts fail our similarity threshold with positive predicate intent, it returns a hardcoded refusal immediately. The local LLM (Ollama) is never called with un-evidenced context, saving 100% of GPU compute on unanswerable queries.\nWhat is New in v0.6 (HYDRA &amp; HyperGraph)<p><pre><code>    HYDRA (Bipolar MaxSim): Adapted ColBERT-style token-level MaxSim to discrete bipolar vectors. A 2,000-D Sub-Dimensional Projection Cascade early-rejects ~95% of candidates on CPU in ~0.5ms.\n\n    HYPERGRAPH-HDC: Uses positional cyclic shifts to break binding commutativity, encoding 2-hop and 3-hop relational paths without combinatorial RAM explosion.\n</code></pre>\nBenchmarks (Unseeded 32-query run on a laptop CPU)<p><pre><code>    Answerable Retrieval Accuracy: 54.5% (Fast-eval in 1.16s on CPU)\n\n    Hard-Negative Block Rate: 60.0% (stops trick queries cold)\n\n    Extraction Recall: 59.1% | Pooled Gate Accuracy: 56.2%\n</code></pre>\nKnown Limitations<p>Retrieval quality is strictly bounded by extraction recall: if the extractor misses a fact during ingestion, the gate honestly refuses (producing a false block).<p>The project is AGPL-3.0 licensed with 1-click quickstart launchers (run.bat / run.sh) and a standalone 21-point CPU verification suite (verify_hillock.py).<p>GitHub: <a href=\"https://github.com/roandejager/Hillock\" rel=\"nofollow\">https://github.com/roandejager/Hillock</a><p>I would love to hear your thoughts, feedback, and critiques!"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Hillock: Local neuro-symbolic memory engine in <1.2GB VRAM"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://github.com/roandejager/Hillock"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_roandejager5",
+    "story_49501209"
+   ],
+   "author": "roandejager5",
+   "comment_text": "Hey HN! I am Roan, and I built Hillock: a 100% local, offline neuro-symbolic memory engine built for consumer hardware (runs in &lt;1.2 GB VRAM on a GTX 1070 or on pure CPU laptops).\nWhy not standard vector RAG?<p>Dense vector databases and 8B+ extraction models are heavy on local hardware, suffer from semantic drift, and still hallucinate when out of context. Hillock explores a deterministic alternative:<p><pre><code>    SQLite Knowledge Graph: Stores ground-truth facts as relational Subject-Predicate-Object triples (zero vector drift).\n\n    Hebbian Plasticity Engine: Gradient-free associative learning across turns to surface primed context.\n\n    10,000-D Hyperdimensional Computing (VSA&#x2F;HDC): Sub-millisecond similarity gating directly on CPU in discrete bipolar space.\n\n    TALON Extraction Stack: 3-stage local extraction (Fastcoref + MiniLM + GLiREL) with type-constrained schema validation, running offline without cloud calls.\n</code></pre>\nRefusal is Control Flow (Not Prompting)<p>Instead of prompting an LLM to &quot;only answer if you know&quot;, Hillock&#x27;s gate is an actual programmatic check. If candidate facts fail our similarity threshold with positive predicate intent, it returns a hardcoded refusal immediately. The local LLM (Ollama) is never called with un-evidenced context, saving 100% of GPU compute on unanswerable queries.\nWhat is New in v0.6 (HYDRA &amp; HyperGraph)<p><pre><code>    HYDRA (Bipolar MaxSim): Adapted ColBERT-style token-level MaxSim to discrete bipolar vectors. A 2,000-D Sub-Dimensional Projection Cascade early-rejects ~95% of candidates on CPU in ~0.5ms.\n\n    HYPERGRAPH-HDC: Uses positional cyclic shifts to break binding commutativity, encoding 2-hop and 3-hop relational paths without combinatorial RAM explosion.\n</code></pre>\nBenchmarks (Unseeded 32-query run on a laptop CPU)<p><pre><code>    Answerable Retrieval Accuracy: 54.5% (Fast-eval in 1.16s on CPU)\n\n    Hard-Negative Block Rate: 60.0% (stops trick queries cold)\n\n    Extraction Recall: 59.1% | Pooled Gate Accuracy: 56.2%\n</code></pre>\nKnown Limitations<p>Retrieval quality is strictly bounded by extraction recall: if the extractor misses a fact during ingestion, the gate honestly refuses (producing a false block).<p>The project is AGPL-3.0 licensed with 1-click quickstart launchers (run.bat &#x2F; run.sh) and a standalone 21-point CPU verification suite (verify_hillock.py).<p>GitHub: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;roandejager&#x2F;Hillock\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;roandejager&#x2F;Hillock</a><p>I would love to hear your thoughts, feedback, and critiques!",
+   "created_at": "2026-08-30T18:12:02Z",
+   "created_at_i": 1788113522,
+   "objectID": "49501223",
+   "parent_id": 49501209,
+   "story_id": 49501209,
+   "story_title": "Show HN: Hillock: Local neuro-symbolic memory engine in <1.2GB VRAM",
+   "story_url": "https://github.com/roandejager/Hillock",
+   "updated_at": "2026-09-01T12:05:26Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "roandejager5"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Hi HN,<p>I built Hillock (<a href=\"https://github.com/roandejager/Hillock\" rel=\"nofollow\">https://github.com/roandejager/Hillock</a>), a 100% local, offline neuro-symbolic memory engine designed to replace heavy Vector DBs and token-hungry LLM document ingestion pipelines on edge hardware.<p>### The Problem with Local RAG\nStandard local RAG is surprisingly heavy. Running dense vector databases alongside an 8B+ generative LLM just to parse documents and maintain conversational context burns VRAM, chokes mid-range GPUs (like a GTX 1070), and still hallucinates when asked about missing or unverified information.<p>### The Architecture\nInstead of using autoregressive LLMs to generate JSON extractions, Hillock decouples memory into three lightweight tiers:<p>1. SQLite Knowledge Graph (database.py): Ground-truth Subject-Predicate-Object (SPO) triples stored in relational tables. Zero vector drift for factual data.\n2. <em>Hebbia</em>n Plasticity Engine (plasticity.py): Gradient-free co-activation associative learning that updates synaptic weights between entity nodes across chat turns.\n3. 10,000-D VSA/HDC Reservoir (reservoir.py): A Vector Symbolic Architecture hypervector space using Subword N-Grams (3,4,5-grams) and Locality-Sensitive Sign Random Projections (SimHash) over a static 10MB GloVe dictionary. It handles pronoun resolution and context similarity gating on CPU in under 1 millisecond.<p>### Document Ingestion (TALON Engine)\nDocument parsing uses TALON\u2014a 3-stage CUDA pipeline:\n- Stage 1: Document coreference preprocessing (Fastcoref)\n- Stage 2: Bi-Encoder candidate predicate routing (all-MiniLM-L6-v2 in &lt;2ms)\n- Stage 3: Zero-shot span relation extraction (GLiREL Large)<p>Ingestion completes in ~3.9\u20135.0 seconds for a 32-sentence academic document (6.3\u20138.0 sentences/sec pure GPU rate) using &lt;1.2 GB VRAM on a GTX 1070. Generative LLMs (via local Ollama) are invoked ONLY for final response rendering once a query passes the HDC similarity gate.<p>### What's New in v0.4\nIn the v0.4 release series, we tackled zero-shot extraction noise and inverted facts:\n- O(1) Type-Constrained Schema Validation: Set-based domain/codomain filtering over GLiREL outputs.\n- Automatic Direction Correction: Detects and swaps inverted extractions (e.g., turning [Budapest born_in John von Neumann] into [John von Neumann born_in Budapest]).\n- Precompiled Entity Sanitization: Strips possessive artifacts ('s), trailing action verbs, and prepositional tails.\n- Raw extraction precision improved from 11.5% to 15.5% (+35% cleaner graph).<p>### Current Benchmark Status (Honest Baseline)\nOn a fixed 32-sentence benchmark (20 answerable queries, 10 hard-negative trick queries):\n- Retrieval Accuracy: 55.0%\n- Extraction Recall: 50.0%\n- Extraction Precision: 15.5%\n- Fast-Eval Retrieval Duration: ~1.27s for 30 queries (~0.04s per query)\n- Unanswerable Queries: 0 GPU tokens wasted (CPU similarity gate shuts down LLM calls instantly).<p>Repo: <a href=\"https://github.com/roandejager/Hillock\" rel=\"nofollow\">https://github.com/roandejager/Hillock</a> (AGPL-3.0)<p>I'd love to hear feedback, criticism, or ideas from the community on hypervector binding, schema constraints, or low-power edge memory architectures!"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Hillock \u2013 Local neuro-symbolic memory engine running in <1.2GB VRAM"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://github.com/roandejager/Hillock"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_roandejager5",
+    "story_49289158"
+   ],
+   "author": "roandejager5",
+   "comment_text": "Hi HN,<p>I built Hillock (<a href=\"https:&#x2F;&#x2F;github.com&#x2F;roandejager&#x2F;Hillock\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;roandejager&#x2F;Hillock</a>), a 100% local, offline neuro-symbolic memory engine designed to replace heavy Vector DBs and token-hungry LLM document ingestion pipelines on edge hardware.<p>### The Problem with Local RAG\nStandard local RAG is surprisingly heavy. Running dense vector databases alongside an 8B+ generative LLM just to parse documents and maintain conversational context burns VRAM, chokes mid-range GPUs (like a GTX 1070), and still hallucinates when asked about missing or unverified information.<p>### The Architecture\nInstead of using autoregressive LLMs to generate JSON extractions, Hillock decouples memory into three lightweight tiers:<p>1. SQLite Knowledge Graph (database.py): Ground-truth Subject-Predicate-Object (SPO) triples stored in relational tables. Zero vector drift for factual data.\n2. Hebbian Plasticity Engine (plasticity.py): Gradient-free co-activation associative learning that updates synaptic weights between entity nodes across chat turns.\n3. 10,000-D VSA&#x2F;HDC Reservoir (reservoir.py): A Vector Symbolic Architecture hypervector space using Subword N-Grams (3,4,5-grams) and Locality-Sensitive Sign Random Projections (SimHash) over a static 10MB GloVe dictionary. It handles pronoun resolution and context similarity gating on CPU in under 1 millisecond.<p>### Document Ingestion (TALON Engine)\nDocument parsing uses TALON\u2014a 3-stage CUDA pipeline:\n- Stage 1: Document coreference preprocessing (Fastcoref)\n- Stage 2: Bi-Encoder candidate predicate routing (all-MiniLM-L6-v2 in &lt;2ms)\n- Stage 3: Zero-shot span relation extraction (GLiREL Large)<p>Ingestion completes in ~3.9\u20135.0 seconds for a 32-sentence academic document (6.3\u20138.0 sentences&#x2F;sec pure GPU rate) using &lt;1.2 GB VRAM on a GTX 1070. Generative LLMs (via local Ollama) are invoked ONLY for final response rendering once a query passes the HDC similarity gate.<p>### What&#x27;s New in v0.4\nIn the v0.4 release series, we tackled zero-shot extraction noise and inverted facts:\n- O(1) Type-Constrained Schema Validation: Set-based domain&#x2F;codomain filtering over GLiREL outputs.\n- Automatic Direction Correction: Detects and swaps inverted extractions (e.g., turning [Budapest born_in John von Neumann] into [John von Neumann born_in Budapest]).\n- Precompiled Entity Sanitization: Strips possessive artifacts (&#x27;s), trailing action verbs, and prepositional tails.\n- Raw extraction precision improved from 11.5% to 15.5% (+35% cleaner graph).<p>### Current Benchmark Status (Honest Baseline)\nOn a fixed 32-sentence benchmark (20 answerable queries, 10 hard-negative trick queries):\n- Retrieval Accuracy: 55.0%\n- Extraction Recall: 50.0%\n- Extraction Precision: 15.5%\n- Fast-Eval Retrieval Duration: ~1.27s for 30 queries (~0.04s per query)\n- Unanswerable Queries: 0 GPU tokens wasted (CPU similarity gate shuts down LLM calls instantly).<p>Repo: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;roandejager&#x2F;Hillock\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;roandejager&#x2F;Hillock</a> (AGPL-3.0)<p>I&#x27;d love to hear feedback, criticism, or ideas from the community on hypervector binding, schema constraints, or low-power edge memory architectures!",
+   "created_at": "2026-08-13T17:26:44Z",
+   "created_at_i": 1786642004,
+   "objectID": "49289164",
+   "parent_id": 49289158,
+   "story_id": 49289158,
+   "story_title": "Hillock \u2013 Local neuro-symbolic memory engine running in <1.2GB VRAM",
+   "story_url": "https://github.com/roandejager/Hillock",
+   "updated_at": "2026-08-13T21:29:20Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "justinnk"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "I once heard a lecture about \u201elearning how to learn\u201c. There are already a lot of well-researched things one can exploit about the way we process information. What you describe is known as retrieval cue. Our minds seem to be associative^1. It also seems a lot of the learning/processing happens after the actual learning process, which is why resting is important. Spaced repitition is a further method well-proven in practice.<p>^1 In the early days of AI, the concept of <em>Hebbia</em>n learning was popular (\u201eneurons that fire together, wire together\u201c). Its implementation is even simpler than gradient descent used today, but never caught on <a href=\"https://en.wikipedia.org/wiki/Hebbian_theory\" rel=\"nofollow\">https://en.wikipedia.org/wiki/<em>Hebbia</em>n_theory</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Quality non-fiction books are the antithesis of AI slop"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://resobscura.substack.com/p/quality-non-fiction-books-are-the"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_justinnk",
+    "story_49007247"
+   ],
+   "author": "justinnk",
+   "children": [
+    49018673
+   ],
+   "comment_text": "I once heard a lecture about \u201elearning how to learn\u201c. There are already a lot of well-researched things one can exploit about the way we process information. What you describe is known as retrieval cue. Our minds seem to be associative^1. It also seems a lot of the learning&#x2F;processing happens after the actual learning process, which is why resting is important. Spaced repitition is a further method well-proven in practice.<p>^1 In the early days of AI, the concept of Hebbian learning was popular (\u201eneurons that fire together, wire together\u201c). Its implementation is even simpler than gradient descent used today, but never caught on <a href=\"https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Hebbian_theory\" rel=\"nofollow\">https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Hebbian_theory</a>",
+   "created_at": "2026-07-23T06:33:02Z",
+   "created_at_i": 1784788382,
+   "objectID": "49017651",
+   "parent_id": 49014547,
+   "story_id": 49007247,
+   "story_title": "Quality non-fiction books are the antithesis of AI slop",
+   "story_url": "https://resobscura.substack.com/p/quality-non-fiction-books-are-the",
+   "updated_at": "2026-07-23T14:40:50Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "kstonekuan"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "What does YouTube system design have to do with robotics data?<p>When we started building Pareto, we weren\u2019t thinking about YouTube, but the data path looked familiar: upload, process, store, index, play.<p>Here's what the classic system design question gets right in production.<p>- Read: <a href=\"https://hebbianrobotics.com/blog/youtube-system-design-for-robotics-data-infrastructure\" rel=\"nofollow\">https://<em>hebbia</em>nrobotics.com/blog/youtube-system-design-for-r...</a><p>- Try Pareto: <a href=\"https://pareto.hebbianrobotics.com\" rel=\"nofollow\">https://pareto.<em>hebbia</em>nrobotics.com</a><p>- Code open source: <a href=\"https://github.com/Hebbian-Robotics/pareto\" rel=\"nofollow\">https://github.com/<em>Hebbia</em>n-Robotics/pareto</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "YouTube System Design for Robotics Data Infrastructure"
+    },
+    "story_url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "https://<em>hebbia</em>nrobotics.com/blog/youtube-system-design-for-robotics-data-infrastructure"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_kstonekuan",
+    "story_48995923"
+   ],
+   "author": "kstonekuan",
+   "comment_text": "What does YouTube system design have to do with robotics data?<p>When we started building Pareto, we weren\u2019t thinking about YouTube, but the data path looked familiar: upload, process, store, index, play.<p>Here&#x27;s what the classic system design question gets right in production.<p>- Read: <a href=\"https:&#x2F;&#x2F;hebbianrobotics.com&#x2F;blog&#x2F;youtube-system-design-for-robotics-data-infrastructure\" rel=\"nofollow\">https:&#x2F;&#x2F;hebbianrobotics.com&#x2F;blog&#x2F;youtube-system-design-for-r...</a><p>- Try Pareto: <a href=\"https:&#x2F;&#x2F;pareto.hebbianrobotics.com\" rel=\"nofollow\">https:&#x2F;&#x2F;pareto.hebbianrobotics.com</a><p>- Code open source: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;Hebbian-Robotics&#x2F;pareto\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;Hebbian-Robotics&#x2F;pareto</a>",
+   "created_at": "2026-07-21T18:08:38Z",
+   "created_at_i": 1784657318,
+   "objectID": "48995924",
+   "parent_id": 48995923,
+   "story_id": 48995923,
+   "story_title": "YouTube System Design for Robotics Data Infrastructure",
+   "story_url": "https://hebbianrobotics.com/blog/youtube-system-design-for-robotics-data-infrastructure",
+   "updated_at": "2026-07-21T20:29:29Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "photon_lines"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "- Visual Guide to Number Theory: write up which explains the field of number theory in a visual manner.<p>- Reenvision technologies: simple software. Local first - no added complexity. Infinite scale without having to add 100 front-end UI frameworks: simple Python, CSS, and JS with SQLite. The design is absolutely breathtaking and beautiful and it is built people first (let's worry about scale later).<p>- Simple LLM: an LLM which doesn't need a GPU to function. It uses <em>Hebbia</em>n learning with extreme compression and attempts to achieve 'reasoning ability' through using a in-built Prolog interpreter. It very much resembles a human being in it's 'thinking mode' so far but still far from perfect.<p>- Simple-Education: local first software for parents looking to provide home-schooling for their children. It makes learning easy and fun and uses best practices to maximise your child's chance of success.<p>- About a dozen other projects which I've started but I need help on. If you want to team up -- I will give you equal equity in my start-ups. I cannot offer you a salary though I'm not at the point yet where I can do that: but I will give you equal equity in anything that you want to work on together with me. I have over 100 different million dollar ideas that will make us wealthy if you want to join my team, so PM me if you're interested."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: What are you working on? (June 2026)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_photon_lines",
+    "story_48528779"
+   ],
+   "author": "photon_lines",
+   "children": [
+    48537213
+   ],
+   "comment_text": "- Visual Guide to Number Theory: write up which explains the field of number theory in a visual manner.<p>- Reenvision technologies: simple software. Local first - no added complexity. Infinite scale without having to add 100 front-end UI frameworks: simple Python, CSS, and JS with SQLite. The design is absolutely breathtaking and beautiful and it is built people first (let&#x27;s worry about scale later).<p>- Simple LLM: an LLM which doesn&#x27;t need a GPU to function. It uses Hebbian learning with extreme compression and attempts to achieve &#x27;reasoning ability&#x27; through using a in-built Prolog interpreter. It very much resembles a human being in it&#x27;s &#x27;thinking mode&#x27; so far but still far from perfect.<p>- Simple-Education: local first software for parents looking to provide home-schooling for their children. It makes learning easy and fun and uses best practices to maximise your child&#x27;s chance of success.<p>- About a dozen other projects which I&#x27;ve started but I need help on. If you want to team up -- I will give you equal equity in my start-ups. I cannot offer you a salary though I&#x27;m not at the point yet where I can do that: but I will give you equal equity in anything that you want to work on together with me. I have over 100 different million dollar ideas that will make us wealthy if you want to join my team, so PM me if you&#x27;re interested.",
+   "created_at": "2026-06-15T01:40:16Z",
+   "created_at_i": 1781487616,
+   "objectID": "48535490",
+   "parent_id": 48528779,
+   "story_id": 48528779,
+   "story_title": "Ask HN: What are you working on? (June 2026)",
+   "updated_at": "2026-06-15T10:57:59Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "feerfreeflight"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Sure! I wanted to mimic the process of daydreaming on a car ride, where external input and inner monologue can mix.<p>I wasn\u2019t planning on posting it yet, so I\u2019ll have to get you a thorough follow up, but in a nutshell it\u2019s: a continuously running 448-concept space (philosophy, cognition, art, nature, math) that occasionally \u201ccrystallizes\u201d a group of 4 concepts via <em>Hebbia</em>n learning and                                    stochastic noise. Those concepts get sent to the LLM with minimal guidance beyond some safety guardrails and encouragement to be creative. It has access to a sandbox to produce essays, stories, music, \u201cart\u201d, and small python scripts.\nSelf-updating memory system.  Notes, essays, and artifacts can also be discussed with me through some outbox channels.<p>On top of that it\u2019s got a separate academic philosopher + psychiatrist llm that critiques its work and has a regular cadence of \u201csessions\u201d with it, as well as a research assistant bot who I talk to (but doesn\u2019t interact with Sisuon) who has full project context and memory access. The sisuonspeaks site is a VERY abridged collection of Sisuon\u2019s essays, along with analysis, commentary, forum posts, and a podcast\u2026all created by, you guessed it, more LLMs."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: What are tools you have made for yourself since the advent of AI?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_feerfreeflight",
+    "story_48449187"
+   ],
+   "author": "feerfreeflight",
+   "children": [
+    48463289
+   ],
+   "comment_text": "Sure! I wanted to mimic the process of daydreaming on a car ride, where external input and inner monologue can mix.<p>I wasn\u2019t planning on posting it yet, so I\u2019ll have to get you a thorough follow up, but in a nutshell it\u2019s: a continuously running 448-concept space (philosophy, cognition, art, nature, math) that occasionally \u201ccrystallizes\u201d a group of 4 concepts via Hebbian learning and                                    stochastic noise. Those concepts get sent to the LLM with minimal guidance beyond some safety guardrails and encouragement to be creative. It has access to a sandbox to produce essays, stories, music, \u201cart\u201d, and small python scripts.\nSelf-updating memory system.  Notes, essays, and artifacts can also be discussed with me through some outbox channels.<p>On top of that it\u2019s got a separate academic philosopher + psychiatrist llm that critiques its work and has a regular cadence of \u201csessions\u201d with it, as well as a research assistant bot who I talk to (but doesn\u2019t interact with Sisuon) who has full project context and memory access. The sisuonspeaks site is a VERY abridged collection of Sisuon\u2019s essays, along with analysis, commentary, forum posts, and a podcast\u2026all created by, you guessed it, more LLMs.",
+   "created_at": "2026-06-09T00:11:15Z",
+   "created_at_i": 1780963875,
+   "objectID": "48454323",
+   "parent_id": 48454016,
+   "story_id": 48449187,
+   "story_title": "Ask HN: What are tools you have made for yourself since the advent of AI?",
+   "updated_at": "2026-06-09T16:30:37Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "fintler"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Yes!<p>I started going down the path of building a ripple carry adder already (which seems to work fine). Then I was going to try for a full on ALU, then some sort of ISA that sits on top of it all.<p>I have no idea what the end result will look like if it all comes together. Hopefully I'll find some weird primitives along the way. :D<p>It's very hand-wavy, but I'm kinda hoping I can somehow have a machine manually constructed out of neurons that can naturally interact with one built with looser <em>hebbia</em>n learning rules."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "It Takes Two Neurons to Ride a Bicycle"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://fermatslibrary.com/s/it-takes-two-neurons-to-ride-a-bicycle#email-newsletter"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_fintler",
+    "story_48282335"
+   ],
+   "author": "fintler",
+   "children": [
+    48339236
+   ],
+   "comment_text": "Yes!<p>I started going down the path of building a ripple carry adder already (which seems to work fine). Then I was going to try for a full on ALU, then some sort of ISA that sits on top of it all.<p>I have no idea what the end result will look like if it all comes together. Hopefully I&#x27;ll find some weird primitives along the way. :D<p>It&#x27;s very hand-wavy, but I&#x27;m kinda hoping I can somehow have a machine manually constructed out of neurons that can naturally interact with one built with looser hebbian learning rules.",
+   "created_at": "2026-05-30T17:40:42Z",
+   "created_at_i": 1780162842,
+   "objectID": "48338792",
+   "parent_id": 48338538,
+   "story_id": 48282335,
+   "story_title": "It Takes Two Neurons to Ride a Bicycle",
+   "story_url": "https://fermatslibrary.com/s/it-takes-two-neurons-to-ride-a-bicycle#email-newsletter",
+   "updated_at": "2026-05-30T18:25:11Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "in-silico"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "While there is a limit to the amount of information you can fit in a fixed-size state, the theoretical ceiling is pretty high.<p>A <em>Hebbia</em>n associative matrix (one of the simplest and weakest memory constructions) can store about 0.7 bits of information per parameter. If you have a state with 300M parameters (the size of a Llama 3 8B KV cache at 10K context length), and a context with 2.1 bits of entropy per token (a reasonable estimate), then the state can encode <i>100M tokens worth of information</i>.<p>Real models obviously aren't powerful enough to operate at the limit, but you can see why this is a promising research direction."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "\u03b4-mem: Efficient Online Memory for Large Language Models"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://arxiv.org/abs/2605.12357"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_in-silico",
+    "story_48158506"
+   ],
+   "author": "in-silico",
+   "children": [
+    48164016,
+    48166087
+   ],
+   "comment_text": "While there is a limit to the amount of information you can fit in a fixed-size state, the theoretical ceiling is pretty high.<p>A Hebbian associative matrix (one of the simplest and weakest memory constructions) can store about 0.7 bits of information per parameter. If you have a state with 300M parameters (the size of a Llama 3 8B KV cache at 10K context length), and a context with 2.1 bits of entropy per token (a reasonable estimate), then the state can encode <i>100M tokens worth of information</i>.<p>Real models obviously aren&#x27;t powerful enough to operate at the limit, but you can see why this is a promising research direction.",
+   "created_at": "2026-05-16T20:38:28Z",
+   "created_at_i": 1778963908,
+   "objectID": "48163578",
+   "parent_id": 48159120,
+   "story_id": 48158506,
+   "story_title": "\u03b4-mem: Efficient Online Memory for Large Language Models",
+   "story_url": "https://arxiv.org/abs/2605.12357",
+   "updated_at": "2026-05-19T08:23:57Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "scarmig"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Even in supervised ML, pure gradient descent is not the most efficient optimization strategy. E.g., momentum is ubiquitous, and the updates it induces cannot be expressed as a gradient of some scalar loss. But the rotational non-gradient component of its updates substantially improves performance and convergence on the architectures we use.<p>The brain probably primarily uses something like TD for task learning, which is also not expressible as a gradient of any objective function. And, though the paper mentions <em>Hebbia</em>n learning, it's only very particular network architectures (e.g. single neuron; symmetric connections) that you can  treat its updates as a gradient of some energy function; these architectures aren't anything close to what we see in the brain."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "A Theory of Deep Learning"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://elonlit.com/scrivings/a-theory-of-deep-learning/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_scarmig",
+    "story_48027455"
+   ],
+   "author": "scarmig",
+   "children": [
+    48048502
+   ],
+   "comment_text": "Even in supervised ML, pure gradient descent is not the most efficient optimization strategy. E.g., momentum is ubiquitous, and the updates it induces cannot be expressed as a gradient of some scalar loss. But the rotational non-gradient component of its updates substantially improves performance and convergence on the architectures we use.<p>The brain probably primarily uses something like TD for task learning, which is also not expressible as a gradient of any objective function. And, though the paper mentions Hebbian learning, it&#x27;s only very particular network architectures (e.g. single neuron; symmetric connections) that you can  treat its updates as a gradient of some energy function; these architectures aren&#x27;t anything close to what we see in the brain.",
+   "created_at": "2026-05-07T08:21:47Z",
+   "created_at_i": 1778142107,
+   "objectID": "48046841",
+   "parent_id": 48046150,
+   "story_id": 48027455,
+   "story_title": "A Theory of Deep Learning",
+   "story_url": "https://elonlit.com/scrivings/a-theory-of-deep-learning/",
+   "updated_at": "2026-05-08T03:10:01Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Findeton"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Thanks! I have other ideas, following Jeff Hawkins's Thousand Brains Project, but in this one I'm trying to get to cortical columns from the other side, from &quot;standard&quot; deep neural networks.<p>The short version: each layer trains itself independently using Hinton's Forward-Forward algorithm. Instead of propagating error gradients backward through the whole network, each layer has its own local objective: &quot;real data should produce high activation norms, corrupted data should produce low ones.&quot; Gradients never cross layer boundaries. The human brain is massively parallel and part of that is not using backprop, so I'm trying to use that as inspiration.<p>You're right that the brain has backward-projecting circuits. But those are mostly thought to carry contextual/modulatory signals, not error gradients in the backprop sense. I'm handling cross-layer communication through attention residuals (each layer dynamically selects which prior layers to attend to) and Hopfield memory banks (per-layer associative memory written via <em>Hebbia</em>n outer products, no gradients needed).<p>The part I'm most excited about is &quot;sleep&quot;. During chat, user feedback drives reward-modulated <em>Hebbia</em>n writes to the memory banks (instant, no gradients, like hippocampal episodic memory). Then a /sleep command consolidates those into weights by generating &quot;dreams&quot; from the bank-colored model and training on them with FF + distillation. No stored text needed, only the Hopfield state. The model literally dreams its memories into its weights.<p>Still early, training a 100M param model on TinyStories right now, loss is coming down but I don't have eval numbers yet."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: What Are You Working On? (April 2026)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Findeton",
+    "story_47741527"
+   ],
+   "author": "Findeton",
+   "children": [
+    47746601
+   ],
+   "comment_text": "Thanks! I have other ideas, following Jeff Hawkins&#x27;s Thousand Brains Project, but in this one I&#x27;m trying to get to cortical columns from the other side, from &quot;standard&quot; deep neural networks.<p>The short version: each layer trains itself independently using Hinton&#x27;s Forward-Forward algorithm. Instead of propagating error gradients backward through the whole network, each layer has its own local objective: &quot;real data should produce high activation norms, corrupted data should produce low ones.&quot; Gradients never cross layer boundaries. The human brain is massively parallel and part of that is not using backprop, so I&#x27;m trying to use that as inspiration.<p>You&#x27;re right that the brain has backward-projecting circuits. But those are mostly thought to carry contextual&#x2F;modulatory signals, not error gradients in the backprop sense. I&#x27;m handling cross-layer communication through attention residuals (each layer dynamically selects which prior layers to attend to) and Hopfield memory banks (per-layer associative memory written via Hebbian outer products, no gradients needed).<p>The part I&#x27;m most excited about is &quot;sleep&quot;. During chat, user feedback drives reward-modulated Hebbian writes to the memory banks (instant, no gradients, like hippocampal episodic memory). Then a &#x2F;sleep command consolidates those into weights by generating &quot;dreams&quot; from the bank-colored model and training on them with FF + distillation. No stored text needed, only the Hopfield state. The model literally dreams its memories into its weights.<p>Still early, training a 100M param model on TinyStories right now, loss is coming down but I don&#x27;t have eval numbers yet.",
+   "created_at": "2026-04-12T23:58:32Z",
+   "created_at_i": 1776038312,
+   "objectID": "47745873",
+   "parent_id": 47744703,
+   "story_id": 47741527,
+   "story_title": "Ask HN: What Are You Working On? (April 2026)",
+   "updated_at": "2026-04-13T01:48:15Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ACCount37"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "If platonic representation hypothesis holds across substrates, then it might matter very little, in the end. It holds across architectures in ML, empirically.<p>The crowd of &quot;backpropagation and <em>Hebbia</em>n learning + predictive coding are two facets of the very same gradient descent&quot; also has a surprisingly good track record so far."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ML promises to be profoundly weird"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://aphyr.com/posts/411-the-future-of-everything-is-lies-i-guess"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ACCount37",
+    "story_47689648"
+   ],
+   "author": "ACCount37",
+   "children": [
+    47703055
+   ],
+   "comment_text": "If platonic representation hypothesis holds across substrates, then it might matter very little, in the end. It holds across architectures in ML, empirically.<p>The crowd of &quot;backpropagation and Hebbian learning + predictive coding are two facets of the very same gradient descent&quot; also has a surprisingly good track record so far.",
+   "created_at": "2026-04-08T19:51:01Z",
+   "created_at_i": 1775677861,
+   "objectID": "47695393",
+   "parent_id": 47693433,
+   "story_id": 47689648,
+   "story_title": "ML promises to be profoundly weird",
+   "story_url": "https://aphyr.com/posts/411-the-future-of-everything-is-lies-i-guess",
+   "updated_at": "2026-04-09T12:51:16Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "kle1nz"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Hey HN,  I built m1nd - a cognitive graph engine that gives LLM agents a nervous system instead of keyword search.  The core idea: ingest any data (code, knowledge graphs, JSON) into a property graph, then query it with spreading activation across 4 dimensions (structural, semantic, temporal, causal). Noise gets cancelled via XLR differential processing, and the system learns from feedback via <em>Hebbia</em>n plasticity (LTP/LTD on edge weights).  13 tools over MCP (JSON-RPC stdio), so any agent can call it. Domain-agnostic - works on code, research notes, supply chains, anything with entities and relationships.  Key algorithms: - Spreading activation with configurable decay, hop limits, energy budgets - XLR noise cancellation (differential signal/noise CSR graphs) - <em>Hebbia</em>n plasticity (correct results strengthen connections, wrong weaken them) - Standing wave resonance for harmonic analysis - Counterfactual simulation (&quot;what breaks if we remove X?&quot;)  Built in Rust. ~15,500 LOC. 159 tests. 3.8MB binary.  GitHub: <a href=\"https://github.com/maxkle1nz/m1nd\" rel=\"nofollow\">https://github.com/maxkle1nz/m1nd</a> Landing page: <a href=\"https://maxkle1nz.github.io/m1nd/\" rel=\"nofollow\">https://maxkle1nz.github.io/m1nd/</a>  Happy to answer questions about the activation model or the MCP integration."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "[dead]"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_kle1nz",
+    "story_47356304"
+   ],
+   "author": "kle1nz",
+   "comment_text": "Hey HN,  I built m1nd - a cognitive graph engine that gives LLM agents a nervous system instead of keyword search.  The core idea: ingest any data (code, knowledge graphs, JSON) into a property graph, then query it with spreading activation across 4 dimensions (structural, semantic, temporal, causal). Noise gets cancelled via XLR differential processing, and the system learns from feedback via Hebbian plasticity (LTP&#x2F;LTD on edge weights).  13 tools over MCP (JSON-RPC stdio), so any agent can call it. Domain-agnostic - works on code, research notes, supply chains, anything with entities and relationships.  Key algorithms: - Spreading activation with configurable decay, hop limits, energy budgets - XLR noise cancellation (differential signal&#x2F;noise CSR graphs) - Hebbian plasticity (correct results strengthen connections, wrong weaken them) - Standing wave resonance for harmonic analysis - Counterfactual simulation (&quot;what breaks if we remove X?&quot;)  Built in Rust. ~15,500 LOC. 159 tests. 3.8MB binary.  GitHub: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;maxkle1nz&#x2F;m1nd\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;maxkle1nz&#x2F;m1nd</a> Landing page: <a href=\"https:&#x2F;&#x2F;maxkle1nz.github.io&#x2F;m1nd&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;maxkle1nz.github.io&#x2F;m1nd&#x2F;</a>  Happy to answer questions about the activation model or the MCP integration.",
+   "created_at": "2026-03-12T20:04:19Z",
+   "created_at_i": 1773345859,
+   "objectID": "47356305",
+   "parent_id": 47356304,
+   "story_id": 47356304,
+   "story_title": "[dead]",
+   "updated_at": "2026-03-12T20:05:22Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tonipotato"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Working on Engram, a cognitive memory system for AI agents. Instead of vector DB + semantic search, it uses models from cognitive science (ACT-R activation decay, <em>Hebbia</em>n learning, forgetting curves) to decide what to remember and what to forget. Been running it in production for a month, 230K+ recalls. Just shipped v2 with multi-agent shared memory.\n<a href=\"https://github.com/tonitangpotato/engram-ai\" rel=\"nofollow\">https://github.com/tonitangpotato/engram-ai</a>\n<a href=\"https://github.com/tonitangpotato/engram-ai-rust\" rel=\"nofollow\">https://github.com/tonitangpotato/engram-ai-rust</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: What Are You Working On? (March 2026)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_tonipotato",
+    "story_47303111"
+   ],
+   "author": "tonipotato",
+   "comment_text": "Working on Engram, a cognitive memory system for AI agents. Instead of vector DB + semantic search, it uses models from cognitive science (ACT-R activation decay, Hebbian learning, forgetting curves) to decide what to remember and what to forget. Been running it in production for a month, 230K+ recalls. Just shipped v2 with multi-agent shared memory.\n<a href=\"https:&#x2F;&#x2F;github.com&#x2F;tonitangpotato&#x2F;engram-ai\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;tonitangpotato&#x2F;engram-ai</a>\n<a href=\"https:&#x2F;&#x2F;github.com&#x2F;tonitangpotato&#x2F;engram-ai-rust\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;tonitangpotato&#x2F;engram-ai-rust</a>",
+   "created_at": "2026-03-12T14:53:49Z",
+   "created_at_i": 1773327229,
+   "objectID": "47351473",
+   "parent_id": 47303111,
+   "story_id": 47303111,
+   "story_title": "Ask HN: What Are You Working On? (March 2026)",
+   "updated_at": "2026-03-12T14:55:22Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "noahsioo"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Every session I had to re-explain everything. There are .md files and memory systems but you have to manually tell the AI to use them, and when you're actually deep in work you don't think about that. They're supposed to be smart. Why can't they just learn?\nI tried building self-learning systems on top of .md files for a while. Never really worked. Then I thought: I can remember all of this naturally. Why can't they? There has to be a way to build this.\nSo I started researching how human memory actually works. The brain is genuinely stunning. I ended up modeling 124 of its mechanisms in TypeScript. Spreading activation, <em>Hebbia</em>n learning, connections that strengthen every time they fire together.\nStill early (v0.1.5) but already working really well for me. Local MCP server, SQLite, no cloud. npm install -g veris-dev"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "I built AI a human brain in TypeScript \u2013 no more re-explaining"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://github.com/noahsioo/veris"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_noahsioo",
+    "story_47336751"
+   ],
+   "author": "noahsioo",
+   "comment_text": "Every session I had to re-explain everything. There are .md files and memory systems but you have to manually tell the AI to use them, and when you&#x27;re actually deep in work you don&#x27;t think about that. They&#x27;re supposed to be smart. Why can&#x27;t they just learn?\nI tried building self-learning systems on top of .md files for a while. Never really worked. Then I thought: I can remember all of this naturally. Why can&#x27;t they? There has to be a way to build this.\nSo I started researching how human memory actually works. The brain is genuinely stunning. I ended up modeling 124 of its mechanisms in TypeScript. Spreading activation, Hebbian learning, connections that strengthen every time they fire together.\nStill early (v0.1.5) but already working really well for me. Local MCP server, SQLite, no cloud. npm install -g veris-dev",
+   "created_at": "2026-03-11T15:43:48Z",
+   "created_at_i": 1773243828,
+   "objectID": "47337109",
+   "parent_id": 47336751,
+   "story_id": 47336751,
+   "story_title": "I built AI a human brain in TypeScript \u2013 no more re-explaining",
+   "story_url": "https://github.com/noahsioo/veris",
+   "updated_at": "2026-03-11T16:22:32Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "noahsioo"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Yeah, the title is a bit dramatic. Basically it's spreading activation + <em>Hebbia</em>n learning modeled as a local MCP server. Works across editors, fully local."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "I built AI a human brain in TypeScript \u2013 no more re-explaining"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://github.com/noahsioo/veris"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_noahsioo",
+    "story_47336751"
+   ],
+   "author": "noahsioo",
+   "comment_text": "Yeah, the title is a bit dramatic. Basically it&#x27;s spreading activation + Hebbian learning modeled as a local MCP server. Works across editors, fully local.",
+   "created_at": "2026-03-11T15:33:10Z",
+   "created_at_i": 1773243190,
+   "objectID": "47336948",
+   "parent_id": 47336809,
+   "story_id": 47336751,
+   "story_title": "I built AI a human brain in TypeScript \u2013 no more re-explaining",
+   "story_url": "https://github.com/noahsioo/veris",
+   "updated_at": "2026-03-11T16:22:47Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "nickpsecurity"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Thanks for thr tip.<p>The closest thing to real neurons are called spiking, neural networks. Here's a list of libraries for building them on GPU's:<p><a href=\"https://github.com/open-neuromorphic/open-neuromorphic\" rel=\"nofollow\">https://github.com/open-neuromorphic/open-neuromorphic</a><p>For academic papers, the phrases they use include &quot;biologically plausible,&quot; &quot;<em>Hebbia</em>n learning,&quot; and &quot;backpropagation free.&quot; Searching for those with &quot;neural networks&quot; or &quot;neurons&quot; will turn up cutting-edge techniques."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Living human brain cells play DOOM on a CL1 [video]"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.youtube.com/watch?v=yRV8fSw6HaE"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_nickpsecurity",
+    "story_47297919"
+   ],
+   "author": "nickpsecurity",
+   "children": [
+    47329823
+   ],
+   "comment_text": "Thanks for thr tip.<p>The closest thing to real neurons are called spiking, neural networks. Here&#x27;s a list of libraries for building them on GPU&#x27;s:<p><a href=\"https:&#x2F;&#x2F;github.com&#x2F;open-neuromorphic&#x2F;open-neuromorphic\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;open-neuromorphic&#x2F;open-neuromorphic</a><p>For academic papers, the phrases they use include &quot;biologically plausible,&quot; &quot;Hebbian learning,&quot; and &quot;backpropagation free.&quot; Searching for those with &quot;neural networks&quot; or &quot;neurons&quot; will turn up cutting-edge techniques.",
+   "created_at": "2026-03-10T22:33:42Z",
+   "created_at_i": 1773182022,
+   "objectID": "47329604",
+   "parent_id": 47318520,
+   "story_id": 47297919,
+   "story_title": "Living human brain cells play DOOM on a CL1 [video]",
+   "story_url": "https://www.youtube.com/watch?v=yRV8fSw6HaE",
+   "updated_at": "2026-03-20T07:22:23Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "bonoboTP"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "It was called learning already back when the field was called cybernetics and foundational figures like Shannon worked on this kind of stuff. People tried to decipher learning in the nervous system and implement the extracted principles in machines. Such as <em>Hebbia</em>n learning, the Perception algorithm etc. This stuff goes back to the 40s/50s/60s, so things must have gone south pretty early then."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Grammarly is offering \u2018expert\u2019 AI reviews from famous dead and living writers"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.wired.com/story/grammarly-is-offering-expert-ai-reviews-from-your-favorite-authors-dead-or-alive/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_bonoboTP",
+    "story_47259366"
+   ],
+   "author": "bonoboTP",
+   "comment_text": "It was called learning already back when the field was called cybernetics and foundational figures like Shannon worked on this kind of stuff. People tried to decipher learning in the nervous system and implement the extracted principles in machines. Such as Hebbian learning, the Perception algorithm etc. This stuff goes back to the 40s&#x2F;50s&#x2F;60s, so things must have gone south pretty early then.",
+   "created_at": "2026-03-09T09:32:02Z",
+   "created_at_i": 1773048722,
+   "objectID": "47306709",
+   "parent_id": 47306590,
+   "story_id": 47259366,
+   "story_title": "Grammarly is offering \u2018expert\u2019 AI reviews from famous dead and living writers",
+   "story_url": "https://www.wired.com/story/grammarly-is-offering-expert-ai-reviews-from-your-favorite-authors-dead-or-alive/",
+   "updated_at": "2026-03-09T09:55:38Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "timmetime"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Show HN:<p>The scale problem first: Pipedream has ~10,000 actions. \nFull catalog = 750K tokens. GPT-4o context = 128K. \nThe LLM literally cannot load the tools.<p>We inverted the architecture.<p>LLM runs once, offline, at build time \u2014 generates every \npossible way a human might phrase an intent. 22,614 \nexemplars compiled into an 8.5MB HDC vector space. \nAt runtime: pure math, no LLM, 7ms.<p>Results across 85,125 test queries:<p><pre><code>  First-pass action accuracy:    89.6%\n  Action accuracy (with ASK):    100%\n  App accuracy:                  100%\n  Silent errors:                 0%\n  Latency p95:                   &lt;13ms\n  Tokens per query:              0\n  Model size:                    8.5MB, no GPU\n  Improves with use:             Yes\n</code></pre>\nThe 10.4% that trigger ASK aren't failures. The system \nasks rather than guesses, the correct action is always \nin the candidate set, and every resolved ASK strengthens \nthe model via <em>Hebbia</em>n reinforcement. No retraining. \nNo labeling pipeline. The production model is the \nlearning model.<p>GPT-4o hits 98.5% accuracy \u2014 when given a pre-filtered \nshortlist of 200 actions and human-readable action keys. \nIt can't do app selection across 3,146 apps. HDC does \nthe whole thing in 7ms and gets better with every use.<p>We benchmarked honestly \u2014 full methodology in the paper \nincluding where GPT-4o wins.<p>Patent pending: US 63/969,729\nCovers: build-time LLM\u2192HDC pipeline, confidence gating, \n<em>Hebbia</em>n self-improvement without retraining.<p>White paper + benchmark + Docker quickstart:\n<a href=\"https://github.com/glyphh-ai/model-pipedream\" rel=\"nofollow\">https://github.com/glyphh-ai/model-pipedream</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "100% tool routing across 3,146 apps\u2013zero LLM at runtime, self-improving, 7ms"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://github.com/glyphh-ai/model-pipedream/blob/main/white-paper.md"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_timmetime",
+    "story_47273978"
+   ],
+   "author": "timmetime",
+   "comment_text": "Show HN:<p>The scale problem first: Pipedream has ~10,000 actions. \nFull catalog = 750K tokens. GPT-4o context = 128K. \nThe LLM literally cannot load the tools.<p>We inverted the architecture.<p>LLM runs once, offline, at build time \u2014 generates every \npossible way a human might phrase an intent. 22,614 \nexemplars compiled into an 8.5MB HDC vector space. \nAt runtime: pure math, no LLM, 7ms.<p>Results across 85,125 test queries:<p><pre><code>  First-pass action accuracy:    89.6%\n  Action accuracy (with ASK):    100%\n  App accuracy:                  100%\n  Silent errors:                 0%\n  Latency p95:                   &lt;13ms\n  Tokens per query:              0\n  Model size:                    8.5MB, no GPU\n  Improves with use:             Yes\n</code></pre>\nThe 10.4% that trigger ASK aren&#x27;t failures. The system \nasks rather than guesses, the correct action is always \nin the candidate set, and every resolved ASK strengthens \nthe model via Hebbian reinforcement. No retraining. \nNo labeling pipeline. The production model is the \nlearning model.<p>GPT-4o hits 98.5% accuracy \u2014 when given a pre-filtered \nshortlist of 200 actions and human-readable action keys. \nIt can&#x27;t do app selection across 3,146 apps. HDC does \nthe whole thing in 7ms and gets better with every use.<p>We benchmarked honestly \u2014 full methodology in the paper \nincluding where GPT-4o wins.<p>Patent pending: US 63&#x2F;969,729\nCovers: build-time LLM\u2192HDC pipeline, confidence gating, \nHebbian self-improvement without retraining.<p>White paper + benchmark + Docker quickstart:\n<a href=\"https:&#x2F;&#x2F;github.com&#x2F;glyphh-ai&#x2F;model-pipedream\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;glyphh-ai&#x2F;model-pipedream</a>",
+   "created_at": "2026-03-06T12:07:29Z",
+   "created_at_i": 1772798849,
+   "objectID": "47273979",
+   "parent_id": 47273978,
+   "story_id": 47273978,
+   "story_title": "100% tool routing across 3,146 apps\u2013zero LLM at runtime, self-improving, 7ms",
+   "story_url": "https://github.com/glyphh-ai/model-pipedream/blob/main/white-paper.md",
+   "updated_at": "2026-03-06T12:11:59Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "xico"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Non-<em>Hebbia</em>n and Anti-<em>Hebbia</em>n potentiation have been well studied for decades. Anti-<em>Hebbia</em>n notably for inhibitory connections."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "[dead]"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_xico",
+    "story_47211034"
+   ],
+   "author": "xico",
+   "comment_text": "Non-Hebbian and Anti-Hebbian potentiation have been well studied for decades. Anti-Hebbian notably for inhibitory connections.",
+   "created_at": "2026-03-04T12:25:35Z",
+   "created_at_i": 1772627135,
+   "objectID": "47246483",
+   "parent_id": 47223534,
+   "story_id": 47211034,
+   "story_title": "[dead]",
+   "updated_at": "2026-03-05T23:41:22Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mjbonanno"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "@xing_horizon Thanks! I really appreciate the feedback. You're spot on that downstream agents need clear signals to decide whether to trust, refresh, or ignore a recalled memory.<p>Right now `Activate()` already returns:\n- Bayesian confidence per engram\n- Full mathematical &quot;Why&quot; explanation (the 6-phase pipeline with exact contributions from ACT-R temporal decay, <em>Hebbia</em>n strength, content match, etc.)\n- `last_access` timestamp + access frequency (which directly feeds the decay calculation)<p>This already gives a solid freshness signal via the temporal weighting. Provenance (original source + creation context) is tracked internally but not yet exposed as clean first-class fields in the response... excellent callout, and that's jumping up the roadmap.<p>Would love to hear what specific provenance/freshness fields have worked best in the multi-agent systems you've worked with."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Show HN: MuninnDB \u2013 ACT-R decay and <em>Hebbia</em>n memory for AI agents"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://github.com/scrypster/muninndb"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mjbonanno",
+    "story_47236100"
+   ],
+   "author": "mjbonanno",
+   "children": [
+    47240002
+   ],
+   "comment_text": "@xing_horizon Thanks! I really appreciate the feedback. You&#x27;re spot on that downstream agents need clear signals to decide whether to trust, refresh, or ignore a recalled memory.<p>Right now `Activate()` already returns:\n- Bayesian confidence per engram\n- Full mathematical &quot;Why&quot; explanation (the 6-phase pipeline with exact contributions from ACT-R temporal decay, Hebbian strength, content match, etc.)\n- `last_access` timestamp + access frequency (which directly feeds the decay calculation)<p>This already gives a solid freshness signal via the temporal weighting. Provenance (original source + creation context) is tracked internally but not yet exposed as clean first-class fields in the response... excellent callout, and that&#x27;s jumping up the roadmap.<p>Would love to hear what specific provenance&#x2F;freshness fields have worked best in the multi-agent systems you&#x27;ve worked with.",
+   "created_at": "2026-03-03T22:12:56Z",
+   "created_at_i": 1772575976,
+   "objectID": "47239816",
+   "parent_id": 47236134,
+   "story_id": 47236100,
+   "story_title": "Show HN: MuninnDB \u2013 ACT-R decay and Hebbian memory for AI agents",
+   "story_url": "https://github.com/scrypster/muninndb",
+   "updated_at": "2026-03-27T11:46:53Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mjbonanno"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "This is the project I just posted. Happy to dive into any details... the exact ACT-R decay formula, how the <em>Hebbia</em>n graph updates in log space, the 6-phase Activate pipeline, or why I went with embedded Pebble. Fire away!"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Show HN: MuninnDB \u2013 ACT-R decay and <em>Hebbia</em>n memory for AI agents"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://github.com/scrypster/muninndb"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mjbonanno",
+    "story_47236100"
+   ],
+   "author": "mjbonanno",
+   "children": [
+    47258168
+   ],
+   "comment_text": "This is the project I just posted. Happy to dive into any details... the exact ACT-R decay formula, how the Hebbian graph updates in log space, the 6-phase Activate pipeline, or why I went with embedded Pebble. Fire away!",
+   "created_at": "2026-03-03T17:53:38Z",
+   "created_at_i": 1772560418,
+   "objectID": "47236108",
+   "parent_id": 47236100,
+   "story_id": 47236100,
+   "story_title": "Show HN: MuninnDB \u2013 ACT-R decay and Hebbian memory for AI agents",
+   "story_url": "https://github.com/scrypster/muninndb",
+   "updated_at": "2026-03-05T23:40:48Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Varun_shodh"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Hey HN, I built this because every AI memory system I tried (mem0, Cognee, Zep) makes 2-3 LLM API calls just to store a single memory. All of them need OpenAI keys.<p>I thought: why does storing a memory need a language model?<p>Shodh-Memory is a single Rust binary (~17MB) with zero LLM calls. Memories you use often become easier to find (<em>Hebbia</em>n learning). Old irrelevant context fades automatically (decay). Recalling one thing brings back related things (spreading activation over a knowledge graph).<p>55ms to store a memory. Runs fully offline. No external databases, no API keys, no cloud.<p>Works as an MCP server for Claude/Cursor, has Python bindings and a REST API. I use it daily with Claude Code \u2014 it's the memory system powering its own development.<p>Caveats: solo project, no formal retrieval quality benchmarks yet, ~400ms warm latency for the full context pipeline.<p>Paper: <a href=\"https://doi.org/10.5281/zenodo.18816615\" rel=\"nofollow\">https://doi.org/10.5281/zenodo.18816615</a><p>Would love feedback on the architecture."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Shodh\u2013 AI memory that learns from use, no LLM calls, single Rust binary"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://github.com/varun29ankuS/shodh-memory"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Varun_shodh",
+    "story_47197382"
+   ],
+   "author": "Varun_shodh",
+   "comment_text": "Hey HN, I built this because every AI memory system I tried (mem0, Cognee, Zep) makes 2-3 LLM API calls just to store a single memory. All of them need OpenAI keys.<p>I thought: why does storing a memory need a language model?<p>Shodh-Memory is a single Rust binary (~17MB) with zero LLM calls. Memories you use often become easier to find (Hebbian learning). Old irrelevant context fades automatically (decay). Recalling one thing brings back related things (spreading activation over a knowledge graph).<p>55ms to store a memory. Runs fully offline. No external databases, no API keys, no cloud.<p>Works as an MCP server for Claude&#x2F;Cursor, has Python bindings and a REST API. I use it daily with Claude Code \u2014 it&#x27;s the memory system powering its own development.<p>Caveats: solo project, no formal retrieval quality benchmarks yet, ~400ms warm latency for the full context pipeline.<p>Paper: <a href=\"https:&#x2F;&#x2F;doi.org&#x2F;10.5281&#x2F;zenodo.18816615\" rel=\"nofollow\">https:&#x2F;&#x2F;doi.org&#x2F;10.5281&#x2F;zenodo.18816615</a><p>Would love feedback on the architecture.",
+   "created_at": "2026-02-28T16:42:12Z",
+   "created_at_i": 1772296932,
+   "objectID": "47197398",
+   "parent_id": 47197382,
+   "story_id": 47197382,
+   "story_title": "Show HN: Shodh\u2013 AI memory that learns from use, no LLM calls, single Rust binary",
+   "story_url": "https://github.com/varun29ankuS/shodh-memory",
+   "updated_at": "2026-03-05T23:39:19Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "urav"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Haven't come across Polyworld before \u2014 just looked it up and its super cool, especially for 1994. The vision system is a interesting design choice. Werld takes a different approach \u2014 graph topology instead of a 2D plane, and NEAT brains instead of <em>Hebbia</em>n learning \u2014 but the core philosophy is the same.<p>And yeah hardware has caught up a bit since the early 2000s, though my hard drive is having a hard time. Thanks for the reference, going to dig into Yaeger's papers.<p>wonder if the black mirror episode was based on polyworld then?"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Decided to play god this morning, so I built an agent civilisation"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://github.com/nocodemf/werld"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_urav",
+    "story_47195530"
+   ],
+   "author": "urav",
+   "comment_text": "Haven&#x27;t come across Polyworld before \u2014 just looked it up and its super cool, especially for 1994. The vision system is a interesting design choice. Werld takes a different approach \u2014 graph topology instead of a 2D plane, and NEAT brains instead of Hebbian learning \u2014 but the core philosophy is the same.<p>And yeah hardware has caught up a bit since the early 2000s, though my hard drive is having a hard time. Thanks for the reference, going to dig into Yaeger&#x27;s papers.<p>wonder if the black mirror episode was based on polyworld then?",
+   "created_at": "2026-02-28T15:52:58Z",
+   "created_at_i": 1772293978,
+   "objectID": "47196766",
+   "parent_id": 47196372,
+   "story_id": 47195530,
+   "story_title": "Show HN: Decided to play god this morning, so I built an agent civilisation",
+   "story_url": "https://github.com/nocodemf/werld",
+   "updated_at": "2026-03-05T23:39:16Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Brain_cognitive"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Hi HN,<p>I\u2019m an independent developer. While playing with modern AI, I got curious about whether we could build a system closer to actual human biology. As a personal research project, I built a biologically plausible cognitive architecture from scratch.<p>This is a working prototype you can clone and run locally.<p>The core idea is to separate the process of <i>thinking</i> from <i>verbalization</i>. The architecture operates entirely without LLMs, modeling real brain mechanisms instead:<p>- Hippocampus (CA3/CA1): Handles episodic memory, pattern completion, and source memory.\n- Basal Ganglia: Routes signals and manages the execution flow.\n- Prefrontal Cortex (PFC): Provides top-down attention and logical constraints.\n- Hodgkin-Huxley Spiking Neurons: Real membrane potential dynamics.\n- STDP &amp; <em>Hebbia</em>n Learning: Learning via spike-timing-dependent plasticity instead of backpropagation.\n- Neuromodulators: Dopamine, Acetylcholine, Serotonin, and Norepinephrine modulating learning and attention.\n- Sleep Consolidation: Sharp-wave ripples with forward/reverse replay.<p>Because it doesn't predict tokens, it naturally avoids hallucinations. If pattern completion fails in CA3, it doesn't confabulate; it simply outputs &quot;I don't know&quot;. It also learns incrementally.<p>You can try it out yourself (requires Python 3.11+ and uv):<p><pre><code>  git clone https://github.com/sss777999/brain.git\n  cd brain\n  uv sync\n  \n  # 1. Train the model on the full data pipeline\n  uv run python train.py\n  \n  # 2. Run the fast test suite\n  uv run python test_brain.py --no-llm --no-gpt\n</code></pre>\nThe paper detailing the biological mechanisms and the architecture is available on Zenodo (DOI: 10.5281/zenodo.18704593): <a href=\"https://doi.org/10.5281/zenodo.18704593\" rel=\"nofollow\">https://doi.org/10.5281/zenodo.18704593</a><p>I\u2019m sure there's a lot to improve, so I'm sharing it here. I'd love to get feedback, critiques on the neuroscience aspects, or just general thoughts from the community!"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "A biologically inspired cognitive architecture without Transformers"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://github.com/sss777999/Brain"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Brain_cognitive",
+    "story_47135447"
+   ],
+   "author": "Brain_cognitive",
+   "comment_text": "Hi HN,<p>I\u2019m an independent developer. While playing with modern AI, I got curious about whether we could build a system closer to actual human biology. As a personal research project, I built a biologically plausible cognitive architecture from scratch.<p>This is a working prototype you can clone and run locally.<p>The core idea is to separate the process of <i>thinking</i> from <i>verbalization</i>. The architecture operates entirely without LLMs, modeling real brain mechanisms instead:<p>- Hippocampus (CA3&#x2F;CA1): Handles episodic memory, pattern completion, and source memory.\n- Basal Ganglia: Routes signals and manages the execution flow.\n- Prefrontal Cortex (PFC): Provides top-down attention and logical constraints.\n- Hodgkin-Huxley Spiking Neurons: Real membrane potential dynamics.\n- STDP &amp; Hebbian Learning: Learning via spike-timing-dependent plasticity instead of backpropagation.\n- Neuromodulators: Dopamine, Acetylcholine, Serotonin, and Norepinephrine modulating learning and attention.\n- Sleep Consolidation: Sharp-wave ripples with forward&#x2F;reverse replay.<p>Because it doesn&#x27;t predict tokens, it naturally avoids hallucinations. If pattern completion fails in CA3, it doesn&#x27;t confabulate; it simply outputs &quot;I don&#x27;t know&quot;. It also learns incrementally.<p>You can try it out yourself (requires Python 3.11+ and uv):<p><pre><code>  git clone https:&#x2F;&#x2F;github.com&#x2F;sss777999&#x2F;brain.git\n  cd brain\n  uv sync\n  \n  # 1. Train the model on the full data pipeline\n  uv run python train.py\n  \n  # 2. Run the fast test suite\n  uv run python test_brain.py --no-llm --no-gpt\n</code></pre>\nThe paper detailing the biological mechanisms and the architecture is available on Zenodo (DOI: 10.5281&#x2F;zenodo.18704593): <a href=\"https:&#x2F;&#x2F;doi.org&#x2F;10.5281&#x2F;zenodo.18704593\" rel=\"nofollow\">https:&#x2F;&#x2F;doi.org&#x2F;10.5281&#x2F;zenodo.18704593</a><p>I\u2019m sure there&#x27;s a lot to improve, so I&#x27;m sharing it here. I&#x27;d love to get feedback, critiques on the neuroscience aspects, or just general thoughts from the community!",
+   "created_at": "2026-02-24T10:44:21Z",
+   "created_at_i": 1771929861,
+   "objectID": "47135448",
+   "parent_id": 47135447,
+   "story_id": 47135447,
+   "story_title": "A biologically inspired cognitive architecture without Transformers",
+   "story_url": "https://github.com/sss777999/Brain",
+   "updated_at": "2026-03-05T23:36:15Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "thebasedcapital"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Hi HN! I built BrainBox to give AI coding agents procedural memory using <em>Hebbia</em>n learning \u2014 &quot;neurons that fire together wire together.&quot;<p>The problem: every time you start a new Claude Code session, the agent has zero memory of your codebase. It greps, reads, greps again \u2014 burning tokens rediscovering files it already found yesterday.<p>BrainBox learns passively from every file read, edit, and search. Files accessed together form synaptic connections that strengthen with repetition. After a few sessions, the agent recalls auth.ts directly instead of searching for it \u2014 like muscle memory.<p>Key ideas:\n- Synapses form between co-accessed files (sequential window, not time-based)\n- Myelination gives frequently-used paths instant recall\n- Multi-hop spreading activation discovers files through indirect connections (A\u2192B\u2192C)\n- Multiplicative confidence scoring prevents hub nodes from dominating (fan effect from Anderson 1983)\n- Exponential decay keeps the network clean\n- Error\u2192fix pair learning: remembers which files fix which errors<p>Production results after real usage: 79 neurons, 3,554 synapses, ~9% token savings. The strongest learned pathway is Grep\u2192Read (weight 0.996) \u2014 the universal &quot;search then read&quot; pattern.<p>The research gap that motivated this: published <em>Hebbia</em>n learning papers exist at L1 (model internals) but nobody has applied it to L3 (agent behavioral patterns \u2014 file access, tool chains, error\u2192fix pairs). The closest historical precedent is Fido (1991) \u2014 associative memory for hardware cache prefetching.<p>Install: `npm install brainbox-<em>hebbia</em>n` \u2014 hooks into Claude Code automatically via PostToolUse + UserPromptSubmit. TypeScript, MIT, ~2K LOC.<p>Happy to answer questions about the neuroscience mapping, the math, or anything else."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Show HN: BrainBox \u2013 <em>Hebbia</em>n memory for AI coding agents"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://github.com/thebasedcapital/brainbox"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_thebasedcapital",
+    "story_47067820"
+   ],
+   "author": "thebasedcapital",
+   "comment_text": "Hi HN! I built BrainBox to give AI coding agents procedural memory using Hebbian learning \u2014 &quot;neurons that fire together wire together.&quot;<p>The problem: every time you start a new Claude Code session, the agent has zero memory of your codebase. It greps, reads, greps again \u2014 burning tokens rediscovering files it already found yesterday.<p>BrainBox learns passively from every file read, edit, and search. Files accessed together form synaptic connections that strengthen with repetition. After a few sessions, the agent recalls auth.ts directly instead of searching for it \u2014 like muscle memory.<p>Key ideas:\n- Synapses form between co-accessed files (sequential window, not time-based)\n- Myelination gives frequently-used paths instant recall\n- Multi-hop spreading activation discovers files through indirect connections (A\u2192B\u2192C)\n- Multiplicative confidence scoring prevents hub nodes from dominating (fan effect from Anderson 1983)\n- Exponential decay keeps the network clean\n- Error\u2192fix pair learning: remembers which files fix which errors<p>Production results after real usage: 79 neurons, 3,554 synapses, ~9% token savings. The strongest learned pathway is Grep\u2192Read (weight 0.996) \u2014 the universal &quot;search then read&quot; pattern.<p>The research gap that motivated this: published Hebbian learning papers exist at L1 (model internals) but nobody has applied it to L3 (agent behavioral patterns \u2014 file access, tool chains, error\u2192fix pairs). The closest historical precedent is Fido (1991) \u2014 associative memory for hardware cache prefetching.<p>Install: `npm install brainbox-hebbian` \u2014 hooks into Claude Code automatically via PostToolUse + UserPromptSubmit. TypeScript, MIT, ~2K LOC.<p>Happy to answer questions about the neuroscience mapping, the math, or anything else.",
+   "created_at": "2026-02-18T23:27:07Z",
+   "created_at_i": 1771457227,
+   "objectID": "47067834",
+   "parent_id": 47067820,
+   "story_id": 47067820,
+   "story_title": "Show HN: BrainBox \u2013 Hebbian memory for AI coding agents",
+   "story_url": "https://github.com/thebasedcapital/brainbox",
+   "updated_at": "2026-03-05T23:35:25Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Opus_Warrior"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "We build persistent memory systems for AI agents. MCP-native, local-only, no cloud dependency.\n  The problem: every AI session starts from zero. Cloud vector databases add latency and network dependency. We built something different.\n  CASCADE ($400) - 6-layer structured memory with importance scoring and temporal decay. Sub-millisecond access. Episodic, semantic,\nprocedural, and working memory in one system.\n  PyTorch Memory ($600) - GPU-accelerated semantic vector search. Sub-2ms retrieval across thousands of memories. CUDA-optimized.\n  <em>Hebbia</em>n Mind ($800) - Associative memory that learns how you think. Edges strengthen through co-activation. No retraining.\n  Self-organizing concept graphs.\n  The CIPS Stack ($1,500) - All three plus unified cognitive search and pre-token gating. One install.\n  Free open source tier available (MIT). Enterprise licensing is per-developer.\n  All products are MCP servers - work with Claude, ChatGPT, Gemini, Cursor, Windsurf, or any MCP-compatible client. Docker deployment\n  included.\n<a href=\"https://cipscorps.io/#\" rel=\"nofollow\">https://cipscorps.io/#</a>"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "Memory Infrastructure for AI Systems \u2013 Cascade, PyTorch Memory, <em>Hebbia</em>n Mind"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://cipscorps.io/#"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Opus_Warrior",
+    "story_46941508"
+   ],
+   "author": "Opus_Warrior",
+   "comment_text": "We build persistent memory systems for AI agents. MCP-native, local-only, no cloud dependency.\n  The problem: every AI session starts from zero. Cloud vector databases add latency and network dependency. We built something different.\n  CASCADE ($400) - 6-layer structured memory with importance scoring and temporal decay. Sub-millisecond access. Episodic, semantic,\nprocedural, and working memory in one system.\n  PyTorch Memory ($600) - GPU-accelerated semantic vector search. Sub-2ms retrieval across thousands of memories. CUDA-optimized.\n  Hebbian Mind ($800) - Associative memory that learns how you think. Edges strengthen through co-activation. No retraining.\n  Self-organizing concept graphs.\n  The CIPS Stack ($1,500) - All three plus unified cognitive search and pre-token gating. One install.\n  Free open source tier available (MIT). Enterprise licensing is per-developer.\n  All products are MCP servers - work with Claude, ChatGPT, Gemini, Cursor, Windsurf, or any MCP-compatible client. Docker deployment\n  included.\n<a href=\"https:&#x2F;&#x2F;cipscorps.io&#x2F;#\" rel=\"nofollow\">https:&#x2F;&#x2F;cipscorps.io&#x2F;#</a>",
+   "created_at": "2026-02-09T04:13:34Z",
+   "created_at_i": 1770610414,
+   "objectID": "46941509",
+   "parent_id": 46941508,
+   "story_id": 46941508,
+   "story_title": "Memory Infrastructure for AI Systems \u2013 Cascade, PyTorch Memory, Hebbian Mind",
+   "story_url": "https://cipscorps.io/#",
+   "updated_at": "2026-03-05T23:32:54Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Opus_Warrior"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hebbia"
+     ],
+     "value": "We built enterprise memory infrastructure for AI systems. Not a wrapper around a vector database. Five purpose-built memory systems that work together:<p><pre><code>  - CASCADE \u2013 6-layer temporal memory with natural decay. Memories fade unless they matter. Sub-millisecond access via RAM disk.\n  - PyTorch Memory \u2013 GPU-accelerated semantic search. 2,500+ vectors at &lt;2ms on consumer NVIDIA hardware.\n  - <em>Hebbia</em>n Mind \u2013 Associative graph where edges strengthen through co-activation. No manual linking. The more you use it, the smarter it gets.\n  - Soul Matrix \u2013 <em>Hebbia</em>n conductance graph in Rust. Pre-retrieval gating at ~270 microseconds. Shapes what surfaces before your LLM spends tokens.\n  - CMM \u2013 Unified search across all backends. One query, synthesized results, not concatenated.\n\n  Everything runs on MCP (Model Context Protocol). Works with Claude, or any MCP client. Docker, Linux native, or Windows native install paths.\n\n  No subscriptions. No per-query fees. No metered API. One purchase, you own it, run it on your hardware forever. Source code included.\n\n  We built this because we needed it. AI agents fail in production because they have no memory architecture. The industry spent $40B on AI in 2025 and 95% saw no\n  production ROI. The gap between demo and production is memory management \u2013 agents that can't remember yesterday can't improve tomorrow.\n\n  Free tier available: cascade-memory-lite on GitHub (MIT). Enterprise products start at $400. Full stack is $1,500. 90-day money-back guarantee on everything.</code></pre>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "CIPS Stack \u2013 5 memory systems that give your AI agents persistent memory"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://cipscorps.io/#"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Opus_Warrior",
+    "story_46896549"
+   ],
+   "author": "Opus_Warrior",
+   "comment_text": "We built enterprise memory infrastructure for AI systems. Not a wrapper around a vector database. Five purpose-built memory systems that work together:<p><pre><code>  - CASCADE \u2013 6-layer temporal memory with natural decay. Memories fade unless they matter. Sub-millisecond access via RAM disk.\n  - PyTorch Memory \u2013 GPU-accelerated semantic search. 2,500+ vectors at &lt;2ms on consumer NVIDIA hardware.\n  - Hebbian Mind \u2013 Associative graph where edges strengthen through co-activation. No manual linking. The more you use it, the smarter it gets.\n  - Soul Matrix \u2013 Hebbian conductance graph in Rust. Pre-retrieval gating at ~270 microseconds. Shapes what surfaces before your LLM spends tokens.\n  - CMM \u2013 Unified search across all backends. One query, synthesized results, not concatenated.\n\n  Everything runs on MCP (Model Context Protocol). Works with Claude, or any MCP client. Docker, Linux native, or Windows native install paths.\n\n  No subscriptions. No per-query fees. No metered API. One purchase, you own it, run it on your hardware forever. Source code included.\n\n  We built this because we needed it. AI agents fail in production because they have no memory architecture. The industry spent $40B on AI in 2025 and 95% saw no\n  production ROI. The gap between demo and production is memory management \u2013 agents that can&#x27;t remember yesterday can&#x27;t improve tomorrow.\n\n  Free tier available: cascade-memory-lite on GitHub (MIT). Enterprise products start at $400. Full stack is $1,500. 90-day money-back guarantee on everything.</code></pre>",
+   "created_at": "2026-02-05T06:53:02Z",
+   "created_at_i": 1770274382,
+   "objectID": "46896550",
+   "parent_id": 46896549,
+   "story_id": 46896549,
+   "story_title": "CIPS Stack \u2013 5 memory systems that give your AI agents persistent memory",
+   "story_url": "https://cipscorps.io/#",
+   "updated_at": "2026-03-05T23:32:06Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "riemannzeta"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Not an expert in neurobiology, but... heck this is Hacker News:<p>Let's assume that the brain implements a renormalization group flow in a way similar to transformers, as described here: <a href=\"https://arxiv.org/abs/2507.17912\" rel=\"nofollow\">https://arxiv.org/abs/2507.17912</a><p>In biological neural networks, synaptic weight distributions presumably have some effective \u03b1. Learning perturbs \u03b1 away from optimal \u2014 overfitting would correspond to \u03b1 drifting toward values that capture training noise rather than generalizable structure. The question becomes: what mechanism pushes \u03b1 back toward 2?<p>Astrocytes are positioned to do exactly this. They don't modify individual synaptic weights (that's Hebbian learning), but they modulate the gain of synaptic transmission across vast swaths of tissue simultaneously. This is a different kind of operation \u2014 more like rescaling the entire weight matrix or reshaping its spectral density than updating individual entries.<p>Consider what happens during sleep. The synaptic homeostasis hypothesis (Tononi &amp; Cirelli) proposes that sleep globally downscales synaptic strengths, renormalizing the system after a day of potentiation. This is literally a renormalization operation \u2014 a rescaling that preserves relative structure while adjusting the overall scale. If astrocytes mediate this process (and the Quanta article suggests they track sleep debt via calcium accumulation), they might be implementing something like the ERG step that SETOL identifies as optimal.<p>The scale-invariance condition is key. SETOL states that the ideal layer is governed by a Scale-Invariant transformation equivalent to a single step of an Exact Renormalization Group transformation. Astrocytes, by modulating transmission globally rather than synapse-by-synapse, naturally implement transformations that preserve relative structure while adjusting scale \u2014 exactly the kind of operation that could maintain or restore scale invariance.<p>The zebrafish &quot;giving up&quot; experiment becomes interesting through this lens. When the fish swims futilely, neural circuits are active in a regime that's metabolically expensive but informationally unproductive \u2014 the current model (swimming should work) is wrong, and the system is far from any useful attractor. The accumulated evidence in astrocytes might track not just &quot;futility&quot; in behavioral terms but deviation from optimal \u03b1 \u2014 a signature that the current operating regime violates the ERG condition.<p>The state switch, then, isn't just behavioral resignation. It's the system recognizing that its current configuration is far from scale-invariant equilibrium and forcing a transition to a different basin where better spectral properties can be achieved. The adenosine release that triggers the switch would be the biological mechanism implementing what mathematically amounts to a large step in parameter space toward a more ERG-compliant regime.<p>The deepest connection might be to criticality itself. Systems at critical points exhibit scale invariance \u2014 correlations extend across all scales, and the system looks statistically similar under coarse-graining. The \u03b1 = 2 condition in SETOL might be a signature of criticality in the weight space, just as power-law correlations are signatures of criticality in physical systems.<p>If brains operate near criticality, maintaining that critical state requires feedback \u2014 something must detect drift toward subcritical or supercritical regimes and push back. Astrocytes, with their slow timescales and broad spatial integration, are ideally positioned to monitor deviations from criticality and implement corrective homeostasis.<p>The Kadanoff-Wilson RG originated in the theory of phase transitions. SETOL adapts it to neural networks. The biological realization might be: neurons implement fast inference (the &quot;flow&quot; of representations through layers), while astrocytes implement slow RG steps that maintain the spectral conditions (\u03b1 \u2248 2) under which that inference remains optimal.<p>Testable Predictions\nThis framework suggests several predictions:\n* Synaptic weight distributions should drift away from \u03b1 = 2 during extended waking and return toward it during sleep.\n* Astrocyte-deficient or astrocyte-disrupted animals should show abnormal weight spectral properties \u2014 perhaps more variance in \u03b1 across brain regions, or systematic drift away from optimal values.\n* The giving-up threshold might correlate with cumulative deviation of local circuit \u03b1 from 2 \u2014 not just behavioral futility, but a kind of &quot;spectral stress&quot; that astrocytes track.\n* Interventions that artificially maintain \u03b1 \u2248 2 (if such were possible) might reduce the need for sleep or astrocytic modulation.<p>Any experts here? Astrocytes as implementers of biological RG steps that maintain the spectral conditions for optimal inference?"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Once Thought to Support Neurons, Astrocytes Turn Out to Be in Charge"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.quantamagazine.org/once-thought-to-support-neurons-astrocytes-turn-out-to-be-in-charge-20260130/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_riemannzeta",
+    "story_46848348"
+   ],
+   "author": "riemannzeta",
+   "comment_text": "Not an expert in neurobiology, but... heck this is Hacker News:<p>Let&#x27;s assume that the brain implements a renormalization group flow in a way similar to transformers, as described here: <a href=\"https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2507.17912\" rel=\"nofollow\">https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2507.17912</a><p>In biological neural networks, synaptic weight distributions presumably have some effective \u03b1. Learning perturbs \u03b1 away from optimal \u2014 overfitting would correspond to \u03b1 drifting toward values that capture training noise rather than generalizable structure. The question becomes: what mechanism pushes \u03b1 back toward 2?<p>Astrocytes are positioned to do exactly this. They don&#x27;t modify individual synaptic weights (that&#x27;s Hebbian learning), but they modulate the gain of synaptic transmission across vast swaths of tissue simultaneously. This is a different kind of operation \u2014 more like rescaling the entire weight matrix or reshaping its spectral density than updating individual entries.<p>Consider what happens during sleep. The synaptic homeostasis hypothesis (Tononi &amp; Cirelli) proposes that sleep globally downscales synaptic strengths, renormalizing the system after a day of potentiation. This is literally a renormalization operation \u2014 a rescaling that preserves relative structure while adjusting the overall scale. If astrocytes mediate this process (and the Quanta article suggests they track sleep debt via calcium accumulation), they might be implementing something like the ERG step that SETOL identifies as optimal.<p>The scale-invariance condition is key. SETOL states that the ideal layer is governed by a Scale-Invariant transformation equivalent to a single step of an Exact Renormalization Group transformation. Astrocytes, by modulating transmission globally rather than synapse-by-synapse, naturally implement transformations that preserve relative structure while adjusting scale \u2014 exactly the kind of operation that could maintain or restore scale invariance.<p>The zebrafish &quot;giving up&quot; experiment becomes interesting through this lens. When the fish swims futilely, neural circuits are active in a regime that&#x27;s metabolically expensive but informationally unproductive \u2014 the current model (swimming should work) is wrong, and the system is far from any useful attractor. The accumulated evidence in astrocytes might track not just &quot;futility&quot; in behavioral terms but deviation from optimal \u03b1 \u2014 a signature that the current operating regime violates the ERG condition.<p>The state switch, then, isn&#x27;t just behavioral resignation. It&#x27;s the system recognizing that its current configuration is far from scale-invariant equilibrium and forcing a transition to a different basin where better spectral properties can be achieved. The adenosine release that triggers the switch would be the biological mechanism implementing what mathematically amounts to a large step in parameter space toward a more ERG-compliant regime.<p>The deepest connection might be to criticality itself. Systems at critical points exhibit scale invariance \u2014 correlations extend across all scales, and the system looks statistically similar under coarse-graining. The \u03b1 = 2 condition in SETOL might be a signature of criticality in the weight space, just as power-law correlations are signatures of criticality in physical systems.<p>If brains operate near criticality, maintaining that critical state requires feedback \u2014 something must detect drift toward subcritical or supercritical regimes and push back. Astrocytes, with their slow timescales and broad spatial integration, are ideally positioned to monitor deviations from criticality and implement corrective homeostasis.<p>The Kadanoff-Wilson RG originated in the theory of phase transitions. SETOL adapts it to neural networks. The biological realization might be: neurons implement fast inference (the &quot;flow&quot; of representations through layers), while astrocytes implement slow RG steps that maintain the spectral conditions (\u03b1 \u2248 2) under which that inference remains optimal.<p>Testable Predictions\nThis framework suggests several predictions:\n* Synaptic weight distributions should drift away from \u03b1 = 2 during extended waking and return toward it during sleep.\n* Astrocyte-deficient or astrocyte-disrupted animals should show abnormal weight spectral properties \u2014 perhaps more variance in \u03b1 across brain regions, or systematic drift away from optimal values.\n* The giving-up threshold might correlate with cumulative deviation of local circuit \u03b1 from 2 \u2014 not just behavioral futility, but a kind of &quot;spectral stress&quot; that astrocytes track.\n* Interventions that artificially maintain \u03b1 \u2248 2 (if such were possible) might reduce the need for sleep or astrocytic modulation.<p>Any experts here? Astrocytes as implementers of biological RG steps that maintain the spectral conditions for optimal inference?",
+   "created_at": "2026-02-03T23:51:50Z",
+   "created_at_i": 1770162710,
+   "objectID": "46879194",
+   "parent_id": 46848348,
+   "story_id": 46848348,
+   "story_title": "Once Thought to Support Neurons, Astrocytes Turn Out to Be in Charge",
+   "story_url": "https://www.quantamagazine.org/once-thought-to-support-neurons-astrocytes-turn-out-to-be-in-charge-20260130/",
+   "updated_at": "2026-03-05T23:30:50Z"
+  }
+ ],
+ "hitsPerPage": 50,
+ "nbHits": 307,
+ "nbPages": 7,
+ "page": 0,
+ "params": "query=hebbia&tags=comment&hitsPerPage=50&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 19,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 15
+  },
+  "afterFetch": {
+   "format": {
+    "highlighting": 3,
+    "total": 4
+   },
+   "merge": {
+    "mergeLoop": {
+     "prepareNextHit": 10,
+     "total": 10
+    },
+    "total": 12
+   },
+   "total": 12
+  },
+  "fetch": {
+   "query": 2,
+   "scanning": 2,
+   "total": 5
+  },
+  "total": 19
+ },
+ "query": "hebbia",
+ "serverTimeMS": 24,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=hebbia&tags=comment&hitsPerPage=50"
+}

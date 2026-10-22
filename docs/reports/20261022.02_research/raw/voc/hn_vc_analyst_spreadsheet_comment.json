@@ -1,0 +1,133 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "bane"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "vc",
+      "analyst",
+      "spreadsheet"
+     ],
+     "value": "At the time it was <i>very</i> crowded (until everybody closed up shop). Most of our customers had an incumbent vendor of some sort and it was quite difficult to get them to switch. Most of the vendors tried to get customer lock-in through customized integration services or proprietary formats or some such, so the software was often the cheap part of the purchase.<p>I think the real challenge though was customers who put very non-technical users in positions as &quot;<em>analysts</em>&quot;. Everybody wanted very powerful software, but the end-users simply weren't prepared for the rigors of what these days has turned into the &quot;Data Science&quot; field. For example, most end-user <em>analysts</em> don't understand the difference between a csv file, and a pdf file with a table printed on it, and an Excel <em>spreadsheet</em>.<p>Most of our users were smart soft-science types, and their organizations had collected lots of data but simply didn't have the education or experience to understand the difficulties with dealing with the data, coming up with strategies to analyze it, knew what was in their data, the quality of it, what questions it could answer, or even how to formulate answerable questions.<p>Up to fairly recently, the state of the art in their fields was to read reports and summarize and draw some conclusion based on their reading.<p>Even up through the technical sides of the organization, they didn't have a good grasp of how to build and manage systems that could service these users. High level requirements like &quot;users need analytic software&quot; would often end up as purchase decisions of the wrong product. Or sometimes IT security was such that the software would never be installed!<p>It was frustrating because the separation of expertise on the user-side and technical side was such a wide gulf and neither side really understood the other.<p>On the other-hand, it was a great opportunity to try to educate the customers and educate them towards your product. I found it very high-touch pre and post-sales --sometimes in a good way, sometimes in a bad way.<p>Most of the incumbent software had highly complex back ends, was not as turnkey as they had claimed (hence all the integration work) and the user-side provided very limited functionality...usually providing functionality on the order of a very basic MS-Excel and MS-Powerpoint combined.<p>On the other hand, in some highly specialized organizations, the incumbent software had decades of work behind it and was kind of like Photoshop in terms of complexity, even if most of the users didn't use most of the things it did. Features had just sort of aggregated out of control. However, the features they <i>did</i> use were often very sophisticated and modeled carefully on that kind of specialist workflow (even if a better workflow would have been technically easy to build).<p>We worked very hard to provide tooling the customer could integrate themselves if they wanted, but it would work reasonably well right out of the box. We even provided a pretty nice visual data flow development environment for wiring up databases and transforming data and such. We were mostly successful as many of our long-time customers didn't ask us to do much other work for them. We had a few that paid us for some custom development or integration, but our goal was to try to build a tool that didn't require that. Even though the company has been gone for years, I'm aware of a few organizations that <i>still</i> use our software on a day-to-day basis because we succeeded in these goals and the high-TCO of the &quot;winning&quot; company in our space has dissuaded them switching.<p>It's too bad everybody else got chased out of the market, because I know of at least one of those old customers who's ready to upgrade to something newer, but there's just nobody in our space alive anymore except for one.<p>I think that if we had been flush with <em>VC</em> money we would have pursued some different strategies, but you often have to size your offerings based on your resources.<p>A lot of what I experience isn't too relevant anymore anyways, the market and technology have changed too much. These days many organizations simply solve these problems by hiring data scientists (usually cross-educated in the required field and CS/CE/DS or something) and getting them some hardware to play on."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Nobody's Going to Steal Your Idea"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.candyjapan.com/nobodys-going-to-steal-your-idea"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_bane",
+    "story_9663203"
+   ],
+   "author": "bane",
+   "comment_text": "At the time it was <i>very</i> crowded (until everybody closed up shop). Most of our customers had an incumbent vendor of some sort and it was quite difficult to get them to switch. Most of the vendors tried to get customer lock-in through customized integration services or proprietary formats or some such, so the software was often the cheap part of the purchase.<p>I think the real challenge though was customers who put very non-technical users in positions as &quot;analysts&quot;. Everybody wanted very powerful software, but the end-users simply weren&#x27;t prepared for the rigors of what these days has turned into the &quot;Data Science&quot; field. For example, most end-user analysts don&#x27;t understand the difference between a csv file, and a pdf file with a table printed on it, and an Excel spreadsheet.<p>Most of our users were smart soft-science types, and their organizations had collected lots of data but simply didn&#x27;t have the education or experience to understand the difficulties with dealing with the data, coming up with strategies to analyze it, knew what was in their data, the quality of it, what questions it could answer, or even how to formulate answerable questions.<p>Up to fairly recently, the state of the art in their fields was to read reports and summarize and draw some conclusion based on their reading.<p>Even up through the technical sides of the organization, they didn&#x27;t have a good grasp of how to build and manage systems that could service these users. High level requirements like &quot;users need analytic software&quot; would often end up as purchase decisions of the wrong product. Or sometimes IT security was such that the software would never be installed!<p>It was frustrating because the separation of expertise on the user-side and technical side was such a wide gulf and neither side really understood the other.<p>On the other-hand, it was a great opportunity to try to educate the customers and educate them towards your product. I found it very high-touch pre and post-sales --sometimes in a good way, sometimes in a bad way.<p>Most of the incumbent software had highly complex back ends, was not as turnkey as they had claimed (hence all the integration work) and the user-side provided very limited functionality...usually providing functionality on the order of a very basic MS-Excel and MS-Powerpoint combined.<p>On the other hand, in some highly specialized organizations, the incumbent software had decades of work behind it and was kind of like Photoshop in terms of complexity, even if most of the users didn&#x27;t use most of the things it did. Features had just sort of aggregated out of control. However, the features they <i>did</i> use were often very sophisticated and modeled carefully on that kind of specialist workflow (even if a better workflow would have been technically easy to build).<p>We worked very hard to provide tooling the customer could integrate themselves if they wanted, but it would work reasonably well right out of the box. We even provided a pretty nice visual data flow development environment for wiring up databases and transforming data and such. We were mostly successful as many of our long-time customers didn&#x27;t ask us to do much other work for them. We had a few that paid us for some custom development or integration, but our goal was to try to build a tool that didn&#x27;t require that. Even though the company has been gone for years, I&#x27;m aware of a few organizations that <i>still</i> use our software on a day-to-day basis because we succeeded in these goals and the high-TCO of the &quot;winning&quot; company in our space has dissuaded them switching.<p>It&#x27;s too bad everybody else got chased out of the market, because I know of at least one of those old customers who&#x27;s ready to upgrade to something newer, but there&#x27;s just nobody in our space alive anymore except for one.<p>I think that if we had been flush with VC money we would have pursued some different strategies, but you often have to size your offerings based on your resources.<p>A lot of what I experience isn&#x27;t too relevant anymore anyways, the market and technology have changed too much. These days many organizations simply solve these problems by hiring data scientists (usually cross-educated in the required field and CS&#x2F;CE&#x2F;DS or something) and getting them some hardware to play on.",
+   "created_at": "2015-06-06T00:54:48Z",
+   "created_at_i": 1433552088,
+   "objectID": "9669126",
+   "parent_id": 9668331,
+   "points": null,
+   "story_id": 9663203,
+   "story_title": "Nobody's Going to Steal Your Idea",
+   "story_url": "http://www.candyjapan.com/nobodys-going-to-steal-your-idea",
+   "updated_at": "2023-09-07T02:54:50Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "3pt14159"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "vc",
+      "analyst",
+      "spreadsheet"
+     ],
+     "value": "&gt; preferably with a dashboard<p>Nope.<p>Daily / weekly / monthly plain text email or emailed <em>spreadsheet</em> is way better. The problem with dashboards is that when the underlying numbers change, they can change the figures for the past and there won't be a record of it. If it's in an email someone can bring up this discrepancy.<p>Also, lots of startups waste a lot of time building a dashboard not realizing that they're now building two apps. &quot;We don't need login, we'll just IP whitelist it.&quot; Then a <em>VC</em> wants to see the numbers. Then he wants to forward it to his partners. Now if your dashboard goes down the CEO starts freaking out about how it makes the company look during their raise.<p>The rest of the advice is spot on though. Especially keeping the number of KPIs down.<p>This isn't to rule out pulling in other sets of numbers, but those should be done by a Data <em>Analyst</em> and they should be one-time analyses that can be re-run by the <em>analyst</em> later if needed."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "How VCs See Your KPIs"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.nfx.com/post/how-vcs-see-your-kpis"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_3pt14159",
+    "story_17601085"
+   ],
+   "author": "3pt14159",
+   "children": [
+    17602749,
+    17603064
+   ],
+   "comment_text": "&gt; preferably with a dashboard<p>Nope.<p>Daily &#x2F; weekly &#x2F; monthly plain text email or emailed spreadsheet is way better. The problem with dashboards is that when the underlying numbers change, they can change the figures for the past and there won&#x27;t be a record of it. If it&#x27;s in an email someone can bring up this discrepancy.<p>Also, lots of startups waste a lot of time building a dashboard not realizing that they&#x27;re now building two apps. &quot;We don&#x27;t need login, we&#x27;ll just IP whitelist it.&quot; Then a VC wants to see the numbers. Then he wants to forward it to his partners. Now if your dashboard goes down the CEO starts freaking out about how it makes the company look during their raise.<p>The rest of the advice is spot on though. Especially keeping the number of KPIs down.<p>This isn&#x27;t to rule out pulling in other sets of numbers, but those should be done by a Data Analyst and they should be one-time analyses that can be re-run by the analyst later if needed.",
+   "created_at": "2018-07-24T16:32:37Z",
+   "created_at_i": 1532449957,
+   "objectID": "17602603",
+   "parent_id": 17601085,
+   "story_id": 17601085,
+   "story_title": "How VCs See Your KPIs",
+   "story_url": "https://www.nfx.com/post/how-vcs-see-your-kpis",
+   "updated_at": "2024-09-20T02:42:38Z"
+  }
+ ],
+ "hitsPerPage": 50,
+ "nbHits": 2,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=VC+analyst+spreadsheet&tags=comment&hitsPerPage=50&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 15,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 16
+  },
+  "afterFetch": {
+   "merge": {
+    "mergeLoop": {
+     "prepareNextHit": 1,
+     "total": 1
+    },
+    "total": 1
+   },
+   "total": 1
+  },
+  "fetch": {
+   "query": 12,
+   "scanning": 1,
+   "total": 14
+  },
+  "total": 15
+ },
+ "query": "VC analyst spreadsheet",
+ "serverTimeMS": 16,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=VC+analyst+spreadsheet&tags=comment&hitsPerPage=50"
+}

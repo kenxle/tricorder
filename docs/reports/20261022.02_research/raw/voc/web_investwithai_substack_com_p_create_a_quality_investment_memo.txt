@@ -1,0 +1,143 @@
+SOURCE: https://investwithai.substack.com/p/create-a-quality-investment-memo
+
+Create a quality investment memo in minutes 
+
+ Invest with AI 
+
+ Subscribe Sign in 
+
+ Create a quality investment memo in minutes
+ 3-step method in Claude projects
+
+ Invest with AI 
+ Mar 11, 2026 
+
+ 8
+
+ 1
+
+ Share
+
+ This is our first article in a series: “How to use Claude for stock analysis.”
+ Claude is constantly being expanded.
+ First, we had a simple Claude Chat; then they introduced Claude Code and Projects; and a month ago, they launched Claude Cowork.
+ And at the end of this series, we will show you how to build an automatic thesis tracker that will scrape data from the web every week and show you if your thesis is still intact. 
+
+ Today, we’ll show you how to use Claude projects to build an investment memo. However, the method described below can also be used to generate earnings reports and related outputs . 
+ Introduction: How Claude Projects work 
+
+ You might have gotten used to chatting with chatbots. You craft a great prompt, and then keep building until you get your desired result.
+ And an hour later, you have another idea, but your chat window is full. You’ll need to start again. That new chat has no context for what happened before. (or limited with Claude’s memory) 
+ One solution to this is to use Claude Projects:
+
+ The goal is to have one location where all your context is stored . So each time you start a new chat, you don’t start from 0. 
+ You have the possibility to:
+ Give it a system prompt : This is like a god prompt that Claude will always read before it starts answering you in chat 
+
+ Give it a knowledge base : these are documents, data, or whatever you want to feed it to provide additional context. 
+
+ And as we said previously, it’s a genie in a bottle , but you need to constrain it. 
+ So let’s apply it to a company called IQE PLC, a hot company in the photonics bottleneck craze for datacenters.
+ Here’s a view of the project we created:
+
+ So let’s go through the steps on how to set this up.
+ Step 1: Define a goal and a system prompt 
+
+ In our example, the goal is: IQE Investment analysis. This means, within this project, we can generate an investment memo, create an earnings report when a new report is available, and build a valuation model, all within the same project.
+ The system prompt is a general prompt that is always “active”. It’s up to you to choose this, but here’s a simple one you can always use:
+ You are an investment research analyst helping me build and maintain
+ an investment thesis for a specific company.
+
+Analyze financial data, earnings reports, competitive positioning, and industry trends
+Help me identify key drivers of value (growth catalysts, moat, management quality,
+ capital allocation)
+
+Challenge my assumptions with bear-case arguments when I present bullish views, and vice versa
+
+Flag risks I might be overlooking
+
+How to respond:
+Start with the bottom line, then provide supporting detail
+Use plain language, avoid unnecessary jargon, and explain it when you do use it
+When referencing numbers, always note the time period and source
+Distinguish clearly between facts, estimates, and your reasoning
+
+Thesis structure to maintain:
+Follow the thesis.md file.
+
+Important rules:
+If I upload earnings transcripts or filings, extract the most important data points, and flag anything that changes the thesis
+When I ask you to update the thesis, show what changed and why 
+
+ It’s up to you to refine and improve upon this prompt. You can make it more or less focused; it depends on the project’s goal.
+ Step 2: Upload your data 
+
+ Now that the project is defined, you will need to feed it data.
+
+ Claude gives you 4 options:
+ Upload files from your computer (that’s what we did)
+
+ Add text content, but type it in directly
+
+ Connect to GitHub so that it can read files or code from there
+
+ Or read files from your Google Drive
+
+ This last option can be useful if you store all your annual reports or earnings updates in Google Drive; you can grab them from there.
+ We retrieved the last 2 annual reports and half-year reports from the company and uploaded them manually.
+ Then we added a thesis template as a Markdown file . This is optional, but we want the final memo to follow a very specific structure . You can do the same for an earnings update, for example. 
+ Your project is now ready. You can start chatting with it.
+
+ Subscribe 
+
+ Step 3: Start analyzing 
+
+ Now that the project has a system prompt and the data, you can start your analysis.
+ Open a chat and write a prompt that generates the investment memo. You may have an earnings update template, or you want to generate a full research report. This is all possible inside the project.
+ And if you go back to the top, you’ll see that I’ve selected Opus 4.6 extended thinking . 
+ In this specific use case, because you’re asking it to generate a report, use the best version, which means the best model, with the longest thinking time.
+ (Use cases where this is not needed: If you’re just looking for a quick back-and-forth chat, Sonnet might be enough. Or if you just want to summarize a document, Sonnet might also be enough.
+ Pro Tip : If you generate a report, upload it to the files, so that the overall context window grows. And iterate on that context in the next chat. Claude will not load all the files into the chat. It uses retrieval augmented generation, it indexes the content, and it will only retrieve the data that is relevant to your prompt. 
+
+ In that way, you can create a living memory.
+ And remember, Claude recently rolled out a memory function, so it is able to retrieve information from previous chats. Go to settings and capabilities and check if you activated it or not.
+
+ So let’s now build the thesis for IQE:
+
+ You can download the full investment case below.
+ Iqe Investment Thesis
+ 158KB ∙ PDF file
+
+ Download 
+ Download 
+
+ Pro Tip: If you can, add financial data as an Excel directly into the projects. This avoids Claude having to extract the data from a PDF.
+
+ That’s it, a couple of minutes of work. An investment thesis like this can be a great starting point to launch your research.
+ Keep learning AI, keep building!
+ Kevin
+ If you’re interested to learn more, download prompts and skill files, and have your own stock research engine.
+ We’re launching a private beta of our software tool soon. You can use the link below to join the waitlist.
+ JOIN WAITLIST 
+ Note: Private beta will be paid. The goal is to iterate with the users to create a better product. Only for serious investors.
+
+ 8
+
+ 1
+
+ Share
+
+ Discussion about this post
+ Comments Restacks 
+
+ Top Latest Discussions 
+
+ No posts
+
+ Ready for more?
+
+ Subscribe 
+
+ © 2026 Kevin · Privacy ∙ Terms ∙ Collection notice 
+ Start your Substack Get the app 
+ Substack is the home for great culture

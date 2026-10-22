@@ -1,0 +1,80 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "JMTQp8lwXL"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "cohort",
+      "churn",
+      "investor"
+     ],
+     "value": "As an <em>investor</em>, I worry about <em>churn</em>. Year 2...N customers are more profitable. Great. But what happens when &lt;New Startup X&gt; throws billions into blitzscaling their new delivery app? There goes your most profitable <em>cohort</em>, to the next (temporarily cheaper) delivery platform. And food delivery apps aren't a classically 'sticky' business: it's centered on ephemeral transactions."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "DoorDash S-1"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.sec.gov/Archives/edgar/data/1792789/000119312520292381/d752207ds1.htm"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_JMTQp8lwXL",
+    "story_25082043"
+   ],
+   "author": "JMTQp8lwXL",
+   "children": [
+    25085737,
+    25085786,
+    25086683
+   ],
+   "comment_text": "As an investor, I worry about churn. Year 2...N customers are more profitable. Great. But what happens when &lt;New Startup X&gt; throws billions into blitzscaling their new delivery app? There goes your most profitable cohort, to the next (temporarily cheaper) delivery platform. And food delivery apps aren&#x27;t a classically &#x27;sticky&#x27; business: it&#x27;s centered on ephemeral transactions.",
+   "created_at": "2020-11-13T18:29:30Z",
+   "created_at_i": 1605292170,
+   "objectID": "25085660",
+   "parent_id": 25085397,
+   "story_id": 25082043,
+   "story_title": "DoorDash S-1",
+   "story_url": "https://www.sec.gov/Archives/edgar/data/1792789/000119312520292381/d752207ds1.htm",
+   "updated_at": "2024-09-20T07:22:20Z"
+  }
+ ],
+ "hitsPerPage": 50,
+ "nbHits": 1,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=cohort+churn+investor&tags=comment&hitsPerPage=50&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 20,
+ "processingTimingsMS": {
+  "_request": {
+   "queue": 4,
+   "roundTrip": 18
+  },
+  "fetch": {
+   "query": 18,
+   "scanning": 1,
+   "total": 20
+  },
+  "total": 20
+ },
+ "query": "cohort churn investor",
+ "serverTimeMS": 25,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=cohort+churn+investor&tags=comment&hitsPerPage=50"
+}

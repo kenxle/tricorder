@@ -1,0 +1,327 @@
+SOURCE: https://solve.mit.edu/articles/how-ai-helped-us-screen-applications-in-half-the-time
+
+How AI Helped Us Screen Applications in Half the Time | MIT Solve 
+
+ Menu
+
+ Impact
+
+ Areas of impact
+
+ Climate 
+
+ Economic Prosperity 
+
+ Health 
+
+ Learning 
+
+ Indigenous Communities 
+
+ Youth Innovation 
+
+ Innovative Financing 
+
+ Innovators
+
+ Innovators
+
+ Meet the Solvers 
+
+ Become a Solver 
+
+ Sign up for the Newsletter 
+
+ Get the monthly newsletter designed for busy innovators around the globe.
+
+ Challenges
+
+ Challenges
+
+ Open Challenges 
+
+ Past Challenges 
+
+ Application Clinics 
+
+ Launch a custom Challenge 
+
+ Get started with a custom challenge to solve your organization's most pressing problems.
+
+ Events
+
+ Events
+
+ Solve at MIT 
+
+ Solve Challenge Finals 
+
+ Partner
+
+ I am a...
+
+ Philanthropist 
+
+ Corporation 
+
+ Foundation 
+
+ Investor 
+
+ Launch a Custom Challenge 
+
+ Get started with a custom challenge to solve your organization's most pressing problems.
+
+ Donate to the Solver Impact Fund 
+
+ Direct 100% of your support to social innovators.
+
+ Podcast
+
+ Log In 
+
+ Impact 
+
+ Areas of impact
+
+ Climate 
+
+ Economic Prosperity 
+
+ Health 
+
+ Learning 
+
+ Indigenous Communities 
+
+ Youth Innovation 
+
+ Innovative Financing 
+
+ Innovators 
+
+ Innovators
+
+ Meet the Solvers 
+
+ Become a Solver 
+
+ Sign up for the Newsletter 
+
+ Get the monthly newsletter designed for busy innovators around the globe.
+
+ Challenges 
+
+ Challenges
+
+ Open Challenges 
+
+ Past Challenges 
+
+ Application Clinics 
+
+ Launch a custom Challenge 
+
+ Get started with a custom challenge to solve your organization's most pressing problems.
+
+ Events 
+
+ Events
+
+ Solve at MIT 
+
+ Solve Challenge Finals 
+
+ Partner 
+
+ I am a...
+
+ Philanthropist 
+
+ Corporation 
+
+ Foundation 
+
+ Investor 
+
+ Launch a Custom Challenge 
+
+ Get started with a custom challenge to solve your organization's most pressing problems.
+
+ Donate to the Solver Impact Fund 
+
+ Direct 100% of your support to social innovators.
+
+ Podcast 
+
+ Article 
+
+ How AI Helped Us Screen Applications in Half the Time
+
+ By
+ Pooja Wagh and Rebecca Spens 
+
+ August 27, 2025
+
+ · 
+ 3 min read 
+
+ Tags:
+
+ Innovation
+
+ AI for Good
+
+ Share this article:
+
+ alert('Copied to clipboard'))
+ .catch(() => alert('Failed to copy to clipboard'))
+ "
+ class="cursor-pointer flex items-center justify-center transition-colors bg-primary aspect-square hover:bg-black hover:text-white w-9.5 border border-primary hover:border-white"
+ aria-label="Copy link"
+ >
+
+ Never miss an update from our AI for Good series: sign up for the AI for Good newsletter. 
+ In this AI for Good series, we’ve been exploring the growing operational challenges facing social sector funders. One big issue we’ve noticed across the industry is the influx of grant applications, driven by generative AI tools and shrinking government and multilateral funding. 
+ Solve is no exception. This year, our Global Challenges drew 2,900 applications, our highest number to date. From that pool, we’ll select our 2025 Solver Class of around 30 innovators. You can join us at Solve Challenge Finals in September as we announce the class and celebrate their incredible work! 
+ The Bottleneck: 2,900 Applications, 1 Small Team
+ A human takes around four minutes to screen each application. That’s 24 full working days for one person–a huge time investment for a lean, non-profit team, even when the work is split between several staff members.
+ That’s why we spent the last year working with researchers from Harvard Business School to build and test an AI-powered tool that could support our human screeners during the first stage of our multi-step review process. 
+ At this stage, we filter out applications that are incomplete, ineligible, or not a strong fit for the challenge, whether they’re too early-stage, don’t use technology, or address a different problem than the one posed by the challenge. Our goal this past cycle was to cut screening time by 50% while maintaining the rigor of this initial review step.
+ From the start of this study, keeping humans in the loop has been a key principle. AI can help with efficiency, but human judgment brings the nuance, context, and diversity of thought that’s necessary to make the best selection decisions. Reviewing solutions at this first stage also keeps our staff abreast of the innovation landscape.
+ So we designed the tool to do two things:
+ Automatically screen out applications that had no realistic chance of proceeding.
+
+ Support our staff reviewers by providing, for each solution:
+ A passing probability: a score between 0 and 100 based on a rubric 
+
+ An overall assessment: a “Pass,” “Fail,” or “Review” label based on the passing probability
+
+ A justification: the AI tool’s explanation of its recommendation
+
+ Faster, Smarter, but Still Human
+ We launched a working prototype, a Google CoLab notebook using the ChatGPT API, in March 2025. After many rounds of testing and tweaking, we felt confident that the tool’s decisions aligned closely with those of expert human screeners. Our top priority was to avoid false negatives and guarantee no strong solution was screened out prematurely.
+ When the 2025 application window closed with 2,901 solutions submitted, we were ready to roll. Here’s what happened:
+ 43% of applications were labeled “Pass”
+
+ 16% were labeled “Fail”
+
+ 41% were flagged “Review” for human evaluation
+
+ The result? Our staff were able to focus on just the 41% labeled for review, cutting their total screening time from 24 days to just 10—while maintaining confidence in the quality of results. 
+ Learning Alongside AI
+ Next up, we’re reviewing the tool’s performance to further refine the thresholds for the “Pass,” “Fail,” and “Review” labels. We’re also analyzing how passing probabilities correlate with later-stage scores, in hopes of strengthening the tool even more for future cycles.
+ We’ll keep sharing what we learn as we continue building tools that help us source the boldest, most promising innovations from around the world.
+
+ Tags:
+
+ Innovation
+
+ AI for Good
+
+ Share this article:
+
+ alert('Copied to clipboard'))
+ .catch(() => alert('Failed to copy to clipboard'))
+ "
+ class="cursor-pointer flex items-center justify-center transition-colors bg-primary aspect-square hover:bg-black hover:text-white w-9.5 border border-primary hover:border-white"
+ aria-label="Copy link"
+ >
+
+ Related articles
+
+ The Middle East Has Big Ideas. Crescent Enterprises Helps Turn Them into Impact.
+
+ The Middle East doesn’t lack ideas. It doesn’t lack entrepreneurs, either.
+
+ From “Does It Work?” to “Does It Work Responsibly?”
+
+ In 2025, Solve expanded technical vetting to reflect a simple truth: in impact tech, ethical failure is functional failure.
+
+ Did AI Get It Right? 
+
+ Reviewing screening outcomes for the 2025 Global Challenges
+
+ Impact 
+
+ Climate 
+
+ Economic Prosperity 
+
+ Health 
+
+ Learning 
+
+ Indigenous Communities 
+
+ Youth Innovation 
+
+ Innovative Financing 
+
+ About Solve 
+
+ Contact 
+
+ Solve Team 
+
+ Careers 
+
+ Terms of Service 
+
+ Privacy Policy 
+
+ Accessibility 
+
+ Get Involved 
+
+ Events 
+
+ Partner 
+
+ Support 
+
+ Become a Reviewer 
+
+ Mentorship 
+
+ Resources 
+
+ Articles 
+
+ Newsletters 
+
+ In the Media 
+
+ Podcast 
+
+ Launch a Custom Challenge
+
+ Design and launch a challenge based on your own or your organization’s social impact goals or industry needs, leveraging our signature methodology and research-backed platform. We’ll work with you on all the details, including promotion, selection, vetting, and support.
+
+ p]:mb-0 text-center order-3 md:order-2 w-full">
+ SOLVE®, SOLVER®, and SOLVEATHON® are registered trademarks and service marks of Massachusetts Institute of Technology.
+
+ All rights reserved in the United States and worldwide.
+
+ i.id !== notification.id)
+ },
+ }"
+ x-on:notify.window="add"
+ role="status"
+ aria-live="polite"
+ class="pointer-events-none fixed top-0 right-0 z-modal w-full max-w-sm px-4 py-6 sm:p-6 flex flex-col space-y-4"
+>
+
+ this.remove(this.notification), 1500)
+ },
+ }"
+ x-init="$nextTick(() => show = true);setTimeout(() => transitionOut(), 3000)"
+ x-show="show"
+ x-transition:enter="ease-out duration-200"
+ x-transition:enter-start="opacity-0 translate-x-full"
+ x-transition:enter-end="opacity-100 translate-x-0"
+ x-transition:leave="ease-in duration-300"
+ x-transition:leave-start="opacity-100"
+ x-transition:leave-end="opacity-0"
+ class="pointer-events-auto w-full bg-white py-3 px-4 border rounded-lg shadow-lg overflow-hidden transform transition"
+ >

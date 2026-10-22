@@ -1,0 +1,28 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [],
+ "hitsPerPage": 50,
+ "nbHits": 0,
+ "nbPages": 0,
+ "page": 0,
+ "params": "query=harmonic+VC+sourcing&tags=comment&hitsPerPage=50&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 14,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 16
+  },
+  "fetch": {
+   "query": 12,
+   "total": 13
+  },
+  "total": 14
+ },
+ "query": "harmonic VC sourcing",
+ "serverTimeMS": 14,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=harmonic+VC+sourcing&tags=comment&hitsPerPage=50"
+}

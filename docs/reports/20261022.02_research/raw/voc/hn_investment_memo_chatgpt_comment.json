@@ -1,0 +1,126 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "hn_throwaway_99"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo",
+      "chatgpt"
+     ],
+     "value": "&gt; Is it really startups eating their lunch???<p>It's not really just startups - honestly I think 99% of those startups will fail.<p>The problem with generative AI <i>as a business</i> is basically what that leaked Google <em>memo</em> said, which was something along the lines of: &quot;OpenAI doesn't really have a moat, but neither do we.&quot;<p>There are a few large companies who are creating these successful models (OpenAI, Microsoft, Google, Meta, perhaps Amazon with their Anthropic <em>investment</em>), but there are tons of other startups that are trying to come up with &quot;individual products around AI&quot;, and I think it will be <i>incredibly</i> hard for them to differentiate. That is, for a lot of the &quot;dedicated&quot; early-stage products I've seen, I've thought &quot;I can pretty much do this all with <em>ChatGPT</em>, maybe <em>ChatGPT</em> with plugins - why would I want to download your special app?&quot;<p>I don't think <i>all</i> of these companies are doomed to fail (for example, I think Harvey AI was smart to focus on a very specific, profitable niche: lawyers have a lot of money to spend on this stuff, and they have specific needs e.g. around compliance, auditability, privacy, etc. that you could see a specific legal-focused AI tool addressing), but I think a lot of them are."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Snap shutters its enterprise services division after less than a year"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://techcrunch.com/2023/09/27/snap-shutters-its-enterprise-services-division-after-less-than-a-year/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_hn_throwaway_99",
+    "story_37690867"
+   ],
+   "author": "hn_throwaway_99",
+   "children": [
+    37693937,
+    37694562
+   ],
+   "comment_text": "&gt; Is it really startups eating their lunch???<p>It&#x27;s not really just startups - honestly I think 99% of those startups will fail.<p>The problem with generative AI <i>as a business</i> is basically what that leaked Google memo said, which was something along the lines of: &quot;OpenAI doesn&#x27;t really have a moat, but neither do we.&quot;<p>There are a few large companies who are creating these successful models (OpenAI, Microsoft, Google, Meta, perhaps Amazon with their Anthropic investment), but there are tons of other startups that are trying to come up with &quot;individual products around AI&quot;, and I think it will be <i>incredibly</i> hard for them to differentiate. That is, for a lot of the &quot;dedicated&quot; early-stage products I&#x27;ve seen, I&#x27;ve thought &quot;I can pretty much do this all with ChatGPT, maybe ChatGPT with plugins - why would I want to download your special app?&quot;<p>I don&#x27;t think <i>all</i> of these companies are doomed to fail (for example, I think Harvey AI was smart to focus on a very specific, profitable niche: lawyers have a lot of money to spend on this stuff, and they have specific needs e.g. around compliance, auditability, privacy, etc. that you could see a specific legal-focused AI tool addressing), but I think a lot of them are.",
+   "created_at": "2023-09-28T18:35:59Z",
+   "created_at_i": 1695926159,
+   "objectID": "37693755",
+   "parent_id": 37692322,
+   "story_id": 37690867,
+   "story_title": "Snap shutters its enterprise services division after less than a year",
+   "story_url": "https://techcrunch.com/2023/09/27/snap-shutters-its-enterprise-services-division-after-less-than-a-year/",
+   "updated_at": "2024-09-20T15:17:56Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mudita"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo",
+      "chatgpt"
+     ],
+     "value": "I suspect that you are not really familiar with the historical background of the situation, a new &quot;Marshall Plan\u201d is not something AlexCoventry came up with right now in this discussion, but a widely discussed option, which many experts agree would have been helpful, but was mostly not implemented because of the costs involved. I recommend reading a historical book, which goes into more detail than a hacker news discussion could, if you really want to understand the situation at the time.<p>The following is from Paul D'Anieri, \u201cUkraine and Russia: From Civilized Divorce to Uncivil War\u201d. The <em>chapt</em>ers before this are also quite important, but I omitted them, because this got long enough as it is:<p>The end of communism prompted talk of a new \u201cMarshall Plan,\u201d in \nwhich massive western aid would support rapid and far-reaching economic reform in Russia. The <em>investment</em> bank Morgan Stanley estimated in January 1992 that reforming the post-Soviet economies collectively would require at least $76 billion per year for at least three years to transform sectors such as energy, infrastructure, agriculture, and food.<p>However, several factors conspired to undermine that hope. First was uncertainty over Yeltsin\u2019s staying power in Russia. While he had defeated the coup, many in Russia strongly opposed the \u201cshock therapy\u201d being advocated. In August of 1992, when the IMF committed $1 billion to help stabilize the ruble, the reform plan of Yegor Gaidar was already faltering, and conservatives in the Congress of People\u2019s Deputies were \nalready seeking this ouster. Second, there was a significant perception in the United States that with the end of the Cold War, the United States would be able to focus less of its attention overseas. American citizens and politicians hoped for a \u201cpeace dividend,\u201d through which money freed up from defense spending could be redirected to domestic spending to combat recession. Third, 1992 was a presidential election year. With the economy struggling, and Bush under attack by a Clinton campaign whose mantra was \u201cit\u2019s the economy, stupid,\u201d it was impossible to muster the support needed to take a really bold and expensive policy.<p>In March 1992, former president Richard Nixon, who had promoted d\u00e9tente with the Soviet Union, produced a \u201csecret\u201d <em>memo</em> to US leaders, the contents of which were soon leaked to journalists. He warned that the consequences of failure would be that \u201cwar could break out in the former Soviet Union as the new despots use force to restore the \u2018historical borders\u2019 of Russia.\u201d Bush did not disagree. \u201cWhere we might have a \ndifference, is we\u2019re living in a time of constrained resources. There isn\u2019t a lot of money around. We are spending too much as it already is. So to do the things I would really like to do, I don\u2019t have a blank check for \nall that. In April, he proposed what became the Freedom Support Act, which largely repackaged existing commitments and presumed contributions by allies that had not yet been consulted. One important component of that proposal, a $6 billion stabilization fund, never materialized.\nMoreover, the Freedom Support Act aid was divided among the fifteen successor states.<p>In late April, just after Bush announced the Freedom Support Act, Los Angeles exploded into riots, contributing powerfully to the belief that US leaders needed to focus aid efforts domestically, not at Russia. In the New York Times, Thomas Friedman wrote: \n\u201cThe Russian aid bill\u2019s limbo reflects the ambivalent moment in which American \nforeign policy finds itself after the cold war. One day officials and lawmakers say \nthe United States is the world\u2019s only superpower, and therefore it must lead on \nissues, such as Russian aid or peacekeeping in Yugoslavia. The next day, though, \nthe same officials and lawmakers say that domestic problems should take \nprecedence, foreign initiatives are too expensive, and therefore Washington \ncannot afford to lead. In the wake of the Los Angeles riots in particular, the \nlatter mood seems to be dominating\u201c"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The Art of Monetary War"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.nplusonemag.com/online-only/online-only/the-art-of-monetary-war/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mudita",
+    "story_30657078"
+   ],
+   "author": "mudita",
+   "children": [
+    30661320
+   ],
+   "comment_text": "I suspect that you are not really familiar with the historical background of the situation, a new &quot;Marshall Plan\u201d is not something AlexCoventry came up with right now in this discussion, but a widely discussed option, which many experts agree would have been helpful, but was mostly not implemented because of the costs involved. I recommend reading a historical book, which goes into more detail than a hacker news discussion could, if you really want to understand the situation at the time.<p>The following is from Paul D&#x27;Anieri, \u201cUkraine and Russia: From Civilized Divorce to Uncivil War\u201d. The chapters before this are also quite important, but I omitted them, because this got long enough as it is:<p>The end of communism prompted talk of a new \u201cMarshall Plan,\u201d in \nwhich massive western aid would support rapid and far-reaching economic reform in Russia. The investment bank Morgan Stanley estimated in January 1992 that reforming the post-Soviet economies collectively would require at least $76 billion per year for at least three years to transform sectors such as energy, infrastructure, agriculture, and food.<p>However, several factors conspired to undermine that hope. First was uncertainty over Yeltsin\u2019s staying power in Russia. While he had defeated the coup, many in Russia strongly opposed the \u201cshock therapy\u201d being advocated. In August of 1992, when the IMF committed $1 billion to help stabilize the ruble, the reform plan of Yegor Gaidar was already faltering, and conservatives in the Congress of People\u2019s Deputies were \nalready seeking this ouster. Second, there was a significant perception in the United States that with the end of the Cold War, the United States would be able to focus less of its attention overseas. American citizens and politicians hoped for a \u201cpeace dividend,\u201d through which money freed up from defense spending could be redirected to domestic spending to combat recession. Third, 1992 was a presidential election year. With the economy struggling, and Bush under attack by a Clinton campaign whose mantra was \u201cit\u2019s the economy, stupid,\u201d it was impossible to muster the support needed to take a really bold and expensive policy.<p>In March 1992, former president Richard Nixon, who had promoted d\u00e9tente with the Soviet Union, produced a \u201csecret\u201d memo to US leaders, the contents of which were soon leaked to journalists. He warned that the consequences of failure would be that \u201cwar could break out in the former Soviet Union as the new despots use force to restore the \u2018historical borders\u2019 of Russia.\u201d Bush did not disagree. \u201cWhere we might have a \ndifference, is we\u2019re living in a time of constrained resources. There isn\u2019t a lot of money around. We are spending too much as it already is. So to do the things I would really like to do, I don\u2019t have a blank check for \nall that. In April, he proposed what became the Freedom Support Act, which largely repackaged existing commitments and presumed contributions by allies that had not yet been consulted. One important component of that proposal, a $6 billion stabilization fund, never materialized.\nMoreover, the Freedom Support Act aid was divided among the fifteen successor states.<p>In late April, just after Bush announced the Freedom Support Act, Los Angeles exploded into riots, contributing powerfully to the belief that US leaders needed to focus aid efforts domestically, not at Russia. In the New York Times, Thomas Friedman wrote: \n\u201cThe Russian aid bill\u2019s limbo reflects the ambivalent moment in which American \nforeign policy finds itself after the cold war. One day officials and lawmakers say \nthe United States is the world\u2019s only superpower, and therefore it must lead on \nissues, such as Russian aid or peacekeeping in Yugoslavia. The next day, though, \nthe same officials and lawmakers say that domestic problems should take \nprecedence, foreign initiatives are too expensive, and therefore Washington \ncannot afford to lead. In the wake of the Los Angeles riots in particular, the \nlatter mood seems to be dominating\u201c",
+   "created_at": "2022-03-13T07:31:57Z",
+   "created_at_i": 1647156717,
+   "objectID": "30658860",
+   "parent_id": 30658617,
+   "story_id": 30657078,
+   "story_title": "The Art of Monetary War",
+   "story_url": "https://www.nplusonemag.com/online-only/online-only/the-art-of-monetary-war/",
+   "updated_at": "2024-09-20T10:43:29Z"
+  }
+ ],
+ "hitsPerPage": 50,
+ "nbHits": 2,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=investment+memo+ChatGPT&tags=comment&hitsPerPage=50&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 21,
+ "processingTimingsMS": {
+  "_request": {
+   "queue": 18,
+   "roundTrip": 26
+  },
+  "fetch": {
+   "query": 18,
+   "scanning": 1,
+   "total": 20
+  },
+  "total": 21
+ },
+ "query": "investment memo ChatGPT",
+ "serverTimeMS": 40,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=investment+memo+ChatGPT&tags=comment&hitsPerPage=50"
+}

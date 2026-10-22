@@ -1,0 +1,177 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "getToTheChopin"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "cohort",
+      "chart",
+      "investors"
+     ],
+     "value": "Agreed that an example of buying once per year (or quarter / month) over time and calculating the return of that scenario is more applicable to the experience of a regular <em>investor</em>.<p>This can be eye-balled on this <em>chart</em>: <a href=\"https://themeasureofaplan.com/wp-content/uploads/2023/01/Rolling-Returns-1074.png\" rel=\"nofollow\">https://themeasureofaplan.com/wp-content/uploads/2023/01/Rol...</a><p>The bottom graph shows the annualized return for each 20-year period in market history. 20-year holding periods have this behaviour:\n- Max: 13.2%\n- Min: 0.5%\n- Average: 6.6%\n- Std. Dev.: 3%<p>So, if you dollar cost average over time and hold each of those investment <em>cohorts</em> for ~20 years, you should expect an average annual return of roughly 6% (+/- 3%)."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "U.S. stock market returns \u2013 a history from the 1870s to 2022"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://themeasureofaplan.com/us-stock-market-returns-1870s-to-present/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_getToTheChopin",
+    "story_34276704"
+   ],
+   "author": "getToTheChopin",
+   "comment_text": "Agreed that an example of buying once per year (or quarter &#x2F; month) over time and calculating the return of that scenario is more applicable to the experience of a regular investor.<p>This can be eye-balled on this chart: <a href=\"https:&#x2F;&#x2F;themeasureofaplan.com&#x2F;wp-content&#x2F;uploads&#x2F;2023&#x2F;01&#x2F;Rolling-Returns-1074.png\" rel=\"nofollow\">https:&#x2F;&#x2F;themeasureofaplan.com&#x2F;wp-content&#x2F;uploads&#x2F;2023&#x2F;01&#x2F;Rol...</a><p>The bottom graph shows the annualized return for each 20-year period in market history. 20-year holding periods have this behaviour:\n- Max: 13.2%\n- Min: 0.5%\n- Average: 6.6%\n- Std. Dev.: 3%<p>So, if you dollar cost average over time and hold each of those investment cohorts for ~20 years, you should expect an average annual return of roughly 6% (+&#x2F;- 3%).",
+   "created_at": "2023-01-06T17:10:23Z",
+   "created_at_i": 1673025023,
+   "objectID": "34277497",
+   "parent_id": 34277214,
+   "story_id": 34276704,
+   "story_title": "U.S. stock market returns \u2013 a history from the 1870s to 2022",
+   "story_url": "https://themeasureofaplan.com/us-stock-market-returns-1870s-to-present/",
+   "updated_at": "2024-09-20T13:04:27Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "upupandup"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "cohort",
+      "chart",
+      "investors"
+     ],
+     "value": "Isn't this what YC does essentially? YC backed SaaS companies buy each others products, write favorable case studies and use that to convince other enterprises to buy in, and to IPO quickly they raise lot of money to have the market share that commands the multi billion valuations with insane revenue multiples?<p>Seems like this model is beginning to fail, most YC backed IPOs are now trading in deep red. ex) coinbase<p>edit: lurkervizzle I can't respond to you since im throttled but this is what I wrote in response to add on to what you wrote in the other comment<p>this is far more serious than I thought I seemingly just made the connection that YC backed SaaS (or any other accelerator schemes) were essentially just writing cheques to each other and playing whack a mole: You direct your <em>cohort</em> members to send cheques to one SaaS, raise series B &amp; C, push for IPO after making splashes on media outlets (also owned and controlled by stakeholders), which in turn generates more fervor from retail <em>investors</em> eager to get in on the  &quot;next&quot; Facebook.<p>Then you would naturally use these beacons to essentially send more cheques, this time across many tiny bets that they can cycle through one after the other. Some make it to IPO, many don't so they get &quot;acquired&quot;.<p>The more I look at the YC business model and silicon valley in general is that very small group of people are actually in it to build sustainable businesses, since the Uber secondary market successes of VCs that successfully dumped their shares on Masayoshi, the SaaS have become the new &quot;social media opex&quot;, where losing $2 to make $1 <i>is</i> preferred over slower growing but consistent net profit generating ones.<p>By next year I anticipate ton of pain and anger. I took a look at some TC figures and they are roughly 30/70 mix of cash and RSUs. Many of those people are also in debt through real estate using HELOCs too.<p>What I think we are headed for is something unprecedented because there are 3 major bubbles imploding: crypto, real estate, dot com<p>Even more crazy is that we had the exact setup going into the new millenia: e-gold, real estate, dot com but the difference back then was that monetary supply was nowhere near as low as they have been in the past 3 years (take a look at the M2 supply/velocity <em>chart</em>).<p><a href=\"https://www.pennmutualam.com/market-insights-news/blogs/chart-of-the-week/2020-10-22-what-money-velocity-means-for-us-economic-recovery/_res/id=Picture/money.png\" rel=\"nofollow\">https://www.pennmutualam.com/market-insights-news/blogs/char...</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "VCs are scared when they should be greedy"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://blog.aaronkharris.com/vcs-are-scared-when-they-should-be-greedy"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_upupandup",
+    "story_32170244"
+   ],
+   "author": "upupandup",
+   "children": [
+    32172714,
+    32172794,
+    32172893,
+    32173627,
+    32174673,
+    32174838
+   ],
+   "comment_text": "Isn&#x27;t this what YC does essentially? YC backed SaaS companies buy each others products, write favorable case studies and use that to convince other enterprises to buy in, and to IPO quickly they raise lot of money to have the market share that commands the multi billion valuations with insane revenue multiples?<p>Seems like this model is beginning to fail, most YC backed IPOs are now trading in deep red. ex) coinbase<p>edit: lurkervizzle I can&#x27;t respond to you since im throttled but this is what I wrote in response to add on to what you wrote in the other comment<p>this is far more serious than I thought I seemingly just made the connection that YC backed SaaS (or any other accelerator schemes) were essentially just writing cheques to each other and playing whack a mole: You direct your cohort members to send cheques to one SaaS, raise series B &amp; C, push for IPO after making splashes on media outlets (also owned and controlled by stakeholders), which in turn generates more fervor from retail investors eager to get in on the  &quot;next&quot; Facebook.<p>Then you would naturally use these beacons to essentially send more cheques, this time across many tiny bets that they can cycle through one after the other. Some make it to IPO, many don&#x27;t so they get &quot;acquired&quot;.<p>The more I look at the YC business model and silicon valley in general is that very small group of people are actually in it to build sustainable businesses, since the Uber secondary market successes of VCs that successfully dumped their shares on Masayoshi, the SaaS have become the new &quot;social media opex&quot;, where losing $2 to make $1 <i>is</i> preferred over slower growing but consistent net profit generating ones.<p>By next year I anticipate ton of pain and anger. I took a look at some TC figures and they are roughly 30&#x2F;70 mix of cash and RSUs. Many of those people are also in debt through real estate using HELOCs too.<p>What I think we are headed for is something unprecedented because there are 3 major bubbles imploding: crypto, real estate, dot com<p>Even more crazy is that we had the exact setup going into the new millenia: e-gold, real estate, dot com but the difference back then was that monetary supply was nowhere near as low as they have been in the past 3 years (take a look at the M2 supply&#x2F;velocity chart).<p><a href=\"https:&#x2F;&#x2F;www.pennmutualam.com&#x2F;market-insights-news&#x2F;blogs&#x2F;chart-of-the-week&#x2F;2020-10-22-what-money-velocity-means-for-us-economic-recovery&#x2F;_res&#x2F;id=Picture&#x2F;money.png\" rel=\"nofollow\">https:&#x2F;&#x2F;www.pennmutualam.com&#x2F;market-insights-news&#x2F;blogs&#x2F;char...</a>",
+   "created_at": "2022-07-20T21:19:02Z",
+   "created_at_i": 1658351942,
+   "objectID": "32172480",
+   "parent_id": 32172377,
+   "story_id": 32170244,
+   "story_title": "VCs are scared when they should be greedy",
+   "story_url": "https://blog.aaronkharris.com/vcs-are-scared-when-they-should-be-greedy",
+   "updated_at": "2024-09-20T11:40:47Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "r00fus"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "cohort",
+      "chart",
+      "investors"
+     ],
+     "value": "Can anyone explain that first Zillow <em>chart</em>? I see nothing that's specifically targeted to the Apple employee <em>cohort</em>.<p>The article seems to play fast and loose with their data - wouldnt the areas inhabited by Apple employees also be home to Facebook and Google employees?<p>Phrases like &quot;tech workers aren't the only ones to blame... government zoning.. regulatory red tape... &quot; This article is a mish-mash of blame that just aims to make you angry.<p>Meanwhile no word given to foreign <em>investors</em>, or other wealthy speculators who are often the ones with all-cash offers and are likely just as much to blame for the soaring prices."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Apple Paychecks \u2013 One Reason for High Home Prices"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.wsj.com/articles/apple-payone-reason-for-high-home-prices-1445801810?alg=y"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_r00fus",
+    "story_10452395"
+   ],
+   "author": "r00fus",
+   "comment_text": "Can anyone explain that first Zillow chart? I see nothing that&#x27;s specifically targeted to the Apple employee cohort.<p>The article seems to play fast and loose with their data - wouldnt the areas inhabited by Apple employees also be home to Facebook and Google employees?<p>Phrases like &quot;tech workers aren&#x27;t the only ones to blame... government zoning.. regulatory red tape... &quot; This article is a mish-mash of blame that just aims to make you angry.<p>Meanwhile no word given to foreign investors, or other wealthy speculators who are often the ones with all-cash offers and are likely just as much to blame for the soaring prices.",
+   "created_at": "2015-10-26T17:55:27Z",
+   "created_at_i": 1445882127,
+   "objectID": "10453053",
+   "parent_id": 10452395,
+   "points": null,
+   "story_id": 10452395,
+   "story_title": "Apple Paychecks \u2013 One Reason for High Home Prices",
+   "story_url": "http://www.wsj.com/articles/apple-payone-reason-for-high-home-prices-1445801810?alg=y",
+   "updated_at": "2023-09-06T23:56:31Z"
+  }
+ ],
+ "hitsPerPage": 50,
+ "nbHits": 3,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=cohort+chart+investors&tags=comment&hitsPerPage=50&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 29,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 20
+  },
+  "afterFetch": {
+   "merge": {
+    "total": 1
+   },
+   "total": 1
+  },
+  "fetch": {
+   "query": 23,
+   "scanning": 3,
+   "total": 27
+  },
+  "total": 29
+ },
+ "query": "cohort chart investors",
+ "serverTimeMS": 30,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=cohort+chart+investors&tags=comment&hitsPerPage=50"
+}

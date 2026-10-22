@@ -1,0 +1,357 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "rvz"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "pitchbook",
+      "expensive"
+     ],
+     "value": "&quot;allegedly&quot;. There is a lot of accounting tricks with Anthropic's revenues and that revenue increase is based on its leaked balance sheet and 2 customers made up for a quarter of 2025 revenue. [0]<p>&gt; Maybe it\u2019s because the underlying economics have changed.<p>It hasn't. We just saw that OpenAI (who has the most debt out of all the other pure AI companies and borrowed more than Anthropic) signalled $20bn of ARR less than expected. [1]<p>Out of the hyperscalers, Oracle has over &gt;$100BN of debt and has tangled Softbank in the mess with another &gt;$100BN of debt.<p>One example (Anthropic) does not prove that anything has changed not is it even profitable. It just means that not only raising money isn't an option, both OpenAI and Anthropic have to IPO before interest rates start to increase (and they will) as borrowing becomes more <em>expensive</em>.<p>[0] <a href=\"https://global.morningstar.com/en-gb/markets/pitchbook-anthropics-leaked-financials-reflect-fast-growth-not-2-trillion-valuation\" rel=\"nofollow\">https://global.morningstar.com/en-gb/markets/<em>pitchbook</em>-anthr...</a><p>[1] <a href=\"https://www.ft.com/content/b66a9858-f8fb-46cb-b506-44bfe26fca2a?syn-25a6b1a6=1\" rel=\"nofollow\">https://www.ft.com/content/b66a9858-f8fb-46cb-b506-44bfe26fc...</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "AI borrowing slows as investors grow wary of debt binge"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.ft.com/content/9c13d40e-d2b2-45d5-921c-a68cd4b308f9"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_rvz",
+    "story_50032215"
+   ],
+   "author": "rvz",
+   "comment_text": "&quot;allegedly&quot;. There is a lot of accounting tricks with Anthropic&#x27;s revenues and that revenue increase is based on its leaked balance sheet and 2 customers made up for a quarter of 2025 revenue. [0]<p>&gt; Maybe it\u2019s because the underlying economics have changed.<p>It hasn&#x27;t. We just saw that OpenAI (who has the most debt out of all the other pure AI companies and borrowed more than Anthropic) signalled $20bn of ARR less than expected. [1]<p>Out of the hyperscalers, Oracle has over &gt;$100BN of debt and has tangled Softbank in the mess with another &gt;$100BN of debt.<p>One example (Anthropic) does not prove that anything has changed not is it even profitable. It just means that not only raising money isn&#x27;t an option, both OpenAI and Anthropic have to IPO before interest rates start to increase (and they will) as borrowing becomes more expensive.<p>[0] <a href=\"https:&#x2F;&#x2F;global.morningstar.com&#x2F;en-gb&#x2F;markets&#x2F;pitchbook-anthropics-leaked-financials-reflect-fast-growth-not-2-trillion-valuation\" rel=\"nofollow\">https:&#x2F;&#x2F;global.morningstar.com&#x2F;en-gb&#x2F;markets&#x2F;pitchbook-anthr...</a><p>[1] <a href=\"https:&#x2F;&#x2F;www.ft.com&#x2F;content&#x2F;b66a9858-f8fb-46cb-b506-44bfe26fca2a?syn-25a6b1a6=1\" rel=\"nofollow\">https:&#x2F;&#x2F;www.ft.com&#x2F;content&#x2F;b66a9858-f8fb-46cb-b506-44bfe26fc...</a>",
+   "created_at": "2026-10-10T12:49:37Z",
+   "created_at_i": 1791636577,
+   "objectID": "50032430",
+   "parent_id": 50032258,
+   "story_id": 50032215,
+   "story_title": "AI borrowing slows as investors grow wary of debt binge",
+   "story_url": "https://www.ft.com/content/9c13d40e-d2b2-45d5-921c-a68cd4b308f9",
+   "updated_at": "2026-10-10T12:52:15Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Apocryphon"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "pitchbook",
+      "expensive"
+     ],
+     "value": "The study is examining the amount of venture funding received in countries affected by GDPR, which seems unrelated to your statement \u201cstartups that never get off the ground because the cost of compliance is prohibitive\u201d. Investors backing off because of <i>perceived</i> costs of compliance do not necessarily mean compliance is all that much <em>expensive</em>. Furthermore, it would appear that the study is incomplete.<p>&gt; Wagman and Zhe Jin didn\u2019t break down their data by business model, but if companies in the data extraction business receive less funding, Europe as whole and European consumers in particular probably won\u2019t be any worse off.<p>&gt; There\u2019s also the question of data quality; Jia, Wagman and Zhe Jin cautioned in their paper that their dataset was not complete. And indeed, according to <em>Pitchbook</em>, a multinational firm that tracks public and private equity investment, while venture activity in Europe dropped somewhat in the third quarter and is likely to be relatively flat for the year as a whole, the share of capital received by software companies is higher than ever before, which would suggest tech innovation isn\u2019t exactly being stifled.<p>It would seem that we are an impasse until further empirical data is collected. Perhaps an American experiment is in order?"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Proposed Jail Time for Tech Companies Who Steal Data"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://trofire.com/2019/02/08/democrat-proposes-jail-time-for-tech-companies-who-steal-your-data/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Apocryphon",
+    "story_19124635"
+   ],
+   "author": "Apocryphon",
+   "children": [
+    19132535
+   ],
+   "comment_text": "The study is examining the amount of venture funding received in countries affected by GDPR, which seems unrelated to your statement \u201cstartups that never get off the ground because the cost of compliance is prohibitive\u201d. Investors backing off because of <i>perceived</i> costs of compliance do not necessarily mean compliance is all that much expensive. Furthermore, it would appear that the study is incomplete.<p>&gt; Wagman and Zhe Jin didn\u2019t break down their data by business model, but if companies in the data extraction business receive less funding, Europe as whole and European consumers in particular probably won\u2019t be any worse off.<p>&gt; There\u2019s also the question of data quality; Jia, Wagman and Zhe Jin cautioned in their paper that their dataset was not complete. And indeed, according to Pitchbook, a multinational firm that tracks public and private equity investment, while venture activity in Europe dropped somewhat in the third quarter and is likely to be relatively flat for the year as a whole, the share of capital received by software companies is higher than ever before, which would suggest tech innovation isn\u2019t exactly being stifled.<p>It would seem that we are an impasse until further empirical data is collected. Perhaps an American experiment is in order?",
+   "created_at": "2019-02-11T06:09:57Z",
+   "created_at_i": 1549865397,
+   "objectID": "19132420",
+   "parent_id": 19131558,
+   "story_id": 19124635,
+   "story_title": "Proposed Jail Time for Tech Companies Who Steal Data",
+   "story_url": "https://trofire.com/2019/02/08/democrat-proposes-jail-time-for-tech-companies-who-steal-your-data/",
+   "updated_at": "2024-09-20T03:42:05Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mythrwy"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "pitchbook",
+      "expensive"
+     ],
+     "value": "Evil censorship and PC brainwashing run amok?<p>or is this really<p>&quot;An update on our commitment to avoid <em>expensive</em> lawsuits and pesky Internet <em>pitchfork</em> campaigns by appearing to do something about content some people find objectionable&quot;?<p>I haven't decided yet."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "An update on our commitment to fight terror content online"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://youtube.googleblog.com/2017/08/an-update-on-our-commitment-to-fight.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mythrwy",
+    "story_14903370"
+   ],
+   "author": "mythrwy",
+   "comment_text": "Evil censorship and PC brainwashing run amok?<p>or is this really<p>&quot;An update on our commitment to avoid expensive lawsuits and pesky Internet pitchfork campaigns by appearing to do something about content some people find objectionable&quot;?<p>I haven&#x27;t decided yet.",
+   "created_at": "2017-08-01T23:04:34Z",
+   "created_at_i": 1501628674,
+   "objectID": "14906303",
+   "parent_id": 14903370,
+   "story_id": 14903370,
+   "story_title": "An update on our commitment to fight terror content online",
+   "story_url": "https://youtube.googleblog.com/2017/08/an-update-on-our-commitment-to-fight.html",
+   "updated_at": "2024-09-20T01:05:42Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "BoorishBears"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "pitchbook",
+      "expensive"
+     ],
+     "value": "There's an irony in your tone when you start off getting basic pertinent facts completely wrong...<p>Unity's latest quarter had them at about... -$200 million in profit.<p>They had one (!) profitable quarter in <i>eighteen years</i> of existing.<p>Now... I'm going to guess you Googled &quot;Unity profit&quot; and a headline from that one quarter... but I mean, did the price action not prompt you to at least <i>spot check?</i><p>&quot;Unreal Engine has been cheaper&quot;<p>And it's been more <em>expensive</em>. My comment covers why it got cheaper and why Unity can't rely on the same playbook.<p>&quot;This statement is verifiably untrue. Also personally untrue&quot;<p>That's... a combination of words!<p>_<p>Overall I think you need to put down the <em>pitchfork</em> and try reading what I wrote <i>slowly</i>.<p>It's not &quot;all over the place&quot; but it might be a little too methodical for some readers...<p>Unity provides a valuable service very cheaply, and the ship is going down for it. They should raise prices, but they should have done it in a way that doesn't turn them into a future case study in poor messaging."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Unity promises \u201cchanges\u201d to install fee plans as developer fallout continues"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://arstechnica.com/gaming/2023/09/unity-promises-changes-to-install-fee-plans-as-developer-fallout-continues/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_BoorishBears",
+    "story_37560055"
+   ],
+   "author": "BoorishBears",
+   "children": [
+    37564632
+   ],
+   "comment_text": "There&#x27;s an irony in your tone when you start off getting basic pertinent facts completely wrong...<p>Unity&#x27;s latest quarter had them at about... -$200 million in profit.<p>They had one (!) profitable quarter in <i>eighteen years</i> of existing.<p>Now... I&#x27;m going to guess you Googled &quot;Unity profit&quot; and a headline from that one quarter... but I mean, did the price action not prompt you to at least <i>spot check?</i><p>&quot;Unreal Engine has been cheaper&quot;<p>And it&#x27;s been more expensive. My comment covers why it got cheaper and why Unity can&#x27;t rely on the same playbook.<p>&quot;This statement is verifiably untrue. Also personally untrue&quot;<p>That&#x27;s... a combination of words!<p>_<p>Overall I think you need to put down the pitchfork and try reading what I wrote <i>slowly</i>.<p>It&#x27;s not &quot;all over the place&quot; but it might be a little too methodical for some readers...<p>Unity provides a valuable service very cheaply, and the ship is going down for it. They should raise prices, but they should have done it in a way that doesn&#x27;t turn them into a future case study in poor messaging.",
+   "created_at": "2023-09-19T01:03:03Z",
+   "created_at_i": 1695085383,
+   "objectID": "37564450",
+   "parent_id": 37563425,
+   "story_id": 37560055,
+   "story_title": "Unity promises \u201cchanges\u201d to install fee plans as developer fallout continues",
+   "story_url": "https://arstechnica.com/gaming/2023/09/unity-promises-changes-to-install-fee-plans-as-developer-fallout-continues/",
+   "updated_at": "2024-09-20T15:13:11Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "shaki-dora"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "pitchbook",
+      "expensive"
+     ],
+     "value": "I guess this headline makes one want to grab the <em>pitchfork</em>, but I don\u2019t know if we will end in a better place if carriers are barred from following the pricing strategy at the core of this.<p>LH is simply routing passengers like IP packages, where sometimes it may be more economical to, for example, go the long way around to get to the destination. In those cases, they want to charge you the (lower) price of your trip\u2019s usefulness to you, irregardless of the (longer) route it took you to get there.<p>Barring this practice will just make those flights more <em>expensive</em>, or potentially reduce competition on some rote that a carrier like LH does not service with direct flights.<p>The narrower court case is simply a matter of contract law. Sure, there need to be exceptions for sudden sickness or actual changes of plans, but those are factual questions, not ones of law at issue here. I\u2019m no fan of naive contract fetishism upholding the right to sign away your first-born n &amp;Cs. But this issue here really does not strike me as overtly one-sided."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Lufthansa Sues Hidden City Ticketholder for Throwing His Ticket"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.cnn.com/travel/article/lufthansa-sues-passenger-scli-intl/index.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_shaki-dora",
+    "story_19144006"
+   ],
+   "author": "shaki-dora",
+   "comment_text": "I guess this headline makes one want to grab the pitchfork, but I don\u2019t know if we will end in a better place if carriers are barred from following the pricing strategy at the core of this.<p>LH is simply routing passengers like IP packages, where sometimes it may be more economical to, for example, go the long way around to get to the destination. In those cases, they want to charge you the (lower) price of your trip\u2019s usefulness to you, irregardless of the (longer) route it took you to get there.<p>Barring this practice will just make those flights more expensive, or potentially reduce competition on some rote that a carrier like LH does not service with direct flights.<p>The narrower court case is simply a matter of contract law. Sure, there need to be exceptions for sudden sickness or actual changes of plans, but those are factual questions, not ones of law at issue here. I\u2019m no fan of naive contract fetishism upholding the right to sign away your first-born n &amp;Cs. But this issue here really does not strike me as overtly one-sided.",
+   "created_at": "2019-02-12T15:33:56Z",
+   "created_at_i": 1549985636,
+   "objectID": "19144273",
+   "parent_id": 19144006,
+   "story_id": 19144006,
+   "story_title": "Lufthansa Sues Hidden City Ticketholder for Throwing His Ticket",
+   "story_url": "https://www.cnn.com/travel/article/lufthansa-sues-passenger-scli-intl/index.html",
+   "updated_at": "2024-09-20T03:43:22Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "vamerock"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "pitchbook",
+      "expensive"
+     ],
+     "value": "Don't let the fact that he was 24 deter you. Over at r/bodyweightfitness, there are hundreds of people who started above 45 and are in better shapes than 20 year olds.<p>Obesity is now a taboo topic in tech because you might unfortunately step on the toes of a few sensitive people and be labelled a fat shamer. This is not the case.Obesity in tech is a disease on it's own and it needs to be fought with a sharp edged <em>pitchfork</em>. We need to help our colleagues who have lost hope and given up on ever being fit again.<p>It is never too late to get healthy again. If you're overweight and believe your work schedule cannot allow you to lose weight, give yourself a 6 - 8 month break. Step over to the r/bodyweightfitness Recommended beginner routine and make a big change in your life. You don't need an <em>expensive</em> gym membership. You can use the floor, parks, chairs, tables, doors, ledges, trees etc.<p>Sustainable weight loss is achievable by everyone, whether you're 40 or 50 years or 400 pounds or 600 pounds.<p>Consistency over time is the key!"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Data Driven Weight Loss: Losing 66 pounds and gaining a six pack in 8 months"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://debarghyadas.com/writes/transformation/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_vamerock",
+    "story_14931466"
+   ],
+   "author": "vamerock",
+   "children": [
+    14932535,
+    14932538,
+    14932612,
+    14932632,
+    14932638
+   ],
+   "comment_text": "Don&#x27;t let the fact that he was 24 deter you. Over at r&#x2F;bodyweightfitness, there are hundreds of people who started above 45 and are in better shapes than 20 year olds.<p>Obesity is now a taboo topic in tech because you might unfortunately step on the toes of a few sensitive people and be labelled a fat shamer. This is not the case.Obesity in tech is a disease on it&#x27;s own and it needs to be fought with a sharp edged pitchfork. We need to help our colleagues who have lost hope and given up on ever being fit again.<p>It is never too late to get healthy again. If you&#x27;re overweight and believe your work schedule cannot allow you to lose weight, give yourself a 6 - 8 month break. Step over to the r&#x2F;bodyweightfitness Recommended beginner routine and make a big change in your life. You don&#x27;t need an expensive gym membership. You can use the floor, parks, chairs, tables, doors, ledges, trees etc.<p>Sustainable weight loss is achievable by everyone, whether you&#x27;re 40 or 50 years or 400 pounds or 600 pounds.<p>Consistency over time is the key!",
+   "created_at": "2017-08-04T21:33:39Z",
+   "created_at_i": 1501882419,
+   "objectID": "14932490",
+   "parent_id": 14931466,
+   "story_id": 14931466,
+   "story_title": "Data Driven Weight Loss: Losing 66 pounds and gaining a six pack in 8 months",
+   "story_url": "http://debarghyadas.com/writes/transformation/",
+   "updated_at": "2024-09-20T01:08:30Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "MawNicker"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "pitchbook",
+      "expensive"
+     ],
+     "value": "No, I couldn't do it. Too disgusting. Yes, I do realize that's what I'm paying for. It's <em>expensive</em> but then I don't have to do the icky part. I'm cool with it.<p>I watched a video of a guy jabbing a cow with a <em>pitchfork</em>. It was pretty shitty. I think you could withhold any violence until the animal's final moments. That gets into realities of industrial efficiency and not the eating of meat. Things die. Should we cremate them? I realize going vegetarian solves the problem right now. That doesn't mean that eating meat is necessarily a part of the problem. I eat out a lot so I don't get all my meat from one source. But the meat I use at home I buy from a friend of my family. He raises the cows himself and &quot;loves&quot; them. My sister likes to go out there and feed them. It's a bit too mushy for me but I still like to think their happiness makes them taste better."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Rats free each other from cages (2011)"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.nature.com/news/rats-free-each-other-from-cages-1.9603"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_MawNicker",
+    "story_12025674"
+   ],
+   "author": "MawNicker",
+   "comment_text": "No, I couldn&#x27;t do it. Too disgusting. Yes, I do realize that&#x27;s what I&#x27;m paying for. It&#x27;s expensive but then I don&#x27;t have to do the icky part. I&#x27;m cool with it.<p>I watched a video of a guy jabbing a cow with a pitchfork. It was pretty shitty. I think you could withhold any violence until the animal&#x27;s final moments. That gets into realities of industrial efficiency and not the eating of meat. Things die. Should we cremate them? I realize going vegetarian solves the problem right now. That doesn&#x27;t mean that eating meat is necessarily a part of the problem. I eat out a lot so I don&#x27;t get all my meat from one source. But the meat I use at home I buy from a friend of my family. He raises the cows himself and &quot;loves&quot; them. My sister likes to go out there and feed them. It&#x27;s a bit too mushy for me but I still like to think their happiness makes them taste better.",
+   "created_at": "2016-07-03T14:36:34Z",
+   "created_at_i": 1467556594,
+   "objectID": "12026157",
+   "parent_id": 12026145,
+   "story_id": 12025674,
+   "story_title": "Rats free each other from cages (2011)",
+   "story_url": "http://www.nature.com/news/rats-free-each-other-from-cages-1.9603",
+   "updated_at": "2024-09-19T23:23:42Z"
+  }
+ ],
+ "hitsPerPage": 50,
+ "nbHits": 7,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=pitchbook+expensive&tags=comment&hitsPerPage=50&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 16,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 21
+  },
+  "afterFetch": {
+   "format": {
+    "total": 1
+   },
+   "merge": {
+    "mergeLoop": {
+     "prepareNextHit": 1,
+     "total": 1
+    },
+    "total": 1
+   },
+   "total": 1
+  },
+  "fetch": {
+   "query": 10,
+   "scanning": 2,
+   "total": 13
+  },
+  "total": 16
+ },
+ "query": "pitchbook expensive",
+ "serverTimeMS": 18,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=pitchbook+expensive&tags=comment&hitsPerPage=50"
+}

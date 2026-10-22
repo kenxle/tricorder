@@ -1,0 +1,481 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "PoslavskySV"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "accelerator",
+      "applications",
+      "screening"
+     ],
+     "value": "MiLaboratories | Bilbao, Spain | ONSITE | VISA SPONSORSHIP | RELOCATION SUPPORT<p>We are MiLaboratories, the team behind Platforma.bio &amp; MiXCR. We are building the &quot;OS for Biology&quot;\u2014a platform that processes terabytes of genomic data to <em>accelerate</em> biological discovery and drug development.<p>We are a deep-tech research lab, not a typical SaaS. We work fully on-site in Bilbao because the complexity of our problems (high-performance computing + biological nuances) requires high-bandwidth, in-person collaboration.<p>We are hiring for three core roles:<p>1. Senior TypeScript Engineer (Desktop Platform / SDK): This is not a dashboard or a simple web GUI. You will build the architecture of our Desktop Platform\u2014a high-performance local <em>application</em> that acts as the &quot;OS&quot; interface. You will deal with complex state management, massive data throughput, and bridge directly with our high-performance Rust data layer. We need someone who treats the browser engine as a runtime for heavy <em>applications</em>, not just for websites.<p>2. Senior Go Engineer: You will build distributed systems for high-load genomic data processing. This is not CRUD. We need someone who understands memory management, concurrency, and algorithmic efficiency at scale.<p>3. Bioinformatics Developer (Antibody Discovery): You will work on the scientific core, developing production blocks for NGS data analysis and antibody structure prediction. You should be fluent in both code and biology (Builder profile, not just analyst).<p>The Offer:<p>Comp: Top-tier EU salaries (~\u20ac90k - \u20ac120k).<p>Tax Advantage: Bizkaia has independent tax autonomy. You qualify for the &quot;Special Impatriate Regime&quot; (30% salary tax exemption + expense deductions).<p>The Reality: Your effective tax rate drops to ~15-20%, yielding a significantly higher net income than London or Berlin.<p>Stock: We grant ESOP and treat equity as a life-changing wealth vehicle, not a &quot;nice to have.&quot;<p>Relocation: Comprehensive &quot;Soft Landing&quot; package (Visa, temporary housing, school search).<p>Location: Bilbao is a hidden gem\u2014ocean, mountains, and high quality of life with a low cost of living.<p>Process: No HR <em>screening</em>. You will talk directly to the engineering team.<p>Email me (I am the CEO): stanp@milaboratories.com. Please mention &quot;HN&quot; in the subject and include your GitHub."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Who is hiring? (February 2026)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_PoslavskySV",
+    "story_46857488"
+   ],
+   "author": "PoslavskySV",
+   "comment_text": "MiLaboratories | Bilbao, Spain | ONSITE | VISA SPONSORSHIP | RELOCATION SUPPORT<p>We are MiLaboratories, the team behind Platforma.bio &amp; MiXCR. We are building the &quot;OS for Biology&quot;\u2014a platform that processes terabytes of genomic data to accelerate biological discovery and drug development.<p>We are a deep-tech research lab, not a typical SaaS. We work fully on-site in Bilbao because the complexity of our problems (high-performance computing + biological nuances) requires high-bandwidth, in-person collaboration.<p>We are hiring for three core roles:<p>1. Senior TypeScript Engineer (Desktop Platform &#x2F; SDK): This is not a dashboard or a simple web GUI. You will build the architecture of our Desktop Platform\u2014a high-performance local application that acts as the &quot;OS&quot; interface. You will deal with complex state management, massive data throughput, and bridge directly with our high-performance Rust data layer. We need someone who treats the browser engine as a runtime for heavy applications, not just for websites.<p>2. Senior Go Engineer: You will build distributed systems for high-load genomic data processing. This is not CRUD. We need someone who understands memory management, concurrency, and algorithmic efficiency at scale.<p>3. Bioinformatics Developer (Antibody Discovery): You will work on the scientific core, developing production blocks for NGS data analysis and antibody structure prediction. You should be fluent in both code and biology (Builder profile, not just analyst).<p>The Offer:<p>Comp: Top-tier EU salaries (~\u20ac90k - \u20ac120k).<p>Tax Advantage: Bizkaia has independent tax autonomy. You qualify for the &quot;Special Impatriate Regime&quot; (30% salary tax exemption + expense deductions).<p>The Reality: Your effective tax rate drops to ~15-20%, yielding a significantly higher net income than London or Berlin.<p>Stock: We grant ESOP and treat equity as a life-changing wealth vehicle, not a &quot;nice to have.&quot;<p>Relocation: Comprehensive &quot;Soft Landing&quot; package (Visa, temporary housing, school search).<p>Location: Bilbao is a hidden gem\u2014ocean, mountains, and high quality of life with a low cost of living.<p>Process: No HR screening. You will talk directly to the engineering team.<p>Email me (I am the CEO): stanp@milaboratories.com. Please mention &quot;HN&quot; in the subject and include your GitHub.",
+   "created_at": "2026-02-02T22:16:54Z",
+   "created_at_i": 1770070614,
+   "objectID": "46862621",
+   "parent_id": 46857488,
+   "story_id": 46857488,
+   "story_title": "Ask HN: Who is hiring? (February 2026)",
+   "updated_at": "2026-03-05T23:29:39Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "kmeisthax"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "accelerator",
+      "applications",
+      "screening"
+     ],
+     "value": "How the hell do better neural networks mean that printing material from CO2 emissions becomes financially viable, economic, or even just thermodynamically favored? A neural network is a tool for learning a particular statistical distribution. Processes and information we don't already know don't just fall out of the training distribution, you need to run experiments and prototype your way to get to the thing you want to do. You use neural networks when you want to do things at scale, and problems that have to be tackled at scale in R&amp;D or research work are relatively scarce.<p>I do not doubt that machine learning and neural networks will <em>accelerate</em> research, but the limiting factor is still going to be humans in the loop for the forseeable future given the current state of the art (e.g. LLMs with tree-of-thought reasoning and LLM-powered agents that are easily subverted in the same way one hacks a badly written PHP <em>application</em>). You will have people using ML to crunch large datasets or <em>accelerate</em> simulation work, but that's it.<p>Asymmetric attacks are very feasible with today's LLMs and art generators, but that harm has already come to pass. It is also not a <i>new</i> harm. If you don't believe me, then I've got hard evidence of Donald Trump cheating in Barack Obama's Minecraft server[3].<p>Also...<p>&gt; These include increasing the number of researchers working on safety (including \u201coff switches\u201d for software threatening to run out of control) from 300 or 400 currently to hundreds of thousands; fitting DNA synthesisers with a <em>screening</em> system that will report any pathogenic sequences; and thrashing out a system of international treaties to restrict and regulate dangerous tech.<p>Ok, so first off, all those AI safety researchers need to be fired if they thought 'off switches' were a good thing to mention here. It's already fairly well established AI safety canon that a &quot;sufficiently smart AI&quot; will reason about the off switch in a way that makes it useless[0].<p>Furthermore, notice how these are all obviously scary scenarios. The article fails to mention the mundane harms of AI: automation blind spots that render any human supervision useless[1]. I happen to share Suleyman's opposition to the PayPal brand of fauxbertarianism[2], but I would like to point out that they're on <i>your side</i>. Elon Musk talks about &quot;AI harms&quot; just like you do and thinks it needs to be regulated. The obvious choices of requiring a license to train AI is exactly the kind of regulatory capture that actual libertarians, right- or left-, would rail against. What we need are not bans or controls on training AI but bans or controls on businesses and governments using AI for safety-critical, business development, law enforcement, or executive functions. That is a harm that is here today, has been here for at least a decade, and could be regulated without stymieing research and creating &quot;AI NIMBYs&quot;.<p>[0] <a href=\"https://www.youtube.com/watch?v=3TYT1QfdfsM\">https://www.youtube.com/watch?v=3TYT1QfdfsM</a><p>[1] <a href=\"https://pluralistic.net/2023/08/23/automation-blindness/#humans-in-the-loop\" rel=\"nofollow noreferrer\">https://pluralistic.net/2023/08/23/automation-blindness/#hum...</a><p>[2] AKA, power is only bad if the fist has the word 'GOVERNMENT' written on it. Or 'let snek step on other snek'. This is distinct from just right-libertarianism.<p>[3] <a href=\"https://www.youtube.com/watch?v=aL1f6w-ziOM\">https://www.youtube.com/watch?v=aL1f6w-ziOM</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Co-founder of DeepMind on how AI threatens to reshape life as we know it"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.theguardian.com/books/2023/sep/02/i-hope-im-wrong-the-co-founder-of-deepmind-on-how-ai-threatens-to-reshape-life-as-we-know-it"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_kmeisthax",
+    "story_37419493"
+   ],
+   "author": "kmeisthax",
+   "comment_text": "How the hell do better neural networks mean that printing material from CO2 emissions becomes financially viable, economic, or even just thermodynamically favored? A neural network is a tool for learning a particular statistical distribution. Processes and information we don&#x27;t already know don&#x27;t just fall out of the training distribution, you need to run experiments and prototype your way to get to the thing you want to do. You use neural networks when you want to do things at scale, and problems that have to be tackled at scale in R&amp;D or research work are relatively scarce.<p>I do not doubt that machine learning and neural networks will accelerate research, but the limiting factor is still going to be humans in the loop for the forseeable future given the current state of the art (e.g. LLMs with tree-of-thought reasoning and LLM-powered agents that are easily subverted in the same way one hacks a badly written PHP application). You will have people using ML to crunch large datasets or accelerate simulation work, but that&#x27;s it.<p>Asymmetric attacks are very feasible with today&#x27;s LLMs and art generators, but that harm has already come to pass. It is also not a <i>new</i> harm. If you don&#x27;t believe me, then I&#x27;ve got hard evidence of Donald Trump cheating in Barack Obama&#x27;s Minecraft server[3].<p>Also...<p>&gt; These include increasing the number of researchers working on safety (including \u201coff switches\u201d for software threatening to run out of control) from 300 or 400 currently to hundreds of thousands; fitting DNA synthesisers with a screening system that will report any pathogenic sequences; and thrashing out a system of international treaties to restrict and regulate dangerous tech.<p>Ok, so first off, all those AI safety researchers need to be fired if they thought &#x27;off switches&#x27; were a good thing to mention here. It&#x27;s already fairly well established AI safety canon that a &quot;sufficiently smart AI&quot; will reason about the off switch in a way that makes it useless[0].<p>Furthermore, notice how these are all obviously scary scenarios. The article fails to mention the mundane harms of AI: automation blind spots that render any human supervision useless[1]. I happen to share Suleyman&#x27;s opposition to the PayPal brand of fauxbertarianism[2], but I would like to point out that they&#x27;re on <i>your side</i>. Elon Musk talks about &quot;AI harms&quot; just like you do and thinks it needs to be regulated. The obvious choices of requiring a license to train AI is exactly the kind of regulatory capture that actual libertarians, right- or left-, would rail against. What we need are not bans or controls on training AI but bans or controls on businesses and governments using AI for safety-critical, business development, law enforcement, or executive functions. That is a harm that is here today, has been here for at least a decade, and could be regulated without stymieing research and creating &quot;AI NIMBYs&quot;.<p>[0] <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=3TYT1QfdfsM\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=3TYT1QfdfsM</a><p>[1] <a href=\"https:&#x2F;&#x2F;pluralistic.net&#x2F;2023&#x2F;08&#x2F;23&#x2F;automation-blindness&#x2F;#humans-in-the-loop\" rel=\"nofollow noreferrer\">https:&#x2F;&#x2F;pluralistic.net&#x2F;2023&#x2F;08&#x2F;23&#x2F;automation-blindness&#x2F;#hum...</a><p>[2] AKA, power is only bad if the fist has the word &#x27;GOVERNMENT&#x27; written on it. Or &#x27;let snek step on other snek&#x27;. This is distinct from just right-libertarianism.<p>[3] <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=aL1f6w-ziOM\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=aL1f6w-ziOM</a>",
+   "created_at": "2023-09-07T16:29:52Z",
+   "created_at_i": 1694104192,
+   "objectID": "37421478",
+   "parent_id": 37419493,
+   "story_id": 37419493,
+   "story_title": "Co-founder of DeepMind on how AI threatens to reshape life as we know it",
+   "story_url": "https://www.theguardian.com/books/2023/sep/02/i-hope-im-wrong-the-co-founder-of-deepmind-on-how-ai-threatens-to-reshape-life-as-we-know-it",
+   "updated_at": "2025-08-15T22:09:54Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "kesterallen"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "accelerator",
+      "applications",
+      "screening"
+     ],
+     "value": "Amyris | Senior Software Engineer | Full-Time | REMOTE | <a href=\"https://amyris.com/\" rel=\"nofollow\">https://amyris.com/</a> | <a href=\"https://jobs.lever.co/amyris/d90f0327-eae0-49da-b2fa-5e10bae907cf\" rel=\"nofollow\">https://jobs.lever.co/amyris/d90f0327-eae0-49da-b2fa-5e10bae...</a> Senior Software Engineer<p>We are searching for a talented, curious, and self-motivated engineer to join our software engineering team in building the most advanced production-scale synthetic biology platform on the planet. R&amp;D at Amyris is a highly multidisciplinary effort, where we need brilliant contributions from every area of the life sciences and engineering disciplines in order to take projects from concept to market.<p>From hacking directly on DNA in the lab to full scale factory production, every aspect of our work is facilitated and <em>accelerated</em> by software and hardware automation. Our tools integrate the activities of scientists, engineers, and industrial robots to enable the rapid optimization of genetic designs and laboratory processes.<p>Among the tools we have developed are a CAD/CAM system for genetic engineering: a compiler toolchain whose target architecture is life itself. This stack physically integrates high level genetic modules into microbial hosts. We also derive novel strains through random mutagenesis and directed evolution. Using our custom control platform, we then subject these experimental organisms to high throughput performance <em>screening</em> in our state-of-the-art robot labs.<p>Responsibilities: Design, develop and maintain web based <em>application</em> written in Python. Collaborate with scientists to transform an understanding of their workflow into designs and implementations of appropriate data models and user interfaces. Effectively communicate with research scientists. Apply best practices of software development throughout your work, while staying abreast of advances in the practice.<p>Qualifications: 8+ years of professional programming experience Strong coding skills in either Python or a similar language. Ideally deep experience in multiple languages. In addition to Python, Amyris has codebases in F#, R and PHP (phasing out, but still have some important legacy code). Experience with full-stack web <em>application</em> development, including coding skills in Javascript, CSS and HTML. Relational database design and coding experience. We use PostgreSQL and SQL Server, though we also treat plasmids and chromosomes as datastores. Experience developing software in a Unix environment. Dev tools are chosen at the developer\u2019s discretion, but most of the software development and all production deployment is on Linux (Ubuntu). Fluent Linux command-line skills. Interest and ability to communicate with scientists Excellent written and verbal communication skills<p>At Amyris, we believe that diversity, equity, inclusion, and belonging (DEIB) is essential to our core values. We embrace and encourage an equity-minded work culture, knowing that it is the driving force of innovation that positively impacts our employees, consumers, and communities. And for Amyris, a sense of belonging is what drives our mission forward and is the foundation of everything we do, ensuring a healthier, more sustainable future for us all. Make Good, No Compromise."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Who is hiring? (August 2022)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_kesterallen",
+    "story_32306920"
+   ],
+   "author": "kesterallen",
+   "comment_text": "Amyris | Senior Software Engineer | Full-Time | REMOTE | <a href=\"https:&#x2F;&#x2F;amyris.com&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;amyris.com&#x2F;</a> | <a href=\"https:&#x2F;&#x2F;jobs.lever.co&#x2F;amyris&#x2F;d90f0327-eae0-49da-b2fa-5e10bae907cf\" rel=\"nofollow\">https:&#x2F;&#x2F;jobs.lever.co&#x2F;amyris&#x2F;d90f0327-eae0-49da-b2fa-5e10bae...</a> Senior Software Engineer<p>We are searching for a talented, curious, and self-motivated engineer to join our software engineering team in building the most advanced production-scale synthetic biology platform on the planet. R&amp;D at Amyris is a highly multidisciplinary effort, where we need brilliant contributions from every area of the life sciences and engineering disciplines in order to take projects from concept to market.<p>From hacking directly on DNA in the lab to full scale factory production, every aspect of our work is facilitated and accelerated by software and hardware automation. Our tools integrate the activities of scientists, engineers, and industrial robots to enable the rapid optimization of genetic designs and laboratory processes.<p>Among the tools we have developed are a CAD&#x2F;CAM system for genetic engineering: a compiler toolchain whose target architecture is life itself. This stack physically integrates high level genetic modules into microbial hosts. We also derive novel strains through random mutagenesis and directed evolution. Using our custom control platform, we then subject these experimental organisms to high throughput performance screening in our state-of-the-art robot labs.<p>Responsibilities: Design, develop and maintain web based application written in Python. Collaborate with scientists to transform an understanding of their workflow into designs and implementations of appropriate data models and user interfaces. Effectively communicate with research scientists. Apply best practices of software development throughout your work, while staying abreast of advances in the practice.<p>Qualifications: 8+ years of professional programming experience Strong coding skills in either Python or a similar language. Ideally deep experience in multiple languages. In addition to Python, Amyris has codebases in F#, R and PHP (phasing out, but still have some important legacy code). Experience with full-stack web application development, including coding skills in Javascript, CSS and HTML. Relational database design and coding experience. We use PostgreSQL and SQL Server, though we also treat plasmids and chromosomes as datastores. Experience developing software in a Unix environment. Dev tools are chosen at the developer\u2019s discretion, but most of the software development and all production deployment is on Linux (Ubuntu). Fluent Linux command-line skills. Interest and ability to communicate with scientists Excellent written and verbal communication skills<p>At Amyris, we believe that diversity, equity, inclusion, and belonging (DEIB) is essential to our core values. We embrace and encourage an equity-minded work culture, knowing that it is the driving force of innovation that positively impacts our employees, consumers, and communities. And for Amyris, a sense of belonging is what drives our mission forward and is the foundation of everything we do, ensuring a healthier, more sustainable future for us all. Make Good, No Compromise.",
+   "created_at": "2022-08-01T23:05:16Z",
+   "created_at_i": 1659395116,
+   "objectID": "32313251",
+   "parent_id": 32306920,
+   "story_id": 32306920,
+   "story_title": "Ask HN: Who is hiring? (August 2022)",
+   "updated_at": "2024-09-20T11:39:20Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "kesterallen"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "accelerator",
+      "applications",
+      "screening"
+     ],
+     "value": "Amyris | Senior Software Engineer | Full-Time | REMOTE | <a href=\"https://amyris.com/\" rel=\"nofollow\">https://amyris.com/</a> | <a href=\"https://jobs.lever.co/amyris/d90f0327-eae0-49da-b2fa-5e10bae907cf\" rel=\"nofollow\">https://jobs.lever.co/amyris/d90f0327-eae0-49da-b2fa-5e10bae...</a>\nSenior Software Engineer<p>We are searching for a talented, curious, and self-motivated engineer to join our software engineering team in building the most advanced production-scale synthetic biology platform on the planet. R&amp;D at Amyris is a highly multidisciplinary effort, where we need brilliant contributions from every area of the life sciences and engineering disciplines in order to take projects from concept to market.<p>From hacking directly on DNA in the lab to full scale factory production, every aspect of our work is facilitated and <em>accelerated</em> by software and hardware automation. Our tools integrate the activities of scientists, engineers, and industrial robots to enable the rapid optimization of genetic designs and laboratory processes.<p>Among the tools we have developed are a CAD/CAM system for genetic engineering: a compiler toolchain whose target architecture is life itself. This stack physically integrates high level genetic modules into microbial hosts. We also derive novel strains through random mutagenesis and directed evolution. Using our custom control platform, we then subject these experimental organisms to high throughput performance <em>screening</em> in our state-of-the-art robot labs.<p>Responsibilities: Design, develop and maintain web based <em>application</em> written in Python. Collaborate with scientists to transform an understanding of their workflow into designs and implementations of appropriate data models and user interfaces. Effectively communicate with research scientists. Apply best practices of software development throughout your work, while staying abreast of advances in the practice.<p>Qualifications: 8+ years of professional programming experience Strong coding skills in either Python or a similar language. Ideally deep experience in multiple languages. In addition to Python, Amyris has codebases in F#, R and PHP (phasing out, but still have some important legacy code). Experience with full-stack web <em>application</em> development, including coding skills in Javascript, CSS and HTML. Relational database design and coding experience. We use PostgreSQL and SQL Server, though we also treat plasmids and chromosomes as datastores. Experience developing software in a Unix environment. Dev tools are chosen at the developer\u2019s discretion, but most of the software development and all production deployment is on Linux (Ubuntu). Fluent Linux command-line skills. Interest and ability to communicate with scientists Excellent written and verbal communication skills<p>At Amyris, we believe that diversity, equity, inclusion, and belonging (DEIB) is essential to our core values. We embrace and encourage an equity-minded work culture, knowing that it is the driving force of innovation that positively impacts our employees, consumers, and communities. And for Amyris, a sense of belonging is what drives our mission forward and is the foundation of everything we do, ensuring a healthier, more sustainable future for us all. Make Good, No Compromise."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Who is hiring? (June 2022)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_kesterallen",
+    "story_31582796"
+   ],
+   "author": "kesterallen",
+   "comment_text": "Amyris | Senior Software Engineer | Full-Time | REMOTE | <a href=\"https:&#x2F;&#x2F;amyris.com&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;amyris.com&#x2F;</a> | <a href=\"https:&#x2F;&#x2F;jobs.lever.co&#x2F;amyris&#x2F;d90f0327-eae0-49da-b2fa-5e10bae907cf\" rel=\"nofollow\">https:&#x2F;&#x2F;jobs.lever.co&#x2F;amyris&#x2F;d90f0327-eae0-49da-b2fa-5e10bae...</a>\nSenior Software Engineer<p>We are searching for a talented, curious, and self-motivated engineer to join our software engineering team in building the most advanced production-scale synthetic biology platform on the planet. R&amp;D at Amyris is a highly multidisciplinary effort, where we need brilliant contributions from every area of the life sciences and engineering disciplines in order to take projects from concept to market.<p>From hacking directly on DNA in the lab to full scale factory production, every aspect of our work is facilitated and accelerated by software and hardware automation. Our tools integrate the activities of scientists, engineers, and industrial robots to enable the rapid optimization of genetic designs and laboratory processes.<p>Among the tools we have developed are a CAD&#x2F;CAM system for genetic engineering: a compiler toolchain whose target architecture is life itself. This stack physically integrates high level genetic modules into microbial hosts. We also derive novel strains through random mutagenesis and directed evolution. Using our custom control platform, we then subject these experimental organisms to high throughput performance screening in our state-of-the-art robot labs.<p>Responsibilities: Design, develop and maintain web based application written in Python. Collaborate with scientists to transform an understanding of their workflow into designs and implementations of appropriate data models and user interfaces. Effectively communicate with research scientists. Apply best practices of software development throughout your work, while staying abreast of advances in the practice.<p>Qualifications: 8+ years of professional programming experience Strong coding skills in either Python or a similar language. Ideally deep experience in multiple languages. In addition to Python, Amyris has codebases in F#, R and PHP (phasing out, but still have some important legacy code). Experience with full-stack web application development, including coding skills in Javascript, CSS and HTML. Relational database design and coding experience. We use PostgreSQL and SQL Server, though we also treat plasmids and chromosomes as datastores. Experience developing software in a Unix environment. Dev tools are chosen at the developer\u2019s discretion, but most of the software development and all production deployment is on Linux (Ubuntu). Fluent Linux command-line skills. Interest and ability to communicate with scientists Excellent written and verbal communication skills<p>At Amyris, we believe that diversity, equity, inclusion, and belonging (DEIB) is essential to our core values. We embrace and encourage an equity-minded work culture, knowing that it is the driving force of innovation that positively impacts our employees, consumers, and communities. And for Amyris, a sense of belonging is what drives our mission forward and is the foundation of everything we do, ensuring a healthier, more sustainable future for us all. Make Good, No Compromise.",
+   "created_at": "2022-06-01T17:38:20Z",
+   "created_at_i": 1654105100,
+   "objectID": "31585318",
+   "parent_id": 31582796,
+   "story_id": 31582796,
+   "story_title": "Ask HN: Who is hiring? (June 2022)",
+   "updated_at": "2024-09-20T11:18:54Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "apaugh"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "accelerator",
+      "applications",
+      "screening"
+     ],
+     "value": "Recursion Pharmaceuticals | Salt Lake City, Utah | Onsite, Full-Time | www.recursionpharma.com/careers<p>Meet us at Kafka Summit SF 2019 from Sept 30 - Oct 1. \nOur VP of Engineering Ben Mabey and Director of Data Engineering Scott Nielsen will be presenting on how we use Kafka Streams at Recursion. If you\u2019d like to meet them feel free to ping them directly!<p>We have raised over $200M to apply machine learning to one of the most unique datasets in existence - over 12 billion images of cells under a huge number of biological and chemical perturbations, generated in our own labs - in order to find treatments for hundreds of diseases. Our long term mission is to decode biology to radically improve lives - we want to understand biology so well that we can fix most things that go wrong in our bodies. Among other awesome folks, Yoshua Bengio is one of our advisors, and helps our ML team come up with novel ways of tackling these problems.\nWe\u2019re looking for:<p>*  Sr Data Scientists (SLC, UT): Looking for experienced Data Scientists both for our Innovation and Assay Development as well as Image Analysis and Quality teams. You\u2019ll work with our data, biology , high throughput <em>screening</em> (HTS), and engineering teams to identify and answer questions in high-dimensional data.<p>* Sr Full Stack Software Developer (SLC, UT): Looking for experienced Full Stack Software Developers for our <em>Accelerated</em> Pharma and Experiment Design/Lifecycle teams. You\u2019ll work closely with Biologists, Automation Scientists, and Data Scientists to build the infrastructure and <em>applications</em> needed to decode human biology and reinvent drug discovery.<p>* Software Engineering Manager (SLC, UT): Looking for an experienced Software Engineering Manager to join our team. You\u2019ll lead and guide two of the most important aspects of our organization - our people and the definition/execution of our technical strategy.<p>* Machine Learning Scientist (Anywhere): Looking for a highly experienced senior/principal-level Machine Learning Scientist who wants a challenging problem, lots of rich data, and knowledge that their breakthroughs will seriously help people. No bio background needed.<p>Additional roles we are hiring for: \n* Biologist, Computational Chemists, Automation Engineer, and Drug Discovery experts.<p><a href=\"http://www.recursionpharma.com/careers\" rel=\"nofollow\">http://www.recursionpharma.com/careers</a> for more details and to apply.<p>Logistics: Salt Lake City, Utah. Hiking/running/biking is literally out our back door, and it's half an hour to 6 ski resorts. Great competitive pay, health insurance, 401k, relocation assistance, equity, fully-paid gym membership, complementary chef-prepared meals everyday, two one-week paid company closures in addition to flexible, generous vacation, 70ft onsite rock climbing wall, commuter benefits,  a top-caliber team, and help make a massively positive human impact. Happy to sponsor/extend visas.<p>Tech: \nData Science: pydata stack (pandas, numpy, scikit-learn, matplotlib, bokeh, tensorflow w/keras, etc), a cluster of GPUs for all your research ideas\nSoftware Engineering: python, clojure[script], javascript, go, react.js, kafka, kubernetes (GKE), GCE, AWS<p>Our team of 159 so far: <a href=\"http://www.recursionpharma.com/team\" rel=\"nofollow\">http://www.recursionpharma.com/team</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Who is hiring? (October 2019)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_apaugh",
+    "story_21126014"
+   ],
+   "author": "apaugh",
+   "children": [
+    21127459,
+    21138492
+   ],
+   "comment_text": "Recursion Pharmaceuticals | Salt Lake City, Utah | Onsite, Full-Time | www.recursionpharma.com&#x2F;careers<p>Meet us at Kafka Summit SF 2019 from Sept 30 - Oct 1. \nOur VP of Engineering Ben Mabey and Director of Data Engineering Scott Nielsen will be presenting on how we use Kafka Streams at Recursion. If you\u2019d like to meet them feel free to ping them directly!<p>We have raised over $200M to apply machine learning to one of the most unique datasets in existence - over 12 billion images of cells under a huge number of biological and chemical perturbations, generated in our own labs - in order to find treatments for hundreds of diseases. Our long term mission is to decode biology to radically improve lives - we want to understand biology so well that we can fix most things that go wrong in our bodies. Among other awesome folks, Yoshua Bengio is one of our advisors, and helps our ML team come up with novel ways of tackling these problems.\nWe\u2019re looking for:<p>*  Sr Data Scientists (SLC, UT): Looking for experienced Data Scientists both for our Innovation and Assay Development as well as Image Analysis and Quality teams. You\u2019ll work with our data, biology , high throughput screening (HTS), and engineering teams to identify and answer questions in high-dimensional data.<p>* Sr Full Stack Software Developer (SLC, UT): Looking for experienced Full Stack Software Developers for our Accelerated Pharma and Experiment Design&#x2F;Lifecycle teams. You\u2019ll work closely with Biologists, Automation Scientists, and Data Scientists to build the infrastructure and applications needed to decode human biology and reinvent drug discovery.<p>* Software Engineering Manager (SLC, UT): Looking for an experienced Software Engineering Manager to join our team. You\u2019ll lead and guide two of the most important aspects of our organization - our people and the definition&#x2F;execution of our technical strategy.<p>* Machine Learning Scientist (Anywhere): Looking for a highly experienced senior&#x2F;principal-level Machine Learning Scientist who wants a challenging problem, lots of rich data, and knowledge that their breakthroughs will seriously help people. No bio background needed.<p>Additional roles we are hiring for: \n* Biologist, Computational Chemists, Automation Engineer, and Drug Discovery experts.<p><a href=\"http:&#x2F;&#x2F;www.recursionpharma.com&#x2F;careers\" rel=\"nofollow\">http:&#x2F;&#x2F;www.recursionpharma.com&#x2F;careers</a> for more details and to apply.<p>Logistics: Salt Lake City, Utah. Hiking&#x2F;running&#x2F;biking is literally out our back door, and it&#x27;s half an hour to 6 ski resorts. Great competitive pay, health insurance, 401k, relocation assistance, equity, fully-paid gym membership, complementary chef-prepared meals everyday, two one-week paid company closures in addition to flexible, generous vacation, 70ft onsite rock climbing wall, commuter benefits,  a top-caliber team, and help make a massively positive human impact. Happy to sponsor&#x2F;extend visas.<p>Tech: \nData Science: pydata stack (pandas, numpy, scikit-learn, matplotlib, bokeh, tensorflow w&#x2F;keras, etc), a cluster of GPUs for all your research ideas\nSoftware Engineering: python, clojure[script], javascript, go, react.js, kafka, kubernetes (GKE), GCE, AWS<p>Our team of 159 so far: <a href=\"http:&#x2F;&#x2F;www.recursionpharma.com&#x2F;team\" rel=\"nofollow\">http:&#x2F;&#x2F;www.recursionpharma.com&#x2F;team</a>",
+   "created_at": "2019-10-01T15:12:06Z",
+   "created_at_i": 1569942726,
+   "objectID": "21126196",
+   "parent_id": 21126014,
+   "story_id": 21126014,
+   "story_title": "Ask HN: Who is hiring? (October 2019)",
+   "updated_at": "2024-09-20T04:57:04Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "rdtsc"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "accelerator",
+      "applications",
+      "screening"
+     ],
+     "value": "&gt; multithreaded Erlang implementation will usually be trounced by a good singlethreaded C++/Go/Java implementation<p>And Go/Java implementation can be trounced by hand written assembly and ASIC <em>accelerators</em> probably.<p>&gt;  All this stuff about multicore scaling is baloney<p>You say baloney I say money in the pocket. I've seen it scale, I've seen it work reliably in large clusters, I've been able to inspect, debug and hotpatch running systems while they are still running. I have seen systems which had non-critical components crash and auto-restart for days without impacting customers and needed teams of &quot;devops&quot; to babysit it.<p>Moreover I've see single and multi-threaded C++ and Java <em>applications</em> with threads and and data races which take weeks or months to find. Or they are <em>screaming</em> fast until they take a nosedive and segfault (also in some minor stupid new feature which nobody uses). You know what the transaction processing rate of a segfaulted process is? - 0 tps.<p>That's why teams like Whatsapp could get by with only 10 or so back-end engineers handling billions of messages / day from various devices new and old, while other companies need 10x or even 20x more than that.<p>It is not just being able to run fast. Assembly runs very fast. It is also about being able to have the right tools and abstraction to define a problem. Erlang has those and they come built-in (the OTP library, the distribution protocol etc), C++ doesn't, so have to start from STL and boost and so on, then get serialization, monitoring, supervision, etc bootstrapped."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Why Erlang Matters"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://sameroom.io/blog/why-erlang-matters"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_rdtsc",
+    "story_11449767"
+   ],
+   "author": "rdtsc",
+   "comment_text": "&gt; multithreaded Erlang implementation will usually be trounced by a good singlethreaded C++&#x2F;Go&#x2F;Java implementation<p>And Go&#x2F;Java implementation can be trounced by hand written assembly and ASIC accelerators probably.<p>&gt;  All this stuff about multicore scaling is baloney<p>You say baloney I say money in the pocket. I&#x27;ve seen it scale, I&#x27;ve seen it work reliably in large clusters, I&#x27;ve been able to inspect, debug and hotpatch running systems while they are still running. I have seen systems which had non-critical components crash and auto-restart for days without impacting customers and needed teams of &quot;devops&quot; to babysit it.<p>Moreover I&#x27;ve see single and multi-threaded C++ and Java applications with threads and and data races which take weeks or months to find. Or they are screaming fast until they take a nosedive and segfault (also in some minor stupid new feature which nobody uses). You know what the transaction processing rate of a segfaulted process is? - 0 tps.<p>That&#x27;s why teams like Whatsapp could get by with only 10 or so back-end engineers handling billions of messages &#x2F; day from various devices new and old, while other companies need 10x or even 20x more than that.<p>It is not just being able to run fast. Assembly runs very fast. It is also about being able to have the right tools and abstraction to define a problem. Erlang has those and they come built-in (the OTP library, the distribution protocol etc), C++ doesn&#x27;t, so have to start from STL and boost and so on, then get serialization, monitoring, supervision, etc bootstrapped.",
+   "created_at": "2016-04-08T03:51:24Z",
+   "created_at_i": 1460087484,
+   "objectID": "11452467",
+   "parent_id": 11450749,
+   "story_id": 11449767,
+   "story_title": "Why Erlang Matters",
+   "story_url": "https://sameroom.io/blog/why-erlang-matters",
+   "updated_at": "2024-09-19T23:03:53Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "const_cast"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "accelerator",
+      "applications",
+      "screening"
+     ],
+     "value": "I'm talking about very, very basic features like changing input/output at runtime, graphics <em>acceleration</em>, and scaling.<p>These are janky on X. I'm sorry, they are and we all know it, across many drivers, not just nvidia.<p>Yes, Wayland is missing some very niche usecases. For my money, I'd rather be able to plug in a monitor without a restart than have a &quot;not-rectangular window&quot;. If your priorities are different then fine, I can't argue with lived experience.<p>Also, for the record, some X &quot;features&quot; were always a bad idea. The whole &quot;every <em>application</em> being to record everything at any time with no permission model&quot; isn't a feature, it's just a vulnerability. Yes, that means we now have to be much more <i>deliberate</i> with how we control these things, so we have popups and portals and whatnot. But that is actually a big improvement from the alternative, which is every <em>application</em> comes with a built-in free keylogger and <em>screenlog</em>ger that you're just kind of hoping nobody is using for nefarious purposes."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The X.Org Server just got forked (announcing XLibre)"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://github.com/X11Libre/xserver/commits/xlibre/prepare/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_const_cast",
+    "story_44199502"
+   ],
+   "author": "const_cast",
+   "children": [
+    44209772
+   ],
+   "comment_text": "I&#x27;m talking about very, very basic features like changing input&#x2F;output at runtime, graphics acceleration, and scaling.<p>These are janky on X. I&#x27;m sorry, they are and we all know it, across many drivers, not just nvidia.<p>Yes, Wayland is missing some very niche usecases. For my money, I&#x27;d rather be able to plug in a monitor without a restart than have a &quot;not-rectangular window&quot;. If your priorities are different then fine, I can&#x27;t argue with lived experience.<p>Also, for the record, some X &quot;features&quot; were always a bad idea. The whole &quot;every application being to record everything at any time with no permission model&quot; isn&#x27;t a feature, it&#x27;s just a vulnerability. Yes, that means we now have to be much more <i>deliberate</i> with how we control these things, so we have popups and portals and whatnot. But that is actually a big improvement from the alternative, which is every application comes with a built-in free keylogger and screenlogger that you&#x27;re just kind of hoping nobody is using for nefarious purposes.",
+   "created_at": "2025-06-07T12:36:25Z",
+   "created_at_i": 1749299785,
+   "objectID": "44209244",
+   "parent_id": 44208348,
+   "story_id": 44199502,
+   "story_title": "The X.Org Server just got forked (announcing XLibre)",
+   "story_url": "https://github.com/X11Libre/xserver/commits/xlibre/prepare/",
+   "updated_at": "2025-08-03T12:39:55Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "rasz"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "accelerator",
+      "applications",
+      "screening"
+     ],
+     "value": "P4. You, like most people at the time (until AMD response and subsequent article), missed a trick Toms Hardware employed :(. Undoubtedly following Intel &quot;suggestions&quot; send together with P4 sample press kit, Toms Hardware used specific P3 motherboard with external thermal protection. P3 CPU neither throttled nor shut down on its own, and we dont even see in the video if it survived either. External thermal protection circuit on the motherboard detected high temperature and cut out CPU supply voltage, exactly as described in &quot;Pentium III Processor Active Thermal Management Techniques&quot; <a href=\"http://notes-application.abcelectronique.com/027/27-46150.pdf\" rel=\"nofollow\">http://notes-<em>application</em>.abcelectronique.com/027/27-46150.pd...</a> AMD had analogous app note. Motherboard used in Toms Hardware video, Siemens one, was supposedly equipped with very same circuit, it failed. AMD was blamed instead of Siemens.<p>This was at the height of Intel meddling. They directly bribed vendors, ugh Im sorry, I meant offered rebates under MCP (Meet Comp Program) in exchange for strict no AMD commitments. DELL, HP all took Intel $, $6 billion in kick-backs.<p>Another Intel tactic was manufacturing facts and positive press stories, something we now call fake news. Ubisoft loves money, so it will come as no surprise to learn they took a brib^^ promotional marketing funds to plaster huge &quot;Designed for Intel MMX&quot; on game BOX <a href=\"https://www.mobygames.com/images/covers/l/51358-pod-windows-front-cover.jpg\" rel=\"nofollow\">https://www.mobygames.com/images/covers/l/51358-pod-windows-...</a>\nHint: MMX is Integer math only, unsuitable for accelerating 3D games. Whats worse MMX has no dedicated registers, and instead reuses/shares FPU ones, this means you cant use MMX and FPU (all 3D code pre Direct3D 7 Hardware T&amp;L) at the same time. In POD its used for one specific sound effect (audio filter) and has zero influence on game speed.\nBTW this wouldnt be the 1st time Ubisoft sold its clients to a highest bidder. Nvidia copied this technique with &quot;the way its meant to be played&quot; campaign <a href=\"https://news.ycombinator.com/item?id=22090413\" rel=\"nofollow\">https://news.ycombinator.com/item?id=22090413</a>.<p>Intel SSE also got a big push with fake 3D <em>acceleration</em> claims <a href=\"https://www.vogons.org/viewtopic.php?f=46&amp;t=65247&amp;start=20#p734738\" rel=\"nofollow\">https://www.vogons.org/viewtopic.php?f=46&amp;t=65247&amp;start=20#p...</a><p>Intel version:\n&quot;At the time, I was working for Intel and was involved in the launch of the Pentium 3, aka Katmai.<p>We _engaged_ a number of games manufacturers to provide demos showcasing not only <em>Screaming</em> Sindy's Extensions, but the arcane and mysterious Katmai New Instructions.<p>One such outfit was Rage Software, now sadly deceased. Rage provided demos of Incoming and an early prototype of a game called Dispatched, which as far as I know never actually saw the light of day. Dispatched featured a strangely-arousing cat riding a jet powered motorcycle. The first version I saw was running on a 400MHz Katmai and was still in wireframe. It was bloody impressive.&quot;<p>Reality, according to hardware.fr:\n&quot;Let's start with Dispatched first. This is actually a Rage Software game that should come out late 99, which Intel showed the demo at Comdex Fall to highlight the benefits of the SSE. Big interest, it is possible to enable or disable the use of SSE instructions at any time.<p>Nothing to say in terms of speed, it goes squarely faster once the SSE activated, + 50% to + 100% depending on the scenes! But looking closely at the demo, we notice - as you can see on the screenshots - that the _SSE version is less detailed_ than the non-SSE version (see the ground). Intel would you try to roll the journalists in the flour?&quot;<p>SSE version is less detailed? How convenient! Rage Software Dispatched never came out. The only outfit, other than Intel, in possession of this software was Anandtech. They used this exclusive press access to pimp out Pentium 3 benchmarks manufacturing fiction like this <a href=\"https://images.anandtech.com/old/cpu/intel-pentium3/Image94.gif\" rel=\"nofollow\">https://images.anandtech.com/old/cpu/intel-pentium3/Image94....</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "AMD Threadripper 3990X 64-Core beats dual Xeon Platinum 8280 in benchmark leak"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://hothardware.com/news/amd-threadripper-3990x-crushing-xeon-platinum-8280-cpus"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_rasz",
+    "story_22233113"
+   ],
+   "author": "rasz",
+   "comment_text": "P4. You, like most people at the time (until AMD response and subsequent article), missed a trick Toms Hardware employed :(. Undoubtedly following Intel &quot;suggestions&quot; send together with P4 sample press kit, Toms Hardware used specific P3 motherboard with external thermal protection. P3 CPU neither throttled nor shut down on its own, and we dont even see in the video if it survived either. External thermal protection circuit on the motherboard detected high temperature and cut out CPU supply voltage, exactly as described in &quot;Pentium III Processor Active Thermal Management Techniques&quot; <a href=\"http:&#x2F;&#x2F;notes-application.abcelectronique.com&#x2F;027&#x2F;27-46150.pdf\" rel=\"nofollow\">http:&#x2F;&#x2F;notes-application.abcelectronique.com&#x2F;027&#x2F;27-46150.pd...</a> AMD had analogous app note. Motherboard used in Toms Hardware video, Siemens one, was supposedly equipped with very same circuit, it failed. AMD was blamed instead of Siemens.<p>This was at the height of Intel meddling. They directly bribed vendors, ugh Im sorry, I meant offered rebates under MCP (Meet Comp Program) in exchange for strict no AMD commitments. DELL, HP all took Intel $, $6 billion in kick-backs.<p>Another Intel tactic was manufacturing facts and positive press stories, something we now call fake news. Ubisoft loves money, so it will come as no surprise to learn they took a brib^^ promotional marketing funds to plaster huge &quot;Designed for Intel MMX&quot; on game BOX <a href=\"https:&#x2F;&#x2F;www.mobygames.com&#x2F;images&#x2F;covers&#x2F;l&#x2F;51358-pod-windows-front-cover.jpg\" rel=\"nofollow\">https:&#x2F;&#x2F;www.mobygames.com&#x2F;images&#x2F;covers&#x2F;l&#x2F;51358-pod-windows-...</a>\nHint: MMX is Integer math only, unsuitable for accelerating 3D games. Whats worse MMX has no dedicated registers, and instead reuses&#x2F;shares FPU ones, this means you cant use MMX and FPU (all 3D code pre Direct3D 7 Hardware T&amp;L) at the same time. In POD its used for one specific sound effect (audio filter) and has zero influence on game speed.\nBTW this wouldnt be the 1st time Ubisoft sold its clients to a highest bidder. Nvidia copied this technique with &quot;the way its meant to be played&quot; campaign <a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=22090413\" rel=\"nofollow\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=22090413</a>.<p>Intel SSE also got a big push with fake 3D acceleration claims <a href=\"https:&#x2F;&#x2F;www.vogons.org&#x2F;viewtopic.php?f=46&amp;t=65247&amp;start=20#p734738\" rel=\"nofollow\">https:&#x2F;&#x2F;www.vogons.org&#x2F;viewtopic.php?f=46&amp;t=65247&amp;start=20#p...</a><p>Intel version:\n&quot;At the time, I was working for Intel and was involved in the launch of the Pentium 3, aka Katmai.<p>We _engaged_ a number of games manufacturers to provide demos showcasing not only Screaming Sindy&#x27;s Extensions, but the arcane and mysterious Katmai New Instructions.<p>One such outfit was Rage Software, now sadly deceased. Rage provided demos of Incoming and an early prototype of a game called Dispatched, which as far as I know never actually saw the light of day. Dispatched featured a strangely-arousing cat riding a jet powered motorcycle. The first version I saw was running on a 400MHz Katmai and was still in wireframe. It was bloody impressive.&quot;<p>Reality, according to hardware.fr:\n&quot;Let&#x27;s start with Dispatched first. This is actually a Rage Software game that should come out late 99, which Intel showed the demo at Comdex Fall to highlight the benefits of the SSE. Big interest, it is possible to enable or disable the use of SSE instructions at any time.<p>Nothing to say in terms of speed, it goes squarely faster once the SSE activated, + 50% to + 100% depending on the scenes! But looking closely at the demo, we notice - as you can see on the screenshots - that the _SSE version is less detailed_ than the non-SSE version (see the ground). Intel would you try to roll the journalists in the flour?&quot;<p>SSE version is less detailed? How convenient! Rage Software Dispatched never came out. The only outfit, other than Intel, in possession of this software was Anandtech. They used this exclusive press access to pimp out Pentium 3 benchmarks manufacturing fiction like this <a href=\"https:&#x2F;&#x2F;images.anandtech.com&#x2F;old&#x2F;cpu&#x2F;intel-pentium3&#x2F;Image94.gif\" rel=\"nofollow\">https:&#x2F;&#x2F;images.anandtech.com&#x2F;old&#x2F;cpu&#x2F;intel-pentium3&#x2F;Image94....</a>",
+   "created_at": "2020-02-04T22:32:14Z",
+   "created_at_i": 1580855534,
+   "objectID": "22241800",
+   "parent_id": 22239926,
+   "story_id": 22233113,
+   "story_title": "AMD Threadripper 3990X 64-Core beats dual Xeon Platinum 8280 in benchmark leak",
+   "story_url": "https://hothardware.com/news/amd-threadripper-3990x-crushing-xeon-platinum-8280-cpus",
+   "updated_at": "2024-09-20T05:39:48Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "akanet"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "accelerator",
+      "applications",
+      "screening"
+     ],
+     "value": "I think there is a stunning amount of &quot;resource cynicism&quot; in this thread. Yes, this <em>application</em> uses much more RAM and CPU than a &quot;normal&quot; terminal emulator. The project author is clearly trying to explore other ways that terminal interaction could work, and is using a well known framework to <em>accelerate</em> this process. If you use this project, you're using it to experiment with a new way of working with the terminal, not to get <em>screaming</em> fast GPU accelerated screen rendering. Potentially discovering new, valuable ways of working with computers is worth doing, and should be encouraged."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Black Screen \u2013 Both a terminal emulator and an interactive shell"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://github.com/vshatskyi/black-screen"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_akanet",
+    "story_14253906"
+   ],
+   "author": "akanet",
+   "children": [
+    14254539,
+    14254948,
+    14256785,
+    14256966,
+    14258010,
+    14258512,
+    14258956,
+    14259129,
+    14261151
+   ],
+   "comment_text": "I think there is a stunning amount of &quot;resource cynicism&quot; in this thread. Yes, this application uses much more RAM and CPU than a &quot;normal&quot; terminal emulator. The project author is clearly trying to explore other ways that terminal interaction could work, and is using a well known framework to accelerate this process. If you use this project, you&#x27;re using it to experiment with a new way of working with the terminal, not to get screaming fast GPU accelerated screen rendering. Potentially discovering new, valuable ways of working with computers is worth doing, and should be encouraged.",
+   "created_at": "2017-05-03T09:47:55Z",
+   "created_at_i": 1493804875,
+   "objectID": "14254252",
+   "parent_id": 14253906,
+   "story_id": 14253906,
+   "story_title": "Black Screen \u2013 Both a terminal emulator and an interactive shell",
+   "story_url": "https://github.com/vshatskyi/black-screen",
+   "updated_at": "2024-09-20T00:47:02Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "StillBored"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "accelerator",
+      "applications",
+      "screening"
+     ],
+     "value": "Ok, I'm a long time suse fan (ever since I dropped mandrake). But, mostly I run it in desktop VM's (openSuse) or on server class machines (sles).  With the late 12.x series, it was working so well as a desktop OS in the VM that I decided to install it on a real piece of hardware and use it as a daily driver. That was a first for me in about 10 years. And it mostly worked on the laptop I installed it on. Wifi (including fn/enabled/disable buttons, and transitions between networks/wired/etc), suspend/resume, 3d <em>acceleration</em>/opengl, keyboard volume controls, etc all just worked. About the only thing that required futzing was the LCD brightness keyboard bindings were dorked (even though its a standard i3/etc machine) and the bluetooth was also broken. Three or four hours of recompiling modules, and messing with KDE/etc and everything on the machine worked. That made it the _ONLY_ laptop I've ever seen that worked without compromises in linux.<p>Fantastic experience, but with the 13.x series it seemed to go downhill a little. Enough that I stopped upgrading it because things break and I have to screw with it.<p>I wanted to like the leap concept, but it seems so many things were broken that the two days I spent trying to install it on a fairly normal x99 machine with a NVMe drive that I reverted it back to running it in a windows hosted VM.<p>I can't imagine what tumbleweed is like. Getting the kernel to boot and X to display graphics is just the first steps in my book. Plus, don't get me started on the UI changes. I want my desktop machine, and my servers to be _STABLE_. <em>Screwing</em> around with the bluetooth driver every time the kernel gets upgraded (or something similar) isn't something I want to be dealing with when I have actual work that needs finishing.<p>So, before someone tells me to try ubuntu/etc I'm going to say that I regularly run fedora/ubuntu/etc and they all have enough hangups that I continue to run opensuse based products at home (work has a different set of requirements, where I've been fedora/RHEL based recently rather than opensuse/sles).<p>Anyway, I really wish someone would take the leap type concept and stabilize the base OS/X/KDE and maintain it for a long time period while assuring that newer version of linux <em>applications</em> continue to work on that platform. You know, like windows (before 10). That way I won't have to worry that my 1 year old KDE version is to old to run a cd ripping application (or whatever)."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Why You Should Use Tumbleweed"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://rootco.de/2016-03-28-why-use-tumbleweed/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_StillBored",
+    "story_11385287"
+   ],
+   "author": "StillBored",
+   "children": [
+    11387153
+   ],
+   "comment_text": "Ok, I&#x27;m a long time suse fan (ever since I dropped mandrake). But, mostly I run it in desktop VM&#x27;s (openSuse) or on server class machines (sles).  With the late 12.x series, it was working so well as a desktop OS in the VM that I decided to install it on a real piece of hardware and use it as a daily driver. That was a first for me in about 10 years. And it mostly worked on the laptop I installed it on. Wifi (including fn&#x2F;enabled&#x2F;disable buttons, and transitions between networks&#x2F;wired&#x2F;etc), suspend&#x2F;resume, 3d acceleration&#x2F;opengl, keyboard volume controls, etc all just worked. About the only thing that required futzing was the LCD brightness keyboard bindings were dorked (even though its a standard i3&#x2F;etc machine) and the bluetooth was also broken. Three or four hours of recompiling modules, and messing with KDE&#x2F;etc and everything on the machine worked. That made it the _ONLY_ laptop I&#x27;ve ever seen that worked without compromises in linux.<p>Fantastic experience, but with the 13.x series it seemed to go downhill a little. Enough that I stopped upgrading it because things break and I have to screw with it.<p>I wanted to like the leap concept, but it seems so many things were broken that the two days I spent trying to install it on a fairly normal x99 machine with a NVMe drive that I reverted it back to running it in a windows hosted VM.<p>I can&#x27;t imagine what tumbleweed is like. Getting the kernel to boot and X to display graphics is just the first steps in my book. Plus, don&#x27;t get me started on the UI changes. I want my desktop machine, and my servers to be _STABLE_. Screwing around with the bluetooth driver every time the kernel gets upgraded (or something similar) isn&#x27;t something I want to be dealing with when I have actual work that needs finishing.<p>So, before someone tells me to try ubuntu&#x2F;etc I&#x27;m going to say that I regularly run fedora&#x2F;ubuntu&#x2F;etc and they all have enough hangups that I continue to run opensuse based products at home (work has a different set of requirements, where I&#x27;ve been fedora&#x2F;RHEL based recently rather than opensuse&#x2F;sles).<p>Anyway, I really wish someone would take the leap type concept and stabilize the base OS&#x2F;X&#x2F;KDE and maintain it for a long time period while assuring that newer version of linux applications continue to work on that platform. You know, like windows (before 10). That way I won&#x27;t have to worry that my 1 year old KDE version is to old to run a cd ripping application (or whatever).",
+   "created_at": "2016-03-30T05:25:33Z",
+   "created_at_i": 1459315533,
+   "objectID": "11387142",
+   "parent_id": 11385287,
+   "story_id": 11385287,
+   "story_title": "Why You Should Use Tumbleweed",
+   "story_url": "http://rootco.de/2016-03-28-why-use-tumbleweed/",
+   "updated_at": "2024-09-19T23:03:42Z"
+  }
+ ],
+ "hitsPerPage": 50,
+ "nbHits": 10,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=accelerator+applications+screening&tags=comment&hitsPerPage=50&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 47,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 19
+  },
+  "afterFetch": {
+   "format": {
+    "highlighting": 1,
+    "total": 1
+   },
+   "merge": {
+    "mergeLoop": {
+     "prepareNextHit": 3,
+     "total": 3
+    },
+    "total": 3
+   },
+   "total": 3
+  },
+  "fetch": {
+   "query": 25,
+   "scanning": 16,
+   "total": 42
+  },
+  "total": 47
+ },
+ "query": "accelerator applications screening",
+ "serverTimeMS": 49,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=accelerator+applications+screening&tags=comment&hitsPerPage=50"
+}

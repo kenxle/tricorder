@@ -1,0 +1,2317 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "quantified"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "And this was a security-related <em>startup</em>? <em>Red</em> <em>flag</em> for the <em>investors</em>."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "startup"
+     ],
+     "value": "I accidentally gatecrashed a security <em>startup</em>\u2019s morning meeting"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://techcrunch.com/2020/08/08/sorry-i-gatecrashed-your-zoom-meeting/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_quantified",
+    "story_24094029"
+   ],
+   "author": "quantified",
+   "comment_text": "And this was a security-related startup? Red flag for the investors.",
+   "created_at": "2020-08-09T02:48:39Z",
+   "created_at_i": 1596941319,
+   "objectID": "24096894",
+   "parent_id": 24094029,
+   "story_id": 24094029,
+   "story_title": "I accidentally gatecrashed a security startup\u2019s morning meeting",
+   "story_url": "https://techcrunch.com/2020/08/08/sorry-i-gatecrashed-your-zoom-meeting/",
+   "updated_at": "2024-09-20T06:49:15Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "rlucas"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "The problem here is confusing something that might be &quot;standard fair in the business world&quot; with something that is very much out of market in the <em>startup</em> <em>investor</em> world.<p>If OP is entertaining a commercial relationship with an established, larger company -- and there might be an investment component alongside that (a &quot;strategic&quot; <em>investor</em>) -- then it generally makes sense to play normal commercial relationship rules.  And one of those is that a BigCo generally gets what it wants in terms of NDAs, within reason, before it opens up.<p>But if OP's <em>investor</em> purports to be a &quot;real&quot; <em>investor</em> (financial and serial) then there are serious yellow/<em>red</em> <em>flags</em>.<p>(A &quot;real&quot; <em>investor</em> is one who is financially motivated but also has interest in doing several deals in the community into the future -- hence, they have a reputation to protect and they will tend to hew closer to market norms.)<p>From the VC perspective, if I had a good customer lead (in my portfolio or otherwise) for a new application of an unfunded <em>startup</em>'s technology, I would unhesitatingly make the intro.  It benefits me several ways: 1. it may help the customer; 2. seeing how the customer responds is extra diligence information to help me form an investment perspective; 3. if it works out, I am viewed favorably by the <em>startup</em> and more likely to have my term sheet accepted going forward.  (This is not speculation; in fact, I am a VC and we do this sort of thing all the time.)<p>It would be a strange situation, indeed, where I would feel the need to forgo those benefits because of needing an NDA.<p>(Now, if it's the end customer who wants the NDA, then the normal &quot;commercial relationship&quot; rules, above, apply.)"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "startup",
+      "investor"
+     ],
+     "value": "Ask HN: A potential <em>investor</em> in my <em>startup</em> asked me to sign an NDA. Should I?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_rlucas",
+    "story_9172583"
+   ],
+   "author": "rlucas",
+   "comment_text": "The problem here is confusing something that might be &quot;standard fair in the business world&quot; with something that is very much out of market in the startup investor world.<p>If OP is entertaining a commercial relationship with an established, larger company -- and there might be an investment component alongside that (a &quot;strategic&quot; investor) -- then it generally makes sense to play normal commercial relationship rules.  And one of those is that a BigCo generally gets what it wants in terms of NDAs, within reason, before it opens up.<p>But if OP&#x27;s investor purports to be a &quot;real&quot; investor (financial and serial) then there are serious yellow&#x2F;red flags.<p>(A &quot;real&quot; investor is one who is financially motivated but also has interest in doing several deals in the community into the future -- hence, they have a reputation to protect and they will tend to hew closer to market norms.)<p>From the VC perspective, if I had a good customer lead (in my portfolio or otherwise) for a new application of an unfunded startup&#x27;s technology, I would unhesitatingly make the intro.  It benefits me several ways: 1. it may help the customer; 2. seeing how the customer responds is extra diligence information to help me form an investment perspective; 3. if it works out, I am viewed favorably by the startup and more likely to have my term sheet accepted going forward.  (This is not speculation; in fact, I am a VC and we do this sort of thing all the time.)<p>It would be a strange situation, indeed, where I would feel the need to forgo those benefits because of needing an NDA.<p>(Now, if it&#x27;s the end customer who wants the NDA, then the normal &quot;commercial relationship&quot; rules, above, apply.)",
+   "created_at": "2015-03-09T20:58:39Z",
+   "created_at_i": 1425934719,
+   "objectID": "9174017",
+   "parent_id": 9173162,
+   "points": null,
+   "story_id": 9172583,
+   "story_title": "Ask HN: A potential investor in my startup asked me to sign an NDA. Should I?",
+   "updated_at": "2023-09-07T02:16:03Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mmastrac"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "Nobody invests in convertible notes for the interest. YC's SAFE is basically a note sans interest. <em>Investors</em> looking for high interest rates on notes should be a <em>red</em> <em>flag</em> to <em>startups</em> as well."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Purism is seeking investment from individuals"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://puri.sm/ir/convertible-note/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mmastrac",
+    "story_27949435"
+   ],
+   "author": "mmastrac",
+   "children": [
+    27951583
+   ],
+   "comment_text": "Nobody invests in convertible notes for the interest. YC&#x27;s SAFE is basically a note sans interest. Investors looking for high interest rates on notes should be a red flag to startups as well.",
+   "created_at": "2021-07-25T18:05:36Z",
+   "created_at_i": 1627236336,
+   "objectID": "27951417",
+   "parent_id": 27950554,
+   "story_id": 27949435,
+   "story_title": "Purism is seeking investment from individuals",
+   "story_url": "https://puri.sm/ir/convertible-note/",
+   "updated_at": "2024-09-20T09:04:47Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ignostic"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "Is this software? Can you build it yourself? What kind of investment would be needed? Is your credit good enough that you can get a personal loan? Would it require more money than that?<p>Your other option, of course, is to seek angel <em>investors</em> and VCs. You may have some success there if you have some knowledge of the industry or product that they can't immediately duplicate. If you choose this route, be careful how you word this:<p><i>\"It would be the only player in this industry\"</i><p>That's usually a big <em>red</em> <em>flag</em> that the <em>start-up</em> doesn't know who their competition is. Adding \"subscription-based\" to the front doesn't instantly mean you are the only one in your industry."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Killer idea, no cash to build an MVP, what to do?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ignostic",
+    "story_5727255"
+   ],
+   "author": "ignostic",
+   "children": [
+    5727317,
+    5727369
+   ],
+   "comment_text": "Is this software? Can you build it yourself? What kind of investment would be needed? Is your credit good enough that you can get a personal loan? Would it require more money than that?<p>Your other option, of course, is to seek angel investors and VCs. You may have some success there if you have some knowledge of the industry or product that they can't immediately duplicate. If you choose this route, be careful how you word this:<p><i>\"It would be the only player in this industry\"</i><p>That's usually a big red flag that the start-up doesn't know who their competition is. Adding \"subscription-based\" to the front doesn't instantly mean you are the only one in your industry.",
+   "created_at": "2013-05-17T23:48:02Z",
+   "created_at_i": 1368834482,
+   "objectID": "5727272",
+   "parent_id": 5727255,
+   "points": null,
+   "story_id": 5727255,
+   "story_title": "Ask HN: Killer idea, no cash to build an MVP, what to do?",
+   "story_url": "",
+   "updated_at": "2023-09-06T21:32:27Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "rauljara"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "<em>Investors</em> in <em>startups</em> are making bets.  If they deserve the huge payouts they get when they bet correctly, then they don't deserve pity when their bets go wrong.<p>In this particular case, Bill Nguyen had a whole bunch of <em>red</em> <em>flags</em>, including exiting shortly before his previous companies failed.  I, for one, am not happy that <em>investors</em> continue to give such large amounts of money to such obvious carpetbaggers.  The Bill Nguyen's of the world thrive because they are allowed to."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Color Will Shut Down on December 31st"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.color.com"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_rauljara",
+    "story_4809528"
+   ],
+   "author": "rauljara",
+   "children": [
+    4811052
+   ],
+   "comment_text": "Investors in startups are making bets.  If they deserve the huge payouts they get when they bet correctly, then they don't deserve pity when their bets go wrong.<p>In this particular case, Bill Nguyen had a whole bunch of red flags, including exiting shortly before his previous companies failed.  I, for one, am not happy that investors continue to give such large amounts of money to such obvious carpetbaggers.  The Bill Nguyen's of the world thrive because they are allowed to.",
+   "created_at": "2012-11-20T16:30:03Z",
+   "created_at_i": 1353429003,
+   "objectID": "4809717",
+   "parent_id": 4809586,
+   "story_id": 4809528,
+   "story_title": "Color Will Shut Down on December 31st",
+   "story_url": "http://www.color.com",
+   "updated_at": "2024-09-19T19:02:45Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "daniilkhanin"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "One of the biggest <em>investor</em> <em>red</em> <em>flags</em> is when a <em>startup</em> can\u2019t clearly explain its numbers. We\u2019ve seen founders tweak financial models to fit <em>investor</em> expectations rather than reality. Instead, we designed ueCalc to help startups justify their projections based on actual team execution capacity. Have you ever had an <em>investor</em> push back on your financial model? What was their concern?"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "investor"
+     ],
+     "value": "Show HN: UeCalc \u2013 Build an <em>investor</em>-ready financial model without spreadsheets"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_daniilkhanin",
+    "story_43174442"
+   ],
+   "author": "daniilkhanin",
+   "comment_text": "One of the biggest investor red flags is when a startup can\u2019t clearly explain its numbers. We\u2019ve seen founders tweak financial models to fit investor expectations rather than reality. Instead, we designed ueCalc to help startups justify their projections based on actual team execution capacity. Have you ever had an investor push back on your financial model? What was their concern?",
+   "created_at": "2025-02-25T17:19:05Z",
+   "created_at_i": 1740503945,
+   "objectID": "43174684",
+   "parent_id": 43174442,
+   "story_id": 43174442,
+   "story_title": "Show HN: UeCalc \u2013 Build an investor-ready financial model without spreadsheets",
+   "updated_at": "2025-02-26T09:43:07Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jschveibinz"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "Here are a few anecdotes from the U.S. that can hopefully add substance to this conversation:<p>1) I am an <em>investor</em> in <em>startups</em>, and I have slowed my investments to a trickle since the beginning of Covid.  I have noted that this has been generally true of other investors like myself.<p>2) There are still tons of problems to solve through technology applications; but there needs to be a moat between your solution and what AI will likely disrupt in the next few years.  So, think about solving problems in the physical world.<p>3) Many <em>startups</em> create a pool of equity at around 10-15% of total shares for awarding to key employees.  If your <em>startup</em> doesn't have this, then that is a <em>red</em> <em>flag</em>.<p>4) When assessing a <em>startup</em>, consider two things first: are the founders experienced in the industry and market they are attacking?  Is the value of the solution obvious?  i.e. people will likely willingly pay well to have the solution?<p>5) <em>startups</em> are still thriving at universities that support entrepreneurship and technology commercialization.<p>6) financial stability of <em>startups</em>, especially technical <em>startups</em>, is greatly affected by non-dilutive grants and contracts, e.g. SBIR awards.  Investors look for this."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "startup"
+     ],
+     "value": "<em>Startup</em> Winter: Hacker News Lost Its Faith"
+    },
+    "story_url": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "startup"
+     ],
+     "value": "https://www.vincentschmalbach.com/<em>startup</em>-winter-hacker-news-lost-its-faith/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_jschveibinz",
+    "story_42778266"
+   ],
+   "author": "jschveibinz",
+   "children": [
+    42783333,
+    42784056,
+    42786949
+   ],
+   "comment_text": "Here are a few anecdotes from the U.S. that can hopefully add substance to this conversation:<p>1) I am an investor in startups, and I have slowed my investments to a trickle since the beginning of Covid.  I have noted that this has been generally true of other investors like myself.<p>2) There are still tons of problems to solve through technology applications; but there needs to be a moat between your solution and what AI will likely disrupt in the next few years.  So, think about solving problems in the physical world.<p>3) Many startups create a pool of equity at around 10-15% of total shares for awarding to key employees.  If your startup doesn&#x27;t have this, then that is a red flag.<p>4) When assessing a startup, consider two things first: are the founders experienced in the industry and market they are attacking?  Is the value of the solution obvious?  i.e. people will likely willingly pay well to have the solution?<p>5) startups are still thriving at universities that support entrepreneurship and technology commercialization.<p>6) financial stability of startups, especially technical startups, is greatly affected by non-dilutive grants and contracts, e.g. SBIR awards.  Investors look for this.",
+   "created_at": "2025-01-21T15:41:29Z",
+   "created_at_i": 1737474089,
+   "objectID": "42781313",
+   "parent_id": 42778266,
+   "story_id": 42778266,
+   "story_title": "Startup Winter: Hacker News Lost Its Faith",
+   "story_url": "https://www.vincentschmalbach.com/startup-winter-hacker-news-lost-its-faith/",
+   "updated_at": "2025-01-23T01:54:39Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "3pt14159"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "The only point that I agree with is this one:<p>&quot;Margin compression&quot;: A lot of tech businesses sell things, and because the market is good there isn't much price competition. My unicorn sees a lot of companies that appear to be dependent on customers paying what they're told to pay. These companies have yet to experience, or survive, a price war with their rivals.<p>All the other ones are BS.<p>&gt; Entire generation of entrepreneurs under age 30 have no memory of 2000 or 2008.<p>Lol wut? I'm 29. I remember both in vivid detail. I worked in tech in 1999. Sure I was young, but I had been seriously programming for already 4 years. Let alone 2008, that was the year I graduated university. I remember barely landing a job just as things went sideways.<p>Gen Y knows things can go wrong. Maybe some current 17 or 18 year olds don't.<p>&gt; Interest rates: Central banks currently have interest rates [...]<p>Find me a bank that will lend me money so that I can invest in <em>startups</em>. It's impossible. Interest rates going up will depress assets prices that are frequently purchased with debt: Housing and Education.<p>&gt; Valuations. [Specifically Uber]<p>If Uber wins it wins logistics as a whole. This is like talking about Amazon. Back then Amazon realized that books were the only thing that made sense to sell online because of the markups and the fact that customers don't need to touch a book to want to buy it. Then once customers got used to buying stuff online and Amazon worked out their distribution model they expanded to more and more things. Read &quot;ecommerce is a bear&quot;.<p>For other companies, sure there are some winners and some losers. But Facebook, for example, has data on every person on earth that has real spending power. Super, super valuable.<p>In the 90s only us nerds were online. Today tweens sext. Completely different markets.<p>&gt; Private valuations not matching public ones<p>1. Sarbanes Oxley.\n2. <em>Investors</em> dump stocks that have no real growth left in them onto the public. The only exception was Tesla, and that was out of desperation, and look how well they are doing.<p>&gt; Tech <em>startups</em> offering stock at a discount<p>This doesn't usually materially effect the valuations of a stock. 20% discount, 50% tops.<p>&gt; Burn rates<p>If you aren't burning money then it is a huge <em>red</em> <em>flag</em> to <em>investors</em>. There is a very real risk that your money machine doesn't scale or that you can't recruit talent in the same numbers as before.<p>&gt; Too many business models are dependent on &quot;one thing not happening&quot;<p>This would be a factor if there actually were a bubble about to pop. There isn't, so this will naturally work its way out. Also, it isn't like 1999 where all money flowed through Yahoo or Microsoft. The world has more real world businesses like arms contractors, that don't overlap business cycles.<p>I've been saying that there isn't a bubble for over 7 years. There still isn't a bubble. There will be one that starts to form soon when crowd investing starts to get underway world wide, but until retail <em>investors</em> invest in <em>startups</em> in a large and meaningful way, there isn't a bubble."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "startup"
+     ],
+     "value": "The CEO of a $1 billion 'unicorn' <em>startup</em> admits we're in a bubble"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.businessinsider.com/1-billion-unicorn-ceo-yes-its-a-tech-bubble-2015-6"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_3pt14159",
+    "story_9706355"
+   ],
+   "author": "3pt14159",
+   "comment_text": "The only point that I agree with is this one:<p>&quot;Margin compression&quot;: A lot of tech businesses sell things, and because the market is good there isn&#x27;t much price competition. My unicorn sees a lot of companies that appear to be dependent on customers paying what they&#x27;re told to pay. These companies have yet to experience, or survive, a price war with their rivals.<p>All the other ones are BS.<p>&gt; Entire generation of entrepreneurs under age 30 have no memory of 2000 or 2008.<p>Lol wut? I&#x27;m 29. I remember both in vivid detail. I worked in tech in 1999. Sure I was young, but I had been seriously programming for already 4 years. Let alone 2008, that was the year I graduated university. I remember barely landing a job just as things went sideways.<p>Gen Y knows things can go wrong. Maybe some current 17 or 18 year olds don&#x27;t.<p>&gt; Interest rates: Central banks currently have interest rates [...]<p>Find me a bank that will lend me money so that I can invest in startups. It&#x27;s impossible. Interest rates going up will depress assets prices that are frequently purchased with debt: Housing and Education.<p>&gt; Valuations. [Specifically Uber]<p>If Uber wins it wins logistics as a whole. This is like talking about Amazon. Back then Amazon realized that books were the only thing that made sense to sell online because of the markups and the fact that customers don&#x27;t need to touch a book to want to buy it. Then once customers got used to buying stuff online and Amazon worked out their distribution model they expanded to more and more things. Read &quot;ecommerce is a bear&quot;.<p>For other companies, sure there are some winners and some losers. But Facebook, for example, has data on every person on earth that has real spending power. Super, super valuable.<p>In the 90s only us nerds were online. Today tweens sext. Completely different markets.<p>&gt; Private valuations not matching public ones<p>1. Sarbanes Oxley.\n2. Investors dump stocks that have no real growth left in them onto the public. The only exception was Tesla, and that was out of desperation, and look how well they are doing.<p>&gt; Tech startups offering stock at a discount<p>This doesn&#x27;t usually materially effect the valuations of a stock. 20% discount, 50% tops.<p>&gt; Burn rates<p>If you aren&#x27;t burning money then it is a huge red flag to investors. There is a very real risk that your money machine doesn&#x27;t scale or that you can&#x27;t recruit talent in the same numbers as before.<p>&gt; Too many business models are dependent on &quot;one thing not happening&quot;<p>This would be a factor if there actually were a bubble about to pop. There isn&#x27;t, so this will naturally work its way out. Also, it isn&#x27;t like 1999 where all money flowed through Yahoo or Microsoft. The world has more real world businesses like arms contractors, that don&#x27;t overlap business cycles.<p>I&#x27;ve been saying that there isn&#x27;t a bubble for over 7 years. There still isn&#x27;t a bubble. There will be one that starts to form soon when crowd investing starts to get underway world wide, but until retail investors invest in startups in a large and meaningful way, there isn&#x27;t a bubble.",
+   "created_at": "2015-06-12T16:32:24Z",
+   "created_at_i": 1434126744,
+   "objectID": "9706925",
+   "parent_id": 9706355,
+   "points": null,
+   "story_id": 9706355,
+   "story_title": "The CEO of a $1 billion 'unicorn' startup admits we're in a bubble",
+   "story_url": "http://www.businessinsider.com/1-billion-unicorn-ceo-yes-its-a-tech-bubble-2015-6",
+   "updated_at": "2023-09-07T02:57:39Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "rajacombinator"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "To me, the fact that you have traction and seed money on the table and you're even considering going with Google is a MAJOR <em>red</em> <em>flag</em>. Maybe your heart isn't in the <em>startup</em>?<p>Without the seed money I would say try to do both with an eye for using the Google internship to get connected to potential <em>investors</em> and cofounders in SV. (Free housing and food in Silicon Valley is pretty nice.)<p>With the seed money it seems like a no brainer to do the <em>startup</em>. If you tell Google you got <em>investors</em> for your <em>startup</em> that will only make them want you more. But since you're hesitant, it seems like you either don't believe in the <em>startup</em> or you're not committed to it. Go with Google."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "startup"
+     ],
+     "value": "Ask HN: Should I accept an internship at Google or pursue my own <em>startup</em>?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_rajacombinator",
+    "story_9410385"
+   ],
+   "author": "rajacombinator",
+   "comment_text": "To me, the fact that you have traction and seed money on the table and you&#x27;re even considering going with Google is a MAJOR red flag. Maybe your heart isn&#x27;t in the startup?<p>Without the seed money I would say try to do both with an eye for using the Google internship to get connected to potential investors and cofounders in SV. (Free housing and food in Silicon Valley is pretty nice.)<p>With the seed money it seems like a no brainer to do the startup. If you tell Google you got investors for your startup that will only make them want you more. But since you&#x27;re hesitant, it seems like you either don&#x27;t believe in the startup or you&#x27;re not committed to it. Go with Google.",
+   "created_at": "2015-04-20T22:50:33Z",
+   "created_at_i": 1429570233,
+   "objectID": "9411315",
+   "parent_id": 9410385,
+   "points": null,
+   "story_id": 9410385,
+   "story_title": "Ask HN: Should I accept an internship at Google or pursue my own startup?",
+   "updated_at": "2023-09-07T02:34:14Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tonywebster"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "So is Snapchat just big enough and hot enough that <em>investors</em> will ignore due diligence <em>red</em> <em>flags</em>? In any other <em>startup</em>, I feel like a year of litigation over an founder's equity stake would send <em>investors</em> running. If you haven't seen the Snapchat deposition video leak on Business Insider, it's well worth a look."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "investor"
+     ],
+     "value": "Snapchat Raises $50 Million In Series C From A Single, Undisclosed <em>Investor</em>"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://techcrunch.com/2013/12/11/snapchat-series-c-50-million/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_tonywebster",
+    "story_6890383"
+   ],
+   "author": "tonywebster",
+   "children": [
+    6891275,
+    6891353,
+    6891399,
+    6891908,
+    6894317
+   ],
+   "comment_text": "So is Snapchat just big enough and hot enough that investors will ignore due diligence red flags? In any other startup, I feel like a year of litigation over an founder&#x27;s equity stake would send investors running. If you haven&#x27;t seen the Snapchat deposition video leak on Business Insider, it&#x27;s well worth a look.",
+   "created_at": "2013-12-11T21:32:09Z",
+   "created_at_i": 1386797529,
+   "objectID": "6890892",
+   "parent_id": 6890383,
+   "points": null,
+   "story_id": 6890383,
+   "story_title": "Snapchat Raises $50 Million In Series C From A Single, Undisclosed Investor",
+   "story_url": "http://techcrunch.com/2013/12/11/snapchat-series-c-50-million/",
+   "updated_at": "2023-09-06T22:52:38Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "kyro"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "&gt;<i>Ok, so let\u2019s take this iteration of what he is supposed to be saying. \u201cIf you have an accent that is so strong that very few people understand you and nobody feels like listening to you then it is bad\u201d. That is very anti-climactic, definitely not a surprising top <em>red</em> <em>flag</em> that he seemed to indicate.</i><p>In fact, when it comes to <em>startups</em>, that is <i>exactly</i> what he is saying, and your dismissal of it by saying that it's <i>not a surprising top <em>red</em> <em>flag</em></i> tells me that you are consciously trying to make this more racy than it actually is.<p>If you read his real initial position in the New York Times [0], you'll find: &quot;\u201cYou can sound like you\u2019re from Russia,\u201d he said, in the voice of an evil Soviet henchman. \u201cIt\u2019s just fine, as long as everyone can understand you.\u201d&quot; Again, the issue is communicating to reach an understanding. If you cannot convey thoughts, ideas, facts relevant to the core of your <em>startup</em>/idea, then you are at a disadvantage. Plain and simple.<p>I come from a community of Egyptians with incredibly thick, hard-to-understand accents, my father being one of them. I have difficulty talking about very complicated subjects with him because neither of us can clearly articulate our thoughts in the other's language, and so we never fully get a grasp on each other's opinions or the positions we hold. We both know the other isn't stupid; there's just a language barrier that's preventing effective dialogue.<p>Now take an <em>investor</em> who is deciding whether to risk his/her money on a <em>startup</em>. <i>If an <em>investor</em> cannot come to a clear understanding of what it is you do or effectively bounce thoughts back-and-forth to assess you and your company, then they are not able to minimize their risk as much as they can, in an already incredibly risky endeavor.</i> I'll also say again that had PG discovered that there was a correlation between risk of failure and stammering CEOs, he would've mentioned it.<p>Anyway, I'd like to think that instead of sparking an entire racist investing trend, that PG's advice has motivated a considerable number of foreign entrepreneurs to improve their English-speaking capabilities -- a skill that will certainly help them in every part of their lives (if they hope to plan to move to America to pursue a <em>startup</em>).<p>[0] <a href=\"http://www.nytimes.com/2013/05/05/magazine/y-combinator-silicon-valleys-start-up-machine.html?pagewanted=all\" rel=\"nofollow\">http://www.nytimes.com/2013/05/05/magazine/y-combinator-sili...</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "English has been my pain for 15 years"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://antirez.com/news/61"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_kyro",
+    "story_6314628"
+   ],
+   "author": "kyro",
+   "comment_text": "&gt;<i>Ok, so let\u2019s take this iteration of what he is supposed to be saying. \u201cIf you have an accent that is so strong that very few people understand you and nobody feels like listening to you then it is bad\u201d. That is very anti-climactic, definitely not a surprising top red flag that he seemed to indicate.</i><p>In fact, when it comes to startups, that is <i>exactly</i> what he is saying, and your dismissal of it by saying that it&#x27;s <i>not a surprising top red flag</i> tells me that you are consciously trying to make this more racy than it actually is.<p>If you read his real initial position in the New York Times [0], you&#x27;ll find: &quot;\u201cYou can sound like you\u2019re from Russia,\u201d he said, in the voice of an evil Soviet henchman. \u201cIt\u2019s just fine, as long as everyone can understand you.\u201d&quot; Again, the issue is communicating to reach an understanding. If you cannot convey thoughts, ideas, facts relevant to the core of your startup&#x2F;idea, then you are at a disadvantage. Plain and simple.<p>I come from a community of Egyptians with incredibly thick, hard-to-understand accents, my father being one of them. I have difficulty talking about very complicated subjects with him because neither of us can clearly articulate our thoughts in the other&#x27;s language, and so we never fully get a grasp on each other&#x27;s opinions or the positions we hold. We both know the other isn&#x27;t stupid; there&#x27;s just a language barrier that&#x27;s preventing effective dialogue.<p>Now take an investor who is deciding whether to risk his&#x2F;her money on a startup. <i>If an investor cannot come to a clear understanding of what it is you do or effectively bounce thoughts back-and-forth to assess you and your company, then they are not able to minimize their risk as much as they can, in an already incredibly risky endeavor.</i> I&#x27;ll also say again that had PG discovered that there was a correlation between risk of failure and stammering CEOs, he would&#x27;ve mentioned it.<p>Anyway, I&#x27;d like to think that instead of sparking an entire racist investing trend, that PG&#x27;s advice has motivated a considerable number of foreign entrepreneurs to improve their English-speaking capabilities -- a skill that will certainly help them in every part of their lives (if they hope to plan to move to America to pursue a startup).<p>[0] <a href=\"http://www.nytimes.com/2013/05/05/magazine/y-combinator-silicon-valleys-start-up-machine.html?pagewanted=all\" rel=\"nofollow\">http:&#x2F;&#x2F;www.nytimes.com&#x2F;2013&#x2F;05&#x2F;05&#x2F;magazine&#x2F;y-combinator-sili...</a>",
+   "created_at": "2013-09-02T21:44:21Z",
+   "created_at_i": 1378158261,
+   "objectID": "6317356",
+   "parent_id": 6317221,
+   "story_id": 6314628,
+   "story_title": "English has been my pain for 15 years",
+   "story_url": "http://antirez.com/news/61",
+   "updated_at": "2024-09-19T19:57:55Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jrockway"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "Crypto is dumb, for sure.  And I agree with you, speculators haven't done anything except prevent people from playing computer games at max graphics settings for a couple years.<p>The statement from the press release, &quot;A Web3-friendly platform with NFT creation and publication plus integrated MetaMask-style wallet&quot;, is just marketing copy designed to separate <em>investors</em> from their money.  At some point in the not too distant past, everybody and their mother wanted to invest in a Web3 <em>startup</em>.  Meanwhile, &quot;hey <em>investors</em>, want to invest in physical manufacturing and by the way we're the first company to ever use this open-sourcey chip,&quot; is <em>investor</em> repellant.  I'm guessing that the company threw &quot;Web3&quot; in there to turn <em>investors</em>' brains off during the crypto madness to get some funding for the unbelievably-risky hardware <em>startup</em>.  And it worked.<p>The other possibility is they just like crypto things, which is certainly a <em>red</em> <em>flag</em>.  They are too late to this party to make anything of it, as far as I can tell, NFTs are dead and buried.  Who would buy a laptop aimed at &quot;NFT creation&quot; even during the hype?  You certainly don't need RISC-V for that either.<p>I kind of see your point about RISC-V being a marketing buzzword.  It is.  Right now, it's &quot;neat&quot; to try some sort of other cpu architecture.  There is no reason for you to do it.  AMD64 and ARM can run all the software you want to run.  Or write."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The first RISC-V laptop announced with quad-core CPU, 16GB RAM, Linux support"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.phoronix.com/scan.php?page=news_item&px=RISC-V-Dev-Laptop"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_jrockway",
+    "story_31952799"
+   ],
+   "author": "jrockway",
+   "comment_text": "Crypto is dumb, for sure.  And I agree with you, speculators haven&#x27;t done anything except prevent people from playing computer games at max graphics settings for a couple years.<p>The statement from the press release, &quot;A Web3-friendly platform with NFT creation and publication plus integrated MetaMask-style wallet&quot;, is just marketing copy designed to separate investors from their money.  At some point in the not too distant past, everybody and their mother wanted to invest in a Web3 startup.  Meanwhile, &quot;hey investors, want to invest in physical manufacturing and by the way we&#x27;re the first company to ever use this open-sourcey chip,&quot; is investor repellant.  I&#x27;m guessing that the company threw &quot;Web3&quot; in there to turn investors&#x27; brains off during the crypto madness to get some funding for the unbelievably-risky hardware startup.  And it worked.<p>The other possibility is they just like crypto things, which is certainly a red flag.  They are too late to this party to make anything of it, as far as I can tell, NFTs are dead and buried.  Who would buy a laptop aimed at &quot;NFT creation&quot; even during the hype?  You certainly don&#x27;t need RISC-V for that either.<p>I kind of see your point about RISC-V being a marketing buzzword.  It is.  Right now, it&#x27;s &quot;neat&quot; to try some sort of other cpu architecture.  There is no reason for you to do it.  AMD64 and ARM can run all the software you want to run.  Or write.",
+   "created_at": "2022-07-02T02:08:59Z",
+   "created_at_i": 1656727739,
+   "objectID": "31955415",
+   "parent_id": 31955169,
+   "story_id": 31952799,
+   "story_title": "The first RISC-V laptop announced with quad-core CPU, 16GB RAM, Linux support",
+   "story_url": "https://www.phoronix.com/scan.php?page=news_item&px=RISC-V-Dev-Laptop",
+   "updated_at": "2024-09-20T11:30:13Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ploggingdev"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "How do <em>investors</em> view a <em>startup</em> that only builds GPL licensed software. Eg- Let's say Gitlab used only GPL, would it be a major <em>red</em> <em>flag</em> to <em>investors</em>? What about businesses, would they be willing to be buy GPL licensed software?<p>Any examples of startups that only build GPL licensed software?"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Is the GPL Really Declining?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://meshedinsights.com/2017/05/03/is-the-gpl-really-declining/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ploggingdev",
+    "story_14263101"
+   ],
+   "author": "ploggingdev",
+   "children": [
+    14265913
+   ],
+   "comment_text": "How do investors view a startup that only builds GPL licensed software. Eg- Let&#x27;s say Gitlab used only GPL, would it be a major red flag to investors? What about businesses, would they be willing to be buy GPL licensed software?<p>Any examples of startups that only build GPL licensed software?",
+   "created_at": "2017-05-04T15:47:40Z",
+   "created_at_i": 1493912860,
+   "objectID": "14265728",
+   "parent_id": 14263101,
+   "story_id": 14263101,
+   "story_title": "Is the GPL Really Declining?",
+   "story_url": "https://meshedinsights.com/2017/05/03/is-the-gpl-really-declining/",
+   "updated_at": "2024-09-20T00:48:11Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "JoeAltmaier"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "Novelty is overrated. A novel product; a novel sales channel; a novel subset of customer all contribute to failure. Its not only hard to educate <em>investors</em> about your <em>startup</em>; its hard to educate customers! There is tremendous value in the familiar.<p>I'd say (and heard others say) every point of IP in a new product is a <em>red</em> <em>flag</em>."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "What I\u2019ve learned from seeing 20k company pitches"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://blog.elizabethyin.com/post/151582614970/what-ive-learned-from-seeing-20k-company-pitches"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_JoeAltmaier",
+    "story_12675018"
+   ],
+   "author": "JoeAltmaier",
+   "children": [
+    12677905
+   ],
+   "comment_text": "Novelty is overrated. A novel product; a novel sales channel; a novel subset of customer all contribute to failure. Its not only hard to educate investors about your startup; its hard to educate customers! There is tremendous value in the familiar.<p>I&#x27;d say (and heard others say) every point of IP in a new product is a red flag.",
+   "created_at": "2016-10-10T15:20:07Z",
+   "created_at_i": 1476112807,
+   "objectID": "12677544",
+   "parent_id": 12677446,
+   "story_id": 12675018,
+   "story_title": "What I\u2019ve learned from seeing 20k company pitches",
+   "story_url": "http://blog.elizabethyin.com/post/151582614970/what-ive-learned-from-seeing-20k-company-pitches",
+   "updated_at": "2024-09-19T23:50:26Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "poof131"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "1. A promise of equity is a <em>red</em> <em>flag</em>.  A professional <em>startup</em> puts this in writing.  If things don\u2019t work out, that\u2019s what vesting is for.<p>2. Wearing all the hats and the only technical hat initially puts you a lot closer to founder status.<p>3. \u201clanding projects\u201d doesn\u2019t sound like a <em>startup</em>, sounds like a consultancy.  Taking reduced market salary here for equity doesn\u2019t seem right, the equity will never likely payoff to justify it.<p>Step 1. Interview at big companies.  Figure out how much you could earn (total comp: salary, bonus, and guaranteed equity).  Also to get a BATNA.<p>Step 2. Value the <em>startup</em>.  Account for professional <em>investors</em>, market size, likelihood of success, etc.  Don't just go off what the founders tell you.  Look at comparable startups and their exits.<p>Step 3. Figure out how much the money you gave up is worth.  Multiply it by 4 (last year plus the next 3) then figure out the percent of the company.  Would also probably double it for the risk you are taking.  (Note: You should immediately vest the prior year and have no cliff for the three remaining).<p>Step 4. Negotiate from a higher starting point (I\u2019m a sucker for putting out what I think is fair and having it cut).  Be ready to walk with your BATNA. 5-10 percent might not be unreasonable with what you are bringing to the table, especially if this is more of a lifestyle business than a professionally backed <em>startup</em>.<p>Good luck and don't be afraid to move."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: My employee equity?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_poof131",
+    "story_11023739"
+   ],
+   "author": "poof131",
+   "comment_text": "1. A promise of equity is a red flag.  A professional startup puts this in writing.  If things don\u2019t work out, that\u2019s what vesting is for.<p>2. Wearing all the hats and the only technical hat initially puts you a lot closer to founder status.<p>3. \u201clanding projects\u201d doesn\u2019t sound like a startup, sounds like a consultancy.  Taking reduced market salary here for equity doesn\u2019t seem right, the equity will never likely payoff to justify it.<p>Step 1. Interview at big companies.  Figure out how much you could earn (total comp: salary, bonus, and guaranteed equity).  Also to get a BATNA.<p>Step 2. Value the startup.  Account for professional investors, market size, likelihood of success, etc.  Don&#x27;t just go off what the founders tell you.  Look at comparable startups and their exits.<p>Step 3. Figure out how much the money you gave up is worth.  Multiply it by 4 (last year plus the next 3) then figure out the percent of the company.  Would also probably double it for the risk you are taking.  (Note: You should immediately vest the prior year and have no cliff for the three remaining).<p>Step 4. Negotiate from a higher starting point (I\u2019m a sucker for putting out what I think is fair and having it cut).  Be ready to walk with your BATNA. 5-10 percent might not be unreasonable with what you are bringing to the table, especially if this is more of a lifestyle business than a professionally backed startup.<p>Good luck and don&#x27;t be afraid to move.",
+   "created_at": "2016-02-03T19:56:31Z",
+   "created_at_i": 1454529391,
+   "objectID": "11029239",
+   "parent_id": 11023739,
+   "story_id": 11023739,
+   "story_title": "Ask HN: My employee equity?",
+   "updated_at": "2024-09-19T22:46:29Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Aurornis"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "&gt;  My hunch is these start-ups don't want to show an empty hiring pipeline to <em>investors</em>.<p>This wouldn't make any sense. If a <em>startup</em> has headcount and budget, they're going to want to hire someone as quickly as possible.<p><em>Investors</em> don't care about the minutia of how many people are in your hiring pipeline. If portfolio company had board-approved budget and headcount and was failing to fill those roles in a timely manner, that would be a huge <em>red</em> <em>flag</em> that something is not right within the company.<p><em>Investors</em> care about result and efficiency. I don't think any <em>startup</em> is going to impress <em>investors</em> by wasting a bunch of time deliberately fake interviewing people and then failing to hire anyone.<p>What's more like is the company wants to hire, has told the teams they can hire, but the board is reluctant to approve more headcount until the team starts showing results. Another possibility is that they're waiting for financials to improve enough to justify the hire."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Fake job interviews are securities fraud"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.bloomberg.com/opinion/articles/2024-07-30/fake-job-interviews-are-securities-fraud"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Aurornis",
+    "story_41112855"
+   ],
+   "author": "Aurornis",
+   "comment_text": "&gt;  My hunch is these start-ups don&#x27;t want to show an empty hiring pipeline to investors.<p>This wouldn&#x27;t make any sense. If a startup has headcount and budget, they&#x27;re going to want to hire someone as quickly as possible.<p>Investors don&#x27;t care about the minutia of how many people are in your hiring pipeline. If portfolio company had board-approved budget and headcount and was failing to fill those roles in a timely manner, that would be a huge red flag that something is not right within the company.<p>Investors care about result and efficiency. I don&#x27;t think any startup is going to impress investors by wasting a bunch of time deliberately fake interviewing people and then failing to hire anyone.<p>What&#x27;s more like is the company wants to hire, has told the teams they can hire, but the board is reluctant to approve more headcount until the team starts showing results. Another possibility is that they&#x27;re waiting for financials to improve enough to justify the hire.",
+   "created_at": "2024-07-30T21:52:27Z",
+   "created_at_i": 1722376347,
+   "objectID": "41114493",
+   "parent_id": 41113441,
+   "story_id": 41112855,
+   "story_title": "Fake job interviews are securities fraud",
+   "story_url": "https://www.bloomberg.com/opinion/articles/2024-07-30/fake-job-interviews-are-securities-fraud",
+   "updated_at": "2024-09-20T17:30:51Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "epc"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "Questions I ask to suss out <em>red</em> <em>flags</em> after a dozen+ experiences:<p><pre><code>  - Who are the founders?\n  - Who is the CEO?\n  - Who runs the company?\n  - Do the founders have any experience running a <em>startup</em>?\n  - Who are the key <em>investors</em>?\n  - Do the <em>investors</em> have any experience mentoring founders running a <em>startup</em>?\n  - How much money did the company raise? Is that a reasonable runway?\n  - Did they actually form a company?\n  - Did they actually file the paperwork with the SEC (if US) documenting the fundraising?\n  - What employment terms are they offering?\n  - Are they especially onerous on the employee?\n  - Are they offering a ridiculous or a reasonable amount of equity in return for a reduced salary?\n  - Who is their payroll provider?\n  - Who is their bank?\n  - How are they tracking expenses and accounting in general?\n  - How are they measuring success (for whatever stage the company is in)?\n</code></pre>\nIt's ok to have \u201cwrong\u201d or even no answers to some of these, especially if the company isn\u2019t even really in operation yet.  But no answers or wrong answers to many of these lead me to walk away.<p>You are not going to get a lot of detail about capital structure or investment terms unless you\u2019re coming in as the CEO or a C level executive.  But I have found that checking and verifying to learn that the company and executives are practicing just the basic mechanical business skills of setting up the business  is a good \u201csmell\u201d test for how they are operating the company.  You may personally decide that you\u2019re ok with paychecks being written against a personal bank account, or that an LLC vs C Corp (again, US specific, apologies) is reasonable at this stage of the company.  There's no single thing I look for, it\u2019s a balance of questions and how the company / founders /CEO responds.<p>Just this week a colleague was negotiating final terms to join a <em>startup</em>. They asked to clarify a specific employment term that was verbally made as part of the offer, but not included in the employment contract they were asked to sign.  The CEO reacted extremely inappropriately and, well, my colleague isn't joining the <em>startup</em>.  My first few startups I was far too naive in assuming that if <em>investors</em> had invested what was claimed then <i>they</i> must have done some due diligence.  Learning after the fact at one company that the Series A was actually not closed and the founders were financing the company off credit cards and home equity lines of credit lead me to leave after only six months."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "red",
+      "flag"
+     ],
+     "value": "Ask HN: <em>red</em> <em>flags</em> for early employees as far as startups go?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_epc",
+    "story_35570587"
+   ],
+   "author": "epc",
+   "comment_text": "Questions I ask to suss out red flags after a dozen+ experiences:<p><pre><code>  - Who are the founders?\n  - Who is the CEO?\n  - Who runs the company?\n  - Do the founders have any experience running a startup?\n  - Who are the key investors?\n  - Do the investors have any experience mentoring founders running a startup?\n  - How much money did the company raise? Is that a reasonable runway?\n  - Did they actually form a company?\n  - Did they actually file the paperwork with the SEC (if US) documenting the fundraising?\n  - What employment terms are they offering?\n  - Are they especially onerous on the employee?\n  - Are they offering a ridiculous or a reasonable amount of equity in return for a reduced salary?\n  - Who is their payroll provider?\n  - Who is their bank?\n  - How are they tracking expenses and accounting in general?\n  - How are they measuring success (for whatever stage the company is in)?\n</code></pre>\nIt&#x27;s ok to have \u201cwrong\u201d or even no answers to some of these, especially if the company isn\u2019t even really in operation yet.  But no answers or wrong answers to many of these lead me to walk away.<p>You are not going to get a lot of detail about capital structure or investment terms unless you\u2019re coming in as the CEO or a C level executive.  But I have found that checking and verifying to learn that the company and executives are practicing just the basic mechanical business skills of setting up the business  is a good \u201csmell\u201d test for how they are operating the company.  You may personally decide that you\u2019re ok with paychecks being written against a personal bank account, or that an LLC vs C Corp (again, US specific, apologies) is reasonable at this stage of the company.  There&#x27;s no single thing I look for, it\u2019s a balance of questions and how the company &#x2F; founders &#x2F;CEO responds.<p>Just this week a colleague was negotiating final terms to join a startup. They asked to clarify a specific employment term that was verbally made as part of the offer, but not included in the employment contract they were asked to sign.  The CEO reacted extremely inappropriately and, well, my colleague isn&#x27;t joining the startup.  My first few startups I was far too naive in assuming that if investors had invested what was claimed then <i>they</i> must have done some due diligence.  Learning after the fact at one company that the Series A was actually not closed and the founders were financing the company off credit cards and home equity lines of credit lead me to leave after only six months.",
+   "created_at": "2023-04-14T16:15:54Z",
+   "created_at_i": 1681488954,
+   "objectID": "35571225",
+   "parent_id": 35570587,
+   "story_id": 35570587,
+   "story_title": "Ask HN: red flags for early employees as far as startups go?",
+   "updated_at": "2024-09-20T13:52:46Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "muzani"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "Buying traction is always a <em>red</em> <em>flag</em>. A lot of <em>startups</em> put it under their marketing budget. It's worrying because now VCs will check everything to see that it's not fake instead of just believing you.<p>I know a marketplace <em>startup</em> that did used clothes. The CEO would buy them off the market. A lot of people would put a single item on the app once to test it, then when someone actually bought it, they'd put a lot more. So that was fake traction leading into real traction, and that's fine.<p>I'd say if $1 marketing budget leads to $1.10 of sales, that's fine. If it's $1 leading to $0, that's not. If the number is used to raise money from <em>investors</em>, then that's probably fraud if not disclosed."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "startup"
+     ],
+     "value": "Ask HN: Should a <em>startup</em> CEO tell his employees he's buying Twitter followers?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_muzani",
+    "story_27414428"
+   ],
+   "author": "muzani",
+   "comment_text": "Buying traction is always a red flag. A lot of startups put it under their marketing budget. It&#x27;s worrying because now VCs will check everything to see that it&#x27;s not fake instead of just believing you.<p>I know a marketplace startup that did used clothes. The CEO would buy them off the market. A lot of people would put a single item on the app once to test it, then when someone actually bought it, they&#x27;d put a lot more. So that was fake traction leading into real traction, and that&#x27;s fine.<p>I&#x27;d say if $1 marketing budget leads to $1.10 of sales, that&#x27;s fine. If it&#x27;s $1 leading to $0, that&#x27;s not. If the number is used to raise money from investors, then that&#x27;s probably fraud if not disclosed.",
+   "created_at": "2021-06-07T03:43:25Z",
+   "created_at_i": 1623037405,
+   "objectID": "27418803",
+   "parent_id": 27414428,
+   "story_id": 27414428,
+   "story_title": "Ask HN: Should a startup CEO tell his employees he's buying Twitter followers?",
+   "updated_at": "2024-09-20T08:41:41Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "rvz"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "&gt; Greifeld referenced the WeWork IPO, which was pulled last week after a summer of volatile headlines about slashed valuations, confusing corporate governance, and a more than $900 million loss for the first six months of 2019.<p>IPO costs are always part of the expenses of all listed companies as soon as they announce their first earnings call. The fact that this &quot;tech <em>startup</em>&quot; has a loss of $900 Million+ in 6 months alone even before it has been listed, is really testing the limits of how much the IPO markets can tolerate with chronically unprofitable companies like this.<p>&gt; &quot;If you can show profitability, you\u2019ll be fine ... At the end of the day, you\u2019ve got to take away the hype.&quot;<p>Its a definite <em>red</em>-<em>flag</em> for a late <em>investor</em> to foolishly buy an unprofitable tech stock in 2019, even at its IPO price. As there are too many so called &quot;tech startups&quot; with weak portfolios are rapidly floating on the markets now have to return that raised capital back to those early-stage investors. Otherwise, when this IPO bubble bursts, startups who show no signs of profitability are completely toast.<p>Everyone except, profitable startups and lucky early stage investors will survive."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ex-Nasdaq CEO warns: Recent IPOs unclear profit path reminds him of tech bubble"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.cnbc.com/2019/10/07/ex-nasdaq-ceo-bob-greifeld-recent-ipos-remind-him-of-dot-com-bubble.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_rvz",
+    "story_21210607"
+   ],
+   "author": "rvz",
+   "comment_text": "&gt; Greifeld referenced the WeWork IPO, which was pulled last week after a summer of volatile headlines about slashed valuations, confusing corporate governance, and a more than $900 million loss for the first six months of 2019.<p>IPO costs are always part of the expenses of all listed companies as soon as they announce their first earnings call. The fact that this &quot;tech startup&quot; has a loss of $900 Million+ in 6 months alone even before it has been listed, is really testing the limits of how much the IPO markets can tolerate with chronically unprofitable companies like this.<p>&gt; &quot;If you can show profitability, you\u2019ll be fine ... At the end of the day, you\u2019ve got to take away the hype.&quot;<p>Its a definite red-flag for a late investor to foolishly buy an unprofitable tech stock in 2019, even at its IPO price. As there are too many so called &quot;tech startups&quot; with weak portfolios are rapidly floating on the markets now have to return that raised capital back to those early-stage investors. Otherwise, when this IPO bubble bursts, startups who show no signs of profitability are completely toast.<p>Everyone except, profitable startups and lucky early stage investors will survive.",
+   "created_at": "2019-10-10T11:52:19Z",
+   "created_at_i": 1570708339,
+   "objectID": "21213365",
+   "parent_id": 21210607,
+   "story_id": 21210607,
+   "story_title": "Ex-Nasdaq CEO warns: Recent IPOs unclear profit path reminds him of tech bubble",
+   "story_url": "https://www.cnbc.com/2019/10/07/ex-nasdaq-ceo-bob-greifeld-recent-ipos-remind-him-of-dot-com-bubble.html",
+   "updated_at": "2024-09-20T04:55:49Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "askafriend"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "&gt; You are being given the numerator without knowing the denominator, so it is all worth zero until you get to see the Cap Table. Most <em>startups</em> wont let you see the Cap Table.<p>Every single time I've accepted a job at a <em>startup</em> that offered ISO stock options, I knew # of shares outstanding (the denominator), terms of all funding rounds, strike price, exit strategy, total amount of money raised, who the major <em>investors</em> are on the cap table, etc.<p>The jobs were at <em>startups</em> funded by the best <em>investors</em> in the world and high caliber founders who valued transparency. One went on to become a unicorn, and the other is an extremely early seed stage company where I work now.<p>If a <em>startup</em> isn't willing to give you information beyond # of options granted, then that is a <em>red</em> <em>flag</em> in my book. Not all <em>startups</em> are like that."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "I'm a Data Scientist and It's Not My Passion"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.refinery29.com/en-us/six-figure-paycheck-data-scientist-nyc"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_askafriend",
+    "story_19766105"
+   ],
+   "author": "askafriend",
+   "comment_text": "&gt; You are being given the numerator without knowing the denominator, so it is all worth zero until you get to see the Cap Table. Most startups wont let you see the Cap Table.<p>Every single time I&#x27;ve accepted a job at a startup that offered ISO stock options, I knew # of shares outstanding (the denominator), terms of all funding rounds, strike price, exit strategy, total amount of money raised, who the major investors are on the cap table, etc.<p>The jobs were at startups funded by the best investors in the world and high caliber founders who valued transparency. One went on to become a unicorn, and the other is an extremely early seed stage company where I work now.<p>If a startup isn&#x27;t willing to give you information beyond # of options granted, then that is a red flag in my book. Not all startups are like that.",
+   "created_at": "2019-04-27T17:47:09Z",
+   "created_at_i": 1556387229,
+   "objectID": "19766699",
+   "parent_id": 19766616,
+   "story_id": 19766105,
+   "story_title": "I'm a Data Scientist and It's Not My Passion",
+   "story_url": "https://www.refinery29.com/en-us/six-figure-paycheck-data-scientist-nyc",
+   "updated_at": "2024-09-20T04:07:16Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "byoung2"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "Get out now! If the <em>investors</em> believed that the <em>startup</em> had legs, they would put more money in, not suggest cutting costs. Reducing salary is a huge <em>red</em> <em>flag</em>, and there is no upside for you with no equity. You'll never get the lost salary back even if they become profitable."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "startup"
+     ],
+     "value": "Ask HN: Are these signs of a failing <em>startup</em>"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_byoung2",
+    "story_12513902"
+   ],
+   "author": "byoung2",
+   "comment_text": "Get out now! If the investors believed that the startup had legs, they would put more money in, not suggest cutting costs. Reducing salary is a huge red flag, and there is no upside for you with no equity. You&#x27;ll never get the lost salary back even if they become profitable.",
+   "created_at": "2016-09-16T13:58:18Z",
+   "created_at_i": 1474034298,
+   "objectID": "12513998",
+   "parent_id": 12513902,
+   "story_id": 12513902,
+   "story_title": "Ask HN: Are these signs of a failing startup",
+   "updated_at": "2024-09-19T23:40:40Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "erydo"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "My first thought was to enumerate the <em>red</em> <em>flags</em> I see (since there have been a fair number of <em>investor</em>-bait non-serious &quot;space <em>startups</em>&quot;):<p>The team comprises CEO, CFO, COO, and VP-BizDev\u2026no engineers, at least in the leadership. To be fair, the COO does have a BS in Physics and almost got a PhD in AE.<p>No photographs of any facilities, testing equipment, or anything short of 3D mockups. The name is based on a sci-fi TV show and the splash page is also a sci-fi quote.<p>Looking deeper, however, it looks like they've recently hired their 25th employee (a Systems Engineer) and are building out their engineering team aggressively. Recently funded in January. So perhaps they are legitimately worth keeping an eye on."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Firefly Space Systems"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.fireflyspace.com"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_erydo",
+    "story_7998609"
+   ],
+   "author": "erydo",
+   "children": [
+    7998816,
+    7998935,
+    7999197
+   ],
+   "comment_text": "My first thought was to enumerate the red flags I see (since there have been a fair number of investor-bait non-serious &quot;space startups&quot;):<p>The team comprises CEO, CFO, COO, and VP-BizDev\u2026no engineers, at least in the leadership. To be fair, the COO does have a BS in Physics and almost got a PhD in AE.<p>No photographs of any facilities, testing equipment, or anything short of 3D mockups. The name is based on a sci-fi TV show and the splash page is also a sci-fi quote.<p>Looking deeper, however, it looks like they&#x27;ve recently hired their 25th employee (a Systems Engineer) and are building out their engineering team aggressively. Recently funded in January. So perhaps they are legitimately worth keeping an eye on.",
+   "created_at": "2014-07-07T13:48:36Z",
+   "created_at_i": 1404740916,
+   "objectID": "7998764",
+   "parent_id": 7998609,
+   "story_id": 7998609,
+   "story_title": "Firefly Space Systems",
+   "story_url": "http://www.fireflyspace.com",
+   "updated_at": "2024-09-19T21:01:37Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "bookaway"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "Yeah, if I were to describe it more generally, I would say they self-select for techno-optimists. As <em>investors</em>, YC often espouses judging <em>startup</em>\u2019s potential by considering how successful the <em>startup</em> could be if everything goes right, and then working backwards from there to see if it could be possible.  I\u2019m not sure if pg has a historic reference that he has a commitment to, since he was a <em>startup</em> founder himself he just may be projecting his personality to the <em>startup</em> founders he\u2019s assessing, but I do think he\u2019s more concerned with \u201cwhether the <em>startup</em> has accomplished something impressive despite the odds\u201d and less about how they accomplished it.<p>They filter for <em>red</em> <em>flags</em> that would indicate a potential for failure for the <em>startup</em>. So if a \u201clack of morals\u201d has no bearing on a <em>startup</em>\u2019s success, then they don\u2019t bother creating a filter that eliminates that. Nerds often prefer building things instead of dealing with people and often take things at face value instead of suspecting intrigue, and that sometimes makes them susceptible to manipulation. PG has admitted that he himself is bad at noticing certain personality or character flaws and that\u2019s why Jessica was the adult in the room. But Jessica was probably observing the founders to see if there was good co-founder dynamic and other aspects that would affect <em>startup</em> success rather than trying to decipher their moral character. After all, there is no hippocratic oath in the tech sector."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Aaron Swartz and Sam Altman"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://journa.host/@jeremiak/113811327999722586"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_bookaway",
+    "story_42671427"
+   ],
+   "author": "bookaway",
+   "children": [
+    42675706
+   ],
+   "comment_text": "Yeah, if I were to describe it more generally, I would say they self-select for techno-optimists. As investors, YC often espouses judging startup\u2019s potential by considering how successful the startup could be if everything goes right, and then working backwards from there to see if it could be possible.  I\u2019m not sure if pg has a historic reference that he has a commitment to, since he was a startup founder himself he just may be projecting his personality to the startup founders he\u2019s assessing, but I do think he\u2019s more concerned with \u201cwhether the startup has accomplished something impressive despite the odds\u201d and less about how they accomplished it.<p>They filter for red flags that would indicate a potential for failure for the startup. So if a \u201clack of morals\u201d has no bearing on a startup\u2019s success, then they don\u2019t bother creating a filter that eliminates that. Nerds often prefer building things instead of dealing with people and often take things at face value instead of suspecting intrigue, and that sometimes makes them susceptible to manipulation. PG has admitted that he himself is bad at noticing certain personality or character flaws and that\u2019s why Jessica was the adult in the room. But Jessica was probably observing the founders to see if there was good co-founder dynamic and other aspects that would affect startup success rather than trying to decipher their moral character. After all, there is no hippocratic oath in the tech sector.",
+   "created_at": "2025-01-12T16:45:32Z",
+   "created_at_i": 1736700332,
+   "objectID": "42674805",
+   "parent_id": 42673984,
+   "story_id": 42671427,
+   "story_title": "Aaron Swartz and Sam Altman",
+   "story_url": "https://journa.host/@jeremiak/113811327999722586",
+   "updated_at": "2025-04-12T09:45:27Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "choppaface"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "I'm a former employee of a place that did Carta.  Employees are already left in the dark about the cap table, liquidity preferences, venture debt, and the C-Suite's relationship with the Board.  Based on this exchange, I'd now see usage of Carta as a <em>red</em> <em>flag</em> when looking at any new <em>start-up</em>.  Maybe Schwab or Shareworks are ok (Shareworks has been fine in my own experience).  The <em>investors</em> are already doing hyper-leveraged arbitrage with my labor, I don't need the HR Comp software to do that too (even if they say they don't, and even if they say that business is only worth $3m/yr vs $250m/yr for accounting).  If they want to do that, they can pay me directly."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Carta to exit secondary trading business"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://henrysward.medium.com/should-carta-facilitate-secondary-trading-c319e0c9f080"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_choppaface",
+    "story_38921343"
+   ],
+   "author": "choppaface",
+   "children": [
+    38924154,
+    38925271
+   ],
+   "comment_text": "I&#x27;m a former employee of a place that did Carta.  Employees are already left in the dark about the cap table, liquidity preferences, venture debt, and the C-Suite&#x27;s relationship with the Board.  Based on this exchange, I&#x27;d now see usage of Carta as a red flag when looking at any new start-up.  Maybe Schwab or Shareworks are ok (Shareworks has been fine in my own experience).  The investors are already doing hyper-leveraged arbitrage with my labor, I don&#x27;t need the HR Comp software to do that too (even if they say they don&#x27;t, and even if they say that business is only worth $3m&#x2F;yr vs $250m&#x2F;yr for accounting).  If they want to do that, they can pay me directly.",
+   "created_at": "2024-01-09T06:39:40Z",
+   "created_at_i": 1704782380,
+   "objectID": "38923125",
+   "parent_id": 38922332,
+   "story_id": 38921343,
+   "story_title": "Carta to exit secondary trading business",
+   "story_url": "https://henrysward.medium.com/should-carta-facilitate-secondary-trading-c319e0c9f080",
+   "updated_at": "2024-09-20T16:02:12Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ryandrake"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "Isn\u2019t it usually a <em>red</em> <em>flag</em> when the announcement of a <em>startup</em> talks about who the founder(s) and <em>investors</em> are before the product? Am I seeing shades of Theranos here? Why not focus on how far along the product is or the viability of the idea?"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Oxide Computer Company: Initial boot sequence"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://oxide.computer/blog/introducing-the-oxide-computer-company/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ryandrake",
+    "story_21682360"
+   ],
+   "author": "ryandrake",
+   "children": [
+    21684582
+   ],
+   "comment_text": "Isn\u2019t it usually a red flag when the announcement of a startup talks about who the founder(s) and investors are before the product? Am I seeing shades of Theranos here? Why not focus on how far along the product is or the viability of the idea?",
+   "created_at": "2019-12-02T17:18:34Z",
+   "created_at_i": 1575307114,
+   "objectID": "21684426",
+   "parent_id": 21683248,
+   "story_id": 21682360,
+   "story_title": "Oxide Computer Company: Initial boot sequence",
+   "story_url": "https://oxide.computer/blog/introducing-the-oxide-computer-company/",
+   "updated_at": "2024-09-20T05:23:33Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "wdewind"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "&gt;  A strategy could have been &quot;start with a $700 offering at the top of the market and work down,&quot; but that's not something they tell you on the way in<p>This is absolutely the kind of thing you should be asking about and they should be telling you on the way in.  As an early stage <em>startup</em> employee you are basically an <em>investor</em>.  You should deeply understand how the businesses you are joining are going to work, and if they wont tell you you should consider it a <em>red</em> <em>flag</em>."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "So Close"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://hackernoon.com/so-close-806b8ae77fa6"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_wdewind",
+    "story_16047382"
+   ],
+   "author": "wdewind",
+   "children": [
+    16052182
+   ],
+   "comment_text": "&gt;  A strategy could have been &quot;start with a $700 offering at the top of the market and work down,&quot; but that&#x27;s not something they tell you on the way in<p>This is absolutely the kind of thing you should be asking about and they should be telling you on the way in.  As an early stage startup employee you are basically an investor.  You should deeply understand how the businesses you are joining are going to work, and if they wont tell you you should consider it a red flag.",
+   "created_at": "2018-01-02T02:46:22Z",
+   "created_at_i": 1514861182,
+   "objectID": "16049472",
+   "parent_id": 16049027,
+   "story_id": 16047382,
+   "story_title": "So Close",
+   "story_url": "https://hackernoon.com/so-close-806b8ae77fa6",
+   "updated_at": "2024-09-20T01:52:29Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ivm"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "It reminded me how we failed to raise funding and one of the <em>investors</em> said that doing business together with my wife was a <em>red</em> <em>flag</em> for him because &quot;wives ruin <em>startups</em>.&quot;<p>Probably it was the same for others but they didn't say it explicitly. Oh, well."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "SF engineer came to money and now wants wife to sign a post-nuptial agreement"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.reddit.com/r/relationships/comments/7m7i5x/my_31f_husband_36m_of_3_years_came_into_a_lot_of/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ivm",
+    "story_16010296"
+   ],
+   "author": "ivm",
+   "comment_text": "It reminded me how we failed to raise funding and one of the investors said that doing business together with my wife was a red flag for him because &quot;wives ruin startups.&quot;<p>Probably it was the same for others but they didn&#x27;t say it explicitly. Oh, well.",
+   "created_at": "2017-12-27T05:25:45Z",
+   "created_at_i": 1514352345,
+   "objectID": "16013046",
+   "parent_id": 16010296,
+   "story_id": 16010296,
+   "story_title": "SF engineer came to money and now wants wife to sign a post-nuptial agreement",
+   "story_url": "https://www.reddit.com/r/relationships/comments/7m7i5x/my_31f_husband_36m_of_3_years_came_into_a_lot_of/",
+   "updated_at": "2024-09-20T01:48:21Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "simias"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "I don't hate on cryptocurrencies but I think it should be blatantly obvious to anybody that this ICO system, as it is today, is a &quot;get rich quick&quot; scheme that should raise all possible <em>red</em> <em>flags</em>.<p>Extremely complex and abstract &quot;products&quot; based on an incredibly complex and unproven systems and yet managing to raise millions of dollars almost daily? I don't know what is a scam and what is just extreme optimism in the long term performance of those blockchain <em>startups</em> but it feels more like playing in a virtual casino than investing in a <em>startup</em>.<p>How many of these ICO <em>investors</em>/gamblers would be able to explain in details what the <em>startup</em> they're funding is doing and how they're planning to generate revenue in the long term? Not many I bet."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "What is an Initial Coin Offering and How Does it Work?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.fxempire.com/education/article/ico-initial-coin-offering-work-418446"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_simias",
+    "story_14688177"
+   ],
+   "author": "simias",
+   "comment_text": "I don&#x27;t hate on cryptocurrencies but I think it should be blatantly obvious to anybody that this ICO system, as it is today, is a &quot;get rich quick&quot; scheme that should raise all possible red flags.<p>Extremely complex and abstract &quot;products&quot; based on an incredibly complex and unproven systems and yet managing to raise millions of dollars almost daily? I don&#x27;t know what is a scam and what is just extreme optimism in the long term performance of those blockchain startups but it feels more like playing in a virtual casino than investing in a startup.<p>How many of these ICO investors&#x2F;gamblers would be able to explain in details what the startup they&#x27;re funding is doing and how they&#x27;re planning to generate revenue in the long term? Not many I bet.",
+   "created_at": "2017-07-03T15:39:30Z",
+   "created_at_i": 1499096370,
+   "objectID": "14689033",
+   "parent_id": 14688769,
+   "story_id": 14688177,
+   "story_title": "What is an Initial Coin Offering and How Does it Work?",
+   "story_url": "https://www.fxempire.com/education/article/ico-initial-coin-offering-work-418446",
+   "updated_at": "2024-09-20T01:03:25Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "bane"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "I've been through a few <em>startups</em>, but one experience really has stuck with me. I was an early employee in a turnkey software <em>startup</em> built on ideas from a moderately noted researcher in the field the software was designed to sell to. I had known the researcher off and on over the years and he had been brought on as the CTO with the <em>investors</em> bringing in an outside person they knew as the CEO.<p>They were still in &quot;stealth mode&quot; at this time, taking some earlier work the researcher had spent time on and hardening it for general commercial sale. This was the first <em>red</em> <em>flag</em> I should have seen, instead of taking the time to reboot the product and start it over for a modern market, the development team was spending a year doing bug fixes and cleaning up broken research code.<p>Not long after starting I went with the CTO to a trade show for market research and meet and greets with some industry partners. He booked us a lavish 4-star hotel and during a week-long trip maybe spent 2 hours at the show. He couldn't get out of there fast enough and instead wanted to rent a conference room outside the city and spend the week brainstorming product ideas. Remember, he had directed the dev team to not develop a new product but to merely fix and update his old code. He then described some new ideas that I recognized as being more or less exactly like a competing product. I asked him to describe how we would differentiate it from that product. Instead he claimed it was a totally different idea. <em>Red</em> flags #2, #3 and 4<p>And it went on a for a while, intense conflicts between the CTO and the dev manager put development work into a holding pattern, lack of a good sales strategy, and so on.<p>Eventually there was complete turnover at the C-level and the <em>investors</em> brought in a new team, they asked me to stay on while they rebooted the company so I did, and we did better, almost turned it around. But by that time we were stuck with a huge legacy codebase dwindling investment dollars and a host of other problems that we could never seem to shake.<p>Despite being a bad experience, I learned more from that failed company than I've learned in the other 15 years of work. Observing so many failure modes happening all at once, and seeing how a pro-team might go about a turn-around has taught me an entire business school's worth of street smarts.<p>I'd almost recommend riding a company down like that to people serious about <em>startups</em> so they can learn the same things, but to be honest, I wouldn't wish it on my worst enemy."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "red",
+      "startup"
+     ],
+     "value": "What are <em>red</em> flags that signal you should walk away from a <em>startup</em> job?"
+    },
+    "story_url": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "red"
+     ],
+     "value": "http://www.quora.com/What-are-some-<em>red</em>-flags-that-signal-you-should-walk-away-from-a-start-up-job?share=1"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_bane",
+    "story_9593033"
+   ],
+   "author": "bane",
+   "children": [
+    9595168
+   ],
+   "comment_text": "I&#x27;ve been through a few startups, but one experience really has stuck with me. I was an early employee in a turnkey software startup built on ideas from a moderately noted researcher in the field the software was designed to sell to. I had known the researcher off and on over the years and he had been brought on as the CTO with the investors bringing in an outside person they knew as the CEO.<p>They were still in &quot;stealth mode&quot; at this time, taking some earlier work the researcher had spent time on and hardening it for general commercial sale. This was the first red flag I should have seen, instead of taking the time to reboot the product and start it over for a modern market, the development team was spending a year doing bug fixes and cleaning up broken research code.<p>Not long after starting I went with the CTO to a trade show for market research and meet and greets with some industry partners. He booked us a lavish 4-star hotel and during a week-long trip maybe spent 2 hours at the show. He couldn&#x27;t get out of there fast enough and instead wanted to rent a conference room outside the city and spend the week brainstorming product ideas. Remember, he had directed the dev team to not develop a new product but to merely fix and update his old code. He then described some new ideas that I recognized as being more or less exactly like a competing product. I asked him to describe how we would differentiate it from that product. Instead he claimed it was a totally different idea. Red flags #2, #3 and 4<p>And it went on a for a while, intense conflicts between the CTO and the dev manager put development work into a holding pattern, lack of a good sales strategy, and so on.<p>Eventually there was complete turnover at the C-level and the investors brought in a new team, they asked me to stay on while they rebooted the company so I did, and we did better, almost turned it around. But by that time we were stuck with a huge legacy codebase dwindling investment dollars and a host of other problems that we could never seem to shake.<p>Despite being a bad experience, I learned more from that failed company than I&#x27;ve learned in the other 15 years of work. Observing so many failure modes happening all at once, and seeing how a pro-team might go about a turn-around has taught me an entire business school&#x27;s worth of street smarts.<p>I&#x27;d almost recommend riding a company down like that to people serious about startups so they can learn the same things, but to be honest, I wouldn&#x27;t wish it on my worst enemy.",
+   "created_at": "2015-05-23T18:03:17Z",
+   "created_at_i": 1432404197,
+   "objectID": "9593722",
+   "parent_id": 9593033,
+   "points": null,
+   "story_id": 9593033,
+   "story_title": "What are red flags that signal you should walk away from a startup job?",
+   "story_url": "http://www.quora.com/What-are-some-red-flags-that-signal-you-should-walk-away-from-a-start-up-job?share=1",
+   "updated_at": "2023-09-07T02:49:00Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "trcollinson"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "I am not a lawyer, talk to one. As has been said previously, there are lawyers who will give you at least a basic consultation for almost nothing. If you have a case, there are a number of routes that take a &quot;contingency based&quot; payment structure. If you have no case, the lawyer won't take you.<p>Now with that said, some non-official legal opinion. So you had a company previous to this incident which had IP and employees? And a co-founder left, built the same exact company, with the same exact IP, and same exact employees? And then that co-founder got into techstars? And then that co-founder secured several million dollars in funding for said new company? And now you would like to sue this co-founder?<p>Maybe you see where I am going here. This is not exactly an open and shut case. Usually if a co-founder (or anyone else from within an organization for that matter) suddenly leaves with a substantial amount of IP and employees this raises the legal <em>red</em> <em>flag</em> right away. Yet you have come AFTER the company moved forward, received seed funding, received a series A round, and is now running at least presumably more successfully than it was before. That is not a good legal position to be in for you.<p>Second, although I have no idea what techstars seed round due diligence looks like, I am absolutely sure that the Series A round had a rather large legal due diligence process which included checking on the IP and making sure it was more or less clean. The <em>start up</em> world may be the wild west of funding but <em>investors</em> don't just handle over millions of dollars and hope for the best. This is not to say that a company can't lie, they can, some might, and often they do get caught during due diligence.<p>Sorry, the whole story sounds a bit fishy. If you are in fact in a small group of people who were &quot;left behind&quot; this could be entirely legal and even a viable business strategy. I have seen companies where a reverse merger acquisition has been made to move profitable employees and IP while leaving behind substantial debt and less profitable employees. I wouldn't call it ethical, but it is viable and certainly legal in some cases. Every situation is different though. Consult an attorney (or 3, because legal opinions are just that, opinion, until a ruling or a settlement is made), see what your options are, and move on."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Co-founder set up a new company using our IP and enployees"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_trcollinson",
+    "story_9327251"
+   ],
+   "author": "trcollinson",
+   "comment_text": "I am not a lawyer, talk to one. As has been said previously, there are lawyers who will give you at least a basic consultation for almost nothing. If you have a case, there are a number of routes that take a &quot;contingency based&quot; payment structure. If you have no case, the lawyer won&#x27;t take you.<p>Now with that said, some non-official legal opinion. So you had a company previous to this incident which had IP and employees? And a co-founder left, built the same exact company, with the same exact IP, and same exact employees? And then that co-founder got into techstars? And then that co-founder secured several million dollars in funding for said new company? And now you would like to sue this co-founder?<p>Maybe you see where I am going here. This is not exactly an open and shut case. Usually if a co-founder (or anyone else from within an organization for that matter) suddenly leaves with a substantial amount of IP and employees this raises the legal red flag right away. Yet you have come AFTER the company moved forward, received seed funding, received a series A round, and is now running at least presumably more successfully than it was before. That is not a good legal position to be in for you.<p>Second, although I have no idea what techstars seed round due diligence looks like, I am absolutely sure that the Series A round had a rather large legal due diligence process which included checking on the IP and making sure it was more or less clean. The start up world may be the wild west of funding but investors don&#x27;t just handle over millions of dollars and hope for the best. This is not to say that a company can&#x27;t lie, they can, some might, and often they do get caught during due diligence.<p>Sorry, the whole story sounds a bit fishy. If you are in fact in a small group of people who were &quot;left behind&quot; this could be entirely legal and even a viable business strategy. I have seen companies where a reverse merger acquisition has been made to move profitable employees and IP while leaving behind substantial debt and less profitable employees. I wouldn&#x27;t call it ethical, but it is viable and certainly legal in some cases. Every situation is different though. Consult an attorney (or 3, because legal opinions are just that, opinion, until a ruling or a settlement is made), see what your options are, and move on.",
+   "created_at": "2015-04-06T16:44:45Z",
+   "created_at_i": 1428338685,
+   "objectID": "9329067",
+   "parent_id": 9327251,
+   "points": null,
+   "story_id": 9327251,
+   "story_title": "Ask HN: Co-founder set up a new company using our IP and enployees",
+   "story_url": "",
+   "updated_at": "2023-09-07T02:27:52Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "marrington"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "I'm a former lawyer and currently a VC. I really can't imagine a situation where I'd ask a company to sign an NDA in connection with a potential investment. If the information isn't confidential I'd just tell them. If it was it probably isn't mine to share (something we know from a portfolio company, for example).<p>So it's weird. It's also a <em>red</em> <em>flag</em> that the <em>investor</em> either doesn't really know what its doing, or that they're willing to share confidential information that they shouldn't, or that they are litigious and like to corner people via a NDA and apply leverage.<p>I'd walk away unless they are your only funding option. And if they are your only funding option you probably have issues with the <em>startup</em> or product that need to be addressed anyway."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "startup",
+      "investor"
+     ],
+     "value": "Ask HN: A potential <em>investor</em> in my <em>startup</em> asked me to sign an NDA. Should I?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_marrington",
+    "story_9172583"
+   ],
+   "author": "marrington",
+   "children": [
+    9173483,
+    9173485,
+    9174005
+   ],
+   "comment_text": "I&#x27;m a former lawyer and currently a VC. I really can&#x27;t imagine a situation where I&#x27;d ask a company to sign an NDA in connection with a potential investment. If the information isn&#x27;t confidential I&#x27;d just tell them. If it was it probably isn&#x27;t mine to share (something we know from a portfolio company, for example).<p>So it&#x27;s weird. It&#x27;s also a red flag that the investor either doesn&#x27;t really know what its doing, or that they&#x27;re willing to share confidential information that they shouldn&#x27;t, or that they are litigious and like to corner people via a NDA and apply leverage.<p>I&#x27;d walk away unless they are your only funding option. And if they are your only funding option you probably have issues with the startup or product that need to be addressed anyway.",
+   "created_at": "2015-03-09T19:42:07Z",
+   "created_at_i": 1425930127,
+   "objectID": "9173430",
+   "parent_id": 9172583,
+   "points": null,
+   "story_id": 9172583,
+   "story_title": "Ask HN: A potential investor in my startup asked me to sign an NDA. Should I?",
+   "updated_at": "2023-09-07T02:15:58Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ryanSrich"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "Great article and it points out an issue I've seen with a few <em>startups</em>.<p>It's no one else's job to understand what you're building. Even if you hand me an application saying what you built I still want to hear you explain it. I shouldn't have to work to understand your product. The fact that YC was trying very hard to get you to explain what you were building and you continued to repeat yourself tells me you still don't know entirely what you're building, and to an <em>investor</em> that's a huge <em>red</em> <em>flag</em>."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "My Y Combinator experience"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://marcobambini.com/my-y-combinator-experience/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ryanSrich",
+    "story_9149690"
+   ],
+   "author": "ryanSrich",
+   "comment_text": "Great article and it points out an issue I&#x27;ve seen with a few startups.<p>It&#x27;s no one else&#x27;s job to understand what you&#x27;re building. Even if you hand me an application saying what you built I still want to hear you explain it. I shouldn&#x27;t have to work to understand your product. The fact that YC was trying very hard to get you to explain what you were building and you continued to repeat yourself tells me you still don&#x27;t know entirely what you&#x27;re building, and to an investor that&#x27;s a huge red flag.",
+   "created_at": "2015-03-05T16:33:14Z",
+   "created_at_i": 1425573194,
+   "objectID": "9151782",
+   "parent_id": 9149690,
+   "points": null,
+   "story_id": 9149690,
+   "story_title": "My Y Combinator experience",
+   "story_url": "http://marcobambini.com/my-y-combinator-experience/",
+   "updated_at": "2023-09-07T02:14:12Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Dalkanon"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "Most pre-Series A start-ups will offer (far) below market salary; they have to, since, generally (and as another poster said), they have only $X00,000 in the bank and no revenue. This is pretty typical.<p>What the 0.05% equity package indicates is that the founders probably have an unrealistic expectation about how much their venture is worth at this stage. I've seen this a few times in na\u00efve, young (23-25 years old) first-time founders that don't have significant amounts of experience working in start-ups and/or technology in general. This trivial amount of equity is a huge <em>red</em> <em>flag</em>, not only because its present value is negligible (guess what the risk-adjusted rate of return is on a <em>start-up</em> run by first-time founders?), but because it indicates that the work environment will likely be unpleasant (hellish hours, frequently changing requirements, no clear vision -- common in companies run by first-time founders).<p>Also, keep in mind: if these founders are foolish / na\u00efve enough to think they'll be able to hire a credible, valuable engineer with this package (they won't), they're also likely foolish / na\u00efve to get screwed by their <em>investors</em>. Founders are only at the bottom-middle of the <em>start-up</em> hierarchy: VCs are above them and LPs are above them."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "startup"
+     ],
+     "value": "<em>Startup</em> jobs with low salary and negligible equity, what gives?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Dalkanon",
+    "story_8923551"
+   ],
+   "author": "Dalkanon",
+   "children": [
+    8923882
+   ],
+   "comment_text": "Most pre-Series A start-ups will offer (far) below market salary; they have to, since, generally (and as another poster said), they have only $X00,000 in the bank and no revenue. This is pretty typical.<p>What the 0.05% equity package indicates is that the founders probably have an unrealistic expectation about how much their venture is worth at this stage. I&#x27;ve seen this a few times in na\u00efve, young (23-25 years old) first-time founders that don&#x27;t have significant amounts of experience working in start-ups and&#x2F;or technology in general. This trivial amount of equity is a huge red flag, not only because its present value is negligible (guess what the risk-adjusted rate of return is on a start-up run by first-time founders?), but because it indicates that the work environment will likely be unpleasant (hellish hours, frequently changing requirements, no clear vision -- common in companies run by first-time founders).<p>Also, keep in mind: if these founders are foolish &#x2F; na\u00efve enough to think they&#x27;ll be able to hire a credible, valuable engineer with this package (they won&#x27;t), they&#x27;re also likely foolish &#x2F; na\u00efve to get screwed by their investors. Founders are only at the bottom-middle of the start-up hierarchy: VCs are above them and LPs are above them.",
+   "created_at": "2015-01-21T16:46:29Z",
+   "created_at_i": 1421858789,
+   "objectID": "8923865",
+   "parent_id": 8923551,
+   "points": null,
+   "story_id": 8923551,
+   "story_title": "Startup jobs with low salary and negligible equity, what gives?",
+   "updated_at": "2023-09-06T23:19:41Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "7Figures2Commas"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "That should actually be a <em>red</em> <em>flag</em> about the data. When you see a rapid, precipitous decline in deals but amounts don't change, you have to look at the data.<p>How do you get a rapid, precipitous decline in deals without an expected decrease in dollars? Use a data source that a) is liable to miss deals[1] and b) will classify multi-million dollar rounds involving institutional/venture <em>investors</em> as &quot;seed&quot;[2][3].<p>[1] Per my other comment I work with a <em>startup</em> that raised a public seed round in Q4 that is not listed in Crunchbase.<p>[2] <a href=\"https://www.crunchbase.com/organization/skydio\" rel=\"nofollow\">https://www.crunchbase.com/organization/skydio</a><p>[3] <a href=\"https://www.crunchbase.com/organization/north-technologies\" rel=\"nofollow\">https://www.crunchbase.com/organization/north-technologies</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The number of seed rounds in 2014 fell compared to 2013"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://techcrunch.com/2015/01/16/the-seed-bubble-has-popped/?utm_medium=twitter&utm_source=twitterfeed"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_7Figures2Commas",
+    "story_8903300"
+   ],
+   "author": "7Figures2Commas",
+   "children": [
+    8904102
+   ],
+   "comment_text": "That should actually be a red flag about the data. When you see a rapid, precipitous decline in deals but amounts don&#x27;t change, you have to look at the data.<p>How do you get a rapid, precipitous decline in deals without an expected decrease in dollars? Use a data source that a) is liable to miss deals[1] and b) will classify multi-million dollar rounds involving institutional&#x2F;venture investors as &quot;seed&quot;[2][3].<p>[1] Per my other comment I work with a startup that raised a public seed round in Q4 that is not listed in Crunchbase.<p>[2] <a href=\"https://www.crunchbase.com/organization/skydio\" rel=\"nofollow\">https:&#x2F;&#x2F;www.crunchbase.com&#x2F;organization&#x2F;skydio</a><p>[3] <a href=\"https://www.crunchbase.com/organization/north-technologies\" rel=\"nofollow\">https:&#x2F;&#x2F;www.crunchbase.com&#x2F;organization&#x2F;north-technologies</a>",
+   "created_at": "2015-01-17T07:18:55Z",
+   "created_at_i": 1421479135,
+   "objectID": "8903758",
+   "parent_id": 8903574,
+   "points": null,
+   "story_id": 8903300,
+   "story_title": "The number of seed rounds in 2014 fell compared to 2013",
+   "story_url": "http://techcrunch.com/2015/01/16/the-seed-bubble-has-popped/?utm_medium=twitter&utm_source=twitterfeed",
+   "updated_at": "2023-09-06T23:17:54Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "dctoedt"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "&gt; <i>Love to tell my horror story re: my experience dealing with a Fortune 50 company.</i><p>A couple of points:<p>1.  Obviously this is very different from pitching to an angel <em>investor</em> or venture capitalist, who might be unlikely to care about your secret technology.  As you discovered, it's entirely possible that BigCo's engineers were very interested in learning what you were doing so they could do likewise, ideally without having to pay you anything.<p>2.  Courts will sometimes enforce trade-secret rights even without a written NDA, if the circumstances were such that the party receiving the information implicitly agreed to keep the information in confidence.  But that can be a really tricky proposition to prove, and will vary with the jurisdiction.<p>3.  A written NDA might or might not be of much value in a situation like this.<p>A)  BigCo might not want to sign an NDA.  That's a <em>red</em> <em>flag</em> right there, of course.  BigCo might even want you to sign an agreement saying that anything you say to them is <i>not</i> confidential (this is not uncommon, because big companies get a lot of idea submitted &quot;over the transom&quot; and don't want to have to deal with lawsuits from cranks who re-invented the wheel).<p>B) NDAs usually have carve-outs that say that &quot;Confidential Information&quot; doesn't include information that was published or otherwise known to others before disclosure (or that becomes such afterwards).   BUT:  Under U.S. law, a specific selection or combination of individual pieces of public information can be protectable, just as Kentucky Fried Chicken's secret blend of 11 herbs and spices is (reportedly) protected as a trade secret.<p>C) You want to be careful to comply with any requirement in the NDA that confidential information must be disclosed or summarized in a writing that's marked &quot;Confidential&quot; or &quot;Subject to Nondisclosure Agreement&quot; or something like that, on pain of losing protection.  For example, in the <i>Convolve v. Compaq</i> case, the computer manufacturer Compaq (now part of\u00a0Hewlett-Packard) defeated a\u00a0claim of\u00a0misappropriation of\u00a0trade secrets concerning hard-disk technology because the owner of\u00a0the putative trade-secret information didn't follow up its oral disclosures with written summaries as required by the parties' non-disclosure agreement. [1]<p>D) Enforcing an NDA can take a lot of time and money, especially if BigCo is convinced they haven't done anything wrong.  On the other hand, sometimes it can pay off, because a jury might well punish a company that it found violated an NDA.  See, e.g., the 1996 case of <i>Celeritas Technologies v. Rockwell International</i>, where a federal-court jury in Los Angeles awarded a <em>startup</em> more than $57 million, and the judge then added $900,000 in attorneys' fees, because the jury found that Rockwell had breached an NDA. [2]<p>4.  Suggestion:  Even for non-secret information, an NDA might be negotiated to include the equivalent of a break-up fee.  That is, even if it turns out that the secret technology wasn't a secret after all, <i>but the receiving party didn't know the technology</i>, then the receiving party might be required to pay the disclosing party something as payment for &quot;show-how&quot; (as distinct from know-how), in return for having taught the receiving party about the information, thereby saving the receiving party from the time and expense of having to find out the information on its own.<p>[1] <a href=\"http://www.cafc.uscourts.gov/images/stories/opinions-orders/12-1074.Opinion.6-27-2013.1.PDF\" rel=\"nofollow\">http://www.cafc.uscourts.gov/images/stories/opinions-orders/...</a><p>[2] <a href=\"http://scholar.google.com/scholar_case?case=16810614390244449913\" rel=\"nofollow\">http://scholar.google.com/scholar_case?case=1681061439024444...</a>.    Disclosure: I was part of Rockwell's trial team in that case."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Don't Talk to Corp Dev"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://paulgraham.com/corpdev.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_dctoedt",
+    "story_8876445"
+   ],
+   "author": "dctoedt",
+   "comment_text": "&gt; <i>Love to tell my horror story re: my experience dealing with a Fortune 50 company.</i><p>A couple of points:<p>1.  Obviously this is very different from pitching to an angel investor or venture capitalist, who might be unlikely to care about your secret technology.  As you discovered, it&#x27;s entirely possible that BigCo&#x27;s engineers were very interested in learning what you were doing so they could do likewise, ideally without having to pay you anything.<p>2.  Courts will sometimes enforce trade-secret rights even without a written NDA, if the circumstances were such that the party receiving the information implicitly agreed to keep the information in confidence.  But that can be a really tricky proposition to prove, and will vary with the jurisdiction.<p>3.  A written NDA might or might not be of much value in a situation like this.<p>A)  BigCo might not want to sign an NDA.  That&#x27;s a red flag right there, of course.  BigCo might even want you to sign an agreement saying that anything you say to them is <i>not</i> confidential (this is not uncommon, because big companies get a lot of idea submitted &quot;over the transom&quot; and don&#x27;t want to have to deal with lawsuits from cranks who re-invented the wheel).<p>B) NDAs usually have carve-outs that say that &quot;Confidential Information&quot; doesn&#x27;t include information that was published or otherwise known to others before disclosure (or that becomes such afterwards).   BUT:  Under U.S. law, a specific selection or combination of individual pieces of public information can be protectable, just as Kentucky Fried Chicken&#x27;s secret blend of 11 herbs and spices is (reportedly) protected as a trade secret.<p>C) You want to be careful to comply with any requirement in the NDA that confidential information must be disclosed or summarized in a writing that&#x27;s marked &quot;Confidential&quot; or &quot;Subject to Nondisclosure Agreement&quot; or something like that, on pain of losing protection.  For example, in the <i>Convolve v. Compaq</i> case, the computer manufacturer Compaq (now part of\u00a0Hewlett-Packard) defeated a\u00a0claim of\u00a0misappropriation of\u00a0trade secrets concerning hard-disk technology because the owner of\u00a0the putative trade-secret information didn&#x27;t follow up its oral disclosures with written summaries as required by the parties&#x27; non-disclosure agreement. [1]<p>D) Enforcing an NDA can take a lot of time and money, especially if BigCo is convinced they haven&#x27;t done anything wrong.  On the other hand, sometimes it can pay off, because a jury might well punish a company that it found violated an NDA.  See, e.g., the 1996 case of <i>Celeritas Technologies v. Rockwell International</i>, where a federal-court jury in Los Angeles awarded a startup more than $57 million, and the judge then added $900,000 in attorneys&#x27; fees, because the jury found that Rockwell had breached an NDA. [2]<p>4.  Suggestion:  Even for non-secret information, an NDA might be negotiated to include the equivalent of a break-up fee.  That is, even if it turns out that the secret technology wasn&#x27;t a secret after all, <i>but the receiving party didn&#x27;t know the technology</i>, then the receiving party might be required to pay the disclosing party something as payment for &quot;show-how&quot; (as distinct from know-how), in return for having taught the receiving party about the information, thereby saving the receiving party from the time and expense of having to find out the information on its own.<p>[1] <a href=\"http://www.cafc.uscourts.gov/images/stories/opinions-orders/12-1074.Opinion.6-27-2013.1.PDF\" rel=\"nofollow\">http:&#x2F;&#x2F;www.cafc.uscourts.gov&#x2F;images&#x2F;stories&#x2F;opinions-orders&#x2F;...</a><p>[2] <a href=\"http://scholar.google.com/scholar_case?case=16810614390244449913\" rel=\"nofollow\">http:&#x2F;&#x2F;scholar.google.com&#x2F;scholar_case?case=1681061439024444...</a>.    Disclosure: I was part of Rockwell&#x27;s trial team in that case.",
+   "created_at": "2015-01-13T13:15:04Z",
+   "created_at_i": 1421154904,
+   "objectID": "8879530",
+   "parent_id": 8877932,
+   "points": null,
+   "story_id": 8876445,
+   "story_title": "Don't Talk to Corp Dev",
+   "story_url": "http://paulgraham.com/corpdev.html",
+   "updated_at": "2023-09-06T23:15:43Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "AndrewKemendo"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "<i>If the founder is willing to cash out for current market value, doesn't that imply the founder doesn't believe the equity will quickly grow 1000-fold?</i><p>I don't think it is that simple. The reality of <em>startups</em> is that there is too much happening in the market to accurately predict outcomes based solely on actions of the founders.<p>Given that, a smart founder probably should hedge this inherent market risk by liquidating so that in the case of a failure, given the high percentage chance of that, they aren't destitute and can start something else/get a job.<p>Arguably an <em>investor</em> should look at this as a prudent strategy given the risk profiles. Unfortunately there are too many confounding factors for it to be seen as a &quot;rational&quot; economic decision. Investors want fanatics and such behavior is way more pragmatic than fanatical, so it signals that the founder isn't rabid for full tipped scale risk/reward balance.<p>I think <em>red</em> <em>flags</em> start flying if founders are doing this and spending time on other things, but just as a general case it seems very rational to liquidate some portion early if given the opportunity."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Some Thoughts on Founder Liquidity"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://avc.com/2014/12/some-thoughts-on-founder-liquidity/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_AndrewKemendo",
+    "story_8810758"
+   ],
+   "author": "AndrewKemendo",
+   "comment_text": "<i>If the founder is willing to cash out for current market value, doesn&#x27;t that imply the founder doesn&#x27;t believe the equity will quickly grow 1000-fold?</i><p>I don&#x27;t think it is that simple. The reality of startups is that there is too much happening in the market to accurately predict outcomes based solely on actions of the founders.<p>Given that, a smart founder probably should hedge this inherent market risk by liquidating so that in the case of a failure, given the high percentage chance of that, they aren&#x27;t destitute and can start something else&#x2F;get a job.<p>Arguably an investor should look at this as a prudent strategy given the risk profiles. Unfortunately there are too many confounding factors for it to be seen as a &quot;rational&quot; economic decision. Investors want fanatics and such behavior is way more pragmatic than fanatical, so it signals that the founder isn&#x27;t rabid for full tipped scale risk&#x2F;reward balance.<p>I think red flags start flying if founders are doing this and spending time on other things, but just as a general case it seems very rational to liquidate some portion early if given the opportunity.",
+   "created_at": "2014-12-30T04:22:28Z",
+   "created_at_i": 1419913348,
+   "objectID": "8813319",
+   "parent_id": 8813265,
+   "story_id": 8810758,
+   "story_title": "Some Thoughts on Founder Liquidity",
+   "story_url": "http://avc.com/2014/12/some-thoughts-on-founder-liquidity/",
+   "updated_at": "2024-09-19T21:24:18Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "deteredstick"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "If you can't be dedicated to you idea then why should an <em>investor</em> be dedicated to you?  No matter how easy it is to BUILD concepts - you will never get better at EXECUTING if you don't stick with one idea.  \nThe ability to sell, stabilize and innovate on a product is much more important then the creation or ideation. People who hop from one idea to another quickly are <em>red</em> <em>flags</em> for investors.  Why can't you stick with a product? Do you have poor cofounders? What about future hardships? Will you run then? Being a good programmer is half the battle. The rest is about being a driving force for your cofounders and <em>startup</em>."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Entrepreneurs are not different from VCs: both need a portfolio"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_deteredstick",
+    "story_8779781"
+   ],
+   "author": "deteredstick",
+   "children": [
+    8791858
+   ],
+   "comment_text": "If you can&#x27;t be dedicated to you idea then why should an investor be dedicated to you?  No matter how easy it is to BUILD concepts - you will never get better at EXECUTING if you don&#x27;t stick with one idea.  \nThe ability to sell, stabilize and innovate on a product is much more important then the creation or ideation. People who hop from one idea to another quickly are red flags for investors.  Why can&#x27;t you stick with a product? Do you have poor cofounders? What about future hardships? Will you run then? Being a good programmer is half the battle. The rest is about being a driving force for your cofounders and startup.",
+   "created_at": "2014-12-21T22:54:51Z",
+   "created_at_i": 1419202491,
+   "objectID": "8781259",
+   "parent_id": 8779781,
+   "story_id": 8779781,
+   "story_title": "Entrepreneurs are not different from VCs: both need a portfolio",
+   "story_url": "",
+   "updated_at": "2024-09-19T21:29:00Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "nostrademons"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "Be very, very careful doing this.  The biggest problem is that many <em>investors</em> see it as a <em>red</em> <em>flag</em> if a person who is not involved with the day-to-day running of the <em>startup</em> holds significant equity.  Equity seems cheap when the company is worth nothing, but it will be near and dear when you are seeking investment, when you have dozens of employees who would go to Google if it weren't for their stock options, when you and your cofounder are deep in the trenches and want to quit, or when you're trying to hire an executive.  And if he holds a significant fraction of voting shares, you may need to consult him when you do something significant like sell the company or issue new shares, and if he's no longer involved with the company that can introduce delays when you can least afford them.<p>Also, typically marketing a product in the early stages involves making really significant changes to the product itself.  You can't just hand it over the wall as-is and expect someone to drum up a million downloads.  If you lack marketing experience on the founding team, you may be better off just bringing on a full cofounder who shares your vision but is comfortable going out there and talking to customers."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Some advice on trading equity for help"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_nostrademons",
+    "story_8191944"
+   ],
+   "author": "nostrademons",
+   "children": [
+    8192154
+   ],
+   "comment_text": "Be very, very careful doing this.  The biggest problem is that many investors see it as a red flag if a person who is not involved with the day-to-day running of the startup holds significant equity.  Equity seems cheap when the company is worth nothing, but it will be near and dear when you are seeking investment, when you have dozens of employees who would go to Google if it weren&#x27;t for their stock options, when you and your cofounder are deep in the trenches and want to quit, or when you&#x27;re trying to hire an executive.  And if he holds a significant fraction of voting shares, you may need to consult him when you do something significant like sell the company or issue new shares, and if he&#x27;s no longer involved with the company that can introduce delays when you can least afford them.<p>Also, typically marketing a product in the early stages involves making really significant changes to the product itself.  You can&#x27;t just hand it over the wall as-is and expect someone to drum up a million downloads.  If you lack marketing experience on the founding team, you may be better off just bringing on a full cofounder who shares your vision but is comfortable going out there and talking to customers.",
+   "created_at": "2014-08-18T09:44:26Z",
+   "created_at_i": 1408355066,
+   "objectID": "8191972",
+   "parent_id": 8191944,
+   "points": null,
+   "story_id": 8191944,
+   "story_title": "Some advice on trading equity for help",
+   "story_url": "",
+   "updated_at": "2023-09-06T22:12:14Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "zmmmmm"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "Drop (explicitly and unambiguously) all your policies around censoring the internet.<p>Seriously, you have no idea how damaging these are to the image of Australia in the eyes of young IT entrepreneurs, not to mention <em>investors</em>. It makes the government look like luddites with no idea about technology, and is a giant <em>red</em> <em>flag</em> to anybody who would think about starting a business here (if the government is this stupid about technology, can you imagine all the other <em>red</em> tape and moronic regulation that is going to fall on you?).<p>EDIT: as a second issue, reform copyright to give broader rights for &quot;fair use&quot; similar to the US. The current exemptions are far too narrow and make it very difficult to start a content based <em>startup</em> here without having a lot of potential legal problems."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Australian Government Should Follow Singapore in Supporting\u00a0Startups"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.forbes.com/sites/jlim/2014/05/21/australian-government-should-follow-singapore-in-supporting-startups/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_zmmmmm",
+    "story_7781311"
+   ],
+   "author": "zmmmmm",
+   "children": [
+    7782087
+   ],
+   "comment_text": "Drop (explicitly and unambiguously) all your policies around censoring the internet.<p>Seriously, you have no idea how damaging these are to the image of Australia in the eyes of young IT entrepreneurs, not to mention investors. It makes the government look like luddites with no idea about technology, and is a giant red flag to anybody who would think about starting a business here (if the government is this stupid about technology, can you imagine all the other red tape and moronic regulation that is going to fall on you?).<p>EDIT: as a second issue, reform copyright to give broader rights for &quot;fair use&quot; similar to the US. The current exemptions are far too narrow and make it very difficult to start a content based startup here without having a lot of potential legal problems.",
+   "created_at": "2014-05-22T04:05:50Z",
+   "created_at_i": 1400731550,
+   "objectID": "7782044",
+   "parent_id": 7781607,
+   "points": null,
+   "story_id": 7781311,
+   "story_title": "Australian Government Should Follow Singapore in Supporting\u00a0Startups",
+   "story_url": "http://www.forbes.com/sites/jlim/2014/05/21/australian-government-should-follow-singapore-in-supporting-startups/",
+   "updated_at": "2023-09-06T22:57:47Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "rohamg"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "Agreed.<p>OP: the code and intellectual property belongs to you unless you transfer copyright over or mark as open source. That said, code is hardly the most valuable asset in an early-stage <em>startup</em>. The best real way to &quot;protect&quot; yourself (besides getting legal docs papered) is to stay involved in every important discussion and develop your own relationships with <em>investors</em>. Your cofounder should welcome this, and should help you develop your non-technical skills.<p>If you notice any unease, <em>red</em> <em>flags</em>, shadiness, lack of transparency, BAIL OUT. Incorporate yourself and transfer the IP into a company owned 100% by you. Find a new business partner."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: How can I prevent getting 'ousted' from the company that I co-founded?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_rohamg",
+    "story_7655099"
+   ],
+   "author": "rohamg",
+   "children": [
+    7656877
+   ],
+   "comment_text": "Agreed.<p>OP: the code and intellectual property belongs to you unless you transfer copyright over or mark as open source. That said, code is hardly the most valuable asset in an early-stage startup. The best real way to &quot;protect&quot; yourself (besides getting legal docs papered) is to stay involved in every important discussion and develop your own relationships with investors. Your cofounder should welcome this, and should help you develop your non-technical skills.<p>If you notice any unease, red flags, shadiness, lack of transparency, BAIL OUT. Incorporate yourself and transfer the IP into a company owned 100% by you. Find a new business partner.",
+   "created_at": "2014-04-27T15:53:54Z",
+   "created_at_i": 1398614034,
+   "objectID": "7655534",
+   "parent_id": 7655480,
+   "story_id": 7655099,
+   "story_title": "Ask HN: How can I prevent getting 'ousted' from the company that I co-founded?",
+   "updated_at": "2024-09-19T20:46:08Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "HistoryInAction"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "Bradley nails it. I've looked into this in trying to implement <em>startup</em> visa since March 2011.<p>The EB-5 requires the capital to be personally owned, as it's intended for wealthy individuals to invest in a local business, usually a construction subcontractor or Vermont ski resort (EB-5 having been created by law sponsored by VT Senator Patrick Leahy back in 1990).<p>With a prepared lawyer, <em>investors</em>, and founding team, the legal paperwork CAN be set up to make use of an EB-5 (or E-2, at the $50k-150k level) on behalf of a founder, but most founders aren't aware of the hoops they need to jump through or preparation at an early enough stage. And once development has crossed various lines, to 'uncross' them to implement the correctly prepared setup raises other <em>red</em> <em>flags</em> within USCIS."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The Founder Visa (again)"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://blog.samaltman.com/the-founder-visa-again"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_HistoryInAction",
+    "story_7418963"
+   ],
+   "author": "HistoryInAction",
+   "comment_text": "Bradley nails it. I&#x27;ve looked into this in trying to implement startup visa since March 2011.<p>The EB-5 requires the capital to be personally owned, as it&#x27;s intended for wealthy individuals to invest in a local business, usually a construction subcontractor or Vermont ski resort (EB-5 having been created by law sponsored by VT Senator Patrick Leahy back in 1990).<p>With a prepared lawyer, investors, and founding team, the legal paperwork CAN be set up to make use of an EB-5 (or E-2, at the $50k-150k level) on behalf of a founder, but most founders aren&#x27;t aware of the hoops they need to jump through or preparation at an early enough stage. And once development has crossed various lines, to &#x27;uncross&#x27; them to implement the correctly prepared setup raises other red flags within USCIS.",
+   "created_at": "2014-03-18T02:12:57Z",
+   "created_at_i": 1395108777,
+   "objectID": "7419580",
+   "parent_id": 7419350,
+   "story_id": 7418963,
+   "story_title": "The Founder Visa (again)",
+   "story_url": "http://blog.samaltman.com/the-founder-visa-again",
+   "updated_at": "2024-09-19T20:32:20Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "dvt"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "red",
+      "flag",
+      "startup",
+      "investor"
+     ],
+     "value": "I think that this article is &quot;meh,&quot; so let's look at it step-by-step:<p>1. Emotional Support<p>Author gets emotional support from wife and admits that you <i>will</i> need someone to help you through the shit-storm that is founding a <em>start-up</em>. But most young entrepreneurs don't have spouses. Seems like a co-founder fits the bill here.<p>2. External Validation<p>A couple of points: you <i>should</i> listen to your customers, but your customers are a very bad barometer for gauging big company decisions -- sometimes you need to make changes that they won't like. Changes that are good for the company (or changes that help you pivot) but piss off significant portions of your customer base; the customer is <i>not</i> always right. So if customers are a bad source of validation, what about other entrepreneurs? Let's face it: they are busy with their own projects to give you any meaningful feedback. The author's last point is to &quot;write that down&quot; -- seriously? Just get a co-founder.<p>3. Ideas / Brainstorming<p>Brainstorming is not merely spit-balling. Author says that &quot;you want to prevent brainstorming ideas and possible solutions that are inherently not viable or even true&quot; -- but who else knows your company as well as a co-founder? I.e. who else could gauge whether or not solutions are viable (or true)?<p>Let's ignore the shameless plug here (and the fact that using a website for brainstorming seems <i>prima facie</i> silly); I just want to point out that brainstorming outside of your company is worthless. You, quite obviously, need to brainstorm with someone <i>in</i> your company. Might as well make it a co-founder.<p>4. Skills / Capacity<p>It seems pretty obvious that you want to do something in the tech arena, you need to be pretty tech-savvy. If you're not tech-savvy, you need to associate yourself with someone that is. There's a good reason <em>investors</em> don't invest in business people. I remember listening to a talk by some of the people at Mint. One of their anecdotes went something like so: &quot;When you go and pitch to a VC, every programmer is +$50mil in valuation, and every suit &amp; tie &quot;business guy&quot; is -$100mil in valuation.&quot;<p>Apart from the intuitive attractiveness of this train of thought, there also has not (ever) been a successful &quot;business guy&quot; with no tech expertise and no technical co-founder doing much of anything in the <em>start-up</em> world.<p>Finally, let me just say that the people at YC know what they are doing. They rarely accept single-founder start-ups for a very good (and obvious) reason. The lack of technical expertise is also a big <em>red</em> <em>flag</em>. After all, if I've never seen the inside of an engine why would a bank fund an auto-shop I want to build."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "You Don't Need A Co-Founder"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://publicbeta.co/you-dont-need-a-cofounder/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_dvt",
+    "story_6314893"
+   ],
+   "author": "dvt",
+   "comment_text": "I think that this article is &quot;meh,&quot; so let&#x27;s look at it step-by-step:<p>1. Emotional Support<p>Author gets emotional support from wife and admits that you <i>will</i> need someone to help you through the shit-storm that is founding a start-up. But most young entrepreneurs don&#x27;t have spouses. Seems like a co-founder fits the bill here.<p>2. External Validation<p>A couple of points: you <i>should</i> listen to your customers, but your customers are a very bad barometer for gauging big company decisions -- sometimes you need to make changes that they won&#x27;t like. Changes that are good for the company (or changes that help you pivot) but piss off significant portions of your customer base; the customer is <i>not</i> always right. So if customers are a bad source of validation, what about other entrepreneurs? Let&#x27;s face it: they are busy with their own projects to give you any meaningful feedback. The author&#x27;s last point is to &quot;write that down&quot; -- seriously? Just get a co-founder.<p>3. Ideas &#x2F; Brainstorming<p>Brainstorming is not merely spit-balling. Author says that &quot;you want to prevent brainstorming ideas and possible solutions that are inherently not viable or even true&quot; -- but who else knows your company as well as a co-founder? I.e. who else could gauge whether or not solutions are viable (or true)?<p>Let&#x27;s ignore the shameless plug here (and the fact that using a website for brainstorming seems <i>prima facie</i> silly); I just want to point out that brainstorming outside of your company is worthless. You, quite obviously, need to brainstorm with someone <i>in</i> your company. Might as well make it a co-founder.<p>4. Skills &#x2F; Capacity<p>It seems pretty obvious that you want to do something in the tech arena, you need to be pretty tech-savvy. If you&#x27;re not tech-savvy, you need to associate yourself with someone that is. There&#x27;s a good reason investors don&#x27;t invest in business people. I remember listening to a talk by some of the people at Mint. One of their anecdotes went something like so: &quot;When you go and pitch to a VC, every programmer is +$50mil in valuation, and every suit &amp; tie &quot;business guy&quot; is -$100mil in valuation.&quot;<p>Apart from the intuitive attractiveness of this train of thought, there also has not (ever) been a successful &quot;business guy&quot; with no tech expertise and no technical co-founder doing much of anything in the start-up world.<p>Finally, let me just say that the people at YC know what they are doing. They rarely accept single-founder start-ups for a very good (and obvious) reason. The lack of technical expertise is also a big red flag. After all, if I&#x27;ve never seen the inside of an engine why would a bank fund an auto-shop I want to build.",
+   "created_at": "2013-09-02T22:30:35Z",
+   "created_at_i": 1378161035,
+   "objectID": "6317549",
+   "parent_id": 6314893,
+   "story_id": 6314893,
+   "story_title": "You Don't Need A Co-Founder",
+   "story_url": "http://publicbeta.co/you-dont-need-a-cofounder/",
+   "updated_at": "2024-09-19T19:57:55Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "hncommenter13"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "investor"
+     ],
+     "value": "I didn't know Jody, so I won't comment on him personally.<p>Speaking as a former <em>investor</em> regarding the financial situation though...never ever ever ever.<p>Financial controls aren't important just because VCs are greedy: they keep companies alive and keep you out of court (or jail).  I've seen situations in which cash didn't quite reconcile to what was expected; in some, the people involved made restitution and were fired.  In others, they went to prison.  A company with no effective financial control is flying blind and, someday, will run into the mountain in the clouds.<p>The article identifies some key warning signs.<p>1. \"...not even sharing the company's financial information with his co-founder, Emily Blakeney. Sources admit that was strange in retrospect.\n...\nSources say Sherman was the only person with access to the company's bank account and invoices. Only he knew how much cash Ecomom was using up every month.\"<p>In many startups, any payment over $X requires dual signatures for exactly this reason.  Also, contract bookkeepers aren't expensive (contract CFOs can be, but they're worth it).  A second set of eyes--and hands--on the corporate checkbook is crucial.<p>Also, why aren't investors aren't looking at the cash position every month?  That is the one critical number--the only one with sudden corporate death at stake--for every single Board meeting until the company is solidly and predictably cash flow positive.<p>2. \"'There wasn't ever full disclosure, and that leads me to believe there was a reason he didn't want anyone to have full disclosure,' says a source.\"<p>Totally 100% unacceptable.  The key execs and the board should be looking at the financials, at least at the bank account/quickbooks level, every month and management should be reviewing them more frequently yet.  Especially in a metrics-driven business like e-commerce that requires cash investments for inventory and advertising.<p>3.  \"He put the company's inventory on his credit card, a black American Express, which caused him to go into deeper personal debt. He refused to get a corporate card, despite complaining to colleagues when AmEx would call and question company expenses.\"<p>A huge red flag.  If there is intermingling of corporate and personal finances--whether this extreme or just the CEO's sister's law firm does the legal work--investors and co-founders need to fully understand and ensure it's arms-length.  Then they need to disentangle the two right away.<p>If you own 100% of the company, feel free to run it \"out of your back pocket.\"  But with outside shareholders, whether employees or investors, such a practice is indefensible.   In my experience, intertwined personal and professional finances is often the tip of the iceberg in terms of accounting shenanigans.<p>I don't mean to imply that investors should have seen this coming or that Jody set out to do this.  But every experienced investor who's been burned this way--and many have--makes financial control issues a topic at the first (and every subsequent) board meeting post-investment until adequate controls are in place."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The Story Of A Failed Startup And A Founder Driven To Suicide"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.businessinsider.com/jody-sherman-ecomom-2013-4?op=1"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_hncommenter13",
+    "story_5496324"
+   ],
+   "author": "hncommenter13",
+   "children": [
+    5497240,
+    5497843,
+    5498641,
+    5499331
+   ],
+   "comment_text": "I didn't know Jody, so I won't comment on him personally.<p>Speaking as a former investor regarding the financial situation though...never ever ever ever.<p>Financial controls aren't important just because VCs are greedy: they keep companies alive and keep you out of court (or jail).  I've seen situations in which cash didn't quite reconcile to what was expected; in some, the people involved made restitution and were fired.  In others, they went to prison.  A company with no effective financial control is flying blind and, someday, will run into the mountain in the clouds.<p>The article identifies some key warning signs.<p>1. \"...not even sharing the company's financial information with his co-founder, Emily Blakeney. Sources admit that was strange in retrospect.\n...\nSources say Sherman was the only person with access to the company's bank account and invoices. Only he knew how much cash Ecomom was using up every month.\"<p>In many startups, any payment over $X requires dual signatures for exactly this reason.  Also, contract bookkeepers aren't expensive (contract CFOs can be, but they're worth it).  A second set of eyes--and hands--on the corporate checkbook is crucial.<p>Also, why aren't investors aren't looking at the cash position every month?  That is the one critical number--the only one with sudden corporate death at stake--for every single Board meeting until the company is solidly and predictably cash flow positive.<p>2. \"'There wasn't ever full disclosure, and that leads me to believe there was a reason he didn't want anyone to have full disclosure,' says a source.\"<p>Totally 100% unacceptable.  The key execs and the board should be looking at the financials, at least at the bank account/quickbooks level, every month and management should be reviewing them more frequently yet.  Especially in a metrics-driven business like e-commerce that requires cash investments for inventory and advertising.<p>3.  \"He put the company's inventory on his credit card, a black American Express, which caused him to go into deeper personal debt. He refused to get a corporate card, despite complaining to colleagues when AmEx would call and question company expenses.\"<p>A huge red flag.  If there is intermingling of corporate and personal finances--whether this extreme or just the CEO's sister's law firm does the legal work--investors and co-founders need to fully understand and ensure it's arms-length.  Then they need to disentangle the two right away.<p>If you own 100% of the company, feel free to run it \"out of your back pocket.\"  But with outside shareholders, whether employees or investors, such a practice is indefensible.   In my experience, intertwined personal and professional finances is often the tip of the iceberg in terms of accounting shenanigans.<p>I don't mean to imply that investors should have seen this coming or that Jody set out to do this.  But every experienced investor who's been burned this way--and many have--makes financial control issues a topic at the first (and every subsequent) board meeting post-investment until adequate controls are in place.",
+   "created_at": "2013-04-05T05:32:12Z",
+   "created_at_i": 1365139932,
+   "objectID": "5496936",
+   "parent_id": 5496324,
+   "points": null,
+   "story_id": 5496324,
+   "story_title": "The Story Of A Failed Startup And A Founder Driven To Suicide",
+   "story_url": "http://www.businessinsider.com/jody-sherman-ecomom-2013-4?op=1",
+   "updated_at": "2023-09-06T21:13:13Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "argonaut"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "> We're growing our active user base 40% monthly and are currently receiving about 250,000 measurements per day<p>I think it's a stretch to call these people \"users,\" in any sort of monetary-potential way. Nonetheless, definitely use that number in any pitches you give.<p>> 1.5 years<p>That is a big red flag, and I hope you never mention that to investors.<p>> are now waiting on 3 VCs / incubators to get back to us<p>This is fairly standard in the VC community. \"Yes\" means maybe, and \"maybe\" means \"no.\" And \"no\" means \"hell no.\" VCs are notorious for saying no very politely and in a way that doesn't burn bridges, while leaving you hanging.<p>> We plan to apply to three funding sources per week, every week. Will that be enough?<p>Clearly that is not enough. You need to be out networking.<p>> To be clear, I have extremely high confidence that we will find funding. It's obvious to me that we need it and that others will be excited by us and want to invest. But since we want to gather springtime and summertime thunderstorm data in the USA, we're running out of time fast.<p>I want to be brutally honest with you. I have a fairly high confidence <i>you won't</i> find funding. Looking at this from a VC perspective, the only way you are going to make money, it seems, is selling the data to weather companies. That's not exactly a huge business. Most VCs do not know <i>anything</i> about the weather/meteorological business. Even if a VC thought your idea was interesting, they would not invest because they don't have domain experience. VCs are very conservative. VCs want to minimize risks (paradoxically). Why do you feel others will be excited by what you do? Why do you feel <i>it's obvious</i> that others will be excited? Because it's not obvious to me. I don't want to seem pessimistic, but why would I feel excited about this? I check the weather maybe once a week, to figure out if it'll rain in the next few days. That's it.<p>I agree with staunch. Give yourself a deadline (6 months?) for either finding funding or becoming ramen profitable, and if you don't make it, pivot or shut down. Applying through online forms is <i>the worst</i> way to apply. Those forms get passed to Associates, who have no power to make the deal happen (only Partners have that power). Even cold-emailing partners at VC firms is a better path than that path. You <i>need</i> introductions. Go out and network. Go to meetups. Maybe even come down to the Bay Area and try to meet people and pitch what you're doing. The startup investing climate down here is much warmer (for better or for worse) than any other place in the world."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Cumulonimbus is looking for funding, unsuccessfully. How can we move faster?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_argonaut",
+    "story_5410036"
+   ],
+   "author": "argonaut",
+   "comment_text": "&#62; We're growing our active user base 40% monthly and are currently receiving about 250,000 measurements per day<p>I think it's a stretch to call these people \"users,\" in any sort of monetary-potential way. Nonetheless, definitely use that number in any pitches you give.<p>&#62; 1.5 years<p>That is a big red flag, and I hope you never mention that to investors.<p>&#62; are now waiting on 3 VCs / incubators to get back to us<p>This is fairly standard in the VC community. \"Yes\" means maybe, and \"maybe\" means \"no.\" And \"no\" means \"hell no.\" VCs are notorious for saying no very politely and in a way that doesn't burn bridges, while leaving you hanging.<p>&#62; We plan to apply to three funding sources per week, every week. Will that be enough?<p>Clearly that is not enough. You need to be out networking.<p>&#62; To be clear, I have extremely high confidence that we will find funding. It's obvious to me that we need it and that others will be excited by us and want to invest. But since we want to gather springtime and summertime thunderstorm data in the USA, we're running out of time fast.<p>I want to be brutally honest with you. I have a fairly high confidence <i>you won't</i> find funding. Looking at this from a VC perspective, the only way you are going to make money, it seems, is selling the data to weather companies. That's not exactly a huge business. Most VCs do not know <i>anything</i> about the weather/meteorological business. Even if a VC thought your idea was interesting, they would not invest because they don't have domain experience. VCs are very conservative. VCs want to minimize risks (paradoxically). Why do you feel others will be excited by what you do? Why do you feel <i>it's obvious</i> that others will be excited? Because it's not obvious to me. I don't want to seem pessimistic, but why would I feel excited about this? I check the weather maybe once a week, to figure out if it'll rain in the next few days. That's it.<p>I agree with staunch. Give yourself a deadline (6 months?) for either finding funding or becoming ramen profitable, and if you don't make it, pivot or shut down. Applying through online forms is <i>the worst</i> way to apply. Those forms get passed to Associates, who have no power to make the deal happen (only Partners have that power). Even cold-emailing partners at VC firms is a better path than that path. You <i>need</i> introductions. Go out and network. Go to meetups. Maybe even come down to the Bay Area and try to meet people and pitch what you're doing. The startup investing climate down here is much warmer (for better or for worse) than any other place in the world.",
+   "created_at": "2013-03-21T00:06:35Z",
+   "created_at_i": 1363824395,
+   "objectID": "5411690",
+   "parent_id": 5410036,
+   "points": null,
+   "story_id": 5410036,
+   "story_title": "Cumulonimbus is looking for funding, unsuccessfully. How can we move faster?",
+   "story_url": "",
+   "updated_at": "2023-09-06T21:05:56Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "calibraxis"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "That's a good test to evaluate startups. How honest are the founders on their expected failure rate? If you're not a person they need to be lying to (i.e. not a potential/actual employee, investor, customer, journalist, etc), will they tell you that their realistic probability for success is very low?<p>If they can't do this, that's a red flag. Their irrationality will injure people in a relationship with them. They may disrespect others. Optimism is vital, but so is groundedness."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Startups Anonymous"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.startupsanonymo.us/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_calibraxis",
+    "story_5388219"
+   ],
+   "author": "calibraxis",
+   "children": [
+    5390978
+   ],
+   "comment_text": "That's a good test to evaluate startups. How honest are the founders on their expected failure rate? If you're not a person they need to be lying to (i.e. not a potential/actual employee, investor, customer, journalist, etc), will they tell you that their realistic probability for success is very low?<p>If they can't do this, that's a red flag. Their irrationality will injure people in a relationship with them. They may disrespect others. Optimism is vital, but so is groundedness.",
+   "created_at": "2013-03-17T13:31:08Z",
+   "created_at_i": 1363527068,
+   "objectID": "5389112",
+   "parent_id": 5388966,
+   "story_id": 5388219,
+   "story_title": "Startups Anonymous",
+   "story_url": "http://www.startupsanonymo.us/",
+   "updated_at": "2024-09-19T19:25:06Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "dhouston"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "sam's still right. all kinds of red flags -- \"i'll give up my job, but only if things are going well\", \"i have 2hr/day to spend\", resentment already building, etc. it's only gonna get worse.<p>number2 -- that's fine that you have those priorities (family, steady job), but it seems like you're in denial about the situation. absentee (or remote + part-time, whatever) cofounders are not what early stage startups need. and even if you disagree, your potential investors (e.g. yc) won't. if being remote and working 2hrs a day was a viable strategy for a startup founder, don't you think there would be more success stories that fit that profile? :P<p>that said, you can still come on board later after #1 gets things going."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Co-founder won't move to the valley if accepted by YC. What do I do?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_dhouston",
+    "story_52932"
+   ],
+   "author": "dhouston",
+   "comment_text": "sam's still right. all kinds of red flags -- \"i'll give up my job, but only if things are going well\", \"i have 2hr/day to spend\", resentment already building, etc. it's only gonna get worse.<p>number2 -- that's fine that you have those priorities (family, steady job), but it seems like you're in denial about the situation. absentee (or remote + part-time, whatever) cofounders are not what early stage startups need. and even if you disagree, your potential investors (e.g. yc) won't. if being remote and working 2hrs a day was a viable strategy for a startup founder, don't you think there would be more success stories that fit that profile? :P<p>that said, you can still come on board later after #1 gets things going.",
+   "created_at": "2007-09-11T07:41:03Z",
+   "created_at_i": 1189496463,
+   "objectID": "53213",
+   "parent_id": 53145,
+   "story_id": 52932,
+   "story_title": "Co-founder won't move to the valley if accepted by YC. What do I do?",
+   "updated_at": "2024-09-19T16:21:55Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "salleisha"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "April 15th isn't just a date, it\u2019s a stress test for your back office.<p>If you\u2019re running a Delaware C-Corp, you know the drill. You think you have time, then suddenly it\u2019s April 14th, your bank sync is broken, and your CPA is ghosting you because they have 100 other founders in the same boat.<p>A few reminders for the 2026 tax season:<p>- Zero income \u2260 Zero paperwork: Even if you\u2019re pre-revenue, the IRS still requires Form 1120. No filing, no compliance.<p>- Extensions buy time, not money: You can file for an extension to submit your paperwork in October, but any taxes owed are still due now.<p>- Due Diligence starts here: Investors don\u2019t just look at your code; they look at your tax returns. Messy filings are a major red flag during your next round.<p>We built TaxHero AI so you don\u2019t have to play accountant every spring. We handle the prep and the calendar, so April 15th is just another Tuesday for you.<p>Stop scrambling. Build the product, we\u2019ll handle the IRS.<p>Check your deadlines: taxhero.vc/checkin<p>#Startups #DelawareCCorp #TaxSeason2026 #FounderLife #Fintech"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "[dead]"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_salleisha",
+    "story_47367671"
+   ],
+   "author": "salleisha",
+   "comment_text": "April 15th isn&#x27;t just a date, it\u2019s a stress test for your back office.<p>If you\u2019re running a Delaware C-Corp, you know the drill. You think you have time, then suddenly it\u2019s April 14th, your bank sync is broken, and your CPA is ghosting you because they have 100 other founders in the same boat.<p>A few reminders for the 2026 tax season:<p>- Zero income \u2260 Zero paperwork: Even if you\u2019re pre-revenue, the IRS still requires Form 1120. No filing, no compliance.<p>- Extensions buy time, not money: You can file for an extension to submit your paperwork in October, but any taxes owed are still due now.<p>- Due Diligence starts here: Investors don\u2019t just look at your code; they look at your tax returns. Messy filings are a major red flag during your next round.<p>We built TaxHero AI so you don\u2019t have to play accountant every spring. We handle the prep and the calendar, so April 15th is just another Tuesday for you.<p>Stop scrambling. Build the product, we\u2019ll handle the IRS.<p>Check your deadlines: taxhero.vc&#x2F;checkin<p>#Startups #DelawareCCorp #TaxSeason2026 #FounderLife #Fintech",
+   "created_at": "2026-03-13T18:11:10Z",
+   "created_at_i": 1773425470,
+   "objectID": "47367672",
+   "parent_id": 47367671,
+   "story_id": 47367671,
+   "story_title": "[dead]",
+   "updated_at": "2026-03-13T18:12:41Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "TBaronG"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Im gonna be ver honest, this is my first launch and attempt at creating an idea we are trying to go full throttle on, so here it goes, hope you like it, find it useful or share it with someone who might. <a href=\"https://jmp.sh/oUea6t8H\" rel=\"nofollow\">https://jmp.sh/oUea6t8H</a><p>If you are lazy to watch the whole video here is a recap:<p>We want to create the trust layer for startup relationships.<p>The problem: Due diligence is broken. Trust and speed is what people look for.<p>\u2022 VCs spend 40+ hours per deal. \n \u2022 Founders can't verify co-founder OR angel investor claims.<p><pre><code>   : \n</code></pre>\n1. For VCs &amp; Angels (The &quot;Speed vs. Risk&quot; Problem)\nDue diligence is a bottleneck. It takes 40+ hours to properly vet a deal, forcing investors to choose between moving fast and missing red flags. Current tools give you data, but they don't tell you if that data is true.<p>2. For Founders (The &quot;Blind Partnership&quot; Problem)\nFinding a co founder or early hire is high stakes, but current platforms are full of inflated resumes and unverified histories. Founders struggle to validate technical claims and past exits without a trusted source of truth.<p>'  : The global community of founders, investors, and operators building or searching for high-growth companies.<p>try it at: <a href=\"https://veloblanco.global/\" rel=\"nofollow\">https://veloblanco.global/</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "My First Product Launch"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://veloblanco.global/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_TBaronG",
+    "story_46711570"
+   ],
+   "author": "TBaronG",
+   "comment_text": "Im gonna be ver honest, this is my first launch and attempt at creating an idea we are trying to go full throttle on, so here it goes, hope you like it, find it useful or share it with someone who might. <a href=\"https:&#x2F;&#x2F;jmp.sh&#x2F;oUea6t8H\" rel=\"nofollow\">https:&#x2F;&#x2F;jmp.sh&#x2F;oUea6t8H</a><p>If you are lazy to watch the whole video here is a recap:<p>We want to create the trust layer for startup relationships.<p>The problem: Due diligence is broken. Trust and speed is what people look for.<p>\u2022 VCs spend 40+ hours per deal. \n \u2022 Founders can&#x27;t verify co-founder OR angel investor claims.<p><pre><code>   : \n</code></pre>\n1. For VCs &amp; Angels (The &quot;Speed vs. Risk&quot; Problem)\nDue diligence is a bottleneck. It takes 40+ hours to properly vet a deal, forcing investors to choose between moving fast and missing red flags. Current tools give you data, but they don&#x27;t tell you if that data is true.<p>2. For Founders (The &quot;Blind Partnership&quot; Problem)\nFinding a co founder or early hire is high stakes, but current platforms are full of inflated resumes and unverified histories. Founders struggle to validate technical claims and past exits without a trusted source of truth.<p>&#x27;  : The global community of founders, investors, and operators building or searching for high-growth companies.<p>try it at: <a href=\"https:&#x2F;&#x2F;veloblanco.global&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;veloblanco.global&#x2F;</a>",
+   "created_at": "2026-01-21T21:07:42Z",
+   "created_at_i": 1769029662,
+   "objectID": "46711571",
+   "parent_id": 46711570,
+   "story_id": 46711570,
+   "story_title": "My First Product Launch",
+   "story_url": "https://veloblanco.global/",
+   "updated_at": "2026-03-05T23:22:47Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "neltnerb"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "It gets messy when the other poker players are your mentors and family whom you love and respect, when the money is real, when the amounts to you feel enormous (whether they matter to the investor is a different story), and when losing carries unpredictable emotional and social consequences. And when mentors and family do it you are probably their only bet. It feels like betting other people's money and I totally get how that's a psychological hangup to feel that it is wrong.<p>I am not being sarcastic or flippant in this, it limits me to not be willing to take advantage of the risk/reward system, but it's somehow deeply tied into my ethics in ways I didn't even really notice until my second startup. And I'm okay with that limitation, but I'll work through it sooner or later and regain my appetite for risk.<p>Aside from that, many people despise thinking this way about their work. Like me, even though I'm willing to do it. I've met founders who <i>loved</i> negotiation. Like I swear they must have been nightmare children. I hate negotiation, I want people to treat each other fairly and will stick with a good human that does so forever. I suspect those people don't mind ripping off family and friends, much less strangers. It is harsh, and I've seen things, but anecdotes aren't statistics, and that's a huge obvious red flag to me. If the leaders like to do internal negotiation games I just want out. It's just painful to have to deal with being around when you just want to make stuff work.<p>It's important to talk about ahead of time, and get in writing, but that's also something easily overlooked among family and friends who do not do this kind of thing much. And the downsides need to be honest and clear to avoid mistrust.<p>Now, after working at two startups and starting three, my third is a consulting company that exclusively does things hourly except in very special circumstances. It's never going to grow fast because it scales as my hours of labor. But I am way more able to pick a price for my labor than decide how to price something that I haven't done yet. I could figure it out, I just kinda don't want to. For now?"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Raising money fucked me up"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://blog.yakkomajuri.com/blog/raising-money-fucked-me-up"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_neltnerb",
+    "story_46660543"
+   ],
+   "author": "neltnerb",
+   "comment_text": "It gets messy when the other poker players are your mentors and family whom you love and respect, when the money is real, when the amounts to you feel enormous (whether they matter to the investor is a different story), and when losing carries unpredictable emotional and social consequences. And when mentors and family do it you are probably their only bet. It feels like betting other people&#x27;s money and I totally get how that&#x27;s a psychological hangup to feel that it is wrong.<p>I am not being sarcastic or flippant in this, it limits me to not be willing to take advantage of the risk&#x2F;reward system, but it&#x27;s somehow deeply tied into my ethics in ways I didn&#x27;t even really notice until my second startup. And I&#x27;m okay with that limitation, but I&#x27;ll work through it sooner or later and regain my appetite for risk.<p>Aside from that, many people despise thinking this way about their work. Like me, even though I&#x27;m willing to do it. I&#x27;ve met founders who <i>loved</i> negotiation. Like I swear they must have been nightmare children. I hate negotiation, I want people to treat each other fairly and will stick with a good human that does so forever. I suspect those people don&#x27;t mind ripping off family and friends, much less strangers. It is harsh, and I&#x27;ve seen things, but anecdotes aren&#x27;t statistics, and that&#x27;s a huge obvious red flag to me. If the leaders like to do internal negotiation games I just want out. It&#x27;s just painful to have to deal with being around when you just want to make stuff work.<p>It&#x27;s important to talk about ahead of time, and get in writing, but that&#x27;s also something easily overlooked among family and friends who do not do this kind of thing much. And the downsides need to be honest and clear to avoid mistrust.<p>Now, after working at two startups and starting three, my third is a consulting company that exclusively does things hourly except in very special circumstances. It&#x27;s never going to grow fast because it scales as my hours of labor. But I am way more able to pick a price for my labor than decide how to price something that I haven&#x27;t done yet. I could figure it out, I just kinda don&#x27;t want to. For now?",
+   "created_at": "2026-01-18T11:56:04Z",
+   "created_at_i": 1768737364,
+   "objectID": "46667070",
+   "parent_id": 46662450,
+   "story_id": 46660543,
+   "story_title": "Raising money fucked me up",
+   "story_url": "https://blog.yakkomajuri.com/blog/raising-money-fucked-me-up",
+   "updated_at": "2026-03-05T23:27:20Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "thesummit_ai"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ive performed a 2 month research on Cluely, the trendy AI startup that you may have seen ads of on every social media platform. I have flagged the company for many deceptive practices, along with financial implications.<p>Key Red Flags:<p>Product flaws: Frequent bugs, refund issues, and users caught using it in interviews.<p>Transparency issues: CEO stopped sharing ARR data; doubtful $2.5M \u201centerprise\u201d deal; claims of 99% margins &amp; \u201cinsane profitability\u201d don\u2019t match reports of $19M marketing spend.<p>Questionable spending: Times Square ads, $50K DoorDash bills, 2,000-person party plans.<p>Weak fundamentals: 0.02% conversion rate despite 1B+ ad views; valuation far exceeds performance.<p>Ethical &amp; focus concerns: Maintains cheating tool \u201cInterview Coder\u201d; talks of pivoting to brain-AI devices.<p>Investor hype: Critiques of a16z and VC \u201cround-tripping\u201d that inflate valuations."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "[dead]"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_thesummit_ai",
+    "story_45622638"
+   ],
+   "author": "thesummit_ai",
+   "comment_text": "Ive performed a 2 month research on Cluely, the trendy AI startup that you may have seen ads of on every social media platform. I have flagged the company for many deceptive practices, along with financial implications.<p>Key Red Flags:<p>Product flaws: Frequent bugs, refund issues, and users caught using it in interviews.<p>Transparency issues: CEO stopped sharing ARR data; doubtful $2.5M \u201centerprise\u201d deal; claims of 99% margins &amp; \u201cinsane profitability\u201d don\u2019t match reports of $19M marketing spend.<p>Questionable spending: Times Square ads, $50K DoorDash bills, 2,000-person party plans.<p>Weak fundamentals: 0.02% conversion rate despite 1B+ ad views; valuation far exceeds performance.<p>Ethical &amp; focus concerns: Maintains cheating tool \u201cInterview Coder\u201d; talks of pivoting to brain-AI devices.<p>Investor hype: Critiques of a16z and VC \u201cround-tripping\u201d that inflate valuations.",
+   "created_at": "2025-10-17T22:00:47Z",
+   "created_at_i": 1760738447,
+   "objectID": "45622639",
+   "parent_id": 45622638,
+   "story_id": 45622638,
+   "story_title": "[dead]",
+   "updated_at": "2026-03-05T22:49:37Z"
+  }
+ ],
+ "hitsPerPage": 50,
+ "nbHits": 137,
+ "nbPages": 3,
+ "page": 0,
+ "params": "query=red+flag+startup+investor&tags=comment&hitsPerPage=50&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 172,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 19
+  },
+  "afterFetch": {
+   "format": {
+    "highlighting": 4,
+    "total": 4
+   },
+   "merge": {
+    "mergeLoop": {
+     "prepareNextHit": 28,
+     "total": 28
+    },
+    "total": 30
+   },
+   "total": 31
+  },
+  "fetch": {
+   "query": 30,
+   "scanning": 109,
+   "total": 140
+  },
+  "total": 172
+ },
+ "query": "red flag startup investor",
+ "serverTimeMS": 177,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=red+flag+startup+investor&tags=comment&hitsPerPage=50"
+}

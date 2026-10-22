@@ -1,0 +1,350 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "kosmischemusik"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "affinity",
+      "crm",
+      "vc"
+     ],
+     "value": "1. Discovery: Product Hunt, Angelist, Mattermark etc<p>2. CRMs: There is a <em>CRM</em> built specifically for <em>VC</em>s - <em>Affinity</em>. But Salesforce, Hubspot etc would also work.<p>3. Portfolio Management: Carta<p>I'm definitely missing a lot of tools and stages. Hope others can fill the gap."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "vc"
+     ],
+     "value": "Ask HN: What tools do <em>VC</em>s need?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_kosmischemusik",
+    "story_23314255"
+   ],
+   "author": "kosmischemusik",
+   "comment_text": "1. Discovery: Product Hunt, Angelist, Mattermark etc<p>2. CRMs: There is a CRM built specifically for VCs - Affinity. But Salesforce, Hubspot etc would also work.<p>3. Portfolio Management: Carta<p>I&#x27;m definitely missing a lot of tools and stages. Hope others can fill the gap.",
+   "created_at": "2020-05-26T18:12:40Z",
+   "created_at_i": 1590516760,
+   "objectID": "23314496",
+   "parent_id": 23314255,
+   "story_id": 23314255,
+   "story_title": "Ask HN: What tools do VCs need?",
+   "updated_at": "2024-09-20T06:12:21Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "devonkim"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "affinity",
+      "crm",
+      "vc"
+     ],
+     "value": "Funny, we just had this just hit the front page against environment variables for secrets. <a href=\"https://news.ycombinator.com/item?id=8826024\" rel=\"nofollow\">https://news.ycombinator.<em>com</em>/item?id=8826024</a><p>It's not clear from the doc you linked that you would support AWS STS, which is probably the right way to approach minimal privilege and to reduce the time window that an attacker would have the privileges of the entity compromised. Wish I had a way to calculate that out from the tools I had which helps drastically during an investigation to sift through network logs.<p>What you seem to have built so far is what could be used to build a more modern shared secret access stack rather than being a full solution itself. Most companies that want to pay for something want to have something that will rotate out keys &amp; passwords or enforce secrets policies like separation of keys across different nodes in your high availability solution for them (eg. the DB, root, and LDAP cached passwords should not be stored on the same data node even in encrypted form). Otherwise, a lot of companies have built equivalent solutions like Conjur already (to varying degrees of success depending upon how dysfunctional their IT already is). A lot of the custom solutions I'm familiar with in Defense / IC space are starting to use Apache Accumulo to enforce a great deal of sharing and storing of secrets. The architecture of that makes it possible to have tables split both column-wise and row-wise across multiple nodes based upon business rules like HIPAA, FISMA, PCI-DSS, etc. Tack on Zookeeper with some SASL and you'll spend the next year or two just arranging the meetings to figure out the security rules.<p>For an analogy, it seems like you've built a lot of the workings of Postgres missing something important like procedural queries and triggers, but organizations really want an ORM (they just don't even realize it because the whole industry is built around bikeshedding topics in security). Build something respecting the vernacular and culture of engineers, IT opsec / compliance, and (more importantly) the managers of both orgs and you should have a winner. Ok, after you find the right sales guys to get the attention of some F500s that are in terrible industries wracked by compliance BS 24/7.<p>All in all, good idea and it looks promising, I'll keep your product in mind if I can get a management tool like this even suggested. We're doing some extremely bad practices at present in order to avoid violating OTHER no-nos keeping stuff out of the public cloud, and our IAM across dozens and dozens of AWS accounts is completely bonkers and the bungling of the credentials as the after-effect is probably causing worse security problems than if we just gave them all the same keypairs. It'd be really interesting to see this work seamlessly across both AWS-like environments and a vSphere/<em>vC</em>AC/<em>vC</em>D type of environment using <em>affinity</em> / anti-<em>affinity</em> rules to make initial guesses about your security configuration. Pretty sure everything in an autoscaling group should be by default in the same group or &quot;layer&quot; (in your terminology), for example, and you could start with the same for vSphere compute clusters, unless host anti-<em>affinity</em> rules for a VM are present, which usually means that the VM is not allowed to cross a physical boundary and is a hint at a business level policy rather than a technical one (nobody does cross-geographic clusters besides Google last I saw, and you probably aren't going to be able to sell this to them....).<p>One thing that would tremendously help in your documentation would be to provide security scenarios for different user stories and potential users. Admins across multiple tenant business units have different use cases than developers that are working in maybe one or two organizations / groups, for example. I found myself expecting a &quot;I am a... X, Y, Z&quot; set of tabs and wanted to see each of their use case scenarios for one or two sample companies with different needs. Besides the &quot;I don't want to be your guinea pig&quot; mentality, this is what companies are really looking for half the time they ask for a reference customer."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Why Deleting Sensitive Information from GitHub Doesn't Save You"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://jordan-wright.github.io/blog/2014/12/30/why-deleting-sensitive-information-from-github-doesnt-save-you/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_devonkim",
+    "story_8818035"
+   ],
+   "author": "devonkim",
+   "comment_text": "Funny, we just had this just hit the front page against environment variables for secrets. <a href=\"https://news.ycombinator.com/item?id=8826024\" rel=\"nofollow\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=8826024</a><p>It&#x27;s not clear from the doc you linked that you would support AWS STS, which is probably the right way to approach minimal privilege and to reduce the time window that an attacker would have the privileges of the entity compromised. Wish I had a way to calculate that out from the tools I had which helps drastically during an investigation to sift through network logs.<p>What you seem to have built so far is what could be used to build a more modern shared secret access stack rather than being a full solution itself. Most companies that want to pay for something want to have something that will rotate out keys &amp; passwords or enforce secrets policies like separation of keys across different nodes in your high availability solution for them (eg. the DB, root, and LDAP cached passwords should not be stored on the same data node even in encrypted form). Otherwise, a lot of companies have built equivalent solutions like Conjur already (to varying degrees of success depending upon how dysfunctional their IT already is). A lot of the custom solutions I&#x27;m familiar with in Defense &#x2F; IC space are starting to use Apache Accumulo to enforce a great deal of sharing and storing of secrets. The architecture of that makes it possible to have tables split both column-wise and row-wise across multiple nodes based upon business rules like HIPAA, FISMA, PCI-DSS, etc. Tack on Zookeeper with some SASL and you&#x27;ll spend the next year or two just arranging the meetings to figure out the security rules.<p>For an analogy, it seems like you&#x27;ve built a lot of the workings of Postgres missing something important like procedural queries and triggers, but organizations really want an ORM (they just don&#x27;t even realize it because the whole industry is built around bikeshedding topics in security). Build something respecting the vernacular and culture of engineers, IT opsec &#x2F; compliance, and (more importantly) the managers of both orgs and you should have a winner. Ok, after you find the right sales guys to get the attention of some F500s that are in terrible industries wracked by compliance BS 24&#x2F;7.<p>All in all, good idea and it looks promising, I&#x27;ll keep your product in mind if I can get a management tool like this even suggested. We&#x27;re doing some extremely bad practices at present in order to avoid violating OTHER no-nos keeping stuff out of the public cloud, and our IAM across dozens and dozens of AWS accounts is completely bonkers and the bungling of the credentials as the after-effect is probably causing worse security problems than if we just gave them all the same keypairs. It&#x27;d be really interesting to see this work seamlessly across both AWS-like environments and a vSphere&#x2F;vCAC&#x2F;vCD type of environment using affinity &#x2F; anti-affinity rules to make initial guesses about your security configuration. Pretty sure everything in an autoscaling group should be by default in the same group or &quot;layer&quot; (in your terminology), for example, and you could start with the same for vSphere compute clusters, unless host anti-affinity rules for a VM are present, which usually means that the VM is not allowed to cross a physical boundary and is a hint at a business level policy rather than a technical one (nobody does cross-geographic clusters besides Google last I saw, and you probably aren&#x27;t going to be able to sell this to them....).<p>One thing that would tremendously help in your documentation would be to provide security scenarios for different user stories and potential users. Admins across multiple tenant business units have different use cases than developers that are working in maybe one or two organizations &#x2F; groups, for example. I found myself expecting a &quot;I am a... X, Y, Z&quot; set of tabs and wanted to see each of their use case scenarios for one or two sample companies with different needs. Besides the &quot;I don&#x27;t want to be your guinea pig&quot; mentality, this is what companies are really looking for half the time they ask for a reference customer.",
+   "created_at": "2015-01-02T21:00:28Z",
+   "created_at_i": 1420232428,
+   "objectID": "8828521",
+   "parent_id": 8820238,
+   "points": null,
+   "story_id": 8818035,
+   "story_title": "Why Deleting Sensitive Information from GitHub Doesn't Save You",
+   "story_url": "https://jordan-wright.github.io/blog/2014/12/30/why-deleting-sensitive-information-from-github-doesnt-save-you/",
+   "updated_at": "2023-09-06T23:11:05Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "contessagibson"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "affinity",
+      "crm",
+      "vc"
+     ],
+     "value": "The coverage is certainly less than stellar. I certainly expect to see that shifting in time--the changing demography of the country demands it.<p>I run an early stage startup PlusNavigator, Inc. a solution simplifying the shopping experience for plus size women. Founder Institute alum, cited in the NYTimes this past summer, I'm Chicago based. I've learned to pitch my little heart out, and have had favorable interest from respected persons in the <em>VC</em> community...its now a matter of delivering qualitative traction for the business.<p>The process seems somewhat uniform once you're out there and competing with your fellow peers and their startups, irrespective of race/gender however the process of GETTING into the active conversations around startups, accelerators, incubators, and serious conversations about effectively positioning your company is something that the individual has to own.<p>My personal path started in desktop support, then enterprise IT sales, and I've always had a strong <em>affinity</em> for tech. Solving the woes of millions of plus size women, by leveraging technology seemed immediately viable.<p>A lovely tech sis of mine Obi is working on PopInGym, another brilliant idea...and its JOY seeing her at SXSW each year.<p>While there is a difference between tech enabled companies and tech companies, I think the future of startups makes that difference close near indistinguishable, and it turns into solving every day problems by leveraging tech.<p>Access to mainstream startup communities makes a difference. Since August, I've worked out of Chicago's highly regarded 1871 digital startup community, having to compete against a large pool of applicants, an in-person interview, and panel voting review for acceptance to work on my startup there. The programming, education, and network fostered certainly helps to neutralize the lack of diversity some.<p>It seems I have an great deal of female, and black female founder colleagues to name a few Obi (PopInGym), Bolaji (SociaLifeChicago), Feyi (CancerIQ), Christine (ItsAShort.<em>com</em>) among others.<p>The news coverage certainly isn't sensationalized. We're out there, we have a story to tell, and its inclined to empower other women just like us...because we know there are others out there, waiting to claim their space at the tech table."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Any black women founders out there? What's your story?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_contessagibson",
+    "story_5374161"
+   ],
+   "author": "contessagibson",
+   "comment_text": "The coverage is certainly less than stellar. I certainly expect to see that shifting in time--the changing demography of the country demands it.<p>I run an early stage startup PlusNavigator, Inc. a solution simplifying the shopping experience for plus size women. Founder Institute alum, cited in the NYTimes this past summer, I'm Chicago based. I've learned to pitch my little heart out, and have had favorable interest from respected persons in the VC community...its now a matter of delivering qualitative traction for the business.<p>The process seems somewhat uniform once you're out there and competing with your fellow peers and their startups, irrespective of race/gender however the process of GETTING into the active conversations around startups, accelerators, incubators, and serious conversations about effectively positioning your company is something that the individual has to own.<p>My personal path started in desktop support, then enterprise IT sales, and I've always had a strong affinity for tech. Solving the woes of millions of plus size women, by leveraging technology seemed immediately viable.<p>A lovely tech sis of mine Obi is working on PopInGym, another brilliant idea...and its JOY seeing her at SXSW each year.<p>While there is a difference between tech enabled companies and tech companies, I think the future of startups makes that difference close near indistinguishable, and it turns into solving every day problems by leveraging tech.<p>Access to mainstream startup communities makes a difference. Since August, I've worked out of Chicago's highly regarded 1871 digital startup community, having to compete against a large pool of applicants, an in-person interview, and panel voting review for acceptance to work on my startup there. The programming, education, and network fostered certainly helps to neutralize the lack of diversity some.<p>It seems I have an great deal of female, and black female founder colleagues to name a few Obi (PopInGym), Bolaji (SociaLifeChicago), Feyi (CancerIQ), Christine (ItsAShort.com) among others.<p>The news coverage certainly isn't sensationalized. We're out there, we have a story to tell, and its inclined to empower other women just like us...because we know there are others out there, waiting to claim their space at the tech table.",
+   "created_at": "2013-03-15T02:36:31Z",
+   "created_at_i": 1363314991,
+   "objectID": "5378951",
+   "parent_id": 5374161,
+   "points": null,
+   "story_id": 5374161,
+   "story_title": "Ask HN: Any black women founders out there? What's your story?",
+   "story_url": "",
+   "updated_at": "2023-09-06T21:03:15Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tbatchelli"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "affinity",
+      "crm",
+      "vc"
+     ],
+     "value": "Manta Cares | Sr. Front End and Back End Engineers | hybrid-SF | Full time | $145-165K + equity<p>At Manta Cares we're on a bold journey to demystify healthcare and transform the healthcare experience for patients and their loved ones. Our mission is much bigger than any one of us \u2013 we're here to make a real difference in people's lives.<p>Venture backed (pear.<em>vc</em>, Sozo, 1843 ventures). Come to bootstrap our SF engineering team. We are looking for experienced developers with an <em>affinity</em> to putting great product in the hands of users and for making people's life better when they need it the most.<p>We are looking for Sr. BE and FE engineers to join the Head of Engineering (me!) in San Francisco (hybrid, 2 office days a week). Because you'd be one of the first US-based engineers, you'll need strong Golang + Postgres or Typescript + React skills, or convince us that you can get there fast. It also helps if you have worked in healthcare environments and / or if you have a passion to help people of all walks of life go through their hardest times. We deal with non-ordinary problems and constraints, bringing simplicity and calmness into very complex and stressful situations.<p>Please check out more details and apply at <a href=\"https://mantacares.com/pages/careers\" rel=\"nofollow\">https://mantacares.<em>com</em>/pages/careers</a> or email me at (toni at mantacares dot <em>com</em>)"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Who is hiring? (November 2024)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_tbatchelli",
+    "story_42017580"
+   ],
+   "author": "tbatchelli",
+   "comment_text": "Manta Cares | Sr. Front End and Back End Engineers | hybrid-SF | Full time | $145-165K + equity<p>At Manta Cares we&#x27;re on a bold journey to demystify healthcare and transform the healthcare experience for patients and their loved ones. Our mission is much bigger than any one of us \u2013 we&#x27;re here to make a real difference in people&#x27;s lives.<p>Venture backed (pear.vc, Sozo, 1843 ventures). Come to bootstrap our SF engineering team. We are looking for experienced developers with an affinity to putting great product in the hands of users and for making people&#x27;s life better when they need it the most.<p>We are looking for Sr. BE and FE engineers to join the Head of Engineering (me!) in San Francisco (hybrid, 2 office days a week). Because you&#x27;d be one of the first US-based engineers, you&#x27;ll need strong Golang + Postgres or Typescript + React skills, or convince us that you can get there fast. It also helps if you have worked in healthcare environments and &#x2F; or if you have a passion to help people of all walks of life go through their hardest times. We deal with non-ordinary problems and constraints, bringing simplicity and calmness into very complex and stressful situations.<p>Please check out more details and apply at <a href=\"https:&#x2F;&#x2F;mantacares.com&#x2F;pages&#x2F;careers\" rel=\"nofollow\">https:&#x2F;&#x2F;mantacares.com&#x2F;pages&#x2F;careers</a> or email me at (toni at mantacares dot com)",
+   "created_at": "2024-11-01T17:32:45Z",
+   "created_at_i": 1730482365,
+   "objectID": "42019425",
+   "parent_id": 42017580,
+   "story_id": 42017580,
+   "story_title": "Ask HN: Who is hiring? (November 2024)",
+   "updated_at": "2024-11-18T22:53:26Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Quindecillion"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "affinity",
+      "crm",
+      "vc"
+     ],
+     "value": "It's not my job to chase up every tiny detail for you. You have to be curious enough to look into it and verify for yourself. I've given you enough information to research it for yourself. You've shown zero good faith curiosity that would encourage someone to help you understand it any further, and you're getting pissy at me? That's rich.<p>But I'll give you one last thread to follow. Beyond that you're on your own.<p><a href=\"https://medium.com/@nic__carter/comments-on-the-white-house-report-on-the-climate-implications-of-crypto-mining-8d65d30ec942\" rel=\"nofollow\">https://medium.<em>com</em>/@nic__carter/comments-on-the-white-house-...</a><p>&gt; And that difference is... what exactly?<p>Every other crypto is a product released by a company with a CEO, investors, <em>VC</em> funding, a marketing team etc. and all based on dubious promises of &quot;utility&quot;, &quot;defi&quot;, or &quot;yield&quot;, faster transactions speeds, or &quot;web3&quot;. It's all a bullshit <em>affinity</em> scam riding on the coat tails of Bitcoin.<p>Bitcoin is literally just an open source protocol for an open, neutral, and permissionless global monetary network, similar to how TCP/IP is a neutral communications protocol for the Internet. There's no CEO or &quot;foundation&quot; like in the case of Ethereum and other cryptos. Companies are building up businesses around this open and neutral protocol. If you can't see the potential behind that combined with its application to demand response, load balancing, methane capture, AND the humanitarian benefits [1][2], well...<p>\u201cIf you don't believe me or don't get it, I don't have time to try to convince you, sorry.\u201d -Satoshi Nakamoto<p>Good luck out there.<p>[1] <a href=\"https://twitter.com/hrf/status/1512488123430756363?lang=en\" rel=\"nofollow\">https://twitter.<em>com</em>/hrf/status/1512488123430756363?lang=en</a><p>[2] <a href=\"https://bitcoinmagazine.com/culture/check-your-financial-privilege\" rel=\"nofollow\">https://bitcoinmagazine.<em>com</em>/culture/check-your-financial-pri...</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The Ethereum merge is done"
+    },
+    "story_url": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "crm"
+     ],
+     "value": "https://www.coindesk.<em>com</em>/tech/2022/09/15/the-ethereum-merge-is-done-did-it-work/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Quindecillion",
+    "story_32848010"
+   ],
+   "author": "Quindecillion",
+   "comment_text": "It&#x27;s not my job to chase up every tiny detail for you. You have to be curious enough to look into it and verify for yourself. I&#x27;ve given you enough information to research it for yourself. You&#x27;ve shown zero good faith curiosity that would encourage someone to help you understand it any further, and you&#x27;re getting pissy at me? That&#x27;s rich.<p>But I&#x27;ll give you one last thread to follow. Beyond that you&#x27;re on your own.<p><a href=\"https:&#x2F;&#x2F;medium.com&#x2F;@nic__carter&#x2F;comments-on-the-white-house-report-on-the-climate-implications-of-crypto-mining-8d65d30ec942\" rel=\"nofollow\">https:&#x2F;&#x2F;medium.com&#x2F;@nic__carter&#x2F;comments-on-the-white-house-...</a><p>&gt; And that difference is... what exactly?<p>Every other crypto is a product released by a company with a CEO, investors, VC funding, a marketing team etc. and all based on dubious promises of &quot;utility&quot;, &quot;defi&quot;, or &quot;yield&quot;, faster transactions speeds, or &quot;web3&quot;. It&#x27;s all a bullshit affinity scam riding on the coat tails of Bitcoin.<p>Bitcoin is literally just an open source protocol for an open, neutral, and permissionless global monetary network, similar to how TCP&#x2F;IP is a neutral communications protocol for the Internet. There&#x27;s no CEO or &quot;foundation&quot; like in the case of Ethereum and other cryptos. Companies are building up businesses around this open and neutral protocol. If you can&#x27;t see the potential behind that combined with its application to demand response, load balancing, methane capture, AND the humanitarian benefits [1][2], well...<p>\u201cIf you don&#x27;t believe me or don&#x27;t get it, I don&#x27;t have time to try to convince you, sorry.\u201d -Satoshi Nakamoto<p>Good luck out there.<p>[1] <a href=\"https:&#x2F;&#x2F;twitter.com&#x2F;hrf&#x2F;status&#x2F;1512488123430756363?lang=en\" rel=\"nofollow\">https:&#x2F;&#x2F;twitter.com&#x2F;hrf&#x2F;status&#x2F;1512488123430756363?lang=en</a><p>[2] <a href=\"https:&#x2F;&#x2F;bitcoinmagazine.com&#x2F;culture&#x2F;check-your-financial-privilege\" rel=\"nofollow\">https:&#x2F;&#x2F;bitcoinmagazine.com&#x2F;culture&#x2F;check-your-financial-pri...</a>",
+   "created_at": "2022-09-16T13:17:58Z",
+   "created_at_i": 1663334278,
+   "objectID": "32865699",
+   "parent_id": 32863667,
+   "story_id": 32848010,
+   "story_title": "The Ethereum merge is done",
+   "story_url": "https://www.coindesk.com/tech/2022/09/15/the-ethereum-merge-is-done-did-it-work/",
+   "updated_at": "2024-09-20T12:04:30Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "vc"
+     ],
+     "value": "<em>vc</em>xy"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "affinity",
+      "crm"
+     ],
+     "value": "<p><pre><code>    Location: Atlanta\n    Remote: Yes, or in person in Atlanta\n    Willing to relocate: no\n    Technologies: Julia, LaTeX, Nix and NixOS, many command line tools\n    R\u00e9sum\u00e9: https://www.bencide.<em>com</em>/resume.pdf\n    Email: jobs@bencide.<em>com</em>\n    </code></pre>\nI have recently completed my PhD in mathematics at Georgia Institute of Technology. My mathematical experience revolves around mathematical modeling. I've done novel work in mathematical immunology where I needed to quickly go from novice to expert on the topic of the germinal center reaction and B-cell <em>affinity</em> maturation. I frequently use differential equations as necessary for the problem at hand. I've used linear programming, PDE accelerated gradient descent, and global optimization by intermittent diffusion (an SDE technique related to, but applied in different scenarios than, simulated annealing).<p>I am comfortable using differential equations in all forms (ODE, PDE, SDE, DDE, etc.) and multiple kinds of optimization to numerically study your problem domain.<p>Beyond what I've specifically worked on, I'm less experienced in but have interest in applied category theory, ML/AI, and quantum error correcting codes (Julia package in progress at <a href=\"https://www.github.com/esabo/CodingTheory\" rel=\"nofollow\">https://www.github.<em>com</em>/esabo/CodingTheory</a> ). I use the Julia language regularly, but am happy to learn any other language (I also have passing experience in C and lisp). I'm more interested in transitioning to industry for the broad range of immediately useful things I could do, so please don't think that I'm limited to a particular problem domain! I'd love to hear from you in any problem domain where my skills could be useful!"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Who wants to be hired? (September 2022)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_vcxy",
+    "story_32677261"
+   ],
+   "author": "vcxy",
+   "comment_text": "<p><pre><code>    Location: Atlanta\n    Remote: Yes, or in person in Atlanta\n    Willing to relocate: no\n    Technologies: Julia, LaTeX, Nix and NixOS, many command line tools\n    R\u00e9sum\u00e9: https:&#x2F;&#x2F;www.bencide.com&#x2F;resume.pdf\n    Email: jobs@bencide.com\n    </code></pre>\nI have recently completed my PhD in mathematics at Georgia Institute of Technology. My mathematical experience revolves around mathematical modeling. I&#x27;ve done novel work in mathematical immunology where I needed to quickly go from novice to expert on the topic of the germinal center reaction and B-cell affinity maturation. I frequently use differential equations as necessary for the problem at hand. I&#x27;ve used linear programming, PDE accelerated gradient descent, and global optimization by intermittent diffusion (an SDE technique related to, but applied in different scenarios than, simulated annealing).<p>I am comfortable using differential equations in all forms (ODE, PDE, SDE, DDE, etc.) and multiple kinds of optimization to numerically study your problem domain.<p>Beyond what I&#x27;ve specifically worked on, I&#x27;m less experienced in but have interest in applied category theory, ML&#x2F;AI, and quantum error correcting codes (Julia package in progress at <a href=\"https:&#x2F;&#x2F;www.github.com&#x2F;esabo&#x2F;CodingTheory\" rel=\"nofollow\">https:&#x2F;&#x2F;www.github.com&#x2F;esabo&#x2F;CodingTheory</a> ). I use the Julia language regularly, but am happy to learn any other language (I also have passing experience in C and lisp). I&#x27;m more interested in transitioning to industry for the broad range of immediately useful things I could do, so please don&#x27;t think that I&#x27;m limited to a particular problem domain! I&#x27;d love to hear from you in any problem domain where my skills could be useful!",
+   "created_at": "2022-09-01T15:14:51Z",
+   "created_at_i": 1662045291,
+   "objectID": "32677550",
+   "parent_id": 32677261,
+   "story_id": 32677261,
+   "story_title": "Ask HN: Who wants to be hired? (September 2022)",
+   "updated_at": "2024-09-20T11:56:59Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "_msw_"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "affinity",
+      "crm",
+      "vc"
+     ],
+     "value": "Hi! I'm from the EC2 team.<p>The fixed performance EC2 instances (in contrast to instances with burstable performance) all have dedicated physical CPU allocations, and 1:1 <em>affinity</em> from <em>vC</em>PU to the underlying CPU. Similarly, memory allocations are fixed, pre-allocated, and are aligned to the NUMA properties of the host system. When combined with both our Xen hypervisor and Nitro hypervisor, this provides practically all of the performance of the host system with regard to memory latency and bandwidth.<p>See: <a href=\"https://twitter.com/_msw_/status/1045032259189760000\" rel=\"nofollow\">https://twitter.<em>com</em>/_msw_/status/1045032259189760000</a><p>With our latest 25 Gbps and 100 Gbps capable instances, EC2 to S3 traffic can make use of all of the bandwith provided to the instance.<p>Please send me more information about the interaction you had on the EBS side, msw at amazon dot <em>com</em>. All writes to EBS are durability recorded to nonvolatile storage before the write is acknowledged to the operating system running in the EC2 instance. fsync() does not necessarily force unit access, and explicit FUA / flush / barriers are not required for data durability (unlike some storage devices or cloud storage systems). Perhaps there was confusion about the question that was asked."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Twitter migrates data to Google Cloud"
+    },
+    "story_url": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "crm"
+     ],
+     "value": "https://cloud.google.<em>com</em>/twitter/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author__msw_",
+    "story_18976150"
+   ],
+   "author": "_msw_",
+   "children": [
+    18991298
+   ],
+   "comment_text": "Hi! I&#x27;m from the EC2 team.<p>The fixed performance EC2 instances (in contrast to instances with burstable performance) all have dedicated physical CPU allocations, and 1:1 affinity from vCPU to the underlying CPU. Similarly, memory allocations are fixed, pre-allocated, and are aligned to the NUMA properties of the host system. When combined with both our Xen hypervisor and Nitro hypervisor, this provides practically all of the performance of the host system with regard to memory latency and bandwidth.<p>See: <a href=\"https:&#x2F;&#x2F;twitter.com&#x2F;_msw_&#x2F;status&#x2F;1045032259189760000\" rel=\"nofollow\">https:&#x2F;&#x2F;twitter.com&#x2F;_msw_&#x2F;status&#x2F;1045032259189760000</a><p>With our latest 25 Gbps and 100 Gbps capable instances, EC2 to S3 traffic can make use of all of the bandwith provided to the instance.<p>Please send me more information about the interaction you had on the EBS side, msw at amazon dot com. All writes to EBS are durability recorded to nonvolatile storage before the write is acknowledged to the operating system running in the EC2 instance. fsync() does not necessarily force unit access, and explicit FUA &#x2F; flush &#x2F; barriers are not required for data durability (unlike some storage devices or cloud storage systems). Perhaps there was confusion about the question that was asked.",
+   "created_at": "2019-01-23T17:16:56Z",
+   "created_at_i": 1548263816,
+   "objectID": "18980193",
+   "parent_id": 18976897,
+   "story_id": 18976150,
+   "story_title": "Twitter migrates data to Google Cloud",
+   "story_url": "https://cloud.google.com/twitter/",
+   "updated_at": "2024-09-20T03:44:42Z"
+  }
+ ],
+ "hitsPerPage": 50,
+ "nbHits": 7,
+ "nbPages": 1,
+ "page": 0,
+ "params": "query=affinity+CRM+VC&tags=comment&hitsPerPage=50&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 24,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 18
+  },
+  "afterFetch": {
+   "format": {
+    "highlighting": 1,
+    "total": 1
+   },
+   "merge": {
+    "mergeLoop": {
+     "prepareNextHit": 1,
+     "total": 1
+    },
+    "total": 4
+   },
+   "total": 4
+  },
+  "fetch": {
+   "query": 9,
+   "scanning": 8,
+   "total": 18
+  },
+  "total": 24
+ },
+ "query": "affinity CRM VC",
+ "serverTimeMS": 25,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=affinity+CRM+VC&tags=comment&hitsPerPage=50"
+}

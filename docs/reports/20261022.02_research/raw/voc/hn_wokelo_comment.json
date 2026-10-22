@@ -1,0 +1,2239 @@
+{
+ "exhaustive": {
+  "nbHits": true,
+  "typo": true
+ },
+ "exhaustiveNbHits": true,
+ "exhaustiveTypo": true,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tdkl"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "&gt; Will this improve <em>wakelo</em>ck performance that has been plaguing Android for years?<p>&quot;Unsurprisingly, there are three apps set to ignore battery optimization by default\u2014Google Play Services, the Play Store, and Download Manager.&quot;[1]<p>So, nope. GPS will continue to do whatever they want and poll location every 60s.<p>[1] <a href=\"http://www.androidpolice.com/2015/05/28/android-m-feature-spotlight-the-low-power-doze-mode-can-be-turned-on-and-off-on-a-per-app-basis/\" rel=\"nofollow\">http://www.androidpolice.com/2015/05/28/android-m-feature-sp...</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Android M Developer Preview and Tools"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://android-developers.blogspot.com/2015/05/android-m-developer-preview-tools.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_tdkl",
+    "story_9619920"
+   ],
+   "author": "tdkl",
+   "comment_text": "&gt; Will this improve wakelock performance that has been plaguing Android for years?<p>&quot;Unsurprisingly, there are three apps set to ignore battery optimization by default\u2014Google Play Services, the Play Store, and Download Manager.&quot;[1]<p>So, nope. GPS will continue to do whatever they want and poll location every 60s.<p>[1] <a href=\"http:&#x2F;&#x2F;www.androidpolice.com&#x2F;2015&#x2F;05&#x2F;28&#x2F;android-m-feature-spotlight-the-low-power-doze-mode-can-be-turned-on-and-off-on-a-per-app-basis&#x2F;\" rel=\"nofollow\">http:&#x2F;&#x2F;www.androidpolice.com&#x2F;2015&#x2F;05&#x2F;28&#x2F;android-m-feature-sp...</a>",
+   "created_at": "2015-05-29T12:18:21Z",
+   "created_at_i": 1432901901,
+   "objectID": "9624097",
+   "parent_id": 9620360,
+   "story_id": 9619920,
+   "story_title": "Android M Developer Preview and Tools",
+   "story_url": "http://android-developers.blogspot.com/2015/05/android-m-developer-preview-tools.html",
+   "updated_at": "2024-09-19T21:55:53Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "kllrnohj"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "<em>Wakelo</em>cks have just been a scapegoat for people to pretend to sound smart when just saying that they want better battery life. They haven't actually been an issue for years.<p>No, this won't magically fix bugs in apps that lead to poor battery life. If an app opens the camera and forgets to close it, yeah that's gonna murder your battery."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Android M Developer Preview and Tools"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://android-developers.blogspot.com/2015/05/android-m-developer-preview-tools.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_kllrnohj",
+    "story_9619920"
+   ],
+   "author": "kllrnohj",
+   "children": [
+    9621453,
+    9621532
+   ],
+   "comment_text": "Wakelocks have just been a scapegoat for people to pretend to sound smart when just saying that they want better battery life. They haven&#x27;t actually been an issue for years.<p>No, this won&#x27;t magically fix bugs in apps that lead to poor battery life. If an app opens the camera and forgets to close it, yeah that&#x27;s gonna murder your battery.",
+   "created_at": "2015-05-28T21:54:02Z",
+   "created_at_i": 1432850042,
+   "objectID": "9621430",
+   "parent_id": 9620360,
+   "points": null,
+   "story_id": 9619920,
+   "story_title": "Android M Developer Preview and Tools",
+   "story_url": "http://android-developers.blogspot.com/2015/05/android-m-developer-preview-tools.html",
+   "updated_at": "2023-09-07T02:51:07Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "heyheyhey"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "&gt; Battery - We\u2019re making Android devices smarter about managing power through a new feature called Doze. With M, Android uses significant motion detection to learn if a device has been left unattended for a while. In this state, Android will exponentially back off background activity, trading off a little bit of app freshness for longer battery life.<p>Will this improve <em>wakelo</em>ck performance that has been plaguing Android for years?"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Android M Developer Preview and Tools"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://android-developers.blogspot.com/2015/05/android-m-developer-preview-tools.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_heyheyhey",
+    "story_9619920"
+   ],
+   "author": "heyheyhey",
+   "children": [
+    9620713,
+    9621430,
+    9624097
+   ],
+   "comment_text": "&gt; Battery - We\u2019re making Android devices smarter about managing power through a new feature called Doze. With M, Android uses significant motion detection to learn if a device has been left unattended for a while. In this state, Android will exponentially back off background activity, trading off a little bit of app freshness for longer battery life.<p>Will this improve wakelock performance that has been plaguing Android for years?",
+   "created_at": "2015-05-28T19:04:09Z",
+   "created_at_i": 1432839849,
+   "objectID": "9620360",
+   "parent_id": 9619920,
+   "points": null,
+   "story_id": 9619920,
+   "story_title": "Android M Developer Preview and Tools",
+   "story_url": "http://android-developers.blogspot.com/2015/05/android-m-developer-preview-tools.html",
+   "updated_at": "2023-09-07T02:51:02Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "peterjmag"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "I also like the Android power management stuff in the background: <a href=\"https://gist.github.com/peterjmag/eecf0de4bafa19482dd5\" rel=\"nofollow\">https://gist.github.com/peterjmag/eecf0de4bafa19482dd5</a><p>I don't know the context of the scene (haven't seen the movie yet), but maybe the <em>WakeLo</em>ck API is a not-so-subtle reference to the robot's sentience? Or perhaps she just runs Android. =)"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Amazing Source Code Related Easter Egg in Ex Machina"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://moviecode.tumblr.com/post/119171520870/in-the-movie-ex-machina-which-is-really-great"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_peterjmag",
+    "story_9558996"
+   ],
+   "author": "peterjmag",
+   "comment_text": "I also like the Android power management stuff in the background: <a href=\"https:&#x2F;&#x2F;gist.github.com&#x2F;peterjmag&#x2F;eecf0de4bafa19482dd5\" rel=\"nofollow\">https:&#x2F;&#x2F;gist.github.com&#x2F;peterjmag&#x2F;eecf0de4bafa19482dd5</a><p>I don&#x27;t know the context of the scene (haven&#x27;t seen the movie yet), but maybe the WakeLock API is a not-so-subtle reference to the robot&#x27;s sentience? Or perhaps she just runs Android. =)",
+   "created_at": "2015-05-17T10:47:53Z",
+   "created_at_i": 1431859673,
+   "objectID": "9559516",
+   "parent_id": 9558996,
+   "story_id": 9558996,
+   "story_title": "Amazing Source Code Related Easter Egg in Ex Machina",
+   "story_url": "http://moviecode.tumblr.com/post/119171520870/in-the-movie-ex-machina-which-is-really-great",
+   "updated_at": "2024-09-19T21:50:47Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ori_b"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "&gt; <i>now idle performance have to be in addition.</i><p>Your idle time should be with all processes blocked in select()/poll()/epoll() and friends, and the CPU fully shut off with no code at all running.<p>If your CPU isn't fully asleep -- if it's running instructions -- you've already lost. There was a bug with my cellphone where a service was holding a <em>wakelo</em>ck and preventing the CPU from shutting off. This was enough to drain enough power that it would drain even while on the charger."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The death of optimizing compilers [pdf]"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://cr.yp.to/talks/2015%2E04%2E16/slides-djb-20150416-a4.pdf"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ori_b",
+    "story_9396950"
+   ],
+   "author": "ori_b",
+   "children": [
+    9398892
+   ],
+   "comment_text": "&gt; <i>now idle performance have to be in addition.</i><p>Your idle time should be with all processes blocked in select()&#x2F;poll()&#x2F;epoll() and friends, and the CPU fully shut off with no code at all running.<p>If your CPU isn&#x27;t fully asleep -- if it&#x27;s running instructions -- you&#x27;ve already lost. There was a bug with my cellphone where a service was holding a wakelock and preventing the CPU from shutting off. This was enough to drain enough power that it would drain even while on the charger.",
+   "created_at": "2015-04-18T02:38:58Z",
+   "created_at_i": 1429324738,
+   "objectID": "9398131",
+   "parent_id": 9398118,
+   "points": null,
+   "story_id": 9396950,
+   "story_title": "The death of optimizing compilers [pdf]",
+   "story_url": "http://cr.yp.to/talks/2015%2E04%2E16/slides-djb-20150416-a4.pdf",
+   "updated_at": "2023-09-07T02:33:15Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tdkl"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "Great choice of cherry picking a comment, disregarding the shit Google does before this. But OK, let me reply to your statement.<p>Before Google Play Services existed, there was already a mechanism in place that checked for OTA updates. It was in AOSP and could be easily disabled for custom ROMs. Remember those custom ROMs Google was so proud of when they advertised &quot;open source&quot; and how Android was dedicated to it ?<p>Then in a full &quot;bait and switch&quot; manner they placed everything in the Google Play Services. AOSP doesn't matter anymore, but the proprietary code no one has control of, except the Mountainview mothership. If CyanogenMod didn't disable those services, they would constantly download OTA package to /cache wasting user bandwidth and resources as in <em>wakelo</em>cking the device causing battery drain. Is this &quot;responsible programming&quot; ?<p>My personal experience with the new GPS 7.0 update woes doesn't even include a custom ROM. I had Googles Nexus 5 factory image of Kitkat 4.4.4 installed and blocked the GPS SystemUpdate receivers manually to avoid OTA updates to Lollipop 5.0 .Why ? Because I don't want an update that turns a well working OS to one which leaks memory and has to be rebooted every two days. It's my choice. Other vendors include an option, whether user wants update notifications or not. Not on Googles turf, they want to force you with their beta software, then turn the head away when there are issues without comments when they'll be fixed."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Optimizing performance on low-end Android devices"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://blog.echolocker.com/performance"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_tdkl",
+    "story_9240456"
+   ],
+   "author": "tdkl",
+   "comment_text": "Great choice of cherry picking a comment, disregarding the shit Google does before this. But OK, let me reply to your statement.<p>Before Google Play Services existed, there was already a mechanism in place that checked for OTA updates. It was in AOSP and could be easily disabled for custom ROMs. Remember those custom ROMs Google was so proud of when they advertised &quot;open source&quot; and how Android was dedicated to it ?<p>Then in a full &quot;bait and switch&quot; manner they placed everything in the Google Play Services. AOSP doesn&#x27;t matter anymore, but the proprietary code no one has control of, except the Mountainview mothership. If CyanogenMod didn&#x27;t disable those services, they would constantly download OTA package to &#x2F;cache wasting user bandwidth and resources as in wakelocking the device causing battery drain. Is this &quot;responsible programming&quot; ?<p>My personal experience with the new GPS 7.0 update woes doesn&#x27;t even include a custom ROM. I had Googles Nexus 5 factory image of Kitkat 4.4.4 installed and blocked the GPS SystemUpdate receivers manually to avoid OTA updates to Lollipop 5.0 .Why ? Because I don&#x27;t want an update that turns a well working OS to one which leaks memory and has to be rebooted every two days. It&#x27;s my choice. Other vendors include an option, whether user wants update notifications or not. Not on Googles turf, they want to force you with their beta software, then turn the head away when there are issues without comments when they&#x27;ll be fixed.",
+   "created_at": "2015-03-21T09:40:46Z",
+   "created_at_i": 1426930846,
+   "objectID": "9242261",
+   "parent_id": 9242057,
+   "points": null,
+   "story_id": 9240456,
+   "story_title": "Optimizing performance on low-end Android devices",
+   "story_url": "http://blog.echolocker.com/performance",
+   "updated_at": "2023-09-07T02:21:20Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tdkl"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "I find it ironic seeing all those Google developer guidelines on how to be responsible with leaving Services running, but they leave their own crap running 24/7 while you don't even need to run the app.<p><a href=\"http://pastebin.com/AdUsUaG6\" rel=\"nofollow\">http://pastebin.com/AdUsUaG6</a><p>Not to mention their last Google Play Services update that gets forced to all users automatically is causing <em>wakelo</em>cks wanting to update the system, which wrecks havoc on custom ROMs : <a href=\"http://review.cyanogenmod.org/#/c/91021/\" rel=\"nofollow\">http://review.cyanogenmod.org/#/c/91021/</a><p>Google Android, thank you, not anymore."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Optimizing performance on low-end Android devices"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://blog.echolocker.com/performance"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_tdkl",
+    "story_9240456"
+   ],
+   "author": "tdkl",
+   "children": [
+    9242057
+   ],
+   "comment_text": "I find it ironic seeing all those Google developer guidelines on how to be responsible with leaving Services running, but they leave their own crap running 24&#x2F;7 while you don&#x27;t even need to run the app.<p><a href=\"http://pastebin.com/AdUsUaG6\" rel=\"nofollow\">http:&#x2F;&#x2F;pastebin.com&#x2F;AdUsUaG6</a><p>Not to mention their last Google Play Services update that gets forced to all users automatically is causing wakelocks wanting to update the system, which wrecks havoc on custom ROMs : <a href=\"http://review.cyanogenmod.org/#/c/91021/\" rel=\"nofollow\">http:&#x2F;&#x2F;review.cyanogenmod.org&#x2F;#&#x2F;c&#x2F;91021&#x2F;</a><p>Google Android, thank you, not anymore.",
+   "created_at": "2015-03-20T23:00:00Z",
+   "created_at_i": 1426892400,
+   "objectID": "9241156",
+   "parent_id": 9240456,
+   "points": null,
+   "story_id": 9240456,
+   "story_title": "Optimizing performance on low-end Android devices",
+   "story_url": "http://blog.echolocker.com/performance",
+   "updated_at": "2023-09-07T02:21:15Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ufmace"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "I am often disappointed by the battery life of my phone, but I think that what we need isn't bigger batteries, but better software. Supposedly, when working on Lollipop, Google engineers left a Nexus phone running on Airplane mode, and it lasted a month on a charge. I'm not sure if it actually happened, but it's believable. Goes to show the point that if we can manage power usage well, multi-day run times are perfectly practical without mammoth batteries.<p>I'm not sure what's going on with it in the iOS world, but Google seems to be working on this with the power management changes in Lollipop. They still have a long way to go, since the first thing I noticed on upgrading to it was random massive battery drain for no apparent reason. It seems to have gone away since I uninstalled Foursquare, but that was a random guess, and I'm still not sure if it was the main reason. Anyways, point is that the OS-level changes to make it easier to sip power are good, but app compliance is still spotty.<p>I think that what we really need in Android is a good, OS-level way of monitoring which apps are actually causing idle <em>wakelo</em>cks, GPS usage, and other non-obvious power drains. If the users can see that App X is what's killing their battery, they will presumably uninstall it and yell at the App developers instead of at Google, or maybe decide that the app does actually need to do that, and it's worth it, but at least they know it's the app's fault, and not Android's. Possibly some sort of option to notify the user if an app's idle power usage is over some threshold and ask them if they're really okay with that."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Forget Wearable Tech. People Really Want Better Batteries"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.npr.org/blogs/alltechconsidered/2015/01/10/376166180/forget-wearable-tech-people-really-want-better-batteries"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ufmace",
+    "story_8869955"
+   ],
+   "author": "ufmace",
+   "children": [
+    8870866,
+    8874589
+   ],
+   "comment_text": "I am often disappointed by the battery life of my phone, but I think that what we need isn&#x27;t bigger batteries, but better software. Supposedly, when working on Lollipop, Google engineers left a Nexus phone running on Airplane mode, and it lasted a month on a charge. I&#x27;m not sure if it actually happened, but it&#x27;s believable. Goes to show the point that if we can manage power usage well, multi-day run times are perfectly practical without mammoth batteries.<p>I&#x27;m not sure what&#x27;s going on with it in the iOS world, but Google seems to be working on this with the power management changes in Lollipop. They still have a long way to go, since the first thing I noticed on upgrading to it was random massive battery drain for no apparent reason. It seems to have gone away since I uninstalled Foursquare, but that was a random guess, and I&#x27;m still not sure if it was the main reason. Anyways, point is that the OS-level changes to make it easier to sip power are good, but app compliance is still spotty.<p>I think that what we really need in Android is a good, OS-level way of monitoring which apps are actually causing idle wakelocks, GPS usage, and other non-obvious power drains. If the users can see that App X is what&#x27;s killing their battery, they will presumably uninstall it and yell at the App developers instead of at Google, or maybe decide that the app does actually need to do that, and it&#x27;s worth it, but at least they know it&#x27;s the app&#x27;s fault, and not Android&#x27;s. Possibly some sort of option to notify the user if an app&#x27;s idle power usage is over some threshold and ask them if they&#x27;re really okay with that.",
+   "created_at": "2015-01-11T18:56:28Z",
+   "created_at_i": 1421002588,
+   "objectID": "8870833",
+   "parent_id": 8869955,
+   "points": null,
+   "story_id": 8869955,
+   "story_title": "Forget Wearable Tech. People Really Want Better Batteries",
+   "story_url": "http://www.npr.org/blogs/alltechconsidered/2015/01/10/376166180/forget-wearable-tech-people-really-want-better-batteries",
+   "updated_at": "2023-09-06T23:14:54Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "dozy"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "I love CyanogenMod (or at least the concept...I'm over dealing with the headache in practice), but the reason I used it was certainly not for improved stability and security.<p>Not that I particularly trust OEMs/carriers, but the only way I'd feel <i>more</i> secure with CyanogenMod is if I had time to audit the source <i>and</i> build the kernel and OS binaries myself, and that includes whatever code is used to root and unlock your device in the first place. If you do that though, more power to ya.<p>Also, disabling permissions at runtime is a foolproof way to make an app crash, as the <i>vast</i> majority of apps will assume they're granted the permissions hardcoded in the manifest at compile time.<p>One last point - rooting your phone and granting apps root access just to disable crucial permissions such as holding a <em>wakelo</em>ck seems pretty reckless - have you personally seen the source code for that app? At least the dev's website seems legit: <a href=\"http://www.findsdk.com/\" rel=\"nofollow\">http://www.findsdk.com/</a><p>EDIT: Even better, looks like the author of App Ops, or at least the owner if the findsdk.com domain, is in China :) <a href=\"https://who.is/whois/findsdk\" rel=\"nofollow\">https://who.is/whois/findsdk</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Android: I don't need your permission"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://blog.danlew.net/2014/11/26/i-dont-need-your-permission/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_dozy",
+    "story_8758678"
+   ],
+   "author": "dozy",
+   "children": [
+    8759476,
+    8759483,
+    8760215,
+    8760470
+   ],
+   "comment_text": "I love CyanogenMod (or at least the concept...I&#x27;m over dealing with the headache in practice), but the reason I used it was certainly not for improved stability and security.<p>Not that I particularly trust OEMs&#x2F;carriers, but the only way I&#x27;d feel <i>more</i> secure with CyanogenMod is if I had time to audit the source <i>and</i> build the kernel and OS binaries myself, and that includes whatever code is used to root and unlock your device in the first place. If you do that though, more power to ya.<p>Also, disabling permissions at runtime is a foolproof way to make an app crash, as the <i>vast</i> majority of apps will assume they&#x27;re granted the permissions hardcoded in the manifest at compile time.<p>One last point - rooting your phone and granting apps root access just to disable crucial permissions such as holding a wakelock seems pretty reckless - have you personally seen the source code for that app? At least the dev&#x27;s website seems legit: <a href=\"http://www.findsdk.com/\" rel=\"nofollow\">http:&#x2F;&#x2F;www.findsdk.com&#x2F;</a><p>EDIT: Even better, looks like the author of App Ops, or at least the owner if the findsdk.com domain, is in China :) <a href=\"https://who.is/whois/findsdk\" rel=\"nofollow\">https:&#x2F;&#x2F;who.is&#x2F;whois&#x2F;findsdk</a>",
+   "created_at": "2014-12-16T20:37:12Z",
+   "created_at_i": 1418762232,
+   "objectID": "8759290",
+   "parent_id": 8759205,
+   "story_id": 8758678,
+   "story_title": "Android: I don't need your permission",
+   "story_url": "http://blog.danlew.net/2014/11/26/i-dont-need-your-permission/",
+   "updated_at": "2024-09-19T21:27:06Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "arghnoname"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "Another difference between Android Kernel and mainstream is the power management system. Android devices suspend aggressively. Userspace acquires '<em>wakelo</em>cks,' during which time the device is not allowed to suspend. As soon as no <em>wakelo</em>cks are held, the device can (and does typically) suspend.<p>This is pretty different than the heuristics used in cpu idle style power management."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "64-bit ARM Kernel Development Demo on a Nexus 9"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://osdevnotes.blogspot.com/2014/11/64-bit-arm-oskernelsystems-development.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_arghnoname",
+    "story_8655268"
+   ],
+   "author": "arghnoname",
+   "comment_text": "Another difference between Android Kernel and mainstream is the power management system. Android devices suspend aggressively. Userspace acquires &#x27;wakelocks,&#x27; during which time the device is not allowed to suspend. As soon as no wakelocks are held, the device can (and does typically) suspend.<p>This is pretty different than the heuristics used in cpu idle style power management.",
+   "created_at": "2014-11-25T04:53:18Z",
+   "created_at_i": 1416891198,
+   "objectID": "8656398",
+   "parent_id": 8656044,
+   "story_id": 8655268,
+   "story_title": "64-bit ARM Kernel Development Demo on a Nexus 9",
+   "story_url": "http://osdevnotes.blogspot.com/2014/11/64-bit-arm-oskernelsystems-development.html",
+   "updated_at": "2024-01-21T17:39:54Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Someone1234"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "The battery life is a little disappointing but not as disappointing as some early commentators made it out to be. It might also get better over time with updates (the Nexus 5 and LG G2 certainly did in my experience).<p>I love my LG G2's battery life. After some updates fixed AT&amp;T specific software problems (<em>wakelo</em>ck issues) it is by far the best mobile device I've ever owned in terms of endurance, I can easily charge it just once over the weekend.<p>10 hrs of WiFi browsing (7 hrs of 4G) do, for many people, translate into easily two or even three days of average usage. Too bad the 2nd Gen Moto X only manages 7 hrs of WiFi browsing and 30 minutes less of 4G."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The New Motorola Moto X (2nd Gen) Review"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.anandtech.com/show/8523/the-new-motorola-moto-x-2014-review"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Someone1234",
+    "story_8330758"
+   ],
+   "author": "Someone1234",
+   "comment_text": "The battery life is a little disappointing but not as disappointing as some early commentators made it out to be. It might also get better over time with updates (the Nexus 5 and LG G2 certainly did in my experience).<p>I love my LG G2&#x27;s battery life. After some updates fixed AT&amp;T specific software problems (wakelock issues) it is by far the best mobile device I&#x27;ve ever owned in terms of endurance, I can easily charge it just once over the weekend.<p>10 hrs of WiFi browsing (7 hrs of 4G) do, for many people, translate into easily two or even three days of average usage. Too bad the 2nd Gen Moto X only manages 7 hrs of WiFi browsing and 30 minutes less of 4G.",
+   "created_at": "2014-09-17T17:27:43Z",
+   "created_at_i": 1410974863,
+   "objectID": "8331166",
+   "parent_id": 8330758,
+   "story_id": 8330758,
+   "story_title": "The New Motorola Moto X (2nd Gen) Review",
+   "story_url": "http://www.anandtech.com/show/8523/the-new-motorola-moto-x-2014-review",
+   "updated_at": "2024-09-19T21:05:34Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "techwizrd"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "The feature they previewed was called Battery Historian. According to the presenter, there should a be a definitive improvement in battery life for the Android &quot;L&quot; release. They've been using it to optimize Android and the Google apps. Hopefully people will no longer have to use all sorts of crazy hacks to because they suspect Maps/Location services is causing <em>wakelo</em>cks."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Google I/O 2014"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.google.com/events/io?gclid=CjkKEQjw5qmdBRCn--70gPSo074BEiQAJCe7zf8EY8JMUkoqTKWUpWgCoxLkDCZCCf0IDAcajQT_jeLw_wcB"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_techwizrd",
+    "story_7944772"
+   ],
+   "author": "techwizrd",
+   "comment_text": "The feature they previewed was called Battery Historian. According to the presenter, there should a be a definitive improvement in battery life for the Android &quot;L&quot; release. They&#x27;ve been using it to optimize Android and the Google apps. Hopefully people will no longer have to use all sorts of crazy hacks to because they suspect Maps&#x2F;Location services is causing wakelocks.",
+   "created_at": "2014-06-25T19:29:17Z",
+   "created_at_i": 1403724557,
+   "objectID": "7946247",
+   "parent_id": 7945668,
+   "points": null,
+   "story_id": 7944772,
+   "story_title": "Google I/O 2014",
+   "story_url": "https://www.google.com/events/io?gclid=CjkKEQjw5qmdBRCn--70gPSo074BEiQAJCe7zf8EY8JMUkoqTKWUpWgCoxLkDCZCCf0IDAcajQT_jeLw_wcB",
+   "updated_at": "2023-09-06T23:12:27Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "keeperofdakeys"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "However they acted differently for the <em>wakelo</em>ck api. In Android, there is a private api that allowed access to a list of <em>wakelo</em>cks, which was used by many apps to provide the user with more information about what is keeping the system awake. However, their was a security implication (this was a real concern), so 4.4 made the api both private and inaccessible. (Private apis by default you can't use, but you can get around it by getting a reference using language-features). Unlike the sms situation though, they didn't provide a replacement api without the security issue. So now you need to root the phone in order to access the list of <em>wakelo</em>cks.<p>While this may not affect most of the users of these apps, this is quite unfortunate, because these applications were especially handy on non-stock phones, which usually aren't easily rootable."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "How Apple Cheats"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://marksands.github.io/2014/05/27/how-apple-cheats.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_keeperofdakeys",
+    "story_7809024"
+   ],
+   "author": "keeperofdakeys",
+   "comment_text": "However they acted differently for the wakelock api. In Android, there is a private api that allowed access to a list of wakelocks, which was used by many apps to provide the user with more information about what is keeping the system awake. However, their was a security implication (this was a real concern), so 4.4 made the api both private and inaccessible. (Private apis by default you can&#x27;t use, but you can get around it by getting a reference using language-features). Unlike the sms situation though, they didn&#x27;t provide a replacement api without the security issue. So now you need to root the phone in order to access the list of wakelocks.<p>While this may not affect most of the users of these apps, this is quite unfortunate, because these applications were especially handy on non-stock phones, which usually aren&#x27;t easily rootable.",
+   "created_at": "2014-05-28T14:18:25Z",
+   "created_at_i": 1401286705,
+   "objectID": "7810017",
+   "parent_id": 7809455,
+   "story_id": 7809024,
+   "story_title": "How Apple Cheats",
+   "story_url": "http://marksands.github.io/2014/05/27/how-apple-cheats.html",
+   "updated_at": "2024-09-19T20:51:25Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "cryptoz"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "We don't ask for permission for your accounts at all actually - we just ask permission to use Google Maps, which Google unfortunately lumps together. The app is open source on GitHub so you can verify that we don't do anything weird. For example, here's our AndroidManifest.xml file that shows the permissions we list in code: <a href=\"https://github.com/Cbsoftware/pressureNET/blob/master/AndroidManifest.xml\" rel=\"nofollow\">https://github.com/Cbsoftware/pressureNET/blob/master/Androi...</a><p>READ_GSERVICES is the permission in question and is required for Google Maps. I'd like to switch to an open mapping tool but it's not a top priority right now.<p>As for the sleeping mechanism: you're correct, an in fact we do only wake the phone up every x minutes. It's off ~99% percent of the time. We require the <em>wakelo</em>ck to ensure that the phone stays on long enough for us to measure the barometer and store/transmit the data. We don't keep the device on for any longer than absolutely required."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: PressureNet \u2013 The Weather's Future"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://pressurenet.io/?newsitehn"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_cryptoz",
+    "story_7779342"
+   ],
+   "author": "cryptoz",
+   "children": [
+    7780734,
+    7780742
+   ],
+   "comment_text": "We don&#x27;t ask for permission for your accounts at all actually - we just ask permission to use Google Maps, which Google unfortunately lumps together. The app is open source on GitHub so you can verify that we don&#x27;t do anything weird. For example, here&#x27;s our AndroidManifest.xml file that shows the permissions we list in code: <a href=\"https://github.com/Cbsoftware/pressureNET/blob/master/AndroidManifest.xml\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;Cbsoftware&#x2F;pressureNET&#x2F;blob&#x2F;master&#x2F;Androi...</a><p>READ_GSERVICES is the permission in question and is required for Google Maps. I&#x27;d like to switch to an open mapping tool but it&#x27;s not a top priority right now.<p>As for the sleeping mechanism: you&#x27;re correct, an in fact we do only wake the phone up every x minutes. It&#x27;s off ~99% percent of the time. We require the wakelock to ensure that the phone stays on long enough for us to measure the barometer and store&#x2F;transmit the data. We don&#x27;t keep the device on for any longer than absolutely required.",
+   "created_at": "2014-05-21T19:59:26Z",
+   "created_at_i": 1400702366,
+   "objectID": "7780433",
+   "parent_id": 7780407,
+   "points": null,
+   "story_id": 7779342,
+   "story_title": "Show HN: PressureNet \u2013 The Weather's Future",
+   "story_url": "http://pressurenet.io/?newsitehn",
+   "updated_at": "2023-09-06T22:57:35Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "celebril"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "Oh great, now there's a double whammy 40 MB + 40 MB for the stupid MqttPushService that is run twice by the Facebook and the Facebook Messenger apps.<p>Might as well not use Facebook on this 512 MB device.  Why can't Facebook just implement push via GCM without sucking all the memory and <em>wakelo</em>cks itself?"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Facebook to pull chat from iOS and Android apps in favour of Facebook Messenger"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.theinquirer.net/inquirer/news/2339143/facebook-to-pull-chat-from-ios-and-android-apps-in-favour-of-facebook-messenger"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_celebril",
+    "story_7565003"
+   ],
+   "author": "celebril",
+   "children": [
+    7565550
+   ],
+   "comment_text": "Oh great, now there&#x27;s a double whammy 40 MB + 40 MB for the stupid MqttPushService that is run twice by the Facebook and the Facebook Messenger apps.<p>Might as well not use Facebook on this 512 MB device.  Why can&#x27;t Facebook just implement push via GCM without sucking all the memory and wakelocks itself?",
+   "created_at": "2014-04-10T10:09:21Z",
+   "created_at_i": 1397124561,
+   "objectID": "7565068",
+   "parent_id": 7565003,
+   "points": null,
+   "story_id": 7565003,
+   "story_title": "Facebook to pull chat from iOS and Android apps in favour of Facebook Messenger",
+   "story_url": "http://www.theinquirer.net/inquirer/news/2339143/facebook-to-pull-chat-from-ios-and-android-apps-in-favour-of-facebook-messenger",
+   "updated_at": "2023-09-06T22:39:05Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "blueskin_"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "Disable Google Search, Google Bookmarks Sync, Google Contacts Sync (doing this also lets you have local contacts again), anything else Google Now related.<p>Instead of disabling Google Search, if you use CM or XPrivacy, you can also just revoke the location and <em>wakelo</em>ck permissions from it."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "KitKat giving you battery drain problems? Uninstall Skype, says Google"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.zdnet.com/kitkat-giving-you-battery-drain-problems-try-uninstalling-skype-says-google-as-it-prepares-a-fix-7000027051/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_blueskin_",
+    "story_7371748"
+   ],
+   "author": "blueskin_",
+   "children": [
+    7372439
+   ],
+   "comment_text": "Disable Google Search, Google Bookmarks Sync, Google Contacts Sync (doing this also lets you have local contacts again), anything else Google Now related.<p>Instead of disabling Google Search, if you use CM or XPrivacy, you can also just revoke the location and wakelock permissions from it.",
+   "created_at": "2014-03-10T11:27:17Z",
+   "created_at_i": 1394450837,
+   "objectID": "7372341",
+   "parent_id": 7372253,
+   "story_id": 7371748,
+   "story_title": "KitKat giving you battery drain problems? Uninstall Skype, says Google",
+   "story_url": "http://www.zdnet.com/kitkat-giving-you-battery-drain-problems-try-uninstalling-skype-says-google-as-it-prepares-a-fix-7000027051/",
+   "updated_at": "2024-09-19T20:37:31Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "e40"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "The <em>Wakelo</em>ck allows the app to wake up when your phone is asleep.  My twitter client wants one, but I have notifications turned off.  It might be that because I have them turned off it doesn't invoke a <em>Wakelo</em>ck.  But it might.  Basically, <em>Wakelo</em>cks are the #1 cause of unnecessary battery drain."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Facebook can now read your texts"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://tony.calileo.com/fb/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_e40",
+    "story_7135219"
+   ],
+   "author": "e40",
+   "children": [
+    7137363
+   ],
+   "comment_text": "The Wakelock allows the app to wake up when your phone is asleep.  My twitter client wants one, but I have notifications turned off.  It might be that because I have them turned off it doesn&#x27;t invoke a Wakelock.  But it might.  Basically, Wakelocks are the #1 cause of unnecessary battery drain.",
+   "created_at": "2014-01-28T14:52:54Z",
+   "created_at_i": 1390920774,
+   "objectID": "7137342",
+   "parent_id": 7136319,
+   "points": null,
+   "story_id": 7135219,
+   "story_title": "Facebook can now read your texts",
+   "story_url": "http://tony.calileo.com/fb/",
+   "updated_at": "2023-09-06T22:02:12Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "gareim"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "I used to use Timely and even bought the ad-free unlock, but had to stop using it once I saw that it was triggering hundreds of <em>wakelo</em>cks during the day, even when I didn't have any alarms set. Hopefully Google will set that straight."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Google acquiring Timely maker Bitspin"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.bitspin.ch/google"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_gareim",
+    "story_7012381"
+   ],
+   "author": "gareim",
+   "comment_text": "I used to use Timely and even bought the ad-free unlock, but had to stop using it once I saw that it was triggering hundreds of wakelocks during the day, even when I didn&#x27;t have any alarms set. Hopefully Google will set that straight.",
+   "created_at": "2014-01-04T22:20:52Z",
+   "created_at_i": 1388874052,
+   "objectID": "7013225",
+   "parent_id": 7012381,
+   "story_id": 7012381,
+   "story_title": "Google acquiring Timely maker Bitspin",
+   "story_url": "http://www.bitspin.ch/google",
+   "updated_at": "2024-09-19T20:19:54Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ChuckMcM"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "Its a valid question. Writing low power software is a deliberate act, just like writing secure software is a deliberate act. Look at Linux, as far as I can tell absolutely nobody cared about low power and the Android folks did their '<em>wakelo</em>cks' design, which got a lot of push back."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Why Does Windows Have Terrible Battery Life?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.codinghorror.com/blog/2013/10/why-does-windows-have-terrible-battery-life.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ChuckMcM",
+    "story_6584683"
+   ],
+   "author": "ChuckMcM",
+   "comment_text": "Its a valid question. Writing low power software is a deliberate act, just like writing secure software is a deliberate act. Look at Linux, as far as I can tell absolutely nobody cared about low power and the Android folks did their &#x27;wakelocks&#x27; design, which got a lot of push back.",
+   "created_at": "2013-10-21T19:26:00Z",
+   "created_at_i": 1382383560,
+   "objectID": "6587658",
+   "parent_id": 6584683,
+   "story_id": 6584683,
+   "story_title": "Why Does Windows Have Terrible Battery Life?",
+   "story_url": "http://www.codinghorror.com/blog/2013/10/why-does-windows-have-terrible-battery-life.html",
+   "updated_at": "2024-09-19T20:06:56Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "swetland"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "I expect optimizations will come in the form of:<p>- GPU driver improvements (they've already been working with nvidia, amd, and intel) which everyone benefits from<p>- kernel patches (maybe they fiddle with the scheduler or something) which anyone could pick up<p>- new/improved subsystems (perhaps they do some low latency input or audio layer), which (assuming they open source it) distros could choose to adopt or not<p>- improving porting techniques for bringing games or game middleware to Linux based platforms (everyone benefits)<p>It's possible that some stuff could be foreign enough to the way it has always been done on linux that it may take some time to make it upstream (see <em>wakelo</em>cks from Android finally turning up in the kernel under a different name and a different implementation but providing the same functionality), but if it actually improves things, eventually I suspect the mainline kernel or distros or whomever will come around.<p>e: fix formatting"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "SteamOS"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://store.steampowered.com/livingroom/SteamOS/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_swetland",
+    "story_6432306"
+   ],
+   "author": "swetland",
+   "comment_text": "I expect optimizations will come in the form of:<p>- GPU driver improvements (they&#x27;ve already been working with nvidia, amd, and intel) which everyone benefits from<p>- kernel patches (maybe they fiddle with the scheduler or something) which anyone could pick up<p>- new&#x2F;improved subsystems (perhaps they do some low latency input or audio layer), which (assuming they open source it) distros could choose to adopt or not<p>- improving porting techniques for bringing games or game middleware to Linux based platforms (everyone benefits)<p>It&#x27;s possible that some stuff could be foreign enough to the way it has always been done on linux that it may take some time to make it upstream (see wakelocks from Android finally turning up in the kernel under a different name and a different implementation but providing the same functionality), but if it actually improves things, eventually I suspect the mainline kernel or distros or whomever will come around.<p>e: fix formatting",
+   "created_at": "2013-09-24T03:11:38Z",
+   "created_at_i": 1379992298,
+   "objectID": "6435698",
+   "parent_id": 6435236,
+   "story_id": 6432306,
+   "story_title": "SteamOS",
+   "story_url": "http://store.steampowered.com/livingroom/SteamOS/",
+   "updated_at": "2024-09-19T19:59:54Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "briandh"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "&gt; More good news is that the &quot;longstanding squabble over Android-specific kernel features has faded completely into the background,&quot; the report said. &quot;The much discussed '<em>wakelo</em>cks' [power management] feature has been quietly replaced by a different mainline solution which is used in the latest Android devices.&quot;<p>Can someone in the know say what this replacement is?"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Google and Samsung soar into list of top 10 Linux contributors"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://arstechnica.com/information-technology/2013/09/google-and-samsung-soar-into-list-of-top-10-linux-contributors/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_briandh",
+    "story_6393381"
+   ],
+   "author": "briandh",
+   "comment_text": "&gt; More good news is that the &quot;longstanding squabble over Android-specific kernel features has faded completely into the background,&quot; the report said. &quot;The much discussed &#x27;wakelocks&#x27; [power management] feature has been quietly replaced by a different mainline solution which is used in the latest Android devices.&quot;<p>Can someone in the know say what this replacement is?",
+   "created_at": "2013-09-17T04:16:48Z",
+   "created_at_i": 1379391408,
+   "objectID": "6397530",
+   "parent_id": 6393381,
+   "story_id": 6393381,
+   "story_title": "Google and Samsung soar into list of top 10 Linux contributors",
+   "story_url": "http://arstechnica.com/information-technology/2013/09/google-and-samsung-soar-into-list-of-top-10-linux-contributors/",
+   "updated_at": "2024-09-19T20:06:52Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jrabone"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "I'm happy that you haven't had this problem (although without a screen I'm not surprised you get multiple days use from a single charge.) Unfortunately, lots of people are not so fortunate, and I'm one of them. There are a number of known, reported, acknowledged bugs that might or might not be fixed in the latest patch update to 4.3 that cause &quot;Android OS&quot; (actually a partial <em>wakelo</em>ck held in the kernel) to stop the phone from going into deep sleep and draining the battery. For example, <a href=\"https://code.google.com/p/android/issues/detail?id=52034\" rel=\"nofollow\">https://code.google.com/p/android/issues/detail?id=52034</a> is one such bug. There are others (I don't use a wireless charger).<p>Until whatever byzantine download scheduler deigns to push the patch to 4.3 to my phone, it's basically unusable."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Google has lowered the price of the Nexus 4 by $100"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://play.google.com/store/devices/details/Nexus_4_16GB?id=nexus_4_16gb"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_jrabone",
+    "story_6287295"
+   ],
+   "author": "jrabone",
+   "children": [
+    6291899
+   ],
+   "comment_text": "I&#x27;m happy that you haven&#x27;t had this problem (although without a screen I&#x27;m not surprised you get multiple days use from a single charge.) Unfortunately, lots of people are not so fortunate, and I&#x27;m one of them. There are a number of known, reported, acknowledged bugs that might or might not be fixed in the latest patch update to 4.3 that cause &quot;Android OS&quot; (actually a partial wakelock held in the kernel) to stop the phone from going into deep sleep and draining the battery. For example, <a href=\"https://code.google.com/p/android/issues/detail?id=52034\" rel=\"nofollow\">https:&#x2F;&#x2F;code.google.com&#x2F;p&#x2F;android&#x2F;issues&#x2F;detail?id=52034</a> is one such bug. There are others (I don&#x27;t use a wireless charger).<p>Until whatever byzantine download scheduler deigns to push the patch to 4.3 to my phone, it&#x27;s basically unusable.",
+   "created_at": "2013-08-28T14:28:49Z",
+   "created_at_i": 1377700129,
+   "objectID": "6290154",
+   "parent_id": 6289654,
+   "story_id": 6287295,
+   "story_title": "Google has lowered the price of the Nexus 4 by $100",
+   "story_url": "https://play.google.com/store/devices/details/Nexus_4_16GB?id=nexus_4_16gb",
+   "updated_at": "2024-09-19T19:56:37Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jrabone"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "Yeah, you too can watch as &quot;Android OS&quot; drains the battery in 6 hours. Honestly, if you get a Nexus 4 be prepared to be a beta tester, or scratch monkey every time there's an OTA update. Perhaps it's just &quot;international&quot; users, but I totally regret buying into the Nexus hype.<p>And then there's the hardware issues (bluetooth kills WiFi if you try to use both at once), firmware issues (WiFi doesn't roam properly, ARP offload broken), straight-up bugs (wireless charging power management holds permanent <em>wakelo</em>ck preventing deep sleep)...<p><a href=\"http://forum.xda-developers.com/showthread.php?t=2072930\" rel=\"nofollow\">http://forum.xda-developers.com/showthread.php?t=2072930</a> really shows what Android is capable of."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Google has lowered the price of the Nexus 4 by $100"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://play.google.com/store/devices/details/Nexus_4_16GB?id=nexus_4_16gb"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_jrabone",
+    "story_6287295"
+   ],
+   "author": "jrabone",
+   "children": [
+    6289654,
+    6289754,
+    6290470
+   ],
+   "comment_text": "Yeah, you too can watch as &quot;Android OS&quot; drains the battery in 6 hours. Honestly, if you get a Nexus 4 be prepared to be a beta tester, or scratch monkey every time there&#x27;s an OTA update. Perhaps it&#x27;s just &quot;international&quot; users, but I totally regret buying into the Nexus hype.<p>And then there&#x27;s the hardware issues (bluetooth kills WiFi if you try to use both at once), firmware issues (WiFi doesn&#x27;t roam properly, ARP offload broken), straight-up bugs (wireless charging power management holds permanent wakelock preventing deep sleep)...<p><a href=\"http://forum.xda-developers.com/showthread.php?t=2072930\" rel=\"nofollow\">http:&#x2F;&#x2F;forum.xda-developers.com&#x2F;showthread.php?t=2072930</a> really shows what Android is capable of.",
+   "created_at": "2013-08-28T09:54:06Z",
+   "created_at_i": 1377683646,
+   "objectID": "6288855",
+   "parent_id": 6287477,
+   "points": null,
+   "story_id": 6287295,
+   "story_title": "Google has lowered the price of the Nexus 4 by $100",
+   "story_url": "https://play.google.com/store/devices/details/Nexus_4_16GB?id=nexus_4_16gb",
+   "updated_at": "2023-09-06T22:04:26Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tadfisher"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "Play GTA3 on a Nexus 7 sometime. Switch out to another task (or hit the Home button). Let it sit for half an hour, then check Settings -> Battery. You'll find that GTA3 is at the top of the list and is pegging the CPU.<p>Their workaround for not obeying the Activity lifecycle is to display a persistent notification that the game is running. This is is not a solution for their actual problem, which is that they have no way to serialize the game's running state, and thus will lose any unsaved game data if they do obey the lifecycle and let their app get culled. This is evidenced by the need to go to the ingame save points in order to save your game, like on a console.<p>Even if the game is open in the foreground, there is no reason why it can't give up its <em>wakelo</em>ck after a period of inactivity. Obviously this is a lesser issue as you have described, but it is still contrary to the UX of most Android apps."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Verizon Names Data-Draining and Battery-Killing Apps"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.businessweek.com/articles/2013-02-11/verizon-names-data-plan-and-battery-killing-apps#r=rss"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_tadfisher",
+    "story_5201946"
+   ],
+   "author": "tadfisher",
+   "comment_text": "Play GTA3 on a Nexus 7 sometime. Switch out to another task (or hit the Home button). Let it sit for half an hour, then check Settings -&#62; Battery. You'll find that GTA3 is at the top of the list and is pegging the CPU.<p>Their workaround for not obeying the Activity lifecycle is to display a persistent notification that the game is running. This is is not a solution for their actual problem, which is that they have no way to serialize the game's running state, and thus will lose any unsaved game data if they do obey the lifecycle and let their app get culled. This is evidenced by the need to go to the ingame save points in order to save your game, like on a console.<p>Even if the game is open in the foreground, there is no reason why it can't give up its wakelock after a period of inactivity. Obviously this is a lesser issue as you have described, but it is still contrary to the UX of most Android apps.",
+   "created_at": "2013-02-11T20:25:22Z",
+   "created_at_i": 1360614322,
+   "objectID": "5202997",
+   "parent_id": 5202803,
+   "story_id": 5201946,
+   "story_title": "Verizon Names Data-Draining and Battery-Killing Apps",
+   "story_url": "http://www.businessweek.com/articles/2013-02-11/verizon-names-data-plan-and-battery-killing-apps#r=rss",
+   "updated_at": "2024-09-19T19:12:43Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "masklinn"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "> It is interesting to note that 100% of the apps listed are games with <em>wakelo</em>cks. While some may argue that this is necessary for games, I counter that your game should pause after a period of inactivity and allow the device to sleep.<p>Fucking meh. Seriously. They list a bunch of games which keep all the most power-consuming subsystems running full tilt (including radio for some), here's why they drain the battery: they're being used and doing their job.<p>Seriously, this list is idiotic, you've got complex games, you're playing them, it's going to drain the battery when you use them. Period. That's been pretty much a constant of my 6 or 7 years of using smartphones. Users using their phone will play, and when they don't play they'll quit the game or manually lock the phone.<p>Some of them <i>do</i> have issues (\"Hill Climb Racing\" seems to be a good example there, keeping radios running when in the background) but aside from this hint you have to hunt for the list is utterly worthless."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Verizon Names Data-Draining and Battery-Killing Apps"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.businessweek.com/articles/2013-02-11/verizon-names-data-plan-and-battery-killing-apps#r=rss"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_masklinn",
+    "story_5201946"
+   ],
+   "author": "masklinn",
+   "children": [
+    5202455
+   ],
+   "comment_text": "&#62; It is interesting to note that 100% of the apps listed are games with wakelocks. While some may argue that this is necessary for games, I counter that your game should pause after a period of inactivity and allow the device to sleep.<p>Fucking meh. Seriously. They list a bunch of games which keep all the most power-consuming subsystems running full tilt (including radio for some), here's why they drain the battery: they're being used and doing their job.<p>Seriously, this list is idiotic, you've got complex games, you're playing them, it's going to drain the battery when you use them. Period. That's been pretty much a constant of my 6 or 7 years of using smartphones. Users using their phone will play, and when they don't play they'll quit the game or manually lock the phone.<p>Some of them <i>do</i> have issues (\"Hill Climb Racing\" seems to be a good example there, keeping radios running when in the background) but aside from this hint you have to hunt for the list is utterly worthless.",
+   "created_at": "2013-02-11T18:39:41Z",
+   "created_at_i": 1360607981,
+   "objectID": "5202399",
+   "parent_id": 5202079,
+   "story_id": 5201946,
+   "story_title": "Verizon Names Data-Draining and Battery-Killing Apps",
+   "story_url": "http://www.businessweek.com/articles/2013-02-11/verizon-names-data-plan-and-battery-killing-apps#r=rss",
+   "updated_at": "2024-09-19T19:12:43Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tadfisher"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "It makes sense for a streaming radio app to acquire a <em>wakelo</em>ck, unless you want it to stop playing when the screen shuts off in 2 minutes. It does not make sense for any game to acquire a <em>wakelo</em>ck, and acquiring one is a sign that your app does not respect the Activity lifecycle and probably doesn't handle notifications or task switching well anyway. I know GTA3 absolutely sucks at this."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Verizon Names Data-Draining and Battery-Killing Apps"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.businessweek.com/articles/2013-02-11/verizon-names-data-plan-and-battery-killing-apps#r=rss"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_tadfisher",
+    "story_5201946"
+   ],
+   "author": "tadfisher",
+   "comment_text": "It makes sense for a streaming radio app to acquire a wakelock, unless you want it to stop playing when the screen shuts off in 2 minutes. It does not make sense for any game to acquire a wakelock, and acquiring one is a sign that your app does not respect the Activity lifecycle and probably doesn't handle notifications or task switching well anyway. I know GTA3 absolutely sucks at this.",
+   "created_at": "2013-02-11T18:19:36Z",
+   "created_at_i": 1360606776,
+   "objectID": "5202254",
+   "parent_id": 5202130,
+   "story_id": 5201946,
+   "story_title": "Verizon Names Data-Draining and Battery-Killing Apps",
+   "story_url": "http://www.businessweek.com/articles/2013-02-11/verizon-names-data-plan-and-battery-killing-apps#r=rss",
+   "updated_at": "2024-09-19T19:12:43Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tadfisher"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "The actual list: <a href=\"http://support.verizonwireless.com/information/app_ranking/high_risk.html\" rel=\"nofollow\">http://support.verizonwireless.com/information/app_ranking/h...</a><p>It is interesting to note that 100% of the apps listed are games with <em>wakelo</em>cks. While some may argue that this is necessary for games, I counter that your game should pause after a period of inactivity and allow the device to sleep. Just because your app is a console port does not mean it is running on a console.<p>Kudos to Verizon for naming and shaming."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Verizon Names Data-Draining and Battery-Killing Apps"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.businessweek.com/articles/2013-02-11/verizon-names-data-plan-and-battery-killing-apps#r=rss"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_tadfisher",
+    "story_5201946"
+   ],
+   "author": "tadfisher",
+   "children": [
+    5202399
+   ],
+   "comment_text": "The actual list: <a href=\"http://support.verizonwireless.com/information/app_ranking/high_risk.html\" rel=\"nofollow\">http://support.verizonwireless.com/information/app_ranking/h...</a><p>It is interesting to note that 100% of the apps listed are games with wakelocks. While some may argue that this is necessary for games, I counter that your game should pause after a period of inactivity and allow the device to sleep. Just because your app is a console port does not mean it is running on a console.<p>Kudos to Verizon for naming and shaming.",
+   "created_at": "2013-02-11T17:51:07Z",
+   "created_at_i": 1360605067,
+   "objectID": "5202079",
+   "parent_id": 5201946,
+   "story_id": 5201946,
+   "story_title": "Verizon Names Data-Draining and Battery-Killing Apps",
+   "story_url": "http://www.businessweek.com/articles/2013-02-11/verizon-names-data-plan-and-battery-killing-apps#r=rss",
+   "updated_at": "2024-09-19T19:12:43Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "rogerbinns"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "<a href=\"http://en.wikipedia.org/wiki/Ubuntu_Phone\" rel=\"nofollow\">http://en.wikipedia.org/wiki/Ubuntu_Phone</a>  \"The system can be used with standard Android kernel which leads it to be installable on most recent Android smartphones.\"  <a href=\"http://www.ubuntu.com/devices/phone\" rel=\"nofollow\">http://www.ubuntu.com/devices/phone</a> \"yet it uses the same drivers as Android\"  <a href=\"http://www.ubuntu.com/devices/phone/operators-and-oems\" rel=\"nofollow\">http://www.ubuntu.com/devices/phone/operators-and-oems</a> \"with the core system based around a typical Android Board Support Package (BSP)\"<p>So definitely the drivers and one of the rags did report that the Android kernel would be used.  It would also be rather brave for Canonical to use Android drivers and binary blobs on a standard kernel since it would be a combination never been used before and probably require a bit of work (eg making sure drivers work with and without <em>wakelo</em>cks) not to mention additional testing."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ubuntu Smartphone Shipping in October"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://blogs.wsj.com/cio/2013/02/06/ubuntu-smartphone-shipping-in-october/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_rogerbinns",
+    "story_5179795"
+   ],
+   "author": "rogerbinns",
+   "comment_text": "<a href=\"http://en.wikipedia.org/wiki/Ubuntu_Phone\" rel=\"nofollow\">http://en.wikipedia.org/wiki/Ubuntu_Phone</a>  \"The system can be used with standard Android kernel which leads it to be installable on most recent Android smartphones.\"  <a href=\"http://www.ubuntu.com/devices/phone\" rel=\"nofollow\">http://www.ubuntu.com/devices/phone</a> \"yet it uses the same drivers as Android\"  <a href=\"http://www.ubuntu.com/devices/phone/operators-and-oems\" rel=\"nofollow\">http://www.ubuntu.com/devices/phone/operators-and-oems</a> \"with the core system based around a typical Android Board Support Package (BSP)\"<p>So definitely the drivers and one of the rags did report that the Android kernel would be used.  It would also be rather brave for Canonical to use Android drivers and binary blobs on a standard kernel since it would be a combination never been used before and probably require a bit of work (eg making sure drivers work with and without wakelocks) not to mention additional testing.",
+   "created_at": "2013-02-07T19:30:20Z",
+   "created_at_i": 1360265420,
+   "objectID": "5184024",
+   "parent_id": 5181636,
+   "points": null,
+   "story_id": 5179795,
+   "story_title": "Ubuntu Smartphone Shipping in October",
+   "story_url": "http://blogs.wsj.com/cio/2013/02/06/ubuntu-smartphone-shipping-in-october/",
+   "updated_at": "2023-09-06T20:46:40Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Karunamon"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "I can report identical results on the exact same device running the AOKP 4.2 release that just dropped. There does appear to be significantly less menu lag.<p>I grabbed this yesterday when it was reported over on r/android, and I can see no meaningful impact on battery life.<p>The developer also explicitly stated that no <em>wakelo</em>cks are taken."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Entropy generator to provide significant lag reduction in Android"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://forum.xda-developers.com/showthread.php?t=1987032&nocache=0"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Karunamon",
+    "story_5008274"
+   ],
+   "author": "Karunamon",
+   "comment_text": "I can report identical results on the exact same device running the AOKP 4.2 release that just dropped. There does appear to be significantly less menu lag.<p>I grabbed this yesterday when it was reported over on r/android, and I can see no meaningful impact on battery life.<p>The developer also explicitly stated that no wakelocks are taken.",
+   "created_at": "2013-01-04T17:16:55Z",
+   "created_at_i": 1357319815,
+   "objectID": "5008580",
+   "parent_id": 5008484,
+   "story_id": 5008274,
+   "story_title": "Entropy generator to provide significant lag reduction in Android",
+   "story_url": "http://forum.xda-developers.com/showthread.php?t=1987032&nocache=0",
+   "updated_at": "2024-09-19T19:05:43Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "beznogim"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "Chances are, there is a ketnel <em>wakelo</em>ck held by a device driver and preventing the phone from sleeping. This is a common issue with poorly written drivers (even Nexus 7 3g suffers from it). Properly functioning Android phone should be managing its radios automatically."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "An iPhone lover\u2019s confession: I switched to the Nexus 4"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.24100.net/2013/01/an-iphone-lovers-confession-i-switched-to-the-nexus-4-completely/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_beznogim",
+    "story_5006967"
+   ],
+   "author": "beznogim",
+   "comment_text": "Chances are, there is a ketnel wakelock held by a device driver and preventing the phone from sleeping. This is a common issue with poorly written drivers (even Nexus 7 3g suffers from it). Properly functioning Android phone should be managing its radios automatically.",
+   "created_at": "2013-01-04T12:58:59Z",
+   "created_at_i": 1357304339,
+   "objectID": "5007389",
+   "parent_id": 5007239,
+   "story_id": 5006967,
+   "story_title": "An iPhone lover\u2019s confession: I switched to the Nexus 4",
+   "story_url": "http://www.24100.net/2013/01/an-iphone-lovers-confession-i-switched-to-the-nexus-4-completely/",
+   "updated_at": "2024-09-19T19:05:37Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "lesspassiveobse"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "The best battery life I ever got on a smartphone was on a HTC One X back in 2013 or so. It had a custom ROM (Paranoid Android IIRC) where I stripped out all the google services, blocked all <em>wakelo</em>cks and so on. It had an nvidia Tegra3 CPU, which had 4 normal ARM cores and a 5th tiny core that ran at 100Mhz or so max (with powersave governor). On that setup, when I was not using it, it drained like 2% battery a day (50 day runtime).\nSince then we went from 40nm to 3nm, 2000mAh to 5000mAh, I'm doing the same things on my phone and yet, due to bloat and spyware the battery life is worse and worse. I went through HTC One m8, HTC 10, OnePlus 7Pro, and a Samsung Fold7 and each had worse efficiency than that 2011 CPU on the OneX (And a Nexus7-2012 until it died due to low quality NAND)"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Will Linux phones become a viable alternative to the Android/iOS duopoly?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://amosbbatto.wordpress.com/2026/10/05/linux-phones-alternative/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_lesspassiveobse",
+    "story_50051530"
+   ],
+   "author": "lesspassiveobse",
+   "children": [
+    50056286
+   ],
+   "comment_text": "The best battery life I ever got on a smartphone was on a HTC One X back in 2013 or so. It had a custom ROM (Paranoid Android IIRC) where I stripped out all the google services, blocked all wakelocks and so on. It had an nvidia Tegra3 CPU, which had 4 normal ARM cores and a 5th tiny core that ran at 100Mhz or so max (with powersave governor). On that setup, when I was not using it, it drained like 2% battery a day (50 day runtime).\nSince then we went from 40nm to 3nm, 2000mAh to 5000mAh, I&#x27;m doing the same things on my phone and yet, due to bloat and spyware the battery life is worse and worse. I went through HTC One m8, HTC 10, OnePlus 7Pro, and a Samsung Fold7 and each had worse efficiency than that 2011 CPU on the OneX (And a Nexus7-2012 until it died due to low quality NAND)",
+   "created_at": "2026-10-12T11:24:38Z",
+   "created_at_i": 1791804278,
+   "objectID": "50054778",
+   "parent_id": 50052485,
+   "story_id": 50051530,
+   "story_title": "Will Linux phones become a viable alternative to the Android/iOS duopoly?",
+   "story_url": "https://amosbbatto.wordpress.com/2026/10/05/linux-phones-alternative/",
+   "updated_at": "2026-10-13T23:04:15Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "arshxyz"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "The Wake Lock API was made for stuff like this: <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/WakeLock\" rel=\"nofollow\">https://developer.mozilla.org/en-US/docs/Web/API/<em>WakeLo</em>ck</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Bigwords.page \u2013 Turn any screen into a sign. The URL is the app"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://bigwords.page/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_arshxyz",
+    "story_49994443"
+   ],
+   "author": "arshxyz",
+   "comment_text": "The Wake Lock API was made for stuff like this: <a href=\"https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;WakeLock\" rel=\"nofollow\">https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;WakeLock</a>",
+   "created_at": "2026-10-08T04:33:44Z",
+   "created_at_i": 1791434024,
+   "objectID": "50001839",
+   "parent_id": 49994443,
+   "story_id": 49994443,
+   "story_title": "Show HN: Bigwords.page \u2013 Turn any screen into a sign. The URL is the app",
+   "story_url": "https://bigwords.page/",
+   "updated_at": "2026-10-08T17:07:40Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ValdikSS"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "Desktop computers work because Intel and AMD provide support to their chips to Windows and Linux, because these chips are used for desktop and servers, and these OS are what their customers use.<p>Mobile chips are not used for desktop and servers, not used for Windows and Linux. They are used for Android, and that's a 98% of the market. The customers of the chips (the companies which develop devices on the chips) just don't use Windows or Linux, that's why there's no reason for a chip company to support it.<p>Android does not use desktop/server firmware, desktop/server bootloader, and even desktop/server stock Linux kernel. They have their own Generic Kernel Image with the Android patches on top, strict Google requirements for the booting and working process, etc.<p>PC operating systems are supplied by third parties that are not part of the computer manufacturer, motherboard or processor vendor. All component manufacturers must write drivers for Windows, certify them with Microsoft, and make sure that their device works properly ideally on any computer. You, the user, buy (or obtain) a copy of the operating system from the operating system company.<p>The operating system for a appliance (smartphone) comes with the appliance itself (as a bundle), and is supplied by the appliance manufacturer, not by operating system manufacturer. The manufacturer of electronic components does not need to contact the creators of the operating systems, they write a driver for Android kernel (yes, for Android kernel, with all its <em>wakelo</em>ck subsystems and such in mind) and gives it to the manufacturer of the appliance directly (and sometimes only supplies hardware, and the driver must be made by the manufacturer of the appliance)."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Nearly impossible? How Fairphone built the ethical, repairable Fairphone Gen 6+"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://arstechnica.com/gadgets/2026/09/nearly-impossible-how-fairphone-built-the-ethical-repairable-fairphone-gen-6/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ValdikSS",
+    "story_49563784"
+   ],
+   "author": "ValdikSS",
+   "comment_text": "Desktop computers work because Intel and AMD provide support to their chips to Windows and Linux, because these chips are used for desktop and servers, and these OS are what their customers use.<p>Mobile chips are not used for desktop and servers, not used for Windows and Linux. They are used for Android, and that&#x27;s a 98% of the market. The customers of the chips (the companies which develop devices on the chips) just don&#x27;t use Windows or Linux, that&#x27;s why there&#x27;s no reason for a chip company to support it.<p>Android does not use desktop&#x2F;server firmware, desktop&#x2F;server bootloader, and even desktop&#x2F;server stock Linux kernel. They have their own Generic Kernel Image with the Android patches on top, strict Google requirements for the booting and working process, etc.<p>PC operating systems are supplied by third parties that are not part of the computer manufacturer, motherboard or processor vendor. All component manufacturers must write drivers for Windows, certify them with Microsoft, and make sure that their device works properly ideally on any computer. You, the user, buy (or obtain) a copy of the operating system from the operating system company.<p>The operating system for a appliance (smartphone) comes with the appliance itself (as a bundle), and is supplied by the appliance manufacturer, not by operating system manufacturer. The manufacturer of electronic components does not need to contact the creators of the operating systems, they write a driver for Android kernel (yes, for Android kernel, with all its wakelock subsystems and such in mind) and gives it to the manufacturer of the appliance directly (and sometimes only supplies hardware, and the driver must be made by the manufacturer of the appliance).",
+   "created_at": "2026-09-04T16:14:42Z",
+   "created_at_i": 1788538482,
+   "objectID": "49566657",
+   "parent_id": 49566014,
+   "story_id": 49563784,
+   "story_title": "Nearly impossible? How Fairphone built the ethical, repairable Fairphone Gen 6+",
+   "story_url": "https://arstechnica.com/gadgets/2026/09/nearly-impossible-how-fairphone-built-the-ethical-repairable-fairphone-gen-6/",
+   "updated_at": "2026-09-04T16:50:36Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "irthomasthomas"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "IDK, prefill speed is a bigger concern for most <em>wokflo</em>ws, like agent coding, and I heard that this is quite low on macs?"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Qwen 3.8-Flash-Next releasing tomorrow (125B a6B)"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://modelscope.cn/models/Qwen/Qwen3.8-Flash-Next"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_irthomasthomas",
+    "story_49432317"
+   ],
+   "author": "irthomasthomas",
+   "children": [
+    49434352
+   ],
+   "comment_text": "IDK, prefill speed is a bigger concern for most wokflows, like agent coding, and I heard that this is quite low on macs?",
+   "created_at": "2026-08-25T14:01:53Z",
+   "created_at_i": 1787666513,
+   "objectID": "49434314",
+   "parent_id": 49433880,
+   "story_id": 49432317,
+   "story_title": "Qwen 3.8-Flash-Next releasing tomorrow (125B a6B)",
+   "story_url": "https://modelscope.cn/models/Qwen/Qwen3.8-Flash-Next",
+   "updated_at": "2026-08-25T14:13:34Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "gabrielsroka"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "Years ago, I wrote something similar but simpler and non-programmable using Pith (JS with Python-like syntax).<p><a href=\"https://gabrielsroka.github.io/webpages/pith.html\" rel=\"nofollow\">https://gabrielsroka.github.io/webpages/pith.html</a><p><pre><code>  cancel = false\n  editor.style.display = 'none'\n  debug.hide()\n  btn = button('Stop', 'cancel=true id=stopBtn')\n  bar.html(btn)\n  beep = new Audio('beep.mp3')\n  lock = await navigator.<em>wakeLo</em>ck.request('screen')\n  stopBtn.style.fontSize = runProgram.style.fontSize = results.style.fontSize = '72px'\n  \n  wus = 'roll shoulders,arm circles,arm hugs,knee raises,rotate torso,rotate hips'\n  wus = wus.split(',')\n  \n  sets = 'march in place,squat,push up,standing bicycle crunch,stand and box,split squat,push up,plank,jumping jacks,wall sit,push up,standing side crunch'\n  sets = sets.split(',')\n  \n  cools = 'walk,hands up,hands forward,hands back,right leg,left leg,right hams,left hams,balance'\n  cools = cools.split(',')\n  \n  await countdown('check volume.', 5, true)\n  \n  for wu in wus\n    await countdown(wu, 12)\n  \n  await countdown('first up ' + sets[0])\n  \n  for set in range(sets.length)\n    msg = (set + 1) + '. ' + sets[set]\n    await countdown(msg, 30, true)\n    if set &lt; sets.length - 1\n      await countdown('next up: ' + sets[set + 1])\n  \n  for cool in cools\n    await countdown(cool, 15)\n  \n  results.html('done')\n  lock.release()\n  editor.style.display = ''\n  \n  async def countdown(msg, secs=5, play)\n    for s in range(secs)\n      results.html(msg + '&lt;br&gt;' + (secs - s))\n      if play &amp;&amp; secs - s &lt;= 3\n        beep.play()\n      if cancel\n        break\n      await sleep(1000)</code></pre>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Programmable timer web app (for gym workouts or stretching sessions)"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://timer.jotaen.net"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_gabrielsroka",
+    "story_49276673"
+   ],
+   "author": "gabrielsroka",
+   "comment_text": "Years ago, I wrote something similar but simpler and non-programmable using Pith (JS with Python-like syntax).<p><a href=\"https:&#x2F;&#x2F;gabrielsroka.github.io&#x2F;webpages&#x2F;pith.html\" rel=\"nofollow\">https:&#x2F;&#x2F;gabrielsroka.github.io&#x2F;webpages&#x2F;pith.html</a><p><pre><code>  cancel = false\n  editor.style.display = &#x27;none&#x27;\n  debug.hide()\n  btn = button(&#x27;Stop&#x27;, &#x27;cancel=true id=stopBtn&#x27;)\n  bar.html(btn)\n  beep = new Audio(&#x27;beep.mp3&#x27;)\n  lock = await navigator.wakeLock.request(&#x27;screen&#x27;)\n  stopBtn.style.fontSize = runProgram.style.fontSize = results.style.fontSize = &#x27;72px&#x27;\n  \n  wus = &#x27;roll shoulders,arm circles,arm hugs,knee raises,rotate torso,rotate hips&#x27;\n  wus = wus.split(&#x27;,&#x27;)\n  \n  sets = &#x27;march in place,squat,push up,standing bicycle crunch,stand and box,split squat,push up,plank,jumping jacks,wall sit,push up,standing side crunch&#x27;\n  sets = sets.split(&#x27;,&#x27;)\n  \n  cools = &#x27;walk,hands up,hands forward,hands back,right leg,left leg,right hams,left hams,balance&#x27;\n  cools = cools.split(&#x27;,&#x27;)\n  \n  await countdown(&#x27;check volume.&#x27;, 5, true)\n  \n  for wu in wus\n    await countdown(wu, 12)\n  \n  await countdown(&#x27;first up &#x27; + sets[0])\n  \n  for set in range(sets.length)\n    msg = (set + 1) + &#x27;. &#x27; + sets[set]\n    await countdown(msg, 30, true)\n    if set &lt; sets.length - 1\n      await countdown(&#x27;next up: &#x27; + sets[set + 1])\n  \n  for cool in cools\n    await countdown(cool, 15)\n  \n  results.html(&#x27;done&#x27;)\n  lock.release()\n  editor.style.display = &#x27;&#x27;\n  \n  async def countdown(msg, secs=5, play)\n    for s in range(secs)\n      results.html(msg + &#x27;&lt;br&gt;&#x27; + (secs - s))\n      if play &amp;&amp; secs - s &lt;= 3\n        beep.play()\n      if cancel\n        break\n      await sleep(1000)</code></pre>",
+   "created_at": "2026-08-14T18:17:41Z",
+   "created_at_i": 1786731461,
+   "objectID": "49302596",
+   "parent_id": 49276673,
+   "story_id": 49276673,
+   "story_title": "Show HN: Programmable timer web app (for gym workouts or stretching sessions)",
+   "story_url": "https://timer.jotaen.net",
+   "updated_at": "2026-08-14T18:30:23Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "arikrahman"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "I have also started shifting to models more reasonable for my <em>wokflo</em>w. I've been using the Reasonix harness for Deepseek, and cache hits make the token use basically free. This is with unsubsidized models as well, using American providers."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Claude Sonnet 5"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.anthropic.com/news/claude-sonnet-5"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_arikrahman",
+    "story_48736605"
+   ],
+   "author": "arikrahman",
+   "comment_text": "I have also started shifting to models more reasonable for my wokflow. I&#x27;ve been using the Reasonix harness for Deepseek, and cache hits make the token use basically free. This is with unsubsidized models as well, using American providers.",
+   "created_at": "2026-06-30T20:16:13Z",
+   "created_at_i": 1782850573,
+   "objectID": "48738593",
+   "parent_id": 48736833,
+   "story_id": 48736605,
+   "story_title": "Claude Sonnet 5",
+   "story_url": "https://www.anthropic.com/news/claude-sonnet-5",
+   "updated_at": "2026-06-30T20:20:29Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "dguaraglia"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "Try using BetterBatteryStats to find what application are causing the most 'partial <em>wakelo</em>cks'. Once I cleaned those up and moved the default scheduler from 'interactive' to 'ondemand', my battery life went up <i>a lot</i>. Even better, if you can get a third party kernel supporting the 'badass' or 'smartass2' schedulers, you'll get even better battery life."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "CyanogenMod 10.0 Release"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.cyanogenmod.org/blog/cyanogenmod-10-0-release"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_dguaraglia",
+    "story_4783294"
+   ],
+   "author": "dguaraglia",
+   "comment_text": "Try using BetterBatteryStats to find what application are causing the most 'partial wakelocks'. Once I cleaned those up and moved the default scheduler from 'interactive' to 'ondemand', my battery life went up <i>a lot</i>. Even better, if you can get a third party kernel supporting the 'badass' or 'smartass2' schedulers, you'll get even better battery life.",
+   "created_at": "2012-11-14T16:02:19Z",
+   "created_at_i": 1352908939,
+   "objectID": "4783861",
+   "parent_id": 4783803,
+   "points": null,
+   "story_id": 4783294,
+   "story_title": "CyanogenMod 10.0 Release",
+   "story_url": "http://www.cyanogenmod.org/blog/cyanogenmod-10-0-release",
+   "updated_at": "2023-09-06T21:31:09Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "noman-land"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "Thanks! I was keen to find out how you prevented screen sleep and was interested to find out about <em>wakeLo</em>ck."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Clocksimulator.com \u2013 A minimalist, distraction-free analog clock"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.clocksimulator.com/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_noman-land",
+    "story_47151784"
+   ],
+   "author": "noman-land",
+   "comment_text": "Thanks! I was keen to find out how you prevented screen sleep and was interested to find out about wakeLock.",
+   "created_at": "2026-02-25T16:24:28Z",
+   "created_at_i": 1772036668,
+   "objectID": "47153684",
+   "parent_id": 47152239,
+   "story_id": 47151784,
+   "story_title": "Show HN: Clocksimulator.com \u2013 A minimalist, distraction-free analog clock",
+   "story_url": "https://www.clocksimulator.com/",
+   "updated_at": "2026-03-05T23:37:11Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "__patchbit__"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "Maybe it is a &quot;<em>wokemo</em>b&quot; correction if the intended effect pans out well for Amazon."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Amazon's \"Project Dawn\" cuts 30k jobs while AWS loses its community champion"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://jpcaparas.medium.com/amazons-project-dawn-cuts-30-000-jobs-while-aws-loses-its-community-champion-ffe7a0943b06"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author___patchbit__",
+    "story_46833507"
+   ],
+   "author": "__patchbit__",
+   "comment_text": "Maybe it is a &quot;wokemob&quot; correction if the intended effect pans out well for Amazon.",
+   "created_at": "2026-01-31T06:07:24Z",
+   "created_at_i": 1769839644,
+   "objectID": "46833927",
+   "parent_id": 46833507,
+   "story_id": 46833507,
+   "story_title": "Amazon's \"Project Dawn\" cuts 30k jobs while AWS loses its community champion",
+   "story_url": "https://jpcaparas.medium.com/amazons-project-dawn-cuts-30-000-jobs-while-aws-loses-its-community-champion-ffe7a0943b06",
+   "updated_at": "2026-03-05T23:27:42Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "gbraad"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "I use my tools from a linux machine (reliable) and Android (OK). I got a h4midi wc to improve the setup. Webmidi and JS is not idealz as <em>wakelo</em>ck is needed and javascript is actually slow."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: I built a WebMIDI sequencer to control my hardware synths"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.simplychris.ai/droplets"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_gbraad",
+    "story_46234304"
+   ],
+   "author": "gbraad",
+   "comment_text": "I use my tools from a linux machine (reliable) and Android (OK). I got a h4midi wc to improve the setup. Webmidi and JS is not idealz as wakelock is needed and javascript is actually slow.",
+   "created_at": "2025-12-17T10:18:46Z",
+   "created_at_i": 1765966726,
+   "objectID": "46300186",
+   "parent_id": 46299811,
+   "story_id": 46234304,
+   "story_title": "Show HN: I built a WebMIDI sequencer to control my hardware synths",
+   "story_url": "https://www.simplychris.ai/droplets",
+   "updated_at": "2026-03-05T23:12:20Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "PopePompus"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "I use Android phones, and there are at least two ways to get iPython going on an Android phone.<p>The first is Termux, which provides a gnu userspace atop the Android kernel. This app is pretty old, and well-tested. There is an active and helpful Termux community. But it has some downsides: 1) The version of Termux in the Google Play Store is not the preferred and maintained version, although the Play Store version does work. The preferred version is in F-Droid, but the future of F-Droid itself is uncertain in the light of recent Google policy decisions. 2) Termux does not have access to directories such as /proc, /sys etc, which prevents some gnu/Linux utilities from working and 3) The Termux filesystem layout is very non-standard, so unless a program has been packaged explicitly for Termux, installation will probably be messy.  I was able to get most, but not all of the Python packages I use frequently, to run within Termux.  I could not get astropy to work, for example. Termux has nice usability features like pinch-to-zoom to change the font size.  Termux requests a <em>wakelo</em>ck, and if you grant the <em>wakelo</em>ck then the OS will not throttle the app when your phone is locked.<p>The other option is the relatively recently added &quot;terminal&quot; app. terminal runs a plain-vanilla Debian Linux OS within a VM.  Its file system is laid out exactly as you would expect, so if you want to get iPython and lots of libraries, you can just run the Anaconda Python installation script, and it will run unmodified with no errors. Nice! You can also install other nice desktop-style apps like VeraCrypt. There are a few downsides: 1) The OS will throttle the app, and occasionally kill the app, when the app is not actively being used interactively. 2) I have found no way to change the tiny font. 3) It's a Google app, so it might disappear for no good reason, as so many Google products do.<p>Both of these options work especially nicely on a foldable phone, because then the tiny phone keyboard is much less of an issue. A foldable phone plus the terminal app really is a pocket Linux computer."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The R47: A new physical RPN calculator"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.swissmicros.com/product/model-r47"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_PopePompus",
+    "story_45844419"
+   ],
+   "author": "PopePompus",
+   "children": [
+    45893227
+   ],
+   "comment_text": "I use Android phones, and there are at least two ways to get iPython going on an Android phone.<p>The first is Termux, which provides a gnu userspace atop the Android kernel. This app is pretty old, and well-tested. There is an active and helpful Termux community. But it has some downsides: 1) The version of Termux in the Google Play Store is not the preferred and maintained version, although the Play Store version does work. The preferred version is in F-Droid, but the future of F-Droid itself is uncertain in the light of recent Google policy decisions. 2) Termux does not have access to directories such as &#x2F;proc, &#x2F;sys etc, which prevents some gnu&#x2F;Linux utilities from working and 3) The Termux filesystem layout is very non-standard, so unless a program has been packaged explicitly for Termux, installation will probably be messy.  I was able to get most, but not all of the Python packages I use frequently, to run within Termux.  I could not get astropy to work, for example. Termux has nice usability features like pinch-to-zoom to change the font size.  Termux requests a wakelock, and if you grant the wakelock then the OS will not throttle the app when your phone is locked.<p>The other option is the relatively recently added &quot;terminal&quot; app. terminal runs a plain-vanilla Debian Linux OS within a VM.  Its file system is laid out exactly as you would expect, so if you want to get iPython and lots of libraries, you can just run the Anaconda Python installation script, and it will run unmodified with no errors. Nice! You can also install other nice desktop-style apps like VeraCrypt. There are a few downsides: 1) The OS will throttle the app, and occasionally kill the app, when the app is not actively being used interactively. 2) I have found no way to change the tiny font. 3) It&#x27;s a Google app, so it might disappear for no good reason, as so many Google products do.<p>Both of these options work especially nicely on a foldable phone, because then the tiny phone keyboard is much less of an issue. A foldable phone plus the terminal app really is a pocket Linux computer.",
+   "created_at": "2025-11-11T19:24:46Z",
+   "created_at_i": 1762889086,
+   "objectID": "45891656",
+   "parent_id": 45890398,
+   "story_id": 45844419,
+   "story_title": "The R47: A new physical RPN calculator",
+   "story_url": "https://www.swissmicros.com/product/model-r47",
+   "updated_at": "2026-03-05T23:01:56Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "buellerbueller"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "The screeching twitter <em>wokemo</em>b that begat the screeching twitter kirkmob."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Texas Attorney General sues Tylenol makers over autism claims"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.bbc.com/news/articles/ce9d3n1r08do"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_buellerbueller",
+    "story_45734834"
+   ],
+   "author": "buellerbueller",
+   "children": [
+    45736971
+   ],
+   "comment_text": "The screeching twitter wokemob that begat the screeching twitter kirkmob.",
+   "created_at": "2025-10-28T18:36:11Z",
+   "created_at_i": 1761676571,
+   "objectID": "45736912",
+   "parent_id": 45736657,
+   "story_id": 45734834,
+   "story_title": "Texas Attorney General sues Tylenol makers over autism claims",
+   "story_url": "https://www.bbc.com/news/articles/ce9d3n1r08do",
+   "updated_at": "2026-03-05T22:57:05Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ajross"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "That's fine.  In fact you're right that laptop and desktop power management is generally best done manually by expert users. That how I have things set up too, more often than not.<p>The use case for <em>wakelo</em>cks (a longtime Android feature from which this is conceptually derived) is phones, though.  Send a quick snap, throw it in your pocket, and expect (1) you get the notification for the reply when it arrives and (2) the device lasts until it gets back to the charger at bedtime.<p>That's highly non-trivial and absolutely not amenable to manual power management.  Is systemd the right answer?  Maybe not, but that's clearly where the feature is aimed."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Keeping SSH sessions alive with systemd-inhibit"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://kd8bny.com/posts/session_inhibit/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ajross",
+    "story_45256145"
+   ],
+   "author": "ajross",
+   "children": [
+    45289732,
+    45293766
+   ],
+   "comment_text": "That&#x27;s fine.  In fact you&#x27;re right that laptop and desktop power management is generally best done manually by expert users. That how I have things set up too, more often than not.<p>The use case for wakelocks (a longtime Android feature from which this is conceptually derived) is phones, though.  Send a quick snap, throw it in your pocket, and expect (1) you get the notification for the reply when it arrives and (2) the device lasts until it gets back to the charger at bedtime.<p>That&#x27;s highly non-trivial and absolutely not amenable to manual power management.  Is systemd the right answer?  Maybe not, but that&#x27;s clearly where the feature is aimed.",
+   "created_at": "2025-09-18T13:43:14Z",
+   "created_at_i": 1758202994,
+   "objectID": "45289606",
+   "parent_id": 45288745,
+   "story_id": 45256145,
+   "story_title": "Keeping SSH sessions alive with systemd-inhibit",
+   "story_url": "https://kd8bny.com/posts/session_inhibit/",
+   "updated_at": "2026-03-05T22:44:04Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "hbn"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "I spent the better part of a decade using exclusively Androids. I rooted, installed custom ROMs and kernels that aimed to improve battery life. Aggressively checked for apps keeping my CPU in a <em>wakelo</em>ck, restricting the bad apps. And I never had good battery life.<p>Eventually I bought an iPhone, and even the 12 mini with its &quot;tiny&quot; battery, and putting in zero effort to extend battery life, it had significantly better endurance than any Android I ever owned. And its performance didn't get choppy after the first few months of use like every Android I owned.<p>The iPhone is almost 20 years old and you'd figure at some point everyone would realize stats and figures and hypothetical napkin math to prove &quot;Android rules iPhone drools&quot; doesn't make everyone's experience using them non-existent."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Compare the New iPhone Models"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.apple.com/iphone/compare/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_hbn",
+    "story_45186294"
+   ],
+   "author": "hbn",
+   "comment_text": "I spent the better part of a decade using exclusively Androids. I rooted, installed custom ROMs and kernels that aimed to improve battery life. Aggressively checked for apps keeping my CPU in a wakelock, restricting the bad apps. And I never had good battery life.<p>Eventually I bought an iPhone, and even the 12 mini with its &quot;tiny&quot; battery, and putting in zero effort to extend battery life, it had significantly better endurance than any Android I ever owned. And its performance didn&#x27;t get choppy after the first few months of use like every Android I owned.<p>The iPhone is almost 20 years old and you&#x27;d figure at some point everyone would realize stats and figures and hypothetical napkin math to prove &quot;Android rules iPhone drools&quot; doesn&#x27;t make everyone&#x27;s experience using them non-existent.",
+   "created_at": "2025-09-09T20:31:55Z",
+   "created_at_i": 1757449915,
+   "objectID": "45188487",
+   "parent_id": 45187995,
+   "story_id": 45186294,
+   "story_title": "Compare the New iPhone Models",
+   "story_url": "https://www.apple.com/iphone/compare/",
+   "updated_at": "2026-03-05T22:42:21Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "gitaarik"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "I think his proposal to use &quot;per&quot; instead of &quot;they&quot; actually makes a lot of sense, because &quot;they&quot; is very confusing in a lot of contexts, because it's a word already used for another function. I don't see how you perceive that as something negative.<p>The quote about pedophilia is concerning indeed, but I think that rather stems from ignorance about the issues than promoting pedophelia. It's easy to shit on such things and <em>wokely</em> dismiss someone's entire opinion, which I find a bit weak."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Google will allow only apps from verified developers to be installed on Android"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://9to5google.com/2025/08/25/android-apps-developer-verification/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_gitaarik",
+    "story_45017028"
+   ],
+   "author": "gitaarik",
+   "children": [
+    45023059,
+    45023255
+   ],
+   "comment_text": "I think his proposal to use &quot;per&quot; instead of &quot;they&quot; actually makes a lot of sense, because &quot;they&quot; is very confusing in a lot of contexts, because it&#x27;s a word already used for another function. I don&#x27;t see how you perceive that as something negative.<p>The quote about pedophilia is concerning indeed, but I think that rather stems from ignorance about the issues than promoting pedophelia. It&#x27;s easy to shit on such things and wokely dismiss someone&#x27;s entire opinion, which I find a bit weak.",
+   "created_at": "2025-08-26T06:36:16Z",
+   "created_at_i": 1756190176,
+   "objectID": "45023031",
+   "parent_id": 45022755,
+   "story_id": 45017028,
+   "story_title": "Google will allow only apps from verified developers to be installed on Android",
+   "story_url": "https://9to5google.com/2025/08/25/android-apps-developer-verification/",
+   "updated_at": "2026-03-05T22:30:58Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jeffbee"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "Doctors as a population are &quot;pretty balanced&quot; I guess but they are an entire SD to the left of the general American population.<p>But my main point was wouldn't a doctor advertising their services specifically to a conservative audience be a huge red flag? Has anyone ever heard of doctors hanging out their shingle on &quot;<em>wokedo</em>ctors dot com&quot;? Note, this wasn't one of the hypotheticals offered in the study."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Political beliefs affect patients' trust in doctors, study finds"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://news.uoregon.edu/political-beliefs-affect-patients-trust-doctors-study-finds"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_jeffbee",
+    "story_43680900"
+   ],
+   "author": "jeffbee",
+   "comment_text": "Doctors as a population are &quot;pretty balanced&quot; I guess but they are an entire SD to the left of the general American population.<p>But my main point was wouldn&#x27;t a doctor advertising their services specifically to a conservative audience be a huge red flag? Has anyone ever heard of doctors hanging out their shingle on &quot;wokedoctors dot com&quot;? Note, this wasn&#x27;t one of the hypotheticals offered in the study.",
+   "created_at": "2025-04-14T14:22:31Z",
+   "created_at_i": 1744640551,
+   "objectID": "43681668",
+   "parent_id": 43681567,
+   "story_id": 43680900,
+   "story_title": "Political beliefs affect patients' trust in doctors, study finds",
+   "story_url": "https://news.uoregon.edu/political-beliefs-affect-patients-trust-doctors-study-finds",
+   "updated_at": "2025-04-15T06:00:26Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "sshine"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "&gt; IN PARALLEL, THE PI HAS CONCRETE PLANS TO CONTINUE HER EXPOSITORY AND OUTREACH WORK WHICH INCLUDE A NEW BOOK (ELEMENTS OF INFINITY-CATEGORY THEORY, JOINT WITH VERITY), LECTURES DIRECTED AT THE GENERAL PUBLIC, SURVEY ARTICLES PREPARED FOR A VARIETY OF AUDIENCES, AND EFFORTS TO IMPROVE ACCESS TO ADVANCED MATHEMATICS, SUCH AS HER SERVICE ON THE EQUITY, DIVERSITY, AND INCLUSION ADVISORY BOARD AT THE BANFF INTERNATIONAL RESEARCH STATION.<p>Guilty by association.<p>The stunt is to censor these words, since even irrelevant mention of them will trigger a dumb filter.<p>It doesn't matter if the research is on the topic of DEI; if those words are mentioned, it's a slippery slope into <em>wokedo</em>m, which is VERBOTEN."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "\"Homotopical macrocosms for higher category theory\" identified as woke DEI grant"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://mathstodon.xyz/@johncarlosbaez/114000054766059217"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_sshine",
+    "story_43046466"
+   ],
+   "author": "sshine",
+   "children": [
+    43046656,
+    43046676,
+    43046701,
+    43046756,
+    43046763
+   ],
+   "comment_text": "&gt; IN PARALLEL, THE PI HAS CONCRETE PLANS TO CONTINUE HER EXPOSITORY AND OUTREACH WORK WHICH INCLUDE A NEW BOOK (ELEMENTS OF INFINITY-CATEGORY THEORY, JOINT WITH VERITY), LECTURES DIRECTED AT THE GENERAL PUBLIC, SURVEY ARTICLES PREPARED FOR A VARIETY OF AUDIENCES, AND EFFORTS TO IMPROVE ACCESS TO ADVANCED MATHEMATICS, SUCH AS HER SERVICE ON THE EQUITY, DIVERSITY, AND INCLUSION ADVISORY BOARD AT THE BANFF INTERNATIONAL RESEARCH STATION.<p>Guilty by association.<p>The stunt is to censor these words, since even irrelevant mention of them will trigger a dumb filter.<p>It doesn&#x27;t matter if the research is on the topic of DEI; if those words are mentioned, it&#x27;s a slippery slope into wokedom, which is VERBOTEN.",
+   "created_at": "2025-02-14T09:40:33Z",
+   "created_at_i": 1739526033,
+   "objectID": "43046621",
+   "parent_id": 43046466,
+   "story_id": 43046466,
+   "story_title": "\"Homotopical macrocosms for higher category theory\" identified as woke DEI grant",
+   "story_url": "https://mathstodon.xyz/@johncarlosbaez/114000054766059217",
+   "updated_at": "2025-02-20T21:53:59Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "iggldiggl"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "&gt; Now, video is done completely differently than it was.<p>Which is a thing that happened long before Firefox 126, too. (Browsers have simply requested the screen <em>wakelo</em>ck themselves when a video was playing. So this API is mainly for use cases that <i>aren't</i> playing a video.)"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "New speculative attacks on Apple CPUs"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://predictors.fail/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_iggldiggl",
+    "story_42856023"
+   ],
+   "author": "iggldiggl",
+   "comment_text": "&gt; Now, video is done completely differently than it was.<p>Which is a thing that happened long before Firefox 126, too. (Browsers have simply requested the screen wakelock themselves when a video was playing. So this API is mainly for use cases that <i>aren&#x27;t</i> playing a video.)",
+   "created_at": "2025-01-29T09:17:44Z",
+   "created_at_i": 1738142264,
+   "objectID": "42863058",
+   "parent_id": 42862460,
+   "story_id": 42856023,
+   "story_title": "New speculative attacks on Apple CPUs",
+   "story_url": "https://predictors.fail/",
+   "updated_at": "2025-01-29T22:42:20Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "stingraycharles"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "Here is a nice discussion on LWN about <em>wakelo</em>ck / autosleep: <a href=\"http://lwn.net/Articles/479841/\" rel=\"nofollow\">http://lwn.net/Articles/479841/</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Linux 3.5 Kernel Released"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://kernelnewbies.org/Linux_3.5"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_stingraycharles",
+    "story_4276206"
+   ],
+   "author": "stingraycharles",
+   "comment_text": "Here is a nice discussion on LWN about wakelock / autosleep: <a href=\"http://lwn.net/Articles/479841/\" rel=\"nofollow\">http://lwn.net/Articles/479841/</a>",
+   "created_at": "2012-07-22T11:04:27Z",
+   "created_at_i": 1342955067,
+   "objectID": "4277045",
+   "parent_id": 4276493,
+   "story_id": 4276206,
+   "story_title": "Linux 3.5 Kernel Released",
+   "story_url": "http://kernelnewbies.org/Linux_3.5",
+   "updated_at": "2024-09-19T18:48:17Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "esolyt"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "wokelo"
+     ],
+     "value": "It is worth nothing that Android is now closer to the mainline than ever. With this release, the kernel incorporates a functionality called autosleep which is similar to Android's <em>wakelo</em>ck, which was the main controversy between kernel developers and Google. Android team will now probably be able to switch to the new Linux infrastructure, if they wish so."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Linux 3.5 Kernel Released"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://kernelnewbies.org/Linux_3.5"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_esolyt",
+    "story_4276206"
+   ],
+   "author": "esolyt",
+   "children": [
+    4277045
+   ],
+   "comment_text": "It is worth nothing that Android is now closer to the mainline than ever. With this release, the kernel incorporates a functionality called autosleep which is similar to Android's wakelock, which was the main controversy between kernel developers and Google. Android team will now probably be able to switch to the new Linux infrastructure, if they wish so.",
+   "created_at": "2012-07-22T04:53:45Z",
+   "created_at_i": 1342932825,
+   "objectID": "4276493",
+   "parent_id": 4276206,
+   "story_id": 4276206,
+   "story_title": "Linux 3.5 Kernel Released",
+   "story_url": "http://kernelnewbies.org/Linux_3.5",
+   "updated_at": "2024-09-19T18:48:12Z"
+  }
+ ],
+ "hitsPerPage": 50,
+ "nbHits": 204,
+ "nbPages": 5,
+ "page": 0,
+ "params": "query=wokelo&tags=comment&hitsPerPage=50&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 19,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 20
+  },
+  "afterFetch": {
+   "format": {
+    "highlighting": 2,
+    "total": 2
+   },
+   "merge": {
+    "mergeLoop": {
+     "prepareNextHit": 10,
+     "total": 10
+    },
+    "total": 12
+   },
+   "total": 12
+  },
+  "fetch": {
+   "query": 2,
+   "scanning": 3,
+   "total": 6
+  },
+  "total": 19
+ },
+ "query": "wokelo",
+ "serverTimeMS": 22,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=wokelo&tags=comment&hitsPerPage=50"
+}

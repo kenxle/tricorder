@@ -1,0 +1,2302 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "doublerebel"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Really neat to see the investor &quot;pitch&quot; for YouTube.  While founders have their passions about ideas, the VC goes straight to the business fundamentals.<p>Also interesting how many features YouTube's infrastructure had already implemented at that scale.<p>Are there legal reasons more of these <em>investment</em> <em>memos</em> are not made public?  Would it open the investors up to any liabilities?"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Sequoia's <em>Investment</em> <em>Memo</em> on YouTube"
+    },
+    "story_url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "http://milesgrimshaw.com/sequoia-<em>investment</em>-<em>memo</em>/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_doublerebel",
+    "story_7675794"
+   ],
+   "author": "doublerebel",
+   "children": [
+    7689521
+   ],
+   "comment_text": "Really neat to see the investor &quot;pitch&quot; for YouTube.  While founders have their passions about ideas, the VC goes straight to the business fundamentals.<p>Also interesting how many features YouTube&#x27;s infrastructure had already implemented at that scale.<p>Are there legal reasons more of these investment memos are not made public?  Would it open the investors up to any liabilities?",
+   "created_at": "2014-05-01T00:20:54Z",
+   "created_at_i": 1398903654,
+   "objectID": "7677392",
+   "parent_id": 7675794,
+   "story_id": 7675794,
+   "story_title": "Sequoia's Investment Memo on YouTube",
+   "story_url": "http://milesgrimshaw.com/sequoia-investment-memo/",
+   "updated_at": "2024-09-19T20:48:10Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "hncommenter13"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Exactly this.  I worked in <em>investment</em> banking in NY and SF before moving over to VC/growth equity (and now a hedge fund).<p>Not only are bankers by definition terrible managers, but there's absolutely zero incentive for them to try to treat the junior people below them well.  Junior people's time is viewed as an consumable resource like an oil well or a coal seam.<p>As a result, the sort of &quot;pizza-sized team&quot; project management that is the heartbeat of software companies is just a total unknown on the corporate finance/M&amp;A side of <em>investment</em> banks.  (Less so in consulting.)<p>Worse, there is no concern for what we used to call &quot;yield loss:&quot; slides or analyses that we'd create because a senior banker demanded them that were never presented to the client or in which they client had no interest.  Countless times I've been the creator of and recipient of extensive presentations of which maybe one slide was relevant.  I recall numerous instances of sending such books by messenger or FedEx to hotels/partners' houses, only to learn that they were never even picked up, let alone looked at.<p>As a VC/private equity guy, the presentations and <em>investment</em> <em>memos</em> that were no doubt largely written between 2 and 5 AM were mostly discarded; I extracted the few numbers I needed and tossed them, as I wanted the raw data from management and not the bankers' glossy sales pitch.  I had stacks of these things in my office.<p>I'm not of the opinion that <em>investment</em> banking adds no value.  But I firmly believe that the culture and habits of <em>investment</em> banks result in piles of unnecessary work that just burns out everyone associated with the enterprise and is not in any meaningful way related to the quality or value of the service delivered.<p>Clients don't care how many hours you worked, they care about the end results.<p>(I make exception here for situations with real economic deadlines like M&amp;A auctions, but the biggest issues are not usually financial--they're business issues that bankers don't actually help much with compared to strategy consultants--I was one of those for a summer too, and the hours were long but reasonable.)"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Pushed to the limit as a banking intern"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://www.bbc.co.uk/news/business-24049679"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_hncommenter13",
+    "story_6373899"
+   ],
+   "author": "hncommenter13",
+   "comment_text": "Exactly this.  I worked in investment banking in NY and SF before moving over to VC&#x2F;growth equity (and now a hedge fund).<p>Not only are bankers by definition terrible managers, but there&#x27;s absolutely zero incentive for them to try to treat the junior people below them well.  Junior people&#x27;s time is viewed as an consumable resource like an oil well or a coal seam.<p>As a result, the sort of &quot;pizza-sized team&quot; project management that is the heartbeat of software companies is just a total unknown on the corporate finance&#x2F;M&amp;A side of investment banks.  (Less so in consulting.)<p>Worse, there is no concern for what we used to call &quot;yield loss:&quot; slides or analyses that we&#x27;d create because a senior banker demanded them that were never presented to the client or in which they client had no interest.  Countless times I&#x27;ve been the creator of and recipient of extensive presentations of which maybe one slide was relevant.  I recall numerous instances of sending such books by messenger or FedEx to hotels&#x2F;partners&#x27; houses, only to learn that they were never even picked up, let alone looked at.<p>As a VC&#x2F;private equity guy, the presentations and investment memos that were no doubt largely written between 2 and 5 AM were mostly discarded; I extracted the few numbers I needed and tossed them, as I wanted the raw data from management and not the bankers&#x27; glossy sales pitch.  I had stacks of these things in my office.<p>I&#x27;m not of the opinion that investment banking adds no value.  But I firmly believe that the culture and habits of investment banks result in piles of unnecessary work that just burns out everyone associated with the enterprise and is not in any meaningful way related to the quality or value of the service delivered.<p>Clients don&#x27;t care how many hours you worked, they care about the end results.<p>(I make exception here for situations with real economic deadlines like M&amp;A auctions, but the biggest issues are not usually financial--they&#x27;re business issues that bankers don&#x27;t actually help much with compared to strategy consultants--I was one of those for a summer too, and the hours were long but reasonable.)",
+   "created_at": "2013-09-13T07:26:51Z",
+   "created_at_i": 1379057211,
+   "objectID": "6379145",
+   "parent_id": 6374279,
+   "story_id": 6373899,
+   "story_title": "Pushed to the limit as a banking intern",
+   "story_url": "http://www.bbc.co.uk/news/business-24049679",
+   "updated_at": "2024-09-19T20:04:56Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "dmix"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "There's been lots of <em>investment</em> in <em>memo</em>ry<p>SK Hynix (together with Samsung and Nvidia) claims $700B <em>investment</em> [1], Samsung itself is investing $70B, Micron $25B, Sandisk announced $31B today [2]<p>[1] <a href=\"https://asia.nikkei.com/business/technology/artificial-intelligence/samsung-sk-and-nvidia-join-700bn-us-korea-ai-push\" rel=\"nofollow\">https://asia.nikkei.com/business/technology/artificial-intel...</a>\n[2] <a href=\"https://www.wsj.com/tech/kioxia-sandisk-to-invest-more-than-31-billion-in-memory-chips-bb6bddbf\" rel=\"nofollow\">https://www.wsj.com/tech/kioxia-sandisk-to-invest-more-than-...</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Nvidia projects $673B in sales as AI demand widens"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://forgeeks.net/nvidia-673-billion-ai-growth-forecast/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_dmix",
+    "story_49466052"
+   ],
+   "author": "dmix",
+   "comment_text": "There&#x27;s been lots of investment in memory<p>SK Hynix (together with Samsung and Nvidia) claims $700B investment [1], Samsung itself is investing $70B, Micron $25B, Sandisk announced $31B today [2]<p>[1] <a href=\"https:&#x2F;&#x2F;asia.nikkei.com&#x2F;business&#x2F;technology&#x2F;artificial-intelligence&#x2F;samsung-sk-and-nvidia-join-700bn-us-korea-ai-push\" rel=\"nofollow\">https:&#x2F;&#x2F;asia.nikkei.com&#x2F;business&#x2F;technology&#x2F;artificial-intel...</a>\n[2] <a href=\"https:&#x2F;&#x2F;www.wsj.com&#x2F;tech&#x2F;kioxia-sandisk-to-invest-more-than-31-billion-in-memory-chips-bb6bddbf\" rel=\"nofollow\">https:&#x2F;&#x2F;www.wsj.com&#x2F;tech&#x2F;kioxia-sandisk-to-invest-more-than-...</a>",
+   "created_at": "2026-08-27T18:24:43Z",
+   "created_at_i": 1787855083,
+   "objectID": "49469116",
+   "parent_id": 49468475,
+   "story_id": 49466052,
+   "story_title": "Nvidia projects $673B in sales as AI demand widens",
+   "story_url": "https://forgeeks.net/nvidia-673-billion-ai-growth-forecast/",
+   "updated_at": "2026-08-27T19:35:25Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "willis936"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Then I better divert all of my <em>investment</em> into <em>memo</em>ry maker stocks."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "memo"
+     ],
+     "value": "<em>Memo</em>ry has grown to nearly two-thirds of AI chip component costs"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://epoch.ai/data-insights/ai-chip-component-cost-shares"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_willis936",
+    "story_48258684"
+   ],
+   "author": "willis936",
+   "comment_text": "Then I better divert all of my investment into memory maker stocks.",
+   "created_at": "2026-05-25T10:07:35Z",
+   "created_at_i": 1779703655,
+   "objectID": "48265187",
+   "parent_id": 48259587,
+   "story_id": 48258684,
+   "story_title": "Memory has grown to nearly two-thirds of AI chip component costs",
+   "story_url": "https://epoch.ai/data-insights/ai-chip-component-cost-shares",
+   "updated_at": "2026-05-25T10:08:19Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "m4x"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "I'm not sure what you think I'm saying, but in case it needs clarifying, it is not that Apple should have built fabs 3.5 years ago, or today, or at any other point in time.<p>What I did say is that in a hypothetical world where Apple did invest in their own fabs, they'd have much better access to <em>memo</em>ry and could be selling machines with vastly more <em>memo</em>ry than their competitors today. Should they be doing this? I'm making no statement either way.<p>&gt; a very wise man took me to dinner and counseled me to never post mortem my decisions on the outcomes, but only on the decision process<p>I appreciate this wisdom on one hand, but on the other it's comically misguided. You have no way to evaluate the decision process if the outcomes are not considered. Don't post mortem your decisions in a way that leads to self-blame or paralysis, but certainly post mortem them to see whether the process was suboptimal.<p>In this case, any board laughing at the idea of <em>investment</em> in <em>memo</em>ry 3.5 years ago should instead have been looking more closely at likely <em>memo</em>ry needs over the then-near-future, given the quite obvious upcoming demand for GPU <em>memo</em>ry. There's no magic bullet and they wouldn't have been able to make perfect decisions regardless, but clearly the process they followed at that time was suboptimal."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "memo"
+     ],
+     "value": "The <em>memo</em>ry shortage is causing a repricing of consumer electronics"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://davidoks.blog/p/ai-is-killing-the-cheap-smartphone"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_m4x",
+    "story_48229319"
+   ],
+   "author": "m4x",
+   "children": [
+    48250902
+   ],
+   "comment_text": "I&#x27;m not sure what you think I&#x27;m saying, but in case it needs clarifying, it is not that Apple should have built fabs 3.5 years ago, or today, or at any other point in time.<p>What I did say is that in a hypothetical world where Apple did invest in their own fabs, they&#x27;d have much better access to memory and could be selling machines with vastly more memory than their competitors today. Should they be doing this? I&#x27;m making no statement either way.<p>&gt; a very wise man took me to dinner and counseled me to never post mortem my decisions on the outcomes, but only on the decision process<p>I appreciate this wisdom on one hand, but on the other it&#x27;s comically misguided. You have no way to evaluate the decision process if the outcomes are not considered. Don&#x27;t post mortem your decisions in a way that leads to self-blame or paralysis, but certainly post mortem them to see whether the process was suboptimal.<p>In this case, any board laughing at the idea of investment in memory 3.5 years ago should instead have been looking more closely at likely memory needs over the then-near-future, given the quite obvious upcoming demand for GPU memory. There&#x27;s no magic bullet and they wouldn&#x27;t have been able to make perfect decisions regardless, but clearly the process they followed at that time was suboptimal.",
+   "created_at": "2026-05-22T22:49:49Z",
+   "created_at_i": 1779490189,
+   "objectID": "48242599",
+   "parent_id": 48242214,
+   "story_id": 48229319,
+   "story_title": "The memory shortage is causing a repricing of consumer electronics",
+   "story_url": "https://davidoks.blog/p/ai-is-killing-the-cheap-smartphone",
+   "updated_at": "2026-05-23T20:00:29Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "marcelk123"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Hi HN,<p>We recently launched Valedex, a tool for automating the first pass of private market deal evaluation.<p><em>Investment</em> teams reviewing CIMs (Confidential Information <em>Memo</em>randums) often spend hours manually reconstructing financials from messy PDFs before they can even start evaluating the deal.<p>Valedex extracts financial metrics directly from CIMs, computes key ratios, and surfaces structural risk signals across the deal.<p>The goal isn't to replace analyst judgment, but to remove the mechanical work so teams can focus on decision-making.<p>We're currently opening a small number of early pilots with <em>investment</em> teams that regularly review CIMs.<p>Would love feedback from anyone who works with financial documents, <em>investment</em> <em>memo</em>s, or messy PDFs."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Valedex \u2013 Extract financial metrics from CIM PDFs for private market deals"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.valedex.com/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_marcelk123",
+    "story_47318498"
+   ],
+   "author": "marcelk123",
+   "children": [
+    47318608
+   ],
+   "comment_text": "Hi HN,<p>We recently launched Valedex, a tool for automating the first pass of private market deal evaluation.<p>Investment teams reviewing CIMs (Confidential Information Memorandums) often spend hours manually reconstructing financials from messy PDFs before they can even start evaluating the deal.<p>Valedex extracts financial metrics directly from CIMs, computes key ratios, and surfaces structural risk signals across the deal.<p>The goal isn&#x27;t to replace analyst judgment, but to remove the mechanical work so teams can focus on decision-making.<p>We&#x27;re currently opening a small number of early pilots with investment teams that regularly review CIMs.<p>Would love feedback from anyone who works with financial documents, investment memos, or messy PDFs.",
+   "created_at": "2026-03-10T02:38:41Z",
+   "created_at_i": 1773110321,
+   "objectID": "47318499",
+   "parent_id": 47318498,
+   "story_id": 47318498,
+   "story_title": "Valedex \u2013 Extract financial metrics from CIM PDFs for private market deals",
+   "story_url": "https://www.valedex.com/",
+   "updated_at": "2026-03-10T02:56:11Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jorvi"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Prices are returning to normal, probably 2-3 years from now. SK Hynix is making absolutely monstrous <em>investments</em> in <em>memo</em>ry fabs and CMXT will be entering the market in force more and more.<p>The biggest problem is that the industry wants HBM, whereas consumers want DRAM. Until the need for HBM has been sufficiently satisfied, fabs will prefer being tooled for HBM because businesses can be squeezed much harder than consumers.<p>Then again, as consumer you don't really need DDR5 or even DDR4 so long as you aren't using an iGPU. Its all about being around CL15 timings."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "RAM now represents 35 percent of bill of materials for HP PCs"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://arstechnica.com/gadgets/2026/02/ram-now-represents-35-percent-of-bill-of-materials-for-hp-pcs/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_jorvi",
+    "story_47161160"
+   ],
+   "author": "jorvi",
+   "comment_text": "Prices are returning to normal, probably 2-3 years from now. SK Hynix is making absolutely monstrous investments in memory fabs and CMXT will be entering the market in force more and more.<p>The biggest problem is that the industry wants HBM, whereas consumers want DRAM. Until the need for HBM has been sufficiently satisfied, fabs will prefer being tooled for HBM because businesses can be squeezed much harder than consumers.<p>Then again, as consumer you don&#x27;t really need DDR5 or even DDR4 so long as you aren&#x27;t using an iGPU. Its all about being around CL15 timings.",
+   "created_at": "2026-02-26T06:01:54Z",
+   "created_at_i": 1772085714,
+   "objectID": "47162425",
+   "parent_id": 47161917,
+   "story_id": 47161160,
+   "story_title": "RAM now represents 35 percent of bill of materials for HP PCs",
+   "story_url": "https://arstechnica.com/gadgets/2026/02/ram-now-represents-35-percent-of-bill-of-materials-for-hp-pcs/",
+   "updated_at": "2026-03-05T23:37:37Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "eternavaults"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "I built EternaVaults to solve a common family problem: critical digital info (wills, logins, <em>memo</em>ries, <em>investments</em>) gets lost, and consumer clouds don\u2019t handle privacy or emergency access.\nWhat\u2019s different:\nClient\u2011side AES\u2011256\u2011GCM (zero\u2011knowledge; server stores encrypted blobs)\nEmergency access with approvals\nAudit logs, versioning, soft delete, device trust\nPWA/mobile experience\nWould love feedback on:\nOnboarding (post\u2011payment \u2192 create\u2011family)\nThreat model clarity on the security page\nPricing/plan limits\nLinks:\nApp: <a href=\"https://eternavaults.com\" rel=\"nofollow\">https://eternavaults.com</a>\nSecurity: <a href=\"https://eternavaults.com/security\" rel=\"nofollow\">https://eternavaults.com/security</a>\nPricing: <a href=\"https://eternavaults.com/pricing\" rel=\"nofollow\">https://eternavaults.com/pricing</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "[dead]"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_eternavaults",
+    "story_45642420"
+   ],
+   "author": "eternavaults",
+   "comment_text": "I built EternaVaults to solve a common family problem: critical digital info (wills, logins, memories, investments) gets lost, and consumer clouds don\u2019t handle privacy or emergency access.\nWhat\u2019s different:\nClient\u2011side AES\u2011256\u2011GCM (zero\u2011knowledge; server stores encrypted blobs)\nEmergency access with approvals\nAudit logs, versioning, soft delete, device trust\nPWA&#x2F;mobile experience\nWould love feedback on:\nOnboarding (post\u2011payment \u2192 create\u2011family)\nThreat model clarity on the security page\nPricing&#x2F;plan limits\nLinks:\nApp: <a href=\"https:&#x2F;&#x2F;eternavaults.com\" rel=\"nofollow\">https:&#x2F;&#x2F;eternavaults.com</a>\nSecurity: <a href=\"https:&#x2F;&#x2F;eternavaults.com&#x2F;security\" rel=\"nofollow\">https:&#x2F;&#x2F;eternavaults.com&#x2F;security</a>\nPricing: <a href=\"https:&#x2F;&#x2F;eternavaults.com&#x2F;pricing\" rel=\"nofollow\">https:&#x2F;&#x2F;eternavaults.com&#x2F;pricing</a>",
+   "created_at": "2025-10-20T10:47:04Z",
+   "created_at_i": 1760957224,
+   "objectID": "45642421",
+   "parent_id": 45642420,
+   "story_id": 45642420,
+   "story_title": "[dead]",
+   "updated_at": "2026-03-05T22:50:58Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "nizsle"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Greater output doesn't always equal greater productivity. In my days in the investing business we would have junior <em>investment</em> professionals putting together elaborate and detailed <em>investment</em> committee <em>memos</em>. When it came time to review a deal in the <em>investment</em> committee meetings we spent all our time trying to sift through the content of the <em>memos</em> and diligence done to date to identify the key risks and opportunities, with what felt like a 1:100 signal to noise ratio being typical. The productive element of the <em>investment</em> process was identifying the signal, not producing the content that too often buries the signal deeper. Imo, AI tools to date make it so much easier to create content which makes it harder to be productive."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "How the AI Bubble Will Pop"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.derekthompson.org/p/this-is-how-the-ai-bubble-will-pop"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_nizsle",
+    "story_45448199"
+   ],
+   "author": "nizsle",
+   "comment_text": "Greater output doesn&#x27;t always equal greater productivity. In my days in the investing business we would have junior investment professionals putting together elaborate and detailed investment committee memos. When it came time to review a deal in the investment committee meetings we spent all our time trying to sift through the content of the memos and diligence done to date to identify the key risks and opportunities, with what felt like a 1:100 signal to noise ratio being typical. The productive element of the investment process was identifying the signal, not producing the content that too often buries the signal deeper. Imo, AI tools to date make it so much easier to create content which makes it harder to be productive.",
+   "created_at": "2025-10-02T13:03:23Z",
+   "created_at_i": 1759410203,
+   "objectID": "45449095",
+   "parent_id": 45448391,
+   "story_id": 45448199,
+   "story_title": "How the AI Bubble Will Pop",
+   "story_url": "https://www.derekthompson.org/p/this-is-how-the-ai-bubble-will-pop",
+   "updated_at": "2026-03-05T22:48:38Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "seec"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Using commands is nothing special and can barely be considered a &quot;skill&quot; (you are just typing stuff instead of pushing buttons, no significant difference).<p>But since it's obtuse and need a large <em>investment</em> (<em>memo</em>ry for command retention, typing proficiency and other tricks), people who had to suffer through that associate their ego with it and declare it superior so they can shame other people into compliance (even though they would be wasting time).<p>As you said, a command interface allows you to shoot yourself in the foot in about a million ways, therefor it is a terrible tool.<p>It is like having to handle a knife that is extremely to avoid cutting yourself with because it has no handle and has an edge on both sides. Makes absolutely no sense, someone who doesn't complain about such a &quot;tool&quot;, is an idiot."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Apple's Software Quality Crisis"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.eliseomartelli.it/blog/2025-03-02-apple-quality"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_seec",
+    "story_43243075"
+   ],
+   "author": "seec",
+   "comment_text": "Using commands is nothing special and can barely be considered a &quot;skill&quot; (you are just typing stuff instead of pushing buttons, no significant difference).<p>But since it&#x27;s obtuse and need a large investment (memory for command retention, typing proficiency and other tricks), people who had to suffer through that associate their ego with it and declare it superior so they can shame other people into compliance (even though they would be wasting time).<p>As you said, a command interface allows you to shoot yourself in the foot in about a million ways, therefor it is a terrible tool.<p>It is like having to handle a knife that is extremely to avoid cutting yourself with because it has no handle and has an edge on both sides. Makes absolutely no sense, someone who doesn&#x27;t complain about such a &quot;tool&quot;, is an idiot.",
+   "created_at": "2025-03-11T06:41:29Z",
+   "created_at_i": 1741675289,
+   "objectID": "43329785",
+   "parent_id": 43319895,
+   "story_id": 43243075,
+   "story_title": "Apple's Software Quality Crisis",
+   "story_url": "https://www.eliseomartelli.it/blog/2025-03-02-apple-quality",
+   "updated_at": "2025-03-11T06:42:52Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "snake_doc"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Without taking a position on unipolar vs. multi-polar:<p>Dario makes an astounding implicit assumption:<p>- China originating labs cannot acquire chips providing 80-90% similar utility without the US within the next 2-3 years.<p>I'll make an observation, re: DeepSeek's incentives that drove them to create the innovations from the V2 and V3 papers.<p>DeepSeek, compared to American AI labs, are much more compute constrained, but in a unique way. Their chips are more <em>memo</em>ry bandwidth constrained (depending on type anywhere from 50% to 80% less bandwidth).<p>Therefore, each dollar/hour of <em>investment</em> towards <em>memo</em>ry optimization is worth MORE to DeepSeek than to American labs.<p>In the V2/3 paper, they've demonstrated exactly that with these <em>memo</em>ry optimization techniques.<p>1. MLA -&gt; reduces KV cache by nearly 80% compared to GQA. By the way, this was published in V2 in May 2024.<p>2. FP8 matmul (while still accumlating in FP32 gradients) without losing significant quality.<p>3. DualPipe scheduling and reworking of Hopper SM's allocation on communication vs. computation -&gt; DeepSeek's V3 paper has 2 full pages of hardware suggestions for &quot;hardware designers&quot; (read NVIDIA)<p>Export controls in a global market create different incentives in parties. The resulting incentives will change, and agents (using it as an traditional economics term) will change their capital allocation strategy."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "On DeepSeek and export controls"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://darioamodei.com/on-deepseek-and-export-controls"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_snake_doc",
+    "story_42866905"
+   ],
+   "author": "snake_doc",
+   "comment_text": "Without taking a position on unipolar vs. multi-polar:<p>Dario makes an astounding implicit assumption:<p>- China originating labs cannot acquire chips providing 80-90% similar utility without the US within the next 2-3 years.<p>I&#x27;ll make an observation, re: DeepSeek&#x27;s incentives that drove them to create the innovations from the V2 and V3 papers.<p>DeepSeek, compared to American AI labs, are much more compute constrained, but in a unique way. Their chips are more memory bandwidth constrained (depending on type anywhere from 50% to 80% less bandwidth).<p>Therefore, each dollar&#x2F;hour of investment towards memory optimization is worth MORE to DeepSeek than to American labs.<p>In the V2&#x2F;3 paper, they&#x27;ve demonstrated exactly that with these memory optimization techniques.<p>1. MLA -&gt; reduces KV cache by nearly 80% compared to GQA. By the way, this was published in V2 in May 2024.<p>2. FP8 matmul (while still accumlating in FP32 gradients) without losing significant quality.<p>3. DualPipe scheduling and reworking of Hopper SM&#x27;s allocation on communication vs. computation -&gt; DeepSeek&#x27;s V3 paper has 2 full pages of hardware suggestions for &quot;hardware designers&quot; (read NVIDIA)<p>Export controls in a global market create different incentives in parties. The resulting incentives will change, and agents (using it as an traditional economics term) will change their capital allocation strategy.",
+   "created_at": "2025-01-29T17:49:34Z",
+   "created_at_i": 1738172974,
+   "objectID": "42868467",
+   "parent_id": 42866905,
+   "story_id": 42866905,
+   "story_title": "On DeepSeek and export controls",
+   "story_url": "https://darioamodei.com/on-deepseek-and-export-controls",
+   "updated_at": "2025-01-31T14:41:21Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "carrozo"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Looking to partner with seed-to-A stage founders on their strategic comms and marketing strategy.<p>Location: Lisbon, Portugal / London, UK<p>Remote: Yes, default.<p>Technologies: \n\u2014 Fractional CMO and strategic comms advisor\n\u2014 <em>Investment</em> <em>memos</em>, pitch decks, investor relations\n\u2014 Marketing strategy development \n\u2014 Internal comms and culture<p>R\u00e9sum\u00e9/CV: \n\u2014 <a href=\"https://www.armand.academy\" rel=\"nofollow\">https://www.armand.academy</a>\n\u2014 <a href=\"https://www.linkedin.com/in/mattarmand\" rel=\"nofollow\">https://www.linkedin.com/in/mattarmand</a><p>Email: matthew@armand.academy"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Who wants to be hired? (October 2024)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_carrozo",
+    "story_41709299"
+   ],
+   "author": "carrozo",
+   "comment_text": "Looking to partner with seed-to-A stage founders on their strategic comms and marketing strategy.<p>Location: Lisbon, Portugal &#x2F; London, UK<p>Remote: Yes, default.<p>Technologies: \n\u2014 Fractional CMO and strategic comms advisor\n\u2014 Investment memos, pitch decks, investor relations\n\u2014 Marketing strategy development \n\u2014 Internal comms and culture<p>R\u00e9sum\u00e9&#x2F;CV: \n\u2014 <a href=\"https:&#x2F;&#x2F;www.armand.academy\" rel=\"nofollow\">https:&#x2F;&#x2F;www.armand.academy</a>\n\u2014 <a href=\"https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;mattarmand\" rel=\"nofollow\">https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;mattarmand</a><p>Email: matthew@armand.academy",
+   "created_at": "2024-10-02T08:53:45Z",
+   "created_at_i": 1727859225,
+   "objectID": "41718552",
+   "parent_id": 41709299,
+   "story_id": 41709299,
+   "story_title": "Ask HN: Who wants to be hired? (October 2024)",
+   "updated_at": "2024-10-02T08:54:44Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "pydry"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Not that much better is true, but every time I see tech that is worse win because it had better marketing it makes me sad and a little angry.<p>It was quite irritating to invest time not only in figuring out which was better initially (only to discover that this didn't matter), but to invest time learning the better one and then to lose all that <em>investment</em> in <em>memo</em>rizing commands/keystrokes/concepts.<p>It's true that most of them map so it's way easier than picking it up from scratch, but it's still a hefty chunk of effort and the annoyance I felt because I felt like I shouldn't <i>have</i> to do this made it harder.<p>Mongo makes me rage for the same reason (but way worse). I know I <i>could</i> learn about its equivalents of indexes and foreign keys and materialized views or whatever but I honestly really just want it to fuck off and die and get replaced by postgres in every single situation where it is used. It is a genuinely shittier technology that grew popular on the strength of marketing (image) rather than quality and that is why I'm forced to learn it."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Twenty years is nothing"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://deprogrammaticaipsum.com/twenty-years-is-nothing/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_pydry",
+    "story_39587947"
+   ],
+   "author": "pydry",
+   "children": [
+    39615631
+   ],
+   "comment_text": "Not that much better is true, but every time I see tech that is worse win because it had better marketing it makes me sad and a little angry.<p>It was quite irritating to invest time not only in figuring out which was better initially (only to discover that this didn&#x27;t matter), but to invest time learning the better one and then to lose all that investment in memorizing commands&#x2F;keystrokes&#x2F;concepts.<p>It&#x27;s true that most of them map so it&#x27;s way easier than picking it up from scratch, but it&#x27;s still a hefty chunk of effort and the annoyance I felt because I felt like I shouldn&#x27;t <i>have</i> to do this made it harder.<p>Mongo makes me rage for the same reason (but way worse). I know I <i>could</i> learn about its equivalents of indexes and foreign keys and materialized views or whatever but I honestly really just want it to fuck off and die and get replaced by postgres in every single situation where it is used. It is a genuinely shittier technology that grew popular on the strength of marketing (image) rather than quality and that is why I&#x27;m forced to learn it.",
+   "created_at": "2024-03-05T10:16:49Z",
+   "created_at_i": 1709633809,
+   "objectID": "39601497",
+   "parent_id": 39591725,
+   "story_id": 39587947,
+   "story_title": "Twenty years is nothing",
+   "story_url": "https://deprogrammaticaipsum.com/twenty-years-is-nothing/",
+   "updated_at": "2024-09-20T16:32:20Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tezza"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "vim, emacs are the editors you can use both on desktop and remote via ssh sessions.<p>Then there is the individual preference between vim and emacs<p>other tools like Eclipse and bash have emacs keybindings to repay the muscle <em>memo</em>ry <em>investment</em>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Is Emacs dying?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://irreal.org/blog/?p=11995"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_tezza",
+    "story_39500275"
+   ],
+   "author": "tezza",
+   "children": [
+    39500710
+   ],
+   "comment_text": "vim, emacs are the editors you can use both on desktop and remote via ssh sessions.<p>Then there is the individual preference between vim and emacs<p>other tools like Eclipse and bash have emacs keybindings to repay the muscle memory investment",
+   "created_at": "2024-02-25T13:11:37Z",
+   "created_at_i": 1708866697,
+   "objectID": "39500510",
+   "parent_id": 39500275,
+   "story_id": 39500275,
+   "story_title": "Is Emacs dying?",
+   "story_url": "https://irreal.org/blog/?p=11995",
+   "updated_at": "2024-09-20T16:23:27Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "leejoramo"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "BBEdit has been my goto editor since 1995. I own copies of many other Mac based text editors  (Alpha, TexEdit, TextMate, vi, etc), but to my tastes BBEdit has always been the most feature rich, powerful and clean editing environment. And of course, I have a huge muscle <em>memo</em>ry <em>investment</em> in how to use BBEdit.<p>Other editors that I use regularly have some additional strengths in a given domain, such as CSSEdit or MultiMarkdown Composer, yet nearly everything I do starts in, passes through or ends in BBEdit."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Macintosh Text Editor BBEdit Turns 20"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.macworld.com/article/1166306/mac_text_editor_bbedit_celebrates_20th_anniversary.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_leejoramo",
+    "story_3833672"
+   ],
+   "author": "leejoramo",
+   "comment_text": "BBEdit has been my goto editor since 1995. I own copies of many other Mac based text editors  (Alpha, TexEdit, TextMate, vi, etc), but to my tastes BBEdit has always been the most feature rich, powerful and clean editing environment. And of course, I have a huge muscle memory investment in how to use BBEdit.<p>Other editors that I use regularly have some additional strengths in a given domain, such as CSSEdit or MultiMarkdown Composer, yet nearly everything I do starts in, passes through or ends in BBEdit.",
+   "created_at": "2012-04-12T19:28:18Z",
+   "created_at_i": 1334258898,
+   "objectID": "3833824",
+   "parent_id": 3833672,
+   "points": null,
+   "story_id": 3833672,
+   "story_title": "Macintosh Text Editor BBEdit Turns 20",
+   "story_url": "https://www.macworld.com/article/1166306/mac_text_editor_bbedit_celebrates_20th_anniversary.html",
+   "updated_at": "2023-09-06T21:28:00Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mmckelvy"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "One of the frequently raised concerns is that soon we will be drowning in AI generated blog posts, articles, presentations and emails, and most of this AI generated content will be meaningless noise.<p>I wonder if the opposite may be true.  With the advent of AI, will there actually be _less_ meaningless noise?<p>When I was in finance, we would regularly produce 100 page decks for client meetings.  Usually only 2 or 3 pages of the 100 page deck would really matter.  The rest was what I call &quot;proof of work&quot;.  _Look at how much work we did for you.  Isn't it impressive_?  With AI, that kind of proof of work no longer makes any sense, so maybe all those 100 page decks, marketing blog posts, <em>investment</em> <em>memos</em>, and white papers will slim down to only the salient points and in many cases vanish altogether."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: What are the most interesting takes on Generative AI you've come across?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mmckelvy",
+    "story_38307711"
+   ],
+   "author": "mmckelvy",
+   "children": [
+    38310044,
+    38310143,
+    38310948,
+    38316666
+   ],
+   "comment_text": "One of the frequently raised concerns is that soon we will be drowning in AI generated blog posts, articles, presentations and emails, and most of this AI generated content will be meaningless noise.<p>I wonder if the opposite may be true.  With the advent of AI, will there actually be _less_ meaningless noise?<p>When I was in finance, we would regularly produce 100 page decks for client meetings.  Usually only 2 or 3 pages of the 100 page deck would really matter.  The rest was what I call &quot;proof of work&quot;.  _Look at how much work we did for you.  Isn&#x27;t it impressive_?  With AI, that kind of proof of work no longer makes any sense, so maybe all those 100 page decks, marketing blog posts, investment memos, and white papers will slim down to only the salient points and in many cases vanish altogether.",
+   "created_at": "2023-11-17T20:42:54Z",
+   "created_at_i": 1700253774,
+   "objectID": "38309926",
+   "parent_id": 38307711,
+   "story_id": 38307711,
+   "story_title": "Ask HN: What are the most interesting takes on Generative AI you've come across?",
+   "updated_at": "2024-09-20T15:35:46Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "xenospn"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "I had one! Spent four years depleting my savings and burning through investor money before calling it quits. Most important lesson I've learned is to not build another Hardware startup with my own money.<p>Leftover <em>investment</em> <em>memo</em>: <a href=\"https://www.notion.so/gethuan/Huan-Memo-1e6ee1d17d72440cb98101fbef3badda?pvs=4\" rel=\"nofollow noreferrer\">https://www.notion.so/gethuan/Huan-<em>Memo</em>-1e6ee1d17d72440cb981...</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Any hardware startups here?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_xenospn",
+    "story_36583419"
+   ],
+   "author": "xenospn",
+   "comment_text": "I had one! Spent four years depleting my savings and burning through investor money before calling it quits. Most important lesson I&#x27;ve learned is to not build another Hardware startup with my own money.<p>Leftover investment memo: <a href=\"https:&#x2F;&#x2F;www.notion.so&#x2F;gethuan&#x2F;Huan-Memo-1e6ee1d17d72440cb98101fbef3badda?pvs=4\" rel=\"nofollow noreferrer\">https:&#x2F;&#x2F;www.notion.so&#x2F;gethuan&#x2F;Huan-Memo-1e6ee1d17d72440cb981...</a>",
+   "created_at": "2023-07-05T17:28:55Z",
+   "created_at_i": 1688578135,
+   "objectID": "36603756",
+   "parent_id": 36583419,
+   "story_id": 36583419,
+   "story_title": "Ask HN: Any hardware startups here?",
+   "updated_at": "2024-09-20T14:30:44Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "insanitybit"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "&gt; How many binary exploits have actually lead to the exposing your personal information?<p>It happens with some frequency. WhatsApp was exploited due to a <em>memo</em>ry safety vulnerability, for example. Chrome 0days for <em>memo</em>ry unsafe vulns are definitely exploited in the wild.<p>Typically companies have much much larger attack surface, so a technique like phishing is going to be far cheaper to execute. But even still, I've seen a <em>memo</em>ry safety vulnerability used in an attack against a company.<p>The thing is that most companies' attack surface isn't in C/C++ because... that would suck, so they don't do it. Or if they do they use a specific codebase that's been heavily invested in over decades and they sandbox and isolate the services.<p>So on the one hand, yes, most attacks on companies are not due to <em>memo</em>ry safety issues but that's in part because of the <em>investments</em> into <em>memo</em>ry safety.<p>&gt; I remember individuals getting pwned very frequently in the old days.<p>Yep, significant efforts were made to make the internet a safer place. Primarily the sandboxing and disabling of third party plugins in browsers.<p>But this doesn't really matter. Yes, there are other issues like phishing and those are being addressed with other techniques. There are issues like sql injection and those are also being addressed. That doesn't mean that <em>memo</em>ry safety isn't an issue."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "\u201cRewrite It in Rust\u201d Considered Harmful? [pdf]"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://goto.ucsd.edu/~rjhala/hotos-ffi.pdf"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_insanitybit",
+    "story_36060287"
+   ],
+   "author": "insanitybit",
+   "comment_text": "&gt; How many binary exploits have actually lead to the exposing your personal information?<p>It happens with some frequency. WhatsApp was exploited due to a memory safety vulnerability, for example. Chrome 0days for memory unsafe vulns are definitely exploited in the wild.<p>Typically companies have much much larger attack surface, so a technique like phishing is going to be far cheaper to execute. But even still, I&#x27;ve seen a memory safety vulnerability used in an attack against a company.<p>The thing is that most companies&#x27; attack surface isn&#x27;t in C&#x2F;C++ because... that would suck, so they don&#x27;t do it. Or if they do they use a specific codebase that&#x27;s been heavily invested in over decades and they sandbox and isolate the services.<p>So on the one hand, yes, most attacks on companies are not due to memory safety issues but that&#x27;s in part because of the investments into memory safety.<p>&gt; I remember individuals getting pwned very frequently in the old days.<p>Yep, significant efforts were made to make the internet a safer place. Primarily the sandboxing and disabling of third party plugins in browsers.<p>But this doesn&#x27;t really matter. Yes, there are other issues like phishing and those are being addressed with other techniques. There are issues like sql injection and those are also being addressed. That doesn&#x27;t mean that memory safety isn&#x27;t an issue.",
+   "created_at": "2023-05-25T13:36:10Z",
+   "created_at_i": 1685021770,
+   "objectID": "36070525",
+   "parent_id": 36067368,
+   "story_id": 36060287,
+   "story_title": "\u201cRewrite It in Rust\u201d Considered Harmful? [pdf]",
+   "story_url": "https://goto.ucsd.edu/~rjhala/hotos-ffi.pdf",
+   "updated_at": "2024-09-20T14:14:23Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "arnavsahu336"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "The only moat in technology are the founders and team. I think this concept of having a moat sounds great when VCs write <em>investment</em> <em>memos</em> - but in reality, cold, hard execution everyday is what matters and that all comes from the quality and tenacity of the team.<p>Every piece of application software is a wrapper on other software with a set of opinionated workflows built on top.<p>Yes, there are some companies that made it hard to switch from - Snowflake, Salesforce - because there are data stores and its a pain to move your record of data. But even they don't have true moats - its just sticker.<p>So I think Google is right in saying there is no moat. But given their size, Google has layers and bureaucracy, which makes it hard to execute in a new market. That's why OpenAI I think will win - because they are smaller, can move fast, have a great team and can hence, execute...till the day they become a big company too and get disrupted by a new startup, which is the natural circle of life in technology."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Google \u201cWe have no moat, and neither does OpenAI\u201d"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.semianalysis.com/p/google-we-have-no-moat-and-neither"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_arnavsahu336",
+    "story_35813322"
+   ],
+   "author": "arnavsahu336",
+   "children": [
+    35823249
+   ],
+   "comment_text": "The only moat in technology are the founders and team. I think this concept of having a moat sounds great when VCs write investment memos - but in reality, cold, hard execution everyday is what matters and that all comes from the quality and tenacity of the team.<p>Every piece of application software is a wrapper on other software with a set of opinionated workflows built on top.<p>Yes, there are some companies that made it hard to switch from - Snowflake, Salesforce - because there are data stores and its a pain to move your record of data. But even they don&#x27;t have true moats - its just sticker.<p>So I think Google is right in saying there is no moat. But given their size, Google has layers and bureaucracy, which makes it hard to execute in a new market. That&#x27;s why OpenAI I think will win - because they are smaller, can move fast, have a great team and can hence, execute...till the day they become a big company too and get disrupted by a new startup, which is the natural circle of life in technology.",
+   "created_at": "2023-05-04T22:52:13Z",
+   "created_at_i": 1683240733,
+   "objectID": "35823167",
+   "parent_id": 35813322,
+   "story_id": 35813322,
+   "story_title": "Google \u201cWe have no moat, and neither does OpenAI\u201d",
+   "story_url": "https://www.semianalysis.com/p/google-we-have-no-moat-and-neither",
+   "updated_at": "2024-09-20T13:59:32Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "civilaircraft"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Absolutely there's value here and it's a great site - kudos! Just would be helpful if you changed the wording as &quot;<em>investment</em> <em>memos</em>&quot; are actual documents in the <em>investment</em> world that these are not (would be similar to calling a product announcement a &quot;product manual&quot;)."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "investment"
+     ],
+     "value": "Database of VC <em>investment</em> announcements"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.vcinsights.co/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_civilaircraft",
+    "story_34692749"
+   ],
+   "author": "civilaircraft",
+   "comment_text": "Absolutely there&#x27;s value here and it&#x27;s a great site - kudos! Just would be helpful if you changed the wording as &quot;investment memos&quot; are actual documents in the investment world that these are not (would be similar to calling a product announcement a &quot;product manual&quot;).",
+   "created_at": "2023-02-07T16:02:05Z",
+   "created_at_i": 1675785725,
+   "objectID": "34694446",
+   "parent_id": 34693969,
+   "story_id": 34692749,
+   "story_title": "Database of VC investment announcements",
+   "story_url": "https://www.vcinsights.co/",
+   "updated_at": "2024-09-20T13:19:46Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "im_down_w_otp"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Yes, it would be nice if the title could be updated to reflect that they're fundraising announcements/PR.<p>Those are intentionally extremely flattering and very shallow. They're almost the polar opposite of what goes into the <em>investment</em> <em>memo</em>, which is a much more complete, honest(-ish), and sober distillation."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "investment"
+     ],
+     "value": "Database of VC <em>investment</em> announcements"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.vcinsights.co/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_im_down_w_otp",
+    "story_34692749"
+   ],
+   "author": "im_down_w_otp",
+   "children": [
+    34694677
+   ],
+   "comment_text": "Yes, it would be nice if the title could be updated to reflect that they&#x27;re fundraising announcements&#x2F;PR.<p>Those are intentionally extremely flattering and very shallow. They&#x27;re almost the polar opposite of what goes into the investment memo, which is a much more complete, honest(-ish), and sober distillation.",
+   "created_at": "2023-02-07T15:53:05Z",
+   "created_at_i": 1675785185,
+   "objectID": "34694335",
+   "parent_id": 34694229,
+   "story_id": 34692749,
+   "story_title": "Database of VC investment announcements",
+   "story_url": "https://www.vcinsights.co/",
+   "updated_at": "2024-09-20T13:19:46Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "O__________O"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Example of what an <em>investment</em> <em>memo</em> might look like from  perspective of Sequoia as it relates to DoorDash:<p>- <a href=\"https://www.alexanderjarvis.com/doordash-venture-capital-investment-memo/\" rel=\"nofollow\">https://www.alexanderjarvis.com/doordash-venture-capital-inv...</a>"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "investment"
+     ],
+     "value": "Database of VC <em>investment</em> announcements"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.vcinsights.co/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_O__________O",
+    "story_34692749"
+   ],
+   "author": "O__________O",
+   "comment_text": "Example of what an investment memo might look like from  perspective of Sequoia as it relates to DoorDash:<p>- <a href=\"https:&#x2F;&#x2F;www.alexanderjarvis.com&#x2F;doordash-venture-capital-investment-memo&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.alexanderjarvis.com&#x2F;doordash-venture-capital-inv...</a>",
+   "created_at": "2023-02-07T15:42:29Z",
+   "created_at_i": 1675784549,
+   "objectID": "34694210",
+   "parent_id": 34692749,
+   "story_id": 34692749,
+   "story_title": "Database of VC investment announcements",
+   "story_url": "https://www.vcinsights.co/",
+   "updated_at": "2024-09-20T13:19:46Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "japanesejay"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Great idea! Thank you for putting this together. I\u2019ll have to dig deeper but the first two randomly selected companies had an announcement of their <em>investment</em> and not a formal <em>investment</em> <em>memo</em> that would be submitted to their IC. However it\u2019s very interesting to understand the investors perspective at the time of their participation."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "investment"
+     ],
+     "value": "Database of VC <em>investment</em> announcements"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.vcinsights.co/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_japanesejay",
+    "story_34692749"
+   ],
+   "author": "japanesejay",
+   "children": [
+    34693987
+   ],
+   "comment_text": "Great idea! Thank you for putting this together. I\u2019ll have to dig deeper but the first two randomly selected companies had an announcement of their investment and not a formal investment memo that would be submitted to their IC. However it\u2019s very interesting to understand the investors perspective at the time of their participation.",
+   "created_at": "2023-02-07T15:16:08Z",
+   "created_at_i": 1675782968,
+   "objectID": "34693855",
+   "parent_id": 34692749,
+   "story_id": 34692749,
+   "story_title": "Database of VC investment announcements",
+   "story_url": "https://www.vcinsights.co/",
+   "updated_at": "2024-09-20T13:19:41Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "civilaircraft"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "These are just the VC <em>investment</em> announcements - I was hoping to see the actual <em>investment</em> <em>memos</em> which delve into the analysis of the market, product, business model, technicals, team, risks, etc. (which I would be surprised if they were made public at all). Although over the last few years, I wouldn't be surprised if a lot of vc firms didn't really do in-depth <em>investment</em> <em>memos</em>..."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "investment"
+     ],
+     "value": "Database of VC <em>investment</em> announcements"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.vcinsights.co/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_civilaircraft",
+    "story_34692749"
+   ],
+   "author": "civilaircraft",
+   "comment_text": "These are just the VC investment announcements - I was hoping to see the actual investment memos which delve into the analysis of the market, product, business model, technicals, team, risks, etc. (which I would be surprised if they were made public at all). Although over the last few years, I wouldn&#x27;t be surprised if a lot of vc firms didn&#x27;t really do in-depth investment memos...",
+   "created_at": "2023-02-07T15:10:34Z",
+   "created_at_i": 1675782634,
+   "objectID": "34693767",
+   "parent_id": 34692749,
+   "story_id": 34692749,
+   "story_title": "Database of VC investment announcements",
+   "story_url": "https://www.vcinsights.co/",
+   "updated_at": "2024-09-20T13:19:41Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "SnoJohn"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Sorry to quibble, but these aren't <em>investment</em> <em>memos</em>.  They are PR statements announcing an <em>investment</em>.  An <em>investment</em> <em>memo</em> is an internal document that lays out a business model, a competitive analysis, a risk assessment, the reasoning behind investing or not, and how it should be valued.<p>Really nice site though.  Well designed and works smoothly."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "investment"
+     ],
+     "value": "Database of VC <em>investment</em> announcements"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.vcinsights.co/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_SnoJohn",
+    "story_34692749"
+   ],
+   "author": "SnoJohn",
+   "children": [
+    34693969,
+    34694229
+   ],
+   "comment_text": "Sorry to quibble, but these aren&#x27;t investment memos.  They are PR statements announcing an investment.  An investment memo is an internal document that lays out a business model, a competitive analysis, a risk assessment, the reasoning behind investing or not, and how it should be valued.<p>Really nice site though.  Well designed and works smoothly.",
+   "created_at": "2023-02-07T15:07:21Z",
+   "created_at_i": 1675782441,
+   "objectID": "34693723",
+   "parent_id": 34692749,
+   "story_id": 34692749,
+   "story_title": "Database of VC investment announcements",
+   "story_url": "https://www.vcinsights.co/",
+   "updated_at": "2024-09-20T13:19:41Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "speculator14"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "The trick I developed in my previous job writing <em>investment</em> <em>memos</em> (which are just essays) is to create an increasingly detailed outline until the complete report has suddenly materialized before your eyes, with only the final step of tying together your notes in complete sentences required."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "I've procrastinated working on my thesis for more than a year"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://thoughtsbyaashiq.bearblog.dev/ive-procrastinated-working-on-my-thesis-for-over-a-year/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_speculator14",
+    "story_34449626"
+   ],
+   "author": "speculator14",
+   "comment_text": "The trick I developed in my previous job writing investment memos (which are just essays) is to create an increasingly detailed outline until the complete report has suddenly materialized before your eyes, with only the final step of tying together your notes in complete sentences required.",
+   "created_at": "2023-01-20T18:48:12Z",
+   "created_at_i": 1674240492,
+   "objectID": "34457786",
+   "parent_id": 34449626,
+   "story_id": 34449626,
+   "story_title": "I've procrastinated working on my thesis for more than a year",
+   "story_url": "https://thoughtsbyaashiq.bearblog.dev/ive-procrastinated-working-on-my-thesis-for-over-a-year/",
+   "updated_at": "2024-09-20T13:04:15Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "sarfraaztalat"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Loved the detailed section on preparing for the pitch to angels. The <em>investment</em> <em>memo</em> and pitch deck can make or break the pitch; it\u2019s super important (and not all that easy) to get them just right. Great tips there!"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Angel Guide"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.oslash.com/learning-center/angel-funding-playbook"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_sarfraaztalat",
+    "story_33271184"
+   ],
+   "author": "sarfraaztalat",
+   "comment_text": "Loved the detailed section on preparing for the pitch to angels. The investment memo and pitch deck can make or break the pitch; it\u2019s super important (and not all that easy) to get them just right. Great tips there!",
+   "created_at": "2022-10-20T13:33:29Z",
+   "created_at_i": 1666272809,
+   "objectID": "33274457",
+   "parent_id": 33271184,
+   "story_id": 33271184,
+   "story_title": "Angel Guide",
+   "story_url": "https://www.oslash.com/learning-center/angel-funding-playbook",
+   "updated_at": "2024-09-20T12:19:03Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "bretthardin"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "The <em>investment</em> <em>memo</em> is critical for founders to understand. These are all the questions that you should be able to answer when seeking financing.<p>This <em>memo</em> will be the first thing the LPs ask for if the VCs <em>investment</em> goes south, meaning, your company fails."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "An Inside Look at how a VC Evaluates Startups Pt. II"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://blog.thomvest.com/vcevaluatingstartupsii/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_bretthardin",
+    "story_3182724"
+   ],
+   "author": "bretthardin",
+   "comment_text": "The investment memo is critical for founders to understand. These are all the questions that you should be able to answer when seeking financing.<p>This memo will be the first thing the LPs ask for if the VCs investment goes south, meaning, your company fails.",
+   "created_at": "2011-11-01T16:56:45Z",
+   "created_at_i": 1320166605,
+   "objectID": "3182958",
+   "parent_id": 3182724,
+   "story_id": 3182724,
+   "story_title": "An Inside Look at how a VC Evaluates Startups Pt. II",
+   "story_url": "http://blog.thomvest.com/vcevaluatingstartupsii/",
+   "updated_at": "2024-09-19T18:07:21Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "marksdhillon"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Hi HN!<p>We've been building startups for close to a decade now and the part we always hated was the dreaded fundraise. Countless of our friends have burned out multiple times, with some even giving up on what they're building (it's demoralizing).<p>Over the past 8 months we worked with 1000+ early stage founders deeply learning their pain points, helped write over 500 <em>investment</em> <em>memos</em>, and even used our own product to raise from other founders around the world (the ultimate dog food).<p>Our key takeaways were:<p>- Founders use on average 5 - 7 different tools to raise a round (operational mess)<p>- Founders have a very hard time fully articulating their company's story using a pitch deck<p>- Cycle through dozens of pitch templates before picking the &quot;right one&quot;<p>- Are constantly worried about deck aesthetics versus telling their story<p>- Always distracted by nervously visiting DocSend to gauge investor interest<p>- Constantly caught in &quot;15 minute Zoom hell&quot; with investors (are they really interested?)<p>So we set out with the goal to:<p>- Streamline operations (all-in-one)<p>- Build a more asynchronous process (saves time)<p>- Create something simple &amp; intuitive (looks good)<p>Here's a quick demo video:\n<a href=\"https://www.youtube.com/watch?v=FJ9bSk7tZG4\" rel=\"nofollow\">https://www.youtube.com/watch?v=FJ9bSk7tZG4</a><p>Over the next month we'll be investing deeply into our Slack App and '/' commands to make the process even more asynchronous.<p>Happy to answer any questions, take feedback, and criticisms."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Async Fundraising \u2013 Raise your seed round from Slack"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.buildmemo.com/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_marksdhillon",
+    "story_31226727"
+   ],
+   "author": "marksdhillon",
+   "children": [
+    31245832
+   ],
+   "comment_text": "Hi HN!<p>We&#x27;ve been building startups for close to a decade now and the part we always hated was the dreaded fundraise. Countless of our friends have burned out multiple times, with some even giving up on what they&#x27;re building (it&#x27;s demoralizing).<p>Over the past 8 months we worked with 1000+ early stage founders deeply learning their pain points, helped write over 500 investment memos, and even used our own product to raise from other founders around the world (the ultimate dog food).<p>Our key takeaways were:<p>- Founders use on average 5 - 7 different tools to raise a round (operational mess)<p>- Founders have a very hard time fully articulating their company&#x27;s story using a pitch deck<p>- Cycle through dozens of pitch templates before picking the &quot;right one&quot;<p>- Are constantly worried about deck aesthetics versus telling their story<p>- Always distracted by nervously visiting DocSend to gauge investor interest<p>- Constantly caught in &quot;15 minute Zoom hell&quot; with investors (are they really interested?)<p>So we set out with the goal to:<p>- Streamline operations (all-in-one)<p>- Build a more asynchronous process (saves time)<p>- Create something simple &amp; intuitive (looks good)<p>Here&#x27;s a quick demo video:\n<a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=FJ9bSk7tZG4\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=FJ9bSk7tZG4</a><p>Over the next month we&#x27;ll be investing deeply into our Slack App and &#x27;&#x2F;&#x27; commands to make the process even more asynchronous.<p>Happy to answer any questions, take feedback, and criticisms.",
+   "created_at": "2022-05-01T17:16:52Z",
+   "created_at_i": 1651425412,
+   "objectID": "31226729",
+   "parent_id": 31226727,
+   "story_id": 31226727,
+   "story_title": "Show HN: Async Fundraising \u2013 Raise your seed round from Slack",
+   "story_url": "https://www.buildmemo.com/",
+   "updated_at": "2024-09-20T11:01:49Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "MattGaiser"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "My objection is maintaining an entirely unrelated skillset that I have never encounter in my day to day work.<p>It is a skill that you will lose if you spend a year without interviewing/leetcode practicing.<p>Sure I\u2019ll do it, but you may as well test me on painting famous oil artwork from <em>memo</em>ry too.<p>&gt; I don't understand why people prefer &quot;here take home questions/work for 5 hours for free&quot; over DS&amp;A interview.<p>The alternative is hundreds of hours of speculative <em>investment</em> <em>memo</em>rizing books/websites of algos. People will take full time courses on passing these interviews."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Green Lumber Fallacy in Software Engineering"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.chrisbehan.ca/posts/green-lumber-fallacy-in-software"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_MattGaiser",
+    "story_29924078"
+   ],
+   "author": "MattGaiser",
+   "children": [
+    29926447,
+    29926656,
+    29926734,
+    29927032
+   ],
+   "comment_text": "My objection is maintaining an entirely unrelated skillset that I have never encounter in my day to day work.<p>It is a skill that you will lose if you spend a year without interviewing&#x2F;leetcode practicing.<p>Sure I\u2019ll do it, but you may as well test me on painting famous oil artwork from memory too.<p>&gt; I don&#x27;t understand why people prefer &quot;here take home questions&#x2F;work for 5 hours for free&quot; over DS&amp;A interview.<p>The alternative is hundreds of hours of speculative investment memorizing books&#x2F;websites of algos. People will take full time courses on passing these interviews.",
+   "created_at": "2022-01-13T20:28:34Z",
+   "created_at_i": 1642105714,
+   "objectID": "29926390",
+   "parent_id": 29926237,
+   "story_id": 29924078,
+   "story_title": "Green Lumber Fallacy in Software Engineering",
+   "story_url": "https://www.chrisbehan.ca/posts/green-lumber-fallacy-in-software",
+   "updated_at": "2024-09-20T10:13:34Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ninjaranter"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Highly recommend this Matt Levine article on how ludicrous that is<p><a href=\"https://www.bloomberg.com/news/newsletters/2021-09-09/money-stuff-twenty-percent-of-a-picture-of-a-dog\" rel=\"nofollow\">https://www.bloomberg.com/news/newsletters/2021-09-09/money-...</a><p>&gt; Imagine writing the <em>investment</em> <em>memo</em> for \u201c20% of a picture of a dog\u201d and being like \u201cthe most we should pay is probably about $2 million because the whole picture of the dog sold for $4 million three months ago and it can\u2019t realistically have appreciated more than 150% since then; even if the whole picture of the dog is worth, aggressively, $10 million, this share would be worth $2 milllion.\u201d<p>&gt; One model here is that everyone on earth wants to pay $4 million for a unique picture of a dog, so if you make one unique picture of a dog and sell it for $4 million you\u2019ll get $4 million but if you cut it into 17 billion slices each one will sell for $4 million?"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "NFT projects are just MLMs for tech elites"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://every.to/napkin-math/nft-projects-are-just-mlms-for-tech-elites"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ninjaranter",
+    "story_28713249"
+   ],
+   "author": "ninjaranter",
+   "children": [
+    28728195
+   ],
+   "comment_text": "Highly recommend this Matt Levine article on how ludicrous that is<p><a href=\"https:&#x2F;&#x2F;www.bloomberg.com&#x2F;news&#x2F;newsletters&#x2F;2021-09-09&#x2F;money-stuff-twenty-percent-of-a-picture-of-a-dog\" rel=\"nofollow\">https:&#x2F;&#x2F;www.bloomberg.com&#x2F;news&#x2F;newsletters&#x2F;2021-09-09&#x2F;money-...</a><p>&gt; Imagine writing the investment memo for \u201c20% of a picture of a dog\u201d and being like \u201cthe most we should pay is probably about $2 million because the whole picture of the dog sold for $4 million three months ago and it can\u2019t realistically have appreciated more than 150% since then; even if the whole picture of the dog is worth, aggressively, $10 million, this share would be worth $2 milllion.\u201d<p>&gt; One model here is that everyone on earth wants to pay $4 million for a unique picture of a dog, so if you make one unique picture of a dog and sell it for $4 million you\u2019ll get $4 million but if you cut it into 17 billion slices each one will sell for $4 million?",
+   "created_at": "2021-10-01T14:41:42Z",
+   "created_at_i": 1633099302,
+   "objectID": "28719045",
+   "parent_id": 28718674,
+   "story_id": 28713249,
+   "story_title": "NFT projects are just MLMs for tech elites",
+   "story_url": "https://every.to/napkin-math/nft-projects-are-just-mlms-for-tech-elites",
+   "updated_at": "2024-09-20T09:27:33Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jeswin"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "&gt; But the returns on <em>memo</em>ry <em>investment</em> past 16G are, for most people, just not gonna be that dramatic in general and specifically, probably won\u2019t make your media operations feel faster.<p>This is only true for editing still images. If you're editing video (with tools like Davinci Resolve - which is free and excellent), 16GB is going to be quite inadequate."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Where\u2019s the Apple M2?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.tbray.org/ongoing/When/202x/2021/07/12/Slow-M1"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_jeswin",
+    "story_27828693"
+   ],
+   "author": "jeswin",
+   "children": [
+    27829660
+   ],
+   "comment_text": "&gt; But the returns on memory investment past 16G are, for most people, just not gonna be that dramatic in general and specifically, probably won\u2019t make your media operations feel faster.<p>This is only true for editing still images. If you&#x27;re editing video (with tools like Davinci Resolve - which is free and excellent), 16GB is going to be quite inadequate.",
+   "created_at": "2021-07-14T03:04:16Z",
+   "created_at_i": 1626231856,
+   "objectID": "27829147",
+   "parent_id": 27828693,
+   "story_id": 27828693,
+   "story_title": "Where\u2019s the Apple M2?",
+   "story_url": "https://www.tbray.org/ongoing/When/202x/2021/07/12/Slow-M1",
+   "updated_at": "2024-09-20T08:56:23Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Wistar"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "I am in your camp, too. My muscle-<em>memo</em>ry <em>investment</em> in the Adobe product line, especially Photoshop, Illustrator and After-Effects, is approaching 30 years old \u2014 more than half my life \u2014 and that really locks me in for professional, get-it-done-now, reasons."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Figma and Canva are taking on Adobe and winning"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://kwokchain.com/2021/02/05/atomic-concepts/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Wistar",
+    "story_26748723"
+   ],
+   "author": "Wistar",
+   "comment_text": "I am in your camp, too. My muscle-memory investment in the Adobe product line, especially Photoshop, Illustrator and After-Effects, is approaching 30 years old \u2014 more than half my life \u2014 and that really locks me in for professional, get-it-done-now, reasons.",
+   "created_at": "2021-04-09T20:37:18Z",
+   "created_at_i": 1618000638,
+   "objectID": "26755815",
+   "parent_id": 26753696,
+   "story_id": 26748723,
+   "story_title": "Figma and Canva are taking on Adobe and winning",
+   "story_url": "https://kwokchain.com/2021/02/05/atomic-concepts/",
+   "updated_at": "2024-09-20T08:21:25Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Animats"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Here are the rules for registered <em>investment</em> advisors.[1]<p>This was a pump and dump. Those have been around since at least the 19th century. Older ones involved newspapers and newsletters. Newer ones involve social media. The SEC fines people for this regularly. This time, the suckers were people who hadn't seen this a few dozen times yet.<p>[1] <a href=\"https://www.sec.gov/divisions/investment/iaregulation/memoia.htm\" rel=\"nofollow\">https://www.sec.gov/divisions/<em>investment</em>/iaregulation/<em>memo</em>ia...</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "\u2018Roaring Kitty\u2019 Sued for Securities Fraud over GameStop Rise"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.bloomberglaw.com/document/QOOOYUT0AFB4"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Animats",
+    "story_26169969"
+   ],
+   "author": "Animats",
+   "children": [
+    26170981,
+    26171020,
+    26171037,
+    26171097
+   ],
+   "comment_text": "Here are the rules for registered investment advisors.[1]<p>This was a pump and dump. Those have been around since at least the 19th century. Older ones involved newspapers and newsletters. Newer ones involve social media. The SEC fines people for this regularly. This time, the suckers were people who hadn&#x27;t seen this a few dozen times yet.<p>[1] <a href=\"https:&#x2F;&#x2F;www.sec.gov&#x2F;divisions&#x2F;investment&#x2F;iaregulation&#x2F;memoia.htm\" rel=\"nofollow\">https:&#x2F;&#x2F;www.sec.gov&#x2F;divisions&#x2F;investment&#x2F;iaregulation&#x2F;memoia...</a>",
+   "created_at": "2021-02-17T19:58:40Z",
+   "created_at_i": 1613591920,
+   "objectID": "26170868",
+   "parent_id": 26170619,
+   "story_id": 26169969,
+   "story_title": "\u2018Roaring Kitty\u2019 Sued for Securities Fraud over GameStop Rise",
+   "story_url": "https://www.bloomberglaw.com/document/QOOOYUT0AFB4",
+   "updated_at": "2024-09-20T08:01:08Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "bradlys"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Most of the people doing FIRE are not the types who spend money on expensive stuff. If they were, they\u2019d be doing fat FIRE (uncommon). Most people doing FIRE do not have high standards of living. If they did, it\u2019d run somewhat counter to FIRE. The people who can do fat fire are just lucky and got rich and should be ignored promptly.<p>There is also the problem that many bought real estate far before it was as fiendishly expensive as it is now, bought stocks and were part of companies during wild bull runs, and act like you can reproduce their success trivially. (You can\u2019t)<p>Also, I think of spending in your youth as an <em>investment</em> in <em>memo</em>ries. What is the point of getting all your best trips in at 65 (just before dementia sets in) when you have at best 30 years to enjoy them. If you did the trips when you\u2019re 30, you\u2019d have decades more to enjoy them and could actually go on them. Living for when you\u2019re senile is a scam."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "I've walked away from software development"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://old.reddit.com/r/cscareerquestions/comments/kfcmbj/ive_walked_away_from_software_development/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_bradlys",
+    "story_25466854"
+   ],
+   "author": "bradlys",
+   "comment_text": "Most of the people doing FIRE are not the types who spend money on expensive stuff. If they were, they\u2019d be doing fat FIRE (uncommon). Most people doing FIRE do not have high standards of living. If they did, it\u2019d run somewhat counter to FIRE. The people who can do fat fire are just lucky and got rich and should be ignored promptly.<p>There is also the problem that many bought real estate far before it was as fiendishly expensive as it is now, bought stocks and were part of companies during wild bull runs, and act like you can reproduce their success trivially. (You can\u2019t)<p>Also, I think of spending in your youth as an investment in memories. What is the point of getting all your best trips in at 65 (just before dementia sets in) when you have at best 30 years to enjoy them. If you did the trips when you\u2019re 30, you\u2019d have decades more to enjoy them and could actually go on them. Living for when you\u2019re senile is a scam.",
+   "created_at": "2020-12-18T16:45:46Z",
+   "created_at_i": 1608309946,
+   "objectID": "25468865",
+   "parent_id": 25468178,
+   "story_id": 25466854,
+   "story_title": "I've walked away from software development",
+   "story_url": "https://old.reddit.com/r/cscareerquestions/comments/kfcmbj/ive_walked_away_from_software_development/",
+   "updated_at": "2024-09-20T07:31:46Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ramraj07"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Brilliant article,but I'll give a simpler factor as well - people read too many damn books! Not reading too much per se but just too many books! That combined with the fact that most books are bloated crap (because the author is incentivized to make a book out of what should be a New Yorker article at best), means that most people can't even see the point because they've been ricocheted around a concept by a single opinionated person for way too long.<p>For this reason I avoid reading books for the most part, and probably read one book a year at best. My to-read list is short and highly scrutinized - I probably spend days making sure a book is worth the time and <em>memo</em>ry <em>investment</em>. Once I apply that logic, every book I've read has been extremely rewarding and I can at least write a few thousand word summary of each. I also constantly find instances in real life when I can use anecdotes from these books and people are surprised that I remember them. It also helps that for almost every book I deliberately sought out the best tome in the topic I wanted to learn more from.<p>My reading list from the past 5 years or so:<p>1. Making of the atomic bomb by Richard Rhodes\n2. Surely you're joking Mr. Feynman\n3. On Writing by Stephen King\n4. Steve Jobs by Walter Isaccson \n5. The Logic of Chance by Eugene Koonin\n6. GEB (gave up on this one though)"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Why books don't work (2019)"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://andymatuschak.org/books/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ramraj07",
+    "story_24542224"
+   ],
+   "author": "ramraj07",
+   "children": [
+    24553330,
+    24555029
+   ],
+   "comment_text": "Brilliant article,but I&#x27;ll give a simpler factor as well - people read too many damn books! Not reading too much per se but just too many books! That combined with the fact that most books are bloated crap (because the author is incentivized to make a book out of what should be a New Yorker article at best), means that most people can&#x27;t even see the point because they&#x27;ve been ricocheted around a concept by a single opinionated person for way too long.<p>For this reason I avoid reading books for the most part, and probably read one book a year at best. My to-read list is short and highly scrutinized - I probably spend days making sure a book is worth the time and memory investment. Once I apply that logic, every book I&#x27;ve read has been extremely rewarding and I can at least write a few thousand word summary of each. I also constantly find instances in real life when I can use anecdotes from these books and people are surprised that I remember them. It also helps that for almost every book I deliberately sought out the best tome in the topic I wanted to learn more from.<p>My reading list from the past 5 years or so:<p>1. Making of the atomic bomb by Richard Rhodes\n2. Surely you&#x27;re joking Mr. Feynman\n3. On Writing by Stephen King\n4. Steve Jobs by Walter Isaccson \n5. The Logic of Chance by Eugene Koonin\n6. GEB (gave up on this one though)",
+   "created_at": "2020-09-22T11:29:15Z",
+   "created_at_i": 1600774155,
+   "objectID": "24553259",
+   "parent_id": 24542224,
+   "story_id": 24542224,
+   "story_title": "Why books don't work (2019)",
+   "story_url": "https://andymatuschak.org/books/",
+   "updated_at": "2024-09-20T06:58:34Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tylertringas"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "thx! probably this one: <a href=\"https://earnestcapital.com/investment-memo-fund-2/\" rel=\"nofollow\">https://earnestcapital.com/<em>investment</em>-<em>memo</em>-fund-2/</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Earnest Capital Trailhead"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://earnestcapital.com/trailhead/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_tylertringas",
+    "story_23180522"
+   ],
+   "author": "tylertringas",
+   "children": [
+    23187876
+   ],
+   "comment_text": "thx! probably this one: <a href=\"https:&#x2F;&#x2F;earnestcapital.com&#x2F;investment-memo-fund-2&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;earnestcapital.com&#x2F;investment-memo-fund-2&#x2F;</a>",
+   "created_at": "2020-05-14T20:11:59Z",
+   "created_at_i": 1589487119,
+   "objectID": "23184756",
+   "parent_id": 23184041,
+   "story_id": 23180522,
+   "story_title": "Earnest Capital Trailhead",
+   "story_url": "https://earnestcapital.com/trailhead/",
+   "updated_at": "2024-09-20T06:16:05Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "perl4ever"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "&quot;Lambda School once wrote an <em>investment</em> <em>memo</em> titled \u201cHuman Capital: The Last Unoptimized Asset Class,\u201d and people love last unoptimized asset classes&quot;"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Investing in a Coding-School Graduate Could Get You 13% a Year"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.bloomberg.com/news/articles/2020-02-25/investing-in-a-coding-school-graduate-could-get-you-13-a-year"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_perl4ever",
+    "story_22412576"
+   ],
+   "author": "perl4ever",
+   "comment_text": "&quot;Lambda School once wrote an investment memo titled \u201cHuman Capital: The Last Unoptimized Asset Class,\u201d and people love last unoptimized asset classes&quot;",
+   "created_at": "2020-02-26T03:03:43Z",
+   "created_at_i": 1582686223,
+   "objectID": "22419894",
+   "parent_id": 22412631,
+   "story_id": 22412576,
+   "story_title": "Investing in a Coding-School Graduate Could Get You 13% a Year",
+   "story_url": "https://www.bloomberg.com/news/articles/2020-02-25/investing-in-a-coding-school-graduate-could-get-you-13-a-year",
+   "updated_at": "2024-09-20T05:39:30Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "rcarrigan87"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Seems like this trend is only starting to begin...<p><a href=\"https://earnestcapital.com/investment-memo-fund-2/\" rel=\"nofollow\">https://earnestcapital.com/<em>investment</em>-<em>memo</em>-fund-2/</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Sneak peek at future of SaaS investing"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://medium.com/@tom.kubik/get-rich-slow-in-software-57001f41f3a9"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_rcarrigan87",
+    "story_21948347"
+   ],
+   "author": "rcarrigan87",
+   "children": [
+    21951727
+   ],
+   "comment_text": "Seems like this trend is only starting to begin...<p><a href=\"https:&#x2F;&#x2F;earnestcapital.com&#x2F;investment-memo-fund-2&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;earnestcapital.com&#x2F;investment-memo-fund-2&#x2F;</a>",
+   "created_at": "2020-01-03T20:45:13Z",
+   "created_at_i": 1578084313,
+   "objectID": "21950146",
+   "parent_id": 21949879,
+   "story_id": 21948347,
+   "story_title": "Sneak peek at future of SaaS investing",
+   "story_url": "https://medium.com/@tom.kubik/get-rich-slow-in-software-57001f41f3a9",
+   "updated_at": "2024-09-20T05:31:25Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "pcwalton"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "&gt; I don't understand the desperate need to paint all modern C++ code bases as dangerously unsafe.<p>Because the idea that security vulnerabilities can be fixed by just &quot;modernizing&quot; C++ codebases is actively harming security, by discouraging <em>investment</em> in <em>memo</em>ry-safe languages.<p>&gt; It is demonstrably not true and doesn't reflect well on the motivations of those that would blindly assert it.<p>It is demonstrably true, as <a href=\"http://twitter.com/lazyfishbarrel\" rel=\"nofollow\">http://twitter.com/lazyfishbarrel</a> shows. Perhaps consider that those of us who work on browsers, which are some of the largest most-attacked pieces of software in the world, would know what we are talking about."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Comparing Parallel Rust and C++"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://parallel-rust-cpp.github.io/introduction.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_pcwalton",
+    "story_21469295"
+   ],
+   "author": "pcwalton",
+   "comment_text": "&gt; I don&#x27;t understand the desperate need to paint all modern C++ code bases as dangerously unsafe.<p>Because the idea that security vulnerabilities can be fixed by just &quot;modernizing&quot; C++ codebases is actively harming security, by discouraging investment in memory-safe languages.<p>&gt; It is demonstrably not true and doesn&#x27;t reflect well on the motivations of those that would blindly assert it.<p>It is demonstrably true, as <a href=\"http:&#x2F;&#x2F;twitter.com&#x2F;lazyfishbarrel\" rel=\"nofollow\">http:&#x2F;&#x2F;twitter.com&#x2F;lazyfishbarrel</a> shows. Perhaps consider that those of us who work on browsers, which are some of the largest most-attacked pieces of software in the world, would know what we are talking about.",
+   "created_at": "2019-11-08T19:24:11Z",
+   "created_at_i": 1573241051,
+   "objectID": "21485759",
+   "parent_id": 21478765,
+   "story_id": 21469295,
+   "story_title": "Comparing Parallel Rust and C++",
+   "story_url": "https://parallel-rust-cpp.github.io/introduction.html",
+   "updated_at": "2024-09-20T05:13:51Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jeffmould"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Oh and to answer your question about an <em>investment</em> <em>memo</em>, it is essentially a very brief business plan (1-2 pages) detailing what the <em>investment</em> is for, how it would be structured, etc... I have seen banks ask for them, but never heard of a VC or angel asking for one.<p>As I said above, focus on the product not on the <em>investment</em>, as you work with angels and VCs they will tell you what they want as far as documentation. The lawyer can then help you formulate those documents. Don't over prepare you are just wasting your time."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: What's in an IM?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_jeffmould",
+    "story_2052535"
+   ],
+   "author": "jeffmould",
+   "comment_text": "Oh and to answer your question about an investment memo, it is essentially a very brief business plan (1-2 pages) detailing what the investment is for, how it would be structured, etc... I have seen banks ask for them, but never heard of a VC or angel asking for one.<p>As I said above, focus on the product not on the investment, as you work with angels and VCs they will tell you what they want as far as documentation. The lawyer can then help you formulate those documents. Don't over prepare you are just wasting your time.",
+   "created_at": "2010-12-30T16:37:53Z",
+   "created_at_i": 1293727073,
+   "objectID": "2052636",
+   "parent_id": 2052619,
+   "story_id": 2052535,
+   "story_title": "Ask HN: What's in an IM?",
+   "story_url": "",
+   "updated_at": "2024-09-19T17:24:24Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "porridgeraisin"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "<a href=\"https://www.wsj.com/tech/apple-raises-prices-on-macs-ipads-by-200-or-more-on-some-models-a7463f99\" rel=\"nofollow\">https://www.wsj.com/tech/apple-raises-prices-on-macs-ipads-b...</a><p>Micron executives, who typically offer cautious projections about the boom-bust <em>memo</em>ry business, said on their earnings call that \u201ctight conditions\u201d will persist beyond 2027. Just three months ago, they had projected tight conditions going only beyond this year.<p>In an interview Wednesday night, Micron Chief Business Officer Sumit Sadana said the company couldn\u2019t make <em>investments</em> during the <em>memo</em>ry market\u2019s last downturn, when Micron\u2019s gross profits went negative, in part because certain customers took advantage to pay rock-bottom prices.<p>\u201cWe told a couple of the customers who were being very aggressive with pricing at that time that this is not constructive,\u201d he said, without naming Apple, adding that low prices discouraged capital <em>investments</em>. \u201cA lot of the industry <em>investments</em> got shut down in 2023 because of really poor pricing and really poor margins.\u201d<p>The iPhone-maker is well known for using its huge <em>memo</em>ry and storage purchases as leverage to secure the lowest prices, say analysts and former <em>memo</em>ry company executives."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Apple raises prices of MacBooks, iPads"
+    },
+    "story_url": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "memo"
+     ],
+     "value": "https://www.reuters.com/world/asia-pacific/apple-raises-prices-macbooks-ipads-<em>memo</em>ry-costs-skyrocket-2026-06-25/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_porridgeraisin",
+    "story_48672732"
+   ],
+   "author": "porridgeraisin",
+   "comment_text": "<a href=\"https:&#x2F;&#x2F;www.wsj.com&#x2F;tech&#x2F;apple-raises-prices-on-macs-ipads-by-200-or-more-on-some-models-a7463f99\" rel=\"nofollow\">https:&#x2F;&#x2F;www.wsj.com&#x2F;tech&#x2F;apple-raises-prices-on-macs-ipads-b...</a><p>Micron executives, who typically offer cautious projections about the boom-bust memory business, said on their earnings call that \u201ctight conditions\u201d will persist beyond 2027. Just three months ago, they had projected tight conditions going only beyond this year.<p>In an interview Wednesday night, Micron Chief Business Officer Sumit Sadana said the company couldn\u2019t make investments during the memory market\u2019s last downturn, when Micron\u2019s gross profits went negative, in part because certain customers took advantage to pay rock-bottom prices.<p>\u201cWe told a couple of the customers who were being very aggressive with pricing at that time that this is not constructive,\u201d he said, without naming Apple, adding that low prices discouraged capital investments. \u201cA lot of the industry investments got shut down in 2023 because of really poor pricing and really poor margins.\u201d<p>The iPhone-maker is well known for using its huge memory and storage purchases as leverage to secure the lowest prices, say analysts and former memory company executives.",
+   "created_at": "2026-06-25T16:40:50Z",
+   "created_at_i": 1782405650,
+   "objectID": "48675977",
+   "parent_id": 48675385,
+   "story_id": 48672732,
+   "story_title": "Apple raises prices of MacBooks, iPads",
+   "story_url": "https://www.reuters.com/world/asia-pacific/apple-raises-prices-macbooks-ipads-memory-costs-skyrocket-2026-06-25/",
+   "updated_at": "2026-06-25T20:47:53Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "alex43578"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Every use of DRAM is a corporate use, with the best consumer-friendly examples like Apple\u2019s efforts to hold down prices (until today) being thanks to \u201cback room deals\u201d. Nobody\u2019s buying some DRAM to build a <em>memo</em>ry stick in their garage.<p>Apple, Raspberry Pi, Supermicro, and OpenAI all have the same claim to supply you do: you can buy it with money, with the seller being allowed to charge what they want. In fact, high prices are going to be the only way to stimulate supply and encourage the billion dollar <em>investment</em> in additional <em>memo</em>ry fabs. Price controls or other supply-killing mechanisms are known not to work - it\u2019s Econ 101."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Apple raises prices of MacBooks, iPads"
+    },
+    "story_url": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "memo"
+     ],
+     "value": "https://www.reuters.com/world/asia-pacific/apple-raises-prices-macbooks-ipads-<em>memo</em>ry-costs-skyrocket-2026-06-25/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_alex43578",
+    "story_48672732"
+   ],
+   "author": "alex43578",
+   "children": [
+    48679369
+   ],
+   "comment_text": "Every use of DRAM is a corporate use, with the best consumer-friendly examples like Apple\u2019s efforts to hold down prices (until today) being thanks to \u201cback room deals\u201d. Nobody\u2019s buying some DRAM to build a memory stick in their garage.<p>Apple, Raspberry Pi, Supermicro, and OpenAI all have the same claim to supply you do: you can buy it with money, with the seller being allowed to charge what they want. In fact, high prices are going to be the only way to stimulate supply and encourage the billion dollar investment in additional memory fabs. Price controls or other supply-killing mechanisms are known not to work - it\u2019s Econ 101.",
+   "created_at": "2026-06-25T14:52:16Z",
+   "created_at_i": 1782399136,
+   "objectID": "48674343",
+   "parent_id": 48674030,
+   "story_id": 48672732,
+   "story_title": "Apple raises prices of MacBooks, iPads",
+   "story_url": "https://www.reuters.com/world/asia-pacific/apple-raises-prices-macbooks-ipads-memory-costs-skyrocket-2026-06-25/",
+   "updated_at": "2026-06-26T02:48:54Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "bloppe"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "They are doing all of the above. <em>Investment</em> in new <em>memo</em>ry fabs is booming. It just takes a little while to get chips out the door."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Hetzner Price Adjustment"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://docs.hetzner.com/general/infrastructure-and-availability/price-adjustment/#cloud-servers"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_bloppe",
+    "story_48540844"
+   ],
+   "author": "bloppe",
+   "comment_text": "They are doing all of the above. Investment in new memory fabs is booming. It just takes a little while to get chips out the door.",
+   "created_at": "2026-06-15T22:28:25Z",
+   "created_at_i": 1781562505,
+   "objectID": "48547888",
+   "parent_id": 48543222,
+   "story_id": 48540844,
+   "story_title": "Hetzner Price Adjustment",
+   "story_url": "https://docs.hetzner.com/general/infrastructure-and-availability/price-adjustment/#cloud-servers",
+   "updated_at": "2026-06-16T04:03:16Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "pembrook"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "&gt; <i>what is keeping them back, though: Money? Compute? Skills? Training data?</i><p>All of the above and more. Everything holding Mistral back is the same thing that has held Europe back from competing in the entire digital revolution. See this 1991 article lamenting the loss of any viable European PC manufacturer: <a href=\"https://www.nytimes.com/1991/04/22/business/europe-stumbles-in-computers.html\" rel=\"nofollow\">https://www.nytimes.com/1991/04/22/business/europe-stumbles-...</a><p>Mistral being in Europe is disadvantaged with:<p>1. <i>Money:</i> less diverse private pension fund environment = less LPs to invest in VC funds = less VC dollars to invest in new ventures. European money is vacuumed out of the private sector into state pension funds and dumped into low yielding government bonds. This starves the private sector of capital while inflating the % of GDP driven by government spending every year (government pension funds buying government bonds in circular fashion enable runaway deficit spending...just like circular AI infrastructure spending).<p>2. <i>Talent &amp; compute:</i> due to #1, Silicon Valley can outbid Europe for the best talent and hardware. Watch an OpenAI launch video and listen to all the European accents.<p>3. <i>Local market fragmentation:</i> Europe is a collection of countries that pretend to work together while not even having a unified capital market. The average EU citizen can barely communicate with their neighbor in a common language beyond the level of a toddler (english fluency is massively overstated by Americans who only experience tourist capitals).<p>4. <i>Regulatory disadvantages:</i> In everything from company regs, employee regs, unions, privacy regs, data portability regs, etc.<p>It's not &quot;culture&quot; or Europeans being &quot;lazy&quot; as most people would claim. There's currently thousands of young french people working 80 hour weeks creating dumb consulting powerpoints or legacy <em>investment</em> banking deal <em>memos</em> as we speak. Ambitious people exist everywhere in equal proportion, they're just working on the wrong things.<p>Europe can't compete in the digital revolution the same way they could compete in the industrial revolution due to various system design choices.  Culture is simply the aesthetically observed byproducts of system design."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Notes from the Mistral AI Now Summit"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://koenvangilst.nl/lab/mistral-ai-now-summit"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_pembrook",
+    "story_48325340"
+   ],
+   "author": "pembrook",
+   "children": [
+    48331423,
+    48332326,
+    48333211,
+    48333914,
+    48336339,
+    48338950,
+    48339334
+   ],
+   "comment_text": "&gt; <i>what is keeping them back, though: Money? Compute? Skills? Training data?</i><p>All of the above and more. Everything holding Mistral back is the same thing that has held Europe back from competing in the entire digital revolution. See this 1991 article lamenting the loss of any viable European PC manufacturer: <a href=\"https:&#x2F;&#x2F;www.nytimes.com&#x2F;1991&#x2F;04&#x2F;22&#x2F;business&#x2F;europe-stumbles-in-computers.html\" rel=\"nofollow\">https:&#x2F;&#x2F;www.nytimes.com&#x2F;1991&#x2F;04&#x2F;22&#x2F;business&#x2F;europe-stumbles-...</a><p>Mistral being in Europe is disadvantaged with:<p>1. <i>Money:</i> less diverse private pension fund environment = less LPs to invest in VC funds = less VC dollars to invest in new ventures. European money is vacuumed out of the private sector into state pension funds and dumped into low yielding government bonds. This starves the private sector of capital while inflating the % of GDP driven by government spending every year (government pension funds buying government bonds in circular fashion enable runaway deficit spending...just like circular AI infrastructure spending).<p>2. <i>Talent &amp; compute:</i> due to #1, Silicon Valley can outbid Europe for the best talent and hardware. Watch an OpenAI launch video and listen to all the European accents.<p>3. <i>Local market fragmentation:</i> Europe is a collection of countries that pretend to work together while not even having a unified capital market. The average EU citizen can barely communicate with their neighbor in a common language beyond the level of a toddler (english fluency is massively overstated by Americans who only experience tourist capitals).<p>4. <i>Regulatory disadvantages:</i> In everything from company regs, employee regs, unions, privacy regs, data portability regs, etc.<p>It&#x27;s not &quot;culture&quot; or Europeans being &quot;lazy&quot; as most people would claim. There&#x27;s currently thousands of young french people working 80 hour weeks creating dumb consulting powerpoints or legacy investment banking deal memos as we speak. Ambitious people exist everywhere in equal proportion, they&#x27;re just working on the wrong things.<p>Europe can&#x27;t compete in the digital revolution the same way they could compete in the industrial revolution due to various system design choices.  Culture is simply the aesthetically observed byproducts of system design.",
+   "created_at": "2026-05-29T22:43:53Z",
+   "created_at_i": 1780094633,
+   "objectID": "48330303",
+   "parent_id": 48327591,
+   "story_id": 48325340,
+   "story_title": "Notes from the Mistral AI Now Summit",
+   "story_url": "https://koenvangilst.nl/lab/mistral-ai-now-summit",
+   "updated_at": "2026-07-10T17:40:51Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "aDyslecticCrow"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "Patents is not the issue here. Not even close.<p>The up-front <em>investment</em> of a <em>memo</em>ry fab is measured in billions, and takes years to construct and get running. The margin on the chips themselves is terrible, so without scale its not worth even trying. DDR5 is a industry standard that takes some effort to conform to, but the licence fees is a drop in the bucket to the cost of creating a fab.<p>The fabricators were cautious about increasing production, and slow to start planning. It takes further time to build up capacity, and if the demand drops down, they may end up producing dram at a loss when the market flips over to oversupply. The demand whiplash could kill any company that dared betting on increasing production. See the &quot;bullwhip effect&quot; <a href=\"https://en.wikipedia.org/wiki/Bullwhip_effect\" rel=\"nofollow\">https://en.wikipedia.org/wiki/Bullwhip_effect</a> which has killed semiconductor fabricators before.<p>There is a discussion to be had about how to maintain national semiconductor production in Europe and US  as a strategic industry, but historic attempts have all failed."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "memo"
+     ],
+     "value": "<em>Memo</em>ry has grown to nearly two-thirds of AI chip component costs"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://epoch.ai/data-insights/ai-chip-component-cost-shares"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_aDyslecticCrow",
+    "story_48258684"
+   ],
+   "author": "aDyslecticCrow",
+   "children": [
+    48260841
+   ],
+   "comment_text": "Patents is not the issue here. Not even close.<p>The up-front investment of a memory fab is measured in billions, and takes years to construct and get running. The margin on the chips themselves is terrible, so without scale its not worth even trying. DDR5 is a industry standard that takes some effort to conform to, but the licence fees is a drop in the bucket to the cost of creating a fab.<p>The fabricators were cautious about increasing production, and slow to start planning. It takes further time to build up capacity, and if the demand drops down, they may end up producing dram at a loss when the market flips over to oversupply. The demand whiplash could kill any company that dared betting on increasing production. See the &quot;bullwhip effect&quot; <a href=\"https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Bullwhip_effect\" rel=\"nofollow\">https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Bullwhip_effect</a> which has killed semiconductor fabricators before.<p>There is a discussion to be had about how to maintain national semiconductor production in Europe and US  as a strategic industry, but historic attempts have all failed.",
+   "created_at": "2026-05-24T19:35:29Z",
+   "created_at_i": 1779651329,
+   "objectID": "48260314",
+   "parent_id": 48260110,
+   "story_id": 48258684,
+   "story_title": "Memory has grown to nearly two-thirds of AI chip component costs",
+   "story_url": "https://epoch.ai/data-insights/ai-chip-component-cost-shares",
+   "updated_at": "2026-05-26T03:11:22Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "kees99"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "&gt; So now I am wondering what will be available once the AI <em>investment</em> implodes.<p><em>Memo</em>ry/RAM. See also:<p><a href=\"https://news.ycombinator.com/item?id=45934619\">https://news.ycombinator.com/item?id=45934619</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Google tells employees it must double capacity every 6 months to meet AI demand"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://arstechnica.com/ai/2025/11/google-tells-employees-it-must-double-capacity-every-6-months-to-meet-ai-demand/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_kees99",
+    "story_46013463"
+   ],
+   "author": "kees99",
+   "children": [
+    46014863
+   ],
+   "comment_text": "&gt; So now I am wondering what will be available once the AI investment implodes.<p>Memory&#x2F;RAM. See also:<p><a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=45934619\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=45934619</a>",
+   "created_at": "2025-11-22T13:51:56Z",
+   "created_at_i": 1763819516,
+   "objectID": "46014799",
+   "parent_id": 46013788,
+   "story_id": 46013463,
+   "story_title": "Google tells employees it must double capacity every 6 months to meet AI demand",
+   "story_url": "https://arstechnica.com/ai/2025/11/google-tells-employees-it-must-double-capacity-every-6-months-to-meet-ai-demand/",
+   "updated_at": "2026-03-05T23:05:08Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "joe_the_user"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "The thing that's also worth saying is that everyone speaks vaguely about CUDA's &quot;institutional <em>memo</em>ry&quot; and <em>investment</em> and so forth.<p>But the concrete qualities of CUDA and Nvidia's offerings generally is a move toward general purpose parallel computing. Parallel processing is &quot;the future&quot; and approach of just do loop and have each iteration be parallel is dead simple.<p>Which is to say Nvidia has invested a lot in making &quot;easy things easy along with hard things no harder&quot;.<p>In contrast, other chip makers seem to be acculturated to the natural lock-in of having a dumb, convoluted interface to compensate for a given chip being high performance."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The race to build a distributed GPU runtime"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://voltrondata.com/blog/the-race-to-build-a-distributed-gpu-runtime"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_joe_the_user",
+    "story_45131784"
+   ],
+   "author": "joe_the_user",
+   "comment_text": "The thing that&#x27;s also worth saying is that everyone speaks vaguely about CUDA&#x27;s &quot;institutional memory&quot; and investment and so forth.<p>But the concrete qualities of CUDA and Nvidia&#x27;s offerings generally is a move toward general purpose parallel computing. Parallel processing is &quot;the future&quot; and approach of just do loop and have each iteration be parallel is dead simple.<p>Which is to say Nvidia has invested a lot in making &quot;easy things easy along with hard things no harder&quot;.<p>In contrast, other chip makers seem to be acculturated to the natural lock-in of having a dumb, convoluted interface to compensate for a given chip being high performance.",
+   "created_at": "2025-09-08T20:56:18Z",
+   "created_at_i": 1757364978,
+   "objectID": "45173856",
+   "parent_id": 45164487,
+   "story_id": 45131784,
+   "story_title": "The race to build a distributed GPU runtime",
+   "story_url": "https://voltrondata.com/blog/the-race-to-build-a-distributed-gpu-runtime",
+   "updated_at": "2026-03-05T22:41:27Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "marcofloriano"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "&gt; What the study actually showed, people don't have an <em>investment</em> or strong <em>memo</em>ry to output they didn't produce.<p>Problem with LLMs is, when you pass hours feeding prompts to solve a problem, you actually did help (a lot!) to produce the output."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "MIT Study Finds AI Use Reprograms the Brain, Leading to Cognitive Decline"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://publichealthpolicyjournal.com/mit-study-finds-artificial-intelligence-use-reprograms-the-brain-leading-to-cognitive-decline/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_marcofloriano",
+    "story_45114753"
+   ],
+   "author": "marcofloriano",
+   "children": [
+    45120388,
+    45121712
+   ],
+   "comment_text": "&gt; What the study actually showed, people don&#x27;t have an investment or strong memory to output they didn&#x27;t produce.<p>Problem with LLMs is, when you pass hours feeding prompts to solve a problem, you actually did help (a lot!) to produce the output.",
+   "created_at": "2025-09-03T17:51:48Z",
+   "created_at_i": 1756921908,
+   "objectID": "45118622",
+   "parent_id": 45116813,
+   "story_id": 45114753,
+   "story_title": "MIT Study Finds AI Use Reprograms the Brain, Leading to Cognitive Decline",
+   "story_url": "https://publichealthpolicyjournal.com/mit-study-finds-artificial-intelligence-use-reprograms-the-brain-leading-to-cognitive-decline/",
+   "updated_at": "2026-03-05T22:38:00Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "planetmcd"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "investment",
+      "memo"
+     ],
+     "value": "This article was probably written by AI, because anyone with half a brain could not read the study and come to the same conclusions.<p>Basically, participants spent less than half an hour, 4 times, over 4 months, writing some bullcrap SAT type essay. Some participants used AI.<p>So to accept the premise of the article, using an AI tool once a month for 20 minutes caused noticeable brain rot. It is silly on its face.<p>What the study actually showed, people don't have an <em>investment</em> or strong <em>memo</em>ry to output they didn't produce.  Again, this is a BS essay written (mostly by undergrads) in 20 minutes, so not likely to be deep in any capacity.  So to extrapolate, if you have a task that requires you to understand the output, you are less likely to have a grasp of it if you didn't help produce the output.  \nThis would also be true of work some other person did."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "MIT Study Finds AI Use Reprograms the Brain, Leading to Cognitive Decline"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://publichealthpolicyjournal.com/mit-study-finds-artificial-intelligence-use-reprograms-the-brain-leading-to-cognitive-decline/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_planetmcd",
+    "story_45114753"
+   ],
+   "author": "planetmcd",
+   "children": [
+    45118622
+   ],
+   "comment_text": "This article was probably written by AI, because anyone with half a brain could not read the study and come to the same conclusions.<p>Basically, participants spent less than half an hour, 4 times, over 4 months, writing some bullcrap SAT type essay. Some participants used AI.<p>So to accept the premise of the article, using an AI tool once a month for 20 minutes caused noticeable brain rot. It is silly on its face.<p>What the study actually showed, people don&#x27;t have an investment or strong memory to output they didn&#x27;t produce.  Again, this is a BS essay written (mostly by undergrads) in 20 minutes, so not likely to be deep in any capacity.  So to extrapolate, if you have a task that requires you to understand the output, you are less likely to have a grasp of it if you didn&#x27;t help produce the output.  \nThis would also be true of work some other person did.",
+   "created_at": "2025-09-03T15:17:30Z",
+   "created_at_i": 1756912650,
+   "objectID": "45116813",
+   "parent_id": 45114753,
+   "story_id": 45114753,
+   "story_title": "MIT Study Finds AI Use Reprograms the Brain, Leading to Cognitive Decline",
+   "story_url": "https://publichealthpolicyjournal.com/mit-study-finds-artificial-intelligence-use-reprograms-the-brain-leading-to-cognitive-decline/",
+   "updated_at": "2026-03-05T22:37:52Z"
+  }
+ ],
+ "hitsPerPage": 50,
+ "nbHits": 5827,
+ "nbPages": 20,
+ "page": 0,
+ "params": "query=investment+memo&tags=comment&hitsPerPage=50&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 62,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 17
+  },
+  "afterFetch": {
+   "format": {
+    "highlighting": 4,
+    "total": 5
+   },
+   "merge": {
+    "mergeLoop": {
+     "prepareNextHit": 19,
+     "total": 19
+    },
+    "total": 21
+   },
+   "total": 21
+  },
+  "fetch": {
+   "query": 8,
+   "scanning": 30,
+   "total": 39
+  },
+  "total": 62
+ },
+ "query": "investment memo",
+ "serverTimeMS": 67,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=investment+memo&tags=comment&hitsPerPage=50"
+}

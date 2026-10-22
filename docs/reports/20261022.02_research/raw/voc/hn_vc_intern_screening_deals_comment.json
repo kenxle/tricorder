@@ -1,0 +1,29 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [],
+ "hitsPerPage": 50,
+ "nbHits": 0,
+ "nbPages": 0,
+ "page": 0,
+ "params": "query=VC+intern+screening+deals&tags=comment&hitsPerPage=50&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 43,
+ "processingTimingsMS": {
+  "_request": {
+   "queue": 17,
+   "roundTrip": 15
+  },
+  "fetch": {
+   "query": 42,
+   "total": 42
+  },
+  "total": 43
+ },
+ "query": "VC intern screening deals",
+ "serverTimeMS": 60,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=VC+intern+screening+deals&tags=comment&hitsPerPage=50"
+}

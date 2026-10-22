@@ -1,0 +1,2259 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "throwawayoldie"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "And <em>ARR</em> is <em>not</em> revenue. It's &quot;annualized <em>recurring</em> revenue&quot;: take one month's worth of revenue, multiply it by 12--and you get to pick which month makes the figures look most impressive."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "LLM Inevitabilism"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://tomrenner.com/posts/llm-inevitabilism/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_throwawayoldie",
+    "story_44567857"
+   ],
+   "author": "throwawayoldie",
+   "children": [
+    44571287,
+    44571311,
+    44571351,
+    44572679
+   ],
+   "comment_text": "And ARR is not revenue. It&#x27;s &quot;annualized recurring revenue&quot;: take one month&#x27;s worth of revenue, multiply it by 12--and you get to pick which month makes the figures look most impressive.",
+   "created_at": "2025-07-15T13:50:17Z",
+   "created_at_i": 1752587417,
+   "objectID": "44571163",
+   "parent_id": 44571007,
+   "story_id": 44567857,
+   "story_title": "LLM Inevitabilism",
+   "story_url": "https://tomrenner.com/posts/llm-inevitabilism/",
+   "updated_at": "2025-07-16T17:05:19Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The_AI_Skeptic"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "<em>ARR</em> = Annual <em>Recurring</em> REVENUE, <em>not</em> PROFIT.<p>&quot;Report: GitHub Copilot Loses an Average of $20 Per User Per Month&quot;<p>That's a scary amount of money they're losing, if this is true.<p><a href=\"https://www.thurrott.com/cloud/290661/report-github-copilot-loses-an-average-of-20-per-user-per-month\" rel=\"nofollow noreferrer\">https://www.thurrott.com/cloud/290661/report-github-copilot-...</a>"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "arr"
+     ],
+     "value": "GitHub Copilot crosses $100M <em>ARR</em>"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://twitter.com/swyx/status/1711792178031460618"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_The_AI_Skeptic",
+    "story_37835486"
+   ],
+   "author": "The_AI_Skeptic",
+   "comment_text": "ARR = Annual Recurring REVENUE, not PROFIT.<p>&quot;Report: GitHub Copilot Loses an Average of $20 Per User Per Month&quot;<p>That&#x27;s a scary amount of money they&#x27;re losing, if this is true.<p><a href=\"https:&#x2F;&#x2F;www.thurrott.com&#x2F;cloud&#x2F;290661&#x2F;report-github-copilot-loses-an-average-of-20-per-user-per-month\" rel=\"nofollow noreferrer\">https:&#x2F;&#x2F;www.thurrott.com&#x2F;cloud&#x2F;290661&#x2F;report-github-copilot-...</a>",
+   "created_at": "2023-10-10T20:30:02Z",
+   "created_at_i": 1696969802,
+   "objectID": "37837054",
+   "parent_id": 37835486,
+   "story_id": 37835486,
+   "story_title": "GitHub Copilot crosses $100M ARR",
+   "story_url": "https://twitter.com/swyx/status/1711792178031460618",
+   "updated_at": "2024-09-20T15:23:17Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "kolbe"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "I got the impression that the 2022 late stage funding implosion was also the death of <em>ARR</em> as a be-all growth metric. It got Goodhart's Law'd to death after all the companies that went public at huge valuations based on <em>ARR</em> turned out to <em>not</em> be as &quot;<em>recurring</em>&quot; as investors would have liked."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "arr"
+     ],
+     "value": "Part II: The failure points from $5M to $100M in <em>ARR</em>"
+    },
+    "story_url": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "arr"
+     ],
+     "value": "https://tracy.posthaven.com/part-ii-the-failure-points-from-$5m-to-$100m-in-<em>arr</em>"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_kolbe",
+    "story_34357176"
+   ],
+   "author": "kolbe",
+   "children": [
+    34358534
+   ],
+   "comment_text": "I got the impression that the 2022 late stage funding implosion was also the death of ARR as a be-all growth metric. It got Goodhart&#x27;s Law&#x27;d to death after all the companies that went public at huge valuations based on ARR turned out to not be as &quot;recurring&quot; as investors would have liked.",
+   "created_at": "2023-01-12T18:01:32Z",
+   "created_at_i": 1673546492,
+   "objectID": "34357784",
+   "parent_id": 34357176,
+   "story_id": 34357176,
+   "story_title": "Part II: The failure points from $5M to $100M in ARR",
+   "story_url": "https://tracy.posthaven.com/part-ii-the-failure-points-from-$5m-to-$100m-in-arr",
+   "updated_at": "2024-09-20T13:04:15Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "redwood"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "Absolutely.. the fundamental point is that extrapolating <em>ARR</em> from consumption in a given month is misleading for something that is fundamentally <em>not</em> sticky/<em>recurring</em>. And building a prototype is more of a one-time task than a <em>recurring</em> task... that's the fundamental question with this business. Can they turn it into some truly <em>recurring</em> task? Only when they do that can they really have a right to call it &quot;<em>ARR</em>&quot;. In my opinion"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "arr"
+     ],
+     "value": "Lovable's <em>ARR</em> is Vanity Metric 2.0"
+    },
+    "story_url": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "arr"
+     ],
+     "value": "https://pawelbrodzinski.substack.com/p/lovables-<em>arr</em>-is-vanity-metric-20"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_redwood",
+    "story_45761009"
+   ],
+   "author": "redwood",
+   "comment_text": "Absolutely.. the fundamental point is that extrapolating ARR from consumption in a given month is misleading for something that is fundamentally not sticky&#x2F;recurring. And building a prototype is more of a one-time task than a recurring task... that&#x27;s the fundamental question with this business. Can they turn it into some truly recurring task? Only when they do that can they really have a right to call it &quot;ARR&quot;. In my opinion",
+   "created_at": "2025-11-03T21:11:26Z",
+   "created_at_i": 1762204286,
+   "objectID": "45804501",
+   "parent_id": 45761009,
+   "story_id": 45761009,
+   "story_title": "Lovable's ARR is Vanity Metric 2.0",
+   "story_url": "https://pawelbrodzinski.substack.com/p/lovables-arr-is-vanity-metric-20",
+   "updated_at": "2026-03-05T22:56:08Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "dustingetz"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "assuming approx 50/50 cap table and revenue is <em>recurring</em>, millions in <em>ARR</em> is too much to be ignored, get a therapist to deal with your feelings and figure out how to work together, this costs $12k/yr plus the cost of being an adult. <em>ARR</em> goes up by default, millions in <em>ARR</em> does <em>not</em> just go to zero overnight"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Should I leave the company I co-founded?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_dustingetz",
+    "story_43467071"
+   ],
+   "author": "dustingetz",
+   "comment_text": "assuming approx 50&#x2F;50 cap table and revenue is recurring, millions in ARR is too much to be ignored, get a therapist to deal with your feelings and figure out how to work together, this costs $12k&#x2F;yr plus the cost of being an adult. ARR goes up by default, millions in ARR does not just go to zero overnight",
+   "created_at": "2025-03-25T09:41:16Z",
+   "created_at_i": 1742895676,
+   "objectID": "43469462",
+   "parent_id": 43467071,
+   "story_id": 43467071,
+   "story_title": "Ask HN: Should I leave the company I co-founded?",
+   "updated_at": "2025-03-26T02:57:05Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "necovek"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "I am a bit perplexed at claiming an <em>ARR</em> (Annual <i><em>Recurring</em></i> Revenue) with <em>not</em> even a year of profits.<p>Is it customary to use extrapolations/projections to measure <em>ARR</em> in the startup/business world?  Even projections based on less than a year of data?"
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "arr"
+     ],
+     "value": "We bootstrapped our open source Google Analytics alternative to $500k <em>ARR</em>"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://plausible.io/blog/bootstrapping-saas"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_necovek",
+    "story_29121589"
+   ],
+   "author": "necovek",
+   "children": [
+    29124842,
+    29124988
+   ],
+   "comment_text": "I am a bit perplexed at claiming an ARR (Annual <i>Recurring</i> Revenue) with not even a year of profits.<p>Is it customary to use extrapolations&#x2F;projections to measure ARR in the startup&#x2F;business world?  Even projections based on less than a year of data?",
+   "created_at": "2021-11-05T21:13:51Z",
+   "created_at_i": 1636146831,
+   "objectID": "29124808",
+   "parent_id": 29121589,
+   "story_id": 29121589,
+   "story_title": "We bootstrapped our open source Google Analytics alternative to $500k ARR",
+   "story_url": "https://plausible.io/blog/bootstrapping-saas",
+   "updated_at": "2024-09-20T09:45:34Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mediaman"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "<em>ARR</em> is <em>not</em> a synonym for &quot;revenue.&quot; Tesla's total revenue was $6.3bn for the last reported quarter, an annual run rate of $25.2bn. That's all sales, nearly all of which are sales of new vehicles.<p>Sales of durable new vehicles does <em>not</em> fit the definition of &quot;annual <em>recurring</em> revenue&quot; by any stretch of the imagination. <em>ARR</em> is valued highly because it implies steady revenue from each customer. Less the churn rate, it makes for a super steady long tail of cash flows. Once you've made a sale, you can count on that sale again the next year, and success of new sales builds on that existing base of <em>recurring</em> sales. These kinds of revenues tend to be more resistant to recessions, changes in preferences, etc., versus churning through new customers every year.<p>Car companies are the exact opposite. Sell a car? Great, you have to sell another car to someone else next year just to tread water. Your customers don't buy new cars every year. Maybe in five to ten years they'll come back to you.<p>That's why <em>ARR</em> is worth so much more, and why a durable goods maker does <em>not</em> get a high valuation because of their <em>ARR</em>. They're different business models.<p>In short, one can't justify Tesla's revenue valuation multiple based on multiples of <em>ARR</em> subscription companies."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Tesla races past $100B in market valuation"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.reuters.com/article/us-tesla-stocks/tesla-races-past-100-billion-in-market-valuation-idUSKBN1ZL24Z"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_mediaman",
+    "story_22118913"
+   ],
+   "author": "mediaman",
+   "children": [
+    22119716
+   ],
+   "comment_text": "ARR is not a synonym for &quot;revenue.&quot; Tesla&#x27;s total revenue was $6.3bn for the last reported quarter, an annual run rate of $25.2bn. That&#x27;s all sales, nearly all of which are sales of new vehicles.<p>Sales of durable new vehicles does not fit the definition of &quot;annual recurring revenue&quot; by any stretch of the imagination. ARR is valued highly because it implies steady revenue from each customer. Less the churn rate, it makes for a super steady long tail of cash flows. Once you&#x27;ve made a sale, you can count on that sale again the next year, and success of new sales builds on that existing base of recurring sales. These kinds of revenues tend to be more resistant to recessions, changes in preferences, etc., versus churning through new customers every year.<p>Car companies are the exact opposite. Sell a car? Great, you have to sell another car to someone else next year just to tread water. Your customers don&#x27;t buy new cars every year. Maybe in five to ten years they&#x27;ll come back to you.<p>That&#x27;s why ARR is worth so much more, and why a durable goods maker does not get a high valuation because of their ARR. They&#x27;re different business models.<p>In short, one can&#x27;t justify Tesla&#x27;s revenue valuation multiple based on multiples of ARR subscription companies.",
+   "created_at": "2020-01-22T17:16:22Z",
+   "created_at_i": 1579713382,
+   "objectID": "22119580",
+   "parent_id": 22119145,
+   "story_id": 22118913,
+   "story_title": "Tesla races past $100B in market valuation",
+   "story_url": "https://www.reuters.com/article/us-tesla-stocks/tesla-races-past-100-billion-in-market-valuation-idUSKBN1ZL24Z",
+   "updated_at": "2024-09-20T05:28:31Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "firasd"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "Right I'm <em>not</em> saying that Zuck's staff doesn't know how to calculate MAU or <em>ARR</em>. I'm saying I'm <em>not</em> sure we can trust the 'median' (median on a scale of super-scrupulous to outright-dishonest) CEO is <em>not</em> counting things like inactive cohorts, newsletter subscribers, website hits when counting 'users'... or being very optimistic about whether a customer will renew when calculating '<em>recurring</em> revenue'<p>I may be wrong! But I am definitely giving such claims the side-eye"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Analyzing data from Silicon Valley ventures and founders prosecuted for fraud"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://pubsonline.informs.org/doi/full/10.1287/orsc.2024.19981"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_firasd",
+    "story_49232318"
+   ],
+   "author": "firasd",
+   "children": [
+    49233411,
+    49233828
+   ],
+   "comment_text": "Right I&#x27;m not saying that Zuck&#x27;s staff doesn&#x27;t know how to calculate MAU or ARR. I&#x27;m saying I&#x27;m not sure we can trust the &#x27;median&#x27; (median on a scale of super-scrupulous to outright-dishonest) CEO is not counting things like inactive cohorts, newsletter subscribers, website hits when counting &#x27;users&#x27;... or being very optimistic about whether a customer will renew when calculating &#x27;recurring revenue&#x27;<p>I may be wrong! But I am definitely giving such claims the side-eye",
+   "created_at": "2026-08-09T17:08:05Z",
+   "created_at_i": 1786295285,
+   "objectID": "49233280",
+   "parent_id": 49233221,
+   "story_id": 49232318,
+   "story_title": "Analyzing data from Silicon Valley ventures and founders prosecuted for fraud",
+   "story_url": "https://pubsonline.informs.org/doi/full/10.1287/orsc.2024.19981",
+   "updated_at": "2026-08-09T20:25:35Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "OhMeadhbh"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "I had a similar experience when I came to the valley right as dot com was taking off, but numbers were lower back then.  instead of a $500k investment for 5 years to return a $20m company, VCs wanted to give out $500m and get a $5b company in 6 months.  they invested in @home which hit those targets, but collapsed about 6 months after that.<p>SiliValley VCs are about selling quick to the greater fool before the marks wise up.  If you're getting $5m <em>arr</em>, there's no way you can spin that as a billion dollar revenue company in 6 months no matter how good you are at scaling up sales pipelines.<p>no one knows how AI will make anything cheaper / faster / better.  but investors out there have watched enough sci-fi to know AGI will happen &quot;any day now.&quot;  and when it does, it'll hockeystick like Facebook in the 2000s.  we all know there's profit a few steps after collecting underwear, but it's a relief no one's figured out the middle steps.  that means your portfolio firm started by your old dorm roommate's kid has as good a chance as any at cracking this nut. but a company wasting its time generating <em>recurring</em> revenue is absolutely <em>not</em> focused on getting that done."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "arr"
+     ],
+     "value": "I have startups doing $3-$5M <em>ARR</em> growing 100-400%+ that can't raise a Series A"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://twitter.com/Trace_Cohen/status/1803268406281371935"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_OhMeadhbh",
+    "story_40729419"
+   ],
+   "author": "OhMeadhbh",
+   "comment_text": "I had a similar experience when I came to the valley right as dot com was taking off, but numbers were lower back then.  instead of a $500k investment for 5 years to return a $20m company, VCs wanted to give out $500m and get a $5b company in 6 months.  they invested in @home which hit those targets, but collapsed about 6 months after that.<p>SiliValley VCs are about selling quick to the greater fool before the marks wise up.  If you&#x27;re getting $5m arr, there&#x27;s no way you can spin that as a billion dollar revenue company in 6 months no matter how good you are at scaling up sales pipelines.<p>no one knows how AI will make anything cheaper &#x2F; faster &#x2F; better.  but investors out there have watched enough sci-fi to know AGI will happen &quot;any day now.&quot;  and when it does, it&#x27;ll hockeystick like Facebook in the 2000s.  we all know there&#x27;s profit a few steps after collecting underwear, but it&#x27;s a relief no one&#x27;s figured out the middle steps.  that means your portfolio firm started by your old dorm roommate&#x27;s kid has as good a chance as any at cracking this nut. but a company wasting its time generating recurring revenue is absolutely not focused on getting that done.",
+   "created_at": "2024-06-19T16:06:17Z",
+   "created_at_i": 1718813177,
+   "objectID": "40729576",
+   "parent_id": 40729419,
+   "story_id": 40729419,
+   "story_title": "I have startups doing $3-$5M ARR growing 100-400%+ that can't raise a Series A",
+   "story_url": "https://twitter.com/Trace_Cohen/status/1803268406281371935",
+   "updated_at": "2024-09-20T17:14:32Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "phphphphp"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "If I have the math right, their revenue of $130m is made up of $110m in COGS. If they\u2019re losing $1m/month that means they\u2019re spending roughly $30m/year on running the business. My educated guess is most of that $30m is marketing spend required to secure the $130m revenue and cuttable costs (salaries, office space) are much less than $10m/year.<p>Sounds like <em>ARR</em> is the wrong term since it\u2019s probably <em>not</em> a business operating on <em>recurring</em> revenue \u2014 probably an example of the bananas valuations of the last few years, based on revenue <em>not</em> viability."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: WWYD? Built a company valued at $1B and may walk away with nothing"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_phphphphp",
+    "story_35419407"
+   ],
+   "author": "phphphphp",
+   "children": [
+    35426372
+   ],
+   "comment_text": "If I have the math right, their revenue of $130m is made up of $110m in COGS. If they\u2019re losing $1m&#x2F;month that means they\u2019re spending roughly $30m&#x2F;year on running the business. My educated guess is most of that $30m is marketing spend required to secure the $130m revenue and cuttable costs (salaries, office space) are much less than $10m&#x2F;year.<p>Sounds like ARR is the wrong term since it\u2019s probably not a business operating on recurring revenue \u2014 probably an example of the bananas valuations of the last few years, based on revenue not viability.",
+   "created_at": "2023-04-03T10:23:03Z",
+   "created_at_i": 1680517383,
+   "objectID": "35421110",
+   "parent_id": 35420834,
+   "story_id": 35419407,
+   "story_title": "Ask HN: WWYD? Built a company valued at $1B and may walk away with nothing",
+   "updated_at": "2024-09-20T13:45:26Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "vanuatu"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "Lets say you work at a startup that is growing insanely fast and you want to report financial metrics to investors, media etc. You can't use annual <em>recurring</em> revenue because 2026 is <em>not</em> over yet, and your company is so young it doesn't make sense to look back to last year. You can't use YoY because it would be some obscene figure (100000%) that definitely won't hold.<p>So the two best metrics are annualized <em>recurring</em> revenue (take last month * 12 or last 4 weeks * 13) and QoQ growth %.<p>There are two caveats:<p>- If the revenue is high quality (e.g. annual enterprise contracts, good NRR), then last 4 weeks * 13 is actually a conservative estimate as your company will likely continue to grow.<p>- But if the revenue is more volatile (e.g. consumption, token usage, bad NRR) then annualized <em>recurring</em> revenue can be used to hide worse performance because companies will juice revenue one month and report high &quot;<em>ARR</em>&quot;"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "AI eats the world (Spring 26) [pdf]"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://static1.squarespace.com/static/50363cf324ac8e905e7df861/t/6a0af5d0484fbf5fe9a7743e/1779103184855/2026-Spring-AI.pdf"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_vanuatu",
+    "story_48179021"
+   ],
+   "author": "vanuatu",
+   "children": [
+    48181305
+   ],
+   "comment_text": "Lets say you work at a startup that is growing insanely fast and you want to report financial metrics to investors, media etc. You can&#x27;t use annual recurring revenue because 2026 is not over yet, and your company is so young it doesn&#x27;t make sense to look back to last year. You can&#x27;t use YoY because it would be some obscene figure (100000%) that definitely won&#x27;t hold.<p>So the two best metrics are annualized recurring revenue (take last month * 12 or last 4 weeks * 13) and QoQ growth %.<p>There are two caveats:<p>- If the revenue is high quality (e.g. annual enterprise contracts, good NRR), then last 4 weeks * 13 is actually a conservative estimate as your company will likely continue to grow.<p>- But if the revenue is more volatile (e.g. consumption, token usage, bad NRR) then annualized recurring revenue can be used to hide worse performance because companies will juice revenue one month and report high &quot;ARR&quot;",
+   "created_at": "2026-05-18T15:34:22Z",
+   "created_at_i": 1779118462,
+   "objectID": "48181257",
+   "parent_id": 48180329,
+   "story_id": 48179021,
+   "story_title": "AI eats the world (Spring 26) [pdf]",
+   "story_url": "https://static1.squarespace.com/static/50363cf324ac8e905e7df861/t/6a0af5d0484fbf5fe9a7743e/1779103184855/2026-Spring-AI.pdf",
+   "updated_at": "2026-05-18T15:38:26Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jzb"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "&quot;I wonder how well that play has been working for IBM.&quot;<p>In January IBM reported that OpenShift is pulling in $1 billion in Annual <em>Recurring</em> Revenue [1]. OpenShift existed as a product before Kubernetes but was rebased on Kubernetes with v3. That was released (I think) in 2016? So that's basically 6 years from $0 Kubernetes revenue to $1 billion.<p>Red Hat numbers overall are sort of blended in with the rest of earnings for their group, I think, so I don't see exactly what Red Hat's numbers are now overall. When I worked for Red Hat they'd break it out internally but I wouldn't be able to share that unless it was reported publicly...<p>It took Red Hat something like 12 years from IPO to $1 billion in <em>ARR</em>, as an entire company. <em>Not</em> sure when RHEL alone became a $1 billion <em>ARR</em> business, but you have to remember that Red Hat's numbers included JBoss and other software too when they hit $1 billion.<p>As far as I know, none of the cloud providers break out Kubernetes numbers alone. I don't know, for example, how much AWS racks up via its Kubernetes. Of course, AWS also gets some of the OpenShift business since some of Red Hat's customers are on AWS, there's ROSA, etc. (Then again, AWS also gets a slice of RHEL too...)<p>Worth noting that Google Cloud posted its first profitable quarter in April of this year. No idea what Google's market share for Kubernetes is, but if I had to guess I'd say that their distribution isn't #1. (If anyone actually can accurately measure this, anyway...)<p>If IBM expected OpenShift to have grown beyond $1bn by January this year, I'd say that was unrealistic. I mean, obviously because it didn't, but also because when IBM acquired Red Hat officially the total Red Hat revenue was about $3.4 billion and if I'm <em>not</em> mistaken &quot;emerging technologies&quot; (including OpenShift) accounted for only $225 million. [2] If OpenShift was, say, $100m of that then they have (in fact) 10x'ed it.<p>And, finally, I don't think OpenShift revenues reflect whatever services IBM has packaged for OpenShift as a standard deployment platform. So - if IBM has made it easier to sell other things because they only have to target OpenShift, and they're successfully pushing OpenShift into major customers, then it's a pretty good deal.<p>But for now they also need to protect their primary Red Hat revenue stream, and that still appears to be RHEL.<p>[1] <a href=\"https://www.ibm.com/investor/att/pdf/IBM-4Q22-Earnings-Prepared-Remarks.pdf\" rel=\"nofollow noreferrer\">https://www.ibm.com/investor/att/pdf/IBM-4Q22-Earnings-Prepa...</a><p>[2] <a href=\"https://www.theregister.com/2019/03/26/red_hat_2019_results/\" rel=\"nofollow noreferrer\">https://www.theregister.com/2019/03/26/red_hat_2019_results/</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "I'm Done with Red Hat (Enterprise Linux)"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.jeffgeerling.com/blog/2023/im-done-red-hat-enterprise-linux"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_jzb",
+    "story_36479882"
+   ],
+   "author": "jzb",
+   "comment_text": "&quot;I wonder how well that play has been working for IBM.&quot;<p>In January IBM reported that OpenShift is pulling in $1 billion in Annual Recurring Revenue [1]. OpenShift existed as a product before Kubernetes but was rebased on Kubernetes with v3. That was released (I think) in 2016? So that&#x27;s basically 6 years from $0 Kubernetes revenue to $1 billion.<p>Red Hat numbers overall are sort of blended in with the rest of earnings for their group, I think, so I don&#x27;t see exactly what Red Hat&#x27;s numbers are now overall. When I worked for Red Hat they&#x27;d break it out internally but I wouldn&#x27;t be able to share that unless it was reported publicly...<p>It took Red Hat something like 12 years from IPO to $1 billion in ARR, as an entire company. Not sure when RHEL alone became a $1 billion ARR business, but you have to remember that Red Hat&#x27;s numbers included JBoss and other software too when they hit $1 billion.<p>As far as I know, none of the cloud providers break out Kubernetes numbers alone. I don&#x27;t know, for example, how much AWS racks up via its Kubernetes. Of course, AWS also gets some of the OpenShift business since some of Red Hat&#x27;s customers are on AWS, there&#x27;s ROSA, etc. (Then again, AWS also gets a slice of RHEL too...)<p>Worth noting that Google Cloud posted its first profitable quarter in April of this year. No idea what Google&#x27;s market share for Kubernetes is, but if I had to guess I&#x27;d say that their distribution isn&#x27;t #1. (If anyone actually can accurately measure this, anyway...)<p>If IBM expected OpenShift to have grown beyond $1bn by January this year, I&#x27;d say that was unrealistic. I mean, obviously because it didn&#x27;t, but also because when IBM acquired Red Hat officially the total Red Hat revenue was about $3.4 billion and if I&#x27;m not mistaken &quot;emerging technologies&quot; (including OpenShift) accounted for only $225 million. [2] If OpenShift was, say, $100m of that then they have (in fact) 10x&#x27;ed it.<p>And, finally, I don&#x27;t think OpenShift revenues reflect whatever services IBM has packaged for OpenShift as a standard deployment platform. So - if IBM has made it easier to sell other things because they only have to target OpenShift, and they&#x27;re successfully pushing OpenShift into major customers, then it&#x27;s a pretty good deal.<p>But for now they also need to protect their primary Red Hat revenue stream, and that still appears to be RHEL.<p>[1] <a href=\"https:&#x2F;&#x2F;www.ibm.com&#x2F;investor&#x2F;att&#x2F;pdf&#x2F;IBM-4Q22-Earnings-Prepared-Remarks.pdf\" rel=\"nofollow noreferrer\">https:&#x2F;&#x2F;www.ibm.com&#x2F;investor&#x2F;att&#x2F;pdf&#x2F;IBM-4Q22-Earnings-Prepa...</a><p>[2] <a href=\"https:&#x2F;&#x2F;www.theregister.com&#x2F;2019&#x2F;03&#x2F;26&#x2F;red_hat_2019_results&#x2F;\" rel=\"nofollow noreferrer\">https:&#x2F;&#x2F;www.theregister.com&#x2F;2019&#x2F;03&#x2F;26&#x2F;red_hat_2019_results&#x2F;</a>",
+   "created_at": "2023-06-26T20:33:13Z",
+   "created_at_i": 1687811593,
+   "objectID": "36485444",
+   "parent_id": 36484568,
+   "story_id": 36479882,
+   "story_title": "I'm Done with Red Hat (Enterprise Linux)",
+   "story_url": "https://www.jeffgeerling.com/blog/2023/im-done-red-hat-enterprise-linux",
+   "updated_at": "2024-09-20T14:30:18Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Waterluvian"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "Obviously I\u2019m <em>not</em> saying I don\u2019t have any <em>recurring</em> fees.  But I\u2019m <em>not</em> about to have fifty more <em>recurring</em> fees because every app wants <em>ARR</em>."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "recurring"
+     ],
+     "value": "Signal users can give a <em>recurring</em> monthly contribution"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://support.signal.org/hc/en-us/articles/4408365318426-Sustainers-Boost-Badges#sustainer_what"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Waterluvian",
+    "story_30192093"
+   ],
+   "author": "Waterluvian",
+   "comment_text": "Obviously I\u2019m not saying I don\u2019t have any recurring fees.  But I\u2019m not about to have fifty more recurring fees because every app wants ARR.",
+   "created_at": "2022-02-03T18:05:11Z",
+   "created_at_i": 1643911511,
+   "objectID": "30196117",
+   "parent_id": 30192739,
+   "story_id": 30192093,
+   "story_title": "Signal users can give a recurring monthly contribution",
+   "story_url": "https://support.signal.org/hc/en-us/articles/4408365318426-Sustainers-Boost-Badges#sustainer_what",
+   "updated_at": "2024-09-20T10:29:40Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "_marlowe_"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "&quot;When you acquire some customers and they start yielding revenue that behavior sounds an awful lot like buying a fixed income instrument...&quot;<p>This is so intellectually dishonest. He even goes on to equate <em>recurring</em> revenue with cash flow. <em>Not</em> the same! So often companies point to <em>ARR</em> as success without acknowledging other structural cost issues in their businesses.<p>&quot;It's basically AAA debt. Now give me a 30x revenue multiple.&quot; -SaaS investor who wants it both ways<p>SaaS is just one of many <em>recurring</em>/contractual revenue categories, but VCs talk about it like its a revolutionary business model that should yield some extra reward from the capital markets. <em>Recurring</em> revenue has been around forever in more traditional industries.<p>Yes, reliable <em>recurring</em> revenue (with +FCF) can support leverage, but claiming that it looks and acts like debt is either ignorant or deceptive. It is 100% equity risk and that kind of magical thinking is just vulture bait."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Debt is coming to the tech industry"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://alexdanco.com/2020/02/07/debt-is-coming/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author__marlowe_",
+    "story_22275550"
+   ],
+   "author": "_marlowe_",
+   "comment_text": "&quot;When you acquire some customers and they start yielding revenue that behavior sounds an awful lot like buying a fixed income instrument...&quot;<p>This is so intellectually dishonest. He even goes on to equate recurring revenue with cash flow. Not the same! So often companies point to ARR as success without acknowledging other structural cost issues in their businesses.<p>&quot;It&#x27;s basically AAA debt. Now give me a 30x revenue multiple.&quot; -SaaS investor who wants it both ways<p>SaaS is just one of many recurring&#x2F;contractual revenue categories, but VCs talk about it like its a revolutionary business model that should yield some extra reward from the capital markets. Recurring revenue has been around forever in more traditional industries.<p>Yes, reliable recurring revenue (with +FCF) can support leverage, but claiming that it looks and acts like debt is either ignorant or deceptive. It is 100% equity risk and that kind of magical thinking is just vulture bait.",
+   "created_at": "2020-02-08T17:08:29Z",
+   "created_at_i": 1581181709,
+   "objectID": "22276828",
+   "parent_id": 22275550,
+   "story_id": 22275550,
+   "story_title": "Debt is coming to the tech industry",
+   "story_url": "https://alexdanco.com/2020/02/07/debt-is-coming/",
+   "updated_at": "2024-09-20T05:43:15Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jonhearty"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "Datanyze | San Mateo, CA | All positions, from product to sales<p>Hello, everyone! Jon from Datanyze, here. We just had our best month and best quarter EVER and are excited to continue growing throughout the second half of the year. We've gone from 6 to 45 employees in the last 12 months and are looking for our third office in less than a year...to say we're growing quickly is an understatement!<p>We're looking for amazing people in all functions, including but <em>not</em> limited to ENGINEERS (who doesn't need a great engineer or two these days?), account executive, sales development reps, customer success managers, designers...and pretty much everything in between!<p>We're <em>not</em> your average startup that swings between raising rounds and burning through piles of cash; we bootstrapped to over $1 million in <em>ARR</em> (annual <em>recurring</em> revenue) and 100 customers before raising a seed round from amazing investors like Google Ventures, Mark Cuban, and IDG Ventures.<p>If you're interested in hearing more about us and the roles we're trying to fill, send me an email directly to jon@datanyze.com!"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Who is hiring? (July 2015)"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_jonhearty",
+    "story_9812245"
+   ],
+   "author": "jonhearty",
+   "comment_text": "Datanyze | San Mateo, CA | All positions, from product to sales<p>Hello, everyone! Jon from Datanyze, here. We just had our best month and best quarter EVER and are excited to continue growing throughout the second half of the year. We&#x27;ve gone from 6 to 45 employees in the last 12 months and are looking for our third office in less than a year...to say we&#x27;re growing quickly is an understatement!<p>We&#x27;re looking for amazing people in all functions, including but not limited to ENGINEERS (who doesn&#x27;t need a great engineer or two these days?), account executive, sales development reps, customer success managers, designers...and pretty much everything in between!<p>We&#x27;re not your average startup that swings between raising rounds and burning through piles of cash; we bootstrapped to over $1 million in ARR (annual recurring revenue) and 100 customers before raising a seed round from amazing investors like Google Ventures, Mark Cuban, and IDG Ventures.<p>If you&#x27;re interested in hearing more about us and the roles we&#x27;re trying to fill, send me an email directly to jon@datanyze.com!",
+   "created_at": "2015-07-01T19:00:52Z",
+   "created_at_i": 1435777252,
+   "objectID": "9814319",
+   "parent_id": 9812245,
+   "points": null,
+   "story_id": 9812245,
+   "story_title": "Ask HN: Who is hiring? (July 2015)",
+   "updated_at": "2023-09-07T03:06:28Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "anon8418"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "Passive <em>recurring</em> revenue sounds like a pretty good deal. Especially when you can plow idle hours (weekends, evenings, etc.) to &quot;optimize&quot; it.<p>I'm <em>not</em> sure the opportunity costs are that high... especially when you're 1. Only spending a handful of hours on it (his claim) and 2. Your whole schtick for your consulting services is how you deserve $$$$ because using your A/B optimization whatever skills you can improve conversion/traction by xxxx%!<p>He spent 9 years on BCC that resulted in ~30K (edited, misread as 60K) in <em>ARR</em>.<p>I think his ideas and insights are valid. I just find it odd the contrast between his curated HN celebrity image as an uber-hacker with his actual results.<p>Doesn't seem like his skills resulted in much success with BCC but it sure helps his consulting career...<p>Sorry I'm the awkward guy at the party that makes people feel uncomfortable :)"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "BingoCardCreator.com Sale Page"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "http://feinternational.com/buy-a-website/3745-software-business-in-education-niche-25k-gross-mo"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_anon8418",
+    "story_9602092"
+   ],
+   "author": "anon8418",
+   "children": [
+    9602465,
+    9602564,
+    9602565,
+    9602637,
+    9602639,
+    9603238,
+    9603246
+   ],
+   "comment_text": "Passive recurring revenue sounds like a pretty good deal. Especially when you can plow idle hours (weekends, evenings, etc.) to &quot;optimize&quot; it.<p>I&#x27;m not sure the opportunity costs are that high... especially when you&#x27;re 1. Only spending a handful of hours on it (his claim) and 2. Your whole schtick for your consulting services is how you deserve $$$$ because using your A&#x2F;B optimization whatever skills you can improve conversion&#x2F;traction by xxxx%!<p>He spent 9 years on BCC that resulted in ~30K (edited, misread as 60K) in ARR.<p>I think his ideas and insights are valid. I just find it odd the contrast between his curated HN celebrity image as an uber-hacker with his actual results.<p>Doesn&#x27;t seem like his skills resulted in much success with BCC but it sure helps his consulting career...<p>Sorry I&#x27;m the awkward guy at the party that makes people feel uncomfortable :)",
+   "created_at": "2015-05-26T01:13:37Z",
+   "created_at_i": 1432602817,
+   "objectID": "9602439",
+   "parent_id": 9602414,
+   "points": null,
+   "story_id": 9602092,
+   "story_title": "BingoCardCreator.com Sale Page",
+   "story_url": "http://feinternational.com/buy-a-website/3745-software-business-in-education-niche-25k-gross-mo",
+   "updated_at": "2023-09-07T02:49:42Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "righthand"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "Links to your $5M <em>ARR</em> FOSS? And is that Annualized Run Rate or Annual <em>Recurring</em> Revenue? I'm guessing the former.<p>&gt; One of my projects is at $5M <em>ARR</em> in just six months. I passed $400k in sales this month. It's an open source project.<p>If it's the former <em>ARR</em>, then how are you at $5M if it took you six months to get to $400k? $5M/12 = $416,666.6666666667<p>Which correct me if I'm misunderstanding (I do frequently) but that means your best average sales month was ~$400k, <em>not</em> 6 months to reach $400k."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Fastpotify"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://fastpotify.rocks/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_righthand",
+    "story_49517448"
+   ],
+   "author": "righthand",
+   "children": [
+    49518651
+   ],
+   "comment_text": "Links to your $5M ARR FOSS? And is that Annualized Run Rate or Annual Recurring Revenue? I&#x27;m guessing the former.<p>&gt; One of my projects is at $5M ARR in just six months. I passed $400k in sales this month. It&#x27;s an open source project.<p>If it&#x27;s the former ARR, then how are you at $5M if it took you six months to get to $400k? $5M&#x2F;12 = $416,666.6666666667<p>Which correct me if I&#x27;m misunderstanding (I do frequently) but that means your best average sales month was ~$400k, not 6 months to reach $400k.",
+   "created_at": "2026-09-01T06:18:27Z",
+   "created_at_i": 1788243507,
+   "objectID": "49518582",
+   "parent_id": 49518299,
+   "story_id": 49517448,
+   "story_title": "Fastpotify",
+   "story_url": "https://fastpotify.rocks/",
+   "updated_at": "2026-10-11T10:46:49Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "vintagedave"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "This is specifically AIs modeling the 99 Helpers C-level team? I was interested in a fictional chat representing 'a' C-level suite, to ask questions about any company or approach.<p>That said, I selected all of your characters and asked:<p>&gt; Ok, you're looking for investment. Why, and what questions that I have can you answer right now?<p>Hoping for something solid. My prompt may <em>not</em> have been strong enough, but if I was an investor I'd be asking, say, revenue stats or questions leading to diligence answers, etc.<p>What I expected was some kind of group chat in terms of some people replying, <em>not</em> everyone, or one person and then another riffing off them, rather like you would in a meeting.<p>What I got was eight separate replies, ie everyone replied. All were long, three lengthy paragraphs at least each -- this was <i>far</i> too much to read as a group chat. I skimread it all. All inhabited their persona well. None of them were particularly detailed. One of the best was Marcus, who replied (among lots of other text):<p>&gt; I can also elaborate on our current MRR and <em>ARR</em>, our churn rates, and our burn rate and runway.<p>So I moved to a 1:1 chat, quoted him, and asked for info. Again a verbose reply but it included:<p>&gt; Our current Monthly <em>Recurring</em> Revenue (MRR) stands at $85,000, which translates to an Annual <em>Recurring</em> Revenue (<em>ARR</em>) of $1,020,000.<p>&gt; we're currently tracking at a gross monthly churn rate of 2.1%. While this is within acceptable industry ranges for a company at our stage, I'm <em>not</em> satisfied<p>&gt; Our burn rate is $200,000 per month. This figure reflects our investment in product development, sales, and marketing efforts to scale 99helpers. Based on our current cash reserves, our runway is approximately 15 months<p>I have no idea how true these numbers are, ie if the AIs have access to your internal finances or <em>not</em>. It would be a very interesting approach to the open startup concept.<p>Either way, I feel the multi-persona approach is interesting; does <em>not</em> work currently as a group chat; is too generic ('I can talk about...'); and is overly verbose. I think it has potential if it is concise, if personas only reply if they have something to genuinely contribute, and if the strength of the inhabited persona character does <em>not</em> overrule the insight or advice."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "AI C-Suite \u2013 Chat with a fictional leadership team (1-on-1 or group chat)"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://99helpers.com/tools/csuite-advisor"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_vintagedave",
+    "story_47321340"
+   ],
+   "author": "vintagedave",
+   "children": [
+    47322289
+   ],
+   "comment_text": "This is specifically AIs modeling the 99 Helpers C-level team? I was interested in a fictional chat representing &#x27;a&#x27; C-level suite, to ask questions about any company or approach.<p>That said, I selected all of your characters and asked:<p>&gt; Ok, you&#x27;re looking for investment. Why, and what questions that I have can you answer right now?<p>Hoping for something solid. My prompt may not have been strong enough, but if I was an investor I&#x27;d be asking, say, revenue stats or questions leading to diligence answers, etc.<p>What I expected was some kind of group chat in terms of some people replying, not everyone, or one person and then another riffing off them, rather like you would in a meeting.<p>What I got was eight separate replies, ie everyone replied. All were long, three lengthy paragraphs at least each -- this was <i>far</i> too much to read as a group chat. I skimread it all. All inhabited their persona well. None of them were particularly detailed. One of the best was Marcus, who replied (among lots of other text):<p>&gt; I can also elaborate on our current MRR and ARR, our churn rates, and our burn rate and runway.<p>So I moved to a 1:1 chat, quoted him, and asked for info. Again a verbose reply but it included:<p>&gt; Our current Monthly Recurring Revenue (MRR) stands at $85,000, which translates to an Annual Recurring Revenue (ARR) of $1,020,000.<p>&gt; we&#x27;re currently tracking at a gross monthly churn rate of 2.1%. While this is within acceptable industry ranges for a company at our stage, I&#x27;m not satisfied<p>&gt; Our burn rate is $200,000 per month. This figure reflects our investment in product development, sales, and marketing efforts to scale 99helpers. Based on our current cash reserves, our runway is approximately 15 months<p>I have no idea how true these numbers are, ie if the AIs have access to your internal finances or not. It would be a very interesting approach to the open startup concept.<p>Either way, I feel the multi-persona approach is interesting; does not work currently as a group chat; is too generic (&#x27;I can talk about...&#x27;); and is overly verbose. I think it has potential if it is concise, if personas only reply if they have something to genuinely contribute, and if the strength of the inhabited persona character does not overrule the insight or advice.",
+   "created_at": "2026-03-10T11:03:11Z",
+   "created_at_i": 1773140591,
+   "objectID": "47321613",
+   "parent_id": 47321341,
+   "story_id": 47321340,
+   "story_title": "AI C-Suite \u2013 Chat with a fictional leadership team (1-on-1 or group chat)",
+   "story_url": "https://99helpers.com/tools/csuite-advisor",
+   "updated_at": "2026-03-10T12:27:29Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "falloutx"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "At this point it doesn't matter that much whether we use AI or <em>not</em>, the apps are <em>not</em> selling and they are being produced at an alarming rate.<p>The projects being submitted to product hunt is 4x the year before.<p>The market is shrinking rapidly because now more people make their own apps.<p>Even making a typo and landing on a website, there is good chance its selling more ai snake oil, yet none of these apps are feature complete and easily beaten by apps made by guys in 2010s. (tldr &amp; sketchbook for the drawing space).<p>Only way to excite the investors is to fake the <em>ARR</em> by giving free trials and sell before the <em>recurring</em> event occurs."
+    },
+    "story_title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "not"
+     ],
+     "value": "Opus 4.5 is <em>not</em> the normal AI agent experience that I have had thus far"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://burkeholland.github.io/posts/opus-4-5-change-everything/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_falloutx",
+    "story_46515696"
+   ],
+   "author": "falloutx",
+   "comment_text": "At this point it doesn&#x27;t matter that much whether we use AI or not, the apps are not selling and they are being produced at an alarming rate.<p>The projects being submitted to product hunt is 4x the year before.<p>The market is shrinking rapidly because now more people make their own apps.<p>Even making a typo and landing on a website, there is good chance its selling more ai snake oil, yet none of these apps are feature complete and easily beaten by apps made by guys in 2010s. (tldr &amp; sketchbook for the drawing space).<p>Only way to excite the investors is to fake the ARR by giving free trials and sell before the recurring event occurs.",
+   "created_at": "2026-01-07T02:20:22Z",
+   "created_at_i": 1767752422,
+   "objectID": "46521748",
+   "parent_id": 46516563,
+   "story_id": 46515696,
+   "story_title": "Opus 4.5 is not the normal AI agent experience that I have had thus far",
+   "story_url": "https://burkeholland.github.io/posts/opus-4-5-change-everything/",
+   "updated_at": "2026-03-05T23:17:54Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "PaulHoule"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "As a dev it doesn\u2019t matter to me but as a person who also thinks about business I think a B2B with a <em>recurring</em> business is a good business in terms of making money.  It is easy to go to a VC and say this business will have such and such an <em>ARR</em> and can be valued at so much.  And even if you are just treading water and <em>not</em> moving forward customers will still be writing checks.<p>For many other kind of products you can\u2019t get a break.  Say you make a great game,  you will sell a certain number of copies and then you have to make another game.  There are live service games of various sorts, like, I am playing <i>Arknights</i> now, but that kind of game requires continually putting development effort in to keep players busy.<p>Something like Basecamp can keep cashing checks and all you have to do is pay the AWS bills and occasionally do some maintainance."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Why do developers respect SaaS so much?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_PaulHoule",
+    "story_45319434"
+   ],
+   "author": "PaulHoule",
+   "comment_text": "As a dev it doesn\u2019t matter to me but as a person who also thinks about business I think a B2B with a recurring business is a good business in terms of making money.  It is easy to go to a VC and say this business will have such and such an ARR and can be valued at so much.  And even if you are just treading water and not moving forward customers will still be writing checks.<p>For many other kind of products you can\u2019t get a break.  Say you make a great game,  you will sell a certain number of copies and then you have to make another game.  There are live service games of various sorts, like, I am playing <i>Arknights</i> now, but that kind of game requires continually putting development effort in to keep players busy.<p>Something like Basecamp can keep cashing checks and all you have to do is pay the AWS bills and occasionally do some maintainance.",
+   "created_at": "2025-09-21T02:39:38Z",
+   "created_at_i": 1758422378,
+   "objectID": "45319551",
+   "parent_id": 45319434,
+   "story_id": 45319434,
+   "story_title": "Ask HN: Why do developers respect SaaS so much?",
+   "updated_at": "2026-03-05T22:40:55Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "codegeek"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "Inspiring story. TL;DR: Built a legal tech for students, tried selling for a while, didnt get a lot of traction and then ultimately sold the project to someone else.<p>I think you did a lot of things the right way but probably went after a tough market. Students. Students are the most broke category and then comes indiehackers :). I would usually refrain from selling to these 2.<p>&quot;A quick market-sizing exercise: there are ~110k law students in the US, ~25% of whom are in journals, and half of those are 2nd years. If I could penetrate even 10% of that market at $10/month, I\u2019d be at $165k in Annual <em>Recurring</em> Revenue (<em>ARR</em>)&quot;<p>Haha. This is a classic newbie founder mistake thinking all you need is a % of the market. We all have made it. Now you know. Market estimate should be made bottom up, <em>not</em> top down.<p>&quot;find the connectors&quot;<p>This is so key. If you are in a niche industry, finding the right connections who can open doors can be huge.<p>&quot;Don't be a solo founder&quot;<p>As a solo founder (even though with a small team), I couldn't agree more. I know having  co-founders brings in risks of conflict etc but I am so ready to build a fresh team with cofounders who are thinking about the business 24-7 like I do. If you have a team like that and you work well together, that's a dream.<p>Tell us more about your next thing."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Building LawStar \u2013 a year long indie hacking journey"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://mackey.substack.com/p/building-lawstar"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_codegeek",
+    "story_42148163"
+   ],
+   "author": "codegeek",
+   "children": [
+    42149412,
+    42149710,
+    42150113
+   ],
+   "comment_text": "Inspiring story. TL;DR: Built a legal tech for students, tried selling for a while, didnt get a lot of traction and then ultimately sold the project to someone else.<p>I think you did a lot of things the right way but probably went after a tough market. Students. Students are the most broke category and then comes indiehackers :). I would usually refrain from selling to these 2.<p>&quot;A quick market-sizing exercise: there are ~110k law students in the US, ~25% of whom are in journals, and half of those are 2nd years. If I could penetrate even 10% of that market at $10&#x2F;month, I\u2019d be at $165k in Annual Recurring Revenue (ARR)&quot;<p>Haha. This is a classic newbie founder mistake thinking all you need is a % of the market. We all have made it. Now you know. Market estimate should be made bottom up, not top down.<p>&quot;find the connectors&quot;<p>This is so key. If you are in a niche industry, finding the right connections who can open doors can be huge.<p>&quot;Don&#x27;t be a solo founder&quot;<p>As a solo founder (even though with a small team), I couldn&#x27;t agree more. I know having  co-founders brings in risks of conflict etc but I am so ready to build a fresh team with cofounders who are thinking about the business 24-7 like I do. If you have a team like that and you work well together, that&#x27;s a dream.<p>Tell us more about your next thing.",
+   "created_at": "2024-11-15T18:00:31Z",
+   "created_at_i": 1731693631,
+   "objectID": "42149275",
+   "parent_id": 42148163,
+   "story_id": 42148163,
+   "story_title": "Building LawStar \u2013 a year long indie hacking journey",
+   "story_url": "https://mackey.substack.com/p/building-lawstar",
+   "updated_at": "2024-11-16T18:18:40Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "inoop"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "I'd be curious as well to see a more complete cost-benefit analysis, and I'd be especially interested in labor cost.<p>We don't know how much time and head count Uber committed to this project, but I would be impressed if they were able to pull this off with fewer than 6-8 people. We can use that to get a very rough lower-bound cost estimate.<p>For example, AWS internally uses a rule of thumb where each developer should generate about $1MM <em>ARR</em> (annual <em>recurring</em> revenue). So, if you have 20 head count, your service should bring in about $20MM annually. If Uber pulled this off with a team of ~6 engineers, by AWS logic, they should about break even.<p>Another rule of thumb I sometimes see applied is 2x developer salary. So for example, let's assume a 7-person team of 2xSDE1, 3xSDE2, 1xSDE3, and 1xSTAFF, then according to levels.fyi that would be a total annual salary of $2.3MM. Double that, and you get $4.6MM/year to justify that team annual cost footprint, which is still less than $6MM.<p>Of course, this is assuming a small increase in headcount to operate this new, custom data store, and does <em>not</em> factor in a potentially significant development and migration cost.<p>So unless my math is completely off, it sounds to me like the cost of development, migration, and ownership is <em>not</em> that far off from the cost of the status quo (i.e. DynamoDb)."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Migrating Uber's ledger data from DynamoDB to LedgerStore"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.uber.com/blog/migrating-from-dynamodb-to-ledgerstore/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_inoop",
+    "story_40413891"
+   ],
+   "author": "inoop",
+   "children": [
+    40415127,
+    40415389
+   ],
+   "comment_text": "I&#x27;d be curious as well to see a more complete cost-benefit analysis, and I&#x27;d be especially interested in labor cost.<p>We don&#x27;t know how much time and head count Uber committed to this project, but I would be impressed if they were able to pull this off with fewer than 6-8 people. We can use that to get a very rough lower-bound cost estimate.<p>For example, AWS internally uses a rule of thumb where each developer should generate about $1MM ARR (annual recurring revenue). So, if you have 20 head count, your service should bring in about $20MM annually. If Uber pulled this off with a team of ~6 engineers, by AWS logic, they should about break even.<p>Another rule of thumb I sometimes see applied is 2x developer salary. So for example, let&#x27;s assume a 7-person team of 2xSDE1, 3xSDE2, 1xSDE3, and 1xSTAFF, then according to levels.fyi that would be a total annual salary of $2.3MM. Double that, and you get $4.6MM&#x2F;year to justify that team annual cost footprint, which is still less than $6MM.<p>Of course, this is assuming a small increase in headcount to operate this new, custom data store, and does not factor in a potentially significant development and migration cost.<p>So unless my math is completely off, it sounds to me like the cost of development, migration, and ownership is not that far off from the cost of the status quo (i.e. DynamoDb).",
+   "created_at": "2024-05-20T12:29:54Z",
+   "created_at_i": 1716208194,
+   "objectID": "40414745",
+   "parent_id": 40414087,
+   "story_id": 40413891,
+   "story_title": "Migrating Uber's ledger data from DynamoDB to LedgerStore",
+   "story_url": "https://www.uber.com/blog/migrating-from-dynamodb-to-ledgerstore/",
+   "updated_at": "2025-08-14T22:38:55Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "satvikpendem"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "If you know marketing, you don't need VCs (unless you are in a capital-intensive business like rocket building). The problem is that most people who get funded are technical and do <em>not</em> know marketing and growing organically. However, there are lots of businesses that grow extremely well simply due to the cofounders having previous experience with marketing, often in a professional capacity.<p>My go-to example is Lemlist (and their &quot;Lempire&quot; of related products). The founders built their own cold email agency, grew that to millions just through sheer labor, then built software to automate that process and now they're at a 200 million dollar valuation from more than 10 to 15 million dollars in annual <em>recurring</em> revenue. They have lots of marketing channels: organic SEO via content marketing, Facebook group with frequent events like interviews with other agency owners and salespeople, YouTube videos that are then recut and repurposed to TikTok/Instagram/Facebook videos, partnering with influencers, paid advertising, and of course, cold messaging other salespeople and agencies via LinkedIn and email. Most technical founders do <em>not</em> know or have the patience to do any of this. If they do, though, they could similarly grow to such an <em>ARR</em> in a few short years, as Lemlist started only in 2018. Similar examples include GoHighLevel and ClickFunnels which are almost at or over a 1 billion dollar valuation each, both bootstrapped. The ClickFunnels founder for example sold his software via live demos (both webinars and in person events) where you got X% off but only if you booked right at the end of the demo, which apparently drove quite a high percentage of their initial sales.<p>I'd highly advise founders to start a marketing agency if only to understand marketing in a real capacity and how to deliver results to paying clients. I have done so via a cold email and paid ads agency for various niches before and I believe it's helped me immensely with future products. Best of all, you learn to be truly aligned with your customers and providing them direct value because they are paying you every month. If you make a mistake, you <i>must</i> fix it, you have no backup fund of venture capital previously raised in order to skate BY, especially now that ZIRP (zero-interest-rate phenomenon) is over."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "\u201cYes\u201d means \u201cno\u201d: The language of VCs"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://jacobbartlett.substack.com/p/yes-actually-means-no-the-curious"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_satvikpendem",
+    "story_38677251"
+   ],
+   "author": "satvikpendem",
+   "children": [
+    38680017,
+    38681367
+   ],
+   "comment_text": "If you know marketing, you don&#x27;t need VCs (unless you are in a capital-intensive business like rocket building). The problem is that most people who get funded are technical and do not know marketing and growing organically. However, there are lots of businesses that grow extremely well simply due to the cofounders having previous experience with marketing, often in a professional capacity.<p>My go-to example is Lemlist (and their &quot;Lempire&quot; of related products). The founders built their own cold email agency, grew that to millions just through sheer labor, then built software to automate that process and now they&#x27;re at a 200 million dollar valuation from more than 10 to 15 million dollars in annual recurring revenue. They have lots of marketing channels: organic SEO via content marketing, Facebook group with frequent events like interviews with other agency owners and salespeople, YouTube videos that are then recut and repurposed to TikTok&#x2F;Instagram&#x2F;Facebook videos, partnering with influencers, paid advertising, and of course, cold messaging other salespeople and agencies via LinkedIn and email. Most technical founders do not know or have the patience to do any of this. If they do, though, they could similarly grow to such an ARR in a few short years, as Lemlist started only in 2018. Similar examples include GoHighLevel and ClickFunnels which are almost at or over a 1 billion dollar valuation each, both bootstrapped. The ClickFunnels founder for example sold his software via live demos (both webinars and in person events) where you got X% off but only if you booked right at the end of the demo, which apparently drove quite a high percentage of their initial sales.<p>I&#x27;d highly advise founders to start a marketing agency if only to understand marketing in a real capacity and how to deliver results to paying clients. I have done so via a cold email and paid ads agency for various niches before and I believe it&#x27;s helped me immensely with future products. Best of all, you learn to be truly aligned with your customers and providing them direct value because they are paying you every month. If you make a mistake, you <i>must</i> fix it, you have no backup fund of venture capital previously raised in order to skate BY, especially now that ZIRP (zero-interest-rate phenomenon) is over.",
+   "created_at": "2023-12-18T00:16:09Z",
+   "created_at_i": 1702858569,
+   "objectID": "38677799",
+   "parent_id": 38677251,
+   "story_id": 38677251,
+   "story_title": "\u201cYes\u201d means \u201cno\u201d: The language of VCs",
+   "story_url": "https://jacobbartlett.substack.com/p/yes-actually-means-no-the-curious",
+   "updated_at": "2024-09-20T15:55:53Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ZephyrBlu"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "Please man, use your brain at least a little bit.<p>$235k and 2 engineers is completely different to $4M and 15 employees. <em>Not</em> to mention that it was 5-7yrs before Figma had <i>any</i> revenue.<p><i>&quot;While Figma was founded in 2011, the first five years were spent trying to get to product. The company printed its first dollar in revenue in 2017 and will hit $400 million in annual <em>recurring</em> revenue (<em>ARR</em>) in 2022&quot;</i><p><a href=\"https://futurumgroup.com/insights/adobes-stock-got-slammed-for-spending-20-billion-on-figma-but-it-now-owns-a-rare-company/\" rel=\"nofollow noreferrer\">https://futurumgroup.com/insights/adobes-stock-got-slammed-f...</a><p>Figma is an outlier. &quot;it's clearly doable to take on Adobe with far less money&quot;, he says about one of the fastest growing decacorn startups in history."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "After Raising $235K, Abode Remains Committed to Taking on Adobe"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://petapixel.com/2023/07/26/after-raising-235k-abode-remains-committed-to-taking-on-adobe/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_ZephyrBlu",
+    "story_36904552"
+   ],
+   "author": "ZephyrBlu",
+   "children": [
+    36907418
+   ],
+   "comment_text": "Please man, use your brain at least a little bit.<p>$235k and 2 engineers is completely different to $4M and 15 employees. Not to mention that it was 5-7yrs before Figma had <i>any</i> revenue.<p><i>&quot;While Figma was founded in 2011, the first five years were spent trying to get to product. The company printed its first dollar in revenue in 2017 and will hit $400 million in annual recurring revenue (ARR) in 2022&quot;</i><p><a href=\"https:&#x2F;&#x2F;futurumgroup.com&#x2F;insights&#x2F;adobes-stock-got-slammed-for-spending-20-billion-on-figma-but-it-now-owns-a-rare-company&#x2F;\" rel=\"nofollow noreferrer\">https:&#x2F;&#x2F;futurumgroup.com&#x2F;insights&#x2F;adobes-stock-got-slammed-f...</a><p>Figma is an outlier. &quot;it&#x27;s clearly doable to take on Adobe with far less money&quot;, he says about one of the fastest growing decacorn startups in history.",
+   "created_at": "2023-07-28T10:49:38Z",
+   "created_at_i": 1690541378,
+   "objectID": "36905095",
+   "parent_id": 36905001,
+   "story_id": 36904552,
+   "story_title": "After Raising $235K, Abode Remains Committed to Taking on Adobe",
+   "story_url": "https://petapixel.com/2023/07/26/after-raising-235k-abode-remains-committed-to-taking-on-adobe/",
+   "updated_at": "2024-09-20T14:42:49Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "indymike"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "The key to all of this is user awareness, and I'm <em>not</em> sure users care very much. I own a small payment processor, and we've researched this quite a bit: users only really care about if the little clock is present in the URL bar, and they leave if they get warning dialogs. All the other stuff, badges, changing the awesome bar color, have very little effect on users. Users are about 80% sensitive to interruptions that say &quot;<em>not</em> secure&quot; or something else scary.<p>There are a couple things about certs that are very much arbitrary: expiration date and any user input identification data. CAs try to deal with the identification data by doing some kind of validation, but that has decayed to what amounts to prove you control the domain by doing some trivial thing. Expiration dates, as currently set, serve to ensure that people have to renew their certificates, and prior to Let's Encrypt, this guaranteed <em>recurring</em> revenue for CAs. Expiration dates make sense to ensure that at some point, a compromised certificate would have to be replaced, but the way those dates are set is... very convenient for <em>ARR</em>."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "What's the right UX for an expired certificate?"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://emilymstark.com/2023/01/16/whats-the-right-ux-for-an-expired-certificate.html"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_indymike",
+    "story_34410015"
+   ],
+   "author": "indymike",
+   "comment_text": "The key to all of this is user awareness, and I&#x27;m not sure users care very much. I own a small payment processor, and we&#x27;ve researched this quite a bit: users only really care about if the little clock is present in the URL bar, and they leave if they get warning dialogs. All the other stuff, badges, changing the awesome bar color, have very little effect on users. Users are about 80% sensitive to interruptions that say &quot;not secure&quot; or something else scary.<p>There are a couple things about certs that are very much arbitrary: expiration date and any user input identification data. CAs try to deal with the identification data by doing some kind of validation, but that has decayed to what amounts to prove you control the domain by doing some trivial thing. Expiration dates, as currently set, serve to ensure that people have to renew their certificates, and prior to Let&#x27;s Encrypt, this guaranteed recurring revenue for CAs. Expiration dates make sense to ensure that at some point, a compromised certificate would have to be replaced, but the way those dates are set is... very convenient for ARR.",
+   "created_at": "2023-01-18T15:20:03Z",
+   "created_at_i": 1674055203,
+   "objectID": "34427681",
+   "parent_id": 34410015,
+   "story_id": 34410015,
+   "story_title": "What's the right UX for an expired certificate?",
+   "story_url": "https://emilymstark.com/2023/01/16/whats-the-right-ux-for-an-expired-certificate.html",
+   "updated_at": "2024-09-20T13:01:10Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "freeqaz"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "I've written about this topic in more depth previously[0] (warning, it's long) and there is really no straightforward answer.<p>Now, I should note: I'm a YC Founder, so take my thoughts with a grain of salt. I've been &quot;trained&quot; by YC to think in terms of building businesses around raising VC funding and to scale quickly. (Software businesses tend to be very good at scaling compared to, for example, pure consulting where `$X = X Hours`. That doesn't mean you _have to_ scale though!)<p>Now, given that caveat, if you are looking to raise funding the future, then investors care a _lot_ about Monthly <em>Recurring</em> Revenue (MRR) which can be extrapolated into Annual <em>Recurring</em> Revenue (<em>ARR</em>). That means selling a subscription with a low churn rate (&quot;sticky&quot;) so that you can make confident predictions about your growth.<p>That underpins why VC money exists: If you can demonstrate that buying $1 of Google Ads gives you $1 more in MRR, then you can run the math to show how quickly you can grow if you were to re-invest every dollar earned back into the business to reach some % of growth per month. (Imagine graphing something like `y = x` from algebra.)<p>By taking funding, you can &quot;teleport&quot; your growth to a future point of on your graph by buying more ads _now_ instead of waiting. This is the basis by which you calculate the value of your business (valuation) and how much % the investors get. Also, many business tend to benefit from &quot;economies of scale&quot; so your function might actually become `y = 2x` with more funding.<p>Now, if you're thinking about going that route, then I'd recommend trying to structure your pricing around MRR to make your life easier. (Even companies like JetBrains do this by selling &quot;corporate license bundles&quot; with a multi-year time frame and a minimum seat commitment.)<p>But if you're _<em>not</em>_ looking to raise VC money, then you can take a different approach like what you list up above.<p>That said, and this is probably the most important part of text here: Pricing is <em>not</em> the hardest part of building a business. Getting people to give a sh*t is the hardest part and that's best achieved by solving a real problem that they care about!<p>You can always undercharge and fix it later once you actually understand the business + sales side. Until then, focus on the product and, if you're looking to fundraise, go apply for YC's Winter 2023 batch[1]! (Do it ASAP for maximum odds)<p>Good luck and feel free to email me (see my profile). :)<p>0: <a href=\"https://www.lunasec.io/docs/blog/how-to-build-an-open-source-business-in-2021-part-1/\" rel=\"nofollow\">https://www.lunasec.io/docs/blog/how-to-build-an-open-source...</a><p>1: <a href=\"https://www.ycombinator.com/apply/\" rel=\"nofollow\">https://www.ycombinator.com/apply/</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: What's a good business model for selling standalone software?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_freeqaz",
+    "story_33645489"
+   ],
+   "author": "freeqaz",
+   "comment_text": "I&#x27;ve written about this topic in more depth previously[0] (warning, it&#x27;s long) and there is really no straightforward answer.<p>Now, I should note: I&#x27;m a YC Founder, so take my thoughts with a grain of salt. I&#x27;ve been &quot;trained&quot; by YC to think in terms of building businesses around raising VC funding and to scale quickly. (Software businesses tend to be very good at scaling compared to, for example, pure consulting where `$X = X Hours`. That doesn&#x27;t mean you _have to_ scale though!)<p>Now, given that caveat, if you are looking to raise funding the future, then investors care a _lot_ about Monthly Recurring Revenue (MRR) which can be extrapolated into Annual Recurring Revenue (ARR). That means selling a subscription with a low churn rate (&quot;sticky&quot;) so that you can make confident predictions about your growth.<p>That underpins why VC money exists: If you can demonstrate that buying $1 of Google Ads gives you $1 more in MRR, then you can run the math to show how quickly you can grow if you were to re-invest every dollar earned back into the business to reach some % of growth per month. (Imagine graphing something like `y = x` from algebra.)<p>By taking funding, you can &quot;teleport&quot; your growth to a future point of on your graph by buying more ads _now_ instead of waiting. This is the basis by which you calculate the value of your business (valuation) and how much % the investors get. Also, many business tend to benefit from &quot;economies of scale&quot; so your function might actually become `y = 2x` with more funding.<p>Now, if you&#x27;re thinking about going that route, then I&#x27;d recommend trying to structure your pricing around MRR to make your life easier. (Even companies like JetBrains do this by selling &quot;corporate license bundles&quot; with a multi-year time frame and a minimum seat commitment.)<p>But if you&#x27;re _not_ looking to raise VC money, then you can take a different approach like what you list up above.<p>That said, and this is probably the most important part of text here: Pricing is not the hardest part of building a business. Getting people to give a sh*t is the hardest part and that&#x27;s best achieved by solving a real problem that they care about!<p>You can always undercharge and fix it later once you actually understand the business + sales side. Until then, focus on the product and, if you&#x27;re looking to fundraise, go apply for YC&#x27;s Winter 2023 batch[1]! (Do it ASAP for maximum odds)<p>Good luck and feel free to email me (see my profile). :)<p>0: <a href=\"https:&#x2F;&#x2F;www.lunasec.io&#x2F;docs&#x2F;blog&#x2F;how-to-build-an-open-source-business-in-2021-part-1&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.lunasec.io&#x2F;docs&#x2F;blog&#x2F;how-to-build-an-open-source...</a><p>1: <a href=\"https:&#x2F;&#x2F;www.ycombinator.com&#x2F;apply&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.ycombinator.com&#x2F;apply&#x2F;</a>",
+   "created_at": "2022-11-18T00:53:00Z",
+   "created_at_i": 1668732780,
+   "objectID": "33648298",
+   "parent_id": 33645489,
+   "story_id": 33645489,
+   "story_title": "Ask HN: What's a good business model for selling standalone software?",
+   "updated_at": "2024-09-20T12:37:54Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "neilv"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "If it doesn't run in a browser, &quot;cloud&quot; host and mine customer's data, and have an <em>ARR</em> subscription, it might be time to dust off old-school models... :)<p>I used to develop expensive technical workstation software (in Engineering, but I was always friends with Marketing, and picked up some bits).<p>My naive engineer's idea of one model is that you offer all of:<p>1. Start by selling a particular version by the &quot;seat&quot; (say, number of simultaneous users) or &quot;site&quot; (maybe up to N users at a particular company, especially with WFH).  (Probably you provide free minimal updates for any security and other critical defects to this exact version, but hopefully you have zero of those.)<p>2. <em>Recurring</em> revenue from support contracts.  This entitles the customer to the latest version at any time, as well as responding to their questions.  (Your latest version is for landing new customers, as well as additional reason to keep customers on a support contract.)  Maybe you make 1 year of support contract a mandatory (maybe discounted/free) part of the initial sale, to help customer be successful, and then they can decide whether to renew, or keep running the last version under their contract period without further updates or technical support.  I think this keeps you from having to maintain many version maintenance forks (except for security and other critical defects, so there's your incentive to <em>not</em> make those defects :).  You do want to have smooth backward-compatibility, to reduce customers getting stuck happily on old version, resistant to updates (effort, fear, dealing with IT), and then see less reason to keep paying for support contract.<p>3. One-time or <em>recurring</em> revenue from training.  This at least used to be significant, even when the one-time software cost alone is 4-5 figures per seat.  Each training purchase involves scheduling training days/weeks with highly-skilled trainers on-site, and expensive employees all scheduled to receiving the training at the same time.  Maybe you also have free async training videos and tutorials, and only really deep-pocketed customers want to spring for the on-site/virtual live trainer.<p>4. Systems integration and customization consulting.  Some of this might be tightly paired with sales/marketing, such as systems engineers that are paired with sales, and solve gap problems as part of closing the sale.  But customers might have bigger tasks they want to pay you to do with your software and their software/business.<p>I'm sure others can improve upon the ideas above."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: What's a good business model for selling standalone software?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_neilv",
+    "story_33645489"
+   ],
+   "author": "neilv",
+   "children": [
+    33647873
+   ],
+   "comment_text": "If it doesn&#x27;t run in a browser, &quot;cloud&quot; host and mine customer&#x27;s data, and have an ARR subscription, it might be time to dust off old-school models... :)<p>I used to develop expensive technical workstation software (in Engineering, but I was always friends with Marketing, and picked up some bits).<p>My naive engineer&#x27;s idea of one model is that you offer all of:<p>1. Start by selling a particular version by the &quot;seat&quot; (say, number of simultaneous users) or &quot;site&quot; (maybe up to N users at a particular company, especially with WFH).  (Probably you provide free minimal updates for any security and other critical defects to this exact version, but hopefully you have zero of those.)<p>2. Recurring revenue from support contracts.  This entitles the customer to the latest version at any time, as well as responding to their questions.  (Your latest version is for landing new customers, as well as additional reason to keep customers on a support contract.)  Maybe you make 1 year of support contract a mandatory (maybe discounted&#x2F;free) part of the initial sale, to help customer be successful, and then they can decide whether to renew, or keep running the last version under their contract period without further updates or technical support.  I think this keeps you from having to maintain many version maintenance forks (except for security and other critical defects, so there&#x27;s your incentive to not make those defects :).  You do want to have smooth backward-compatibility, to reduce customers getting stuck happily on old version, resistant to updates (effort, fear, dealing with IT), and then see less reason to keep paying for support contract.<p>3. One-time or recurring revenue from training.  This at least used to be significant, even when the one-time software cost alone is 4-5 figures per seat.  Each training purchase involves scheduling training days&#x2F;weeks with highly-skilled trainers on-site, and expensive employees all scheduled to receiving the training at the same time.  Maybe you also have free async training videos and tutorials, and only really deep-pocketed customers want to spring for the on-site&#x2F;virtual live trainer.<p>4. Systems integration and customization consulting.  Some of this might be tightly paired with sales&#x2F;marketing, such as systems engineers that are paired with sales, and solve gap problems as part of closing the sale.  But customers might have bigger tasks they want to pay you to do with your software and their software&#x2F;business.<p>I&#x27;m sure others can improve upon the ideas above.",
+   "created_at": "2022-11-18T00:04:13Z",
+   "created_at_i": 1668729853,
+   "objectID": "33647838",
+   "parent_id": 33645489,
+   "story_id": 33645489,
+   "story_title": "Ask HN: What's a good business model for selling standalone software?",
+   "updated_at": "2024-09-20T12:37:45Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "funstuff007"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "&gt; UBS is paying $3,000 for just $117 of annual <em>recurring</em> revenue (<em>ARR</em>),<p>That's 25X revenues.  According to a fintech banker, I spoke to this past week those multiples are just <em>not</em> getting done anymore.  As to how UBS was able to pull a Musk (in a much cleaner fashion), I'm <em>not</em> sure."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "UBS, Wealthfront Cancel $1.4B Deal"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.thinkadvisor.com/2022/09/02/ubs-wealthfront-cancel-1-4b-deal/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_funstuff007",
+    "story_32695891"
+   ],
+   "author": "funstuff007",
+   "children": [
+    32702170
+   ],
+   "comment_text": "&gt; UBS is paying $3,000 for just $117 of annual recurring revenue (ARR),<p>That&#x27;s 25X revenues.  According to a fintech banker, I spoke to this past week those multiples are just not getting done anymore.  As to how UBS was able to pull a Musk (in a much cleaner fashion), I&#x27;m not sure.",
+   "created_at": "2022-09-03T12:54:13Z",
+   "created_at_i": 1662209653,
+   "objectID": "32701408",
+   "parent_id": 32695891,
+   "story_id": 32695891,
+   "story_title": "UBS, Wealthfront Cancel $1.4B Deal",
+   "story_url": "https://www.thinkadvisor.com/2022/09/02/ubs-wealthfront-cancel-1-4b-deal/",
+   "updated_at": "2024-09-20T11:56:07Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "api"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "It\u2019s <em>not</em> even growth or ROI. It\u2019s that reliably <em>recurring</em> revenue is valued at a much higher multiple than non <em>recurring</em> revenue.<p>VCs and other investors including public markets would rather see $1M <em>ARR</em> <em>recurring</em> through subscriptions with low churn than a single year with $10M revenue and no subscriptions. Even multiple years of growth in non <em>recurring</em> revenue will often be valued lower than less growth in subscription revenue.<p>This is why SaaS type models have taken over and why every other business is trying to desperately shoehorn in some kind of subscription revenue. The latter gives us car companies with subscription cloud unlock services, etc."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Dear startups: I hate subscription services (2021)"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://fangdaddy.medium.com/dear-startups-i-hate-subscription-services-aecefeb0f089"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_api",
+    "story_32285242"
+   ],
+   "author": "api",
+   "comment_text": "It\u2019s not even growth or ROI. It\u2019s that reliably recurring revenue is valued at a much higher multiple than non recurring revenue.<p>VCs and other investors including public markets would rather see $1M ARR recurring through subscriptions with low churn than a single year with $10M revenue and no subscriptions. Even multiple years of growth in non recurring revenue will often be valued lower than less growth in subscription revenue.<p>This is why SaaS type models have taken over and why every other business is trying to desperately shoehorn in some kind of subscription revenue. The latter gives us car companies with subscription cloud unlock services, etc.",
+   "created_at": "2022-07-30T13:23:31Z",
+   "created_at_i": 1659187411,
+   "objectID": "32286598",
+   "parent_id": 32286391,
+   "story_id": 32285242,
+   "story_title": "Dear startups: I hate subscription services (2021)",
+   "story_url": "https://fangdaddy.medium.com/dear-startups-i-hate-subscription-services-aecefeb0f089",
+   "updated_at": "2024-09-20T11:44:24Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "bcbrown"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "Learn the vocabulary. Look up things like 409a valuations, 83b elections, NSO and ISO stock options, the difference between long-term and short-term capital gains, strike price vs exercise price (plus how and when taxes on options are triggered and calculated), marginal tax rate vs effective tax rate. Probably also worthwhile to learn the basics of corporate finance, like annual <em>recurring</em> revenue (<em>ARR</em>), costs of goods sold (COGS), customer acquisition costs (CAC), differences between cashflow and profit, EBITDA (plus what each of those words mean), capital expenditure (capex) vs operational expenditure (opex). If you understand the vocabulary, it's a lot easier to evaluate whether a given source is authoritative or <em>not</em>.<p>Sign up for Matt Levine's newsletter. He's perhaps starting to be a little overexposed on HN, but he's informative and humorous, and his newsletter is a good way to get a little exposure to finance every day.<p>It's <em>not</em> <em>not</em> startup-equity specific, but check out Bogleheads for generic investing advice."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Questions candidates can ask about equity compensation"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.holloway.com/g/equity-compensation/sections/questions-candidates-can-ask"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_bcbrown",
+    "story_31595393"
+   ],
+   "author": "bcbrown",
+   "comment_text": "Learn the vocabulary. Look up things like 409a valuations, 83b elections, NSO and ISO stock options, the difference between long-term and short-term capital gains, strike price vs exercise price (plus how and when taxes on options are triggered and calculated), marginal tax rate vs effective tax rate. Probably also worthwhile to learn the basics of corporate finance, like annual recurring revenue (ARR), costs of goods sold (COGS), customer acquisition costs (CAC), differences between cashflow and profit, EBITDA (plus what each of those words mean), capital expenditure (capex) vs operational expenditure (opex). If you understand the vocabulary, it&#x27;s a lot easier to evaluate whether a given source is authoritative or not.<p>Sign up for Matt Levine&#x27;s newsletter. He&#x27;s perhaps starting to be a little overexposed on HN, but he&#x27;s informative and humorous, and his newsletter is a good way to get a little exposure to finance every day.<p>It&#x27;s not not startup-equity specific, but check out Bogleheads for generic investing advice.",
+   "created_at": "2022-06-04T22:21:05Z",
+   "created_at_i": 1654381265,
+   "objectID": "31625661",
+   "parent_id": 31625377,
+   "story_id": 31595393,
+   "story_title": "Questions candidates can ask about equity compensation",
+   "story_url": "https://www.holloway.com/g/equity-compensation/sections/questions-candidates-can-ask",
+   "updated_at": "2024-09-20T11:16:10Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "gnicholas"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "Love these:<p>&gt; <i>Introducing the hype ratio and the burn multiple.<p>Hype Ratio = Capital Raised / Annual <em>Recurring</em> Revenue.<p>Burn multiple = Net Burn / Net New <em>ARR</em><p>If these ratios are superior to 3 then there is a problem. It\u2019s <em>not</em> uncommon to see startups with a 10+ ratio these days.</i>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Panic in Startupland"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.nicolasbustamante.com/p/panic-in-startupland"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_gnicholas",
+    "story_31611985"
+   ],
+   "author": "gnicholas",
+   "children": [
+    31613169
+   ],
+   "comment_text": "Love these:<p>&gt; <i>Introducing the hype ratio and the burn multiple.<p>Hype Ratio = Capital Raised &#x2F; Annual Recurring Revenue.<p>Burn multiple = Net Burn &#x2F; Net New ARR<p>If these ratios are superior to 3 then there is a problem. It\u2019s not uncommon to see startups with a 10+ ratio these days.</i>",
+   "created_at": "2022-06-03T19:10:26Z",
+   "created_at_i": 1654283426,
+   "objectID": "31612409",
+   "parent_id": 31611985,
+   "story_id": 31611985,
+   "story_title": "Panic in Startupland",
+   "story_url": "https://www.nicolasbustamante.com/p/panic-in-startupland",
+   "updated_at": "2024-09-20T11:14:36Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "a4isms"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "It's interesting that we have already had this exact same transition with pure software: It is increasingly difficult to just <i>buy</i> an indefinite license to use a program that is dowloaded or shipped to you on physical media, to be run on your device.<p>Instead, companies find increasingly flimsy reasons to ship &quot;Software as a Service,&quot; which in many cases exists solely to generate Annual <em>Recurring</em> Revenue, or &quot;<em>ARR</em>.&quot;<p>I'd like to make a joke about <em>ARR</em> Growth Hacking, or &quot;ARRGH,&quot; but I'm too depressed to take pleasure in it. Sure, there are convenience factors involved in apps you can just use from a web browser. Sure, many apps require a centralized aspect to be valuable, like social media. And sure, maintaining compatibility requires ongoing overhead, and companies need a revenue model that is aligned with their expense model, or they will close their doors.<p>But the end result is still a world where the ability to just buy a thing--whether physical or <em>not</em>--is rapidly shrinking."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Bob Cassette Rewinder: Hacking Detergent DRM"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://github.com/dekuNukem/bob_cassette_rewinder/blob/master/README.md"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_a4isms",
+    "story_31558525"
+   ],
+   "author": "a4isms",
+   "comment_text": "It&#x27;s interesting that we have already had this exact same transition with pure software: It is increasingly difficult to just <i>buy</i> an indefinite license to use a program that is dowloaded or shipped to you on physical media, to be run on your device.<p>Instead, companies find increasingly flimsy reasons to ship &quot;Software as a Service,&quot; which in many cases exists solely to generate Annual Recurring Revenue, or &quot;ARR.&quot;<p>I&#x27;d like to make a joke about ARR Growth Hacking, or &quot;ARRGH,&quot; but I&#x27;m too depressed to take pleasure in it. Sure, there are convenience factors involved in apps you can just use from a web browser. Sure, many apps require a centralized aspect to be valuable, like social media. And sure, maintaining compatibility requires ongoing overhead, and companies need a revenue model that is aligned with their expense model, or they will close their doors.<p>But the end result is still a world where the ability to just buy a thing--whether physical or not--is rapidly shrinking.",
+   "created_at": "2022-05-30T19:55:38Z",
+   "created_at_i": 1653940538,
+   "objectID": "31562991",
+   "parent_id": 31559019,
+   "story_id": 31558525,
+   "story_title": "Bob Cassette Rewinder: Hacking Detergent DRM",
+   "story_url": "https://github.com/dekuNukem/bob_cassette_rewinder/blob/master/README.md",
+   "updated_at": "2024-09-20T11:16:46Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ancapistani"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "The second issue I hear is that you care about your customers, and I think you feel like your company's culture isn't correctly prioritizing quality. There are definitely some steps you can take to improve processing and make these sorts of things less common, but they won't have as big an impact as they could unless everyone &quot;buys in&quot; to them.<p>Let's talk about the cultural aspect first. You said:<p><pre><code>    I have casually asked my boss how they feel about all the random bugs in our product. They feel that as a startup of our size, our number 1 priority is making sure we have enough features. Our prospective customers tell us things like &quot;we can't sign up until you support X number of features,&quot; and my boss and the founder believe that our number 1 indication of success is the downward trend of X. I understand what they mean (it doesn't matter how bug-free your code is if you run out of funding and go out of business) but I still feel guilty.\n</code></pre>\nI think you're on the right track here. You're recognizing that the people &quot;above&quot; you in the organization have different motivations, and allowing the possibility that you may just be <i>wrong</i> in how you view this because you are operating with a different perspective on the system as a whole.<p>That said... &quot;we need to prioritize features over stability&quot; is a huge red flag to me. In my experience it generally means that the people in control of the company are measuring the wrong things; they're prioritizing increasing the effectiveness of your sales funnel by trying to satisfy everyone when they should be either focusing on <em>ARR</em> (annual <em>recurring</em> revenue) by making your existing customers happy or changing their customer acquisition strategy to get potential customers with the &quot;right&quot; problem into the funnel in the first place.<p>Basically, de-emphasizing stability in order to grow will quickly lead to problems with retention. It's a totally valid choice to do it for short periods, but if you go too far it's very hard to come back.<p>My boss also is correct when they say that these issues happen less than 1% of the time. I don't feel like I have buy-in to make any changes to this process. Alerts are ignored, and some people don't even have PagerDuty set up, their alerts go nowhere.<p><pre><code>    I don't feel like I have buy-in to make any changes to this process. Alerts are ignored, and some people don't even have PagerDuty set up, their alerts go nowhere.\n</code></pre>\nMy gut says this is the heart of the issue here. I think you care deeply about the people who use your product, and that you feel like the people around you <i>don't</i>.<p>If I were you, I would start preparing to leave the company if necessary. Once I was confident that I had a place to go, I'd stretch myself and try to influence the people around me to improve quality and change the focus to sustainable growth. It might work. If <em>not</em>, while it's possible they'd just fire me because of the pushback, it's much more likely that I'd just get to the point where I realized that this wasn't the place for me."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: How do I feel less guilty about bugs?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Ancapistani",
+    "story_30590045"
+   ],
+   "author": "Ancapistani",
+   "comment_text": "The second issue I hear is that you care about your customers, and I think you feel like your company&#x27;s culture isn&#x27;t correctly prioritizing quality. There are definitely some steps you can take to improve processing and make these sorts of things less common, but they won&#x27;t have as big an impact as they could unless everyone &quot;buys in&quot; to them.<p>Let&#x27;s talk about the cultural aspect first. You said:<p><pre><code>    I have casually asked my boss how they feel about all the random bugs in our product. They feel that as a startup of our size, our number 1 priority is making sure we have enough features. Our prospective customers tell us things like &quot;we can&#x27;t sign up until you support X number of features,&quot; and my boss and the founder believe that our number 1 indication of success is the downward trend of X. I understand what they mean (it doesn&#x27;t matter how bug-free your code is if you run out of funding and go out of business) but I still feel guilty.\n</code></pre>\nI think you&#x27;re on the right track here. You&#x27;re recognizing that the people &quot;above&quot; you in the organization have different motivations, and allowing the possibility that you may just be <i>wrong</i> in how you view this because you are operating with a different perspective on the system as a whole.<p>That said... &quot;we need to prioritize features over stability&quot; is a huge red flag to me. In my experience it generally means that the people in control of the company are measuring the wrong things; they&#x27;re prioritizing increasing the effectiveness of your sales funnel by trying to satisfy everyone when they should be either focusing on ARR (annual recurring revenue) by making your existing customers happy or changing their customer acquisition strategy to get potential customers with the &quot;right&quot; problem into the funnel in the first place.<p>Basically, de-emphasizing stability in order to grow will quickly lead to problems with retention. It&#x27;s a totally valid choice to do it for short periods, but if you go too far it&#x27;s very hard to come back.<p>My boss also is correct when they say that these issues happen less than 1% of the time. I don&#x27;t feel like I have buy-in to make any changes to this process. Alerts are ignored, and some people don&#x27;t even have PagerDuty set up, their alerts go nowhere.<p><pre><code>    I don&#x27;t feel like I have buy-in to make any changes to this process. Alerts are ignored, and some people don&#x27;t even have PagerDuty set up, their alerts go nowhere.\n</code></pre>\nMy gut says this is the heart of the issue here. I think you care deeply about the people who use your product, and that you feel like the people around you <i>don&#x27;t</i>.<p>If I were you, I would start preparing to leave the company if necessary. Once I was confident that I had a place to go, I&#x27;d stretch myself and try to influence the people around me to improve quality and change the focus to sustainable growth. It might work. If not, while it&#x27;s possible they&#x27;d just fire me because of the pushback, it&#x27;s much more likely that I&#x27;d just get to the point where I realized that this wasn&#x27;t the place for me.",
+   "created_at": "2022-03-07T18:43:47Z",
+   "created_at_i": 1646678627,
+   "objectID": "30591646",
+   "parent_id": 30591472,
+   "story_id": 30590045,
+   "story_title": "Ask HN: How do I feel less guilty about bugs?",
+   "updated_at": "2024-09-20T10:41:09Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "fsloth"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "Lots of business users actually prefer monthly subscription over a fixed license. This lets them move the costs from capital costs (CAPEX) to operational costs (OPEX) which finance departments like more.<p>It's <em>not</em> just something software vendors push, it's what many of their clients actually want.<p>Now, as a private user the situation may or may <em>not</em> be completely different. But prefering a monthly license over a fixex license is <em>not</em> a dark pattern as such.<p><em>ARR</em> (annually <em>recurring</em> revenue) or - yeah, monthly licensing - is also something the stock market incentivizes.  Generally stocks have gone up considerably for companies that have moved to subscription based revenue models. For publicly listed companies this is a fairly strong signal as well."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Tell HN: A Conversation Needs to Be Had over Subscription Software"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_fsloth",
+    "story_30021404"
+   ],
+   "author": "fsloth",
+   "comment_text": "Lots of business users actually prefer monthly subscription over a fixed license. This lets them move the costs from capital costs (CAPEX) to operational costs (OPEX) which finance departments like more.<p>It&#x27;s not just something software vendors push, it&#x27;s what many of their clients actually want.<p>Now, as a private user the situation may or may not be completely different. But prefering a monthly license over a fixex license is not a dark pattern as such.<p>ARR (annually recurring revenue) or - yeah, monthly licensing - is also something the stock market incentivizes.  Generally stocks have gone up considerably for companies that have moved to subscription based revenue models. For publicly listed companies this is a fairly strong signal as well.",
+   "created_at": "2022-01-21T14:08:53Z",
+   "created_at_i": 1642774133,
+   "objectID": "30023654",
+   "parent_id": 30021404,
+   "story_id": 30021404,
+   "story_title": "Tell HN: A Conversation Needs to Be Had over Subscription Software",
+   "updated_at": "2024-09-20T10:17:18Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "dhimes"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "Guessing a bit here\u2014 correct me if I'm wrong.  This jargon is utterly foreign to me:<p>SMB = Small to mid-sized business (<em>not</em> server message block)<p>JR = Junior rep?  Jr?<p>AE = Account executive<p><em>ARR</em> = Annual <em>recurring</em> revenue"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Simple Math to Set Up a Sales Team"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://sacks.substack.com/p/simple-math-to-set-up-a-sales-team"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_dhimes",
+    "story_25262819"
+   ],
+   "author": "dhimes",
+   "children": [
+    25265537,
+    25265675
+   ],
+   "comment_text": "Guessing a bit here\u2014 correct me if I&#x27;m wrong.  This jargon is utterly foreign to me:<p>SMB = Small to mid-sized business (not server message block)<p>JR = Junior rep?  Jr?<p>AE = Account executive<p>ARR = Annual recurring revenue",
+   "created_at": "2020-12-01T14:23:45Z",
+   "created_at_i": 1606832625,
+   "objectID": "25265386",
+   "parent_id": 25264903,
+   "story_id": 25262819,
+   "story_title": "Simple Math to Set Up a Sales Team",
+   "story_url": "https://sacks.substack.com/p/simple-math-to-set-up-a-sales-team",
+   "updated_at": "2024-09-20T07:28:54Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "achow"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "&gt;<i>Make me think. Little learning curve is OK..</i><p>The same argument I used to hear when User Interface was transitioning from command line to GUI for many enterprise applications. The inherent flaw in the article is that the author assumes that enterprise users are &quot;power users&quot;. Most often they are <em>not</em>, their job is to sell a product or monitor a process or ensure that bugs are getting fixed on time so that a product can be shipped.<p>They use software to achieve a particular objective, software is a tool <em>not</em> the goal. Tool should be as easy as possible and as idiot proof as possible.<p>And also, it is <em>not</em> that enterprise employees are lifer. There are attrition, people leave jobs, new ones come in, process changes, new methods are introduced etc.<p>&gt; <i>However, while Wizards and guided tours are an excellent solution for casual users, it\u2019s <em>not</em> necessarily the case for power users</i><p>There is literally a multi $billion company who makes guided tours for enterprise software.<p><i>WalkMe is seeing increased growth as of late.. it is now valued at or more than about $2 billion. And, the startup said it surpassed $100 million in annual <em>recurring</em> revenue (<em>ARR</em>) in the second quarter. Meanwhile, in the third quarter, its new business bookings grew 100 percent year-over-year.</i> <a href=\"https://news.crunchbase.com/news/walkme-raises-90m-for-dap-eyes-latin-american-market/\" rel=\"nofollow\">https://news.crunchbase.com/news/walkme-raises-90m-for-dap-e...</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Enterprise UX Design: Make me think"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://adamfard.com/blog/enterprise-ux"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_achow",
+    "story_25197041"
+   ],
+   "author": "achow",
+   "comment_text": "&gt;<i>Make me think. Little learning curve is OK..</i><p>The same argument I used to hear when User Interface was transitioning from command line to GUI for many enterprise applications. The inherent flaw in the article is that the author assumes that enterprise users are &quot;power users&quot;. Most often they are not, their job is to sell a product or monitor a process or ensure that bugs are getting fixed on time so that a product can be shipped.<p>They use software to achieve a particular objective, software is a tool not the goal. Tool should be as easy as possible and as idiot proof as possible.<p>And also, it is not that enterprise employees are lifer. There are attrition, people leave jobs, new ones come in, process changes, new methods are introduced etc.<p>&gt; <i>However, while Wizards and guided tours are an excellent solution for casual users, it\u2019s not necessarily the case for power users</i><p>There is literally a multi $billion company who makes guided tours for enterprise software.<p><i>WalkMe is seeing increased growth as of late.. it is now valued at or more than about $2 billion. And, the startup said it surpassed $100 million in annual recurring revenue (ARR) in the second quarter. Meanwhile, in the third quarter, its new business bookings grew 100 percent year-over-year.</i> <a href=\"https:&#x2F;&#x2F;news.crunchbase.com&#x2F;news&#x2F;walkme-raises-90m-for-dap-eyes-latin-american-market&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;news.crunchbase.com&#x2F;news&#x2F;walkme-raises-90m-for-dap-e...</a>",
+   "created_at": "2020-11-24T18:22:53Z",
+   "created_at_i": 1606242173,
+   "objectID": "25201289",
+   "parent_id": 25197041,
+   "story_id": 25197041,
+   "story_title": "Enterprise UX Design: Make me think",
+   "story_url": "https://adamfard.com/blog/enterprise-ux",
+   "updated_at": "2024-09-20T07:22:56Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tyre"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "Thank you, that's helpful.<p>1) Romulus (<a href=\"https://romulusapp.com\" rel=\"nofollow\">https://romulusapp.com</a>) is a CRM and ticketing cloud service for local governments. Think SalesForce + ZenDesk for constituent services.<p>2) There are 90,000 local governments, each with 10-15 departments that interface directly with constituents and need our software as it is today. <em>ARR</em> per customer (department) is ~$9k.<p>3) 50-100% MoM growth for the past 6 months. Sales is focused on penetrating new cities, then we've had great success with referrals from existing customers.<p>4) Building a better product isn't the hard part, since &quot;best government software&quot; is a super low bar. Innovation is in the business model \u2014 avoid RFPs, find one decision maker, lower CAC with growth through referrals \u2014 which means our growth engine is exactly the same as startups in other sectors.<p>5) Per-user <em>recurring</em> subscription. Right now $40/user/month, lots of room for expansion there.<p>6) Founders were early engineers at Gusto, so we know how to bring delightful products to unsexy problems and build a mission-driven culture. We are passionate about solving this particular problem and have worked for over a year to de-risk the business before asking for investment.<p>7) $2,000,000 to get to $1m <em>ARR</em>, at which point we raise a Series A.<p>P.S.<p>I don't think of fundraising as a reward or a goal in and of itself. It is a means for us to achieve our potential. We hold ourselves to a high bar for product and impact. If potential investors recognize that, cool, but we're <em>not</em> in this to be on TechCrunch."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "HN Office Hours with Michael Seibel and Aaron Harris"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_tyre",
+    "story_10954430"
+   ],
+   "author": "tyre",
+   "children": [
+    10955125
+   ],
+   "comment_text": "Thank you, that&#x27;s helpful.<p>1) Romulus (<a href=\"https:&#x2F;&#x2F;romulusapp.com\" rel=\"nofollow\">https:&#x2F;&#x2F;romulusapp.com</a>) is a CRM and ticketing cloud service for local governments. Think SalesForce + ZenDesk for constituent services.<p>2) There are 90,000 local governments, each with 10-15 departments that interface directly with constituents and need our software as it is today. ARR per customer (department) is ~$9k.<p>3) 50-100% MoM growth for the past 6 months. Sales is focused on penetrating new cities, then we&#x27;ve had great success with referrals from existing customers.<p>4) Building a better product isn&#x27;t the hard part, since &quot;best government software&quot; is a super low bar. Innovation is in the business model \u2014 avoid RFPs, find one decision maker, lower CAC with growth through referrals \u2014 which means our growth engine is exactly the same as startups in other sectors.<p>5) Per-user recurring subscription. Right now $40&#x2F;user&#x2F;month, lots of room for expansion there.<p>6) Founders were early engineers at Gusto, so we know how to bring delightful products to unsexy problems and build a mission-driven culture. We are passionate about solving this particular problem and have worked for over a year to de-risk the business before asking for investment.<p>7) $2,000,000 to get to $1m ARR, at which point we raise a Series A.<p>P.S.<p>I don&#x27;t think of fundraising as a reward or a goal in and of itself. It is a means for us to achieve our potential. We hold ourselves to a high bar for product and impact. If potential investors recognize that, cool, but we&#x27;re not in this to be on TechCrunch.",
+   "created_at": "2016-01-22T19:42:03Z",
+   "created_at_i": 1453491723,
+   "objectID": "10955073",
+   "parent_id": 10955029,
+   "story_id": 10954430,
+   "story_title": "HN Office Hours with Michael Seibel and Aaron Harris",
+   "updated_at": "2024-09-19T22:46:16Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "vskarine"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "VC/ Legals<p>TS = Term Sheet, a sheet summarizing the commercials of an investment agreement contract<p>SHA = Shareholders Agreement, the contract defining the relationship amongst the company and the shareholders and amongst the shareholders<p>CT = Cap Table or Capitalization Table, a document (usually a spreadsheet) that states who owns what % of shares in the company<p>ROFR = Right of First Refusal, in case existing shares of the company are sold, shareholders with a ROFR will have the option to buy those shares, ratably, before they are offered to new investors<p>Liq Pref = Liquidation Preference, a right attached to a specific class of shares that regulates the order of priority in case of a liquiditiy event (simply put: who gets the $ first in case there is <em>not</em> enough to make everybody happy)<p>Pre = Pre Money or Pre Money Valuation, one key term of the term sheet, it is the valuation of the company that determines the price per share for a capital increase<p>Post =Post Money or Post Money Valuation, Post = Pre + capital injection<p>LPs = Limited Partners, these are the investors of the VC funds<p>GPs = General Partners, there are commonly known as Partners and are the manager of the VC fund, deciding the allocation of the investments\nGeneral Financials<p>KPIs = Key Performance Indicators, a set of numbers/ ratios displaying the performance of a company<p>GMV = Gross Merchandise Value, total monetary value of transactions taking place on a marketplace<p>MRR = Monthly <em>Recurring</em> Revenues, the kind of revenues that SaaS and subscription based companies are earning<p><em>ARR</em> = Annual <em>Recurring</em> Revenues, MRRx12<p>EBITDA = Earnings Before Interests Taxes Depreciation Amortization<p>EBIT = Earnings Before Interests Taxes<p>COGS = Cost Of Goods Sold<p>LTM = Last Twelve Months<p>YTD = Year To Date<p>MoM = Month on Month<p>YoY = Year on Year<p>H1/H2 =1st Half of the year/ 2nd Half of the year<p>Q1/Q2\u2026= 1st Quarter of the year/ 2nd Quarter of the year\u2026<p>FY = Fiscal Year<p>CAGR = Compound Annual Growth Rate<p>CAPEX = Capital Expenditure, expenditures required by a company to improve operations, it can be for example the purchase of machinery and properties<p>IPO = Initial Public Offering, when a company offers its shares to the public markets and gets listed<p>VC Financials<p>ROI = Return On Investment, Return/ Investment -1<p>Money Multiple = Shares Value now/ Total Investment<p>Valuation Multiple = Company Valuation now / Company \nValuation at the time of initial investment<p>IRR = Internal Rate of Return<p>EV = Enterprise Value, the equity value + debt value (net of cash)<p>NAV = Net Asset Value, the total valuation of the assets in a fund<p>AUM = Assets Under Management, basically how many $ a VC fund is managing<p>MF = Management Fees, a fixed % of the AUM through which VCs finance the fixed costs of running a VC fund"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "30+ VC jargons and acronyms you should know"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://medium.com/@federicowengi/do-you-speak-vc-30-jargons-and-acronyms-you-should-know-cfeca9e37945"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_vskarine",
+    "story_10475449"
+   ],
+   "author": "vskarine",
+   "comment_text": "VC&#x2F; Legals<p>TS = Term Sheet, a sheet summarizing the commercials of an investment agreement contract<p>SHA = Shareholders Agreement, the contract defining the relationship amongst the company and the shareholders and amongst the shareholders<p>CT = Cap Table or Capitalization Table, a document (usually a spreadsheet) that states who owns what % of shares in the company<p>ROFR = Right of First Refusal, in case existing shares of the company are sold, shareholders with a ROFR will have the option to buy those shares, ratably, before they are offered to new investors<p>Liq Pref = Liquidation Preference, a right attached to a specific class of shares that regulates the order of priority in case of a liquiditiy event (simply put: who gets the $ first in case there is not enough to make everybody happy)<p>Pre = Pre Money or Pre Money Valuation, one key term of the term sheet, it is the valuation of the company that determines the price per share for a capital increase<p>Post =Post Money or Post Money Valuation, Post = Pre + capital injection<p>LPs = Limited Partners, these are the investors of the VC funds<p>GPs = General Partners, there are commonly known as Partners and are the manager of the VC fund, deciding the allocation of the investments\nGeneral Financials<p>KPIs = Key Performance Indicators, a set of numbers&#x2F; ratios displaying the performance of a company<p>GMV = Gross Merchandise Value, total monetary value of transactions taking place on a marketplace<p>MRR = Monthly Recurring Revenues, the kind of revenues that SaaS and subscription based companies are earning<p>ARR = Annual Recurring Revenues, MRRx12<p>EBITDA = Earnings Before Interests Taxes Depreciation Amortization<p>EBIT = Earnings Before Interests Taxes<p>COGS = Cost Of Goods Sold<p>LTM = Last Twelve Months<p>YTD = Year To Date<p>MoM = Month on Month<p>YoY = Year on Year<p>H1&#x2F;H2 =1st Half of the year&#x2F; 2nd Half of the year<p>Q1&#x2F;Q2\u2026= 1st Quarter of the year&#x2F; 2nd Quarter of the year\u2026<p>FY = Fiscal Year<p>CAGR = Compound Annual Growth Rate<p>CAPEX = Capital Expenditure, expenditures required by a company to improve operations, it can be for example the purchase of machinery and properties<p>IPO = Initial Public Offering, when a company offers its shares to the public markets and gets listed<p>VC Financials<p>ROI = Return On Investment, Return&#x2F; Investment -1<p>Money Multiple = Shares Value now&#x2F; Total Investment<p>Valuation Multiple = Company Valuation now &#x2F; Company \nValuation at the time of initial investment<p>IRR = Internal Rate of Return<p>EV = Enterprise Value, the equity value + debt value (net of cash)<p>NAV = Net Asset Value, the total valuation of the assets in a fund<p>AUM = Assets Under Management, basically how many $ a VC fund is managing<p>MF = Management Fees, a fixed % of the AUM through which VCs finance the fixed costs of running a VC fund",
+   "created_at": "2015-10-30T00:28:28Z",
+   "created_at_i": 1446164908,
+   "objectID": "10475464",
+   "parent_id": 10475449,
+   "points": null,
+   "story_id": 10475449,
+   "story_title": "30+ VC jargons and acronyms you should know",
+   "story_url": "https://medium.com/@federicowengi/do-you-speak-vc-30-jargons-and-acronyms-you-should-know-cfeca9e37945",
+   "updated_at": "2023-09-06T23:58:14Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "uchooseyourself"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "My reasoning was &quot;what if an HN reader is trying to rent their apartment in Paris&quot;. The probability is so low, but for problems that <em>are</em> <em>not</em> usually <em>recurring</em>, you can find help in the most unexpected places.<p>PS: I am <em>not</em> relying on HN for this, I am using other rent specialised services as well. This was just a message sent out in the universe, if caught by the right eye I'll go from 0 to 1, otherwise, I am staying in 0, <em>not</em> going to -1.<p>Thanks!"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "[dead]"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_uchooseyourself",
+    "story_8546467"
+   ],
+   "author": "uchooseyourself",
+   "comment_text": "My reasoning was &quot;what if an HN reader is trying to rent their apartment in Paris&quot;. The probability is so low, but for problems that are not usually recurring, you can find help in the most unexpected places.<p>PS: I am not relying on HN for this, I am using other rent specialised services as well. This was just a message sent out in the universe, if caught by the right eye I&#x27;ll go from 0 to 1, otherwise, I am staying in 0, not going to -1.<p>Thanks!",
+   "created_at": "2014-11-02T15:01:14Z",
+   "created_at_i": 1414940474,
+   "objectID": "8546724",
+   "parent_id": 8546572,
+   "story_id": 8546467,
+   "story_title": "[dead]",
+   "updated_at": "2024-09-19T21:17:22Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "recursive"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "It's <em>not</em> trivial for me.  All my life I've struggled to attend to scheduled events that <em>are</em> <em>not</em> regularly <em>recurring</em>.  I've missed midterm exams in college.  I've missed band gigs I was scheduled to play in.  I've accidentally stood people up in social outings.  I've missed credit card payments.  (solved that one with auto-pay) I have calendars and email accounts, and they <i>usually</i> work, but sometimes I miss the notification or forget to check the calendar.<p>For me, if I was going to plan to cancel something in the future, then instead of scheduling it, I'd just do it <i>now</i> before the thought goes out of my head."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Get free Claude max 20x for open-source maintainers"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://claude.com/contact-sales/claude-for-oss"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_recursive",
+    "story_47178371"
+   ],
+   "author": "recursive",
+   "comment_text": "It&#x27;s not trivial for me.  All my life I&#x27;ve struggled to attend to scheduled events that are not regularly recurring.  I&#x27;ve missed midterm exams in college.  I&#x27;ve missed band gigs I was scheduled to play in.  I&#x27;ve accidentally stood people up in social outings.  I&#x27;ve missed credit card payments.  (solved that one with auto-pay) I have calendars and email accounts, and they <i>usually</i> work, but sometimes I miss the notification or forget to check the calendar.<p>For me, if I was going to plan to cancel something in the future, then instead of scheduling it, I&#x27;d just do it <i>now</i> before the thought goes out of my head.",
+   "created_at": "2026-02-27T19:12:49Z",
+   "created_at_i": 1772219569,
+   "objectID": "47184341",
+   "parent_id": 47182676,
+   "story_id": 47178371,
+   "story_title": "Get free Claude max 20x for open-source maintainers",
+   "story_url": "https://claude.com/contact-sales/claude-for-oss",
+   "updated_at": "2026-03-05T23:38:42Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tonymet"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "I've built Healthcare SAAS APIs that required custom integrations with EHR partners, as well as consulted on similar apps for others.<p>On top of common OWASP vulnerabilities, the bigger concern is that EHR and provider service apps do <em>not</em> have the robust security practices needed to defend against attacks.  They aren't doing active pen testing, red-teaming, supply chain auditing -- all of the <em>recurring</em> and costly practices necessary to ensure asset security.<p>There <em>are</em> many regulations, HIPAA being the most notable, but their requirements and the audit process <em>are</em> incredibly primitive .  They <em>are</em> still using a 1990s threat model.  Despite HIPAA audits being expensive, the discoveries <em>are</em> trivial, and they <em>are</em> <em>not</em> <em>recurring</em>, so vulns can originate between the audit duration and the audit summary delivery."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Health care data breach affects over 600k patients, Illinois agency says"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.nprillinois.org/illinois/2026-01-06/health-care-data-breach-affects-600-000-patients-illinois-agency-says"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_tonymet",
+    "story_46528353"
+   ],
+   "author": "tonymet",
+   "comment_text": "I&#x27;ve built Healthcare SAAS APIs that required custom integrations with EHR partners, as well as consulted on similar apps for others.<p>On top of common OWASP vulnerabilities, the bigger concern is that EHR and provider service apps do not have the robust security practices needed to defend against attacks.  They aren&#x27;t doing active pen testing, red-teaming, supply chain auditing -- all of the recurring and costly practices necessary to ensure asset security.<p>There are many regulations, HIPAA being the most notable, but their requirements and the audit process are incredibly primitive .  They are still using a 1990s threat model.  Despite HIPAA audits being expensive, the discoveries are trivial, and they are not recurring, so vulns can originate between the audit duration and the audit summary delivery.",
+   "created_at": "2026-01-07T20:35:32Z",
+   "created_at_i": 1767818132,
+   "objectID": "46532232",
+   "parent_id": 46528353,
+   "story_id": 46528353,
+   "story_title": "Health care data breach affects over 600k patients, Illinois agency says",
+   "story_url": "https://www.nprillinois.org/illinois/2026-01-06/health-care-data-breach-affects-600-000-patients-illinois-agency-says",
+   "updated_at": "2026-03-05T23:18:37Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Aurornis"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "The users' comment history does read like generic LLM output. Look at the first lines of different comments:<p>&gt; Interesting point about Cranelift! I've been following its development for a while, and it seems like there's always something new popping up.<p>&gt; Interesting point about the color analysis! It kinda reminds me of how album art used to be such a significant part of music culture.<p>&gt; Interesting point about the ESP32 and music playback! I've been tinkering with similar projects, and it\u2019s wild how much potential these little devices have.<p>&gt; We used to own tools that made us productive. Now we rent tools that make someone else profitable. Subscriptions <em>are</em> <em>not</em> about <em>recurring</em> value but <em>recurring</em> billing<p>&gt; Meshtastic is interesting because it's basically &quot;LoRa-first networking&quot; instead of &quot;internet with some radios attached.&quot; Most consumer radios <em>are</em> still stuck in the mental model of walkie-talkies, while Meshtastic treats RF as an IP-like transport layer you can script, automate, and extend. That flips the stack:<p>&gt; This is the collision between two cultures that were never meant to share the same data: &quot;move fast and duct-tape APIs together&quot; startup engineering, and &quot;if this leaks we ruin people's lives&quot; legal/medical confidentiality.<p>The repeated prefixes (Interesting point about!) and the classic it's-this-<em>not</em>-that LLM pattern <em>are</em> definitely triggering my LLM suspicions.<p>I suspect most of these cases aren't bots, they're users who put their thoughts, possibly in another language, into an LLM and ask it to form the comment for them. They like the text they see so they copy and paste it into HN."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Reverse engineering a $1B Legal AI tool exposed 100k+ confidential files"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://alexschapiro.com/security/vulnerability/2025/12/02/filevine-api-100k"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_Aurornis",
+    "story_46137514"
+   ],
+   "author": "Aurornis",
+   "children": [
+    46139794,
+    46139871
+   ],
+   "comment_text": "The users&#x27; comment history does read like generic LLM output. Look at the first lines of different comments:<p>&gt; Interesting point about Cranelift! I&#x27;ve been following its development for a while, and it seems like there&#x27;s always something new popping up.<p>&gt; Interesting point about the color analysis! It kinda reminds me of how album art used to be such a significant part of music culture.<p>&gt; Interesting point about the ESP32 and music playback! I&#x27;ve been tinkering with similar projects, and it\u2019s wild how much potential these little devices have.<p>&gt; We used to own tools that made us productive. Now we rent tools that make someone else profitable. Subscriptions are not about recurring value but recurring billing<p>&gt; Meshtastic is interesting because it&#x27;s basically &quot;LoRa-first networking&quot; instead of &quot;internet with some radios attached.&quot; Most consumer radios are still stuck in the mental model of walkie-talkies, while Meshtastic treats RF as an IP-like transport layer you can script, automate, and extend. That flips the stack:<p>&gt; This is the collision between two cultures that were never meant to share the same data: &quot;move fast and duct-tape APIs together&quot; startup engineering, and &quot;if this leaks we ruin people&#x27;s lives&quot; legal&#x2F;medical confidentiality.<p>The repeated prefixes (Interesting point about!) and the classic it&#x27;s-this-not-that LLM pattern are definitely triggering my LLM suspicions.<p>I suspect most of these cases aren&#x27;t bots, they&#x27;re users who put their thoughts, possibly in another language, into an LLM and ask it to form the comment for them. They like the text they see so they copy and paste it into HN.",
+   "created_at": "2025-12-03T19:52:46Z",
+   "created_at_i": 1764791566,
+   "objectID": "46139162",
+   "parent_id": 46138028,
+   "story_id": 46137514,
+   "story_title": "Reverse engineering a $1B Legal AI tool exposed 100k+ confidential files",
+   "story_url": "https://alexschapiro.com/security/vulnerability/2025/12/02/filevine-api-100k",
+   "updated_at": "2026-03-05T23:06:45Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "quapster"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "We used to own tools that made us productive. Now we rent tools that make someone else profitable. Subscriptions <em>are</em> <em>not</em> about <em>recurring</em> value but <em>recurring</em> billing and at some point every product decision starts bending toward dependence instead of ownership."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "You will own nothing and be (un)happy"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://racc.blog/you-will-own-nothing-and-be-unhappy/"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_quapster",
+    "story_45897016"
+   ],
+   "author": "quapster",
+   "children": [
+    45897664,
+    45897704
+   ],
+   "comment_text": "We used to own tools that made us productive. Now we rent tools that make someone else profitable. Subscriptions are not about recurring value but recurring billing and at some point every product decision starts bending toward dependence instead of ownership.",
+   "created_at": "2025-11-12T07:58:47Z",
+   "created_at_i": 1762934327,
+   "objectID": "45897476",
+   "parent_id": 45897016,
+   "story_id": 45897016,
+   "story_title": "You will own nothing and be (un)happy",
+   "story_url": "https://racc.blog/you-will-own-nothing-and-be-unhappy/",
+   "updated_at": "2026-03-05T23:02:20Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "scheeseman486"
+    },
+    "comment_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "arr",
+      "not",
+      "recurring"
+     ],
+     "value": "I don't think I've ever read any solid refutation of the technical choices of the project, mostly just character attacks, the basis of which <em>are</em> dodgy at best. They're completely up-front about the limitations and catches of their choices, too.<p>Those links don't really help your case, to be frank. Nothing strcat says reads as incorrect or even particularly controversial, they have personal beef with CalyxOS but their criticisms of the choices of the project <em>are</em> largely on point. They're justifiably upset by the mental health accusations too, it's kind of a joke that one of those people in the thread tried to gaslight strcat about how these accusations <em>are</em> somehow <em>not</em> a <em>recurring</em> issue when I, as a third party observer, have seen it come up <i>all the fucking time</i>.<p>Meanwhile, you're imagining &quot;attacks&quot; on GNU/Linux phones, when most of what I read from them regarding those was sober and reasonable, if not particularly positive, but they're allowed to do that. Their priorities are clearly security and none of those phones really have any."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "FreeDroidWarn"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://github.com/woheller69/FreeDroidWarn"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_scheeseman486",
+    "story_45098722"
+   ],
+   "author": "scheeseman486",
+   "children": [
+    45101400,
+    45101524,
+    45229248
+   ],
+   "comment_text": "I don&#x27;t think I&#x27;ve ever read any solid refutation of the technical choices of the project, mostly just character attacks, the basis of which are dodgy at best. They&#x27;re completely up-front about the limitations and catches of their choices, too.<p>Those links don&#x27;t really help your case, to be frank. Nothing strcat says reads as incorrect or even particularly controversial, they have personal beef with CalyxOS but their criticisms of the choices of the project are largely on point. They&#x27;re justifiably upset by the mental health accusations too, it&#x27;s kind of a joke that one of those people in the thread tried to gaslight strcat about how these accusations are somehow not a recurring issue when I, as a third party observer, have seen it come up <i>all the fucking time</i>.<p>Meanwhile, you&#x27;re imagining &quot;attacks&quot; on GNU&#x2F;Linux phones, when most of what I read from them regarding those was sober and reasonable, if not particularly positive, but they&#x27;re allowed to do that. Their priorities are clearly security and none of those phones really have any.",
+   "created_at": "2025-09-02T10:27:56Z",
+   "created_at_i": 1756808876,
+   "objectID": "45101177",
+   "parent_id": 45100831,
+   "story_id": 45098722,
+   "story_title": "FreeDroidWarn",
+   "story_url": "https://github.com/woheller69/FreeDroidWarn",
+   "updated_at": "2026-03-19T10:02:18Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "cronelius"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "6 year customer cycles are not recurring revenue. they want your money monthly and annually"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "More on Apple's Trust-Eroding 'F1 the Movie' Wallet Ad"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://daringfireball.net/2025/06/more_on_apples_trust-eroding_f1_the_movie_wallet_ad"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_cronelius",
+    "story_44411069"
+   ],
+   "author": "cronelius",
+   "comment_text": "6 year customer cycles are not recurring revenue. they want your money monthly and annually",
+   "created_at": "2025-06-29T15:16:14Z",
+   "created_at_i": 1751210174,
+   "objectID": "44413787",
+   "parent_id": 44413770,
+   "story_id": 44411069,
+   "story_title": "More on Apple's Trust-Eroding 'F1 the Movie' Wallet Ad",
+   "story_url": "https://daringfireball.net/2025/06/more_on_apples_trust-eroding_f1_the_movie_wallet_ad",
+   "updated_at": "2025-06-29T17:58:55Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "shelled"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "It's mostly what I use daily or a lot (except one these are not recurring; I will try to make these recurring once I am financially there again):<p>- <a href=\"https://objective-see.org/support.html\" rel=\"nofollow\">https://objective-see.org/support.html</a> (For <a href=\"https://github.com/objective-see/LuLu\">https://github.com/objective-see/LuLu</a> et al)<p>- <a href=\"https://www.thunderbird.net/donate\" rel=\"nofollow\">https://www.thunderbird.net/donate</a> (I hope none of it goes to Mozilla or Firefox. I also hope <a href=\"https://thundermail.com\" rel=\"nofollow\">https://thundermail.com</a> brings something than I can instead pay for, if I can or will decide to <i>afford</i>, instead of intermittent donations)<p>- <a href=\"https://www.borgbackup.org/support/fund.html\" rel=\"nofollow\">https://www.borgbackup.org/support/fund.html</a> (I would want to support <a href=\"https://restic.net\" rel=\"nofollow\">https://restic.net</a> as well as I use it so much but they never setup a way - it has been discussed :/)<p>- <a href=\"https://syncthing.net/donations\" rel=\"nofollow\">https://syncthing.net/donations</a><p>- <a href=\"https://github.com/Homebrew/brew#donations\">https://github.com/Homebrew/brew#donations</a><p>- <a href=\"https://cryptomator.org/donate/\" rel=\"nofollow\">https://cryptomator.org/donate/</a><p>- <a href=\"https://www.patreon.com/db4s\" rel=\"nofollow\">https://www.patreon.com/db4s</a><p>- <a href=\"https://github.com/sponsors/qarmin\">https://github.com/sponsors/qarmin</a> for <a href=\"https://github.com/qarmin/czkawka\">https://github.com/qarmin/czkawka</a><p>- <a href=\"https://github.com/sponsors/garethgeorge\">https://github.com/sponsors/garethgeorge</a> for <a href=\"https://github.com/garethgeorge/backrest\">https://github.com/garethgeorge/backrest</a><p>- <a href=\"https://keepass.info/donate.html\" rel=\"nofollow\">https://keepass.info/donate.html</a> and <a href=\"https://keepassium.com/donate\" rel=\"nofollow\">https://keepassium.com/donate</a> (Mostly the latter) (I had actually moved to StrongBox which did a U-turn on FOSS and then sold to another company. At that point I came back to KeePassium. The KeepPassium author actually took a stand a went FOSS as a principle. I think this is worth noting.)<p>..and few more.<p>\u2026\n\u2026<p># The ones I support by paying for one of its services bust mostly because its FOSS app:<p>- <a href=\"https://vorta.borgbase.com\" rel=\"nofollow\">https://vorta.borgbase.com</a><p>- <a href=\"http://ente.io\" rel=\"nofollow\">http://ente.io</a> (But sadly not for long; because I really can't stand a non-native &quot;photos&quot; app. I just can't! Otherwise it's a great service!)"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: What projects do you donate to?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_shelled",
+    "story_44071321"
+   ],
+   "author": "shelled",
+   "children": [
+    44105310
+   ],
+   "comment_text": "It&#x27;s mostly what I use daily or a lot (except one these are not recurring; I will try to make these recurring once I am financially there again):<p>- <a href=\"https:&#x2F;&#x2F;objective-see.org&#x2F;support.html\" rel=\"nofollow\">https:&#x2F;&#x2F;objective-see.org&#x2F;support.html</a> (For <a href=\"https:&#x2F;&#x2F;github.com&#x2F;objective-see&#x2F;LuLu\">https:&#x2F;&#x2F;github.com&#x2F;objective-see&#x2F;LuLu</a> et al)<p>- <a href=\"https:&#x2F;&#x2F;www.thunderbird.net&#x2F;donate\" rel=\"nofollow\">https:&#x2F;&#x2F;www.thunderbird.net&#x2F;donate</a> (I hope none of it goes to Mozilla or Firefox. I also hope <a href=\"https:&#x2F;&#x2F;thundermail.com\" rel=\"nofollow\">https:&#x2F;&#x2F;thundermail.com</a> brings something than I can instead pay for, if I can or will decide to <i>afford</i>, instead of intermittent donations)<p>- <a href=\"https:&#x2F;&#x2F;www.borgbackup.org&#x2F;support&#x2F;fund.html\" rel=\"nofollow\">https:&#x2F;&#x2F;www.borgbackup.org&#x2F;support&#x2F;fund.html</a> (I would want to support <a href=\"https:&#x2F;&#x2F;restic.net\" rel=\"nofollow\">https:&#x2F;&#x2F;restic.net</a> as well as I use it so much but they never setup a way - it has been discussed :&#x2F;)<p>- <a href=\"https:&#x2F;&#x2F;syncthing.net&#x2F;donations\" rel=\"nofollow\">https:&#x2F;&#x2F;syncthing.net&#x2F;donations</a><p>- <a href=\"https:&#x2F;&#x2F;github.com&#x2F;Homebrew&#x2F;brew#donations\">https:&#x2F;&#x2F;github.com&#x2F;Homebrew&#x2F;brew#donations</a><p>- <a href=\"https:&#x2F;&#x2F;cryptomator.org&#x2F;donate&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;cryptomator.org&#x2F;donate&#x2F;</a><p>- <a href=\"https:&#x2F;&#x2F;www.patreon.com&#x2F;db4s\" rel=\"nofollow\">https:&#x2F;&#x2F;www.patreon.com&#x2F;db4s</a><p>- <a href=\"https:&#x2F;&#x2F;github.com&#x2F;sponsors&#x2F;qarmin\">https:&#x2F;&#x2F;github.com&#x2F;sponsors&#x2F;qarmin</a> for <a href=\"https:&#x2F;&#x2F;github.com&#x2F;qarmin&#x2F;czkawka\">https:&#x2F;&#x2F;github.com&#x2F;qarmin&#x2F;czkawka</a><p>- <a href=\"https:&#x2F;&#x2F;github.com&#x2F;sponsors&#x2F;garethgeorge\">https:&#x2F;&#x2F;github.com&#x2F;sponsors&#x2F;garethgeorge</a> for <a href=\"https:&#x2F;&#x2F;github.com&#x2F;garethgeorge&#x2F;backrest\">https:&#x2F;&#x2F;github.com&#x2F;garethgeorge&#x2F;backrest</a><p>- <a href=\"https:&#x2F;&#x2F;keepass.info&#x2F;donate.html\" rel=\"nofollow\">https:&#x2F;&#x2F;keepass.info&#x2F;donate.html</a> and <a href=\"https:&#x2F;&#x2F;keepassium.com&#x2F;donate\" rel=\"nofollow\">https:&#x2F;&#x2F;keepassium.com&#x2F;donate</a> (Mostly the latter) (I had actually moved to StrongBox which did a U-turn on FOSS and then sold to another company. At that point I came back to KeePassium. The KeepPassium author actually took a stand a went FOSS as a principle. I think this is worth noting.)<p>..and few more.<p>\u2026\n\u2026<p># The ones I support by paying for one of its services bust mostly because its FOSS app:<p>- <a href=\"https:&#x2F;&#x2F;vorta.borgbase.com\" rel=\"nofollow\">https:&#x2F;&#x2F;vorta.borgbase.com</a><p>- <a href=\"http:&#x2F;&#x2F;ente.io\" rel=\"nofollow\">http:&#x2F;&#x2F;ente.io</a> (But sadly not for long; because I really can&#x27;t stand a non-native &quot;photos&quot; app. I just can&#x27;t! Otherwise it&#x27;s a great service!)",
+   "created_at": "2025-05-27T07:21:14Z",
+   "created_at_i": 1748330474,
+   "objectID": "44104673",
+   "parent_id": 44071321,
+   "story_id": 44071321,
+   "story_title": "Ask HN: What projects do you donate to?",
+   "updated_at": "2025-05-27T10:28:17Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "basisword"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "My understanding is that the whole point of SaaS (software as a service) is that users pay you an ongoing fee for use of your software (i.e. a subscription). What you're doing is selling a product and will probably need a much more significant ongoing sales effort whereas with SaaS, past a certain point, you only need to sign up enough new subscribers to cover your churn. You mention 9 prior ideas with $0 MRR - this idea also has $0 MRR (monthly recurring revenue) as one time payments are not recurring. You need to decide what you want - to build a product you sell for a one-time fee, or to create a subscription based product."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: 57 sales totaling $1,539 for micro-SaaS? Is the idea dead?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_basisword",
+    "story_39626567"
+   ],
+   "author": "basisword",
+   "comment_text": "My understanding is that the whole point of SaaS (software as a service) is that users pay you an ongoing fee for use of your software (i.e. a subscription). What you&#x27;re doing is selling a product and will probably need a much more significant ongoing sales effort whereas with SaaS, past a certain point, you only need to sign up enough new subscribers to cover your churn. You mention 9 prior ideas with $0 MRR - this idea also has $0 MRR (monthly recurring revenue) as one time payments are not recurring. You need to decide what you want - to build a product you sell for a one-time fee, or to create a subscription based product.",
+   "created_at": "2024-03-08T21:37:36Z",
+   "created_at_i": 1709933856,
+   "objectID": "39646801",
+   "parent_id": 39626567,
+   "story_id": 39626567,
+   "story_title": "Ask HN: 57 sales totaling $1,539 for micro-SaaS? Is the idea dead?",
+   "updated_at": "2024-09-20T16:37:21Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "wsh"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The author writes, about his purchases of computers, phones, and other hardware, \u201cThese are not recurring so I can't count them in.\u201d<p>Here in the U.S., many such items would be considered capital assets, for which the cost would be recognized as an expense over time through depreciation, for both management accounting and tax purposes. It appears Romanian practice is similar; see \u201cDepreciation\u201d on this page:<p><a href=\"https://taxsummaries.pwc.com/romania/corporate/deductions\" rel=\"nofollow noreferrer\">https://taxsummaries.pwc.com/romania/corporate/deductions</a>"
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Costs of running a macOS app studio business"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://notes.alinpanaitiu.com/Costs-of-running-a-macOS-app-studio-business"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_wsh",
+    "story_38756029"
+   ],
+   "author": "wsh",
+   "children": [
+    38757599,
+    38757743
+   ],
+   "comment_text": "The author writes, about his purchases of computers, phones, and other hardware, \u201cThese are not recurring so I can&#x27;t count them in.\u201d<p>Here in the U.S., many such items would be considered capital assets, for which the cost would be recognized as an expense over time through depreciation, for both management accounting and tax purposes. It appears Romanian practice is similar; see \u201cDepreciation\u201d on this page:<p><a href=\"https:&#x2F;&#x2F;taxsummaries.pwc.com&#x2F;romania&#x2F;corporate&#x2F;deductions\" rel=\"nofollow noreferrer\">https:&#x2F;&#x2F;taxsummaries.pwc.com&#x2F;romania&#x2F;corporate&#x2F;deductions</a>",
+   "created_at": "2023-12-24T22:03:39Z",
+   "created_at_i": 1703455419,
+   "objectID": "38757374",
+   "parent_id": 38756029,
+   "story_id": 38756029,
+   "story_title": "Costs of running a macOS app studio business",
+   "story_url": "https://notes.alinpanaitiu.com/Costs-of-running-a-macOS-app-studio-business",
+   "updated_at": "2024-09-20T16:01:53Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "hinkley"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Yeah my impression of a therapeutic setting would be an asymptotic progression of a few doses in short intervals with an exponential back-off ending in no further uses or perhaps once a year.<p>Resets are not a recurring situation. I'd take it as a sign of using the treatment in bad faith."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "MDMA-assisted therapy for PTSD: A randomized, placebo-controlled phase 3 trial"
+    },
+    "story_url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.nature.com/articles/s41591-023-02565-4"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_hinkley",
+    "story_37529459"
+   ],
+   "author": "hinkley",
+   "comment_text": "Yeah my impression of a therapeutic setting would be an asymptotic progression of a few doses in short intervals with an exponential back-off ending in no further uses or perhaps once a year.<p>Resets are not a recurring situation. I&#x27;d take it as a sign of using the treatment in bad faith.",
+   "created_at": "2023-09-15T23:27:35Z",
+   "created_at_i": 1694820455,
+   "objectID": "37530307",
+   "parent_id": 37530278,
+   "story_id": 37529459,
+   "story_title": "MDMA-assisted therapy for PTSD: A randomized, placebo-controlled phase 3 trial",
+   "story_url": "https://www.nature.com/articles/s41591-023-02565-4",
+   "updated_at": "2024-09-20T15:09:48Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "drakonka"
+    },
+    "comment_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "I work at a distributed company with teammates all over the world and the founders in the US, while I'm in Europe. My meetings are often in the late afternoon or evening for this reason, which I've grown to really enjoy. Here's what I find helps:<p>* As a company, we've largely leaned into asynchronous communication and many/most things just don't need a meeting.<p>* The company and team are aware that we have people everywhere, and try to find reasonable hours for meetings. Next week, a meeting ending at 18.30 my time is the latest meeting I have. Nobody expects me to be present for very late meetings in my time zone (though if it was unavoidable I would still join).<p>* I try to bundle my meetings on the same day. I'd rather have a few meetings back to back that go later rather than have meetings in the afternoon/evening on every day of the week. This works for me for early meetings as well, when they do come up: I just prefer to have as many days as possible completely meeting-free. If a new mandatory recurring meeting is scheduled on one of my &quot;meeting-free&quot; days, I see if I can reshuffle my calendar to bring those blocks of meetings together again. Because there are not many recurring meetings, this is often possible.<p>* I've marked &quot;Ideal meeting hours&quot; in my calendar on my three &quot;meeting-preferred&quot; days, and those meeting hours go from later afternoon to evening in my time zone. This allows my teammates to schedule impromptu meetings on days that still suit me best (whenever possible, which is often).<p>* I think of my morning-early afternoon hours as my focused work hours because I rarely have meetings then, and accept that late afternoons are likely to be more hand-wavy and talky. This also allows me to mentally prepare for synchronous interaction in advance and not feel like I'm just hopping in and out of meetings all the time. On days when I have evening meetings coming up, I've learned to be OK with starting a bit later or taking a longer lunch. My day is simply offset to accommodate for the meeting times, not extended (at least that's the attempt, I'm not always successful with this).<p>* I make it very clear to my manager that I like minimizing meetings and having more time for focused work, and prefer async communication. Some people are just more into meetings and feel that seeing someone face to face works best for them, and I make it clear that while of course I'll attend whatever meetings are needed, I am not one of those people who ever _prefers_ a meeting over other options.<p>I realize some or all of the above could be more complicated in a manager position, but in a well set up distributed team I think it should be manageable to avoid burning out both ICs and managers like this."
+    },
+    "story_title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ask HN: Is it possible to have a structured work day in software dev?"
+    }
+   },
+   "_tags": [
+    "comment",
+    "author_drakonka",
+    "story_33296415"
+   ],
+   "author": "drakonka",
+   "comment_text": "I work at a distributed company with teammates all over the world and the founders in the US, while I&#x27;m in Europe. My meetings are often in the late afternoon or evening for this reason, which I&#x27;ve grown to really enjoy. Here&#x27;s what I find helps:<p>* As a company, we&#x27;ve largely leaned into asynchronous communication and many&#x2F;most things just don&#x27;t need a meeting.<p>* The company and team are aware that we have people everywhere, and try to find reasonable hours for meetings. Next week, a meeting ending at 18.30 my time is the latest meeting I have. Nobody expects me to be present for very late meetings in my time zone (though if it was unavoidable I would still join).<p>* I try to bundle my meetings on the same day. I&#x27;d rather have a few meetings back to back that go later rather than have meetings in the afternoon&#x2F;evening on every day of the week. This works for me for early meetings as well, when they do come up: I just prefer to have as many days as possible completely meeting-free. If a new mandatory recurring meeting is scheduled on one of my &quot;meeting-free&quot; days, I see if I can reshuffle my calendar to bring those blocks of meetings together again. Because there are not many recurring meetings, this is often possible.<p>* I&#x27;ve marked &quot;Ideal meeting hours&quot; in my calendar on my three &quot;meeting-preferred&quot; days, and those meeting hours go from later afternoon to evening in my time zone. This allows my teammates to schedule impromptu meetings on days that still suit me best (whenever possible, which is often).<p>* I think of my morning-early afternoon hours as my focused work hours because I rarely have meetings then, and accept that late afternoons are likely to be more hand-wavy and talky. This also allows me to mentally prepare for synchronous interaction in advance and not feel like I&#x27;m just hopping in and out of meetings all the time. On days when I have evening meetings coming up, I&#x27;ve learned to be OK with starting a bit later or taking a longer lunch. My day is simply offset to accommodate for the meeting times, not extended (at least that&#x27;s the attempt, I&#x27;m not always successful with this).<p>* I make it very clear to my manager that I like minimizing meetings and having more time for focused work, and prefer async communication. Some people are just more into meetings and feel that seeing someone face to face works best for them, and I make it clear that while of course I&#x27;ll attend whatever meetings are needed, I am not one of those people who ever _prefers_ a meeting over other options.<p>I realize some or all of the above could be more complicated in a manager position, but in a well set up distributed team I think it should be manageable to avoid burning out both ICs and managers like this.",
+   "created_at": "2022-10-22T11:10:46Z",
+   "created_at_i": 1666437046,
+   "objectID": "33297278",
+   "parent_id": 33296415,
+   "story_id": 33296415,
+   "story_title": "Ask HN: Is it possible to have a structured work day in software dev?",
+   "updated_at": "2024-09-20T12:21:15Z"
+  }
+ ],
+ "hitsPerPage": 50,
+ "nbHits": 5797,
+ "nbPages": 20,
+ "page": 0,
+ "params": "query=ARR+not+recurring&tags=comment&hitsPerPage=50&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 58,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 16
+  },
+  "afterFetch": {
+   "format": {
+    "highlighting": 3,
+    "total": 4
+   },
+   "merge": {
+    "mergeLoop": {
+     "prepareNextHit": 24,
+     "total": 24
+    },
+    "total": 26
+   },
+   "total": 26
+  },
+  "fetch": {
+   "query": 10,
+   "scanning": 20,
+   "total": 31
+  },
+  "total": 58
+ },
+ "query": "ARR not recurring",
+ "serverTimeMS": 63,
+ "_query_url": "https://hn.algolia.com/api/v1/search?query=ARR+not+recurring&tags=comment&hitsPerPage=50"
+}
