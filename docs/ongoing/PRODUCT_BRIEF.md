@@ -23,7 +23,9 @@
 
 ## What it is
 
-Point it at a startup, get a readout. Tricorder reads everything about a startup, from its pitch deck and video to its financials to its online presence. It runs a set of scans and analyses, creating a readout that gives the operator a detailed understanding of what's great about the business, and where the red flags are. The readout is not a read-only document, but something that the operator can actively dig through, drill down, and even steer, updating areas that need to be rewritten or need more info.
+Point it at a startup, get a readout. Tricorder reads everything about a startup, from its pitch deck and video to its financials to its online presence. It runs a set of scans and analyses, creating a readout that gives the operator a detailed understanding of what's great about the business, and where the red flags are. An associate will review and steer the memo as needed, creating the deliverable memo.
+
+The deliverable memo is shared with others within the firm, but rather than a fixed document, this is still interactive, allowing drilldowns, and even allowing partners to alter growth models and see how they could change, themselves.
 
 By identifying gaps, highlighting strengths, rigorously showing its work, and adjusting on the fly, the Tricorder is the best tool for the partner deploying capital.
 

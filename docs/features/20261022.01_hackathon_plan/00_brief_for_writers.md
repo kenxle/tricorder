@@ -382,3 +382,11 @@ Added 2026-10-22 at 2:57 PM, on "a named buyer who pays" in the landscape resear
 > no we won't have that. this is about a demo
 
 Settled: Tricorder will not have a paying customer or a named buyer by Saturday. The pitch says who would buy it (a fund, per seat) and never implies a customer.
+
+Added 2026-10-22 at 3:00 PM: Ken rewrote the end of the product brief's "What it is". His words, as applied:
+
+> An associate will review and steer the memo as needed, creating the deliverable memo.
+>
+> The deliverable memo is shared with others within the firm, but rather than a fixed document, this is still interactive, allowing drilldowns, and even allowing partners to alter growth models and see how they could change, themselves.
+
+This matches the settled flow: the associate (the operator) steers the readout into the memo; the partners read an interactive memo and run their own what-ifs on the growth model.
