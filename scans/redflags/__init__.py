@@ -5,6 +5,8 @@ FRAMEWORKS entry is one module here with one function:
 
     def check(room: Path, ids: Ids) -> tuple[list[Claim], list[Gap]]
 
+or a third element, list[Panel], for an entry's own tables (1.12's checks and lines).
+
 and is listed in scan.CHECKS. Deck against the books lives in
 deck_vs_books.py, accounting mislabels (1.12) in mislabels.py, contract terms
 (1.13) in contract_terms.py.

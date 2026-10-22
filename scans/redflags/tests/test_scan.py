@@ -16,3 +16,14 @@ def test_the_engine_runs_on_the_seed_drop_and_returns_a_result():
 def test_claim_ids_are_unique():
     ids = [c.id for c in scan.run(ROOM).claims]
     assert len(ids) == len(set(ids))
+
+
+def test_a_check_can_return_panels(monkeypatch):
+    import types
+
+    from schema.claim import Panel
+
+    fake = types.SimpleNamespace(check=lambda room, ids: ([], [], [Panel(name="t", columns=["a"], rows=[["1"]])]))
+    monkeypatch.setattr(scan, "CHECKS", ("fake",))
+    monkeypatch.setattr(scan, "_load", lambda name: fake)
+    assert scan.run(ROOM).panels[0].name == "t"

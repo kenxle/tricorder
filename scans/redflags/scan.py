@@ -11,7 +11,8 @@ from scans.base import Ids, now_iso, room_inputs, room_name
 NAME = "redflags"
 NEEDS = ("deck",)
 
-# Modules in this package that define check(room, ids). Add one line per
+# Modules in this package that define check(room, ids) returning
+# (claims, gaps) or (claims, gaps, panels). Add one line per
 # FRAMEWORKS entry as it lands. A module listed here that does not exist yet
 # is skipped, so parallel branches can each add their own line.
 CHECKS: tuple[str, ...] = (
@@ -41,13 +42,15 @@ def _load(name: str):
 
 def run(room_dir: Path) -> ScanResult:
     ids = Ids(NAME)
-    claims, gaps = [], []
+    claims, gaps, panels = [], [], []
     for name in CHECKS:
         module = _load(name)
         if module is None:
             continue
-        c, g = module.check(Path(room_dir), ids)
-        claims += c
-        gaps += g
+        out = module.check(Path(room_dir), ids)
+        claims += out[0]
+        gaps += out[1]
+        if len(out) > 2:
+            panels += out[2]
     inputs = sorted({f for files in room_inputs(room_dir).values() for f in files})
-    return ScanResult(scan=NAME, room=room_name(room_dir), ran_at=now_iso(), inputs=inputs, claims=claims, gaps=gaps)
+    return ScanResult(scan=NAME, room=room_name(room_dir), ran_at=now_iso(), inputs=inputs, claims=claims, gaps=gaps, panels=panels)
