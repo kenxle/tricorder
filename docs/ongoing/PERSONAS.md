@@ -2,7 +2,7 @@
 
 ## Charter
 
-**What belongs:** One persona per problem, each with the problem in the person's own words, what they have tried, why it failed them, the moment Tricorder solves it, the proof we can show, the objection to answer first, and say, do, pay evidence of how they deal with the problem today, with a rating. Personas are grouped by the stage of company they focus on: earliest (pre-seed and accelerator applications), seed, and Series A. The stage decides what is available about the company. Within each stage, personas are ordered by rating. Separately, for marketing: who uses the product and who buys it.
+**What belongs:** One persona per problem, each with the problem in the person's own words, what they have tried, why it failed them, the moment Tricorder solves it, the proof we can show, the objection to answer first, and say, do, pay evidence of how they deal with the problem today, with a rating. Personas are grouped by the stage of company they focus on: earliest (pre-seed and accelerator applications), seed, and Series A. The stage decides what is available about the company. Within each stage, personas are ordered by rating. Each persona is marked primary or secondary, as Ken decided at 2:35 PM. Separately, for marketing: who uses the product and who buys it.
 
 **What does not:** What the product does (PRODUCT_BRIEF.md). How it talks (BRAND.md). New quotes without a primary link. Research findings before they are written up.
 
@@ -20,7 +20,7 @@
 
 **Two primary personas, decided by Ken at 2:35 PM.** Tricorder focuses on seed and Series A funds, and on the two people there who touch the memo: the associate who prepares it and the partner or principal who reads it and decides. Everyone else in this doc (angels, accelerator screeners, corporate VCs) is secondary: real, kept, and served later.
 
-Each persona is a problem, not a job title. Say, do and pay measure how people deal with that problem today, from weakest signal to strongest. Say is what people write or tell about the problem. Do is what they already do about it, especially a workaround or a tool not built for it. Pay is what they spend, in money or in something they give up, to solve it. A persona's rating is the strongest layer with evidence. The quotes and behaviours that carry the most signal are what go into the value proposition, so the strongest evidence decides both the order of the personas and the words we use.
+Each persona is a problem, not a job title. Say, do and pay measure how people deal with that problem today, from weakest signal to strongest. Say is what people write or tell about the problem. Do is what they already do about it, especially a workaround or a tool not built for it. Pay is what they spend, in money or in something they give up, to solve it. A persona's rating is the strongest layer with evidence. The quotes and behaviours that carry the most signal are what go into the value proposition, so the strongest evidence decides the order within each stage and the words we use. It does not decide who comes first. Ken's focus does: the two primary personas come first at every stage.
 
 Within each stage, the personas are ranked by their strongest evidence: pay first, then do, then say. When two personas reach the same layer, the one with more quotes behind it ranks higher. The quotes come from [the voice-of-the-customer research](../reports/20261022.02_research/research_voice_of_customer.md), and a script counts them ([voc_counts.py](../reports/20261022.02_research/voc_counts.py)). A reference such as "row 11" points to that research's quotes table.
 
@@ -30,8 +30,8 @@ Two cautions on the partner and the angel. The partner's pay rating is inferred:
 |---|---|---|---|---|---|
 | Secondary | Earliest | 1 | Solo angel | Wants diligence, has no time or team for it | "I don't have the time nor skills to do proper due diligence, but with YC I don't have to." ([angel, Jan 2022](https://news.ycombinator.com/item?id=30130146)) |
 | Secondary | Earliest | 2 | Accelerator screener | Too many applications to read | "A human takes around four minutes to screen each application. That’s 24 full working days for one person" ([MIT Solve, 2025](https://solve.mit.edu/articles/how-ai-helped-us-screen-applications-in-half-the-time)) |
-| **Primary** | Seed | 1 | Associate at a seed fund | Days of gathering before any thinking | "Before I even open your data room, I already have ten tabs up." ([associate, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)) |
-| **Primary** | Series A | 1 | Partner or principal at a seed or Series A fund | Numbers that disagree, found too late | "Basic financials and model review. But often only a cursory one." ([SaaS investor, on pre-term-sheet diligence, Feb 2025](https://www.saastr.com/how-when-why-vcs-do-due-diligence-pre-and-post-term-sheet)) |
+| **Primary** | Seed | 1 | Associate at a seed or Series A fund, who prepares the memo | Days of gathering before any thinking | "Before I even open your data room, I already have ten tabs up." ([associate, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)) |
+| **Primary** | Series A | 1 | Partner or principal at a seed or Series A fund, who reads the memo and decides | Numbers that disagree, found too late | "Basic financials and model review. But often only a cursory one." ([SaaS investor, on pre-term-sheet diligence, Feb 2025](https://www.saastr.com/how-when-why-vcs-do-due-diligence-pre-and-post-term-sheet)) |
 | Secondary | Series A | 2 | Corporate VC | Strategic overlap on top of standard diligence | "In addition to the standard diligence items, CVCs will spend more time validating areas of strategic overlap between the startup and the CVC’s corporate parent." ([corporate VC, Apr 2024](https://tdk-ventures.com/?p=2035)) |
 
 Each quote was checked word for word against its source: four against the pages saved under [raw/voc/](../reports/20261022.02_research/raw/voc/INDEX.md), and the partner's against the live SaaStr page on 2026-10-22. Each persona's evidence layer is in its own section below.
@@ -64,6 +64,8 @@ The red-flag engine has little to read at this stage, so the readout's gap list 
 ---
 
 ### The solo angel with no time to do diligence
+
+**Secondary persona.**
 
 **Who they are.** An individual who writes small checks alone, with no analyst and no team.
 
@@ -98,6 +100,8 @@ The red-flag engine has little to read at this stage, so the readout's gap list 
 ---
 
 ### The accelerator screener with too many applications
+
+**Secondary persona.**
 
 **Who they are.** Staff at an accelerator or challenge program who read every application in a short window.
 
@@ -147,13 +151,17 @@ A data-room vendor puts it this way: a seed room presents, and a Series A room p
 
 The demo room's seed drop is this tier. It catches five of the eight planted entries on its own (the data-room research, Part 3.4).
 
-**Who sits here.** The associate at a seed fund. Seed fund partners are part of the partner persona, which sits under Series A and spans both stages.
+**Who sits here.** The associate, a primary persona, who spans seed and Series A. Seed fund partners are part of the partner persona, which sits under Series A and spans both stages.
 
 ---
 
 ### The associate who spends days gathering
 
-**Who they are.** An associate at a seed fund who does the first pass and writes the memo the partners read. **This is Tricorder's user.**
+This persona spans seed and Series A. It sits under seed because its evidence comes from an associate at a seed fund.
+
+**Primary persona: the one who prepares the memo.**
+
+**Who they are.** An associate at a seed or Series A fund who does the first pass and writes the memo the partners read. **This is Tricorder's user.**
 
 **The problem in their own words.**
 
@@ -204,13 +212,15 @@ At this stage a lead builds its own model from the raw data and ties every deck 
 
 The demo room, Hollis Voice, is a Series A room. The full room catches the three planted entries the seed drop misses (the data-room research, Part 3.4).
 
-**Who sits here.** The partner or principal, who spans seed and Series A, and the corporate VC. Associates at Series A funds have no section of their own yet.
+**Who sits here.** The partner or principal, a primary persona, who spans seed and Series A, and the corporate VC, a secondary one. Associates at Series A funds are part of the associate persona, which sits under seed and spans both stages.
 
 ---
 
 ### The partner who finds the disagreement too late
 
 This persona spans seed and Series A. It sits under Series A because its evidence is about ARR, revenue and accounting records, which a Series A room holds in full, and its proof runs on the demo room, which is a Series A room.
+
+**Primary persona: the one who reads the memo and decides.**
 
 **Who they are.** A partner or principal at a seed or Series A fund who decides whether a deal goes to a second meeting and signs for the fund's tools.
 
@@ -253,6 +263,8 @@ This persona spans seed and Series A. It sits under Series A because its evidenc
 
 Its evidence does not name a stage. It sits under Series A as the writers' brief groups it.
 
+**Secondary persona.**
+
 **Who they are.** An investor at a corporation's venture arm, who runs standard diligence plus a check on fit with the parent company.
 
 **The problem in their own words.**
@@ -284,9 +296,9 @@ Its evidence does not name a stage. It sits under Series A as the writers' brief
 This is a marketing question, separate from say, do and pay. It decides whom each message speaks to, not which problems carry the most signal.
 
 - **Two users at a fund: the one who prepares the memo and the ones who read it.** The associate puts it this way: "I still need to write a memo, walk into a partners’ meeting, and convince people who’ve never met you that we should do this deal." ([associate at a seed-focused fund, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)). The preparer, the operator, works in the readout and steers it into a memo. The readers are partners who have never met the founder; they need the memo to stand on its own, and they drill down or run their own what-ifs where they doubt it. Messages to each differ: the preparer is sold time and fewer missed checks, the readers are sold a memo they can verify.
-- **Funds.** A partner or principal decides and pays. The operator, the person working in the readout, is usually the associate who does the first pass today, and at some funds the partner.
-- **Angels.** The same person uses it and pays for it. They already pay for diligence by proxy; [the research gaps](../reports/20261022.02_research/research_gaps.md) look for what a first pass of their own would be worth per deal.
-- **Accelerators.** The screening staff would use it and the program would pay. The research found no program paying for a tool yet.
+- **Funds at seed and Series A, the two primary personas.** A partner or principal decides and pays. The operator, the person working in the readout, is usually the associate who does the first pass today, and at some funds the partner.
+- **Angels, a secondary persona.** The same person uses it and pays for it. They already pay for diligence by proxy; [the research gaps](../reports/20261022.02_research/research_gaps.md) look for what a first pass of their own would be worth per deal.
+- **Accelerators, a secondary persona.** The screening staff would use it and the program would pay. The research found no program paying for a tool yet.
 
 ## What the online research still needs to fill
 

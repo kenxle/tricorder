@@ -252,6 +252,7 @@ Tricorder is a product after Saturday, so this section is written for a product.
 - **Personas grouped by stage** (1:38 PM block), ranked by evidence within each stage.
 - **Differences in reporting, never fraud** (1:33 PM block).
 - **The primary personas** (2:35 PM block): the associate at a seed or Series A fund who prepares the memo, and the partner or principal who reads it and decides. Angels, accelerator screeners and corporate VCs are secondary.
+- **Two data rooms** (Ken's answer on the overview page, 2:35 PM): Hollis Voice for Series A and Brasswick for seed.
 - **A reference guide per data-room document** (2:38 PM block), being written now.
 - **The claims workflow** (2:41 PM block), in [diagrams/claims_workflow.md](diagrams/claims_workflow.md).
 - **Real YC companies paired with fake rooms, run live** (2:44 PM, 2:46 PM and 2:49 PM blocks). Hollis Voice and Brasswick stay as the controlled rooms. Rooms become templates with hidden issues after Saturday (the roadmap's room-templates slice).
@@ -266,7 +267,7 @@ Tricorder is a product after Saturday, so this section is written for a product.
 5. **Inbox input.** A forwarding address first, then Gmail and Outlook through their official APIs.
 6. **Diligence on the inbound.** The scans start when a deck arrives, unasked.
 7. **Where the data goes.** Mailbox read for decks only, nothing stored beyond the readout and its sources, the investor sees and deletes everything. Alternative: a self-hosted version.
-8. **Demo company.** Hollis Voice leads, with Brasswick as the second controlled room, and one real YC company from the list Ken approves runs live. Alternative: Brasswick leads. The YC list waits on Ken's approval.
+8. **The real companies for the live demo.** A research agent proposes real YC companies from the spring 2026 batch, with their public footprint. Ken approves the list on the overview page, and rooms are generated only after he does.
 9. **After Saturday.** A product sold to funds; the partner or principal buys, the operator uses. Alternative: skills Ken sells on stclair.ai, or a hackathon entry that ends Saturday.
 10. **Who we price for first.** Funds first, angels next. Alternative: an angel plan from the start, as Startup Due Dil already sells.
 11. **Measures.** Set numeric targets after the first pilot.

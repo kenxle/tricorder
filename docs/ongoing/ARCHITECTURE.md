@@ -35,11 +35,11 @@ One folder per person, so Saturday's pull requests do not touch the same files. 
 | root files, `server/`, `bin/` | Dependency list, CI, `.env.example`, the FastAPI app, `bin/ci-py`, `bin/ci-web` and `bin/smoke`. | backend-and-data |
 | `schema/readers.py` | The shared file readers every scan and the quote checker import. | backend-and-data |
 | `scans/video/`, `scans/readings/` | Pitch video, and the model readings (the pilot clause and the cohort note; cut first). | backend-and-data |
-| `scans/signals/` | This week's cached competitor readings, which the readout page shows as a static panel. Written this week. | agent |
+| `scans/signals/` | This week's cached competitor readings, which the readout page shows as a static panel, and the approved real company's own readings. Written this week. On Saturday it gains the live re-run of that company's saved outside calls (the roadmap's market-signals slot). | agent this week; frontend on Saturday |
 | `scans/redflags/`, `scans/comps/` | Red-flag engine and comps. | design-and-finance |
 | `scans/frameworks/`, `scans/presence/`, `scans/founders/`, `scans/outside/` | After Saturday; `scans/outside/` is the associate's ten tabs. | agent |
-| `data_room/` | The generator, the two rooms (`hollis_voice/` and `hollis_voice_seed_drop/`) and the answer key `answer_key.json`. Written this week. | agent |
-| `cache/` | Outside data saved this week: Form D, XBRL facts, Akta pulls, pricing pages. | agent |
+| `data_room/` | The generator, the Hollis Voice rooms (`hollis_voice/` and `hollis_voice_seed_drop/`) and the answer key `answer_key.json`, the second invented company's room, and one synthetic room per real YC company Ken approves, each with its own key. Written this week. | agent |
+| `cache/` | Outside data saved this week: Form D, XBRL facts, Akta pulls, pricing pages, and each approved real company's outside calls with their requests. | agent |
 | `sample_out/` | Hand-written example results, one per scan. | captain |
 | `out/` | Scan results, one folder per room. Ignored by git. | nobody; scans write it |
 
@@ -163,6 +163,10 @@ The deck and the pitch video make the claims; every other document and the outsi
 
 The generator is the data room research's design (Part 3.6), and lives at `data_room/`. `generate.py --seed 20261024` runs one simulation (`src/facts.py`) and writes every file from it. Each plant is one function that takes a true fact, returns the shown value, and records where it wrote it. `--no-plants` writes a room that reconciles everywhere. Output: `data_room/hollis_voice/` (the full room) and `data_room/hollis_voice_seed_drop/` (the thin first tier). Both rooms also hold `01_overview/claims.json`, the deck's claims page (slide 14) as data, written from the same list, so the claims can be read when PDF text extraction fails.
 
+**Rooms for real companies.** The demo pairs real YC companies, from a list Ken approves, with synthetic rooms ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:44 PM and 2:49 PM blocks; the roadmap's yc-rooms slice). The generator takes a company profile and writes a room from it. For a real company, the profile holds only public facts (name, product, the founders' public bios, any announced round), each saved with its link. The numbers are invented and plausible, anchored only to what the company has published. Every page and sheet of such a room carries "Synthetic test document. Not this company's data.", and a check fails any page without it. Planted problems are named test plants in the room's answer key. The readout page shows the label as a banner on every screen of that room, and every claim the outside-world scan compares with the room carries it too, so no difference reads as a finding about the real company.
+
+**Rooms from templates (after Saturday).** The roadmap's room-templates slice turns the generator into a template engine: a company profile swapped in on the fly, a library of hidden issues drawn from the research's problems, green flags and decoys, and saved recipes, one per problem story. Each recipe writes a room and its answer key, and `check.py` checks any room against its key.
+
 The answer key, `data_room/answer_key.json`, sits outside both room folders so Tricorder is never pointed at it. It holds the 8 planted entries and the 3 decoys, each with its locations, the true value, the shown value, the check name and the tolerance (data room research, Part 3.6). The check names are the red-flag engine's check names, fixed this week in [FRAMEWORKS.md](FRAMEWORKS.md).
 
 **How the test compares.** `eval/score.py <room>` reads `out/<room>/readout.json` and the answer key. A planted entry counts as found when a readout claim with severity `flag` has the key's check name and cites at least one of the key's files. A decoy counts as wrongly flagged when a `flag` claim cites the decoy's file and location. It prints found of 8 and decoys flagged of 3, and the page shows that score. The data room research expects 5 entries from the seed drop and the other 3 from the full room (Part 3.4). The red-flag engine's own test in `scans/redflags/tests/` runs the same comparison on that scan alone.
@@ -253,7 +257,7 @@ The brief makes the inbox an input and recommends a forwarding address first, be
 
 ## Outside data sources
 
-From the feasibility research's Part 2, with the link it read for each. On Saturday the comps and signals scans read the copies saved in `cache/`; live calls are for after Saturday.
+From the feasibility research's Part 2, with the link it read for each. On Saturday the comps and signals scans read the copies saved in `cache/`. The one live step is the outside-world panel on the approved real company: it sends that company's saved calls again, to the sources that need no paid plan (its website, Hacker News, Apple's App Store lookup and SEC EDGAR). Each fresh answer is saved beside the old copy with the time it was read. A call that fails or is slow shows this week's saved copy with its date. The full live scan, the associate's ten tabs in `scans/outside/`, is after Saturday.
 
 | Source | Terms that shape the code |
 |---|---|
@@ -280,7 +284,7 @@ All secrets come from the environment and are never committed ([guardrails.md](.
 | `ANTHROPIC_API_KEY` | Every model call | Saturday |
 | `TRICORDER_MODEL_READ` | Model for reading and the memo pass; default `claude-opus-5-5` | Saturday |
 | `TRICORDER_MODEL_BULK` | Model for bulk classification; default `claude-haiku-5-5` | Saturday |
-| `TRICORDER_OFFLINE` | `1` makes every scan read `cache/` and make no outside calls; the demo runs with it on | Saturday |
+| `TRICORDER_OFFLINE` | `1` makes every scan read `cache/` and make no outside calls; the demo runs with it on, except the outside-world panel's live re-run on the approved real company | Saturday |
 | `TRICORDER_OUT_DIR` | Where results go; default `out/` | Saturday |
 | `WHISPER_CPP_BIN` | Path to the whisper.cpp command | Saturday |
 | `WHISPER_MODEL_PATH` | Path to the downloaded whisper model file | Saturday |

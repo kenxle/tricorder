@@ -63,7 +63,7 @@ The feasibility research ranked the scans by demo value for the effort. The road
 The roadmap proposed opening on a forwarded pitch email with the readout already waiting. The demo critic says no: the first 20 seconds would go on the one thing on screen that is not real, plus a sentence admitting it ([critique_demo.md](critique_demo.md), finding 2). The judge agrees that what wins is the thing seen working.
 
 <div class="options">
-<div class="option"><span class="badge badge--purple">Recommended</span><h4>Open on the readout, already waiting</h4><p>First screen: Hollis Voice's best green flags and worst red flags. Then the overview of pieces, then a drill into the weakest piece, revenue, where four ARR numbers disagree (about $3.0M said on video, $2.5M in the deck, $2.24M in the model, $2.06M in the billing rows), and into one strong piece whose number two sources corroborate. True, because the run finished before you walked up. The inbound forward becomes the closing "next" line.</p></div>
+<div class="option"><span class="badge badge--purple">Recommended</span><h4>Open on the readout, already waiting</h4><p>First screen: Hollis Voice's best green flags and worst red flags. Then the overview of pieces, then a drill into the weakest piece, revenue, where four ARR numbers disagree (about $3.0M said on video, $2.5M in the deck, $2.24M in the model, $2.06M in the billing rows), and into one strong piece whose number two sources corroborate. True, because the run finished before you walked up. Then a real YC company from the list you approve, paired with a fake data room: its website, Hacker News, App Store and SEC filings are read live on stage, and you say out loud that the room is ours and labelled synthetic on every page. The inbound forward becomes the closing "next" line.</p></div>
 <div class="option"><p class="eyebrow">Option B</p><h4>Open on the forwarded email</h4><p>Your "before you even ask" moment on screen first. Started by hand today, and you say so.</p></div>
 <div class="option"><p class="eyebrow">Option C</p><h4>Build the real forward on Saturday</h4><p>A small inbox-polling script needs no OAuth review. Only if the red-flag engine and the readout are done at the 2:30 cut call.</p></div>
 </div>
@@ -191,16 +191,11 @@ The buildability critic recommends option B: every role is budgeted to the minut
 
 ### The demo company
 
-<div class="options">
-<div class="option"><span class="badge badge--purple">Recommended</span><h4>Hollis Voice</h4><p>An AI phone agent for vet clinics raising a $9M Series A. Built and checked. A NYC seed panel knows vertical software with a phone agent.</p></div>
-<div class="option"><p class="eyebrow">Option B</p><h4>Brasswick</h4><p>Freight invoices. Plainer, and the generator would need a second run.</p></div>
-</div>
+<div class="panel panel--cobalt"><p><b>Decided by you at 2:35 PM: two data rooms.</b> Both are built and pass their checks (<a href="../../../data_room/README.md">data_room/README.md</a>).</p>
+<p><b>Hollis Voice, Series A.</b> An AI phone agent for vet clinics, raising $9M. It shows a full room with the organisers' four red flags, opened first as its thin seed drop.</p>
+<p><b>Brasswick, seed.</b> Freight invoice matching, raising $3M. It shows a thin seed room on a different business with different mistakes: revenue counted gross, a chart that skips a fall, contractors left out of burn, and a prepayment booked as one month.</p></div>
 
-<div class="choice" data-choice="demo-company">
-<p class="choice-q">Which company in the room?</p>
-<button type="button" value="hollis-voice" data-recommended>Hollis Voice</button>
-<button type="button" value="brasswick">Brasswick</button>
-</div>
+**Plus a live demo on real companies**, per your 2:44 to 2:49 PM comments. Real YC companies from the spring batch are each paired with a fake data room, and the outside-world scan reads the real company's public footprint live on stage. A research agent is proposing candidates with their public footprint, and the list comes to you for approval. No room is generated until you approve it. Every page of those rooms says "Synthetic test document. Not this company's data." Hollis Voice and Brasswick stay as the controlled rooms whose planted flags are known.
 
 ### The inbox
 

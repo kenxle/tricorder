@@ -9,3 +9,4 @@ Files agents would delete but may not. Ken removes them in one batch.
 - data_room/hollis_voice_variant/, data_room/hollis_voice_variant_seed_drop/, data_room/answer_key_variant.json: smoke-test variant from the generator reviser (git-ignored); not for the blind demo, regenerate per data_room/SEALING.md.
 - docs/reports/20261022.02_research/interviews.md.tmp (empty scratch file left by the orchestrator)
 - docs/reports/20261022.02_research/interviews.md (retired: Ken chose online research only, 2026-10-22 1:34 PM)
+- docs/reports/20261022.03_document_guides/raw/customer-references-and-letters-of-intent/labs_openviewpartners_com_customer_references_why_investors_need_them.txt (empty shell page)
