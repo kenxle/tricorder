@@ -1,0 +1,796 @@
+{
+  "company": "Hollis Voice (fictional)",
+  "synthetic_notice": "Synthetic data room for Deal Flow NYC 2026. Not a real company.",
+  "seed": 20261024,
+  "as_of": "2026-09-30",
+  "room_path": "data_room/hollis_voice",
+  "seed_drop_path": "data_room/hollis_voice_seed_drop",
+  "seed_drop_files": [
+    "00_welcome/cover_note_and_index.pdf",
+    "01_overview/pitch_deck.pdf",
+    "01_overview/company_overview.pdf",
+    "01_overview/pitch_video_script.md",
+    "02_financials/financial_model.xlsx",
+    "02_financials/cap_table.xlsx",
+    "03_metrics/monthly_metrics.csv",
+    "05_team/founder_bios.pdf",
+    "05_team/hiring_plan.csv",
+    "06_product/product_one_pager.pdf",
+    "06_product/website_copy.md"
+  ],
+  "full_room_files": [
+    "00_welcome/cover_note_and_index.pdf",
+    "01_overview/pitch_deck.pdf",
+    "01_overview/company_overview.pdf",
+    "01_overview/pitch_video_script.md",
+    "02_financials/financial_model.xlsx",
+    "02_financials/cap_table.xlsx",
+    "02_financials/expense_ledger.csv",
+    "03_metrics/monthly_metrics.csv",
+    "03_metrics/customer_mrr_by_month.csv",
+    "04_customers/order_form_cedar_pine.pdf",
+    "04_customers/pilot_agreement_marlow.pdf",
+    "04_customers/order_form_brookline_row.pdf",
+    "05_team/founder_bios.pdf",
+    "05_team/hiring_plan.csv",
+    "06_product/product_one_pager.pdf",
+    "06_product/website_copy.md"
+  ],
+  "flags": [
+    {
+      "id": "PF1",
+      "name": "Pilot booked as ARR",
+      "organiser_direction": "revenue counted as ARR when it is not recurring",
+      "locations": [
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "ARR_Build",
+          "cell": "E15",
+          "named_cell": "ARR_TOTAL",
+          "expect": 2240868,
+          "label": "model ARR total"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "ARR_Build",
+          "cell": "A13",
+          "expect": "Marlow Veterinary Group (pilot)",
+          "label": "pilot row label"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "ARR_Build",
+          "cell": "E13",
+          "expect": 180000,
+          "label": "pilot counted as ARR"
+        },
+        {
+          "file": "04_customers/pilot_agreement_marlow.pdf",
+          "page": 1,
+          "text": "2. Term and fees.",
+          "label": "term and fees"
+        },
+        {
+          "file": "04_customers/pilot_agreement_marlow.pdf",
+          "page": 2,
+          "text": "7. Termination.",
+          "label": "30 days notice"
+        },
+        {
+          "file": "04_customers/pilot_agreement_marlow.pdf",
+          "page": 2,
+          "text": "8. No duty to convert.",
+          "label": "no duty to convert"
+        }
+      ],
+      "shown": {
+        "value": 2240868,
+        "unit": "USD",
+        "label": "model ARR_TOTAL, with the pilot counted at $180,000 a year",
+        "details": {
+          "pilot_arr_counted": 180000,
+          "metrics_arr_2026_09": 2240868
+        }
+      },
+      "true": {
+        "value": 2060868,
+        "unit": "USD",
+        "label": "recurring ARR from subscription rows",
+        "details": {
+          "pilot_fees_contracted_total": 90000,
+          "pilot_notice_days": 30
+        }
+      },
+      "check": "arr_from_subscription_rows",
+      "check_description": "Recompute ARR as 12 times the 2026-09 MRR of rows with product_type = Subscription in customer_mrr_by_month.csv and compare with ARR_TOTAL.",
+      "tolerance": 0.01,
+      "files_needed": [
+        "02_financials/financial_model.xlsx",
+        "03_metrics/customer_mrr_by_month.csv",
+        "04_customers/pilot_agreement_marlow.pdf"
+      ],
+      "catchable_from_seed_drop": false,
+      "note": "The model row label 'Marlow Veterinary Group (pilot)' hints at it in the seed drop, but the mechanical check needs the customer file.",
+      "decoy": false,
+      "in_seed_drop_files": [
+        "02_financials/financial_model.xlsx"
+      ]
+    },
+    {
+      "id": "PF2",
+      "name": "Deck ARR disagrees with the model",
+      "organiser_direction": "numbers that disagree between the deck and the model",
+      "locations": [
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "ARR_Build",
+          "cell": "E15",
+          "named_cell": "ARR_TOTAL",
+          "expect": 2240868,
+          "label": "model ARR total"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 3,
+          "text": "$2.5M",
+          "expect": 2500000,
+          "label": "deck ARR on the traction slide"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 14,
+          "claims_row": "ARR",
+          "text": "$2,500,000",
+          "slide_ref": 3,
+          "label": "claims row 'ARR'"
+        },
+        {
+          "file": "01_overview/company_overview.pdf",
+          "page": 1,
+          "text": "ARR: $2,500,000",
+          "label": "overview repeats the deck claim"
+        }
+      ],
+      "shown": {
+        "value": 2500000,
+        "unit": "USD",
+        "label": "deck ARR",
+        "details": {
+          "gap_to_model": 259132
+        }
+      },
+      "true": {
+        "value": 2240868,
+        "unit": "USD",
+        "label": "model ARR_TOTAL",
+        "details": {
+          "recurring_arr": 2060868
+        }
+      },
+      "check": "deck_claim_vs_named_cell",
+      "check_description": "Match the deck claim labelled ARR to the named cell ARR_TOTAL.",
+      "tolerance": 0.01,
+      "files_needed": [
+        "01_overview/pitch_deck.pdf",
+        "02_financials/financial_model.xlsx"
+      ],
+      "catchable_from_seed_drop": true,
+      "decoy": false,
+      "in_seed_drop_files": [
+        "01_overview/pitch_deck.pdf",
+        "02_financials/financial_model.xlsx"
+      ]
+    },
+    {
+      "id": "PF2b",
+      "name": "Video ARR disagrees with the deck",
+      "organiser_direction": "numbers that disagree between the deck and the model",
+      "locations": [
+        {
+          "file": "01_overview/pitch_video_script.md",
+          "time": "0:35",
+          "text": "we're at about three million dollars in annual recurring revenue",
+          "expect": 3000000,
+          "label": "spoken ARR"
+        }
+      ],
+      "shown": {
+        "value": 3000000,
+        "unit": "USD",
+        "label": "spoken ARR, about three million dollars"
+      },
+      "true": {
+        "value": 2500000,
+        "unit": "USD",
+        "label": "deck ARR"
+      },
+      "check": "spoken_arr_vs_claims_page",
+      "check_description": "Transcribe the video, extract the ARR sentence and compare it with the claims page.",
+      "tolerance": 0.01,
+      "files_needed": [
+        "01_overview/pitch_video_script.md",
+        "01_overview/pitch_deck.pdf"
+      ],
+      "catchable_from_seed_drop": true,
+      "decoy": false,
+      "in_seed_drop_files": [
+        "01_overview/pitch_video_script.md",
+        "01_overview/pitch_deck.pdf"
+      ]
+    },
+    {
+      "id": "PF3",
+      "name": "Churn hidden in the cohort tab",
+      "organiser_direction": "churn hidden in cohort charts",
+      "locations": [
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Cohorts",
+          "cell": "B14",
+          "named_cell": "COHORT_CUSTOMERS",
+          "expect": 57,
+          "label": "customers in the nine cohorts"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Cohorts",
+          "cell": "E14",
+          "named_cell": "NRR_12M",
+          "expect": 1.025897,
+          "label": "12-month net revenue retention"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Cohorts",
+          "cell": "A2",
+          "expect": "Cohort = customers still active after onboarding",
+          "label": "note that drops early leavers"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 6,
+          "text": "102.6%",
+          "label": "deck net revenue retention"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 6,
+          "text": "Cohorts count customers still active after onboarding.",
+          "label": "chart caption"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 14,
+          "claims_row": "Net revenue retention",
+          "text": "102.6% (12 months)",
+          "slide_ref": 6,
+          "label": "claims row 'Net revenue retention'"
+        }
+      ],
+      "shown": {
+        "value": 1.026,
+        "unit": "ratio",
+        "label": "12-month net revenue retention in the model and deck",
+        "details": {
+          "customers": 57
+        }
+      },
+      "true": {
+        "value": 0.873,
+        "unit": "ratio",
+        "label": "12-month net revenue retention rebuilt from the customer file",
+        "details": {
+          "gross_revenue_retention": 0.734,
+          "customers": 68,
+          "customers_dropped": 11
+        }
+      },
+      "check": "rebuild_cohorts_from_customer_file",
+      "check_description": "Rebuild the nine 2025 cohorts from customer_mrr_by_month.csv. Compare month-0 counts and net retention with the Cohorts tab. Compute gross retention.",
+      "tolerance": 0.005,
+      "files_needed": [
+        "02_financials/financial_model.xlsx",
+        "03_metrics/customer_mrr_by_month.csv",
+        "01_overview/pitch_deck.pdf"
+      ],
+      "catchable_from_seed_drop": false,
+      "decoy": false,
+      "in_seed_drop_files": [
+        "02_financials/financial_model.xlsx",
+        "01_overview/pitch_deck.pdf"
+      ]
+    },
+    {
+      "id": "PF4",
+      "name": "Burn and runway do not match the hiring plan",
+      "organiser_direction": "burn that does not match the hiring plan",
+      "locations": [
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "P&L",
+          "cell": "A29",
+          "expect": "Payroll",
+          "label": "plan row Payroll"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "P&L",
+          "cell": "X29:AI29",
+          "label": "Payroll, plan months 2026-10 to 2027-09"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Hiring_Plan",
+          "cell": "B13",
+          "named_cell": "HIRES_COUNTED",
+          "expect": 8,
+          "label": "hires the model pays for"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Cash_Runway",
+          "cell": "B3",
+          "named_cell": "RUNWAY_MONTHS",
+          "expect": 37,
+          "label": "runway in months"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Cash_Runway",
+          "cell": "B4",
+          "named_cell": "AVG_NET_BURN_12M",
+          "expect": 374461.81,
+          "label": "average net burn, plan months 1 to 12"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 11,
+          "text": "37 months",
+          "expect": 37,
+          "label": "deck runway"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 11,
+          "text": "$374,462 a month",
+          "expect": 374462,
+          "label": "deck average net burn"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 12,
+          "text": "24 hires",
+          "expect": 24,
+          "label": "deck planned hires"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 14,
+          "claims_row": "Runway",
+          "text": "37 months",
+          "slide_ref": 11,
+          "label": "claims row 'Runway'"
+        }
+      ],
+      "shown": {
+        "value": 37,
+        "unit": "months",
+        "label": "runway in the model and deck",
+        "details": {
+          "hires_counted": 8,
+          "avg_net_burn_first_12_months": 374462
+        }
+      },
+      "true": {
+        "value": 19,
+        "unit": "months",
+        "label": "runway when all 24 planned hires are paid for",
+        "details": {
+          "hires_in_plan": 24,
+          "avg_net_burn_first_12_months": 480062
+        }
+      },
+      "check": "payroll_from_hiring_plan_and_rerun_cash",
+      "check_description": "Build payroll from hiring_plan.csv times LOAD_FACTOR in Assumptions, rerun the cash plan with the Assumptions settings, and compare runway and burn with Cash_Runway and the deck.",
+      "tolerance": 0.01,
+      "files_needed": [
+        "05_team/hiring_plan.csv",
+        "02_financials/financial_model.xlsx",
+        "01_overview/pitch_deck.pdf"
+      ],
+      "catchable_from_seed_drop": true,
+      "decoy": false,
+      "in_seed_drop_files": [
+        "05_team/hiring_plan.csv",
+        "02_financials/financial_model.xlsx",
+        "01_overview/pitch_deck.pdf"
+      ]
+    },
+    {
+      "id": "PF5",
+      "name": "Customer concentration",
+      "organiser_direction": "an additional published flag",
+      "locations": [
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 4,
+          "text": "No customer above 9% of ARR",
+          "label": "deck concentration claim"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 14,
+          "claims_row": "Largest customer",
+          "text": "under 9% of ARR",
+          "slide_ref": 4,
+          "label": "claims row 'Largest customer'"
+        },
+        {
+          "file": "04_customers/order_form_cedar_pine.pdf",
+          "page": 1,
+          "text": "$36,000 from 2026-04-01",
+          "label": "largest customer fee"
+        }
+      ],
+      "shown": {
+        "value": 0.09,
+        "unit": "ratio",
+        "label": "deck claim: no customer above 9% of ARR"
+      },
+      "true": {
+        "value": 0.21,
+        "unit": "ratio",
+        "label": "largest customer share of MRR (customer C-BIG)",
+        "details": {
+          "top3_share": 0.222
+        }
+      },
+      "check": "top_customer_share",
+      "check_description": "Top-one and top-three share of 2026-09 subscription MRR from customer_mrr_by_month.csv; compare with the deck claim.",
+      "tolerance": 0.001,
+      "files_needed": [
+        "03_metrics/customer_mrr_by_month.csv",
+        "01_overview/pitch_deck.pdf"
+      ],
+      "catchable_from_seed_drop": false,
+      "decoy": false,
+      "in_seed_drop_files": [
+        "01_overview/pitch_deck.pdf"
+      ]
+    },
+    {
+      "id": "PF6",
+      "name": "Gross margin excludes hosting, inference and support",
+      "organiser_direction": "an additional published flag",
+      "locations": [
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "P&L",
+          "cell": "W17",
+          "named_cell": "GM_PCT",
+          "expect": 0.8,
+          "label": "Gross margin, 2026-09"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "P&L",
+          "cell": "A20",
+          "expect": "Cloud hosting and model inference",
+          "label": "row label, booked under R&D"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "P&L",
+          "cell": "A22",
+          "expect": "Customer support specialists",
+          "label": "row label, booked under S&M"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 5,
+          "text": "80%",
+          "label": "deck gross margin"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 5,
+          "text": "Gross margin",
+          "label": "deck label"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 14,
+          "claims_row": "Gross margin",
+          "text": "80%",
+          "slide_ref": 5,
+          "label": "claims row 'Gross margin'"
+        }
+      ],
+      "shown": {
+        "value": 0.8,
+        "unit": "ratio",
+        "label": "gross margin in the deck and model"
+      },
+      "true": {
+        "value": 0.581,
+        "unit": "ratio",
+        "label": "gross margin with hosting, inference, telephony, licences and support in cost of revenue"
+      },
+      "check": "gross_margin_from_ledger",
+      "check_description": "Add the ledger lines with categories cloud_hosting, model_inference and support_staff to telephony and licences for 2026-09 and recompute gross margin on recurring revenue.",
+      "tolerance": 0.002,
+      "files_needed": [
+        "02_financials/financial_model.xlsx",
+        "01_overview/pitch_deck.pdf"
+      ],
+      "files_needed_full_check": [
+        "02_financials/expense_ledger.csv"
+      ],
+      "catchable_from_seed_drop": true,
+      "note": "The seed drop shows the hosting and support rows under R&D and S&M in the P&L. The ledger gives the exact check.",
+      "decoy": false,
+      "in_seed_drop_files": [
+        "02_financials/financial_model.xlsx",
+        "01_overview/pitch_deck.pdf"
+      ]
+    },
+    {
+      "id": "PF7",
+      "name": "Cumulative sign-ups shown as active clinics",
+      "organiser_direction": "an additional published flag",
+      "locations": [
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 3,
+          "text": "Clinics on Hollis",
+          "label": "deck label"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 3,
+          "text": "357",
+          "expect": 357,
+          "label": "deck clinic count"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 14,
+          "claims_row": "Clinics on Hollis",
+          "text": "357",
+          "slide_ref": 3,
+          "label": "claims row 'Clinics on Hollis'"
+        },
+        {
+          "file": "01_overview/company_overview.pdf",
+          "page": 1,
+          "text": "Clinics on Hollis: 357",
+          "label": "overview repeats the deck claim"
+        },
+        {
+          "file": "01_overview/pitch_video_script.md",
+          "time": "0:50",
+          "text": "357 clinics on Hollis",
+          "label": "spoken clinic count"
+        },
+        {
+          "file": "06_product/website_copy.md",
+          "text": "Trusted by 357 independent veterinary clinics.",
+          "label": "website repeats the clinic count"
+        }
+      ],
+      "shown": {
+        "value": 357,
+        "unit": "accounts",
+        "label": "deck clinic count, the last value of accounts_created_cumulative"
+      },
+      "true": {
+        "value": 212,
+        "unit": "accounts",
+        "label": "paying accounts (column paying_accounts)"
+      },
+      "check": "cumulative_column_shown_as_active",
+      "check_description": "Match the deck clinic count to the last value of the column named accounts_created_cumulative (a column that never decreases) and compare it with paying_accounts. A never-decreasing test alone is not enough: paying_accounts also only rises in this room, so the column name and the deck match are the decisive checks.",
+      "tolerance": 0,
+      "files_needed": [
+        "03_metrics/monthly_metrics.csv",
+        "01_overview/pitch_deck.pdf"
+      ],
+      "catchable_from_seed_drop": true,
+      "decoy": false,
+      "in_seed_drop_files": [
+        "03_metrics/monthly_metrics.csv",
+        "01_overview/pitch_deck.pdf"
+      ]
+    }
+  ],
+  "decoys": [
+    {
+      "id": "DC1",
+      "name": "Onboarding fee excluded from ARR correctly",
+      "locations": [
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "ARR_Build",
+          "cell": "A14",
+          "expect": "Onboarding fees (one-time, excluded)",
+          "label": "onboarding row, correctly excluded"
+        },
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "ARR_Build",
+          "cell": "E14",
+          "expect": 0,
+          "label": "ARR counted for the fee"
+        }
+      ],
+      "must_not_flag": true,
+      "why": "The $500 one-time fee is shown in ARR_Build with zero ARR counted. A checker must not flag it as ARR."
+    },
+    {
+      "id": "DC2",
+      "name": "Annual prepay counted as recurring correctly",
+      "locations": [
+        {
+          "file": "04_customers/order_form_brookline_row.pdf",
+          "page": 1,
+          "text": "$7,788",
+          "label": "annual prepaid fee"
+        },
+        {
+          "file": "03_metrics/customer_mrr_by_month.csv",
+          "customer_name": "Brookline Row Veterinary",
+          "customer_id": "C0185",
+          "product_type": "Subscription",
+          "mrr": 649,
+          "label": "customer row for Brookline Row Veterinary"
+        }
+      ],
+      "must_not_flag": true,
+      "why": "Brookline Row pays once a year in advance. Revenue is spread monthly and ARR counts it once, at 12 times the monthly price."
+    },
+    {
+      "id": "DC3",
+      "name": "Clean cap table",
+      "locations": [
+        {
+          "file": "02_financials/cap_table.xlsx",
+          "sheet": "Cap_Table",
+          "cell": "D12",
+          "named_cell": "CAP_TOTAL_PCT",
+          "expect": 1.0,
+          "label": "holders add to 100 percent"
+        },
+        {
+          "file": "02_financials/cap_table.xlsx",
+          "sheet": "Cap_Table",
+          "cell": "C12",
+          "expect": 12000000,
+          "label": "fully diluted shares before the Series A"
+        },
+        {
+          "file": "02_financials/cap_table.xlsx",
+          "sheet": "Cap_Table",
+          "cell": "F16",
+          "expect": 1200000.0,
+          "label": "shares from the Tidewater Seed Fund I, LP SAFE at the cap"
+        },
+        {
+          "file": "02_financials/cap_table.xlsx",
+          "sheet": "Cap_Table",
+          "cell": "F17",
+          "expect": 800000.0,
+          "label": "shares from the Anselm Hartley (angel) SAFE at the cap"
+        },
+        {
+          "file": "02_financials/cap_table.xlsx",
+          "sheet": "Cap_Table",
+          "cell": "B26",
+          "expect": 0.166667,
+          "label": "Series A ownership"
+        }
+      ],
+      "must_not_flag": true,
+      "why": "Holders add to 100 percent and the SAFE conversion at the stated cap is right."
+    }
+  ],
+  "deck_claims": [
+    {
+      "label": "ARR",
+      "value": "$2,500,000",
+      "slide": 3
+    },
+    {
+      "label": "Clinics on Hollis",
+      "value": "357",
+      "slide": 3
+    },
+    {
+      "label": "Calls handled, September 2026",
+      "value": "72,149",
+      "slide": 3
+    },
+    {
+      "label": "Largest customer",
+      "value": "under 9% of ARR",
+      "slide": 4
+    },
+    {
+      "label": "Gross margin",
+      "value": "80%",
+      "slide": 5
+    },
+    {
+      "label": "Net revenue retention",
+      "value": "102.6% (12 months)",
+      "slide": 6
+    },
+    {
+      "label": "US independent clinics (company estimate)",
+      "value": "28,000",
+      "slide": 8
+    },
+    {
+      "label": "Market size (company estimate)",
+      "value": "$252,000,000",
+      "slide": 8
+    },
+    {
+      "label": "Runway",
+      "value": "37 months",
+      "slide": 11
+    },
+    {
+      "label": "Average monthly net burn, next 12 months",
+      "value": "$374,462",
+      "slide": 11
+    },
+    {
+      "label": "Planned hires, next 12 months",
+      "value": "24",
+      "slide": 12
+    },
+    {
+      "label": "Staff after hiring",
+      "value": "41",
+      "slide": 12
+    },
+    {
+      "label": "Series A raise",
+      "value": "$9,000,000",
+      "slide": 13
+    },
+    {
+      "label": "Pre-money valuation",
+      "value": "$45,000,000",
+      "slide": 13
+    }
+  ],
+  "facts": {
+    "customers_ever_paying": 250,
+    "paying_accounts": 212,
+    "mrr_subscription": 171739,
+    "arr_true_recurring": 2060868,
+    "arr_model": 2240868,
+    "arr_deck": 2500000,
+    "arr_video": 3000000,
+    "ask": 9000000,
+    "pre_money": 45000000,
+    "cash": 1800000,
+    "staff_now": 17,
+    "staff_after_hiring": 41,
+    "model_avg_net_burn_12m": 374461.81,
+    "true_avg_net_burn_12m": 480061.81
+  },
+  "counts": {
+    "flags": 8,
+    "decoys": 3,
+    "flags_catchable_from_seed_drop": 5,
+    "flags_needing_full_room": 3
+  },
+  "notes": [
+    "The deck's market figures (28,000 clinics and a $252,000,000 market) are labelled company estimates and are not planted flags.",
+    "The company overview and website copy repeat the deck's ARR and clinic count. They are the same planted claims, not new ones.",
+    "Founder GitHub handles are placeholders. Replace them with the demo organisation's handle in generate.py (FOUNDER_GITHUB).",
+    "The data room gives no cash history, only cash at 2026-09-30, so it does not claim to reconcile cash since inception."
+  ]
+}
