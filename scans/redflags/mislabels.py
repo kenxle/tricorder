@@ -25,6 +25,7 @@ Design: docs/features/20261022.12_accounting_mislabels/04_architecture.md.
 from __future__ import annotations
 
 import re
+from contextvars import ContextVar
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -68,6 +69,8 @@ PASS_COL_RE = re.compile(r"(remitted|pass.?through|paid_to_customer|on_behalf)",
 PASS_LEDGER_RE = re.compile(r"(remittance|resale|pass.?through|at cost)", re.I)
 MONTH_RE = re.compile(r"\d{4}-\d{2}$")
 
+SUM = " scans/redflags/mislabels.py summed the columns in the header row cited."  # review U4
+
 ORDER_RANK = {"flag": 3, "watch": 2, "clear": 1, "cannot_check": 0, "not_run": 0}
 
 
@@ -92,10 +95,21 @@ def pct(x: float) -> str:
     return f"{100 * x:.1f}%"
 
 
+# Number cells read and text cells skipped by the running sub-check (review S8; PRD failure case).
+_CELLS: ContextVar[list[int]] = ContextVar("_CELLS", default=[0, 0])
+
+
 def num(v) -> float:
+    """A number cell as a float. A text cell is skipped (read as 0) and counted, never fatal."""
+    counts = _CELLS.get()
+    counts[0] += 1
     if v is None or v == "":
         return 0.0
-    return float(v)
+    try:
+        return float(v)
+    except (TypeError, ValueError):
+        counts[1] += 1
+        return 0.0
 
 
 # --------------------------------------------------------------------------- the room
@@ -341,6 +355,8 @@ def _check_a(ctx: Ctx, out: Outcome) -> None:
     out.file, out.column = METRICS, "mrr"
     if not room.has(METRICS) or "mrr" not in room.header(METRICS):
         out.label, out.really_is = "not_run", "not_checked"
+        ctx.gap(out, "Not in the room: a revenue export by product type", "not stated in the file",
+                "an MRR column in the metrics export, and monthly revenue by customer with a product type column")
         return
     met = _metrics(room)
     as_of = max(met)
@@ -432,11 +448,19 @@ def _check_b(ctx: Ctx, out: Outcome) -> None:
         maxdiff = max(maxdiff, abs(shown - rev[t]))
         if abs(shown - bill[t]) < abs(shown - rev[t]) and abs(shown - rev[t]) / rev[t] > room.tol:
             fired.append((t, loc, shown))
+    by_month = _by_month(room)
     for t, loc, shown in fired:
+        # Cite the customer rows behind the billings-side difference, largest first (review S7).
+        movers = sorted((r for r in by_month[t] if _is_sub(r, lay)
+                         and abs(num(r[lay.billings_col]) - num(r[lay.revenue_col])) > 0.005),
+                        key=lambda r: -abs(num(r[lay.billings_col]) - num(r[lay.revenue_col])))
         ctx.claim(out, f'The P&L row "Subscription revenue" for {t} is {money(shown)}. Subscription billings in '
                        f"{Path(lay.customers).name} add to {money(bill[t])} and subscription revenue adds to "
-                       f"{money(rev[t])}. The P&L figure sits on the billings side.",
-                  _val(rev[t], "USD", "other", t), "flag", [room.src_cell(loc, room.pnl.values[_rc(loc)])])
+                       f"{money(rev[t])}. The P&L figure sits on the billings side."
+                       + (f" Rows where billings and revenue differ: {', '.join(r['customer_name'] for r in movers[:3])}."
+                          if movers else ""),
+                  _val(rev[t], "USD", "other", t), "flag",
+                  [room.src_cell(loc, room.pnl.values[_rc(loc)])] + [room.src_row(lay.customers, r.file_row) for r in movers[:3]])
     arr = room.named("ARR_TOTAL")
     if arr:
         a12 = num(arr[1]) / 12
@@ -452,7 +476,7 @@ def _check_b(ctx: Ctx, out: Outcome) -> None:
     ctx.claim(out, f'The P&L row "Subscription revenue" matches subscription revenue in the customer file in all '
                    f"{len(months)} actual months (largest difference {money(maxdiff)}). Billings differ from revenue by "
                    f"more than {pct(room.tol)} in {len(spikes)} of those months, which annual plans paid up front "
-                   f"explain on their own.",
+                   f"explain on their own.{SUM}",
               _val(shown, "USD", "other", as_of), "info",
               [room.src_cell(loc, room.pnl.values[_rc(loc)]), room.src_row(lay.customers, 1)])
 
@@ -665,7 +689,7 @@ def _check_f(ctx: Ctx, out: Outcome) -> None:
         out.label, out.really_is = "flag", "capitalised_spend"
     else:
         ctx.claim(out, f"Every ledger line is booked as one of {', '.join(booked)}; none names an asset. The cash bridge "
-                       f"difference is {bridge_txt} against cash of {cash_txt}.",
+                       f"difference is {bridge_txt} against cash of {cash_txt}.{SUM}",
                   _val(num(cash[1]), "USD", "cash", as_of) if cash else None, "info", srcs)
     ctx.gap(out, "Not in the room: a balance sheet", "file missing", "monthly balance sheets")
 
@@ -727,7 +751,7 @@ def _check_g(ctx: Ctx, out: Outcome) -> None:
         ctx.claim(out, f"Billed but not yet earned at {as_of}: {money(total)} across {len(deferred)} customers. The P&L "
                        f'row "Subscription revenue" does not exceed revenue earned in any month'
                        + (f", and ARR_Build Subscription ARR ({money(num(arr_sub[1]))}) is 12 times {as_of} subscription "
-                          f"revenue." if arr_sub else "."),
+                          f"revenue." if arr_sub else ".") + SUM,
                   _val(total, "USD", "other", as_of), "info", srcs)
     if not dnamed:
         ctx.gap(out, what, "file missing", "monthly balance sheets")
@@ -745,6 +769,8 @@ def _check_h(ctx: Ctx, out: Outcome) -> None:
         fee_row = next((l for l in room.pnl.rows if "one-time" in l.lower()), None)
     if not (has_cust or fee_row) or not room.has(METRICS) or "mrr" not in room.header(METRICS):
         out.label, out.really_is, out.file = "not_run", "not_checked", lay.customers or METRICS
+        ctx.gap(out, "Not in the room: one-time fees by month", "not stated in the file",
+                "a one-time fee column in the revenue export, or a one-time fee row in the P&L")
         return
     met = _metrics(room)
     fees, sub = {}, {}
@@ -796,8 +822,19 @@ def _run(room_dir: Path, ids: Ids) -> list[Outcome]:
     for letter, name in ORDER:
         out = Outcome(name)
         fn = globals()[f"_check_{letter}"]   # looked up at call time, so a test can replace one
+        counts = [0, 0]
+        token = _CELLS.set(counts)
         try:
             fn(ctx, out)
+            read, bad = counts
+            if bad and bad > room.tol * read:
+                raise Missing(f"Not in the room: clean numbers for {name}",
+                              f"{bad} of {read} number cells hold text, above the {pct(room.tol)} limit",
+                              "the same export with a number in every amount cell")
+            if bad:
+                ctx.gap(out, f"Not in the room: a number in every amount cell for {name}",
+                        f"{bad} of {read} number cells hold text and were skipped",
+                        "the same export with a number in every amount cell")
         except Missing as m:
             out.claims, out.label, out.really_is = [], "cannot_check", "not_checked"
             ctx.gap(out, m.what, m.why, m.would_need)
@@ -805,6 +842,8 @@ def _run(room_dir: Path, ids: Ids) -> list[Outcome]:
             out.claims, out.label, out.really_is = [], "cannot_check", "not_checked"
             ctx.gap(out, f"Not in the room: readable input for {name}", f"{type(err).__name__}: {err}",
                     "the files this check reads, in the shape the room index describes")
+        finally:
+            _CELLS.reset(token)
         outs.append(out)
     return outs
 

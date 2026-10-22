@@ -50,7 +50,7 @@ def by_check(claims, name, severity=None) -> list[Claim]: ...
 
 ## Verification
 
-Commands run from the repo root. The evidence column records the run of 2026-10-22 on the branch claude/project-thread-dfe7j4: `python3 -m pytest -q scans/redflags/tests/test_mislabels.py` reports 64 passed. Test names are in `scans/redflags/tests/test_mislabels.py`.
+Commands run from the repo root. The evidence column records the run of 2026-10-22 on the branch claude/project-thread-dfe7j4: `python3 -m pytest -q scans/redflags/tests/test_mislabels.py` reports 68 passed (after the review fix round; see 00_progress.md). Test names are in `scans/redflags/tests/test_mislabels.py`.
 
 | Requirement | Acceptance/failure case | Command/observation | Owner | Evidence/status |
 |---|---|---|---|---|
@@ -83,7 +83,7 @@ Commands run from the repo root. The evidence column records the run of 2026-10-
 | AM-R29 | Answer-key score | `python -m scans.redflags data_room/<room>` then `python -m eval.score data_room/<room>` for the four rooms: 0 decoys flagged everywhere; BF1, BF3, BF4 found on Brasswick. As a test: `::test_eval_score_on_brasswick_finds_bf1_bf3_bf4` | builder at S5; captain at merge | pass: `python -m eval.score data_room/brasswick` prints found 4 of 5 (BF1, BF3, BF4 from this module; BF2 from deck_vs_books), decoys 0 of 3; Hollis Voice, seed drop and clean room decoys 0 of 3 |
 | AM-R30 | Fixture writes only under `tmp_path` | `::test_resale_fixture_writes_nothing_under_data_room` (hash of `data_room/` before and after) | builder | pass: `test_resale_fixture_writes_nothing_under_data_room` |
 | Entry 1.12 output shape | Panels carry the entry label, the checks table and the lines table; the engine result holds them | `::test_panels_carry_entry_checks_and_lines`, `::test_seed_drop_entry_label`, `::test_engine_result_holds_mislabels_claims_and_panels`; `python3 -m scans.redflags data_room/hollis_voice` | builder | pass: the engine writes 10 claims and 4 gaps to `out/hollis_voice/redflags.json`, redflags-001 to 006 from this module |
-| All | Full suite green | `bin/ci-py` reads 0 failed | builder, then captain | pass: `python3 -m pytest` 183 passed |
+| All | Full suite green | `bin/ci-py` reads 0 failed | builder, then captain | pass: `python3 -m pytest` 203 passed |
 
 ## Testing findings
 

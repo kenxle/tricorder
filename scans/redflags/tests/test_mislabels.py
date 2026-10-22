@@ -191,19 +191,52 @@ def test_missing_column_is_a_gap_not_a_crash(tmp_path):  # AM-R6
     assert by_check(claims, A, "flag")  # the others still run
 
 
-def test_missing_pnl_row_is_a_gap(tmp_path):  # AM-R6
-    import openpyxl
-    room = _copy(tmp_path / "room")
-    path = room / "02_financials/financial_model.xlsx"
-    wb = openpyxl.load_workbook(path)
-    ws = wb["P&L"]
-    for r in range(1, ws.max_row + 1):
-        if ws.cell(r, 1).value == "Subscription revenue":
-            ws.cell(r, 1).value = "Renamed row"
-    wb.save(path)
-    claims, gaps = chk(room)
+def test_missing_pnl_row_is_a_gap(monkeypatch):  # AM-R6; review U10: patched in memory, not saved with openpyxl
+    original = mislabels.Room.pnl.fget
+
+    def renamed(self):
+        p = original(self)
+        if "Subscription revenue" in p.rows:   # the parsed P&L is cached per room
+            p.rows["Renamed row"] = p.rows.pop("Subscription revenue")
+        return p
+
+    monkeypatch.setattr(mislabels.Room, "pnl", property(renamed))
+    claims, gaps = chk(FULL)
     assert not by_check(claims, B, "flag")
     assert any("Subscription revenue" in g.what for g in gaps)
+    assert by_check(claims, E, "info")  # the other sub-checks see real totals
+
+
+def _with_text_fees(tmp_path, how_many: int) -> Path:
+    room = _copy(tmp_path / "room")
+    lines = (room / CUST).read_text(encoding="utf-8").splitlines()
+    done = 0
+    for i, ln in enumerate(lines[1:], start=1):
+        f = ln.split(",")
+        if f[5] == "Onboarding" and done < how_many:
+            f[7] = "n/a"
+            lines[i] = ",".join(f)
+            done += 1
+    (room / CUST).write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return room
+
+
+def test_one_text_cell_is_skipped_and_counted(tmp_path):  # review S8, PRD failure case
+    room = _with_text_fees(tmp_path, 1)
+    claims, gaps = chk(room)
+    assert mislabels.outcomes(room)[H] == "clear"
+    assert by_check(claims, A, "flag")
+    assert any("hold text" in g.why and "skipped" in g.why for g in gaps)
+    assert not any("ValueError" in g.why for g in gaps)
+
+
+def test_many_text_cells_make_the_subcheck_cannot_check(tmp_path):  # review S8
+    room = _with_text_fees(tmp_path, 250)
+    claims, gaps = chk(room)
+    assert mislabels.outcomes(room)[H] == "cannot_check"
+    assert not by_check(claims, H)
+    assert any("hold text" in g.why for g in gaps)
+    assert by_check(claims, A, "flag")
 
 
 def test_locator_error_is_caught_per_subcheck(monkeypatch):  # AM-R6
@@ -245,8 +278,10 @@ def test_seed_drop_mrr_uses_arr_build_fallback():  # AM-R10
     assert any(g.what == "Not in the room: a revenue export by product type" for g in gaps)
 
 
-def test_mrr_not_run_on_brasswick():  # D2
+def test_mrr_not_run_on_brasswick():  # D2, review S6: a not_run kind writes its gap
     assert outcomes(BRASS)[A] == "not_run"
+    assert any(g.what == "Not in the room: a revenue export by product type" and g.why == "not stated in the file"
+               for g in run(BRASS)[1])
 
 
 # ---------------------------------------------------------------- kind b
@@ -264,6 +299,12 @@ def test_billings_flags_brasswick_september():  # AM-R11
     assert len(c) == 1 and c[0].value.period == "2026-09"
     assert "$84,810" in c[0].text and "$82,650" in c[0].text and "$59,565" in c[0].text
     assert cites(c[0], "02_financials/financial_model.xlsx", "P&L!S7")
+
+
+def test_billings_flag_cites_the_customer_rows_it_totals():  # review S7
+    c = by_check(run(BRASS)[0], B, "flag")[0]
+    rows = [s for s in c.sources if s.uri == "03_metrics/revenue_by_customer.csv"]
+    assert any(s.quote.startswith("2026-09,C1015,Ostley Freight") for s in rows)
 
 
 SEED_CANNOT = {B: "Not in the room: an invoices or billings export",
@@ -402,8 +443,17 @@ def test_one_time_fees_clear(room):  # AM-R26, DC1
     assert "$9,500" in info.text and "$15,000" in info.text
 
 
-def test_one_time_fees_not_run_on_brasswick():  # AM-R26
+def test_one_time_fees_not_run_on_brasswick():  # AM-R26, review S6: a not_run kind writes its gap
     assert outcomes(BRASS)[H] == "not_run"
+    assert any(g.what == "Not in the room: one-time fees by month" and g.why == "not stated in the file"
+               for g in run(BRASS)[1])
+
+
+def test_every_not_run_kind_writes_a_gap():  # review S6, PRD outcome table
+    for room in ALL_ROOMS:
+        _, gaps, panels = mislabels.check(room, Ids("redflags"))
+        not_run = [r[0] for r in {p.name: p for p in panels}["accounting mislabels: checks"].rows if r[3] == "not_run"]
+        assert len([g for g in gaps if g.why == "not stated in the file"]) >= len(not_run), room.name
 
 
 # ---------------------------------------------------------------- decoys, clean room, score

@@ -1,6 +1,6 @@
 # Feature progress: accounting mislabels
 
-`scans/redflags/mislabels.py` is built test first and its 64 tests pass. The full suite passes: `python3 -m pytest`, 183 passed. The red-flag engine now carries the module's claims and its three panels. On Brasswick, `eval.score` finds BF1, BF3 and BF4 from this module, and no room flags a decoy. Next: the captain reviews and merges. The proposed FRAMEWORKS.md text is in [proposed_frameworks_changes.md](proposed_frameworks_changes.md).
+`scans/redflags/mislabels.py` is built test first. After the review fix round, its 68 tests pass and the full suite passes (`python3 -m pytest`: 203 passed). The red-flag engine now carries the module's claims and its three panels. On Brasswick, `eval.score` finds BF1, BF3 and BF4 from this module, and no room flags a decoy. Next: the captain reviews and merges. The proposed FRAMEWORKS.md text is in [proposed_frameworks_changes.md](proposed_frameworks_changes.md).
 
 Roadmap slice: [accounting-mislabels](../../ongoing/ROADMAP.md#accounting-mislabels). Route: prototype first, with an interface example in place of a screen.
 
@@ -9,6 +9,22 @@ Roadmap slice: [accounting-mislabels](../../ongoing/ROADMAP.md#accounting-mislab
 1. **The coordinator's fallback rule rests on a misreading, and the code does not follow it.** The coordinator asked that kind a's seed-drop result follow entry 1.12's "model-fallback rule": if the fallback is a model reading, it should not be a script flag, and offline with no API key it should be a gap. But "the model" in entry 1.12's fallback is the company's financial model workbook. The text reads "the `Product type` column of `ARR_Build` in the model". The fallback reads spreadsheet cells, makes no LLM call and needs no key. So the claim stays `computed`, with severity `flag`. `test_makes_no_model_call` replaces every function in `clients/llm.py` with one that fails, then runs the seed drop, and it passes. Item 4 of [proposed_frameworks_changes.md](proposed_frameworks_changes.md) proposes wording that removes the ambiguity. If the coordinator still wants the seed-drop claim downgraded to `watch`, that is a one-line change. Owner: coordinator.
 2. **Entry 1.12 needs the proposed text.** The kind e plan test, vendor propagation and the kind g bridge test run in code but are not yet in FRAMEWORKS.md. Owner: whoever keeps FRAMEWORKS.md.
 3. **Entry 1.2's flag must cite `ARR_Build!E13`.** The link by shared source depends on it. Nobody has built entry 1.2 yet. Owner: redflag-engine.
+
+## Review fix round (docs/features/20261022.10_feature_breakdown/review_wave1.md)
+
+Each fix started with a failing test. Before the fixes, six new tests failed: `test_mrr_not_run_on_brasswick`, `test_one_time_fees_not_run_on_brasswick`, `test_every_not_run_kind_writes_a_gap`, `test_billings_flag_cites_the_customer_rows_it_totals`, `test_one_text_cell_is_skipped_and_counted` and `test_many_text_cells_make_the_subcheck_cannot_check`. All pass now.
+
+| Finding | Disposition | Proof |
+|---|---|---|
+| S6. A not_run kind writes no gap (a, h) | Fixed. Kind a writes "Not in the room: a revenue export by product type" and kind h writes "Not in the room: one-time fees by month", each with `why` "not stated in the file". | The three S6 tests. Brasswick's result now holds 4 gaps, against 2 before. |
+| S7. The kind b flag cites only `P&L!S7` | Fixed. The flag also cites the customer rows where billings and revenue differ, largest first: Ostley Freight (row 141) and Tessmore Freight (row 136). Its text names them. | `test_billings_flag_cites_the_customer_rows_it_totals` |
+| S8. A text cell fails the whole sub-check | Fixed. `num()` reads a text cell as 0 and counts it. When the text cells are at or under `match_tolerance` of the cells a sub-check read, it writes a gap saying how many it skipped. Above that, the sub-check returns cannot_check. | `test_one_text_cell_is_skipped_and_counted` (kind h stays clear; the gap says "1 of N"); `test_many_text_cells_make_the_subcheck_cannot_check` (250 text fees put kind h at cannot_check, and kind a still flags) |
+| U4. Clear claims cite the CSV header row | Taken, cheaply. The three clear texts now say that `scans/redflags/mislabels.py` summed the columns in the header row they cite. | the quote check still passes on every room |
+| U10. The workbook test saves with openpyxl | Taken. `test_missing_pnl_row_is_a_gap` now patches the parsed P&L in memory, and it also asserts that kind e still sees real totals. | passes |
+| U3. Hard-coded room shapes | Deferred. Fine for Saturday, as the review says. A third room shape would need "file not recognised" wording. | none |
+| U6. Gaps in the claim id sequence | Declined. The review calls it harmless, and tests match on check names, not ids. | none |
+
+After the fixes: `python3 -m scans.redflags data_room/brasswick` writes 11 claims and 4 gaps. `python3 -m eval.score data_room/brasswick` prints "found 4 of 5; decoys flagged 0 of 3". The `lahe.js serve` count was 0 before and 0 after.
 
 ## Decisions settled by the coordinator
 
@@ -29,8 +45,8 @@ Roadmap slice: [accounting-mislabels](../../ongoing/ROADMAP.md#accounting-mislab
 |---|---|---|---|---|
 | Docs to Plan | agent | done | this folder, committed by the parent | none |
 | Tests written first | agent | done | Run before the module existed, the file failed at collection with `ImportError: cannot import name 'mislabels'`. The red check covered the whole file, not each test. | none |
-| Module | agent | done | `python3 -m pytest scans/redflags/tests/test_mislabels.py`: 64 passed in 2.60s | captain review |
-| Full suite | agent | green | `python3 -m pytest`: 183 passed in 15.64s. An earlier run set aside `scans/memo/tests/test_coverage.py` (147 passed without it), while another agent's checklist module was still missing. | none |
+| Module | agent | done | `python3 -m pytest scans/redflags/tests/test_mislabels.py`: 68 passed after the fix round (64 before) | captain review |
+| Full suite | agent | green | `python3 -m pytest`: 203 passed in 17.86s after the fix round (183 before). An earlier run set aside `scans/memo/tests/test_coverage.py` (147 passed without it), while another agent's checklist module was still missing. | none |
 | Engine on Hollis Voice | agent | done | `python3 -m scans.redflags data_room/hollis_voice`: "redflags: 10 claims, 4 gaps". redflags-001 is the `mrr_column_vs_subscription_rows` flag ($186,739 against $171,739, $15,000, 8.7%). Claims 002 to 006 are info tie-outs for b, e, f, g and h. Claims 007 to 010 come from deck_vs_books. | none |
 | Score | agent | done | `python3 -m scans.redflags`, `python3 -m scans.memo`, `python3 -m eval.score` per room. brasswick: found 4 of 5 (BF1, BF3, BF4 from this module; BF2 from deck_vs_books), decoys flagged 0 of 3. hollis_voice: found 0 of 8, decoys 0 of 3. hollis_voice_seed_drop: found 0 of 8, decoys 0 of 3. hollis_voice_clean: found 0 of 0, decoys 0 of 3. Hollis Voice's planted flags belong to the Saturday checks, which do not exist yet. | none |
 | Helper processes | agent | checked | `ps -axo command \| grep -c "[l]ahe.js serve"`: 0 before and 0 after. The tests start no process. | none |
