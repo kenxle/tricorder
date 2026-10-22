@@ -171,7 +171,7 @@ HIRES = [
     ("Senior Voice Engineer", "Engineering", "rd", 190_000), ("Customer Success Manager", "Customer Success", "sm", 140_000),
     ("Machine Learning Engineer", "Engineering", "rd", 185_000), ("Account Executive", "Sales", "sm", 145_000),
     ("Backend Engineer", "Engineering", "rd", 175_000), ("Implementation Specialist", "Customer Success", "sm", 155_000),
-    ("Head of Sales", "Sales", "sm", 215_000), ("Support Specialist", "Support", "sup", 115_000),
+    ("Director of Enterprise Sales", "Sales", "sm", 215_000), ("Support Specialist", "Support", "sup", 115_000),
     ("Data Engineer", "Engineering", "rd", 180_000), ("Marketing Manager", "Marketing", "sm", 150_000),
     ("Security Engineer", "Engineering", "rd", 195_000), ("Support Specialist", "Support", "sup", 135_000),
     ("Frontend Engineer", "Engineering", "rd", 170_000), ("Account Executive", "Sales", "sm", 160_000),
@@ -256,6 +256,15 @@ SAFE_A_NAME = "Tidewater Seed Fund I, LP"
 SAFE_B_NAME = "Winifred Hartley (angel)"
 SAFE_C_NAME = "Ostrander Lane Ventures II, LP"
 SERIES_A_LEAD = "Series A investors (new)"
+
+# The company's own market estimate. The deck's market slide and the model's Market tab both use it.
+MARKET_CLINICS = 28_000
+MARKET_ACV = 9_000
+MARKET_TAM = MARKET_CLINICS * MARKET_ACV
+
+# Where each green flag is found. Filled while the files are built; written to the answer key.
+GREEN = defaultdict(list)
+
 
 class Registry(defaultdict):
     """Planted locations for the answer key. Entries for a flag the room does not plant are dropped."""
@@ -736,9 +745,11 @@ def build_tables():
     rows = []
     for i, (role, dept, _k, base) in enumerate(HIRES):
         t = 1 + i // 2
-        rows.append((f"H{i + 1:02d}", role, dept, f"{mlabel(N_MONTHS - 1 + t)}-{F['hire_days'][i]:02d}", base))
-    write_csv(ROOM / "05_team/hiring_plan.csv", ["hire_id", "role", "department", "start_date", "base_salary_usd"], rows)
+        rows.append((f"H{i + 1:02d}", role, dept, f"{mlabel(N_MONTHS - 1 + t)}-{F['hire_days'][i]:02d}", base, HEADCOUNT_NOW + i + 1))
+    write_csv(ROOM / "05_team/hiring_plan.csv", ["hire_id", "role", "department", "start_date", "base_salary_usd", "headcount_after_hire"], rows)
     F["hire_rows"] = rows
+    GREEN["team_41"].append({"file": "05_team/hiring_plan.csv", "row_key": {"hire_id": rows[-1][0]}, "column": "headcount_after_hire",
+                          "value": rows[-1][5], "label": "staff after the last planned hire"})
 
 
 # ---------------------------------------------------------------------------------------------
@@ -804,6 +815,7 @@ def build_model():
     ws_hire = wb.add_worksheet("Hiring_Plan")
     ws_cash = wb.add_worksheet("Cash_Runway")
     ws_bridge = wb.add_worksheet("Cash_Bridge")
+    ws_market = wb.add_worksheet("Market")
 
     # ---- README
     ws_readme.set_column(0, 0, 110)
@@ -819,6 +831,7 @@ def build_model():
         ("Hiring_Plan: the hires the plan pays for.", None),
         ("Cash_Runway: monthly cash and the number of months the cash lasts.", None),
         ("Cash_Bridge: money raised, less losses since the company began, equals cash at the data date.", None),
+        ("Market: the company's own market estimate, the one the deck's market slide uses.", None),
         ("", None),
         ("Definitions", "bold"),
         ("ARR: monthly recurring revenue from signed, live agreements, times 12. One-time fees are left out.", None),
@@ -874,6 +887,10 @@ def build_model():
     ws_ass.write(r, 2, "Staff times average base pay times the loaded factor, divided by 12.", fm["note"])
     wb.define_name("PAYROLL_NOW_USD_MONTH", f"=Assumptions!$B${r + 1}")
     ws_ass.write(r + 2, 0, FOOTER, fm["note"])
+    GREEN["team_17"].append({"file": rel, "sheet": "Assumptions", "cell": ASS_CELL["STAFF_NOW"], "named_cell": "STAFF_NOW",
+                             "value": HEADCOUNT_NOW, "label": "staff at the data date"})
+    GREEN["pitch"].append({"file": rel, "sheet": "Assumptions", "cell": ASS_CELL["SERIES_A_RAISE"], "named_cell": "SERIES_A_RAISE",
+                           "value": SERIES_A, "label": "Series A raise in the model"})
 
     # ---- P&L
     ws_pl.set_column(0, 0, 44)
@@ -981,8 +998,8 @@ def build_model():
         actual = j < N_MONTHS
         for key in ("onb", "tel", "lic", "p_rd", "host", "p_sm", "sup", "prog", "p_ga", "rent"):
             ws_pl.write_number(R[key], c, V[(key, j)], fm["usd"])
-        ws_pl.write_number(R["heads"], c, V[("heads", j)], fm["int"])
         if actual:
+            ws_pl.write_number(R["heads"], c, V[("heads", j)], fm["int"])    # staff is shown for actual months only
             ws_pl.write_number(R["sub"], c, V[("sub", j)], fm["usd"])
             ws_pl.write_number(R["pilot"], c, V[("pilot", j)], fm["usd"])
             if on("PF1"):
@@ -1171,8 +1188,6 @@ def build_model():
     ws_hire.write_formula(r, 1, f"=COUNTA(A{first + 1}:A{r})", fm["name"], F["n_model_hires"])
     wb.define_name("HIRES_COUNTED", f"=Hiring_Plan!$B${r + 1}")
     reg("PF4", "Hiring_Plan", a1(r, 1), name="HIRES_COUNTED", expect=MODELED_HIRES, label="hires the model pays for")
-    ws_hire.write(r + 1, 0, "Staff after these hires", fm["bold"])
-    ws_hire.write_formula(r + 1, 1, f"=STAFF_NOW+B{r + 1}", fm["int"], HEADCOUNT_NOW + F["n_model_hires"])
     ws_hire.write(r + 3, 0, FOOTER, fm["note"])
 
     # ---- Cash_Runway (60 plan months)
@@ -1245,6 +1260,31 @@ def build_model():
     wb.define_name("CASH_BRIDGE_DIFF", "=Cash_Bridge!$B$12")
     F["bridge_diff"] = bridge[-1][2]
     ws_bridge.write(14, 0, FOOTER, fm["note"])
+
+    # ---- Market: the company's own estimate, the one the deck's market slide states
+    ws_market.set_column(0, 0, 60)
+    ws_market.set_column(1, 1, 18)
+    ws_market.set_column(2, 2, 90)
+    ws_market.write(0, 0, "Market size (USD)", fm["title"])
+    ws_market.write(1, 0, "These are the company's own estimates. No outside source is in the room.", fm["note"])
+    ws_market.write_row(3, 0, ["Line", "Value", "Note"], fm["headl"])
+    ws_market.write(4, 0, "US independent veterinary clinics (company estimate)")
+    ws_market.write_number(4, 1, MARKET_CLINICS, fm["name"])
+    ws_market.write(4, 2, "The same count as the deck's market slide.", fm["note"])
+    ws_market.write(5, 0, "Annual contract value per clinic (USD, company estimate)")
+    ws_market.write_number(5, 1, MARKET_ACV, fm["name"])
+    ws_market.write(5, 2, "A planning figure for what a clinic pays in a year.", fm["note"])
+    ws_market.write(6, 0, "Market size: clinics times annual contract value (USD)", fm["bold"])
+    ws_market.write_formula(6, 1, "=MARKET_CLINICS*MARKET_ACV_USD", fm["name"], MARKET_TAM)
+    ws_market.write(7, 0, "For comparison: subscription ARR per paying clinic today (USD)")
+    ws_market.write_formula(7, 1, f"=ARR_Build!E{sub_row + 1}/ARR_Build!C{sub_row + 1}", fm["usd"], sub_mrr * 12 / sub_cnt)
+    ws_market.write(7, 2, "Subscription ARR in ARR_Build divided by the paying clinics counted there.", fm["note"])
+    wb.define_name("MARKET_CLINICS", "=Market!$B$5")
+    wb.define_name("MARKET_ACV_USD", "=Market!$B$6")
+    wb.define_name("MARKET_TAM_USD", "=Market!$B$7")
+    ws_market.write(9, 0, FOOTER, fm["note"])
+    GREEN["market"].append({"file": rel, "sheet": "Market", "cell": "B7", "named_cell": "MARKET_TAM_USD",
+                            "value": MARKET_TAM, "label": "market size in the model"})
     wb.close()
 
 
@@ -1348,6 +1388,7 @@ def build_cap_table():
             ws.write_number(r + i, 1, val, fm[fmt])
     ws.write_formula(lead_row, 4, f"=B{r + 5}", fm["int"], new_shares)
     LOC["DC3"].append({"file": rel, "sheet": "Cap_Table", "cell": a1(r + 5, 1), "expect": round(new_shares / post, 6), "label": "Series A ownership"})
+    GREEN["pitch"].append({"file": rel, "sheet": "Cap_Table", "cell": a1(r + 1, 1), "value": SERIES_A, "label": "Series A new money in the cap table"})
     ws.write(r + 8, 0, FOOTER, fm["note"])
     wb.close()
     F["cap"] = {"total_pre": total, "new_shares": new_shares, "post": post, "safe_shares": safe_shares}
@@ -1423,7 +1464,7 @@ def ARR_SHORT():
 
 def deck_claims():
     """Every number the deck states, with the slide it first appears on."""
-    mkt_clinics, mkt_acv = 28_000, 9_000
+    mkt_clinics, mkt_acv = MARKET_CLINICS, MARKET_ACV
     return [
         ("ARR", money(F["deck_arr"]), 3),
         ("Clinics on Hollis", f"{F['deck_clinics']}", 3),
@@ -1640,9 +1681,10 @@ def build_deck():
 
     # 8 Market
     page(8, "Market")
-    bullets(["About 28,000 independent veterinary clinics in the United States (company estimate).",
-             "At about $9,000 a year per clinic, that is a market near $252,000,000 (company estimate).",
+    bullets([f"About {MARKET_CLINICS:,} independent veterinary clinics in the United States (company estimate).",
+             f"At about {money(MARKET_ACV)} a year per clinic, that is a market near {money(MARKET_TAM)} (company estimate).",
              "Chains already have call centers. Independent clinics do not."], 48, 410, 860, 22, 30)
+    GREEN["market"].append({"file": DECK, "page": 8, "text": money(MARKET_TAM), "value": MARKET_TAM, "label": "deck market size, slide 8"})
     c.showPage()
 
     # 9 Competition
@@ -1681,6 +1723,7 @@ def build_deck():
         para(f"{nm}, {role}", 48, y, 860, 15, 20)
         y -= 26
     para(f"{HEADCOUNT_NOW} people today.", 48, y - 10, 860, 16, 22, bold=True)
+    GREEN["team_17"].append({"file": DECK, "page": 10, "text": f"{HEADCOUNT_NOW} people today.", "value": HEADCOUNT_NOW, "label": "deck staff today, slide 10"})
     c.showPage()
 
     # 11 Plan and use of funds
@@ -1706,6 +1749,8 @@ def build_deck():
         para(f"{dept}: {counts[dept]}", 48, y, 400, 18, 24)
         y -= 28
     LOC["PF4"].append({"file": DECK, "page": 12, "text": f"{PLANNED_HIRES} hires", "expect": PLANNED_HIRES, "label": "deck planned hires"})
+    GREEN["team_41"].append({"file": DECK, "page": 12, "text": f"Staff grows from {HEADCOUNT_NOW} to {HEADCOUNT_NOW + PLANNED_HIRES}.",
+                             "value": HEADCOUNT_NOW + PLANNED_HIRES, "label": "deck staff after hiring, slide 12"})
     c.showPage()
 
     # 13 The ask
@@ -1719,6 +1764,7 @@ def build_deck():
     for lab, share in (("Engineering", 0.40), ("Sales and marketing", 0.35), ("Customer success and support", 0.15), ("General and administrative", 0.10)):
         para(f"{lab}: {money(SERIES_A * share)} ({share * 100:.0f}%)", 48, y, 860, 17, 24)
         y -= 28
+    GREEN["pitch"].append({"file": DECK, "page": 13, "text": money(SERIES_A), "value": SERIES_A, "label": "deck Series A raise, slide 13"})
     c.showPage()
 
     # 14 Claims
@@ -1814,7 +1860,7 @@ ROOM_FILES = [
     ("02_financials/expense_ledger.csv", "Expense lines by month with vendor and category.", "second"),
     ("03_metrics/monthly_metrics.csv", "Monthly metrics: MRR, ARR, paying accounts, accounts created, calls.", "first"),
     ("03_metrics/customer_mrr_by_month.csv", "Revenue by customer by month, with plan and product type.", "second"),
-    ("04_customers/order_form_cedar_pine.pdf", "Order form: Cedar & Pine Animal Hospitals, 17 locations.", "second"),
+    ("04_customers/order_form_cedar_pine.pdf", f"Order form: Cedar & Pine Animal Hospitals, {BIG['locations_now']} locations.", "second"),
     ("04_customers/pilot_agreement_marlow.pdf", "Pilot agreement: Marlow Veterinary Group.", "second"),
     ("04_customers/order_form_brookline_row.pdf", "Order form: Brookline Row Veterinary, annual plan.", "second"),
     ("05_team/founder_bios.pdf", "Founder and senior team bios.", "first"),
@@ -1877,13 +1923,13 @@ def build_bios():
     story.append(PageBreak())
     story.append(P("Senior team", S_H1))
     texts = {
-        "Head of Sales": "Marguerite sold software to multi-location service businesses for twelve years before joining Hollis Voice in 2025.",
-        "Head of Customer Success": "Anselm led onboarding for a scheduling software company and joined Hollis Voice in 2025.",
-        "Controller (part time)": "Hallie is a certified public accountant who works with several early-stage companies. She joined Hollis Voice in 2026.",
-        "Lead Voice Engineer": "Lucan built call-routing systems at a regional telephone carrier and joined Hollis Voice in 2025.",
+        "Head of Sales": "sold software to multi-location service businesses for twelve years before joining Hollis Voice in 2025.",
+        "Head of Customer Success": "led onboarding for a scheduling software company and joined Hollis Voice in 2025.",
+        "Controller (part time)": "is a certified public accountant who works with several early-stage companies. She joined Hollis Voice in 2026.",
+        "Lead Voice Engineer": "built call-routing systems at a regional telephone carrier and joined Hollis Voice in 2025.",
     }
     for nm, role in SENIOR:
-        story += [P(nm, S_H2), P(role, S_SMALL), P(texts[role])]
+        story += [P(nm, S_H2), P(role, S_SMALL), P(f"{nm.split()[0]} {texts[role]}")]
     make_pdf("05_team/founder_bios.pdf", story, "Hollis Voice: founder bios")
 
 
@@ -2229,6 +2275,23 @@ def build_answer_key():
         {"id": "DC3", "name": "Clean cap table", "locations": LOC["DC3"], "must_not_flag": True,
          "why": "Holders add to 100 percent and the SAFE conversion at the stated cap is right."},
     ]
+    green_flags = [
+        {"id": "GF1", "piece": "the pitch itself", "name": "The round adds up",
+         "label": "raise_amount", "number": SERIES_A, "unit": "USD", "tolerance": 0.01,
+         "locations": GREEN["pitch"], "independent_sources": 3,
+         "sources_note": "The deck (slide 13, with the overview and video, one source), the cap table and the model are three different files."},
+        {"id": "GF2", "piece": "market", "name": "The market size is stated the same way in the deck and the model",
+         "label": "tam", "number": MARKET_TAM, "unit": "USD", "tolerance": 0.01,
+         "locations": GREEN["market"], "independent_sources": 2,
+         "sources_note": "The deck (slide 8) and the model's Market tab. Both are the company's own estimate, and the room says so."},
+        {"id": "GF3", "piece": "team", "name": "Staff today agrees across the deck and the model",
+         "label": "headcount", "number": HEADCOUNT_NOW, "unit": "count", "tolerance": 0.01,
+         "locations": GREEN["team_17"], "independent_sources": 2,
+         "sources_note": "The deck (slide 10, with the overview, one source) and the model (Assumptions STAFF_NOW; P&L staff at month end 2026-09 is the same file).",
+         "also_agree": [{"label": "headcount", "number": HEADCOUNT_NOW + PLANNED_HIRES, "unit": "count", "period": "after the 24 planned hires",
+                         "locations": GREEN["team_41"],
+                         "sources_note": "The deck (slide 12) and the last row of hiring_plan.csv. The model states no staff total after the hires."}]},
+    ]
     key = {
         "company": "Hollis Voice (fictional)",
         "synthetic_notice": FOOTER,
@@ -2241,6 +2304,8 @@ def build_answer_key():
         "seed_drop_files": SEED_FILES,
         "full_room_files": [r[0] for r in ROOM_FILES] + [CLAIMS_SIDECAR],
         "flags": flags, "decoys": decoys,
+        "green_flags": green_flags,
+        "green_flags_note": "Positives, the same in every room. Each is a number two different files state within one percent. Only pieces with no planted flag can read strong: market, team and the pitch itself. In a room with a flag switched off, that flag's piece may read strong too; this list names only these three.",
         "deck_claims": LOC["CLAIMS"],
         "facts": {
             "customers_ever_paying": f["ever"], "paying_accounts": f["paying"][LAST], "mrr_subscription": f["true_mrr"],
@@ -2252,9 +2317,11 @@ def build_answer_key():
             "big_customer_id": f["big_id"], "big_customer_locations": BIG["locations_now"], "pilot_customer_id": f["pilot_id"], "brookline_customer_id": f["brook"]["id"],
             "arr_video_phrase": MILLION_WORDS[f["video_arr"]],
             "staff_after_hiring": HEADCOUNT_NOW + PLANNED_HIRES,
+            "team": [{"name": CEO["name"], "title": CEO["title"]}, {"name": CTO["name"], "title": CTO["title"]}]
+                    + [{"name": nm, "title": role} for nm, role in SENIOR],
             "model_avg_net_burn_12m": round(f["burn_shown"], 2), "true_avg_net_burn_12m": round(f["burn_true"], 2),
         },
-        "counts": {"flags": len(flags), "decoys": len(decoys),
+        "counts": {"flags": len(flags), "decoys": len(decoys), "green_flags": len(green_flags),
                    "flags_catchable_from_seed_drop": sum(1 for x in flags if x["catchable_from_seed_drop"]),
                    "flags_needing_full_room": sum(1 for x in flags if not x["catchable_from_seed_drop"])},
         "notes": [

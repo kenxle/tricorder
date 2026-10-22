@@ -4,7 +4,7 @@
 
 ## What this is
 
-A fake startup data room for the Tricorder demo. The organisers ask teams to bring a synthetic room and never a real company's confidential data. The main room has seven planted red flags, one variant, and three clean decoys. Tricorder should find the flags and leave the decoys alone.
+A fake startup data room for the Tricorder demo. The organisers ask teams to bring a synthetic room and never a real company's confidential data. The main room has eight planted red flags and three clean decoys. It also has three green flags: numbers that two different files state the same way. Tricorder should find the red flags, leave the decoys alone, and report the green flags as strengths.
 
 The generator can also write two other rooms: a clean room with no flags, and a sealed variant room with a different seed and a flag list that only an outside person knows. They let the demo show Tricorder on a room the build team did not write the checks against. See `SEALING.md`.
 
@@ -49,13 +49,13 @@ data_room/.venv/bin/python data_room/check.py --room data_room/hollis_voice_clea
 data_room/.venv/bin/python data_room/check.py --room data_room/hollis_voice_variant --key <path to the sealed key>
 ```
 
-`check.py` takes a room folder and a key. It reads the generated files back and checks each planted flag is where the key says it is, then rebuilds the true numbers from the raw files. For a flag the key does not list, it checks the room is honest on that point. It also checks that the cash reconciles and that the room does not look built to be caught. It exits with a non-zero status on any miss. Last run: 219 checks passed on the main room, 127 on the clean room and 167 on the seed 77 smoke-test variant.
+`check.py` takes a room folder and a key. It reads the generated files back and checks each planted flag is where the key says it is, then rebuilds the true numbers from the raw files. For a flag the key does not list, it checks the room is honest on that point. It also checks that the cash reconciles and that the room does not look built to be caught. It exits with a non-zero status on any miss. Last run: 276 checks passed on the main room, 171 on the clean room and 211 on the seed 77 smoke-test variant (`--seed 77 --plants PF1,PF3,PF6`). It also checks the green flags and that the main room's eight red flags still show and mean the same numbers.
 
 ## What is written
 
 - `hollis_voice/` is the full Series A room, 17 files in seven folders.
 - `hollis_voice_seed_drop/` holds copies of the 12 files of the thin first tier (the 11 first-tier files plus `claims.json`). This is what a founder sends before a first meeting.
-- `answer_key.json` lists every flag and decoy with its file and location, the shown value, the true value, the check that catches it, and which files a check needs. Do not point Tricorder at it.
+- `answer_key.json` lists every flag and decoy with its file and location, the shown value, the true value, the check that catches it, and which files a check needs. It also lists the green flags (`green_flags`). Do not point Tricorder at it.
 
 ## The files
 
@@ -66,7 +66,7 @@ data_room/.venv/bin/python data_room/check.py --room data_room/hollis_voice_vari
 | `01_overview/company_overview.pdf` | One-page overview: what, who, traction, ask | yes |
 | `01_overview/pitch_video_script.md` | Two-minute script to read on a phone. It states a third ARR figure | yes |
 | `01_overview/claims.json` | The 14 rows of slide 14 as data (label, value, slide), written from the same list. The fallback when PDF text extraction fails | yes |
-| `02_financials/financial_model.xlsx` | Assumptions, P&L, ARR build, cohorts, hiring plan, cash and runway, and the cash bridge, with named cells | yes |
+| `02_financials/financial_model.xlsx` | Assumptions, P&L, ARR build, cohorts, hiring plan, cash and runway, the cash bridge, and the company's market estimate, with named cells | yes |
 | `02_financials/cap_table.xlsx` | Fully diluted cap table, three SAFE conversions and the Series A. Clean | yes |
 | `02_financials/expense_ledger.csv` | 408 dated expense lines from 13 vendors, with category and how each is booked | no |
 | `03_metrics/monthly_metrics.csv` | MRR, ARR, paying accounts, accounts created (cumulative), calls | yes |
@@ -75,7 +75,7 @@ data_room/.venv/bin/python data_room/check.py --room data_room/hollis_voice_vari
 | `04_customers/pilot_agreement_marlow.pdf` | Six-month pilot at 20 locations, 30 days notice, no duty to convert | no |
 | `04_customers/order_form_brookline_row.pdf` | Annual prepaid plan at 10% off list. Clean | no |
 | `05_team/founder_bios.pdf` | Two founders and the senior team | yes |
-| `05_team/hiring_plan.csv` | 24 planned hires with start dates and base pay | yes |
+| `05_team/hiring_plan.csv` | 24 planned hires with start dates, base pay, and the staff count after each hire | yes |
 | `06_product/product_one_pager.pdf` | What it does, pricing, integrations | yes |
 | `06_product/website_copy.md` | Home page and pricing copy | yes |
 
@@ -95,6 +95,25 @@ The demo critic listed tells that make a fake room look fake. The generator now 
 - The cover note does not promise that every number ties.
 
 Two tells are left as they are. Cohort retention still has 62 of 117 cells at exactly 100%, because that comes from the simulation the research numbers depend on. The hiring plan still has two hires a month, because the planted runway depends on the timing.
+
+## The green flags
+
+A green flag is a number two different files state the same way, within 1 percent, in a piece of the company that carries no planted red flag. The deck, overview, video and website count as one source, because they repeat each other. The answer key lists them under `green_flags`, each with its two or three file locations, and `check.py` reads every location back from the file.
+
+| Piece | Number | Where it agrees |
+|---|---|---|
+| the pitch itself | Series A raise, $9,000,000 | deck slide 13, the cap table's "New money (USD)", the model's `SERIES_A_RAISE` (3 sources) |
+| market | market size, $252,000,000 | deck slide 8 and the model's Market tab, `MARKET_TAM_USD` (2 sources). Both are the company's own estimate and say so |
+| team | staff today, 17 | deck slide 10 and the model's `STAFF_NOW` (2 sources). Staff after hiring, 41, agrees between deck slide 12 and the last row of `hiring_plan.csv` |
+
+Under the readout rule (`docs/ongoing/FRAMEWORKS.md`, "The readout") a piece with any planted flag reads weak. Five of the nine pieces hold a planted flag: traction and revenue (PF1, PF2, PF2b, PF7), retention (PF3), burn and runway (PF4), unit economics (PF6) and customers (PF5). Comps comes from outside the room. That leaves market as the only business piece that can read strong, so the room has one strong business piece, plus team and the pitch itself. Adding a corroborated number inside a flagged piece, such as CAC or calls handled per clinic, would not change its verdict, so none was added.
+
+Why team reads strong, and what keeps it that way:
+
+- The model states no staff total after the hires. It has no "Staff after these hires" row, and the P&L shows staff for actual months only. The model still pays for 8 of the 24 hires, which is the planted runway flag (PF4).
+- Every name matches across the deck, bios, overview, video script and cap table, and each bio opens with the first name of the person it describes.
+- No planned hire has the title of a person already on the team. The hire is "Director of Enterprise Sales", because Marguerite Dunleavy is the current Head of Sales.
+- The cover note's index gives 40 locations for the Cedar & Pine order form, the same as the form.
 
 ## The decoys
 

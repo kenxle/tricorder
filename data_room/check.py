@@ -611,6 +611,151 @@ def check_key_shape():
        all(any(x not in KEY["seed_drop_files"] for x in f["files_needed"]) for f in KEY["flags"] if not f["catchable_from_seed_drop"]))
 
 
+# ---- green flags: positives two different files agree on ---------------------------------------
+# The pieces of the company as the readout groups them, and the planted flags each one holds
+# (docs/ongoing/FRAMEWORKS.md, "The readout"). A piece with a planted flag reads weak, so a green flag
+# can only come from a piece with none.
+PIECE_FLAGS = {"traction and revenue": {"PF1", "PF2", "PF2b", "PF7"}, "retention": {"PF3"}, "burn and runway": {"PF4"},
+               "unit economics": {"PF6"}, "customers": {"PF5"}, "market": set(), "team": set(), "the pitch itself": set()}
+# The deck, its sidecar, the overview, the video script, the website and the one-pager and cover note repeat one another.
+NARRATIVE = {"01_overview/pitch_deck.pdf", "01_overview/claims.json", "01_overview/company_overview.pdf",
+             "01_overview/pitch_video_script.md", "06_product/website_copy.md", "06_product/product_one_pager.pdf",
+             "00_welcome/cover_note_and_index.pdf"}
+
+
+def read_location(loc):
+    """The number a green-flag location holds, read from the room's file. Returns None when it cannot be found."""
+    rel = loc["file"]
+    if rel.endswith(".xlsx"):
+        wb = workbook(rel)
+        val = wb[loc["sheet"]][loc["cell"]].value
+        if "named_cell" in loc and named(wb, loc["named_cell"]) != val:
+            return None
+        return val if isinstance(val, (int, float)) else None
+    if rel.endswith(".pdf"):
+        if squash(loc["text"]) not in squash(pdf_pages(rel)[loc["page"] - 1]):
+            return None
+        nums = re.findall(r"\d[\d,]*(?:\.\d+)?", loc["text"])      # the last number in the quoted text
+        return float(nums[-1].replace(",", "")) if nums else None
+    if rel.endswith(".csv"):
+        rows = [r for r in read_csv(rel) if all(r.get(k) == v for k, v in loc["row_key"].items())]
+        return num(rows[0][loc["column"]]) if len(rows) == 1 else None
+    return None
+
+
+def independent_count(locations):
+    files = {l["file"] for l in locations}
+    return len(files - NARRATIVE) + (1 if files & NARRATIVE else 0)
+
+
+def check_one_green(gf, entry, parent):
+    tag = f"{gf['id']} ({gf['piece']}, {entry['label']} {entry['number']:,})"
+    locs = entry["locations"]
+    ok(f"{tag}: two or more locations in the room", len(locs) >= 2)
+    vals = [read_location(l) for l in locs]
+    ok(f"{tag}: every location is found in its file", all(v is not None for v in vals), str(vals))
+    ok(f"{tag}: every location agrees with the number within {parent['tolerance'] * 100:.0f} percent",
+       all(v is not None and near(v, entry["number"], 0, parent["tolerance"]) for v in vals), str(vals))
+    ok(f"{tag}: the locations are in at least two independent sources (the deck, overview, video and website count as one)",
+       independent_count(locs) >= 2, str(independent_count(locs)))
+    if "independent_sources" in entry:
+        ok(f"{tag}: the key's independent source count is right", independent_count(locs) == entry["independent_sources"])
+
+
+def check_green_flags():
+    gfs = KEY.get("green_flags")
+    ok("the key has a green_flags list", bool(gfs))
+    if not gfs:
+        return
+    ok("the key's green flags are one per strong piece, three in all", len(gfs) == KEY["counts"]["green_flags"] == 3
+       and {g["piece"] for g in gfs} == {"the pitch itself", "market", "team"})
+    for gf in gfs:
+        flags_in_piece = PIECE_FLAGS.get(gf["piece"])
+        ok(f"{gf['id']}: {gf['piece']} is a piece with no planted flag", flags_in_piece is not None and not flags_in_piece)
+        ok(f"{gf['id']}: no planted flag in this room belongs to {gf['piece']}", not (PLANTS & (flags_in_piece or set())))
+        check_one_green(gf, gf, gf)
+        for extra in gf.get("also_agree", []):
+            check_one_green(gf, extra, gf)
+
+
+# What the main room's planted flags must read. The values are the ones the answer key held before the green
+# flags were added. Any change to a shown or true number, or to a flag's supporting figures, fails here.
+RED_BASELINE = {
+    "PF1": (2240868, 2060868), "PF2": (2500000, 2240868), "PF2b": (3000000, 2500000), "PF3": (1.026, 0.873),
+    "PF4": (37, 19), "PF5": (0.09, 0.21), "PF6": (0.8, 0.581), "PF7": (357, 212),
+}
+RED_DETAILS = {
+    "PF1": ({"pilot_arr_counted": 180000, "metrics_arr_2026_09": 2240868}, {"pilot_fees_contracted_total": 90000, "pilot_notice_days": 30}),
+    "PF2": ({"gap_to_model": 259132}, {"recurring_arr": 2060868}),
+    "PF3": ({"customers": 57}, {"gross_revenue_retention": 0.734, "customers": 68, "customers_dropped": 11}),
+    "PF4": ({"hires_counted": 8, "avg_net_burn_first_12_months": 374462}, {"hires_in_plan": 24, "avg_net_burn_first_12_months": 480062}),
+    "PF5": (None, {"top3_share": 0.222, "largest_customer_id": "C0087"}),
+}
+
+
+def check_red_flags_unchanged():
+    if KEY["mode"] != "main":
+        ok("red flags: this is not the main room, so the pinned numbers do not apply; each flag is still checked against its own key", True)
+        return
+    ok("red flags: the main room plants all eight flags", PLANTS == set(ALL_FLAGS))
+    for fid, (shown, true) in RED_BASELINE.items():
+        f = flag(fid)
+        ok(f"red flag {fid}: shown {shown} and true {true} are unchanged", f["shown"]["value"] == shown and f["true"]["value"] == true,
+           f"{f['shown']['value']} / {f['true']['value']}")
+    for fid, (sd, td) in RED_DETAILS.items():
+        f = flag(fid)
+        ok(f"red flag {fid}: the supporting figures are unchanged",
+           all(f["shown"].get("details", {}).get(k) == v for k, v in (sd or {}).items())
+           and all(f["true"].get("details", {}).get(k) == v for k, v in td.items()))
+
+
+def check_team_piece():
+    team = FACTS["team"]
+    deck10 = squash(pdf_pages("01_overview/pitch_deck.pdf")[9])
+    bios = squash("\n".join(pdf_pages("05_team/founder_bios.pdf")))
+    overview = squash("\n".join(pdf_pages("01_overview/company_overview.pdf")))
+    cap = workbook("02_financials/cap_table.xlsx")["Cap_Table"]
+    cap_names = " ".join(str(cap.cell(row=r, column=1).value) for r in range(1, 20))
+    senior = team[2:]
+    ok("team: every senior name on deck slide 10 is in the bios under the same name", all(t["name"] in deck10 and t["name"] in bios for t in senior))
+    for t in team:
+        m = re.search(re.escape(t["name"]) + r"\s+" + re.escape(t["title"]) + r"\s+(?:GitHub: \S+\s+)?(\w+)", bios)
+        ok(f"team: the bio of {t['name']} uses the first name {t['name'].split()[0]}", bool(m) and m.group(1) == t["name"].split()[0],
+           m.group(1) if m else "no bio found")
+    ok("team: the founders' names agree across the deck, bios, overview, video script and cap table",
+       all(t["name"] in deck10 and t["name"] in bios and t["name"] in overview and t["name"] in cap_names for t in team[:2])
+       and all(t["name"] in (ROOM / "01_overview/pitch_video_script.md").read_text(encoding="utf-8") for t in team[:1]))
+    plan = read_csv("05_team/hiring_plan.csv")
+    ok("team: no planned hire has the title of a current senior person", not ({r["role"] for r in plan} & {t["title"] for t in senior}))
+    after = [int(r["headcount_after_hire"]) for r in plan]
+    ok("team: the hiring plan's staff count rises by one a hire, from today's staff to the deck's staff after hiring",
+       after == list(range(FACTS["staff_now"] + 1, FACTS["staff_after_hiring"] + 1)) and len(plan) == 24)
+    wb = workbook("02_financials/financial_model.xlsx")
+    stray = [f"{ws.title}!{c.coordinate}" for ws in wb.worksheets for row in ws.iter_rows() for c in row
+             if isinstance(c.value, str) and c.value.lower().startswith("staff after")]
+    ok("team: the model states no staff total after the hires", not stray, str(stray))
+    pl = wb["P&L"]
+    heads = next(r for r in range(1, 40) if pl.cell(row=r, column=1).value == "Staff at month end")
+    ok("team: the P&L shows staff for the 21 actual months only, ending at today's staff",
+       all(pl.cell(row=heads, column=c).value is not None for c in range(3, 24)) and pl.cell(row=heads, column=23).value == FACTS["staff_now"]
+       and all(pl.cell(row=heads, column=c).value is None for c in range(24, 36)))
+    ok("team: deck slide 10, the overview and the model all say staff today is 17",
+       f"{FACTS['staff_now']} people today" in deck10 and f"{FACTS['staff_now']} people work there today" in overview
+       and named(wb, "STAFF_NOW") == FACTS["staff_now"])
+
+
+def check_market_piece():
+    wb = workbook("02_financials/financial_model.xlsx")
+    ok("market: the model's Market tab multiplies clinics by annual value to get the market size",
+       named(wb, "MARKET_TAM_USD") == named(wb, "MARKET_CLINICS") * named(wb, "MARKET_ACV_USD"))
+    got = claims()
+    ok("market: the deck's clinic count and market size match the Market tab",
+       num(got["US independent clinics (company estimate)"][0]) == named(wb, "MARKET_CLINICS")
+       and num(got["Market size (company estimate)"][0]) == named(wb, "MARKET_TAM_USD"))
+    note = squash(str(wb["Market"]["A2"].value))
+    ok("market: the Market tab says the figures are the company's own estimates", "company's own estimates" in note)
+
+
 FLAG_CHECKS = {"PF1": check_pf1, "PF2": check_pf2, "PF2b": check_pf2b, "PF3": check_pf3, "PF4": check_pf4,
                "PF5": check_pf5, "PF6": check_pf6, "PF7": check_pf7}
 CLEAN_CHECKS = {"PF1": clean_pf1, "PF2": clean_pf2, "PF2b": clean_pf2b, "PF3": clean_pf3, "PF4": clean_pf4,
@@ -629,6 +774,10 @@ def main():
     check_cash()
     check_realism()
     check_key_shape()
+    check_green_flags()
+    check_red_flags_unchanged()
+    check_team_piece()
+    check_market_piece()
     print(f"\n{len(PASSES)} passed, {len(FAILS)} failed")
     if FAILS:
         print("FAILED: " + "; ".join(FAILS))

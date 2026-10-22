@@ -2496,19 +2496,21 @@ Worked example, Hollis Voice (the generated room in `data_room/hollis_voice/` an
 | burn and runway | looking weak | Flag PF4: 37 months of runway in the model and the deck, 19 with all 24 planned hires. Cash of $1,800,000 rests on the model alone (Assumptions and Cash_Bridge are one file), and no bank statement is in the room (1.11). |
 | unit economics | looking weak | Flag PF6: 80% gross margin in the deck and the model, 58.1% rebuilt. One corroboration sits inside the weak piece: the Standard plan's $649 a month on deck slide 7, the one-pager and the website is also the list price in the Brookline Row order form. |
 | customers | looking weak | Flag PF5: the deck says no customer is above 9% of ARR; the largest customer is 21.0% of MRR. |
-| market | not enough in the room | The deck's 28,000 clinics and $252,000,000 market are company estimates on slide 8, and no other file states them (answer key, `deck_claims` and `notes`). |
+| market | looking strong | The deck's 28,000 clinics and $252,000,000 market on slide 8 agree with the model's Market tab (`MARKET_CLINICS` 28,000; `MARKET_TAM_USD` 252,000,000, which is the clinics times $9,000). Both files call it a company estimate, and no outside source is in the room. One corroborated claim beyond the narrative set, nothing contradicting, no flag. `corroborating_sources` is 2 (the narrative set, the model); `contradicting_sources` is 0. |
 | comps | not enough in the room, from the room alone | Comp claims come from this week's cached filings, not from the room. Saturday's cached run sets this verdict by the same rule. |
-| team | mixed | Staff today: 17 on deck slide 10 and in the company overview, and 17 in the model (Assumptions `STAFF_NOW`; P&L "Staff at month end", 2026-09). Staff after the planned hires: 41 on deck slide 12, 25 in the model's Hiring_Plan tab ("Staff after these hires"). Corroborated and contradicted, with no flag in the piece. |
+| team | looking strong | Staff today: 17 on deck slide 10 and in the company overview (one source), and 17 in the model (Assumptions `STAFF_NOW`; P&L "Staff at month end", 2026-09). Staff after the hires: 41 on deck slide 12 and 41 in the last row of `hiring_plan.csv` (`headcount_after_hire`, hire H24). The model states no staff total after the hires, and its P&L shows staff for actual months only, so nothing contradicts. The senior names on deck slide 10 match the bios. `corroborating_sources` is 2 for each number (the narrative set, plus the model for 17 and the hiring plan for 41); `contradicting_sources` is 0. |
 | the pitch itself | looking strong | Four corroborated claims and nothing contradicting. "Series A: raise" $9,000,000 on deck slide 13 (the video at 1:45 says nine million too), in the cap table ("New money (USD)") and in the model (Assumptions `SERIES_A_RAISE`). "Series A: pre-money" $45,000,000 on slide 13 and in the cap table ("Pre-money valuation (USD)"). "Series A: ownership" 16.67% on slide 13 and in the cap table (`Cap_Table!B28`, 0.166667, DC3). "SAFEs: raised" $5,500,000 in the company overview, the cap table ("Total SAFEs") and the model (Cash_Bridge, "Total raised before the Series A"). `corroborating_sources` is 3 (the narrative set, the cap table, the model); `contradicting_sources` is 0. |
 
-**Said plainly: one piece reads looking strong, and it is the round.** The pitch itself reads strong because the deal's terms agree across the deck, the cap table and the model. That is DC3, the clean cap table decoy. No piece about how the business performs reads strong: the eight planted entries cover five of the nine pieces by design, and team reads mixed.
+**Said plainly: three pieces read looking strong: the pitch itself, market and team.** Only market is a business piece. The other five business pieces each hold a planted flag, and one flag makes a piece weak by the rule, even where another claim in it is corroborated. The eight planted entries cover five of the nine pieces by design: traction and revenue, retention, burn and runway, unit economics and customers. Comps comes from outside the room.
 
-**A proposal for a strong business piece, not made here.** The generator could make team read looking strong without touching any plant:
+The strong readings rest on files that agree, and the company wrote them all. Market is the company's own estimate in two places. The readout says so in the verdict's reason, and 1.11 says why agreement is not proof.
 
-- Stop writing the Hiring_Plan tab's "Staff after these hires" row (`data_room/generate.py`, the two `ws_hire.write` calls just after `HIRES_COUNTED` is defined). That cell is not one of PF4's answer-key locations. PF4 is still caught through `HIRES_COUNTED`, the P&L payroll row and the runway. Team would then rest on 17 staff today in the narrative set and in the model, with nothing contradicting it.
-- Fix two name slips in `build_bios()` in the same file. The bios' text calls the Head of Customer Success "Anselm" and the Lead Voice Engineer "Lucan", while the bios' own headings and deck slide 10 say Nolan Okafor and Lucas Feldman. They are not in the answer key. A judge who clicks into team would see them.
+How the generator (`data_room/generate.py`) produces them, with every planted flag unchanged:
 
-This doc does not edit the generator; the data-room owner decides.
+- Market: the model has a Market tab with the clinics, the contract value, and their product, matching deck slide 8.
+- Team: the model has no staff total after the hires, the hiring plan carries the staff count after each hire, and no planned hire shares a title with someone already on the team.
+- Names: every founder and senior name matches across the deck, bios, overview, video script and cap table.
+- The answer key's `green_flags` list names each strong piece, its number and the file locations that agree. `check.py` reads every location back and checks it is within 1 percent.
 
 **Model reading**
 
@@ -2587,7 +2589,15 @@ One per piece, so the headline list spans the company instead of repeating one p
 
 Worked example, Hollis Voice. Gaps are scripted arithmetic on the figures in the table under "Hollis Voice, the numbers the examples use" and in `answer_key.json`, by the formula above.
 
-- **Green.** One piece reads looking strong, so there is one green flag: the pitch itself. Its best-scoring claim is "Series A: raise" $9,000,000, with three independent sources (the narrative set, the cap table, the model). The headline reads "the round adds up" ([BRAND.md](BRAND.md), "A green flag and a red flag, at the top").
+- **Green.** Three pieces read looking strong, so there are three green flags. Each piece's best-scoring claim is listed with its independent sources, the narrative set counted as one. The pieces go in score order, and ties go in the piece table's order, so market comes before team.
+
+| Rank | Piece | Claim | Independent sources |
+|---|---|---|---|
+| 1 | the pitch itself | "Series A: raise" $9,000,000 | 3: the narrative set (deck slide 13), the cap table, the model |
+| 2 | market | $252,000,000 market size, company estimate | 2: the narrative set (deck slide 8), the model's Market tab |
+| 3 | team | 17 staff today | 2: the narrative set (deck slide 10), the model (`STAFF_NOW`) |
+
+  The headline for the first reads "the round adds up" ([BRAND.md](BRAND.md), "A green flag and a red flag, at the top"). The 41 staff after hiring ties team's score at 2 (deck slide 12, `hiring_plan.csv`); the claim listed first, staff today, is the one shown.
 - **Red**, one flag per weak piece, worst first:
 
 | Rank | Piece | Flag | Stated against found | Gap |

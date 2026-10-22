@@ -148,6 +148,127 @@
       "why": "Holders add to 100 percent and the SAFE conversion at the stated cap is right."
     }
   ],
+  "green_flags": [
+    {
+      "id": "GF1",
+      "piece": "the pitch itself",
+      "name": "The round adds up",
+      "label": "raise_amount",
+      "number": 9000000,
+      "unit": "USD",
+      "tolerance": 0.01,
+      "locations": [
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Assumptions",
+          "cell": "B16",
+          "named_cell": "SERIES_A_RAISE",
+          "value": 9000000,
+          "label": "Series A raise in the model"
+        },
+        {
+          "file": "02_financials/cap_table.xlsx",
+          "sheet": "Cap_Table",
+          "cell": "B24",
+          "value": 9000000,
+          "label": "Series A new money in the cap table"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 13,
+          "text": "$9,000,000",
+          "value": 9000000,
+          "label": "deck Series A raise, slide 13"
+        }
+      ],
+      "independent_sources": 3,
+      "sources_note": "The deck (slide 13, with the overview and video, one source), the cap table and the model are three different files."
+    },
+    {
+      "id": "GF2",
+      "piece": "market",
+      "name": "The market size is stated the same way in the deck and the model",
+      "label": "tam",
+      "number": 252000000,
+      "unit": "USD",
+      "tolerance": 0.01,
+      "locations": [
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Market",
+          "cell": "B7",
+          "named_cell": "MARKET_TAM_USD",
+          "value": 252000000,
+          "label": "market size in the model"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 8,
+          "text": "$252,000,000",
+          "value": 252000000,
+          "label": "deck market size, slide 8"
+        }
+      ],
+      "independent_sources": 2,
+      "sources_note": "The deck (slide 8) and the model's Market tab. Both are the company's own estimate, and the room says so."
+    },
+    {
+      "id": "GF3",
+      "piece": "team",
+      "name": "Staff today agrees across the deck and the model",
+      "label": "headcount",
+      "number": 17,
+      "unit": "count",
+      "tolerance": 0.01,
+      "locations": [
+        {
+          "file": "02_financials/financial_model.xlsx",
+          "sheet": "Assumptions",
+          "cell": "B9",
+          "named_cell": "STAFF_NOW",
+          "value": 17,
+          "label": "staff at the data date"
+        },
+        {
+          "file": "01_overview/pitch_deck.pdf",
+          "page": 10,
+          "text": "17 people today.",
+          "value": 17,
+          "label": "deck staff today, slide 10"
+        }
+      ],
+      "independent_sources": 2,
+      "sources_note": "The deck (slide 10, with the overview, one source) and the model (Assumptions STAFF_NOW; P&L staff at month end 2026-09 is the same file).",
+      "also_agree": [
+        {
+          "label": "headcount",
+          "number": 41,
+          "unit": "count",
+          "period": "after the 24 planned hires",
+          "locations": [
+            {
+              "file": "05_team/hiring_plan.csv",
+              "row_key": {
+                "hire_id": "H24"
+              },
+              "column": "headcount_after_hire",
+              "value": 41,
+              "label": "staff after the last planned hire"
+            },
+            {
+              "file": "01_overview/pitch_deck.pdf",
+              "page": 12,
+              "text": "Staff grows from 17 to 41.",
+              "value": 41,
+              "label": "deck staff after hiring, slide 12"
+            }
+          ],
+          "sources_note": "The deck (slide 12) and the last row of hiring_plan.csv. The model states no staff total after the hires."
+        }
+      ]
+    }
+  ],
+  "green_flags_note": "Positives, the same in every room. Each is a number two different files state within one percent. Only pieces with no planted flag can read strong: market, team and the pitch itself. In a room with a flag switched off, that flag's piece may read strong too; this list names only these three.",
   "deck_claims": [
     {
       "label": "ARR",
@@ -244,12 +365,39 @@
     "brookline_customer_id": "C0193",
     "arr_video_phrase": "two million",
     "staff_after_hiring": 41,
+    "team": [
+      {
+        "name": "Imogen Tarrant",
+        "title": "Chief Executive Officer and co-founder"
+      },
+      {
+        "name": "Teodoro Brandt",
+        "title": "Chief Technology Officer and co-founder"
+      },
+      {
+        "name": "Marguerite Dunleavy",
+        "title": "Head of Sales"
+      },
+      {
+        "name": "Nolan Okafor",
+        "title": "Head of Customer Success"
+      },
+      {
+        "name": "Hallie Vandermeer",
+        "title": "Controller (part time)"
+      },
+      {
+        "name": "Lucas Feldman",
+        "title": "Lead Voice Engineer"
+      }
+    ],
     "model_avg_net_burn_12m": 493524.84,
     "true_avg_net_burn_12m": 493524.84
   },
   "counts": {
     "flags": 0,
     "decoys": 3,
+    "green_flags": 3,
     "flags_catchable_from_seed_drop": 0,
     "flags_needing_full_room": 0
   },
