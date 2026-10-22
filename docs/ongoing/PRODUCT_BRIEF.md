@@ -84,13 +84,13 @@ The user stories that turn these jobs into features are in [USER_STORIES.md](USE
 3. Judgment is sent to LLMs.
 4. **Nothing is scraped against a site's terms.** No LinkedIn scraping. Reddit only from pages a person saved by hand. Official APIs wherever they exist.
 5. **Personas and problems.** Focus on solving problems for personas. Engage persona agents to review solutions.
-6. **Always defer to operator steering and judgment.** When the user says a section is wrong, thin or framed badly, Tricorder follows the steer and shows what changed. The scripts' own figures stay on screen beside any change, so the operator decides with both in view.
 
 ## Commitments
 
 - **Every claim links to its source.** A claim without a source a person can open does not reach the readout.
 - **Identify strengths, weaknesses, and gaps and call them out.** A piece looks strong when two independent sources agree on its number. A missing fact shows as a gap, never a guess.
 - **No real company's confidential data.** Every room is synthetic.
+- **Always defer to operator steering and judgment.** When the user says a section is wrong, thin or framed badly, Tricorder follows the steer and shows what changed. The scripts' own figures stay on screen beside any change, so the operator decides with both in view.
 - A steer or a what-if never changes a script's number.
 - Tricorder reports its own misses against the answer key.
 - A bank account is read only with the founder's consent.
