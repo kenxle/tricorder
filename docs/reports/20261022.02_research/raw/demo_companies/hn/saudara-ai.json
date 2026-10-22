@@ -1,0 +1,167 @@
+{
+ "domain_query": "saudara.ai",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "osdoorp"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Samara, an innovation lab at Airbnb"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "saudara",
+      ".",
+      "ai"
+     ],
+     "value": "http://<em>samara.ai</em>rbnb.com/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_osdoorp",
+    "story_12209718"
+   ],
+   "author": "osdoorp",
+   "created_at": "2016-08-02T13:23:16Z",
+   "created_at_i": 1470144196,
+   "num_comments": 0,
+   "objectID": "12209718",
+   "points": 4,
+   "story_id": 12209718,
+   "title": "Samara, an innovation lab at Airbnb",
+   "updated_at": "2024-09-19T23:28:56Z",
+   "url": "http://samara.airbnb.com/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "soumilrathi"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Used MCP to make AI take actions on ~10 apps"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "saudara",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>saidar.ai</em>"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_soumilrathi",
+    "story_43738024",
+    "show_hn"
+   ],
+   "author": "soumilrathi",
+   "children": [
+    43740133
+   ],
+   "created_at": "2025-04-19T17:44:10Z",
+   "created_at_i": 1745084650,
+   "num_comments": 1,
+   "objectID": "43738024",
+   "points": 3,
+   "story_id": 43738024,
+   "title": "Show HN: Used MCP to make AI take actions on ~10 apps",
+   "updated_at": "2025-04-19T22:59:50Z",
+   "url": "https://saidar.ai"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "soumilrathi"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Used MCP to make AI take actions on ~10 apps"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "saudara",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>saidar.ai</em>"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_soumilrathi",
+    "story_43734855",
+    "show_hn"
+   ],
+   "author": "soumilrathi",
+   "created_at": "2025-04-19T07:35:23Z",
+   "created_at_i": 1745048123,
+   "num_comments": 0,
+   "objectID": "43734855",
+   "points": 1,
+   "story_id": 43734855,
+   "title": "Show HN: Used MCP to make AI take actions on ~10 apps",
+   "updated_at": "2025-04-19T07:39:16Z",
+   "url": "https://saidar.ai"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "719Ben"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Samara by Airbnb"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "saudara",
+      ".",
+      "ai"
+     ],
+     "value": "http://<em>samara.ai</em>rbnb.com/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_719Ben",
+    "story_12223829"
+   ],
+   "author": "719Ben",
+   "created_at": "2016-08-04T06:40:23Z",
+   "created_at_i": 1470292823,
+   "num_comments": 0,
+   "objectID": "12223829",
+   "points": 1,
+   "story_id": 12223829,
+   "title": "Samara by Airbnb",
+   "updated_at": "2024-09-19T23:30:36Z",
+   "url": "http://samara.airbnb.com/"
+  }
+ ],
+ "launch_hits": []
+}

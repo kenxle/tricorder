@@ -1,0 +1,141 @@
+{
+ "domain_query": "raspire.com",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "konaaceo"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The Much Anticipated Rentul Travel Market is here"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "raspire",
+      ".",
+      "com"
+     ],
+     "value": "http://<em>raspwire.com</em>/the-much-anticipated-rentul-travel-market-is-here/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_konaaceo",
+    "story_3530820"
+   ],
+   "author": "konaaceo",
+   "created_at": "2012-01-30T21:57:56Z",
+   "created_at_i": 1327960676,
+   "num_comments": 0,
+   "objectID": "3530820",
+   "points": 6,
+   "story_id": 3530820,
+   "story_text": "",
+   "title": "The Much Anticipated Rentul Travel Market is here",
+   "updated_at": "2023-09-06T21:03:37Z",
+   "url": "http://raspwire.com/the-much-anticipated-rentul-travel-market-is-here/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "loeschg"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "(Yet another) Getting Started with the Raspberry Pi"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "raspire",
+      ".",
+      "com"
+     ],
+     "value": "http://<em>raspime.com</em>/getting-started/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_loeschg",
+    "story_5126405"
+   ],
+   "author": "loeschg",
+   "created_at": "2013-01-28T00:34:39Z",
+   "created_at_i": 1359333279,
+   "num_comments": 0,
+   "objectID": "5126405",
+   "points": 1,
+   "story_id": 5126405,
+   "story_text": "",
+   "title": "(Yet another) Getting Started with the Raspberry Pi",
+   "updated_at": "2023-09-06T20:41:57Z",
+   "url": "http://raspime.com/getting-started/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Brajeshwar"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Graceful Leadership 101 [pdf]"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "raspire",
+      ".",
+      "com"
+     ],
+     "value": "http://<em>qaspire.com</em>/Download/QAspire_Graceful_Leadership_101.pdf"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_Brajeshwar",
+    "story_4350428"
+   ],
+   "author": "Brajeshwar",
+   "created_at": "2012-08-07T15:10:06Z",
+   "created_at_i": 1344352206,
+   "num_comments": 0,
+   "objectID": "4350428",
+   "points": 1,
+   "story_id": 4350428,
+   "story_text": "",
+   "title": "Graceful Leadership 101 [pdf]",
+   "updated_at": "2024-09-19T18:46:08Z",
+   "url": "http://qaspire.com/Download/QAspire_Graceful_Leadership_101.pdf"
+  }
+ ],
+ "launch_hits": []
+}

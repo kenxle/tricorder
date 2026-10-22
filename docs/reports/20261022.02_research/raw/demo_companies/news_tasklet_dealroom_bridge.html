@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script>
+(function() {
+  /* The site is light only. Nothing is read from storage and nothing chooses:
+     the attribute is pinned before first paint so there is no flash, and an OS
+     dark preference or a stale 'dealroom-theme' value in an old browser cannot
+     reach the page. Charts and decks are excluded from this injection and keep
+     their own two-theme handling.
+
+     The attribute must always be PRESENT. css/dealroom-theme-3da7d8e.css has no
+     bare :root colour block - every colour token is defined under
+     html[data-theme="light"] / html[data-theme="dark"]. Drop the attribute and
+     every var(--navy)/var(--white)/var(--text-light) resolves to nothing and the
+     page loses its colour entirely. */
+  document.documentElement.dataset.theme = 'light';
+  document.documentElement.style.colorScheme = 'light';
+})();
+</script>
+<link rel="stylesheet" href="/css/dealroom-theme-3da7d8e.css?v=fd27458a3ebe3337">
+<script defer src="/js/dealroom-theme-3da7d8e.js?v=49e8712854452243"></script>
+<link rel="stylesheet" href="/css/nav-search.css?v=7bf8a5aa470d74ac">
+<script defer src="/js/nav-search.js?v=ab5f01efdd98377e" data-results-css="/css/search-results.css?v=6b9bce8019b58564" data-results-js="/js/search-results.js?v=2b1def41ea41d712" data-crop-src="/charts/preview-crop.js?v=a923b24416b443eb" data-radial-src="/js/mafia-radial-thumb.js?v=670b59a854bb2e79"></script>
+<script defer src="/js/newsletter-subscribe.js?v=61e4cf097704a186"></script>
+<script defer src="/js/demo-pill.js?v=28b8a5e769c2424c"></script>
+<style>
+  html.is-embed body > nav, html.is-embed nav.site-nav, html.is-embed .mobile-nav, html.is-embed .family-subnav, html.is-embed #footer-placeholder, html.is-embed body > footer { display: none !important; }
+  html.is-embed main { padding-top: 0 !important; }
+</style>
+<script>(function(){try{var e=new URLSearchParams(location.search).get('embed')==='true';if(!e&&window.self!==window.top){try{e=window.top.location.origin!==location.origin;}catch(x){e=true;}}if(e)document.documentElement.classList.add('is-embed');}catch(x){}})();</script><!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NJB04M1NSN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  // Google Consent Mode v2. Two things were broken before this block existed:
+  //   1. No consent default, so GA wrote its cookies on first paint - before
+  //      the visitor had been asked anything.
+  //   2. The popup's grant fired once, in that tab only: dr_cookie_consent was
+  //      written and then never read by anything, so an accepted choice was
+  //      forgotten on the very next page view.
+  // Denied by default; the stored decision is re-applied on every page load,
+  // before config, so no analytics cookie exists without an explicit accept.
+  gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
+  try{
+    var drc=null; try{ drc=localStorage.getItem('dr_cookie_consent'); }catch(e){}
+    if(!drc){ drc=(document.cookie.match(/(?:^|;\s*)dr_consent=([^;]+)/)||[])[1]||null; }
+    if(drc==='accepted'||drc==='analytics') gtag('consent','update',{analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+  }catch(e){}
+  gtag('js', new Date());
+  gtag('config', 'G-NJB04M1NSN', {allow_google_signals:false,allow_ad_personalization_signals:false});
+</script><!-- HubSpot tracking (consent-gated) -->
+<script>
+(function(){
+  // HubSpot also mounts chat. Embedded charts share the host's widget.
+  if(window.self!==window.top) return;
+  var loaded=false;
+  function load(){
+    if(loaded) return; loaded=true;
+    var s=document.createElement('script');
+    s.id='hs-script-loader'; s.async=true; s.defer=true;
+    s.src='https://js.hs-scripts.com/6645497.js';
+    document.head.appendChild(s);
+  }
+  window.__drHubSpotLoad=load;
+  try{
+    var drc=null; try{ drc=localStorage.getItem('dr_cookie_consent'); }catch(e){}
+    if(!drc){ drc=(document.cookie.match(/(?:^|;\s*)dr_consent=([^;]+)/)||[])[1]||null; }
+    if(drc==='accepted'||drc==='marketing') load();
+  }catch(e){}
+})();
+</script><!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-tRieqOHLtYp4suYZ-eHQI.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init();
+  (function(){
+    var sent=false,timer=null,events=['pointermove','pointerdown','touchstart','keydown','scroll','wheel'];
+    function send(){ if(sent) return; sent=true; stop(); try{ plausible('Human'); }catch(e){} }
+    function stop(){ events.forEach(function(t){ removeEventListener(t,send,true); }); document.removeEventListener('visibilitychange',arm); if(timer){ clearTimeout(timer); timer=null; } }
+    function arm(){ if(document.visibilityState==='visible'){ if(!timer) timer=setTimeout(send,10000); } else if(timer){ clearTimeout(timer); timer=null; } }
+    events.forEach(function(t){ addEventListener(t,send,{capture:true,passive:true}); });
+    document.addEventListener('visibilitychange',arm); arm();
+  })();
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasklet raises $13M bridge round for AI agents, backed by USV and Lightspeed | Dealroom News</title>
+    <meta name="description" content="Tasklet, a San Francisco-based AI startup, has raised a $13 million pre-Series A bridge round led by Union Square Ventures and Lightspeed Venture Partners. Oleka Capital has joined the round, alongside existing backers…">
+    <link rel="canonical" href="https://dealroom.co/news/142450-tasklet-raises-13m-bridge-round-for-ai-agents-backed-by-usv-and-lightspe/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tasklet raises $13M bridge round for AI agents, backed by USV and Lightspeed | Dealroom News">
+    <meta property="og:description" content="Tasklet, a San Francisco-based AI startup, has raised a $13 million pre-Series A bridge round led by Union Square Ventures and Lightspeed Venture Partners. Oleka Capital has joined the round, alongside existing backers…">
+    <meta property="og:url" content="https://dealroom.co/news/142450-tasklet-raises-13m-bridge-round-for-ai-agents-backed-by-usv-and-lightspe/">
+    <meta property="og:image" content="https://sg-imgs.dealroom.co/1a55fa844731055464c3f18bbcba4451.jpeg?ar=3:1&amp;fit=crop&amp;crop=faces,center&amp;auto=compress&amp;cs=origin">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tasklet raises $13M bridge round for AI agents, backed by USV and Lightspeed | Dealroom News">
+    <meta name="twitter:description" content="Tasklet, a San Francisco-based AI startup, has raised a $13 million pre-Series A bridge round led by Union Square Ventures and Lightspeed Venture Partners. Oleka Capital has joined the round, alongside existing backers…">
+    <meta name="twitter:image" content="https://sg-imgs.dealroom.co/1a55fa844731055464c3f18bbcba4451.jpeg?ar=3:1&amp;fit=crop&amp;crop=faces,center&amp;auto=compress&amp;cs=origin">
+    <!-- /images/favicon.png has never existed in the repo, and an unknown path
+         serves the homepage HTML at 200 rather than 404ing, so the tab silently
+         had no icon. This is the file the other ~2,300 pages point at. -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Source+Sans+3:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css?v=861bfdfea33dd805">
+    <link rel="stylesheet" href="/css/mobile-nav.css?v=2f273654">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Tasklet raises $13M bridge round for AI agents, backed by USV and Lightspeed","datePublished":"2026-07-31T14:52:12.000Z","image":["https://sg-imgs.dealroom.co/1a55fa844731055464c3f18bbcba4451.jpeg?ar=3:1&fit=crop&crop=faces,center&auto=compress&cs=origin"],"mainEntityOfPage":"https://dealroom.co/news/142450-tasklet-raises-13m-bridge-round-for-ai-agents-backed-by-usv-and-lightspe/","publisher":{"@type":"Organization","name":"Dealroom.co","url":"https://dealroom.co"}}</script>
+    
+    <style>
+      body { background: var(--navy); color: var(--white); font-family: var(--font-sans, 'DM Sans', sans-serif); margin: 0; }
+      .nh-main { padding-top: 64px; } /* clear the fixed site nav (class selector so the injected theme reset cannot out-cascade it) */
+      .na-wrap { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+      /* div[role=navigation], NOT <nav>: css/nav.css styles the bare nav
+         ELEMENT as the fixed site header (position:fixed; top:0; background),
+         which tore this breadcrumb out of the article into a full-width stripe
+         across the top of the page. Same lesson as the Power Law nav pills. */
+      .na-crumb { display: flex; align-items: center; flex-wrap: wrap; gap: .35rem;
+        padding: 1.5rem 0 .2rem; font-size: .78rem; line-height: 1.4; color: var(--text-faint); }
+      .na-crumb a { color: var(--text-light); text-decoration: none; }
+      .na-crumb a:hover { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
+      .na-crumb-here { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .na-head { padding: 1rem 0 1.4rem; }
+      .na-meta { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; margin-bottom: .8rem; }
+      .nh-chip { font-size: .62rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; padding: .22rem .55rem;
+        border-radius: 999px; border: 1px solid var(--border-light); color: var(--text-light); }
+      .nh-chip--fundraise { color: var(--teal); border-color: color-mix(in srgb, var(--teal) 45%, transparent); } /* theme-guardrail-allow: chip border tints the accent token */
+      .nh-chip--acquisition { color: var(--eyebrow); border-color: color-mix(in srgb, var(--eyebrow) 45%, transparent); } /* theme-guardrail-allow: chip border tints the accent token */
+      .nh-time { font-family: var(--font-mono, ui-monospace, monospace); font-size: .72rem; color: var(--text-faint); }
+      .na-h1 { font-family: var(--font-display, 'Source Sans 3', sans-serif); font-weight: 800; letter-spacing: -0.015em;
+        font-size: clamp(1.6rem, 3.6vw, 2.5rem); line-height: 1.12; margin: 0; }
+      /* Media aligns with the text measure — the hero and the video cap at the
+         same 720px the body copy reads at. */
+      .na-img { width: 100%; max-width: 720px; border-radius: 16px; border: 1px solid var(--border-light); display: block; background: var(--navy-lighter); }
+      .na-body-img { max-width: 100%; border-radius: 12px; border: 1px solid var(--border-light); display: block; margin: 1.1rem 0; background: var(--navy-lighter); }
+      .na-video { position: relative; aspect-ratio: 16 / 9; max-width: 720px; border-radius: 16px; overflow: hidden;
+        border: 1px solid var(--border-light); background: var(--navy-lighter); }
+      .na-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+      /* Vertical Short in the rail (MAR-10): its own card below the
+         knowledge-graph card, same chrome as the rail's other card, the
+         video filling it edge to edge at 9:16. */
+      .na-short-card { margin-top: 1rem; background: var(--nh-card, var(--navy));
+        border: 1px solid var(--border-light); border-radius: 16px; box-shadow: var(--shadow-sm);
+        overflow: hidden; }
+      .na-short { aspect-ratio: 9 / 16; }
+      .na-short iframe { width: 100%; height: 100%; border: 0; display: block; }
+      .na-body { padding: 1.6rem 0 .4rem; max-width: 720px; }
+      .na-p, .na-quote p { color: var(--text-light); font-size: 1.2rem; line-height: 1.7; margin: 0 0 1.1rem; }
+      .na-list { margin: 0 0 1.1rem; padding-left: 1.3rem; }
+      .na-li { color: var(--text-light); font-size: 1.2rem; line-height: 1.7; margin: 0 0 .7rem; }
+      /* Section lead-ins ("What's the deal?") run inline with their paragraph,
+         keeping the old label look — uppercase, letterspaced, eyebrow blue.
+         The blue rule is reserved for quoted material (.na-quote). */
+      .na-lead { font-family: var(--font-display, sans-serif); font-weight: 800; font-size: .8rem;
+        letter-spacing: .08em; text-transform: uppercase; color: var(--eyebrow); margin-right: .25rem; }
+      .na-quote { border-left: 3px solid var(--eyebrow); padding-left: 1rem; margin: 0 0 1.2rem; }
+      /* Companies and investors we hold a profile for. A paragraph can name six
+         of them, so they stay body-coloured and carry a quiet underline —
+         turning every one blue would read as a link farm. Blue on hover, where
+         the profile card also opens. */
+      .na-lnk { color: var(--white); text-decoration: none; font-weight: 600;
+        border-bottom: 1px solid var(--border-mid); transition: color .12s ease, border-color .12s ease; }
+      .na-lnk:hover { color: var(--blue); border-bottom-color: var(--blue); }
+      /* An entity Dealroom holds but has not published a profile for. It used
+         to link to app.dealroom.co — off the site, into a login wall, mid
+         sentence. Same underline as a linked name, because the reader is being
+         told the same thing (this is an entity, we know it); the difference is
+         that the answer is in the tooltip rather than a page away. Dotted, so
+         a reader who has learned the solid underline means "profile" is not
+         promised one twice. */
+      /* Same weight of underline as .na-lnk above — dotted is the whole
+         difference. Drawn in --text-light it came out darker than the names
+         you CAN click, which put the emphasis exactly the wrong way round. */
+      .na-locked { position: relative; font-weight: 600; color: var(--white);
+        border-bottom: 1px dotted var(--border-mid); cursor: help; }
+      .na-locked:focus-visible { outline: 2px solid var(--eyebrow); outline-offset: 2px; border-radius: 2px; }
+      /* The dark chip. These tokens are inverted — --white is the page's INK
+         and --navy its paper — so ink-as-background is what gives a dark
+         tooltip on a light page. Verified against the computed values, not
+         reasoned from the names. */
+      .na-locked-tip { position: absolute; left: 0; bottom: calc(100% + .45rem); z-index: 30;
+        width: max-content; max-width: min(17rem, 72vw); padding: .5rem .65rem; border-radius: 10px;
+        background: var(--white); color: var(--navy); box-shadow: 0 8px 24px rgba(0,0,0,.22); /* theme-guardrail-allow: tooltip drop shadow */
+        font-weight: 400; font-size: .76rem; line-height: 1.45; letter-spacing: 0; cursor: auto;
+        opacity: 0; visibility: hidden; transform: translateY(3px);
+        transition: opacity .12s ease, transform .12s ease, visibility .12s; }
+      /* The bridge. Without it the pointer crosses a dead 0.45rem gap on the
+         way to the CTA and the tip closes under it. */
+      .na-locked-tip::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: .55rem; }
+      .na-locked-tip a { color: var(--navy); font-weight: 700; text-decoration: underline; white-space: nowrap; }
+      .na-locked:hover .na-locked-tip, .na-locked:focus .na-locked-tip, .na-locked:focus-within .na-locked-tip {
+        opacity: 1; visibility: visible; transform: translateY(0); }
+      .na-source { font-size: .82rem; color: var(--text-faint); padding-bottom: .6rem; }
+      .na-source a { color: var(--text-light); }
+      /* Dealroom's annotations on curated reads (why it matters / takeaways) */
+      .na-take { margin: 1.1rem 0 0; padding: .95rem 1.15rem; border-left: 3px solid var(--eyebrow);
+        background: var(--nh-card, var(--navy)); border-radius: 0 12px 12px 0; }
+      .na-take .na-sec-h { margin: 0 0 .35rem; font-size: .8rem; }
+      .na-take p { margin: 0; color: var(--text-light); font-size: .92rem; line-height: 1.6; }
+      .na-take ul { margin: 0; padding-left: 1.1rem; color: var(--text-light); font-size: .92rem; line-height: 1.6; }
+      /* A prose note runs several paragraphs where an annotation runs one. */
+      .na-take--talk p + p { margin-top: .6rem; }
+      .na-take-lead { margin: 0 0 .5rem !important; }
+      .na-take li { margin: .2rem 0; }
+      .na-sec { padding: 1.6rem 0 0; }
+      .na-sec-h { font-family: var(--font-display, sans-serif); font-weight: 700; font-size: .7rem;
+        letter-spacing: .11em; text-transform: uppercase; color: var(--text-faint); margin: 0 0 .8rem; }
+      .na-ent-row { display: flex; flex-wrap: wrap; gap: .6rem; }
+      .na-ent { display: inline-flex; align-items: center; gap: .55rem; padding: .45rem .8rem .45rem .5rem; border-radius: 999px;
+        border: 1px solid var(--border-light); background: var(--nh-card, var(--navy)); box-shadow: var(--shadow-sm); color: var(--white);
+        text-decoration: none; font-weight: 600; font-size: .85rem; }
+      a.na-ent:hover { border-color: var(--eyebrow); }
+      .na-ent-logo { width: 26px; height: 26px; border-radius: 8px; background: var(--logo-tile-bg); border: 1px solid var(--logo-tile-border);
+        display: grid; place-items: center; overflow: hidden; }
+      .na-ent-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+      .na-ent-type { font-size: .68rem; color: var(--text-faint); font-weight: 500; }
+      .na-rel { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+      @media (max-width: 860px) { .na-rel { grid-template-columns: 1fr; } }
+      .nh-card { background: var(--nh-card, var(--navy)); border: 1px solid var(--border-light); border-radius: 16px;
+        box-shadow: var(--shadow-sm); overflow: hidden; text-decoration: none; color: var(--white); display: flex; flex-direction: column;
+        transition: transform .16s ease, box-shadow .16s ease; }
+      .nh-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+      .nh-card-img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--navy-lighter); display: block; }
+      .nh-card-img.nh-analysis-preview { overflow: hidden; background: var(--nh-card, var(--navy)); }
+      .nh-analysis-preview iframe { display: block; width: 340%; height: 340%; border: 0;
+        transform: scale(.294); transform-origin: top left; pointer-events: none; background: var(--nh-card, var(--navy)); }
+      .nh-card-body { padding: .9rem 1rem 1rem; display: flex; flex-direction: column; gap: .45rem; }
+      .nh-title { font-family: var(--font-display, sans-serif); font-weight: 700; font-size: .95rem; line-height: 1.25; margin: 0; }
+      .nh-meta { display: flex; align-items: center; gap: .55rem; flex-wrap: wrap; }
+      /* The crop script supplies the graphic's spacing; an extra inset and
+         inner border here would frame it twice and shrink the diagram. */
+      .na-rel-card { height: 100%; }
+      .na-rel-thumb { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--nh-page, var(--navy-light));
+        border-bottom: 1px solid var(--border-light); }
+      .na-rel-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .na-rel-thumb--chart iframe { width: 340%; height: 340%; border: 0; transform: scale(0.294); transform-origin: top left;
+        pointer-events: none; background: var(--nh-card, var(--navy)); }
+      .na-rel-excerpt { color: var(--text-light); font-size: .84rem; line-height: 1.5; margin: 0;
+        display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+      /* ── Data modules (data/news-hub/article-modules.json) ──────────────
+         The analysis block breaks out of the 860px article column: a chart
+         embed reads as the story's evidence, not a figure in the margin. */
+      .na-mod { margin: 2.4rem 0 0; }
+      .na-mod-head { max-width: 720px; }
+      .na-mod-eyebrow { font-family: var(--font-display, sans-serif); font-weight: 700; font-size: .7rem;
+        letter-spacing: .11em; text-transform: uppercase; color: var(--eyebrow); margin: 0 0 .45rem; }
+      .na-mod-h { font-family: var(--font-display, sans-serif); font-weight: 800; letter-spacing: -0.01em;
+        font-size: clamp(1.25rem, 2.4vw, 1.6rem); line-height: 1.2; margin: 0 0 .55rem; }
+      .na-mod-sub { color: var(--text-light); font-size: .95rem; line-height: 1.65; margin: 0 0 1.1rem; }
+      /* Break the chart out of the 860px text column (centred on it, capped by
+         the viewport) — seven stacked vintages plus their logo walls need the
+         room, while the module's prose stays at reading width. */
+      /* No frame of its own: the embedded chart supplies the card surface it
+         sits on, and wrapping that in a second bordered panel double-frames it. */
+      .na-chart-wrap { width: min(1180px, calc(100vw - 3rem)); margin-left: 50%; transform: translateX(-50%);
+        border-radius: 18px; overflow: hidden; background: transparent; }
+      .na-chart-wrap iframe { display: block; width: 100%; border: 0; }
+      .na-mod-cap { margin: .7rem 0 0; font-size: .78rem; line-height: 1.55; color: var(--text-faint); max-width: 720px; }
+      .na-mod-cap a { color: var(--text-light); }
+      /* Entity spotlight: large section thumbnails of a Dealroom profile. Each
+         card carries a light and a dark capture; only the page theme's shows. */
+      /* Same break-out as the chart: at reading width these previews are too
+         small to read a table header in. */
+      .na-thumbs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem;
+        width: min(1180px, calc(100vw - 3rem)); margin-left: 50%; transform: translateX(-50%); }
+      .na-thumb { display: flex; flex-direction: column; text-decoration: none; color: var(--white);
+        background: var(--nh-card, var(--navy)); border: 1px solid var(--border-light); border-radius: 16px;
+        box-shadow: var(--shadow-sm); overflow: hidden; transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease; }
+      .na-thumb:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--eyebrow); }
+      .na-thumb-shot { position: relative; background: var(--navy-lighter); border-bottom: 1px solid var(--border-light);
+        aspect-ratio: 3 / 1; overflow: hidden; }
+      .na-thumb-shot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+      /* The light shot is the fallback: only an explicit dark attribute swaps it. */
+      html[data-theme="dark"] .na-thumb-shot img.is-light { display: none; }
+      html:not([data-theme="dark"]) .na-thumb-shot img.is-dark { display: none; }
+      .na-thumb-body { padding: .85rem 1rem 1rem; display: flex; flex-direction: column; gap: .3rem; }
+      .na-thumb-label { font-family: var(--font-display, sans-serif); font-weight: 700; font-size: .95rem; line-height: 1.25; }
+      .na-thumb-cap { font-size: .8rem; line-height: 1.5; color: var(--text-light); }
+      .na-mod-cta { display: inline-flex; align-items: center; gap: .4rem; margin-top: 1rem;
+        font-size: .88rem; font-weight: 600; color: var(--blue); text-decoration: none; }
+      .na-mod-cta:hover { text-decoration: underline; text-underline-offset: 3px; }
+      /* ── Knowledge-graph rail ───────────────────────────────────────────
+         "In this story" and "Go deeper" are both the graph showing its work,
+         so they travel together under its name. Below 1080px they stack under
+         the article the way they always have; at 1080px and up the SAME
+         markup becomes a sticky panel beside it. One set of markup and two
+         CSS layouts, never two renderers — otherwise a chip or a card ends up
+         rendering on one width and not the other. */
+      .na-kg-head { padding: 1.6rem 0 0; }
+      .na-kg-eyebrow { display: inline-flex; align-items: center; gap: .42rem;
+        font-family: var(--font-display, sans-serif); font-weight: 700; font-size: .7rem;
+        letter-spacing: .11em; text-transform: uppercase; color: var(--eyebrow); }
+      .na-kg-ico { width: 13px; height: 13px; flex: none; fill: currentColor; }
+      .na-kg-note { margin: .45rem 0 0; font-size: .82rem; line-height: 1.55; color: var(--text-faint); max-width: 52ch; }
+      .na-ent-name { font-weight: 600; }
+      .na-ent-type::before { content: "·"; margin: 0 .3rem 0 .28rem; }
+      /* Figures sit at the weight of the kind they replace — the point is that
+         a reader can skim the names, not that the numbers shout. cursor:help is
+         what says "there is an explanation here"; the title carries it. */
+      .na-ent-fig { cursor: help; }
+      .na-ent-fig:hover { color: var(--text-light); }
+      .na-ent-sep { margin: 0 .3rem; opacity: .55; }
+      /* The benchmark link that ends the rail on a deal story. Same row rhythm
+         as an entity, but it is a destination rather than a node in the story,
+         so it carries an arrow and a tinted glyph instead of a logo tile. It
+         is wrapped in a .na-sec so it inherits the divider and spacing the
+         other rail sections already define — one rhythm, not a second one. */
+      .na-kg-cta { display: flex; align-items: flex-start; gap: .6rem; text-decoration: none;
+        color: var(--white); border-radius: 10px; padding: .5rem; margin: 0 -.5rem; }
+      .na-kg-cta:hover { background: var(--navy-light); }
+      .na-kg-cta-ico { flex: none; width: 26px; height: 26px; border-radius: 8px; display: grid; place-items: center;
+        background: color-mix(in srgb, var(--eyebrow) 14%, transparent); color: var(--eyebrow); } /* theme-guardrail-allow: tint of the accent token, resolves in both themes */
+      .na-kg-cta-ico svg { width: 14px; height: 14px; fill: currentColor; }
+      .na-kg-cta-txt { display: flex; flex-direction: column; gap: .15rem; min-width: 0; }
+      .na-kg-cta-h { font-weight: 600; font-size: .87rem; }
+      .na-kg-cta-arrow { color: var(--eyebrow); }
+      .na-kg-cta-sub { font-size: .74rem; line-height: 1.45; color: var(--text-faint); }
+      /* Ends the article rather than trailing off it. */
+      .na-more { margin-top: 1.6rem; padding-top: 2rem; border-top: 1px solid var(--border-light); }
+      /* The page only widens when there is a rail to put in the extra room. A
+         story with neither a cast nor related reading keeps the 860px column
+         it has always had, rather than floating in a half-empty 1240. */
+      @media (min-width: 1080px) {
+        .na-wrap.has-rail { max-width: 1240px; }
+        .na-wrap.has-rail .na-layout { display: grid; grid-template-columns: minmax(0, 1fr) clamp(292px, 24vw, 340px);
+          gap: clamp(2rem, 3.4vw, 3.25rem); align-items: start; }
+        /* .na-chart-wrap and .na-thumbs centre themselves on their container to
+           break out of the reading column. Inside the grid that container is
+           the article column, so a 1180px chart would run straight under the
+           rail. Cap them to the column instead — at ~800px it is still far
+           wider than the 720px measure they were breaking out of. */
+        .na-wrap.has-rail .na-chart-wrap,
+        .na-wrap.has-rail .na-thumbs { width: 100%; margin-left: 0; transform: none; }
+
+        /* Sticky, and deliberately NOT height-capped. A news story is short —
+           the rail is usually about as tall as the article beside it, so a
+           sticky element can barely travel within its parent and simply sits
+           there. Capping it to the viewport in that case buys nothing and
+           costs a scrollbar inside a panel the page already had room for. */
+        .na-kg { position: sticky; top: 84px; }
+        .na-kg-inner { background: var(--nh-card, var(--navy)); border: 1px solid var(--border-light);
+          border-radius: 16px; box-shadow: var(--shadow-sm); padding: 0 1.1rem 1.15rem; }
+        .na-kg-head { padding: 1.15rem 0 0; }
+        .na-kg-note { font-size: .78rem; }
+        .na-kg .na-sec { padding: 1rem 0 0; }
+        .na-kg .na-sec + .na-sec { margin-top: 1rem; border-top: 1px solid var(--border-light); }
+        .na-kg .na-sec-h { margin-bottom: .45rem; }
+
+        /* Entities become a list. As pills, a 300px column turns "Mubadala
+           Investment Company" into three stacked lines. */
+        .na-kg .na-ent-row { display: block; }
+        .na-kg .na-ent { display: flex; margin: 0 -.5rem; padding: .4rem .5rem; gap: .55rem;
+          border: 0; background: none; box-shadow: none; border-radius: 10px; font-size: .87rem; }
+        .na-kg a.na-ent:hover { background: var(--navy-light); }
+        .na-kg .na-ent-logo { flex: none; }
+        .na-kg .na-ent-txt { display: flex; flex-direction: column; min-width: 0; }
+        .na-kg .na-ent-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .na-kg .na-ent-type::before { content: none; }
+
+        /* Go deeper keeps its picture — the previews are the point. A full
+           bordered card inside this panel would be a card in a card, but the
+           frameless version left each title floating between two framed
+           thumbnails, reading as easily as a header for the image below as a
+           caption for the one above. So each row is a tinted tile: thumbnail
+           and title share one surface, and the grouping needs no border. */
+        .na-kg .na-rel { display: flex; flex-direction: column; gap: .6rem; }
+        .na-kg .na-rel-card { height: auto; margin: 0 -.5rem; padding: .5rem .5rem .65rem;
+          background: var(--nh-page, var(--navy-light)); border: 0; box-shadow: none; border-radius: 12px; }
+        .na-kg .na-rel-card:hover { transform: none; box-shadow: none; background: var(--nh-track, var(--navy-lighter)); }
+        .na-kg .na-rel-thumb { border-radius: 9px; border: 1px solid var(--border-light); }
+        .na-kg .nh-card-body { padding: .5rem .2rem 0; gap: .35rem; }
+        .na-kg .nh-title { font-size: .87rem; }
+        .na-kg .na-rel-excerpt { display: none; }
+      }
+      @media (max-width: 700px) {
+        .na-wrap { padding: 0 1rem; }
+        .na-body { padding-top: 1.2rem; }
+        .na-p, .na-quote p, .na-li { font-size: .97rem; line-height: 1.65; }
+        .na-thumbs { grid-template-columns: 1fr; }
+        .na-chart-wrap { width: calc(100vw - 2rem); border-radius: 14px; }
+      }
+    </style>
+    <style>
+      /* Accent chain: --nh-accent where the hub defines it, then --eyebrow,
+         then --blue, then a literal. One of those four always resolves, in
+         every theme and in the reduced palette. */
+      .dr-plat {
+        --plat-accent: var(--nh-accent, var(--eyebrow, var(--blue, #3E64E0)));
+        --plat-surface: var(--nh-card, var(--navy));
+        --plat-ink: var(--white);
+        --plat-mute: var(--text-light);
+        --plat-line: var(--border-light);
+        font-family: var(--font-sans, 'DM Sans', sans-serif);
+        color: var(--plat-ink);
+      }
+      /* A wash of the accent over the local card colour. It reads as Dealroom
+         speaking rather than as another story, in light, dark and reduced
+         alike. The flat declaration above is the fallback if color-mix is
+         unavailable. */
+      .dr-plat-card, .dr-plat-ways, .dr-plat-strip {
+        background: var(--plat-surface);
+        background: color-mix(in srgb, var(--plat-accent) 7%, var(--plat-surface)); /* theme-guardrail-allow: tints two tokens, no literal colour */
+      }
+
+      .dr-plat a { text-decoration: none; }
+      .dr-plat-ico { width: 14px; height: 14px; flex: none; }
+
+      .dr-plat-eyebrow { font-size: .68rem; font-weight: 800; letter-spacing: .11em;
+        text-transform: uppercase; color: var(--plat-accent); }
+      .dr-plat-h { font-family: var(--font-display, 'Source Sans 3', sans-serif); font-weight: 800;
+        letter-spacing: -.01em; line-height: 1.2; margin: .5rem 0 0; font-size: 1.12rem; }
+      .dr-plat-lead { margin: .45rem 0 0; font-size: .88rem; line-height: 1.55; color: var(--plat-mute); }
+
+      /* Product rows. Hit target is the whole row, not the name. */
+      .dr-plat-prods { display: grid; gap: .15rem; margin-top: 1rem; padding-top: .95rem;
+        border-top: 1px solid var(--plat-line); }
+      .dr-plat-prod { display: flex; gap: .6rem; align-items: flex-start; padding: .5rem;
+        margin: 0 -.5rem; border-radius: 10px; color: var(--plat-ink);
+        transition: background .14s ease; }
+      .dr-plat-prod:hover { background: color-mix(in srgb, var(--plat-accent) 12%, transparent); } /* theme-guardrail-allow: tints the accent token, no literal colour */
+      .dr-plat-prod-ico { display: inline-flex; align-items: center; justify-content: center;
+        flex: none; width: 26px; height: 26px; border-radius: 8px; color: var(--plat-accent);
+        background: color-mix(in srgb, var(--plat-accent) 16%, transparent); } /* theme-guardrail-allow: tints the accent token, no literal colour */
+      .dr-plat-prod-txt { display: flex; flex-direction: column; gap: .1rem; min-width: 0; }
+      .dr-plat-prod-name { font-size: .84rem; font-weight: 700; }
+      .dr-plat-prod:hover .dr-plat-prod-name { color: var(--plat-accent); }
+      .dr-plat-prod-line { font-size: .78rem; line-height: 1.45; color: var(--plat-mute); }
+
+      /* Ghost button (Yoram, 2026-08-16): panel ink and a matching hairline,
+         no fill. Only the band carries it, so the ink is the band's dark page
+         ink and the hover lifts it onto a white card face. */
+      .dr-plat-btn { display: inline-flex; align-items: center; justify-content: center;
+        background: transparent; color: var(--plat-ink); font-weight: 700; font-size: .85rem;
+        border: 1.5px solid var(--plat-ink); padding: .55rem 1.15rem; border-radius: 999px;
+        white-space: nowrap; transition: background .14s ease, transform .14s ease; }
+      .dr-plat-btn:hover { background: var(--surface-card); transform: translateY(-1px); }
+      .dr-plat-btn:focus-visible { outline: 2px solid var(--plat-ink); outline-offset: 2px; }
+
+      /* --- The dark panel ---------------------------------------------- */
+      /* The hub's three blocks default to dark here; the hub repaints them
+         light in css/news-grid-lab.css. Literals rather than tokens because
+         every --navy-family token INVERTS with the theme (--navy is #ffffff
+         in light) — there is no token for "dark regardless". Values are the
+         theme's own dark palette. No border: a white-14% hairline between a
+         dark panel and a light page reads as a halo. The same token still
+         draws the dividers INSIDE. */
+      .dr-plat-card, .dr-plat-ways, .dr-plat-strip { /* theme-guardrail-allow: promo panels are deliberately theme-independent; values mirror the theme's dark palette */
+        --plat-surface: #141B2D; --plat-ink: #FFFFFF; --plat-mute: rgba(255, 255, 255, .7);
+        --plat-line: rgba(255, 255, 255, .14); --plat-accent: #84ADFF;
+        border: 0; border-radius: 16px; }
+      /* In dark mode the page is already #141B2D, so they lift to the theme's
+         raised surface instead of vanishing into it. */
+      html[data-theme="dark"] .dr-plat-card,
+      html[data-theme="dark"] .dr-plat-ways,
+      html[data-theme="dark"] .dr-plat-strip,
+      html[data-theme="dark"] .dr-plat-band { --plat-surface: #1E2A45; } /* theme-guardrail-allow: paired with the rule above */
+
+      /* --- The light band ----------------------------------------------- */
+      /* The article-foot band wears the palette of the hub's light panels
+         (css/news-grid-lab.css), so the two read as one family (Yoram,
+         2026-09-28): the cool blue-grey data ground, page ink, the blue
+         accent and a --blue-ink eyebrow. The demo's search bar and result
+         rows sit on white card faces. */
+      .dr-plat-band {
+        --plat-surface: var(--surface-data); --plat-ink: var(--white);
+        --plat-mute: var(--text-light); --plat-line: var(--border-light);
+        --plat-accent: var(--blue);
+        background: var(--plat-surface); border: 0; border-radius: 16px; }
+      .dr-plat-band .dr-plat-eyebrow { color: var(--blue-ink); }
+
+      /* --- Card (the pulse) --------------------------------------------- */
+      /* A column, so a slot taller than the content (the hub sizes this card
+         to the hero card beside it) spends the slack inside the chart body
+         rather than on trailing padding. */
+      .dr-plat-card { display: flex; flex-direction: column; padding: 1.25rem 1.3rem 1.35rem; }
+      .dr-pulse-head { display: flex; align-items: baseline; justify-content: space-between; gap: .6rem; }
+      /* The live dot is the theme's jf green (dark value — always-dark panel),
+         breathing on the same 2s the search demo's live dot uses. */
+      .dr-pulse-live { display: inline-flex; align-items: center; gap: .3rem; flex: none;
+        font-size: .6rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+        color: var(--plat-mute); }
+      .dr-pulse-live i { width: 6px; height: 6px; border-radius: 50%; background: rgb(108, 233, 166); /* theme-guardrail-allow: --tag-jf dark value on the always-dark panel */
+        animation: dr-demo-live 2s ease-in-out infinite; }
+      /* Window pills. One is always on; unready ones (the first-seen ledger
+         has not watched a full window yet — see /api/news-pulse) stay dimmed
+         with the reason in their title. */
+      .dr-pulse-pills { display: flex; gap: .3rem; margin-top: .7rem; }
+      .dr-pulse-pill { flex: 1 1 0; font: 700 .68rem var(--font-sans, sans-serif);
+        color: var(--plat-mute); background: none; border: 1px solid var(--plat-line);
+        border-radius: 999px; padding: .28rem 0; cursor: pointer; white-space: nowrap;
+        transition: color .14s ease, border-color .14s ease, background .14s ease; }
+      .dr-pulse-pill:hover:not(:disabled):not([aria-disabled="true"]) { color: var(--plat-ink); border-color: var(--plat-ink); }
+      .dr-pulse-pill.is-on { color: var(--plat-accent); border-color: var(--plat-accent);
+        background: rgba(132, 173, 255, .12); } /* theme-guardrail-allow: accent tint on the always-dark panel */
+      .dr-pulse-pill:disabled, .dr-pulse-pill[aria-disabled="true"] { opacity: .38; cursor: default; }
+      .dr-pulse-pill:focus-visible { outline: 2px solid var(--plat-accent); outline-offset: 1px; }
+      /* The body centres in whatever slack the hero-height slot leaves, so a
+         tall day stretches air around the chart, never under the button. */
+      .dr-pulse-body { flex: 1 1 auto; display: flex; flex-direction: column;
+        justify-content: center; margin-top: .85rem; min-height: 0; }
+      .dr-pulse-rows { list-style: none; margin: 0; padding: 0; display: flex;
+        flex-direction: column; gap: .44rem; }
+      /* Row: name | bar | value. The bar is the same 5px for every sector —
+         length is the only emphasis. */
+      .dr-pulse-row { display: grid; grid-template-columns: 88px minmax(0, 1fr) max-content;
+        gap: .55rem; align-items: center; }
+      .dr-pulse-name { font-size: .72rem; font-weight: 600; color: var(--plat-ink);
+        white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dr-pulse-bar { position: relative; height: 5px; border-radius: 999px;
+        background: rgba(255, 255, 255, .09); overflow: hidden; } /* theme-guardrail-allow: track tint on the always-dark panel */
+      .dr-pulse-bar i { position: absolute; inset: 0 auto 0 0; border-radius: 999px;
+        background: var(--plat-accent); width: 0; transition: width .45s ease; }
+      .dr-pulse-val { font-family: var(--font-mono, ui-monospace, monospace); font-size: .68rem;
+        font-weight: 700; color: var(--plat-ink); text-align: right; min-width: 3.4rem; }
+      /* The shimmer: skeleton rows breathe until the script fills them. */
+      .dr-pulse-row--skeleton .dr-pulse-name { height: .6rem; border-radius: 4px;
+        background: rgba(255, 255, 255, .1); animation: dr-pulse-shimmer 1.6s ease-in-out infinite; } /* theme-guardrail-allow: skeleton tint on the always-dark panel */
+      .dr-pulse-row--skeleton .dr-pulse-bar i { background: rgba(255, 255, 255, .14); /* theme-guardrail-allow: skeleton tint on the always-dark panel */
+        animation: dr-pulse-shimmer 1.6s ease-in-out infinite; }
+      .dr-pulse-row--skeleton .dr-pulse-val { height: .6rem; width: 2.6rem; border-radius: 4px;
+        background: rgba(255, 255, 255, .1); animation: dr-pulse-shimmer 1.6s ease-in-out infinite; } /* theme-guardrail-allow: skeleton tint on the always-dark panel */
+      @keyframes dr-pulse-shimmer { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
+      /* The sums under the chart: the window's total, then its biggest round.
+         Same muted register as the demo's count line. */
+      .dr-pulse-total { margin: .7rem 0 0; font-size: .7rem; line-height: 1.45; color: var(--plat-mute); }
+      .dr-pulse-total b { color: var(--plat-ink); font-weight: 700;
+        font-family: var(--font-mono, ui-monospace, monospace); }
+      .dr-pulse-top { margin: .2rem 0 0; font-size: .7rem; color: var(--plat-mute); }
+      .dr-pulse-top b { color: var(--plat-ink); font-weight: 600; }
+      .dr-pulse-note-quiet { margin: 0; font-size: .74rem; color: var(--plat-mute); }
+
+      /* --- Ways (the wide trends band) ---------------------------------- */
+      /* Height is NOT set here. On the hub this block is the flex item that
+         absorbs whatever slack is left between the story column and the rail
+         (see .nh-col-main in news-hub.js), so the two columns end level
+         whatever the rail happens to hold that day. Three stacked rows —
+         head, charts, foot — and the hub's align-content:center spends any
+         extra height between them. */
+      .dr-plat-ways { overflow: hidden; padding: 1.4rem 1.6rem 1.35rem; margin-top: 1rem;
+        display: grid; gap: 1.05rem; }
+      .dr-plat-ways-note { margin: .3rem 0 0; font-size: .88rem; color: var(--plat-mute); }
+      .dr-plat-trends { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+      .dr-trend { display: flex; flex-direction: column; min-width: 0; }
+      .dr-trend-l { font-size: .62rem; font-weight: 700; letter-spacing: .07em;
+        text-transform: uppercase; color: var(--plat-ink); opacity: .72; white-space: nowrap;
+        overflow: hidden; text-overflow: ellipsis; }
+      .dr-trend-n { margin-top: .18rem; font-family: var(--font-mono, ui-monospace, monospace);
+        font-weight: 700; font-size: 1.34rem; line-height: 1.1; letter-spacing: -.01em; }
+      .dr-trend-d { margin-top: .12rem; font-size: .68rem; color: var(--plat-mute); }
+      .dr-trend-chart { display: block; width: 100%; height: 74px; margin-top: .55rem; }
+      .dr-trend-dot { animation: dr-demo-live 2s ease-in-out infinite; }
+      .dr-trend-years { display: flex; justify-content: space-between; margin-top: .3rem;
+        font-family: var(--font-mono, ui-monospace, monospace); font-size: .58rem;
+        color: var(--plat-mute); }
+      /* Foot: the three ways in as pills, and the source line the charts
+         answer to. Pill styles live outside the phone block on purpose — the
+         strip uses them below 980px, this row above it. */
+      .dr-plat-ways-foot { display: flex; align-items: center; gap: .45rem;
+        padding-top: .95rem; border-top: 1px solid var(--plat-line); }
+      .dr-plat-ways-src { margin-left: auto; font-size: .62rem; color: var(--plat-mute); }
+      @media (prefers-reduced-motion: reduce) {
+        .dr-trend-dot, .dr-pulse-live i, .dr-pulse-row--skeleton .dr-pulse-name,
+        .dr-pulse-row--skeleton .dr-pulse-bar i, .dr-pulse-row--skeleton .dr-pulse-val { animation: none; }
+        .dr-pulse-bar i { transition: none; }
+      }
+      /* --- The search demo --------------------------------------------- */
+      /* One 10.5s clock, three 3.5s scenes. Every element animates over the
+         full cycle inside its own percentage window; a scene's elements all
+         share the scene's NEGATIVE delay (N*3.5s - 10.5s), so the loop is
+         mid-flight at first paint and wraps without a seam. */
+      .dr-demo { position: absolute; inset: 0; font-family: var(--font-sans, 'DM Sans', sans-serif); }
+      .dr-demo-live { position: absolute; top: -2px; right: 0; z-index: 1; display: inline-flex;
+        align-items: center; gap: .3rem; font-size: .6rem; font-weight: 800; letter-spacing: .1em;
+        text-transform: uppercase; color: var(--plat-mute); }
+      .dr-demo-live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--marker-alt);
+        animation: dr-demo-live 2s ease-in-out infinite; }
+      @keyframes dr-demo-live { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+
+      .dr-demo-scene { position: absolute; inset: 0; display: flex; flex-direction: column;
+        justify-content: center; gap: .38rem; opacity: 0;
+        animation: dr-demo-scene 10.5s linear infinite;
+        animation-delay: calc(var(--s) * 3.5s - 10.5s); }
+      /* The outgoing scene holds until 32.5% and is gone AT the 33.3% scene
+         boundary, which is exactly where the next one starts rising. It used
+         to fade out at 32.5% and leave the panel with nothing in it until the
+         next scene arrived — measured at up to a third of a second of empty
+         dark on a block whose whole job is to look like a live product. The
+         two still never overlap: cross-faded text sits on top of itself and
+         smears, which is why this is a fast hand-off and not a dissolve. */
+      @keyframes dr-demo-scene {
+        0% { opacity: 0; }
+        1.1%, 32.5% { opacity: 1; }
+        33.3%, 100% { opacity: 0; }
+      }
+
+      /* The query types itself: max-width in ch, stepped, on the mono face —
+         the same trick as a JS typewriter with nothing to schedule. 24ch is
+         the longest query; shorter ones just finish a beat early. */
+      .dr-demo-bar { display: flex; align-items: center; gap: .4rem; padding: .32rem .55rem;
+        border: 1px solid var(--plat-line); border-radius: 9px;
+        background: var(--surface-card); }
+      .dr-demo-bar svg { width: 12px; height: 12px; flex: none; color: var(--plat-accent); }
+      .dr-demo-q { display: inline-flex; align-items: baseline; min-width: 0; }
+      .dr-demo-qt { display: inline-block; overflow: hidden; white-space: nowrap;
+        font-family: var(--font-mono, ui-monospace, monospace); font-size: .7rem; font-weight: 600;
+        color: var(--plat-ink); max-width: 24ch;
+        animation: dr-demo-type 10.5s steps(24, end) infinite;
+        animation-delay: calc(var(--s) * 3.5s - 10.5s); }
+      @keyframes dr-demo-type {
+        0%, 1.5% { max-width: 0; }
+        9%, 100% { max-width: 24ch; }
+      }
+      .dr-demo-caret { flex: none; width: 1.5px; height: .78rem; margin-left: 2px;
+        background: var(--plat-accent); align-self: center;
+        animation: dr-demo-caret 1s steps(2, jump-none) infinite; }
+      @keyframes dr-demo-caret { 0% { opacity: 1; } 100% { opacity: 0; } }
+
+      .dr-demo-chips { display: flex; gap: .3rem;
+        animation: dr-demo-in 10.5s ease-out infinite;
+        animation-delay: calc(var(--s) * 3.5s - 10.5s); }
+      .dr-demo-chip { font-size: .58rem; font-weight: 700; letter-spacing: .03em; color: var(--plat-mute);
+        border: 1px solid var(--plat-line); border-radius: 999px; padding: .08rem .42rem; white-space: nowrap; }
+
+      /* Results cascade: each row runs the same window, shifted .28s by its
+         index. The scene fade covers their exit together. */
+      .dr-demo-rows { display: flex; flex-direction: column; gap: .26rem; }
+      .dr-demo-row { display: flex; align-items: center; gap: .38rem; padding: .26rem .45rem;
+        border-radius: 8px; background: var(--surface-card);
+        animation: dr-demo-in 10.5s ease-out infinite;
+        animation-delay: calc(var(--s) * 3.5s + var(--r) * .28s - 10.5s); }
+      .dr-demo-tile { flex: none; width: 17px; height: 17px; border-radius: 5px; display: inline-flex;
+        align-items: center; justify-content: center; font-size: .58rem; font-weight: 800; }
+      .dr-demo-name { font-size: .72rem; font-weight: 700; color: var(--plat-ink); white-space: nowrap; }
+      .dr-demo-meta { font-size: .62rem; color: var(--plat-mute); white-space: nowrap; overflow: hidden;
+        text-overflow: ellipsis; min-width: 0; }
+      .dr-demo-n { margin-left: auto; flex: none; font-family: var(--font-mono, ui-monospace, monospace);
+        font-size: .64rem; font-weight: 700; color: var(--plat-accent); }
+
+      .dr-demo-foot { display: flex; align-items: center; justify-content: space-between;
+        font-size: .62rem; color: var(--plat-mute);
+        animation: dr-demo-in 10.5s ease-out infinite;
+        animation-delay: calc(var(--s) * 3.5s + .9s - 10.5s); }
+      .dr-demo-act { color: var(--plat-accent); font-weight: 700; }
+
+      /* Shared entrance: hidden until the scene's rows window, in, and OUT
+         again before the wrap. The exit matters: staggered elements shift
+         this whole cycle later by their delay, so a keyframe that held
+         visible to 100% would leak the previous scene's tail into the next
+         scene's typing phase. */
+      @keyframes dr-demo-in {
+        0%, 10.5% { opacity: 0; transform: translateY(5px); }
+        13.5% { opacity: 1; transform: translateY(0); }
+        28.5% { opacity: 1; transform: translateY(0); }
+        31.5%, 100% { opacity: 0; transform: translateY(0); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        /* Scene one, fully drawn, and nothing moves. */
+        .dr-demo-scene, .dr-demo-qt, .dr-demo-chips, .dr-demo-row, .dr-demo-foot,
+        .dr-demo-caret, .dr-demo-live-dot { animation: none; }
+        .dr-demo-scene { opacity: 1; }
+        .dr-demo-scene ~ .dr-demo-scene { opacity: 0; }
+        .dr-demo-chips, .dr-demo-row, .dr-demo-foot { opacity: 1; transform: none; }
+        .dr-demo-caret { opacity: 0; }
+      }
+
+      /* --- Product pills ------------------------------------------------ */
+      /* Shared by the band foot (desktop) and the phone strip. */
+      .dr-plat-pill { display: inline-flex; align-items: center; gap: .4rem; flex: none;
+        font-size: .8rem; font-weight: 700; white-space: nowrap; color: var(--plat-ink);
+        border: 1px solid var(--plat-line); border-radius: 999px; padding: .45rem .85rem;
+        transition: border-color .14s ease, color .14s ease; }
+      .dr-plat-pill:hover { border-color: var(--plat-accent); color: var(--plat-accent); }
+      .dr-plat-pill .dr-plat-ico { color: var(--plat-accent); }
+
+      /* --- Strip (phone) ----------------------------------------------- */
+      /* The trends band survives the phone breakpoint (its charts duplicate
+         nothing), but its product-pill foot does not: the strip at the rail's
+         foot carries the pills there, and one place is enough. */
+      .dr-plat-strip { display: none; }
+      @media (max-width: 980px) {
+        .dr-plat-ways { padding: 1.15rem 1.15rem 1.2rem; gap: .85rem; }
+        .dr-plat-ways-foot { display: none; }
+        /* Each trend flattens to label-and-number beside its chart: three
+           short rows rather than a 700px tower of panels between the stories
+           and the card. */
+        .dr-plat-trends { grid-template-columns: 1fr; gap: .8rem; }
+        .dr-trend { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+          grid-template-rows: auto auto auto; column-gap: .8rem; align-items: start; }
+        .dr-trend-l { grid-column: 1; white-space: normal; }
+        .dr-trend-n { grid-column: 1; font-size: 1.18rem; }
+        .dr-trend-d { grid-column: 1; }
+        .dr-trend-chart { grid-column: 2; grid-row: 1 / 4; height: 58px; margin-top: .2rem; align-self: center; }
+        /* The year span goes with the axis on a phone — the delta line says
+           the part that matters. */
+        .dr-trend-years { display: none; }
+        /* min-width:0 on both, or the pills' intrinsic width wins: a flex row
+           of nowrap items defaults to min-width:auto, which pushed the whole
+           block past the wrap's padding at 320px instead of scrolling inside
+           it. The grid item has to be allowed to be narrower than its content
+           before overflow-x can do anything. */
+        .dr-plat-strip { display: block; padding: 1rem 1.15rem 1.1rem; min-width: 0; }
+        .dr-plat-strip-note { margin: 0 0 .75rem; font-size: .84rem; color: var(--plat-mute); }
+        /* One row that scrolls rather than wrapping to three lines — wrapping
+           turns a strip back into a panel, which is the thing being fixed. */
+        .dr-plat-strip-row { display: flex; gap: .45rem; overflow-x: auto; min-width: 0;
+          scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+        .dr-plat-strip-row::-webkit-scrollbar { display: none; }
+      }
+
+      /* --- Band -------------------------------------------------------- */
+      /* Three columns at article width: what it is, the ways in, and the demo
+         running beside them. The demo is ADDED here rather than swapped in —
+         this band is the only platform block on an article page, so the three
+         product links are the page's only route to them and cannot go. */
+      .dr-plat-band { padding: 1.6rem 1.7rem; margin: 2.4rem 0 0;
+        display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, .66fr) minmax(0, 1fr);
+        gap: 1.8rem; align-items: start; }
+      .dr-plat-band .dr-plat-h { font-size: 1.3rem; }
+      .dr-plat-band .dr-plat-prods { margin-top: 0; padding-top: 0; border-top: 0; }
+      .dr-plat-band-cta { margin-top: 1.15rem; }
+      /* Absolutely positioned inside, like the demo's other host, so it fills
+         the cell rather than setting the band's height. */
+      .dr-plat-band-art { position: relative; align-self: stretch; min-height: 196px; }
+      /* Below three columns the demo is the thing that goes: at a third of the
+         band it stops being a product shot and starts being a thumbnail, and
+         the copy and the links both have to earn their space first. */
+      @media (max-width: 1060px) {
+        .dr-plat-band { grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); }
+        .dr-plat-band-art { display: none; }
+      }
+      @media (max-width: 720px) {
+        .dr-plat-band { grid-template-columns: 1fr; gap: 1.1rem; padding: 1.3rem 1.25rem 1.4rem; }
+        .dr-plat-band .dr-plat-prods { padding-top: .95rem; border-top: 1px solid var(--plat-line); }
+        .dr-plat-band-cta { margin-top: 1rem; }
+        .dr-plat-band .dr-plat-btn { width: 100%; }
+      }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="logo">
+                <img src="/images/DR_logo_white@8x.png" alt="Dealroom.co">
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-center">
+                <a href="/solutions/" class="nav-link">Product</a>
+                <a href="/reports.html" class="nav-link">Reports</a>
+                <a href="/resources.html" class="nav-link">Resources</a>
+                <a href="/pricing/" class="nav-link">Pricing</a>
+            </div>
+            <div class="nav-right">
+                <a href="https://app.dealroom.co/login" class="btn btn-ghost">Login</a>
+                <a href="/book-demo/" class="btn btn-primary"><span class="full-text">Book a demo</span><span class="short-text">Demo</span></a>
+            </div>
+        </div>
+    </nav><script src="/js/mobile-nav.js?v=864a19a61492a1a0"></script>
+
+    <main class="nh-main">
+      <div class="na-wrap has-rail">
+        <div class="na-crumb" role="navigation" aria-label="Breadcrumb"><a href="/news/">News</a> <span aria-hidden="true">›</span> <span class="na-crumb-here">Tasklet raises $13M bridge round for AI agents, backed by US…</span></div>
+        <div class="na-layout">
+          <article class="na-col">
+            <header class="na-head">
+              <div class="na-meta"><span class="nh-chip nh-chip--fundraise">Fundraise</span><time class="nh-time" datetime="2026-07-31T14:52:12.000Z">Jul 31, 2026, 14:52 UTC</time></div>
+              <h1 class="na-h1">Tasklet raises $13M bridge round for AI agents, backed by USV and Lightspeed</h1>
+            </header>
+            <img class="na-img" src="https://sg-imgs.dealroom.co/1a55fa844731055464c3f18bbcba4451.jpeg?auto=compress&amp;cs=origin" alt="" onerror="this.remove()">
+            <div class="na-body"><p class="na-p"><strong class="na-lead">What&#039;s the deal?</strong> <a class="na-lnk" href="/companies/tasklet/">Tasklet</a>, a San Francisco-based AI startup, has raised a $13 million pre-Series A bridge round led by <a class="na-lnk" href="/investors/union-square-ventures/">Union Square Ventures</a> and <a class="na-lnk" href="/investors/lightspeed-venture-partners/">Lightspeed Venture Partners</a>. <span class="na-locked" tabindex="0"><span class="na-locked-name">Oleka Capital</span><span class="na-locked-tip" role="tooltip">Dealroom has a profile for this one. <a href="/premium-access/">Try Dealroom →</a></span></span> has joined the round, alongside existing backers <a class="na-lnk" href="/investors/y-combinator/">Y Combinator</a>, AI pioneer <span class="na-locked" tabindex="0"><span class="na-locked-name">Jeff Dean</span><span class="na-locked-tip" role="tooltip">Dealroom has a profile for this one. <a href="/premium-access/">Try Dealroom →</a></span></span>, and Stripe founders <span class="na-locked" tabindex="0"><span class="na-locked-name">Patrick</span><span class="na-locked-tip" role="tooltip">Dealroom has a profile for this one. <a href="/premium-access/">Try Dealroom →</a></span></span> and <span class="na-locked" tabindex="0"><span class="na-locked-name">John Collison</span><span class="na-locked-tip" role="tooltip">Dealroom has a profile for this one. <a href="/premium-access/">Try Dealroom →</a></span></span>.</p><p class="na-p"><strong class="na-lead">What&#039;s the endgame?</strong> Founded by <a class="na-lnk" href="/people/andrew-lee/">Andrew Lee</a> and Jonny Dimond, Tasklet runs a cloud-based platform that lets companies delegate daily workflows to AI agents. The agents connect to a company&#039;s software and data sources and autonomously carry out research, prepare reports, update CRM systems, classify emails, and process data.</p><p class="na-p">Running continuously in the cloud, the agents take responsibility for ongoing workflows rather than one-off tasks. Tasklet now aims to build enterprise AI infrastructure, where teams manage agents, corporate knowledge, app connections, and business processes in a shared environment.</p><p class="na-p"><strong class="na-lead">The numbers:</strong> Tasklet recorded over 1,200% growth in the first four months of 2026. Its previous round was raised at a $175 million valuation; the valuation for the bridge was not disclosed.</p><p class="na-p"><strong class="na-lead">Who&#039;s behind it?</strong> CEO Lee previously co-founded <span class="na-locked" tabindex="0"><span class="na-locked-name">Firebase</span><span class="na-locked-tip" role="tooltip">Dealroom has a profile for this one. <a href="/premium-access/">Try Dealroom →</a></span></span>, which <a class="na-lnk" href="/investors/alphabet-google/">Google</a> acquired. Dimond was on Firebase&#039;s early team and later led Google Cloud Firestore technically. The wider team draws from Firebase, Google, <a class="na-lnk" href="/companies/amazon-com/">Amazon</a>, and <a class="na-lnk" href="/companies/openai/">OpenAI</a>.</p><p class="na-p">Oleka Capital managing partner Ilker Sozdinler said the firm first encountered Tasklet in January 2026 as a case study at Harvard Business School. &quot;The best investment theses emerge not in an Excel file but in daily usage habits,&quot; he said, adding that the Oleka team put Tasklet &quot;at the center of our own daily workflows.&quot;</p><p class="na-p"><strong class="na-lead">The signal:</strong> Investor appetite for AI agents that can run enterprise workflows continues to draw major funds, and Tasklet&#039;s founder pedigree and steep early growth make it a test case for whether agent tooling can graduate into core business infrastructure.</p><p class="na-p">Read more: <a class="na-lnk" href="https://egirisim.com/2026/07/31/oleka-capital-yapay-zeka-ajanlari-gelistiren-taskletin-13-milyon-dolarlik-yatirim-turuna-katildi/" target="_blank" rel="noopener nofollow">egirişim</a></p></div>
+            
+            
+            
+            
+            
+          </article>
+          
+        <aside class="na-kg" aria-label="Knowledge graph">
+          <div class="na-kg-inner">
+            <div class="na-kg-head">
+              <div class="na-kg-eyebrow"><svg class="na-kg-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.4 4.2 12.6 8M3.4 11.8 12.6 8M3.4 4.2v7.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none" opacity=".5"/><circle cx="3.4" cy="4.2" r="2.1"/><circle cx="3.4" cy="11.8" r="2.1"/><circle cx="12.6" cy="8" r="2.1"/></svg>Knowledge graph</div>
+              <p class="na-kg-note">Companies, investors and people this story names, and Dealroom research on the same subject.</p>
+            </div>
+            <section class="na-sec" aria-label="In this story"><h2 class="na-sec-h">In this story</h2><div class="na-ent-row"><a class="na-ent" href="/companies/tasklet/"><span class="na-ent-logo" data-i="T"><img src="https://storage.googleapis.com/dealroom-images-production/2026/06/27/4daf1412ec34be5f1a7e533b361bf8c6.png" alt="" loading="lazy" onerror="this.parentNode.textContent=this.parentNode.dataset.i"></span><span class="na-ent-txt"><span class="na-ent-name">Tasklet</span><span class="na-ent-type na-ent-metrics"><span class="na-ent-fig" title="Total VC equity raised across disclosed rounds. Debt and grants are not included.">$13M raised</span><span class="na-ent-sep" aria-hidden="true">·</span><span class="na-ent-fig" title="Dealroom Signal — a 0–100 momentum score. Dealroom&#039;s market maps treat 92 and above as breaking out.">Signal 89</span></span></span></a><a class="na-ent" href="/people/andrew-lee/"><span class="na-ent-logo" data-i="A"><img src="https://storage.googleapis.com/dealroom-images-production/2019/06/18/59e7b8c3e22fc58a468b970b33c2b6af.jpg" alt="" loading="lazy" onerror="this.parentNode.textContent=this.parentNode.dataset.i"></span><span class="na-ent-txt"><span class="na-ent-name">Andrew Lee</span><span class="na-ent-type">Person</span></span></a><a class="na-ent" href="/investors/union-square-ventures/"><span class="na-ent-logo" data-i="U"><img src="https://storage.googleapis.com/dealroom-images-production/2021/01/08/037ce3f51d3aa2b299a4c4d0bd2a6b6e.jpeg" alt="" loading="lazy" onerror="this.parentNode.textContent=this.parentNode.dataset.i"></span><span class="na-ent-txt"><span class="na-ent-name">Union Square Ventures</span><span class="na-ent-type na-ent-metrics"><span class="na-ent-fig" title="Power Law Investor Ranking 2026 · Top 1% globally">Power Law #184</span></span></span></a><a class="na-ent" href="/investors/lightspeed-venture-partners/"><span class="na-ent-logo" data-i="L"><img src="https://storage.googleapis.com/dealroom-images-production/2025/07/22/0506515b9b35633e48035963a2356729.jpeg" alt="" loading="lazy" onerror="this.parentNode.textContent=this.parentNode.dataset.i"></span><span class="na-ent-txt"><span class="na-ent-name">Lightspeed Venture Partners</span><span class="na-ent-type na-ent-metrics"><span class="na-ent-fig" title="Power Law Investor Ranking 2026 · Top 0.1% globally">Power Law #7</span></span></span></a><a class="na-ent" href="/investors/y-combinator/"><span class="na-ent-logo" data-i="Y"><img src="https://storage.googleapis.com/dealroom-images-production/2023/03/27/1bc6dbfc72aec108766b88457f0f1ce7.png" alt="" loading="lazy" onerror="this.parentNode.textContent=this.parentNode.dataset.i"></span><span class="na-ent-txt"><span class="na-ent-name">Y Combinator</span><span class="na-ent-type na-ent-metrics"><span class="na-ent-fig" title="Power Law Investor Ranking 2026 · Top 0.1% globally">Power Law #1</span></span></span></a><a class="na-ent" href="/investors/alphabet-google/"><span class="na-ent-logo" data-i="A"><img src="https://storage.googleapis.com/dealroom-images-production/2026/04/30/59a759ece468c02573c6e77c00288095.png" alt="" loading="lazy" onerror="this.parentNode.textContent=this.parentNode.dataset.i"></span><span class="na-ent-txt"><span class="na-ent-name">Alphabet | Google</span><span class="na-ent-type na-ent-metrics"><span class="na-ent-fig" title="Power Law Investor Ranking 2026 · Top 2% globally">Power Law #221</span></span></span></a><a class="na-ent" href="/companies/amazon-com/"><span class="na-ent-logo" data-i="A"><img src="https://storage.googleapis.com/dealroom-images-production/2025/10/22/b44cf46e05e6efab70815cdf46693234.png" alt="" loading="lazy" onerror="this.parentNode.textContent=this.parentNode.dataset.i"></span><span class="na-ent-txt"><span class="na-ent-name">Amazon</span><span class="na-ent-type na-ent-metrics"><span class="na-ent-fig" title="Total VC equity raised across disclosed rounds. Debt and grants are not included.">$9.0M raised</span><span class="na-ent-sep" aria-hidden="true">·</span><span class="na-ent-fig" title="Dealroom Signal — a 0–100 momentum score. Dealroom&#039;s market maps treat 92 and above as breaking out.">Signal 72</span></span></span></a><a class="na-ent" href="/companies/openai/"><span class="na-ent-logo" data-i="O"><img src="https://storage.googleapis.com/dealroom-images-production/2026/09/27/441a8ff391e82427d3030cf5c0f163d0.png" alt="" loading="lazy" onerror="this.parentNode.textContent=this.parentNode.dataset.i"></span><span class="na-ent-txt"><span class="na-ent-name">OpenAI</span><span class="na-ent-type na-ent-metrics"><span class="na-ent-fig" title="Total VC equity raised across disclosed rounds. Debt and grants are not included.">$221B raised</span><span class="na-ent-sep" aria-hidden="true">·</span><span class="na-ent-fig" title="Dealroom Signal — a 0–100 momentum score. Dealroom&#039;s market maps treat 92 and above as breaking out.">Signal 97</span></span></span></a></div></section>
+            <section class="na-sec" aria-label="Go deeper"><h2 class="na-sec-h">Go deeper</h2><div class="na-rel">
+      <a class="nh-card na-rel-card" href="/resources/personal-ai-agent-startups/">
+        <div class="na-rel-thumb na-rel-thumb--chart" data-preview-crop><iframe src="/charts/personal-ai-agent-startups.html?preview=1&amp;embed=1&amp;theme=light" loading="lazy" scrolling="no" tabindex="-1" title="Personal AI agents are back: nine big tech launches and 21 startups raising money in 2026"></iframe></div>
+        <div class="nh-card-body"><h3 class="nh-title">Personal AI agents are back: nine big tech launches and 21 startups raising money in 2026</h3><p class="na-rel-excerpt">Personal AI agents in three waves, opening with 29 dated milestones from ChatGPT (November 2022) to OpenAI Dots (September 2026). Big tech bought the first wave: Microsoft licensed Inflection, Amazon </p></div>
+      </a></div></section>
+            <section class="na-sec" aria-label="Benchmark this deal">
+              <a class="na-kg-cta" href="/multiples/">
+                <span class="na-kg-cta-ico"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="2" y="9.5" width="3.1" height="4.5" rx="1"/><rect x="6.45" y="6" width="3.1" height="8" rx="1"/><rect x="10.9" y="2.5" width="3.1" height="11.5" rx="1"/></svg></span>
+                <span class="na-kg-cta-txt">
+                  <span class="na-kg-cta-h">Deal multiples <span class="na-kg-cta-arrow" aria-hidden="true">→</span></span>
+                  <span class="na-kg-cta-sub">EV/revenue on comparable rounds, by sector, region and year.</span>
+                </span>
+              </a>
+            </section>
+          </div>
+          <div class="na-short-card" id="naShortCard" hidden aria-label="Watch"><div class="na-short"><iframe data-src="https://www.youtube-nocookie.com/embed/Ur8cZRoWzeE?autoplay=1&mute=1&playsinline=1&loop=1&playlist=Ur8cZRoWzeE&cc_load_policy=0&iv_load_policy=3" title="VC logic: Playing the long game" loading="lazy" allow="accelerometer; autoplay; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
+        <script>(function(){
+          var card=document.getElementById('naShortCard');if(!card)return;
+          var spare=document.querySelector('.na-rel-card--spare');
+          try{
+            var KEY='dr-short-seen-at',WINDOW=6*60*60*1000;
+            var seen=Number(localStorage.getItem(KEY)||0);
+            if(Date.now()-seen<WINDOW){card.remove();return;}
+            localStorage.setItem(KEY,String(Date.now()));
+          }catch(e){card.remove();return;}
+          var f=card.querySelector('iframe');if(f&&!f.src)f.src=f.getAttribute('data-src');
+          if(spare)spare.remove();
+          card.hidden=false;
+        })();</script>
+        </aside>
+        </div>
+        
+    <aside class="dr-plat dr-plat-band" aria-label="About Dealroom">
+      <div class="dr-plat-band-copy">
+        <div class="dr-plat-eyebrow">Intelligence for tech ecosystems</div>
+        <h2 class="dr-plat-h">Want direct live access?</h2>
+        <p class="dr-plat-lead">The source of record on startups, founders and funding, plus the signals on who is rising next. For your team and your AI agents.</p>
+        <div class="dr-plat-band-cta"><a class="dr-plat-btn" href="/premium-access/">Explore Platform</a></div>
+      </div>
+      <div class="dr-plat-prods">
+          <a class="dr-plat-prod" href="/premium-access/">
+            <span class="dr-plat-prod-ico"><svg class="dr-plat-ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.4 4.4a1.6 1.6 0 0 1 1.6-1.6h8a1.6 1.6 0 0 1 1.6 1.6v7.2a1.6 1.6 0 0 1-1.6 1.6H4a1.6 1.6 0 0 1-1.6-1.6z"/><path d="M2.4 6.6h11.2M6.4 6.6v6.6"/></svg></span>
+            <span class="dr-plat-prod-txt">
+              <span class="dr-plat-prod-name">Premium Access</span>
+              <span class="dr-plat-prod-line">Source deals, spot trends, measure an ecosystem.</span>
+            </span>
+          </a>
+          <a class="dr-plat-prod" href="/products/api/">
+            <span class="dr-plat-prod-ico"><svg class="dr-plat-ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5.9 3.8 2.6 8l3.3 4.2M10.1 3.8 13.4 8l-3.3 4.2"/></svg></span>
+            <span class="dr-plat-prod-txt">
+              <span class="dr-plat-prod-name">API</span>
+              <span class="dr-plat-prod-line">The same graph, inside your own systems.</span>
+            </span>
+          </a>
+          <a class="dr-plat-prod" href="/mcp/">
+            <span class="dr-plat-prod-ico"><svg class="dr-plat-ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 2.4v2.7M10 2.4v2.7"/><path d="M3.9 5.1h8.2v2.6a4.1 4.1 0 0 1-4.1 4.1 4.1 4.1 0 0 1-4.1-4.1z"/><path d="M8 11.8v1.8"/></svg></span>
+            <span class="dr-plat-prod-txt">
+              <span class="dr-plat-prod-name">MCP server</span>
+              <span class="dr-plat-prod-line">Dealroom in Claude, Cursor and VS Code.</span>
+            </span>
+          </a></div>
+      <div class="dr-plat-band-art">
+      <div class="dr-demo" aria-hidden="true">
+        <div class="dr-demo-live"><span class="dr-demo-live-dot"></span>Live</div>
+        
+        <div class="dr-demo-scene" style="--s:0">
+          <div class="dr-demo-bar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="7" r="4.4"/><path d="m13.4 13.4-3.2-3.2"/></svg><span class="dr-demo-q"><span class="dr-demo-qt">defence tech · Europe</span><span class="dr-demo-caret"></span></span></div>
+          <div class="dr-demo-chips"><span class="dr-demo-chip">HQ Europe</span><span class="dr-demo-chip">Series A+</span></div>
+          <div class="dr-demo-rows">
+            <div class="dr-demo-row" style="--s:0;--r:0">
+              <span class="dr-demo-tile" style="background:rgba(var(--tag-fundraise),.16);color:rgb(var(--tag-fundraise))">H</span>
+              <span class="dr-demo-name">Helsing</span>
+              <span class="dr-demo-meta">Munich</span>
+              <span class="dr-demo-n">95</span>
+            </div>
+            <div class="dr-demo-row" style="--s:0;--r:1">
+              <span class="dr-demo-tile" style="background:rgba(var(--tag-jf),.16);color:rgb(var(--tag-jf))">Q</span>
+              <span class="dr-demo-name">Quantum Systems</span>
+              <span class="dr-demo-meta">Munich</span>
+              <span class="dr-demo-n">91</span>
+            </div>
+            <div class="dr-demo-row" style="--s:0;--r:2">
+              <span class="dr-demo-tile" style="background:rgba(var(--tag-launch),.16);color:rgb(var(--tag-launch))">T</span>
+              <span class="dr-demo-name">Tekever</span>
+              <span class="dr-demo-meta">Lisbon</span>
+              <span class="dr-demo-n">88</span>
+            </div></div>
+          <div class="dr-demo-foot"><span>2,431 companies</span><span class="dr-demo-act">Export CSV ↓</span></div>
+        </div>
+        <div class="dr-demo-scene" style="--s:1">
+          <div class="dr-demo-bar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="7" r="4.4"/><path d="m13.4 13.4-3.2-3.2"/></svg><span class="dr-demo-q"><span class="dr-demo-qt">just founded · AI agents</span><span class="dr-demo-caret"></span></span></div>
+          <div class="dr-demo-chips"><span class="dr-demo-chip">Founded <30d</span><span class="dr-demo-chip">Has team</span></div>
+          <div class="dr-demo-rows">
+            <div class="dr-demo-row" style="--s:1;--r:0">
+              <span class="dr-demo-tile" style="background:rgba(var(--tag-jf),.16);color:rgb(var(--tag-jf))">S</span>
+              <span class="dr-demo-name">Stealth</span>
+              <span class="dr-demo-meta">ex-DeepMind</span>
+              <span class="dr-demo-n">Day 6</span>
+            </div>
+            <div class="dr-demo-row" style="--s:1;--r:1">
+              <span class="dr-demo-tile" style="background:rgba(var(--tag-jf),.16);color:rgb(var(--tag-jf))">S</span>
+              <span class="dr-demo-name">Stealth</span>
+              <span class="dr-demo-meta">ex-Stripe</span>
+              <span class="dr-demo-n">Day 11</span>
+            </div>
+            <div class="dr-demo-row" style="--s:1;--r:2">
+              <span class="dr-demo-tile" style="background:rgba(var(--tag-jf),.16);color:rgb(var(--tag-jf))">S</span>
+              <span class="dr-demo-name">Stealth</span>
+              <span class="dr-demo-meta">ex-Revolut</span>
+              <span class="dr-demo-n">Day 19</span>
+            </div></div>
+          <div class="dr-demo-foot"><span>184 this week</span><span class="dr-demo-act">Set alert ⚡</span></div>
+        </div>
+        <div class="dr-demo-scene" style="--s:2">
+          <div class="dr-demo-bar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="7" r="4.4"/><path d="m13.4 13.4-3.2-3.2"/></svg><span class="dr-demo-q"><span class="dr-demo-qt">climate tech · Series B+</span><span class="dr-demo-caret"></span></span></div>
+          <div class="dr-demo-chips"><span class="dr-demo-chip">Stage B+</span><span class="dr-demo-chip">Europe</span></div>
+          <div class="dr-demo-rows">
+            <div class="dr-demo-row" style="--s:2;--r:0">
+              <span class="dr-demo-tile" style="background:rgba(var(--tag-jf),.16);color:rgb(var(--tag-jf))">1</span>
+              <span class="dr-demo-name">1KOMMA5°</span>
+              <span class="dr-demo-meta">Hamburg</span>
+              <span class="dr-demo-n">93</span>
+            </div>
+            <div class="dr-demo-row" style="--s:2;--r:1">
+              <span class="dr-demo-tile" style="background:rgba(var(--tag-launch),.16);color:rgb(var(--tag-launch))">E</span>
+              <span class="dr-demo-name">Enpal</span>
+              <span class="dr-demo-meta">Berlin</span>
+              <span class="dr-demo-n">90</span>
+            </div>
+            <div class="dr-demo-row" style="--s:2;--r:2">
+              <span class="dr-demo-tile" style="background:rgba(var(--tag-fundraise),.16);color:rgb(var(--tag-fundraise))">A</span>
+              <span class="dr-demo-name">Aira</span>
+              <span class="dr-demo-meta">Stockholm</span>
+              <span class="dr-demo-n">87</span>
+            </div></div>
+          <div class="dr-demo-foot"><span>1,908 companies</span><span class="dr-demo-act">Export CSV ↓</span></div>
+        </div>
+      </div></div>
+    </aside>
+        <section class="na-sec na-more" aria-label="More top stories"><h2 class="na-sec-h">More top stories</h2><div class="na-rel">
+      <a class="nh-card" href="/news/165017-xona-raises-250m-series-d-to-challenge-gps-with-leo-satellites/">
+        <img class="nh-card-img" src="https://sg-imgs.dealroom.co/ce9d87c9544fb9c523a48c2eb818d271.jpeg?ar=3:1&amp;fit=crop&amp;crop=faces,center&amp;auto=compress&amp;cs=origin" alt="" loading="lazy" onerror="this.remove()">
+        <div class="nh-card-body"><div class="nh-meta"><span class="nh-time">7h ago</span></div><h3 class="nh-title">Xona raises $250M Series D to challenge GPS with LEO satellites</h3></div>
+      </a>
+      <a class="nh-card" href="/news/165059-fireworks-ai-eyes-up-to-40b-valuation-double-its-july-price/">
+        <img class="nh-card-img" src="https://sg-imgs.dealroom.co/c3fd433d7f6f6833a2983174a3726488.jpeg?ar=3:1&amp;fit=crop&amp;crop=faces,center&amp;auto=compress&amp;cs=origin" alt="" loading="lazy" onerror="this.remove()">
+        <div class="nh-card-body"><div class="nh-meta"><span class="nh-time">5h ago</span></div><h3 class="nh-title">Fireworks AI eyes up to $40B valuation, double its July price</h3></div>
+      </a>
+      <a class="nh-card" href="/news/165142-altman-openais-edge-is-internal-models-and-self-improving-ai-needs-speed/">
+        <img class="nh-card-img" src="https://sg-imgs.dealroom.co/2f9b446bf3291390d5d067ba36aaae59.jpeg?ar=3:1&amp;fit=crop&amp;crop=faces,center&amp;auto=compress&amp;cs=origin" alt="" loading="lazy" onerror="this.remove()">
+        <div class="nh-card-body"><div class="nh-meta"><span class="nh-time">1h ago</span></div><h3 class="nh-title">Altman: OpenAI&#039;s edge is internal models, and self-improving AI needs &quot;speed limits&quot;</h3></div>
+      </a></div></section>
+      </div>
+    </main>
+    <script src="/charts/preview-crop.js?v=a923b24416b443eb" defer></script>
+    <script src="/js/preview-theme-sync.js?v=3" defer></script>
+    <script>
+      window.addEventListener('load', function () {
+        if (window.PreviewThemeSync) window.PreviewThemeSync.auto('.na-rel-thumb--chart iframe');
+      });
+    </script>
+<style>
+  .kg-card { position: absolute; z-index: 60; width: min(320px, 90vw); padding: .9rem 1rem;
+    background: var(--surface-card, var(--navy-light)); border: 1px solid var(--border-light);
+    border-radius: 12px; box-shadow: 0 18px 44px rgba(0,0,0,.28); /* theme-guardrail-allow: neutral drop shadow, both themes */
+    opacity: 0; transform: translateY(4px); transition: opacity .12s ease, transform .12s ease; pointer-events: none; }
+  .kg-card.is-open { opacity: 1; transform: none; pointer-events: auto; }
+  .kg-card-name { font-weight: 700; color: var(--white); font-size: .98rem; }
+  .kg-card-sub { color: var(--text-light); font-size: .8rem; margin-top: .1rem; }
+  .kg-card-feat { margin: .6rem 0 0; padding: .6rem 0 0; border-top: 1px solid var(--border-light); display: flex; flex-direction: column; gap: .35rem; }
+  .kg-card-feat a { color: var(--text-light); font-size: .8rem; text-decoration: none; display: block;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .kg-card-feat a:hover { color: var(--white); }
+  .kg-card-open { display: inline-block; margin-top: .55rem; font-size: .8rem; font-weight: 600; color: var(--eyebrow); text-decoration: none; }
+  /* Light mode: --surface-card is undefined on news pages and --navy-light
+     flips to the page ground - give the card the repo's light card surface. */
+  html[data-theme="light"] .kg-card { background: #FFFFFF; border-color: #E4E7EC; box-shadow: 0 1px 2px rgba(16,24,40,.04), 0 8px 24px rgba(16,24,40,.08); } /* theme-guardrail-allow: standard light card rescue, mirrors .dir-card in the theme sheet */
+  @media (prefers-reduced-motion: reduce) { .kg-card { transition: none; } }
+</style>
+<script>
+(function () {
+  if (!window.matchMedia || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+  var cache = new Map();
+  var card = null;
+  var hideTimer = null;
+  var esc = function (s) { var d = document.createElement("span"); d.textContent = String(s == null ? "" : s); return d.innerHTML; };
+  // Attribute context needs quotes escaped too, and only same-site paths ever
+  // become hrefs - a poisoned graph row must not smuggle a scheme.
+  var escAttr = function (s) { return esc(s).replace(/"/g, "&quot;").replace(/'/g, "&#39;"); };
+  var safePath = function (u) { return typeof u === "string" && u.charAt(0) === "/" && u.charAt(1) !== "/" ? u : null; };
+
+  // Plain-string RegExp: template-literal cooking eats backslashes, and a
+  // cooked // became a SyntaxError that silently killed this whole script.
+  var HREF_RE = new RegExp("^/(companies|investors)/([a-z0-9][a-z0-9~_-]*)/$");
+  function eidFor(a) {
+    var m = (a.getAttribute("href") || "").match(HREF_RE);
+    if (!m) return null;
+    return (m[1] === "investors" ? "investor:" : "company:") + m[2];
+  }
+  function ensureCard() {
+    if (card) return card;
+    card = document.createElement("div");
+    card.className = "kg-card";
+    card.setAttribute("aria-hidden", "true");
+    document.body.appendChild(card);
+    card.addEventListener("mouseenter", function () { clearTimeout(hideTimer); });
+    card.addEventListener("mouseleave", scheduleHide);
+    return card;
+  }
+  function scheduleHide() {
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(function () { if (card) card.classList.remove("is-open"); }, 160);
+  }
+  function show(a, data) {
+    var el = ensureCard();
+    var feat = (data.featured || []).slice(0, 3).map(function (f) {
+      var u = safePath(f.url);
+      return u ? '<a href="' + escAttr(u) + '">' + esc(f.title) + "</a>" : "";
+    }).join("");
+    var profileUrl = safePath(data.entity.url);
+    if (!profileUrl) return;
+    el.innerHTML =
+      '<div class="kg-card-name">' + esc(data.entity.name) + "</div>" +
+      (data.entity.sub ? '<div class="kg-card-sub">' + esc(data.entity.sub) + "</div>" : "") +
+      (feat ? '<div class="kg-card-feat">' + feat + "</div>" : "") +
+      '<a class="kg-card-open" href="' + escAttr(profileUrl) + '">View profile &rarr;</a>';
+    var r = a.getBoundingClientRect();
+    el.style.left = Math.max(8, Math.min(window.scrollX + r.left, window.scrollX + window.innerWidth - 336)) + "px";
+    // Prefer below the chip; flip above when clipped, else clamp into view.
+    var h = el.offsetHeight || 180;
+    var top = r.bottom + 8;
+    if (top + h > window.innerHeight && r.top - h - 8 >= 0) top = r.top - h - 8;
+    else if (top + h > window.innerHeight) top = Math.max(8, window.innerHeight - h - 8);
+    el.style.top = window.scrollY + top + "px";
+    el.classList.add("is-open");
+  }
+  document.addEventListener("mouseover", function (ev) {
+    var a = ev.target && ev.target.closest && ev.target.closest("a.na-ent, a.na-lnk");
+    if (!a) return;
+    var eid = eidFor(a);
+    if (!eid) return;
+    clearTimeout(hideTimer);
+    if (cache.has(eid)) {
+      var hit = cache.get(eid);
+      if (hit && typeof hit.then === "function") {
+        hit.then(function (data) { if (data && a.matches(":hover")) show(a, data); });
+      } else if (hit) show(a, hit);
+      return;
+    }
+    // Cache the in-flight promise so a pointer sweep fires ONE request.
+    var p = fetch("/api/graph/card?eid=" + encodeURIComponent(eid))
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        var v = data && data.entity ? data : null;
+        cache.set(eid, v);
+        return v;
+      })
+      .catch(function () { cache.set(eid, null); return null; });
+    cache.set(eid, p);
+    p.then(function (data) { if (data && a.matches(":hover")) show(a, data); });
+  });
+  document.addEventListener("mouseout", function (ev) {
+    var a = ev.target && ev.target.closest && ev.target.closest("a.na-ent, a.na-lnk");
+    if (a) scheduleHide();
+  });
+  // capture:true — the card is positioned from a rect, so ANY scroll strands
+  // it, including one inside a nested scroller. Scroll events do not bubble;
+  // only the capture phase reaches document.
+  document.addEventListener("scroll", function () { if (card) card.classList.remove("is-open"); }, { passive: true, capture: true });
+})();
+</script>
+
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('/partials/footer.html')
+            .then(function (r) { return r.ok ? r.text() : ''; })
+            .then(function (html) {
+                // Only inject real footer markup — never an upstream error page.
+                if (html && html.indexOf('<footer') !== -1) {
+                    document.getElementById('footer-placeholder').innerHTML = html;
+                    var tag = document.querySelector('#footer-placeholder .footer-brand p');
+                    if (tag) tag.insertAdjacentHTML('afterend', '<p class="nh-tipline">Got a story? Spotted an error? Send your news stories and correction requests to <a href="mailto:news@dealroom.co" style="color:inherit;text-decoration:underline">news@dealroom.co</a>.</p>');
+                }
+            })
+            .catch(function () {});
+    </script>
+    
+<style>
+#dr-consent{position:fixed;left:16px;bottom:16px;z-index:99991;max-width:340px;
+background:var(--navy);color:var(--white);border:1px solid var(--border-light);
+border-radius:12px;box-shadow:0 16px 40px -14px rgba(0,0,0,.28);padding:14px 16px;
+font-family:var(--font-sans,'DM Sans',sans-serif);font-size:.8rem;line-height:1.5}
+#dr-consent p{margin:0 0 10px;color:var(--text-light)}
+#dr-consent a{color:var(--blue-ink)}
+#dr-consent .dr-c-btns{display:flex;gap:8px}
+#dr-consent button{flex:1;padding:.42rem .7rem;border-radius:8px;font-size:.78rem;font-weight:600;
+cursor:pointer;border:1px solid transparent;font-family:inherit}
+#dr-c-yes{background:var(--blue);color:#fff}
+#dr-c-no{background:transparent;color:var(--text-light);border-color:var(--border-light)}
+#dr-c-no:hover,#dr-c-manage:hover{color:var(--white);border-color:var(--border-mid)}
+#dr-c-manage,#dr-c-save{background:transparent;color:var(--text-light);border-color:var(--border-light)}
+#dr-c-prefs{margin:0 0 10px;padding:0;border:0}
+#dr-c-prefs label{display:flex;gap:8px;align-items:flex-start;margin:0 0 8px;color:var(--text-light);cursor:pointer}
+#dr-c-prefs label b{color:var(--white);font-weight:600}
+#dr-c-prefs input{margin-top:3px}
+#dr-c-prefs .dr-c-btns{margin-top:4px}
+@media (max-width:520px){#dr-consent{left:12px;right:12px;bottom:12px;max-width:none}}
+</style>
+<div id="dr-consent" role="region" aria-label="Cookie consent" style="display:none">
+  <p>We use cookies for analytics and marketing, only with your consent. You can choose per category. See our <a href="/cookie-policy" target="_blank">cookie policy</a>.</p>
+  <fieldset id="dr-c-prefs" hidden>
+    <label><input type="checkbox" checked disabled><span><b>Strictly necessary</b><br>Security and remembering your choice. Always on.</span></label>
+    <label><input type="checkbox" id="dr-c-analytics"><span><b>Analytics</b><br>Google Analytics, to see how the site is used.</span></label>
+    <label><input type="checkbox" id="dr-c-marketing"><span><b>Marketing</b><br>HubSpot, to recognise returning visitors and link visits to our contact records.</span></label>
+    <div class="dr-c-btns"><button id="dr-c-save">Save choices</button></div>
+  </fieldset>
+  <div class="dr-c-btns">
+    <button id="dr-c-no">Reject all</button>
+    <button id="dr-c-manage">Choose</button>
+    <button id="dr-c-yes">Accept all</button>
+  </div>
+</div>
+<script defer src="/js/cookie-consent.js?v=266b98566b47058a"></script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"d15bb6c0d20c4c97a45d355a7f8340e9","spa":2}' crossorigin="anonymous"></script>
+<script>window.__CF$cv$params={r:'a4eab3b5dd97917b',t:'MTc5MjY5NTE3Ng==',u:'01a164f597567422ac5e0eb5f1611030',ut:'QQ1Ut5NMY.k9PWFqMGmXdRvzXyZ2amzqVOwU5NH6U9w-1792695179-1.2.1.1-nn.fRjlsh6aONxgPzkJWrh8Ey_ZeNi_O.jG_dZL3EL7VkSBRvlssJBDkIF4VyMEZdquUb_7SFTNI8N2vCls2mmNMlLUEiKPti5WpkjL9vjg',i:60};(function(){if(!document.body)return;var s=document.createElement('script');s.src='/cdn-cgi/challenge-platform/scripts/precursor/main.js';document.head.appendChild(s);})();</script></body>
+</html>

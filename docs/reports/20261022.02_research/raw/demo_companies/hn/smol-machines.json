@@ -1,0 +1,298 @@
+{
+ "domain_query": "smolmachines.com",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "fumplethumb"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Smol Machines"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "smolmachines",
+      ".",
+      "com"
+     ],
+     "value": "https://<em>smolmachines.com</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_fumplethumb",
+    "story_48768278"
+   ],
+   "author": "fumplethumb",
+   "children": [
+    48775379,
+    48778859
+   ],
+   "created_at": "2026-07-02T22:37:50Z",
+   "created_at_i": 1783031870,
+   "num_comments": 2,
+   "objectID": "48768278",
+   "points": 29,
+   "story_id": 48768278,
+   "title": "Smol Machines",
+   "updated_at": "2026-10-11T06:04:02Z",
+   "url": "https://smolmachines.com/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "binsquare"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Smol Machines: Kubernetes-in-a-Microvm"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "smolmachines",
+      ".",
+      "com"
+     ],
+     "value": "https://<em>smolmachines.com</em>/engineering/kubernetes-in-a-microvm"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_binsquare",
+    "story_48911633"
+   ],
+   "author": "binsquare",
+   "children": [
+    48911682
+   ],
+   "created_at": "2026-07-14T19:10:11Z",
+   "created_at_i": 1784056211,
+   "num_comments": 2,
+   "objectID": "48911633",
+   "points": 3,
+   "story_id": 48911633,
+   "title": "Smol Machines: Kubernetes-in-a-Microvm",
+   "updated_at": "2026-07-15T01:04:18Z",
+   "url": "https://smolmachines.com/engineering/kubernetes-in-a-microvm"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "binsquare"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Smolvm \u2013 MicroVMs with CRIU Functionality"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "smolmachines",
+      ".",
+      "com"
+     ],
+     "value": "https://<em>smolmachines.com</em>/engineering/branching-and-checkpoint-lineage"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_binsquare",
+    "story_49969447",
+    "show_hn"
+   ],
+   "author": "binsquare",
+   "created_at": "2026-10-05T19:34:26Z",
+   "created_at_i": 1791228866,
+   "num_comments": 0,
+   "objectID": "49969447",
+   "points": 1,
+   "story_id": 49969447,
+   "title": "Show HN: Smolvm \u2013 MicroVMs with CRIU Functionality",
+   "updated_at": "2026-10-05T19:38:15Z",
+   "url": "https://smolmachines.com/engineering/branching-and-checkpoint-lineage"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "nayyad"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Soul Machines"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "smolmachines",
+      ".",
+      "com"
+     ],
+     "value": "https://www.<em>soulmachines.com</em>"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_nayyad",
+    "story_20361757"
+   ],
+   "author": "nayyad",
+   "children": [
+    20364856,
+    20364948,
+    20364973,
+    20365051,
+    20365079,
+    20365128,
+    20365378,
+    20365473,
+    20365762
+   ],
+   "created_at": "2019-07-05T11:45:18Z",
+   "created_at_i": 1562327118,
+   "num_comments": 12,
+   "objectID": "20361757",
+   "points": 34,
+   "story_id": 20361757,
+   "title": "Soul Machines",
+   "updated_at": "2024-09-20T04:29:09Z",
+   "url": "https://www.soulmachines.com"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "khartig"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Create Digital People at Scale. Soul Machines Launches Digital DNA Studio"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "smolmachines",
+      ".",
+      "com"
+     ],
+     "value": "https://www.<em>soulmachines.com</em>/news/2020/05/28/soul-machines-launches-digital-dna-studio/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_khartig",
+    "story_23343118"
+   ],
+   "author": "khartig",
+   "created_at": "2020-05-28T21:44:54Z",
+   "created_at_i": 1590702294,
+   "num_comments": 0,
+   "objectID": "23343118",
+   "points": 2,
+   "story_id": 23343118,
+   "title": "Create Digital People at Scale. Soul Machines Launches Digital DNA Studio",
+   "updated_at": "2024-09-20T06:15:27Z",
+   "url": "https://www.soulmachines.com/news/2020/05/28/soul-machines-launches-digital-dna-studio/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "nayyad"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Astrologizer - Digital Human"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "smolmachines",
+      ".",
+      "com"
+     ],
+     "value": "https://www.<em>soulmachines.com</em>/astrologizer/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_nayyad",
+    "story_31186330"
+   ],
+   "author": "nayyad",
+   "created_at": "2022-04-27T21:58:48Z",
+   "created_at_i": 1651096728,
+   "num_comments": 0,
+   "objectID": "31186330",
+   "points": 1,
+   "story_id": 31186330,
+   "title": "Astrologizer - Digital Human",
+   "updated_at": "2024-09-20T11:02:43Z",
+   "url": "https://www.soulmachines.com/astrologizer/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "armanke13"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Introducing \u2018Nadia\u2019, our new virtual assistant\u201c"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "smolmachines",
+      ".",
+      "com"
+     ],
+     "value": "https://www.<em>soulmachines.com</em>/blog/2017/2/18/introducing-nadia-our-new-virtual-assistant"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_armanke13",
+    "story_14002117"
+   ],
+   "author": "armanke13",
+   "created_at": "2017-03-31T08:59:35Z",
+   "created_at_i": 1490950775,
+   "num_comments": 0,
+   "objectID": "14002117",
+   "points": 1,
+   "story_id": 14002117,
+   "title": "Introducing \u2018Nadia\u2019, our new virtual assistant\u201c",
+   "updated_at": "2024-09-20T00:32:10Z",
+   "url": "https://www.soulmachines.com/blog/2017/2/18/introducing-nadia-our-new-virtual-assistant"
+  }
+ ],
+ "launch_hits": []
+}

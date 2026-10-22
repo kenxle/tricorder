@@ -1,0 +1,1231 @@
+{
+ "domain_query": "minicor.com",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "fchishtie"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Hey we\u2019re Faiz and Saheed and we built Minicor so AI companies who need to integrate to desktop systems with no API can quickly build scalable desktop RPAs. Demo: <a href=\"https://www.youtube.com/watch?v=MD0GHZIJ1cw\" rel=\"nofollow\">https://www.youtube.com/watch?v=MD0GHZIJ1cw</a><p>Edit: RPA is an acronym for Robotic Process Automation - things like triggering mouse clicks and key strokes to perform tasks programmatically. Sorry if this wasn't clear!<p>We were working on non-RPA integrations when a customer promised to sign a deal in 2 days if we could unblock a sale of theirs that involved integrating with a clinic\u2019s Windows based medical record system. We didn\u2019t know it at the time but it turns out that building desktop RPAs at scale is extremely difficult because scripting is hard (learning the system, defining the automation, UIs changing constantly), orchestration is hard (is the VM up? queuing, parallelizing) and debugging is hard (zero observability, false positives, cascading failures). 30%+ failure rates are not uncommon. At scale we\u2019ve seen cases of failed RPAs leading to thousands of support tickets a month.<p>To solve the problems we were facing, we built an MCP that Claude Code/Codex can use to navigate a virtual machine running desktop software with Python to create RPA workflows. The RPA workflows run as Python scripts for speed, cost, and determinism. These workflows can be triggered by API following any input/output schema specified, with video replays and logs stored with each run. The MCP can debug RPAs and make changes to the underlying code, all of which are version controlled. We also built tools for cloning VMs for parallelizing RPAs, and handling 2FA/OTP challenges. Plus since workflows are code based: we were also able to add triggers for Slack notifications, human-in-the-loop steps, or call an LLM to verify the state of a VM by passing a screenshot.<p>Would love to hear your feedback and if you have any RPA horror stories! (:"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Launch HN: Minicor (YC P26) \u2013 Windows desktop automations at scale"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "https://www.<em>minicor.com</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_fchishtie",
+    "story_48280729",
+    "launch_hn"
+   ],
+   "author": "fchishtie",
+   "children": [
+    48281030,
+    48281031,
+    48281424,
+    48281927,
+    48281995,
+    48282098,
+    48282234,
+    48282322,
+    48282859,
+    48282874,
+    48283086,
+    48283380,
+    48283417,
+    48283589,
+    48284275,
+    48284931,
+    48285080,
+    48285501,
+    48286456,
+    48287303,
+    48287310,
+    48288955,
+    48289323,
+    48291362,
+    48292019,
+    48292236,
+    48294660,
+    48298342,
+    48299750,
+    48300872,
+    48305025,
+    48322575,
+    48392557
+   ],
+   "created_at": "2026-05-26T14:57:27Z",
+   "created_at_i": 1779807447,
+   "num_comments": 64,
+   "objectID": "48280729",
+   "points": 105,
+   "story_id": 48280729,
+   "story_text": "Hey we\u2019re Faiz and Saheed and we built Minicor so AI companies who need to integrate to desktop systems with no API can quickly build scalable desktop RPAs. Demo: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=MD0GHZIJ1cw\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=MD0GHZIJ1cw</a><p>Edit: RPA is an acronym for Robotic Process Automation - things like triggering mouse clicks and key strokes to perform tasks programmatically. Sorry if this wasn&#x27;t clear!<p>We were working on non-RPA integrations when a customer promised to sign a deal in 2 days if we could unblock a sale of theirs that involved integrating with a clinic\u2019s Windows based medical record system. We didn\u2019t know it at the time but it turns out that building desktop RPAs at scale is extremely difficult because scripting is hard (learning the system, defining the automation, UIs changing constantly), orchestration is hard (is the VM up? queuing, parallelizing) and debugging is hard (zero observability, false positives, cascading failures). 30%+ failure rates are not uncommon. At scale we\u2019ve seen cases of failed RPAs leading to thousands of support tickets a month.<p>To solve the problems we were facing, we built an MCP that Claude Code&#x2F;Codex can use to navigate a virtual machine running desktop software with Python to create RPA workflows. The RPA workflows run as Python scripts for speed, cost, and determinism. These workflows can be triggered by API following any input&#x2F;output schema specified, with video replays and logs stored with each run. The MCP can debug RPAs and make changes to the underlying code, all of which are version controlled. We also built tools for cloning VMs for parallelizing RPAs, and handling 2FA&#x2F;OTP challenges. Plus since workflows are code based: we were also able to add triggers for Slack notifications, human-in-the-loop steps, or call an LLM to verify the state of a VM by passing a screenshot.<p>Would love to hear your feedback and if you have any RPA horror stories! (:",
+   "title": "Launch HN: Minicor (YC P26) \u2013 Windows desktop automations at scale",
+   "updated_at": "2026-07-23T20:57:22Z",
+   "url": "https://www.minicor.com/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "dotcoma"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Egypt has managed to plant trees in the desert using wastewater"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "https://www.al-<em>monitor.com</em>/pulse/originals/2020/10/egypt-africa-desert-forests-plant-trees-wastewater.html"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_dotcoma",
+    "story_24819812"
+   ],
+   "author": "dotcoma",
+   "children": [
+    24820090,
+    24820187,
+    24820410,
+    24820420,
+    24820424,
+    24820425,
+    24820545,
+    24820831,
+    24821032,
+    24821064,
+    24821081,
+    24821387,
+    24821477,
+    24821532,
+    24821763,
+    24821978,
+    24822450,
+    24822540,
+    24822660,
+    24822668,
+    24822753,
+    24822820,
+    24823196,
+    24823414,
+    24823928,
+    24826060,
+    24827195
+   ],
+   "created_at": "2020-10-18T18:03:06Z",
+   "created_at_i": 1603044186,
+   "num_comments": 113,
+   "objectID": "24819812",
+   "points": 380,
+   "story_id": 24819812,
+   "title": "Egypt has managed to plant trees in the desert using wastewater",
+   "updated_at": "2024-09-20T07:05:50Z",
+   "url": "https://www.al-monitor.com/pulse/originals/2020/10/egypt-africa-desert-forests-plant-trees-wastewater.html"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "giuliomagnifico"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Lebanese turn to cryptocurrency as economy tanks"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "https://www.al-<em>monitor.com</em>/originals/2022/02/lebanese-turn-cryptocurrency-economy-tanks"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_giuliomagnifico",
+    "story_30868017"
+   ],
+   "author": "giuliomagnifico",
+   "children": [
+    30868669,
+    30868713,
+    30868750,
+    30868817,
+    30868822,
+    30868877,
+    30868897,
+    30868928,
+    30868959,
+    30868984,
+    30869229,
+    30869434,
+    30869518,
+    30869685,
+    30869959,
+    30870726,
+    30870840,
+    30872089
+   ],
+   "created_at": "2022-03-31T15:06:23Z",
+   "created_at_i": 1648739183,
+   "num_comments": 162,
+   "objectID": "30868017",
+   "points": 120,
+   "story_id": 30868017,
+   "title": "Lebanese turn to cryptocurrency as economy tanks",
+   "updated_at": "2025-12-14T20:35:08Z",
+   "url": "https://www.al-monitor.com/originals/2022/02/lebanese-turn-cryptocurrency-economy-tanks"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "colinprince"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Iran threatens sanctions against US over treatment of Black Americans"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "https://www.al-<em>monitor.com</em>/originals/2021/12/iran-threatens-sanctions-against-us-over-treatment-black-americans"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_colinprince",
+    "story_29533356"
+   ],
+   "author": "colinprince",
+   "children": [
+    29533571,
+    29533578,
+    29533585,
+    29533619,
+    29533814,
+    29533850
+   ],
+   "created_at": "2021-12-12T20:36:08Z",
+   "created_at_i": 1639341368,
+   "num_comments": 19,
+   "objectID": "29533356",
+   "points": 16,
+   "story_id": 29533356,
+   "title": "Iran threatens sanctions against US over treatment of Black Americans",
+   "updated_at": "2024-09-20T10:02:12Z",
+   "url": "https://www.al-monitor.com/originals/2021/12/iran-threatens-sanctions-against-us-over-treatment-black-americans"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "skwirl"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Another Neustar UltraDNS Outage \u2013 UltraDNS Goes Down"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "https://blog.dotcom-<em>monitor.com</em>/website-uptime/october15-neustar-ultradns-outage-down/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_skwirl",
+    "story_10396309"
+   ],
+   "author": "skwirl",
+   "children": [
+    10396316,
+    10396418,
+    10396437
+   ],
+   "created_at": "2015-10-15T22:04:30Z",
+   "created_at_i": 1444946670,
+   "num_comments": 3,
+   "objectID": "10396309",
+   "points": 9,
+   "story_id": 10396309,
+   "title": "Another Neustar UltraDNS Outage \u2013 UltraDNS Goes Down",
+   "updated_at": "2024-09-19T22:28:30Z",
+   "url": "https://blog.dotcom-monitor.com/website-uptime/october15-neustar-ultradns-outage-down/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "bjoernlasseh"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Automatic Tracking for Metrics of Clients and Portfolio Companies"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "https://<em>monitor.com</em>pass.co/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_bjoernlasseh",
+    "story_8469127",
+    "show_hn"
+   ],
+   "author": "bjoernlasseh",
+   "created_at": "2014-10-17T02:27:26Z",
+   "created_at_i": 1413512846,
+   "num_comments": 0,
+   "objectID": "8469127",
+   "points": 8,
+   "story_id": 8469127,
+   "story_text": "",
+   "title": "Show HN: Automatic Tracking for Metrics of Clients and Portfolio Companies",
+   "updated_at": "2024-09-19T21:18:15Z",
+   "url": "https://monitor.compass.co/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "oriettaxx"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Germany's DW closure in Turkey sparks fears of pre-election media clampdown"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "https://www.al-<em>monitor.com</em>/originals/2023/03/germanys-dw-closure-turkey-sparks-fears-pre-election-media-clampdown"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_oriettaxx",
+    "story_35354510"
+   ],
+   "author": "oriettaxx",
+   "created_at": "2023-03-29T09:08:03Z",
+   "created_at_i": 1680080883,
+   "num_comments": 0,
+   "objectID": "35354510",
+   "points": 7,
+   "story_id": 35354510,
+   "title": "Germany's DW closure in Turkey sparks fears of pre-election media clampdown",
+   "updated_at": "2024-09-20T13:39:19Z",
+   "url": "https://www.al-monitor.com/originals/2023/03/germanys-dw-closure-turkey-sparks-fears-pre-election-media-clampdown"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "imartin2k"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Turkish students up in arms over Islamization of education"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "http://www.al-<em>monitor.com</em>/pulse/originals/2016/06/turkey-high-schools-student-stand-up-against-islamism.html?utm_source=dlvr.it&utm_medium=twitter"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_imartin2k",
+    "story_11947725"
+   ],
+   "author": "imartin2k",
+   "created_at": "2016-06-21T17:46:30Z",
+   "created_at_i": 1466531190,
+   "num_comments": 0,
+   "objectID": "11947725",
+   "points": 5,
+   "story_id": 11947725,
+   "title": "Turkish students up in arms over Islamization of education",
+   "updated_at": "2024-09-19T23:21:46Z",
+   "url": "http://www.al-monitor.com/pulse/originals/2016/06/turkey-high-schools-student-stand-up-against-islamism.html?utm_source=dlvr.it&utm_medium=twitter"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "kumarshantanu"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Erlang memory architecture vs Java memory architecture"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "http://java-<em>monitor.com</em>/forum/showthread.php?t=890"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_kumarshantanu",
+    "story_2643109"
+   ],
+   "author": "kumarshantanu",
+   "created_at": "2011-06-11T03:00:24Z",
+   "created_at_i": 1307761224,
+   "num_comments": 0,
+   "objectID": "2643109",
+   "points": 3,
+   "story_id": 2643109,
+   "story_text": "",
+   "title": "Erlang memory architecture vs Java memory architecture",
+   "updated_at": "2024-09-19T17:44:35Z",
+   "url": "http://java-monitor.com/forum/showthread.php?t=890"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "brkumar"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The Evolving Internet: A look ahead to 2025"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "http://www.<em>monitor.com</em>/Portals/0/MonitorContent/imported/MonitorUnitedStates/Articles/PDFs/Monitor_GBN_Evolving_Internet_8_25_10.pdf"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_brkumar",
+    "story_1635789"
+   ],
+   "author": "brkumar",
+   "created_at": "2010-08-26T13:02:49Z",
+   "created_at_i": 1282827769,
+   "num_comments": 0,
+   "objectID": "1635789",
+   "points": 3,
+   "story_id": 1635789,
+   "story_text": "",
+   "title": "The Evolving Internet: A look ahead to 2025",
+   "updated_at": "2024-09-19T17:10:14Z",
+   "url": "http://www.monitor.com/Portals/0/MonitorContent/imported/MonitorUnitedStates/Articles/PDFs/Monitor_GBN_Evolving_Internet_8_25_10.pdf"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "genieyclo"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Yemen's Houthis can range Mediterranean ships, Pentagon says"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "https://www.al-<em>monitor.com</em>/originals/2024/05/yemens-houthis-can-range-mediterranean-ships-pentagon-says"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_genieyclo",
+    "story_40450238"
+   ],
+   "author": "genieyclo",
+   "children": [
+    40450243
+   ],
+   "created_at": "2024-05-23T03:42:39Z",
+   "created_at_i": 1716435759,
+   "num_comments": 1,
+   "objectID": "40450238",
+   "points": 2,
+   "story_id": 40450238,
+   "title": "Yemen's Houthis can range Mediterranean ships, Pentagon says",
+   "updated_at": "2024-09-20T17:04:40Z",
+   "url": "https://www.al-monitor.com/originals/2024/05/yemens-houthis-can-range-mediterranean-ships-pentagon-says"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "WestCoastJustin"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "IDF Hackers Test Readiness In Israel for Cyberattacks"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "http://www.al-<em>monitor.com</em>/pulse/business/2013/09/cyber-attack-hackers-idf.html"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_WestCoastJustin",
+    "story_6427795"
+   ],
+   "author": "WestCoastJustin",
+   "created_at": "2013-09-22T20:05:13Z",
+   "created_at_i": 1379880313,
+   "num_comments": 0,
+   "objectID": "6427795",
+   "points": 2,
+   "story_id": 6427795,
+   "story_text": "",
+   "title": "IDF Hackers Test Readiness In Israel for Cyberattacks",
+   "updated_at": "2024-09-19T19:59:08Z",
+   "url": "http://www.al-monitor.com/pulse/business/2013/09/cyber-attack-hackers-idf.html"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "franze"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Html5 / getUserMedia QR Code Reader "
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "http://<em>miniqr.com</em>/docs/demo/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_franze",
+    "story_5026871"
+   ],
+   "author": "franze",
+   "created_at": "2013-01-08T16:16:22Z",
+   "created_at_i": 1357661782,
+   "num_comments": 0,
+   "objectID": "5026871",
+   "points": 2,
+   "story_id": 5026871,
+   "story_text": "",
+   "title": "Html5 / getUserMedia QR Code Reader ",
+   "updated_at": "2024-09-19T19:07:31Z",
+   "url": "http://miniqr.com/docs/demo/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ivanvas"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "How Egypt is growing forests in middle of the desert (2020)"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "https://www.al-<em>monitor.com</em>/originals/2020/10/egypt-africa-desert-forests-plant-trees-wastewater.html"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_ivanvas",
+    "story_32046453"
+   ],
+   "author": "ivanvas",
+   "created_at": "2022-07-10T17:00:06Z",
+   "created_at_i": 1657472406,
+   "num_comments": 0,
+   "objectID": "32046453",
+   "points": 2,
+   "story_id": 32046453,
+   "title": "How Egypt is growing forests in middle of the desert (2020)",
+   "updated_at": "2024-09-20T11:31:46Z",
+   "url": "https://www.al-monitor.com/originals/2020/10/egypt-africa-desert-forests-plant-trees-wastewater.html"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "olvy0"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Top Netflix drama lays open Turkish divides"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "https://www.al-<em>monitor.com</em>/pulse/originals/2020/11/turkey-netflix-show-ethos-divides-already-polarized-society.html"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_olvy0",
+    "story_25203083"
+   ],
+   "author": "olvy0",
+   "created_at": "2020-11-24T21:17:01Z",
+   "created_at_i": 1606252621,
+   "num_comments": 0,
+   "objectID": "25203083",
+   "points": 2,
+   "story_id": 25203083,
+   "title": "Top Netflix drama lays open Turkish divides",
+   "updated_at": "2024-09-20T07:23:14Z",
+   "url": "https://www.al-monitor.com/pulse/originals/2020/11/turkey-netflix-show-ethos-divides-already-polarized-society.html"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "lando2319"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "How Egypt is growing forests in middle of the desert"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "https://www.al-<em>monitor.com</em>/pulse/originals/2020/10/egypt-africa-desert-forests-plant-trees-wastewater.html?skipWem=1&__twitter_impression=true"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_lando2319",
+    "story_24819083"
+   ],
+   "author": "lando2319",
+   "created_at": "2020-10-18T16:39:34Z",
+   "created_at_i": 1603039174,
+   "num_comments": 0,
+   "objectID": "24819083",
+   "points": 2,
+   "story_id": 24819083,
+   "title": "How Egypt is growing forests in middle of the desert",
+   "updated_at": "2024-09-20T07:05:50Z",
+   "url": "https://www.al-monitor.com/pulse/originals/2020/10/egypt-africa-desert-forests-plant-trees-wastewater.html?skipWem=1&__twitter_impression=true"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "olvy0"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Turkey launches attack on Syrian Kurdish forces as US steps aside"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "https://www.al-<em>monitor.com</em>/pulse/originals/2019/10/turkey-incursion-begins-syria.html"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_olvy0",
+    "story_21207176"
+   ],
+   "author": "olvy0",
+   "created_at": "2019-10-09T19:47:41Z",
+   "created_at_i": 1570650461,
+   "num_comments": 0,
+   "objectID": "21207176",
+   "points": 2,
+   "story_id": 21207176,
+   "title": "Turkey launches attack on Syrian Kurdish forces as US steps aside",
+   "updated_at": "2024-09-20T04:55:10Z",
+   "url": "https://www.al-monitor.com/pulse/originals/2019/10/turkey-incursion-begins-syria.html"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "franze"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Speech2qrcode (works in latest google chrome beta/dev)"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "http://<em>miniqr.com</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_franze",
+    "story_1942421"
+   ],
+   "author": "franze",
+   "created_at": "2010-11-26T14:21:22Z",
+   "created_at_i": 1290781282,
+   "num_comments": 0,
+   "objectID": "1942421",
+   "points": 2,
+   "story_id": 1942421,
+   "story_text": "",
+   "title": "Speech2qrcode (works in latest google chrome beta/dev)",
+   "updated_at": "2024-09-19T17:21:41Z",
+   "url": "http://miniqr.com/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "legierski"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Snap your fingers"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "http://<em>miniqr.com</em>/onsnap.r"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_legierski",
+    "story_5994626"
+   ],
+   "author": "legierski",
+   "created_at": "2013-07-05T12:51:26Z",
+   "created_at_i": 1373028686,
+   "num_comments": 0,
+   "objectID": "5994626",
+   "points": 1,
+   "story_id": 5994626,
+   "story_text": "",
+   "title": "Snap your fingers",
+   "updated_at": "2024-09-19T19:46:23Z",
+   "url": "http://miniqr.com/onsnap.r"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "fjyaniez"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Integrate website, server and port monitoring in your app/site.<p>RESTful API, JSON for data-interchange."
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Port Monitor public API released"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "http://www.port-<em>monitor.com</em>/developers"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_fjyaniez",
+    "story_5557411"
+   ],
+   "author": "fjyaniez",
+   "created_at": "2013-04-16T11:14:25Z",
+   "created_at_i": 1366110865,
+   "num_comments": 0,
+   "objectID": "5557411",
+   "points": 1,
+   "story_id": 5557411,
+   "story_text": "Integrate website, server and port monitoring in your app/site.<p>RESTful API, JSON for data-interchange.",
+   "title": "Port Monitor public API released",
+   "updated_at": "2023-09-06T21:18:19Z",
+   "url": "http://www.port-monitor.com/developers"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mikhael"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "With a gamer prince and oil billions, Saudi turns to eSports"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "https://www.al-<em>monitor.com</em>/originals/2022/09/gamer-prince-and-oil-billions-saudi-turns-esports"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_mikhael",
+    "story_32998903"
+   ],
+   "author": "mikhael",
+   "created_at": "2022-09-27T18:05:25Z",
+   "created_at_i": 1664301925,
+   "num_comments": 0,
+   "objectID": "32998903",
+   "points": 1,
+   "story_id": 32998903,
+   "title": "With a gamer prince and oil billions, Saudi turns to eSports",
+   "updated_at": "2024-09-20T12:10:24Z",
+   "url": "https://www.al-monitor.com/originals/2022/09/gamer-prince-and-oil-billions-saudi-turns-esports"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "thrxaway"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Monitoring the Social Media of Police"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "https://blue-<em>monitor.com</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_thrxaway",
+    "story_23789462"
+   ],
+   "author": "thrxaway",
+   "created_at": "2020-07-10T08:45:47Z",
+   "created_at_i": 1594370747,
+   "num_comments": 0,
+   "objectID": "23789462",
+   "points": 1,
+   "story_id": 23789462,
+   "title": "Monitoring the Social Media of Police",
+   "updated_at": "2024-09-20T06:38:00Z",
+   "url": "https://blue-monitor.com/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "olvy0"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Iraq, Lebanon, Algeria: A new generation lays its predecessors' ghosts to rest"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "https://www.al-<em>monitor.com</em>/pulse/originals/2020/03/young-protesters-algeria-lebanon-iraq.html"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_olvy0",
+    "story_22844275"
+   ],
+   "author": "olvy0",
+   "created_at": "2020-04-11T21:10:06Z",
+   "created_at_i": 1586639406,
+   "num_comments": 0,
+   "objectID": "22844275",
+   "points": 1,
+   "story_id": 22844275,
+   "title": "Iraq, Lebanon, Algeria: A new generation lays its predecessors' ghosts to rest",
+   "updated_at": "2024-09-20T06:01:39Z",
+   "url": "https://www.al-monitor.com/pulse/originals/2020/03/young-protesters-algeria-lebanon-iraq.html"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "magichacker"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Online webcam qr code reader"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "http://<em>miniqr.com</em>/reader.php"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_magichacker",
+    "story_1847311"
+   ],
+   "author": "magichacker",
+   "created_at": "2010-10-29T13:57:46Z",
+   "created_at_i": 1288360666,
+   "num_comments": 0,
+   "objectID": "1847311",
+   "points": 1,
+   "story_id": 1847311,
+   "story_text": "",
+   "title": "Online webcam qr code reader",
+   "updated_at": "2023-09-06T20:13:33Z",
+   "url": "http://miniqr.com/reader.php"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "imartin2k"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Turkey's female journalists now risk parental rights for critical reporting"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "minicor",
+      ".",
+      "com"
+     ],
+     "value": "http://www.al-<em>monitor.com</em>/pulse/originals/2016/05/turkey-journalists-now-risk-parental-rights-for-critics.html#ixzz49aMQb5OU"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_imartin2k",
+    "story_11762099"
+   ],
+   "author": "imartin2k",
+   "created_at": "2016-05-24T14:58:04Z",
+   "created_at_i": 1464101884,
+   "num_comments": 0,
+   "objectID": "11762099",
+   "points": 1,
+   "story_id": 11762099,
+   "title": "Turkey's female journalists now risk parental rights for critical reporting",
+   "updated_at": "2024-09-19T23:16:07Z",
+   "url": "http://www.al-monitor.com/pulse/originals/2016/05/turkey-journalists-now-risk-parental-rights-for-critics.html#ixzz49aMQb5OU"
+  }
+ ],
+ "launch_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "fchishtie"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "minicor"
+     ],
+     "value": "Hey we\u2019re Faiz and Saheed and we built <em>Minicor</em> so AI companies who need to integrate to desktop systems with no API can quickly build scalable desktop RPAs. Demo: <a href=\"https://www.youtube.com/watch?v=MD0GHZIJ1cw\" rel=\"nofollow\">https://www.youtube.com/watch?v=MD0GHZIJ1cw</a><p>Edit: RPA is an acronym for Robotic Process Automation - things like triggering mouse clicks and key strokes to perform tasks programmatically. Sorry if this wasn't clear!<p>We were working on non-RPA integrations when a customer promised to sign a deal in 2 days if we could unblock a sale of theirs that involved integrating with a clinic\u2019s Windows based medical record system. We didn\u2019t know it at the time but it turns out that building desktop RPAs at scale is extremely difficult because scripting is hard (learning the system, defining the automation, UIs changing constantly), orchestration is hard (is the VM up? queuing, parallelizing) and debugging is hard (zero observability, false positives, cascading failures). 30%+ failure rates are not uncommon. At scale we\u2019ve seen cases of failed RPAs leading to thousands of support tickets a month.<p>To solve the problems we were facing, we built an MCP that Claude Code/Codex can use to navigate a virtual machine running desktop software with Python to create RPA workflows. The RPA workflows run as Python scripts for speed, cost, and determinism. These workflows can be triggered by API following any input/output schema specified, with video replays and logs stored with each run. The MCP can debug RPAs and make changes to the underlying code, all of which are version controlled. We also built tools for cloning VMs for parallelizing RPAs, and handling 2FA/OTP challenges. Plus since workflows are code based: we were also able to add triggers for Slack notifications, human-in-the-loop steps, or call an LLM to verify the state of a VM by passing a screenshot.<p>Would love to hear your feedback and if you have any RPA horror stories! (:"
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "launch",
+      "hn",
+      "minicor"
+     ],
+     "value": "<em>Launch</em> <em>HN</em>: <em>Minicor</em> (YC P26) \u2013 Windows desktop automations at scale"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "minicor"
+     ],
+     "value": "https://www.<em>minicor</em>.com/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_fchishtie",
+    "story_48280729",
+    "launch_hn"
+   ],
+   "author": "fchishtie",
+   "children": [
+    48281030,
+    48281031,
+    48281424,
+    48281927,
+    48281995,
+    48282098,
+    48282234,
+    48282322,
+    48282859,
+    48282874,
+    48283086,
+    48283380,
+    48283417,
+    48283589,
+    48284275,
+    48284931,
+    48285080,
+    48285501,
+    48286456,
+    48287303,
+    48287310,
+    48288955,
+    48289323,
+    48291362,
+    48292019,
+    48292236,
+    48294660,
+    48298342,
+    48299750,
+    48300872,
+    48305025,
+    48322575,
+    48392557
+   ],
+   "created_at": "2026-05-26T14:57:27Z",
+   "created_at_i": 1779807447,
+   "num_comments": 64,
+   "objectID": "48280729",
+   "points": 105,
+   "story_id": 48280729,
+   "story_text": "Hey we\u2019re Faiz and Saheed and we built Minicor so AI companies who need to integrate to desktop systems with no API can quickly build scalable desktop RPAs. Demo: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=MD0GHZIJ1cw\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=MD0GHZIJ1cw</a><p>Edit: RPA is an acronym for Robotic Process Automation - things like triggering mouse clicks and key strokes to perform tasks programmatically. Sorry if this wasn&#x27;t clear!<p>We were working on non-RPA integrations when a customer promised to sign a deal in 2 days if we could unblock a sale of theirs that involved integrating with a clinic\u2019s Windows based medical record system. We didn\u2019t know it at the time but it turns out that building desktop RPAs at scale is extremely difficult because scripting is hard (learning the system, defining the automation, UIs changing constantly), orchestration is hard (is the VM up? queuing, parallelizing) and debugging is hard (zero observability, false positives, cascading failures). 30%+ failure rates are not uncommon. At scale we\u2019ve seen cases of failed RPAs leading to thousands of support tickets a month.<p>To solve the problems we were facing, we built an MCP that Claude Code&#x2F;Codex can use to navigate a virtual machine running desktop software with Python to create RPA workflows. The RPA workflows run as Python scripts for speed, cost, and determinism. These workflows can be triggered by API following any input&#x2F;output schema specified, with video replays and logs stored with each run. The MCP can debug RPAs and make changes to the underlying code, all of which are version controlled. We also built tools for cloning VMs for parallelizing RPAs, and handling 2FA&#x2F;OTP challenges. Plus since workflows are code based: we were also able to add triggers for Slack notifications, human-in-the-loop steps, or call an LLM to verify the state of a VM by passing a screenshot.<p>Would love to hear your feedback and if you have any RPA horror stories! (:",
+   "title": "Launch HN: Minicor (YC P26) \u2013 Windows desktop automations at scale",
+   "updated_at": "2026-07-23T20:57:22Z",
+   "url": "https://www.minicor.com/"
+  }
+ ]
+}

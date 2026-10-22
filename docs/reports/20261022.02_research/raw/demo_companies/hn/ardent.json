@@ -1,0 +1,284 @@
+{
+ "domain_query": "tryardent.com",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "vc289"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tryardent",
+      ".",
+      "com"
+     ],
+     "value": "Hey HN! We\u2019re Vikram and Evan from Ardent (<a href=\"https://tryardent.com\">https://<em>tryardent.com</em></a>). We're building database sandboxes for you and your coding agents.<p>In the last two years coding agents have gotten dramatically more capable at handling complex engineering tasks. But without access to a realistic sandbox at the DB layer for testing, they ship garbage that can take down production databases. I spent over a year building an AI Data Engineer that failed for this exact reason. Evan spent the last 12 years in data engineering and hit this wall building agents at his last company.<p>Ardent was built to make it possible for coding agents to get near instant access to production-like sandboxes so they can test their work. To do this we write a replication stream out of the target DB, scaling with kafka onto a read replica with copy on write enabled and autoscaling compute (we currently prefer neon as a primary branching engine due to their implementation of these properties).<p>Our replication stream uses logical replication + ddl triggers to enable usage on any hosted postgres DB since most platforms do not allow physical replication which is traditionally used for creating replicas.<p>This provides a few primary benefits:<p>1. Does not require a platform migration to a DB provider like neon, allowing strong separation of production and development concerns.\n2. Minimal impact on the production database while allowing clones to spin up in &lt;6s, even at TB scale with copy-on-write<p>Security matters a lot with cloning production so we run a proxy layer to generate custom postgres URLs and route all connections to allow more granular access control to clones, prevent credential leak, and follow a split plane architecture to allow full data residency on your cloud through BYOC.<p>We also support anonymization through the ability to register SQL that runs on branches before they are returned. This has been used for PII redaction and branch modification.<p>Our goal is to make every data infrastructure platform \u201ccloneable\u201d in one place so agents can fully test the impact of their changes on production like data environments without risk.<p>Here's a demo of it: <a href=\"https://youtu.be/5S1kwPtiRU0\" rel=\"nofollow\">https://youtu.be/5S1kwPtiRU0</a><p>We\u2019d love to understand how you work with coding agents on the DB and if you try Ardent (it's free to get started) what worked, what broke and what\u2019s missing."
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Launch HN: Ardent (YC P26) \u2013 Postgres sandboxes in seconds with zero migration"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tryardent",
+      ".",
+      "com"
+     ],
+     "value": "https://www.<em>tryardent.com</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_vc289",
+    "story_48124436",
+    "launch_hn"
+   ],
+   "author": "vc289",
+   "children": [
+    48124679,
+    48124733,
+    48124734,
+    48124836,
+    48125093,
+    48125419,
+    48125756,
+    48126126,
+    48126223,
+    48129351,
+    48129544,
+    48129709,
+    48130429,
+    48131953,
+    48133568,
+    48133710,
+    48138458,
+    48143920,
+    48147861,
+    48276207,
+    48292547
+   ],
+   "created_at": "2026-05-13T16:54:03Z",
+   "created_at_i": 1778691243,
+   "num_comments": 52,
+   "objectID": "48124436",
+   "points": 99,
+   "story_id": 48124436,
+   "story_text": "Hey HN! We\u2019re Vikram and Evan from Ardent (<a href=\"https:&#x2F;&#x2F;tryardent.com\">https:&#x2F;&#x2F;tryardent.com</a>). We&#x27;re building database sandboxes for you and your coding agents.<p>In the last two years coding agents have gotten dramatically more capable at handling complex engineering tasks. But without access to a realistic sandbox at the DB layer for testing, they ship garbage that can take down production databases. I spent over a year building an AI Data Engineer that failed for this exact reason. Evan spent the last 12 years in data engineering and hit this wall building agents at his last company.<p>Ardent was built to make it possible for coding agents to get near instant access to production-like sandboxes so they can test their work. To do this we write a replication stream out of the target DB, scaling with kafka onto a read replica with copy on write enabled and autoscaling compute (we currently prefer neon as a primary branching engine due to their implementation of these properties).<p>Our replication stream uses logical replication + ddl triggers to enable usage on any hosted postgres DB since most platforms do not allow physical replication which is traditionally used for creating replicas.<p>This provides a few primary benefits:<p>1. Does not require a platform migration to a DB provider like neon, allowing strong separation of production and development concerns.\n2. Minimal impact on the production database while allowing clones to spin up in &lt;6s, even at TB scale with copy-on-write<p>Security matters a lot with cloning production so we run a proxy layer to generate custom postgres URLs and route all connections to allow more granular access control to clones, prevent credential leak, and follow a split plane architecture to allow full data residency on your cloud through BYOC.<p>We also support anonymization through the ability to register SQL that runs on branches before they are returned. This has been used for PII redaction and branch modification.<p>Our goal is to make every data infrastructure platform \u201ccloneable\u201d in one place so agents can fully test the impact of their changes on production like data environments without risk.<p>Here&#x27;s a demo of it: <a href=\"https:&#x2F;&#x2F;youtu.be&#x2F;5S1kwPtiRU0\" rel=\"nofollow\">https:&#x2F;&#x2F;youtu.be&#x2F;5S1kwPtiRU0</a><p>We\u2019d love to understand how you work with coding agents on the DB and if you try Ardent (it&#x27;s free to get started) what worked, what broke and what\u2019s missing.",
+   "title": "Launch HN: Ardent (YC P26) \u2013 Postgres sandboxes in seconds with zero migration",
+   "updated_at": "2026-06-26T17:54:58Z",
+   "url": "https://www.tryardent.com/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "handfuloflight"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Ardent"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tryardent",
+      ".",
+      "com"
+     ],
+     "value": "https://<em>tryardent.com</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_handfuloflight",
+    "story_47334124"
+   ],
+   "author": "handfuloflight",
+   "created_at": "2026-03-11T11:14:24Z",
+   "created_at_i": 1773227664,
+   "num_comments": 0,
+   "objectID": "47334124",
+   "points": 2,
+   "story_id": 47334124,
+   "title": "Ardent",
+   "updated_at": "2026-03-11T11:30:46Z",
+   "url": "https://tryardent.com/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "zetrk"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Hey HN,<p>I built an AI security review tool called Warden for automating application security reviews.<p>I built it because I worked at security organizations where this process took hours, and Warden makes it take minutes.<p>It\u2019s free right now to try, please give it a try and let me know if you have any feedback.<p>Please share with your security friends!<p>Here's a demo video: <a href=\"https://www.youtube.com/watch?v=Hfom0noLFq0\" rel=\"nofollow noreferrer\">https://www.youtube.com/watch?v=Hfom0noLFq0</a><p>- Alp"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Warden \u2013 AI application security reviews"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tryardent",
+      ".",
+      "com"
+     ],
+     "value": "https://<em>trywarden.com</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_zetrk",
+    "story_38617294",
+    "show_hn"
+   ],
+   "author": "zetrk",
+   "created_at": "2023-12-12T19:43:04Z",
+   "created_at_i": 1702410184,
+   "num_comments": 0,
+   "objectID": "38617294",
+   "points": 4,
+   "story_id": 38617294,
+   "story_text": "Hey HN,<p>I built an AI security review tool called Warden for automating application security reviews.<p>I built it because I worked at security organizations where this process took hours, and Warden makes it take minutes.<p>It\u2019s free right now to try, please give it a try and let me know if you have any feedback.<p>Please share with your security friends!<p>Here&#x27;s a demo video: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=Hfom0noLFq0\" rel=\"nofollow noreferrer\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=Hfom0noLFq0</a><p>- Alp",
+   "title": "Show HN: Warden \u2013 AI application security reviews",
+   "updated_at": "2024-09-20T15:49:17Z",
+   "url": "https://trywarden.com/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ashwin_kumar"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Agent \u2013 Automate daily tasks on your Android device"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tryardent",
+      ".",
+      "com"
+     ],
+     "value": "http://<em>tryagent.com</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_ashwin_kumar",
+    "story_7864586"
+   ],
+   "author": "ashwin_kumar",
+   "created_at": "2014-06-08T13:10:47Z",
+   "created_at_i": 1402233047,
+   "num_comments": 0,
+   "objectID": "7864586",
+   "points": 1,
+   "story_id": 7864586,
+   "story_text": "",
+   "title": "Agent \u2013 Automate daily tasks on your Android device",
+   "updated_at": "2023-09-06T23:05:18Z",
+   "url": "http://tryagent.com/"
+  }
+ ],
+ "launch_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "vc289"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "hn",
+      "ardent"
+     ],
+     "value": "Hey <em>HN</em>! We\u2019re Vikram and Evan from <em>Ardent</em> (<a href=\"https://tryardent.com\">https://tryardent.com</a>). We're building database sandboxes for you and your coding agents.<p>In the last two years coding agents have gotten dramatically more capable at handling complex engineering tasks. But without access to a realistic sandbox at the DB layer for testing, they ship garbage that can take down production databases. I spent over a year building an AI Data Engineer that failed for this exact reason. Evan spent the last 12 years in data engineering and hit this wall building agents at his last company.<p><em>Ardent</em> was built to make it possible for coding agents to get near instant access to production-like sandboxes so they can test their work. To do this we write a replication stream out of the target DB, scaling with kafka onto a read replica with copy on write enabled and autoscaling compute (we currently prefer neon as a primary branching engine due to their implementation of these properties).<p>Our replication stream uses logical replication + ddl triggers to enable usage on any hosted postgres DB since most platforms do not allow physical replication which is traditionally used for creating replicas.<p>This provides a few primary benefits:<p>1. Does not require a platform migration to a DB provider like neon, allowing strong separation of production and development concerns.\n2. Minimal impact on the production database while allowing clones to spin up in &lt;6s, even at TB scale with copy-on-write<p>Security matters a lot with cloning production so we run a proxy layer to generate custom postgres URLs and route all connections to allow more granular access control to clones, prevent credential leak, and follow a split plane architecture to allow full data residency on your cloud through BYOC.<p>We also support anonymization through the ability to register SQL that runs on branches before they are returned. This has been used for PII redaction and branch modification.<p>Our goal is to make every data infrastructure platform \u201ccloneable\u201d in one place so agents can fully test the impact of their changes on production like data environments without risk.<p>Here's a demo of it: <a href=\"https://youtu.be/5S1kwPtiRU0\" rel=\"nofollow\">https://youtu.be/5S1kwPtiRU0</a><p>We\u2019d love to understand how you work with coding agents on the DB and if you try <em>Ardent</em> (it's free to get started) what worked, what broke and what\u2019s missing."
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "launch",
+      "hn",
+      "ardent"
+     ],
+     "value": "<em>Launch</em> <em>HN</em>: <em>Ardent</em> (YC P26) \u2013 Postgres sandboxes in seconds with zero migration"
+    },
+    "url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.tryardent.com/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_vc289",
+    "story_48124436",
+    "launch_hn"
+   ],
+   "author": "vc289",
+   "children": [
+    48124679,
+    48124733,
+    48124734,
+    48124836,
+    48125093,
+    48125419,
+    48125756,
+    48126126,
+    48126223,
+    48129351,
+    48129544,
+    48129709,
+    48130429,
+    48131953,
+    48133568,
+    48133710,
+    48138458,
+    48143920,
+    48147861,
+    48276207,
+    48292547
+   ],
+   "created_at": "2026-05-13T16:54:03Z",
+   "created_at_i": 1778691243,
+   "num_comments": 52,
+   "objectID": "48124436",
+   "points": 99,
+   "story_id": 48124436,
+   "story_text": "Hey HN! We\u2019re Vikram and Evan from Ardent (<a href=\"https:&#x2F;&#x2F;tryardent.com\">https:&#x2F;&#x2F;tryardent.com</a>). We&#x27;re building database sandboxes for you and your coding agents.<p>In the last two years coding agents have gotten dramatically more capable at handling complex engineering tasks. But without access to a realistic sandbox at the DB layer for testing, they ship garbage that can take down production databases. I spent over a year building an AI Data Engineer that failed for this exact reason. Evan spent the last 12 years in data engineering and hit this wall building agents at his last company.<p>Ardent was built to make it possible for coding agents to get near instant access to production-like sandboxes so they can test their work. To do this we write a replication stream out of the target DB, scaling with kafka onto a read replica with copy on write enabled and autoscaling compute (we currently prefer neon as a primary branching engine due to their implementation of these properties).<p>Our replication stream uses logical replication + ddl triggers to enable usage on any hosted postgres DB since most platforms do not allow physical replication which is traditionally used for creating replicas.<p>This provides a few primary benefits:<p>1. Does not require a platform migration to a DB provider like neon, allowing strong separation of production and development concerns.\n2. Minimal impact on the production database while allowing clones to spin up in &lt;6s, even at TB scale with copy-on-write<p>Security matters a lot with cloning production so we run a proxy layer to generate custom postgres URLs and route all connections to allow more granular access control to clones, prevent credential leak, and follow a split plane architecture to allow full data residency on your cloud through BYOC.<p>We also support anonymization through the ability to register SQL that runs on branches before they are returned. This has been used for PII redaction and branch modification.<p>Our goal is to make every data infrastructure platform \u201ccloneable\u201d in one place so agents can fully test the impact of their changes on production like data environments without risk.<p>Here&#x27;s a demo of it: <a href=\"https:&#x2F;&#x2F;youtu.be&#x2F;5S1kwPtiRU0\" rel=\"nofollow\">https:&#x2F;&#x2F;youtu.be&#x2F;5S1kwPtiRU0</a><p>We\u2019d love to understand how you work with coding agents on the DB and if you try Ardent (it&#x27;s free to get started) what worked, what broke and what\u2019s missing.",
+   "title": "Launch HN: Ardent (YC P26) \u2013 Postgres sandboxes in seconds with zero migration",
+   "updated_at": "2026-06-26T17:54:58Z",
+   "url": "https://www.tryardent.com/"
+  }
+ ]
+}

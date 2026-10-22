@@ -1,0 +1,152 @@
+{
+ "domain_query": "tryscope.com",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ininew"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Check technical fit for B2B prospects without questionnaires"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tryscope",
+      ".",
+      "com"
+     ],
+     "value": "https://<em>tryscoped.com</em>/demo"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_ininew",
+    "story_49138607",
+    "show_hn"
+   ],
+   "author": "ininew",
+   "children": [
+    49138748
+   ],
+   "created_at": "2026-08-01T21:19:33Z",
+   "created_at_i": 1785619173,
+   "num_comments": 1,
+   "objectID": "49138607",
+   "points": 2,
+   "story_id": 49138607,
+   "title": "Show HN: Check technical fit for B2B prospects without questionnaires",
+   "updated_at": "2026-08-02T02:32:07Z",
+   "url": "https://tryscoped.com/demo"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jalan"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Shoppe: The open source e-commerce platform for Ruby on Rails"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tryscope",
+      ".",
+      "com"
+     ],
+     "value": "http://<em>tryshoppe.com</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_jalan",
+    "story_6823547"
+   ],
+   "author": "jalan",
+   "created_at": "2013-11-30T16:33:06Z",
+   "created_at_i": 1385829186,
+   "num_comments": 0,
+   "objectID": "6823547",
+   "points": 5,
+   "story_id": 6823547,
+   "story_text": "",
+   "title": "Shoppe: The open source e-commerce platform for Ruby on Rails",
+   "updated_at": "2023-09-06T22:47:26Z",
+   "url": "http://tryshoppe.com/"
+  }
+ ],
+ "launch_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "iloveluce"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "scope"
+     ],
+     "value": "I'm Luciano, co-founder and CTO of <em>Scope</em>AI (<a href=\"https://www.getscopeai.com/\" rel=\"nofollow\">https://www.getscopeai.com/</a>). We\u2019ve built a product that automates the process of extracting and communicating user insights to product and operation teams. To extract product insights, we integrate with support channels such as Zendesk, Intercom and desk.com and use NLP to automatically tag, categorize and cluster support tickets.<p>Customer support teams currently spend hours manually tagging customer support tickets to track trends in user feedback. The process is inefficient, lacks consistency and is reported retrospectively. This process typically fails to capture the granular insights requested by product and operation teams.<p>Natalie, our CEO is a former UX researcher. In that world, the process for extracting trends from user interviews was completely manual. It involved codifying the conversations and counting how frequently certain feedback was mentioned. It was definitely difficult to scale. We recognized that there needed to be a better way of extracting trends from unstructured data and started working on <em>Scope</em>AI!<p>Some things we\u2019ve learned/be happy to discuss further:<p>-Our process for extracting key phrases from tickets - currently done through a custom pipeline built using spaCy<p>-How we connect similar phrases - currently using a word2vec model trained on both GloVe vectors and text from tickets in our system<p>-How we assign broader categories and sentiment analysis using Tensor Flow<p>Here's an example of an insight we'd extract:<p>There were 67 requests for subscription cancellations for company x during the month of July:<p>\u2022 24 requests \u201cslow service\u201d<p>\u2022 19 requests \u201cI have another account with y company\u201d<p>\u2022 8 requests \u201clogin issues\u201d<p>Knowing this is really valuable for this company because they can make better decisions - in this case, making the software faster became a much higher priority.<p>Happy to answer questions and looking forward to hearing any feedback!"
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "launch",
+      "hn",
+      "scope"
+     ],
+     "value": "<em>Launch</em> <em>HN</em>: <em>Scope</em>AI (YC W17) \u2013 Extract insights from customer conversations"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_iloveluce",
+    "story_15286463",
+    "launch_hn"
+   ],
+   "author": "iloveluce",
+   "children": [
+    15286671,
+    15286769,
+    15286792,
+    15287163,
+    15287224,
+    15287272,
+    15288028,
+    15288723,
+    15289770,
+    15290474,
+    15291021,
+    15295791
+   ],
+   "created_at": "2017-09-19T17:03:34Z",
+   "created_at_i": 1505840614,
+   "num_comments": 23,
+   "objectID": "15286463",
+   "points": 77,
+   "story_id": 15286463,
+   "story_text": "I&#x27;m Luciano, co-founder and CTO of ScopeAI (<a href=\"https:&#x2F;&#x2F;www.getscopeai.com&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.getscopeai.com&#x2F;</a>). We\u2019ve built a product that automates the process of extracting and communicating user insights to product and operation teams. To extract product insights, we integrate with support channels such as Zendesk, Intercom and desk.com and use NLP to automatically tag, categorize and cluster support tickets.<p>Customer support teams currently spend hours manually tagging customer support tickets to track trends in user feedback. The process is inefficient, lacks consistency and is reported retrospectively. This process typically fails to capture the granular insights requested by product and operation teams.<p>Natalie, our CEO is a former UX researcher. In that world, the process for extracting trends from user interviews was completely manual. It involved codifying the conversations and counting how frequently certain feedback was mentioned. It was definitely difficult to scale. We recognized that there needed to be a better way of extracting trends from unstructured data and started working on ScopeAI!<p>Some things we\u2019ve learned&#x2F;be happy to discuss further:<p>-Our process for extracting key phrases from tickets - currently done through a custom pipeline built using spaCy<p>-How we connect similar phrases - currently using a word2vec model trained on both GloVe vectors and text from tickets in our system<p>-How we assign broader categories and sentiment analysis using Tensor Flow<p>Here&#x27;s an example of an insight we&#x27;d extract:<p>There were 67 requests for subscription cancellations for company x during the month of July:<p>\u2022 24 requests \u201cslow service\u201d<p>\u2022 19 requests \u201cI have another account with y company\u201d<p>\u2022 8 requests \u201clogin issues\u201d<p>Knowing this is really valuable for this company because they can make better decisions - in this case, making the software faster became a much higher priority.<p>Happy to answer questions and looking forward to hearing any feedback!",
+   "title": "Launch HN: ScopeAI (YC W17) \u2013 Extract insights from customer conversations",
+   "updated_at": "2024-09-20T01:23:48Z"
+  }
+ ]
+}

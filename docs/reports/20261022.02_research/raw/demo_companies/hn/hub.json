@@ -1,0 +1,311 @@
+{
+ "domain_query": "hub.xyz",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ktg0215"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Dev Tools Hub \u2013 10 free browser-based developer utilities"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "hub",
+      ".",
+      "xyz"
+     ],
+     "value": "https://tools.dev-tools-<em>hub.xyz</em>/en"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_ktg0215",
+    "story_47477884",
+    "show_hn"
+   ],
+   "author": "ktg0215",
+   "children": [
+    47477889
+   ],
+   "created_at": "2026-03-22T14:29:29Z",
+   "created_at_i": 1774189769,
+   "num_comments": 0,
+   "objectID": "47477884",
+   "points": 2,
+   "story_id": 47477884,
+   "title": "Show HN: Dev Tools Hub \u2013 10 free browser-based developer utilities",
+   "updated_at": "2026-03-22T16:18:03Z",
+   "url": "https://tools.dev-tools-hub.xyz/en"
+  }
+ ],
+ "launch_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "oliver101"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "hn",
+      "hub"
+     ],
+     "value": "Hey everyone! We\u2019re Oliver and Hamzah from <em>Hub</em>ble (<a href=\"https://gethubble.io/hn\" rel=\"nofollow\">https://gethubble.io/<em>hn</em></a>). <em>Hub</em>ble runs tests on your data warehouse so you can identify issues with data quality. You can test for things like missing values, uniqueness of data or how frequently data is added/updated.<p>We worked together for the last 4 years at a startup where we built and managed data products for insurers and banks. A common pattern we saw was teams taking data from their internal tools (CRM, HR system, etc.), application databases, and 3rd party data and storing it in a warehouse for analysis. However, when analysts/data scientists used the data for reports they would spot something suspicious and the engineering team would have to manually go through the data pipelines to find the source of the problem. More often than not it was simple things like a spike in missing values because an ETL job failed or stale data because a 3rd party data source hadn\u2019t updated correctly. We realised that reliability/ trustworthiness of the raw data was essential before you could start abstracting away more interesting tasks like analysis, insight or predictions.<p>We wanted to do this without having to write and maintain lots of individual tests in our code. So we built <em>Hub</em>ble, which connects to a data warehouse and creates tests based on the type of data being stored (i.e. freshness of timestamps, the cardinality of strings, max value of numbers, missing values, etc.). We\u2019ve also added the ability to write any custom tests using a built-in SQL editor. All the tests run on a schedule and you\u2019ll get an email or slack alert when they fail. We\u2019re also building webhooks and an Airflow operator so you can run tests immediately after running an ETL job or trigger a process to fix a failing test.<p>Instead of asking users to send their data to us, the tests are run in the data warehouse and we track the test results over time. Today we support BigQuery, Snowflake and Rockset (which lets us work with MongoDB and DynamoDB) and are adding more on request.<p>We\u2019re planning on charging $200 a month for a few seats, and $30-50 for extra users after that.<p>We\u2019re still at an early access stage but want the <em>HN</em> community\u2019s feedback so we\u2019ve opened up access to the app for a few days, you can try it out here <a href=\"https://gethubble.io/hn\" rel=\"nofollow\">https://gethubble.io/<em>hn</em></a>. We\u2019ve added a demo data warehouse you can start with that has data on COVID-19 cases in Italy and bike-share trips in San Francisco. Thanks and looking forward to hearing your ideas, experiences and feedback!"
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "launch",
+      "hn",
+      "hub"
+     ],
+     "value": "<em>Launch</em> <em>HN</em>: <em>Hub</em>ble (YC S20) \u2013 Monitor data quality inside data warehouses"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_oliver101",
+    "story_24224355",
+    "launch_hn"
+   ],
+   "author": "oliver101",
+   "children": [
+    24224668,
+    24224690,
+    24224887,
+    24224896,
+    24225250,
+    24225508,
+    24225601,
+    24225650,
+    24229435,
+    24229962,
+    24236382
+   ],
+   "created_at": "2020-08-20T15:38:28Z",
+   "created_at_i": 1597937908,
+   "num_comments": 42,
+   "objectID": "24224355",
+   "points": 125,
+   "story_id": 24224355,
+   "story_text": "Hey everyone! We\u2019re Oliver and Hamzah from Hubble (<a href=\"https:&#x2F;&#x2F;gethubble.io&#x2F;hn\" rel=\"nofollow\">https:&#x2F;&#x2F;gethubble.io&#x2F;hn</a>). Hubble runs tests on your data warehouse so you can identify issues with data quality. You can test for things like missing values, uniqueness of data or how frequently data is added&#x2F;updated.<p>We worked together for the last 4 years at a startup where we built and managed data products for insurers and banks. A common pattern we saw was teams taking data from their internal tools (CRM, HR system, etc.), application databases, and 3rd party data and storing it in a warehouse for analysis. However, when analysts&#x2F;data scientists used the data for reports they would spot something suspicious and the engineering team would have to manually go through the data pipelines to find the source of the problem. More often than not it was simple things like a spike in missing values because an ETL job failed or stale data because a 3rd party data source hadn\u2019t updated correctly. We realised that reliability&#x2F; trustworthiness of the raw data was essential before you could start abstracting away more interesting tasks like analysis, insight or predictions.<p>We wanted to do this without having to write and maintain lots of individual tests in our code. So we built Hubble, which connects to a data warehouse and creates tests based on the type of data being stored (i.e. freshness of timestamps, the cardinality of strings, max value of numbers, missing values, etc.). We\u2019ve also added the ability to write any custom tests using a built-in SQL editor. All the tests run on a schedule and you\u2019ll get an email or slack alert when they fail. We\u2019re also building webhooks and an Airflow operator so you can run tests immediately after running an ETL job or trigger a process to fix a failing test.<p>Instead of asking users to send their data to us, the tests are run in the data warehouse and we track the test results over time. Today we support BigQuery, Snowflake and Rockset (which lets us work with MongoDB and DynamoDB) and are adding more on request.<p>We\u2019re planning on charging $200 a month for a few seats, and $30-50 for extra users after that.<p>We\u2019re still at an early access stage but want the HN community\u2019s feedback so we\u2019ve opened up access to the app for a few days, you can try it out here <a href=\"https:&#x2F;&#x2F;gethubble.io&#x2F;hn\" rel=\"nofollow\">https:&#x2F;&#x2F;gethubble.io&#x2F;hn</a>. We\u2019ve added a demo data warehouse you can start with that has data on COVID-19 cases in Italy and bike-share trips in San Francisco. Thanks and looking forward to hearing your ideas, experiences and feedback!",
+   "title": "Launch HN: Hubble (YC S20) \u2013 Monitor data quality inside data warehouses",
+   "updated_at": "2024-09-20T06:45:13Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "murb"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "hn",
+      "hub"
+     ],
+     "value": "Hey <em>HN</em>,<p>We\u2019re Rahul and Max, co-founders of AgentHub.dev (<a href=\"https://www.agenthub.dev/\">https://www.agenthub.dev/</a>). We automate repetitive workflows for businesses using LLM-powered automations. Our platform lets you build and host these automations to emulate employee workflows in a scalable way. Here\u2019s a demo video: <a href=\"https://www.youtube.com/watch?v=BD9aoyKPOjs\" rel=\"nofollow\">https://www.youtube.com/watch?v=BD9aoyKPOjs</a><p>We started 9 months ago while lurking in the Auto-GPT discord and seeing thousands of non-technical users struggle to clone the repo or set up their environments. We were excited by the concepts of Agents so we built and deployed a (very ugly) web app within a few days so anyone could experiment. We started to see people literally begging the Agents to complete simple tasks and giving up due to cost/frustration. Seeing the type of relatively simple work people were trying to automate with AI was the catalyst for what we ended up building.<p>We decided to make a drag-and-drop automation builder so these users could piece together their ideal automations instead of begging the agent to do that same task and failing. V1 was a borderline un-usable series of drop down menus but evolved into the canvas based workflow builder it is now.<p>It\u2019s somewhat similar in concept to Zapier or Make.com except we\u2019re aiming to automate much more complex work end to end instead of just speeding up simple tasks. We originally described it as Zapier on crack but as it's gotten more complex, some people compare it to existing RPA platforms like UI Path. We like to call it an 'LLM-based Intelligent Automation Platform'.<p>Our biggest challenge from the very beginning has been balancing usability and complexity. We wanted anyone to be able to understand it while still being powerful  enough for people to get creative. Building the framework has been an extremely iterative process of users getting confused (for good reason) and us tweaking our approach. We still have a ways to go in terms of usability but are proud of where it\u2019s at. Eager to hear your feedback!<p>Here are 3 template automations we built to give people a starting point. I think the real beauty of the platform is how personalized the automations users create are but these general templates give a nice idea of how it works.<p><a href=\"https://www.agenthub.dev/templates/hr_hiring/linkedin_profile_processor\">https://www.agenthub.dev/templates/hr_hiring/linkedin_profil...</a>\n<a href=\"https://www.agenthub.dev/templates/media_news/autonomous_twitter_bot\">https://www.agenthub.dev/templates/media_news/autonomous_twi...</a>\n<a href=\"https://www.agenthub.dev/templates/sales_crm/automated_sales_emails\">https://www.agenthub.dev/templates/sales_crm/automated_sales...</a><p>These templates are on the simpler side. Our power users nest automations, trigger them via webhook and have them running at a pretty surprising scale. The highest we\u2019ve seen was last Friday with a single user running 5k automations within a few hours. The unofficial record before that for most automations runs was one of our users who discovered infinite-recursion by accident, but that doesn't count.<p>We have two main types of users at the moment, people automating their existing businesses work and people using the no-code builder to build new ideas. The first was our original intention, letting any semi technical person in a company spot inefficiency and quickly get a solution deployed to address it. The second and more unexpected type of user has been non-technical founders spotting problems and being able to build APIs to serve niches they\u2019ve found without needing to code.<p>It\u2019s called AgentHub because I bought the domain for 10 dollars on day 2 of building when I thought we\u2019d be a <em>hub</em> to host and share agents and never bothered rebranding. If anyone wants to take a crack at a better name, we\u2019d be interested!(I speak kind of quickly and people think I\u2019m saying  \u2018asian-<em>hub</em>\u2019 pretty often\u2026<p>We\u2019re really excited to share the platform with you all and look forward to your feedback!"
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "launch",
+      "hn"
+     ],
+     "value": "<em>Launch</em> <em>HN</em>: AgentHub (YC W24) \u2013 A no-code automation platform"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_murb",
+    "story_39302870",
+    "launch_hn"
+   ],
+   "author": "murb",
+   "children": [
+    39303366,
+    39303392,
+    39303399,
+    39303423,
+    39303512,
+    39303548,
+    39303581,
+    39304304,
+    39304379,
+    39304396,
+    39305082,
+    39305441,
+    39305477,
+    39305635,
+    39307155,
+    39307753,
+    39309479,
+    39310508,
+    39311577,
+    39311604,
+    39312231,
+    39312650,
+    39312978,
+    39313013,
+    39314178,
+    39314609,
+    39315476,
+    39315657,
+    39316290,
+    39318367,
+    39374946
+   ],
+   "created_at": "2024-02-08T15:17:05Z",
+   "created_at_i": 1707405425,
+   "num_comments": 85,
+   "objectID": "39302870",
+   "points": 162,
+   "story_id": 39302870,
+   "story_text": "Hey HN,<p>We\u2019re Rahul and Max, co-founders of AgentHub.dev (<a href=\"https:&#x2F;&#x2F;www.agenthub.dev&#x2F;\">https:&#x2F;&#x2F;www.agenthub.dev&#x2F;</a>). We automate repetitive workflows for businesses using LLM-powered automations. Our platform lets you build and host these automations to emulate employee workflows in a scalable way. Here\u2019s a demo video: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=BD9aoyKPOjs\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=BD9aoyKPOjs</a><p>We started 9 months ago while lurking in the Auto-GPT discord and seeing thousands of non-technical users struggle to clone the repo or set up their environments. We were excited by the concepts of Agents so we built and deployed a (very ugly) web app within a few days so anyone could experiment. We started to see people literally begging the Agents to complete simple tasks and giving up due to cost&#x2F;frustration. Seeing the type of relatively simple work people were trying to automate with AI was the catalyst for what we ended up building.<p>We decided to make a drag-and-drop automation builder so these users could piece together their ideal automations instead of begging the agent to do that same task and failing. V1 was a borderline un-usable series of drop down menus but evolved into the canvas based workflow builder it is now.<p>It\u2019s somewhat similar in concept to Zapier or Make.com except we\u2019re aiming to automate much more complex work end to end instead of just speeding up simple tasks. We originally described it as Zapier on crack but as it&#x27;s gotten more complex, some people compare it to existing RPA platforms like UI Path. We like to call it an &#x27;LLM-based Intelligent Automation Platform&#x27;.<p>Our biggest challenge from the very beginning has been balancing usability and complexity. We wanted anyone to be able to understand it while still being powerful  enough for people to get creative. Building the framework has been an extremely iterative process of users getting confused (for good reason) and us tweaking our approach. We still have a ways to go in terms of usability but are proud of where it\u2019s at. Eager to hear your feedback!<p>Here are 3 template automations we built to give people a starting point. I think the real beauty of the platform is how personalized the automations users create are but these general templates give a nice idea of how it works.<p><a href=\"https:&#x2F;&#x2F;www.agenthub.dev&#x2F;templates&#x2F;hr_hiring&#x2F;linkedin_profile_processor\">https:&#x2F;&#x2F;www.agenthub.dev&#x2F;templates&#x2F;hr_hiring&#x2F;linkedin_profil...</a>\n<a href=\"https:&#x2F;&#x2F;www.agenthub.dev&#x2F;templates&#x2F;media_news&#x2F;autonomous_twitter_bot\">https:&#x2F;&#x2F;www.agenthub.dev&#x2F;templates&#x2F;media_news&#x2F;autonomous_twi...</a>\n<a href=\"https:&#x2F;&#x2F;www.agenthub.dev&#x2F;templates&#x2F;sales_crm&#x2F;automated_sales_emails\">https:&#x2F;&#x2F;www.agenthub.dev&#x2F;templates&#x2F;sales_crm&#x2F;automated_sales...</a><p>These templates are on the simpler side. Our power users nest automations, trigger them via webhook and have them running at a pretty surprising scale. The highest we\u2019ve seen was last Friday with a single user running 5k automations within a few hours. The unofficial record before that for most automations runs was one of our users who discovered infinite-recursion by accident, but that doesn&#x27;t count.<p>We have two main types of users at the moment, people automating their existing businesses work and people using the no-code builder to build new ideas. The first was our original intention, letting any semi technical person in a company spot inefficiency and quickly get a solution deployed to address it. The second and more unexpected type of user has been non-technical founders spotting problems and being able to build APIs to serve niches they\u2019ve found without needing to code.<p>It\u2019s called AgentHub because I bought the domain for 10 dollars on day 2 of building when I thought we\u2019d be a hub to host and share agents and never bothered rebranding. If anyone wants to take a crack at a better name, we\u2019d be interested!(I speak kind of quickly and people think I\u2019m saying  \u2018asian-hub\u2019 pretty often\u2026<p>We\u2019re really excited to share the platform with you all and look forward to your feedback!",
+   "title": "Launch HN: AgentHub (YC W24) \u2013 A no-code automation platform",
+   "updated_at": "2025-11-05T17:40:33Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "icey"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "hn",
+      "hub"
+     ],
+     "value": "Hi <em>HN</em>, we're Phil and Paul and we make Abbot (<a href=\"https://ab.bot/\" rel=\"nofollow\">https://ab.bot/</a>) \u2013 a tool for building and running simple automation via chat (currently Slack, Discord, and MS Teams). It's common to go from &quot;I have an idea&quot; to having a fully deployed chat command in under an hour.<p>The term &quot;ChatOps&quot; comes from GitHub, where the two of us worked together. GitHub was always a distributed company and early on developed a culture of doing most work via chat. Engineers automated the most repetitive processes (and some of their sense of humor, too), and that grew into a shared chat-based command line called <em>Hub</em>ot. By typing terminal-style commands into chat, you can execute any sort of process that it makes sense for your team to automate. And because it\u2019s in a shared chat room rather than hidden on your own machine, every time you run a task, you teach someone else how to do it.<p><em>Hub</em>ot has been wildly successful at GitHub and is amazing in action. We saw GitHub\u2019s ops team fight off the biggest DDoS attack in history from chat using <em>Hub</em>ot, while people were cheering along in another channel using <em>Hub</em>ot to find appropriate hype gifs.  But the effect on day-to-day work was even more amazing. Anyone could easily find out what was recently deployed, how to deploy, monitor servers, page people, you name it. New employees could see how to do all those things as soon as they joined. Since there were fun commands inside of <em>Hub</em>ot, it was great for team building, too.<p>We believe more companies would benefit from working this way. When Covid hit, many companies suddenly found themselves struggling to make distributed teams work better. It is challenging to understand what everyone is doing, or even how to do regular tasks, since it's not easy to tap someone on the shoulder and ask. We decided to build Abbot to help teams adopt this style of work.<p>When we started, we built a list of what <i>wasn\u2019t</i> fun about <em>Hub</em>ot. <em>Hub</em>ot required a lot of configuration, wasn\u2019t reachable if chat was down, testing new scripts could be painful, there was no unified way to manage permissions, and so forth. We built Abbot as a hosted platform that handles all these things so developers don\u2019t have to.<p>Because Abbot is a platform, we provide a unified interface for auditing, access control, data access and more. If users understand how to use a single Abbot command (or \u201cskill\u201d in Abbot parlance), they'll know how to use any other Abbot command. Since we built Abbot to support multiple chat systems, we made it so that all Abbot commands are cross platform \u2013 commands written for Slack will work in Discord, and so forth. You can write commands in C#, Python, or JavaScript (we will support more languages in the future). We also do a lot of things <em>Hub</em>ot does not, like allowing users to control access to the execution of their commands from inside of chat, or exposing an API endpoint for every command so that they can react to the outside world. There\u2019s nothing to fork or configure \u2013 you can get started in two clicks from our website.<p>Abbot has a Package Directory where people can share the commands they\u2019ve written. There are a few dozen packages in the directory today, with more being added every week. Packages are MIT licensed and installable in one click. Because it's so easy to create new commands, teams tend to create a lot of small ones that accomplish a single task. For example, we have a `tweet` command that allows us to use chat as our communal Twitter client (available in the Package Directory at <a href=\"https://ab.bot/packages/aseriousbiz/tweet\" rel=\"nofollow\">https://ab.bot/packages/aseriousbiz/tweet</a>).<p>Today, people use Abbot to deploy Git branches to staging environments, track daily standups, figure out time zones for all their teammates, give each other internet high-fives (well, sparkle points), and even open their office door. We are focused on DevOps and customer support teams right now, but believe ChatOps can make a big impact on every team that has a channel in your chat.<p>We are open for business! You can add Abbot to your Slack, Discord, or MS Teams chat by clicking &quot;Try for free&quot; at <a href=\"https://ab.bot\" rel=\"nofollow\">https://ab.bot</a>. We have a free tier that allows people to try it out without any commitments. We don't ask for any information to sign up, you just have to authorize Abbot into chat. For paying users, we charge based on the number of custom commands, number of actions taken, or access to paid features like access controls. Right now we are SaaS only, but will offer a hybrid-premises version in the future.<p>We are sure that many of you have built your own chatbots and ChatOps tools before. We\u2019re especially interested in hearing about what worked well and what was challenging when building and operating them! And we hope you can give Abbot a try. Have at it, <em>HN</em>!"
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "launch",
+      "hn",
+      "hub"
+     ],
+     "value": "<em>Launch</em> <em>HN</em>: Abbot (YC S21) \u2013 ChatOps as a Service, inspired by GitHub's <em>Hub</em>ot"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_icey",
+    "story_27974077",
+    "launch_hn"
+   ],
+   "author": "icey",
+   "children": [
+    27974296,
+    27974509,
+    27974549,
+    27974554,
+    27974615,
+    27974757,
+    27974950,
+    27976682,
+    27977940,
+    27978440,
+    27982701,
+    27989707
+   ],
+   "created_at": "2021-07-27T16:07:47Z",
+   "created_at_i": 1627402067,
+   "num_comments": 36,
+   "objectID": "27974077",
+   "points": 143,
+   "story_id": 27974077,
+   "story_text": "Hi HN, we&#x27;re Phil and Paul and we make Abbot (<a href=\"https:&#x2F;&#x2F;ab.bot&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;ab.bot&#x2F;</a>) \u2013 a tool for building and running simple automation via chat (currently Slack, Discord, and MS Teams). It&#x27;s common to go from &quot;I have an idea&quot; to having a fully deployed chat command in under an hour.<p>The term &quot;ChatOps&quot; comes from GitHub, where the two of us worked together. GitHub was always a distributed company and early on developed a culture of doing most work via chat. Engineers automated the most repetitive processes (and some of their sense of humor, too), and that grew into a shared chat-based command line called Hubot. By typing terminal-style commands into chat, you can execute any sort of process that it makes sense for your team to automate. And because it\u2019s in a shared chat room rather than hidden on your own machine, every time you run a task, you teach someone else how to do it.<p>Hubot has been wildly successful at GitHub and is amazing in action. We saw GitHub\u2019s ops team fight off the biggest DDoS attack in history from chat using Hubot, while people were cheering along in another channel using Hubot to find appropriate hype gifs.  But the effect on day-to-day work was even more amazing. Anyone could easily find out what was recently deployed, how to deploy, monitor servers, page people, you name it. New employees could see how to do all those things as soon as they joined. Since there were fun commands inside of Hubot, it was great for team building, too.<p>We believe more companies would benefit from working this way. When Covid hit, many companies suddenly found themselves struggling to make distributed teams work better. It is challenging to understand what everyone is doing, or even how to do regular tasks, since it&#x27;s not easy to tap someone on the shoulder and ask. We decided to build Abbot to help teams adopt this style of work.<p>When we started, we built a list of what <i>wasn\u2019t</i> fun about Hubot. Hubot required a lot of configuration, wasn\u2019t reachable if chat was down, testing new scripts could be painful, there was no unified way to manage permissions, and so forth. We built Abbot as a hosted platform that handles all these things so developers don\u2019t have to.<p>Because Abbot is a platform, we provide a unified interface for auditing, access control, data access and more. If users understand how to use a single Abbot command (or \u201cskill\u201d in Abbot parlance), they&#x27;ll know how to use any other Abbot command. Since we built Abbot to support multiple chat systems, we made it so that all Abbot commands are cross platform \u2013 commands written for Slack will work in Discord, and so forth. You can write commands in C#, Python, or JavaScript (we will support more languages in the future). We also do a lot of things Hubot does not, like allowing users to control access to the execution of their commands from inside of chat, or exposing an API endpoint for every command so that they can react to the outside world. There\u2019s nothing to fork or configure \u2013 you can get started in two clicks from our website.<p>Abbot has a Package Directory where people can share the commands they\u2019ve written. There are a few dozen packages in the directory today, with more being added every week. Packages are MIT licensed and installable in one click. Because it&#x27;s so easy to create new commands, teams tend to create a lot of small ones that accomplish a single task. For example, we have a `tweet` command that allows us to use chat as our communal Twitter client (available in the Package Directory at <a href=\"https:&#x2F;&#x2F;ab.bot&#x2F;packages&#x2F;aseriousbiz&#x2F;tweet\" rel=\"nofollow\">https:&#x2F;&#x2F;ab.bot&#x2F;packages&#x2F;aseriousbiz&#x2F;tweet</a>).<p>Today, people use Abbot to deploy Git branches to staging environments, track daily standups, figure out time zones for all their teammates, give each other internet high-fives (well, sparkle points), and even open their office door. We are focused on DevOps and customer support teams right now, but believe ChatOps can make a big impact on every team that has a channel in your chat.<p>We are open for business! You can add Abbot to your Slack, Discord, or MS Teams chat by clicking &quot;Try for free&quot; at <a href=\"https:&#x2F;&#x2F;ab.bot\" rel=\"nofollow\">https:&#x2F;&#x2F;ab.bot</a>. We have a free tier that allows people to try it out without any commitments. We don&#x27;t ask for any information to sign up, you just have to authorize Abbot into chat. For paying users, we charge based on the number of custom commands, number of actions taken, or access to paid features like access controls. Right now we are SaaS only, but will offer a hybrid-premises version in the future.<p>We are sure that many of you have built your own chatbots and ChatOps tools before. We\u2019re especially interested in hearing about what worked well and what was challenging when building and operating them! And we hope you can give Abbot a try. Have at it, HN!",
+   "title": "Launch HN: Abbot (YC S21) \u2013 ChatOps as a Service, inspired by GitHub's Hubot",
+   "updated_at": "2026-05-13T05:39:04Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "urs"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "launch",
+      "hn",
+      "hub"
+     ],
+     "value": "Hey <em>HN</em>! I\u2019m Uday, and I co-founded Epihub [0] with Kwasi and Michael (<a href=\"https://epihub.com\" rel=\"nofollow\">https://epihub.com</a>). Epihub is Shopify for teaching online. Our software lets you schedule, meet, and bill clients from your own website.<p>A few years ago, we started building a product called Epigrammar, which was a collaborative document annotation tool that let teachers rapidly give feedback to their students by identifying trends in their feedback. Kwasi and I really wanted to see if we could scale the tutoring experience to an entire classroom, since my co-founder Mike was teaching Classics at a private school in Connecticut while running a non-profit tutoring program in Latin/Greek for public school students in New York. Mike would try out our products that we had built over the weekend during the week (sometimes to success), but oftentimes, things were not actually helping him teach. That\u2019s when we'd go back to the drawing board. We spent a few years experimenting with different ideas in edtech trying to scale tutoring, as we obsessed over Bloom\u2019s 2 sigma problem [1] including Superhuman for grading and even a test generator that could build assessments based on \u201cbackward-design [2]. We all lived together in Manhattan, built stuff, and would send it out to Mike to see what worked and what didn't.<p>This spring, however, as COVID-19 shut down local businesses across the city (we still live in New York), we realized that there were much bigger problems facing tutoring, coaching, and training businesses like Mike's: bringing the actual business online.<p>Whether you want to start up a coding bootcamp or run a tutoring business, you need a handful of products that are (ideally) white-labeled: a website builder, a way to process application forms, a CRM, a system to book appointments, a ticketing system for virtual classes, virtual classrooms, invoicing, and paystub tracking. When we spoke with tutors, coaches, and trainers, it was clear that there was a similar problem facing many different but similar businesses. How do you handle appointments? How do you handle virtual classes? How do you manage your team\u2019s schedules?<p>We spent our summer trying to build everything end-to-end, and finally, we\u2019re excited to share that product with you today. Epihub lets you build a website (or embeds into your existing website) and also comes with a full system to schedule, meet, and bill clients in one place (you can change all the buttons, images, and language within your account to reflect your business so you can rename your employees to instructors or your currency to Solari).<p>Similarly, you\u2019re working online with individuals or groups, you can start teaching anyone on username.epihub.com and easily grow your entire team by adding additional seats for new instructors to manage their schedules and paystubs. So far, we\u2019ve been working with tutors, coaches, trainers, but we have seen a bunch of interesting use-cases as well (including someone who wants to set up Epihub for virtual wine tasting and tours).<p>The stack actually borrows a lot from our original product: it\u2019s an Elixir/Phoenix application with a React frontend. We have a Zoom and Google Calendar integration, so you\u2019ll also see appointments and requests in your calendar, as each <em>hub</em> comes with yoursubdomain.epihub.com/reserve to handle bookings from prospective clients. It's like a Calendly built to scale your team\u2019s operations by syncing up invoicing, paystubs, and virtual classrooms. (Recently, we\u2019ve been contemplating Liquid templating, and we\u2019re considering building a Wordpress plugin. If anyone has worked with Liquid, Kwasi and I would love to chat.)<p>If there\u2019s anyone running a coaching, tutoring, or training business, or coding bootcamp, we'd love to hear how we could support your team. You can also book a personal onboarding with Mike over Zoom (<a href=\"https://vip.epihub.com/reserve\" rel=\"nofollow\">https://vip.epihub.com/reserve</a>).<p>Finally, I\u2019ve been a member of <em>HN</em> for as long as I can remember. I\u2019ve had my share of unfinished projects, and things I\u2019ve been a bit nervous to <em>launch</em> here. I didn\u2019t think I ever would <em>launch</em> anything, so this is pretty exciting. I\u2019ll be online all day with my co-founders to chat about Epihub, tutoring, backward design, or Elixir in no specific order!<p>[0]: <a href=\"https://epihub.com\" rel=\"nofollow\">https://epihub.com</a><p>[1]: <a href=\"https://en.wikipedia.org/wiki/Bloom%27s_2_sigma_problem\" rel=\"nofollow\">https://en.wikipedia.org/wiki/Bloom%27s_2_sigma_problem</a><p>[2]: <a href=\"https://en.wikipedia.org/wiki/Backward_design\" rel=\"nofollow\">https://en.wikipedia.org/wiki/Backward_design</a>"
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "launch",
+      "hn"
+     ],
+     "value": "<em>Launch</em> <em>HN</em>: Epihub (YC S20) \u2013 Shopify for teaching online"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_urs",
+    "story_24215376",
+    "launch_hn"
+   ],
+   "author": "urs",
+   "children": [
+    24215583,
+    24215778,
+    24215831,
+    24216131,
+    24216322,
+    24216767,
+    24216778,
+    24216838,
+    24216920,
+    24216923,
+    24217002,
+    24217155,
+    24217613,
+    24217957,
+    24218631,
+    24218887,
+    24221423,
+    24221986,
+    24222210,
+    24222693,
+    24222828,
+    24223254,
+    24223542,
+    24235980
+   ],
+   "created_at": "2020-08-19T19:50:44Z",
+   "created_at_i": 1597866644,
+   "num_comments": 47,
+   "objectID": "24215376",
+   "points": 136,
+   "story_id": 24215376,
+   "story_text": "Hey HN! I\u2019m Uday, and I co-founded Epihub [0] with Kwasi and Michael (<a href=\"https:&#x2F;&#x2F;epihub.com\" rel=\"nofollow\">https:&#x2F;&#x2F;epihub.com</a>). Epihub is Shopify for teaching online. Our software lets you schedule, meet, and bill clients from your own website.<p>A few years ago, we started building a product called Epigrammar, which was a collaborative document annotation tool that let teachers rapidly give feedback to their students by identifying trends in their feedback. Kwasi and I really wanted to see if we could scale the tutoring experience to an entire classroom, since my co-founder Mike was teaching Classics at a private school in Connecticut while running a non-profit tutoring program in Latin&#x2F;Greek for public school students in New York. Mike would try out our products that we had built over the weekend during the week (sometimes to success), but oftentimes, things were not actually helping him teach. That\u2019s when we&#x27;d go back to the drawing board. We spent a few years experimenting with different ideas in edtech trying to scale tutoring, as we obsessed over Bloom\u2019s 2 sigma problem [1] including Superhuman for grading and even a test generator that could build assessments based on \u201cbackward-design [2]. We all lived together in Manhattan, built stuff, and would send it out to Mike to see what worked and what didn&#x27;t.<p>This spring, however, as COVID-19 shut down local businesses across the city (we still live in New York), we realized that there were much bigger problems facing tutoring, coaching, and training businesses like Mike&#x27;s: bringing the actual business online.<p>Whether you want to start up a coding bootcamp or run a tutoring business, you need a handful of products that are (ideally) white-labeled: a website builder, a way to process application forms, a CRM, a system to book appointments, a ticketing system for virtual classes, virtual classrooms, invoicing, and paystub tracking. When we spoke with tutors, coaches, and trainers, it was clear that there was a similar problem facing many different but similar businesses. How do you handle appointments? How do you handle virtual classes? How do you manage your team\u2019s schedules?<p>We spent our summer trying to build everything end-to-end, and finally, we\u2019re excited to share that product with you today. Epihub lets you build a website (or embeds into your existing website) and also comes with a full system to schedule, meet, and bill clients in one place (you can change all the buttons, images, and language within your account to reflect your business so you can rename your employees to instructors or your currency to Solari).<p>Similarly, you\u2019re working online with individuals or groups, you can start teaching anyone on username.epihub.com and easily grow your entire team by adding additional seats for new instructors to manage their schedules and paystubs. So far, we\u2019ve been working with tutors, coaches, trainers, but we have seen a bunch of interesting use-cases as well (including someone who wants to set up Epihub for virtual wine tasting and tours).<p>The stack actually borrows a lot from our original product: it\u2019s an Elixir&#x2F;Phoenix application with a React frontend. We have a Zoom and Google Calendar integration, so you\u2019ll also see appointments and requests in your calendar, as each hub comes with yoursubdomain.epihub.com&#x2F;reserve to handle bookings from prospective clients. It&#x27;s like a Calendly built to scale your team\u2019s operations by syncing up invoicing, paystubs, and virtual classrooms. (Recently, we\u2019ve been contemplating Liquid templating, and we\u2019re considering building a Wordpress plugin. If anyone has worked with Liquid, Kwasi and I would love to chat.)<p>If there\u2019s anyone running a coaching, tutoring, or training business, or coding bootcamp, we&#x27;d love to hear how we could support your team. You can also book a personal onboarding with Mike over Zoom (<a href=\"https:&#x2F;&#x2F;vip.epihub.com&#x2F;reserve\" rel=\"nofollow\">https:&#x2F;&#x2F;vip.epihub.com&#x2F;reserve</a>).<p>Finally, I\u2019ve been a member of HN for as long as I can remember. I\u2019ve had my share of unfinished projects, and things I\u2019ve been a bit nervous to launch here. I didn\u2019t think I ever would launch anything, so this is pretty exciting. I\u2019ll be online all day with my co-founders to chat about Epihub, tutoring, backward design, or Elixir in no specific order!<p>[0]: <a href=\"https:&#x2F;&#x2F;epihub.com\" rel=\"nofollow\">https:&#x2F;&#x2F;epihub.com</a><p>[1]: <a href=\"https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Bloom%27s_2_sigma_problem\" rel=\"nofollow\">https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Bloom%27s_2_sigma_problem</a><p>[2]: <a href=\"https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Backward_design\" rel=\"nofollow\">https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Backward_design</a>",
+   "title": "Launch HN: Epihub (YC S20) \u2013 Shopify for teaching online",
+   "updated_at": "2024-09-20T06:44:15Z"
+  }
+ ]
+}

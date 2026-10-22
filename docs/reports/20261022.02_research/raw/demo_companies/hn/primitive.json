@@ -1,0 +1,48 @@
+{
+ "domain_query": "primitive.dev",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mymx"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "It Was Always Email"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "primitive",
+      ".",
+      "dev"
+     ],
+     "value": "https://www.<em>primitive.dev</em>/blog/it-was-always-email"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_mymx",
+    "story_48632789"
+   ],
+   "author": "mymx",
+   "children": [
+    48632812
+   ],
+   "created_at": "2026-06-22T16:59:50Z",
+   "created_at_i": 1782147590,
+   "num_comments": 0,
+   "objectID": "48632789",
+   "points": 5,
+   "story_id": 48632789,
+   "title": "It Was Always Email",
+   "updated_at": "2026-06-22T17:15:58Z",
+   "url": "https://www.primitive.dev/blog/it-was-always-email"
+  }
+ ],
+ "launch_hits": []
+}

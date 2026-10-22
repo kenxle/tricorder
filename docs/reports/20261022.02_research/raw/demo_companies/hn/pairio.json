@@ -1,0 +1,84 @@
+{
+ "domain_query": "pairio.com",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "kashgoudarzi"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Pairso: Find the best photographers in your area"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "pairio",
+      ".",
+      "com"
+     ],
+     "value": "https://www.<em>pairso.com</em>"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_kashgoudarzi",
+    "story_16913057"
+   ],
+   "author": "kashgoudarzi",
+   "created_at": "2018-04-24T14:53:37Z",
+   "created_at_i": 1524581617,
+   "num_comments": 0,
+   "objectID": "16913057",
+   "points": 1,
+   "story_id": 16913057,
+   "title": "Pairso: Find the best photographers in your area",
+   "updated_at": "2024-09-20T02:22:09Z",
+   "url": "https://www.pairso.com"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "sebmak"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "PAIRIN Is Hiring a Full Stack Web Developer (RAILS)"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "pairio",
+      ".",
+      "com"
+     ],
+     "value": "https://www.<em>pairin.com</em>/careers/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_sebmak",
+    "story_16016348"
+   ],
+   "author": "sebmak",
+   "created_at": "2017-12-27T17:34:05Z",
+   "created_at_i": 1514396045,
+   "num_comments": 0,
+   "objectID": "16016348",
+   "points": 1,
+   "story_id": 16016348,
+   "title": "PAIRIN Is Hiring a Full Stack Web Developer (RAILS)",
+   "updated_at": "2024-09-20T01:48:40Z",
+   "url": "https://www.pairin.com/careers/"
+  }
+ ],
+ "launch_hits": []
+}

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+  <feed xmlns="http://www.w3.org/2005/Atom">
+    <author>
+      <email>webmaster@sec.gov</email>
+      <name>Webmaster</name>
+    </author>
+    <entry title="ARRAY(0x556db459c2e0)">
+      <content type="text/xml">
+        <company-info name="ARRAY(0x556db455e958)">
+          <addresses>
+            <address type="business">
+              <city>ALHAMBRA</city>
+              <phone>303-552-6655</phone>
+              <state>CA</state>
+              <street1>983 MERIDIAN AVENUE</street1>
+              <zip>91803</zip>
+            </address>
+            <address type="mailing">
+              <city>ALHAMBRA</city>
+              <state>CA</state>
+              <street1>983 MERIDIAN AVENUE</street1>
+              <zip>91803</zip>
+            </address>
+          </addresses>
+          <cancelled-ma-flag>N</cancelled-ma-flag>
+          <cik>0001738332</cik>
+          <fiscal-year-end>1231</fiscal-year-end>
+          <irs-number>822722443</irs-number>
+          <last-date>2018-04-24</last-date>
+          <revoke-flag>N</revoke-flag>
+          <revoked-ma-flag>N</revoked-ma-flag>
+          <state>CA</state>
+          <state-of-incorporation>DE</state-of-incorporation>
+        </company-info>
+      </content>
+      <id>urn:tag:www.sec.gov:cik=0001738332</id>
+      <link href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001738332&amp;owner=exclude&amp;hidefilings=0" type="text/html" />
+      <summary type="html">&lt;strong&gt;CIK:&lt;/strong&gt; 0001738332, &lt;strong&gt;State:&lt;/strong&gt; CA</summary>
+      <updated>2026-10-22T14:51:40-04:00</updated>
+    </entry>
+    <entry title="ARRAY(0x556db459e6d0)">
+      <content type="text/xml">
+        <company-info name="ARRAY(0x556db459c0b8)">
+          <addresses>
+            <address type="business">
+              <city>CHICAGO</city>
+              <phone>847-840-0222</phone>
+              <state>IL</state>
+              <street1>750 NORTH HUDSON AVENUE, UNIT 2504</street1>
+              <zip>60654</zip>
+            </address>
+            <address type="mailing">
+              <city>CHICAGO</city>
+              <state>IL</state>
+              <street1>750 NORTH HUDSON AVENUE, UNIT 2504</street1>
+              <zip>60654</zip>
+            </address>
+          </addresses>
+          <cancelled-ma-flag>N</cancelled-ma-flag>
+          <cik>0001976330</cik>
+          <fiscal-year-end>1231</fiscal-year-end>
+          <irs-number>923794840</irs-number>
+          <last-date>2024-07-12</last-date>
+          <revoked-ma-flag>N</revoked-ma-flag>
+          <state>IL</state>
+          <state-of-incorporation>DE</state-of-incorporation>
+        </company-info>
+      </content>
+      <id>urn:tag:www.sec.gov:cik=0001976330</id>
+      <link href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001976330&amp;owner=exclude&amp;hidefilings=0" type="text/html" />
+      <summary type="html">&lt;strong&gt;CIK:&lt;/strong&gt; 0001976330, &lt;strong&gt;State:&lt;/strong&gt; IL</summary>
+      <updated>2026-10-22T14:51:40-04:00</updated>
+    </entry>
+    <entry title="ARRAY(0x556db459f000)">
+      <content type="text/xml">
+        <company-info name="ARRAY(0x556db459e820)">
+          <addresses>
+            <address type="business">
+              <city>SAN FRANCISCO</city>
+              <phone>(415) 590-0129</phone>
+              <state>CA</state>
+              <street1>425 MARKET STREET, 8TH FLOOR</street1>
+              <zip>94105</zip>
+            </address>
+            <address type="mailing">
+              <city>SAN FRANCISCO</city>
+              <state>CA</state>
+              <street1>425 MARKET STREET, 8TH FLOOR</street1>
+              <zip>94105</zip>
+            </address>
+          </addresses>
+          <cancelled-ma-flag>N</cancelled-ma-flag>
+          <cik>0001642992</cik>
+          <fiscal-year-end>1231</fiscal-year-end>
+          <irs-number>455203086</irs-number>
+          <last-date>2019-08-02</last-date>
+          <revoke-flag>N</revoke-flag>
+          <revoked-ma-flag>N</revoked-ma-flag>
+          <state>CA</state>
+          <state-of-incorporation>DE</state-of-incorporation>
+        </company-info>
+      </content>
+      <id>urn:tag:www.sec.gov:cik=0001642992</id>
+      <link href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001642992&amp;owner=exclude&amp;hidefilings=0" type="text/html" />
+      <summary type="html">&lt;strong&gt;CIK:&lt;/strong&gt; 0001642992, &lt;strong&gt;State:&lt;/strong&gt; CA</summary>
+      <updated>2026-10-22T14:51:40-04:00</updated>
+    </entry>
+    <id>https://www.sec.gov/cgi-bin/browse-edgar?company=expanse&amp;type=D&amp;owner=include&amp;action=getcompany&amp;count=40</id>
+    <link href="https://www.sec.gov/cgi-bin/browse-edgar?company=expanse&amp;type=D&amp;owner=include&amp;action=getcompany&amp;count=40&amp;start=0&amp;output=atom" rel="self" type="application/atom+xml" />
+    <link href="https://www.sec.gov/cgi-bin/browse-edgar?company=expanse&amp;type=D&amp;owner=include&amp;action=getcompany&amp;count=40&amp;start=0" rel="alternate" type="text/html" />
+    <title>Company Search Feed</title>
+    <updated>2026-10-22T14:51:40-04:00</updated>
+  </feed>

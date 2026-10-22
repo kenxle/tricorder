@@ -1,0 +1,143 @@
+{
+ "currentUser": null,
+ "publicFounderProfilesEnabled": false,
+ "disabledPublicVisibility": null,
+ "company": {
+  "id": 31380,
+  "slug": "superlog",
+  "name": "Superlog",
+  "batch": "P26",
+  "batch_name": "Spring 2026",
+  "small_logo_url": "https://bookface-images.s3.amazonaws.com/small_logos/96347d910b359b8008029da5fa69b30000efd6d0.png",
+  "one_liner": "Make software self-healing",
+  "website": "https://superlog.sh/",
+  "long_description": "Sentry and Datadog dump a stream of alerts. Most are duplicates, most lack context, and you still have to solve the issue yourself.\r\n\r\nSuperlog is AI-native observability that's meant not to be opened. A wizard scans your repo and installs proper OpenTelemetry instrumentation, then runs daily to keep up as you ship new code. When something breaks, Superlog groups the errors into a single incident, investigates with full context (logs, traces, recent deploys, past Slack threads), and posts one mergeable PR in Slack. You merge it, ignore it, or open it as a Claude Code session and modify it.\r\n\r\nTelemetry is vendor-neutral, so you keep every log, trace, and metric we install, even if you leave.",
+  "tags": [
+   "Developer Tools",
+   "Open Source",
+   "Kubernetes",
+   "Enterprise Software",
+   "AI"
+  ],
+  "ycdc_status": "Active",
+  "logo_url": "https://bookface-images.s3.us-west-2.amazonaws.com/logos/63206ffd3643844853700f86c48aef44c75dcb32.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECALN7UXISZ%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184818Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCNDs5Qf6jz%2BVsf6rFm6HmvoPbYADith8zbPaKQ9FzrEwIgRBVwGvEoJB5tez0bdq7NnPBm8P0JehPIcj0rZtsy6xUq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDH%2F8prV5kAcExcOtuCrCA%2F7wtAzvct1OZqMg4ZFFcD%2BBP8xrU68ibKMEzGbufSREhI23Hu22d9CxXgYJqtoLPdqTBLmLUSPorKGv5kHzL9jyE387zZ0E5BH2McUW8CAnS%2Bh7neRPZEUx5%2BcIv8ggIZor%2FDw6pIRVlP4Jc8M57p0lyQr0KwV3qg1958Dbx1Wv65z0620PZ2vqq4%2FrEbSrW4Ox32DKYOqnKkFWJohyvu6aza7fQZchEM4b5Sdu8AVHos7QE2C2ZHWMuMJLcGJZaRQx0XYrla0XwSScmEw6p1Ul1xa8alQ2RIN6veS7PB8fP6u95YcX3HYGUoiXKUANk8f1Z7tJQkeG3%2FyuAW3Hd979RvCDET3MPiOXBO2tIQ1F%2BWinyDnAQpmcHDQM1C%2FqNqQ0rQ1xkm1b7q8YQs4IIHm9KDDTZS1EVZFfr%2Bg2Umb9Bd3fF55XjCkLu%2FTbBq67zqsiIHaxwnURkGm5t6kAtX13hqS7kz12pPp%2BaJx9O8xGclrmpR6WTT6d80g%2BHd0EjDfym30a5val%2FXw74Y3%2B3d9LTVGwuelaP809ZFNBzXUTEjsPYNRvslW7bmTOwpi7%2FTu%2FUTZHIVDY4OAJWKixnv1tiTDgr%2BnWBjqlAcdVITh%2BG8HeNwxRhzRhL0Scw3wAnMb70gJ05Clv0QGt0H5mvPeRgskZk7zJP5m4hnwjsmX0d07ZgDIAiRlg21R6S93%2BGjYidgAhroFHwe5qbXOjl0W7S4%2FnF2TKzVNRF9T5OOgbhqb%2BNNr7HRGEkTXSjtjLuHr0I1MFiwNdjlIiVtSm8AKSk3GRGuP0F3akdULDODUCri1LGxZy2BR658av5MhxwA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=c96fa0d4f9ffc8b8624c0965366bddc34775cea74e227b7b3a0cea46772e6e5f",
+  "year_founded": 2026,
+  "team_size": 2,
+  "location": "Paris, France",
+  "city": "Paris",
+  "city_tag": null,
+  "country": "FR",
+  "linkedin_url": "https://www.linkedin.com/company/superlogyc",
+  "twitter_url": "https://x.com/superlogyc",
+  "fb_url": "",
+  "cb_url": "",
+  "github_url": "",
+  "free_response_question_answers": [],
+  "dday_video_url": null,
+  "app_video_url": null,
+  "app_answers": [],
+  "ycdc_url": "https://www.ycombinator.com/companies/superlog",
+  "company_photos": [
+   {
+    "id": 1479,
+    "url": "https://bookface-images.s3.us-west-2.amazonaws.com/attachments/9339274586ae39d3f925367f988400bf43295c57.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECALN7UXISZ%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184818Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCNDs5Qf6jz%2BVsf6rFm6HmvoPbYADith8zbPaKQ9FzrEwIgRBVwGvEoJB5tez0bdq7NnPBm8P0JehPIcj0rZtsy6xUq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDH%2F8prV5kAcExcOtuCrCA%2F7wtAzvct1OZqMg4ZFFcD%2BBP8xrU68ibKMEzGbufSREhI23Hu22d9CxXgYJqtoLPdqTBLmLUSPorKGv5kHzL9jyE387zZ0E5BH2McUW8CAnS%2Bh7neRPZEUx5%2BcIv8ggIZor%2FDw6pIRVlP4Jc8M57p0lyQr0KwV3qg1958Dbx1Wv65z0620PZ2vqq4%2FrEbSrW4Ox32DKYOqnKkFWJohyvu6aza7fQZchEM4b5Sdu8AVHos7QE2C2ZHWMuMJLcGJZaRQx0XYrla0XwSScmEw6p1Ul1xa8alQ2RIN6veS7PB8fP6u95YcX3HYGUoiXKUANk8f1Z7tJQkeG3%2FyuAW3Hd979RvCDET3MPiOXBO2tIQ1F%2BWinyDnAQpmcHDQM1C%2FqNqQ0rQ1xkm1b7q8YQs4IIHm9KDDTZS1EVZFfr%2Bg2Umb9Bd3fF55XjCkLu%2FTbBq67zqsiIHaxwnURkGm5t6kAtX13hqS7kz12pPp%2BaJx9O8xGclrmpR6WTT6d80g%2BHd0EjDfym30a5val%2FXw74Y3%2B3d9LTVGwuelaP809ZFNBzXUTEjsPYNRvslW7bmTOwpi7%2FTu%2FUTZHIVDY4OAJWKixnv1tiTDgr%2BnWBjqlAcdVITh%2BG8HeNwxRhzRhL0Scw3wAnMb70gJ05Clv0QGt0H5mvPeRgskZk7zJP5m4hnwjsmX0d07ZgDIAiRlg21R6S93%2BGjYidgAhroFHwe5qbXOjl0W7S4%2FnF2TKzVNRF9T5OOgbhqb%2BNNr7HRGEkTXSjtjLuHr0I1MFiwNdjlIiVtSm8AKSk3GRGuP0F3akdULDODUCri1LGxZy2BR658av5MhxwA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=e3351c1618f543b3645aaa8b72d25ce16a272e2456b1395b3649272407263626",
+    "photo_type": "sign"
+   }
+  ],
+  "primary_group_partner": {
+   "id": 11216,
+   "full_name": "David Lieb",
+   "avatar_thumb_url": "https://bookface-images.s3.us-west-2.amazonaws.com/avatars/6e415a060218fc99589322800cec5173b48ce926.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECALN7UXISZ%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184818Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCNDs5Qf6jz%2BVsf6rFm6HmvoPbYADith8zbPaKQ9FzrEwIgRBVwGvEoJB5tez0bdq7NnPBm8P0JehPIcj0rZtsy6xUq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDH%2F8prV5kAcExcOtuCrCA%2F7wtAzvct1OZqMg4ZFFcD%2BBP8xrU68ibKMEzGbufSREhI23Hu22d9CxXgYJqtoLPdqTBLmLUSPorKGv5kHzL9jyE387zZ0E5BH2McUW8CAnS%2Bh7neRPZEUx5%2BcIv8ggIZor%2FDw6pIRVlP4Jc8M57p0lyQr0KwV3qg1958Dbx1Wv65z0620PZ2vqq4%2FrEbSrW4Ox32DKYOqnKkFWJohyvu6aza7fQZchEM4b5Sdu8AVHos7QE2C2ZHWMuMJLcGJZaRQx0XYrla0XwSScmEw6p1Ul1xa8alQ2RIN6veS7PB8fP6u95YcX3HYGUoiXKUANk8f1Z7tJQkeG3%2FyuAW3Hd979RvCDET3MPiOXBO2tIQ1F%2BWinyDnAQpmcHDQM1C%2FqNqQ0rQ1xkm1b7q8YQs4IIHm9KDDTZS1EVZFfr%2Bg2Umb9Bd3fF55XjCkLu%2FTbBq67zqsiIHaxwnURkGm5t6kAtX13hqS7kz12pPp%2BaJx9O8xGclrmpR6WTT6d80g%2BHd0EjDfym30a5val%2FXw74Y3%2B3d9LTVGwuelaP809ZFNBzXUTEjsPYNRvslW7bmTOwpi7%2FTu%2FUTZHIVDY4OAJWKixnv1tiTDgr%2BnWBjqlAcdVITh%2BG8HeNwxRhzRhL0Scw3wAnMb70gJ05Clv0QGt0H5mvPeRgskZk7zJP5m4hnwjsmX0d07ZgDIAiRlg21R6S93%2BGjYidgAhroFHwe5qbXOjl0W7S4%2FnF2TKzVNRF9T5OOgbhqb%2BNNr7HRGEkTXSjtjLuHr0I1MFiwNdjlIiVtSm8AKSk3GRGuP0F3akdULDODUCri1LGxZy2BR658av5MhxwA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=8ea5e7618db28f86abf9025e32fcf84439a255de0ff9c60822002949f46df8d9",
+   "url": "https://www.ycombinator.com/people/david-lieb"
+  },
+  "founders": [
+   {
+    "user_id": 1660276,
+    "is_active": true,
+    "founder_bio": "ex-BCG, math olympiad winner, scaled two startups to millions in ARR. now working to make the world bug-free.  \n\nlife goals:\n1 - build a decacorn\n2 - get italy to top 5 ww gdp\n3 - win an oscar",
+    "full_name": "Nicol\u00f2 Magnante",
+    "title": "Founder/CEO",
+    "avatar_thumb_url": "https://bookface-images.s3.us-west-2.amazonaws.com/avatars/b8bcc3506b03fd18553c21a745fb1ca58549dc3d.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECALN7UXISZ%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184818Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCNDs5Qf6jz%2BVsf6rFm6HmvoPbYADith8zbPaKQ9FzrEwIgRBVwGvEoJB5tez0bdq7NnPBm8P0JehPIcj0rZtsy6xUq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDH%2F8prV5kAcExcOtuCrCA%2F7wtAzvct1OZqMg4ZFFcD%2BBP8xrU68ibKMEzGbufSREhI23Hu22d9CxXgYJqtoLPdqTBLmLUSPorKGv5kHzL9jyE387zZ0E5BH2McUW8CAnS%2Bh7neRPZEUx5%2BcIv8ggIZor%2FDw6pIRVlP4Jc8M57p0lyQr0KwV3qg1958Dbx1Wv65z0620PZ2vqq4%2FrEbSrW4Ox32DKYOqnKkFWJohyvu6aza7fQZchEM4b5Sdu8AVHos7QE2C2ZHWMuMJLcGJZaRQx0XYrla0XwSScmEw6p1Ul1xa8alQ2RIN6veS7PB8fP6u95YcX3HYGUoiXKUANk8f1Z7tJQkeG3%2FyuAW3Hd979RvCDET3MPiOXBO2tIQ1F%2BWinyDnAQpmcHDQM1C%2FqNqQ0rQ1xkm1b7q8YQs4IIHm9KDDTZS1EVZFfr%2Bg2Umb9Bd3fF55XjCkLu%2FTbBq67zqsiIHaxwnURkGm5t6kAtX13hqS7kz12pPp%2BaJx9O8xGclrmpR6WTT6d80g%2BHd0EjDfym30a5val%2FXw74Y3%2B3d9LTVGwuelaP809ZFNBzXUTEjsPYNRvslW7bmTOwpi7%2FTu%2FUTZHIVDY4OAJWKixnv1tiTDgr%2BnWBjqlAcdVITh%2BG8HeNwxRhzRhL0Scw3wAnMb70gJ05Clv0QGt0H5mvPeRgskZk7zJP5m4hnwjsmX0d07ZgDIAiRlg21R6S93%2BGjYidgAhroFHwe5qbXOjl0W7S4%2FnF2TKzVNRF9T5OOgbhqb%2BNNr7HRGEkTXSjtjLuHr0I1MFiwNdjlIiVtSm8AKSk3GRGuP0F3akdULDODUCri1LGxZy2BR658av5MhxwA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d76b340060e20faa724eb005a1f4ed29f8d392009ed74682ae91b7b94dbf0e5f",
+    "twitter_url": "https://x.com/nicolomagnante",
+    "linkedin_url": "https://www.linkedin.com/in/nicolo-magnante/",
+    "has_email": true,
+    "latest_yc_company": {
+     "name": "Superlog",
+     "href": "https://www.ycombinator.com/companies/superlog"
+    }
+   },
+   {
+    "user_id": 2807293,
+    "is_active": true,
+    "founder_bio": "Co-founder and CTO of Superlog, previously co-founder & CTO at Bluco (top 40 startup in France in 2025). CS @ \u00c9cole 42 Paris '22, built data pipelines and tooling at Datadog. National olympiad winner in high school, electronics and hardware nerd, coding interview prep & first aid volunteer.",
+    "full_name": "Arseniy Shishaev",
+    "title": "Founder/CTO",
+    "avatar_thumb_url": "https://bookface-images.s3.us-west-2.amazonaws.com/avatars/dbbe5e3ee648431c9ed6c3b18cb41e7bfc059958.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECALN7UXISZ%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184818Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCNDs5Qf6jz%2BVsf6rFm6HmvoPbYADith8zbPaKQ9FzrEwIgRBVwGvEoJB5tez0bdq7NnPBm8P0JehPIcj0rZtsy6xUq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDH%2F8prV5kAcExcOtuCrCA%2F7wtAzvct1OZqMg4ZFFcD%2BBP8xrU68ibKMEzGbufSREhI23Hu22d9CxXgYJqtoLPdqTBLmLUSPorKGv5kHzL9jyE387zZ0E5BH2McUW8CAnS%2Bh7neRPZEUx5%2BcIv8ggIZor%2FDw6pIRVlP4Jc8M57p0lyQr0KwV3qg1958Dbx1Wv65z0620PZ2vqq4%2FrEbSrW4Ox32DKYOqnKkFWJohyvu6aza7fQZchEM4b5Sdu8AVHos7QE2C2ZHWMuMJLcGJZaRQx0XYrla0XwSScmEw6p1Ul1xa8alQ2RIN6veS7PB8fP6u95YcX3HYGUoiXKUANk8f1Z7tJQkeG3%2FyuAW3Hd979RvCDET3MPiOXBO2tIQ1F%2BWinyDnAQpmcHDQM1C%2FqNqQ0rQ1xkm1b7q8YQs4IIHm9KDDTZS1EVZFfr%2Bg2Umb9Bd3fF55XjCkLu%2FTbBq67zqsiIHaxwnURkGm5t6kAtX13hqS7kz12pPp%2BaJx9O8xGclrmpR6WTT6d80g%2BHd0EjDfym30a5val%2FXw74Y3%2B3d9LTVGwuelaP809ZFNBzXUTEjsPYNRvslW7bmTOwpi7%2FTu%2FUTZHIVDY4OAJWKixnv1tiTDgr%2BnWBjqlAcdVITh%2BG8HeNwxRhzRhL0Scw3wAnMb70gJ05Clv0QGt0H5mvPeRgskZk7zJP5m4hnwjsmX0d07ZgDIAiRlg21R6S93%2BGjYidgAhroFHwe5qbXOjl0W7S4%2FnF2TKzVNRF9T5OOgbhqb%2BNNr7HRGEkTXSjtjLuHr0I1MFiwNdjlIiVtSm8AKSk3GRGuP0F3akdULDODUCri1LGxZy2BR658av5MhxwA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=f134a0bc700d4ba7a796e661cc783bba3d38682abd59cce2086f37f3ea55c039",
+    "twitter_url": "https://x.com/arseniyswish",
+    "linkedin_url": "https://linkedin.com/in/arseniy-shishaev",
+    "has_email": true,
+    "latest_yc_company": {
+     "name": "Superlog",
+     "href": "https://www.ycombinator.com/companies/superlog"
+    }
+   }
+  ]
+ },
+ "jobPostings": [],
+ "jobsUrl": "https://bookface.ycombinator.com/workatastartup",
+ "newsItems": [],
+ "newsUrl": "https://bookface.ycombinator.com/company/31380/company_news",
+ "videos": [],
+ "launches": [
+  {
+   "id": 101239,
+   "title": "Superlog: The self-installing observability tool that fixes your bugs",
+   "body": "Hey YC! We're Nicol\u00f2 and Arseniy, co-founders of Superlog ([superlog.sh](https://superlog.sh/)).\n\n**TL;DR:** Superlog is the observability tool you're not supposed to open. A wizard scans your repo and instruments it with OpenTelemetry, and re-runs daily to keep your logs, alerts, and dashboards in sync with your code. When something breaks, an agent investigates with full context and posts one mergeable PR per incident into Slack.\n\n<https://www.youtube.com/watch?v=AeX3pnHCMHg>\n\n## **The Problem**\n\nArseniy spent years at Datadog, getting paged during the night to debug production incidents. In our first startups, we tried Sentry, Datadog, Grafana, Dash0, and nothing was good enough.\u00a0\n\n* **Setup never ends.** Proper telemetry takes days of manual work and breaks the moment you ship new features. Half the dashboards end up empty or outdated.\n* **Alert fatigue is constant.** Sentry floods Slack with duplicates and no context. The Saturday #ops ping is the worst feeling of the week.\n* **The bill climbs.** Datadog invoices keep growing while engineers still spend hours configuring dashboards, chasing three AWS metrics that disagree, and copy-pasting stack traces into Claude at 11pm.\n\n## **Our Solution**\n\n**1. Telemetry that sets itself up.** Tell your agent:\n\n```\nRun npx skills add superloglabs/skills --all and use the skills to install Superlog in this project\n```\n\nThis skill instruments your code with native OTel SDKs: proper semantic conventions, service and environment tagging. We cover all failure modes, endpoint performance, usage per tenant, and LLM/upstream cost (by callsite, tenant, and model). We run observability check-ins that keep adding logs, alerts, and dashboards as your code grows.\n\n**2. An agent that investigates and ships PRs.** Errors get prioritised and grouped into incidents. The agent investigates with full context (logs, traces, metrics, recent deploys) and either produces a short tested PR, or posts its findings and pulls in the engineers who own the system (based on docs, prior investigations, Slack threads). One mergeable PR per incident in Slack. Merge it, ignore it, or open it as a Claude Code/Codex session and tweak.\n\n**3. No alert fatigue.** Our custom eval setup makes sure incident summaries in your #ops channel are dense and correct, with severity and impact upfront. Every LLM-enhanced metric ships with a confidence score, so wrong guesses don't get boosted.\n\nThe telemetry you get is vendor-neutral: you keep all the OTel logs, metrics, and traces we install, even if you choose to switch providers.\n\n## **Where We're Going**\n\nEvery engineering team in the world burns nights and weekends debugging production. We want to delete that loop. Observability should install itself, alert intelligently, and fix what it can.\n\n## **About Us**\n\n* **Nicol\u00f2 (CEO)** \u2014 ex-BCG, math olympiad winner, scaled two startups to millions in ARR, with international enterprise contracts at Bluco (McDonald\u2019s, Volkswagen, Dufry, etc).\n* **Arseniy (CTO)** \u2014 coding since 12yo, won school olympiads, worked on high-performance data systems at Datadog and built engineering teams from scratch at Bluco.\n\n![uploaded image](/media/?type=post&id=101239&key=user_uploads/1660276/b630a0c3-d186-4f4c-95c0-6832f7893f47)\n\n## **Our Ask**\n\nWe'd love intros to:\n\n* Engineering leaders drowning in Sentry alerts or Datadog bills\n* Startups that rolled their own observability and want to throw it away\n\n**Try it:** [superlog.sh](https://superlog.sh/)\\\n**Email:** [nicolo@superlog.sh](mailto:nicolo@superlog.sh)",
+   "state": "public",
+   "tagline": "A wizard sets up your telemetry every day. An agent investigates incidents and ships mergeable PRs.",
+   "created_at": "2026-05-12T14:37:58.734Z",
+   "company": {
+    "id": 31380,
+    "name": "Superlog",
+    "logo": "https://bookface-images.s3.amazonaws.com/small_logos/96347d910b359b8008029da5fa69b30000efd6d0.png",
+    "batch": "p2026",
+    "tags": [
+     "Developer Tools",
+     "Open Source",
+     "Kubernetes",
+     "Enterprise Software",
+     "AI"
+    ],
+    "url": "https://superlog.sh/",
+    "slug": "superlog",
+    "description": "Make software self-healing"
+   },
+   "user": {
+    "name": "Nicol\u00f2 Magnante",
+    "avatar": "https://bookface-images.s3.amazonaws.com/avatars/b8bcc3506b03fd18553c21a745fb1ca58549dc3d.jpg"
+   },
+   "total_vote_count": 69,
+   "slug": "QKt-superlog-the-self-installing-observability-tool-that-fixes-your-bugs",
+   "launch_embed_url": "https://www.ycombinator.com/launches/QKt-superlog-the-self-installing-observability-tool-that-fixes-your-bugs/upvote_embed.svg",
+   "twitter_share_url": "https://twitter.com/intent/tweet?text=Superlog+just+launched+on+%40ycombinator%27s+Launch+YC%21%0A%0ASuperlog%3A+The+self-installing+observability+tool+that+fixes+your+bugs.+Check+them+out%3A&url=https%3A%2F%2Fwww.ycombinator.com%2Flaunches%2FQKt-superlog-the-self-installing-observability-tool-that-fixes-your-bugs",
+   "sanitized_title": "Superlog: The self-installing observability tool that fixes your bugs",
+   "ycdc_launch_url": "https://www.ycombinator.com/launches/QKt-superlog-the-self-installing-observability-tool-that-fixes-your-bugs",
+   "url": "https://www.ycombinator.com/launches/QKt-superlog-the-self-installing-observability-tool-that-fixes-your-bugs",
+   "share_config": {
+    "url": "/media/?type=post&id=101239&key=user_uploads/1660276/b630a0c3-d186-4f4c-95c0-6832f7893f47"
+   },
+   "share_image": null,
+   "approved_at": null,
+   "approved_by": null,
+   "requested_publish_at": "2026-05-12T16:30:00Z"
+  }
+ ],
+ "editUrl": "https://bookface.ycombinator.com/company/31380/edit",
+ "editUserUrl": "https://bookface.ycombinator.com/edit_user_profile",
+ "createProfileUrl": "https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication&defaults%5BsignUpActive%5D=true",
+ "signedIn": false,
+ "showDirectApply": true,
+ "waasDirectoryUrl": "https://www.workatastartup.com/companies",
+ "investorSubdomain": false,
+ "userCanRequestEmails": false
+}

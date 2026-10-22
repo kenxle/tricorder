@@ -1,0 +1,180 @@
+{
+ "domain_query": "tolmo.com",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "adolfoabegg"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Fable 5 wrote a Windows kernel in 38 minutes"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tolmo",
+      ".",
+      "com"
+     ],
+     "value": "https://<em>tolmo.com</em>/blog/when-the-model-writes-the-kernel/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_adolfoabegg",
+    "story_48824006"
+   ],
+   "author": "adolfoabegg",
+   "children": [
+    48824451,
+    48824528,
+    48824785,
+    48826978,
+    48827384,
+    48827738,
+    48827763
+   ],
+   "created_at": "2026-07-07T21:23:04Z",
+   "created_at_i": 1783459384,
+   "num_comments": 8,
+   "objectID": "48824006",
+   "points": 12,
+   "story_id": 48824006,
+   "title": "Fable 5 wrote a Windows kernel in 38 minutes",
+   "updated_at": "2026-07-12T08:28:24Z",
+   "url": "https://tolmo.com/blog/when-the-model-writes-the-kernel/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "decide1000"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Fable 5 wrote a Windows kernel in 38 minutes"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tolmo",
+      ".",
+      "com"
+     ],
+     "value": "https://<em>tolmo.com</em>/blog/when-the-model-writes-the-kernel/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_decide1000",
+    "story_48674312"
+   ],
+   "author": "decide1000",
+   "children": [
+    48674406
+   ],
+   "created_at": "2026-06-25T14:49:36Z",
+   "created_at_i": 1782398976,
+   "num_comments": 1,
+   "objectID": "48674312",
+   "points": 6,
+   "story_id": 48674312,
+   "title": "Fable 5 wrote a Windows kernel in 38 minutes",
+   "updated_at": "2026-06-25T20:56:08Z",
+   "url": "https://tolmo.com/blog/when-the-model-writes-the-kernel/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ecares"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Pre-auth RCE on MikroTik: exploited before the patch, rebuilt in three hours"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tolmo",
+      ".",
+      "com"
+     ],
+     "value": "https://blog.<em>tolmo.com</em>/p/pre-auth-rce-on-mikrotik-exploited"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_ecares",
+    "story_49590412"
+   ],
+   "author": "ecares",
+   "children": [
+    49590862
+   ],
+   "created_at": "2026-09-06T20:13:37Z",
+   "created_at_i": 1788725617,
+   "num_comments": 4,
+   "objectID": "49590412",
+   "points": 4,
+   "story_id": 49590412,
+   "title": "Pre-auth RCE on MikroTik: exploited before the patch, rebuilt in three hours",
+   "updated_at": "2026-09-08T08:48:01Z",
+   "url": "https://blog.tolmo.com/p/pre-auth-rce-on-mikrotik-exploited"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "smurda"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Security checklist for AI startup CTOs"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tolmo",
+      ".",
+      "com"
+     ],
+     "value": "https://<em>tolmo.com</em>/resources/ai-cto-checklist/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_smurda",
+    "story_48672548"
+   ],
+   "author": "smurda",
+   "children": [
+    48718728
+   ],
+   "created_at": "2026-06-25T12:47:15Z",
+   "created_at_i": 1782391635,
+   "num_comments": 0,
+   "objectID": "48672548",
+   "points": 3,
+   "story_id": 48672548,
+   "title": "Security checklist for AI startup CTOs",
+   "updated_at": "2026-06-29T13:01:54Z",
+   "url": "https://tolmo.com/resources/ai-cto-checklist/"
+  }
+ ],
+ "launch_hits": []
+}

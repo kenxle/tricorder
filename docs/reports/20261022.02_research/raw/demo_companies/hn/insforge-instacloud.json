@@ -1,0 +1,446 @@
+{
+ "domain_query": "insforge.dev",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tonychang430"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "insforge",
+      ".",
+      "dev"
+     ],
+     "value": "Hi HN, We are excited to present you InsForge AI. We quit Databricks, Meta, and Amazon to build *an agent-friendly Supabase alternative*.<p>Why? Because current tools like Supabase make it painful for agents and developers:<p>1. *RLS enabled by default* \u2192 queries fail without policies<p>2. *Verbose Postgres policies* that are error-prone to write and maintain<p>3. *Secrets and auth setup* require lots of manual wiring<p>InsForge is an open source project and we provide hosted versions with API access as well. (Website: <a href=\"https://insforge.dev/\" rel=\"nofollow\">https://<em>insforge.dev</em>/</a> , Github: <a href=\"https://github.com/InsForge/InsForge\" rel=\"nofollow\">https://github.com/InsForge/InsForge</a>)<p>With InsForge, APIs ship with sane defaults via MCP servers \u2014 security rules are applied automatically so developers get safe behavior out of the box, without manual intervention. Both client and server code are fully open source.<p>For a quick start in the hosted version, login to our website and create a project. Then start connecting with your coding agent and start calling our APIs directly. You can find more details in our docs. <a href=\"https://docs.insforge.dev/quickstart\" rel=\"nofollow\">https://docs.<em>insforge.dev</em>/quickstart</a><p>This is still an early release and we\u2019d appreciate feedback from the community. What are your pain points when interacting with BaaS platforms? We\u2019ll be around in the comments to answer questions. Thanks for reading!"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: InsForge AI, Open-Source Agent Friendly Alternative to Supabase"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "insforge",
+      ".",
+      "dev"
+     ],
+     "value": "https://<em>insforge.dev</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_tonychang430",
+    "story_45449787",
+    "show_hn"
+   ],
+   "author": "tonychang430",
+   "children": [
+    45449805,
+    45449812,
+    45449833,
+    45449862,
+    45449877,
+    45449915,
+    45449918,
+    45449932,
+    45449983,
+    45449991,
+    45449998,
+    45450024,
+    45450095,
+    45450184,
+    45450437,
+    45450559,
+    45450936,
+    45451028,
+    45452379
+   ],
+   "created_at": "2025-10-02T14:07:18Z",
+   "created_at_i": 1759414038,
+   "num_comments": 19,
+   "objectID": "45449787",
+   "points": 15,
+   "story_id": 45449787,
+   "story_text": "Hi HN, We are excited to present you InsForge AI. We quit Databricks, Meta, and Amazon to build *an agent-friendly Supabase alternative*.<p>Why? Because current tools like Supabase make it painful for agents and developers:<p>1. *RLS enabled by default* \u2192 queries fail without policies<p>2. *Verbose Postgres policies* that are error-prone to write and maintain<p>3. *Secrets and auth setup* require lots of manual wiring<p>InsForge is an open source project and we provide hosted versions with API access as well. (Website: <a href=\"https:&#x2F;&#x2F;insforge.dev&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;insforge.dev&#x2F;</a> , Github: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;InsForge&#x2F;InsForge\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;InsForge&#x2F;InsForge</a>)<p>With InsForge, APIs ship with sane defaults via MCP servers \u2014 security rules are applied automatically so developers get safe behavior out of the box, without manual intervention. Both client and server code are fully open source.<p>For a quick start in the hosted version, login to our website and create a project. Then start connecting with your coding agent and start calling our APIs directly. You can find more details in our docs. <a href=\"https:&#x2F;&#x2F;docs.insforge.dev&#x2F;quickstart\" rel=\"nofollow\">https:&#x2F;&#x2F;docs.insforge.dev&#x2F;quickstart</a><p>This is still an early release and we\u2019d appreciate feedback from the community. What are your pain points when interacting with BaaS platforms? We\u2019ll be around in the comments to answer questions. Thanks for reading!",
+   "title": "Show HN: InsForge AI, Open-Source Agent Friendly Alternative to Supabase",
+   "updated_at": "2026-03-05T22:48:38Z",
+   "url": "https://insforge.dev/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ddmdd"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "insforge",
+      ".",
+      "dev"
+     ],
+     "value": "Hey HN, I\u2019m Hang. Today I\u2019m open-sourcing InsForge, a context aware backend for AI coding agents.<p>When using agents like Cursor or Claude to build applications, they often assume what the backend looks like instead of inspecting it. Without access to the actual backend state, they fall back on outdated information, which leads to concrete issues. For example:<p>1. Storage, edge functions, and database logic are closely connected. Without understanding how these parts interact, existing setups get overwritten and important flows break.\n2. Database migrations conflict with foreign keys or miss functions because the agent never inspects the live schema.\n3. Recreating tables or adding columns that already exist, which leads to conflicts and failed deploys.<p>These problems are not about the agent\u2019s ability to code. They happen because there\u2019s no structured way for the agent to inspect and understand the actual backend before acting.<p>To address this, I built InsForge, which exposes the backend in a structured way and gives the agent direct control:<p>1. Introspection endpoints for schema, relations, functions, triggers, policies, routes, storage, roles, documentation, logs and events\n2. Control endpoints for operations usually done through CLI, dashboards or SQL editors<p>InsForge is a full backend platform that includes:<p>- Postgres\n- Authentication\n- Storage\n- Edge functions\n- Built in AI-model endpoints (via OpenRouter)<p>On top of this, it exposes structured backend metadata and control capabilities through an MCP server and tools, providing a structured, self-describing interface for agents to inspect schemas, policies, triggers, and docs, and interact with the backend.<p>It\u2019s open source and can be self hosted (<a href=\"https://github.com/InsForge/InsForge\" rel=\"nofollow\">https://github.com/InsForge/InsForge</a>) or try our cloud service at (<a href=\"https://insforge.dev/\" rel=\"nofollow\">https://<em>insforge.dev</em>/</a>).<p>We love feedback!"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: A context aware backend for AI coding agents"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "insforge",
+      ".",
+      "dev"
+     ],
+     "value": "https://<em>insforge.dev</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_ddmdd",
+    "story_45528161",
+    "show_hn"
+   ],
+   "author": "ddmdd",
+   "children": [
+    45528371
+   ],
+   "created_at": "2025-10-09T14:25:29Z",
+   "created_at_i": 1760019929,
+   "num_comments": 1,
+   "objectID": "45528161",
+   "points": 10,
+   "story_id": 45528161,
+   "story_text": "Hey HN, I\u2019m Hang. Today I\u2019m open-sourcing InsForge, a context aware backend for AI coding agents.<p>When using agents like Cursor or Claude to build applications, they often assume what the backend looks like instead of inspecting it. Without access to the actual backend state, they fall back on outdated information, which leads to concrete issues. For example:<p>1. Storage, edge functions, and database logic are closely connected. Without understanding how these parts interact, existing setups get overwritten and important flows break.\n2. Database migrations conflict with foreign keys or miss functions because the agent never inspects the live schema.\n3. Recreating tables or adding columns that already exist, which leads to conflicts and failed deploys.<p>These problems are not about the agent\u2019s ability to code. They happen because there\u2019s no structured way for the agent to inspect and understand the actual backend before acting.<p>To address this, I built InsForge, which exposes the backend in a structured way and gives the agent direct control:<p>1. Introspection endpoints for schema, relations, functions, triggers, policies, routes, storage, roles, documentation, logs and events\n2. Control endpoints for operations usually done through CLI, dashboards or SQL editors<p>InsForge is a full backend platform that includes:<p>- Postgres\n- Authentication\n- Storage\n- Edge functions\n- Built in AI-model endpoints (via OpenRouter)<p>On top of this, it exposes structured backend metadata and control capabilities through an MCP server and tools, providing a structured, self-describing interface for agents to inspect schemas, policies, triggers, and docs, and interact with the backend.<p>It\u2019s open source and can be self hosted (<a href=\"https:&#x2F;&#x2F;github.com&#x2F;InsForge&#x2F;InsForge\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;InsForge&#x2F;InsForge</a>) or try our cloud service at (<a href=\"https:&#x2F;&#x2F;insforge.dev&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;insforge.dev&#x2F;</a>).<p>We love feedback!",
+   "title": "Show HN: A context aware backend for AI coding agents",
+   "updated_at": "2026-03-05T22:48:46Z",
+   "url": "https://insforge.dev/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ddmdd"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "InsForge \u2013 An open source backend for AI coding agents"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "insforge",
+      ".",
+      "dev"
+     ],
+     "value": "https://<em>insforge.dev</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_ddmdd",
+    "story_45291644"
+   ],
+   "author": "ddmdd",
+   "children": [
+    45291709,
+    45292038
+   ],
+   "created_at": "2025-09-18T16:27:54Z",
+   "created_at_i": 1758212874,
+   "num_comments": 2,
+   "objectID": "45291644",
+   "points": 7,
+   "story_id": 45291644,
+   "title": "InsForge \u2013 An open source backend for AI coding agents",
+   "updated_at": "2026-03-05T22:44:10Z",
+   "url": "https://insforge.dev/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tonychang430"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "insforge",
+      ".",
+      "dev"
+     ],
+     "value": "We built InsForge because we wanted to use pure prompts to build a production-grade app faster. In practice, AI isn\u2019t reliable enough when generating code or configuring backend pieces like schema, RLS, auth, or functions. Postgres MCP and Supabase MCP are a good starting point, but they felt more like API wrappers for agents than something designed to guide AI safely through backend tasks.<p>So we built our own MCP server on top of Postgres and added a set of context-engineering tools to make prompt-driven workflows more predictable. It gradually turned into a Postgres-based BaaS.<p>Key features:<p>1. Authentication with prebuilt UI components<p>2. Postgres database with typed SDK<p>3. Serverless functions with a secret manager<p>4. S3-compatible file storage<p>5. AI model integration with a unified inference API and simple GUI<p>6. MCP server with context-engineering endpoints (`fetch-docs`, `get-backend-metadata`, `get-table-schema`, etc.)<p>We're still early (4 months in). Some parts are rough, but we\u2019re shipping daily and improving quickly :)<p>[1] Launch blog: <a href=\"https://insforge.dev/blog/insforge-launch\" rel=\"nofollow\">https://<em>insforge.dev</em>/blog/insforge-launch</a><p>[2] Open-source repo (self-hosting): \n<a href=\"https://github.com/InsForge/InsForge\" rel=\"nofollow\">https://github.com/InsForge/InsForge</a><p>[3] Benchmark: <a href=\"https://github.com/InsForge/mcpmark\" rel=\"nofollow\">https://github.com/InsForge/mcpmark</a><p>[4] Website (cloud hosting): <a href=\"https://insforge.dev/\" rel=\"nofollow\">https://<em>insforge.dev</em>/</a><p>[5] Our article on context engineering: <a href=\"https://insforge.dev/blog/why-context-is-everything-in-ai-coding\" rel=\"nofollow\">https://<em>insforge.dev</em>/blog/why-context-is-everything-in-ai-co...</a><p>[6] Public roadmap: <a href=\"https://feedback.insforge.dev/roadmap\" rel=\"nofollow\">https://feedback.<em>insforge.dev</em>/roadmap</a>"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: InsForge \u2013 A Postgres BaaS built for prompt-driven development"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "insforge",
+      ".",
+      "dev"
+     ],
+     "value": "https://<em>insforge.dev</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_tonychang430",
+    "story_45968265",
+    "show_hn"
+   ],
+   "author": "tonychang430",
+   "created_at": "2025-11-18T16:20:52Z",
+   "created_at_i": 1763482852,
+   "num_comments": 0,
+   "objectID": "45968265",
+   "points": 7,
+   "story_id": 45968265,
+   "story_text": "We built InsForge because we wanted to use pure prompts to build a production-grade app faster. In practice, AI isn\u2019t reliable enough when generating code or configuring backend pieces like schema, RLS, auth, or functions. Postgres MCP and Supabase MCP are a good starting point, but they felt more like API wrappers for agents than something designed to guide AI safely through backend tasks.<p>So we built our own MCP server on top of Postgres and added a set of context-engineering tools to make prompt-driven workflows more predictable. It gradually turned into a Postgres-based BaaS.<p>Key features:<p>1. Authentication with prebuilt UI components<p>2. Postgres database with typed SDK<p>3. Serverless functions with a secret manager<p>4. S3-compatible file storage<p>5. AI model integration with a unified inference API and simple GUI<p>6. MCP server with context-engineering endpoints (`fetch-docs`, `get-backend-metadata`, `get-table-schema`, etc.)<p>We&#x27;re still early (4 months in). Some parts are rough, but we\u2019re shipping daily and improving quickly :)<p>[1] Launch blog: <a href=\"https:&#x2F;&#x2F;insforge.dev&#x2F;blog&#x2F;insforge-launch\" rel=\"nofollow\">https:&#x2F;&#x2F;insforge.dev&#x2F;blog&#x2F;insforge-launch</a><p>[2] Open-source repo (self-hosting): \n<a href=\"https:&#x2F;&#x2F;github.com&#x2F;InsForge&#x2F;InsForge\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;InsForge&#x2F;InsForge</a><p>[3] Benchmark: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;InsForge&#x2F;mcpmark\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;InsForge&#x2F;mcpmark</a><p>[4] Website (cloud hosting): <a href=\"https:&#x2F;&#x2F;insforge.dev&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;insforge.dev&#x2F;</a><p>[5] Our article on context engineering: <a href=\"https:&#x2F;&#x2F;insforge.dev&#x2F;blog&#x2F;why-context-is-everything-in-ai-coding\" rel=\"nofollow\">https:&#x2F;&#x2F;insforge.dev&#x2F;blog&#x2F;why-context-is-everything-in-ai-co...</a><p>[6] Public roadmap: <a href=\"https:&#x2F;&#x2F;feedback.insforge.dev&#x2F;roadmap\" rel=\"nofollow\">https:&#x2F;&#x2F;feedback.insforge.dev&#x2F;roadmap</a>",
+   "title": "Show HN: InsForge \u2013 A Postgres BaaS built for prompt-driven development",
+   "updated_at": "2026-03-05T23:02:14Z",
+   "url": "https://insforge.dev/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Arindam1729"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "We ran 21 MCP database tasks on Claude Sonnet 4.6"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "insforge",
+      ".",
+      "dev"
+     ],
+     "value": "https://<em>insforge.dev</em>/blog/mcpmark-benchmark-results-v2"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_Arindam1729",
+    "story_47309803"
+   ],
+   "author": "Arindam1729",
+   "created_at": "2026-03-09T14:44:41Z",
+   "created_at_i": 1773067481,
+   "num_comments": 0,
+   "objectID": "47309803",
+   "points": 2,
+   "story_id": 47309803,
+   "title": "We ran 21 MCP database tasks on Claude Sonnet 4.6",
+   "updated_at": "2026-03-09T14:49:26Z",
+   "url": "https://insforge.dev/blog/mcpmark-benchmark-results-v2"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tonychang430"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "insforge",
+      ".",
+      "dev"
+     ],
+     "value": "Hi HN, We are excited to present you InsForge AI. It is an open source project and we provide hosted versions with APIaccess as well. (Website: <a href=\"https://insforge.dev/\" rel=\"nofollow\">https://<em>insforge.dev</em>/</a> , Github: <a href=\"https://github.com/InsForge/InsForge\" rel=\"nofollow\">https://github.com/InsForge/InsForge</a>)<p>We\u2019re addressing a couple of key problems when using Supabase.<p>1. RLS enabled by default \u2192 queries fail without policies<p>2. Writing/maintaining Postgres policies is verbose and error-prone<p>3. Secrets and auth integrations require lots of manual setup<p>With InsForge, APIs ship with sane defaults via MCP servers \u2014 security rules are applied automatically so developers get safe behavior out of the box, without manual intervention. Both client and server code are fully open source.<p>For a quick start in the hosted version, login to our website and create a project. Then start connecting with your coding agent and start calling our APIs directly. You can find more details in our docs. <a href=\"https://docs.insforge.dev/quickstart\" rel=\"nofollow\">https://docs.<em>insforge.dev</em>/quickstart</a><p>This is still an early release and we\u2019d appreciate feedback from the community. What are your pain points when interacting with BaaS platforms?\nWe\u2019ll be around in the comments to answer questions. Thanks for reading!"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: InsForge AI, Open-Source Alternative to Supabase (YC S20)"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "insforge",
+      ".",
+      "dev"
+     ],
+     "value": "https://<em>insforge.dev</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_tonychang430",
+    "story_45374184",
+    "show_hn"
+   ],
+   "author": "tonychang430",
+   "created_at": "2025-09-25T15:42:13Z",
+   "created_at_i": 1758814933,
+   "num_comments": 0,
+   "objectID": "45374184",
+   "points": 2,
+   "story_id": 45374184,
+   "story_text": "Hi HN, We are excited to present you InsForge AI. It is an open source project and we provide hosted versions with APIaccess as well. (Website: <a href=\"https:&#x2F;&#x2F;insforge.dev&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;insforge.dev&#x2F;</a> , Github: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;InsForge&#x2F;InsForge\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;InsForge&#x2F;InsForge</a>)<p>We\u2019re addressing a couple of key problems when using Supabase.<p>1. RLS enabled by default \u2192 queries fail without policies<p>2. Writing&#x2F;maintaining Postgres policies is verbose and error-prone<p>3. Secrets and auth integrations require lots of manual setup<p>With InsForge, APIs ship with sane defaults via MCP servers \u2014 security rules are applied automatically so developers get safe behavior out of the box, without manual intervention. Both client and server code are fully open source.<p>For a quick start in the hosted version, login to our website and create a project. Then start connecting with your coding agent and start calling our APIs directly. You can find more details in our docs. <a href=\"https:&#x2F;&#x2F;docs.insforge.dev&#x2F;quickstart\" rel=\"nofollow\">https:&#x2F;&#x2F;docs.insforge.dev&#x2F;quickstart</a><p>This is still an early release and we\u2019d appreciate feedback from the community. What are your pain points when interacting with BaaS platforms?\nWe\u2019ll be around in the comments to answer questions. Thanks for reading!",
+   "title": "Show HN: InsForge AI, Open-Source Alternative to Supabase (YC S20)",
+   "updated_at": "2026-03-05T22:44:16Z",
+   "url": "https://insforge.dev/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "astro_09"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "WebMCP: A Browser-Native Execution Model for AI Agents"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "insforge",
+      ".",
+      "dev"
+     ],
+     "value": "https://<em>insforge.dev</em>/blog/webmcp-browser-native-execution-model-for-ai-agents"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_astro_09",
+    "story_47108582"
+   ],
+   "author": "astro_09",
+   "created_at": "2026-02-22T05:49:04Z",
+   "created_at_i": 1771739344,
+   "num_comments": 0,
+   "objectID": "47108582",
+   "points": 1,
+   "story_id": 47108582,
+   "title": "WebMCP: A Browser-Native Execution Model for AI Agents",
+   "updated_at": "2026-03-05T23:34:41Z",
+   "url": "https://insforge.dev/blog/webmcp-browser-native-execution-model-for-ai-agents"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "honoyomu"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "insforge",
+      ".",
+      "dev"
+     ],
+     "value": "Hey HN, we (Hang and Lyu) built InsForge (<a href=\"https://insforge.dev\" rel=\"nofollow\">https://<em>insforge.dev</em></a>) to solve the biggest roadblock for people building with AI coding tools - adding backend functionality to their projects.<p>The problem is simple: AI tools can help non-developers build impressive frontends, but everyone gets stuck when trying to handle backend needs. Most Backend-as-a-Service solutions are built for traditional developers, not for people using AI to code.\nWe believe the definition of &quot;developer&quot; is shifting. LLM-native users are the new developers, but existing tools haven't caught up. We watched too many good projects die at the &quot;how do I add a backend?&quot; stage.<p>InsForge adds backend capabilities to AI-generated prototypes without requiring any backend knowledge. Our demo shows how easily you can add authentication: <a href=\"https://youtu.be/gbzWUI1w12U?si=cKrUjIsCUZWfxRup\" rel=\"nofollow\">https://youtu.be/gbzWUI1w12U?si=cKrUjIsCUZWfxRup</a><p>How it works:\n - Enter your redirect URL\n - Copy our integration prompt\n - Paste it in your AI coding tool (ChatGPT, Claude, Cursor, etc.)\n - Accept the suggestions<p>That's it - 30 seconds to add backend functionality. We handle the infrastructure while your AI tool generates the necessary frontend code.\nWe also provide:\n - A basic database to store user information\n - A user management dashboard to view and manage your users\n - Secure authentication out of the box<p>Would love for you to try it out (<a href=\"https://insforge.dev\" rel=\"nofollow\">https://<em>insforge.dev</em></a>) and share your thoughts!"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: InsForge \u2013 Add User Auth to AI-Built Apps in 30 Seconds"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "insforge",
+      ".",
+      "dev"
+     ],
+     "value": "https://<em>insforge.dev</em>"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_honoyomu",
+    "story_43111392",
+    "show_hn"
+   ],
+   "author": "honoyomu",
+   "created_at": "2025-02-20T05:22:02Z",
+   "created_at_i": 1740028922,
+   "num_comments": 0,
+   "objectID": "43111392",
+   "points": 1,
+   "story_id": 43111392,
+   "story_text": "Hey HN, we (Hang and Lyu) built InsForge (<a href=\"https:&#x2F;&#x2F;insforge.dev\" rel=\"nofollow\">https:&#x2F;&#x2F;insforge.dev</a>) to solve the biggest roadblock for people building with AI coding tools - adding backend functionality to their projects.<p>The problem is simple: AI tools can help non-developers build impressive frontends, but everyone gets stuck when trying to handle backend needs. Most Backend-as-a-Service solutions are built for traditional developers, not for people using AI to code.\nWe believe the definition of &quot;developer&quot; is shifting. LLM-native users are the new developers, but existing tools haven&#x27;t caught up. We watched too many good projects die at the &quot;how do I add a backend?&quot; stage.<p>InsForge adds backend capabilities to AI-generated prototypes without requiring any backend knowledge. Our demo shows how easily you can add authentication: <a href=\"https:&#x2F;&#x2F;youtu.be&#x2F;gbzWUI1w12U?si=cKrUjIsCUZWfxRup\" rel=\"nofollow\">https:&#x2F;&#x2F;youtu.be&#x2F;gbzWUI1w12U?si=cKrUjIsCUZWfxRup</a><p>How it works:\n - Enter your redirect URL\n - Copy our integration prompt\n - Paste it in your AI coding tool (ChatGPT, Claude, Cursor, etc.)\n - Accept the suggestions<p>That&#x27;s it - 30 seconds to add backend functionality. We handle the infrastructure while your AI tool generates the necessary frontend code.\nWe also provide:\n - A basic database to store user information\n - A user management dashboard to view and manage your users\n - Secure authentication out of the box<p>Would love for you to try it out (<a href=\"https:&#x2F;&#x2F;insforge.dev\" rel=\"nofollow\">https:&#x2F;&#x2F;insforge.dev</a>) and share your thoughts!",
+   "title": "Show HN: InsForge \u2013 Add User Auth to AI-Built Apps in 30 Seconds",
+   "updated_at": "2025-02-21T14:05:02Z",
+   "url": "https://insforge.dev"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "honoyomu"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: InsForge \u2013 No-code back end for AI-built apps"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "insforge",
+      ".",
+      "dev"
+     ],
+     "value": "https://<em>insforge.dev</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_honoyomu",
+    "story_43086911",
+    "show_hn"
+   ],
+   "author": "honoyomu",
+   "created_at": "2025-02-18T07:22:45Z",
+   "created_at_i": 1739863365,
+   "num_comments": 0,
+   "objectID": "43086911",
+   "points": 1,
+   "story_id": 43086911,
+   "title": "Show HN: InsForge \u2013 No-code back end for AI-built apps",
+   "updated_at": "2025-02-18T07:23:17Z",
+   "url": "https://insforge.dev/"
+  }
+ ],
+ "launch_hits": []
+}

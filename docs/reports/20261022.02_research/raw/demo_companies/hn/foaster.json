@@ -1,0 +1,84 @@
+{
+ "domain_query": "foaster.ai",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mischa_u"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Probing LLM Social Intelligence via Werewolf"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "foaster",
+      ".",
+      "ai"
+     ],
+     "value": "https://werewolf.<em>foaster.ai</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_mischa_u",
+    "story_45090966"
+   ],
+   "author": "mischa_u",
+   "created_at": "2025-09-01T09:12:35Z",
+   "created_at_i": 1756717955,
+   "num_comments": 0,
+   "objectID": "45090966",
+   "points": 3,
+   "story_id": 45090966,
+   "title": "Probing LLM Social Intelligence via Werewolf",
+   "updated_at": "2026-03-05T22:35:51Z",
+   "url": "https://werewolf.foaster.ai/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "surprisetalk"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The Gap Between Machines and Citizens"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "foaster",
+      ".",
+      "ai"
+     ],
+     "value": "https://llm-politics.<em>foaster.ai</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_surprisetalk",
+    "story_46906052"
+   ],
+   "author": "surprisetalk",
+   "created_at": "2026-02-05T22:06:23Z",
+   "created_at_i": 1770329183,
+   "num_comments": 0,
+   "objectID": "46906052",
+   "points": 1,
+   "story_id": 46906052,
+   "title": "The Gap Between Machines and Citizens",
+   "updated_at": "2026-03-05T23:30:43Z",
+   "url": "https://llm-politics.foaster.ai/"
+  }
+ ],
+ "launch_hits": []
+}

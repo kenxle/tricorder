@@ -1,0 +1,134 @@
+{
+ "domain_query": "kugelaudio.com",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "kajokr"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Kugel 3.5 beats the leading TTS models on 8 of 9 tests we ran"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "kugelaudio",
+      ".",
+      "com"
+     ],
+     "value": "https://www.<em>kugelaudio.com</em>/en/kugel-3-5"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_kajokr",
+    "story_50071074"
+   ],
+   "author": "kajokr",
+   "children": [
+    50071075,
+    50083764
+   ],
+   "created_at": "2026-10-13T13:06:06Z",
+   "created_at_i": 1791896766,
+   "num_comments": 1,
+   "objectID": "50071074",
+   "points": 2,
+   "story_id": 50071074,
+   "title": "Kugel 3.5 beats the leading TTS models on 8 of 9 tests we ran",
+   "updated_at": "2026-10-14T07:31:13Z",
+   "url": "https://www.kugelaudio.com/en/kugel-3-5"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "kajokr"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Clarity, a streaming model for speech enhancement and target speaker extraction"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "kugelaudio",
+      ".",
+      "com"
+     ],
+     "value": "https://www.<em>kugelaudio.com</em>/en/clarity"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_kajokr",
+    "story_49907930"
+   ],
+   "author": "kajokr",
+   "children": [
+    49907931
+   ],
+   "created_at": "2026-09-30T12:29:13Z",
+   "created_at_i": 1790771353,
+   "num_comments": 0,
+   "objectID": "49907930",
+   "points": 2,
+   "story_id": 49907930,
+   "title": "Clarity, a streaming model for speech enhancement and target speaker extraction",
+   "updated_at": "2026-09-30T16:03:43Z",
+   "url": "https://www.kugelaudio.com/en/clarity"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "kajokr"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "KugelAudio (YC P26) \u2013 Voice models that don't get stuck in spelling loops"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "kugelaudio",
+      ".",
+      "com"
+     ],
+     "value": "https://www.<em>kugelaudio.com</em>/en/kugel-ear-1"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_kajokr",
+    "story_50179538"
+   ],
+   "author": "kajokr",
+   "children": [
+    50179539,
+    50184004
+   ],
+   "created_at": "2026-10-21T12:08:34Z",
+   "created_at_i": 1792584514,
+   "num_comments": 1,
+   "objectID": "50179538",
+   "points": 1,
+   "story_id": 50179538,
+   "title": "KugelAudio (YC P26) \u2013 Voice models that don't get stuck in spelling loops",
+   "updated_at": "2026-10-21T16:51:49Z",
+   "url": "https://www.kugelaudio.com/en/kugel-ear-1"
+  }
+ ],
+ "launch_hits": []
+}

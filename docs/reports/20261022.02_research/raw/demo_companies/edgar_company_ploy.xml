@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+  <feed xmlns="http://www.w3.org/2005/Atom">
+    <author>
+      <email>webmaster@sec.gov</email>
+      <name>Webmaster</name>
+    </author>
+    <company-info>
+      <addresses>
+        <address type="mailing">
+          <city>SAN FRANCISCO</city>
+          <state>CA</state>
+          <street1>2 EMBARCADERO CENTER, 8TH FLOOR</street1>
+          <zip>94111</zip>
+        </address>
+        <address type="business">
+          <city>SAN FRANCISCO</city>
+          <phone>(408) 914-8790</phone>
+          <state>CA</state>
+          <street1>2 EMBARCADERO CENTER, 8TH FLOOR</street1>
+          <zip>94111</zip>
+        </address>
+      </addresses>
+      <cik>0002136625</cik>
+      <cik-href>https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0002136625&amp;owner=include&amp;count=40</cik-href>
+      <conformed-name>Ploy, Inc.</conformed-name>
+      <fiscal-year-end>1231</fiscal-year-end>
+      <state-location>CA</state-location>
+      <state-location-href>https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;State=CA&amp;owner=include&amp;count=40</state-location-href>
+      <state-of-incorporation>DE</state-of-incorporation>
+    </company-info>
+    <entry>
+      <category label="form type" scheme="https://www.sec.gov/" term="D" />
+      <content type="text/xml">
+        <accession-number>0002136625-26-000001</accession-number>
+        <act>33</act>
+        <file-number>021-588456</file-number>
+        <file-number-href>https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=021-588456&amp;owner=include&amp;count=40</file-number-href>
+        <filing-date>2026-06-24</filing-date>
+        <filing-href>https://www.sec.gov/Archives/edgar/data/2136625/000213662526000001/0002136625-26-000001-index.htm</filing-href>
+        <filing-type>D</filing-type>
+        <film-number>261115433</film-number>
+        <form-name>Notice of Exempt Offering of Securities</form-name>
+        <items-desc>item 06b</items-desc>
+        <size>6 KB</size>
+      </content>
+      <id>urn:tag:sec.gov,2008:accession-number=0002136625-26-000001</id>
+      <link href="https://www.sec.gov/Archives/edgar/data/2136625/000213662526000001/0002136625-26-000001-index.htm" rel="alternate" type="text/html" />
+      <summary type="html"> &lt;b&gt;Filed:&lt;/b&gt; 2026-06-24 &lt;b&gt;AccNo:&lt;/b&gt; 0002136625-26-000001 &lt;b&gt;Size:&lt;/b&gt; 6 KB</summary>
+      <title>D  - Notice of Exempt Offering of Securities</title>
+      <updated>2026-06-24T14:58:51-04:00</updated>
+    </entry>
+    <id>https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0002136625</id>
+    <link href="https://www.sec.gov/cgi-bin/browse-edgar?company=ploy&amp;type=D&amp;owner=include&amp;action=getcompany&amp;start=0&amp;count=40" rel="alternate" type="text/html" />
+    <link href="https://www.sec.gov/cgi-bin/browse-edgar?company=ploy&amp;type=D&amp;owner=include&amp;action=getcompany&amp;start=0&amp;count=40&amp;output=atom" rel="self" type="application/atom+xml" />
+    <title>Ploy, Inc.  (0002136625)</title>
+    <updated>2026-10-22T14:51:41-04:00</updated>
+  </feed>

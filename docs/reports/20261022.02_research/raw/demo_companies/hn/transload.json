@@ -1,0 +1,66 @@
+{
+ "domain_query": "transload.ai",
+ "domain_hits": [],
+ "launch_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "nils_spatial"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "hn",
+      "transload"
+     ],
+     "value": "Hi <em>HN</em> \u2014 we\u2019re Julius, Jago, and Nils, and we\u2019re building <em>transload</em> (<a href=\"https://transload.io\">https://<em>transload</em>.io</a>).<p><em>transload</em> helps LTL trucking companies measure freight dimensions using the security cameras already installed in their terminals. Instead of sending shipments through a dedicated dimensioning station, we measure them automatically as they move through the normal dock workflow.<p>We\u2019ve put together a small <em>HN</em>-specific demo site here: <a href=\"https://hn.transload.io\">https://<em>hn</em>.<em>transload</em>.io</a><p>In LTL trucking, dimensions matter because they affect pricing, freight classification, and trailer utilization. If a shipment is larger than the shipper reported, the carrier undercharges for it while still giving up the same amount of trailer space. The obvious fix is to measure every shipment, but thats impossible in a busy freight terminal. Dedicated dimensioning systems work for freight that passes through them, but they add forklift travel, create dock congestion, and change the normal flow of work. In practice, many terminals only measure a sample of their shipments.<p>Jago grew up close to this industry through his family\u2019s LTL trucking and cross-docking business. We did not start out building freight dimensioning. Our first idea was an AI system for optimizing forklift routes inside cross-dock terminals. After spending time with customers and talking to more than 50 trucking companies, we realized that forklift routing was not the pain people kept bringing up. Freight dimensions were.<p>At the same time, we saw that spatial AI was advancing quickly. Monocular metric depth estimation has become dramatically better, making it possible to recover accurate 3D structure from ordinary camera footage without expensive LiDAR sensors. MapAnything (<a href=\"https://github.com/facebookresearch/map-anything\" rel=\"nofollow\">https://github.com/facebookresearch/map-anything</a>) and MoGe (<a href=\"https://github.com/microsoft/moge\" rel=\"nofollow\">https://github.com/microsoft/moge</a>) are two examples.<p>Freight terminals also have helpful structure: fixed cameras, repeated workflows, barcode scan timestamps, and known layouts. Nearly every warehouse already has CCTV. That led us to a simple question: what if we could measure freight automatically using the existing security cameras, entirely in the background? That would allow carriers to measure every shipment without changing the dock workflow. Thats what we have built with <em>transload</em>.<p>Our system has two main steps: connect a barcode scan to the right object in the video, then estimate that object\u2019s dimensions in real-world units.<p>Dock workers already scan freight as part of the normal workflow. Each scan gives us a timestamp and a handling-unit ID. Around that timestamp, we analyze the video to infer which worker scanned and which shipment they scanned. We train our own model that reasons in 3D over cues like gaze, body orientation, and movement.<p>That association step is critical. A frame can contain dozens of pallets, several workers, forklifts, and partially hidden freight. If we attach the scan to the wrong object, the measurement is useless.<p>Once we know the target shipment, we segment it and estimate a metric 3D bounding box from the monocular camera view. After the box is fitted, the dimensions are straightforward: length, width, height, and volume come directly from it.<p>The hard part is precisely fitting that bounding box from one ordinary security camera. A single 2D image does not directly tell you object shape or scale, and many different 3D boxes can explain similar-looking image evidence. We use the object mask, visible edges, floor contact, camera geometry, and constraints from the terminal to find the 3D box that best matches the scene.<p>We are currently working with several LTL carriers. For one customer, roughly 10% of checked shipments had dimension errors. The first use case is revenue recovery: identify under-dimensioned shipments, attach visual evidence, and help carriers correct the billing or classification. Longer term, the same data helps carriers optimize trailer utilization.<p>LTL freight is an odd place to be doing 3D computer vision, and we learn something new every week. If you\u2019ve worked on monocular reconstruction, 3D object detection, warehouse perception, or messy real-world CV, we\u2019d love your take. Questions about freight, LTL terminals, or the technical approach are very welcome too."
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "launch",
+      "hn",
+      "transload"
+     ],
+     "value": "<em>Launch</em> <em>HN</em>: <em>Transload</em> (YC P26) \u2013 Measuring freight items with CCTV"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_nils_spatial",
+    "story_48463273",
+    "launch_hn"
+   ],
+   "author": "nils_spatial",
+   "children": [
+    48463456,
+    48464131,
+    48464392,
+    48468187,
+    48469096,
+    48470086,
+    48470455,
+    48470849,
+    48470988,
+    48473682,
+    48481586,
+    48484545,
+    48489180,
+    48631249
+   ],
+   "created_at": "2026-06-09T16:28:28Z",
+   "created_at_i": 1781022508,
+   "num_comments": 19,
+   "objectID": "48463273",
+   "points": 56,
+   "story_id": 48463273,
+   "story_text": "Hi HN \u2014 we\u2019re Julius, Jago, and Nils, and we\u2019re building transload (<a href=\"https:&#x2F;&#x2F;transload.io\">https:&#x2F;&#x2F;transload.io</a>).<p>transload helps LTL trucking companies measure freight dimensions using the security cameras already installed in their terminals. Instead of sending shipments through a dedicated dimensioning station, we measure them automatically as they move through the normal dock workflow.<p>We\u2019ve put together a small HN-specific demo site here: <a href=\"https:&#x2F;&#x2F;hn.transload.io\">https:&#x2F;&#x2F;hn.transload.io</a><p>In LTL trucking, dimensions matter because they affect pricing, freight classification, and trailer utilization. If a shipment is larger than the shipper reported, the carrier undercharges for it while still giving up the same amount of trailer space. The obvious fix is to measure every shipment, but thats impossible in a busy freight terminal. Dedicated dimensioning systems work for freight that passes through them, but they add forklift travel, create dock congestion, and change the normal flow of work. In practice, many terminals only measure a sample of their shipments.<p>Jago grew up close to this industry through his family\u2019s LTL trucking and cross-docking business. We did not start out building freight dimensioning. Our first idea was an AI system for optimizing forklift routes inside cross-dock terminals. After spending time with customers and talking to more than 50 trucking companies, we realized that forklift routing was not the pain people kept bringing up. Freight dimensions were.<p>At the same time, we saw that spatial AI was advancing quickly. Monocular metric depth estimation has become dramatically better, making it possible to recover accurate 3D structure from ordinary camera footage without expensive LiDAR sensors. MapAnything (<a href=\"https:&#x2F;&#x2F;github.com&#x2F;facebookresearch&#x2F;map-anything\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;facebookresearch&#x2F;map-anything</a>) and MoGe (<a href=\"https:&#x2F;&#x2F;github.com&#x2F;microsoft&#x2F;moge\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;microsoft&#x2F;moge</a>) are two examples.<p>Freight terminals also have helpful structure: fixed cameras, repeated workflows, barcode scan timestamps, and known layouts. Nearly every warehouse already has CCTV. That led us to a simple question: what if we could measure freight automatically using the existing security cameras, entirely in the background? That would allow carriers to measure every shipment without changing the dock workflow. Thats what we have built with transload.<p>Our system has two main steps: connect a barcode scan to the right object in the video, then estimate that object\u2019s dimensions in real-world units.<p>Dock workers already scan freight as part of the normal workflow. Each scan gives us a timestamp and a handling-unit ID. Around that timestamp, we analyze the video to infer which worker scanned and which shipment they scanned. We train our own model that reasons in 3D over cues like gaze, body orientation, and movement.<p>That association step is critical. A frame can contain dozens of pallets, several workers, forklifts, and partially hidden freight. If we attach the scan to the wrong object, the measurement is useless.<p>Once we know the target shipment, we segment it and estimate a metric 3D bounding box from the monocular camera view. After the box is fitted, the dimensions are straightforward: length, width, height, and volume come directly from it.<p>The hard part is precisely fitting that bounding box from one ordinary security camera. A single 2D image does not directly tell you object shape or scale, and many different 3D boxes can explain similar-looking image evidence. We use the object mask, visible edges, floor contact, camera geometry, and constraints from the terminal to find the 3D box that best matches the scene.<p>We are currently working with several LTL carriers. For one customer, roughly 10% of checked shipments had dimension errors. The first use case is revenue recovery: identify under-dimensioned shipments, attach visual evidence, and help carriers correct the billing or classification. Longer term, the same data helps carriers optimize trailer utilization.<p>LTL freight is an odd place to be doing 3D computer vision, and we learn something new every week. If you\u2019ve worked on monocular reconstruction, 3D object detection, warehouse perception, or messy real-world CV, we\u2019d love your take. Questions about freight, LTL terminals, or the technical approach are very welcome too.",
+   "title": "Launch HN: Transload (YC P26) \u2013 Measuring freight items with CCTV",
+   "updated_at": "2026-07-16T19:01:25Z"
+  }
+ ]
+}

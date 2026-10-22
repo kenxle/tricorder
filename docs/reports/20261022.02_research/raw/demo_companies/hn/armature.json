@@ -1,0 +1,158 @@
+{
+ "domain_query": "armature.tech",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "screm"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Which tools do Claude, Codex and Cursor choose? We measured 17k runs to find out"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "armature",
+      ".",
+      "tech"
+     ],
+     "value": "https://<em>armature.tech</em>/blog/which-tools-coding-agents-install"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_screm",
+    "story_49557206"
+   ],
+   "author": "screm",
+   "children": [
+    49557233,
+    49557999,
+    49558267,
+    49558296,
+    49558601,
+    49558890,
+    49558954,
+    49559200,
+    49559231,
+    49559347,
+    49559431,
+    49559550,
+    49559636,
+    49559638,
+    49559680,
+    49559836,
+    49559865,
+    49559950,
+    49560028,
+    49560379,
+    49560494,
+    49560870,
+    49561116,
+    49561281,
+    49561293,
+    49561792,
+    49561936,
+    49562020,
+    49562037,
+    49562459,
+    49562551,
+    49562930,
+    49563662,
+    49563855,
+    49564149,
+    49564510,
+    49564773,
+    49565111,
+    49565424,
+    49565932,
+    49566030,
+    49602845,
+    49605731,
+    49608753,
+    49743366
+   ],
+   "created_at": "2026-09-03T21:20:34Z",
+   "created_at_i": 1788470434,
+   "num_comments": 153,
+   "objectID": "49557206",
+   "points": 300,
+   "story_id": 49557206,
+   "title": "Which tools do Claude, Codex and Cursor choose? We measured 17k runs to find out",
+   "updated_at": "2026-09-22T10:30:00Z",
+   "url": "https://armature.tech/blog/which-tools-coding-agents-install"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "screm"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "armature",
+      ".",
+      "tech"
+     ],
+     "value": "Hi HN! We\u2019re Theodore and Louis, founders of Armature (YC P26). We reconstruct the entire session behind the MCP tool calls you receive, including what the user asked their agent to do and what the agent thought.<p>You wrap your MCP in 3 lines of code (our SDK is available in Typescript, Python and Go) and start seeing in your dashboard:\n- All sessions reconstructed: it\u2019s like reading the real conversation the user had inside Claude or ChatGPT!\n- A ranking of your MCP most popular use cases, built from sessions clustering\n- The most frequent issues your users\u2019 agents encounter so you can fix them.<p>Here is a quick demo: <a href=\"https://youtu.be/ZFlvquhyNMQ\" rel=\"nofollow\">https://youtu.be/ZFlvquhyNMQ</a><p>The story behind this is that we initially launched Armature as a standalone testing tool (<a href=\"https://www.ycombinator.com/launches/QQc-armature-making-your-app-finally-usable-by-ai-agents\">https://www.ycombinator.com/launches/QQc-armature-making-you...</a>) that could naturally be used through an MCP itself. We quickly realized we had no idea how our users were using Armature MCP and if they were satisfied with it or frustrated. It\u2019s something we had also experienced in our previous companies: Louis built MCPs exposed to millions of users and Theo was a Forward Deployed Engineer at Palantir before joining a Datadog spin-off as Founding Engineer. Both testing and product analytics had always been real pains when exposing a product to agents but we always thought there wasn\u2019t much we could do about analytics because the conversation lived in our users\u2019 AI client.<p>Then it struck us: what if we asked the agents why they were making this or that tool call? And what\u2019s the user's intent or potential frustration? So we started experimenting with MCP instrumentation and the use-cases actually surprised us! Many of our first customers had implemented workarounds for their CI to trigger new tests or for their coding agents to fetch the results efficiently. Even though we talked to our first users regularly, they had never shared this feedback with us. We then built automations to automatically cluster use-cases, identify issues frequently encountered and let our own coding agents fix them. When our CTO friends heard about this, they wanted to try it for themselves so we gave them access to a cloned version of our internal product and they started sharing feedback like they never did on our \u201creal\u201d product!<p>That\u2019s when we decided to start working seriously on MCP Analytics as a product. At first we were afraid of degrading MCP performance so we iterated until we reached the exact same success rate as without our instrumentation (89.17 % vs 89.15 % pass rate out of 870 runs). Then privacy was an obvious constraint so we applied the same methods we had learned from working with banking data or building sensitive data scanning in logs. Today, redaction runs client-side before reaching our servers. There are still a lot of things we haven\u2019t fully figured out: not all fields are equally filled by all models, session fingerprinting for serverless / stateless MCPs isn\u2019t perfect, and use-case clustering remains to be optimized.<p>But we are finally launching our analytics product to everyone, self-serve at <a href=\"https://armature.tech\">https://<em>armature.tech</em></a> with a set-up that takes less than 5 minutes and a generous free tier.<p>And now we are working on fully closing the loop, bringing evals back in our product so we can: identify top workflows and issues -&gt; recommend fixes and improvements -&gt; test fixes at scale on the same workflows run by users, across all harnesses and models -&gt; open PRs to ship fixes directly.\nThe evals can be generated automatically from the session analytics so you can catch every regression and can test every improvement\u2019s real impact across all models and harnesses before shipping it.<p>Here\u2019s an example to make it more concrete: 10 days ago, a marketing automation platform which has had early access to what we built for weeks identified thanks to MCP Analytics that users were frustrated not being able to change their target audience after campaign creation. So they shipped the feature and tested it successfully locally with Claude Code on Fable 5. Then a few days later when preparing their new MCP public release, they ran a suite of evals on Armature and realized that small models could hallucinate audience_ids which would lead their MCP to send the campaign to ALL their contacts by default (which could obviously lead to disasters in prod). This is the kind of story that makes what we are building feel so helpful!<p>Now, the most useful feedback for us would be to know what\u2019s still missing in our product so you can feel you are now in full control of the \u201cAgent Experience\u201d.\nAnd if you run an MCP in production we\u2019d also love to know: what do you do today to know if agents succeed and if the users behind them are happy?"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Product analytics (and evals) for agent sessions on your MCP"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "armature",
+      ".",
+      "tech"
+     ],
+     "value": "https://<em>armature.tech</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_screm",
+    "story_49157807",
+    "show_hn"
+   ],
+   "author": "screm",
+   "children": [
+    49158731,
+    49158909,
+    49159389,
+    49160204,
+    49161667,
+    49164499,
+    49166438,
+    49174691,
+    49182590,
+    49183753,
+    49188056,
+    49194406,
+    49242869
+   ],
+   "created_at": "2026-08-03T16:17:59Z",
+   "created_at_i": 1785773879,
+   "num_comments": 8,
+   "objectID": "49157807",
+   "points": 42,
+   "story_id": 49157807,
+   "story_text": "Hi HN! We\u2019re Theodore and Louis, founders of Armature (YC P26). We reconstruct the entire session behind the MCP tool calls you receive, including what the user asked their agent to do and what the agent thought.<p>You wrap your MCP in 3 lines of code (our SDK is available in Typescript, Python and Go) and start seeing in your dashboard:\n- All sessions reconstructed: it\u2019s like reading the real conversation the user had inside Claude or ChatGPT!\n- A ranking of your MCP most popular use cases, built from sessions clustering\n- The most frequent issues your users\u2019 agents encounter so you can fix them.<p>Here is a quick demo: <a href=\"https:&#x2F;&#x2F;youtu.be&#x2F;ZFlvquhyNMQ\" rel=\"nofollow\">https:&#x2F;&#x2F;youtu.be&#x2F;ZFlvquhyNMQ</a><p>The story behind this is that we initially launched Armature as a standalone testing tool (<a href=\"https:&#x2F;&#x2F;www.ycombinator.com&#x2F;launches&#x2F;QQc-armature-making-your-app-finally-usable-by-ai-agents\">https:&#x2F;&#x2F;www.ycombinator.com&#x2F;launches&#x2F;QQc-armature-making-you...</a>) that could naturally be used through an MCP itself. We quickly realized we had no idea how our users were using Armature MCP and if they were satisfied with it or frustrated. It\u2019s something we had also experienced in our previous companies: Louis built MCPs exposed to millions of users and Theo was a Forward Deployed Engineer at Palantir before joining a Datadog spin-off as Founding Engineer. Both testing and product analytics had always been real pains when exposing a product to agents but we always thought there wasn\u2019t much we could do about analytics because the conversation lived in our users\u2019 AI client.<p>Then it struck us: what if we asked the agents why they were making this or that tool call? And what\u2019s the user&#x27;s intent or potential frustration? So we started experimenting with MCP instrumentation and the use-cases actually surprised us! Many of our first customers had implemented workarounds for their CI to trigger new tests or for their coding agents to fetch the results efficiently. Even though we talked to our first users regularly, they had never shared this feedback with us. We then built automations to automatically cluster use-cases, identify issues frequently encountered and let our own coding agents fix them. When our CTO friends heard about this, they wanted to try it for themselves so we gave them access to a cloned version of our internal product and they started sharing feedback like they never did on our \u201creal\u201d product!<p>That\u2019s when we decided to start working seriously on MCP Analytics as a product. At first we were afraid of degrading MCP performance so we iterated until we reached the exact same success rate as without our instrumentation (89.17 % vs 89.15 % pass rate out of 870 runs). Then privacy was an obvious constraint so we applied the same methods we had learned from working with banking data or building sensitive data scanning in logs. Today, redaction runs client-side before reaching our servers. There are still a lot of things we haven\u2019t fully figured out: not all fields are equally filled by all models, session fingerprinting for serverless &#x2F; stateless MCPs isn\u2019t perfect, and use-case clustering remains to be optimized.<p>But we are finally launching our analytics product to everyone, self-serve at <a href=\"https:&#x2F;&#x2F;armature.tech\">https:&#x2F;&#x2F;armature.tech</a> with a set-up that takes less than 5 minutes and a generous free tier.<p>And now we are working on fully closing the loop, bringing evals back in our product so we can: identify top workflows and issues -&gt; recommend fixes and improvements -&gt; test fixes at scale on the same workflows run by users, across all harnesses and models -&gt; open PRs to ship fixes directly.\nThe evals can be generated automatically from the session analytics so you can catch every regression and can test every improvement\u2019s real impact across all models and harnesses before shipping it.<p>Here\u2019s an example to make it more concrete: 10 days ago, a marketing automation platform which has had early access to what we built for weeks identified thanks to MCP Analytics that users were frustrated not being able to change their target audience after campaign creation. So they shipped the feature and tested it successfully locally with Claude Code on Fable 5. Then a few days later when preparing their new MCP public release, they ran a suite of evals on Armature and realized that small models could hallucinate audience_ids which would lead their MCP to send the campaign to ALL their contacts by default (which could obviously lead to disasters in prod). This is the kind of story that makes what we are building feel so helpful!<p>Now, the most useful feedback for us would be to know what\u2019s still missing in our product so you can feel you are now in full control of the \u201cAgent Experience\u201d.\nAnd if you run an MCP in production we\u2019d also love to know: what do you do today to know if agents succeed and if the users behind them are happy?",
+   "title": "Show HN: Product analytics (and evals) for agent sessions on your MCP",
+   "updated_at": "2026-08-14T14:11:51Z",
+   "url": "https://armature.tech/"
+  }
+ ],
+ "launch_hits": []
+}

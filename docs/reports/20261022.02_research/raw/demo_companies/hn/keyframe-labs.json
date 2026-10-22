@@ -1,0 +1,60 @@
+{
+ "domain_query": "keyframelabs.com",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "kraddypatties"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "keyframelabs",
+      ".",
+      "com"
+     ],
+     "value": "Hey HN.<p>Over the last few months, we've (me and @parthradia) homebrewed some very fast, very cheap, and pretty expressive talking head models. Our latest enabled us to finally get a live-streaming API together, which you can try at the playground link above.<p>We actually fell down this rabbit hole because we were spending a significant amount of time building yet another language learning app. We came to the conclusion that the barrier for learning wasn\u2019t the course content, but real, conversational practice. We tried prototyping with standard speech-to-speech models (OpenAI Realtime, Gemini Flash, etc.), but found that we weren\u2019t really triggering our \u201cfight or flight\u201d response.<p>What did trigger it was talking to a person, face to face. We looked for existing realtime avatar APIs to bridge that gap, but they didn\u2019t fit the constraints: they either didn\u2019t cross the uncanny valley, were too slow (&lt;15 fps), or were way too expensive. So we decided to make our own :-)<p>The model itself runs at less than a cent per minute and at &gt;30fps on commodity hardware (4090s!), which is pretty cool.<p>But more importantly, we\u2019ve actually found ourselves using it as a speaking partner for learning Spanish, which is a pretty remarkable feeling at times. This has inspired us to look beyond language learning; we are exploring other use cases (e.g., telehealth, mock interviews, refining elevator pitches) where face-to-face interaction measurably elevates the experience (and we\u2019d love to hear from you here!).<p>With respect to our tech, there\u2019s still low-hanging fruit to pick:<p>1. It takes roughly 6s to get a response end-to-end (the video gen is fast, but the chain of ASR -&gt; LLM -&gt; TTS adds up)<p>2. The resolution could be higher<p>3. The model feels expressive and natural during its speech, but less so during user turn (early prototypes of the model reacting in realtime to what you\u2019re saying show promise)<p>While we build out consumer-facing application(s) powered by our model, we\u2019re opening up an API early to see what other developers might build with it. We\u2019d love for you to try it in our playground. Leave a comment below or shoot us a line if you want early access (access@<em>keyframelabs.com</em>)!"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Realtime, expressive AI personas that you can video call"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "keyframelabs",
+      ".",
+      "com"
+     ],
+     "value": "https://playground.<em>keyframelabs.com</em>/playground/persona-1-live"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_kraddypatties",
+    "story_46040578",
+    "show_hn"
+   ],
+   "author": "kraddypatties",
+   "children": [
+    46040773
+   ],
+   "created_at": "2025-11-24T23:18:02Z",
+   "created_at_i": 1764026282,
+   "num_comments": 2,
+   "objectID": "46040578",
+   "points": 4,
+   "story_id": 46040578,
+   "story_text": "Hey HN.<p>Over the last few months, we&#x27;ve (me and @parthradia) homebrewed some very fast, very cheap, and pretty expressive talking head models. Our latest enabled us to finally get a live-streaming API together, which you can try at the playground link above.<p>We actually fell down this rabbit hole because we were spending a significant amount of time building yet another language learning app. We came to the conclusion that the barrier for learning wasn\u2019t the course content, but real, conversational practice. We tried prototyping with standard speech-to-speech models (OpenAI Realtime, Gemini Flash, etc.), but found that we weren\u2019t really triggering our \u201cfight or flight\u201d response.<p>What did trigger it was talking to a person, face to face. We looked for existing realtime avatar APIs to bridge that gap, but they didn\u2019t fit the constraints: they either didn\u2019t cross the uncanny valley, were too slow (&lt;15 fps), or were way too expensive. So we decided to make our own :-)<p>The model itself runs at less than a cent per minute and at &gt;30fps on commodity hardware (4090s!), which is pretty cool.<p>But more importantly, we\u2019ve actually found ourselves using it as a speaking partner for learning Spanish, which is a pretty remarkable feeling at times. This has inspired us to look beyond language learning; we are exploring other use cases (e.g., telehealth, mock interviews, refining elevator pitches) where face-to-face interaction measurably elevates the experience (and we\u2019d love to hear from you here!).<p>With respect to our tech, there\u2019s still low-hanging fruit to pick:<p>1. It takes roughly 6s to get a response end-to-end (the video gen is fast, but the chain of ASR -&gt; LLM -&gt; TTS adds up)<p>2. The resolution could be higher<p>3. The model feels expressive and natural during its speech, but less so during user turn (early prototypes of the model reacting in realtime to what you\u2019re saying show promise)<p>While we build out consumer-facing application(s) powered by our model, we\u2019re opening up an API early to see what other developers might build with it. We\u2019d love for you to try it in our playground. Leave a comment below or shoot us a line if you want early access (access@keyframelabs.com)!",
+   "title": "Show HN: Realtime, expressive AI personas that you can video call",
+   "updated_at": "2026-03-05T23:06:57Z",
+   "url": "https://playground.keyframelabs.com/playground/persona-1-live"
+  }
+ ],
+ "launch_hits": []
+}

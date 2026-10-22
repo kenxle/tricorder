@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+  <feed xmlns="http://www.w3.org/2005/Atom">
+    <author>
+      <email>webmaster@sec.gov</email>
+      <name>Webmaster</name>
+    </author>
+    <company-info>
+      <addresses>
+        <address type="mailing">
+          <city>MIAMI</city>
+          <state>FL</state>
+          <street1>2045 BISCAYNE BLVD #333</street1>
+          <zip>33137</zip>
+        </address>
+        <address type="business">
+          <city>MIAMI</city>
+          <phone>917-916-5494</phone>
+          <state>FL</state>
+          <street1>2045 BISCAYNE BLVD #333</street1>
+          <zip>33137</zip>
+        </address>
+      </addresses>
+      <cik>0002087648</cik>
+      <cik-href>https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0002087648&amp;owner=include&amp;count=40</cik-href>
+      <conformed-name>Superlogic Technologies, Inc.</conformed-name>
+      <fiscal-year-end>1231</fiscal-year-end>
+      <state-location>FL</state-location>
+      <state-location-href>https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;State=FL&amp;owner=include&amp;count=40</state-location-href>
+      <state-of-incorporation>DE</state-of-incorporation>
+    </company-info>
+    <entry>
+      <category label="form type" scheme="https://www.sec.gov/" term="D" />
+      <content type="text/xml">
+        <accession-number>0002087648-25-000001</accession-number>
+        <act>33</act>
+        <file-number>021-562617</file-number>
+        <file-number-href>https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=021-562617&amp;owner=include&amp;count=40</file-number-href>
+        <filing-date>2025-10-30</filing-date>
+        <filing-href>https://www.sec.gov/Archives/edgar/data/2087648/000208764825000001/0002087648-25-000001-index.htm</filing-href>
+        <filing-type>D</filing-type>
+        <film-number>251436732</film-number>
+        <form-name>Notice of Exempt Offering of Securities</form-name>
+        <items-desc>item 06b</items-desc>
+        <size>10 KB</size>
+      </content>
+      <id>urn:tag:sec.gov,2008:accession-number=0002087648-25-000001</id>
+      <link href="https://www.sec.gov/Archives/edgar/data/2087648/000208764825000001/0002087648-25-000001-index.htm" rel="alternate" type="text/html" />
+      <summary type="html"> &lt;b&gt;Filed:&lt;/b&gt; 2025-10-30 &lt;b&gt;AccNo:&lt;/b&gt; 0002087648-25-000001 &lt;b&gt;Size:&lt;/b&gt; 10 KB</summary>
+      <title>D  - Notice of Exempt Offering of Securities</title>
+      <updated>2025-10-30T16:53:16-04:00</updated>
+    </entry>
+    <id>https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0002087648</id>
+    <link href="https://www.sec.gov/cgi-bin/browse-edgar?company=superlog&amp;type=D&amp;owner=include&amp;action=getcompany&amp;start=0&amp;count=40" rel="alternate" type="text/html" />
+    <link href="https://www.sec.gov/cgi-bin/browse-edgar?company=superlog&amp;type=D&amp;owner=include&amp;action=getcompany&amp;start=0&amp;count=40&amp;output=atom" rel="self" type="application/atom+xml" />
+    <title>Superlogic Technologies, Inc.  (0002087648)</title>
+    <updated>2026-10-22T14:51:43-04:00</updated>
+  </feed>

@@ -1,0 +1,312 @@
+{
+ "domain_query": "tester.army",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "okwasniewski"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tester",
+      ".",
+      "army"
+     ],
+     "value": "Hey HN - we\u2019re Oskar, Szymon, and Piotr, and we\u2019re building TesterArmy (<a href=\"https://tester.army\">https://<em>tester.army</em></a>). TesterArmy is an agentic testing platform that runs end-to-end checks before deployment and in production. Instead of wasting hours on manual testing or maintaining static scripts, we let you specify your tests in natural language and handle everything in between. We've built the platform fully around agents. Our agent will reliably execute the tests, but your coding agent can manage everything in our platform, from defining tests in natural language to running them on your behalf.<p>Check out our demo video: <a href=\"https://www.youtube.com/watch?v=291IkUbPrlk\" rel=\"nofollow\">https://www.youtube.com/watch?v=291IkUbPrlk</a>.<p>We started TesterArmy because testing is still far too painful. AI coding tools have made it dramatically faster to write and ship code, but testing is still a bottleneck. Traditional E2E tests are slow to set up and expensive to maintain. Managing auth and test users is painful. Setting up staging environments is painful. Running tests reliably is painful.<p>We think most teams do not actually want to spend their time writing selectors or maintaining test infrastructure. They just want confidence that their core flows work. With TesterArmy, an engineer can sign up, give an agent our CLI, and let it handle creating tests and running them on schedule or on GitHub.<p>When something breaks, TesterArmy alerts your team through Slack or Discord.<p>Over the past few months, we scaled from 0 to 30+ teams using our product every day. We caught bugs in critical flows, including onboarding, checkout, and AI chat. We've got many of our customers migrating from already established competitors to us because of the quality and reliability of our agents.<p>Here are a few of the recent bugs that our agent found (there were quite a lot of them!):<p>1) Timezone bug that affected the booking flow in one of our clients' apps, the dashboard was very complex and hard to catch by a human. \n2) Regression in agent orchestration that caused a sandboxed environment to be stuck on loading, thanks to TesterArmy, the team was able to resolve it before it hit production.\n3) Incorrectly counting the order amount in a complex dashboard flow with checkout, thanks to TesterArmy, the team was able to resolve it before it affected revenue\n4) Catching a regression in an AI chat flow that would result in a user not being able to retrieve their data due to broken tool calling.<p>And many more, mostly related to some incorrect API calls, 404s, unhandled errors, etc.<p>If this sounds useful, we would love your feedback at <a href=\"https://tester.army\">https://<em>tester.army</em></a>. We have a bunch of free test runs for you to try. And don\u2019t worry, we won\u2019t make you do sales calls, and we don\u2019t have long onboarding or annoying setup. Our goal is an it-just-works experience.<p>If you're looking for an end-to-end testing solution, we'd love to hear your feedback!"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Launch HN: TesterArmy (YC P26) \u2013 Agents that test web and mobile apps"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tester",
+      ".",
+      "army"
+     ],
+     "value": "https://<em>tester.army</em>"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_okwasniewski",
+    "story_48586299",
+    "launch_hn"
+   ],
+   "author": "okwasniewski",
+   "children": [
+    48586549,
+    48586625,
+    48586742,
+    48587176,
+    48587274,
+    48587477,
+    48587493,
+    48587746,
+    48587988,
+    48588006,
+    48588201,
+    48588736,
+    48588749,
+    48588786,
+    48589427,
+    48589471,
+    48589518,
+    48589553,
+    48589922,
+    48590305,
+    48591107,
+    48592625,
+    48592802,
+    48593441,
+    48594093,
+    48594336,
+    48594806,
+    48594993,
+    48595339,
+    48595481,
+    48596830,
+    48597335,
+    48597800,
+    48597995,
+    48598251,
+    48598804,
+    48599983,
+    48636543,
+    48683552,
+    48705370
+   ],
+   "created_at": "2026-06-18T14:49:44Z",
+   "created_at_i": 1781794184,
+   "num_comments": 69,
+   "objectID": "48586299",
+   "points": 132,
+   "story_id": 48586299,
+   "story_text": "Hey HN - we\u2019re Oskar, Szymon, and Piotr, and we\u2019re building TesterArmy (<a href=\"https:&#x2F;&#x2F;tester.army\">https:&#x2F;&#x2F;tester.army</a>). TesterArmy is an agentic testing platform that runs end-to-end checks before deployment and in production. Instead of wasting hours on manual testing or maintaining static scripts, we let you specify your tests in natural language and handle everything in between. We&#x27;ve built the platform fully around agents. Our agent will reliably execute the tests, but your coding agent can manage everything in our platform, from defining tests in natural language to running them on your behalf.<p>Check out our demo video: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=291IkUbPrlk\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=291IkUbPrlk</a>.<p>We started TesterArmy because testing is still far too painful. AI coding tools have made it dramatically faster to write and ship code, but testing is still a bottleneck. Traditional E2E tests are slow to set up and expensive to maintain. Managing auth and test users is painful. Setting up staging environments is painful. Running tests reliably is painful.<p>We think most teams do not actually want to spend their time writing selectors or maintaining test infrastructure. They just want confidence that their core flows work. With TesterArmy, an engineer can sign up, give an agent our CLI, and let it handle creating tests and running them on schedule or on GitHub.<p>When something breaks, TesterArmy alerts your team through Slack or Discord.<p>Over the past few months, we scaled from 0 to 30+ teams using our product every day. We caught bugs in critical flows, including onboarding, checkout, and AI chat. We&#x27;ve got many of our customers migrating from already established competitors to us because of the quality and reliability of our agents.<p>Here are a few of the recent bugs that our agent found (there were quite a lot of them!):<p>1) Timezone bug that affected the booking flow in one of our clients&#x27; apps, the dashboard was very complex and hard to catch by a human. \n2) Regression in agent orchestration that caused a sandboxed environment to be stuck on loading, thanks to TesterArmy, the team was able to resolve it before it hit production.\n3) Incorrectly counting the order amount in a complex dashboard flow with checkout, thanks to TesterArmy, the team was able to resolve it before it affected revenue\n4) Catching a regression in an AI chat flow that would result in a user not being able to retrieve their data due to broken tool calling.<p>And many more, mostly related to some incorrect API calls, 404s, unhandled errors, etc.<p>If this sounds useful, we would love your feedback at <a href=\"https:&#x2F;&#x2F;tester.army\">https:&#x2F;&#x2F;tester.army</a>. We have a bunch of free test runs for you to try. And don\u2019t worry, we won\u2019t make you do sales calls, and we don\u2019t have long onboarding or annoying setup. Our goal is an it-just-works experience.<p>If you&#x27;re looking for an end-to-end testing solution, we&#x27;d love to hear your feedback!",
+   "title": "Launch HN: TesterArmy (YC P26) \u2013 Agents that test web and mobile apps",
+   "updated_at": "2026-07-18T16:29:01Z",
+   "url": "https://tester.army"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "tilt"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "E2E: The open source AI testing framework"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tester",
+      ".",
+      "army"
+     ],
+     "value": "https://<em>tester.army</em>/e2e"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_tilt",
+    "story_49944125"
+   ],
+   "author": "tilt",
+   "children": [
+    49944635
+   ],
+   "created_at": "2026-10-03T13:34:15Z",
+   "created_at_i": 1791034455,
+   "num_comments": 1,
+   "objectID": "49944125",
+   "points": 3,
+   "story_id": 49944125,
+   "title": "E2E: The open source AI testing framework",
+   "updated_at": "2026-10-03T15:21:23Z",
+   "url": "https://tester.army/e2e"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "okwasniewski"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Lessons from Building an Autonomous QA Agent"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tester",
+      ".",
+      "army"
+     ],
+     "value": "https://<em>tester.army</em>/blog/lessons-from-building-an-autonomous-qa-agent"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_okwasniewski",
+    "story_47952232"
+   ],
+   "author": "okwasniewski",
+   "created_at": "2026-04-29T18:17:12Z",
+   "created_at_i": 1777486632,
+   "num_comments": 0,
+   "objectID": "47952232",
+   "points": 3,
+   "story_id": 47952232,
+   "title": "Lessons from Building an Autonomous QA Agent",
+   "updated_at": "2026-05-28T13:45:02Z",
+   "url": "https://tester.army/blog/lessons-from-building-an-autonomous-qa-agent"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "handfuloflight"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "E2E: The open source AI testing framework"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tester",
+      ".",
+      "army"
+     ],
+     "value": "https://<em>tester.army</em>/e2e"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_handfuloflight",
+    "story_49752526"
+   ],
+   "author": "handfuloflight",
+   "created_at": "2026-09-18T10:49:54Z",
+   "created_at_i": 1789728594,
+   "num_comments": 0,
+   "objectID": "49752526",
+   "points": 1,
+   "story_id": 49752526,
+   "title": "E2E: The open source AI testing framework",
+   "updated_at": "2026-09-18T10:51:50Z",
+   "url": "https://tester.army/e2e"
+  }
+ ],
+ "launch_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "okwasniewski"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "hn",
+      "testerarmy"
+     ],
+     "value": "Hey <em>HN</em> - we\u2019re Oskar, Szymon, and Piotr, and we\u2019re building <em>TesterArmy</em> (<a href=\"https://tester.army\">https://tester.army</a>). <em>TesterArmy</em> is an agentic testing platform that runs end-to-end checks before deployment and in production. Instead of wasting hours on manual testing or maintaining static scripts, we let you specify your tests in natural language and handle everything in between. We've built the platform fully around agents. Our agent will reliably execute the tests, but your coding agent can manage everything in our platform, from defining tests in natural language to running them on your behalf.<p>Check out our demo video: <a href=\"https://www.youtube.com/watch?v=291IkUbPrlk\" rel=\"nofollow\">https://www.youtube.com/watch?v=291IkUbPrlk</a>.<p>We started <em>TesterArmy</em> because testing is still far too painful. AI coding tools have made it dramatically faster to write and ship code, but testing is still a bottleneck. Traditional E2E tests are slow to set up and expensive to maintain. Managing auth and test users is painful. Setting up staging environments is painful. Running tests reliably is painful.<p>We think most teams do not actually want to spend their time writing selectors or maintaining test infrastructure. They just want confidence that their core flows work. With <em>TesterArmy</em>, an engineer can sign up, give an agent our CLI, and let it handle creating tests and running them on schedule or on GitHub.<p>When something breaks, <em>TesterArmy</em> alerts your team through Slack or Discord.<p>Over the past few months, we scaled from 0 to 30+ teams using our product every day. We caught bugs in critical flows, including onboarding, checkout, and AI chat. We've got many of our customers migrating from already established competitors to us because of the quality and reliability of our agents.<p>Here are a few of the recent bugs that our agent found (there were quite a lot of them!):<p>1) Timezone bug that affected the booking flow in one of our clients' apps, the dashboard was very complex and hard to catch by a human. \n2) Regression in agent orchestration that caused a sandboxed environment to be stuck on loading, thanks to <em>TesterArmy</em>, the team was able to resolve it before it hit production.\n3) Incorrectly counting the order amount in a complex dashboard flow with checkout, thanks to <em>TesterArmy</em>, the team was able to resolve it before it affected revenue\n4) Catching a regression in an AI chat flow that would result in a user not being able to retrieve their data due to broken tool calling.<p>And many more, mostly related to some incorrect API calls, 404s, unhandled errors, etc.<p>If this sounds useful, we would love your feedback at <a href=\"https://tester.army\">https://tester.army</a>. We have a bunch of free test runs for you to try. And don\u2019t worry, we won\u2019t make you do sales calls, and we don\u2019t have long onboarding or annoying setup. Our goal is an it-just-works experience.<p>If you're looking for an end-to-end testing solution, we'd love to hear your feedback!"
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "launch",
+      "hn",
+      "testerarmy"
+     ],
+     "value": "<em>Launch</em> <em>HN</em>: <em>TesterArmy</em> (YC P26) \u2013 Agents that test web and mobile apps"
+    },
+    "url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://tester.army"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_okwasniewski",
+    "story_48586299",
+    "launch_hn"
+   ],
+   "author": "okwasniewski",
+   "children": [
+    48586549,
+    48586625,
+    48586742,
+    48587176,
+    48587274,
+    48587477,
+    48587493,
+    48587746,
+    48587988,
+    48588006,
+    48588201,
+    48588736,
+    48588749,
+    48588786,
+    48589427,
+    48589471,
+    48589518,
+    48589553,
+    48589922,
+    48590305,
+    48591107,
+    48592625,
+    48592802,
+    48593441,
+    48594093,
+    48594336,
+    48594806,
+    48594993,
+    48595339,
+    48595481,
+    48596830,
+    48597335,
+    48597800,
+    48597995,
+    48598251,
+    48598804,
+    48599983,
+    48636543,
+    48683552,
+    48705370
+   ],
+   "created_at": "2026-06-18T14:49:44Z",
+   "created_at_i": 1781794184,
+   "num_comments": 69,
+   "objectID": "48586299",
+   "points": 132,
+   "story_id": 48586299,
+   "story_text": "Hey HN - we\u2019re Oskar, Szymon, and Piotr, and we\u2019re building TesterArmy (<a href=\"https:&#x2F;&#x2F;tester.army\">https:&#x2F;&#x2F;tester.army</a>). TesterArmy is an agentic testing platform that runs end-to-end checks before deployment and in production. Instead of wasting hours on manual testing or maintaining static scripts, we let you specify your tests in natural language and handle everything in between. We&#x27;ve built the platform fully around agents. Our agent will reliably execute the tests, but your coding agent can manage everything in our platform, from defining tests in natural language to running them on your behalf.<p>Check out our demo video: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=291IkUbPrlk\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=291IkUbPrlk</a>.<p>We started TesterArmy because testing is still far too painful. AI coding tools have made it dramatically faster to write and ship code, but testing is still a bottleneck. Traditional E2E tests are slow to set up and expensive to maintain. Managing auth and test users is painful. Setting up staging environments is painful. Running tests reliably is painful.<p>We think most teams do not actually want to spend their time writing selectors or maintaining test infrastructure. They just want confidence that their core flows work. With TesterArmy, an engineer can sign up, give an agent our CLI, and let it handle creating tests and running them on schedule or on GitHub.<p>When something breaks, TesterArmy alerts your team through Slack or Discord.<p>Over the past few months, we scaled from 0 to 30+ teams using our product every day. We caught bugs in critical flows, including onboarding, checkout, and AI chat. We&#x27;ve got many of our customers migrating from already established competitors to us because of the quality and reliability of our agents.<p>Here are a few of the recent bugs that our agent found (there were quite a lot of them!):<p>1) Timezone bug that affected the booking flow in one of our clients&#x27; apps, the dashboard was very complex and hard to catch by a human. \n2) Regression in agent orchestration that caused a sandboxed environment to be stuck on loading, thanks to TesterArmy, the team was able to resolve it before it hit production.\n3) Incorrectly counting the order amount in a complex dashboard flow with checkout, thanks to TesterArmy, the team was able to resolve it before it affected revenue\n4) Catching a regression in an AI chat flow that would result in a user not being able to retrieve their data due to broken tool calling.<p>And many more, mostly related to some incorrect API calls, 404s, unhandled errors, etc.<p>If this sounds useful, we would love your feedback at <a href=\"https:&#x2F;&#x2F;tester.army\">https:&#x2F;&#x2F;tester.army</a>. We have a bunch of free test runs for you to try. And don\u2019t worry, we won\u2019t make you do sales calls, and we don\u2019t have long onboarding or annoying setup. Our goal is an it-just-works experience.<p>If you&#x27;re looking for an end-to-end testing solution, we&#x27;d love to hear your feedback!",
+   "title": "Launch HN: TesterArmy (YC P26) \u2013 Agents that test web and mobile apps",
+   "updated_at": "2026-07-18T16:29:01Z",
+   "url": "https://tester.army"
+  }
+ ]
+}

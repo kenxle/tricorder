@@ -1,0 +1,236 @@
+{
+ "domain_query": "tasklet.ai",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mayop100"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Tasklet \u2013 Automate your business with AI agents"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tasklet",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>tasklet.ai</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_mayop100",
+    "story_45529555",
+    "show_hn"
+   ],
+   "author": "mayop100",
+   "children": [
+    45530362,
+    45530469
+   ],
+   "created_at": "2025-10-09T16:01:53Z",
+   "created_at_i": 1760025713,
+   "num_comments": 3,
+   "objectID": "45529555",
+   "points": 5,
+   "story_id": 45529555,
+   "title": "Show HN: Tasklet \u2013 Automate your business with AI agents",
+   "updated_at": "2026-07-31T15:50:33Z",
+   "url": "https://tasklet.ai/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "rockwotj"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Tasklet Instant Apps"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tasklet",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>tasklet.ai</em>/release-notes#instant-apps"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_rockwotj",
+    "story_47169764"
+   ],
+   "author": "rockwotj",
+   "children": [
+    47169765
+   ],
+   "created_at": "2026-02-26T18:12:59Z",
+   "created_at_i": 1772129579,
+   "num_comments": 1,
+   "objectID": "47169764",
+   "points": 3,
+   "story_id": 47169764,
+   "title": "Tasklet Instant Apps",
+   "updated_at": "2026-03-05T23:37:58Z",
+   "url": "https://tasklet.ai/release-notes#instant-apps"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mayop100"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Tasklet: Automate your business with AI agents"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tasklet",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>tasklet.ai</em>/release-notes"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_mayop100",
+    "story_45534173"
+   ],
+   "author": "mayop100",
+   "created_at": "2025-10-09T23:45:11Z",
+   "created_at_i": 1760053511,
+   "num_comments": 0,
+   "objectID": "45534173",
+   "points": 3,
+   "story_id": 45534173,
+   "title": "Tasklet: Automate your business with AI agents",
+   "updated_at": "2026-03-05T22:49:12Z",
+   "url": "https://tasklet.ai/release-notes"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mayop100"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Tasklet (YC P26) Is Hiring a Customer Success Engineer"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tasklet",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>tasklet.ai</em>/careers/customer-success-engineer"
+    }
+   },
+   "_tags": [
+    "job",
+    "author_mayop100"
+   ],
+   "author": "mayop100",
+   "created_at": "2026-09-03T21:01:10Z",
+   "created_at_i": 1788469270,
+   "objectID": "49556922",
+   "title": "Tasklet (YC P26) Is Hiring a Customer Success Engineer",
+   "updated_at": "2026-09-03T21:02:34Z",
+   "url": "https://tasklet.ai/careers/customer-success-engineer"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mayop100"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Tasklet (YC P26) Is Hiring a Head of Design Engineering"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tasklet",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>tasklet.ai</em>/careers/head-of-design-engineering"
+    }
+   },
+   "_tags": [
+    "job",
+    "author_mayop100"
+   ],
+   "author": "mayop100",
+   "created_at": "2026-08-16T13:30:27Z",
+   "created_at_i": 1786887027,
+   "objectID": "49319892",
+   "title": "Tasklet (YC P26) Is Hiring a Head of Design Engineering",
+   "updated_at": "2026-08-16T13:35:59Z",
+   "url": "https://tasklet.ai/careers/head-of-design-engineering"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mayop100"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Tasklet (YC P26) Is Hiring a Customer Success Engineer"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tasklet",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>tasklet.ai</em>/careers/customer-success-engineer"
+    }
+   },
+   "_tags": [
+    "job",
+    "author_mayop100"
+   ],
+   "author": "mayop100",
+   "created_at": "2026-07-31T12:00:59Z",
+   "created_at_i": 1785499259,
+   "objectID": "49122034",
+   "title": "Tasklet (YC P26) Is Hiring a Customer Success Engineer",
+   "updated_at": "2026-07-31T12:03:02Z",
+   "url": "https://tasklet.ai/careers/customer-success-engineer"
+  }
+ ],
+ "launch_hits": []
+}

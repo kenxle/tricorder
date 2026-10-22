@@ -1,0 +1,45 @@
+{
+ "domain_query": "linzumi.com",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "transpute"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Yocto: Bitbake build/populate sysroot (2018)"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "linzumi",
+      ".",
+      "com"
+     ],
+     "value": "https://www.<em>linumiz.com</em>/yocto-bitbake-build-populate-sysroot/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_transpute",
+    "story_41669119"
+   ],
+   "author": "transpute",
+   "created_at": "2024-09-27T11:35:19Z",
+   "created_at_i": 1727436919,
+   "num_comments": 0,
+   "objectID": "41669119",
+   "points": 1,
+   "story_id": 41669119,
+   "title": "Yocto: Bitbake build/populate sysroot (2018)",
+   "updated_at": "2024-09-27T11:36:27Z",
+   "url": "https://www.linumiz.com/yocto-bitbake-build-populate-sysroot/"
+  }
+ ],
+ "launch_hits": []
+}

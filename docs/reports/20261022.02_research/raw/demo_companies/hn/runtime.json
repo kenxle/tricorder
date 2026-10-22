@@ -1,0 +1,479 @@
+{
+ "domain_query": "runtm.com",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "gustrigos"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "runtm",
+      ".",
+      "com"
+     ],
+     "value": "Hey HN, We're Gus and Carlos from Runtime (<a href=\"https://runtm.com\">https://<em>runtm.com</em></a>). We're building infra that lets your whole team (including non-engineers) ship with Claude Code, Codex, and other agents without engineering having to handhold every session.<p>After Mentum (YC S21) was acquired, I personally shipped 4 full-stack products in 3 months using coding agents. When I tried to roll the same workflow out to the rest of the team, it fell apart: Most PRs were unmergeable slop - Every repo required an engineer doing one-off local setup. - Skills and context lived in one person's head. - There was no safe way for a PM to touch a real codebase without risking a bad deploy or a secrets leak.<p>Carlos comes from building agentic reconciliation systems at Modern Treasury and had a similar experience when letting his support team use devin.<p>We ended up building internal background agent infra but it quickly became a nightmare to mantain and develop. We built Runtime so you don't have to do this kind of thing.<p>Runtime work like as follows. Engineering defines the context once: system instructions, skills, and scoped integrations installable via CLI, mise, npm, or any package manager. Then Runtime snapshots your full running environment including multi-service Docker Compose setups, Kafka, Redis, seeded DBs, so it comes up in milliseconds with every server already running.<p>We orchestrate across sandbox providers like E2B, Daytona, EC2 or self-hosted K8s depending on your setup. Secrets are injected through our managed proxy so they never touch the agent directly, and guardrails run at the infrastructure level: command allow/deny lists, network egress controls, and RBAC scoped per human and per agent. Every session also gets a shareable preview URL, so internal builds go from sandbox to the rest of the team without needing production access.<p>Runtime works with whichever agent your team already uses: Claude Code, Codex, Cursor, Copilot, Gemini, Devin. You can trigger sandboxes from our web app, CLI, Slack, Linear, GitHub, or API.<p>One of our customers built an on-call inspector that wires PagerDuty, Sentry, and their repo so when an alert fires, the agent finds the cause and opens a PR with a unit test before anyone gets paged. Another runs a finance agent in a private Slack channel pulling from Stripe, NetSuite, and Snowflake to run reconciliations in minutes with source rows attached.<p>A fintech unicorn and several YC scaleups are live on Runtime, including a few teams who had built similar infrastructure internally and handed it to us to take over.<p>The core is open source at <a href=\"https://github.com/runtm-ai/runtm\" rel=\"nofollow\">https://github.com/runtm-ai/runtm</a>. Hosted version is live at <a href=\"https://app.runtm.com\">https://app.<em>runtm.com</em></a>, free tier included. We're charging a flat platform fee plus compute, no token markup.<p>Check our demo: <a href=\"https://www.youtube.com/watch?v=wLwj__aEEh4\" rel=\"nofollow\">https://www.youtube.com/watch?v=wLwj__aEEh4</a><p>We'd love to hear how you're thinking about the infra for letting more people across your org use coding agents without creating chaos!"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Launch HN: Runtime (YC P26) \u2013 Sandboxed coding agents for everyone on a team"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "runtm",
+      ".",
+      "com"
+     ],
+     "value": "https://www.<em>runtm.com</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_gustrigos",
+    "story_48225040",
+    "launch_hn"
+   ],
+   "author": "gustrigos",
+   "children": [
+    48225950,
+    48226222,
+    48226448,
+    48226658,
+    48227200,
+    48227224,
+    48227408,
+    48227469,
+    48227607,
+    48227611,
+    48228001,
+    48228619,
+    48228715,
+    48229525,
+    48230821,
+    48231141,
+    48231595,
+    48231655,
+    48231759,
+    48233249,
+    48233300,
+    48233461,
+    48233706,
+    48234697,
+    48234824,
+    48243345,
+    48329413,
+    48515532
+   ],
+   "created_at": "2026-05-21T16:07:13Z",
+   "created_at_i": 1779379633,
+   "num_comments": 30,
+   "objectID": "48225040",
+   "points": 103,
+   "story_id": 48225040,
+   "story_text": "Hey HN, We&#x27;re Gus and Carlos from Runtime (<a href=\"https:&#x2F;&#x2F;runtm.com\">https:&#x2F;&#x2F;runtm.com</a>). We&#x27;re building infra that lets your whole team (including non-engineers) ship with Claude Code, Codex, and other agents without engineering having to handhold every session.<p>After Mentum (YC S21) was acquired, I personally shipped 4 full-stack products in 3 months using coding agents. When I tried to roll the same workflow out to the rest of the team, it fell apart: Most PRs were unmergeable slop - Every repo required an engineer doing one-off local setup. - Skills and context lived in one person&#x27;s head. - There was no safe way for a PM to touch a real codebase without risking a bad deploy or a secrets leak.<p>Carlos comes from building agentic reconciliation systems at Modern Treasury and had a similar experience when letting his support team use devin.<p>We ended up building internal background agent infra but it quickly became a nightmare to mantain and develop. We built Runtime so you don&#x27;t have to do this kind of thing.<p>Runtime work like as follows. Engineering defines the context once: system instructions, skills, and scoped integrations installable via CLI, mise, npm, or any package manager. Then Runtime snapshots your full running environment including multi-service Docker Compose setups, Kafka, Redis, seeded DBs, so it comes up in milliseconds with every server already running.<p>We orchestrate across sandbox providers like E2B, Daytona, EC2 or self-hosted K8s depending on your setup. Secrets are injected through our managed proxy so they never touch the agent directly, and guardrails run at the infrastructure level: command allow&#x2F;deny lists, network egress controls, and RBAC scoped per human and per agent. Every session also gets a shareable preview URL, so internal builds go from sandbox to the rest of the team without needing production access.<p>Runtime works with whichever agent your team already uses: Claude Code, Codex, Cursor, Copilot, Gemini, Devin. You can trigger sandboxes from our web app, CLI, Slack, Linear, GitHub, or API.<p>One of our customers built an on-call inspector that wires PagerDuty, Sentry, and their repo so when an alert fires, the agent finds the cause and opens a PR with a unit test before anyone gets paged. Another runs a finance agent in a private Slack channel pulling from Stripe, NetSuite, and Snowflake to run reconciliations in minutes with source rows attached.<p>A fintech unicorn and several YC scaleups are live on Runtime, including a few teams who had built similar infrastructure internally and handed it to us to take over.<p>The core is open source at <a href=\"https:&#x2F;&#x2F;github.com&#x2F;runtm-ai&#x2F;runtm\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;runtm-ai&#x2F;runtm</a>. Hosted version is live at <a href=\"https:&#x2F;&#x2F;app.runtm.com\">https:&#x2F;&#x2F;app.runtm.com</a>, free tier included. We&#x27;re charging a flat platform fee plus compute, no token markup.<p>Check our demo: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=wLwj__aEEh4\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=wLwj__aEEh4</a><p>We&#x27;d love to hear how you&#x27;re thinking about the infra for letting more people across your org use coding agents without creating chaos!",
+   "title": "Launch HN: Runtime (YC P26) \u2013 Sandboxed coding agents for everyone on a team",
+   "updated_at": "2026-08-25T05:02:19Z",
+   "url": "https://www.runtm.com/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ADD-SP"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Dive into FrontierHarness Eval: Claude Code cost 5.6\u00d7 for the same pass rate"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "runtm",
+      ".",
+      "com"
+     ],
+     "value": "https://<em>runta.com</em>/blog/introducing-frontierharness-eval/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_ADD-SP",
+    "story_49628679"
+   ],
+   "author": "ADD-SP",
+   "children": [
+    49628767,
+    49628773,
+    49628788,
+    49628801
+   ],
+   "created_at": "2026-09-09T15:59:47Z",
+   "created_at_i": 1788969587,
+   "num_comments": 3,
+   "objectID": "49628679",
+   "points": 6,
+   "story_id": 49628679,
+   "title": "Dive into FrontierHarness Eval: Claude Code cost 5.6\u00d7 for the same pass rate",
+   "updated_at": "2026-09-09T16:14:53Z",
+   "url": "https://runta.com/blog/introducing-frontierharness-eval/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "shiqimei"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Runta SSH access for agent runtimes"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "runtm",
+      ".",
+      "com"
+     ],
+     "value": "https://<em>runta.com</em>/blog/ssh-access-for-runta-runtimes/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_shiqimei",
+    "story_49289018"
+   ],
+   "author": "shiqimei",
+   "children": [
+    49289019
+   ],
+   "created_at": "2026-08-13T17:15:09Z",
+   "created_at_i": 1786641309,
+   "num_comments": 0,
+   "objectID": "49289018",
+   "points": 6,
+   "story_id": 49289018,
+   "title": "Runta SSH access for agent runtimes",
+   "updated_at": "2026-08-13T17:37:34Z",
+   "url": "https://runta.com/blog/ssh-access-for-runta-runtimes/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "guanlan"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "When a long-running agent crashes, what does recovery mean?"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "runtm",
+      ".",
+      "com"
+     ],
+     "value": "https://<em>runta.com</em>/blog/agents-arent-software/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_guanlan",
+    "story_49198494"
+   ],
+   "author": "guanlan",
+   "children": [
+    49198495,
+    49229700
+   ],
+   "created_at": "2026-08-06T16:00:50Z",
+   "created_at_i": 1786032050,
+   "num_comments": 0,
+   "objectID": "49198494",
+   "points": 5,
+   "story_id": 49198494,
+   "title": "When a long-running agent crashes, what does recovery mean?",
+   "updated_at": "2026-08-09T09:03:33Z",
+   "url": "https://runta.com/blog/agents-arent-software/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ADD-SP"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Errand \u2013 open-source Grok Bot and Muse alternative, built in a week"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "runtm",
+      ".",
+      "com"
+     ],
+     "value": "https://<em>runta.com</em>/blog/building-errand-in-one-week/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_ADD-SP",
+    "story_49803044"
+   ],
+   "author": "ADD-SP",
+   "children": [
+    49803087,
+    49803089
+   ],
+   "created_at": "2026-09-22T15:36:03Z",
+   "created_at_i": 1790091363,
+   "num_comments": 2,
+   "objectID": "49803044",
+   "points": 4,
+   "story_id": 49803044,
+   "title": "Errand \u2013 open-source Grok Bot and Muse alternative, built in a week",
+   "updated_at": "2026-09-22T17:12:33Z",
+   "url": "https://runta.com/blog/building-errand-in-one-week/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "redman25"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "FrontierHarness Eval benchmark. Pi is on the Pareto"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "runtm",
+      ".",
+      "com"
+     ],
+     "value": "https://<em>runta.com</em>/blog/introducing-frontierharness-eval/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_redman25",
+    "story_49544583"
+   ],
+   "author": "redman25",
+   "created_at": "2026-09-03T00:45:06Z",
+   "created_at_i": 1788396306,
+   "num_comments": 0,
+   "objectID": "49544583",
+   "points": 3,
+   "story_id": 49544583,
+   "title": "FrontierHarness Eval benchmark. Pi is on the Pareto",
+   "updated_at": "2026-09-03T01:19:45Z",
+   "url": "https://runta.com/blog/introducing-frontierharness-eval/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jinqueeny"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Agents Aren't Software"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "runtm",
+      ".",
+      "com"
+     ],
+     "value": "https://<em>runta.com</em>/blog/agents-arent-software/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_jinqueeny",
+    "story_49324698"
+   ],
+   "author": "jinqueeny",
+   "children": [
+    49324798
+   ],
+   "created_at": "2026-08-16T23:05:55Z",
+   "created_at_i": 1786921555,
+   "num_comments": 0,
+   "objectID": "49324698",
+   "points": 3,
+   "story_id": 49324698,
+   "title": "Agents Aren't Software",
+   "updated_at": "2026-08-20T03:51:26Z",
+   "url": "https://runta.com/blog/agents-arent-software/"
+  }
+ ],
+ "launch_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "gustrigos"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "hn",
+      "runtime"
+     ],
+     "value": "Hey <em>HN</em>, We're Gus and Carlos from <em>Runtime</em> (<a href=\"https://runtm.com\">https://runtm.com</a>). We're building infra that lets your whole team (including non-engineers) ship with Claude Code, Codex, and other agents without engineering having to handhold every session.<p>After Mentum (YC S21) was acquired, I personally shipped 4 full-stack products in 3 months using coding agents. When I tried to roll the same workflow out to the rest of the team, it fell apart: Most PRs were unmergeable slop - Every repo required an engineer doing one-off local setup. - Skills and context lived in one person's head. - There was no safe way for a PM to touch a real codebase without risking a bad deploy or a secrets leak.<p>Carlos comes from building agentic reconciliation systems at Modern Treasury and had a similar experience when letting his support team use devin.<p>We ended up building internal background agent infra but it quickly became a nightmare to mantain and develop. We built <em>Runtime</em> so you don't have to do this kind of thing.<p><em>Runtime</em> work like as follows. Engineering defines the context once: system instructions, skills, and scoped integrations installable via CLI, mise, npm, or any package manager. Then <em>Runtime</em> snapshots your full running environment including multi-service Docker Compose setups, Kafka, Redis, seeded DBs, so it comes up in milliseconds with every server already running.<p>We orchestrate across sandbox providers like E2B, Daytona, EC2 or self-hosted K8s depending on your setup. Secrets are injected through our managed proxy so they never touch the agent directly, and guardrails run at the infrastructure level: command allow/deny lists, network egress controls, and RBAC scoped per human and per agent. Every session also gets a shareable preview URL, so internal builds go from sandbox to the rest of the team without needing production access.<p><em>Runtime</em> works with whichever agent your team already uses: Claude Code, Codex, Cursor, Copilot, Gemini, Devin. You can trigger sandboxes from our web app, CLI, Slack, Linear, GitHub, or API.<p>One of our customers built an on-call inspector that wires PagerDuty, Sentry, and their repo so when an alert fires, the agent finds the cause and opens a PR with a unit test before anyone gets paged. Another runs a finance agent in a private Slack channel pulling from Stripe, NetSuite, and Snowflake to run reconciliations in minutes with source rows attached.<p>A fintech unicorn and several YC scaleups are live on <em>Runtime</em>, including a few teams who had built similar infrastructure internally and handed it to us to take over.<p>The core is open source at <a href=\"https://github.com/runtm-ai/runtm\" rel=\"nofollow\">https://github.com/runtm-ai/runtm</a>. Hosted version is live at <a href=\"https://app.runtm.com\">https://app.runtm.com</a>, free tier included. We're charging a flat platform fee plus compute, no token markup.<p>Check our demo: <a href=\"https://www.youtube.com/watch?v=wLwj__aEEh4\" rel=\"nofollow\">https://www.youtube.com/watch?v=wLwj__aEEh4</a><p>We'd love to hear how you're thinking about the infra for letting more people across your org use coding agents without creating chaos!"
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "launch",
+      "hn",
+      "runtime"
+     ],
+     "value": "<em>Launch</em> <em>HN</em>: <em>Runtime</em> (YC P26) \u2013 Sandboxed coding agents for everyone on a team"
+    },
+    "url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.runtm.com/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_gustrigos",
+    "story_48225040",
+    "launch_hn"
+   ],
+   "author": "gustrigos",
+   "children": [
+    48225950,
+    48226222,
+    48226448,
+    48226658,
+    48227200,
+    48227224,
+    48227408,
+    48227469,
+    48227607,
+    48227611,
+    48228001,
+    48228619,
+    48228715,
+    48229525,
+    48230821,
+    48231141,
+    48231595,
+    48231655,
+    48231759,
+    48233249,
+    48233300,
+    48233461,
+    48233706,
+    48234697,
+    48234824,
+    48243345,
+    48329413,
+    48515532
+   ],
+   "created_at": "2026-05-21T16:07:13Z",
+   "created_at_i": 1779379633,
+   "num_comments": 30,
+   "objectID": "48225040",
+   "points": 103,
+   "story_id": 48225040,
+   "story_text": "Hey HN, We&#x27;re Gus and Carlos from Runtime (<a href=\"https:&#x2F;&#x2F;runtm.com\">https:&#x2F;&#x2F;runtm.com</a>). We&#x27;re building infra that lets your whole team (including non-engineers) ship with Claude Code, Codex, and other agents without engineering having to handhold every session.<p>After Mentum (YC S21) was acquired, I personally shipped 4 full-stack products in 3 months using coding agents. When I tried to roll the same workflow out to the rest of the team, it fell apart: Most PRs were unmergeable slop - Every repo required an engineer doing one-off local setup. - Skills and context lived in one person&#x27;s head. - There was no safe way for a PM to touch a real codebase without risking a bad deploy or a secrets leak.<p>Carlos comes from building agentic reconciliation systems at Modern Treasury and had a similar experience when letting his support team use devin.<p>We ended up building internal background agent infra but it quickly became a nightmare to mantain and develop. We built Runtime so you don&#x27;t have to do this kind of thing.<p>Runtime work like as follows. Engineering defines the context once: system instructions, skills, and scoped integrations installable via CLI, mise, npm, or any package manager. Then Runtime snapshots your full running environment including multi-service Docker Compose setups, Kafka, Redis, seeded DBs, so it comes up in milliseconds with every server already running.<p>We orchestrate across sandbox providers like E2B, Daytona, EC2 or self-hosted K8s depending on your setup. Secrets are injected through our managed proxy so they never touch the agent directly, and guardrails run at the infrastructure level: command allow&#x2F;deny lists, network egress controls, and RBAC scoped per human and per agent. Every session also gets a shareable preview URL, so internal builds go from sandbox to the rest of the team without needing production access.<p>Runtime works with whichever agent your team already uses: Claude Code, Codex, Cursor, Copilot, Gemini, Devin. You can trigger sandboxes from our web app, CLI, Slack, Linear, GitHub, or API.<p>One of our customers built an on-call inspector that wires PagerDuty, Sentry, and their repo so when an alert fires, the agent finds the cause and opens a PR with a unit test before anyone gets paged. Another runs a finance agent in a private Slack channel pulling from Stripe, NetSuite, and Snowflake to run reconciliations in minutes with source rows attached.<p>A fintech unicorn and several YC scaleups are live on Runtime, including a few teams who had built similar infrastructure internally and handed it to us to take over.<p>The core is open source at <a href=\"https:&#x2F;&#x2F;github.com&#x2F;runtm-ai&#x2F;runtm\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;runtm-ai&#x2F;runtm</a>. Hosted version is live at <a href=\"https:&#x2F;&#x2F;app.runtm.com\">https:&#x2F;&#x2F;app.runtm.com</a>, free tier included. We&#x27;re charging a flat platform fee plus compute, no token markup.<p>Check our demo: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=wLwj__aEEh4\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=wLwj__aEEh4</a><p>We&#x27;d love to hear how you&#x27;re thinking about the infra for letting more people across your org use coding agents without creating chaos!",
+   "title": "Launch HN: Runtime (YC P26) \u2013 Sandboxed coding agents for everyone on a team",
+   "updated_at": "2026-08-25T05:02:19Z",
+   "url": "https://www.runtm.com/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "cgorlla"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "hn"
+     ],
+     "value": "Hi <em>HN</em>, I\u2019m Cyril from CTGT. Today we\u2019re launching Mentat (<a href=\"https://docs.ctgt.ai/api-reference/endpoint/chat-completions\">https://docs.ctgt.ai/api-reference/endpoint/chat-completions</a>), an API that gives developers deterministic control over LLM behavior, steering reasoning and removing bias on the fly, without the compute of fine-tuning or the brittleness of prompt engineering. We use feature-level intervention and graph-based verification to fix hallucinations and enforce policies.<p>This resonates in highly regulated industries or otherwise risky applications of AI where the fallout from incorrect or underperforming output can be significant. In financial services, using GenAI to scan for noncompliant communications can be arduous without an easy way to embed complex policies into the model. Similarly, a media outlet might want to scale AI-generated summaries of their content, but reliability and accuracy is paramount. These are both applications where Fortune 500 companies have utilized our technology to improve subpar performance from existing models, and we want to bring this capability to more people.<p>Here\u2019s a quick 2-minute demo video showing the process: <a href=\"https://video.ctgt.ai/video/ctgt-ai-compliance-playground-cfnl\">https://video.ctgt.ai/video/ctgt-ai-compliance-playground-cf...</a><p>Standard &quot;guardrails&quot; like RAG and system prompts are fundamentally probabilistic: you are essentially asking the model nicely to behave. This often fails in two ways. First, RAG solves knowledge <i>availability</i> but not <i>integration</i>. In our benchmarks, a model given context that &quot;Lerwick is 228 miles SE of T\u00f3rshavn&quot; failed to answer &quot;What is 228 miles NW of Lerwick?&quot; because it couldn't perform the spatial inversion.<p>Second, prompt engineering is brittle because it fights against the model's pre-training priors. For example, on the TruthfulQA benchmark, base models fail ~80% of the time because they mimic common misconceptions found on the internet (e.g. &quot;chameleons change color for camouflage&quot;). We found that we could literally turn up the feature for &quot;skeptical reasoning&quot; to make the model ignore the popular myth and output the scientific fact. This matters because for high-stakes use cases (like Finance or Pharma), &quot;mostly safe&quot; isn't acceptable\u2014companies need audit-grade reliability.<p>Our work stems from the CS dungeon at UCSD, with years spent researching efficient and interpretable AI, trying to &quot;open the black box&quot; of neural networks. We realized that the industry was trying to patch model behavior from the outside (prompts/filters) when the problem was on the inside (feature activations). We knew this was important when we saw enterprises struggling to deploy basic models despite having unlimited compute, simply because they couldn't guarantee the output wouldn't violate compliance rules. I ended up leaving my research at Stanford to focus on this.<p>Our breakthrough came while researching the DeepSeek-R1 model. We identified the &quot;censorship&quot; feature vector in its latent space. Amplifying it guaranteed refusal; subtracting it instantly unlocked answers to sensitive questions. This proved the model <i>had</i> the knowledge but was suppressing it. We realized we could apply this same logic to hallucinations, suppressing &quot;confabulation&quot; features to reveal the grounded truth. While some hallucinations stem from the inherent randomness of generative models, many can be identified with the concerted activation of a feature or group of features.<p>Instead of filtering outputs, we intervene at the activation level during the forward pass. We identify latent feature vectors (v) associated with specific behaviors (bias, misconception) and mathematically modify the hidden state (h):<p><pre><code>  h_prime = h - alpha * (h @ v) * v\n</code></pre>\nThis arithmetic operation lets us &quot;edit&quot; behavior deterministically with negligible overhead (&lt;10ms on R1). For factual claims, we combine this with a graph verification pipeline (which works on closed weight models). We check semantic entropy (is the model babbling?) and cross-reference claims against a dynamic knowledge graph to catch subtle relational hallucinations that vector search misses.<p>On GPT-OSS-120b, this approach improved TruthfulQA accuracy from 21% to 70% by suppressing misconception features. We also improved the performance of this model to frontier levels on HaluEval-QA, where we reached 96.5% accuracy, solving the spatial reasoning failures where the baseline failed. It also handles noisy inputs, inferring &quot;David Icke&quot; from the typo &quot;David Of me&quot; where base models gave up. Full benchmarks at <a href=\"https://ctgt.ai/benchmarks\">https://ctgt.ai/benchmarks</a>.<p>Most startups in this space are observability tools that tell you only after the model failed. Or they are RAG pipelines that stuff context into the window. Mentat is an infrastructure layer that modifies the model's processing during inference. We fix the reasoning, not just the context. For example, that\u2019s how our system was able to enforce that if A is SE of B, then B is NW of A.<p>We believe that our policy engine is a superior control mechanism to RAG or prompting. If you\u2019re frustrated with current guardrails, we\u2019d love it if you would stress-test our API!<p>API: Our endpoint is drop-in compatible with OpenAI\u2019s /v1/chat/completions: <a href=\"https://docs.ctgt.ai/api-reference/endpoint/chat-completions\">https://docs.ctgt.ai/api-reference/endpoint/chat-completions</a><p>Playground: We\u2019ve built an &quot;Arena&quot; view to run side-by-side comparisons of an Ungoverned vs. Governed model to visualize the intervention delta in real-time. No signup is required: <a href=\"https://playground.ctgt.ai/\">https://playground.ctgt.ai/</a><p>We\u2019d love to hear your feedback on the approach and see what edge cases you can find that break standard models. We will be in the comments all day. All feedback welcome!"
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "launch",
+      "hn",
+      "runtime"
+     ],
+     "value": "<em>Launch</em> <em>HN</em>: Mentat (YC F24) \u2013 Controlling LLMs with <em>Runtime</em> Intervention"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_cgorlla",
+    "story_46207017",
+    "launch_hn"
+   ],
+   "author": "cgorlla",
+   "children": [
+    46207556,
+    46207571,
+    46207955,
+    46208127,
+    46208222,
+    46208823,
+    46208868,
+    46209734,
+    46209823,
+    46210032,
+    46210700,
+    46213022
+   ],
+   "created_at": "2025-12-09T16:37:55Z",
+   "created_at_i": 1765298275,
+   "num_comments": 34,
+   "objectID": "46207017",
+   "points": 54,
+   "story_id": 46207017,
+   "story_text": "Hi HN, I\u2019m Cyril from CTGT. Today we\u2019re launching Mentat (<a href=\"https:&#x2F;&#x2F;docs.ctgt.ai&#x2F;api-reference&#x2F;endpoint&#x2F;chat-completions\">https:&#x2F;&#x2F;docs.ctgt.ai&#x2F;api-reference&#x2F;endpoint&#x2F;chat-completions</a>), an API that gives developers deterministic control over LLM behavior, steering reasoning and removing bias on the fly, without the compute of fine-tuning or the brittleness of prompt engineering. We use feature-level intervention and graph-based verification to fix hallucinations and enforce policies.<p>This resonates in highly regulated industries or otherwise risky applications of AI where the fallout from incorrect or underperforming output can be significant. In financial services, using GenAI to scan for noncompliant communications can be arduous without an easy way to embed complex policies into the model. Similarly, a media outlet might want to scale AI-generated summaries of their content, but reliability and accuracy is paramount. These are both applications where Fortune 500 companies have utilized our technology to improve subpar performance from existing models, and we want to bring this capability to more people.<p>Here\u2019s a quick 2-minute demo video showing the process: <a href=\"https:&#x2F;&#x2F;video.ctgt.ai&#x2F;video&#x2F;ctgt-ai-compliance-playground-cfnl\">https:&#x2F;&#x2F;video.ctgt.ai&#x2F;video&#x2F;ctgt-ai-compliance-playground-cf...</a><p>Standard &quot;guardrails&quot; like RAG and system prompts are fundamentally probabilistic: you are essentially asking the model nicely to behave. This often fails in two ways. First, RAG solves knowledge <i>availability</i> but not <i>integration</i>. In our benchmarks, a model given context that &quot;Lerwick is 228 miles SE of T\u00f3rshavn&quot; failed to answer &quot;What is 228 miles NW of Lerwick?&quot; because it couldn&#x27;t perform the spatial inversion.<p>Second, prompt engineering is brittle because it fights against the model&#x27;s pre-training priors. For example, on the TruthfulQA benchmark, base models fail ~80% of the time because they mimic common misconceptions found on the internet (e.g. &quot;chameleons change color for camouflage&quot;). We found that we could literally turn up the feature for &quot;skeptical reasoning&quot; to make the model ignore the popular myth and output the scientific fact. This matters because for high-stakes use cases (like Finance or Pharma), &quot;mostly safe&quot; isn&#x27;t acceptable\u2014companies need audit-grade reliability.<p>Our work stems from the CS dungeon at UCSD, with years spent researching efficient and interpretable AI, trying to &quot;open the black box&quot; of neural networks. We realized that the industry was trying to patch model behavior from the outside (prompts&#x2F;filters) when the problem was on the inside (feature activations). We knew this was important when we saw enterprises struggling to deploy basic models despite having unlimited compute, simply because they couldn&#x27;t guarantee the output wouldn&#x27;t violate compliance rules. I ended up leaving my research at Stanford to focus on this.<p>Our breakthrough came while researching the DeepSeek-R1 model. We identified the &quot;censorship&quot; feature vector in its latent space. Amplifying it guaranteed refusal; subtracting it instantly unlocked answers to sensitive questions. This proved the model <i>had</i> the knowledge but was suppressing it. We realized we could apply this same logic to hallucinations, suppressing &quot;confabulation&quot; features to reveal the grounded truth. While some hallucinations stem from the inherent randomness of generative models, many can be identified with the concerted activation of a feature or group of features.<p>Instead of filtering outputs, we intervene at the activation level during the forward pass. We identify latent feature vectors (v) associated with specific behaviors (bias, misconception) and mathematically modify the hidden state (h):<p><pre><code>  h_prime = h - alpha * (h @ v) * v\n</code></pre>\nThis arithmetic operation lets us &quot;edit&quot; behavior deterministically with negligible overhead (&lt;10ms on R1). For factual claims, we combine this with a graph verification pipeline (which works on closed weight models). We check semantic entropy (is the model babbling?) and cross-reference claims against a dynamic knowledge graph to catch subtle relational hallucinations that vector search misses.<p>On GPT-OSS-120b, this approach improved TruthfulQA accuracy from 21% to 70% by suppressing misconception features. We also improved the performance of this model to frontier levels on HaluEval-QA, where we reached 96.5% accuracy, solving the spatial reasoning failures where the baseline failed. It also handles noisy inputs, inferring &quot;David Icke&quot; from the typo &quot;David Of me&quot; where base models gave up. Full benchmarks at <a href=\"https:&#x2F;&#x2F;ctgt.ai&#x2F;benchmarks\">https:&#x2F;&#x2F;ctgt.ai&#x2F;benchmarks</a>.<p>Most startups in this space are observability tools that tell you only after the model failed. Or they are RAG pipelines that stuff context into the window. Mentat is an infrastructure layer that modifies the model&#x27;s processing during inference. We fix the reasoning, not just the context. For example, that\u2019s how our system was able to enforce that if A is SE of B, then B is NW of A.<p>We believe that our policy engine is a superior control mechanism to RAG or prompting. If you\u2019re frustrated with current guardrails, we\u2019d love it if you would stress-test our API!<p>API: Our endpoint is drop-in compatible with OpenAI\u2019s &#x2F;v1&#x2F;chat&#x2F;completions: <a href=\"https:&#x2F;&#x2F;docs.ctgt.ai&#x2F;api-reference&#x2F;endpoint&#x2F;chat-completions\">https:&#x2F;&#x2F;docs.ctgt.ai&#x2F;api-reference&#x2F;endpoint&#x2F;chat-completions</a><p>Playground: We\u2019ve built an &quot;Arena&quot; view to run side-by-side comparisons of an Ungoverned vs. Governed model to visualize the intervention delta in real-time. No signup is required: <a href=\"https:&#x2F;&#x2F;playground.ctgt.ai&#x2F;\">https:&#x2F;&#x2F;playground.ctgt.ai&#x2F;</a><p>We\u2019d love to hear your feedback on the approach and see what edge cases you can find that break standard models. We will be in the comments all day. All feedback welcome!",
+   "title": "Launch HN: Mentat (YC F24) \u2013 Controlling LLMs with Runtime Intervention",
+   "updated_at": "2026-03-05T23:07:27Z"
+  }
+ ]
+}

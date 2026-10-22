@@ -1,0 +1,485 @@
+{
+ "domain_query": "heyhyper.ai",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "shalinshah"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Hey HN -- I'm Shalin, one of the cofounders of Hyper.<p>My cofounder Kanyes and I have been power users of a lot of second brain type software like Notion and Obsidian for years, and tried fine-tuning GPT-2 back in 2020 to solve this exact problem of giving AI access to all context of my life so it can do work for me more intelligently. We were too early then, and spent the next 4 years building robots at Matic. Earlier this year, we realized this was perhaps the right time to take a second crack at this problem, so we quit our jobs and built Hyper. It's super exciting that we finally shipped a self-serve version that you can try out yourself from the website!<p>Happy to answer any questions below, technical or otherwise, and hope this is something useful!"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Hyper, the self driving company brain"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "heyhyper",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>heyhyper.ai</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_shalinshah",
+    "story_48288021",
+    "show_hn"
+   ],
+   "author": "shalinshah",
+   "children": [
+    48290055
+   ],
+   "created_at": "2026-05-27T00:45:45Z",
+   "created_at_i": 1779842745,
+   "num_comments": 2,
+   "objectID": "48288021",
+   "points": 4,
+   "story_id": 48288021,
+   "story_text": "Hey HN -- I&#x27;m Shalin, one of the cofounders of Hyper.<p>My cofounder Kanyes and I have been power users of a lot of second brain type software like Notion and Obsidian for years, and tried fine-tuning GPT-2 back in 2020 to solve this exact problem of giving AI access to all context of my life so it can do work for me more intelligently. We were too early then, and spent the next 4 years building robots at Matic. Earlier this year, we realized this was perhaps the right time to take a second crack at this problem, so we quit our jobs and built Hyper. It&#x27;s super exciting that we finally shipped a self-serve version that you can try out yourself from the website!<p>Happy to answer any questions below, technical or otherwise, and hope this is something useful!",
+   "title": "Show HN: Hyper, the self driving company brain",
+   "updated_at": "2026-06-02T16:45:55Z",
+   "url": "https://heyhyper.ai/"
+  }
+ ],
+ "launch_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "brennanm"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "hn",
+      "hyper"
+     ],
+     "value": "Hi <em>HN</em>, we\u2019re Brennan and Graham, founders of <em>Hyper</em>context (<a href=\"https://hypercontext.com\" rel=\"nofollow\">https://<em>hyper</em>context.com</a>). We make an app that helps managers run their 1:1 and team meetings with action items, feedback, and OKRs (goals) in one workflow.<p>Most managers get promoted into their role with no training. \u201cOh you\u2019re a good engineer? Great! Now manage a team of engineers and stop coding\u201d. They\u2019re largely leading with trial-and-error tactics. The good ones are reflective and learn, and many eventually read books on best practices and frameworks that can help them. Our insight is that it\u2019s possible to build some of these good  frameworks into a workflow so every manager can get them by default, similarly to how a good software framework lets you not have to hand-roll all the boilerplate code, so you can focus on the business logic. We think it\u2019s time managers stop winging it (worst case) or hand rolling their management frameworks (best case) in Google Docs and Moleskin notebooks and start importing frameworks that solve the basics for them.<p>Previously, Graham and I have been co-founders for 10 years together. Our last startup grew to ~40 employees. When we became full-time managers we were shocked at the lack of tooling that existed for general management work. This was where the idea for <em>Hyper</em>context came from. We started building tools and systems to help us fill the gaps (mainly in Google Sheets/Docs/Forms). We shared them with friends and they were loved.<p>Personally, I stumbled through management in my first startup. I didn\u2019t talk about goals. I didn\u2019t share candid feedback. I wasn\u2019t clear or consistent. I thought I knew how to do other people\u2019s jobs. I learned the hard way every single time. And so did all of my peers. The only way to save a fellow manager from that pain was by sharing personal tips or recommending books. We thought there must be a better way.<p><em>Hyper</em>context starts before the meeting: connecting to your existing meetings and helping you and your team build a collaborative agenda and show up prepared. During the meeting, often overlayed on a Google Meet: we help you take notes and action items, and email them out automatically for you. After: ML runs over your notes and generates insights about management blindspots. We then suggest questions/conversation starters for your next meeting to help to resolve them.<p>Finally, we\u2019ve built a powerful goaling tool, complete with the largest library of goal/OKR examples on the internet (free here, broken up by role: <a href=\"https://hypercontext.com/goal-examples\" rel=\"nofollow\">https://<em>hyper</em>context.com/goal-examples</a>), that helps you collaborate, document, and discuss long-term goals every meeting before the urgent agenda topic.<p>Founders, CEOs, execs use our app all week to manage their job\u2014mainly through their 1:1 and team meetings. We\u2019re specifically helpful for folks who are doing a lot of context switching throughout their day and need to offload the \u201cremember to talk to people about this\u201d part of their brain."
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "launch",
+      "hn",
+      "hyper"
+     ],
+     "value": "<em>Launch</em> <em>HN</em>: <em>Hyper</em>context (YC S21) \u2013 Meeting notes, actions, and OKRs in one app"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_brennanm",
+    "story_27882350",
+    "launch_hn"
+   ],
+   "author": "brennanm",
+   "children": [
+    27882376,
+    27882424,
+    27882704,
+    27882736,
+    27883250,
+    27883416,
+    27883610,
+    27883780,
+    27884362,
+    27884506,
+    27884572,
+    27884669,
+    27885220,
+    27885861,
+    27886417,
+    27887098,
+    27887101,
+    27887343,
+    27888093,
+    27888851,
+    27926889
+   ],
+   "created_at": "2021-07-19T13:21:31Z",
+   "created_at_i": 1626700891,
+   "num_comments": 60,
+   "objectID": "27882350",
+   "points": 145,
+   "story_id": 27882350,
+   "story_text": "Hi HN, we\u2019re Brennan and Graham, founders of Hypercontext (<a href=\"https:&#x2F;&#x2F;hypercontext.com\" rel=\"nofollow\">https:&#x2F;&#x2F;hypercontext.com</a>). We make an app that helps managers run their 1:1 and team meetings with action items, feedback, and OKRs (goals) in one workflow.<p>Most managers get promoted into their role with no training. \u201cOh you\u2019re a good engineer? Great! Now manage a team of engineers and stop coding\u201d. They\u2019re largely leading with trial-and-error tactics. The good ones are reflective and learn, and many eventually read books on best practices and frameworks that can help them. Our insight is that it\u2019s possible to build some of these good  frameworks into a workflow so every manager can get them by default, similarly to how a good software framework lets you not have to hand-roll all the boilerplate code, so you can focus on the business logic. We think it\u2019s time managers stop winging it (worst case) or hand rolling their management frameworks (best case) in Google Docs and Moleskin notebooks and start importing frameworks that solve the basics for them.<p>Previously, Graham and I have been co-founders for 10 years together. Our last startup grew to ~40 employees. When we became full-time managers we were shocked at the lack of tooling that existed for general management work. This was where the idea for Hypercontext came from. We started building tools and systems to help us fill the gaps (mainly in Google Sheets&#x2F;Docs&#x2F;Forms). We shared them with friends and they were loved.<p>Personally, I stumbled through management in my first startup. I didn\u2019t talk about goals. I didn\u2019t share candid feedback. I wasn\u2019t clear or consistent. I thought I knew how to do other people\u2019s jobs. I learned the hard way every single time. And so did all of my peers. The only way to save a fellow manager from that pain was by sharing personal tips or recommending books. We thought there must be a better way.<p>Hypercontext starts before the meeting: connecting to your existing meetings and helping you and your team build a collaborative agenda and show up prepared. During the meeting, often overlayed on a Google Meet: we help you take notes and action items, and email them out automatically for you. After: ML runs over your notes and generates insights about management blindspots. We then suggest questions&#x2F;conversation starters for your next meeting to help to resolve them.<p>Finally, we\u2019ve built a powerful goaling tool, complete with the largest library of goal&#x2F;OKR examples on the internet (free here, broken up by role: <a href=\"https:&#x2F;&#x2F;hypercontext.com&#x2F;goal-examples\" rel=\"nofollow\">https:&#x2F;&#x2F;hypercontext.com&#x2F;goal-examples</a>), that helps you collaborate, document, and discuss long-term goals every meeting before the urgent agenda topic.<p>Founders, CEOs, execs use our app all week to manage their job\u2014mainly through their 1:1 and team meetings. We\u2019re specifically helpful for folks who are doing a lot of context switching throughout their day and need to offload the \u201cremember to talk to people about this\u201d part of their brain.",
+   "title": "Launch HN: Hypercontext (YC S21) \u2013 Meeting notes, actions, and OKRs in one app",
+   "updated_at": "2025-01-18T21:51:54Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "declan_g"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "hn",
+      "hyper"
+     ],
+     "value": "Hi <em>HN</em>, we\u2019re Philip, Amby, and Declan from <em>Hyper</em>beam (<a href=\"https://www.hyperbeam.dev\" rel=\"nofollow\">https://www.<em>hyper</em>beam.dev</a>). <em>Hyper</em>beam is an API that makes it easy for developers to embed real-time multiplayer capabilities into their web apps\u2014including any other web app that you want to provide multiplayer access to.<p>Building software to connect people in real time is hard. We experienced this in college when we built a \u201cwatch party\u201d site for people to watch movies together (<a href=\"https://hyperbeam.com\" rel=\"nofollow\">https://<em>hyper</em>beam.com</a>). Other watch party solutions were unreliable, so we spent two years building tech to allow friends to watch stuff together with ease.<p>The key piece was a \u201cmultiplayer web browser\u201d. By that we mean a Chromium instance that you embed inside your own web app (i.e. web browser inception) which is actually hosted on a server and streamed via WebRTC, and so can be shared and controlled by multiple people at the same time.<p>For example, say you have an online tutoring platform. An instructor can open any application in the embedded web browser and then work on it with the student together.<p>Another use case is making non-multiplayer apps multiplayer. One of our customers wanted to add a collaborative version of Google Slides to their product, so multiple participants could navigate the slides at once. Google doesn't provide an API for that, so users had to screen share, which isn't multiplayer. With <em>Hyper</em>beam, you just open up a shared instance of Google Slides and then multiple people can control it.<p>We didn\u2019t learn about those use cases until later, though. What happened was that we grew <em>hyper</em>beam.com to 150k monthly active users and over 1M hours of video per month, but then it stopped growing. Despite this, we got into YC, and soon had multiple companies asking to buy our multiplayer browsing tech. After closing three deals, we decided to sell our multiplayer web browsers as an API. That way other companies can build products to connect others without going through two years of WebRTC hell like we did.<p>We allow developers to embed multiplayer web browsers in their web apps with a few lines of code. Users can then visit any website from inside that web app together. Developers can specify control permissions, programmatically navigate to specific URLs, and hide the browser UI so apps appear as if they are natively integrated.<p>Unlike screen share solutions that upload your personal computer stream to participants, <em>Hyper</em>beam\u2019s multiplayer web browsers run on our own virtual machines. This eliminates the upload speed bottleneck that many users experience.<p>We host a Chromium browser instance on our server, record the video and audio output and stream it to all participants using WebRTC. That sounds simple, but hosting full-blown Chromium instances is challenging, especially doing it cost-effectively: what we learned is Chromium instances, at scale, love memory bandwidth a lot more than the amount of memory. Also, network unreliability, like last-mile packet loss, is also a problem, especially audio packet loss which is a lot more noticeable than video packet loss. A simple hack we have in place is literally sending every audio RTP packet twice, which improves audio quality drastically over spotty connections.<p>Anyone is welcome to get a free playground API key and try our product! Rather than spend time building a UI for that, we\u2019ve just put up a Google Form in the spirit of do-things-that-don\u2019t-scale. Go to <a href=\"https://forms.gle/RSQhbFXbdrcqwqsc9\" rel=\"nofollow\">https://forms.gle/RSQhbFXbdrcqwqsc9</a>, fill in your email and we promise to send you an API key right away. The API docs are here: <a href=\"https://showy-backpack-b3f.notion.site/Hyperbeam-API-eb9874bd1ef54c22ba7197324ce22231\" rel=\"nofollow\">https://showy-backpack-b3f.notion.site/<em>Hyper</em>beam-API-eb9874b...</a><p>Pricing is not transparent on our website yet\u2014we\u2019re still working it out. However, we\u2019re going to use the same business model as CPaaS companies such as Agora and Twilio. We\u2019ll charge customers a minimum amount per month and provide a set amount of participant hours. If a customer exceeds the provided participant hours, we continue charging at a fixed rate.<p>If you want to try our tech in action, you can do that by signing up for free and creating a room using our original <em>Hyper</em>beam watch party platform: <a href=\"https://hyperbeam.com/app/register\" rel=\"nofollow\">https://<em>hyper</em>beam.com/app/register</a><p>Alternatively, we'll be answering questions live in our <em>HN</em> watch party here: <a href=\"https://gg.hyperbeam.com/invite/w0c6n-Ko\" rel=\"nofollow\">https://gg.<em>hyper</em>beam.com/invite/w0c6n-Ko</a><p>We\u2019re happy to answer any questions you have, and would love to hear your ideas for other potential use cases as well. Thanks!"
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "launch",
+      "hn",
+      "hyper"
+     ],
+     "value": "<em>Launch</em> <em>HN</em>: <em>Hyper</em>beam API (YC W22) \u2013 Multiplayer embeds of any website"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_declan_g",
+    "story_30433104",
+    "launch_hn"
+   ],
+   "author": "declan_g",
+   "children": [
+    30433337,
+    30433377,
+    30433601,
+    30433622,
+    30433706,
+    30433750,
+    30433774,
+    30434090,
+    30434191,
+    30434199,
+    30434282,
+    30434352,
+    30435615,
+    30436289,
+    30436865,
+    30437677
+   ],
+   "created_at": "2022-02-22T20:16:33Z",
+   "created_at_i": 1645560993,
+   "num_comments": 63,
+   "objectID": "30433104",
+   "points": 96,
+   "story_id": 30433104,
+   "story_text": "Hi HN, we\u2019re Philip, Amby, and Declan from Hyperbeam (<a href=\"https:&#x2F;&#x2F;www.hyperbeam.dev\" rel=\"nofollow\">https:&#x2F;&#x2F;www.hyperbeam.dev</a>). Hyperbeam is an API that makes it easy for developers to embed real-time multiplayer capabilities into their web apps\u2014including any other web app that you want to provide multiplayer access to.<p>Building software to connect people in real time is hard. We experienced this in college when we built a \u201cwatch party\u201d site for people to watch movies together (<a href=\"https:&#x2F;&#x2F;hyperbeam.com\" rel=\"nofollow\">https:&#x2F;&#x2F;hyperbeam.com</a>). Other watch party solutions were unreliable, so we spent two years building tech to allow friends to watch stuff together with ease.<p>The key piece was a \u201cmultiplayer web browser\u201d. By that we mean a Chromium instance that you embed inside your own web app (i.e. web browser inception) which is actually hosted on a server and streamed via WebRTC, and so can be shared and controlled by multiple people at the same time.<p>For example, say you have an online tutoring platform. An instructor can open any application in the embedded web browser and then work on it with the student together.<p>Another use case is making non-multiplayer apps multiplayer. One of our customers wanted to add a collaborative version of Google Slides to their product, so multiple participants could navigate the slides at once. Google doesn&#x27;t provide an API for that, so users had to screen share, which isn&#x27;t multiplayer. With Hyperbeam, you just open up a shared instance of Google Slides and then multiple people can control it.<p>We didn\u2019t learn about those use cases until later, though. What happened was that we grew hyperbeam.com to 150k monthly active users and over 1M hours of video per month, but then it stopped growing. Despite this, we got into YC, and soon had multiple companies asking to buy our multiplayer browsing tech. After closing three deals, we decided to sell our multiplayer web browsers as an API. That way other companies can build products to connect others without going through two years of WebRTC hell like we did.<p>We allow developers to embed multiplayer web browsers in their web apps with a few lines of code. Users can then visit any website from inside that web app together. Developers can specify control permissions, programmatically navigate to specific URLs, and hide the browser UI so apps appear as if they are natively integrated.<p>Unlike screen share solutions that upload your personal computer stream to participants, Hyperbeam\u2019s multiplayer web browsers run on our own virtual machines. This eliminates the upload speed bottleneck that many users experience.<p>We host a Chromium browser instance on our server, record the video and audio output and stream it to all participants using WebRTC. That sounds simple, but hosting full-blown Chromium instances is challenging, especially doing it cost-effectively: what we learned is Chromium instances, at scale, love memory bandwidth a lot more than the amount of memory. Also, network unreliability, like last-mile packet loss, is also a problem, especially audio packet loss which is a lot more noticeable than video packet loss. A simple hack we have in place is literally sending every audio RTP packet twice, which improves audio quality drastically over spotty connections.<p>Anyone is welcome to get a free playground API key and try our product! Rather than spend time building a UI for that, we\u2019ve just put up a Google Form in the spirit of do-things-that-don\u2019t-scale. Go to <a href=\"https:&#x2F;&#x2F;forms.gle&#x2F;RSQhbFXbdrcqwqsc9\" rel=\"nofollow\">https:&#x2F;&#x2F;forms.gle&#x2F;RSQhbFXbdrcqwqsc9</a>, fill in your email and we promise to send you an API key right away. The API docs are here: <a href=\"https:&#x2F;&#x2F;showy-backpack-b3f.notion.site&#x2F;Hyperbeam-API-eb9874bd1ef54c22ba7197324ce22231\" rel=\"nofollow\">https:&#x2F;&#x2F;showy-backpack-b3f.notion.site&#x2F;Hyperbeam-API-eb9874b...</a><p>Pricing is not transparent on our website yet\u2014we\u2019re still working it out. However, we\u2019re going to use the same business model as CPaaS companies such as Agora and Twilio. We\u2019ll charge customers a minimum amount per month and provide a set amount of participant hours. If a customer exceeds the provided participant hours, we continue charging at a fixed rate.<p>If you want to try our tech in action, you can do that by signing up for free and creating a room using our original Hyperbeam watch party platform: <a href=\"https:&#x2F;&#x2F;hyperbeam.com&#x2F;app&#x2F;register\" rel=\"nofollow\">https:&#x2F;&#x2F;hyperbeam.com&#x2F;app&#x2F;register</a><p>Alternatively, we&#x27;ll be answering questions live in our HN watch party here: <a href=\"https:&#x2F;&#x2F;gg.hyperbeam.com&#x2F;invite&#x2F;w0c6n-Ko\" rel=\"nofollow\">https:&#x2F;&#x2F;gg.hyperbeam.com&#x2F;invite&#x2F;w0c6n-Ko</a><p>We\u2019re happy to answer any questions you have, and would love to hear your ideas for other potential use cases as well. Thanks!",
+   "title": "Launch HN: Hyperbeam API (YC W22) \u2013 Multiplayer embeds of any website",
+   "updated_at": "2024-09-20T10:34:25Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "sai18"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "hn",
+      "hyper"
+     ],
+     "value": "Hi <em>HN</em>, we\u2019re Sai and Aayush and we\u2019re building <em>Hyper</em>cubic (<a href=\"https://www.hypercubic.ai/\">https://www.<em>hyper</em>cubic.ai/</a>)!<p><em>Hyper</em>cubic is an AI platform that helps Fortune 500 companies understand, preserve, and modernize their mainframe systems. These are the systems that run COBOL from the 1960s that still quietly power banking, insurance, airlines, and governments today.<p>70% of the Fortune 500 still run on mainframes, but the engineers who built and maintained them are retiring. Today, the average age of a COBOL/mainframe engineer is about 55 and rapidly increasing. What\u2019s left behind are opaque, black box systems with almost no one who understands how they work. Modernization projects often fail, documentation is decades out of date, and critical institutional knowledge lives only in the minds of a few senior subject matter experts who are now leaving the workforce.<p>Current \u201cAI for code\u201d tools focus on codebases and repositories, so they miss the unwritten rules, historical context, and architectural reasoning that live in human minds. In the COBOL/mainframe world, that institutional knowledge is the key missing piece.<p>What we heard from modernization leaders is that the hard part is not the code analysis. The challenge is the institutional knowledge that never made it into code or documentation and has walked out the door. Modernization projects fail not because no one can parse COBOL, but because no one can answer \u201cwhy was this billing edge case added in 1995 and what breaks if we remove it.\u201d<p><em>Hyper</em>cubic is building an AI-native maintenance and modernization platform that learns how legacy mainframe systems actually work and captures the human reasoning behind operating them. We\u2019re doing this with two initial tools, <em>Hyper</em>Docs and <em>Hyper</em>Twin.<p><em>Hyper</em>Docs ingests COBOL, JCL, and PL/I codebases to generate documentation, architecture diagrams, and dependency graphs. Enterprises currently spend months or years hiring contractors to reverse-engineer these systems; <em>Hyper</em>Docs compresses that work to take much less time.<p>COBOL was designed to resemble English and business prose, making it a good fit for LLMs today. Mainframes have decades of consistent patterns (COBOL, JCL, CICS, batch jobs) and a finite set of recurring tasks (such as payroll, transaction processing, billing).<p>For example, here\u2019s a billing fragment that would be run nightly in production at large insurance companies for moving money, closing accounts, and triggering downstream reports:<p><pre><code>  EVALUATE TRUE\n      WHEN PAYMENT-DUE AND NOT PAID\n          PERFORM CALCULATE-LATE-FEE\n          PERFORM GENERATE-NOTICE\n      WHEN PAYMENT-RECEIVED AND BALANCE-DUE = 0\n          MOVE &quot;ACCOUNT CLEAR&quot; TO STATUS\n          PERFORM ARCHIVE-STATEMENT\n      WHEN OTHER\n          PERFORM LOG-ANOMALY\n  END-EVALUATE.\n</code></pre>\nNow imagine thousands of these rules, each running payrolls, processing claims, or reconciling accounts, spread across millions of lines of code written over 40+ years. <em>Hyper</em>Docs ingests that code and reconstructs it into readable, living documentation that shows how the black box system works.<p>Our other tool, <em>Hyper</em>Twin, tackles the \u201ctribal knowledge\u201d problem. It learns directly from subject-matter experts, observing workflows, analyzing screen interactions, and conducting AI-driven interviews to capture how they debug and reason about their systems. The goal is to build digital \u201ctwins\u201d of the experts on how they debug, architect, and maintain these systems in practice.<p>Together, <em>Hyper</em>Docs and <em>Hyper</em>Twin form a knowledge graph of legacy systems linking code, systems, and human reasoning.<p>Here\u2019s a demo video of our <em>Hyper</em>Twin product: <a href=\"https://www.youtube.com/watch?v=C-tNtl9Z_jY\" rel=\"nofollow\">https://www.youtube.com/watch?v=C-tNtl9Z_jY</a><p>You can explore our documentation platform, including examples from the AWS Card Demo (a widely used COBOL codebase example) and a dummy insurance project here:\n<a href=\"https://hyperdocs-public.onrender.com/\" rel=\"nofollow\">https://<em>hyper</em>docs-public.onrender.com/</a>.<p>e.g. Developer perspective docs - High level system architecture of credit card management: \n<a href=\"https://hyperdocs-public.onrender.com/docs/aws-carddemo-with-dev-docs/developer/architecture/system-architecture\" rel=\"nofollow\">https://<em>hyper</em>docs-public.onrender.com/docs/aws-carddemo-with...</a><p>We\u2019re curious to hear your thoughts and feedback, especially from anyone who\u2019s worked with mainframes or tried to modernize legacy systems."
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "launch",
+      "hn",
+      "hyper"
+     ],
+     "value": "<em>Launch</em> <em>HN</em>: <em>Hyper</em>cubic (YC F25) \u2013 AI for COBOL and Mainframes"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_sai18",
+    "story_45877517",
+    "launch_hn"
+   ],
+   "author": "sai18",
+   "children": [
+    45878105,
+    45878211,
+    45878280,
+    45878485,
+    45878736,
+    45878988,
+    45878999,
+    45879239,
+    45879454,
+    45879545,
+    45879611,
+    45879647,
+    45879692,
+    45879750,
+    45880593,
+    45881146,
+    45881407,
+    45882020,
+    45884132,
+    45886103,
+    45891300,
+    45902423
+   ],
+   "created_at": "2025-11-10T16:23:24Z",
+   "created_at_i": 1762791804,
+   "num_comments": 58,
+   "objectID": "45877517",
+   "points": 91,
+   "story_id": 45877517,
+   "story_text": "Hi HN, we\u2019re Sai and Aayush and we\u2019re building Hypercubic (<a href=\"https:&#x2F;&#x2F;www.hypercubic.ai&#x2F;\">https:&#x2F;&#x2F;www.hypercubic.ai&#x2F;</a>)!<p>Hypercubic is an AI platform that helps Fortune 500 companies understand, preserve, and modernize their mainframe systems. These are the systems that run COBOL from the 1960s that still quietly power banking, insurance, airlines, and governments today.<p>70% of the Fortune 500 still run on mainframes, but the engineers who built and maintained them are retiring. Today, the average age of a COBOL&#x2F;mainframe engineer is about 55 and rapidly increasing. What\u2019s left behind are opaque, black box systems with almost no one who understands how they work. Modernization projects often fail, documentation is decades out of date, and critical institutional knowledge lives only in the minds of a few senior subject matter experts who are now leaving the workforce.<p>Current \u201cAI for code\u201d tools focus on codebases and repositories, so they miss the unwritten rules, historical context, and architectural reasoning that live in human minds. In the COBOL&#x2F;mainframe world, that institutional knowledge is the key missing piece.<p>What we heard from modernization leaders is that the hard part is not the code analysis. The challenge is the institutional knowledge that never made it into code or documentation and has walked out the door. Modernization projects fail not because no one can parse COBOL, but because no one can answer \u201cwhy was this billing edge case added in 1995 and what breaks if we remove it.\u201d<p>Hypercubic is building an AI-native maintenance and modernization platform that learns how legacy mainframe systems actually work and captures the human reasoning behind operating them. We\u2019re doing this with two initial tools, HyperDocs and HyperTwin.<p>HyperDocs ingests COBOL, JCL, and PL&#x2F;I codebases to generate documentation, architecture diagrams, and dependency graphs. Enterprises currently spend months or years hiring contractors to reverse-engineer these systems; HyperDocs compresses that work to take much less time.<p>COBOL was designed to resemble English and business prose, making it a good fit for LLMs today. Mainframes have decades of consistent patterns (COBOL, JCL, CICS, batch jobs) and a finite set of recurring tasks (such as payroll, transaction processing, billing).<p>For example, here\u2019s a billing fragment that would be run nightly in production at large insurance companies for moving money, closing accounts, and triggering downstream reports:<p><pre><code>  EVALUATE TRUE\n      WHEN PAYMENT-DUE AND NOT PAID\n          PERFORM CALCULATE-LATE-FEE\n          PERFORM GENERATE-NOTICE\n      WHEN PAYMENT-RECEIVED AND BALANCE-DUE = 0\n          MOVE &quot;ACCOUNT CLEAR&quot; TO STATUS\n          PERFORM ARCHIVE-STATEMENT\n      WHEN OTHER\n          PERFORM LOG-ANOMALY\n  END-EVALUATE.\n</code></pre>\nNow imagine thousands of these rules, each running payrolls, processing claims, or reconciling accounts, spread across millions of lines of code written over 40+ years. HyperDocs ingests that code and reconstructs it into readable, living documentation that shows how the black box system works.<p>Our other tool, HyperTwin, tackles the \u201ctribal knowledge\u201d problem. It learns directly from subject-matter experts, observing workflows, analyzing screen interactions, and conducting AI-driven interviews to capture how they debug and reason about their systems. The goal is to build digital \u201ctwins\u201d of the experts on how they debug, architect, and maintain these systems in practice.<p>Together, HyperDocs and HyperTwin form a knowledge graph of legacy systems linking code, systems, and human reasoning.<p>Here\u2019s a demo video of our HyperTwin product: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=C-tNtl9Z_jY\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=C-tNtl9Z_jY</a><p>You can explore our documentation platform, including examples from the AWS Card Demo (a widely used COBOL codebase example) and a dummy insurance project here:\n<a href=\"https:&#x2F;&#x2F;hyperdocs-public.onrender.com&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;hyperdocs-public.onrender.com&#x2F;</a>.<p>e.g. Developer perspective docs - High level system architecture of credit card management: \n<a href=\"https:&#x2F;&#x2F;hyperdocs-public.onrender.com&#x2F;docs&#x2F;aws-carddemo-with-dev-docs&#x2F;developer&#x2F;architecture&#x2F;system-architecture\" rel=\"nofollow\">https:&#x2F;&#x2F;hyperdocs-public.onrender.com&#x2F;docs&#x2F;aws-carddemo-with...</a><p>We\u2019re curious to hear your thoughts and feedback, especially from anyone who\u2019s worked with mainframes or tried to modernize legacy systems.",
+   "title": "Launch HN: Hypercubic (YC F25) \u2013 AI for COBOL and Mainframes",
+   "updated_at": "2026-03-05T23:01:04Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "shalinshah"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "launch",
+      "hn",
+      "hyper"
+     ],
+     "value": "Hey <em>HN</em>, we\u2019re Shalin &amp; Kanyes, best friends who've been hacking together for 10+yrs, and now founders of <em>Hyper</em> (<a href=\"https://heyhyper.ai/\">https://heyhyper.ai/</a>). <em>Hyper</em> is a shared \u201ccompany brain\u201d that plugs into information flowing inside a company to make AI agents and automations better and ultimately save people time.<p>Models have gotten good enough that they can (mostly) take on long-horizon, complex tasks. We believe the bottleneck now is that these smart-enough models often lack information about your company, which is scattered in people's heads, Slack threads, stale docs, and in back-and-forth convos with AI.<p>MCP is useful for getting some info in front of an agent, but there are problems: (1) Once the session dies, so does the insight, so instead of copy-pasting a whole doc each time you're telling the agent to dig through Drive each time - not much of a win; (2) Even when MCP works, what it gathers isn't comprehensive, because people decide things on a whiteboard, brainstorm out loud, post a little in Slack, and scribble the rest in a doc, which leaves the agent working from partial information; (3)  And even if it had everything, it doesn't do the meta-reasoning required to do a great job. If you paste in a Notion doc and it won't learn your design taste or your writing style unless you tell it to, and it won't know why a decision was made or when.<p>As undergrads 5 years ago, we were into the tools-for-thought wave and became power users of Notion, Obsidian, Roam, Anki, real believers in building a second brain. After GPT-3.5 came out we started to realize how much more powerful that second brain could be if an AI could actually read it, because suddenly it would know our backstory, our taste, our preferences, and unlock genuinely new capabilities. That\u2019s <i>why</i> we\u2019re building <em>Hyper</em>.<p>We know it\u2019s not for everybody! But for people who do want to be on the cutting edge, this is a force multiplier that makes agents faster and better. It increases the number of tasks they can do, and how effectively they do them.<p><em>Hyper</em> works by ingesting everything you give it access to, Docs, Slack, Email, Calendar, Granola, and synthesizes it into a knowledge graph of facts and their relationships with embeddings for semantic search. The memory system we\u2019ve built is hybrid, with two modalities. Episodes are the raw source items kept as the source of truth. Facts are the meaning pulled out of each episode, stored as subject-predicate-object records with a plain summary and timestamps for when the fact was introduced and when it was invalidated (subject=person, predicate=works_at, object=company). Facts form a graph with typed edges between them: X is in tension with Y, A is derived from B, J supersedes K. Every time a new fact comes in we update the facts in its neighborhood, so the graph stays current, and that's how we handle stale information. When &quot;we'll ship Friday&quot; is later contradicted by &quot;we're shipping Monday,&quot; the new fact supersedes the old one instead of both looking equally true, and we never auto-discard the superseded version, so you can still ask how you landed on Monday.<p>Every fact carries provenance back to its source and access-control tags for who is allowed to see it. At retrieval we query-expand, then fuse semantic search over embeddings with Postgres full-text search using reciprocal rank fusion, and we only ever evaluate a query against the facts and episodes that person has access to, which means two people on the same team can ask the same question and get different answers. We keep information fresh with webhooks where they exist and polling where they don't, hashing contents to catch changes for sources that don\u2019t handle native dedupe. Agents read and write through two paths: lifecycle hooks in tools like Claude Code, Cowork, Codex, and Cursor, where we inject relevant context on every prompt and pull interesting facts out of every response, and plain MCP tool calls for everything that doesn't expose hooks.<p>We love it! and so do our early users: one CEO uses <em>Hyper</em> to draft emails in his voice with full company context. What took hours/week now takes minutes and gets sharper each time <em>Hyper</em> learns more how he thinks and how his company is changing. Another YC founder one-shotted a <em>launch</em> video script because <em>Hyper</em> already knew their product, voice, positioning accumulated over months.<p>We have a 3-day free trial, explained more on our pricing page (<a href=\"https://heyhyper.ai/pricing\">https://heyhyper.ai/pricing</a>) and there are more details in our FAQ (<a href=\"https://heyhyper.ai/faq\">https://heyhyper.ai/faq</a>), including things like privacy, compliance, and how we\u2019re different from other \u201cmemory\u201d companies..<p>Give it a spin! break it! and tell us where it falls short: <a href=\"https://heyhyper.ai/\">https://heyhyper.ai/</a>. We'd love to build you a 10-star experience :) Comments welcome!"
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "launch",
+      "hn",
+      "hyper"
+     ],
+     "value": "<em>Launch</em> <em>HN</em>: <em>Hyper</em> (YC P26) \u2013 Company brain to power agentic development"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_shalinshah",
+    "story_48387095",
+    "launch_hn"
+   ],
+   "author": "shalinshah",
+   "children": [
+    48387410,
+    48387428,
+    48387537,
+    48387620,
+    48387855,
+    48387956,
+    48387973,
+    48387976,
+    48388041,
+    48388095,
+    48388281,
+    48388389,
+    48388474,
+    48388613,
+    48389200,
+    48389215,
+    48390018,
+    48390035,
+    48390040,
+    48390105,
+    48390670,
+    48391261,
+    48391461,
+    48391726,
+    48391764,
+    48392150,
+    48392771,
+    48393642,
+    48395986,
+    48396177,
+    48396229,
+    48396307,
+    48397749,
+    48398192,
+    48401567,
+    48406994,
+    48669080,
+    48669086
+   ],
+   "created_at": "2026-06-03T17:39:53Z",
+   "created_at_i": 1780508393,
+   "num_comments": 78,
+   "objectID": "48387095",
+   "points": 79,
+   "story_id": 48387095,
+   "story_text": "Hey HN, we\u2019re Shalin &amp; Kanyes, best friends who&#x27;ve been hacking together for 10+yrs, and now founders of Hyper (<a href=\"https:&#x2F;&#x2F;heyhyper.ai&#x2F;\">https:&#x2F;&#x2F;heyhyper.ai&#x2F;</a>). Hyper is a shared \u201ccompany brain\u201d that plugs into information flowing inside a company to make AI agents and automations better and ultimately save people time.<p>Models have gotten good enough that they can (mostly) take on long-horizon, complex tasks. We believe the bottleneck now is that these smart-enough models often lack information about your company, which is scattered in people&#x27;s heads, Slack threads, stale docs, and in back-and-forth convos with AI.<p>MCP is useful for getting some info in front of an agent, but there are problems: (1) Once the session dies, so does the insight, so instead of copy-pasting a whole doc each time you&#x27;re telling the agent to dig through Drive each time - not much of a win; (2) Even when MCP works, what it gathers isn&#x27;t comprehensive, because people decide things on a whiteboard, brainstorm out loud, post a little in Slack, and scribble the rest in a doc, which leaves the agent working from partial information; (3)  And even if it had everything, it doesn&#x27;t do the meta-reasoning required to do a great job. If you paste in a Notion doc and it won&#x27;t learn your design taste or your writing style unless you tell it to, and it won&#x27;t know why a decision was made or when.<p>As undergrads 5 years ago, we were into the tools-for-thought wave and became power users of Notion, Obsidian, Roam, Anki, real believers in building a second brain. After GPT-3.5 came out we started to realize how much more powerful that second brain could be if an AI could actually read it, because suddenly it would know our backstory, our taste, our preferences, and unlock genuinely new capabilities. That\u2019s <i>why</i> we\u2019re building Hyper.<p>We know it\u2019s not for everybody! But for people who do want to be on the cutting edge, this is a force multiplier that makes agents faster and better. It increases the number of tasks they can do, and how effectively they do them.<p>Hyper works by ingesting everything you give it access to, Docs, Slack, Email, Calendar, Granola, and synthesizes it into a knowledge graph of facts and their relationships with embeddings for semantic search. The memory system we\u2019ve built is hybrid, with two modalities. Episodes are the raw source items kept as the source of truth. Facts are the meaning pulled out of each episode, stored as subject-predicate-object records with a plain summary and timestamps for when the fact was introduced and when it was invalidated (subject=person, predicate=works_at, object=company). Facts form a graph with typed edges between them: X is in tension with Y, A is derived from B, J supersedes K. Every time a new fact comes in we update the facts in its neighborhood, so the graph stays current, and that&#x27;s how we handle stale information. When &quot;we&#x27;ll ship Friday&quot; is later contradicted by &quot;we&#x27;re shipping Monday,&quot; the new fact supersedes the old one instead of both looking equally true, and we never auto-discard the superseded version, so you can still ask how you landed on Monday.<p>Every fact carries provenance back to its source and access-control tags for who is allowed to see it. At retrieval we query-expand, then fuse semantic search over embeddings with Postgres full-text search using reciprocal rank fusion, and we only ever evaluate a query against the facts and episodes that person has access to, which means two people on the same team can ask the same question and get different answers. We keep information fresh with webhooks where they exist and polling where they don&#x27;t, hashing contents to catch changes for sources that don\u2019t handle native dedupe. Agents read and write through two paths: lifecycle hooks in tools like Claude Code, Cowork, Codex, and Cursor, where we inject relevant context on every prompt and pull interesting facts out of every response, and plain MCP tool calls for everything that doesn&#x27;t expose hooks.<p>We love it! and so do our early users: one CEO uses Hyper to draft emails in his voice with full company context. What took hours&#x2F;week now takes minutes and gets sharper each time Hyper learns more how he thinks and how his company is changing. Another YC founder one-shotted a launch video script because Hyper already knew their product, voice, positioning accumulated over months.<p>We have a 3-day free trial, explained more on our pricing page (<a href=\"https:&#x2F;&#x2F;heyhyper.ai&#x2F;pricing\">https:&#x2F;&#x2F;heyhyper.ai&#x2F;pricing</a>) and there are more details in our FAQ (<a href=\"https:&#x2F;&#x2F;heyhyper.ai&#x2F;faq\">https:&#x2F;&#x2F;heyhyper.ai&#x2F;faq</a>), including things like privacy, compliance, and how we\u2019re different from other \u201cmemory\u201d companies..<p>Give it a spin! break it! and tell us where it falls short: <a href=\"https:&#x2F;&#x2F;heyhyper.ai&#x2F;\">https:&#x2F;&#x2F;heyhyper.ai&#x2F;</a>. We&#x27;d love to build you a 10-star experience :) Comments welcome!",
+   "title": "Launch HN: Hyper (YC P26) \u2013 Company brain to power agentic development",
+   "updated_at": "2026-09-01T13:48:26Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "amargautam"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "hn",
+      "hyper"
+     ],
+     "value": "Hi <em>HN</em>, my name is Amar, and I am the founder and CEO at <em>Hyper</em>Linq (<a href=\"https://hyperlinq.io/\" rel=\"nofollow\">https://<em>hyper</em>linq.io/</a>). We are building <em>Hyper</em>Trader, a simple yet powerful native desktop trading terminal. Our app currently supports cryptocurrency trading, but we will soon expand into other asset classes like US stocks. We make it easy for traders to track multiple portfolios, discover the best prices, execute orders faster and analyze their trades.<p>Between my co-founders Karamvir and Kunal and myself, we have over 30 years of experience building trading systems. Karamvir and I worked at an inter-dealer broker in NYC and built many trading systems together. We also used to trade cryptocurrency. Back then there was a huge price disparity between exchanges, so we were able to do arbitrages.<p>We looked around and couldn't settle on a tool that could help us simplify the workflow, so we set out to build our own, not because we wanted to start a business but because we simply wanted to spend less time. In early 2018, we hacked out a small app that did no more than price aggregation and comparison. Price discovery was the main focus rather than managing portfolios or orders.<p>Soon we had many friends using the app. By mid-2018, we realized there was a business potential, but we found out that people did not want the new features we had been building. So we threw away our roadmap and started interviewing users. What they told us boiled down to two significant asks: (1) A blazingly fast app; (2) Efficient ways to execute orders. None of our users cared about multiple exchanges. They just wanted an app better than the exchange they were trading on. So we decided to build that.<p>As we always wanted to build a desktop app instead of a web app, we decided to go with Node.js, C++, React, Redux, and Electron. We are aware that Electron is not ideal in terms of CPU and memory usage and also the build sizes are huge. But to begin with, we wanted to use something that can work cross platform with a single source code. Eventually we have to move to better options for a true native experience - a goal for 3.0. For the most part, our team has done a decent job at managing CPU and memory so that our app is fast and reliable even when built with Electron. Majority of the processing happens directly on the users' machines\u2014only a small portion of data/processing happens on our servers. The app connects directly to the exchanges. Unlike many other aggregators, we chose not to pick an open-source project for connectivity. Instead, we wrote our own connectors in C++ and deployed them as Node.js add-ons. On the server-side, we chose to remain 100% serverless. We wrote our lambdas in either Python or Node.js.<p>Building a desktop app gave us many advantages in terms of performance. Also, the peer-to-peer connectivity with the exchanges made sure that we do not hit issues related to API rate limits or network delays. It also helped us keep our costs low.<p>We plan to introduce stocks and forex trading in 2022. We want to keep building it further and add as many asset classes as possible. Our goal is to create a terminal that caters to all kinds of traders.<p>If you\u2019re interested, please try out the app and send us your feedback. What do you think of our product? How can we make it better? Happy to answer any comments or questions!"
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "launch",
+      "hn",
+      "hyper"
+     ],
+     "value": "<em>Launch</em> <em>HN</em>: <em>Hyper</em>Linq (YC S21) \u2013 Desktop trading terminal"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_amargautam",
+    "story_28107989",
+    "launch_hn"
+   ],
+   "author": "amargautam",
+   "children": [
+    28108075,
+    28108132,
+    28108155,
+    28108263,
+    28108281,
+    28108322,
+    28108880,
+    28109068,
+    28109206,
+    28109389,
+    28109431,
+    28109982,
+    28110098,
+    28110131,
+    28112114,
+    28112704,
+    28112752,
+    28112824,
+    28113045,
+    28113143
+   ],
+   "created_at": "2021-08-08T16:38:04Z",
+   "created_at_i": 1628440684,
+   "num_comments": 60,
+   "objectID": "28107989",
+   "points": 73,
+   "story_id": 28107989,
+   "story_text": "Hi HN, my name is Amar, and I am the founder and CEO at HyperLinq (<a href=\"https:&#x2F;&#x2F;hyperlinq.io&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;hyperlinq.io&#x2F;</a>). We are building HyperTrader, a simple yet powerful native desktop trading terminal. Our app currently supports cryptocurrency trading, but we will soon expand into other asset classes like US stocks. We make it easy for traders to track multiple portfolios, discover the best prices, execute orders faster and analyze their trades.<p>Between my co-founders Karamvir and Kunal and myself, we have over 30 years of experience building trading systems. Karamvir and I worked at an inter-dealer broker in NYC and built many trading systems together. We also used to trade cryptocurrency. Back then there was a huge price disparity between exchanges, so we were able to do arbitrages.<p>We looked around and couldn&#x27;t settle on a tool that could help us simplify the workflow, so we set out to build our own, not because we wanted to start a business but because we simply wanted to spend less time. In early 2018, we hacked out a small app that did no more than price aggregation and comparison. Price discovery was the main focus rather than managing portfolios or orders.<p>Soon we had many friends using the app. By mid-2018, we realized there was a business potential, but we found out that people did not want the new features we had been building. So we threw away our roadmap and started interviewing users. What they told us boiled down to two significant asks: (1) A blazingly fast app; (2) Efficient ways to execute orders. None of our users cared about multiple exchanges. They just wanted an app better than the exchange they were trading on. So we decided to build that.<p>As we always wanted to build a desktop app instead of a web app, we decided to go with Node.js, C++, React, Redux, and Electron. We are aware that Electron is not ideal in terms of CPU and memory usage and also the build sizes are huge. But to begin with, we wanted to use something that can work cross platform with a single source code. Eventually we have to move to better options for a true native experience - a goal for 3.0. For the most part, our team has done a decent job at managing CPU and memory so that our app is fast and reliable even when built with Electron. Majority of the processing happens directly on the users&#x27; machines\u2014only a small portion of data&#x2F;processing happens on our servers. The app connects directly to the exchanges. Unlike many other aggregators, we chose not to pick an open-source project for connectivity. Instead, we wrote our own connectors in C++ and deployed them as Node.js add-ons. On the server-side, we chose to remain 100% serverless. We wrote our lambdas in either Python or Node.js.<p>Building a desktop app gave us many advantages in terms of performance. Also, the peer-to-peer connectivity with the exchanges made sure that we do not hit issues related to API rate limits or network delays. It also helped us keep our costs low.<p>We plan to introduce stocks and forex trading in 2022. We want to keep building it further and add as many asset classes as possible. Our goal is to create a terminal that caters to all kinds of traders.<p>If you\u2019re interested, please try out the app and send us your feedback. What do you think of our product? How can we make it better? Happy to answer any comments or questions!",
+   "title": "Launch HN: HyperLinq (YC S21) \u2013 Desktop trading terminal",
+   "updated_at": "2024-09-20T09:05:11Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "shailendraht"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "hn",
+      "hyper"
+     ],
+     "value": "Hi <em>HN</em>, this is Shailendra and Karan here. We are building a fast and safe way for coding agents to debug issues live in production.<p>When prod breaks, it lets Cursor, Claude, and others drop virtual breakpoints or probes safely in your running code, and extract the exact variable values that logs don\u2019t have.<p>All this saves time and effort for engineers who\u2019d otherwise dig through logs and traces or redeploy with console.logs or print statements until they find the root cause.<p>Here is the link to the video that explains this: <a href=\"https://www.youtube.com/watch?v=ivV7I--ta5c\" rel=\"nofollow\">https://www.youtube.com/watch?v=ivV7I--ta5c</a><p>Agents write most of our code now. This shrinks the useful context engineers need to debug AI written code, a problem not helped by the limited telemetry added in the same code by AI.<p>So when something breaks in prod, the first instinct for an engineer is to open logs or throw them to your agents. But if the line you are looking for is not there, agents will start guessing the root cause on non-existent data, forcing you to add a log, and redeploy.<p>This analysis-inference loop of agents with existing data does not come cheap, burning a lot of tokens. And the add log, redeploy cycle is so slow and painful that it makes engineers hate on-call.<p>Our approach lets agents capture telemetry on-demand at the exact moment and point of failure, killing the log-redeploy cycle and getting the most accurate RCA while burning fewer tokens.<p>The obvious problem is making it work on a running service. You can't pause a live service the way you'd pause a debugger on your laptop. Getting the value out of a running process safely, without pausing a thread or slowing the host is the challenge.We are making this happen.<p>Before this I ran engineering at a 100 member team. Then Karan and I spent three years on <em>Hyper</em>Test which was a testing tool.<p>At <em>Hyper</em>Test, we turned production traffic into integration tests using OpenTelemetry. That was production instrumentation too. The hard parts of pulling real runtime state out of a running service without breaking it, were the hard parts we learnt to put together.<p>We learnt some other lessons the hard way too. <em>Hyper</em>Test tried to prevent bugs with better tests, and adoption was a fight every time. Calls kept getting cancelled because teams were firefighting production. Testing was hygiene. Broken prod was hair on fire. This made us see where priorities lie.<p>This seeded the idea of building a truly autonomous on-call agent i.e. one that takes an alert, probes, diagnoses and fixes it in a few minutes. But this is how it works as of now:<p>You talk to your coding agent the way you already do. Tell it what's wrong: &quot;checkout returns 200 but some users are seeing their order fail, find out why.&quot; It locates the line in your local code, connects to us over MCP, and drops a probe on that line in the running service. The probe is read-only and sits dormant until real traffic hits. When hit, it captures the local variables at every frame of the call stack at that exact moment. It hands them to the agent, which diagnoses with real data.<p>There are two pieces. An SDK that runs inside your service, and an MCP server your coding agent talks to. The SDK is what makes setting probes (virtual breakpoints, log or metric) possible without a redeploy. In Node and Python it hooks in-process. In Java it attaches as a JVM agent, instrumenting at the bytecode level. Either way the service keeps running and serving traffic. Nothing pauses.<p>When your agent wants to look at a line, it calls the MCP server, which tells the SDK to place a probe there. When a request hits the line, the SDK captures what the probe asked for, sanitizes it in-process, and streams it back to the agent via the MCP.<p>This can run inside prod, so a probe can read any value sitting in that variable. We ensure redaction happens in-process, inside your own container's memory. This is before anything goes on the wire. Keys like password, token, authorization, ssn and credit card are redacted by default and you add your own.<p>Also the probes read but never write, and if you want no captured state to ever leave your network you can self host the server, broker, and even the database in your infra.<p>On overhead: when idle, the SDK adds negligible memory and effectively nothing to throughput and response time. Probes only cost anything while actively capturing. Also captures are bounded. A separate monitor watches in real time and pulls every active probe if overhead ever spikes.<p>Every log-and-trace tool hands the agent data that already exists and asks it to reason backward to what probably happened. We think it is more useful to give agents eyes and ears into the running code, so they capture what they need when they need it, right at the point of failure.<p>This seems like the simplest and fastest way to debug prod incidents.<p>We\u2019d love the community to try this in any environment to debug any known or unknown issue by just chatting with your coding agent. And let us know what more features you need to make this a truly autonomous on-call agent<p>Supported platforms: NodeJs, Java, Python."
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "launch",
+      "hn",
+      "hyper"
+     ],
+     "value": "<em>Launch</em> <em>HN</em>: <em>Hyper</em>Probe (YC S26) \u2013 Agents that do read-only debugging in prod"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "hyper"
+     ],
+     "value": "https://www.<em>hyper</em>probe.co"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_shailendraht",
+    "story_49185389",
+    "launch_hn"
+   ],
+   "author": "shailendraht",
+   "children": [
+    49185646,
+    49186115,
+    49186311,
+    49186390,
+    49186818,
+    49187193,
+    49188300,
+    49188339,
+    49188907,
+    49190357,
+    49190833,
+    49191004,
+    49191089,
+    49191341,
+    49191475,
+    49191999,
+    49192002,
+    49192345,
+    49192920,
+    49193546,
+    49196284,
+    49196798,
+    49197779,
+    49220669,
+    49278861,
+    49320328
+   ],
+   "created_at": "2026-08-05T16:47:15Z",
+   "created_at_i": 1785948435,
+   "num_comments": 51,
+   "objectID": "49185389",
+   "points": 69,
+   "story_id": 49185389,
+   "story_text": "Hi HN, this is Shailendra and Karan here. We are building a fast and safe way for coding agents to debug issues live in production.<p>When prod breaks, it lets Cursor, Claude, and others drop virtual breakpoints or probes safely in your running code, and extract the exact variable values that logs don\u2019t have.<p>All this saves time and effort for engineers who\u2019d otherwise dig through logs and traces or redeploy with console.logs or print statements until they find the root cause.<p>Here is the link to the video that explains this: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=ivV7I--ta5c\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=ivV7I--ta5c</a><p>Agents write most of our code now. This shrinks the useful context engineers need to debug AI written code, a problem not helped by the limited telemetry added in the same code by AI.<p>So when something breaks in prod, the first instinct for an engineer is to open logs or throw them to your agents. But if the line you are looking for is not there, agents will start guessing the root cause on non-existent data, forcing you to add a log, and redeploy.<p>This analysis-inference loop of agents with existing data does not come cheap, burning a lot of tokens. And the add log, redeploy cycle is so slow and painful that it makes engineers hate on-call.<p>Our approach lets agents capture telemetry on-demand at the exact moment and point of failure, killing the log-redeploy cycle and getting the most accurate RCA while burning fewer tokens.<p>The obvious problem is making it work on a running service. You can&#x27;t pause a live service the way you&#x27;d pause a debugger on your laptop. Getting the value out of a running process safely, without pausing a thread or slowing the host is the challenge.We are making this happen.<p>Before this I ran engineering at a 100 member team. Then Karan and I spent three years on HyperTest which was a testing tool.<p>At HyperTest, we turned production traffic into integration tests using OpenTelemetry. That was production instrumentation too. The hard parts of pulling real runtime state out of a running service without breaking it, were the hard parts we learnt to put together.<p>We learnt some other lessons the hard way too. HyperTest tried to prevent bugs with better tests, and adoption was a fight every time. Calls kept getting cancelled because teams were firefighting production. Testing was hygiene. Broken prod was hair on fire. This made us see where priorities lie.<p>This seeded the idea of building a truly autonomous on-call agent i.e. one that takes an alert, probes, diagnoses and fixes it in a few minutes. But this is how it works as of now:<p>You talk to your coding agent the way you already do. Tell it what&#x27;s wrong: &quot;checkout returns 200 but some users are seeing their order fail, find out why.&quot; It locates the line in your local code, connects to us over MCP, and drops a probe on that line in the running service. The probe is read-only and sits dormant until real traffic hits. When hit, it captures the local variables at every frame of the call stack at that exact moment. It hands them to the agent, which diagnoses with real data.<p>There are two pieces. An SDK that runs inside your service, and an MCP server your coding agent talks to. The SDK is what makes setting probes (virtual breakpoints, log or metric) possible without a redeploy. In Node and Python it hooks in-process. In Java it attaches as a JVM agent, instrumenting at the bytecode level. Either way the service keeps running and serving traffic. Nothing pauses.<p>When your agent wants to look at a line, it calls the MCP server, which tells the SDK to place a probe there. When a request hits the line, the SDK captures what the probe asked for, sanitizes it in-process, and streams it back to the agent via the MCP.<p>This can run inside prod, so a probe can read any value sitting in that variable. We ensure redaction happens in-process, inside your own container&#x27;s memory. This is before anything goes on the wire. Keys like password, token, authorization, ssn and credit card are redacted by default and you add your own.<p>Also the probes read but never write, and if you want no captured state to ever leave your network you can self host the server, broker, and even the database in your infra.<p>On overhead: when idle, the SDK adds negligible memory and effectively nothing to throughput and response time. Probes only cost anything while actively capturing. Also captures are bounded. A separate monitor watches in real time and pulls every active probe if overhead ever spikes.<p>Every log-and-trace tool hands the agent data that already exists and asks it to reason backward to what probably happened. We think it is more useful to give agents eyes and ears into the running code, so they capture what they need when they need it, right at the point of failure.<p>This seems like the simplest and fastest way to debug prod incidents.<p>We\u2019d love the community to try this in any environment to debug any known or unknown issue by just chatting with your coding agent. And let us know what more features you need to make this a truly autonomous on-call agent<p>Supported platforms: NodeJs, Java, Python.",
+   "title": "Launch HN: HyperProbe (YC S26) \u2013 Agents that do read-only debugging in prod",
+   "updated_at": "2026-09-08T01:37:00Z",
+   "url": "https://www.hyperprobe.co"
+  }
+ ]
+}

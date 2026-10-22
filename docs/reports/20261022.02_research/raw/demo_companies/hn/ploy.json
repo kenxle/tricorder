@@ -1,0 +1,1004 @@
+{
+ "domain_query": "ploy.ai",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "brryant"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Migrating a production AI agent to GPT-5.6: 2.2x faster, 27% cheaper"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ploy",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>ploy.ai</em>/blog/migrating-a-production-ai-agent-to-gpt-5-6"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_brryant",
+    "story_48882716"
+   ],
+   "author": "brryant",
+   "children": [
+    48883952,
+    48884146,
+    48884363,
+    48884370,
+    48884553,
+    48884572,
+    48885331,
+    48885442,
+    48885518,
+    48885521,
+    48885657,
+    48886086,
+    48886638,
+    48886808,
+    48887326,
+    48887397,
+    48887548,
+    48887574,
+    48887729,
+    48887893,
+    48887918,
+    48888523,
+    48888797,
+    48889179,
+    48889887,
+    48893207,
+    48894767,
+    48894857,
+    48896985,
+    48942760
+   ],
+   "created_at": "2026-07-12T17:13:07Z",
+   "created_at_i": 1783876387,
+   "num_comments": 131,
+   "objectID": "48882716",
+   "points": 258,
+   "story_id": 48882716,
+   "title": "Migrating a production AI agent to GPT-5.6: 2.2x faster, 27% cheaper",
+   "updated_at": "2026-09-04T18:26:52Z",
+   "url": "https://ploy.ai/blog/migrating-a-production-ai-agent-to-gpt-5-6"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "brryant"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Migrating a production AI agent to GPT 5.6"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ploy",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>ploy.ai</em>/blog/migrating-a-production-ai-agent-to-gpt-5-6"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_brryant",
+    "story_48864950"
+   ],
+   "author": "brryant",
+   "created_at": "2026-07-10T20:40:34Z",
+   "created_at_i": 1783716034,
+   "num_comments": 0,
+   "objectID": "48864950",
+   "points": 7,
+   "story_id": 48864950,
+   "title": "Migrating a production AI agent to GPT 5.6",
+   "updated_at": "2026-07-10T21:28:08Z",
+   "url": "https://ploy.ai/blog/migrating-a-production-ai-agent-to-gpt-5-6"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "brryant"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "AI Web Design (Opus vs. Sol)"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ploy",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>ploy.ai</em>/blog/ai-web-design-with-opus-and-sol"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_brryant",
+    "story_48859893"
+   ],
+   "author": "brryant",
+   "children": [
+    48859894,
+    48860589
+   ],
+   "created_at": "2026-07-10T13:49:07Z",
+   "created_at_i": 1783691347,
+   "num_comments": 2,
+   "objectID": "48859893",
+   "points": 1,
+   "story_id": 48859893,
+   "title": "AI Web Design (Opus vs. Sol)",
+   "updated_at": "2026-07-10T14:36:34Z",
+   "url": "https://ploy.ai/blog/ai-web-design-with-opus-and-sol"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "dulldata"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Play Dialog: A contextual turn-taking TTS model like NotebookLM Playground"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ploy",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>play.ai</em>/playground"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_dulldata",
+    "story_42129144"
+   ],
+   "author": "dulldata",
+   "children": [
+    42129158,
+    42129330,
+    42129366,
+    42129526,
+    42129527,
+    42131305,
+    42131385,
+    42131752,
+    42137283
+   ],
+   "created_at": "2024-11-13T19:36:50Z",
+   "created_at_i": 1731526610,
+   "num_comments": 13,
+   "objectID": "42129144",
+   "points": 49,
+   "story_id": 42129144,
+   "title": "Play Dialog: A contextual turn-taking TTS model like NotebookLM Playground",
+   "updated_at": "2026-10-01T23:49:34Z",
+   "url": "https://play.ai/playground"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "TurkishPoptart"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "AI Dungeon"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ploy",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>play.ai</em>dungeon.io/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_TurkishPoptart",
+    "story_23979219"
+   ],
+   "author": "TurkishPoptart",
+   "children": [
+    23981029,
+    23981212,
+    23981756,
+    23982126,
+    23982356,
+    23983419,
+    23983438,
+    23984229,
+    23984289
+   ],
+   "created_at": "2020-07-28T18:40:44Z",
+   "created_at_i": 1595961644,
+   "num_comments": 16,
+   "objectID": "23979219",
+   "points": 48,
+   "story_id": 23979219,
+   "title": "AI Dungeon",
+   "updated_at": "2024-09-20T06:39:52Z",
+   "url": "https://play.aidungeon.io/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "amrrs"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: PlayNote \u2013 NotebookLM but with custom voices and API"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ploy",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>play.ai</em>/playnote"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_amrrs",
+    "story_42117198",
+    "show_hn"
+   ],
+   "author": "amrrs",
+   "children": [
+    42117203,
+    42117261,
+    42119524,
+    42119606
+   ],
+   "created_at": "2024-11-12T16:53:21Z",
+   "created_at_i": 1731430401,
+   "num_comments": 4,
+   "objectID": "42117198",
+   "points": 18,
+   "story_id": 42117198,
+   "title": "Show HN: PlayNote \u2013 NotebookLM but with custom voices and API",
+   "updated_at": "2024-11-12T23:15:26Z",
+   "url": "https://play.ai/playnote"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "amrrs"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Play Diffusion: Open Source Diffusion Model for Instant Audio Editing"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ploy",
+      ".",
+      "ai"
+     ],
+     "value": "https://blog.<em>play.ai</em>/blog/play-diffusion"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_amrrs",
+    "story_44161326"
+   ],
+   "author": "amrrs",
+   "children": [
+    44161460
+   ],
+   "created_at": "2025-06-02T17:50:20Z",
+   "created_at_i": 1748886620,
+   "num_comments": 1,
+   "objectID": "44161326",
+   "points": 15,
+   "story_id": 44161326,
+   "title": "Play Diffusion: Open Source Diffusion Model for Instant Audio Editing",
+   "updated_at": "2025-06-03T09:03:13Z",
+   "url": "https://blog.play.ai/blog/play-diffusion"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "h99"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "PlayDialog: A voice model built for fluid, emotive conversations"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ploy",
+      ".",
+      "ai"
+     ],
+     "value": "https://blog.<em>play.ai</em>/blog/introducing-playdialog"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_h99",
+    "story_42110501"
+   ],
+   "author": "h99",
+   "children": [
+    42110799,
+    42110942
+   ],
+   "created_at": "2024-11-11T21:16:43Z",
+   "created_at_i": 1731359803,
+   "num_comments": 2,
+   "objectID": "42110501",
+   "points": 13,
+   "story_id": 42110501,
+   "title": "PlayDialog: A voice model built for fluid, emotive conversations",
+   "updated_at": "2024-11-12T17:39:55Z",
+   "url": "https://blog.play.ai/blog/introducing-playdialog"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "legofan94"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "PlayAI deploys on Groq silicon, hitting 215 char/s"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ploy",
+      ".",
+      "ai"
+     ],
+     "value": "https://blog.<em>play.ai</em>/blog/playai-and-groq-join-forces-to-transform-voice-ai"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_legofan94",
+    "story_43494983"
+   ],
+   "author": "legofan94",
+   "children": [
+    43495096,
+    43495407
+   ],
+   "created_at": "2025-03-27T15:58:10Z",
+   "created_at_i": 1743091090,
+   "num_comments": 1,
+   "objectID": "43494983",
+   "points": 8,
+   "story_id": 43494983,
+   "title": "PlayAI deploys on Groq silicon, hitting 215 char/s",
+   "updated_at": "2025-03-27T18:20:42Z",
+   "url": "https://blog.play.ai/blog/playai-and-groq-join-forces-to-transform-voice-ai"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "skanderbm"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "AI Dungeon : An infinitely generated text adventure, powered by Deep Learning"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ploy",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>play.ai</em>dungeon.io/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_skanderbm",
+    "story_23916033"
+   ],
+   "author": "skanderbm",
+   "children": [
+    23916370
+   ],
+   "created_at": "2020-07-22T12:00:12Z",
+   "created_at_i": 1595419212,
+   "num_comments": 1,
+   "objectID": "23916033",
+   "points": 4,
+   "story_id": 23916033,
+   "title": "AI Dungeon : An infinitely generated text adventure, powered by Deep Learning",
+   "updated_at": "2024-09-20T06:34:03Z",
+   "url": "https://play.aidungeon.io/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ghgr"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "AI Dungeon"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ploy",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>play.ai</em>dungeon.io/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_ghgr",
+    "story_23966507"
+   ],
+   "author": "ghgr",
+   "children": [
+    23966677
+   ],
+   "created_at": "2020-07-27T16:17:10Z",
+   "created_at_i": 1595866630,
+   "num_comments": 1,
+   "objectID": "23966507",
+   "points": 3,
+   "story_id": 23966507,
+   "title": "AI Dungeon",
+   "updated_at": "2024-09-20T06:38:44Z",
+   "url": "https://play.aidungeon.io/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "amrrs"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "PlayAI raises $21M Seed Funding"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ploy",
+      ".",
+      "ai"
+     ],
+     "value": "https://blog.<em>play.ai</em>/blog/21m-funding"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_amrrs",
+    "story_42255772"
+   ],
+   "author": "amrrs",
+   "children": [
+    42255889
+   ],
+   "created_at": "2024-11-27T13:09:28Z",
+   "created_at_i": 1732712968,
+   "num_comments": 0,
+   "objectID": "42255772",
+   "points": 3,
+   "story_id": 42255772,
+   "title": "PlayAI raises $21M Seed Funding",
+   "updated_at": "2024-11-27T16:19:07Z",
+   "url": "https://blog.play.ai/blog/21m-funding"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ibobev"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Inference-Time Techniques for High-Quality, Low-Latency Speech Generation"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ploy",
+      ".",
+      "ai"
+     ],
+     "value": "https://blog.<em>play.ai</em>/blog/taming-the-tts-beast-inference-time-techniques-for-high-quality-low-latency-speech-generation"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_ibobev",
+    "story_44657909"
+   ],
+   "author": "ibobev",
+   "created_at": "2025-07-23T11:20:12Z",
+   "created_at_i": 1753269612,
+   "num_comments": 0,
+   "objectID": "44657909",
+   "points": 2,
+   "story_id": 44657909,
+   "title": "Inference-Time Techniques for High-Quality, Low-Latency Speech Generation",
+   "updated_at": "2025-07-23T11:55:58Z",
+   "url": "https://blog.play.ai/blog/taming-the-tts-beast-inference-time-techniques-for-high-quality-low-latency-speech-generation"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "kevinhacker"
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ploy",
+      ".",
+      "ai"
+     ],
+     "value": "PlayDiffusion \u2013 <em>Play.ai</em> newest voice model for inpainting"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ploy",
+      ".",
+      "ai"
+     ],
+     "value": "https://blog.<em>play.ai</em>/blog/play-diffusion"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_kevinhacker",
+    "story_44171424"
+   ],
+   "author": "kevinhacker",
+   "children": [
+    44171443
+   ],
+   "created_at": "2025-06-03T15:58:41Z",
+   "created_at_i": 1748966321,
+   "num_comments": 0,
+   "objectID": "44171424",
+   "points": 2,
+   "story_id": 44171424,
+   "title": "PlayDiffusion \u2013 Play.ai newest voice model for inpainting",
+   "updated_at": "2025-06-03T21:48:01Z",
+   "url": "https://blog.play.ai/blog/play-diffusion"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "hammadh"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "AI Paul Graham will convince you to join YC"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ploy",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>play.ai</em>/agent/Convincing-Paul-8_59y9yANEVXoNtzDj-aM"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_hammadh",
+    "story_40231996"
+   ],
+   "author": "hammadh",
+   "children": [
+    40232029
+   ],
+   "created_at": "2024-05-02T02:05:49Z",
+   "created_at_i": 1714615549,
+   "num_comments": 0,
+   "objectID": "40231996",
+   "points": 2,
+   "story_id": 40231996,
+   "title": "AI Paul Graham will convince you to join YC",
+   "updated_at": "2024-09-20T16:58:42Z",
+   "url": "https://play.ai/agent/Convincing-Paul-8_59y9yANEVXoNtzDj-aM"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "gk1"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "AI Dungeon: Play and create AI-generated adventures with infinite possibilities"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ploy",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>play.ai</em>dungeon.io/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_gk1",
+    "story_29627694"
+   ],
+   "author": "gk1",
+   "created_at": "2021-12-20T17:56:52Z",
+   "created_at_i": 1640023012,
+   "num_comments": 0,
+   "objectID": "29627694",
+   "points": 2,
+   "story_id": 29627694,
+   "title": "AI Dungeon: Play and create AI-generated adventures with infinite possibilities",
+   "updated_at": "2024-09-20T10:00:46Z",
+   "url": "https://play.aidungeon.io/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "grawprog"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Latest AiDungeon Update Locks Accessibility Features Behind Paywall"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ploy",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>play.ai</em>dungeon.io/main/allUpdates"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_grawprog",
+    "story_27252309"
+   ],
+   "author": "grawprog",
+   "created_at": "2021-05-23T03:53:22Z",
+   "created_at_i": 1621742002,
+   "num_comments": 0,
+   "objectID": "27252309",
+   "points": 2,
+   "story_id": 27252309,
+   "title": "Latest AiDungeon Update Locks Accessibility Features Behind Paywall",
+   "updated_at": "2024-09-20T08:37:46Z",
+   "url": "https://play.aidungeon.io/main/allUpdates"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "TakakiTohno"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "AI Dungeon 2"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ploy",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>play.ai</em>dungeon.io/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_TakakiTohno",
+    "story_22235345"
+   ],
+   "author": "TakakiTohno",
+   "created_at": "2020-02-04T13:38:21Z",
+   "created_at_i": 1580823501,
+   "num_comments": 0,
+   "objectID": "22235345",
+   "points": 2,
+   "story_id": 22235345,
+   "title": "AI Dungeon 2",
+   "updated_at": "2024-09-20T05:39:08Z",
+   "url": "https://play.aidungeon.io/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "TomAnthony"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "AI Dungeon \u2013 \u201cImagine a Game with Infinite Adventures\u201d"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ploy",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>play.ai</em>dungeon.io/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_TomAnthony",
+    "story_22484545"
+   ],
+   "author": "TomAnthony",
+   "children": [
+    22484550,
+    22486061
+   ],
+   "created_at": "2020-03-04T15:30:14Z",
+   "created_at_i": 1583335814,
+   "num_comments": 2,
+   "objectID": "22484545",
+   "points": 1,
+   "story_id": 22484545,
+   "title": "AI Dungeon \u2013 \u201cImagine a Game with Infinite Adventures\u201d",
+   "updated_at": "2024-09-20T05:46:10Z",
+   "url": "https://play.aidungeon.io/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "amrrs"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Talk to Llama on WhatsApp and Phone"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "ploy",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>play.ai</em>/talk-llama"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_amrrs",
+    "story_42587844"
+   ],
+   "author": "amrrs",
+   "created_at": "2025-01-03T17:52:09Z",
+   "created_at_i": 1735926729,
+   "num_comments": 0,
+   "objectID": "42587844",
+   "points": 1,
+   "story_id": 42587844,
+   "title": "Talk to Llama on WhatsApp and Phone",
+   "updated_at": "2025-01-03T17:53:59Z",
+   "url": "https://play.ai/talk-llama"
+  }
+ ],
+ "launch_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mrkurt"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "launch",
+      "ploy"
+     ],
+     "value": "Hello Hacker News! We're Kurt, Jerome, and Michael from fly.io (<a href=\"https://fly.io/\" rel=\"nofollow\">https://fly.io/</a>). We're building a platform to run Docker applications close to end users. It's kind of like a content delivery network, but for backend servers.<p>I helped build Ars Technica and spent the majority of my time trying to make the site fast. We used a content delivery network to cache static content close to anonymous readers and it worked very well for them. But the most valuable readers were not these, but the ones who paid for subscriptions. They wanted personalized content and features for interacting with the community \u2013 and we couldn't make those fast. Content delivery networks don't work for Ars Technica's best customers.<p>Running Docker apps close to users helps get past the &quot;slow&quot; speed of light. Most interactions with an app server seem slow because of latency between the hardware it's running on (frequently in Virginia) and the end user (frequently not in Virginia). Moving server apps close to users is a simple way to decrease latency, sometimes by 80% or more.<p>fly.io is really a way to run Docker images on servers in different cities and a global router to connect users to the nearest available instance. We convert your Docker image into a root filesystem, boot tiny VMs using a project called Firecracker (recently discussed here: <a href=\"https://news.ycombinator.com/item?id=22512196\" rel=\"nofollow\">https://news.ycombinator.com/item?id=22512196</a>) and then proxy connections to it. As your app gets more traffic, we add VMs in the most popular locations.<p>We wrote a Rust based router to distribute incoming connections from end users. The router terminates TLS when necessary (some customers handle their own TLS) and then hands the connection off to the best available Firecracker VM, which is frequently in a different city.<p>Networking took us a lot of time to get right. Applications get dedicated IP addresses from an Anycast block. Anycast is an internet routing feature that lets us &quot;announce&quot; from multiple datacenters, and then core routers pick the destination with the shortest route (mostly).  We run a mesh Wireguard network for backhaul, so in flight data is encrypted all the way into a user application. This is the same kind of network infrastructure the good content delivery networks use.<p>We got a handful of enterprise companies to pay for this, and spent almost a year making it simple to use \u2014 it takes 3 commands to deploy a Docker image and have it running in 17 cities: <a href=\"https://fly.io/docs/speedrun/\" rel=\"nofollow\">https://fly.io/docs/speedrun/</a>. We also built &quot;Turboku&quot; to speed up Heroku apps. Pick a Heroku app and we deploy the slug on our infrastructure .. typical Heroku apps are 800ms faster on fly.io: <a href=\"https://fly.io/heroku/\" rel=\"nofollow\">https://fly.io/heroku/</a><p>We've also built some features based on Hacker News comments. When people <em>launch</em> container hosting on Hacker News, there's almost always a comment asking for:<p>1. gRPC support: apps deployed to fly.io can accept any kind of TCP connection. We kept seeing people say &quot;hey I want to run gRPC servers on this shiney container runtime&quot;. So you can! You can specify if you want us to do TLS or HTTP for an app, or just do everything yourself.<p>2. Max monthly spend: unexpected traffic spikes happen, and the thought of spending an unbounded amount of money in a month is really uncomfortable. You can configure fly.io apps with a max monthly budget, we'll suspend them when they hit that budget, and then re-enable them at the beginning of the next month.<p>One of the best parts of building this has been seeing the problems that developers are trying to solve, often problems we didn't know about beforehand. My favorite is a project to re-encode MP3s at variable speeds for specific users (apparently the Apple Audiobook <em>play</em>er has no option for <em>play</em>back speed). Another is &quot;TensorFlow at the edge&quot; \u2014 they trained a TensorFlow model to detect bots and run predictions before handling requests.<p>We're really happy we get to show this to you all, thank you for reading about it! Please let us know your thoughts and questions in the comments."
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "launch",
+      "hn"
+     ],
+     "value": "<em>Launch</em> <em>HN</em>: Fly.io (YC W20) \u2013 Deploy app servers close to your users"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_mrkurt",
+    "story_22616857",
+    "launch_hn"
+   ],
+   "author": "mrkurt",
+   "children": [
+    22617776,
+    22617783,
+    22617891,
+    22617922,
+    22617942,
+    22618018,
+    22618117,
+    22618131,
+    22618138,
+    22618146,
+    22618215,
+    22618227,
+    22618356,
+    22618368,
+    22618423,
+    22618573,
+    22618716,
+    22618794,
+    22618836,
+    22618877,
+    22618909,
+    22618963,
+    22618987,
+    22619211,
+    22619373,
+    22619414,
+    22619508,
+    22619654,
+    22619733,
+    22619791,
+    22619906,
+    22619955,
+    22619956,
+    22619987,
+    22620032,
+    22620037,
+    22620545,
+    22620667,
+    22620936,
+    22621077,
+    22621131,
+    22621464,
+    22621629,
+    22622301,
+    22622481,
+    22622599,
+    22622676,
+    22622699,
+    22622730,
+    22622932,
+    22623237,
+    22623464,
+    22623640,
+    22623787,
+    22623916,
+    22623967,
+    22624166,
+    22624635,
+    22624763,
+    22624885,
+    22625139,
+    22625282,
+    22625380,
+    22625683,
+    22625939,
+    22626216,
+    22626442,
+    22627005,
+    22628989,
+    22630483,
+    22630571,
+    22631390
+   ],
+   "created_at": "2020-03-18T14:15:07Z",
+   "created_at_i": 1584540907,
+   "num_comments": 261,
+   "objectID": "22616857",
+   "points": 626,
+   "story_id": 22616857,
+   "story_text": "Hello Hacker News! We&#x27;re Kurt, Jerome, and Michael from fly.io (<a href=\"https:&#x2F;&#x2F;fly.io&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;fly.io&#x2F;</a>). We&#x27;re building a platform to run Docker applications close to end users. It&#x27;s kind of like a content delivery network, but for backend servers.<p>I helped build Ars Technica and spent the majority of my time trying to make the site fast. We used a content delivery network to cache static content close to anonymous readers and it worked very well for them. But the most valuable readers were not these, but the ones who paid for subscriptions. They wanted personalized content and features for interacting with the community \u2013 and we couldn&#x27;t make those fast. Content delivery networks don&#x27;t work for Ars Technica&#x27;s best customers.<p>Running Docker apps close to users helps get past the &quot;slow&quot; speed of light. Most interactions with an app server seem slow because of latency between the hardware it&#x27;s running on (frequently in Virginia) and the end user (frequently not in Virginia). Moving server apps close to users is a simple way to decrease latency, sometimes by 80% or more.<p>fly.io is really a way to run Docker images on servers in different cities and a global router to connect users to the nearest available instance. We convert your Docker image into a root filesystem, boot tiny VMs using a project called Firecracker (recently discussed here: <a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=22512196\" rel=\"nofollow\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=22512196</a>) and then proxy connections to it. As your app gets more traffic, we add VMs in the most popular locations.<p>We wrote a Rust based router to distribute incoming connections from end users. The router terminates TLS when necessary (some customers handle their own TLS) and then hands the connection off to the best available Firecracker VM, which is frequently in a different city.<p>Networking took us a lot of time to get right. Applications get dedicated IP addresses from an Anycast block. Anycast is an internet routing feature that lets us &quot;announce&quot; from multiple datacenters, and then core routers pick the destination with the shortest route (mostly).  We run a mesh Wireguard network for backhaul, so in flight data is encrypted all the way into a user application. This is the same kind of network infrastructure the good content delivery networks use.<p>We got a handful of enterprise companies to pay for this, and spent almost a year making it simple to use \u2014 it takes 3 commands to deploy a Docker image and have it running in 17 cities: <a href=\"https:&#x2F;&#x2F;fly.io&#x2F;docs&#x2F;speedrun&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;fly.io&#x2F;docs&#x2F;speedrun&#x2F;</a>. We also built &quot;Turboku&quot; to speed up Heroku apps. Pick a Heroku app and we deploy the slug on our infrastructure .. typical Heroku apps are 800ms faster on fly.io: <a href=\"https:&#x2F;&#x2F;fly.io&#x2F;heroku&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;fly.io&#x2F;heroku&#x2F;</a><p>We&#x27;ve also built some features based on Hacker News comments. When people launch container hosting on Hacker News, there&#x27;s almost always a comment asking for:<p>1. gRPC support: apps deployed to fly.io can accept any kind of TCP connection. We kept seeing people say &quot;hey I want to run gRPC servers on this shiney container runtime&quot;. So you can! You can specify if you want us to do TLS or HTTP for an app, or just do everything yourself.<p>2. Max monthly spend: unexpected traffic spikes happen, and the thought of spending an unbounded amount of money in a month is really uncomfortable. You can configure fly.io apps with a max monthly budget, we&#x27;ll suspend them when they hit that budget, and then re-enable them at the beginning of the next month.<p>One of the best parts of building this has been seeing the problems that developers are trying to solve, often problems we didn&#x27;t know about beforehand. My favorite is a project to re-encode MP3s at variable speeds for specific users (apparently the Apple Audiobook player has no option for playback speed). Another is &quot;TensorFlow at the edge&quot; \u2014 they trained a TensorFlow model to detect bots and run predictions before handling requests.<p>We&#x27;re really happy we get to show this to you all, thank you for reading about it! Please let us know your thoughts and questions in the comments.",
+   "title": "Launch HN: Fly.io (YC W20) \u2013 Deploy app servers close to your users",
+   "updated_at": "2026-07-08T19:53:57Z"
+  }
+ ]
+}

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Always Bet on the Models: How Tasklet Puts the Agency in Agents, with CEO Andrew Lee — &quot;The Cognitive Revolution&quot;</title>
+  <meta name="description" content="Today Andrew Lee, founder and CEO of Shortwave and Tasklet.ai, joins The Cognitive Revolution to discuss building a new AI agent automation platform that replaces traditional workflow tools with conve">
+  <meta property="og:title" content="Always Bet on the Models: How Tasklet Puts the Agency in Agents, with CEO Andrew Lee">
+  <meta property="og:description" content="Today Andrew Lee, founder and CEO of Shortwave and Tasklet.ai, joins The Cognitive Revolution to discuss building a new AI agent automation platform that replaces traditional workflow tools with conve">
+  <meta property="og:type" content="music.song">
+  <meta property="og:image" content="https://hopper.webdirections.org/artwork/0857315c584b9c1f">
+  <meta property="og:url" content="https://hopper.webdirections.org/share/0857315c584b9c1f/3dc11f22-af32-11f0-b7b4-337a6a84fe66">
+  <link rel="stylesheet" href="/app.css?v=13">
+  <style>
+    body { background: #f9fafb; }
+    .prose a { color: #ea580c; }
+    [data-seek]:hover { cursor: pointer; }
+  </style>
+</head>
+<body class="min-h-screen">
+  <div class="max-w-2xl mx-auto px-4 py-6 sm:py-10">
+    <!-- Header -->
+    <div class="flex items-start gap-4 mb-6">
+      <img src="/artwork/0857315c584b9c1f" alt="" class="w-20 h-20 sm:w-24 sm:h-24 rounded-xl object-cover flex-shrink-0 shadow-sm" width="96" height="96" decoding="async">
+      <div class="min-w-0 flex-1">
+        <h1 class="text-lg sm:text-xl font-bold text-gray-900 leading-tight">Always Bet on the Models: How Tasklet Puts the Agency in Agents, with CEO Andrew Lee</h1>
+        <a href="/share/0857315c584b9c1f" class="text-sm text-orange-600 hover:underline mt-1 block">&quot;The Cognitive Revolution&quot;</a>
+        <div class="text-xs text-gray-400 mt-1 flex flex-wrap gap-2">
+          <span>22 October 2025</span>
+          <span>2h 13m</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Audio Player -->
+    
+    <div class="bg-white rounded-xl border border-gray-200 p-4 mb-6 shadow-sm">
+      <audio id="audio" preload="metadata" class="hidden"></audio>
+      <div class="flex items-center gap-3 mb-3">
+        <button id="play-btn" class="w-12 h-12 rounded-full bg-orange-600 text-white flex items-center justify-center hover:bg-orange-700 transition-colors flex-shrink-0" aria-label="Play">
+          <svg id="play-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><polygon points="8,5 19,12 8,19"/></svg>
+          <svg id="pause-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" class="hidden"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg>
+        </button>
+        <div class="flex-1 min-w-0">
+          <div class="flex justify-between text-xs text-gray-400 mb-1">
+            <span id="current-time">0:00</span>
+            <span id="total-time">--:--</span>
+          </div>
+          <div id="progress-track" class="h-2 bg-gray-200 rounded-full cursor-pointer relative">
+            <div id="progress-fill" class="h-full bg-orange-600 rounded-full transition-all pointer-events-none" style="width:0%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center justify-between">
+        <div class="flex gap-2">
+          <button id="back-btn" class="share-player__skip text-gray-500 hover:text-orange-600 rounded hover:bg-orange-50" aria-label="Skip back 15 seconds"><svg class="skip-icon" viewBox="0 0 1200 1200" width="32" height="32" fill="currentColor" aria-hidden="true" focusable="false"><path d="m600 1100c129.06.13281 253.16-49.691 346.29-139.03 93.137-89.34 148.08-211.26 153.31-340.21 5.2305-128.95-39.648-254.93-125.24-351.52h41c17.863 0 34.371-9.5273 43.305-25 8.9297-15.469 8.9297-34.527 0-50-8.9336-15.469-25.441-25-43.305-25h-173.05c-13.098.51172-25.52 5.9414-34.789 15.211s-14.699 21.691-15.211 34.789v173.07c0 17.863 9.5312 34.371 25 43.301 15.473 8.9336 34.531 8.9336 50 0 15.473-8.9297 25-25.438 25-43.301v-65.465c62.816 67.188 100.56 153.97 106.89 245.73 6.3203 91.758-19.168 182.89-72.176 258.06-53.012 75.168-130.3 129.77-218.86 154.62-88.555 24.852-182.97 18.43-267.35-18.188-84.379-36.613-153.56-101.18-195.9-182.84-42.34-81.652-55.254-175.4-36.562-265.46 18.688-90.059 67.84-170.93 139.18-228.99 71.336-58.059 160.5-89.77 252.48-89.785 17.863 0 34.371-9.5312 43.301-25 8.9336-15.469 8.9336-34.531 0-50-8.9297-15.469-25.438-25-43.301-25-132.61 0-259.79 52.68-353.55 146.45-93.766 93.77-146.45 220.95-146.45 353.55s52.68 259.79 146.45 353.55c93.77 93.766 220.95 146.45 353.55 146.45z"/><text x="600" y="700" fill="currentColor" font-size="320" font-weight="800" text-anchor="middle" font-family="system-ui, sans-serif">15</text></svg></button>
+          <button id="fwd-btn" class="share-player__skip text-gray-500 hover:text-orange-600 rounded hover:bg-orange-50" aria-label="Skip forward 15 seconds"><svg class="skip-icon" viewBox="0 0 1200 1200" width="32" height="32" fill="currentColor" aria-hidden="true" focusable="false"><path transform="translate(1200 0) scale(-1 1)" d="m600 1100c129.06.13281 253.16-49.691 346.29-139.03 93.137-89.34 148.08-211.26 153.31-340.21 5.2305-128.95-39.648-254.93-125.24-351.52h41c17.863 0 34.371-9.5273 43.305-25 8.9297-15.469 8.9297-34.527 0-50-8.9336-15.469-25.441-25-43.305-25h-173.05c-13.098.51172-25.52 5.9414-34.789 15.211s-14.699 21.691-15.211 34.789v173.07c0 17.863 9.5312 34.371 25 43.301 15.473 8.9336 34.531 8.9336 50 0 15.473-8.9297 25-25.438 25-43.301v-65.465c62.816 67.188 100.56 153.97 106.89 245.73 6.3203 91.758-19.168 182.89-72.176 258.06-53.012 75.168-130.3 129.77-218.86 154.62-88.555 24.852-182.97 18.43-267.35-18.188-84.379-36.613-153.56-101.18-195.9-182.84-42.34-81.652-55.254-175.4-36.562-265.46 18.688-90.059 67.84-170.93 139.18-228.99 71.336-58.059 160.5-89.77 252.48-89.785 17.863 0 34.371-9.5312 43.301-25 8.9336-15.469 8.9336-34.531 0-50-8.9297-15.469-25.438-25-43.301-25-132.61 0-259.79 52.68-353.55 146.45-93.766 93.77-146.45 220.95-146.45 353.55s52.68 259.79 146.45 353.55c93.77 93.766 220.95 146.45 353.55 146.45z"/><text x="600" y="700" fill="currentColor" font-size="320" font-weight="800" text-anchor="middle" font-family="system-ui, sans-serif">15</text></svg></button>
+          <select id="speed-select" class="text-xs text-gray-500 border border-gray-200 rounded px-1 py-0.5">
+            <option value="0.75">0.75x</option>
+            <option value="1" selected>1x</option>
+            <option value="1.25">1.25x</option>
+            <option value="1.5">1.5x</option>
+            <option value="2">2x</option>
+          </select>
+        </div>
+        <button id="share-btn" class="text-xs text-gray-400 hover:text-orange-600 flex items-center gap-1">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+          Copy link
+        </button>
+      </div>
+    </div>
+    
+
+    <!-- Description -->
+    <div class="bg-white rounded-xl border border-gray-200 p-4 mb-4 shadow-sm"><details class="mb-4">
+        <summary class="text-sm font-semibold text-gray-700 cursor-pointer hover:text-orange-600">Episode Description</summary>
+        <div class="mt-2 text-sm text-gray-600 leading-relaxed prose prose-sm max-w-none">Today Andrew Lee, founder and CEO of Shortwave and Tasklet.ai, joins The Cognitive Revolution to discuss building a new AI agent automation platform that replaces traditional workflow tools with conversational, long-lived agents, exploring how betting on rapidly improving model capabilities enables more flexible automation across thousands of business integrations while navigating the challenges of reliability, cost management, and the emerging paradigm of virtual employees.
+Shownotes brought to</div>
+      </details></div>
+
+    <!-- Metadata -->
+    
+
+    <!-- Transcript -->
+    
+
+    <!-- Footer -->
+    <div class="text-center mt-8 mb-4">
+      <p class="text-xs text-gray-400">Shared via <a href="/" class="text-orange-500 hover:underline">Hopper</a></p>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    var audio = document.getElementById('audio');
+    if (!audio) return;
+    var playBtn = document.getElementById('play-btn');
+    var playIcon = document.getElementById('play-icon');
+    var pauseIcon = document.getElementById('pause-icon');
+    var currentTimeEl = document.getElementById('current-time');
+    var totalTimeEl = document.getElementById('total-time');
+    var progressTrack = document.getElementById('progress-track');
+    var progressFill = document.getElementById('progress-fill');
+    var backBtn = document.getElementById('back-btn');
+    var fwdBtn = document.getElementById('fwd-btn');
+    var speedSelect = document.getElementById('speed-select');
+    var shareBtn = document.getElementById('share-btn');
+    var STORAGE_KEY = 'share_progress_0857315c584b9c1f_3dc11f22-af32-11f0-b7b4-337a6a84fe66'.replace(/[^a-zA-Z0-9_]/g, '_');
+
+    var audioSrc = "https://pdst.fm/e/mgln.ai/e/1113/pscrb.fm/rss/p/traffic.megaphone.fm/RINTP1525887473.mp3?updated=1761130082";
+
+    function fmtTime(s) {
+      if (isNaN(s) || s < 0) return '0:00';
+      var h = Math.floor(s / 3600);
+      var m = Math.floor((s % 3600) / 60);
+      var sec = Math.floor(s % 60);
+      if (h > 0) return h + ':' + String(m).padStart(2,'0') + ':' + String(sec).padStart(2,'0');
+      return m + ':' + String(sec).padStart(2,'0');
+    }
+
+    function seekTo(time) {
+      if (!audio.src) audio.src = audioSrc;
+      audio.currentTime = time;
+      audio.play();
+    }
+
+    function updateUI() {
+      var playing = !audio.paused;
+      playIcon.classList.toggle('hidden', playing);
+      pauseIcon.classList.toggle('hidden', !playing);
+    }
+
+    // Check for ?t= timestamp parameter (shared at specific time)
+    var urlParams = new URLSearchParams(window.location.search);
+    var hasStartAt = urlParams.has('t');
+    var startAt = hasStartAt ? parseFloat(urlParams.get('t')) : 0;
+
+    // Restore progress: ?t= takes priority, then localStorage
+    var saved = 0;
+    if (hasStartAt && !isNaN(startAt)) {
+      saved = Math.max(0, startAt);
+    } else {
+      try { saved = parseFloat(localStorage.getItem(STORAGE_KEY) || '0'); } catch(e) {}
+    }
+
+    audio.addEventListener('loadedmetadata', function() {
+      totalTimeEl.textContent = fmtTime(audio.duration);
+      if (saved > 0 && saved < audio.duration - 10) {
+        audio.currentTime = saved;
+      }
+    });
+
+    audio.addEventListener('timeupdate', function() {
+      currentTimeEl.textContent = fmtTime(audio.currentTime);
+      if (audio.duration) {
+        progressFill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+      }
+      if (Math.floor(audio.currentTime) % 5 === 0) {
+        try { localStorage.setItem(STORAGE_KEY, String(audio.currentTime)); } catch(e) {}
+      }
+    });
+
+    audio.addEventListener('play', updateUI);
+    audio.addEventListener('pause', updateUI);
+
+    playBtn.addEventListener('click', function() {
+      if (!audio.src) audio.src = audioSrc;
+      if (audio.paused) audio.play(); else audio.pause();
+    });
+
+    backBtn.addEventListener('click', function() { audio.currentTime = Math.max(0, audio.currentTime - 15); });
+    fwdBtn.addEventListener('click', function() { audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 15); });
+
+    speedSelect.addEventListener('change', function() { audio.playbackRate = parseFloat(speedSelect.value); });
+
+    // Click to seek on progress bar
+    progressTrack.addEventListener('click', function(ev) {
+      var rect = progressTrack.getBoundingClientRect();
+      var pct = (ev.clientX - rect.left) / rect.width;
+      if (audio.duration) audio.currentTime = pct * audio.duration;
+    });
+
+    // Share button — copy URL
+    if (shareBtn) {
+      shareBtn.addEventListener('click', function() {
+        if (navigator.share) {
+          navigator.share({ title: "Always Bet on the Models: How Tasklet Puts the Agency in Agents, with CEO Andrew Lee", url: window.location.href }).catch(function() {});
+        } else {
+          navigator.clipboard.writeText(window.location.href).then(function() {
+            shareBtn.textContent = 'Copied!';
+            setTimeout(function() { shareBtn.innerHTML = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg> Copy link'; }, 2000);
+          });
+        }
+      });
+    }
+
+    // Universal seek handler: timestamp buttons AND clickable rows
+    document.addEventListener('click', function(ev) {
+      // Direct timestamp button click
+      var tsBtn = ev.target.closest('.seek-ts');
+      if (tsBtn) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        var time = parseFloat(tsBtn.getAttribute('data-time'));
+        if (!isNaN(time)) seekTo(time);
+        return;
+      }
+      // Clickable row (chapter, concept, reference, transcript segment)
+      var seekRow = ev.target.closest('[data-seek]');
+      if (seekRow) {
+        var time = parseFloat(seekRow.getAttribute('data-seek'));
+        if (!isNaN(time)) seekTo(time);
+      }
+    });
+
+    // Highlight currently playing transcript segment
+    var lastHighlighted = null;
+    audio.addEventListener('timeupdate', function() {
+      var segments = document.querySelectorAll('[data-seek]');
+      var current = null;
+      for (var i = segments.length - 1; i >= 0; i--) {
+        var t = parseFloat(segments[i].getAttribute('data-seek'));
+        if (!isNaN(t) && audio.currentTime >= t) {
+          // Only highlight transcript segments (inside the transcript details)
+          if (segments[i].closest('details')) {
+            current = segments[i];
+            break;
+          }
+        }
+      }
+      if (current !== lastHighlighted) {
+        if (lastHighlighted) lastHighlighted.classList.remove('bg-orange-50');
+        if (current) current.classList.add('bg-orange-50');
+        lastHighlighted = current;
+      }
+    });
+
+    // Media Session API for mobile lock screen controls
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: "Always Bet on the Models: How Tasklet Puts the Agency in Agents, with CEO Andrew Lee",
+        artist: "\"The Cognitive Revolution\"",
+        artwork: [{ src: "/artwork/0857315c584b9c1f" }]
+      });
+      navigator.mediaSession.setActionHandler('play', function() { audio.play(); });
+      navigator.mediaSession.setActionHandler('pause', function() { audio.pause(); });
+      navigator.mediaSession.setActionHandler('seekbackward', function() { audio.currentTime = Math.max(0, audio.currentTime - 15); });
+      navigator.mediaSession.setActionHandler('seekforward', function() { audio.currentTime += 15; });
+    }
+  })();
+  </script>
+</body>
+</html>

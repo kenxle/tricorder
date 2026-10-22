@@ -1,0 +1,48 @@
+{
+ "domain_query": "reasonmachines.com",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Adifounder"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Low Cost Harness: Reason"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "reasonmachines",
+      ".",
+      "com"
+     ],
+     "value": "https://<em>reasonmachines.com</em>/blog/introducing-reason-agent-1-1"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_Adifounder",
+    "story_50072795"
+   ],
+   "author": "Adifounder",
+   "children": [
+    50079349
+   ],
+   "created_at": "2026-10-13T14:59:41Z",
+   "created_at_i": 1791903581,
+   "num_comments": 1,
+   "objectID": "50072795",
+   "points": 1,
+   "story_id": 50072795,
+   "title": "Low Cost Harness: Reason",
+   "updated_at": "2026-10-13T21:49:40Z",
+   "url": "https://reasonmachines.com/blog/introducing-reason-agent-1-1"
+  }
+ ],
+ "launch_hits": []
+}

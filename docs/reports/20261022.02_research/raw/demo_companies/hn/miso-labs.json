@@ -1,0 +1,48 @@
+{
+ "domain_query": "misolabs.ai",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "heystefan"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "MisoTTS Emotive Speech Model"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "misolabs",
+      ".",
+      "ai"
+     ],
+     "value": "https://www.<em>misolabs.ai</em>/blog/miso-tts-8b"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_heystefan",
+    "story_48390655"
+   ],
+   "author": "heystefan",
+   "children": [
+    48396366
+   ],
+   "created_at": "2026-06-03T21:52:04Z",
+   "created_at_i": 1780523524,
+   "num_comments": 0,
+   "objectID": "48390655",
+   "points": 12,
+   "story_id": 48390655,
+   "title": "MisoTTS Emotive Speech Model",
+   "updated_at": "2026-06-05T14:16:48Z",
+   "url": "https://www.misolabs.ai/blog/miso-tts-8b"
+  }
+ ],
+ "launch_hits": []
+}

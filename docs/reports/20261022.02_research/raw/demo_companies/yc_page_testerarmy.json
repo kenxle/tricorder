@@ -1,0 +1,123 @@
+{
+ "currentUser": null,
+ "publicFounderProfilesEnabled": false,
+ "disabledPublicVisibility": null,
+ "company": {
+  "id": 31491,
+  "slug": "testerarmy",
+  "name": "TesterArmy",
+  "batch": "P26",
+  "batch_name": "Spring 2026",
+  "small_logo_url": "https://bookface-images.s3.amazonaws.com/small_logos/c2383517bbad408b44b80d2d5f5912ef81073ff0.png",
+  "one_liner": "Test your app with AI, catch bugs before users do",
+  "website": "https://tester.army",
+  "long_description": "TesterArmy is an AI agent that tests websites and mobile apps. It monitors production on a schedule and runs automatically on every GitHub Pull Request, delivering screenshots, recordings, and actionable bug reports.\r\n\r\nDescribe tests in plain English. The agent handles login flows, OAuth, and OTPs, no scripts to write or maintain. We catch the regressions and UX issues that code review misses.",
+  "tags": [],
+  "ycdc_status": "Active",
+  "logo_url": "https://bookface-images.s3.us-west-2.amazonaws.com/logos/7046b95123acbefa2adb7a1d754ea3f853d7e999.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAMTHQSM7K%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184813Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDEstyS7IaZKECmwPc4ZbgFjuGQtPdritwAkZL5nX5TowIhAKMZWY%2BGpgOfPtuDNYML4o%2F4X1HVzslH4maIAWXSqZJYKuUDCHwQABoMMDA2MjAxODExMDcyIgwREqcd5DOD1fDcjrkqwgPVk1fhukbzkC6xtbXGuZkcMvfgRcGlRUYb3Wk6vGPHi%2FNEJ9PjTZdRYY%2FxgRRcQCrKdwW8HXMKvwzMsbStJIpRutsnITqxoTweBhWuBTfxT4n6HrmwBkzyyP4DXfmqeBsZGua5NEO7H4I5KyNlCfAXvm%2BGih6l586RZqacwxqXY5bsYS5wyFzPko05NK14gbdwW0kJmUY2rGX6ncXB288vc7CE8Vt28CVt0LEFQq0zjBWBLMadiLlg%2BK5triw%2B1BmK3d3tAQVa6DIfzIaJdFgCs9MkSRivpPZIWsimLHk2ON4xuNbdDU3pGP9oN1BBpl6mGNpk3SdedME2at7dt%2FpCeMC4w2FPipq8Q1XrWbr6bhJ%2F2HCNPyiHawIXyJpJm4mcRp6gzRdl6xWvhOiRxX6dyZ7RM1UMzuhbWC85CvA1PN%2BJCAnhGDVSrZ6meKHPwKW4uEOAp6qAUDqXCBA1pBzXf8clqk1XH8x7QBWUvY3iqX26ynPvRpOlLt6giFxhth94PRc5GZ3%2BN11FcJ2chGZUW57bIAkfYMwINW6y95p2BtZaJleZCR7uTXpdreIU1f3f3Ohor96cEMY3yhlz6YNnhD4w4a%2Fp1gY6pAFpfwkQmsjvIGHhpwzjJNeEgC0iclF02Q1i9EH5e71o8YBdkperoO0YX5hcyyv3fp3d%2F7NF%2BqYNII2llW4efEBQw22Gpvxb870Y12S67uohwNFXeCdSO5h1JPj9BV%2BPIc3fJ%2BVaOyy%2BytQh%2FbG9qi%2Fl0CqQN85oVQnRMPnzgRbyJ33Ktq5YatQX73B0jJ2%2Fq35XnL3Xpe2bWlQeriUO4KcLJuy1NA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=cf29c7d83574c9ffa27214e0feccbc7f30ebe6155e05519c08b638f53d555560",
+  "year_founded": 2026,
+  "team_size": 6,
+  "location": "Warsaw, Poland",
+  "city": "Warsaw",
+  "city_tag": null,
+  "country": "PL",
+  "linkedin_url": "https://www.linkedin.com/company/testerarmy",
+  "twitter_url": "https://x.com/TesterArmy",
+  "fb_url": "",
+  "cb_url": "",
+  "github_url": "",
+  "free_response_question_answers": [],
+  "dday_video_url": null,
+  "app_video_url": null,
+  "app_answers": [],
+  "ycdc_url": "https://www.ycombinator.com/companies/testerarmy",
+  "company_photos": [],
+  "primary_group_partner": {
+   "id": 26554,
+   "full_name": "Pete Koomen",
+   "avatar_thumb_url": "https://bookface-images.s3.us-west-2.amazonaws.com/avatars/3d98aabb1d9a488e5d57065f24566172400a946c.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAMTHQSM7K%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184813Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDEstyS7IaZKECmwPc4ZbgFjuGQtPdritwAkZL5nX5TowIhAKMZWY%2BGpgOfPtuDNYML4o%2F4X1HVzslH4maIAWXSqZJYKuUDCHwQABoMMDA2MjAxODExMDcyIgwREqcd5DOD1fDcjrkqwgPVk1fhukbzkC6xtbXGuZkcMvfgRcGlRUYb3Wk6vGPHi%2FNEJ9PjTZdRYY%2FxgRRcQCrKdwW8HXMKvwzMsbStJIpRutsnITqxoTweBhWuBTfxT4n6HrmwBkzyyP4DXfmqeBsZGua5NEO7H4I5KyNlCfAXvm%2BGih6l586RZqacwxqXY5bsYS5wyFzPko05NK14gbdwW0kJmUY2rGX6ncXB288vc7CE8Vt28CVt0LEFQq0zjBWBLMadiLlg%2BK5triw%2B1BmK3d3tAQVa6DIfzIaJdFgCs9MkSRivpPZIWsimLHk2ON4xuNbdDU3pGP9oN1BBpl6mGNpk3SdedME2at7dt%2FpCeMC4w2FPipq8Q1XrWbr6bhJ%2F2HCNPyiHawIXyJpJm4mcRp6gzRdl6xWvhOiRxX6dyZ7RM1UMzuhbWC85CvA1PN%2BJCAnhGDVSrZ6meKHPwKW4uEOAp6qAUDqXCBA1pBzXf8clqk1XH8x7QBWUvY3iqX26ynPvRpOlLt6giFxhth94PRc5GZ3%2BN11FcJ2chGZUW57bIAkfYMwINW6y95p2BtZaJleZCR7uTXpdreIU1f3f3Ohor96cEMY3yhlz6YNnhD4w4a%2Fp1gY6pAFpfwkQmsjvIGHhpwzjJNeEgC0iclF02Q1i9EH5e71o8YBdkperoO0YX5hcyyv3fp3d%2F7NF%2BqYNII2llW4efEBQw22Gpvxb870Y12S67uohwNFXeCdSO5h1JPj9BV%2BPIc3fJ%2BVaOyy%2BytQh%2FbG9qi%2Fl0CqQN85oVQnRMPnzgRbyJ33Ktq5YatQX73B0jJ2%2Fq35XnL3Xpe2bWlQeriUO4KcLJuy1NA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=604922691f61ce59481c82d13d3afbc7e99279ff9f8b0d7167875c965051121c",
+   "url": "https://www.ycombinator.com/people/pete-koomen"
+  },
+  "founders": [
+   {
+    "user_id": 3414052,
+    "is_active": true,
+    "founder_bio": "Co-founder & CEO of TesterArmy (YC P26).\n\nYoungest ever contributor to React Native (at 16), maintained open-source libraries with 3M+ downloads weekly.\n\nWorked on v0 iOS with Vercel. 5+ years of commercial experience. Working professionally since 14.",
+    "full_name": "Szymon Rybczak",
+    "title": "Founder/CEO",
+    "avatar_thumb_url": "https://bookface-images.s3.us-west-2.amazonaws.com/avatars/41e6e5890d14f7aee22cebf9990c15771ba50e3a.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAMTHQSM7K%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184813Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDEstyS7IaZKECmwPc4ZbgFjuGQtPdritwAkZL5nX5TowIhAKMZWY%2BGpgOfPtuDNYML4o%2F4X1HVzslH4maIAWXSqZJYKuUDCHwQABoMMDA2MjAxODExMDcyIgwREqcd5DOD1fDcjrkqwgPVk1fhukbzkC6xtbXGuZkcMvfgRcGlRUYb3Wk6vGPHi%2FNEJ9PjTZdRYY%2FxgRRcQCrKdwW8HXMKvwzMsbStJIpRutsnITqxoTweBhWuBTfxT4n6HrmwBkzyyP4DXfmqeBsZGua5NEO7H4I5KyNlCfAXvm%2BGih6l586RZqacwxqXY5bsYS5wyFzPko05NK14gbdwW0kJmUY2rGX6ncXB288vc7CE8Vt28CVt0LEFQq0zjBWBLMadiLlg%2BK5triw%2B1BmK3d3tAQVa6DIfzIaJdFgCs9MkSRivpPZIWsimLHk2ON4xuNbdDU3pGP9oN1BBpl6mGNpk3SdedME2at7dt%2FpCeMC4w2FPipq8Q1XrWbr6bhJ%2F2HCNPyiHawIXyJpJm4mcRp6gzRdl6xWvhOiRxX6dyZ7RM1UMzuhbWC85CvA1PN%2BJCAnhGDVSrZ6meKHPwKW4uEOAp6qAUDqXCBA1pBzXf8clqk1XH8x7QBWUvY3iqX26ynPvRpOlLt6giFxhth94PRc5GZ3%2BN11FcJ2chGZUW57bIAkfYMwINW6y95p2BtZaJleZCR7uTXpdreIU1f3f3Ohor96cEMY3yhlz6YNnhD4w4a%2Fp1gY6pAFpfwkQmsjvIGHhpwzjJNeEgC0iclF02Q1i9EH5e71o8YBdkperoO0YX5hcyyv3fp3d%2F7NF%2BqYNII2llW4efEBQw22Gpvxb870Y12S67uohwNFXeCdSO5h1JPj9BV%2BPIc3fJ%2BVaOyy%2BytQh%2FbG9qi%2Fl0CqQN85oVQnRMPnzgRbyJ33Ktq5YatQX73B0jJ2%2Fq35XnL3Xpe2bWlQeriUO4KcLJuy1NA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=adb63f5ab774f6522b4ddb7a9b301a45c402879428d318f0e9aa48a27e378f00",
+    "twitter_url": "https://x.com/SzymonRybczak",
+    "linkedin_url": "https://www.linkedin.com/in/szymonrybczak/",
+    "has_email": true,
+    "latest_yc_company": {
+     "name": "TesterArmy",
+     "href": "https://www.ycombinator.com/companies/testerarmy"
+    }
+   },
+   {
+    "user_id": 3413782,
+    "is_active": true,
+    "founder_bio": "Co-founder & CTO of TesterArmy (YC P26).\n\nReact Native Core Contributor (100+ PRs merged), created 5+ open-source libraries with over 2.5M downloads.\n\nWorked with Vercel, Meta, AT&T, and more.",
+    "full_name": "Oskar Kwa\u015bniewski",
+    "title": "Founder",
+    "avatar_thumb_url": "https://bookface-images.s3.us-west-2.amazonaws.com/avatars/f7f50a5056949e5eea13153b78e8a074fa4cf422.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAMTHQSM7K%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184813Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDEstyS7IaZKECmwPc4ZbgFjuGQtPdritwAkZL5nX5TowIhAKMZWY%2BGpgOfPtuDNYML4o%2F4X1HVzslH4maIAWXSqZJYKuUDCHwQABoMMDA2MjAxODExMDcyIgwREqcd5DOD1fDcjrkqwgPVk1fhukbzkC6xtbXGuZkcMvfgRcGlRUYb3Wk6vGPHi%2FNEJ9PjTZdRYY%2FxgRRcQCrKdwW8HXMKvwzMsbStJIpRutsnITqxoTweBhWuBTfxT4n6HrmwBkzyyP4DXfmqeBsZGua5NEO7H4I5KyNlCfAXvm%2BGih6l586RZqacwxqXY5bsYS5wyFzPko05NK14gbdwW0kJmUY2rGX6ncXB288vc7CE8Vt28CVt0LEFQq0zjBWBLMadiLlg%2BK5triw%2B1BmK3d3tAQVa6DIfzIaJdFgCs9MkSRivpPZIWsimLHk2ON4xuNbdDU3pGP9oN1BBpl6mGNpk3SdedME2at7dt%2FpCeMC4w2FPipq8Q1XrWbr6bhJ%2F2HCNPyiHawIXyJpJm4mcRp6gzRdl6xWvhOiRxX6dyZ7RM1UMzuhbWC85CvA1PN%2BJCAnhGDVSrZ6meKHPwKW4uEOAp6qAUDqXCBA1pBzXf8clqk1XH8x7QBWUvY3iqX26ynPvRpOlLt6giFxhth94PRc5GZ3%2BN11FcJ2chGZUW57bIAkfYMwINW6y95p2BtZaJleZCR7uTXpdreIU1f3f3Ohor96cEMY3yhlz6YNnhD4w4a%2Fp1gY6pAFpfwkQmsjvIGHhpwzjJNeEgC0iclF02Q1i9EH5e71o8YBdkperoO0YX5hcyyv3fp3d%2F7NF%2BqYNII2llW4efEBQw22Gpvxb870Y12S67uohwNFXeCdSO5h1JPj9BV%2BPIc3fJ%2BVaOyy%2BytQh%2FbG9qi%2Fl0CqQN85oVQnRMPnzgRbyJ33Ktq5YatQX73B0jJ2%2Fq35XnL3Xpe2bWlQeriUO4KcLJuy1NA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=5644999b0867dc002de28324cebdea0d229923939eabc5ccf0bfbb78cf99731f",
+    "twitter_url": "https://x.com/o_kwasniewski",
+    "linkedin_url": "https://www.linkedin.com/in/okwasniewski/",
+    "has_email": true,
+    "latest_yc_company": {
+     "name": "TesterArmy",
+     "href": "https://www.ycombinator.com/companies/testerarmy"
+    }
+   }
+  ]
+ },
+ "jobPostings": [],
+ "jobsUrl": "https://bookface.ycombinator.com/workatastartup",
+ "newsItems": [],
+ "newsUrl": "https://bookface.ycombinator.com/company/31491/company_news",
+ "videos": [],
+ "launches": [
+  {
+   "id": 101949,
+   "title": "TesterArmy: Test your app with natural language",
+   "body": "Hey everyone [\ud83d\udc4b\\\n\\\n](https://emojipedia.org/waving-hand)**TL;DR: TesterArmy is an AI-powered QA agent that tests your web or mobile app by actually using it - clicking, typing, navigating like a real user.** \\\n\\\n<https://youtu.be/G4zBvz9ZGac>\n\n### **Launch Day Deal \ud83d\ude80**\n\nAs part of launch day, we\u2019re offering\u00a0**30% off every subscription**\u00a0after [signup](https://tester.army/sign-in) with code:\u00a0**LAUNCH30**.\n\n### **Problem**\n\nEvery dev team knows they should test more, but writing and maintaining automated tests is painful.\n\nTests take time to build; they break when the UI changes, and when a team is shipping fast, QA is usually the first thing to get skipped.\n\nAnd even when tests pass, they only verify what you explicitly told them to verify. They do not notice confusing flows, broken layouts, misleading copy, or weird UI states that a real user would catch in seconds.\n\n### **Solution**\n\nTesterArmy is an AI agent that **tests your app as a real user would.** You describe what to test in natural language, and the agent clicks, types, and navigates through your app using vision. It catches broken flows, rendering bugs, misleading copy, and confusing UX. No selectors, no scripts, nothing to maintain.\n\nEvery run produces screenshots, recordings, and actionable bug reports. Setup takes minutes: paste your URL or upload a mobile app build, and describe what to test. Done.\n\n![uploaded image](/media/?type=post&id=101949&key=user_uploads/3414052/1f12e0be-1909-4295-b7b0-497898669f63)\n\n### **Meet the team**\n\nWe\u2019re a team of three from Poland \ud83c\uddf5\ud83c\uddf1 - [Szymon Rybczak](https://x.com/SzymonRybczak), [Oskar Kwa\u015bniewski](https://x.com/o_kwasniewski) and [Piotr Matyjasik](https://x.com/p_matyjasik). \\\n\\\nSzymon and Oskar have worked closely together for years across\u00a0**4 companies**, while Piotr and Oskar go even further back, having studied computer science together in Poland. We\u2019ve spent years shipping web and mobile products used by millions, from open source and developer tools to production apps. We came together around a problem we knew firsthand: teams ship fast, but QA still slows everything down.\n\n![uploaded image](/media/?type=post&id=101949&key=user_uploads/3414052/0007b5a1-3c33-4194-b65a-f85dc0f65593)\n\n### **\ud83e\udd1d Our Ask**\n\n**If this is a problem you face, try us out!**\n\n\\- Book a [demo](https://tester.army/meet)\n\n\\- [Sign up now!](https://tester.army/sign-in) We are live and used in production by 20+ companies\\\n\\\n**Thank you! \ud83d\ude4f**\n\nSzymon, Oskar and Piotr",
+   "state": "public",
+   "tagline": "Automated testing for web and mobile apps",
+   "created_at": "2026-05-26T01:08:53.084Z",
+   "company": {
+    "id": 31491,
+    "name": "TesterArmy",
+    "logo": "https://bookface-images.s3.amazonaws.com/small_logos/c2383517bbad408b44b80d2d5f5912ef81073ff0.png",
+    "batch": "p2026",
+    "tags": [],
+    "url": "https://tester.army",
+    "slug": "testerarmy",
+    "description": "Test your app with AI, catch bugs before users do"
+   },
+   "user": {
+    "name": "Szymon Rybczak",
+    "avatar": "https://bookface-images.s3.amazonaws.com/avatars/41e6e5890d14f7aee22cebf9990c15771ba50e3a.jpg"
+   },
+   "total_vote_count": 95,
+   "slug": "QWL-testerarmy-test-your-app-with-natural-language",
+   "launch_embed_url": "https://www.ycombinator.com/launches/QWL-testerarmy-test-your-app-with-natural-language/upvote_embed.svg",
+   "twitter_share_url": "https://twitter.com/intent/tweet?text=TesterArmy+just+launched+on+%40ycombinator%27s+Launch+YC%21%0A%0ATesterArmy%3A+Test+your+app+with+natural+language.+Check+them+out%3A&url=https%3A%2F%2Fwww.ycombinator.com%2Flaunches%2FQWL-testerarmy-test-your-app-with-natural-language",
+   "sanitized_title": "TesterArmy: Test your app with natural language",
+   "ycdc_launch_url": "https://www.ycombinator.com/launches/QWL-testerarmy-test-your-app-with-natural-language",
+   "url": "https://www.ycombinator.com/launches/QWL-testerarmy-test-your-app-with-natural-language",
+   "share_config": {},
+   "share_image": null,
+   "approved_at": null,
+   "approved_by": null,
+   "requested_publish_at": "2026-05-26T12:00:00Z"
+  }
+ ],
+ "editUrl": "https://bookface.ycombinator.com/company/31491/edit",
+ "editUserUrl": "https://bookface.ycombinator.com/edit_user_profile",
+ "createProfileUrl": "https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication&defaults%5BsignUpActive%5D=true",
+ "signedIn": false,
+ "showDirectApply": true,
+ "waasDirectoryUrl": "https://www.workatastartup.com/companies",
+ "investorSubdomain": false,
+ "userCanRequestEmails": false
+}

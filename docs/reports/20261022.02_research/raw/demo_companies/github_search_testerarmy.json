@@ -1,0 +1,50 @@
+{
+  "total_count": 2,
+  "incomplete_results": false,
+  "items": [
+    {
+      "login": "TesterArmy",
+      "id": 291689532,
+      "node_id": "O_kgDOEWLUPA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/291689532?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/TesterArmy",
+      "html_url": "https://github.com/TesterArmy",
+      "followers_url": "https://api.github.com/users/TesterArmy/followers",
+      "following_url": "https://api.github.com/users/TesterArmy/following{/other_user}",
+      "gists_url": "https://api.github.com/users/TesterArmy/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/TesterArmy/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/TesterArmy/subscriptions",
+      "organizations_url": "https://api.github.com/users/TesterArmy/orgs",
+      "repos_url": "https://api.github.com/users/TesterArmy/repos",
+      "events_url": "https://api.github.com/users/TesterArmy/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/TesterArmy/received_events",
+      "type": "Organization",
+      "user_view_type": "public",
+      "site_admin": false,
+      "score": 1.0
+    },
+    {
+      "login": "tester-army",
+      "id": 252887899,
+      "node_id": "O_kgDODxLDWw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/252887899?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tester-army",
+      "html_url": "https://github.com/tester-army",
+      "followers_url": "https://api.github.com/users/tester-army/followers",
+      "following_url": "https://api.github.com/users/tester-army/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tester-army/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tester-army/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tester-army/subscriptions",
+      "organizations_url": "https://api.github.com/users/tester-army/orgs",
+      "repos_url": "https://api.github.com/users/tester-army/repos",
+      "events_url": "https://api.github.com/users/tester-army/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tester-army/received_events",
+      "type": "Organization",
+      "user_view_type": "public",
+      "site_admin": false,
+      "score": 1.0
+    }
+  ]
+}

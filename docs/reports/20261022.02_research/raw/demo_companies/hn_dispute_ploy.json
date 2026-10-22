@@ -1,0 +1,650 @@
+[
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "brryant"
+   },
+   "comment_text": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "ploy",
+     ".",
+     "ai"
+    ],
+    "value": "hah - we actually skew staff, senior staff.<p>We have been testing GPT 5.6 for about a week as a preview model through a YC relationship, providing them feedback on the model. Our evals run in github CI and we can run them all in about 15 minutes against our eval bench of 115+ web design and marketing related jobs that <em>ploy.ai</em> specializes in.<p>then after we toggled it on (through a posthog feature flag) we actively monitored for failures.<p>I came from running Webflow, which powers &gt; 1% of the internet so trying my best to relay all of that knowledge to ploy to power more % of the internet!"
+   },
+   "story_title": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "Migrating a production AI agent to GPT-5.6: 2.2x faster, 27% cheaper"
+   },
+   "story_url": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "ploy",
+     ".",
+     "ai"
+    ],
+    "value": "https://<em>ploy.ai</em>/blog/migrating-a-production-ai-agent-to-gpt-5-6"
+   }
+  },
+  "_tags": [
+   "comment",
+   "author_brryant",
+   "story_48882716"
+  ],
+  "author": "brryant",
+  "children": [
+   48893687
+  ],
+  "comment_text": "hah - we actually skew staff, senior staff.<p>We have been testing GPT 5.6 for about a week as a preview model through a YC relationship, providing them feedback on the model. Our evals run in github CI and we can run them all in about 15 minutes against our eval bench of 115+ web design and marketing related jobs that ploy.ai specializes in.<p>then after we toggled it on (through a posthog feature flag) we actively monitored for failures.<p>I came from running Webflow, which powers &gt; 1% of the internet so trying my best to relay all of that knowledge to ploy to power more % of the internet!",
+  "created_at": "2026-07-13T13:27:40Z",
+  "created_at_i": 1783949260,
+  "objectID": "48892370",
+  "parent_id": 48889887,
+  "story_id": 48882716,
+  "story_title": "Migrating a production AI agent to GPT-5.6: 2.2x faster, 27% cheaper",
+  "story_url": "https://ploy.ai/blog/migrating-a-production-ai-agent-to-gpt-5-6",
+  "updated_at": "2026-07-13T18:23:29Z"
+ },
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "brryant"
+   },
+   "title": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "Migrating a production AI agent to GPT-5.6: 2.2x faster, 27% cheaper"
+   },
+   "url": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "ploy",
+     ".",
+     "ai"
+    ],
+    "value": "https://<em>ploy.ai</em>/blog/migrating-a-production-ai-agent-to-gpt-5-6"
+   }
+  },
+  "_tags": [
+   "story",
+   "author_brryant",
+   "story_48882716"
+  ],
+  "author": "brryant",
+  "children": [
+   48883952,
+   48884146,
+   48884363,
+   48884370,
+   48884553,
+   48884572,
+   48885331,
+   48885442,
+   48885518,
+   48885521,
+   48885657,
+   48886086,
+   48886638,
+   48886808,
+   48887326,
+   48887397,
+   48887548,
+   48887574,
+   48887729,
+   48887893,
+   48887918,
+   48888523,
+   48888797,
+   48889179,
+   48889887,
+   48893207,
+   48894767,
+   48894857,
+   48896985,
+   48942760
+  ],
+  "created_at": "2026-07-12T17:13:07Z",
+  "created_at_i": 1783876387,
+  "num_comments": 131,
+  "objectID": "48882716",
+  "points": 258,
+  "story_id": 48882716,
+  "title": "Migrating a production AI agent to GPT-5.6: 2.2x faster, 27% cheaper",
+  "updated_at": "2026-09-04T18:26:52Z",
+  "url": "https://ploy.ai/blog/migrating-a-production-ai-agent-to-gpt-5-6"
+ },
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "brryant"
+   },
+   "title": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "Migrating a production AI agent to GPT 5.6"
+   },
+   "url": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "ploy",
+     ".",
+     "ai"
+    ],
+    "value": "https://<em>ploy.ai</em>/blog/migrating-a-production-ai-agent-to-gpt-5-6"
+   }
+  },
+  "_tags": [
+   "story",
+   "author_brryant",
+   "story_48864950"
+  ],
+  "author": "brryant",
+  "created_at": "2026-07-10T20:40:34Z",
+  "created_at_i": 1783716034,
+  "num_comments": 0,
+  "objectID": "48864950",
+  "points": 7,
+  "story_id": 48864950,
+  "title": "Migrating a production AI agent to GPT 5.6",
+  "updated_at": "2026-07-10T21:28:08Z",
+  "url": "https://ploy.ai/blog/migrating-a-production-ai-agent-to-gpt-5-6"
+ },
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "brryant"
+   },
+   "title": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "AI Web Design (Opus vs. Sol)"
+   },
+   "url": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "ploy",
+     ".",
+     "ai"
+    ],
+    "value": "https://<em>ploy.ai</em>/blog/ai-web-design-with-opus-and-sol"
+   }
+  },
+  "_tags": [
+   "story",
+   "author_brryant",
+   "story_48859893"
+  ],
+  "author": "brryant",
+  "children": [
+   48859894,
+   48860589
+  ],
+  "created_at": "2026-07-10T13:49:07Z",
+  "created_at_i": 1783691347,
+  "num_comments": 2,
+  "objectID": "48859893",
+  "points": 1,
+  "story_id": 48859893,
+  "title": "AI Web Design (Opus vs. Sol)",
+  "updated_at": "2026-07-10T14:36:34Z",
+  "url": "https://ploy.ai/blog/ai-web-design-with-opus-and-sol"
+ },
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "kevinhacker"
+   },
+   "title": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "ploy",
+     ".",
+     "ai"
+    ],
+    "value": "PlayDiffusion \u2013 <em>Play.ai</em> newest voice model for inpainting"
+   },
+   "url": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "ploy",
+     ".",
+     "ai"
+    ],
+    "value": "https://blog.<em>play.ai</em>/blog/play-diffusion"
+   }
+  },
+  "_tags": [
+   "story",
+   "author_kevinhacker",
+   "story_44171424"
+  ],
+  "author": "kevinhacker",
+  "children": [
+   44171443
+  ],
+  "created_at": "2025-06-03T15:58:41Z",
+  "created_at_i": 1748966321,
+  "num_comments": 0,
+  "objectID": "44171424",
+  "points": 2,
+  "story_id": 44171424,
+  "title": "PlayDiffusion \u2013 Play.ai newest voice model for inpainting",
+  "updated_at": "2025-06-03T21:48:01Z",
+  "url": "https://blog.play.ai/blog/play-diffusion"
+ },
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "sublinear"
+   },
+   "comment_text": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "ploy",
+     ".",
+     "ai"
+    ],
+    "value": "What does that have to do with productivity?<p>Bugs and security flaws are just oversights. Those oversights are caused by inattention either through fatigue or acting too quickly. An inexperienced person delegating what they don't understand to AI produces more bugs, not less.<p>Those mindlessly copying from stackoverflow were in a similar situation, but only because they ignored or didn't understand the warnings from the discussion. You're rolling the dice if you expect AI to explain itself, as it can only ever know at most what it scraped from (stackoverflow and poorly documented github repos).<p>As it was not too long ago, searching on stackoverflow was already a hail mary <em>play. AI</em> just makes the problem worse. At best, with AI there's a lot of reinventing the wheel with no hope of ever doing better than merely approximating the wheel."
+   },
+   "story_title": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "Good Culture Is the Biggest Productivity Hack, Not AI"
+   },
+   "story_url": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "https://newsletter.eng-leadership.com/p/good-culture-is-the-biggest-productivity"
+   }
+  },
+  "_tags": [
+   "comment",
+   "author_sublinear",
+   "story_49491568"
+  ],
+  "author": "sublinear",
+  "children": [
+   49492948
+  ],
+  "comment_text": "What does that have to do with productivity?<p>Bugs and security flaws are just oversights. Those oversights are caused by inattention either through fatigue or acting too quickly. An inexperienced person delegating what they don&#x27;t understand to AI produces more bugs, not less.<p>Those mindlessly copying from stackoverflow were in a similar situation, but only because they ignored or didn&#x27;t understand the warnings from the discussion. You&#x27;re rolling the dice if you expect AI to explain itself, as it can only ever know at most what it scraped from (stackoverflow and poorly documented github repos).<p>As it was not too long ago, searching on stackoverflow was already a hail mary play. AI just makes the problem worse. At best, with AI there&#x27;s a lot of reinventing the wheel with no hope of ever doing better than merely approximating the wheel.",
+  "created_at": "2026-08-29T18:52:37Z",
+  "created_at_i": 1788029557,
+  "objectID": "49492289",
+  "parent_id": 49492221,
+  "story_id": 49491568,
+  "story_title": "Good Culture Is the Biggest Productivity Hack, Not AI",
+  "story_url": "https://newsletter.eng-leadership.com/p/good-culture-is-the-biggest-productivity",
+  "updated_at": "2026-08-31T02:45:06Z"
+ },
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "rhdunn"
+   },
+   "comment_text": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "ploy",
+     ".",
+     "ai"
+    ],
+    "value": "Have you tried the <a href=\"https://huggingface.co/LatitudeGames\" rel=\"nofollow\">https://huggingface.co/LatitudeGames</a> models? They are used by the <a href=\"https://play.aidungeon.com\" rel=\"nofollow\">https://<em>play.ai</em>dungeon.com</a> website, but can also be downloaded and used with llama-server in conjunction with something like SillyTavern.<p>But in general, I've experienced things similar to you. I've also found that LLMs are bad at subtext, e.g. hinting at an NPC being a werewolf or vampire."
+   },
+   "story_title": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "Kimi K3: Open Frontier Intelligence"
+   },
+   "story_url": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "https://www.kimi.com/blog/kimi-k3"
+   }
+  },
+  "_tags": [
+   "comment",
+   "author_rhdunn",
+   "story_48935342"
+  ],
+  "author": "rhdunn",
+  "children": [
+   48974484
+  ],
+  "comment_text": "Have you tried the <a href=\"https:&#x2F;&#x2F;huggingface.co&#x2F;LatitudeGames\" rel=\"nofollow\">https:&#x2F;&#x2F;huggingface.co&#x2F;LatitudeGames</a> models? They are used by the <a href=\"https:&#x2F;&#x2F;play.aidungeon.com\" rel=\"nofollow\">https:&#x2F;&#x2F;play.aidungeon.com</a> website, but can also be downloaded and used with llama-server in conjunction with something like SillyTavern.<p>But in general, I&#x27;ve experienced things similar to you. I&#x27;ve also found that LLMs are bad at subtext, e.g. hinting at an NPC being a werewolf or vampire.",
+  "created_at": "2026-07-17T12:48:24Z",
+  "created_at_i": 1784292504,
+  "objectID": "48946755",
+  "parent_id": 48943627,
+  "story_id": 48935342,
+  "story_title": "Kimi K3: Open Frontier Intelligence",
+  "story_url": "https://www.kimi.com/blog/kimi-k3",
+  "updated_at": "2026-07-20T04:52:36Z"
+ },
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "quietfox"
+   },
+   "comment_text": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "ploy",
+     ".",
+     "ai"
+    ],
+    "value": "As a first reaction, I loved the idea, since I have had a handful of bands in my life and really loved how you revived (or aimed to revive) the old days with modern tools. I really liked the web design and nostalgia of the old photos combined with the possibilities of new technology. \nThen I hit <em>play. \nAI</em> sucked the soul out of your music. I am happy for you if you liked the results. But for me, each of the comparisons proved me right to loathe AI music."
+   },
+   "story_title": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "Show HN: Reviving my 2001 college band with AI"
+   },
+   "story_url": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "https://www.fadingmaize.com"
+   }
+  },
+  "_tags": [
+   "comment",
+   "author_quietfox",
+   "story_48851476"
+  ],
+  "author": "quietfox",
+  "children": [
+   48863631
+  ],
+  "comment_text": "As a first reaction, I loved the idea, since I have had a handful of bands in my life and really loved how you revived (or aimed to revive) the old days with modern tools. I really liked the web design and nostalgia of the old photos combined with the possibilities of new technology. \nThen I hit play. \nAI sucked the soul out of your music. I am happy for you if you liked the results. But for me, each of the comparisons proved me right to loathe AI music.",
+  "created_at": "2026-07-10T18:41:26Z",
+  "created_at_i": 1783708886,
+  "objectID": "48863607",
+  "parent_id": 48851476,
+  "story_id": 48851476,
+  "story_title": "Show HN: Reviving my 2001 college band with AI",
+  "story_url": "https://www.fadingmaize.com",
+  "updated_at": "2026-07-11T04:01:19Z"
+ },
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "clearstack"
+   },
+   "comment_text": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "ploy",
+     ".",
+     "ai"
+    ],
+    "value": "the cuts are a mix shift <em>play. AI</em> networking orders are higher margin than legacy hardware. they want that ratio to improve. income statement will show it within 2 quarters"
+   },
+   "story_title": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "Cisco workforce reductions"
+   },
+   "story_url": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "https://blogs.cisco.com/news/our-path-forward"
+   }
+  },
+  "_tags": [
+   "comment",
+   "author_clearstack",
+   "story_48130123"
+  ],
+  "author": "clearstack",
+  "comment_text": "the cuts are a mix shift play. AI networking orders are higher margin than legacy hardware. they want that ratio to improve. income statement will show it within 2 quarters",
+  "created_at": "2026-05-14T14:50:00Z",
+  "created_at_i": 1778770200,
+  "objectID": "48136241",
+  "parent_id": 48130123,
+  "story_id": 48130123,
+  "story_title": "Cisco workforce reductions",
+  "story_url": "https://blogs.cisco.com/news/our-path-forward",
+  "updated_at": "2026-05-14T14:54:25Z"
+ },
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "twoodfin"
+   },
+   "comment_text": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "ploy",
+     ".",
+     "ai"
+    ],
+    "value": "You don\u2019t need to be a monopoly for anti-trust law to come into <em>play. Ai</em>rlines can\u2019t collude on pricing, for example, even though no single airline is a monopoly."
+   },
+   "story_title": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "Amazon accused of widespread scheme to inflate prices across the economy"
+   },
+   "story_url": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "https://www.thebignewsletter.com/p/amazon-busted-for-widespread-price"
+   }
+  },
+  "_tags": [
+   "comment",
+   "author_twoodfin",
+   "story_47145907"
+  ],
+  "author": "twoodfin",
+  "children": [
+   47180820
+  ],
+  "comment_text": "You don\u2019t need to be a monopoly for anti-trust law to come into play. Airlines can\u2019t collude on pricing, for example, even though no single airline is a monopoly.",
+  "created_at": "2026-02-27T13:16:16Z",
+  "created_at_i": 1772198176,
+  "objectID": "47180181",
+  "parent_id": 47171267,
+  "story_id": 47145907,
+  "story_title": "Amazon accused of widespread scheme to inflate prices across the economy",
+  "story_url": "https://www.thebignewsletter.com/p/amazon-busted-for-widespread-price",
+  "updated_at": "2026-03-05T23:38:29Z"
+ },
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "drewbeck"
+   },
+   "comment_text": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "1. Software issues are not merely technical, they\u2019re human. Someone has to care about the issue and prioritize it and get it fixed. \n2. Many products don\u2019t compete on software because there are more substantive market forces at play.<p>AI won\u2019t fundamentally alter either of these facts."
+   },
+   "story_title": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "Amazon CEO says AI agents will soon reduce company's corporate workforce"
+   },
+   "story_url": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "https://www.cbsnews.com/news/amazon-ceo-generative-ai-corporate-workforce/"
+   }
+  },
+  "_tags": [
+   "comment",
+   "author_drewbeck",
+   "story_44552611"
+  ],
+  "author": "drewbeck",
+  "comment_text": "1. Software issues are not merely technical, they\u2019re human. Someone has to care about the issue and prioritize it and get it fixed. \n2. Many products don\u2019t compete on software because there are more substantive market forces at play.<p>AI won\u2019t fundamentally alter either of these facts.",
+  "created_at": "2025-07-13T21:20:48Z",
+  "created_at_i": 1752441648,
+  "objectID": "44553833",
+  "parent_id": 44553283,
+  "story_id": 44552611,
+  "story_title": "Amazon CEO says AI agents will soon reduce company's corporate workforce",
+  "story_url": "https://www.cbsnews.com/news/amazon-ceo-generative-ai-corporate-workforce/",
+  "updated_at": "2025-07-14T10:57:38Z"
+ },
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "reify"
+   },
+   "comment_text": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "ploy",
+     ".",
+     "ai"
+    ],
+    "value": "younger individuals (children) do not find it easier to talk to adults.<p>That is why those qualified psychotherapists who work with children have been through specific training to work with children. Working with children is not the same as working with adults.<p>children do find it difficult to talk and share stuff in the therapy.<p>Psychotherapist and play therapists use alternative methods to allow the child to express what they want to say without speaking, using different media.<p>This could be art, stories, drama, sand play work, puppet work, or just simply playing.<p>children do not have to speak to express what they want to say.<p>When I did my post graduate play therapy training I spent an entire year learning how to play.<p>adults slowly forget how to <em>play. ai</em> never learns how to play<p>would, for instance, an ai chatbot, notice after many therapy sessions, that when the child enacts family dramas in sand play. the child always places the father, or in the childs case, the giraffe, away from the rest of the family.<p>NO! ai would never see this or be able to link to the fact that the child puts the father (giraffe) outsde of the family unit because there is something frightening for the child. this maybe domestic violence or abuse in its many forms, it may simple be that the parents have been arguing a lot because of finacial pressures.<p>over time the child will share what is going on.<p>AI will never be able to replace the human element in childrens therapy."
+   },
+   "story_title": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "The Risks of Kids Getting AI Therapy from a Chatbot"
+   },
+   "story_url": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "https://time.com/7291048/ai-chatbot-therapy-kids/"
+   }
+  },
+  "_tags": [
+   "comment",
+   "author_reify",
+   "story_44260513"
+  ],
+  "author": "reify",
+  "comment_text": "younger individuals (children) do not find it easier to talk to adults.<p>That is why those qualified psychotherapists who work with children have been through specific training to work with children. Working with children is not the same as working with adults.<p>children do find it difficult to talk and share stuff in the therapy.<p>Psychotherapist and play therapists use alternative methods to allow the child to express what they want to say without speaking, using different media.<p>This could be art, stories, drama, sand play work, puppet work, or just simply playing.<p>children do not have to speak to express what they want to say.<p>When I did my post graduate play therapy training I spent an entire year learning how to play.<p>adults slowly forget how to play. ai never learns how to play<p>would, for instance, an ai chatbot, notice after many therapy sessions, that when the child enacts family dramas in sand play. the child always places the father, or in the childs case, the giraffe, away from the rest of the family.<p>NO! ai would never see this or be able to link to the fact that the child puts the father (giraffe) outsde of the family unit because there is something frightening for the child. this maybe domestic violence or abuse in its many forms, it may simple be that the parents have been arguing a lot because of finacial pressures.<p>over time the child will share what is going on.<p>AI will never be able to replace the human element in childrens therapy.",
+  "created_at": "2025-06-12T18:44:43Z",
+  "created_at_i": 1749753883,
+  "objectID": "44261454",
+  "parent_id": 44260513,
+  "story_id": 44260513,
+  "story_title": "The Risks of Kids Getting AI Therapy from a Chatbot",
+  "story_url": "https://time.com/7291048/ai-chatbot-therapy-kids/",
+  "updated_at": "2025-06-12T18:49:29Z"
+ },
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "amrrs"
+   },
+   "title": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "Play Diffusion: Open Source Diffusion Model for Instant Audio Editing"
+   },
+   "url": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "ploy",
+     ".",
+     "ai"
+    ],
+    "value": "https://blog.<em>play.ai</em>/blog/play-diffusion"
+   }
+  },
+  "_tags": [
+   "story",
+   "author_amrrs",
+   "story_44161326"
+  ],
+  "author": "amrrs",
+  "children": [
+   44161460
+  ],
+  "created_at": "2025-06-02T17:50:20Z",
+  "created_at_i": 1748886620,
+  "num_comments": 1,
+  "objectID": "44161326",
+  "points": 15,
+  "story_id": 44161326,
+  "title": "Play Diffusion: Open Source Diffusion Model for Instant Audio Editing",
+  "updated_at": "2025-06-03T09:03:13Z",
+  "url": "https://blog.play.ai/blog/play-diffusion"
+ },
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "ibobev"
+   },
+   "title": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "Inference-Time Techniques for High-Quality, Low-Latency Speech Generation"
+   },
+   "url": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "ploy",
+     ".",
+     "ai"
+    ],
+    "value": "https://blog.<em>play.ai</em>/blog/taming-the-tts-beast-inference-time-techniques-for-high-quality-low-latency-speech-generation"
+   }
+  },
+  "_tags": [
+   "story",
+   "author_ibobev",
+   "story_44657909"
+  ],
+  "author": "ibobev",
+  "created_at": "2025-07-23T11:20:12Z",
+  "created_at_i": 1753269612,
+  "num_comments": 0,
+  "objectID": "44657909",
+  "points": 2,
+  "story_id": 44657909,
+  "title": "Inference-Time Techniques for High-Quality, Low-Latency Speech Generation",
+  "updated_at": "2025-07-23T11:55:58Z",
+  "url": "https://blog.play.ai/blog/taming-the-tts-beast-inference-time-techniques-for-high-quality-low-latency-speech-generation"
+ }
+]

@@ -1,0 +1,104 @@
+{
+ "domain_query": "tryprism.com",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "madhurim"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Trippism"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tryprism",
+      ".",
+      "com"
+     ],
+     "value": "http://www.<em>trippism.com</em>"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_madhurim",
+    "story_10942864"
+   ],
+   "author": "madhurim",
+   "created_at": "2016-01-21T01:58:52Z",
+   "created_at_i": 1453341532,
+   "num_comments": 0,
+   "objectID": "10942864",
+   "points": 1,
+   "story_id": 10942864,
+   "title": "Trippism",
+   "updated_at": "2023-09-07T00:37:21Z",
+   "url": "http://www.trippism.com"
+  }
+ ],
+ "launch_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "aliu327"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "hn",
+      "prism"
+     ],
+     "value": "Hey <em>HN</em> \u2014 we\u2019re Rajit, Land, and Alex. We\u2019re building <em>Prism</em> (<a href=\"https://www.prismvideos.com\">https://www.prismvideos.com</a>), an AI video creation platform and API.<p>Here\u2019s a quick demo of how you can remix any video with <em>Prism</em>: <a href=\"https://youtu.be/0eez_2DnayI\" rel=\"nofollow\">https://youtu.be/0eez_2DnayI</a><p>Here\u2019s a quick demo of how you can automate UGC-style ads with Openclaw + <em>Prism</em>: <a href=\"https://www.youtube.com/watch?v=5dWaD23qnro\" rel=\"nofollow\">https://www.youtube.com/watch?v=5dWaD23qnro</a><p>Accompanying skill.md file: <a href=\"https://docs.google.com/document/d/1lIskVljW1OqbkXFyXeLHRsfMictCfuxGGwczAnB1vhk\" rel=\"nofollow\">https://docs.google.com/document/d/1lIskVljW1OqbkXFyXeLHRsfM...</a><p>Making an AI video today usually means stitching together a dozen tools (image generation, image-to-video, upscalers, lip-sync, voiceover, and an editor). Every step turns into export/import and file juggling, so assets end up scattered across tabs and local storage, and iterating on a multi-scene video is slow.<p><em>Prism</em> keeps the workflow in one place: you generate assets (images/video clips) and assemble them directly in a timeline editor without downloading files between tools. Practically, that means you can try different models (Kling, Veo, Sora, Hailuo, etc) and settings for a single clip, swap it on the timeline, and keep iterating without re-exporting and rebuilding the edit elsewhere.<p>We also support templates and one-click asset recreation, so you can reuse workflows from us or the community instead of rebuilding each asset from scratch. Those templates are exposed through our API, letting your AI agents discover templates in our catalog, supply the required inputs, and generate videos in a repeatable way without manually stitching the workflow together.<p>We built <em>Prism</em> because we were making AI videos ourselves and were unsatisfied with the available tools. We kept losing time to repetitive \u201cglue work\u201d such as constantly downloading files, keeping track of prompts/versions, and stitching clips in a separate video editing software. We\u2019re trying to make the boring parts of multi-step AI video creation less manual so users can generate \u2192 review \u2192 edit \u2192 assemble \u2192 export, all inside one platform.<p>Pricing is based on usage credits, with a free tier (100 credits/month) and free models, so you can try it without providing a credit card: <a href=\"https://prismvideos.com\">https://prismvideos.com</a>.<p>We\u2019d love to hear from people who\u2019ve tried making AI videos: where does your workflow break, what parts are the most tedious, and what do you wish video creation tools on the market could do?"
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "launch",
+      "hn",
+      "prism"
+     ],
+     "value": "<em>Launch</em> <em>HN</em>: <em>Prism</em> (YC P25) \u2013 Workspace and API to generate and edit videos"
+    },
+    "url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.prismvideos.com"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_aliu327",
+    "story_47337548",
+    "launch_hn"
+   ],
+   "author": "aliu327",
+   "children": [
+    47337773,
+    47337969,
+    47338613,
+    47338699,
+    47339684,
+    47459120
+   ],
+   "created_at": "2026-03-11T16:16:12Z",
+   "created_at_i": 1773245772,
+   "num_comments": 18,
+   "objectID": "47337548",
+   "points": 40,
+   "story_id": 47337548,
+   "story_text": "Hey HN \u2014 we\u2019re Rajit, Land, and Alex. We\u2019re building Prism (<a href=\"https:&#x2F;&#x2F;www.prismvideos.com\">https:&#x2F;&#x2F;www.prismvideos.com</a>), an AI video creation platform and API.<p>Here\u2019s a quick demo of how you can remix any video with Prism: <a href=\"https:&#x2F;&#x2F;youtu.be&#x2F;0eez_2DnayI\" rel=\"nofollow\">https:&#x2F;&#x2F;youtu.be&#x2F;0eez_2DnayI</a><p>Here\u2019s a quick demo of how you can automate UGC-style ads with Openclaw + Prism: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=5dWaD23qnro\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=5dWaD23qnro</a><p>Accompanying skill.md file: <a href=\"https:&#x2F;&#x2F;docs.google.com&#x2F;document&#x2F;d&#x2F;1lIskVljW1OqbkXFyXeLHRsfMictCfuxGGwczAnB1vhk\" rel=\"nofollow\">https:&#x2F;&#x2F;docs.google.com&#x2F;document&#x2F;d&#x2F;1lIskVljW1OqbkXFyXeLHRsfM...</a><p>Making an AI video today usually means stitching together a dozen tools (image generation, image-to-video, upscalers, lip-sync, voiceover, and an editor). Every step turns into export&#x2F;import and file juggling, so assets end up scattered across tabs and local storage, and iterating on a multi-scene video is slow.<p>Prism keeps the workflow in one place: you generate assets (images&#x2F;video clips) and assemble them directly in a timeline editor without downloading files between tools. Practically, that means you can try different models (Kling, Veo, Sora, Hailuo, etc) and settings for a single clip, swap it on the timeline, and keep iterating without re-exporting and rebuilding the edit elsewhere.<p>We also support templates and one-click asset recreation, so you can reuse workflows from us or the community instead of rebuilding each asset from scratch. Those templates are exposed through our API, letting your AI agents discover templates in our catalog, supply the required inputs, and generate videos in a repeatable way without manually stitching the workflow together.<p>We built Prism because we were making AI videos ourselves and were unsatisfied with the available tools. We kept losing time to repetitive \u201cglue work\u201d such as constantly downloading files, keeping track of prompts&#x2F;versions, and stitching clips in a separate video editing software. We\u2019re trying to make the boring parts of multi-step AI video creation less manual so users can generate \u2192 review \u2192 edit \u2192 assemble \u2192 export, all inside one platform.<p>Pricing is based on usage credits, with a free tier (100 credits&#x2F;month) and free models, so you can try it without providing a credit card: <a href=\"https:&#x2F;&#x2F;prismvideos.com\">https:&#x2F;&#x2F;prismvideos.com</a>.<p>We\u2019d love to hear from people who\u2019ve tried making AI videos: where does your workflow break, what parts are the most tedious, and what do you wish video creation tools on the market could do?",
+   "title": "Launch HN: Prism (YC P25) \u2013 Workspace and API to generate and edit videos",
+   "updated_at": "2026-06-11T20:17:59Z",
+   "url": "https://www.prismvideos.com"
+  }
+ ]
+}

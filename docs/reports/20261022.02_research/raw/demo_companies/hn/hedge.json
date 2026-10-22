@@ -1,0 +1,131 @@
+{
+ "domain_query": "hedgespecialty.com",
+ "domain_hits": [],
+ "launch_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "cadillion"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "hn",
+      "hedge"
+     ],
+     "value": "Hey <em>HN</em>! We're Taylor, Colton, and Jason, the founders of <em>Hedge</em>hog (<a href=\"https://hedgehog.app\" rel=\"nofollow\">https://<em>hedge</em>hog.app</a>). We're building a portfolio manager to help you learn about, keep track of, and trade cryptocurrency in one place.<p>We track 2000+ actively traded currencies across 550+ wallets, aggregate data from 20 different providers, and support trading on 130+ exchanges. This helps users make informed choices about investments and find the best prices across exchanges, with price differences as high as 0.5%. We also combine live usage data with detailed research on how each coin works, so you can see for yourself why a coin could be valuable--or not.<p>We know that <em>HN</em> tends to be divided on cryptocurrency-related topics, with some people interested and involved and others skeptical or critical. Obviously we find ourselves in the prior camp, but we also completely agree that the excessive hype and outright scams are a problem. Somebody has already created a scam token with our name on it!<p>As early team members at Acorns (the mobile app that invests your spare change), we helped simplify traditional investing and hope to bring that same level of transparency, clarity, and rigor to cryptocurrency.<p>We first got into this space in 2017. We were running a small consulting agency when three of our clients broke their contracts in the same month: one went bankrupt, one got sued by an ex-partner, and one was based in Alabama and decided that because we were in California they simply didn't have to pay us. We lost $30k that month.<p>That's when we learned about Ethereum and smart contracts, and a light bulb went off. Price and volatility aside, if we simply could have used a smart contract where money is automatically deposited upon project completion, we would have ensured payment.<p>But getting into cryptocurrency is complicated, painful, and it leaves new users particularly vulnerable. Taylor once spent $20k worth of ETH on fees, simply because of a bad interface. Add in secret keys and exchange hacks and you quickly find yourself in chaos. And yet, over half of cryptocurrency owners report that it was their very first investment, ever--and their most commonly used tracking tool is Excel.<p>That\u2019s why we built <em>Hedge</em>hog, to give you fine-tuned control over your portfolio: our average client trades on at least 3 exchange accounts and automatically syncs balances across more than 10 different wallets. You can also group your assets into stacks like \u201cBanking\u201d or \u201cEthereum Tokens\u201d, apply investing strategies, and even set up a rebalance calculator to help you distribute your funds based on live metrics like market cap, daily active addresses, or transaction volume.<p>We're already helping individuals and investment firms manage $40 million in cryptocurrency, and we are acquiring the necessary financial licenses to offer a custodial wallet that connects users directly with the best price. You will no longer need to connect your own exchanges and wallets, we\u2019ll manage multiple currencies across multiple exchanges for you. This allows us to earn revenue by making our own markets and keeping some of the difference between prices offered by buyers and sellers.<p>Love it or hate it, the fact that there's over $48 trillion in annual cryptocurrency exchange volume at this point makes it unlikely to go away, and there's a ton of work to be done in wrangling it into some sort of level playing field that makes sense to people.<p>We'd love to hear what you think, even if it\u2019s just \u201cthis market shouldn\u2019t exist in the first place.\u201d If you're active in cryptocurrency (or want to be), we'd love to have you as a user and are dying to ship features you want. Please try us out at <a href=\"https://hedgehog.app\" rel=\"nofollow\">https://<em>hedge</em>hog.app</a>! Happy to answer any questions and hear your feedback in the comments!"
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "launch",
+      "hn",
+      "hedge"
+     ],
+     "value": "<em>Launch</em> <em>HN</em>: <em>Hedge</em>hog (YC S21) \u2013 Cryptocurrency Portfolio Manager"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_cadillion",
+    "story_27550255",
+    "launch_hn"
+   ],
+   "author": "cadillion",
+   "children": [
+    27550405,
+    27550547,
+    27550599,
+    27550601,
+    27550695,
+    27550788,
+    27550962,
+    27550968,
+    27551044,
+    27551057,
+    27551467,
+    27551477,
+    27551618,
+    27551698,
+    27552305,
+    27552420,
+    27552918,
+    27553105,
+    27553318,
+    27553589,
+    27553648,
+    27554526,
+    27554702,
+    27555280,
+    27555442,
+    27555647,
+    27556526,
+    27556661,
+    27556770,
+    27560183,
+    27562614,
+    27576875
+   ],
+   "created_at": "2021-06-18T13:48:19Z",
+   "created_at_i": 1624024099,
+   "num_comments": 137,
+   "objectID": "27550255",
+   "points": 158,
+   "story_id": 27550255,
+   "story_text": "Hey HN! We&#x27;re Taylor, Colton, and Jason, the founders of Hedgehog (<a href=\"https:&#x2F;&#x2F;hedgehog.app\" rel=\"nofollow\">https:&#x2F;&#x2F;hedgehog.app</a>). We&#x27;re building a portfolio manager to help you learn about, keep track of, and trade cryptocurrency in one place.<p>We track 2000+ actively traded currencies across 550+ wallets, aggregate data from 20 different providers, and support trading on 130+ exchanges. This helps users make informed choices about investments and find the best prices across exchanges, with price differences as high as 0.5%. We also combine live usage data with detailed research on how each coin works, so you can see for yourself why a coin could be valuable--or not.<p>We know that HN tends to be divided on cryptocurrency-related topics, with some people interested and involved and others skeptical or critical. Obviously we find ourselves in the prior camp, but we also completely agree that the excessive hype and outright scams are a problem. Somebody has already created a scam token with our name on it!<p>As early team members at Acorns (the mobile app that invests your spare change), we helped simplify traditional investing and hope to bring that same level of transparency, clarity, and rigor to cryptocurrency.<p>We first got into this space in 2017. We were running a small consulting agency when three of our clients broke their contracts in the same month: one went bankrupt, one got sued by an ex-partner, and one was based in Alabama and decided that because we were in California they simply didn&#x27;t have to pay us. We lost $30k that month.<p>That&#x27;s when we learned about Ethereum and smart contracts, and a light bulb went off. Price and volatility aside, if we simply could have used a smart contract where money is automatically deposited upon project completion, we would have ensured payment.<p>But getting into cryptocurrency is complicated, painful, and it leaves new users particularly vulnerable. Taylor once spent $20k worth of ETH on fees, simply because of a bad interface. Add in secret keys and exchange hacks and you quickly find yourself in chaos. And yet, over half of cryptocurrency owners report that it was their very first investment, ever--and their most commonly used tracking tool is Excel.<p>That\u2019s why we built Hedgehog, to give you fine-tuned control over your portfolio: our average client trades on at least 3 exchange accounts and automatically syncs balances across more than 10 different wallets. You can also group your assets into stacks like \u201cBanking\u201d or \u201cEthereum Tokens\u201d, apply investing strategies, and even set up a rebalance calculator to help you distribute your funds based on live metrics like market cap, daily active addresses, or transaction volume.<p>We&#x27;re already helping individuals and investment firms manage $40 million in cryptocurrency, and we are acquiring the necessary financial licenses to offer a custodial wallet that connects users directly with the best price. You will no longer need to connect your own exchanges and wallets, we\u2019ll manage multiple currencies across multiple exchanges for you. This allows us to earn revenue by making our own markets and keeping some of the difference between prices offered by buyers and sellers.<p>Love it or hate it, the fact that there&#x27;s over $48 trillion in annual cryptocurrency exchange volume at this point makes it unlikely to go away, and there&#x27;s a ton of work to be done in wrangling it into some sort of level playing field that makes sense to people.<p>We&#x27;d love to hear what you think, even if it\u2019s just \u201cthis market shouldn\u2019t exist in the first place.\u201d If you&#x27;re active in cryptocurrency (or want to be), we&#x27;d love to have you as a user and are dying to ship features you want. Please try us out at <a href=\"https:&#x2F;&#x2F;hedgehog.app\" rel=\"nofollow\">https:&#x2F;&#x2F;hedgehog.app</a>! Happy to answer any questions and hear your feedback in the comments!",
+   "title": "Launch HN: Hedgehog (YC S21) \u2013 Cryptocurrency Portfolio Manager",
+   "updated_at": "2025-05-26T04:12:12Z"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "cadillion"
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "launch",
+      "hn",
+      "hedge"
+     ],
+     "value": "<em>Launch</em> <em>HN</em>: <em>Hedge</em>hog \u2013 Trade Crypto on 130 Exchanges"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "hedge"
+     ],
+     "value": "https://<em>hedge</em>hog.app"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_cadillion",
+    "story_25918688",
+    "launch_hn"
+   ],
+   "author": "cadillion",
+   "children": [
+    25918689,
+    25919328
+   ],
+   "created_at": "2021-01-26T17:32:17Z",
+   "created_at_i": 1611682337,
+   "num_comments": 2,
+   "objectID": "25918688",
+   "points": 7,
+   "story_id": 25918688,
+   "title": "Launch HN: Hedgehog \u2013 Trade Crypto on 130 Exchanges",
+   "updated_at": "2024-09-20T07:47:37Z",
+   "url": "https://hedgehog.app"
+  }
+ ]
+}

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" data-luke-profile="web" data-luke-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luke - A better way to plan with agents</title>
+    <meta
+      name="description"
+      content="Luke is an open-source Mac app for planning a feature out loud before a coding agent builds it. He reads your code while you talk and writes the plan down."
+    />
+    <!-- Matches the page background so mobile browser chrome blends into it. -->
+    <meta name="theme-color" content="#fbfbfa" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Luke" />
+    <meta property="og:title" content="Luke: a better way to plan with agents" />
+    <meta
+      property="og:description"
+      content="Luke is an open-source Mac app for planning a feature out loud before a coding agent builds it. He reads your code while you talk and writes the plan down."
+    />
+    <meta property="og:url" content="https://tryluke.dev/" />
+    <!-- The 1200x630 card every unfurler reads — Facebook, LinkedIn, Slack,
+         Discord, iMessage, WhatsApp, and Telegram all take these Open Graph
+         tags. The URL is absolute because scrapers resolve nothing, the
+         dimensions let a first share render before the image is fetched, and
+         the alt is what screen readers get on platforms that honor it. The
+         PNG is cut from packages/brand/assets/social/luke-og-card.svg — see
+         packages/brand/README.md. -->
+    <meta property="og:image" content="https://tryluke.dev/luke-og-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta
+      property="og:image:alt"
+      content="The LUKE wordmark — a smiling L-face followed by U, K, E — on space black."
+    />
+    <!-- summary_large_image is what makes X and Discord show the card full
+         width instead of as a thumbnail. X documents falling back to the
+         Open Graph tags, but its crawler renders no image on that fallback,
+         so the card is repeated under the twitter: names it reads. -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Luke: a better way to plan with agents" />
+    <meta
+      name="twitter:description"
+      content="Luke is an open-source Mac app for planning a feature out loud before a coding agent builds it. He reads your code while you talk and writes the plan down."
+    />
+    <meta name="twitter:image" content="https://tryluke.dev/luke-og-card.png" />
+    <meta
+      name="twitter:image:alt"
+      content="The LUKE wordmark — a smiling L-face followed by U, K, E — on space black."
+    />
+
+    <!-- Luke's app icon: the L-face on its space-black tile, cut from the
+         generated packages/brand/assets/icon/luke-favicon.svg (see
+         packages/brand/README.md). The SVG serves browsers that take one, the
+         ICO the readers that ask for /favicon.ico by name, and the touch icon
+         iOS's home screen and the link previews that show a site's icon.
+         Files rather than an inline data address, so every page shares one
+         copy and a reader that fetches an icon by URL finds it. -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <script type="module" crossorigin src="/assets/main-DENF9uln.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/client-IhpoxU31.js">
+    <link rel="modulepreload" crossorigin href="/assets/face-art-01euYQL7.js">
+    <link rel="modulepreload" crossorigin href="/assets/mount-page-DTA5bH0g.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-Ia9eELSz.js">
+    <link rel="modulepreload" crossorigin href="/assets/analytics-BzVS58Mc.js">
+    <link rel="modulepreload" crossorigin href="/assets/SiteChrome-Z65YLzZs.js">
+    <link rel="stylesheet" crossorigin href="/assets/styles-By09Kqyv.css">
+  </head>
+  <body>
+    <div id="root"><div class="luke-public-page"><header class="luke-public-page-banner"><div class="luke-public-page-column luke-public-page-banner-column"><nav aria-label="Site" class="flex items-center justify-between"><a class="inline-flex min-h-11 items-center gap-2 no-underline font-brand text-(length:--luke-display-wordmark-size) font-(--luke-display-wordmark-weight) tracking-(--luke-display-wordmark-tracking)" href="/" aria-current="page"><svg class="block h-4.5 w-5" viewBox="53.85 62.67 134.29 122.37" fill="none" aria-hidden="true"><g transform="rotate(-8 120 124)"><path d="M 104 84 V 150 Q 104 164 118 164 Q 140 164 168 142" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="78" cy="92" r="12" fill="currentColor"></circle><circle cx="162" cy="92" r="12" fill="currentColor"></circle></g></svg>Luke</a><div class="flex items-center gap-4"><a class="luke-text-link" data-look="quiet" data-variant="label" data-height="control" href="/about">About</a><a class="luke-text-link" data-look="quiet" data-variant="label" data-height="control" href="/changelog">Changelog</a><span class="-mr-3.5 -ml-2 flex"><a class="luke-button" data-icon-only="true" data-variant="quiet" href="https://github.com/ReviewStage/luke" aria-label="Luke on GitHub"><span class="luke-button-face"><svg class="luke-provider-mark" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></span></a></span></div></nav></div></header><main class="luke-public-page-column luke-public-page-main" data-width="column"><div class="luke-public-page-intro"><h1 class="luke-public-page-title" data-style="hero">A better way to plan with agents.</h1><p class="luke-public-page-lead">Talk through a feature with Luke. He reads the code while you talk and writes a plan you can paste into Claude Code or Codex.</p></div><div class="luke-public-page-sections" data-sections="spaced"><section class="luke-public-section"><div class="flex flex-wrap items-center gap-3"><a class="luke-button" data-variant="primary" href="https://github.com/ReviewStage/luke/releases/latest/download/Luke.dmg"><span class="luke-button-face"><span class="luke-button-words">Download for macOS</span></span></a><a class="luke-button" data-variant="outline" href="https://github.com/ReviewStage/luke"><span class="luke-button-face"><svg class="luke-provider-mark" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg><span class="luke-button-words">View on GitHub</span></span></a></div><div class="mt-3"><p class="luke-text" data-variant="caption" data-tone="muted" data-font="mono">macOS 14+ · Apple silicon</p></div><div class="luke-public-media"><video src="/luke-demo.mp4" poster="/luke-demo-poster.jpg" width="1240" height="864" aria-label="A one-minute recording of a call with Luke: he asks about a budgeting feature while the plan fills in beside him." controls="" loop="" playsInline="" preload="auto"></video></div></section></div></main><footer class="luke-public-page-footer"><div class="luke-public-page-column luke-public-page-footer-column"><div class="luke-text" data-variant="caption" data-tone="muted" data-font="mono"><div class="flex flex-wrap gap-2 [&amp;&gt;*+*]:before:mr-2 [&amp;&gt;*+*]:before:content-[&#x27;·&#x27;]"><span>Apache-2.0</span><span>macOS 14+</span><a class="luke-text-link" data-look="quiet" data-height="text" href="/about">About</a><a class="luke-text-link" data-look="quiet" data-height="text" href="/changelog">Changelog</a><a class="luke-text-link" data-look="quiet" data-height="text" href="/changelog/rss.xml">RSS</a><a class="luke-text-link" data-look="quiet" data-height="text" href="/privacy">Privacy</a><a class="luke-text-link" data-look="quiet" data-height="text" href="mailto:founders@stagereview.app">Contact</a></div><p class="mt-8 border-t border-(--luke-color-border) pt-6">© 2026 Stage Inc.</p></div></div></footer></div></div>
+  </body>
+</html>

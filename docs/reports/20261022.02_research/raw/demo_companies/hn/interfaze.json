@@ -1,0 +1,347 @@
+{
+ "domain_query": "interfaze.ai",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "yoeven"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Interfaze: A new model architecture built for high accuracy at scale"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "interfaze",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>interfaze.ai</em>/blog/interfaze-a-new-model-architecture-built-for-high-accuracy-at-scale"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_yoeven",
+    "story_48097078"
+   ],
+   "author": "yoeven",
+   "children": [
+    48097930,
+    48097954,
+    48097986,
+    48098118,
+    48098936,
+    48099741,
+    48099854,
+    48099968,
+    48099980,
+    48100047,
+    48100502,
+    48101712,
+    48101955,
+    48102113,
+    48102663,
+    48103809,
+    48104813,
+    48106765,
+    48112311
+   ],
+   "created_at": "2026-05-11T16:22:31Z",
+   "created_at_i": 1778516551,
+   "num_comments": 43,
+   "objectID": "48097078",
+   "points": 164,
+   "story_id": 48097078,
+   "title": "Interfaze: A new model architecture built for high accuracy at scale",
+   "updated_at": "2026-07-23T11:15:18Z",
+   "url": "https://interfaze.ai/blog/interfaze-a-new-model-architecture-built-for-high-accuracy-at-scale"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "khurdula"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "When building workflows that rely on LLMs, we commonly use structured output for programmatic use cases like converting an invoice into rows or meeting transcripts into tickets or even complex PDFs into database entries.<p>The model may return the schema you want, but with hallucinated values like `invoice_date` being off by 2 months or the transcript array ordered wrongly. The JSON is valid, but the values are not.<p>Structured output today is a big part of using LLMs, especially when building deterministic workflows.<p>Current structured output benchmarks (e.g., JSONSchemaBench) only validate the pass rate for JSON schema and types, and not the actual values within the produced JSON.<p>So we designed the Structured Output Benchmark (SOB) that fixes this by measuring both the JSON schema pass rate, types, and the value accuracy across all three modalities, text, image, and audio.<p>For our test set, every record is paired with a JSON Schema and a ground-truth answer that was verified against the source context manually by a human and an LLM cross-check, so a missing or hallucinated value will be considered to be wrong.<p>Open source is doing pretty well with GLM 4.7 coming in number 2 right after GPT 5.4.<p>We noticed the rankings shift across modalities: GLM-4.7 leads text, Gemma-4-31B leads images, Gemini-2.5-Flash leads audio.<p>For example, GPT-5.4 ranks 3rd on text but 9th on images.<p>Model size is not a predictor, either: Qwen3.5-35B and GLM-4.7 beat GPT-5 and Claude-Sonnet-4.6 on Value Accuracy. Phi-4 (14B) beats GPT-5 and GPT-5-mini on text.<p>Structured hallucinations are the hardest bug. Such values are type-correct, schema-valid, and plausible, so they slip through most guardrails. For example, in one audio record, the ground truth is &quot;target_market_age&quot;: &quot;15 to 35 years&quot;, and a model returns &quot;25 to 35&quot;. This is invisible without field-level checks.<p>Our goal is to be the best general model for deterministic tasks, and a key aspect of determinism is a controllable and consistent output structure. The first step to making structured output better is to measure it and hold ourselves against the best."
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: A new benchmark for testing LLMs for deterministic outputs"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "interfaze",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>interfaze.ai</em>/blog/introducing-structured-output-benchmark"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_khurdula",
+    "story_47950283",
+    "show_hn"
+   ],
+   "author": "khurdula",
+   "children": [
+    47951393,
+    47951838,
+    47951862,
+    47951923,
+    47951985,
+    47952118,
+    47952903,
+    47953149,
+    47953272,
+    47954986,
+    47955837,
+    47955902,
+    47956257,
+    47959080,
+    47967841,
+    47975430,
+    48010387
+   ],
+   "created_at": "2026-04-29T16:01:51Z",
+   "created_at_i": 1777478511,
+   "num_comments": 30,
+   "objectID": "47950283",
+   "points": 60,
+   "story_id": 47950283,
+   "story_text": "When building workflows that rely on LLMs, we commonly use structured output for programmatic use cases like converting an invoice into rows or meeting transcripts into tickets or even complex PDFs into database entries.<p>The model may return the schema you want, but with hallucinated values like `invoice_date` being off by 2 months or the transcript array ordered wrongly. The JSON is valid, but the values are not.<p>Structured output today is a big part of using LLMs, especially when building deterministic workflows.<p>Current structured output benchmarks (e.g., JSONSchemaBench) only validate the pass rate for JSON schema and types, and not the actual values within the produced JSON.<p>So we designed the Structured Output Benchmark (SOB) that fixes this by measuring both the JSON schema pass rate, types, and the value accuracy across all three modalities, text, image, and audio.<p>For our test set, every record is paired with a JSON Schema and a ground-truth answer that was verified against the source context manually by a human and an LLM cross-check, so a missing or hallucinated value will be considered to be wrong.<p>Open source is doing pretty well with GLM 4.7 coming in number 2 right after GPT 5.4.<p>We noticed the rankings shift across modalities: GLM-4.7 leads text, Gemma-4-31B leads images, Gemini-2.5-Flash leads audio.<p>For example, GPT-5.4 ranks 3rd on text but 9th on images.<p>Model size is not a predictor, either: Qwen3.5-35B and GLM-4.7 beat GPT-5 and Claude-Sonnet-4.6 on Value Accuracy. Phi-4 (14B) beats GPT-5 and GPT-5-mini on text.<p>Structured hallucinations are the hardest bug. Such values are type-correct, schema-valid, and plausible, so they slip through most guardrails. For example, in one audio record, the ground truth is &quot;target_market_age&quot;: &quot;15 to 35 years&quot;, and a model returns &quot;25 to 35&quot;. This is invisible without field-level checks.<p>Our goal is to be the best general model for deterministic tasks, and a key aspect of determinism is a controllable and consistent output structure. The first step to making structured output better is to measure it and hold ourselves against the best.",
+   "title": "Show HN: A new benchmark for testing LLMs for deterministic outputs",
+   "updated_at": "2026-05-12T22:51:32Z",
+   "url": "https://interfaze.ai/blog/introducing-structured-output-benchmark"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "yoeven"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: We trained an MoE LLM built for developer tasks"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "interfaze",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>interfaze.ai</em>/blog/intefaze-beta-v1"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_yoeven",
+    "story_45505190",
+    "show_hn"
+   ],
+   "author": "yoeven",
+   "created_at": "2025-10-07T16:25:25Z",
+   "created_at_i": 1759854325,
+   "num_comments": 0,
+   "objectID": "45505190",
+   "points": 5,
+   "story_id": 45505190,
+   "title": "Show HN: We trained an MoE LLM built for developer tasks",
+   "updated_at": "2026-05-12T10:42:46Z",
+   "url": "https://interfaze.ai/blog/intefaze-beta-v1"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "khurdula"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Most AI products are built around the same idea.<p>Take a giant model. Add a prompt and hope it does the whole job. The AI equivalent of spray-n-pray.<p>That works great for chatbots for creative outputs like code generation, website design and email writing. BUT, It breaks down fast for developer work that requires highly deterministic output. Think of OCR for KYC at banks or Audio recognition for patient-doctor notes.<p>We have been training SLMs for specific tasks for a while now. During which we kept seeing the same pattern. A SOTA language model with great benchmarks, failing on the parts that actually matter: reading a dense PDF like Form-1040, pulling clean data from a highly protected website, transcribing a long call with speakers in seconds, or returning output in a format code can trust.<p>So we spent a year researching how we can solve determinism. As many of us thought, more data was the solution. But not really\u2026 While data is part of the problem, re-thinking the architecture is the key solution for fixing issues like context drift.<p>Check out our paper: <a href=\"https://arxiv.org/abs/2602.04101\" rel=\"nofollow\">https://arxiv.org/abs/2602.04101</a> (Accepted into IEEE CAI 2026)<p>Traditional AI/ML models in the past, like YOLO, EasyOCR, PaddleOCR were great for a single task that they\u2019re usually trained for, bringing consistent outputs like confidence scores, however they quickly become outdated at scale, limited by the data used for training, while requiring a team of ML engineers to maintain the model driving costs higher. LLMs offer higher flexibility and the ability to interact with natural language, making them generalizable, but hallucinate on sensitive tasks which have no room for error.<p>We combined DNNs/CNNs with Transformers to achieve a state model that brings both the advantages of a traditional ML model: the determinism &amp; reliability, and the generalizability of an LLM.<p>Yoeven and I have over 14 years of combined research and development experience, and we\u2019ve built a team of amazing researchers, software and infrastructure engineers engrossed in the fact that AI models can do a lot more work for developer tasks. Allowing us to make controllable AI available in every part of your stack."
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: A new model architecture because transformers are not enough"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "interfaze",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>interfaze.ai</em>"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_khurdula",
+    "story_47603506",
+    "show_hn"
+   ],
+   "author": "khurdula",
+   "children": [
+    47603956
+   ],
+   "created_at": "2026-04-01T17:00:07Z",
+   "created_at_i": 1775062807,
+   "num_comments": 2,
+   "objectID": "47603506",
+   "points": 3,
+   "story_id": 47603506,
+   "story_text": "Most AI products are built around the same idea.<p>Take a giant model. Add a prompt and hope it does the whole job. The AI equivalent of spray-n-pray.<p>That works great for chatbots for creative outputs like code generation, website design and email writing. BUT, It breaks down fast for developer work that requires highly deterministic output. Think of OCR for KYC at banks or Audio recognition for patient-doctor notes.<p>We have been training SLMs for specific tasks for a while now. During which we kept seeing the same pattern. A SOTA language model with great benchmarks, failing on the parts that actually matter: reading a dense PDF like Form-1040, pulling clean data from a highly protected website, transcribing a long call with speakers in seconds, or returning output in a format code can trust.<p>So we spent a year researching how we can solve determinism. As many of us thought, more data was the solution. But not really\u2026 While data is part of the problem, re-thinking the architecture is the key solution for fixing issues like context drift.<p>Check out our paper: <a href=\"https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2602.04101\" rel=\"nofollow\">https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2602.04101</a> (Accepted into IEEE CAI 2026)<p>Traditional AI&#x2F;ML models in the past, like YOLO, EasyOCR, PaddleOCR were great for a single task that they\u2019re usually trained for, bringing consistent outputs like confidence scores, however they quickly become outdated at scale, limited by the data used for training, while requiring a team of ML engineers to maintain the model driving costs higher. LLMs offer higher flexibility and the ability to interact with natural language, making them generalizable, but hallucinate on sensitive tasks which have no room for error.<p>We combined DNNs&#x2F;CNNs with Transformers to achieve a state model that brings both the advantages of a traditional ML model: the determinism &amp; reliability, and the generalizability of an LLM.<p>Yoeven and I have over 14 years of combined research and development experience, and we\u2019ve built a team of amazing researchers, software and infrastructure engineers engrossed in the fact that AI models can do a lot more work for developer tasks. Allowing us to make controllable AI available in every part of your stack.",
+   "title": "Show HN: A new model architecture because transformers are not enough",
+   "updated_at": "2026-04-02T20:07:34Z",
+   "url": "https://interfaze.ai"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "yoeven"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "LLMs have changed the way we code, build, and launch a product. Many of these cases are human-in-the-loop tasks like vibe coding or workflows that have a larger margin of error that is acceptable.<p>However, LLMs aren't great for backend developer tasks that have no/low human in the loop, like OCR for KYC or web scraping structured data consistently or classification. Doing all this at scale and expecting the same results/consistently is difficult.<p>We initially built JigsawStack to solve this problem by building small models with each model having a strong focus on doing one thing and doing that one thing very well. Then we saw majority of users would plug JigsawStack as a tool to an LLM.<p>We saw this and thought what we could train a general developer-focused LLM combining all our learnings from JigsawStack, with all the tools a developer would need from web search to proxy-based scraping, code execution, and more.<p>We just launched Interfaze in closed alpha, and we're actively approving waitlist for your feedback so we can tune it to be just right for every developer\u2019s use case."
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Interfaze \u2013 The LLM Built for Developers"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "interfaze",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>interfaze.ai</em>"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_yoeven",
+    "story_45118425",
+    "show_hn"
+   ],
+   "author": "yoeven",
+   "children": [
+    45118475
+   ],
+   "created_at": "2025-09-03T17:32:06Z",
+   "created_at_i": 1756920726,
+   "num_comments": 1,
+   "objectID": "45118425",
+   "points": 3,
+   "story_id": 45118425,
+   "story_text": "LLMs have changed the way we code, build, and launch a product. Many of these cases are human-in-the-loop tasks like vibe coding or workflows that have a larger margin of error that is acceptable.<p>However, LLMs aren&#x27;t great for backend developer tasks that have no&#x2F;low human in the loop, like OCR for KYC or web scraping structured data consistently or classification. Doing all this at scale and expecting the same results&#x2F;consistently is difficult.<p>We initially built JigsawStack to solve this problem by building small models with each model having a strong focus on doing one thing and doing that one thing very well. Then we saw majority of users would plug JigsawStack as a tool to an LLM.<p>We saw this and thought what we could train a general developer-focused LLM combining all our learnings from JigsawStack, with all the tools a developer would need from web search to proxy-based scraping, code execution, and more.<p>We just launched Interfaze in closed alpha, and we&#x27;re actively approving waitlist for your feedback so we can tune it to be just right for every developer\u2019s use case.",
+   "title": "Show HN: Interfaze \u2013 The LLM Built for Developers",
+   "updated_at": "2026-04-24T05:01:44Z",
+   "url": "https://interfaze.ai"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Claudiusseibt"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The First Open Source Diffusion Audio ASR Model"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "interfaze",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>interfaze.ai</em>/blog/the-first-open-source-diffusion-audio-asr-model"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_Claudiusseibt",
+    "story_48762069"
+   ],
+   "author": "Claudiusseibt",
+   "created_at": "2026-07-02T14:21:15Z",
+   "created_at_i": 1783002075,
+   "num_comments": 0,
+   "objectID": "48762069",
+   "points": 3,
+   "story_id": 48762069,
+   "title": "The First Open Source Diffusion Audio ASR Model",
+   "updated_at": "2026-07-02T20:03:06Z",
+   "url": "https://interfaze.ai/blog/the-first-open-source-diffusion-audio-asr-model"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "yoeven"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "CNNs + VLM outperforms pure VLMs on OCR"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "interfaze",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>interfaze.ai</em>/blog/cnn-plus-vlm-more-than-vlm"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_yoeven",
+    "story_47825407"
+   ],
+   "author": "yoeven",
+   "created_at": "2026-04-19T16:19:15Z",
+   "created_at_i": 1776615555,
+   "num_comments": 0,
+   "objectID": "47825407",
+   "points": 3,
+   "story_id": 47825407,
+   "title": "CNNs + VLM outperforms pure VLMs on OCR",
+   "updated_at": "2026-05-12T10:42:16Z",
+   "url": "https://interfaze.ai/blog/cnn-plus-vlm-more-than-vlm"
+  }
+ ],
+ "launch_hits": []
+}

@@ -1,0 +1,103 @@
+{
+ "domain_query": "replicas.dev",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "connortbot"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "replicas",
+      ".",
+      "dev"
+     ],
+     "value": "Hey HN! I'm Connor, creator of Replicas.<p>I'm a heavy Codex/Claude Code user, and I wanted to hand off tasks to agents like I would to an engineer - kick something off before work, let it scaffold while I'm at lunch, even come back to a ready PR.<p>The problem: existing alternatives use workspace VMs that are black boxes. I have no access to any of them - they can't run tests, read logs, or use tools like the Playwright MCP (which I use to verify agents actually fixed what they claim to fix).<p>Replicas gives agents real cloud workspaces where they can:\n- Run your test suite and read the output\n- Use MCPs like Playwright for browser debugging\n- Access logs and services running locally\n- Iterate iterate iterate iterate<p>How it works:\n- Make a workspace snapshot (e.g install all your dependencies, tooling, env vars)\n- Start a workspace\n- Chat with Codex from dashboard or SSH in / open in VSCode\nAnd let it run :)<p>The key difference is that you have full SSH access to your workspaces just by running &quot;replicas connect workspace-name&quot;. Install anything, run anything, configure anything.<p>We're very early (v0), so I'd love any feedback that anyone has! Some things I am working on:\n- Faster boot up times for workspaces\n- Claude Code support!\n- Easier setup of snapshots!<p>Try it: <a href=\"https://replicas.dev\" rel=\"nofollow\">https://<em>replicas.dev</em></a>\nHappy to answer any questions!"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Replicas \u2013 Run coding agents in customizable cloud workspaces"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "replicas",
+      ".",
+      "dev"
+     ],
+     "value": "https://www.<em>replicas.dev</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_connortbot",
+    "story_45831144",
+    "show_hn"
+   ],
+   "author": "connortbot",
+   "created_at": "2025-11-06T03:43:07Z",
+   "created_at_i": 1762400587,
+   "num_comments": 0,
+   "objectID": "45831144",
+   "points": 1,
+   "story_id": 45831144,
+   "story_text": "Hey HN! I&#x27;m Connor, creator of Replicas.<p>I&#x27;m a heavy Codex&#x2F;Claude Code user, and I wanted to hand off tasks to agents like I would to an engineer - kick something off before work, let it scaffold while I&#x27;m at lunch, even come back to a ready PR.<p>The problem: existing alternatives use workspace VMs that are black boxes. I have no access to any of them - they can&#x27;t run tests, read logs, or use tools like the Playwright MCP (which I use to verify agents actually fixed what they claim to fix).<p>Replicas gives agents real cloud workspaces where they can:\n- Run your test suite and read the output\n- Use MCPs like Playwright for browser debugging\n- Access logs and services running locally\n- Iterate iterate iterate iterate<p>How it works:\n- Make a workspace snapshot (e.g install all your dependencies, tooling, env vars)\n- Start a workspace\n- Chat with Codex from dashboard or SSH in &#x2F; open in VSCode\nAnd let it run :)<p>The key difference is that you have full SSH access to your workspaces just by running &quot;replicas connect workspace-name&quot;. Install anything, run anything, configure anything.<p>We&#x27;re very early (v0), so I&#x27;d love any feedback that anyone has! Some things I am working on:\n- Faster boot up times for workspaces\n- Claude Code support!\n- Easier setup of snapshots!<p>Try it: <a href=\"https:&#x2F;&#x2F;replicas.dev\" rel=\"nofollow\">https:&#x2F;&#x2F;replicas.dev</a>\nHappy to answer any questions!",
+   "title": "Show HN: Replicas \u2013 Run coding agents in customizable cloud workspaces",
+   "updated_at": "2026-03-05T22:58:06Z",
+   "url": "https://www.replicas.dev/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "connortbot"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Setting up a workspace for AI coding agents (Claude Code, Aider, etc) takes 30+ minutes - VM provisioning, SSH keys, dependencies, or cloning your repo. Replicas makes it one command. Workspace is ready in ~30 seconds, immediately ready for SSH.<p>Looking for feedback!"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Replicas \u2013 Workspace VMs for your coding agents"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "replicas",
+      ".",
+      "dev"
+     ],
+     "value": "https://www.<em>replicas.dev</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_connortbot",
+    "story_45582378",
+    "show_hn"
+   ],
+   "author": "connortbot",
+   "created_at": "2025-10-14T17:03:01Z",
+   "created_at_i": 1760461381,
+   "num_comments": 0,
+   "objectID": "45582378",
+   "points": 1,
+   "story_id": 45582378,
+   "story_text": "Setting up a workspace for AI coding agents (Claude Code, Aider, etc) takes 30+ minutes - VM provisioning, SSH keys, dependencies, or cloning your repo. Replicas makes it one command. Workspace is ready in ~30 seconds, immediately ready for SSH.<p>Looking for feedback!",
+   "title": "Show HN: Replicas \u2013 Workspace VMs for your coding agents",
+   "updated_at": "2026-03-05T22:52:30Z",
+   "url": "https://www.replicas.dev/"
+  }
+ ],
+ "launch_hits": []
+}

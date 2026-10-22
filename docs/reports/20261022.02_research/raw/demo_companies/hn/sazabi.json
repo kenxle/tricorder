@@ -1,0 +1,129 @@
+{
+ "domain_query": "sazabi.com",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "shcallaway"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Our $8M Seed Round and Open Beta"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "sazabi",
+      ".",
+      "com"
+     ],
+     "value": "https://www.<em>sazabi.com</em>/blog/seed-round"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_shcallaway",
+    "story_48677220"
+   ],
+   "author": "shcallaway",
+   "created_at": "2026-06-25T18:14:08Z",
+   "created_at_i": 1782411248,
+   "num_comments": 0,
+   "objectID": "48677220",
+   "points": 2,
+   "story_id": 48677220,
+   "title": "Our $8M Seed Round and Open Beta",
+   "updated_at": "2026-06-26T02:28:23Z",
+   "url": "https://www.sazabi.com/blog/seed-round"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "puppion"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Sazabi Manifesto"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "sazabi",
+      ".",
+      "com"
+     ],
+     "value": "https://www.<em>sazabi.com</em>/manifesto"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_puppion",
+    "story_46898157"
+   ],
+   "author": "puppion",
+   "children": [
+    46898636
+   ],
+   "created_at": "2026-02-05T10:37:43Z",
+   "created_at_i": 1770287863,
+   "num_comments": 1,
+   "objectID": "46898157",
+   "points": 1,
+   "story_id": 46898157,
+   "title": "Sazabi Manifesto",
+   "updated_at": "2026-03-05T23:32:15Z",
+   "url": "https://www.sazabi.com/manifesto"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "shcallaway"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The Sazabi Manifesto"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "sazabi",
+      ".",
+      "com"
+     ],
+     "value": "https://www.<em>sazabi.com</em>/manifesto"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_shcallaway",
+    "story_46889163"
+   ],
+   "author": "shcallaway",
+   "children": [
+    46889164
+   ],
+   "created_at": "2026-02-04T17:58:59Z",
+   "created_at_i": 1770227939,
+   "num_comments": 1,
+   "objectID": "46889163",
+   "points": 1,
+   "story_id": 46889163,
+   "title": "The Sazabi Manifesto",
+   "updated_at": "2026-03-26T16:27:54Z",
+   "url": "https://www.sazabi.com/manifesto"
+  }
+ ],
+ "launch_hits": []
+}

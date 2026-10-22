@@ -1,0 +1,1713 @@
+{
+ "domain_query": "inth.com",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "flifenstein"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Self-hosting Kimi K3: 20% more hardware cost, 20% better task resolution"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://aistack.imec-<em>int.com</em>/blog/gpu-self-hosting"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_flifenstein",
+    "story_49098130"
+   ],
+   "author": "flifenstein",
+   "children": [
+    49098144,
+    49099450,
+    49099457,
+    49099603,
+    49099609,
+    49099674,
+    49100892,
+    49100951,
+    49102908,
+    49103684,
+    49104616,
+    49110676,
+    49151640
+   ],
+   "created_at": "2026-07-29T14:38:35Z",
+   "created_at_i": 1785335915,
+   "num_comments": 47,
+   "objectID": "49098130",
+   "points": 161,
+   "story_id": 49098130,
+   "title": "Self-hosting Kimi K3: 20% more hardware cost, 20% better task resolution",
+   "updated_at": "2026-09-15T00:42:54Z",
+   "url": "https://aistack.imec-int.com/blog/gpu-self-hosting"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ksec"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Disrupting the DRAM roadmap with capacitor-less IGZO-DRAM technology"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/en/articles/disrupting-dram-roadmap-capacitor-less-igzo-dram-technology"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_ksec",
+    "story_45182418"
+   ],
+   "author": "ksec",
+   "children": [
+    45182615,
+    45184839,
+    45185048,
+    45185193,
+    45186271,
+    45186281,
+    45187183,
+    45188789,
+    45192355,
+    45209128
+   ],
+   "created_at": "2025-09-09T14:28:33Z",
+   "created_at_i": 1757428113,
+   "num_comments": 33,
+   "objectID": "45182418",
+   "points": 50,
+   "story_id": 45182418,
+   "title": "Disrupting the DRAM roadmap with capacitor-less IGZO-DRAM technology",
+   "updated_at": "2026-03-05T22:42:00Z",
+   "url": "https://www.imec-int.com/en/articles/disrupting-dram-roadmap-capacitor-less-igzo-dram-technology"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "doener"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Imec demonstrates logic and DRAM structures using High NA EUV Lithography"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/en/press/imec-demonstrates-logic-and-dram-structures-using-high-na-euv-lithography"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_doener",
+    "story_41222632"
+   ],
+   "author": "doener",
+   "children": [
+    41249681,
+    41250306
+   ],
+   "created_at": "2024-08-12T09:20:32Z",
+   "created_at_i": 1723454432,
+   "num_comments": 14,
+   "objectID": "41222632",
+   "points": 39,
+   "story_id": 41222632,
+   "title": "Imec demonstrates logic and DRAM structures using High NA EUV Lithography",
+   "updated_at": "2024-09-20T17:35:36Z",
+   "url": "https://www.imec-int.com/en/press/imec-demonstrates-logic-and-dram-structures-using-high-na-euv-lithography"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "baybal2"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Imec Demonstrates FinFET Devices with Integrated Tungsten Buried Power Rails"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/drupal/en/articles/imec-demonstrates-excellent-performance-of-si-finfet-cmos-devices-with-integrated-tungsten-buried-power-rails"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_baybal2",
+    "story_23550158"
+   ],
+   "author": "baybal2",
+   "children": [
+    23556093
+   ],
+   "created_at": "2020-06-17T11:25:47Z",
+   "created_at_i": 1592393147,
+   "num_comments": 3,
+   "objectID": "23550158",
+   "points": 37,
+   "story_id": 23550158,
+   "title": "Imec Demonstrates FinFET Devices with Integrated Tungsten Buried Power Rails",
+   "updated_at": "2024-09-20T06:25:36Z",
+   "url": "https://www.imec-int.com/drupal/en/articles/imec-demonstrates-excellent-performance-of-si-finfet-cmos-devices-with-integrated-tungsten-buried-power-rails"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "baybal2"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "MRAM technologies: from space applications to unified cache memory?"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/en/articles/mram-technologies-space-applications-unified-cache-memory"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_baybal2",
+    "story_28771648"
+   ],
+   "author": "baybal2",
+   "children": [
+    28796070,
+    28798166,
+    28799246,
+    28800082,
+    28800299
+   ],
+   "created_at": "2021-10-06T11:10:44Z",
+   "created_at_i": 1633518644,
+   "num_comments": 7,
+   "objectID": "28771648",
+   "points": 36,
+   "story_id": 28771648,
+   "title": "MRAM technologies: from space applications to unified cache memory?",
+   "updated_at": "2024-09-20T09:32:44Z",
+   "url": "https://www.imec-int.com/en/articles/mram-technologies-space-applications-unified-cache-memory"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "pieterr"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Imec demonstrates electrical yield for 20nm lines High NA EUV single patterning"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/en/press/imec-demonstrates-electrical-yield-20nm-pitch-metal-lines-obtained-high-na-euv-single"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_pieterr",
+    "story_43207040"
+   ],
+   "author": "pieterr",
+   "children": [
+    43235543
+   ],
+   "created_at": "2025-02-28T15:55:11Z",
+   "created_at_i": 1740758111,
+   "num_comments": 13,
+   "objectID": "43207040",
+   "points": 31,
+   "story_id": 43207040,
+   "title": "Imec demonstrates electrical yield for 20nm lines High NA EUV single patterning",
+   "updated_at": "2025-03-05T07:19:47Z",
+   "url": "https://www.imec-int.com/en/press/imec-demonstrates-electrical-yield-20nm-pitch-metal-lines-obtained-high-na-euv-single"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "luu"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Quantum dot qubit using High NA EUV lithography"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/en/press/world-first-imec-presents-quantum-dot-qubit-device-using-high-na-euv-lithography"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_luu",
+    "story_48291648"
+   ],
+   "author": "luu",
+   "children": [
+    48334625,
+    48334763
+   ],
+   "created_at": "2026-05-27T09:15:22Z",
+   "created_at_i": 1779873322,
+   "num_comments": 5,
+   "objectID": "48291648",
+   "points": 24,
+   "story_id": 48291648,
+   "title": "Quantum dot qubit using High NA EUV lithography",
+   "updated_at": "2026-05-31T21:24:31Z",
+   "url": "https://www.imec-int.com/en/press/world-first-imec-presents-quantum-dot-qubit-device-using-high-na-euv-lithography"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "eplanit"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Lexus Hoverboard"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "http://www.lexus-<em>int.com</em>/amazinginmotion/slide/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_eplanit",
+    "story_9769694"
+   ],
+   "author": "eplanit",
+   "children": [
+    9770534
+   ],
+   "created_at": "2015-06-24T04:57:23Z",
+   "created_at_i": 1435121843,
+   "num_comments": 0,
+   "objectID": "9769694",
+   "points": 20,
+   "story_id": 9769694,
+   "title": "Lexus Hoverboard",
+   "updated_at": "2023-09-07T03:02:49Z",
+   "url": "http://www.lexus-int.com/amazinginmotion/slide/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "bryanrasmussen"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Imec Demonstrates Capacitor-Less IGZO-Based DRAM Cell with 400s Retention Time"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/en/press/imec-demonstrates-capacitor-less-igzo-based-dram-cell-400s-retention-time"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_bryanrasmussen",
+    "story_26003964"
+   ],
+   "author": "bryanrasmussen",
+   "created_at": "2021-02-02T17:39:37Z",
+   "created_at_i": 1612287577,
+   "num_comments": 0,
+   "objectID": "26003964",
+   "points": 17,
+   "story_id": 26003964,
+   "title": "Imec Demonstrates Capacitor-Less IGZO-Based DRAM Cell with 400s Retention Time",
+   "updated_at": "2024-09-20T07:47:22Z",
+   "url": "https://www.imec-int.com/en/press/imec-demonstrates-capacitor-less-igzo-based-dram-cell-400s-retention-time"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "goqu"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Hoverboard by Lexus"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "http://www.lexus-<em>int.com</em>/amazinginmotion/slide/?utm_campaign=SLIDE-02&utm_source=YouTube&utm_content=YT-Card-0627&utm_medium=social"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_goqu",
+    "story_9976566"
+   ],
+   "author": "goqu",
+   "created_at": "2015-07-30T17:36:40Z",
+   "created_at_i": 1438277800,
+   "num_comments": 0,
+   "objectID": "9976566",
+   "points": 5,
+   "story_id": 9976566,
+   "story_text": "",
+   "title": "Hoverboard by Lexus",
+   "updated_at": "2023-09-07T03:20:08Z",
+   "url": "http://www.lexus-int.com/amazinginmotion/slide/?utm_campaign=SLIDE-02&utm_source=YouTube&utm_content=YT-Card-0627&utm_medium=social"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Artemis2"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Slide \u2013 Lexus' Hoverboard"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "http://www.lexus-<em>int.com</em>/amazinginmotion/slide"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_Artemis2",
+    "story_9771601"
+   ],
+   "author": "Artemis2",
+   "children": [
+    9771795
+   ],
+   "created_at": "2015-06-24T14:01:31Z",
+   "created_at_i": 1435154491,
+   "num_comments": 1,
+   "objectID": "9771601",
+   "points": 3,
+   "story_id": 9771601,
+   "story_text": "",
+   "title": "Slide \u2013 Lexus' Hoverboard",
+   "updated_at": "2023-09-07T03:02:59Z",
+   "url": "http://www.lexus-int.com/amazinginmotion/slide"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "flifenstein"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Harness your expectations: a 27B model matched GLM-5.3-Flash after leak fixes"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://aistack.imec-<em>int.com</em>/blog/agents-peeking"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_flifenstein",
+    "story_49711613"
+   ],
+   "author": "flifenstein",
+   "children": [
+    49711614
+   ],
+   "created_at": "2026-09-15T12:37:15Z",
+   "created_at_i": 1789475835,
+   "num_comments": 0,
+   "objectID": "49711613",
+   "points": 3,
+   "story_id": 49711613,
+   "title": "Harness your expectations: a 27B model matched GLM-5.3-Flash after leak fixes",
+   "updated_at": "2026-09-15T16:19:54Z",
+   "url": "https://aistack.imec-int.com/blog/agents-peeking"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "baybal2"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Thin-film solar cells generate as much energy as regular ones for the first time"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/drupal/en/articles/breakthrough-thin-film-solar-cells-generate-as-much-energy-as-traditional-solar-cells-for-the-first-time"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_baybal2",
+    "story_22427344"
+   ],
+   "author": "baybal2",
+   "created_at": "2020-02-26T21:09:00Z",
+   "created_at_i": 1582751340,
+   "num_comments": 0,
+   "objectID": "22427344",
+   "points": 3,
+   "story_id": 22427344,
+   "title": "Thin-film solar cells generate as much energy as regular ones for the first time",
+   "updated_at": "2024-09-20T05:40:21Z",
+   "url": "https://www.imec-int.com/drupal/en/articles/breakthrough-thin-film-solar-cells-generate-as-much-energy-as-traditional-solar-cells-for-the-first-time"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mindwraps"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Fable 5.1 vs. Astra for coding: Fable 2X more expensive per task but solves more"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://aistack.imec-<em>int.com</em>/blog/astra-vs-fable-update"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_mindwraps",
+    "story_49756019"
+   ],
+   "author": "mindwraps",
+   "children": [
+    49756020,
+    49756045,
+    49756218
+   ],
+   "created_at": "2026-09-18T15:41:12Z",
+   "created_at_i": 1789746072,
+   "num_comments": 4,
+   "objectID": "49756019",
+   "points": 2,
+   "story_id": 49756019,
+   "title": "Fable 5.1 vs. Astra for coding: Fable 2X more expensive per task but solves more",
+   "updated_at": "2026-09-20T07:48:53Z",
+   "url": "https://aistack.imec-int.com/blog/astra-vs-fable-update"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mindwraps"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Does quantization hurt coding agents? Deep-dive with actual numbers"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://aistack.imec-<em>int.com</em>/blog/quantization"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_mindwraps",
+    "story_50088279"
+   ],
+   "author": "mindwraps",
+   "children": [
+    50088280
+   ],
+   "created_at": "2026-10-14T14:28:00Z",
+   "created_at_i": 1791988080,
+   "num_comments": 1,
+   "objectID": "50088279",
+   "points": 2,
+   "story_id": 50088279,
+   "title": "Does quantization hurt coding agents? Deep-dive with actual numbers",
+   "updated_at": "2026-10-14T14:40:14Z",
+   "url": "https://aistack.imec-int.com/blog/quantization"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "u1hcw9nx"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Imec presents quantum dot qubit device using High NA EUV lithography"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/en/press/world-first-imec-presents-quantum-dot-qubit-device-using-high-na-euv-lithography"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_u1hcw9nx",
+    "story_48278039"
+   ],
+   "author": "u1hcw9nx",
+   "children": [
+    48278040
+   ],
+   "created_at": "2026-05-26T11:04:53Z",
+   "created_at_i": 1779793493,
+   "num_comments": 1,
+   "objectID": "48278039",
+   "points": 2,
+   "story_id": 48278039,
+   "title": "Imec presents quantum dot qubit device using High NA EUV lithography",
+   "updated_at": "2026-05-26T12:09:39Z",
+   "url": "https://www.imec-int.com/en/press/world-first-imec-presents-quantum-dot-qubit-device-using-high-na-euv-lithography"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "auslegung"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Evaluating 10 Software Development Methodologies [pdf]"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.ppi-<em>int.com</em>/wp-content/uploads/2021/01/Evaluating-Ten-Software-Development-Methodologies.pdf"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_auslegung",
+    "story_27664735"
+   ],
+   "author": "auslegung",
+   "children": [
+    27664789
+   ],
+   "created_at": "2021-06-28T17:26:25Z",
+   "created_at_i": 1624901185,
+   "num_comments": 1,
+   "objectID": "27664735",
+   "points": 2,
+   "story_id": 27664735,
+   "title": "Evaluating 10 Software Development Methodologies [pdf]",
+   "updated_at": "2024-09-20T08:55:21Z",
+   "url": "https://www.ppi-int.com/wp-content/uploads/2021/01/Evaluating-Ten-Software-Development-Methodologies.pdf"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "sandwichsphinx"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Semi-damascene metallization: inflection point in back-end-of-line processing?"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/en/articles/semi-damascene-metallization-inflection-point-back-end-line-processing"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_sandwichsphinx",
+    "story_42141773"
+   ],
+   "author": "sandwichsphinx",
+   "created_at": "2024-11-14T22:13:50Z",
+   "created_at_i": 1731622430,
+   "num_comments": 0,
+   "objectID": "42141773",
+   "points": 2,
+   "story_id": 42141773,
+   "title": "Semi-damascene metallization: inflection point in back-end-of-line processing?",
+   "updated_at": "2024-11-15T08:48:36Z",
+   "url": "https://www.imec-int.com/en/articles/semi-damascene-metallization-inflection-point-back-end-line-processing"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "baybal2"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Logic technology scaling options for 2nm and beyond"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/en/articles/logic-technology-scaling-options-2nm-and-beyond"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_baybal2",
+    "story_27747212"
+   ],
+   "author": "baybal2",
+   "created_at": "2021-07-06T11:57:52Z",
+   "created_at_i": 1625572672,
+   "num_comments": 0,
+   "objectID": "27747212",
+   "points": 2,
+   "story_id": 27747212,
+   "title": "Logic technology scaling options for 2nm and beyond",
+   "updated_at": "2024-09-20T08:54:38Z",
+   "url": "https://www.imec-int.com/en/articles/logic-technology-scaling-options-2nm-and-beyond"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "nthn_g"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Imec reports first demonstration of forksheet to extend nanosheets beyond 2nm"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/en/press/imec-reports-first-electrical-demonstration-integrated-forksheet-devices-extend-nanosheets"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_nthn_g",
+    "story_27526485"
+   ],
+   "author": "nthn_g",
+   "created_at": "2021-06-16T09:13:39Z",
+   "created_at_i": 1623834819,
+   "num_comments": 0,
+   "objectID": "27526485",
+   "points": 2,
+   "story_id": 27526485,
+   "title": "Imec reports first demonstration of forksheet to extend nanosheets beyond 2nm",
+   "updated_at": "2024-09-20T08:45:43Z",
+   "url": "https://www.imec-int.com/en/press/imec-reports-first-electrical-demonstration-integrated-forksheet-devices-extend-nanosheets"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "baybal2"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "IMEC's view on the next generation semiconductor technologies"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/en/articles/view-next-generation-semiconductor-technologies"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_baybal2",
+    "story_27063220"
+   ],
+   "author": "baybal2",
+   "created_at": "2021-05-06T13:54:32Z",
+   "created_at_i": 1620309272,
+   "num_comments": 0,
+   "objectID": "27063220",
+   "points": 2,
+   "story_id": 27063220,
+   "title": "IMEC's view on the next generation semiconductor technologies",
+   "updated_at": "2024-09-20T08:33:45Z",
+   "url": "https://www.imec-int.com/en/articles/view-next-generation-semiconductor-technologies"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "sintax"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Belgian security researchers demonstrate flaws in Tesla Model X keyless entry"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/en/press/belgian-security-researchers-ku-leuven-and-imec-demonstrate-serious-flaws-tesla-model-x"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_sintax",
+    "story_25196314"
+   ],
+   "author": "sintax",
+   "created_at": "2020-11-24T08:04:24Z",
+   "created_at_i": 1606205064,
+   "num_comments": 0,
+   "objectID": "25196314",
+   "points": 2,
+   "story_id": 25196314,
+   "title": "Belgian security researchers demonstrate flaws in Tesla Model X keyless entry",
+   "updated_at": "2024-09-20T07:22:38Z",
+   "url": "https://www.imec-int.com/en/press/belgian-security-researchers-ku-leuven-and-imec-demonstrate-serious-flaws-tesla-model-x"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "baybal2"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Imec ruthenium interconnect as a path to 2nm technology nodes"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/en/press/imec-presents-alternative-metals-advanced-interconnect-and-contact-schemes-path-2nm"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_baybal2",
+    "story_24966490"
+   ],
+   "author": "baybal2",
+   "created_at": "2020-11-02T10:27:26Z",
+   "created_at_i": 1604312846,
+   "num_comments": 0,
+   "objectID": "24966490",
+   "points": 2,
+   "story_id": 24966490,
+   "title": "Imec ruthenium interconnect as a path to 2nm technology nodes",
+   "updated_at": "2024-09-20T07:18:59Z",
+   "url": "https://www.imec-int.com/en/press/imec-presents-alternative-metals-advanced-interconnect-and-contact-schemes-path-2nm"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "baybal2"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Toward the 1nm Technology Generation: Imec Roadmap for Logic Technology"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/en/articles/view-logic-technology-roadmap"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_baybal2",
+    "story_24649193"
+   ],
+   "author": "baybal2",
+   "created_at": "2020-10-01T09:56:58Z",
+   "created_at_i": 1601546218,
+   "num_comments": 0,
+   "objectID": "24649193",
+   "points": 2,
+   "story_id": 24649193,
+   "title": "Toward the 1nm Technology Generation: Imec Roadmap for Logic Technology",
+   "updated_at": "2024-09-20T07:06:10Z",
+   "url": "https://www.imec-int.com/en/articles/view-logic-technology-roadmap"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "baybal2"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Imec demonstrates 2 Metal layer back-end-of-line for the 3nm technology node"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/drupal/en/articles/imec-world-first-to-demonstrate-2-metal-layer-back-end-of-line-for-the-3nm-technology-node"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_baybal2",
+    "story_20453353"
+   ],
+   "author": "baybal2",
+   "created_at": "2019-07-16T19:59:24Z",
+   "created_at_i": 1563307164,
+   "num_comments": 0,
+   "objectID": "20453353",
+   "points": 2,
+   "story_id": 20453353,
+   "title": "Imec demonstrates 2 Metal layer back-end-of-line for the 3nm technology node",
+   "updated_at": "2024-09-20T04:37:03Z",
+   "url": "https://www.imec-int.com/drupal/en/articles/imec-world-first-to-demonstrate-2-metal-layer-back-end-of-line-for-the-3nm-technology-node"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "baybal2"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Imec: Field-Free Switching Spin-Orbit Torque MRAM"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/en/articles/imec-presents-a-manufacturable-solution-for-field-free-switching-operation-of-spin-orbit-torque-mram-devices"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_baybal2",
+    "story_20195750"
+   ],
+   "author": "baybal2",
+   "created_at": "2019-06-16T14:54:28Z",
+   "created_at_i": 1560696868,
+   "num_comments": 0,
+   "objectID": "20195750",
+   "points": 2,
+   "story_id": 20195750,
+   "title": "Imec: Field-Free Switching Spin-Orbit Torque MRAM",
+   "updated_at": "2024-09-20T04:30:23Z",
+   "url": "https://www.imec-int.com/en/articles/imec-presents-a-manufacturable-solution-for-field-free-switching-operation-of-spin-orbit-torque-mram-devices"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "hackeranimos"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "\u0627\u062e\u0628\u0627\u0631 \u0627\u0644\u0647\u0643\u0631"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "http://www.hack-<em>int.com</em>/cc/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_hackeranimos",
+    "story_15073314"
+   ],
+   "author": "hackeranimos",
+   "created_at": "2017-08-22T15:26:09Z",
+   "created_at_i": 1503415569,
+   "num_comments": 0,
+   "objectID": "15073314",
+   "points": 2,
+   "story_id": 15073314,
+   "title": "\u0627\u062e\u0628\u0627\u0631 \u0627\u0644\u0647\u0643\u0631",
+   "updated_at": "2025-06-12T19:47:35Z",
+   "url": "http://www.hack-int.com/cc/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "pasta"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Imec demonstrates self-learning neuromorphic chip that composes music"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/en/articles/imec-demonstrates-self-learning-neuromorphic-chip-that-composes-music"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_pasta",
+    "story_14357107"
+   ],
+   "author": "pasta",
+   "created_at": "2017-05-17T10:23:52Z",
+   "created_at_i": 1495016632,
+   "num_comments": 0,
+   "objectID": "14357107",
+   "points": 2,
+   "story_id": 14357107,
+   "title": "Imec demonstrates self-learning neuromorphic chip that composes music",
+   "updated_at": "2024-09-20T00:49:31Z",
+   "url": "https://www.imec-int.com/en/articles/imec-demonstrates-self-learning-neuromorphic-chip-that-composes-music"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "baybal2"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Imec: Field-Free Switching Spin-Orbit Torque MRAM"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/drupalImecpresentsamanufacturablesolutionforfield-freeswitchingoperationofSpin-OrbitTorqueMRAMdevicesen/articles/imec-presents-a-manufacturable-solution-for-field-free-switching-operation-of-spin-orbit-torque-mram-devices"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_baybal2",
+    "story_20194983"
+   ],
+   "author": "baybal2",
+   "children": [
+    20195031,
+    20195083
+   ],
+   "created_at": "2019-06-16T11:29:30Z",
+   "created_at_i": 1560684570,
+   "num_comments": 2,
+   "objectID": "20194983",
+   "points": 1,
+   "story_id": 20194983,
+   "title": "Imec: Field-Free Switching Spin-Orbit Torque MRAM",
+   "updated_at": "2024-09-20T04:30:15Z",
+   "url": "https://www.imec-int.com/drupalImecpresentsamanufacturablesolutionforfield-freeswitchingoperationofSpin-OrbitTorqueMRAMdevicesen/articles/imec-presents-a-manufacturable-solution-for-field-free-switching-operation-of-spin-orbit-torque-mram-devices"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "wj"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Lexus hoverboard"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "http://www.lexus-<em>int.com</em>/amazinginmotion/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_wj",
+    "story_9778749"
+   ],
+   "author": "wj",
+   "created_at": "2015-06-25T15:48:06Z",
+   "created_at_i": 1435247286,
+   "num_comments": 0,
+   "objectID": "9778749",
+   "points": 1,
+   "story_id": 9778749,
+   "story_text": "",
+   "title": "Lexus hoverboard",
+   "updated_at": "2023-09-07T03:03:31Z",
+   "url": "http://www.lexus-int.com/amazinginmotion/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "gshrikant"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The Lexus F Sport Meter"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "http://www.lexus-<em>int.com</em>/magazine/issue2/element/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_gshrikant",
+    "story_9530851"
+   ],
+   "author": "gshrikant",
+   "created_at": "2015-05-12T11:17:21Z",
+   "created_at_i": 1431429441,
+   "num_comments": 0,
+   "objectID": "9530851",
+   "points": 1,
+   "story_id": 9530851,
+   "story_text": "",
+   "title": "The Lexus F Sport Meter",
+   "updated_at": "2024-09-19T21:47:50Z",
+   "url": "http://www.lexus-int.com/magazine/issue2/element/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "mindwraps"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Benchmarking Claude Code, Codex and Pi on SWE-Bench Pro: Same Accuracy, 2x Cost"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://aistack.imec-<em>int.com</em>/blog/harness-cost"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_mindwraps",
+    "story_49639415"
+   ],
+   "author": "mindwraps",
+   "created_at": "2026-09-10T06:50:48Z",
+   "created_at_i": 1789023048,
+   "num_comments": 0,
+   "objectID": "49639415",
+   "points": 1,
+   "story_id": 49639415,
+   "title": "Benchmarking Claude Code, Codex and Pi on SWE-Bench Pro: Same Accuracy, 2x Cost",
+   "updated_at": "2026-09-10T06:55:53Z",
+   "url": "https://aistack.imec-int.com/blog/harness-cost"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "flifenstein"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "How many devs can you fit on a GPU?"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://aistack.imec-<em>int.com</em>/blog/gpu-self-hosting"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_flifenstein",
+    "story_49021174"
+   ],
+   "author": "flifenstein",
+   "children": [
+    49021175
+   ],
+   "created_at": "2026-07-23T13:22:22Z",
+   "created_at_i": 1784812942,
+   "num_comments": 0,
+   "objectID": "49021174",
+   "points": 1,
+   "story_id": 49021174,
+   "title": "How many devs can you fit on a GPU?",
+   "updated_at": "2026-07-23T13:23:10Z",
+   "url": "https://aistack.imec-int.com/blog/gpu-self-hosting"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "sandwichsphinx"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Imec proposes double-row CFET for the A7 technology node"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/en/press/imec-proposes-double-row-cfet-a7-technology-node"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_sandwichsphinx",
+    "story_42362810"
+   ],
+   "author": "sandwichsphinx",
+   "created_at": "2024-12-09T03:23:28Z",
+   "created_at_i": 1733714608,
+   "num_comments": 0,
+   "objectID": "42362810",
+   "points": 1,
+   "story_id": 42362810,
+   "title": "Imec proposes double-row CFET for the A7 technology node",
+   "updated_at": "2024-12-09T03:26:02Z",
+   "url": "https://www.imec-int.com/en/press/imec-proposes-double-row-cfet-a7-technology-node"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "sandwichsphinx"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Interfacing silicon photonics for high-density co-packaged optics"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/en/articles/interfacing-silicon-photonics-high-density-co-packaged-optics"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_sandwichsphinx",
+    "story_42285646"
+   ],
+   "author": "sandwichsphinx",
+   "created_at": "2024-12-01T02:24:18Z",
+   "created_at_i": 1733019858,
+   "num_comments": 0,
+   "objectID": "42285646",
+   "points": 1,
+   "story_id": 42285646,
+   "title": "Interfacing silicon photonics for high-density co-packaged optics",
+   "updated_at": "2024-12-01T02:25:48Z",
+   "url": "https://www.imec-int.com/en/articles/interfacing-silicon-photonics-high-density-co-packaged-optics"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "sasvari"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "What will 6G be like?"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/en/articles/6g"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_sasvari",
+    "story_30830407"
+   ],
+   "author": "sasvari",
+   "created_at": "2022-03-28T13:43:40Z",
+   "created_at_i": 1648475020,
+   "num_comments": 0,
+   "objectID": "30830407",
+   "points": 1,
+   "story_id": 30830407,
+   "title": "What will 6G be like?",
+   "updated_at": "2024-09-20T10:45:49Z",
+   "url": "https://www.imec-int.com/en/articles/6g"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "blopeur"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The Fastest Route Out of the \u2018Great Microchip Shortage\u2019 \u2013 An Outlook on 2022"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/en/articles/fastest-route-out-great-microchip-shortage-outlook-2022"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_blopeur",
+    "story_29872220"
+   ],
+   "author": "blopeur",
+   "created_at": "2022-01-10T09:15:02Z",
+   "created_at_i": 1641806102,
+   "num_comments": 0,
+   "objectID": "29872220",
+   "points": 1,
+   "story_id": 29872220,
+   "title": "The Fastest Route Out of the \u2018Great Microchip Shortage\u2019 \u2013 An Outlook on 2022",
+   "updated_at": "2024-09-20T10:15:46Z",
+   "url": "https://www.imec-int.com/en/articles/fastest-route-out-great-microchip-shortage-outlook-2022"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Gys"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Flexible tags that communicate with standard touch screens"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.imec-<em>int.com</em>/en/articles/imec-tno-and-cartamundi-develop-flexible-tags-that-communicate-with-standard-touch-screens?slide=2"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_Gys",
+    "story_21812421"
+   ],
+   "author": "Gys",
+   "created_at": "2019-12-17T10:53:11Z",
+   "created_at_i": 1576579991,
+   "num_comments": 0,
+   "objectID": "21812421",
+   "points": 1,
+   "story_id": 21812421,
+   "title": "Flexible tags that communicate with standard touch screens",
+   "updated_at": "2024-09-20T05:17:17Z",
+   "url": "https://www.imec-int.com/en/articles/imec-tno-and-cartamundi-develop-flexible-tags-that-communicate-with-standard-touch-screens?slide=2"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "astdb"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Lexus Slide"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "https://www.lexus-<em>int.com</em>/slide"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_astdb",
+    "story_14926981"
+   ],
+   "author": "astdb",
+   "created_at": "2017-08-04T07:23:21Z",
+   "created_at_i": 1501831401,
+   "num_comments": 0,
+   "objectID": "14926981",
+   "points": 1,
+   "story_id": 14926981,
+   "title": "Lexus Slide",
+   "updated_at": "2024-09-20T01:07:54Z",
+   "url": "https://www.lexus-int.com/slide"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "amelius"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Impact of Weather on Stock Returns and Volatility (2105) [pdf]"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "http://www.sci-<em>int.com</em>/pdf/14106288212633-2641%20ABDUL%20RAHEMAN--SS--RWD-REVISED.pdf"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_amelius",
+    "story_10912520"
+   ],
+   "author": "amelius",
+   "created_at": "2016-01-15T22:02:15Z",
+   "created_at_i": 1452895335,
+   "num_comments": 0,
+   "objectID": "10912520",
+   "points": 1,
+   "story_id": 10912520,
+   "title": "Impact of Weather on Stock Returns and Volatility (2105) [pdf]",
+   "updated_at": "2024-09-19T22:42:06Z",
+   "url": "http://www.sci-int.com/pdf/14106288212633-2641%20ABDUL%20RAHEMAN--SS--RWD-REVISED.pdf"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "dluan"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Lexus Hoverboard"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "inth",
+      ".",
+      "com"
+     ],
+     "value": "http://www.lexus-<em>int.com</em>/amazinginmotion/slide/?"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_dluan",
+    "story_10007740"
+   ],
+   "author": "dluan",
+   "created_at": "2015-08-05T02:32:14Z",
+   "created_at_i": 1438741934,
+   "num_comments": 0,
+   "objectID": "10007740",
+   "points": 1,
+   "story_id": 10007740,
+   "story_text": "",
+   "title": "Lexus Hoverboard",
+   "updated_at": "2023-09-06T23:18:34Z",
+   "url": "http://www.lexus-int.com/amazinginmotion/slide/?"
+  }
+ ],
+ "launch_hits": []
+}

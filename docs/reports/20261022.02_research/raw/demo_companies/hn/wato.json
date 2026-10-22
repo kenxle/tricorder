@@ -1,0 +1,90 @@
+{
+ "domain_query": "watolabs.com",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "cmdrtaco"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": ""
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Negative Commenting, and the Myth of Anonymity"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "watolabs",
+      ".",
+      "com"
+     ],
+     "value": "http://www.<em>wapolabs.com</em>/2012/10/16/negative-commenting-and-the-myth-of-anonymity/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_cmdrtaco",
+    "story_4660700"
+   ],
+   "author": "cmdrtaco",
+   "created_at": "2012-10-16T16:56:10Z",
+   "created_at_i": 1350406570,
+   "num_comments": 0,
+   "objectID": "4660700",
+   "points": 1,
+   "story_id": 4660700,
+   "story_text": "",
+   "title": "Negative Commenting, and the Myth of Anonymity",
+   "updated_at": "2024-09-19T18:57:13Z",
+   "url": "http://www.wapolabs.com/2012/10/16/negative-commenting-and-the-myth-of-anonymity/"
+  },
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "eschan"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "I love to code"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "watolabs",
+      ".",
+      "com"
+     ],
+     "value": "http://<em>wadolabs.com</em>/post/21046588245/i-love-to-code"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_eschan",
+    "story_3839355"
+   ],
+   "author": "eschan",
+   "created_at": "2012-04-14T00:03:31Z",
+   "created_at_i": 1334361811,
+   "num_comments": 0,
+   "objectID": "3839355",
+   "points": 1,
+   "story_id": 3839355,
+   "title": "I love to code",
+   "updated_at": "2023-09-06T21:28:28Z",
+   "url": "http://wadolabs.com/post/21046588245/i-love-to-code"
+  }
+ ],
+ "launch_hits": []
+}

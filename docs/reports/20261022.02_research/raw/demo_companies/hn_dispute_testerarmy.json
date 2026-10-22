@@ -1,0 +1,539 @@
+[
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "okwasniewski"
+   },
+   "story_text": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "tester",
+     ".",
+     "army"
+    ],
+    "value": "Hey HN - we\u2019re Oskar, Szymon, and Piotr, and we\u2019re building TesterArmy (<a href=\"https://tester.army\">https://<em>tester.army</em></a>). TesterArmy is an agentic testing platform that runs end-to-end checks before deployment and in production. Instead of wasting hours on manual testing or maintaining static scripts, we let you specify your tests in natural language and handle everything in between. We've built the platform fully around agents. Our agent will reliably execute the tests, but your coding agent can manage everything in our platform, from defining tests in natural language to running them on your behalf.<p>Check out our demo video: <a href=\"https://www.youtube.com/watch?v=291IkUbPrlk\" rel=\"nofollow\">https://www.youtube.com/watch?v=291IkUbPrlk</a>.<p>We started TesterArmy because testing is still far too painful. AI coding tools have made it dramatically faster to write and ship code, but testing is still a bottleneck. Traditional E2E tests are slow to set up and expensive to maintain. Managing auth and test users is painful. Setting up staging environments is painful. Running tests reliably is painful.<p>We think most teams do not actually want to spend their time writing selectors or maintaining test infrastructure. They just want confidence that their core flows work. With TesterArmy, an engineer can sign up, give an agent our CLI, and let it handle creating tests and running them on schedule or on GitHub.<p>When something breaks, TesterArmy alerts your team through Slack or Discord.<p>Over the past few months, we scaled from 0 to 30+ teams using our product every day. We caught bugs in critical flows, including onboarding, checkout, and AI chat. We've got many of our customers migrating from already established competitors to us because of the quality and reliability of our agents.<p>Here are a few of the recent bugs that our agent found (there were quite a lot of them!):<p>1) Timezone bug that affected the booking flow in one of our clients' apps, the dashboard was very complex and hard to catch by a human. \n2) Regression in agent orchestration that caused a sandboxed environment to be stuck on loading, thanks to TesterArmy, the team was able to resolve it before it hit production.\n3) Incorrectly counting the order amount in a complex dashboard flow with checkout, thanks to TesterArmy, the team was able to resolve it before it affected revenue\n4) Catching a regression in an AI chat flow that would result in a user not being able to retrieve their data due to broken tool calling.<p>And many more, mostly related to some incorrect API calls, 404s, unhandled errors, etc.<p>If this sounds useful, we would love your feedback at <a href=\"https://tester.army\">https://<em>tester.army</em></a>. We have a bunch of free test runs for you to try. And don\u2019t worry, we won\u2019t make you do sales calls, and we don\u2019t have long onboarding or annoying setup. Our goal is an it-just-works experience.<p>If you're looking for an end-to-end testing solution, we'd love to hear your feedback!"
+   },
+   "title": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "Launch HN: TesterArmy (YC P26) \u2013 Agents that test web and mobile apps"
+   },
+   "url": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "tester",
+     ".",
+     "army"
+    ],
+    "value": "https://<em>tester.army</em>"
+   }
+  },
+  "_tags": [
+   "story",
+   "author_okwasniewski",
+   "story_48586299",
+   "launch_hn"
+  ],
+  "author": "okwasniewski",
+  "children": [
+   48586549,
+   48586625,
+   48586742,
+   48587176,
+   48587274,
+   48587477,
+   48587493,
+   48587746,
+   48587988,
+   48588006,
+   48588201,
+   48588736,
+   48588749,
+   48588786,
+   48589427,
+   48589471,
+   48589518,
+   48589553,
+   48589922,
+   48590305,
+   48591107,
+   48592625,
+   48592802,
+   48593441,
+   48594093,
+   48594336,
+   48594806,
+   48594993,
+   48595339,
+   48595481,
+   48596830,
+   48597335,
+   48597800,
+   48597995,
+   48598251,
+   48598804,
+   48599983,
+   48636543,
+   48683552,
+   48705370
+  ],
+  "created_at": "2026-06-18T14:49:44Z",
+  "created_at_i": 1781794184,
+  "num_comments": 69,
+  "objectID": "48586299",
+  "points": 132,
+  "story_id": 48586299,
+  "story_text": "Hey HN - we\u2019re Oskar, Szymon, and Piotr, and we\u2019re building TesterArmy (<a href=\"https:&#x2F;&#x2F;tester.army\">https:&#x2F;&#x2F;tester.army</a>). TesterArmy is an agentic testing platform that runs end-to-end checks before deployment and in production. Instead of wasting hours on manual testing or maintaining static scripts, we let you specify your tests in natural language and handle everything in between. We&#x27;ve built the platform fully around agents. Our agent will reliably execute the tests, but your coding agent can manage everything in our platform, from defining tests in natural language to running them on your behalf.<p>Check out our demo video: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=291IkUbPrlk\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=291IkUbPrlk</a>.<p>We started TesterArmy because testing is still far too painful. AI coding tools have made it dramatically faster to write and ship code, but testing is still a bottleneck. Traditional E2E tests are slow to set up and expensive to maintain. Managing auth and test users is painful. Setting up staging environments is painful. Running tests reliably is painful.<p>We think most teams do not actually want to spend their time writing selectors or maintaining test infrastructure. They just want confidence that their core flows work. With TesterArmy, an engineer can sign up, give an agent our CLI, and let it handle creating tests and running them on schedule or on GitHub.<p>When something breaks, TesterArmy alerts your team through Slack or Discord.<p>Over the past few months, we scaled from 0 to 30+ teams using our product every day. We caught bugs in critical flows, including onboarding, checkout, and AI chat. We&#x27;ve got many of our customers migrating from already established competitors to us because of the quality and reliability of our agents.<p>Here are a few of the recent bugs that our agent found (there were quite a lot of them!):<p>1) Timezone bug that affected the booking flow in one of our clients&#x27; apps, the dashboard was very complex and hard to catch by a human. \n2) Regression in agent orchestration that caused a sandboxed environment to be stuck on loading, thanks to TesterArmy, the team was able to resolve it before it hit production.\n3) Incorrectly counting the order amount in a complex dashboard flow with checkout, thanks to TesterArmy, the team was able to resolve it before it affected revenue\n4) Catching a regression in an AI chat flow that would result in a user not being able to retrieve their data due to broken tool calling.<p>And many more, mostly related to some incorrect API calls, 404s, unhandled errors, etc.<p>If this sounds useful, we would love your feedback at <a href=\"https:&#x2F;&#x2F;tester.army\">https:&#x2F;&#x2F;tester.army</a>. We have a bunch of free test runs for you to try. And don\u2019t worry, we won\u2019t make you do sales calls, and we don\u2019t have long onboarding or annoying setup. Our goal is an it-just-works experience.<p>If you&#x27;re looking for an end-to-end testing solution, we&#x27;d love to hear your feedback!",
+  "title": "Launch HN: TesterArmy (YC P26) \u2013 Agents that test web and mobile apps",
+  "updated_at": "2026-07-18T16:29:01Z",
+  "url": "https://tester.army"
+ },
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "okwasniewski"
+   },
+   "story_text": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "testerarmy"
+    ],
+    "value": "Hey HN, I\u2019m Oskar, one of the co-founders of <em>TesterArmy</em>. We built an agentic testing framework for web and mobile because traditional testing frameworks can\u2019t keep up with the pace of how we build software today.<p>e2e allows you to mix deterministic and agentic APIs in the same test. You can write the test cases using familiar APIs like `getByText()`or `getByTestId()` which you can also mix it with agentic `agent.act()`. The unique part about it is that e2e will cache and replay the agentic actions so you don\u2019t have to pay for AI on each run. You can use it with any LLM, including subscriptions you are already paying for.<p>On top of that, the core of e2e is platform agnostic. We ship both web and mobile engines out of the box; adding support for more platforms is pretty straightforward.<p>Here\u2019s a code short code snippet of an example test:<p>```ts\nimport { test, expect } from 'e2e';<p>test('a member upgrades to Pro', async ({ app, agent, screen }) =&gt; {\n  await app.open('/settings/billing');<p><pre><code>  await agent.act('upgrade the workspace to the Pro plan');\n  await agent.assert('the invoice preview shows a prorated amount');\n\n  await expect(screen.getByRole('status')).toContainText('Pro');</code></pre>\n});\n```<p>Try it: npx e2e init<p>GitHub: <a href=\"https://github.com/tester-army/e2e\" rel=\"nofollow\">https://github.com/tester-army/e2e</a>"
+   },
+   "title": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "Show HN: E2E \u2013 Open-source agentic testing framework for web, iOS and Android"
+   },
+   "url": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "https://github.com/tester-army/e2e"
+   }
+  },
+  "_tags": [
+   "story",
+   "author_okwasniewski",
+   "story_50058032",
+   "show_hn"
+  ],
+  "author": "okwasniewski",
+  "children": [
+   50058192,
+   50065173,
+   50078014,
+   50179767
+  ],
+  "created_at": "2026-10-12T15:41:29Z",
+  "created_at_i": 1791819689,
+  "num_comments": 2,
+  "objectID": "50058032",
+  "points": 9,
+  "story_id": 50058032,
+  "story_text": "Hey HN, I\u2019m Oskar, one of the co-founders of TesterArmy. We built an agentic testing framework for web and mobile because traditional testing frameworks can\u2019t keep up with the pace of how we build software today.<p>e2e allows you to mix deterministic and agentic APIs in the same test. You can write the test cases using familiar APIs like `getByText()`or `getByTestId()` which you can also mix it with agentic `agent.act()`. The unique part about it is that e2e will cache and replay the agentic actions so you don\u2019t have to pay for AI on each run. You can use it with any LLM, including subscriptions you are already paying for.<p>On top of that, the core of e2e is platform agnostic. We ship both web and mobile engines out of the box; adding support for more platforms is pretty straightforward.<p>Here\u2019s a code short code snippet of an example test:<p>```ts\nimport { test, expect } from &#x27;e2e&#x27;;<p>test(&#x27;a member upgrades to Pro&#x27;, async ({ app, agent, screen }) =&gt; {\n  await app.open(&#x27;&#x2F;settings&#x2F;billing&#x27;);<p><pre><code>  await agent.act(&#x27;upgrade the workspace to the Pro plan&#x27;);\n  await agent.assert(&#x27;the invoice preview shows a prorated amount&#x27;);\n\n  await expect(screen.getByRole(&#x27;status&#x27;)).toContainText(&#x27;Pro&#x27;);</code></pre>\n});\n```<p>Try it: npx e2e init<p>GitHub: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;tester-army&#x2F;e2e\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;tester-army&#x2F;e2e</a>",
+  "title": "Show HN: E2E \u2013 Open-source agentic testing framework for web, iOS and Android",
+  "updated_at": "2026-10-21T16:12:34Z",
+  "url": "https://github.com/tester-army/e2e"
+ },
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "negamax"
+   },
+   "comment_text": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "testerarmy"
+    ],
+    "value": "Was writing E2E tests ever a problem that needs automation? Also E2E tests need to be updated everytime a new feature is added. <em>TesterArmy</em> sounds great. But config overhead and potential security leaks makes it a no go"
+   },
+   "story_title": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "testerarmy"
+    ],
+    "value": "Launch HN: <em>TesterArmy</em> (YC P26) \u2013 Agents that test web and mobile apps"
+   },
+   "story_url": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "https://tester.army"
+   }
+  },
+  "_tags": [
+   "comment",
+   "author_negamax",
+   "story_48586299"
+  ],
+  "author": "negamax",
+  "children": [
+   48595944
+  ],
+  "comment_text": "Was writing E2E tests ever a problem that needs automation? Also E2E tests need to be updated everytime a new feature is added. TesterArmy sounds great. But config overhead and potential security leaks makes it a no go",
+  "created_at": "2026-06-19T06:06:03Z",
+  "created_at_i": 1781849163,
+  "objectID": "48595339",
+  "parent_id": 48586299,
+  "story_id": 48586299,
+  "story_title": "Launch HN: TesterArmy (YC P26) \u2013 Agents that test web and mobile apps",
+  "story_url": "https://tester.army",
+  "updated_at": "2026-06-19T07:46:44Z"
+ },
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "pensono"
+   },
+   "comment_text": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "testerarmy"
+    ],
+    "value": "Love using <em>tester army</em> to validate PRs against my preview environment. Skips the manual check much of the time and helps me ship more confidently."
+   },
+   "story_title": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "testerarmy"
+    ],
+    "value": "Launch HN: <em>TesterArmy</em> (YC P26) \u2013 Agents that test web and mobile apps"
+   },
+   "story_url": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "https://tester.army"
+   }
+  },
+  "_tags": [
+   "comment",
+   "author_pensono",
+   "story_48586299"
+  ],
+  "author": "pensono",
+  "children": [
+   48591816
+  ],
+  "comment_text": "Love using tester army to validate PRs against my preview environment. Skips the manual check much of the time and helps me ship more confidently.",
+  "created_at": "2026-06-18T20:30:12Z",
+  "created_at_i": 1781814612,
+  "objectID": "48591107",
+  "parent_id": 48586299,
+  "story_id": 48586299,
+  "story_title": "Launch HN: TesterArmy (YC P26) \u2013 Agents that test web and mobile apps",
+  "story_url": "https://tester.army",
+  "updated_at": "2026-06-19T04:09:13Z"
+ },
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "RayFitzgerald"
+   },
+   "comment_text": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "testerarmy"
+    ],
+    "value": "Love your approach to product.\nIt feels like <em>TesterArmy</em> will become the &quot;Vercel for testing&quot;.\nRefreshing stuff!"
+   },
+   "story_title": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "testerarmy"
+    ],
+    "value": "Launch HN: <em>TesterArmy</em> (YC P26) \u2013 Agents that test web and mobile apps"
+   },
+   "story_url": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "https://tester.army"
+   }
+  },
+  "_tags": [
+   "comment",
+   "author_RayFitzgerald",
+   "story_48586299"
+  ],
+  "author": "RayFitzgerald",
+  "children": [
+   48588048
+  ],
+  "comment_text": "Love your approach to product.\nIt feels like TesterArmy will become the &quot;Vercel for testing&quot;.\nRefreshing stuff!",
+  "created_at": "2026-06-18T16:38:44Z",
+  "created_at_i": 1781800724,
+  "objectID": "48587988",
+  "parent_id": 48586299,
+  "story_id": 48586299,
+  "story_title": "Launch HN: TesterArmy (YC P26) \u2013 Agents that test web and mobile apps",
+  "story_url": "https://tester.army",
+  "updated_at": "2026-06-19T04:08:43Z"
+ },
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "okwasniewski"
+   },
+   "comment_text": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "testerarmy"
+    ],
+    "value": "We are thinking whether to change this.. We also have <em>testerarmy</em>.com/.ai"
+   },
+   "story_title": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "testerarmy"
+    ],
+    "value": "Launch HN: <em>TesterArmy</em> (YC P26) \u2013 Agents that test web and mobile apps"
+   },
+   "story_url": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "https://tester.army"
+   }
+  },
+  "_tags": [
+   "comment",
+   "author_okwasniewski",
+   "story_48586299"
+  ],
+  "author": "okwasniewski",
+  "children": [
+   48588279,
+   48588916
+  ],
+  "comment_text": "We are thinking whether to change this.. We also have testerarmy.com&#x2F;.ai",
+  "created_at": "2026-06-18T15:53:23Z",
+  "created_at_i": 1781798003,
+  "objectID": "48587312",
+  "parent_id": 48587274,
+  "story_id": 48586299,
+  "story_title": "Launch HN: TesterArmy (YC P26) \u2013 Agents that test web and mobile apps",
+  "story_url": "https://tester.army",
+  "updated_at": "2026-06-18T18:10:57Z"
+ },
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "okwasniewski"
+   },
+   "story_text": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "When building AI agents, I found myself struggling to understand what exactly is happening inside of all of our traces. I was pasting huge JSON files to my AI agent to parse and get some useful insights from it. Then I thought, Webpack bundle visualizer had this great view to see all your dependencies - what if we could visualize AI context from traces like this? So I built unbox-ai.<p>It's just one command: npx unbox-ai trace.json<p>It also ships with an agent skill so your AI agent doesn't need to parse through a huge JSON file to analyze a trace.<p>Let me know what you think!"
+   },
+   "title": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "Show HN: Unbox-AI Visualize your AI traces like a JavaScript bundle"
+   },
+   "url": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "testerarmy"
+    ],
+    "value": "https://github.com/<em>tester-army</em>/unbox-ai"
+   }
+  },
+  "_tags": [
+   "story",
+   "author_okwasniewski",
+   "story_49434251",
+   "show_hn"
+  ],
+  "author": "okwasniewski",
+  "created_at": "2026-08-25T13:57:45Z",
+  "created_at_i": 1787666265,
+  "num_comments": 0,
+  "objectID": "49434251",
+  "points": 2,
+  "story_id": 49434251,
+  "story_text": "When building AI agents, I found myself struggling to understand what exactly is happening inside of all of our traces. I was pasting huge JSON files to my AI agent to parse and get some useful insights from it. Then I thought, Webpack bundle visualizer had this great view to see all your dependencies - what if we could visualize AI context from traces like this? So I built unbox-ai.<p>It&#x27;s just one command: npx unbox-ai trace.json<p>It also ships with an agent skill so your AI agent doesn&#x27;t need to parse through a huge JSON file to analyze a trace.<p>Let me know what you think!",
+  "title": "Show HN: Unbox-AI Visualize your AI traces like a JavaScript bundle",
+  "updated_at": "2026-08-25T14:01:30Z",
+  "url": "https://github.com/tester-army/unbox-ai"
+ },
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "handfuloflight"
+   },
+   "title": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "E2E: Next generation E2E testing framework for web and mobile apps"
+   },
+   "url": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "testerarmy"
+    ],
+    "value": "https://github.com/<em>tester-army</em>/e2e"
+   }
+  },
+  "_tags": [
+   "story",
+   "author_handfuloflight",
+   "story_49926725"
+  ],
+  "author": "handfuloflight",
+  "created_at": "2026-10-01T20:32:15Z",
+  "created_at_i": 1790886735,
+  "num_comments": 0,
+  "objectID": "49926725",
+  "points": 1,
+  "story_id": 49926725,
+  "title": "E2E: Next generation E2E testing framework for web and mobile apps",
+  "updated_at": "2026-10-01T20:35:17Z",
+  "url": "https://github.com/tester-army/e2e"
+ },
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "tilt"
+   },
+   "title": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "E2E: The open source AI testing framework"
+   },
+   "url": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "tester",
+     ".",
+     "army"
+    ],
+    "value": "https://<em>tester.army</em>/e2e"
+   }
+  },
+  "_tags": [
+   "story",
+   "author_tilt",
+   "story_49944125"
+  ],
+  "author": "tilt",
+  "children": [
+   49944635
+  ],
+  "created_at": "2026-10-03T13:34:15Z",
+  "created_at_i": 1791034455,
+  "num_comments": 1,
+  "objectID": "49944125",
+  "points": 3,
+  "story_id": 49944125,
+  "title": "E2E: The open source AI testing framework",
+  "updated_at": "2026-10-03T15:21:23Z",
+  "url": "https://tester.army/e2e"
+ },
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "okwasniewski"
+   },
+   "title": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "Lessons from Building an Autonomous QA Agent"
+   },
+   "url": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "tester",
+     ".",
+     "army"
+    ],
+    "value": "https://<em>tester.army</em>/blog/lessons-from-building-an-autonomous-qa-agent"
+   }
+  },
+  "_tags": [
+   "story",
+   "author_okwasniewski",
+   "story_47952232"
+  ],
+  "author": "okwasniewski",
+  "created_at": "2026-04-29T18:17:12Z",
+  "created_at_i": 1777486632,
+  "num_comments": 0,
+  "objectID": "47952232",
+  "points": 3,
+  "story_id": 47952232,
+  "title": "Lessons from Building an Autonomous QA Agent",
+  "updated_at": "2026-05-28T13:45:02Z",
+  "url": "https://tester.army/blog/lessons-from-building-an-autonomous-qa-agent"
+ },
+ {
+  "_highlightResult": {
+   "author": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "handfuloflight"
+   },
+   "title": {
+    "matchLevel": "none",
+    "matchedWords": [],
+    "value": "E2E: The open source AI testing framework"
+   },
+   "url": {
+    "fullyHighlighted": false,
+    "matchLevel": "full",
+    "matchedWords": [
+     "tester",
+     ".",
+     "army"
+    ],
+    "value": "https://<em>tester.army</em>/e2e"
+   }
+  },
+  "_tags": [
+   "story",
+   "author_handfuloflight",
+   "story_49752526"
+  ],
+  "author": "handfuloflight",
+  "created_at": "2026-09-18T10:49:54Z",
+  "created_at_i": 1789728594,
+  "num_comments": 0,
+  "objectID": "49752526",
+  "points": 1,
+  "story_id": 49752526,
+  "title": "E2E: The open source AI testing framework",
+  "updated_at": "2026-09-18T10:51:50Z",
+  "url": "https://tester.army/e2e"
+ }
+]

@@ -1,0 +1,60 @@
+{
+ "domain_query": "tryalchemize.com",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "robertyhou"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tryalchemize",
+      ".",
+      "com"
+     ],
+     "value": "Hey HN, we\u2019re Robert and Sam. We\u2019re building Alchemize, a code review platform that simplifies PRs to help you ship faster.<p>Here\u2019s a demo video: <a href=\"https://www.tella.tv/video/simplify-pr-reviews-with-alchemize-8wpu\" rel=\"nofollow\">https://www.tella.tv/video/simplify-pr-reviews-with-alchemiz...</a>\nSample to try: <a href=\"https://app.tryalchemize.com/example\">https://app.<em>tryalchemize.com</em>/example</a><p>Agentic coding has 10x\u2019d code output. Teams are opening larger PRs more frequently, but the current tools don\u2019t support this new coding paradigm. GitHub still presents files without structure.<p>As engineers reviewing these massive diffs more frequently, we spent hours painstakingly reconstructing where changes began, mapping out data flows, and figuring out where human judgement is actually needed.<p>Instead of adding another bug bot or just summarizing the PR, Alchemize analyzes diffs and pulls in prompting sessions to help reveal the author\u2019s (human and agents) intent. PRs are broken down into smaller, manageable chunks that highlight exactly where the reviewer needs to jump in.<p>After authorizing your GitHub account, Alchemize has a two way sync so that you never have to review an unstructured PR on GitHub again.<p>We\u2019ve been thinking a lot about whether helping human reviewers is the future of development, or if the trajectory of code review is to review less and less until it\u2019s 0. Would love for y\u2019all to give this a try and hear your thoughts."
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: Alchemize \u2013 Review AI Slop PRs Faster"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "tryalchemize",
+      ".",
+      "com"
+     ],
+     "value": "https://<em>tryalchemize.com</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_robertyhou",
+    "story_49257687",
+    "show_hn"
+   ],
+   "author": "robertyhou",
+   "children": [
+    49272006
+   ],
+   "created_at": "2026-08-11T13:06:48Z",
+   "created_at_i": 1786453608,
+   "num_comments": 0,
+   "objectID": "49257687",
+   "points": 7,
+   "story_id": 49257687,
+   "story_text": "Hey HN, we\u2019re Robert and Sam. We\u2019re building Alchemize, a code review platform that simplifies PRs to help you ship faster.<p>Here\u2019s a demo video: <a href=\"https:&#x2F;&#x2F;www.tella.tv&#x2F;video&#x2F;simplify-pr-reviews-with-alchemize-8wpu\" rel=\"nofollow\">https:&#x2F;&#x2F;www.tella.tv&#x2F;video&#x2F;simplify-pr-reviews-with-alchemiz...</a>\nSample to try: <a href=\"https:&#x2F;&#x2F;app.tryalchemize.com&#x2F;example\">https:&#x2F;&#x2F;app.tryalchemize.com&#x2F;example</a><p>Agentic coding has 10x\u2019d code output. Teams are opening larger PRs more frequently, but the current tools don\u2019t support this new coding paradigm. GitHub still presents files without structure.<p>As engineers reviewing these massive diffs more frequently, we spent hours painstakingly reconstructing where changes began, mapping out data flows, and figuring out where human judgement is actually needed.<p>Instead of adding another bug bot or just summarizing the PR, Alchemize analyzes diffs and pulls in prompting sessions to help reveal the author\u2019s (human and agents) intent. PRs are broken down into smaller, manageable chunks that highlight exactly where the reviewer needs to jump in.<p>After authorizing your GitHub account, Alchemize has a two way sync so that you never have to review an unstructured PR on GitHub again.<p>We\u2019ve been thinking a lot about whether helping human reviewers is the future of development, or if the trajectory of code review is to review less and less until it\u2019s 0. Would love for y\u2019all to give this a try and hear your thoughts.",
+   "title": "Show HN: Alchemize \u2013 Review AI Slop PRs Faster",
+   "updated_at": "2026-08-12T13:32:59Z",
+   "url": "https://tryalchemize.com/"
+  }
+ ],
+ "launch_hits": []
+}

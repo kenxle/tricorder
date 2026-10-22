@@ -1,0 +1,63 @@
+{
+ "domain_query": "zibralabs.ai",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "harkdif"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "zibralabs",
+      ".",
+      "ai"
+     ],
+     "value": "Try it without leaving the terminal:<p>curl &quot;<a href=\"https://zairalabs.ai/guide/api/v1/tools?category=relational-database&amp;selfHostable=true\" rel=\"nofollow\">https://<em>zairalabs.ai</em>/guide/api/v1/tools?category=relational-...</a>&quot;<p>Or add it to your harness via MCP: <a href=\"https://zairalabs.ai/guide/mcp\" rel=\"nofollow\">https://<em>zairalabs.ai</em>/guide/mcp</a>"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: A developer tool guide for AI coding agents (900 tools and counting)"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "zibralabs",
+      ".",
+      "ai"
+     ],
+     "value": "https://<em>zairalabs.ai</em>/guide/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_harkdif",
+    "story_48893913",
+    "show_hn"
+   ],
+   "author": "harkdif",
+   "children": [
+    48893922,
+    48894009,
+    48906588,
+    48964228
+   ],
+   "created_at": "2026-07-13T15:10:07Z",
+   "created_at_i": 1783955407,
+   "num_comments": 3,
+   "objectID": "48893913",
+   "points": 4,
+   "story_id": 48893913,
+   "story_text": "Try it without leaving the terminal:<p>curl &quot;<a href=\"https:&#x2F;&#x2F;zairalabs.ai&#x2F;guide&#x2F;api&#x2F;v1&#x2F;tools?category=relational-database&amp;selfHostable=true\" rel=\"nofollow\">https:&#x2F;&#x2F;zairalabs.ai&#x2F;guide&#x2F;api&#x2F;v1&#x2F;tools?category=relational-...</a>&quot;<p>Or add it to your harness via MCP: <a href=\"https:&#x2F;&#x2F;zairalabs.ai&#x2F;guide&#x2F;mcp\" rel=\"nofollow\">https:&#x2F;&#x2F;zairalabs.ai&#x2F;guide&#x2F;mcp</a>",
+   "title": "Show HN: A developer tool guide for AI coding agents (900 tools and counting)",
+   "updated_at": "2026-07-20T04:03:51Z",
+   "url": "https://zairalabs.ai/guide/"
+  }
+ ],
+ "launch_hits": []
+}

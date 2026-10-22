@@ -1,0 +1,212 @@
+{
+ "domain_query": "trychert.com",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "garygao"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "trychert",
+      ".",
+      "com"
+     ],
+     "value": "Hey HN! We\u2019re Gary and Ian, and we\u2019re building Chert (<a href=\"https://www.trychert.com/\">https://www.<em>trychert.com</em>/</a>), an API for businesses to send, receive, and automate iMessage conversations at scale. Check out our demo: <a href=\"https://www.youtube.com/watch?v=SRdwvVxMMoI\" rel=\"nofollow\">https://www.youtube.com/watch?v=SRdwvVxMMoI</a>.<p>We originally started by building products on top of iMessage because the blue bubble interface, typing indicators, and reactions made agentic conversations feel more human than ones on SMS/RCS. These included a one-shot iMessage agent builder that reached 2,000 users in one week and an automated iMessage outbound sequencer that sent thousands of outbound messages per day.<p>The hard part is that iMessage does not have a native API like SMS/RCS. Sending and receiving iMessages requires a separate infrastructure that is difficult to set up and maintain, especially at scale.<p>As we talked to more companies, we realized that the highest-volume use cases for iMessage were not B2C agents or even sales. They were things like customer service, missed-call text-back, cart abandonment, and inbound lead capture in verticals like home services, DTC brands, and property management that drive the highest volume.<p>Furthermore, these companies often need additional support, such as custom infrastructure setup (e.g. contact card, area code, or local worker sessions), integration support with their existing SMS/RCS or voice agent systems, and a reliable way to scale their volume over time.<p>We built Chert to be an infrastructure layer for businesses to handle iMessage conversations at scale. Businesses can use our API to send and receive iMessages programmatically, route replies to humans or agents, and integrate conversations into the systems they already use.<p>To maintain stability across both outbound and inbound use cases, we built phone line health checks and SMS/RCS fallback systems. We also integrate with existing SMS/RCS systems, voice agents, CRMs such as Salesforce, HubSpot, and Attio, and tools like Slack. Finally, we let businesses reliably scale from a few test lines to hundreds of lines with automated line provisioning and a usage-based pricing structure.<p>We\u2019re working with companies doing conversational messaging in DTC, sports programs, property management, and home services at the scale of hundreds of lines.<p>We\u2019d love to hear your thoughts on this and other similar verticals where iMessage could be useful. All comments welcome!"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Launch HN: Chert (YC P26) \u2013 Twilio for iMessage"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "trychert",
+      ".",
+      "com"
+     ],
+     "value": "https://www.<em>trychert.com</em>"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_garygao",
+    "story_48267829",
+    "launch_hn"
+   ],
+   "author": "garygao",
+   "children": [
+    48267914,
+    48267926,
+    48268098,
+    48268120,
+    48268163,
+    48268263,
+    48268307,
+    48268377,
+    48268378,
+    48268516,
+    48268678,
+    48268681,
+    48268780,
+    48268810,
+    48268970,
+    48268996,
+    48269138,
+    48269355,
+    48269450,
+    48269530,
+    48269694,
+    48269699,
+    48269775,
+    48269798,
+    48269886,
+    48270049,
+    48270188,
+    48270252,
+    48270507,
+    48270749,
+    48270779,
+    48270860,
+    48271013,
+    48271041,
+    48271668,
+    48271874,
+    48272342,
+    48273071,
+    48273187,
+    48273227,
+    48274211,
+    48276491,
+    48278781,
+    48278895,
+    48282249,
+    48282788,
+    48282952,
+    48283936,
+    48287704,
+    48327147
+   ],
+   "created_at": "2026-05-25T15:12:33Z",
+   "created_at_i": 1779721953,
+   "num_comments": 200,
+   "objectID": "48267829",
+   "points": 62,
+   "story_id": 48267829,
+   "story_text": "Hey HN! We\u2019re Gary and Ian, and we\u2019re building Chert (<a href=\"https:&#x2F;&#x2F;www.trychert.com&#x2F;\">https:&#x2F;&#x2F;www.trychert.com&#x2F;</a>), an API for businesses to send, receive, and automate iMessage conversations at scale. Check out our demo: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=SRdwvVxMMoI\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=SRdwvVxMMoI</a>.<p>We originally started by building products on top of iMessage because the blue bubble interface, typing indicators, and reactions made agentic conversations feel more human than ones on SMS&#x2F;RCS. These included a one-shot iMessage agent builder that reached 2,000 users in one week and an automated iMessage outbound sequencer that sent thousands of outbound messages per day.<p>The hard part is that iMessage does not have a native API like SMS&#x2F;RCS. Sending and receiving iMessages requires a separate infrastructure that is difficult to set up and maintain, especially at scale.<p>As we talked to more companies, we realized that the highest-volume use cases for iMessage were not B2C agents or even sales. They were things like customer service, missed-call text-back, cart abandonment, and inbound lead capture in verticals like home services, DTC brands, and property management that drive the highest volume.<p>Furthermore, these companies often need additional support, such as custom infrastructure setup (e.g. contact card, area code, or local worker sessions), integration support with their existing SMS&#x2F;RCS or voice agent systems, and a reliable way to scale their volume over time.<p>We built Chert to be an infrastructure layer for businesses to handle iMessage conversations at scale. Businesses can use our API to send and receive iMessages programmatically, route replies to humans or agents, and integrate conversations into the systems they already use.<p>To maintain stability across both outbound and inbound use cases, we built phone line health checks and SMS&#x2F;RCS fallback systems. We also integrate with existing SMS&#x2F;RCS systems, voice agents, CRMs such as Salesforce, HubSpot, and Attio, and tools like Slack. Finally, we let businesses reliably scale from a few test lines to hundreds of lines with automated line provisioning and a usage-based pricing structure.<p>We\u2019re working with companies doing conversational messaging in DTC, sports programs, property management, and home services at the scale of hundreds of lines.<p>We\u2019d love to hear your thoughts on this and other similar verticals where iMessage could be useful. All comments welcome!",
+   "title": "Launch HN: Chert (YC P26) \u2013 Twilio for iMessage",
+   "updated_at": "2026-07-29T20:35:58Z",
+   "url": "https://www.trychert.com"
+  }
+ ],
+ "launch_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "garygao"
+    },
+    "story_text": {
+     "fullyHighlighted": false,
+     "matchLevel": "partial",
+     "matchedWords": [
+      "hn",
+      "chert"
+     ],
+     "value": "Hey <em>HN</em>! We\u2019re Gary and Ian, and we\u2019re building <em>Chert</em> (<a href=\"https://www.trychert.com/\">https://www.trychert.com/</a>), an API for businesses to send, receive, and automate iMessage conversations at scale. Check out our demo: <a href=\"https://www.youtube.com/watch?v=SRdwvVxMMoI\" rel=\"nofollow\">https://www.youtube.com/watch?v=SRdwvVxMMoI</a>.<p>We originally started by building products on top of iMessage because the blue bubble interface, typing indicators, and reactions made agentic conversations feel more human than ones on SMS/RCS. These included a one-shot iMessage agent builder that reached 2,000 users in one week and an automated iMessage outbound sequencer that sent thousands of outbound messages per day.<p>The hard part is that iMessage does not have a native API like SMS/RCS. Sending and receiving iMessages requires a separate infrastructure that is difficult to set up and maintain, especially at scale.<p>As we talked to more companies, we realized that the highest-volume use cases for iMessage were not B2C agents or even sales. They were things like customer service, missed-call text-back, cart abandonment, and inbound lead capture in verticals like home services, DTC brands, and property management that drive the highest volume.<p>Furthermore, these companies often need additional support, such as custom infrastructure setup (e.g. contact card, area code, or local worker sessions), integration support with their existing SMS/RCS or voice agent systems, and a reliable way to scale their volume over time.<p>We built <em>Chert</em> to be an infrastructure layer for businesses to handle iMessage conversations at scale. Businesses can use our API to send and receive iMessages programmatically, route replies to humans or agents, and integrate conversations into the systems they already use.<p>To maintain stability across both outbound and inbound use cases, we built phone line health checks and SMS/RCS fallback systems. We also integrate with existing SMS/RCS systems, voice agents, CRMs such as Salesforce, HubSpot, and Attio, and tools like Slack. Finally, we let businesses reliably scale from a few test lines to hundreds of lines with automated line provisioning and a usage-based pricing structure.<p>We\u2019re working with companies doing conversational messaging in DTC, sports programs, property management, and home services at the scale of hundreds of lines.<p>We\u2019d love to hear your thoughts on this and other similar verticals where iMessage could be useful. All comments welcome!"
+    },
+    "title": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "launch",
+      "hn",
+      "chert"
+     ],
+     "value": "<em>Launch</em> <em>HN</em>: <em>Chert</em> (YC P26) \u2013 Twilio for iMessage"
+    },
+    "url": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "https://www.trychert.com"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_garygao",
+    "story_48267829",
+    "launch_hn"
+   ],
+   "author": "garygao",
+   "children": [
+    48267914,
+    48267926,
+    48268098,
+    48268120,
+    48268163,
+    48268263,
+    48268307,
+    48268377,
+    48268378,
+    48268516,
+    48268678,
+    48268681,
+    48268780,
+    48268810,
+    48268970,
+    48268996,
+    48269138,
+    48269355,
+    48269450,
+    48269530,
+    48269694,
+    48269699,
+    48269775,
+    48269798,
+    48269886,
+    48270049,
+    48270188,
+    48270252,
+    48270507,
+    48270749,
+    48270779,
+    48270860,
+    48271013,
+    48271041,
+    48271668,
+    48271874,
+    48272342,
+    48273071,
+    48273187,
+    48273227,
+    48274211,
+    48276491,
+    48278781,
+    48278895,
+    48282249,
+    48282788,
+    48282952,
+    48283936,
+    48287704,
+    48327147
+   ],
+   "created_at": "2026-05-25T15:12:33Z",
+   "created_at_i": 1779721953,
+   "num_comments": 200,
+   "objectID": "48267829",
+   "points": 62,
+   "story_id": 48267829,
+   "story_text": "Hey HN! We\u2019re Gary and Ian, and we\u2019re building Chert (<a href=\"https:&#x2F;&#x2F;www.trychert.com&#x2F;\">https:&#x2F;&#x2F;www.trychert.com&#x2F;</a>), an API for businesses to send, receive, and automate iMessage conversations at scale. Check out our demo: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=SRdwvVxMMoI\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=SRdwvVxMMoI</a>.<p>We originally started by building products on top of iMessage because the blue bubble interface, typing indicators, and reactions made agentic conversations feel more human than ones on SMS&#x2F;RCS. These included a one-shot iMessage agent builder that reached 2,000 users in one week and an automated iMessage outbound sequencer that sent thousands of outbound messages per day.<p>The hard part is that iMessage does not have a native API like SMS&#x2F;RCS. Sending and receiving iMessages requires a separate infrastructure that is difficult to set up and maintain, especially at scale.<p>As we talked to more companies, we realized that the highest-volume use cases for iMessage were not B2C agents or even sales. They were things like customer service, missed-call text-back, cart abandonment, and inbound lead capture in verticals like home services, DTC brands, and property management that drive the highest volume.<p>Furthermore, these companies often need additional support, such as custom infrastructure setup (e.g. contact card, area code, or local worker sessions), integration support with their existing SMS&#x2F;RCS or voice agent systems, and a reliable way to scale their volume over time.<p>We built Chert to be an infrastructure layer for businesses to handle iMessage conversations at scale. Businesses can use our API to send and receive iMessages programmatically, route replies to humans or agents, and integrate conversations into the systems they already use.<p>To maintain stability across both outbound and inbound use cases, we built phone line health checks and SMS&#x2F;RCS fallback systems. We also integrate with existing SMS&#x2F;RCS systems, voice agents, CRMs such as Salesforce, HubSpot, and Attio, and tools like Slack. Finally, we let businesses reliably scale from a few test lines to hundreds of lines with automated line provisioning and a usage-based pricing structure.<p>We\u2019re working with companies doing conversational messaging in DTC, sports programs, property management, and home services at the scale of hundreds of lines.<p>We\u2019d love to hear your thoughts on this and other similar verticals where iMessage could be useful. All comments welcome!",
+   "title": "Launch HN: Chert (YC P26) \u2013 Twilio for iMessage",
+   "updated_at": "2026-07-29T20:35:58Z",
+   "url": "https://www.trychert.com"
+  }
+ ]
+}

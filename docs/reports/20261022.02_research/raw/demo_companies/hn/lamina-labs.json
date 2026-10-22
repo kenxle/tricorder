@@ -1,0 +1,55 @@
+{
+ "domain_query": "laminalabs.ai",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "ecballer17"
+    },
+    "story_text": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "We\u2019ve built a LLM fine-tuning SDK that supports Llama 3.1 right now. We\u2019d love your feedback, and are happy to give extra free credits if you try the product and jump on a 15 minute call and provide feedback :)"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "Show HN: LLM fine-tuning SDK and would love your feedback"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "laminalabs",
+      ".",
+      "ai"
+     ],
+     "value": "https://docs.<em>luminolabs.ai</em>/introduction"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_ecballer17",
+    "story_41764286",
+    "show_hn"
+   ],
+   "author": "ecballer17",
+   "children": [
+    41765959
+   ],
+   "created_at": "2024-10-07T09:37:29Z",
+   "created_at_i": 1728293849,
+   "num_comments": 1,
+   "objectID": "41764286",
+   "points": 14,
+   "story_id": 41764286,
+   "story_text": "We\u2019ve built a LLM fine-tuning SDK that supports Llama 3.1 right now. We\u2019d love your feedback, and are happy to give extra free credits if you try the product and jump on a 15 minute call and provide feedback :)",
+   "title": "Show HN: LLM fine-tuning SDK and would love your feedback",
+   "updated_at": "2024-10-07T20:57:36Z",
+   "url": "https://docs.luminolabs.ai/introduction"
+  }
+ ],
+ "launch_hits": []
+}

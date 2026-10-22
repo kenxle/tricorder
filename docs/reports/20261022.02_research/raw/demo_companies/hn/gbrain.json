@@ -1,0 +1,45 @@
+{
+ "domain_query": "gbrain.io",
+ "domain_hits": [
+  {
+   "_highlightResult": {
+    "author": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "jgdodson"
+    },
+    "title": {
+     "matchLevel": "none",
+     "matchedWords": [],
+     "value": "The Path to Paradigm Shift"
+    },
+    "url": {
+     "fullyHighlighted": false,
+     "matchLevel": "full",
+     "matchedWords": [
+      "gbrain",
+      ".",
+      "io"
+     ],
+     "value": "http://<em>brain.io</em>/"
+    }
+   },
+   "_tags": [
+    "story",
+    "author_jgdodson",
+    "story_15857531"
+   ],
+   "author": "jgdodson",
+   "created_at": "2017-12-06T00:32:34Z",
+   "created_at_i": 1512520354,
+   "num_comments": 0,
+   "objectID": "15857531",
+   "points": 2,
+   "story_id": 15857531,
+   "title": "The Path to Paradigm Shift",
+   "updated_at": "2024-09-20T01:43:15Z",
+   "url": "http://brain.io/"
+  }
+ ],
+ "launch_hits": []
+}
