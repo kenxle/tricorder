@@ -19,7 +19,9 @@
 
 Each persona is a problem, not a job title. Say, do and pay are the three layers of evidence, from weakest to strongest. Say is what people write or tell. Do is what they already do about it. Pay is what they spend to solve it. A persona's rating is the highest layer with evidence. What people pay to solve is what goes in the value proposition.
 
-The order is R1's: highest layer first, then the persona with more rows. R1's evidence does not change the order, with two notes. The partner's pay rating is inferred, because both pay rows come from a vendor case study and a third-party roundup, not from the buyers' own posts. The angel's pay rating is first-hand, but what the angel pays for is avoiding diligence. Row numbers point to R1's quotes table. Row counts come from [voc_counts.py](../reports/20261022.02_research/voc_counts.py).
+The personas are ranked by their strongest evidence: pay first, then do, then say. When two personas reach the same layer, the one with more quotes behind it ranks higher. The quotes come from [the voice-of-the-customer research](../reports/20261022.02_research/research_voice_of_customer.md), and a script counts them ([voc_counts.py](../reports/20261022.02_research/voc_counts.py)). A reference such as "row 11" points to that research's quotes table.
+
+Two cautions on the top two. The partner's pay rating is inferred: both pieces of pay evidence come from a vendor case study and a pricing roundup, not from partners' own words. The angel's pay rating is first-hand, but what angels pay for is avoiding diligence, not doing it better.
 
 **User and buyer.** The fund is the buyer: a partner or principal decides and pays. The associate is the user. At some funds the partner is the user too (persona 1, Do). For angels the user and the buyer are the same person. For accelerators the screening staff are the users and the program would be the buyer, with no evidence yet that programs pay.
 
