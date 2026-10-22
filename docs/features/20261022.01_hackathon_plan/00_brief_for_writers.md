@@ -480,3 +480,9 @@ Settled: those two moved from principles to commitments. A three-way split gover
 Added 2026-10-22 at 3:25 PM, Ken's next edit to the principles. He cut "No real company's confidential data" to its first two sentences and marked it "committment". He rewrote the personas principle as "Personas and problems. Focus on solving problems for personas. Engage persona agents to review solutions." He deleted "The data stays with the investor" from the principles.
 
 Settled: principles are now the script principle, no scraping, personas and problems, and defer to the operator. The confidential-data rule is a commitment. Persona agents (synthetic users built from PERSONAS.md) review designs and drafts before Ken does.
+
+Added 2026-10-22 at 3:32 PM, Ken's note on the product brief, after he deleted the commitment "No scan logic before Saturday":
+
+> yo i see in the architecture that you said steering the readout is after saturday and that is dead wrong. we're building all this by saturday
+
+Settled: everything in the product brief and FEATURES.md is built by the end of Saturday's demo. There is no "after Saturday" horizon for product features. Building starts now; the "This week (no scan logic)" rule from the 10:18 AM block is withdrawn. Steering the readout is in the Saturday build. Ken decides what fits; no plan drops a feature on a time estimate. The open question to the organisers (whether code written before Saturday is allowed) stays on Ken's board row; until they answer, Ken has chosen to build now.
