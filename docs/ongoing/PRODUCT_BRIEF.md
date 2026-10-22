@@ -26,7 +26,7 @@ By identifying gaps, highlighting strengths, rigorously showing its work, and ad
 
 ## Who it is for
 
-Investors deciding whether to put money into a startup, starting with venture funds at seed and Series A. Full personas, ranked by evidence, are in [PERSONAS.md](PERSONAS.md).
+Deployers of capital who need to know if they're making the best possible investment. Venture funds at seed and Series A come first. Full personas, ranked by evidence, are in [PERSONAS.md](PERSONAS.md).
 
 - **Buyer and user.** The fund buys: a partner or principal decides and pays. The operator uses it: usually the associate who does the first pass today, and at some funds the partner, since one seed fund writes that its partners run diligence themselves (R1, row 11).
 - **Partner or principal (buyer).** Rated pay, inferred, in R1. Funds already pay for data and for commercial diligence tools (R1, "What they pay for"; R2, Part 1).
