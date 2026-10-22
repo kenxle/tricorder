@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# The Python gate: generated schema files current, then every Python test.
+# Separate from bin/ci-web so a red TypeScript build never blocks a Python merge.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+PY="${PYTHON:-python3}"
+"$PY" -m schema.export --check
+"$PY" -m pytest

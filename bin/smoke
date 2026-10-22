@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Run every scan that exists on one room, then the memo, and say which ran.
+#   bin/smoke data_room/hollis_voice_seed_drop
+set -euo pipefail
+cd "$(dirname "$0")/.."
+PY="${PYTHON:-python3}"
+ROOM="${1:?usage: bin/smoke <room_dir>}"
+SCANS=$("$PY" -c "from scans.base import available; print(' '.join(available()))")
+if [ -z "$SCANS" ]; then
+  echo "no scans yet"
+else
+  for s in $SCANS; do "$PY" -m "scans.$s" "$ROOM"; done
+fi
+"$PY" -m scans.memo "$ROOM"

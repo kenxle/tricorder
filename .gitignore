@@ -2,6 +2,7 @@ docs/reports/seneschal/
 .claude-commit*
 .env
 .env.*
+!.env.example
 reddit_corpus/raw/
 
 data_room/hollis_voice/01_overview/pitch_video.mp4
@@ -15,3 +16,4 @@ out/
 *.egg-info/
 node_modules/
 readout/dist/
+rooms/

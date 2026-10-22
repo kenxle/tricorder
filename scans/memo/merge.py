@@ -1,0 +1,103 @@
+"""Build the readout from whatever scan results exist.
+
+    python -m scans.memo <room_dir>
+
+The merge itself is fixed: load each out/<room>/<scan>.json, run the quote
+checker again, move unverified claims to their own box, and turn each missing
+scan into a gap. Everything after that is a step in STEPS, run in order. A
+step is a module in this package with
+
+    def apply(readout: Readout, room_dir: Path) -> Readout
+
+A step that does not exist yet is skipped, so the readout slices can land in
+any order without editing this file. Every step is a script: verdicts, flags
+and asks never come from a model (FRAMEWORKS.md, "The readout").
+"""
+
+from __future__ import annotations
+
+import importlib
+import json
+from pathlib import Path
+
+from schema.check_quotes import check_result
+from schema.claim import Readout, ScanResult
+from scans import SCANS
+from scans.base import available, gap, now_iso, out_dir, room_name, synthetic_notice
+
+STEPS: tuple[str, ...] = (
+    "link",        # conflicts_with and corroborated_by (ARCHITECTURE, "How the readout merges")
+    "pieces",      # FRAMEWORKS "Piece verdicts"
+    "top_flags",   # FRAMEWORKS "Top green and red flags"
+    "coverage",    # FRAMEWORKS "Checklist coverage"
+    "asks",        # FRAMEWORKS "Ask list"
+    "connecting",  # the one model pass: connecting sentences, each citing claim ids
+)
+
+
+def load_results(room_dir: Path) -> tuple[list[ScanResult], list[str]]:
+    results, missing = [], []
+    folder = out_dir(room_dir)
+    for name in SCANS:
+        path = folder / f"{name}.json"
+        if path.exists():
+            results.append(ScanResult.model_validate_json(path.read_text(encoding="utf-8")))
+        else:
+            missing.append(name)
+    return results, missing
+
+
+def _step(name: str):
+    try:
+        return importlib.import_module(f"scans.memo.{name}")
+    except ModuleNotFoundError as err:
+        if err.name == f"scans.memo.{name}":
+            return None
+        raise
+
+
+def build_readout(room_dir: Path) -> Readout:
+    room_dir = Path(room_dir)
+    results, missing = load_results(room_dir)
+    built = set(available())
+    readout = Readout(room=room_name(room_dir), built_at=now_iso(), synthetic_notice=synthetic_notice(room_dir))
+    for result in results:
+        checked, _ = check_result(result, room_dir)
+        readout.claims += [c for c in checked.claims if c.confidence != "unverified"]
+        readout.unverified += [c for c in checked.claims if c.confidence == "unverified"]
+        readout.gaps += checked.gaps
+        readout.panels += checked.panels
+        readout.scans_run.append(result.scan)
+    for name in missing:
+        why = "the scan did not run on this room" if name in built else "the scan is not built yet"
+        readout.gaps.append(gap(f"Not in the room: the {name} scan's results", why, f"python -m scans.{name} {room_dir}"))
+    readout.scans_missing = missing
+    for name in STEPS:
+        module = _step(name)
+        if module is not None:
+            readout = module.apply(readout, room_dir)
+    return readout
+
+
+def write_readout(readout: Readout, room_dir: Path) -> Path:
+    target = out_dir(room_dir) / "readout.json"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(readout.model_dump_json(indent=2) + "\n", encoding="utf-8")
+    return target
+
+
+def main(argv: list[str]) -> int:
+    if len(argv) != 1 or not Path(argv[0]).is_dir():
+        print("usage: python -m scans.memo <room_dir>")
+        return 2
+    readout = build_readout(Path(argv[0]))
+    target = write_readout(readout, Path(argv[0]))
+    print(json.dumps({
+        "readout": str(target),
+        "claims": len(readout.claims),
+        "unverified": len(readout.unverified),
+        "gaps": len(readout.gaps),
+        "scans_run": readout.scans_run,
+        "scans_missing": readout.scans_missing,
+    }, indent=2))
+    return 0
