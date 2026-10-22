@@ -72,6 +72,7 @@ Three of the day's blocks are writing rules with nothing to build: the 1:21 PM b
 | Each reader gets their own steerable copy of the memo, and can try what-if changes on the model, marked as scenarios | 2:01 PM | [reader-scenarios](#reader-scenarios) | After |
 | A blind room and a clean room against "rigged" | overview page card, "The blind room" | [blind-room](#blind-room), [demo-freeze](#demo-freeze) | This week, then Saturday |
 | Multiplayer: several people build one readout and split the work (uncertain) | 2:05 PM | [multiplayer](#multiplayer) | After |
+| Deck revenue against the P&L, and decks that show only part of the history | 2:19 PM | [deck-vs-books](#deck-vs-books) | After |
 
 ## The one workflow we demo
 
@@ -1072,6 +1073,24 @@ Low priority: Ken is not sure Tricorder can take this on. Reference calls are ro
 **Who:** agent.
 
 **Judgment:** yes.
+
+### deck-vs-books
+
+The associate's rule, as a feature: "If revenue in the deck doesn’t match the P&L, or you show only part of your history, everything else becomes questionable." ([associate at a seed-focused fund, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal); [writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:19 PM block). Saturday's red-flag engine already compares the deck's claims with the model's named cells (`deck_claim_vs_named_cell` in [FRAMEWORKS.md](FRAMEWORKS.md)). This slice adds the two halves of her rule that it does not cover.
+
+**Waits on:** [redflag-engine](#redflag-engine) merged.
+
+**Includes:**
+
+- **Deck revenue against the P&L, period by period.** Every revenue figure the deck shows (a total, a chart's bars, a growth rate) is matched to the same period in the monthly P&L and the revenue rows, by script. A mismatch above the match tolerance is a disagreement claim with both sources.
+- **Partial history.** A script finds the first month revenue appears in the books and compares it with the window the deck shows. A deck chart that starts later than the books, skips months, or shows quarters where the books hold months is flagged as "shows part of the history", with the months left out and what they hold (for example a dip, or a period of flat revenue).
+- Both feed the traction and revenue piece and the pitch itself, and missing months the books do not hold go on the ask list.
+
+**Done when:** on the Hollis Voice room, every deck revenue figure is matched to a P&L period or listed as unmatched; a test deck whose chart starts six months after the first revenue month is flagged with the months it leaves out; and the quote checker passes on every claim.
+
+**Who:** agent.
+
+**Judgment:** no.
 
 ### accounting-mislabels
 

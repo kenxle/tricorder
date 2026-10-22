@@ -308,3 +308,9 @@ Added 2026-10-22 at 2:05 PM, as comments on angels borrowing a lead's diligence 
 > another share the work example
 
 Settled: a `multiplayer` slice on the roadmap, marked uncertain. Several people (a lead, teammates, co-investors the lead invites) build one readout at once and split the checklist; each person's work carries their name. Before building it, an online check of how syndicate leads and angel groups split diligence today decides whether it goes ahead.
+
+Added 2026-10-22 at 2:19 PM, on the associate's quote "If revenue in the deck doesn’t match the P&L, or you show only part of your history, everything else becomes questionable.":
+
+> this becomes a roadmap feature
+
+Settled: the `deck-vs-books` slice checks deck revenue against the P&L period by period, and flags a deck that shows only part of the company's history (a chart that starts after the first revenue month, skips months, or hides a dip).
