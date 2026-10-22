@@ -236,3 +236,9 @@ Added 2026-10-22 at 1:33 PM, as a comment on faked documents in the voice-of-the
 > we can't identify faked books, but we can identify differences in reporting
 
 Settled: no document claims Tricorder detects fraud or fake books. It finds differences in reporting between files and against the outside world, and shows each one. A fake that is consistent across every file gets through; say so where it matters (What it is not, the pitch's answer to "can it catch fraud").
+
+Added 2026-10-22 at 1:34 PM, as a comment on "Ken's interviews need to get that number":
+
+> we're only doing online research
+
+Settled, and it replaces the interviews: there are no interviews before Saturday. Every place that says "the interviews should ask", "Ken's interviews", or waits on interviews changes to online research. The gaps the interviews were meant to fill become a fifth research track, `research_gaps.md`, done online: how long a first-pass memo takes and which part is slowest, whether angels would pay for a first pass of their own and what it is worth per deal, how data rooms reach investors and what they open first, regret stories about hidden churn and about burn against the hiring plan, and what funds pay for first-pass diligence in their own words. The interview sheet is retired. The board row for interviews closes with that reason.
