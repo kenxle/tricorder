@@ -1,0 +1,194 @@
+SOURCE: https://handbook.opencoreventures.com/cap-table-concerns
+
+Fundraising Process | Startup Manual | OCV Handbook 
+
+ GitBook Assistant
+
+ I'm here to help you with the docs.
+
+ What is this page about? What should I read next? Can you give an example? 
+
+ ⌘ Ctrl i 
+
+ AI Based on your context 
+ Send 
+
+ Startup Manual 
+
+ Fundamentals 
+ Buyer-Based Open Core 
+ Licensing & Distribution 
+ OSS Community 
+
+ Launch 
+ Brand 
+ Announcements 
+
+ GTM 
+ Product 
+ Pricing 
+ Growth 
+ Sales 
+
+ Fundraising 
+ Fundraising Process 
+ Investor Management 
+ Pitch Deck 
+ Raising SAFEs 
+
+ Powered by GitBook 
+
+ On this page 
+
+ For the complete documentation index, see llms.txt . This page is also available as Markdown .
+ Fundraising is a full-time job that should be executed with intentionality and intensity. Fundraising can take months, with the possibility of 100+ meetings. OCV helps founders prepare fundraising materials and facilitates investor introductions. Company growth is the single most important determinant for how successful you will be at fundraising.
+
+ Typically, companies fundraise when the founding team is in place and there’s exciting growth. At this time, fundraising becomes the CEO's full-time job. For most companies, the fundraising process will start around 9-12 months after incorporation, depending on the company’s burn rate. Companies with high monthly burn rates may need to start the fundraising process within their first year. 
+
+ Soon after company formation, OCV will work with you to craft your Building Blocks . Your building blocks will eventually become the foundation of your fundraising materials. Your fundraising story is essentially a version of the same story you tell yourself, potential hires, and customers—each version is built on the same building blocks.
+
+ Fundraising process 
+ We recommend aiming for a 7-week fundraising process and sticking to the recommended timeline. Momentum is key— don't let the process stall out. Plan to iterate often and quickly on your pitch deck in the first couple of weeks. 
+
+ Create a pitch deck and build an investor CRM
+
+ Pitch practice with the OCV team
+
+ Ask for intros to investors 
+
+ Schedule investor meetings 
+
+ Pitch investors
+
+ Example timeline 
+ Week 1: Review pitch with OCV and iterate
+
+ Week 2: Review pitch with Friendly investors and iterate
+
+ Week 3: First calls: may not be with a General Partner at a venture firm
+
+ Week 4: Second calls: with a General Partner, cut a few firms if too many 
+
+ Week 5: Third calls: with the General Partner again, cut a few firms if too many
+
+ Week 6: Full partner meetings (these are usually scheduled for Monday mornings)
+
+ Week 7: Full partner meetings and term sheets due Tuesday, noon Pacific
+
+ Scheduling investor meetings 
+ Start contacting potential investors about 3 weeks before you plan to have meetings. Schedule all of your meetings within a 2-week block. Meet with “friendly” investors in the first week and all other investors the following week. Typically, only CEOs attend investor meetings at the Seed stage. CTOs continue to work on the business. 
+
+ Always use DocSend when sending decks so you have full visibility into who is accessing the deck. Ask referral contacts to disclose which investors they are sending the deck to. Don’t attach decks to emails. We do not recommend sending decks without a meeting scheduled. It’s ok to send a deck 24 hours ahead of a scheduled meeting. There may be exceptional circumstances where you should send a deck without a meeting scheduled. Discuss specific situations during office hours.
+
+ OCV will introduce founders to investors in our network. When requesting an introduction, include a self-contained email that the recipient can forward directly. Send a separate email for each request. For example, if you ask for 5 introductions, send 5 draft messages.
+
+ Request for investor introduction 
+
+ Email Template 
+ [OCV Partner Name],
+
+ Thanks again for offering to introduce me to [Name of Investor].
+
+ Hi [Investor Name],
+
+ I’m kicking off [Company’s] Seed round and starting early conversations with a small group of investors.
+
+ [Company] is [two-sentence description]. We recently…include any relevant recent traction (customers, ARR). Include one sentence about yourself.
+
+ I’d love to share more about our traction, where we’re heading, and why now is the moment.
+
+ Would you be open to a quick intro call next week?
+
+ Best,
+
+ [Your Name]
+
+ Due diligence call requests 
+ OCV's GPs are available for a due diligence call if required by the lead Seed investor. As this is expected to be the final step before extending a term sheet, the number of GP call requests should not exceed 2-3 firms for each OCV company. We look to OCV CEOs to manage this expectation with potential investors who request GP calls.
+
+ To schedule a GP due diligence call, CEOs can make an introduction via email (copy the GP's PA for calendaring if applicable) and OCV’s COO for visibility.
+
+ Term sheet negotiation 
+ If investors are interested after due diligence, they present a term sheet outlining the investment terms, such as the amount of investment, equity stake, valuation, and any additional conditions. Upon agreeing to the terms outlined in the term sheet, legal documents, like the investment agreement and shareholders' agreement, are prepared and reviewed by both parties. The company’s Legal Team will review and redline deal documents.
+
+ CapTable concerns 
+ OCV companies face three primary cap table concerns:
+
+ Founder's ownership stake 
+
+ Seed round options pool 
+
+ Investor concentration 
+
+ Companies may lose potential investor interest because of CapTable concerns. We recognize this as a headwind. Founders should focus on growing fast to overcome cap table objections from future investors.
+
+ Founder's ownership stake 
+ Under OCV’s operating model, founders would receive lower equity ownership percentages compared to traditional ways of founding a startup with two co-founders. Lower founder ownership is a valid concern for future investors. It tends to be a more pronounced concern in early rounds and less so in late stages.
+
+ Seed round options pool 
+ One investor concern is the need for a larger options pool in the future to grant refreshes to the founders. Typically, founders do not participate in refresh grants. This is counterintuitive but common in the market.
+
+ For our model (high risk for OCV) to work, OCV needs high ownership. We won’t do a recapitalization. At the Seed round, the option pool typically will be 15%, slightly higher than the industry norm of 10%. This provides flexibility in equity grants. The company’s board will determine the allocation of the options pool, including any refresh grants to founders. OCV’s initial SAFE investment contains a side letter that requires OCV’s prior written consent for any promises of equity awards to officers and employees in the Seed term sheet.
+
+ Investor concentration 
+ New investors may see concentrated ownership by one investor as not having a diverse set of advice, opinions, and industry contacts.
+
+ The ideal scenario is for new investors to lead and participate in the Seed round to reduce OCV’s ownership percentage. In general, OCV is open to investing in or co-leading the Seed round only to support our companies. CEOs should feel free to leverage this if we commit, but still try to find new investors to reduce investor concentration.
+
+ Dilution 
+ Dilution is the reduction in ownership percentage that occurs when a company issues new shares, typically to raise additional capital. The initial funding from OCV is in the form of a SAFE , which converts into preferred shares as part of the Seed round. This results in additional dilution along with the sale of new Seed shares. The magnitude of founder dilution depends on how much new money is raised, the valuation for the round, the size of the options pool, and any new grants issued from the options pool.
+
+ Example scenario 
+
+ If founder ownership % pre-Seed is 15%, and we assume the Seed round terms are:
+
+ $4M new money + $2M SAFE conversion
+
+ $20M pre-money valuation
+
+ 15% options pool (3% new options granted to the founder)
+
+ Founder ownership % post-Seed is ~12.3%
+
+ Closing the deal 
+ Once all legal and financial details are settled, the investment is finalized, and funds are transferred to the startup's bank account. The new financing round will become public information after filing Form D . Companies should coordinate Form D timing with any planned public announcements/press releases.
+
+ Form D filing 
+ After closing the round, file Form D with the SEC to be received by 30 calendar days after the securities in the offering are closed. Form D is an acknowledgement of exemption from Regulation D, which is typical for venture-backed companies . The legal team will request:
+
+ Form ID Application (for SEC EDGAR Codes) review
+
+ CEO to sign (wet-ink) Power of Attorney
+
+ Wind down decision 
+ In some cases, winding down a company is the best option. The primary reason OCV may recommend winding down is that the company is unlikely to fundraise successfully within the expected timeframe. In rare, exceptional, and justifiable cases, OCV may provide additional capital to extend the runway in a new SAFE instead of winding down.
+
+ OCV will initiate wind-down conversations with founders and begin the company wind-down process in the following situations:
+
+ A company is struggling to show commercial traction by the 6-month mark
+
+ A company is unable to raise a Seed round, and its runway is <6 months
+
+ We don’t wait until a company has completely run out of money to wind down because the wind-down process has associated costs. In certain situations, founders may wish to continue their fundraising efforts after OCV recommends winding down the business. In these cases, to better align incentives and improve the probability of success for this strategy, OCV will work with founders to reduce their cash compensation to extend the runway.
+
+ Previous Federal Sales 
+ Next Investor Management 
+
+ Last updated 7 months ago 
+ Was this helpful?
+
+ Fundraising process 
+ Scheduling investor meetings 
+ Request for investor introduction 
+ Due diligence call requests 
+ Term sheet negotiation 
+ CapTable concerns 
+ Founder's ownership stake 
+ Seed round options pool 
+ Investor concentration 
+ Dilution 
+ Closing the deal 
+ Form D filing 
+ Wind down decision 
+
+ Was this helpful?

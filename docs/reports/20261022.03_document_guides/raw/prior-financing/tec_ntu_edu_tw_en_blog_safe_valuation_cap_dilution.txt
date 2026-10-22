@@ -1,0 +1,139 @@
+SOURCE: https://tec.ntu.edu.tw/en/blog/safe-valuation-cap-dilution
+
+SAFEs Are Fast, But Not Always Simple: Valuation Cap, Discount, and Founder Dilution | NTU TEC 
+ 跳至主要內容 / Skip to main content Follow 
+
+ 頁面載入中 
+
+ Turning company documents, equity ownership, and investment due-diligence risk into a structure a founder can actually check. On this page ( 6 ) The three mechanisms that decide dilution: cap, discount, post-money 
+ Why looking one at a time goes wrong: the stacking trap of multiple SAFEs 
+ Run scenarios before signing, not just one number 
+ The takeaway 
+ Further reading 
+ Sources 
+ Before you read : This is general educational information and practical orientation, not legal, accounting, tax, securities, or investment advice; it makes no promise of a successful raise or a possible exit. The valuations, caps, and discounts in this article are illustrative — they exist to explain the mechanics, not to quote market terms.
+
+ The actual terms and tax consequences of SAFEs, convertible instruments, and offshore structures vary by case and should be confirmed by a professional who knows startup transactions.
+
+ The most seductive and the most dangerous thing about a SAFE is the same thing: it lets you take the money today and push the hardest question — what is the company worth — to the next round. But deferring is not the same as removing. That price comes back to find you later, with interest, through a single conversion formula.
+
+ A SAFE (Simple Agreement for Future Equity) is an agreement that swaps cash for future equity: the investor gives money today, and when the company later hits a priced equity round, a sale, or another agreed event, that money converts into shares on terms set in advance. It became popular because early companies are often stuck in an awkward spot — they need capital, but they do not yet have the revenue, customers, or growth data to support a formal valuation.
+
+ Negotiating a valuation, the two sides easily deadlock on "you think it's worth NT$50 million, I think NT$20 million," and months evaporate. A SAFE routes around that wall: skip the argument over what the company is worth, get the money in, and let the next round of professional investors set the price for everyone. Short document, few terms, quick signature — for a founder short on time, that is a real benefit.
+
+ The problem hides inside that speed. Not deciding the valuation today does not mean dilution did not happen today; it only got written into a formula that executes at the next round.
+
+ A founder who feels only "fast to sign, short to read" — without putting each SAFE into the cap table in real time to project how many shares it will convert into — will systematically underestimate how much they are about to be diluted, and often discovers, the moment it is all laid out at the next round, that they gave away more than they thought.
+
+ What this article does is lay that deferred bill out in advance: first the three mechanisms that decide dilution, then a de-identified worked example, and finally a pre-signing checklist.
+
+ The three mechanisms that decide dilution: cap, discount, post-money
+
+ A Taiwan grounding note first : this whole article uses the US-style SAFE (Y Combinator's pre-/post-money versions) as the spine for explaining mechanics — but a domestic Taiwan company under the Company Act (公司法) has, in principle, no container that maps directly onto a US-style SAFE. A regular company limited by shares or a close company cannot simply "sign a US SAFE as is" under current law.
+
+ In practice, a Taiwan team that wants to use a SAFE typically issues through an offshore parent structure (a Cayman or US company, for instance) at the offshore level, or substitutes an instrument with clearer legal grounding at the local level, such as a convertible bond (可轉換公司債). The two paths are handled very differently under the Company Act, foreign-exchange rules, and tax.
+
+ The cap, discount, and post-money concepts below are the universal language for understanding how the mechanics work and where dilution comes from — but which container your specific case should use, which level to issue at, and how the tax falls all vary by case. Confirm with a professional who knows cross-border startup deals before you sign; do not take a US SAFE template and sign it outright.
+
+ What actually decides how many shares a SAFE will convert into are three design choices: the valuation cap, the discount, and whether it is a pre-money or post-money structure. Understanding these three matters more than memorizing any formula.
+
+ The valuation cap is the highest valuation a SAFE investor can apply when their shares convert — it locks a ceiling in for the early investor, so no matter how high the next round values the company, this SAFE converts at a valuation no greater than the cap. The reasoning is fair: the early investor took the earliest, most uncertain risk, and the cap ensures that if the company succeeds spectacularly, they are not diluted by a sky-high valuation down to almost no return.
+
+ The discount is a second protection: it lets the SAFE investor convert at a price below the next round's investors, commonly 20 percent off. Both answer the same question — why should someone who came in early get a better price than someone who came in late.
+
+ The key point is that when a single SAFE carries both a cap and a discount, the conversion usually runs each calculation once, and the investor takes whichever gives the lower price per share and therefore more shares. This is not greed but market convention: in exchange for taking the earlier risk, the early investor gets the more favorable of the two mechanisms at the next round. Which one governs depends on how high the next round prices.
+
+ Two scenarios make it clearest — the numbers below are illustrative, only to show which mechanism takes over:
+
+ Next-round scenario Valuation cap Discount Cap-method conversion Discount-method conversion Take the lower → governs 
+ Valuation shoots up: Series A at NT$30M NT$6M 20% Convert at NT$6M valuation = 600 ÷ 3,000 = 0.2× the round's price per share (one-fifth of market) Convert at 20% off = 0.8× the round's price Cap governs (0.2× < 0.8×: lower price, more shares) 
+ Ordinary valuation: Series A at NT$8M NT$10M 20% Convert at NT$10M valuation = 1,000 ÷ 800 = 1.25× the round's price (more expensive than the round — effectively useless) Convert at 20% off = 0.8× the round's price Discount governs (0.8× < 1.25×) 
+
+ Both methods first convert into a "multiple relative to the priced round's price per share," then take the lower multiple — the one where the same money buys more shares. In the first row, the next round's valuation (NT$30M) sits far above the cap (NT$6M), and the cap ceiling crushes the conversion valuation down hard: by the cap method the conversion price is only 600 ÷ 3,000 = 0.2× the round's price per share (one-fifth of market), while the discount method gives 0.8×.
+
+ Take the lower (0.2× < 0.8×), and the cap takes over — which matches the line "entering at one-fifth is far better than 20 percent off." The second row is the opposite: the next round is valued at only NT$8M, never even touching the cap (NT$10M), so the cap is moot, and what is actually protecting the investor and deciding your dilution is that 20 percent discount.
+
+ And a 20 percent discount sounds small but is not small in share terms — buying at 80 percent of the price, the same money buys about 25 percent more shares (1 ÷ 0.8 ≈ 1.25). That is why a founder cannot negotiate the cap alone: when you judge that the next round will not price far above the cap, the thing actually doing the work is often the discount you assumed "barely matters."
+
+ The third mechanism is whether it is pre-money or post-money, and the difference is about who absorbs the later dilution. Simplifying: a pre-money SAFE's final percentage is affected by other SAFEs, the option pool (the equity a company reserves for future employees), and the next round's terms that come after it, so at signing it is hard to know precisely where it will land.
+
+ A post-money SAFE states more clearly "what percentage this SAFE owns after signing" — the investor and the founder can more easily estimate, at the moment of signing, how much of the company this one SAFE sold. First, untangle an easy point of confusion: "post-money" here specifically means the post-money SAFE that Y Combinator revised in 2018, whose core design is to "count later SAFEs in the denominator."
+
+ It is a different concept from the pre-money/post-money in the option-pool discussion (which means "whether the pool expansion is counted before or after the valuation") — the name is identical but it refers to a different thing, so do not map one onto the other.
+
+ Back to the SAFE: clarity is not free — a post-money SAFE typically keeps existing SAFE investors' percentages from being diluted the same way when you later sign new SAFEs, so the new dilution lands more visibly on the founder and common-stock side. In other words, a post-money SAFE gives certainty to the investor and concentrates later dilution onto you.
+
+ Why looking one at a time goes wrong: the stacking trap of multiple SAFEs
+
+ A single SAFE almost always looks reasonable; what actually hurts a founder is several individually reasonable SAFEs added together.
+
+ Picture a de-identified situation: a team, right after launching its product and riding high on morale, signs three SAFEs in a row while people are willing to invest. Each amount is small, and the founder feels it saved a lot of negotiating time versus a formal equity round, so they just record three receipts and their separate terms in a spreadsheet — without putting them into a single fully-diluted cap table to calculate together.
+
+ A fully-diluted cap table is the cap table you get after assuming every equity instrument that could ever convert or be exercised — SAFEs, convertible debt, the option pool — has already converted into shares, and then looking at everyone's percentage. It forces you to see things through the "worst-case equity structure," not soothe yourself with "today's nominal holdings."
+
+ A year later the team prepares for an equity round, and the first thing the new investor asks for is the converted cap table. Only then does the founder put the three SAFEs together — and discovers several things they had not anticipated. First, the three SAFEs do not exist independently; they all convert at the same trigger (the next round's pricing) at once, so the dilution stacks in one hit rather than arriving gently in three stages.
+
+ Second, two of them, because their valuation caps were set lower at the time, convert into more shares than the founder's intuition once the company's valuation rises — the lower the cap, the better for the investor and the more dilution for the founder.
+
+ Trying to renegotiate at that point is not just technically hard (the terms are already signed); it also makes the new round's investors put a question mark over the team's financial discipline: if you cannot even keep your own cap table straight, can the next round's money be trusted to you? No one did any single thing wrong here; what is wrong is the habit of "looking one at a time" itself.
+
+ That is why one operating discipline is worth treating as an iron rule: every time you sign a SAFE, update the fully-diluted cap table in the same motion. Not settling the whole account once before Series A — by then it is usually too late, the chips are already out. The value of updating in real time is that before you sign "the next one," you already see how much of you is left once it stacks on, instead of patching a mismatched account afterward.
+
+ To read a cap table more completely and know which cells investors actually examine, read next How to Read a Cap Table, and Why Investors Care .
+
+ Run scenarios before signing, not just one number
+
+ Before signing any SAFE, the most valuable thing to do is not memorize the formula but build a scenario table — not to compute one "correct answer," but so that under each possible future you know who gets how much and how diluted you are.
+
+ In practice, model at least the following futures, and for each one ask "why would this scenario change my decision" rather than just filling in the cells:
+
+ Sign only this one : estimate roughly what percentage this SAFE converts into. This is the baseline — you have not even confirmed whether the single deal is reasonable, let alone the stacking that follows.
+ Sign two more : compute the total dilution after multiple SAFEs convert at once. As above, the danger of multiples is "each reasonable, together out of control," and this cell is where you see that loss of control in advance.
+ Next round prices higher (upside case) : see whether the cap hands the early investor a steep discount. When the company does well, the cap is actually the mechanism that dilutes you the most — the price of the early risk-reward trade, to be acknowledged up front, not complained about after.
+ Next round prices ordinarily (base case) : see whether the discount becomes the main mechanism. This is the NT$8M scenario above — the cap is untouched and the discount is what is working, a reminder not to fixate on the cap alone.
+ Next round does not happen on schedule (downside case) : go back to the SAFE document itself and see how a future conversion, sale, or dissolution is each handled. A SAFE is not debt — there is no maturity date for repayment — but the path of "what if the next round never comes" must still be read in advance.
+ Add the option pool : count the equity reserved for future hiring too, and see what each party has left. A common error: the next round's investor asks to expand the option pool first (and usually counts it on your pre-money side), and the founder only discovers at the last minute that the equity room is already too tight.
+
+ Lay all these scenarios on the table at once and one thing stands out: across base, upside, and downside, the "main mechanism diluting you" is not even the same one. When the company does well it is the cap; when it is ordinary it is the discount; when no next round emerges it is the clauses in the document you normally never read closely. Signing while looking at only one of these is betting on only one future.
+
+ While we are at it, clear up three very common misunderstandings that lead people to sign the wrong way. The first is treating a SAFE as "not shares yet, so it does not go on the cap table" — it has indeed not converted today, but it will certainly affect ownership later, and treating it as thin air is turning a blind eye to your own dilution.
+
+ The second is assuming a SAFE is "definitely" more founder-friendly: a SAFE does avoid the interest and repayment pressure of ordinary debt (genuinely attractive for an early company), but the valuation cap, discount, and post-money structure still bring the dilution back. Friendly or not depends on the terms and the total amount, not the tool's name.
+
+ The third is judging only whether a single SAFE's terms are good while ignoring that if multiple SAFEs carry different caps, discounts, MFN clauses (most-favored-nation terms, which automatically grant one investor any better terms given to others), side letters, or information rights, the next round's investor faces noticeably higher cost and friction in sorting out the converted equity — which in turn affects how they see you.
+
+ Finally, remember: a SAFE shortens the negotiation time of the priced round, not the due diligence. A shorter document does not mean the investor skips basic judgment — whether the company genuinely exists, whether the founder can explain their own numbers and risks, whether the product and customer signals are credible, whether the cap table holds together, whether there are obvious landmines in the IP or major contracts — these usually still get examined.
+
+ Trust can accelerate, but it is not skipped on the strength of one short document.
+
+ The takeaway
+
+ If this article leaves you with one sentence: a SAFE defers "what the company is worth," but it does not defer "how much you will be diluted" — that account keeps accumulating and is only settled at the next round.
+
+ So the habit to build is not memorizing the cap and discount formulas (those should be left to a professional or a cap-table tool to compute) but updating a fully-diluted cap table every time you sign one, and running all three futures — base, upside, downside — before you sign, confirming what you and the team pool have left in the worst case.
+
+ And do not treat a SAFE as a loan receipt you can toss in a drawer and forget — it is not debt, nor an ordinary record of money received; it is part of your future equity, and every one you sign today is deciding the future you's say in the company.
+
+ The specific terms, cap level, structural choice, and tax consequences vary by case; what this article gives is the order in which to look at things, and before formally signing you should still have a professional who knows startup transactions confirm it for your specific situation. To understand how terms read once you are in a priced round, head to Which Term Sheet Clauses Should an Angel Investor Watch? .
+
+ Further reading
+
+ Learning Path for Startup Founders 
+ Company & Equity Basics 
+ How to Read a Cap Table, and Why Investors Care 
+ Which Term Sheet Clauses Should an Angel Investor Watch? 
+
+ Sources
+
+ Company Act (Laws & Regulations Database, Republic of China / Taiwan) 
+
+ This article cites external material for general educational reference; the Company Act and tax rules apply case by case, and formal decisions should be confirmed with a Taiwan-qualified professional.
+
+ Professional-review note
+ This article covers general educational information on legal, accounting, tax, equity, or investment topics and is not advice for any specific case. Before acting, consult a Taiwan-qualified lawyer, accountant, or relevant professional.
+
+ Sources
+ Company Act (Laws & Regulations Database, Republic of China / Taiwan) — Laws & Regulations Database, Ministry of Justice 
+
+ 分享文章
+ Threads X LINE Facebook LinkedIn Instagram 更多 複製連結

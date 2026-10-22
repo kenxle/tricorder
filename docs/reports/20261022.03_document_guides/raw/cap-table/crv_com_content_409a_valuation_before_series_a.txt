@@ -1,0 +1,105 @@
+SOURCE: https://crv.com/content/409a-valuation-before-series-a
+
+CRV | 409A Valuation: Why You Need One Before Series A 
+ You're about to make your first hire, and they're expecting stock options. Before you can grant a single share, you need a 409A valuation, an independent appraisal that sets the fair market value of your common stock and determines the strike price your employees will pay to exercise their options.
+ Get it wrong and you're not just facing a compliance headache; you're handing the IRS a reason to tax your employees on equity they haven't sold yet. This guide covers what triggers a 409A, how the process works and where founders typically stumble before their Series A.
+ What Is a 409A Valuation?
+ A qualified third party conducts a 409A valuation, an independent appraisal that sets the fair market value (FMV) of your private company's common stock under Internal Revenue Code Section 409A. It sets the minimum exercise price (strike price) that employees must pay to purchase their stock options. You must price every option granted at or above the FMV from your most recent valid 409A, and an old number or founder estimate will not provide safe harbor protection.
+ Difference between a 409A valuation and fundraising valuation
+ The concept that trips up most first-time founders is the difference between their 409A valuation and their fundraising valuation. Your fundraising valuation reflects what investors pay for preferred stock, which comes with liquidation preferences, anti-dilution protection and other rights that make it structurally more valuable. A 409A values only the common stock, which sits behind preferred in the payout order. That gap is real and intentional. Private companies cannot set their own stock price because a self-determined price carries no safe harbor protection, and the penalties for getting it wrong fall directly on your employees.
+ Why the 409A Was Created and What's at Stake
+ Congress enacted Section 409A in October 2004 as part of the American Jobs Creation Act . The legislation responded to high-profile corporate scandals of the early 2000s where executives manipulated deferred compensation to shield income from taxes. The law took effect January 1, 2005, and the Treasury issued final regulations in April 2007. 
+ Stock options avoid 409A's harshest rules only when the exercise price equals or exceeds fair market value on the grant date. If you issue options below FMV, the tax code treats the entire spread as deferred compensation and triggers the penalties.
+ The penalties are severe, and they fall on your employees, not your company. The tax code assesses additional taxes against the employee/service provider, not the employer/service recipient according to the audit technique guide , including income inclusion when amounts are no longer subject to a substantial risk of forfeiture, a 20 percent additional tax and interest-charge rules .
+
+A valid independent 409A creates safe harbor protection and flips the burden of proof. With safe harbor, a challenge requires showing your valuation is grossly unreasonable , a high bar compared to what you face without one.
+ When Do You Need a 409A Valuation?
+ The timing triggers for a 409A follow a predictable sequence, and understanding them upfront helps you avoid compliance crises later. Most founders hit the first trigger sooner than they expect.
+ Before You Issue Your First Stock Option Grant
+ You generally need a contemporaneous fair market value determination before granting stock options if you want Section 409A safe harbor protection, but this does not always have to be a formal third‑party 409A valuation; other safe harbor valuation methods may also qualify. If you incorporate in January and plan to grant founder options in February, the 409A needs to be completed in January.
+ Many companies complete their first 409A around their initial financing event, whether that's a convertible note, Simple Agreement for Future Equity (SAFE) or priced equity round, because that event often provides the first meaningful, external price signal.
+ After a New Funding Round or Material Event
+ Most companies treat a financing round as a material event, so you should assume you will need to refresh your 409A promptly after closing. For example, a company that finishes a 409A valuation in January, raises a seed round in April and keeps granting options using the January valuation through the rest of the year can create a serious compliance risk.
+ Beyond funding rounds, other events can trigger a refresh: receiving acquisition interest, signing a large customer, launching a major product or making key leadership hires. Any event that would reasonably and materially affect your company's FMV means your current 409A may no longer hold.
+ The 12-Month Renewal Rule and When to Refresh Sooner
+ Most companies treat a 409A valuation as current for up to 12 months unless an intervening event materially affects value. A 12-month window supports certain presumptions of reasonableness absent material changes, and option grants made off a stale valuation can create immediate compliance exposure.
+ During active growth phases, multiple valuations often work better than assuming a single annual refresh will cover you. If your current valuation approaches the 12-month mark and you plan a hiring wave, an early refresh helps you avoid waiting on a new report while a candidate waits for their offer.
+ How the 409A Valuation Process Works
+ Every 409A valuation follows three steps:
+ Determine the enterprise value of the company
+ Allocate that value across different share classes to find common stock FMV
+ Apply a discount for the illiquid nature of private company stock.
+ You don't need to perform this analysis yourself, but understanding the methodology helps you provide better inputs and explain to employees why their strike price is what it is.
+ Enterprise Value, Equity Allocation and Liquidity Discount
+ Valuation firms typically determine enterprise value using one of three accepted approaches, each suited to different company stages:
+ Market approach: Firms compare your company to similar public companies or recent transactions. This is the most common method for seed stage startups that have recently raised a round.
+ Income approach: This method projects future cash flows and discounts them to present value, and it rarely applies at seed stage when you cannot credibly forecast revenue.
+ Asset approach: Firms value the company based on net assets minus liabilities and use this method least often, mostly for businesses without funding or revenue.
+ Most seed stage companies end up relying on the market approach because a recent round provides a clear external data point.
+ Once the firm establishes enterprise value, it allocates value to common stock using methods like the Option Pricing Method (OPM), which treats different stock classes like call options on the enterprise and recognizes that common stock only has value once exit proceeds exceed all liquidation preferences owed to preferred stockholders.
+ Why Common Stock Is Almost Always Valued Lower Than Preferred
+ The gap between common and preferred stock valuations is structural. Preferred stockholders get paid first in any exit and hold veto rights over major corporate actions, while common stock sits last in line after debt, preferred stock and participation rights. In seed stage venture-backed companies, common stock often prices meaningfully below the preferred stock price, depending on the preferred terms and the company's time-to-liquidity outlook.
+ After allocating value to common stock, the valuation firm applies a Discount for Lack of Marketability (DLOM) that captures the illiquidity of private company shares. This discount can be substantial, especially earlier in a company's life, because employees typically cannot sell shares in a liquid public market.
+ Choosing the Right 409A Valuation Provider
+ Safe harbor protection depends on independence and professional rigor, not a familiar brand. For your 409A to qualify for safe harbor protection, the appraiser must be genuinely independent: no equity in your company and no financial relationship that could create bias. 
+ Qualification standards also tie to relevant valuation experience and training. Professional designations like American Society of Appraisers (ASA) or Certified Valuation Analyst (CVA) demonstrate expertise, but the tax code does not mandate them.
+ Questions to Ask Before Hiring a Valuation Firm
+ You should ask:
+ What methodology does the provider use and why?
+ Do they have experience with companies at your stage and in your industry?
+ Will I work with senior professionals or receive a mostly automated report?
+ A good provider should explain assumptions clearly and support you if an investor or tax authority challenges the valuation during diligence. If they cannot walk you through their approach in plain language, that gap signals a process you probably do not want to rely on.
+ Standalone Firms vs. Cap Table Platforms
+ Standalone valuation firms offer maximum independence and deeper professional judgment for complex situations, but they can cost more and take longer depending on the provider and your cap table complexity. Cap table platforms may offer valuations as part of a broader subscription, often with faster turnaround and seamless data integration since they already hold your cap table.
+ For pre-seed and simple seed stage companies, a platform-integrated valuation often works well. As you approach Series A with multiple preferred stock classes and a more complex capital structure, a standalone firm with deeper oversight can become more appropriate.
+ What It Actually Costs and What Affects the Price
+ 409A valuation costs vary widely. Complexity drives price more than anything else: multiple preferred stock classes, several convertible instruments with different terms, significant revenue history requiring deeper financial analysis and rush delivery all push prices higher.
+ Safe harbor protection depends on methodology and quality, not provider prestige, and a defensible process with clear documentation usually does more for diligence than a brand name.
+ How the 409A Relates to Fundraising and Investor Due Diligence
+ Your 409A history becomes a focal point during Series A diligence. Investors use it to assess both your equity practices and your operational discipline.
+ What Investors Look for in Your 409A History
+ Series A investors view your 409A compliance history as a signal of how well you run your company. Investors commonly request your recent 409A valuations as part of diligence, and they look for a logical progression: early valuations should be low and should increase as the company raises rounds and hits milestones. Flat 409A values during obvious periods of growth raise questions.
+ As an early stage venture capital firm, we've seen that founders with systematic record keeping can respond to due diligence requests same-day instead of digging through old emails to reconstruct ownership history. This pattern held across companies we've backed from the earliest stages, including when CRV led DoorDash's first financing round and invested in Mercury. Clean equity documentation helped build confidence in both founding teams.
+ How Clean Compliance Speeds Up Your Close
+ Clean 409A compliance is inseparable from cap table accuracy, and both feed directly into how fast you can close your round. In competitive fundraising processes, diligence delays can shift investor attention to another company. Founders who discover compliance gaps during fundraising must remediate them before closing. That remediation can add weeks at the worst possible time. A clean 409A history paired with an accurate cap table eliminates a major source of investor concern before it surfaces and shows investors you run a tight ship.
+ Common Mistakes Founders Make with 409A Valuations
+ The compliance errors that cause the most damage tend to follow predictable patterns. These four mistakes account for the majority of 409A problems that surface during fundraising:
+ Waiting too long for the first valuation: The right time for your first 409A is when you close your first financing event, not when a specific employee needs an option grant. Procrastinating until options are urgent means the process timeline stalls your hire.
+ Using an outdated valuation after a funding event: A financing round is typically a material event, and options granted afterward without an updated valuation can expose employees to penalties.
+ Confusing the 409A with the preferred stock valuation: A 409A values only common stock, which will almost always produce a number lower than your fundraising valuation. That outcome is normal and expected.
+ Treating the process as a checkbox rather than a governance asset: Working with a credentialed provider, ensuring board documentation of each valuation and reading the report before using it prevents diligence stalls later.
+ Left unaddressed, these errors create layered problems that surface at the worst time. A 409A isn't a one-time task; it's an ongoing governance practice.
+ Get Your 409A Right Before It Gets Complicated
+ The founders who navigate Series A most smoothly are the ones who built compliance into their workflow from the start, not the ones who scrambled to fix gaps under diligence pressure. A valid, current 409A valuation protects your employees from tax penalties, keeps your equity grants defensible and shows investors you're running a company they can back with confidence. We see this pattern consistently in the companies we back: clean governance early means faster fundraising later.
+ If you're an early stage founder looking for investors who understand the governance details that make a company fundable, reach out to us to see if we'd be a good fit.
+ Frequently Asked Questions
+ How long does a 409A valuation take?
+ Turnaround varies by provider and complexity. In many cases, expect anywhere from several business days to a few weeks, assuming you provide complete documentation upfront. Incomplete submissions add back-and-forth time regardless of provider.
+ Is a 409A valuation required by law?
+ A 409A does not explicitly require an independent valuation . It requires stock options to be issued at or above fair market value determined through the reasonable application of a reasonable valuation method . In practice, the safe harbor presumption from an independent 409A carries enough weight (and the employee penalties for getting it wrong run high enough) that most startups treat it as the standard.
+ Can I do a 409A valuation myself?
+ A founder-led valuation generally will not receive the same safe harbor presumption that comes from an independent appraisal. Given that the penalties can be severe and fall on employees, most startups use a third-party valuation provider for option pricing.
+ How often do I need to update my 409A?
+ Most startups revisit a 409A within 12 months and refresh sooner after material events. The same 12-month window supports certain presumptions of reasonableness absent intervening changes that materially affect value. Many teams start a 409A refresh right after any financing event so option grants do not rely on a stale valuation, and an early refresh also helps when hiring plans ramp up near the end of that 12-month period.
+
+ CRV proudly co-led Lotus AI’s Series A and our firm led Outtake’s Series A and joined the board in February 2025. We also backed Outtake during its Series B, so we’re thrilled to see both teams make this year’s list.” to “CRV proudly co-led Lotus AI’s Series A and our firm led Outtake’s Series A, joined the board and backed Outtake during its Series B, so we’re thrilled to see both teams make this year’s list.
+
+CRV invests in founding teams at the beginning of their journeys, leading Seed and Series A rounds in amazing companies. We’ve backed more than 750 companies early on including DoorDash (another Next-Billion alum), Mercury and Vercel .
+
+Congrats to both Lotus AI and Outtake on being named to Forbes’ Next-Billion Dollar Startups list .
+
+ Cookie Preferences
+ Necessary
+ Always on
+
+ These cookies are essential in order to use the website and use its features.
+
+ Analytics
+ Analytics consent 
+
+ Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics such as the number of visitors, bounce rate, traffic source, etc.
+
+ Save Preferences 
+ Your Privacy Matters to Us
+ We use cookies and similar technologies on this site, employed by CRV and our partners, to support core features and help us understand how visitors engage with our content. For details, please review our Privacy Policy 
+ Accept All Reject All Manage Preferences

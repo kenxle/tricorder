@@ -1,0 +1,90 @@
+SOURCE: https://www.torys.com/insights/publications/2021/02/pre-money-versus-post-money-safe
+
+Pre-money versus post-money SAFE: What’s the difference (and does it matter)? | Insights | Torys LLP 
+
+ February 25, 2021 • Calculating... 
+ Pre-money versus post-money SAFE: What’s the difference (and does it matter)? 
+
+ Authors
+ Konata T. Lake 
+
+ TL;DR : The post-money SAFE provides additional certainty to both founders (in respect of their expected dilution) and investors (in respect of their expected ownership level) upon conversion of the SAFE, however care should be taken to ensure that both parties are aligned on the type of SAFE chosen and have set the valuation cap accordingly.
+
+ The Simple Agreement for Future Equity
+
+ Y Combinator first introduced the Simple Agreement for Future Equity (SAFE) to the startup and venture capital community in 2013. The original SAFE was in many ways Y Combinator’s response to the then prevalent form of early-stage financing: the convertible note. In contrast to the convertible note, as the name implies, the SAFE was simpler (in both features and typical length), and was completely standardized, thereby reducing transaction costs for very early stage companies. Use of the original SAFE quickly gained momentum, and by 2018 it was a well-known and widely used form, but was not without its detractors. One often cited criticism of the original SAFE is that it did not provide sufficient certainty to the founders as to the percentage of the company they were giving up, and, on the flip side, investors did not know exactly what their ownership percentage would be. In response, Y Combinator introduced an updated version of the SAFE in 2018 designed to address this issue, which they dubbed the “post-money SAFE” (at which point the original SAFE became the “pre-money SAFE”).
+
+ We are often asked by our clients whether they should use the pre- or post-money SAFE, and so we’ve put together this note to help explain the key differences. Both versions of the SAFE come in a few different “flavours”, being 1) with valuation cap, no discount, 2) no valuation cap, with discount, 3) valuation cap and discount, 4) no valuation cap, no discount, but with a most favoured nation provision. Since the distinction between the pre- and post-money SAFE comes down to how the valuation cap and resulting price per share is calculated, this note is really only relevant to SAFEs that include a valuation cap (i.e., flavours 1 and 3). For simplicity, we will focus on flavour 1, but the analysis holds true for SAFEs that include both a valuation cap and a discount. 
+
+ What is a valuation cap?
+
+ The SAFE is essentially an agreement to issue shares to the investor in the future, based on the valuation of the company at the time the SAFE converts into shares. The valuation cap acts as a ceiling on the valuation used for the purpose of calculating the SAFE conversion price only. For example, if the valuation of the company at the next priced round of financing is $10M and the previously issued SAFE has a valuation cap of $5M, then notwithstanding the new investors buying in at a $10M valuation, the SAFE holders will buy in at the $5M cap.
+
+ So what’s the difference between the pre-money SAFE and post-money SAFE?
+
+ 1. Pre- and post-money valuation
+
+ When the SAFE converts into shares, the number of shares to be issued is determined based on the conversion price, which in turn is determined by dividing the valuation cap by the company capitalization (i.e., the total number of shares and options).
+
+ Conversion price = 
+
+ Valuation cap
+
+ Company capitalization
+
+ This calculation can be done on either a pre-money or post-money basis, but in both instances, this calculation is done without factoring in the next priced round. The company capitalization in the pre-money SAFE does not include the shares issued upon conversion of SAFEs (i.e., it is “pre” SAFE shares). By contrast, the company capitalization in the post-money SAFE includes all shares issued upon conversion of SAFEs. As long as the numerator and denominator are both expressed the same way (either both pre-money or both post-money), the result should be the same. In other words:
+
+ Conversion price = 
+
+ Pre-money valuation cap
+
+ Pre-money company capitalization
+
+ = 
+
+ Post-money valuation cap
+
+ Post-money company capitalization
+
+ If the result is the same either way, then does it really matter, from a dilution/ownership perspective, whether you choose the pre- or post-money SAFE? For example, if you want to raise $1M on an $8M pre-money SAFE, could you raise $1M on a $9M ($8M + $1M) post-money SAFE and give away the same percentage ownership? The answer is, it depends, for the following two reasons.
+
+ First, it’s not always clear from the get-go exactly how much money the company will raise using SAFEs. In the post-money SAFE example above, if the company decided to extend the round and raise an additional $1M, the documents would still have a $9M post-money valuation cap, but the equivalent pre-money valuation is now $7M ($9M - $2M), so the company has in effect accepted a lower valuation cap. This issue doesn’t arise if you decide to raise more capital using the pre-money SAFE.
+
+ The second reason comes down to the way the unissued option pool (and any increases thereto) is treated in the calculation of the company capitalization. Under the pre-money SAFE, the calculation includes the full option pool, even if the options haven’t been allocated, as well as the increase to the option pool occurring in connection with the equity financing, an unknown variable at the time of SAFE investment. In contrast, under the post-money SAFE, the full option pool is included but the increase to the option pool is generally excluded, thereby removing an unknown variable.
+
+ So does the post-money SAFE actually accomplish Y Combinator’s goal of dilution certainty?
+
+ One consequence of SAFE shares not being included in company capitalization for pre-money SAFEs is that the conversion price does not take into account any other SAFEs issued by the company. This means that each subsequently issued SAFE dilutes the percentage ownership of all other SAFEs, making it difficult for investors to calculate their percentage ownership upfront. Conversely, since the shares that will be issued upon SAFE conversion are included in company capitalization for post-money SAFEs, they are taken into account at the time of conversion, ensuring that any dilution is borne by the existing shareholders (in most cases founders and employees) and not other SAFE holders. This, combined with removing the unknown increase to the option pool from the definition of company capitalization, allows investors to calculate their expected ownership level upfront, thereby reducing dilution uncertainty.
+
+ 2. Pro rata side letter
+
+ Another difference between the pre- and post-money SAFE is Y Combinator’s introduction of the pro rata side letter. The concept of a pro-rata right to participate in future financing rounds is not new. The pre-money SAFE includes a built-in pro rata right but it often confused investors and companies alike as it granted a right to purchase shares in the financing round after the round in which the SAFE converted (e.g., if the SAFE converted in the Series A round, the pro rata rights kicked in at the next financing round (e.g., Series B)). From an investor’s perspective, assuming the company’s valuation continues to increase with each subsequent financing round, getting access to their pro-rata rights in the Series A round as opposed to in a subsequent financing round will always be preferred. Unsurprisingly, this right was often misused and applied to the round in which the SAFE itself actually converted (i.e., Series A). Another downside to including pro rata rights in the SAFE itself is that pro rata rights may not be appropriate for all investors and should be considered on a case-by-case basis. Lastly, the standard Series A financing documents include pro rata rights, and it is preferable to have all investors bound by those forms, rather than have some investors with standalone pro rata rights that continue after the Series A. The optional pro rata side letter was introduced to address this confusion and lack of flexibility by: 1) making it clear that the pro rata right applies to the round in which the SAFE converts and falls away thereafter, and 2) allowing the side letter to be granted on a case-by-case basis (e.g., only for investors that meet a minimum investment threshold).
+
+ 3. Other changes
+
+ Y Combinator made a number of other changes in the post-money SAFE aimed at clarifying the way the SAFE is intended to operate in certain circumstances. We view these as helpful but not fundamental additions, so we won’t do a deep dive on those here. In fact, when a founder asks us to prepare a pre-money SAFE, we often include these clarifying changes from the post-money SAFE, as they don’t go to the root of pre- vs post-money economics, but are nonetheless helpful in interpreting the SAFE. 
+
+ Key takeaways
+
+ Founders contemplating a SAFE round should make sure they understand the differences between Y Combinator’s pre- and post-money SAFEs before agreeing to use one with an investor. Founders should adjust the proposed valuation cap to make sure it matches the type of SAFE chosen. For example, if you settle on a pre-money valuation cap with your investors, and subsequently switch to a post-money SAFE, the valuation cap should be increased by the proposed size of the financing to get to the post-money equivalent cap. Similarly, it is important to confirm that the founders and investors are aligned on whether the SAFE is pre- or post-money—you don’t want to wait until the wire has been initiated to discover a discrepancy in each party’s understanding of the deal. No matter how well you understand the theory and math behind the SAFEs, there is no substitute for creating a detailed capitalization table to model out the round of financing. The best model will include the subsequent round of financing at which the SAFEs convert, and allow the user to adjust the assumptions around valuation and size of financing to see the impact it has on the SAFEs and the founders’ ownership level. Legal counsel that are experienced in early stage venture financings can assist you in modeling these scenarios, and are a great resource to help founders understand the economics of the round, so make sure to leverage their expertise.
+
+ To discuss these issues, please contact the author(s). 
+
+ This publication is a general discussion of certain legal and related developments and should not be relied upon as legal advice. If you require legal advice, we would be pleased to discuss the issues in this publication with you, in the context of your particular circumstances. 
+
+ For permission to republish this or any other publication, contact Bryn Turnbull . 
+
+ © 2026 by Torys LLP. All rights reserved. 
+
+ Tags
+ Emerging Companies and VC
+
+ Facebook Twitter LinkedIn PDF Email Copy URL Opens in a new window 
+
+ Subscribe and stay informed
+
+ Stay in the know. Get the latest commentary, updates and insights for business from Torys.
+
+ Subscribe Now
+
+ LinkedIn

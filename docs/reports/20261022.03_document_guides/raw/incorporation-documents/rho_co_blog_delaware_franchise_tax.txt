@@ -1,0 +1,231 @@
+SOURCE: https://www.rho.co/blog/delaware-franchise-tax
+
+Delaware Franchise Tax Explained (2026) + How to Lower It 
+
+ Delaware Franchise Tax Explained (2026): Why Your Bill Is Wrong
+ Why your Delaware franchise tax notice says $85,000 when you owe $850. Both calculation methods explained with worked examples, deadlines, and penalties.
+ Esther Nguyen
+
+ August 9, 2026
+ Last Updated October 17, 2026 
+ 8 minutes
+
+ NEW TO RHO Request a demo
+ Let Rho automate finance busywork so you can stay focused on serving your customers.
+ Request a demo 
+
+ Every year, founders open a letter from Delaware demanding tens of thousands of dollars in franchise tax and briefly consider whether the company was a mistake. That number is almost always wrong. It is not a scam or an error, just Delaware calculating with the only information it has. Here is why it happens and how to get to the real figure.
+
+ Quick Highlights
+ The scary notice is not your bill. Delaware defaults to the Authorized Shares Method because it is the only one the state can calculate without your input.
+
+ A typical seed-stage startup sees $85,215 on the notice and actually owes $850 after recalculating under the Assumed Par Value Capital Method.
+
+ You need two numbers: total gross assets from Form 1120 Schedule L, and total issued shares.
+
+ The realistic floor is $450 a year: the $400 minimum under the Assumed Par Value Capital Method plus the $50 annual report fee.
+
+ March 1, every year. Late means a $200 penalty plus 1.5% interest per month. Quarterly estimated payments kick in once your tax hits $5,000. Delaware LLCs pay a flat $400 by June 1 instead.
+
+ How much is Delaware franchise tax?
+ Delaware calculates corporate franchise tax two ways, and you can pay whichever is lower: the Authorized Shares Method (minimum $175 ) or the Assumed Par Value Capital Method (minimum $400 ). The maximum is $200,000 , or $250,000 for Large Corporate Filers. The tax and the $50 annual report are due on or before March 1 each year, according to the Delaware Division of Corporations .
+ Delaware LLCs are taxed differently. They pay a flat $400 annual tax on or before June 1 and file no annual report, per the Division's LLC tax page . Figures reflect Delaware's fee schedule revised August 1, 2026, as of October 17, 2026.
+ Best for founders forming a Delaware C-corp who want their company formed and a business account opened in the same flow, subject to approval: Rho Incorporation forms Delaware C-corps for $400. When you incorporate a Delaware C-corp with Rho, at least one owner or officer must be US-based, the company needs a US operating address, and the business must be in an eligible industry to open the account. Rho also forms LLCs for $349 all in, state filing fee included.
+ We assess formation options on price, what's included, and whether a business account can open in the same flow as formation.
+ Why your bill looks insane
+ Delaware calculates franchise tax two completely different ways, and you are allowed to pay whichever produces the lower number.
+ New to the state site? Our Delaware Division of Corporations guide walks through the portal, filings, and fees.
+ The notice Delaware sends you uses the Authorized Shares Method . Not because it is correct, but because it is the only one the state can compute on its own. Delaware knows how many shares you authorized, because that is in your certificate of incorporation. It does not know your gross assets or how many shares you actually issued, because you have not told it yet.
+ So the notice is a placeholder built from the one input the state already has, and for a company with millions of authorized shares that input produces an enormous number.
+ The Assumed Par Value Capital Method uses your actual balance sheet. For virtually every early-stage startup it produces a dramatically smaller bill. You just have to report the numbers that make it available.
+ The two methods
+ Authorized Shares Method
+ Scroll to see more ↔ 
+ Authorized shares
+ Tax
+
+ Authorized shares
+ Tax
+
+ 5,000 or fewer
+ $175
+
+ 5,001 to 10,000
+ $250
+
+ Each additional 10,000 shares or portion thereof
+ Add $85
+
+ Delaware's own example: a corporation with 10,005 authorized shares pays $250 plus $85, or $335.
+ The trouble is obvious once you apply it to a standard startup. Ten million authorized shares means 999 additional blocks of 10,000, which is $84,915 on top of the $250 base.
+ Assumed Par Value Capital Method
+ This one needs two numbers from you: total gross assets as reported on your federal Form 1120 Schedule L, and total issued shares including treasury shares.
+ The steps:
+ Divide total gross assets by total issued shares, carried to six decimal places. That is your assumed par value .
+
+ Multiply the assumed par value by the number of authorized shares whose stated par value is below the assumed par value.
+
+ Multiply any authorized shares whose stated par value is above the assumed par value by their own stated par values.
+
+ Add steps 2 and 3. That is your assumed par value capital .
+
+ Divide by $1,000,000, rounding up to the next full million, and multiply by $400.
+
+ The minimum under this method is $400.
+
+ The worked example that matters
+ Take a typical seed-stage company: 10,000,000 authorized shares at $0.0001 par , 8,000,000 shares issued , and $1,000,000 in gross assets after a pre-seed round.
+ What the notice says
+ ```
+ Shares above the 10,000 threshold: 10,000,000 - 10,000 = 9,990,000
+ Blocks of 10,000 (or part): 9,990,000 / 10,000 = 999
+ Additional tax: 999 x $85 = $84,915
+ Base: $250
+ FRANCHISE TAX $85,165
+ Annual report fee $50
+ TOTAL $85,215
+ ```
+ What you actually owe
+ ```
+ Assumed par value = $1,000,000 / 8,000,000 = $0.125000
+
+ Stated par ($0.0001) is below assumed par ($0.125000),
+
+ so apply assumed par to all authorized shares:
+ 10,000,000 x $0.125000 = $1,250,000
+ No class with stated par above assumed par: $0
+
+ Assumed par value capital = $1,250,000
+
+ Exceeds $1,000,000, round up to $2,000,000
+
+ $2,000,000 / $1,000,000 = 2
+ 2 x $400 = $800
+ $800 is above the $400 minimum, so the tax is $800
+
+ Annual report fee $50
+ TOTAL $850
+ ```
+ $85,215 versus $850. Same company, same year, same filing deadline. The only difference is which method you report under.
+ What you will actually pay at each stage
+ Once you understand the mechanism, the pattern becomes clear: your franchise tax tracks your balance sheet , not your share count.
+ Pre-revenue, before raising
+ $50,000 in gross assets, 8,000,000 shares issued:
+ ```
+ Assumed par = $50,000 / 8,000,000 = $0.006250
+ 10,000,000 x $0.006250 = $62,500
+ $62,500 / $1,000,000 = 0.0625, x $400 = $25
+ Below the $400 minimum, so tax = $400
+ Plus annual report $50
+ TOTAL $450
+ ```
+ $450 is the realistic floor for a newly formed Delaware startup.
+ After a Series A
+ $10,000,000 in gross assets, 9,000,000 shares issued:
+ ```
+ Assumed par = $10,000,000 / 9,000,000 = $1.111111
+ 10,000,000 x $1.111111 = $11,111,110
+ Round up to $12,000,000, / $1,000,000 = 12
+ 12 x $400 = $4,800
+ Plus annual report $50
+ TOTAL $4,850
+ ```
+ Raising money raises your franchise tax. That is the system working as designed, and it is worth budgeting for in the year after a round closes.
+ Deadlines, penalties, and estimated payments
+ Scroll to see more ↔ 
+ Item
+ Detail
+
+ Item
+ Detail
+
+ Corporation deadline
+ March 1 each year, for both the tax and the annual report
+
+ Annual report fee
+ $50 for non-exempt domestic corporations, $25 exempt
+
+ LLC, LP, and general partnership
+ Flat $400 annual tax, due June 1 , no annual report required
+
+ Late penalty
+ $200 
+
+ Interest
+ 1.5% per month on tax and penalty
+
+ Minimum tax
+ $175 authorized shares method, $400 assumed par value method
+
+ Maximum tax
+ $200,000 ($250,000 for Large Corporate Filers)
+
+ Source: Delaware Division of Corporations, Annual Report and Franchise Tax and LLC annual tax pages and the fee schedule revised August 1, 2026, as of October 17, 2026.
+ If your franchise tax comes to $5,000 or more , the Delaware Division of Corporations requires quarterly estimated payments: 40% by June 1, 20% by September 1, 20% by December 1, and the remainder with your annual report by March 1. That threshold can catch companies after a large raise, so it is worth knowing before it surprises you.
+ Notes on the extremes
+ The $200,000 maximum has one exception. A corporation that is listed on a national securities exchange and meets substantial revenue and asset tests is classified as a Large Corporate Filer and pays $250,000. Being publicly listed is a requirement, so this will never apply to a private startup.
+ How to actually file
+ Go to the Delaware Division of Corporations annual report and franchise tax filing page .
+
+ Enter your total gross assets from Form 1120 Schedule L and your total issued shares .
+
+ The system recalculates under the assumed par value method and shows you the lower figure.
+
+ Pay the tax plus the $50 annual report fee.
+
+ That is it. The entire $84,365 swing in the example above comes down to filling in two fields rather than paying the number printed on the notice.
+ Delaware publishes its own franchise tax calculation instructions , and it is worth running your specific numbers through them before you file. The examples here follow Delaware's published brackets and formula, but your share classes and asset figures are yours.
+ Common mistakes
+ Paying the notice as invoiced. The most expensive unforced error in Delaware compliance.
+
+ Using authorized shares instead of issued shares in step 1 of the assumed par value calculation. It has to be issued.
+
+ Using net assets instead of gross assets. Delaware wants total gross assets from Schedule L, before liabilities.
+
+ Forgetting the annual report fee. The $50 is separate from the tax.
+
+ Missing March 1. $200 plus 1.5% monthly interest, compounding until you pay.
+
+ Assuming you are exempt because you had no revenue. Every Delaware corporation owes at least the minimum, revenue or not.
+
+ Missing the estimated payment schedule once your tax crosses $5,000.
+
+ The structural fix
+ If you are forming a company now rather than paying a bill, the decision that keeps this number small forever is your par value. A low par value like $0.0001 means the assumed par value calculation is always driven by your actual assets rather than an arbitrary floor.
+ Set par value at $1.00 with 10,000,000 authorized shares and you have guaranteed yourself at least $4,000 of franchise tax every year, even at zero assets, because the calculation floors at your stated par value.
+ For the full setup, including the filing fee mechanics that push in the same direction, see our Delaware C corp guide . If you have not incorporated yet, start with how to incorporate a startup .
+ If you are forming a company now, Rho incorporates Delaware C-corps for $400. For a C-corp, every document is reviewed by a licensed attorney, your EIN application is filed for you, the registered agent is covered for the first year, and you get 83(b) election support. C-corp filings take about 24 hours, with the clock starting the next business day after you submit. Rho also forms LLCs for $349 all in, state filing fee included.
+
+ FAQs
+ How much is Delaware franchise tax in 2026? 
+ Delaware corporations pay franchise tax under whichever of two methods gives the lower bill: the Authorized Shares Method, with a $175 minimum, or the Assumed Par Value Capital Method, with a $400 minimum. The maximum is $200,000 ($250,000 for Large Corporate Filers). Add the $50 annual report fee and pay both by March 1. Delaware LLCs instead pay a flat $400 annual tax by June 1. Figures are from the Delaware Division of Corporations as of October 17, 2026.
+
+ Why is my Delaware franchise tax bill so high? 
+ Because Delaware bills you under the Authorized Shares Method, the only method it can compute without your input. It knows how many shares you authorized, but not your gross assets or issued shares. You can pay under the Assumed Par Value Capital Method instead, which uses your actual balance sheet. For a typical startup with 10,000,000 authorized shares, 8,000,000 issued, and $1,000,000 in gross assets, the default notice reads $85,215 while the amount owed is $850. To recalculate, report total gross assets from Form 1120 Schedule L and total issued shares when you file. The minimum under this method is $400, plus the $50 annual report fee, due by March 1.
+
+ What is the difference between the Authorized Shares Method and the Assumed Par Value Capital Method? 
+ The Authorized Shares Method uses only your authorized share count, which Delaware already has from your certificate of incorporation. The Assumed Par Value Capital Method uses your actual gross assets and issued shares, and for most early-stage startups it produces a dramatically lower bill.
+
+ What inputs do I need to use the Assumed Par Value Capital Method? 
+ You need two numbers: total gross assets from your federal Form 1120 Schedule L, and total issued shares including treasury shares. You enter both into Delaware's online filing system, which then calculates the lower figure for you.
+
+ What is the minimum Delaware franchise tax a startup will realistically pay? 
+ The realistic floor is $450 per year, which is the $400 minimum tax under the Assumed Par Value Capital Method plus the $50 annual report fee.
+
+ When is Delaware franchise tax due? 
+ Delaware corporations file the annual report and pay franchise tax on or before March 1 each year. Delaware LLCs, LPs, and general partnerships pay a flat $400 annual tax on or before June 1 and file no annual report. Late payment adds a $200 penalty plus 1.5% interest per month, according to the Delaware Division of Corporations as of October 17, 2026.
+
+ What happens if I miss the March 1 deadline? 
+ A late filing triggers a $200 penalty plus 1.5% interest per month on the tax and penalty until you pay.
+
+ Do I owe Delaware franchise tax if my company had no revenue? 
+ Yes. Every Delaware corporation owes at least the minimum tax regardless of whether it generated revenue, turned a profit, or opened a bank account.
+
+ What are the most common Delaware franchise tax mistakes? 
+ The most expensive mistake is paying the notice as invoiced rather than recalculating under the Assumed Par Value Capital Method. Other common errors include using authorized shares instead of issued shares in the calculation, using net assets instead of gross assets, and forgetting the separate $50 annual report fee.
+
+ Does my franchise tax increase after I raise a funding round? 
+ Yes, because the Assumed Par Value Capital Method is based on your gross assets, raising money increases your balance sheet and therefore your franchise tax. A company with $10,000,000 in gross assets after a Series A would owe $4,850, compared to $450 before raising.
+
+ What happens if my annual franchise tax reaches $5,000 or more? 
+ Delaware requires quarterly estimated payments once your tax hits $5,000: 40% by June 1, 20% by September 1, 20% by December 1, and the remainder with your annual report by March 1.

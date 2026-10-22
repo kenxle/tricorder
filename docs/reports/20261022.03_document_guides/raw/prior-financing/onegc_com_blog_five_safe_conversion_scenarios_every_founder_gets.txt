@@ -1,0 +1,97 @@
+SOURCE: https://onegc.com/blog/five-safe-conversion-scenarios-every-founder-gets
+
+Your SAFE Isn't Simple: Scenarios Every Founder Gets Wrong | OneGC 
+ Skip to content 
+
+ All posts 
+ YC's SAFE reduced legal bills by shifting complexity from negotiation to conversion math most founders never model. The result is cap-table surprises that surface at the worst possible moment: the priced round.
+
+ The SAFE—Simple Agreement for Future Equity—is a four-page document. Founders sign it in a day, often without counsel. The simplicity is real at signing. But conversion is where the economics live, and conversion is not simple at all. Below are the five scenarios that routinely blindside founders, plus the single definitional shift that makes all of them more consequential than they were five years ago.
+
+ Pre-Money vs. Post-Money SAFE: The Shift That Changed Everything 
+
+ Before 2018, YC's SAFE used a pre-money valuation cap. The SAFE investor's ownership was calculated before SAFE dollars were included in the cap-table math. This meant founders couldn't know exactly how much dilution they were taking until the priced round closed, but the ambiguity cut both ways—investors didn't know their precise ownership either.
+
+ In 2018, YC introduced the post-money SAFE. The valuation cap now explicitly includes the SAFE money itself (and, critically, the unallocated option pool). If you raise $1M on a $10M post-money cap, the investor owns exactly 10% at conversion—period. The certainty is a feature for investors and a trap for founders who don't internalize what "post-money" means for stacking.
+
+ Under the old structure, multiple SAFEs shared dilution with each other. Under the new structure, each SAFE's percentage is fixed at signing, and every additional SAFE dilutes only the founders . This single change is the reason the five scenarios below hit harder in 2024 than they did in 2019.
+
+ Scenario 1: Conversion at the Cap — The Happy Path 
+
+ A founder raises $500K on a $5M post-money cap, then closes a Series A at $20M pre-money. The SAFE converts at the cap because the cap price per share is lower than the Series A price. The investor gets 10% ($500K ÷ $5M). The Series A lead prices off the post-SAFE cap table. Everyone is satisfied.
+
+ This is the scenario founders have in their heads when they sign. It is also the only scenario most founders ever model. The remaining four are where value gets destroyed.
+
+ Scenario 2: Conversion at the Discount — The Awkward Middle 
+
+ Suppose the same founder raises on a SAFE with no cap but a 20% discount, and the Series A comes in at $10M pre-money. The SAFE investor buys shares at $8M effective valuation (a 20% discount to the Series A price). If the SAFE carried both a cap and a discount, the investor converts at whichever mechanism yields more shares—i.e., the lower effective price.
+
+ Where founders get tripped up: they assume the cap and the discount are alternative instruments. They are alternative conversion methods within the same instrument . The investor always takes the better deal. If your Series A valuation lands close to your cap, the discount can actually produce more dilution than you planned for when you set the cap in the first place.
+
+ Scenario 3: Multiple SAFEs with Different Caps — The Stacking Problem 
+
+ A founder signs three post-money SAFEs over 18 months: $500K at $5M, $750K at $8M, and $250K at $10M. Each investor's ownership is fixed at signing: 10%, 9.375%, and 2.5%. That totals 21.875% in SAFE dilution before a single priced share is issued.
+
+ Most founders track only the most recent SAFE's cap and assume earlier investors' stakes will somehow "blend." They will not. Post-money SAFEs convert independently. Stacking three of them is not the same as raising $1.5M on a single $10M cap (which would be 15%). The difference—nearly 7 percentage points—comes entirely out of the founders' column.
+
+ Pro-rata rights compound the problem. If each SAFE includes a pro-rata side letter, you may owe all three investors the right to maintain their percentage in the priced round, constraining how much of the round is available to new investors.
+
+ Scenario 4: Down Round or Flat Round — The Dilution Cliff 
+
+ Post-2023, this is the scenario reshaping seed-stage cap tables. If a founder raised $1M on a $10M post-money cap and the best Series A offer comes in at a $6M pre-money valuation, the SAFE still converts at the cap—giving the SAFE holder 10%—but the Series A investor now prices their shares on a cap table that is already 10% diluted at a valuation they consider generous.
+
+ The practical effect: the Series A lead either demands a bigger option pool (diluting founders further), insists on more aggressive liquidation preferences, or simply reduces the check size. In the worst case, MFN (Most Favored Nation) clauses in earlier SAFEs let those investors elect to convert on the terms of any later SAFE. If a desperate founder signed a lower-cap SAFE to bridge to the round, MFN holders can ride that cap down.
+
+ Founders typically discover the full dilution picture when counsel circulates the pro forma cap table days before signing. By then, negotiating leverage is gone.
+
+ Scenario 5: Acquisition Before a Priced Round — The 1x Payback Debate 
+
+ If a company is acquired before any SAFE converts into equity, the standard YC post-money SAFE gives the investor a choice: receive the greater of (a) their invested amount back (the "1x payback") or (b) the amount they would have received if the SAFE had converted into common stock at the cap.
+
+ For a modest acquisition—say, a $4M acqui-hire when $2M in SAFEs are outstanding at a $10M cap—investors hold 20% on a converted basis, which would yield $800K. The 1x payback of $2M is better, so they take it. Founders split $2M among the team, which may be less than the retention packages the acquirer offered individually. The misalignment is structural: SAFE holders have downside protection that common stockholders do not.
+
+ Dissolution terms matter too. In a wind-down, the SAFE's 1x payback is senior to common stock. Founders with sweat equity can end up with nothing while SAFE investors recover their capital.
+
+ The Option Pool Trap Inside Your Post-Money Cap 
+
+ Here is the most expensive misunderstanding in seed-stage finance: the post-money cap includes the promised but unallocated option pool. If your $10M post-money SAFE assumes a 10% option pool, the effective pre-money valuation of existing shares is $8M ($10M minus $1M SAFE minus $1M pool), not $9M. Every option you grant before the priced round comes out of the denominator that determines founder ownership, not out of a separate bucket.
+
+ Founders who negotiate a $10M cap believing it values their existing shares at $9M are overvaluing their position by more than 11%.
+
+ Playbook: Model Before You Sign 
+
+ Build a cap table model for every SAFE before signing. Carta and Pulley both support SAFE conversion modeling. A Google Sheet with five columns (investor, amount, cap, discount, implied ownership) works too.
+
+ Stack all outstanding SAFEs in a single view. Sum the ownership percentages. If total SAFE dilution exceeds 25%, you are likely to face pushback from Series A leads.
+
+ Model the down-round case. Set your Series A pre-money at 0.5× your highest SAFE cap and look at founder ownership post-conversion. If the number is intolerable, reconsider the SAFE amount or cap.
+
+ Read the MFN clause. Know which investors can elect to convert on later, potentially lower, terms.
+
+ Model an acquisition at 1× and 2× total SAFE dollars raised. Check whether the 1x payback leaves anything for common holders.
+
+ Confirm whether the post-money cap includes the option pool. If it does—and on the standard YC SAFE, it does—adjust your mental model of valuation downward accordingly.
+
+ The Bottom Line 
+
+ The SAFE made fundraising faster. It did not make cap-table math simpler—it made it deferred . Every dollar you raise on a SAFE is a conversion event waiting to happen under conditions you cannot predict. The founders who avoid cap-table shock are the ones who model all five scenarios above before they sign, not after their Series A lead's counsel sends the pro forma. Thirty minutes in a spreadsheet today is worth several points of equity later.
+
+ Jacques Baritot
+ General Counsel
+ Jacques Baritot is co-founder of OneGC and a startup lawyer with more than 13 years of experience at Coinbase, Checkr, Yodlee, and Fenwick. Most recently Associate General Counsel at Coinbase.
+
+ Related articles
+
+ Aug 2, 2026 OneGC HQ 
+ The 83(b) Election: The 30-Day Filing Founders Can't Miss
+
+ Mar 24, 2026 OneGC HQ 
+ Acqui-hire vs. Acquisition: The Differences Founders Miss
+
+ Sep 23, 2025 OneGC HQ 
+ What to Include in Your Data Room & What to Leave Out
+
+ Nov 5, 2025 OneGC HQ 
+ The Real Annual Cost of Legal for Venture-Backed Startups
+
+ Share:

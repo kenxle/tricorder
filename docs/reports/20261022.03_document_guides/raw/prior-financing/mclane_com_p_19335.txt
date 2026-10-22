@@ -1,0 +1,211 @@
+SOURCE: https://www.mclane.com/?p=19335
+
+Pre-Money vs. Post-Money SAFEs: Why the Definition of “Company Capitalization” Matters More Than You Think – McLane Middleton 
+
+ Skip to content 
+
+ Search 
+
+ Search 
+
+ Latest Insights 
+
+ Categories 
+
+ Artificial Intelligence 
+
+ Corporate 
+
+ Cybersecurity and Privacy 
+
+ Education 
+
+ Employment & Labor 
+
+ Energy & Environment 
+
+ Government Affairs & Regulation 
+
+ Health Care 
+
+ Immigration 
+
+ Intellectual Property 
+
+ Personal and Family Representation 
+
+ Real Estate & Land Use 
+
+ Sports Practice Group 
+
+ Tax 
+
+ Trial Practice and Litigation 
+
+ Trusts & Estates 
+
+ Uncategorized 
+
+ All Jurisdictions 
+ Federal 
+ MA 
+ NH 
+
+ All Authors 
+ Whitney A. Alexander 
+ Peter D. Anderson 
+ Jesse S. Angeley 
+ Stephanie K. Annunziata 
+ Sabrina C. Beavens 
+ John Bentas 
+ Cristina Coletta Blau 
+ Jacqueline A. Botchman 
+ Amanda M. Brahm 
+ Steven M. Burke 
+ Cameron J. Cantelmo 
+ Alexandra S. C. Careno (Cote) 
+ Michael R. Caughron 
+ Laura B. Chadbourne (Dodge) 
+ Patrick C. Closson 
+ Patrick O. Collins 
+ John D. Colucci 
+ George L. Cushing 
+ Michael A. Delaney 
+ John DeWispelaere 
+ Amy E. Drake 
+ Christopher M. Dube 
+ Adam M. Dumville 
+ Steven J. Dutton 
+ Bruce W. Felmly 
+ Aaron R. Fenton 
+ Viggo C. Fish 
+ Benjamin B. Folsom 
+ Joseph A. Foster 
+ Beth L. Fowler 
+ Brian B. Garrett 
+ Thomas B. Getz 
+ Wilbur A. Glahn, III 
+ Dennis J. Haley, Jr. 
+ Adam M. Hamel 
+ Andrew R. Hamilton 
+ Renay C. Hamilton 
+ Scott H. Harris 
+ Andrea C. Hellrigel 
+ Jack D. Hepburn 
+ Thomas W. Hildreth 
+ Catherine H. Hines 
+ Katie E. Hislop 
+ John E. Hughes 
+ Alex E. Intile 
+ Jennifer A. Irving 
+ Linda S. Johnson 
+ Shiva Karimi 
+ Christina L. Krakoff 
+ Kimberly A. Kramer 
+ Gena Lavallee 
+ Mary Susan Leahy 
+ Stephanie J. Lee 
+ Sean M. Leonard 
+ Madeline S. Lewis 
+ Madison Lightfoot-Kunitake 
+ Allison E. Mason 
+ Ryan P. McClure 
+ Sarah E. McLaughlin 
+ Kimberly M. Miller 
+ Justin M. Moore 
+ David K. Moynihan 
+ Catherine E. Napjus 
+ Barry Needleman 
+ Margaret “Peg” O’Brien 
+ Alexis A. O’Hanlon 
+ Jesse J. O’Neill 
+ Katarina C. Overberg 
+ Caroline H. Palucha 
+ Jennifer L. Parent 
+ Christopher R. Paul 
+ Isabell G. Plotsker 
+ Victoria R. Poland 
+ Amanda E. Quinlan 
+ Michael J. Quinn 
+ Scott C. Rand 
+ John E. Rich, Jr. 
+ Mark C. Rouvalis 
+ Richard A. Samuels 
+ Joshua D. Sandler 
+ Kyle J. Scandore 
+ Cameron G. Shilling 
+ Gregory H. Smith 
+ Graham W. Steadman 
+ Richard M. Stone 
+ Ryan J. Swartz 
+ Ramey D. Sylvester 
+ David C. Tencza 
+ Autumn M. Tertin 
+ Michael B. Tule 
+ Muhammad Usman 
+ Brandon M. Vallie 
+ Bradford N. Vezina 
+ Jeremy T. Walker 
+ Rebecca S. Walkley 
+ Christopher J. Walsh 
+ John F. Weaver 
+ Valerie A. Weber 
+ Robert A. Wells 
+ John R. Wilson 
+ David Wittmann 
+ David Wolowitz 
+ Mark A. Wright 
+ Steven J. Yannacone 
+ Catherine S. Yao 
+ Audrey G. Young 
+ William V.A. Zorn 
+
+ If you’ve negotiated a SAFE (Simple Agreement for Future Equity) in the last several years, may have encountered two flavors: the pre-money SAFE (Y Combinator’s original 2013 form) and the post-money SAFE (Y Combinator’s revised 2018 form). Founders and investors alike often treat the distinction as a technicality buried in the defined terms. It isn’t. The definition of “Company Capitalization” — the denominator used to calculate how many shares a SAFE converts into — determines who bears dilution risk, who has certainty about ownership, and arguably who “wins” when the SAFE converts. This post breaks down the mechanical difference and its practical consequences.
+
+ 1. First Things First – What Exactly is a SAFE 
+
+ Before we dig into the technical details, here is a quick overview of what SAFE is – as it can be a source of confusion. A SAFE is not debt, and it is not equity. It’s a contractual right to receive equity at a future date, typically triggered by an equity financing (though most forms also address acquisitions and dissolution). In exchange for cash today, the investor receives the right to convert that investment into preferred stock when the company later raises an equity round — usually at a discount to the price paid by new investors, and/or subject to a valuation cap.
+
+ Because a SAFE has no maturity date, accrues no interest, and isn’t a debt instrument, it avoids many of the mechanical headaches associated with convertible notes: no ticking interest clock, no repayment obligation, no default risk if a maturity date passes without a qualifying financing. That simplicity is the “S” in SAFE, and it’s a large part of why the instrument has caught on. It is an efficient way to raise capital.
+
+ The core economic terms in most SAFEs are typically: (1) Valuation cap – the maximum valuation at which the SAFE will convert; (2) Discount rate – the percentage discount off the price per share paid by new investors in the priced round; and (3) Conversion calculation – the formula that determines how many shares of preferred stock the SAFE holder receives upon conversion, which hinges on the definition of “Company Capitalization” – the topic of this post.
+
+ 2. Conversion Mechanics: SAFEs Convert Using a Formula Based on the Definition of Company Capitalization 
+
+ A SAFE with a valuation cap converts into shares at a conversion price equal to:
+
+ Valuation Cap ÷ Company Capitalization 
+
+ The lower the Company Capitalization figure, the higher the conversion price, and the fewer shares the SAFE holder receives for the same dollar SAFE investment. The definition of “Company Capitalization” is not boilerplate — arguably, it is the single most consequential defined term in the instrument and typically differs depending on whether you are using a pre-money SAFE or a post-money SAFE.
+
+ 3. Company Capitalization under Pre-Money SAFEs 
+
+ Under the original pre-money SAFE, “Company Capitalization” generally includes: (1) all outstanding common and preferred stock; and (2) all shares of stock reserved and available for future grant under any equity incentive or similar plan of the Company, and/or any equity incentive or similar plan to be created or increased in connection with the triggering equity financing.
+
+ Because an investor’s SAFE, and all additional other outstanding SAFEs are specifically excluded from Company Capitalization, every additional pre-money SAFE the company issues before a priced round dilutes not just the founders, but every other pre-money SAFE holder as well.
+
+ Consequently, no SAFE investor can know their exact ownership percentage until the priced round actually happens, because additional SAFEs get layered in afterward, and effectively dilute one another. This is often called the “stacking problem” (a least from a SAFE holder’s perspective).
+
+ 4. Company Capitalization under Post-Money SAFEs 
+
+ The 2018 post-money SAFE redefined “Company Capitalization” to include: (1) all outstanding common and preferred stock; (3) all conversion shares (i.e., the shares the SAFE at issue and any other SAFEs (or other convertible securities) as well as other convertible securities (i.e., convertible notes) issued after the SAFE at issue; and (3) all issued and outstanding options and promised options. So, under the post-money SAFE, the valuation cap is applied after all outstanding SAFEs (and other SAFE-like convertible instruments) are deemed to have converted.
+
+ This means a post-money SAFE investor can calculate their exact ownership percentage on the day they invest, and that percentage will not be eroded by subsequent SAFE issuances (it’s important to note that it will still be diluted by the eventual priced equity round and new option pool, but not by subsequent SAFEs). The certainty comes at founder’s expense, however — because the SAFE holder’s percentage is locked in, the dilution from stacking additional post-money SAFEs falls entirely on the founder (and other existing equity holders), not on earlier post-money SAFE investors.
+
+ 5. Who Benefits from Which Structure 
+
+ Post-money SAFEs favor investors. Ownership percentage is fixed and transparent at signing. An investor can say “I own X% of the company as of today,” and that number survives later SAFE rounds untouched. This predictability is precisely why the post-money form has become the market standard for institutional and professional seed investors — it removes the guesswork that made pre-money SAFEs difficult to price and diligence.
+
+ Pre-money SAFEs favor founders. Because subsequent SAFEs dilute existing SAFE holders along with the founders, the founders’ dilution exposure from serial fundraising is shared rather than concentrated. Founders raising several tranches over time, without knowing exactly how much they’ll ultimately raise before a priced round, are more protected from “death by a thousand SAFEs” under the pre-money structure than under the post-money structure, where every new post-money SAFE issuance comes straight out of the founders’ and existing shareholders’ hide.
+
+ 6. Practical Takeaways for Founders and Investors 
+
+ For founders, the key point is this: every post-money SAFE you issue is a fixed slice carved out of your cap table, and those slices do not shrink as you issue more SAFEs. Model your fully diluted cap table cumulatively across every post-money SAFE you intend to issue — not just the one in front of you — before you sign anything. Ask your counsel to run a pro forma cap table showing the combined effect of all currently contemplated SAFEs plus the anticipated option pool increase.
+
+ For investors, the key point is the inverse: a pre-money SAFE’s eventual conversion percentage is not knowable at signing. If you’re relying on a specific ownership percentage for downstream decisions (pro rata rights, board approval thresholds, etc.), a post-money SAFE gives you the certainty you need; a pre-money SAFE does not.
+
+ For both sides, the safest practice is to explicitly request — and review — a pro forma capitalization table showing exactly how “Company Capitalization” will be calculated at conversion, rather than relying on the defined term alone. Ambiguity in this single definition has generated more post-closing disputes between founders and seed investors than almost any other SAFE provision.
+
+ As you can see, the pre-money/post-money distinction isn’t cosmetic — it reallocates dilution risk between founders and investors. Post-money SAFEs give investors certainty and shift stacking risk to founders; pre-money SAFEs spread that risk across all convertible security holders, giving founders more breathing room but investors less clarity. Understanding which structure you’re signing — and modeling its cumulative effect across every instrument you expect to issue — is essential before any SAFE gets executed.
+
+ If you’d like to discuss SAFEs or early-stage financing in general, please feel free to contact David Wittmann at david.wittmann@mclane.com .

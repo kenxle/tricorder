@@ -1,0 +1,259 @@
+SOURCE: https://affinity.co/vc-due-diligence-checklist
+
+Due diligence checklist for venture capital 
+
+ — GTM injects async, which reintroduces the exact
+ layout shift this prevents.
+
+ The GTM tag also re-runs the queue-object snippet below. That's harmless
+ (the w[q]=w[q]||... guard means it won't clobber this one) so the tag does
+ not need editing. Side benefit: the tag's waitForQualified UTM-identify
+ poll now resolves on the first tick instead of waiting on GTM, and the
+ traits buffer in the queue until qualified.js loads.
+
+ DO NOT add async or defer to docking.js. It must parse synchronously.
+ DO NOT move this below block 5 — it has to run before GTM fires qualified.js.
+
+ defaultDocked is TRUE via Q_DOCK (2026-09-29). This depends on TWO things:
+ 1. Qualified theme = "Opened Pinned" (Ava).
+ 2. GTM "Qualified Chatbot" tag fires on "Initialization - All Pages"
+ (GTM version 224). docking.js reserves the gutter immediately and
+ gives qualified.js only 10 seconds (its internal init_qualified
+ timeout) to claim it. On the old "Window Loaded" trigger that was
+ too late: the gutter tore down and Ava fell back to the bubble.
+ ⚠️ If either of those changes (theme back to floating, or the GTM tag
+ moved back to Window Loaded / DOM Ready), set Q_DOCK = false first.
+
+ TESTING: ?q_dock=1 forces defaultDocked: true for one page view (kept
+ for QA). docking.js remembers each visitor's last dock state in a
+ __q_state_* cookie, so always test in a fresh incognito window and
+ confirm Ava is still pinned 15s+ after load.
+ Known edge case: visitors whose ad blocker blocks js.qualified.com see
+ an empty right column until the 10s timeout removes it.
+
+ Per Qualified's docs, once the theme starts in Opened Pinned mode you
+ can no longer use an experience override to start the messenger in a
+ different position, because the gutter does not dynamically tear down.
+
+ dockUnderHeader is intentionally omitted (defaults to false) so the whole
+ page shrinks, nav included. The true variant needs real 
+
+ Solutions
+
+ Resources
+
+ Pricing
+
+ Search
+
+ Sign in
+
+ Get started
+ Get started
+
+ Due diligence checklist for venture capital 
+
+ table of contents
+
+ Text Link 
+ Text Link 
+
+ In venture capital , deal sourcing often gets all the glory for being the fundamental business driver. However mundane, though, it’s really due diligence at the heart of a good VC business.
+ VC due diligence is challenging, and it’s often seen as grunt work. For VCs looking at early-stage companies, getting all the information about the company’s worth and standing can be especially demanding. But once you have a good process for conducting due diligence, it’s a lot less taxing and can be a lot more enjoyable. With a good VC due diligence process, you’re safeguarding your firm from bad investments and finding new value in strong, thriving, and reputable companies.
+ Due diligence is beneficial both for venture capital firms and the companies seeking investment. It determines the valuation of the company and—if done thoroughly—provides a clear picture of the risk. 
+ Venture capital due diligence is an essential step in making good investments. To make it less overwhelming and time-consuming, it can help to start with a vetted checklist to make sure you don’t miss any important details. 
+ In this article, you’ll find a VC due diligence checklist that covers all your bases and breaks down the due diligence process into more manageable chunks. 
+
+ Key takeaways
+ Venture capital due diligence is a multi-stage process that involves screening potential investments through financial, legal, technical, and founder-focused assessments to protect firms from bad investments.
+ A comprehensive VC due diligence checklist should cover nine essential areas: finance, tax, legal, HR, assets, IT, products and services, marketing and sales, and founder background.
+ VC due diligence emphasizes an evaluation of the founder's background, passion, and vision; the process requires multiple rounds of screening due to the inherently risky nature of venture capital investments.
+ What makes the venture capitalist due diligence process unique?
+ VC fundraising and investing take time and resources. It’s a VC’s primary responsibility to use investor funds wisely, which means not wasting time and money pursuing portfolio companies that aren’t sound.
+ No matter how deal origination happens—whether it comes in through a VC’s own effort, or from a broker, investment bank, limited partner, or the founder of a current portfolio company—the investment proposal must go through a screening process. And because venture capital investment is riskier by nature, VC due diligence typically involves multiple rounds of screening. 
+ This initial screening process filters out companies that don’t immediately fit the VC fund’s investment thesis, but it should also filter out any companies that are waving red flags.
+ If the company makes it through the first round of screening, the proposal is passed on to other members of the deal team for closer analysis. The deal team is looking for any potential problems around the product, market fit, business model, or management team. They are also assessing the projected growth of the company, potential risks (both current and future risk factors), and the probability of liquidating the investment in three to five years. At this point in the screening, the deal team may also meet with the startup founder or founders.
+ This detailed assessment will be documented and sent to the investment committee and the fund supervisory board to weigh in. Based on this insight, they will determine if the company is worth pursuing—and if it is, the rest of the due diligence process will commence.
+
+ The next step for the deal team is to create a detailed questionnaire and send it with their standard form or due diligence request to the founders or managers of the target company. Once the deal team receives the completed questionnaire and all requested documentation from the company, they will summarize the findings in a deal qualification memorandum. This is typically the trigger point for the VC firm to talk to the startup about deal terms and present a term sheet.
+ Even if the VC firm and the company agree on terms, and the company signs the term sheet—venture capital due diligence is still not done. The final stage of due diligence, external due diligence , comes after the term sheet has been signed.
+ VC due diligence may take weeks or months. It can take only a couple of meetings to determine that the company isn’t a good fit. Or if the deal came from a cold pitch, it may take months of the deal team’s time to gather all the information. All in all, a VC can count on spending at least 20 hours of due diligence. Often much more time is required. And there is no benefit to rushing through this process or taking shortcuts.
+ {{read-the-report-2="/rt-components"}}
+ Pass/fail screening questions for VC deal teams
+ As you can see, VC due diligence can be a long, complex process. It’s helpful to weed out the bad fits quickly to keep the deal team focused on the deals most likely to result in returns. 
+ The very first thing a VC should do when a deal comes to light is to check it against the VC fund’s investment thesis and focus areas.
+ Stage of the company
+ Geography
+ Financial profile
+ IPO plans
+ Industry or sector
+ Customer base
+ Market size
+ Also, consider the quality of the referral. Have you closed quality deals through this referral source in the past? If so, that’s a good sign that further due diligence may be in order. Does the company have any unusually strong partnerships or supplier relationships? Do they have strong customer traction? These are also signs that your deal team should continue with due diligence.
+ Use these filters and questions to screen startup companies and filter out the obvious no-gos quickly. And for the companies that pass initial inspection, use the answers to these questions to ask more targeted questions during the rest of the due diligence process.
+
+ What is a venture capital due diligence checklist?
+ In a nutshell, a VC due diligence checklist is another tool in your firm’s toolkit that helps assess and analyze potential investments. Like a flight checklist for a pilot, or a pre-op checklist for a surgeon, a checklist for VC due diligence makes sure no important steps are skipped. 
+ A standard due diligence checklist will include financial, legal, tax, and asset-related data—but depending on the VC fund, deal type, and target company, you will likely add more categories to that list. For example, unlike PE firms, VCs often look more closely at the startup founder. VCs also often want to know more information about marketing and sales.
+ Your due diligence checklist should be as comprehensive as possible to leave nothing to chance. And the bigger the deal is, the longer your checklist will be. For example, a company raising Series D funds will require more due diligence than a company raising Series A.
+ In a due diligence checklist, most of the items will be questions and requests for information that the VC deal team will send to the company they are evaluating. Some of the checklist items, however, will be things the deal team needs to look into on their own. 
+
+ Which parts of due diligence does this checklist include?
+ Most VC due diligence checklists will cover these basic areas:
+ Finance
+ Tax
+ Legal
+ HR
+ Assets
+ IT
+ Products and services
+ Marketing and sales
+ {{request-demo-short="/rt-components"}}
+ VC due diligence checklist
+ Use this template as a starting point for your own VC firm’s due diligence checklist. To keep everyone on the same page, be sure to put your final checklist in a centralized, shared location (like your customer relationship management platform ).
+
+ Financials 
+ A startup’s finances are often the most important piece of the investment puzzle, so the finance portion of your due diligence checklist will likely be the longest and most complex.
+ Financial projections
+ Financial history
+ Income statement 
+ Cash flow statements
+ Balance sheet
+ Any additional financial statements
+ Outstanding contracts (for supplies, materials, etc.)
+ Inventory
+ Purchase agreements
+ Accounts payable
+ Schedule of bad debt and/or write-offs
+ Customer information, including contracts and invoices
+ Current accounting system
+ Any funding by angel investors 
+ Tax 
+ Federal tax returns from the last three years
+ State and local tax returns from the last three years
+ Any correspondence with tax authorities since the founding of the company
+ Research and development credit reports
+ Last two periods of 409A valuation reports
+ Legal 
+ This section covers the legal and regulatory issues surrounding the company.
+ Location of the startup’s headquarters
+ Antitrust and regulatory issues
+ Compliance with statutes and regulations
+ Environmental issues
+ Insurance policies
+ Licenses and permits
+ Pending litigation
+ Articles of incorporation
+ Bylaws and amendments
+ Annual reports
+ Listing of shareholders and percentages owned
+ Any partnership agreements
+ Human Resources 
+ This section covers employees, management structure, and benefits.
+ Organizational chart
+ Management structure
+ Current employees, employment agreements, and salary schedules
+ Current contractors, consultants, and other outsourced professionals
+ Employee benefits packages
+ Workers comp and unemployment claims history
+ Resumes of employees
+ Nondisclosure agreements 
+ Future hiring plans
+ Open offers of employment that have not yet been accepted
+ Assets 
+ This section includes the tangible and intangible assets of the company, including intellectual property, real estate, inventory, and equipment.
+ Trade secrets
+ Copyrights
+ Patterns
+ Trademarks 
+ Industrial designs
+ Real estate (both owned and leased properties)
+ Inventory in the current period
+ Equipment (both owned and leased)
+ Schedule of fixed assets with location
+ Material contracts
+ Any other assets
+ Information Technology 
+ In this section, all information technology hardware, software, and plans should be accounted for.
+ Software used by the company
+ Software licenses owned
+ Analysis of current IT system
+ Data management and data security practices
+ Agreements with outside IT companies
+ Documentation of disaster recovery plan 
+ Products and services 
+ This section is dedicated to revenue streams, and the products and services the company provides in the marketplace.
+ Current products and services
+ Planned products and services
+ Discontinued products and services
+ Sales volume
+ Profitability of all products and services
+ Market share by product and service
+ Any regulatory documentation related to products and services
+ Marketing and sales 
+ In this section, you’ll learn about marketing initiatives and sales the company is already managing, the key metrics around them, and what their future plans are.
+ Lifetime customer value (LCV)
+ Customer acquisition cost (CAC)
+ Current marketing strategy
+ Breakdown of traction by marketing tactic
+ Cost to execute the marketing strategy
+ Planned marketing strategy
+ Current sales strategy
+ Current sales processes
+ Cost to execute sales strategy 
+ Planned changes to sales strategy
+ Competition 
+ This section should give you all the information you need about the company’s position against its competitors.
+ List of primary competitors
+ SWOT (strengths, weaknesses, opportunities, and threats) analysis 
+ Current market share
+ Analysis of potential future market share
+ Founder background 
+ Unlike in private equity , in venture capital the founder’s (or co-founders’) personal background and brand matter a great deal. In this section, you’ll learn more about the founder of the company you’re evaluating.
+ Professional background of the founder(s)
+ Publicly shared personal background of the founder or co-founders
+ Qualitative assessment of the founder’s or co-founders’ passion for the company
+ Exit strategy
+ Geographic location of the founder or co-founders
+ What the founder or co-founders say they want from a VC
+
+ Secure better deals with a VC due diligence checklist
+ An effective due diligence checklist for VC should ensure that no critical information is overlooked when your deal team is evaluating the viability of a potential portfolio company. Use this due diligence checklist template as your starting point to spot problems and red flags before they cost your firm time and money—or worse, become legal issues.
+ You’ll be in a better position to invest in sound, reputable businesses that are positioned to grow—and make your firm look good to investors and potential investors.
+ Before you ever reach the due diligence stage of evaluating potential investment opportunities, however, there are innumerable workflows that make up the pre-diligence process. Affinity, the AI-first private capital CRM, turns relationship intelligence into action, supporting your team by:
+ Automating contact data capture
+ Supporting deal sourcing 
+ Helping nurture existing relationships and build new ones
+ Managing high quality deal flow from start to finish
+ Providing access to manage deals, networking activities, and meeting preparation directly from a mobile device 
+ Learn how relationship intelligence can make a difference for your firm before you even start your due diligence. Talk to an Affinity team member today to learn more.
+
+ Other guides
+
+ 12 AI tools for private equity: what PE teams use at each stage of the deal
+
+ Venture capital management software: A complete guide for modern VCs
+
+ Venture capital due diligence best practices
+
+ mobile URL (dq=576&pinq=true)
+ data-vf-desktop -> desktop URL (dq=1080&pinq=true)
+
+ Why two: Vidzflow's pinq=true hard-caps the rendition, so dq is a
+ permanent ceiling, not a starting point. One shared URL therefore
+ means either a soft-looking desktop video or a 3MB mobile download.
+ Picking per viewport gives us both.
+
+ The selector deliberately requires BOTH data-video-id and :not([src]).
+ It must NOT match src="" - the homepage heroes use src="" plus
+ data-src and are armed by their own HERO_VIDEO_PAIRS script, which
+ already picks desktop vs mobile per element. Matching them here
+ would arm both heroes at once and re-introduce the double fetch.
+ ================================================================== -->
+
+ element (muted, plays once when
+ ~50% scrolled into view). Same pattern as the rich-text-tables mod:
+ plain-text placeholder parsed client-side, so it survives the rich
+ text field's HTML sanitizer. Checks figcaption too, since a caption
+ under a figure/image is a common place to drop the placeholder.
+ ================================================================== -->

@@ -1,0 +1,194 @@
+SOURCE: https://angelinvestorsnetwork.com/alternative-investments/startup-cap-table-management-guide
+
+Cap Table Management: Investor's Checklist 
+
+ Why the Cap Table Is Your Most Important Due Diligence Document
+ Most startup investors spend hours analyzing the product, the market, the team, and the financials. Then they glance at the cap table for five minutes, confirm their ownership percentage, and sign the docs. This is a mistake.
+
+ The capitalization table — the record of who owns what in a company — is the single most information-dense document in any startup investment. It tells you not just who owns shares, but the entire history of the company's financing decisions: who invested when, at what terms, with what rights, and how those decisions have positioned different stakeholders relative to each other and relative to you.
+
+ A clean cap table tells you that the founders made smart decisions, attracted quality investors, and maintained a healthy capital structure. A messy cap table tells you that the company has a history of desperation financing, misaligned incentives, or governance problems that will affect your investment regardless of how good the product is.
+
+ Here is our take: cap table literacy is a core competency for any serious startup investor. If you cannot read a cap table and understand its implications, you are investing blind.
+
+ Cap Table Fundamentals
+
+ What a Cap Table Contains
+
+ A complete cap table includes:
+
+ Equity holders : Every person or entity that owns shares, warrants, options, or convertible instruments. This includes founders, employees with vested options, investors (both individual and institutional), advisors, and any other stakeholders.
+
+ Share classes : Common stock (held by founders, employees), preferred stock (held by investors, with different series for each funding round), and any other equity classes. Each class has different rights, preferences, and conversion terms.
+
+ Fully diluted share count : The total number of shares outstanding plus all shares that could be created through option exercises, warrant conversions, and convertible note /SAFE conversions. This is the denominator that determines your actual ownership percentage.
+
+ Option pool : The shares reserved for future employee equity grants. The size and utilization of the option pool directly affects your dilution .
+
+ Convertible instruments : SAFEs, convertible notes, and any other instruments that will convert into equity at future events. These represent "hidden" dilution that does not show up in the basic share count but will affect your ownership when they convert.
+
+ Vesting schedules : The timeline over which founders' and employees' shares become fully owned. Unvested shares are subject to repurchase by the company if the holder leaves.
+
+ Reading the Cap Table: What to Look For
+
+ Founder ownership : How much do the founders still own? If the founding team has been diluted below 30-40% by the seed stage , something has gone wrong — either too much capital was raised at unfavorable terms, or too much equity was given away to advisors, early employees, or other stakeholders.
+
+ Our benchmark : founders should collectively own 60-80% at pre-seed, 50-65% at seed, and 35-50% at Series A. Significantly lower ownership at any stage is a yellow flag.
+
+ Investor concentration : Is one investor or investor group dominating the cap table? Excessive concentration gives that investor outsized influence over the company's direction, potentially at the expense of other shareholders.
+
+ Option pool size and utilization : A standard option pool at seed is 10-15% of fully diluted shares . If the pool is much larger, it represents additional dilution that may not be necessary. If it is nearly fully allocated, the company will need to expand it in the next round — creating additional dilution for existing shareholders.
+
+ Dead equity : Shares held by people who are no longer involved with the company — departed co-founders, former advisors, inactive investors. Dead equity is problematic because it represents ownership that is not contributing to the company's success but will participate in any exit.
+
+ Convertible instrument overhang : What is the total principal and accrued interest on outstanding convertible notes? What is the total value of outstanding SAFEs? These instruments represent future dilution that will crystallize at the next priced round.
+
+ Common Cap Table Problems
+
+ The Over-Diluted Founder
+
+ When founders own less than 30% of the company at the seed stage , their financial incentive to grind through the inevitable hard years is diminished. A founder who owns 10% of a company that might exit at $50 million is looking at $5 million pre-tax — meaningful, but perhaps not enough to justify years of below-market salary and extreme personal sacrifice.
+
+ More importantly, over-diluted founders signal poor decision-making in the past: raising too much capital at low valuations, giving away too much equity to advisors or early employees, or failing to negotiate effectively with prior investors.
+
+ What to do : If you encounter an over-diluted founder in a company you otherwise like, consider whether the cap table can be cleaned up. Some companies implement "refresher" grants to founders, buy back shares from inactive stakeholders, or restructure the cap table as part of a new funding round. These are complex transactions but can be worth pursuing if the underlying business is strong.
+
+ Stay informed
+ Get investment intelligence delivered weekly. Expert analysis, market insights, and deal flow updates.
+
+ Subscribe 
+
+ The Advisor Equity Problem
+
+ Early-stage founders, unsure of themselves and eager for validation, sometimes give away large equity stakes to advisors who provide minimal value. It is not uncommon to see cap tables where 5-10% of the company is held by advisors who attend a monthly phone call and occasionally make an introduction.
+
+ Our benchmark : Advisors should receive 0.1-0.5% equity with appropriate vesting (typically 1-2 years, monthly vesting). Any advisory grant above 1% should represent truly exceptional value — a key customer relationship, a critical technology contribution, or a game-changing hire facilitated by the advisor.
+
+ The Convertible Note Stack
+
+ Companies that have raised multiple rounds of convertible notes or SAFEs before a priced round can have a complex web of conversion scenarios. Different notes may have different valuation caps, discount rates, and conversion triggers. When these all convert at the next priced round, the resulting dilution can be much larger than any individual note would suggest.
+
+ What to do : Before investing in a company with outstanding convertible instruments, model the fully diluted cap table post-conversion under various scenarios (round at the cap, round above the cap, round below the cap). Understand your actual ownership percentage after all instruments convert.
+
+ The Missing Vesting Problem
+
+ If founders' shares are not subject to vesting — or if vesting has already fully accelerated — there is a significant risk. A founder who owns 40% of the company with fully vested shares has less incentive to stay than one whose shares vest over four years. If a founder leaves, fully vested shares become dead equity.
+
+ Our recommendation : All founder shares should be subject to four-year vesting with a one-year cliff, regardless of how long the founders have been working on the company. If the founders have been at it for two years pre-funding, it is reasonable to credit that time and start vesting from a later point, but some portion should remain unvested to ensure ongoing commitment.
+
+ Cap Table Management Tools
+
+ The days of managing cap tables in spreadsheets should be over, yet many early-stage companies still do. Dedicated cap table management platforms provide accuracy, version control, scenario modeling, and compliance features that spreadsheets cannot match.
+
+ Carta is the market leader, used by thousands of startups and their investors. It provides cap table management, equity plan administration, 409A valuations, and investor reporting. For investors, Carta provides a portfolio view across all companies using the platform.
+
+ Pulley has emerged as a strong competitor, particularly popular with earlier-stage companies. Its interface is cleaner than Carta's, and it has been more aggressive on pricing.
+
+ AngelList Stack provides cap table management integrated with AngelList's broader ecosystem of fundraising tools, SAFEs, and rolling funds.
+
+ Shareworks by Morgan Stanley serves larger companies and provides integration with public market transition tools.
+
+ For investors, the key benefit of platform-managed cap tables is accuracy and accessibility. When a portfolio company manages its cap table on Carta or Pulley, you can view your holdings in real time, model dilution scenarios, and track changes across funding rounds.
+
+ Due Diligence Checklist for Cap Table Review
+
+ Before investing in any startup, request and review:
+
+ Fully diluted cap table showing all share classes, option pool, warrants, and convertible instruments
+
+ Articles of incorporation detailing the rights and preferences of each share class
+
+ Stock purchase agreements for all prior funding rounds
+
+ Option plan document and current grant schedule
+
+ Outstanding convertible notes and SAFEs with all terms (cap, discount, interest rate , maturity)
+
+ Vesting schedules for all founders and key employees
+
+ Any side letters or special arrangements that modify standard terms for specific investors
+
+ 409A valuation (the most recent independent appraisal of the company's common stock fair market value )
+
+ If the company cannot or will not provide these documents, that is a red flag. A well-run company maintains clean records and is transparent with prospective investors about its capital structure.
+
+ Modeling Your Position
+
+ Once you have the cap table, model your position under several scenarios:
+
+ Current Position
+
+ What is your ownership percentage on a fully diluted basis? Include all outstanding options (even unvested), all convertible instruments, and the full option pool.
+
+ Post-Next-Round Position
+
+ If the company raises its next round at a reasonable step-up (2-3x the current round), what happens to your ownership after dilution? This tells you what you will own after the inevitable next round of financing.
+
+ Exit Scenarios
+
+ Model the payout waterfall at various exit valuations. Account for liquidation preferences, participation rights , and any accelerated vesting triggers. What do you actually receive in cash at a $20 million exit? A $50 million exit? A $200 million exit?
+
+ This waterfall analysis often reveals that the headline valuation and your ownership percentage are misleading. The liquidation preference stack can dramatically alter your actual payout, especially in modest exit scenarios.
+
+ Down Round Scenario
+
+ What happens to your position if the company raises a down round ? Does anti-dilution protection kick in for other shareholders but not for you? Does a pay-to-play provision require you to invest more to maintain your terms?
+
+ Modeling the downside is as important as modeling the upside — perhaps more so, because downside scenarios are more common than most investors want to acknowledge.
+
+ What This Means for Investors
+
+ Cap table literacy protects you from investing in structurally broken deals and helps you identify companies with healthy capital structures that give everyone — founders, employees, and investors — the right incentives to build value.
+
+ Key principles:
+
+ Always review the fully diluted cap table before investing. If it is not provided, do not invest.
+
+ Model your actual economic outcome under multiple scenarios, not just your headline ownership percentage. Liquidation preferences, option pools, and convertible instruments all affect your real returns.
+
+ Watch for red flags : over-diluted founders, excessive advisor equity, stacked convertible instruments, and dead equity on the cap table.
+
+ Insist on proper cap table management tools. A company managing its equity on a spreadsheet in 2026 is not taking governance seriously.
+
+ Understand your position relative to other shareholders. You are not just investing in a company — you are joining a specific position in a capital structure. Know where you stand.
+
+ The cap table is the foundation upon which every other aspect of your investment is built. Invest the time to understand it thoroughly.
+
+ Topics
+ alternative investments portfolio diversification startup investor 
+
+ Part of Guide
+ → Market Intelligence : Complete Guide 
+
+ Looking for investors?
+ Browse our directory of 750+ angel investor groups, VCs, and accelerators across the United States.
+ Browse All Investors → California New York Texas Glossary 
+
+ More Like This
+ Alternative Investments How Venture Studios Build Startups — and Why Investors Should Pay Attention
+
+ Alternative Investments Startup Valuation Methods Explained: a Framework for Investors Who Hate Guessing
+
+ Alternative Investments The Secondary Market for Startup Shares: a Practical Guide for Investors in 2026
+
+ Alternative Investments AI-Powered Due Diligence Tools: What Investors Should Actually Use in 2026
+
+ Share 
+
+ J 
+ About the Author
+ Jeff Barnes, MBA 
+
+ Continue Reading
+
+ Alternative Investments How Venture Studios Build Startups — and Why Investors Should Pay Attention
+
+ Alternative Investments Startup Valuation Methods Explained: a Framework for Investors Who Hate Guessing
+
+ Alternative Investments The Secondary Market for Startup Shares: a Practical Guide for Investors in 2026
+
+ Alternative Investments AI-Powered Due Diligence Tools: What Investors Should Actually Use in 2026
+
+ Alternative Investments How to Negotiate and Protect Your Pro-Rata Rights as an Angel Investor
+
+ Alternative Investments Carried Interest Explained: What Every Investor Should Know About Fund Manager Compensation

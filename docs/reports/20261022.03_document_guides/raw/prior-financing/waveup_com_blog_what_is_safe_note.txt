@@ -1,0 +1,216 @@
+SOURCE: https://waveup.com/blog/what-is-safe-note/
+
+What Is a SAFE Note? Mechanics, Caps & Dilution Examples (2026) | Waveup 
+ Home / Blog / What Is a SAFE Note? Mechanics, Caps & Dilution Examples (2026) 
+ What Is a SAFE Note? Mechanics, Caps & Dilution Examples (2026)
+ Core knowledge 
+ Fundraising 
+ Last reviewed by Igor Shaverskyi on May 1, 2026
+
+ Want to learn more?
+ More growth and fundraising hacks at your fingertips
+
+ Subscribe 
+
+ Share:
+
+ A SAFE (Simple Agreement for Future Equity) is a contract that lets a startup raise capital today in exchange for the right to issue equity later — at the next priced round. There's no interest, no maturity date, and no fixed valuation upfront. Y Combinator introduced the SAFE in 2013; per Carta, 90% of pre-seed deals on its platform in Q1 2025 used a SAFE.
+ After helping 600+ startups raise $3B+ — including $630M closed in 2025 and 200+ warm VC introductions to firms like Antler, Bessemer, Creandum, Cherry, and a16z — we've seen one pattern hold: 100% of our pre-seed clients in 2024–25 raised on SAFEs, not convertible notes . The instrument is now the default. The question isn't "SAFE or convertible?" — it's "which SAFE variant, what cap, and what does the dilution actually look like?"
+ What you'll learn The four SAFE variants and when each one fits (typed comparison table)
+ How caps, discounts, and MFN convert into equity at the next round
+ Pre-money vs post-money SAFE math — why the 2018 YC rewrite matters
+ A worked dilution example: $500K SAFE at a $5M cap → $10M priced round
+ SAFE vs convertible note (typed comparison table — no pasted images)
+ Common founder pitfalls: cap-stacking, MFN tail, pro-rata gaps
+
+ What is a SAFE note, exactly?
+ A SAFE is a 5-page investment contract that converts a cash investment into equity at a future priced round. It is not debt — there's no interest, no maturity date, no repayment obligation. The investor's eventual ownership is set by either a valuation cap, a discount, or both, applied at the next qualified financing event. It's the simplest legal instrument in early-stage fundraising.
+ Y Combinator introduced the SAFE in late 2013, drafted by then-YC partner Carolynn Levy as a replacement for the convertible note. The original goal: cut the legal cost and negotiation time of a pre-seed round from weeks to days. Twelve years later it has done exactly that — Carta's Q1 2025 State of Private Markets reports SAFEs accounted for 90% of pre-seed and 64% of seed deals on the platform , and Y Combinator's current SAFE templates library is still the canonical drafting source for US founders.
+ The mechanics are simple by design. The investor wires money. The startup signs a SAFE specifying either a valuation cap , a discount rate , or both (or neither, in the case of a most-favored-nation SAFE). When the company next raises a priced round — typically a Series Seed or Series A — the SAFE converts into preferred shares at terms set by the cap and discount. Until that round closes, the SAFE sits on the cap table as a contractual right, not as debt and not as equity.
+ Quick definitions Valuation cap — a ceiling on the price-per-share at which the SAFE converts. Lower cap = better for the investor.
+ Discount rate — a percentage off the next round's share price. Typical range: 10–25%.
+ MFN clause — "Most Favored Nation" — gives the SAFE holder the better terms of any later SAFE issued before the priced round.
+ Triggering event — usually a qualified financing round, but also IPO, acquisition, or dissolution.
+
+ What are the four types of SAFE notes?
+ There are four SAFE variants, distinguished by whether they include a valuation cap, a discount, both, or just an MFN clause. The right choice depends on the startup's stage, traction, and negotiating leverage. Y Combinator's current US template library includes Cap-only, Discount-only, and MFN-only post-money SAFEs; the Cap-and-Discount variant is still widely used in practice with a lawyer-drafted form.
+ The four SAFE variants — how each one converts and when to use it.
+ SAFE type Valuation cap? Discount? Best fit Founder cost 
+ Cap, no discount Yes No Strong traction with named investors who insist on a ceiling Medium — cap dictates dilution if you grow fast 
+ Discount, no cap No Yes (typically 10–25%) Hot deal with multiple bidders and no fixed valuation in sight Low — best founder economics if a strong priced round follows 
+ Cap and discount Yes Yes Pre-traction founders giving the investor extra protection High — both terms apply; investor takes whichever favors them 
+ MFN, no cap, no discount No No Friends-and-family or accelerator checks, very early Variable — terms reset to the best later SAFE before the priced round 
+
+ Note on the 2018 YC post-money rewrite Y Combinator rewrote its SAFE templates in 2018 , switching from pre-money to post-money valuation math. The Cap-and-Discount template stopped shipping as a standard YC form at the same time — YC's current US library lists three variants (Cap-only, Discount-only, MFN-only), all post-money. The Cap-and-Discount form is still widely used in practice; founders just draft it with counsel rather than pulling it off ycombinator.com/documents.
+
+ How does a SAFE note actually work?
+ A SAFE works in four steps: (1) the investor wires capital and signs the SAFE, (2) the company keeps operating with no interest accruing and no maturity date pressure, (3) at the next qualified priced round, the SAFE converts into preferred shares using the cap or discount, and (4) the investor's equity stake is calculated based on whichever conversion mechanism gives them the better outcome.
+ Investment. Investor wires capital (typically $25K–$2M per check at pre-seed). Both parties sign the SAFE — usually a 5-page document with no negotiation beyond the cap, discount, and side-letter terms (pro-rata, info rights).
+ Standstill. No interest accrues. No maturity date forces repayment. The SAFE sits on the cap table as a contingent equity right. The startup keeps building.
+ Triggering event. A priced round (Series Seed, Series A) is the standard trigger. Acquisition, IPO, or dissolution also triggers conversion under the SAFE's terms — usually with a 1x liquidation preference floor.
+ Conversion. SAFE converts into preferred shares at the price determined by the cap, the discount, or whichever yields the lower price-per-share. The investor now holds equity. Cap table reflects the new ownership; founders see real dilution for the first time.
+ Discount rate — the simpler of the two mechanics
+ A discount rate gives the SAFE holder a percentage off the priced round's share price. Common range: 10–25% . If your Series Seed prices shares at $1.00 each and the SAFE has a 20% discount, the SAFE holder gets shares at $0.80 — meaning more shares per dollar invested. Higher discount = more dilution for founders, more equity for the early investor. The discount is the reward for taking risk before the priced round confirmed the price.
+ Valuation cap — the dominant mechanic post-2018
+ A valuation cap sets the maximum company valuation at which the SAFE will convert. If the SAFE has a $5M cap and the priced round happens at a $20M post-money valuation, the SAFE converts as if the company were worth $5M — giving the investor 4× more equity than they'd get at the headline price. Lower cap = better for the investor, more dilution for founders. In practice, the cap is the single most negotiated term on a SAFE.
+ Worked example — $500K SAFE at $5M cap Setup. Investor wires $500,000 on a post-money SAFE with a $5M valuation cap and no discount . Twelve months later, the startup raises a $2M Series Seed at a $10M post-money valuation . Conversion math. The cap is more favorable than the priced-round valuation, so the SAFE converts at the $5M cap. Investor's ownership = $500K / $5M = 10% of the post-money cap table. At the $10M priced-round price, the new Series Seed investor takes $2M / $10M = 20% . Founders' ownership drops by the full 30% the SAFE + Series Seed represent. Lesson. A $5M cap on a $500K check is dilutive — but standard. The math shifts dramatically once you stack three or four SAFEs at different caps. (Numbers are illustrative, not a Waveup recommendation — see your counsel.)
+
+ Pre-money vs post-money SAFE — why the 2018 YC rewrite still matters
+ A pre-money SAFE sets the cap before the new investment is added; ownership shifts depending on how much the round actually raises. A post-money SAFE sets the cap including the SAFE money — so the investor's ownership percentage is locked in at signing, regardless of how much SAFE the founder raises later. Y Combinator switched its templates to post-money in 2018, and post-money has been the standard ever since.
+ On a pre-money SAFE , if the cap is $5M and you raise $1M total in SAFEs, the investor's ownership only crystallizes when the priced round closes. If you stack a second $1M SAFE later at the same $5M cap, the first investor's percentage gets diluted by the new SAFE before the priced round. Cap-table forecasting is harder, and surprise dilution at the priced round is common.
+ On a post-money SAFE (YC's 2018 template), the cap is set against the post-SAFE-round valuation. The investor knows their exact percentage at signing — and that percentage doesn't change as you raise more SAFEs. The trade-off: post-money math is more dilutive to founders because subsequent SAFEs add to the cap table without diluting earlier SAFE holders. Founders running multiple post-money SAFEs at the same cap need to do the post-money math carefully — stacking is where most pre-seed dilution surprises happen.
+ Waveup experience Across our 2024–25 pre-seed engagements, 100% of our clients raised on SAFEs , not convertible notes — and the single most common late-stage surprise was post-money cap stacking. Founders signed three or four SAFEs over 18 months at progressively higher caps, then arrived at the Series A diligence with 35–45% already committed to SAFE holders before the new lead even modeled their preferred. The fix is boring: model the cap table after every SAFE, not just at the priced round. We rebuild this for clients in 30 minutes; doing it yourself in a spreadsheet takes about an hour the first time.
+
+ SAFE vs convertible note — what's the difference?
+ A SAFE is a contractual right to future equity — no debt, no interest, no maturity date. A convertible note is short-term debt that converts to equity at a triggering event, with interest accruing and a maturity date that can force conversion or repayment. SAFEs are simpler and faster (5 pages vs 15+); convertible notes give investors more downside protection. Per Carta's Q1 2025 data, SAFEs now dominate at pre-seed.
+ SAFE vs convertible note — head-to-head on every dimension that matters.
+ Dimension SAFE Convertible note 
+ Legal nature Contract — equity right Debt instrument 
+ Interest accrual None Typically 4–8% per year 
+ Maturity date None Usually 18–24 months — triggers conversion or repayment 
+ Conversion trigger Qualified priced round, IPO, acquisition, or dissolution Same triggers, plus maturity-date forced conversion or repayment 
+ Valuation set at signing? No — deferred to priced round (cap or discount applies) No — same deferral mechanism 
+ Repayment if no priced round? No — converts at IPO/acquisition or sits indefinitely Yes — principal + accrued interest due at maturity 
+ Document length ~5 pages (YC template) ~15–25 pages with side letters 
+ Investor protection Lower — no interest, no maturity safety net Higher — debt seniority + interest accrual 
+ 2025 pre-seed share (Carta) 90% 10% (declining) 
+ Best when… Speed + simplicity matter; founder leverage is strong Investor wants downside protection; later-stage bridge round 
+
+ For a deeper read on the older instrument and when it still makes sense — typically as a bridge between priced rounds, not as a primary pre-seed tool — see our companion explainer on convertible notes . Both instruments live in our broader investor documents handbook alongside term sheets, NDAs, and shareholder agreements.
+ When should you raise on a SAFE note?
+ Raise on a SAFE when you need speed, your valuation isn't settled, and you're at pre-seed or early seed. Skip it when investors demand debt-style protection, you're past Series A, or your cap table already has multiple SAFEs at uncoordinated caps. The right SAFE deal closes in days; the wrong one creates dilution surprises 18 months later.
+ Three signals it's the right time for a SAFE Speed matters more than terms. You need the cash this month, not next quarter. SAFE legal review is hours, not weeks.
+ Valuation is genuinely unsettled. No revenue, no comparable round, no leverage to argue a price. The cap defers the fight.
+ You're at pre-seed or early seed. The SAFE was built for this stage. Past Series A, lead investors will want a priced round, not a SAFE.
+
+ When founders prefer uncapped, discounted SAFEs
+ Founders prefer uncapped + discounted SAFEs because they avoid setting an arbitrary valuation and limit dilution if the next priced round prices high. Some investors won't sign without a cap — they want a ceiling on their downside if the company executes brilliantly. Whether you can hold an uncapped position depends on bargaining power: an uncapped SAFE signals real momentum and multiple competing offers. If there aren't many eager investors, negotiate a cap that's reasonable and meaningfully higher than the priced round you expect within 12–18 months. For broader context on how startups arrive at a valuation in the first place, see our piece on valuation methods .
+ What are the most common SAFE pitfalls founders miss?
+ Four pitfalls dominate: (1) cap stacking that quietly commits 35–45% of equity before the priced round, (2) MFN tail clauses that re-trigger when a later SAFE is signed, (3) pro-rata side letters that aren't tracked in the data room, and (4) confusing pre-money and post-money math when modeling the next round. Each one is preventable with cap-table modeling done after every SAFE — not just at the priced round.
+ Cap stacking. Three or four SAFEs at progressively higher caps stack their dilution onto the priced round. Founders we work with arrive at Series A diligence and discover 35–45% is already committed before the new lead even draws their preferred. Fix: model the cap table after every signed SAFE; renegotiate the cap if you've slipped below your floor.
+ MFN tail. A most-favored-nation clause means an old SAFE's terms reset to match the best later SAFE before the priced round. Sign a $3M-cap SAFE, then later sign a $2M-cap SAFE with MFN, and the second investor's terms apply to the first. Fix: track MFN clauses in your data room and model both scenarios.
+ Pro-rata side letters. Side letters granting pro-rata rights aren't part of the SAFE template — they're separate one-pagers that get lost. Lead investors at the priced round expect to see all of them. Fix: keep a pro-rata register in the data room; include every side letter, however informal.
+ Pre-money / post-money confusion. Founders model dilution using pre-money math, sign a post-money SAFE, and underestimate the dilution by 5–10%. Fix: read the SAFE; YC's 2018 templates are post-money by default. If your investor brings their own form, check before signing.
+ How do you efficiently issue a SAFE note?
+ Four steps: (1) define your terms — amount, cap, discount, triggering event — and your target investors, (2) start from a YC template or have counsel prepare a 5-page form, (3) sign with each investor and collect funds, (4) record the SAFE on your cap table the same day. Done correctly, the round closes in days, not months.
+ Define the terms. Total raise, target investors ( angels vs VCs ), valuation cap, discount rate, and triggering event. Decide whether to offer pro-rata as a side letter.
+ Prepare the SAFE document. Pull the right template from YC's documents library (post-money, Cap-only is the most common starting point) or have counsel draft a custom form. Bake in any negotiated side-letter terms.
+ Issue and collect. Negotiate cap and discount with each investor, sign the SAFE, collect the wire. Keep a clean record of every executed SAFE — investor name, date, amount, cap, discount, MFN status.
+ Record on the cap table. Update your cap-table model the day funds clear. Forecast dilution at the next priced round at three valuation scenarios: pessimistic, expected, and stretch. Re-run after every SAFE you sign — see equity compensation for the option-pool refresh that typically accompanies the next priced round.
+ Frequently asked questions about SAFE notes
+ In our work with 600+ startups, the same seven questions come up on every pre-seed call: is a SAFE debt or equity, what's a typical cap, can terms be negotiated, what happens at acquisition, when does a SAFE not fit, what are the alternatives, and can you stack multiple SAFEs at different caps. The answers below mirror what we've seen close fastest in 2024–25 deals.
+ SAFE note FAQs
+ Is a SAFE note debt or equity?
+
+ Neither, technically. A SAFE is a contractual right to receive equity in the future — it's not debt (no interest, no maturity date, no repayment obligation) and it's not equity until it converts. On the cap table, it sits as a contingent claim until a triggering event converts it into preferred shares.
+
+ What is a typical valuation cap for a SAFE?
+
+ Caps vary widely by stage and traction. Pre-seed SAFEs in 2024–25 commonly land in the $4M–$15M range; seed SAFEs run higher, often $10M–$30M. The cap should be meaningfully higher than the valuation you realistically expect at the next priced round — otherwise the cap, not the priced round, sets your dilution.
+
+ Can SAFE note terms be negotiated?
+
+ Yes — and they should be. The cap, discount, and side-letter terms (pro-rata, info rights, MFN) are all negotiable. Avoid SAFEs with both a low cap AND a high discount: stacking those terms dramatically increases the investor's ownership at conversion. Most experienced lead investors will accept either a cap OR a discount, not both.
+
+ What happens to a SAFE if the company is acquired?
+
+ The SAFE converts at the acquisition. Standard YC SAFEs give the investor the better of: (a) cash equal to their original investment (1× liquidation preference), or (b) shares calculated using the cap, then sold in the acquisition. The exact mechanics depend on the SAFE template — read the "Liquidity Event" section before you sign.
+
+ Does every startup benefit from using a SAFE note?
+
+ Most pre-seed startups do, but not all. SAFEs are simple, fast, and avoid interest. They offer less protection for investors who prefer convertible notes' debt-style downside. If your investor specifically wants interest accrual or a maturity-date safety net — common with strategic or angel checks above $250K — a convertible note may close faster than negotiating around a SAFE. Consult counsel before signing.
+
+ What are the alternatives to a SAFE note?
+
+ Three main alternatives at the early stages: convertible notes (debt that converts to equity), equity financing via a priced round (rare pre-seed because it requires a fixed valuation), and revenue-based financing (non-dilutive, repaid as a percentage of revenue). For most pre-seed startups, the realistic comparison is SAFE vs convertible note — and Carta's data shows SAFEs winning 9-to-1 at pre-seed.
+
+ Can you raise multiple SAFE rounds at different caps?
+
+ Yes — and most startups do. Each SAFE is independent; caps and discounts can vary across signers. The risk is cap stacking: each SAFE adds to the dilution at the priced round. Run a stacked-cap-table model after every SAFE to avoid arriving at Series A with 40%+ committed before the lead even draws their term sheet.
+
+ Wrap-up: when a SAFE is the right call — and when it isn't
+ We've seen the same pattern across 600+ raises: a SAFE is the right call at pre-seed when speed matters and valuation is genuinely unsettled, and the wrong call past Series A or whenever your investor specifically wants debt-style protection. The cap is the most consequential number you'll set in your first 18 months — model the stacked-SAFE dilution before you sign anything.
+ The SAFE has earned its place as the default pre-seed instrument. It closes fast, costs almost nothing in legal fees, and defers the valuation fight until both sides have real information. Carta's Q1 2025 data — 90% of pre-seed deals — confirms what we see across our portfolio. But "default" doesn't mean "automatic." The cap is the single most consequential number you'll set in your first 18 months. Stack three SAFEs without modeling the post-money math and you'll arrive at Series A with surprises that take quarters to unwind.
+ If you're staring at a draft SAFE and not sure whether the cap is fair, the discount is reasonable, or your stacked dilution is sustainable — that's where we work daily. After 600+ raises totaling $3B+ , including $630M closed in 2025 and 200+ warm VC introductions to firms like Antler, Bessemer, Creandum, Cherry, and a16z, our team has modeled enough cap tables to spot the dilution traps before the wire hits. The earlier we look, the cheaper the fix.
+
+ About to sign a SAFE? Have us model the dilution before you wire.
+ Talk to Waveup 
+
+ Methodology and review Reviewed against Y Combinator's current SAFE templates (3 US post-money variants as of 2026), Carta's Q1 2025 State of Private Markets (90% pre-seed / 64% seed SAFE share), and Waveup's 2024–25 pre-seed client portfolio. Last reviewed by Igor on 2026-05-01. This article is educational, not legal advice — consult counsel before signing any SAFE.
+
+ Related reading 
+ What is a convertible note? 
+ What is post-money valuation and how to calculate it 
+ A definitive handbook on investor documents 
+ Startup valuation methods 
+ Equity compensation for startups 
+ Angel investors vs venture capitalists 
+ How to value your startup 
+ Waveup Fundraising services 
+ Startup dilution per round — 2026 benchmarks by stage 
+ Startup dilution calculator: model SAFEs, priced rounds and option pool top-ups 
+
+ 131 posts
+
+ Igor Shaverskyi Founder, Waveup
+ Igor Shaverskyi is the founder of Waveup, which he launched in 2015. Over the past decade he has helped 500+ startups navigate both dilutive and non-dilutive funding paths, with founders raising more than $3B in capital. His perspectives on startup fundraising have been featured in TechCrunch, Forbes, and The Next Web.
+
+ 23 posts
+
+ Anastasiia Content Writer, Waveup
+ Hi there! I’m Anya, a Content Writer at Waveup. I’ve been working with startups in various industries for over 4 years, soaking up the knowledge and learning from their business strategies. Now, I collaborate with the best minds here at Waveup to pick up their expertise and share it with the readers.
+
+ Related Posts
+ Fundraising 
+ Core knowledge 
+ What Is a Term Sheet? Key Terms, Example & Template (2026) 
+
+ Core knowledge 
+ Financial model 
+ Best Business Valuation Services and Firms for Startups 2026 
+
+ Fundraising 
+ Best Investor Databases and List Tools for Fundraising 2026 
+
+ Fundraising 
+ Investor Update Template and Example for Startups (2026) 
+
+ Fundraising 
+ Seed Round Benchmarks 2026: Size, Valuation, Dilution, Time 
+
+ Fundraising 
+ Series A Benchmarks 2026: ARR, Growth, Round Size, Valuation 
+
+ Pitchdeck 
+ Fundraising 
+ Pitch Deck Cost in 2026: Prices by Provider and Package 
+
+ Fundraising 
+ Startup Fundraising Consultant Fees in 2026: What You'll Pay 
+
+ Core knowledge 
+ M&A Advisor Fees in 2026: Retainers, Success Fees, Lehman 
+
+ Core knowledge 
+ Exit Multiples by Industry 2026: EBITDA & Revenue Benchmarks 
+
+ Core knowledge 
+ Best M&A Advisors for Startups and Small Companies (2026) 
+
+ Core knowledge 
+ How to Sell Your Startup in 2026: When, How and to Whom 
+
+ Have a project in mind? 
+ Leave your information below and one of our experts will be in touch 
+to schedule a call.
+ Your name: 
+ *Your email: 
+ *You need help with: Select options 
+ VC-ready pitch deck Financial forecast Branding Find investors (FULLY SUBSCRIBED) Slides design Other 
+
+ Your project is: 
+ Your current stage: 
+ Your maximum budget: 
+ How did you find us? 
+
+ Submit Thank you, your sign-up request was successful!

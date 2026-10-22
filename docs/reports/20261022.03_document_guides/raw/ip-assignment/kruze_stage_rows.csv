@@ -1,0 +1,17 @@
+row,period_requested,why,pre_seed,seed,series_a,series_b,series_c
+Founder criminal history or legal history,All,Disclose if a founder has had any legal or regulatory issues - it is best to disclose this even if it is not asked for by investors.,Maybe,Maybe,Maybe,Yes,Yes
+"Detailed capitalization table, including shares, options, SAFEs, and convertible notes",Current,The cap table helps investors model different investment scenarios.,Yes,Yes,Yes,Yes,Yes
+Option pool details,Current,"Summary of vesting schedule, ungranted option details, projections on options to be granted in next 12 to 24 months",Yes,Yes,Yes,Yes,Yes
+"History of funding rounds, including valuation and terms",Since founding,Shows how the startup's financial performance has grown by achieving targets.,Yes,Yes,Yes,Yes,Yes
+List of current investors and their ownership stakes,Current,"Disclose current investors, their stakes and what type of security they hold.",Yes,Yes,Yes,Yes,Yes
+409A valuations,Last 2 valuations,Copies of Internal Revenue Code Section 409A valuation reports.,No,Maybe,Yes,Yes,Yes
+Any pending or potential IP litigation,NaN,VCs will evaluate how legally sound and solid the startup's IP is; dislcose any potential litigation even if not asked about it.,Maybe,Maybe,Yes,Yes,Yes
+"Invention agreements signed by employees, founders, consultants, etc.",Since inception,Demonstrate that the startup has ownership of inventions and intellectual property.,Maybe,Maybe,Yes,Yes,Yes
+"List of employees, consultants, founders who have not signed intellectual property (IP) agreements",Since inception,Demonstrate that startup IP Is appropriately protected.,No,Maybe,Yes,Yes,Yes
+BOD/shareholder meeting minutes and actions,Last 3 years,Demonstrate evidence of board decisions and approvals.,No,No,Maybe,Yes,Yes
+List of any ongoing or potential legal disputes or liabilities,Current,"Identify any legal disputes that could limit the company's growth, including litigation, consent decrees, injunctions, judgments, or settlement agreements.",Maybe,Yes,Yes,Yes,Yes
+"Overview of regulatory and environmental compliance, including industry-specific requirements",Current,Assess the regulatory environment and outline any risks that could limit the startup's growth.,Maybe,Maybe,Maybe,Yes,Yes
+Articles of incorporation and current certificate of incorporation,Since inception,Prove that you are legally registered and provide any amendments.,Yes,Yes,Yes,Yes,Yes
+State certificate of good standing,Current,Prove that you are correctly registered to do business in the states where you operate.,No,No,Maybe,Maybe,Yes
+Bylaws and amendments,Current,These documents include details about company management that aren't included in articles of incorporation.,Yes,Yes,Yes,Yes,Yes
+"Existing shareholder agreements, SAFE, and convertible debt documentation",Current,VCs need to verify the terms of these obligations since they affect company valuation.,Yes,Yes,Yes,Yes,Yes

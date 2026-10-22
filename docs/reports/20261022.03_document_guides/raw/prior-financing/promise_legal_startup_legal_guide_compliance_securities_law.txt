@@ -1,0 +1,1459 @@
+SOURCE: https://promise.legal/startup-legal-guide/compliance/securities-law
+
+Securities Law for Startups: Regulation D, Accredited Investors & Compliance Guide (2025) | Promise Legal 
+
+ Reviewed by
+
+ Alex Shahrestani , Managing Partner 
+
+ Texas Bar · USPTO (Trademark)
+
+ Securities Law for Startups: Regulation D, Accredited Investors & Compliance (2025)
+
+ When you raise money for your startup by issuing equity (stock) or convertible securities (SAFE notes, convertible notes), you're selling securities under federal and state law. The Securities Act of 1933 requires that all securities be registered with the SEC —or qualify for an exemption from registration .
+
+ For most startups, registration is impractical and expensive. Instead, you'll rely on exemptions under Regulation D , which allow you to raise capital from accredited investors (and, in limited cases, sophisticated non-accredited investors) without SEC registration.
+
+ Why securities law matters: 
+
+ Non-compliance = rescission rights : Investors can demand their money back (with interest)
+
+ SEC enforcement : Civil penalties, disgorgement of profits, and potential criminal charges
+
+ State enforcement : Blue sky law violations can result in additional fines and investor lawsuits
+
+ Blocked future fundraising : Investors and acquirers conduct securities law diligence—violations are deal-breakers
+
+ This guide covers:
+
+ Securities Act of 1933 overview
+
+ Regulation D exemptions (Rule 506(b) vs Rule 506(c))
+
+ Accredited investor definition and verification
+
+ Form D filing requirements
+
+ Blue sky laws and state notice filings
+
+ SAFE notes and convertible notes under securities law
+
+ Common violations and penalties
+
+ Integration doctrine and timing restrictions
+
+ Table of Contents
+
+ Securities Act of 1933: Registration vs Exemptions 
+
+ Regulation D Overview 
+
+ Rule 506(b): Private Placements (No General Solicitation) 
+
+ Rule 506(c): General Solicitation Allowed (Accredited Investors Only) 
+
+ Accredited Investor Definition (2025) 
+
+ Accredited Investor Verification Requirements 
+
+ Form D Filing Requirements 
+
+ Blue Sky Laws: State Securities Compliance 
+
+ SAFE Notes and Convertible Notes Under Securities Law 
+
+ Integration Doctrine: Avoiding Multiple Offerings 
+
+ Common Securities Law Violations 
+
+ SEC Enforcement and Penalties (2024-2025) 
+
+ Securities Law Compliance Checklist 
+
+ Securities Law Resources for Startups 
+
+ FAQ: Securities Law Compliance 
+
+ Securities Act of 1933: Registration vs Exemptions {#securities-act-1933}
+
+ What is a Security?
+
+ Under the Securities Act of 1933, Section 2(a)(1) , a "security" includes:
+
+ Stock (common stock, preferred stock)
+
+ Convertible securities (convertible notes, SAFE notes)
+
+ Options and warrants
+
+ Investment contracts (using the "Howey Test")
+
+ Howey Test (from SEC v. W.J. Howey Co. , 328 U.S. 293 (1946)):
+A transaction is an investment contract (and thus a security) if:
+
+ An investment of money
+
+ In a common enterprise
+
+ With an expectation of profits
+
+ Derived from the efforts of others
+
+ For startups : Issuing equity (common or preferred stock), SAFE notes, convertible notes, or options are all securities transactions.
+
+ Registration vs Exemption
+
+ Section 5 of the Securities Act requires all offers and sales of securities to be registered with the SEC, unless an exemption applies.
+
+ Registered offerings: 
+
+ Requires filing Form S-1 with the SEC
+
+ Extensive disclosure requirements (audited financials, business description, risk factors)
+
+ Costly ($500K-$2M+ in legal and accounting fees)
+
+ Time-consuming (3-6 months)
+
+ Typically only used for initial public offerings (IPOs)
+
+ Exempt offerings (Regulation D): 
+
+ No SEC registration required
+
+ Limited disclosure requirements
+
+ Form D notice filing (15 days after first sale)
+
+ Significantly cheaper and faster
+
+ Restrictions on who can invest and how you can advertise
+
+ For most startups : You'll use exempt offerings under Regulation D to raise seed, Series A, and later rounds.
+
+ Regulation D Overview {#regulation-d-overview}
+
+ Regulation D (Reg D) provides three key exemptions from SEC registration:
+
+ Exemption 
+ Capital Limit 
+ Investor Limits 
+ General Solicitation 
+ Verification 
+
+ Rule 504 
+ $10M (12 months) 
+ No limit 
+ Allowed (with conditions) 
+ Not required 
+
+ Rule 506(b) 
+ Unlimited 
+ Unlimited accredited + 35 sophisticated 
+ Prohibited 
+ Self-certification OK 
+
+ Rule 506(c) 
+ Unlimited 
+ Accredited only 
+ Allowed 
+ Required 
+
+ Most startups use Rule 506(b) or Rule 506(c) to raise capital.
+
+ When to Use Rule 506(b) vs Rule 506(c)
+
+ Use Rule 506(b) when: 
+
+ You're raising from existing investors, friends/family, or warm introductions
+
+ You want to include a few sophisticated (but non-accredited) investors
+
+ You don't want to publicly advertise your fundraise
+
+ You want to avoid formal accreditation verification
+
+ Use Rule 506(c) when: 
+
+ You want to publicly advertise your fundraise (pitch events, demo days, Twitter, AngelList)
+
+ All your investors are accredited
+
+ You're willing to verify accreditation status (bank statements, tax returns, third-party verification services)
+
+ You want to avoid "general solicitation" gray areas
+
+ Most venture-backed startups use Rule 506(b) because they raise from VC funds (all accredited) and warm introductions, and don't need to publicly advertise.
+
+ Rule 506(b): Private Placements (No General Solicitation) {#rule-506b}
+
+ Key Requirements
+
+ Rule 506(b) allows you to raise unlimited capital from:
+
+ Unlimited accredited investors 
+
+ Up to 35 non-accredited but sophisticated investors 
+
+ Conditions: 
+
+ No general solicitation or advertising 
+
+ Pre-existing relationship : You must have a substantive pre-existing relationship with investors (or be introduced through a broker-dealer or person with a substantive relationship)
+
+ Form D filing : File Form D with SEC within 15 days after first sale
+
+ Disclosure for non-accredited investors : If you sell to non-accredited investors, you must provide extensive disclosure (audited financials, business plan, risk factors)
+
+ What is "General Solicitation"?
+
+ General solicitation includes: 
+
+ Public advertising (newspaper ads, billboards, TV/radio)
+
+ Mass emails to non-relationship contacts
+
+ Public pitch events open to the general public
+
+ Social media posts advertising your fundraise (Twitter, LinkedIn, AngelList)
+
+ Cold outreach to investors you don't know
+
+ Allowed under Rule 506(b): 
+
+ Warm introductions from trusted advisors, lawyers, accountants
+
+ Pitching at invite-only events where attendees have pre-existing relationships
+
+ Sharing pitch deck with investors you already know
+
+ Demo days where attendance is pre-screened (e.g., Y Combinator Demo Day is structured to avoid general solicitation)
+
+ Gray areas: 
+
+ LinkedIn posts about fundraising (courts have found this is general solicitation)
+
+ "Friends and family" emails to people you don't regularly communicate with
+
+ AngelList profiles (generally OK if investors contact you first)
+
+ Best practice : If there's any doubt whether you have a pre-existing substantive relationship, use Rule 506(c) instead.
+
+ Non-Accredited Investors: The 35-Investor Limit
+
+ Rule 506(b) allows up to 35 non-accredited investors per offering.
+
+ "Sophisticated investor" requirement: 
+Non-accredited investors must be sophisticated —i.e., they have "sufficient knowledge and experience in financial and business matters to evaluate the merits and risks of the prospective investment."
+
+ Disclosure requirements for non-accredited investors: 
+
+ Audited financial statements (or, for startups under $10M, unaudited financials with certification)
+
+ Business plan and offering memorandum
+
+ Risk factors
+
+ Management background
+
+ Use of proceeds
+
+ Most startups avoid non-accredited investors because:
+
+ Disclosure requirements are expensive
+
+ Increased legal risk
+
+ Complicates future fundraising (VCs often require all-accredited cap tables)
+
+ 90-Day Aggregation Rule
+
+ If you conduct multiple Rule 506(b) offerings within 90 calendar days , the number of non-accredited investors purchasing in all offerings combined cannot exceed 35.
+
+ Example: 
+
+ January 1: Rule 506(b) offering with 20 non-accredited investors
+
+ February 15: Second Rule 506(b) offering with 18 non-accredited investors
+
+ Problem : Total non-accredited investors (38) exceeds 35 within 90 days → violation 
+
+ Solution : Wait 90 days between offerings, or limit total non-accredited investors to 35 across both offerings.
+
+ Rule 506(c): General Solicitation Allowed (Accredited Investors Only) {#rule-506c}
+
+ Key Requirements
+
+ Rule 506(c) allows you to raise unlimited capital through general solicitation and advertising , but:
+
+ Conditions: 
+
+ All purchasers must be accredited investors (no exceptions)
+
+ Reasonable steps to verify accredited investor status (self-certification alone is insufficient)
+
+ Form D filing : File Form D with SEC within 15 days after first sale
+
+ General Solicitation Under Rule 506(c)
+
+ Rule 506(c) allows: 
+
+ Public advertising (social media, newspaper ads, TV/radio)
+
+ Public pitch events (demo days, investor conferences)
+
+ Cold outreach to investors
+
+ AngelList, LinkedIn, Twitter posts about fundraising
+
+ Mass emails
+
+ No pre-existing relationship required. 
+
+ Accredited Investor Verification (Rule 506(c))
+
+ Unlike Rule 506(b), Rule 506(c) requires you to take "reasonable steps to verify" that all investors are accredited.
+
+ Self-certification alone is not sufficient. 
+
+ Acceptable verification methods (from SEC guidance, March 2025 ):
+
+ Income verification : Review IRS forms (W-2, 1099, Schedule K-1, Form 1040) for the past two years
+
+ Net worth verification : Review bank statements, brokerage statements, tax assessments, appraisals (dated within 90 days)
+
+ Third-party verification letters : Written confirmation from registered broker-dealer, SEC-registered investment adviser, licensed attorney, or CPA
+
+ Third-party verification services : Use services like VerifyInvestor, Parallel Markets, or AngelList verification
+
+ Best practice : Use third-party verification services (cost: $50-$200 per investor) to reduce liability.
+
+ March 2025 SEC Guidance : The SEC issued new no-action guidance easing verification burdens for Rule 506(c), allowing issuers to rely on third-party verification services without additional steps in most cases.
+
+ Accredited Investor Definition (2025) {#accredited-investor-definition}
+
+ Accredited investor definition (17 CFR § 230.501) 
+
+ Individual Accredited Investors
+
+ An individual qualifies as accredited if they meet any one of the following:
+
+ Criteria 
+ Requirement 
+
+ Income (individual) 
+ Earned income exceeding $200,000 in each of the prior two years, and reasonably expects the same for the current year 
+
+ Income (joint) 
+ Joint income with spouse/partner exceeding $300,000 in each of the prior two years, and reasonably expects the same for the current year 
+
+ Net worth 
+ Net worth exceeding $1 million (individually or jointly with spouse/partner), excluding primary residence 
+
+ Professional certifications 
+ Holds in good standing a Series 7, Series 65, or Series 82 license 
+
+ Knowledgeable employees 
+ Directors, executive officers, or general partners of the issuer 
+
+ Net Worth Calculation (Excluding Primary Residence)
+
+ Net worth = Assets - Liabilities 
+
+ Excluding primary residence: 
+
+ The fair market value of your primary residence is not included in assets
+
+ Mortgages and other loans secured by your primary residence (up to the fair market value) are not included in liabilities
+
+ Increase in mortgage debt within 60 days : If you took out a home equity line of credit or refinanced within 60 days before investing, the increase in debt is included in liabilities
+
+ Example 1: Simple net worth calculation 
+
+ Assets: $1.5M (cash, stocks, investment property)
+
+ Liabilities: $300K (credit cards, auto loans)
+
+ Primary residence: $800K (fair market value), $500K mortgage
+
+ Net worth : $1.5M - $300K = $1.2M → Accredited ✅
+
+ Example 2: Recent mortgage increase 
+
+ Assets: $1.2M
+
+ Liabilities: $200K
+
+ Primary residence: $800K, $400K mortgage
+
+ 45 days ago: Took out $150K home equity line of credit
+
+ Net worth : $1.2M - $200K - $150K = $850K → Not accredited ❌
+
+ Entity Accredited Investors
+
+ Entities qualify as accredited if: 
+
+ $5M+ in assets : Any entity (corporation, LLC, partnership, trust) with total assets exceeding $5 million (not formed solely to invest in the offering)
+
+ All equity owners are accredited : Any entity where all equity owners are accredited investors
+
+ Investment advisers : SEC-registered or state-registered investment advisers
+
+ Broker-dealers : SEC-registered broker-dealers
+
+ Banks, insurance companies : Regulated financial institutions
+
+ Employee benefit plans : With assets exceeding $5 million
+
+ "Knowledgeable employees" : Family offices with assets exceeding $5 million, and their knowledgeable employees
+
+ Most VC funds qualify as accredited investors (either $5M+ in assets or all equity owners accredited).
+
+ Accredited Investor Verification Requirements {#accredited-investor-verification}
+
+ Rule 506(b): Self-Certification Allowed
+
+ Under Rule 506(b) , you can rely on investors' self-certification of accredited status, unless you have reason to question their status.
+
+ Best practice: 
+
+ Include accredited investor questionnaire in subscription agreement
+
+ Investors check boxes certifying they meet income, net worth, or professional certification requirements
+
+ Investors sign under penalty of perjury
+
+ You are not required to independently verify , but if you have reason to doubt their status (e.g., investor claims $1M+ net worth but is a recent college graduate with no apparent income), you should investigate.
+
+ Rule 506(c): Verification Required
+
+ Under Rule 506(c) , you must take reasonable steps to verify accredited status.
+
+ "Reasonable steps" standard : Depends on facts and circumstances, including:
+
+ Information you have about the investor
+
+ Nature of the investor's claim to accredited status
+
+ Amount of the investment
+
+ Class of investors
+
+ Acceptable Verification Methods (Rule 506(c))
+
+ Method 1: Income verification 
+
+ Review IRS forms for the past two years:
+
+ W-2s
+
+ 1099s
+
+ Schedule K-1 (for partnership income)
+
+ Form 1040 (with tax return transcript)
+
+ Investor provides written representation that they reasonably expect to reach the income level in the current year
+
+ Method 2: Net worth verification 
+
+ Review recent documentation (within 90 days ):
+
+ Bank statements
+
+ Brokerage statements
+
+ Tax assessments
+
+ Credit reports
+
+ Appraisals
+
+ Investor provides written representation about liabilities and primary residence
+
+ Method 3: Third-party verification letters 
+
+ Obtain written confirmation from:
+
+ Registered broker-dealer
+
+ SEC-registered investment adviser
+
+ Licensed attorney
+
+ Certified public accountant (CPA)
+
+ Letter must confirm investor's accredited status (dated within 90 days)
+
+ Method 4: Professional certifications 
+
+ Review copy of Series 7, Series 65, or Series 82 license 
+
+ Verify license is in good standing (check FINRA BrokerCheck)
+
+ Method 5: Prior verification (existing investors) 
+
+ If investor was verified as accredited in a prior Rule 506(c) offering within the past 5 years , and you have no reason to question their status, you can rely on that verification
+
+ Method 6: Third-party verification services 
+
+ Use services like VerifyInvestor , Parallel Markets , or AngelList verification 
+
+ Service reviews income/net worth documentation and provides verification letter
+
+ Cost: $50-$200 per investor
+
+ Recommended : Use third-party verification services to reduce liability.
+
+ Form D Filing Requirements {#form-d-filing}
+
+ What is Form D?
+
+ Form D is a brief notice filing that must be submitted to the SEC when conducting an exempt offering under Regulation D.
+
+ Form D includes: 
+
+ Issuer information (company name, address, CIK number)
+
+ Offering details (amount raised, exemption relied upon, type of securities)
+
+ Related persons (executives, directors, promoters)
+
+ Industry classification
+
+ Form D is not a pre-approval —it's a notice to the SEC that you're relying on a Regulation D exemption.
+
+ Filing Deadlines
+
+ Federal (SEC): 
+
+ File Form D within 15 calendar days after the first sale of securities 
+
+ "First sale" = first date when an investor is irrevocably contractually committed to invest (typically when subscription agreement is signed and funds are wired)
+
+ State (Blue Sky): 
+
+ Most states require Form D filing before the first sale or within 15 days after first sale
+
+ State filing fees: $0-$300 per state (California: $300)
+
+ Late filings: 
+
+ SEC historically did not penalize late Form D filings, but this changed in December 2024 
+
+ New enforcement priority : SEC brought charges against multiple companies for failure to file Form D on time
+
+ SEC Enforcement for Failure to File Form D (December 2024)
+
+ On December 20, 2024 , the SEC announced charges against:
+
+ Two pre-IPO companies for failure to file Form D in connection with Rule 506(b) offerings
+
+ One private fund adviser for failure to file Form D for Rule 506(c) offerings
+
+ Penalties: 
+
+ Civil penalties: $175,000 (CEO), $85,000 (CFO)
+
+ Disgorgement of proceeds
+
+ Injunctive relief
+
+ Key takeaway : Form D filing is no longer a "paperwork technicality"—the SEC is actively enforcing this requirement.
+
+ Source : SEC Press Release (Dec 20, 2024) 
+
+ How to File Form D
+
+ Federal filing (SEC): 
+
+ Create EDGAR account at https://www.sec.gov/edgar 
+
+ Complete Form D online or via EDGAR filing system
+
+ Submit electronically
+
+ No filing fee for federal Form D
+
+ State filing (Blue Sky): 
+
+ Use NASAA Electronic Filing Depository (EFD) at https://www.nasaa.org/industry-resources/corporation-finance/efd/ 
+
+ File Form D for each state where you have investors
+
+ Pay state filing fees (varies by state: $0-$300)
+
+ Some states require additional forms (e.g., California Form 25102(f) for Rule 506 offerings)
+
+ Alternative : Hire a law firm or compliance service (e.g., Carta Launch, Harbor Compliance, IMS) to handle Form D filings (cost: $500-$2,000).
+
+ Blue Sky Laws: State Securities Compliance {#blue-sky-laws}
+
+ What Are Blue Sky Laws?
+
+ Blue sky laws are state securities regulations that apply in addition to federal securities laws.
+
+ Why "blue sky"? : The term comes from a 1917 Supreme Court case describing fraudulent schemes that had no more basis than "so many feet of blue sky."
+
+ All 50 states have blue sky laws. 
+
+ National Securities Markets Improvement Act (NSMIA)
+
+ The National Securities Markets Improvement Act of 1996 (NSMIA) preempts most state registration requirements for offerings conducted under Rule 506.
+
+ NSMIA preemption for Rule 506 offerings: 
+
+ States cannot require registration of securities offered under Rule 506(b) or Rule 506(c)
+
+ States can still enforce anti-fraud provisions and bring enforcement actions
+
+ States can require notice filings (Form D) and filing fees
+
+ You still need to file Form D with each state where you have investors. 
+
+ State Notice Filings and Fees
+
+ State requirements for Rule 506 offerings: 
+
+ File Form D (via NASAA EFD system)
+
+ Pay filing fees (varies by state)
+
+ Consent to service of process (appointing state official to receive legal notices)
+
+ State filing fees (as of 2025): 
+
+ State 
+ Filing Fee 
+ Deadline 
+
+ California 
+ $300 
+ 15 days after first sale 
+
+ New York 
+ $0 
+ 15 days after first sale 
+
+ Texas 
+ $300 
+ 15 days after first sale 
+
+ Delaware 
+ $0 
+ 15 days after first sale 
+
+ Florida 
+ $100 
+ 15 days after first sale 
+
+ Illinois 
+ $100 
+ No later than first sale 
+
+ Massachusetts 
+ $250 
+ 15 days after first sale 
+
+ Washington 
+ $50 
+ 15 days after first sale 
+
+ Total blue sky filing costs : If you raise from investors in 10 states, expect $500-$2,000 in filing fees.
+
+ Source : Colonial Stock Transfer - Blue Sky Filing Fees 
+
+ State-Specific Requirements
+
+ Some states impose additional requirements beyond Form D:
+
+ California: 
+
+ File Form 25102(f) (California notice filing for Rule 506 offerings)
+
+ File with California Department of Financial Protection and Innovation (DFPI) 
+
+ $300 filing fee
+
+ New York: 
+
+ File Form 99 (New York notice filing)
+
+ No filing fee
+
+ Texas: 
+
+ File Form 606 (Texas notice filing)
+
+ $300 filing fee
+
+ Best practice : Use NASAA EFD system or hire a compliance service to handle state filings.
+
+ SAFE Notes and Convertible Notes Under Securities Law {#safe-notes-convertible-notes}
+
+ Are SAFE Notes and Convertible Notes "Securities"?
+
+ Yes. Both SAFE notes and convertible notes are securities under the Securities Act of 1933.
+
+ Convertible notes are debt securities that convert into equity
+
+ SAFE notes (Simple Agreement for Future Equity) are investment contracts that convert into equity
+
+ Both require compliance with securities laws (registration or exemption).
+
+ Securities Law Treatment of SAFE Notes
+
+ SAFE notes are securities , but they differ from convertible notes in tax treatment:
+
+ SAFE notes are not debt (no interest accrues, no tax deduction for issuer)
+
+ SAFE notes are equity for accounting purposes (recorded as equity on balance sheet)
+
+ SAFE notes convert at future equity financing (priced round)
+
+ Securities law compliance for SAFE notes: 
+
+ File Form D within 15 days of first SAFE note issuance
+
+ Rely on Rule 506(b) or Rule 506(c) exemption
+
+ SAFE note investors must be accredited (or, under Rule 506(b), up to 35 sophisticated non-accredited)
+
+ File blue sky notices in each state where SAFE investors are located
+
+ Common mistake : Treating SAFE notes as "not securities" and skipping Form D filing.
+
+ Correct approach : SAFE notes are securities. File Form D and comply with Regulation D.
+
+ Securities Law Treatment of Convertible Notes
+
+ Convertible notes are debt securities that convert into equity upon a triggering event (typically the next priced equity round).
+
+ Securities law compliance for convertible notes: 
+
+ File Form D within 15 days of first note issuance
+
+ Rely on Rule 506(b) or Rule 506(c) exemption
+
+ Convertible note investors must be accredited (or, under Rule 506(b), up to 35 sophisticated non-accredited)
+
+ File blue sky notices in each state where note investors are located
+
+ Convertible notes vs equity rounds: 
+
+ Both are securities
+
+ Both require Form D filing
+
+ Both must comply with Regulation D exemptions
+
+ Conversion : When convertible notes convert into equity at a priced round, the conversion itself is not a new securities issuance (notes converted under original subscription agreement), but the priced round will require a new Form D filing.
+
+ Integration Doctrine: Avoiding Multiple Offerings {#integration-doctrine}
+
+ What is the Integration Doctrine?
+
+ The integration doctrine seeks to prevent issuers from improperly avoiding registration by artificially dividing a single offering into multiple offerings.
+
+ Example of prohibited integration: 
+
+ January 1: Rule 506(b) offering raising $500K from accredited investors
+
+ January 15: Public offering raising $5M (should have been registered)
+
+ Problem : If the two offerings are "integrated" (treated as a single offering), the combined offering should have been registered → violation 
+
+ Rule 152: Integration Safe Harbors (2021)
+
+ In November 2020, the SEC adopted Rule 152 , which provides safe harbors to avoid integration.
+
+ Rule 152 became effective March 15, 2021. 
+
+ 30-Day Safe Harbor
+
+ Rule 152(b)(1) : Any offering made more than 30 calendar days before the commencement of another offering, or more than 30 calendar days after termination/completion of another offering, will not be integrated .
+
+ Example 1: Safe (30-day gap) 
+
+ January 1: Complete Rule 506(b) offering
+
+ February 5 (35 days later): Begin new Rule 506(c) offering
+
+ Result : Not integrated ✅
+
+ Example 2: Not safe (less than 30 days) 
+
+ January 1: Complete Rule 506(b) offering
+
+ January 20 (19 days later): Begin new Rule 506(c) offering
+
+ Result : May be integrated (analysis required) ⚠️
+
+ Same or Similar Class of Securities
+
+ Rule 152(b)(2) : Offerings will not be integrated if the offerings are made under different exemptions and involve different classes of securities .
+
+ Example: 
+
+ January: Issue Series A preferred stock under Rule 506(b)
+
+ February: Issue warrants under Rule 506(c)
+
+ Result : Not integrated (different classes) ✅
+
+ Best Practices to Avoid Integration
+
+ Wait 30 days between offerings (easiest safe harbor)
+
+ Use consistent exemptions (don't mix Rule 506(b) and Rule 506(c) in rapid succession)
+
+ Keep separate documentation for each offering (separate subscription agreements, term sheets, Forms D)
+
+ Different investor pools : Avoid offering to the same investors in rapid succession under different exemptions
+
+ Common Securities Law Violations {#common-violations}
+
+ Mistake #1: Raising from Investors Without Filing Form D
+
+ The problem: You raise $500K from 10 angel investors using SAFE notes. You don't file Form D because you think SAFE notes "aren't securities."
+
+ Why it's wrong: 
+
+ SAFE notes are securities
+
+ Form D must be filed within 15 days of first sale
+
+ Failure to file Form D is a violation (and the SEC is now enforcing this—see December 2024 enforcement actions)
+
+ The fix: 
+
+ File Form D immediately (even if late)
+
+ File blue sky notices with applicable states
+
+ Disclose late filing to current and future investors
+
+ Penalty risk: Civil penalties ($175,000+), disgorgement, investor rescission rights.
+
+ Mistake #2: General Solicitation Under Rule 506(b)
+
+ The problem: You raise a $1M seed round under Rule 506(b). You post on LinkedIn: "We're raising a $1M seed round—DM me for our pitch deck."
+
+ Why it's wrong: 
+
+ LinkedIn posts are general solicitation 
+
+ General solicitation is prohibited under Rule 506(b)
+
+ Any investors who see the post and invest cause the entire offering to lose the exemption
+
+ The fix: 
+
+ If you want to publicly advertise, use Rule 506(c) and verify all investors are accredited
+
+ Remove public posts immediately
+
+ Document pre-existing substantive relationships with all investors
+
+ Penalty risk: Entire offering loses exemption → all investors have rescission rights (demand money back with interest).
+
+ Mistake #3: Failing to Verify Accreditation Under Rule 506(c)
+
+ The problem: You conduct a Rule 506(c) offering (public advertising). You have investors self-certify accredited status by checking boxes. You don't independently verify.
+
+ Why it's wrong: 
+
+ Self-certification alone is not sufficient under Rule 506(c)
+
+ You must take "reasonable steps to verify" accredited status
+
+ If investors are not actually accredited, you lose the exemption
+
+ The fix: 
+
+ Use third-party verification services (VerifyInvestor, Parallel Markets, AngelList)
+
+ Request tax returns, bank statements, or third-party verification letters
+
+ Document verification efforts in investor file
+
+ Penalty risk: Loss of exemption, investor rescission rights, SEC enforcement action.
+
+ Mistake #4: Selling to Non-Accredited Investors Without Disclosure
+
+ The problem: You raise $500K under Rule 506(b) from 10 investors. Three are non-accredited (friends and family). You don't provide them with audited financials or an offering memorandum.
+
+ Why it's wrong: 
+
+ Rule 506(b) requires extensive disclosure to non-accredited investors
+
+ You must provide audited financials (or unaudited with certification), business plan, risk factors, management background, use of proceeds
+
+ The fix: 
+
+ Provide required disclosure documents to non-accredited investors immediately
+
+ Consider offering rescission rights to avoid future claims
+
+ For future rounds, only accept accredited investors (simpler)
+
+ Penalty risk: Investor rescission rights, SEC enforcement, state enforcement.
+
+ Mistake #5: Skipping Blue Sky State Filings
+
+ The problem: You file Form D with the SEC but don't file Form D with California, New York, and Texas (where your investors are located).
+
+ Why it's wrong: 
+
+ Blue sky laws require state notice filings even for Rule 506 offerings 
+
+ Each state where you have investors requires Form D filing and filing fees
+
+ States can enforce securities laws independently of the SEC
+
+ The fix: 
+
+ File Form D with all applicable states via NASAA EFD system
+
+ Pay filing fees ($0-$300 per state)
+
+ Maintain state filing records
+
+ Penalty risk: State enforcement actions, fines ($1,000-$10,000 per violation), investor rescission rights.
+
+ Mistake #6: Accepting Investment from Unverified "Accredited" Investors
+
+ The problem: An investor claims to be accredited based on "expected future income" (e.g., "I'm starting a new job next year that will pay $250K"). You accept their investment without verifying actual income history.
+
+ Why it's wrong: 
+
+ Accredited investor income test requires past two years of income exceeding threshold, plus reasonable expectation of same for current year
+
+ "Future income" alone does not satisfy the test
+
+ If investor is not actually accredited, you may lose the exemption
+
+ The fix: 
+
+ Request tax returns (Form 1040) or W-2s for past two years
+
+ Verify investor has already met income threshold (not just expectation)
+
+ Use third-party verification service for Rule 506(c) offerings
+
+ Penalty risk: Loss of exemption, investor rescission rights.
+
+ Mistake #7: Using Old Form D (Not Amending for New Closings)
+
+ The problem: You file Form D for your first closing ($500K raised). Three months later, you have a second closing ($300K). You don't amend Form D.
+
+ Why it's wrong: 
+
+ Form D must be amended annually if the offering remains open
+
+ Amendments should be filed to update total amount raised and date of first sale (if ongoing)
+
+ The fix: 
+
+ File Form D/A (amendment) for each subsequent closing or at least annually
+
+ Update total amount raised, number of investors, and date of last sale
+
+ Penalty risk: Late filing penalties (see SEC December 2024 enforcement actions).
+
+ SEC Enforcement and Penalties (2024-2025) {#sec-enforcement}
+
+ Recent SEC Enforcement Activity (2024-2025)
+
+ Fiscal Year 2024 Results ( SEC Press Release, November 2024 ):
+
+ Total enforcement actions : 583 actions
+
+ Penalties and disgorgement : $8.2 billion
+
+ Recordkeeping cases : 70+ firms charged, $600M+ in penalties
+
+ Form D enforcement : New focus area (December 2024 actions)
+
+ Form D Enforcement (December 2024)
+
+ On December 20, 2024 , the SEC announced charges against:
+
+ Two pre-IPO tech companies for failure to file Form D in connection with Rule 506(b) offerings raising $170M+ combined
+
+ One registered investment adviser for failure to file Form D for multiple Rule 506(c) fund offerings
+
+ Penalties: 
+
+ CEO: $175,000 civil penalty 
+
+ CFO: $85,000 civil penalty 
+
+ Company: Disgorgement of profits, injunctive relief
+
+ Key finding : The SEC stated that failure to file Form D is a direct violation of Regulation D and issuers cannot rely on the exemption if Form D is not timely filed.
+
+ Message to startups : Form D filing is no longer a "paperwork formality"—it's a strict requirement with real enforcement consequences.
+
+ Source : SEC Press Release (Dec 20, 2024) 
+
+ Penalties for Securities Law Violations
+
+ Civil penalties (per violation): 
+
+ Tier I (negligence) : Up to $10,000 per violation
+
+ Tier II (reckless disregard) : Up to $100,000 per violation
+
+ Tier III (knowing fraud) : Up to $1,000,000 per violation
+
+ Additional penalties: 
+
+ Disgorgement : Return of all proceeds raised in the offering
+
+ Injunctive relief : Court order prohibiting future violations
+
+ Bars from serving as officer/director : Individuals can be barred from serving in executive roles
+
+ Criminal charges : Willful securities fraud can result in criminal prosecution (up to 20 years imprisonment)
+
+ Investor Rescission Rights
+
+ If you raise capital without complying with securities laws, investors have rescission rights under Section 12(a)(1) of the Securities Act:
+
+ Investors can demand their money back with interest 
+
+ Rescission rights last for one year after the violation (or three years after the sale, whichever is earlier)
+
+ Investors can bring individual or class action lawsuits
+
+ Example: 
+
+ You raise $2M from 50 investors under Rule 506(b)
+
+ You posted on Twitter about the fundraise (general solicitation → violation)
+
+ All 50 investors have rescission rights → demand $2M back with interest
+
+ Your startup likely cannot afford to repay $2M → insolvency
+
+ Best practice : Fix securities law violations immediately, and consider offering voluntary rescission to investors to avoid lawsuits.
+
+ Benefits of Self-Reporting Violations
+
+ The SEC offers reduced or no civil penalties for companies that self-report securities law violations.
+
+ Fiscal Year 2024 : Multiple companies that self-reported Form D filing failures received no penalties (only required to file late Form D and implement compliance procedures).
+
+ How to self-report: 
+
+ File late Form D immediately
+
+ Contact SEC Division of Corporation Finance: https://www.sec.gov/answers/regdhtm.html 
+
+ Disclose violation to current and future investors
+
+ Implement compliance procedures (Form D tracking, legal review of offerings)
+
+ Securities Law Compliance Checklist {#compliance-checklist}
+
+ Before You Raise Capital
+
+ [ ] Determine exemption : Rule 506(b) (private) vs Rule 506(c) (general solicitation)
+
+ [ ] Verify investor eligibility : Accredited investors only (or up to 35 sophisticated non-accredited under 506(b))
+
+ [ ] Prepare subscription documents :
+
+ Subscription agreement
+
+ Accredited investor questionnaire
+
+ Purchase agreement (for SAFE notes/convertible notes)
+
+ Disclosure documents (if selling to non-accredited investors under 506(b))
+
+ [ ] Understand general solicitation rules : Avoid public posts, cold outreach, mass emails (unless using 506(c))
+
+ During the Offering
+
+ [ ] Verify accredited investor status :
+
+ Rule 506(b): Self-certification (accredited investor questionnaire)
+
+ Rule 506(c): Independent verification (tax returns, bank statements, third-party verification service)
+
+ [ ] Avoid general solicitation (Rule 506(b)): No LinkedIn posts, Twitter posts, public pitch events
+
+ [ ] Document pre-existing relationships (Rule 506(b)): How did you meet each investor? Warm introduction from whom?
+
+ [ ] Track first sale date : Date when first investor is contractually committed (subscription agreement signed, funds wired)
+
+ Within 15 Days of First Sale
+
+ [ ] File Form D with SEC : https://www.sec.gov/edgar 
+
+ [ ] File Form D with applicable states : Use NASAA EFD system ( https://www.nasaa.org )
+
+ [ ] Pay state filing fees : $0-$300 per state
+
+ [ ] File state-specific forms : California Form 25102(f), New York Form 99, Texas Form 606
+
+ After the Offering
+
+ [ ] Amend Form D annually : If offering remains open longer than one year
+
+ [ ] Maintain investor records : Accredited investor questionnaires, verification documentation, subscription agreements
+
+ [ ] Update cap table : Record all securities issuances (use Carta, Pulley, or AngelList)
+
+ [ ] Prepare for next round : Ensure prior rounds are compliant before raising next round (VCs will conduct securities law diligence)
+
+ Ongoing Compliance
+
+ [ ] Track integration timing : Wait 30 days between offerings to avoid integration issues
+
+ [ ] Avoid new general solicitation : If you raised under 506(b), don't post about fundraising publicly
+
+ [ ] Update investors : Provide annual updates (not required by securities law, but best practice for investor relations)
+
+ [ ] Securities law audit : Before each new fundraising round, audit prior rounds for compliance
+
+ Securities Law Resources for Startups {#resources}
+
+ SEC Resources
+
+ SEC Small Business Resources : https://www.sec.gov/resources-small-businesses 
+
+ Regulation D Overview : https://www.sec.gov/fast-answers/answers-regdhtm.html 
+
+ Rule 506(b) Guidance : https://www.sec.gov/resources-small-businesses/exempt-offerings/private-placements-rule-506b 
+
+ Rule 506(c) Guidance : https://www.sec.gov/resources-small-businesses/exempt-offerings/general-solicitation-rule-506c 
+
+ Accredited Investor Definition : https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/updated-3 
+
+ Form D Filing : https://www.sec.gov/files/formd.pdf 
+
+ State Securities Regulators
+
+ North American Securities Administrators Association (NASAA) : https://www.nasaa.org 
+
+ NASAA Electronic Filing Depository (EFD) : https://www.nasaa.org/industry-resources/corporation-finance/efd/ 
+
+ California DFPI (Securities) : https://dfpi.ca.gov/rules-enforcement/laws-and-regulations/law-and-regulations-corporate-securities-law/ 
+
+ New York Attorney General (Investor Protection) : https://ag.ny.gov/bureau/investor-protection-bureau 
+
+ Texas State Securities Board : https://www.ssb.texas.gov 
+
+ Third-Party Verification Services
+
+ VerifyInvestor : https://www.verifyinvestor.com (accredited investor verification)
+
+ Parallel Markets : https://parallelmarkets.com (identity verification, accreditation, AML/KYC)
+
+ AngelList Verification : https://www.angellist.com (for syndicates)
+
+ North Capital : https://www.northcapital.com (transfer agent, blue sky filing)
+
+ Compliance Services
+
+ Carta Launch : https://carta.com/launch (incorporation, Form D filing, equity management)
+
+ Harbor Compliance : https://www.harborcompliance.com (blue sky filings, registered agent)
+
+ IMS Corporate Services : https://www.imscorporate.com (Form D filing, blue sky compliance)
+
+ Colonial Stock Transfer : https://www.colonialstock.com (transfer agent, blue sky fee calculator)
+
+ Legal Research
+
+ Securities Act of 1933 : https://www.law.cornell.edu/uscode/text/15/chapter-2A 
+
+ Regulation D (17 CFR § 230.501-508) : https://www.law.cornell.edu/cfr/text/17/part-230/subpart-D 
+
+ Rule 152 (Integration) : https://www.law.cornell.edu/cfr/text/17/230.152 
+
+ Accredited Investor Definition : https://www.law.cornell.edu/cfr/text/17/230.501 
+
+ FAQ: Securities Law Compliance {#faq}
+
+ 1. Do SAFE notes require Form D filing?
+
+ Yes. SAFE notes are securities under the Securities Act of 1933. You must:
+
+ File Form D with the SEC within 15 days of first sale
+
+ File Form D with applicable states (blue sky notice filings)
+
+ Rely on Regulation D exemption (typically Rule 506(b))
+
+ Common mistake : Treating SAFE notes as "not securities" and skipping Form D filing. This is a violation.
+
+ 2. Can I post on LinkedIn about my fundraise if I'm using Rule 506(b)?
+
+ No. LinkedIn posts are general solicitation and are prohibited under Rule 506(b).
+
+ Allowed: 
+
+ Private messages to people you know
+
+ Sharing pitch deck with investors you already have a relationship with
+
+ Prohibited: 
+
+ Public posts ("We're raising a seed round—DM me for details")
+
+ LinkedIn posts visible to your network
+
+ Cold InMails to investors you don't know
+
+ If you want to publicly advertise, use Rule 506(c) (and verify all investors are accredited).
+
+ 3. What's the difference between Rule 506(b) and Rule 506(c)?
+
+ Rule 506(b) 
+ Rule 506(c) 
+
+ No general solicitation 
+ General solicitation allowed 
+
+ Unlimited accredited investors + 35 non-accredited sophisticated 
+ Accredited investors only 
+
+ Self-certification OK 
+ Verification required 
+
+ Pre-existing relationships required 
+ No pre-existing relationship required 
+
+ Most startups use Rule 506(b) because they raise from VCs, angel investors, and warm introductions (no need for public advertising).
+
+ 4. How do I verify accredited investor status under Rule 506(c)?
+
+ Acceptable methods: 
+
+ Tax returns : Request Form 1040 for past two years (verify income exceeds $200K individual or $300K joint)
+
+ Bank/brokerage statements : Request statements dated within 90 days (verify net worth exceeds $1M excluding primary residence)
+
+ Third-party verification letter : Obtain letter from CPA, attorney, broker-dealer, or investment adviser confirming accredited status
+
+ Third-party verification service : Use VerifyInvestor, Parallel Markets, or AngelList (cost: $50-$200 per investor)
+
+ Recommended : Use third-party verification services to reduce liability.
+
+ 5. What happens if I miss the Form D filing deadline?
+
+ File immediately (even if late). The SEC historically did not penalize late Form D filings, but as of December 2024 , the SEC is actively enforcing this requirement.
+
+ Recent enforcement (December 2024): 
+
+ SEC charged two companies for failure to file Form D
+
+ Penalties: $175,000 (CEO), $85,000 (CFO)
+
+ Disgorgement of proceeds
+
+ Best practice: 
+
+ File Form D within 15 days of first sale
+
+ If late, file immediately and consider self-reporting to SEC
+
+ Disclose late filing to current and future investors
+
+ 6. Do I need to file Form D in every state where I have investors?
+
+ Yes. Even though Rule 506 offerings are exempt from state registration under NSMIA, states still require notice filings (Form D) and filing fees .
+
+ Use NASAA EFD system ( https://www.nasaa.org/industry-resources/corporation-finance/efd/ ) to file Form D with multiple states at once.
+
+ State filing fees : $0-$300 per state (California: $300, New York: $0, Texas: $300).
+
+ 7. Can I accept investment from non-accredited investors?
+
+ Under Rule 506(b): Yes (up to 35 non-accredited but sophisticated investors).
+
+ Under Rule 506(c): No (accredited investors only).
+
+ If you accept non-accredited investors under Rule 506(b), you must provide: 
+
+ Audited financial statements (or unaudited with certification)
+
+ Business plan and offering memorandum
+
+ Risk factors
+
+ Management background
+
+ Use of proceeds
+
+ Most startups avoid non-accredited investors because disclosure requirements are expensive and VCs prefer all-accredited cap tables.
+
+ 8. What is the integration doctrine, and how do I avoid it?
+
+ The integration doctrine prevents issuers from artificially dividing a single offering into multiple offerings to avoid registration.
+
+ To avoid integration: 
+
+ Wait 30 days between offerings (Rule 152(b)(1) safe harbor)
+
+ Use consistent exemptions (don't mix Rule 506(b) and Rule 506(c) in rapid succession)
+
+ Different classes of securities (e.g., preferred stock vs warrants)
+
+ Keep separate documentation (separate subscription agreements, Forms D)
+
+ 30-day safe harbor : Offerings made more than 30 days apart will not be integrated.
+
+ 9. How do I know if someone is "sophisticated" (for non-accredited investors under Rule 506(b))?
+
+ "Sophisticated investor" = someone with "sufficient knowledge and experience in financial and business matters to evaluate the merits and risks of the prospective investment."
+
+ Evidence of sophistication: 
+
+ MBA or finance degree
+
+ Professional experience in finance, accounting, or law
+
+ Prior startup investing experience
+
+ CPA, CFA, or attorney designation
+
+ You must have a reasonable basis to believe the investor is sophisticated (document their qualifications in investor file).
+
+ Best practice : Only accept accredited investors to avoid this analysis.
+
+ 10. What are the penalties for securities law violations?
+
+ SEC civil penalties: 
+
+ Tier I (negligence): Up to $10,000 per violation
+
+ Tier II (reckless disregard): Up to $100,000 per violation
+
+ Tier III (knowing fraud): Up to $1,000,000 per violation
+
+ Additional consequences: 
+
+ Disgorgement : Return of all proceeds
+
+ Investor rescission rights : Investors can demand money back with interest
+
+ State enforcement : Fines, injunctive relief
+
+ Criminal charges : Willful fraud can result in imprisonment (up to 20 years)
+
+ Recent example (December 2024): 
+
+ SEC charged CEO with $175,000 penalty for failure to file Form D
+
+ CFO charged $85,000 penalty
+
+ Need Help with Securities Law Compliance?
+
+ Securities law compliance is complex, and mistakes can be expensive (rescission rights, SEC enforcement, investor lawsuits). If you're raising capital for your startup, we can help:
+
+ Promise Legal assists startups with: 
+
+ Regulation D compliance (Rule 506(b) and 506(c))
+
+ Form D filing (federal and state blue sky notices)
+
+ Accredited investor verification
+
+ Securities law audits (reviewing prior fundraising rounds for compliance)
+
+ Fixing securities law violations (late Form D filings, general solicitation issues, integration problems)
+
+ Schedule a consultation → 
+
+ Related Guides
+
+ SAFE Notes: Structure, Terms & When to Use (2025) – Learn how SAFE notes work, Y Combinator terms, valuation caps, and tax treatment
+
+ Convertible Notes: Structure, Terms & Conversion Mechanics (2025) – Compare convertible notes vs SAFE notes, interest rates, maturity dates, and conversion mechanics
+
+ Series A Preparation: Metrics, Due Diligence & Timeline (2025) – Prepare for Series A fundraising with revenue metrics, due diligence checklists, and legal compliance
+
+ 409A Valuations: Requirements, Timing & Safe Harbor (2025) – Understand 409A valuation requirements, safe harbor protection, and timing for equity grants
+
+ Cap Tables: Structure, Dilution & Common Mistakes (2025) – Learn cap table structure, tracking equity, calculating dilution, and common mistakes
+
+ Disclaimer : This guide provides general information about securities law compliance for startups and should not be construed as legal advice. Securities law is complex and varies by jurisdiction. Consult with a qualified securities attorney before conducting any securities offering. This guide was last updated in January 2025 and reflects securities laws as of that date.
+
+ About Promise Legal : We're a Texas-based law firm focused on startups, technology companies, and entrepreneurs. We provide practical, cost-effective legal guidance on corporate formation, fundraising, compliance, contracts, and intellectual property.
+
+ Learn more about our services → 
+
+ This guide is part of our counsel for:
+
+ For Founders
+
+ Menu 
+
+ To Top 
+
+ Accessibility 
+
+ Resource Map 
+
+ Chatbot 
+
+ × 
+
+ Resources & Navigation
+
+ Welcome to our resources section. Here you can find links to helpful information, guides, and more!
+
+ Websites 
+
+ Bots and Tools 
+
+ Blog 
+
+ Back 
+ Entity Hub
+
+ Series of Promise Legal PLLC
+
+ Promise Legal Law 
+
+ Promise Legal Tech 
+
+ Promise Legal Engage 
+
+ Web Resources
+
+ Articles for Startups 
+
+ Book a Consultation 
+
+ Client Portal 
+
+ Back 
+ Tech Tools
+
+ News Feeds
+
+ Privacy Law Updates 
+
+ Artificial Intelligence Law Updates 
+
+ Educational Tech Law Updates 
+
+ Meta Search
+
+ Workplace AI Tools 
+
+ Back 
+ Blog
+
+ The Art of Law and Technology 
+
+ This button allows you to scroll to the top or access additional options. Alt + A will toggle accessibility mode.
+
+ Got it!

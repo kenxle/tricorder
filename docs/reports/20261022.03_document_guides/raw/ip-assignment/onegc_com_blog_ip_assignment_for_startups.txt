@@ -1,0 +1,163 @@
+SOURCE: https://onegc.com/blog/ip-assignment-for-startups
+
+IP Assignment for Startups: The Gaps That Kill Deals | OneGC 
+ Skip to content 
+
+ All posts 
+ Every venture-backed startup hits the same wall during due diligence: the investor's counsel asks for a complete chain of IP assignment, and the founder realizes the chain has holes. A co-founder built the prototype before incorporation. A contractor wrote core infrastructure without a signed agreement. An employee's offer letter referenced an IP assignment clause, but nobody signed the standalone Proprietary Information and Inventions Assignment Agreement (PIIA).
+
+ These are not edge cases. They are the default state of most startups before Series A. The fix is straightforward if you catch it early. If you catch it during a financing or acquisition, you are negotiating from weakness, burning legal fees, and sometimes watching deals fall apart over assets you thought you already owned.
+
+ Why IP Assignment Matters More Than Founders Think 
+
+ A startup's value is almost entirely in its intellectual property: code, algorithms, designs, brand, trade secrets, and proprietary data. Unlike a manufacturing business with physical assets and receivables, a software company that does not own its IP owns very little.
+
+ Investors understand this. That is why every term sheet for a priced round includes a representation that the company owns or has valid licenses to all IP used in its business. If that representation is not true, the company either cannot make it (delaying or killing the deal) or makes it and creates an indemnification liability if the gap surfaces later.
+
+ Acquirers care even more. In an M&A transaction, IP ownership is a closing condition. A single missing assignment from a former contractor can hold up a deal worth multiples of what it would have cost to get the paperwork right at the start.
+
+ The Four IP Assignment Gaps That Surface in Diligence 
+
+ 1. Pre-Incorporation Work 
+
+ This is the most common gap. Two founders spend six months building a product, incorporate a Delaware C-Corp, and raise a seed round. The code, designs, and documentation created during those six months belong to the individuals who created them, not the company. The act of incorporation does not transfer ownership of pre-existing work.
+
+ The fix: Each founder signs an IP assignment agreement that specifically assigns all prior work related to the company's business to the corporation. This should happen at incorporation, alongside stock grants and vesting agreements. If it did not happen then, it needs to happen before any financing.
+
+ The assignment should cover all forms of IP: source code, documentation, designs, trade secrets, inventions, domain names, and social media accounts. It should be broad enough to capture work product that the founder may not think of as "intellectual property," like customer lists, financial models, or pitch decks.
+
+ 2. Contractor and Agency Work 
+
+ Under U.S. copyright law, the default rule is that the creator owns what they create. The "work made for hire" doctrine transfers ownership to the hiring party, but only for employees (and for a narrow set of commissioned works that rarely covers software). If you hire a freelance developer, designer, or agency, they own the work unless you have a written agreement that assigns it to you.
+
+ A purchase order is not an assignment. A Slack message saying "this is work for hire" is not an assignment. An invoice is not an assignment. You need a signed contract with an explicit IP assignment clause, and ideally a PIIA or similar standalone assignment.
+
+ The fix: Every contractor and agency engagement should include, at minimum:
+
+ A clear assignment of all work product and IP to the company
+
+ A waiver of moral rights (relevant for design work and in certain jurisdictions)
+
+ A representation that the work is original and does not infringe third-party IP
+
+ A definition of "work product" that covers source code, documentation, designs, inventions, and anything else created in connection with the engagement
+
+ If you have past contractors who worked without proper agreements, reach out and get retroactive assignments signed. The longer you wait, the harder this gets. Former contractors have less incentive to cooperate once the relationship is over, and some will ask for additional compensation to sign.
+
+ 3. Employee Agreements with Missing or Weak IP Clauses 
+
+ Most startup offer letters include a paragraph about IP assignment. Many founders assume this is sufficient. It is not always enough, for two reasons.
+
+ First, some offer letters reference a separate PIIA that never gets signed. The offer letter says "as a condition of employment, you will sign the company's Proprietary Information and Inventions Assignment Agreement," but nobody follows up. The clause in the offer letter is a promise to sign a future agreement, not an assignment itself.
+
+ Second, some states limit what employers can claim. California Labor Code Section 2870, for example, prohibits employers from requiring assignment of inventions that an employee develops entirely on their own time, without using company resources, and that are unrelated to the company's business. Similar protections exist in Delaware, Illinois, Minnesota, Washington, and other states. A PIIA that ignores these carve-outs may be partially unenforceable.
+
+ The fix: Use a standalone PIIA for every employee, signed on or before the first day of work. Make sure it:
+
+ Assigns all work-related inventions and IP to the company
+
+ Includes the required state-specific carve-outs
+
+ Covers confidential information and trade secrets
+
+ Requires disclosure of prior inventions (so the company knows what is excluded)
+
+ Is actually signed, not just referenced in the offer letter
+
+ 4. Open Source Contamination 
+
+ This is not an assignment gap in the traditional sense, but it shows up in the same diligence review. If your engineers used open source libraries with copyleft licenses (GPL, AGPL, LGPL) in your product, the license terms may require you to release your proprietary code under the same license. This does not mean you do not own your code. It means your ownership may come with obligations that are incompatible with a proprietary software business.
+
+ The fix: Maintain an open source inventory. Know which licenses are in your dependency tree. GPL and AGPL in any code that ships to customers or runs as a service (for AGPL) are red flags that need legal review. Permissive licenses like MIT, BSD, and Apache 2.0 are generally safe for commercial use.
+
+ Automated tools like FOSSA, Snyk, or even a simple license checker in your CI pipeline can catch this early. The time to discover a GPL dependency is not during Series A diligence.
+
+ Background IP vs. Foreground IP: A Distinction That Matters 
+
+ Not all IP in your codebase needs to be assigned to the company. The distinction between background IP and foreground IP is important, especially for contractor engagements and technical co-founders who bring pre-existing tools or frameworks.
+
+ Background IP is intellectual property that existed before the engagement. A contractor's proprietary component library, a founder's open source project, or a reusable framework developed independently. The creator retains ownership of background IP.
+
+ Foreground IP is intellectual property created during and for the engagement. Code written specifically for the company's product, designs created for the company's brand, inventions developed using company resources. Foreground IP should be assigned to the company.
+
+ The standard approach is:
+
+ Foreground IP is assigned to the company outright
+
+ Background IP is retained by the creator, with a perpetual, royalty-free license granted to the company to use it in the product
+
+ The creator lists all background IP in a schedule attached to the agreement, so there is no ambiguity about what was pre-existing
+
+ If a contractor's background IP is so integral to your product that you cannot operate without it, you should negotiate an assignment or exclusive license rather than relying on a non-exclusive license that the contractor can also grant to your competitors.
+
+ International Considerations 
+
+ IP assignment rules vary significantly by jurisdiction. A few common issues for startups with international teams or contractors:
+
+ Moral rights. In many countries (France, Germany, Brazil, Canada, and others), creators have "moral rights" that cannot be fully waived. These include the right to be identified as the author and the right to object to modifications that would harm the creator's reputation. Moral rights do not prevent assignment of economic rights, but they can create complications if a former creator objects to how their work is being used.
+
+ Automatic employer ownership. Some jurisdictions (including the UK for employees) automatically vest IP ownership in the employer for work created in the course of employment. This is more favorable to startups than the U.S. default, but it applies only to employees, not contractors.
+
+ Assignment formalities. Some countries require IP assignments to be in writing, registered, or notarized to be enforceable. A U.S.-style click-through or DocuSign assignment may not be sufficient for IP created in certain jurisdictions.
+
+ If you have team members or contractors outside the U.S., get jurisdiction-specific advice on assignment requirements. A single global template may leave gaps.
+
+ The Diligence Checklist Investors Will Run 
+
+ When a VC or acquirer reviews your IP ownership, they are looking for:
+
+ Complete chain of title. Every person who contributed to the product has signed an assignment. There are no gaps between pre-incorporation work and the company's current IP portfolio.
+
+ Signed PIIAs for all employees. Not referenced in offer letters. Actually signed.
+
+ Contractor agreements with IP assignment. For every contractor and agency that touched the product, a signed agreement that assigns work product to the company.
+
+ Open source compliance. An inventory of open source dependencies with license types identified. No copyleft contamination in proprietary code.
+
+ No third-party claims. No former employees, contractors, or co-founders who might assert ownership over any part of the product.
+
+ Registered IP where appropriate. Trademark registrations for the brand. Patent applications if relevant. Copyright registrations are not required in the U.S. but can strengthen enforcement.
+
+ If you cannot produce clean answers for each of these items, expect the issue to show up as a diligence finding, a qualification to the IP representation in the deal documents, or a request for a special indemnity.
+
+ Playbook: Clean Up Your IP Chain Before It Matters 
+
+ Audit your contributor history. List every person who has written code, created designs, or contributed IP to your product. This includes founders, employees, contractors, agencies, interns, and advisors.
+
+ Check for signed agreements. For each contributor, confirm that a signed IP assignment exists. If it does not, get one signed now.
+
+ Handle pre-incorporation IP. If founders built the product before incorporating, execute founder IP assignment agreements.
+
+ Review contractor agreements. Confirm that every contractor agreement includes explicit IP assignment (not just "work for hire" language, which may not apply to software).
+
+ Run an open source audit. Use an automated tool to inventory your dependencies and flag copyleft licenses.
+
+ Document background IP. If any contributor brought pre-existing IP into the product, make sure it is listed in a schedule and that the company has an appropriate license.
+
+ Store everything. Keep signed agreements in your data room, organized and accessible. When diligence comes, you want to hand over a clean folder, not spend two weeks chasing down PDFs.
+
+ The Bottom Line 
+
+ IP assignment is not exciting. It is not the part of building a startup that anyone looks forward to. But it is the foundation that every financing, partnership, and exit depends on. The companies that handle it well are the ones that treat it as a checkbox at onboarding, not a fire drill during diligence. Thirty minutes of paperwork per contributor today prevents weeks of cleanup and potentially hundreds of thousands in legal fees when the stakes are highest.
+
+ OneGC is not a law firm and does not provide legal advice. OneGC provides self-help services at your specific direction. The information provided by OneGC along with the content on our website related to legal matters is provided for your private use and does not constitute legal advice. 
+
+ Jacques Baritot
+ General Counsel
+ Jacques Baritot is co-founder of OneGC and a startup lawyer with more than 13 years of experience at Coinbase, Checkr, Yodlee, and Fenwick. Most recently Associate General Counsel at Coinbase.
+
+ Related articles
+
+ Sep 23, 2025 OneGC HQ 
+ What to Include in Your Data Room & What to Leave Out
+
+ Mar 28, 2026 OneGC HQ 
+ Your SAFE Isn't Simple: Scenarios Every Founder Gets Wrong
+
+ Jul 31, 2026 OneGC HQ 
+ Mutual NDA Red Flags: 6 Clauses to Catch Before You Sign
+
+ Jul 9, 2026 OneGC HQ 
+ Your contractor might be an employee
+
+ Share:

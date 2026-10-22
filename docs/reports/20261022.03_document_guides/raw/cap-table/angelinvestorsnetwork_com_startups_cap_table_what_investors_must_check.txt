@@ -1,0 +1,149 @@
+SOURCE: https://angelinvestorsnetwork.com/startups/cap-table-what-investors-must-check
+
+Cap Table Basics: What Every Investor Must Check 
+
+ TL;DR: Carta's data puts the median Series A option pool at 15% of fully diluted equity, and every point of it comes out of your stake, according to Carta . Read a cap table for three things: how later rounds dilute you, how big the unissued pool is, and which preferred shares get paid before you in a sale.
+ I'm writing this for the angel or LP who already writes checks and wants to read the document the way the lead investor does. A founder builds a cap table to raise money. You read it to find out what happens to your check when the company sells for less than everyone hoped. If you want the plain definition, Investopedia covers it well.
+
+ I've trusted people who turned out to be frauds, and I've lost hundreds of thousands of dollars, some of it mine and some of it other investors'. On the submarine I signed off on more than 1,000 QA jobs, and none of them counted until someone verified the work. A cap table deserves the same treatment. Verify before you trust.
+
+ What does a cap table tell you before you invest?
+
+ It tells you who gets paid, in what order, and how much of the company you'll still own after the next round. The ownership column is the least useful part.
+
+ A cap table, per Investopedia , often includes "common equity shares, preferred equity shares, warrants, and convertible equity ." Every one of those is a claim on the same pie. They don't all sit in the same place in line, and the ones near the back often learn that only at the sale. I read the table in this order: dilution, option pool, then the preference stack. Downside first.
+
+ How much will later rounds dilute you?
+
+ Every new round issues new shares, and your percentage drops even though your share count doesn't. Plan for it before you invest, not after.
+
+ VC Beast gives a clean example. After a Series A takes 20%, "the new shares issued dilute all existing holders proportionally: founders now hold 56%, seed investors 16%, and the option pool 8%, with Series A at 20%," according to VC Beast . Founders started that example at 70% and seed investors at 20%. Nobody did anything wrong. The round just closed, and the arithmetic did the rest.
+
+ Here's the same arithmetic on a stake like yours. Say you hold 5% fully diluted. A round that sells 20% new shares leaves you at 4%. If that round also tops up the option pool by 5% of the post-round company, you're at 3.75%. That's my illustration, not a market figure, but the mechanics are the same on every deal.
+
+ So ask how many rounds the company needs before it can fund itself. Each one takes a bite, and the company that needs four more has a very different table from the one that needs one. If you want to see how the late-stage version plays out for small checks, read why 2026 mega-rounds lock out solo angels .
+
+ Why does the option pool matter to you?
+
+ The unissued pool is equity that exists on paper, belongs to no one yet, and still dilutes you. A bigger pool means more dilution for existing holders.
+
+ Carta reports that "the median startup has set aside 15% of its fully diluted equity for its employee option pool at the time it raises a Series A," and that the figure rises to 19.6% by Series E+, per Carta . So a pool in that range is normal. A pool well above it deserves a question.
+
+ Ask two things. Is the pool sized to a hiring plan, or was it padded? And does the new investor require the top-up before the round, so that only existing holders absorb it? You want a straight answer to both, because the second one decides who pays for the pool. A founder who can't tell you how many hires the pool covers hasn't planned the hires.
+
+ Advisor grants come out of the same pool, so it's worth knowing what advisory shares do to a cap table before you decide the founder was generous with them.
+
+ What do liquidation preferences do to your payout?
+
+ Preferred stock gets paid before common stock in a sale, and the terms of that preference can move your payout more than the ownership percentage does.
+
+ bunch puts it this way: "Preferred stock usually carries certain advantages over common stock, such as priority in case of liquidation and sometimes dividend rights or enhanced voting rights." A percentage on the page can still mislead you. On Wikipedia , the entry notes that "as a cap table becomes more complex, the ownership percentages indicated on the cap table can diverge from actual percentage of proceeds distributed to shareholders upon a liquidity event." The tool that shows the real split is a waterfall analysis.
+
+ Stay informed
+ Get investment intelligence delivered weekly. Expert analysis, market insights, and deal flow updates.
+
+ Subscribe 
+
+ Here is a waterfall on made-up numbers. A Series A investor puts in $5 million for 20% and the company sells for $20 million.
+
+ Term Series A receives Everyone else receives 
+ 1x non-participating $5M (takes the preference, since 20% of $20M is only $4M) $15M 
+ 1x participating $8M ($5M preference plus 20% of the remaining $15M) $12M 
+ No preference (straight 20%) $4M $16M 
+
+ The same 20% stake pays $4 million, $5 million or $8 million depending on one clause. Run the same table on a $6 million sale and the preference swallows most of the proceeds, which is the case that hurts common holders and early angels. This is my arithmetic, not a market survey.
+
+ Carta also tracks how common the aggressive version is: "The share of rounds with participating preferred stock climbed from 4.8% in Q4 2021 to more than 15% in early 2023—then fell by more than half by Q4 2024 as market conditions shifted back in founders' favor," according to Carta . Terms swing with the market, so don't assume the last deal you saw tells you what this one looks like.
+
+ Check where you sit. If your check converts into a later series, ask what you actually receive and whether your series ranks equally with the new money or behind it.
+
+ How do you read a cap table in order?
+
+ Go through it the same way each time, so you notice what's missing.
+
+ Step What to look at What it tells you 
+ 1 Fully diluted vs. as-issued percentages How much unissued equity is hiding in the denominator 
+ 2 Option pool, issued and unissued Who pays for future hires, and whether the pool is padded 
+ 3 Convertible notes and SAFEs Shares that don't exist yet but will appear at the next priced round 
+ 4 Preferred series, in order of seniority Who is paid first in a sale 
+ 5 Preference terms (multiple, participation) Your real payout at a low exit 
+ 6 Founder vesting Whether the founders are still earning their stake 
+
+ On step 1, bunch notes that cap tables show ownership "both on a fully diluted basis (assuming all convertible securities are exercised) and on an as-issued basis," per bunch . Always use the fully diluted number for your own math. If the founder only shows you the as-issued one, ask for the other before you go further.
+
+ Step 3 is where the surprises hide. A SAFE or convertible note often carries a valuation cap, which sets the price at which it converts, and the shares it turns into land on the table at the next priced round. If you want to see how that cap gets argued over from the founder's side, the Series B valuation cap piece walks through the pressure points.
+
+ What mistakes do investors make with cap tables?
+
+ The most common one is reading the percentage and stopping. A 5% stake tells you nothing about what you take home, because the preference stack sits between you and the proceeds. Ask for the waterfall at two or three exit values, including a low one.
+
+ Stale tables catch people too. VC Beast lists "not maintaining the cap table in real time" among the mistakes it sees most, according to VC Beast . If the document you're handed is a spreadsheet from three months ago, ask what has been issued since, and don't wire anything until you've seen the current one. That's verify before you trust, applied to a spreadsheet.
+
+ Crowded tables are a quieter problem. The same source flags "creating a messy ' party round' with 20+ small investors" as another common error, per VC Beast . With that many holders, getting consent for the next round gets harder, and so does finding out who holds which rights.
+
+ Founders deserve a look as well. If their equity is fully vested on day one, they can leave and keep it. Look for vesting on the founder lines, not just on employee options, because a team that can walk away with its stake has less reason to stay through the bad year.
+
+ FAQ
+
+ What is a shareholder cap table?
+
+ It's a record of everyone who owns a stake in a company and what they own, including founders, investors and employees. VC Beast describes it as showing "ownership percentages, share counts, and fully diluted stakes." You read it to see where your money would rank.
+
+ What is the difference between a stock ledger and a cap table?
+
+ A stock ledger records issued shares. A cap table goes further and models percentages, dilution and the value of each class. It can also cover options, warrants and convertible notes, which a ledger of issued shares wouldn't show.
+
+ Should I ask for the cap table before I wire money?
+
+ Yes, and ask for the fully diluted version with a waterfall at a few exit values. A founder who can't produce one hasn't modeled your downside. It's a reasonable request from anyone writing a check.
+
+ Do SAFEs and convertible notes show up in a fully diluted cap table?
+
+ They should. A fully diluted view assumes convertible securities are exercised, per bunch . If the table leaves them out, you're looking at ownership that will shrink at the next priced round.
+
+ What should you do today?
+
+ Pick the last private deal you were shown, or the one on your desk now. Ask the founder for the fully diluted cap table and a waterfall at three exit values, one of them low. If they can't produce a waterfall, that tells you how closely anyone has looked at your downside.
+
+ I cover this kind of deal-term reading every week in the free AIN briefing. Sign up at angelinvestorsnetwork.com and you'll get the next one in your inbox.
+
+ Educational content only. Not investment, tax, or legal advice. Not an offer or solicitation to buy or sell securities. Past performance does not guarantee future results. Private-market investments are illiquid and involve risk of loss, including total loss of capital. Consult qualified advisers. Angel Investors Network is not a broker-dealer or investment adviser.
+
+ Topics
+ cap table capitalization table angel and startup investing 
+
+ Part of Guide
+ → Startup Funding Guide : Complete Guide 
+
+ Looking for investors?
+ Browse our directory of 750+ angel investor groups, VCs, and accelerators across the United States.
+ Browse All Investors → California New York Texas Glossary 
+
+ More Like This
+ Startups EstateMin Raises €1M Pre-Seed to Scale in the US
+
+ Startups Solvera Raises €5.62M Pre-Seed for AI Engineering Firm
+
+ Startups Bloom Raises $3.6M Seed for Hardware Supply Chains
+
+ Startups Academics Founded 27% of China's Newly Funded AI Startups
+
+ Share 
+
+ J 
+ About the Author
+ Jeff Barnes, MBA 
+
+ Continue Reading
+
+ Startups EstateMin Raises €1M Pre-Seed to Scale in the US
+
+ Startups Solvera Raises €5.62M Pre-Seed for AI Engineering Firm
+
+ Startups Bloom Raises $3.6M Seed for Hardware Supply Chains
+
+ Startups Academics Founded 27% of China's Newly Funded AI Startups
+
+ Startups Peppermint Raises $4.7M Seed Led by Moxxie
+
+ Startups Hone Raises $60M at $285M to Build AI That Owns Outcomes

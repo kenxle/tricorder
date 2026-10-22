@@ -1,0 +1,137 @@
+SOURCE: https://www.forecastr.co/blog/safe-agreement-conversion
+
+SAFE agreement conversions: what founders don't model until it's too late 
+
+ ← Back
+
+ Get Funded
+
+ SAFE agreement conversions: what founders don't model until it's too late
+
+ Jeff Erickson
+ July 28, 2026
+
+ You signed three SAFEs over 18 months, each at a different cap. None of them felt urgent when you signed them. Then a term sheet lands, the round prices, and all three convert on the same day.
+ That's when most founders actually meet their SAFEs, not at signing when the paperwork felt simple, but at conversion, when the math gets real and the cap table shows an ownership number they didn't expect.
+ This post skips the “what is a SAFE” explainer. You already know that part. What you're here for is what happens the day your SAFEs convert, how the cap and discount actually move your ownership, and how to model your SAFE agreement conversion before the term sheet lands.
+ Key takeaways 
+ SAFEs dilute you all at once, at conversion, when multiple notes stack at different caps and the impact compounds.
+ The cap and discount are variables that decide exactly how many shares your SAFE investors get at the priced round.
+ Stacking SAFEs creates a conversion event most founders never modeled. It can land as a real gut punch at closing.
+ SAFE vs. convertible note is a structural choice that changes your cap table math at conversion, and it matters more now than it did at pre-seed.
+ The only way to walk into a priced round with clarity is to model your conversions before the term sheet arrives.
+
+ {{ inline_toc }}
+ What actually happens when a SAFE converts
+ A priced round closes. Three SAFEs you signed over the past 18 months all convert on the same day, into the same round. Nothing happened gradually. It happened all at once, at closing.
+ Here's the mechanic underneath that moment. Each SAFE's investment amount converts into shares at whichever price is lower: the price implied by the valuation cap, or the price implied by the discount rate. Lower price means more shares for the same dollar amount, so investors get the better of the two.
+ Say a SAFE has a $50,000 investment and an $8M valuation cap. If the priced round comes in at a $16M pre-money valuation, that SAFE doesn't convert at $16M. It converts at $8M, the cap. The investor ends up with roughly twice the ownership they'd get if the cap didn't exist.
+ That's why conversion is the moment that sets your actual ownership percentage, already decided by terms you signed months or years earlier.
+
+ How the valuation cap and discount rate determine your dilution
+ Two variables do almost all the work here, and treating them as levers changes how you negotiate the next one.
+ The valuation cap: what it actually does at conversion
+ The cap sets a ceiling on the price at which the SAFE converts, regardless of what the priced round actually values the company at. A low cap relative to your eventual valuation means the investor converts at a steep discount to the real price.
+ This is the scenario founders consistently underestimate. If your seed SAFE has a $6M cap and your Series A prices at $30M pre-money, that SAFE investor is converting at one-fifth of the round's actual valuation. Their ownership stake reflects a $6M company, even though the company is now worth five times that.
+ The discount rate: when it kicks in and when it doesn't
+ The discount rate gives the SAFE holder a percentage off the priced round's valuation, typically 10 to 20%. It only matters when the round's price is lower than what the cap would produce. Whichever mechanism produces a lower conversion price is the one that applies.
+ In practice, discounts matter most when the company's valuation growth has been modest since the SAFE was signed. Caps matter most when growth has been fast. Most founders have both terms on their SAFEs and never work out which one will bind until conversion day.
+ Most Favored Nation (MFN) clause: the one that surprises founders most
+ An MFN clause gives an earlier SAFE holder the right to swap into the terms of a later, more favorable SAFE if one is issued before conversion. Founders often treat this as boilerplate, but it isn't.
+ If you issue a second SAFE at a lower cap to close out a bridge, every earlier MFN SAFE can retroactively adopt that lower cap. One SAFE issued under pressure can quietly reprice every SAFE that came before it.
+ What SAFE stacking does to your cap table
+ The problem with stacking SAFEs is that most founders never model what happens when every SAFE converts together, at the same round, against the same new money.
+ Picture a founder who's issued three SAFEs over 18 months: $200k at a $5M cap, $300k at an $8M cap, and $500k at a $12M cap. Individually, each felt manageable. The founder assumed something close to their full ownership going into the Series A.
+ Then the Series A prices at $20M pre-money with $5M in new investment. All three SAFEs convert simultaneously, each at its own cap, none of them at the $20M price the founder was mentally anchored to. Here's the founder math, simplified: with 10 million founder shares outstanding pre-conversion, the three SAFEs convert into roughly 1.19 million shares between them, based on their $5M, $8M, and $12M caps. That pushes total shares to about 11.19 million before a single new investor dollar comes in.
+ The Series A's $5M then buys in at the round's price per share, landing new investors at exactly 20% post-money, as expected. But the founder, who mentally budgeted for 100% minus the round's 20%, ends up owning closer to 71.5%. The missing 8.5% went to the SAFE holders, not the new investor, and it never showed up as a single, visible dilution event until all three notes converted together.
+ This is the exact gap a cap table model is built to close. Running your SAFEs through a dilution calculator before the round prices tells you where you'll actually land, long before the closing table forces the issue.
+ {{ inline_cta }}
+ SAFE vs. convertible note: which creates cleaner conversion math?
+ You already made this choice once. The question now is how it plays out at conversion, and what it means for the next instrument you issue.
+ Convertible notes accrue interest, and that interest converts into additional shares at closing. A note with a 6% annual rate outstanding for two years adds roughly 12% more principal to convert, on top of whatever the cap or discount produces. SAFEs don't accrue interest, so the conversion math starts and ends with the cap and discount alone.
+ That difference sounds small until you're running the actual numbers on a note that's been outstanding for 18 months. The interest component adds a layer of calculation that a SAFE simply doesn't have, which is part of why SAFEs have become the default instrument for most early rounds. For a deeper structural comparison, see our post on equity versus convertible notes and our breakdown of how convertible notes work.
+ For founders deciding what to issue next, the SAFE vs. convertible note question comes down to this: cleaner conversion math is a real point in the SAFE's favor. Fewer variables at conversion means fewer surprises at closing, which matters more once you have several instruments already stacked.
+ How to model your SAFE conversions before your Series A
+ SAFEs don't wait for a Series A specifically. They convert at any priced round, which means any round where investors sign a term sheet and new money comes in at a set valuation.
+ Modeling a conversion means gathering four inputs for every SAFE on your cap table : the principal amount, the valuation cap, the discount rate, and whether an MFN clause is attached. From there, you need your anticipated pre-money valuation for the next round, since that's what determines whether the cap or the discount ends up binding for each note.
+ With those inputs, you can calculate the conversion price and resulting share count for each SAFE individually, then build a post-conversion ownership table that shows exactly where you, your existing investors, and your new investors land. Run this as a living model. Every time your expected valuation shifts, the conversion outcome shifts with it.
+ This is exactly what a fundraising financial model is for. Running the numbers early means the post-conversion cap table matches what you expected once you're actually sitting down with a term sheet.
+
+ What founders get wrong about SAFE agreements before they sign
+ A handful of mistakes show up again and again in founders who are already a few SAFEs deep.
+ Issuing uncapped SAFEs early, before the company's trajectory is clear, is the most common one. An uncapped SAFE converts at the priced round's actual valuation with no ceiling, which sounds founder-friendly until that valuation turns out higher than anyone expected and the discount becomes the only protection the investor has.
+ Stacking too many notes before establishing a clean pre-money for the priced round is another. Each additional SAFE adds another conversion price to reconcile, and founders rarely map out how those prices interact until the round is already being negotiated.
+ Misreading an MFN clause as low-stakes boilerplate rounds out the list. As covered above, it can reprice every earlier SAFE the moment a more favorable one gets issued. Read your own SAFEs closely, especially the ones you signed under time pressure, before you sit down with a term sheet .
+
+ The SAFE was never the simple part
+ A SAFE is a deferred dilution event you already agreed to, sitting on your cap table until a priced round triggers it.
+ The founders who come out ahead of a Series A modeled the conversion before they needed to. The term sheet confirms what they already knew.
+ You can't forecast your ownership with confidence if you haven't modeled what's already sitting on your cap table. If you're heading into a priced round and want to see exactly where your SAFE agreement conversions land before you're in the room, Forecastr's team can walk you through it.
+
+ Frequently asked questions
+ When does a SAFE agreement convert into equity?
+
+ A SAFE converts at the next priced round, meaning any round where new investors put in money at a set valuation and a term sheet gets signed. It isn't tied to one specific round type such as a Series A.
+
+ What happens to my SAFE if the startup raises a down round?
+
+ If the discount rate produces a lower conversion price than the cap, the discount applies instead. A down round can still trigger conversion. It just changes which mechanism, cap or discount, ends up determining the price.
+
+ Can multiple SAFEs convert at different prices?
+
+ Yes. Each SAFE converts based on its own cap and discount, so three SAFEs signed at three different caps will each convert at their own price, even in the same round.
+
+ What is the conversion price formula for a SAFE with a valuation cap?
+
+ The conversion price is the lower of two numbers: the cap price (the valuation cap divided by the company's fully diluted share count) and the discount price (the priced round's per-share price reduced by the discount rate).
+
+ How is a SAFE different from a convertible note at the point of conversion?
+
+ A convertible note accrues interest that adds to the principal before conversion, while a SAFE has no interest component. That makes note conversion math slightly more complex, since the accrued interest layers on top of the cap or discount calculation.
+
+ The secrets of startup success, in your inbox.
+ Subscribe to Newsletter
+
+ Thank you! Your submission has been received!
+
+ Oops! Something went wrong while submitting the form.
+
+ Subscribe on YouTube to get notified when we post new content
+
+ Popular downloads
+
+ Template
+ Monthly SaaS Financial Model Template
+
+ Template
+ Data Room Template
+
+ Playbook
+ 10 Steps to Fundraising Success
+
+ Related Insights
+
+ Raise Capital
+ 7 fundraising metrics every investor wants to see in your pitch
+
+ Jeff Erickson
+ March 11, 2026
+
+ Raise Capital
+ What is Series A funding? A simple, plain-english explanation
+
+ Jeff Erickson
+ March 26, 2022
+
+ Raise Capital
+ How to get funding for a startup: 7 proven strategies
+
+ Steven Plappert
+ September 30, 2024
+
+ Decode your  financial future today
+ Book a Demo
+
+ 00:00
+ /
+ 00:00
