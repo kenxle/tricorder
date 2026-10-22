@@ -4,7 +4,7 @@ Everything the factory built today for Deal Flow, NYC's first VC hackathon (Beta
 
 ## What I need from you
 
-- **Decide.** Nineteen cards in section 3, each with a recommendation. The critics settled three and added three more. Your 12:55 comment settled the edge, and your 1:12 edit added the steering card.
+- **Decide.** Twenty cards in section 3, each with a recommendation. The critics settled three and added three more. Your 12:55 comment settled the edge, and your 1:12 edit added the steering card.
 - **Do this week.** Your rows on [the board](../../BULLETIN.md): the founder brief in your words, the pitch video, the keys, who joined and their repo access, the organisers' questions, the Reddit pages.
 - **Read first.** The [one-page founder brief](founder_brief.md). It is what you hand the judges, and the organisers asked every team for it.
 
@@ -118,6 +118,21 @@ Your readout opens with the best green flags, but the demo room was built to be 
 <button type="button" value="free-customers" data-recommended>Free the customers piece</button>
 <button type="button" value="keep-as-is">Keep the room as it is</button>
 <button type="button" value="change-rule">Change the verdict rule</button>
+</div>
+
+### A bank check on stage
+
+Your 1:52 PM idea: compare the company's bank account with its books through a banking connector. It finds differences in reporting between the bank and the revenue rows; it does not detect fraud. Plaid's Sandbox supports custom test users with configured accounts and up to about 250 transactions ([Plaid docs](https://plaid.com/docs/sandbox/user-custom/)), so the generator can write a Hollis Voice bank feed with one planted difference.
+
+<div class="options">
+<div class="option"><span class="badge badge--purple">Recommended</span><h4>After Saturday, mentioned on stage</h4><p>A roadmap slice. On stage, one line in "what's next": the bank feed is the next source we cross-check. Saturday's hours are already spoken for.</p></div>
+<div class="option"><p class="eyebrow">Option B</p><h4>A sandbox bank feed on stage</h4><p>The generator writes the feed this week; on Saturday a short slice reads it from Plaid's sandbox and shows deposits disagreeing with the revenue file. Strong answer to "do you check the bank?". Costs a Plaid developer account this week and a Saturday slot.</p></div>
+</div>
+
+<div class="choice" data-choice="bank-check">
+<p class="choice-q">Does the bank check go on stage Saturday?</p>
+<button type="button" value="after-saturday" data-recommended>After Saturday, mentioned on stage</button>
+<button type="button" value="sandbox-on-stage">A sandbox bank feed on stage</button>
 </div>
 
 ### The blind room
