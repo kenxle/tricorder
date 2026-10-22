@@ -314,3 +314,9 @@ Added 2026-10-22 at 2:19 PM, on the associate's quote "If revenue in the deck do
 > this becomes a roadmap feature
 
 Settled: the `deck-vs-books` slice checks deck revenue against the P&L period by period, and flags a deck that shows only part of the company's history (a chart that starts after the first revenue month, skips months, or hides a dip).
+
+Added 2026-10-22 at 2:19 PM, on the junior VC who lost momentum after weeks sifting data:
+
+> speed is important. kick these off as early as possible
+
+Settled: every scan starts the moment its input exists (the company name, the deck, the model), not after the whole room arrives. The readout fills in as results land, each piece shows running, done or waiting on an input, and the operator sees the first green and red flags early. The `inbound-unasked` slice carries it.

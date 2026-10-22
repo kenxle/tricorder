@@ -73,6 +73,7 @@ Three of the day's blocks are writing rules with nothing to build: the 1:21 PM b
 | A blind room and a clean room against "rigged" | overview page card, "The blind room" | [blind-room](#blind-room), [demo-freeze](#demo-freeze) | This week, then Saturday |
 | Multiplayer: several people build one readout and split the work (uncertain) | 2:05 PM | [multiplayer](#multiplayer) | After |
 | Deck revenue against the P&L, and decks that show only part of the history | 2:19 PM | [deck-vs-books](#deck-vs-books) | After |
+| Speed: start every scan as early as its input exists, readout fills in as results land | 2:19 PM | [inbound-unasked](#inbound-unasked) | After |
 
 ## The one workflow we demo
 
@@ -780,7 +781,13 @@ Diligence that starts on the inbound, before the investor asks.
 
 **Waits on:** inbox-forward.
 
-**Includes:** the scans run when a deck arrives; the readout is one click away from the email, or the readout link is the reply. This is the brief's "before you even ask" moment.
+**Includes:**
+
+- The scans run when a deck arrives; the readout is one click away from the email, or the readout link is the reply. This is the brief's "before you even ask" moment.
+- **Speed first** ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:19 PM block). Each scan starts the moment its input exists, not after the whole room is in: the outside-world tabs start on the company name, the deck scan on the deck, the model checks when the model lands. The readout fills in as results arrive, and each piece shows whether it is still running, done, or waiting on an input (which goes on the ask list).
+- The operator sees the first green and red flags within the first scans' run, and is told when the readout is complete.
+
+**Done when:** a forwarded email with only a deck produces a partial readout with the deck and outside-world pieces filled and the rest marked waiting; adding the model to the same company fills the financial pieces without rerunning the finished scans.
 
 **Who:** agent.
 
