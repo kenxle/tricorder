@@ -115,7 +115,7 @@ Most product slices here extend one of the team's Saturday slices. Each of those
 **What is left before Saturday.** Nothing here waits on interviews; there are none (brief, 1:34 PM block). Checked against the repo on 2026-10-22.
 
 - Done: [research-gaps](#research-gaps), [checklist](#checklist) and [data-room](#data-room). The memo template ([MEMO_TEMPLATE.md](MEMO_TEMPLATE.md)) is written too.
-- [skeleton](#skeleton): an agent, now. Not started: the repo has no `schema/` or `server/` folder yet.
+- [skeleton](#skeleton): built by an agent on branch `claude/project-thread-ce34ga`, in review. It goes past the stub: the file readers and the quote checker are implemented and tested, so the [readers](#readers) hour and the quote checker in [claim-result](#claim-result) are free on Saturday unless Ken moves them.
 - [blind-room](#blind-room): Ken finds the person outside the build, who follows [SEALING.md](../../data_room/SEALING.md) with their own seed and keeps the key. The plants-off switch, the clean room and the seed option are built.
 - [keys](#keys): Ken.
 - [cached-data](#cached-data): an agent, once Ken's keys are in. Not started: there is no `cache/` folder yet.

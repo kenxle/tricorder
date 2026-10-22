@@ -1,0 +1,8 @@
+{
+  "note": "Test fixture in Tricorder's transcript shape. Text from data_room/hollis_voice/01_overview/pitch_video_script.md; times invented for the test.",
+  "segments": [
+    {"id": 0, "start_s": 0.0, "end_s": 6.2, "text": "Hi, I'm Imogen Tarrant, co-founder and CEO of Hollis Voice."},
+    {"id": 1, "start_s": 35.0, "end_s": 39.1, "text": "We started charging in January 2025."},
+    {"id": 2, "start_s": 39.1, "end_s": 44.8, "text": "Today we're at about three million dollars in annual recurring revenue."}
+  ]
+}

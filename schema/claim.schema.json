@@ -1,0 +1,936 @@
+{
+  "$defs": {
+    "AskItem": {
+      "additionalProperties": false,
+      "properties": {
+        "what": {
+          "description": "What to request, in words the operator can paste into an email.",
+          "title": "What",
+          "type": "string"
+        },
+        "why": {
+          "description": "The claim or gap it would settle, with its number.",
+          "title": "Why",
+          "type": "string"
+        },
+        "piece": {
+          "enum": [
+            "traction_and_revenue",
+            "retention",
+            "burn_and_runway",
+            "unit_economics",
+            "customers",
+            "market",
+            "comps",
+            "team",
+            "the_pitch_itself"
+          ],
+          "title": "Piece",
+          "type": "string"
+        },
+        "from_kind": {
+          "enum": [
+            "gap",
+            "weak_piece",
+            "checklist"
+          ],
+          "title": "From Kind",
+          "type": "string"
+        },
+        "claim_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Claim Ids",
+          "type": "array"
+        },
+        "checklist_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "For example 'C29', when the line comes from a missing checklist item.",
+          "title": "Checklist Id"
+        },
+        "if_you_have_it": {
+          "default": false,
+          "description": "True when the item is only 'lighter' at the company's stage.",
+          "title": "If You Have It",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "what",
+        "why",
+        "piece",
+        "from_kind"
+      ],
+      "title": "AskItem",
+      "type": "object"
+    },
+    "Check": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "script",
+            "model"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "name": {
+          "description": "The entry's check name, plus '.read' for a model claim.",
+          "title": "Name",
+          "type": "string"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Model id. The model sets null; the script fills it.",
+          "title": "Model"
+        }
+      },
+      "required": [
+        "kind",
+        "name"
+      ],
+      "title": "Check",
+      "type": "object"
+    },
+    "Claim": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "description": "Unique inside the scan, for example 'redflags-004'.",
+          "title": "Id",
+          "type": "string"
+        },
+        "scan": {
+          "title": "Scan",
+          "type": "string"
+        },
+        "text": {
+          "description": "The one plain sentence the readout shows. Judged claims start with 'Reading:'.",
+          "title": "Text",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Value"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "severity": {
+          "anyOf": [
+            {
+              "enum": [
+                "info",
+                "watch",
+                "flag"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The model sets null; the script sets it from the label.",
+          "title": "Severity"
+        },
+        "check": {
+          "$ref": "#/$defs/Check"
+        },
+        "confidence": {
+          "enum": [
+            "computed",
+            "quoted",
+            "judged",
+            "unverified"
+          ],
+          "title": "Confidence",
+          "type": "string"
+        },
+        "sources": {
+          "description": "At least one. A missing input is a Gap, never a claim.",
+          "items": {
+            "$ref": "#/$defs/Source"
+          },
+          "title": "Sources",
+          "type": "array"
+        },
+        "conflicts_with": {
+          "description": "Ids of claims that state a different number for the same label, unit and period.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Conflicts With",
+          "type": "array"
+        },
+        "corroborated_by": {
+          "description": "Ids of claims from an independent source that agree within tolerance. The memo fills it; a scan leaves it empty.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Corroborated By",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "scan",
+        "text",
+        "check",
+        "confidence",
+        "sources"
+      ],
+      "title": "Claim",
+      "type": "object"
+    },
+    "Gap": {
+      "additionalProperties": false,
+      "properties": {
+        "what": {
+          "description": "Starts with 'Not in the room:' and names what is missing.",
+          "title": "What",
+          "type": "string"
+        },
+        "why": {
+          "description": "For example 'file missing', 'tab missing', 'Akta plan returns 403', 'not stated in the file'.",
+          "title": "Why",
+          "type": "string"
+        },
+        "would_need": {
+          "description": "The document or source that would close the gap.",
+          "title": "Would Need",
+          "type": "string"
+        },
+        "piece": {
+          "anyOf": [
+            {
+              "enum": [
+                "traction_and_revenue",
+                "retention",
+                "burn_and_runway",
+                "unit_economics",
+                "customers",
+                "market",
+                "comps",
+                "team",
+                "the_pitch_itself"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The piece the gap feeds. The scan sets it when it knows; the memo fills the rest.",
+          "title": "Piece"
+        }
+      },
+      "required": [
+        "what",
+        "why",
+        "would_need"
+      ],
+      "title": "Gap",
+      "type": "object"
+    },
+    "Panel": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "description": "For example 'comps table', 'signals grid', 'video moments'.",
+          "title": "Name",
+          "type": "string"
+        },
+        "columns": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Columns",
+          "type": "array"
+        },
+        "rows": {
+          "items": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Rows",
+          "type": "array"
+        }
+      },
+      "required": [
+        "name",
+        "columns",
+        "rows"
+      ],
+      "title": "Panel",
+      "type": "object"
+    },
+    "Piece": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "enum": [
+            "traction_and_revenue",
+            "retention",
+            "burn_and_runway",
+            "unit_economics",
+            "customers",
+            "market",
+            "comps",
+            "team",
+            "the_pitch_itself"
+          ],
+          "title": "Name",
+          "type": "string"
+        },
+        "verdict": {
+          "enum": [
+            "looking_strong",
+            "looking_weak",
+            "mixed",
+            "not_enough_in_the_room"
+          ],
+          "title": "Verdict",
+          "type": "string"
+        },
+        "reason": {
+          "description": "One line, with its number and source.",
+          "title": "Reason",
+          "type": "string"
+        },
+        "reason_claim_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Reason Claim Ids",
+          "type": "array"
+        },
+        "claim_ids": {
+          "description": "Every claim in the piece, for the drill-down.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Claim Ids",
+          "type": "array"
+        },
+        "corroborating_sources": {
+          "default": 0,
+          "title": "Corroborating Sources",
+          "type": "integer"
+        },
+        "contradicting_sources": {
+          "default": 0,
+          "title": "Contradicting Sources",
+          "type": "integer"
+        },
+        "status": {
+          "default": "done",
+          "enum": [
+            "done",
+            "running",
+            "waiting_on_input"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "waiting_on": {
+          "description": "Inputs the piece still needs, such as 'financial model'.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Waiting On",
+          "type": "array"
+        }
+      },
+      "required": [
+        "name",
+        "verdict",
+        "reason"
+      ],
+      "title": "Piece",
+      "type": "object"
+    },
+    "PieceRevision": {
+      "additionalProperties": false,
+      "properties": {
+        "steer": {
+          "$ref": "#/$defs/Steer"
+        },
+        "before": {
+          "$ref": "#/$defs/Piece"
+        },
+        "after": {
+          "$ref": "#/$defs/Piece"
+        },
+        "claims_added": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Claims Added",
+          "type": "array"
+        },
+        "sources_added": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Sources Added",
+          "type": "array"
+        },
+        "claims_dropped": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Claims Dropped",
+          "type": "array"
+        },
+        "verdict_moved_by": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Verdict Moved By",
+          "type": "array"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "For example why a requested number change was not carried out.",
+          "title": "Note"
+        }
+      },
+      "required": [
+        "steer",
+        "before",
+        "after"
+      ],
+      "title": "PieceRevision",
+      "type": "object"
+    },
+    "Readout": {
+      "additionalProperties": false,
+      "description": "out/<room>/readout.json: what the page renders, in the order it shows it.",
+      "properties": {
+        "room": {
+          "title": "Room",
+          "type": "string"
+        },
+        "built_at": {
+          "title": "Built At",
+          "type": "string"
+        },
+        "synthetic_notice": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Shown as a banner on every screen when set.",
+          "title": "Synthetic Notice"
+        },
+        "top_flags": {
+          "items": {
+            "$ref": "#/$defs/TopFlag"
+          },
+          "title": "Top Flags",
+          "type": "array"
+        },
+        "pieces": {
+          "items": {
+            "$ref": "#/$defs/Piece"
+          },
+          "title": "Pieces",
+          "type": "array"
+        },
+        "claims": {
+          "items": {
+            "$ref": "#/$defs/Claim"
+          },
+          "title": "Claims",
+          "type": "array"
+        },
+        "unverified": {
+          "description": "The 'could not verify' box.",
+          "items": {
+            "$ref": "#/$defs/Claim"
+          },
+          "title": "Unverified",
+          "type": "array"
+        },
+        "gaps": {
+          "items": {
+            "$ref": "#/$defs/Gap"
+          },
+          "title": "Gaps",
+          "type": "array"
+        },
+        "asks": {
+          "items": {
+            "$ref": "#/$defs/AskItem"
+          },
+          "title": "Asks",
+          "type": "array"
+        },
+        "panels": {
+          "items": {
+            "$ref": "#/$defs/Panel"
+          },
+          "title": "Panels",
+          "type": "array"
+        },
+        "scans_run": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Scans Run",
+          "type": "array"
+        },
+        "scans_missing": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Scans Missing",
+          "type": "array"
+        },
+        "revisions": {
+          "items": {
+            "$ref": "#/$defs/PieceRevision"
+          },
+          "title": "Revisions",
+          "type": "array"
+        },
+        "connecting": {
+          "description": "The memo pass's connecting sentences, each citing claim ids.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Connecting",
+          "type": "array"
+        },
+        "scores": {
+          "items": {
+            "$ref": "#/$defs/ScoreLine"
+          },
+          "title": "Scores",
+          "type": "array"
+        }
+      },
+      "required": [
+        "room",
+        "built_at"
+      ],
+      "title": "Readout",
+      "type": "object"
+    },
+    "ScanResult": {
+      "additionalProperties": false,
+      "description": "What every scan writes: one file, out/<room>/<scan>.json.",
+      "properties": {
+        "scan": {
+          "title": "Scan",
+          "type": "string"
+        },
+        "room": {
+          "title": "Room",
+          "type": "string"
+        },
+        "ran_at": {
+          "title": "Ran At",
+          "type": "string"
+        },
+        "inputs": {
+          "description": "Files and calls the scan read.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Inputs",
+          "type": "array"
+        },
+        "claims": {
+          "items": {
+            "$ref": "#/$defs/Claim"
+          },
+          "title": "Claims",
+          "type": "array"
+        },
+        "gaps": {
+          "items": {
+            "$ref": "#/$defs/Gap"
+          },
+          "title": "Gaps",
+          "type": "array"
+        },
+        "panels": {
+          "description": "Optional named tables the page shows beside the claims.",
+          "items": {
+            "$ref": "#/$defs/Panel"
+          },
+          "title": "Panels",
+          "type": "array"
+        }
+      },
+      "required": [
+        "scan",
+        "room",
+        "ran_at"
+      ],
+      "title": "ScanResult",
+      "type": "object"
+    },
+    "ScoreLine": {
+      "additionalProperties": false,
+      "description": "One line of eval/score.py against an answer key.",
+      "properties": {
+        "room": {
+          "title": "Room",
+          "type": "string"
+        },
+        "found": {
+          "title": "Found",
+          "type": "integer"
+        },
+        "planted": {
+          "title": "Planted",
+          "type": "integer"
+        },
+        "decoys_flagged": {
+          "title": "Decoys Flagged",
+          "type": "integer"
+        },
+        "decoys": {
+          "title": "Decoys",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "room",
+        "found",
+        "planted",
+        "decoys_flagged",
+        "decoys"
+      ],
+      "title": "ScoreLine",
+      "type": "object"
+    },
+    "Source": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "file",
+            "url",
+            "api",
+            "video"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "uri": {
+          "description": "Path inside the data room, a URL, or the API call.",
+          "title": "Uri",
+          "type": "string"
+        },
+        "locator": {
+          "description": "For example 'slide 3', 'page 2', 'ARR_Build!E14', 'ARR_TOTAL', 'clause 7', 'line 12', 'row 118', 't=35-41'.",
+          "title": "Locator",
+          "type": "string"
+        },
+        "start_s": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Video only. Copied from the transcript by the script.",
+          "title": "Start S"
+        },
+        "end_s": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Video only. Copied from the transcript by the script.",
+          "title": "End S"
+        },
+        "quote": {
+          "description": "The exact span relied on, copied character for character.",
+          "title": "Quote",
+          "type": "string"
+        },
+        "retrieved_at": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "ISO date the source was read.",
+          "title": "Retrieved At"
+        }
+      },
+      "required": [
+        "kind",
+        "uri",
+        "locator",
+        "quote"
+      ],
+      "title": "Source",
+      "type": "object"
+    },
+    "Steer": {
+      "additionalProperties": false,
+      "description": "One plain sentence from the operator on a piece or a line.",
+      "properties": {
+        "piece": {
+          "enum": [
+            "traction_and_revenue",
+            "retention",
+            "burn_and_runway",
+            "unit_economics",
+            "customers",
+            "market",
+            "comps",
+            "team",
+            "the_pitch_itself"
+          ],
+          "title": "Piece",
+          "type": "string"
+        },
+        "kind": {
+          "description": "Tricorder tells the two apart from the sentence; the operator never picks.",
+          "enum": [
+            "rewrite",
+            "more_info"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "instruction": {
+          "title": "Instruction",
+          "type": "string"
+        },
+        "claim_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The line the operator typed on, when it was a line and not the whole piece.",
+          "title": "Claim Id"
+        },
+        "at": {
+          "title": "At",
+          "type": "string"
+        },
+        "author": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Author"
+        }
+      },
+      "required": [
+        "piece",
+        "kind",
+        "instruction",
+        "at"
+      ],
+      "title": "Steer",
+      "type": "object"
+    },
+    "TopFlag": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "green",
+            "red"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "piece": {
+          "enum": [
+            "traction_and_revenue",
+            "retention",
+            "burn_and_runway",
+            "unit_economics",
+            "customers",
+            "market",
+            "comps",
+            "team",
+            "the_pitch_itself"
+          ],
+          "title": "Piece",
+          "type": "string"
+        },
+        "rank": {
+          "description": "1 is the strongest green or the worst red.",
+          "title": "Rank",
+          "type": "integer"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "claim_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Claim Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "kind",
+        "piece",
+        "rank",
+        "text",
+        "claim_ids"
+      ],
+      "title": "TopFlag",
+      "type": "object"
+    },
+    "Value": {
+      "additionalProperties": false,
+      "properties": {
+        "number": {
+          "title": "Number",
+          "type": "number"
+        },
+        "unit": {
+          "enum": [
+            "USD",
+            "USD_per_month",
+            "USD_per_year",
+            "percent",
+            "months",
+            "days",
+            "accounts",
+            "count"
+          ],
+          "title": "Unit",
+          "type": "string"
+        },
+        "label": {
+          "enum": [
+            "arr",
+            "mrr",
+            "paying_accounts",
+            "accounts_created",
+            "nrr_12m",
+            "grr_12m",
+            "cohort_size",
+            "gross_margin",
+            "cost_of_revenue",
+            "runway_months",
+            "net_burn_monthly",
+            "payroll_monthly",
+            "hires",
+            "headcount",
+            "cash",
+            "largest_customer_share",
+            "top3_customer_share",
+            "arpa",
+            "acv",
+            "cac",
+            "payback_months",
+            "ltv",
+            "raise_amount",
+            "pre_money",
+            "post_money",
+            "ownership",
+            "tam",
+            "sam",
+            "som",
+            "price",
+            "contract_term",
+            "notice_period",
+            "signal",
+            "other"
+          ],
+          "title": "Label",
+          "type": "string"
+        },
+        "period": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The month or span the number is for, for example '2026-09'.",
+          "title": "Period"
+        }
+      },
+      "required": [
+        "number",
+        "unit",
+        "label"
+      ],
+      "title": "Value",
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Tricorder shared Claim schema"
+}

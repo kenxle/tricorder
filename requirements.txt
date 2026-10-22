@@ -1,0 +1,12 @@
+# Runtime. A new dependency goes through the captain (ROADMAP.md, "Who owns what").
+anthropic>=0.40
+pydantic>=2.7
+fastapi>=0.110
+uvicorn>=0.29
+httpx>=0.27
+pdfplumber>=0.11
+openpyxl>=3.1
+pandas>=2.2
+python-dotenv>=1.0
+# Tests
+pytest>=8

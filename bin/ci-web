@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# The page gate: type check and build the readout page.
+set -euo pipefail
+cd "$(dirname "$0")/../readout"
+if [ ! -d node_modules ]; then npm ci --no-audit --no-fund; fi
+npm run typecheck
+npm run build

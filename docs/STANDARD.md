@@ -55,7 +55,7 @@ A project lists a change from the master's Changes log here when it turned that 
 | key | value | meaning |
 |---|---|---|
 | stale_row_days | 14 | A bulletin row open longer than this many days is reported as old. |
-| code_root | | The folder code lives in. Doc freshness is measured against it. Blank means no code and no freshness ranking. |
+| code_root | . | The folder code lives in. Doc freshness is measured against it. Blank means no code and no freshness ranking. |
 | boards | docs/BULLETIN.md | The board file, or the registry file that lists several boards. |
 | evidence | local | `local` keeps run folders out of git. `commit` commits them. |
 | jev | true | `true` uses Jev to label items when a key exists. `false` never calls it. |
