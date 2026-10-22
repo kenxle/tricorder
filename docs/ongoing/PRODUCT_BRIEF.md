@@ -69,7 +69,7 @@ The user stories that turn these jobs into features are in [USER_STORIES.md](USE
 - [Builds a readout](FEATURES.md#the-readout): the best green and worst red flags, then which pieces look strong or weak, with every number two clicks from its source.
 - [Helps write an interactive memo](FEATURES.md#the-readout) that partners can drill into and run what-ifs on.
 - [Lets the operator steer](FEATURES.md#steering-the-readout) any piece in one plain sentence.
-- [More checks come after Saturday](FEATURES.md#later-checks).
+- [Runs more checks inside the scans](FEATURES.md#the-scans): deck against the books, its own version of the model, the rest of the accounting mislabels, the bank check and reference-call prep.
 
 ## What it is not
 

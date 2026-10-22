@@ -16,7 +16,7 @@ PIECES = ["traction and revenue", "retention", "burn and runway", "unit economic
           "legal and cap table", "AI and data governance", "outside world"]
 STAGES = [("pre_seed", "Pre-seed"), ("seed", "Seed"), ("series_a", "Series A")]
 LEVELS = ["yes", "lighter", "no", "not stated"]
-STATUSES = ["Saturday", "after Saturday", "not checked yet"]
+STATUSES = ["now to Friday night", "Saturday", "not checked yet"]
 
 
 def show(title, counter, order):

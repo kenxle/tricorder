@@ -20,7 +20,7 @@ Everything about a startup, from its pitch deck and video to its financials to i
 - **A pitch video.** Transcribed with timestamps so every spoken claim keeps its second.
 - **The startup's online presence.** Its website, public filings, hiring, traffic, reviews and pricing, read by the comps, market signals and online presence scans.
 - **The inbox.** A forwarding address first (such as deals@), because it needs no OAuth review. Then Gmail and Outlook through their official APIs. Tricorder pulls decks out of inbound mail: PDF attachments, and DocSend, Google Drive, Dropbox and Notion links. Investors who write about it prefer a PDF in the inbox, which suits a forwarding address ([the research gaps](../reports/20261022.02_research/research_gaps.md), section 3). [ARCHITECTURE.md](ARCHITECTURE.md) covers how each path connects: the forwarding address through an inbound mail service, and the Gmail and Outlook permissions each API needs.
-- **The company's bank account.** With the founder's consent, through a banking connector. Plaid offers a free sandbox with test accounts and custom test transactions ([Plaid docs](https://plaid.com/docs/sandbox/user-custom/)), so it can be tried before any real connection. If the connector is not ready, the demo shows a sample bank statement in the room, labelled as a sample, and says this is where the connected account would plug in. The bank check itself is under [Later checks](#later-checks).
+- **The company's bank account.** With the founder's consent, through a banking connector. Plaid offers a free sandbox with test accounts and custom test transactions ([Plaid docs](https://plaid.com/docs/sandbox/user-custom/)), so it can be tried before any real connection. If the connector is not ready, the demo shows a sample bank statement in the room, labelled as a sample, and says this is where the connected account would plug in. The bank check itself is under [The scans](#the-scans).
 
 **Diligence starts on the inbound, before anyone asks.** When a deck arrives, the scans run. By the time the investor opens the email, there is already info on the company. As the data room is filled, more of the memo is created.
 
@@ -28,7 +28,7 @@ Everything about a startup, from its pitch deck and video to its financials to i
 
 While compiling the data room, there are quick ways to send messages to the company asking them for information, with guidance on what they should submit. Each message draws on the [ask list](#the-readout): what to send, and the claim it would settle.
 
-**Built by:** [readers](ROADMAP.md#readers), [pitch-video](ROADMAP.md#pitch-video) and [contract-terms](ROADMAP.md#contract-terms) on Saturday; [inbox-forward](ROADMAP.md#inbox-forward), [inbox-apis](ROADMAP.md#inbox-apis), [inbound-unasked](ROADMAP.md#inbound-unasked) and [bank-check](ROADMAP.md#bank-check) after Saturday.
+**Built by:** [contract-terms](ROADMAP.md#contract-terms), [inbox-forward](ROADMAP.md#inbox-forward), [inbox-apis](ROADMAP.md#inbox-apis), [inbound-unasked](ROADMAP.md#inbound-unasked), [founder-requests](ROADMAP.md#founder-requests) and [bank-check](ROADMAP.md#bank-check) from now to Friday night; [readers](ROADMAP.md#readers), [pitch-video](ROADMAP.md#pitch-video) and [contract-terms-saturday](ROADMAP.md#contract-terms-saturday) on Saturday.
 
 ## What Tricorder gathers before the data room is opened
 
@@ -42,9 +42,9 @@ An associate describes her routine: "Before I even open your data room, I alread
 | Co-founder issues | How long the founders have worked together, who left and when, public disputes | Founder bios in the room, founders' GitHub, personal sites, talks and press; never LinkedIn scraping | Team |
 | Whether the story matches what's online | Each claim in the deck checked against the website, press, Hacker News and Product Hunt, with dates | The website, Hacker News through the Algolia API, Product Hunt's API, search | Every piece the claim belongs to |
 
-On Saturday, Hollis Voice is invented and has no online footprint, so for it these show as cached competitor readings and as gaps ("not found online"). For a real YC company paired with a synthetic room, part of this runs live on stage: its website, Hacker News and SEC filings (see [DEMO.md](DEMO.md)). The full set of tabs, and the online-presence and founder-profile scans, come after Saturday.
+On Saturday, Hollis Voice is invented and has no online footprint, so for it these show as cached competitor readings and as gaps ("not found online"). For a real YC company paired with a synthetic room, part of this runs live on stage: its website, Hacker News and SEC filings (see [DEMO.md](DEMO.md)). The full set of tabs, and the online-presence and founder-profile scans, are built before Saturday and run on the real companies.
 
-**Built by:** [cached-data](ROADMAP.md#cached-data) and [yc-rooms](ROADMAP.md#yc-rooms) this week; [market-signals](ROADMAP.md#market-signals) on Saturday; [outside-in](ROADMAP.md#outside-in) after Saturday.
+**Built by:** [cached-data](ROADMAP.md#cached-data), [yc-rooms](ROADMAP.md#yc-rooms) and [outside-in](ROADMAP.md#outside-in) from now to Friday night; [market-signals](ROADMAP.md#market-signals) on Saturday.
 
 ## The sponsor tools
 
@@ -58,32 +58,30 @@ Each scan is one piece of first-pass diligence. Each returns a list of claims, a
 
 | Order | Scan | What it returns | When |
 |---|---|---|---|
-| 1 | **Red-flag engine** | A ranked table of flags in the financials and metrics, including accounting mislabels: a number filed under a label it does not earn, such as non-recurring revenue counted as ARR, billings shown as revenue, or cost of revenue filed as operating expense. Each row: what is wrong, the number the company claims, the number Tricorder computed, the severity, and links to both places. | Saturday, script checks only; the model readings and the other mislabel kinds after |
+| 1 | **Red-flag engine** | A ranked table of flags in the financials and metrics, including accounting mislabels: a number filed under a label it does not earn, such as non-recurring revenue counted as ARR, billings shown as revenue, or cost of revenue filed as operating expense. Each row: what is wrong, the number the company claims, the number Tricorder computed, the severity, and links to both places. | Saturday for the script checks; the model readings and the other mislabel kinds from now to Friday night |
 | 2 | **The readout** | The best green flags and the worst red flags, then the overview of the company in pieces, assembled from the scans' claims. Each piece is marked looking strong, looking weak, mixed or not enough in the room, with a one-line reason. Each piece drills down to its claims, and each claim to its sources. | Saturday |
 | 3 | **Pitch video** | The video's claims with timestamps. Claims that disagree with the deck are marked. | Saturday |
 | 4 | **Comps** | Comparable companies and recent rounds, each with the reason it is a fair comp and a source. Public filings from SEC EDGAR; private rounds from Form D. | Saturday, from filings cached this week |
-| 5 | **Market signals** | Hiring, web traffic, reviews, news and pricing for the company's real competitors, each number linked. | Saturday as a panel of this week's cached readings; live after |
-| 6 | **Business frameworks** | Lean canvas, jobs to be done and the other standard frameworks, each box quoting the sentence it came from. | After Saturday |
-| 7 | **Founder profiles** | A card per founder from GitHub, personal sites and public talks. This is the founder scan from Track 1, built as one scan inside Tricorder. | After Saturday |
-| 8 | **Online presence** | The company's footprint on the web, Hacker News, Product Hunt and app stores. A missing footprint is a finding. | After Saturday |
+| 5 | **Market signals** | Hiring, web traffic, reviews, news and pricing for the company's real competitors, each number linked. | Saturday as a panel of this week's cached readings; the live tabs from now to Friday night |
+| 6 | **Business frameworks** | Lean canvas, jobs to be done and the other standard frameworks, each box quoting the sentence it came from. | Now to Friday night |
+| 7 | **Founder profiles** | A card per founder from GitHub, personal sites and public talks. This is the founder scan from Track 1, built as one scan inside Tricorder. | Now to Friday night |
+| 8 | **Online presence** | The company's footprint on the web, Hacker News, Product Hunt and app stores. A missing footprint is a finding. | Now to Friday night |
 
 Each scan's checks, with their inputs, tolerances and output shape, are written as entries in [FRAMEWORKS.md](FRAMEWORKS.md).
 
 **Contract terms, on Saturday.** Every contract in the room is read for its terms (length, notice and cancellation period, auto-renewal, pilot terms and any duty to convert, price and payment terms) and compared with how it is counted. A contract the customer can leave in 30 days, counted as a year of revenue, becomes a flag ([FRAMEWORKS.md](FRAMEWORKS.md), entry 1.13). Slices: [contract-terms-saturday](ROADMAP.md#contract-terms-saturday) and [contract-terms](ROADMAP.md#contract-terms).
 
-**The claims workflow.** The deck and the pitch video make the claims. Every other document and the outside world either support each claim, contradict it, or say nothing. Tricorder extracts each claim, normalises it, finds the evidence, compares by script, and labels it supported, contradicted or unsupported. The labels feed the pieces ([diagrams/claims_workflow.md](diagrams/claims_workflow.md)). Saturday runs it for the planted flags in the deck and the video. The roadmap's claim-support slice runs it on every claim.
+**The claims workflow.** The deck and the pitch video make the claims. Every other document and the outside world either support each claim, contradict it, or say nothing. Tricorder extracts each claim, normalises it, finds the evidence, compares by script, and labels it supported, contradicted or unsupported. The labels feed the pieces ([diagrams/claims_workflow.md](diagrams/claims_workflow.md)). Saturday's scans run it for the planted flags in the deck and the video. The roadmap's claim-support slice, built before Saturday, runs it on every claim.
 
-**Built by:** [redflag-engine](ROADMAP.md#redflag-engine), [readout](ROADMAP.md#readout), [pitch-video](ROADMAP.md#pitch-video), [comps](ROADMAP.md#comps) and [market-signals](ROADMAP.md#market-signals) on Saturday; [frameworks-scan](ROADMAP.md#frameworks-scan), [founder-profiles](ROADMAP.md#founder-profiles), [online-presence](ROADMAP.md#online-presence) and [claim-support](ROADMAP.md#claim-support) after Saturday.
-
-## Later checks
-
-These checks come after Saturday.
+**More checks inside the scans.** These are built from now to Friday night and join the red-flag engine and the readout on Saturday.
 
 - **Deck against the books.** Each deck revenue figure is checked against the P&L for the same period, and a deck chart that starts late, skips months or hides a dip is flagged. The associate's rule: "If revenue in the deck doesn’t match the P&L, or you show only part of your history, everything else becomes questionable." ([associate, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)). Slice: [deck-vs-books](ROADMAP.md#deck-vs-books).
 - **Tricorder's own version of the model.** Tricorder rebuilds a monthly table of revenue, cost, headcount, burn, cash and runway from the room's raw rows, sets each line beside the company's model, and turns each difference into a disagreement claim. Slice: [financial-model](ROADMAP.md#financial-model).
-- **The rest of the accounting mislabels.** On Saturday the red-flag engine checks two kinds: non-recurring revenue counted as ARR, and cost of revenue filed as operating expense. After Saturday it adds six more: billings or bookings shown as revenue, pass-through money shown as revenue, contractors left out of burn, capitalised costs kept off the P&L, deferred revenue counted as earned, and one-time fees counted in recurring numbers ([FRAMEWORKS.md](FRAMEWORKS.md), entry 1.12). Slice: [accounting-mislabels](ROADMAP.md#accounting-mislabels).
+- **The rest of the accounting mislabels.** The red-flag engine checks two kinds: non-recurring revenue counted as ARR, and cost of revenue filed as operating expense. Six more are built before Saturday: billings or bookings shown as revenue, pass-through money shown as revenue, contractors left out of burn, capitalised costs kept off the P&L, deferred revenue counted as earned, and one-time fees counted in recurring numbers ([FRAMEWORKS.md](FRAMEWORKS.md), entry 1.12). Slice: [accounting-mislabels](ROADMAP.md#accounting-mislabels).
 - **The bank check.** With the founder's consent, Tricorder reads the company's bank account through a banking connector (Plaid first, shown on a synthetic feed in Plaid's Sandbox, [Plaid docs](https://plaid.com/docs/sandbox/user-custom/)) and compares deposits with the revenue rows and outflows with the model's burn. It finds differences in reporting, not fraud. Slice: [bank-check](ROADMAP.md#bank-check).
 - **Reference-call prep, low priority.** A list of people the operator could call, each with the source that names them, and questions drawn from the weak pieces; Tricorder never contacts anyone, and Ken is not sure it should take this on. Slice: [reference-checks](ROADMAP.md#reference-checks).
+
+**Built by:** [frameworks-scan](ROADMAP.md#frameworks-scan), [founder-profiles](ROADMAP.md#founder-profiles), [online-presence](ROADMAP.md#online-presence), [claim-support](ROADMAP.md#claim-support), [deck-vs-books](ROADMAP.md#deck-vs-books), [financial-model](ROADMAP.md#financial-model), [accounting-mislabels](ROADMAP.md#accounting-mislabels), [bank-check](ROADMAP.md#bank-check) and [reference-checks](ROADMAP.md#reference-checks) from now to Friday night; [redflag-engine](ROADMAP.md#redflag-engine), [readout](ROADMAP.md#readout), [pitch-video](ROADMAP.md#pitch-video), [comps](ROADMAP.md#comps) and [market-signals](ROADMAP.md#market-signals) on Saturday.
 
 ## The readout
 
@@ -106,7 +104,7 @@ The readout starts with the best green flags and the worst red flags. Then it br
 - **Each reader steers their own copy, and can run what-ifs.** The operator's memo is the shared version. Each partner can steer a personal copy without changing anyone else's, and can tweak a few assumptions in the financial model (churn, price, hiring pace, whether the pilot counts) to see what the numbers become. Scripts recompute from the company's own files, which never change, and every tweaked number is marked as that reader's scenario beside the company's figure and Tricorder's rebuilt one.
 - **Several people on one readout (uncertain).** A lead, teammates or co-investors the lead invites could build one readout at once and split the checklist, with each person's work carrying their name. Ken is not sure this works. Before it is built, an online check of how syndicate leads and angel groups split diligence today decides whether it goes ahead.
 
-**Built by:** [readout](ROADMAP.md#readout) and [readout-page](ROADMAP.md#readout-page) on Saturday (the headline list, the overview, the drill-downs, the gaps, the quote check and the ask list); [checklist](ROADMAP.md#checklist) this week; [stage-views](ROADMAP.md#stage-views), [checklist-coverage](ROADMAP.md#checklist-coverage), [memo-export](ROADMAP.md#memo-export), [reader-scenarios](ROADMAP.md#reader-scenarios) and [multiplayer](ROADMAP.md#multiplayer) after Saturday.
+**Built by:** [checklist](ROADMAP.md#checklist), [stage-views](ROADMAP.md#stage-views), [checklist-coverage](ROADMAP.md#checklist-coverage), [memo-export](ROADMAP.md#memo-export), [reader-scenarios](ROADMAP.md#reader-scenarios) and [multiplayer](ROADMAP.md#multiplayer) from now to Friday night; [readout](ROADMAP.md#readout) and [readout-page](ROADMAP.md#readout-page) on Saturday (the headline list, the overview, the drill-downs, the gaps, the quote check and the ask list).
 
 ## Steering the readout
 
@@ -118,21 +116,21 @@ The readout is a working surface, not a read-only document. On any piece, the op
 - **Easy enough for a partner.** Some partners run diligence themselves: "our partners run diligence themselves without handing it to junior staff." ([seed fund guide, Aug 2026](https://www.crv.com/content/what-is-a-data-room)). Accurate sourcing and interpretation matter most to them, so a steer is one plain sentence on the line that looks wrong, with no setup and no menus, and the answer comes back on that line.
 - **A steer changes the reading, not the numbers.** It can change what is read, how claims are grouped and how they are worded. A script's number stays as the script computed it.
 
-Steering is built after Saturday. One steer may be shown on stage on Saturday if Ken chooses that on the overview page's "Steering on stage" card ([00_overview.md](../features/20261022.01_hackathon_plan/00_overview.md)).
+Steering is built by Saturday. Whether one steer is shown live on stage is the overview page's "Steering on stage" card ([00_overview.md](../features/20261022.01_hackathon_plan/00_overview.md)).
 
-**Built by:** [steering](ROADMAP.md#steering), after Saturday.
+**Built by:** [steering](ROADMAP.md#steering), from now to Friday night.
 
 ## Where it sits among similar tools
 
 The closest competitors validate the idea. Several AI entrants already turn a data room into a memo with every claim linked to its source, and the voice-of-the-customer research's strongest pay signal is a $600M fund using one of them ([vendor case study, paraphrased in the voice-of-the-customer research](https://www.v7labs.com/news/moderne-ventures-accelerates-due-diligence-with-v7-go)). A fund partner built one for his own work, Startup Due Dil, and now sells it to funds and angels ([the landscape research](../reports/20261022.02_research/research_landscape.md), Part 5). Tricorder does not need to be very different from them. It does the same core job and adds to it. What it adds is the top green and red flags, the overview under them, and the corroboration trail. The operator sees first the best green flags and the worst red flags, then which pieces of the company look strong and which look weak. Any number is two clicks from its source and from every source that corroborates or contradicts it. The red-flag engine proves each flag with a script, and its flags feed the overview.
 
-**Built by:** [product](ROADMAP.md#product), after Saturday, which turns this into the product sold to funds.
+**Built by:** [product](ROADMAP.md#product), from now to Friday night, which turns this into the product sold to funds.
 
 ## The demo
 
 Saturday's demo runs on two invented rooms, Hollis Voice and Brasswick, and on real YC companies paired with fake data rooms. The rooms, the beat sheet, what runs live and the fallbacks are in [DEMO.md](DEMO.md).
 
-**Built by:** [data-room](ROADMAP.md#data-room), [blind-room](ROADMAP.md#blind-room), [yc-rooms](ROADMAP.md#yc-rooms) and [demo-script](ROADMAP.md#demo-script) this week; [demo-freeze](ROADMAP.md#demo-freeze) on Saturday; [room-templates](ROADMAP.md#room-templates) after Saturday.
+**Built by:** [data-room](ROADMAP.md#data-room), [blind-room](ROADMAP.md#blind-room), [yc-rooms](ROADMAP.md#yc-rooms), [demo-script](ROADMAP.md#demo-script) and [room-templates](ROADMAP.md#room-templates) from now to Friday night; [demo-freeze](ROADMAP.md#demo-freeze) on Saturday.
 
 ## The rules every feature follows, in detail
 
@@ -143,7 +141,7 @@ The product brief states each rule in one line. This is the longer reasoning beh
 - **Not a sourcing database.** It does not find companies. Affinity, Harmonic, PitchBook and the rest do that (the landscape research, Part 1).
 - **Not a CRM or a fund operations tool.**
 - **Not a replacement for the partner's judgment.** It does the gathering and the checking. The partner decides.
-- **Not confirmatory diligence.** Reference calls, bank statements and legal review come after the term sheet (the voice-of-the-customer research, "What they do instead"). Tricorder may later prepare reference calls, at low priority, but it never makes them.
+- **Not confirmatory diligence.** Reference calls, bank statements and legal review come after the term sheet (the voice-of-the-customer research, "What they do instead"). Tricorder also prepares reference calls, at low priority, but it never makes them.
 
 **The principles for choosing methods.**
 
@@ -164,21 +162,10 @@ The product brief states each rule in one line. This is the longer reasoning beh
 - **The data rule above holds for every input.** The inbox makes it sharpest, so it is stated on the page where the inbox is connected. A bank connection is read only with the founder's consent and deleted when the consent is withdrawn.
 - **Tricorder never claims to detect fraud.** It finds differences in reporting and says so.
 - **A what-if never replaces a fact.** A reader's scenario number sits beside the company's figure and Tricorder's rebuilt one. The room's files never change.
-- **No scan logic before Saturday.** The organisers say Saturday is for building. This week holds everything else ([ROADMAP.md](ROADMAP.md#this-week-no-scan-logic)):
-  - the research, including [the research gaps](../reports/20261022.02_research/research_gaps.md), all done online
-  - the one-page founder brief for the judges
-  - the synthetic data rooms (Hollis Voice and Brasswick), their answer keys, the clean room and the sealed variant room
-  - the synthetic rooms for the real YC companies Ken approves, each page labelled "Synthetic test document. Not this company's data.", and each company's outside calls saved as the live demo's fallback
-  - the API keys (the feasibility research, Part 5)
-  - the prompts and schemas, written as entries in [FRAMEWORKS.md](FRAMEWORKS.md)
-  - the diligence checklist and the memo template
-  - the empty repo skeleton, written by an agent: folders, packages, the CI commands, `.env.example`, the Claim schema and the shared file-reader stub, with no scan logic
-
-  The skeleton is option B on the overview page's skeleton card, as the buildability critic recommends. Its condition: Ken asks the organisers at the mixer and tells the judges plainly what was written before the day ([skeleton-card](ROADMAP.md#skeleton-card)).
 
 ## How we measure it
 
-Tricorder is a product after Saturday, so these measures are written for a product. Numbers below are targets to set after the first pilot, not predictions.
+Tricorder is meant to become a product, so these measures are written for a product. Numbers below are targets to set after the first pilot, not predictions.
 
 **First measure: the hackathon result.** A live demo on the synthetic rooms, with the outside-world scan running live on a real company, judged by a panel of investors and agent builders. The organisers describe one judge as wanting both good code and a real business (the landscape research, Part 3). The demo shows the readout catching planted flags live, and says who would buy it (the fund, per seat). There is no paying customer yet, and the demo does not claim one; this is a demo.
 
@@ -193,4 +180,4 @@ Tricorder is a product after Saturday, so these measures are written for a produ
 - **Disagreements found.** How many places per deal the deck, model, video and outside world disagree, and how many of those the partner did not already know.
 - **Whether the fund pays.** Say and do are not enough. The pilot ends with a price. Price is the top reason funds turn a tool down: 39% of rejections in a 2026 survey of 250+ venture professionals ([survey, May 2026](https://ewvc.beehiiv.com/p/vc-tech-stack-pulse-2026), via the research gaps).
 
-**Built by:** [blind-room](ROADMAP.md#blind-room) this week and [demo-freeze](ROADMAP.md#demo-freeze) on Saturday for the score; [pilot](ROADMAP.md#pilot) after Saturday for the fund's measures.
+**Built by:** [blind-room](ROADMAP.md#blind-room) this week and [demo-freeze](ROADMAP.md#demo-freeze) on Saturday for the score; [pilot](ROADMAP.md#pilot) for the fund's measures, once a fund agrees to a pilot.

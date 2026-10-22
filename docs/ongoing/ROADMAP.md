@@ -2,7 +2,7 @@
 
 ## Charter
 
-**What belongs:** What comes next and in what order, grouped by horizon: this week, Saturday, after Saturday. What each slice waits on. For Saturday, who builds each slice and its hour budget, and the run of show.
+**What belongs:** What gets built and in what order, grouped by horizon: now to Friday night, and Saturday. Everything in the product brief and [FEATURES.md](FEATURES.md) is built by the end of Saturday's demo. What each slice waits on. For Saturday, who builds each slice and its hour budget, and the run of show.
 
 **What does not:** Dates promised to anyone. Work in flight; that lives on the board. How a slice works inside; that goes in its feature folder and in [ARCHITECTURE.md](ARCHITECTURE.md).
 
@@ -15,9 +15,10 @@
 - **Waits on** names the slices or board rows that must be done first. Board rows are on [BULLETIN.md](../BULLETIN.md).
 - **Includes** is the list of what the slice must contain. The reviewer checks the work against it.
 - **Done when** is the list of checks that prove it works.
-- **Who** names a role: captain, frontend, backend-and-data, design-and-finance, "agent" for this week's agent work (documents, data and the empty skeleton), or "Ken" for things only Ken can do. The board names the people behind each role.
-- **Hours** appears on Saturday slices only. It is a budget inside the six-hour hacking window, not a prediction. When a slice uses up its budget, the captain decides whether it ships as it is, falls back to saved results, or is cut.
-- **Judgment** picks the builder's model when an agent builds or rebuilds the slice after Saturday. Yes means Opus, because the slice needs design or product calls. No means Sonnet. Ken-only slices say "n/a".
+- **Joins on Saturday** appears on agent slices that extend one of the team's Saturday slices. The agent builds the slice before Saturday against the frozen Claim schema, the specs and the example result files in `sample_out/`, the way the readout page is built on Saturday morning before any scan runs. It is merged to `main` before Saturday with its tests passing on those files and on the data rooms. On Saturday it runs on the named slice's real output at the integration points, and any Done when check that needs that output is checked there.
+- **Who** names a role: captain, frontend, backend-and-data, design-and-finance, "agent" for agent work from now to Friday night (documents, data, the skeleton and the product slices), or "Ken" for things only Ken can do. The board names the people behind each role.
+- **Hours** appears on the team's Saturday slices only. It is a budget inside the six-hour hacking window, not a prediction. When a slice uses up its budget, the captain decides whether it ships as it is or shows saved results on stage, by the [demo fallback order](#demo-fallback-order).
+- **Judgment** picks the builder's model when an agent builds or rebuilds the slice. Yes means Opus, because the slice needs design or product calls. No means Sonnet. Ken-only slices say "n/a".
 
 A slice is done when its pull request is merged to `main`. On Saturday the captain merges, and a red CI blocks a merge even in the room ([guardrails.md](../../.claude/guardrails.md)).
 
@@ -25,72 +26,72 @@ A slice is done when its pull request is merged to `main`. On Saturday the capta
 
 Every feature or behaviour Ken asked for on 2026-10-22, and the slice that builds it. "When Ken said it" is the time the [writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md) gives his words, or the document the ask came from. "When it is built" names the horizon of each linked slice, in link order. A script checks that every link points at a slice in this file and that the horizons match: [check_asks_table.py](../features/20261022.01_hackathon_plan/check_asks_table.py).
 
-Four of the day's blocks are rules with nothing to build: the 1:21 PM block (no research labels in documents), the 1:24 PM block (say, do, pay is not user against buyer), the 1:12 PM rename to "the operator", and the 2:35 PM block (the two primary personas are the associate who prepares the memo and the partner who reads it, at seed and Series A funds). The first three bind the documents. The last one decides who every slice serves first.
+Five of the day's blocks are rules with nothing to build: the 1:21 PM block (no research labels in documents), the 1:24 PM block (say, do, pay is not user against buyer), the 1:12 PM rename to "the operator", the 2:35 PM block (the two primary personas are the associate who prepares the memo and the partner who reads it, at seed and Series A funds), and the 3:32 PM note (everything is built by the end of Saturday, and building starts now). The first three bind the documents. The fourth decides who every slice serves first. The last one sets this roadmap's two horizons.
 
 | Ken's ask | When Ken said it | Slice that builds it | When it is built |
 |---|---|---|---|
 | Red flags in the financials and metrics | 10:15 AM (Track 2 pasted) | [redflag-engine](#redflag-engine) | Saturday |
 | A memo where every claim links to its source | 10:15 AM (Track 2 pasted) | [claim-result](#claim-result), [readout](#readout) | Saturday |
-| Market signals for the company and its competitors | 10:15 AM (Track 2 pasted) | [market-signals](#market-signals), [outside-in](#outside-in) | Saturday, then After |
+| Market signals for the company and its competitors | 10:15 AM (Track 2 pasted) | [outside-in](#outside-in), [market-signals](#market-signals) | Now to Friday night, then Saturday |
 | Competitive analysis | about 10:10 AM | [market-signals](#market-signals), [comps](#comps) | Saturday |
-| Comps, each with why it is a fair comp | about 10:10 AM | [comps](#comps), [comps-deep](#comps-deep) | Saturday, then After |
-| EDGAR full-text search for comps | 10:17 AM | [comps-deep](#comps-deep) | After |
-| Financial modeling | about 10:10 AM | [redflag-engine](#redflag-engine), [financial-model](#financial-model) | Saturday, then After |
+| Comps, each with why it is a fair comp | about 10:10 AM | [comps-deep](#comps-deep), [comps](#comps) | Now to Friday night, then Saturday |
+| EDGAR full-text search for comps | 10:17 AM | [comps-deep](#comps-deep) | Now to Friday night |
+| Financial modeling | about 10:10 AM | [financial-model](#financial-model), [redflag-engine](#redflag-engine) | Now to Friday night, then Saturday |
 | A pitch video broken into claims with timestamps | about 10:10 AM | [pitch-video](#pitch-video) | Saturday |
-| The video leads you to its interesting parts | about 10:10 AM | [video-moments](#video-moments) | After |
-| Business frameworks: lean canvas, jobs to be done and the rest | about 10:10 AM | [frameworks-scan](#frameworks-scan) | After |
-| Founder profiles: socials, GitHub, passion, from the industry or not | about 10:10 AM | [founder-profiles](#founder-profiles) | After |
-| The company's presence online, including Reddit and Facebook | about 10:10 AM | [online-presence](#online-presence) | After |
-| A Reddit mini-browser that saves each page Ken opens | about 10:10 AM | [online-presence](#online-presence) | After |
-| The one-page founder brief | 10:18 AM | [founder-brief](#founder-brief) | This week |
-| A simulated data room | 10:26 AM | [data-room](#data-room) | This week |
-| Pull pitch decks out of the inbox | 11:20 AM | [inbox-forward](#inbox-forward), [inbox-apis](#inbox-apis) | After |
-| Diligence starts on the inbound, before anyone asks | 11:20 AM | [inbound-unasked](#inbound-unasked) | After |
-| The investor can see and delete everything pulled | 11:20 AM | [readout-store](#readout-store) | After |
+| The video leads you to its interesting parts | about 10:10 AM | [video-moments](#video-moments) | Now to Friday night |
+| Business frameworks: lean canvas, jobs to be done and the rest | about 10:10 AM | [frameworks-scan](#frameworks-scan) | Now to Friday night |
+| Founder profiles: socials, GitHub, passion, from the industry or not | about 10:10 AM | [founder-profiles](#founder-profiles) | Now to Friday night |
+| The company's presence online, including Reddit and Facebook | about 10:10 AM | [online-presence](#online-presence) | Now to Friday night |
+| A Reddit mini-browser that saves each page Ken opens | about 10:10 AM | [online-presence](#online-presence) | Now to Friday night |
+| The one-page founder brief | 10:18 AM | [founder-brief](#founder-brief) | Now to Friday night |
+| A simulated data room | 10:26 AM | [data-room](#data-room) | Now to Friday night |
+| Pull pitch decks out of the inbox | 11:20 AM | [inbox-forward](#inbox-forward), [inbox-apis](#inbox-apis) | Now to Friday night |
+| Diligence starts on the inbound, before anyone asks | 11:20 AM | [inbound-unasked](#inbound-unasked) | Now to Friday night |
+| The investor can see and delete everything pulled | 11:20 AM | [readout-store](#readout-store) | Now to Friday night |
 | An overview of which pieces look strong and which look weak | 12:55 PM | [readout](#readout), [readout-page](#readout-page) | Saturday |
 | Easy drill-downs to verify and corroborate every number | 12:55 PM | [readout](#readout), [readout-page](#readout-page) | Saturday |
 | The readout opens on the best green flags and the worst red flags | 1:09 PM | [readout](#readout), [readout-page](#readout-page) | Saturday |
-| The pitch line: "Point it at a startup, get a readout. Tricorder takes any data: decks, videos, spreadsheets, data rooms. It reveals insight you can trust, every claim sourced." | 10:34 AM (team-workshop session, board row TRI-new-pitch) | [demo-script](#demo-script) | This week |
-| Real green flags in the demo room | 1:09 PM (overview page card) | [data-room](#data-room) | This week |
-| Steer the readout by rewriting a piece | 1:12 PM | [steering](#steering) | After |
-| Steer the readout by getting more info for a piece | 1:12 PM and 1:15 PM | [steering](#steering) | After |
-| Angels want diligence and buy it by proxy | 1:27 PM | [product](#product) | After |
-| Accounting mislabels, not only ARR that is not recurring | 1:32 PM | [redflag-engine](#redflag-engine), [accounting-mislabels](#accounting-mislabels) | Saturday, then After |
-| Find differences in reporting; never claim to catch fraud | 1:33 PM | [demo-script](#demo-script), [bank-check](#bank-check) | This week, then After |
-| Online research only, no interviews | 1:34 PM | [research-gaps](#research-gaps) | This week |
-| The same core job as the competitor, plus our extras | 1:36 PM | [product](#product) | After |
-| First screens that suit the company's stage | 1:38 PM | [stage-views](#stage-views) | After |
-| The operator can reorder the pieces | 1:38 PM (product brief, "The operator sets the order") | [readout-page](#readout-page), [stage-views](#stage-views) | Saturday, then After |
-| The associate's ten tabs, opened automatically | 1:47 PM (comment on the voice-of-the-customer research) | [outside-in](#outside-in) | After |
-| Reference checks, low priority | 1:50 PM (comment on the voice-of-the-customer research) | [reference-checks](#reference-checks) | After |
-| A bank check through a banking connector | 1:52 PM | [bank-check](#bank-check) | After |
+| The pitch line: "Point it at a startup, get a readout. Tricorder takes any data: decks, videos, spreadsheets, data rooms. It reveals insight you can trust, every claim sourced." | 10:34 AM (team-workshop session, board row TRI-new-pitch) | [demo-script](#demo-script) | Now to Friday night |
+| Real green flags in the demo room | 1:09 PM (overview page card) | [data-room](#data-room) | Now to Friday night |
+| Steer the readout by rewriting a piece | 1:12 PM | [steering](#steering) | Now to Friday night |
+| Steer the readout by getting more info for a piece | 1:12 PM and 1:15 PM | [steering](#steering) | Now to Friday night |
+| Angels want diligence and buy it by proxy | 1:27 PM | [product](#product) | Now to Friday night |
+| Accounting mislabels, not only ARR that is not recurring | 1:32 PM | [accounting-mislabels](#accounting-mislabels), [redflag-engine](#redflag-engine) | Now to Friday night, then Saturday |
+| Find differences in reporting; never claim to catch fraud | 1:33 PM | [demo-script](#demo-script), [bank-check](#bank-check) | Now to Friday night |
+| Online research only, no interviews | 1:34 PM | [research-gaps](#research-gaps) | Now to Friday night |
+| The same core job as the competitor, plus our extras | 1:36 PM | [product](#product) | Now to Friday night |
+| First screens that suit the company's stage | 1:38 PM | [stage-views](#stage-views) | Now to Friday night |
+| The operator can reorder the pieces | 1:38 PM (product brief, "The operator sets the order") | [stage-views](#stage-views), [readout-page](#readout-page) | Now to Friday night, then Saturday |
+| The associate's ten tabs, opened automatically | 1:47 PM (comment on the voice-of-the-customer research) | [outside-in](#outside-in) | Now to Friday night |
+| Reference checks, low priority | 1:50 PM (comment on the voice-of-the-customer research) | [reference-checks](#reference-checks) | Now to Friday night |
+| A bank check through a banking connector | 1:52 PM | [bank-check](#bank-check) | Now to Friday night |
 | Contracts as an input, checked for gaps such as cancellation periods | 1:53 PM, and 3:17 PM ("include contract terms for sat") | [contract-terms-saturday](#contract-terms-saturday) | Saturday |
 | A list of things to ask the founder for | 1:54 PM | [readout](#readout), [readout-page](#readout-page) | Saturday |
-| A diligence checklist | 1:56 PM | [checklist](#checklist) | This week |
-| Coverage against the checklist, and an ask list from missing items at the company's stage | 1:56 PM | [checklist-coverage](#checklist-coverage) | After |
-| Help write the partners' memo: an interactive memo with drill-downs, plus a static PDF with footnotes, in a template built from real published memos | 1:58 PM and 2:00 PM | [memo-export](#memo-export) | After |
-| Each reader gets their own steerable copy of the memo, and can try what-if changes on the model, marked as scenarios | 2:01 PM | [reader-scenarios](#reader-scenarios) | After |
-| A blind room and a clean room against "rigged" | overview page card, "The blind room" | [blind-room](#blind-room), [demo-freeze](#demo-freeze) | This week, then Saturday |
-| Multiplayer: several people build one readout and split the work (uncertain) | 2:05 PM | [multiplayer](#multiplayer) | After |
-| Deck revenue against the P&L, and decks that show only part of the history | 2:19 PM | [deck-vs-books](#deck-vs-books) | After |
-| Speed: start every scan as early as its input exists, readout fills in as results land | 2:19 PM | [inbound-unasked](#inbound-unasked) | After |
-| Steering easy enough for a partner who runs diligence: one plain sentence on the line that looks wrong, no setup, the answer on that line | 2:21 PM (Ken's edit to the product brief, "Steering the readout") | [steering](#steering) | After |
-| The claims workflow: extract claims from the deck and video, check whether the other documents support them | 2:41 PM | [claim-support](#claim-support) | After |
-| Templated data rooms with hidden issues, names swapped on the fly, one per problem story | 2:46 PM | [room-templates](#room-templates) | After |
-| A reference guide for every document a seed or Series A room can hold: green flags, red flags and pitfalls, and how Tricorder checks it | 2:38 PM | [checklist](#checklist), [checklist-coverage](#checklist-coverage) | This week, then After |
-| Synthetic rooms for 2 or 3 real YC spring companies so the internet scan runs live | 2:44 PM | [yc-rooms](#yc-rooms), [room-templates](#room-templates) | This week, then After |
-| Live demos on real YC companies from a list Ken approves, each paired with a fake data room | 2:49 PM | [yc-rooms](#yc-rooms), [demo-script](#demo-script), [market-signals](#market-signals), [demo-freeze](#demo-freeze) | This week, then Saturday |
-| The sponsor tools (Akta, Crunchbase, Nicrron) in the product, built ahead with keys plugged in on the day | 2:56 PM | [sponsor-adapters](#sponsor-adapters) | This week |
-| Quick messages to the company asking for information, with guidance on what to submit | 3:15 PM | [founder-requests](#founder-requests) | After |
+| A diligence checklist | 1:56 PM | [checklist](#checklist) | Now to Friday night |
+| Coverage against the checklist, and an ask list from missing items at the company's stage | 1:56 PM | [checklist-coverage](#checklist-coverage) | Now to Friday night |
+| Help write the partners' memo: an interactive memo with drill-downs, plus a static PDF with footnotes, in a template built from real published memos | 1:58 PM and 2:00 PM | [memo-export](#memo-export) | Now to Friday night |
+| Each reader gets their own steerable copy of the memo, and can try what-if changes on the model, marked as scenarios | 2:01 PM | [reader-scenarios](#reader-scenarios) | Now to Friday night |
+| A blind room and a clean room against "rigged" | overview page card, "The blind room" | [blind-room](#blind-room), [demo-freeze](#demo-freeze) | Now to Friday night, then Saturday |
+| Multiplayer: several people build one readout and split the work (uncertain) | 2:05 PM | [multiplayer](#multiplayer) | Now to Friday night |
+| Deck revenue against the P&L, and decks that show only part of the history | 2:19 PM | [deck-vs-books](#deck-vs-books) | Now to Friday night |
+| Speed: start every scan as early as its input exists, readout fills in as results land | 2:19 PM | [inbound-unasked](#inbound-unasked) | Now to Friday night |
+| Steering easy enough for a partner who runs diligence: one plain sentence on the line that looks wrong, no setup, the answer on that line | 2:21 PM (Ken's edit to the product brief, "Steering the readout") | [steering](#steering) | Now to Friday night |
+| The claims workflow: extract claims from the deck and video, check whether the other documents support them | 2:41 PM | [claim-support](#claim-support) | Now to Friday night |
+| Templated data rooms with hidden issues, names swapped on the fly, one per problem story | 2:46 PM | [room-templates](#room-templates) | Now to Friday night |
+| A reference guide for every document a seed or Series A room can hold: green flags, red flags and pitfalls, and how Tricorder checks it | 2:38 PM | [checklist](#checklist), [checklist-coverage](#checklist-coverage) | Now to Friday night |
+| Synthetic rooms for 2 or 3 real YC spring companies so the internet scan runs live | 2:44 PM | [yc-rooms](#yc-rooms), [room-templates](#room-templates) | Now to Friday night |
+| Live demos on real YC companies from a list Ken approves, each paired with a fake data room | 2:49 PM | [yc-rooms](#yc-rooms), [demo-script](#demo-script), [market-signals](#market-signals), [demo-freeze](#demo-freeze) | Now to Friday night, then Saturday |
+| The sponsor tools (Akta, Crunchbase, Nicrron) in the product, built ahead with keys plugged in on the day | 2:56 PM | [sponsor-adapters](#sponsor-adapters) | Now to Friday night |
+| Quick messages to the company asking for information, with guidance on what to submit | 3:15 PM | [founder-requests](#founder-requests) | Now to Friday night |
 
 ### Proposals waiting on Ken
 
 These are not slices yet. Ken's board row "Answer the cards" asks which Startup Due Dil ideas to adopt, and he has not rejected any. Each comes from the landscape research's Part 5 ([research_landscape.md](../reports/20261022.02_research/research_landscape.md), "What Tricorder takes from it"). If Ken says yes, the idea becomes a slice in the horizon named here.
 
-- **A yellow tier.** Startup Due Dil sorts findings into red, yellow and green, where yellow means "needs clarification". Tricorder's nearest match is a piece marked mixed, whose question goes on the ask list. The proposal is to name that tier on the page. After Saturday, inside [stage-views](#stage-views) or [checklist-coverage](#checklist-coverage).
-- **Rerun when thin.** Its orchestrator reruns an agent when an area comes back thin. Tricorder's "get more info" steer does this when the operator asks. The proposal is to run it unasked when a piece reads "not enough in the room" and a source could fill it. After Saturday, inside [steering](#steering).
-- **Regulatory and legal as their own areas.** Two of its nine specialist areas are regulatory compliance and legal. Tricorder covers them only through the checklist's legal and cap table items. The proposal is a scan for each. After Saturday.
-- **A founder mode.** Startups run Startup Due Dil on themselves before they raise. The proposal is a founder version: a founder runs the readout on their own room and fixes what disagrees before an investor sees it. After Saturday, beside [product](#product).
+- **A yellow tier.** Startup Due Dil sorts findings into red, yellow and green, where yellow means "needs clarification". Tricorder's nearest match is a piece marked mixed, whose question goes on the ask list. The proposal is to name that tier on the page. Now to Friday night, inside [stage-views](#stage-views) or [checklist-coverage](#checklist-coverage).
+- **Rerun when thin.** Its orchestrator reruns an agent when an area comes back thin. Tricorder's "get more info" steer does this when the operator asks. The proposal is to run it unasked when a piece reads "not enough in the room" and a source could fill it. Now to Friday night, inside [steering](#steering).
+- **Regulatory and legal as their own areas.** Two of its nine specialist areas are regulatory compliance and legal. Tricorder covers them only through the checklist's legal and cap table items. The proposal is a scan for each. Now to Friday night.
+- **A founder mode.** Startups run Startup Due Dil on themselves before they raise. The proposal is a founder version: a founder runs the readout on their own room and fixes what disagrees before an investor sees it. Now to Friday night, beside [product](#product).
 - **Its prices as a reference.** It charges $49 a report, $449 a month for angels (up to 10 reports) and $999 a month for funds (up to 25 reports) (dev.ua, via the landscape research). The proposal is to use these as a reference point in [product](#product) pricing.
 
 ## The one workflow we demo
@@ -99,20 +100,22 @@ These are not slices yet. Ken's board row "Answer the cards" asks which Startup 
 
 **Then a real company, live.** One beat in the core switches to a real YC company from the list Ken approves, paired with its synthetic room ([yc-rooms](#yc-rooms); [writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:49 PM block). Its outside-world panel runs live on stage: the company's website, Hacker News, the App Store and SEC filings, read as the judges watch. Ken says out loud that the company is real and its data room is not: we wrote the room, every page says "Synthetic test document. Not this company's data.", and its problems are our test plants. Hollis Voice stays the controlled room whose planted flags are known. Why this form: judges remember what they saw working, and opening on a forward started by hand spends the first 20 seconds on the one thing on screen that is not real ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), finding 2; [critique_judge.md](../features/20261022.01_hackathon_plan/critique_judge.md), finding 6).
 
-**The real forward, only if time allows.** The forwarding address is an after-Saturday slice ([inbox-forward](#inbox-forward)). A small inbox-polling script needs no OAuth review, so it can be built on Saturday, but only if the red-flag engine and the readout are done at the 2:30 cut call. Otherwise the close says it in one line.
+**The real forward.** An agent builds the forwarding address before Saturday ([inbox-forward](#inbox-forward)), and the readout fills in as results land ([inbound-unasked](#inbound-unasked)). So the close can forward a real pitch email on stage. Whether the close shows it live or says it in one line is the overview page's card on the demo opening.
 
 **The other forms:** open on the forwarded email, started by hand and said so; or open on the data room upload. The overview page carries the card ("The demo opening").
 
 ---
 
-## This week (no scan logic)
+## Now to Friday night
 
-The organisers say Saturday is build-only and everything before code happens this week ([brief, 10:18 AM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). So this horizon holds research, people work, data and documents. The data room generator is a script: the organisers say to bring a synthetic data room, so making it is allowed and expected. It lives in `data_room/` and no product folder imports it. This roadmap is written to option B on the [skeleton-card](#skeleton-card), so an agent also writes the empty [skeleton](#skeleton) this week, with no scan logic.
+Building starts now, by agents and the team ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 3:32 PM block). Everything in the product brief and [FEATURES.md](FEATURES.md) is built by the end of Saturday. This horizon holds the research, people work, data and documents, the [skeleton](#skeleton), and every product slice that is not one of the team's Saturday slices. The organisers wrote that Saturday is build-only. Whether code written before Saturday is allowed is still asked on Ken's board row TRI-ask-organisers; until they answer, Ken has chosen to build now. The data room generator lives in `data_room/`, and no product folder imports it.
+
+Most product slices here extend one of the team's Saturday slices. Each of those carries a **Joins on Saturday** line ([How to read a slice](#how-to-read-a-slice)). The product slices are listed in the order of their Waits on lines, after the setup slices.
 
 **What is left before Saturday.** Nothing here waits on interviews; there are none (brief, 1:34 PM block). Checked against the repo on 2026-10-22.
 
 - Done: [research-gaps](#research-gaps), [checklist](#checklist) and [data-room](#data-room). The memo template ([MEMO_TEMPLATE.md](MEMO_TEMPLATE.md)) is written too.
-- [skeleton](#skeleton): an agent, under option B, once Ken has asked the organisers. Not started: the repo has no `schema/` or `server/` folder yet.
+- [skeleton](#skeleton): an agent, now. Not started: the repo has no `schema/` or `server/` folder yet.
 - [blind-room](#blind-room): Ken finds the person outside the build, who follows [SEALING.md](../../data_room/SEALING.md) with their own seed and keeps the key. The plants-off switch, the clean room and the seed option are built.
 - [keys](#keys): Ken.
 - [cached-data](#cached-data): an agent, once Ken's keys are in. Not started: there is no `cache/` folder yet.
@@ -123,6 +126,7 @@ The organisers say Saturday is build-only and everything before code happens thi
 - [yc-rooms](#yc-rooms): Ken approves the list of real YC companies on the overview page's demo-company card. Then an agent generates a synthetic room for each approved company, and cached-data saves each company's outside-world calls.
 - [record-pitch-video](#record-pitch-video): Ken reads each room's script flatly, then installs whisper.cpp and saves the transcript.
 - [founder-brief](#founder-brief): Ken edits it in his own words.
+- The product slices from [readout-store](#readout-store) to [product](#product): agents, in the order of their Waits on lines, with Ken where a slice names him.
 
 ### data-room
 
@@ -223,7 +227,7 @@ The sponsor tools in the product, with keys that only arrive on the day ([writer
 
 **Waits on:** nothing this week; the keys on Saturday morning.
 
-**Includes, this week (no keys needed):**
+**Includes, before Saturday (no keys needed):**
 
 - One small adapter per sponsor, written against its published docs (saved under the feasibility and landscape research's raw folders): the request it makes, the response it expects, and how each response field becomes a Claim with its source.
 - A recorded sample response per adapter, shaped from the docs, so tests and the demo can run with no key and no network.
@@ -360,9 +364,9 @@ The [FRAMEWORKS.md](FRAMEWORKS.md) entries and the hand-written examples that th
 
 ### skeleton
 
-The empty repo the four people build in, with the typed Claim schema and a stub for the shared file readers. No scan logic. This is option B on the [skeleton-card](#skeleton-card): with every role budgeted to its last minute, building it on Saturday spends the first half hour of two people and puts the team behind ([critique_buildability.md](../features/20261022.01_hackathon_plan/critique_buildability.md), finding 7).
+The repo the four people build in, with the typed Claim schema and a stub for the shared file readers. The agent slices build in it too. This is option B on the [skeleton-card](#skeleton-card): with every role budgeted to its last minute, building it on Saturday spends the first half hour of two people and puts the team behind ([critique_buildability.md](../features/20261022.01_hackathon_plan/critique_buildability.md), finding 7).
 
-**Waits on:** the skeleton-card decision; Ken asks the organisers first and tells the judges plainly. saturday-specs (the example files). The Claim schema in [FRAMEWORKS.md](FRAMEWORKS.md), "The shared Claim", which is the single source for every field type.
+**Waits on:** saturday-specs (the example files). Ken has chosen to build now; he still asks the organisers and tells the judges plainly. The Claim schema in [FRAMEWORKS.md](FRAMEWORKS.md), "The shared Claim", which is the single source for every field type.
 
 **Includes:**
 
@@ -479,365 +483,25 @@ A decision card for the overview page: does an empty repo skeleton count as code
 - **A. The skeleton is code. Build it on Saturday.** The folder layout, the CI command and the typed Claim result are the first Saturday slices. They take the first half hour of two people. Before Saturday the repo holds only documents, `data_room/` and `cache/`. To a judge who asks what was built today, the answer is every line of product code.
 - **B. The skeleton is setup. An agent writes it this week.** Empty folders and packages, `bin/ci-py`, `bin/ci-web`, the CI config, the dependency list, `.env.example`, the Claim schema typed in from the FRAMEWORKS JSON Schema, and the `schema/readers.py` stub, with no scan logic. The captain and backend-and-data each get half an hour back on Saturday. The risk: the organisers wrote "On Saturday you only build" and "Everything a founder does before writing code happens this week", and commits dated before Saturday are visible to anyone who looks.
 
+**Status:** Ken's 3:32 PM decision to build now settles this as option B. The organisers' answer is still asked on the board row.
+
 **This roadmap is written to option B**, as the buildability critic recommends ([critique_buildability.md](../features/20261022.01_hackathon_plan/critique_buildability.md), finding 7). Its condition: Ken asks the organisers first and tells the judges plainly. The [skeleton](#skeleton) slice sits in this week, and the freed half hours go to the slices the critics name: the captain's to the quote checker ([claim-result](#claim-result)), and backend-and-data's to the shared file readers ([readers](#readers)). If the organisers say no, the skeleton slice says what moves back.
 
 **Who:** agent writes the card. Ken decides.
 
 **Judgment:** n/a.
 
----
-
-## Saturday
-
-### The window
-
-The schedule gives 10:30 AM to 4:30 PM for hacking, with lunch, so the plan uses six hours. The Luma page also says "9 hours of focused building" ([research_landscape.md](../reports/20261022.02_research/research_landscape.md), summary). That gap is three hours, by [check_saturday_hours.py](../features/20261022.01_hackathon_plan/check_saturday_hours.py). The board row TRI-ask-organisers asks which is right. If the room opens for longer, the extra time goes to bringing back cut slices in the reverse of the cut order. The freeze still sits one hour before judging.
-
-### Who owns what
-
-Each person owns folders, so pull requests do not touch the same files. This follows the feasibility research's Part 4.1, with the shared file readers and the contract-terms reading given to backend-and-data, and the market-signals panel to frontend. The full layout is in [ARCHITECTURE.md](ARCHITECTURE.md).
-
-| Role | Folders | Slices | Build hours |
-|---|---|---|---|
-| captain | `schema/` except `readers.py`, `scans/memo/`, `eval/`, `demo/` | claim-result, readout, demo-freeze | 4.5 |
-| frontend | `readout/`, and on Saturday the live re-run in `scans/signals/` | readout-page, market-signals | 4.5 |
-| backend-and-data | repo root files, `server/`, `schema/readers.py`, `scans/video/`, `scans/readings/` | readers, pitch-video, contract-terms-saturday | 4.5 |
-| design-and-finance | `scans/redflags/`, `scans/comps/` | redflag-engine, comps | 4.5 |
-
-Build hours run from 10:30 AM to the 3:30 PM freeze, less a half-hour lunch: 4.5 hours each, 18 person-hours in all, from [check_saturday_hours.py](../features/20261022.01_hackathon_plan/check_saturday_hours.py). The same script checks that each role's slices fill its window and that the run of show below gives each slice its stated hours. Rehearsal adds 45 minutes for all four.
-
-The captain carries no schema typing (an agent writes it this week), no readers (backend-and-data owns them) and no post drafting (an agent drafts the posts this week). The captain posts at 11:00 and 3:30 only.
-
-`schema/` is frozen before Saturday, in the [skeleton](#skeleton) slice. On Saturday only the captain changes it, and only to fix a bug. The exception is `schema/readers.py`, which backend-and-data fills in from 10:30 to 11:30. A new Python dependency goes through the captain, because the dependency list sits in a root file.
-
-### readers
-
-The shared file readers every scan and the quote checker import. Before this slice nobody owned them, and the captain had half an hour for a quote checker across all five formats ([critique_buildability.md](../features/20261022.01_hackathon_plan/critique_buildability.md), finding 3).
-
-**Waits on:** skeleton (the `schema/readers.py` stub, written this week).
-
-**Includes:**
-
-- `schema/readers.py` filled in: PDF by page, xlsx by cell, CSV by row, Markdown by line, transcript by segment. Each returns the text at a locator, so a scan can quote it and the quote checker can find it again.
-- The quote checker and every scan import these readers. No scan writes its own.
-
-**Done when:** a test reads one known locator from each of the five formats in `data_room/hollis_voice/` and gets the expected text, and the readers are merged at 11:30 AM.
-
-**Who:** backend-and-data.
-
-**Hours:** 1.0 (10:30 to 11:30 AM).
-
-**Judgment:** no.
-
-### claim-result
-
-The script that checks every quote against its source. The typed Claim schema itself is written this week in the [skeleton](#skeleton) slice.
-
-**Waits on:** skeleton (the frozen schema and the readers stub), readers. The captain builds against the readers stub from 10:30 and switches to the real readers when they merge at 11:30.
-
-**Includes:**
-
-- `schema/check_quotes.py`: opens each claim's source at its locator through `schema/readers.py` and confirms the quote is there. URL sources are checked against their saved copies through `cache/index.json`. A claim that fails gets the confidence label `unverified` and moves to the "could not verify" box.
-
-**Done when:**
-
-- Tests show a real quote passing, an invented quote failing, and a claim with no source refused.
-- Every example file in `sample_out/` passes the checker.
-
-**Who:** captain.
-
-**Hours:** 1.0 (10:30 to 11:30 AM).
-
-**Judgment:** yes.
-
-### redflag-engine
-
-The red flags in the financials and metrics: the organisers' first direction, and first in the feasibility research's ranking.
-
-**Waits on:** skeleton (the schema, frozen this week), readers (merged at 11:30), data-room, saturday-specs (the check list). The pure checks that compute numbers start at 10:30.
-
-**Includes:**
-
-- Scripts only on Saturday. A junior Python-and-Excel builder has 3.0 hours for 7 checks, so this slice makes no model call ([critique_buildability.md](../features/20261022.01_hackathon_plan/critique_buildability.md), finding 2). Every planted flag already has a script check (feasibility Part 3.2).
-- One pandas check per planted flag in the data room research's Part 3.4, over the CSVs and the model: pilot booked as ARR, deck ARR against the model (1 percent tolerance), churn hidden in the cohort tab, burn against the hiring plan, customer concentration, gross margin without delivery costs, cumulative sign-ups shown as active clinics. The video-against-deck variant is found by the readout slice, because it needs the video scan's output.
-- Deck claims read from the deck's claims page (slide 14) by regex, with `01_overview/claims.json` as the fallback (feasibility 1.1 and 1.9). The buildability critic's regex read 14 of 14 rows; three rows need a better label split.
-- Files are read through `schema/readers.py`. The scan writes no reader of its own.
-- The script decides that a number is wrong (feasibility Part 3.2). The model reading that gives a flag its clause quotes (the pilot contract) is the [contract-terms-saturday](#contract-terms-saturday) slice, owned by backend-and-data after the video slice. The model's reading of the cohort note is after Saturday, in [financial-model](#financial-model).
-- Each flag is a Claim with the claimed number, the computed number, a severity, and sources pointing at both places.
-- The cells behind the green flags, read by script with no judgement: the round from the cap table (new money, pre-money, Series A ownership) and the model (`SERIES_A_RAISE`), the market size (`MARKET_TAM_USD`), staff today (`STAFF_NOW`) and staff after hiring (the last row of `hiring_plan.csv`). The cap table's sum check (`cap_table_reconcile`, [FRAMEWORKS.md](FRAMEWORKS.md) entry 1.10) runs here, so the clean cap table (DC3) reads clear. The readout's strong pieces rest on these claims, and no other Saturday slice writes them.
-- `python -m scans.redflags <room>` writes `out/<room>/redflags.json`.
-- A test in `scans/redflags/tests/` that compares the output to the answer key by check name.
-- Accounting mislabels, the Saturday part ([FRAMEWORKS.md](FRAMEWORKS.md), entry 1.12; [writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:32 PM block). The two kinds this slice already checks carry their mislabel kind on the claim: the pilot booked as ARR is kind a, and gross margin without delivery costs is kind d. Entry 1.12 marks six more sub-checks as runnable on this room. They do not fit in this slice's 3.0 hours beside its 7 checks, so they are the [accounting-mislabels](#accounting-mislabels) slice, after Saturday.
-
-**Done when:**
-
-- On the seed drop, the test finds the four flags the research says the seed drop can show from this scan: deck ARR against the model, burn against the hiring plan, gross margin, and the clinic count.
-- On the full room it also finds the pilot as ARR, the cohort churn and the customer concentration.
-- None of the three decoys (the onboarding fee, the annual prepay, the clean cap table) is flagged.
-- The round, market size and staff claims match the answer key's `green_flags` values within 1 percent.
-- On the clean room from [blind-room](#blind-room), no planted-flag check fires.
-- The pilot-as-ARR flag and the gross-margin flag each name their mislabel kind from entry 1.12.
-- The scan runs with no network, so it can run live on the demo laptop.
-- Every claim passes the quote checker.
-
-**Who:** design-and-finance.
-
-**Hours:** 3.0 (10:30 AM to 2:00 PM, less lunch).
-
-**Judgment:** yes.
-
-### readout
-
-The top green and red flags, the overview and its drill-downs, assembled from the scans' claims: every piece of the company with a verdict, every sentence sourced. Second in the feasibility research's ranking.
-
-**Waits on:** claim-result. It is built against `sample_out/` until the real scans land at the 1:00 PM integration point.
-
-**Includes:**
-
-- `scans/memo/` reads every `out/<room>/*.json` that exists, runs the quote checker again, and links claims that disagree (same label, unit and period, values apart by more than the tolerance) into `conflicts_with`.
-- Links claims from independent sources that agree (same label, unit and period, values within the tolerance) into `corroborated_by`.
-- Groups the claims into the nine pieces and gives each piece its verdict by the stated script rule ([FRAMEWORKS.md](FRAMEWORKS.md), "Piece verdicts"): looking strong, looking weak, mixed or not enough in the room, with a one-line reason and the counts of corroborating and contradicting sources. Pieces go in a fixed order, strong and weak alike.
-- Picks the best green flags and the worst red flags from the piece verdicts and the flags, by the stated script rule ([FRAMEWORKS.md](FRAMEWORKS.md), "Top green and red flags"), and puts them first in `readout.json`.
-- One model pass that writes connecting sentences. Each sentence must cite claim ids; a sentence with none is dropped. This pass is first in the cut order: the script's top flags, pieces and verdicts are enough for the demo. On the demo laptop it shows as frozen output.
-- A missing scan becomes a gap in the readout, not an error.
-- The ask list at the end of `readout.json`: what the operator should request from the founder ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:54 PM block; [FRAMEWORKS.md](FRAMEWORKS.md), "Ask list"). A script builds it from each gap's `would_need` field and each weak piece's reason. Each line says what to ask for, the claim or gap it would settle, and the piece it feeds. No model call.
-- Writes `out/<room>/readout.json`.
-
-**Done when:**
-
-- The four ARR figures in the data room research's Part 3.4 (the model's $2,240,868, the deck's $2,500,000, the video's spoken figure of about $3,000,000, and the recurring ARR the scan computes) show as one conflict group inside traction and revenue, and that piece reads looking weak.
-- On the full room, the pitch itself reads looking strong, with `corroborated_by` linking slide 13 to the cap table's Series A rows (DC3, the clean cap table).
-- Every piece has a verdict, including "not enough in the room" where no number has a second source.
-- On the full room, the green flag is the round (the pitch itself), and the red flags come out in the order the rule gives: runway, clinics, largest customer, gross margin, retention ([FRAMEWORKS.md](FRAMEWORKS.md), "Top green and red flags", worked example).
-- The video-against-deck flag is found here.
-- Deleting one scan's output file leaves a gap in the readout and no crash.
-- On the Hollis Voice seed drop, the ask list names the files the seed drop leaves out, each with the gap or weak-piece claim it would settle: the expense ledger (actual monthly spend, which settles current burn and gross margin), monthly revenue by customer (retention and the largest customer's share), the Marlow pilot agreement, and the largest customer's order form (their contract language). The seed drop's file list is in [data_room_files.csv](../reports/20261022.02_research/data_room_files.csv).
-
-**Who:** captain.
-
-**Hours:** 1.5 (11:30 AM to 12:30 PM, and 1:30 to 2:00 PM).
-
-**Judgment:** yes.
-
-### readout-page
-
-The web page the judges see. The feasibility research calls the readout "the thing shown on screen".
-
-**Waits on:** skeleton (the generated types and the server routes, written this week). From 10:30 it is built against the example files.
-
-**Includes:**
-
-- A React page in `readout/` that reads `readout.json` through the server.
-- The best green flags and the worst red flags at the very top, green first, each line one click from its piece. A green flag gets the same size and the same source links as a red one.
-- The overview under them: one row per piece, in a fixed default order, with its mark, its one-line reason and its counts of corroborating and contradicting sources. Strong and weak rows look the same size. This is the demo's first screen ([The one workflow we demo](#the-one-workflow-we-demo)).
-- One click on a piece opens its drill-down: its claims, with each conflict shown side by side. Inside traction and revenue, the four ARR figures sit in large type, each with its source chip. The comps panel sits in comps, the signals panel in market, and the video moments in the pitch itself.
-- A footnote on every sentence. It opens the source as an in-page panel: a pre-rendered PNG of the slide or page, a small HTML table with the cited cell highlighted, the clause text, or the video at its second through the media fragment (`#t=35`). URL sources open their saved copy from `cache/`. A click never launches Excel or a PDF viewer: a spreadsheet app opening on a projector is slow, and it shows the associate the room's tidy rows ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), finding 6). The panel also lists every other source that corroborates or contradicts the claim, each one click away.
-- The video player beside the video claims; clicking a claim jumps to its start.
-- A "could not verify" box, a gaps panel, and the score lines for this room, the sealed variant room and the clean room.
-- The ask list at the end of the page, with a copy button, so the operator can paste it into an email to the founder.
-- A switch between the seed drop and the full room.
-- Up and down buttons on each overview row, so the operator can reorder the pieces ([PRODUCT_BRIEF.md](PRODUCT_BRIEF.md), "The operator sets the order"). The order lives in the page only. Saving it, and a default order by stage, is the [stage-views](#stage-views) slice. The frontend builds it in the 2:30 to 3:30 PM polish hour, and drops it first if that hour runs short.
-- Served from localhost, with no fonts or scripts from a CDN, so it needs no venue wifi.
-
-**Done when:**
-
-- The page renders `sample_out/` at 11:00 AM and the real outputs at 1:00 PM.
-- A missing scan shows its gap panel, not a blank page or an error.
-- Every footnote opens its source in the page.
-- One click opens a piece's claims, and one more opens a claim's source with its corroborating and contradicting sources.
-- Moving a piece up or down keeps its mark, its claims and its links, and a reload shows the default order.
-
-**Who:** frontend.
-
-**Hours:** 4.25 (10:30 AM to 3:30 PM, less lunch and the quarter hour for the [market-signals](#market-signals) panel).
-
-**Judgment:** yes.
-
-### pitch-video
-
-The pitch video broken into claims with timestamps, third in the feasibility research's ranking.
-
-**Waits on:** claim-result, readers (transcript by segment), record-pitch-video, keys (whisper.cpp on the demo laptop).
-
-**Includes:**
-
-- ffmpeg makes a 16 kHz mono WAV; whisper.cpp transcribes it with timestamps (feasibility 1.5).
-- The video prompt returns claims with the segment ids they came from, so start and end seconds are copied from the transcript, not guessed.
-- Keyframes at scene changes for thumbnails, if the budget allows.
-- `python -m scans.video <room>` writes `out/<room>/video.json`. If the live run fails, the scan reads this week's saved transcript and says so in the result.
-
-**Done when:** `video.json` holds the ARR claim from the planted line, its time range covers the spoken sentence, and its quote passes the checker.
-
-**Who:** backend-and-data.
-
-**Hours:** 2.5 (11:30 AM to 2:30 PM, less lunch).
-
-**Judgment:** no.
-
-### contract-terms-saturday
-
-Every contract in the room, read for its terms and checked against how each customer is counted, on both demo rooms. It is the Saturday part of entry 1.13, "Contract terms", in [FRAMEWORKS.md](FRAMEWORKS.md) ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:53 PM block).
-
-**Waits on:** redflag-engine (the pilot flag these claims sit beside), pitch-video (backend-and-data starts this after the video slice), readers, claim-result (the quote checker).
-
-**Includes:**
-
-- One model request per room reads every contract in it, with entry 1.13's prompt and schema, one schema per request. Hollis Voice has three contracts in `04_customers/`: the Cedar & Pine order form, the Marlow pilot agreement and the Brookline Row order form. Brasswick has four in `04_contracts/`: the Corvane agreement, the Ostley and Tessmore order forms, and the Norrgate statement of work.
-- The terms read: start, end and length; the notice that ends a running contract, kept apart from the notice not to renew; auto-renewal; pilot or trial terms and any duty to convert; the price, any discount and the list price; payment terms. Each stated term is a claim that quotes its clause. The request also returns the clause fields (exclusivity, most-favoured-customer, change of control), but nothing reads them until [contract-terms](#contract-terms).
-- Brasswick's Norrgate statement of work is a supplier contract. It is read for its terms and shown as info claims. It is not matched to a customer row, so it produces no check and no missing-customer gap.
-- Three of entry 1.13's script comparisons, run on both rooms: `cancellable_within_notice_vs_arr`, `pilot_without_duty_to_convert_vs_recurring` and `contract_price_vs_counted_price`. They compare each contract with the ARR build (Hollis Voice) or the model's `Revenue_Build` tab (Brasswick), the MRR column (`mrr` in `customer_mrr_by_month.csv`, or `subscription_revenue` in Brasswick's metrics and customer files), and the largest customer's share. The price check also confirms the fee behind that share.
-- The model reads clauses. The script decides that a number is wrong. Each comparison cites the flag it explains and sits beside the claim from entries 1.2, 1.6 and, where it applies, 1.12.
-- If the hour runs short, Hollis Voice is finished before Brasswick is started.
-- `python -m scans.readings <room>` writes `out/<room>/readings.json`.
-
-**Not in this slice:** checks 3, 4 and 6 (plan revenue past a contract's end, a signed contract not yet live, a counted line with no contract), the exclusivity, most-favoured-customer and change-of-control clauses, and contracts beyond the room's. Those are [contract-terms](#contract-terms), after Saturday. The cohort note reading is in [financial-model](#financial-model), after Saturday.
-
-**Done when:**
-
-- On Hollis Voice, the Marlow pilot agreement's 30-day notice and its "nothing requires the Customer to buy a subscription" clause are read with quotes. The notice check and the pilot check both flag it, with the clause beside the ARR row (`ARR_Build!E13`) and the `mrr` rows.
-- On Hollis Voice, Cedar & Pine's 90 days and Brookline Row's 30 days are read as notice not to renew, and both contracts return clear on all three checks. Brookline Row's 10 percent discount is read and matches the counted price.
-- On Brasswick, the three customer contracts return their terms. Corvane and Tessmore return clear. The price check finds Ostley Freight's $27,540 in `Revenue_Build` against the order form's $2,295 a month, and reports it as one cause with the annual prepayment flag from entry 1.12 (BF4).
-- The Norrgate statement of work returns its term, its notice and its fee as info claims, and no comparison.
-- On the Hollis Voice seed drop, which holds no contracts, the entry returns `cannot_check` with the gap "Not in the room: customer contracts".
-- Every quote passes the quote checker. On the demo laptop the readings show as frozen output, saved for both rooms under `demo/frozen/` before the freeze.
-
-**Who:** backend-and-data.
-
-**Hours:** 1.0 (2:30 to 3:30 PM). Fourth in the cut order, after comps. If cut, the pilot flag still shows from the engine's script check, without clause quotes, and the reading moves to after Saturday.
-
-**Judgment:** no.
-
-### comps
-
-Comparable companies and recent rounds, each with the reason it is a fair comp. Fourth in the feasibility research's ranking. It stays a Saturday slice, ranked by script from this week's cached filings, so all three of Track 2's asks (market signals, comps, red flags) are on screen ([critique_judge.md](../features/20261022.01_hackathon_plan/critique_judge.md), finding 2).
-
-**Waits on:** claim-result, cached-data, saturday-specs (the selection rules, prompt and schema).
-
-**Includes:**
-
-- 5 to 8 comps in two groups: recent private rounds from the cached Form D files, and public companies from the cached XBRL facts (feasibility 1.2).
-- The selection rules from FRAMEWORKS.md applied by script. The model writes only the "why this is a fair comp" sentence, and the demo laptop shows that sentence as frozen output.
-- Each comp's number carries its source: the filing or the Form D row.
-- Reads `cache/` only on Saturday, so EDGAR being slow changes nothing on screen.
-- `python -m scans.comps <room>` writes `out/<room>/comps.json`.
-
-**Done when:** the table has at least five comps, each with a reason and a source that passes the checker.
-
-**Who:** design-and-finance.
-
-**Hours:** 1.5 (2:00 to 3:30 PM).
-
-**Judgment:** yes.
-
-### market-signals
-
-Hiring, traffic, reviews, news and pricing for the demo company's real competitors, and the live outside-world run on one approved real company. Fifth in the feasibility research's ranking. For Hollis Voice it is a static panel of this week's cached competitor readings, because live signals cannot show much for a company with no outside footprint ([critique_buildability.md](../features/20261022.01_hackathon_plan/critique_buildability.md), finding 9). Backend-and-data's freed hours go to the readers and the video.
-
-**The live run on a real company** ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:49 PM block). For the approved real company the demo uses, the panel sends this week's saved calls for that company again, live on stage. It uses only the sources that need no paid plan: the company's website, Hacker News, Apple's App Store lookup and SEC EDGAR. It takes this slice's slot, so Saturday's hours do not change. Any call that fails or is slow shows this week's saved copy from [cached-data](#cached-data), with its date. The full live scan, with resolution and every tab, is [outside-in](#outside-in) after Saturday.
-
-**Waits on:** signals-readings (this week's `cache/signals/signals.json`); yc-rooms and cached-data, for the approved real company's saved calls.
-
-**Includes:**
-
-- The signals panel in the readout page, reading `cache/signals/signals.json` through the server.
-- Each reading shows the date it was taken, and each number links to its saved source.
-- On the approved real company's readout, a live re-run of its saved calls. Each fresh answer is saved beside the old copy and shown with the time it was read. The panel carries the room's synthetic label.
-
-**Done when:** the panel shows at least three competitors on the readout page, and every number's link opens its saved copy. On the approved real company, the live re-run shows each source with the time it was read, and with the network off it shows this week's saved copies with their dates.
-
-**Who:** frontend.
-
-**Hours:** 0.25 (inside the 2:30 to 3:30 PM polish hour).
-
-**Judgment:** no.
-
-### demo-freeze
-
-Integration, the score, the freeze and the rehearsal.
-
-**Waits on:** every slice above that has not been cut.
-
-**Includes:**
-
-- The captain merges at the integration points and runs `bin/smoke` on both rooms.
-- `eval/score.py` reads the readout and the answer key and prints how many of the 8 planted entries were found and how many of the 3 decoys were wrongly flagged. The score goes on the page as one line, with the real number, even if it is 7 ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), finding 7).
-- The clean-room run: the readout on the plants-off room from [blind-room](#blind-room). `eval/score.py` prints how many flags it raised.
-- The variant run: at the 3:30 PM freeze the outside person sends the sealed key. The readout runs on the variant room, and `eval/score.py` prints the real numbers against that key. Nobody changes a check after the key opens.
-- The approved real company's room, run like Hollis Voice's, with its outside-world panel's live re-run tested on the network the demo will use.
-- The frozen outputs saved under `demo/frozen/` as the fallback for every step of the script, including the variant and clean runs and the real company's readout with this week's saved outside copies.
-- A `demo-freeze` git tag at 3:30 PM. After it, nothing merges except a fix for a crash found in rehearsal, and only on the captain's call.
-- The rehearsal: a three-minute core with a five-minute extension, from the beat sheet in [demo-script](#demo-script). At least two run-throughs, one of them on the backup laptop from the frozen files. The schedule gives 5:30 to 6:00 for every team's demo plus the winner, so the slot is likely three minutes or less (demo critique, finding 1).
-
-**Done when:** the three-minute core on the frozen build fits three minutes, the core plus the extension fits five, and the backup laptop can show every step from saved files.
-
-**Who:** captain. All four rehearse.
-
-**Hours:** 2.0 for the captain (1:00 to 1:30 PM and 2:00 to 3:30 PM), plus 0.75 for all four (3:30 to 4:15 PM).
-
-**Judgment:** n/a.
-
-### A steer on stage (a card, not yet a slice)
-
-Ken's 1:12 PM and 1:15 PM comments let the operator steer the readout: an instruction on a piece rewrites it, or gets more info for it from new sources, with a visible diff ([steering](#steering)). Steering is an after-Saturday slice. One steer on stage (one piece rewritten from one instruction, such as "treat the pilot as non-recurring") is a candidate for Saturday, and the overview page carries it as a card. It has no owner or hours in the table above. If Ken picks it, the card names which slice gives up time, and the run of show changes then.
-
-### The demo laptop
-
-From the buildability critique's finding 11 and the demo critique's "What else goes wrong live":
-
-- **The demo laptop is Ken's:** M2 Max, with ffmpeg, Python 3.13 and Node 20. Backend-and-data's laptop is the backup, on `demo/frozen/`.
-- **The live step runs script checks only.** They need no network. Panels that need a model (the memo's connecting sentences, the comp reasons, the contract-terms readings) show frozen output. Nothing on screen calls a model at render time.
-- **Only the live beat needs the network.** The page and the frozen files are served from localhost, with no fonts or scripts from a CDN. The real company's outside-world panel needs venue wifi or the phone hotspot. Without either, it shows this week's saved copies with their dates, and Ken says so.
-- **Display.** Every laptop brings a USB-C to HDMI adapter. Rehearse at 1280 by 720 at 150% zoom.
-
-### Run of show
-
-| Time | captain | frontend | backend-and-data | design-and-finance | Integration point |
-|---|---|---|---|---|---|
-| 9:00 to 10:00 | Breakfast and team formation. Confirm roles and folders. Ask the organisers about the track change and the board's open questions (TRI-track-fix, TRI-ask-organisers). Ask Akta's people for a coupon. | Clone, install, run the Part 0 checks. | Clone, check whisper.cpp runs on the demo laptop. | Clone, open the data room, read the check list. | Every laptop has the `.env` keys and a USB-C to HDMI adapter. |
-| 10:00 to 10:20 | Organisers' intros and demos. Note any sponsor offer. | Listen. | Listen. | Listen. | |
-| 10:20 to 10:30 | Read this table aloud. Name the cut order. | Huddle. | Huddle. | Huddle. | |
-| 10:30 to 11:30 | claim-result: quote checker, against the readers stub. At 11:00, post the first social post. | readout-page on the example files. | readers. | redflag-engine: pure checks on the CSVs and the model. | |
-| 11:30 | Merge the readers and the quote checker. | Pull. | Pull. | Pull. | **1. Readers merged.** If they are late, cut the memo's model pass now. |
-| 11:30 to 12:30 | readout: memo. | readout-page. | pitch-video. | redflag-engine: the deck's claims page by regex, the green-flag cells, and the seed drop. | |
-| 12:30 to 1:00 | Lunch at desks. | Lunch. | Lunch. | Lunch. | |
-| 1:00 to 1:30 | demo-freeze: merge, first full run on the seed drop. | readout-page on real outputs. | pitch-video. | redflag-engine: the full room. | **2. First end-to-end run.** If the red-flag engine does not find the seed drop's flags, backend-and-data pairs with design-and-finance after the video slice, and contract-terms-saturday is cut if the pairing runs past 2:30. |
-| 1:30 to 2:00 | readout: finish the piece verdicts, the top green and red flags, conflicts and corroborations, and the ask list. | readout-page: in-page source panels. | pitch-video. | redflag-engine: the clean room. | |
-| 2:00 to 2:30 | demo-freeze: score script, frozen outputs. | readout-page: source panels and video jump. | pitch-video. | comps. | |
-| 2:30 | Run the full room, the clean room and the approved real company's room, read the score. | | | | **3. Cut call.** Whatever is not producing claims falls back to saved results or is cut, in the cut order. The real inbox-polling forward is built only if the red-flag engine and the readout are done now, by whoever finishes their slice first. |
-| 2:30 to 3:30 | demo-freeze. | readout-page polish: the ask list's copy button and the reorder buttons, and the market-signals panel with its live run on the approved real company. | contract-terms-saturday. | comps. | |
-| 3:30 | Tag `demo-freeze`. Post the second social post. The outside person sends the variant room's key. | | | | **4. Demo freeze.** |
-| 3:30 to 4:15 | Rehearse, presenting: the three-minute core, then the five-minute extension. | Rehearse, driving the laptop. | Rehearse on the backup laptop. | Rehearse, ready for numbers questions. | Two run-throughs. |
-| 4:15 to 4:30 | Fresh runs on the variant room and the clean room, close tabs. | Page ready on all rooms. Test the live outside panel on the approved real company on the demo network. | Backup laptop on the frozen files, including the variant and clean runs. | Answer key scores checked for the full room and the variant room. | |
-| 4:30 to 5:30 | Judging: presents. | Drives. | Backup. | Answers questions on the numbers. | |
-| 5:30 to 6:00 | Demos and the winner: presents. | Drives. | Backup. | Ready. | |
-
-**Who presents:** the captain. The frontend drives the readout page. Backend-and-data holds the backup laptop with the frozen files. Design-and-finance answers questions on the numbers. For the $150 social content prize, the captain posts at 11:00 and 3:30 only, from this week's drafts ([social-posts](#social-posts)), in the voice of [BRAND.md](BRAND.md).
-
-### Cut order
-
-The feasibility research ranks the scans by demo value: red-flag engine, readout, pitch video, comps, market signals. The cut order is that ranking reversed, with the memo's model pass cut before any scan, because the script's top flags, pieces and verdicts are enough for the demo ([critique_buildability.md](../features/20261022.01_hackathon_plan/critique_buildability.md), notes):
-
-1. **The memo's model pass first.** The readout keeps its script-set top flags, pieces and verdicts. The cohort note reading is already out of Saturday's plan; it moved to after Saturday to make room for contract terms.
-2. **Market signals second.** The panel is already static; if it is not built, it is dropped.
-3. **Comps third.** The panel shows the cached comp list without the live ranking, or is dropped.
-4. **Contract terms fourth** (contract-terms-saturday). The pilot flag still shows from the engine's script check, without clause quotes. The slice moves to after Saturday.
-5. **Pitch video fifth.** The demo plays the captioned clip and shows this week's saved transcript and claims, which the feasibility research already plans as the fallback.
-
-The red-flag engine, the readout and the readout page are never cut; they are the demo. Inside the readout page, the reorder buttons go first if the polish hour runs short; the ask list and its copy button stay. When a slice is cut, its owner pairs with the owner of the slice that is behind, in that owner's folder and branch, so cutting never causes a merge conflict.
-
----
-
-## After Saturday
-
-These build the product. Each slice is sized for one agent in one sitting. None has hours.
-
 ### readout-store
 
 A persistent store of readouts, so a readout outlives one laptop.
 
-**Waits on:** the Saturday slices merged; a host for the product (the guardrails' deploy field is empty until then).
+**Waits on:** skeleton (the Claim schema and the shape of `readout.json`); a host for the product, which Ken picks (the guardrails' deploy field is empty until then). Until there is a host, the store runs on the demo laptop.
+
+**Joins on Saturday:** [readout](#readout), whose `readout.json` it stores.
 
 **Includes:** each readout, its sources and the files it read, stored per fund; a delete that removes all of them; a list of everything held for one company. This is the data rule from the brief: nothing is stored beyond the readout and its sources, and the investor can see and delete everything pulled.
+
+**Done when:** a stored readout for Hollis Voice comes back with its sources and files; the list for that company shows everything held; and one delete leaves nothing for that company in the store or in `cache/`.
 
 **Who:** agent.
 
@@ -847,9 +511,11 @@ A persistent store of readouts, so a readout outlives one laptop.
 
 The operator steers the readout: a comment or short instruction on a piece makes Tricorder rewrite that piece, or get more info for it from new sources ([writers' brief, 1:12 PM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). It must be easy enough for a partner who runs diligence alone: one plain sentence on the line that looks wrong, with no setup and no menus, and the answer comes back on that line (Ken's 2:21 PM edit, [PRODUCT_BRIEF.md](PRODUCT_BRIEF.md), "Steering the readout").
 
-**Waits on:** readout-store, so a revision outlives the session.
+**Waits on:** readout-store, so a revision outlives the session; saturday-specs (the example readout files and the piece rules it rebuilds by).
 
-**Includes:** the shape in [ARCHITECTURE.md](ARCHITECTURE.md), "Steering the readout". An instruction box on every piece and on every line, for either kind of steer. The operator types one plain sentence and nothing else: no form, no menu, no choice of steer type. Tricorder tells the two kinds apart from the sentence. A rewrite reruns the scans that feed the piece on its inputs, with the instruction passed to their model readings. A request for more info first fetches or opens the new sources it names (the full room instead of the seed drop, another filing, a competitor's pages), under the same data and terms rules as any input, then runs the piece's scans with them; the new claims are marked new. The memo rebuilds the piece and the top green and red flags by the same script rules. The new piece replaces the old one with a visible diff: claims added and dropped, wording changed, and the verdict before and after with the claims that moved it. Every revision is kept.
+**Joins on Saturday:** [readout](#readout), whose piece and top-flag rules rebuild a steered piece, and [readout-page](#readout-page), which shows the instruction box and the diff.
+
+**Includes:** an instruction box on every piece and on every line, for either kind of steer. The operator types one plain sentence and nothing else: no form, no menu, no choice of steer type. Tricorder tells the two kinds apart from the sentence. A rewrite reruns the scans that feed the piece on its inputs, with the instruction passed to their model readings. A request for more info first fetches or opens the new sources it names (the full room instead of the seed drop, another filing, a competitor's pages), under the same data and terms rules as any input, then runs the piece's scans with them; the new claims are marked new. The memo rebuilds the piece and the top green and red flags by the same script rules. The new piece replaces the old one with a visible diff: claims added and dropped, wording changed, and the verdict before and after with the claims that moved it. Every revision is kept.
 
 **Done when:**
 
@@ -863,45 +529,24 @@ The operator steers the readout: a comment or short instruction on a piece makes
 
 **Judgment:** yes.
 
-### inbox-forward
+### room-templates
 
-The first inbox input: a forwarding address such as deals@ through a mail-receiving service.
+Templated data rooms with hidden issues ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:46 PM block). Ken: "we should actually set up a few different data rooms that will allow us to highlight different problems. the data rooms will need to be a little bit templated, so we can swap in new names on the fly, but we should make data rooms with hidden isseus in them, based on the problems we saw in the reserach." This week's generator already writes Hollis Voice, a second invented company, a clean room and a sealed variant, and [yc-rooms](#yc-rooms) swaps a real company's public profile into it. This slice turns it into a template engine.
 
-**Waits on:** readout-store; a domain and a mail-receiving service, which Ken picks.
-
-**Includes:** the design in [ARCHITECTURE.md](ARCHITECTURE.md), "The inbox input". PDF attachments go into a new company folder. DocSend, Google Drive, Dropbox and Notion links are fetched only when they open without a sign-in; otherwise the readout records a gap that says what the investor must do. It needs no OAuth review, which is why the brief recommends it first.
-
-**Who:** agent.
-
-**Judgment:** yes.
-
-### inbound-unasked
-
-Diligence that starts on the inbound, before the investor asks.
-
-**Waits on:** inbox-forward.
+**Waits on:** data-room (Hollis Voice and the second invented company) and yc-rooms (the rooms for real companies) merged.
 
 **Includes:**
 
-- The scans run when a deck arrives; the readout is one click away from the email, or the readout link is the reply. This is the brief's "before you even ask" moment.
-- **Speed first** ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:19 PM block). Each scan starts the moment its input exists, not after the whole room is in: the outside-world tabs start on the company name, the deck scan on the deck, the model checks when the model lands. The readout fills in as results arrive, and each piece shows whether it is still running, done, or waiting on an input (which goes on the ask list).
-- The operator sees the first green and red flags within the first scans' run, and is told when the readout is complete.
+- **A company profile swapped in on the fly:** name, sector, product, stage, founders, round, and for a real company its public facts with their links. One command writes a full room from a profile.
+- **A library of hidden issues**, one plant per problem the research found: ARR that is not recurring, hidden cohort churn, burn out of line with the hiring plan, deck against model, deck revenue against the P&L and partial history, customer concentration, gross margin that leaves out costs, a vanity count, billings or deferred revenue shown as revenue, contractors left out of burn, contract terms that undercut how revenue is counted, cap-table problems. Each plant names the research it comes from, where it lives in the room, and the check that should catch it.
+- **Green flags and decoys** chosen the same way, so every room has real strengths and traps, not only problems.
+- **A room recipe:** a profile plus a set of plants, green flags and decoys, with a seed. Recipes for the demo (one per problem story Ken wants to tell) are saved and rerunnable.
+- Every room from a real company's profile carries "Synthetic test document. Not this company's data." on every page, and its plants are named test plants.
+- The answer key is written from the recipe, and `check.py` checks any room against its key.
 
-**Done when:** a forwarded email with only a deck produces a partial readout with the deck and outside-world pieces filled and the rest marked waiting; adding the model to the same company fills the financial pieces without rerunning the finished scans.
+**Done when:** a new room is generated from a profile and a recipe in one command; three recipes highlight three different problem sets; each passes `check.py`; and swapping the profile changes every name and leaves every planted problem in place.
 
 **Who:** agent.
-
-**Judgment:** yes.
-
-### inbox-apis
-
-Gmail and Outlook connected through their official APIs.
-
-**Waits on:** inbound-unasked; a pilot fund that asks for it; Google's verification for a restricted scope, including the security assessment (ARCHITECTURE.md, "The inbox input").
-
-**Includes:** read-only access, decks only, under the same data rule.
-
-**Who:** agent, with Ken for Google's verification.
 
 **Judgment:** yes.
 
@@ -909,34 +554,313 @@ Gmail and Outlook connected through their official APIs.
 
 The business frameworks: lean canvas, jobs to be done and the rest in [FRAMEWORKS.md](FRAMEWORKS.md), one prompt and one schema each.
 
-**Waits on:** the Saturday slices merged.
+**Waits on:** skeleton (the Claim schema); saturday-specs (the FRAMEWORKS entries 5.1 to 5.6).
+
+**Joins on Saturday:** [readout](#readout), which places its claims in their pieces.
 
 **Includes:** a box that the room cannot support shows "not in the data room" (feasibility 1.4).
+
+**Done when:** on Hollis Voice, every box of each framework quotes its source sentence or shows "not in the data room", and every claim passes the quote checker.
 
 **Who:** agent.
 
 **Judgment:** no.
 
-### founder-profiles
+### comps-deep
 
-A card per founder from GitHub, personal sites and talks. LinkedIn is never scraped.
+Comps from Form D and EDGAR in depth.
 
-**Waits on:** Ken reads GitHub's terms on persona accounts before any demo account is made (feasibility open point); [outside-in](#outside-in), for the company resolver, the founder names it pulls from the deck, and the GitHub client and cache it builds.
+**Waits on:** cached-data (the Form D quarters and XBRL facts already saved); saturday-specs (the selection rules).
+
+**Joins on Saturday:** [comps](#comps), whose table it extends.
+
+**Includes:** every Form D quarter, ranking by the selection rules; EDGAR full-text search for business descriptions (the JSON endpoint is undocumented, so the scan falls back to cached results when it breaks, per feasibility Part 2); XBRL frames for public revenue. Crunchbase only with an arrangement for apps, per the landscape research.
+
+**Done when:** on Hollis Voice, the ranked list draws on every saved Form D quarter, each comp's business description comes from full-text search or its cached copy, and every number passes the quote checker.
+
+**Who:** agent.
+
+**Judgment:** yes.
+
+### accounting-mislabels
+
+The rest of the accounting mislabels family ([FRAMEWORKS.md](FRAMEWORKS.md), entry 1.12; [writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:32 PM block). Saturday's [redflag-engine](#redflag-engine) runs the two kinds it already owns. Entry 1.12 marks six more as runnable on Hollis Voice. An agent builds them here, before Saturday, outside the engine's 3.0 hours.
+
+**Waits on:** data-room; saturday-specs (entry 1.12's check names).
+
+**Joins on Saturday:** [redflag-engine](#redflag-engine), whose pilot-as-ARR flag the `mrr` check links to.
 
 **Includes:**
 
-- The GitHub user and repo data, and a founder-market fit note scored against the rubric in FRAMEWORKS.md (entry 6.1). Each line linked to its source.
-- Whether each founder comes from the industry, from dated sources that name an earlier role in it (entry 6.1).
-- A passion and commitment rating from public signals, by the rubric in entry 6.2: time spent on the problem, shown in GitHub, posts and talks, each signal dated and linked.
-- The founder's socials linked. X is linked and not read, because reading costs money per post. LinkedIn is never scraped.
+- The six sub-checks entry 1.12 marks Saturday that the engine does not run: `mrr_column_vs_subscription_rows`, `billings_vs_recognised_revenue`, `contractor_spend_vs_headcount_and_burn`, `capitalised_spend_vs_pnl_and_cash`, `deferred_revenue_vs_earned` and `one_time_fees_in_recurring_metrics`. Scripts only, as in the engine.
+- Kind c, gross against net revenue (`gross_vs_net_revenue`), with a generator option that writes a resale line into a test room, because Hollis Voice has nothing to run it on.
+- Each kind's gap when the room lacks its file, worded as entry 1.12 gives it.
+- Each claim names its kind and feeds the piece entry 1.12 names.
 
 **Done when:**
 
-- On a real founder Ken approves, the card shows the fit note, the industry background and the passion and commitment rating, each line linked to a dated source.
-- A founder with no public footprint shows "No public evidence found", never a low rating.
-- The fetch client refuses any linkedin.com address.
+- On the full room, `mrr_column_vs_subscription_rows` finds the Marlow pilot's fee in the `mrr` column and links it to the pilot-as-ARR flag as one cause.
+- The onboarding-fee decoy and the annual-prepay decoy stay clear.
+- On the seed drop, each sub-check whose file is missing returns `cannot_check` with its gap.
+- On the test room with a resale line, `gross_vs_net_revenue` fires. With the option off, it does not.
+- Every claim passes the quote checker.
 
 **Who:** agent.
+
+**Judgment:** no.
+
+### deck-vs-books
+
+The associate's rule, as a feature: "If revenue in the deck doesn’t match the P&L, or you show only part of your history, everything else becomes questionable." ([associate at a seed-focused fund, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal); [writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:19 PM block). Saturday's red-flag engine already compares the deck's claims with the model's named cells (`deck_claim_vs_named_cell` in [FRAMEWORKS.md](FRAMEWORKS.md)). This slice adds the two halves of her rule that it does not cover.
+
+**Waits on:** data-room; saturday-specs (the check list, including `deck_claim_vs_named_cell`).
+
+**Joins on Saturday:** [redflag-engine](#redflag-engine).
+
+**Includes:**
+
+- **Deck revenue against the P&L, period by period.** Every revenue figure the deck shows (a total, a chart's bars, a growth rate) is matched to the same period in the monthly P&L and the revenue rows, by script. A mismatch above the match tolerance is a disagreement claim with both sources.
+- **Partial history.** A script finds the first month revenue appears in the books and compares it with the window the deck shows. A deck chart that starts later than the books, skips months, or shows quarters where the books hold months is flagged as "shows part of the history", with the months left out and what they hold (for example a dip, or a period of flat revenue).
+- Both feed the traction and revenue piece and the pitch itself, and missing months the books do not hold go on the ask list.
+
+**Done when:** on the Hollis Voice room, every deck revenue figure is matched to a P&L period or listed as unmatched; a test deck whose chart starts six months after the first revenue month is flagged with the months it leaves out; and the quote checker passes on every claim.
+
+**Who:** agent.
+
+**Judgment:** no.
+
+### contract-terms
+
+The rest of customer contracts ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:53 PM block). The rules are entry 1.13, "Contract terms", in [FRAMEWORKS.md](FRAMEWORKS.md). Saturday's [contract-terms-saturday](#contract-terms-saturday) already reads every contract in both demo rooms and runs three comparisons (the notice check, the pilot check and the price check). This slice adds the rest.
+
+**Waits on:** saturday-specs (entry 1.13's prompt and schema, which the Saturday reading uses too); data-room; [readout-store](#readout-store).
+
+**Joins on Saturday:** [contract-terms-saturday](#contract-terms-saturday), whose readings of both demo rooms it extends.
+
+**Includes:**
+
+- Contracts upload with the room or on their own. A folder that holds only contracts is a valid input, and the contracts of rooms beyond the two demo rooms are read the same way.
+- The clauses Saturday leaves unread: exclusivity, most-favoured-customer, change of control, and any other clause that changes what the customer pays or when it can leave. Each is a claim that quotes its clause.
+- The three comparisons Saturday leaves out: `plan_revenue_past_term_end` (the plan keeps a contract's revenue after its term ends, or treats an automatic renewal as certain), `signed_not_live_vs_revenue` (a signed contract or amendment that has not started is counted as revenue) and `counted_line_without_contract` (a counted line has no contract in the room).
+- The ARR and concentration entries keep their own checks and point to this one.
+- A contract the room lacks becomes an ask-list line: the current contract language for that customer.
+
+**Done when:**
+
+- On the full Hollis Voice room, the plan check flags the Marlow pilot with its eight plan months after the term ends, and clears Cedar & Pine and Brookline Row.
+- The exclusivity, most-favoured-customer and change-of-control fields return "not stated" for the Hollis Voice contracts, each read from the contract and not assumed.
+- A test contract with a change-of-control clause returns that clause with its quote.
+- A folder that holds only contracts produces a result with no crash.
+- A test contract with a 30-day cancellation counted as a year of ARR produces a gap. The same contract with a one-year commitment does not.
+- Every quote passes the quote checker.
+
+**Who:** agent.
+
+**Judgment:** yes.
+
+### financial-model
+
+The financial modeling Ken asked for in the 10:10 AM dictation. Saturday's [redflag-engine](#redflag-engine) rebuilds the numbers it checks: burn against the hiring plan, deck against the model, retention and gross margin. This slice adds a rebuilt model the operator can work in.
+
+**Waits on:** data-room; saturday-specs (the check list and entries 1.3 and 1.9); [readout-store](#readout-store).
+
+**Joins on Saturday:** [redflag-engine](#redflag-engine), whose rebuilt numbers sit beside the full model.
+
+**Includes:**
+
+- **Tricorder's own version of the model**, built from the raw data the way a Series A lead does ("a lead builds their own model from your raw data", [the data-room research](../reports/20261022.02_research/research_data_room.md), 1.3; Ken at 2:40 PM: "i was already planning on building our own versions of models"). The room's revenue, cost and headcount rows go into one monthly table with burn, cash and runway, and each cell links to the row it came from.
+- **Side by side with the company's model.** Every line of the company's model sits beside Tricorder's rebuilt line, and a difference beyond the match tolerance becomes a disagreement claim in the right piece.
+- Unit economics recomputed from the room's rows, by [FRAMEWORKS.md](FRAMEWORKS.md) entry 1.9.
+- The model's reading of the cohort tab's note, with the prompt in entry 1.3. Saturday keeps the script rebuild of the cohorts; this reading moved here to make room for contract terms on Saturday. It is a claim that quotes the note and never decides a number is wrong.
+- The operator can change one assumption, such as a hire's start month or a churn rate, and see runway move. The script's own figure stays on screen beside it, and the operator's case is marked as theirs.
+- Market size, bottom-up, stays in [frameworks-scan](#frameworks-scan) (entry 5.6).
+
+**Done when:**
+
+- On the full room, the rebuilt runway with all planned hires matches the answer key's figure, and every cell opens its source row.
+- Each unit-economics figure returns a claim with its sources. A figure the room cannot support is a gap.
+- Changing a hire's start month moves runway, and the script's figure still shows beside it.
+
+**Who:** agent.
+
+**Judgment:** yes.
+
+### video-moments
+
+The video leads the operator to its interesting parts (the 10:10 AM dictation; [FRAMEWORKS.md](FRAMEWORKS.md), entry 4.2). On Saturday the [pitch-video](#pitch-video) slice gives claims with timestamps, and the page jumps to them. Its 2.5 hours go to transcription and claims, so ranking the moments comes here.
+
+**Waits on:** record-pitch-video (the saved transcript with timestamps); saturday-specs (entry 4.2 and the labels from entries 1.2 to 1.9).
+
+**Joins on Saturday:** [pitch-video](#pitch-video) (the claims with timestamps) and [redflag-engine](#redflag-engine) (the numbers the room disputes).
+
+**Includes:**
+
+- Entry 4.2's moments, starting with each place the founder says a number the room disputes, each with its start and end second.
+- Keyframes at scene changes as thumbnails.
+- A strip of moments on the video player. Each moment is one click from its second.
+
+**Done when:** on Hollis Voice, the ARR sentence at about 0:35 is listed as a moment, its range covers the spoken sentence, and clicking it plays from there. Every moment's quote passes the quote checker.
+
+**Who:** agent.
+
+**Judgment:** no.
+
+### checklist-coverage
+
+The readout's coverage against the [checklist](#checklist), and an ask list that draws on it ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:56 PM block). An agent builds it before Saturday, outside the captain's readout hours and the frontend's page hours. The rules are "Checklist coverage" in [FRAMEWORKS.md](FRAMEWORKS.md).
+
+**Waits on:** checklist; saturday-specs (the example readout files).
+
+**Joins on Saturday:** [readout](#readout) (the ask list) and [readout-page](#readout-page) (the coverage panel).
+
+**Includes:**
+
+- For each checklist item expected at the company's stage: found, checked or missing, with the scan that checked it and the piece it feeds.
+- The ask list also draws on the checklist. Every item expected at the company's stage and missing from the room becomes a request, beside the lines from gaps and weak pieces. An item expected only at a later stage is not asked for.
+- The company's stage comes from the deck's round slide, and the operator can change it.
+- A coverage panel on the readout page.
+- The reference guides' proposed checks, one guide per data-room document ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:38 PM block). Each proposed check becomes a check, or is marked as left to the operator, and each guide's missing-document line becomes its ask.
+- Entry 1.10's model reading: the notes on the cap table, with each instrument and grant matched to its document (checklist row C82).
+- Entry 1.11's asks, which no Saturday slice runs: bank statements, accountant-prepared statements, tax returns, IP assignments and customer references when the room lacks them, and one walk-through ask per flag ([FRAMEWORKS.md](FRAMEWORKS.md), entry 1.11).
+
+**Done when:**
+
+- On the seed drop at Series A, coverage lists every checklist item as found, checked or missing, and the counts come from a script.
+- Every missing Series A item becomes one ask-list line. Set to pre-seed, the same room asks for no item expected only later.
+- No request appears twice when a gap and a checklist item name the same thing.
+
+**Who:** agent.
+
+**Judgment:** yes.
+
+### claim-support
+
+The claims workflow in full ([diagrams/claims_workflow.md](diagrams/claims_workflow.md); [writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:41 PM block): every claim in the deck and the pitch video, checked against every other document and the outside world. Saturday does this for the deck's appendix claims and the video's transcript against the model and the revenue rows; this slice widens it.
+
+**Waits on:** [checklist-coverage](#checklist-coverage) for where each claim's evidence should live; record-pitch-video (the saved transcript); saturday-specs (the claim prompts).
+
+**Joins on Saturday:** [readout](#readout) and [pitch-video](#pitch-video).
+
+**Includes:**
+
+- Claim extraction from every slide (text, charts, the appendix) and every transcript sentence with a number or a checkable fact, each with its slide and position or video second and the quoted span.
+- Normalising each claim to one unit, period and definition, with spoken figures marked as spoken and rounded.
+- An evidence map per claim kind (from the checklist and the document guides) saying which documents and outside sources should support it.
+- A label per claim: supported (two independent sources agree), contradicted (a source disagrees, both shown), or unsupported (a gap with an ask-list line).
+- A claims table in the readout's drill-down: every claim, its label, and its sources.
+
+**Done when:** on both demo rooms, every numeric claim on every slide and in the video script has a label; each planted contradiction is labelled contradicted with both sources; each green flag's claim is labelled supported with its two sources; and the quote checker passes on every claim.
+
+**Who:** agent.
+
+**Judgment:** yes.
+
+### founder-requests
+
+Quick requests to the company while the room is being compiled ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 3:15 PM block). Ken: "While compiling the data room, there are quick ways to send messages to the company asking them for information, with guidance on what they should submit."
+
+**Waits on:** [checklist-coverage](#checklist-coverage).
+
+**Joins on Saturday:** [readout](#readout), whose ask list it drafts from.
+
+**Includes:**
+
+- From the ask list, one click drafts a message to the founder for any missing item or group of items, in plain words.
+- Each request carries guidance on what to submit, taken from the document guides: what the document is, the form that works best, and what a good one shows (for example, monthly revenue by customer as a CSV with one row per customer per month).
+- The operator reviews and sends it from their own email; Tricorder never sends anything itself.
+- When the founder replies with files, they land in the room and the scans that waited on them start.
+
+**Done when:** on the Brasswick room, the ask list produces a request for its missing documents with guidance for each, the operator can copy or open it in their email client, and a reply's attachment added to the room starts the waiting scans.
+
+**Who:** agent.
+
+**Judgment:** yes.
+
+### memo-export
+
+Tricorder helps the operator write the memo for the partners' meeting ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:58 PM and 2:00 PM blocks). The memo is interactive. It reads as a normal memo top to bottom, and behind every line sit the same two clicks the operator has in the readout. An agent builds it before Saturday, outside the captain's and the frontend's Saturday hours.
+
+**Waits on:** saturday-specs (the example readout files). The template is written: [MEMO_TEMPLATE.md](MEMO_TEMPLATE.md), built from real published memos and memo templates.
+
+**Joins on Saturday:** [readout](#readout), whose `readout.json` fills the memo.
+
+**Includes:**
+
+- The export: a draft memo in the template's sections, in order, filled from the readout's pieces, the checklist items, the top green and red flags, the gaps and the ask list, as the template says.
+- The interactive memo: a page the partners open. From any line, one click opens the claims behind it. From any claim, one more opens its source and the sources that agree or disagree.
+- A static PDF of the same memo for funds that need one, with every claim footnoted to its source.
+- The operator edits the draft. A sentence the operator writes with no claim behind it is marked as theirs.
+
+**Done when:**
+
+- On Hollis Voice, the export fills every template section, or names the gap that leaves one empty.
+- In the interactive memo, every line reaches its claims in one click and a claim's source in two.
+- In the PDF, every claim carries a footnote that names its source and locator.
+- Every claim in both forms passes the quote checker.
+
+**Who:** agent.
+
+**Judgment:** yes.
+
+### reader-scenarios
+
+Each reader of the memo gets their own copy to steer, and can try what-if changes on the financial model ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:01 PM block). The operator's memo is the shared version. A partner's changes stay in the partner's copy.
+
+**Waits on:** [memo-export](#memo-export); [steering](#steering); [financial-model](#financial-model), whose scripts do the recomputing.
+
+**Includes:**
+
+- A shared memo version, and one copy per reader laid over it. A reader steers their copy (rewrite a section, ask for more information) by the same rules as [steering](#steering), without changing anyone else's.
+- Each copy says what the reader changed and which shared version it started from.
+- What-if inputs on the model: a reader changes a few assumptions, such as churn, price, hiring pace, or the pilot counted or not, and sees what the numbers become.
+- The same scripts recompute from the company's own model and rows. The source files never change.
+- Every tweaked number is marked as the reader's scenario, shown beside the company's figure and Tricorder's rebuilt figure, so nobody mistakes a what-if for a fact.
+
+**Done when:**
+
+- Two readers steer their own copies of the Hollis Voice memo differently. Each sees only their own changes, and the shared version is unchanged.
+- A reader who sets "pilot not counted" sees ARR recomputed by the script, marked as their scenario, beside the company's figure and the rebuilt figure.
+- After any scenario, the room's files are byte for byte the same as before.
+- A new shared version shows each reader which version their copy started from.
+
+**Who:** agent.
+
+**Judgment:** yes.
+
+### bank-check
+
+**Compare the bank account with the books.** With the founder's consent, the investor connects the company's bank account through a banking connector. Tricorder compares deposits with the revenue rows, and outflows with the model's burn, and shows each difference as a claim with its sources ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:52 PM block). It is a check for differences in reporting, never fraud detection (1:33 PM block). A set of books that is fake but consistent with the bank can still get through, and the readout says so.
+
+**Waits on:** [readout-store](#readout-store), so bank data is stored with the readout and deleted with it; a Plaid developer account, which is a board row for Ken.
+
+**Joins on Saturday:** [readout](#readout), which places the bank claims in their pieces.
+
+**Includes:**
+
+- **Try the connector first, fake it if needed** (Ken, 3:11 PM: "we can try this, we just need to see if one of these connectors has a trial account and test data. or we could rig it up and fake it, just say we'd connect this here, and here's a sample bank statement you might get"). Plaid's sandbox has free test accounts and custom test data. If it is not working in time, the room carries a sample bank statement (a CSV and a PDF from the generator, labelled as a sample), and the readout shows where the connected account would plug in.
+- **The connector: Plaid first.** Its Sandbox offers custom test users whose data covers Balance, Identity and Transactions, among other products ([Plaid Sandbox custom users](https://plaid.com/docs/sandbox/user-custom/), [saved copy](../reports/20261022.02_research/raw/feasibility/plaid/sandbox_user_custom.md)). No other connector is named here, because no other connector's sandbox docs have been read and saved. Plaid's production terms and pricing have not been read either; the builder reads them before any real account is connected.
+- **The consent step.** The founder, not the investor, signs in to the bank through Plaid Link, Plaid's own sign-in flow, so the investor never sees the bank credentials. The page states what is read (balances and transactions, read only), for which accounts and for how long. Tricorder records the consent with its date. The founder can withdraw it, and withdrawing deletes the connection and every transaction pulled, under the data rule from the 11:20 AM block.
+- **The checks.** Each is a script; a model only sorts messy transaction descriptions into categories.
+  - Deposits against the revenue rows: deposits per month, matched to the revenue file's rows by customer and month, within `match_tolerance`.
+  - Outflows against the model's burn: outflows per month against the model's net burn for the same months.
+  - The bank balance at the as-of date against the model's cash. On Hollis Voice the model's cash rests on the model alone today, because no bank statement is in the room ([FRAMEWORKS.md](FRAMEWORKS.md), "Piece verdicts", worked example).
+  - New check names in [FRAMEWORKS.md](FRAMEWORKS.md): `bank_deposits_vs_revenue_rows`, `bank_outflows_vs_model_burn`, `bank_balance_vs_model_cash`, written in the seven parts.
+- **The pieces it feeds.** Deposits feed **traction and revenue**. Outflows and the balance feed **burn and runway**. The bank counts as a source independent of the narrative set and of the model, so a match corroborates and a difference contradicts.
+- **The gap when no bank is connected.** "Not in the room: bank transactions (no bank connected)", with `would_need` "the founder connects the company's account". It is never a flag.
+- **The demo path.** A Plaid Sandbox custom user with configured accounts, created in Sandbox Studio or with `/sandbox/public_token/create`. The limits from the saved page: a configuration larger than about 55 KB, or about 250 transactions, may make the sign-in fail, and more than ten accounts on one custom user fails. Use a non-OAuth test bank such as First Platypus Bank. `roll_dates_forward` keeps the dates current, and the generator leaves it off when a test needs exact dates.
+- **The Hollis Voice bank feed.** The data-room generator writes a bank feed from the same simulation, within those limits. Its deposits disagree with the revenue file in one planted place. The plant goes in the answer key with its location, true value, shown value and check name. It is written only with a generator option and kept out of the Saturday rooms, so Saturday's score of found entries and decoys does not change.
+
+**Done when:**
+
+- On the Hollis Voice bank feed, `bank_deposits_vs_revenue_rows` finds the planted difference and nothing else.
+- With the plant switched off, no bank check fires.
+- On the Sandbox custom user, the bank's balance and transactions arrive through Plaid and match the generated feed.
+- With no bank connected, the readout shows the gap and no flag.
+- Withdrawing consent deletes the connection and every pulled transaction, and readout-store's list for the company shows none.
+- Every claim passes the quote checker against the saved transaction data.
+- Tests run on a recorded Sandbox response, so CI never calls Plaid.
+
+**Who:** agent, with Ken for the Plaid account.
 
 **Judgment:** yes.
 
@@ -944,7 +868,9 @@ A card per founder from GitHub, personal sites and talks. LinkedIn is never scra
 
 **The associate's ten tabs, opened automatically.** An associate at Flyer One Ventures describes her first step on a deal: "Before I even open your data room, I already have ten tabs up. I’m checking your traffic, reviews, investors, any co-founder issues, and whether your story matches what’s online." ([Startups Magazine, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal); the [voice-of-the-customer research](../reports/20261022.02_research/research_voice_of_customer.md), row 1). Her routine is Tricorder's market-signal and presence scans, done by hand. This slice opens her tabs for her. It runs before the data room is opened, so it works on an inbound that holds only a company name and a deck. At the earliest stage there is often no data room at all, and these tabs carry the first pass ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:38 PM block). It builds the table in the product brief's "What Tricorder gathers before the data room is opened" ([PRODUCT_BRIEF.md](PRODUCT_BRIEF.md)). Every source term, limit and price below comes from the feasibility research's 1.3, 1.6, 1.7 and Part 2 ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md)), with the page that research read.
 
-**Waits on:** the board row TRI-sponsor-keys (get the sponsor API keys before Saturday): Akta, Tavily, You.com, a GitHub token, the EDGAR User-Agent, and a Product Hunt token if Ken approves its terms; traffic and Akta's review signals also need Akta's Subscription plan or a sponsor coupon, and without it they run as gaps; [readout-store](#readout-store), so each company's pulled pages and claims outlive one laptop and the operator can see and delete them; the Saturday slices claim-result (the quote checker), readout (the linking and the piece verdicts) and cached-data (the `cache/index.json` rule), merged; [yc-rooms](#yc-rooms), whose approved YC companies and their synthetic rooms are the live run under Done when; a decision on Product Hunt, whose API terms say non-commercial use (shared with online-presence); [steering](#steering), for the "get more info" steers only, since the tabs ship without it.
+**Waits on:** the board row TRI-sponsor-keys (get the sponsor API keys before Saturday): Akta, Tavily, You.com, a GitHub token, the EDGAR User-Agent, and a Product Hunt token if Ken approves its terms; traffic and Akta's review signals also need Akta's Subscription plan or a sponsor coupon, and without it they run as gaps; [sponsor-adapters](#sponsor-adapters), for Akta in sample mode until the key arrives; [readout-store](#readout-store), so each company's pulled pages and claims outlive one laptop and the operator can see and delete them; [cached-data](#cached-data) (the `cache/index.json` rule); [yc-rooms](#yc-rooms), whose approved YC companies and their synthetic rooms are the live run under Done when; a decision on Product Hunt, whose API terms say non-commercial use (shared with online-presence); [steering](#steering), for the "get more info" steers only, since the tabs work without it.
+
+**Joins on Saturday:** [claim-result](#claim-result) (the quote checker), [readout](#readout) (the linking and the piece verdicts) and [market-signals](#market-signals) (the panel it makes live).
 
 **Includes:**
 
@@ -959,7 +885,7 @@ A card per founder from GitHub, personal sites and talks. LinkedIn is never scra
   - Then name plus city: search results, Akta Company Search (100 a day on pay-as-you-go, [Akta rate limits](https://docs.akta.pro/getting-started/rate-limits)) and the Form D issuer table (name, state and year of incorporation, [Form D data sets](https://www.sec.gov/data-research/sec-markets-data/form-d-data-sets)). A candidate resolves when its name and its city or state match in one source.
   - On an ambiguous match, it shows the candidates and never guesses. Ambiguous means two or more candidates fit, or the domain's page names a different company. The readout lists each candidate with its name, domain, city and the source that found it, and asks the operator to pick. No tab runs until they pick.
   - Every result a tab fetches is kept only when it ties to the resolved company by domain, or by name plus city. A same-named company elsewhere is dropped and listed in the run log.
-- **The scan.** `scans/outside/`, a new after-Saturday folder beside `scans/presence/` and `scans/founders/` ([ARCHITECTURE.md](ARCHITECTURE.md), "Folder layout").
+- **The scan.** `scans/outside/`, a new folder beside `scans/presence/` and `scans/founders/` ([ARCHITECTURE.md](ARCHITECTURE.md)).
   - `run(company_dir) -> ScanResult`, run as `python -m scans.outside <company_dir>`, writing `out/<company>/outside.json`. It follows the scan interface in ARCHITECTURE.md.
   - One check name per tab: `outside_traffic`, `outside_reviews`, `outside_investors`, `outside_cofounders`, `outside_story`.
   - Each tab runs alone and fails alone. A source that refuses or times out becomes a gap, and the scan still exits 0.
@@ -1050,44 +976,32 @@ A card per founder from GitHub, personal sites and talks. LinkedIn is never scra
 - The run on Hollis Voice reports every outside source as none found or not checked, each with its reason, and every piece verdict is the same as in the run without this scan.
 - The ScanResult lists the calls and credits spent per source.
 - readout-store's delete removes the company's saved files and index entries.
-- Once steering exists, each tab's "get more info" steer on the fixture adds claims marked new, and the diff names any verdict it moved.
+- Each tab's "get more info" steer on the fixture adds claims marked new, and the diff names any verdict it moved.
 
 **Who:** agent, with Ken for the keys, approving the two live companies, and the Product Hunt and Apple review feed decisions.
 
 **Judgment:** yes.
 
-### bank-check
+### founder-profiles
 
-**Compare the bank account with the books.** With the founder's consent, the investor connects the company's bank account through a banking connector. Tricorder compares deposits with the revenue rows, and outflows with the model's burn, and shows each difference as a claim with its sources ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:52 PM block). It is a check for differences in reporting, never fraud detection (1:33 PM block). A set of books that is fake but consistent with the bank can still get through, and the readout says so.
+A card per founder from GitHub, personal sites and talks. LinkedIn is never scraped.
 
-**Waits on:** [readout-store](#readout-store), so bank data is stored with the readout and deleted with it; a Plaid developer account, which is a board row for Ken.
+**Waits on:** Ken reads GitHub's terms on persona accounts before any demo account is made (feasibility open point); [outside-in](#outside-in), for the company resolver, the founder names it pulls from the deck, and the GitHub client and cache it builds.
 
 **Includes:**
 
-- **Try the connector first, fake it if needed** (Ken, 3:11 PM: "we can try this, we just need to see if one of these connectors has a trial account and test data. or we could rig it up and fake it, just say we'd connect this here, and here's a sample bank statement you might get"). Plaid's sandbox has free test accounts and custom test data. If it is not working in time, the room carries a sample bank statement (a CSV and a PDF from the generator, labelled as a sample), and the readout shows where the connected account would plug in.
-- **The connector: Plaid first.** Its Sandbox offers custom test users whose data covers Balance, Identity and Transactions, among other products ([Plaid Sandbox custom users](https://plaid.com/docs/sandbox/user-custom/), [saved copy](../reports/20261022.02_research/raw/feasibility/plaid/sandbox_user_custom.md)). No other connector is named here, because no other connector's sandbox docs have been read and saved. Plaid's production terms and pricing have not been read either; the builder reads them before any real account is connected.
-- **The consent step.** The founder, not the investor, signs in to the bank through Plaid Link, Plaid's own sign-in flow, so the investor never sees the bank credentials. The page states what is read (balances and transactions, read only), for which accounts and for how long. Tricorder records the consent with its date. The founder can withdraw it, and withdrawing deletes the connection and every transaction pulled, under the data rule from the 11:20 AM block.
-- **The checks.** Each is a script; a model only sorts messy transaction descriptions into categories.
-  - Deposits against the revenue rows: deposits per month, matched to the revenue file's rows by customer and month, within `match_tolerance`.
-  - Outflows against the model's burn: outflows per month against the model's net burn for the same months.
-  - The bank balance at the as-of date against the model's cash. On Hollis Voice the model's cash rests on the model alone today, because no bank statement is in the room ([FRAMEWORKS.md](FRAMEWORKS.md), "Piece verdicts", worked example).
-  - New check names in [FRAMEWORKS.md](FRAMEWORKS.md): `bank_deposits_vs_revenue_rows`, `bank_outflows_vs_model_burn`, `bank_balance_vs_model_cash`, written in the seven parts.
-- **The pieces it feeds.** Deposits feed **traction and revenue**. Outflows and the balance feed **burn and runway**. The bank counts as a source independent of the narrative set and of the model, so a match corroborates and a difference contradicts.
-- **The gap when no bank is connected.** "Not in the room: bank transactions (no bank connected)", with `would_need` "the founder connects the company's account". It is never a flag.
-- **The demo path.** A Plaid Sandbox custom user with configured accounts, created in Sandbox Studio or with `/sandbox/public_token/create`. The limits from the saved page: a configuration larger than about 55 KB, or about 250 transactions, may make the sign-in fail, and more than ten accounts on one custom user fails. Use a non-OAuth test bank such as First Platypus Bank. `roll_dates_forward` keeps the dates current, and the generator leaves it off when a test needs exact dates.
-- **The Hollis Voice bank feed.** The data-room generator writes a bank feed from the same simulation, within those limits. Its deposits disagree with the revenue file in one planted place. The plant goes in the answer key with its location, true value, shown value and check name. It is written only with a generator option and kept out of the Saturday rooms, so Saturday's score of found entries and decoys does not change.
+- The GitHub user and repo data, and a founder-market fit note scored against the rubric in FRAMEWORKS.md (entry 6.1). Each line linked to its source.
+- Whether each founder comes from the industry, from dated sources that name an earlier role in it (entry 6.1).
+- A passion and commitment rating from public signals, by the rubric in entry 6.2: time spent on the problem, shown in GitHub, posts and talks, each signal dated and linked.
+- The founder's socials linked. X is linked and not read, because reading costs money per post. LinkedIn is never scraped.
 
 **Done when:**
 
-- On the Hollis Voice bank feed, `bank_deposits_vs_revenue_rows` finds the planted difference and nothing else.
-- With the plant switched off, no bank check fires.
-- On the Sandbox custom user, the bank's balance and transactions arrive through Plaid and match the generated feed.
-- With no bank connected, the readout shows the gap and no flag.
-- Withdrawing consent deletes the connection and every pulled transaction, and readout-store's list for the company shows none.
-- Every claim passes the quote checker against the saved transaction data.
-- Tests run on a recorded Sandbox response, so CI never calls Plaid.
+- On a real founder Ken approves, the card shows the fit note, the industry background and the passion and commitment rating, each line linked to a dated source.
+- A founder with no public footprint shows "No public evidence found", never a low rating.
+- The fetch client refuses any linkedin.com address.
 
-**Who:** agent, with Ken for the Plaid account.
+**Who:** agent.
 
 **Judgment:** yes.
 
@@ -1103,48 +1017,103 @@ The company's footprint: web, Hacker News, Product Hunt, app stores, Reddit, Fac
 - The Reddit mini-browser Ken described: a small browser pane in which Ken, signed in as himself, clicks Reddit links, and each page he opens is saved as JSON into the corpus. Agents never fetch reddit.com; the scan reads only what Ken saved.
 - Facebook page text pasted by Ken.
 
-**Who:** agent.
-
-**Judgment:** yes.
-
-### comps-deep
-
-Comps from Form D and EDGAR in depth.
-
-**Waits on:** the Saturday comps slice merged.
-
-**Includes:** every Form D quarter, ranking by the selection rules; EDGAR full-text search for business descriptions (the JSON endpoint is undocumented, so the scan falls back to cached results when it breaks, per feasibility Part 2); XBRL frames for public revenue. Crunchbase only with an arrangement for apps, per the landscape research.
+**Done when:** on a real company Ken approved, the Hacker News and Apple results come back through outside-in's clients and cache; a Reddit page Ken opened in the mini-browser is saved as JSON and read by the scan; no test fetches reddit.com; and every claim passes the quote checker.
 
 **Who:** agent.
 
 **Judgment:** yes.
 
-### pilot
+### reference-checks
 
-One fund uses Tricorder on real inbound deals.
+Low priority: Ken is not sure Tricorder can take this on. Reference calls are routine, and investors say they do them poorly: "Most VCs do reference calls. From my conversations, few feel like they do them very well." ([seed investor, Jun 2025](https://formventures.substack.com/p/team-talks-ii-founder-reference-calls); the [voice-of-the-customer research](../reports/20261022.02_research/research_voice_of_customer.md), section 1). Tricorder prepares the calls. It never makes them.
 
-**Waits on:** research-gaps, readout-store, inbox-forward, and the data rule written into the product brief.
+**Waits on:** [outside-in](#outside-in); [founder-profiles](#founder-profiles).
 
-**Includes:** one fund's associate forwarding real decks for a set period; what they flagged, what they ignored, and whether the partner trusted the first pass.
+**Includes:**
 
-**Who:** Ken.
+- A list of people the operator could ask, drawn from the founder profiles and the outside-in tabs: former colleagues shown in dated sources, co-investors named in Form D or press, and customers named in the deck. Each person carries the source that names them.
+- A short question list for each person, drawn from the readout's weak pieces. Each question cites the claim it comes from.
+- Tricorder never contacts anyone. It finds no contact details beyond what the source that names the person already shows.
 
-**Judgment:** n/a.
+**Done when:** on a real company Ken approved, every person listed carries the source that names them, every question cites its claim, and no contact detail appears that the source did not show.
 
-### product
+**Who:** agent.
 
-What makes Tricorder a product: the fund buys, the associate uses.
+**Judgment:** yes.
 
-**Waits on:** pilot; the overview page's cards on what Tricorder is after Saturday and on the name (the trademark note in [BRAND.md](BRAND.md)).
+### stage-views
 
-**Includes:** pricing to the fund, not the associate. The voice-of-the-customer research found the associate is the user and the partner is the buyer, that funds already pay for data-room-to-memo tools, and that angels already pay to get diligence done by proxy ([research_voice_of_customer.md](../reports/20261022.02_research/research_voice_of_customer.md), personas). The [product brief](PRODUCT_BRIEF.md) carries the recommendation.
+First screens that suit the company's stage ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:38 PM block). The stage decides what exists about a company. At the earliest stage there is little or no data room, so the founders, the pitch itself and the outside world carry the first pass. At Series A the financial pieces do.
 
-- Angels want diligence and lack the time. Giving up upside to an accelerator, following a lead or splitting with co-investors is diligence bought by proxy, so angels are buyers too ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:27 PM block).
-- The tools that already turn a data room into a sourced memo validate the idea. Tricorder does the same core job and adds to it: the green and red flags readout, the red-flag engine with accounting mislabels, fast cross-checking, and the scans beyond the room (1:36 PM block). The pitch never frames a competitor as something to beat.
+**Waits on:** [readout-store](#readout-store), to save an operator's order; [checklist](#checklist), for what each stage is expected to hold; [outside-in](#outside-in), whose tabs fill the earliest-stage pieces.
 
-**Who:** Ken.
+**Joins on Saturday:** [readout-page](#readout-page), whose up and down buttons it saves.
 
-**Judgment:** n/a.
+**Includes:**
+
+- A default piece order per stage (pre-seed, seed, Series A), as a stated table beside "Piece verdicts" in FRAMEWORKS.md.
+- The stage read from the deck's round slide or the inbound, which the operator can change.
+- A piece the stage does not usually have data for says so, instead of reading as a gap.
+- The operator's own order, from the readout page's up and down buttons, saved per operator and reused on the next company at that stage.
+
+**Done when:**
+
+- The same room set to pre-seed opens with team, the pitch itself and market first. Set to Series A, it opens with traction and revenue, retention, and burn and runway first. The verdicts are the same in both.
+- An operator's saved order comes back on their next readout at that stage.
+
+**Who:** agent.
+
+**Judgment:** yes.
+
+### inbox-forward
+
+The first inbox input: a forwarding address such as deals@ through a mail-receiving service.
+
+**Waits on:** readout-store; a domain and a mail-receiving service, which Ken picks.
+
+**Joins on Saturday:** [readout](#readout), which builds the readout for each new company folder.
+
+**Includes:** PDF attachments go into a new company folder. DocSend, Google Drive, Dropbox and Notion links are fetched only when they open without a sign-in; otherwise the readout records a gap that says what the investor must do. It needs no OAuth review, which is why the brief recommends it first.
+
+**Done when:** an email with a deck attached, sent to the forwarding address, creates a company folder holding the deck; an email with a DocSend link that needs a sign-in produces the gap that says what the investor must do; and the investor's delete removes the folder.
+
+**Who:** agent.
+
+**Judgment:** yes.
+
+### inbound-unasked
+
+Diligence that starts on the inbound, before the investor asks.
+
+**Waits on:** inbox-forward.
+
+**Joins on Saturday:** [readout](#readout) and [readout-page](#readout-page), which fill in as results land.
+
+**Includes:**
+
+- The scans run when a deck arrives; the readout is one click away from the email, or the readout link is the reply. This is the brief's "before you even ask" moment.
+- **Speed first** ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:19 PM block). Each scan starts the moment its input exists, not after the whole room is in: the outside-world tabs start on the company name, the deck scan on the deck, the model checks when the model lands. The readout fills in as results arrive, and each piece shows whether it is still running, done, or waiting on an input (which goes on the ask list).
+- The operator sees the first green and red flags within the first scans' run, and is told when the readout is complete.
+
+**Done when:** a forwarded email with only a deck produces a partial readout with the deck and outside-world pieces filled and the rest marked waiting; adding the model to the same company fills the financial pieces without rerunning the finished scans.
+
+**Who:** agent.
+
+**Judgment:** yes.
+
+### inbox-apis
+
+Gmail and Outlook connected through their official APIs.
+
+**Waits on:** inbound-unasked; Google's verification for a restricted scope, including the security assessment, before anyone outside the team can connect a Gmail account (Ken); Microsoft's permission for Outlook.
+
+**Includes:** read-only access, decks only, under the same data rule.
+
+**Done when:** a team member's Gmail and Outlook test accounts connect, a deck in each inbox becomes a company folder, and disconnecting removes the access and everything pulled.
+
+**Who:** agent, with Ken for Google's verification.
+
+**Judgment:** yes.
 
 ### multiplayer
 
@@ -1167,287 +1136,378 @@ Uncertain: Ken is not sure this works. Several people share one diligence today:
 
 **Judgment:** yes.
 
-### reference-checks
+### pilot
 
-Low priority: Ken is not sure Tricorder can take this on. Reference calls are routine, and investors say they do them poorly: "Most VCs do reference calls. From my conversations, few feel like they do them very well." ([seed investor, Jun 2025](https://formventures.substack.com/p/team-talks-ii-founder-reference-calls); the [voice-of-the-customer research](../reports/20261022.02_research/research_voice_of_customer.md), section 1). Tricorder prepares the calls. It never makes them.
+One fund uses Tricorder on real inbound deals.
 
-**Waits on:** [outside-in](#outside-in); [founder-profiles](#founder-profiles).
+**Waits on:** research-gaps, readout-store, inbox-forward, and the data rule written into the product brief.
 
-**Includes:**
+**Includes:** one fund's associate forwarding real decks for a set period; what they flagged, what they ignored, and whether the partner trusted the first pass.
 
-- A list of people the operator could ask, drawn from the founder profiles and the outside-in tabs: former colleagues shown in dated sources, co-investors named in Form D or press, and customers named in the deck. Each person carries the source that names them.
-- A short question list for each person, drawn from the readout's weak pieces. Each question cites the claim it comes from.
-- Tricorder never contacts anyone. It finds no contact details beyond what the source that names the person already shows.
+**Done when:** a fund has agreed to the pilot and to how its real decks are handled under the commitment on confidential data. Real decks are real companies' confidential data, so no real deck enters Tricorder until Ken decides that handling.
 
-**Who:** agent.
+**Who:** Ken.
 
-**Judgment:** yes.
+**Judgment:** n/a.
 
-### room-templates
+### product
 
-Templated data rooms with hidden issues ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:46 PM block). Ken: "we should actually set up a few different data rooms that will allow us to highlight different problems. the data rooms will need to be a little bit templated, so we can swap in new names on the fly, but we should make data rooms with hidden isseus in them, based on the problems we saw in the reserach." This week's generator already writes Hollis Voice, a second invented company, a clean room and a sealed variant, and [yc-rooms](#yc-rooms) swaps a real company's public profile into it. This slice turns it into a template engine.
+What makes Tricorder a product: the fund buys, the associate uses.
 
-**Waits on:** data-room (Hollis Voice and the second invented company) and yc-rooms (the rooms for real companies) merged.
+**Waits on:** pilot; the overview page's cards on what Tricorder becomes as a business and on the name (the trademark note in [BRAND.md](BRAND.md)).
 
-**Includes:**
+**Includes:** pricing to the fund, not the associate. The voice-of-the-customer research found the associate is the user and the partner is the buyer, that funds already pay for data-room-to-memo tools, and that angels already pay to get diligence done by proxy ([research_voice_of_customer.md](../reports/20261022.02_research/research_voice_of_customer.md), personas). The [product brief](PRODUCT_BRIEF.md) carries the recommendation.
 
-- **A company profile swapped in on the fly:** name, sector, product, stage, founders, round, and for a real company its public facts with their links. One command writes a full room from a profile.
-- **A library of hidden issues**, one plant per problem the research found: ARR that is not recurring, hidden cohort churn, burn out of line with the hiring plan, deck against model, deck revenue against the P&L and partial history, customer concentration, gross margin that leaves out costs, a vanity count, billings or deferred revenue shown as revenue, contractors left out of burn, contract terms that undercut how revenue is counted, cap-table problems. Each plant names the research it comes from, where it lives in the room, and the check that should catch it.
-- **Green flags and decoys** chosen the same way, so every room has real strengths and traps, not only problems.
-- **A room recipe:** a profile plus a set of plants, green flags and decoys, with a seed. Recipes for the demo (one per problem story Ken wants to tell) are saved and rerunnable.
-- Every room from a real company's profile carries "Synthetic test document. Not this company's data." on every page, and its plants are named test plants.
-- The answer key is written from the recipe, and `check.py` checks any room against its key.
+- Angels want diligence and lack the time. Giving up upside to an accelerator, following a lead or splitting with co-investors is diligence bought by proxy, so angels are buyers too ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:27 PM block).
+- The tools that already turn a data room into a sourced memo validate the idea. Tricorder does the same core job and adds to it: the green and red flags readout, the red-flag engine with accounting mislabels, fast cross-checking, and the scans beyond the room (1:36 PM block). The pitch never frames a competitor as something to beat.
 
-**Done when:** a new room is generated from a profile and a recipe in one command; three recipes highlight three different problem sets; each passes `check.py`; and swapping the profile changes every name and leaves every planted problem in place.
+**Done when:** the product brief states the price, who pays and per what, and the pitch's answer to "who would buy it" matches it.
 
-**Who:** agent.
+**Who:** Ken.
 
-**Judgment:** yes.
+**Judgment:** n/a.
 
-### founder-requests
+---
 
-Quick requests to the company while the room is being compiled ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 3:15 PM block). Ken: "While compiling the data room, there are quick ways to send messages to the company asking them for information, with guidance on what they should submit."
+## Saturday
 
-**Waits on:** [readout](#readout) (the ask list); [checklist-coverage](#checklist-coverage).
+Saturday is finishing, integration, the demo freeze and the demo. The four people build the slices below in the six-hour window, and the agent slices from the first horizon join them at the integration points in the run of show.
 
-**Includes:**
+### The window
 
-- From the ask list, one click drafts a message to the founder for any missing item or group of items, in plain words.
-- Each request carries guidance on what to submit, taken from the document guides: what the document is, the form that works best, and what a good one shows (for example, monthly revenue by customer as a CSV with one row per customer per month).
-- The operator reviews and sends it from their own email; Tricorder never sends anything itself.
-- When the founder replies with files, they land in the room and the scans that waited on them start.
+The schedule gives 10:30 AM to 4:30 PM for hacking, with lunch, so the plan uses six hours. The Luma page also says "9 hours of focused building" ([research_landscape.md](../reports/20261022.02_research/research_landscape.md), summary). That gap is three hours, by [check_saturday_hours.py](../features/20261022.01_hackathon_plan/check_saturday_hours.py). The board row TRI-ask-organisers asks which is right. If the room opens for longer, the extra time goes to the pieces that are showing saved results, in the reverse of the [demo fallback order](#demo-fallback-order), so more of the demo runs live. The freeze still sits one hour before judging.
 
-**Done when:** on the Brasswick room, the ask list produces a request for its missing documents with guidance for each, the operator can copy or open it in their email client, and a reply's attachment added to the room starts the waiting scans.
+### Who owns what
 
-**Who:** agent.
+Each person owns folders, so pull requests do not touch the same files. This follows the feasibility research's Part 4.1, with the shared file readers and the contract-terms reading given to backend-and-data, and the market-signals panel to frontend. The full layout is in [ARCHITECTURE.md](ARCHITECTURE.md).
 
-**Judgment:** yes.
+| Role | Folders | Slices | Build hours |
+|---|---|---|---|
+| captain | `schema/` except `readers.py`, `scans/memo/`, `eval/`, `demo/` | claim-result, readout, demo-freeze | 4.5 |
+| frontend | `readout/`, and on Saturday the live re-run in `scans/signals/` | readout-page, market-signals | 4.5 |
+| backend-and-data | repo root files, `server/`, `schema/readers.py`, `scans/video/`, `scans/readings/` | readers, pitch-video, contract-terms-saturday | 4.5 |
+| design-and-finance | `scans/redflags/`, `scans/comps/` | redflag-engine, comps | 4.5 |
 
-### claim-support
+Build hours run from 10:30 AM to the 3:30 PM freeze, less a half-hour lunch: 4.5 hours each, 18 person-hours in all, from [check_saturday_hours.py](../features/20261022.01_hackathon_plan/check_saturday_hours.py). The same script checks that each role's slices fill its window and that the run of show below gives each slice its stated hours. Rehearsal adds 45 minutes for all four.
 
-The claims workflow in full ([diagrams/claims_workflow.md](diagrams/claims_workflow.md); [writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:41 PM block): every claim in the deck and the pitch video, checked against every other document and the outside world. Saturday does this for the deck's appendix claims and the video's transcript against the model and the revenue rows; this slice widens it.
+The captain carries no schema typing (an agent writes it this week), no readers (backend-and-data owns them) and no post drafting (an agent drafts the posts this week). The captain posts at 11:00 and 3:30 only.
 
-**Waits on:** [readout](#readout) and [pitch-video](#pitch-video) merged; [checklist-coverage](#checklist-coverage) for where each claim's evidence should live.
+The agent slices from the first horizon are merged to `main` before Saturday. Each joins its Saturday slice at the integration points in the run of show.
 
-**Includes:**
+`schema/` is frozen before Saturday, in the [skeleton](#skeleton) slice. On Saturday only the captain changes it, and only to fix a bug. The exception is `schema/readers.py`, which backend-and-data fills in from 10:30 to 11:30. A new Python dependency goes through the captain, because the dependency list sits in a root file.
 
-- Claim extraction from every slide (text, charts, the appendix) and every transcript sentence with a number or a checkable fact, each with its slide and position or video second and the quoted span.
-- Normalising each claim to one unit, period and definition, with spoken figures marked as spoken and rounded.
-- An evidence map per claim kind (from the checklist and the document guides) saying which documents and outside sources should support it.
-- A label per claim: supported (two independent sources agree), contradicted (a source disagrees, both shown), or unsupported (a gap with an ask-list line).
-- A claims table in the readout's drill-down: every claim, its label, and its sources.
+### readers
 
-**Done when:** on both demo rooms, every numeric claim on every slide and in the video script has a label; each planted contradiction is labelled contradicted with both sources; each green flag's claim is labelled supported with its two sources; and the quote checker passes on every claim.
+The shared file readers every scan and the quote checker import. Before this slice nobody owned them, and the captain had half an hour for a quote checker across all five formats ([critique_buildability.md](../features/20261022.01_hackathon_plan/critique_buildability.md), finding 3).
 
-**Who:** agent.
-
-**Judgment:** yes.
-
-### deck-vs-books
-
-The associate's rule, as a feature: "If revenue in the deck doesn’t match the P&L, or you show only part of your history, everything else becomes questionable." ([associate at a seed-focused fund, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal); [writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:19 PM block). Saturday's red-flag engine already compares the deck's claims with the model's named cells (`deck_claim_vs_named_cell` in [FRAMEWORKS.md](FRAMEWORKS.md)). This slice adds the two halves of her rule that it does not cover.
-
-**Waits on:** [redflag-engine](#redflag-engine) merged.
+**Waits on:** skeleton (the `schema/readers.py` stub, written this week).
 
 **Includes:**
 
-- **Deck revenue against the P&L, period by period.** Every revenue figure the deck shows (a total, a chart's bars, a growth rate) is matched to the same period in the monthly P&L and the revenue rows, by script. A mismatch above the match tolerance is a disagreement claim with both sources.
-- **Partial history.** A script finds the first month revenue appears in the books and compares it with the window the deck shows. A deck chart that starts later than the books, skips months, or shows quarters where the books hold months is flagged as "shows part of the history", with the months left out and what they hold (for example a dip, or a period of flat revenue).
-- Both feed the traction and revenue piece and the pitch itself, and missing months the books do not hold go on the ask list.
+- `schema/readers.py` filled in: PDF by page, xlsx by cell, CSV by row, Markdown by line, transcript by segment. Each returns the text at a locator, so a scan can quote it and the quote checker can find it again.
+- The quote checker and every scan import these readers. No scan writes its own.
 
-**Done when:** on the Hollis Voice room, every deck revenue figure is matched to a P&L period or listed as unmatched; a test deck whose chart starts six months after the first revenue month is flagged with the months it leaves out; and the quote checker passes on every claim.
+**Done when:** a test reads one known locator from each of the five formats in `data_room/hollis_voice/` and gets the expected text, and the readers are merged at 11:30 AM.
 
-**Who:** agent.
+**Who:** backend-and-data.
+
+**Hours:** 1.0 (10:30 to 11:30 AM).
 
 **Judgment:** no.
 
-### accounting-mislabels
+### claim-result
 
-The rest of the accounting mislabels family ([FRAMEWORKS.md](FRAMEWORKS.md), entry 1.12; [writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:32 PM block). Saturday's [redflag-engine](#redflag-engine) runs the two kinds it already owns. Entry 1.12 marks six more as runnable on Hollis Voice, but the engine's 3.0 hours already hold 7 checks, so they come here. If the room opens longer than six hours on Saturday, design-and-finance starts these after comps.
+The script that checks every quote against its source. The typed Claim schema itself is written this week in the [skeleton](#skeleton) slice.
 
-**Waits on:** redflag-engine merged.
+**Waits on:** skeleton (the frozen schema and the readers stub), readers. The captain builds against the readers stub from 10:30 and switches to the real readers when they merge at 11:30.
 
 **Includes:**
 
-- The six sub-checks entry 1.12 marks Saturday that the engine does not run: `mrr_column_vs_subscription_rows`, `billings_vs_recognised_revenue`, `contractor_spend_vs_headcount_and_burn`, `capitalised_spend_vs_pnl_and_cash`, `deferred_revenue_vs_earned` and `one_time_fees_in_recurring_metrics`. Scripts only, as in the engine.
-- Kind c, gross against net revenue (`gross_vs_net_revenue`), with a generator option that writes a resale line into a test room, because Hollis Voice has nothing to run it on.
-- Each kind's gap when the room lacks its file, worded as entry 1.12 gives it.
-- Each claim names its kind and feeds the piece entry 1.12 names.
+- `schema/check_quotes.py`: opens each claim's source at its locator through `schema/readers.py` and confirms the quote is there. URL sources are checked against their saved copies through `cache/index.json`. A claim that fails gets the confidence label `unverified` and moves to the "could not verify" box.
 
 **Done when:**
 
-- On the full room, `mrr_column_vs_subscription_rows` finds the Marlow pilot's fee in the `mrr` column and links it to the pilot-as-ARR flag as one cause.
-- The onboarding-fee decoy and the annual-prepay decoy stay clear.
-- On the seed drop, each sub-check whose file is missing returns `cannot_check` with its gap.
-- On the test room with a resale line, `gross_vs_net_revenue` fires. With the option off, it does not.
+- Tests show a real quote passing, an invented quote failing, and a claim with no source refused.
+- Every example file in `sample_out/` passes the checker.
+
+**Who:** captain.
+
+**Hours:** 1.0 (10:30 to 11:30 AM).
+
+**Judgment:** yes.
+
+### redflag-engine
+
+The red flags in the financials and metrics: the organisers' first direction, and first in the feasibility research's ranking.
+
+**Waits on:** skeleton (the schema, frozen this week), readers (merged at 11:30), data-room, saturday-specs (the check list). The pure checks that compute numbers start at 10:30.
+
+**Includes:**
+
+- Scripts only on Saturday. A junior Python-and-Excel builder has 3.0 hours for 7 checks, so this slice makes no model call ([critique_buildability.md](../features/20261022.01_hackathon_plan/critique_buildability.md), finding 2). Every planted flag already has a script check (feasibility Part 3.2).
+- One pandas check per planted flag in the data room research's Part 3.4, over the CSVs and the model: pilot booked as ARR, deck ARR against the model (1 percent tolerance), churn hidden in the cohort tab, burn against the hiring plan, customer concentration, gross margin without delivery costs, cumulative sign-ups shown as active clinics. The video-against-deck variant is found by the readout slice, because it needs the video scan's output.
+- Deck claims read from the deck's claims page (slide 14) by regex, with `01_overview/claims.json` as the fallback (feasibility 1.1 and 1.9). The buildability critic's regex read 14 of 14 rows; three rows need a better label split.
+- Files are read through `schema/readers.py`. The scan writes no reader of its own.
+- The script decides that a number is wrong (feasibility Part 3.2). The model reading that gives a flag its clause quotes (the pilot contract) is the [contract-terms-saturday](#contract-terms-saturday) slice, owned by backend-and-data after the video slice. The model's reading of the cohort note is built before Saturday by an agent, in [financial-model](#financial-model).
+- Each flag is a Claim with the claimed number, the computed number, a severity, and sources pointing at both places.
+- The cells behind the green flags, read by script with no judgement: the round from the cap table (new money, pre-money, Series A ownership) and the model (`SERIES_A_RAISE`), the market size (`MARKET_TAM_USD`), staff today (`STAFF_NOW`) and staff after hiring (the last row of `hiring_plan.csv`). The cap table's sum check (`cap_table_reconcile`, [FRAMEWORKS.md](FRAMEWORKS.md) entry 1.10) runs here, so the clean cap table (DC3) reads clear. The readout's strong pieces rest on these claims, and no other Saturday slice writes them.
+- `python -m scans.redflags <room>` writes `out/<room>/redflags.json`.
+- A test in `scans/redflags/tests/` that compares the output to the answer key by check name.
+- Accounting mislabels, the Saturday part ([FRAMEWORKS.md](FRAMEWORKS.md), entry 1.12; [writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:32 PM block). The two kinds this slice already checks carry their mislabel kind on the claim: the pilot booked as ARR is kind a, and gross margin without delivery costs is kind d. Entry 1.12 marks six more sub-checks as runnable on this room. They sit outside this slice's 3.0 hours: an agent builds them before Saturday in the [accounting-mislabels](#accounting-mislabels) slice, and they join this slice's output on Saturday.
+
+**Done when:**
+
+- On the seed drop, the test finds the four flags the research says the seed drop can show from this scan: deck ARR against the model, burn against the hiring plan, gross margin, and the clinic count.
+- On the full room it also finds the pilot as ARR, the cohort churn and the customer concentration.
+- None of the three decoys (the onboarding fee, the annual prepay, the clean cap table) is flagged.
+- The round, market size and staff claims match the answer key's `green_flags` values within 1 percent.
+- On the clean room from [blind-room](#blind-room), no planted-flag check fires.
+- The pilot-as-ARR flag and the gross-margin flag each name their mislabel kind from entry 1.12.
+- The scan runs with no network, so it can run live on the demo laptop.
 - Every claim passes the quote checker.
 
-**Who:** agent.
+**Who:** design-and-finance.
+
+**Hours:** 3.0 (10:30 AM to 2:00 PM, less lunch).
+
+**Judgment:** yes.
+
+### readout
+
+The top green and red flags, the overview and its drill-downs, assembled from the scans' claims: every piece of the company with a verdict, every sentence sourced. Second in the feasibility research's ranking.
+
+**Waits on:** claim-result. It is built against `sample_out/` until the real scans land at the 1:00 PM integration point.
+
+**Includes:**
+
+- `scans/memo/` reads every `out/<room>/*.json` that exists, runs the quote checker again, and links claims that disagree (same label, unit and period, values apart by more than the tolerance) into `conflicts_with`.
+- Links claims from independent sources that agree (same label, unit and period, values within the tolerance) into `corroborated_by`.
+- Groups the claims into the nine pieces and gives each piece its verdict by the stated script rule ([FRAMEWORKS.md](FRAMEWORKS.md), "Piece verdicts"): looking strong, looking weak, mixed or not enough in the room, with a one-line reason and the counts of corroborating and contradicting sources. Pieces go in a fixed order, strong and weak alike.
+- Picks the best green flags and the worst red flags from the piece verdicts and the flags, by the stated script rule ([FRAMEWORKS.md](FRAMEWORKS.md), "Top green and red flags"), and puts them first in `readout.json`.
+- One model pass that writes connecting sentences. Each sentence must cite claim ids; a sentence with none is dropped. If it is not working at the fallback call, the demo shows the script's top flags, pieces and verdicts without it; it is first in the [demo fallback order](#demo-fallback-order). On the demo laptop it shows as frozen output.
+- A missing scan becomes a gap in the readout, not an error.
+- The ask list at the end of `readout.json`: what the operator should request from the founder ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:54 PM block; [FRAMEWORKS.md](FRAMEWORKS.md), "Ask list"). A script builds it from each gap's `would_need` field and each weak piece's reason. Each line says what to ask for, the claim or gap it would settle, and the piece it feeds. No model call.
+- Writes `out/<room>/readout.json`.
+
+**Done when:**
+
+- The four ARR figures in the data room research's Part 3.4 (the model's $2,240,868, the deck's $2,500,000, the video's spoken figure of about $3,000,000, and the recurring ARR the scan computes) show as one conflict group inside traction and revenue, and that piece reads looking weak.
+- On the full room, the pitch itself reads looking strong, with `corroborated_by` linking slide 13 to the cap table's Series A rows (DC3, the clean cap table).
+- Every piece has a verdict, including "not enough in the room" where no number has a second source.
+- On the full room, the green flag is the round (the pitch itself), and the red flags come out in the order the rule gives: runway, clinics, largest customer, gross margin, retention ([FRAMEWORKS.md](FRAMEWORKS.md), "Top green and red flags", worked example).
+- The video-against-deck flag is found here.
+- Deleting one scan's output file leaves a gap in the readout and no crash.
+- On the Hollis Voice seed drop, the ask list names the files the seed drop leaves out, each with the gap or weak-piece claim it would settle: the expense ledger (actual monthly spend, which settles current burn and gross margin), monthly revenue by customer (retention and the largest customer's share), the Marlow pilot agreement, and the largest customer's order form (their contract language). The seed drop's file list is in [data_room_files.csv](../reports/20261022.02_research/data_room_files.csv).
+
+**Who:** captain.
+
+**Hours:** 1.5 (11:30 AM to 12:30 PM, and 1:30 to 2:00 PM).
+
+**Judgment:** yes.
+
+### readout-page
+
+The web page the judges see. The feasibility research calls the readout "the thing shown on screen".
+
+**Waits on:** skeleton (the generated types and the server routes, written this week). From 10:30 it is built against the example files.
+
+**Includes:**
+
+- A React page in `readout/` that reads `readout.json` through the server.
+- The best green flags and the worst red flags at the very top, green first, each line one click from its piece. A green flag gets the same size and the same source links as a red one.
+- The overview under them: one row per piece, in a fixed default order, with its mark, its one-line reason and its counts of corroborating and contradicting sources. Strong and weak rows look the same size. This is the demo's first screen ([The one workflow we demo](#the-one-workflow-we-demo)).
+- One click on a piece opens its drill-down: its claims, with each conflict shown side by side. Inside traction and revenue, the four ARR figures sit in large type, each with its source chip. The comps panel sits in comps, the signals panel in market, and the video moments in the pitch itself.
+- A footnote on every sentence. It opens the source as an in-page panel: a pre-rendered PNG of the slide or page, a small HTML table with the cited cell highlighted, the clause text, or the video at its second through the media fragment (`#t=35`). URL sources open their saved copy from `cache/`. A click never launches Excel or a PDF viewer: a spreadsheet app opening on a projector is slow, and it shows the associate the room's tidy rows ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), finding 6). The panel also lists every other source that corroborates or contradicts the claim, each one click away.
+- The video player beside the video claims; clicking a claim jumps to its start.
+- A "could not verify" box, a gaps panel, and the score lines for this room, the sealed variant room and the clean room.
+- The ask list at the end of the page, with a copy button, so the operator can paste it into an email to the founder.
+- A switch between the seed drop and the full room.
+- Up and down buttons on each overview row, so the operator can reorder the pieces ([PRODUCT_BRIEF.md](PRODUCT_BRIEF.md), "The operator sets the order"). The order lives in the page only. Saving it, and a default order by stage, is the [stage-views](#stage-views) slice, which an agent builds before Saturday. The frontend builds the buttons in the 2:30 to 3:30 PM polish hour. If that hour runs short, the demo shows the default order.
+- Served from localhost, with no fonts or scripts from a CDN, so it needs no venue wifi.
+
+**Done when:**
+
+- The page renders `sample_out/` at 11:00 AM and the real outputs at 1:00 PM.
+- A missing scan shows its gap panel, not a blank page or an error.
+- Every footnote opens its source in the page.
+- One click opens a piece's claims, and one more opens a claim's source with its corroborating and contradicting sources.
+- Moving a piece up or down keeps its mark, its claims and its links, and a reload shows the default order.
+
+**Who:** frontend.
+
+**Hours:** 4.25 (10:30 AM to 3:30 PM, less lunch and the quarter hour for the [market-signals](#market-signals) panel).
+
+**Judgment:** yes.
+
+### pitch-video
+
+The pitch video broken into claims with timestamps, third in the feasibility research's ranking.
+
+**Waits on:** claim-result, readers (transcript by segment), record-pitch-video, keys (whisper.cpp on the demo laptop).
+
+**Includes:**
+
+- ffmpeg makes a 16 kHz mono WAV; whisper.cpp transcribes it with timestamps (feasibility 1.5).
+- The video prompt returns claims with the segment ids they came from, so start and end seconds are copied from the transcript, not guessed.
+- Keyframes at scene changes for thumbnails, if the budget allows.
+- `python -m scans.video <room>` writes `out/<room>/video.json`. If the live run fails, the scan reads this week's saved transcript and says so in the result.
+
+**Done when:** `video.json` holds the ARR claim from the planted line, its time range covers the spoken sentence, and its quote passes the checker.
+
+**Who:** backend-and-data.
+
+**Hours:** 2.5 (11:30 AM to 2:30 PM, less lunch).
 
 **Judgment:** no.
 
-### contract-terms
+### contract-terms-saturday
 
-What is left of customer contracts after Saturday ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:53 PM block). The rules are entry 1.13, "Contract terms", in [FRAMEWORKS.md](FRAMEWORKS.md). Saturday's [contract-terms-saturday](#contract-terms-saturday) already reads every contract in both demo rooms and runs three comparisons (the notice check, the pilot check and the price check). This slice adds the rest.
+Every contract in the room, read for its terms and checked against how each customer is counted, on both demo rooms. It is the Saturday part of entry 1.13, "Contract terms", in [FRAMEWORKS.md](FRAMEWORKS.md) ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:53 PM block).
 
-**Waits on:** [contract-terms-saturday](#contract-terms-saturday), the slice where a model first reads a contract's clauses; [readout-store](#readout-store).
+**Waits on:** redflag-engine (the pilot flag these claims sit beside), pitch-video (backend-and-data starts this after the video slice), readers, claim-result (the quote checker).
 
 **Includes:**
 
-- Contracts upload with the room or on their own. A folder that holds only contracts is a valid input, and the contracts of rooms beyond the two demo rooms are read the same way.
-- The clauses Saturday leaves unread: exclusivity, most-favoured-customer, change of control, and any other clause that changes what the customer pays or when it can leave. Each is a claim that quotes its clause.
-- The three comparisons Saturday leaves out: `plan_revenue_past_term_end` (the plan keeps a contract's revenue after its term ends, or treats an automatic renewal as certain), `signed_not_live_vs_revenue` (a signed contract or amendment that has not started is counted as revenue) and `counted_line_without_contract` (a counted line has no contract in the room).
-- The ARR and concentration entries keep their own checks and point to this one.
-- A contract the room lacks becomes an ask-list line: the current contract language for that customer.
+- One model request per room reads every contract in it, with entry 1.13's prompt and schema, one schema per request. Hollis Voice has three contracts in `04_customers/`: the Cedar & Pine order form, the Marlow pilot agreement and the Brookline Row order form. Brasswick has four in `04_contracts/`: the Corvane agreement, the Ostley and Tessmore order forms, and the Norrgate statement of work.
+- The terms read: start, end and length; the notice that ends a running contract, kept apart from the notice not to renew; auto-renewal; pilot or trial terms and any duty to convert; the price, any discount and the list price; payment terms. Each stated term is a claim that quotes its clause. The request also returns the clause fields (exclusivity, most-favoured-customer, change of control), but nothing reads them until [contract-terms](#contract-terms).
+- Brasswick's Norrgate statement of work is a supplier contract. It is read for its terms and shown as info claims. It is not matched to a customer row, so it produces no check and no missing-customer gap.
+- Three of entry 1.13's script comparisons, run on both rooms: `cancellable_within_notice_vs_arr`, `pilot_without_duty_to_convert_vs_recurring` and `contract_price_vs_counted_price`. They compare each contract with the ARR build (Hollis Voice) or the model's `Revenue_Build` tab (Brasswick), the MRR column (`mrr` in `customer_mrr_by_month.csv`, or `subscription_revenue` in Brasswick's metrics and customer files), and the largest customer's share. The price check also confirms the fee behind that share.
+- The model reads clauses. The script decides that a number is wrong. Each comparison cites the flag it explains and sits beside the claim from entries 1.2, 1.6 and, where it applies, 1.12.
+- If the hour runs short, Hollis Voice is finished before Brasswick is started.
+- `python -m scans.readings <room>` writes `out/<room>/readings.json`.
+
+**Not in this slice:** checks 3, 4 and 6 (plan revenue past a contract's end, a signed contract not yet live, a counted line with no contract), the exclusivity, most-favoured-customer and change-of-control clauses, and contracts beyond the room's. An agent builds those before Saturday in [contract-terms](#contract-terms). The cohort note reading is in [financial-model](#financial-model), also built before Saturday.
 
 **Done when:**
 
-- On the full Hollis Voice room, the plan check flags the Marlow pilot with its eight plan months after the term ends, and clears Cedar & Pine and Brookline Row.
-- The exclusivity, most-favoured-customer and change-of-control fields return "not stated" for the Hollis Voice contracts, each read from the contract and not assumed.
-- A test contract with a change-of-control clause returns that clause with its quote.
-- A folder that holds only contracts produces a result with no crash.
-- A test contract with a 30-day cancellation counted as a year of ARR produces a gap. The same contract with a one-year commitment does not.
-- Every quote passes the quote checker.
+- On Hollis Voice, the Marlow pilot agreement's 30-day notice and its "nothing requires the Customer to buy a subscription" clause are read with quotes. The notice check and the pilot check both flag it, with the clause beside the ARR row (`ARR_Build!E13`) and the `mrr` rows.
+- On Hollis Voice, Cedar & Pine's 90 days and Brookline Row's 30 days are read as notice not to renew, and both contracts return clear on all three checks. Brookline Row's 10 percent discount is read and matches the counted price.
+- On Brasswick, the three customer contracts return their terms. Corvane and Tessmore return clear. The price check finds Ostley Freight's $27,540 in `Revenue_Build` against the order form's $2,295 a month, and reports it as one cause with the annual prepayment flag from entry 1.12 (BF4).
+- The Norrgate statement of work returns its term, its notice and its fee as info claims, and no comparison.
+- On the Hollis Voice seed drop, which holds no contracts, the entry returns `cannot_check` with the gap "Not in the room: customer contracts".
+- Every quote passes the quote checker. On the demo laptop the readings show as frozen output, saved for both rooms under `demo/frozen/` before the freeze.
 
-**Who:** agent.
+**Who:** backend-and-data.
 
-**Judgment:** yes.
-
-### checklist-coverage
-
-The readout's coverage against the [checklist](#checklist), and an ask list that draws on it ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:56 PM block). It is after Saturday because the captain's readout hours and the frontend's page hours are fully budgeted. The rules are "Checklist coverage" in [FRAMEWORKS.md](FRAMEWORKS.md).
-
-**Waits on:** checklist; readout and readout-page merged.
-
-**Includes:**
-
-- For each checklist item expected at the company's stage: found, checked or missing, with the scan that checked it and the piece it feeds.
-- The ask list also draws on the checklist. Every item expected at the company's stage and missing from the room becomes a request, beside the lines from gaps and weak pieces. An item expected only at a later stage is not asked for.
-- The company's stage comes from the deck's round slide, and the operator can change it.
-- A coverage panel on the readout page.
-- The reference guides' proposed checks, one guide per data-room document ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:38 PM block). Each proposed check becomes a check, or is marked as left to the operator, and each guide's missing-document line becomes its ask.
-- Entry 1.11's asks, which no Saturday slice runs: bank statements, accountant-prepared statements, tax returns, IP assignments and customer references when the room lacks them, and one walk-through ask per flag ([FRAMEWORKS.md](FRAMEWORKS.md), entry 1.11).
-
-**Done when:**
-
-- On the seed drop at Series A, coverage lists every checklist item as found, checked or missing, and the counts come from a script.
-- Every missing Series A item becomes one ask-list line. Set to pre-seed, the same room asks for no item expected only later.
-- No request appears twice when a gap and a checklist item name the same thing.
-
-**Who:** agent.
-
-**Judgment:** yes.
-
-### stage-views
-
-First screens that suit the company's stage ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:38 PM block). The stage decides what exists about a company. At the earliest stage there is little or no data room, so the founders, the pitch itself and the outside world carry the first pass. At Series A the financial pieces do.
-
-**Waits on:** [readout-store](#readout-store), to save an operator's order; [checklist](#checklist), for what each stage is expected to hold; [outside-in](#outside-in), whose tabs fill the earliest-stage pieces.
-
-**Includes:**
-
-- A default piece order per stage (pre-seed, seed, Series A), as a stated table beside "Piece verdicts" in FRAMEWORKS.md.
-- The stage read from the deck's round slide or the inbound, which the operator can change.
-- A piece the stage does not usually have data for says so, instead of reading as a gap.
-- The operator's own order, from the readout page's up and down buttons, saved per operator and reused on the next company at that stage.
-
-**Done when:**
-
-- The same room set to pre-seed opens with team, the pitch itself and market first. Set to Series A, it opens with traction and revenue, retention, and burn and runway first. The verdicts are the same in both.
-- An operator's saved order comes back on their next readout at that stage.
-
-**Who:** agent.
-
-**Judgment:** yes.
-
-### financial-model
-
-The financial modeling Ken asked for in the 10:10 AM dictation. Saturday's [redflag-engine](#redflag-engine) rebuilds the numbers it checks: burn against the hiring plan, deck against the model, retention and gross margin. This slice adds a rebuilt model the operator can work in.
-
-**Waits on:** redflag-engine merged; [readout-store](#readout-store).
-
-**Includes:**
-
-- **Tricorder's own version of the model**, built from the raw data the way a Series A lead does ("a lead builds their own model from your raw data", [the data-room research](../reports/20261022.02_research/research_data_room.md), 1.3; Ken at 2:40 PM: "i was already planning on building our own versions of models"). The room's revenue, cost and headcount rows go into one monthly table with burn, cash and runway, and each cell links to the row it came from.
-- **Side by side with the company's model.** Every line of the company's model sits beside Tricorder's rebuilt line, and a difference beyond the match tolerance becomes a disagreement claim in the right piece.
-- Unit economics recomputed from the room's rows, by [FRAMEWORKS.md](FRAMEWORKS.md) entry 1.9.
-- The model's reading of the cohort tab's note, with the prompt in entry 1.3. Saturday keeps the script rebuild of the cohorts; this reading moved here to make room for contract terms on Saturday. It is a claim that quotes the note and never decides a number is wrong.
-- The operator can change one assumption, such as a hire's start month or a churn rate, and see runway move. The script's own figure stays on screen beside it, and the operator's case is marked as theirs.
-- Market size, bottom-up, stays in [frameworks-scan](#frameworks-scan) (entry 5.6).
-
-**Done when:**
-
-- On the full room, the rebuilt runway with all planned hires matches the answer key's figure, and every cell opens its source row.
-- Each unit-economics figure returns a claim with its sources. A figure the room cannot support is a gap.
-- Changing a hire's start month moves runway, and the script's figure still shows beside it.
-
-**Who:** agent.
-
-**Judgment:** yes.
-
-### video-moments
-
-The video leads the operator to its interesting parts (the 10:10 AM dictation; [FRAMEWORKS.md](FRAMEWORKS.md), entry 4.2). On Saturday the [pitch-video](#pitch-video) slice gives claims with timestamps, and the page jumps to them. Its 2.5 hours go to transcription and claims, so ranking the moments comes here.
-
-**Waits on:** pitch-video merged; redflag-engine (entry 4.2 reads the labels from entries 1.2 to 1.9).
-
-**Includes:**
-
-- Entry 4.2's moments, starting with each place the founder says a number the room disputes, each with its start and end second.
-- Keyframes at scene changes as thumbnails.
-- A strip of moments on the video player. Each moment is one click from its second.
-
-**Done when:** on Hollis Voice, the ARR sentence at about 0:35 is listed as a moment, its range covers the spoken sentence, and clicking it plays from there. Every moment's quote passes the quote checker.
-
-**Who:** agent.
+**Hours:** 1.0 (2:30 to 3:30 PM). Fourth in the [demo fallback order](#demo-fallback-order): if it is not working at the freeze, the pilot flag still shows from the engine's script check, without clause quotes.
 
 **Judgment:** no.
 
-### memo-export
+### comps
 
-Tricorder helps the operator write the memo for the partners' meeting ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:58 PM and 2:00 PM blocks). The memo is interactive. It reads as a normal memo top to bottom, and behind every line sit the same two clicks the operator has in the readout. It is after Saturday because the captain's and the frontend's Saturday hours are fully budgeted.
+Comparable companies and recent rounds, each with the reason it is a fair comp. Fourth in the feasibility research's ranking. It stays a Saturday slice, ranked by script from this week's cached filings, so all three of Track 2's asks (market signals, comps, red flags) are on screen ([critique_judge.md](../features/20261022.01_hackathon_plan/critique_judge.md), finding 2).
 
-**Waits on:** [readout](#readout) merged. The template is written: [MEMO_TEMPLATE.md](MEMO_TEMPLATE.md), built from real published memos and memo templates.
-
-**Includes:**
-
-- The export: a draft memo in the template's sections, in order, filled from the readout's pieces, the checklist items, the top green and red flags, the gaps and the ask list, as the template says.
-- The interactive memo: a page the partners open. From any line, one click opens the claims behind it. From any claim, one more opens its source and the sources that agree or disagree.
-- A static PDF of the same memo for funds that need one, with every claim footnoted to its source.
-- The operator edits the draft. A sentence the operator writes with no claim behind it is marked as theirs.
-
-**Done when:**
-
-- On Hollis Voice, the export fills every template section, or names the gap that leaves one empty.
-- In the interactive memo, every line reaches its claims in one click and a claim's source in two.
-- In the PDF, every claim carries a footnote that names its source and locator.
-- Every claim in both forms passes the quote checker.
-
-**Who:** agent.
-
-**Judgment:** yes.
-
-### reader-scenarios
-
-Each reader of the memo gets their own copy to steer, and can try what-if changes on the financial model ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:01 PM block). The operator's memo is the shared version. A partner's changes stay in the partner's copy.
-
-**Waits on:** [memo-export](#memo-export); [steering](#steering); [financial-model](#financial-model), whose scripts do the recomputing.
+**Waits on:** claim-result, cached-data, saturday-specs (the selection rules, prompt and schema).
 
 **Includes:**
 
-- A shared memo version, and one copy per reader laid over it. A reader steers their copy (rewrite a section, ask for more information) by the same rules as [steering](#steering), without changing anyone else's.
-- Each copy says what the reader changed and which shared version it started from.
-- What-if inputs on the model: a reader changes a few assumptions, such as churn, price, hiring pace, or the pilot counted or not, and sees what the numbers become.
-- The same scripts recompute from the company's own model and rows. The source files never change.
-- Every tweaked number is marked as the reader's scenario, shown beside the company's figure and Tricorder's rebuilt figure, so nobody mistakes a what-if for a fact.
+- 5 to 8 comps in two groups: recent private rounds from the cached Form D files, and public companies from the cached XBRL facts (feasibility 1.2).
+- The selection rules from FRAMEWORKS.md applied by script. The model writes only the "why this is a fair comp" sentence, and the demo laptop shows that sentence as frozen output.
+- Each comp's number carries its source: the filing or the Form D row.
+- Reads `cache/` only on Saturday, so EDGAR being slow changes nothing on screen.
+- `python -m scans.comps <room>` writes `out/<room>/comps.json`.
 
-**Done when:**
+**Done when:** the table has at least five comps, each with a reason and a source that passes the checker.
 
-- Two readers steer their own copies of the Hollis Voice memo differently. Each sees only their own changes, and the shared version is unchanged.
-- A reader who sets "pilot not counted" sees ARR recomputed by the script, marked as their scenario, beside the company's figure and the rebuilt figure.
-- After any scenario, the room's files are byte for byte the same as before.
-- A new shared version shows each reader which version their copy started from.
+**Who:** design-and-finance.
 
-**Who:** agent.
+**Hours:** 1.5 (2:00 to 3:30 PM).
 
 **Judgment:** yes.
+
+### market-signals
+
+Hiring, traffic, reviews, news and pricing for the demo company's real competitors, and the live outside-world run on one approved real company. Fifth in the feasibility research's ranking. For Hollis Voice it is a static panel of this week's cached competitor readings, because live signals cannot show much for a company with no outside footprint ([critique_buildability.md](../features/20261022.01_hackathon_plan/critique_buildability.md), finding 9). Backend-and-data's freed hours go to the readers and the video.
+
+**The live run on a real company** ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:49 PM block). For the approved real company the demo uses, the panel sends this week's saved calls for that company again, live on stage. It uses only the sources that need no paid plan: the company's website, Hacker News, Apple's App Store lookup and SEC EDGAR. It takes this slice's slot, so Saturday's hours do not change. Any call that fails or is slow shows this week's saved copy from [cached-data](#cached-data), with its date. The full live scan, with resolution and every tab, is [outside-in](#outside-in), which an agent builds before Saturday and which joins this panel on Saturday.
+
+**Waits on:** signals-readings (this week's `cache/signals/signals.json`); yc-rooms and cached-data, for the approved real company's saved calls.
+
+**Includes:**
+
+- The signals panel in the readout page, reading `cache/signals/signals.json` through the server.
+- Each reading shows the date it was taken, and each number links to its saved source.
+- On the approved real company's readout, a live re-run of its saved calls. Each fresh answer is saved beside the old copy and shown with the time it was read. The panel carries the room's synthetic label.
+
+**Done when:** the panel shows at least three competitors on the readout page, and every number's link opens its saved copy. On the approved real company, the live re-run shows each source with the time it was read, and with the network off it shows this week's saved copies with their dates.
+
+**Who:** frontend.
+
+**Hours:** 0.25 (inside the 2:30 to 3:30 PM polish hour).
+
+**Judgment:** no.
+
+### demo-freeze
+
+Integration, the score, the freeze and the rehearsal.
+
+**Waits on:** every slice above, and the agent slices that join them on Saturday.
+
+**Includes:**
+
+- The captain merges at the integration points and runs `bin/smoke` on both rooms.
+- `eval/score.py` reads the readout and the answer key and prints how many of the 8 planted entries were found and how many of the 3 decoys were wrongly flagged. The score goes on the page as one line, with the real number, even if it is 7 ([critique_demo.md](../features/20261022.01_hackathon_plan/critique_demo.md), finding 7).
+- The clean-room run: the readout on the plants-off room from [blind-room](#blind-room). `eval/score.py` prints how many flags it raised.
+- The variant run: at the 3:30 PM freeze the outside person sends the sealed key. The readout runs on the variant room, and `eval/score.py` prints the real numbers against that key. Nobody changes a check after the key opens.
+- The approved real company's room, run like Hollis Voice's, with its outside-world panel's live re-run tested on the network the demo will use.
+- The frozen outputs saved under `demo/frozen/` as the fallback for every step of the script, including the variant and clean runs, the real company's readout with this week's saved outside copies, and the last passing run of each agent slice shown on stage.
+- A `demo-freeze` git tag at 3:30 PM. After it, nothing merges except a fix for a crash found in rehearsal, and only on the captain's call.
+- The rehearsal: a three-minute core with a five-minute extension, from the beat sheet in [demo-script](#demo-script). At least two run-throughs, one of them on the backup laptop from the frozen files. The schedule gives 5:30 to 6:00 for every team's demo plus the winner, so the slot is likely three minutes or less (demo critique, finding 1).
+
+**Done when:** the three-minute core on the frozen build fits three minutes, the core plus the extension fits five, and the backup laptop can show every step from saved files.
+
+**Who:** captain. All four rehearse.
+
+**Hours:** 2.0 for the captain (1:00 to 1:30 PM and 2:00 to 3:30 PM), plus 0.75 for all four (3:30 to 4:15 PM).
+
+**Judgment:** n/a.
+
+### A steer on stage (a card)
+
+Ken's 1:12 PM and 1:15 PM comments let the operator steer the readout: an instruction on a piece rewrites it, or gets more info for it from new sources, with a visible diff ([steering](#steering)). An agent builds steering before Saturday, and it joins the readout and the readout page on Saturday. Whether the three-minute core shows one steer live (one piece rewritten from one instruction, such as "treat the pilot as non-recurring") is the overview page's card. It has no owner or hours in the table above, because the build is done before Saturday. Showing it costs demo seconds, not build hours.
+
+### The demo laptop
+
+From the buildability critique's finding 11 and the demo critique's "What else goes wrong live":
+
+- **The demo laptop is Ken's:** M2 Max, with ffmpeg, Python 3.13 and Node 20. Backend-and-data's laptop is the backup, on `demo/frozen/`.
+- **The live step runs script checks only.** They need no network. Panels that need a model (the memo's connecting sentences, the comp reasons, the contract-terms readings) show frozen output. Nothing on screen calls a model at render time. A live steer, if the card puts one on stage, is the exception: it calls a model and needs the network, and its fallback is a saved steer from `demo/frozen/`.
+- **Only the live beat needs the network.** The page and the frozen files are served from localhost, with no fonts or scripts from a CDN. The real company's outside-world panel needs venue wifi or the phone hotspot. Without either, it shows this week's saved copies with their dates, and Ken says so.
+- **Display.** Every laptop brings a USB-C to HDMI adapter. Rehearse at 1280 by 720 at 150% zoom.
+
+### Run of show
+
+| Time | captain | frontend | backend-and-data | design-and-finance | Integration point |
+|---|---|---|---|---|---|
+| 9:00 to 10:00 | Breakfast and team formation. Confirm roles and folders. Ask the organisers about the track change and the board's open questions (TRI-track-fix, TRI-ask-organisers). Ask Akta's people for a coupon. | Clone, install, run the Part 0 checks. | Clone, check whisper.cpp runs on the demo laptop. | Clone, open the data room, read the check list. | Every laptop has the `.env` keys and a USB-C to HDMI adapter. |
+| 10:00 to 10:20 | Organisers' intros and demos. Note any sponsor offer. | Listen. | Listen. | Listen. | |
+| 10:20 to 10:30 | Read this table aloud. Name the demo fallback order. | Huddle. | Huddle. | Huddle. | |
+| 10:30 to 11:30 | claim-result: quote checker, against the readers stub. At 11:00, post the first social post. | readout-page on the example files. | readers. | redflag-engine: pure checks on the CSVs and the model. | |
+| 11:30 | Merge the readers and the quote checker. | Pull. | Pull. | Pull. | **1. Readers merged.** If they are late, the memo's model pass shows saved output on stage. |
+| 11:30 to 12:30 | readout: memo. | readout-page. | pitch-video. | redflag-engine: the deck's claims page by regex, the green-flag cells, and the seed drop. | |
+| 12:30 to 1:00 | Lunch at desks. | Lunch. | Lunch. | Lunch. | |
+| 1:00 to 1:30 | demo-freeze: merge, first full run on the seed drop. | readout-page on real outputs. | pitch-video. | redflag-engine: the full room. | **2. First end-to-end run.** If the red-flag engine does not find the seed drop's flags, backend-and-data pairs with design-and-finance after the video slice, and contract-terms-saturday falls back if the pairing runs past 2:30. |
+| 1:30 to 2:00 | readout: finish the piece verdicts, the top green and red flags, conflicts and corroborations, and the ask list. | readout-page: in-page source panels. | pitch-video. | redflag-engine: the clean room. | |
+| 2:00 to 2:30 | demo-freeze: score script, frozen outputs. | readout-page: source panels and video jump. | pitch-video. | comps. | |
+| 2:30 | Run the full room, the clean room and the approved real company's room, read the score. | | | | **3. Fallback call.** Whatever is not producing claims shows saved results on stage, in the demo fallback order. Nothing is dropped from the build. The agent slices that joined today run on the full room. |
+| 2:30 to 3:30 | demo-freeze. | readout-page polish: the ask list's copy button and the reorder buttons, and the market-signals panel with its live run on the approved real company. | contract-terms-saturday. | comps. | |
+| 3:30 | Tag `demo-freeze`. Post the second social post. The outside person sends the variant room's key. | | | | **4. Demo freeze.** |
+| 3:30 to 4:15 | Rehearse, presenting: the three-minute core, then the five-minute extension. | Rehearse, driving the laptop. | Rehearse on the backup laptop. | Rehearse, ready for numbers questions. | Two run-throughs. |
+| 4:15 to 4:30 | Fresh runs on the variant room and the clean room, close tabs. | Page ready on all rooms. Test the live outside panel on the approved real company on the demo network. | Backup laptop on the frozen files, including the variant and clean runs. | Answer key scores checked for the full room and the variant room. | |
+| 4:30 to 5:30 | Judging: presents. | Drives. | Backup. | Answers questions on the numbers. | |
+| 5:30 to 6:00 | Demos and the winner: presents. | Drives. | Backup. | Ready. | |
+
+**Who presents:** the captain. The frontend drives the readout page. Backend-and-data holds the backup laptop with the frozen files. Design-and-finance answers questions on the numbers. For the $150 social content prize, the captain posts at 11:00 and 3:30 only, from this week's drafts ([social-posts](#social-posts)), in the voice of [BRAND.md](BRAND.md).
+
+### Demo fallback order
+
+Nobody drops a feature because the day runs long. This list says what the demo skips, or shows from saved results, when a piece is not working at the 2:30 PM fallback call or the 3:30 PM freeze. The piece is still built; it just does not run live in the three minutes. The order is the feasibility research's demo-value ranking reversed (red-flag engine, readout, pitch video, comps, market signals), with the memo's model pass first, because the script's top flags, pieces and verdicts carry the demo on their own ([critique_buildability.md](../features/20261022.01_hackathon_plan/critique_buildability.md), notes):
+
+1. **The memo's model pass.** The readout shows its script-set top flags, pieces and verdicts without the connecting sentences.
+2. **Market signals.** The panel shows this week's saved readings. If the panel itself is not working, the demo skips it.
+3. **Comps.** The panel shows the cached comp list without the live ranking, or the demo skips it.
+4. **Contract terms** (contract-terms-saturday). The pilot flag still shows from the engine's script check, without clause quotes.
+5. **Pitch video.** The demo plays the captioned clip and shows this week's saved transcript and claims, which the feasibility research already plans as the fallback.
+6. **An agent slice that joined today.** Steering, the memo export, the outside-in tabs, the bank check and the rest each show their last passing run from `demo/frozen/`, or the demo skips them.
+
+The red-flag engine, the readout and the readout page are always shown; they are the demo. Inside the readout page, the reorder buttons fall back first, to the default order; the ask list and its copy button stay. When a piece falls back, its owner pairs with the owner of the slice that is behind, in that owner's folder and branch, so pairing never causes a merge conflict.

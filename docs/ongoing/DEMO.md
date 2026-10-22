@@ -65,6 +65,6 @@ The beat sheet follows each card's recommendation.
 - **The first screen:** the top flags, then the overview ([card](../features/20261022.01_hackathon_plan/00_overview.md#the-demo-opening)).
 - **Proof the checks are not fitted:** the sealed variant plus the clean room ([card](../features/20261022.01_hackathon_plan/00_overview.md#the-blind-room)).
 - **The score:** one line, the real number ([card](../features/20261022.01_hackathon_plan/00_overview.md#the-score-on-stage)).
-- **A steer on stage:** after Saturday, named in the "next" line ([card](../features/20261022.01_hackathon_plan/00_overview.md#steering-on-stage)).
-- **A bank check:** after Saturday. The cheap option: a labelled sample statement showing where the account plugs in ([card](../features/20261022.01_hackathon_plan/00_overview.md#a-bank-check-on-stage)).
+- **A steer on stage:** steering is built by Saturday. The core names it in the closing line; a live steer is the card's other option ([card](../features/20261022.01_hackathon_plan/00_overview.md#steering-on-stage)).
+- **A bank check:** built by Saturday, on Plaid's sandbox or, if that is not working, a labelled sample statement showing where the account plugs in. The core names it in the closing line. Showing it live is an option on the card ([card](../features/20261022.01_hackathon_plan/00_overview.md#a-bank-check-on-stage)).
 - **Green flags in Hollis Voice:** drop the concentration flag so customers reads strong, which also changes the 3:30 line ([card](../features/20261022.01_hackathon_plan/00_overview.md#green-flags-in-the-demo-room)).

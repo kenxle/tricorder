@@ -54,7 +54,7 @@ The table has no column for accelerator applications. Its pre-seed column is the
 
 - The readout pulls the deck's claims.
 - The pitch video scan checks what the founder says against the deck.
-- The founder profiles and online presence scans read the people and the footprint. Both are after-Saturday scans ([PRODUCT_BRIEF.md](PRODUCT_BRIEF.md), "The scans").
+- The founder profiles and online presence scans read the people and the footprint. Agents build both before Saturday ([FEATURES.md](FEATURES.md#the-scans)).
 - Market signals reads the outside world.
 
 The red-flag engine has little to read at this stage, so the readout's gap list matters as much as its flags.
@@ -118,7 +118,7 @@ The red-flag engine has little to read at this stage, so the readout's gap list 
 
 **Why it failed them.** The home-built screener worked in part: staff still read the share it labelled for review (row 61). A screener sorts applications. It does not check whether an applicant's numbers agree with each other.
 
-**The moment Tricorder solves it.** After Saturday. A batch of applications, each with a deck, comes back as a stack of short readouts. Each opens on its best green flags and worst red flags, then its overview of strong and weak pieces, so a screener sees in a minute whose numbers hold together.
+**The moment Tricorder solves it.** A batch of applications, each with a deck, comes back as a stack of short readouts. Each opens on its best green flags and worst red flags, then its overview of strong and weak pieces, so a screener sees in a minute whose numbers hold together.
 
 **The proof we can show.** None yet beyond the demo room. Early applicants send thin material. A pre-seed partner: "As a VC who invests in Pre-Seed startups, often the data that we get from startups has pretty much nothing." ([pre-seed partner, early 2021, inferred](https://sacra.com/p/elizabeth-yin-hustlefund-interview/)). So the readout's gap list matters as much as its flags.
 

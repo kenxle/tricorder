@@ -5,11 +5,11 @@ For every row it confirms:
   - every link is an in-page anchor that matches a slice heading in the file;
   - the "When it is built" column names the horizon of each linked slice, in
     link order, with repeats next to each other collapsed
-    (for example "Saturday, then After").
+    (for example "Now to Friday night, then Saturday").
 
 A slice is a level-3 heading whose name is lowercase words joined by hyphens
 and whose section has a "**Who:**" line. Its horizon is the level-2 section it
-sits under: "This week", "Saturday" or "After".
+sits under: "Now to Friday night" or "Saturday".
 
 Run: python3 docs/features/20261022.01_hackathon_plan/check_asks_table.py
 Exits 0 when every row passes, 1 otherwise.
@@ -27,12 +27,10 @@ LINK = re.compile(r"\]\(#([^)]+)\)")
 
 def horizon_for(h2):
     text = h2.lower()
-    if text.startswith("this week"):
-        return "This week"
+    if text.startswith("now to friday night"):
+        return "Now to Friday night"
     if text.startswith("saturday"):
         return "Saturday"
-    if text.startswith("after saturday"):
-        return "After"
     return None
 
 

@@ -20,7 +20,7 @@
 - **Labels, never probabilities.** Each entry scores itself with a short set of labels, and each label has a written rule. No entry outputs a number that pretends to be a probability. No entry says invest or pass.
 - **Hollis Voice is the worked example.** The fictional company in the synthetic data room carries eight planted entries and three clean decoys. The table under "Where each planted flag is caught" maps each one to the entry that must catch it.
 - **The readout opens on the best green flags and the worst red flags, then the overview.** Two script entries under [The readout](#the-readout-saturday) group every claim into nine pieces of the company, mark each piece looking strong, looking weak, mixed or not enough in the room, and pick the headline flags. Every Saturday entry names the piece its claims feed.
-- **What runs on Saturday follows the roadmap.** On Saturday the red-flag engine runs as scripts, the comp builder ranks cached filings, market signals show this week's saved competitor readings, the pitch video becomes claims, and the readout builds the pieces, the top flags and the ask list. Some entries inside those scans run only after Saturday. Business frameworks, founder profiles and online presence come after Saturday. The table under "When each entry runs" gives every entry's horizon and its roadmap slice.
+- **What runs on Saturday follows the roadmap.** On Saturday the red-flag engine runs as scripts, the comp builder ranks cached filings, market signals show this week's saved competitor readings, the pitch video becomes claims, and the readout builds the pieces, the top flags and the ask list. Agents build the other entries inside those scans from now to Friday night, and they join the Saturday scans on the day. Business frameworks, founder profiles and online presence are built from now to Friday night too. Everything here is built by the end of Saturday. The table under "When each entry runs" gives every entry's horizon and its roadmap slice.
 
 ## How every entry works
 
@@ -34,7 +34,7 @@
 
 ### The shared Claim
 
-Every output shape below builds on the Claim, Source, Value, Check and Gap in [ARCHITECTURE.md](ARCHITECTURE.md) ("The Claim schema"). This is the same model written as JSON Schema, so it can go straight into a model call. The schemas follow the limits of Claude's structured outputs: every object sets `additionalProperties` to `false`, and there are no numeric or length limits, because the API rejects them ([structured outputs](../reports/20261022.02_research/raw/feasibility/claude_api/build-with-claude_structured-outputs.md), section "JSON Schema limitations"). Citations cannot be combined with structured output, so each claim carries its own quote and locator instead ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), Summary and 1.8).
+Every output shape below builds on the Claim, Source, Value, Check and Gap in [ARCHITECTURE.md](ARCHITECTURE.md). This is the same model written as JSON Schema, so it can go straight into a model call. The schemas follow the limits of Claude's structured outputs: every object sets `additionalProperties` to `false`, and there are no numeric or length limits, because the API rejects them ([structured outputs](../reports/20261022.02_research/raw/feasibility/claude_api/build-with-claude_structured-outputs.md), section "JSON Schema limitations"). Citations cannot be combined with structured output, so each claim carries its own quote and locator instead ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), Summary and 1.8).
 
 Paste this `$defs` block into every entry's schema before use. It belongs in `schema/`, beside the Pydantic models.
 
@@ -115,7 +115,7 @@ Paste this `$defs` block into every entry's schema before use. It belongs in `sc
         "claim_ids": {"type": "array", "items": {"type": "string"}, "description": "Every claim in the piece, for the drill-down."},
         "corroborating_sources": {"type": "integer"},
         "contradicting_sources": {"type": "integer"},
-        "status": {"type": "string", "enum": ["done", "running", "waiting_on_input"], "description": "The progressive readout after Saturday. On Saturday always 'done'."},
+        "status": {"type": "string", "enum": ["done", "running", "waiting_on_input"], "description": "The progressive readout, from the inbound-unasked slice. A readout run from a whole room is always 'done'."},
         "waiting_on": {"type": "array", "items": {"type": "string"}, "description": "Inputs the piece still needs, such as 'financial model'. Empty on Saturday."}
       }
     },
@@ -141,8 +141,8 @@ Paste this `$defs` block into every entry's schema before use. It belongs in `sc
         "piece": {"type": "string", "enum": ["traction_and_revenue", "retention", "burn_and_runway", "unit_economics", "customers", "market", "comps", "team", "the_pitch_itself"]},
         "from_kind": {"type": "string", "enum": ["gap", "weak_piece", "checklist"]},
         "claim_ids": {"type": "array", "items": {"type": "string"}, "description": "Claims or gaps it would settle."},
-        "checklist_id": {"anyOf": [{"type": "string"}, {"type": "null"}], "description": "For example 'C29', when the line comes from a missing checklist item. After Saturday."},
-        "if_you_have_it": {"type": "boolean", "description": "True when the item is only 'lighter' at the company's stage. After Saturday."}
+        "checklist_id": {"anyOf": [{"type": "string"}, {"type": "null"}], "description": "For example 'C29', when the line comes from a missing checklist item. Set by the checklist-coverage slice."},
+        "if_you_have_it": {"type": "boolean", "description": "True when the item is only 'lighter' at the company's stage. Set by the checklist-coverage slice."}
       }
     }
   }
@@ -151,7 +151,7 @@ Paste this `$defs` block into every entry's schema before use. It belongs in `sc
 
 Three conventions the entries rely on:
 
-- **`Value.label` is a fixed key.** The memo links two claims when their label, unit and period match and their numbers differ by more than the tolerance ([ARCHITECTURE.md](ARCHITECTURE.md), "How the readout merges them"). A fixed list of keys makes that match work across the deck, the model and the video.
+- **`Value.label` is a fixed key.** The memo links two claims when their label, unit and period match and their numbers differ by more than the tolerance ([ARCHITECTURE.md](ARCHITECTURE.md)). A fixed list of keys makes that match work across the deck, the model and the video.
 - **Percents are percent points.** 80% is stored as `{"number": 80, "unit": "percent"}`.
 - **Every claim has at least one source.** A missing input is a Gap, not a claim. The quote checker drops any claim with no sources.
 - **`corroborated_by` mirrors `conflicts_with`.** The memo fills both. It links two claims as corroborating when they match on label, unit and period, agree within the tolerance, and come from independent sources (see "Piece verdicts"). A scan leaves both empty.
@@ -296,7 +296,7 @@ Some worked examples also show arithmetic on those figures: a gap, a ratio, a sh
 | DC1 Onboarding fee excluded correctly (second check) | 1.12 kind h must not flag it | `one_time_fees_in_recurring_metrics` | Yes |
 | No planted entry: contractors | 1.12 kind e returns clear with a gap | `contractor_spend_vs_headcount_and_burn` | No, the ledger is in the full room |
 | No planted entry: capitalised costs | 1.12 kind f returns clear with a gap | `capitalised_spend_vs_pnl_and_cash` | No, the ledger is in the full room |
-| No planted entry: gross against net revenue | 1.12 kind c, after Saturday | `gross_vs_net_revenue` | Not run |
+| No planted entry: gross against net revenue | 1.12 kind c, from now to Friday night | `gross_vs_net_revenue` | Not run |
 | PF1 Pilot booked as ARR, third read from the pilot agreement | 1.13 checks 1, 2 and 3 | `cancellable_within_notice_vs_arr`, `pilot_without_duty_to_convert_vs_recurring`, `plan_revenue_past_term_end` | No, the pilot agreement is in the full room |
 | DC2 Annual prepay, the Brookline Row order form (third check) | 1.13 must not flag it | all six 1.13 check names | No, the order form is in the full room |
 | PF5 Customer concentration, the Cedar & Pine order form | 1.13 returns clear on it, with its terms as info claims | `cancellable_within_notice_vs_arr`, `contract_price_vs_counted_price` | No, the order form is in the full room |
@@ -304,7 +304,7 @@ Some worked examples also show arithmetic on those figures: a gap, a ratio, a sh
 
 The check names are the ones the answer key's `check` field and the test in [ARCHITECTURE.md](ARCHITECTURE.md) match on. `arr_from_subscription_rows` is the data-room research's own example name (3.6). The other seven in the key are the names `data_room/generate.py` writes. Only `cap_table_reconcile` (DC3, a decoy with no `check` in the key) is set here. The seed-drop column for the flags is the key's `catchable_from_seed_drop`. For the decoys it follows from the key's `seed_drop_files`: the cap table is in the seed drop and the Brookline Row order form is not.
 
-On Saturday the first eleven rows run: the eight planted entries and the three decoys, through the red-flag engine's scripts and, for PF2b, the readout. The rows for entry 1.12's second checks run after Saturday, as "When each entry runs" says. Entry 1.13's rows run on Saturday through checks 1, 2 and 5, in the roadmap's contract-terms-saturday slice. Its checks 3, 4 and 6 run after Saturday.
+On Saturday the first eleven rows run: the eight planted entries and the three decoys, through the red-flag engine's scripts and, for PF2b, the readout. The rows for entry 1.12's second checks are built from now to Friday night, as "When each entry runs" says, and run on the rooms on Saturday. Entry 1.13's rows run on Saturday through checks 1, 2 and 5, in the roadmap's contract-terms-saturday slice. Its checks 3, 4 and 6 are built from now to Friday night in the contract-terms slice.
 
 ### The parts of every entry
 
@@ -312,37 +312,37 @@ Each entry has exactly seven parts, in this order: **Inputs**, **The questions i
 
 ### When each entry runs
 
-The roadmap decides what is built on Saturday ([ROADMAP.md](ROADMAP.md)). On Saturday the red-flag engine is scripts only. The model reads customer contracts (entry 1.13, in the contract-terms-saturday slice, fourth in the cut order), writes the memo's connecting sentences (first in the cut order) and writes the comp reasons. This table follows the roadmap. Where it and a section heading below seem to differ, this table is right.
+The roadmap decides what is built when ([ROADMAP.md](ROADMAP.md)). Every entry is built by the end of Saturday: agents build some from now to Friday night, and the team builds the rest on Saturday. On Saturday the red-flag engine is scripts only. The model reads customer contracts (entry 1.13, in the contract-terms-saturday slice, fourth in the demo fallback order), writes the memo's connecting sentences (first in the demo fallback order) and writes the comp reasons. This table follows the roadmap. Where it and a section heading below seem to differ, this table is right.
 
 | Entry | When | Roadmap slice |
 |---|---|---|
-| 1.1 Deck claim extraction | Saturday: the claims page (slide 14) by regex, with `claims.json` as the fallback. The model reading of the other slides is after Saturday. | redflag-engine |
+| 1.1 Deck claim extraction | Saturday: the claims page (slide 14) by regex, with `claims.json` as the fallback. The model reading of the other slides: now to Friday night. | redflag-engine, claim-support |
 | 1.2 ARR definition check | Saturday: the script. The model reads the pilot agreement on Saturday with entry 1.13's prompt. | redflag-engine, contract-terms-saturday |
-| 1.3 Cohort retention rebuild | Saturday: the script. The model's reading of the cohort note is after Saturday. | redflag-engine, financial-model |
+| 1.3 Cohort retention rebuild | Saturday: the script. The model's reading of the cohort note: now to Friday night. | redflag-engine, financial-model |
 | 1.4 Burn against the hiring plan and runway | Saturday: the script | redflag-engine |
 | 1.5 Deck-against-model reconciliation | Saturday: the script, on the claims page's rows and the named cells | redflag-engine |
 | 1.6 Customer concentration | Saturday: the script | redflag-engine |
 | 1.7 Gross margin composition | Saturday: the script | redflag-engine |
 | 1.8 Vanity metric check | Saturday: the script | redflag-engine |
-| 1.9 Unit economics recompute | After Saturday | financial-model |
-| 1.10 Cap table reconciliation | Saturday: the sum and round check, which also reads the cells behind the round's green flag. The model reading is after Saturday. | redflag-engine |
-| 1.11 What the room cannot settle | After Saturday | checklist-coverage |
-| 1.12 Accounting mislabels | Saturday: kinds a and d, through entries 1.2 and 1.7. After Saturday: the `mrr` column check and kinds b, c, e, f, g and h. | redflag-engine, accounting-mislabels |
-| 1.13 Contract terms | Saturday: the model reads every contract in both demo rooms, and the script runs checks 1, 2 and 5 (notice against ARR, pilot without duty to convert, contract price against counted price). Fourth in the cut order. After Saturday: checks 3, 4 and 6, the exclusivity, most-favoured-customer and change-of-control clauses, and contracts beyond the room's. | contract-terms-saturday, contract-terms |
+| 1.9 Unit economics recompute | Now to Friday night | financial-model |
+| 1.10 Cap table reconciliation | Saturday: the sum and round check, which also reads the cells behind the round's green flag. The model reading: now to Friday night. | redflag-engine, checklist-coverage |
+| 1.11 What the room cannot settle | Now to Friday night | checklist-coverage |
+| 1.12 Accounting mislabels | Saturday: kinds a and d, through entries 1.2 and 1.7. Now to Friday night: the `mrr` column check and kinds b, c, e, f, g and h. | redflag-engine, accounting-mislabels |
+| 1.13 Contract terms | Saturday: the model reads every contract in both demo rooms, and the script runs checks 1, 2 and 5 (notice against ARR, pilot without duty to convert, contract price against counted price). Fourth in the demo fallback order. Now to Friday night: checks 3, 4 and 6, the exclusivity, most-favoured-customer and change-of-control clauses, and contracts beyond the room's. | contract-terms-saturday, contract-terms |
 | 2.1 Public comps from EDGAR | Saturday, from this week's cached filings. The "why fair" sentence shows as frozen output. | comps |
 | 2.2 Recent private rounds | Saturday, from this week's cached Form D files | comps |
-| 3.1 Hiring, web traffic and reviews | This week, for competitors, saved as readings. Saturday shows them as a static panel. The company's own signals are after Saturday. | signals-readings, market-signals, outside-in |
+| 3.1 Hiring, web traffic and reviews | This week, for competitors, saved as readings. Saturday shows them as a static panel. The company's own signals: now to Friday night. | signals-readings, market-signals, outside-in |
 | 3.2 Pricing changes and customer wins | As 3.1 | signals-readings, market-signals, outside-in |
 | 4.1 Claim extraction with timestamps | Saturday | pitch-video |
-| 4.2 Interesting moments | After Saturday | video-moments |
+| 4.2 Interesting moments | Now to Friday night | video-moments |
 | 4.3 Three-way disagreement check | Saturday, in the readout | readout |
 | Piece verdicts | Saturday | readout |
 | Top green and red flags | Saturday | readout |
 | Ask list | Saturday | readout, readout-page |
-| Checklist coverage | After Saturday | checklist-coverage |
-| 5.1 to 5.6 Business frameworks | After Saturday | frameworks-scan; 1.9 and 5.6 also feed financial-model |
-| 6.1 and 6.2 Founder profiles | After Saturday | founder-profiles |
-| 7.1 and 7.2 Online presence | After Saturday | online-presence, outside-in |
+| Checklist coverage | Now to Friday night | checklist-coverage |
+| 5.1 to 5.6 Business frameworks | Now to Friday night | frameworks-scan; 1.9 and 5.6 also feed financial-model |
+| 6.1 and 6.2 Founder profiles | Now to Friday night | founder-profiles |
+| 7.1 and 7.2 Online presence | Now to Friday night | online-presence, outside-in |
 
 ---
 
@@ -352,7 +352,7 @@ The organisers' first direction: "churn hidden in cohort charts, revenue counted
 
 Entry 1.1 runs before all of them. It turns the deck into claims the other entries check.
 
-On Saturday this scan is scripts only. Entries 1.9 and 1.11, the model readings other than the contract terms, most of 1.12 and checks 3, 4 and 6 of 1.13 come after Saturday ("When each entry runs").
+On Saturday this scan is scripts only. Entries 1.9 and 1.11, the model readings other than the contract terms, most of 1.12 and checks 3, 4 and 6 of 1.13 are built by agents from now to Friday night, and join the scan on Saturday ("When each entry runs").
 
 ### 1.1 Deck claim extraction
 
@@ -1520,7 +1520,7 @@ Its claims feed the overview's **the pitch itself** piece ([The readout](#the-re
 
 The regret stories investors tell in public are mostly about documents that were made up. An angel lost money to a founder who kept two sets of books, one made up for investors. A 2026 fraud case put forged bank statements in a data room. A SaaS investor says the bank check usually waits until after the term sheet ([research_voice_of_customer.md](../reports/20261022.02_research/research_voice_of_customer.md), section 2, rows 14, 50, 51 and 64). Every file in a data room comes from the founder. So no check on those files can rule this out. This entry says so, and says what to ask for.
 
-It runs after Saturday, in the roadmap's checklist-coverage slice. On Saturday the ask list is built from the scans' gaps and the weak pieces only (see "Ask list"). The roadmap's bank-check slice adds a live check of deposits against revenue, with the founder's consent, after Saturday.
+An agent builds it from now to Friday night, in the roadmap's checklist-coverage slice. Without it, the ask list is built from the scans' gaps and the weak pieces only (see "Ask list"). The roadmap's bank-check slice, also built from now to Friday night, adds a live check of deposits against revenue, with the founder's consent.
 
 **Inputs**
 
@@ -1627,16 +1627,16 @@ A mislabel is a number filed under a label it does not earn. The organisers name
 
 | Kind | Label claimed | What the number really is | File and column a script reads | Check name | Scope | Feeds the piece |
 |---|---|---|---|---|---|---|
-| a. Non-recurring revenue as ARR or MRR | ARR, MRR | A pilot, a one-time fee, services or a usage fee | `customer_mrr_by_month.csv` columns `product_type`, `mrr`; `monthly_metrics.csv` column `mrr` | `arr_from_subscription_rows` (entry 1.2), `mrr_column_vs_subscription_rows` | Saturday for entry 1.2; the `mrr` column check after Saturday | traction and revenue |
-| b. Bookings or billings as revenue | Revenue, ARR | Contract value signed, or cash invoiced | `customer_mrr_by_month.csv` columns `billings`, `mrr`; model `P&L` row "Subscription revenue" | `billings_vs_recognised_revenue` | After Saturday | traction and revenue |
-| c. GMV or pass-through as revenue | Revenue | The whole value of the transactions, or money collected and paid on | A revenue export with a volume or pass-through column; ledger lines paid on at cost | `gross_vs_net_revenue` | After Saturday | traction and revenue |
+| a. Non-recurring revenue as ARR or MRR | ARR, MRR | A pilot, a one-time fee, services or a usage fee | `customer_mrr_by_month.csv` columns `product_type`, `mrr`; `monthly_metrics.csv` column `mrr` | `arr_from_subscription_rows` (entry 1.2), `mrr_column_vs_subscription_rows` | Saturday for entry 1.2; the `mrr` column check from now to Friday night | traction and revenue |
+| b. Bookings or billings as revenue | Revenue, ARR | Contract value signed, or cash invoiced | `customer_mrr_by_month.csv` columns `billings`, `mrr`; model `P&L` row "Subscription revenue" | `billings_vs_recognised_revenue` | Now to Friday night | traction and revenue |
+| c. GMV or pass-through as revenue | Revenue | The whole value of the transactions, or money collected and paid on | A revenue export with a volume or pass-through column; ledger lines paid on at cost | `gross_vs_net_revenue` | Now to Friday night | traction and revenue |
 | d. Cost of revenue as operating expense | R&D, S&M or G&A cost | A cost of delivering the product | `expense_ledger.csv` columns `category`, `booked_as` | `gross_margin_from_ledger` (entry 1.7) | Saturday | unit economics |
-| e. Contractors left out of headcount and burn | Headcount, burn | People and spend outside the staff count and the P&L | `expense_ledger.csv` columns `vendor`, `description`, `amount_usd`; model `P&L` totals; `STAFF_NOW` | `contractor_spend_vs_headcount_and_burn` | After Saturday | burn and runway, team |
-| f. Capitalised costs off the P&L | Expense, burn | Cash spent and recorded as an asset | `expense_ledger.csv` columns `booked_as`, `category`; model `P&L` totals; `Cash_Bridge` | `capitalised_spend_vs_pnl_and_cash` | After Saturday | burn and runway |
-| g. Deferred revenue as earned | Revenue, ARR | Cash or an invoice for service not yet delivered | `customer_mrr_by_month.csv` columns `billings`, `mrr`, `one_time_fee`; model `ARR_Build` | `deferred_revenue_vs_earned` | After Saturday | traction and revenue |
-| h. One-time fees in recurring metrics | MRR, ARR, "recurring revenue" | A setup or onboarding fee paid once | `customer_mrr_by_month.csv` columns `product_type`, `one_time_fee`; `monthly_metrics.csv` column `mrr`; model `ARR_Build` | `one_time_fees_in_recurring_metrics` | After Saturday | traction and revenue |
+| e. Contractors left out of headcount and burn | Headcount, burn | People and spend outside the staff count and the P&L | `expense_ledger.csv` columns `vendor`, `description`, `amount_usd`; model `P&L` totals; `STAFF_NOW` | `contractor_spend_vs_headcount_and_burn` | Now to Friday night | burn and runway, team |
+| f. Capitalised costs off the P&L | Expense, burn | Cash spent and recorded as an asset | `expense_ledger.csv` columns `booked_as`, `category`; model `P&L` totals; `Cash_Bridge` | `capitalised_spend_vs_pnl_and_cash` | Now to Friday night | burn and runway |
+| g. Deferred revenue as earned | Revenue, ARR | Cash or an invoice for service not yet delivered | `customer_mrr_by_month.csv` columns `billings`, `mrr`, `one_time_fee`; model `ARR_Build` | `deferred_revenue_vs_earned` | Now to Friday night | traction and revenue |
+| h. One-time fees in recurring metrics | MRR, ARR, "recurring revenue" | A setup or onboarding fee paid once | `customer_mrr_by_month.csv` columns `product_type`, `one_time_fee`; `monthly_metrics.csv` column `mrr`; model `ARR_Build` | `one_time_fees_in_recurring_metrics` | Now to Friday night | traction and revenue |
 
-Saturday means the roadmap's Saturday red-flag engine runs it: kinds a and d, through entries 1.2 and 1.7, and nothing else in this entry. The Hollis Voice room also holds the data for the `mrr` column check and kinds b, e, f, g and h, but the red-flag engine's Saturday hours are full, so the roadmap's [accounting-mislabels](ROADMAP.md#accounting-mislabels) slice builds them after Saturday. Kind c has nothing in the room to run on.
+Saturday means the roadmap's Saturday red-flag engine runs it: kinds a and d, through entries 1.2 and 1.7, and nothing else in this entry. The Hollis Voice room also holds the data for the `mrr` column check and kinds b, e, f, g and h, and an agent builds them from now to Friday night in the roadmap's [accounting-mislabels](ROADMAP.md#accounting-mislabels) slice, outside the red-flag engine's Saturday hours. Kind c has nothing in the room to run on.
 
 **Inputs**
 
@@ -1670,7 +1670,7 @@ ledger_total(t) = SUM(amount_usd) over expense_ledger.csv rows where month = t
 tie_gap(t)      = ledger_total(t) − ( P&L "Total cost of revenue"(t) + P&L "Total operating expenses"(t) )
 ```
 
-**a. Non-recurring revenue counted as ARR or MRR (the ARR side Saturday, through entry 1.2; the `mrr` column after Saturday).** The ARR side is entry 1.2 and its check `arr_from_subscription_rows`. It is not repeated here. This entry adds the `mrr` column, which investors read as often as the ARR line. Check name: `mrr_column_vs_subscription_rows`.
+**a. Non-recurring revenue counted as ARR or MRR (the ARR side Saturday, through entry 1.2; the `mrr` column from now to Friday night).** The ARR side is entry 1.2 and its check `arr_from_subscription_rows`. It is not repeated here. This entry adds the `mrr` column, which investors read as often as the ARR line. Check name: `mrr_column_vs_subscription_rows`.
 
 ```
 mrr_subscription(t) = SUM(mrr) over customer_mrr_by_month.csv rows
@@ -1683,7 +1683,7 @@ flag month t if mrr_gap(t) ÷ mrr_subscription(t) > match_tolerance
 - The $15,000 is the Marlow Veterinary Group pilot's monthly fee (customer C0219, `product_type` Pilot, `mrr` 15,000 in 2026-08 and 2026-09). It is the same pilot as PF1 (pilot booked as ARR). The readout shows this claim beside the ARR claim. They have one cause.
 - Missing file: with the customer file absent, read the `Product type` column of `ARR_Build` in the model. If that is missing too, return the gap "Not in the room: a revenue export by product type".
 
-**b. Bookings or billings shown as revenue (after Saturday; the room has the data).** Claimed: revenue. Really: contract value signed (bookings) or cash invoiced (billings). Check name: `billings_vs_recognised_revenue`.
+**b. Bookings or billings shown as revenue (from now to Friday night; the room has the data).** Claimed: revenue. Really: contract value signed (bookings) or cash invoiced (billings). Check name: `billings_vs_recognised_revenue`.
 
 ```
 revenue_file(t)  = SUM(mrr)      over rows where month = t AND product_type = "Subscription"
@@ -1701,7 +1701,7 @@ The same test runs on the as-of month for ARR: flag if `ARR_TOTAL` ÷ 12 sits ne
 - Result: `clear`. No claim for June or for Brookline Row. A claim there is a false positive.
 - Missing file: `billings` and the customer file are not in the seed drop. Return the gap "Not in the room: an invoices or billings export" and the label `cannot_check`.
 
-**c. Gross merchandise value or pass-through money shown as revenue (after Saturday).** Claimed: revenue. Really: the whole value of transactions that pass through the company (GMV), or money collected for others and paid on (pass-through). What the company keeps is the net. Check name: `gross_vs_net_revenue`.
+**c. Gross merchandise value or pass-through money shown as revenue (from now to Friday night).** Claimed: revenue. Really: the whole value of transactions that pass through the company (GMV), or money collected for others and paid on (pass-through). What the company keeps is the net. Check name: `gross_vs_net_revenue`.
 
 ```
 pass_through(t) = SUM of revenue lines whose product_type is a resale or pass-through type,
@@ -1722,7 +1722,7 @@ The model also reads the deck for a figure labelled GMV, volume, gross bookings 
 - Hollis Voice: in 2026-09 the ledger has delivery costs booked outside cost of revenue. Hosting and model inference of $20,541.29 are booked as R&D. Support staff of $20,266.67 are booked as S&M.
 - The deck and the model show a gross margin of 80%. With every delivery cost in, it is 58.1% (PF6, gross margin leaves out delivery costs).
 
-**e. Contractors left out of headcount and burn (after Saturday; the room has the data).** Claimed: a staff count and a burn. Really: people paid as contractors whose cost or presence is not in either. Check name: `contractor_spend_vs_headcount_and_burn`.
+**e. Contractors left out of headcount and burn (from now to Friday night; the room has the data).** Claimed: a staff count and a burn. Really: people paid as contractors whose cost or presence is not in either. Check name: `contractor_spend_vs_headcount_and_burn`.
 
 ```
 contractor_lines    = ledger rows whose description or category contains
@@ -1741,7 +1741,7 @@ The tie-out shows that the P&L matches the ledger. It does not show that the led
 - Missing file: with no ledger, return `cannot_check` and the gap "Not in the room: an expense ledger".
 - The staff-count claim feeds the team piece (value label `headcount`). The spend and burn claims feed burn and runway.
 
-**f. Capitalised costs that keep spend off the P&L (after Saturday; the room has the data).** Claimed: a smaller expense and a smaller burn. Really: cash spent and recorded as an asset. Check name: `capitalised_spend_vs_pnl_and_cash`.
+**f. Capitalised costs that keep spend off the P&L (from now to Friday night; the room has the data).** Claimed: a smaller expense and a smaller burn. Really: cash spent and recorded as an asset. Check name: `capitalised_spend_vs_pnl_and_cash`.
 
 ```
 capitalised(t)  = SUM(amount_usd) of ledger rows whose booked_as or category names an asset:
@@ -1758,7 +1758,7 @@ flag if capitalised(t) ÷ ledger_total(t) > match_tolerance,
 - Result: `clear`, with that gap.
 - The check reports the amount and where it sits. Whether the treatment is allowed is for the investor's accountant, so the claim text does not say it is wrong.
 
-**g. Deferred revenue counted as earned (after Saturday; the room has the data).** Claimed: revenue or ARR for the period. Really: cash or an invoice for service not yet delivered. Check name: `deferred_revenue_vs_earned`.
+**g. Deferred revenue counted as earned (from now to Friday night; the room has the data).** Claimed: revenue or ARR for the period. Really: cash or an invoice for service not yet delivered. Check name: `deferred_revenue_vs_earned`.
 
 ```
 deferred(t) = SUM over customers of
@@ -1775,7 +1775,7 @@ The second test also catches a multi-year contract counted at its full value in 
 - Result: `clear`. No claim for the Brookline prepay (DC2).
 - Missing file: with no balance sheet in the room, the script rebuilds the balance from the `billings` column, as above. The gap is "Not in the room: a balance sheet with a deferred revenue line". With no customer file, return `cannot_check`.
 
-**h. One-time fees counted in recurring metrics (after Saturday; the room has the data).** Claimed: MRR, ARR or "recurring revenue". Really: a setup or onboarding fee paid once. Check name: `one_time_fees_in_recurring_metrics`.
+**h. One-time fees counted in recurring metrics (from now to Friday night; the room has the data).** Claimed: MRR, ARR or "recurring revenue". Really: a setup or onboarding fee paid once. Check name: `one_time_fees_in_recurring_metrics`.
 
 ```
 fees(t) = SUM(one_time_fee) over rows where month = t
@@ -1902,7 +1902,7 @@ A contract says what a customer owes and when it can leave. The books count that
 
 Entries 1.2 and 1.6 keep their own checks and point here. Entry 1.2 reads the pilot clause for the ARR lines. Entry 1.6 reads the largest customer's term and exit. This entry holds the full comparison for every contract.
 
-**Scope: Saturday for checks 1, 2 and 5, after Saturday for the rest.** On Saturday the roadmap's [contract-terms-saturday](ROADMAP.md#contract-terms-saturday) slice has the model read every contract in both demo rooms with this entry's prompt: three on Hollis Voice, and the Corvane agreement, two order forms and the Norrgate statement of work on Brasswick. It reads these terms: length, the notice that ends a running contract kept apart from the notice not to renew, auto-renewal, pilot terms and any duty to convert, price, discount and list price, and payment terms. The script runs checks 1, 2 and 5 on both rooms, against the ARR build or the model's revenue build, the MRR column and the largest customer's share. That slice is fourth in the cut order. The prompt also asks for the clause fields (exclusivity, most-favoured-customer, change of control), but nothing reads them on Saturday. The rest is the roadmap's [contract-terms](ROADMAP.md#contract-terms) slice, after Saturday: checks 3, 4 and 6, the clauses, and contracts beyond the room's. If the Saturday slice is cut, the pilot flag still shows from the script check in 1.2 (`arr_from_subscription_rows`), without the clause quotes.
+**Scope: Saturday for checks 1, 2 and 5; the rest from now to Friday night.** On Saturday the roadmap's [contract-terms-saturday](ROADMAP.md#contract-terms-saturday) slice has the model read every contract in both demo rooms with this entry's prompt: three on Hollis Voice, and the Corvane agreement, two order forms and the Norrgate statement of work on Brasswick. It reads these terms: length, the notice that ends a running contract kept apart from the notice not to renew, auto-renewal, pilot terms and any duty to convert, price, discount and list price, and payment terms. The script runs checks 1, 2 and 5 on both rooms, against the ARR build or the model's revenue build, the MRR column and the largest customer's share. That slice is fourth in the demo fallback order. The prompt also asks for the clause fields (exclusivity, most-favoured-customer, change of control), but nothing reads them on Saturday. The rest is the roadmap's [contract-terms](ROADMAP.md#contract-terms) slice, which an agent builds from now to Friday night: checks 3, 4 and 6, the clauses, and contracts beyond the room's. If the Saturday slice falls back on stage, the pilot flag still shows from the script check in 1.2 (`arr_from_subscription_rows`), without the clause quotes.
 
 A supplier contract, such as Brasswick's Norrgate statement of work, is read for its terms and shown as info claims. The script does not match it to a customer row, so it writes no check and no "customer row" gap for it.
 
@@ -1983,7 +1983,7 @@ remaining_fees(c)  = monthly fee × months from as_of to term_end
 
 A pilot becomes recurring when a signed subscription order form starts. The script looks for that order form under the same customer name. If it is in the room, the model reads it as one more contract. If it is not, the check returns the gap "Not in the room: a subscription order form for <customer>".
 
-**3. Plan revenue past the end of a contract (after Saturday).** Check name: `plan_revenue_past_term_end`. It covers a contract with no renewal right, and an automatic renewal the plan treats as certain.
+**3. Plan revenue past the end of a contract (from now to Friday night).** Check name: `plan_revenue_past_term_end`. It covers a contract with no renewal right, and an automatic renewal the plan treats as certain.
 
 ```
 after(c)  = plan months later than term_end(c), from the P&L plan columns
@@ -1995,7 +1995,7 @@ watch if the contract renews by itself, after(c) is not empty, plan_share(c) > m
 
 An automatic renewal ends only if a party gives notice, so no document makes it certain. A contract whose `plan_share` is below `match_tolerance` is too small to move the plan, and the check returns `clear` with an info claim. If the deck or the model calls the revenue "contracted", "committed" or "locked in" past the term end, the model reading adds a judged claim that quotes the sentence.
 
-**4. A signed contract that has not gone live counted as revenue (after Saturday).** Check name: `signed_not_live_vs_revenue`.
+**4. A signed contract that has not gone live counted as revenue (from now to Friday night).** Check name: `signed_not_live_vs_revenue`.
 
 ```
 live_from(c)    = the contract's effective date, or an amendment's effective date for the change it makes
@@ -2017,7 +2017,7 @@ discount: if the contract states a discount and a list price, then
 
 Cash invoiced is not a price. An annual fee paid up front shows in `billings`, and entries 1.12 (kinds b and g) own that. This check reads `mrr`. For the largest customer it also confirms the top of the share in 1.6: the file's MRR for that customer must equal the contract's fee.
 
-**6. A counted line with no contract in the room (after Saturday).** Check name: `counted_line_without_contract`. A gap, never a flag.
+**6. A counted line with no contract in the room (from now to Friday night).** Check name: `counted_line_without_contract`. A gap, never a flag.
 
 ```
 for each ARR_Build line, and each customer in customer_mrr_by_month.csv with counted_mrr > 0:
@@ -2083,7 +2083,7 @@ The three contracts and the counting files are in `data_room/hollis_voice/`. The
 - Corvane Logistics, the largest customer (`msa_corvane_logistics.pdf`). Terms read: 24 months from 2025-05-01 to 2027-04-30; $11,850 a month, fixed for the initial term; renews for 12 months unless either party gives 60 days written notice before the term ends; the only right to end it is a material breach not fixed within 30 days. Counted as $11,850 in `Revenue_Build` and in the customer file. Check 1 `clear` (the 60 days is notice not to renew; the exit is the term end). Check 5 `clear`, and it confirms the fee behind the 19.9% share in 1.6.
 - Tessmore Freight (`order_form_tessmore_freight.pdf`). Terms read: 12 months from 2026-02-01; $25,920 a year, $2,160 a month, 10% off the $2,400 list price; renews for 12 months unless either party gives 30 days notice. Counted as $2,160 a month. Checks 1 and 5 `clear`.
 - Ostley Freight (`order_form_ostley_freight.pdf`). Terms read: 12 months from 2026-09-01; $27,540 a year, $2,295 a month, 10% off the $2,550 list price; renews unless either party gives 30 days notice. Counted in `Revenue_Build` ("Revenue booked 2026-09") as $27,540 against a contract of $2,295 a month, so check 5 is `flag`: the counted price is above the contract's. The customer file's `subscription_revenue` holds $2,295, which matches. The flag has one cause with the annual prepayment flag in 1.12 (kind g, BF4), and the readout shows them together.
-- Norrgate Software Studio (`sow_norrgate_software_studio.pdf`), a supplier contract. Terms read as info claims: 12 months from 2026-07-01 to 2027-06-30, $26,500 a month, ending early on 90 days written notice by either party. No customer comparison runs on it. Entry 1.12 (kind e, after Saturday) uses it against the burn plan.
+- Norrgate Software Studio (`sow_norrgate_software_studio.pdf`), a supplier contract. Terms read as info claims: 12 months from 2026-07-01 to 2027-06-30, $26,500 a month, ending early on 90 days written notice by either party. No customer comparison runs on it. Entry 1.12 (kind e, built from now to Friday night) uses it against the burn plan.
 - Check 2 returns `clear` for all three customers, because none is a pilot. The entry's label on Brasswick is `flag`, from Ostley.
 
 **Model reading**
@@ -2525,7 +2525,7 @@ The organisers' third direction: "a market signal tracker for a company and its 
 
 Hollis Voice is synthetic, so it has no outside signals. The scan runs on 3 to 5 real competitors chosen and pre-pulled this week (feasibility research, 1.3). For the target, the only signals are the ones the room holds: its hiring plan, its website copy and its pricing tiers.
 
-On Saturday nothing here calls an outside source. An agent runs these entries this week and saves the competitor grid as `cache/signals/signals.json`, and the readout page shows it as a static panel with the date of each reading (roadmap, signals-readings and market-signals). Live readings, and readings for the company itself, come after Saturday in the roadmap's outside-in slice.
+On Saturday nothing here calls an outside source. An agent runs these entries this week and saves the competitor grid as `cache/signals/signals.json`, and the readout page shows it as a static panel with the date of each reading (roadmap, signals-readings and market-signals). Live readings, and readings for the company itself, come from the roadmap's outside-in slice, which an agent builds from now to Friday night.
 
 Which source carries which signal:
 
@@ -2897,7 +2897,7 @@ Its claims feed the overview piece their `value.label` names ([The readout](#the
 
 ### 4.2 Interesting moments
 
-After Saturday, in the roadmap's video-moments slice. On Saturday the page jumps to each claim's second, with no ranking.
+Built from now to Friday night, in the roadmap's video-moments slice. It joins the pitch video scan on Saturday. Without it, the page jumps to each claim's second, with no ranking.
 
 **Inputs**
 
@@ -3170,7 +3170,7 @@ Step 1, assign each claim to one piece. A claim from Scan 2 goes to comps. A cla
 | team | `headcount` |
 | the pitch itself | `raise_amount`, `pre_money`, `post_money`, `ownership`: the ask and the round, and the money raised before it |
 
-Step 2, link the claims. The memo already writes `conflicts_with` ([ARCHITECTURE.md](ARCHITECTURE.md), "How the readout merges them"). It writes `corroborated_by` by the mirror rule:
+Step 2, link the claims. The memo already writes `conflicts_with` ([ARCHITECTURE.md](ARCHITECTURE.md)). It writes `corroborated_by` by the mirror rule:
 
 ```
 before matching:
@@ -3377,7 +3377,7 @@ The readout ends with a list of what the operator should ask the founder for: th
 - Every gap from every Saturday scan, with its `what`, `why` and `would_need`.
 - The nine pieces from "Piece verdicts", with each piece's verdict, reason and `reason_claim_ids`.
 - Every claim with severity "flag".
-- After Saturday, also the missing checklist items at the company's stage ("Checklist coverage") and entry 1.11's asks.
+- From the checklist-coverage slice, built from now to Friday night: the missing checklist items at the company's stage ("Checklist coverage") and entry 1.11's asks.
 
 **The questions it asks**
 
@@ -3427,7 +3427,7 @@ None on Saturday. The memo's model pass may shorten a line if it keeps the line'
 }
 ```
 
-`claims` and `gaps` stay empty: this entry writes no new claims. `asks` is the AskItem list that `readout.json` carries last ([ARCHITECTURE.md](ARCHITECTURE.md), "The readout file").
+`claims` and `gaps` stay empty: this entry writes no new claims. `asks` is the AskItem list that `readout.json` carries last ([ARCHITECTURE.md](ARCHITECTURE.md)).
 
 **How the readout scores it**
 
@@ -3443,13 +3443,13 @@ The list sits at the end of the readout. Each line opens the piece it feeds.
 - List the same request twice.
 - Treat a missing document as a red flag. It is a question for the operator.
 
-## After Saturday
+## Ken's added scans, built from now to Friday night
 
 The scans below are Ken's additions to Track 2. The feasibility research ranks them below the Saturday four for demo value: business frameworks are cheap to build and easy to copy, founder profiles have one clean source (public GitHub), and a synthetic company has no online footprint ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), Summary). They follow the same rules as everything above. Their worked examples use Hollis Voice where the room holds the input, and say "not in the room" where it does not.
 
 ## Checklist coverage
 
-After Saturday, in the roadmap's checklist-coverage slice. The items, their stages and the entries that check them are in [CHECKLIST.md](CHECKLIST.md) and [checklist.csv](checklist.csv) ([writers' brief, 1:56 PM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)).
+Built from now to Friday night, in the roadmap's checklist-coverage slice. The items, their stages and the entries that check them are in [CHECKLIST.md](CHECKLIST.md) and [checklist.csv](checklist.csv) ([writers' brief, 1:56 PM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)).
 
 **Inputs**
 
@@ -3861,7 +3861,7 @@ Worked example, Hollis Voice:
 
 - Buyer power: the largest customer is 21.0% of MRR (PF5), on a 24-month initial term with no right to end it early except for an unfixed breach (`order_form_cedar_pine.pdf`, pages 1 and 2).
 - Supplier power: in 2026-09 the largest delivery-cost vendor is Tallow Telecom, $28,298.55 of the $78,155.76 full cost of revenue from 1.7, or 36.2% (`expense_ledger.csv`; scripted arithmetic).
-- Rivalry: deck slide 9 names categories, not companies: answering services, generic AI receptionists and practice software add-ons. The data-room research notes that a web search shows vendors already selling voice AI to vet clinics (data-room research, 3.1). The check is whether slide 9's categories cover them. The names come from Scan 3's pre-pulled competitors.
+- Rivalry: deck slide 9 names real examples under each category: answering services (Ambs Call Center and Specialty Answering Service), generic AI receptionists (Dialzara and MyAIFrontDesk) and practice software add-ons (VetRec AI Receptionist) ([competitor sources](../reports/20261022.02_research/raw/competitors/INDEX.md)). The scan reads the competitor names from slide 9, then adds Scan 3's pre-pulled competitors. The check lists the names in one list but not the other.
 
 **Model reading**
 
@@ -4564,5 +4564,5 @@ Each theme shows how many mentions it rests on and how many are first-hand.
 - **CAC and market size on Hollis Voice.** The generated P&L now holds sales and marketing spend, so entry 1.9 computes CAC when it is built. Entry 5.6 still has no cited count of clinics, and the deck's count-times-price figure rests on an uncited count. Its label list has no value for that case. The builder adds one, such as `uncited_count`, when the frameworks-scan slice is built.
 - **`spoken_tolerance` and the signal flat band.** The team sets both before Saturday. The answer-key test keeps `spoken_tolerance` honest: PF2b must still be caught.
 - **Where an entry's label and tables live.** The ScanResult in [ARCHITECTURE.md](ARCHITECTURE.md) has one optional field, `panels`, for them. Each panel has a `name`, a list of `columns` (names) and `rows` (each row a list of strings). The comps table, the signals grid and the video moments go there, so the page has a place for them. This doc carries the label into each claim's `severity` (see "The order of work inside a scan").
-- **Matching needs periods and names.** `conflicts_with` and `corroborated_by` both match on label, unit and period. A deck claim with a null period cannot meet a model cell dated 2026-09, and two holders' `ownership` cannot be told apart by label alone. "Piece verdicts" sets two rules for Saturday: a null period on a "today" claim takes the room's as-of month, and five labels match only on the same name before the colon. After Saturday, a `subject` field on Value would replace the colon rule.
+- **Matching needs periods and names.** `conflicts_with` and `corroborated_by` both match on label, unit and period. A deck claim with a null period cannot meet a model cell dated 2026-09, and two holders' `ownership` cannot be told apart by label alone. "Piece verdicts" sets two rules for Saturday: a null period on a "today" claim takes the room's as-of month, and five labels match only on the same name before the colon. A `subject` field on Value would replace the colon rule. Whether to add it is an open point for the skeleton slice, before the schema is frozen.
 - **Opus 5.5 request parameters.** The feasibility research notes it may reject `temperature` and forced tool choice, from a source it could not confirm on a public page. Test one call with each schema before Saturday ([research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), 1.10).

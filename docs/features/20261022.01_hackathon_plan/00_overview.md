@@ -8,7 +8,7 @@ Everything the factory built today for Deal Flow, NYC's first VC hackathon (Beta
 - **Do this week.** Your rows on [the board](../../BULLETIN.md): the founder brief in your words, reading the pitch scripts into video, approving the YC companies, the keys, who joined and their repo access, the organisers' questions, the Reddit pages.
 - **Read first.** The [one-page founder brief](founder_brief.md). It is what you hand the judges, and the organisers asked every team for it.
 
-Written 2026-10-22 at 11:55 AM. Updated 2:59 PM: everything you said on the product brief, personas, research and this page is in the docs, and the roadmap's table of your asks passes its check.
+Written 2026-10-22 at 11:55 AM. Updated 2:59 PM: everything you said on the product brief, personas, research and this page is in the docs, and the roadmap's table of your asks passes its check. Updated 3:44 PM, from your 3:32 PM note: everything is built by the end of Saturday. The [roadmap](../../ongoing/ROADMAP.md) now has two horizons. "Now to Friday night" is agents and the team building every product slice that is not one of the team's Saturday slices. "Saturday" is finishing, integration, the demo freeze and the demo. The cut order is now a demo fallback order: what the demo skips on stage if a piece is not working, with nothing dropped from the build.
 
 ## What exists now
 
@@ -26,7 +26,7 @@ Each card is written to the recommendation. The alternative is there in case you
 ### The track
 
 <div class="options">
-<div class="option"><span class="badge badge--purple">Recommended</span><h4>Track 2 only</h4><p>The product answers the diligence problem statement direction by direction. The founder scan from Track 1 is one scan inside Tricorder, built after Saturday.</p></div>
+<div class="option"><span class="badge badge--purple">Recommended</span><h4>Track 2 only</h4><p>The product answers the diligence problem statement direction by direction. The founder scan from Track 1 is one scan inside Tricorder, built by Saturday.</p></div>
 <div class="option"><p class="eyebrow">Option B</p><h4>Track 2 with the founder scan on Saturday</h4><p>Shows your founder-profile idea on the day. Costs a Saturday slice, and the team card still needs its track fixed with the organiser.</p></div>
 </div>
 
@@ -46,18 +46,7 @@ Each card is written to the recommendation. The alternative is there in case you
 
 ### Saturday's scans
 
-The feasibility research ranked the scans by demo value for the effort. The roadmap builds the top five with four people and cuts from the bottom when the morning runs long ([ROADMAP.md](../../ongoing/ROADMAP.md), "Cut order").
-
-<div class="options">
-<div class="option"><span class="badge badge--purple">Recommended</span><h4>Five scans</h4><p>Red-flag engine, the readout, pitch video, comps, market signals. Frameworks, founder profiles and online presence come after Saturday.</p></div>
-<div class="option"><p class="eyebrow">Option B</p><h4>Add the business frameworks scan</h4><p>Lean canvas and jobs to be done are the cheapest scan to build, one prompt each. Costs about an hour from someone's budget.</p></div>
-</div>
-
-<div class="choice" data-choice="saturday-scans">
-<p class="choice-q">Which scans on Saturday?</p>
-<button type="button" value="five" data-recommended>The five</button>
-<button type="button" value="six-with-frameworks">Add frameworks</button>
-</div>
+<div class="panel panel--cobalt"><p><b>Decided by your 3:32 PM note: every scan is built by Saturday.</b> Agents build the business frameworks, founder profiles and online presence scans before Saturday, beside the team's five Saturday scans.</p></div>
 
 ### The demo opening
 
@@ -66,14 +55,14 @@ The roadmap proposed opening on a forwarded pitch email with the readout already
 <div class="options">
 <div class="option"><span class="badge badge--purple">Recommended</span><h4>Open on the readout, already waiting</h4><p>First screen: Hollis Voice's best green flags and worst red flags. Then the overview of pieces, then a drill into the weakest piece, revenue, where four ARR numbers disagree (about $3.0M said on video, $2.5M in the deck, $2.24M in the model, $2.06M in the billing rows), and into one strong piece whose number two sources corroborate. True, because the run finished before you walked up. Then a real YC company from the list you approve, paired with a fake data room: its website, Hacker News, App Store and SEC filings are read live on stage, and you say out loud that the room is ours and labelled synthetic on every page. The inbound forward becomes the closing "next" line.</p></div>
 <div class="option"><p class="eyebrow">Option B</p><h4>Open on the forwarded email</h4><p>Your "before you even ask" moment on screen first. Started by hand today, and you say so.</p></div>
-<div class="option"><p class="eyebrow">Option C</p><h4>Build the real forward on Saturday</h4><p>A small inbox-polling script needs no OAuth review. Only if the red-flag engine and the readout are done at the 2:30 cut call.</p></div>
+<div class="option"><p class="eyebrow">Option C</p><h4>A real forward on stage</h4><p>An agent builds the forwarding address before Saturday, so the forward can be real. It still spends the first seconds on email rather than the readout.</p></div>
 </div>
 
 <div class="choice" data-choice="demo-opening">
 <p class="choice-q">What is on screen first?</p>
 <button type="button" value="flags-then-overview" data-recommended>Top green and red flags, then the overview</button>
 <button type="button" value="email-first">The forwarded email</button>
-<button type="button" value="build-forward-saturday">Build the real forward if time allows</button>
+<button type="button" value="build-forward-saturday">A real forward on stage</button>
 </div>
 
 ### Steering on stage
@@ -81,13 +70,13 @@ The roadmap proposed opening on a forwarded pitch email with the readout already
 Your 1:12 PM edit: the readout is a working surface the operator can steer, not a final document. An instruction on a section reruns that section's analysis and rewrites it, keeping sources and showing what changed ([the writers' brief](00_brief_for_writers.md), 1:12 PM block). Script numbers never change because someone asked; a steer changes what is read, how it is grouped or how it is worded.
 
 <div class="options">
-<div class="option"><span class="badge badge--purple">Recommended</span><h4>After Saturday, mentioned on stage</h4><p>Steering is an after-Saturday slice. On stage, one sentence in the closing "next" line. Every Saturday hour is already budgeted, and the buildability critic found no slack.</p></div>
-<div class="option"><p class="eyebrow">Option B</p><h4>One steer live on stage</h4><p>One section rewritten from one instruction, for example "treat the pilot as non-recurring" on the revenue piece. Memorable, and it shows the operator in control. Costs a Saturday slot: it would replace the model readings, the first thing in the cut order.</p></div>
+<div class="option"><span class="badge badge--purple">Recommended</span><h4>Built, mentioned on stage</h4><p>An agent builds steering before Saturday. On stage, one sentence in the closing line. The three-minute core has little room for a live run.</p></div>
+<div class="option"><p class="eyebrow">Option B</p><h4>One steer live on stage</h4><p>One section rewritten from one instruction, for example "treat the pilot as non-recurring" on the revenue piece. Memorable, and it shows the operator in control. Costs seconds in the three-minute core, and a live model call that needs the network; a saved steer is the fallback.</p></div>
 </div>
 
 <div class="choice" data-choice="steering-on-stage">
 <p class="choice-q">Does a steer go on stage Saturday?</p>
-<button type="button" value="after-saturday" data-recommended>After Saturday, mentioned on stage</button>
+<button type="button" value="after-saturday" data-recommended>Built, mentioned on stage</button>
 <button type="button" value="one-live-steer">One steer live on stage</button>
 </div>
 
@@ -113,14 +102,14 @@ Brasswick, the second room, already has three real green flags, each a number tw
 Your 1:52 PM idea: compare the company's bank account with its books through a banking connector. It finds differences in reporting between the bank and the revenue rows; it does not detect fraud. Plaid's Sandbox supports custom test users with configured accounts and up to about 250 transactions ([Plaid docs](https://plaid.com/docs/sandbox/user-custom/)), so the generator can write a Hollis Voice bank feed with one planted difference.
 
 <div class="options">
-<div class="option"><span class="badge badge--purple">Recommended</span><h4>After Saturday, mentioned on stage</h4><p>A roadmap slice. On stage, one line in "what's next": the bank feed is the next source we cross-check. Saturday's hours are already spoken for.</p></div>
-<div class="option"><p class="eyebrow">Option B</p><h4>A sandbox bank feed on stage</h4><p>The generator writes the feed this week; on Saturday a short slice reads it from Plaid's sandbox and shows deposits disagreeing with the revenue file. Strong answer to "do you check the bank?". Costs a Plaid developer account this week and a Saturday slot.</p></div>
+<div class="option"><span class="badge badge--purple">Recommended</span><h4>Built, mentioned on stage</h4><p>An agent builds the bank check before Saturday, on Plaid's sandbox first and a labelled sample statement if the sandbox is not working. On stage, one line at the close. The three-minute core has little room for it.</p></div>
+<div class="option"><p class="eyebrow">Option B</p><h4>A sandbox bank feed on stage</h4><p>The generator writes the feed this week, and the bank check reads it from Plaid's sandbox and shows deposits disagreeing with the revenue file. Strong answer to "do you check the bank?". Costs a Plaid developer account this week and seconds in the core.</p></div>
 <div class="option"><p class="eyebrow">Option C</p><h4>A sample statement, shown as where the bank would plug in</h4><p>Your 3:11 PM idea: no connector on Saturday. The room carries a labelled sample bank statement, and the readout says this is where the connected account would plug in. Cheapest; no Plaid account needed this week.</p></div>
 </div>
 
 <div class="choice" data-choice="bank-check">
 <p class="choice-q">Does the bank check go on stage Saturday?</p>
-<button type="button" value="after-saturday" data-recommended>After Saturday, mentioned on stage</button>
+<button type="button" value="after-saturday" data-recommended>Built, mentioned on stage</button>
 <button type="button" value="sandbox-on-stage">A sandbox bank feed on stage</button>
 <button type="button" value="sample-statement">A sample statement on stage</button>
 </div>
@@ -172,7 +161,7 @@ The judge found only one of Track 2's three asks (red flags) would be on screen,
 The buildability critic: the junior finance person has 3 hours for 7 checks plus a model call nobody else owns, so this slice breaks first. Every planted flag already has a script check; the deck's claims page parses by regex ([critique_buildability.md](critique_buildability.md), finding 2).
 
 <div class="choice" data-choice="engine-scripts-only">
-<p class="choice-q">Is Saturday's red-flag engine scripts only, with model readings moved to backend-and-data or after Saturday?</p>
+<p class="choice-q">Is Saturday's red-flag engine scripts only, with model readings moved to backend-and-data or to agent slices built before Saturday?</p>
 <button type="button" value="scripts-only" data-recommended>Scripts only on Saturday</button>
 <button type="button" value="scripts-plus-model">Scripts plus the model readings</button>
 </div>
@@ -343,14 +332,14 @@ Hacking runs 10:30 to 4:30 by the schedule. The Luma page also says nine hours; 
 <tr><td>readout</td><td>captain</td><td>1.5</td><td>Groups the claims into pieces, marks each strong or weak by script, and picks the top green and red flags</td></tr>
 <tr><td>readout-page</td><td>frontend</td><td>4.25</td><td>The page the judges see, each claim opening its source in-page</td></tr>
 <tr><td>pitch-video</td><td>backend-and-data</td><td>2.5</td><td>Whisper transcript, claims with timestamps, the third ARR number</td></tr>
-<tr><td>contract-terms-saturday</td><td>backend-and-data</td><td>1.0</td><td>Every contract in both rooms read for its terms and checked against ARR, MRR and concentration; fourth in the cut order</td></tr>
+<tr><td>contract-terms-saturday</td><td>backend-and-data</td><td>1.0</td><td>Every contract in both rooms read for its terms and checked against ARR, MRR and concentration; fourth in the demo fallback order</td></tr>
 <tr><td>comps</td><td>design-and-finance</td><td>1.5</td><td>Comparable companies and rounds, ranked by script from cached filings</td></tr>
 <tr><td>market-signals</td><td>frontend</td><td>0.25</td><td>A static panel of this week's cached competitor readings, and the slot for the live outside-world scan on an approved real company</td></tr>
 <tr><td>demo-freeze</td><td>captain, all four</td><td>2.0 + 0.75</td><td>Merge, score, freeze at 3:30, two rehearsals of the three-minute core</td></tr>
 </tbody>
 </table></div>
 
-Written this week by agents, per the critics: the skeleton with the Claim schema and the readers stub, the blind room (plants-off switch, second seed, a sealed variant key), the cached signals readings, the social posts. Cut order when the morning runs long: the model readings, then market signals, then comps, then the pitch video; inside the page, the reorder buttons go first. The red-flag engine, the readout and its page are never cut ([ROADMAP.md](../../ongoing/ROADMAP.md), "Cut order").
+Built from now to Friday night by agents: the skeleton with the Claim schema and the readers stub, the blind room (plants-off switch, second seed, a sealed variant key), the cached signals readings, the social posts, and every product slice that is not in this table. Most of those join a slice in this table on Saturday ([ROADMAP.md](../../ongoing/ROADMAP.md), "Now to Friday night"). Demo fallback order, for what the demo skips or shows from saved results if a piece is not working: the memo's model pass, then market signals, then comps, then contract terms, then the pitch video, then any agent slice that joined on the day; inside the page, the reorder buttons go first. Nothing is dropped from the build. The red-flag engine, the readout and its page are always shown ([ROADMAP.md](../../ongoing/ROADMAP.md), "Demo fallback order").
 
 ## What the critics said
 

@@ -32,4 +32,4 @@ flowchart TD
 ## Where it is built
 
 - **Saturday:** the deck's appendix claims and the video's transcript claims, compared against the model and the revenue rows for the planted flags ([ROADMAP.md](../ROADMAP.md): `redflag-engine`, `pitch-video`, `readout`).
-- **After Saturday:** every slide and every sentence, not just the appendix, and evidence from every document kind and the outside sources ([ROADMAP.md](../ROADMAP.md#claim-support), `claim-support`).
+- **Now to Friday night, built by an agent and joined on Saturday:** every slide and every sentence, not just the appendix, and evidence from every document kind and the outside sources ([ROADMAP.md](../ROADMAP.md#claim-support), `claim-support`).
