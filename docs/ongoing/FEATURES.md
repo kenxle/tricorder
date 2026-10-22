@@ -42,7 +42,7 @@ An associate describes her routine: "Before I even open your data room, I alread
 | Co-founder issues | How long the founders have worked together, who left and when, public disputes | Founder bios in the room, founders' GitHub, personal sites, talks and press; never LinkedIn scraping | Team |
 | Whether the story matches what's online | Each claim in the deck checked against the website, press, Hacker News and Product Hunt, with dates | The website, Hacker News through the Algolia API, Product Hunt's API, search | Every piece the claim belongs to |
 
-On Saturday, Hollis Voice is invented and has no online footprint, so for it these show as cached competitor readings and as gaps ("not found online"). For a real YC company paired with a synthetic room, part of this runs live on stage: its website, Hacker News, the App Store and SEC filings (see [The demo](#the-demo)). The full set of tabs, and the online-presence and founder-profile scans, come after Saturday.
+On Saturday, Hollis Voice is invented and has no online footprint, so for it these show as cached competitor readings and as gaps ("not found online"). For a real YC company paired with a synthetic room, part of this runs live on stage: its website, Hacker News and SEC filings (see [DEMO.md](DEMO.md)). The full set of tabs, and the online-presence and founder-profile scans, come after Saturday.
 
 **Built by:** [cached-data](ROADMAP.md#cached-data) and [yc-rooms](ROADMAP.md#yc-rooms) this week; [market-signals](ROADMAP.md#market-signals) on Saturday; [outside-in](ROADMAP.md#outside-in) after Saturday.
 

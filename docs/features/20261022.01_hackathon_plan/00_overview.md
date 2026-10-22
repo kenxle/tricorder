@@ -343,7 +343,7 @@ Hacking runs 10:30 to 4:30 by the schedule. The Luma page also says nine hours; 
 <tr><td>readout</td><td>captain</td><td>1.5</td><td>Groups the claims into pieces, marks each strong or weak by script, and picks the top green and red flags</td></tr>
 <tr><td>readout-page</td><td>frontend</td><td>4.25</td><td>The page the judges see, each claim opening its source in-page</td></tr>
 <tr><td>pitch-video</td><td>backend-and-data</td><td>2.5</td><td>Whisper transcript, claims with timestamps, the third ARR number</td></tr>
-<tr><td>redflag-readings</td><td>backend-and-data</td><td>1.0</td><td>The model readings (pilot clause, cohort note); first to be cut</td></tr>
+<tr><td>contract-terms-saturday</td><td>backend-and-data</td><td>1.0</td><td>Every contract in both rooms read for its terms and checked against ARR, MRR and concentration; fourth in the cut order</td></tr>
 <tr><td>comps</td><td>design-and-finance</td><td>1.5</td><td>Comparable companies and rounds, ranked by script from cached filings</td></tr>
 <tr><td>market-signals</td><td>frontend</td><td>0.25</td><td>A static panel of this week's cached competitor readings, and the slot for the live outside-world scan on an approved real company</td></tr>
 <tr><td>demo-freeze</td><td>captain, all four</td><td>2.0 + 0.75</td><td>Merge, score, freeze at 3:30, two rehearsals of the three-minute core</td></tr>

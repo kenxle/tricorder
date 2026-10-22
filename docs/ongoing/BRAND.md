@@ -448,7 +448,7 @@ Say who wrote each one by role: a seed and Series A fund's guide, and a junior V
 
 **The live demo on a real company, said out loud at 2:00.** Ken says this every time, in these words or close to them:
 
-> This is [company], a real YC company from the spring batch. This part is live: its website, Hacker News, the App Store and its SEC filings, read just now. Its data room is not real. We wrote it, every page says so, and the problems in it are our test plants, not theirs.
+> This is [company], a real YC company from the spring batch. This part is live: its website, Hacker News and its SEC filings, read just now. Its data room is not real. We wrote it, every page says so, and the problems in it are our test plants, not theirs.
 
 Never say or show anything that reads as a finding about the real company. If a live call fails, the panel shows this week's saved copy, and Ken says "saved on" its date instead of "just now".
 
@@ -470,7 +470,7 @@ A planted problem in a real company's room is called a test plant, on screen and
 **If a judge asks:**
 
 - *You built the company, planted the flags and wrote the answer key. What does it find in a data room you didn't make?* Answer with the two runs, not the room we planted ([critique_judge.md](../features/20261022.01_hackathon_plan/critique_judge.md), finding 1). Someone outside the team planted a second room this week and sealed its key until our 3:30 freeze; here's what it found there, with the real numbers. On the same company with nothing planted, here's everything it flagged.
-- *Is that real company's data? Do they know?* No. Only its public footprint is real: its website, Hacker News, the App Store and its SEC filings, read live. The data room is ours. We wrote it so the outside scan has a real company to read, every page says "Synthetic test document. Not this company's data.", and the problems in it are our test plants, not theirs.
+- *Is that real company's data? Do they know?* No. Only its public footprint is real: its website, Hacker News and its SEC filings, read live. The data room is ours. We wrote it so the outside scan has a real company to read, every page says "Synthetic test document. Not this company's data.", and the problems in it are our test plants, not theirs.
 - *Isn't this a wrapper on a model?* The checks are code that rebuild each number from the raw files. The sealed variant room and the clean run are the test. The model reads contracts and labels where code can't.
 - *Others already link claims to sources.* Yes, and that's good news: funds already pay for it, and one fund partner built his own. We do that same job and add to it. Ours opens on the best green flags and the worst red flags, then an overview of what looks strong and what looks weak. It shows which sources agree on each number as well as which disagree, writes a gap as a gap, and ends with what to ask the founder for.
 - *Can it catch fraud?* No. It finds differences in reporting between files and against the outside world, and shows each one. A fake that agrees across every file gets through.
