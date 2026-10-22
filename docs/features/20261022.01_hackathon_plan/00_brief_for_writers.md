@@ -408,3 +408,9 @@ Added 2026-10-22 at 3:02 PM, on the product brief's problem list: Ken renamed th
 > this is the brief. we can link to research, but counts like this do not belong in the brief
 
 Settled: the product brief states findings and links to the research; research counts, row numbers and script names stay in the research files. This applies to every ongoing doc written for a reader (product brief, personas summary, brand), not to FRAMEWORKS or the checklist, whose numbers are working data.
+
+Added 2026-10-22 at 3:07 PM, on the product brief's first problem:
+
+> this is still more of a feature level detail. the problem is really that due diligence is required to understand if you've got a good investment, and lying or stretching the truth is very common because so much money is on the line
+
+Settled: the product brief states problems at the level of the investor's situation, not the checks Tricorder runs. The first problem is that diligence is how an investor learns whether an investment is good, and stretching the truth is common because so much money is on the line. Specific red flags (padded ARR, numbers that disagree) belong in the feature and framework docs.
