@@ -340,3 +340,13 @@ Added 2026-10-22 at 2:41 PM, as a comment on the research's scan order (read the
 > this is a feature workflow that needs to be documented. extract claims from the pitch deck and video, and see if the other docs support
 
 Settled: the claims workflow is documented in `docs/ongoing/diagrams/claims_workflow.md` (extract, normalise, find evidence, compare by script, label supported, contradicted or unsupported, feed the pieces), linked from ARCHITECTURE.md, and built by Saturday's deck and video scans for the planted flags and by the `claim-support` roadmap slice in full.
+
+Added 2026-10-22 at 2:44 PM, as a comment on the data-room research's company options:
+
+> oh, but we should make up fake data room documents we can use for real startups. we need to be able to run our internet scrape live, and we should do it on, like 2-3 real YC companies from spring
+
+Settled, with one safeguard:
+
+- **Two or three real YC companies from the spring 2026 batch** get synthetic data rooms, so the outside-world scan (the associate's ten tabs) runs live on real public footprints during the demo, while the room documents are invented.
+- **Safeguard.** An invented room under a real company's name must never read as a claim about that company. Every page of those rooms carries "Synthetic test document. Not this company's data." The numbers are invented and plausible, anchored only to what the company has published. Planted problems are named test plants in the answer key and on screen, and the demo says so out loud. The real company's public facts (name, product, founders' public bios, any announced round) come only from public pages, saved with links.
+- **Ken picks the companies.** A research agent proposes candidates with their public footprint; the overview page carries a card; the rooms are generated only after Ken chooses.
