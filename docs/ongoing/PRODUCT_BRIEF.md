@@ -94,7 +94,6 @@ The user stories that turn these jobs into features are in [USER_STORIES.md](USE
 - A steer or a what-if never changes a script's number.
 - Tricorder reports its own misses against the answer key.
 - A bank account is read only with the founder's consent.
-- No scan logic before Saturday.
 
 ## How we know it works
 
