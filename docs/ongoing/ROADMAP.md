@@ -81,6 +81,7 @@ Four of the day's blocks are rules with nothing to build: the 1:21 PM block (no 
 | Synthetic rooms for 2 or 3 real YC spring companies so the internet scan runs live | 2:44 PM | [yc-rooms](#yc-rooms), [room-templates](#room-templates) | This week, then After |
 | Live demos on real YC companies from a list Ken approves, each paired with a fake data room | 2:49 PM | [yc-rooms](#yc-rooms), [demo-script](#demo-script), [market-signals](#market-signals), [demo-freeze](#demo-freeze) | This week, then Saturday |
 | The sponsor tools (Akta, Crunchbase, Nicrron) in the product, built ahead with keys plugged in on the day | 2:56 PM | [sponsor-adapters](#sponsor-adapters) | This week |
+| Quick messages to the company asking for information, with guidance on what to submit | 3:15 PM | [founder-requests](#founder-requests) | After |
 
 ### Proposals waiting on Ken
 
@@ -1199,6 +1200,25 @@ Templated data rooms with hidden issues ([writers' brief](../features/20261022.0
 - The answer key is written from the recipe, and `check.py` checks any room against its key.
 
 **Done when:** a new room is generated from a profile and a recipe in one command; three recipes highlight three different problem sets; each passes `check.py`; and swapping the profile changes every name and leaves every planted problem in place.
+
+**Who:** agent.
+
+**Judgment:** yes.
+
+### founder-requests
+
+Quick requests to the company while the room is being compiled ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 3:15 PM block). Ken: "While compiling the data room, there are quick ways to send messages to the company asking them for information, with guidance on what they should submit."
+
+**Waits on:** [readout](#readout) (the ask list); [checklist-coverage](#checklist-coverage).
+
+**Includes:**
+
+- From the ask list, one click drafts a message to the founder for any missing item or group of items, in plain words.
+- Each request carries guidance on what to submit, taken from the document guides: what the document is, the form that works best, and what a good one shows (for example, monthly revenue by customer as a CSV with one row per customer per month).
+- The operator reviews and sends it from their own email; Tricorder never sends anything itself.
+- When the founder replies with files, they land in the room and the scans that waited on them start.
+
+**Done when:** on the Brasswick room, the ask list produces a request for its missing documents with guidance for each, the operator can copy or open it in their email client, and a reply's attachment added to the room starts the waiting scans.
 
 **Who:** agent.
 

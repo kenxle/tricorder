@@ -438,3 +438,9 @@ Added 2026-10-22 at 3:13 PM, on the product brief's detailed feature sections:
 > yo this is a BRIEF. put all this in roadmap and feature documentation, not in the brief. i need this document to be, you know. BRIEF
 
 Settled: the product brief is short (target under about 900 words). It holds what it is, who it is for, the problem, the jobs to be done, a one-line list of what it does, and the essentials of what it is not, its principles, its commitments and how we know it works. Feature detail lives in `docs/ongoing/FEATURES.md`, user stories in `USER_STORIES.md`, build order in `ROADMAP.md`, open decisions on the overview page.
+
+Added 2026-10-22 at 3:15 PM, a sentence Ken added to the product brief's Inputs:
+
+> While compiling the data room, there are quick ways to send messages to the company asking them for information, with guidance on what they should submit.
+
+Settled: a `founder-requests` roadmap slice drafts requests from the ask list, each with guidance from the document guides on what to submit; the operator sends them from their own email.
