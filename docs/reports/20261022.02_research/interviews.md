@@ -13,6 +13,11 @@ Two more the critics asked for, because the public research could not answer the
 4. Have you ever caught churn hidden in a cohort chart, or burn that did not match the hiring plan?
 5. What does your fund pay for today to do first-pass diligence, and who signs for it?
 
+Two about the data room itself, from [what a data room is](what_is_a_data_room.md):
+
+6. How do data rooms reach you today: a DocSend link, a Drive folder, attachments in the email?
+7. At what point in your process do you ask for one, and what do you open first?
+
 ## Interview 1
 
 Role:

@@ -7,3 +7,4 @@ Files agents would delete but may not. Ken removes them in one batch.
 - docs/reports/20261022.02_research/raw/data_room/: R4 lists five empty, partial or duplicate saved pages under "Cleanup needed" at the end of research_data_room.md.
 - docs/reports/20261022.02_research/raw/feasibility/: duplicate .html files that have a .txt beside them; hn/main.js; formd/2026q3_d.zip (not committed); frames_sample_head.json.
 - data_room/hollis_voice_variant/, data_room/hollis_voice_variant_seed_drop/, data_room/answer_key_variant.json: smoke-test variant from the generator reviser (git-ignored); not for the blind demo, regenerate per data_room/SEALING.md.
+- docs/reports/20261022.02_research/interviews.md.tmp (empty scratch file left by the orchestrator)
