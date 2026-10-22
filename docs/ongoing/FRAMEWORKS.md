@@ -1439,7 +1439,7 @@ Worked example, Hollis Voice (DC3 in the answer key; cells from `cap_table.xlsx`
 - Holders add to 100% fully diluted (`CAP_TOTAL_PCT`, D13), on 14,424,000 shares before the Series A (C13).
 - Series A ownership: $9,000,000 ÷ $54,000,000 = 16.67% (`Cap_Table!B28`, 0.166667).
 - Post-money: $45,000,000 + $9,000,000 = $54,000,000 (rows 23 to 25).
-- The answer key says holders add to 100 percent and the SAFE conversion at the stated cap is right. The expected label is `clear`.
+- The answer key says holders add to 100 percent and the SAFE conversion at the stated cap is right. The room holds no signed SAFE documents, so by the label rules below the expected label is `watch`, with the three SAFEs on the ask list. A `flag` would be a false positive on this decoy.
 - The same cells give the round's green flag: the raise of $9,000,000 in the cap table, the model (`SERIES_A_RAISE`) and deck slide 13 (GF1). On Saturday the red-flag engine reads them by script.
 
 **Model reading**
@@ -1505,7 +1505,7 @@ Propose the label using these rules, and name the rule and claim ids in "label_r
 
 - `flag`: ownership does not sum to 100 percent within tolerance, a SAFE converts wrong, or the deck's round differs from the cap table's by more than `match_tolerance`.
 - `watch`: the numbers reconcile, but the option pool is missing or an instrument has no document in the room.
-- `clear`: everything reconciles. On Hollis Voice this is the expected label, and a flag counts as a false positive in the answer-key test.
+- `clear`: everything reconciles and every instrument's document is in the room. On Hollis Voice the expected label is `watch`, because the SAFE documents are not in the room; a `flag` counts as a false positive in the answer-key test.
 - `cannot_check`: the cap table is missing.
 
 Its claims feed the overview's **the pitch itself** piece ([The readout](#the-readout-saturday), "Piece verdicts").
