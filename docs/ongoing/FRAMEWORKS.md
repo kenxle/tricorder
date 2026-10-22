@@ -10,6 +10,8 @@
 
 **Sources:** [the writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), [the organisers' problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt), [research_data_room.md](../reports/20261022.02_research/research_data_room.md) with [data_room_flags.csv](../reports/20261022.02_research/data_room_flags.csv), [data_room_planted.csv](../reports/20261022.02_research/data_room_planted.csv), [data_room_files.csv](../reports/20261022.02_research/data_room_files.csv), [data_room_design_numbers.py](../reports/20261022.02_research/data_room_design_numbers.py) and [data_room_design_numbers.json](../reports/20261022.02_research/data_room_design_numbers.json), [research_feasibility.md](../reports/20261022.02_research/research_feasibility.md), [research_voice_of_customer.md](../reports/20261022.02_research/research_voice_of_customer.md), [research_landscape.md](../reports/20261022.02_research/research_landscape.md).
 
+**Also used by entry 1.12 (accounting mislabels):** [a16z, 16 Startup Metrics](https://a16z.com/16-startup-metrics/) (sections 1, 2, 4, 6 and 7), [a16z, 16 More Startup Metrics](https://a16z.com/16-more-startup-metrics/), [Kruze, rolling cash forecast](https://kruzeconsulting.com/blog/build-a-rolling-cash-forecast/), [Kruze, startup runway](https://kruzeconsulting.com/blog/startup-runway/), [Peony, data room checklist](https://www.peony.ink/blog/startup-data-room-complete-checklist-2025), [Eagle Rock CFO, Series A data room checklist](https://www.eaglerockcfo.com/blog/series-a-preparation/data-room-checklist). Saved copies are in [raw/data_room](../reports/20261022.02_research/raw/data_room/).
+
 ## Summary
 
 - **The scripts decide the numbers. The model reads the words.** Every entry splits the work that way. A script recomputes a figure from raw files. A model reads what a script cannot: a contract clause, a footnote, a slide label, a spoken sentence.
@@ -272,6 +274,12 @@ Some worked examples also show arithmetic on those figures: a gap, a ratio, a sh
 | DC1 Onboarding fee excluded from ARR correctly (decoy) | 1.2 must not flag its line | `arr_from_subscription_rows` | Yes |
 | DC2 Annual prepay counted as recurring correctly (decoy) | 1.2 must not flag its line | `arr_from_subscription_rows` | No, the order form is in the full room |
 | DC3 Clean cap table (decoy) | 1.10 must label it clear | `cap_table_reconcile` | Yes |
+| PF1 Pilot booked as ARR, second read in the metrics `mrr` column | 1.12 kind a | `mrr_column_vs_subscription_rows` | No, needs the full room |
+| DC2 Annual prepay, billings spike in June 2026 (second check) | 1.12 kinds b and g must not flag it | `billings_vs_recognised_revenue`, `deferred_revenue_vs_earned` | No, the order form and the customer file are in the full room |
+| DC1 Onboarding fee excluded correctly (second check) | 1.12 kind h must not flag it | `one_time_fees_in_recurring_metrics` | Yes |
+| No planted entry: contractors | 1.12 kind e returns clear with a gap | `contractor_spend_vs_headcount_and_burn` | No, the ledger is in the full room |
+| No planted entry: capitalised costs | 1.12 kind f returns clear with a gap | `capitalised_spend_vs_pnl_and_cash` | No, the ledger is in the full room |
+| No planted entry: gross against net revenue | 1.12 kind c, after Saturday | `gross_vs_net_revenue` | Not run |
 
 The check names are the ones the answer key's `check` field and the test in [ARCHITECTURE.md](ARCHITECTURE.md) match on. `arr_from_subscription_rows` is the data-room research's own example name (3.6). The other seven in the key are the names `data_room/generate.py` writes. Only `cap_table_reconcile` (DC3, a decoy with no `check` in the key) is set here. The seed-drop column comes from the table at the end of 3.4 in [research_data_room.md](../reports/20261022.02_research/research_data_room.md). The two decoy rows that table does not cover follow from [data_room_files.csv](../reports/20261022.02_research/data_room_files.csv): the cap table is in the seed drop and the Brookline Row order form is not.
 
@@ -283,7 +291,7 @@ Each entry has exactly seven parts, in this order: **Inputs**, **The questions i
 
 ## Scan 1. The red-flag engine (Saturday)
 
-The organisers' first direction: "churn hidden in cohort charts, revenue counted as ARR when it is not recurring, burn that does not match the hiring plan, numbers that disagree between the deck and the model" ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt), Track 2). Entries 1.2 to 1.5 are those four. Entries 1.6 to 1.8 are the three extra flags the data-room research found on published lists. Entries 1.9 and 1.10 are the brief's unit economics and the cap table a first pass opens first. Entry 1.11 holds the flags investors regret most, which no file in the room can settle.
+The organisers' first direction: "churn hidden in cohort charts, revenue counted as ARR when it is not recurring, burn that does not match the hiring plan, numbers that disagree between the deck and the model" ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt), Track 2). Entries 1.2 to 1.5 are those four. Entries 1.6 to 1.8 are the three extra flags the data-room research found on published lists. Entries 1.9 and 1.10 are the brief's unit economics and the cap table a first pass opens first. Entry 1.11 holds the flags investors regret most, which no file in the room can settle. Entry 1.12 checks a family of accounting mislabels, numbers filed under a label they do not earn, and points back to 1.2 and 1.7 for the two kinds they already cover.
 
 Entry 1.1 runs before all of them. It turns the deck into claims the other entries check.
 
@@ -517,7 +525,7 @@ Label rules:
 - `clear`: the recompute matches within tolerance and every counted line passes the line test. On Hollis Voice the entry's label is `flag` because of the pilot, but the onboarding fee and the Brookline Row prepay must not get a flag claim of their own.
 - `cannot_check`: `ARR_Build` is missing. With the seed drop only, the customer file and the pilot agreement are absent. The entry then returns `watch` if a counted line's label names a pilot, and otherwise `cannot_check`. The data-room research counts the full PF1 catch as needing the full room.
 
-Its claims feed the overview's **traction and revenue** piece ([The readout](#the-readout-saturday), "Piece verdicts").
+Its claims feed the overview's **traction and revenue** piece ([The readout](#the-readout-saturday), "Piece verdicts"). See also [1.12 Accounting mislabels](#112-accounting-mislabels), which reads the `mrr` column and the other labels that can hide non-recurring money.
 
 **What it must not do**
 
@@ -756,6 +764,8 @@ Propose the label using these rules, and name the rule and claim ids in "label_r
 - `cannot_check`: the hiring plan or the cash tab is missing.
 
 Its claims feed the overview's **burn and runway** piece ([The readout](#the-readout-saturday), "Piece verdicts"), except a `headcount` claim, which feeds team.
+
+See also [1.12 Accounting mislabels](#112-accounting-mislabels), which checks for contractors and capitalised costs that sit outside the staff count and the P&L.
 
 **What it must not do**
 
@@ -1104,7 +1114,7 @@ Fill "lines" with one entry per line you classified. Propose the label using the
 - `clear`: the rebuild matches and nothing is unclear.
 - `cannot_check`: neither the ledger nor the P&L is in the room.
 
-Its claims feed the overview's **unit economics** piece ([The readout](#the-readout-saturday), "Piece verdicts").
+Its claims feed the overview's **unit economics** piece ([The readout](#the-readout-saturday), "Piece verdicts"). See also [1.12 Accounting mislabels](#112-accounting-mislabels), where this entry is the check for delivery cost filed as operating expense.
 
 **What it must not do**
 
@@ -1545,6 +1555,281 @@ Each walk-through claim feeds the piece of the flag it asks about ([The readout]
 - Suggest fraud, or any reason a number does not tie.
 - Mark the risk settled because the founder's own files agree with each other.
 - Present a check that usually waits for a term sheet as a first-pass ask. Bank statements and deep financial review often come after the term sheet (row 14), so every ask names the stage it belongs to.
+
+### 1.12 Accounting mislabels
+
+A mislabel is a number filed under a label it does not earn. The organisers name one: revenue counted as ARR when it is not recurring (entry 1.2). On the "ARR that is not recurring" finding in the voice-of-the-customer research ([research_voice_of_customer.md](../reports/20261022.02_research/research_voice_of_customer.md)), Ken asked for that check by name and for any other accounting mislabel too ([writers' brief, 1:32 PM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). This entry is the family. It has one sub-check per kind. The two kinds that entries 1.2 and 1.7 already own are pointed to, not repeated.
+
+| Kind | Label claimed | What the number really is | File and column a script reads | Check name | Scope | Feeds the piece |
+|---|---|---|---|---|---|---|
+| a. Non-recurring revenue as ARR or MRR | ARR, MRR | A pilot, a one-time fee, services or a usage fee | `customer_mrr_by_month.csv` columns `product_type`, `mrr`; `monthly_metrics.csv` column `mrr` | `arr_from_subscription_rows` (entry 1.2), `mrr_column_vs_subscription_rows` | Saturday | traction and revenue |
+| b. Bookings or billings as revenue | Revenue, ARR | Contract value signed, or cash invoiced | `customer_mrr_by_month.csv` columns `billings`, `mrr`; model `P&L` row "Subscription revenue" | `billings_vs_recognised_revenue` | Saturday | traction and revenue |
+| c. GMV or pass-through as revenue | Revenue | The whole value of the transactions, or money collected and paid on | A revenue export with a volume or pass-through column; ledger lines paid on at cost | `gross_vs_net_revenue` | After Saturday | traction and revenue |
+| d. Cost of revenue as operating expense | R&D, S&M or G&A cost | A cost of delivering the product | `expense_ledger.csv` columns `category`, `booked_as` | `gross_margin_from_ledger` (entry 1.7) | Saturday | unit economics |
+| e. Contractors left out of headcount and burn | Headcount, burn | People and spend outside the staff count and the P&L | `expense_ledger.csv` columns `vendor`, `description`, `amount_usd`; model `P&L` totals; `STAFF_NOW` | `contractor_spend_vs_headcount_and_burn` | Saturday | burn and runway, team |
+| f. Capitalised costs off the P&L | Expense, burn | Cash spent and recorded as an asset | `expense_ledger.csv` columns `booked_as`, `category`; model `P&L` totals; `Cash_Bridge` | `capitalised_spend_vs_pnl_and_cash` | Saturday | burn and runway |
+| g. Deferred revenue as earned | Revenue, ARR | Cash or an invoice for service not yet delivered | `customer_mrr_by_month.csv` columns `billings`, `mrr`, `one_time_fee`; model `ARR_Build` | `deferred_revenue_vs_earned` | Saturday | traction and revenue |
+| h. One-time fees in recurring metrics | MRR, ARR, "recurring revenue" | A setup or onboarding fee paid once | `customer_mrr_by_month.csv` columns `product_type`, `one_time_fee`; `monthly_metrics.csv` column `mrr`; model `ARR_Build` | `one_time_fees_in_recurring_metrics` | Saturday | traction and revenue |
+
+Saturday means the Hollis Voice room holds the data and a script can run the check. After Saturday means the room has nothing to run it on. Kind c is the only one after Saturday.
+
+**Inputs**
+
+- `03_metrics/customer_mrr_by_month.csv`: one row per customer per month. Columns `month`, `customer_id`, `plan`, `product_type` (Subscription, Onboarding or Pilot), `mrr`, `one_time_fee` and `billings` (cash invoiced that month). Full room only.
+- `03_metrics/monthly_metrics.csv`: columns `mrr` and `arr` by month.
+- `02_financials/expense_ledger.csv`: dated expense lines. Columns `month`, `vendor`, `description`, `category`, `booked_as` and `amount_usd`. Full room only.
+- `02_financials/financial_model.xlsx`: tab `README` (the definitions of ARR and gross margin), tab `P&L` (rows "Subscription revenue", "Pilot revenue", "Onboarding fees (one-time)", "Recurring revenue (subscription plus pilot)", "Total cost of revenue" and "Total operating expenses"), tab `ARR_Build`, tab `Cash_Bridge`, and the named cell `STAFF_NOW`.
+- `05_team/hiring_plan.csv` and the deck's staff, ARR and gross margin claims from 1.1.
+- `04_customers/`: the order forms, for term and prepayment.
+- Not in the Hollis Voice room: a balance sheet, bank statements, a contractor list or contractor agreements, and any export of transaction volume. The kinds that need one return a gap.
+
+**The questions it asks**
+
+1. Does any figure labelled ARR or MRR hold a pilot, a one-time fee, services or a usage fee? a16z lists setup, installation and professional services as fees that do not belong in ARR ([a16z, 16 Startup Metrics](https://a16z.com/16-startup-metrics/), section 2, recurring revenue against total revenue). Entry 1.2 asks this of ARR. This entry asks it of the `mrr` column.
+2. Is revenue the cash invoiced or the contract value signed? a16z says bookings are the value of a contract and revenue is what has been delivered, and that the two are often confused ([a16z, 16 Startup Metrics](https://a16z.com/16-startup-metrics/), section 1).
+3. Is any revenue figure the whole value of the transactions, or money collected for someone else? a16z says GMV is not revenue, and that calling GMV revenue can overstate the business a great deal ([a16z, 16 Startup Metrics](https://a16z.com/16-startup-metrics/), section 6; [16 More Startup Metrics](https://a16z.com/16-more-startup-metrics/)).
+4. Is any delivery cost filed under R&D, sales or G&A? Entry 1.7 asks this.
+5. Does the ledger show people paid as contractors, and are they in the staff count and the burn? Kruze counts contractors in gross burn ([Kruze, rolling cash forecast](https://kruzeconsulting.com/blog/build-a-rolling-cash-forecast/)). Peony lists active contractor agreements as a data room file that shows how much the company depends on them ([Peony, data room checklist](https://www.peony.ink/blog/startup-data-room-complete-checklist-2025)).
+6. Is any spend recorded as an asset instead of an expense, so the P&L burn is lower than the cash that left? Kruze warns that the income statement includes accruals and capitalisation, so it may not show the cash used ([Kruze, startup runway](https://kruzeconsulting.com/blog/startup-runway/)). No source I found calls capitalising a red flag by itself. The check shows the amount and where it sits.
+7. Is cash collected ahead of delivery counted as earned? a16z says the cash sits on the balance sheet as deferred revenue and becomes revenue as the service is delivered ([a16z, 16 Startup Metrics](https://a16z.com/16-startup-metrics/), section 7). A Series A room is expected to hold monthly balance sheets, with deferred revenue singled out ([Eagle Rock CFO, Series A data room checklist](https://www.eaglerockcfo.com/blog/series-a-preparation/data-room-checklist)).
+8. Is a fee paid once counted in MRR, ARR or "recurring revenue"?
+
+**Mechanical check**
+
+Each sub-check below gives the label claimed, what the number really is, the file and column, the formula, the Hollis Voice example, and what to return when the file is missing. The Hollis Voice figures come from the generated files named in each one and from `data_room/answer_key.json`. The arithmetic on them (sums, gaps, shares) was run by a Python script over those files, not by hand. Each formula is written so a spreadsheet person can redo it.
+
+Two terms used in several formulas:
+
+```
+ledger_total(t) = SUM(amount_usd) over expense_ledger.csv rows where month = t
+tie_gap(t)      = ledger_total(t) − ( P&L "Total cost of revenue"(t) + P&L "Total operating expenses"(t) )
+```
+
+**a. Non-recurring revenue counted as ARR or MRR (Saturday).** The ARR side is entry 1.2 and its check `arr_from_subscription_rows`. It is not repeated here. This entry adds the `mrr` column, which investors read as often as the ARR line. Check name: `mrr_column_vs_subscription_rows`.
+
+```
+mrr_subscription(t) = SUM(mrr) over customer_mrr_by_month.csv rows
+                      where month = t AND product_type = "Subscription"
+mrr_gap(t)          = monthly_metrics.mrr(t) − mrr_subscription(t)
+flag month t if mrr_gap(t) ÷ mrr_subscription(t) > match_tolerance
+```
+
+- Hollis Voice, 2026-09: `monthly_metrics.csv` shows `mrr` of $186,739. The subscription rows add to $171,739 (`mrr_subscription` in the answer key's `facts`). The gap is $15,000, which is 8.7% of $171,739.
+- The $15,000 is the Marlow Veterinary Group pilot's monthly fee (customer C0219, `product_type` Pilot, `mrr` 15,000 in 2026-08 and 2026-09). It is the same pilot as PF1 (pilot booked as ARR). The readout shows this claim beside the ARR claim. They have one cause.
+- Missing file: with the customer file absent, read the `Product type` column of `ARR_Build` in the model. If that is missing too, return the gap "Not in the room: a revenue export by product type".
+
+**b. Bookings or billings shown as revenue (Saturday).** Claimed: revenue. Really: contract value signed (bookings) or cash invoiced (billings). Check name: `billings_vs_recognised_revenue`.
+
+```
+revenue_file(t)  = SUM(mrr)      over rows where month = t AND product_type = "Subscription"
+billings_file(t) = SUM(billings) over the same rows
+shown(t)         = the P&L row "Subscription revenue" for month t
+flag month t if | shown(t) − billings_file(t) | < | shown(t) − revenue_file(t) |
+             and | shown(t) − revenue_file(t) | ÷ revenue_file(t) > match_tolerance
+```
+
+The same test runs on the as-of month for ARR: flag if `ARR_TOTAL` ÷ 12 sits nearer `billings_file` than `revenue_file`. An annual plan paid up front makes billings jump in the month it is paid. That alone is not a flag.
+
+- Hollis Voice, the June 2026 decoy (DC2, the annual prepay). Brookline Row Veterinary (customer C0193) paid $7,008 in 2026-06, one year in advance, 10% under list. The `billings` column shows $7,008 in that month and nothing after. Its `mrr` is $584 a month.
+- Across all customers, June 2026 subscription `billings` add to $145,182. Subscription `mrr` adds to $142,497. The P&L row "Subscription revenue" for June is $142,497. It sits on the revenue side.
+- The P&L row equals the file's subscription `mrr` in all 21 months, with a largest difference of 0.
+- Result: `clear`. No claim for June or for Brookline Row. A claim there is a false positive.
+- Missing file: `billings` and the customer file are not in the seed drop. Return the gap "Not in the room: an invoices or billings export" and the label `cannot_check`.
+
+**c. Gross merchandise value or pass-through money shown as revenue (after Saturday).** Claimed: revenue. Really: the whole value of transactions that pass through the company (GMV), or money collected for others and paid on (pass-through). What the company keeps is the net. Check name: `gross_vs_net_revenue`.
+
+```
+pass_through(t) = SUM of revenue lines whose product_type is a resale or pass-through type,
+                  or whose amount matches a ledger line paid on at cost in the same month
+net_revenue(t)  = shown_revenue(t) − pass_through(t)
+take_rate(t)    = net_revenue(t) ÷ volume(t)
+flag if pass_through(t) ÷ shown_revenue(t) > match_tolerance
+        and the deck or the model does not call the figure gross
+```
+
+The model also reads the deck for a figure labelled GMV, volume, gross bookings or total payment volume that sits beside, or in place of, a revenue figure.
+
+- Hollis Voice: not in the room. `customer_mrr_by_month.csv` has three product types: Subscription (1,880 rows), Onboarding (250) and Pilot (2). It has no volume or pass-through column. `ARR_Build` has no resale line. The gap is "Not in the room: a revenue export that separates pass-through money".
+- This sub-check needs a room built around a marketplace or a resale line. Hollis Voice is neither, so there is nothing to run on Saturday.
+
+**d. Cost of revenue filed as operating expense (Saturday).** Claimed: R&D, sales or G&A. Really: a cost of delivering the product. Entry 1.7 owns this, with the check `gross_margin_from_ledger`. It reads `expense_ledger.csv` columns `category` and `booked_as`. This entry adds no check.
+
+- Hollis Voice: in 2026-09 the ledger has delivery costs booked outside cost of revenue. Hosting and model inference of $20,541.29 are booked as R&D. Support staff of $20,266.67 are booked as S&M.
+- The deck and the model show a gross margin of 80%. With every delivery cost in, it is 58.1% (PF6, gross margin leaves out delivery costs).
+
+**e. Contractors left out of headcount and burn (Saturday).** Claimed: a staff count and a burn. Really: people paid as contractors whose cost or presence is not in either. Check name: `contractor_spend_vs_headcount_and_burn`.
+
+```
+contractor_lines    = ledger rows whose description or category contains
+                      "contractor", "consultant", "freelance", "agency" or "staffing",
+                      plus rows the model reading classes as contractor
+contractor_spend(t) = SUM(amount_usd) of contractor_lines in month t
+flag month t if tie_gap(t) ÷ ledger_total(t) > match_tolerance            (spend outside the P&L)
+watch if contractor_spend(t) > 0 and no file says whether STAFF_NOW or the deck's staff count includes them
+```
+
+The tie-out shows that the P&L matches the ledger. It does not show that the ledger is complete. Entry 1.11 asks for bank statements for that.
+
+- Hollis Voice: the ledger has 408 lines from 13 vendors, totalling $4,735,330.24 over 21 months. The only payroll vendor is Ironbridge Payroll Services. No description or category names a contractor, consultant, freelancer or agency. `tie_gap` is 0.00 in every one of the 21 months.
+- Staff today is 17 (`STAFF_NOW`). The plan adds 24 hires. The room holds no contractor list.
+- Result: `clear` on burn. The gap is "Not in the room: a list of contractors, or an org chart that shows them". The readout shows the clear and the gap together.
+- Missing file: with no ledger, return `cannot_check` and the gap "Not in the room: an expense ledger".
+- The staff-count claim feeds the team piece (value label `headcount`). The spend and burn claims feed burn and runway.
+
+**f. Capitalised costs that keep spend off the P&L (Saturday).** Claimed: a smaller expense and a smaller burn. Really: cash spent and recorded as an asset. Check name: `capitalised_spend_vs_pnl_and_cash`.
+
+```
+capitalised(t)  = SUM(amount_usd) of ledger rows whose booked_as or category names an asset:
+                  "capitalised", "capitalized", "asset", "balance sheet" or "prepaid"
+off_pnl(t)      = tie_gap(t)
+cash_bridge_gap = money raised − losses − cash at the as-of date        (tab Cash_Bridge)
+flag if capitalised(t) ÷ ledger_total(t) > match_tolerance,
+     or off_pnl(t) ÷ ledger_total(t) > match_tolerance,
+     or | cash_bridge_gap | ÷ cash > match_tolerance
+```
+
+- Hollis Voice: every one of the 408 ledger lines is booked as Cost of revenue, R&D, S&M or G&A. `tie_gap` is 0.00 in every month. The cash bridge difference is −$0.24 against cash of $1,800,000 (`cash_bridge_difference` and `cash` in the answer key's `facts`).
+- The room has no balance sheet, so an asset account cannot be seen. The gap is "Not in the room: a balance sheet".
+- Result: `clear`, with that gap.
+- The check reports the amount and where it sits. Whether the treatment is allowed is for the investor's accountant, so the claim text does not say it is wrong.
+
+**g. Deferred revenue counted as earned (Saturday).** Claimed: revenue or ARR for the period. Really: cash or an invoice for service not yet delivered. Check name: `deferred_revenue_vs_earned`.
+
+```
+deferred(t) = SUM over customers of
+              MAX( 0, cumulative billings to t − cumulative (mrr + one_time_fee) to t )
+flag month t if P&L "Subscription revenue"(t) > revenue_file(t) × (1 + match_tolerance)
+flag if ARR_Build "Subscription ARR" > 12 × mrr_subscription(as-of month) × (1 + match_tolerance)
+```
+
+The second test also catches a multi-year contract counted at its full value in ARR. a16z separates total contract value from annual contract value for this reason ([a16z, 16 Startup Metrics](https://a16z.com/16-startup-metrics/), section 4). `revenue_file` and `mrr_subscription` are the sums defined in sub-checks a and b.
+
+- Hollis Voice, 2026-09: deferred revenue from annual prepay is $104,876 across 28 customers.
+- Brookline Row billed $7,008 in 2026-06. It has earned 4 × $584 = $2,336 from June to September. $4,672 is still deferred.
+- The P&L "Subscription revenue" row equals the file's subscription `mrr` in all 21 months. "Subscription ARR" in `ARR_Build` is $2,060,868, which is 12 × $171,739.
+- Result: `clear`. No claim for the Brookline prepay (DC2).
+- Missing file: with no balance sheet in the room, the script rebuilds the balance from the `billings` column, as above. The gap is "Not in the room: a balance sheet with a deferred revenue line". With no customer file, return `cannot_check`.
+
+**h. One-time fees counted in recurring metrics (Saturday).** Claimed: MRR, ARR or "recurring revenue". Really: a setup or onboarding fee paid once. Check name: `one_time_fees_in_recurring_metrics`.
+
+```
+fees(t) = SUM(one_time_fee) over rows where month = t
+gap(t)  = monthly_metrics.mrr(t) − mrr_subscription(t)
+flag month t if fees(t) > 0 and | gap(t) − fees(t) | ÷ fees(t) ≤ match_tolerance
+flag if ARR_Build "ARR counted" > 0 on any row whose "Product type" is Onboarding
+```
+
+- Hollis Voice, the onboarding-fee decoy (DC1): $500 per new clinic. In 2026-09, 19 new clinics paid $9,500. Over 21 months there are 250 Onboarding rows and $125,000 of fees.
+- `ARR_Build` has an "Onboarding fees" row and counts $0 of ARR on it. The P&L shows the fee on its own row, "Onboarding fees (one-time)", apart from "Recurring revenue (subscription plus pilot)".
+- The `mrr` gap in 2026-09 is $15,000, not $9,500. It is the pilot (sub-check a), not the fees. Neither test fires on the fee.
+- Result: `clear`. A flag on the onboarding fee is a false positive.
+- Missing file: with no customer file, read the P&L fee row and `ARR_Build` only. The second test still runs, so this sub-check works on the seed drop.
+
+**Model reading**
+
+Only a model can read what a label means, decide whether an unplaced ledger line is a contractor or an asset, and find the sentence that says whether the staff count includes contractors.
+
+```text
+Task: check whether this startup files any number under a label it does not earn.
+
+Documents:
+{{docs: financial_model.xlsx tabs README, ARR_Build and P&L by cell; pitch_deck.pdf slides 3, 5, 10, 11 and 14; the video script; expense_ledger.csv rows the script could not place; order forms in 04_customers/ by page and clause}}
+
+Script results:
+{{script_results: the output of each sub-check in this entry, and the claims of entries 1.2 and 1.7}}
+
+Answer these questions with claims:
+1. For each revenue-like figure in the deck, the model or the video (ARR, MRR, revenue, run rate, bookings, billings, contracted, committed, GMV, volume), what does its label say it is, and what do the cells or the contract say it is? Name its kind: recurring_subscription, pilot, one_time_fee, services, usage, bookings, billings, gross_volume, pass_through, deferred_revenue or unknown. Quote the label and the cell.
+2. What definitions of ARR, MRR and gross margin does the README give? Quote them.
+3. For each ledger line the script could not place, is it a contractor, a delivery cost, an asset or capitalised cost, or an ordinary operating cost? Quote its vendor, category and description. If it could fit more than one, say unclear.
+4. Does any document say what the staff count includes? Quote the sentence, or add a gap "Not in the room: a statement of whether the staff count includes contractors".
+5. Does any order form or contract show a prepaid term, a multi-year term, or a fee paid once? Quote the clause and give the term in months.
+
+Quote the exact span you relied on for every claim. Do not recompute any script number. If a file a kind needs is missing, add a gap for it and do not guess. Do not say why a label was used, and do not suggest intent.
+
+Fill "checks" with one entry for each sub-check, using the check names in the schema. Set "defined_in" to "1.2" for arr_from_subscription_rows and "1.7" for gross_margin_from_ledger, and copy their labels from the script results. Propose each label with these rules, and name the rule and claim ids in "label_reason":
+- "flag": a script flag fired in this entry, or entry 1.2 or 1.7 flagged.
+- "watch": no flag, but a line is unclear and could move a figure past tolerance, or contractors appear in the ledger and no document says whether the staff count includes them.
+- "clear": every sub-check that could run passed.
+- "cannot_check": no sub-check could run because the customer file and the ledger are both missing.
+```
+
+**Output shape**
+
+```json
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["framework", "label", "label_reason", "claims", "gaps", "checks", "lines"],
+  "properties": {
+    "framework": {"type": "string", "const": "accounting_mislabels"},
+    "label": {"type": "string", "enum": ["flag", "watch", "clear", "cannot_check"]},
+    "label_reason": {"type": "string"},
+    "claims": {"type": "array", "items": {"$ref": "#/$defs/Claim"}},
+    "gaps": {"type": "array", "items": {"$ref": "#/$defs/Gap"}},
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["check_name", "defined_in", "scope", "label", "label_claimed", "really_is", "file", "column", "claim_ids"],
+        "properties": {
+          "check_name": {"type": "string", "enum": ["arr_from_subscription_rows", "mrr_column_vs_subscription_rows", "billings_vs_recognised_revenue", "gross_vs_net_revenue", "gross_margin_from_ledger", "contractor_spend_vs_headcount_and_burn", "capitalised_spend_vs_pnl_and_cash", "deferred_revenue_vs_earned", "one_time_fees_in_recurring_metrics"]},
+          "defined_in": {"type": "string", "enum": ["1.2", "1.7", "1.12"]},
+          "scope": {"type": "string", "enum": ["saturday", "after_saturday"]},
+          "label": {"type": "string", "enum": ["flag", "watch", "clear", "cannot_check", "not_run"]},
+          "label_claimed": {"type": "string", "description": "The label the document uses, for example 'MRR' or 'R&D'."},
+          "really_is": {"type": "string", "enum": ["pilot", "one_time_fee", "services", "usage", "bookings", "billings", "gross_volume", "pass_through", "delivery_cost", "contractor_spend", "capitalised_spend", "deferred_revenue", "nothing_found", "not_checked"]},
+          "file": {"type": "string"},
+          "column": {"type": "string"},
+          "claim_ids": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "lines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["locator", "label_shown", "kind", "claim_id"],
+        "properties": {
+          "locator": {"type": "string"},
+          "label_shown": {"type": "string"},
+          "kind": {"type": "string", "enum": ["recurring_subscription", "pilot", "one_time_fee", "services", "usage", "bookings", "billings", "gross_volume", "pass_through", "deferred_revenue", "contractor", "delivery_cost", "capitalised_cost", "operating_cost", "unclear"]},
+          "claim_id": {"type": "string"}
+        }
+      }
+    }
+  }
+}
+```
+
+Claims use the shared Claim. Revenue amounts by month use `value.label` "other". MRR and ARR use `mrr` and `arr`. Contractor spend uses `payroll_monthly`, burn uses `net_burn_monthly`, the staff count uses `headcount`, and delivery cost uses `cost_of_revenue`. The model's claims all carry `check.name` "accounting_mislabels.read".
+
+**How the readout scores it**
+
+Each sub-check scores itself, and the entry takes the worst of them.
+
+- `flag`: a script formula above fired. Every claim that fired it gets severity "flag" and the sub-check's check name.
+- `watch`: no flag, but a line is unclear and could move a figure past `match_tolerance`, or the ledger shows contractors and no document says whether the staff count includes them.
+- `clear`: every sub-check that could run passed. A gap can sit beside a clear. Hollis Voice has two (no contractor list, no balance sheet), and the readout shows each next to the result.
+- `cannot_check`: neither the customer file nor the ledger is in the room. With only the seed drop, kinds a, d and h still run from the model and the metrics file, and the rest return `cannot_check` with a gap.
+- A sub-check that cannot run in this room is marked `not_run`. Kind c is `not_run` on Hollis Voice.
+
+On Hollis Voice the entry's label is `flag`, because sub-check a finds the pilot in the `mrr` column. Sub-checks b, e, f, g and h are `clear`. Sub-check d is entry 1.7's `flag`. The Brookline Row prepay (DC2) and the onboarding fee (DC1) get no flag claim from any sub-check.
+
+Each sub-check's claims belong to the piece named in its table row. Kinds a, b, c, g and h feed **traction and revenue**. Kind d feeds **unit economics**. Kinds e and f feed **burn and runway**, and the staff-count claim in kind e feeds **team** ([The readout](#the-readout-saturday), "Piece verdicts"). The gaps sit in the overview's gap list.
+
+**What it must not do**
+
+- Flag the Brookline Row prepay or its June billings. Cash arriving up front is not revenue, and it is not a flag when the revenue line is right (DC2).
+- Flag the onboarding fee when it is excluded from ARR and MRR (DC1).
+- Repeat the ARR check or the gross margin check. Kinds a and d point to entries 1.2 and 1.7 and reuse their labels.
+- Give a reason a label was used, or suggest intent.
+- Say a capitalised cost or a prepayment is wrong. It shows the amount and where it sits.
+- Treat a ledger that ties to the P&L as proof that no contractor exists. It is a founder file (entry 1.11).
+- Use a benchmark as a pass or fail.
+- Invent a figure for a kind the room cannot test. It returns the gap.
 
 ## Scan 2. The comp builder (Saturday)
 
