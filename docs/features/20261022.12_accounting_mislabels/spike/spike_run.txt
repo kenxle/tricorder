@@ -1,0 +1,137 @@
+
+=== data_room/hollis_voice  entry label: flag
+sub-check                                  label         really_is
+mrr_column_vs_subscription_rows            flag          pilot
+billings_vs_recognised_revenue             clear         nothing_found
+gross_vs_net_revenue                       not_run       not_checked
+contractor_spend_vs_headcount_and_burn     clear         nothing_found
+capitalised_spend_vs_pnl_and_cash          clear         nothing_found
+deferred_revenue_vs_earned                 clear         nothing_found
+one_time_fees_in_recurring_metrics         clear         nothing_found
+  [flag] redflags-mislabels-001 mrr_column_vs_subscription_rows: monthly_metrics.csv shows MRR of $186,739 for 2026-09. The subscription rows add to $171,739. The $15,000 difference is 8.7% of subscription MRR and equals the non-subscription lines: Marlow Veterinary Group (Pilot, $15,000). Months over tolerance: 2026-08, 2026-09.
+  [info] redflags-mislabels-002 billings_vs_recognised_revenue: The P&L row "Subscription revenue" matches subscription revenue in the customer file in all 21 actual months (largest difference $0). Billings differ from revenue by more than 1.0% in 18 of those months, which annual plans paid up front explain on their own.
+  [info] redflags-mislabels-003 contractor_spend_vs_headcount_and_burn: Ledger lines tie to P&L cost of revenue plus operating expenses in all 21 actual months (largest difference $0). No ledger line names a contractor, consultant, freelancer, agency or statement of work.
+  [info] redflags-mislabels-004 capitalised_spend_vs_pnl_and_cash: Every ledger line is booked as one of Cost of revenue, G&A, R&D, S&M; none names an asset. The cash bridge difference is -$0.24 against cash of $1,800,000.
+  [info] redflags-mislabels-005 deferred_revenue_vs_earned: Billed but not yet earned at 2026-09: $104,876 across 28 customers. The P&L row "Subscription revenue" does not exceed revenue earned in any month, and ARR_Build Subscription ARR ($2,060,868) is 12 times 2026-09 subscription revenue.
+  [info] redflags-mislabels-006 one_time_fees_in_recurring_metrics: One-time fees of $9,500 in 2026-09 are not in the mrr column: the gap between mrr and subscription rows is $15,000, not the fee total, and the ARR_Build row "Onboarding fees" counts $0 of ARR.
+  [gap] Not in the room: a revenue export that separates pass-through money (not stated in the file)
+  [gap] Not in the room: a list of contractors, or an org chart that shows them (file missing)
+  [gap] Not in the room: a balance sheet (file missing)
+  [gap] Not in the room: a balance sheet with a deferred revenue line (file missing)
+  [line] 03_metrics/monthly_metrics.csv row 22 'mrr' is pilot -> redflags-mislabels-001
+  [line] P&L!W10 'Recurring revenue (subscription plus pilot)' is pilot -> redflags-mislabels-001
+  [link] redflags-mislabels-001 same cause as arr_from_subscription_rows via ['03_metrics/customer_mrr_by_month.csv row 2101', '02_financials/financial_model.xlsx ARR_Build!A13', '02_financials/financial_model.xlsx ARR_Build!E13']
+  validation: ok
+
+=== data_room/hollis_voice_seed_drop  entry label: flag
+sub-check                                  label         really_is
+mrr_column_vs_subscription_rows            flag          pilot
+billings_vs_recognised_revenue             cannot_check  not_checked
+gross_vs_net_revenue                       cannot_check  not_checked
+contractor_spend_vs_headcount_and_burn     cannot_check  not_checked
+capitalised_spend_vs_pnl_and_cash          cannot_check  not_checked
+deferred_revenue_vs_earned                 cannot_check  not_checked
+one_time_fees_in_recurring_metrics         clear         nothing_found
+  [flag] redflags-mislabels-001 mrr_column_vs_subscription_rows: monthly_metrics.csv shows MRR of $186,739 for 2026-09. The model's ARR_Build shows subscription MRR of $171,739. The $15,000 difference is 8.7% of subscription MRR and equals the non-subscription lines: Marlow Veterinary Group (pilot) (Pilot, $15,000). Months over tolerance: 2026-08, 2026-09.
+  [info] redflags-mislabels-002 one_time_fees_in_recurring_metrics: One-time fees of $9,500 in 2026-09 are not in the mrr column: the gap between mrr and subscription rows is $15,000, not the fee total, and the ARR_Build row "Onboarding fees" counts $0 of ARR.
+  [gap] Not in the room: a revenue export by product type (file missing)
+  [gap] Not in the room: an invoices or billings export (file missing)
+  [gap] Not in the room: a revenue export that separates pass-through money (file missing)
+  [gap] Not in the room: an expense ledger (file missing)
+  [gap] Not in the room: an expense ledger (file missing)
+  [gap] Not in the room: a balance sheet with a deferred revenue line (file missing)
+  [line] 03_metrics/monthly_metrics.csv row 22 'mrr' is pilot -> redflags-mislabels-001
+  [line] P&L!W10 'Recurring revenue (subscription plus pilot)' is pilot -> redflags-mislabels-001
+  [link] redflags-mislabels-001 same cause as arr_from_subscription_rows via ['02_financials/financial_model.xlsx ARR_Build!A13', '02_financials/financial_model.xlsx ARR_Build!B13', '02_financials/financial_model.xlsx ARR_Build!C39']
+  validation: ok
+
+=== data_room/hollis_voice_clean  entry label: clear
+sub-check                                  label         really_is
+mrr_column_vs_subscription_rows            clear         nothing_found
+billings_vs_recognised_revenue             clear         nothing_found
+gross_vs_net_revenue                       not_run       not_checked
+contractor_spend_vs_headcount_and_burn     clear         nothing_found
+capitalised_spend_vs_pnl_and_cash          clear         nothing_found
+deferred_revenue_vs_earned                 clear         nothing_found
+one_time_fees_in_recurring_metrics         clear         nothing_found
+  [info] redflags-mislabels-001 mrr_column_vs_subscription_rows: The mrr column in monthly_metrics.csv for 2026-09, $171,739, matches the subscription rows ($171,739) within 1.0%.
+  [info] redflags-mislabels-002 billings_vs_recognised_revenue: The P&L row "Subscription revenue" matches subscription revenue in the customer file in all 21 actual months (largest difference $0). Billings differ from revenue by more than 1.0% in 18 of those months, which annual plans paid up front explain on their own.
+  [info] redflags-mislabels-003 contractor_spend_vs_headcount_and_burn: Ledger lines tie to P&L cost of revenue plus operating expenses in all 21 actual months (largest difference $0). No ledger line names a contractor, consultant, freelancer, agency or statement of work.
+  [info] redflags-mislabels-004 capitalised_spend_vs_pnl_and_cash: Every ledger line is booked as one of Cost of revenue, G&A, R&D, S&M; none names an asset. The cash bridge difference is -$0.08 against cash of $1,800,000.
+  [info] redflags-mislabels-005 deferred_revenue_vs_earned: Billed but not yet earned at 2026-09: $104,876 across 28 customers. The P&L row "Subscription revenue" does not exceed revenue earned in any month, and ARR_Build Subscription ARR ($2,060,868) is 12 times 2026-09 subscription revenue.
+  [info] redflags-mislabels-006 one_time_fees_in_recurring_metrics: One-time fees of $9,500 in 2026-09 are not in the mrr column: the gap between mrr and subscription rows is $0, not the fee total, and the ARR_Build row "Onboarding fees" counts $0 of ARR.
+  [gap] Not in the room: a revenue export that separates pass-through money (not stated in the file)
+  [gap] Not in the room: a list of contractors, or an org chart that shows them (file missing)
+  [gap] Not in the room: a balance sheet (file missing)
+  [gap] Not in the room: a balance sheet with a deferred revenue line (file missing)
+  validation: ok
+
+=== docs/features/20261022.12_accounting_mislabels/spike/test_rooms/hollis_voice_resale_off  entry label: flag
+sub-check                                  label         really_is
+mrr_column_vs_subscription_rows            flag          pilot
+billings_vs_recognised_revenue             clear         nothing_found
+gross_vs_net_revenue                       not_run       not_checked
+contractor_spend_vs_headcount_and_burn     clear         nothing_found
+capitalised_spend_vs_pnl_and_cash          clear         nothing_found
+deferred_revenue_vs_earned                 clear         nothing_found
+one_time_fees_in_recurring_metrics         clear         nothing_found
+  [flag] redflags-mislabels-001 mrr_column_vs_subscription_rows: monthly_metrics.csv shows MRR of $186,739 for 2026-09. The subscription rows add to $171,739. The $15,000 difference is 8.7% of subscription MRR and equals the non-subscription lines: Marlow Veterinary Group (Pilot, $15,000). Months over tolerance: 2026-08, 2026-09.
+  [info] redflags-mislabels-002 billings_vs_recognised_revenue: The P&L row "Subscription revenue" matches subscription revenue in the customer file in all 21 actual months (largest difference $0). Billings differ from revenue by more than 1.0% in 18 of those months, which annual plans paid up front explain on their own.
+  [info] redflags-mislabels-003 contractor_spend_vs_headcount_and_burn: Ledger lines tie to P&L cost of revenue plus operating expenses in all 21 actual months (largest difference $0). No ledger line names a contractor, consultant, freelancer, agency or statement of work.
+  [info] redflags-mislabels-004 capitalised_spend_vs_pnl_and_cash: Every ledger line is booked as one of Cost of revenue, G&A, R&D, S&M; none names an asset. The cash bridge difference is -$0.24 against cash of $1,800,000.
+  [info] redflags-mislabels-005 deferred_revenue_vs_earned: Billed but not yet earned at 2026-09: $104,876 across 28 customers. The P&L row "Subscription revenue" does not exceed revenue earned in any month, and ARR_Build Subscription ARR ($2,060,868) is 12 times 2026-09 subscription revenue.
+  [info] redflags-mislabels-006 one_time_fees_in_recurring_metrics: One-time fees of $9,500 in 2026-09 are not in the mrr column: the gap between mrr and subscription rows is $15,000, not the fee total, and the ARR_Build row "Onboarding fees" counts $0 of ARR.
+  [gap] Not in the room: a revenue export that separates pass-through money (not stated in the file)
+  [gap] Not in the room: a list of contractors, or an org chart that shows them (file missing)
+  [gap] Not in the room: a balance sheet (file missing)
+  [gap] Not in the room: a balance sheet with a deferred revenue line (file missing)
+  [line] 03_metrics/monthly_metrics.csv row 22 'mrr' is pilot -> redflags-mislabels-001
+  [line] P&L!W10 'Recurring revenue (subscription plus pilot)' is pilot -> redflags-mislabels-001
+  [link] redflags-mislabels-001 same cause as arr_from_subscription_rows via ['03_metrics/customer_mrr_by_month.csv row 2101', '02_financials/financial_model.xlsx ARR_Build!A13', '02_financials/financial_model.xlsx ARR_Build!E13']
+  validation: ok
+
+=== docs/features/20261022.12_accounting_mislabels/spike/test_rooms/hollis_voice_resale_on  entry label: flag
+sub-check                                  label         really_is
+mrr_column_vs_subscription_rows            flag          pilot
+billings_vs_recognised_revenue             clear         nothing_found
+gross_vs_net_revenue                       flag          pass_through
+contractor_spend_vs_headcount_and_burn     clear         nothing_found
+capitalised_spend_vs_pnl_and_cash          clear         nothing_found
+deferred_revenue_vs_earned                 clear         nothing_found
+one_time_fees_in_recurring_metrics         clear         nothing_found
+  [flag] redflags-mislabels-001 mrr_column_vs_subscription_rows: monthly_metrics.csv shows MRR of $193,964 for 2026-09. The subscription rows add to $171,739. The $22,225 difference is 12.9% of subscription MRR and equals the non-subscription lines: Marlow Veterinary Group (Pilot, $15,000); 212 Resale rows ($7,225). Months over tolerance: 2026-04, 2026-05, 2026-06, 2026-07, 2026-08, 2026-09.
+  [info] redflags-mislabels-002 billings_vs_recognised_revenue: The P&L row "Subscription revenue" matches subscription revenue in the customer file in all 21 actual months (largest difference $0). Billings differ from revenue by more than 1.0% in 18 of those months, which annual plans paid up front explain on their own.
+  [flag] redflags-mislabels-003 gross_vs_net_revenue: metrics "mrr" for 2026-09 equals the gross amount ($193,964), including $7,225 passed on (product type Resale). Over the 12 months to 2026-09, $36,825 of pass-through money sits inside $1,386,023 of monthly_metrics.csv mrr, 2.7%. Net of it: $1,349,198.
+  [info] redflags-mislabels-004 contractor_spend_vs_headcount_and_burn: Ledger lines tie to P&L cost of revenue plus operating expenses in all 21 actual months (largest difference $0). No ledger line names a contractor, consultant, freelancer, agency or statement of work.
+  [info] redflags-mislabels-005 capitalised_spend_vs_pnl_and_cash: Every ledger line is booked as one of Cost of revenue, G&A, R&D, S&M; none names an asset. The cash bridge difference is -$0.24 against cash of $1,800,000.
+  [info] redflags-mislabels-006 deferred_revenue_vs_earned: Billed but not yet earned at 2026-09: $104,876 across 28 customers. The P&L row "Subscription revenue" does not exceed revenue earned in any month, and ARR_Build Subscription ARR ($2,060,868) is 12 times 2026-09 subscription revenue.
+  [info] redflags-mislabels-007 one_time_fees_in_recurring_metrics: One-time fees of $9,500 in 2026-09 are not in the mrr column: the gap between mrr and subscription rows is $22,225, not the fee total, and the ARR_Build row "Onboarding fees" counts $0 of ARR.
+  [gap] Not in the room: a list of contractors, or an org chart that shows them (file missing)
+  [gap] Not in the room: a balance sheet (file missing)
+  [gap] Not in the room: a balance sheet with a deferred revenue line (file missing)
+  [line] 03_metrics/monthly_metrics.csv row 22 'mrr' is pilot -> redflags-mislabels-001
+  [line] 03_metrics/monthly_metrics.csv row 22 'mrr' is pass_through -> redflags-mislabels-003
+  [link] redflags-mislabels-001 same cause as arr_from_subscription_rows via ['03_metrics/customer_mrr_by_month.csv row 3104', '03_metrics/customer_mrr_by_month.csv row 2871', '02_financials/financial_model.xlsx ARR_Build!A13', '02_financials/financial_model.xlsx ARR_Build!E13']
+  validation: ok
+
+=== data_room/brasswick  entry label: flag
+sub-check                                  label         really_is
+mrr_column_vs_subscription_rows            not_run       not_checked
+billings_vs_recognised_revenue             flag          billings
+gross_vs_net_revenue                       flag          pass_through
+contractor_spend_vs_headcount_and_burn     flag          contractor_spend
+capitalised_spend_vs_pnl_and_cash          clear         nothing_found
+deferred_revenue_vs_earned                 flag          deferred_revenue
+one_time_fees_in_recurring_metrics         not_run       not_checked
+  [flag] redflags-mislabels-001 billings_vs_recognised_revenue: The P&L row "Subscription revenue" for 2026-09 is $84,810. Subscription billings in revenue_by_customer.csv add to $82,650 and subscription revenue adds to $59,565. The P&L figure sits on the billings side.
+  [flag] redflags-mislabels-002 gross_vs_net_revenue: P&L "Recovery revenue", metrics "recovery_revenue" for 2026-09 equals the gross amount ($35,387.73), including $24,771.41 passed on (column remitted_to_customer). Over the 12 months to 2026-09, $264,214.66 of pass-through money sits inside $943,339.50 of P&L Total revenue, 28.0%. Net of it: $679,124.84. The ledger shows $264,214.66 paid on in the same months.
+  [flag] redflags-mislabels-003 contractor_spend_vs_headcount_and_burn: Contractor lines in the ledger add to $34,708.97 in 2026-09 (3 lines from Fernway Contractor Payments, Norrgate Software Studio). They sit in the P&L row "Professional services", $36,149.98 in 2026-09. The plan puts $2,800 on that row from 2026-10, which leaves $33,349.98 a month of the contractors out of the plan's burn. The staff count is 7 (Team!B12).
+  [info] redflags-mislabels-004 capitalised_spend_vs_pnl_and_cash: Every ledger line is booked as one of Cost of revenue, G&A, R&D, S&M; none names an asset. The cash bridge difference is $0.21 against cash of $641,318.
+  [flag] redflags-mislabels-005 deferred_revenue_vs_earned: The P&L row "Subscription revenue" for 2026-09 is $84,810. Revenue earned in the customer file is $59,565. The $25,245 excess equals the unearned part of the invoices billed that month to Ostley Freight.
+  [info] redflags-mislabels-006 deferred_revenue_vs_earned: Deferred revenue rebuilt from billings less revenue is $33,885 across 2 customers at 2026-09. The model's cash bridge carries $8,640.
+  [gap] Not in the room: a statement of whether the staff count includes contractors (not stated in the file)
+  [gap] Not in the room: a balance sheet (file missing)
+  [line] P&L!S8 'Recovery revenue' is pass_through -> redflags-mislabels-002
+  [line] 03_metrics/monthly_metrics.csv row 18 'recovery_revenue' is pass_through -> redflags-mislabels-002
+  [note] contractor vendors entry 1.12's keyword list misses: ['Norrgate Software Studio']
+  validation: ok
