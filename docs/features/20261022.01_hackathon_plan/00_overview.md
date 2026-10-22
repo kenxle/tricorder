@@ -4,7 +4,7 @@ Everything the factory built today for Deal Flow, NYC's first VC hackathon (Beta
 
 ## What I need from you
 
-- **Decide.** Eighteen cards in section 3, each with a recommendation. The critics settled three and added three more. Your 12:55 comment settled the edge, and your 1:12 edit added the steering card.
+- **Decide.** Nineteen cards in section 3, each with a recommendation. The critics settled three and added three more. Your 12:55 comment settled the edge, and your 1:12 edit added the steering card.
 - **Do this week.** Your rows on [the board](../../BULLETIN.md): interviews, the founder brief in your words, the pitch video, the keys, who joined and their repo access, the organisers' questions, the Reddit pages.
 - **Read first.** The [one-page founder brief](founder_brief.md). It is what you hand the judges, and the organisers asked every team for it.
 
@@ -101,6 +101,23 @@ Your 1:12 PM edit: the readout is a working surface the operator can steer, not 
 <p class="choice-q">Does a steer go on stage Saturday?</p>
 <button type="button" value="after-saturday" data-recommended>After Saturday, mentioned on stage</button>
 <button type="button" value="one-live-steer">One steer live on stage</button>
+</div>
+
+### Green flags in the demo room
+
+Your readout opens with the best green flags, but the demo room was built to be caught. After the generator was fixed, three pieces read strong: the round's terms ($9,000,000 raise, agreeing in the deck, cap table and model), the market estimate ($252,000,000) and the team (17 staff today). Every other business piece holds a planted red flag, and any planted flag makes a piece weak ([the data room](../../../data_room/README.md)). The honest problem: those three are the company agreeing with itself. A partner would not call a founder's own market estimate a green flag.
+
+<div class="options">
+<div class="option"><span class="badge badge--purple">Recommended</span><h4>Free one business piece</h4><p>Remove the customer-concentration flag, so customers reads strong: the order forms, the revenue-by-customer file and the metrics export are independent files that agree. Six red flags remain, including all four the organisers named. The demo gets one real green flag a partner cares about.</p></div>
+<div class="option"><p class="eyebrow">Option B</p><h4>Keep the room as it is</h4><p>Green flags are the round terms, the market estimate and the team size. Honest about what agrees, but thin, and the demo's first screen leans red.</p></div>
+<div class="option"><p class="eyebrow">Option C</p><h4>Change the verdict rule</h4><p>A piece with one minor flag and a strongly corroborated number reads mixed, not weak, and its corroborated number can be a green flag. Keeps every planted flag; makes the rule harder to explain on stage.</p></div>
+</div>
+
+<div class="choice" data-choice="green-flags">
+<p class="choice-q">How does the demo room get real green flags?</p>
+<button type="button" value="free-customers" data-recommended>Free the customers piece</button>
+<button type="button" value="keep-as-is">Keep the room as it is</button>
+<button type="button" value="change-rule">Change the verdict rule</button>
 </div>
 
 ### The blind room
