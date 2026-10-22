@@ -1,0 +1,21 @@
+room: /home/claude/tricorder/data_room/brasswick   deck: 01_overview/pitch_deck.pdf   hidden: none
+label: flag   (1 of 5 claims are flags.)
+as of: 2026-09   first revenue month in the books: 2025-05
+
+matches:
+  ok   slide  4  $943,340                     2025-10 to 2026-09     books: 943339.5  [sum of 'Total revenue', 2025-10 to 2026-09]  gap 0.0%
+  ok   slide  4  $84,810                      2026-09                books: 84810  ['Subscription revenue' for 2026-09]  gap 0.0%
+  ok   slide  4  chart, 9 bars                2026-01 to 2026-09     books: 'Total revenue', 9 months  [bar height / tallest bar against month / largest month]  gap 0.2%
+  MISS slide  4  chart window                 2026-01 to 2026-09     books: revenue from 2025-05  [first chart month against first revenue month]
+  ok   slide  4  grew every month             2026-01 to 2026-09     books: falls in none  ['Total revenue' month on month]
+
+claims:
+  redflags-dvb-001 [info] deck_revenue_vs_pnl: The deck's Revenue, last 12 months of $943,340 (slide 4) matches the P&L's $943,340 (sum of 'Total revenue', 2025-10 to 2026-09), a gap of 0.0%.
+  redflags-dvb-002 [info] deck_revenue_vs_pnl: The deck's MRR, September 2026 of $84,810 (slide 4) matches the P&L's $84,810 ('Subscription revenue' for 2026-09), a gap of 0.0%.
+  redflags-dvb-003 [info] deck_revenue_vs_pnl: The deck's revenue chart on slide 4 has 9 bars for 2026-01 to 2026-09; their shape matches 'Total revenue' in the P&L (largest difference 0.2 points of the tallest bar).
+  redflags-dvb-004 [flag] deck_history_vs_metrics: Shows part of the history: the revenue chart on slide 4 starts at 2026-01, 8 months after the first revenue month in the books (2025-05); the months left out, 2025-05 to 2025-12, hold a peak of $84,090 in 2025-09; revenue then fell 28.2% to $60,400 in the chart's first month.
+  redflags-dvb-005 [info] deck_revenue_vs_pnl: The deck says revenue grew every month in 2026 (slide 4); in the P&L 'Total revenue' rose in every month from 2026-01 to 2026-09, and changed by $-2,705 from 2025-12 to 2026-01.
+
+revenue rows cross-check: 03_metrics/revenue_by_customer.csv summed by month against 'Total revenue', 17 months, differing by more than $1: {'2026-09': -25245.0}
+
+wrote out/brasswick.json

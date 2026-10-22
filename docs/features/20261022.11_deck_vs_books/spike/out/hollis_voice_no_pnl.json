@@ -1,0 +1,31 @@
+{
+  "framework": "deck_vs_books",
+  "label": "cannot_check",
+  "label_reason": "The P&L is missing, so no deck figure can be matched to a period.",
+  "claims": [],
+  "gaps": [
+    {
+      "what": "Not in the room: the monthly P&L (02_financials/financial_model.xlsx, P&L tab)",
+      "why": "file missing",
+      "would_need": "The monthly income statement for every month since the first revenue"
+    }
+  ],
+  "matches": [],
+  "unmatched": [
+    {
+      "slide": 3,
+      "kind": "stated",
+      "why": "no P&L to match against; revenue rows in 03_metrics/customer_mrr_by_month.csv could stand in"
+    },
+    {
+      "slide": 3,
+      "kind": "chart",
+      "why": "no P&L to match against; revenue rows in 03_metrics/customer_mrr_by_month.csv could stand in"
+    },
+    {
+      "slide": 11,
+      "kind": "plan_growth",
+      "why": "no P&L to match against; revenue rows in 03_metrics/customer_mrr_by_month.csv could stand in"
+    }
+  ]
+}

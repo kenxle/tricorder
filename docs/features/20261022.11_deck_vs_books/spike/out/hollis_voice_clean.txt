@@ -1,0 +1,19 @@
+room: /home/claude/tricorder/data_room/hollis_voice_clean   deck: 01_overview/pitch_deck.pdf   hidden: none
+label: clear   (0 of 4 claims are flags.)
+as of: 2026-09   first revenue month in the books: 2025-01
+
+matches:
+  ok   slide  3  $2,060,868                   2026-09                books: 2060868  [12 x 'Recurring revenue (subscription)' for 2026-09]  gap 0.0%
+  ok   slide  3  chart, 21 bars               2025-01 to 2026-09     books: 'Recurring revenue (subscription)', 21 months  [bar height / tallest bar against month / largest month]  gap 0.3%
+  ok   slide  3  chart window                 2025-01 to 2026-09     books: revenue from 2025-01  [first chart month against first revenue month]
+  ok   slide 11  3.5% a month (plan)          2026-10 to 2027-09     books: plan columns 3.50% to 3.50%  [month-on-month growth of 'Recurring revenue (subscription)', plan columns]
+
+claims:
+  redflags-dvb-001 [info] deck_revenue_vs_pnl: The deck's ARR of $2,060,868 (slide 3) matches the P&L's $2,060,868 (12 x 'Recurring revenue (subscription)' for 2026-09), a gap of 0.0%.
+  redflags-dvb-002 [info] deck_revenue_vs_pnl: The deck's revenue chart on slide 3 has 21 bars for 2025-01 to 2026-09; their shape matches 'Recurring revenue (subscription)' in the P&L (largest difference 0.3 points of the tallest bar).
+  redflags-dvb-003 [info] deck_history_vs_metrics: The revenue chart on slide 3 starts at 2025-01, the first revenue month in the books, and runs to 2026-09 with no month left out.
+  redflags-dvb-004 [info] deck_revenue_vs_pnl: The deck's plan growth of 3.5% a month (slide 11) matches the model's plan columns, which grow 3.50% to 3.50% a month. It is a plan, not a period the books hold as actuals.
+
+revenue rows cross-check: 03_metrics/customer_mrr_by_month.csv summed by month against 'Recurring revenue (subscription)', 21 months, differing by more than $1: {'2026-08': 15000.0, '2026-09': 15000.0}
+
+wrote out/hollis_voice_clean.json

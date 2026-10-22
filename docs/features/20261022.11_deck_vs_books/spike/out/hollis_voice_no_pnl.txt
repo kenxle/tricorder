@@ -1,0 +1,16 @@
+room: /home/claude/tricorder/data_room/hollis_voice   deck: 01_overview/pitch_deck.pdf   hidden: ['02_financials/financial_model.xlsx']
+label: cannot_check   (The P&L is missing, so no deck figure can be matched to a period.)
+
+matches:
+
+unmatched:
+  slide 3: stated : no P&L to match against; revenue rows in 03_metrics/customer_mrr_by_month.csv could stand in
+  slide 3: chart : no P&L to match against; revenue rows in 03_metrics/customer_mrr_by_month.csv could stand in
+  slide 11: plan_growth : no P&L to match against; revenue rows in 03_metrics/customer_mrr_by_month.csv could stand in
+
+claims:
+
+gaps:
+  Not in the room: the monthly P&L (02_financials/financial_model.xlsx, P&L tab) (file missing); would need: The monthly income statement for every month since the first revenue
+
+wrote out/hollis_voice_no_pnl.json

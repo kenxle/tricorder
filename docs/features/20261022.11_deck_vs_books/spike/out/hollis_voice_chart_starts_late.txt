@@ -1,0 +1,19 @@
+room: /home/claude/tricorder/data_room/hollis_voice   deck: out/test_decks/chart_starts_late.pdf   hidden: none
+label: flag   (2 of 4 claims are flags.)
+as of: 2026-09   first revenue month in the books: 2025-01
+
+matches:
+  MISS slide  3  $2,500,000                   2026-09                books: 2240868  [12 x 'Recurring revenue (subscription plus pilot)' for 2026-09]  gap 11.6%
+  ok   slide  3  chart, 15 bars               2025-07 to 2026-09     books: 'Recurring revenue (subscription plus pilot)', 15 months  [bar height / tallest bar against month / largest month]  gap 0.3%
+  MISS slide  3  chart window                 2025-07 to 2026-09     books: revenue from 2025-01  [first chart month against first revenue month]
+  ok   slide 11  3.5% a month (plan)          2026-10 to 2027-09     books: plan columns 3.50% to 3.50%  [month-on-month growth of 'Recurring revenue (subscription plus pilot)', plan columns]
+
+claims:
+  redflags-dvb-001 [flag] deck_revenue_vs_pnl: The deck's ARR of $2,500,000 (slide 3) differs from the P&L's $2,240,868 (12 x 'Recurring revenue (subscription plus pilot)' for 2026-09), a gap of 11.6%.
+  redflags-dvb-002 [info] deck_revenue_vs_pnl: The deck's revenue chart on slide 3 has 15 bars for 2025-07 to 2026-09; their shape matches 'Recurring revenue (subscription plus pilot)' in the P&L (largest difference 0.3 points of the tallest bar).
+  redflags-dvb-003 [flag] deck_history_vs_metrics: Shows part of the history: the revenue chart on slide 3 starts at 2025-07, 6 months after the first revenue month in the books (2025-01); the months left out, 2025-01 to 2025-06, hold the climb from $2,651 to $19,462, with no fall.
+  redflags-dvb-004 [info] deck_revenue_vs_pnl: The deck's plan growth of 3.5% a month (slide 11) matches the model's plan columns, which grow 3.50% to 3.50% a month. It is a plan, not a period the books hold as actuals.
+
+revenue rows cross-check: 03_metrics/customer_mrr_by_month.csv summed by month against 'Recurring revenue (subscription plus pilot)', 21 months, differing by more than $1: none
+
+wrote out/hollis_voice_chart_starts_late.json
