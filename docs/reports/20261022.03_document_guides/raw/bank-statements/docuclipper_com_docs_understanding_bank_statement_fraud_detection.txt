@@ -1,0 +1,239 @@
+SOURCE: https://www.docuclipper.com/docs/understanding-bank-statement-fraud-detection/
+
+- - - - - - - - Understanding Bank Statement Fraud Detection - - - - - - - 
+ Login Start free trial Toggle navigation menu 
+
+ Product Overview Bank Statements Brokerage Statements Credit Card Statements Invoices Receipts Checks Tax Forms AI Templates Bank Statement Analyzer Cash Flow Analysis Forensic Accounting Transaction Categorization Document Workflow Automation Batch Processing Intelligent Document Processing Automated Ingestion API & Webhooks AI Data Extraction Security 
+
+ Integrations Overview QuickBooks Xero Sage NetSuite Dynamics 365 PDF to QBO Converter Excel Google Sheets Google Drive Dropbox OneDrive Box API & Webhooks MCP Server Zapier Gmail Email View all integrations 
+
+ Industries Overview Accounting Firms Bookkeepers Tax Professionals Lenders Financial Advisors Fintech Forensic Accounting View All Industries 
+
+ Resources Overview Customer Stories Reviews Blog Compare Alternatives Help Center API Documentation About Jobs Security Contact 
+
+ Live Demo Explore DocuClipper with sample data — no signup required. Pricing Login Start free trial 
+
+ Docs / Help Center Ctrl K 
+
+ Contact support 
+
+ Not a customer yet?
+ Try DocuClipper free for 14 days. No credit card required.
+ Start free trial 
+
+ Bank Statements 
+ Understanding Bank Statement Fraud Detection
+ Detect forged bank statements with DocuClipper's authenticity score: PDF edit history, pasted-in amounts, layout fingerprint, and reconciliation, scored 0 to 100.
+ Last updated October 20, 2026 
+ Available on: Business and Enterprise . See pricing 
+ DocuClipper's bank statement fraud detection assigns each document an authenticity score from 0 to 100, derived from four families of checks: PDF metadata and edit history (producer, creation-vs-modification gap, PDF version, edits saved on top of the original), pasted-in amounts (text sized differently from the rest of its row), document fingerprinting (does the file match known-authentic templates), and reconciliation (do the balances and transactions add up).
+
+ A score of 90 to 100 indicates the statement appears authentic; 0 to 49 indicates high fraud risk. The score is a signal, not a verdict - always review the individual signals in context before deciding.
+
+ You'll find it on the Fraud Detection tab of any bank or credit card project, next to Transactions and Categorize. Fraud detection is included in Business and Enterprise plans and during a free trial. On other plans the tab explains what it checks and has an Upgrade to Business button that opens the plans page.
+
+ Fraud Detection is included on the Business and Enterprise plans, and on every plan during the free trial. On a Starter plan you can use it for 14 days from the first time you open the tab; after that, it is available by upgrading to Business.
+
+ What is the DocuClipper authenticity score?
+
+ Each document receives a score from 0 to 100. It summarizes multiple checks and the confidence of the findings.
+
+ Score range Interpretation 
+ 90 to 100 Document appears authentic 
+ 70 to 89 Minor concerns detected 
+ 50 to 69 Moderate risk detected 
+ 0 to 49 High risk of fraud detected 
+
+ Important: The score is not a final decision. Always review the individual signals and consider the context.
+
+ What we analyze
+
+ PDF metadata analysis
+
+- Unusual producers (e.g., image editors or word processors) for a bank statement.
+
+- Large gaps between a PDF's creation and last-modification time.
+
+- Out-of-pattern PDF versions.
+
+- Edits saved on top of the original file (incremental updates).
+
+- Two metadata records in the same file that disagree about the software that made it.
+
+ Pasted-in amounts
+
+- Amounts whose text size differs from the rest of their row, reported with the page and position.
+
+ Document fingerprint matching
+
+- Compares the file's fingerprint against a library of known-authentic templates.
+
+- An unfamiliar fingerprint is surfaced as a signal (not proof - new bank templates and regional formats are legitimate causes).
+
+ Reconciliation check
+
+- Opening balance + net activity = closing balance for the statement period.
+
+- Flags when the transactions and reported balances do not add up.
+
+ Document fingerprinting
+
+ We compute a stable fingerprint from metadata, embedded fonts, and page dimensions. This enables:
+
+- Matching against known authentic templates.
+
+- Detecting duplicates or modified versions.
+
+- Building a library of trusted statement patterns over time.
+
+- Metadata (producer, creator, version)
+
+- Font set + embedding
+
+- Page size/orientation
+
+ How the score is calculated
+
+ Each signal has a confidence (0 to 1) and a point weight. The score starts at 100, and each signal subtracts confidence × weight - so a high-confidence, heavy signal pulls the score down the most, while a low-confidence one nudges it only slightly. The table below shows the points deducted at full confidence.
+
+ Signal Points (at full confidence) Why it matters 
+ INCREMENTAL_UPDATE 20 Edits were saved on top of the original file after it was created. 
+ XMP_METADATA_MISMATCH 18 The file's two metadata records disagree about the software that made it. 
+ SUSPICIOUS_PDF_PRODUCER 15 Uncommon tools for bank statements can indicate editing. 
+ MODIFIED_AFTER_CREATION 10 A large create-to-modify gap can indicate post-issuance edits. 
+ RECONCILIATION_FAILED 8 The numbers in the statement do not add up. Missing pages and partial exports cause this too, so it weighs less. 
+ SUSPICIOUS_PDF_VERSION 8 Atypical PDF versions can point to editing tools. 
+ INCONSISTENT_FIELD_HEIGHT 6 An amount is a different size from the rest of its row, as pasted-in text often is. 
+ DOESNT_MATCH_KNOWN_FINGERPRINTS 4 The file doesn't match a known-authentic template yet. Common for banks and layouts the library has not seen. 
+
+ Photos and screenshots of a statement get the reconciliation check only; the PDF checks don't apply to images, and the tab says so instead of reporting the image as authentic.
+
+ Best practices for review
+
+- Review the full signal list, not just the score.
+
+- Prioritize documents where multiple high-confidence signals stack up.
+
+- Consider context. Scans, print-to-PDF, or corporate PDF workflows can cause benign anomalies.
+
+- Compare against another statement from the same institution when possible.
+
+ Fraud signal glossary
+
+ RECONCILIATION_FAILED : transactions do not reconcile with reported balances
+
+ What we check: Opening balance + net activity = closing balance for the period.
+
+ Why it matters: Non-reconciling statements often indicate edits or missing lines.
+
+ Legitimate causes: Partial statements, excluded pages, or export filters.
+
+ Review tips: Verify period dates, page completeness, and subtotals for each page.
+
+ SUSPICIOUS_PDF_PRODUCER : uncommon creation tools for bank statements
+
+ What we check: PDF Producer string (e.g., Word, Photoshop, Preview).
+
+ Why it matters: Banks rarely generate statements via general-purpose editors.
+
+ Legitimate causes: Users who scanned or re-saved statements before upload.
+
+ Review tips: Ask for the original download from online banking.
+
+ MODIFIED_AFTER_CREATION : large gap between creation and modification time
+
+ What we check: Hours between PDF creation and last modification.
+
+ Why it matters: Late modifications can indicate edits post-issuance.
+
+ Legitimate causes: Batch stamping or archiving systems.
+
+ Review tips: Validate with a fresh download from the issuing bank.
+
+ SUSPICIOUS_PDF_VERSION : unusual or very old PDF version
+
+ What we check: PDF version string outside common ranges for bank exports.
+
+ Why it matters: Some editing tools save with atypical versions.
+
+ Legitimate causes: Legacy back-office software.
+
+ Review tips: Compare with other statements from the same institution.
+
+ DOESNT_MATCH_KNOWN_FINGERPRINTS : no match to approved templates
+
+ What we check: The document’s fingerprint (metadata, fonts, page size) against a library of known authentic patterns.
+
+ Why it matters: Unfamiliar patterns may indicate edits or a nonstandard source.
+
+ Legitimate causes: New bank template versions, regional formats, or first-time issuers.
+
+ Review tips: Request another statement from the same account and month for comparison.
+
+ INCREMENTAL_UPDATE : edits saved on top of the original file
+
+ What we check: Whether the PDF contains changes appended after it was first written.
+
+ Why it matters: Banks generate statements in one pass; appended edits mean the file was changed afterwards.
+
+ Legitimate causes: Some signing or annotation tools append their changes the same way.
+
+ Review tips: Ask for a fresh download from online banking and compare the two.
+
+ XMP_METADATA_MISMATCH : the file's metadata disagrees with itself
+
+ What we check: The two metadata records inside a PDF, and whether they name the same producing software.
+
+ Why it matters: Editors often update one record and leave the other, so a disagreement points to a re-saved file.
+
+ Legitimate causes: Some document-management systems rewrite one record on import.
+
+ Review tips: Check the producer field in the document properties and ask how the file was obtained.
+
+ INCONSISTENT_FIELD_HEIGHT : an amount is a different size from its row
+
+ What we check: Text height of each amount compared with the rest of the same row, with the page and position.
+
+ Why it matters: Amounts pasted over the original often come out slightly larger or smaller.
+
+ Legitimate causes: Bold or highlighted totals, and statements that mix font sizes by design.
+
+ Review tips: Zoom in on the flagged amount and compare it with the figures above and below.
+
+ The Fraud Detection tab shows the authenticity score as a gauge, the plain-language interpretation, and a table of the signals found - each with its type, confidence, and supporting text - beside the PDF viewer. You can also Download Project Fraud Report as a CSV for the whole project.
+
+ Notes
+
+- Each signal carries a confidence score. Page and location data are recorded internally to support investigation.
+
+- The presence of any single signal is not proof of fraud. Use multiple signals plus context to make decisions.
+
+ FAQs
+
+ What does DocuClipper's authenticity score mean?
+
+ It is a 0 to 100 summary of multiple fraud signals weighted by confidence. 90 to 100 looks authentic, 70 to 89 has minor concerns, 50 to 69 is moderate risk, and 0 to 49 is high risk. The score is a guide, not a final decision.
+
+ What signals does DocuClipper check on a bank statement?
+
+ PDF metadata (creation-versus-modification gaps, suspicious producers, atypical PDF versions), document-fingerprint matching against known-authentic templates, and reconciliation against the printed opening and closing balances.
+
+ Can a legitimate statement get a low score?
+
+ Yes. Scans, print-to-PDF workflows, and corporate PDF tooling can produce benign anomalies. Always review the underlying signals and compare against another statement from the same institution before flagging the document.
+
+ What is document fingerprinting?
+
+ A stable fingerprint computed from metadata, embedded fonts, and page dimensions. It lets DocuClipper match a statement against known authentic templates and detect duplicates or modified versions across uploads.
+
+ Which signal carries the most weight?
+
+ RECONCILIATION_FAILED (25 points), because it means the opening balance, transactions, and closing balance do not add up. DOESNT_MATCH_KNOWN_FINGERPRINTS (18) and SUSPICIOUS_PDF_PRODUCER (15) come next, while MODIFIED_AFTER_CREATION (10) and SUSPICIOUS_PDF_VERSION (8) carry less weight on their own.
+
+ Is one fraud signal enough to reject a statement?
+
+ No. A single signal is not proof of tampering. Prioritize cases where multiple high-confidence signals stack up on the same document, and consider context before making a decision.
+
+ Which plans include bank statement fraud detection?
+
+ Business and Enterprise, plus every plan during the free trial. Starter plans can use the Fraud Detection tab for 14 days from the first time it is opened; after that, upgrade to Business to keep using it.

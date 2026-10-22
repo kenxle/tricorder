@@ -1,0 +1,154 @@
+SOURCE: https://valueaddvc.com/blog/information-rights-in-venture-term-sheets-what-vcs-see-and-what-founders-control
+
+- - - - Information Rights: What VCs See - - - - - 
+
+ VC & Investing May 19, 2026 · 8 min read · 
+ Information Rights in Venture Term Sheets: What VCs See and What Founders Control
+ Most founders sign information rights clauses at Series A without reading them carefully. Here is exactly what investors get access to, what the standard package looks like, and the handful of things that are actually negotiable.
+ By Trace Cohen 
+ Founder & Editor-in-chief, Value Add VC — Angel investor, VC, family office, operator and founder · 3x founder (BrandYourself, Launch.it, SPOT) · 65+ investments 
+ @Trace_Cohen 
+
+ 65+ Investments 3x Founder $200M+ Funds Tracked 
+ Share X LinkedIn Email Copy link Quote card 
+
+ Quick Answer
+ Information rights typically grant major investors (those holding $500K–$1M+ in preferred stock) access to monthly or quarterly financials, annual audited statements, and book inspection rights. These rights are contractual, not statutory — founders can negotiate the threshold, scope, and confidentiality obligations before signing.
+
+ Information rights give your investors a recurring window into your business. Most founders treat them as boilerplate — VCs treat them as the foundation of portfolio monitoring.
+ In practice, information rights clauses in venture term sheets are nearly identical across deals — NVCA model documents have standardized most of the language. But the details matter: who qualifies as a Major Investor, what they can inspect, and what confidentiality obligations they have when they receive your data.
+ What Information Rights Actually Cover
+ Standard NVCA information rights have four components. Every Series A and beyond will include all four in some form:
+ Monthly / Quarterly Financial Statements
+ Monthly or Quarterly 
+ Unaudited income statement, balance sheet, and statement of cash flows — delivered within 30 days of month-end (or 45 days for quarterly). This is the core operating report. VCs use it to track burn rate, revenue growth, and gross margin trajectory.
+
+ Annual Audited Financials
+ Annual (within 180 days of FYE) 
+ Audited statements prepared by an independent accountant, typically due within 120–180 days of fiscal year-end. Pre-revenue or pre-Series A companies are often given a carve-out (unaudited annual statements instead), since a full audit costs $15,000–$60,000.
+
+ Annual Operating Budget
+ Annual (before fiscal year start) 
+ A board-approved plan for the upcoming fiscal year — typically headcount, revenue targets, and major expense line items. Investors receive this at or before the start of each fiscal year. It creates the baseline against which monthly actuals are compared.
+
+ Inspection Right
+ On reasonable notice 
+ The right to inspect the company's books, records, and facilities during normal business hours, with reasonable notice. In practice, this right is rarely exercised except in distress situations, disputes, or pre-exit due diligence. But it is in nearly every term sheet.
+
+ Capitalization Table
+ On request / annually 
+ A current, fully diluted cap table showing all issued and reserved equity. Delivered on request or alongside annual financials. For investors evaluating secondaries or pro-rata rights, this is essential data.
+
+ The Major Investor Threshold: Who Actually Gets These Rights
+ Information rights are not granted to every shareholder — only to investors who clear the "Major Investor" threshold. This threshold is set by negotiation and varies by round size and investor base.
+ Round Stage Typical Major Investor Threshold Who This Excludes 
+ Seed / Pre-Seed $250K–$500K Angels writing $25K–$100K checks 
+ Series A $500K–$1M Smaller angels, some seed funds rolling over 
+ Series B+ $1M–$2M Sub-threshold Series A investors not leading 
+ Growth / Late Stage $2M–$5M+ Most early-stage investors unless they followed on 
+
+ Setting the threshold strategically matters. A seed-stage company with 15 angel investors at $50K each has zero Major Investors at a $500K threshold — meaning only Series A lead funds receive information rights. That simplifies reporting overhead significantly.
+ What Information Rights Are Used For in Practice
+ From the investor side, information rights serve three distinct functions — and each one has different implications for founders:
+ Portfolio Monitoring
+ VCs track burn multiple, revenue growth, and gross margin quarter over quarter. Monthly financials are plugged directly into portfolio dashboards. This is the day-to-day use — most investors review these mechanically unless a metric spikes.
+ Competitive sensitivity: Low 
+ Reserve Decisions
+ Before a follow-on round, your lead VC will pull every information package they have received over the past 12–18 months to reconstruct your trajectory. Companies that send clean, consistent data get faster conviction. Companies with gaps or inconsistencies create friction.
+ Competitive sensitivity: Medium 
+ Exit and Secondary Due Diligence
+ When an acquirer or secondary buyer begins diligence, your investor's information rights history becomes the baseline data room. Audited financials, cap tables, and board packages from information rights packages are often the first documents requested. How clean they are reflects on you.
+ Competitive sensitivity: High 
+
+ What Founders Can Actually Negotiate
+ Most of the financial statement schedule is non-negotiable — investors need consistent data. But there are four levers founders commonly use:
+ High
+ Raise the Major Investor Threshold
+ Reduces the number of investors receiving formal reports. A $1M threshold at Series A means only lead funds get monthly financials. Angels and smaller seed funds are excluded entirely from contractual reporting obligations.
+
+ High
+ Add Investor Confidentiality Obligations
+ Require investors to keep received information confidential and not share it with portfolio companies, LPs (beyond standard fund reporting), or competitors. NVCA standard docs do not include this by default. Adding it is increasingly common for companies with sensitive unit economics.
+
+ Medium
+ Narrow the Inspection Right
+ The standard 'books and records' inspection right is broad. Founders can narrow it to 'financial books and records only' or require that inspection be conducted through a third-party CPA rather than investor-employed personnel. This limits competitive intelligence gathering during diligence.
+
+ Medium
+ Carve Out Competitively Sensitive IP
+ Explicit carve-out language excluding source code, customer lists, and product roadmaps from the inspection right. Particularly important when taking money from strategic investors or CVCs whose parent companies compete in adjacent markets.
+
+ When Information Rights Become a Problem
+ Information rights are largely invisible when things are going well. They become operationally significant in three scenarios:
+ - 01 Strategic investors with competing interests. CVCs and corporate strategics use information rights the same way financial VCs do — but their parent companies may compete with your customers or in your market. Carve-outs and confidentiality obligations are not optional when taking strategic capital. Check your existing investor agreements at the fund performance dashboard to understand which investors have which rights. 
+- 02 Down rounds and distressed situations. When a company is struggling, investors who are not on the board — but have information rights — can use monthly financials to pressure founders into governance changes, force a sale, or threaten litigation. Information rights do not include approval rights, but they create visibility that drives informal pressure. 
+- 03 M&A and secondary transactions. A buyer conducting due diligence will request every information package the company has sent investors. If your monthly reports have been inconsistent, changed accounting methods mid-stream, or omitted key metrics at various points, that creates diligence friction. Clean, consistent information rights packages are part of acquisition-readiness. 
+ Information Rights vs. Board Observer Rights
+ These are distinct rights that are often confused. The comparison matters when building your cap table and governance structure:
+ Information Rights
+ - • Financial statements delivered on schedule
+- • Cap table on request
+- • Books and records inspection (with notice)
+- • No attendance at board meetings
+- • No right to vote or speak at board level
+- • Granted to Major Investors based on $ threshold
+
+ Board Observer Rights
+ - • Attend board meetings (but no vote)
+- • Receive board packages and materials
+- • Access to strategic discussions in real time
+- • More invasive — typically limited to 1 observer
+- • Can be terminated if observer breaches confidentiality
+- • Negotiated separately, not tied to $ threshold
+
+ Observer rights are more powerful than information rights — they give investors presence and informal influence without formal board seats. Founders should be much more selective about granting observer rights than about setting Major Investor thresholds.
+ The information rights clause is not boilerplate.
+ It determines who sees your business, how often, and what they can do with what they see. Set the threshold. Add confidentiality. Narrow the inspection right. These are not aggressive asks — they are standard hygiene for any founder who has taken money from more than a handful of investors.
+
+ Track the VC landscape and fund structures at Value Add VC's VC Performance Dashboard . Originally published in the Trace Cohen newsletter . 
+
+ Latest from the Pulse
+
+ IPO Anthropic Seeks Palantir-Style Voting Control Pre-IPO NEWS Indian VC Firms Follow Founders Into Silicon Valley AI Founders Fund, Khosla Ventures Are Quietly Touring China 
+ All stories → 
+
+ Get VC data most people never see
+ — free to subscribe
+ Trace's notes on venture, AI and startups, a few times a week. Join 5,000+ subscribers. No spam.
+
+ Leave this field empty 
+ Email address Subscribe → 
+ No spam, unsubscribe anytime. Sent via Substack · Privacy · or subscribe on Substack ↗ 
+
+ Add Value Add VC as a preferred source on Google 
+
+ Share X LinkedIn Email Copy link Quote card 
+
+ Frequently Asked Questions
+ What are information rights in a venture term sheet? Information rights are contractual provisions that require a company to share financial statements, cap table data, and other business information with certain investors on a regular schedule. They are typically granted only to 'Major Investors' — those who hold above a specified ownership or dollar threshold — and are separate from board observer rights.
+ What do investors typically receive under standard information rights? Standard NVCA-based information rights packages include monthly unaudited financials (income statement, balance sheet, cash flow) within 30 days of month-end, annual audited financials within 120–180 days of fiscal year-end, an annual operating budget, and a current capitalization table. Series B and later rounds often add quarterly board packages and pipeline data.
+ What is the 'Major Investor' threshold for information rights? The Major Investor threshold is typically set at $500,000 to $2,000,000 in aggregate investment, or at 0.5–1% ownership on a fully diluted basis. Investors below this threshold generally receive no contractual information rights — only what the company chooses to share voluntarily or what is required by state law.
+ Can founders negotiate or limit information rights in a term sheet? Yes. Founders commonly negotiate three things: raising the Major Investor threshold (reducing how many investors qualify), adding a confidentiality obligation on investors (restricting how they can use the data), and carving out competitively sensitive information from the inspection right. The financial statement schedule is rarely negotiable, but the format and scope of 'books and records' access is.
+ Do information rights expire or survive exits? Information rights automatically terminate when the company converts all preferred stock into common stock at an IPO, or upon a change of control. They do not typically survive in standard NVCA form. Some founders negotiate automatic sunset clauses that terminate rights if a round is not led by a major institutional investor, though this is uncommon at Series A.
+
+ Related Tools & Dashboards
+ 📊 Cap Table Tools 📈 VC Fund Performance 📖 VC Glossary 🤝 How to Negotiate a Term Sheet 
+
+ Companies & investors in this article
+ Practice · Healthcare 
+
+ Keep Reading
+ 🔗 Drag-Along Rights Explained 🎱 The Option Pool Shuffle 🪑 Board Composition in Term Sheets: What Founders Give Up 
+
+ New in VC & Investing
+ 💰 AngelList vs Carta 2026: $10K SPVs vs $203B Fund Admin Scale 💰 Bhavin Turakhia 2026: Zeta at $2B, a $30M Neo Bet, Titan 💰 Doubtnut Valuation: $121M Peak to $10M Allen Sale in 2023 💰 Lycia Therapeutics IPO 2026: $938M Valuation, LYCA Ticker 💰 Bessemer Venture Partners AUM 2026: $20.2B, $5.75B Fund 💰 Anduril vs Shield AI 2026: $90B vs $20B Valuation, Revenue 
+
+ Explore 45+ free VC tools, dashboards, and recommended startup software.
+ Explore Dashboards Helpful Apps & Platforms 
+
+ Get VC data most people never see
+ Venture, AI & startup notes a few times a week. Join 5,000+ subscribers.
+
+ Leave this field empty 
+ Email address Subscribe Subscribe Free 
+ Or subscribe on Substack ↗

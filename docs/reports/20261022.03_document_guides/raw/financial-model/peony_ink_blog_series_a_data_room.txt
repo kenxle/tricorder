@@ -1,0 +1,171 @@
+SOURCE: https://www.peony.ink/blog/series-a-data-room
+
+- - - - - - - - Series A Data Room: The Step-Change Round Where Your Room Gets Graded (2026) — Peony - - - - - - - 
+ Impress Investors
+ Create a professional data room that helps you close rounds faster.
+ Impress Investors 
+
+ Series A Data Room: The Step-Change Round Where Your Room Gets Graded (2026)
+
+ Sean Yu • June 25, 2026 • Updated September 9, 2026 
+ Co-founder at Peony. Former M&A at Nomura, early-stage VC at Backed VC, and growth-equity / secondaries investor at Target Global. I write about investors, fundraising, and deal advisors from the deal-side perspective I spent years in.
+ Set up your next data room with Sean More from Sean → 
+
+ Series A Data Room Fundraising Due Diligence Startup Metrics Venture Capital 
+
+ Series A Data Room: The Step-Change Round Where Your Room Gets Graded
+
+ Last updated: June 2026 
+
+ Quick answer: A Series A data room is different in kind, not degree, from the room that got you through seed. At seed, investors bet on team and potential, diligence is light, and the room is a courtesy. At Series A, an institutional lead taking a board seat grades the room against quantified benchmarks, builds their own model from your data, and calls your customers — CRV's framing is that seed "bets on people and potential" while Series A "evaluates actual performance against specific benchmarks." So the room's job changes from presenting a story to proving it : every claim in your deck needs its evidence one click away. This guide covers what changes — the metrics a lead verifies, the documents a seed investor never asked for, the clean-cap-table bar, and the two-tier room that survives an 8–16-week diligence. Run it on a flat-rate platform like Peony ($30/admin/month Business, $52/admin/month Data Room).
+
+ I'm Sean Yu, co-founder of Peony , a data room company serving 8,000+ customers — a large share of them founders moving from seed to Series A. The pattern I see again and again: a team that raised a great seed round on a deck and a SAFE assumes Series A is the same motion with bigger numbers, opens the same lightweight folder to an institutional lead, and watches diligence stall in week two when the room can't substantiate the deck. It isn't the same motion. Series A is the first time your data room is graded — and the founders who sail through are the ones who built the room for that grading, not for a courtesy read.
+
+ This is the Series-A-specific playbook: the step-change from seed, the metrics a lead expects to verify (not just see), the documents that are new at this stage, the clean-cap-table requirement that quietly costs founders the most time, and how to structure the room for the way an institutional lead actually diligences. For the stage-agnostic document inventory, build on the startup data room checklist ; this guide is the standard that checklist is held to at A.
+
+ One scope note: every benchmark here is commonly cited guidance, not a hard rule — the bar moves by sector and model, and I've flagged where a popular metric is widely misapplied. Use the numbers to calibrate, not to panic.
+
+ How is a Series A data room different from the one that got you through seed?
+
+ The burden of proof inverts. A seed data room presents — it's a tidy set of files that supports a story an investor is mostly buying on conviction in you and the market. A Series A data room proves — it's the evidence file an institutional lead grades your story against. The documents partly overlap; the scrutiny doesn't, and that's the whole difference. If you are still on the seed side of that line, start with the five-file seed round data room — this post is about what happens to that room when the burden of proof inverts.
+
+ Here's the concrete version of "graded." At Series A, the lead is taking a board seat and writing a check at a valuation that, per Carta, now sits at a median $78.7M post-money (Q4 2025). For a check and a seat that size, an associate will build their own model from your raw data, call your top customers, and tie every claim in your deck back to a source in the room. If your deck says 130% net revenue retention, they want the cohort export that produces it. If it says $4M ARR, they want the GAAP financials and the billing data behind it. The gap between what you claim and what you can substantiate is exactly what diligence is designed to find.
+
+ So the reframe that matters: stop thinking of the Series A room as a nicer folder and start thinking of it as the substantiation layer for your deck . Everything in the deck is a claim; everything in the room is the proof. When those line up one click apart, diligence is fast and you keep momentum. When they don't, you get a long document-request list, the timeline slips, and the lead's enthusiasm cools while you scramble. The room doesn't win the round, but a weak one can quietly lose it.
+
+ Why does Series A turn your data room into something that gets graded?
+
+ Because the people and the process change. At seed, the decision-maker is often a single partner or an angel making a fast, conviction-led bet; CRV notes seed diligence is "relatively light" and can move "in weeks rather than months." At Series A, an institutional firm assigns a partner plus one or two associates, runs partner meetings, conducts customer reference calls, and does a structured data room review before final legal — a process CRV describes as stretching "meaningfully longer." More money, more governance, more scrutiny.
+
+ The mindset shift underneath it is the part founders underestimate. Seed investors, in CRV's words, "bet on people and potential." Series A investors "evaluate actual performance against specific benchmarks." That word — benchmarks — is what turns the room into a graded artifact. The lead isn't just forming a qualitative impression; they're measuring your growth, retention, margins, and efficiency against a mental model of what a fundable Series A looks like, and they're checking those measurements against the documents you provide.
+
+ This is why the same set of files lands completely differently at the two stages. At seed, a financial model is a signal that you think rigorously. At Series A, it's an input the associate rebuilds and stress-tests. At seed, a logo slide is exciting. At Series A, the lead wants the signed contract and may call the customer. The room has to be built for verification, because verification is what's happening to it.
+
+ What metrics does a Series A lead expect to find — and verify — in your room?
+
+ The benchmarks below are the ones credible investors cite most — and again, all of them are guidance, not pass/fail lines. What matters as much as hitting them is being able to prove them from the room.
+
+ Metric Commonly cited Series A guidance (SaaS) Source What the room must prove it with 
+ ARR "A few million" in ARR CRV GAAP financials + billing/bookings data 
+ Growth rate Median ~165% at $1–10M ARR Bessemer The model + historical revenue by month 
+ Net revenue retention >100%; "good" 105–120%, best 140%+ CRV / Bessemer Cohort & retention analysis 
+ Gross margin Median ~72% ($1–10M ARR); ~77% overall Bessemer / Benchmarkit COGS detail in the financials 
+ CAC payback ~15 months ($1–10M ARR) Bessemer CAC/LTV analysis + sales & marketing spend 
+ LTV:CAC ~3:1 or better CRV Unit-economics model 
+
+ Two traps worth naming so you don't misapply a metric in your own deck. First, T2D3 — "triple, triple, double, double, double" — was coined by Neeraj Agrawal at Battery Ventures in 2015 , not Bessemer; it describes a path from roughly $2M to $100M+ ARR, and it's an aspiration for outlier outcomes, not a Series A entry requirement. Second, the Rule of 40 and Bessemer's efficiency-score thresholds , by Bessemer's own statement, generally only apply above $25M ARR — so a $4M-ARR company shouldn't be measured against them, and if a lead tries, you can (politely) cite the source.
+
+ The operational point: a metrics dashboard in the room is good, but a dashboard alone invites the question "where does this come from?" Put the dashboard and its sources together — the cohort export next to the retention number, the billing data next to ARR, the model next to the projections. You want the associate's tie-out to take minutes, not a week of email.
+
+ What goes in a Series A data room that a seed investor never asked for?
+
+ If you built a real seed room, you're perhaps 40% of the way to a Series A room. The new weight is financial depth, legal chain-of-title, and the unit-economics layer. Drawing on Kruze Consulting's VC diligence checklist (updated June 2025), here's what's typically new at A:
+
+- Detailed GAAP financials — income statement, balance sheet, and cash flow for three years, monthly and annual (seed often shows a simple summary).
+
+- Three-year forward projections tied to a real operating model, not a single hockey-stick line.
+
+- A 409A valuation — generally expected by Series A; rarely present at seed.
+
+- Cohort and retention analysis — the evidence behind your NRR and churn claims.
+
+- A built financial/operating model with unit economics — CAC, LTV, and payback the associate can rebuild.
+
+- Top ~10 customer contracts and any material contract above ~$20,000 — the signed paper behind the logos.
+
+- IP documentation and assignment chain-of-title — every founder, employee, and contractor's work assigned to the company.
+
+- Employment agreements, offer letters, and the option-grant records behind the pool.
+
+- Board and shareholder minutes and recent bank statements.
+
+ The pattern is the shift from "who are you and what could this become" to "prove the engine works and the company is clean." Seed funds the promise; Series A underwrites the machine and the corporate hygiene around it. Notably, the items most likely to be missing — IP assignments, papered SAFEs, board minutes — are corporate-cleanup tasks, not metrics, which is why the next section matters so much.
+
+ What is a "clean cap table," and why does it matter so much more at Series A?
+
+ A clean cap table is one where every issued share, option, SAFE, and convertible note is documented, signed, and reconciles to a single fully-diluted view that models how each instrument converts at the priced round. It matters far more at Series A than seed because Series A is the first round that prices your equity — the lead is buying a specific ownership percentage, so any ambiguity in the table is ambiguity in what they're paying for, and that stalls diligence and erodes your leverage right when you can least afford it.
+
+ Startup lawyers flag the same recurring red flags, and they're worth pre-empting:
+
+- Un-papered equity — a grant you promised a key hire or advisor with no signed agreement on file. It has to be papered before it can be counted.
+
+- SAFE stacking — multiple SAFEs at different caps and discounts that all convert at the priced round. Founders frequently haven't modeled the post-conversion table, then get surprised by their own dilution. Build the pro-forma conversion before the lead does.
+
+- Missing IP assignments — founders, early employees, or contractors who never assigned their work to the company. Law firms commonly cite this as the single most diligence-stalling legal gap, because it goes to whether the company even owns what it's selling.
+
+- An undocumented option pool — grants without paperwork and an unissued pool that distorts the per-share price the lead is negotiating.
+
+ None of these is hard to fix. All of them are slow to fix under a term-sheet deadline, when counsel is busy and a missing contractor signature can take a week to chase. So the move is to clean the cap table and close the IP gaps before the confirmatory room opens. A messy cap table rarely kills a round on its own — it just taxes your time and your negotiating position at the worst moment.
+
+ How should you organize the room so a lead can diligence it fast?
+
+ Mirror the way the lead actually works: a two-tier room that matches the two phases of diligence. Within tier one, reading order is a design choice too — the narrative data room approach adds a start-here memo and a guided sequence on top of the binder, so the partner's first fifteen minutes are designed rather than alphabetical.
+
+ Tier one — the pre-term-sheet room. What a partner needs to build conviction and an internal model: the deck, a metrics dashboard, the financial summary and model, a cap-table summary, and a short data index. Keep it tight — this phase is about conviction, not exhaustive proof — and put it behind a per-recipient link so you can see which partners are actually engaged.
+
+ Tier two — the confirmatory room. What the associates and lawyers tie out after the term sheet: full GAAP financials, the detailed cap table with conversion modeling, customer contracts, IP assignments, the 409A, board minutes, and employment docs. This is the legal and financial depth — and it's also your most sensitive material, which is why it shouldn't be exposed before there's a signed term sheet.
+
+ The mistake is collapsing both tiers into one flat folder on day one. It overwhelms the early read and over-exposes your customer contracts and detailed financials to a lead who hasn't committed. Staging the disclosure protects both your momentum and your sensitive data. On Peony , you stage it with granular per-file permissions, give each investor a personalized link with page-level analytics so you follow up based on who read the model rather than who said they would, and put dynamic watermarks on the sensitive financials and contracts — per-recipient links and analytics on the Business plan ($30/admin/month), watermarks, screenshot protection, granular permissions, and AI auto-indexing on the Data Room plan ($52/admin/month). For the underlying file list, layer this on the startup data room checklist .
+
+ What does Series A diligence actually look like, start to finish?
+
+ It runs longer and deeper than anything you saw at seed — commonly eight to sixteen weeks end to end versus two to four at seed (guidance, not a guarantee). A rough arc:
+
+- Partner conviction (weeks 1–3). The sponsoring partner digs into the tier-one room, builds an internal model from your data, and forms a thesis to bring to the partnership.
+
+- Customer and reference calls (weeks 2–6). The lead calls your top customers to verify retention and value — which is why your contract list and references need to be accurate and warm.
+
+- Partner meeting / IC. The partner makes the case to the full partnership; gaps in your metrics or story surface here.
+
+- Term sheet. If conviction holds, you get terms — and tier two of the room opens.
+
+- Confirmatory diligence (post-term-sheet). Associates and counsel tie out the financials, cap table, IP, and contracts; this is where a messy cap table or missing IP assignment bites.
+
+- Final legal and close. Definitive docs, updated cap table, wire.
+
+ Across all of it, the data room is the artifact the diligence is graded against — usually the first time you must have a genuinely assembled, organized room rather than a pile of files. A clean, well-staged room compresses every step; a disorganized one generates a long request list that bleeds days and signals weak operational discipline to the people deciding whether to hand you millions and a board seat.
+
+ The bottom line: build the room your metrics can survive
+
+ Series A is the step-change where conviction gives way to verification. The lead is no longer buying your potential — they're grading your performance against benchmarks and tying every claim to evidence, at a valuation and with a board seat that justify the scrutiny. The founders who move fast aren't the ones with the prettiest deck; they're the ones whose room substantiates every number, whose cap table is clean before anyone opens it, and whose disclosure is staged to match how diligence actually runs.
+
+ So build backward from the grading. Take each claim in your deck and ask: what in the room proves this, and is it one click away? Clean the cap table and close the IP gaps now, not under deadline. Stage the room in two tiers. Do that, and the data room stops being the thing that slows your round down and becomes the thing that earns the lead's confidence — which, with 8,000+ customers worth of fundraises behind this advice, is the whole point. Peony is free to start, and the two-tier Series A workflow above runs on the Business and Data Room plans.
+
+ Related resources
+
+- SAFE vs Convertible Note: Differences, Dilution Math and Stacking — the instrument comparison line by line, the post-money stacking arithmetic with a worked scenario and a free calculator, the QSBS holding-period question, and the UK, French and German equivalents
+
+- Startup Data Room Checklist — the full, stage-agnostic 60-document inventory this guide layers on top of.
+
+- Seed Funding Guide — the round before this one, where the room is still a courtesy.
+
+- Startup Fundraising Rounds Explained (Seed to Series C) — how data-room expectations escalate stage by stage.
+
+- Data Room for Investors — the generic founder-investor room and provider comparison.
+
+- Top 15 US VCs Leading Series A Rounds — who you'll be opening this room for.
+
+- SPV & Co-Investment Data Room — the syndicate side of your round: how angels pool into one line on your cap table.
+
+- Venture Debt Data Room — the debt raise that often follows your Series A to extend runway with less dilution.
+
+- Track Pitch Deck Engagement and Dynamic Watermarks — the analytics and attribution controls for a staged raise.
+
+- How to Share an Interactive Financial Model With an Investor (Securely) — sending the live model itself to a lead without losing control of the .xlsx.
+
+ You might also like
+ Sep 3, 2026
+ What Is a Virtual Data Room? The Complete VDR Guide (2026)
+ Virtual Data Room VDR 
+ Oct 6, 2026
+ Best Data Rooms for Startups & Fundraising in 2026 (13 Tested & Ranked)
+ Data Rooms Startups 
+ Oct 3, 2026
+ Data Room for Investors: What to Include, Costs and Sharing (2026)
+ Investors Data Rooms 
+
+ Previous
+ Real Estate Syndication Data Room: Making the Underwriting Survive the Room (2026)
+
+ Next
+ 10 Best M&A Advisors in Tampa for $5M-$300M Deals (2026)

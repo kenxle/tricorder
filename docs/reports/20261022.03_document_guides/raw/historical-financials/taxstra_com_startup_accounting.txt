@@ -1,0 +1,268 @@
+SOURCE: https://taxstra.com/startup-accounting/
+
+- - - - - - - - - 
+
+ Accounting for Startups: Books Built for Diligence (2026) | Taxstra - 
+ - 
+ - 
+ - 
+ - 
+ - 
+
+ - 
+ - 
+ - 
+ - 
+ - 
+ - 
+ - 
+ - 
+
+ Free Initial Consult 
+
+ Free Initial Consultation Available 
+ Accounting for Startups
+ Small-business accounting answers one question: what do we owe the IRS? Startup accounting has to answer a second one: will a stranger with a checkbook trust these numbers? This guide covers the difference.
+ Book Your Free Initial Consultation 
+ A guide by Taxstra Tax & Accounting · CPA-led tax strategy for business owners
+
+ Written by Bryan Martin, CPA , Managing Partner and Founder of Taxstra. Last reviewed July 10, 2026 . 
+ Part of our startup hub: taxes, accounting, and entity strategy for founders → 
+
+ Startup accounting is small-business accounting with a second audience. A restaurant's books only ever need to satisfy the owner and the IRS. A startup's books will eventually be read by investors, diligence teams, and lawyers, all of whom recompute the numbers from source documents and notice when they do not tie. That second audience changes what the books need to do long before the first term sheet arrives.
+
+ “ Quick Answer 
+ Startup accounting differs from ordinary small-business accounting in four ways: the books lean toward GAAP-style accrual so they survive investor diligence, deferred revenue is tracked as a liability instead of being booked as income, the reporting the founder actually uses is burn and runway rather than profit, and the books have to stay consistent with the cap table instruments (SAFEs, notes, options) recorded around them. Get those four right and everything else is ordinary bookkeeping.
+
+ 01 
+
+ What Changes When a Small Business Is a Startup
+ Same debits and credits, different audience and different metrics
+
+ Four things separate startup accounting from the accounting a profitable main-street business runs, and none of them are optional once you plan to raise institutional money.
+ - GAAP-leaning books for diligence. Investors and their accountants expect accrual concepts: revenue when earned, expenses when incurred, liabilities on the balance sheet. Not audited GAAP with footnotes, but books an outside CPA could take to full GAAP without a rebuild.
+- Deferred revenue handled as a liability. The moment a customer prepays for a year, cash-basis thinking breaks. Prepaid cash is not income; it is an obligation. Startups that book it as income overstate revenue, and diligence always finds it.
+- Burn and runway as the primary report. A profitable business manages to net income. A venture-stage startup manages to months of runway. The monthly reporting package has to answer "how fast are we spending and when does the money run out" with accrual-quality inputs.
+- Cap table adjacency. SAFEs, convertible notes, and option grants are legal instruments, but they land in the books too. The accounting does not have to price them (that is a valuation and legal exercise), but it does have to record them consistently so the balance sheet and the cap table tell the same story.
+ The operational layer underneath all of this, the monthly transaction recording, reconciliation, and receipt discipline, is its own subject. We cover it in our companion guide to bookkeeping for startups . This page stays on the method, reporting, and diligence layer.
+
+ 02 
+
+ Cash vs Accrual for Startups
+ When investors force the issue, and why the tax return can stay on cash
+
+ Cash-basis books count money when it moves. Accrual books count revenue when it is earned and expenses when they are incurred. For a startup, the decision usually gets made for you: once you have prepaid contracts, subscription revenue, or a priced round on the horizon, investors expect accrual statements, because cash-basis revenue is meaningless for a business that collects annual payments up front.
+ Here is the part founders routinely miss: your book method and your tax method are separate decisions. You can keep accrual books for investors and still file your tax return on the cash method, which is generally available while your average annual gross receipts over the prior three years stay under the inflation-adjusted threshold, $32 million for tax years beginning in 2026. Almost every startup qualifies for years. Cash-method tax filing usually defers tax, because early-stage companies tend to collect slower than they spend on deductible costs, and it keeps the return simpler.
+ One caution before anyone toggles a setting in their accounting software: your tax accounting method is not a dropdown. Changing it requires IRS consent on Form 3115. Common changes like cash to accrual qualify for automatic consent procedures with no user fee, but it is a formal filing with a computed catch-up adjustment, not a bookkeeping preference. Decide the tax method deliberately with your CPA, then leave it alone.
+ Taxstra CPA Tip 
+ Run accrual books and a cash-method tax return as the default startup configuration. The books satisfy investors, the tax method defers tax while you are burning cash, and your CPA reconciles the two once a year. The configuration to avoid is the accidental one: cash-basis books that get rebuilt to accrual under diligence deadline pressure.
+
+ 03 
+
+ The Startup Chart of Accounts
+ A SaaS example: the accounts that make the metrics possible
+
+ The chart of accounts is where startup metrics are either made possible or made impossible. Gross margin, CAC, and the R&D credit all depend on costs landing in the right buckets from the first transaction. Here is the skeleton for a SaaS company; the same logic adapts to any startup model.
+ Account Subscription revenue (MRR) 
+ Type Revenue 
+ Why a startup needs it Recurring revenue gets priced differently than one-time revenue; keep it separated 
+
+ Account Professional services revenue 
+ Type Revenue 
+ Why a startup needs it Implementation and setup fees stay out of MRR so the metric stays honest 
+
+ Account Deferred revenue 
+ Type Liability 
+ Why a startup needs it Cash collected before it is earned; every annual prepay lives here first 
+
+ Account Hosting and infrastructure 
+ Type COGS 
+ Why a startup needs it Drives gross margin, the first number SaaS diligence checks 
+
+ Account Customer support payroll 
+ Type COGS 
+ Why a startup needs it Cost of serving existing customers belongs in margin, not opex 
+
+ Account Engineering payroll, R&D tagged 
+ Type Opex (R&D) 
+ Why a startup needs it Feeds the R&D credit workpapers and Section 174A expensing 
+
+ Account Sales and marketing 
+ Type Opex 
+ Why a startup needs it CAC and payback math only work if this is cleanly separated 
+
+ Account General and administrative 
+ Type Opex 
+ Why a startup needs it Everything else, kept small and kept honest 
+
+ Account Type Why a startup needs it 
+ Subscription revenue (MRR) Revenue Recurring revenue gets priced differently than one-time revenue; keep it separated 
+ Professional services revenue Revenue Implementation and setup fees stay out of MRR so the metric stays honest 
+ Deferred revenue Liability Cash collected before it is earned; every annual prepay lives here first 
+ Hosting and infrastructure COGS Drives gross margin, the first number SaaS diligence checks 
+ Customer support payroll COGS Cost of serving existing customers belongs in margin, not opex 
+ Engineering payroll, R&D tagged Opex (R&D) Feeds the R&D credit workpapers and Section 174A expensing 
+ Sales and marketing Opex CAC and payback math only work if this is cleanly separated 
+ General and administrative Opex Everything else, kept small and kept honest 
+
+ The R&D tagging deserves emphasis because it is worth real money. Qualified small businesses can elect to apply up to $500,000 per year of the federal R&D credit against payroll taxes instead of income tax, which matters enormously for a company with engineers on payroll and no profit to offset. The credit workpapers are built from payroll and project records, so engineering wages need to be tagged in the books all year, not reconstructed in April. Our R&D tax credit guide covers qualification and the payroll offset election in detail.
+ The same tagging feeds the Section 174 side. After several years of mandatory capitalization, the One Big Beautiful Bill Act restored immediate expensing of domestic research costs under new Section 174A for tax years beginning after December 31, 2024. Foreign research costs still must be amortized over 15 years, which is a real cost consideration if you are deciding where development contractors sit. Books that separate domestic from foreign R&D spending make that whole analysis a report instead of a project.
+
+ 04 
+
+ Revenue Recognition for SaaS, in Plain English
+ You earn revenue by delivering, not by depositing
+
+ The accounting standard behind all of this is ASC 606, and its five-step model reduces to one sentence for most SaaS companies: figure out what you promised the customer, and recognize the contract price as revenue as you deliver on the promise. For a subscription, delivery happens continuously, so a $12,000 annual contract is earned at $1,000 per month, no matter when the cash arrived.
+ Three practical rules cover the majority of early-stage situations:
+ - Subscriptions: recognize ratably over the subscription term. Annual prepay cash goes to deferred revenue and bleeds into the P&L monthly.
+- One-time services: implementation, onboarding, and setup fees are generally recognized as that work is performed, and they stay out of MRR.
+- Usage-based pricing: recognize as usage happens, which usually matches billing. The complexity shows up when usage commitments are prepaid; those work like subscriptions.
+ One tax wrinkle worth knowing: book deferred revenue and tax deferred revenue are not the same schedule. If your tax return is on the accrual method, the tax code generally lets you defer a customer prepayment only into the following tax year, even when the contract runs longer. A two-year prepaid contract can therefore show up in taxable income faster than it shows up in book revenue. This is a place where the "accrual books, cash tax return" configuration from section 2, or timing decisions around big prepaid deals, should be run past your CPA before the contract is signed.
+
+ 05 
+
+ Diligence-Ready Books: What a Series A Data Room Expects
+ The list investors' accountants actually work through
+
+ Diligence is not a vibe check. The investor's accountants get a document request list and work through it. Here is the financial slice of a typical Series A data room, which is also a fair definition of "diligence-ready books":
+ - Monthly P&L and balance sheet, accrual basis, for at least the trailing 24 months or since inception.
+- A revenue schedule that ties recognized revenue to customer contracts, so MRR and ARR claims can be recomputed.
+- The deferred revenue schedule, rolling forward month by month.
+- Bank and credit card reconciliations proving the books tie to the outside world.
+- Payroll records, contractor agreements, and the 1099 filings that go with them.
+- Federal and state tax filings: income tax, franchise tax, payroll tax, and a position on sales tax exposure for SaaS in the states where customers sit.
+- Burn and runway schedule reconciling the P&L to cash.
+- Records for SAFEs, convertible notes, and option grants that agree with the cap table.
+ Every item on that list is cheap to maintain monthly and expensive to reconstruct under a deadline. That asymmetry is the entire business case for doing startup accounting properly from the start, and it is what our CPA services for startups are built around.
+ Watch Out 
+
+ The pitch deck and the books must agree
+If the deck says $80k MRR and the revenue schedule supports $68k because annual prepays were counted as monthly revenue, that gap becomes the story of your diligence. Numbers investors can recompute from your own books are the only numbers that belong in the deck.
+
+ Raising in the next 12 months?
+ Book a free 30-minute consultation with our team. Tell us what you need, learn how Taxstra can help, and explore whether our services are a good fit. Tax advice, document reviews, and analysis require a paid engagement.
+ Book a Free 30-Minute Consultation 
+
+ 06 
+
+ The Monthly Close Cadence
+ What happens every month, and when it should be done
+
+ A close is the monthly ritual that turns a pile of transactions into statements someone can rely on. For a venture-stage startup the target is simple: books closed and reports delivered by the 10th to 15th of the following month. The sequence:
+ - Reconcile every bank, credit card, and payroll account against statements.
+- Roll the deferred revenue schedule and recognize the month's earned slice.
+- Accrue payroll, contractor costs, and any large unbilled expenses.
+- Tag the month's R&D wages and contractor costs while memories are fresh.
+- Review burn against budget and update the runway calculation.
+- Deliver the package: P&L, balance sheet, cash position, burn, and runway.
+ That package is also what your board update and your investor update should be built from. When the monthly close is real, investor updates take an hour. When it is not, they take a weekend and the numbers drift from month to month, which sophisticated investors notice.
+ Taxstra CPA Tip 
+ Put the deferred revenue schedule in a place where you look at it monthly, not just at close. It is simultaneously your revenue forecast for the next twelve months and a list of obligations your burn has to outlast. Founders who internalize that schedule stop confusing a good collections month with a good revenue month.
+
+ 07 
+
+ Worked Example: What Deferred Revenue Does to a $60k MRR SaaS
+ The month the bank balance lies to the founder
+
+ Worked example (hypothetical, illustrative round numbers)
+ Take a hypothetical SaaS company, Relay Metrics, with $60,000 of MRR from customers who all bill monthly. In March it lands three annual prepaid contracts worth $48,000 each, collected in full at signing: $144,000 of cash, representing $12,000 of new MRR.
+ The bank sees $204,000 come in: $60,000 of monthly billings plus $144,000 of prepayments. The accrual P&L shows revenue of $72,000: the $60,000 base plus the first month's $12,000 slice of the new contracts. The remaining $132,000 lands on the balance sheet as deferred revenue, a liability, because Relay owes those three customers eleven more months of service.
+ Now watch April. No new annual deals close. Cash in: $60,000. But the P&L still shows $72,000 of revenue, because the deferred revenue schedule keeps releasing $12,000 a month. A founder reading only the bank balance sees a company that "did $204k, then fell to $60k." The accrual statements show what actually happened: a company that grew revenue 20 percent and holds a service obligation it has to fund. This example is illustrative and hypothetical; results vary with your facts.
+
+ The Same Month, Three Different Numbers
+ Cash that hit the bank this month
+ $204,000
+
+ Revenue actually earned this month
+ $72,000
+
+ Deferred revenue (services still owed)
+ $132,000
+
+ Hypothetical SaaS with $60,000 MRR that signs $144,000 of annual prepaid contracts in one month. Illustrative round numbers.
+
+ This is why burn math built on bank inflows is dangerous in a prepaid-contract business. A strong collections quarter can hide the fact that the company is consuming cash it has not yet earned. The fix is not more spreadsheets; it is accrual statements plus a deferred revenue schedule, produced by the monthly close in section 6.
+
+ 08 
+
+ What Pre-Revenue Startups Do NOT Need
+ The honest list, because overbuying accounting is its own mistake
+
+ Everything above describes where a funded, revenue-generating startup should land. If you are pre-revenue with a couple of founders, most of it can wait. You do not need:
+ - Audited or reviewed financial statements. Nobody at pre-seed is asking.
+- A full GAAP close with footnotes. Accrual-leaning discipline, yes; formal GAAP, no.
+- A fractional CFO. There is no finance strategy to run yet.
+- A revenue recognition policy. You have no revenue to recognize.
+- An expensive multi-tool finance stack. One accounting file, reconciled monthly, beats five integrated apps nobody maintains.
+ What a pre-revenue startup does need is small and non-negotiable: a separate business bank account, a clean accounting file with every transaction categorized, receipts captured, and R&D costs tracked from day one so the credit history exists when you can use it. That is a bookkeeping problem, and our startup bookkeeping guide covers the month-one setup in detail.
+
+ 09 
+
+ Frequently Asked Questions
+ Startup accounting, methods, and diligence
+
+ 01
+ Do startups need accrual accounting? 
+ Not on day one, but once you have real revenue, prepaid contracts, or institutional investors, accrual books become the expectation. Investors evaluating a priced round want financial statements where revenue means services delivered, not cash collected. Pre-revenue startups can run simpler books and upgrade before the first serious raise.
+
+ 02
+ Can my books be accrual while my tax return uses the cash method? 
+ Generally yes. Your book method and your tax method are separate choices. Most startups keep accrual books for investors while staying on the cash method for tax, which is available while average annual gross receipts stay under the inflation-adjusted threshold ($32 million for tax years beginning in 2026). Changing tax methods later is a formal IRS filing, not a bookkeeping toggle.
+
+ 03
+ What is deferred revenue and why is it a liability? 
+ Deferred revenue is cash a customer paid you for services you have not delivered yet. It sits on the balance sheet as a liability because you still owe the work. Each month, as you deliver, a slice moves from the liability to the income statement as earned revenue. Booking the full prepayment as income on day one overstates revenue and is one of the first things diligence catches.
+
+ 04
+ What does "GAAP-ready" actually mean for a startup? 
+ It means the books follow accrual concepts consistently enough that an outside accountant could bring them to full GAAP without rebuilding them: revenue recognized as earned, deferred revenue tracked on a schedule, payroll and major expenses accrued, and a clean audit trail from every number back to a bank transaction or contract. It does not mean audited financials or footnote disclosures.
+
+ 05
+ When should a startup hire an accountant instead of just a bookkeeper? 
+ A bookkeeper records transactions; an accountant decides how they should be recorded and what the reports need to say. You need accounting judgment when deferred revenue shows up, when investors ask for accrual statements, when R&D costs need tagging for the credit, and when diligence is on the horizon. Many startups run both: outsourced bookkeeping for the monthly work, CPA oversight for method and reporting decisions.
+
+ 06
+ Does messy accounting really slow down a fundraise? 
+ Yes, and predictably. Diligence teams recompute revenue from contracts and bank records. When the books do not tie out, the raise does not usually die; it stalls while the books get rebuilt under deadline pressure, and the rebuilt numbers are often worse than the ones in the pitch deck. Clean accrual books remove that entire category of risk.
+
+ Get Startup Accounting That Survives Diligence
+ Book a free 30-minute consultation with our team. Tell us what you need, learn how Taxstra can help, and explore whether our services are a good fit. Tax advice, document reviews, and analysis require a paid engagement.
+ Book a Free 30-Minute Consultation 
+
+ Authoritative Sources
+ - IRS, About Form 3115, Application for Change in Accounting Method 
+- IRS, Qualified small business payroll tax credit for increasing research activities 
+- IRC Section 451, General rule for taxable year of inclusion 
+- Rev. Proc. 2025-32, Tax year 2026 inflation adjustments 
+ Citations reflect U.S. federal tax law as of the article's last reviewed date.
+
+ Educational content, not individualized advice
+ This article covers general accounting and U.S. federal tax concepts for startups and is educational, not individualized tax, accounting, or legal advice. Thresholds, methods, and credit rules change and depend on your facts. Verify current rules and consult a CPA familiar with your situation before acting.
+ Reviewed by Bryan Martin, CPA, MBA, Founder of Taxstra PLLC.
+
+ Bryan Martin, CPA, MBA
+ Founder and Managing Partner · Licensed Illinois real estate broker 
+ Bryan leads Taxstra, a nationwide CPA firm serving 1,000+ clients. His work connects proactive tax planning with the business, investment and family decisions behind each return.
+ Full credentials and background 
+
+ Related Taxstra resources
+ Continue with the services, planning tools, and explainers most relevant to this topic.
+ - accounting for consultants 
+- franchise accounting services 
+- Accounting Needs Assessment 
+- Augusta Rule Calculator 
+- Bookkeeping Cleanup Cost 
+- Bookkeeping Cost Calculator 
+- Break Even Calculator 
+- Dental Practice Valuation Calculator 
+- Hiring Affordability Calculator 
+- Mileage Reimbursement Calculator 
+- Profit Margin Calculator 
+- S Corp Reasonable Salary Calculator 
+- SEP IRA Calculator 
+- Vehicles Over 6000 Pounds 
+
+ Book a Free Initial Consultation Call Free New Client Consultation Email 
+
+ - - - - - - - -

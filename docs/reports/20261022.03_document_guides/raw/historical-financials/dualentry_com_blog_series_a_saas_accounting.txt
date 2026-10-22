@@ -1,0 +1,462 @@
+SOURCE: https://www.dualentry.com/blog/series-a-saas-accounting
+
+- Series A SaaS Accounting: Investor Readiness Checklist - - - - - 
+- 
+
+ Platform
+
+ Customers Resources
+
+ Pricing 
+ Login
+
+ Login
+ Schedule demo
+
+ Resources 
+ Blog 
+
+ Series A SaaS Accounting: The Readiness Checklist Investors Actually Use
+
+ Woosung Chun
+ CFO
+
+ Woosung Chun
+ CFO
+
+ Woosung Chun is the CFO of DualEntry with experience in corporate finance, accounting, strategy, and acquisitions. He previously grew from scratch and led the M&A and Finance teams at Benitago, where he completed more than 12 acquisitions in 2 years. He graduated with a BS from NYU Stern. At DualEntry, Woosung writes about AI in accounting, revenue recognition, foreign currency accounting, hedge accounting, and ERP modernization for finance teams navigating complex, multi-entity environments.
+
+ See full bio
+
+ Learn about our editorial policies .
+
+ Last updated
+ October 16, 2026
+
+ Reviewed by
+ Do San (Justin) Myung
+ Do San (Justin) Myung
+ Expert Accountant & Former Consulting CFO
+
+ Justin (Do San Myung) is Expert Accountant at DualEntry with 20+ years of hands-on experience managing general ledgers, financial close processes, and ERP implementations for mid-market and enterprise companies. As a former Consulting CFO and Controller, he has personally overseen month-end closes, SOX compliance programs, and multi-entity consolidations across technology, manufacturing, and services industries. Justin specializes in transforming manual accounting workflows into automated, AI-driven processes.
+
+ See full bio
+
+ Learn about our editorial policies .
+
+ Share
+
+ Contents
+ Don't worry! The contents here will appear on the published page.
+
+ More
+
+ Subscribe to the 
+DualEntry Newsletter
+
+ Get Fresh Al finance insights, reports and more delivered straight to your inbox
+
+ Thank you! Your submission has been received!
+
+ Oops! Something went wrong while submitting the form.
+
+ Summarize this article
+
+ TL;DR
+
+ Series A is a structural shift, not a bigger seed round : At seed, accounting serves you and your bookkeeper. At Series A, every number in your chart of accounts gets reconciled by someone whose full-time job is finding inconsistencies - and they'll be working from GAAP standards, not cash-basis summaries.
+
+ Four things investors test before they wire : GAAP-compliant financial statements, ASC 606-compliant revenue recognition with a formal deferred revenue schedule, a monthly close under 5 business days, and a data room that holds up to scrutiny. Weakness in any one of these delays or kills the round.
+
+ ASC 606 is non-negotiable : If you've been recognizing revenue on cash receipt rather than ratable delivery, you're looking at a retroactive restatement before close. Investors will calculate it themselves during diligence - so you need to have already fixed it.
+
+ A 10-day close is a red flag : The 5-business-day standard signals automated processes, clean internal controls, and a finance function that can support board-level reporting. A close that drags to two weeks tells investors the opposite.
+
+ The data room has a specific checklist : 2–3 years of GAAP financials, a revenue recognition policy memo, a monthly deferred revenue schedule, an MRR/ARR bridge reconciled to GAAP revenue, a cap table reconciled to the GL, an officer's certificate, and audited or audit-ready workpapers. Missing items delay the close.
+
+ The upgrade window is $1M–$5M ARR : That's when QuickBooks and Xero stop being able to produce ASC 606-compliant revenue recognition natively, generate board package financials without manual spreadsheets, or close books within 5 business days. Waiting until term sheet stage is too late.
+
+ A robust Series A SaaS accounting setup hinges on four key elements: GAAP-compliant financial statements, ASC 606 revenue recognition, a fast and painless financial close, and documentation that stands up to investor diligence.
+ ‍
+ Each of those things can take months to get working properly – and founders often discover this when a data room request comes in and they have just 6 weeks to close it. The smartest leaders get those financial foundations right from the start, saving on time, money, and stress.
+ ‍
+ In this guide, we’ll walk through what accounting for SaaS companies at this stage requires, and the exact documents investors will ask for.
+ ‍
+ The first lesson? Tidy spreadsheets don’t equal audit readiness.
+ ‍
+ [tldr]
+ Changes in SaaS accounting at the Series A stage
+
+ Series A marks a shift from internal bookkeeping to investor-grade evidence that aligns with VC-backed startup accounting requirements . Your lead investor's diligence team will reconcile your revenue figures, verify your deferred revenue schedule, check your ASC 606 compliance, and review how quickly you can close your monthly books. Each of these needs infrastructure you likely haven't built at seed stage.[ 1 ]
+ Seed-stage vs. Series A accounting needs
+ The move from seed to Series A is the largest structural change your finance function will go through. At seed stage, accounting is important to you and your bookkeeper. At Series A, every number in your SaaS chart of accounts is going to be checked by someone whose full-time job is finding inconsistencies in early-stage books and making sure they meet the relevant accounting standards.
+ ‍
+
+ Requirement 
+ Seed stage 
+ Series A (investor standard) 
+
+ Financial statements 
+ Monthly P&L from QuickBooks (cash basis is acceptable) 
+ GAAP-compliant P&L; balance sheet; cash flow (audited or audit-ready) 
+
+ Revenue recognition 
+ Cash receipt or invoice date 
+ ASC 606 – performance obligation delivery, ratable over subscription period 
+
+ Deferred revenue 
+ Often not tracked 
+ A formal deferred revenue schedule reconciled to the GL monthly 
+
+ Month-end close 
+ Whenever it gets done (2–4 weeks) 
+ 5 business days from month end is the standard investor expectation 
+
+ Board package 
+ Ad hoc or investor update email 
+ P&L, balance sheet, cash flow, and SaaS metrics standardized monthly 
+
+ Cap table reconciliation 
+ Spreadsheet (often not tied to GL) 
+ Cap table reconciled to equity accounts in the general ledger 
+
+ Audit 
+ None required 
+ Audit-ready (full audit often needed before or at close) 
+
+ Revenue recognition policy 
+ None documented 
+ Written policy memo required in data room 
+
+ ‍
+ Revenue-recognition and close standards above per FASB ASU 2014-09 and SEC SAB 104 [ 2 ][ 3 ][ 4 ] . 
+ What investors actually want in a Series A accounting data room
+ Every Series A data room includes an accounting section. Lead investors and their diligence advisors will ask for a standard set of accounting documents before signing a term sheet. If you miss any of them, you’ll delay your close. [ 5 ][ 6 ]
+ The data room checklist for Series A companies
+ One important thing to note is that investors cross-reference between your documents. So, your ARR bridge needs to tie to your GAAP revenue, your cap table needs to tie to your equity accounts, and your deferred revenue schedule needs to tie to your balance sheet.
+ ‍
+
+ Document 
+ What investors check 
+ How to prepare 
+
+ 3 years GAAP financial statements (or life of company) 
+ Revenue recognition method, deferred revenue consistency, YoY trends 
+ Restate to GAAP if currently on cash basis (do this 6+ months before raise) 
+
+ Revenue recognition policy memo 
+ ASC 606 compliance: how revenue is recognized per contract type 
+ Document your policy in writing, and make sure it matches how your books are actually kept 
+
+ Deferred revenue schedule 
+ Monthly opening/closing balance; roll-forward reconciled to balance sheet 
+ Build in your accounting system, not a spreadsheet 
+
+ Cap table reconciled to GL 
+ Equity accounts tie to cap table; stock comp expense (ASC 718) recorded 
+ Run reconciliation monthly, and fix discrepancies before diligence 
+
+ MRR/ARR bridge (12 months) 
+ New, expansion, contraction, churn breakdown by month 
+ Must reconcile to GAAP revenue – not just billing system output 
+
+ Audited financials or audit-ready workpapers 
+ Clean books; no material misstatements; internal controls documented 
+ Engage an auditor 4–6 months before close if an audit is needed 
+
+ Officer's certificate 
+ CFO/CEO certifies financial statements are accurate and complete 
+ Standard legal requirement (your counsel will prepare this) 
+
+ Chart of accounts 
+ Revenue breakout (subscription vs. services); COGS structure; SaaS gross margin calculable 
+ Restructure your CoA to match the SaaS investor standard 
+
+ ‍
+ Document set per Y Combinator's Series A Diligence Checklist and Carta [ 5 ][ 6 ] . 
+ ASC 606 compliance: the revenue recognition reckoning
+
+ ASC 606 – Revenue from Contracts with Customers – is the GAAP standard that governs how SaaS companies recognize revenue. If your SaaS company has been recognizing revenue on cash receipt or invoice date rather than over the subscription delivery period, you’re not ASC 606-compliant. Series A investors will find this in diligence, and fixing it retroactively is more expensive than doing it right before the raise. [ 2 ][ 3 ][ 7 ]
+ How SaaS companies get ASC 606 wrong before Series A
+ The most common ASC 606 error in early-stage SaaS companies is recognizing annual subscription revenue entirely in the month of invoice rather than ratably over the 12-month subscription period. A $12,000 annual contract invoiced in January isn’t $12,000 of January revenue – it’s $1,000/month of revenue recognized over 12 months. In SaaS revenue recognition , the unearned portion sits in deferred revenue as a contract liability.[ 2 ][ 8 ]
+ Common mistakes that SaaS businesses make
+ - Revenue posted on the cash receipt date (the default behavior in most seed-stage setups, running on starter accounting systems like QuickBooks)
+- Bundled contracts treated as a single line item, with implementation fees and subscription fees recognized together at the contract start date (instead of as separate performance obligations)
+- Multi-year contracts recognized in full at execution (rather than ratably over the contract term)
+- Deferred revenue maintained only as a year-end adjustment, leaving the monthly balance sheet understated or empty
+ ASC 606 compliance vs. restatement cost
+ Fixing ASC 606 compliance before a raise is proactive – and far cheaper than correcting it reactively. The earlier you implement, the lower the cost and the lower the risk it derails your close. Where a full audit is required, startup audits run $20,000–$50,000 over a 2–4 month timeline [ 9 ], before any restatement work.
+ ‍
+
+ Feature 
+ ASC 606 compliance (proactive) 
+ Restatement (reactive) 
+
+ Nature 
+ Proactive: aligning sales, legal, and billing processes with the standard. 
+ Reactive: correcting financial reporting errors ("Big R" or "little r" revisions). 
+
+ Primary costs 
+ Process updates, training, software upgrades, and contract reviews. 
+ Audit fees, legal defense, investor scrutiny, and (for public companies) stock-price impact. 
+
+ Intent 
+ Transparency and accurate tracking across the life of a customer contract. 
+ Remediation and fixing reporting failures or material weaknesses. 
+
+ Business impact 
+ Permanent efficiency and a modernized quote-to-revenue workflow. 
+ Reputational damage, delayed filings, and potential loan-covenant breaches. 
+
+ ‍
+ ASC 606 compliance costs – process updates, training, software, and contract reviews – per KPMG, which found ~40% of early adopters reported control changes and cites the SEC linking weak controls to higher restatement rates [ 10 ] ; restatement frequency and severity (revenue recognition = the #1 restatement issue, tied to ASC 606) per Audit Analytics [ 7 ] . 
+ The month-end close standard at Series A
+ Series A investors expect monthly financial statements within 5 business days of month end . If your current close takes 3-4 weeks, it’s a diligence red flag, signalling weak internal controls, manual processes, and a finance function that can’t support board-level decision-making at Series A velocity.[ 4 ]
+ ‍
+ Close speed is a diligence signal that’s not easily covered up. The 5-day close is the benchmark for SaaS companies; a sign of a business with disciplined workflows. (Cross-industry benchmarking puts the median monthly close at 6.4 days, with top-quartile teams closing in under 5 days and the slowest quartile taking 10 or more.) Think clean bank feeds, automated revenue posting, defined ownership for each reconciliation – and, for the most forward-looking companies, not relying on a system that needs manual journal entries. If you’re slow to close, investors will question this before they even dive into your numbers.
+ What the 5-day close needs
+ A 5-business-day monthly end close is achievable for a Series A SaaS company with 10-50 employees – but it calls for defined ownership, a documented close checklist, and accounting software that doesn't require manual journal entries for routine transactions.
+ Your monthly close checklist – handled in 5 days
+ You can hand this checklist to your controller today and get a solid working process in place ahead of your next close.
+ ‍
+
+ Day 
+ Task 
+ Owned by? 
+ System 
+
+ Day 1 
+ Reconcile all bank accounts and credit cards 
+ Bookkeeper or controller 
+ Accounting software + bank feeds 
+
+ Day 1–2 
+ Post all revenue entries; reconcile deferred revenue schedule to balance sheet 
+ Controller 
+ Accounting software / billing system 
+
+ Day 2 
+ Reconcile accounts receivable – open invoices vs. GL balance 
+ Bookkeeper 
+ Accounting software 
+
+ Day 2–3 
+ Post payroll journal entries; reconcile payroll liability accounts 
+ Controller 
+ Payroll system + accounting software 
+
+ Day 3 
+ Record stock comp expense (ASC 718) for the month 
+ Controller 
+ Cap table software + accounting software 
+
+ Day 3–4 
+ Post accruals: accrued expenses, prepaid amortisation, depreciation 
+ Controller 
+ Accounting software 
+
+ Day 4 
+ Review P&L for anomalies; compare actuals vs. budget 
+ CFO or controller 
+ Accounting software or an FP&A tool 
+
+ Day 5 
+ Lock period; generate board package financials; distribute to investors 
+ CFO / fractional CFO 
+ Accounting software + reporting tool 
+
+ Preparing a board package – and the SaaS metrics that must reconcile to GAAP
+ Not a simple metric dashboard, a Series A board package is a GAAP-anchored financial report with SaaS KPIs that tie back to the general ledger. A common board package error is ARR calculated from billing system data instead of contractual commitments reconciled to GAAP revenue . Investors see through this in diligence.
+ ‍
+ What goes in a standard Series A board package?
+ ‍
+ - Income statement with actuals vs. budget, current month and YTD, GAAP revenue line clearly identified
+- Balance sheet comparing current month to prior month, with deferred revenue reconciled
+- Cash flow statement broken into operating, investing, and financing activities, with a runway calculation 
+- MRR/ ARR bridge showing new, expansion, contraction, and churn , reconciled to GAAP revenue
+- NRR and GRR calculated from GAAP revenue movements rather than CRM exports
+- Gross margin by revenue line – subscription vs. services – with COGS detail
+- Headcount report showing actual vs. plan and loaded cost per employee
+- Key operating metrics like CAC, LTV, payback period, and Rule of 40 score
+- Many investors also want to see when the business is projected to break even, model your break-even point to anchor that conversation before it comes up in diligence. ‍ 
+- SaaS magic number --prior-quarter S&M against net new ARR, reconciled to recognized revenue rather than bookings
+ SaaS metrics and their relationship to GAAP
+
+ Metric 
+ Common error 
+ GAAP reconciliation requirement 
+
+ ARR (Annual Recurring Revenue) 
+ Calculated from billing system (includes invoiced but not yet earned revenue) 
+ Should tie to the current month's GAAP subscription revenue; 12x only holds when usage and contract mix are stable 
+
+ MRR (Monthly Recurring Revenue) 
+ Includes one-time fees or usage overages in the base 
+ Must equal the current month's GAAP subscription revenue only (no services, no usage) 
+
+ NRR (Net Revenue Retention) 
+ Calculated from cash receipts (includes timing differences) 
+ Must be calculated from GAAP revenue movements within the cohort period 
+
+ GRR (Gross Revenue Retention) 
+ CS platform shows different number than finance team 
+ Must reconcile to GAAP revenue; contraction = contract modification events, not CRM flags 
+
+ Gross margin 
+ OpEx costs misclassified as COGS inflate gross margin 
+ COGS = hosting + support salaries + embedded software + PS delivery costs only 
+
+ ‍
+ Metrics must reconcile to GAAP revenue movements; GRR reconciliation detail per DualEntry . 
+ When to upgrade your SaaS accounting stack
+ QuickBooks and Xero are adequate for seed-stage SaaS companies. At Series A – when ASC 606 compliance, a 5-day close, multi-entity cap table reconciliation, and board-ready reporting are all required – those starter accounting systems reach their limits. The question at that point is not whether to upgrade, but when and to what.[ 11 ]
+ ‍
+ When is the best time to upgrade? In most cases, it’ll be 6-12 months before your target close, because every accounting requirement needs to be running cleanly for a quarter or two before investors see it. For the full framework on when to switch to an ERP , weigh your outgrowth triggers against the cost of moving too early.
+ ‍
+ What to upgrade to ? It depends on your size. Companies in the $1M-$5M ARR range and beyond typically move to a purpose-built modern ERP like DualEntry or a legacy system like NetSuite. Both eliminate the manual workarounds that QuickBooks and Xero force at this stage (deferred revenue spreadsheets; rebuilt-from-scratch board packages; ASC 718 entries posted by hand…), supporting a fast close and robust audit trails. You can tick off every item on an investor’s due diligence checklist seamlessly. If you're weighing the options, our guide to the best QuickBooks alternatives breaks down the right replacement based on why you're leaving.
+ QuickBooks/Xero limits vs. Series A needs
+
+ Requirement 
+ QuickBooks / Xero 
+ Series A-grade solution (DualEntry or NetSuite) 
+
+ ASC 606 revenue recognition 
+ Manual journal entries required; no native ratable recognition 
+ Native subscription revenue recognition with deferred revenue auto-posted 
+
+ Deferred revenue schedule 
+ Manual spreadsheet outside the system 
+ Automated roll-forward reconciled to balance sheet 
+
+ Month-end close speed 
+ Manual reconciliation steps; 2–4 week close common 
+ Automated bank feeds + AI categorisation; 5-day close possible 
+
+ Board package generation 
+ Manual export to Excel; rebuild every month 
+ One-click board package with actuals vs. budget 
+
+ Cap table reconciliation 
+ Manual; ASC 718 stock comp entered as journal entry 
+ Integrated with cap table software; ASC 718 expense calculated automatically 
+
+ Multi-entity consolidation 
+ Not supported natively 
+ Native consolidation with intercompany elimination 
+
+ Audit trail 
+ Limited; edits can overwrite history 
+ Full audit trail, as required by Series A auditors 
+
+ ‍
+ QuickBooks/Xero capability limits per NetSuite [ 11 ] ; DualEntry capabilities per. 
+ Final thoughts
+ Series A accounting readiness is all about infrastructure. The founders who close cleanly are the ones who have ASC 606-compliant revenue recognition, a 5-day close, GAAP-anchored SaaS metrics , and a documented data room in place 6-12 months before the term sheet arrives, not during diligence.
+ ‍
+ DualEntry is ASC 606 native and automates away busywork so you can close the books in record time. Board package? Ready in a few clicks. Series A accounting requirements? Met with the minimum of manual effort. See how switching to an AI-native ERP built for SaaS companies keeps Series A SaaS companies (and their investors) happy – schedule a demo.
+ Series A SaaS Accounting FAQs
+ What accounting does a SaaS company need before Series A?
+
+ Before Series A, a SaaS company needs GAAP-compliant financial statements covering the previous 2–3 years, a documented ASC 606 revenue recognition policy, a deferred revenue schedule reconciled to the balance sheet, a cap table reconciled to the GL, and the ability to close its books within 5 business days of month end. Audited financials are often requested by the lead investor before or at close.
+
+ What is ASC 606 and why does it matter for Series A SaaS?
+
+ ASC 606 is the GAAP standard that requires companies to recognize revenue when performance obligations are delivered – not when cash is received. For SaaS, this means recognizing subscription revenue ratably over the subscription period. Series A investors require ASC 606-compliant revenue recognition, and companies that have been recognizing revenue on a cash basis face retroactive restatement costs if the issue isn't corrected before diligence.
+
+ How fast should a SaaS startup close its monthly books?
+
+ At Series A, investors expect monthly financial statements within 5 business days of month end. A close that takes 10+ business days is a red flag, signalling manual processes, weak internal controls, and a finance function that can't support board-level reporting at the velocity investors expect. The 5-day standard is achievable with modern accounting software, automated bank feeds, and a documented close checklist.
+
+ What goes in a Series A accounting data room?
+
+ The accounting section of a Series A data room typically includes 2–3 years of GAAP financial statements, a revenue recognition policy memo, a monthly deferred revenue schedule, an MRR/ARR bridge reconciled to GAAP revenue, a cap table reconciled to the general ledger, an officer's certificate, and audited financials or audit-ready workpapers. Missing any of these items delays the close.
+
+ When should a SaaS company switch from QuickBooks to a Series A-grade accounting system?
+
+ A SaaS company should upgrade from QuickBooks or Xero to a Series A-grade accounting system when it can't produce ASC 606-compliant revenue recognition natively, can't close its books within 5 business days, or needs manual spreadsheets to generate board package financials. This typically happens between $1M–$5M ARR, around 6–12 months before a Series A close.
+
+ References
+
+ - 
+
+ FASB — Accounting Standards Codification (US GAAP)
+
+ - 
+
+ FASB — ASU 2014-09: Revenue from Contracts with Customers (Topic 606)
+
+ - 
+
+ SEC — Staff Accounting Bulletin No. 104, Topic 13: Revenue Recognition (2003)
+
+ - 
+
+ APQC — Cycle Time to Perform the Monthly Close (2025)
+
+ - 
+
+ Y Combinator — Series A Diligence Checklist
+
+ - 
+
+ Carta — What is a Data Room?
+
+ - 
+
+ Audit Analytics — 2020 Financial Restatements: A Twenty-Year Review (2021)
+
+ - 
+
+ AICPA — Revenue Recognition Audit & Accounting Guide (Software Entities, Ch. 9)
+
+ - 
+
+ Kruze Consulting — Does My Startup Need an Audit?
+
+ - 
+
+ KPMG — Control Changes with ASC 606 Implementation: Executive View (2018)
+
+ - 
+
+ NetSuite — Top 12 Signs You're Outgrowing QuickBooks
+
+ See the full power of DualEntry in 30 minutes
+
+ Email conversion_page Schedule a demo 
+
+ Woosung Chun
+ CFO
+
+ Woosung Chun is the CFO of DualEntry with experience in corporate finance, accounting, strategy, and acquisitions. He previously grew from scratch and led the M&A and Finance teams at Benitago, where he completed more than 12 acquisitions in 2 years. He graduated with a BS from NYU Stern. At DualEntry, Woosung writes about AI in accounting, revenue recognition, foreign currency accounting, hedge accounting, and ERP modernization for finance teams navigating complex, multi-entity environments.
+
+ DualEntry's editorial content is for general informational purposes only, and does not constitute legal or financial advice. Please always consult an attorney or financial advisor for advice in relation to this content. For more information about how we create our content, please see our editorial guidelines .
+
+ Related content
+ View All
+
+ Blog
+
+ Agentic AI for Accounts Payable: How It Works Across the AP Cycle
+
+ Learn how agentic AI works across 9 AP steps, where agents can act alone, when humans should step in, and the controls finance teams need.
+
+ Blog
+
+ AI Agents for Accounting: How They Work, Use Cases, and Risks
+
+ Learn how AI agents work in accounting, explore 8 common use cases, and understand the autonomy levels, risks, and controls finance teams should consider.
+
+ Blog
+
+ Gemini 4 Argon Just Took the #1 Spot in Accounting AI
+
+ 91.1% accuracy, #1 overall, and the most consistent model across 101 accounting tasks. Here's where Google's new frontier model leads and where it still struggles.
+
+ Go live in 24 hours
+
+ Email conversion_page Schedule a demo 
+
+ By clicking "Schedule Demo" you agree to the use of your data in accordance with DualEntry's Privacy Notice , including for marketing purposes.
+
+ Compare using AI

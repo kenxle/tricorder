@@ -1,0 +1,150 @@
+SOURCE: https://docs.flinks.com/guides/upload/fraud-signals
+
+- - - - - - - - - - - - - Fraud Signals & False Positives - Flinks Documentation - - - - - - - - - - - - 
+ Documentation Index
+ Fetch the complete documentation index at: /llms.txt 
+ Use this file to discover all available pages before exploring further.
+
+ - - Skip to main content 
+
+ Flinks Documentation home page 
+
+ Search...
+
+ ⌘ K Ask Assistant ⌘ I 
+
+ Search... 
+
+ Navigation 
+ Fraud & Verification 
+ Fraud Signals & False Positives
+
+ Home 
+ Guides 
+ API Reference 
+ Changelog 
+
+ Fraud & Verification
+ Fraud Signals & False Positives
+ Copy page Copy page 
+
+ Understand the fraud signals detected by Flinks Upload and how to handle false positives.
+
+ Copy page Copy page 
+
+ Flinks Upload automatically analyzes uploaded bank statements for signs of tampering or manipulation. When suspicious indicators are found, fraud signals are returned in the response to help you make informed decisions. 
+ ​ 
+
+ Fraud signal list 
+
+ The following signals may be detected during document analysis: 
+ Signal Description 
+ Editing software detected The document metadata indicates it was created or modified using document editing software 
+ Unusual document source The document origin doesn’t match typical bank-generated statements 
+ Account information edits The account number, name, or address fields show signs of modification 
+ Dollar amount edits Transaction amounts or balance figures appear to have been altered 
+ Date edits Transaction dates or statement period dates show signs of modification 
+ Description edits Transaction descriptions appear to have been changed 
+ Misaligned text Text elements are not properly aligned, suggesting content was added or moved 
+ Unreconciled balances Running balances don’t match when calculated from transactions 
+ Missing transaction data Expected transaction data is absent from the statement 
+ Empty transaction data Transaction sections exist but contain no data 
+
+ ​ 
+
+ Most common signals 
+
+ The three most frequently triggered signals are: 
+
+- Unreconciled balances : Running totals don’t add up when recalculated from individual transactions
+
+- Unusual document source : The PDF producer or creator doesn’t match known bank output
+
+- Editing software detected : The document metadata references editing tools
+
+ ​ 
+
+ Document support 
+
+ Document type Fraud detection 
+ Bank statements Supported 
+ Void cheques Not supported 
+
+ Fraud analysis is only available for bank statements. Void cheques are processed for data extraction only. 
+ ​ 
+
+ Understanding false positives 
+
+ Not every fraud signal indicates actual fraud. Some legitimate user behaviors can trigger signals. 
+ ​ 
+
+ Print-to-PDF (common false positive) 
+
+ When users print their bank statement to PDF instead of downloading the original file, the resulting document may trigger fraud signals. Common print-to-PDF producers include: 
+
+- PDFium (Chrome’s built-in PDF printer)
+
+- Microsoft Print to PDF (Windows)
+
+- macOS Quartz PDFContext (macOS print dialog)
+
+ These tools modify the document’s metadata and structure, which can trigger the “Unusual document source” and “Editing software detected” signals even though the content hasn’t been tampered with. 
+ ​ 
+
+ Actual fraud indicators 
+
+ The following editing tools in document metadata are stronger indicators of manipulation: 
+
+- PDF Filler
+
+- Sejda
+
+- iLovePDF
+
+- Adobe Acrobat Pro (when used for editing, not just viewing)
+
+- Other general-purpose PDF editing tools
+
+ When these tools appear alongside signals like dollar amount edits, description edits, or unreconciled balances, the likelihood of tampering is significantly higher. 
+ ​ 
+
+ Best practices 
+
+ Encourage direct downloads. Ask your users to download their bank statements directly from their financial institution’s website or mobile app. This produces the cleanest documents and minimizes false positives. 
+
+- Don’t auto-reject on a single signal. A single fraud signal (especially “unusual document source” alone) may be a false positive. Look for combinations of signals.
+
+- Prioritize balance reconciliation. Unreconciled balances combined with dollar amount edits is a strong indicator of tampering.
+
+- Review the document source. Check whether the PDF producer is a known print-to-PDF tool or a dedicated editing tool.
+
+- Use the fraud verdict. Flinks provides an overall fraud verdict, Trust , Normal , Warning , or High Risk , that considers the combination of signals. Use this as your primary decision point.
+
+ ​ 
+
+ Accessing fraud data 
+
+ Fraud signals are available through: 
+
+- The Fraud Analysis API endpoint
+
+- The Flinks Dashboard (visual review)
+
+- Webhook notifications (if configured)
+
+ ​ 
+
+ Related resources 
+
+- Fraud & Verification 
+
+- Document Processing 
+
+- Fraud Analysis API 
+
+ Was this page helpful?
+ Yes No 
+
+ Assistant 
+
+ Responses are generated using AI and may contain mistakes.

@@ -1,0 +1,233 @@
+SOURCE: https://puzzle.io/blog/cash-vs-accrual-accounting-startups
+
+- Cash & Accrual Startups Oct 2026 - - - - - - 
+- 
+
+ Companies
+
+ Resources
+
+ PRODUCT
+
+ companies
+
+ Accounting Partners Puzzle vs QuickBooks Pricing Resources
+
+ Already have an account?
+ Sign in
+
+ Book a demo
+
+ Book a demo
+ Try for free
+ Sign in 
+
+ Resources 
+ Articles 
+
+ Dual-Basis Accounting for Startups: October 2026
+
+ Startup Accounting
+
+ Dual-Basis Accounting for Startups: October 2026
+
+ Cash vs. accrual accounting for startups: why you need both methods running simultaneously for burn tracking and investor financials. June 2026 guide.
+
+ The Puzzle Team
+
+ 6.24.26
+
+ In article:
+
+ Accounting. Simplified
+
+ A bad product lacks competitive advantage. Successful businesses have something unique that's hard to copy. It could be cost efficiency, brand power, or proprietary tech. Without this, you're just waiting to get outperformed. Think of physical retailers being outperformed by e-commerce.
+
+ Thank you for being part of our Puzzle community. Stay tuned!
+
+ Oops! Something went wrong while submitting the form.
+
+ Cash-basis accounting tells you what's in your bank account right now, but it makes your revenue look lumpy and hides obligations until they clear. Accrual-basis accounting shows what you've actually earned and owe, but it can mask a liquidity crunch if you're not watching real cash timing. Startups need both views running in parallel: one for daily burn decisions, one for GAAP compliance and fundraising. Accounting software with automatic dual-basis cash and accrual support keeps both ledgers updated in real time so your operating reality and your investor financials never contradict each other. Several accounting tools now support switching between methods or running dual-basis books at the same time, and picking the right one matters as much as picking the right method. This article lays out the cash-vs-accrual tradeoff, what to look for in accounting software, and how top tools handle dual-basis support so you can make the right call for your stage.
+ TLDR: 
+ - Cash basis tracks what's in your bank; accrual tracks what you've earned and owe.
+- The IRS requires accrual accounting once average gross receipts exceed $25M over three years.
+- Investors require GAAP-compliant accrual financials when you raise a priced round, regardless of revenue.
+- Running only one method leaves you blind to either cash position or business health.
+- Manual dual-basis bookkeeping doubles close time and error risk for your team.
+- Puzzle maintains both cash and accrual books in real time with 85–90% automation.
+ Which method fits your startup right now?
+ Choose cash basis if Choose accrual basis if 
+ Pre-revenue or under $1M ARR Raising a priced round or venture debt 
+ Receivables clear within 30 days 45+ day receivable lag 
+ Not raising institutional capital in the next 12 months Selling annual subscriptions or carrying deferred revenue 
+ No long-term milestone contracts or deferred revenue Need ASC 606 compliance 
+
+ This is a decision aid, not a mandate to pick one permanently. Most growing startups eventually need both running in parallel, which is exactly what the rest of this article covers.
+ What is cash basis accounting?
+ Cash basis accounting records revenue when cash is received and expenses when cash is paid out. There's no tracking of what you're owed or what you owe: only what has actually moved through your bank account.
+ For early-stage startups, this is often the default starting point. It's straightforward to manage, requires minimal accounting knowledge, and gives you an immediate read on your actual cash position.
+ Where cash basis falls short
+ The simplicity has a real cost. Cash basis gives you a picture of your bank balance, not your business health. A few scenarios where this breaks down:
+ - You invoice a customer for $50,000 in March, but they pay in May. Under cash basis, March looks like a loss month even if you closed a major deal.
+- You prepay six months of software subscriptions in January. Cash basis records the full expense immediately, distorting that month's numbers.
+- Investors and lenders reviewing your financials will ask for GAAP-compliant accrual statements. Cash basis alone won't satisfy that request.
+ As your startup grows, closes revenue contracts, or prepares for a fundraise, cash basis stops telling the full story.
+ Pros of cash basis accounting 
+ - Easy to set up and manage without accounting expertise
+- Immediate visibility into your actual cash position
+- No judgment calls on when revenue should be recognized
+- Can defer tax liability by delaying income into the next year
+ Cons of cash basis accounting 
+ - Hides accounts receivable and payable from view
+- Makes revenue look lumpy from month to month
+- Fails the GAAP standards most investors require
+- Doesn't capture deferred obligations like prepaid subscriptions
+ What is accrual basis accounting?
+ Accrual basis accounting records revenue when it is earned and expenses when they are incurred, regardless of when cash actually changes hands. If you close a $10,000 contract in June but the client pays in August, accrual accounting books that revenue in June.
+ This method gives you a more accurate picture of your company's financial health at any given moment. Investors, lenders, and auditors rely on accrual-basis financials because they follow GAAP standards and reflect economic reality instead of the timing of bank transfers.
+ Why startups need it
+ For early-stage companies, accrual accounting matters in three concrete situations:
+ - Fundraising due diligence: investors reviewing your books expect GAAP-compliant financials, and accrual basis is the standard they use to assess ARR, deferred revenue, and outstanding obligations.
+- Revenue recognition for SaaS: if you collect annual subscriptions upfront, accrual accounting spreads that revenue across the SaaS revenue recognition subscription period instead of recording it all at once, which gives a cleaner ARR picture.
+- Accurate burn rate tracking : accrual books capture liabilities as they arise, so your burn rate reflects what you actually owe instead of only what has already left your account.
+ The tradeoff is complexity. Accrual accounting requires more judgment calls, more adjusting entries, and more time at month-end close. For founders without an accounting background, that overhead is real.
+ Pros of accrual basis accounting 
+ - GAAP compliant: the standard investors, lenders, and auditors require.
+- Gives an accurate picture of financial health at any point in time.
+- Required for fundraising: Series A due diligence and institutional lenders expect accrual statements.
+- Supports proper revenue recognition for SaaS annual contracts under ASC 606.
+ Cons of accrual basis accounting 
+ - More complex to set up and maintain than cash basis.
+- Requires judgment calls on revenue and expense timing.
+- Adds more adjusting entries at month-end close.
+- Can obscure real cash timing if not paired with a cash view.
+ When startups are required to use accrual accounting
+ Regulatory requirements push many startups toward accrual accounting well before they choose it voluntarily. The IRS requires businesses with average annual gross receipts exceeding $25 million over the prior three tax years to use accrual accounting. For fast-growing startups, that threshold can arrive faster than expected.
+ Beyond tax rules, investors and lenders expect GAAP-compliant financials, which means accrual basis. If you are raising a Series A or preparing for due diligence, cash-basis books will not hold up to scrutiny. Auditors, venture debt providers, and acquirers all work from accrual statements.
+ SaaS and subscription businesses face earlier pressure
+ SaaS startups often hit accrual requirements sooner because of how revenue recognition works. ASC 606 governs when revenue can be recorded, and it requires matching revenue to the period in which services are delivered, not when cash arrives. A 12-month contract paid upfront cannot be booked as revenue on day one under GAAP.
+ The situations that typically force the switch include:
+ - Crossing the $25 million IRS gross receipts threshold, making cash-basis tax filing non-compliant
+- Closing institutional funding rounds where investors require audited or reviewed GAAP financials
+- Signing enterprise contracts with deferred revenue, requiring ASC 606-compliant recognition schedules
+- Pursuing venture debt or a credit facility where lenders underwrite from accrual statements
+ Waiting until one of these events forces the switch creates real pressure. Retroactively converting years of cash-basis records to accrual takes time and often surfaces gaps in your original transaction categorization. Software that maintains both bases from the start means there's no conversion to do when that moment arrives.
+ How to convert from cash basis to accrual basis
+ When the switch becomes unavoidable, here is how to do it without losing your audit trail.
+ - Record all outstanding accounts receivable and accounts payable as of the conversion date.
+- Adjust for prepaid expenses and deferred revenue so costs and income fall in the correct period.
+- Record accrued liabilities like payroll owed or taxes due that have been incurred but not yet paid.
+- Adjust beginning retained earnings to reflect the cumulative difference between what was reported under cash basis and what accrual would have shown.
+- Document the change for tax and audit purposes: IRS Form 3115 (Application for Change in Accounting Method) is typically required when switching methods.
+ Automated dual-basis accounting software like Puzzle sidesteps this process entirely. Both books run in parallel from day one, so there is nothing to convert.
+ Why investors require accrual basis financials
+ When you go out to raise a Series A or even a seed extension, investors will ask for GAAP financials, including an accurate income statement . That means accrual basis, full stop. Cash basis statements don't meet the standard because they obscure the timing of revenue and obligations in ways that make it impossible to assess the health of a recurring revenue business.
+ Accrual financials let investors see:
+ - Revenue recognized when earned, not when payment lands, which matters enormously for SaaS companies with annual contracts or multi-month deals
+- Deferred revenue on the balance sheet, showing committed future income that cash basis would miss entirely
+- Accrued expenses that reflect the true cost of running the business in a given period beyond what cleared the bank
+ Most term sheets and due diligence checklists ask for two to three years of GAAP financials. If you've been running cash basis the whole time and need to restate, that restatement can take weeks and cost thousands in accountant fees, right when you can least afford the distraction.
+ The earlier you run accrual alongside cash, the less painful that moment becomes.
+ The dual basis problem: why startups actually need both
+ Most early-stage startups run on cash basis accounting because it's simple: money in, money out. But as soon as you raise a round, hire a bookkeeper, or start talking to investors, accrual accounting enters the picture.
+ The problem is you need both, at the same time, for different reasons.
+ Why each method serves a different job
+ Cash basis tells you what's actually in your bank account. Accrual basis tells you what you've earned and owe, regardless of when cash moves. Neither one alone gives you the full picture.
+ Here's where each method matters for a startup:
+ - Cash basis is what your bank and your gut agree on. It tells you whether payroll clears next Friday and how many weeks of runway you have left.
+- Accrual basis is what your investors and auditors want to see. It's required for GAAP-compliant financials, and without it, your Series A due diligence gets messy fast.
+- Running only cash basis means your revenue looks lumpy and deferred obligations stay invisible until they hit.
+- Running only accrual means your burn rate figures don't reflect real cash timing, which can mask a liquidity crunch.
+ The answer isn't picking one. It's maintaining both simultaneously so your daily operating view and your investor-ready financials never contradict each other. Accounting software that handles dual basis automatically keeps both sets of books in sync without requiring a manual conversion every month-end close.
+ How dual basis accounting works in practice
+ The same transaction looks completely different depending on which method you're reading from. Consider three scenarios common to any SaaS startup:
+
+ Neither view is wrong. Cash basis tells you whether payroll clears Friday. Accrual basis tells your investors what the business actually earned in a given period. The decisions each view informs are different enough that collapsing them into one number loses something real.
+ Why maintaining both matters
+ Most accounting software forces you to pick one method and live with it. That means you're either flying blind on real earnings or guessing on actual cash position, depending on which side you chose.
+ Running both simultaneously gives you:
+ - A daily cash read so you know exactly where burn and runway stand without waiting for month-end.
+- A GAAP-compliant accrual view your investors, lenders, or acquirers can rely on without a restatement.
+- Fewer surprises when your books get audited or you prepare for a fundraise.
+ Automating dual basis accounting with software
+ Manually keeping two sets of books is where most startups hit a wall. You need cash-basis records for day-to-day burn tracking and accrual records for investors and auditors, but matching both by hand doubles the workload and doubles the chances of error.
+
+ The right accounting software solves this by maintaining both bases simultaneously and automatically. Every transaction gets recorded once, and the software generates both views from that single source of truth.
+ What to look for in dual-basis accounting software
+ Not every tool handles this well. When choosing between options, focus on:
+ - Automatic posting to both ledgers with no manual re-entry required, so your cash and accrual books never drift apart.
+- Real-time visibility into burn rate and runway on the cash side, updated as transactions clear without waiting for month-end.
+- GAAP-compliant accrual treatment for deferred revenue, prepaid expenses, and accounts receivable without requiring manual journal entries.
+- Native integrations with your fintech stack (Stripe, Mercury, Ramp, Brex, Gusto) so the data flows in automatically instead of through CSV uploads.
+- AI-native categorization that handles the bulk of transaction coding, leaving your accountant to review and approve instead of re-entering everything from scratch.
+ Software built AI-native from the ground up can automate 85–90% of transaction categorization, which means your team spends time on decisions, not data entry. That gap matters most when you are closing books ahead of a fundraise or board meeting and accuracy cannot slip.
+ Comparing dual-basis accounting tools
+ Tool Automatic dual-basis support AI-native categorization Real-time burn/runway tracking Native fintech integrations 
+ Puzzle Yes: cash and accrual maintained simultaneously in real time Yes: built AI-native from the ground up, 85–90% automation Yes: updated daily without waiting for month-end close Yes: Stripe, Mercury, Ramp, Brex, Gusto and others 
+ QuickBooks Online No: reports can toggle between cash and accrual views, but books are not maintained in parallel automatically Partial: rule-based auto-categorization; AI features added via updates, not native architecture Limited: requires manual setup and add-ons for burn/runway dashboards Yes: broad ecosystem of third-party integrations via app marketplace 
+ Xero No: supports cash and accrual reporting views but does not run both ledgers simultaneously Partial: smart categorization suggestions based on transaction history; not AI-native Limited: requires add-ons or manual reporting for burn/runway Yes: broad third-party app integrations 
+ NetSuite Partial: accrual-native; cash reporting requires configuration No: rules-based categorization; no AI-native architecture Yes: financial reporting including cash management, though setup overhead is substantial Yes: broad ecosystem but enterprise-focused setup 
+ Zeni Partial: accrual-focused with some cash visibility; not full dual-basis automation Partial: AI-assisted bookkeeping with human review layer Partial: burn and runway dashboards available but not real-time daily updates Partial: integrates with major fintech tools but narrower than Puzzle 
+
+ How Puzzle automates dual basis accounting for startups
+ Puzzle maintains both cash and accrual books simultaneously, updating in real time as transactions come in. You get a live view of your cash position alongside GAAP-compliant accrual financials, without running two separate processes or waiting until month-end to match the difference.
+ The AI-native architecture handles the categorization work automatically, reaching 85–90% transaction automation. When a payment hits your account, Puzzle records it on the cash basis immediately and applies the correct accrual treatment based on your revenue recognition rules, without manual intervention.
+ This matters most at two moments in a startup's life:
+ - When an investor asks for financials, you need accrual-basis statements that reflect earned revenue and outstanding obligations beyond what's cleared your bank account.
+- When your CFO or controller is watching burn, they need the cash view updated daily, not reconstructed after a manual close.
+ Puzzle connects directly to your fintech stack (Stripe, Mercury, Ramp, Brex, Gusto) so both sets of books stay current without spreadsheet exports or manual journal entries. Month-end close time drops by up to 50% because the dual-basis work is happening continuously in the background, not as a separate end-of-month task.
+ Final thoughts on choosing between cash and accrual accounting
+ You don't actually get to choose. Your bank account runs on cash, your investors and auditors run on accrual, and the gap between those two views is where surprises live. Maintaining both from day one means your next fundraise or audit doesn't turn into a scramble to restate two years of records. Any tool you pick for this job should post to both ledgers automatically with no manual re-entry, apply GAAP-compliant accrual treatment to deferred revenue and prepaid expenses without manual journal entries, connect natively to your fintech stack (Stripe, Mercury, Ramp, Brex, Gusto), and categorize transactions accurately enough that your team reviews exceptions instead of rebuilding the books from scratch. Puzzle is built to meet those criteria, handling the dual basis work automatically so both views stay accurate without the extra overhead: see how it works .
+ FAQ
+ Can I run cash and accrual accounting at the same time?
+ Yes. Software built to handle dual-basis accounting maintains both sets of books simultaneously from a single transaction record, so you get a real-time cash view for daily burn tracking and GAAP-compliant accrual statements for investors without running two separate processes.
+ What's the difference between cash and accrual accounting for burn rate?
+ Cash basis tracks only what's left your bank account, while accrual basis includes what you've committed to pay even if the invoice hasn't cleared yet. Accrual gives you a more accurate burn rate because it captures liabilities as they arise instead of only when cash moves.
+ When are startups required to switch to accrual accounting?
+ The IRS requires accrual accounting once your average annual gross receipts exceed $25 million over the prior three years. Beyond that threshold, investors expect GAAP-compliant accrual financials during their review process, and SaaS companies typically need it earlier to properly recognize subscription revenue under ASC 606.
+ Why do investors want accrual basis financials instead of cash basis?
+ Accrual financials show revenue when it's earned and expenses when they're incurred, which gives investors an accurate picture of your recurring revenue business. Cash basis hides deferred revenue, distorts timing on annual contracts, and makes it impossible to assess the true health of a SaaS company's economics.
+ What accounting software is best for startups that need both cash and accrual books?
+ Startups need software that maintains both ledgers from a single transaction record at the same time, rather than forcing a choice between them. Puzzle is an AI-native option built to do this automatically, posting every transaction to both the cash and accrual view without manual work. Legacy tools like QuickBooks and Xero let you toggle between cash and accrual reporting views, but they don't maintain both ledgers in parallel, so the underlying books still reflect only one method at a time.
+ How does AI-native dual-basis accounting differ from traditional accounting software?
+ Traditional accounting software requires manual journal entries or an end-of-month conversion process to produce both a cash and an accrual view, which adds work and room for error at close. AI-native software like Puzzle posts every transaction to both ledgers in real time, with 85–90% of categorization handled automatically, so the two sets of books never drift apart.
+ How does dual-basis accounting software handle month-end close?
+ Dual-basis software records each transaction once and applies both cash and accrual treatment automatically, which cuts month-end close time by up to 50%. You avoid the manual work of converting cash records to accrual or maintaining two separate ledgers that need reconciliation.
+ Is AI-native accounting software accurate enough to handle bookkeeping for a 10-person startup without a dedicated bookkeeper?
+ AI-native software automates 85–90% of transaction categorization, which means the routine coding work for a 10-person startup gets handled automatically. But automated categorization is not the same as removing all human oversight. Your team still needs to review and approve judgment-sensitive entries: intercompany allocations, equity compensation, deferred revenue schedules, and anything touching your cap table. The IRS requires that accounting records be accurate and accessible for audit, and a human still needs to approve the gray-area calls before month-end. The practical model is AI handles the volume, you review the exceptions, and the total time drops to about 15-20 minutes per week.
+ How do I track burn rate and runway in real time without waiting for month-end close?
+ The key is accounting software that connects directly to your bank accounts, payroll tools, and card feeds so every cleared transaction updates your cash position automatically. Tools that integrate natively with Mercury, Ramp, Brex, Gusto, and Stripe can give you a live read on burn rate and runway without a manual reconciliation step. Puzzle updates burn and runway daily as transactions come in, which means your CFO or controller has an accurate read every morning. If your current tool requires a full close before you can trust your burn figures, that is a blind spot that compounds across every fundraise and board meeting.
+ What accounting software do VC-backed startups use for investor reporting and cap table journal entries?
+ VC-backed startups typically pair an accounting tool for the general ledger and GAAP financials with a dedicated cap table tool like Carta for equity management. The accounting software needs to accept journal entries from Carta for stock option activity, 409A valuations, and stock-based compensation expense, and it needs to produce accrual-basis GAAP financials investors can rely on during diligence. QuickBooks Online and Xero handle basic investor reporting for early-stage companies, but neither maintains dual-basis books automatically. Puzzle accepts Carta journal entries and applies them in the accrual ledger, keeping stock-based compensation in the correct period while maintaining a real-time cash view alongside.
+ If AI is categorizing transactions automatically, do I still need to log in and review anything each month?
+ Yes, but the work is minimal. AI handles 85–90% of categorization, meaning routine transactions get coded without any input from you. What remains are judgment-sensitive entries: intercompany allocations, equity compensation entries, deferred revenue schedules, and anything that needs context the AI does not have. Puzzle flags those items for review instead of guessing, so your monthly workload becomes reviewing exceptions instead of rebuilding the books from scratch. Most founders spend about 15-20 minutes per week on this. Removing human review entirely introduces risk that no accounting software vendor guarantees away.
+ What is the difference between a real-time cash activity view and a full GAAP statement of cash flows?
+ A real-time cash activity view tracks what comes in and goes out of your bank accounts daily, giving you a live read on cash position, burn rate, and runway. A full GAAP statement of cash flows is a formal financial statement with three distinct sections (operating, investing, and financing activities), typically prepared under the indirect method for audits and year-end reporting. Puzzle's cash activity report covers the day-to-day operational visibility you need, but it is not a full indirect-method GAAP cash flow statement. If your investors or auditors require that formal statement, your accountant typically produces it at audit or as part of a year-end package.
+ How does Puzzle handle deferred revenue and ASC 606 revenue recognition?
+ Puzzle applies ASC 606-compliant revenue recognition automatically. When a customer pays for an annual subscription upfront, Puzzle records the cash receipt immediately on the cash-basis ledger and spreads the revenue across the subscription period on the accrual-basis ledger, without manual journal entries. Deferred revenue appears on your balance sheet and unwinds each month as revenue is earned. For SaaS startups with annual contracts, this means your reported ARR reflects when services are delivered, not when cash lands, which is what investors and auditors expect.
+ Can I switch accounting software in the middle of a fundraise or due diligence process?
+ It is possible but adds friction at the worst moment. Switching tools mid-fundraise means re-importing transaction history, verifying that opening balances match, and giving investors a clean audit trail across two systems. If you are already in due diligence, the safer move is to finish the raise on your current books and migrate afterward. If you are pre-process and know a fundraise is six or more months out, migrating now gives you time to close at least one full month on the new system before investors start pulling reports. Puzzle imports historical transaction data and maintains both cash and accrual records from the migration date forward, so the dual-basis view is available from your first month on the system.
+
+ Let us help you solve your financial puzzles.
+
+ Thank you for being part of our Puzzle community. Stay tuned!
+
+ Oops! Something went wrong while submitting the form.
+
+ You can unsubscribe at any anytime.
+
+ Newsroom
+
+ Puzzle’s Pledge To Accountants
+
+ At Puzzle, we believe in the power of collaboration and the importance of trust in the accounting industry. We understand that accountants are the backbone of businesses everywhere, and our mission is to empower you with the best tools and technology, not to compete with you.
+
+ Introducing Smart Accounting Policies For Accountants
+
+ Accountants know the realities of the job all too well: mountains of spreadsheets, lengthy reconciliations, and hours of repetitive data entry. The work is fulfilling, but the daily process can be time-consuming and often overwhelming. What if there were a way to break free from this cycle, reclaim time, and dive deeper into the impactful work that matters?
+
+ Building a Modern Accounting Firm with Decimal and Puzzle
+
+ Decimal reached out to us to let us know they were looking for a modern general ledger that could support hundreds of their clients at scale, but with one unusual request beyond conversion and integration to their firm management solution—would we work alongside their team to help them design the firm of the future?
+
+ Startup Accounting

@@ -1,0 +1,288 @@
+SOURCE: https://beancount.io/blog/2026/08/25/how-to-reconcile-stripe-payouts-gross-vs-net-fees-refunds-guide
+
+- - - - How to Reconcile Stripe Payouts Without Losing Track of Your Real Revenue - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Skip to main content Beancount.io 
+ 219 
+
+ How to Reconcile Stripe Payouts Without Losing Track of Your Real Revenue
+ Published Published : August 25, 2026 12 min read Mike Thrift 
+ Reconciliation
+ Payments
+ Bookkeeping
+ Small Business
+ E-commerce
+ Revenue Recognition
+ Chargebacks
+
+ On this page Your Stripe dashboard says you earned $10,000 this week. Your bank account shows a deposit for $9,421. Your bookkeeper asks what to record — and if you answer "$9,421 in sales," you've already made two mistakes that will snowball at tax time, during an audit, and when that first refund hits.
+
+ If you take cards through Stripe — for an online store, invoices with a pay link, a booking site, or a donation form — the money you sold and the money you received will never match on any given day. Stripe deducts fees, holds refunds and disputes against your balance, and settles on a rolling delay. Your bank sees only the net left over. The IRS, your accountant, and your future self trying to understand last month's margin all need the gross.
+
+ This guide shows how Stripe payouts actually work, how to book them so revenue, fees, and refunds stay clean, and how to reconcile Stripe to your bank in under 30 minutes a month — without building a spreadsheet you dread opening.
+
+ Why the Bank Deposit Is Not Your Revenue ​ 
+
+ Three things make Stripe reconciliation feel off compared to old-fashioned card deposits:
+
+ 1. Net settlement. Stripe subtracts its processing fee before it sends money. A $100 sale at the standard US rate of 2.9% + 30¢ nets $96.80 to your pending balance. Your bank never sees the $100 — but your revenue was $100 and your expense was $3.20. If you record only the net, you understate both.
+
+ 2. Rolling timing. With the default 2-business-day payout schedule, Monday's sales usually arrive Wednesday, Tuesday's on Thursday, and so on. A calendar month of sales and a calendar month of payouts rarely align. Booking payouts as sales shifts revenue into the wrong month.
+
+ 3. Balance adjustments. Refunds, disputed charges, Stripe fees for those disputes ($15 for a standard dispute), Instant Payout fees (1% when you cash out early), and fees for products like Billing or Radar all reduce the payout. So does a partial refund where Stripe keeps the original fee. Each needs a different ledger entry.
+
+ The fix is simple in principle: record the gross sale when it happens, track Stripe's cut separately, and treat the payout as a transfer from your Stripe balance to your bank — not as new income.
+
+ How Stripe Payouts Actually Work ​ 
+
+ Think of Stripe as a wallet with its own ledger.
+
+ Charge succeeds → money enters pending. When a customer pays, Stripe adds the gross charge to your pending balance immediately, but it does not mark it available for payout until the risk hold clears (usually 2 days, 7 days for new accounts or higher-risk businesses, up to 14 days in some cases).
+
+ Fees are taken from the balance, not billed later. At the same moment, Stripe debits its fee against the same pending balance. You will not get a separate bill. This is why gross-vs-net tracking matters.
+
+ Payout is a batch transfer. On your payout schedule — daily automatic is the default — Stripe bundles every available balance transaction into one payout and pushes it via ACH to your bank. A single payout therefore contains dozens or hundreds of underlying charges, refunds, and fee adjustments that originated on different days.
+
+ Three reports tell you the story:
+
+- Payout detail (Dashboard → Payments → Payouts → select a payout): Lists every charge, refund, and fee that makes up that single bank deposit. This is your reconciliation source of truth.
+
+- Balance report (CSV export): The daily ledger of gross, fee, and net by activity type — the only place to see daily gross without payout timing distortion.
+
+- Monthly summary: Revenue to cash bridge for the month, helpful to tie Stripe to your P&L.
+
+ You do not need all three every time, but you need at least the payout detail for each deposit that hits your bank.
+
+ The Two Mistakes That Break Your Books ​ 
+
+ Mistake 1: Booking the net deposit as sales ​ 
+
+ Recording $9,421 as revenue when Stripe settled a batch that included $10,000 in gross sales does three harms at once: you understate revenue for loan or valuation review, you lose the fee as a deductible expense, and your 1099-K will never tie out — Stripe reports gross processing volume, not net payouts. The IRS receives the gross figure. You should too.
+
+ Mistake 2: Booking revenue when the payout arrives ​ 
+
+ If you wait until cash hits the bank to record the sale, a December 30 sale that pays out January 2 lands in the wrong tax year. For cash-basis filers, the tax event is often the sale date , not the payout date — and for accrual-basis filers, it is definitively the sale date under ASC 606 (more on that below). Either way, "revenue = bank deposit date" creates month-end and year-end errors that compound with refunds.
+
+ The Right Way: Gross Sale, Fee Expense, Payout Transfer ​ 
+
+ Use three accounts to keep Stripe honest. In plain-text terms:
+
+- Assets:Receivables:Stripe or Assets:Stripe:Pending — your Stripe balance before payout
+
+- Income:Sales — gross sales
+
+- Expenses:PaymentProcessingFees — Stripe fees
+
+- Assets:Bank:Checking — where payouts land
+
+ Here is the pattern for a typical day. You made $2,000 in gross sales. Stripe kept $61 (2.9% + 30¢ per transaction adds up).
+
+ When each sale happens (or daily in batch): 
+
+ 2026-08-12 * "Stripe sales 2026-08-12" 
+ Assets:Stripe:Pending 2000.00 USD 
+ Income:Sales -2000.00 USD 
+
+ 2026-08-12 * "Stripe fees 2026-08-12" 
+ Expenses:PaymentProcessingFees 61.00 USD 
+ Assets:Stripe:Pending -61.00 USD 
+
+ You now show $1,939 in Stripe pending, $2,000 in revenue, and $61 deductible.
+
+ When Stripe pays out two days later (say $1,939 in that batch): 
+
+ 2026-08-14 * "Stripe payout po_1a2b3c to checking" 
+ Assets:Bank:Checking 1939.00 USD 
+ Assets:Stripe:Pending -1939.00 USD 
+
+ No new income on payout day. Just a transfer. Your Assets:Stripe:Pending balance now ties to Stripe's available + pending total, and your bank reconciles cleanly.
+
+ If you prefer to post daily sales in aggregate from the Balance CSV instead of per-transaction, that is fine — just keep the gross/fee split and keep the payout as transfer. The reconciliation still ties.
+
+ What about sales tax, shipping, or platform fees? ​ 
+
+ If you collect sales tax through Stripe Tax or separately, do not book gross as pure revenue. Split it at the sale:
+
+ Assets:Stripe:Pending 1080.00 USD 
+ Income:Sales -1000.00 USD 
+ Liabilities:SalesTaxPayable -80.00 USD 
+
+ Shipping, marketplace commissions, or application fees deducted by Stripe should each hit their own expense or liability account — never netted silently against sales.
+
+ Handling the Tricky Parts Without Losing the Thread ​ 
+
+ Refunds: reverse revenue, not a new expense ​ 
+
+ A customer paid $150, you refund it fully. Stripe debits $150 from your balance, keeps the original fee (it refunds the fee only on some legacy pricing and for the newest updates, but assume it keeps it), and charges no additional refund fee. On your books:
+
+ 2026-08-15 * "Refund for invoice 1024" 
+ Income:Sales 150.00 USD ; reverse the sale 
+ Assets:Stripe:Pending -150.00 USD 
+
+ The original $4.65 fee you already expensed stays as an expense — you paid for processing that ultimately did not stick. If Stripe does return a fee on a particular refund, credit Expenses:PaymentProcessingFees for that amount.
+
+ For a partial $50 refund on a $200 order, only reverse $50 of revenue. The distinction matters for sales-tax refunds: in most states you may only recover remitted tax if you refund the tax to the customer and document it.
+
+ Disputes and chargebacks: two entries, not one ​ 
+
+ When a $200 charge is disputed:
+
+- Stripe immediately holds $200 from your balance and charges a $15 dispute fee (rising to $25 if you lose and do not qualify for early fraud warning programs).
+
+- If you win, Stripe returns the $200; you keep the $15 fee.
+
+ Book it as:
+
+ 2026-08-18 * "Dispute opened ch_abc $200 + $15 fee" 
+ Assets:Stripe:Disputed 200.00 USD 
+ Expenses:PaymentProcessingFees 15.00 USD 
+ Assets:Stripe:Pending -215.00 USD 
+
+ 2026-08-25 * "Dispute won - funds returned" 
+ Assets:Stripe:Pending 200.00 USD 
+ Assets:Stripe:Disputed -200.00 USD 
+
+ If you lose, move the $200 from disputed to a bad-debt or chargeback loss and leave the fee expensed. Never leave disputes parked in pending — they deserve their own receivable so you know what is at risk.
+
+ Instant Payouts and manual payouts ​ 
+
+ An Instant Payout to your debit card costs 1% (minimum fee applies). That 1% is a separate financing cost:
+
+ 2026-08-20 * "Instant payout $5000, 1% fee" 
+ Assets:Bank:Checking 4950.00 USD 
+ Expenses:PaymentProcessingFees 50.00 USD 
+ Assets:Stripe:Pending -5000.00 USD 
+
+ Multiple charges in one payout ​ 
+
+ A single $9,421 payout might contain:
+
+- 47 charges totaling $10,000
+
+- $290 in processing fees
+
+- $200 dispute hold
+
+- $89 instant payout fee rolled into the batch
+
+ Book each component to its own account but post the transfer as one deposit. Your payout-detail export tells you the split — copy it faithfully. The bank line will still be one number, and it will now reconcile to the penny.
+
+ ASC 606 at Point of Sale: When Do You Recognize the Revenue? ​ 
+
+ For most small businesses selling goods or one-time services through Stripe, revenue recognition is straightforward: you recognize the gross sale when you satisfy the performance obligation — usually when you deliver the goods, the download is available, or the service is performed — not when Stripe pays you.
+
+ That matters because Stripe's settlement delay tempts you to recognize on payout. Don't. If you ship on August 30 and Stripe pays September 2, the revenue belongs to August.
+
+ Two common wrinkles:
+
+ Prepaid subscriptions or deposits. If a customer pays $600 for six months of access on August 1 via Stripe, you received cash (and Stripe will pay you minus fees within days), but you have earned only $100 in August. Park the rest:
+
+ 2026-08-01 * "Annual plan 6mo, collected via Stripe" 
+ Assets:Stripe:Pending 600.00 USD 
+ Liabilities:DeferredRevenue -600.00 USD 
+
+ 2026-08-31 * "August revenue recognized" 
+ Liabilities:DeferredRevenue 100.00 USD 
+ Income:Sales -100.00 USD 
+
+ Sales through a platform where you are not the merchant of record. If you sell via a marketplace that uses Stripe Connect and you receive a transfer from the platform, you may be reporting net, not gross, depending on who controls the customer relationship. Get this determination right early — it affects whether you report $10,000 or $7,000 as revenue when the platform takes 30%.
+
+ When in doubt, the payout is never the recognition event. The delivery is.
+
+ Reconciling Stripe to Your Bank in 30 Minutes a Month ​ 
+
+ Make this your month-end habit:
+
+ Step 1: Export payout details for the month. In the Dashboard, go to Payments → Payouts, set the date filter to the calendar month by arrival date , and export each payout's detail or use the unified payout reconciliation CSV. You want every transaction ID that contributed to each bank deposit.
+
+ Step 2: Post missing gross and fees. For each Charge and Refund line in the payout, ensure you have a gross sale or reversal and a fee expense for that date — not the payout date. If you batch daily, tie the daily total from the Balance report to your ledger batch.
+
+ Step 3: Post the payout transfer. For each bank deposit, create the transfer entry from Assets:Stripe:Pending to Assets:Bank:Checking for the exact payout net. Attach the Stripe payout ID (e.g., po_3N... ) in the memo.
+
+ Step 4: Tie the pending balance. At month-end, Assets:Stripe:Pending should equal Stripe's pending + available balance in the Dashboard. If it does not, you missed a fee, a refund, an adjustment, or you double-booked a payout. Fix before you close.
+
+ Step 5: Tie gross to the 1099-K mindset. Stripe will report gross processing volume on Form 1099-K (federal threshold is $600 for third-party settlement, with no transaction minimum under current law — though state thresholds vary). Your ledger's Income:Sales plus refund reversals should reconcile to the 1099-K gross for the calendar year, not to the sum of bank deposits. A $15,000 difference between the two is normal and expected — it is fees and timing. Document it once a year so you are not explaining it under audit.
+
+ If you use QuickBooks, Xero, or another ledger, the same structure applies: create a Stripe clearing or holding account, post gross and fees there, and transfer to the bank on payout. The clearing account must zero out across time except for the pending balance.
+
+ A Quick Beancount Example You Can Copy ​ 
+
+ ; Daily sales and fees – book on sale date 
+ 2026 - 08 - 12 * "Stripe sales batch 2026-08-12" # batch-20260812 
+ Assets :Stripe:Pending 2000.00 USD 
+ Income :Sales - 2000.00 USD 
+
+ 2026 - 08 - 12 * "Stripe fees batch 2026-08-12" # batch-20260812 
+ Expenses :PaymentProcessingFees 61.00 USD 
+ Assets :Stripe:Pending - 61.00 USD 
+
+ ; One refund in that payout cycle 
+ 2026 - 08 - 14 * "Refund inv 1024" # refund-1024 
+ Income :Sales 150.00 USD 
+ Assets :Stripe:Pending - 150.00 USD 
+
+ ; The payout that arrives two days later – single deposit, no new revenue 
+ 2026 - 08 - 14 * "Payout po_1Qabc arrives checking" # payout-po_1Qabc 
+ Assets :Bank:Checking 1789.00 USD 
+ Assets :Stripe:Pending - 1789.00 USD 
+
+ In Fava, your Stripe pending balance will now chart cleanly against Stripe's own balance graph, and every bank deposit will have a matching transfer with a searchable payout ID.
+
+ Common Pitfalls and How to Avoid Them ​ 
+
+ Forgetting the fee on refunds. Stripe generally keeps the original fee when you refund. Your revenue reverses but the fee does not. If you reverse both, you overstate profit on the refunded order.
+
+ Booking Instant Payout fees as bank fees. They are payment processing costs, not general bank charges. Keep them with Stripe fees so your true cost of acceptance is visible in one place.
+
+ Letting the Stripe balance go negative and ignoring it. If refunds and disputes exceed new sales, your pending balance goes negative and Stripe debits your bank on file. Book the debit as a transfer from the bank to Stripe — it is still just moving the clearing account.
+
+ Not splitting sales tax. When you net tax into revenue, you will remit too much income tax and too little sales tax — or vice versa. Split it at the point of sale.
+
+ Reconciling by month of payout instead of month of sale. Your P&L by payout month is a cash flow view, not a performance view. If you need both, run the P&L by sale date and a cash flow report by payout date — but do not confuse one for the other.
+ Share this article
+
+ Share on X Share on Hacker News Share on Reddit Share on LinkedIn Share on Bluesky Copy link 
+ Was this page helpful?
+ Yes No 
+
+ Try the free CSV to Beancount converter
+ No sign-up, nothing uploaded: it runs entirely in your browser and turns your file into balanced double-entry transactions.
+ Open the converter 
+
+ Running a small business? Keep books you own
+ Hosted Beancount gives your firm correct books your accountant can read, with no install and no lock-in.
+
+ See Beancount.io for small business 
+ Disclaimer : This article is for general information only and is not legal, tax, or accounting advice. Rules change and depend on your jurisdiction and circumstances — consult a qualified professional before acting on anything here. 
+
+ Related articles
+
+ 13 min read 
+ Square vs. Stripe for Small Businesses: Processing Fees, Payout Speed, Hardware, and Which One Reconciles Cleaner
+ Stripe is cheaper online (2.9% + 30¢); Square wins in person (2.6% + 15¢) with…
+ payments
+ small-business
+
+ 9 min read 
+ Chrome Extension Developer Bookkeeping: Reconciling Payouts After Google Killed In-App Payments
+ Google deprecated Chrome Web Store Payments in 2021, leaving extension…
+ reconciliation
+ saas
+
+ 11 min read 
+ Stripe vs. Square vs. PayPal for Small Businesses: Fees, Payouts, Hardware, and the Effective-Rate Math
+ Stripe is cheapest online at 2.9% + 30¢, Square wins in person with free POS…
+ payments
+ small-business
+
+ 9 min read 
+ How to Reconcile Stripe Climate Contributions, Instant Payouts, and Reserves Without Creating a Phantom Expense
+ Climate gifts, instant payout fees, and reserve holds cut Stripe payouts…
+ reconciliation
+ payments
+
+ 10 min read 
+ How to Reconcile Payment Processor Payouts: A Clearing Account Guide
+ A payment processor payout bundles gross sales, fees, refunds, chargebacks,…
+ reconciliation
+ payments
+
+ Back to All Posts
