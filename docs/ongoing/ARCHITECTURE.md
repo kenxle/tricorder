@@ -21,9 +21,9 @@ Tricorder is a set of Python scans that each read a company's files and write on
 | Layer | What | Why |
 |---|---|---|
 | Scans, merge, scoring | Python 3.11+, Pydantic, pandas, openpyxl, pdfplumber, the Anthropic SDK | The scans are Python-shaped (spreadsheets, PDFs, whisper, the model). The feasibility research recommends it (Part 4.1). |
-| Server | FastAPI on uvicorn, `server/app.py`, localhost only | The page reads JSON and never waits on Python. |
+| Server | FastAPI on uvicorn, `server/app.py`, localhost only. `server/local_guard.py` refuses a non-loopback Host, a cross-origin write and a text or form body on a JSON route. Each feature's routes live in `server/<feature>_routes.py`, included above the page mount. | The page reads JSON and never waits on Python. |
 | Page | React 19, TypeScript, Vite, in `readout/` | The frontend works in parallel against generated types and sample files. No CDN, so the demo needs no wifi. |
-| Store | Files: `out/<room>/` for results, `rooms/` for rooms that arrive by upload or the inbox | One laptop on Saturday. The readout-store slice puts a store behind the same paths. |
+| Store | Files: `out/<room>/` for results, `rooms/` for rooms that arrive by upload or the inbox, and `store_data/` for readouts saved per fund (`store/`, `python -m store`) | One laptop on Saturday. The store keeps each saved readout with its sources and files, lists what a fund holds for a company, and deletes it all with one confirmed command. |
 
 Rejected: one Streamlit app (no room for the frontend role, and a prior financial-AI hackathon disqualified "Simple Streamlit only applications"), and Rails with Python subprocesses (two runtimes on the demo laptop, one bottleneck).
 
@@ -35,20 +35,22 @@ Each folder has one owner, so parallel pull requests do not touch the same files
 |---|---|---|
 | `schema/` | `claim.py` (the models), `claim.schema.json` and `ts/claim.ts` (generated), `readers.py` (open a file at a locator), `check_quotes.py`, `settings.py` (the thresholds) | captain; `readers.py` backend-and-data |
 | `scans/base.py` | The scan command line, result paths, ids, gaps, the input kinds a room holds | captain |
-| `scans/redflags/` | Scan 1: one module per FRAMEWORKS entry 1.1 to 1.14 (1.14 is deck against the books) | design-and-finance |
+| `scans/redflags/` | Scan 1: one module per FRAMEWORKS entry 1.1 to 1.14 (1.14 is deck against the books). `contract_reader.py` is the one contract reader for entry 1.13. Each module numbers its own claims (`redflags-<module>-001`), and a module that crashes becomes a gap. | design-and-finance |
 | `scans/comps/` | Scan 2: public comps and private rounds | design-and-finance |
 | `scans/signals/` | Scan 3: market signals, from `cache/` | frontend on Saturday |
 | `scans/video/` | Scan 4: transcript claims with timestamps, interesting moments | backend-and-data |
-| `scans/claims/` | The claims workflow: every slide and sentence, checked for support | agent |
+| `scans/claims/` | The claims workflow: every figure in the deck and the pitch script, labelled supported, contradicted or unsupported against the room | agent |
 | `scans/readings/`, `scans/model/` | Model readings (pilot clause, cohort note); the model rebuild, unit economics and scenario numbers | backend-and-data; agent |
 | `scans/frameworks/`, `scans/founders/`, `scans/presence/`, `scans/outside/` | Scans 5, 6 and 7, and the associate's ten tabs | agent |
 | `scans/bank/` | The bank check | agent |
-| `scans/memo/` | The merge and its steps: linking, piece verdicts, top flags, coverage, ask list, connecting sentences | captain |
+| `scans/memo/` | The merge and its steps: linking, claim support, piece verdicts, top flags, coverage, ask list, connecting sentences | captain |
 | `clients/` | `llm.py`, the one door to the model; one module per outside source, each with off, sample and live modes | backend-and-data |
 | `server/` | The FastAPI app | backend-and-data |
 | `readout/` | The page | frontend |
 | `eval/` | `score.py`: a readout against an answer key | captain |
-| `memo/`, `inbox/`, `store/` | The memo export with reader copies, the inbox webhook, the readout store. Created by their slices. | agent |
+| `memo/`, `inbox/`, `store/` | The memo export (built; reader copies not yet), the inbox webhook (not built), the readout store (built) | agent |
+| `founder_requests/` | The request to the founder drafted from the ask list, and a reply's files added to the room so the waiting scans rerun | agent |
+| `steering/` | One typed sentence on a piece or a line: the engine, the revisions, and `verdicts.py`, a stand-in for the piece verdicts until `scans/memo/pieces.py` exists | agent |
 | `data_room/` | The generator, the synthetic rooms and their answer keys. No product code imports it. | agent |
 | `cache/` | Outside data saved ahead, indexed by `cache/index.json` | agent |
 | `sample_out/` | Hand-written example results, one folder per room | captain |
@@ -94,17 +96,18 @@ The red-flag engine is one scan made of many checks. Each FRAMEWORKS entry is it
 `python -m scans.memo <room_dir>` reads every scan result that exists, runs the quote checker again, moves unverified claims to their own box, and turns each missing scan into a gap. Then it runs its steps in order, each a module in `scans/memo/` with `apply(readout, room_dir) -> Readout`, skipped until it exists:
 
 1. **link**: claims with the same label, unit and period are linked as conflicting (apart by more than the tolerance) or corroborating (agreeing, from independent sources; the deck, video, overview, website and one-pager count as one source).
-2. **pieces**: each claim goes to one of nine pieces, and each piece gets its verdict by the script rule in FRAMEWORKS ("Piece verdicts").
-3. **top_flags**: the best green and worst red flags, one per piece, by the rule in FRAMEWORKS.
-4. **coverage**: each checklist item marked checked, found, missing, not checked yet or not expected at the company's stage, and an ask line for each missing item (`scans/memo/coverage.py`; [CHECKLIST.md](CHECKLIST.md), FRAMEWORKS "Checklist coverage").
-5. **asks**: the ask list, from gaps, weak pieces and missing checklist items.
-6. **connecting**: the one model pass. Each sentence must cite claim ids or it is dropped. It never changes a verdict.
+2. **claim_support**: each pitch figure the claims scan labelled is relabelled against other scans' flags (`scans/memo/claim_support.py`). A flag relabels a figure only when both carry a Value of the same label, unit and period.
+3. **pieces**: each claim goes to one of nine pieces, and each piece gets its verdict by the script rule in FRAMEWORKS ("Piece verdicts").
+4. **top_flags**: the best green and worst red flags, one per piece, by the rule in FRAMEWORKS.
+5. **coverage**: each checklist item marked checked, found, missing, not checked yet or not expected at the company's stage, and an ask line for each missing item (`scans/memo/coverage.py`; [CHECKLIST.md](CHECKLIST.md), FRAMEWORKS "Checklist coverage").
+6. **asks**: the ask list, from gaps, weak pieces and missing checklist items.
+7. **connecting**: the one model pass. Each sentence must cite claim ids or it is dropped. It never changes a verdict.
 
 The order of the pieces on the page is a view, not data. Reordering changes no verdict.
 
 ## Steering
 
-The operator types one plain sentence on a piece or a line. The server classifies it as a rewrite (rerun the piece's scans with the sentence as one more input to their model readings) or a request for more information (fetch the sources it names under the same rules as any input, then rerun). The merge rebuilds that piece and the top flags by the same scripts and stores a `PieceRevision` with the diff. A steer can change what is read, how claims are grouped and how they are worded. It never changes a script's number; when asked to, the revision says so and the number stays.
+The operator types one plain sentence on a piece or a line. The server classifies it as a rewrite (rerun the piece's scans with the sentence as one more input to their model readings) or a request for more information (fetch the sources it names under the same rules as any input, then rerun). The merge rebuilds that piece and the top flags by the same scripts and stores a `PieceRevision` with the diff. A steer can change what is read, how claims are grouped and how they are worded. It never changes a script's number; when asked to, the revision says so and the number stays. A steer that changes a definition ("treat the pilot as non-recurring") may add a new figure beside the check's, labelled as the steer's, and the check's own line stays. The code is `steering/` and `server/steering_routes.py` (`/api/rooms/<room>/steerable`, `/steer`, `/revisions`); a steer writes the readout back to `out/<room>/readout.json` with its `PieceRevision`, and saves it to the readout store as a new version, so every revision is kept. `python -m steering <room_dir> <piece> "<sentence>"` runs the same steer from the command line.
 
 ## Speed: the readout fills in as inputs arrive
 
@@ -117,13 +120,13 @@ Each scan declares the input kinds it needs. A small scheduler watches a company
 | Inbox | A forwarding address first: a mail service posts each message to a webhook in `inbox/`, which saves the attachments as a new folder in `rooms/` and starts the scans. Gmail's read scopes are restricted and need a security assessment; Microsoft Graph's delegated `Mail.Read` is the later path. Links that need a sign-in (DocSend) become gaps telling the operator what to do. |
 | Bank | Plaid Link, with the founder's consent. Balances and transactions are a source independent of the deck and the model. Withdrawing consent deletes the connection and everything pulled. Tests run on recorded Sandbox responses. |
 | Outside world | Official APIs and saved pages only, through `clients/`. Saved copies live in `cache/` with the time they were read, so the demo runs offline and every URL source can be quote-checked. |
-| Requests to the founder | The ask list becomes a short message with guidance on what to submit (founder-requests). |
+| Requests to the founder | The ask list becomes a short message with guidance on what to submit (`founder_requests/`). The operator copies it or opens it in their mail app; Tricorder never sends it. A reply's files are added to the room through `/api/rooms/<room>/founder-requests/files`, and the scans whose inputs they meet run again. A sample room in `data_room/` is never written; the reply goes to a working copy, `rooms/<room>_live`. |
 
 The full table of outside sources, their keys and their limits is in the feasibility research, Part 2. LinkedIn is never scraped; Reddit is read only from pages Ken saved by hand.
 
 ## The memo export, reader copies and scenarios
 
-`memo/` turns a readout into a draft memo in the sections of [MEMO_TEMPLATE.md](MEMO_TEMPLATE.md): an interactive page with the same drill-downs as the readout, and a static PDF with every claim footnoted. Each operator edit makes a numbered version. Each reader gets a private overlay of their own steers and what-if inputs on one shared version. A what-if goes to the same scripts that rebuilt the numbers, on an in-memory copy of the room; the result shows beside the company's figure and the rebuilt figure and never changes a claim, a verdict or a flag.
+`memo/` turns a readout into a draft memo in the sections of [MEMO_TEMPLATE.md](MEMO_TEMPLATE.md): an interactive page with the same drill-downs as the readout, and a static PDF with every claim footnoted. Each operator edit makes a numbered version, marked as the operator's (`/api/rooms/<room>/memo/edits`). The page is `/api/rooms/<room>/memo.html` and the PDF `/api/rooms/<room>/memo.pdf`, built with reportlab. Reader copies and what-ifs are not built yet. Each reader gets a private overlay of their own steers and what-if inputs on one shared version. A what-if goes to the same scripts that rebuilt the numbers, on an in-memory copy of the room; the result shows beside the company's figure and the rebuilt figure and never changes a claim, a verdict or a flag.
 
 ## Answer keys and scoring
 
@@ -146,6 +149,12 @@ Secrets come from the environment and are never committed. `.env.example` lists 
 | `TRICORDER_LLM_BASE_URL` | A model gateway, if used |
 | `TRICORDER_OFFLINE` | `1` reads `cache/` and makes no outside calls |
 | `TRICORDER_OUT_DIR` | Where results go; default `out/` |
+| `TRICORDER_STORE_DIR`, `TRICORDER_CACHE_DIR` | The readout store (default `store_data/`) and the outside-data cache (default `cache/`) |
+| `TRICORDER_ROOMS_DIR` | Where arriving rooms and working copies go; default `rooms/` |
+| `TRICORDER_UPLOAD_MAX_MB` | The largest file a founder's reply may add; default 25 |
+| `TRICORDER_OPERATOR_NAME`, `TRICORDER_FUND_NAME` | The sign-off on a request to the founder |
+| `TRICORDER_OPERATOR` | Who a steer is credited to when the request names nobody |
+| `TRICORDER_CONTRACT_READER` | `script` keeps entry 1.13 on the script reader even when a model reading is registered |
 | `TRICORDER_SETTINGS` | A JSON file of threshold overrides |
 | `WHISPER_CPP_BIN`, `WHISPER_MODEL_PATH` | The local transcriber |
 | `EDGAR_USER_AGENT`, `AKTA_API_KEY`, `TAVILY_API_KEY`, `YOU_API_KEY`, `GITHUB_TOKEN`, `PRODUCT_HUNT_TOKEN`, `CRUNCHBASE_API_KEY`, `NICRRON_API_KEY`, `OPENAI_API_KEY` | Outside sources; each client falls back to sample mode without its key |

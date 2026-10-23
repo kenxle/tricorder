@@ -52,7 +52,7 @@ These turn scan output into something the associate and the partner use. They wa
 
 ### Wave 2 status (2026-10-23)
 
-Run by the "Wave 2 roadmap features" thread. Each feature went through the forge, got an independent persona review (associate and partner) where people see it, and one independent code and security review of the integrated diff ([review_wave2a.md](review_wave2a.md)), then one fix round. Each has a page in `.claude/skills/verify-tricorder/features/` and was driven once through `control.sh`.
+Run by the "Wave 2 roadmap features" thread. Each feature went through the forge, got an independent persona review (associate and partner) where people see it, and one fix round. The independent code and security review ([review_wave2a.md](review_wave2a.md)) covered readout store, founder requests, contract terms and claim support; memo export and steering still need theirs (board row TRI-wave2-review-memo-steering). Closeout: [02_closeout.md](02_closeout.md). Each has a page in `.claude/skills/verify-tricorder/features/` and was driven once through `control.sh`.
 
 | Feature | Folder | Code |
 |---|---|---|

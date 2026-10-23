@@ -1,5 +1,7 @@
 # Feature progress: claim support
 
+**Landed (closeout, 2026-10-23).** Merged to `main` in PR #8, merge commit `60c45d5`. `bin/ci-py` on `main`: 648 passed, 0 failed; GitHub CI green. Open items now live on the board ([BULLETIN.md](../../BULLETIN.md)): TRI-wave2-defaults (is the company's model a source), TRI-claim-support-followups and TRI-claim-sentences. Wave closeout: [02_closeout.md](../20261022.10_feature_breakdown/02_closeout.md). **Next:** none in this folder. The "Now" paragraph below is the state at hand-off, kept as history.
+
 **Now.** Review fix round for [review_wave2a.md](../20261022.10_feature_breakdown/review_wave2a.md) S5 to S8, O1, O4, O5 done on `forge/claim-support` after merging `claude/project-thread-ea11in` (which lists `claim_support` in `merge.py` STEPS and brings the cohort rebuild). Counts and scores below are from the fix round; the earlier sections keep the first build's numbers as history. **Next:** the orchestrator integrates the branch.
 
 ## Review fix round (2026-10-23)

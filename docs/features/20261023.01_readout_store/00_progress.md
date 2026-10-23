@@ -1,5 +1,7 @@
 # Feature progress: readout store and delete
 
+**Landed (closeout, 2026-10-23).** Merged to `main` in PR #8, merge commit `60c45d5`. `bin/ci-py` on `main`: 648 passed, 0 failed; GitHub CI green. Open items now live on the board ([BULLETIN.md](../../BULLETIN.md)): TRI-wave2-defaults (the `out/` question, the shared cache) and TRI-page-wave2 (a page panel for list and delete). Wave closeout: [02_closeout.md](../20261022.10_feature_breakdown/02_closeout.md). **Next:** none in this folder. The "Now" paragraph below is the state at hand-off, kept as history.
+
 **Now.** All three Done when lines pass, in tests and in a drive through `control.sh` on Hollis Voice. The store (`store/`), its CLI (`python -m store`), its routes (`server/store_routes.py`) and the verification map are built test first and committed on `forge/readout-store`. Full suite: `python3 -m pytest`, 234 passed, 18 skipped; `bin/ci-py` the same (2026-10-23). **Next:** the orchestrator merges; Ken answers the `out/` question below; a page panel for list and delete; steering and the other wave 2 features call `open_store().save(...)`.
 
 Roadmap slice: [readout-store](../../ongoing/ROADMAP.md#readout-store). Route: prototype first, with an interface example (nonvisual).
