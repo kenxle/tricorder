@@ -58,6 +58,8 @@ A name that resolves outside its room, or outside `cache/`, is never opened. It 
 
 `delete_company` removes, in order: the company folder in the store (`shutil.rmtree`, after the id check and an is-inside-root check, and refusing a symlinked folder), `cache/outside/<company>/`, and the `cache/index.json` entries whose saved file is inside that folder. The index is rewritten through a temporary file and a rename. Then it walks both places again and returns what is left; the CLI and the route report that list, and a test asserts it is empty. The store never writes in `out/`, so nothing there is the store's to remove. The report names `out/<room>/` folders that still exist for the company's rooms under `also_on_this_laptop`, so the operator sees them; whether delete should remove them is a question for Ken (PRD, Questions).
 
+**The shared cache (review fix S9, 2026-10-23).** The first build removed `cache/outside/<company>/` on any fund's delete, even for a fund that never stored the company, and so could wipe the offline cache the demo runs on (`docs/features/20261022.10_feature_breakdown/review_wave2a.md`, S9). The outside-in scans write that folder without a fund, so it is shared. Two ways out: key the cache by fund (`cache/outside/<fund>/<company>/`), or keep it shared and guard the delete. Call: keep it shared and guard the delete. Keying by fund would change a layout the outside-in slice already writes, and the demo has one fund. The rule: the cache folder and its index entries go only when this fund held at least one version of the company and no other fund in the store holds a version of it. Otherwise they stay, and the report names them under `kept` with the reason ("fund zzz holds nothing for hollis_voice" or "still held for hollis_voice by fund fund_b"). A fund that never stored the company gets `nothing_held: true` and nothing is touched. What this cannot know: a fund that looked at the company's outside pages but never saved a readout does not count as holding it, so the last holder's delete removes those pages. Once the cache records which fund pulled what, the rule can follow that record instead.
+
 The cache index format is not built yet. The roadmap says it "maps each URL, or each API call ... to its saved file and date". The store reads an object whose values are either a path string or an object with a `file` (or `path`) field, relative to the cache root. Anything else in the index is left untouched.
 
 ### D7. Confirmation
@@ -81,7 +83,7 @@ A version is written into `versions/.tmp-<random>/` and renamed to its number. A
 - `StoredReadout`: `fund`, `company`, `version` (a `VersionInfo`), `readout`, `results`.
 - `HeldFile`: `path`, `origin`, `sha256`, `bytes`, `versions`.
 - `Holding`: `fund`, `company`, `versions`, `files`, `results`, `cache`, `total_bytes`.
-- `DeleteReport`: `fund`, `company`, `removed` (counts of versions, files, results, cache files, index entries), `left` (paths still on disk, expected empty), `also_on_this_laptop`.
+- `DeleteReport`: `fund`, `company`, `nothing_held`, `removed` (counts of versions, files, results, cache files, index entries), `kept` (cache paths left in place, each with why), `left` (paths still on disk for this fund, expected empty), `also_on_this_laptop`.
 
 ## Alternatives
 

@@ -90,9 +90,16 @@ class Removed(_Strict):
     index_entries: int = 0
 
 
+class Kept(_Strict):
+    path: str
+    why: str
+
+
 class DeleteReport(_Strict):
     fund: str
     company: str
+    nothing_held: bool = Field(default=False, description="True when this fund held no version of the company, so nothing was removed.")
     removed: Removed
+    kept: list[Kept] = Field(default_factory=list, description="The company's outside pulls in cache/ left in place, with the reason: another fund still holds the company, or this fund never did.")
     left: list[str] = Field(description="Paths still on disk for the company after the delete. Empty when it worked.")
     also_on_this_laptop: list[str] = Field(default_factory=list, description="out/ folders for the company's rooms. The store never wrote them and does not remove them.")
