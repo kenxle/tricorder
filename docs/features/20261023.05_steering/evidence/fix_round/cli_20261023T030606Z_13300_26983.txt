@@ -1,0 +1,31 @@
+$ python3 -m steering data_room/hollis_voice market pull the competitor's pricing pages
+(cwd /home/claude/wt/steering, TRICORDER_OUT_DIR=/tmp/tricorder-verify/steering/out)
+{
+  "room": "hollis_voice",
+  "piece": "market",
+  "read_by": "rules",
+  "kind": "more_info",
+  "source_room": "hollis_voice",
+  "rebuilt_by": "steering",
+  "verdict": [
+    "not_enough_in_the_room",
+    "not_enough_in_the_room"
+  ],
+  "revision": {
+    "claims_added": [],
+    "sources_added": [],
+    "claims_dropped": [],
+    "verdict_moved_by": [],
+    "note": "Not fetched: Tricorder does not fetch outside sources on a steer yet. More info on Ken's instruction: \"pull the competitor's pricing pages\". Verdict unchanged. The checks' numbers are unchanged. You asked for the competitor's pricing pages. Ask the founder for it, or add it to the room. Read as more info by wording rules; no model key set. Verdicts rebuilt by steering's copy of the FRAMEWORKS rules, because the merge's pieces and top_flags steps are not built yet."
+  },
+  "added": {},
+  "store": {
+    "saved": true,
+    "version": 3,
+    "new": true,
+    "why": null
+  },
+  "revisions_kept": 3,
+  "readout": "/tmp/tricorder-verify/steering/out/hollis_voice/readout.json"
+}
+exit 0

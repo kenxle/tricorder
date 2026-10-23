@@ -34,3 +34,9 @@ export const postSteer = (room: string, body: { piece: string; sentence: string;
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
   }).then((r) => json<SteerResponse>(r));
+
+/** The text at a line's i-th source, read from the room the line reads (the full room after a switch). */
+export const getClaimSource = (room: string, claimId: string, i: number) =>
+  fetch(`/api/rooms/${encodeURIComponent(room)}/claims/${encodeURIComponent(claimId)}/sources/${i}`).then((r) =>
+    json<{ room: string; text: string }>(r),
+  );
