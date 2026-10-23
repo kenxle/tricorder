@@ -36,6 +36,23 @@ Changed on purpose: the hand-built plain rewording in `test_model_reword_keeps_n
 
 Known limit: a founder file added to a switched seed drop is saved in the seed drop, but the rebuild reads the full room's results, so it shows only when the full room has it too.
 
+## Code review of the fix round
+
+A code review of the integrated wave 2b fix round (`git diff origin/main...8e7ba43`). Branch `fix/wave2b-round2` from 8e7ba43. Each new test was run red before its fix, then green. In item 5 the answer-key cases were red; the repo-file case was already a 404.
+
+| Item | Fix | Commit | Test, red then green |
+|---|---|---|---|
+| 1. A line reworded twice came back with its first rewording after a rebuild | A second steer reran the piece's scans and reverted steer 1's words, so its model reworded the scan text, and `carry` mapped each rewording one step. `with_wording` now puts every earlier rewording back on the fresh merge before each steer and each rebuild, following A to B to C (`last_wording`, cycle-safe), so a valueless line also keeps its id | 89fbe81 | `test_a_line_reworded_twice_keeps_its_last_wording_and_id_after_a_rebuild`, `test_a_later_steer_that_reruns_the_scans_keeps_an_earlier_rewording` |
+| 2. "from A to B" read A | A number right after "from" is skipped when another number follows; the frame's word class admits "%" | ab623a2 | `test_the_number_asked_for_is_the_one_read` ("Change ARR from $3M to $2.5M", "Update NRR from 120% to 110%") |
+| 3. "Use the 2024 ARR of $2.1M" and "set the customer count to 2000" read nothing | A four-digit number right after a frame word (to, be, use, make, set, at, as and the like) is a request when the frame matches; the frame reaches five words. A bare year still is not (O1 tests green) | ab623a2 | `test_the_number_asked_for_is_the_one_read`, `test_a_bare_year_is_still_not_a_request` |
+| 4. Curly "isn’t" and "aren’t" missed; "Why not treat ..." read as a negation | The definition reads U+2019; `NEGATED` skips "why not". "Don't treat ..." is still a negation (S5 tests green) | ab623a2 | `test_curly_apostrophes_and_why_not_read_the_definition` |
+| 5. `GET /claims/{id}/sources/{i}` opened a source with raw `text_at`, so a forged readout returned the answer key | The route uses `server.app.readable_rooms` and `memo.rooms.text_in`, the rule `POST /source` uses; `OutsideRoom` is a 404 | 718f30d | `test_claim_source_opens_nothing_outside_the_room` (relative and absolute answer key, repo file) |
+| 6. An unreadable readout made every `GET /files` and `POST /source` a 500 | `readable_rooms` falls back to the room when readout.json cannot be parsed, and caches the parse by mtime and size. Shared with memo export | e44a536 | `server/tests/test_app.py::test_an_unreadable_readout_falls_back_to_the_room` (bad JSON, old schema) |
+| 8. The `added` comprehension rebuilt the before-id set per claim | Built once, in `_merge_all` and the same pattern in `_merge_piece`. No behavior change | 89fbe81 | No new test: the engine suite covers the behavior |
+| 9. `guard` ran twice per refused line; "rebuild" and "rebuilt" were different source words | One call; one spelling per source word | bbd0561 | `test_a_refused_rewording_is_guarded_once`, `test_rebuild_and_rebuilt_are_one_source_word` |
+
+Item 7 (memo saves without hard links) is on the memo export page.
+
 ## Documents
 
 - [product_thinking.md](product_thinking.md), [01_brief.md](01_brief.md)
@@ -70,6 +87,8 @@ Known limit: a founder file added to a switched seed drop is saved in the seed d
 - No human approval was needed or given.
 
 ## To delete at cleanup
+
+- `/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/fix-round2/` and the empty `/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/fix-round2_dbg.py` (round 2 scratch and the ci-py log)
 
 - `/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/fix-steering/` (wave 2b scratch: out, store, cache, logs), including the git worktree `redcheck/` on b948d09 used for the red runs (remove with `git worktree remove`)
 

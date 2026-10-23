@@ -70,6 +70,17 @@ Not done here, and why:
 
 Real path, in scratch (offline, no key): `bin/smoke` on hollis_voice and its seed drop, then `python3 -m memo` on the seed drop gave 71 claims, 0 could not verify; after `steering.engine.steer(..., "retention", "read the full room")` the export gave version 2, 78 claims, 0 could not verify (the review saw 48 and 34). Over HTTP (uvicorn on port 8841, stopped by its pid): the `.steer1` line's `/source` and `/files` 200; `../../CLAUDE.md`, the answer key by absolute path and another room's CSV 404; the `{{DATA}}` and `<img onerror>` lines saved and rendered as text; a 2,001-character line and an 81-character author 422; `GET memo.pdf` twice in 0.016 s each; six concurrent edits on one version gave one 200 and five 409s, versions `[1,2,3,4]`.
 
+## Code review of the fix round
+
+A code review of the integrated wave 2b fix round (`git diff origin/main...8e7ba43`). Branch `fix/wave2b-round2` from 8e7ba43. Each test was run red before its fix, then green, except `test_racing_saves_without_hard_links_make_one_version`, written after the fix to hold the fallback to S4's rule.
+
+| Item | Fix | Commit | Test, red then green |
+|---|---|---|---|
+| 7. `store.save` used `os.link`; on a filesystem without hard links that raises EPERM or ENOTSUP, so every save was a 500 | Any OSError from the link other than FileExistsError falls back to an `O_CREAT|O_EXCL` create of the version. Where links work the save stays atomic. The S4 race tests stay green | 157c984 | `memo/tests/test_export.py::test_a_save_works_on_a_filesystem_without_hard_links` (EPERM, ENOTSUP, then a 409 for the same version), `test_racing_saves_without_hard_links_make_one_version` (8 threads: one version) |
+| 6, shared with steering. `readable_rooms` parsed readout.json on every `GET /files` and `POST /source`, so an unreadable readout made them 500 | Falls back to the room itself, and caches the parse by mtime and size | e44a536 | `server/tests/test_app.py::test_an_unreadable_readout_falls_back_to_the_room` |
+
+The other items of that review are on the steering page.
+
 ## Decisions and events
 
 - 2026-10-23: worktree from origin/main cc86536. The readout on main has 10 claims, 19 gaps, 27 asks, no pieces or flags; the memo is designed to name what is missing.
