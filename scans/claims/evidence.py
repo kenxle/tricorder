@@ -15,7 +15,7 @@ other file is a source of its own.
 from __future__ import annotations
 
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Callable
 
@@ -41,6 +41,19 @@ class Evidence:
     row: str | None     # checklist row id of the document
     how: str            # how the script read it: "named cell RUNWAY_MONTHS"
     printed: str        # the figure as the reader shows it
+    more: list[Source] = field(default_factory=list)  # the other end of a range a sum or count was made from
+
+    @property
+    def sources(self) -> list[Source]:
+        return [self.source] + self.more
+
+    @property
+    def words(self) -> str:
+        """Where and how, for a person: "row 22; column arr, month 2026-09", or the range a sum spans."""
+        loc = self.source.locator
+        if loc in self.how or "rows " in self.how:
+            return self.how
+        return f"{loc}; {self.how}"
 
     @property
     def group(self) -> str:
@@ -200,8 +213,8 @@ def _metrics_ltm(room: Path, st, as_of) -> Reading:
         return Reading([])
     number = sum(float(r[col]) for r in rows[i - 11:i + 1])
     how = f"sum of column {col}, {rows[i - 11]['month']} to {rows[i]['month']} (rows {i - 9} to {i + 2})"
-    return Reading([Evidence(number, None, _row_source(room, path, i), "metrics export", "C02", how, _fmt(number)),
-                    Evidence(number, None, _row_source(room, path, i - 11), "metrics export", "C02", how, _fmt(number))])
+    return Reading([Evidence(number, None, _row_source(room, path, i - 11), "metrics export", "C02", how, _fmt(number),
+                             [_row_source(room, path, i)])])
 
 
 def _metrics_first(room: Path, st, as_of) -> Reading:
@@ -226,8 +239,9 @@ def _metrics_range(room: Path, st, as_of) -> Reading:
         return Reading([])
     how = f"rows for {first} and {last} exist; the export starts at {rows[0]['month']}"
     iso = f"{first}..{last}"
-    return Reading([Evidence(None, iso, _row_source(room, path, a), "metrics export", "C02", how, iso),
-                    Evidence(None, iso, _row_source(room, path, b), "metrics export", "C02", how, iso)])
+    how += f" (rows {a + 2} and {b + 2})"
+    return Reading([Evidence(None, iso, _row_source(room, path, a), "metrics export", "C02", how, iso,
+                             [_row_source(room, path, b)] if b != a else [])])
 
 
 def _metrics_grew(room: Path, st, as_of) -> Reading:
@@ -240,11 +254,10 @@ def _metrics_grew(room: Path, st, as_of) -> Reading:
         return Reading([])
     values = [float(rows[i][col]) for i in idx]
     grew = all(b > a for a, b in zip(values, values[1:]))
-    how = f"column {col}, {rows[idx[0]]['month']} to {rows[idx[-1]]['month']}: " + ("rose every month" if grew else "did not rise every month")
+    how = (f"column {col}, {rows[idx[0]]['month']} to {rows[idx[-1]]['month']} (rows {idx[0] + 2} to {idx[-1] + 2}): "
+           + ("rose every month" if grew else "did not rise every month"))
     return Reading([Evidence(1.0 if grew else 0.0, None, _row_source(room, path, idx[0]), "metrics export", "C02", how,
-                             "rose every month" if grew else "did not rise every month"),
-                    Evidence(1.0 if grew else 0.0, None, _row_source(room, path, idx[-1]), "metrics export", "C02", how,
-                             "rose every month" if grew else "did not rise every month")])
+                             "rose every month" if grew else "did not rise every month", [_row_source(room, path, idx[-1])])])
 
 
 def _customers(room: Path, st, as_of, what: str) -> Reading:
@@ -262,24 +275,31 @@ def _customers(room: Path, st, as_of, what: str) -> Reading:
     total = sum(rev.values())
     span = f"rows {idx[0] + 2} to {idx[-1] + 2}" + (", product_type Subscription" if "product_type" in rows[0] else "")
     doc, row = "revenue by customer", "C03"
+
+    def ranged(number: float, used: list[int], how: str, printed: str, first: int | None = None) -> Reading:
+        """Cite the rows the figure was made from: the first and last of the range."""
+        lead = used[0] if first is None else first
+        more = [_row_source(room, path, i) for i in sorted({used[0], used[-1]} - {lead})]
+        return Reading([Evidence(number, None, _row_source(room, path, lead), doc, row, how, printed, more)])
+
     if what in ("sum", "arr"):
         number = total * (12 if what == "arr" else 1)
         how = f"sum of column {col} for {month}, {span}" + (", times 12" if what == "arr" else "")
-        top = max(idx, key=lambda i: rev[i])
-        return Reading([Evidence(number, None, _row_source(room, path, top), doc, row, how, _fmt(number))])
+        return ranged(number, idx, how, _fmt(number))
     if what == "count_now":
         paying = [i for i in idx if rev[i] > 0]
-        how = f"customers with {col} above 0 in {month}, {span}"
-        return Reading([Evidence(float(len(paying)), None, _row_source(room, path, paying[-1]), doc, row, how, str(len(paying)))])
+        how = f"customers with {col} above 0 in {month}, rows {paying[0] + 2} to {paying[-1] + 2}" if paying else ""
+        return ranged(float(len(paying)), paying, how, str(len(paying))) if paying else Reading([])
     if what == "count_ever":
-        ever = {r["customer_id"] for r in rows if r["month"] <= month and recurring(r) and float(r[col] or 0) > 0}
-        how = f"distinct customer_id with {col} above 0 in any month to {month}"
-        return Reading([Evidence(float(len(ever)), None, _row_source(room, path, idx[-1]), doc, row, how, str(len(ever)))])
+        used = [i for i, r in enumerate(rows) if r["month"] <= month and recurring(r) and float(r[col] or 0) > 0]
+        ever = {rows[i]["customer_id"] for i in used}
+        how = f"distinct customer_id with {col} above 0 in any month to {month}, rows {used[0] + 2} to {used[-1] + 2}" if used else ""
+        return ranged(float(len(ever)), used, how, str(len(ever))) if used else Reading([])
     if what == "largest_share":
         top = max(idx, key=lambda i: rev[i])
         share = 100 * rev[top] / total if total else 0.0
-        how = f"{rows[top]['customer_name']} {col} {_fmt(rev[top])} of {_fmt(total)} in {month} ({span})"
-        return Reading([Evidence(share, None, _row_source(room, path, top), doc, row, how, f"{share:.1f}%")])
+        how = f"{rows[top]['customer_name']} {col} {_fmt(rev[top])} (row {top + 2}) of {_fmt(total)}, the sum for {month}, {span}"
+        return ranged(share, idx, how, f"{share:.1f}%", first=top)
     if what == "locations" and "locations" in rows[idx[0]]:
         names = named_entities(st.quote)
         pick = [i for i in idx if any(n.split()[0].lower() in rows[i]["customer_name"].lower() for n in names)] if names else []
@@ -290,7 +310,7 @@ def _customers(room: Path, st, as_of, what: str) -> Reading:
     if what == "invoices" and "carrier_invoices_audited" in rows[idx[0]]:
         number = sum(float(rows[i]["carrier_invoices_audited"] or 0) for i in idx)
         how = f"sum of column carrier_invoices_audited for {month}, {span}"
-        return Reading([Evidence(number, None, _row_source(room, path, idx[-1]), doc, row, how, _fmt(number))])
+        return ranged(number, idx, how, _fmt(number))
     return Reading([])
 
 

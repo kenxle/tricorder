@@ -163,7 +163,7 @@ def _source(st: Statement) -> Source:
 
 
 def _ev_words(e: Evidence) -> str:
-    return f"{e.doc} ({e.source.locator}): {e.printed}"
+    return f"{e.doc} ({e.words}): {e.printed}"
 
 
 def _gap_pct(st: Statement, e: Evidence) -> str:
@@ -278,10 +278,10 @@ def _claim(item: Labelled, ids: Ids, as_of: str | None) -> Claim:
             and m.unit_word.lower() not in figure.lower()):
         figure = f"{figure} {m.unit_word}"   # "29" on a big-number slide reads "29 months" in the sentence
     if item.label == "supported":
-        docs = "; ".join(f"{e.doc} ({e.source.locator}, {e.printed})" for e in item.agree)
+        docs = "; ".join(f"{e.doc} ({e.words}: {e.printed})" for e in item.agree)
         text = f"Supported: {where} gives {kind.name} as {figure}. Outside the pitch, {docs} agree{'s' if len(item.agree) == 1 else ''}."
     elif item.label == "contradicted":
-        parts = [f"{e.doc} ({e.source.locator}) says {e.printed}{_gap_pct(st, e)}" for e in item.disagree]
+        parts = [f"{e.doc} ({e.words}) says {e.printed}{_gap_pct(st, e)}" for e in item.disagree]
         parts += [f"{_where_words(o)[0].lower()}{_where_words(o)[1:]} says {_figure(o)}" for o in item.founder_disagree
                   if (st.spoken or not item.disagree) and o.origin != "appendix"]
         text = f"Contradicted: {where} gives {kind.name} as {figure}, but " + "; ".join(parts) + "."
@@ -292,13 +292,13 @@ def _claim(item: Labelled, ids: Ids, as_of: str | None) -> Claim:
         value = Value(number=item.number, unit=kind.unit, label=kind.label, period=_period(st, as_of))
     sources = [_source(st)]
     if item.label == "contradicted":
-        sources += [e.source for e in item.disagree]
+        sources += [s for e in item.disagree for s in e.sources]
         if st.spoken or not item.disagree:
             # A spoken figure is set against the deck's (FRAMEWORKS 4.3), so the deck's slide is shown too.
             sources += [_source(o) for o in item.founder_disagree if o.origin != "appendix"]
     else:
         sources += [_source(r) for r in st.repeats]
-        sources += [e.source for e in item.agree]
+        sources += [s for e in item.agree for s in e.sources]
     seen, unique = set(), []
     for s in sources:
         if (s.uri, s.locator, s.quote) not in seen:

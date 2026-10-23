@@ -276,3 +276,28 @@ def test_a_bare_figure_reads_with_its_unit_in_the_claim_text(results):
     row = find_row(result, "slide 10", "29")
     assert row["kind"] == "runway"
     assert "gives runway as 29 months" in by_id(result)[row["claim id"]].text
+
+
+# Review wave 2a, S8: a figure the script made from many rows cites the rows it was
+# made from (the first and last of the range) and says how it was made.
+
+
+def test_a_sum_cites_its_range_and_says_how_it_was_made(results):
+    result = results["hollis_voice"]
+    row = find_row(result, "script line 15", "about three million dollars")
+    claim = by_id(result)[row["claim id"]]
+    assert "sum of column mrr for 2026-09" in claim.text and "times 12" in claim.text
+    assert "sum of column mrr for 2026-09" in row["disagrees"]
+    cited = [s.locator for s in claim.sources if s.uri == "03_metrics/customer_mrr_by_month.csv"]
+    span = re.search(r"rows (\d+) to (\d+)", claim.text)
+    assert span and cited == [f"row {span.group(1)}", f"row {span.group(2)}"], (cited, claim.text)
+
+
+def test_a_count_cites_its_range_and_says_how_it_was_made(results):
+    result = results["brasswick"]
+    rows = [r for r in table(result) if r["kind"] == "customers ever" and r["where"].startswith("slide 5")]
+    assert rows
+    claim = by_id(result)[rows[0]["claim id"]]
+    assert "distinct customer_id" in claim.text
+    cited = [s.locator for s in claim.sources if s.uri == "03_metrics/revenue_by_customer.csv"]
+    assert len(cited) == 2 and cited[0] != cited[1], cited
