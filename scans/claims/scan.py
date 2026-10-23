@@ -16,6 +16,10 @@ from scans.base import Ids, gap, now_iso, room_inputs, room_name
 from scans.claims import extract, label, read
 
 NAME = "claims"
+
+# Kinds that list one figure per item (a plan, a spend line, a department): a value may
+# repeat on one slide and still be two facts.
+LISTED_KINDS = {"plan_limit", "price", "use_of_funds", "use_of_funds_share", "hires_dept", "cost_share", "other", "example"}
 NEEDS = ("deck",)
 
 
@@ -46,7 +50,7 @@ def run(room_dir: Path) -> ScanResult:
                         "the_pitch_itself"))
     model_statements, model_gaps = read.read_slides(room, statements) if from_pdf else ([], [])
     gaps += model_gaps
-    everything = statements + spoken + model_statements
+    everything = _one_per_figure(statements + spoken + model_statements)
     skipped = [s for s in everything if s.kind == "example"]
     items, label_gaps = label.label_all(room, everything, as_of, ids)
     gaps += label_gaps
@@ -56,3 +60,19 @@ def run(room_dir: Path) -> ScanResult:
     return ScanResult(scan=NAME, room=room_name(room), ran_at=now_iso(), inputs=inputs,
                       claims=[i.claim for i in items], gaps=gaps,
                       panels=label.panels(items, skipped, as_of, video_source))
+
+
+def _one_per_figure(statements: list) -> list:
+    """Two sentences on one slide (or one script line, or one segment) that state the same
+    figure of the same kind are one claim: the first is kept, the second becomes its repeat."""
+    kept, first = [], {}
+    for st in statements:
+        m = st.mention
+        key = (st.origin, st.locator, st.kind, m.number, m.iso, m.unit, m.bound)
+        if st.kind in LISTED_KINDS or key not in first:
+            kept.append(st)
+            first.setdefault(key, st)
+            continue
+        first[key].repeats.append(st)
+        first[key].repeats.extend(st.repeats)
+    return kept

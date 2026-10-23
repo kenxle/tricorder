@@ -301,3 +301,20 @@ def test_a_count_cites_its_range_and_says_how_it_was_made(results):
     assert "distinct customer_id" in claim.text
     cited = [s.locator for s in claim.sources if s.uri == "03_metrics/revenue_by_customer.csv"]
     assert len(cited) == 2 and cited[0] != cited[1], cited
+
+
+@pytest.mark.parametrize("room", ["hollis_voice", "brasswick", "hollis_voice_seed_drop", "hollis_voice_clean"])
+def test_one_row_per_figure_per_slide_or_line(results, room):
+    """Steering's drive showed one figure twice in a section. Two sentences on one slide
+    (or one script line) that state the same figure of the same kind are one claim;
+    the second is listed as a repeat."""
+    # Kinds that list one figure per item (a plan, a spend line, a department) may repeat a value on one slide.
+    listed = {"plan limit", "list price", "use of funds", "use of funds share", "planned hires by department",
+              "cost as a share of revenue", "other figure"}
+    seen = {}
+    for r in table(results[room]):
+        if r["kind"] in listed:
+            continue
+        key = (r["where"].split(";")[0].split(" (beat")[0], r["kind"], r["normalised"])
+        assert key not in seen, (key, seen.get(key), r["claim id"])
+        seen[key] = r["claim id"]
