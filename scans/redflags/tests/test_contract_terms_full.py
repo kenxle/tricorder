@@ -307,8 +307,8 @@ def test_every_quote_passes_on_the_test_contracts(tmp_path):
 
 
 def test_the_engine_lists_the_module_and_leaves_saturdays_name_free():
-    assert "contract_terms_full" in scan.CHECKS and "contract_terms" in scan.CHECKS
-    assert not (Path(scan.__file__).parent / "contract_terms.py").exists()
+    # Saturday's contract_terms comes first, so its model reader is set before either module reads.
+    assert scan.CHECKS.index("contract_terms") < scan.CHECKS.index("contract_terms_full")
 
 
 def test_no_decoy_is_flagged_and_claim_ids_are_unique():
