@@ -47,4 +47,4 @@ Preconditions:
 - A steer writes back to this run's `out/<room>/readout.json`, and revisions stack. `python3 -m scans.memo <room>` writes a readout with no revisions, which is how the page step starts clean; read revision numbers from responses rather than assuming 1.
 - "Read the full room" works only on a room named `<x>_seed_drop` with a sibling folder `<x>`. On the full room it changes nothing and says so.
 - Until the merge's `pieces` and `top_flags` steps exist, verdicts come from steering's copy of the FRAMEWORKS rules, and every note says so. A plain `POST /api/rooms/<room>/readout` rebuild drops the pieces and the revisions from `out/`; the store keeps them.
-- The page asks for `/favicon.ico`, which the server does not serve; that one 404 in `page_drive.txt` is expected.
+- The phone-width shot opens the retention piece by clicking its row; on a run where retention already reads weak it starts open, so the click closes it. The shot still proves the layout has no sideways scroll.
