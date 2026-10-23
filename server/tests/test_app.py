@@ -2,7 +2,7 @@ from fastapi.testclient import TestClient
 
 from server.app import app
 
-client = TestClient(app)
+client = TestClient(app, base_url="http://127.0.0.1")  # the local guard refuses any other host
 
 
 def test_health_answers():

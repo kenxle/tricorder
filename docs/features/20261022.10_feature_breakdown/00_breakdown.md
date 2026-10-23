@@ -50,6 +50,21 @@ These turn scan output into something the associate and the partner use. They wa
 | First screens by stage | [stage-views](../../ongoing/ROADMAP.md#stage-views) | Prototype-first, clickable prototype | Readout store, outside-in |
 | Video moments | [video-moments](../../ongoing/ROADMAP.md#video-moments) | Prototype-first, clickable prototype | Ken's recorded pitch video |
 
+### Wave 2 status (2026-10-23)
+
+Run by the "Wave 2 roadmap features" thread. Each feature went through the forge, got an independent persona review (associate and partner) where people see it, and one fix round. The independent code and security review ([review_wave2a.md](review_wave2a.md)) covered readout store, founder requests, contract terms and claim support; memo export and steering still need theirs (board row TRI-wave2-review-memo-steering). Closeout: [02_closeout.md](02_closeout.md). Each has a page in `.claude/skills/verify-tricorder/features/` and was driven once through `control.sh`.
+
+| Feature | Folder | Code |
+|---|---|---|
+| Readout store and delete | [20261023.01](../20261023.01_readout_store/) | `store/`, `server/store_routes.py` |
+| Requests to the founder | [20261023.02](../20261023.02_founder_requests/) | `founder_requests/`, `server/founder_requests_routes.py`, `server/local_guard.py`, `readout/src/FounderRequests.tsx` |
+| The memo and its PDF | [20261023.03](../20261023.03_memo_export/) | `memo/`, `server/memo_routes.py` |
+| Contract terms in full | [20261023.04](../20261023.04_contract_terms/) | `scans/redflags/contract_reader.py`, `contract_terms_full.py` |
+| Steering in one sentence | [20261023.05](../20261023.05_steering/) | `steering/`, `server/steering_routes.py`, `scans/redflags/cohorts.py` (entry 1.3 script half), `readout/src/Steering.tsx` |
+| Claim support | [20261023.06](../20261023.06_claim_support/) | `scans/claims/`, `scans/memo/claim_support.py` |
+
+Still waiting: reader copies and scenarios (on the financial model), first screens by stage (on outside-in), video moments (on the recorded pitch video).
+
 ## Wave 3: the outside world
 
 These read the web and the sponsor APIs. Each waits on Ken's keys (board row TRI-sponsor-keys) and, for real companies, his pick of YC companies (TRI-approve-yc).

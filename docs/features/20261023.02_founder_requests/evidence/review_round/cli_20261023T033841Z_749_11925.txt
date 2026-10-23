@@ -1,0 +1,4 @@
+$ python3 -m scans.redflags data_room/brasswick
+(cwd /home/claude/wt/founder-requests, TRICORDER_OUT_DIR=/tmp/tricorder-verify/founder-requests-r5/out)
+redflags: 32 claims, 7 gaps -> /tmp/tricorder-verify/founder-requests-r5/out/brasswick/redflags.json
+exit 0

@@ -1,0 +1,67 @@
+$ python3 -m founder_requests list data_room/brasswick
+(cwd /home/claude/wt/founder-requests, TRICORDER_OUT_DIR=/tmp/tricorder-verify/founder-requests/out)
+  1. Monthly revenue by customer  [if you have it]
+     Please send an MRR column in the metrics export, and monthly revenue by customer with a product type column.
+  2. Investor updates  [if you have it]
+     Send the investor updates you have sent since your first outside money, as the original emails or PDFs, with send dates.
+  3. Cohort or retention table  [if you have it]
+     Send monthly revenue by customer so we can rebuild retention, plus the cohort export behind the deck's retention number and a one-line definition of a cohort.
+  4. Monthly financial statements
+     Please send monthly balance sheets.
+  5. Bank statements  [if you have it, after the term sheet]
+     Please send statements for every business bank account for the last 12 months, downloaded straight from the bank, or give read-only access through your bank.
+  6. Hiring plan  [Top 1]
+     Please send the hiring plan for the next 12 to 18 months: role, department, start date, base pay and equity grant for each planned hire.
+  7. Current burn and cash
+     Please send the current monthly burn and the bank balance behind it, with the date.
+  8. Unit economics  [if you have it]
+     Send monthly sales and marketing spend by line and channel, new paying customers by month and by source, and how the deck defines CAC, LTV and payback.
+  9. Customer references and letters of intent  [if you have it]
+     Please send names and contacts for three customers we can call, including your largest and one who stopped using the product, plus any letters of intent.
+ 10. Sales pipeline  [if you have it]
+     Send an opportunity-level export from your CRM with deal name, amount, stage, created date, expected close date, source, last activity and next step, including closed-lost deals, for the last six to eight quarters.
+ 11. People we can call about the founders  [if you have it]
+     Please send names of people who have worked with the founders that we could call.
+ 12. Customer references and letters of intent
+     Please send a reference list: people from management, customers, current investors and advisors we may call.
+ 13. Employment, advisory and option grant records  [if you have it]
+     Please send the option grant records for every holder.
+ 14. Prior financing documents
+     Please send the signed SAFE, with any side letter, for each of: Theodora Vance (angel); Wickham Row Angels LLC; Halyard Pre-Seed Fund I, LP.
+ 15. One-page summary
+     Please send the one-page summary you give investors, with its date.
+ 16. Product roadmap and demo  [Top 2]
+     Please send a recorded demo or a login to a sandbox, and a one-page roadmap with dates and owners. Say which parts of the demo are live.
+ 17. 409A valuation  [if you have it]
+     Please send the latest 409A report and the one before it, the option grant ledger with grant dates and strike prices, and the board approval for each grant.
+ 18. Incorporation documents and bylaws  [Top 3]
+     Please send the filed certificate of incorporation with every amendment, the current bylaws, the organizational board consent, the founders' stock purchase agreements and 83(b) elections, and a good standing certificate dated within the last few months.
+ 19. IP and invention assignment agreements  [Top 4]
+     Please send the signed invention assignment agreements for each founder (covering any work before incorporation), each employee and each contractor who has written code, designs or content, and a list of anyone who has not signed.
+ 20. Board and stockholder minutes and consents  [Top 5]
+     Please send the board and stockholder consents or minutes that approved each SAFE, note, stock issuance and option grant, the equity plan, and the 409A report.
+ 21. Tax returns  [if you have it, after the term sheet]
+     Please send the federal and state income tax returns filed since incorporation with proof of filing, the payroll tax filings, and the Delaware annual report and franchise tax receipts.
+ 22. Statement of claims, disputes and inquiries
+     Please send a short written statement of any pending or threatened lawsuit, demand letter, dispute with an employee, contractor, customer or regulator, and any regulatory inquiry, settlement or order, or state that there are none.
+ 23. Material agreements  [if you have it]
+     Please send a schedule of every agreement with obligations over $25,000 and copies for your ten largest vendors; your lease; any loan, note or credit agreement with the lender's lien filings; your insurance policies and certificates, including D&O; and the agreements with any consultants or contractors, with their IP assignments.
+ 24. Material agreements  [if you have it]
+     Please send copies of your insurance policies, with the certificates.
+ 25. Material agreements  [if you have it]
+     Please send any loan, lien or other charge on the company, or say there are none.
+ 26. Patents, trademarks, copyrights and domain names  [if you have it]
+     Please send a list of your patents, trademarks, copyrights and domain names, with filing numbers.
+ 27. AI and data governance documents  [if you have it]
+     Please send a one-page note on which AI models and vendors the product uses, what data any model was trained or tuned on and your rights to it, how customer and call data is used and kept, and the agreement with each AI vendor.
+ 28. Material agreements  [if you have it]
+     Please send your property leases.
+ 29. Material agreements  [if you have it]
+     Please send your consulting agreements.
+ 30. Material agreements  [if you have it]
+     Please send any licence of your IP to others, and of other people's IP to you.
+ 31. Material agreements  [if you have it]
+     Please send any agreement that needs someone else's consent, or has change-of-control terms, because of this round.
+ 32. Material agreements  [if you have it]
+     Please send any agreement with an officer, a director or a company they are tied to.
+exit 0

@@ -1,0 +1,4 @@
+$ python3 -m scans.redflags data_room/hollis_voice_seed_drop
+(cwd /home/claude/wt/steering, TRICORDER_OUT_DIR=/tmp/tricorder-verify/steering/out)
+redflags: 7 claims, 7 gaps -> /tmp/tricorder-verify/steering/out/hollis_voice_seed_drop/redflags.json
+exit 0

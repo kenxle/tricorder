@@ -1,0 +1,25 @@
+pass start 02:41:50Z rev 5cd7f75
+OK run=claim-support pid=23186 url=http://127.0.0.1:8816 out=/tmp/tricorder-verify/claim-support/out evidence=/tmp/tricorder-verify/claim-support/evidence rev=5cd7f75
+== hollis_voice scans.redflags: exit 0  saved: /tmp/tricorder-verify/claim-support/evidence/cli_20261023T024150Z_28424_11725.txt
+== hollis_voice scans.claims: claims: 64 claims, 8 gaps -> /tmp/tricorder-verify/claim-support/out/hollis_voice/claims.json exit 0  saved: /tmp/tricorder-verify/claim-support/evidence/cli_20261023T024151Z_28442_8823.txt
+== hollis_voice scans.memo: exit 0  saved: /tmp/tricorder-verify/claim-support/evidence/cli_20261023T024152Z_28461_25603.txt
+== hollis_voice scans.memo.claim_support:     "contradicted": "8", exit 0  saved: /tmp/tricorder-verify/claim-support/evidence/cli_20261023T024153Z_28480_16454.txt
+== hollis_voice eval.score: hollis_voice: found 1 of 8; decoys flagged 0 of 3 exit 0  saved: /tmp/tricorder-verify/claim-support/evidence/cli_20261023T024153Z_28495_30607.txt
+== brasswick scans.redflags: exit 0  saved: /tmp/tricorder-verify/claim-support/evidence/cli_20261023T024153Z_28507_28389.txt
+== brasswick scans.claims: claims: 53 claims, 9 gaps -> /tmp/tricorder-verify/claim-support/out/brasswick/claims.json exit 0  saved: /tmp/tricorder-verify/claim-support/evidence/cli_20261023T024154Z_28531_16789.txt
+== brasswick scans.memo: exit 0  saved: /tmp/tricorder-verify/claim-support/evidence/cli_20261023T024155Z_28546_31150.txt
+== brasswick scans.memo.claim_support:     "contradicted": "7", exit 0  saved: /tmp/tricorder-verify/claim-support/evidence/cli_20261023T024155Z_28565_22797.txt
+== brasswick eval.score: found  BF3 Contractors left out of burn and runway brasswick: found 5 of 5; decoys flagged 0 of 3 exit 0  saved: /tmp/tricorder-verify/claim-support/evidence/cli_20261023T024156Z_28588_23131.txt
+== hollis_voice_clean scans.redflags: exit 0  saved: /tmp/tricorder-verify/claim-support/evidence/cli_20261023T024156Z_28613_21083.txt
+== hollis_voice_clean scans.claims: claims: 64 claims, 8 gaps -> /tmp/tricorder-verify/claim-support/out/hollis_voice_clean/claims.json exit 0  saved: /tmp/tricorder-verify/claim-support/evidence/cli_20261023T024157Z_28631_12777.txt
+== hollis_voice_clean scans.memo: exit 0  saved: /tmp/tricorder-verify/claim-support/evidence/cli_20261023T024158Z_28650_17086.txt
+== hollis_voice_clean scans.memo.claim_support:     "contradicted": "0", exit 0  saved: /tmp/tricorder-verify/claim-support/evidence/cli_20261023T024159Z_28669_253.txt
+== hollis_voice_clean eval.score: hollis_voice_clean: found 0 of 0; decoys flagged 0 of 3 exit 0  saved: /tmp/tricorder-verify/claim-support/evidence/cli_20261023T024159Z_28684_9253.txt
+== hollis_voice_seed_drop scans.redflags: exit 0  saved: /tmp/tricorder-verify/claim-support/evidence/cli_20261023T024159Z_28696_26835.txt
+== hollis_voice_seed_drop scans.claims: claims: 64 claims, 13 gaps -> /tmp/tricorder-verify/claim-support/out/hollis_voice_seed_drop/claims.json exit 0  saved: /tmp/tricorder-verify/claim-support/evidence/cli_20261023T024200Z_28711_24154.txt
+== hollis_voice_seed_drop scans.memo: exit 0  saved: /tmp/tricorder-verify/claim-support/evidence/cli_20261023T024201Z_28726_16804.txt
+== hollis_voice_seed_drop scans.memo.claim_support:     "contradicted": "6", exit 0  saved: /tmp/tricorder-verify/claim-support/evidence/cli_20261023T024201Z_28741_20735.txt
+== hollis_voice_seed_drop eval.score: hollis_voice_seed_drop: found 1 of 8; decoys flagged 0 of 3 exit 0  saved: /tmp/tricorder-verify/claim-support/evidence/cli_20261023T024202Z_28757_25946.txt
+saved: /tmp/tricorder-verify/claim-support/evidence/api_20261023T024202Z_28769_1773.json
+saved: /tmp/tricorder-verify/claim-support/evidence/api_20261023T024202Z_28780_22536.json
+saved: /tmp/tricorder-verify/claim-support/evidence/api_20261023T024202Z_28791_19423.json

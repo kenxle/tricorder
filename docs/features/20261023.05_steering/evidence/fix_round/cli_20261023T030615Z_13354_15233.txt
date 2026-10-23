@@ -1,0 +1,25 @@
+$ python3 -m scans.memo data_room/hollis_voice_seed_drop
+(cwd /home/claude/wt/steering, TRICORDER_OUT_DIR=/tmp/tricorder-verify/steering/out)
+{
+  "readout": "/tmp/tricorder-verify/steering/out/hollis_voice_seed_drop/readout.json",
+  "claims": 71,
+  "unverified": 0,
+  "gaps": 35,
+  "scans_run": [
+    "redflags",
+    "claims"
+  ],
+  "scans_missing": [
+    "comps",
+    "signals",
+    "video",
+    "readings",
+    "model",
+    "frameworks",
+    "founders",
+    "presence",
+    "outside",
+    "bank"
+  ]
+}
+exit 0

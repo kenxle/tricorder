@@ -1,0 +1,5 @@
+$ python3 -m store delete hollis_voice
+(cwd /home/claude/wt/readout-store, TRICORDER_OUT_DIR=/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/readout-store/verify/readout-store/out)
+This removes everything held for demo/hollis_voice: 1 versions, 16 files, 1 files in cache/, 510165 bytes. It cannot be undone.
+Type the company id (hollis_voice) to delete: Not confirmed. Nothing removed.
+exit 1

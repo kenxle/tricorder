@@ -1,0 +1,18 @@
+$ python3 -m scans.memo.claim_support data_room/hollis_voice_clean
+(cwd /home/claude/wt/claim-support, TRICORDER_OUT_DIR=/tmp/tricorder-verify/claim-support/out)
+{
+  "readout": "/tmp/tricorder-verify/claim-support/out/hollis_voice_clean/readout.json",
+  "claims_table": {
+    "claims": "64",
+    "supported": "44",
+    "contradicted": "0",
+    "unsupported": "20",
+    "from deck": "53",
+    "from script": "11",
+    "as of": "2026-09-30",
+    "video source": "script",
+    "not counted (examples)": "0",
+    "relabelled by the memo step": "yes"
+  }
+}
+exit 0

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Requests to the founder (prototype)</title>
+<style>
+/* Values copied from readout/src/tokens.css, the readout page's design language. */
+:root { --bg:#ffffff; --fg:#16181d; --muted:#5d6470; --line:#e3e5e8; --green:#1f7a4d; --red:#b3261e; --amber:#8a5a00; --accent:#1d4ed8; --soft:#f5f6f8;
+  --font: system-ui, -apple-system, "Segoe UI", sans-serif; --mono: ui-monospace, "SF Mono", Menlo, monospace; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#111317; --fg:#e8eaed; --muted:#9aa1ab; --line:#2a2e35; --green:#5cc48d; --red:#ff8a80; --amber:#f0b44c; --accent:#8ab4ff; --soft:#1a1d22; } }
+:root[data-theme="dark"] { --bg:#111317; --fg:#e8eaed; --muted:#9aa1ab; --line:#2a2e35; --green:#5cc48d; --red:#ff8a80; --amber:#f0b44c; --accent:#8ab4ff; --soft:#1a1d22; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.5 var(--font); }
+.page { max-width:1040px; margin:0 auto; padding:16px; }
+.masthead { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+.masthead h1 { margin:0 auto 0 0; font-size:22px; }
+.banner { border:1px solid var(--amber); color:var(--amber); padding:6px 10px; border-radius:6px; }
+.proto { border:1px dashed var(--accent); color:var(--accent); padding:6px 10px; border-radius:6px; font-size:14px; }
+.note { color:var(--muted); }
+h2 { margin:24px 0 8px; font-size:19px; }
+button, .btn { font:inherit; font-size:14px; padding:6px 12px; border-radius:6px; border:1px solid var(--line); background:var(--bg); color:var(--fg); cursor:pointer; text-decoration:none; display:inline-block; }
+button.primary, .btn.primary { background:var(--fg); color:var(--bg); border-color:var(--fg); }
+button:disabled { opacity:.5; cursor:default; }
+.toolbar { display:flex; gap:8px; align-items:center; flex-wrap:wrap; padding:8px 0; border-bottom:1px solid var(--line); position:sticky; top:0; background:var(--bg); z-index:1; }
+.toolbar .spacer { margin-left:auto; }
+.asks { list-style:none; padding:0; margin:0; }
+.ask { display:grid; grid-template-columns: 24px 1fr auto; gap:8px 12px; padding:10px 0; border-bottom:1px solid var(--line); }
+.ask input { margin-top:5px; }
+.ask .title { font-weight:600; }
+.ask .text { margin:2px 0; }
+.meta { display:flex; gap:6px; flex-wrap:wrap; font-size:13px; color:var(--muted); align-items:center; }
+.chip { border:1px solid var(--line); border-radius:999px; padding:0 8px; font-size:12px; color:var(--muted); }
+.chip.top { border-color:var(--fg); color:var(--fg); }
+.chip.late { border-color:var(--amber); color:var(--amber); }
+.chip.got { border-color:var(--green); color:var(--green); }
+.why { font-size:13px; color:var(--muted); }
+.layout { display:grid; grid-template-columns: 1fr; gap:16px; }
+@media (min-width: 900px) { .layout.drafting { grid-template-columns: minmax(0,1fr) minmax(0,1fr); } }
+.drawer { border:1px solid var(--line); border-radius:8px; padding:12px; background:var(--soft); align-self:start; position:sticky; top:56px; }
+.drawer h3 { margin:0 0 8px; font-size:17px; }
+label { display:block; font-size:13px; color:var(--muted); margin:8px 0 2px; }
+.masthead select { width:auto; }
+input[type=text], input[type=email], .intake select, textarea { width:100%; font:inherit; font-size:14px; padding:6px 8px; border:1px solid var(--line); border-radius:6px; background:var(--bg); color:var(--fg); }
+textarea { font:13px/1.45 var(--mono); min-height:340px; resize:vertical; }
+.actions { display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; align-items:center; }
+.warn { color:var(--amber); font-size:13px; }
+.ok { color:var(--green); font-size:13px; }
+.guidance { font-size:13px; margin:6px 0 0; padding:6px 8px; border-left:3px solid var(--line); }
+.guidance b { font-weight:600; }
+.intake { border:1px solid var(--line); border-radius:8px; padding:12px; }
+.steps { list-style:none; padding:0; margin:8px 0 0; font-size:14px; }
+.steps li { padding:2px 0; }
+.steps li::before { content:"✓ "; color:var(--green); }
+code { font:13px var(--mono); }
+details summary { cursor:pointer; color:var(--muted); font-size:13px; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="masthead">
+    <h1>Tricorder</h1>
+    <select aria-label="Room"><option>brasswick</option></select>
+    <button aria-label="Theme" onclick="toggleTheme()">Light or dark</button>
+  </header>
+  <p class="banner" id="notice"></p>
+  <p class="proto">Prototype. The ask lines, founder words and guidance are the real output of <code>founder_requests.draft</code> on the Brasswick readout. Adding a file and the rerun are simulated on this page.</p>
+
+  <section aria-label="Ask list">
+    <h2>What to ask the founder for</h2>
+    <p class="note" id="summary"></p>
+    <div class="toolbar">
+      <span class="note">Select:</span>
+      <button onclick="pick('top')">Top five</button>
+      <button onclick="pick('need')">All required</button>
+      <button onclick="pick('all')">All</button>
+      <button onclick="pick('none')">None</button>
+      <span class="spacer"></span>
+      <button class="primary" id="draftSel" onclick="openDraft(selected())">Draft request</button>
+    </div>
+    <div class="layout" id="layout">
+      <ul class="asks" id="asks"></ul>
+      <aside class="drawer" id="drawer" hidden aria-label="Draft to the founder">
+        <h3>Draft to the founder</h3>
+        <p class="note" style="margin:0;font-size:13px">Tricorder never sends this. Copy it, or open it in your own mail app and send it from there.</p>
+        <label for="to">To</label><input id="to" type="email" placeholder="founder's email">
+        <label for="subject">Subject</label><input id="subject" type="text">
+        <label for="body">Message (edit freely)</label><textarea id="body"></textarea>
+        <div class="actions">
+          <button class="primary" onclick="copyText()">Copy text</button>
+          <a class="btn" id="mailto" href="#">Open in mail app</a>
+          <button onclick="closeDraft()">Close</button>
+          <span id="copied" class="ok" hidden>Copied.</span>
+        </div>
+        <p class="warn" id="long" hidden>This message is long for a mail link, and some mail apps cut long links. Copy the text instead.</p>
+        <details><summary>Where the guidance comes from</summary><ul id="sources" class="note" style="font-size:13px"></ul></details>
+      </aside>
+    </div>
+  </section>
+
+  <section aria-label="Add the founder's reply" class="intake">
+    <h2 style="margin-top:0">Add a file from the founder</h2>
+    <p class="note" id="copyNote"></p>
+    <label for="answers">This file answers</label><select id="answers"></select>
+    <label for="file">File</label><input id="file" type="file" accept=".pdf,.csv,.xlsx,.md,.txt,.json,.docx,.png,.jpg">
+    <div class="actions"><button class="primary" onclick="addFile()">Add to the room</button><span class="note">PDF, CSV, XLSX, DOCX, Markdown, text, JSON or an image, up to 25 MB.</span></div>
+    <div id="result"></div>
+  </section>
+</main>
+<script>
+const DATA = /*DATA*/null;
+const PIECE = {traction_and_revenue:"Traction and revenue",retention:"Retention",burn_and_runway:"Burn and runway",unit_economics:"Unit economics",customers:"Customers",market:"Market",comps:"Comps",team:"Team",the_pitch_itself:"The pitch itself"};
+const sel = new Set(DATA.default);
+const got = new Map();
+let draftNums = [];
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function toggleTheme(){ const r=document.documentElement; r.dataset.theme = r.dataset.theme==="dark" ? "light" : "dark"; }
+const open = () => DATA.items.filter((i) => !got.has(i.number));
+function selected(){ return open().filter((i) => sel.has(i.number)).map((i) => i.number); }
+function pick(k){ sel.clear(); open().forEach((i) => { if (k==="all" || (k==="top" && i.top) || (k==="need" && !i.if_you_have_it && i.ask_stage==="before_second_meeting")) sel.add(i.number); }); render(); }
+function render(){
+  $("notice").textContent = DATA.notice;
+  const o = open();
+  $("summary").textContent = `${o.length} lines from the readout built ${DATA.built_at}. Tick lines and draft one message, or draft one line on its own.`;
+  $("asks").innerHTML = o.map((i) => `
+    <li class="ask">
+      <input type="checkbox" aria-label="Select line ${i.number}" ${sel.has(i.number)?"checked":""} onchange="this.checked?sel.add(${i.number}):sel.delete(${i.number});render()">
+      <div>
+        <div class="title">${i.number}. ${esc(i.title)}</div>
+        <div class="text">${esc(i.text)}</div>
+        <div class="meta"><span>${PIECE[i.piece]}</span>
+          ${i.top?`<span class="chip top">Top ${i.top}</span>`:""}
+          ${i.if_you_have_it?`<span class="chip">If you have it</span>`:""}
+          ${i.ask_stage==="after_term_sheet"?`<span class="chip late">After the term sheet</span>`:""}
+          ${i.guidance?"":`<span class="chip">No guide</span>`}
+        </div>
+        <div class="why">For you, not sent: ${esc(i.operator_why)}</div>
+      </div>
+      <div><button aria-label="Draft request for line ${i.number}" onclick="openDraft([${i.number}])">Draft request</button></div>
+    </li>`).join("");
+  const n = selected().length;
+  $("draftSel").textContent = n ? `Draft request for ${n} selected` : "Draft request";
+  $("draftSel").disabled = !n;
+  $("answers").innerHTML = o.map((i) => `<option value="${i.number}">${i.number}. ${esc(i.title)}</option>`).join("");
+  $("copyNote").textContent = `${DATA.room} is a synthetic room checked into the repo, so Tricorder never writes into it. The first file you add copies it to rooms/${DATA.room}_live, and files land there.`;
+}
+// The same composition as founder_requests.draft.draft(); the page calls the server for it.
+function compose(nums){
+  const items = nums.map((n) => DATA.items.find((i) => i.number===n));
+  const groups = (list) => { const m=new Map(); list.forEach((i) => { const k=i.guidance?i.guidance.guide:"line-"+i.number; if(!m.has(k)) m.set(k,[]); m.get(k).push(i); }); return [...m.values()]; };
+  const block = (n, g) => { const gd=g[0].guidance; const l=[`${n}. ${g[0].title}`, ...g.map((i) => i.text)];
+    if (gd) l.push(`   What it is: ${gd.what}`, `   Best form: ${gd.form}`, `   A good one shows: ${gd.good.join("; ")}.`); return l; };
+  const need = items.filter((i) => !i.if_you_have_it), maybe = items.filter((i) => i.if_you_have_it);
+  let body = [DATA.first?`Hi ${DATA.first},`:"Hello,", "", `Thank you for the ${DATA.company} data room. To finish our first pass, could you send the ${items.length===1?"item":"items"} below? A short note with each file is plenty. If something does not exist yet, just say so; that helps us too.`, ""];
+  let n = 0;
+  groups(need).forEach((g) => { body.push(...block(++n, g), ""); });
+  if (maybe.length) { if (need.length) body.push("If you have them:", ""); groups(maybe).forEach((g) => { body.push(...block(++n, g), ""); }); }
+  body.push("Thank you.");
+  return { subject: `${DATA.company}: ${items.length===1?"one document":"documents"} for our review`, body: body.join("\n"), items };
+}
+function mailto(){ const enc=encodeURIComponent; return `mailto:${enc($("to").value).replace("%40","@")}?subject=${enc($("subject").value)}&body=${enc($("body").value.replace(/\n/g,"\r\n"))}`; }
+function refreshLink(){ const m=mailto(); $("mailto").href=m; $("long").hidden = m.length <= DATA.mailto_max; }
+function openDraft(nums){
+  draftNums = nums; const d = compose(nums);
+  $("subject").value = d.subject; $("body").value = d.body; $("drawer").hidden = false; $("layout").classList.add("drafting");
+  $("sources").innerHTML = [...new Set(d.items.filter((i) => i.guidance).map((i) => i.guidance.path))].map((p) => `<li><code>${esc(p)}</code></li>`).join("") || "<li>No guide for these lines.</li>";
+  $("copied").hidden = true; refreshLink();
+}
+function closeDraft(){ $("drawer").hidden = true; $("layout").classList.remove("drafting"); }
+["to","subject","body"].forEach((id) => document.addEventListener("input", (e) => { if (e.target.id===id) refreshLink(); }));
+function copyText(){ const t=`Subject: ${$("subject").value}\n\n${$("body").value}`; (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).catch(() => {}); $("copied").hidden=false; }
+// Simulated: the real page posts the file to /api/rooms/<room>/founder-requests/files.
+const FOLDER = {traction_and_revenue:"03_metrics",retention:"03_metrics",unit_economics:"02_financials",burn_and_runway:"02_financials",customers:"04_contracts",team:"05_team",the_pitch_itself:"06_legal"};
+function addFile(){
+  const n = Number($("answers").value), i = DATA.items.find((x) => x.number===n), f = $("file").files[0];
+  const name = f ? f.name : "Brasswick hiring plan.csv";
+  const saved = i.checklist_id==="C22" ? `05_team/hiring_plan.csv` : `${FOLDER[i.piece]||"01_overview"}/${name.toLowerCase().replace(/[^a-z0-9.]+/g,"_")}`;
+  got.set(n, saved); sel.delete(n);
+  $("result").innerHTML = `<p class="proto" style="margin-top:12px">Simulated result</p><ul class="steps">
+    <li>Copied data_room/${DATA.room} to rooms/${DATA.room}_live (first file only).</li>
+    <li>Saved <code>${esc(name)}</code> as <code>rooms/${DATA.room}_live/${esc(saved)}</code>.</li>
+    <li>Scans whose inputs changed ran again: redflags.</li>
+    <li>Readout rebuilt. Line ${n} (${esc(i.title)}) is no longer on the ask list.</li></ul>`;
+  render();
+}
+render();
+</script>
+</body>
+</html>

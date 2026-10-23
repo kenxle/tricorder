@@ -1,0 +1,20 @@
+$ python3 -m memo data_room/hollis_voice
+(cwd /home/claude/wt/memo-export, TRICORDER_OUT_DIR=/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/memo-export/verify/memo-export-final2/out)
+{
+  "memo": "/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/memo-export/verify/memo-export-final2/out/hollis_voice/memo/memo_v1.json",
+  "html": "/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/memo-export/verify/memo-export-final2/out/hollis_voice/memo/memo.html",
+  "pdf": "/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/memo-export/verify/memo-export-final2/out/hollis_voice/memo/memo.pdf",
+  "version": 1,
+  "sections": 16,
+  "claims": 91,
+  "could_not_verify": 0,
+  "sections_empty": {
+    "5. Product": [
+      "Product: not assessed yet. Needs the pitch video and online presence scans."
+    ],
+    "8. Competition and comparables": [
+      "Competition and comparables: not assessed yet. Needs the comps and business frameworks scans."
+    ]
+  }
+}
+exit 0

@@ -1,0 +1,4 @@
+$ python3 -m store list Hollis_Voice
+(cwd /home/claude/wt/readout-store, TRICORDER_OUT_DIR=/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/readout-store/verify/readout-store/out)
+bad id: company id 'Hollis_Voice' must be 1 to 64 of a-z, 0-9, '_' or '-', starting with a letter or digit
+exit 2

@@ -1,0 +1,78 @@
+"""The claims scan: every pitch figure, labelled against the room.
+
+    python -m scans.claims <room_dir>
+
+Script first, model second (FRAMEWORKS, "The order of work inside a scan").
+The model only reads slides that hold no figure the script can parse, and only
+when ANTHROPIC_API_KEY is set; without it those slides become a gap.
+"""
+
+from __future__ import annotations
+
+from pathlib import Path
+
+from schema.claim import ScanResult
+from scans.base import Ids, gap, now_iso, room_inputs, room_name
+from scans.claims import extract, label, read
+
+NAME = "claims"
+
+# Kinds that list one figure per item (a plan, a spend line, a department): a value may
+# repeat on one slide and still be two facts.
+LISTED_KINDS = {"plan_limit", "price", "use_of_funds", "use_of_funds_share", "hires_dept", "cost_share", "other", "example"}
+NEEDS = ("deck",)
+
+
+def run(room_dir: Path) -> ScanResult:
+    room = Path(room_dir)
+    ids = Ids(NAME)
+    gaps = []
+    statements, notes, as_of, from_pdf = extract.deck_statements(room)
+    if any("claims.json" in n for n in notes):
+        gaps.append(gap("Not in the room: readable text in the pitch deck; its claims.json stands in, so only the claims page is read",
+                        "the deck PDF has no text a reader can extract", "the pitch deck as a PDF with a text layer",
+                        "the_pitch_itself"))
+    if not statements and "no deck" in notes:
+        gaps.append(gap("Not in the room: the pitch deck (01_overview/pitch_deck.pdf)", "file missing",
+                        "the pitch deck as a PDF", "the_pitch_itself"))
+    _, skipped_rows = extract.claims_json_rows(room)
+    if skipped_rows:
+        gaps.append(gap("Not in the room: a readable claims.json (01_overview/claims.json); rows without a label, a value and a slide were skipped",
+                        f"{skipped_rows} rows skipped" if skipped_rows != 1 else "1 row skipped, or the file is not JSON",
+                        "the deck's claims page as claims.json, each row with label, value and slide", "the_pitch_itself"))
+    spoken, video_source = extract.video_statements(room)
+    if video_source is None:
+        gaps.append(gap("Not in the room: a transcript of the pitch video, or its script", "file missing",
+                        "the pitch video with its transcript (pitch_video.transcript.json)", "the_pitch_itself"))
+    elif video_source == "script":
+        gaps.append(gap("Not in the room: a transcript of the pitch video; its script stands in, cited by line",
+                        "the video is not recorded yet", "the pitch video with its transcript (pitch_video.transcript.json)",
+                        "the_pitch_itself"))
+    model_statements, model_gaps = read.read_slides(room, statements) if from_pdf else ([], [])
+    gaps += model_gaps
+    everything = _one_per_figure(statements + spoken + model_statements)
+    skipped = [s for s in everything if s.kind == "example"]
+    items, label_gaps = label.label_all(room, everything, as_of, ids)
+    gaps += label_gaps
+    inputs = sorted({f for kind in ("deck", "deck_claims", "video", "video_script", "model", "cap_table", "metrics",
+                                    "customers", "contracts", "hiring_plan", "bios")
+                     for f in room_inputs(room).get(kind, [])})
+    return ScanResult(scan=NAME, room=room_name(room), ran_at=now_iso(), inputs=inputs,
+                      claims=[i.claim for i in items], gaps=gaps,
+                      panels=label.panels(items, skipped, as_of, video_source))
+
+
+def _one_per_figure(statements: list) -> list:
+    """Two sentences on one slide (or one script line, or one segment) that state the same
+    figure of the same kind are one claim: the first is kept, the second becomes its repeat."""
+    kept, first = [], {}
+    for st in statements:
+        m = st.mention
+        key = (st.origin, st.locator, st.kind, m.number, m.iso, m.unit, m.bound)
+        if st.kind in LISTED_KINDS or key not in first:
+            kept.append(st)
+            first.setdefault(key, st)
+            continue
+        first[key].repeats.append(st)
+        first[key].repeats.extend(st.repeats)
+    return kept

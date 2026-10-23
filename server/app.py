@@ -24,22 +24,26 @@ from schema.readers import LocatorError, text_at
 from scans import SCANS
 from scans.base import ROOT, available, out_dir, room_inputs
 from scans.memo.merge import build_readout, write_readout
+from server.local_guard import LocalGuard
+from founder_requests.intake import rooms_root
 
 # Where rooms live: the synthetic rooms, and rooms that arrive by upload or
-# the inbox (git-ignored).
-ROOM_PARENTS = [ROOT / "data_room", ROOT / "rooms"]
+# the inbox (git-ignored): rooms/, or TRICORDER_ROOMS_DIR, read on every call.
+def room_parents() -> list[Path]:
+    return [ROOT / "data_room", rooms_root()]
 SAMPLE_OUT = ROOT / "sample_out"
 PAGE_DIST = ROOT / "readout" / "dist"
 _ROOM_ID = re.compile(r"^[A-Za-z0-9_\-]+$")
 _ROOM_PART = re.compile(r"^\d\d_")
 
 app = FastAPI(title="Tricorder", version="0.1.0")
+app.add_middleware(LocalGuard)  # localhost only, no cross-site writes (server/local_guard.py)
 
 
 def rooms() -> dict[str, Path]:
     """Every folder that looks like a data room: it holds a 00_ to 09_ folder."""
     found = {}
-    for parent in ROOM_PARENTS:
+    for parent in room_parents():
         if not parent.is_dir():
             continue
         for d in sorted(parent.iterdir()):
@@ -77,7 +81,7 @@ def list_rooms() -> list[dict]:
     return [
         {
             "id": name,
-            "path": str(path.relative_to(ROOT)),
+            "path": str(path.relative_to(ROOT) if path.is_relative_to(ROOT) else path),
             "inputs": sorted(room_inputs(path)),
             "has_readout": (out_dir(path) / "readout.json").exists(),
         }
@@ -139,6 +143,16 @@ def source_text(room: str, source: Source) -> dict:
     except LocatorError as err:
         raise HTTPException(404, str(err))
 
+
+from server.store_routes import router as store_router  # noqa: E402
+app.include_router(store_router)
+from server.founder_requests_routes import router as founder_requests_router  # noqa: E402
+
+app.include_router(founder_requests_router)  # above the page mount, which answers every path
+from server.memo_routes import router as memo_router  # noqa: E402  (memo-export; before the page mount, which catches "/")
+app.include_router(memo_router)
+from server.steering_routes import router as steering_router  # noqa: E402
+app.include_router(steering_router)
 
 if PAGE_DIST.is_dir():
     app.mount("/", StaticFiles(directory=PAGE_DIST, html=True), name="page")

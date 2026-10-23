@@ -6,7 +6,7 @@ import importlib
 from pathlib import Path
 
 from schema.claim import ScanResult
-from scans.base import Ids, now_iso, room_inputs, room_name
+from scans.base import Ids, gap, now_iso, room_inputs, room_name
 
 NAME = "redflags"
 NEEDS = ("deck",)
@@ -26,7 +26,8 @@ CHECKS: tuple[str, ...] = (
     "vanity",           # 1.8 Vanity metric check
     "cap_table",        # 1.10 Cap table reconciliation
     "mislabels",        # 1.12 Accounting mislabels
-    "contract_terms",   # 1.13 Contract terms
+    "contract_terms",   # 1.13 Contract terms (Saturday: the model reading, checks 2 and 5)
+    "contract_terms_full",  # 1.13 checks 1, 3, 4 and 6 and the clause notes
     "deck_vs_books",    # Deck revenue against the P&L
 )
 
@@ -41,13 +42,24 @@ def _load(name: str):
 
 
 def run(room_dir: Path) -> ScanResult:
-    ids = Ids(NAME)
     claims, gaps, panels = [], [], []
     for name in CHECKS:
         module = _load(name)
         if module is None:
             continue
-        out = module.check(Path(room_dir), ids)
+        # Each module numbers its own claims (redflags-mislabels-001), so adding a
+        # module never renumbers another's claims, which memo edits and steering
+        # revisions refer to by id.
+        ids = Ids(f"{NAME}-{name}")
+        try:
+            out = module.check(Path(room_dir), ids)
+        except Exception as err:  # one module's crash must not lose every other module's claims
+            gaps.append(gap(
+                f"Not in the room: a readable input for the {name.replace('_', ' ')} check",
+                f"the check stopped on this room's files ({type(err).__name__})",
+                "the file in the shape the check expects",
+            ))
+            continue
         claims += out[0]
         gaps += out[1]
         if len(out) > 2:
