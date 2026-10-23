@@ -140,7 +140,8 @@ def default_selection(all_items: list[Item]) -> list[int]:
     top = sorted((i for i in all_items if i.top), key=lambda i: i.top)
     if top:
         return [i.number for i in top]
-    return [i.number for i in all_items if not i.if_you_have_it and i.ask_stage == "before_second_meeting"]
+    need = [i.number for i in all_items if not i.if_you_have_it and i.ask_stage == "before_second_meeting"]
+    return need or [i.number for i in all_items]
 
 
 # Company and greeting --------------------------------------------------------------------
@@ -225,6 +226,8 @@ def draft(readout: Readout, numbers: list[int] | None = None, room_dir: Path | N
           to: str = "", sender: str = "") -> Draft:
     """The message for the chosen ask lines (numbers from 1, as on the page); the default selection when none."""
     every = items(readout)
+    if not every:
+        raise ValueError("Nothing to ask for: the readout's ask list is empty.")
     by_n = {i.number: i for i in every}
     wanted = numbers if numbers else default_selection(every)
     bad = [n for n in wanted if n not in by_n]
