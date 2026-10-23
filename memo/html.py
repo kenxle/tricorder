@@ -374,7 +374,7 @@ def _gap_cells(line: MemoLine) -> list[str]:
         if not sep:
             doc, backs = body, ""
     tag = f'<span class="kind kind-gap">{KIND_WORDS["gap"]}</span>'
-    return [_cell("c-doc", f'{tag}<span class="text" data-full="{_e(line.text)}">{_e(doc[:1].upper() + doc[1:])}</span>'),
+    return [_cell("c-doc", f'{tag}<span class="text">{_e(doc[:1].upper() + doc[1:])}</span>'),
             _cell("c-backs", _e(backs[:1].upper() + backs[1:]))]
 
 

@@ -173,4 +173,8 @@ def test_the_page_needs_no_network(tmp_path):
     run_cli(tmp_path, str(ROOM))
     page = (tmp_path / "hollis_voice" / "memo" / "memo.html").read_text(encoding="utf-8")
     assert not re.search(r'<(script|link|img)[^>]+(src|href)="(https?:)?//', page)
+    # The one outside address in the page itself is the typefaces' stylesheet; offline, each font stack falls back.
+    style = re.search(r"<style>(.*?)</style>", page, re.S).group(1)
+    assert re.findall(r"https?://[^\s\"')]+", style) == re.findall(r'@import url\("(https://fonts\.googleapis\.com/[^"]+)"\)', style)
+    assert "url(" not in style.replace("@import url(", "", 1)
     assert "\u2014" not in page and "\u2013" not in page
