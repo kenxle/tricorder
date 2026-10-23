@@ -1,13 +1,15 @@
 """Requests to the founder, from the command line.
 
     python -m founder_requests list <room_dir>
-    python -m founder_requests draft <room_dir> [--lines N ...] [--all] [--to EMAIL] [--sender NAME] [--json]
+    python -m founder_requests draft <room_dir> [--lines N ...] [--all] [--to EMAIL] [--sender NAME]
+                                     [--fund NAME] [--by YYYY-MM-DD] [--reason TEXT] [--json]
     python -m founder_requests copy-room <room_dir> [--as NAME]
-    python -m founder_requests add <room_dir> <file> --for C22|N [--copy]
+    python -m founder_requests add <room_dir> <file> [<file> ...] --for C22|N[,C97] [--for ...] [--copy]
 
 `draft` prints the subject, the message and the mailto link; it sends nothing. `add` saves a reply's
-file in the room, reruns the scans that were waiting on it and rebuilds the readout. A room in
-data_room/ is never written: `copy-room` (or `add --copy`) copies it to rooms/<room>_live first.
+files in the room (one --for per file, in order; one file may answer several requests), reruns the
+scans that were waiting on them once and rebuilds the readout. A room in data_room/ is never written:
+`copy-room` (or `add --copy`) copies it to rooms/<room>_live first.
 Exit codes: 0 done, 1 refused, 2 bad arguments or no readout.
 """
 
@@ -34,7 +36,10 @@ def _readout(room: Path) -> Readout:
 
 
 def cmd_list(args) -> int:
-    for i in d.items(_readout(args.room_dir)):
+    items, held = d.analyse(_readout(args.room_dir), args.room_dir)
+    for h in held:
+        print(f"  -  {h.title}: the room already holds {', '.join(h.files)}; not asked for")
+    for i in items:
         tags = [f"Top {i.top}"] if i.top else []
         tags += ["if you have it"] if i.if_you_have_it else []
         tags += ["after the term sheet"] if i.ask_stage == "after_term_sheet" else []
@@ -45,9 +50,10 @@ def cmd_list(args) -> int:
 
 def cmd_draft(args) -> int:
     readout = _readout(args.room_dir)
-    numbers = [i.number for i in d.items(readout)] if args.all else args.lines
+    numbers = [i.number for i in d.items(readout, args.room_dir)] if args.all else args.lines
     try:
-        out = d.draft(readout, numbers, room_dir=args.room_dir, to=args.to, sender=args.sender)
+        out = d.draft(readout, numbers, room_dir=args.room_dir, to=args.to, sender=args.sender, fund=args.fund,
+                      by=args.by, reason=args.reason)
     except ValueError as err:
         print(err, file=sys.stderr)
         return 2
@@ -76,7 +82,7 @@ def cmd_add(args) -> int:
         if ik.is_synthetic(room) and args.copy:
             existing = ik.rooms_root() / (room.name + ik.COPY_SUFFIX)
             room = existing if existing.is_dir() else ik.copy_room(room)
-        receipt = ik.receive(room, args.file.read_bytes(), args.file.name, args.answers)
+        receipt = ik.receive_batch(room, [(f.read_bytes(), f.name, a) for f, a in zip(args.files, args.answers)])
     except ik.IntakeError as err:
         print(err.message, file=sys.stderr)
         return 1
@@ -95,7 +101,10 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--lines", type=int, nargs="+", help="ask line numbers; default the pinned top five")
     s.add_argument("--all", action="store_true", help="every ask line")
     s.add_argument("--to", default="")
-    s.add_argument("--sender", default="")
+    s.add_argument("--sender", default=None, help="default TRICORDER_OPERATOR_NAME")
+    s.add_argument("--fund", default=None, help="default TRICORDER_FUND_NAME")
+    s.add_argument("--by", default=None, help="the date to ask for, YYYY-MM-DD; default a week from today")
+    s.add_argument("--reason", default=d.DEFAULT_REASON)
     s.add_argument("--json", action="store_true")
     s.set_defaults(fn=cmd_draft)
     s = sub.add_parser("copy-room", help="copy a room to rooms/ so replies can be added")
@@ -104,15 +113,19 @@ def main(argv: list[str] | None = None) -> int:
     s.set_defaults(fn=cmd_copy)
     s = sub.add_parser("add", help="add a founder's file, rerun waiting scans, rebuild the readout")
     s.add_argument("room_dir", type=Path)
-    s.add_argument("file", type=Path)
-    s.add_argument("--for", dest="answers", required=True, help="checklist id (C22) or ask line number")
+    s.add_argument("files", type=Path, nargs="+")
+    s.add_argument("--for", dest="answers", action="append", required=True,
+                   help="per file, in order: checklist ids or ask line numbers, comma separated (C97,C46)")
     s.add_argument("--copy", action="store_true", help="for a data_room/ room, work in rooms/<room>_live")
     s.set_defaults(fn=cmd_add)
     args = p.parse_args(argv)
     if not args.room_dir.is_dir():
         p.error(f"{args.room_dir} is not a folder")
-    if getattr(args, "file", None) is not None and not args.file.is_file():
-        p.error(f"{args.file} is not a file")
+    for f in getattr(args, "files", None) or []:
+        if not f.is_file():
+            p.error(f"{f} is not a file")
+    if getattr(args, "files", None) is not None and len(args.files) != len(args.answers):
+        p.error("give one --for per file, in the same order")
     return args.fn(args)
 
 

@@ -218,6 +218,16 @@ def resolve_request(answers: str | None, readout: Readout | None) -> cl.Row:
     return row
 
 
+def resolve_requests(answers: str | None, readout: Readout | None) -> list[cl.Row]:
+    """Every request one file answers: ids or ask line numbers, comma separated. The first decides where it lands."""
+    out: list[cl.Row] = []
+    for part in (answers or "").split(","):
+        row = resolve_request(part, readout)
+        if row.id not in {r.id for r in out}:
+            out.append(row)
+    return out
+
+
 def _numbered(room: Path) -> list[tuple[int, str]]:
     return sorted((int(m.group(1)), c.name) for c in room.iterdir()
                   if c.is_dir() and (m := _NUMBERED.match(c.name)))
@@ -333,48 +343,143 @@ def item_status(readout: Readout | None, cid: str) -> str:
     return "unknown"
 
 
-def receive(room_dir: Path, data: bytes, name: str, answers: str | None) -> dict:
-    """The whole intake: checks, save, waiting scans, merge, log. Returns the receipt."""
-    from scans.memo.merge import build_readout, write_readout
+def _plain(name: str) -> str:
+    return name.replace("_", " ")
 
-    room = Path(room_dir)
+
+def changes(before: Readout | None, after: Readout, answered: list[tuple[cl.Row, str, str]], files: int = 1) -> list[str]:
+    """What the files changed, in plain words: coverage, then claims, flags and verdicts, then the ask list."""
+    said: list[str] = []
+    for row, was, now in answered:
+        if row.kind == "ask":
+            said.append(f"{row.item} is something only the founder can give, so no check reads the file. "
+                        "The line stays on the ask list.")
+        elif now in ("found", "checked") and was not in ("found", "checked"):
+            said.append(f"Coverage now finds {row.item}.")
+        elif now != was:
+            said.append(f"{row.item} moved from {_plain(was)} to {_plain(now)} in coverage.")
+        else:
+            said.append(f"Coverage still lists {row.item} as {_plain(now)}. The file is saved under the name "
+                        "for the first request it answers.")
+    old = before or Readout(room=after.room, built_at="")
+    old_claims = {c.text for c in old.claims}
+    new_claims = [c.text for c in after.claims if c.text not in old_claims]
+    gone = [t for t in old_claims if t not in {c.text for c in after.claims}]
+    moved = False
+    if new_claims:
+        word = "claim" if len(new_claims) == 1 else "claims"
+        said.append(f"{len(new_claims)} new {word}: " + " ".join(new_claims[:3]) + (" ..." if len(new_claims) > 3 else ""))
+        moved = True
+    if gone:
+        said.append(f"{len(gone)} claim{'' if len(gone) == 1 else 's'} no longer in the readout.")
+        moved = True
+    old_flags = {(f.kind, f.text) for f in old.top_flags}
+    new_flags = {(f.kind, f.text) for f in after.top_flags}
+    for kind, text in sorted(new_flags - old_flags):
+        said.append(f"New {kind} flag: {text}")
+        moved = True
+    for kind, text in sorted(old_flags - new_flags):
+        said.append(f"No longer a {kind} flag: {text}")
+        moved = True
+    verdicts = {p.name: p.verdict for p in old.pieces}
+    for p in after.pieces:
+        if p.name in verdicts and verdicts[p.name] != p.verdict:
+            said.append(f"{_plain(p.name).capitalize()} moved from {_plain(verdicts[p.name])} to {_plain(p.verdict)}.")
+            moved = True
+    if not moved:
+        said.append(f"No check reads {'this file' if files == 1 else 'these files'} yet, so no number changed.")
+    if before is not None and len(after.asks) != len(before.asks):
+        way = "down" if len(after.asks) < len(before.asks) else "up"
+        said.append(f"The ask list is {way} from {len(before.asks)} to {len(after.asks)} lines.")
+    return said
+
+
+def _check_room(room: Path) -> Path:
     if is_synthetic(room):
         raise IntakeError(409, f"{room.name} is a synthetic room checked into the repo, so Tricorder never writes "
                                f"into it. Copy it first: {copy_command(room)}")
     if not room.resolve().is_relative_to(rooms_root().resolve()) or not is_room(room):
         raise IntakeError(409, "Files are added only to rooms under rooms/.")
-    room = room.resolve()
+    return room.resolve()
+
+
+def receive_batch(room_dir: Path, files: list[tuple[bytes, str, str | None]]) -> dict:
+    """Several files in one add: every file is checked before any is written, then one rerun and one rebuild.
+
+    Each entry is (bytes, the founder's file name, the requests it answers: "C22" or "6,C97")."""
+    from scans.memo.merge import build_readout, write_readout
+
+    room = _check_room(Path(room_dir))
+    if not files:
+        raise IntakeError(400, "No files were added.")
     before = _readout(room)
-    row = resolve_request(answers, before)
-    if not data:
-        raise IntakeError(400, "The file is empty.")
-    if len(data) > max_bytes():
-        raise IntakeError(413, f"The file is larger than the {max_bytes() // (1024 * 1024) or 1} MB limit.")
-    stem, ext = check_name(name)
-    check_bytes(data, ext)
-    rel = target_for(room, row, stem, ext)
-    status_before = item_status(before, row.id)
-    save(room, rel, data)
+    total = 0
+    plans = []
+    for data, name, answers in files:
+        rows = resolve_requests(answers, before)
+        if not data:
+            raise IntakeError(400, f"{name or 'The file'} is empty.")
+        total += len(data)
+        if len(data) > max_bytes() or total > max_bytes() * 4:
+            raise IntakeError(413, f"{name} is larger than the {max_bytes() // (1024 * 1024) or 1} MB limit.")
+        stem, ext = check_name(name)
+        try:
+            check_bytes(data, ext)
+        except IntakeError as err:
+            raise IntakeError(err.status, f"{name}: {err.message}") from None
+        plans.append((data, name, rows, stem, ext))
+    targets: set[Path] = set()
+    saved = []
+    for data, name, rows, stem, ext in plans:
+        rel = target_for(room, rows[0], stem, ext)
+        if rel in targets:
+            raise IntakeError(409, f"Two files in this add would both be saved as {rel}. Add them one at a time.")
+        targets.add(rel)
+        saved.append((rel, data, name, rows, ext))
+    for rel, data, *_ in saved:
+        if (room / rel).exists():
+            raise IntakeError(409, f"{rel} is already in the room; nothing was overwritten.")
+    for rel, data, *_ in saved:
+        save(room, rel, data)
 
     reran = run_scans(room, waiting_scans(room))
     readout = build_readout(room)
     target = write_readout(readout, room)
+    at = now_iso()
+    entries, answered = [], []
+    for rel, data, name, rows, ext in saved:
+        answers = [{"checklist_id": r.id, "item": r.item, "status_before": item_status(before, r.id),
+                    "status_after": item_status(readout, r.id)} for r in rows]
+        answered += [(r, a["status_before"], a["status_after"]) for r, a in zip(rows, answers)]
+        entry = {"original_name": name, "saved": str(rel), "bytes": len(data), "answers": answers,
+                 "checklist_id": rows[0].id, "item": rows[0].item, "at": at}
+        if CANONICAL.get(rows[0].id) and rel.stem != CANONICAL[rows[0].id]:
+            entry["note"] = (f"An earlier {CANONICAL[rows[0].id]}{ext} is in the room, so this file was saved beside "
+                             "it. The scans still read the earlier file.")
+        entries.append(entry)
     receipt = {
-        "room": room.name, "checklist_id": row.id, "item": row.item, "original_name": name,
-        "saved": str(rel), "bytes": len(data), "scans_rerun": reran,
-        "status_before": status_before, "status_after": item_status(readout, row.id),
+        "room": room.name, "files": entries, "scans_rerun": reran,
         "asks_before": len(before.asks) if before else None, "asks_after": len(readout.asks),
-        "at": now_iso(),
+        "summary": changes(before, readout, answered, len(entries)), "at": at,
     }
-    if CANONICAL.get(row.id) and rel.stem != CANONICAL[row.id]:
-        receipt["note"] = (f"An earlier {CANONICAL[row.id]}{ext} is in the room, so this file was saved beside it. "
-                           "The scans still read the earlier file.")
     log_path = out_dir(room) / LOG
     try:
         log = json.loads(log_path.read_text(encoding="utf-8"))
     except (OSError, ValueError):
         log = {"received": []}
-    log.setdefault("received", []).append(receipt)
+    for e in entries:
+        log.setdefault("received", []).append(e | {"summary": receipt["summary"]})
     log_path.parent.mkdir(parents=True, exist_ok=True)
     log_path.write_text(json.dumps(log, indent=2) + "\n", encoding="utf-8")
     return receipt | {"readout": str(target)}
+
+
+def receive(room_dir: Path, data: bytes, name: str, answers: str | None) -> dict:
+    """One file: the batch of one, with its first entry's fields at the top for a short receipt."""
+    receipt = receive_batch(room_dir, [(data, name, answers)])
+    first = receipt["files"][0]
+    top = {k: first[k] for k in ("checklist_id", "item", "original_name", "saved", "bytes") }
+    top |= {"status_before": first["answers"][0]["status_before"], "status_after": first["answers"][0]["status_after"]}
+    if "note" in first:
+        top["note"] = first["note"]
+    return receipt | top
