@@ -114,8 +114,8 @@ Most product slices here extend one of the team's Saturday slices. Each of those
 
 **What is left before Saturday.** Nothing here waits on interviews; there are none (brief, 1:34 PM block). Checked against the repo on 2026-10-22.
 
-- Done: [research-gaps](#research-gaps), [checklist](#checklist) and [data-room](#data-room). The memo template ([MEMO_TEMPLATE.md](MEMO_TEMPLATE.md)) is written too.
-- [skeleton](#skeleton): built by an agent on branch `claude/project-thread-ce34ga`, in review. It goes past the stub: the file readers and the quote checker are implemented and tested, so the [readers](#readers) hour and the quote checker in [claim-result](#claim-result) are free on Saturday unless Ken moves them.
+- Done: [research-gaps](#research-gaps), [checklist](#checklist) and [data-room](#data-room). The memo template ([MEMO_TEMPLATE.md](MEMO_TEMPLATE.md)) is written too. Merged on 2026-10-23: [skeleton](#skeleton) (PR #2), and [deck-vs-books](#deck-vs-books), [accounting-mislabels](#accounting-mislabels) and [checklist-coverage](#checklist-coverage) (PR #4).
+- [skeleton](#skeleton): built by an agent and merged in PR #2 on 2026-10-23. It goes past the stub: the file readers and the quote checker are implemented and tested, so the [readers](#readers) hour and the quote checker in [claim-result](#claim-result) are free on Saturday unless Ken moves them.
 - [blind-room](#blind-room): Ken finds the person outside the build, who follows [SEALING.md](../../data_room/SEALING.md) with their own seed and keeps the key. The plants-off switch, the clean room and the seed option are built.
 - [keys](#keys): Ken.
 - [cached-data](#cached-data): an agent, once Ken's keys are in. Not started: there is no `cache/` folder yet.
@@ -609,6 +609,8 @@ The rest of the accounting mislabels family ([FRAMEWORKS.md](FRAMEWORKS.md), ent
 
 **Judgment:** no.
 
+**Status:** done. Merged in PR #4 on 2026-10-23. The code is `scans/redflags/mislabels.py`. On Brasswick it also finds BF1, BF3 and BF4. Feature folder: [20261022.12_accounting_mislabels](../features/20261022.12_accounting_mislabels/00_progress.md).
+
 ### deck-vs-books
 
 The associate's rule, as a feature: "If revenue in the deck doesn’t match the P&L, or you show only part of your history, everything else becomes questionable." ([associate at a seed-focused fund, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal); [writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 2:19 PM block). Saturday's red-flag engine already compares the deck's claims with the model's named cells (`deck_claim_vs_named_cell` in [FRAMEWORKS.md](FRAMEWORKS.md)). This slice adds the two halves of her rule that it does not cover.
@@ -623,11 +625,13 @@ The associate's rule, as a feature: "If revenue in the deck doesn’t match the 
 - **Partial history.** A script finds the first month revenue appears in the books and compares it with the window the deck shows. A deck chart that starts later than the books, skips months, or shows quarters where the books hold months is flagged as "shows part of the history", with the months left out and what they hold (for example a dip, or a period of flat revenue).
 - Both feed the traction and revenue piece and the pitch itself, and missing months the books do not hold go on the ask list.
 
-**Done when:** on the Hollis Voice room, every deck revenue figure is matched to a P&L period or listed as unmatched; a test deck whose chart starts six months after the first revenue month is flagged with the months it leaves out; and the quote checker passes on every claim.
+**Done when:** on the Hollis Voice room, every deck revenue figure is matched to a P&L period or listed as unmatched; a test deck whose chart starts six months after the first revenue month is reported with the months it leaves out (it is a watch, because those months hold only a climb); on Brasswick, `python3 -m eval.score data_room/brasswick` counts BF2 as found; and the quote checker passes on every claim.
 
 **Who:** agent.
 
 **Judgment:** no.
+
+**Status:** done. Merged in PR #4 on 2026-10-23. The code is `scans/redflags/deck_vs_books.py`, written up as [FRAMEWORKS.md](FRAMEWORKS.md) entry 1.14. Feature folder: [20261022.11_deck_vs_books](../features/20261022.11_deck_vs_books/00_progress.md).
 
 ### contract-terms
 
@@ -732,6 +736,8 @@ The readout's coverage against the [checklist](#checklist), and an ask list that
 **Who:** agent.
 
 **Judgment:** yes.
+
+**Status:** done for every Done when check. Merged in PR #4 on 2026-10-23. The code is `scans/memo/coverage.py` and `scans/memo/checklist.py`. Besides found, checked and missing, coverage marks an item `not_checked` (no check has run yet) or `not_expected` (not expected at the stage). Two Includes items are still open on the board row TRI-coverage-panel: the coverage panel on the readout page, and the register of the guides' proposed checks. Feature folder: [20261022.13_checklist_coverage](../features/20261022.13_checklist_coverage/00_progress.md).
 
 ### claim-support
 

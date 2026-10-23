@@ -35,7 +35,7 @@ Each folder has one owner, so parallel pull requests do not touch the same files
 |---|---|---|
 | `schema/` | `claim.py` (the models), `claim.schema.json` and `ts/claim.ts` (generated), `readers.py` (open a file at a locator), `check_quotes.py`, `settings.py` (the thresholds) | captain; `readers.py` backend-and-data |
 | `scans/base.py` | The scan command line, result paths, ids, gaps, the input kinds a room holds | captain |
-| `scans/redflags/` | Scan 1: one module per FRAMEWORKS entry 1.1 to 1.13, plus deck against the books | design-and-finance |
+| `scans/redflags/` | Scan 1: one module per FRAMEWORKS entry 1.1 to 1.14 (1.14 is deck against the books) | design-and-finance |
 | `scans/comps/` | Scan 2: public comps and private rounds | design-and-finance |
 | `scans/signals/` | Scan 3: market signals, from `cache/` | frontend on Saturday |
 | `scans/video/` | Scan 4: transcript claims with timestamps, interesting moments | backend-and-data |
@@ -96,7 +96,7 @@ The red-flag engine is one scan made of many checks. Each FRAMEWORKS entry is it
 1. **link**: claims with the same label, unit and period are linked as conflicting (apart by more than the tolerance) or corroborating (agreeing, from independent sources; the deck, video, overview, website and one-pager count as one source).
 2. **pieces**: each claim goes to one of nine pieces, and each piece gets its verdict by the script rule in FRAMEWORKS ("Piece verdicts").
 3. **top_flags**: the best green and worst red flags, one per piece, by the rule in FRAMEWORKS.
-4. **coverage**: checklist items expected at the company's stage, found or missing ([CHECKLIST.md](CHECKLIST.md)).
+4. **coverage**: each checklist item marked checked, found, missing, not checked yet or not expected at the company's stage, and an ask line for each missing item (`scans/memo/coverage.py`; [CHECKLIST.md](CHECKLIST.md), FRAMEWORKS "Checklist coverage").
 5. **asks**: the ask list, from gaps, weak pieces and missing checklist items.
 6. **connecting**: the one model pass. Each sentence must cite claim ids or it is dropped. It never changes a verdict.
 

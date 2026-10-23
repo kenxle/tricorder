@@ -28,7 +28,7 @@ Product step with the red-flag scan's real output (from `spike/build_prototype.p
 | Seed drop, pre-seed | 82 | 3 | 15 | 38 | 26 | 27 | 17 | 13 | 1 | 1 |
 | Full room, Series A | 109 | 11 | 16 | 40 | 42 | 0 | 21 | 7 | 3 | 0 |
 
-"Expected" now includes "not stated" items (Ken's default 1). "Checked" counts only rows a real red-flag claim checked: C02, C19 and C20 on the seed drop; eleven rows on the full room.
+"Expected" now includes "not stated" items (default 1, chosen by the orchestrator, open for Ken). "Checked" counts only rows a real red-flag claim checked: C02, C19 and C20 on the seed drop; eleven rows on the full room.
 
 The first version, from the spike, `spike/print_counts.py` after `spike/run_all.sh` ("checked" projected, "not stated" not expected):
 
