@@ -50,7 +50,7 @@ Each folder has one owner, so parallel pull requests do not touch the same files
 | `eval/` | `score.py`: a readout against an answer key | captain |
 | `memo/`, `inbox/`, `store/` | The memo export (built; reader copies not yet), the inbox webhook (not built), the readout store (built) | agent |
 | `founder_requests/` | The request to the founder drafted from the ask list, and a reply's files added to the room so the waiting scans rerun | agent |
-| `steering/` | One typed sentence on a piece or a line: the engine, the revisions, and `verdicts.py`, a stand-in for the piece verdicts until `scans/memo/pieces.py` exists | agent |
+| `steering/` | One typed sentence on a piece or a line: the engine and the revisions; verdicts and headline flags use the shared merge steps | agent |
 | `data_room/` | The generator, the synthetic rooms and their answer keys. No product code imports it. | agent |
 | `cache/` | Outside data saved ahead, indexed by `cache/index.json` | agent |
 | `sample_out/` | Hand-written example results, one folder per room | captain |
@@ -97,8 +97,8 @@ The red-flag engine is one scan made of many checks. Each FRAMEWORKS entry is it
 
 1. **link**: claims with the same label, unit and period are linked as conflicting (apart by more than the tolerance) or corroborating (agreeing, from independent sources; the deck, video, overview, website and one-pager count as one source).
 2. **claim_support**: each pitch figure the claims scan labelled is relabelled against other scans' flags (`scans/memo/claim_support.py`). A flag relabels a figure only when both carry a Value of the same label, unit and period.
-3. **pieces**: each claim goes to one of nine pieces, and each piece gets its verdict by the script rule in FRAMEWORKS ("Piece verdicts").
-4. **top_flags**: the best green and worst red flags, one per piece, by the rule in FRAMEWORKS.
+3. **pieces**: each claim goes to one of nine pieces, and each piece gets its verdict by the script rule in FRAMEWORKS ("Piece verdicts"). Implemented in `scans/memo/pieces.py`, also used by steering.
+4. **top_flags**: the best green and worst red flags, one per piece, by the rule in FRAMEWORKS. Implemented in `scans/memo/top_flags.py`, also used by steering. A red flag without comparable linked figures stays inside its piece.
 5. **coverage**: each checklist item marked checked, found, missing, not checked yet or not expected at the company's stage, and an ask line for each missing item (`scans/memo/coverage.py`; [CHECKLIST.md](CHECKLIST.md), FRAMEWORKS "Checklist coverage").
 6. **asks**: the ask list, from gaps, weak pieces and missing checklist items.
 7. **connecting**: the one model pass. Each sentence must cite claim ids or it is dropped. It never changes a verdict.

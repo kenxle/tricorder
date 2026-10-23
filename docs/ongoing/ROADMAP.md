@@ -531,7 +531,7 @@ The operator steers the readout: a comment or short instruction on a piece makes
 
 **Judgment:** yes.
 
-**Status:** done for every Done when check. Merged in PR #8 on 2026-10-23. The code is `steering/`, `server/steering_routes.py` and `readout/src/Steering.tsx`, mounted in the readout page's overview. Until `scans/memo/pieces.py` and `top_flags.py` exist, `steering/verdicts.py` stands in for the piece verdicts (board row TRI-pieces-top-flags). Feature folder: [20261023.05_steering](../features/20261023.05_steering/00_progress.md).
+**Status:** done for every Done when check. Merged in PR #8 on 2026-10-23. The code is `steering/`, `server/steering_routes.py` and `readout/src/Steering.tsx`, mounted in the readout page's overview. The [shared verdicts slice](../features/20261023.07_readout_verdicts/00_spec.md) moves verdicts and headline flags to `scans/memo/pieces.py` and `top_flags.py`, replacing steering's temporary rules. Feature folder: [20261023.05_steering](../features/20261023.05_steering/00_progress.md).
 
 ### room-templates
 
@@ -1293,6 +1293,8 @@ The red flags in the financials and metrics: the organisers' first direction, an
 ### readout
 
 The top green and red flags, the overview and its drill-downs, assembled from the scans' claims: every piece of the company with a verdict, every sentence sourced. Second in the feasibility research's ranking.
+
+**Progress:** the merge, claim-support step, and coverage step are built. The [shared verdicts slice](../features/20261023.07_readout_verdicts/00_spec.md) adds the piece verdicts and headline selection and moves steering to the same code. General source linking, the ask-list step, and connecting prose remain open. The current scans also need to emit linked numeric peers before the framework's full headline example can appear.
 
 **Waits on:** claim-result. It is built against `sample_out/` until the real scans land at the 1:00 PM integration point.
 

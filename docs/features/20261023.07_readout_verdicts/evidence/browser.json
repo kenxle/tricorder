@@ -1,0 +1,12 @@
+{
+  "target": "http://127.0.0.1:8791",
+  "checks": [
+    "Hollis headline opens retention",
+    "Retention source opens with its file and locator",
+    "Missing comps scan reads not assessed yet",
+    "Memo names pending source-linking checks",
+    "Brasswick has no numeric headline but keeps its weak verdict",
+    "No browser runtime errors"
+  ],
+  "result": "pass"
+}

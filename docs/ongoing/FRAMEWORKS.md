@@ -3415,6 +3415,8 @@ keep the largest-gap flag per piece; rank those pieces by gap
 show the first top_green_flags greens, then the first top_red_flags reds
 ```
 
+The cohort rebuild check puts the rebuilt figure in its flag claim and the tab reading in its linked peer. For that check, the flag's value is `found` and the peer's is `stated`. The denominator remains the rebuilt figure.
+
 One per piece, so the headline list spans the company instead of repeating one problem. A green flag comes only from a piece that reads looking strong. If there is none, the list says "No green flag" and is not padded.
 
 Worked example, Hollis Voice. Gaps are scripted arithmetic on the figures in the table under "Hollis Voice, the numbers the examples use" and in `answer_key.json`, by the formula above.
