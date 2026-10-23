@@ -25,7 +25,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from schema import settings
-from schema.claim import Check, Claim, Gap, Source, Value
+from schema.claim import Check, Claim, Gap, Panel, Source, Value
 from schema.readers import LocatorError, csv_row_text, csv_rows, xlsx_sheet
 from scans.base import Ids, gap
 
@@ -35,6 +35,8 @@ PIECE = "retention"
 MODEL = "02_financials/financial_model.xlsx"
 CUSTOMERS = "03_metrics/customer_mrr_by_month.csv"
 TAB = "Cohorts"
+PANEL = "cohort retention rebuild"
+SCRIPT = "scans/redflags/cohorts.py"
 
 
 def _add(month: str, k: int) -> str:
@@ -86,40 +88,61 @@ def read_tab(room: Path) -> dict | None:
 
 
 def rebuild(room: Path) -> dict | None:
-    """NRR_12 and GRR_12 from the customer file, or None when it is missing."""
+    """NRR_12 and GRR_12 from the customer file, with the file rows each cohort sums, or None when it is missing."""
     path = room / CUSTOMERS
     if not path.exists():
         return None
     mrr: dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
-    first_row: dict[tuple[str, str], int] = {}
+    rows_at: dict[tuple[str, str], list[int]] = defaultdict(list)
     for n, r in enumerate(csv_rows(path), 2):
         v = float(r.get("mrr") or 0)
         mrr[r["customer_id"]][r["month"]] += v
-        if v > 0:
-            first_row.setdefault((r["customer_id"], r["month"]), n)
+        if v:  # a row with no MRR adds nothing to the sums, so the panel does not list it
+            rows_at[(r["customer_id"], r["month"])].append(n)
     if not mrr:
         return None
     last = max(m for d in mrr.values() for m in d)
-    start = end = capped = 0.0
-    members: list[tuple[str, str]] = []
+    by_cohort: dict[str, dict] = {}
     for cid, d in mrr.items():
         first = min((m for m, v in d.items() if v > 0), default=None)
         if first is None or _add(first, 12) > last:
             continue
-        s, e = d[first], d.get(_add(first, 12), 0.0)
-        start, end, capped = start + s, end + e, capped + min(s, e)
-        members.append((first, cid))
-    if not members or start == 0:
+        later = _add(first, 12)
+        s_, e_ = d[first], d.get(later, 0.0)
+        c = by_cohort.setdefault(first, {"customers": 0, "start": 0.0, "end": 0.0, "kept": 0.0, "start_rows": [], "end_rows": []})
+        c["customers"] += 1
+        c["start"] += s_
+        c["end"] += e_
+        c["kept"] += min(s_, e_)
+        c["start_rows"] += rows_at[(cid, first)]
+        c["end_rows"] += rows_at.get((cid, later), [])
+    start = sum(c["start"] for c in by_cohort.values())
+    if not by_cohort or start == 0:
         return None
-    members.sort()
-    row = first_row[(members[0][1], members[0][0])]
-    return {"customers": len(members), "cohorts": len({m for m, _ in members}),
-            "first": members[0][0], "last": members[-1][0],
-            "nrr": 100 * end / start, "grr": 100 * capped / start,
-            "row": row, "row_text": csv_row_text(path, row)}
+    end = sum(c["end"] for c in by_cohort.values())
+    kept = sum(c["kept"] for c in by_cohort.values())
+    months = sorted(by_cohort)
+    return {"customers": sum(c["customers"] for c in by_cohort.values()), "cohorts": len(months),
+            "first": months[0], "last": months[-1], "nrr": 100 * end / start, "grr": 100 * kept / start,
+            "by_cohort": {m: by_cohort[m] for m in months}, "header": csv_row_text(path, 1)}
 
 
-def check(room: Path, ids: Ids) -> tuple[list[Claim], list[Gap]]:
+def _money(v: float) -> str:
+    return str(int(v)) if float(v).is_integer() else f"{v:.2f}"
+
+
+def rows_panel(built: dict) -> Panel:
+    """Every row the rebuild summed, by cohort, so each retention line opens its rows."""
+    rows = []
+    for month, c in built["by_cohort"].items():
+        rows.append([month, str(c["customers"]), _money(c["start"]), _money(c["end"]), _money(c["kept"]),
+                     ", ".join(str(r) for r in sorted(c["start_rows"])), ", ".join(str(r) for r in sorted(c["end_rows"]))])
+    return Panel(name=PANEL, columns=["Cohort", "Customers", "MRR in the first month", "MRR 12 months later",
+                                      "MRR kept (capped at the first month)", f"Rows in {CUSTOMERS}, first month",
+                                      f"Rows in {CUSTOMERS}, 12 months later"], rows=rows)
+
+
+def check(room: Path, ids: Ids) -> tuple[list[Claim], list[Gap], list[Panel]]:
     room = Path(room)
     s = settings.load()
     tol, grr_line = float(s["match_tolerance"]), float(s["grr_line"])
@@ -146,10 +169,12 @@ def check(room: Path, ids: Ids) -> tuple[list[Claim], list[Gap]]:
     if built is None:
         gaps.append(gap(f"Not in the room: the customer file ({CUSTOMERS}), so the cohorts cannot be rebuilt",
                         "file missing", "Monthly revenue by customer since the first sale, with MRR per month", PIECE))
-        return claims, gaps
+        return claims, gaps, []
 
-    row_source = Source(kind="file", uri=CUSTOMERS, locator=f"row {built['row']}", quote=built["row_text"])
+    # The header row: the columns the script summed. The rows themselves are in the panel, one list per cohort.
+    row_source = Source(kind="file", uri=CUSTOMERS, locator="row 1", quote=built["header"])
     span = f"the {built['cohorts']} cohorts from {built['first']} to {built['last']} that have 12 months of data"
+    how = f" {SCRIPT} summed the mrr column of the rows listed in the panel '{PANEL}'."
     if tab is not None:
         fewer = tab["customers"] < built["customers"]
         above = tab["nrr"] > built["nrr"] and abs(tab["nrr"] - built["nrr"]) / built["nrr"] > tol
@@ -167,9 +192,11 @@ def check(room: Path, ids: Ids) -> tuple[list[Claim], list[Gap]]:
                               f"{built['customers']} customers in {span}{compare}",
                          Value(number=round(built["nrr"], 2), unit="percent", label="nrr_12m", period=None),
                          severity, sources, conflicts))
+    claims[-1] = claims[-1].model_copy(update={"text": claims[-1].text + how})
     under = built["grr"] < grr_line
     claims.append(_claim(ids, f"Rebuilt 12-month gross revenue retention is {built['grr']:.1f}% over the same {built['customers']} customers, "
                               f"{'under' if under else 'at or above'} the {grr_line:.0f}% line.",
                          Value(number=round(built["grr"], 2), unit="percent", label="grr_12m", period=None),
                          "watch" if under else "info", [row_source]))
-    return claims, gaps
+    claims[-1] = claims[-1].model_copy(update={"text": claims[-1].text + how})
+    return claims, gaps, [rows_panel(built)]
