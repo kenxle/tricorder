@@ -164,3 +164,23 @@ def test_rebuilding_through_the_page_keeps_the_steer(env):
     revs = client.get("/api/rooms/hollis_voice/revisions").json()
     assert [r["steer"]["instruction"] for r in revs["revisions"]] == ["treat the pilot as non-recurring"]
     assert [p["name"] for p in revs["changes"]] == ["steer 1: what changed"]
+
+
+# Code review of the fix round ----------------------------------------------------------------------
+
+
+@pytest.mark.parametrize("uri", ["../answer_key.json", str(ROOT / "data_room" / "answer_key.json"), "../../CLAUDE.md"])
+def test_claim_source_opens_nothing_outside_the_room(env, uri):
+    """Round 2, item 5: a line's source opens by the same rule as POST /source, so a readout that names a
+    path outside the room (or the sealed answer key) gets a 404, never the text."""
+    from scans.base import out_dir
+    from schema.claim import Readout
+
+    path = out_dir(FULL) / "readout.json"
+    readout = Readout.model_validate_json(path.read_text(encoding="utf-8"))
+    c = readout.claims[0]
+    forged = c.model_copy(update={"sources": [c.sources[0].model_copy(update={"uri": uri, "locator": "whole"})]})
+    path.write_text(readout.model_copy(update={"claims": [forged] + readout.claims[1:]}).model_dump_json(), encoding="utf-8")
+    got = client.get(f"/api/rooms/hollis_voice/claims/{c.id}/sources/0")
+    assert got.status_code == 404, got.text
+    assert "Synthetic" not in got.text and "text" not in got.json()

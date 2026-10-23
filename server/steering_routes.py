@@ -4,8 +4,9 @@
     POST /api/rooms/{room}/steer        {"piece", "sentence", "claim_id"?, "author"?, "fund"?}
     GET  /api/rooms/{room}/revisions    every revision kept, with its "what changed" Panel
     GET  /api/rooms/{room}/claims/{claim_id}/sources/{i}
-                                        the text at a line's i-th source, read from the room the line
-                                        reads: the full room once a "read the full room" steer switched it
+                                        the text at a line's i-th source, read by POST /source's rule
+                                        (server.app.readable_rooms and memo.rooms.text_in): the full room
+                                        once a "read the full room" steer switched it, and never outside it
 
 A bad piece, line or sentence is a 422, and so is a field over its size limit
 (review wave 2b, S3); a room with no readout and no scan results is a 404 naming
@@ -19,7 +20,8 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 
 from schema.claim import Readout
-from schema.readers import LocatorError, text_at
+from memo.rooms import OutsideRoom, is_file_source, room_holding, text_in
+from schema.readers import LocatorError
 from scans.base import room_name
 from steering import engine
 from steering.models import SteerOutcome
@@ -86,8 +88,14 @@ def claim_source(room: str, claim_id: str, i: int) -> dict:
         raise HTTPException(404, f"no line {claim_id!r} in the readout")
     if not 0 <= i < len(claim.sources):
         raise HTTPException(404, f"line {claim_id!r} has {len(claim.sources)} sources")
-    source_room = engine.claim_room(readout, claim_id, path)
+    from server.app import readable_rooms  # POST /source's rule: containment, the answer-key seal, the full-room switch
+
+    rooms = readable_rooms(room)
+    source = claim.sources[i]
     try:
-        return {"room": room_name(source_room), "text": text_at(claim.sources[i], source_room)}
-    except LocatorError as err:
+        held = room_holding(source, rooms) if is_file_source(source) else rooms[0]
+        return {"room": room_name(held), "text": text_in(source, rooms)}
+    except OutsideRoom:
+        raise HTTPException(404, "no such file in this room")
+    except (LocatorError, OSError) as err:
         raise HTTPException(404, str(err))
