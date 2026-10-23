@@ -533,3 +533,24 @@ def test_a_later_steer_that_reruns_the_scans_keeps_an_earlier_rewording(env):
     engine.steer(FULL, "traction_and_revenue", "say the ARR line more plainly", llm=reword_llm([(line.id, b)]))
     second = engine.steer(FULL, "traction_and_revenue", "treat the pilot as non-recurring")
     assert claims_by_id(second.readout)[line.id].text == b
+
+
+def test_rebuild_and_rebuilt_are_one_source_word():
+    """Round 2, item 9: "the rebuild" and "the rebuilt P&L" name the same source, so the swap is kept."""
+    from steering.reword import guard
+
+    assert guard("The rebuild gives ARR of $2,240,868.", "The rebuilt figure gives ARR of $2,240,868.") is None
+
+
+def test_a_refused_rewording_is_guarded_once(env, monkeypatch):
+    """Round 2, item 9, on a HAND-BUILT model answer: guard runs once for a refused line."""
+    from steering import reword as rw
+
+    calls = []
+    real = rw.guard
+    monkeypatch.setattr(rw, "guard", lambda old, new: calls.append(1) or real(old, new))
+    claim = arr_line(Readout.model_validate_json((out_dir(FULL) / "readout.json").read_text()))
+    llm = lambda output, **kw: RewordReading(lines=[RewordLine(claim_id=claim.id, text="A line with 999 in it.")])  # noqa: E731
+    kept, refused = rw.reword([claim], "say it plainly", llm)
+    assert kept == {} and len(refused) == 1 and "changed a number" in refused[0]
+    assert len(calls) == 1

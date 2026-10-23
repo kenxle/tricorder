@@ -66,9 +66,15 @@ def figures(text: str) -> list[str]:
     return out
 
 
+def _source_word(word: str) -> str:
+    """One spelling per source: "P and L" is "p&l", "slides" is "slide", "rebuilt" is "rebuild"."""
+    word = word.lower().replace("p and l", "p&l").rstrip("s")
+    return "rebuild" if word == "rebuilt" else word
+
+
 def frame(text: str) -> list[str]:
     """Source words and figures in the order the line states them, repeats of one source word merged."""
-    items = [(m.start(), m.group(0).lower().replace("p and l", "p&l").rstrip("s")) for m in SOURCE_WORDS.finditer(text)]
+    items = [(m.start(), _source_word(m.group(0))) for m in SOURCE_WORDS.finditer(text)]
     items += [(m.start(), f) for m, f in zip(_FIGURE.finditer(text), figures(text))]
     seq = []
     for _, item in sorted(items):
@@ -106,8 +112,8 @@ def reword(claims: list[Claim], sentence: str, llm: Callable) -> tuple[dict[str,
         new = line.text.strip()
         if old is None:
             refused.append(f"{line.claim_id} is not a line in this piece")
-        elif guard(old.text, new) is not None:
-            refused.append(f"{line.claim_id}: {guard(old.text, new)}")
+        elif (why := guard(old.text, new)) is not None:
+            refused.append(f"{line.claim_id}: {why}")
         elif old.confidence == "judged" and not new.startswith("Reading:"):
             refused.append(f"{line.claim_id}: a judged line must start 'Reading:'")
         elif new and new != old.text:
