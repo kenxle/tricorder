@@ -39,7 +39,9 @@ def test_save_list_get_delete_from_the_terminal(env, tmp_path, cache_dir):
     assert held["cache"] == ["outside/hollis_voice/hn/search.json", "outside/hollis_voice/website/home.html"]
 
     got = json.loads(run(["get", "hollis_voice"], env).stdout)
-    assert got["version"]["version"] == 1 and got["readout"]["claims"] == 10 and got["results"] == ["redflags"]
+    # The count comes from the readout the fixture built, so a new redflags check does not break this test.
+    built = json.loads((Path(env["TRICORDER_OUT_DIR"]) / "hollis_voice" / "readout.json").read_text(encoding="utf-8"))
+    assert got["version"]["version"] == 1 and got["readout"]["claims"] == len(built["claims"]) and got["results"] == ["redflags"]
     full = json.loads(run(["get", "hollis_voice", "--full"], env).stdout)
     assert full["readout"]["room"] == "hollis_voice" and full["results"][0]["scan"] == "redflags"
 
