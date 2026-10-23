@@ -90,7 +90,7 @@ a:hover { color: var(--accent); }
 
 /* Type */
 .display, h1, h2 { font-family: var(--f-display); font-weight: 400; letter-spacing: -0.005em; line-height: 1.08; margin: 0; }
-h1 { font-size: clamp(2.6rem, 7.2vw, 5.6rem); }
+h1 { font-size: clamp(2.6rem, 7.2vw, 5.6rem); line-height: 0.96; }
 h2 { font-size: clamp(2rem, 4.4vw, 3.4rem); }
 h3 { font-family: var(--f-body); font-size: 1.05rem; font-weight: 650; margin: 0; line-height: 1.35; }
 .lede { font-size: clamp(1.1rem, 1.6vw, 1.3rem); line-height: 1.55; max-width: var(--measure); color: var(--ink); font-weight: 350; }
@@ -158,8 +158,6 @@ p { margin: 0 0 var(--s-4); max-width: var(--measure); }
 /* Flag heads */
 .flag-head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3); margin-bottom: var(--s-3); }
 .flag-title { font-weight: 650; font-size: 1.08rem; line-height: 1.4; margin: 0 0 var(--s-2); }
-.line.flag.green { box-shadow: inset 3px 0 0 var(--strong); }
-.line.flag.red { box-shadow: inset 3px 0 0 var(--weak); }
 
 /* Stated beside found: the declared and inspected columns */
 .sf { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--rule); margin: var(--s-4) 0; }
@@ -201,9 +199,9 @@ td.ln { font-family: var(--f-data); color: var(--ink-2); font-size: 0.78rem; wid
   text-decoration: none; cursor: pointer; background: transparent; color: var(--ink);
   transition: background-color 120ms ease, color 120ms ease;
 }
-.pill.primary { background: var(--accent); color: var(--accent-ink); }
-.pill.primary:hover { color: var(--accent-ink); filter: brightness(1.08); }
 .pill:hover { background: var(--accent-wash); color: var(--ink); }
+.pill.primary { background: var(--accent); color: var(--accent-ink); }
+.pill.primary:hover { background: var(--accent); color: var(--accent-ink); filter: brightness(1.12); }
 .pill.quiet { border-color: var(--rule-strong); }
 .pill.small { font-size: 0.85rem; padding: 0.5em 1em; }
 .pill[disabled] { opacity: 0.45; cursor: not-allowed; }
@@ -286,14 +284,16 @@ header.site nav a:hover { color: var(--ink); }
 .hero .lede { margin-bottom: var(--s-7); }
 .actions { display: flex; flex-wrap: wrap; gap: var(--s-3); }
 
-.slip { max-width: 24rem; }
-.slip ol { list-style: none; margin: 0; padding: 0; }
-.slip li { display: grid; grid-template-columns: 3rem 1fr; border-top: 1px solid var(--rule); }
-.slip li:first-child { border-top: 0; }
-.slip li > span { padding: var(--s-3) var(--s-4); }
-.slip li > span:first-child { font-family: var(--f-data); font-size: 0.78rem; color: var(--ink-2); border-right: 1px solid var(--rule); padding-right: 0; }
-.slip .returns { border-top: 3px double var(--rule-strong); padding: var(--s-4); display: flex; justify-content: space-between; align-items: center; gap: var(--s-3); flex-wrap: wrap; }
-.slip .returns .display { font-size: 1.6rem; }
+/* Hero preview: three readout lines, stated beside found. */
+.slip { max-width: 26rem; }
+.slip table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.slip th, .slip td { padding: var(--s-3) var(--s-4); text-align: left; border-top: 1px solid var(--rule); }
+.slip thead th { border-top: 0; font-family: var(--f-data); font-size: 0.72rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); padding-bottom: var(--s-2); }
+.slip thead th.found { color: var(--accent); }
+.slip tbody th { font-weight: 600; }
+.slip td { font-family: var(--f-data); font-size: 1rem; white-space: nowrap; }
+.slip td.found { color: var(--accent); }
+.slip .foot { border-top: 1px solid var(--rule); padding: var(--s-3) var(--s-4); font-size: 0.9rem; color: var(--ink-2); }
 
 .readout-head h3 { font-family: var(--f-display); font-weight: 400; font-size: 1.5rem; }
 .ask { display: flex; gap: var(--s-3); align-items: baseline; padding: var(--s-4); border: 1px solid var(--accent); background: var(--panel); max-width: 44rem; }
@@ -386,15 +386,17 @@ footer.site nav { display: flex; gap: var(--s-5); flex-wrap: wrap; }
           <a class="pill" href="#start">Bring a data room to the pilot</a>
         </div>
       </div>
-      <aside class="panel slip" aria-label="What Tricorder takes">
-        <div class="panel-head"><span class="label box-no"><b>Box 4</b> Takes</span><span class="label">Any data</span></div>
-        <ol>
-          <li><span>L.01</span><span>Decks</span></li>
-          <li><span>L.02</span><span>Videos</span></li>
-          <li><span>L.03</span><span>Spreadsheets</span></li>
-          <li><span>L.04</span><span>Data rooms</span></li>
-        </ol>
-        <div class="returns"><span class="label">Returns</span><span class="display">a readout</span></div>
+      <aside class="panel slip" aria-label="Three lines from the Hollis Voice readout">
+        <div class="panel-head"><span class="label">Hollis Voice, Series A</span><span class="label">Synthetic</span></div>
+        <table>
+          <thead><tr><th scope="col" aria-label="Line"></th><th scope="col">Stated</th><th scope="col" class="found">Found</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Round</th><td>$9.0M</td><td class="found">$9.0M</td></tr>
+            <tr><th scope="row">ARR</th><td>$2.50M</td><td class="found">$2.24M</td></tr>
+            <tr><th scope="row">Runway</th><td>37 mo</td><td class="found">19 mo</td></tr>
+          </tbody>
+        </table>
+        <p class="foot">Stated is what the deck says. Found is what the rest of the room shows. Every line opens its sources.</p>
       </aside>
     </div>
   </div>

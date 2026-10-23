@@ -90,7 +90,7 @@ a:hover { color: var(--accent); }
 
 /* Type */
 .display, h1, h2 { font-family: var(--f-display); font-weight: 400; letter-spacing: -0.005em; line-height: 1.08; margin: 0; }
-h1 { font-size: clamp(2.6rem, 7.2vw, 5.6rem); }
+h1 { font-size: clamp(2.6rem, 7.2vw, 5.6rem); line-height: 0.96; }
 h2 { font-size: clamp(2rem, 4.4vw, 3.4rem); }
 h3 { font-family: var(--f-body); font-size: 1.05rem; font-weight: 650; margin: 0; line-height: 1.35; }
 .lede { font-size: clamp(1.1rem, 1.6vw, 1.3rem); line-height: 1.55; max-width: var(--measure); color: var(--ink); font-weight: 350; }
@@ -158,8 +158,6 @@ p { margin: 0 0 var(--s-4); max-width: var(--measure); }
 /* Flag heads */
 .flag-head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3); margin-bottom: var(--s-3); }
 .flag-title { font-weight: 650; font-size: 1.08rem; line-height: 1.4; margin: 0 0 var(--s-2); }
-.line.flag.green { box-shadow: inset 3px 0 0 var(--strong); }
-.line.flag.red { box-shadow: inset 3px 0 0 var(--weak); }
 
 /* Stated beside found: the declared and inspected columns */
 .sf { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--rule); margin: var(--s-4) 0; }
@@ -201,9 +199,9 @@ td.ln { font-family: var(--f-data); color: var(--ink-2); font-size: 0.78rem; wid
   text-decoration: none; cursor: pointer; background: transparent; color: var(--ink);
   transition: background-color 120ms ease, color 120ms ease;
 }
-.pill.primary { background: var(--accent); color: var(--accent-ink); }
-.pill.primary:hover { color: var(--accent-ink); filter: brightness(1.08); }
 .pill:hover { background: var(--accent-wash); color: var(--ink); }
+.pill.primary { background: var(--accent); color: var(--accent-ink); }
+.pill.primary:hover { background: var(--accent); color: var(--accent-ink); filter: brightness(1.12); }
 .pill.quiet { border-color: var(--rule-strong); }
 .pill.small { font-size: 0.85rem; padding: 0.5em 1em; }
 .pill[disabled] { opacity: 0.45; cursor: not-allowed; }
