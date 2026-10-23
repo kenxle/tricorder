@@ -36,17 +36,19 @@ HEDGES: tuple[tuple[str, str | None], ...] = (
 _SKIP = re.compile(r"Synthetic data room for [^.]*\.|Slide \d+ of \d+|Page \d+(?: of \d+)?$|\b\d{1,2}:\d{2}(?:\s?[ap]\.?m\.?)?", re.I)
 
 _PATTERN = re.compile(
-    r"(?P<iso>\b\d{4}-\d{2}-\d{2}\b)"
+    r"(?P<mrange>\b(?:" + "|".join(MONTHS) + r")(?:\s+\d{4})?\s+to\s+(?:" + "|".join(MONTHS) + r")\s+\d{4}\b"
+    r"|\b\d{4}-\d{2}\s+to\s+\d{4}-\d{2}\b)"
+    r"|(?P<iso>\b\d{4}-\d{2}-\d{2}\b)"
     r"|(?P<ym>\b\d{4}-\d{2}\b)"
     r"|(?P<monthyear>\b(?:" + "|".join(MONTHS) + r")\s+\d{4}\b)"
-    r"|(?P<cur>\$\d[\d,]*(?:\.\d+)?(?:\s?(?:K|M|B)\b|\s(?:million|thousand|billion)\b)?)"
+    r"|(?P<cur>\$\d(?:[\d,]*\d)?(?:\.\d+)?(?:\s?(?:K|M|B)\b|\s(?:million|thousand|billion)\b)?)"
     r"|(?P<pct>\b\d+(?:\.\d+)?%)"
-    r"|(?P<num>\b\d[\d,]*(?:\.\d+)?\b)"
+    r"|(?P<num>\b\d(?:[\d,]*\d)?(?:\.\d+)?\b)"
     r"|(?P<words>\b(?:(?:" + NUMBER_WORD + r")(?:[\s-]+(?:and\s+)?)?)+?(?:" + NUMBER_WORD + r")?\b(?=\s+(?:"
     + "|".join(UNIT_NOUNS) + r")\b))",
     re.I,
 )
-_UNIT_WORD = re.compile(r"\s*([A-Za-z][A-Za-z-]*)")
+_UNIT_WORD = re.compile(r"[\s-]*([A-Za-z][A-Za-z-]*)")
 _SUFFIX = {"k": 1_000, "m": 1_000_000, "b": 1_000_000_000, "thousand": 1_000, "million": 1_000_000, "billion": 1_000_000_000}
 
 
@@ -64,6 +66,7 @@ class Mention:
     hedge: str | None = None
     bound: str | None = None
     spoken: bool = False
+    qualifier: bool = False   # "next 12 months", "(12 months)": names a period, states no claim
 
 
 def words_to_number(text: str) -> float | None:
@@ -109,6 +112,16 @@ def _unit_word_after(text: str, end: int) -> str | None:
     return m.group(1).lower() if m else None
 
 
+def _is_qualifier(text: str, start: int, end: int, unit_word: str | None) -> bool:
+    """'next 12 months', 'last twelve months', '(12 months)', 'Twelve months after the first invoice'."""
+    if unit_word not in ("months", "month", "years", "year"):
+        return False
+    before = text[:start].lower().rstrip()
+    after = text[end:].lower()
+    return bool(re.search(r"(?:\bnext|\blast|\bpast|\(|\bover the)$", before)
+                or re.match(r"\s+(?:months?|years?)\s+after\b", after))
+
+
 def _decimals(digits: str) -> int:
     return len(digits.split(".")[1]) if "." in digits else 0
 
@@ -122,7 +135,17 @@ def mentions(text: str) -> list[Mention]:
         printed = text[s:e]
         hedge, bound = _hedge_before(text, s)
         unit_word = _unit_word_after(text, e)
-        if group == "iso":
+        if group == "mrange":
+            ends = re.split(r"\s+to\s+", printed)
+            def iso_of(part, year=None):
+                bits = part.split()
+                if re.match(r"\d{4}-\d{2}", part):
+                    return part
+                return f"{bits[1] if len(bits) > 1 else year}-{MONTHS.index(bits[0].lower()) + 1:02d}"
+            last = iso_of(ends[1])
+            first = iso_of(ends[0], last[:4])
+            out.append(Mention(s, e, printed, None, None, None, 1, "range", iso=f"{first}..{last}"))
+        elif group == "iso":
             out.append(Mention(s, e, printed, None, None, None, 1, "date", iso=printed))
         elif group == "ym":
             out.append(Mention(s, e, printed, None, None, None, 1, "month", iso=printed))
@@ -151,8 +174,9 @@ def mentions(text: str) -> list[Mention]:
             if year and unit_word not in UNIT_NOUNS:
                 out.append(Mention(s, e, printed, number, None, None, 1, "year", iso=printed))
                 continue
-            out.append(Mention(s, e, printed, number, None, unit_word, 10 ** -_decimals(digits), "number",
-                               hedge=hedge, bound=bound))
+            unit = "percent" if unit_word == "percent" else None
+            out.append(Mention(s, e, printed, number, unit, unit_word, 10 ** -_decimals(digits), "number",
+                               hedge=hedge, bound=bound, qualifier=_is_qualifier(text, s, e, unit_word)))
         elif group == "words":
             number = words_to_number(printed)
             if number is None:
@@ -161,5 +185,6 @@ def mentions(text: str) -> list[Mention]:
             unit = "USD" if after == "dollars" else "percent" if after == "percent" else None
             last = re.split(r"[\s-]+", printed.lower().strip())[-1]
             precision = SCALES.get(last, 1)
-            out.append(Mention(s, e, printed, number, unit, after, precision, "words", hedge=hedge, bound=bound, spoken=True))
+            out.append(Mention(s, e, printed, number, unit, after, precision, "words", hedge=hedge, bound=bound, spoken=True,
+                               qualifier=_is_qualifier(text, s, e, after)))
     return out

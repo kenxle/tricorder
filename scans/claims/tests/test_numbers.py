@@ -91,3 +91,32 @@ def test_several_mentions_in_order():
 
 def test_parse_spoken_value():
     assert parse_spoken("nine million dollars") == (9_000_000, "USD")
+
+
+def test_trailing_comma_is_not_part_of_the_figure():
+    assert _one("Linehaul $2,150, fuel included").printed == "$2,150"
+
+
+def test_digits_then_percent_word():
+    assert _one("keep 30 percent of what we recover").unit == "percent"
+
+
+def test_period_qualifiers():
+    assert _one("Average net burn over the next 12 months").qualifier
+    assert _one("Revenue over the last twelve months was").qualifier
+    assert _one("Twelve months after the first invoice,").qualifier
+    found = mentions("Net revenue retention 102.6% (12 months) 6")
+    assert [m.qualifier for m in found] == [False, True, False]
+    assert not _one("37 months").qualifier
+
+
+def test_month_ranges_are_one_mention():
+    m = _one("Monthly revenue, January 2026 to September 2026")
+    assert (m.kind_hint, m.iso) == ("range", "2026-01..2026-09")
+    m = _one("Nine cohorts, January to September 2025.".replace("Nine cohorts, ", ""))
+    assert m.iso == "2025-01..2025-09"
+    assert mentions("Monthly revenue chart 2026-01 to 2026-09 4")[0].iso == "2026-01..2026-09"
+
+
+def test_hyphenated_unit():
+    assert _one("on a 24-month agreement").unit_word == "month"
