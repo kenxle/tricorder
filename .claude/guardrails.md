@@ -16,7 +16,7 @@
 
 ## CI command
 
-Set by the first code slice (the roadmap's `skeleton` slice). Until then there is no code and no CI.
+`bin/ci-py && bin/ci-web`. GitHub Actions runs them as two jobs (`.github/workflows/ci.yml`).
 
 ## PR conventions
 
@@ -35,7 +35,7 @@ None yet. The hackathon demo runs on a laptop. Set this when the product gets a 
 
 ## Health check
 
-Set by the first code slice.
+`bin/serve`, then `curl -s localhost:8787/health` answers `{"ok": true, ...}` with the scans that exist.
 
 ## Migration verification
 
@@ -43,7 +43,7 @@ Not applicable until the product has a database.
 
 ## Smoke command
 
-Set by the first code slice: one command that runs every scan on the synthetic data room and prints the readout.
+`bin/smoke data_room/hollis_voice`: runs every scan that exists, then the merge, and prints which ran and which are missing.
 
 ## Browser walkthrough entry points
 

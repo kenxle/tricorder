@@ -96,11 +96,12 @@ Paste this `$defs` block into every entry's schema before use. It belongs in `sc
     "Gap": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["what", "why", "would_need"],
+      "required": ["what", "why", "would_need", "piece"],
       "properties": {
         "what": {"type": "string", "description": "Starts with 'Not in the room:' and names what is missing."},
         "why": {"type": "string", "description": "For example 'file missing', 'tab missing', 'Akta plan returns 403', 'not stated in the file'."},
-        "would_need": {"type": "string", "description": "The document or source that would close the gap."}
+        "would_need": {"type": "string", "description": "The document or source that would close the gap."},
+        "piece": {"anyOf": [{"type": "string", "enum": ["traction_and_revenue", "retention", "burn_and_runway", "unit_economics", "customers", "market", "comps", "team", "the_pitch_itself"]}, {"type": "null"}], "description": "The piece the gap feeds, for the ask list. The scan sets it when it knows; null otherwise."}
       }
     },
     "Piece": {

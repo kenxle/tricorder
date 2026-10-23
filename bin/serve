@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# The server on localhost, and the page's dev server beside it if asked.
+#   bin/serve          the API (and the built page, if readout/dist exists) on :8787
+#   bin/serve --dev    also the page's Vite dev server on :5173, proxying /api to :8787
+set -euo pipefail
+cd "$(dirname "$0")/.."
+PY="${PYTHON:-python3}"
+if [ "${1:-}" = "--dev" ]; then
+  (cd readout && npm run dev) &
+  trap 'kill $!' EXIT
+fi
+"$PY" -m uvicorn server.app:app --host 127.0.0.1 --port "${PORT:-8787}"
