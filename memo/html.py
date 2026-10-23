@@ -286,7 +286,8 @@ SCRIPT = r"""
   // The operator view shows the full text beside it.
   function plain(t) { return (t || '').replace(/\bthe \w+ scan's [a-z0-9_]+ check\b/g, 'a check on the room')
     .replace(/\s*\((?:C\d\d(?:,\s*|\s+and\s+)?)+\)/g, '')
-    .replace(/[^.]*(?:\bC\d\d\b|scans\/|\.py\b|python -m|Mislabel kind|\b[a-z]+(?:_[a-z0-9]+){2,}\b)[^.]*\.?\s*/g, '').trim(); }
+    .replace(/(?:[^.]|\.(?!\s|$))*(?:\bC\d\d\b|scans\/|\.py\b|python -m|Mislabel kind|\b[a-z]+(?:_[a-z0-9]+){2,}\b)(?:[^.]|\.(?!\s|$))*(?:\.(?=\s|$))?\s*/g, ' ')
+    .replace(/\s{2,}/g, ' ').trim(); }
   function both(cls, full) {
     var d = el('div', cls); var p = plain(full);
     if (p) d.appendChild(el('span', p === full ? null : 'partner-only', p));
@@ -329,7 +330,7 @@ SCRIPT = r"""
       'Not compared yet across the room.' : 'None in the room.'));
     ids.forEach(function (id) { var c = M.claims[id]; if (!c) return;
       var d = el('div', 'related-claim'); d.setAttribute('data-claim-id', id);
-      d.appendChild(el('div', null, c.text + (c.value ? ' [' + money(c.value) + ']' : '')));
+      var t = both(null, c.text); if (c.value) t.appendChild(document.createTextNode(' [' + money(c.value) + ']')); d.appendChild(t);
       c.sources.forEach(function (s) { d.appendChild(sourceBlock(s)); });
       box.appendChild(d); });
     return box;

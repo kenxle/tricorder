@@ -64,7 +64,9 @@ FLAG_TITLES = {
 }
 
 # Sentences that describe how a script worked, not what the room shows. The operator view keeps them.
-_PLUMBING = re.compile(r"[^.]*(?:scans/|\.py\b|Mislabel kind|\b[a-z]+(?:_[a-z0-9]+){2,}\b)[^.]*\.\s*")
+# A sentence runs to a full stop followed by a space or the end, so "cohorts.py" stays inside its sentence.
+_SENTENCE = r"(?:[^.]|\.(?!\s|$))*"
+_PLUMBING = re.compile(_SENTENCE + r"(?:scans/|\.py\b|Mislabel kind|\b[a-z]+(?:_[a-z0-9]+){2,}\b)" + _SENTENCE + r"(?:\.(?=\s|$))?\s*")
 # "the redflags scan's rebuild_cohorts_from_customer_file check" names a script; a partner reads "a check on the room".
 # "(C34)" after a document names its checklist row; the drill shows the row itself.
 _CHECK_REF = re.compile(r"\s*\((?:C\d\d(?:,\s*|\s+and\s+)?)+\)")
@@ -73,7 +75,7 @@ _CHECK_NAME = re.compile(r"\bthe \w+ scan's [a-z0-9_]+ check\b")
 
 def partner_text(text: str) -> str:
     """A claim's sentence without the sentences about the script that made it."""
-    out = _PLUMBING.sub("", _CHECK_REF.sub("", _CHECK_NAME.sub("a check on the room", text))).strip()
+    out = re.sub(r"\s{2,}", " ", _PLUMBING.sub(" ", _CHECK_REF.sub("", _CHECK_NAME.sub("a check on the room", text)))).strip()
     return out or text
 
 

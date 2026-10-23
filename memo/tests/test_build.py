@@ -131,6 +131,12 @@ def test_the_partner_view_holds_no_plumbing(readout):
     for s, ln in partner_lines(memo):
         assert ln.kind != "slot", ln.id
         assert not PLUMBING.search(f"{ln.label or ''} {ln.text}"), (ln.id, ln.text)
+        assert not re.search(r"\bpy\b", ln.text), (ln.id, ln.text)  # no tail of a dropped script path
+
+
+def test_partner_text_drops_a_whole_sentence_that_names_a_script():
+    text = "Rebuilt NRR is 87.3%. scans/redflags/cohorts.py summed the mrr column. Under the 80% line."
+    assert partner_text(text) == "Rebuilt NRR is 87.3%. Under the 80% line."
 
 
 def test_a_section_with_nothing_in_it_is_one_line(readout):
