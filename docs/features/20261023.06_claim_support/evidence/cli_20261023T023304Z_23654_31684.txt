@@ -1,0 +1,7 @@
+$ python3 -m eval.score data_room/hollis_voice_clean
+(cwd /home/claude/wt/claim-support, TRICORDER_OUT_DIR=/tmp/tricorder-verify/claim-support/out)
+clear   DC1 Onboarding fee excluded from ARR correctly (decoy)
+clear   DC2 Annual prepay counted as recurring correctly (decoy)
+clear   DC3 Clean cap table (decoy)
+hollis_voice_clean: found 0 of 0; decoys flagged 0 of 3
+exit 0
