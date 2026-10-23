@@ -1,0 +1,32 @@
+[
+  {
+    "room": "hollis_voice",
+    "claims": 91,
+    "pieces": 9,
+    "greens": [],
+    "reds": [
+      "retention"
+    ]
+  },
+  {
+    "room": "hollis_voice_seed_drop",
+    "claims": 71,
+    "pieces": 9,
+    "greens": [],
+    "reds": []
+  },
+  {
+    "room": "brasswick",
+    "claims": 83,
+    "pieces": 9,
+    "greens": [],
+    "reds": []
+  },
+  {
+    "room": "hollis_voice_clean",
+    "claims": 91,
+    "pieces": 9,
+    "greens": [],
+    "reds": []
+  }
+]

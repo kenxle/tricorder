@@ -410,7 +410,7 @@ class _Builder:
                 lid = f"s02-{f.kind}-{f.rank}"
                 title = re.sub(r"^(green|red) flag:\s*", "", f.text, flags=re.I).split(".")[0]
                 lines.append(MemoLine(id=lid, kind="claim", label=None if f.text.lower().startswith(word.lower()) else word,
-                                      text=f.text, claim_ids=ids, severity=f.kind))
+                                      text=partner_text(f.text), claim_ids=ids, severity=f.kind))
                 if f.kind == "red":
                     self.flag_lines.append((lid, title, ids))
             if not any(f.kind == "green" for f in self.r.top_flags) and self.r.pieces:

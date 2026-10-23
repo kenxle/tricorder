@@ -34,7 +34,11 @@ Keep the old paths as retired notices pending Ken's cleanup, because repository 
 
 ## Readiness and progress
 
-The base is `origin/main` at `dc3b0b0`. Work is isolated in `feat/readout-verdicts`. The system Python lacks runtime dependencies; an isolated environment under `/tmp/tricorder-readout-verdicts-venv` is being prepared from the repository requirements.
+The base is `origin/main` at `dc3b0b0`. Work is isolated in `feat/readout-verdicts`. The Python environment is `/tmp/tricorder-readout-verdicts-venv`, installed from the root and data-room requirements, plus `pypdf` for the chart fixtures. The system Python lacked runtime dependencies.
+
+The new steps pass their focused behavior tests. The actual room rebuilds and memo exports are captured by [verify_rooms.py](verify_rooms.py), with [one row per claim](evidence/claims.csv) and [the room summaries](evidence/summary.json). The current scans do not yet emit enough numeric peer claims and links for the framework's full headline example. This slice follows the available evidence rather than filling the missing flags by inference.
+
+Integration exposed a memo bug: headline text bypassed the existing cleanup of script paths. The export now applies that same cleanup to headline text. Tests that assumed these merge steps did not exist now cover current results or explicitly cover a legacy readout without verdicts.
 
 The completed change goes through a pull request with the full checks passing. The roadmap's whole readout slice stays open until linking, asks, and connecting prose are handled.
 

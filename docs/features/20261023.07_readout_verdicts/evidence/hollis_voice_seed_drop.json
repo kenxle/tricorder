@@ -1,0 +1,204 @@
+{
+  "room": "hollis_voice_seed_drop",
+  "claims": 71,
+  "unverified": 0,
+  "pieces": [
+    {
+      "name": "traction_and_revenue",
+      "verdict": "looking_weak",
+      "reason": "monthly_metrics.csv shows MRR of $186,739 for 2026-09. The model's ARR_Build shows subscription MRR of $171,739. The $15,000 difference is 8.7% of subscription MRR and equals the non-subscription lines: Marlow Veterinary Group (pilot) (Pilot, $15,000). Months over tolerance: 2026-08, 2026-09. Mislabel kind a: non-recurring revenue in MRR.",
+      "reason_claim_ids": [
+        "redflags-mislabels-001"
+      ],
+      "claim_ids": [
+        "redflags-mislabels-001",
+        "redflags-mislabels-002",
+        "redflags-deck_vs_books-001",
+        "redflags-deck_vs_books-002",
+        "redflags-deck_vs_books-003",
+        "redflags-deck_vs_books-004",
+        "claims-004",
+        "claims-005",
+        "claims-056",
+        "claims-057"
+      ],
+      "corroborating_sources": 0,
+      "contradicting_sources": 4,
+      "status": "done",
+      "waiting_on": []
+    },
+    {
+      "name": "retention",
+      "verdict": "not_enough_in_the_room",
+      "reason": "Not in the room: the customer file (03_metrics/customer_mrr_by_month.csv), so the cohorts cannot be rebuilt",
+      "reason_claim_ids": [],
+      "claim_ids": [
+        "redflags-cohorts-001",
+        "claims-015",
+        "claims-058"
+      ],
+      "corroborating_sources": 0,
+      "contradicting_sources": 0,
+      "status": "done",
+      "waiting_on": []
+    },
+    {
+      "name": "burn_and_runway",
+      "verdict": "looking_weak",
+      "reason": "Contradicted: The deck (slide 12) gives planned hires as 24 hires, but financial model (named cell HIRES_COUNTED) says 8, 66.7% lower.",
+      "reason_claim_ids": [
+        "claims-035"
+      ],
+      "claim_ids": [
+        "claims-031",
+        "claims-032",
+        "claims-035",
+        "claims-038",
+        "claims-039",
+        "claims-040",
+        "claims-041",
+        "claims-042",
+        "claims-043",
+        "claims-063",
+        "claims-064"
+      ],
+      "corroborating_sources": 0,
+      "contradicting_sources": 3,
+      "status": "done",
+      "waiting_on": []
+    },
+    {
+      "name": "unit_economics",
+      "verdict": "not_enough_in_the_room",
+      "reason": "Not in the room: the expense ledger by function, to back 1 pitch claim on gross margin (slide 5: 80%)",
+      "reason_claim_ids": [],
+      "claim_ids": [
+        "claims-011",
+        "claims-014",
+        "claims-018",
+        "claims-019",
+        "claims-020",
+        "claims-027"
+      ],
+      "corroborating_sources": 0,
+      "contradicting_sources": 0,
+      "status": "done",
+      "waiting_on": []
+    },
+    {
+      "name": "customers",
+      "verdict": "not_enough_in_the_room",
+      "reason": "Not in the room: customer contracts",
+      "reason_claim_ids": [],
+      "claim_ids": [
+        "claims-008",
+        "claims-060"
+      ],
+      "corroborating_sources": 0,
+      "contradicting_sources": 0,
+      "status": "done",
+      "waiting_on": []
+    },
+    {
+      "name": "market",
+      "verdict": "not_enough_in_the_room",
+      "reason": "Not in the room: a market sizing with its sources, to back 1 pitch claim on market count (slide 8: about 28,000)",
+      "reason_claim_ids": [],
+      "claim_ids": [
+        "claims-028"
+      ],
+      "corroborating_sources": 0,
+      "contradicting_sources": 0,
+      "status": "done",
+      "waiting_on": []
+    },
+    {
+      "name": "comps",
+      "verdict": "not_enough_in_the_room",
+      "reason": "No claim in the readout feeds this piece yet.",
+      "reason_claim_ids": [],
+      "claim_ids": [],
+      "corroborating_sources": 0,
+      "contradicting_sources": 0,
+      "status": "done",
+      "waiting_on": []
+    },
+    {
+      "name": "team",
+      "verdict": "not_enough_in_the_room",
+      "reason": "Not in the room: an org chart with start dates, to back 2 pitch claims on staff today (slide 10: 17; slide 12: 17)",
+      "reason_claim_ids": [],
+      "claim_ids": [
+        "claims-030",
+        "claims-036",
+        "claims-037"
+      ],
+      "corroborating_sources": 0,
+      "contradicting_sources": 0,
+      "status": "done",
+      "waiting_on": []
+    },
+    {
+      "name": "the_pitch_itself",
+      "verdict": "not_enough_in_the_room",
+      "reason": "Not in the room: a transcript of the pitch video; its script stands in, cited by line",
+      "reason_claim_ids": [],
+      "claim_ids": [
+        "claims-001",
+        "claims-002",
+        "claims-003",
+        "claims-006",
+        "claims-007",
+        "claims-009",
+        "claims-010",
+        "claims-012",
+        "claims-013",
+        "claims-016",
+        "claims-017",
+        "claims-021",
+        "claims-022",
+        "claims-023",
+        "claims-024",
+        "claims-025",
+        "claims-026",
+        "claims-029",
+        "claims-033",
+        "claims-034",
+        "claims-044",
+        "claims-045",
+        "claims-046",
+        "claims-047",
+        "claims-048",
+        "claims-049",
+        "claims-050",
+        "claims-051",
+        "claims-052",
+        "claims-053",
+        "claims-054",
+        "claims-055",
+        "claims-059",
+        "claims-061",
+        "claims-062"
+      ],
+      "corroborating_sources": 0,
+      "contradicting_sources": 0,
+      "status": "done",
+      "waiting_on": []
+    }
+  ],
+  "top_flags": [],
+  "memo_html": "/tmp/tricorder-readout-proof/hollis_voice_seed_drop/memo/memo.html",
+  "memo_pdf": "/tmp/tricorder-readout-proof/hollis_voice_seed_drop/memo/memo.pdf",
+  "scans_missing": [
+    "comps",
+    "signals",
+    "video",
+    "readings",
+    "model",
+    "frameworks",
+    "founders",
+    "presence",
+    "outside",
+    "bank"
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "room": "brasswick",
+  "claims": 83,
+  "unverified": 0,
+  "pieces": [
+    {
+      "name": "traction_and_revenue",
+      "verdict": "looking_weak",
+      "reason": "The P&L row \"Subscription revenue\" for 2026-09 is $84,810. Subscription billings in revenue_by_customer.csv add to $82,650 and subscription revenue adds to $59,565. The P&L figure sits on the billings side. Rows where billings and revenue differ: Ostley Freight, Tessmore Freight. Mislabel kind b: billings shown as revenue.",
+      "reason_claim_ids": [
+        "redflags-mislabels-001"
+      ],
+      "claim_ids": [
+        "redflags-mislabels-001",
+        "redflags-mislabels-002",
+        "redflags-mislabels-005",
+        "redflags-mislabels-006",
+        "redflags-contract_terms_full-012",
+        "redflags-contract_terms_full-013",
+        "redflags-contract_terms_full-014",
+        "redflags-contract_terms_full-015",
+        "redflags-contract_terms_full-016",
+        "redflags-contract_terms_full-017",
+        "redflags-contract_terms_full-018",
+        "redflags-contract_terms_full-019",
+        "redflags-contract_terms_full-020",
+        "redflags-deck_vs_books-001",
+        "redflags-deck_vs_books-002",
+        "redflags-deck_vs_books-003",
+        "redflags-deck_vs_books-004",
+        "redflags-deck_vs_books-005",
+        "claims-006",
+        "claims-007",
+        "claims-009",
+        "claims-044"
+      ],
+      "corroborating_sources": 0,
+      "contradicting_sources": 5,
+      "status": "done",
+      "waiting_on": []
+    },
+    {
+      "name": "retention",
+      "verdict": "not_enough_in_the_room",
+      "reason": "Not in the room: the Cohorts tab in financial_model.xlsx",
+      "reason_claim_ids": [],
+      "claim_ids": [],
+      "corroborating_sources": 0,
+      "contradicting_sources": 0,
+      "status": "done",
+      "waiting_on": []
+    },
+    {
+      "name": "burn_and_runway",
+      "verdict": "looking_weak",
+      "reason": "Contractor lines in the ledger add to $34,708.97 in 2026-09 (3 lines from Fernway Contractor Payments, Norrgate Software Studio). They sit in the P&L row \"Professional services\", $36,149.98 in 2026-09. The plan puts $2,800 on that row from 2026-10, which leaves $33,349.98 a month of the contractors out of the plan's burn. The staff count is 7 (Team!B12). Mislabel kind e: contractors left out of burn.",
+      "reason_claim_ids": [
+        "redflags-mislabels-003"
+      ],
+      "claim_ids": [
+        "redflags-mislabels-003",
+        "redflags-mislabels-004",
+        "claims-027",
+        "claims-028",
+        "claims-030",
+        "claims-050",
+        "claims-051"
+      ],
+      "corroborating_sources": 0,
+      "contradicting_sources": 4,
+      "status": "done",
+      "waiting_on": []
+    },
+    {
+      "name": "unit_economics",
+      "verdict": "not_enough_in_the_room",
+      "reason": "Not in the room: signed order forms that show the list price, to back 1 pitch claim on list price (slide 6: $4,800)",
+      "reason_claim_ids": [],
+      "claim_ids": [
+        "claims-018",
+        "claims-019",
+        "claims-023"
+      ],
+      "corroborating_sources": 0,
+      "contradicting_sources": 0,
+      "status": "done",
+      "waiting_on": []
+    },
+    {
+      "name": "customers",
+      "verdict": "not_enough_in_the_room",
+      "reason": "Not in the room: the contracts for 11 of 14 customers counted in 2026-09",
+      "reason_claim_ids": [],
+      "claim_ids": [
+        "redflags-contract_terms_full-001",
+        "redflags-contract_terms_full-002",
+        "redflags-contract_terms_full-003",
+        "redflags-contract_terms_full-004",
+        "redflags-contract_terms_full-005",
+        "redflags-contract_terms_full-006",
+        "redflags-contract_terms_full-007",
+        "redflags-contract_terms_full-008",
+        "redflags-contract_terms_full-009",
+        "redflags-contract_terms_full-010",
+        "redflags-contract_terms_full-011",
+        "redflags-contract_terms_full-021",
+        "claims-011",
+        "claims-012"
+      ],
+      "corroborating_sources": 0,
+      "contradicting_sources": 0,
+      "status": "done",
+      "waiting_on": []
+    },
+    {
+      "name": "market",
+      "verdict": "not_enough_in_the_room",
+      "reason": "Not in the room: a market sizing with its sources, to back 1 pitch claim on market count (slide 7: 3,600)",
+      "reason_claim_ids": [],
+      "claim_ids": [
+        "claims-024"
+      ],
+      "corroborating_sources": 0,
+      "contradicting_sources": 0,
+      "status": "done",
+      "waiting_on": []
+    },
+    {
+      "name": "comps",
+      "verdict": "not_enough_in_the_room",
+      "reason": "No claim in the readout feeds this piece yet.",
+      "reason_claim_ids": [],
+      "claim_ids": [],
+      "corroborating_sources": 0,
+      "contradicting_sources": 0,
+      "status": "done",
+      "waiting_on": []
+    },
+    {
+      "name": "team",
+      "verdict": "not_enough_in_the_room",
+      "reason": "Not in the room: an org chart with start dates, to back 2 pitch claims on staff today (slide 9: 7; script line 23 (beat 1:15): 7)",
+      "reason_claim_ids": [],
+      "claim_ids": [
+        "claims-026",
+        "claims-031",
+        "claims-048"
+      ],
+      "corroborating_sources": 0,
+      "contradicting_sources": 0,
+      "status": "done",
+      "waiting_on": []
+    },
+    {
+      "name": "the_pitch_itself",
+      "verdict": "looking_weak",
+      "reason": "Contradicted: The deck (slide 4) gives chart months as January 2026 to September 2026, but the redflags scan's deck_history_vs_metrics check flags it: Shows part of the history: the revenue chart on slide 4 starts at 2026-01, 8 months after the first revenue month in the books (2025-05); the months left out, 2025-05 to 2025-12, hold a peak of $84,090 in 2025-09; revenue then fell 28.2% to $60,400 in the chart's first month; revenue fell month on month in 2025-10, 2025-12.",
+      "reason_claim_ids": [
+        "claims-004"
+      ],
+      "claim_ids": [
+        "claims-001",
+        "claims-002",
+        "claims-003",
+        "claims-004",
+        "claims-005",
+        "claims-008",
+        "claims-010",
+        "claims-013",
+        "claims-014",
+        "claims-015",
+        "claims-016",
+        "claims-017",
+        "claims-020",
+        "claims-021",
+        "claims-022",
+        "claims-025",
+        "claims-029",
+        "claims-032",
+        "claims-033",
+        "claims-034",
+        "claims-035",
+        "claims-036",
+        "claims-037",
+        "claims-038",
+        "claims-039",
+        "claims-040",
+        "claims-041",
+        "claims-042",
+        "claims-043",
+        "claims-045",
+        "claims-046",
+        "claims-047",
+        "claims-049"
+      ],
+      "corroborating_sources": 0,
+      "contradicting_sources": 2,
+      "status": "done",
+      "waiting_on": []
+    }
+  ],
+  "top_flags": [],
+  "memo_html": "/tmp/tricorder-readout-proof/brasswick/memo/memo.html",
+  "memo_pdf": "/tmp/tricorder-readout-proof/brasswick/memo/memo.pdf",
+  "scans_missing": [
+    "comps",
+    "signals",
+    "video",
+    "readings",
+    "model",
+    "frameworks",
+    "founders",
+    "presence",
+    "outside",
+    "bank"
+  ]
+}

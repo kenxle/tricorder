@@ -20,7 +20,8 @@ from schema.check_quotes import main as check_quotes_main
 from schema.claim import Readout
 from scans.base import ROOT, available, out_dir, write_result
 from scans.memo.merge import build_readout, write_readout
-from steering import engine, verdicts
+from steering import engine
+from scans.memo import pieces
 from steering.models import RewordLine, RewordReading
 from store import open_store
 
@@ -151,7 +152,7 @@ def test_full_room_on_seed_drop_retention_adds_new_claims_and_names_the_mover(en
     assert rev.before.verdict == "not_enough_in_the_room" and rev.after.verdict == "looking_weak"
     new = [claims_by_id(got.readout)[i] for i in rev.claims_added]
     assert {"nrr_12m", "grr_12m"} <= {c.value.label for c in new if c.value}
-    assert {verdicts.piece_of(c) for c in new} > {"retention"}  # every piece reran on the full room, not only retention
+    assert {pieces.piece_of(c) for c in new} > {"retention"}  # every piece reran on the full room, not only retention
     assert all(c.id.endswith(".steer1") for c in new)
     nrr = next(c for c in new if c.value and c.value.label == "nrr_12m")
     assert nrr.value.number == pytest.approx(87.31, abs=0.01) and nrr.severity == "flag"
@@ -176,7 +177,7 @@ def test_full_room_on_seed_drop_retention_adds_new_claims_and_names_the_mover(en
 def test_full_room_reruns_every_piece_and_lines_open_from_the_full_room(env):
     got = engine.steer(SEED, "retention", "read the full room")
     moved = {r[1] for r in rows(got.changes, "piece moved")}
-    assert "the_pitch_itself" in moved  # a piece other than the one typed on was rebuilt from the full room
+    assert "customers" in moved  # the contracts move customers, a piece other than the one typed on
     assert set(got.readout.scans_run) == set(available())
     for c in got.readout.claims:
         assert engine.claim_room(got.readout, c.id, SEED) == FULL

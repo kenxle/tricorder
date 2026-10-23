@@ -57,12 +57,13 @@ def test_every_claim_lands_in_the_header_or_one_body_section(readout):
     cash = by_check(readout, "capitalised_spend_vs_pnl_and_cash")[0]
     billings = by_check(readout, "billings_vs_recognised_revenue")[0]
     assert where[cash] == {10}       # label cash
-    assert where[billings] == {6}    # entry 1.12, business model
+    assert where[billings] == {7}    # the merge places billings in traction and revenue
     for cid in by_check(readout, "deck_revenue_vs_pnl"):
         assert where[cid] == {7}     # traction
 
 
-def test_flags_open_the_summary_in_full_once_and_are_referred_to_elsewhere(readout):
+def test_legacy_readout_flags_open_the_summary_once_and_are_referred_to_elsewhere(readout):
+    readout = readout.model_copy(update={"pieces": [], "top_flags": []})
     memo = build_memo(readout, ROOM, AT)
     flags = flagged(readout)
     assert flags
@@ -90,6 +91,7 @@ def readout_claim(readout, cid):
 
 
 def test_the_arr_figures_sit_side_by_side_from_claims_only(readout):
+    readout = readout.model_copy(update={"pieces": [], "top_flags": []})
     memo = build_memo(readout, ROOM, AT)
     line = memo.line("s02-flag-arr")[1]
     assert line and line.composed and line.label == "Red flag 1: ARR figures in the room disagree"
@@ -109,7 +111,8 @@ def test_the_arr_figures_sit_side_by_side_from_claims_only(readout):
 
 def test_the_pitch_claims_read_as_one_line_per_section(readout):
     memo = build_memo(readout, ROOM, AT)
-    pitch = {c.id for c in readout.claims if c.check.name == "claim_support"}
+    table = next(p for p in readout.panels if p.name == "claims table")
+    pitch = {row[table.columns.index("claim id")] for row in table.rows}
     if not pitch:
         return
     for s in memo.sections:
@@ -155,11 +158,23 @@ def test_a_section_with_nothing_in_it_is_one_line(readout):
 def test_not_assessed_is_said_once_and_no_gap_repeats_in_a_section(readout):
     memo = build_memo(readout, ROOM, AT)
     s2 = [ln for ln in memo.section(2).lines if ln.kind == "gap" and ln.id.startswith("s02-piece")]
-    assert [ln.id for ln in s2] == ["s02-pieces-unassessed"]
-    assert s2[0].text.count(",") >= 1  # every unassessed piece is named in that one line
+    assert s2 == []  # the merge supplies a verdict for every piece
     for s in memo.sections:
         texts = [ln.text for ln in visible(s, "partner") if ln.kind == "gap"]
         assert len(texts) == len(set(texts)), s.title
+
+
+def test_real_merge_verdicts_and_headlines_reach_the_memo(readout):
+    memo = build_memo(readout, ROOM, AT)
+    assert readout.pieces and readout.top_flags
+    for flag in readout.top_flags:
+        line = memo.line(f"s02-{flag.kind}-{flag.rank}")[1]
+        assert line.text == partner_text(flag.text)
+        assert line.claim_ids == flag.claim_ids
+    for piece in readout.pieces:
+        line = memo.line(f"s02-piece-{piece.name}")[1]
+        assert set(line.claim_ids) == set(piece.claim_ids)
+    assert "pieces" not in memo.steps_missing and "top_flags" not in memo.steps_missing
 
 
 def test_room_gaps_sit_in_their_section_and_link_the_ask_list(readout):

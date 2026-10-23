@@ -26,7 +26,7 @@ from schema.check_quotes import check_claim
 from schema.claim import PIECE_ORDER, Claim, Panel, Piece, PieceRevision, Readout, ScanResult, Steer
 from scans.base import available, now_iso, out_dir, room_name, write_result
 from scans.memo.merge import build_readout, load_results, write_readout
-from steering import verdicts
+from scans.memo import pieces, top_flags
 from steering.classify import model_available, read_sentence
 from steering.models import Reading, SteerOutcome, StoreNote
 from steering.rereads import exclude_from_recurring, possessive
@@ -67,7 +67,7 @@ def steerable(room_dir: Path) -> Readout:
     """The room's readout with verdicts, built by the same rules a steer uses."""
     readout = load_readout(Path(room_dir))
     if not readout.pieces:
-        readout, _ = _rebuild(readout, Path(room_dir))
+        readout = _rebuild(readout, Path(room_dir))
     return readout
 
 
@@ -90,12 +90,12 @@ def _key(c: Claim) -> tuple:
 
 
 def _piece_claims(readout: Readout, piece: str) -> list[Claim]:
-    return [c for c in readout.claims if verdicts.piece_of(c) == piece]
+    return [c for c in readout.claims if pieces.piece_of(c) == piece]
 
 
 def _scans_feeding(readout: Readout, piece: str) -> list[str]:
     built = set(available())
-    names = {c.scan for c in _piece_claims(readout, piece)} | {c.scan for c in readout.unverified if verdicts.piece_of(c) == piece}
+    names = {c.scan for c in _piece_claims(readout, piece)} | {c.scan for c in readout.unverified if pieces.piece_of(c) == piece}
     if any(g.piece == piece for g in readout.gaps):
         names |= set(readout.scans_run)
     names &= built
@@ -139,8 +139,8 @@ def _merge_piece(before: Readout, fresh: Readout, piece: str, tag: str) -> tuple
     dropped = [c.id for c in old if _key(c) not in new_keys]
     added = [c.id for c in new_piece if c.id not in {o.id for o in old}]
     claims = [c for c in before.claims if id(c) not in taken] + new_piece
-    unverified = [c for c in before.unverified if verdicts.piece_of(c) != piece] + \
-                 [remap(c) for c in fresh.unverified if verdicts.piece_of(c) == piece]
+    unverified = [c for c in before.unverified if pieces.piece_of(c) != piece] + \
+                 [remap(c) for c in fresh.unverified if pieces.piece_of(c) == piece]
     gaps = [g for g in before.gaps if g.piece != piece] + [g for g in fresh.gaps if g.piece == piece]
     return before.model_copy(update={"claims": claims, "unverified": unverified, "gaps": gaps}), added, dropped
 
@@ -166,19 +166,12 @@ def _path_words(reading: Reading) -> str:
     return f"Read as {kind} by wording rules{why}."
 
 
-def _rebuilt_words(by: str) -> str:
-    if by == "merge":
-        return "Verdicts rebuilt by the merge's pieces and top_flags steps."
-    return ("Verdicts rebuilt by steering's copy of the FRAMEWORKS rules, because the merge's pieces "
-            "and top_flags steps are not built yet." if by == "steering" else f"Verdicts rebuilt by {by}.")
-
-
 def _moved_by(before_r: Readout, after_r: Readout, before: Piece, after: Piece, added: list[str], dropped: list[str]) -> list[str]:
     if before.verdict == after.verdict:
         return []
     now = {c.id: c for c in after_r.claims}
     was = {c.id: c for c in before_r.claims}
-    decisive = lambda c: verdicts.contradicted(c) or verdicts.corroborated(c)  # noqa: E731
+    decisive = lambda c: pieces.contradicted(c) or pieces.corroborated(c, was | now)  # noqa: E731
     moved = [i for i in added if i in now and decisive(now[i])] + [i for i in dropped if i in was and decisive(was[i])]
     return moved or list(after.reason_claim_ids)
 
@@ -219,21 +212,21 @@ def scenario_reasons(readout: Readout) -> Readout:
     """A piece the operator steered with a scenario line reads that line as its reason: the rewrite redoes the
     piece, it does not only add to it. The check's line it replaces stays in the readout."""
     by_id = {c.id: c for c in readout.claims}
-    pieces = {p.name: p for p in readout.pieces}
+    by_piece = {p.name: p for p in readout.pieces}
     for panel in readout.panels:
         if not panel.name.startswith("steer "):
             continue
         for row in panel.rows:
             if row[0] == "replaced" and row[3] in by_id:
-                name = verdicts.piece_of(by_id[row[3]])
-                if name in pieces:
-                    pieces[name] = pieces[name].model_copy(update={"reason": by_id[row[3]].text, "reason_claim_ids": [row[3]]})
-    return readout.model_copy(update={"pieces": [pieces[p.name] for p in readout.pieces]})
+                name = pieces.piece_of(by_id[row[3]])
+                if name in by_piece:
+                    by_piece[name] = by_piece[name].model_copy(update={"reason": by_id[row[3]].text, "reason_claim_ids": [row[3]]})
+    return readout.model_copy(update={"pieces": [by_piece[p.name] for p in readout.pieces]})
 
 
-def _rebuild(readout: Readout, room: Path) -> tuple[Readout, str]:
-    out, by = verdicts.rebuild(readout, room)
-    return scenario_reasons(out), by
+def _rebuild(readout: Readout, room: Path) -> Readout:
+    out = top_flags.apply(pieces.apply(readout, room), room)
+    return scenario_reasons(out)
 
 
 def reads_room(readout: Readout, room_dir: Path) -> Path:
@@ -269,10 +262,10 @@ def steer(room_dir: str | Path, piece: str, sentence: str, claim_id: str | None 
         line = next((c for c in current.claims + current.unverified if c.id == claim_id), None)
         if line is None:
             raise BadSteer(f"no line {claim_id!r} in the readout")
-        if verdicts.piece_of(line) != piece:
-            raise BadSteer(f"line {claim_id!r} is in {verdicts.piece_of(line)}, not {piece}")
+        if pieces.piece_of(line) != piece:
+            raise BadSteer(f"line {claim_id!r} is in {pieces.piece_of(line)}, not {piece}")
     if not current.pieces:
-        current, _ = _rebuild(current, room_dir)
+        current = _rebuild(current, room_dir)
     n = len(current.revisions) + 1
     tag = f"steer{n}"
 
@@ -372,14 +365,14 @@ def steer(room_dir: str | Path, piece: str, sentence: str, claim_id: str | None 
     # The record of what replaced what goes in before the rebuild, so the scenario reason applies.
     rows = [["replaced", old, next(c.text for c in current.claims + working.claims if c.id == old), new] for old, new in replaced]
     working = working.model_copy(update={"panels": working.panels + [Panel(name=f"steer {n}: what changed", columns=["Change", "Claim", "Before", "After"], rows=rows)]})
-    after_r, rebuilt_by = _rebuild(working, source_room)
+    after_r = _rebuild(working, source_room)
     working_panels = [p for p in after_r.panels if p.name != f"steer {n}: what changed"]
 
     before_pieces = {p.name: p for p in current.pieces}
     after_pieces = {p.name: p for p in after_r.pieces}
     moved_pieces = [p for p in PIECE_ORDER if before_pieces[p].verdict != after_pieces[p].verdict]
     if piece == OVERVIEW:
-        piece = moved_pieces[0] if moved_pieces else next((verdicts.piece_of(c) for c in after_r.claims if c.id in added), PIECE_ORDER[0])
+        piece = moved_pieces[0] if moved_pieces else next((pieces.piece_of(c) for c in after_r.claims if c.id in added), PIECE_ORDER[0])
         typed_on = OVERVIEW
     else:
         typed_on = piece
@@ -411,7 +404,7 @@ def steer(room_dir: str | Path, piece: str, sentence: str, claim_id: str | None 
     if before_piece.reason != after_piece.reason:
         verdict += " The reason line changed."
     numbers = "" if reading.number_text and not reading.term else " The checks' numbers are unchanged."
-    note = " ".join(filter(None, [headline, head, verdict + numbers, " ".join(notes), _path_words(reading), _rebuilt_words(rebuilt_by)]))
+    note = " ".join(filter(None, [headline, head, verdict + numbers, " ".join(notes), _path_words(reading), "Verdicts rebuilt by the shared readout rules."]))
 
     sources_added = sorted({f"{s.uri}, {s.locator}" for i in added for s in now[i].sources}
                            - {f"{s.uri}, {s.locator}" for c in current.claims for s in c.sources})
@@ -434,14 +427,14 @@ def steer(room_dir: str | Path, piece: str, sentence: str, claim_id: str | None 
         rows.append(["source", "", room_name(room_dir), room_name(source_room)])
     if reading.number_text and not reading.term:
         rows.append(["number", claim_id or "", reading.number_text, "unchanged"])
-    rows.append(["rebuilt by", "", "", rebuilt_by])
+    rows.append(["rebuilt by", "", "", "merge"])
     changes = Panel(name=f"steer {n}: what changed", columns=["Change", "Claim", "Before", "After"], rows=rows)
 
     readout = after_r.model_copy(update={"revisions": current.revisions + [revision], "panels": working_panels + [changes]})
     write_readout(readout, room_dir)
     store = _save(readout, fund, room_dir, source_room) if save else StoreNote(saved=False, why="not asked to save")
     return SteerOutcome(readout=readout, revision=revision, changes=changes, reading=reading,
-                        source_room=room_name(source_room), rebuilt_by=rebuilt_by, store=store)
+                        source_room=room_name(source_room), rebuilt_by="merge", store=store)
 
 
 def _llm():
