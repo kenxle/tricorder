@@ -73,3 +73,17 @@ def test_source_refuses_an_answer_key_even_inside_a_room(tmp_path, monkeypatch):
     r = client.post("/api/rooms/sealed_room/source", json=_source("answer_key.json", "whole"))
     assert r.status_code == 404 and "planted" not in r.text
     assert client.get("/api/rooms/sealed_room/files/answer_key.json").status_code == 404
+
+
+# Code review of the fix round, item 6: a readout that cannot be read never blocks the room's files. ----
+
+
+@pytest.mark.parametrize("bad", ["{not json", '{"room": "hollis_voice", "old_field": 1}'])
+def test_an_unreadable_readout_falls_back_to_the_room(tmp_path, monkeypatch, bad):
+    monkeypatch.setenv("TRICORDER_OUT_DIR", str(tmp_path))
+    (tmp_path / "hollis_voice").mkdir()
+    (tmp_path / "hollis_voice" / "readout.json").write_text(bad, encoding="utf-8")
+    assert client.get("/api/rooms/hollis_voice/files/01_overview/claims.json").status_code == 200
+    body = {"kind": "file", "uri": "02_financials/financial_model.xlsx", "locator": "ARR_TOTAL", "quote": "2240868"}
+    r = client.post("/api/rooms/hollis_voice/source", json=body)
+    assert r.status_code == 200 and r.json()["text"] == "2240868"

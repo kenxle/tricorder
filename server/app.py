@@ -59,11 +59,34 @@ def room_dir(room: str) -> Path:
     return rooms()[room]
 
 
+_reads: dict[str, tuple[tuple[int, int], Path]] = {}  # readout.json path -> ((mtime_ns, size), the room it reads)
+
+
+def _reads_room(path: Path) -> Path:
+    """readout_room, parsed once per change of readout.json. A readout that cannot be read (bad JSON, an
+    old schema) reads the room itself, so it never turns a file request into a 500."""
+    target = out_dir(path) / "readout.json"
+    try:
+        st = target.stat()
+    except OSError:
+        return path
+    stamp = (st.st_mtime_ns, st.st_size)
+    hit = _reads.get(str(target))
+    if hit is not None and hit[0] == stamp:
+        return hit[1]
+    try:
+        reads = readout_room(path)
+    except (ValueError, OSError):  # pydantic's ValidationError is a ValueError
+        reads = path
+    _reads[str(target)] = (stamp, reads)
+    return reads
+
+
 def readable_rooms(room: str) -> list[Path]:
     """Where the room's files open: the room itself, or, once a "read the full room" steer
     switched its readout, the full room first (scans.memo.merge.readout_room). Never any other folder."""
     path = room_dir(room)
-    return source_rooms(readout_room(path), path)
+    return source_rooms(_reads_room(path), path)
 
 
 def _inside(rooms_: list[Path], rel: str) -> Path:
