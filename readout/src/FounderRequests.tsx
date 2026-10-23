@@ -291,7 +291,6 @@ function AddReply({ lines, room, box, onDone }: { lines: Lines; room: string; bo
           <p className="fr-title">What changed</p>
           <ul className="fr-steps">
             {receipt.summary.map((s) => <li key={s}>{s}</li>)}
-            {receipt.scans_rerun.some((s) => !s.ok) && <li>A check failed to run again, so its part of the readout is from before.</li>}
           </ul>
         </div>
       )}
