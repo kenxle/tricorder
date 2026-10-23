@@ -1,6 +1,6 @@
 # The readout gets verdicts and headline flags
 
-The merge will fill the company overview and headline flags. Steering will use the same rules. No decision is waiting on Ken.
+The merge now fills the company overview and headline flags. Steering uses the same rules. No decision is waiting on Ken.
 
 ## Scope and behavior
 
@@ -25,12 +25,14 @@ Keep the old paths as retired notices pending Ken's cleanup, because repository 
 
 | Check | Owner | Evidence and state |
 |---|---|---|
-| Piece assignment, verdicts, source counts, reasons, missing data | Codex | Pending focused tests |
-| Headline ranking, ties, limits, unrankable flags | Codex | Pending focused tests |
-| Steering uses the merge rules and preserves revisions | Codex | Pending steering and route tests |
-| Actual room scans, merge, memo export, and repeatability | Codex | Pending reproducible evidence script |
-| Full Python suite and web build | Codex | Pending `bin/ci-py` and `bin/ci-web` |
-| Independent integrated code and acceptance review | Independent reviewer | Pending after implementation |
+| Piece assignment, verdicts, source counts, reasons, missing data | Codex | Pass: `scans/memo/tests/test_pieces_top_flags.py` |
+| Headline ranking, ties, limits, unrankable flags | Codex | Pass: same focused tests, including the actual cohort comparison |
+| Steering uses the merge rules and preserves revisions | Codex | Pass: steering and route tests in the full suite |
+| Actual room scans, merge, memo export, and repeatability | Codex | Pass: [verify_rooms.py](verify_rooms.py), [room summaries](evidence/summary.json), and [claim rows](evidence/claims.csv) |
+| Browser flow and source drill-down | Codex | Pass: [browser evidence](evidence/browser.json), [readout screenshot](evidence/readout_source.png), [memo screenshot](evidence/memo_summary.png). Driver: `/tmp/playwright-test-tricorder-verdicts.js` |
+| Full Python suite and web build | Codex | Pass at `84097cf`: `bin/ci-py`, 657 passed, no skips; `bin/ci-web`, type check and build passed. Final integration with newer main changes pending. |
+| Independent integrated code and acceptance review | Independent reviewer | Approved at `84097cf`; [findings and fixes](01_reviews.md) |
+| Associate and partner persona review | Separate persona reviewers | Both accepted the regenerated summary after their wording fixes. Simulated judgment; source-only review. [Review record](01_reviews.md) |
 
 ## Readiness and progress
 
@@ -40,7 +42,7 @@ The new steps pass their focused behavior tests. The actual room rebuilds and me
 
 Integration exposed a memo bug: headline text bypassed the existing cleanup of script paths. The export now applies that same cleanup to headline text. Tests that assumed these merge steps did not exist now cover current results or explicitly cover a legacy readout without verdicts.
 
-The completed change goes through a pull request with the full checks passing. The roadmap's whole readout slice stays open until linking, asks, and connecting prose are handled.
+The completed change goes through a pull request with the full checks passing. New memo presentation changes landed on main during verification; they are being integrated before the final checks. The roadmap's whole readout slice stays open until linking, asks, and connecting prose are handled.
 
 ## Cleanup paths for Ken
 

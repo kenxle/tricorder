@@ -1,6 +1,6 @@
 # Review findings and fixes
 
-The independent reviewers found trust and ranking problems in the first implementation. The fixes are being verified before release.
+The independent reviewers found trust and ranking problems in the first implementation. They accepted the fixes at `84097cf` before release.
 
 ## Code and acceptance review
 
@@ -34,4 +34,4 @@ Rating: workable, with required wording fixes before sharing.
 
 ## Follow-up verification
 
-The [spec's verification table](00_spec.md#verification) holds the current results. Re-review of the changed behavior is pending.
+The [spec's verification table](00_spec.md#verification) holds the current results. The code reviewer approved the changed implementation at `84097cf` after rechecking empty headlines and the real retention comparison. Both primary persona reviewers re-read the generated memo and accepted the pending-check and source-link wording. They reported no remaining required fixes within this slice.
