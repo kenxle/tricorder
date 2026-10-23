@@ -6,7 +6,7 @@ Roadmap slice: [steering](../../ongoing/ROADMAP.md#steering). Route: prototype f
 
 ## Attention needed
 
-1. **Ken: does a definition steer may make a new figure?** "Treat the pilot as non-recurring" adds ARR $2,060,868 computed from two P&L cells, beside the check's $2,240,868. [03_prd.md](03_prd.md), Questions 1 to 3.
+1. **Ken: may a definition steer make a new figure?** "Treat the pilot as non-recurring" adds ARR $2,060,868 computed from two P&L cells, beside the check's $2,240,868. [03_prd.md](03_prd.md), Questions 1 to 3.
 2. **Readout slice owner (captain): `scans/memo/pieces.py` and `top_flags.py` do not exist.** Steering carries a copy of the FRAMEWORKS rules in `steering/verdicts.py` and uses the merge's steps as soon as they exist. The copy can move into `scans/memo/` as is. Until then the readout page (`App.tsx`) shows no pieces; only `/steer.html` does.
 3. **Entry 1.3 owner (design-and-finance): `scans/redflags/cohorts.py` is new**, the script half of the cohort rebuild (PF3), written so "read the full room" on retention has a check to rerun. It adds 3 claims on Hollis Voice; the model half is still yours.
 4. **Store owner: `store/tests/test_cli.py` edited.** It asserted 10 Hollis Voice claims; with cohorts there are 13. It now reads the count from the readout its fixture built. Any new redflags check (contract terms too) would have broken it.
