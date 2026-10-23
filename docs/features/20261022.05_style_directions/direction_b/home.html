@@ -309,9 +309,10 @@ blockquote footer { font-size: 0.88rem; color: var(--ink-2); }
 .tabs-list li span { color: var(--ink-2); margin-right: 0.5em; }
 
 .path { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: var(--s-6); max-width: 54rem; }
-.path .step { border: 1px solid var(--rule-strong); background: var(--panel); padding: var(--s-4); min-width: 0; position: relative; }
+.path .step { border: 1px solid var(--rule-strong); background: var(--panel); padding: var(--s-4); min-width: 0; position: relative; display: grid; grid-template-rows: auto auto 1fr; align-content: start; }
 .path .step + .step { border-left: 0; }
-.path .click { display: block; margin-bottom: var(--s-2); }
+.path .click { display: block; margin: 0; }
+.path .step .hint { display: block; margin: 0; }
 .path .click b { color: var(--accent); font-weight: 700; }
 .path .step strong { display: block; font-weight: 650; margin: var(--s-2) 0 var(--s-1); }
 @media (max-width: 760px) { .path { grid-template-columns: minmax(0, 1fr); } .path .step + .step { border-left: 1px solid var(--rule-strong); border-top: 0; } }
@@ -387,7 +388,7 @@ footer.site nav { display: flex; gap: var(--s-5); flex-wrap: wrap; }
         </div>
       </div>
       <aside class="panel slip" aria-label="Three lines from the Hollis Voice readout">
-        <div class="panel-head"><span class="label">Hollis Voice, Series A</span><span class="label">Synthetic</span></div>
+        <div class="panel-head"><span class="label">Hollis Voice, Series A</span><span class="label">Readout</span></div>
         <table>
           <thead><tr><th scope="col" aria-label="Line"></th><th scope="col">Stated</th><th scope="col" class="found">Found</th></tr></thead>
           <tbody>
@@ -412,7 +413,6 @@ footer.site nav { display: flex; gap: var(--s-5); flex-wrap: wrap; }
           <h3>Hollis Voice, Series A</h3>
           <span class="label">Readout, as of 2026-09-30</span>
         </div>
-        <div class="synthetic" style="border-left:0;border-right:0;border-top:0"><b>Synthetic</b> Synthetic data room for Deal Flow NYC 2026. Not a real company.</div>
 
         <div class="line flag green">
           <div class="line-no">L.01</div>
@@ -461,7 +461,7 @@ footer.site nav { display: flex; gap: var(--s-5); flex-wrap: wrap; }
       <h2 id="dis-title" class="wide">ARR, stated three ways, side by side.</h2>
       <div class="table-box" role="region" aria-label="Disagreement: ARR" tabindex="0">
         <table>
-          <caption>Disagreement: ARR <span class="label" style="margin-left:0.6em">Hollis Voice, synthetic</span></caption>
+          <caption>Disagreement: ARR <span class="label" style="margin-left:0.6em">Hollis Voice</span></caption>
           <thead><tr><th scope="col">Line</th><th scope="col">Source</th><th scope="col" class="n">States</th><th scope="col">Where</th></tr></thead>
           <tbody>
             <tr><td class="ln">L.01</td><td>Pitch video</td><td class="n">about $3,000,000</td><td class="where">pitch video, 0:35</td></tr>
@@ -472,7 +472,6 @@ footer.site nav { display: flex; gap: var(--s-5); flex-wrap: wrap; }
       </div>
       <p>Largest gap: about $760,000, between the video and the model. The deck is $259,132 above the model. The room does not explain either gap.</p>
       <div class="ask"><span class="lamp" aria-hidden="true"></span><p><strong>Ask the founder:</strong> which of these is ARR as of 2026-09-30, and can you walk us from the billing data to it?</p></div>
-      <p class="hint" style="margin-top:var(--s-5)">Synthetic data room for Deal Flow NYC 2026. Not a real company.</p>
     </div>
   </div>
 </section>
@@ -505,7 +504,7 @@ footer.site nav { display: flex; gap: var(--s-5); flex-wrap: wrap; }
       <h2 id="partner-title">A memo you can check yourself.</h2>
       <p class="lede">Any line opens its sources in two clicks, and you can change the model's assumptions to see what the deal needs to be true.</p>
       <div class="path" aria-label="Two clicks from the overview to a source">
-        <div class="step"><span class="label">Overview</span><strong>Traction and revenue</strong><span class="stamp weak flat"><svg aria-hidden="true"><use href="#m-weak"/></svg>looking weak</span></div>
+        <div class="step"><span class="label click"><b>Start</b> The overview</span><strong>Traction and revenue</strong><span class="hint">Marked looking weak</span></div>
         <div class="step"><span class="label click"><b>Click 1</b> The claim</span><strong>ARR, stated three ways</strong><span class="hint">Video, deck and model</span></div>
         <div class="step"><span class="label click"><b>Click 2</b> The source</span><strong>pitch_deck.pdf, slide 3</strong><span class="hint">$2,500,000 on the traction slide</span></div>
       </div>
