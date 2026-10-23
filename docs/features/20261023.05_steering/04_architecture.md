@@ -20,9 +20,10 @@ A steer is one call: `steering.engine.steer(room_dir, piece, sentence, claim_id=
 |---|---|---|
 | Sentence reading | `steering/classify.py` | `read_sentence(sentence, llm=None) -> Reading`. Model path through `clients.llm.read` (route `bulk`) when `ANTHROPIC_API_KEY` is set and `TRICORDER_OFFLINE` is not; wording rules otherwise. The model's answer is checked against the sentence (STEER-R3). |
 | Rereads | `steering/rereads.py` | `exclude_from_recurring(term, claims, room_dir, new_id, author)`: the one definition reread (STEER-R6). Reads P&L cells through `schema.readers.xlsx_sheet`; uses `figure_matches` from `scans.redflags.deck_vs_books` for the flag rule; finds the agreement's notice clause with `scans.redflags.contract_reader.read_room` (read-only). Returns the scenario claims, notes, the check line each replaces, and the check's own figure. |
-| Rewording | `steering/reword.py` | The model's rewording of a piece's lines and its number guard (STEER-R9). Never used without a key. |
+| Rewording | `steering/reword.py` | The model's rewording of a piece's lines and its `guard` (STEER-R9): the same figures in the same order with the same units, each stated against the same source word, and the same agree, differ, up, down and negation words. Never used without a key. |
 | Verdicts | `steering/verdicts.py` | `rebuild(readout, room_dir)`: runs the merge's `pieces` and `top_flags` steps when they exist; otherwise steering's copy of FRAMEWORKS "Piece verdicts" steps 1, 3, 4, 5 and "Top green and red flags". `piece_of(claim)` is the step 1 table plus a check-name table for claims with no value or the label `other`. |
-| Engine | `steering/engine.py` | `steer(...)` and the diff. `operator(author)` (request, else `TRICORDER_OPERATOR`). `reads_room` / `claim_room`: the room a readout reads, the full room once switched. `scenario_reasons`: a piece the operator steered reads its scenario line as its reason. |
+| Engine | `steering/engine.py` | `steer(...)` and the diff. `operator(author)` (request, else `TRICORDER_OPERATOR`). `claim_room`: the room a line's source opens from (`scans.memo.merge.reads_room`). `scenario_reasons`: a piece the operator steered reads its scenario line as its reason. `carry(before, fresh, room)`: what a rebuild keeps from a steered readout. |
+| Source room and rebuilds | `scans/memo/merge.py` | `READS_PANEL`, `reads_panel`, `reads_room(readout, room_dir)`, `readout_room(room_dir)`: the room a readout's sources resolve in. `build_readout(room_dir, keep_steers=True)` keeps a steered readout's record through `steering.engine.carry`; `python -m scans.memo <room> --fresh` starts over. |
 | CLI | `steering/__main__.py` | `python -m steering <room_dir> <piece> "<sentence>" [--line <claim id>]`, for the terminal and the verification map. |
 | Entry 1.3, script half | `scans/redflags/cohorts.py` | The Cohorts tab's stated NRR as a claim; with the customer file, the rebuilt NRR and GRR and the cohort counts (FRAMEWORKS 1.3, mechanical check), and the Panel "cohort retention rebuild" listing every customer-file row each cohort sums. The NRR and GRR lines cite the file's header row and name the script and the panel. No model reading. |
 | Routes | `server/steering_routes.py` | `POST /api/rooms/{room}/steer`, `GET /api/rooms/{room}/steerable`, `GET /api/rooms/{room}/revisions`, `GET /api/rooms/{room}/claims/{claim_id}/sources/{i}` (the source text from `engine.claim_room`). One `include_router` line in `server/app.py`, above the static mount. |
@@ -38,6 +39,12 @@ A steer is one call: `steering.engine.steer(room_dir, piece, sentence, claim_id=
 - `SteerOutcome`: `readout`, `revision` (`PieceRevision`), `changes` (the Panel), `reading`, `source_room`, `store` (`{version, new}` or the reason it did not save).
 
 The Panel `steer N: what changed` has columns `Change`, `Claim`, `Before`, `After`. Rows, in order: `headline` (the diff's first line), `typed on` (a piece or `overview`), `read as`, `added`, `dropped`, `replaced` (the check line a scenario line replaces, and the scenario line's id), `wording`, `unverified`, `verdict`, `piece moved`, `reason`, `source` (seed drop to full room), `number`, `rebuilt by`. The page reads the headline, replacements, wording changes and the room switch from it, because `PieceRevision` has no field for them. It leaves `read as` and `rebuilt by` off the screen.
+
+The full-room switch is also its own Panel, so every reader finds it without reading steer panels (review wave 2b, B1):
+
+    {"name": "reads room", "columns": ["Room", "Since"], "rows": [["hollis_voice", "steer 1"]]}
+
+It is written once, by the steer that switched, and kept by every later steer and every rebuild. `scans.memo.merge.reads_room` reads it (and, for readouts steered before it existed, the steer panel's `source` row). It counts only when the name is the seed drop's own sibling full room; any other name is ignored, so a readout cannot send a reader to another folder.
 
 ## Flow
 
@@ -63,7 +70,9 @@ The Panel `steer N: what changed` has columns `Change`, `Claim`, `Before`, `Afte
 
 ## Failure modes
 
-- A rerun scan crashes: the error propagates, nothing is written.
+- A rerun scan crashes: `ScanFailed` names the scan, the route answers 500 with it, and nothing is written: every scan runs before any result is written (review wave 2b, O2).
+- A rebuild (`POST .../readout`, `python -m scans.memo`, a founder upload) of a steered readout keeps its revisions, steer panels, scenario lines and switch, and a switched seed drop rebuilds from the full room's results (review wave 2b, S7). A founder file added to the seed drop after a switch is saved there, but the rebuild reads the full room's results, so it shows only once the full room has it too.
+- Steer fields are size limited at the route: `sentence` 1,000 raw (500 after spaces collapse, in the engine), `author` 80, `claim_id` 120, `piece` and `fund` 64. Over the limit is a 422 (review wave 2b, S3).
 - The store refuses: the steer stands; `store` carries the reason.
 - Two steers at once on one room: the second reads the readout the first wrote, or the one before it. Last write wins on `out/`; the store keeps both versions. Acceptable on one laptop.
 
