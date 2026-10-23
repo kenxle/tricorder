@@ -11,8 +11,8 @@ readout.json --build_memo--> Memo v1 --apply_edits--> Memo v2 ...      (memo/bui
                  | quote checker again (schema.check_quotes.check_claim)
                  | text at every source (schema.readers.text_at)
 Memo vN --render_html--> memo.html (offline, drill-downs from embedded JSON)   (memo/html.py)
-Memo vN --render_pdf---> memo.pdf  (reportlab, numbered section notes)          (memo/pdf.py)
-Memo vN --store.save---> out/<room>/memo/memo_vN.json (never overwritten)       (memo/store.py)
+Memo vN --render_pdf---> memo_vN.pdf, once; memo.pdf is its copy (reportlab)       (memo/pdf.py, memo/export.py)
+Memo vN --store.save---> out/<room>/memo/memo_vN.json (exclusive create)          (memo/store.py)
 ```
 
 ## Modules
@@ -105,7 +105,7 @@ See the PRD's failure table. One more: a source whose text is longer than 6,000 
 
 ## Security and privacy
 
-The page holds the room's quoted text. It is written under `out/` (git-ignored) and served only on localhost. The routes take the room id through `server.app.room_dir`, which refuses anything not a known room. No outside call.
+The page holds the room's quoted text. It is written under `out/` (git-ignored) and served only on localhost. The routes take the room id through `server.app.room_dir`, which refuses anything not a known room. No outside call. Every source resolves through `memo/rooms.py`: inside the readout's room, or the full room a "read the full room" steer names (`scans.memo.merge.reads_room`), never by absolute path, `..` or into an answer key; `POST /source` and `/files` use the same rule. The page is filled in one pass over its template, and its embedded JSON escapes `<`, `>` and `&` (wave 2b review, B1, S1, S2).
 
 ## Proposed schema changes
 

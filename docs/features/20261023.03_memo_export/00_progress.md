@@ -45,8 +45,30 @@ Roadmap slice: [memo-export](../../ongoing/ROADMAP.md#memo-export). Route: proto
 | Partner PDF, recommendation first, sources read as words | builder | done | `evidence/fix_round/pdf_check.txt`, `memo_v3.pdf` | none |
 | Edit in one sitting, 409 reapply, detach on a new figure | builder | done | `evidence/fix_round/edit_in_page.json`, `memo_edit_*.png` | none |
 | Many pitch claims, steered claims, tests robust to new checks | builder | done | `test_the_pitch_claims_read_as_one_line_per_section`, `test_a_claim_the_steer_replaced_is_the_new_lines_before`; suite green after three merges | none |
-| Independent review | orchestrator | not started | | checkpoint |
+| Independent review | orchestrator | done (wave 2b) | `docs/features/20261022.10_feature_breakdown/review_wave2b.md` | fix round below, merged with the steering half |
 | Persona agents, cold | orchestrator | done on the first build | recorded in [02_prototype_decision.md](02_prototype_decision.md) | re-run on the fix round |
+
+## Review round (wave 2b)
+
+Branch `fix/wave2b-memo`, from origin/main b948d09. Each test was run red against the code before the fix (by checking the old file out, running, and applying the fix back), then green.
+
+| Finding | Fix | Commit | Test, red then green |
+|---|---|---|---|
+| B1, memo and server half: a steered seed drop's lines checked and opened in the seed drop (34 could not verify, 404 from `/source` and `/files`) | The memo build (quote check, `read_sources`, the PDF notes, the ARR side by side) and `POST /source` and `GET /files` resolve sources through `scans.memo.merge.reads_room` / `readout_room`, then `memo/rooms.py` keeps the file inside the readout's room or the one full room the marker names | 7d9b26a, 3ce33f4, da23932 | `memo/tests/test_steered_room.py`: export has 0 could not verify; the PDF notes the customer file; `POST /api/rooms/hollis_voice_seed_drop/source` for a `.steer1` line's source gives 200, `/files` too; before a steer both stay 404 |
+| S1: chained `str.replace` let a line expand `{{DATA}}` and put markup in the page | One regex pass over the template (`memo.html.fill`); the embedded JSON escapes `<`, `>`, `&`, U+2028/9. No banner, numbered contents, no edge stripe kept | dbc1269 | `test_a_line_cannot_expand_a_placeholder_or_carry_markup` |
+| S2: `POST /source` read any file (repo files, answer keys, other rooms) | `memo.rooms.resolve`: no absolute path, no `..`, no `answer_key*`, only the room (or its switched full room); 404 otherwise | 7d9b26a | `server/tests/test_app.py::test_source_refuses_any_path_outside_the_room` (6 paths), `test_source_refuses_an_answer_key_even_inside_a_room`; `memo/tests/test_rooms.py` |
+| S3, memo half: edits of any size; PDF rebuilt on every GET | Limits in `memo/model.py` (line 2,000, author 80, batch 100, claims a line 50, operator lines a memo 500): 422 from the route, EditError from the CLI. Each version's PDF built once to `memo_v<N>.pdf` under a per-room lock; `GET memo.pdf` serves it | cba90b3 | `test_oversized_edits_are_refused_before_anything_is_saved`, `test_the_pdf_is_built_once_per_version` |
+| S4: a lost race was a 500, and an edit could land on a newer version | The route passes the version it checked into `edit(base=...)`; `store.save` is an exclusive create (temp file, then `os.link`); `FileExistsError` is the same 409 with `latest_version`. `POST /memo` too | cba90b3 | `test_a_save_that_loses_the_race_is_a_409_not_a_500`, `test_racing_saves_of_one_version_make_one_version` (8 threads: one version) |
+| O3: PDF notes short of ME-R14 | File sources carry the export's read date (`SourceText.read_at`); every note prints a date. ME-R14 amended: the claim id stays out of the PDF (ME-R20) | b53cef8 | `test_every_claim_in_the_pdf_has_a_note_naming_its_file_and_locator` (every note dated) |
+| O4: the CLI ignored `TRICORDER_ROOMS_DIR` | `founder_requests.intake.rooms_root()`, as the server | 7de4522 | `test_cli_finds_a_readouts_room_under_tricorder_rooms_dir` |
+
+Not done here, and why:
+
+- B1 names `schema.check_quotes`' own CLI as a reader too. `schema/` is frozen for this round, so that CLI still checks against the room it is given. Pass the full room to it by hand after a switch.
+- `scans/memo/merge.py` on this branch holds a stand-in of the steering branch's `reads_room` and `readout_room`, copied verbatim. Take `fix/wave2b-steering`'s version at merge.
+- On this branch alone, `server/tests/test_steering_routes.py::test_a_full_room_line_opens_from_the_seed_drop_page` fails: it asserted the old 404 from `POST /source`. The steering branch removes that assertion. A trial merge of both branches in scratch passed the whole suite.
+
+Real path, in scratch (offline, no key): `bin/smoke` on hollis_voice and its seed drop, then `python3 -m memo` on the seed drop gave 71 claims, 0 could not verify; after `steering.engine.steer(..., "retention", "read the full room")` the export gave version 2, 78 claims, 0 could not verify (the review saw 48 and 34). Over HTTP (uvicorn on port 8841, stopped by its pid): the `.steer1` line's `/source` and `/files` 200; `../../CLAUDE.md`, the answer key by absolute path and another room's CSV 404; the `{{DATA}}` and `<img onerror>` lines saved and rendered as text; a 2,001-character line and an 81-character author 422; `GET memo.pdf` twice in 0.016 s each; six concurrent edits on one version gave one 200 and five 409s, versions `[1,2,3,4]`.
 
 ## Decisions and events
 
@@ -62,3 +84,5 @@ Roadmap slice: [memo-export](../../ongoing/ROADMAP.md#memo-export). Route: proto
 
 - `/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/memo-export/` (scratch out folders `fix1` to `fix3`, the verify runs `memo-export`, `memo-export-final`, `memo-export-fix` to `memo-export-fix7`, `memo-export-final2`, `memo-export-guard`, probe scripts, and the scratch Node Playwright in `pw/`).
 - The worktree `/home/claude/wt/memo-export` once merged.
+- The worktree `/home/claude/wt/fix-memo` and branch `fix/wave2b-memo` once merged.
+- `/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/fix-memo/` (patches, `ci.log`, `integ.log`, the `run/` out, store and cache, `uvicorn.log`, `uvicorn.pid`), and the trial-merge worktree at `.../scratchpad/fix-memo/integ` (detached; remove with `git worktree remove`).
