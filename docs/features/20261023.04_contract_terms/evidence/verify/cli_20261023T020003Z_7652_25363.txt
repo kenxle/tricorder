@@ -1,0 +1,4 @@
+$ python3 -m scans.redflags data_room/hollis_voice_seed_drop
+(cwd /home/claude/wt/contract-terms, TRICORDER_OUT_DIR=/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/contract-terms/verify/contract-terms/out)
+redflags: 6 claims, 7 gaps -> /tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/contract-terms/verify/contract-terms/out/hollis_voice_seed_drop/redflags.json
+exit 0

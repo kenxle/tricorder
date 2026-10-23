@@ -1,0 +1,5 @@
+    from scans.redflags import contract_reader, contract_terms_full, scan
+E   ImportError: cannot import name 'contract_terms_full' from 'scans.redflags' (/home/claude/wt/contract-terms/scans/redflags/__init__.py)
+=========================== short test summary info ============================
+ERROR scans/redflags/tests/test_contract_terms_full.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
