@@ -507,6 +507,8 @@ A persistent store of readouts, so a readout outlives one laptop.
 
 **Judgment:** yes.
 
+**Status:** done for every Done when check. Merged in PR #8 on 2026-10-23. The code is `store/` (`python -m store`) and `server/store_routes.py`. A delete leaves `out/<room>/` in place and lists it in its report; whether it should clear it is open for Ken (board row TRI-wave2-defaults). The page has no panel for list and delete yet. Feature folder: [20261023.01_readout_store](../features/20261023.01_readout_store/00_progress.md).
+
 ### steering
 
 The operator steers the readout: a comment or short instruction on a piece makes Tricorder rewrite that piece, or get more info for it from new sources ([writers' brief, 1:12 PM block](../features/20261022.01_hackathon_plan/00_brief_for_writers.md)). It must be easy enough for a partner who runs diligence alone: one plain sentence on the line that looks wrong, with no setup and no menus, and the answer comes back on that line (Ken's 2:21 PM edit, [PRODUCT_BRIEF.md](PRODUCT_BRIEF.md), "Steering the readout").
@@ -528,6 +530,8 @@ The operator steers the readout: a comment or short instruction on a piece makes
 **Who:** agent.
 
 **Judgment:** yes.
+
+**Status:** done for every Done when check. Merged in PR #8 on 2026-10-23. The code is `steering/`, `server/steering_routes.py` and `readout/src/Steering.tsx`, mounted in the readout page's overview. Until `scans/memo/pieces.py` and `top_flags.py` exist, `steering/verdicts.py` stands in for the piece verdicts (board row TRI-pieces-top-flags). Feature folder: [20261023.05_steering](../features/20261023.05_steering/00_progress.md).
 
 ### room-templates
 
@@ -662,6 +666,8 @@ The rest of customer contracts ([writers' brief](../features/20261022.01_hackath
 
 **Judgment:** yes.
 
+**Status:** done for every Done when check. Merged in PR #8 on 2026-10-23. The code is `scans/redflags/contract_reader.py` (the one contract reader for entry 1.13) and `scans/redflags/contract_terms_full.py` (checks 1, 3, 4 and 6 and the clause notes). The 30-day line is met as a flag under check 1, which is entry 1.13's sense of a gap, not a missing input. Checks 2 and 5 stay with [contract-terms-saturday](#contract-terms-saturday), on the seam in the feature's architecture. Feature folder: [20261023.04_contract_terms](../features/20261023.04_contract_terms/00_progress.md).
+
 ### financial-model
 
 The financial modeling Ken asked for in the 10:10 AM dictation. Saturday's [redflag-engine](#redflag-engine) rebuilds the numbers it checks: burn against the hiring plan, deck against the model, retention and gross margin. This slice adds a rebuilt model the operator can work in.
@@ -761,6 +767,8 @@ The claims workflow in full ([diagrams/claims_workflow.md](diagrams/claims_workf
 
 **Judgment:** yes.
 
+**Status:** built and merged in PR #8 on 2026-10-23. The code is `scans/claims/` and the merge step `scans/memo/claim_support.py`. In all four rooms every figure in the deck and the pitch script is labelled and every claim passes the quote checker. One Done when line is open: Hollis Voice GF2 ($252,000,000 market) and GF3's 17 staff read unsupported, because only the financial model states them. Whether the company's own model counts as support is for Ken (board row TRI-wave2-defaults). The video's transcript waits on the recorded pitch video. Feature folder: [20261023.06_claim_support](../features/20261023.06_claim_support/00_progress.md).
+
 ### founder-requests
 
 Quick requests to the company while the room is being compiled ([writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 3:15 PM block). Ken: "While compiling the data room, there are quick ways to send messages to the company asking them for information, with guidance on what they should submit."
@@ -781,6 +789,8 @@ Quick requests to the company while the room is being compiled ([writers' brief]
 **Who:** agent.
 
 **Judgment:** yes.
+
+**Status:** done for every Done when check. Merged in PR #8 on 2026-10-23. The code is `founder_requests/`, `server/founder_requests_routes.py` and `readout/src/FounderRequests.tsx`. Tricorder never sends the message. A reply is added to a working copy of a sample room, `rooms/<room>_live`. Feature folder: [20261023.02_founder_requests](../features/20261023.02_founder_requests/00_progress.md).
 
 ### memo-export
 
@@ -807,6 +817,8 @@ Tricorder helps the operator write the memo for the partners' meeting ([writers'
 **Who:** agent.
 
 **Judgment:** yes.
+
+**Status:** done for every Done when check. Merged in PR #8 on 2026-10-23. The code is `memo/` and `server/memo_routes.py`; the page is `/api/rooms/<room>/memo.html` and the PDF `/api/rooms/<room>/memo.pdf`. Reader copies and scenarios are not built; they wait on the financial-model slice. Sections whose scans are not built yet show one gap line. Feature folder: [20261023.03_memo_export](../features/20261023.03_memo_export/00_progress.md).
 
 ### reader-scenarios
 
