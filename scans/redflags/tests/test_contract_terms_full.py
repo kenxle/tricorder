@@ -19,7 +19,8 @@ from schema.claim import Readout
 from scans.base import Ids, write_result
 from scans.redflags import contract_reader, contract_terms_full, scan
 from scans.redflags.tests.contract_fixtures import (
-    CHANGE_OF_CONTROL, HOLLIS, ONE_YEAR, ROOT, THIRTY_DAY, a_counted_customer, copy_room, order_form, write_pdf,
+    CHANGE_OF_CONTROL, HOLLIS, ONE_YEAR, ROOT, THIRTY_DAY, a_counted_customer, copy_room, one_year_from, order_form,
+    write_pdf,
 )
 
 ROOMS = ROOT / "data_room"
@@ -89,10 +90,9 @@ def test_signed_not_live_clears_the_three_hollis_contracts():
 
 def test_signed_not_live_flags_revenue_before_the_effective_date(tmp_path):
     room = copy_room(tmp_path)
-    name, _mrr = a_counted_customer(room)
+    name, _mrr, _first = a_counted_customer(room)
     write_pdf(room / "04_customers" / "order_form_test_late.pdf",
-              order_form(name, term_line="Term 12 months, from 2026-10-01 to 2027-09-30.", termination=ONE_YEAR,
-                         effective="2026-10-01"))
+              order_form(name, term_line=one_year_from("2026-10-01"), termination=ONE_YEAR, effective="2026-10-01"))
     claims, _g, _p = contract_terms_full.check(room, Ids("redflags"))
     hit = claims_for(claims, P4, "04_customers/order_form_test_late.pdf")
     assert [c.severity for c in hit] == ["flag"]
@@ -151,10 +151,10 @@ def test_clause_fields_are_not_stated_on_hollis_read_from_each_contract():
 
 def test_change_of_control_clause_returns_its_quote(tmp_path):
     room = copy_room(tmp_path)
-    name, _ = a_counted_customer(room)
+    name, _, first = a_counted_customer(room)
     uri = "04_customers/order_form_test_coc.pdf"
-    write_pdf(room / uri, order_form(name, term_line="Term 12 months, from 2026-06-01 to 2027-05-31.",
-                                     termination=ONE_YEAR, extra=CHANGE_OF_CONTROL))
+    write_pdf(room / uri, order_form(name, term_line=one_year_from(first), termination=ONE_YEAR,
+                                     extra=CHANGE_OF_CONTROL, effective=first))
     claims, _g, _p = contract_terms_full.check(room, Ids("redflags"))
     coc = [c for c in claims_for(claims, "clause_notes", uri) if "change-of-control clause" in c.text]
     assert len(coc) == 1
@@ -177,10 +177,11 @@ def test_fee_freeze_is_an_other_clause_on_cedar_pine():
 
 def _thirty_day_room(tmp_path, committed: bool):
     room = copy_room(tmp_path, "room_committed" if committed else "room_30day")
-    name, mrr = a_counted_customer(room)
-    term = "Term 12 months, from 2026-06-01 to 2027-05-31." if committed else "Term month to month."
+    name, mrr, first = a_counted_customer(room)
+    term = one_year_from(first) if committed else "Term month to month."
     uri = "04_customers/order_form_test_30day.pdf"
-    write_pdf(room / uri, order_form(name, term_line=term, termination=ONE_YEAR if committed else THIRTY_DAY))
+    write_pdf(room / uri, order_form(name, term_line=term, termination=ONE_YEAR if committed else THIRTY_DAY,
+                                     effective=first))
     return room, uri, mrr
 
 
@@ -189,6 +190,7 @@ def test_thirty_day_cancellation_counted_as_a_year_of_arr_is_flagged(tmp_path):
     claims, _g, _p = contract_terms_full.check(room, Ids("redflags"))
     hit = claims_for(claims, P1, uri)
     assert [c.severity for c in hit] == ["flag"]
+    assert not [c for c in claims_for(claims, P4, uri) if c.severity == "flag"]
     assert "30 days" in hit[0].text and f"${12 * mrr:,.0f}" in hit[0].text
 
 
@@ -197,6 +199,8 @@ def test_one_year_commitment_is_not_flagged(tmp_path):
     claims, _g, _p = contract_terms_full.check(room, Ids("redflags"))
     hit = claims_for(claims, P1, uri)
     assert hit and all(c.severity == "info" for c in hit)
+    # The test contract is clean on every other check too, so nothing else fires on it.
+    assert not [c for c in claims if c.severity in ("flag", "watch") and any(s.uri == uri for s in c.sources)]
 
 
 def test_notice_check_on_hollis_flags_marlow_only():
@@ -289,9 +293,10 @@ def test_every_quote_passes_the_quote_checker(room):
 
 def test_every_quote_passes_on_the_test_contracts(tmp_path):
     room = copy_room(tmp_path)
-    name, _ = a_counted_customer(room)
+    name, _, first = a_counted_customer(room)
     write_pdf(room / "04_customers/order_form_test.pdf",
-              order_form(name, term_line="Term month to month.", termination=THIRTY_DAY, extra=CHANGE_OF_CONTROL))
+              order_form(name, term_line="Term month to month.", termination=THIRTY_DAY, extra=CHANGE_OF_CONTROL,
+                         effective=first))
     claims, _g, _p = contract_terms_full.check(room, Ids("redflags"))
     assert claims
     for c in claims:
@@ -327,3 +332,14 @@ def test_runs_offline(monkeypatch):
 def test_result_serialises():
     claims, gaps, panels = run(HOLLIS)
     json.dumps([c.model_dump() for c in claims] + [g.model_dump() for g in gaps] + [p.model_dump() for p in panels])
+
+
+def test_a_term_that_ended_but_is_still_counted_is_flagged(tmp_path):
+    room = copy_room(tmp_path)
+    name, _mrr, first = a_counted_customer(room)
+    uri = "04_customers/order_form_test_expired.pdf"
+    write_pdf(room / uri, order_form(name, term_line="Term 2 months, from 2026-07-01 to 2026-08-31.",
+                                     termination=ONE_YEAR, effective=first))
+    claims, _g, _p = contract_terms_full.check(room, Ids("redflags"))
+    hit = claims_for(claims, P1, uri)
+    assert [c.severity for c in hit] == ["flag"] and "ended 2026-08-31" in hit[0].text

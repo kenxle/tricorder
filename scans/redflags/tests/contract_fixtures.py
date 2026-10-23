@@ -92,13 +92,30 @@ def copy_room(tmp_path: Path, name: str = "hollis_voice", src: Path = HOLLIS) ->
     return dst
 
 
-def a_counted_customer(room: Path, month: str = "2026-09") -> tuple[str, float]:
-    """A subscription customer with MRR in the month, and no contract in the room."""
+def a_counted_customer(room: Path, month: str = "2026-09") -> tuple[str, float, str]:
+    """A recent subscription customer with MRR in the month and no contract in the room:
+    (name, its MRR in the month, its first subscription month as YYYY-MM-01)."""
     import csv
 
+    first: dict[str, str] = {}
+    counted: dict[str, float] = {}
     with open(room / "03_metrics" / "customer_mrr_by_month.csv", newline="", encoding="utf-8") as f:
         for r in csv.DictReader(f):
-            if r["month"] == month and r["product_type"] == "Subscription" and float(r["mrr"]) > 0 \
-                    and r["customer_name"] not in ("Cedar & Pine Animal Hospitals", "Brookline Row Veterinary"):
-                return r["customer_name"], float(r["mrr"])
-    raise AssertionError("no counted customer")
+            if r["product_type"] != "Subscription" or float(r["mrr"]) <= 0:
+                continue
+            first.setdefault(r["customer_name"], r["month"])
+            if r["month"] == month:
+                counted[r["customer_name"]] = float(r["mrr"])
+    for name, m in sorted(first.items(), key=lambda kv: (kv[1], kv[0])):
+        if m >= "2026-07" and name in counted:
+            return name, counted[name], m + "-01"
+    raise AssertionError("no recent counted customer")
+
+
+def one_year_from(start: str) -> str:
+    """'Term 12 months, from <start> to <a day before the same date next year>.'"""
+    from datetime import date, timedelta
+
+    d = date.fromisoformat(start)
+    end = date(d.year + 1, d.month, d.day) - timedelta(days=1)
+    return f"Term 12 months, from {start} to {end}."

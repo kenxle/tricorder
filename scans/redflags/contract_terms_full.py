@@ -298,7 +298,12 @@ def check_1(c: ContractTerms, key: str, cnt: Counting, s: dict, out: Out) -> Non
     arr = 12 * mrr
     term_m = int(c.term_months.value) if c.term_months.stated else None
     month = cnt.as_of[:7]
-    if mrr > 0 and days <= s["short_notice_days"]:
+    if mrr > 0 and days < 0:
+        out.claim(P1, f"{c.label}: the term ended {exit_day}, {-days} days before {as_of}, and the contract states no "
+                      f"renewal, but the customer is counted as a year of ARR: {money(arr)} (12 x {money(mrr)} MRR in "
+                      f"{month}).", srcs, "flag", value=Value(number=arr, unit="USD", label="other", period=month))
+        out.row(c, P1, "flag", f"term ended {exit_day}, {money(arr)} counted")
+    elif mrr > 0 and days <= s["short_notice_days"]:
         out.claim(P1, f"{c.label}: {why}, so the earliest exit is {exit_day}, {days} days after {as_of}, but the "
                       f"customer is counted as a year of ARR: {money(arr)} (12 x {money(mrr)} MRR in {month}). "
                       f"{HOW} worked the dates and the product.", srcs, "flag",
