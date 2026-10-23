@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tricorder, Direction C</title>
+<meta name="description" content="Tricorder sample homepage, Direction C: Strip board.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400;500;600&family=Spectral:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+/* Direction C, Strip board. Tokens first; every colour lives here. */
+:root {
+  color-scheme: light;
+  --ground: #EDEDE7;
+  --holder: #DBDBD3;
+  --strip: #FCFDFA;
+  --ink: #1B1B15;
+  --ink-2: #505147;
+  --rule: #CBCBC2;
+  --rule-2: #99998F;
+  --accent: #615F00;
+  --accent-hover: #4C4A00;
+  --accent-tint: #E9EBCC;
+  --on-accent: #FFFFFF;
+  --focus: #615F00;
+  --strong: #006A66;
+  --strong-tint: #D6F2EF;
+  --weak: #B6341F;
+  --weak-tint: #FFE3DD;
+  --mixed: #995600;
+  --mixed-tint: #FFEBD2;
+  --none: #586474;
+  --none-tint: #E7ECF2;
+  --band: #16170F;
+  --bay: #22221A;
+  --band-holder: #3A3B2E;
+  --band-ink: #E8E8E1;
+  --band-ink-2: #AEAFA4;
+  --band-accent: #C6C541;
+  --rail: #494A30;
+
+  --f-display: "Spectral", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --f-body: "Work Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --f-data: "Red Hat Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 72px;
+  --pill: 999px;
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ground: #14140F;
+    --holder: #23231D;
+    --strip: #1E1E1A;
+    --ink: #E8E8E2;
+    --ink-2: #B1B2A9;
+    --rule: #36362F;
+    --rule-2: #56564D;
+    --accent: #C6C541;
+    --accent-hover: #D8D75C;
+    --accent-tint: #30300F;
+    --on-accent: #14140F;
+    --focus: #C6C541;
+    --strong: #60CCC5;
+    --strong-tint: #0F3230;
+    --weak: #F47D67;
+    --weak-tint: #47211A;
+    --mixed: #EDB161;
+    --mixed-tint: #402C11;
+    --none: #A2AFC1;
+    --none-tint: #272C31;
+    --band: #070804;
+    --bay: #0F0F09;
+    --band-holder: #2C2C24;
+    --band-ink: #E8E8E1;
+    --band-ink-2: #AEAFA4;
+    --band-accent: #C6C541;
+    --rail: #4F4F35;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ground: #14140F;
+  --holder: #23231D;
+  --strip: #1E1E1A;
+  --ink: #E8E8E2;
+  --ink-2: #B1B2A9;
+  --rule: #36362F;
+  --rule-2: #56564D;
+  --accent: #C6C541;
+  --accent-hover: #D8D75C;
+  --accent-tint: #30300F;
+  --on-accent: #14140F;
+  --focus: #C6C541;
+  --strong: #60CCC5;
+  --strong-tint: #0F3230;
+  --weak: #F47D67;
+  --weak-tint: #47211A;
+  --mixed: #EDB161;
+  --mixed-tint: #402C11;
+  --none: #A2AFC1;
+  --none-tint: #272C31;
+  --band: #070804;
+  --bay: #0F0F09;
+  --band-holder: #2C2C24;
+  --band-ink: #E8E8E1;
+  --band-ink-2: #AEAFA4;
+  --band-accent: #C6C541;
+  --rail: #4F4F35;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--accent-hover); text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.band :focus-visible { outline-color: var(--band-accent); }
+.band .strip :focus-visible, .band .drawer :focus-visible { outline-color: var(--focus); }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: var(--s4); top: var(--s4); background: var(--strip); padding: var(--s2) var(--s4); z-index: 10; border-radius: var(--pill); }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
+.prose { max-width: 66ch; }
+.num, .data, td.num { font-variant-numeric: tabular-nums; }
+
+/* Type */
+h1, h2, h3, .display { font-family: var(--f-display); font-weight: 600; letter-spacing: -0.01em; color: var(--ink); }
+h1 { font-size: clamp(2.25rem, 5.2vw, 3.6rem); line-height: 1.06; margin: 0 0 var(--s5); }
+h2 { font-size: clamp(1.6rem, 3vw, 2rem); line-height: 1.15; margin: 0 0 var(--s4); }
+h3 { font-size: 1.375rem; line-height: 1.25; margin: 0 0 var(--s2); }
+p { margin: 0 0 var(--s4); }
+.lead { font-size: 1.1875rem; line-height: 1.55; color: var(--ink-2); max-width: 60ch; }
+.label {
+  font-family: var(--f-data); font-weight: 500; font-size: 0.6875rem; line-height: 1.4;
+  letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-2);
+}
+.small { font-size: 0.9375rem; line-height: 1.5; }
+.mono { font-family: var(--f-data); font-variant-numeric: tabular-nums; }
+
+/* Top bar */
+.topbar { border-bottom: 1px solid var(--rule-2); background: var(--ground); }
+.topbar .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s3) var(--s5); padding-top: var(--s3); padding-bottom: var(--s3); }
+.wordmark { font-family: var(--f-display); font-weight: 700; font-size: 1.375rem; color: var(--ink); text-decoration: none; letter-spacing: 0.01em; display: inline-flex; align-items: center; gap: var(--s2); }
+.wordmark svg { width: 22px; height: 22px; }
+.topbar nav { display: flex; flex-wrap: wrap; gap: var(--s1) var(--s4); font-size: 0.9375rem; }
+.topbar nav a { color: var(--ink-2); text-decoration: none; }
+.topbar nav a:hover, .topbar nav a[aria-current] { color: var(--ink); text-decoration: underline; }
+.topbar .end { margin-left: auto; display: flex; gap: var(--s2); align-items: center; flex-wrap: wrap; }
+
+/* Controls: pills */
+.btn {
+  display: inline-flex; align-items: center; gap: var(--s2);
+  font-family: var(--f-body); font-weight: 500; font-size: 0.9375rem; line-height: 1.2;
+  padding: 11px 20px; border-radius: var(--pill); border: 1.5px solid transparent;
+  text-decoration: none; cursor: pointer; background: none; color: inherit;
+}
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--on-accent); text-decoration: none; }
+.btn-secondary { border-color: var(--rule-2); color: var(--ink); background: var(--strip); }
+.btn-secondary:hover { border-color: var(--ink); color: var(--ink); text-decoration: none; }
+.btn-quiet { color: var(--accent); padding-left: var(--s2); padding-right: var(--s2); text-decoration: underline; text-underline-offset: 3px; }
+.btn-sm { font-size: 0.8125rem; padding: 6px 14px; }
+.btn[disabled] { opacity: 0.45; cursor: not-allowed; }
+.seg { display: inline-flex; border: 1.5px solid var(--rule-2); border-radius: var(--pill); padding: 2px; background: var(--strip); }
+.seg button { font: 500 0.75rem/1 var(--f-data); letter-spacing: 0.06em; text-transform: uppercase; border: 0; background: none; color: var(--ink-2); padding: 7px 11px; border-radius: var(--pill); cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--strip); }
+
+.input { display: flex; gap: var(--s2); flex-wrap: wrap; align-items: center; }
+.input input {
+  flex: 1 1 16rem; min-width: 0; font: 400 1rem/1.3 var(--f-body); color: var(--ink);
+  background: var(--strip); border: 1.5px solid var(--rule-2); border-radius: var(--pill); padding: 11px 18px;
+}
+.input input::placeholder { color: var(--ink-2); }
+.input input:hover { border-color: var(--ink-2); }
+.input input:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-color: var(--accent); }
+
+/* Source chip */
+.chip {
+  display: inline-flex; align-items: center; gap: 6px; vertical-align: 1px;
+  font: 500 0.8125rem/1.25 var(--f-data); font-variant-numeric: tabular-nums;
+  color: var(--ink); background: var(--strip); text-decoration: none;
+  border: 1px solid var(--rule-2); border-radius: var(--pill); padding: 3px 10px 3px 8px; margin: 2px 0;
+  max-width: 100%; white-space: normal; text-align: left;
+}
+.chip svg { width: 12px; height: 12px; flex: none; color: var(--ink-2); }
+.chip:hover { border-color: var(--accent); color: var(--ink); background: var(--accent-tint); text-decoration: none; }
+
+.nw { white-space: nowrap; }
+.nw .chip { white-space: normal; }
+
+/* Marks */
+.mk { width: 14px; height: 14px; flex: none; }
+.m-strong { --m: var(--strong); --m-tint: var(--strong-tint); }
+.m-weak   { --m: var(--weak);   --m-tint: var(--weak-tint); }
+.m-mixed  { --m: var(--mixed);  --m-tint: var(--mixed-tint); }
+.m-none   { --m: var(--none);   --m-tint: var(--none-tint); }
+.m-plain  { --m: var(--ink-2);  --m-tint: var(--strip); }
+.mword {
+  display: inline-flex; align-items: center; gap: 6px; color: var(--m);
+  font: 600 0.75rem/1.2 var(--f-data); letter-spacing: 0.07em; text-transform: uppercase;
+}
+
+/* Bays, holders, strips */
+.bay {
+  background: var(--holder); border-left: 3px solid var(--rule-2); border-right: 3px solid var(--rule-2);
+  padding: var(--s3) var(--s4) var(--s4) 30px;
+}
+.bay + .bay { margin-top: var(--s5); }
+.bay-head { display: flex; justify-content: space-between; gap: var(--s3); flex-wrap: wrap; border-bottom: 1px solid var(--rule-2); padding-bottom: var(--s2); margin: 0 0 var(--s3) -14px; }
+.band .bay { background: var(--bay); border-color: var(--rail); }
+.band .bay-head { border-color: var(--rail); }
+.band .bay-head .label { color: var(--band-ink-2); }
+
+.holder { background: var(--rule); border: 1px solid var(--rule-2); padding: 3px; }
+.band .holder { background: var(--band-holder); border-color: var(--rail); }
+.holder + .holder { margin-top: var(--s2); }
+.holder.cocked { margin-left: -16px; margin-right: 16px; }
+
+.strip {
+  display: grid; grid-template-columns: 44px minmax(10rem, 14rem) minmax(0, 1fr) auto;
+  background: var(--strip); color: var(--ink); border: 1px solid var(--rule);
+}
+.strip.no-act { grid-template-columns: 44px minmax(10rem, 14rem) minmax(0, 1fr); }
+.strip > .f { padding: var(--s3) var(--s4); border-left: 1px solid var(--rule); min-width: 0; }
+.strip > .f > .label { display: block; margin-bottom: 2px; }
+.tab {
+  background: var(--m-tint); color: var(--m); border-right: 1px solid var(--rule);
+  display: flex; flex-direction: column; align-items: center; gap: var(--s2); padding: var(--s3) 0;
+}
+.tab .mk { width: 16px; height: 16px; }
+.tab .vword { writing-mode: vertical-rl; transform: rotate(180deg); font: 600 0.6875rem/1 var(--f-data); letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; }
+.callsign { font-family: var(--f-display); font-weight: 600; font-size: 1.1875rem; line-height: 1.25; margin: 2px 0 4px; display: block; }
+.reading { margin: 0; font-size: 1rem; line-height: 1.6; }
+.reading + .reading { margin-top: var(--s2); }
+.counts { display: flex; gap: var(--s2); align-items: flex-start; }
+.box { border: 1px solid var(--rule-2); min-width: 4.25rem; text-align: center; padding: 4px 6px 6px; }
+.box .label { display: block; font-size: 0.625rem; }
+.box .v { font: 600 1.125rem/1.2 var(--f-data); font-variant-numeric: tabular-nums; }
+.slot { font-family: var(--f-data); color: var(--ink-2); border-bottom: 1px dashed var(--rule-2); }
+
+/* Operator annotation (the steer). Accent ink: the operator's pen. */
+.note {
+  background: var(--accent-tint); color: var(--ink);
+  padding: var(--s3) var(--s4); margin-top: 3px; font-size: 0.9688rem; line-height: 1.55;
+}
+.note .label { color: var(--accent); display: flex; gap: 6px; align-items: center; margin-bottom: 2px; }
+.note .label svg { width: 13px; height: 13px; }
+.note q { font-family: var(--f-display); font-style: italic; font-size: 1.0625rem; quotes: "\201C" "\201D"; }
+
+/* Drill-down drawer under a strip */
+.drawer { background: var(--strip); border: 1px solid var(--rule); border-top: 1px dashed var(--rule-2); margin-top: 0; padding: var(--s4); color: var(--ink); }
+.drawer[hidden] { display: none; }
+.drawer h4 { font: 600 1.0625rem/1.3 var(--f-display); margin: 0 0 var(--s3); display: flex; gap: var(--s2); align-items: center; }
+
+/* Tables */
+.tbl { overflow-x: auto; border: 1px solid var(--rule-2); background: var(--strip); }
+.tbl table { border-collapse: collapse; width: 100%; min-width: 30rem; font-size: 0.9375rem; }
+.tbl th { font: 500 0.6875rem/1.3 var(--f-data); letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-2); text-align: left; padding: var(--s2) var(--s3); border-bottom: 1px solid var(--rule-2); background: var(--holder); }
+.tbl td { padding: var(--s2) var(--s3); border-bottom: 1px solid var(--rule); vertical-align: top; }
+.tbl tr:last-child td { border-bottom: 0; }
+.tbl td.num, .tbl th.num { text-align: right; font-family: var(--f-data); white-space: nowrap; }
+.tbl td.where { font-family: var(--f-data); font-size: 0.8438rem; color: var(--ink-2); }
+.after { font-size: 0.9688rem; margin: var(--s3) 0 0; }
+.ask { margin: var(--s3) 0 0; padding-top: var(--s3); border-top: 1px solid var(--rule); font-size: 0.9688rem; }
+.ask strong { font-family: var(--f-data); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); margin-right: 6px; }
+
+/* Value line: sources side by side, no winner */
+.vline { margin: var(--s4) 0 var(--s2); color: var(--ink-2); }
+.vline svg { width: 100%; height: auto; display: block; max-width: 640px; }
+.vline text { font-family: var(--f-data); font-size: 11px; fill: var(--ink-2); }
+.vline .lab { fill: var(--ink); font-size: 11.5px; }
+
+/* Dark instrument band: once per page. */
+.band { background: var(--band); color: var(--band-ink); position: relative; padding: var(--s8) 0; }
+.band::before, .band::after {
+  content: ""; position: absolute; left: 0; right: 0; height: 9px;
+  background:
+    repeating-linear-gradient(90deg, var(--rail) 0 1px, transparent 1px 64px),
+    repeating-linear-gradient(90deg, var(--rail) 0 1px, transparent 1px 8px);
+  background-size: 100% 9px, 100% 4px; background-repeat: no-repeat;
+}
+.band::before { top: 0; }
+.band::after { bottom: 0; transform: scaleY(-1); }
+.band h2, .band h3 { color: var(--band-ink); }
+.band p, .band .lead { color: var(--band-ink-2); }
+.band .strip p, .band .drawer p, .band .note { color: var(--ink); }
+.band .drawer .after, .band .drawer .ask { color: var(--ink); }
+.band a { color: var(--band-accent); }
+.band .strip a, .band .drawer a { color: var(--accent); }
+.synth {
+  display: inline-flex; align-items: center; gap: var(--s2); font: 500 0.75rem/1.35 var(--f-data);
+  letter-spacing: 0.04em; color: var(--band-ink); border: 1px solid var(--rail); border-radius: var(--pill); padding: 5px 12px;
+}
+.synth::before { content: ""; width: 8px; height: 8px; border: 1.5px solid currentColor; transform: rotate(45deg); flex: none; }
+
+/* Sections on the light ground */
+.sec { padding: var(--s8) 0; border-top: 1px solid var(--rule-2); }
+.sec:first-of-type { border-top: 0; }
+.kicker { display: flex; gap: var(--s3); align-items: baseline; margin-bottom: var(--s3); }
+.kicker .idx { font: 500 0.75rem/1 var(--f-data); color: var(--accent); letter-spacing: 0.08em; }
+
+.ruled { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule-2); }
+.ruled li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: var(--s3); padding: var(--s3) 0; border-bottom: 1px solid var(--rule); }
+.ruled li .idx { font: 500 0.8125rem/1.6 var(--f-data); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+
+@media (max-width: 720px) {
+  .strip, .strip.no-act { grid-template-columns: 34px minmax(0, 1fr); }
+  .strip > .tab { grid-row: 1 / span 3; }
+  .strip > .f { grid-column: 2; }
+  .strip > .f + .f { border-top: 1px solid var(--rule); }
+  .tab .vword { font-size: 0.625rem; }
+  .bay { padding: var(--s3) var(--s2) var(--s3) 18px; border-left-width: 2px; border-right-width: 2px; }
+  .bay-head { margin-left: -10px; }
+  .holder.cocked { margin-left: -10px; margin-right: 10px; }
+  .drawer { padding: var(--s3); }
+  .sec { padding: var(--s7) 0; }
+  .band { padding: var(--s7) 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .btn, .chip, .seg button, .input input { transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease; }
+  html { scroll-behavior: smooth; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+
+/* Home page layout */
+.hero { padding: var(--s8) 0 var(--s7); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: var(--s7); align-items: end; }
+.hero-k { margin-bottom: var(--s4); }
+.hero .lead { font-size: 1.25rem; }
+.cta-row { display: flex; flex-wrap: wrap; gap: var(--s3); margin-top: var(--s5); align-items: center; }
+.legend { border: 1px solid var(--rule-2); background: var(--strip); padding: var(--s4) var(--s4) var(--s2); }
+.legend .legend-intro { color: var(--ink-2); margin: var(--s2) 0 var(--s3); }
+.legend ul { list-style: none; margin: 0; padding: 0; }
+.legend li { display: grid; gap: 2px; padding: var(--s2) 0 var(--s2) var(--s3); border-top: 1px solid var(--rule); margin-bottom: 2px; }
+.legend li .small { color: var(--ink-2); }
+
+.band-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: var(--s4) var(--s6); margin-bottom: var(--s6); }
+.band-head > div { max-width: 62ch; }
+.band-k { color: var(--band-accent) !important; margin-bottom: var(--s2); }
+.band-head .lead { margin-bottom: 0; }
+.band-foot { margin: var(--s4) 0 0; color: var(--band-ink-2); }
+.strip > .f.act { display: flex; align-items: center; }
+
+.people { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s6); margin-top: var(--s5); }
+.person { border-top: 3px solid var(--ink); padding-top: var(--s4); min-width: 0; }
+.person blockquote { margin: var(--s3) 0 var(--s5); padding: 0 0 0 var(--s4); border-left: 1px solid var(--rule-2); }
+.person blockquote p { font-family: var(--f-display); font-style: italic; font-size: 1.3125rem; line-height: 1.4; margin: 0 0 var(--s2); }
+.person blockquote footer a { color: var(--ink-2); }
+.person .input, .person .tbl { margin-top: var(--s4); }
+.person .tbl table { min-width: 26rem; }
+.where-sub { display: block; font-size: 0.75rem; color: var(--ink-2); }
+
+.two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: var(--s6); align-items: start; }
+.muted { color: var(--ink-2); }
+.nots { list-style: none; margin: 0 0 var(--s5); padding: 0; border-top: 1px solid var(--rule-2); }
+.nots li { padding: var(--s3) 0 var(--s3) var(--s5); border-bottom: 1px solid var(--rule); position: relative; }
+.nots li::before { content: ""; position: absolute; left: 2px; top: 1.15em; width: 12px; height: 1.5px; background: var(--ink-2); }
+.datanote { border: 1px solid var(--rule-2); background: var(--strip); padding: var(--s4); }
+.datanote p:last-child { margin: var(--s2) 0 0; }
+
+.cta { padding-bottom: var(--s8); }
+.cta-h { font-size: clamp(2rem, 4.4vw, 3rem); max-width: 18ch; }
+.foot { border-top: 1px solid var(--rule-2); padding: var(--s5) 0 var(--s6); }
+.foot-in { display: flex; flex-wrap: wrap; gap: var(--s3) var(--s5); align-items: center; justify-content: space-between; }
+.foot p { margin: 0; color: var(--ink-2); max-width: 60ch; }
+.foot nav { display: flex; gap: var(--s4); }
+.small-wm { font-size: 1.0625rem; }
+
+@media (max-width: 860px) {
+  .hero-grid, .people, .two { grid-template-columns: minmax(0, 1fr); }
+  .hero-grid { gap: var(--s6); }
+  .hero { padding: var(--s7) 0 var(--s6); }
+}
+@media (max-width: 720px) {
+  .strip > .f.act { padding-top: var(--s2); padding-bottom: var(--s3); }
+  .vline { overflow-x: auto; }
+  .vline svg { min-width: 520px; }
+}
+
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="mk-strong" viewBox="0 0 16 16"><path d="M8 1.5 15 14H1z" fill="currentColor"/></symbol>
+  <symbol id="mk-weak" viewBox="0 0 16 16"><path d="M1 2h14L8 14.5z" fill="currentColor"/></symbol>
+  <symbol id="mk-mixed" viewBox="0 0 16 16"><path d="M8 1.6 14.4 8 8 14.4 1.6 8z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 1.6v12.8L1.6 8z" fill="currentColor"/></symbol>
+  <symbol id="mk-none" viewBox="0 0 16 16"><circle cx="8" cy="8" r="5.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-dasharray="2.7 2"/></symbol>
+  <symbol id="mk-gap" viewBox="0 0 16 16"><rect x="2" y="2" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-dasharray="2.7 2"/></symbol>
+  <symbol id="mk-clean" viewBox="0 0 16 16"><rect x="1.8" y="1.8" width="12.4" height="12.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m4.6 8.2 2.3 2.4 4.5-5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="mk-dis" viewBox="0 0 16 16"><path d="M2 5.5h12M2 10.5h12M11.2 1.8 4.8 14.2" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+  <symbol id="mk-unv" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.8 12.2 12.2 3.8" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="mk-pen" viewBox="0 0 16 16"><path d="M2.2 13.8 3 10.2l7.6-7.6 2.8 2.8-7.6 7.6zM9.2 4l2.8 2.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+  <symbol id="mk-doc" viewBox="0 0 12 12"><path d="M2.5 1h4.8L9.5 3.2V11h-7zM7.2 1v2.3h2.3" fill="none" stroke="currentColor" stroke-width="1.2"/></symbol>
+  <symbol id="mk-holder" viewBox="0 0 22 22"><rect x="1" y="5" width="20" height="12" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="1" y="5" width="5" height="12" fill="currentColor"/><path d="M9 9.5h9M9 12.5h6" stroke="currentColor" stroke-width="1.4"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to the page</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="wordmark" href="home.html" aria-label="Tricorder, home"><svg aria-hidden="true"><use href="#mk-holder"/></svg>Tricorder</a>
+    <nav aria-label="Page">
+      <a href="#readout">The readout</a>
+      <a href="#people">Associate and partner</a>
+      <a href="#adds">What it adds</a>
+      <a href="style_guide.html">Style guide</a>
+      <a href="../index.html">All directions</a>
+    </nav>
+    <div class="end">
+      <div class="seg" role="group" aria-label="Theme">
+        <button type="button" data-set-theme="auto" aria-pressed="true">Auto</button>
+        <button type="button" data-set-theme="light" aria-pressed="false">Light</button>
+        <button type="button" data-set-theme="dark" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="label hero-k">First-pass diligence for seed and Series A funds</p>
+        <h1>Point it at a startup, get a readout.</h1>
+        <p class="lead">Tricorder takes any data: decks, videos, spreadsheets, data rooms. It reveals insight you can trust, every claim sourced.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#readout">See the Hollis Voice readout</a>
+          <a class="btn btn-secondary" href="#pilot">Bring a data room to the pilot</a>
+        </div>
+      </div>
+      <aside class="legend" aria-labelledby="legend-h">
+        <p class="label" id="legend-h">One strip per piece of the company</p>
+        <p class="small legend-intro">Each piece gets one mark, set by a stated rule. A mark describes one piece. It is never a call on the deal.</p>
+        <ul>
+          <li class="m-strong"><span class="mword"><svg class="mk" aria-hidden="true"><use href="#mk-strong"/></svg>Looking strong</span><span class="small">At least one corroborated number, nothing contradicted.</span></li>
+          <li class="m-weak"><span class="mword"><svg class="mk" aria-hidden="true"><use href="#mk-weak"/></svg>Looking weak</span><span class="small">A flag, or contradictions and nothing corroborated.</span></li>
+          <li class="m-mixed"><span class="mword"><svg class="mk" aria-hidden="true"><use href="#mk-mixed"/></svg>Mixed</span><span class="small">Corroborated and contradicted numbers, and no flag.</span></li>
+          <li class="m-none"><span class="mword"><svg class="mk" aria-hidden="true"><use href="#mk-none"/></svg>Not enough in the room</span><span class="small">No number has a second source, either way.</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="band" id="readout" aria-labelledby="readout-h">
+    <div class="wrap">
+      <div class="band-head">
+        <div>
+          <p class="label band-k">The instrument</p>
+          <h2 id="readout-h">The Hollis Voice readout</h2>
+          <p class="lead">An AI phone agent for vet clinics, raising a Series A. The best green flags and the worst red flags sit at the top, slid out of the bay. Under them, one strip per piece of the company.</p>
+        </div>
+        <p class="synth">Synthetic data room for Deal Flow NYC 2026. Not a real company.</p>
+      </div>
+
+      <div class="bay" role="region" aria-label="Top of the readout">
+        <div class="bay-head"><span class="label">Bay 1, top of the readout</span><span class="label">Green flags first</span></div>
+
+        <div class="holder cocked m-strong">
+          <div class="strip no-act">
+            <div class="tab" aria-hidden="true"><svg class="mk"><use href="#mk-strong"/></svg><span class="vword">Green flag</span></div>
+            <div class="f"><span class="label">Holds up</span><span class="callsign">The round adds up.</span><span class="mword"><svg class="mk" aria-hidden="true"><use href="#mk-strong"/></svg>Green flag</span></div>
+            <div class="f"><span class="label">Reading</span>
+              <p class="reading"><span class="num">$9,000,000</span>, stated in the deck and the same in the cap table and the model
+                <button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>pitch_deck.pdf, slide 13</button>
+                <button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>cap_table.xlsx, Cap_Table, B24</button>
+                <span class="nw"><button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>financial_model.xlsx, SERIES_A_RAISE</button>.</span>
+                Nothing in the room contradicts it.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="holder cocked m-weak">
+          <div class="strip no-act">
+            <div class="tab" aria-hidden="true"><svg class="mk"><use href="#mk-weak"/></svg><span class="vword">Red flag</span></div>
+            <div class="f"><span class="label">Does not hold up</span><span class="callsign">Runway leaves out most of the hiring plan.</span><span class="mword"><svg class="mk" aria-hidden="true"><use href="#mk-weak"/></svg>Red flag</span></div>
+            <div class="f"><span class="label">Reading</span>
+              <p class="reading"><span class="num">37 months</span> stated
+                <button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>financial_model.xlsx, RUNWAY_MONTHS</button>
+                <span class="nw"><button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>pitch_deck.pdf, slide 11</button>;</span>
+                <span class="num">19 months</span> found with all 24 planned hires paid for
+                <span class="nw"><button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>hiring_plan.csv, rerun through the Cash_Runway tab</button>.</span>
+                Burn and runway reads looking weak.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bay" role="region" aria-label="Overview">
+        <div class="bay-head"><span class="label">Bay 2, the overview</span><span class="label">Excerpt. The full readout has every piece.</span></div>
+
+        <div class="holder m-weak">
+          <div class="strip">
+            <div class="tab" aria-hidden="true"><svg class="mk"><use href="#mk-weak"/></svg><span class="vword">Weak</span></div>
+            <div class="f"><span class="label">Piece</span><span class="callsign">Traction and revenue</span><span class="mword"><svg class="mk" aria-hidden="true"><use href="#mk-weak"/></svg>Looking weak</span></div>
+            <div class="f"><span class="label">Reading</span>
+              <p class="reading">ARR is stated four ways, from about <span class="num">$3,000,000</span> on the pitch video to <span class="num">$2,060,868</span> in the subscription rows
+                <button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>pitch video, 0:35</button>
+                <span class="nw"><button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>customer_mrr_by_month.csv</button>.</span></p>
+            </div>
+            <div class="f act"><button class="btn btn-secondary btn-sm" type="button" data-drawer="dd-arr" aria-expanded="true" aria-controls="dd-arr">Hide the drill-down</button></div>
+          </div>
+          <div class="drawer" id="dd-arr">
+            <h4><span class="m-weak mword"><svg class="mk" aria-hidden="true"><use href="#mk-dis"/></svg>Disagreement</span> ARR</h4>
+            <div class="tbl" role="region" aria-label="ARR, by source" tabindex="0">
+              <table>
+                <thead><tr><th scope="col">Source</th><th scope="col" class="num">States</th><th scope="col">Where</th></tr></thead>
+                <tbody>
+                  <tr><td>Pitch video</td><td class="num">about $3,000,000</td><td class="where">pitch video, 0:35</td></tr>
+                  <tr><td>Deck</td><td class="num">$2,500,000</td><td class="where">pitch_deck.pdf, slide 3</td></tr>
+                  <tr><td>Financial model</td><td class="num">$2,240,868</td><td class="where">financial_model.xlsx, ARR_Build, ARR_TOTAL</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="vline" role="img" aria-label="The three ARR figures on one line: the model at $2,240,868, the deck at $2,500,000 and the video at about $3,000,000. No figure is marked as the right one.">
+              <svg viewBox="0 0 640 104" aria-hidden="true">
+                <line x1="20" y1="52" x2="580" y2="52" stroke="currentColor" stroke-width="1"/>
+                <g stroke="currentColor" stroke-width="1"><line x1="20" y1="48" x2="20" y2="56"/><line x1="274.5" y1="48" x2="274.5" y2="56"/><line x1="529.1" y1="48" x2="529.1" y2="56"/></g>
+                <text x="20" y="70" text-anchor="start">$2.0M</text><text x="274.5" y="70" text-anchor="middle">$2.5M</text><text x="529.1" y="70" text-anchor="middle">$3.0M</text>
+                <g fill="var(--strip)" stroke="var(--ink)" stroke-width="2"><circle cx="142.6" cy="52" r="5"/><circle cx="274.5" cy="52" r="5"/><circle cx="529.1" cy="52" r="5"/></g>
+                <text class="lab" x="142.6" y="34" text-anchor="middle">Model $2,240,868</text>
+                <text class="lab" x="274.5" y="20" text-anchor="middle">Deck $2,500,000</text>
+                <text class="lab" x="529.1" y="34" text-anchor="middle">Video about $3,000,000</text>
+                <line x1="142.6" y1="98" x2="529.1" y2="98" stroke="currentColor" stroke-dasharray="3 3"/><line x1="142.6" y1="92" x2="142.6" y2="102" stroke="currentColor"/><line x1="529.1" y1="92" x2="529.1" y2="102" stroke="currentColor"/>
+                <text x="335.8" y="92" text-anchor="middle">largest gap, about $760,000</text>
+              </svg>
+            </div>
+            <p class="after">Largest gap: about $760,000, between the video and the model. The deck is <span class="num">$259,132</span> above the model. The room does not explain either gap.</p>
+            <p class="ask"><strong>Ask the founder</strong>Which of these is ARR as of 2026-09-30, and can you walk us from the billing data to it?</p>
+          </div>
+        </div>
+
+        <div class="holder m-weak">
+          <div class="strip">
+            <div class="tab" aria-hidden="true"><svg class="mk"><use href="#mk-weak"/></svg><span class="vword">Weak</span></div>
+            <div class="f"><span class="label">Piece</span><span class="callsign">Burn and runway</span><span class="mword"><svg class="mk" aria-hidden="true"><use href="#mk-weak"/></svg>Looking weak</span></div>
+            <div class="f"><span class="label">Reading</span>
+              <p class="reading">Runway: <span class="num">19 months</span> with the full hiring plan
+                <span class="nw"><button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>hiring_plan.csv</button>.</span>
+                <span class="num">37 months</span> in the model
+                <span class="nw"><button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>financial_model.xlsx, RUNWAY_MONTHS</button>.</span></p>
+            </div>
+            <div class="f act"><button class="btn btn-secondary btn-sm" type="button">Drill down</button></div>
+          </div>
+          <div class="note">
+            <span class="label"><svg aria-hidden="true"><use href="#mk-pen"/></svg>Operator steer</span>
+            Rewritten on your instruction: <q>Lead with the runway on the full hiring plan.</q> The reason now opens on 19 months. Verdict unchanged. The checks' numbers are unchanged.
+          </div>
+        </div>
+
+        <div class="holder m-none">
+          <div class="strip">
+            <div class="tab" aria-hidden="true"><svg class="mk"><use href="#mk-none"/></svg><span class="vword">Not enough</span></div>
+            <div class="f"><span class="label">Piece</span><span class="callsign">Team</span><span class="mword"><svg class="mk" aria-hidden="true"><use href="#mk-none"/></svg>Not enough in the room</span></div>
+            <div class="f"><span class="label">Reading</span>
+              <p class="reading">Not in the room: IP assignment agreements. Ask for signed invention assignment agreements for both founders and every contractor who wrote code.</p>
+            </div>
+            <div class="f act"><button class="btn btn-secondary btn-sm" type="button">Drill down</button></div>
+          </div>
+        </div>
+      </div>
+      <p class="band-foot small">Every chip opens its file at the place named. A green flag says the documents agree. It does not say the number is true.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="people" aria-labelledby="people-h">
+    <div class="wrap">
+      <div class="kicker"><span class="idx">02</span><span class="label">Two people at the fund</span></div>
+      <h2 id="people-h">Each hears a different promise.</h2>
+      <div class="people">
+        <article class="person">
+          <p class="label">The associate, who prepares the memo</p>
+          <blockquote>
+            <p>"Before I even open your data room, I already have ten tabs up."</p>
+            <footer class="small"><a href="https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal">Associate at a seed-focused fund, Jan 2026</a></footer>
+          </blockquote>
+          <h3>The gathering is done before you look.</h3>
+          <p>The tabs, the cross-checks and the gaps are done when the deck arrives, and every claim in the memo links to its file.</p>
+          <p>You start at the green and red flags, open the weak pieces to see the disagreements behind them, and steer any piece in one plain sentence. The scripts' own numbers stay on screen beside your change.</p>
+          <div class="input" aria-label="Example steer">
+            <input type="text" aria-label="Steer this piece in one sentence" placeholder="Steer this piece in one sentence">
+            <button class="btn btn-primary btn-sm" type="button">Steer</button>
+          </div>
+        </article>
+        <article class="person">
+          <p class="label">The partner, who reads the memo and decides</p>
+          <blockquote>
+            <p>"Basic financials and model review. But often only a cursory one."</p>
+            <footer class="small"><a href="https://www.saastr.com/how-when-why-vcs-do-due-diligence-pre-and-post-term-sheet">SaaS investor, on pre-term-sheet diligence, Feb 2025</a></footer>
+          </blockquote>
+          <h3>A memo you can check yourself.</h3>
+          <p>Any line opens its sources in two clicks, and you can change the model's assumptions to see what the deal needs to be true.</p>
+          <p>Your what-if sits beside the company's figure and Tricorder's rebuild. It never replaces them, and it appears only in your copy.</p>
+          <div class="tbl" role="region" aria-label="A scenario row" tabindex="0">
+            <table>
+              <thead><tr><th scope="col">Metric</th><th scope="col" class="num">Company's figure</th><th scope="col" class="num">Tricorder rebuilt</th><th scope="col" class="num">Your scenario</th></tr></thead>
+              <tbody><tr>
+                <td>Runway</td>
+                <td class="num">37 months<span class="where-sub">financial_model.xlsx</span></td>
+                <td class="num">19 months<span class="where-sub">hiring_plan.csv</span></td>
+                <td class="num"><button class="btn btn-quiet btn-sm" type="button">Set an assumption</button></td>
+              </tr></tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="adds" aria-labelledby="adds-h">
+    <div class="wrap two">
+      <div>
+        <div class="kicker"><span class="idx">03</span><span class="label">Among similar tools</span></div>
+        <h2 id="adds-h">What Tricorder adds.</h2>
+        <p class="small muted">Several tools already turn a data room into a memo with linked sources, and one fund partner built his own. That validates the idea. Here is what Tricorder adds to it.</p>
+      </div>
+      <ol class="ruled">
+        <li><span class="idx">01</span><span>The best green flags and the worst red flags first, then an overview of every piece of the company, strong and weak.</span></li>
+        <li><span class="idx">02</span><span>Sources shown both ways: the files that agree on a number as well as the ones that disagree.</span></li>
+        <li><span class="idx">03</span><span>Numbers checked by scripts, not by a model's reading, and verdicts set by a stated rule.</span></li>
+        <li><span class="idx">04</span><span>Contract terms read against how each contract is counted.</span></li>
+        <li><span class="idx">05</span><span>Gaps written as gaps, and an ask list for the founder.</span></li>
+        <li><span class="idx">06</span><span>An interactive memo each partner can steer and run what-ifs on.</span></li>
+        <li><span class="idx">07</span><span>Checks beyond the room: the pitch video, comps and the associate's usual tabs.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="not-h">
+    <div class="wrap two">
+      <div>
+        <div class="kicker"><span class="idx">04</span><span class="label">Where it stops</span></div>
+        <h2 id="not-h">What it is not.</h2>
+      </div>
+      <div>
+        <ul class="nots">
+          <li>Not a sourcing database or a CRM.</li>
+          <li>Not confirmatory diligence. It is the first pass, before a second meeting.</li>
+          <li>Not a replacement for the partner's judgment. It never says invest or pass. It reads out what it found, and the partner decides.</li>
+        </ul>
+        <div class="datanote">
+          <p class="label">Where the data goes</p>
+          <p>Tricorder reads only the documents you give it or the decks in mail you send it, keeps only the readout and its sources, and lets you see and delete everything it pulled.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec cta" id="pilot" aria-labelledby="pilot-h">
+    <div class="wrap">
+      <div class="kicker"><span class="idx">05</span><span class="label">Next</span></div>
+      <h2 id="pilot-h" class="cta-h">Bring a data room to the pilot.</h2>
+      <p class="lead">Run a first pass with us on a deal you are already looking at. Read the readout beside your own notes, and tell us which flags you agree with.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#readout">See the Hollis Voice readout</a>
+        <a class="btn btn-quiet" href="style_guide.html">Read the style guide</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span class="wordmark small-wm"><svg aria-hidden="true"><use href="#mk-holder"/></svg>Tricorder</span>
+    <p class="small">Built at Deal Flow NYC 2026. Hollis Voice: Synthetic data room for Deal Flow NYC 2026. Not a real company.</p>
+    <nav class="small" aria-label="Footer"><a href="style_guide.html">Style guide</a> <a href="../index.html">All directions</a></nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var KEY = 'tricorder-c-theme';
+  function apply(v) {
+    if (v === 'light' || v === 'dark') root.setAttribute('data-theme', v); else root.removeAttribute('data-theme');
+    var bs = document.querySelectorAll('[data-set-theme]');
+    for (var i = 0; i < bs.length; i++) bs[i].setAttribute('aria-pressed', String(bs[i].getAttribute('data-set-theme') === (v || 'auto')));
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  apply(saved);
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-set-theme]');
+    if (b) {
+      var v = b.getAttribute('data-set-theme');
+      apply(v);
+      try { if (v === 'auto') localStorage.removeItem(KEY); else localStorage.setItem(KEY, v); } catch (err) {}
+      return;
+    }
+    var t = e.target.closest && e.target.closest('[data-drawer]');
+    if (t) {
+      var d = document.getElementById(t.getAttribute('data-drawer'));
+      if (!d) return;
+      var open = d.hasAttribute('hidden');
+      if (open) d.removeAttribute('hidden'); else d.setAttribute('hidden', '');
+      t.setAttribute('aria-expanded', String(open));
+      t.textContent = open ? 'Hide the drill-down' : 'Drill down';
+    }
+  });
+})();
+
+</script>
+</body>
+</html>

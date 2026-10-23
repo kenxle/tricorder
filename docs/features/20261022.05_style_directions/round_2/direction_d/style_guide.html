@@ -1,0 +1,1029 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tricorder, Direction D</title>
+<meta name="description" content="Tricorder style guide, Direction D: Private Bank.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Tricorder, Direction D: Private Bank. Tokens first, then layout, then components. */
+:root {
+  color-scheme: light;
+  --ground: #ffffff;
+  --panel: #ffffff;
+  --wash: #f4f6f9;
+  --ink: #0b1a2e;
+  --ink-2: #33415a;
+  --ink-3: #5a6679;
+  --rule: #e1e5eb;
+  --rule-2: #c3cad5;
+  --navy: #0b1a2e;
+  --navy-ink: #ffffff;
+  --navy-ink-2: #a9b6c9;
+  --navy-rule: rgba(255, 255, 255, 0.14);
+  --accent: #1d5a47;
+  --accent-hover: #143f32;
+  --accent-tint: #e8f1ed;
+  --on-accent: #ffffff;
+  --band: #e4e9f0;
+  --band-edge: #9aa6b8;
+  --strong: #17803d;
+  --strong-bg: #e5f3ea;
+  --weak: #b42318;
+  --weak-bg: #fce9e7;
+  --mixed: #94580a;
+  --mixed-bg: #faf0dd;
+  --thin: #56637a;
+  --thin-bg: #edf0f4;
+  --focus: #1d5a47;
+  --shadow-lift: 0 1px 2px rgba(11, 26, 46, 0.08), 0 18px 40px -12px rgba(2, 8, 20, 0.45), 0 48px 96px -32px rgba(2, 8, 20, 0.55);
+
+  --f-display: "Source Serif 4", "Iowan Old Style", "Georgia", serif;
+  --f-ui: "IBM Plex Sans", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  --f-data: "IBM Plex Mono", "SFMono-Regular", "Menlo", "Consolas", monospace;
+
+  --r-s: 6px;
+  --r-l: 12px;
+  --gutter: 24px;
+  --side: 32px;
+  --max: 1312px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ground: #0a1526;
+    --panel: #102039;
+    --wash: #142744;
+    --ink: #eaf0f7;
+    --ink-2: #bcc7d6;
+    --ink-3: #8e9bb0;
+    --rule: #20334f;
+    --rule-2: #36496a;
+    --navy: #050d1a;
+    --navy-ink: #ffffff;
+    --navy-ink-2: #a3b1c6;
+    --navy-rule: rgba(255, 255, 255, 0.12);
+    --accent: #7cc4a4;
+    --accent-hover: #a3d9c0;
+    --accent-tint: #123128;
+    --on-accent: #05140e;
+    --band: #1c3050;
+    --band-edge: #5a7096;
+    --strong: #5cc788;
+    --strong-bg: #0f2c1c;
+    --weak: #ff8172;
+    --weak-bg: #3a1715;
+    --mixed: #e6b456;
+    --mixed-bg: #33270f;
+    --thin: #a6b2c4;
+    --thin-bg: #1a2a43;
+    --focus: #7cc4a4;
+    --shadow-lift: 0 1px 2px rgba(0, 0, 0, 0.4), 0 18px 40px -12px rgba(0, 0, 0, 0.7), 0 48px 96px -32px rgba(0, 0, 0, 0.8);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ground: #0a1526;
+  --panel: #102039;
+  --wash: #142744;
+  --ink: #eaf0f7;
+  --ink-2: #bcc7d6;
+  --ink-3: #8e9bb0;
+  --rule: #20334f;
+  --rule-2: #36496a;
+  --navy: #050d1a;
+  --navy-ink: #ffffff;
+  --navy-ink-2: #a3b1c6;
+  --navy-rule: rgba(255, 255, 255, 0.12);
+  --accent: #7cc4a4;
+  --accent-hover: #a3d9c0;
+  --accent-tint: #123128;
+  --on-accent: #05140e;
+  --band: #1c3050;
+  --band-edge: #5a7096;
+  --strong: #5cc788;
+  --strong-bg: #0f2c1c;
+  --weak: #ff8172;
+  --weak-bg: #3a1715;
+  --mixed: #e6b456;
+  --mixed-bg: #33270f;
+  --thin: #a6b2c4;
+  --thin-bg: #1a2a43;
+  --focus: #7cc4a4;
+  --shadow-lift: 0 1px 2px rgba(0, 0, 0, 0.4), 0 18px 40px -12px rgba(0, 0, 0, 0.7), 0 48px 96px -32px rgba(0, 0, 0, 0.8);
+}
+
+/* Base. Bootstrap supplies the grid only; everything visible is restyled here. */
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--ground); color: var(--ink-2);
+  font-family: var(--f-ui); font-size: 16px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+h1, h2, h3, h4 { color: var(--ink); margin: 0; }
+p { margin: 0; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--accent-hover); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+.num, table, .strip, .fig-v, .chip { font-variant-numeric: tabular-nums; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding-left: var(--side); padding-right: var(--side); }
+.row { --bs-gutter-x: var(--gutter); --bs-gutter-y: 0; }
+.row.gy { --bs-gutter-y: var(--gutter); }
+@media (max-width: 767.98px) {
+  :root { --side: 16px; }
+  .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+}
+
+/* Type */
+.display { font-family: var(--f-display); font-optical-sizing: auto; font-weight: 500; letter-spacing: -0.022em; color: var(--ink); }
+.h1 { font-size: clamp(42px, 3.4vw + 14px, 66px); line-height: 1.02; letter-spacing: -0.026em; }
+.h2 { font-size: clamp(32px, 1.6vw + 18px, 44px); line-height: 1.06; }
+.h3 { font-size: 26px; line-height: 1.15; letter-spacing: -0.012em; }
+.eyebrow { font-family: var(--f-ui); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 16px; }
+.lede { font-size: 18px; line-height: 1.55; color: var(--ink-2); margin-top: 20px; max-width: 40em; }
+.small { font-size: 14px; line-height: 1.5; }
+.mono { font-family: var(--f-data); }
+
+/* Buttons. One primary per view. Hover darkens on light, lightens on navy. */
+.btn-d {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 46px; padding: 0 20px;
+  font-family: var(--f-ui); font-size: 15px; font-weight: 500; line-height: 1;
+  border-radius: var(--r-s); border: 1px solid transparent; text-decoration: none; cursor: pointer;
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+.btn-p { background: var(--accent); color: var(--on-accent); }
+.btn-p:hover { background: var(--accent-hover); color: var(--on-accent); }
+.btn-s { background: transparent; color: var(--ink); border-color: var(--rule-2); }
+.btn-s:hover { background: var(--wash); color: var(--ink); border-color: var(--ink-3); }
+.btn-sm { min-height: 36px; padding: 0 14px; font-size: 14px; }
+.on-navy .btn-p { background: #ffffff; color: #0b1a2e; }
+.on-navy .btn-p:hover { background: #dfe7f1; color: #0b1a2e; }
+.on-navy .btn-s { color: #ffffff; border-color: rgba(255, 255, 255, 0.32); }
+.on-navy .btn-s:hover { background: rgba(255, 255, 255, 0.1); color: #ffffff; border-color: rgba(255, 255, 255, 0.7); }
+.on-navy :focus-visible { outline-color: #ffffff; }
+
+/* Header and hero: the one deep band. */
+.on-navy { background: var(--navy); color: var(--navy-ink-2); overflow: hidden; }
+.top { padding-top: 28px; padding-bottom: 28px; }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px 32px; flex-wrap: wrap; }
+.brand { display: inline-flex; align-items: center; gap: 12px; color: #ffffff; text-decoration: none; font-family: var(--f-display); font-weight: 600; font-size: 22px; letter-spacing: -0.01em; }
+.brand:hover { color: #ffffff; }
+.nav-d { display: flex; align-items: center; gap: 4px 28px; flex-wrap: wrap; font-size: 14px; }
+.nav-d a { color: var(--navy-ink-2); text-decoration: none; }
+.nav-d a:hover { color: #ffffff; }
+.theme-btn { font: 500 13px var(--f-ui); color: #ffffff; background: transparent; border: 1px solid rgba(255, 255, 255, 0.28); border-radius: var(--r-s); min-height: 34px; padding: 0 12px; cursor: pointer; }
+.theme-btn:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.7); }
+
+.hero { padding-top: 72px; padding-bottom: 120px; }
+.hero .eyebrow { color: #8fcfb2; }
+.hero h1 { color: #ffffff; text-wrap: balance; }
+.hero .rest { font-size: 20px; line-height: 1.5; color: #c6d1df; margin-top: 28px; max-width: 30em; }
+.hero .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+
+/* The readout card: the one lifted surface on the page. */
+.rcard { background: var(--panel); color: var(--ink-2); border-radius: var(--r-l); box-shadow: var(--shadow-lift); overflow: hidden; }
+:root[data-theme="dark"] .rcard { border: 1px solid var(--rule-2); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .rcard { border: 1px solid var(--rule-2); } }
+.rc-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px 16px; flex-wrap: wrap; padding: 18px 28px; border-bottom: 1px solid var(--rule); }
+.rc-co { font-family: var(--f-display); font-weight: 600; font-size: 19px; color: var(--ink); letter-spacing: -0.01em; }
+.rc-meta { font-size: 13px; color: var(--ink-3); }
+.rc-item { padding: 24px 28px 26px; }
+.rc-item + .rc-item { border-top: 1px solid var(--rule); }
+.rc-foot { padding: 14px 28px; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--ink-3); display: flex; justify-content: space-between; gap: 4px 16px; flex-wrap: wrap; }
+
+/* Flags */
+.flag-t { font-family: var(--f-ui); font-size: 17px; font-weight: 600; line-height: 1.35; color: var(--ink); display: flex; gap: 10px; align-items: baseline; }
+.flag-t .sh { flex: none; transform: translateY(1px); }
+.flag-t .w-strong { color: var(--strong); }
+.flag-t .w-weak { color: var(--weak); }
+.flag-p { margin-top: 6px; font-size: 15px; line-height: 1.5; padding-left: 22px; }
+.flag-body { padding-left: 22px; }
+
+/* Stated beside found: figures in cells divided by hairlines. */
+.figs { display: grid; margin-top: 18px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.figs.n2 { grid-template-columns: 1fr 1fr; }
+.figs.n3 { grid-template-columns: 1fr 1fr 1fr; }
+.fig { padding: 12px 16px 12px 0; }
+.fig + .fig { padding-left: 16px; border-left: 1px solid var(--rule); }
+.fig-l { font-size: 12.5px; color: var(--ink-3); display: flex; align-items: center; gap: 6px; }
+.fig-v { font-family: var(--f-data); font-size: 21px; line-height: 1.3; color: var(--ink); margin-top: 2px; letter-spacing: -0.01em; }
+.fig-v.weak { color: var(--weak); }
+.fig-v .u { font-family: var(--f-ui); font-size: 15px; color: inherit; margin-left: 4px; letter-spacing: 0; }
+@media (max-width: 575.98px) {
+  .figs.n3 { grid-template-columns: 1fr; }
+  .figs.n3 .fig { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; }
+  .figs.n3 .fig + .fig { padding-left: 0; border-left: 0; border-top: 1px solid var(--rule); }
+  .figs.n3 .fig-v { font-size: 18px; margin-top: 0; }
+}
+.fig-n { font-size: 12.5px; color: var(--ink-3); margin-top: 2px; line-height: 1.4; }
+
+/* Source chips: their own row, never inside a sentence. */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.chip {
+  font-family: var(--f-data); font-size: 12px; line-height: 1.2; color: var(--ink-2);
+  background: var(--panel); border: 1px solid var(--rule-2); border-radius: var(--r-s);
+  padding: 6px 9px; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; text-align: left;
+}
+.chip svg { flex: none; color: var(--ink-3); }
+.chip:hover { border-color: var(--accent); color: var(--ink); background: var(--accent-tint); }
+
+/* Marks: shape, word and colour together. */
+.sh { width: 12px; height: 12px; display: inline-block; vertical-align: -1px; }
+.mark { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 500; line-height: 1; padding: 5px 8px; border-radius: var(--r-s); white-space: nowrap; }
+.m-strong { color: var(--strong); background: var(--strong-bg); }
+.m-weak { color: var(--weak); background: var(--weak-bg); }
+.m-mixed { color: var(--mixed); background: var(--mixed-bg); }
+.m-thin { color: var(--thin); background: var(--thin-bg); }
+.m-run { color: var(--ink-3); background: transparent; border: 1px solid var(--rule-2); padding: 4px 7px; }
+.m-dis { color: var(--ink); background: transparent; border: 1px solid var(--ink-3); padding: 4px 7px; }
+
+/* The range strip. Track, band, ticks, out-of-range mark, axis. */
+.strip { position: relative; height: 90px; margin-top: 20px; }
+.strip .track { position: absolute; left: 0; right: 0; top: 34px; height: 1px; background: var(--rule-2); }
+.strip .ax { position: absolute; top: 30px; width: 1px; height: 9px; background: var(--rule-2); }
+.strip .band { position: absolute; top: 26px; height: 17px; background: var(--band); border-left: 1px solid var(--band-edge); border-right: 1px solid var(--band-edge); }
+.strip .tk { position: absolute; top: 22px; width: 2px; height: 25px; margin-left: -1px; background: var(--ink); }
+.strip .tk.about { width: 12px; margin-left: -6px; background: var(--ink); opacity: 0.28; border-radius: 1px; }
+.strip .tk.about::after { content: ""; position: absolute; left: 5px; top: 0; bottom: 0; width: 2px; background: var(--ink); }
+.strip .tk.out { background: var(--weak); }
+.strip .tri { position: absolute; top: 12px; margin-left: -6px; width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 8px solid var(--weak); }
+.strip .lab { position: absolute; top: 0; font-family: var(--f-data); font-size: 11.5px; line-height: 1; color: var(--ink-2); white-space: nowrap; transform: translateX(-50%); }
+.strip .lab.lo { top: 54px; }
+.strip .lab.end { transform: translateX(-100%); }
+.strip .lab.start { transform: translateX(-2px); }
+.strip .lab.weak { color: var(--weak); }
+.strip .lab.tri-lab { transform: translateX(calc(-100% - 10px)); }
+.strip .axl { position: absolute; white-space: nowrap; bottom: 0; font-family: var(--f-data); font-size: 11px; line-height: 1; color: var(--ink-3); transform: translateX(-50%); }
+.strip .axl.first { transform: none; }
+.strip .axl.last { transform: translateX(-100%); }
+
+/* Sections below the hero: white, on the grid. */
+.sec { padding-top: 120px; padding-bottom: 120px; }
+.sec + .sec { border-top: 1px solid var(--rule); }
+.sec-head { margin-bottom: 56px; }
+@media (max-width: 991.98px) {
+  .hero { padding-top: 40px; padding-bottom: 72px; }
+  .hero .rcard { margin-top: 48px; }
+  .sec { padding-top: 72px; padding-bottom: 72px; }
+  .sec-head { margin-bottom: 36px; }
+}
+
+/* Panels: outlined, quiet. Only the hero card is lifted. */
+.panel-d { background: var(--panel); border: 1px solid var(--rule); border-radius: var(--r-l); display: flex; flex-direction: column; }
+.p-head { display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; padding: 18px 24px; border-bottom: 1px solid var(--rule); }
+.p-title { font-size: 16px; font-weight: 600; color: var(--ink); }
+.p-body { padding: 24px; }
+.p-body > * + * { margin-top: 18px; }
+.p-foot { margin-top: auto; padding: 14px 24px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-3); }
+
+/* Tables: one surface, rules only. */
+.tscroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.t-d { width: 100%; border-collapse: collapse; font-size: 14px; }
+.t-d th { font-weight: 500; font-size: 12.5px; color: var(--ink-3); text-align: left; padding: 0 16px 10px 0; border-bottom: 1px solid var(--rule-2); white-space: nowrap; }
+.t-d td { padding: 12px 16px 12px 0; border-bottom: 1px solid var(--rule); vertical-align: middle; color: var(--ink-2); }
+.t-d th:last-child, .t-d td:last-child { padding-right: 0; }
+.t-d .v { text-align: right; font-family: var(--f-data); color: var(--ink); white-space: nowrap; }
+.t-d td.src { color: var(--ink); white-space: nowrap; }
+.t-d .chip { white-space: nowrap; }
+
+/* Ask the founder: full outline in the accent. */
+.ask { border: 1px solid var(--accent); border-radius: var(--r-s); background: var(--accent-tint); padding: 16px 18px; display: flex; gap: 12px 20px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.ask-l { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 4px; }
+.ask-q { color: var(--ink); font-size: 15.5px; line-height: 1.45; flex: 1 1 280px; }
+
+/* Overview lines */
+.vlist { list-style: none; margin: 0; padding: 0; }
+.vlist li { padding: 18px 24px; border-bottom: 1px solid var(--rule); }
+.vlist li:last-child { border-bottom: 0; }
+.v-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.v-piece { font-weight: 600; color: var(--ink); font-size: 15px; }
+.v-why { font-size: 14px; line-height: 1.45; margin-top: 6px; color: var(--ink-2); }
+
+/* Notes: gap, clean check, flag. Full outline only. */
+.note-h { font-size: 16px; font-weight: 600; color: var(--ink); line-height: 1.35; display: flex; gap: 10px; align-items: baseline; }
+.note-h .sh { flex: none; transform: translateY(1px); }
+.p-body > .dl-d { margin: 18px 0 0; }
+.dl-d dt { font-size: 12.5px; font-weight: 500; color: var(--ink-3); margin-top: 14px; }
+.dl-d dt:first-child { margin-top: 0; }
+.dl-d dd { margin: 2px 0 0; font-size: 14.5px; line-height: 1.5; }
+.panel-d.gap { border-style: dashed; border-color: var(--rule-2); }
+
+/* Persona cards: one subgrid, so both cards line up row by row. */
+.pair { display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--gutter); row-gap: 0; }
+.pair .persona { display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; align-content: start; }
+@media (max-width: 991.98px) { .pair { grid-template-columns: 1fr; } .pair .persona + .persona { margin-top: var(--gutter); } }
+.persona { padding: 40px; }
+.persona .role { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.persona h3 { margin-top: 14px; }
+.persona blockquote { margin: 24px 0 0; font-family: var(--f-display); font-style: italic; font-size: 19px; line-height: 1.45; color: var(--ink); }
+.persona cite { display: block; margin-top: 8px; font-family: var(--f-ui); font-style: normal; font-size: 13px; color: var(--ink-3); }
+.persona cite a { color: var(--ink-3); }
+.persona cite a:hover { color: var(--accent); }
+.persona .say { margin-top: 20px; align-self: start; }
+.persona blockquote { align-self: start; }
+.ticks { list-style: none; margin: 24px 0 0; padding: 0; border-top: 1px solid var(--rule); }
+.ticks li { padding: 12px 0 12px 26px; border-bottom: 1px solid var(--rule); position: relative; font-size: 15px; }
+.ticks li::before { content: ""; position: absolute; left: 1px; top: 20px; width: 7px; height: 7px; border-radius: 2px; background: var(--accent); }
+@media (max-width: 767.98px) { .persona { padding: 24px; } }
+
+/* Ruled lists: rules run the full column width. */
+.ruled { border-top: 1px solid var(--ink); padding-top: 20px; padding-bottom: 28px; height: 100%; }
+.ruled p { font-size: 17px; line-height: 1.5; color: var(--ink); }
+.ruled .sub { font-size: 14.5px; color: var(--ink-2); margin-top: 6px; }
+.ruled.lead-item p:first-child { font-family: var(--f-display); font-size: 28px; line-height: 1.2; letter-spacing: -0.015em; font-weight: 500; }
+.data-goes { font-family: var(--f-display); font-size: 24px; line-height: 1.4; color: var(--ink); letter-spacing: -0.01em; }
+
+/* Closing band */
+.cta { padding-top: 104px; padding-bottom: 104px; }
+.cta h2 { color: #ffffff; }
+.cta p { color: #c6d1df; font-size: 18px; margin-top: 20px; max-width: 34em; }
+.cta .ctas { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+@media (max-width: 991.98px) { .cta { padding-top: 72px; padding-bottom: 72px; } .cta .ctas { justify-content: flex-start; margin-top: 32px; } }
+
+footer { padding-top: 32px; padding-bottom: 40px; font-size: 13.5px; color: var(--ink-3); }
+footer .wrap { display: flex; justify-content: space-between; gap: 8px 24px; flex-wrap: wrap; }
+footer a { color: var(--ink-2); }
+
+/* Phone: tighter panel padding. Last, so it wins over the base rules. */
+@media (max-width: 575.98px) {
+  .rc-head, .rc-item, .rc-foot { padding-left: 20px; padding-right: 20px; }
+  .p-head, .p-body, .p-foot, .vlist li { padding-left: 20px; padding-right: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+/* Style guide only. */
+.sg-hero { padding-top: 56px; padding-bottom: 88px; }
+.sg-hero h1 { color: #ffffff; }
+.sg-hero .eyebrow { color: #8fcfb2; }
+.sg-hero .rest { font-size: 19px; line-height: 1.55; color: #c6d1df; margin-top: 24px; max-width: 36em; }
+.sg-toc { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 28px; font-size: 14px; margin-top: 40px; }
+.sg-toc a { color: var(--navy-ink-2); text-decoration: none; }
+.sg-toc a:hover { color: #ffffff; text-decoration: underline; }
+.sg-sub { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 16px; }
+.sg-block + .sg-block { margin-top: 64px; }
+
+.sw { display: inline-flex; align-items: center; gap: 10px; font-family: var(--f-data); font-size: 13px; color: var(--ink); white-space: nowrap; }
+.sw i { width: 28px; height: 28px; border-radius: var(--r-s); border: 1px solid var(--rule-2); flex: none; }
+.t-d td.role { min-width: 260px; white-space: normal; }
+.t-d .grp td { padding-top: 28px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); border-bottom: 1px solid var(--rule-2); }
+.t-d .grp:first-child td { padding-top: 0; }
+.t-d code { font-family: var(--f-data); font-size: 13px; color: var(--ink); white-space: nowrap; }
+
+.spec { padding: 28px; }
+.spec-big { font-size: 56px; line-height: 1; color: var(--ink); margin-top: 18px; }
+.spec-name { font-size: 16px; font-weight: 600; color: var(--ink); margin-top: 22px; }
+.spec-use { font-size: 14px; margin-top: 6px; }
+
+.space-row { display: flex; align-items: center; gap: 16px; font-family: var(--f-data); font-size: 12.5px; color: var(--ink-3); padding: 6px 0; }
+.space-row span:first-child { width: 36px; }
+.space-row i { display: block; height: 10px; background: var(--ink); border-radius: 1px; }
+.corner { display: flex; gap: 16px; align-items: flex-end; }
+.corner .c-box { border: 1px solid var(--ink-3); background: var(--panel); }
+.lift-demo { width: 72px; height: 36px; border-radius: var(--r-s); background: var(--navy); display: flex; align-items: center; justify-content: center; flex: none; }
+.lift-demo span { width: 44px; height: 20px; border-radius: 3px; background: #ffffff; box-shadow: 0 6px 12px -4px rgba(0,0,0,.6); }
+code { color: var(--ink); }
+@media (min-width: 992px) { .t-d .chip { white-space: normal; } }
+@media (max-width: 767.98px) { .t-d.wide { min-width: 640px; } }
+.corner p { font-size: 12.5px; color: var(--ink-3); margin-top: 8px; font-family: var(--f-data); }
+.line-row { display: flex; align-items: center; gap: 16px; padding: 10px 0; font-size: 14px; }
+.line-row i { flex: none; width: 72px; display: block; }
+
+.navy-swatch { background: var(--navy); border-radius: var(--r-l); padding: 24px; display: flex; flex-wrap: wrap; gap: 12px; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn-p.is-hover { background: var(--accent-hover); }
+.btn-s.is-hover { background: var(--wash); border-color: var(--ink-3); }
+.on-navy .btn-p.is-hover { background: #dfe7f1; }
+.on-navy .btn-s.is-hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.7); }
+.chip.is-hover { border-color: var(--accent); color: var(--ink); background: var(--accent-tint); }
+
+.field label { display: block; font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+.field input { width: 100%; min-height: 46px; padding: 0 14px; font: 15px var(--f-ui); color: var(--ink); background: var(--panel); border: 1px solid var(--rule-2); border-radius: var(--r-s); }
+.field input::placeholder { color: var(--ink-3); }
+.field input:hover { border-color: var(--ink-3); }
+.field input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-tint); }
+.field .help { font-size: 13px; color: var(--ink-3); margin-top: 8px; }
+.field .btn-row { margin-top: 12px; }
+
+.steer-h { font-size: 15px; line-height: 1.5; color: var(--ink); }
+.key { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 10px 20px; font-size: 14px; }
+.key dt { font-weight: 600; color: var(--ink); }
+.key dd { margin: 0; }
+.rules td:first-child { color: var(--ink); width: 50%; }
+.rules td { vertical-align: top; padding-top: 16px; padding-bottom: 16px; font-size: 14.5px; line-height: 1.5; }
+@media (max-width: 767.98px) {
+  .rules thead { display: none; }
+  .rules tr { display: block; border-bottom: 1px solid var(--rule); padding: 14px 0; }
+  .rules td, .rules td:first-child { display: block; width: auto; border: 0; padding: 0; }
+  .rules td + td { margin-top: 6px; color: var(--ink-3); }
+}
+</style>
+</head>
+<body>
+
+<div class="on-navy">
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="home.html" aria-label="Tricorder, sample homepage">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><rect x="0.75" y="0.75" width="22.5" height="22.5" rx="6" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5"/><line x1="5" y1="15" x2="19" y2="15" stroke="currentColor" stroke-width="1.5"/><line x1="8.5" y1="9" x2="8.5" y2="15" stroke="currentColor" stroke-width="1.5"/><line x1="12" y1="6" x2="12" y2="15" stroke="currentColor" stroke-width="1.5"/><line x1="15.5" y1="10.5" x2="15.5" y2="15" stroke="currentColor" stroke-width="1.5"/></svg>
+      Tricorder
+    </a>
+    <nav class="nav-d" aria-label="Page">
+      <a href="home.html">Sample homepage</a>
+      <a href="../../index.html">All directions</a>
+      <button class="theme-btn" id="theme" type="button" aria-label="Change colour theme">Theme: auto</button>
+    </nav>
+  </div>
+</header>
+<section class="sg-hero" aria-labelledby="sg-title">
+  <div class="wrap">
+    <div class="row">
+      <div class="col-lg-8">
+        <p class="eyebrow">Style guide, Direction D</p>
+        <h1 id="sg-title" class="display h1">Private Bank</h1>
+        <p class="rest">The quiet confidence of a private bank or a top law firm: white working surfaces, one deep navy band, a sober serif for headlines and a plain sans for everything read. The homepage gets one dramatic moment, the lifted readout card on navy. The product gets out of the way.</p>
+      </div>
+    </div>
+    <ul class="sg-toc">
+      <li><a href="#colour">Colour</a></li>
+      <li><a href="#type">Type</a></li>
+      <li><a href="#space">Space, corners, lines</a></li>
+      <li><a href="#flags">Flags</a></li>
+      <li><a href="#strip">Range strip</a></li>
+      <li><a href="#verdicts">Verdict lines</a></li>
+      <li><a href="#tables">Tables</a></li>
+      <li><a href="#notes">Gap, clean check, steer</a></li>
+      <li><a href="#controls">Chips and controls</a></li>
+      <li><a href="#rules">Rules</a></li>
+    </ul>
+  </div>
+</section>
+</div>
+
+<main>
+<section class="sec" id="colour" aria-labelledby="colour-h">
+  <div class="wrap">
+    <div class="row sec-head">
+      <div class="col-lg-8">
+        <p class="eyebrow">Colour</p>
+        <h2 id="colour-h" class="display h2">White to work on, navy for the one deep band.</h2>
+        <p class="lede">Every colour is a token on <code class="mono">:root</code>, redefined for dark. The accent is a deep spruce green and marks action only. Verdict colours sit in their own group, and each always travels with a shape and a word.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="tscroll">
+          <table class="t-d wide">
+            <thead><tr><th scope="col">Token</th><th scope="col">Light</th><th scope="col">Dark</th><th scope="col">Role</th></tr></thead>
+            <tbody>
+              <tr class="grp"><td colspan="4">Ground and ink</td></tr>
+              <tr><td><code>--ground</code></td><td><span class="sw"><i style="background:#ffffff"></i>#ffffff</span></td><td><span class="sw"><i style="background:#0a1526"></i>#0a1526</span></td><td class="role">Page ground. Plain white, never grey.</td></tr>
+              <tr><td><code>--panel</code></td><td><span class="sw"><i style="background:#ffffff"></i>#ffffff</span></td><td><span class="sw"><i style="background:#102039"></i>#102039</span></td><td class="role">Panels and the readout card. Set apart by an outline, not a fill.</td></tr>
+              <tr><td><code>--wash</code></td><td><span class="sw"><i style="background:#f4f6f9"></i>#f4f6f9</span></td><td><span class="sw"><i style="background:#142744"></i>#142744</span></td><td class="role">Hover fill on secondary buttons. Never a page or table ground.</td></tr>
+              <tr><td><code>--ink</code></td><td><span class="sw"><i style="background:#0b1a2e"></i>#0b1a2e</span></td><td><span class="sw"><i style="background:#eaf0f7"></i>#eaf0f7</span></td><td class="role">Headlines, figures, piece names.</td></tr>
+              <tr><td><code>--ink-2</code></td><td><span class="sw"><i style="background:#33415a"></i>#33415a</span></td><td><span class="sw"><i style="background:#bcc7d6"></i>#bcc7d6</span></td><td class="role">Body text and reasons.</td></tr>
+              <tr><td><code>--ink-3</code></td><td><span class="sw"><i style="background:#5a6679"></i>#5a6679</span></td><td><span class="sw"><i style="background:#8e9bb0"></i>#8e9bb0</span></td><td class="role">Labels, column heads, axes. Passes 4.5:1 on its ground.</td></tr>
+              <tr><td><code>--rule</code></td><td><span class="sw"><i style="background:#e1e5eb"></i>#e1e5eb</span></td><td><span class="sw"><i style="background:#20334f"></i>#20334f</span></td><td class="role">Hairlines between rows and around panels.</td></tr>
+              <tr><td><code>--rule-2</code></td><td><span class="sw"><i style="background:#c3cad5"></i>#c3cad5</span></td><td><span class="sw"><i style="background:#36496a"></i>#36496a</span></td><td class="role">Chip and input outlines, table head rule, strip track.</td></tr>
+              <tr class="grp"><td colspan="4">The deep band</td></tr>
+              <tr><td><code>--navy</code></td><td><span class="sw"><i style="background:#0b1a2e"></i>#0b1a2e</span></td><td><span class="sw"><i style="background:#050d1a"></i>#050d1a</span></td><td class="role">The homepage hero, the closing band and this page's header. Nowhere else.</td></tr>
+              <tr><td><code>--navy-ink-2</code></td><td><span class="sw"><i style="background:#a9b6c9"></i>#a9b6c9</span></td><td><span class="sw"><i style="background:#a3b1c6"></i>#a3b1c6</span></td><td class="role">Navigation and secondary text on navy. Headlines on navy are white.</td></tr>
+              <tr class="grp"><td colspan="4">Accent</td></tr>
+              <tr><td><code>--accent</code></td><td><span class="sw"><i style="background:#1d5a47"></i>#1d5a47</span></td><td><span class="sw"><i style="background:#7cc4a4"></i>#7cc4a4</span></td><td class="role">Primary buttons, links, focus ring, the Ask the founder outline, role labels.</td></tr>
+              <tr><td><code>--accent-hover</code></td><td><span class="sw"><i style="background:#143f32"></i>#143f32</span></td><td><span class="sw"><i style="background:#a3d9c0"></i>#a3d9c0</span></td><td class="role">Hover on the accent. Darker on light, lighter on dark, so the label keeps its contrast.</td></tr>
+              <tr><td><code>--accent-tint</code></td><td><span class="sw"><i style="background:#e8f1ed"></i>#e8f1ed</span></td><td><span class="sw"><i style="background:#123128"></i>#123128</span></td><td class="role">Inside the Ask the founder box, chip hover, the input focus ring.</td></tr>
+              <tr class="grp"><td colspan="4">Range strip</td></tr>
+              <tr><td><code>--band</code></td><td><span class="sw"><i style="background:#e4e9f0"></i>#e4e9f0</span></td><td><span class="sw"><i style="background:#1c3050"></i>#1c3050</span></td><td class="role">The band: what a check rebuilt, or where sources agree.</td></tr>
+              <tr><td><code>--band-edge</code></td><td><span class="sw"><i style="background:#9aa6b8"></i>#9aa6b8</span></td><td><span class="sw"><i style="background:#5a7096"></i>#5a7096</span></td><td class="role">The band's two ends.</td></tr>
+              <tr class="grp"><td colspan="4">Verdicts, each with a shape and a word</td></tr>
+              <tr><td><code>--strong</code></td><td><span class="sw"><i style="background:#17803d"></i>#17803d</span></td><td><span class="sw"><i style="background:#5cc788"></i>#5cc788</span></td><td class="role">Looking strong, green flag, clean check. Filled circle.</td></tr>
+              <tr><td><code>--weak</code></td><td><span class="sw"><i style="background:#b42318"></i>#b42318</span></td><td><span class="sw"><i style="background:#ff8172"></i>#ff8172</span></td><td class="role">Looking weak, red flag, the stated figure out of range. Triangle.</td></tr>
+              <tr><td><code>--mixed</code></td><td><span class="sw"><i style="background:#94580a"></i>#94580a</span></td><td><span class="sw"><i style="background:#e6b456"></i>#e6b456</span></td><td class="role">Mixed. Half-filled circle.</td></tr>
+              <tr><td><code>--thin</code></td><td><span class="sw"><i style="background:#56637a"></i>#56637a</span></td><td><span class="sw"><i style="background:#a6b2c4"></i>#a6b2c4</span></td><td class="role">Not enough in the room, and gaps. Open circle.</td></tr>
+              <tr><td><code>--strong-bg</code> and kin</td><td><span class="sw"><i style="background:#e5f3ea"></i>#e5f3ea</span></td><td><span class="sw"><i style="background:#0f2c1c"></i>#0f2c1c</span></td><td class="role">Fill behind a mark only. Weak #fce9e7 / #3a1715, mixed #faf0dd / #33270f, thin #edf0f4 / #1a2a43.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="type" aria-labelledby="type-h">
+  <div class="wrap">
+    <div class="row sec-head">
+      <div class="col-lg-8">
+        <p class="eyebrow">Type</p>
+        <h2 id="type-h" class="display h2">A sober serif to head, a plain sans to read, a mono for figures.</h2>
+        <p class="lede">Source Serif 4 is set at its display optical size, tight and medium weight, for headlines only. IBM Plex Sans carries every sentence and control. IBM Plex Mono carries figures and file names, always tabular.</p>
+      </div>
+    </div>
+    <div class="row gy">
+      <div class="col-lg-4">
+        <div class="panel-d spec h-100">
+          <p class="sg-sub" style="margin:0">Display</p>
+          <p class="display spec-big">Readout</p>
+          <p class="spec-name">Source Serif 4, 500 to 600</p>
+          <p class="spec-use">Page headlines, section headlines, persona promises, the wordmark. 26px and up.</p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="panel-d spec h-100">
+          <p class="sg-sub" style="margin:0">Text and interface</p>
+          <p class="spec-big" style="font-family:var(--f-ui);font-weight:500;letter-spacing:-0.02em">Readout</p>
+          <p class="spec-name">IBM Plex Sans, 400, 500, 600</p>
+          <p class="spec-use">Every sentence a person reads: reasons, flags, notes, buttons, labels.</p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="panel-d spec h-100">
+          <p class="sg-sub" style="margin:0">Figures and sources</p>
+          <p class="spec-big mono" style="font-size:44px;line-height:1.27;letter-spacing:-0.02em">$2,240,868</p>
+          <p class="spec-name">IBM Plex Mono, 400 and 500</p>
+          <p class="spec-use">Figures in tables and stated beside found, file names, strip labels, axes.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top:48px">
+      <div class="col-12">
+        <div class="tscroll">
+          <table class="t-d wide">
+            <thead><tr><th scope="col">Step</th><th scope="col">Size and leading</th><th scope="col">Face</th><th scope="col">Used for</th></tr></thead>
+            <tbody>
+              <tr><td><span class="display" style="font-size:40px;line-height:1.02">Headline</span></td><td class="mono">42 to 66 / 1.02, -0.026em</td><td>Serif 500</td><td>The line on the homepage, this page's title. Once per page.</td></tr>
+              <tr><td><span class="display" style="font-size:30px;line-height:1.06">Section</span></td><td class="mono">32 to 44 / 1.06, -0.022em</td><td>Serif 500</td><td>Section headlines.</td></tr>
+              <tr><td><span class="display" style="font-size:24px;line-height:1.15">Block</span></td><td class="mono">26 / 1.15</td><td>Serif 500</td><td>Persona promises, large list leads.</td></tr>
+              <tr><td><span style="font-weight:600;font-size:17px;color:var(--ink)">Flag title</span></td><td class="mono">16 to 17 / 1.35</td><td>Sans 600</td><td>Flag, gap and check titles, panel titles.</td></tr>
+              <tr><td>Body</td><td class="mono">16 / 1.55, lede 18</td><td>Sans 400</td><td>Reading text.</td></tr>
+              <tr><td class="small">Small</td><td class="mono">14 / 1.5</td><td>Sans 400</td><td>Reasons, notes, table cells.</td></tr>
+              <tr><td><span class="eyebrow" style="margin:0">Label</span></td><td class="mono">12, caps, +0.1em</td><td>Sans 600</td><td>Eyebrows above headlines, role labels.</td></tr>
+              <tr><td class="mono" style="color:var(--ink)">$9,000,000</td><td class="mono">12 to 21</td><td>Mono 400</td><td>Chips at 12, tables at 14, stated beside found at 21.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="space" aria-labelledby="space-h">
+  <div class="wrap">
+    <div class="row sec-head">
+      <div class="col-lg-8">
+        <p class="eyebrow">Space, corners, lines</p>
+        <h2 id="space-h" class="display h2">Twelve columns, one gutter, two radii.</h2>
+        <p class="lede">The page is a 12-column grid with a 24px gutter, 1248px of content at most, with 32px sides on desktop and 16px on a phone. Space steps by 8.</p>
+      </div>
+    </div>
+    <div class="row gy">
+      <div class="col-lg-4">
+        <div class="panel-d h-100">
+          <div class="p-head"><span class="p-title">Spacing</span><span class="rc-meta">px</span></div>
+          <div class="p-body">
+            <div>
+              <div class="space-row"><span>8</span><i style="width:8px"></i></div>
+              <div class="space-row"><span>16</span><i style="width:16px"></i></div>
+              <div class="space-row"><span>24</span><i style="width:24px"></i></div>
+              <div class="space-row"><span>40</span><i style="width:40px"></i></div>
+              <div class="space-row"><span>56</span><i style="width:56px"></i></div>
+              <div class="space-row"><span>72</span><i style="width:72px"></i></div>
+              <div class="space-row"><span>120</span><i style="width:120px"></i></div>
+            </div>
+            <p class="small">8 and 16 inside components. 24 is the gutter and panel padding. 56 sits under a section head. 120 between sections on desktop, 72 on a phone.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="panel-d h-100">
+          <div class="p-head"><span class="p-title">Corners</span><span class="rc-meta">two radii</span></div>
+          <div class="p-body">
+            <div class="corner">
+              <div><div class="c-box" style="width:64px;height:40px;border-radius:6px"></div><p>6px</p></div>
+              <div><div class="c-box" style="width:120px;height:80px;border-radius:12px"></div><p>12px</p></div>
+              <div><div style="width:2px;height:40px;background:var(--ink)"></div><p>0, ticks</p></div>
+            </div>
+            <p class="small">6px for chips, buttons, inputs, marks and the ask box. 12px for panels and the readout card. Ticks, bands and rules on a strip stay square, so a position reads exactly.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="panel-d h-100">
+          <div class="p-head"><span class="p-title">Lines and lift</span><span class="rc-meta">1px</span></div>
+          <div class="p-body">
+            <div>
+              <div class="line-row"><i style="border-top:1px solid var(--rule)"></i>Hairline. Rows, panel outlines.</div>
+              <div class="line-row"><i style="border-top:1px solid var(--ink)"></i>Ink rule. Tops a ruled list, full column width.</div>
+              <div class="line-row"><i style="border-top:1px dashed var(--rule-2)"></i>Dashed. Absence: a gap.</div>
+              <div class="line-row"><span class="lift-demo" aria-hidden="true"><span></span></span>Lift. The hero readout card only, on navy.</div>
+            </div>
+            <p class="small">No thick lines, no single coloured edge, no textures behind anything.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="flags" aria-labelledby="flags-h">
+  <div class="wrap">
+    <div class="row sec-head">
+      <div class="col-lg-8">
+        <p class="eyebrow">Readout components</p>
+        <h2 id="flags-h" class="display h2">Green flag and red flag, at the same size.</h2>
+        <p class="lede">Every example below is drawn from one room. Synthetic data room for Deal Flow NYC 2026. Not a real company.</p>
+      </div>
+    </div>
+    <div class="row gy">
+      <div class="col-lg-6">
+        <div class="panel-d h-100">
+          <div class="p-body">
+            <h3 class="flag-t"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true" style="color:var(--strong)"><circle cx="6" cy="6" r="5.5" fill="currentColor"/></svg><span><span class="w-strong">Green flag:</span> the round adds up.</span></h3>
+            <div class="flag-body" style="margin-top:6px">
+              <p class="flag-p" style="padding-left:0;margin-top:0">$9,000,000, stated in the deck and the same in the cap table and the model. Nothing in the room contradicts it.</p>
+              <div class="figs n3">
+                <div class="fig"><div class="fig-l">Deck</div><div class="fig-v">$9,000,000</div></div>
+                <div class="fig"><div class="fig-l">Cap table</div><div class="fig-v">$9,000,000</div></div>
+                <div class="fig"><div class="fig-l">Model</div><div class="fig-v">$9,000,000</div></div>
+              </div>
+              <div class="chips">
+                <button class="chip" type="button">pitch_deck.pdf, slide 13</button>
+                <button class="chip" type="button">cap_table.xlsx, Cap_Table, B24</button>
+                <button class="chip" type="button">financial_model.xlsx, SERIES_A_RAISE</button>
+              </div>
+            </div>
+          </div>
+          <div class="p-foot">Use: at the top of the readout, green flags first. Same size, weight and length as a red flag.</div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="panel-d h-100">
+          <div class="p-body">
+            <h3 class="flag-t"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true" style="color:var(--weak)"><path d="M6 0.8 L11.4 11 L0.6 11 Z" fill="currentColor"/></svg><span><span class="w-weak">Red flag:</span> runway leaves out most of the hiring plan.</span></h3>
+            <div class="flag-body" style="margin-top:6px">
+              <div class="figs n2">
+                <div class="fig"><div class="fig-l">Stated</div><div class="fig-v weak">37<span class="u">months</span></div><div class="fig-n">Model and deck, slide 11</div></div>
+                <div class="fig"><div class="fig-l">Found</div><div class="fig-v">19<span class="u">months</span></div><div class="fig-n">All 24 planned hires paid for</div></div>
+              </div>
+              <p class="small" style="margin-top:14px">Burn and runway reads looking weak.</p>
+              <div class="chips">
+                <button class="chip" type="button">financial_model.xlsx, RUNWAY_MONTHS</button>
+                <button class="chip" type="button">pitch_deck.pdf, slide 11</button>
+                <button class="chip" type="button">hiring_plan.csv, rerun through Cash_Runway</button>
+              </div>
+            </div>
+          </div>
+          <div class="p-foot">Use: stated beside found, the stated figure in the weak colour. The same flag opens in its drill-down.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="strip" aria-labelledby="strip-h">
+  <div class="wrap">
+    <div class="row sec-head">
+      <div class="col-lg-8">
+        <p class="eyebrow">Range strip</p>
+        <h2 id="strip-h" class="display h2">Each number drawn against what the check rebuilt.</h2>
+      </div>
+    </div>
+    <div class="row gy">
+      <div class="col-lg-7">
+        <div class="panel-d h-100">
+          <div class="p-head"><span class="p-title">Two strips</span><span class="rc-meta">with a band, and without</span></div>
+          <div class="p-body">
+            <p class="sg-sub" style="margin-bottom:16px">Runway: found against stated</p>
+            <div class="strip" style="margin-top:0" role="img" aria-label="Range strip from 0 to 40 months. The check rebuilt 19 months, drawn as a band. The stated 37 months sits outside it with the red mark.">
+              <div class="track"></div>
+              <div class="ax" style="left:0"></div><div class="ax" style="left:50%"></div><div class="ax" style="left:calc(100% - 1px)"></div>
+              <div class="band" style="left:0;width:47.5%"></div>
+              <div class="tk" style="left:47.5%"></div>
+              <div class="tk out" style="left:92.5%"></div>
+              <div class="tri" style="left:92.5%"></div>
+              <span class="lab end" style="left:calc(47.5% - 6px)">found 19 mo</span>
+              <span class="lab weak tri-lab" style="left:92.5%">stated 37 mo</span>
+              <span class="axl first" style="left:0">0</span>
+              <span class="axl" style="left:50%">20</span>
+              <span class="axl last" style="left:100%">40 months</span>
+            </div>
+            <p class="sg-sub" style="margin-bottom:16px;margin-top:32px;padding-top:24px;border-top:1px solid var(--rule)">ARR: three sources, no band</p>
+            <div class="strip" style="margin-top:0" role="img" aria-label="Range strip from 2.0 to 3.1 million dollars. The model states 2.24 million, the deck 2.50 million, the pitch video about 3.0 million. No band, because no two agree.">
+              <div class="track"></div>
+              <div class="ax" style="left:0"></div><div class="ax" style="left:50%"></div><div class="ax" style="left:calc(100% - 1px)"></div>
+              <div class="tk" style="left:21.9%"></div>
+              <div class="tk" style="left:45.45%"></div>
+              <div class="tk about" style="left:90.91%"></div>
+              <span class="lab lo" style="left:21.9%">model $2.24M</span>
+              <span class="lab" style="left:45.45%">deck $2.50M</span>
+              <span class="lab lo end" style="left:calc(90.91% + 6px)">video, about $3.0M</span>
+              <span class="axl first" style="left:0">$2.0M</span>
+              <span class="axl" style="left:50%">$2.55M</span>
+              <span class="axl last" style="left:100%">$3.1M</span>
+            </div>
+          </div>
+          <div class="p-foot">Use: under a red flag or a disagreement, above its table. Labels may round; the table carries the exact figure.</div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="panel-d h-100">
+          <div class="p-head"><span class="p-title">Parts</span></div>
+          <div class="p-body">
+            <dl class="key">
+              <dt>Track</dt><dd>The scale, a hairline with ticks at the ends and the middle.</dd>
+              <dt>Band</dt><dd>What the check rebuilt, or where sources agree within 1%. A disagreement gets no band, because the readout does not pick a winner.</dd>
+              <dt>Tick</dt><dd>One source's figure, in ink.</dd>
+              <dt>About</dt><dd>A spoken figure. A wider, lighter tick with the point in its middle.</dd>
+              <dt>Out of range</dt><dd>The stated figure a check did not rebuild: a red tick under the weak triangle.</dd>
+              <dt>Axis</dt><dd>Mono labels at the ends and the middle, with the unit once.</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="verdicts" aria-labelledby="verdicts-h">
+  <div class="wrap">
+    <div class="row sec-head">
+      <div class="col-lg-8">
+        <p class="eyebrow">Verdict lines</p>
+        <h2 id="verdicts-h" class="display h2">Four marks, each a shape, a word and a colour.</h2>
+        <p class="lede">Hollis Voice has no mixed piece and no piece with too little in the room, so those two lines show the template. Counts come from the run.</p>
+      </div>
+    </div>
+    <div class="row gy">
+      <div class="col-lg-8">
+        <div class="panel-d h-100">
+          <div class="p-head"><span class="p-title">Overview</span><span class="rc-meta">one line per piece</span></div>
+          <ul class="vlist">
+            <li><div class="v-top"><span class="v-piece">Market</span><span class="mark m-strong"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>looking strong</span></div><p class="v-why">Market size $252,000,000 on deck slide 8 and in the model (MARKET_TAM_USD). Both are the company's own estimate. [n] sources corroborate, [n] contradict.</p></li>
+            <li><div class="v-top"><span class="v-piece">Traction and revenue</span><span class="mark m-weak"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1 L11 10.5 L1 10.5 Z" fill="currentColor"/></svg>looking weak</span></div><p class="v-why">ARR is stated four ways, from about $3,000,000 on the pitch video to $2,060,868 in the subscription rows (pitch video, 0:35; customer_mrr_by_month.csv). [n] sources corroborate, [n] contradict.</p></li>
+            <li><div class="v-top"><span class="v-piece">[Piece]</span><span class="mark m-mixed"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="4.75" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6 1.25 A4.75 4.75 0 0 0 6 10.75 Z" fill="currentColor"/></svg>mixed</span></div><p class="v-why">[The reason, in one sentence, with its number and source.] [n] sources corroborate, [n] contradict.</p></li>
+            <li><div class="v-top"><span class="v-piece">[Piece]</span><span class="mark m-thin"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="4.75" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>not enough in the room</span></div><p class="v-why">[What the room is missing, named the way a gap is.] [n] sources corroborate, [n] contradict.</p></li>
+            <li><div class="v-top"><span class="v-piece">Comps</span><span class="mark m-run"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2"/></svg>running</span></div><p class="v-why">Still running: comps. Pieces so far above.</p></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="panel-d h-100">
+          <div class="p-head"><span class="p-title">Marks</span></div>
+          <div class="p-body">
+            <div style="display:flex;flex-direction:column;align-items:flex-start;gap:12px">
+              <span class="mark m-strong"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>looking strong</span>
+              <span class="mark m-weak"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1 L11 10.5 L1 10.5 Z" fill="currentColor"/></svg>looking weak</span>
+              <span class="mark m-mixed"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="4.75" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6 1.25 A4.75 4.75 0 0 0 6 10.75 Z" fill="currentColor"/></svg>mixed</span>
+              <span class="mark m-thin"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="4.75" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>not enough in the room</span>
+              <span class="mark m-run"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2"/></svg>running</span>
+              <span class="mark m-dis"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><rect x="2" y="1" width="2" height="10" fill="currentColor"/><rect x="8" y="1" width="2" height="10" fill="currentColor"/></svg>disagreement</span>
+            </div>
+            <p class="small">Filled circle, triangle, half circle, open circle. Each survives a greyscale print and a colour-blind reader. Running and disagreement are not verdicts, so they are outlined, not filled.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="tables" aria-labelledby="tables-h">
+  <div class="wrap">
+    <div class="row sec-head">
+      <div class="col-lg-8">
+        <p class="eyebrow">Tables</p>
+        <h2 id="tables-h" class="display h2">Sources side by side, the ones that agree and the ones that do not.</h2>
+      </div>
+    </div>
+    <div class="row gy">
+      <div class="col-lg-6">
+        <div class="panel-d h-100">
+          <div class="p-head"><span class="p-title">Corroborated: Series A raise, $9,000,000</span><span class="mark m-strong"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>corroborated</span></div>
+          <div class="p-body">
+            <div class="tscroll">
+              <table class="t-d">
+                <thead><tr><th scope="col">Source</th><th scope="col" class="v">States</th><th scope="col">Where</th></tr></thead>
+                <tbody>
+                  <tr><td class="src">Deck</td><td class="v">$9,000,000</td><td><button class="chip" type="button">pitch_deck.pdf, slide 13</button></td></tr>
+                  <tr><td class="src">Cap table</td><td class="v">$9,000,000</td><td><button class="chip" type="button">cap_table.xlsx, Cap_Table, B24</button></td></tr>
+                  <tr><td class="src">Financial model</td><td class="v">$9,000,000</td><td><button class="chip" type="button">financial_model.xlsx, Assumptions, SERIES_A_RAISE</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="small">3 independent sources agree. Nothing in the room contradicts it.</p>
+          </div>
+          <div class="p-foot">Use: say "corroborated" or "agree", never "verified" or "confirmed". A repeat is shown and not counted.</div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="panel-d h-100">
+          <div class="p-head"><span class="p-title">Disagreement: ARR</span><span class="mark m-dis"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><rect x="2" y="1" width="2" height="10" fill="currentColor"/><rect x="8" y="1" width="2" height="10" fill="currentColor"/></svg>disagreement</span></div>
+          <div class="p-body">
+            <div class="tscroll">
+              <table class="t-d">
+                <thead><tr><th scope="col">Source</th><th scope="col" class="v">States</th><th scope="col">Where</th></tr></thead>
+                <tbody>
+                  <tr><td class="src">Pitch video</td><td class="v">about $3,000,000</td><td><button class="chip" type="button">pitch video, 0:35</button></td></tr>
+                  <tr><td class="src">Deck</td><td class="v">$2,500,000</td><td><button class="chip" type="button">pitch_deck.pdf, slide 3</button></td></tr>
+                  <tr><td class="src">Financial model</td><td class="v">$2,240,868</td><td><button class="chip" type="button">financial_model.xlsx, ARR_Build, ARR_TOTAL</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="small">Largest gap: about $760,000, between the video and the model. The deck is $259,132 above the model. The room does not explain either gap.</p>
+            <div class="ask">
+              <p class="ask-q"><span class="ask-l">Ask the founder</span>Which of these is ARR as of 2026-09-30, and can you walk us from the billing data to it?</p>
+              <button class="btn-d btn-s btn-sm" type="button">Add to the ask list</button>
+            </div>
+          </div>
+          <div class="p-foot">Use: no winner, no band on its strip. The ask closes it, in a full accent outline.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="notes" aria-labelledby="notes-h">
+  <div class="wrap">
+    <div class="row sec-head">
+      <div class="col-lg-8">
+        <p class="eyebrow">Gap, clean check, steered piece</p>
+        <h2 id="notes-h" class="display h2">What is missing, what ran clean, what you changed.</h2>
+      </div>
+    </div>
+    <div class="row gy">
+      <div class="col-lg-4">
+        <div class="panel-d gap h-100">
+          <div class="p-body">
+            <h3 class="note-h"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true" style="color:var(--thin)"><circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Not in the room: IP assignment agreements</h3>
+            <dl class="dl-d">
+              <dt>Needed for</dt>
+              <dd>Confirming the founders and every contractor assigned their work to the company.</dd>
+              <dt>Ask for</dt>
+              <dd>Signed invention assignment agreements for both founders and every contractor who wrote code.</dd>
+            </dl>
+          </div>
+          <div class="p-foot">Use: a dashed outline in grey, never red. A gap is a question, not a flag.</div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="panel-d h-100">
+          <div class="p-body">
+            <h3 class="note-h"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true" style="color:var(--strong)"><path d="M2 6.2 L4.8 9 L10 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Clean: cash reconciles.</h3>
+            <p class="small">Money raised before the Series A, less every month's net loss to 2026-09-30, was compared with the model's cash. The two differ by $0.24 on $1,800,000.</p>
+            <div class="chips" style="margin-top:14px">
+              <button class="chip" type="button">cap_table.xlsx</button>
+              <button class="chip" type="button">financial_model.xlsx</button>
+            </div>
+          </div>
+          <div class="p-foot">Use: shown so the operator knows the check ran. A tick and one paragraph.</div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="panel-d h-100" style="border-color:var(--accent)">
+          <div class="p-body">
+            <h3 class="note-h"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true" style="color:var(--accent)"><path d="M2 10 L2 8 L8 2 L10 4 L4 10 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Rewritten on your instruction: "Lead with the pilot."</h3>
+            <p class="small">The pilot counted as ARR now opens the piece. Verdict unchanged. The checks' numbers are unchanged.</p>
+          </div>
+          <div class="p-foot">Use: at the top of the steered piece, in a full accent outline, because it records your action.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="controls" aria-labelledby="controls-h">
+  <div class="wrap">
+    <div class="row sec-head">
+      <div class="col-lg-8">
+        <p class="eyebrow">Chips and controls</p>
+        <h2 id="controls-h" class="display h2">Source chips, buttons and a text input.</h2>
+      </div>
+    </div>
+    <div class="row gy">
+      <div class="col-lg-4">
+        <div class="panel-d h-100">
+          <div class="p-head"><span class="p-title">Source chip</span></div>
+          <div class="p-body">
+            <p class="sg-sub" style="margin-bottom:0">Rest</p>
+            <div class="chips" style="margin-top:10px">
+              <button class="chip" type="button">pitch_deck.pdf, slide 13</button>
+              <button class="chip" type="button">pitch video, 0:35</button>
+            </div>
+            <p class="sg-sub" style="margin-bottom:0">Hover</p>
+            <div class="chips" style="margin-top:10px">
+              <button class="chip is-hover" type="button">expense_ledger.csv</button>
+            </div>
+          </div>
+          <div class="p-foot">Use: file and place in mono. One click opens the source. Chips sit on their own row under the sentence.</div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="panel-d h-100">
+          <div class="p-head"><span class="p-title">Buttons</span></div>
+          <div class="p-body">
+            <p class="sg-sub" style="margin-bottom:0">Rest</p>
+            <div class="btn-row" style="margin-top:10px">
+              <button class="btn-d btn-p" type="button">Open the readout</button>
+              <button class="btn-d btn-s" type="button">Export memo</button>
+            </div>
+            <p class="sg-sub" style="margin-bottom:0">Hover</p>
+            <div class="btn-row" style="margin-top:10px">
+              <button class="btn-d btn-p is-hover" type="button">Open the readout</button>
+              <button class="btn-d btn-s is-hover" type="button">Export memo</button>
+            </div>
+            <div class="navy-swatch on-navy">
+              <button class="btn-d btn-p" type="button">See the readout</button>
+              <button class="btn-d btn-s is-hover" type="button">Hover</button>
+            </div>
+          </div>
+          <div class="p-foot">Use: one primary per view, 46px tall. On navy the primary turns white.</div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="panel-d h-100">
+          <div class="p-head"><span class="p-title">Text input</span></div>
+          <div class="p-body">
+            <div class="field">
+              <label for="steer">Steer this piece</label>
+              <input id="steer" type="text" placeholder="One sentence, for example: lead with the pilot">
+              <div class="btn-row">
+                <button class="btn-d btn-p btn-sm" type="button">Rewrite</button>
+                <button class="btn-d btn-s btn-sm" type="button">Get more info</button>
+              </div>
+              <p class="help">The checks' numbers stay on screen beside the change.</p>
+            </div>
+          </div>
+          <div class="p-foot">Use: label above, help below. Focus draws the accent outline and a soft ring.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="rules" aria-labelledby="rules-h">
+  <div class="wrap">
+    <div class="row sec-head">
+      <div class="col-lg-8">
+        <p class="eyebrow">Rules</p>
+        <h2 id="rules-h" class="display h2">Rules a builder can apply without asking.</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="tscroll">
+          <table class="t-d rules">
+            <thead><tr><th scope="col">Rule</th><th scope="col">Why</th></tr></thead>
+            <tbody>
+              <tr><td>Working surfaces are white. Navy is for the homepage hero, the closing band and a page header, nothing else.</td><td>One deep band reads as gravitas. A second colour of ground turns it into a theme, and grey grounds read as dull.</td></tr>
+              <tr><td>Only the readout card on the hero is lifted with a shadow. Every other panel is a 1px outline.</td><td>One lifted surface tells the eye where the product is. Shadows on every card flatten that.</td></tr>
+              <tr><td>Two radii: 6px for chips, buttons, inputs, marks and the ask box; 12px for panels. Chart marks stay square.</td><td>A small, fixed scale looks deliberate. A rounded tick blurs the position it marks.</td></tr>
+              <tr><td>Every element sits in a column of the 12-column grid with the 24px gutter. A heading starts on the same line as the content under it.</td><td>The page should line up by eye. A label floating in a side column breaks the edge.</td></tr>
+              <tr><td>Boxes in one row share one structure and one height. Use equal-height columns, or a subgrid when rows inside must line up too.</td><td>Ragged bottoms read as unfinished.</td></tr>
+              <tr><td>The accent marks action only: buttons, links, focus, the ask box, the steered note. It never marks a verdict.</td><td>Green flag green is its own token. Keeping the two apart stops a button reading as a judgment.</td></tr>
+              <tr><td>Every verdict mark carries a shape, a word and a colour: filled circle strong, triangle weak, half circle mixed, open circle not enough.</td><td>Memos get printed and read by colour-blind partners.</td></tr>
+              <tr><td>Colour a flag on its mark and its stated figure only. Never on a panel fill or a single edge of a box.</td><td>A page of red panels reads as alarm. The readout says a flag once, at the size it is.</td></tr>
+              <tr><td>Figures and file names are Plex Mono with tabular figures. A figure inside a sentence stays in Plex Sans, with tabular figures on.</td><td>Columns of dollars line up to be compared. A sentence reads as one voice.</td></tr>
+              <tr><td>Source chips go on their own row under the sentence they support.</td><td>A chip in mid-line breaks the sentence and the line height.</td></tr>
+              <tr><td>A table is one surface: rules between rows, the head row the same fill as the body.</td><td>A filled head row splits one table into two boxes.</td></tr>
+              <tr><td>Serif headlines keep leading between 1.02 and 1.15, tracked slightly tight.</td><td>Loose leading on a large serif looks amateur.</td></tr>
+              <tr><td>Hover darkens a control on white and lightens it on navy or in dark. Check every button in both themes.</td><td>A hover that loses contrast hides the label at the moment of the click.</td></tr>
+              <tr><td>The synthetic label appears once per page, beside the first readout excerpt.</td><td>Once is honest. Repeated, it becomes wallpaper.</td></tr>
+              <tr><td>No textures, no rotated elements, no coloured bars above headings.</td><td>The surface stays quiet so the figures carry the page.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Tricorder. Direction D, Private Bank. A style study, not a live product page.</span>
+    <span><a href="home.html">Sample homepage</a> &nbsp; <a href="../../index.html">All directions</a></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var b = document.getElementById('theme');
+  var r = document.documentElement;
+  var order = ['auto', 'light', 'dark'];
+  var cur = 'auto';
+  try { cur = localStorage.getItem('tricorder-d-theme') || 'auto'; } catch (e) {}
+  function apply(v) {
+    cur = order.indexOf(v) < 0 ? 'auto' : v;
+    if (cur === 'auto') r.removeAttribute('data-theme'); else r.setAttribute('data-theme', cur);
+    if (b) b.textContent = 'Theme: ' + cur;
+    try { localStorage.setItem('tricorder-d-theme', cur); } catch (e) {}
+  }
+  apply(cur);
+  if (b) b.addEventListener('click', function () { apply(order[(order.indexOf(cur) + 1) % 3]); });
+})();
+</script>
+</body>
+</html>

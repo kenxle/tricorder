@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tricorder, Direction B</title>
+<meta name="description" content="Sample homepage for Tricorder in style direction B, Manifest.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cousine:wght@400;700&family=Barlow+Semi+Condensed:wght@400;500;600&family=Libre+Franklin:ital,wght@0,300..700;1,400&display=swap">
+<style>
+/* Direction B, Manifest. Dark-first: bare :root is the dark theme, light mirrors it. */
+:root {
+  color-scheme: dark;
+  --ground: #0E1D24;        /* page: petrol, the dock at night */
+  --panel: #13262F;         /* square panels, the manifest sheet */
+  --panel-2: #183039;       /* inset rows, table heads */
+  --rule: #2A4652;          /* hairlines between lines */
+  --rule-strong: #46697A;   /* panel edges, box borders */
+  --ink: #E7EAE6;           /* body text */
+  --ink-2: #9DB0B6;         /* labels, line numbers, captions */
+  --accent: #F08B38;        /* signal lamp: actions, focus, the found column */
+  --accent-ink: #1A0E05;    /* text on an accent fill */
+  --accent-wash: rgba(240, 139, 56, 0.12);
+  --strong: #5FCB9A;        /* looking strong, green flag, clean */
+  --weak: #F2667F;          /* looking weak, red flag */
+  --mixed: #A3B4FF;         /* mixed */
+  --thin: #B4BFC2;          /* not enough in the room, gaps */
+  --strong-wash: rgba(95, 203, 154, 0.10);
+  --weak-wash: rgba(242, 102, 127, 0.10);
+  --mixed-wash: rgba(163, 180, 255, 0.10);
+  --lamp-glow: 0 0 0 4px rgba(240, 139, 56, 0.18), 0 0 18px rgba(240, 139, 56, 0.45);
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ground: #0E1D24; --panel: #13262F; --panel-2: #183039; --rule: #2A4652; --rule-strong: #46697A;
+  --ink: #E7EAE6; --ink-2: #9DB0B6; --accent: #F08B38; --accent-ink: #1A0E05; --accent-wash: rgba(240, 139, 56, 0.12);
+  --strong: #5FCB9A; --weak: #F2667F; --mixed: #A3B4FF; --thin: #B4BFC2;
+  --strong-wash: rgba(95, 203, 154, 0.10); --weak-wash: rgba(242, 102, 127, 0.10); --mixed-wash: rgba(163, 180, 255, 0.10);
+  --lamp-glow: 0 0 0 4px rgba(240, 139, 56, 0.18), 0 0 18px rgba(240, 139, 56, 0.45);
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --ground: #E9EEEE; --panel: #FBFCFC; --panel-2: #F0F4F4; --rule: #CBD6D8; --rule-strong: #8FA4AA;
+    --ink: #0E1D24; --ink-2: #465A62; --accent: #A14E0C; --accent-ink: #FFFFFF; --accent-wash: rgba(161, 78, 12, 0.09);
+    --strong: #12704A; --weak: #B0233C; --mixed: #3A4CB0; --thin: #56636A;
+    --strong-wash: rgba(18, 112, 74, 0.08); --weak-wash: rgba(176, 35, 60, 0.07); --mixed-wash: rgba(58, 76, 176, 0.07);
+    --lamp-glow: 0 0 0 4px rgba(161, 78, 12, 0.14);
+  }
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --ground: #E9EEEE; --panel: #FBFCFC; --panel-2: #F0F4F4; --rule: #CBD6D8; --rule-strong: #8FA4AA;
+  --ink: #0E1D24; --ink-2: #465A62; --accent: #A14E0C; --accent-ink: #FFFFFF; --accent-wash: rgba(161, 78, 12, 0.09);
+  --strong: #12704A; --weak: #B0233C; --mixed: #3A4CB0; --thin: #56636A;
+  --strong-wash: rgba(18, 112, 74, 0.08); --weak-wash: rgba(176, 35, 60, 0.07); --mixed-wash: rgba(58, 76, 176, 0.07);
+  --lamp-glow: 0 0 0 4px rgba(161, 78, 12, 0.14);
+}
+
+:root {
+  --f-display: "Barlow Semi Condensed", "DIN Alternate", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "Libre Franklin", "Franklin Gothic Book", "Helvetica Neue", Arial, sans-serif;
+  --f-data: "Cousine", "Liberation Mono", "Courier New", ui-monospace, monospace;
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 72px; --s-9: 112px; --s-10: 160px;
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+  --measure: 36rem;
+  --wide: 72rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 17px;
+  line-height: 1.6;
+  font-weight: 400;
+  overflow-wrap: break-word;
+}
+a { color: inherit; text-decoration-color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.pill:focus-visible, .chip:focus-visible { border-radius: 999px; }
+
+.wrap { max-width: var(--wide); margin: 0 auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
+
+/* Type */
+.display, h1, h2 { font-family: var(--f-display); font-weight: 500; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; line-height: 1.08; margin: 0; }
+h1 { font-size: clamp(2.6rem, 7.2vw, 5.6rem); line-height: 0.96; }
+h2 { font-size: clamp(2rem, 4.4vw, 3.4rem); }
+h3 { font-family: var(--f-body); font-size: 1.05rem; font-weight: 650; margin: 0; line-height: 1.35; }
+.lede { font-size: clamp(1.1rem, 1.6vw, 1.3rem); line-height: 1.55; max-width: var(--measure); color: var(--ink); font-weight: 350; }
+.label {
+  font-family: var(--f-data); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-2); font-weight: 400;
+}
+.data, code, .num { font-family: var(--f-data); font-variant-numeric: tabular-nums; }
+.num { font-size: 0.95em; }
+p { margin: 0 0 var(--s-4); max-width: var(--measure); }
+
+/* The box label: every panel carries a customs-form box number */
+.box-no { display: inline-flex; gap: var(--s-2); align-items: baseline; }
+.box-no b { color: var(--accent); font-weight: 700; }
+
+/* Panels are square. Controls are pills. */
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--rule-strong);
+  border-radius: 0;
+  position: relative;
+}
+.panel-head {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s-2) var(--s-4);
+  padding: var(--s-3) var(--s-5); border-bottom: 1px solid var(--rule);
+}
+
+/* Manifest lines: a numbered gutter, a hairline, the content */
+.line {
+  display: grid; grid-template-columns: 4.2rem 1fr; border-top: 1px solid var(--rule);
+}
+.line:first-child { border-top: 0; }
+.line-no {
+  font-family: var(--f-data); font-size: 0.78rem; color: var(--ink-2); letter-spacing: 0.04em;
+  padding: var(--s-5) 0 var(--s-5) var(--s-5); border-right: 1px solid var(--rule);
+  font-variant-numeric: tabular-nums;
+}
+.line-body { padding: var(--s-5); min-width: 0; }
+.line-body p:last-child { margin-bottom: 0; }
+@media (max-width: 560px) {
+  .line { grid-template-columns: 1fr; }
+  .line-no { border-right: 0; padding: var(--s-3) var(--s-4) 0; }
+  .line-body { padding: var(--s-2) var(--s-4) var(--s-4); }
+  .panel-head { padding: var(--s-3) var(--s-4); }
+}
+
+/* Stamps: the mark a piece or a claim gets. Always a word, always a shape. */
+.stamp {
+  --c: var(--ink-2);
+  display: inline-flex; align-items: center; gap: 0.5em;
+  font-family: var(--f-data); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--c); border: 2px solid var(--c); padding: 0.28em 0.7em 0.24em;
+  box-shadow: inset 0 0 0 2px var(--panel), inset 0 0 0 3px var(--c);
+  white-space: nowrap; line-height: 1.3;
+  -webkit-mask-image: var(--grit); mask-image: var(--grit);
+}
+.stamp svg { width: 0.95em; height: 0.95em; flex: none; }
+.stamp.strong { --c: var(--strong); }
+.stamp.weak { --c: var(--weak); }
+.stamp.mixed { --c: var(--mixed); }
+.stamp.thin { --c: var(--thin); border-style: dashed; box-shadow: none; }
+.stamp.flat { transform: none; font-size: 0.7rem; }
+:root { --grit: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='60'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' seed='27'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1.1 1.75'/%3E%3C/filter%3E%3Crect width='160' height='60' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+/* Flag heads */
+.flag-head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3); margin-bottom: var(--s-3); }
+.flag-title { font-weight: 650; font-size: 1.08rem; line-height: 1.4; margin: 0 0 var(--s-2); }
+
+/* Stated beside found: the declared and inspected columns */
+.sf { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--rule); margin: var(--s-4) 0; }
+.sf > div { padding: var(--s-3) var(--s-4); min-width: 0; }
+.sf > div + div { border-left: 1px solid var(--rule); }
+.sf .big { font-family: var(--f-data); font-size: 1.5rem; font-variant-numeric: tabular-nums; line-height: 1.2; display: block; margin: var(--s-1) 0; }
+.sf .found { box-shadow: inset 0 3px 0 var(--accent); }
+.sf .found .label { color: var(--accent); }
+@media (max-width: 400px) { .sf .big { font-size: 1.25rem; } }
+
+/* Source chip */
+.chip {
+  display: inline-flex; align-items: center; gap: 0.45em; max-width: 100%;
+  font-family: var(--f-data); font-size: 0.76rem; line-height: 1.3; color: var(--ink);
+  border: 1px solid var(--rule-strong); border-radius: 999px; padding: 0.22em 0.75em 0.22em 0.6em;
+  background: var(--panel-2); text-decoration: none; vertical-align: baseline;
+  white-space: normal;
+}
+.chip::before { content: ""; width: 0.5em; height: 0.5em; border: 1px solid var(--accent); transform: rotate(45deg); flex: none; }
+.chip:hover { border-color: var(--accent); color: var(--ink); }
+.chips { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-3); }
+
+/* Tables */
+.table-box { overflow-x: auto; border: 1px solid var(--rule); background: var(--panel); margin: var(--s-4) 0; -webkit-overflow-scrolling: touch; }
+table { border-collapse: collapse; width: 100%; min-width: 30rem; font-size: 0.92rem; }
+caption { text-align: left; padding: var(--s-3) var(--s-4); caption-side: top; font-weight: 650; border-bottom: 1px solid var(--rule); }
+th, td { text-align: left; padding: var(--s-3) var(--s-4); border-bottom: 1px solid var(--rule); vertical-align: top; }
+thead th { font-family: var(--f-data); font-weight: 400; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); border-bottom-color: var(--rule-strong); }
+tbody tr:last-child td, tbody tr:last-child th { border-bottom: 0; }
+td.n, th.n { font-family: var(--f-data); font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.where { font-family: var(--f-data); font-size: 0.8rem; color: var(--ink-2); }
+td.ln { font-family: var(--f-data); color: var(--ink-2); font-size: 0.78rem; width: 3.5rem; }
+
+/* Controls: pills */
+.pill {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.6em;
+  font-family: var(--f-body); font-size: 0.98rem; font-weight: 600; line-height: 1.2;
+  padding: 0.85em 1.5em; border-radius: 999px; border: 1.5px solid var(--accent);
+  text-decoration: none; cursor: pointer; background: transparent; color: var(--ink);
+  transition: background-color 120ms ease, color 120ms ease;
+}
+.pill:hover { background: var(--accent-wash); color: var(--ink); }
+.pill.primary { background: var(--accent); color: var(--accent-ink); }
+.pill.primary:hover { background: var(--accent); color: var(--accent-ink); filter: brightness(1.12); }
+.pill.quiet { border-color: var(--rule-strong); }
+.pill.small { font-size: 0.85rem; padding: 0.5em 1em; }
+.pill[disabled] { opacity: 0.45; cursor: not-allowed; }
+.pill .arrow { font-family: var(--f-data); }
+
+.field { display: grid; gap: var(--s-2); max-width: 32rem; }
+.field label { font-family: var(--f-data); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); }
+.input-row { display: flex; gap: var(--s-2); flex-wrap: wrap; }
+.input {
+  flex: 1 1 14rem; min-width: 0; font: inherit; font-size: 1rem; color: var(--ink); background: var(--panel-2);
+  border: 1.5px solid var(--rule-strong); border-radius: 999px; padding: 0.75em 1.2em;
+}
+.input::placeholder { color: var(--ink-2); opacity: 1; }
+.input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); border-radius: 999px; }
+.hint { font-size: 0.85rem; color: var(--ink-2); }
+
+/* The signal lamp */
+.lamp { display: inline-block; width: 0.6rem; height: 0.6rem; border-radius: 50%; background: var(--accent); box-shadow: var(--lamp-glow); flex: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .lamp.blink { animation: lamp 2.4s ease-in-out infinite; }
+  @keyframes lamp { 50% { opacity: 0.35; } }
+}
+
+/* Synthetic label */
+.synthetic {
+  display: flex; gap: var(--s-2); align-items: center; flex-wrap: wrap;
+  font-family: var(--f-data); font-size: 0.76rem; color: var(--ink); letter-spacing: 0.02em;
+  border: 1px dashed var(--rule-strong); padding: var(--s-2) var(--s-3); background: var(--panel-2);
+}
+.synthetic b { color: var(--accent); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* Utility strip and header */
+.strip { border-bottom: 1px solid var(--rule); font-family: var(--f-data); font-size: 0.74rem; color: var(--ink-2); }
+.strip .wrap { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-5); justify-content: space-between; padding-top: var(--s-2); padding-bottom: var(--s-2); }
+.strip a { color: var(--ink-2); }
+.strip nav { display: flex; gap: var(--s-4); flex-wrap: wrap; }
+
+.theme-toggle { font-family: var(--f-data); font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.4em 0.9em; border-radius: 999px; border: 1px solid var(--rule-strong); background: transparent; color: var(--ink); cursor: pointer; display: inline-flex; gap: 0.5em; align-items: center; }
+.theme-toggle:hover { border-color: var(--accent); }
+
+.skip { position: absolute; left: -999px; top: 0; }
+.skip:focus { left: var(--s-4); top: var(--s-4); background: var(--accent); color: var(--accent-ink); padding: var(--s-2) var(--s-4); border-radius: 999px; z-index: 10; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+html { scroll-behavior: smooth; }
+
+/* Home: one idea per screen */
+.screen { padding-top: var(--s-9); padding-bottom: var(--s-9); border-top: 1px solid var(--rule); }
+@media (min-width: 900px) and (min-height: 700px) {
+  .screen { min-height: 92svh; display: flex; align-items: center; }
+  .screen > .wrap { width: 100%; }
+}
+.screen-grid { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: var(--s-7); align-items: start; }
+.index { position: sticky; top: var(--s-6); display: grid; gap: var(--s-1); padding-top: 0.6rem; }
+.index .of { font-family: var(--f-data); font-size: 0.74rem; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+@media (max-width: 860px) {
+  .screen-grid { grid-template-columns: minmax(0, 1fr); gap: var(--s-5); }
+  .index { position: static; display: flex; gap: var(--s-3); padding-top: var(--s-2); max-width: 18rem; }
+  .screen { padding-top: var(--s-8); padding-bottom: var(--s-8); }
+}
+.screen h2 { max-width: 15ch; margin-bottom: var(--s-5); }
+.screen h2.wide { max-width: 22ch; }
+
+header.site { border-bottom: 1px solid var(--rule); }
+header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--s-4); padding-top: var(--s-4); padding-bottom: var(--s-4); flex-wrap: wrap; }
+.wordmark { font-family: var(--f-display); font-size: 1.7rem; line-height: 1; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
+.wordmark .lamp { width: 0.5rem; height: 0.5rem; }
+header.site nav { display: flex; gap: var(--s-5); flex-wrap: wrap; font-size: 0.92rem; }
+header.site nav a { text-decoration: none; color: var(--ink-2); }
+header.site nav a:hover { color: var(--ink); }
+@media (max-width: 720px) { header.site nav { display: none; } }
+
+.hero { padding-top: var(--s-9); padding-bottom: var(--s-9); }
+@media (min-width: 900px) and (min-height: 700px) { .hero { min-height: calc(92svh - 120px); display: flex; align-items: center; } .hero > .wrap { width: 100%; } }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: var(--s-8); align-items: end; }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: minmax(0, 1fr); gap: var(--s-7); } .hero { padding-top: var(--s-8); padding-bottom: var(--s-8); } }
+.hero h1 { max-width: 11ch; margin: var(--s-5) 0 var(--s-6); }
+.hero .lede { margin-bottom: var(--s-7); }
+.actions { display: flex; flex-wrap: wrap; gap: var(--s-3); }
+
+/* Hero preview: three readout lines, stated beside found. */
+.slip { max-width: 26rem; }
+.slip table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.slip th, .slip td { padding: var(--s-3) var(--s-4); text-align: left; border-top: 1px solid var(--rule); }
+.slip thead th { border-top: 0; font-family: var(--f-data); font-size: 0.72rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); padding-bottom: var(--s-2); }
+.slip thead th.found { color: var(--accent); }
+.slip tbody th { font-weight: 600; }
+.slip td { font-family: var(--f-data); font-size: 1rem; white-space: nowrap; }
+.slip td.found { color: var(--accent); }
+.slip .foot { border-top: 1px solid var(--rule); padding: var(--s-3) var(--s-4); font-size: 0.9rem; color: var(--ink-2); }
+
+.readout-head h3 { font-family: var(--f-display); font-weight: 400; font-size: 1.5rem; }
+.ask { display: flex; gap: var(--s-3); align-items: baseline; padding: var(--s-4); border: 1px solid var(--accent); background: var(--panel); max-width: 44rem; }
+.ask .lamp { transform: translateY(-1px); }
+.ask p { margin: 0; }
+
+blockquote { margin: var(--s-7) 0 0; padding: 0 0 0 var(--s-5); border-left: 2px solid var(--rule-strong); max-width: 34rem; }
+blockquote p { font-family: var(--f-display); font-size: clamp(1.35rem, 2.4vw, 1.8rem); line-height: 1.3; margin-bottom: var(--s-3); }
+blockquote footer { font-size: 0.88rem; color: var(--ink-2); }
+
+.tabs-list { list-style: none; padding: 0; margin: var(--s-6) 0 0; display: flex; flex-wrap: wrap; gap: var(--s-2); max-width: 40rem; }
+.tabs-list li { font-family: var(--f-data); font-size: 0.8rem; border: 1px solid var(--rule-strong); padding: 0.35em 0.8em; background: var(--panel); }
+.tabs-list li span { color: var(--ink-2); margin-right: 0.5em; }
+
+.path { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: var(--s-6); max-width: 54rem; }
+.path .step { border: 1px solid var(--rule-strong); background: var(--panel); padding: var(--s-4); min-width: 0; position: relative; display: grid; grid-template-rows: auto auto 1fr; align-content: start; }
+.path .step + .step { border-left: 0; }
+.path .click { display: block; margin: 0; }
+.path .step .hint { display: block; margin: 0; }
+.path .click b { color: var(--accent); font-weight: 700; }
+.path .step strong { display: block; font-weight: 650; margin: var(--s-2) 0 var(--s-1); }
+@media (max-width: 760px) { .path { grid-template-columns: minmax(0, 1fr); } .path .step + .step { border-left: 1px solid var(--rule-strong); border-top: 0; } }
+
+.adds { margin: 0; padding: 0; list-style: none; max-width: 46rem; border-top: 1px solid var(--rule); }
+.adds li { display: grid; grid-template-columns: 3.5rem 1fr; gap: var(--s-3); padding: var(--s-4) 0; border-bottom: 1px solid var(--rule); font-size: 1.05rem; }
+.adds li span { font-family: var(--f-data); font-size: 0.78rem; color: var(--accent); padding-top: 0.25rem; }
+
+.nots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 54rem; margin-bottom: var(--s-7); }
+.nots div { border: 1px solid var(--rule-strong); padding: var(--s-5) var(--s-4); min-width: 0; }
+.nots div + div { border-left: 0; }
+.nots .display { font-size: 1.5rem; line-height: 1.2; display: block; margin-top: var(--s-2); }
+@media (max-width: 760px) { .nots { grid-template-columns: minmax(0, 1fr); } .nots div + div { border-left: 1px solid var(--rule-strong); border-top: 0; } }
+.data-note { max-width: 40rem; border-top: 2px solid var(--accent); padding-top: var(--s-4); }
+.data-note p { font-size: 1.1rem; }
+
+.cta h2 { max-width: 14ch; }
+footer.site { border-top: 1px solid var(--rule); padding: var(--s-7) 0 var(--s-8); font-size: 0.9rem; color: var(--ink-2); }
+footer.site .wrap { display: grid; gap: var(--s-4); }
+footer.site nav { display: flex; gap: var(--s-5); flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="m-strong" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="currentColor"/><path d="M4.6 8.3l2.2 2.2 4.6-4.8" fill="none" stroke-width="2" stroke-linecap="square" style="stroke: var(--panel)"/></symbol>
+  <symbol id="m-weak" viewBox="0 0 16 16"><path d="M1 2.5h14L8 14.5z" fill="currentColor"/></symbol>
+  <symbol id="m-mixed" viewBox="0 0 16 16"><path d="M8 1l7 7-7 7-7-7z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 1v14L1 8z" fill="currentColor"/></symbol>
+  <symbol id="m-thin" viewBox="0 0 16 16"><rect x="2" y="2" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="2.4 2"/></symbol>
+  <symbol id="m-clean" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5 8.2l2 2 4-4.2" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="m-flag-green" viewBox="0 0 16 16"><path d="M3 1v14" stroke="currentColor" stroke-width="1.6"/><path d="M3.8 2h10l-2.2 3.5L13.8 9h-10z" fill="currentColor"/></symbol>
+  <symbol id="m-flag-red" viewBox="0 0 16 16"><path d="M3 1v14" stroke="currentColor" stroke-width="1.6"/><path d="M3.8 2h10v7h-10z" fill="currentColor"/><path d="M8.8 3.6v2.6M8.8 7.2v.1" stroke-width="1.5" style="stroke: var(--panel)"/></symbol>
+  <symbol id="m-steer" viewBox="0 0 16 16"><path d="M2 13V8a4 4 0 0 1 4-4h7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10 1.2L13.4 4 10 6.8" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to the page</a>
+
+<div class="strip">
+  <div class="wrap">
+    <span>Sample homepage. Style direction B, Manifest.</span>
+    <nav aria-label="Directions">
+      <a href="../index.html">All directions</a>
+      <a href="style_guide.html">Style guide</a>
+      <button class="theme-toggle" type="button" data-theme-toggle><span>Light</span></button>
+    </nav>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="wordmark" href="#main"><span class="lamp" aria-hidden="true"></span>Tricorder</a>
+    <nav aria-label="Page">
+      <a href="#readout">The readout</a>
+      <a href="#associate">Associates</a>
+      <a href="#partner">Partners</a>
+      <a href="#not">What it is not</a>
+    </nav>
+    <a class="pill small" href="#start">See the Hollis Voice readout</a>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="label box-no"><b>01</b> First-pass diligence for seed and Series A funds</span>
+        <h1 id="hero-title">Point it at a startup, get a readout.</h1>
+        <p class="lede">Tricorder takes any data: decks, videos, spreadsheets, data rooms. It reveals insight you can trust, every claim sourced.</p>
+        <div class="actions">
+          <a class="pill primary" href="#readout">See the Hollis Voice readout <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a class="pill" href="#start">Bring a data room to the pilot</a>
+        </div>
+      </div>
+      <aside class="panel slip" aria-label="Three lines from the Hollis Voice readout">
+        <div class="panel-head"><span class="label">Hollis Voice, Series A</span><span class="label">Readout</span></div>
+        <table>
+          <thead><tr><th scope="col" aria-label="Line"></th><th scope="col">Stated</th><th scope="col" class="found">Found</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Round</th><td>$9.0M</td><td class="found">$9.0M</td></tr>
+            <tr><th scope="row">ARR</th><td>$2.50M</td><td class="found">$2.24M</td></tr>
+            <tr><th scope="row">Runway</th><td>37 mo</td><td class="found">19 mo</td></tr>
+          </tbody>
+        </table>
+        <p class="foot">Stated is what the deck says. Found is what the rest of the room shows. Every line opens its sources.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="readout" aria-labelledby="readout-title">
+  <div class="wrap screen-grid">
+    <div class="index"><span class="label box-no"><b>02</b> The readout</span><span class="of">Top of the list</span></div>
+    <div>
+      <h2 id="readout-title" class="wide">It opens on the best green flag and the worst red flag.</h2>
+      <div class="panel">
+        <div class="panel-head readout-head">
+          <h3>Hollis Voice, Series A</h3>
+          <span class="label">Readout, as of 2026-09-30</span>
+        </div>
+
+        <div class="line flag green">
+          <div class="line-no">L.01</div>
+          <div class="line-body">
+            <div class="flag-head"><span class="stamp strong"><svg aria-hidden="true"><use href="#m-flag-green"/></svg>Green flag</span></div>
+            <p class="flag-title">Green flag: the round adds up.</p>
+            <div class="sf">
+              <div><span class="label">Stated</span><span class="big">$9,000,000</span><span class="hint">in the deck</span></div>
+              <div class="found"><span class="label">Same in</span><span class="big">$9,000,000</span><span class="hint">cap table and model</span></div>
+            </div>
+            <p>$9,000,000, stated in the deck and the same in the cap table and the model. Nothing in the room contradicts it.</p>
+            <div class="chips">
+              <a class="chip" href="#readout">pitch_deck.pdf, slide 13</a>
+              <a class="chip" href="#readout">cap_table.xlsx, Cap_Table, B24</a>
+              <a class="chip" href="#readout">financial_model.xlsx, SERIES_A_RAISE</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="line flag red">
+          <div class="line-no">L.02</div>
+          <div class="line-body">
+            <div class="flag-head"><span class="stamp weak"><svg aria-hidden="true"><use href="#m-flag-red"/></svg>Red flag</span></div>
+            <p class="flag-title">Red flag: runway leaves out most of the hiring plan.</p>
+            <div class="sf">
+              <div><span class="label">Stated</span><span class="big">37 months</span><span class="hint">model and deck</span></div>
+              <div class="found"><span class="label">Found</span><span class="big">19 months</span><span class="hint">all 24 planned hires paid for</span></div>
+            </div>
+            <p>37 months stated; 19 months found with all 24 planned hires paid for. Burn and runway reads <span class="stamp weak flat"><svg aria-hidden="true"><use href="#m-weak"/></svg>looking weak</span></p>
+            <div class="chips">
+              <a class="chip" href="#readout">financial_model.xlsx, RUNWAY_MONTHS</a>
+              <a class="chip" href="#readout">pitch_deck.pdf, slide 11</a>
+              <a class="chip" href="#readout">hiring_plan.csv, rerun through the Cash_Runway tab</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="disagreement" aria-labelledby="dis-title">
+  <div class="wrap screen-grid">
+    <div class="index"><span class="label box-no"><b>03</b> One click down</span><span class="of">A disagreement</span></div>
+    <div>
+      <h2 id="dis-title" class="wide">ARR, stated three ways, side by side.</h2>
+      <div class="table-box" role="region" aria-label="Disagreement: ARR" tabindex="0">
+        <table>
+          <caption>Disagreement: ARR <span class="label" style="margin-left:0.6em">Hollis Voice</span></caption>
+          <thead><tr><th scope="col">Line</th><th scope="col">Source</th><th scope="col" class="n">States</th><th scope="col">Where</th></tr></thead>
+          <tbody>
+            <tr><td class="ln">L.01</td><td>Pitch video</td><td class="n">about $3,000,000</td><td class="where">pitch video, 0:35</td></tr>
+            <tr><td class="ln">L.02</td><td>Deck</td><td class="n">$2,500,000</td><td class="where">pitch_deck.pdf, slide 3</td></tr>
+            <tr><td class="ln">L.03</td><td>Financial model</td><td class="n">$2,240,868</td><td class="where">financial_model.xlsx, ARR_Build, ARR_TOTAL</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Largest gap: about $760,000, between the video and the model. The deck is $259,132 above the model. The room does not explain either gap.</p>
+      <div class="ask"><span class="lamp" aria-hidden="true"></span><p><strong>Ask the founder:</strong> which of these is ARR as of 2026-09-30, and can you walk us from the billing data to it?</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="associate" aria-labelledby="assoc-title">
+  <div class="wrap screen-grid">
+    <div class="index"><span class="label box-no"><b>04</b> The associate</span><span class="of">Prepares the memo</span></div>
+    <div>
+      <h2 id="assoc-title">The tabs are done when the deck arrives.</h2>
+      <p class="lede">The tabs, the cross-checks and the gaps are done when the deck arrives, and every claim in the memo links to its file.</p>
+      <ul class="tabs-list" aria-label="The usual tabs">
+        <li><span>01</span>Traffic</li>
+        <li><span>02</span>Reviews</li>
+        <li><span>03</span>Investors</li>
+        <li><span>04</span>Founders</li>
+        <li><span>05</span>The story against what's online</li>
+      </ul>
+      <blockquote>
+        <p>&ldquo;Before I even open your data room, I already have ten tabs up.&rdquo;</p>
+        <footer><a href="https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal">An associate at a seed-focused fund, Jan 2026</a></footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="partner" aria-labelledby="partner-title">
+  <div class="wrap screen-grid">
+    <div class="index"><span class="label box-no"><b>05</b> The partner</span><span class="of">Reads it and decides</span></div>
+    <div>
+      <h2 id="partner-title">A memo you can check yourself.</h2>
+      <p class="lede">Any line opens its sources in two clicks, and you can change the model's assumptions to see what the deal needs to be true.</p>
+      <div class="path" aria-label="Two clicks from the overview to a source">
+        <div class="step"><span class="label click"><b>Start</b> The overview</span><strong>Traction and revenue</strong><span class="hint">Marked looking weak</span></div>
+        <div class="step"><span class="label click"><b>Click 1</b> The claim</span><strong>ARR, stated three ways</strong><span class="hint">Video, deck and model</span></div>
+        <div class="step"><span class="label click"><b>Click 2</b> The source</span><strong>pitch_deck.pdf, slide 3</strong><span class="hint">$2,500,000 on the traction slide</span></div>
+      </div>
+      <blockquote>
+        <p>The associate still has to &ldquo;convince people who&rsquo;ve never met you that we should do this deal.&rdquo;</p>
+        <footer><a href="https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal">An associate at a seed-focused fund, Jan 2026</a></footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="adds" aria-labelledby="adds-title">
+  <div class="wrap screen-grid">
+    <div class="index"><span class="label box-no"><b>06</b> What it adds</span><span class="of">Beside similar tools</span></div>
+    <div>
+      <h2 id="adds-title" class="wide">Similar tools link a memo to its sources. Tricorder adds this.</h2>
+      <ol class="adds">
+        <li><span>L.01</span>The best green flags and the worst red flags first, then an overview of every piece of the company, strong and weak.</li>
+        <li><span>L.02</span>Sources shown both ways: the files that agree on a number as well as the ones that disagree.</li>
+        <li><span>L.03</span>Numbers checked by scripts, not by a model's reading, and verdicts set by a stated rule.</li>
+        <li><span>L.04</span>Contract terms read against how each contract is counted.</li>
+        <li><span>L.05</span>Gaps written as gaps, and an ask list for the founder.</li>
+        <li><span>L.06</span>An interactive memo each partner can steer and run what-ifs on.</li>
+        <li><span>L.07</span>Checks beyond the room: the pitch video, comps and the associate's usual tabs.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="not" aria-labelledby="not-title">
+  <div class="wrap screen-grid">
+    <div class="index"><span class="label box-no"><b>07</b> What it is not</span><span class="of">Not declared</span></div>
+    <div>
+      <h2 id="not-title">What it is not.</h2>
+      <div class="nots">
+        <div><span class="label">Not</span><span class="display">A sourcing database or a CRM.</span></div>
+        <div><span class="label">Not</span><span class="display">Confirmatory diligence.</span></div>
+        <div><span class="label">Not</span><span class="display">A replacement for the partner's judgment.</span></div>
+      </div>
+      <div class="data-note">
+        <span class="label box-no"><b>Box 9</b> Where the data goes</span>
+        <p>Tricorder reads only the documents you give it or the decks in mail you send it, keeps only the readout and its sources, and lets you see and delete everything it pulled.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="screen cta" id="start" aria-labelledby="cta-title">
+  <div class="wrap screen-grid">
+    <div class="index"><span class="label box-no"><b>08</b> Next</span><span class="of">Your call</span></div>
+    <div>
+      <h2 id="cta-title">Read the readout. The call stays yours.</h2>
+      <p class="lede">Open the Hollis Voice readout and drill into any line. Or bring a data room to the pilot and see what it finds there.</p>
+      <div class="actions">
+        <a class="pill primary" href="#readout">See the Hollis Voice readout <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="pill" href="#start">Bring a data room to the pilot</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="synthetic"><b>Synthetic</b> Hollis Voice. Synthetic data room for Deal Flow NYC 2026. Not a real company.</div>
+    <nav aria-label="Footer">
+      <a href="style_guide.html">Style guide, Direction B</a>
+      <a href="../index.html">All directions</a>
+    </nav>
+    <span>Tricorder. Built for Deal Flow, NYC, on the sourcing and diligence track.</span>
+  </div>
+</footer>
+<script>
+(function () {
+  var root = document.documentElement;
+  var KEY = "tricorder-direction-b-theme";
+  try {
+    var saved = localStorage.getItem(KEY);
+    if (saved === "light" || saved === "dark") root.setAttribute("data-theme", saved);
+  } catch (e) { /* storage blocked: follow the system */ }
+  function current() {
+    var t = root.getAttribute("data-theme");
+    if (t) return t;
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+  }
+  function label() {
+    var next = current() === "dark" ? "light" : "dark";
+    document.querySelectorAll("[data-theme-toggle]").forEach(function (b) {
+      b.querySelector("span").textContent = next === "light" ? "Light" : "Dark";
+      b.setAttribute("aria-label", "Switch to the " + next + " theme");
+    });
+  }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest && e.target.closest("[data-theme-toggle]");
+    if (!b) return;
+    var next = current() === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem(KEY, next); } catch (err) { /* nothing to keep */ }
+    label();
+  });
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", label); else label();
+})();
+
+</script>
+</body>
+</html>

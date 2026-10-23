@@ -1,0 +1,48 @@
+{
+  "seed_time": "2026-10-22T19:51:56Z",
+  "sha256": "4156dadf14cdfb03a2cf4bc9258ab75b68a32cb5231371cc4cbd3ec5161162d8",
+  "directions": [
+    {
+      "direction": "A",
+      "slice": "4156dadf14cdfb03a2cf",
+      "motif": "medical chart and vitals monitor: ranges, normal bands, the out-of-range mark",
+      "accent_hue_deg": 231,
+      "type": {
+        "display": "Bricolage Grotesque",
+        "body": "Atkinson Hyperlegible",
+        "data": "Fragment Mono"
+      },
+      "density": "dense: a working instrument",
+      "ground": "light ground",
+      "shape": "square corners and hairlines"
+    },
+    {
+      "direction": "B",
+      "slice": "4bc9258ab75b68a32cb5",
+      "motif": "shipping manifest and customs: declared against inspected, stamped lines",
+      "accent_hue_deg": 27,
+      "type": {
+        "display": "Libre Caslon Display",
+        "body": "Libre Franklin",
+        "data": "Cousine"
+      },
+      "density": "airy: one idea per screen",
+      "ground": "dark ground",
+      "shape": "pill controls on square panels"
+    },
+    {
+      "direction": "C",
+      "slice": "231371cc4cbd3ec51611",
+      "motif": "air traffic strip board: paper flight strips in holders, one row per aircraft",
+      "accent_hue_deg": 109,
+      "type": {
+        "display": "Spectral",
+        "body": "Work Sans",
+        "data": "Red Hat Mono"
+      },
+      "density": "measured: a document's rhythm",
+      "ground": "light ground with one dark instrument band",
+      "shape": "pill controls on square panels"
+    }
+  ]
+}

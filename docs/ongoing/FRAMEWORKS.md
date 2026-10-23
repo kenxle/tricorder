@@ -302,10 +302,12 @@ Some worked examples also show arithmetic on those figures: a gap, a ratio, a sh
 | DC2 Annual prepay, the Brookline Row order form (third check) | 1.13 must not flag it | all six 1.13 check names | No, the order form is in the full room |
 | PF5 Customer concentration, the Cedar & Pine order form | 1.13 returns clear on it, with its terms as info claims | `cancellable_within_notice_vs_arr`, `contract_price_vs_counted_price` | No, the order form is in the full room |
 | No planted entry: counted lines with no contract | 1.13 returns gaps | `counted_line_without_contract` | No, the customer file is in the full room |
+| BF2 The deck's revenue chart starts after a fall (`answer_key_brasswick.json`) | 1.14 Deck revenue against the books | `deck_history_vs_metrics` | Brasswick has one tier |
+| PF2 Deck ARR disagrees with the model, second read against the P&L | 1.14 | `deck_revenue_vs_pnl` | Yes. The scorer still credits PF2 to `deck_claim_vs_named_cell` only |
 
 The check names are the ones the answer key's `check` field and the test in [ARCHITECTURE.md](ARCHITECTURE.md) match on. `arr_from_subscription_rows` is the data-room research's own example name (3.6). The other seven in the key are the names `data_room/generate.py` writes. Only `cap_table_reconcile` (DC3, a decoy with no `check` in the key) is set here. The seed-drop column for the flags is the key's `catchable_from_seed_drop`. For the decoys it follows from the key's `seed_drop_files`: the cap table is in the seed drop and the Brookline Row order form is not.
 
-On Saturday the first eleven rows run: the eight planted entries and the three decoys, through the red-flag engine's scripts and, for PF2b, the readout. The rows for entry 1.12's second checks are built from now to Friday night, as "When each entry runs" says, and run on the rooms on Saturday. Entry 1.13's rows run on Saturday through checks 1, 2 and 5, in the roadmap's contract-terms-saturday slice. Its checks 3, 4 and 6 are built from now to Friday night in the contract-terms slice.
+On Saturday the first eleven rows run: the eight planted entries and the three decoys, through the red-flag engine's scripts and, for PF2b, the readout. The rows for entry 1.12's second checks are built from now to Friday night, as "When each entry runs" says, and run on the rooms on Saturday. Entry 1.13's rows run on Saturday through checks 1, 2 and 5, in the roadmap's contract-terms-saturday slice. Its checks 3, 4 and 6 are built from now to Friday night in the contract-terms slice. Entry 1.14's two rows were built before Saturday in the deck-vs-books slice and run inside the red-flag engine.
 
 ### The parts of every entry
 
@@ -330,6 +332,7 @@ The roadmap decides what is built when ([ROADMAP.md](ROADMAP.md)). Every entry i
 | 1.11 What the room cannot settle | Now to Friday night | checklist-coverage |
 | 1.12 Accounting mislabels | Saturday: kinds a and d, through entries 1.2 and 1.7. Now to Friday night: the `mrr` column check and kinds b, c, e, f, g and h. | redflag-engine, accounting-mislabels |
 | 1.13 Contract terms | Saturday: the model reads every contract in both demo rooms, and the script runs checks 1, 2 and 5 (notice against ARR, pilot without duty to convert, contract price against counted price). Fourth in the demo fallback order. Now to Friday night: checks 3, 4 and 6, the exclusivity, most-favoured-customer and change-of-control clauses, and contracts beyond the room's. | contract-terms-saturday, contract-terms |
+| 1.14 Deck revenue against the books | Built before Saturday (merged 2026-10-23). Saturday: the script runs inside the red-flag engine. | deck-vs-books |
 | 2.1 Public comps from EDGAR | Saturday, from this week's cached filings. The "why fair" sentence shows as frozen output. | comps |
 | 2.2 Recent private rounds | Saturday, from this week's cached Form D files | comps |
 | 3.1 Hiring, web traffic and reviews | This week, for competitors, saved as readings. Saturday shows them as a static panel. The company's own signals: now to Friday night. | signals-readings, market-signals, outside-in |
@@ -349,11 +352,11 @@ The roadmap decides what is built when ([ROADMAP.md](ROADMAP.md)). Every entry i
 
 ## Scan 1. The red-flag engine (Saturday)
 
-The organisers' first direction: "churn hidden in cohort charts, revenue counted as ARR when it is not recurring, burn that does not match the hiring plan, numbers that disagree between the deck and the model" ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt), Track 2). Entries 1.2 to 1.5 are those four. Entries 1.6 to 1.8 are the three extra flags the data-room research found on published lists. Entries 1.9 and 1.10 are the brief's unit economics and the cap table a first pass opens first. Entry 1.11 holds the flags investors regret most, which no file in the room can settle. Entry 1.12 checks a family of accounting mislabels, numbers filed under a label they do not earn, and points back to 1.2 and 1.7 for the two kinds they already cover. Entry 1.13 reads every customer contract and compares its terms with how the customer is counted, and points back to 1.2 and 1.6 for the contract checks they already hold.
+The organisers' first direction: "churn hidden in cohort charts, revenue counted as ARR when it is not recurring, burn that does not match the hiring plan, numbers that disagree between the deck and the model" ([problem tracks](../reports/20261022.01_hackathon_sources/problem_tracks.txt), Track 2). Entries 1.2 to 1.5 are those four. Entries 1.6 to 1.8 are the three extra flags the data-room research found on published lists. Entries 1.9 and 1.10 are the brief's unit economics and the cap table a first pass opens first. Entry 1.11 holds the flags investors regret most, which no file in the room can settle. Entry 1.12 checks a family of accounting mislabels, numbers filed under a label they do not earn, and points back to 1.2 and 1.7 for the two kinds they already cover. Entry 1.13 reads every customer contract and compares its terms with how the customer is counted, and points back to 1.2 and 1.6 for the contract checks they already hold. Entry 1.14 compares the deck's revenue figures and charts with the monthly P&L, and points back to 1.5 for the named cells.
 
 Entry 1.1 runs before all of them. It turns the deck into claims the other entries check.
 
-On Saturday this scan is scripts only. Entries 1.9 and 1.11, the model readings other than the contract terms, most of 1.12 and checks 3, 4 and 6 of 1.13 are built by agents from now to Friday night, and join the scan on Saturday ("When each entry runs").
+On Saturday this scan is scripts only. Entries 1.9 and 1.11, the model readings other than the contract terms, most of 1.12, 1.14 and checks 3, 4 and 6 of 1.13 are built by agents from now to Friday night, and join the scan on Saturday ("When each entry runs").
 
 ### 1.1 Deck claim extraction
 
@@ -1637,7 +1640,7 @@ A mislabel is a number filed under a label it does not earn. The organisers name
 | g. Deferred revenue as earned | Revenue, ARR | Cash or an invoice for service not yet delivered | `customer_mrr_by_month.csv` columns `billings`, `mrr`, `one_time_fee`; model `ARR_Build` | `deferred_revenue_vs_earned` | Now to Friday night | traction and revenue |
 | h. One-time fees in recurring metrics | MRR, ARR, "recurring revenue" | A setup or onboarding fee paid once | `customer_mrr_by_month.csv` columns `product_type`, `one_time_fee`; `monthly_metrics.csv` column `mrr`; model `ARR_Build` | `one_time_fees_in_recurring_metrics` | Now to Friday night | traction and revenue |
 
-Saturday means the roadmap's Saturday red-flag engine runs it: kinds a and d, through entries 1.2 and 1.7, and nothing else in this entry. The Hollis Voice room also holds the data for the `mrr` column check and kinds b, e, f, g and h, and an agent builds them from now to Friday night in the roadmap's [accounting-mislabels](ROADMAP.md#accounting-mislabels) slice, outside the red-flag engine's Saturday hours. Kind c has nothing in the room to run on.
+Saturday means the roadmap's Saturday red-flag engine runs it: kinds a and d, through entries 1.2 and 1.7, and nothing else in this entry. The Hollis Voice room also holds the data for the `mrr` column check and kinds b, e, f, g and h, and an agent builds them from now to Friday night in the roadmap's [accounting-mislabels](ROADMAP.md#accounting-mislabels) slice, outside the red-flag engine's Saturday hours. Kind c has nothing in the Hollis Voice room to run on. The Brasswick room is built for it.
 
 **Inputs**
 
@@ -1648,6 +1651,7 @@ Saturday means the roadmap's Saturday red-flag engine runs it: kinds a and d, th
 - `05_team/hiring_plan.csv` and the deck's staff, ARR and gross margin claims from 1.1.
 - `04_customers/`: the order forms, for term and prepayment.
 - Not in the Hollis Voice room: a balance sheet, bank statements, a contractor list or contractor agreements, and any export of transaction volume. The kinds that need one return a gap.
+- Brasswick (`data_room/brasswick/`): `02_financials/expense_ledger.csv`, the `P&L` plan columns, `03_metrics/revenue_by_customer.csv` (with its `remitted_to_customer` column) and the named cell `DEFERRED_REVENUE_USD` (`Cash_Bridge!B10`).
 
 **The questions it asks**
 
@@ -1662,7 +1666,7 @@ Saturday means the roadmap's Saturday red-flag engine runs it: kinds a and d, th
 
 **Mechanical check**
 
-Each sub-check below gives the label claimed, what the number really is, the file and column, the formula, the Hollis Voice example, and what to return when the file is missing. The Hollis Voice figures come from the generated files named in each one and from `data_room/answer_key.json`. The arithmetic on them (sums, gaps, shares) was run by a Python script over those files, not by hand. Each formula is written so a spreadsheet person can redo it.
+Each sub-check below gives the label claimed, what the number really is, the file and column, the formula, the Hollis Voice example, and what to return when the file is missing. The Hollis Voice figures come from the generated files named in each one and from `data_room/answer_key.json`. The arithmetic on them (sums, gaps, shares) was run by a Python script over those files, not by hand. Each formula is written so a spreadsheet person can redo it. The Brasswick figures come from the output of `scans/redflags/mislabels.py` on `data_room/brasswick/` ([the feature's progress page](../features/20261022.12_accounting_mislabels/00_progress.md)).
 
 Two terms used in several formulas:
 
@@ -1682,7 +1686,7 @@ flag month t if mrr_gap(t) ÷ mrr_subscription(t) > match_tolerance
 
 - Hollis Voice, 2026-09: `monthly_metrics.csv` shows `mrr` of $186,739. The subscription rows add to $171,739 (`mrr_subscription` in the answer key's `facts`). The gap is $15,000, which is 8.7% of $171,739.
 - The $15,000 is the Marlow Veterinary Group pilot's monthly fee (customer C0219, `product_type` Pilot, `mrr` 15,000 in 2026-08 and 2026-09). It is the same pilot as PF1 (pilot booked as ARR). The readout shows this claim beside the ARR claim. They have one cause.
-- Missing file: with the customer file absent, read the `Product type` column of `ARR_Build` in the model. If that is missing too, return the gap "Not in the room: a revenue export by product type".
+- Missing file: with the customer file absent, read the `Product type` column of `ARR_Build` in the financial model workbook (`financial_model.xlsx`). If that is missing too, return the gap "Not in the room: a revenue export by product type".
 
 **b. Bookings or billings shown as revenue (from now to Friday night; the room has the data).** Claimed: revenue. Really: contract value signed (bookings) or cash invoiced (billings). Check name: `billings_vs_recognised_revenue`.
 
@@ -1716,7 +1720,8 @@ flag if pass_through(t) ÷ shown_revenue(t) > match_tolerance
 The model also reads the deck for a figure labelled GMV, volume, gross bookings or total payment volume that sits beside, or in place of, a revenue figure.
 
 - Hollis Voice: not in the room. `customer_mrr_by_month.csv` has three product types: Subscription (1,880 rows), Onboarding (250) and Pilot (2). It has no volume or pass-through column. `ARR_Build` has no resale line. The gap is "Not in the room: a revenue export that separates pass-through money".
-- This sub-check needs a room built around a marketplace or a resale line. Hollis Voice is neither, so there is nothing to run on Saturday.
+- This sub-check needs a room built around a marketplace or a resale line. Hollis Voice is neither.
+- Brasswick is built around a pass-through: `revenue_by_customer.csv` has a `remitted_to_customer` column and the P&L counts recoveries gross. Over the 12 months to 2026-09, $264,214.66 of pass-through money sits inside $943,339.50 of P&L total revenue, 28.0%. Result: `flag`.
 
 **d. Cost of revenue filed as operating expense (Saturday, through entry 1.7).** Claimed: R&D, sales or G&A. Really: a cost of delivering the product. Entry 1.7 owns this, with the check `gross_margin_from_ledger`. It reads `expense_ledger.csv` columns `category` and `booked_as`. This entry adds no check.
 
@@ -1726,12 +1731,17 @@ The model also reads the deck for a figure labelled GMV, volume, gross bookings 
 **e. Contractors left out of headcount and burn (from now to Friday night; the room has the data).** Claimed: a staff count and a burn. Really: people paid as contractors whose cost or presence is not in either. Check name: `contractor_spend_vs_headcount_and_burn`.
 
 ```
-contractor_lines    = ledger rows whose description or category contains
-                      "contractor", "consultant", "freelance", "agency" or "staffing",
+contractor_vendors  = vendors with at least one ledger line whose vendor, description or category contains
+                      "contractor", "consultant", "consulting", "freelance", "agency", "staffing",
+                      "contract engineering", "statement of work" or "SOW"
+contractor_lines    = every ledger line from a contractor vendor,
                       plus rows the model reading classes as contractor
 contractor_spend(t) = SUM(amount_usd) of contractor_lines in month t
 flag month t if tie_gap(t) ÷ ledger_total(t) > match_tolerance            (spend outside the P&L)
 watch if contractor_spend(t) > 0 and no file says whether STAFF_NOW or the deck's staff count includes them
+holding_row         = the P&L row whose as-of actual equals the ledger sum of the contractor lines' categories
+covered             = holding_row(first plan month) − ( holding_row(as-of) − contractor_spend(as-of) )
+flag if covered < contractor_spend(as-of) × (1 − match_tolerance)         (contractors cut from the plan)
 ```
 
 The tie-out shows that the P&L matches the ledger. It does not show that the ledger is complete. Entry 1.11 asks for bank statements for that.
@@ -1739,6 +1749,7 @@ The tie-out shows that the P&L matches the ledger. It does not show that the led
 - Hollis Voice: the ledger has 408 lines from 13 vendors, totalling $4,735,330.24 over 21 months. The only payroll vendor is Ironbridge Payroll Services. No description or category names a contractor, consultant, freelancer or agency. `tie_gap` is 0.00 in every one of the 21 months.
 - Staff today is 17 (`STAFF_NOW`). The plan adds 24 hires. The room holds no contractor list.
 - Result: `clear` on burn. The gap is "Not in the room: a list of contractors, or an org chart that shows them". The readout shows the clear and the gap together.
+- Brasswick: the contractor lines add to $34,708.97 in 2026-09 (Norrgate Software Studio and Fernway Contractor Payments). They sit in "Professional services" at $36,149.98. The plan puts $2,800 on that row. Result: `flag`. Its lines say "Contract engineering, SOW 1" or "Additional engineering hours", so vendor propagation is what finds the studio. The fractional controller's line (Abbotsford Finance Partners, DC2) has no contractor keyword. The plan also keeps its $2,950, so it stays clear either way.
 - Missing file: with no ledger, return `cannot_check` and the gap "Not in the room: an expense ledger".
 - The staff-count claim feeds the team piece (value label `headcount`). The spend and burn claims feed burn and runway.
 
@@ -1766,6 +1777,9 @@ deferred(t) = SUM over customers of
               MAX( 0, cumulative billings to t − cumulative (mrr + one_time_fee) to t )
 flag month t if P&L "Subscription revenue"(t) > revenue_file(t) × (1 + match_tolerance)
 flag if ARR_Build "Subscription ARR" > 12 × mrr_subscription(as-of month) × (1 + match_tolerance)
+if the model names a deferred revenue cell:
+    flag if | deferred(as-of) − that cell | ÷ deferred(as-of) > match_tolerance
+    write it as severity "info" when a P&L test in this sub-check already flagged
 ```
 
 The second test also catches a multi-year contract counted at its full value in ARR. a16z separates total contract value from annual contract value for this reason ([a16z, 16 Startup Metrics](https://a16z.com/16-startup-metrics/), section 4). `revenue_file` and `mrr_subscription` are the sums defined in sub-checks a and b.
@@ -1774,6 +1788,7 @@ The second test also catches a multi-year contract counted at its full value in 
 - Brookline Row billed $7,008 in 2026-06. It has earned 4 × $584 = $2,336 from June to September. $4,672 is still deferred.
 - The P&L "Subscription revenue" row equals the file's subscription `mrr` in all 21 months. "Subscription ARR" in `ARR_Build` is $2,060,868, which is 12 × $171,739.
 - Result: `clear`. No claim for the Brookline prepay (DC2).
+- Brasswick, 2026-09: the rebuilt deferred balance is $33,885 across 2 customers. The bridge (`DEFERRED_REVENUE_USD`, `Cash_Bridge!B10`) carries $8,640. The P&L test flags the $25,245 excess in September as Ostley Freight's unearned invoice. The bridge claim is `info`, because `Cash_Bridge!B10` is a location of Brasswick decoy DC1 (Tessmore Freight's prepay, booked correctly), and `eval/score.py` counts a flag claim that cites a decoy location as a wrongly flagged decoy. The comparison is right, and its cause is already flagged.
 - Missing file: with no balance sheet in the room, the script rebuilds the balance from the `billings` column, as above. The gap is "Not in the room: a balance sheet with a deferred revenue line". With no customer file, return `cannot_check`.
 
 **h. One-time fees counted in recurring metrics (from now to Friday night; the room has the data).** Claimed: MRR, ARR or "recurring revenue". Really: a setup or onboarding fee paid once. Check name: `one_time_fees_in_recurring_metrics`.
@@ -1879,8 +1894,8 @@ Each sub-check scores itself, and the entry takes the worst of them.
 - `flag`: a script formula above fired. Every claim that fired it gets severity "flag" and the sub-check's check name.
 - `watch`: no flag, but a line is unclear and could move a figure past `match_tolerance`, or the ledger shows contractors and no document says whether the staff count includes them.
 - `clear`: every sub-check that could run passed. A gap can sit beside a clear. Hollis Voice has two (no contractor list, no balance sheet), and the readout shows each next to the result.
-- `cannot_check`: neither the customer file nor the ledger is in the room. With only the seed drop, kinds a, d and h still run from the model and the metrics file, and the rest return `cannot_check` with a gap.
-- A sub-check that cannot run in this room is marked `not_run`. Kind c is `not_run` on Hollis Voice.
+- `cannot_check`: neither the customer file nor the ledger is in the room. With only the seed drop, kinds a, d and h still run from the financial model workbook (`financial_model.xlsx`) and the metrics file, and the rest return `cannot_check` with a gap.
+- A sub-check that cannot run in this room is marked `not_run`. Kind c is `not_run` on Hollis Voice and `flag` on Brasswick.
 
 On Hollis Voice the entry's label is `flag`, because sub-check a finds the pilot in the `mrr` column. Sub-checks b, e, f, g and h are `clear`. Sub-check d is entry 1.7's `flag`. The Brookline Row prepay (DC2) and the onboarding fee (DC1) get no flag claim from any sub-check.
 
@@ -2260,6 +2275,100 @@ The flag claims from this entry state no pair of numbers that disagree, so the h
 - Judge a clause as good or bad terms, or say a discount is wrong. It shows what the contract says.
 - Guess at a term the contract does not state, or at a contract that is not in the room.
 - Repeat the line test in 1.2, the share in 1.6 or the billings checks in 1.12. It uses their files and points to them.
+
+### 1.14 Deck revenue against the books
+
+**Scope: built before Saturday (merged 2026-10-23), run on Saturday inside the red-flag engine.** The roadmap's [deck-vs-books](ROADMAP.md#deck-vs-books) slice. Scripts only. No model reading. The code is `scans/redflags/deck_vs_books.py`. Its requirements are in [the feature's PRD](../features/20261022.11_deck_vs_books/03_prd.md).
+
+**Inputs**
+
+- `01_overview/pitch_deck.pdf`, every slide. The claims page (the last slide titled "Appendix ...") for stated figures, with `01_overview/claims.json` as the fallback (1.1).
+- The P&L tab of `02_financials/financial_model.xlsx`: the header row ("Line", then one column per month), the row below it ("Actual" or "Plan"), and every line whose section is "Revenue".
+- The customer revenue rows (`03_metrics/customer_mrr_by_month.csv` or `03_metrics/revenue_by_customer.csv`), only when the P&L is missing, and only for the chart's window.
+
+**The questions it asks**
+
+1. For each revenue figure in the deck, what does the P&L say for the same period?
+2. Does a revenue chart's shape follow the P&L, month by month?
+3. Does the chart start at the first month the books hold revenue, and end at the last actual month?
+4. If later, what do the months left out hold: a climb, a dip, or a flat stretch?
+5. Does the chart skip months, or show quarters where the books hold months?
+
+The associate's rule behind it: "If revenue in the deck doesn’t match the P&L, or you show only part of your history, everything else becomes questionable." ([associate at a seed-focused fund, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)).
+
+**Mechanical check**
+
+Check names: `deck_revenue_vs_pnl` and `deck_history_vs_metrics`. The second is the name `answer_key_brasswick.json` gives BF2.
+
+```
+figures = claims-page rows whose label has ARR, MRR or revenue and whose value is a dollar amount
+        + chart captions "Monthly|Quarterly [recurring] revenue, <Month YYYY> to <Month YYYY>"
+        + "Revenue grows X% a month in the plan." and "Revenue grew every month in YYYY."
+as_of   = "Data as of YYYY-MM" on slide 1
+for each stated figure:
+    ARR                     -> 12 x the P&L's "Recurring revenue..." line at as_of
+    MRR, <Month YYYY>       -> "Subscription revenue" for that month
+    Revenue, last 12 months -> sum of "Total revenue" over the 12 actual months to as_of
+    gap_rel = |deck - books| / |books|
+    flag if gap_rel > match_tolerance, unless a short-form figure is within half its last printed digit
+for each chart:
+    bars    = pixel heights of the chart's bars, from pdfplumber's render of the chart's box
+    shape   = max over periods of |bar / tallest bar - books / largest period|
+    flag if the bar count differs from the periods, or shape > chart_shape_tolerance
+    first   = first actual month with "Total revenue" > 0
+    left_out = actual months from first up to the chart's first month
+    if left_out: "shows part of the history"
+        flag if left_out holds a peak above the chart's first month, a month-on-month fall,
+             or three months in a row within 1 percent of each other
+        watch if left_out holds only a climb
+    trailing = actual months after the chart's last month
+    if trailing: "shows part of the history"
+        flag if revenue in them falls below the chart's last month, falls month on month, or goes flat
+        watch if it only keeps climbing
+    if the chart is quarterly: watch, or flag if a month inside a quarter fell
+    if monthly bars < months in the window: flag (skipped months)
+months the chart shows that the books lack -> gap, for the ask list
+```
+
+Settings: `match_tolerance` (0.01) and `chart_shape_tolerance` (0.02), from `schema.settings.load()`.
+
+Worked example, Hollis Voice (`data_room/hollis_voice/`, run by `python3 -m scans.redflags`; output in [evidence/pipeline.txt](../features/20261022.11_deck_vs_books/evidence/pipeline.txt)):
+
+| Deck figure | Books | Result |
+|---|---|---|
+| ARR $2,500,000, slides 3 and 14 | 12 × `P&L!W10` (186,739) = $2,240,868 | 11.6% apart: flag |
+| Chart on slide 3, 21 bars, 2025-01 to 2026-09 | "Recurring revenue (subscription plus pilot)", 21 months | shape within 0.4 points: info |
+| Chart window from 2025-01 | first revenue month 2025-01 | whole history: info |
+| "Revenue grows 3.5% a month in the plan.", slide 11 | the plan columns grow 3.50% a month | matches: info |
+
+A test deck whose chart starts at 2025-07 leaves out 2025-01 to 2025-06, which hold a climb from $2,651 to $19,462. That is a watch ([evidence/test_rooms.txt](../features/20261022.11_deck_vs_books/evidence/test_rooms.txt)).
+
+Worked example, Brasswick (`data_room/brasswick/`): the chart on slide 4 starts at 2026-01. The books start at 2025-05. The 8 months left out hold a peak of $84,090 in 2025-09, and revenue fell 28.2% from it to $60,400 in 2026-01, with month-on-month falls in 2025-10 and 2025-12. That is a flag, and `python -m eval.score data_room/brasswick` counts BF2 as found. The deck's "Revenue, last 12 months" of $943,340 and "MRR, September 2026" of $84,810 match the P&L. Whether the P&L itself is right (BF1, BF4) is entry 1.12's question.
+
+**Model reading**
+
+None. A chart the script cannot read is a gap. A later version may read it with vision as `judged` claims.
+
+**Output shape**
+
+No model output, so no JSON Schema of its own. The check returns Claims and Gaps (the shared `$defs`) and one Panel, "deck against the books", with the columns Slide, Deck figure, Period, Books, How the books figure is made, Gap, Within tolerance.
+
+- A stated figure: `value` with label `arr`, `mrr` or `other`, its unit and period. Sources: the deck slide or slides, and every P&L cell the books figure was made from.
+- Partial history: text starts "Shows part of the history:". `value` is the months left out, unit `months`, label `other`. Sources: the caption, the first revenue month's cell, the peak's cell, the chart's first month's cell.
+- A figure with no books counterpart: an `info` claim with the deck source and the reason.
+
+**How the readout scores it**
+
+- `flag` claims feed **traction and revenue** (labels `arr`, `mrr`) or **the pitch itself** (label `other`, partial history).
+- A `watch` partial history shows under the pitch itself and does not by itself make a piece weak.
+- Its gaps carry `piece` "traction_and_revenue" and go on the ask list.
+
+**What it must not do**
+
+- Say why a deck figure differs from the books, or why a chart starts late.
+- Compare the deck's ARR with `ARR_TOTAL`. That is 1.5.
+- Judge whether the books are right. That is 1.2 and 1.12.
+- Read a chart's numbers from outside the room, or guess a bar it cannot see.
 
 ## Scan 2. The comp builder (Saturday)
 
@@ -3470,15 +3579,17 @@ Check name: `checklist_coverage`.
 
 ```
 expected(i)  = item i's column for the stage is "yes" or "lighter"
+               (as built: "not stated" also counts, and is asked "if you have it"; default chosen by the orchestrator, open for Ken)
 checked(i)   = a readout claim's check.name belongs to an entry that i's checked_by names
 found(i)     = a file in the room matches i (document rows), or an outside source returned it
 status(i)    = "checked" if checked(i); else "found" if found(i); else "missing" if expected(i); else "not_expected"
+               (as built: a check row whose inputs are in the room but which has no claim yet is "not_checked")
 ask line     = every missing item marked "yes"; a missing item marked "lighter" is asked for "if you have it"
 ```
 
 Each ask line joins the "Ask list". A request that a gap already makes is not repeated.
 
-Worked example, Hollis Voice. The deck's round slide says Series A (slide 13). The `hollis_voice_file` column says where each document sits in the demo room, so the script needs no reading to mark found. The counts per status come from the script when the slice is built; this doc quotes none.
+Worked example, Hollis Voice. The deck's round slide says Series A (slide 13), and so does its cover (slide 1), which the script reads. The script marks a document found by its file name, or because it sits inside another file (a sheet, a page or a cell). The `hollis_voice_file` column says where each document sits in the demo room, and the tests use it as the answer key for the matcher. The counts per status come from the script (`python3 -m scans.memo <room>`, the "checklist coverage counts" panel). This doc quotes none. The code is `scans/memo/coverage.py` and `scans/memo/checklist.py`, merged 2026-10-23 ([the feature folder](../features/20261022.13_checklist_coverage/)).
 
 **Model reading**
 
@@ -3506,7 +3617,7 @@ None. Matching a file to a document item uses the file names in `hollis_voice_fi
         "required": ["item_id", "status", "claim_ids", "ask"],
         "properties": {
           "item_id": {"type": "string"},
-          "status": {"type": "string", "enum": ["checked", "found", "missing", "not_expected"]},
+          "status": {"type": "string", "enum": ["checked", "found", "missing", "not_checked", "not_expected"]},
           "claim_ids": {"type": "array", "items": {"type": "string"}},
           "ask": {"anyOf": [{"type": "string"}, {"type": "null"}]}
         }

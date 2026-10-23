@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tricorder, Direction D</title>
+<meta name="description" content="Tricorder sample homepage, Direction D: Private Bank.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Tricorder, Direction D: Private Bank. Tokens first, then layout, then components. */
+:root {
+  color-scheme: light;
+  --ground: #ffffff;
+  --panel: #ffffff;
+  --wash: #f4f6f9;
+  --ink: #0b1a2e;
+  --ink-2: #33415a;
+  --ink-3: #5a6679;
+  --rule: #e1e5eb;
+  --rule-2: #c3cad5;
+  --navy: #0b1a2e;
+  --navy-ink: #ffffff;
+  --navy-ink-2: #a9b6c9;
+  --navy-rule: rgba(255, 255, 255, 0.14);
+  --accent: #1d5a47;
+  --accent-hover: #143f32;
+  --accent-tint: #e8f1ed;
+  --on-accent: #ffffff;
+  --band: #e4e9f0;
+  --band-edge: #9aa6b8;
+  --strong: #17803d;
+  --strong-bg: #e5f3ea;
+  --weak: #b42318;
+  --weak-bg: #fce9e7;
+  --mixed: #94580a;
+  --mixed-bg: #faf0dd;
+  --thin: #56637a;
+  --thin-bg: #edf0f4;
+  --focus: #1d5a47;
+  --shadow-lift: 0 1px 2px rgba(11, 26, 46, 0.08), 0 18px 40px -12px rgba(2, 8, 20, 0.45), 0 48px 96px -32px rgba(2, 8, 20, 0.55);
+
+  --f-display: "Source Serif 4", "Iowan Old Style", "Georgia", serif;
+  --f-ui: "IBM Plex Sans", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  --f-data: "IBM Plex Mono", "SFMono-Regular", "Menlo", "Consolas", monospace;
+
+  --r-s: 6px;
+  --r-l: 12px;
+  --gutter: 24px;
+  --side: 32px;
+  --max: 1312px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ground: #0a1526;
+    --panel: #102039;
+    --wash: #142744;
+    --ink: #eaf0f7;
+    --ink-2: #bcc7d6;
+    --ink-3: #8e9bb0;
+    --rule: #20334f;
+    --rule-2: #36496a;
+    --navy: #050d1a;
+    --navy-ink: #ffffff;
+    --navy-ink-2: #a3b1c6;
+    --navy-rule: rgba(255, 255, 255, 0.12);
+    --accent: #7cc4a4;
+    --accent-hover: #a3d9c0;
+    --accent-tint: #123128;
+    --on-accent: #05140e;
+    --band: #1c3050;
+    --band-edge: #5a7096;
+    --strong: #5cc788;
+    --strong-bg: #0f2c1c;
+    --weak: #ff8172;
+    --weak-bg: #3a1715;
+    --mixed: #e6b456;
+    --mixed-bg: #33270f;
+    --thin: #a6b2c4;
+    --thin-bg: #1a2a43;
+    --focus: #7cc4a4;
+    --shadow-lift: 0 1px 2px rgba(0, 0, 0, 0.4), 0 18px 40px -12px rgba(0, 0, 0, 0.7), 0 48px 96px -32px rgba(0, 0, 0, 0.8);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ground: #0a1526;
+  --panel: #102039;
+  --wash: #142744;
+  --ink: #eaf0f7;
+  --ink-2: #bcc7d6;
+  --ink-3: #8e9bb0;
+  --rule: #20334f;
+  --rule-2: #36496a;
+  --navy: #050d1a;
+  --navy-ink: #ffffff;
+  --navy-ink-2: #a3b1c6;
+  --navy-rule: rgba(255, 255, 255, 0.12);
+  --accent: #7cc4a4;
+  --accent-hover: #a3d9c0;
+  --accent-tint: #123128;
+  --on-accent: #05140e;
+  --band: #1c3050;
+  --band-edge: #5a7096;
+  --strong: #5cc788;
+  --strong-bg: #0f2c1c;
+  --weak: #ff8172;
+  --weak-bg: #3a1715;
+  --mixed: #e6b456;
+  --mixed-bg: #33270f;
+  --thin: #a6b2c4;
+  --thin-bg: #1a2a43;
+  --focus: #7cc4a4;
+  --shadow-lift: 0 1px 2px rgba(0, 0, 0, 0.4), 0 18px 40px -12px rgba(0, 0, 0, 0.7), 0 48px 96px -32px rgba(0, 0, 0, 0.8);
+}
+
+/* Base. Bootstrap supplies the grid only; everything visible is restyled here. */
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--ground); color: var(--ink-2);
+  font-family: var(--f-ui); font-size: 16px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+h1, h2, h3, h4 { color: var(--ink); margin: 0; }
+p { margin: 0; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--accent-hover); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+.num, table, .strip, .fig-v, .chip { font-variant-numeric: tabular-nums; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding-left: var(--side); padding-right: var(--side); }
+.row { --bs-gutter-x: var(--gutter); --bs-gutter-y: 0; }
+.row.gy { --bs-gutter-y: var(--gutter); }
+@media (max-width: 767.98px) {
+  :root { --side: 16px; }
+  .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+}
+
+/* Type */
+.display { font-family: var(--f-display); font-optical-sizing: auto; font-weight: 500; letter-spacing: -0.022em; color: var(--ink); }
+.h1 { font-size: clamp(42px, 3.4vw + 14px, 66px); line-height: 1.02; letter-spacing: -0.026em; }
+.h2 { font-size: clamp(32px, 1.6vw + 18px, 44px); line-height: 1.06; }
+.h3 { font-size: 26px; line-height: 1.15; letter-spacing: -0.012em; }
+.eyebrow { font-family: var(--f-ui); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 16px; }
+.lede { font-size: 18px; line-height: 1.55; color: var(--ink-2); margin-top: 20px; max-width: 40em; }
+.small { font-size: 14px; line-height: 1.5; }
+.mono { font-family: var(--f-data); }
+
+/* Buttons. One primary per view. Hover darkens on light, lightens on navy. */
+.btn-d {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 46px; padding: 0 20px;
+  font-family: var(--f-ui); font-size: 15px; font-weight: 500; line-height: 1;
+  border-radius: var(--r-s); border: 1px solid transparent; text-decoration: none; cursor: pointer;
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+.btn-p { background: var(--accent); color: var(--on-accent); }
+.btn-p:hover { background: var(--accent-hover); color: var(--on-accent); }
+.btn-s { background: transparent; color: var(--ink); border-color: var(--rule-2); }
+.btn-s:hover { background: var(--wash); color: var(--ink); border-color: var(--ink-3); }
+.btn-sm { min-height: 36px; padding: 0 14px; font-size: 14px; }
+.on-navy .btn-p { background: #ffffff; color: #0b1a2e; }
+.on-navy .btn-p:hover { background: #dfe7f1; color: #0b1a2e; }
+.on-navy .btn-s { color: #ffffff; border-color: rgba(255, 255, 255, 0.32); }
+.on-navy .btn-s:hover { background: rgba(255, 255, 255, 0.1); color: #ffffff; border-color: rgba(255, 255, 255, 0.7); }
+.on-navy :focus-visible { outline-color: #ffffff; }
+
+/* Header and hero: the one deep band. */
+.on-navy { background: var(--navy); color: var(--navy-ink-2); overflow: hidden; }
+.top { padding-top: 28px; padding-bottom: 28px; }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px 32px; flex-wrap: wrap; }
+.brand { display: inline-flex; align-items: center; gap: 12px; color: #ffffff; text-decoration: none; font-family: var(--f-display); font-weight: 600; font-size: 22px; letter-spacing: -0.01em; }
+.brand:hover { color: #ffffff; }
+.nav-d { display: flex; align-items: center; gap: 4px 28px; flex-wrap: wrap; font-size: 14px; }
+.nav-d a { color: var(--navy-ink-2); text-decoration: none; }
+.nav-d a:hover { color: #ffffff; }
+.theme-btn { font: 500 13px var(--f-ui); color: #ffffff; background: transparent; border: 1px solid rgba(255, 255, 255, 0.28); border-radius: var(--r-s); min-height: 34px; padding: 0 12px; cursor: pointer; }
+.theme-btn:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.7); }
+
+.hero { padding-top: 72px; padding-bottom: 120px; }
+.hero .eyebrow { color: #8fcfb2; }
+.hero h1 { color: #ffffff; text-wrap: balance; }
+.hero .rest { font-size: 20px; line-height: 1.5; color: #c6d1df; margin-top: 28px; max-width: 30em; }
+.hero .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+
+/* The readout card: the one lifted surface on the page. */
+.rcard { background: var(--panel); color: var(--ink-2); border-radius: var(--r-l); box-shadow: var(--shadow-lift); overflow: hidden; }
+:root[data-theme="dark"] .rcard { border: 1px solid var(--rule-2); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .rcard { border: 1px solid var(--rule-2); } }
+.rc-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px 16px; flex-wrap: wrap; padding: 18px 28px; border-bottom: 1px solid var(--rule); }
+.rc-co { font-family: var(--f-display); font-weight: 600; font-size: 19px; color: var(--ink); letter-spacing: -0.01em; }
+.rc-meta { font-size: 13px; color: var(--ink-3); }
+.rc-item { padding: 24px 28px 26px; }
+.rc-item + .rc-item { border-top: 1px solid var(--rule); }
+.rc-foot { padding: 14px 28px; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--ink-3); display: flex; justify-content: space-between; gap: 4px 16px; flex-wrap: wrap; }
+
+/* Flags */
+.flag-t { font-family: var(--f-ui); font-size: 17px; font-weight: 600; line-height: 1.35; color: var(--ink); display: flex; gap: 10px; align-items: baseline; }
+.flag-t .sh { flex: none; transform: translateY(1px); }
+.flag-t .w-strong { color: var(--strong); }
+.flag-t .w-weak { color: var(--weak); }
+.flag-p { margin-top: 6px; font-size: 15px; line-height: 1.5; padding-left: 22px; }
+.flag-body { padding-left: 22px; }
+
+/* Stated beside found: figures in cells divided by hairlines. */
+.figs { display: grid; margin-top: 18px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.figs.n2 { grid-template-columns: 1fr 1fr; }
+.figs.n3 { grid-template-columns: 1fr 1fr 1fr; }
+.fig { padding: 12px 16px 12px 0; }
+.fig + .fig { padding-left: 16px; border-left: 1px solid var(--rule); }
+.fig-l { font-size: 12.5px; color: var(--ink-3); display: flex; align-items: center; gap: 6px; }
+.fig-v { font-family: var(--f-data); font-size: 21px; line-height: 1.3; color: var(--ink); margin-top: 2px; letter-spacing: -0.01em; }
+.fig-v.weak { color: var(--weak); }
+.fig-v .u { font-family: var(--f-ui); font-size: 15px; color: inherit; margin-left: 4px; letter-spacing: 0; }
+@media (max-width: 575.98px) {
+  .figs.n3 { grid-template-columns: 1fr; }
+  .figs.n3 .fig { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; }
+  .figs.n3 .fig + .fig { padding-left: 0; border-left: 0; border-top: 1px solid var(--rule); }
+  .figs.n3 .fig-v { font-size: 18px; margin-top: 0; }
+}
+.fig-n { font-size: 12.5px; color: var(--ink-3); margin-top: 2px; line-height: 1.4; }
+
+/* Source chips: their own row, never inside a sentence. */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.chip {
+  font-family: var(--f-data); font-size: 12px; line-height: 1.2; color: var(--ink-2);
+  background: var(--panel); border: 1px solid var(--rule-2); border-radius: var(--r-s);
+  padding: 6px 9px; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; text-align: left;
+}
+.chip svg { flex: none; color: var(--ink-3); }
+.chip:hover { border-color: var(--accent); color: var(--ink); background: var(--accent-tint); }
+
+/* Marks: shape, word and colour together. */
+.sh { width: 12px; height: 12px; display: inline-block; vertical-align: -1px; }
+.mark { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 500; line-height: 1; padding: 5px 8px; border-radius: var(--r-s); white-space: nowrap; }
+.m-strong { color: var(--strong); background: var(--strong-bg); }
+.m-weak { color: var(--weak); background: var(--weak-bg); }
+.m-mixed { color: var(--mixed); background: var(--mixed-bg); }
+.m-thin { color: var(--thin); background: var(--thin-bg); }
+.m-run { color: var(--ink-3); background: transparent; border: 1px solid var(--rule-2); padding: 4px 7px; }
+.m-dis { color: var(--ink); background: transparent; border: 1px solid var(--ink-3); padding: 4px 7px; }
+
+/* The range strip. Track, band, ticks, out-of-range mark, axis. */
+.strip { position: relative; height: 90px; margin-top: 20px; }
+.strip .track { position: absolute; left: 0; right: 0; top: 34px; height: 1px; background: var(--rule-2); }
+.strip .ax { position: absolute; top: 30px; width: 1px; height: 9px; background: var(--rule-2); }
+.strip .band { position: absolute; top: 26px; height: 17px; background: var(--band); border-left: 1px solid var(--band-edge); border-right: 1px solid var(--band-edge); }
+.strip .tk { position: absolute; top: 22px; width: 2px; height: 25px; margin-left: -1px; background: var(--ink); }
+.strip .tk.about { width: 12px; margin-left: -6px; background: var(--ink); opacity: 0.28; border-radius: 1px; }
+.strip .tk.about::after { content: ""; position: absolute; left: 5px; top: 0; bottom: 0; width: 2px; background: var(--ink); }
+.strip .tk.out { background: var(--weak); }
+.strip .tri { position: absolute; top: 12px; margin-left: -6px; width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 8px solid var(--weak); }
+.strip .lab { position: absolute; top: 0; font-family: var(--f-data); font-size: 11.5px; line-height: 1; color: var(--ink-2); white-space: nowrap; transform: translateX(-50%); }
+.strip .lab.lo { top: 54px; }
+.strip .lab.end { transform: translateX(-100%); }
+.strip .lab.start { transform: translateX(-2px); }
+.strip .lab.weak { color: var(--weak); }
+.strip .lab.tri-lab { transform: translateX(calc(-100% - 10px)); }
+.strip .axl { position: absolute; white-space: nowrap; bottom: 0; font-family: var(--f-data); font-size: 11px; line-height: 1; color: var(--ink-3); transform: translateX(-50%); }
+.strip .axl.first { transform: none; }
+.strip .axl.last { transform: translateX(-100%); }
+
+/* Sections below the hero: white, on the grid. */
+.sec { padding-top: 120px; padding-bottom: 120px; }
+.sec + .sec { border-top: 1px solid var(--rule); }
+.sec-head { margin-bottom: 56px; }
+@media (max-width: 991.98px) {
+  .hero { padding-top: 40px; padding-bottom: 72px; }
+  .hero .rcard { margin-top: 48px; }
+  .sec { padding-top: 72px; padding-bottom: 72px; }
+  .sec-head { margin-bottom: 36px; }
+}
+
+/* Panels: outlined, quiet. Only the hero card is lifted. */
+.panel-d { background: var(--panel); border: 1px solid var(--rule); border-radius: var(--r-l); display: flex; flex-direction: column; }
+.p-head { display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; padding: 18px 24px; border-bottom: 1px solid var(--rule); }
+.p-title { font-size: 16px; font-weight: 600; color: var(--ink); }
+.p-body { padding: 24px; }
+.p-body > * + * { margin-top: 18px; }
+.p-foot { margin-top: auto; padding: 14px 24px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-3); }
+
+/* Tables: one surface, rules only. */
+.tscroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.t-d { width: 100%; border-collapse: collapse; font-size: 14px; }
+.t-d th { font-weight: 500; font-size: 12.5px; color: var(--ink-3); text-align: left; padding: 0 16px 10px 0; border-bottom: 1px solid var(--rule-2); white-space: nowrap; }
+.t-d td { padding: 12px 16px 12px 0; border-bottom: 1px solid var(--rule); vertical-align: middle; color: var(--ink-2); }
+.t-d th:last-child, .t-d td:last-child { padding-right: 0; }
+.t-d .v { text-align: right; font-family: var(--f-data); color: var(--ink); white-space: nowrap; }
+.t-d td.src { color: var(--ink); white-space: nowrap; }
+.t-d .chip { white-space: nowrap; }
+
+/* Ask the founder: full outline in the accent. */
+.ask { border: 1px solid var(--accent); border-radius: var(--r-s); background: var(--accent-tint); padding: 16px 18px; display: flex; gap: 12px 20px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.ask-l { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 4px; }
+.ask-q { color: var(--ink); font-size: 15.5px; line-height: 1.45; flex: 1 1 280px; }
+
+/* Overview lines */
+.vlist { list-style: none; margin: 0; padding: 0; }
+.vlist li { padding: 18px 24px; border-bottom: 1px solid var(--rule); }
+.vlist li:last-child { border-bottom: 0; }
+.v-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.v-piece { font-weight: 600; color: var(--ink); font-size: 15px; }
+.v-why { font-size: 14px; line-height: 1.45; margin-top: 6px; color: var(--ink-2); }
+
+/* Notes: gap, clean check, flag. Full outline only. */
+.note-h { font-size: 16px; font-weight: 600; color: var(--ink); line-height: 1.35; display: flex; gap: 10px; align-items: baseline; }
+.note-h .sh { flex: none; transform: translateY(1px); }
+.p-body > .dl-d { margin: 18px 0 0; }
+.dl-d dt { font-size: 12.5px; font-weight: 500; color: var(--ink-3); margin-top: 14px; }
+.dl-d dt:first-child { margin-top: 0; }
+.dl-d dd { margin: 2px 0 0; font-size: 14.5px; line-height: 1.5; }
+.panel-d.gap { border-style: dashed; border-color: var(--rule-2); }
+
+/* Persona cards: one subgrid, so both cards line up row by row. */
+.pair { display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--gutter); row-gap: 0; }
+.pair .persona { display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; align-content: start; }
+@media (max-width: 991.98px) { .pair { grid-template-columns: 1fr; } .pair .persona + .persona { margin-top: var(--gutter); } }
+.persona { padding: 40px; }
+.persona .role { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.persona h3 { margin-top: 14px; }
+.persona blockquote { margin: 24px 0 0; font-family: var(--f-display); font-style: italic; font-size: 19px; line-height: 1.45; color: var(--ink); }
+.persona cite { display: block; margin-top: 8px; font-family: var(--f-ui); font-style: normal; font-size: 13px; color: var(--ink-3); }
+.persona cite a { color: var(--ink-3); }
+.persona cite a:hover { color: var(--accent); }
+.persona .say { margin-top: 20px; align-self: start; }
+.persona blockquote { align-self: start; }
+.ticks { list-style: none; margin: 24px 0 0; padding: 0; border-top: 1px solid var(--rule); }
+.ticks li { padding: 12px 0 12px 26px; border-bottom: 1px solid var(--rule); position: relative; font-size: 15px; }
+.ticks li::before { content: ""; position: absolute; left: 1px; top: 20px; width: 7px; height: 7px; border-radius: 2px; background: var(--accent); }
+@media (max-width: 767.98px) { .persona { padding: 24px; } }
+
+/* Ruled lists: rules run the full column width. */
+.ruled { border-top: 1px solid var(--ink); padding-top: 20px; padding-bottom: 28px; height: 100%; }
+.ruled p { font-size: 17px; line-height: 1.5; color: var(--ink); }
+.ruled .sub { font-size: 14.5px; color: var(--ink-2); margin-top: 6px; }
+.ruled.lead-item p:first-child { font-family: var(--f-display); font-size: 28px; line-height: 1.2; letter-spacing: -0.015em; font-weight: 500; }
+.data-goes { font-family: var(--f-display); font-size: 24px; line-height: 1.4; color: var(--ink); letter-spacing: -0.01em; }
+
+/* Closing band */
+.cta { padding-top: 104px; padding-bottom: 104px; }
+.cta h2 { color: #ffffff; }
+.cta p { color: #c6d1df; font-size: 18px; margin-top: 20px; max-width: 34em; }
+.cta .ctas { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+@media (max-width: 991.98px) { .cta { padding-top: 72px; padding-bottom: 72px; } .cta .ctas { justify-content: flex-start; margin-top: 32px; } }
+
+footer { padding-top: 32px; padding-bottom: 40px; font-size: 13.5px; color: var(--ink-3); }
+footer .wrap { display: flex; justify-content: space-between; gap: 8px 24px; flex-wrap: wrap; }
+footer a { color: var(--ink-2); }
+
+/* Phone: tighter panel padding. Last, so it wins over the base rules. */
+@media (max-width: 575.98px) {
+  .rc-head, .rc-item, .rc-foot { padding-left: 20px; padding-right: 20px; }
+  .p-head, .p-body, .p-foot, .vlist li { padding-left: 20px; padding-right: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+
+<div class="on-navy">
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="home.html" aria-label="Tricorder, home">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><rect x="0.75" y="0.75" width="22.5" height="22.5" rx="6" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5"/><line x1="5" y1="15" x2="19" y2="15" stroke="currentColor" stroke-width="1.5"/><line x1="8.5" y1="9" x2="8.5" y2="15" stroke="currentColor" stroke-width="1.5"/><line x1="12" y1="6" x2="12" y2="15" stroke="currentColor" stroke-width="1.5"/><line x1="15.5" y1="10.5" x2="15.5" y2="15" stroke="currentColor" stroke-width="1.5"/></svg>
+      Tricorder
+    </a>
+    <nav class="nav-d" aria-label="Page">
+      <a class="d-none d-lg-inline" href="#readout">Readout</a>
+      <a class="d-none d-lg-inline" href="#who">Who it is for</a>
+      <a class="d-none d-lg-inline" href="#adds">What it adds</a>
+      <a href="style_guide.html">Style guide</a>
+      <a href="../../index.html">All directions</a>
+      <button class="theme-btn" id="theme" type="button" aria-label="Change colour theme">Theme: auto</button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" aria-labelledby="line">
+  <div class="wrap">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <p class="eyebrow">First-pass diligence for seed and Series A funds</p>
+        <h1 id="line" class="display h1">Point it at a startup, get a readout.</h1>
+        <p class="rest">Tricorder takes any data: decks, videos, spreadsheets, data rooms. It reveals insight you can trust, every claim sourced.</p>
+        <div class="ctas">
+          <a class="btn-d btn-p" href="#readout">See the Hollis Voice readout</a>
+          <a class="btn-d btn-s" href="#pilot">Bring a data room to the pilot</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="rcard" aria-label="Top of the readout for Hollis Voice, a synthetic company">
+          <div class="rc-head">
+            <span class="rc-co">Hollis Voice</span>
+            <span class="rc-meta">Series A, room as of 2026-09-30. Top of the readout.</span>
+          </div>
+
+          <div class="rc-item">
+            <h2 class="flag-t"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true" style="color:var(--strong)"><circle cx="6" cy="6" r="5.5" fill="currentColor"/></svg><span><span class="w-strong">Green flag:</span> the round adds up.</span></h2>
+            <div class="flag-body">
+              <p class="flag-p" style="padding-left:0">$9,000,000, stated in the deck and the same in the cap table and the model. Nothing in the room contradicts it.</p>
+              <div class="figs n3">
+                <div class="fig"><div class="fig-l">Deck</div><div class="fig-v">$9,000,000</div></div>
+                <div class="fig"><div class="fig-l">Cap table</div><div class="fig-v">$9,000,000</div></div>
+                <div class="fig"><div class="fig-l">Model</div><div class="fig-v">$9,000,000</div></div>
+              </div>
+              <div class="chips">
+                <button class="chip" type="button">pitch_deck.pdf, slide 13</button>
+                <button class="chip" type="button">cap_table.xlsx, Cap_Table, B24</button>
+                <button class="chip" type="button">financial_model.xlsx, SERIES_A_RAISE</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="rc-item">
+            <h2 class="flag-t"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true" style="color:var(--weak)"><path d="M6 0.8 L11.4 11 L0.6 11 Z" fill="currentColor"/></svg><span><span class="w-weak">Red flag:</span> runway leaves out most of the hiring plan.</span></h2>
+            <div class="flag-body">
+              <div class="figs n2">
+                <div class="fig"><div class="fig-l">Stated</div><div class="fig-v weak">37<span class="u">months</span></div><div class="fig-n">Model and deck, slide 11</div></div>
+                <div class="fig"><div class="fig-l">Found</div><div class="fig-v">19<span class="u">months</span></div><div class="fig-n">All 24 planned hires paid for</div></div>
+              </div>
+              <div class="strip" role="img" aria-label="Range strip from 0 to 40 months. The check rebuilt 19 months, drawn as a band. The stated 37 months sits outside it with the red mark.">
+                <div class="track"></div>
+                <div class="ax" style="left:0"></div><div class="ax" style="left:50%"></div><div class="ax" style="left:calc(100% - 1px)"></div>
+                <div class="band" style="left:0;width:47.5%"></div>
+                <div class="tk" style="left:47.5%"></div>
+                <div class="tk out" style="left:92.5%"></div>
+                <div class="tri" style="left:92.5%"></div>
+                <span class="lab end" style="left:calc(47.5% - 6px)">found 19 mo</span>
+                <span class="lab weak tri-lab" style="left:92.5%">stated 37 mo</span>
+                <span class="axl first" style="left:0">0</span>
+                <span class="axl" style="left:50%">20</span>
+                <span class="axl last" style="left:100%">40 months</span>
+              </div>
+              <p class="small" style="margin-top:14px">Burn and runway reads looking weak.</p>
+              <div class="chips">
+                <button class="chip" type="button">financial_model.xlsx, RUNWAY_MONTHS</button>
+                <button class="chip" type="button">pitch_deck.pdf, slide 11</button>
+                <button class="chip" type="button">hiring_plan.csv, rerun through Cash_Runway</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="rc-foot">
+            <span>Synthetic data room for Deal Flow NYC 2026. Not a real company.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<main>
+<section class="sec" id="readout" aria-labelledby="readout-h">
+  <div class="wrap">
+    <div class="row sec-head">
+      <div class="col-lg-8">
+        <p class="eyebrow">The readout</p>
+        <h2 id="readout-h" class="display h2">Every number, drawn against its sources.</h2>
+        <p class="lede">The readout opens on the best green flags and the worst red flags. Under them, every piece of the company gets a verdict line. One click opens the files behind it, the ones that agree and the ones that do not.</p>
+      </div>
+    </div>
+
+    <div class="row gy">
+      <div class="col-lg-7">
+        <div class="panel-d h-100">
+          <div class="p-head">
+            <span class="p-title">Disagreement: ARR</span>
+            <span class="mark m-dis"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><rect x="2" y="1" width="2" height="10" fill="currentColor"/><rect x="8" y="1" width="2" height="10" fill="currentColor"/></svg>3 sources, 3 figures</span>
+          </div>
+          <div class="p-body">
+            <div class="strip" style="margin-top:0" role="img" aria-label="Range strip from 2.0 to 3.1 million dollars. The model states 2.24 million, the deck 2.50 million, the pitch video about 3.0 million. No band, because no two agree.">
+              <div class="track"></div>
+              <div class="ax" style="left:0"></div><div class="ax" style="left:50%"></div><div class="ax" style="left:calc(100% - 1px)"></div>
+              <div class="tk" style="left:21.9%"></div>
+              <div class="tk" style="left:45.45%"></div>
+              <div class="tk about" style="left:90.91%"></div>
+              <span class="lab lo" style="left:21.9%">model $2.24M</span>
+              <span class="lab" style="left:45.45%">deck $2.50M</span>
+              <span class="lab lo end" style="left:calc(90.91% + 6px)">video, about $3.0M</span>
+              <span class="axl first" style="left:0">$2.0M</span>
+              <span class="axl" style="left:50%">$2.55M</span>
+              <span class="axl last" style="left:100%">$3.1M</span>
+            </div>
+            <div class="tscroll">
+              <table class="t-d">
+                <thead><tr><th scope="col">Source</th><th scope="col" class="v">States</th><th scope="col">Where</th></tr></thead>
+                <tbody>
+                  <tr><td class="src">Pitch video</td><td class="v">about $3,000,000</td><td><button class="chip" type="button">pitch video, 0:35</button></td></tr>
+                  <tr><td class="src">Deck</td><td class="v">$2,500,000</td><td><button class="chip" type="button">pitch_deck.pdf, slide 3</button></td></tr>
+                  <tr><td class="src">Financial model</td><td class="v">$2,240,868</td><td><button class="chip" type="button">financial_model.xlsx, ARR_Build, ARR_TOTAL</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="small">Largest gap: about $760,000, between the video and the model. The deck is $259,132 above the model. The room does not explain either gap.</p>
+            <div class="ask">
+              <p class="ask-q"><span class="ask-l">Ask the founder</span>Which of these is ARR as of 2026-09-30, and can you walk us from the billing data to it?</p>
+              <button class="btn-d btn-s btn-sm" type="button">Add to the ask list</button>
+            </div>
+          </div>
+          <div class="p-foot">Feeds: traction and revenue. The pilot counted as ARR is flagged below.</div>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="panel-d h-100">
+          <div class="p-head">
+            <span class="p-title">Overview</span>
+            <span class="rc-meta">5 of 9 pieces</span>
+          </div>
+          <ul class="vlist">
+            <li><div class="v-top"><span class="v-piece">The pitch itself</span><span class="mark m-strong"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>looking strong</span></div><p class="v-why">Series A raise, $9,000,000, the same in the deck, the cap table and the model.</p></li>
+            <li><div class="v-top"><span class="v-piece">Market</span><span class="mark m-strong"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>looking strong</span></div><p class="v-why">Market size $252,000,000 on deck slide 8 and in the model. Both are the company's own estimate.</p></li>
+            <li><div class="v-top"><span class="v-piece">Traction and revenue</span><span class="mark m-weak"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1 L11 10.5 L1 10.5 Z" fill="currentColor"/></svg>looking weak</span></div><p class="v-why">ARR is stated four ways, from about $3,000,000 on the pitch video to $2,060,868 in the subscription rows.</p></li>
+            <li><div class="v-top"><span class="v-piece">Burn and runway</span><span class="mark m-weak"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1 L11 10.5 L1 10.5 Z" fill="currentColor"/></svg>looking weak</span></div><p class="v-why">Runway: 37 months in the model. 19 months with the full hiring plan.</p></li>
+            <li><div class="v-top"><span class="v-piece">Comps</span><span class="mark m-run"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2"/></svg>running</span></div><p class="v-why">Still running: comps. Pieces so far above.</p></li>
+          </ul>
+          <div class="p-foot">Team, unit economics, retention and customers: 4 more pieces in the readout.</div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="panel-d h-100">
+          <div class="p-body">
+            <h3 class="note-h"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true" style="color:var(--weak)"><path d="M6 0.8 L11.4 11 L0.6 11 Z" fill="currentColor"/></svg>Flag: a pilot is counted as ARR</h3>
+            <div class="figs n2" style="margin-top:16px">
+              <div class="fig"><div class="fig-l">Model</div><div class="fig-v weak">$2,240,868</div></div>
+              <div class="fig"><div class="fig-l">Subscription rows</div><div class="fig-v">$2,060,868</div></div>
+            </div>
+            <p class="small">Difference: $180,000, the Marlow Veterinary Group pilot. It runs six months for $90,000 in total, and either side can end it on 30 days notice.</p>
+            <div class="chips" style="margin-top:14px">
+              <button class="chip" type="button">customer_mrr_by_month.csv</button>
+              <button class="chip" type="button">pilot_agreement_marlow.pdf, clauses 2, 7, 8</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="panel-d gap h-100">
+          <div class="p-body">
+            <h3 class="note-h"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true" style="color:var(--thin)"><circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Not in the room: IP assignment agreements</h3>
+            <dl class="dl-d">
+              <dt>Needed for</dt>
+              <dd>Confirming the founders and every contractor assigned their work to the company.</dd>
+              <dt>Ask for</dt>
+              <dd>Signed invention assignment agreements for both founders and every contractor who wrote code.</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="panel-d h-100">
+          <div class="p-body">
+            <h3 class="note-h"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true" style="color:var(--strong)"><path d="M2 6.2 L4.8 9 L10 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Clean: cash reconciles.</h3>
+            <p class="small">Money raised before the Series A, less every month's net loss to 2026-09-30, was compared with the model's cash. The two differ by $0.24 on $1,800,000.</p>
+            <div class="chips" style="margin-top:14px">
+              <button class="chip" type="button">cap_table.xlsx</button>
+              <button class="chip" type="button">financial_model.xlsx</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="who" aria-labelledby="who-h">
+  <div class="wrap">
+    <div class="row sec-head">
+      <div class="col-lg-8">
+        <p class="eyebrow">Who it is for</p>
+        <h2 id="who-h" class="display h2">Two people at each fund, two promises.</h2>
+        <p class="lede">Tricorder is for seed and Series A venture firms. The associate works in the readout. The partner reads the memo it helps write.</p>
+      </div>
+    </div>
+    <div class="pair">
+        <article class="panel-d persona">
+          <p class="role">The associate, who prepares the memo</p>
+          <h3 class="display h3">The gathering is done before you look.</h3>
+          <blockquote>"Before I even open your data room, I already have ten tabs up."<cite><a href="https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal">Associate at a seed-focused fund, Jan 2026</a></cite></blockquote>
+          <p class="say">The tabs, the cross-checks and the gaps are done when the deck arrives, and every claim in the memo links to its file.</p>
+          <ul class="ticks">
+            <li>Start at the best green flags and the worst red flags.</li>
+            <li>Open a weak piece to see the files that disagree, side by side.</li>
+            <li>Steer any piece in one sentence. The checks' numbers stay on screen beside the change.</li>
+          </ul>
+        </article>
+        <article class="panel-d persona">
+          <p class="role">The partner, who reads the memo and decides</p>
+          <h3 class="display h3">A memo you can check yourself.</h3>
+          <blockquote>"When burn or revenue differs between the deck, the model and the accounting records, the gap suggests carelessness or something worse, and either reading damages the deal."<cite><a href="https://www.crv.com/content/what-is-a-data-room">Seed fund guide, Aug 2026</a></cite></blockquote>
+          <p class="say">Any line opens its sources in two clicks, and you can change the model's assumptions to see what the deal needs to be true.</p>
+          <ul class="ticks">
+            <li>Each piece of the company is marked looking strong or looking weak, with its reason in one line.</li>
+            <li>Your what-ifs sit beside the company's figure and the rebuilt one, marked as yours.</li>
+            <li>The call stays yours. The readout never makes it.</li>
+          </ul>
+        </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="adds" aria-labelledby="adds-h">
+  <div class="wrap">
+    <div class="row sec-head">
+      <div class="col-lg-8">
+        <p class="eyebrow">What Tricorder adds</p>
+        <h2 id="adds-h" class="display h2">Other tools turn a room into a memo. Here is what this one adds.</h2>
+        <p class="lede">Several tools already link a memo to its sources, and one fund partner built his own. That shows funds want it.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6"><div class="ruled lead-item"><p>The best green flags and the worst red flags first.</p><p class="sub">Then an overview of every piece of the company, strong and weak.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="ruled"><p>Sources shown both ways.</p><p class="sub">The files that agree on a number as well as the ones that disagree.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="ruled"><p>Numbers checked by scripts, not by a model's reading.</p><p class="sub">Verdicts are set by a stated rule.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="ruled"><p>Contract terms read against how each contract is counted.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="ruled"><p>Gaps written as gaps.</p><p class="sub">And an ask list for the founder.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="ruled"><p>An interactive memo each partner can steer and run what-ifs on.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="ruled"><p>Checks beyond the room.</p><p class="sub">The pitch video, comps and the associate's usual tabs.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="not" aria-labelledby="not-h">
+  <div class="wrap">
+    <div class="row sec-head">
+      <div class="col-lg-8">
+        <p class="eyebrow">What it is not</p>
+        <h2 id="not-h" class="display h2">A first pass. The judgment stays with the partner.</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4"><div class="ruled"><p>Not a sourcing database or a CRM.</p></div></div>
+      <div class="col-md-4"><div class="ruled"><p>Not confirmatory diligence.</p></div></div>
+      <div class="col-md-4"><div class="ruled"><p>Not a replacement for the partner's judgment.</p></div></div>
+    </div>
+    <div class="row" style="margin-top:56px">
+      <div class="col-lg-8">
+        <p class="eyebrow">Where the data goes</p>
+        <p class="data-goes">Tricorder reads only the documents you give it or the decks in mail you send it, keeps only the readout and its sources, and lets you see and delete everything it pulled.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<section class="on-navy cta" id="pilot" aria-labelledby="cta-h">
+  <div class="wrap">
+    <div class="row align-items-end">
+      <div class="col-lg-7">
+        <h2 id="cta-h" class="display h2">Read the Hollis Voice readout, then bring a room of your own.</h2>
+        <p>Hollis Voice is a synthetic company we wrote for Deal Flow NYC 2026, with problems we planted. The readout reports what it found against that answer key.</p>
+      </div>
+      <div class="col-lg-5">
+        <div class="ctas">
+          <a class="btn-d btn-p" href="#readout">See the Hollis Voice readout</a>
+          <a class="btn-d btn-s" href="#pilot">Bring a data room to the pilot</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Tricorder. Direction D, Private Bank. A style study, not a live product page.</span>
+    <span><a href="style_guide.html">Style guide</a> &nbsp; <a href="../../index.html">All directions</a></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var b = document.getElementById('theme');
+  var r = document.documentElement;
+  var order = ['auto', 'light', 'dark'];
+  var cur = 'auto';
+  try { cur = localStorage.getItem('tricorder-d-theme') || 'auto'; } catch (e) {}
+  function apply(v) {
+    cur = order.indexOf(v) < 0 ? 'auto' : v;
+    if (cur === 'auto') r.removeAttribute('data-theme'); else r.setAttribute('data-theme', cur);
+    if (b) b.textContent = 'Theme: ' + cur;
+    try { localStorage.setItem('tricorder-d-theme', cur); } catch (e) {}
+  }
+  apply(cur);
+  if (b) b.addEventListener('click', function () { apply(order[(order.indexOf(cur) + 1) % 3]); });
+})();
+</script>
+</body>
+</html>

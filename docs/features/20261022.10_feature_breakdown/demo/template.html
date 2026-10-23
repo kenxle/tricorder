@@ -1,0 +1,78 @@
+<title>Tricorder Wave 1 Readout</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column, a room per section, the flags first and the clear checks folded away. */
+:root {
+  --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2230; --muted: #5d6676; --line: #dde1e8;
+  --accent: #23468c; --flag: #b4321f; --flag-bg: #fbeae6; --watch: #8a5a00; --watch-bg: #fbf1dc;
+  --clear: #2f6b4a; --clear-bg: #e7f2ea; --code-bg: #eef1f5;
+  --display: "Libre Franklin", "Helvetica Neue", Arial, sans-serif;
+  --body: "Source Serif 4", Georgia, serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #11151c; --surface: #1a1f29; --fg: #e4e8ef; --muted: #9aa3b2; --line: #2c3340;
+  --accent: #8fb0f0; --flag: #f08a74; --flag-bg: #3a1f1a; --watch: #e8b95a; --watch-bg: #33290f;
+  --clear: #82c79f; --clear-bg: #15291e; --code-bg: #232a36; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #11151c; --surface: #1a1f29; --fg: #e4e8ef; --muted: #9aa3b2; --line: #2c3340;
+  --accent: #8fb0f0; --flag: #f08a74; --flag-bg: #3a1f1a; --watch: #e8b95a; --watch-bg: #33290f;
+  --clear: #82c79f; --clear-bg: #15291e; --code-bg: #232a36; color-scheme: dark; }
+body { background: var(--bg); color: var(--fg); font: 16px/1.55 var(--body); }
+.wrap { max-width: 860px; margin: 0 auto; padding-block: 32px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 40px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+h1 { font-size: 1.9rem; letter-spacing: -0.01em; }
+h2 { font-size: 1.35rem; }
+h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-top: 8px; }
+p { margin: 0; }
+.muted { color: var(--muted); }
+.intro { display: grid; gap: 10px; max-width: 65ch; }
+.banner { font-family: var(--display); font-size: 0.85rem; color: var(--watch); background: var(--watch-bg); padding: 8px 12px; border-radius: 6px; }
+nav { display: flex; flex-wrap: wrap; gap: 8px 16px; font-family: var(--display); font-size: 0.9rem; }
+a { color: var(--accent); }
+.room { display: grid; gap: 16px; border-top: 2px solid var(--fg); padding-top: 16px; }
+.room-head { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-start; }
+.room-head > div { min-width: 0; flex: 1 1 320px; }
+.stats { display: flex; gap: 20px; margin: 0; font-family: var(--display); }
+.stats dt { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.stats dd { margin: 0; font-size: 1.5rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.score { font-family: var(--mono); font-size: 0.85rem; color: var(--muted); }
+.claims { display: grid; gap: 12px; }
+.claim { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; display: grid; gap: 8px; min-width: 0; }
+.claim.flag { border-left: 4px solid var(--flag); }
+.claim.watch { border-left: 4px solid var(--watch); }
+.claim header { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; font-family: var(--display); font-size: 0.8rem; }
+.pill { padding: 2px 8px; border-radius: 99px; font-weight: 700; }
+.pill.flag { color: var(--flag); background: var(--flag-bg); }
+.pill.watch { color: var(--watch); background: var(--watch-bg); }
+.pill.info { color: var(--clear); background: var(--clear-bg); }
+.feat { color: var(--fg); font-weight: 500; }
+.check { font-family: var(--mono); color: var(--muted); overflow-wrap: anywhere; }
+.sources { display: flex; flex-wrap: wrap; gap: 6px; }
+.src { font-family: var(--mono); font-size: 0.78rem; max-width: 100%; }
+.src summary { cursor: pointer; list-style: none; display: inline-flex; flex-wrap: wrap; gap: 6px; padding: 3px 8px; border: 1px solid var(--line); border-radius: 4px; background: var(--code-bg); }
+.src summary:focus-visible, .fold summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.src .loc { color: var(--accent); }
+.src code { display: block; margin-top: 6px; padding: 8px; background: var(--code-bg); border-radius: 4px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.fold summary { cursor: pointer; font-family: var(--display); font-size: 0.9rem; color: var(--accent); }
+.fold[open] summary { margin-bottom: 12px; }
+.gaps { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+.askwrap { display: grid; gap: 8px; }
+.asks { margin: 0; padding-left: 22px; display: grid; gap: 8px; }
+.asks li { display: grid; gap: 2px; }
+.asks .muted { font-size: 0.85rem; }
+.tag { font-family: var(--display); font-size: 0.72rem; color: var(--watch); background: var(--watch-bg); padding: 1px 6px; border-radius: 4px; justify-self: start; }
+</style>
+<div class="wrap">
+  <header class="intro">
+    <p class="banner">Synthetic data rooms. Hollis Voice and Brasswick are made-up companies, and every file is test data.</p>
+    <h1>What the first three scans find</h1>
+    <p>Real output from <b>deck against books</b>, <b>accounting mislabels</b> and <b>checklist coverage</b>, run on the demo rooms after they merged to main. Open any source chip to see the exact text it relies on. Scripts decide every number here; no model was called.</p>
+    <nav><a href="#hollis_voice">Hollis Voice</a><a href="#brasswick">Brasswick</a><a href="#coverage">Coverage and asks</a></nav>
+  </header>
+<!--BODY-->
+</div>

@@ -1,5 +1,7 @@
 # Proposed FRAMEWORKS.md entry: deck revenue against the books
 
+**Applied on 2026-10-23.** Entry 1.14 and its two rows are now in [FRAMEWORKS.md](../../ongoing/FRAMEWORKS.md#114-deck-revenue-against-the-books). This file is kept as the record of the proposal.
+
 This is a proposal for whoever keeps [FRAMEWORKS.md](../../ongoing/FRAMEWORKS.md). It is written in that file's entry shape so it can be pasted in as entry 1.14, under "Scan 1. The red-flag engine". This folder does not edit `docs/ongoing/`. The code is `scans/redflags/deck_vs_books.py`. Its requirements are in [03_prd.md](03_prd.md).
 
 Two rows would also join the table "Where each planted flag is caught":
