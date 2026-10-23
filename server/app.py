@@ -140,5 +140,8 @@ def source_text(room: str, source: Source) -> dict:
         raise HTTPException(404, str(err))
 
 
+from server.memo_routes import router as memo_router  # noqa: E402  (memo-export; before the page mount, which catches "/")
+app.include_router(memo_router)
+
 if PAGE_DIST.is_dir():
     app.mount("/", StaticFiles(directory=PAGE_DIST, html=True), name="page")
