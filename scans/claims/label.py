@@ -27,6 +27,7 @@ from scans.base import Ids, gap
 from scans.claims.evidence import READERS, Evidence, independent_group
 from scans.claims.extract import Statement
 from scans.claims.kinds import KINDS
+from scans.claims.numbers import HEDGES
 
 TABLE = "claims table"
 COUNTS = "claims table counts"
@@ -130,6 +131,9 @@ def _period(st: Statement, as_of: str | None) -> str | None:
 def _figure(st: Statement) -> str:
     m = st.mention
     hedge = f"{m.hedge} " if m.hedge and not m.printed.lower().startswith(m.hedge) else ""
+    if m.hedge and m.bound and dict(HEDGES).get(m.hedge) != m.bound:
+        # "No customer above 9%" is a ceiling: say "at most 9%", not "above 9%".
+        hedge = {"max": "at most ", "min": "at least "}[m.bound]
     tail = f" {m.unit_word}" if m.kind_hint == "words" and m.unit_word else ""
     return f"{hedge}{m.printed}{tail}"
 

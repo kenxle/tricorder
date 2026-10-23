@@ -161,7 +161,7 @@ SCAN_CONTRADICTIONS = {
         ("PF2", "slide 3", "$2.5M", "02_financials/financial_model.xlsx"),
         ("PF2b", "script line 15", "about three million dollars", "01_overview/pitch_deck.pdf"),
         ("PF4", "slide 12", "24", "02_financials/financial_model.xlsx"),
-        ("PF5", "slide 4", "above 9%", "03_metrics/customer_mrr_by_month.csv"),
+        ("PF5", "slide 4", "at most 9%", "03_metrics/customer_mrr_by_month.csv"),
         ("PF7", "slide 3", "357", "03_metrics/monthly_metrics.csv"),
     ],
     "brasswick": [
@@ -231,7 +231,7 @@ def test_clean_room_has_no_contradiction(results):
 
 def test_seed_drop_names_the_missing_customer_file(results):
     result = results["hollis_voice_seed_drop"]
-    row = find_row(result, "slide 4", "above 9%")
+    row = find_row(result, "slide 4", "at most 9%")
     assert row["label"] == "unsupported"
     assert any("file missing: monthly revenue by customer" in g.why and "largest customer share" in g.what for g in result.gaps)
 
@@ -257,3 +257,13 @@ def test_independence_the_pitch_never_supports_itself(results):
             if row["label"] == "supported":
                 srcs = claims[row["claim id"]].sources
                 assert any(not re.search(r"pitch_deck|pitch_video|claims\.json|overview|website|one_pager", s.uri) for s in srcs)
+
+
+def test_a_ceiling_written_as_no_customer_above_reads_at_most(results):
+    """The deck says "No customer above 9% of ARR": a ceiling. The claim must not
+    read as if the deck said some customer is above 9%."""
+    result = results["hollis_voice"]
+    row = find_row(result, "slide 4", "at most 9%")
+    claim = by_id(result)[row["claim id"]]
+    assert "as at most 9%" in claim.text
+    assert "as above 9%" not in claim.text
