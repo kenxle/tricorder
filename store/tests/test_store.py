@@ -124,7 +124,7 @@ def test_one_delete_leaves_nothing_for_that_company(store, out_env, cache_dir):
     readout, results = load_from_out(ROOM)
     store.save("demo", "hollis_voice", readout, ROOM, results)
     store.save("demo", "other_co", readout, ROOM, results)
-    store.save("fund_b", "hollis_voice", readout, ROOM, results)
+    store.save("fund_b", "brasswick", readout, ROOM, results)
 
     report = store.delete_company("demo", "hollis_voice")
     assert report.left == []
@@ -141,7 +141,7 @@ def test_one_delete_leaves_nothing_for_that_company(store, out_env, cache_dir):
         store.get("demo", "hollis_voice")
     # Other companies and other funds stay.
     assert store.get("demo", "other_co").version.version == 1
-    assert store.get("fund_b", "hollis_voice").version.version == 1
+    assert store.get("fund_b", "brasswick").version.version == 1
     assert (cache_dir / "outside" / "other_co" / "website" / "home.html").exists()
     assert (cache_dir / "signals" / "competitor_pricing.html").exists()
 
@@ -151,6 +151,40 @@ def test_deleting_a_company_with_nothing_held_removes_nothing(store, cache_dir):
     report = store.delete_company("demo", "never_saved")
     assert report.left == [] and report.removed.versions == 0 and report.removed.cache_files == 0
     assert _snapshot(cache_dir) == before
+
+
+def test_a_fund_that_never_stored_the_company_removes_nothing(store, cache_dir):
+    """Review S9: a delete under a fund that holds nothing for the company must
+    not touch the company's outside pulls in cache/."""
+    before = _snapshot(cache_dir)
+    report = store.delete_company("zzz", "hollis_voice")
+    assert report.nothing_held is True
+    assert report.removed.versions == 0 and report.removed.cache_files == 0 and report.removed.index_entries == 0
+    assert _snapshot(cache_dir) == before
+    assert [k.path for k in report.kept] == [str(cache_dir / "outside" / "hollis_voice")]
+    assert "zzz holds nothing for hollis_voice" in report.kept[0].why
+    assert report.left == []
+
+
+def test_the_cache_stays_while_another_fund_still_holds_the_company(store, out_env, cache_dir):
+    readout, results = load_from_out(ROOM)
+    store.save("demo", "hollis_voice", readout, ROOM, results)
+    store.save("fund_b", "hollis_voice", readout, ROOM, results)
+
+    first = store.delete_company("demo", "hollis_voice")
+    assert first.nothing_held is False and first.removed.versions == 1
+    assert first.removed.cache_files == 0 and first.removed.index_entries == 0
+    assert not (store.root / "demo" / "hollis_voice").exists()
+    assert (cache_dir / "outside" / "hollis_voice" / "website" / "home.html").exists()
+    assert "https://hollisvoice.example.com/" in json.loads((cache_dir / "index.json").read_text())
+    assert [k.path for k in first.kept] == [str(cache_dir / "outside" / "hollis_voice")]
+    assert "fund_b" in first.kept[0].why
+    assert first.left == []
+    assert store.get("fund_b", "hollis_voice").version.version == 1
+
+    last = store.delete_company("fund_b", "hollis_voice")
+    assert last.removed.cache_files == 2 and last.removed.index_entries == 2 and last.kept == [] and last.left == []
+    assert not (cache_dir / "outside" / "hollis_voice").exists()
 
 
 def test_delete_names_out_folders_it_leaves_alone(store, saved, out_env):
