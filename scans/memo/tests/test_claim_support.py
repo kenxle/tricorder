@@ -167,3 +167,24 @@ def test_command_without_a_readout_exits_2(tmp_path):
     done = subprocess.run([sys.executable, "-m", "scans.memo.claim_support", str(ROOMS / "brasswick")], cwd=ROOT, env=env,
                           capture_output=True, text=True)
     assert done.returncode == 2 and "no readout" in done.stdout
+
+
+def test_a_rebuild_flag_from_a_later_check_relabels_the_model_only_figure(readouts):
+    """PF6 waits on entry 1.7 (gross_margin_from_ledger), not on main yet. This flag
+    claim is HAND-BUILT test data in the shape that entry will write; it cites
+    real P&L cells. When it lands, the deck's 80% must read contradicted."""
+    r = readouts["hollis_voice"].model_copy(deep=True)
+    rebuilt = Claim(id="redflags-900", scan="redflags", severity="flag", confidence="computed",
+                    text="Gross margin rebuilt with hosting, inference and support in cost of revenue is 58.1%, not 80%.",
+                    check=Check(kind="script", name="gross_margin_from_ledger"),
+                    sources=[Source(kind="file", uri="02_financials/financial_model.xlsx", locator="GM_PCT", quote="0.8"),
+                             Source(kind="file", uri="02_financials/financial_model.xlsx", locator="P&L!A20",
+                                    quote="Cloud hosting and model inference")])
+    r.claims.append(rebuilt)
+    out = claim_support.apply(r, ROOMS / "hollis_voice")
+    row = row_at(out, "slide 5", "80%")
+    assert row["label"] == "contradicted"
+    c = claim(out, row["claim id"])
+    assert c.conflicts_with == ["redflags-900"] and c.sources[0].uri == "01_overview/pitch_deck.pdf"
+    assert {s.locator for s in c.sources[1:]} == {"GM_PCT", "P&L!A20"}
+    assert check_claim(c, ROOMS / "hollis_voice")[1] == []
