@@ -1,0 +1,1171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Requests to the founder (prototype)</title>
+<style>
+/* Values copied from readout/src/tokens.css, the readout page's design language. */
+:root { --bg:#ffffff; --fg:#16181d; --muted:#5d6470; --line:#e3e5e8; --green:#1f7a4d; --red:#b3261e; --amber:#8a5a00; --accent:#1d4ed8; --soft:#f5f6f8;
+  --font: system-ui, -apple-system, "Segoe UI", sans-serif; --mono: ui-monospace, "SF Mono", Menlo, monospace; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#111317; --fg:#e8eaed; --muted:#9aa1ab; --line:#2a2e35; --green:#5cc48d; --red:#ff8a80; --amber:#f0b44c; --accent:#8ab4ff; --soft:#1a1d22; } }
+:root[data-theme="dark"] { --bg:#111317; --fg:#e8eaed; --muted:#9aa1ab; --line:#2a2e35; --green:#5cc48d; --red:#ff8a80; --amber:#f0b44c; --accent:#8ab4ff; --soft:#1a1d22; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.5 var(--font); }
+.page { max-width:1040px; margin:0 auto; padding:16px; }
+.masthead { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+.masthead h1 { margin:0 auto 0 0; font-size:22px; }
+.banner { border:1px solid var(--amber); color:var(--amber); padding:6px 10px; border-radius:6px; }
+.proto { border:1px dashed var(--accent); color:var(--accent); padding:6px 10px; border-radius:6px; font-size:14px; }
+.note { color:var(--muted); }
+h2 { margin:24px 0 8px; font-size:19px; }
+button, .btn { font:inherit; font-size:14px; padding:6px 12px; border-radius:6px; border:1px solid var(--line); background:var(--bg); color:var(--fg); cursor:pointer; text-decoration:none; display:inline-block; }
+button.primary, .btn.primary { background:var(--fg); color:var(--bg); border-color:var(--fg); }
+button:disabled { opacity:.5; cursor:default; }
+.toolbar { display:flex; gap:8px; align-items:center; flex-wrap:wrap; padding:8px 0; border-bottom:1px solid var(--line); position:sticky; top:0; background:var(--bg); z-index:1; }
+.toolbar .spacer { margin-left:auto; }
+.asks { list-style:none; padding:0; margin:0; }
+.ask { display:grid; grid-template-columns: 24px 1fr auto; gap:8px 12px; padding:10px 0; border-bottom:1px solid var(--line); }
+.ask input { margin-top:5px; }
+.ask .title { font-weight:600; }
+.ask .text { margin:2px 0; }
+.meta { display:flex; gap:6px; flex-wrap:wrap; font-size:13px; color:var(--muted); align-items:center; }
+.chip { border:1px solid var(--line); border-radius:999px; padding:0 8px; font-size:12px; color:var(--muted); }
+.chip.top { border-color:var(--fg); color:var(--fg); }
+.chip.late { border-color:var(--amber); color:var(--amber); }
+.chip.got { border-color:var(--green); color:var(--green); }
+.why { font-size:13px; color:var(--muted); }
+.layout { display:grid; grid-template-columns: 1fr; gap:16px; }
+@media (min-width: 900px) { .layout.drafting { grid-template-columns: minmax(0,1fr) minmax(0,1fr); } }
+.drawer { border:1px solid var(--line); border-radius:8px; padding:12px; background:var(--soft); align-self:start; position:sticky; top:56px; }
+.drawer h3 { margin:0 0 8px; font-size:17px; }
+label { display:block; font-size:13px; color:var(--muted); margin:8px 0 2px; }
+.masthead select { width:auto; }
+input[type=text], input[type=email], .intake select, textarea { width:100%; font:inherit; font-size:14px; padding:6px 8px; border:1px solid var(--line); border-radius:6px; background:var(--bg); color:var(--fg); }
+textarea { font:13px/1.45 var(--mono); min-height:340px; resize:vertical; }
+.actions { display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; align-items:center; }
+.warn { color:var(--amber); font-size:13px; }
+.ok { color:var(--green); font-size:13px; }
+.guidance { font-size:13px; margin:6px 0 0; padding:6px 8px; border-left:3px solid var(--line); }
+.guidance b { font-weight:600; }
+.intake { border:1px solid var(--line); border-radius:8px; padding:12px; }
+.steps { list-style:none; padding:0; margin:8px 0 0; font-size:14px; }
+.steps li { padding:2px 0; }
+.steps li::before { content:"✓ "; color:var(--green); }
+code { font:13px var(--mono); }
+details summary { cursor:pointer; color:var(--muted); font-size:13px; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="masthead">
+    <h1>Tricorder</h1>
+    <select aria-label="Room"><option>brasswick</option></select>
+    <button aria-label="Theme" onclick="toggleTheme()">Light or dark</button>
+  </header>
+  <p class="banner" id="notice"></p>
+  <p class="proto">Prototype. The ask lines, founder words and guidance are the real output of <code>founder_requests.draft</code> on the Brasswick readout. Adding a file and the rerun are simulated on this page.</p>
+
+  <section aria-label="Ask list">
+    <h2>What to ask the founder for</h2>
+    <p class="note" id="summary"></p>
+    <div class="toolbar">
+      <span class="note">Select:</span>
+      <button onclick="pick('top')">Top five</button>
+      <button onclick="pick('need')">All required</button>
+      <button onclick="pick('all')">All</button>
+      <button onclick="pick('none')">None</button>
+      <span class="spacer"></span>
+      <button class="primary" id="draftSel" onclick="openDraft(selected())">Draft request</button>
+    </div>
+    <div class="layout" id="layout">
+      <ul class="asks" id="asks"></ul>
+      <aside class="drawer" id="drawer" hidden aria-label="Draft to the founder">
+        <h3>Draft to the founder</h3>
+        <p class="note" style="margin:0;font-size:13px">Tricorder never sends this. Copy it, or open it in your own mail app and send it from there.</p>
+        <label for="to">To</label><input id="to" type="email" placeholder="founder's email">
+        <label for="subject">Subject</label><input id="subject" type="text">
+        <label for="body">Message (edit freely)</label><textarea id="body"></textarea>
+        <div class="actions">
+          <button class="primary" onclick="copyText()">Copy text</button>
+          <a class="btn" id="mailto" href="#">Open in mail app</a>
+          <button onclick="closeDraft()">Close</button>
+          <span id="copied" class="ok" hidden>Copied.</span>
+        </div>
+        <p class="warn" id="long" hidden>This message is long for a mail link, and some mail apps cut long links. Copy the text instead.</p>
+        <details><summary>Where the guidance comes from</summary><ul id="sources" class="note" style="font-size:13px"></ul></details>
+      </aside>
+    </div>
+  </section>
+
+  <section aria-label="Add the founder's reply" class="intake">
+    <h2 style="margin-top:0">Add a file from the founder</h2>
+    <p class="note" id="copyNote"></p>
+    <label for="answers">This file answers</label><select id="answers"></select>
+    <label for="file">File</label><input id="file" type="file" accept=".pdf,.csv,.xlsx,.md,.txt,.json,.docx,.png,.jpg">
+    <div class="actions"><button class="primary" onclick="addFile()">Add to the room</button><span class="note">PDF, CSV, XLSX, DOCX, Markdown, text, JSON or an image, up to 25 MB.</span></div>
+    <div id="result"></div>
+  </section>
+</main>
+<script>
+const DATA = {
+ "room": "brasswick",
+ "company": "Brasswick",
+ "first": "Celia",
+ "read_from": "01_overview/pitch_deck.pdf, slide 1; 00_welcome/cover_note_and_index.pdf, page 1",
+ "notice": "Synthetic data room for Deal Flow NYC 2026. Not a real company.",
+ "built_at": "2026-10-23T01:41:40Z",
+ "items": [
+  {
+   "number": 1,
+   "text": "Please send an MRR column in the metrics export, and monthly revenue by customer with a product type column.",
+   "operator_why": "Not in the room: a revenue export by product type",
+   "piece": "traction_and_revenue",
+   "checklist_id": "C03",
+   "covers": [
+    "C03"
+   ],
+   "if_you_have_it": true,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "Monthly revenue by customer",
+   "guidance": {
+    "guide": "monthly-revenue-by-customer",
+    "title": "Monthly revenue by customer",
+    "what": "A table with one row per customer per month, showing what each customer paid or was billed.",
+    "form": "A CSV with one row per customer per month, exported from your billing or accounting system.",
+    "good": [
+     "Every month since the first customer",
+     "the plan and the kind of revenue (subscription, pilot, one-time)",
+     "the amount invoiced kept apart from the revenue earned"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/monthly-revenue-by-customer.md"
+   }
+  },
+  {
+   "number": 2,
+   "text": "Send the investor updates you have sent since your first outside money, as the original emails or PDFs, with send dates.",
+   "operator_why": "Not in the room: Investor update archive. Also needed for C12.",
+   "piece": "traction_and_revenue",
+   "checklist_id": "C04",
+   "covers": [
+    "C04",
+    "C12"
+   ],
+   "if_you_have_it": true,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "Investor updates",
+   "guidance": {
+    "guide": "investor-update-archive",
+    "title": "Investor updates",
+    "what": "The updates you have sent to existing investors, usually monthly.",
+    "form": "The original emails or PDFs, with send dates.",
+    "good": [
+     "The same metric definitions each month",
+     "the bad months as well as the good ones",
+     "runway stated in each update"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/investor-update-archive.md"
+   }
+  },
+  {
+   "number": 3,
+   "text": "Send monthly revenue by customer so we can rebuild retention, plus the cohort export behind the deck's retention number and a one-line definition of a cohort.",
+   "operator_why": "Not in the room: Cohort or retention export. Also needed for C15, C16, C17.",
+   "piece": "retention",
+   "checklist_id": "C14",
+   "covers": [
+    "C14",
+    "C15",
+    "C16",
+    "C17"
+   ],
+   "if_you_have_it": true,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "Cohort or retention table",
+   "guidance": {
+    "guide": "cohort-or-retention-export",
+    "title": "Cohort or retention table",
+    "what": "A table that groups customers by the month they started and shows how many of them, or how much of their revenue, is left in each later month.",
+    "form": "A CSV or a spreadsheet tab, one row per starting month and one column per month since the start.",
+    "good": [
+     "Both customer and revenue retention",
+     "monthly and annual plans kept apart",
+     "a one-line definition of a cohort"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/cohort-or-retention-export.md"
+   }
+  },
+  {
+   "number": 4,
+   "text": "Please send monthly balance sheets.",
+   "operator_why": "Not in the room: a balance sheet",
+   "piece": "burn_and_runway",
+   "checklist_id": "C20",
+   "covers": [
+    "C20"
+   ],
+   "if_you_have_it": false,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "Monthly financial statements",
+   "guidance": {
+    "guide": "historical-financials",
+    "title": "Monthly financial statements",
+    "what": "Three statements, month by month, from your accounting system: profit and loss, balance sheet and cash flow.",
+    "form": "An export from QuickBooks, Xero or a similar tool, as a spreadsheet, one column per month, with the basis (cash or accrual) stated.",
+    "good": [
+     "Every month since the first revenue month",
+     "actual months clearly marked",
+     "revenue recognised over the service period, with deferred revenue on the balance sheet"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/historical-financials.md"
+   }
+  },
+  {
+   "number": 5,
+   "text": "Please send statements for every business bank account for the last 12 months, downloaded straight from the bank, or give read-only access through your bank.",
+   "operator_why": "After the term sheet. Not in the room: Bank statements (3 to 12 months). Also needed for C27.",
+   "piece": "burn_and_runway",
+   "checklist_id": "C21",
+   "covers": [
+    "C21",
+    "C27"
+   ],
+   "if_you_have_it": true,
+   "ask_stage": "after_term_sheet",
+   "top": null,
+   "title": "Bank statements",
+   "guidance": {
+    "guide": "bank-statements",
+    "title": "Bank statements",
+    "what": "Monthly statements for every business bank account, and any cards, loans and payment-processor balances.",
+    "form": "PDFs downloaded straight from the bank, one per account per month. A CSV export from the bank also works.",
+    "good": [
+     "Every account and every month in the period",
+     "deposits that tie to revenue",
+     "investor wires that match the SAFEs and the cap table"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/bank-statements.md"
+   }
+  },
+  {
+   "number": 6,
+   "text": "Please send the hiring plan for the next 12 to 18 months: role, department, start date, base pay and equity grant for each planned hire.",
+   "operator_why": "Not in the room: Hiring plan and future org. Also needed for C24, C25.",
+   "piece": "burn_and_runway",
+   "checklist_id": "C22",
+   "covers": [
+    "C22",
+    "C24",
+    "C25"
+   ],
+   "if_you_have_it": false,
+   "ask_stage": "before_second_meeting",
+   "top": 1,
+   "title": "Hiring plan",
+   "guidance": {
+    "guide": "hiring-plan-and-future-org",
+    "title": "Hiring plan",
+    "what": "A list of the people you plan to add, one row per hire.",
+    "form": "A CSV or a spreadsheet tab with one row per planned hire: role, department, start date, base pay and equity grant.",
+    "good": [
+     "The next 12 to 18 months",
+     "pay and start date for every hire",
+     "start dates tied to milestones"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/hiring-plan-and-future-org.md"
+   }
+  },
+  {
+   "number": 7,
+   "text": "Please send the current monthly burn and the bank balance behind it, with the date.",
+   "operator_why": "Only the founder can answer this.",
+   "piece": "burn_and_runway",
+   "checklist_id": "C29",
+   "covers": [
+    "C29"
+   ],
+   "if_you_have_it": false,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "Current burn and cash",
+   "guidance": null
+  },
+  {
+   "number": 8,
+   "text": "Send monthly sales and marketing spend by line and channel, new paying customers by month and by source, and how the deck defines CAC, LTV and payback.",
+   "operator_why": "Not in the room: Unit economics (CAC, LTV, payback).",
+   "piece": "unit_economics",
+   "checklist_id": "C30",
+   "covers": [
+    "C30"
+   ],
+   "if_you_have_it": true,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "Unit economics",
+   "guidance": {
+    "guide": "unit-economics",
+    "title": "Unit economics",
+    "what": "The numbers that say whether you make money on the average customer after paying to win and serve them: acquisition cost, payback and lifetime value.",
+    "form": "A spreadsheet tab with monthly sales and marketing spend and new paying customers by month, plus how you define each number.",
+    "good": [
+     "How acquisition cost is worked out",
+     "spend by channel",
+     "payback worked out on gross margin"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/unit-economics.md"
+   }
+  },
+  {
+   "number": 9,
+   "text": "Please send names and contacts for three customers we can call, including your largest and one who stopped using the product, plus any letters of intent.",
+   "operator_why": "Not in the room: Customer references and letters of intent. Also needed for C44, C46.",
+   "piece": "customers",
+   "checklist_id": "C35",
+   "covers": [
+    "C35",
+    "C44",
+    "C46"
+   ],
+   "if_you_have_it": true,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "Customer references and letters of intent",
+   "guidance": {
+    "guide": "customer-references-and-letters-of-intent",
+    "title": "Customer references and letters of intent",
+    "what": "Names and contacts of customers and others we may call, and any letters of intent.",
+    "form": "A short list with name, title, company, email and how they know you. Letters of intent as signed PDFs.",
+    "good": [
+     "Your largest customer",
+     "a customer who stopped using the product",
+     "letters of intent with a named buyer, a use case and a dollar figure"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/customer-references-and-letters-of-intent.md"
+   }
+  },
+  {
+   "number": 10,
+   "text": "Send an opportunity-level export from your CRM with deal name, amount, stage, created date, expected close date, source, last activity and next step, including closed-lost deals, for the last six to eight quarters.",
+   "operator_why": "Not in the room: Sales pipeline snapshot. Also needed for C45.",
+   "piece": "customers",
+   "checklist_id": "C36",
+   "covers": [
+    "C36",
+    "C45"
+   ],
+   "if_you_have_it": true,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "Sales pipeline",
+   "guidance": {
+    "guide": "sales-pipeline-snapshot",
+    "title": "Sales pipeline",
+    "what": "A dated list of the deals you are working: buyer, value, stage, created date, expected close and next step.",
+    "form": "An opportunity-level export from your CRM, or a sheet, including closed-lost deals.",
+    "good": [
+     "Deals that move between stages",
+     "closed-lost deals with reasons",
+     "the date of the export"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/sales-pipeline-snapshot.md"
+   }
+  },
+  {
+   "number": 11,
+   "text": "Please send names of people who have worked with the founders that we could call.",
+   "operator_why": "Only the founder can answer this.",
+   "piece": "team",
+   "checklist_id": "C58",
+   "covers": [
+    "C58"
+   ],
+   "if_you_have_it": true,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "People we can call about the founders",
+   "guidance": null
+  },
+  {
+   "number": 12,
+   "text": "Please send a reference list: people from management, customers, current investors and advisors we may call.",
+   "operator_why": "Not in the room: Reference list: management, customers, current investors, advisors.",
+   "piece": "team",
+   "checklist_id": "C97",
+   "covers": [
+    "C97"
+   ],
+   "if_you_have_it": false,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "Customer references and letters of intent",
+   "guidance": {
+    "guide": "customer-references-and-letters-of-intent",
+    "title": "Customer references and letters of intent",
+    "what": "Names and contacts of customers and others we may call, and any letters of intent.",
+    "form": "A short list with name, title, company, email and how they know you. Letters of intent as signed PDFs.",
+    "good": [
+     "Your largest customer",
+     "a customer who stopped using the product",
+     "letters of intent with a named buyer, a use case and a dollar figure"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/customer-references-and-letters-of-intent.md"
+   }
+  },
+  {
+   "number": 13,
+   "text": "Please send the option grant records for every holder.",
+   "operator_why": "Not in the room: the option grant records behind 'Options granted (5 holders)' (02_financials/cap_table.xlsx, Cap_Table!A7)",
+   "piece": "the_pitch_itself",
+   "checklist_id": "C78",
+   "covers": [
+    "C78",
+    "C82"
+   ],
+   "if_you_have_it": true,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "Employment, advisory and option grant records",
+   "guidance": {
+    "guide": "employment-advisory-and-option-grant-records",
+    "title": "Employment, advisory and option grant records",
+    "what": "The signed documents that say what each person was promised and holds: offer letters, advisor agreements and option grants.",
+    "form": "A spreadsheet ledger of every grant (holder, date, shares, strike, vesting, board approval date) and a folder of the signed PDFs.",
+    "good": [
+     "A ledger that ties to the cap table",
+     "each grant approved before it was made",
+     "founder vesting and 83(b) filings"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/employment-advisory-and-option-grant-records.md"
+   }
+  },
+  {
+   "number": 14,
+   "text": "Please send the signed SAFE, with any side letter, for each of: Theodora Vance (angel); Wickham Row Angels LLC; Halyard Pre-Seed Fund I, LP.",
+   "operator_why": "Not in the room: the signed SAFEs for 3 holders on the cap table.",
+   "piece": "the_pitch_itself",
+   "checklist_id": "C75",
+   "covers": [
+    "C75"
+   ],
+   "if_you_have_it": false,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "Prior financing documents",
+   "guidance": {
+    "guide": "prior-financing",
+    "title": "Prior financing documents",
+    "what": "The papers for each earlier raise: SAFEs or notes with any side letters, and term sheets.",
+    "form": "Signed PDFs, one per investor, plus the term sheet for this round.",
+    "good": [
+     "A signed document for every instrument on the cap table",
+     "every side letter"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/prior-financing.md"
+   }
+  },
+  {
+   "number": 15,
+   "text": "Please send the one-page summary you give investors, with its date.",
+   "operator_why": "Not in the room: One-page summary.",
+   "piece": "the_pitch_itself",
+   "checklist_id": "C61",
+   "covers": [
+    "C61"
+   ],
+   "if_you_have_it": false,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "One-page summary",
+   "guidance": {
+    "guide": "one-page-summary",
+    "title": "One-page summary",
+    "what": "A one-page fact sheet on the company: what it does, the team, traction, the market and the round.",
+    "form": "A PDF, with its date.",
+    "good": [
+     "Figures that match the deck",
+     "dated numbers"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/one-page-summary.md"
+   }
+  },
+  {
+   "number": 16,
+   "text": "Please send a recorded demo or a login to a sandbox, and a one-page roadmap with dates and owners. Say which parts of the demo are live.",
+   "operator_why": "Not in the room: Product roadmap and demo. Also needed for C68.",
+   "piece": "the_pitch_itself",
+   "checklist_id": "C63",
+   "covers": [
+    "C63",
+    "C68"
+   ],
+   "if_you_have_it": false,
+   "ask_stage": "before_second_meeting",
+   "top": 2,
+   "title": "Product roadmap and demo",
+   "guidance": {
+    "guide": "product-roadmap-and-demo",
+    "title": "Product roadmap and demo",
+    "what": "A short plan of what the team will build and when, and a way to see the product work.",
+    "form": "A one-page roadmap with dates and owners, and a recorded demo or a sandbox login.",
+    "good": [
+     "Which parts of the demo are live",
+     "milestones tied to the money in this round"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/product-roadmap-and-demo.md"
+   }
+  },
+  {
+   "number": 17,
+   "text": "Please send the latest 409A report and the one before it, the option grant ledger with grant dates and strike prices, and the board approval for each grant.",
+   "operator_why": "Not in the room: 409A valuation. Also needed for C85.",
+   "piece": "the_pitch_itself",
+   "checklist_id": "C73",
+   "covers": [
+    "C73",
+    "C85"
+   ],
+   "if_you_have_it": true,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "409A valuation",
+   "guidance": {
+    "guide": "409a-valuation",
+    "title": "409A valuation",
+    "what": "An outside appraisal of what your common stock is worth. It sets the lowest price at which options can be granted.",
+    "form": "The PDF report from the valuation firm or cap table platform, with its effective date.",
+    "good": [
+     "A current report from an independent provider",
+     "a refresh after each round",
+     "the date the board adopted it"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/409a-valuation.md"
+   }
+  },
+  {
+   "number": 18,
+   "text": "Please send the filed certificate of incorporation with every amendment, the current bylaws, the organizational board consent, the founders' stock purchase agreements and 83(b) elections, and a good standing certificate dated within the last few months.",
+   "operator_why": "Not in the room: Incorporation documents and bylaws. Also needed for C84.",
+   "piece": "the_pitch_itself",
+   "checklist_id": "C74",
+   "covers": [
+    "C74",
+    "C84"
+   ],
+   "if_you_have_it": false,
+   "ask_stage": "before_second_meeting",
+   "top": 3,
+   "title": "Incorporation documents and bylaws",
+   "guidance": {
+    "guide": "incorporation-documents",
+    "title": "Incorporation documents and bylaws",
+    "what": "The company's formation set: the filed certificate of incorporation with amendments, the bylaws and the first board consent.",
+    "form": "File-stamped PDFs, plus a good standing certificate dated in the last few months.",
+    "good": [
+     "The full set, with every amendment",
+     "founder stock agreements with vesting and 83(b) elections"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/incorporation-documents.md"
+   }
+  },
+  {
+   "number": 19,
+   "text": "Please send the signed invention assignment agreements for each founder (covering any work before incorporation), each employee and each contractor who has written code, designs or content, and a list of anyone who has not signed.",
+   "operator_why": "Not in the room: IP and invention assignment agreements. Also needed for C83.",
+   "piece": "the_pitch_itself",
+   "checklist_id": "C76",
+   "covers": [
+    "C76",
+    "C83"
+   ],
+   "if_you_have_it": false,
+   "ask_stage": "before_second_meeting",
+   "top": 4,
+   "title": "IP and invention assignment agreements",
+   "guidance": {
+    "guide": "ip-assignment",
+    "title": "IP and invention assignment agreements",
+    "what": "The signed agreements by which founders, employees and contractors give the company what they create for it.",
+    "form": "Signed PDFs, one per person, plus a list of anyone who has not signed.",
+    "good": [
+     "A signed agreement from every founder, employee and contractor who has built product",
+     "founder agreements covering work from before the company",
+     "signing dates on or before each start date"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/ip-assignment.md"
+   }
+  },
+  {
+   "number": 20,
+   "text": "Please send the board and stockholder consents or minutes that approved each SAFE, note, stock issuance and option grant, the equity plan, and the 409A report.",
+   "operator_why": "Not in the room: Board and stockholder minutes. Also needed for C84.",
+   "piece": "the_pitch_itself",
+   "checklist_id": "C77",
+   "covers": [
+    "C77",
+    "C84"
+   ],
+   "if_you_have_it": false,
+   "ask_stage": "before_second_meeting",
+   "top": 5,
+   "title": "Board and stockholder minutes and consents",
+   "guidance": {
+    "guide": "board-stockholder-minutes",
+    "title": "Board and stockholder minutes and consents",
+    "what": "The written record of decisions by the board and the stockholders: minutes of meetings and written consents.",
+    "form": "Signed PDFs, in date order, as they sit in your minute book.",
+    "good": [
+     "A consent for every stock issuance, SAFE and option grant",
+     "approvals that match the cap table line for line"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/board-stockholder-minutes.md"
+   }
+  },
+  {
+   "number": 21,
+   "text": "Please send the federal and state income tax returns filed since incorporation with proof of filing, the payroll tax filings, and the Delaware annual report and franchise tax receipts.",
+   "operator_why": "After the term sheet. Not in the room: Tax returns (three years). Also needed for C86.",
+   "piece": "the_pitch_itself",
+   "checklist_id": "C79",
+   "covers": [
+    "C79",
+    "C86"
+   ],
+   "if_you_have_it": true,
+   "ask_stage": "after_term_sheet",
+   "top": null,
+   "title": "Tax returns",
+   "guidance": {
+    "guide": "tax-returns",
+    "title": "Tax returns",
+    "what": "The company's filed income tax returns, with proof of filing.",
+    "form": "PDFs from the tax software, one per year, with payroll and state filings.",
+    "good": [
+     "Every year since incorporation",
+     "proof of filing"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/tax-returns.md"
+   }
+  },
+  {
+   "number": 22,
+   "text": "Please send a short written statement of any pending or threatened lawsuit, demand letter, dispute with an employee, contractor, customer or regulator, and any regulatory inquiry, settlement or order, or state that there are none.",
+   "operator_why": "Not in the room: Disclosure of claims, disputes and regulatory inquiries. Also needed for C87.",
+   "piece": "the_pitch_itself",
+   "checklist_id": "C80",
+   "covers": [
+    "C80",
+    "C87"
+   ],
+   "if_you_have_it": false,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "Statement of claims, disputes and inquiries",
+   "guidance": {
+    "guide": "claims-disputes-inquiries",
+    "title": "Statement of claims, disputes and inquiries",
+    "what": "A short written statement that lists any lawsuits, threatened claims, disputes or regulator contact, or says there are none.",
+    "form": "A signed one-page letter or PDF. A short paragraph is fine at this stage.",
+    "good": [
+     "Each matter with a line of context",
+     "threats listed even if they may come to nothing",
+     "a plain statement of \"none\" if there are none"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/claims-disputes-inquiries.md"
+   }
+  },
+  {
+   "number": 23,
+   "text": "Please send a schedule of every agreement with obligations over $25,000 and copies for your ten largest vendors; your lease; any loan, note or credit agreement with the lender's lien filings; your insurance policies and certificates, including D&O; and the agreements with any consultants or contractors, with their IP assignments.",
+   "operator_why": "Not in the room: Material agreements with obligations over $25,000.",
+   "piece": "the_pitch_itself",
+   "checklist_id": "C98",
+   "covers": [
+    "C98"
+   ],
+   "if_you_have_it": true,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "Material agreements",
+   "guidance": {
+    "guide": "material-agreements-other-than-customer-contracts",
+    "title": "Material agreements",
+    "what": "Agreements other than customer contracts that bind the company: leases, loans, insurance, licences, consulting and vendor agreements.",
+    "form": "A one-page schedule listing each agreement, with signed copies as PDFs.",
+    "good": [
+     "Every agreement with obligations over $25,000",
+     "any loan with its lien filings",
+     "signed copies kept apart from drafts"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/material-agreements-other-than-customer-contracts.md"
+   }
+  },
+  {
+   "number": 24,
+   "text": "Please send copies of your insurance policies, with the certificates.",
+   "operator_why": "Not in the room: Insurance policies.",
+   "piece": "the_pitch_itself",
+   "checklist_id": "C99",
+   "covers": [
+    "C99"
+   ],
+   "if_you_have_it": true,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "Material agreements",
+   "guidance": {
+    "guide": "material-agreements-other-than-customer-contracts",
+    "title": "Material agreements",
+    "what": "Agreements other than customer contracts that bind the company: leases, loans, insurance, licences, consulting and vendor agreements.",
+    "form": "A one-page schedule listing each agreement, with signed copies as PDFs.",
+    "good": [
+     "Every agreement with obligations over $25,000",
+     "any loan with its lien filings",
+     "signed copies kept apart from drafts"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/material-agreements-other-than-customer-contracts.md"
+   }
+  },
+  {
+   "number": 25,
+   "text": "Please send any loan, lien or other charge on the company, or say there are none.",
+   "operator_why": "Not in the room: Loans, liens and other encumbrances on the company.",
+   "piece": "the_pitch_itself",
+   "checklist_id": "C100",
+   "covers": [
+    "C100"
+   ],
+   "if_you_have_it": true,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "Material agreements",
+   "guidance": {
+    "guide": "material-agreements-other-than-customer-contracts",
+    "title": "Material agreements",
+    "what": "Agreements other than customer contracts that bind the company: leases, loans, insurance, licences, consulting and vendor agreements.",
+    "form": "A one-page schedule listing each agreement, with signed copies as PDFs.",
+    "good": [
+     "Every agreement with obligations over $25,000",
+     "any loan with its lien filings",
+     "signed copies kept apart from drafts"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/material-agreements-other-than-customer-contracts.md"
+   }
+  },
+  {
+   "number": 26,
+   "text": "Please send a list of your patents, trademarks, copyrights and domain names, with filing numbers.",
+   "operator_why": "Not in the room: Patents, trademarks, copyrights and domain names.",
+   "piece": "the_pitch_itself",
+   "checklist_id": "C101",
+   "covers": [
+    "C101"
+   ],
+   "if_you_have_it": true,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "Patents, trademarks, copyrights and domain names",
+   "guidance": null
+  },
+  {
+   "number": 27,
+   "text": "Please send a one-page note on which AI models and vendors the product uses, what data any model was trained or tuned on and your rights to it, how customer and call data is used and kept, and the agreement with each AI vendor.",
+   "operator_why": "Not in the room: AI model documentation: architecture, training, performance and validation.",
+   "piece": "the_pitch_itself",
+   "checklist_id": "C102",
+   "covers": [
+    "C102",
+    "C103",
+    "C104",
+    "C105",
+    "C106",
+    "C107",
+    "C108",
+    "C109"
+   ],
+   "if_you_have_it": true,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "AI and data governance documents",
+   "guidance": {
+    "guide": "ai-and-data-governance-documents",
+    "title": "AI and data governance documents",
+    "what": "A short record of the AI models and vendors the product uses, the data behind them, and your rights to that data.",
+    "form": "A one-page note is enough at this stage, with the agreement for each AI vendor attached.",
+    "good": [
+     "Each dataset with its source and your right to use it",
+     "which outside AI services you depend on",
+     "how customer data is used and kept"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/ai-and-data-governance-documents.md"
+   }
+  },
+  {
+   "number": 28,
+   "text": "Please send your property leases.",
+   "operator_why": "Not in the room: Property leases.",
+   "piece": "the_pitch_itself",
+   "checklist_id": "C110",
+   "covers": [
+    "C110"
+   ],
+   "if_you_have_it": true,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "Material agreements",
+   "guidance": {
+    "guide": "material-agreements-other-than-customer-contracts",
+    "title": "Material agreements",
+    "what": "Agreements other than customer contracts that bind the company: leases, loans, insurance, licences, consulting and vendor agreements.",
+    "form": "A one-page schedule listing each agreement, with signed copies as PDFs.",
+    "good": [
+     "Every agreement with obligations over $25,000",
+     "any loan with its lien filings",
+     "signed copies kept apart from drafts"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/material-agreements-other-than-customer-contracts.md"
+   }
+  },
+  {
+   "number": 29,
+   "text": "Please send your consulting agreements.",
+   "operator_why": "Not in the room: Consulting agreements.",
+   "piece": "the_pitch_itself",
+   "checklist_id": "C111",
+   "covers": [
+    "C111"
+   ],
+   "if_you_have_it": true,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "Material agreements",
+   "guidance": {
+    "guide": "material-agreements-other-than-customer-contracts",
+    "title": "Material agreements",
+    "what": "Agreements other than customer contracts that bind the company: leases, loans, insurance, licences, consulting and vendor agreements.",
+    "form": "A one-page schedule listing each agreement, with signed copies as PDFs.",
+    "good": [
+     "Every agreement with obligations over $25,000",
+     "any loan with its lien filings",
+     "signed copies kept apart from drafts"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/material-agreements-other-than-customer-contracts.md"
+   }
+  },
+  {
+   "number": 30,
+   "text": "Please send any licence of your IP to others, and of other people's IP to you.",
+   "operator_why": "Not in the room: Licences of the company's IP to others, and of other people's IP to the company.",
+   "piece": "the_pitch_itself",
+   "checklist_id": "C112",
+   "covers": [
+    "C112"
+   ],
+   "if_you_have_it": true,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "Material agreements",
+   "guidance": {
+    "guide": "material-agreements-other-than-customer-contracts",
+    "title": "Material agreements",
+    "what": "Agreements other than customer contracts that bind the company: leases, loans, insurance, licences, consulting and vendor agreements.",
+    "form": "A one-page schedule listing each agreement, with signed copies as PDFs.",
+    "good": [
+     "Every agreement with obligations over $25,000",
+     "any loan with its lien filings",
+     "signed copies kept apart from drafts"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/material-agreements-other-than-customer-contracts.md"
+   }
+  },
+  {
+   "number": 31,
+   "text": "Please send any agreement that needs someone else's consent, or has change-of-control terms, because of this round.",
+   "operator_why": "Not in the room: Agreements that need a third party's consent, or carry change-of-control terms, because of this financing.",
+   "piece": "the_pitch_itself",
+   "checklist_id": "C113",
+   "covers": [
+    "C113"
+   ],
+   "if_you_have_it": true,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "Material agreements",
+   "guidance": {
+    "guide": "material-agreements-other-than-customer-contracts",
+    "title": "Material agreements",
+    "what": "Agreements other than customer contracts that bind the company: leases, loans, insurance, licences, consulting and vendor agreements.",
+    "form": "A one-page schedule listing each agreement, with signed copies as PDFs.",
+    "good": [
+     "Every agreement with obligations over $25,000",
+     "any loan with its lien filings",
+     "signed copies kept apart from drafts"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/material-agreements-other-than-customer-contracts.md"
+   }
+  },
+  {
+   "number": 32,
+   "text": "Please send any agreement with an officer, a director or a company they are tied to.",
+   "operator_why": "Not in the room: Agreements with officers, directors and their affiliates.",
+   "piece": "the_pitch_itself",
+   "checklist_id": "C114",
+   "covers": [
+    "C114"
+   ],
+   "if_you_have_it": true,
+   "ask_stage": "before_second_meeting",
+   "top": null,
+   "title": "Material agreements",
+   "guidance": {
+    "guide": "material-agreements-other-than-customer-contracts",
+    "title": "Material agreements",
+    "what": "Agreements other than customer contracts that bind the company: leases, loans, insurance, licences, consulting and vendor agreements.",
+    "form": "A one-page schedule listing each agreement, with signed copies as PDFs.",
+    "good": [
+     "Every agreement with obligations over $25,000",
+     "any loan with its lien filings",
+     "signed copies kept apart from drafts"
+    ],
+    "path": "docs/reports/20261022.03_document_guides/material-agreements-other-than-customer-contracts.md"
+   }
+  }
+ ],
+ "default": [
+  6,
+  16,
+  18,
+  19,
+  20
+ ],
+ "mailto_max": 2000,
+ "sample_draft": {
+  "room": "brasswick",
+  "company": "Brasswick",
+  "to": "",
+  "subject": "Brasswick: documents for our review",
+  "body": "Hi Celia,\n\nThank you for the Brasswick data room. To finish our first pass, could you send the items below? A short note with each file is plenty. If something does not exist yet, just say so; that helps us too.\n\n1. Hiring plan\nPlease send the hiring plan for the next 12 to 18 months: role, department, start date, base pay and equity grant for each planned hire.\n   What it is: A list of the people you plan to add, one row per hire.\n   Best form: A CSV or a spreadsheet tab with one row per planned hire: role, department, start date, base pay and equity grant.\n   A good one shows: The next 12 to 18 months; pay and start date for every hire; start dates tied to milestones.\n\n2. Product roadmap and demo\nPlease send a recorded demo or a login to a sandbox, and a one-page roadmap with dates and owners. Say which parts of the demo are live.\n   What it is: A short plan of what the team will build and when, and a way to see the product work.\n   Best form: A one-page roadmap with dates and owners, and a recorded demo or a sandbox login.\n   A good one shows: Which parts of the demo are live; milestones tied to the money in this round.\n\n3. Incorporation documents and bylaws\nPlease send the filed certificate of incorporation with every amendment, the current bylaws, the organizational board consent, the founders' stock purchase agreements and 83(b) elections, and a good standing certificate dated within the last few months.\n   What it is: The company's formation set: the filed certificate of incorporation with amendments, the bylaws and the first board consent.\n   Best form: File-stamped PDFs, plus a good standing certificate dated in the last few months.\n   A good one shows: The full set, with every amendment; founder stock agreements with vesting and 83(b) elections.\n\n4. IP and invention assignment agreements\nPlease send the signed invention assignment agreements for each founder (covering any work before incorporation), each employee and each contractor who has written code, designs or content, and a list of anyone who has not signed.\n   What it is: The signed agreements by which founders, employees and contractors give the company what they create for it.\n   Best form: Signed PDFs, one per person, plus a list of anyone who has not signed.\n   A good one shows: A signed agreement from every founder, employee and contractor who has built product; founder agreements covering work from before the company; signing dates on or before each start date.\n\n5. Board and stockholder minutes and consents\nPlease send the board and stockholder consents or minutes that approved each SAFE, note, stock issuance and option grant, the equity plan, and the 409A report.\n   What it is: The written record of decisions by the board and the stockholders: minutes of meetings and written consents.\n   Best form: Signed PDFs, in date order, as they sit in your minute book.\n   A good one shows: A consent for every stock issuance, SAFE and option grant; approvals that match the cap table line for line.\n\nThank you.\n",
+  "mailto": "mailto:?subject=Brasswick%3A%20documents%20for%20our%20review&body=Hi%20Celia%2C%0D%0A%0D%0AThank%20you%20for%20the%20Brasswick%20data%20room.%20To%20finish%20our%20first%20pass%2C%20could%20you%20send%20the%20items%20below%3F%20A%20short%20note%20with%20each%20file%20is%20plenty.%20If%20something%20does%20not%20exist%20yet%2C%20just%20say%20so%3B%20that%20helps%20us%20too.%0D%0A%0D%0A1.%20Hiring%20plan%0D%0APlease%20send%20the%20hiring%20plan%20for%20the%20next%2012%20to%2018%20months%3A%20role%2C%20department%2C%20start%20date%2C%20base%20pay%20and%20equity%20grant%20for%20each%20planned%20hire.%0D%0A%20%20%20What%20it%20is%3A%20A%20list%20of%20the%20people%20you%20plan%20to%20add%2C%20one%20row%20per%20hire.%0D%0A%20%20%20Best%20form%3A%20A%20CSV%20or%20a%20spreadsheet%20tab%20with%20one%20row%20per%20planned%20hire%3A%20role%2C%20department%2C%20start%20date%2C%20base%20pay%20and%20equity%20grant.%0D%0A%20%20%20A%20good%20one%20shows%3A%20The%20next%2012%20to%2018%20months%3B%20pay%20and%20start%20date%20for%20every%20hire%3B%20start%20dates%20tied%20to%20milestones.%0D%0A%0D%0A2.%20Product%20roadmap%20and%20demo%0D%0APlease%20send%20a%20recorded%20demo%20or%20a%20login%20to%20a%20sandbox%2C%20and%20a%20one-page%20roadmap%20with%20dates%20and%20owners.%20Say%20which%20parts%20of%20the%20demo%20are%20live.%0D%0A%20%20%20What%20it%20is%3A%20A%20short%20plan%20of%20what%20the%20team%20will%20build%20and%20when%2C%20and%20a%20way%20to%20see%20the%20product%20work.%0D%0A%20%20%20Best%20form%3A%20A%20one-page%20roadmap%20with%20dates%20and%20owners%2C%20and%20a%20recorded%20demo%20or%20a%20sandbox%20login.%0D%0A%20%20%20A%20good%20one%20shows%3A%20Which%20parts%20of%20the%20demo%20are%20live%3B%20milestones%20tied%20to%20the%20money%20in%20this%20round.%0D%0A%0D%0A3.%20Incorporation%20documents%20and%20bylaws%0D%0APlease%20send%20the%20filed%20certificate%20of%20incorporation%20with%20every%20amendment%2C%20the%20current%20bylaws%2C%20the%20organizational%20board%20consent%2C%20the%20founders%27%20stock%20purchase%20agreements%20and%2083%28b%29%20elections%2C%20and%20a%20good%20standing%20certificate%20dated%20within%20the%20last%20few%20months.%0D%0A%20%20%20What%20it%20is%3A%20The%20company%27s%20formation%20set%3A%20the%20filed%20certificate%20of%20incorporation%20with%20amendments%2C%20the%20bylaws%20and%20the%20first%20board%20consent.%0D%0A%20%20%20Best%20form%3A%20File-stamped%20PDFs%2C%20plus%20a%20good%20standing%20certificate%20dated%20in%20the%20last%20few%20months.%0D%0A%20%20%20A%20good%20one%20shows%3A%20The%20full%20set%2C%20with%20every%20amendment%3B%20founder%20stock%20agreements%20with%20vesting%20and%2083%28b%29%20elections.%0D%0A%0D%0A4.%20IP%20and%20invention%20assignment%20agreements%0D%0APlease%20send%20the%20signed%20invention%20assignment%20agreements%20for%20each%20founder%20%28covering%20any%20work%20before%20incorporation%29%2C%20each%20employee%20and%20each%20contractor%20who%20has%20written%20code%2C%20designs%20or%20content%2C%20and%20a%20list%20of%20anyone%20who%20has%20not%20signed.%0D%0A%20%20%20What%20it%20is%3A%20The%20signed%20agreements%20by%20which%20founders%2C%20employees%20and%20contractors%20give%20the%20company%20what%20they%20create%20for%20it.%0D%0A%20%20%20Best%20form%3A%20Signed%20PDFs%2C%20one%20per%20person%2C%20plus%20a%20list%20of%20anyone%20who%20has%20not%20signed.%0D%0A%20%20%20A%20good%20one%20shows%3A%20A%20signed%20agreement%20from%20every%20founder%2C%20employee%20and%20contractor%20who%20has%20built%20product%3B%20founder%20agreements%20covering%20work%20from%20before%20the%20company%3B%20signing%20dates%20on%20or%20before%20each%20start%20date.%0D%0A%0D%0A5.%20Board%20and%20stockholder%20minutes%20and%20consents%0D%0APlease%20send%20the%20board%20and%20stockholder%20consents%20or%20minutes%20that%20approved%20each%20SAFE%2C%20note%2C%20stock%20issuance%20and%20option%20grant%2C%20the%20equity%20plan%2C%20and%20the%20409A%20report.%0D%0A%20%20%20What%20it%20is%3A%20The%20written%20record%20of%20decisions%20by%20the%20board%20and%20the%20stockholders%3A%20minutes%20of%20meetings%20and%20written%20consents.%0D%0A%20%20%20Best%20form%3A%20Signed%20PDFs%2C%20in%20date%20order%2C%20as%20they%20sit%20in%20your%20minute%20book.%0D%0A%20%20%20A%20good%20one%20shows%3A%20A%20consent%20for%20every%20stock%20issuance%2C%20SAFE%20and%20option%20grant%3B%20approvals%20that%20match%20the%20cap%20table%20line%20for%20line.%0D%0A%0D%0AThank%20you.%0D%0A",
+  "mailto_fits": false,
+  "read_from": "01_overview/pitch_deck.pdf, slide 1; 00_welcome/cover_note_and_index.pdf, page 1",
+  "items": [
+   {
+    "number": 6,
+    "text": "Please send the hiring plan for the next 12 to 18 months: role, department, start date, base pay and equity grant for each planned hire.",
+    "operator_why": "Not in the room: Hiring plan and future org. Also needed for C24, C25.",
+    "piece": "burn_and_runway",
+    "checklist_id": "C22",
+    "covers": [
+     "C22",
+     "C24",
+     "C25"
+    ],
+    "if_you_have_it": false,
+    "ask_stage": "before_second_meeting",
+    "top": 1,
+    "title": "Hiring plan",
+    "guidance": {
+     "guide": "hiring-plan-and-future-org",
+     "title": "Hiring plan",
+     "what": "A list of the people you plan to add, one row per hire.",
+     "form": "A CSV or a spreadsheet tab with one row per planned hire: role, department, start date, base pay and equity grant.",
+     "good": [
+      "The next 12 to 18 months",
+      "pay and start date for every hire",
+      "start dates tied to milestones"
+     ],
+     "path": "docs/reports/20261022.03_document_guides/hiring-plan-and-future-org.md"
+    }
+   },
+   {
+    "number": 16,
+    "text": "Please send a recorded demo or a login to a sandbox, and a one-page roadmap with dates and owners. Say which parts of the demo are live.",
+    "operator_why": "Not in the room: Product roadmap and demo. Also needed for C68.",
+    "piece": "the_pitch_itself",
+    "checklist_id": "C63",
+    "covers": [
+     "C63",
+     "C68"
+    ],
+    "if_you_have_it": false,
+    "ask_stage": "before_second_meeting",
+    "top": 2,
+    "title": "Product roadmap and demo",
+    "guidance": {
+     "guide": "product-roadmap-and-demo",
+     "title": "Product roadmap and demo",
+     "what": "A short plan of what the team will build and when, and a way to see the product work.",
+     "form": "A one-page roadmap with dates and owners, and a recorded demo or a sandbox login.",
+     "good": [
+      "Which parts of the demo are live",
+      "milestones tied to the money in this round"
+     ],
+     "path": "docs/reports/20261022.03_document_guides/product-roadmap-and-demo.md"
+    }
+   },
+   {
+    "number": 18,
+    "text": "Please send the filed certificate of incorporation with every amendment, the current bylaws, the organizational board consent, the founders' stock purchase agreements and 83(b) elections, and a good standing certificate dated within the last few months.",
+    "operator_why": "Not in the room: Incorporation documents and bylaws. Also needed for C84.",
+    "piece": "the_pitch_itself",
+    "checklist_id": "C74",
+    "covers": [
+     "C74",
+     "C84"
+    ],
+    "if_you_have_it": false,
+    "ask_stage": "before_second_meeting",
+    "top": 3,
+    "title": "Incorporation documents and bylaws",
+    "guidance": {
+     "guide": "incorporation-documents",
+     "title": "Incorporation documents and bylaws",
+     "what": "The company's formation set: the filed certificate of incorporation with amendments, the bylaws and the first board consent.",
+     "form": "File-stamped PDFs, plus a good standing certificate dated in the last few months.",
+     "good": [
+      "The full set, with every amendment",
+      "founder stock agreements with vesting and 83(b) elections"
+     ],
+     "path": "docs/reports/20261022.03_document_guides/incorporation-documents.md"
+    }
+   },
+   {
+    "number": 19,
+    "text": "Please send the signed invention assignment agreements for each founder (covering any work before incorporation), each employee and each contractor who has written code, designs or content, and a list of anyone who has not signed.",
+    "operator_why": "Not in the room: IP and invention assignment agreements. Also needed for C83.",
+    "piece": "the_pitch_itself",
+    "checklist_id": "C76",
+    "covers": [
+     "C76",
+     "C83"
+    ],
+    "if_you_have_it": false,
+    "ask_stage": "before_second_meeting",
+    "top": 4,
+    "title": "IP and invention assignment agreements",
+    "guidance": {
+     "guide": "ip-assignment",
+     "title": "IP and invention assignment agreements",
+     "what": "The signed agreements by which founders, employees and contractors give the company what they create for it.",
+     "form": "Signed PDFs, one per person, plus a list of anyone who has not signed.",
+     "good": [
+      "A signed agreement from every founder, employee and contractor who has built product",
+      "founder agreements covering work from before the company",
+      "signing dates on or before each start date"
+     ],
+     "path": "docs/reports/20261022.03_document_guides/ip-assignment.md"
+    }
+   },
+   {
+    "number": 20,
+    "text": "Please send the board and stockholder consents or minutes that approved each SAFE, note, stock issuance and option grant, the equity plan, and the 409A report.",
+    "operator_why": "Not in the room: Board and stockholder minutes. Also needed for C84.",
+    "piece": "the_pitch_itself",
+    "checklist_id": "C77",
+    "covers": [
+     "C77",
+     "C84"
+    ],
+    "if_you_have_it": false,
+    "ask_stage": "before_second_meeting",
+    "top": 5,
+    "title": "Board and stockholder minutes and consents",
+    "guidance": {
+     "guide": "board-stockholder-minutes",
+     "title": "Board and stockholder minutes and consents",
+     "what": "The written record of decisions by the board and the stockholders: minutes of meetings and written consents.",
+     "form": "Signed PDFs, in date order, as they sit in your minute book.",
+     "good": [
+      "A consent for every stock issuance, SAFE and option grant",
+      "approvals that match the cap table line for line"
+     ],
+     "path": "docs/reports/20261022.03_document_guides/board-stockholder-minutes.md"
+    }
+   }
+  ],
+  "leaks": []
+ }
+};
+const PIECE = {traction_and_revenue:"Traction and revenue",retention:"Retention",burn_and_runway:"Burn and runway",unit_economics:"Unit economics",customers:"Customers",market:"Market",comps:"Comps",team:"Team",the_pitch_itself:"The pitch itself"};
+const sel = new Set(DATA.default);
+const got = new Map();
+let draftNums = [];
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function toggleTheme(){ const r=document.documentElement; r.dataset.theme = r.dataset.theme==="dark" ? "light" : "dark"; }
+const open = () => DATA.items.filter((i) => !got.has(i.number));
+function selected(){ return open().filter((i) => sel.has(i.number)).map((i) => i.number); }
+function pick(k){ sel.clear(); open().forEach((i) => { if (k==="all" || (k==="top" && i.top) || (k==="need" && !i.if_you_have_it && i.ask_stage==="before_second_meeting")) sel.add(i.number); }); render(); }
+function render(){
+  $("notice").textContent = DATA.notice;
+  const o = open();
+  $("summary").textContent = `${o.length} lines from the readout built ${DATA.built_at}. Tick lines and draft one message, or draft one line on its own.`;
+  $("asks").innerHTML = o.map((i) => `
+    <li class="ask">
+      <input type="checkbox" aria-label="Select line ${i.number}" ${sel.has(i.number)?"checked":""} onchange="this.checked?sel.add(${i.number}):sel.delete(${i.number});render()">
+      <div>
+        <div class="title">${i.number}. ${esc(i.title)}</div>
+        <div class="text">${esc(i.text)}</div>
+        <div class="meta"><span>${PIECE[i.piece]}</span>
+          ${i.top?`<span class="chip top">Top ${i.top}</span>`:""}
+          ${i.if_you_have_it?`<span class="chip">If you have it</span>`:""}
+          ${i.ask_stage==="after_term_sheet"?`<span class="chip late">After the term sheet</span>`:""}
+          ${i.guidance?"":`<span class="chip">No guide</span>`}
+        </div>
+        <div class="why">For you, not sent: ${esc(i.operator_why)}</div>
+      </div>
+      <div><button aria-label="Draft request for line ${i.number}" onclick="openDraft([${i.number}])">Draft request</button></div>
+    </li>`).join("");
+  const n = selected().length;
+  $("draftSel").textContent = n ? `Draft request for ${n} selected` : "Draft request";
+  $("draftSel").disabled = !n;
+  $("answers").innerHTML = o.map((i) => `<option value="${i.number}">${i.number}. ${esc(i.title)}</option>`).join("");
+  $("copyNote").textContent = `${DATA.room} is a synthetic room checked into the repo, so Tricorder never writes into it. The first file you add copies it to rooms/${DATA.room}_live, and files land there.`;
+}
+// The same composition as founder_requests.draft.draft(); the page calls the server for it.
+function compose(nums){
+  const items = nums.map((n) => DATA.items.find((i) => i.number===n));
+  const groups = (list) => { const m=new Map(); list.forEach((i) => { const k=i.guidance?i.guidance.guide:"line-"+i.number; if(!m.has(k)) m.set(k,[]); m.get(k).push(i); }); return [...m.values()]; };
+  const block = (n, g) => { const gd=g[0].guidance; const l=[`${n}. ${g[0].title}`, ...g.map((i) => i.text)];
+    if (gd) l.push(`   What it is: ${gd.what}`, `   Best form: ${gd.form}`, `   A good one shows: ${gd.good.join("; ")}.`); return l; };
+  const need = items.filter((i) => !i.if_you_have_it), maybe = items.filter((i) => i.if_you_have_it);
+  let body = [DATA.first?`Hi ${DATA.first},`:"Hello,", "", `Thank you for the ${DATA.company} data room. To finish our first pass, could you send the ${items.length===1?"item":"items"} below? A short note with each file is plenty. If something does not exist yet, just say so; that helps us too.`, ""];
+  let n = 0;
+  groups(need).forEach((g) => { body.push(...block(++n, g), ""); });
+  if (maybe.length) { if (need.length) body.push("If you have them:", ""); groups(maybe).forEach((g) => { body.push(...block(++n, g), ""); }); }
+  body.push("Thank you.");
+  return { subject: `${DATA.company}: ${items.length===1?"one document":"documents"} for our review`, body: body.join("\n"), items };
+}
+function mailto(){ const enc=encodeURIComponent; return `mailto:${enc($("to").value).replace("%40","@")}?subject=${enc($("subject").value)}&body=${enc($("body").value.replace(/\n/g,"\r\n"))}`; }
+function refreshLink(){ const m=mailto(); $("mailto").href=m; $("long").hidden = m.length <= DATA.mailto_max; }
+function openDraft(nums){
+  draftNums = nums; const d = compose(nums);
+  $("subject").value = d.subject; $("body").value = d.body; $("drawer").hidden = false; $("layout").classList.add("drafting");
+  $("sources").innerHTML = [...new Set(d.items.filter((i) => i.guidance).map((i) => i.guidance.path))].map((p) => `<li><code>${esc(p)}</code></li>`).join("") || "<li>No guide for these lines.</li>";
+  $("copied").hidden = true; refreshLink();
+}
+function closeDraft(){ $("drawer").hidden = true; $("layout").classList.remove("drafting"); }
+["to","subject","body"].forEach((id) => document.addEventListener("input", (e) => { if (e.target.id===id) refreshLink(); }));
+function copyText(){ const t=`Subject: ${$("subject").value}\n\n${$("body").value}`; (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).catch(() => {}); $("copied").hidden=false; }
+// Simulated: the real page posts the file to /api/rooms/<room>/founder-requests/files.
+const FOLDER = {traction_and_revenue:"03_metrics",retention:"03_metrics",unit_economics:"02_financials",burn_and_runway:"02_financials",customers:"04_contracts",team:"05_team",the_pitch_itself:"06_legal"};
+function addFile(){
+  const n = Number($("answers").value), i = DATA.items.find((x) => x.number===n), f = $("file").files[0];
+  const name = f ? f.name : "Brasswick hiring plan.csv";
+  const saved = i.checklist_id==="C22" ? `05_team/hiring_plan.csv` : `${FOLDER[i.piece]||"01_overview"}/${name.toLowerCase().replace(/[^a-z0-9.]+/g,"_")}`;
+  got.set(n, saved); sel.delete(n);
+  $("result").innerHTML = `<p class="proto" style="margin-top:12px">Simulated result</p><ul class="steps">
+    <li>Copied data_room/${DATA.room} to rooms/${DATA.room}_live (first file only).</li>
+    <li>Saved <code>${esc(name)}</code> as <code>rooms/${DATA.room}_live/${esc(saved)}</code>.</li>
+    <li>Scans whose inputs changed ran again: redflags.</li>
+    <li>Readout rebuilt. Line ${n} (${esc(i.title)}) is no longer on the ask list.</li></ul>`;
+  render();
+}
+render();
+</script>
+</body>
+</html>
