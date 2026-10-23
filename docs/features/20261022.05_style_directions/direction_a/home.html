@@ -12,7 +12,7 @@
 /* Tricorder, Direction A: Reference Range. Tokens first, then components. */
 :root {
   color-scheme: light;
-  --paper: #f6f7fa;
+  --paper: #ffffff;
   --panel: #ffffff;
   --sunk: #eef0f6;
   --grid: #e4e8f2;
@@ -312,7 +312,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); justify
 @media (max-width: 640px) { .monitor .ch { grid-template-columns: minmax(0, 1fr); } }
 
 section.block { padding-top: var(--s7); }
-.sec-head { display: grid; grid-template-columns: 14rem minmax(0, 1fr); gap: var(--s5); align-items: end; border-bottom: var(--hair) solid var(--ink); padding-bottom: var(--s2); margin-bottom: var(--s4); }
+.sec-head { display: grid; gap: var(--s2); border-bottom: var(--hair) solid var(--ink); padding-bottom: var(--s2); margin-bottom: var(--s4); }
 .sec-head h2 { font-size: clamp(24px, 2.6vw, 32px); }
 .sec-head p { margin: 0; color: var(--ink-2); max-width: 62ch; }
 .sec-head .idx { font-family: var(--f-data); font-size: 12px; color: var(--ink-3); }
@@ -331,7 +331,7 @@ section.block { padding-top: var(--s7); }
 .duo li { padding: 6px 0 6px 18px; border-top: var(--hair) solid var(--rule); position: relative; font-size: 14px; }
 .duo li::before { content: ""; position: absolute; left: 2px; top: 13px; width: 8px; height: 2px; background: var(--accent); }
 
-.adds { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); border-top: var(--hair) solid var(--rule); border-left: var(--hair) solid var(--rule); background: var(--panel); }
+.adds { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); grid-auto-rows: 1fr; border-top: var(--hair) solid var(--rule); border-left: var(--hair) solid var(--rule); background: var(--panel); }
 .adds div { border-right: var(--hair) solid var(--rule); border-bottom: var(--hair) solid var(--rule); padding: var(--s3); display: grid; grid-template-columns: 2.2rem 1fr; gap: var(--s2); font-size: 14.5px; }
 .adds .n { font-family: var(--f-data); font-size: 12px; color: var(--accent); padding-top: 2px; }
 
