@@ -1,12 +1,17 @@
 """Memo versions on disk: out/<room>/memo/memo_v<N>.json.
 
-A version, once written, is never overwritten. The page and the PDF are
-rendered from the latest version into memo.html and memo.pdf beside them.
+A version, once written, is never overwritten: the save is an exclusive create, so of
+two saves of the same version number one wins and the other gets FileExistsError, and a
+reader never sees a half-written version. The page and the PDF are rendered from the
+latest version into memo.html and memo.pdf beside them; each version's PDF is kept as
+memo_v<N>.pdf, built once.
 """
 
 from __future__ import annotations
 
+import os
 import re
+import threading
 from pathlib import Path
 
 from scans.base import out_dir
@@ -38,10 +43,33 @@ def load(room_dir: str | Path, version: int | None = None) -> Memo | None:
     return Memo.model_validate_json(path.read_text(encoding="utf-8"))
 
 
+def pdf_path(room_dir: str | Path, version: int) -> Path:
+    return memo_dir(room_dir) / f"memo_v{version}.pdf"
+
+
 def save(memo: Memo, room_dir: str | Path) -> Path:
+    """Write a new version. FileExistsError when that version is already on disk."""
     path = memo_dir(room_dir) / f"memo_v{memo.version}.json"
     if path.exists():
         raise FileExistsError(f"version {memo.version} already exists; versions are never overwritten")
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(memo.model_dump_json(indent=2) + "\n", encoding="utf-8")
+    tmp = path.with_name(f".{path.name}.{os.getpid()}.{threading.get_ident()}.tmp")
+    tmp.write_text(memo.model_dump_json(indent=2) + "\n", encoding="utf-8")
+    try:
+        os.link(tmp, path)  # atomic and exclusive: fails when another save made this version first
+    except FileExistsError:
+        raise FileExistsError(f"version {memo.version} already exists; versions are never overwritten") from None
+    finally:
+        tmp.unlink()  # the version's own name now holds the text; the temporary name is not a version
     return path
+
+
+_locks: dict[str, threading.Lock] = {}
+_locks_guard = threading.Lock()
+
+
+def lock(room_dir: str | Path) -> threading.Lock:
+    """One lock per room's memo folder, so one server builds a version's PDF once."""
+    key = str(memo_dir(room_dir).resolve())
+    with _locks_guard:
+        return _locks.setdefault(key, threading.Lock())

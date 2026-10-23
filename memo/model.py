@@ -145,14 +145,24 @@ class Memo(_Strict):
         raise KeyError(line_id)
 
 
+# Size limits on what an operator sends (review wave 2b S3): one line is a sentence or a short
+# paragraph, a batch is one sitting's changes, and a memo holds a readable number of operator lines.
+# The PDF lays each line out as one paragraph, and its time grows faster than the line's length.
+MAX_LINE_TEXT = 2000
+MAX_AUTHOR = 80
+MAX_EDITS = 100
+MAX_CLAIMS_PER_LINE = 50
+MAX_OPERATOR_LINES = 500
+
+
 class Edit(_Strict):
     """One operator edit. A batch of edits makes one new version."""
 
     action: Literal["add", "replace", "remove"]
     section: int | None = Field(default=None, description="For add: the section number.")
-    line_id: str | None = Field(default=None, description="For replace and remove: the line. For add: the line to add after (optional).")
-    text: str = ""
-    claim_ids: list[str] = Field(default_factory=list, description="Claims the operator attaches. Each must be a claim in the memo.")
+    line_id: str | None = Field(default=None, max_length=200, description="For replace and remove: the line. For add: the line to add after (optional).")
+    text: str = Field(default="", max_length=MAX_LINE_TEXT)
+    claim_ids: list[str] = Field(default_factory=list, max_length=MAX_CLAIMS_PER_LINE, description="Claims the operator attaches. Each must be a claim in the memo.")
 
 
 def source_key(uri: str, locator: str) -> str:

@@ -212,3 +212,79 @@ def test_a_line_cannot_expand_a_placeholder_or_carry_markup(tmp_path, monkeypatc
     data = re.search(r'id="memo-data">(.*?)</script>', page, re.S).group(1)
     assert "<" not in data and ">" not in data
     assert [l.text for l in embedded(page).section(9).lines if l.kind == "operator"] == lines
+
+
+def test_oversized_edits_are_refused_before_anything_is_saved(tmp_path, monkeypatch):
+    from memo.model import MAX_AUTHOR, MAX_EDITS, MAX_LINE_TEXT
+    client = _client(tmp_path, monkeypatch)
+    add = {"action": "add", "section": 9, "text": "Met the founders."}
+    for body in ({"author": "Dana", "base_version": 1, "edits": [{**add, "text": "x" * (MAX_LINE_TEXT + 1)}]},
+                 {"author": "D" * (MAX_AUTHOR + 1), "base_version": 1, "edits": [add]},
+                 {"author": "Dana", "base_version": 1, "edits": [add] * (MAX_EDITS + 1)}):
+        assert client.post("/api/rooms/hollis_voice/memo/edits", json=body).status_code == 422
+    assert client.get("/api/rooms/hollis_voice/memo/versions").json() == [1]
+    at_limit = {"author": "D" * MAX_AUTHOR, "base_version": 1, "edits": [{**add, "text": "x" * MAX_LINE_TEXT}]}
+    assert client.post("/api/rooms/hollis_voice/memo/edits", json=at_limit).status_code == 200
+
+
+def test_the_pdf_is_built_once_per_version(tmp_path, monkeypatch):
+    import memo.export as mexport
+    client = _client(tmp_path, monkeypatch)  # version 1, its PDF built at export
+    built = []
+    real = mexport.render_pdf
+    monkeypatch.setattr(mexport, "render_pdf", lambda memo, path: built.append(memo.version) or real(memo, path))
+    for _ in range(3):
+        r = client.get("/api/rooms/hollis_voice/memo.pdf")
+        assert r.status_code == 200 and r.content[:4] == b"%PDF"
+    assert built == []  # served as saved
+    r = client.post("/api/rooms/hollis_voice/memo/edits", json={"author": "Dana", "base_version": 1,
+                    "edits": [{"action": "add", "section": 9, "text": "Met the founders."}]})
+    assert r.status_code == 200 and built == [2]
+    client.get("/api/rooms/hollis_voice/memo.pdf")
+    client.get("/api/rooms/hollis_voice/memo.pdf")
+    assert built == [2]
+
+
+def test_a_save_that_loses_the_race_is_a_409_not_a_500(tmp_path, monkeypatch):
+    from memo import store
+    client = _client(tmp_path, monkeypatch)
+    room = ROOT / "data_room" / "hollis_voice"
+    v1 = store.load(room)
+    edits = [{"action": "add", "section": 9, "text": "Met the founders."}]
+    assert client.post("/api/rooms/hollis_voice/memo/edits", json={"author": "Dana", "base_version": 1, "edits": edits}).status_code == 200
+    # The second save read version 1 before the first one wrote version 2.
+    monkeypatch.setattr(store, "load", lambda room_dir, version=None: v1)
+    r = client.post("/api/rooms/hollis_voice/memo/edits", json={"author": "Sam", "base_version": 1, "edits": edits})
+    assert r.status_code == 409, r.text
+    assert r.json()["detail"]["latest_version"] == 2
+    monkeypatch.undo()
+    monkeypatch.setenv("TRICORDER_OUT_DIR", str(tmp_path))
+    assert store.load(room).changes[-1].author == "Dana"  # the first save stands, not overwritten
+
+
+def test_racing_saves_of_one_version_make_one_version(tmp_path, monkeypatch):
+    import threading
+
+    from memo import store
+    from memo.export import edit
+    from memo.model import Edit
+    _client(tmp_path, monkeypatch)
+    room = ROOT / "data_room" / "hollis_voice"
+    v1 = store.load(room)
+    gate, won, lost = threading.Barrier(8), [], []
+
+    def save(k):
+        gate.wait()
+        try:
+            won.append(edit(room, [Edit(action="add", section=9, text=f"Line {k}.")], f"Op {k}", pdf=False, base=v1))
+        except FileExistsError:
+            lost.append(k)
+
+    threads = [threading.Thread(target=save, args=(k,)) for k in range(8)]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+    assert len(won) == 1 and len(lost) == 7
+    assert store.versions(room) == [1, 2]
+    assert store.load(room).changes[-1].author == won[0].memo.changes[-1].author
