@@ -39,5 +39,5 @@ Inspected revision: 8ab2ea2 (branch `forge/memo-export`).
 | ME-R15, ME-R16 | Versions, operator marking | `memo/tests/test_edit.py`; `control.sh api POST .../memo/edits`; `spike/edit_in_page.js` | builder | Pass. `evidence/edit_in_page.json`, `memo_operator_line_*.png` |
 | ME-R17 | Rebuild keeps operator lines | `test_a_rebuild_keeps_the_operators_lines`, `test_cli_takes_a_readout_json_and_a_second_run_makes_version_2` | builder | Pass |
 | ME-R18 | Routes, 409 on stale, 400 on bad edit | `test_server_routes_build_edit_and_serve`; drive: HTTP 200 then 409 | builder | Pass |
-| All | Full suite and CI gate | `python3 -m pytest`; `bin/ci-py` | builder | 218 passed, 18 skipped (matplotlib not installed here, pre-existing deck tests), 0 failed |
+| All | Full suite and CI gate | `python3 -m pytest`; `bin/ci-py` | builder | 236 passed, 0 failed, 0 skipped at 60ce3a8 (earlier runs: 218 passed, 18 deck tests skipped while matplotlib was missing) |
 | Independent review | Not done | the orchestrator's checkpoint review | orchestrator | Unverified |

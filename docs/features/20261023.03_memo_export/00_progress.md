@@ -1,6 +1,6 @@
 # Feature progress: the memo and its PDF
 
-**Now (2026-10-23).** Built, tested and driven on branch `forge/memo-export`. `python3 -m memo data_room/hollis_voice` writes a 16-section draft memo, an offline interactive page and a footnoted PDF from the readout. Every Done when line passes on Hollis Voice ([06_verification.md](06_verification.md)). Full suite: 218 passed, 18 skipped, 0 failed; `bin/ci-py` green. **Next:** the orchestrator's independent review at the checkpoint, and the persona agents run cold on the page.
+**Now (2026-10-23).** Built, tested and driven on branch `forge/memo-export`. `python3 -m memo data_room/hollis_voice` writes a 16-section draft memo, an offline interactive page and a footnoted PDF from the readout. Every Done when line passes on Hollis Voice ([06_verification.md](06_verification.md)). Full suite at 60ce3a8: 236 passed, 0 failed, 0 skipped; `bin/ci-py` green (earlier runs showed 18 deck tests skipped while matplotlib was missing from the container). **Next:** the orchestrator's independent review at the checkpoint, and the persona agents run cold on the page.
 
 Roadmap slice: [memo-export](../../ongoing/ROADMAP.md#memo-export). Route: prototype first.
 
