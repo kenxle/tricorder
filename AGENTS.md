@@ -38,6 +38,7 @@ Read these when the task touches them. Seneschal keeps the table current.
 | `docs/ongoing/FEATURES.md` | Building or changing a feature: what each feature does in detail, its inputs and outputs, and the slice that builds it. |
 | `docs/ongoing/USER_STORIES.md` | Building or changing a feature: the user story it serves, for the associate or the partner. |
 | `docs/ongoing/PERSONAS.md` | Writing for or building for a kind of investor: their problem in their words, the proof. |
+| `docs/ongoing/PERSONA_REVIEWS.md` | Reviewing a design, page or draft with the persona agents in `.claude/agents/`: which panel, how to run it, the report shape. |
 | `docs/ongoing/BRAND.md` | Writing any copy: the readout, the pitch, the demo, posts. |
 | `docs/ongoing/DEMO.md` | Preparing or rehearsing the Saturday demo: the rooms, the beat sheet, what runs live, the fallbacks. |
 | `docs/ongoing/ARCHITECTURE.md` | Touching code structure, module boundaries, data sources, environment variables. |
