@@ -35,3 +35,4 @@ Each feature file starts with an H1 title and one paragraph on what the user see
 - [Accounting mislabels](./accounting-mislabels.md) covers the entry 1.12 sub-checks: non-recurring money in MRR, billings shown as revenue, pass-through money, contractors left out of burn, and the rest.
 - [Checklist coverage and the ask list](./checklist-coverage.md) covers what the room holds for the company's stage and the lines to ask the founder for.
 - [Readout page](./readout-page.md) covers the built page: flags, overview, gaps and the ask list for a room.
+- [Contract terms](./contract-terms.md) covers entry 1.13 checks 1, 3, 4 and 6, the clause notes, contracts-only folders, and the ask lines for missing contracts.
