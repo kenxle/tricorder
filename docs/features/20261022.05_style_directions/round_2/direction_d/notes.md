@@ -6,7 +6,8 @@
 - **The grid.** Bootstrap 5.3 grid only, 12 columns, one 24px gutter, 1248px of content. Every heading starts on the same column line as its content. Rows of boxes share one height. The two persona cards use a CSS subgrid, so their quotes, paragraphs and lists line up row by row.
 - **Corners.** Two radii: 6px for chips, buttons, inputs, marks and the ask box; 12px for panels. Chart marks stay square.
 - **The risk.** The accent is green and the strong verdict is also green. They are separate tokens (spruce #1d5a47 against leaf #17803d), and the accent never marks a verdict. A reviewer may still read a green button as "strong". Oxblood was the alternative; it would clash with the red flag instead.
-- **Unsure.** In dark mode the hero band (#050d1a) and the page ground (#0a1526) are close, so the hero reads less dramatic than in light. The overview panel on the homepage shows 5 of 9 pieces so the two readout panels end at the same height.
+- **Unsure.** Dark mode now uses a near-black ground (#060b14) and a richer navy band (#10294b), so the hero and closing band read as the drama; the readout card on that band is a dark slab with an outline rather than a lighter surface. The overview shows 6 of 9 pieces (Team added from direction A's copy); the ARR panel spreads its rows to end level with it.
+- **Refinement pass (round 2).** Hero columns now start on one line, with three facts from the page (2 clicks, 9 pieces, 1 sentence) anchored to the card's bottom edge. The three note cards end on one bottom row (chips or the ask-list button). Persona ticks join the subgrid so each row lines up with its pair.
 - **Copy.** Taken from direction A and BRAND.md. The partner's quote is the full sentence. The synthetic label appears once per page.
 - **Build note.** style_guide.html carries the same CSS block as home.html, copied in, so the two pages cannot drift apart while they are edited together.
 

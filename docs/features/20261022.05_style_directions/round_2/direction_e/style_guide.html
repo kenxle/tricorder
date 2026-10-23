@@ -32,6 +32,7 @@
   --btn-fg: #16140f;
   --band: rgba(211, 191, 142, 0.20);
   --band-edge: #b9a574;
+  --band-fill: rgba(211, 191, 142, 0.20);
   --glow: rgba(211, 191, 142, 0.55);
   --strong: #7dc4a0;
   --strong-bg: rgba(125, 196, 160, 0.12);
@@ -61,7 +62,8 @@
     --btn-bg-hover: #3a3731;
     --btn-fg: #eadbb4;
     --band: rgba(133, 105, 47, 0.14);
-    --band-edge: #a88a4b;
+    --band-edge: #8a6c2e;
+    --band-fill: linear-gradient(180deg, #f4e8c4 0%, #dcc286 48%, #b99850 100%);
     --glow: rgba(133, 105, 47, 0.35);
     --strong: #1e7550;
     --strong-bg: rgba(30, 117, 80, 0.08);
@@ -91,7 +93,8 @@
   --btn-bg-hover: #3a3731;
   --btn-fg: #eadbb4;
   --band: rgba(133, 105, 47, 0.14);
-  --band-edge: #a88a4b;
+  --band-edge: #8a6c2e;
+  --band-fill: linear-gradient(180deg, #f4e8c4 0%, #dcc286 48%, #b99850 100%);
   --glow: rgba(133, 105, 47, 0.35);
   --strong: #1e7550;
   --strong-bg: rgba(30, 117, 80, 0.08);
@@ -198,7 +201,7 @@ p { margin: 0 0 var(--s3); }
 .strip-band {
   top: 0; bottom: 0; transform: translateX(-50%);
   width: max(8px, calc(var(--v) * 0.02 / (var(--max) - var(--min)) * 100%));
-  background: var(--band); border: var(--hair) solid var(--band-edge); border-radius: 2px;
+  background: var(--band-fill); border: var(--hair) solid var(--band-edge); border-radius: 2px;
 }
 .strip-tick { top: -3px; bottom: -3px; width: 2px; margin-left: -1px; background: var(--ink); border-radius: 1px; }
 .strip-tick.out { background: var(--weak); }
@@ -219,7 +222,7 @@ p { margin: 0 0 var(--s3); }
 .strip-axis { display: flex; justify-content: space-between; margin-top: var(--s3); font: 11px/1 var(--f-mono); color: var(--ink-3); }
 .strip-key { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); font: 12px/1.3 var(--f-mono); color: var(--ink-3); }
 .strip-key span { display: inline-flex; align-items: center; gap: var(--s2); }
-.k-band { width: 18px; height: 10px; background: var(--band); border: 1px solid var(--band-edge); border-radius: 2px; }
+.k-band { width: 18px; height: 10px; background: var(--band-fill); border: 1px solid var(--band-edge); border-radius: 2px; }
 .k-tick { width: 2px; height: 12px; background: var(--ink); border-radius: 1px; }
 .k-out { width: 10px; height: 7px; background: var(--weak); clip-path: polygon(0 0, 100% 0, 50% 100%); }
 
@@ -306,7 +309,7 @@ table.t { width: 100%; border-collapse: collapse; font-size: 14px; }
   background:
     linear-gradient(180deg, var(--lit-top), var(--lit-bottom)) padding-box,
     linear-gradient(155deg, var(--glow), rgba(211, 191, 142, 0.10) 38%, rgba(255, 255, 255, 0.06) 70%, rgba(211, 191, 142, 0.22)) border-box;
-  box-shadow: 0 40px 90px -30px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05) inset, 0 1px 2px rgba(0, 0, 0, 0.35), 0 12px 32px -16px rgba(0, 0, 0, 0.6);
 }
 .lit-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s3); flex-wrap: wrap; padding: var(--s5) var(--s5) var(--s4); border-bottom: var(--hair) solid var(--rule); }
 .lit-title { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
@@ -615,7 +618,7 @@ footer.foot a:first-child { margin-left: 0; }
         </div>
       </div>
     </div>
-    <p class="use"><b>Why</b>Mixed is a cool blue, not amber, so it never reads as the metal. The band is the metal at 20% (dark) or 14% (light), with a solid edge. Contrast ratios are against the page ground.</p>
+    <p class="use"><b>Why</b>Mixed is a cool blue, not amber, so it never reads as the metal. The band is the metal at 20% in dark. In light it is a brushed brass gradient with a deep brass edge (#8a6c2e), so it reads as metal on white and not as beige. Contrast ratios are against the page ground.</p>
   </div>
 </section>
 
