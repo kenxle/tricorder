@@ -144,7 +144,7 @@ p { margin: 0 0 var(--s-4); max-width: var(--measure); }
   font-family: var(--f-data); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--c); border: 2px solid var(--c); padding: 0.28em 0.7em 0.24em;
   box-shadow: inset 0 0 0 2px var(--panel), inset 0 0 0 3px var(--c);
-  transform: rotate(-1.5deg); white-space: nowrap; line-height: 1.3;
+  white-space: nowrap; line-height: 1.3;
   -webkit-mask-image: var(--grit); mask-image: var(--grit);
 }
 .stamp svg { width: 0.95em; height: 0.95em; flex: none; }
@@ -181,11 +181,11 @@ p { margin: 0 0 var(--s-4); max-width: var(--measure); }
 .chips { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-3); }
 
 /* Tables */
-.table-box { overflow-x: auto; border: 1px solid var(--rule); margin: var(--s-4) 0; -webkit-overflow-scrolling: touch; }
+.table-box { overflow-x: auto; border: 1px solid var(--rule); background: var(--panel); margin: var(--s-4) 0; -webkit-overflow-scrolling: touch; }
 table { border-collapse: collapse; width: 100%; min-width: 30rem; font-size: 0.92rem; }
 caption { text-align: left; padding: var(--s-3) var(--s-4); caption-side: top; font-weight: 650; border-bottom: 1px solid var(--rule); }
 th, td { text-align: left; padding: var(--s-3) var(--s-4); border-bottom: 1px solid var(--rule); vertical-align: top; }
-thead th { font-family: var(--f-data); font-weight: 400; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); background: var(--panel-2); }
+thead th { font-family: var(--f-data); font-weight: 400; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); border-bottom-color: var(--rule-strong); }
 tbody tr:last-child td, tbody tr:last-child th { border-bottom: 0; }
 td.n, th.n { font-family: var(--f-data); font-variant-numeric: tabular-nums; white-space: nowrap; }
 td.where { font-family: var(--f-data); font-size: 0.8rem; color: var(--ink-2); }
@@ -257,7 +257,7 @@ html { scroll-behavior: smooth; }
 section.sg { padding: var(--s-8) 0; border-bottom: 1px solid var(--rule); }
 .sg-grid { display: grid; grid-template-columns: 13rem minmax(0, 1fr); gap: var(--s-7); }
 @media (max-width: 860px) { .sg-grid { grid-template-columns: minmax(0, 1fr); gap: var(--s-5); } section.sg { padding: var(--s-7) 0; } }
-.sg-index { border-top: 2px solid var(--accent); padding-top: 0.6rem; align-self: start; }
+.sg-index { padding-top: 0.6rem; align-self: start; }
 .sg-index h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); margin-top: var(--s-3); }
 .sg h3 { margin: var(--s-7) 0 var(--s-3); }
 .sg h3:first-child { margin-top: 0; }
@@ -481,7 +481,7 @@ footer.site nav { display: flex; gap: var(--s-5); flex-wrap: wrap; }
         <div class="shape-card"><div class="demo" style="flex-direction:column;align-items:stretch;justify-content:center;gap:10px"><div style="border-top:1px solid var(--rule)"></div><div style="border-top:3px double var(--rule-strong)"></div></div><p><strong>Hairline and double rule.</strong> Hairline between lines. Double rule closes a slip, like a total on a form.</p></div>
         <div class="shape-card"><div class="demo"><div style="width:5rem;height:2.6rem;border:1.5px dashed var(--thin)"></div></div><p><strong>Dashed means absent.</strong> Gaps, not enough in the room, the synthetic label. Nothing else.</p></div>
         <div class="shape-card"><div class="demo"><div style="width:5rem;border-top:2px solid var(--accent)"></div></div><p><strong>Accent rule.</strong> 2px over a screen's index. The lamp's only line.</p></div>
-        <div class="shape-card"><div class="demo"><span class="stamp weak">Red flag</span></div><p><strong>Stamp.</strong> 2px border with an inset second line, ink grit, tilted 1.5 degrees at a line head.</p></div>
+        <div class="shape-card"><div class="demo"><span class="stamp weak">Red flag</span></div><p><strong>Stamp.</strong> 2px border with an inset second line, ink grit, set straight.</p></div>
       </div>
     </div>
   </div>
@@ -645,7 +645,8 @@ footer.site nav { display: flex; gap: var(--s-5); flex-wrap: wrap; }
         <li><div><p>Put the stated value on the left and the found value on the right. Only the found side gets the 3px accent bar.</p><p class="why">The reader moves from what the company declared to what the check found, in that order, every time.</p></div></li>
         <li><div><p>Use the accent for the next action and the found value only: the primary button, focus, the ask line, the found label, index numbers.</p><p class="why">Amber sits near red. A verdict in amber would read as a warning it is not.</p></div></li>
         <li><div><p>Draw every mark as a stamp with its word and its shape. Never show a mark by colour alone.</p><p class="why">The partner may read a printout or be colour blind. The word and the shape still carry it.</p></div></li>
-        <li><div><p>Tilt a stamp 1.5 degrees only at the head of a line. Inside a sentence or a table, set it flat with <code>.flat</code>.</p><p class="why">At a line head the tilt reads as a stamp. Inside text it reads as a rendering error.</p></div></li>
+        <li><div><p>Set stamps straight. Never tilt them. Inside a sentence or a table, use the smaller <code>.flat</code> size.</p><p class="why">A tilt reads as playful, and this direction is serious.</p></div></li>
+        <li><div><p>No short coloured bar over a heading or label. A top rule is allowed only when it lines up exactly with another vertical edge on the page and runs longer than the text under it.</p><p class="why">A bar that lines up with nothing looks like a mistake.</p></div></li>
         <li><div><p>Make anything you read a square panel. Make anything you press, type in or open a pill.</p><p class="why">One look at a corner tells the operator whether it does something.</p></div></li>
         <li><div><p>Number every readout line (L.01 for claims, P.01 for pieces) and give every panel a box label.</p><p class="why">Partners can say "line 2" in the meeting and everyone finds it.</p></div></li>
         <li><div><p>Use dashed lines only for what is absent or not real: gaps, not enough in the room, the synthetic label.</p><p class="why">If dashes mean one thing, a missing document is visible at a glance.</p></div></li>
