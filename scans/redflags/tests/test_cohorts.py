@@ -140,3 +140,61 @@ def test_the_panel_lists_every_row_summed_and_adds_up_to_the_lines():
 def test_seed_drop_has_no_rows_panel():
     _claims, _gaps, panels = run_all("hollis_voice_seed_drop")
     assert panels == []
+
+
+# Bad rows in the customer file (review wave 2a, O8): skipped and counted, never a crash -----------
+
+
+def broken_room(tmp_path, edit):
+    """A copy of the full room's customer file and model, with `edit(lines)` applied to the CSV lines."""
+    room = tmp_path / "room"
+    for rel in (cohorts.CUSTOMERS, cohorts.MODEL):
+        (room / rel).parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy(DATA_ROOM / "hollis_voice" / rel, room / rel)
+    path = room / cohorts.CUSTOMERS
+    lines = path.read_text(encoding="utf-8").splitlines()
+    edit(lines)
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return room
+
+
+def blank(lines, n, column):
+    """Blank one column of file row n (row 1 is the header)."""
+    header = lines[0].split(",")
+    cells = lines[n - 1].split(",")
+    cells[header.index(column)] = ""
+    lines[n - 1] = ",".join(cells)
+
+
+def test_a_blank_month_and_a_text_mrr_are_skipped_and_named_in_a_gap(tmp_path):
+    def edit(lines):
+        blank(lines, 5, "month")
+        header = lines[0].split(",")
+        cells = lines[8].split(",")
+        cells[header.index("mrr")] = "n/a"
+        lines[8] = ",".join(cells)
+    room = broken_room(tmp_path, edit)
+    claims, gaps, panels = cohorts.check(room, Ids("redflags"))  # no ValueError
+    assert by_label(claims, "nrr_12m") and by_label(claims, "grr_12m") and panels
+    bad = [g for g in gaps if "customer file" in g.what and "skipped" in g.why]
+    assert len(bad) == 1
+    assert "2 of" in bad[0].why and "rows 5, 9" in bad[0].why
+    rebuilt = [c for c in by_label(claims, "nrr_12m") if c.text.startswith("Rebuilt")][0]
+    assert "skipped 2 rows" in rebuilt.text
+    for c in claims:
+        assert check_claim(c, room)[1] == []
+
+
+def test_a_customer_file_with_no_readable_row_is_a_gap(tmp_path):
+    def edit(lines):
+        for n in range(2, len(lines) + 1):
+            blank(lines, n, "month")
+    room = broken_room(tmp_path, edit)
+    claims, gaps, panels = cohorts.check(room, Ids("redflags"))
+    assert [c for c in claims if c.text.startswith("Rebuilt")] == [] and panels == []
+    assert any("customer file" in g.what and "skipped" in g.why for g in gaps)
+
+
+def test_the_full_room_skips_nothing():
+    _claims, gaps, _ = run_all("hollis_voice")
+    assert not [g for g in gaps if "skipped" in g.why]

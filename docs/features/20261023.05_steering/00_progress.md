@@ -44,6 +44,7 @@ Roadmap slice: [steering](../../ongoing/ROADMAP.md#steering). Route: prototype f
 - During the drive: a more-info store save copied full-room files nothing cited; fixed to keep the readout's own results (commit 5185dc7).
 - Fix round (coordinator, after both persona agents rated it workable): retention rows, the rewrite redoes the piece, headline first, author and time, full-room rerun of every piece, the pilot notice clause, the first-time example, the App.tsx mount. The coordinator answered PRD question 1.
 - Merged `claude/project-thread-ea11in` twice; the second brought the claims scan, and the steering tests now build readouts with every available scan.
+- Review wave 2a, O8: `cohorts.py` crashed on a blank month in the customer file. It now skips and counts unreadable rows and names them in a gap (commit 2360057; tests in `scans/redflags/tests/test_cohorts.py`).
 - No human approval was needed or given.
 
 ## To delete at cleanup
