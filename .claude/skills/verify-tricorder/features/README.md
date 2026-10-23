@@ -35,3 +35,4 @@ Each feature file starts with an H1 title and one paragraph on what the user see
 - [Accounting mislabels](./accounting-mislabels.md) covers the entry 1.12 sub-checks: non-recurring money in MRR, billings shown as revenue, pass-through money, contractors left out of burn, and the rest.
 - [Checklist coverage and the ask list](./checklist-coverage.md) covers what the room holds for the company's stage and the lines to ask the founder for.
 - [Readout page](./readout-page.md) covers the built page: flags, overview, gaps and the ask list for a room.
+- [The memo and its PDF](./memo-export.md) covers the draft memo in the template's sections, the interactive page's two clicks, the footnoted PDF, the quote check and operator edits with versions.

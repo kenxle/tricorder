@@ -26,8 +26,12 @@ class EditError(ValueError):
     """The edit names a line, section or claim that is not in the memo."""
 
 
+# A date (2026-10-20 or 2026-10) says when, not how much; it is not a figure.
+_DATE = re.compile(r"\b\d{4}-\d{2}(?:-\d{2})?\b")
+
+
 def unsourced_numbers(text: str) -> list[str]:
-    return [m.group(0).strip() for m in _NUMBER.finditer(text)]
+    return [m.group(0).strip() for m in _NUMBER.finditer(_DATE.sub(" ", text))]
 
 
 def _operator_line(memo: Memo, version: int, k: int, text: str, claim_ids: list[str], author: str) -> MemoLine:
@@ -61,6 +65,8 @@ def apply_edits(memo: Memo, edits: list[Edit], author: str, at: str) -> Memo:
                 raise EditError(f"no section {e.section}") from None
             line = _operator_line(new, v, k, e.text, e.claim_ids, author)
             at_i = len(sec.lines)
+            if sec.lines and sec.lines[-1].kind == "coverage":
+                at_i -= 1  # sections close with their coverage
             if e.line_id:
                 ids = [ln.id for ln in sec.lines]
                 if e.line_id not in ids:

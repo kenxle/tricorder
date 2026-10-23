@@ -157,6 +157,7 @@ mark { background: color-mix(in srgb, var(--amber) 30%, transparent); color:inhe
 .op-tools { margin:4px 0; display:flex; gap:6px; flex-wrap:wrap; }
 .op-add textarea, .op-tools textarea { width:100%; font:inherit; background:var(--bg); color:var(--fg); border:1px solid var(--line); border-radius:6px; padding:6px; }
 .status { font-size:14px; color:var(--muted); }
+body:not(.editing) .op-tools, body:not(.editing) .op-add { display:none; }
 a { color:inherit; }
 @media (max-width: 560px) { nav.toc ol { columns:1; } .page { padding: 12px 16px 48px; } }
 @media print { .toolbar, .chip, .drill, nav.toc, .op-add, .op-tools { display:none !important; } }
@@ -167,7 +168,7 @@ a { color:inherit; }
 <header class="masthead">
 <h1>{{COMPANY}}: memo for the partners' meeting</h1>
 <span class="note">Shared version {{VERSION}}, drafted {{BUILT}} UTC</span>
-<span class="toolbar"><button type="button" id="theme-toggle" aria-label="Switch light or dark">Light or dark</button></span>
+<span class="toolbar"><button type="button" id="edit-toggle" aria-pressed="false" hidden>Edit the memo</button> <button type="button" id="theme-toggle" aria-label="Switch light or dark">Light or dark</button></span>
 </header>
 {{BANNER}}
 <p class="note">Every line opens what stands behind it: click a line for its claims, then a claim for its sources and the sources that agree or disagree. Lines marked Operator were written by the operator, with no claim behind them unless one is shown.</p>
@@ -323,6 +324,11 @@ SCRIPT = r"""
   var m = location.pathname.match(/\/api\/rooms\/([^\/]+)\/memo\.html$/);
   if (!m) return;
   var api = '/api/rooms/' + m[1] + '/memo';
+  var toggle = document.getElementById('edit-toggle'); toggle.hidden = false;
+  toggle.addEventListener('click', function () {
+    var on = document.body.classList.toggle('editing'); toggle.setAttribute('aria-pressed', on ? 'true' : 'false');
+    toggle.textContent = on ? 'Stop editing' : 'Edit the memo';
+  });
   var status = document.getElementById('edit-status');
   function author() { var a = ''; try { a = localStorage.getItem('memo-author') || ''; } catch (e) {}
     if (!a) { a = (prompt('Your name, for the change log') || '').trim(); try { localStorage.setItem('memo-author', a); } catch (e) {} } return a; }

@@ -17,7 +17,9 @@ LATER = "2026-10-23T13:00:00Z"
 def test_an_operator_line_is_marked_as_theirs(readout):
     v1 = build_memo(readout, ROOM, AT)
     v2 = apply_edits(v1, [Edit(action="add", section=9, text="I met both founders; they have worked together since 2019.")], "Dana", LATER)
-    ln = v2.section(9).lines[-1]
+    ids = [l.id for l in v2.section(9).lines]
+    assert ids[-2:] == ["op-2-1", "s09-coverage"]  # above the section's closing coverage line
+    ln = v2.section(9).lines[-2]
     assert (ln.kind, ln.author, ln.version, ln.claim_ids) == ("operator", "Dana", 2, [])
     assert ln.unsourced_numbers == ["2019"]
     assert v2.version == 2 and v2.based_on_version == 1
@@ -33,10 +35,16 @@ def test_a_figure_with_no_claim_is_the_operators_figure(readout):
     assert "s15-recommendation" in v2.withdrawn_lines
 
 
+def test_a_date_is_not_a_figure(readout):
+    from memo.edit import unsourced_numbers
+    assert unsourced_numbers("I met them on 2026-10-20; they have worked together for 6 years.") == ["6"]
+    assert unsourced_numbers("Burn in 2026-09 was $400,000.") == ["$400,000"]
+
+
 def test_attached_claims_are_kept_and_unknown_claims_refused(readout):
     v1 = build_memo(readout, ROOM, AT)
     v2 = apply_edits(v1, [Edit(action="add", section=7, text="ARR is stated as $2.5M on the deck.", claim_ids=["redflags-007"])], "Dana", LATER)
-    ln = v2.section(7).lines[-1]
+    ln = v2.section(7).lines[-2]
     assert ln.claim_ids == ["redflags-007"] and ln.unsourced_numbers == []
     with pytest.raises(EditError, match="no claim"):
         apply_edits(v1, [Edit(action="add", section=7, text="x", claim_ids=["nope-001"])], "Dana", LATER)
