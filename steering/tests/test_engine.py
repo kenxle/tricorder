@@ -9,6 +9,7 @@ runs on HAND-BUILT responses only; no model is called.
 from __future__ import annotations
 
 import json
+import importlib
 import shutil
 from pathlib import Path
 
@@ -17,10 +18,9 @@ import pytest
 from schema.check_quotes import check_claim
 from schema.check_quotes import main as check_quotes_main
 from schema.claim import Readout
-from scans.base import ROOT, out_dir, write_result
+from scans.base import ROOT, available, out_dir, write_result
 from scans.memo.merge import build_readout, write_readout
-from scans.redflags import scan as redflags
-from steering import engine
+from steering import engine, verdicts
 from steering.models import RewordLine, RewordReading
 from store import open_store
 
@@ -33,8 +33,11 @@ def built(tmp_path_factory):
     out = tmp_path_factory.mktemp("built_out")
     mp = pytest.MonkeyPatch()
     mp.setenv("TRICORDER_OUT_DIR", str(out))
+    mp.setenv("TRICORDER_OFFLINE", "1")
+    mp.delenv("ANTHROPIC_API_KEY", raising=False)
     for room in (FULL, SEED):
-        write_result(redflags.run(room), room)
+        for name in available():  # every scan that exists, as a person's run builds the readout
+            write_result(importlib.import_module(f"scans.{name}.scan").run(room), room)
         write_readout(build_readout(room), room)
     mp.undo()
     return out
@@ -48,6 +51,7 @@ def env(tmp_path, built, monkeypatch):
     monkeypatch.setenv("TRICORDER_STORE_DIR", str(tmp_path / "store_data"))
     monkeypatch.setenv("TRICORDER_CACHE_DIR", str(tmp_path / "cache"))
     monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    monkeypatch.setenv("TRICORDER_OFFLINE", "1")
     return out
 
 
@@ -147,13 +151,17 @@ def test_full_room_on_seed_drop_retention_adds_new_claims_and_names_the_mover(en
     assert rev.before.verdict == "not_enough_in_the_room" and rev.after.verdict == "looking_weak"
     new = [claims_by_id(got.readout)[i] for i in rev.claims_added]
     assert {"nrr_12m", "grr_12m"} <= {c.value.label for c in new if c.value}
-    assert len(new) == 20  # every piece reran on the full room, not only retention
+    assert {verdicts.piece_of(c) for c in new} > {"retention"}  # every piece reran on the full room, not only retention
     assert all(c.id.endswith(".steer1") for c in new)
     nrr = next(c for c in new if c.value and c.value.label == "nrr_12m")
     assert nrr.value.number == pytest.approx(87.31, abs=0.01) and nrr.severity == "flag"
     assert rev.verdict_moved_by[0] == nrr.id  # the pilot agreement's lines in retention move it too
     assert nrr.conflicts_with == [tab.id]  # remapped to the seed drop's id for the same tab line
-    assert tab.id in claims_by_id(got.readout) and rev.claims_dropped == []
+    assert tab.id in claims_by_id(got.readout)
+    # Only the claims scan's "Unsupported" lines that the full room now supports are dropped, and the diff lists them.
+    was = claims_by_id(before)
+    assert all(was[i].scan == "claims" and was[i].text.startswith("Unsupported") for i in rev.claims_dropped)
+    assert [r[1] for r in rows(got.changes, "dropped")] == rev.claims_dropped
     assert any("03_metrics/customer_mrr_by_month.csv" in s for s in rev.sources_added)
     assert rev.note.startswith("Read 5 new files; retention moved to Looking weak")
     assert "More info on the operator's instruction" in rev.note and "new claims, marked new" in rev.note
@@ -169,8 +177,7 @@ def test_full_room_reruns_every_piece_and_lines_open_from_the_full_room(env):
     got = engine.steer(SEED, "retention", "read the full room")
     moved = {r[1] for r in rows(got.changes, "piece moved")}
     assert "the_pitch_itself" in moved  # a piece other than the one typed on was rebuilt from the full room
-    assert set(got.readout.scans_run) == set(Readout.model_validate_json(
-        (out_dir(FULL) / "readout.json").read_text()).scans_run)
+    assert set(got.readout.scans_run) == set(available())
     for c in got.readout.claims:
         assert engine.claim_room(got.readout, c.id, SEED) == FULL
         assert check_claim(c, engine.claim_room(got.readout, c.id, SEED))[1] == []
@@ -221,7 +228,9 @@ def test_number_request_leaves_every_number_and_says_so(env):
     assert [c.value for c in got.readout.claims] == [c.value for c in before.claims]
     assert "You asked for 3 million." in rev.note and "The check's number stays as it wrote it" in rev.note
     assert line.text in rev.note
-    assert not any(c.value and c.value.number == 3_000_000 for c in got.readout.claims)
+    # No line took the asked-for number (the claims scan may state a deck's own $3M; it was there before).
+    assert [c for c in got.readout.claims if c.value and c.value.number == 3_000_000] == \
+        [c for c in before.claims if c.value and c.value.number == 3_000_000]
     # A refusal says so first, and is not filed as a rewrite.
     assert rev.note.startswith("Refused: computed numbers do not change on request.")
     assert got.changes.rows[0] == ["headline", "", "", "Refused: computed numbers do not change on request."]

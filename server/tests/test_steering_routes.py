@@ -2,14 +2,14 @@
 
 from __future__ import annotations
 
+import importlib
 import shutil
 
 import pytest
 from fastapi.testclient import TestClient
 
-from scans.base import ROOT, write_result
+from scans.base import ROOT, available, write_result
 from scans.memo.merge import build_readout, write_readout
-from scans.redflags import scan as redflags
 from server.app import app
 
 FULL = ROOT / "data_room" / "hollis_voice"
@@ -22,8 +22,11 @@ def built(tmp_path_factory):
     out = tmp_path_factory.mktemp("built_out")
     mp = pytest.MonkeyPatch()
     mp.setenv("TRICORDER_OUT_DIR", str(out))
+    mp.setenv("TRICORDER_OFFLINE", "1")
+    mp.delenv("ANTHROPIC_API_KEY", raising=False)
     for room in (FULL, SEED):
-        write_result(redflags.run(room), room)
+        for name in available():  # every scan that exists, as a person's run builds the readout
+            write_result(importlib.import_module(f"scans.{name}.scan").run(room), room)
         write_readout(build_readout(room), room)
     mp.undo()
     return out
@@ -37,6 +40,7 @@ def env(tmp_path, built, monkeypatch):
     monkeypatch.setenv("TRICORDER_STORE_DIR", str(tmp_path / "store_data"))
     monkeypatch.setenv("TRICORDER_CACHE_DIR", str(tmp_path / "cache"))
     monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    monkeypatch.setenv("TRICORDER_OFFLINE", "1")
     return out
 
 
