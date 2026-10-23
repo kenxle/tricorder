@@ -20,7 +20,7 @@ Run `memo-export-final2`, port 8813, revision 2f4aea9, 2026-10-23, Linux cloud c
 
 Screenshots: partner view [light top](evidence/fix_round/memo_light_top.png), [dark top](evidence/fix_round/memo_dark_top.png), [light drill](evidence/fix_round/memo_light_drill.png), [dark drill](evidence/fix_round/memo_dark_drill.png), [phone dark](evidence/fix_round/memo_phone_dark.png); edit mode [light](evidence/fix_round/memo_edit_light.png), [dark](evidence/fix_round/memo_edit_dark.png), [the 409 offer](evidence/fix_round/memo_edit_conflict.png), saved [light](evidence/fix_round/memo_edit_saved_light.png) and [dark](evidence/fix_round/memo_edit_saved_dark.png); PDF pages 1 and 2 as PNG.
 
-Full suite at 2f4aea9: 552 passed, 0 failed (`bin/ci-py`, exit 0). Memo tests: 44 passed.
+Full suite at 2f4aea9: 552 passed, 0 failed (`bin/ci-py`, exit 0). After the last merge (a7b0e56, which adds `server/local_guard.py`): `bin/ci-py` 648 passed, 0 failed; memo tests 44 passed; `edit_in_page.js` rerun on run `memo-export-guard` passed (the page's same-origin JSON posts get through the guard; version 3 saved after the 409).
 
 Limits of this run: no steered room was driven, so the "before" of a replaced claim is proven by `test_a_claim_the_steer_replaced_is_the_new_lines_before` only. The pieces and top flags steps are still not built, so the summary's piece line reads "No verdicts yet".
 

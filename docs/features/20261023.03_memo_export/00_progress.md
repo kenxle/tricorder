@@ -1,6 +1,6 @@
 # Feature progress: the memo and its PDF
 
-**Now (2026-10-23, fix round).** The independent associate and partner reviews rated the first memo a checker's report. The fix round takes eight of their points: the first screen is the answer, a partner view with no plumbing is the default for the page and the only view in the PDF, empty sections are one line, flags print once, the recommendation opens the summary, the PDF reads sources as a partner would, the ARR figures sit side by side from claims, and editing is one sitting with a 409 that keeps the work. It also absorbs three integration merges (cohorts, claim support with about 60 pitch claims, per-module claim ids) and steering's replaced claims. Full suite at 2f4aea9: 552 passed, 0 failed; `bin/ci-py` green. Fresh drive on port 8813 ([06_verification.md](06_verification.md)). **Next:** the checkpoint review.
+**Now (2026-10-23, fix round).** The independent associate and partner reviews rated the first memo a checker's report. The fix round takes eight of their points: the first screen is the answer, a partner view with no plumbing is the default for the page and the only view in the PDF, empty sections are one line, flags print once, the recommendation opens the summary, the PDF reads sources as a partner would, the ARR figures sit side by side from claims, and editing is one sitting with a 409 that keeps the work. It also absorbs three integration merges (cohorts, claim support with about 60 pitch claims, per-module claim ids) and steering's replaced claims. `bin/ci-py` at a7b0e56: 648 passed, 0 failed. Fresh drive on port 8813 ([06_verification.md](06_verification.md)). **Next:** the checkpoint review.
 
 Roadmap slice: [memo-export](../../ongoing/ROADMAP.md#memo-export). Route: prototype first.
 
@@ -58,5 +58,5 @@ Roadmap slice: [memo-export](../../ongoing/ROADMAP.md#memo-export). Route: proto
 
 ## To delete at cleanup
 
-- `/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/memo-export/` (scratch out folders `fix1` to `fix3`, the verify runs `memo-export`, `memo-export-final`, `memo-export-fix` to `memo-export-fix7`, `memo-export-final2`, probe scripts, and the scratch Node Playwright in `pw/`).
+- `/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/memo-export/` (scratch out folders `fix1` to `fix3`, the verify runs `memo-export`, `memo-export-final`, `memo-export-fix` to `memo-export-fix7`, `memo-export-final2`, `memo-export-guard`, probe scripts, and the scratch Node Playwright in `pw/`).
 - The worktree `/home/claude/wt/memo-export` once merged.
