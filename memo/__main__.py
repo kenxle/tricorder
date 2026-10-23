@@ -15,6 +15,7 @@ from pathlib import Path
 
 from pydantic import ValidationError
 
+from founder_requests.intake import rooms_root
 from scans.base import ROOT
 
 from memo.edit import EditError
@@ -26,7 +27,7 @@ def _room_for(readout: Path, room_dir: str | None) -> Path:
     if room_dir:
         return Path(room_dir)
     name = json.loads(readout.read_text(encoding="utf-8"))["room"]
-    for parent in (ROOT / "data_room", ROOT / "rooms"):
+    for parent in (ROOT / "data_room", rooms_root()):  # rooms/, or TRICORDER_ROOMS_DIR, as the server reads them
         if (parent / name).is_dir():
             return parent / name
     raise NoReadout(f"cannot find room {name!r}; pass --room-dir")

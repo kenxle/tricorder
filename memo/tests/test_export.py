@@ -288,3 +288,17 @@ def test_racing_saves_of_one_version_make_one_version(tmp_path, monkeypatch):
     assert len(won) == 1 and len(lost) == 7
     assert store.versions(room) == [1, 2]
     assert store.load(room).changes[-1].author == won[0].memo.changes[-1].author
+
+
+def test_cli_finds_a_readouts_room_under_tricorder_rooms_dir(tmp_path):
+    """Review wave 2b O4: the CLI looks where the server looks, rooms/ or TRICORDER_ROOMS_DIR."""
+    rooms = tmp_path / "elsewhere"
+    (rooms / "tiny_room" / "01_overview").mkdir(parents=True)
+    readout = tmp_path / "readout.json"
+    readout.write_text(Readout(room="tiny_room", built_at="2026-10-23T12:00:00Z").model_dump_json(), encoding="utf-8")
+    env = {**os.environ, "TRICORDER_OUT_DIR": str(tmp_path / "out"), "TRICORDER_ROOMS_DIR": str(rooms)}
+    done = subprocess.run([sys.executable, "-m", "memo", str(readout), "--no-pdf"], cwd=ROOT, env=env,
+                          capture_output=True, text=True)
+    assert done.returncode == 0, done.stderr
+    assert json.loads(done.stdout)["version"] == 1
+    assert (tmp_path / "out" / "tiny_room" / "memo" / "memo_v1.json").exists()
