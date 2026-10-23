@@ -181,15 +181,15 @@ p { margin: 0 0 var(--s3); }
 /* Source chip: file and place, in mono, one click to the source. */
 .chip {
   font-size: 11.5px; color: var(--ink-2); background: var(--panel); border: var(--hair) solid var(--rule-2);
-  border-left: 3px solid var(--accent); border-radius: 0; padding: 0 6px; line-height: 1.6; cursor: pointer;
+  border-radius: 0; padding: 0 6px; line-height: 1.6; cursor: pointer;
   display: inline-block; margin: 1px 0; white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis; vertical-align: baseline;
   text-decoration: none;
 }
 .chip:hover { color: var(--accent); border-color: var(--accent); }
 .chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: var(--s2); }
 
-/* Flag row: the headline list. A left rule carries the semantic colour; the mark carries the shape. */
-.flag { border: var(--hair) solid var(--rule); border-left: 3px solid var(--fc); background: var(--panel); padding: var(--s3); }
+/* Flag row: the headline list. The mark carries the colour and the shape. */
+.flag { border: var(--hair) solid var(--rule); background: var(--panel); padding: var(--s3); }
 .flag + .flag { margin-top: -1px; }
 .flag.green { --fc: var(--strong); }
 .flag.red { --fc: var(--weak); }
@@ -252,8 +252,8 @@ td.w { font-family: var(--f-data); font-size: 12px; color: var(--ink-2); white-s
 /* Gap, clean check, steer note. */
 .note { border: var(--hair) solid var(--rule); background: var(--panel); padding: var(--s3); font-size: 14px; }
 .note.gap { border-style: dashed; border-color: var(--rule-2); }
-.note.clean { border-left: 3px solid var(--strong); }
-.note.steer { border-left: 3px solid var(--accent); background: var(--sunk); }
+.note.clean { border-color: var(--strong); }
+.note.steer { border-color: var(--accent); background: var(--sunk); }
 .note .lbl { font-family: var(--f-data); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); display: flex; align-items: center; gap: 6px; margin-bottom: var(--s1); }
 .note dl { display: grid; grid-template-columns: 7.5rem 1fr; gap: 2px var(--s3); margin: var(--s2) 0 0; font-size: 13.5px; }
 .note dt { color: var(--ink-3); font-family: var(--f-data); font-size: 12px; padding-top: 1px; }
@@ -421,7 +421,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); justify
             <tr><td>Type</td><td>Archivo (semi-condensed), Atkinson Hyperlegible, Fragment Mono</td><td>Archivo for headings, drawn semi-condensed so titles read like instrument labels. Atkinson, a face drawn for low vision, for everything read. Fragment Mono for every figure and file name.</td></tr>
             <tr><td>Density</td><td>Dense, a working instrument</td><td>15px body, 13px tables, 4px spacing unit, rows separated by hairlines rather than gaps. The overview fits seven pieces in one panel.</td></tr>
             <tr><td>Ground</td><td>Light, dark too</td><td>Light is primary, a cool white with a hint of the accent. Dark is a monitor at night: near black with brighter marks.</td></tr>
-            <tr><td>Shape</td><td>Square corners and hairlines</td><td>Zero radius everywhere, including buttons and inputs. Panels are separated by a 1px rule, never a shadow. A 3px left edge carries a flag's colour.</td></tr>
+            <tr><td>Shape</td><td>Square corners and hairlines</td><td>Zero radius everywhere, including buttons and inputs. Panels are separated by a 1px rule, never a shadow. A flag's colour sits on its mark, not on an edge.</td></tr>
           </tbody>
         </table>
       </div>
@@ -486,7 +486,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); justify
       </div>
       <div class="lines">
         <div><div class="demo" style="border:1px solid var(--rule)"></div><b>Hairline, 1px.</b> Panels, rows, inputs. Corners are 0 everywhere.</div>
-        <div><div class="demo" style="border:1px solid var(--rule);border-left:3px solid var(--weak)"></div><b>Edge, 3px left.</b> A flag's colour. The only thick line.</div>
+        <div><div class="demo" style="border:1px solid var(--weak)"></div><b>Coloured hairline, 1px.</b> A note's colour, all the way round. No thick lines and no single left edge.</div>
         <div><div class="demo" style="border:1px dashed var(--rule-2)"></div><b>Dashed.</b> Something absent: a gap, not enough, the synthetic label.</div>
         <div><div class="demo" style="border:1px dotted var(--ink-3)"></div><b>Dotted.</b> Still running. Replaced when the scan ends.</div>
         <div><div class="demo" style="border-bottom:1px solid var(--ink)"></div><b>Ink rule.</b> Under a section head. Once per section.</div>
@@ -726,7 +726,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); justify
         <li><span>One shape, one meaning: filled square strong, triangle weak, half square mixed, dashed square not enough, open ring running.</span><span class="why">The triangle is the monitor's out-of-range mark. Reusing it elsewhere dilutes it.</span></li>
         <li><span>Dashed means absent. Use it for gaps, not-enough, and the synthetic label, nothing else.</span><span class="why">Absence should look different from a finding.</span></li>
         <li><span>Corners are 0. Panels separate with a 1px hairline. No shadows.</span><span class="why">At this density, shadows and rounding add noise without adding order.</span></li>
-        <li><span>Colour a flag on its 3px left edge and its mark, never on the whole panel.</span><span class="why">A page of red panels reads as alarm. The readout says a flag once, at the size it is.</span></li>
+        <li><span>Colour a flag on its mark only, never on the whole panel or a left edge.</span><span class="why">A page of red panels reads as alarm. The readout says a flag once, at the size it is.</span></li>
         <li><span>Figures in tables, strips and chips are Fragment Mono, right aligned in tables. A figure inside a sentence stays in Atkinson, with tabular figures on.</span><span class="why">Columns of dollars have to line up to be compared, and a sentence should read as one voice. Atkinson's slashed zero still keeps 0 apart from O.</span></li>
         <li><span>Every figure has a source chip beside it or in its row. A figure without one does not ship.</span><span class="why">Every claim links to its source. That is a product commitment.</span></li>
         <li><span>Draw a band only where sources agree within 1%, or where a check rebuilt the figure. A disagreement gets no band.</span><span class="why">The readout lists sources side by side and does not pick a winner.</span></li>

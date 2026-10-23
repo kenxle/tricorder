@@ -181,15 +181,15 @@ p { margin: 0 0 var(--s3); }
 /* Source chip: file and place, in mono, one click to the source. */
 .chip {
   font-size: 11.5px; color: var(--ink-2); background: var(--panel); border: var(--hair) solid var(--rule-2);
-  border-left: 3px solid var(--accent); border-radius: 0; padding: 0 6px; line-height: 1.6; cursor: pointer;
+  border-radius: 0; padding: 0 6px; line-height: 1.6; cursor: pointer;
   display: inline-block; margin: 1px 0; white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis; vertical-align: baseline;
   text-decoration: none;
 }
 .chip:hover { color: var(--accent); border-color: var(--accent); }
 .chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: var(--s2); }
 
-/* Flag row: the headline list. A left rule carries the semantic colour; the mark carries the shape. */
-.flag { border: var(--hair) solid var(--rule); border-left: 3px solid var(--fc); background: var(--panel); padding: var(--s3); }
+/* Flag row: the headline list. The mark carries the colour and the shape. */
+.flag { border: var(--hair) solid var(--rule); background: var(--panel); padding: var(--s3); }
 .flag + .flag { margin-top: -1px; }
 .flag.green { --fc: var(--strong); }
 .flag.red { --fc: var(--weak); }
@@ -252,8 +252,8 @@ td.w { font-family: var(--f-data); font-size: 12px; color: var(--ink-2); white-s
 /* Gap, clean check, steer note. */
 .note { border: var(--hair) solid var(--rule); background: var(--panel); padding: var(--s3); font-size: 14px; }
 .note.gap { border-style: dashed; border-color: var(--rule-2); }
-.note.clean { border-left: 3px solid var(--strong); }
-.note.steer { border-left: 3px solid var(--accent); background: var(--sunk); }
+.note.clean { border-color: var(--strong); }
+.note.steer { border-color: var(--accent); background: var(--sunk); }
 .note .lbl { font-family: var(--f-data); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); display: flex; align-items: center; gap: 6px; margin-bottom: var(--s1); }
 .note dl { display: grid; grid-template-columns: 7.5rem 1fr; gap: 2px var(--s3); margin: var(--s2) 0 0; font-size: 13.5px; }
 .note dt { color: var(--ink-3); font-family: var(--f-data); font-size: 12px; padding-top: 1px; }
@@ -338,7 +338,7 @@ section.block { padding-top: var(--s7); }
 .nots { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--s3); }
 .nots div { border: var(--hair) dashed var(--rule-2); padding: var(--s3); font-size: 14.5px; }
 .nots div b { display: block; font-family: var(--f-data); font-weight: 400; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: var(--s1); }
-.datagoes { margin-top: var(--s4); padding: var(--s3) var(--s4); border-left: 3px solid var(--accent); background: var(--panel); border-top: var(--hair) solid var(--rule); border-right: var(--hair) solid var(--rule); border-bottom: var(--hair) solid var(--rule); font-size: 15px; }
+.datagoes { margin-top: var(--s4); padding: var(--s3) var(--s4); border: var(--hair) solid var(--rule); background: var(--panel); font-size: 15px; }
 
 .cta { margin-top: var(--s7); border-top: var(--hair) solid var(--ink); border-bottom: var(--hair) solid var(--rule); }
 .cta .wrap { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--s4); align-items: center; padding-top: var(--s6); padding-bottom: var(--s6); }

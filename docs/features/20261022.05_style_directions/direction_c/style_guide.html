@@ -252,7 +252,7 @@ p { margin: 0 0 var(--s4); }
 
 /* Operator annotation (the steer). Accent ink: the operator's pen. */
 .note {
-  background: var(--accent-tint); border-left: 3px solid var(--accent); color: var(--ink);
+  background: var(--accent-tint); color: var(--ink);
   padding: var(--s3) var(--s4); margin-top: 3px; font-size: 0.9688rem; line-height: 1.55;
 }
 .note .label { color: var(--accent); display: flex; gap: 6px; align-items: center; margin-bottom: 2px; }
@@ -380,7 +380,7 @@ p { margin: 0 0 var(--s4); }
 .block ul { margin: 0; padding-left: 1.2em; }
 .block li { margin-bottom: var(--s1); }
 .block p { color: var(--ink); }
-.block.edge { border-left: 4px solid var(--m); }
+.block.edge { border-color: var(--m); }
 .band .block p, .band .block li { color: var(--ink); }
 .comps2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s4); }
 
@@ -589,7 +589,7 @@ p { margin: 0 0 var(--s4); }
       <div class="lines">
         <div><div class="demo"><span style="display:block;width:100%;border-top:1px solid var(--rule)"></span></div><span class="label">Hairline, 1px rule</span><p>Between fields on a strip and rows in a table.</p></div>
         <div><div class="demo"><span style="display:block;width:100%;height:28px;border:1px solid var(--rule-2);background:var(--strip)"></span></div><span class="label">Panel edge, 1px rule-2</span><p>Every square panel. No shadow anywhere.</p></div>
-        <div><div class="demo"><span style="display:block;width:100%;height:28px;border-left:3px solid var(--weak);background:var(--weak-tint)"></span></div><span class="label">Mark edge, 3px</span><p>The tab's edge in its mark colour. Also the operator note, in accent.</p></div>
+        <div><div class="demo"><span style="display:block;width:100%;height:28px;border:1px solid var(--weak);background:var(--weak-tint)"></span></div><span class="label">Mark outline, 1px</span><p>A tab outlined in its mark colour. The operator note is an accent tint with no edge.</p></div>
         <div><div class="demo"><span style="display:block;width:100%;height:28px;border:1px solid var(--rule-2);border-radius:999px;background:var(--strip)"></span></div><span class="label">Control, radius 999px</span><p>Buttons, inputs, chips. Nothing else is round.</p></div>
       </div>
     </div>
