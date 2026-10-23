@@ -198,3 +198,49 @@ def test_a_customer_file_with_no_readable_row_is_a_gap(tmp_path):
 def test_the_full_room_skips_nothing():
     _claims, gaps, _ = run_all("hollis_voice")
     assert not [g for g in gaps if "skipped" in g.why]
+
+
+# A tab far from the rebuild is never "matches" (review wave 2b, S9) -------------------------------
+
+
+def tab_room(tmp_path, customers, nrr):
+    """A copy of the full room's customer file and model, with the Cohorts tab's "All cohorts" row set."""
+    from openpyxl import load_workbook
+
+    room = broken_room(tmp_path, lambda lines: None)
+    path = room / cohorts.MODEL
+    wb = load_workbook(path)
+    ws = wb[cohorts.TAB]
+    hdr = next(r for r in ws.iter_rows() if isinstance(r[0].value, str) and r[0].value.startswith("Cohort ("))
+    names = [c.value for c in hdr]
+    total = next(r for r in ws.iter_rows() if r[0].value == "All cohorts")
+    total[names.index("Customers")].value = customers
+    total[names.index("Net revenue retention")].value = nrr
+    wb.save(path)
+    return room
+
+
+def rebuilt_line(room):
+    claims, _, _ = cohorts.check(room, Ids("redflags"))
+    for c in claims:
+        assert check_claim(c, room)[1] == []
+    return next(c for c in by_label(claims, "nrr_12m") if c.text.startswith("Rebuilt"))
+
+
+def test_a_tab_far_below_the_rebuild_is_not_a_match(tmp_path):
+    line = rebuilt_line(tab_room(tmp_path, 68, 0.80))
+    assert "matches" not in line.text
+    assert "7.3 points higher than the Cohorts tab's 80.0% over 68 customers" in line.text
+    assert line.severity == "watch" and line.conflicts_with == []
+
+
+def test_a_tab_within_tolerance_with_the_same_count_matches(tmp_path):
+    line = rebuilt_line(tab_room(tmp_path, 68, 0.875))
+    assert "which matches the Cohorts tab's 87.5% over 68 customers" in line.text
+    assert line.severity == "info"
+
+
+def test_a_tab_within_tolerance_with_more_customers_says_so(tmp_path):
+    line = rebuilt_line(tab_room(tmp_path, 70, 0.875))
+    assert "matches" not in line.text and "the tab counts 2 customers more" in line.text
+    assert line.severity == "info"

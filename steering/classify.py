@@ -25,14 +25,29 @@ from steering.models import Reading, SteerReading
 _T = r"(?:the |their |our |this |that )?(?P<term>[a-z][a-z' -]*?)"
 DEFINITION = [re.compile(p, re.I) for p in (
     rf"\btreat {_T} as (?:a |an )?(?:non[- ]?recurring|one[- ]?(?:time|off)|not recurring)",
-    rf"\b(?:don'?t|do not|never) count {_T} (?:as|in|towards?) (?:recurring|arr|mrr)",
+    rf"\b(?:don['’]?t|do not|never) count {_T} (?:as|in|towards?) (?:recurring|arr|mrr)",
     rf"\b(?:exclude|drop|remove|take out|leave out|strip) {_T} (?:from|out of) (?:the )?(?:arr|mrr|recurring)",
-    rf"^\s*{_T} (?:isn'?t|is not|is never|are not|aren'?t) recurring",
+    rf"^\s*{_T} (?:isn['’]?t|is not|is never|are not|aren['’]?t) recurring",
     rf"^\s*{_T} (?:is|are) (?:non[- ]?recurring|one[- ]?(?:time|off))",
 )]
+# "Don't treat the pilot as non-recurring" asks for the opposite of the definition (review wave 2b, S5).
+# "Why not treat the pilot as ..." suggests it, so "why not" is not a negation.
+NEGATED = re.compile(r"\b(?:don['’]?t|do not|never|(?<!why )not|no longer|stop|please don['’]?t)\s*$", re.I)
 FULL_ROOM = re.compile(r"\b(?:full|whole|entire|complete) (?:data )?room\b|\bsecond tier\b|\btier (?:two|2)\b|\brest of the room\b", re.I)
 MORE_VERB = re.compile(r"\b(?:read|open|pull|fetch|get|find|look (?:at|for|in)|search|bring in|dig into)\b", re.I)
 NAMED = re.compile(r"\b(?:(?:the |their |a )?(?:latest |recent )?(?:competitor'?s?'? )?(?:pricing pages?|filings?|10-?k|s-1|website|reviews?|press|news|bank statements?|app store pages?))\b", re.I)
+# A number is a request only after a frame that asks for it ("should be", "make it", "use",
+# "change ... to"), and a bare year is never one (review wave 2b, O1). A four-digit number standing
+# right after a frame word ("to 2000", "use 2024") is a request even so. In "from A to B" the request
+# is B, so a number right after "from" is skipped when another number follows it.
+FRAME = re.compile(
+    r"(?:\bshould(?:\s+\w+)?\s+(?:be|read|say|show)|\bmust be|\bought to be|\bis (?:really|actually)|\bto be"
+    r"|\bcall it|\binstead of|\brather than"
+    r"|\b(?:make|use|set|change|update|put|round|bump|raise|lower|move|restate)(?:\s+[\w'$.,%]+){0,5}?(?:\s+(?:to|at|as))?)"
+    r"\s*$", re.I)
+FRAME_WORD = re.compile(r"\b(?:to|be|use|make|set|at|as|read|show|it|of|than)\s*$", re.I)
+FROM = re.compile(r"\bfrom\s*$", re.I)
+YEAR = re.compile(r"(?:19|20)\d\d")
 NUMBER = re.compile(
     r"\$\s?\d[\d,]*(?:\.\d+)?(?:\s?(?:million|thousand|billion|m|k|bn)\b)?"
     r"|\b\d[\d,]*(?:\.\d+)?(?:\s?(?:%|percent\b|million\b|thousand\b|billion\b|months?\b|m\b|k\b|x\b))?"
@@ -61,20 +76,46 @@ def _clean_term(term: str) -> str:
     return re.sub(r"^(?:the|their|our|this|that) ", "", term)
 
 
+def _definition(s: str) -> re.Match | None:
+    """The first definition pattern that matches and is not negated ("don't treat ... as")."""
+    for pattern in DEFINITION:
+        for m in pattern.finditer(s):
+            if not NEGATED.search(s[:m.start()]):
+                return m
+    return None
+
+
+def negated_definition(sentence: str) -> bool:
+    """True when the sentence names a definition only to say not to apply it."""
+    return _definition(sentence) is None and any(p.search(sentence) for p in DEFINITION)
+
+
+def _number_asked(s: str) -> str | None:
+    found = list(NUMBER.finditer(s))
+    for i, m in enumerate(found):
+        text, before = m.group(0).strip(), s[:m.start()]
+        if YEAR.fullmatch(text) and not FRAME_WORD.search(before):
+            continue
+        if FROM.search(before) and i + 1 < len(found):
+            continue  # "from A to B": A is the number shown, B the one asked for
+        if FRAME.search(before[-80:]):
+            return text
+    return None
+
+
 def by_rules(sentence: str) -> Reading:
     s = sentence.strip()
-    for pattern in DEFINITION:
-        m = pattern.search(s)
-        if m:
-            return Reading(kind="rewrite", path="rules", term=_clean_term(m.group("term")), treat_as="non_recurring")
+    m = _definition(s)
+    if m:
+        return Reading(kind="rewrite", path="rules", term=_clean_term(m.group("term")), treat_as="non_recurring")
     if FULL_ROOM.search(s):
         return Reading(kind="more_info", path="rules", source="full_room")
     named = NAMED.search(s)
     if named and MORE_VERB.search(s):
         return Reading(kind="more_info", path="rules", source="named", source_named=named.group(0).strip())
-    number = NUMBER.search(s)
+    number = _number_asked(s)
     if number:
-        return Reading(kind="rewrite", path="rules", number_text=number.group(0).strip())
+        return Reading(kind="rewrite", path="rules", number_text=number)
     return Reading(kind="rewrite", path="rules")
 
 
@@ -94,7 +135,7 @@ def by_model(sentence: str, llm: Callable) -> Reading:
         if got.wants_full_room:
             return Reading(kind="more_info", path="model", source="full_room")
         return Reading(kind="more_info", path="model", source="named", source_named=got.source_named or sentence.strip())
-    if got.definition_term:
+    if got.definition_term and not negated_definition(sentence):
         return Reading(kind="rewrite", path="model", term=_clean_term(got.definition_term), treat_as="non_recurring")
     if got.asks_for_number:
         return Reading(kind="rewrite", path="model", number_text=(got.number_text or "").strip() or None)

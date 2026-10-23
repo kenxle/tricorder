@@ -16,7 +16,7 @@ from __future__ import annotations
 import re
 
 from memo.build import empty_because
-from memo.model import ChangeEntry, Edit, Memo, MemoLine
+from memo.model import MAX_AUTHOR, MAX_EDITS, MAX_OPERATOR_LINES, ChangeEntry, Edit, Memo, MemoLine
 
 # A figure: a run of digits, with any $ , . % or a word like "million" after it.
 _NUMBER = re.compile(r"\$?\d[\d,]*(?:\.\d+)?\s?(?:%|percent|million|thousand|[MKk]\b)?")
@@ -66,6 +66,10 @@ def apply_edits(memo: Memo, edits: list[Edit], author: str, at: str) -> Memo:
         raise EditError("no edits")
     if not author.strip():
         raise EditError("an edit needs its author")
+    if len(author) > MAX_AUTHOR:
+        raise EditError(f"an author's name is up to {MAX_AUTHOR} characters")
+    if len(edits) > MAX_EDITS:
+        raise EditError(f"up to {MAX_EDITS} edits make one version")
     new = memo.model_copy(deep=True)
     v = memo.version + 1
     new.version, new.based_on_version, new.built_at = v, memo.version, at
@@ -112,6 +116,8 @@ def apply_edits(memo: Memo, edits: list[Edit], author: str, at: str) -> Memo:
                 sec.lines[i] = line
                 detached = " (its claims detached: the new sentence states a figure they do not)" if e.claim_ids and not line.claim_ids else ""
                 log.append(f"{'filled' if old.kind == 'slot' else 'replaced'} {whose} {named} in section {sec.number}{detached}")
+    if sum(1 for sec in new.sections for ln in sec.lines if ln.kind == "operator") > MAX_OPERATOR_LINES:
+        raise EditError(f"a memo holds up to {MAX_OPERATOR_LINES} operator lines; remove some first")
     for sec in new.sections:
         sec.empty_because = empty_because(sec)
     what = "; ".join(log)

@@ -101,8 +101,8 @@ def test_a_full_room_line_opens_from_the_seed_drop_page(env):
     claims = {c["id"]: c for c in r.json()["readout"]["claims"]}
     nrr = next(c for c in claims.values() if (c.get("value") or {}).get("label") == "nrr_12m" and c["id"].endswith(".steer1"))
     i = next(i for i, s in enumerate(nrr["sources"]) if s["uri"] == "03_metrics/customer_mrr_by_month.csv")
-    # The room's own lookup cannot find the file: it is not in the seed drop.
-    assert client.post("/api/rooms/hollis_voice_seed_drop/source", json=nrr["sources"][i]).status_code == 404
+    # The room's own POST /source resolves through scans.memo.merge.readout_room too (review wave 2b, B1);
+    # server/app.py is the memo builder's, and its test of that route lives with it.
     got = client.get(f"/api/rooms/hollis_voice_seed_drop/claims/{nrr['id']}/sources/{i}")
     assert got.status_code == 200, got.text
     assert got.json()["room"] == "hollis_voice" and got.json()["text"]
@@ -126,3 +126,61 @@ def test_author_defaults_from_the_setting(env, monkeypatch):
     monkeypatch.setenv("TRICORDER_OPERATOR", "Ken")
     r = client.post("/api/rooms/hollis_voice/steer", json={"piece": "traction_and_revenue", "sentence": "treat the pilot as non-recurring"})
     assert r.json()["revision"]["steer"]["author"] == "Ken"
+
+
+# Review wave 2b -------------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize("field, size", [("author", 81), ("claim_id", 121), ("sentence", 1001), ("fund", 65), ("piece", 65)])
+def test_an_oversized_steer_field_is_422(env, field, size):
+    """S3: a long author, line id or sentence is refused before the steer runs."""
+    payload = {"piece": "traction_and_revenue", "sentence": "treat the pilot as non-recurring", field: "x" * size}
+    r = client.post("/api/rooms/hollis_voice/steer", json=payload)
+    assert r.status_code == 422, r.text
+    assert client.get("/api/rooms/hollis_voice/revisions").json()["revisions"] == []
+
+
+def test_a_name_at_the_limit_is_kept(env):
+    r = client.post("/api/rooms/hollis_voice/steer", json={"piece": "traction_and_revenue", "sentence": "treat the pilot as non-recurring",
+                                                         "author": "K" * 80})
+    assert r.status_code == 200, r.text
+
+
+def test_a_scan_crash_is_a_500_naming_the_scan(env, monkeypatch):
+    """O2: the steer answers 500 with the scan's name, not a bare Internal Server Error."""
+    from scans.redflags import scan as redflags_scan
+
+    monkeypatch.setattr(redflags_scan, "run", lambda room: (_ for _ in ()).throw(ValueError("bad cell")))
+    r = client.post("/api/rooms/hollis_voice_seed_drop/steer", json={"piece": "retention", "sentence": "read the full room"})
+    assert r.status_code == 500
+    assert r.json()["detail"] == "redflags failed: ValueError: bad cell"
+    assert client.get("/api/rooms/hollis_voice_seed_drop/revisions").json()["revisions"] == []
+
+
+def test_rebuilding_through_the_page_keeps_the_steer(env):
+    """S7: steer, then the page's "Build readout" (POST .../readout), then GET .../revisions still lists the steer."""
+    client.post("/api/rooms/hollis_voice/steer", json={"piece": "traction_and_revenue", "sentence": "treat the pilot as non-recurring"})
+    assert client.post("/api/rooms/hollis_voice/readout").status_code == 200
+    revs = client.get("/api/rooms/hollis_voice/revisions").json()
+    assert [r["steer"]["instruction"] for r in revs["revisions"]] == ["treat the pilot as non-recurring"]
+    assert [p["name"] for p in revs["changes"]] == ["steer 1: what changed"]
+
+
+# Code review of the fix round ----------------------------------------------------------------------
+
+
+@pytest.mark.parametrize("uri", ["../answer_key.json", str(ROOT / "data_room" / "answer_key.json"), "../../CLAUDE.md"])
+def test_claim_source_opens_nothing_outside_the_room(env, uri):
+    """Round 2, item 5: a line's source opens by the same rule as POST /source, so a readout that names a
+    path outside the room (or the sealed answer key) gets a 404, never the text."""
+    from scans.base import out_dir
+    from schema.claim import Readout
+
+    path = out_dir(FULL) / "readout.json"
+    readout = Readout.model_validate_json(path.read_text(encoding="utf-8"))
+    c = readout.claims[0]
+    forged = c.model_copy(update={"sources": [c.sources[0].model_copy(update={"uri": uri, "locator": "whole"})]})
+    path.write_text(readout.model_copy(update={"claims": [forged] + readout.claims[1:]}).model_dump_json(), encoding="utf-8")
+    got = client.get(f"/api/rooms/hollis_voice/claims/{c.id}/sources/0")
+    assert got.status_code == 404, got.text
+    assert "Synthetic" not in got.text and "text" not in got.json()
