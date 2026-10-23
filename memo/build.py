@@ -459,6 +459,7 @@ class _Builder:
                     built_at=self.built_at, version=1, synthetic_notice=self.r.synthetic_notice, sections=sections,
                     claims={cid: self.claims[cid] for cid in sorted(cited)},
                     asks=self.asks, checklist=self.coverage_rows, stage=self.stage,
+                    steps_missing=[n for n in ("link", "pieces", "top_flags") if not step_built(n)],
                     changes=[ChangeEntry(version=1, at=self.built_at, author="Tricorder",
                                          what=f"Drafted from the readout built {self.r.built_at}.")])
         memo.sources = read_sources(memo, self.room_dir)

@@ -69,7 +69,7 @@ def _line(line: MemoLine, section: int) -> str:
 
 
 def render_html(memo: Memo) -> str:
-    toc = "".join(f'<li><a href="#s{s.number:02d}">{s.number}. {_e(s.title)}</a></li>' for s in memo.sections)
+    toc = "".join(f'<li><a href="#s{s.number:02d}">{_e(s.title)}</a></li>' for s in memo.sections)
     secs = []
     for s in memo.sections:
         empty = ""
@@ -213,6 +213,8 @@ SCRIPT = r"""
   }
   function relatedBlock(cls, title, ids) {
     var box = el('div', cls); box.appendChild(el('h4', null, title + ' (' + ids.length + ')'));
+    if (!ids.length) box.appendChild(el('div', 'meta', M.steps_missing.indexOf('link') >= 0 ?
+      'Not checked yet: the merge step that links agreeing and disagreeing claims is not built.' : 'None in the room.'));
     ids.forEach(function (id) { var c = M.claims[id]; if (!c) return;
       var d = el('div', 'related-claim'); d.setAttribute('data-claim-id', id);
       d.appendChild(el('div', null, c.text + (c.value ? ' [' + money(c.value) + ']' : '')));
@@ -220,10 +222,10 @@ SCRIPT = r"""
       box.appendChild(d); });
     return box;
   }
-  function claimCard(id) {
+  function claimCard(id, lineText) {
     var c = M.claims[id]; var d = el('div', 'claim'); d.setAttribute('data-claim-id', id);
     if (!c) { d.textContent = 'Claim ' + id + ' is not in this memo.'; return d; }
-    d.appendChild(el('div', null, c.text));
+    if (c.text !== lineText) d.appendChild(el('div', null, c.text));
     var meta = el('div', 'meta');
     meta.appendChild(document.createTextNode((c.value ? money(c.value) + '. ' : '') + CONF[c.confidence] + '. Check: ' + c.check.name + '. ' + id + '. '));
     if (c.corroborated_by.length) meta.appendChild(el('span', 'mark corroborated', 'corroborated by ' + c.corroborated_by.length));
@@ -284,7 +286,7 @@ SCRIPT = r"""
     if (l.kind === 'unverified') { drill.appendChild(el('div', 'meta', 'The quote checker could not find this claim\'s quote at its source, so no line in the memo cites it.')); return; }
     if (l.kind === 'coverage') { l.checklist_ids.forEach(function (id) { drill.appendChild(checklistCard(id)); }); return; }
     if (l.kind === 'ask') { l.ask_ids.forEach(function (id) { drill.appendChild(askCard(id)); }); l.checklist_ids.forEach(function (id) { drill.appendChild(checklistCard(id)); }); }
-    l.claim_ids.forEach(function (id) { drill.appendChild(claimCard(id)); });
+    l.claim_ids.forEach(function (id) { drill.appendChild(claimCard(id, l.text)); });
   }
   document.querySelectorAll('.line-open').forEach(function (btn) {
     btn.addEventListener('click', function () {
@@ -295,6 +297,19 @@ SCRIPT = r"""
       btn.setAttribute('aria-expanded', open ? 'false' : 'true'); drill.hidden = open;
     });
   });
+  // Section 14: copy the ask list, ready to paste into an email to the founder.
+  var s14 = document.querySelector('#s14 .lines');
+  if (s14) {
+    var copy = el('button', 'source-open', 'Copy the ask list'); copy.type = 'button'; copy.id = 'copy-asks';
+    var said = el('span', 'status'); said.setAttribute('role', 'status');
+    copy.addEventListener('click', function () {
+      var text = Object.keys(M.asks).map(function (k, i) { var a = M.asks[k]; return (i + 1) + '. ' + a.what + (a.if_you_have_it ? ' (if you have it)' : ''); }).join('\n');
+      var done = function () { said.textContent = ' Copied ' + Object.keys(M.asks).length + ' requests.'; };
+      if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, function () { said.textContent = ' Copy failed: select the lines by hand.'; });
+      else said.textContent = ' Copy is not available here: select the lines by hand.';
+    });
+    s14.parentNode.insertBefore(copy, s14); s14.parentNode.insertBefore(said, s14);
+  }
   // Theme: the system's choice unless the reader picks one.
   var root = document.documentElement;
   try { var t = localStorage.getItem('memo-theme'); if (t) root.setAttribute('data-theme', t); } catch (e) {}

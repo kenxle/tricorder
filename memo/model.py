@@ -117,6 +117,7 @@ class Memo(_Strict):
     changes: list[ChangeEntry] = Field(default_factory=list)
     withdrawn_lines: list[str] = Field(default_factory=list, description="Tricorder's lines (and slots) the operator replaced or removed. A rebuild leaves them out.")
     stage: str | None = None
+    steps_missing: list[str] = Field(default_factory=list, description="Merge steps not built in this checkout (link, pieces, top_flags), so the page can say what it cannot show yet.")
 
     def section(self, number: int) -> MemoSection:
         for s in self.sections:
