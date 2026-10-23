@@ -58,7 +58,7 @@ def test_transcript_is_used_and_times_are_copied(tmp_path):
     assert arr.check.name == "spoken_arr_vs_claims_page"
     assert "01_overview/pitch_deck.pdf" in [s.uri for s in arr.sources]
     runway = next(c for c in spoken if c.sources[0].locator == "seg 2")
-    assert runway.text.startswith("Supported:")
+    assert runway.text.startswith("Unsupported:") and "only a model reading backs this" in runway.text  # the model alone
     _, failures = check_result(result, room)
     assert failures == {}
     assert not any("transcript of the pitch video" in g.what for g in result.gaps)

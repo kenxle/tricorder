@@ -36,6 +36,9 @@ NOT_COUNTED = "claims not counted"
 COUNT_NOUNS = {"months", "years", "weeks", "days", "hires", "people", "clinics", "brokers", "locations",
                "customers", "employees", "cohorts"}
 
+MODEL_DOC = "financial model"
+MODEL_ONLY = "only a model reading backs this"
+
 COLUMNS = ["claim id", "label", "where", "quote", "kind", "stated", "normalised", "spoken",
            "agrees", "disagrees", "should be backed by", "ask"]
 
@@ -60,6 +63,7 @@ class Labelled:
     founder_disagree: list[Statement] = field(default_factory=list)
     missing: list[str] = field(default_factory=list)
     claim: Claim | None = None
+    model_only: bool = False   # only the company's financial model agrees: not support (review wave 2a, S7)
 
     @property
     def kind(self):
@@ -219,6 +223,8 @@ def label_all(room: Path, statements: list[Statement], as_of: str | None, ids: I
     for item in out:
         if item.disagree:
             item.label = "contradicted"
+        elif item.agree and all(e.doc == MODEL_DOC for e in item.agree):
+            item.label, item.model_only = "unsupported", True
         elif item.agree:
             item.label = "supported"
         elif item.founder_disagree:
@@ -285,6 +291,10 @@ def _claim(item: Labelled, ids: Ids, as_of: str | None) -> Claim:
         parts += [f"{_where_words(o)[0].lower()}{_where_words(o)[1:]} says {_figure(o)}" for o in item.founder_disagree
                   if (st.spoken or not item.disagree) and o.origin != "appendix"]
         text = f"Contradicted: {where} gives {kind.name} as {figure}, but " + "; ".join(parts) + "."
+    elif item.model_only:
+        docs = "; ".join(f"{e.doc} ({e.words}: {e.printed})" for e in item.agree)
+        text = (f"Unsupported: {where} gives {kind.name} as {figure}; {MODEL_ONLY}. The company's {docs} agrees, "
+                f"and the model is the company's own calculation; no other document states it.")
     else:
         text = f"Unsupported: {where} gives {kind.name} as {figure}. No document outside the pitch states it."
     value = None
@@ -298,7 +308,7 @@ def _claim(item: Labelled, ids: Ids, as_of: str | None) -> Claim:
             sources += [_source(o) for o in item.founder_disagree if o.origin != "appendix"]
     else:
         sources += [_source(r) for r in st.repeats]
-        sources += [s for e in item.agree for s in e.sources]
+        sources += [s for e in item.agree for s in e.sources]   # a model-only figure still shows the cell it matched
     seen, unique = set(), []
     for s in sources:
         if (s.uri, s.locator, s.quote) not in seen:
@@ -323,7 +333,8 @@ def backed_by(kind_name: str) -> str:
 def ask_text(item: Labelled) -> str:
     kind = item.kind
     if item.label == "unsupported":
-        return f"Please send {kind.ask_doc}" + (f" ({kind.ask_row})" if kind.ask_row else "") + f", to back: {_figure(item.st)}."
+        note = f" Today {MODEL_ONLY}: the company's financial model." if item.model_only else ""
+        return f"Please send {kind.ask_doc}" + (f" ({kind.ask_row})" if kind.ask_row else "") + f", to back: {_figure(item.st)}.{note}"
     if item.label == "contradicted":
         return f"Please walk us from the source data to {_figure(item.st)} ({item.st.where}) (C71)."
     return ""
@@ -338,10 +349,12 @@ def _gaps(items: list[Labelled]) -> list[Gap]:
     for name, group in by_kind.items():
         kind = KINDS[name]
         missing = sorted({m for i in group for m in i.missing})
+        model_only = [i for i in group if i.model_only]
         wheres = "; ".join(f"{i.st.where}: {_figure(i.st)}" for i in group)
         n = len(group)
         gaps.append(gap(f"Not in the room: {kind.ask_doc}, to back {n} pitch claim{'s' if n > 1 else ''} on {kind.name} ({wheres})",
-                        _why(missing),
+                        _why(missing) + (f"; {len(model_only)} of them: {MODEL_ONLY}, the company's financial model"
+                                         if model_only else ""),
                         kind.ask_doc + (f" ({kind.ask_row})" if kind.ask_row else ""), kind.piece))
     return gaps
 

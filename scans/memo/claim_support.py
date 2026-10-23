@@ -99,18 +99,50 @@ def _agree(a: float, b: float, tol: float) -> bool:
     return a == b or abs(a - b) <= tol * max(abs(a), abs(b))
 
 
+def comparable(mine: Claim, flag: Claim) -> bool:
+    """Both carry a Value about the same thing: same label (not "other"), unit and period.
+    A flag with no period is read as the room's data date, the same as the claim's."""
+    a, b = mine.value, flag.value
+    return (a is not None and b is not None and a.label == b.label and a.label != "other" and a.unit == b.unit
+            and (a.period == b.period or b.period is None))
+
+
+def disproves(mine: Claim, flag: Claim, bound: str | None, tol: float) -> bool:
+    """The flag's figure breaks the claim under the claim's own comparison: a ceiling, a
+    floor, or equal within tolerance."""
+    n, x = mine.value.number, flag.value.number
+    if bound == "max":
+        return x > n * (1 + tol)
+    if bound == "min":
+        return x < n * (1 - tol)
+    return not _agree(n, x, tol)
+
+
+def _bound(normalised: str) -> str | None:
+    if ": at most " in normalised:
+        return "max"
+    if ": at least " in normalised:
+        return "min"
+    return None
+
+
+def _add(cell: str, part: str) -> str:
+    """Add a part to a table cell once, so running the step twice changes nothing."""
+    return cell if part in cell else "; ".join(x for x in (cell, part) if x)
+
+
 def apply(readout: Readout, room_dir: Path) -> Readout:
     tables = [p for p in readout.panels if p.name == TABLE]
     if not tables:
         return readout
     table = tables[0]
     col = {name: i for i, name in enumerate(table.columns)}
-    tol = float(load_settings()["match_tolerance"])
+    settings = load_settings()
     by_id = {c.id: c for c in readout.claims if c.scan == "claims"}
     unverified = {c.id for c in readout.unverified if c.scan == "claims"}
     others = [c for c in readout.claims if c.scan != "claims"]
     flags = [c for c in others if c.severity == "flag"]
-    ran = {c.check.name.removesuffix(".read") for c in others}
+    flagged_checks = {c.check.name.removesuffix(".read") for c in flags}
 
     new_claims: dict[str, Claim] = {}
     for row in table.rows:
@@ -121,22 +153,33 @@ def apply(readout: Readout, room_dir: Path) -> Readout:
         claim = by_id.get(cid)
         if claim is None:
             continue
-        label = row[col["label"]]
         kind_name = row[col["kind"]]
-        if label in ("supported", "unsupported"):
-            hits = [f for f in flags if shares_source(claim, f) or settles(f, kind_name)]
+        rounded = "rounded" in row[col["spoken"]]
+        tol = float(settings["spoken_tolerance" if rounded else "match_tolerance"])
+        if row[col["label"]] in ("supported", "unsupported") and claim.severity != "flag":
+            same_words = [f for f in flags if shares_source(claim, f)]
+            settling = [f for f in flags if f not in same_words and settles(f, kind_name)]
+            broken = [f for f in settling if comparable(claim, f) and disproves(claim, f, _bound(row[col["normalised"]]), tol)]
+            unclear = [f for f in settling if not comparable(claim, f)]
+            hits = same_words + broken
             if hits:
                 claim = _contradict(claim, hits)
                 row[col["label"]] = "contradicted"
-                row[col["disagrees"]] = "; ".join(x for x in [row[col["disagrees"]]] + [
-                    f"{f.scan} {f.check.name} ({f.id}): {f.text}" for f in hits] if x)
+                for f in hits:
+                    row[col["disagrees"]] = _add(row[col["disagrees"]], f"{f.scan} {f.check.name} ({f.id}): {f.text}")
                 row[col["ask"]] = f"Please walk us from the source data to {row[col['stated']]} ({row[col['where']].split(';')[0]}) (C71)."
-        if row[col["label"]] == "supported" and _model_only(row[col["agrees"]]):
-            waiting = [name for name, kinds in CHECK_SETTLES.items() if kind_name in kinds and name not in ran]
-            if waiting and len(waiting) == len([n for n, k in CHECK_SETTLES.items() if kind_name in k]):
+            for f in unclear:
+                # Another label, unit or period: the flag may be about something else, so it is named, not counted.
+                row[col["disagrees"]] = _add(row[col["disagrees"]],
+                                             f"{f.scan} {f.check.name} ({f.id}) raises a problem with this figure, "
+                                             f"not compared figure to figure: {f.text}")
+        if row[col["label"]] != "contradicted" and _model_only(row[col["agrees"]]):
+            settling_names = [name for name, kinds in CHECK_SETTLES.items() if kind_name in kinds]
+            waiting = [name for name in settling_names if name not in flagged_checks and name not in _ran_as_rebuild(others, name)]
+            if waiting:
                 note = (f"Only the financial model backs it, and the model is the company's own calculation; "
-                        f"the rebuild that tests it ({', '.join(waiting)}) has not run on this room.")
-                row[col["ask"]] = " ".join(x for x in (row[col["ask"]], note) if x)
+                        f"the rebuild that would test it ({', '.join(waiting)}) has not run on this room.")
+                row[col["ask"]] = row[col["ask"]] if note in row[col["ask"]] else " ".join(x for x in (row[col["ask"]], note) if x)
         if row[col["label"]] == "supported" and claim.value is not None:
             corroborating = [o.id for o in others if o.value is not None and o.value.label == claim.value.label
                              and o.value.label != "other" and o.value.unit == claim.value.unit
@@ -152,8 +195,16 @@ def apply(readout: Readout, room_dir: Path) -> Readout:
     return readout
 
 
+def _ran_as_rebuild(others: list[Claim], name: str) -> set[str]:
+    """A settling check counts as having tested the figure only when it wrote a claim with a
+    Value (a rebuilt number). An info line under the same name ("Ledger lines tie to the
+    P&L") has not rebuilt runway or burn (review wave 2a, S7)."""
+    return {name} if any(o.check.name.removesuffix(".read") == name and o.value is not None and o.value.label != "other"
+                         for o in others) else set()
+
+
 def _contradict(claim: Claim, hits: list[Claim]) -> Claim:
-    first = claim.text.split(": ", 1)[-1].split(". ")[0].rstrip(".")
+    first = claim.text.split(": ", 1)[-1].split(". ")[0].split("; ")[0].rstrip(".")
     reasons = "; ".join(f"the {f.scan} scan's {f.check.name} check flags it: {f.text}" for f in hits)
     sources = [claim.sources[0]]
     seen = {(s.uri, s.locator, s.quote) for s in sources}
@@ -182,7 +233,8 @@ def _recount(readout: Readout, table: Panel) -> None:
                 rows[k][1] = str(v)
             elif v:
                 panel.rows.append([k, str(v)])
-        panel.rows.append(["relabelled by the memo step", "yes"])
+        if "relabelled by the memo step" not in rows:
+            panel.rows.append(["relabelled by the memo step", "yes"])
 
 
 def main(argv: list[str]) -> int:

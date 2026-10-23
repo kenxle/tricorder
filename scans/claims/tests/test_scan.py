@@ -201,11 +201,14 @@ def test_spoken_disagreements_carry_the_three_way_check_names(results):
     assert bw[row["claim id"]].check.name == "spoken_number_vs_claims_page"  # BF5's check in the key
 
 
-# Green flags: (key id, where the deck states it, as stated).
+# Green flags: (key id, where the deck states it, as stated, label). A figure only the
+# company's financial model states reads unsupported (review wave 2a, S7): the key's
+# GF2 and the 17 of GF3 are backed by the model alone.
 GREENS = {
-    "hollis_voice": [("GF1", "slide 13", "$9,000,000"), ("GF2", "slide 8", "near $252,000,000"),
-                     ("GF3", "slide 10", "17"), ("GF3", "slide 12", "41")],
-    "brasswick": [("GF1", "slide 11", "$3,000,000"), ("GF2", "slide 5", "14"), ("GF3", "slide 5", "20%")],
+    "hollis_voice": [("GF1", "slide 13", "$9,000,000", "supported"), ("GF2", "slide 8", "near $252,000,000", "unsupported"),
+                     ("GF3", "slide 10", "17", "unsupported"), ("GF3", "slide 12", "41", "supported")],
+    "brasswick": [("GF1", "slide 11", "$3,000,000", "supported"), ("GF2", "slide 5", "14", "supported"),
+                  ("GF3", "slide 5", "20%", "supported")],
 }
 
 
@@ -213,9 +216,9 @@ GREENS = {
 def test_green_flags_are_supported_with_two_independent_sources(results, room):
     key = {g["id"]: g for g in _key(room)["green_flags"]}
     claims = by_id(results[room])
-    for gid, where, stated in GREENS[room]:
+    for gid, where, stated, label in GREENS[room]:
         row = find_row(results[room], where, stated)
-        assert row["label"] == "supported", (gid, row)
+        assert row["label"] == label, (gid, row)
         claim = claims[row["claim id"]]
         outside = {s.uri for s in claim.sources if "pitch_deck" not in s.uri}
         assert outside, gid
@@ -223,6 +226,22 @@ def test_green_flags_are_supported_with_two_independent_sources(results, room):
             loc["file"] for extra in key[gid].get("also_agree", []) for loc in extra["locations"]}
         assert outside & files, (gid, outside)
         assert claim.sources[0].uri == "01_overview/pitch_deck.pdf"
+        if label == "supported":
+            assert outside - {"02_financials/financial_model.xlsx"}, gid
+
+
+def test_a_figure_only_the_model_states_is_unsupported_and_says_so(results):
+    """Review wave 2a, S7: the model is the company's own calculation, so it alone
+    does not support a pitch figure. Runway and burn on Hollis Voice (PF4)."""
+    result = results["hollis_voice"]
+    for stated in ("37", "$374,462"):
+        row = find_row(result, "slide 11", stated)
+        assert row["label"] == "unsupported", row
+        assert row["agrees"].startswith("financial model"), row
+        assert "only a model reading backs this" in row["ask"]
+        claim = by_id(result)[row["claim id"]]
+        assert claim.text.startswith("Unsupported:") and "only a model reading backs this" in claim.text
+        assert "02_financials/financial_model.xlsx" in [s.uri for s in claim.sources]
 
 
 def test_clean_room_has_no_contradiction(results):
