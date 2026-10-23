@@ -140,5 +140,9 @@ def source_text(room: str, source: Source) -> dict:
         raise HTTPException(404, str(err))
 
 
+from server.founder_requests_routes import router as founder_requests_router  # noqa: E402
+
+app.include_router(founder_requests_router)  # above the page mount, which answers every path
+
 if PAGE_DIST.is_dir():
     app.mount("/", StaticFiles(directory=PAGE_DIST, html=True), name="page")
