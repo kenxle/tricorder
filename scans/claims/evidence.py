@@ -380,8 +380,9 @@ def _pattern(room: Path, kind: str, pattern: str, doc: str, row: str, entity_fro
                 start = page.rfind("\n", 0, m.start()) + 1
                 end = page.find("\n", m.end())
                 quote = page[start:end if end != -1 else len(page)].strip()
+                said = " ".join(m.group(0).split())
                 out.append(Evidence(number, None, _src(room, path, f"page {n}", quote), doc, row,
-                                    f"{path.name}, page {n}", " ".join(m.group(0).split())))
+                                    f"the words '{said}' on {path.name}, page {n}", said))
     return Reading(out, any_of=entity_from is None)
 
 
@@ -394,13 +395,15 @@ def _contract_date(room: Path, st, as_of) -> Reading:
     iso = st.mention.iso or ""
     out = []
     for path, n, line, page in _pdf_lines(room, "contracts"):
-        if not any(name.split()[0] in page for name in names):
+        named = next((name for name in names if name.split()[0] in page), None)
+        if named is None:
             continue
         dates = re.findall(r"\d{4}-\d{2}-\d{2}", line)
         if any(d.startswith(iso) for d in dates):
             hit = next(d for d in dates if d.startswith(iso))
             out.append(Evidence(None, hit[:len(iso)], _src(room, path, f"page {n}", line.strip()), "customer contract", "C34",
-                                f"{path.name}, page {n}", hit))
+                                f"the date {hit} in the line '{line.strip()}' on {path.name}, page {n}, a page that names "
+                                f"{named.split()[0]}", hit))
             break
     return Reading(out)
 
@@ -422,6 +425,26 @@ def _contract_number(room: Path, st, as_of) -> Reading:
                                     f"{path.name}, page {n}", m.group(1)))
                 return Reading(out)
     return Reading(out)
+
+
+def _bios_years(room: Path, st, as_of) -> Reading:
+    """"N years" in the bios, said in the sentence about the founder the pitch names.
+    With no name in the pitch sentence, any bio's "N years" may match (any_of)."""
+    reading = _pattern(room, "bios", r"\b([a-z]+|\d+) years\b", "founder bios", "C53")
+    names = [n.split()[0] for n in named_entities(st.quote)] if st is not None else []
+    if not names or reading.missing:
+        return reading
+    from schema.readers import pdf_pages
+
+    kept = []
+    for e in reading.evidence:
+        page = pdf_pages(room / e.source.uri)[int(e.source.locator.split()[-1]) - 1]
+        at = page.find(e.source.quote)
+        start = max(page.rfind(". ", 0, at if at >= 0 else 0), page.rfind("\n\n", 0, at if at >= 0 else 0))
+        sentence = page[start + 1: at + len(e.source.quote)] if at >= 0 else e.source.quote
+        if any(name in sentence for name in names):
+            kept.append(e)
+    return Reading(kept, any_of=False)
 
 
 def _bios_founded(room: Path, st, as_of) -> Reading:
@@ -487,6 +510,6 @@ READERS: dict[str, Reader] = {
     "model_staff_now": lambda r, st, a: _named(r, ("STAFF_NOW", "EMPLOYEES_NOW")),
     "hiring_last_headcount": lambda r, st, a: _hiring(r, st, a, "last_headcount"),
     "model_staff_after": lambda r, st, a: _named(r, ("EMPLOYEES_AFTER_HIRES", "STAFF_AFTER_HIRES")),
-    "bios_years": lambda r, st, a: _pattern(r, "bios", r"\b([a-z]+|\d+) years\b", "founder bios", "C53"),
+    "bios_years": lambda r, st, a: _bios_years(r, st, a),
     "bios_founded": _bios_founded,
 }
