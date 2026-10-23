@@ -24,7 +24,9 @@ def env(tmp_path, built_out, cache_dir):
     return {**os.environ, "TRICORDER_OUT_DIR": str(built_out), "TRICORDER_STORE_DIR": str(tmp_path / "store_data"), "TRICORDER_CACHE_DIR": str(cache_dir)}
 
 
-def test_save_list_get_delete_from_the_terminal(env, tmp_path, cache_dir):
+def test_save_list_get_delete_from_the_terminal(env, tmp_path, cache_dir, built_out):
+    # The claim count comes from the readout the scans built, so a new red-flag check does not break this test.
+    built_claims = len(json.loads((built_out / "hollis_voice" / "readout.json").read_text(encoding="utf-8"))["claims"])
     done = run(["save", str(ROOM)], env)
     assert done.returncode == 0, done.stderr
     saved = json.loads(done.stdout)
@@ -39,7 +41,7 @@ def test_save_list_get_delete_from_the_terminal(env, tmp_path, cache_dir):
     assert held["cache"] == ["outside/hollis_voice/hn/search.json", "outside/hollis_voice/website/home.html"]
 
     got = json.loads(run(["get", "hollis_voice"], env).stdout)
-    assert got["version"]["version"] == 1 and got["readout"]["claims"] == 10 and got["results"] == ["redflags"]
+    assert got["version"]["version"] == 1 and got["readout"]["claims"] == built_claims and got["results"] == ["redflags"]
     full = json.loads(run(["get", "hollis_voice", "--full"], env).stdout)
     assert full["readout"]["room"] == "hollis_voice" and full["results"][0]["scan"] == "redflags"
 
