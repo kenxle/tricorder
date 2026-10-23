@@ -36,3 +36,4 @@ Each feature file starts with an H1 title and one paragraph on what the user see
 - [Checklist coverage and the ask list](./checklist-coverage.md) covers what the room holds for the company's stage and the lines to ask the founder for.
 - [Readout page](./readout-page.md) covers the built page: flags, overview, gaps and the ask list for a room.
 - [Readout store and delete](./readout-store.md) covers saving a readout with its sources and files per fund, listing everything held for a company, and the one confirmed delete.
+- [Steering](./steering.md) covers one typed sentence on a piece or a line: the rewrite, the full room as more info, the number guard, the diff, and every revision kept.
