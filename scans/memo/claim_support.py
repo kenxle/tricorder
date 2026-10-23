@@ -86,6 +86,11 @@ def shares_source(mine: Claim, other: Claim) -> bool:
     return False
 
 
+def _model_only(agrees: str) -> bool:
+    outside = [a for a in agrees.split("; ") if a and not a.endswith("(same pitch)")]
+    return bool(outside) and all(a.startswith("financial model") for a in outside)
+
+
 def settles(other: Claim, kind_name: str) -> bool:
     return kind_name in CHECK_SETTLES.get(other.check.name.removesuffix(".read"), ())
 
@@ -105,6 +110,7 @@ def apply(readout: Readout, room_dir: Path) -> Readout:
     unverified = {c.id for c in readout.unverified if c.scan == "claims"}
     others = [c for c in readout.claims if c.scan != "claims"]
     flags = [c for c in others if c.severity == "flag"]
+    ran = {c.check.name.removesuffix(".read") for c in others}
 
     new_claims: dict[str, Claim] = {}
     for row in table.rows:
@@ -125,6 +131,12 @@ def apply(readout: Readout, room_dir: Path) -> Readout:
                 row[col["disagrees"]] = "; ".join(x for x in [row[col["disagrees"]]] + [
                     f"{f.scan} {f.check.name} ({f.id}): {f.text}" for f in hits] if x)
                 row[col["ask"]] = f"Please walk us from the source data to {row[col['stated']]} ({row[col['where']].split(';')[0]}) (C71)."
+        if row[col["label"]] == "supported" and _model_only(row[col["agrees"]]):
+            waiting = [name for name, kinds in CHECK_SETTLES.items() if kind_name in kinds and name not in ran]
+            if waiting and len(waiting) == len([n for n, k in CHECK_SETTLES.items() if kind_name in k]):
+                note = (f"Only the financial model backs it, and the model is the company's own calculation; "
+                        f"the rebuild that tests it ({', '.join(waiting)}) has not run on this room.")
+                row[col["ask"]] = " ".join(x for x in (row[col["ask"]], note) if x)
         if row[col["label"]] == "supported" and claim.value is not None:
             corroborating = [o.id for o in others if o.value is not None and o.value.label == claim.value.label
                              and o.value.label != "other" and o.value.unit == claim.value.unit
