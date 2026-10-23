@@ -377,7 +377,9 @@ def changes(before: Readout | None, after: Readout, answered: list[tuple[cl.Row,
         else:
             said.append(f"Coverage still lists {row.item} as {_plain(now)}. The file is saved under the name "
                         "for the first request it answers.")
-    old = before or Readout(room=after.room, built_at="")
+    if before is None:
+        said.append(f"This room had no readout before, so this is its first: {len(after.claims)} claims.")
+    old = before or after
     # A claim keeps its id when a rerun relabels it, so the same id with new words is a change.
     old_by_id = {(c.scan, c.id): c.text for c in old.claims}
     new_by_id = {(c.scan, c.id): c.text for c in after.claims}
@@ -419,7 +421,7 @@ def changes(before: Readout | None, after: Readout, answered: list[tuple[cl.Row,
         what = "the new file" if files == 1 else "the new files"
         lead = "One check" if count == 1 else f"{count} checks"
         said.insert(0, f"{lead} could not read {what}, so {'its' if count == 1 else 'their'} part of the readout is from before.")
-    elif not moved:
+    elif not moved and before is not None:
         said.append(f"No check reads {'this file' if files == 1 else 'these files'} yet, so no number changed.")
     if before is not None and len(after.asks) != len(before.asks):
         way = "down" if len(after.asks) < len(before.asks) else "up"

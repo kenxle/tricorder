@@ -425,3 +425,8 @@ def test_the_same_sentence_is_said_once(brasswick):
     after.claims += [_claim("redflags-901", "Plan says 5."), _claim("redflags-902", "Plan says 5.")]
     said = ik.changes(brasswick, after, [])
     assert "2 new claims: Plan says 5." in said
+
+
+def test_a_room_with_no_readout_before_says_so_instead_of_listing_every_claim(brasswick):
+    said = ik.changes(None, brasswick, [])
+    assert said == [f"This room had no readout before, so this is its first: {len(brasswick.claims)} claims."]
