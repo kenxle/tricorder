@@ -236,6 +236,7 @@ body.editing .edit-bar { display:flex; }
 body:not(.operator) .aud-operator, body:not(.operator) .op-only, body.operator .partner-only { display:none !important; }
 /* The kind badges (Claim, Gap, Checklist) help the operator sort lines; a partner reads the sentence. */
 body:not(.operator) .line .kind { display:none; }
+.claim.before { opacity:.75; border-left-style:dashed; }
 body:not(.editing) .op-tools, body:not(.editing) .op-add { display:none; }
 a { color:inherit; }
 @media (max-width: 560px) { details.toc ol { columns:1; } .masthead h1 { font-size:19px; } }
@@ -406,6 +407,10 @@ SCRIPT = r"""
     if (l.kind === 'ask') { l.ask_ids.forEach(function (id) { drill.appendChild(askCard(id)); }); l.checklist_ids.forEach(function (id) { drill.appendChild(checklistCard(id)); }); }
     if (l.composed) drill.appendChild(el('div', 'meta', 'Tricorder put these figures side by side from the claims below; each figure is in a claim or one of its sources.'));
     l.claim_ids.forEach(function (id) { drill.appendChild(claimCard(id, l.text)); });
+    (l.replaces || []).forEach(function (id) {
+      drill.appendChild(el('div', 'meta before-head', 'Before the operator steered it, this line read:'));
+      var card = claimCard(id, ''); card.classList.add('before'); drill.appendChild(card);
+    });
   }
   function wire(btn) {
     btn.addEventListener('click', function () {

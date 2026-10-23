@@ -187,6 +187,14 @@ class _Builder:
             for row in table.rows:
                 rec = dict(zip(table.columns, row))
                 self.pitch[rec["claim id"]] = (str(rec.get("label", "")).lower(), str(rec.get("kind", "")))
+        # A steer that rewrote a line keeps the old claim in the readout and records the swap in its panel
+        # ("steer N: what changed", rows ["replaced", old id, old text, new id]). The old claim is the new line's before.
+        self.replaced_by: dict[str, str] = {}
+        for panel in readout.panels:
+            if panel.name.startswith("steer "):
+                for row in panel.rows:
+                    if row and row[0] == "replaced" and len(row) > 3 and row[1] and row[3]:
+                        self.replaced_by[row[1]] = row[3]
 
     # Quote check ----------------------------------------------------------
 
@@ -204,8 +212,10 @@ class _Builder:
         kind = "reading" if claim.confidence == "judged" else "claim"
         if label is None and claim.value and LABEL_WORDS.get(claim.value.label):
             label = LABEL_WORDS[claim.value.label]
+        replaces = [old for old, new in self.replaced_by.items() if new == claim.id and old in self.claims]
         return MemoLine(id=f"{sid}-{claim.id}", kind=kind, text=partner_text(claim.text), label=label,
-                        claim_ids=[claim.id], ask_ids=self.asks_for_claim(claim.id), severity=claim.severity)
+                        claim_ids=[claim.id], ask_ids=self.asks_for_claim(claim.id), severity=claim.severity,
+                        replaces=replaces)
 
     def is_pitch(self, claim: Claim) -> bool:
         """A figure from the pitch, checked against the room by the claims scan."""
@@ -405,7 +415,7 @@ class _Builder:
                 lines.append(MemoLine(id="s02-no-green", kind="fact",
                                       text="No green flag: nothing in the room is corroborated and uncontradicted."))
             return lines
-        flagged = [c for c in self.claims.values() if c.severity == "flag"]
+        flagged = [c for c in self.claims.values() if c.severity == "flag" and self.replaced_by.get(c.id) not in self.claims]
         arr = arr_side_by_side(list(self.claims.values()), self.room_dir)
         covered: set[str] = set()
         if arr and any(cid in {c.id for c in flagged} for cid in arr[1]):
@@ -630,6 +640,8 @@ class _Builder:
         self.verify()
         routed: dict[int, list[Claim]] = {}
         for c in self.claims.values():
+            if self.replaced_by.get(c.id) in self.claims:
+                continue  # a steer replaced it; it shows as the before of the line that took its place
             routed.setdefault(claim_section(c, self.piece_of), []).append(c)
         sections = []
         for sec in SECTIONS:
@@ -653,7 +665,7 @@ class _Builder:
                 lines, collapsed = self.body(sec, routed.get(n, []))
             sections.append(MemoSection(number=n, key=sec.key, title=sec.title, who_writes=sec.who_writes,
                                         lines=lines, collapsed=collapsed))
-        cited = {cid for s in sections for ln in s.lines for cid in ln.claim_ids}
+        cited = {cid for s in sections for ln in s.lines for cid in ln.claim_ids + ln.replaces}
         for cid in list(cited):
             cited |= {x for x in self.claims[cid].corroborated_by + self.claims[cid].conflicts_with if x in self.claims}
         sections[-1].lines = self.sources_section(cited) + [

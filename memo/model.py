@@ -69,6 +69,7 @@ class MemoLine(_Strict):
     unsourced_numbers: list[str] = Field(default_factory=list, description="Numbers in an operator line with no claim behind them: 'operator's figure, no source'.")
     severity: Literal["green", "red", "flag", "watch", "info"] | None = None
     audience: Audience = "all"
+    replaces: list[str] = Field(default_factory=list, description="Claims an operator's steer replaced with this line's claim; the page shows them as the line's before.")
     composed: bool = Field(default=False, description="Tricorder put this sentence together from several claims' values and sources (memo/compose.py).")
 
 

@@ -285,3 +285,27 @@ def test_room_path_can_be_relative(readout, monkeypatch):
     monkeypatch.chdir(Path(__file__).resolve().parents[2])
     memo = build_memo(readout, "data_room/hollis_voice", AT)
     assert memo.claims
+
+
+def steered(readout):
+    """The readout after a steer rewrote one check line: the old claim stays in the readout,
+    a 'replaced' row in the steer's panel names the line that took its place (steering/engine.py)."""
+    from schema.claim import Panel
+    r = readout.model_copy(deep=True)
+    old = next(c for c in r.claims if c.check.name == "capitalised_spend_vs_pnl_and_cash")
+    new = old.model_copy(update={"id": "scenario-001", "scan": "scenario",
+                                 "text": "If the March wire lands, the bridge still ties to the ledger."})
+    r.claims.append(new)
+    r.panels.append(Panel(name="steer 1: what changed", columns=["Change", "Claim", "Before", "After"],
+                          rows=[["replaced", old.id, old.text, new.id]]))
+    return r, old, new
+
+
+def test_a_claim_the_steer_replaced_is_the_new_lines_before(readout):
+    r, old, new = steered(readout)
+    memo = build_memo(r, ROOM, AT)
+    live = [ln for s in memo.sections for ln in s.lines if old.id in ln.claim_ids and ln.kind in ("claim", "reading", "ref")]
+    assert live == []
+    line = next(ln for s in memo.sections for ln in s.lines if new.id in ln.claim_ids)
+    assert line.replaces == [old.id]
+    assert old.id in memo.claims  # the drill opens the before with its sources
