@@ -1,0 +1,434 @@
+{
+  "framework": "deck_vs_books",
+  "label": "flag",
+  "label_reason": "1 of 5 claims are flags.",
+  "claims": [
+    {
+      "id": "redflags-dvb-001",
+      "scan": "redflags",
+      "text": "The deck's Revenue, last 12 months of $943,340 (slide 4) matches the P&L's $943,340 (sum of 'Total revenue', 2025-10 to 2026-09), a gap of 0.0%.",
+      "value": {
+        "number": 943340.0,
+        "unit": "USD",
+        "label": "other",
+        "period": "2025-10 to 2026-09"
+      },
+      "severity": "info",
+      "check": {
+        "kind": "script",
+        "name": "deck_revenue_vs_pnl",
+        "model": null
+      },
+      "confidence": "computed",
+      "sources": [
+        {
+          "kind": "file",
+          "uri": "01_overview/pitch_deck.pdf",
+          "locator": "slide 4",
+          "start_s": null,
+          "end_s": null,
+          "quote": "$943K",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "01_overview/pitch_deck.pdf",
+          "locator": "slide 12",
+          "start_s": null,
+          "end_s": null,
+          "quote": "Revenue, last 12 months $943,340 4",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!H9",
+          "start_s": null,
+          "end_s": null,
+          "quote": "71654.55",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!I9",
+          "start_s": null,
+          "end_s": null,
+          "quote": "71668.15",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!J9",
+          "start_s": null,
+          "end_s": null,
+          "quote": "63105.3",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!K9",
+          "start_s": null,
+          "end_s": null,
+          "quote": "60399.89",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!L9",
+          "start_s": null,
+          "end_s": null,
+          "quote": "64154.95",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!M9",
+          "start_s": null,
+          "end_s": null,
+          "quote": "65621.55",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!N9",
+          "start_s": null,
+          "end_s": null,
+          "quote": "74879.59",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!O9",
+          "start_s": null,
+          "end_s": null,
+          "quote": "80970.51",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!P9",
+          "start_s": null,
+          "end_s": null,
+          "quote": "84454.68",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!Q9",
+          "start_s": null,
+          "end_s": null,
+          "quote": "91048.72",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!R9",
+          "start_s": null,
+          "end_s": null,
+          "quote": "95183.88",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!S9",
+          "start_s": null,
+          "end_s": null,
+          "quote": "120197.73000000001",
+          "retrieved_at": "2026-10-22"
+        }
+      ],
+      "conflicts_with": [],
+      "corroborated_by": []
+    },
+    {
+      "id": "redflags-dvb-002",
+      "scan": "redflags",
+      "text": "The deck's MRR, September 2026 of $84,810 (slide 4) matches the P&L's $84,810 ('Subscription revenue' for 2026-09), a gap of 0.0%.",
+      "value": {
+        "number": 84810.0,
+        "unit": "USD_per_month",
+        "label": "mrr",
+        "period": "2026-09"
+      },
+      "severity": "info",
+      "check": {
+        "kind": "script",
+        "name": "deck_revenue_vs_pnl",
+        "model": null
+      },
+      "confidence": "computed",
+      "sources": [
+        {
+          "kind": "file",
+          "uri": "01_overview/pitch_deck.pdf",
+          "locator": "slide 4",
+          "start_s": null,
+          "end_s": null,
+          "quote": "$84,810",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "01_overview/pitch_deck.pdf",
+          "locator": "slide 12",
+          "start_s": null,
+          "end_s": null,
+          "quote": "MRR, September 2026 $84,810 4",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!S7",
+          "start_s": null,
+          "end_s": null,
+          "quote": "84810",
+          "retrieved_at": "2026-10-22"
+        }
+      ],
+      "conflicts_with": [],
+      "corroborated_by": []
+    },
+    {
+      "id": "redflags-dvb-003",
+      "scan": "redflags",
+      "text": "The deck's revenue chart on slide 4 has 9 bars for 2026-01 to 2026-09; their shape matches 'Total revenue' in the P&L (largest difference 0.2 points of the tallest bar).",
+      "value": null,
+      "severity": "info",
+      "check": {
+        "kind": "script",
+        "name": "deck_revenue_vs_pnl",
+        "model": null
+      },
+      "confidence": "computed",
+      "sources": [
+        {
+          "kind": "file",
+          "uri": "01_overview/pitch_deck.pdf",
+          "locator": "slide 4",
+          "start_s": null,
+          "end_s": null,
+          "quote": "Monthly revenue, January 2026 to September 2026",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!K9",
+          "start_s": null,
+          "end_s": null,
+          "quote": "60399.89",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!S9",
+          "start_s": null,
+          "end_s": null,
+          "quote": "120197.73000000001",
+          "retrieved_at": "2026-10-22"
+        }
+      ],
+      "conflicts_with": [],
+      "corroborated_by": []
+    },
+    {
+      "id": "redflags-dvb-004",
+      "scan": "redflags",
+      "text": "Shows part of the history: the revenue chart on slide 4 starts at 2026-01, 8 months after the first revenue month in the books (2025-05); the months left out, 2025-05 to 2025-12, hold a peak of $84,090 in 2025-09; revenue then fell 28.2% to $60,400 in the chart's first month.",
+      "value": {
+        "number": 8,
+        "unit": "months",
+        "label": "other",
+        "period": "2025-05 to 2025-12"
+      },
+      "severity": "flag",
+      "check": {
+        "kind": "script",
+        "name": "deck_history_vs_metrics",
+        "model": null
+      },
+      "confidence": "computed",
+      "sources": [
+        {
+          "kind": "file",
+          "uri": "01_overview/pitch_deck.pdf",
+          "locator": "slide 4",
+          "start_s": null,
+          "end_s": null,
+          "quote": "Monthly revenue, January 2026 to September 2026",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!C9",
+          "start_s": null,
+          "end_s": null,
+          "quote": "16625.0",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!G9",
+          "start_s": null,
+          "end_s": null,
+          "quote": "84090.2",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!K9",
+          "start_s": null,
+          "end_s": null,
+          "quote": "60399.89",
+          "retrieved_at": "2026-10-22"
+        }
+      ],
+      "conflicts_with": [],
+      "corroborated_by": []
+    },
+    {
+      "id": "redflags-dvb-005",
+      "scan": "redflags",
+      "text": "The deck says revenue grew every month in 2026 (slide 4); in the P&L 'Total revenue' rose in every month from 2026-01 to 2026-09, and changed by $-2,705 from 2025-12 to 2026-01.",
+      "value": null,
+      "severity": "info",
+      "check": {
+        "kind": "script",
+        "name": "deck_revenue_vs_pnl",
+        "model": null
+      },
+      "confidence": "computed",
+      "sources": [
+        {
+          "kind": "file",
+          "uri": "01_overview/pitch_deck.pdf",
+          "locator": "slide 4",
+          "start_s": null,
+          "end_s": null,
+          "quote": "Revenue grew every month in 2026.",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!J9",
+          "start_s": null,
+          "end_s": null,
+          "quote": "63105.3",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!K9",
+          "start_s": null,
+          "end_s": null,
+          "quote": "60399.89",
+          "retrieved_at": "2026-10-22"
+        }
+      ],
+      "conflicts_with": [],
+      "corroborated_by": []
+    }
+  ],
+  "gaps": [],
+  "matches": [
+    {
+      "slide": 4,
+      "figure": "$943,340",
+      "period": "2025-10 to 2026-09",
+      "books": 943339.5,
+      "basis": "sum of 'Total revenue', 2025-10 to 2026-09",
+      "gap_rel_pct": 0.0,
+      "within_tolerance": true
+    },
+    {
+      "slide": 4,
+      "figure": "$84,810",
+      "period": "2026-09",
+      "books": 84810,
+      "basis": "'Subscription revenue' for 2026-09",
+      "gap_rel_pct": 0.0,
+      "within_tolerance": true
+    },
+    {
+      "slide": 4,
+      "figure": "chart, 9 bars",
+      "period": "2026-01 to 2026-09",
+      "books": "'Total revenue', 9 months",
+      "basis": "bar height / tallest bar against month / largest month",
+      "gap_rel_pct": 0.2,
+      "within_tolerance": true
+    },
+    {
+      "slide": 4,
+      "figure": "chart window",
+      "period": "2026-01 to 2026-09",
+      "books": "revenue from 2025-05",
+      "basis": "first chart month against first revenue month",
+      "gap_rel_pct": null,
+      "within_tolerance": false,
+      "left_out": [
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12"
+      ],
+      "left_out_hold": {
+        "text": "hold a peak of $84,090 in 2025-09; revenue then fell 28.2% to $60,400 in the chart's first month",
+        "peak_month": "2025-09",
+        "peak": 84090.2,
+        "first": 16625.0,
+        "last": 63105.3,
+        "falls_in": [
+          "2025-10",
+          "2025-12"
+        ],
+        "chart_first_month_value": 60399.89,
+        "fall_from_peak_pct": 28.2,
+        "peak_above_chart_first_pct": 39.2
+      }
+    },
+    {
+      "slide": 4,
+      "figure": "grew every month",
+      "period": "2026-01 to 2026-09",
+      "books": "falls in none",
+      "basis": "'Total revenue' month on month",
+      "gap_rel_pct": null,
+      "within_tolerance": true,
+      "december_to_january_change": -2705.41
+    }
+  ],
+  "unmatched": [],
+  "first_revenue_month": "2025-05",
+  "as_of": "2026-09",
+  "revenue_rows_cross_check": {
+    "file": "03_metrics/revenue_by_customer.csv",
+    "pnl_line": "Total revenue",
+    "months_compared": 17,
+    "months_differing_by_more_than_1_dollar": {
+      "2026-09": -25245.0
+    }
+  }
+}

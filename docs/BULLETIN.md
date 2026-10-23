@@ -6,6 +6,7 @@ The plan this board came from: [the hackathon plan overview](features/20261022.0
 
 ## Board
 
+- [>] @agent 2026-10-22 TRI-forge-wave1 -- **Run the first roadmap features through Feature Forge: deck-vs-books, accounting-mislabels, checklist-coverage.** The roadmap is parted into four waves on [00_breakdown.md](features/20261022.10_feature_breakdown/00_breakdown.md). Each feature's docs and spike are in its folder (20261022.11 to .13); code waits on the skeleton's `schema/claim.py`.
 - [>] @agent 2026-10-22 TRI-architecture -- **Write the architecture and set up the framework (the roadmap's skeleton slice).** ARCHITECTURE.md rewritten for the everything-by-Saturday horizon; schema, readers, quote checker, scan framework, memo merge, score, server, page skeleton, CI. Pull request from `claude/project-thread-ce34ga`; Ken reviews.
 - [x] @agent 2026-10-22 TRI-persona-reviews -- (done 2026-10-22 15:58) **Build the persona review agents.** Five agents in `.claude/agents/persona-*.md`, one per persona in PERSONAS.md, each reading its persona at run time. How to run a panel: [PERSONA_REVIEWS.md](ongoing/PERSONA_REVIEWS.md).
 - [ ] @ken 2026-10-22 TRI-approve-yc -- **Pick two or three real YC spring 2026 companies for the live demo.** On the plan page's card "Real YC companies for the live demo" (recommended: Ploy and Sazabi). Candidates and their public footprints: [research_demo_companies.md](reports/20261022.02_research/research_demo_companies.md). Their fake rooms are generated only after you pick, each labelled synthetic on every page.

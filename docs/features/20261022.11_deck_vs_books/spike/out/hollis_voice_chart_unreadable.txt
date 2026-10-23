@@ -1,0 +1,20 @@
+room: /home/claude/tricorder/data_room/hollis_voice   deck: out/test_decks/chart_unreadable.pdf   hidden: none
+label: flag   (1 of 3 claims are flags.)
+as of: 2026-09   first revenue month in the books: 2025-01
+
+matches:
+  MISS slide  3  $2,500,000                   2026-09                books: 2240868  [12 x 'Recurring revenue (subscription plus pilot)' for 2026-09]  gap 11.6%
+  ok   slide  3  chart window                 2025-01 to 2026-09     books: revenue from 2025-01  [first chart month against first revenue month]
+  ok   slide 11  3.5% a month (plan)          2026-10 to 2027-09     books: plan columns 3.50% to 3.50%  [month-on-month growth of 'Recurring revenue (subscription plus pilot)', plan columns]
+
+claims:
+  redflags-dvb-001 [flag] deck_revenue_vs_pnl: The deck's ARR of $2,500,000 (slide 3) differs from the P&L's $2,240,868 (12 x 'Recurring revenue (subscription plus pilot)' for 2026-09), a gap of 11.6%.
+  redflags-dvb-002 [info] deck_history_vs_metrics: The revenue chart on slide 3 starts at 2025-01, the first revenue month in the books, and runs to 2026-09 with no month left out.
+  redflags-dvb-003 [info] deck_revenue_vs_pnl: The deck's plan growth of 3.5% a month (slide 11) matches the model's plan columns, which grow 3.50% to 3.50% a month. It is a plan, not a period the books hold as actuals.
+
+gaps:
+  Not in the room: a readable chart on slide 3 (chart image could not be read); would need: The numbers behind the chart, or a readable copy of the slide
+
+revenue rows cross-check: 03_metrics/customer_mrr_by_month.csv summed by month against 'Recurring revenue (subscription plus pilot)', 21 months, differing by more than $1: none
+
+wrote out/hollis_voice_chart_unreadable.json

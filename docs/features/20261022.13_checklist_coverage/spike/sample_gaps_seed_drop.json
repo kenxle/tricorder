@@ -1,0 +1,9 @@
+{
+  "note": "Hand-written, not scan output. These are the four gaps that FRAMEWORKS.md, 'Ask list', worked example, says the Saturday scans write on the Hollis Voice seed drop (entries 1.2, 1.3, 1.6 and 1.7). They exist so the spike can show dedupe between a gap and a checklist item before any scan runs. Synthetic room.",
+  "gaps": [
+    {"what": "Not in the room: monthly revenue by customer", "why": "file missing", "would_need": "monthly revenue by customer (the customer file), for entries 1.2, 1.3 and 1.6", "piece": "retention"},
+    {"what": "Not in the room: the Marlow pilot agreement", "why": "file missing", "would_need": "the Marlow pilot agreement", "piece": "traction_and_revenue"},
+    {"what": "Not in the room: the largest customer's order form", "why": "file missing", "would_need": "the Cedar & Pine order form", "piece": "customers"},
+    {"what": "Not in the room: actual monthly spend", "why": "file missing", "would_need": "the expense ledger", "piece": "unit_economics"}
+  ]
+}

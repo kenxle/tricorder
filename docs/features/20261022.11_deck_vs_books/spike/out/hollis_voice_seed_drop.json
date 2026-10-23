@@ -1,0 +1,223 @@
+{
+  "framework": "deck_vs_books",
+  "label": "flag",
+  "label_reason": "1 of 4 claims are flags.",
+  "claims": [
+    {
+      "id": "redflags-dvb-001",
+      "scan": "redflags",
+      "text": "The deck's ARR of $2,500,000 (slide 3) differs from the P&L's $2,240,868 (12 x 'Recurring revenue (subscription plus pilot)' for 2026-09), a gap of 11.6%.",
+      "value": {
+        "number": 2500000.0,
+        "unit": "USD_per_year",
+        "label": "arr",
+        "period": "2026-09"
+      },
+      "severity": "flag",
+      "check": {
+        "kind": "script",
+        "name": "deck_revenue_vs_pnl",
+        "model": null
+      },
+      "confidence": "computed",
+      "sources": [
+        {
+          "kind": "file",
+          "uri": "01_overview/pitch_deck.pdf",
+          "locator": "slide 3",
+          "start_s": null,
+          "end_s": null,
+          "quote": "$2.5M",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "01_overview/pitch_deck.pdf",
+          "locator": "slide 14",
+          "start_s": null,
+          "end_s": null,
+          "quote": "ARR $2,500,000 3",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!W10",
+          "start_s": null,
+          "end_s": null,
+          "quote": "186739",
+          "retrieved_at": "2026-10-22"
+        }
+      ],
+      "conflicts_with": [],
+      "corroborated_by": []
+    },
+    {
+      "id": "redflags-dvb-002",
+      "scan": "redflags",
+      "text": "The deck's revenue chart on slide 3 has 21 bars for 2025-01 to 2026-09; their shape matches 'Recurring revenue (subscription plus pilot)' in the P&L (largest difference 0.4 points of the tallest bar).",
+      "value": null,
+      "severity": "info",
+      "check": {
+        "kind": "script",
+        "name": "deck_revenue_vs_pnl",
+        "model": null
+      },
+      "confidence": "computed",
+      "sources": [
+        {
+          "kind": "file",
+          "uri": "01_overview/pitch_deck.pdf",
+          "locator": "slide 3",
+          "start_s": null,
+          "end_s": null,
+          "quote": "Monthly recurring revenue, January 2025 to September 2026.",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!C10",
+          "start_s": null,
+          "end_s": null,
+          "quote": "2651",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!W10",
+          "start_s": null,
+          "end_s": null,
+          "quote": "186739",
+          "retrieved_at": "2026-10-22"
+        }
+      ],
+      "conflicts_with": [],
+      "corroborated_by": []
+    },
+    {
+      "id": "redflags-dvb-003",
+      "scan": "redflags",
+      "text": "The revenue chart on slide 3 starts at 2025-01, the first revenue month in the books, and runs to 2026-09 with no month left out.",
+      "value": {
+        "number": 0,
+        "unit": "months",
+        "label": "other",
+        "period": "2025-01 to 2026-09"
+      },
+      "severity": "info",
+      "check": {
+        "kind": "script",
+        "name": "deck_history_vs_metrics",
+        "model": null
+      },
+      "confidence": "computed",
+      "sources": [
+        {
+          "kind": "file",
+          "uri": "01_overview/pitch_deck.pdf",
+          "locator": "slide 3",
+          "start_s": null,
+          "end_s": null,
+          "quote": "Monthly recurring revenue, January 2025 to September 2026.",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!C10",
+          "start_s": null,
+          "end_s": null,
+          "quote": "2651",
+          "retrieved_at": "2026-10-22"
+        }
+      ],
+      "conflicts_with": [],
+      "corroborated_by": []
+    },
+    {
+      "id": "redflags-dvb-004",
+      "scan": "redflags",
+      "text": "The deck's plan growth of 3.5% a month (slide 11) matches the model's plan columns, which grow 3.50% to 3.50% a month. It is a plan, not a period the books hold as actuals.",
+      "value": {
+        "number": 3.5,
+        "unit": "percent",
+        "label": "other",
+        "period": "2026-10 to 2027-09"
+      },
+      "severity": "info",
+      "check": {
+        "kind": "script",
+        "name": "deck_revenue_vs_pnl",
+        "model": null
+      },
+      "confidence": "computed",
+      "sources": [
+        {
+          "kind": "file",
+          "uri": "01_overview/pitch_deck.pdf",
+          "locator": "slide 11",
+          "start_s": null,
+          "end_s": null,
+          "quote": "Revenue grows 3.5% a month in the plan.",
+          "retrieved_at": "2026-10-22"
+        },
+        {
+          "kind": "file",
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!X10",
+          "start_s": null,
+          "end_s": null,
+          "quote": "193274.865",
+          "retrieved_at": "2026-10-22"
+        }
+      ],
+      "conflicts_with": [],
+      "corroborated_by": []
+    }
+  ],
+  "gaps": [],
+  "matches": [
+    {
+      "slide": 3,
+      "figure": "$2,500,000",
+      "period": "2026-09",
+      "books": 2240868,
+      "basis": "12 x 'Recurring revenue (subscription plus pilot)' for 2026-09",
+      "gap_rel_pct": 11.6,
+      "within_tolerance": false
+    },
+    {
+      "slide": 3,
+      "figure": "chart, 21 bars",
+      "period": "2025-01 to 2026-09",
+      "books": "'Recurring revenue (subscription plus pilot)', 21 months",
+      "basis": "bar height / tallest bar against month / largest month",
+      "gap_rel_pct": 0.4,
+      "within_tolerance": true
+    },
+    {
+      "slide": 3,
+      "figure": "chart window",
+      "period": "2025-01 to 2026-09",
+      "books": "revenue from 2025-01",
+      "basis": "first chart month against first revenue month",
+      "gap_rel_pct": null,
+      "within_tolerance": true
+    },
+    {
+      "slide": 11,
+      "figure": "3.5% a month (plan)",
+      "period": "2026-10 to 2027-09",
+      "books": "plan columns 3.50% to 3.50%",
+      "basis": "month-on-month growth of 'Recurring revenue (subscription plus pilot)', plan columns",
+      "gap_rel_pct": null,
+      "within_tolerance": true
+    }
+  ],
+  "unmatched": [],
+  "first_revenue_month": "2025-01",
+  "as_of": "2026-09",
+  "revenue_rows_cross_check": null
+}

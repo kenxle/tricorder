@@ -1,0 +1,3 @@
+schema: 4 claims and 0 gaps parse as schema.claim.Claim and Gap
+quote checker: 4 of 4 claims verified
+score against answer_key_clean.json (these claims only): found 0 of 0, decoys flagged 0 of 3
