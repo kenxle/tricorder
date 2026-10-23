@@ -176,8 +176,9 @@ def test_the_page_needs_no_network(tmp_path):
     assert "\u2014" not in page and "\u2013" not in page
 
 
-# Ken, 2026-10-23, on the memo in Lahe: the invented company's synthetic line does not need to be on the
-# page. BRAND.md keeps a banner only on readouts of a room under a real company's name.
+# Ken, 2026-10-23, on the memo in Lahe: the synthetic line does not need to be on the page (his own edit
+# took the page banner out). The PDF, which travels, keeps the label BRAND.md asks for on a room under a
+# real company's name, and drops the invented company's line.
 INVENTED = "Synthetic data room for Deal Flow NYC 2026. Not a real company."
 REAL_NAME = "Synthetic test document. Not this company's data."
 
@@ -191,7 +192,7 @@ def test_an_invented_company_memo_has_no_synthetic_banner_on_the_page_or_in_the_
     assert INVENTED not in text
 
 
-def test_a_room_under_a_real_name_keeps_its_banner_on_the_page_and_in_the_pdf(tmp_path):
+def test_a_room_under_a_real_name_keeps_its_label_in_the_pdf_but_not_on_the_page(tmp_path):
     from memo.build import build_memo
     from memo.html import render_html
     from memo.pdf import render_pdf
@@ -200,5 +201,5 @@ def test_a_room_under_a_real_name_keeps_its_banner_on_the_page_and_in_the_pdf(tm
     readout.synthetic_notice = REAL_NAME
     memo = build_memo(readout, ROOM, "2026-10-23T12:00:00Z")
     assert memo.synthetic_notice == REAL_NAME
-    assert f'<p class="banner" role="note">{REAL_NAME.replace(chr(39), "&#x27;")}</p>' in render_html(memo)
+    assert 'class="banner"' not in render_html(memo)
     assert REAL_NAME in re.sub(r"\s+", " ", pdf_text(render_pdf(memo, tmp_path / "real.pdf")))
