@@ -504,3 +504,32 @@ def test_the_merge_command_keeps_steers_and_starts_over_only_when_asked(env, cap
     fresh = json.loads(capsys.readouterr().out)
     assert fresh["revisions_kept"] == 0 and fresh["reads_room"] == "hollis_voice_seed_drop"
     assert merge.readout_room(SEED) == SEED
+
+
+# Code review of the fix round ----------------------------------------------------------------------
+
+
+def test_a_line_reworded_twice_keeps_its_last_wording_and_id_after_a_rebuild(env):
+    """Round 2, item 1, on HAND-BUILT model answers: A to B, then B to C. A rebuild follows the chain to C."""
+    before = Readout.model_validate_json((out_dir(FULL) / "readout.json").read_text())
+    line = arr_line(before)
+    b = "The deck says ARR is $2,500,000 (slide 3), which differs from the P&L's $2,240,868 (12 x 'Recurring revenue (subscription plus pilot)' for 2026-09), a gap of 11.6%."
+    c = "The deck puts ARR at $2,500,000 (slide 3). That differs from the P&L's $2,240,868 (12 x 'Recurring revenue (subscription plus pilot)' for 2026-09), a gap of 11.6%."
+    first = engine.steer(FULL, "traction_and_revenue", "say the ARR line more plainly", llm=reword_llm([(line.id, b)]))
+    assert claims_by_id(first.readout)[line.id].text == b
+    second = engine.steer(FULL, "traction_and_revenue", "say it in two sentences", line.id, llm=reword_llm([(line.id, c)]))
+    assert claims_by_id(second.readout)[line.id].text == c
+    assert [r[1:] for r in rows(second.changes, "wording")] == [[line.id, b, c]]  # steer 2 reworded B, not A
+    rebuilt = _rebuild_as_a_person_does(FULL)
+    assert claims_by_id(rebuilt)[line.id].text == c
+    assert rebuilt.revisions[1].steer.claim_id in claims_by_id(rebuilt)
+
+
+def test_a_later_steer_that_reruns_the_scans_keeps_an_earlier_rewording(env):
+    """Round 2, item 1, on a HAND-BUILT model answer: a steer that reruns the piece's scans keeps steer 1's words."""
+    before = Readout.model_validate_json((out_dir(FULL) / "readout.json").read_text())
+    line = arr_line(before)
+    b = "The deck says ARR is $2,500,000 (slide 3), which differs from the P&L's $2,240,868 (12 x 'Recurring revenue (subscription plus pilot)' for 2026-09), a gap of 11.6%."
+    engine.steer(FULL, "traction_and_revenue", "say the ARR line more plainly", llm=reword_llm([(line.id, b)]))
+    second = engine.steer(FULL, "traction_and_revenue", "treat the pilot as non-recurring")
+    assert claims_by_id(second.readout)[line.id].text == b

@@ -143,7 +143,8 @@ def _merge_piece(before: Readout, fresh: Readout, piece: str, tag: str) -> tuple
     new_piece = [remap(c) for c in fresh_piece]
     new_keys = {_key(c) for c in fresh_piece}
     dropped = [c.id for c in old if _key(c) not in new_keys]
-    added = [c.id for c in new_piece if c.id not in {o.id for o in old}]
+    old_ids = {o.id for o in old}
+    added = [c.id for c in new_piece if c.id not in old_ids]
     claims = [c for c in before.claims if id(c) not in taken] + new_piece
     unverified = [c for c in before.unverified if pieces.piece_of(c) != piece] + \
                  [remap(c) for c in fresh.unverified if pieces.piece_of(c) == piece]
@@ -214,7 +215,8 @@ def _merge_all(before: Readout, fresh: Readout, tag: str | None) -> tuple[Readou
 
     claims = [remap(c) for c in fresh.claims]
     fresh_keys = {_key(c) for c in fresh.claims}
-    added = [c.id for c in claims if c.id not in {b.id for b in before.claims}]
+    before_ids = {b.id for b in before.claims}
+    added = [c.id for c in claims if c.id not in before_ids]
     dropped = [c.id for c in before.claims if c.scan != "steering" and _key(c) not in fresh_keys]
     scenarios = [c for c in before.claims if c.scan == "steering"]
     steer_panels = [p for p in before.panels if p.name.startswith("steer ") or p.name == READS_PANEL]
@@ -225,17 +227,31 @@ def _merge_all(before: Readout, fresh: Readout, tag: str | None) -> tuple[Readou
     return merged, added, dropped
 
 
+def last_wording(reworded: dict[str, str], text: str) -> str:
+    """The line's last wording: A to B, then B to C, reads C (code review of the fix round, item 1)."""
+    seen = {text}
+    while text in reworded and reworded[text] not in seen:
+        text = reworded[text]
+        seen.add(text)
+    return text
+
+
+def with_wording(before: Readout, fresh: Readout) -> Readout:
+    """`fresh` with every model rewording the steers in `before` kept put back on the line it changed."""
+    reworded = {r[2]: r[3] for p in before.panels if p.name.startswith("steer ") for r in p.rows
+                if len(r) > 3 and r[0] == "wording"}
+    if not reworded:
+        return fresh
+    return fresh.model_copy(update={"claims": [c.model_copy(update={"text": last_wording(reworded, c.text)})
+                                               for c in fresh.claims]})
+
+
 def carry(before: Readout, fresh: Readout, room: Path) -> Readout:
     """A rebuilt readout that keeps what the steers left (review wave 2b, S7): every revision, every "steer N"
     panel, the "reads room" switch and the operator's scenario lines. Claims the rebuild states the same way keep
     their ids, so every revision's ids still resolve, and a model rewording is put back on the line it changed.
     Verdicts and the scenario reasons are rebuilt as a steer rebuilds them."""
-    reworded = {(r[2]): r[3] for p in before.panels if p.name.startswith("steer ") for r in p.rows
-                if len(r) > 3 and r[0] == "wording"}
-    if reworded:
-        fresh = fresh.model_copy(update={"claims": [c.model_copy(update={"text": reworded[c.text]}) if c.text in reworded else c
-                                                    for c in fresh.claims]})
-    merged, _, _ = _merge_all(before, fresh, None)
+    merged, _, _ = _merge_all(before, with_wording(before, fresh), None)
     merged = merged.model_copy(update={"built_at": fresh.built_at, "synthetic_notice": fresh.synthetic_notice,
                                        "connecting": fresh.connecting, "scores": fresh.scores})
     return _rebuild(merged, room)
@@ -319,14 +335,14 @@ def steer(room_dir: str | Path, piece: str, sentence: str, claim_id: str | None 
             else:
                 source_room = full
                 _rerun(sorted(available()), full)
-                working, added, dropped = _merge_all(current, build_readout(full, keep_steers=False), tag)
+                working, added, dropped = _merge_all(current, with_wording(current, build_readout(full, keep_steers=False)), tag)
         else:
             headline = "Not fetched: Tricorder does not fetch outside sources on a steer yet."
             notes.append(f"You asked for {reading.source_named}. Ask the founder for it, or add it to the room.")
     else:
         if reading.number_text is None:
             _rerun(_scans_feeding(current, piece), reading_room)
-            working, added, dropped = _merge_piece(current, build_readout(reading_room, keep_steers=False), piece, tag)
+            working, added, dropped = _merge_piece(current, with_wording(current, build_readout(reading_room, keep_steers=False)), piece, tag)
         if reading.term:
             piece_claims = _piece_claims(working, piece)
             if claim_id is not None:
