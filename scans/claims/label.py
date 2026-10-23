@@ -80,9 +80,13 @@ def rounded_speech(st: Statement) -> bool:
 
 def tolerance(st: Statement, other: Statement | None, settings: dict) -> float:
     loose = rounded_speech(st) or (other is not None and rounded_speech(other))
-    base = float(settings["spoken_tolerance"] if loose else settings["match_tolerance"])
+    if loose:
+        # spoken_tolerance decides a spoken figure; "about" or "three million" earns no more
+        # room than that (FRAMEWORKS 4.3, "What it must not do").
+        return float(settings["spoken_tolerance"])
+    base = float(settings["match_tolerance"])
     n = normalised_number(st)
-    if n:
+    if n and not st.spoken:
         scale = 12 if (KINDS[st.kind].unit == "months" and st.mention.unit_word in ("years", "year")) else 1
         base = max(base, (st.mention.precision * scale / 2) / abs(n))
     return base
