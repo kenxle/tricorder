@@ -1,0 +1,4 @@
+$ python3 -m schema.check_quotes data_room/hollis_voice /tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/memo-export/verify/memo-export-final2/out/hollis_voice/readout.json
+(cwd /home/claude/wt/memo-export, TRICORDER_OUT_DIR=/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/memo-export/verify/memo-export-final2/out)
+/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/memo-export/verify/memo-export-final2/out/hollis_voice/readout.json: 91 claims checked
+exit 0

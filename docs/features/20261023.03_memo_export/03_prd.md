@@ -35,6 +35,16 @@ Not in: reader copies and scenarios ([reader-scenarios](../../ongoing/ROADMAP.md
 | ME-R17 | A new export after edits redrafts from the current readout and keeps the operator's lines in place; a line the operator removed or replaced stays so. |
 | ME-R18 | The server routes: `POST/GET /api/rooms/{room}/memo`, `GET .../memo/versions`, `POST .../memo/edits` (refused with 409 when based on an old version, 400 for a bad edit), `GET .../memo.html` (editing on), `GET .../memo.pdf`. |
 | ME-R19 | Words follow [BRAND.md](../../ongoing/BRAND.md): no "likely", "probably", "fraud", no em or en dashes. |
+| ME-R20 | Two views of one memo. The partner view is the default for the page and the only view in the PDF: no claim ids, check names, checklist numbers, "Who writes it", operator blanks, commands or sentences about scripts. The operator view (the toggle) shows all of it. |
+| ME-R21 | The first screen is the answer: the head line, the round, the red and green flags, one line for the pieces, then the rest of the summary. |
+| ME-R22 | A section with nothing in it is one line naming the scans it needs. "Not assessed yet" for the pieces is said once. A flag is in full once, in section 2; other sections refer to it. A gap is not repeated within a section. |
+| ME-R23 | The operator's recommendation in section 15 opens section 2, on the page and in the PDF. No blank prints in the PDF. |
+| ME-R24 | The PDF leaves out the ask list. Its notes name each source's file and place and what it reads as: a CSV row with its column names, a cell with its line and column, numbers formatted as the claims state them. |
+| ME-R25 | When the room holds two or more ARR figures, red flag 1 puts them side by side, each copied from a claim or a cited source and linked to the claims. The memo computes no figure. |
+| ME-R26 | Editing in place: many changes, one save, one version, a name typed in the edit bar as the author. On a 409 the page keeps the changes and offers to reapply them on the newer version. A claim line rewritten with a figure its claims do not state becomes the operator's, with no claims behind it. |
+| ME-R27 | Many claims read in a few lines: the pitch's figures are one line per section with every claim behind it; red flags on the same subject share a line; the source list is the operator's, with one line for partners. |
+| ME-R28 | A claim an operator's steer replaced is not a live line; it is the new line's "before", shown in its drill with its sources. |
+| ME-R29 | Tests find claims by the check that wrote them or by severity and take counts from the readout, so a new check or a renumbering never breaks them. |
 
 ## Failure cases
 

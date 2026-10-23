@@ -1,0 +1,30 @@
+{
+  "url": "http://127.0.0.1:8813/api/rooms/hollis_voice/memo.html",
+  "lines": 307,
+  "drillable": 295,
+  "opened_in_one_click": 295,
+  "claim_lines": 204,
+  "claims_seen": 411,
+  "sources_opened_in_two_clicks": 411,
+  "quotes_marked": 411,
+  "agree_disagree_shown": 411,
+  "failures": [],
+  "partner_first_screen": [
+    "s01-round",
+    "s02-flag-arr",
+    "s02-flag-redflags-cohorts-002",
+    "s02-flag-redflags-contract_terms_full-012",
+    "s02-flag-claims-005",
+    "s02-flag-claims-008",
+    "s02-flag-claims-035",
+    "s02-pieces-unassessed"
+  ],
+  "partner_visible_lines": 88,
+  "partner_plumbing": [],
+  "phone_first_screen": [
+    "s01-round",
+    "s02-flag-arr",
+    "s02-flag-redflags-cohorts-002"
+  ],
+  "phone_horizontal_scroll": false
+}
