@@ -103,6 +103,7 @@ class SourceText(_Strict):
     text: str
     found: bool = Field(description="The quote checker found the quote in this text.")
     reads_as: str = Field(default="", description="The source as a partner reads it: a CSV row with its column names, a cell with its line and column (memo/sources.py).")
+    read_at: str = Field(default="", description="The date the export read a file source (YYYY-MM-DD), for the PDF's note. A web source carries its own retrieved_at.")
 
 
 class ChangeEntry(_Strict):
