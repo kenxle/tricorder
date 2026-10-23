@@ -517,17 +517,31 @@ def render_html(memo: Memo) -> str:
                      f'<p class="note aud-operator">Who writes it: {_e(s.who_writes)}</p></div>{_body(memo, s)}')
         secs.append(f'<section class="{cls}" id="s{s.number:02d}" data-section="{s.number}">{inner}'
                     f'<ul class="lines lines-added"></ul><div class="op-add" data-section="{s.number}"></div></section>')
-    data = json.dumps(memo.model_dump(mode="json"), ensure_ascii=False).replace("</", "<\\/")
-    return (PAGE.replace("{{STYLE}}", (PAGE_DIR / "memo.css").read_text(encoding="utf-8"))
-            .replace("{{TITLE}}", _e(f"{memo.company} memo"))
-            .replace("{{COMPANY}}", _e(memo.company))
-            .replace("{{VERSION}}", str(memo.version))
-            .replace("{{BUILT}}", _e(memo.built_at[:16].replace("T", " ")))
-            .replace("{{FOOT}}", _e(memo.synthetic_notice))
-            .replace("{{TOC}}", "".join(toc))
-            .replace("{{SECTIONS}}", "".join(secs))
-            .replace("{{DATA}}", data)
-            .replace("{{SCRIPT}}", (PAGE_DIR / "memo.js").read_text(encoding="utf-8")))
+    values = {
+        "STYLE": (PAGE_DIR / "memo.css").read_text(encoding="utf-8"),
+        "TITLE": _e(f"{memo.company} memo"), "COMPANY": _e(memo.company), "VERSION": str(memo.version),
+        "BUILT": _e(memo.built_at[:16].replace("T", " ")), "FOOT": _e(memo.synthetic_notice),
+        "TOC": "".join(toc), "SECTIONS": "".join(secs), "DATA": embed_json(memo.model_dump(mode="json")),
+        "SCRIPT": (PAGE_DIR / "memo.js").read_text(encoding="utf-8"),
+    }
+    return fill(PAGE, values)
+
+
+_PLACEHOLDER = re.compile(r"\{\{([A-Z]+)\}\}")
+
+
+def fill(page: str, values: dict[str, str]) -> str:
+    """Every placeholder filled in one pass over the template. A value is never scanned again,
+    so a line that holds "{{DATA}}" prints those characters and expands nothing."""
+    return _PLACEHOLDER.sub(lambda m: values[m.group(1)], page)
+
+
+def embed_json(value) -> str:
+    """JSON safe inside a <script> element: no <, > or & in it at all, so no line can close
+    the element or open a comment. JSON.parse reads the escapes back as the characters."""
+    text = json.dumps(value, ensure_ascii=False)
+    return (text.replace("&", "\\u0026").replace("<", "\\u003c").replace(">", "\\u003e")
+            .replace("\u2028", "\\u2028").replace("\u2029", "\\u2029"))
 
 
 BRAND_MARK = ('<svg width="24" height="24" viewBox="0 0 26 26" aria-hidden="true"><rect x="0.75" y="0.75" width="24.5" '

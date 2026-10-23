@@ -20,10 +20,11 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
 from schema.claim import Readout, ScanResult, Source
-from schema.readers import LocatorError, text_at
+from schema.readers import LocatorError
 from scans import SCANS
 from scans.base import ROOT, available, out_dir, room_inputs
-from scans.memo.merge import build_readout, write_readout
+from scans.memo.merge import build_readout, readout_room, write_readout
+from memo.rooms import OutsideRoom, resolve, source_rooms, text_in
 from server.local_guard import LocalGuard
 from founder_requests.intake import rooms_root
 
@@ -58,12 +59,19 @@ def room_dir(room: str) -> Path:
     return rooms()[room]
 
 
-def _inside(base: Path, rel: str) -> Path:
-    """rel resolved under base, or a 404. No path ever leaves its room."""
-    target = (base / rel).resolve()
-    if not target.is_relative_to(base.resolve()) or not target.is_file():
+def readable_rooms(room: str) -> list[Path]:
+    """Where the room's files open: the room itself, or, once a "read the full room" steer
+    switched its readout, the full room first (scans.memo.merge.readout_room). Never any other folder."""
+    path = room_dir(room)
+    return source_rooms(readout_room(path), path)
+
+
+def _inside(rooms_: list[Path], rel: str) -> Path:
+    """rel resolved inside one of the rooms, or a 404. No path ever leaves its room."""
+    try:
+        return resolve(rel, rooms_)
+    except LocatorError:
         raise HTTPException(404, "no such file")
-    return target
 
 
 @app.get("/health")
@@ -132,15 +140,19 @@ def get_readout(room: str) -> Readout:
 @app.get("/api/rooms/{room}/files/{rel:path}")
 def get_file(room: str, rel: str) -> FileResponse:
     """A room file, for the source panel. Never outside the room."""
-    return FileResponse(_inside(room_dir(room), rel))
+    return FileResponse(_inside(readable_rooms(room), rel))
 
 
 @app.post("/api/rooms/{room}/source")
 def source_text(room: str, source: Source) -> dict:
-    """The text at a source's locator, for the footnote panel."""
+    """The text at a source's locator, for the footnote panel. A file source opens only inside
+    the room (or the full room it was switched to): never an absolute path, another room, the
+    repo's own files or an answer key."""
     try:
-        return {"text": text_at(source, room_dir(room))}
-    except LocatorError as err:
+        return {"text": text_in(source, readable_rooms(room))}
+    except OutsideRoom:
+        raise HTTPException(404, "no such file in this room")
+    except (LocatorError, OSError) as err:
         raise HTTPException(404, str(err))
 
 

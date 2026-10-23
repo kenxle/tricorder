@@ -24,13 +24,14 @@ import re
 from collections import Counter
 from pathlib import Path
 
-from schema.check_quotes import check_claim
 from schema.claim import Claim, Gap, Readout
-from schema.readers import LocatorError, text_at
+from schema.readers import LocatorError
 from scans.memo import checklist as cl
+from scans.memo.merge import reads_room
 
 from memo.compose import arr_side_by_side
 from memo.model import ChangeEntry, ChecklistRef, GapRef, Memo, MemoLine, MemoSection, SourceText, source_key
+from memo.rooms import check_claim_in, is_file_source, room_holding, source_rooms, text_in
 from memo.sources import fmt_number, reads_as
 from memo.template import (
     BY_NUMBER, ENTRY_SECTION, FOLDER_SECTION, LABEL_SECTION, LABEL_WORDS, PIECE_SECTION, PIECE_WORDS,
@@ -166,6 +167,8 @@ class _Builder:
     def __init__(self, readout: Readout, room_dir: Path, built_at: str):
         self.r = readout
         self.room_dir = Path(room_dir)
+        # Where the lines' files open: the readout's own room, or the full room once a steer switched it (memo/rooms.py).
+        self.rooms = source_rooms(reads_room(readout, self.room_dir), self.room_dir)
         self.built_at = built_at
         self.claims: dict[str, Claim] = {}
         self.unverified: list[tuple[Claim, list[str]]] = [(c, ["moved to the box by the merge"]) for c in readout.unverified]
@@ -208,7 +211,7 @@ class _Builder:
 
     def verify(self) -> None:
         for claim in self.r.claims:
-            checked, problems = check_claim(claim, self.room_dir)
+            checked, problems = check_claim_in(claim, self.rooms)
             if problems:
                 self.unverified.append((checked, problems))
             else:
@@ -431,7 +434,7 @@ class _Builder:
                                             else "No red flag in the checks run so far.")))
             return lines
         flagged = [c for c in self.claims.values() if c.severity == "flag" and self.replaced_by.get(c.id) not in self.claims]
-        arr = arr_side_by_side(list(self.claims.values()), self.room_dir)
+        arr = arr_side_by_side(list(self.claims.values()), self.rooms[0])
         covered: set[str] = set()
         if arr and any(cid in {c.id for c in flagged} for cid in arr[1]):
             text, ids = arr
@@ -696,7 +699,7 @@ class _Builder:
                     steps_missing=[n for n in ("link", "pieces", "top_flags") if not step_built(n)],
                     changes=[ChangeEntry(version=1, at=self.built_at, author="Tricorder",
                                          what=f"Drafted from the readout built {self.r.built_at}.")])
-        memo.sources = read_sources(memo, self.room_dir)
+        memo.sources = read_sources(memo, self.rooms, self.built_at)
         return memo
 
 
@@ -710,8 +713,9 @@ def empty_because(section: MemoSection) -> list[str]:
     return [ln.text for ln in section.lines if ln.kind == "gap"]
 
 
-def read_sources(memo: Memo, room_dir: Path) -> dict[str, SourceText]:
-    """The text at every cited source's locator, so the page opens it offline, and how it reads."""
+def read_sources(memo: Memo, rooms: list[Path], read_at: str = "") -> dict[str, SourceText]:
+    """The text at every cited source's locator, so the page opens it offline, and how it reads.
+    A file source opens only inside the rooms (memo/rooms.py), and carries the date the export read it."""
     stated = " ".join(c.text for c in memo.claims.values())
     out = {}
     for claim in memo.claims.values():
@@ -720,11 +724,13 @@ def read_sources(memo: Memo, room_dir: Path) -> dict[str, SourceText]:
             if k in out:
                 continue
             try:
-                text = text_at(s, room_dir)
+                text = text_in(s, rooms)
+                room = room_holding(s, rooms) if is_file_source(s) else rooms[0]
             except (LocatorError, OSError) as err:
                 out[k] = SourceText(key=k, text=f"Could not open this source: {err}", found=False)
                 continue
-            out[k] = SourceText(key=k, text=_window(text, s.quote), found=True, reads_as=reads_as(s, room_dir, stated))
+            out[k] = SourceText(key=k, text=_window(text, s.quote), found=True, reads_as=reads_as(s, room, stated),
+                                read_at=read_at[:10] if is_file_source(s) else "")
     return out
 
 

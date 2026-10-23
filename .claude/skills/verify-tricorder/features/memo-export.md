@@ -7,7 +7,8 @@ The operator exports a draft memo for the partners' meeting from a room's readou
 - `me-export` writes a new version, the page and the PDF from the room's readout.
 - `me-sections` gives the 16 sections in the template's order, each filled or naming its gap (`Not in the room:` or `Not in the readout yet:`).
 - `me-drill` opens a line's claims in one click and a claim's sources, with the agreeing and disagreeing claims, in the second.
-- `me-pdf` is the partner view: every cited claim footnoted with file, place, what it reads as and date read; no ask list, ids or blanks.
+- `me-pdf` is the partner view: every cited claim footnoted with file, place, what it reads as and date read (a file's date is the export's); no ask list, ids or blanks. Each version's PDF is built once, `memo_v<N>.pdf`, and `memo.pdf` is the latest.
+- `me-rooms` resolves every source in the readout's room, or in the full room once a "read the full room" steer switched a seed drop; never outside them.
 - `me-quotes` reruns the quote checker on every claim; a failure moves to the "could not verify" box in section 14.
 - `me-edit` applies many in-place edits as one version under the typed name, marks operator lines and figures with no source, detaches claims from a rewrite with a new figure, and on a 409 keeps the edits to reapply.
 - `me-views` gives the partner view by default (no plumbing, the answer first, empty sections in one line) and the operator view behind the toggle.
@@ -34,11 +35,15 @@ Preconditions:
 - **Edit in one sitting.** Run `NODE_PATH=... node docs/features/20261023.03_memo_export/spike/edit_in_page.js http://127.0.0.1:<port>/api/rooms/hollis_voice/memo.html <evidence dir> "Priya Shah"` on a fresh version 1. Exit 0; `edit_in_page.json` shows "Save 3 changes as version 2", a 409 because another author saved version 2 through the API first, the three changes kept and reapplied as version 3, the rewritten cash line with no claims and `$2,100,000` as the operator's figure, and section 2 opening with "Recommendation." Handles: `#edit-author`, `#edit-save`, `#edit-discard`, `#edit-status`, `#edit-reapply`, `.op-add`, `.op-tools`, `textarea.op-text`.
 - **PDF.** Save `GET /api/rooms/hollis_voice/memo.pdf` with `curl -o`. Its text has `[n] <file>, <locator>: ...` notes numbered from 1, every cited source's file and locator, no claim id, check name, checklist number, ask list or blank, no unformatted number, and section 2 opens with the recommendation once one is written.
 - **Versions.** Run `control.sh api GET /api/rooms/hollis_voice/memo/versions`. Body `[1,2,3]` after the edit drive.
+- **Steered seed drop.** Build hollis_voice and hollis_voice_seed_drop (`bin/smoke`), steer the seed drop with `POST /api/rooms/hollis_voice_seed_drop/steer` `{"piece": "retention", "sentence": "read the full room"}`, then `python3 -m memo data_room/hollis_voice_seed_drop`. `"could_not_verify": 0`. `POST /api/rooms/hollis_voice_seed_drop/source` with a `.steer1` line's `03_metrics/customer_mrr_by_month.csv` source gives 200, and `GET .../files/03_metrics/customer_mrr_by_month.csv` gives 200.
+- **Contained sources.** `POST /api/rooms/brasswick/source` with `uri` `../../CLAUDE.md`, an absolute path to `data_room/answer_key.json`, or `../hollis_voice_clean/...` gives 404 each.
+- **Edit limits and races.** An edit line of 2,001 characters or an author of 81 gives 422. Six concurrent edits on one `base_version` give one 200 and five 409s with `latest_version`, never a 500. Two `GET memo.pdf` in a row answer at once (the saved file).
 
 ## Gotchas
 
 - The pieces and top_flags merge steps are not built yet. The summary says "No verdicts yet" and lists the flags by severity instead.
 - `uvicorn` does not reload: restart with `cleanup` and `launch` after a code change, or the page is the old one.
+- A line holding `{{DATA}}` or markup prints as text; the embedded JSON has no raw `<`, `>` or `&`, so read it with `JSON.parse`, not a `</` replace.
 - The memo writes into this run's `out/<room>/memo/`; versions are never overwritten, so a second export makes version 2 and keeps operator lines.
 - `control.sh shot` captures `/`, the readout page, not the memo; use the drive script for the memo page.
 - Opened from disk the page is read only; editing appears only at `/api/rooms/<room>/memo.html`.

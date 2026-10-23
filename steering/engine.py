@@ -238,8 +238,7 @@ def carry(before: Readout, fresh: Readout, room: Path) -> Readout:
     merged, _, _ = _merge_all(before, fresh, None)
     merged = merged.model_copy(update={"built_at": fresh.built_at, "synthetic_notice": fresh.synthetic_notice,
                                        "connecting": fresh.connecting, "scores": fresh.scores})
-    out, _ = _rebuild(merged, room)
-    return out
+    return _rebuild(merged, room)
 
 
 def scenario_reasons(readout: Readout) -> Readout:
