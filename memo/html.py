@@ -234,6 +234,8 @@ body.editing .edit-bar { display:flex; }
 .edit-bar input { font:inherit; font-size:14px; padding:3px 6px; background:var(--bg); color:var(--fg); border:1px solid var(--line); border-radius:6px; width:12em; }
 .status { font-size:14px; color:var(--muted); }
 body:not(.operator) .aud-operator, body:not(.operator) .op-only, body.operator .partner-only { display:none !important; }
+/* The kind badges (Claim, Gap, Checklist) help the operator sort lines; a partner reads the sentence. */
+body:not(.operator) .line .kind { display:none; }
 body:not(.editing) .op-tools, body:not(.editing) .op-add { display:none; }
 a { color:inherit; }
 @media (max-width: 560px) { details.toc ol { columns:1; } .masthead h1 { font-size:19px; } }
@@ -282,6 +284,7 @@ SCRIPT = r"""
   // A sentence for a partner: drops sentences that name a checklist number, a script or a command.
   // The operator view shows the full text beside it.
   function plain(t) { return (t || '').replace(/\bthe \w+ scan's [a-z0-9_]+ check\b/g, 'a check on the room')
+    .replace(/\s*\((?:C\d\d(?:,\s*|\s+and\s+)?)+\)/g, '')
     .replace(/[^.]*(?:\bC\d\d\b|scans\/|\.py\b|python -m|Mislabel kind|\b[a-z]+(?:_[a-z0-9]+){2,}\b)[^.]*\.?\s*/g, '').trim(); }
   function both(cls, full) {
     var d = el('div', cls); var p = plain(full);
@@ -377,7 +380,8 @@ SCRIPT = r"""
   function askCard(id) {
     var a = M.asks[id]; var d = el('div', 'claim ask-item'); d.setAttribute('data-ask-id', id);
     if (!a) return d;
-    d.appendChild(el('div', null, a.what.charAt(0).toUpperCase() + a.what.slice(1) + (a.if_you_have_it ? ' (if you have it)' : '')));
+    var what = a.what.charAt(0).toUpperCase() + a.what.slice(1) + (a.if_you_have_it ? ' (if you have it)' : '');
+    d.appendChild(both(null, what));
     d.appendChild(both('meta', 'Why: ' + a.why));
     return d;
   }

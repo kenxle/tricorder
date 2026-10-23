@@ -31,7 +31,7 @@ from scans.memo import checklist as cl
 
 from memo.compose import arr_side_by_side
 from memo.model import ChangeEntry, ChecklistRef, GapRef, Memo, MemoLine, MemoSection, SourceText, source_key
-from memo.sources import reads_as
+from memo.sources import fmt_number, reads_as
 from memo.template import (
     BY_NUMBER, ENTRY_SECTION, FOLDER_SECTION, LABEL_SECTION, LABEL_WORDS, PIECE_SECTION, PIECE_WORDS,
     SECTIONS, STAGE_WORDS, VERDICT_WORDS, Section, scans_for,
@@ -66,12 +66,14 @@ FLAG_TITLES = {
 # Sentences that describe how a script worked, not what the room shows. The operator view keeps them.
 _PLUMBING = re.compile(r"[^.]*(?:scans/|\.py\b|Mislabel kind|\b[a-z]+(?:_[a-z0-9]+){2,}\b)[^.]*\.\s*")
 # "the redflags scan's rebuild_cohorts_from_customer_file check" names a script; a partner reads "a check on the room".
+# "(C34)" after a document names its checklist row; the drill shows the row itself.
+_CHECK_REF = re.compile(r"\s*\((?:C\d\d(?:,\s*|\s+and\s+)?)+\)")
 _CHECK_NAME = re.compile(r"\bthe \w+ scan's [a-z0-9_]+ check\b")
 
 
 def partner_text(text: str) -> str:
     """A claim's sentence without the sentences about the script that made it."""
-    out = _PLUMBING.sub("", _CHECK_NAME.sub("a check on the room", text)).strip()
+    out = _PLUMBING.sub("", _CHECK_REF.sub("", _CHECK_NAME.sub("a check on the room", text))).strip()
     return out or text
 
 
@@ -353,17 +355,21 @@ class _Builder:
                  MemoLine(id="s01-date", kind="fact", label="Date", text=self.built_at[:10])]
         re_line = company + (f", {STAGE_WORDS.get(self.stage, self.stage)}" if self.stage else "")
         src = self.counts.get("stage_source")
-        lines.append(MemoLine(id="s01-re", kind="fact", label="Re",
-                              text=re_line + (f" (stage from {src.split(':')[0]})." if src else ".")))
+        lines.append(MemoLine(id="s01-re", kind="fact", label="Re", text=re_line + "."))
+        if src:
+            lines.append(MemoLine(id="s01-stage", kind="fact", label="Stage from", text=src.split(":")[0] + ".", audience="operator"))
         raise_claims = self.claims_with_label("raise_amount", "pre_money", "post_money")
         if raise_claims:
-            by_label: dict[str, list[Claim]] = {}
+            # One line for the round, from the claims' own figures; each claim stays behind it and in the operator view.
+            first: dict[str, Claim] = {}
             for c in raise_claims:
-                by_label.setdefault(c.value.label, []).append(c)
-            for group in by_label.values():
-                ln = self.claim_line("s01", group[0])
-                ln.claim_ids = [c.id for c in group]
-                lines.append(ln)
+                first.setdefault(c.value.label, c)
+            words = {"raise_amount": "raising {}", "pre_money": "at {} pre-money", "post_money": "{} post-money"}
+            parts = [words[k].format(fmt_number(str(first[k].value.number), "", "money")) for k in words if k in first]
+            lines.append(MemoLine(id="s01-round", kind="claim", label="The round", composed=True,
+                                  text=parts[0][0].upper() + parts[0][1:] + "".join(" " + p for p in parts[1:]) + ".",
+                                  claim_ids=[c.id for c in raise_claims]))
+            lines += [self.claim_line("s01", c).model_copy(update={"audience": "operator"}) for c in raise_claims]
         else:
             # The summary says it for the partners ("what it raises: not assessed yet"); the head keeps it for the operator.
             lines.append(self.readout_gap("s01-raise", "The raise and the pre-money valuation: not assessed yet.",
@@ -404,9 +410,11 @@ class _Builder:
         covered: set[str] = set()
         if arr and any(cid in {c.id for c in flagged} for cid in arr[1]):
             text, ids = arr
-            # The flags the figures come from keep their own words, in the same line.
-            text += "".join(" " + partner_text(self.claims[i].text) for i in ids
-                            if self.claims[i].severity == "flag" and not (self.claims[i].value and self.claims[i].value.label == "arr"))
+            # The figures, short, so the first screen holds the other flags too. Why they differ is each
+            # flag's own sentence, one click away.
+            why = [i for i in ids if self.claims[i].severity == "flag" and not (self.claims[i].value and self.claims[i].value.label == "arr")]
+            if why:
+                text += f" Behind this line, {len(why)} check{'s' if len(why) != 1 else ''} on the room say why they differ."
             title = "ARR figures in the room disagree"
             lines.append(MemoLine(id="s02-flag-arr", kind="claim", label=f"Red flag 1: {title}", text=text,
                                   claim_ids=ids, severity="red", composed=True))

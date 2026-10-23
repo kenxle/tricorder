@@ -106,7 +106,9 @@ def test_each_version_gets_a_change_log_line_and_the_header_follows(readout):
     v3 = apply_edits(v2, [Edit(action="add", section=12, text="Ask about the pilot first.")], "Sam", LATER)
     changes = [ln for ln in v3.section(16).lines if ln.kind == "change"]
     assert [ln.label for ln in changes] == ["Version 1", "Version 2", "Version 3"]
-    assert f"Removed Tricorder's line {line_id} from section 7" in changes[1].text and "Dana" in changes[1].text
+    words = " ".join(v1.line(line_id)[1].text.split()[:6])
+    assert f"Removed Tricorder's line \"{words}...\" from section 7" in changes[1].text and line_id not in changes[1].text
+    assert changes[1].text and "Dana" in changes[1].text
     assert next(l for l in v3.section(1).lines if l.id == "s01-version").text == "Shared version 3. Made from version 2."
 
 

@@ -98,16 +98,20 @@ def apply_edits(memo: Memo, edits: list[Edit], author: str, at: str) -> Memo:
                 raise EditError(f"no line {e.line_id!r}") from None
             i = sec.lines.index(old)
             whose = "their own" if old.kind == "operator" else ("a blank" if old.kind == "slot" else "Tricorder's")
+            # The log names the line in words a partner reads, not by its id.
+            named = "blank" if old.kind == "slot" else f"line \"{' '.join(old.text.split()[:6])}...\""
+            if old.kind == "slot":
+                whose = "the"
             if old.kind != "operator":
                 new.withdrawn_lines.append(old.id)
             if e.action == "remove":
                 del sec.lines[i]
-                log.append(f"removed {whose} line {old.id} from section {sec.number}")
+                log.append(f"removed {whose} {named} from section {sec.number}")
             else:
                 line = _operator_line(new, v, k, e.text, e.claim_ids, author)
                 sec.lines[i] = line
                 detached = " (its claims detached: the new sentence states a figure they do not)" if e.claim_ids and not line.claim_ids else ""
-                log.append(f"replaced {whose} line {old.id} in section {sec.number}{detached}")
+                log.append(f"{'filled' if old.kind == 'slot' else 'replaced'} {whose} {named} in section {sec.number}{detached}")
     for sec in new.sections:
         sec.empty_because = empty_because(sec)
     what = "; ".join(log)
