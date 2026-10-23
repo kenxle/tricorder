@@ -7,9 +7,11 @@
     check_claim_in(claim, rooms) -> the quote check, with every file source held inside those rooms
 
 A readout reads its own room. After a "read the full room" steer on a seed drop,
-it reads the full room: steering records the switch as a row ["source", "",
-<seed drop>, <full room>] in its "steer N: what changed" panel (steering/engine.py,
-reads_room). The full room is the seed drop's sibling folder named without
+it reads the full room. Steering records the switch two ways, and either one counts:
+a "reads room" panel with the row [<full room>, "steer N"] (the marker
+scans/memo/merge.py names), and a row ["source", "", <seed drop>, <full room>] in
+the steer's "steer N: what changed" panel (the marker older readouts carry). A
+marker naming any folder other than the seed drop's own full room is ignored. The full room is the seed drop's sibling folder named without
 "_seed_drop", so it is always under the same rooms root. The seed drop's own files
 are byte-for-byte copies of the full room's, so every line, old or new, resolves
 there after a switch.
@@ -27,6 +29,7 @@ from schema.claim import Claim, Readout, Source
 from schema.readers import LocatorError, text_at
 
 SEED_SUFFIX = "_seed_drop"  # the same suffix steering/engine.py names
+READS_PANEL = "reads room"  # the switch marker's panel name
 SEALED_PREFIX = "answer_key"  # data_room/answer_key*.json: the planted flags, never served
 
 
@@ -49,11 +52,9 @@ def reads_room(readout: Readout | None, room_dir: str | Path) -> Path:
     full = full_room_of(own)
     if readout is None or full is None:
         return own
-    for panel in readout.panels:
-        if panel.name.startswith("steer ") and any(
-                len(r) > 3 and r[0] == "source" and r[3] == full.name for r in panel.rows):
-            return full
-    return own
+    named = {r[0] for p in readout.panels if p.name == READS_PANEL for r in p.rows if r}
+    named |= {r[3] for p in readout.panels if p.name.startswith("steer ") for r in p.rows if len(r) > 3 and r[0] == "source"}
+    return full if full.name in named else own
 
 
 def source_rooms(readout: Readout | None, room_dir: str | Path) -> list[Path]:
