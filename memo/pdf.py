@@ -20,11 +20,10 @@ from __future__ import annotations
 from pathlib import Path
 from xml.sax.saxutils import escape
 
-from memo.html import recommendation, visible
+from memo.html import HEAD_LABELS, recommendation, visible
 from memo.model import Memo, MemoLine, source_key
 
 FOOTNOTED = {"claim", "reading", "pieces", "operator"}
-HEAD_LABELS = ("To", "Date", "Re", "Version")
 
 
 def pdf_sections(memo: Memo) -> list[tuple[int, str, list[MemoLine]]]:

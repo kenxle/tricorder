@@ -30,6 +30,9 @@ KIND_WORDS = {
 }
 
 
+HEAD_LABELS = ("To", "Date", "Re", "Room data", "Version")
+
+
 def _e(text: str | None) -> str:
     return html.escape(text or "", quote=True)
 
@@ -104,9 +107,9 @@ def _header(memo: Memo) -> str:
     s = memo.section(1)
     parts = []
     for ln in s.lines:
-        if ln.kind == "fact" and ln.label in ("To", "Date", "Re", "Version"):
+        if ln.kind == "fact" and ln.label in HEAD_LABELS:
             parts.append(f'<span><strong>{_e(ln.label)}</strong> {_e(ln.text)}</span>')
-    others = [ln for ln in s.lines if not (ln.kind == "fact" and ln.label in ("To", "Date", "Re", "Version", "Synthetic"))]
+    others = [ln for ln in s.lines if not (ln.kind == "fact" and (ln.label in HEAD_LABELS or ln.label == "Synthetic"))]
     return (f'<section class="memo-section memo-head" id="s01" data-section="1"><h2 class="sr-only">1. Header</h2>'
             f'<p class="head-line">{" ".join(parts)}</p>'
             f'<ul class="lines">{"".join(_line(ln, 1) for ln in others)}</ul>'
@@ -177,12 +180,13 @@ details.toc a { color:inherit; }
 .memo-section { border-top:1px solid var(--line); padding-top:4px; margin-top:16px; }
 .memo-head { border-top:0; margin-top:0; }
 .memo-section h2 { font-size:18px; margin:8px 0 2px; }
-.memo-section.collapsed h2 { font-size:16px; color:var(--muted); display:inline; }
-.memo-section.collapsed { margin-top:6px; padding-top:2px; }
-.memo-section.collapsed .lines { display:inline; }
-.memo-section.collapsed .line { display:inline; border:0; }
-.memo-section.collapsed .line-open, .memo-section.collapsed .line-static { display:inline; padding:2px 4px; width:auto; }
+/* A section with nothing in it yet is one quiet line; its heading stays for screen readers and the contents list. */
+.memo-section.collapsed { margin-top:4px; padding-top:0; border-top:0; }
+.memo-section.collapsed h2 { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+body.operator .memo-section.collapsed h2 { position:static; width:auto; height:auto; clip:auto; white-space:normal; font-size:16px; }
+.memo-section.collapsed .line { border:0; }
 .memo-section.collapsed .kind { display:none; }
+.memo-section.collapsed .text { color:var(--muted); }
 .lines { list-style:none; padding:0; margin:0; }
 .line { margin:2px 0; border-left:3px solid transparent; }
 .line.sev-green { border-left-color:var(--green); }
@@ -229,7 +233,7 @@ textarea.op-text { width:100%; font:inherit; background:var(--bg); color:var(--f
 body.editing .edit-bar { display:flex; }
 .edit-bar input { font:inherit; font-size:14px; padding:3px 6px; background:var(--bg); color:var(--fg); border:1px solid var(--line); border-radius:6px; width:12em; }
 .status { font-size:14px; color:var(--muted); }
-body:not(.operator) .aud-operator, body:not(.operator) .op-only { display:none !important; }
+body:not(.operator) .aud-operator, body:not(.operator) .op-only, body.operator .partner-only { display:none !important; }
 body:not(.editing) .op-tools, body:not(.editing) .op-add { display:none; }
 a { color:inherit; }
 @media (max-width: 560px) { details.toc ol { columns:1; } .masthead h1 { font-size:19px; } }
@@ -275,12 +279,33 @@ SCRIPT = r"""
     return s + (u === 'percent' ? '%' : u === 'USD_per_month' ? ' a month' : u === 'USD_per_year' ? ' a year' : (u.indexOf('USD') === 0 ? '' : ' ' + u)) + (v.period ? ', ' + v.period : ''); }
   var CONF = {computed: 'Computed by a script', quoted: 'Quoted from the source', judged: 'Judged by a model', unverified: 'Could not verify'};
 
+  // A sentence for a partner: drops sentences that name a checklist number, a script or a command.
+  // The operator view shows the full text beside it.
+  function plain(t) { return (t || '').replace(/[^.]*(?:\bC\d\d\b|scans\/|\.py\b|python -m|Mislabel kind)[^.]*\.?\s*/g, '').trim(); }
+  function both(cls, full) {
+    var d = el('div', cls); var p = plain(full);
+    if (p) d.appendChild(el('span', p === full ? null : 'partner-only', p));
+    if (p !== full) d.appendChild(el('span', 'op-only', full));
+    return d;
+  }
+  // The quote as the quote checker finds it: any run of spaces or line breaks matches any other,
+  // and a number matches a cell holding the same number (186739.0 and 186739).
+  function find(text, quote) {
+    if (!quote || !quote.trim()) return null;
+    var words = quote.trim().split(/\s+/).map(function (w) { return w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); });
+    var hit = new RegExp(words.join('\\s+'), 'i').exec(text);
+    if (hit) return [hit.index, hit[0].length];
+    var q = Number(quote.replace(/,/g, '')), t = Number(text.trim().replace(/,/g, ''));
+    if (!isNaN(q) && !isNaN(t) && text.trim() && q === t) return [text.indexOf(text.trim()), text.trim().length];
+    return null;
+  }
   function highlight(pre, text, quote) {
-    var i = quote ? text.toLowerCase().indexOf(quote.toLowerCase()) : -1;
-    if (i < 0) { pre.textContent = text; return; }
+    var f = find(text, quote);
+    if (!f) { pre.textContent = text; return; }
+    var i = f[0], n = f[1];
     pre.appendChild(document.createTextNode(text.slice(0, i)));
-    pre.appendChild(el('mark', null, text.slice(i, i + quote.length)));
-    pre.appendChild(document.createTextNode(text.slice(i + quote.length)));
+    pre.appendChild(el('mark', null, text.slice(i, i + n)));
+    pre.appendChild(document.createTextNode(text.slice(i + n)));
     setTimeout(function () { var m = pre.querySelector('mark'); if (m) pre.scrollTop = Math.max(0, m.offsetTop - pre.offsetTop - 40); }, 0);
   }
   function sourceBlock(s) {
@@ -307,7 +332,7 @@ SCRIPT = r"""
   function claimCard(id, lineText) {
     var c = M.claims[id]; var d = el('div', 'claim'); d.setAttribute('data-claim-id', id);
     if (!c) { d.textContent = 'This claim is not in this memo.'; return d; }
-    if (c.text !== lineText) d.appendChild(el('div', null, c.text));
+    if (c.text !== lineText && plain(c.text) !== lineText) d.appendChild(both(null, c.text));
     var meta = el('div', 'meta');
     meta.appendChild(document.createTextNode((c.value ? money(c.value) + '. ' : '') + CONF[c.confidence] + '. '));
     meta.appendChild(el('span', 'op-only', 'Check ' + c.check.name + ', ' + id + '. '));
@@ -352,12 +377,12 @@ SCRIPT = r"""
     var a = M.asks[id]; var d = el('div', 'claim ask-item'); d.setAttribute('data-ask-id', id);
     if (!a) return d;
     d.appendChild(el('div', null, a.what.charAt(0).toUpperCase() + a.what.slice(1) + (a.if_you_have_it ? ' (if you have it)' : '')));
-    d.appendChild(el('div', 'meta', 'Why: ' + a.why));
+    d.appendChild(both('meta', 'Why: ' + a.why));
     return d;
   }
   function fill(drill, l) {
     if (l.kind === 'gap') {
-      if (l.gap && l.gap.missing_from === 'room') drill.appendChild(el('div', 'meta', 'What would close it: ' + l.gap.would_need));
+      if (l.gap && l.gap.missing_from === 'room') drill.appendChild(both('meta', 'What would close it: ' + l.gap.would_need));
       if (l.gap && l.gap.missing_from === 'readout') {
         drill.appendChild(el('div', 'meta', 'Tricorder has not assessed this yet; it fills in when the checks that feed it run.'));
         drill.appendChild(el('div', 'meta op-only', 'Why: ' + l.gap.why + '. To fill it: ' + l.gap.would_need + '.'));

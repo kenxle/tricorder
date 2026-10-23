@@ -313,9 +313,11 @@ class _Builder:
         if raise_claims:
             lines += [self.claim_line("s01", c) for c in raise_claims]
         else:
+            # The summary says it for the partners ("what it raises: not assessed yet"); the head keeps it for the operator.
             lines.append(self.readout_gap("s01-raise", "The raise and the pre-money valuation: not assessed yet.",
                                           "no claim in the readout is labelled raise_amount or pre_money",
-                                          "a claim from the pitch itself piece (FRAMEWORKS 1.10, the cap table reconciliation)"))
+                                          "a claim from the pitch itself piece (FRAMEWORKS 1.10, the cap table reconciliation)",
+                                          audience="operator"))
         periods = sorted(c.value.period for c in self.claims.values()
                          if c.value and c.value.period and re.fullmatch(r"\d{4}-\d{2}", c.value.period))
         if periods:

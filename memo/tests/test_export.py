@@ -102,7 +102,7 @@ def built_pdf(tmp_path):
 def test_every_claim_in_the_pdf_has_a_note_naming_its_file_and_locator(tmp_path):
     memo, text = built_pdf(tmp_path)
     for sec in memo.sections:
-        if sec.number not in (13, 15):  # the operator's sections print once the operator writes them
+        if sec.number not in (1, 13, 15):  # the head prints as one line; the operator's sections print once written
             assert f"{sec.number}. {sec.title.split(',')[0]}" in text, sec.title
     notes = re.findall(r"\[(\d+)\] ", text)
     assert notes and [int(n) for n in notes] == list(range(1, len(notes) + 1))
