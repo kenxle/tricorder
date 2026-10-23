@@ -241,3 +241,80 @@ def test_a_reply_before_any_readout_builds_one(env):
     assert receipt["status_before"] == "unknown" and receipt["asks_before"] is None
     assert receipt["status_after"] == "found"
     assert (out / room.name / "readout.json").exists()
+
+
+# One file for several lines, several files in one add, and a receipt in plain words (FR-R27, FR-R28) --
+
+
+def test_one_file_can_answer_several_requests(brasswick):
+    rows = ik.resolve_requests("C97, C46,C97", None)
+    assert [r.id for r in rows] == ["C97", "C46"]
+    n = next(i for i, a in enumerate(brasswick.asks, start=1) if a.checklist_id == "C22")
+    assert [r.id for r in ik.resolve_requests(f"{n},C97", brasswick)] == ["C22", "C97"]
+    with pytest.raises(ik.IntakeError) as err:
+        ik.resolve_requests("C22,C24", None)
+    assert err.value.status == 422
+
+
+def _claim(cid, text, scan="redflags"):
+    from schema.claim import Check, Claim, Source
+    return Claim(id=cid, scan=scan, text=text, check=Check(kind="script", name="x"), confidence="computed",
+                 sources=[Source(kind="file", uri="05_team/hiring_plan.csv", locator="row 2", quote="q")])
+
+
+def test_changes_are_said_in_plain_words(brasswick):
+    from schema.claim import TopFlag
+    same = ik.changes(brasswick, brasswick.model_copy(deep=True), [])
+    assert same == ["No check reads this file yet, so no number changed."]
+    after = brasswick.model_copy(deep=True)
+    after.claims.append(_claim("redflags-900", "Hiring plan adds 6 engineers before the round closes."))
+    after.top_flags.append(TopFlag(kind="red", piece="burn_and_runway", rank=9, text="Runway falls under 12 months.",
+                                   claim_ids=["redflags-900"]))
+    from schema.claim import Piece
+    before = brasswick.model_copy(deep=True)
+    before.pieces = [Piece(name="burn_and_runway", verdict="mixed", reason="r")]
+    after.pieces = [Piece(name="burn_and_runway", verdict="looking_weak", reason="r")]
+    said = " ".join(ik.changes(before, after, []))
+    assert "1 new claim: Hiring plan adds 6 engineers before the round closes." in said
+    assert "New red flag: Runway falls under 12 months." in said
+    assert "Burn and runway moved from mixed to looking weak." in said and "No check reads" not in said
+    assert "redflags" not in said and "Scans that were waiting" not in said
+
+
+def test_hiring_plan_receipt_says_what_changed(env):
+    _, out = env
+    room = ik.copy_room(BRASSWICK)
+    build(room, out)
+    receipt = ik.receive(room, PLAN, "Brasswick Hiring Plan.csv", "C22")
+    assert receipt["summary"][0] == "Coverage now finds Hiring plan and future org."
+    assert "No check reads this file yet, so no number changed." in receipt["summary"]
+    assert any(s.startswith("The ask list is down from") for s in receipt["summary"])
+
+
+def test_several_files_in_one_add_rerun_once(env, monkeypatch):
+    _, out = env
+    room = ik.copy_room(BRASSWICK)
+    build(room, out)
+    calls = []
+    real = ik.run_scans
+    monkeypatch.setattr(ik, "run_scans", lambda r, names: calls.append(names) or real(r, names))
+    receipt = ik.receive_batch(room, [(PLAN, "Hiring Plan.csv", "C22"), (PDF, "Our references.pdf", "C97,C46")])
+    assert len(calls) == 1
+    files = receipt["files"]
+    assert [f["saved"] for f in files] == ["05_team/hiring_plan.csv", "05_team/reference_list_our_references.pdf"]
+    assert [a["checklist_id"] for a in files[1]["answers"]] == ["C97", "C46"]
+    assert files[0]["answers"][0]["status_after"] == "found"
+    assert "Coverage now finds Reference list: management, customers, current investors, advisors." in receipt["summary"]
+    log = json.loads((out / room.name / "founder_requests.json").read_text())
+    assert [e["original_name"] for e in log["received"][-2:]] == ["Hiring Plan.csv", "Our references.pdf"]
+
+
+def test_a_batch_with_one_bad_file_writes_nothing(env):
+    room = ik.copy_room(BRASSWICK)
+    before = _snapshot(room)
+    with pytest.raises(ik.IntakeError) as err:
+        ik.receive_batch(room, [(PLAN, "plan.csv", "C22"), (b"MZ\x90", "refs.pdf", "C97")])
+    assert err.value.status == 415 and "refs.pdf" in err.value.message
+    with pytest.raises(ik.IntakeError):
+        ik.receive_batch(room, [])
+    assert _snapshot(room) == before
