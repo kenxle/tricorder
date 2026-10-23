@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Strip Board Style Guide</title>
+<meta name="description" content="Tricorder style guide, Direction C: Strip board.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400;500;600&family=Spectral:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+/* Direction C, Strip board. Tokens first; every colour lives here. */
+:root {
+  color-scheme: light;
+  --ground: #EDEDE7;
+  --holder: #DBDBD3;
+  --strip: #FCFDFA;
+  --ink: #1B1B15;
+  --ink-2: #505147;
+  --rule: #CBCBC2;
+  --rule-2: #99998F;
+  --accent: #615F00;
+  --accent-hover: #4C4A00;
+  --accent-tint: #E9EBCC;
+  --on-accent: #FFFFFF;
+  --focus: #615F00;
+  --strong: #006A66;
+  --strong-tint: #D6F2EF;
+  --weak: #B6341F;
+  --weak-tint: #FFE3DD;
+  --mixed: #995600;
+  --mixed-tint: #FFEBD2;
+  --none: #586474;
+  --none-tint: #E7ECF2;
+  --band: #16170F;
+  --bay: #22221A;
+  --band-holder: #3A3B2E;
+  --band-ink: #E8E8E1;
+  --band-ink-2: #AEAFA4;
+  --band-accent: #C6C541;
+  --rail: #494A30;
+
+  --f-display: "Spectral", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --f-body: "Work Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --f-data: "Red Hat Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 72px;
+  --pill: 999px;
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ground: #14140F;
+    --holder: #23231D;
+    --strip: #1E1E1A;
+    --ink: #E8E8E2;
+    --ink-2: #B1B2A9;
+    --rule: #36362F;
+    --rule-2: #56564D;
+    --accent: #C6C541;
+    --accent-hover: #D8D75C;
+    --accent-tint: #30300F;
+    --on-accent: #14140F;
+    --focus: #C6C541;
+    --strong: #60CCC5;
+    --strong-tint: #0F3230;
+    --weak: #F47D67;
+    --weak-tint: #47211A;
+    --mixed: #EDB161;
+    --mixed-tint: #402C11;
+    --none: #A2AFC1;
+    --none-tint: #272C31;
+    --band: #070804;
+    --bay: #0F0F09;
+    --band-holder: #2C2C24;
+    --band-ink: #E8E8E1;
+    --band-ink-2: #AEAFA4;
+    --band-accent: #C6C541;
+    --rail: #4F4F35;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ground: #14140F;
+  --holder: #23231D;
+  --strip: #1E1E1A;
+  --ink: #E8E8E2;
+  --ink-2: #B1B2A9;
+  --rule: #36362F;
+  --rule-2: #56564D;
+  --accent: #C6C541;
+  --accent-hover: #D8D75C;
+  --accent-tint: #30300F;
+  --on-accent: #14140F;
+  --focus: #C6C541;
+  --strong: #60CCC5;
+  --strong-tint: #0F3230;
+  --weak: #F47D67;
+  --weak-tint: #47211A;
+  --mixed: #EDB161;
+  --mixed-tint: #402C11;
+  --none: #A2AFC1;
+  --none-tint: #272C31;
+  --band: #070804;
+  --bay: #0F0F09;
+  --band-holder: #2C2C24;
+  --band-ink: #E8E8E1;
+  --band-ink-2: #AEAFA4;
+  --band-accent: #C6C541;
+  --rail: #4F4F35;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--accent-hover); text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.band :focus-visible { outline-color: var(--band-accent); }
+.band .strip :focus-visible, .band .drawer :focus-visible { outline-color: var(--focus); }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: var(--s4); top: var(--s4); background: var(--strip); padding: var(--s2) var(--s4); z-index: 10; border-radius: var(--pill); }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
+.prose { max-width: 66ch; }
+.num, .data, td.num { font-variant-numeric: tabular-nums; }
+
+/* Type */
+h1, h2, h3, .display { font-family: var(--f-display); font-weight: 600; letter-spacing: -0.01em; color: var(--ink); }
+h1 { font-size: clamp(2.25rem, 5.2vw, 3.6rem); line-height: 1.06; margin: 0 0 var(--s5); }
+h2 { font-size: clamp(1.6rem, 3vw, 2rem); line-height: 1.15; margin: 0 0 var(--s4); }
+h3 { font-size: 1.375rem; line-height: 1.25; margin: 0 0 var(--s2); }
+p { margin: 0 0 var(--s4); }
+.lead { font-size: 1.1875rem; line-height: 1.55; color: var(--ink-2); max-width: 60ch; }
+.label {
+  font-family: var(--f-data); font-weight: 500; font-size: 0.6875rem; line-height: 1.4;
+  letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-2);
+}
+.small { font-size: 0.9375rem; line-height: 1.5; }
+.mono { font-family: var(--f-data); font-variant-numeric: tabular-nums; }
+
+/* Top bar */
+.topbar { border-bottom: 1px solid var(--rule-2); background: var(--ground); }
+.topbar .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s3) var(--s5); padding-top: var(--s3); padding-bottom: var(--s3); }
+.wordmark { font-family: var(--f-display); font-weight: 700; font-size: 1.375rem; color: var(--ink); text-decoration: none; letter-spacing: 0.01em; display: inline-flex; align-items: center; gap: var(--s2); }
+.wordmark svg { width: 22px; height: 22px; }
+.topbar nav { display: flex; flex-wrap: wrap; gap: var(--s1) var(--s4); font-size: 0.9375rem; }
+.topbar nav a { color: var(--ink-2); text-decoration: none; }
+.topbar nav a:hover, .topbar nav a[aria-current] { color: var(--ink); text-decoration: underline; }
+.topbar .end { margin-left: auto; display: flex; gap: var(--s2); align-items: center; flex-wrap: wrap; }
+
+/* Controls: pills */
+.btn {
+  display: inline-flex; align-items: center; gap: var(--s2);
+  font-family: var(--f-body); font-weight: 500; font-size: 0.9375rem; line-height: 1.2;
+  padding: 11px 20px; border-radius: var(--pill); border: 1.5px solid transparent;
+  text-decoration: none; cursor: pointer; background: none; color: inherit;
+}
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--on-accent); text-decoration: none; }
+.btn-secondary { border-color: var(--rule-2); color: var(--ink); background: var(--strip); }
+.btn-secondary:hover { border-color: var(--ink); color: var(--ink); text-decoration: none; }
+.btn-quiet { color: var(--accent); padding-left: var(--s2); padding-right: var(--s2); text-decoration: underline; text-underline-offset: 3px; }
+.btn-sm { font-size: 0.8125rem; padding: 6px 14px; }
+.btn[disabled] { opacity: 0.45; cursor: not-allowed; }
+.seg { display: inline-flex; border: 1.5px solid var(--rule-2); border-radius: var(--pill); padding: 2px; background: var(--strip); }
+.seg button { font: 500 0.75rem/1 var(--f-data); letter-spacing: 0.06em; text-transform: uppercase; border: 0; background: none; color: var(--ink-2); padding: 7px 11px; border-radius: var(--pill); cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--strip); }
+
+.input { display: flex; gap: var(--s2); flex-wrap: wrap; align-items: center; }
+.input input {
+  flex: 1 1 16rem; min-width: 0; font: 400 1rem/1.3 var(--f-body); color: var(--ink);
+  background: var(--strip); border: 1.5px solid var(--rule-2); border-radius: var(--pill); padding: 11px 18px;
+}
+.input input::placeholder { color: var(--ink-2); }
+.input input:hover { border-color: var(--ink-2); }
+.input input:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-color: var(--accent); }
+
+/* Source chip */
+.chip {
+  display: inline-flex; align-items: center; gap: 6px; vertical-align: 1px;
+  font: 500 0.8125rem/1.25 var(--f-data); font-variant-numeric: tabular-nums;
+  color: var(--ink); background: var(--strip); text-decoration: none;
+  border: 1px solid var(--rule-2); border-radius: var(--pill); padding: 3px 10px 3px 8px; margin: 2px 0;
+  max-width: 100%; white-space: normal; text-align: left;
+}
+.chip svg { width: 12px; height: 12px; flex: none; color: var(--ink-2); }
+.chip:hover { border-color: var(--accent); color: var(--ink); background: var(--accent-tint); text-decoration: none; }
+
+.nw { white-space: nowrap; }
+.nw .chip { white-space: normal; }
+
+/* Marks */
+.mk { width: 14px; height: 14px; flex: none; }
+.m-strong { --m: var(--strong); --m-tint: var(--strong-tint); }
+.m-weak   { --m: var(--weak);   --m-tint: var(--weak-tint); }
+.m-mixed  { --m: var(--mixed);  --m-tint: var(--mixed-tint); }
+.m-none   { --m: var(--none);   --m-tint: var(--none-tint); }
+.m-plain  { --m: var(--ink-2);  --m-tint: var(--strip); }
+.mword {
+  display: inline-flex; align-items: center; gap: 6px; color: var(--m);
+  font: 600 0.75rem/1.2 var(--f-data); letter-spacing: 0.07em; text-transform: uppercase;
+}
+
+/* Bays, holders, strips */
+.bay {
+  background: var(--holder); border-left: 3px solid var(--rule-2); border-right: 3px solid var(--rule-2);
+  padding: var(--s3) var(--s4) var(--s4) 30px;
+}
+.bay + .bay { margin-top: var(--s5); }
+.bay-head { display: flex; justify-content: space-between; gap: var(--s3); flex-wrap: wrap; border-bottom: 1px solid var(--rule-2); padding-bottom: var(--s2); margin: 0 0 var(--s3) -14px; }
+.band .bay { background: var(--bay); border-color: var(--rail); }
+.band .bay-head { border-color: var(--rail); }
+.band .bay-head .label { color: var(--band-ink-2); }
+
+.holder { background: var(--rule); border: 1px solid var(--rule-2); padding: 3px; }
+.band .holder { background: var(--band-holder); border-color: var(--rail); }
+.holder + .holder { margin-top: var(--s2); }
+.holder.cocked { margin-left: -16px; margin-right: 16px; }
+
+.strip {
+  display: grid; grid-template-columns: 44px minmax(10rem, 14rem) minmax(0, 1fr) auto;
+  background: var(--strip); color: var(--ink); border: 1px solid var(--rule);
+}
+.strip.no-act { grid-template-columns: 44px minmax(10rem, 14rem) minmax(0, 1fr); }
+.strip > .f { padding: var(--s3) var(--s4); border-left: 1px solid var(--rule); min-width: 0; }
+.strip > .f > .label { display: block; margin-bottom: 2px; }
+.tab {
+  background: var(--m-tint); color: var(--m); border-right: 1px solid var(--rule);
+  display: flex; flex-direction: column; align-items: center; gap: var(--s2); padding: var(--s3) 0;
+}
+.tab .mk { width: 16px; height: 16px; }
+.tab .vword { writing-mode: vertical-rl; transform: rotate(180deg); font: 600 0.6875rem/1 var(--f-data); letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; }
+.callsign { font-family: var(--f-display); font-weight: 600; font-size: 1.1875rem; line-height: 1.25; margin: 2px 0 4px; display: block; }
+.reading { margin: 0; font-size: 1rem; line-height: 1.6; }
+.reading + .reading { margin-top: var(--s2); }
+.counts { display: flex; gap: var(--s2); align-items: flex-start; }
+.box { border: 1px solid var(--rule-2); min-width: 4.25rem; text-align: center; padding: 4px 6px 6px; }
+.box .label { display: block; font-size: 0.625rem; }
+.box .v { font: 600 1.125rem/1.2 var(--f-data); font-variant-numeric: tabular-nums; }
+.slot { font-family: var(--f-data); color: var(--ink-2); border-bottom: 1px dashed var(--rule-2); }
+
+/* Operator annotation (the steer). Accent ink: the operator's pen. */
+.note {
+  background: var(--accent-tint); color: var(--ink);
+  padding: var(--s3) var(--s4); margin-top: 3px; font-size: 0.9688rem; line-height: 1.55;
+}
+.note .label { color: var(--accent); display: flex; gap: 6px; align-items: center; margin-bottom: 2px; }
+.note .label svg { width: 13px; height: 13px; }
+.note q { font-family: var(--f-display); font-style: italic; font-size: 1.0625rem; quotes: "\201C" "\201D"; }
+
+/* Drill-down drawer under a strip */
+.drawer { background: var(--strip); border: 1px solid var(--rule); border-top: 1px dashed var(--rule-2); margin-top: 0; padding: var(--s4); color: var(--ink); }
+.drawer[hidden] { display: none; }
+.drawer h4 { font: 600 1.0625rem/1.3 var(--f-display); margin: 0 0 var(--s3); display: flex; gap: var(--s2); align-items: center; }
+
+/* Tables */
+.tbl { overflow-x: auto; border: 1px solid var(--rule-2); background: var(--strip); }
+.tbl table { border-collapse: collapse; width: 100%; min-width: 30rem; font-size: 0.9375rem; }
+.tbl th { font: 500 0.6875rem/1.3 var(--f-data); letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-2); text-align: left; padding: var(--s2) var(--s3); border-bottom: 1px solid var(--rule-2); background: var(--holder); }
+.tbl td { padding: var(--s2) var(--s3); border-bottom: 1px solid var(--rule); vertical-align: top; }
+.tbl tr:last-child td { border-bottom: 0; }
+.tbl td.num, .tbl th.num { text-align: right; font-family: var(--f-data); white-space: nowrap; }
+.tbl td.where { font-family: var(--f-data); font-size: 0.8438rem; color: var(--ink-2); }
+.after { font-size: 0.9688rem; margin: var(--s3) 0 0; }
+.ask { margin: var(--s3) 0 0; padding-top: var(--s3); border-top: 1px solid var(--rule); font-size: 0.9688rem; }
+.ask strong { font-family: var(--f-data); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); margin-right: 6px; }
+
+/* Value line: sources side by side, no winner */
+.vline { margin: var(--s4) 0 var(--s2); color: var(--ink-2); }
+.vline svg { width: 100%; height: auto; display: block; max-width: 640px; }
+.vline text { font-family: var(--f-data); font-size: 11px; fill: var(--ink-2); }
+.vline .lab { fill: var(--ink); font-size: 11.5px; }
+
+/* Dark instrument band: once per page. */
+.band { background: var(--band); color: var(--band-ink); position: relative; padding: var(--s8) 0; }
+.band::before, .band::after {
+  content: ""; position: absolute; left: 0; right: 0; height: 9px;
+  background:
+    repeating-linear-gradient(90deg, var(--rail) 0 1px, transparent 1px 64px),
+    repeating-linear-gradient(90deg, var(--rail) 0 1px, transparent 1px 8px);
+  background-size: 100% 9px, 100% 4px; background-repeat: no-repeat;
+}
+.band::before { top: 0; }
+.band::after { bottom: 0; transform: scaleY(-1); }
+.band h2, .band h3 { color: var(--band-ink); }
+.band p, .band .lead { color: var(--band-ink-2); }
+.band .strip p, .band .drawer p, .band .note { color: var(--ink); }
+.band .drawer .after, .band .drawer .ask { color: var(--ink); }
+.band a { color: var(--band-accent); }
+.band .strip a, .band .drawer a { color: var(--accent); }
+.synth {
+  display: inline-flex; align-items: center; gap: var(--s2); font: 500 0.75rem/1.35 var(--f-data);
+  letter-spacing: 0.04em; color: var(--band-ink); border: 1px solid var(--rail); border-radius: var(--pill); padding: 5px 12px;
+}
+.synth::before { content: ""; width: 8px; height: 8px; border: 1.5px solid currentColor; transform: rotate(45deg); flex: none; }
+
+/* Sections on the light ground */
+.sec { padding: var(--s8) 0; border-top: 1px solid var(--rule-2); }
+.sec:first-of-type { border-top: 0; }
+.kicker { display: flex; gap: var(--s3); align-items: baseline; margin-bottom: var(--s3); }
+.kicker .idx { font: 500 0.75rem/1 var(--f-data); color: var(--accent); letter-spacing: 0.08em; }
+
+.ruled { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule-2); }
+.ruled li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: var(--s3); padding: var(--s3) 0; border-bottom: 1px solid var(--rule); }
+.ruled li .idx { font: 500 0.8125rem/1.6 var(--f-data); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+
+@media (max-width: 720px) {
+  .strip, .strip.no-act { grid-template-columns: 34px minmax(0, 1fr); }
+  .strip > .tab { grid-row: 1 / span 3; }
+  .strip > .f { grid-column: 2; }
+  .strip > .f + .f { border-top: 1px solid var(--rule); }
+  .tab .vword { font-size: 0.625rem; }
+  .bay { padding: var(--s3) var(--s2) var(--s3) 18px; border-left-width: 2px; border-right-width: 2px; }
+  .bay-head { margin-left: -10px; }
+  .holder.cocked { margin-left: -10px; margin-right: 10px; }
+  .drawer { padding: var(--s3); }
+  .sec { padding: var(--s7) 0; }
+  .band { padding: var(--s7) 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .btn, .chip, .seg button, .input input { transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease; }
+  html { scroll-behavior: smooth; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+
+/* Style guide layout */
+.intro { padding: var(--s8) 0 var(--s7); }
+.intro h1 { margin-bottom: var(--s4); }
+.intro .lead { margin-bottom: var(--s6); }
+.seedbay .strip { grid-template-columns: 44px minmax(8rem, 12rem) minmax(0, 1fr) minmax(0, 1.3fr); }
+.seedbay .tab { --m: var(--accent); --m-tint: var(--accent-tint); }
+.seedbay .callsign { font-size: 1.0625rem; }
+.seedbay .reading { font-size: 0.9688rem; }
+
+.sw { display: inline-block; width: 28px; height: 28px; border: 1px solid rgba(128,128,128,0.45); vertical-align: middle; }
+.sw-cell { white-space: nowrap; font-family: var(--f-data); font-size: 0.8125rem; }
+.sw-cell .sw { margin-right: var(--s2); }
+.tokens td.tok { font-family: var(--f-data); font-size: 0.8438rem; white-space: nowrap; }
+.tokens table { min-width: 40rem; }
+.grp td { background: var(--holder); font: 600 0.6875rem/1.3 var(--f-data); letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-2); }
+
+.faces { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s4); margin: var(--s5) 0 var(--s6); }
+.face { border: 1px solid var(--rule-2); background: var(--strip); padding: var(--s4); min-width: 0; }
+.face .big { font-size: 2.75rem; line-height: 1.1; margin: var(--s2) 0; color: var(--ink); }
+.face p { margin: 0; color: var(--ink-2); font-size: 0.9375rem; }
+.scale td:first-child { white-space: nowrap; }
+.spec-display { font-family: var(--f-display); font-weight: 600; }
+.spec-body { font-family: var(--f-body); }
+.spec-data { font-family: var(--f-data); }
+
+.spaces { display: grid; gap: var(--s2); margin: var(--s4) 0 var(--s6); }
+.space { display: grid; grid-template-columns: 5rem minmax(0, 1fr) minmax(0, 2fr); gap: var(--s3); align-items: center; font-size: 0.9375rem; }
+.space .bar { height: 12px; background: var(--accent); }
+.space .tok { font-family: var(--f-data); font-size: 0.8125rem; }
+.space .use { color: var(--ink-2); }
+.lines { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: var(--s4); }
+.lines > div { border: 1px solid var(--rule-2); background: var(--strip); padding: var(--s4); }
+.lines .demo { height: 40px; margin-bottom: var(--s3); display: flex; align-items: center; justify-content: center; }
+.lines p { margin: 0; font-size: 0.9375rem; color: var(--ink-2); }
+
+.comp { margin-top: var(--s6); }
+.comp:first-of-type { margin-top: var(--s5); }
+.comp > .label { display: block; color: var(--band-ink-2); margin-bottom: var(--s2); }
+.comp > .label b { color: var(--band-accent); font-weight: 600; margin-right: var(--s2); }
+.block { background: var(--strip); color: var(--ink); border: 1px solid var(--rule-2); padding: var(--s4); }
+.block h4 { font: 600 1.0625rem/1.3 var(--f-display); margin: 0 0 var(--s3); display: flex; gap: var(--s2); align-items: center; flex-wrap: wrap; }
+.block ul { margin: 0; padding-left: 1.2em; }
+.block li { margin-bottom: var(--s1); }
+.block p { color: var(--ink); }
+.block.edge { border-color: var(--m); }
+.band .block p, .band .block li { color: var(--ink); }
+.comps2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s4); }
+
+.ctrls { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: var(--s4); margin-top: var(--s4); }
+.ctrls > div { border: 1px solid var(--rule-2); background: var(--strip); padding: var(--s4); }
+.ctrls .row { display: flex; flex-wrap: wrap; gap: var(--s2); align-items: center; margin-top: var(--s3); }
+
+.rules { list-style: none; margin: var(--s4) 0 0; padding: 0; counter-reset: r; border-top: 1px solid var(--rule-2); }
+.rules li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: var(--s3); padding: var(--s4) 0; border-bottom: 1px solid var(--rule); }
+.rules li::before { counter-increment: r; content: counter(r, decimal-leading-zero); font: 500 0.8125rem/1.7 var(--f-data); color: var(--accent); }
+.rules b { display: block; font-weight: 600; margin-bottom: 2px; }
+.rules span { color: var(--ink-2); }
+.foot { border-top: 1px solid var(--rule-2); padding: var(--s5) 0 var(--s6); }
+.foot .wrap { display: flex; flex-wrap: wrap; gap: var(--s4); justify-content: space-between; font-size: 0.9375rem; color: var(--ink-2); }
+
+@media (max-width: 860px) {
+  .faces, .comps2 { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 720px) {
+  .seedbay .strip { grid-template-columns: 34px minmax(0, 1fr); }
+  .space { grid-template-columns: 4rem minmax(0, 1fr); }
+  .space .use { grid-column: 1 / -1; }
+  .strip > .f.counts-f { padding-top: var(--s2); }
+}
+
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="mk-strong" viewBox="0 0 16 16"><path d="M8 1.5 15 14H1z" fill="currentColor"/></symbol>
+  <symbol id="mk-weak" viewBox="0 0 16 16"><path d="M1 2h14L8 14.5z" fill="currentColor"/></symbol>
+  <symbol id="mk-mixed" viewBox="0 0 16 16"><path d="M8 1.6 14.4 8 8 14.4 1.6 8z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 1.6v12.8L1.6 8z" fill="currentColor"/></symbol>
+  <symbol id="mk-none" viewBox="0 0 16 16"><circle cx="8" cy="8" r="5.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-dasharray="2.7 2"/></symbol>
+  <symbol id="mk-gap" viewBox="0 0 16 16"><rect x="2" y="2" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-dasharray="2.7 2"/></symbol>
+  <symbol id="mk-clean" viewBox="0 0 16 16"><rect x="1.8" y="1.8" width="12.4" height="12.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m4.6 8.2 2.3 2.4 4.5-5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="mk-dis" viewBox="0 0 16 16"><path d="M2 5.5h12M2 10.5h12M11.2 1.8 4.8 14.2" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+  <symbol id="mk-unv" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.8 12.2 12.2 3.8" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="mk-pen" viewBox="0 0 16 16"><path d="M2.2 13.8 3 10.2l7.6-7.6 2.8 2.8-7.6 7.6zM9.2 4l2.8 2.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+  <symbol id="mk-doc" viewBox="0 0 12 12"><path d="M2.5 1h4.8L9.5 3.2V11h-7zM7.2 1v2.3h2.3" fill="none" stroke="currentColor" stroke-width="1.2"/></symbol>
+  <symbol id="mk-holder" viewBox="0 0 22 22"><rect x="1" y="5" width="20" height="12" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="1" y="5" width="5" height="12" fill="currentColor"/><path d="M9 9.5h9M9 12.5h6" stroke="currentColor" stroke-width="1.4"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to the guide</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="wordmark" href="home.html" aria-label="Tricorder, home"><svg aria-hidden="true"><use href="#mk-holder"/></svg>Tricorder</a>
+    <nav aria-label="Guide">
+      <a href="#colour">Colour</a>
+      <a href="#type">Type</a>
+      <a href="#space">Space and lines</a>
+      <a href="#readout">Readout parts</a>
+      <a href="#controls">Controls</a>
+      <a href="#rules">Rules</a>
+      <a href="home.html">Sample homepage</a>
+      <a href="../index.html">All directions</a>
+    </nav>
+    <div class="end">
+      <div class="seg" role="group" aria-label="Theme">
+        <button type="button" data-set-theme="auto" aria-pressed="true">Auto</button>
+        <button type="button" data-set-theme="light" aria-pressed="false">Light</button>
+        <button type="button" data-set-theme="dark" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="intro">
+    <div class="wrap">
+      <p class="label">Direction C, style guide</p>
+      <h1>Strip board</h1>
+      <p class="lead">Tricorder lays a startup out the way a controller lays out a board of flight strips: one paper strip per piece of the company, each in its holder, each with its mark, its reading and its sources. The light ground is the board and the paper; the one dark band is the instrument, where the readout itself shows through.</p>
+
+      <div class="bay seedbay" role="region" aria-label="How the seed shaped it">
+        <div class="bay-head"><span class="label">The seed, 2026-10-22T19:51:56Z, slice 231371cc4cbd3ec51611</span><span class="label">Pick, then what it became</span></div>
+        <div class="holder"><div class="strip">
+          <div class="tab" aria-hidden="true"><span class="vword">Motif</span></div>
+          <div class="f"><span class="label">Motif</span><span class="callsign">Air traffic strip board</span></div>
+          <div class="f"><span class="label">Took</span><p class="reading">Strips in holders, one row each. Ruled fields with small printed labels. A strip slid out of line to keep an eye on it.</p></div>
+          <div class="f"><span class="label">Where</span><p class="reading">Each piece is a strip. The top flags sit cocked out of the bay. A steer is the controller's pencil note on the strip.</p></div>
+        </div></div>
+        <div class="holder"><div class="strip">
+          <div class="tab" aria-hidden="true"><span class="vword">Hue</span></div>
+          <div class="f"><span class="label">Accent</span><span class="callsign">109 degrees</span></div>
+          <div class="f"><span class="label">Took</span><p class="reading">A dark olive in light, a lamp-lit chartreuse in dark. The paint of an old board, not a neon pop.</p></div>
+          <div class="f"><span class="label">Where</span><p class="reading">Only what the operator touches or makes. The "looking strong" mark moves to teal so no finding ever wears the accent.</p></div>
+        </div></div>
+        <div class="holder"><div class="strip">
+          <div class="tab" aria-hidden="true"><span class="vword">Type</span></div>
+          <div class="f"><span class="label">Type</span><span class="callsign">Spectral, Work Sans, Red Hat Mono</span></div>
+          <div class="f"><span class="label">Took</span><p class="reading">The printed callsign, the controller's plain text, the strip's machine-set boxes.</p></div>
+          <div class="f"><span class="label">Where</span><p class="reading">Spectral names a piece. Work Sans carries every sentence. Red Hat Mono holds figures, files and field labels.</p></div>
+        </div></div>
+        <div class="holder"><div class="strip">
+          <div class="tab" aria-hidden="true"><span class="vword">Density</span></div>
+          <div class="f"><span class="label">Density</span><span class="callsign">Measured</span></div>
+          <div class="f"><span class="label">Took</span><p class="reading">A document's rhythm: 17px body, 1.6 leading, a 66 character measure.</p></div>
+          <div class="f"><span class="label">Where</span><p class="reading">Strips breathe with 12px and 16px padding. Sections sit 72px apart. One idea per strip.</p></div>
+        </div></div>
+        <div class="holder"><div class="strip">
+          <div class="tab" aria-hidden="true"><span class="vword">Ground</span></div>
+          <div class="f"><span class="label">Ground</span><span class="callsign">Light, one dark band</span></div>
+          <div class="f"><span class="label">Took</span><p class="reading">Paper strips lit against a dark bay, the way a board looks under a lamp.</p></div>
+          <div class="f"><span class="label">Where</span><p class="reading">One band per page, and the readout always lives in it. Selling and explaining stay on the light ground.</p></div>
+        </div></div>
+        <div class="holder"><div class="strip">
+          <div class="tab" aria-hidden="true"><span class="vword">Shape</span></div>
+          <div class="f"><span class="label">Shape</span><span class="callsign">Pill controls, square panels</span></div>
+          <div class="f"><span class="label">Took</span><p class="reading">Strips and holders are cut square. What you press is round.</p></div>
+          <div class="f"><span class="label">Where</span><p class="reading">Buttons, inputs, source chips and the theme switch are pills. Strips, tables and notes have no radius at all.</p></div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="colour" aria-labelledby="colour-h">
+    <div class="wrap">
+      <div class="kicker"><span class="idx">01</span><span class="label">Colour tokens</span></div>
+      <h2 id="colour-h">Colour</h2>
+      <p class="prose">Every colour is a token on <code class="mono">:root</code>, redefined for dark. The accent belongs to the operator. The four marks belong to the checks. They never trade places, and a mark always has its shape and its word.</p>
+      <div class="tbl tokens" role="region" aria-label="Colour tokens" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Token</th><th scope="col">Light</th><th scope="col">Dark</th><th scope="col">Role</th></tr></thead>
+          <tbody>
+<tr class="grp"><td colspan="4">Ground and paper</td></tr>
+<tr><td class="tok">--ground</td><td class="sw-cell"><span class="sw" style="background:#EDEDE7"></span>#EDEDE7</td><td class="sw-cell"><span class="sw" style="background:#14140F"></span>#14140F</td><td>Page ground. The grey of a strip board panel, never cream.</td></tr>
+<tr><td class="tok">--holder</td><td class="sw-cell"><span class="sw" style="background:#DBDBD3"></span>#DBDBD3</td><td class="sw-cell"><span class="sw" style="background:#23231D"></span>#23231D</td><td>Bays on the light ground, table heads, quiet fills.</td></tr>
+<tr><td class="tok">--strip</td><td class="sw-cell"><span class="sw" style="background:#FCFDFA"></span>#FCFDFA</td><td class="sw-cell"><span class="sw" style="background:#1E1E1A"></span>#1E1E1A</td><td>The strip: every panel that holds a finding, a table or a control.</td></tr>
+<tr><td class="tok">--rule</td><td class="sw-cell"><span class="sw" style="background:#CBCBC2"></span>#CBCBC2</td><td class="sw-cell"><span class="sw" style="background:#36362F"></span>#36362F</td><td>Hairlines between strip fields and table rows.</td></tr>
+<tr><td class="tok">--rule-2</td><td class="sw-cell"><span class="sw" style="background:#99998F"></span>#99998F</td><td class="sw-cell"><span class="sw" style="background:#56564D"></span>#56564D</td><td>Panel edges, control outlines, section rules.</td></tr>
+<tr class="grp"><td colspan="4">Ink</td></tr>
+<tr><td class="tok">--ink</td><td class="sw-cell"><span class="sw" style="background:#1B1B15"></span>#1B1B15</td><td class="sw-cell"><span class="sw" style="background:#E8E8E2"></span>#E8E8E2</td><td>Body text and headings. 16.9 to 1 on the strip in light.</td></tr>
+<tr><td class="tok">--ink-2</td><td class="sw-cell"><span class="sw" style="background:#505147"></span>#505147</td><td class="sw-cell"><span class="sw" style="background:#B1B2A9"></span>#B1B2A9</td><td>Labels, secondary text, file locations. 7.8 to 1 on the strip.</td></tr>
+<tr class="grp"><td colspan="4">Accent, hue 109: the operator's pen</td></tr>
+<tr><td class="tok">--accent</td><td class="sw-cell"><span class="sw" style="background:#615F00"></span>#615F00</td><td class="sw-cell"><span class="sw" style="background:#C6C541"></span>#C6C541</td><td>Primary buttons, links, focus, and every mark the operator makes: a steer, a note.</td></tr>
+<tr><td class="tok">--accent-hover</td><td class="sw-cell"><span class="sw" style="background:#4C4A00"></span>#4C4A00</td><td class="sw-cell"><span class="sw" style="background:#D8D75C"></span>#D8D75C</td><td>Hover on accent controls.</td></tr>
+<tr><td class="tok">--accent-tint</td><td class="sw-cell"><span class="sw" style="background:#E9EBCC"></span>#E9EBCC</td><td class="sw-cell"><span class="sw" style="background:#30300F"></span>#30300F</td><td>Ground of an operator note and a hovered chip.</td></tr>
+<tr><td class="tok">--on-accent</td><td class="sw-cell"><span class="sw" style="background:#FFFFFF"></span>#FFFFFF</td><td class="sw-cell"><span class="sw" style="background:#14140F"></span>#14140F</td><td>Text on an accent button.</td></tr>
+<tr class="grp"><td colspan="4">Marks (never the accent, never colour alone)</td></tr>
+<tr><td class="tok">--strong</td><td class="sw-cell"><span class="sw" style="background:#006A66"></span>#006A66</td><td class="sw-cell"><span class="sw" style="background:#60CCC5"></span>#60CCC5</td><td>Looking strong, green flag, corroborated. Teal, hue 190, so it never reads as the olive accent. Shape: up triangle.</td></tr>
+<tr><td class="tok">--strong-tint</td><td class="sw-cell"><span class="sw" style="background:#D6F2EF"></span>#D6F2EF</td><td class="sw-cell"><span class="sw" style="background:#0F3230"></span>#0F3230</td><td>Strong tab ground.</td></tr>
+<tr><td class="tok">--weak</td><td class="sw-cell"><span class="sw" style="background:#B6341F"></span>#B6341F</td><td class="sw-cell"><span class="sw" style="background:#F47D67"></span>#F47D67</td><td>Looking weak, red flag, flag, disagreement. Shape: down triangle.</td></tr>
+<tr><td class="tok">--weak-tint</td><td class="sw-cell"><span class="sw" style="background:#FFE3DD"></span>#FFE3DD</td><td class="sw-cell"><span class="sw" style="background:#47211A"></span>#47211A</td><td>Weak tab ground.</td></tr>
+<tr><td class="tok">--mixed</td><td class="sw-cell"><span class="sw" style="background:#995600"></span>#995600</td><td class="sw-cell"><span class="sw" style="background:#EDB161"></span>#EDB161</td><td>Mixed. Shape: half-filled diamond.</td></tr>
+<tr><td class="tok">--mixed-tint</td><td class="sw-cell"><span class="sw" style="background:#FFEBD2"></span>#FFEBD2</td><td class="sw-cell"><span class="sw" style="background:#402C11"></span>#402C11</td><td>Mixed tab ground.</td></tr>
+<tr><td class="tok">--none</td><td class="sw-cell"><span class="sw" style="background:#586474"></span>#586474</td><td class="sw-cell"><span class="sw" style="background:#A2AFC1"></span>#A2AFC1</td><td>Not enough in the room, and a gap. Shape: dashed circle, or a dashed square for a gap.</td></tr>
+<tr><td class="tok">--none-tint</td><td class="sw-cell"><span class="sw" style="background:#E7ECF2"></span>#E7ECF2</td><td class="sw-cell"><span class="sw" style="background:#272C31"></span>#272C31</td><td>Not-enough tab ground.</td></tr>
+<tr class="grp"><td colspan="4">The instrument band (one per page)</td></tr>
+<tr><td class="tok">--band</td><td class="sw-cell"><span class="sw" style="background:#16170F"></span>#16170F</td><td class="sw-cell"><span class="sw" style="background:#070804"></span>#070804</td><td>Ground of the one dark band.</td></tr>
+<tr><td class="tok">--bay</td><td class="sw-cell"><span class="sw" style="background:#22221A"></span>#22221A</td><td class="sw-cell"><span class="sw" style="background:#0F0F09"></span>#0F0F09</td><td>A bay inside the band.</td></tr>
+<tr><td class="tok">--band-holder</td><td class="sw-cell"><span class="sw" style="background:#3A3B2E"></span>#3A3B2E</td><td class="sw-cell"><span class="sw" style="background:#2C2C24"></span>#2C2C24</td><td>The holder around a strip in the band.</td></tr>
+<tr><td class="tok">--rail</td><td class="sw-cell"><span class="sw" style="background:#494A30"></span>#494A30</td><td class="sw-cell"><span class="sw" style="background:#4F4F35"></span>#4F4F35</td><td>Bay rails and the tick rule on the band edges.</td></tr>
+<tr><td class="tok">--band-ink</td><td class="sw-cell"><span class="sw" style="background:#E8E8E1"></span>#E8E8E1</td><td class="sw-cell"><span class="sw" style="background:#E8E8E1"></span>#E8E8E1</td><td>Headings in the band.</td></tr>
+<tr><td class="tok">--band-ink-2</td><td class="sw-cell"><span class="sw" style="background:#AEAFA4"></span>#AEAFA4</td><td class="sw-cell"><span class="sw" style="background:#AEAFA4"></span>#AEAFA4</td><td>Text and labels in the band.</td></tr>
+<tr><td class="tok">--band-accent</td><td class="sw-cell"><span class="sw" style="background:#C6C541"></span>#C6C541</td><td class="sw-cell"><span class="sw" style="background:#C6C541"></span>#C6C541</td><td>Links and focus in the band, where the light accent is too dark.</td></tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="type" aria-labelledby="type-h">
+    <div class="wrap">
+      <div class="kicker"><span class="idx">02</span><span class="label">Type</span></div>
+      <h2 id="type-h">Three faces, three jobs</h2>
+      <div class="faces">
+        <div class="face"><span class="label">Display</span><div class="big spec-display">Spectral</div><p>600 for names of pieces, headings and the hero. Italic 400 for a quote and for the operator's instruction. Never for a figure.</p></div>
+        <div class="face"><span class="label">Body</span><div class="big spec-body" style="font-weight:500">Work Sans</div><p>400 for every sentence, 500 for controls, 600 for emphasis inside a sentence. The readout's prose is always this face.</p></div>
+        <div class="face"><span class="label">Data</span><div class="big spec-data" style="font-weight:500">Red Hat Mono</div><p>Figures in tables, file names in chips, the small capitals labels on strip fields. Tabular figures, always.</p></div>
+      </div>
+      <div class="tbl scale" role="region" aria-label="Type scale" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Step</th><th scope="col">Face and weight</th><th scope="col" class="num">Size / line</th><th scope="col">Use</th></tr></thead>
+          <tbody>
+            <tr><td class="spec-display" style="font-size:1.6rem">Display</td><td>Spectral 600</td><td class="num">36 to 58 / 1.06</td><td>The hero line and a page title, once per page.</td></tr>
+            <tr><td class="spec-display" style="font-size:1.4rem">Heading</td><td>Spectral 600</td><td class="num">26 to 32 / 1.15</td><td>Section heads.</td></tr>
+            <tr><td class="spec-display" style="font-size:1.19rem">Callsign</td><td>Spectral 600</td><td class="num">19 / 1.25</td><td>The name of a piece or a flag on its strip.</td></tr>
+            <tr><td class="spec-body" style="font-size:1.19rem">Lead</td><td>Work Sans 400</td><td class="num">19 / 1.55</td><td>The paragraph under a heading.</td></tr>
+            <tr><td class="spec-body">Body</td><td>Work Sans 400</td><td class="num">17 / 1.6</td><td>All prose. A strip's reading is 16 / 1.6.</td></tr>
+            <tr><td class="spec-body" style="font-size:0.9375rem">Small</td><td>Work Sans 400</td><td class="num">15 / 1.5</td><td>Captions, notes, attributions.</td></tr>
+            <tr><td class="spec-data" style="font-size:0.9375rem">Figure</td><td>Red Hat Mono 400</td><td class="num">15 / 1.4</td><td>Numbers in tables, right aligned.</td></tr>
+            <tr><td class="spec-data" style="font-size:0.8125rem">Chip</td><td>Red Hat Mono 500</td><td class="num">13 / 1.25</td><td>A source: file and place.</td></tr>
+            <tr><td><span class="label">Field label</span></td><td>Red Hat Mono 500, caps, +0.09em</td><td class="num">11 / 1.4</td><td>The printed box label on a strip field: Piece, Reading, Sources.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="space" aria-labelledby="space-h">
+    <div class="wrap">
+      <div class="kicker"><span class="idx">03</span><span class="label">Spacing, corners, lines</span></div>
+      <h2 id="space-h">Space and lines</h2>
+      <p class="prose">An 8px rhythm with a 4px half step. Strips stack 8px apart in a bay, as they would in a rack. Corners are square on every panel and fully round on every control.</p>
+      <div class="spaces">
+        <div class="space"><span class="tok">--s1 4</span><span class="bar" style="width:4px"></span><span class="use">Gap inside a mark word; holder padding.</span></div>
+        <div class="space"><span class="tok">--s2 8</span><span class="bar" style="width:8px"></span><span class="use">Between strips in a bay; between chips.</span></div>
+        <div class="space"><span class="tok">--s3 12</span><span class="bar" style="width:12px"></span><span class="use">Strip field padding, top and bottom.</span></div>
+        <div class="space"><span class="tok">--s4 16</span><span class="bar" style="width:16px"></span><span class="use">Strip field padding, sides; the phone gutter.</span></div>
+        <div class="space"><span class="tok">--s5 24</span><span class="bar" style="width:24px"></span><span class="use">Between bays; under a heading block.</span></div>
+        <div class="space"><span class="tok">--s6 32</span><span class="bar" style="width:32px"></span><span class="use">Between columns.</span></div>
+        <div class="space"><span class="tok">--s7 48</span><span class="bar" style="width:48px"></span><span class="use">Section padding on a phone.</span></div>
+        <div class="space"><span class="tok">--s8 72</span><span class="bar" style="width:72px"></span><span class="use">Section padding on a desktop; the band's padding.</span></div>
+      </div>
+      <div class="lines">
+        <div><div class="demo"><span style="display:block;width:100%;border-top:1px solid var(--rule)"></span></div><span class="label">Hairline, 1px rule</span><p>Between fields on a strip and rows in a table.</p></div>
+        <div><div class="demo"><span style="display:block;width:100%;height:28px;border:1px solid var(--rule-2);background:var(--strip)"></span></div><span class="label">Panel edge, 1px rule-2</span><p>Every square panel. No shadow anywhere.</p></div>
+        <div><div class="demo"><span style="display:block;width:100%;height:28px;border:1px solid var(--weak);background:var(--weak-tint)"></span></div><span class="label">Mark outline, 1px</span><p>A tab outlined in its mark colour. The operator note is an accent tint with no edge.</p></div>
+        <div><div class="demo"><span style="display:block;width:100%;height:28px;border:1px solid var(--rule-2);border-radius:999px;background:var(--strip)"></span></div><span class="label">Control, radius 999px</span><p>Buttons, inputs, chips. Nothing else is round.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="readout" aria-labelledby="readout-h">
+    <div class="wrap">
+      <p class="label band-k" style="color:var(--band-accent)">04, the instrument band</p>
+      <h2 id="readout-h">The readout's parts, drawn for real</h2>
+      <p class="lead prose">Figures are from the Hollis Voice room. Slots in brackets are filled by the run; the counts always come from the run. Synthetic data room for Deal Flow NYC 2026. Not a real company.</p>
+
+      <div class="comp">
+        <span class="label"><b>A</b>Green flag and red flag, cocked out of the bay</span>
+        <div class="bay">
+          <div class="bay-head"><span class="label">Top of the readout</span><span class="label">Green flags first</span></div>
+          <div class="holder cocked m-strong">
+            <div class="strip no-act">
+              <div class="tab" aria-hidden="true"><svg class="mk"><use href="#mk-strong"/></svg><span class="vword">Green flag</span></div>
+              <div class="f"><span class="label">Holds up</span><span class="callsign">The round adds up.</span><span class="mword"><svg class="mk" aria-hidden="true"><use href="#mk-strong"/></svg>Green flag</span></div>
+              <div class="f"><span class="label">Reading</span>
+                <p class="reading"><span class="num">$9,000,000</span>, stated in the deck and the same in the cap table and the model
+                  <button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>pitch_deck.pdf, slide 13</button>
+                  <button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>cap_table.xlsx, Cap_Table, B24</button>
+                  <span class="nw"><button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>financial_model.xlsx, SERIES_A_RAISE</button>.</span>
+                  Nothing in the room contradicts it.</p>
+              </div>
+            </div>
+          </div>
+          <div class="holder cocked m-weak">
+            <div class="strip no-act">
+              <div class="tab" aria-hidden="true"><svg class="mk"><use href="#mk-weak"/></svg><span class="vword">Red flag</span></div>
+              <div class="f"><span class="label">Does not hold up</span><span class="callsign">Runway leaves out most of the hiring plan.</span><span class="mword"><svg class="mk" aria-hidden="true"><use href="#mk-weak"/></svg>Red flag</span></div>
+              <div class="f"><span class="label">Reading</span>
+                <p class="reading"><span class="num">37 months</span> stated
+                  <button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>financial_model.xlsx, RUNWAY_MONTHS</button>
+                  <span class="nw"><button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>pitch_deck.pdf, slide 11</button>;</span>
+                  <span class="num">19 months</span> found with all 24 planned hires paid for
+                  <span class="nw"><button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>hiring_plan.csv, rerun through the Cash_Runway tab</button>.</span>
+                  Burn and runway reads looking weak.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="comp">
+        <span class="label"><b>B</b>Verdict lines, one per mark, in the overview bay</span>
+        <div class="bay">
+          <div class="bay-head"><span class="label">The overview</span><span class="label">One strip per piece</span></div>
+          <div class="holder m-strong"><div class="strip">
+            <div class="tab" aria-hidden="true"><svg class="mk"><use href="#mk-strong"/></svg><span class="vword">Strong</span></div>
+            <div class="f"><span class="label">Piece</span><span class="callsign"><span class="slot">[Piece]</span></span><span class="mword"><svg class="mk" aria-hidden="true"><use href="#mk-strong"/></svg>Looking strong</span></div>
+            <div class="f"><span class="label">Reading</span><p class="reading"><span class="slot">[The corroborated number, in one sentence, with its sources.]</span> Nothing in the room contradicts it.</p></div>
+            <div class="f counts-f"><div class="counts"><div class="box"><span class="label">Corrob.</span><span class="v">[n]</span></div><div class="box"><span class="label">Contra.</span><span class="v">0</span></div></div></div>
+          </div></div>
+          <div class="holder m-weak"><div class="strip">
+            <div class="tab" aria-hidden="true"><svg class="mk"><use href="#mk-weak"/></svg><span class="vword">Weak</span></div>
+            <div class="f"><span class="label">Piece</span><span class="callsign">Traction and revenue</span><span class="mword"><svg class="mk" aria-hidden="true"><use href="#mk-weak"/></svg>Looking weak</span></div>
+            <div class="f"><span class="label">Reading</span><p class="reading">ARR is stated four ways, from about <span class="num">$3,000,000</span> on the pitch video to <span class="num">$2,060,868</span> in the subscription rows
+              <button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>pitch video, 0:35</button>
+              <span class="nw"><button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>customer_mrr_by_month.csv</button>.</span></p></div>
+            <div class="f counts-f"><div class="counts"><div class="box"><span class="label">Corrob.</span><span class="v">[n]</span></div><div class="box"><span class="label">Contra.</span><span class="v">[n]</span></div></div></div>
+          </div></div>
+          <div class="holder m-mixed"><div class="strip">
+            <div class="tab" aria-hidden="true"><svg class="mk"><use href="#mk-mixed"/></svg><span class="vword">Mixed</span></div>
+            <div class="f"><span class="label">Piece</span><span class="callsign"><span class="slot">[Piece]</span></span><span class="mword"><svg class="mk" aria-hidden="true"><use href="#mk-mixed"/></svg>Mixed</span></div>
+            <div class="f"><span class="label">Reading</span><p class="reading"><span class="slot">[One number that holds and one that does not, each with its source.]</span> No flag.</p></div>
+            <div class="f counts-f"><div class="counts"><div class="box"><span class="label">Corrob.</span><span class="v">[n]</span></div><div class="box"><span class="label">Contra.</span><span class="v">[n]</span></div></div></div>
+          </div></div>
+          <div class="holder m-none"><div class="strip">
+            <div class="tab" aria-hidden="true"><svg class="mk"><use href="#mk-none"/></svg><span class="vword">Not enough</span></div>
+            <div class="f"><span class="label">Piece</span><span class="callsign">Team</span><span class="mword"><svg class="mk" aria-hidden="true"><use href="#mk-none"/></svg>Not enough in the room</span></div>
+            <div class="f"><span class="label">Reading</span><p class="reading">Not in the room: IP assignment agreements. No number in this piece has a second source.</p></div>
+            <div class="f counts-f"><div class="counts"><div class="box"><span class="label">Corrob.</span><span class="v">0</span></div><div class="box"><span class="label">Contra.</span><span class="v">0</span></div></div></div>
+          </div></div>
+        </div>
+      </div>
+
+      <div class="comps2">
+        <div class="comp">
+          <span class="label"><b>C</b>Corroboration table</span>
+          <div class="block edge m-strong">
+            <h4><span class="mword"><svg class="mk" aria-hidden="true"><use href="#mk-strong"/></svg>Corroborated</span> Series A raise, $9,000,000</h4>
+            <div class="tbl" role="region" aria-label="Series A raise, by source" tabindex="0"><table>
+              <thead><tr><th scope="col">Source</th><th scope="col" class="num">States</th><th scope="col">Where</th></tr></thead>
+              <tbody>
+                <tr><td>Deck</td><td class="num">$9,000,000</td><td class="where">pitch_deck.pdf, slide 13</td></tr>
+                <tr><td>Cap table</td><td class="num">$9,000,000</td><td class="where">cap_table.xlsx, Cap_Table, B24</td></tr>
+                <tr><td>Financial model</td><td class="num">$9,000,000</td><td class="where">financial_model.xlsx, Assumptions, SERIES_A_RAISE</td></tr>
+              </tbody></table></div>
+            <p class="after">3 independent sources agree. Nothing in the room contradicts it.</p>
+          </div>
+        </div>
+        <div class="comp">
+          <span class="label"><b>D</b>Disagreement table</span>
+          <div class="block edge m-weak">
+            <h4><span class="mword"><svg class="mk" aria-hidden="true"><use href="#mk-dis"/></svg>Disagreement</span> ARR</h4>
+            <div class="tbl" role="region" aria-label="ARR, by source" tabindex="0"><table>
+              <thead><tr><th scope="col">Source</th><th scope="col" class="num">States</th><th scope="col">Where</th></tr></thead>
+              <tbody>
+                <tr><td>Pitch video</td><td class="num">about $3,000,000</td><td class="where">pitch video, 0:35</td></tr>
+                <tr><td>Deck</td><td class="num">$2,500,000</td><td class="where">pitch_deck.pdf, slide 3</td></tr>
+                <tr><td>Financial model</td><td class="num">$2,240,868</td><td class="where">financial_model.xlsx, ARR_Build, ARR_TOTAL</td></tr>
+              </tbody></table></div>
+            <p class="after">Largest gap: about $760,000, between the video and the model. The deck is $259,132 above the model. The room does not explain either gap.</p>
+            <p class="ask"><strong>Ask the founder</strong>Which of these is ARR as of 2026-09-30, and can you walk us from the billing data to it?</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="comps2">
+        <div class="comp">
+          <span class="label"><b>E</b>Flag, in its drill-down</span>
+          <div class="block edge m-weak">
+            <h4><span class="mword"><svg class="mk" aria-hidden="true"><use href="#mk-weak"/></svg>Flag</span> A pilot is counted as ARR</h4>
+            <ul>
+              <li>The document shows: ARR $2,240,868, including $180,000 a year from the Marlow Veterinary Group pilot <span class="nw"><button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>financial_model.xlsx, ARR_Build</button>.</span></li>
+              <li>The check found: $2,060,868 from subscription rows only <span class="nw"><button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>customer_mrr_by_month.csv</button>.</span> The pilot runs six months for $90,000 in total, either side can end it on 30 days notice, and it carries no duty to convert <span class="nw"><button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>pilot_agreement_marlow.pdf, clauses 2, 7 and 8</button>.</span></li>
+              <li>Difference: <span class="num">$180,000</span>.</li>
+            </ul>
+            <p class="ask"><strong>Ask the founder</strong>Has Marlow signed anything beyond the pilot?</p>
+          </div>
+        </div>
+        <div class="comp">
+          <span class="label"><b>F</b>Gap, clean check, could not verify</span>
+          <div class="block edge m-none">
+            <h4><span class="mword"><svg class="mk" aria-hidden="true"><use href="#mk-gap"/></svg>Not in the room</span> IP assignment agreements</h4>
+            <ul>
+              <li>Needed for: confirming the founders and every contractor assigned their work to the company.</li>
+              <li>Ask for: signed invention assignment agreements for both founders and every contractor who wrote code.</li>
+            </ul>
+          </div>
+          <div class="block edge m-plain" style="margin-top:var(--s2)">
+            <h4><span class="mword"><svg class="mk" aria-hidden="true"><use href="#mk-clean"/></svg>Clean</span> Cash reconciles.</h4>
+            <p style="margin:0">Money raised before the Series A, less every month's net loss to 2026-09-30, was compared with the model's cash. The two differ by <span class="num">$0.24</span> on <span class="num">$1,800,000</span>. <button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>cap_table.xlsx</button> <button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>financial_model.xlsx</button></p>
+          </div>
+          <div class="block edge m-plain" style="margin-top:var(--s2)">
+            <h4><span class="mword"><svg class="mk" aria-hidden="true"><use href="#mk-unv"/></svg>Could not verify</span> <span class="slot">[the claim]</span></h4>
+            <p style="margin:0">Its quote was not found in <span class="slot">[source]</span>. It is left out of the memo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="comp">
+        <span class="label"><b>G</b>Steered piece: the operator's note rides on the strip, in the accent</span>
+        <div class="bay">
+          <div class="holder m-weak">
+            <div class="strip no-act">
+              <div class="tab" aria-hidden="true"><svg class="mk"><use href="#mk-weak"/></svg><span class="vword">Weak</span></div>
+              <div class="f"><span class="label">Piece</span><span class="callsign">Burn and runway</span><span class="mword"><svg class="mk" aria-hidden="true"><use href="#mk-weak"/></svg>Looking weak</span></div>
+              <div class="f"><span class="label">Reading</span><p class="reading">Runway: <span class="num">19 months</span> with the full hiring plan <span class="nw"><button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>hiring_plan.csv</button>.</span> <span class="num">37 months</span> in the model <span class="nw"><button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>financial_model.xlsx, RUNWAY_MONTHS</button>.</span></p></div>
+            </div>
+            <div class="note">
+              <span class="label"><svg aria-hidden="true"><use href="#mk-pen"/></svg>Operator steer</span>
+              Rewritten on your instruction: <q>Lead with the runway on the full hiring plan.</q> The reason now opens on 19 months. Verdict unchanged. The checks' numbers are unchanged.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="comp">
+        <span class="label"><b>H</b>Ask-list line and source chips</span>
+        <div class="block">
+          <p style="margin:0 0 var(--s3)"><strong>Ask for: current monthly burn and the bank balance behind it.</strong> Why: the burn rebuilt from the hiring plan is above the model's, and the model's $1,800,000 of cash has no second source. Feeds: burn and runway.</p>
+          <button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>pitch_deck.pdf, slide 3</button>
+          <button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>pitch video, 0:35</button>
+          <button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>financial_model.xlsx, ARR_Build, ARR_TOTAL</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="controls" aria-labelledby="controls-h">
+    <div class="wrap">
+      <div class="kicker"><span class="idx">05</span><span class="label">Controls</span></div>
+      <h2 id="controls-h">Pills you press</h2>
+      <p class="prose">Every control is a pill, so the eye can tell at once what moves and what is a record. Tab through this section to see the focus ring: 3px, accent, 2px off the edge.</p>
+      <div class="ctrls">
+        <div><span class="label">Buttons</span>
+          <div class="row"><button class="btn btn-primary" type="button">See the readout</button><button class="btn btn-secondary" type="button">Drill down</button><button class="btn btn-quiet" type="button">Open the memo</button></div>
+          <div class="row"><button class="btn btn-primary btn-sm" type="button">Steer</button><button class="btn btn-secondary btn-sm" type="button">Ask the founder</button><button class="btn btn-secondary btn-sm" type="button" disabled>Still running</button></div>
+        </div>
+        <div><span class="label">Text input</span>
+          <div class="row input"><input type="text" aria-label="Steer this piece in one sentence" placeholder="Steer this piece in one sentence"><button class="btn btn-primary btn-sm" type="button">Steer</button></div>
+        </div>
+        <div><span class="label">Source chip and switch</span>
+          <div class="row"><button class="chip" type="button"><svg aria-hidden="true"><use href="#mk-doc"/></svg>hiring_plan.csv</button></div>
+          <div class="row"><div class="seg" role="group" aria-label="Theme, example"><button type="button" data-set-theme="auto" aria-pressed="true">Auto</button><button type="button" data-set-theme="light" aria-pressed="false">Light</button><button type="button" data-set-theme="dark" aria-pressed="false">Dark</button></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="rules" aria-labelledby="rules-h">
+    <div class="wrap">
+      <div class="kicker"><span class="idx">06</span><span class="label">Rules a builder applies without asking</span></div>
+      <h2 id="rules-h">Rules</h2>
+      <ol class="rules prose">
+        <li><div><b>One strip per piece, one piece per strip.</b> <span>The operator scans down a bay the way a controller scans a rack. Two findings on one strip hide one of them.</span></div></li>
+        <li><div><b>A strip's fields are always in this order: tab, name, reading, action.</b> <span>The eye learns where the mark and the number are, and stops hunting.</span></div></li>
+        <li><div><b>Only the top green and red flags are cocked out of the bay.</b> <span>A cocked strip means "watch this one". If everything is cocked, nothing is.</span></div></li>
+        <li><div><b>Every mark carries its shape and its word, in the tab and in the name field.</b> <span>Colour alone fails for colour-blind readers, in print and on a projector at Betaworks.</span></div></li>
+        <li><div><b>The accent never marks a finding.</b> <span>The olive belongs to the operator: buttons, links, focus, a steer. A finding in olive would read as the operator's own opinion.</span></div></li>
+        <li><div><b>Green flag and strong are teal, not green.</b> <span>The accent's hue is 109; a true green beside it would read as the same family. Teal keeps "the documents agree" apart from "you did this".</span></div></li>
+        <li><div><b>Every figure is Red Hat Mono with tabular figures, and right aligned in a table.</b> <span>Digits line up in columns, so two numbers compare at a glance.</span></div></li>
+        <li><div><b>Every claim shows a source chip next to it, not in a footnote.</b> <span>"Every claim sourced" is the promise. A source below the fold is a claim without one.</span></div></li>
+        <li><div><b>The dark band appears once per page, and the readout lives in it.</b> <span>One band keeps the instrument special. Two make the page a dark page.</span></div></li>
+        <li><div><b>Panels are square; controls are pills. No radius in between, no shadow.</b> <span>The shape tells you what you can press.</span></div></li>
+        <li><div><b>A steer is a note on the strip, never a rewrite in place.</b> <span>The scripts' numbers stay on screen beside the change, as the brand requires.</span></div></li>
+        <li><div><b>A disagreement lists its sources side by side and marks no winner.</b> <span>The readout reports. The partner judges.</span></div></li>
+        <li><div><b>A slot in brackets is never shipped as text.</b> <span>Counts and reasons come from the run. A bracket on screen means a scan has not filled it.</span></div></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap"><span>Tricorder, Direction C: Strip board. Fonts: Spectral, Work Sans, Red Hat Mono, from Google Fonts.</span><span><a href="home.html">Sample homepage</a> &nbsp; <a href="../index.html">All directions</a></span></div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var KEY = 'tricorder-c-theme';
+  function apply(v) {
+    if (v === 'light' || v === 'dark') root.setAttribute('data-theme', v); else root.removeAttribute('data-theme');
+    var bs = document.querySelectorAll('[data-set-theme]');
+    for (var i = 0; i < bs.length; i++) bs[i].setAttribute('aria-pressed', String(bs[i].getAttribute('data-set-theme') === (v || 'auto')));
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  apply(saved);
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-set-theme]');
+    if (b) {
+      var v = b.getAttribute('data-set-theme');
+      apply(v);
+      try { if (v === 'auto') localStorage.removeItem(KEY); else localStorage.setItem(KEY, v); } catch (err) {}
+      return;
+    }
+    var t = e.target.closest && e.target.closest('[data-drawer]');
+    if (t) {
+      var d = document.getElementById(t.getAttribute('data-drawer'));
+      if (!d) return;
+      var open = d.hasAttribute('hidden');
+      if (open) d.removeAttribute('hidden'); else d.setAttribute('hidden', '');
+      t.setAttribute('aria-expanded', String(open));
+      t.textContent = open ? 'Hide the drill-down' : 'Drill down';
+    }
+  });
+})();
+
+</script>
+</body>
+</html>
