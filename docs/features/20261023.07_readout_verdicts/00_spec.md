@@ -30,7 +30,7 @@ Keep the old paths as retired notices pending Ken's cleanup, because repository 
 | Steering uses the merge rules and preserves revisions | Codex | Pass: steering and route tests in the full suite |
 | Actual room scans, merge, memo export, and repeatability | Codex | Pass: [verify_rooms.py](verify_rooms.py), [room summaries](evidence/summary.json), and [claim rows](evidence/claims.csv) |
 | Browser flow and source drill-down | Codex | Pass: [browser evidence](evidence/browser.json), [readout screenshot](evidence/readout_source.png), [memo screenshot](evidence/memo_summary.png). Driver: `/tmp/playwright-test-tricorder-verdicts.js` |
-| Full Python suite and web build | Codex | Pass at `84097cf`: `bin/ci-py`, 657 passed, no skips; `bin/ci-web`, type check and build passed. Final integration with newer main changes pending. |
+| Full Python suite and web build | Codex | Pass at integrated revision `f348f0a`: `bin/ci-py`, 657 passed, no skips; `bin/ci-web`, type check and build passed. [Python gate output](evidence/ci-python.log) |
 | Independent integrated code and acceptance review | Independent reviewer | Approved at `84097cf`; [findings and fixes](01_reviews.md) |
 | Associate and partner persona review | Separate persona reviewers | Both accepted the regenerated summary after their wording fixes. Simulated judgment; source-only review. [Review record](01_reviews.md) |
 
@@ -42,9 +42,10 @@ The new steps pass their focused behavior tests. The actual room rebuilds and me
 
 Integration exposed a memo bug: headline text bypassed the existing cleanup of script paths. The export now applies that same cleanup to headline text. Tests that assumed these merge steps did not exist now cover current results or explicitly cover a legacy readout without verdicts.
 
-The completed change goes through a pull request with the full checks passing. New memo presentation changes landed on main during verification; they are being integrated before the final checks. The roadmap's whole readout slice stays open until linking, asks, and connecting prose are handled.
+The change is in [pull request 14](https://github.com/kenxle/tricorder/pull/14). The latest main changes are integrated, and the full local checks and refreshed browser walk pass. GitHub checks must pass before merge. The roadmap's whole readout slice stays open until linking, asks, and connecting prose are handled.
 
 ## Cleanup paths for Ken
 
-- `steering/verdicts.py`, after its callers have moved.
-- `steering/tests/test_verdicts.py`, after its behavior tests have moved.
+- [steering/verdicts.py](../../../steering/verdicts.py), now a retired notice with no callers.
+- [steering/tests/test_verdicts.py](../../../steering/tests/test_verdicts.py), now a retired notice after the behavior tests moved.
+- The isolated build worktree at `/Users/kennethstclair/Documents/workspace/tricorder-readout-verdicts` and review worktree at `/Users/kennethstclair/Documents/workspace/tricorder-verdicts-review`, once Ken is finished with the evidence and live review.
