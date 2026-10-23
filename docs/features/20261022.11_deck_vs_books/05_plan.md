@@ -78,7 +78,7 @@ Evidence files: [evidence/pytest.txt](evidence/pytest.txt), [evidence/pipeline.t
 | DVB-R13 | No pypdf and no anthropic import in the module | `test_bars_read_without_pypdf` | agent | Pass. Nothing added to `requirements.txt`. |
 | Contract | `check(room, ids)` returns claims, gaps and one Panel; ids come from `Ids` | `test_claim_ids_come_from_ids`, `test_match_table_panel` | agent | Pass. "deck against the books" is in both readouts' panels. |
 | All | Full suite green | `python3 -m pytest` | agent, then the captain at merge | 203 passed ([pytest.txt](evidence/pytest.txt)), working tree at 2026-10-22T20:38Z, after review round 1. Before it: 184 passed at 20:18Z. |
-| Roadmap Done when | Every Hollis Voice deck revenue figure matched or listed; the late test deck reported with its months; quote checker passes | the rows above for R1, R4, R7, R12 | agent | Pass. The late deck is a `watch`, not a `flag`, by Ken's decision; the roadmap's word "flagged" should read "reported". |
+| Roadmap Done when | Every Hollis Voice deck revenue figure matched or listed; the late test deck reported with its months; quote checker passes | the rows above for R1, R4, R7, R12 | agent | Pass. The late deck is a `watch`, not a `flag` (default chosen by the orchestrator, open for Ken); the roadmap's Done when now says "reported". |
 
 ## Testing review
 

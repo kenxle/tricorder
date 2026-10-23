@@ -1,0 +1,167 @@
+<title>Tricorder Style Directions</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one plain column, a seed card, then three direction rows; neutral so the directions carry the colour. */
+:root {
+  --bg: #f6f7f8; --panel: #ffffff; --fg: #17191c; --muted: #5b6168; --line: #d9dde1; --link: #2346b0;
+  --a: hsl(231 63% 46%); --b: hsl(27 85% 48%); --c: hsl(109 40% 32%);
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121417; --panel: #1a1d21; --fg: #e8eaed; --muted: #9aa1a9; --line: #2c3036; --link: #8fa8ff;
+  --a: hsl(231 80% 72%); --b: hsl(27 90% 62%); --c: hsl(109 45% 60%); color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #121417; --panel: #1a1d21; --fg: #e8eaed; --muted: #9aa1a9; --line: #2c3036; --link: #8fa8ff;
+  --a: hsl(231 80% 72%); --b: hsl(27 90% 62%); --c: hsl(109 45% 60%); color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font: 16px/1.55 var(--sans); }
+.wrap { max-width: 860px; margin: 0 auto; padding-block: 40px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 32px; }
+h1 { font-size: 2rem; line-height: 1.15; margin: 0; text-wrap: balance; font-weight: 600; }
+h2 { font-size: 1.25rem; margin: 0; font-weight: 600; }
+p { margin: 0; max-width: 65ch; }
+.lede { color: var(--muted); }
+a { color: var(--link); }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+.seed { font-family: var(--mono); font-size: .8rem; background: var(--panel); border: 1px solid var(--line); padding: 12px 14px; overflow-x: auto; color: var(--muted); }
+.seed b { color: var(--fg); font-weight: 500; }
+.dirs { display: grid; gap: 16px; }
+.dir { background: var(--panel); border: 1px solid var(--line); padding: 18px 20px; display: grid; gap: 10px; min-width: 0; }
+.dir .tag { font-family: var(--mono); font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; color: var(--k); }
+.dir dl { display: grid; grid-template-columns: max-content 1fr; gap: 2px 14px; margin: 0; font-size: .875rem; }
+.dir dt { color: var(--muted); }
+.dir dd { margin: 0; min-width: 0; }
+.links { display: flex; flex-wrap: wrap; gap: 8px 18px; font-weight: 500; }
+.reviews { display: grid; gap: 12px; }
+.reviews ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; max-width: 70ch; }
+.note { font-size: .875rem; color: var(--muted); }
+@media (max-width: 520px) { .dir dl { grid-template-columns: 1fr; } .dir dt { margin-top: 6px; } }
+</style>
+
+<div class="wrap">
+  <header style="display:grid;gap:10px">
+    <h1>Tricorder style directions</h1>
+    <p class="lede">Round two is at the top: three new directions built from your review of round one. Each has a sample homepage and a style guide. Pick one, or name what to take from each. Round one stays below for reference.</p>
+  </header>
+
+  <section style="display:grid;gap:8px">
+    <h2>Round two</h2>
+    <p>Every rule from your round-one comments is a hard rule here: no single coloured edge stripes, no stray top bars, no textures, nothing tilted, tight headlines, equal-height rows, headings on the grid, tables on one surface, and one synthetic notice per page. All three sit on a 12-column grid, use some rounded corners, and give the homepage a dark, dramatic hero. Brief: <a href="round_2/BRIEF_ROUND_2.md">round_2/BRIEF_ROUND_2.md</a>.</p>
+  </section>
+
+  <section class="dirs">
+    <article class="dir" style="--k: var(--a)">
+      <span class="tag">Round two, direction D</span>
+      <h2>Private Bank</h2>
+      <p>The quiet confidence of a private bank. A deep navy hero with one white readout card, then a calm white working surface.</p>
+      <dl>
+        <dt>Type</dt><dd>Source Serif 4 (headlines), IBM Plex Sans, IBM Plex Mono</dd>
+        <dt>Accent</dt><dd>Deep spruce green, for actions only</dd>
+        <dt>Feel</dt><dd>Light, sober, generous space, 6px and 12px corners</dd>
+      </dl>
+      <div class="links"><a href="round_2/direction_d/home.html">Homepage</a><a href="round_2/direction_d/style_guide.html">Style guide</a></div>
+    </article>
+    <article class="dir" style="--k: var(--b)">
+      <span class="tag">Round two, direction E</span>
+      <h2>Black Card</h2>
+      <p>The dark, quiet wealth of a premium charge card, with the precision of a trading terminal. A lit overview panel with a range strip on every piece.</p>
+      <dl>
+        <dt>Type</dt><dd>Hanken Grotesk (heavy headlines and body), IBM Plex Mono</dd>
+        <dt>Accent</dt><dd>Champagne, deepening to brass in the light theme</dd>
+        <dt>Feel</dt><dd>Dark-first graphite, 4px, 8px and 14px corners</dd>
+      </dl>
+      <div class="links"><a href="round_2/direction_e/home.html">Homepage</a><a href="round_2/direction_e/style_guide.html">Style guide</a></div>
+    </article>
+    <article class="dir" style="--k: var(--c)">
+      <span class="tag">Round two, direction F</span>
+      <h2>Instrument</h2>
+      <p>Round one's Reference Range rebuilt properly. A deep ink hero, a large readout surface where every piece of the company sits on its range strip, then a white page.</p>
+      <dl>
+        <dt>Type</dt><dd>Archivo semi-condensed (headlines), Instrument Sans, IBM Plex Mono</dd>
+        <dt>Accent</dt><dd>One cobalt, for actions, focus and the range band</dd>
+        <dt>Feel</dt><dd>White and deep ink, 6px and 12px corners</dd>
+      </dl>
+      <div class="links"><a href="round_2/direction_f/home.html">Homepage</a><a href="round_2/direction_f/style_guide.html">Style guide</a></div>
+    </article>
+  </section>
+
+  <h2 style="margin-top:24px">Round one</h2>
+
+  <section style="display:grid;gap:8px">
+    <h2>The seed</h2>
+    <p>The script hashed the time the request arrived and cut the hash into three slices. Each slice picked a motif, an accent hue, a type pairing, a density, a ground and a corner shape. No two directions share a motif, typeface, density or ground.</p>
+    <div class="seed">sha256("<b>2026-10-22T19:51:56Z</b>") = <b>4156dadf14cdfb03a2cf</b>4bc9258ab75b68a32cb5231371cc4cbd3ec5161162d8<br>script: docs/features/20261022.05_style_directions/seed_directions.py</div>
+  </section>
+
+  <section class="dirs">
+    <article class="dir" style="--k: var(--a)">
+      <span class="tag">Direction A · slice 4156dadf…</span>
+      <h2>Reference Range</h2>
+      <p>Every number sits against its range, the way a vital sign sits against its normal band. A red flag is the out-of-range mark: the stated figure outside the band, the rebuilt figure inside it.</p>
+      <dl>
+        <dt>Motif</dt><dd>Medical chart and vitals monitor</dd>
+        <dt>Accent</dt><dd>Hue 231, a clinical blue, used only for actions and sources</dd>
+        <dt>Type</dt><dd>Archivo (semi-condensed), Atkinson Hyperlegible, Fragment Mono</dd>
+        <dt>Feel</dt><dd>Dense, light ground, square corners and hairlines</dd>
+        <dt>Risk</dt><dd>A new chart type, the range strip, under every flag</dd>
+      </dl>
+      <div class="links"><a href="direction_a/home.html">Homepage</a><a href="direction_a/style_guide.html">Style guide</a></div>
+    </article>
+
+    <article class="dir" style="--k: var(--b)">
+      <span class="tag">Direction B · slice 4bc9258a…</span>
+      <h2>Manifest</h2>
+      <p>Every readout line is a numbered manifest line: what the company stated on the left, what Tricorder found on the right, and an inked stamp for the mark it earned.</p>
+      <dl>
+        <dt>Motif</dt><dd>Shipping manifest and customs</dd>
+        <dt>Accent</dt><dd>Hue 27, an amber signal lamp on a dark petrol ground</dd>
+        <dt>Type</dt><dd>Barlow Semi Condensed, Libre Franklin, Cousine</dd>
+        <dt>Feel</dt><dd>Airy, dark first, pill controls on square panels</dd>
+        <dt>Risk</dt><dd>A delicate engraved display face, very large, one statement per screen</dd>
+      </dl>
+      <div class="links"><a href="direction_b/home.html">Homepage</a><a href="direction_b/style_guide.html">Style guide</a></div>
+    </article>
+
+    <article class="dir" style="--k: var(--c)">
+      <span class="tag">Direction C · slice 231371cc…</span>
+      <h2>Strip board</h2>
+      <p>Each piece of the company is a paper strip in a holder, the way an air traffic controller racks flight strips. The top green and red flags are slid out of the bay to be watched first.</p>
+      <dl>
+        <dt>Motif</dt><dd>Air traffic strip board</dd>
+        <dt>Accent</dt><dd>Hue 109, an olive green for what the operator touches; strong findings move to teal</dd>
+        <dt>Type</dt><dd>Spectral, Work Sans, Red Hat Mono</dd>
+        <dt>Feel</dt><dd>Measured, light ground with one dark instrument band</dd>
+        <dt>Risk</dt><dd>A green flag drawn in teal, to keep the accent apart from the findings</dd>
+      </dl>
+      <div class="links"><a href="direction_c/home.html">Homepage</a><a href="direction_c/style_guide.html">Style guide</a></div>
+    </article>
+  </section>
+
+  <section class="reviews" id="reviews">
+    <h2>Persona reviews</h2>
+    <p>Five persona agents, built from PERSONAS.md, read all three homepages from screenshots and source, cold. This is simulated judgment, not customer evidence, and the call is yours.</p>
+    <div style="overflow-x:auto"><table style="border-collapse:collapse;font-size:.875rem;min-width:420px">
+      <thead><tr><th style="text-align:left;padding:6px 12px 6px 0;border-bottom:1px solid var(--line)">Persona</th><th style="padding:6px 12px;border-bottom:1px solid var(--line)">A</th><th style="padding:6px 12px;border-bottom:1px solid var(--line)">B</th><th style="padding:6px 12px;border-bottom:1px solid var(--line)">C</th><th style="padding:6px 0 6px 12px;border-bottom:1px solid var(--line);text-align:left">Ranked first</th></tr></thead>
+      <tbody>
+        <tr><td style="padding:6px 12px 6px 0"><b>Associate</b> (primary)</td><td style="padding:6px 12px">strong</td><td style="padding:6px 12px">weak</td><td style="padding:6px 12px">workable</td><td style="padding:6px 0 6px 12px">A</td></tr>
+        <tr><td style="padding:6px 12px 6px 0"><b>Partner</b> (primary)</td><td style="padding:6px 12px">strong</td><td style="padding:6px 12px">weak</td><td style="padding:6px 12px">workable</td><td style="padding:6px 0 6px 12px">A</td></tr>
+        <tr><td style="padding:6px 12px 6px 0">Corporate VC</td><td style="padding:6px 12px">workable</td><td style="padding:6px 12px">weak</td><td style="padding:6px 12px">workable</td><td style="padding:6px 0 6px 12px">A</td></tr>
+        <tr><td style="padding:6px 12px 6px 0">Accelerator screener</td><td style="padding:6px 12px">workable</td><td style="padding:6px 12px">weak</td><td style="padding:6px 12px">workable</td><td style="padding:6px 0 6px 12px">C</td></tr>
+        <tr><td style="padding:6px 12px 6px 0">Solo angel</td><td style="padding:6px 12px">workable</td><td style="padding:6px 12px">weak</td><td style="padding:6px 12px">workable</td><td style="padding:6px 0 6px 12px">C</td></tr>
+      </tbody></table></div>
+    <p><b>Where they agree.</b></p>
+    <ul>
+      <li>A wins the ten-second test: its first screen is a filled readout overview, every piece marked with its file. Both primary personas rated it strong.</li>
+      <li>B looks the most polished, but its first screen repeats the headline and shows no finding, so every persona ranked it last. Four of the five still asked to steal its big Stated / Found number pair.</li>
+      <li>C has the most trusted wording: "A green flag says the documents agree. It does not say the number is true." Its gap strip and steer note were also wanted on A. Its legend-first hero and "bay" metaphor cost it.</li>
+      <li>Four of the five want the data answer moved up and spelled out: where files are processed, whether a model provider sees them, how long anything is kept.</li>
+      <li>Three of the five (both primaries and the corporate VC) called "It reveals insight you can trust" the weakest line; the panels below it do the convincing. It is your line, so it stays unless you say otherwise.</li>
+    </ul>
+    <p><b>A copy bug the reviewers caught.</b> A and C say ARR is "stated four ways" and then show a three-row table; the fourth figure ($2,060,868, subscription rows) is missing. The same mismatch is in BRAND.md's own example, so it needs fixing there too.</p>
+    <p><b>Where primary and secondary split.</b> The angel and the screener ranked C first because its strip board reads like a queue and handles thin rooms. The primary two outweigh them, and the screener's ask (a stack of applicants on one board) fits A's overview as well.</p>
+    <p class="note">Full reports: docs/features/20261022.05_style_directions/reviews/ in the repo.</p>
+  </section>
+</div>

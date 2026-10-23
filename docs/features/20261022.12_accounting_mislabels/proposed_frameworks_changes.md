@@ -1,5 +1,7 @@
 # Proposed changes to FRAMEWORKS.md entry 1.12
 
+**Applied on 2026-10-23.** All four changes are now in [FRAMEWORKS.md](../../ongoing/FRAMEWORKS.md#112-accounting-mislabels), entry 1.12. This file is kept as the record of the proposal.
+
 This is a proposal for whoever keeps [FRAMEWORKS.md](../../ongoing/FRAMEWORKS.md). This agent does not edit `docs/ongoing/`. `scans/redflags/mislabels.py` already runs these tests, and `scans/redflags/tests/test_mislabels.py` pins them. Every figure below comes from that module's output on the rooms (see [00_progress.md](00_progress.md), "Work and evidence").
 
 ## 1. Kind e: a plan test, and vendor propagation

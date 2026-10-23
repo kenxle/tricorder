@@ -1,14 +1,25 @@
 # Feature progress: accounting mislabels
 
-`scans/redflags/mislabels.py` is built test first. After the review fix round, its 68 tests pass and the full suite passes (`python3 -m pytest`: 203 passed). The red-flag engine now carries the module's claims and its three panels. On Brasswick, `eval.score` finds BF1, BF3 and BF4 from this module, and no room flags a decoy. Next: the captain reviews and merges. The proposed FRAMEWORKS.md text is in [proposed_frameworks_changes.md](proposed_frameworks_changes.md).
+Merged to `main` in PR #4 on 2026-10-23 (merge commit `dc10bbc`). `scans/redflags/mislabels.py` was built test first, and after the review fix round its 68 tests pass. The red-flag engine carries the module's claims and its three panels. On Brasswick, `eval.score` finds BF1, BF3 and BF4 from this module, and no room flags a decoy. The proposed text is applied to entry 1.12 in [FRAMEWORKS.md](../../ongoing/FRAMEWORKS.md#112-accounting-mislabels), and the roadmap slice is marked done. Next action: none for this feature. The one open item below has an owner.
 
 Roadmap slice: [accounting-mislabels](../../ongoing/ROADMAP.md#accounting-mislabels). Route: prototype first, with an interface example in place of a screen.
 
 ## Attention needed
 
-1. **The coordinator's fallback rule rests on a misreading, and the code does not follow it.** The coordinator asked that kind a's seed-drop result follow entry 1.12's "model-fallback rule": if the fallback is a model reading, it should not be a script flag, and offline with no API key it should be a gap. But "the model" in entry 1.12's fallback is the company's financial model workbook. The text reads "the `Product type` column of `ARR_Build` in the model". The fallback reads spreadsheet cells, makes no LLM call and needs no key. So the claim stays `computed`, with severity `flag`. `test_makes_no_model_call` replaces every function in `clients/llm.py` with one that fails, then runs the seed drop, and it passes. Item 4 of [proposed_frameworks_changes.md](proposed_frameworks_changes.md) proposes wording that removes the ambiguity. If the coordinator still wants the seed-drop claim downgraded to `watch`, that is a one-line change. Owner: coordinator.
-2. **Entry 1.12 needs the proposed text.** The kind e plan test, vendor propagation and the kind g bridge test run in code but are not yet in FRAMEWORKS.md. Owner: whoever keeps FRAMEWORKS.md.
-3. **Entry 1.2's flag must cite `ARR_Build!E13`.** The link by shared source depends on it. Nobody has built entry 1.2 yet. Owner: redflag-engine.
+1. **Entry 1.2's flag must cite `ARR_Build!E13` (redflag-engine owner, Saturday).** This module links its `mrr` column flag to the pilot-as-ARR flag by that shared source. Entry 1.2 is not built yet. Board row TRI-arr-cites-e13.
+
+Closed on 2026-10-23:
+
+- **The seed-drop fallback is a cell read, not a model call.** The coordinator had asked that kind a's fallback follow a "model-fallback rule". "The model" in entry 1.12 meant the company's financial model workbook. The fallback reads cells, makes no LLM call and needs no key, so its claim stays `computed` with severity `flag`. `test_makes_no_model_call` proves it. Entry 1.12 now says "the financial model workbook (`financial_model.xlsx`)" in both places, so the misreading cannot recur from the doc.
+- **Entry 1.12 carries the proposed text.** The kind e plan test and vendor propagation, the kind g bridge test, Brasswick as kind c's room, and the wording above were applied from [proposed_frameworks_changes.md](proposed_frameworks_changes.md).
+
+## Release record
+
+- PR #4, merged to `main` on 2026-10-23, merge commit `dc10bbc` (PR head `229f8db`, GitHub CI green on it).
+- Tests: `bin/ci-py` on `main`, 203 passed. This module's file holds 68 of them.
+- Acceptance: Brasswick "found 4 of 5; decoys flagged 0 of 3" (BF1, BF3 and BF4 from this module, BF2 from deck-vs-books). No decoy flagged in any of the four rooms.
+- Real output shown to Ken on the wave 1 demo page, built by [build_demo.py](../20261022.10_feature_breakdown/demo/build_demo.py).
+- Unverified: the link to the pilot-as-ARR flag, until entry 1.2 exists (item 1).
 
 ## Review fix round (docs/features/20261022.10_feature_breakdown/review_wave1.md)
 
@@ -45,7 +56,7 @@ After the fixes: `python3 -m scans.redflags data_room/brasswick` writes 11 claim
 |---|---|---|---|---|
 | Docs to Plan | agent | done | this folder, committed by the parent | none |
 | Tests written first | agent | done | Run before the module existed, the file failed at collection with `ImportError: cannot import name 'mislabels'`. The red check covered the whole file, not each test. | none |
-| Module | agent | done | `python3 -m pytest scans/redflags/tests/test_mislabels.py`: 68 passed after the fix round (64 before) | captain review |
+| Module | agent | merged in PR #4 | `python3 -m pytest scans/redflags/tests/test_mislabels.py`: 68 passed after the fix round (64 before) | none |
 | Full suite | agent | green | `python3 -m pytest`: 203 passed in 17.86s after the fix round (183 before). An earlier run set aside `scans/memo/tests/test_coverage.py` (147 passed without it), while another agent's checklist module was still missing. | none |
 | Engine on Hollis Voice | agent | done | `python3 -m scans.redflags data_room/hollis_voice`: "redflags: 10 claims, 4 gaps". redflags-001 is the `mrr_column_vs_subscription_rows` flag ($186,739 against $171,739, $15,000, 8.7%). Claims 002 to 006 are info tie-outs for b, e, f, g and h. Claims 007 to 010 come from deck_vs_books. | none |
 | Score | agent | done | `python3 -m scans.redflags`, `python3 -m scans.memo`, `python3 -m eval.score` per room. brasswick: found 4 of 5 (BF1, BF3, BF4 from this module; BF2 from deck_vs_books), decoys flagged 0 of 3. hollis_voice: found 0 of 8, decoys 0 of 3. hollis_voice_seed_drop: found 0 of 8, decoys 0 of 3. hollis_voice_clean: found 0 of 0, decoys 0 of 3. Hollis Voice's planted flags belong to the Saturday checks, which do not exist yet. | none |
@@ -59,6 +70,7 @@ After the fixes: `python3 -m scans.redflags data_room/brasswick` writes 11 claim
 - The first full run failed one test. The watch fixture edited the Brasswick workbook with openpyxl, which drops cached formula values, so the totals read as empty. The fix patches the parsed P&L in memory.
 - Added panel tests after the framework update: `test_panels_carry_entry_checks_and_lines`, `test_seed_drop_entry_label`, `test_engine_result_holds_mislabels_claims_and_panels`.
 - 2026-10-22T20:14Z: all green as above. No human approval is needed for this route; none was given.
+- 2026-10-23: merged in PR #4. Closeout applied the proposed text to entry 1.12.
 
 ## Not for commit
 
@@ -67,6 +79,7 @@ After the fixes: `python3 -m scans.redflags data_room/brasswick` writes 11 claim
 
 ## To delete at cleanup
 
-- `docs/features/20261022.12_accounting_mislabels/spike/test_rooms/`: generated copies of the Hollis Voice room, rewritten by each spike run.
+- `docs/features/20261022.12_accounting_mislabels/spike/test_rooms/`: generated copies of the Hollis Voice room (about 960K, untracked), rewritten by each spike run.
+- The worktree `/tmp/claude-0/-home-claude/76c6a462-572c-5250-967a-649aceb49eaf/scratchpad/wt2` and its local branch `tmp-ce34ga`, used to merge the skeleton branch. Its work is on `main` through PR #2 and PR #4. Remove with `git worktree remove --force` and `git branch -D tmp-ce34ga`. The same line is on the other wave 1 pages.
 - The scratch copy of the skeleton's `schema/`, `scans/base.py` and `eval/score.py` in this session's scratchpad folder. It is outside the repo.
 - `out/hollis_voice/`, `out/hollis_voice_seed_drop/`, `out/hollis_voice_clean/`, `out/brasswick/`: result files from the acceptance commands. Git ignores them.
