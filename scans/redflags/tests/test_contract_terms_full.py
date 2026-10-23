@@ -343,3 +343,29 @@ def test_a_term_that_ended_but_is_still_counted_is_flagged(tmp_path):
     claims, _g, _p = contract_terms_full.check(room, Ids("redflags"))
     hit = claims_for(claims, P1, uri)
     assert [c.severity for c in hit] == ["flag"] and "ended 2026-08-31" in hit[0].text
+
+
+# ----------------------------------------------------------------------------- review wave 2a, B1
+
+
+def test_clean_room_raises_no_flag_or_watch_on_marlow():
+    # The clean room's ARR build and plan leave the pilot out, so neither check may say it is counted.
+    claims, _g, _p = contract_terms_full.check(CLEAN, Ids("redflags"))
+    marlow = [c for c in claims if c.check.name in (P1, P3) and any(s.uri == MARLOW for s in c.sources)]
+    assert marlow, "both checks still report on Marlow"
+    assert all(c.severity == "info" for c in marlow)
+    assert any("the ARR build does not count it" in c.text for c in claims_for(claims, P1, MARLOW))
+    assert not [c for c in claims if c.severity in ("flag", "watch")]
+
+
+def test_a_counted_flag_cites_the_counting_row():
+    claims, _g, _p = run(HOLLIS)
+    for name in (P1, P3):
+        flag = [c for c in claims_for(claims, name, MARLOW) if c.severity == "flag"]
+        assert flag and any(s.locator == "ARR_Build!E13" for s in flag[0].sources), name
+
+
+def test_clean_room_coverage_leaves_out_the_uncounted_pilot():
+    claims, _g, _p = contract_terms_full.check(CLEAN, Ids("redflags"))
+    cov = claims_for(claims, P6)
+    assert len(cov) == 1 and "$36,584 of the $171,739" in cov[0].text
