@@ -12,7 +12,7 @@ from pathlib import Path
 import pytest
 
 from founder_requests import intake as ik
-from founder_requests.tests.conftest import build
+from founder_requests.tests.conftest import build, ready_scans
 from scans.memo import checklist as cl
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -207,11 +207,13 @@ def test_size_limits(env, monkeypatch):
 def test_waiting_scans_follow_needs_and_inputs(env):
     _, out = env
     room = ik.copy_room(BRASSWICK)
-    assert ik.waiting_scans(room) == ["redflags"]  # never run
+    ready = ready_scans(room)
+    assert "redflags" in ready
+    assert ik.waiting_scans(room) == ready  # never run
     build(room, out)
     assert ik.waiting_scans(room) == []  # ran on everything the room holds
     ik.save(room, Path("05_team/hiring_plan.csv"), PLAN)
-    assert ik.waiting_scans(room) == ["redflags"]  # a new input it has not seen
+    assert ik.waiting_scans(room) == ready  # a new input none of them has seen
 
 
 def test_hiring_plan_reply_reruns_and_rebuilds(env):
@@ -221,11 +223,14 @@ def test_hiring_plan_reply_reruns_and_rebuilds(env):
     receipt = ik.receive(room, PLAN, "Brasswick Hiring Plan.csv", "C22")
     assert receipt["saved"] == "05_team/hiring_plan.csv"
     assert (room / receipt["saved"]).read_bytes() == PLAN
-    assert [s["scan"] for s in receipt["scans_rerun"]] == ["redflags"] and receipt["scans_rerun"][0]["ok"]
+    assert [s["scan"] for s in receipt["scans_rerun"]] == ready_scans(room)
+    assert all(s["ok"] for s in receipt["scans_rerun"]), receipt["scans_rerun"]
     assert receipt["status_before"] == "missing" and receipt["status_after"] == "found"
     assert receipt["asks_before"] == len(before.asks) and receipt["asks_after"] == len(before.asks) - 1
-    redflags = json.loads((out / room.name / "redflags.json").read_text())
-    assert "05_team/hiring_plan.csv" in redflags["inputs"]
+    for name in ready_scans(room):
+        result = json.loads((out / room.name / f"{name}.json").read_text())
+        assert "05_team/hiring_plan.csv" in result["inputs"], name
+    assert ik.waiting_scans(room) == []  # nothing left waiting after the rerun
     readout = json.loads((out / room.name / "readout.json").read_text())
     assert not any(a["checklist_id"] == "C22" for a in readout["asks"])
     log = json.loads((out / room.name / "founder_requests.json").read_text())
@@ -266,6 +271,8 @@ def test_changes_are_said_in_plain_words(brasswick):
     from schema.claim import TopFlag
     same = ik.changes(brasswick, brasswick.model_copy(deep=True), [])
     assert same == ["No check reads this file yet, so no number changed."]
+    assert ik.changes(brasswick, brasswick.model_copy(deep=True), [], files=2) == [
+        "No check reads these files yet, so no number changed."]
     after = brasswick.model_copy(deep=True)
     after.claims.append(_claim("redflags-900", "Hiring plan adds 6 engineers before the round closes."))
     after.top_flags.append(TopFlag(kind="red", piece="burn_and_runway", rank=9, text="Runway falls under 12 months.",
@@ -274,7 +281,12 @@ def test_changes_are_said_in_plain_words(brasswick):
     before = brasswick.model_copy(deep=True)
     before.pieces = [Piece(name="burn_and_runway", verdict="mixed", reason="r")]
     after.pieces = [Piece(name="burn_and_runway", verdict="looking_weak", reason="r")]
+    old = before.claims[0]
+    after.claims = [c.model_copy(update={"text": "Contradicted: the plan says 5."}) if c.id == old.id else c
+                    for c in after.claims]
     said = " ".join(ik.changes(before, after, []))
+    assert "1 claim changed. Now: Contradicted: the plan says 5." in said
+    assert "no longer in the readout" not in said
     assert "1 new claim: Hiring plan adds 6 engineers before the round closes." in said
     assert "New red flag: Runway falls under 12 months." in said
     assert "Burn and runway moved from mixed to looking weak." in said and "No check reads" not in said
@@ -284,11 +296,19 @@ def test_changes_are_said_in_plain_words(brasswick):
 def test_hiring_plan_receipt_says_what_changed(env):
     _, out = env
     room = ik.copy_room(BRASSWICK)
-    build(room, out)
+    before = build(room, out)
     receipt = ik.receive(room, PLAN, "Brasswick Hiring Plan.csv", "C22")
+    after = ik._readout(room)
     assert receipt["summary"][0] == "Coverage now finds Hiring plan and future org."
-    assert "No check reads this file yet, so no number changed." in receipt["summary"]
+    said = " ".join(receipt["summary"])
+    moved = ({(c.id, c.text) for c in before.claims} != {(c.id, c.text) for c in after.claims}
+             or before.top_flags != after.top_flags or [p.verdict for p in before.pieces] != [p.verdict for p in after.pieces])
+    assert ("No check reads this file yet, so no number changed." in said) == (not moved)
+    changed = [c.text for c in after.claims if c.id in {b.id for b in before.claims} and c.text not in {b.text for b in before.claims}]
+    for text in changed[:3]:
+        assert text in said  # a relabelled claim is said in its new words
     assert any(s.startswith("The ask list is down from") for s in receipt["summary"])
+    assert "redflags" not in said and "Scans that were waiting" not in said
 
 
 def test_several_files_in_one_add_rerun_once(env, monkeypatch):
@@ -305,7 +325,6 @@ def test_several_files_in_one_add_rerun_once(env, monkeypatch):
     assert [a["checklist_id"] for a in files[1]["answers"]] == ["C97", "C46"]
     assert files[0]["answers"][0]["status_after"] == "found"
     assert "Coverage now finds Reference list: management, customers, current investors, advisors." in receipt["summary"]
-    assert "No check reads these files yet, so no number changed." in receipt["summary"]
     assert ("Customer reference calls is something only the founder can give, so no check reads the file. "
             "The line stays on the ask list.") in receipt["summary"]
     log = json.loads((out / room.name / "founder_requests.json").read_text())
@@ -321,3 +340,47 @@ def test_a_batch_with_one_bad_file_writes_nothing(env):
     with pytest.raises(ik.IntakeError):
         ik.receive_batch(room, [])
     assert _snapshot(room) == before
+
+
+def test_a_file_a_scan_left_out_on_purpose_does_not_keep_it_waiting(env):
+    _, out = env
+    room = ik.copy_room(BRASSWICK)
+    build(room, out)
+    result = out / room.name / "redflags.json"
+    data = json.loads(result.read_text())
+    left_out = data["inputs"].pop()
+    result.write_text(json.dumps(data))
+    assert "redflags" not in ik.waiting_scans(room)  # older than the run: read or skipped then
+    os.utime(room / left_out)
+    assert "redflags" in ik.waiting_scans(room)  # changed since the run
+
+
+def test_a_scan_that_fails_on_the_new_file_is_said_plainly(env, monkeypatch):
+    _, out = env
+    room = ik.copy_room(BRASSWICK)
+    build(room, out)
+    monkeypatch.setattr(ik, "run_scans", lambda r, names: [{"scan": n, "ok": n != "redflags", "error": "boom"} for n in names])
+    receipt = ik.receive(room, PLAN, "plan.csv", "C22")
+    assert "One check could not read the new file, so its part of the readout is from before." in receipt["summary"]
+    assert not any("redflags" in s or "boom" in s for s in receipt["summary"])
+
+
+def test_a_plan_in_the_founders_own_columns_still_lands(env):
+    _, out = env
+    room = ik.copy_room(BRASSWICK)
+    build(room, out)
+    own = (Path(__file__).parent / "fixtures" / "synthetic_brasswick_hiring_plan_own_columns.csv").read_bytes()
+    receipt = ik.receive(room, own, "Hiring Plan.csv", "C22")
+    assert receipt["saved"] == "05_team/hiring_plan.csv" and receipt["status_after"] == "found"
+    assert receipt["summary"][0] == "Coverage now finds Hiring plan and future org."
+    failed = sum(not s["ok"] for s in receipt["scans_rerun"])
+    said = " ".join(receipt["summary"])
+    assert ("could not read the new file" in said) == bool(failed)
+    assert not any(s["scan"] in said for s in receipt["scans_rerun"])
+
+
+def test_the_same_sentence_is_said_once(brasswick):
+    after = brasswick.model_copy(deep=True)
+    after.claims += [_claim("redflags-901", "Plan says 5."), _claim("redflags-902", "Plan says 5.")]
+    said = ik.changes(brasswick, after, [])
+    assert "2 new claims: Plan says 5." in said

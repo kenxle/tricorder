@@ -24,6 +24,7 @@ import subprocess
 import sys
 import unicodedata
 import zipfile
+from datetime import datetime
 from pathlib import Path
 
 from schema.claim import Readout, ScanResult
@@ -299,7 +300,10 @@ def _needs(name: str) -> tuple[str, ...]:
 
 
 def waiting_scans(room: Path) -> list[str]:
-    """Built scans whose needs are met and that have not seen every input file the room now holds."""
+    """Built scans whose needs are met and that have not seen an input file added since their last run.
+
+    A scan reads only some input kinds, and no scan declares which, so a file it left out on purpose
+    must not make it wait forever: only files written at or after the scan's `ran_at` count."""
     held = {f for files in room_inputs(room).values() for f in files}
     out = []
     for name in available():
@@ -307,10 +311,12 @@ def waiting_scans(room: Path) -> list[str]:
             continue
         result = out_dir(room) / f"{name}.json"
         try:
-            seen = set(ScanResult.model_validate_json(result.read_text(encoding="utf-8")).inputs)
+            last = ScanResult.model_validate_json(result.read_text(encoding="utf-8"))
+            ran = datetime.fromisoformat(last.ran_at.replace("Z", "+00:00")).timestamp()
         except (OSError, ValueError):
-            seen = None
-        if seen is None or held - seen:
+            out.append(name)
+            continue
+        if any((Path(room) / f).stat().st_mtime >= ran for f in held - set(last.inputs)):
             out.append(name)
     return out
 
@@ -347,7 +353,14 @@ def _plain(name: str) -> str:
     return name.replace("_", " ")
 
 
-def changes(before: Readout | None, after: Readout, answered: list[tuple[cl.Row, str, str]], files: int = 1) -> list[str]:
+def _first(texts: list[str], n: int = 3) -> str:
+    """Up to n distinct sentences, in order; '...' when there are more."""
+    distinct = list(dict.fromkeys(texts))
+    return " ".join(distinct[:n]) + (" ..." if len(distinct) > n else "")
+
+
+def changes(before: Readout | None, after: Readout, answered: list[tuple[cl.Row, str, str]], files: int = 1,
+            failed: int = 0) -> list[str]:
     """What the files changed, in plain words: coverage, then claims, flags and verdicts, then the ask list."""
     said: list[str] = []
     for row, was, now in answered:
@@ -362,13 +375,20 @@ def changes(before: Readout | None, after: Readout, answered: list[tuple[cl.Row,
             said.append(f"Coverage still lists {row.item} as {_plain(now)}. The file is saved under the name "
                         "for the first request it answers.")
     old = before or Readout(room=after.room, built_at="")
-    old_claims = {c.text for c in old.claims}
-    new_claims = [c.text for c in after.claims if c.text not in old_claims]
-    gone = [t for t in old_claims if t not in {c.text for c in after.claims}]
+    # A claim keeps its id when a rerun relabels it, so the same id with new words is a change.
+    old_by_id = {(c.scan, c.id): c.text for c in old.claims}
+    new_by_id = {(c.scan, c.id): c.text for c in after.claims}
+    new_claims = [t for k, t in new_by_id.items() if k not in old_by_id]
+    changed = [t for k, t in new_by_id.items() if k in old_by_id and old_by_id[k] != t]
+    gone = [k for k in old_by_id if k not in new_by_id]
     moved = False
+    if changed:
+        word = "claim" if len(changed) == 1 else "claims"
+        said.append(f"{len(changed)} {word} changed. Now: " + _first(changed))
+        moved = True
     if new_claims:
         word = "claim" if len(new_claims) == 1 else "claims"
-        said.append(f"{len(new_claims)} new {word}: " + " ".join(new_claims[:3]) + (" ..." if len(new_claims) > 3 else ""))
+        said.append(f"{len(new_claims)} new {word}: " + _first(new_claims))
         moved = True
     if gone:
         said.append(f"{len(gone)} claim{'' if len(gone) == 1 else 's'} no longer in the readout.")
@@ -388,6 +408,10 @@ def changes(before: Readout | None, after: Readout, answered: list[tuple[cl.Row,
             moved = True
     if not moved:
         said.append(f"No check reads {'this file' if files == 1 else 'these files'} yet, so no number changed.")
+    if failed:
+        what = "the new file" if files == 1 else "the new files"
+        lead = "One check" if failed == 1 else f"{failed} checks"
+        said.append(f"{lead} could not read {what}, so {'its' if failed == 1 else 'their'} part of the readout is from before.")
     if before is not None and len(after.asks) != len(before.asks):
         way = "down" if len(after.asks) < len(before.asks) else "up"
         said.append(f"The ask list is {way} from {len(before.asks)} to {len(after.asks)} lines.")
@@ -460,7 +484,7 @@ def receive_batch(room_dir: Path, files: list[tuple[bytes, str, str | None]]) ->
     receipt = {
         "room": room.name, "files": entries, "scans_rerun": reran,
         "asks_before": len(before.asks) if before else None, "asks_after": len(readout.asks),
-        "summary": changes(before, readout, answered, len(entries)), "at": at,
+        "summary": changes(before, readout, answered, len(entries), sum(not r["ok"] for r in reran)), "at": at,
     }
     log_path = out_dir(room) / LOG
     try:

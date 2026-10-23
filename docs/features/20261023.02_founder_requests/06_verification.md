@@ -20,6 +20,12 @@ The drive itself found two defects, each fixed test-first and driven again: the 
 
 Tests after the fix round: `python3 -m pytest` 276 passed, 0 failed; `bin/ci-py` passed (schema check, then 276 passed); `bin/ci-web` passed. Feature tests: guidance 4, draft 16, intake 36, CLI 5, routes 12.
 
+## After the claim-support merge (2026-10-23)
+
+Merged `claude/project-thread-ea11in`. Two scans now rerun on a hiring plan (`redflags`, `claims`). The receipt with both, on a Brasswick copy (`two_scan_receipt.txt` in the scratch folder, quoted here): "Coverage now finds Hiring plan and future org." "Coverage now finds Reference list: ..." "Customer reference calls is something only the founder can give, ..." "4 claims changed. Now: Contradicted: The deck (slide 10) gives planned hires as 7 hires, but hiring plan (row 6) says 5, 28.6% lower. Contradicted: The deck (slide 10) gives staff after hiring as 14, but hiring plan (row 6) says 19, 35.7% higher. ..." "The ask list is down from 36 to 34 lines." A 409A file still reads "No check reads this file yet, so no number changed." No scan name appears. The page was not driven again for this merge.
+
+`bin/ci-py`: 518 passed, 6 failed, all six in `memo/tests/` (the known failures its builder is fixing). `bin/ci-web` passed.
+
 ## First run
 
 Driven once by the project recipe, `.claude/skills/verify-tricorder/features/founder-requests.md`, on 2026-10-23 at revision `8ac8ec2` (branch `forge/founder-requests`, with `origin/main` merged), in a Linux cloud container. Run `founder-requests`, port 8812, `TRICORDER_OFFLINE=1`. Every room is synthetic. Every artifact is in [evidence/](evidence/), copied from the run's evidence folder after `control.sh cleanup` (which reported "stopped pid 9343" and "26 files" kept).
