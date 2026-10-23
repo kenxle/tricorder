@@ -7,7 +7,7 @@
 <meta name="description" content="Style guide for Tricorder, direction B: Manifest. Tokens, type, spacing, readout components and rules.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cousine:wght@400;700&family=Libre+Caslon+Display&family=Libre+Franklin:ital,wght@0,300..700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cousine:wght@400;700&family=Barlow+Semi+Condensed:wght@400;500;600&family=Libre+Franklin:ital,wght@0,300..700;1,400&display=swap">
 <style>
 /* Direction B, Manifest. Dark-first: bare :root is the dark theme, light mirrors it. */
 :root {
@@ -59,7 +59,7 @@
 }
 
 :root {
-  --f-display: "Libre Caslon Display", "Libre Caslon Text", "Big Caslon", "Iowan Old Style", Georgia, serif;
+  --f-display: "Barlow Semi Condensed", "DIN Alternate", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
   --f-body: "Libre Franklin", "Franklin Gothic Book", "Helvetica Neue", Arial, sans-serif;
   --f-data: "Cousine", "Liberation Mono", "Courier New", ui-monospace, monospace;
   --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 72px; --s-9: 112px; --s-10: 160px;
@@ -89,7 +89,7 @@ a:hover { color: var(--accent); }
 .wrap { max-width: var(--wide); margin: 0 auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
 
 /* Type */
-.display, h1, h2 { font-family: var(--f-display); font-weight: 400; letter-spacing: -0.005em; line-height: 1.08; margin: 0; }
+.display, h1, h2 { font-family: var(--f-display); font-weight: 500; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; line-height: 1.08; margin: 0; }
 h1 { font-size: clamp(2.6rem, 7.2vw, 5.6rem); line-height: 0.96; }
 h2 { font-size: clamp(2rem, 4.4vw, 3.4rem); }
 h3 { font-family: var(--f-body); font-size: 1.05rem; font-weight: 650; margin: 0; line-height: 1.35; }
@@ -345,7 +345,7 @@ footer.site nav { display: flex; gap: var(--s-5); flex-wrap: wrap; }
   <div class="wrap">
     <span class="label box-no"><b>B</b> Style direction, seeded 2026-10-22T19:51:56Z</span>
     <h1>Manifest</h1>
-    <p class="lede">Every readout line is a manifest line: what the company stated, set beside what Tricorder found, with the stamp it earned. A petrol-dark ground, an amber that works like a signal lamp for the one thing to do next, Caslon for the statements and Cousine for every figure.</p>
+    <p class="lede">Every readout line is a manifest line: what the company stated, set beside what Tricorder found, with the stamp it earned. A petrol-dark ground, an amber that works like a signal lamp for the one thing to do next, Barlow for the statements and Cousine for every figure.</p>
   </div>
 </header>
 
@@ -360,7 +360,7 @@ footer.site nav { display: flex; gap: var(--s-5); flex-wrap: wrap; }
           <tbody>
             <tr><td class="ln">L.01</td><td>Motif: shipping manifest and customs</td><td>Numbered lines with a ruled gutter. Stated and found side by side, like declared and inspected. Box labels on panels. Verdicts as stamps. The words on screen stay the readout's own: stated, found, corroborated.</td></tr>
             <tr><td class="ln">L.02</td><td>Accent hue 27</td><td>Signal-lamp amber, <span class="data">#F08B38</span> on dark and <span class="data">#A14E0C</span> on light. It marks the next action and the found value, never a verdict.</td></tr>
-            <tr><td class="ln">L.03</td><td>Libre Caslon Display, Libre Franklin, Cousine</td><td>Caslon for the big statements, like an engraved form header. Franklin for reading. Cousine for every figure, file name and line number.</td></tr>
+            <tr><td class="ln">L.03</td><td>Barlow Semi Condensed, Libre Franklin, Cousine</td><td>Barlow for the big statements, like the printed header on a ledger or spec sheet. Franklin for reading. Cousine for every figure, file name and line number.</td></tr>
             <tr><td class="ln">L.04</td><td>Airy, one idea per screen</td><td>Marketing screens fill the viewport with one statement each. In the readout, one claim per line, with 24px of air inside every line.</td></tr>
             <tr><td class="ln">L.05</td><td>Dark ground</td><td>Dark is the default theme. The dark is petrol, hue 197, so amber sits on its complement and reads as a lamp, not a highlighter.</td></tr>
             <tr><td class="ln">L.06</td><td>Pill controls on square panels</td><td>Anything you read is a square sheet. Anything you press or type in is a pill. Source chips are pills because they open something.</td></tr>
@@ -424,9 +424,9 @@ footer.site nav { display: flex; gap: var(--s-5); flex-wrap: wrap; }
     <div class="sg-index"><span class="label box-no"><b>03</b> Type</span><h2 id="type-title">Three faces</h2></div>
     <div>
       <div class="face">
-        <span class="label">Display: Libre Caslon Display 400</span>
+        <span class="label">Display: Barlow Semi Condensed 500</span>
         <span class="big display" style="font-size:clamp(2.2rem,5vw,3.6rem)">Point it at a startup, get a readout.</span>
-        <p class="meta">Headlines, screen statements, panel titles of 1.5rem and up, pull quotes. Fallback: Libre Caslon Text, Big Caslon, Iowan Old Style, Georgia, serif.</p>
+        <p class="meta">Headlines, screen statements, panel titles of 1.5rem and up, pull quotes. Fallback: DIN Alternate, Arial Narrow, Helvetica Neue, Arial, sans-serif.</p>
       </div>
       <div class="face">
         <span class="label">Body: Libre Franklin 300 to 700</span>
@@ -443,9 +443,9 @@ footer.site nav { display: flex; gap: var(--s-5); flex-wrap: wrap; }
         <table>
           <thead><tr><th scope="col">Step</th><th scope="col">Face</th><th scope="col" class="n">Size</th><th scope="col">Use</th></tr></thead>
           <tbody>
-            <tr><td>Display XL</td><td>Caslon</td><td class="n">clamp(2.6rem, 7.2vw, 5.6rem)</td><td>One per page: the hero line or the guide title.</td></tr>
-            <tr><td>Display L</td><td>Caslon</td><td class="n">clamp(2rem, 4.4vw, 3.4rem)</td><td>The one statement on each screen.</td></tr>
-            <tr><td>Display M</td><td>Caslon</td><td class="n">1.5rem to 1.8rem</td><td>Panel titles, pull quotes, the "not" cards.</td></tr>
+            <tr><td>Display XL</td><td>Barlow</td><td class="n">clamp(2.6rem, 7.2vw, 5.6rem)</td><td>One per page: the hero line or the guide title.</td></tr>
+            <tr><td>Display L</td><td>Barlow</td><td class="n">clamp(2rem, 4.4vw, 3.4rem)</td><td>The one statement on each screen.</td></tr>
+            <tr><td>Display M</td><td>Barlow</td><td class="n">1.5rem to 1.8rem</td><td>Panel titles, pull quotes, the "not" cards.</td></tr>
             <tr><td>Lede</td><td>Franklin 350</td><td class="n">1.1rem to 1.3rem</td><td>The sentence under a statement.</td></tr>
             <tr><td>Body</td><td>Franklin 400</td><td class="n">17px / 1.6</td><td>Readout text, flag sentences. Measure 36rem.</td></tr>
             <tr><td>Flag title</td><td>Franklin 650</td><td class="n">1.08rem</td><td>"Green flag: the round adds up."</td></tr>
@@ -650,8 +650,8 @@ footer.site nav { display: flex; gap: var(--s-5); flex-wrap: wrap; }
         <li><div><p>Make anything you read a square panel. Make anything you press, type in or open a pill.</p><p class="why">One look at a corner tells the operator whether it does something.</p></div></li>
         <li><div><p>Number every readout line (L.01 for claims, P.01 for pieces) and give every panel a box label.</p><p class="why">Partners can say "line 2" in the meeting and everyone finds it.</p></div></li>
         <li><div><p>Use dashed lines only for what is absent or not real: gaps, not enough in the room, the synthetic label.</p><p class="why">If dashes mean one thing, a missing document is visible at a glance.</p></div></li>
-        <li><div><p>Give each marketing screen one statement in Caslon and at most one supporting object. In the readout, one claim per line.</p><p class="why">The seed asked for air. Air also keeps a number from being read with its neighbour's source.</p></div></li>
-        <li><div><p>Use Caslon Display at 1.5rem and above only. Never for figures or running text.</p><p class="why">Its hairlines break up at small sizes, worst on a dark ground.</p></div></li>
+        <li><div><p>Give each marketing screen one statement in Barlow and at most one supporting object. In the readout, one claim per line.</p><p class="why">The seed asked for air. Air also keeps a number from being read with its neighbour's source.</p></div></li>
+        <li><div><p>Use Barlow at 1.5rem and above only. Never for running text. Figures in tables stay in Cousine.</p><p class="why">Condensed letters crowd at small sizes. Cousine keeps every column of figures aligned.</p></div></li>
         <li><div><p>Show at most one accent fill on a screen.</p><p class="why">A signal lamp means one thing to do. Two lamps mean none.</p></div></li>
         <li><div><p>Put the synthetic label, word for word, on every page and panel that shows Hollis Voice figures.</p><p class="why">A screenshot travels without its context. The label has to travel with it.</p></div></li>
         <li><div><p>Use tokens only in components. Dark is the default; light is a mirror of the same tokens.</p><p class="why">A hex value in a component breaks the other theme without anyone noticing.</p></div></li>
