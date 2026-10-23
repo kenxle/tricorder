@@ -1,0 +1,46 @@
+$ python3 -m memo data_room/hollis_voice
+(cwd /home/claude/wt/memo-export, TRICORDER_OUT_DIR=/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/memo-export/verify/memo-export-final/out)
+{
+  "memo": "/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/memo-export/verify/memo-export-final/out/hollis_voice/memo/memo_v1.json",
+  "html": "/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/memo-export/verify/memo-export-final/out/hollis_voice/memo/memo.html",
+  "pdf": "/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/memo-export/verify/memo-export-final/out/hollis_voice/memo/memo.pdf",
+  "version": 1,
+  "sections": 16,
+  "claims": 10,
+  "could_not_verify": 0,
+  "sections_empty": {
+    "3. Company and problem": [
+      "Not in the readout yet: the claims scan's results (the scan is not built yet).",
+      "Not in the readout yet: the frameworks scan's results (the scan is not built yet)."
+    ],
+    "4. Market": [
+      "Not in the readout yet: the verdict for market.",
+      "Not in the readout yet: the signals scan's results (the scan is not built yet).",
+      "Not in the readout yet: the frameworks scan's results (the scan is not built yet)."
+    ],
+    "5. Product": [
+      "Not in the readout yet: the video scan's results (the scan is not built yet).",
+      "Not in the readout yet: the presence scan's results (the scan is not built yet)."
+    ],
+    "8. Competition and comparables": [
+      "Not in the readout yet: the verdict for comps.",
+      "Not in the readout yet: the comps scan's results (the scan is not built yet).",
+      "Not in the readout yet: the frameworks scan's results (the scan is not built yet)."
+    ],
+    "9. Team": [
+      "Not in the readout yet: the verdict for team.",
+      "Not in the readout yet: the founders scan's results (the scan is not built yet)."
+    ],
+    "11. Deal terms": [
+      "Not in the readout yet: the verdict for the pitch itself.",
+      "Not in the room: the option grant records behind 'Options granted (11 holders)'",
+      "Not in the room: the signed SAFE for Tidewater Seed Fund I, LP",
+      "Not in the room: the signed SAFE for Winifred Hartley (angel)",
+      "Not in the room: the signed SAFE for Ostrander Lane Ventures II, LP"
+    ],
+    "13. Outcomes": [
+      "Not in the readout yet: the round, the runway with the hiring plan, the comps, which the cases rest on."
+    ]
+  }
+}
+exit 0

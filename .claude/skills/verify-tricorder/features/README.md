@@ -38,3 +38,4 @@ Each feature file starts with an H1 title and one paragraph on what the user see
 - [Readout store and delete](./readout-store.md) covers saving a readout with its sources and files per fund, listing everything held for a company, and the one confirmed delete.
 - [Contract terms](./contract-terms.md) covers entry 1.13 checks 1, 3, 4 and 6, the clause notes, contracts-only folders, and the ask lines for missing contracts.
 - [Requests to the founder](./founder-requests.md) covers drafting a message from the ask list with guidance, copy and mailto, and adding a founder's reply so the waiting scans rerun.
+- [The memo and its PDF](./memo-export.md) covers the draft memo in the template's sections, the interactive page's two clicks, the footnoted PDF, the quote check and operator edits with versions.

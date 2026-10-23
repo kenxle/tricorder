@@ -145,6 +145,8 @@ app.include_router(store_router)
 from server.founder_requests_routes import router as founder_requests_router  # noqa: E402
 
 app.include_router(founder_requests_router)  # above the page mount, which answers every path
+from server.memo_routes import router as memo_router  # noqa: E402  (memo-export; before the page mount, which catches "/")
+app.include_router(memo_router)
 
 if PAGE_DIST.is_dir():
     app.mount("/", StaticFiles(directory=PAGE_DIST, html=True), name="page")
