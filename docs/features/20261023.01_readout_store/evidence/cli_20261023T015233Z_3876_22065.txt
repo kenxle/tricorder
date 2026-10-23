@@ -1,0 +1,9 @@
+$ cat /tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/readout-store/verify/readout-store/cache/index.json
+(cwd /home/claude/wt/readout-store, TRICORDER_OUT_DIR=/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/readout-store/verify/readout-store/out)
+{
+  "https://competitor.example.com/pricing": {
+    "file": "signals/competitor_pricing.html",
+    "read_at": "2026-10-23"
+  }
+}
+exit 0

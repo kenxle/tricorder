@@ -1,0 +1,14 @@
+$ python3 -m store save data_room/hollis_voice
+(cwd /home/claude/wt/readout-store, TRICORDER_OUT_DIR=/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/readout-store/verify/readout-store/out)
+{
+  "fund": "demo",
+  "company": "hollis_voice",
+  "version": 1,
+  "new": false,
+  "content_sha256": "2a1354563e6d11bc91ec838bad8824df09dc0fdae33288a6fce40a4a4f80179a",
+  "files_copied": 0,
+  "bytes_copied": 0,
+  "not_copied": [],
+  "results_missing": []
+}
+exit 0
