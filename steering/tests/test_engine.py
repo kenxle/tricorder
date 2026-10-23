@@ -489,3 +489,17 @@ def test_a_scan_that_crashes_during_a_steer_names_the_scan_and_writes_nothing(en
         engine.steer(SEED, "retention", "read the full room")
     assert {p.name: p.read_bytes() for p in folder.iterdir()} == before
     assert {p.name: p.read_bytes() for p in out_dir(FULL).iterdir()} == full_before
+
+
+def test_the_merge_command_keeps_steers_and_starts_over_only_when_asked(env, capsys):
+    """S7: python -m scans.memo keeps the steers; --fresh is the one way to start over, and says so."""
+    from scans.memo import merge
+
+    engine.steer(SEED, "retention", "read the full room")
+    assert merge.main([str(SEED)]) == 0
+    kept = json.loads(capsys.readouterr().out)
+    assert kept["revisions_kept"] == 1 and kept["reads_room"] == "hollis_voice"
+    assert merge.main([str(SEED), "--fresh"]) == 0
+    fresh = json.loads(capsys.readouterr().out)
+    assert fresh["revisions_kept"] == 0 and fresh["reads_room"] == "hollis_voice_seed_drop"
+    assert merge.readout_room(SEED) == SEED

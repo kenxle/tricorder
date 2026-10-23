@@ -163,11 +163,14 @@ def write_readout(readout: Readout, room_dir: Path) -> Path:
 
 
 def main(argv: list[str]) -> int:
-    if len(argv) != 1 or not Path(argv[0]).is_dir():
-        print("usage: python -m scans.memo <room_dir>")
+    fresh = "--fresh" in argv
+    args = [a for a in argv if a != "--fresh"]
+    if len(args) != 1 or not Path(args[0]).is_dir():
+        print("usage: python -m scans.memo <room_dir> [--fresh]\n"
+              "  --fresh  start over: drop the steers' revisions, scenario lines and full-room switch")
         return 2
-    readout = build_readout(Path(argv[0]))
-    target = write_readout(readout, Path(argv[0]))
+    readout = build_readout(Path(args[0]), keep_steers=not fresh)
+    target = write_readout(readout, Path(args[0]))
     print(json.dumps({
         "readout": str(target),
         "claims": len(readout.claims),
@@ -175,5 +178,7 @@ def main(argv: list[str]) -> int:
         "gaps": len(readout.gaps),
         "scans_run": readout.scans_run,
         "scans_missing": readout.scans_missing,
+        "revisions_kept": len(readout.revisions),
+        "reads_room": room_name(reads_room(readout, Path(args[0]))),
     }, indent=2))
     return 0
