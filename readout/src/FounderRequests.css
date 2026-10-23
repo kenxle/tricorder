@@ -1,0 +1,29 @@
+/* Requests to the founder. Uses the readout's tokens (tokens.css) only. */
+.fr { margin-top: 24px; }
+.fr button, .fr .fr-btn { font: inherit; font-size: 14px; padding: 6px 12px; border-radius: 6px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); cursor: pointer; text-decoration: none; display: inline-block; }
+.fr button.fr-primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.fr button:disabled { opacity: .5; cursor: default; }
+.fr-toolbar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.fr-push { margin-left: auto; }
+.fr-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+@media (min-width: 900px) { .fr-layout.fr-drafting { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+.fr-asks { list-style: none; padding: 0; margin: 0; }
+.fr-ask { display: grid; grid-template-columns: 24px minmax(0, 1fr) auto; gap: 8px 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.fr-ask input { margin-top: 5px; }
+.fr-title { font-weight: 600; }
+.fr-meta { display: flex; gap: 6px; flex-wrap: wrap; font-size: 13px; color: var(--muted); align-items: center; }
+.fr-chip { border: 1px solid var(--line); border-radius: 999px; padding: 0 8px; font-size: 12px; }
+.fr-chip.fr-top { border-color: var(--fg); color: var(--fg); }
+.fr-chip.fr-late { border-color: var(--amber); color: var(--amber); }
+.fr-why { font-size: 13px; color: var(--muted); }
+.fr-drawer { border: 1px solid var(--line); border-radius: 8px; padding: 12px; align-self: start; position: sticky; top: 8px; }
+.fr-drawer h3, .fr-intake h3 { margin: 0 0 8px; font-size: 17px; }
+.fr label { display: block; font-size: 13px; color: var(--muted); margin: 8px 0 2px; }
+.fr input[type="text"], .fr input[type="email"], .fr select, .fr textarea { width: 100%; box-sizing: border-box; font: inherit; font-size: 14px; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--fg); }
+.fr textarea { font: 13px/1.45 var(--mono); min-height: 340px; resize: vertical; }
+.fr-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; align-items: center; }
+.fr-warn { color: var(--amber); font-size: 13px; }
+.fr-ok { color: var(--green); font-size: 13px; }
+.fr-intake { border: 1px solid var(--line); border-radius: 8px; padding: 12px; margin-top: 16px; }
+.fr-steps { padding-left: 18px; font-size: 14px; }
+.fr code { font: 13px var(--mono); overflow-wrap: anywhere; }

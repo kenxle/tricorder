@@ -1,0 +1,44 @@
+$ python3 -m founder_requests draft data_room/brasswick --to celia@example.com --sender Sam
+(cwd /home/claude/wt/founder-requests, TRICORDER_OUT_DIR=/tmp/tricorder-verify/founder-requests/out)
+Subject: Brasswick: documents for our review
+
+Hi Celia,
+
+Thank you for the Brasswick data room. To finish our first pass, could you send the items below? A short note with each file is plenty. If something does not exist yet, just say so; that helps us too.
+
+1. Hiring plan
+Please send the hiring plan for the next 12 to 18 months: role, department, start date, base pay and equity grant for each planned hire.
+   What it is: A list of the people you plan to add, one row per hire.
+   Best form: A CSV or a spreadsheet tab with one row per planned hire: role, department, start date, base pay and equity grant.
+   A good one shows: The next 12 to 18 months; pay and start date for every hire; start dates tied to milestones.
+
+2. Product roadmap and demo
+Please send a recorded demo or a login to a sandbox, and a one-page roadmap with dates and owners. Say which parts of the demo are live.
+   What it is: A short plan of what the team will build and when, and a way to see the product work.
+   Best form: A one-page roadmap with dates and owners, and a recorded demo or a sandbox login.
+   A good one shows: Which parts of the demo are live; milestones tied to the money in this round.
+
+3. Incorporation documents and bylaws
+Please send the filed certificate of incorporation with every amendment, the current bylaws, the organizational board consent, the founders' stock purchase agreements and 83(b) elections, and a good standing certificate dated within the last few months.
+   What it is: The company's formation set: the filed certificate of incorporation with amendments, the bylaws and the first board consent.
+   Best form: File-stamped PDFs, plus a good standing certificate dated in the last few months.
+   A good one shows: The full set, with every amendment; founder stock agreements with vesting and 83(b) elections.
+
+4. IP and invention assignment agreements
+Please send the signed invention assignment agreements for each founder (covering any work before incorporation), each employee and each contractor who has written code, designs or content, and a list of anyone who has not signed.
+   What it is: The signed agreements by which founders, employees and contractors give the company what they create for it.
+   Best form: Signed PDFs, one per person, plus a list of anyone who has not signed.
+   A good one shows: A signed agreement from every founder, employee and contractor who has built product; founder agreements covering work from before the company; signing dates on or before each start date.
+
+5. Board and stockholder minutes and consents
+Please send the board and stockholder consents or minutes that approved each SAFE, note, stock issuance and option grant, the equity plan, and the 409A report.
+   What it is: The written record of decisions by the board and the stockholders: minutes of meetings and written consents.
+   Best form: Signed PDFs, in date order, as they sit in your minute book.
+   A good one shows: A consent for every stock issuance, SAFE and option grant; approvals that match the cap table line for line.
+
+Thank you,
+Sam
+
+mailto (4506 characters; long for a mail link, copy the text instead):
+mailto:celia@example.com?subject=Brasswick%3A%20documents%20for%20our%20review&body=Hi%20Celia%2C%0D%0A%0D%0AThank%20you%20for%20the%20Brasswick%20data%20room.%20To%20finish%20our%20first%20pass%2C%20could%20you%20send%20the%20items%20below%3F%20A%20short%20note%20with%20each%20file%20is%20plenty.%20If%20something%20does%20not%20exist%20yet%2C%20just%20say%20so%3B%20that%20helps%20us%20too.%0D%0A%0D%0A1.%20Hiring%20plan%0D%0APlease%20send%20the%20hiring%20plan%20for%20the%20next%2012%20to%2018%20months%3A%20role%2C%20department%2C%20start%20date%2C%20base%20pay%20and%20equity%20grant%20for%20each%20planned%20hire.%0D%0A%20%20%20What%20it%20is%3A%20A%20list%20of%20the%20people%20you%20plan%20to%20add%2C%20one%20row%20per%20hire.%0D%0A%20%20%20Best%20form%3A%20A%20CSV%20or%20a%20spreadsheet%20tab%20with%20one%20row%20per%20planned%20hire%3A%20role%2C%20department%2C%20start%20date%2C%20base%20pay%20and%20equity%20grant.%0D%0A%20%20%20A%20good%20one%20shows%3A%20The%20next%2012%20to%2018%20months%3B%20pay%20and%20start%20date%20for%20every%20hire%3B%20start%20dates%20tied%20to%20milestones.%0D%0A%0D%0A2.%20Product%20roadmap%20and%20demo%0D%0APlease%20send%20a%20recorded%20demo%20or%20a%20login%20to%20a%20sandbox%2C%20and%20a%20one-page%20roadmap%20with%20dates%20and%20owners.%20Say%20which%20parts%20of%20the%20demo%20are%20live.%0D%0A%20%20%20What%20it%20is%3A%20A%20short%20plan%20of%20what%20the%20team%20will%20build%20and%20when%2C%20and%20a%20way%20to%20see%20the%20product%20work.%0D%0A%20%20%20Best%20form%3A%20A%20one-page%20roadmap%20with%20dates%20and%20owners%2C%20and%20a%20recorded%20demo%20or%20a%20sandbox%20login.%0D%0A%20%20%20A%20good%20one%20shows%3A%20Which%20parts%20of%20the%20demo%20are%20live%3B%20milestones%20tied%20to%20the%20money%20in%20this%20round.%0D%0A%0D%0A3.%20Incorporation%20documents%20and%20bylaws%0D%0APlease%20send%20the%20filed%20certificate%20of%20incorporation%20with%20every%20amendment%2C%20the%20current%20bylaws%2C%20the%20organizational%20board%20consent%2C%20the%20founders%27%20stock%20purchase%20agreements%20and%2083%28b%29%20elections%2C%20and%20a%20good%20standing%20certificate%20dated%20within%20the%20last%20few%20months.%0D%0A%20%20%20What%20it%20is%3A%20The%20company%27s%20formation%20set%3A%20the%20filed%20certificate%20of%20incorporation%20with%20amendments%2C%20the%20bylaws%20and%20the%20first%20board%20consent.%0D%0A%20%20%20Best%20form%3A%20File-stamped%20PDFs%2C%20plus%20a%20good%20standing%20certificate%20dated%20in%20the%20last%20few%20months.%0D%0A%20%20%20A%20good%20one%20shows%3A%20The%20full%20set%2C%20with%20every%20amendment%3B%20founder%20stock%20agreements%20with%20vesting%20and%2083%28b%29%20elections.%0D%0A%0D%0A4.%20IP%20and%20invention%20assignment%20agreements%0D%0APlease%20send%20the%20signed%20invention%20assignment%20agreements%20for%20each%20founder%20%28covering%20any%20work%20before%20incorporation%29%2C%20each%20employee%20and%20each%20contractor%20who%20has%20written%20code%2C%20designs%20or%20content%2C%20and%20a%20list%20of%20anyone%20who%20has%20not%20signed.%0D%0A%20%20%20What%20it%20is%3A%20The%20signed%20agreements%20by%20which%20founders%2C%20employees%20and%20contractors%20give%20the%20company%20what%20they%20create%20for%20it.%0D%0A%20%20%20Best%20form%3A%20Signed%20PDFs%2C%20one%20per%20person%2C%20plus%20a%20list%20of%20anyone%20who%20has%20not%20signed.%0D%0A%20%20%20A%20good%20one%20shows%3A%20A%20signed%20agreement%20from%20every%20founder%2C%20employee%20and%20contractor%20who%20has%20built%20product%3B%20founder%20agreements%20covering%20work%20from%20before%20the%20company%3B%20signing%20dates%20on%20or%20before%20each%20start%20date.%0D%0A%0D%0A5.%20Board%20and%20stockholder%20minutes%20and%20consents%0D%0APlease%20send%20the%20board%20and%20stockholder%20consents%20or%20minutes%20that%20approved%20each%20SAFE%2C%20note%2C%20stock%20issuance%20and%20option%20grant%2C%20the%20equity%20plan%2C%20and%20the%20409A%20report.%0D%0A%20%20%20What%20it%20is%3A%20The%20written%20record%20of%20decisions%20by%20the%20board%20and%20the%20stockholders%3A%20minutes%20of%20meetings%20and%20written%20consents.%0D%0A%20%20%20Best%20form%3A%20Signed%20PDFs%2C%20in%20date%20order%2C%20as%20they%20sit%20in%20your%20minute%20book.%0D%0A%20%20%20A%20good%20one%20shows%3A%20A%20consent%20for%20every%20stock%20issuance%2C%20SAFE%20and%20option%20grant%3B%20approvals%20that%20match%20the%20cap%20table%20line%20for%20line.%0D%0A%0D%0AThank%20you%2C%0D%0ASam%0D%0A
+exit 0

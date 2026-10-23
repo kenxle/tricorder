@@ -142,6 +142,9 @@ def source_text(room: str, source: Source) -> dict:
 
 from server.store_routes import router as store_router  # noqa: E402
 app.include_router(store_router)
+from server.founder_requests_routes import router as founder_requests_router  # noqa: E402
+
+app.include_router(founder_requests_router)  # above the page mount, which answers every path
 
 if PAGE_DIST.is_dir():
     app.mount("/", StaticFiles(directory=PAGE_DIST, html=True), name="page")
