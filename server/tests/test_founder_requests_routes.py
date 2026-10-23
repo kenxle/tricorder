@@ -1,5 +1,6 @@
 """The founder-requests endpoints, through the real app."""
 
+import base64
 import subprocess
 import sys
 from pathlib import Path
@@ -36,7 +37,13 @@ def test_lines_and_draft(env):
     d = client.post("/api/rooms/brasswick/founder-requests/draft", json={"to": "celia@example.com"}).json()
     assert d["body"].startswith("Hi Celia,") and d["mailto"].startswith("mailto:celia@example.com?") and d["leaks"] == []
     one = client.post("/api/rooms/brasswick/founder-requests/draft", json={"numbers": [r["default"][0]]}).json()
-    assert one["subject"] == "Brasswick: one document for our review"
+    assert one["subject"] == "Brasswick: one thing before our next meeting"
+    signed = client.post("/api/rooms/brasswick/founder-requests/draft",
+                         json={"by": "2026-11-06", "sender": "Sam Ortiz", "fund": "Example Ventures"}).json()
+    assert "by Friday 6 November" in signed["body"] and signed["body"].rstrip().endswith("Thanks,\nSam Ortiz\nExample Ventures")
+    assert signed["mailto_fits"] is True
+    assert r["by"] and r["reason"] == "before our partner meeting" and "held" in r
+    assert all("C1" not in i["operator_why"] for i in r["items"])
     assert client.post("/api/rooms/brasswick/founder-requests/draft", json={"numbers": [999]}).status_code == 422
     assert client.post("/api/rooms/nope/founder-requests/draft", json={}).status_code == 404
 
@@ -92,3 +99,19 @@ def test_room_ids_are_checked(env):
     r = client.post("/api/rooms/x%2F..%2Fbrasswick/founder-requests/files?answers=C22&name=p.csv", content=PLAN)
     assert r.status_code in (404, 405)
     assert not (env / "rooms").exists() or not any((env / "rooms").rglob("p.csv"))
+
+
+def test_several_files_in_one_add(env):
+    client.post("/api/rooms/brasswick/founder-requests/copy", json={})
+    _build(env / "rooms" / "brasswick_live")
+    files = [{"name": "Hiring Plan.csv", "answers": "C22", "data": base64.b64encode(PLAN).decode()},
+             {"name": "refs.pdf", "answers": "C97,C46", "data": base64.b64encode(b"%PDF-1.4\n%x\n").decode()}]
+    r = client.post("/api/rooms/brasswick_live/founder-requests/batch", json={"files": files})
+    assert r.status_code == 200, r.text
+    body = r.json()
+    assert [f["saved"] for f in body["files"]] == ["05_team/hiring_plan.csv", "05_team/reference_list_refs.pdf"]
+    assert body["summary"][0] == "Coverage now finds Hiring plan and future org."
+    bad = client.post("/api/rooms/brasswick_live/founder-requests/batch",
+                      json={"files": [{"name": "x.csv", "answers": "C35", "data": "not base64!"}]})
+    assert bad.status_code == 400
+    assert client.post("/api/rooms/brasswick/founder-requests/batch", json={"files": files}).status_code == 409

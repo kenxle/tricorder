@@ -1,0 +1,47 @@
+$ python3 -m founder_requests list data_room/brasswick
+(cwd /home/claude/wt/founder-requests, TRICORDER_OUT_DIR=/tmp/tricorder-verify/founder-requests-r2/out)
+  1. Monthly revenue by customer  [Top 1, if you have it]
+     Please add the kind of revenue (subscription, pilot or one-time fee) to each row of the revenue by customer file you sent, and an MRR column to the monthly metrics.
+  2. Investor updates  [Top 2, if you have it]
+     Please send the investor updates you have sent since your first outside money.
+  3. Cohort or retention table  [Top 3, if you have it]
+     Please send the cohort export behind the deck's retention figure, with a one-line definition of a cohort.
+  4. Monthly financial statements  [Top 4]
+     Please send monthly balance sheets.
+  5. Bank statements  [if you have it, after the term sheet]
+     Please send statements for every business bank account for the last 12 months, downloaded straight from the bank, or give read-only access through your bank.
+  6. Hiring plan  [Top 5]
+     Please send your hiring plan for the next 12 to 18 months.
+  7. Current burn and cash
+     Please send the current monthly burn and the bank balance behind it, with the date.
+  8. Unit economics  [if you have it]
+     Please send how you work out acquisition cost, lifetime value and payback.
+  9. People we can call
+     Please send names and contacts of people we can call: three customers (your largest and one who stopped using the product), two people who have worked with the founders, and a current investor or advisor. Any letters of intent too.
+ 10. Sales pipeline  [if you have it]
+     Please send a snapshot of your sales pipeline.
+ 13. Option grants and 409A  [if you have it]
+     Please send the option grant ledger with the signed grant and advisor agreements, and the latest 409A report.
+ 14. Prior financing documents
+     Please send the signed SAFE, with any side letter, for each of: Theodora Vance (angel); Wickham Row Angels LLC; Halyard Pre-Seed Fund I, LP.
+ 15. One-page summary
+     Please send the one-page summary you give investors, with its date.
+ 16. Product roadmap and demo
+     Please send a recorded demo or a sandbox login, and a one-page roadmap.
+ 18. Incorporation documents and bylaws  [after the term sheet]
+     Please send your incorporation documents: the filed certificate with amendments, the bylaws and the first board consent.
+ 19. IP and invention assignment agreements  [after the term sheet]
+     Please send the signed invention assignment agreements for each founder, employee and contractor, and a list of anyone who has not signed.
+ 20. Board and stockholder minutes and consents  [after the term sheet]
+     Please send the board and stockholder consents or minutes that approved each SAFE, note, stock issuance and option grant.
+ 21. Tax returns  [if you have it, after the term sheet]
+     Please send the federal and state income tax returns filed since incorporation with proof of filing, the payroll tax filings, and the Delaware annual report and franchise tax receipts.
+ 22. Statement of claims, disputes and inquiries
+     Please send a short statement of any lawsuits, threatened claims, disputes or regulator contact, or say there are none.
+ 23. Material agreements  [if you have it]
+     Please send a list of agreements over $25,000 with copies: your lease, any loan or lien, insurance policies, IP licences and consulting agreements beyond the Norrgate Software Studio statement of work already in the room.
+ 26. Patents, trademarks, copyrights and domain names  [if you have it]
+     Please send a list of your patents, trademarks, copyrights and domain names, with filing numbers.
+ 27. AI and data governance documents  [if you have it]
+     Please send a one-page note on the AI models and vendors the product uses and the data behind them.
+exit 0

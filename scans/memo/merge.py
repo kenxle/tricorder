@@ -27,6 +27,7 @@ from scans.base import available, gap, now_iso, out_dir, room_name, synthetic_no
 
 STEPS: tuple[str, ...] = (
     "link",        # conflicts_with and corroborated_by (ARCHITECTURE, "How the readout merges")
+    "claim_support",  # pitch claims relabelled against other scans' flags (claim-support slice)
     "pieces",      # FRAMEWORKS "Piece verdicts"
     "top_flags",   # FRAMEWORKS "Top green and red flags"
     "coverage",    # FRAMEWORKS "Checklist coverage"

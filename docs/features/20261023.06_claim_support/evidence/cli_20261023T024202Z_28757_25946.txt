@@ -1,0 +1,15 @@
+$ python3 -m eval.score data_room/hollis_voice_seed_drop
+(cwd /home/claude/wt/claim-support, TRICORDER_OUT_DIR=/tmp/tricorder-verify/claim-support/out)
+missed PF1 Pilot booked as ARR
+missed PF2 Deck ARR disagrees with the model
+found  PF2b Video ARR disagrees with the deck
+missed PF3 Churn hidden in the cohort tab
+missed PF4 Burn and runway do not match the hiring plan
+missed PF5 Customer concentration
+missed PF6 Gross margin excludes hosting, inference and support
+missed PF7 Cumulative sign-ups shown as active clinics
+clear   DC1 Onboarding fee excluded from ARR correctly (decoy)
+clear   DC2 Annual prepay counted as recurring correctly (decoy)
+clear   DC3 Clean cap table (decoy)
+hollis_voice_seed_drop: found 1 of 8; decoys flagged 0 of 3
+exit 0

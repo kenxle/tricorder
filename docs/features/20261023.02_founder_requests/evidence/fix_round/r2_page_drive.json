@@ -1,0 +1,15 @@
+{
+ "trust": "Tricorder never sends this. Copy it, or open it in your own mail app and send it from there.",
+ "mailto_length": 1744,
+ "long_warning_shown": false,
+ "copied_head": "Subject: Brasswick: a few things before our next meeting\n\nHi Celia,\n\nThanks for sharing the Brasswick data room. Could you send the items below by Friday 6 November? We would like them before our partner meeting. A rough version is fine, and if something does not exist yet, just say so.\n\n1. Please s",
+ "signed": true,
+ "dated": true,
+ "codes_in_panel": [],
+ "intake_above_list_px": 0,
+ "receipt": "synthetic_brasswick_hiring_plan.csv is saved as 05_team/hiring_plan.csv.\nBrasswick reference list.pdf is saved as 05_team/brasswick_reference_list.pdf.\n\nWhat changed\n\nCoverage now finds Hiring plan and future org.\nCoverage now finds Reference list: management, customers, current investors, advisors.\nFounder reference calls is something only the founder can give, so no check reads the file. The line stays on the ask list.\nNo check reads these files yet, so no number changed.\nThe ask list is down from 32 to 30 lines.",
+ "lines_after": 21,
+ "hiring_plan_left": false,
+ "phone_horizontal_scroll": false,
+ "errors": []
+}

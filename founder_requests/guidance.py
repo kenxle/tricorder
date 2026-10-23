@@ -173,7 +173,7 @@ GUIDANCE: dict[str, Guidance] = {g.guide: g for g in (
        "Numbers that can be traced to a file in the room", "an ask tied to milestones"),
     _g("prior-financing", "Prior financing documents",
        "The papers for each earlier raise: SAFEs or notes with any side letters, and term sheets.",
-       "Signed PDFs, one per investor, plus the term sheet for this round.",
+       "Signed PDFs, one per investor.",
        "A signed document for every instrument on the cap table", "every side letter"),
     _g("product-roadmap-and-demo", "Product roadmap and demo",
        "A short plan of what the team will build and when, and a way to see the product work.",
@@ -196,6 +196,49 @@ GUIDANCE: dict[str, Guidance] = {g.guide: g for g in (
        "A slide or a spreadsheet, by month and by category.",
        "Lines that add to the raise", "the milestones the money reaches", "when you expect to raise next"),
 )}
+
+
+# The founder's line after each request: "Ideally it includes <this>." Short, plain, and drawn from
+# the same "What it is" and "Green flags" sections as the fields above. The form goes first.
+INCLUDES: dict[str, str] = {
+    "409a-valuation": "the provider's PDF report with its effective date and the date the board adopted it",
+    "ai-and-data-governance-documents": "the models and AI vendors you use, the data behind them and your rights to it",
+    "audited-or-reviewed-financials": "the accountant's signed report with the statements it covers",
+    "bank-statements": "PDFs straight from the bank for every account and every month",
+    "board-stockholder-minutes": "signed consents in date order, one for every issuance and grant",
+    "cap-table": "every holder fully diluted, dated, with how each SAFE converts in this round",
+    "claims-disputes-inquiries": "each matter with a line of context, or a plain \"none\"",
+    "cohort-or-retention-export": "one row per starting month, customer and revenue retention, monthly and annual plans apart",
+    "cover-note-and-document-index": "one line per file with the date it is as of",
+    "customer-contracts-and-order-forms": "the signed PDF with term, price, renewal and notice terms",
+    "customer-references-and-letters-of-intent": "name, title, company, email and how they know you",
+    "employment-advisory-and-option-grant-records": "a ledger of every grant (holder, date, shares, strike, vesting) and the signed PDFs",
+    "financial-model": "the spreadsheet with formulas, an assumptions tab, and actual months marked apart from plan",
+    "founder-bios": "dated roles and links to public work from before the company",
+    "founder-video-or-recorded-intro": "a few minutes of the founders speaking, with numbers that match the deck",
+    "hiring-plan-and-future-org": "one row per hire with role, start date, base pay and equity",
+    "historical-financials": "an export from your accounting system, one column per month, cash or accrual basis stated",
+    "incorporation-documents": "file-stamped PDFs with every amendment and a recent good standing certificate",
+    "investor-update-archive": "the original emails or PDFs with their send dates",
+    "ip-assignment": "one signed agreement per person, with signing dates",
+    "key-team-bios-and-org-chart": "names, titles, who reports to whom, contractors and open roles marked",
+    "kpi-dashboard-or-metrics-export": "one row per month with new, expansion, contraction and churned revenue apart",
+    "market-sizing-and-competitive-landscape": "the count of target customers with its source, the price per customer and your nearest competitors",
+    "material-agreements-other-than-customer-contracts": "a one-page list of each agreement with signed copies attached",
+    "monthly-revenue-by-customer": "one row per customer per month, a CSV export from your billing system",
+    "one-page-summary": "the PDF with its date",
+    "pitch-deck": "the PDF you sent to other investors, with its date",
+    "prior-financing": "the signed PDF for each investor, with any side letter",
+    "product-roadmap-and-demo": "dates and owners, and which parts of the demo are live",
+    "sales-pipeline-snapshot": "a CRM export with stage, amount and expected close, closed-lost deals included",
+    "tax-returns": "one PDF per year with proof of filing",
+    "unit-economics": "monthly sales and marketing spend by channel and new paying customers by month",
+    "use-of-funds-plan": "spend by month and category, adding up to the raise, with the milestones it reaches",
+}
+
+
+def includes(stem: str | None) -> str | None:
+    return INCLUDES.get(stem or "")
 
 
 @lru_cache(maxsize=1)

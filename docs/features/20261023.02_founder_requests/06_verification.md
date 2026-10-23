@@ -1,5 +1,27 @@
 # Verification: requests to the founder
 
+## Fix round (2026-10-23, after the independent persona review)
+
+Driven again by the recipe, run `founder-requests-r2`, port 8812, `TRICORDER_OFFLINE=1`, at revisions `477d06a` (command line and API drafts) and `e160691` (the page drive, the CLI add and the readback; the server was relaunched after each code change, and the branch head after it changes only docs). Evidence is in [evidence/fix_round/](evidence/fix_round/), copied after `control.sh cleanup` ("stopped pid 26804", 33 files kept). The working rooms are `rooms/brasswick_r2` and `rooms/brasswick_r3` (git-ignored), because `rooms/brasswick_live` from the first run still exists and is not deleted; the page drive's final pass used `brasswick_r3`. `cli_20261023T0234*` are from before the last two fixes; the current draft is `cli_20261023T023546Z_25458_3459.txt`.
+
+| Check | Result | Evidence |
+|---|---|---|
+| Top five settles the decision first | Pass. Default: revenue by customer (reworded to what is missing), investor updates, the cohort export behind the deck's retention figure, monthly financial statements, the hiring plan. Incorporation, IP assignments and minutes read "After the term sheet". | `cli_20261023T023545Z_25447_14332.txt` (list), `r2_page_draft_light.png` |
+| No ask for a held file, no ask twice | Pass. The revenue line asks only for the kind of revenue per row and an MRR column; the cohort line asks for the export behind the deck's figure; 32 readout lines become 22 items (material agreements, option grants and 409A, people we can call merged). | `cli_20261023T023545Z_25447_14332.txt`, `api_20261023T023546Z_25478_30135.json` |
+| Short, warm, dated, signed email that fits a mail link | Pass. "Brasswick: a few things before our next meeting"; "by Friday 6 November ... before our partner meeting"; signed "Sam Ortiz / Example Ventures"; mailto 1,750 characters (CLI) and 1,744 (page), no long-link warning. | `cli_20261023T023546Z_25458_3459.txt`, `r2_page_copied_text.txt`, `r2_page_mailto.txt`, `r2_page_drive.json` |
+| Trust line, plain sample-room line, no check codes | Pass. The drawer reads "Tricorder never sends this. Copy it, or open it in your own mail app and send it from there."; the add box reads "This is a sample room, so the files go into a working copy of it."; no `C<number>` in the panel's text (`codes_in_panel: []`). | `r2_page_drive.json`, `r2_page_draft_*.png` |
+| Several files, one file for several lines, add box reachable | Pass. The add box is beside the list at its top on desktop (`intake_above_list_px: 0`) and above the list on a phone. Two files in one add: the hiring plan for "Hiring plan", the reference list PDF for "People we can call: Reference list ..." and "People we can call: Founder reference calls". | `r2_page_two_files_ready_*.png`, `r2_page_add_phone_*.png` |
+| Receipt in plain words | Pass. "Coverage now finds Hiring plan and future org." "Coverage now finds Reference list: ..." "Founder reference calls is something only the founder can give, so no check reads the file. The line stays on the ask list." "No check reads these files yet, so no number changed." "The ask list is down from 32 to 30 lines." | `r2_page_receipt.txt`, `r2_page_reply_added_*.png` |
+| Readback | Pass. The red-flag result's `inputs` list `05_team/hiring_plan.csv`; coverage rows C22, C97 and C73 read `found`; no C22 ask remains; the log lists all three files. | `api_20261023T023811Z_27045_25685.json`, `api_20261023T023811Z_27057_30540.json`, `r2_received.txt` |
+| CLI add and refusals | Pass. `add rooms/brasswick_r3 <409A>.pdf --for C73`: "Coverage now finds 409A valuation." "No check reads this file yet, so no number changed." Upload to `brasswick` 409 with the copy command; `..%2F..%2Fescape.exe` 415; `git status --short data_room` empty. | `cli_20261023T023811Z_27033_8932.txt`, `r2_curl_refusals.txt` |
+| Phone width | Pass. No horizontal scroll at 390 px (`phone_horizontal_scroll: false`). | `r2_page_draft_phone_*.png`, `r2_page_add_phone_*.png` |
+
+The drive itself found two defects, each fixed test-first and driven again: the reworded revenue line still told the founder how to build the file they had sent ("Ideally it includes ..."), and the receipt said "this file" for two files and promised a way to take a line off the ask list that the page does not have.
+
+Tests after the fix round: `python3 -m pytest` 276 passed, 0 failed; `bin/ci-py` passed (schema check, then 276 passed); `bin/ci-web` passed. Feature tests: guidance 4, draft 16, intake 36, CLI 5, routes 12.
+
+## First run
+
 Driven once by the project recipe, `.claude/skills/verify-tricorder/features/founder-requests.md`, on 2026-10-23 at revision `8ac8ec2` (branch `forge/founder-requests`, with `origin/main` merged), in a Linux cloud container. Run `founder-requests`, port 8812, `TRICORDER_OFFLINE=1`. Every room is synthetic. Every artifact is in [evidence/](evidence/), copied from the run's evidence folder after `control.sh cleanup` (which reported "stopped pid 9343" and "26 files" kept).
 
 ## Done when, line by line

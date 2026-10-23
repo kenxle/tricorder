@@ -1,0 +1,12 @@
+$ python3 -m eval.score data_room/brasswick
+(cwd /home/claude/wt/claim-support, TRICORDER_OUT_DIR=/tmp/tricorder-verify/claim-support/out)
+found  BF1 Recoveries counted at their gross amount
+found  BF2 The deck's revenue chart starts after a fall
+found  BF3 Contractors left out of burn and runway
+found  BF4 An annual prepayment booked as one month's revenue
+found  BF5 Spoken runway above the deck
+clear   DC1 Annual prepayment spread correctly (decoy)
+clear   DC2 A contractor the plan keeps (decoy)
+clear   DC3 A cumulative count labelled as cumulative (decoy)
+brasswick: found 5 of 5; decoys flagged 0 of 3
+exit 0
