@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
-import type { Claim, Piece, Readout, Source } from "../../schema/ts/claim";
+import type { Claim, Readout, Source } from "../../schema/ts/claim";
 import { buildReadout, getReadout, getRooms, getSourceText, type RoomInfo } from "./api";
-import { PIECE_LABEL, VERDICT_LABEL } from "./labels";
 import { FounderRequests } from "./FounderRequests";
+import { SteerableSection } from "./Steering";
 
 // The readout page skeleton: top flags, the overview, a piece's claims, a
 // claim's source, gaps, the could-not-verify box and the ask list, in that
@@ -44,23 +44,14 @@ export function App() {
         <button onClick={() => buildReadout(room).then(setReadout, (e: Error) => setError(e.message))}>Build readout</button>
       </header>
       {error && <p className="note">{error}</p>}
-      {readout && <ReadoutView readout={readout} />}
+      {readout && <ReadoutView readout={readout} onReadout={setReadout} />}
     </main>
   );
 }
 
-function ReadoutView({ readout }: { readout: Readout }) {
+function ReadoutView({ readout, onReadout }: { readout: Readout; onReadout: (r: Readout) => void }) {
   const claims = useMemo(() => new Map(readout.claims.map((c) => [c.id, c])), [readout]);
-  const [order, setOrder] = useState<Piece[]>(readout.pieces);
-  const [open, setOpen] = useState<string | null>(null);
-  useEffect(() => setOrder(readout.pieces), [readout]);
-
-  const move = (i: number, by: number) => {
-    const next = [...order];
-    const [p] = next.splice(i, 1);
-    next.splice(Math.max(0, Math.min(next.length, i + by)), 0, p);
-    setOrder(next);
-  };
+  const goTo = (piece: string) => document.querySelector(`[data-piece="${piece}"]`)?.scrollIntoView({ behavior: "smooth" });
 
   const greens = readout.top_flags.filter((f) => f.kind === "green");
   const reds = readout.top_flags.filter((f) => f.kind === "red");
@@ -75,7 +66,7 @@ function ReadoutView({ readout }: { readout: Readout }) {
         <ol className="flags">
           {[...greens, ...reds].map((f) => (
             <li key={`${f.kind}-${f.rank}`} className={`flag ${f.kind}`}>
-              <button className="link" onClick={() => setOpen(f.piece)}>
+              <button className="link" onClick={() => goTo(f.piece)}>
                 {f.text}
               </button>
             </li>
@@ -83,28 +74,7 @@ function ReadoutView({ readout }: { readout: Readout }) {
         </ol>
       </section>
 
-      <section aria-label="Overview">
-        <h2>Overview</h2>
-        {order.length === 0 && <p className="note">No piece verdicts yet. {readout.claims.length} claims from {readout.scans_run.join(", ") || "no scans"}.</p>}
-        <ul className="pieces">
-          {order.map((p, i) => (
-            <li key={p.name} className={`piece ${p.verdict}`}>
-              <div className="piece-row">
-                <button className="link" onClick={() => setOpen(open === p.name ? null : p.name)}>
-                  <strong>{PIECE_LABEL[p.name]}</strong> · {VERDICT_LABEL[p.verdict]}
-                </button>
-                <span className="counts">
-                  {p.corroborating_sources} agree · {p.contradicting_sources} disagree
-                </span>
-                <button aria-label="Move up" onClick={() => move(i, -1)}>↑</button>
-                <button aria-label="Move down" onClick={() => move(i, 1)}>↓</button>
-              </div>
-              <p className="reason">{p.reason}</p>
-              {open === p.name && <ClaimList room={readout.room} claims={p.claim_ids.map((id) => claims.get(id)).filter((c): c is Claim => !!c)} all={claims} />}
-            </li>
-          ))}
-        </ul>
-      </section>
+      <SteerableSection room={readout.room} onReadout={onReadout} />
 
       {readout.gaps.length > 0 && (
         <section aria-label="Gaps">

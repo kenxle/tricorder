@@ -21,8 +21,13 @@ DATA_ROOM = Path(__file__).resolve().parents[3] / "data_room"
 
 
 @lru_cache(maxsize=None)
-def run(name: str):
+def run_all(name: str):
     return cohorts.check(DATA_ROOM / name, Ids("redflags"))
+
+
+def run(name: str):
+    claims, gaps, _panels = run_all(name)
+    return claims, gaps
 
 
 def by_label(claims, label):
@@ -83,7 +88,7 @@ def test_missing_model_file_is_a_gap(tmp_path):
     room = tmp_path / "room"
     (room / "03_metrics").mkdir(parents=True)
     shutil.copy(DATA_ROOM / "hollis_voice/03_metrics/customer_mrr_by_month.csv", room / "03_metrics")
-    claims, gaps = cohorts.check(room, Ids("redflags"))
+    claims, gaps, _ = cohorts.check(room, Ids("redflags"))
     assert by_label(claims, "nrr_12m")[0].severity == "info"  # nothing to compare it with
     assert by_label(claims, "grr_12m")[0].severity == "watch"  # under the 80% line
     assert any("Cohorts tab" in g.what for g in gaps)
@@ -93,3 +98,45 @@ def test_listed_in_the_redflags_scan():
     from scans.redflags.scan import CHECKS
 
     assert "cohorts" in CHECKS
+
+
+# A retention number opens the rows that produce it (fix round, both personas' blocker).
+
+
+def test_rebuilt_lines_cite_the_script_the_header_and_the_rows_panel():
+    claims, _gaps, panels = run_all("hollis_voice")
+    rebuilt = [c for c in claims if c.text.startswith("Rebuilt")]
+    assert len(rebuilt) == 2
+    for c in rebuilt:
+        assert "scans/redflags/cohorts.py" in c.text and f"'{cohorts.PANEL}'" in c.text
+        csv_sources = [s for s in c.sources if s.uri == cohorts.CUSTOMERS]
+        assert [s.locator for s in csv_sources] == ["row 1"]  # the header: the columns summed, not one sample row
+    assert [p.name for p in panels] == [cohorts.PANEL]
+
+
+def test_the_panel_lists_every_row_summed_and_adds_up_to_the_lines():
+    import csv
+
+    _claims, _gaps, panels = run_all("hollis_voice")
+    panel = panels[0]
+    lines = (DATA_ROOM / "hollis_voice" / cohorts.CUSTOMERS).read_text(encoding="utf-8").splitlines()
+    header = lines[0].split(",")
+    col = {name: i for i, name in enumerate(header)}
+    total_start = total_end = customers = 0.0
+    for row in panel.rows:
+        cohort, n, start, end = row[0], int(row[1]), float(row[2]), float(row[3])
+        start_rows = [int(x) for x in row[5].split(", ")]
+        end_rows = [int(x) for x in row[6].split(", ")] if row[6] else []
+        got = [next(csv.reader([lines[r - 1]])) for r in start_rows]
+        assert len({g[col["customer_id"]] for g in got}) == n
+        assert all(g[col["month"]] == cohort for g in got)
+        assert sum(float(g[col["mrr"]]) for g in got) == start
+        assert sum(float(next(csv.reader([lines[r - 1]]))[col["mrr"]]) for r in end_rows) == end
+        total_start, total_end, customers = total_start + start, total_end + end, customers + n
+    assert customers == 68
+    assert round(100 * total_end / total_start, 1) == 87.3
+
+
+def test_seed_drop_has_no_rows_panel():
+    _claims, _gaps, panels = run_all("hollis_voice_seed_drop")
+    assert panels == []

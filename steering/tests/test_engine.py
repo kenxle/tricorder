@@ -9,6 +9,7 @@ runs on HAND-BUILT responses only; no model is called.
 from __future__ import annotations
 
 import json
+import importlib
 import shutil
 from pathlib import Path
 
@@ -17,10 +18,9 @@ import pytest
 from schema.check_quotes import check_claim
 from schema.check_quotes import main as check_quotes_main
 from schema.claim import Readout
-from scans.base import ROOT, out_dir, write_result
+from scans.base import ROOT, available, out_dir, write_result
 from scans.memo.merge import build_readout, write_readout
-from scans.redflags import scan as redflags
-from steering import engine
+from steering import engine, verdicts
 from steering.models import RewordLine, RewordReading
 from store import open_store
 
@@ -33,8 +33,11 @@ def built(tmp_path_factory):
     out = tmp_path_factory.mktemp("built_out")
     mp = pytest.MonkeyPatch()
     mp.setenv("TRICORDER_OUT_DIR", str(out))
+    mp.setenv("TRICORDER_OFFLINE", "1")
+    mp.delenv("ANTHROPIC_API_KEY", raising=False)
     for room in (FULL, SEED):
-        write_result(redflags.run(room), room)
+        for name in available():  # every scan that exists, as a person's run builds the readout
+            write_result(importlib.import_module(f"scans.{name}.scan").run(room), room)
         write_readout(build_readout(room), room)
     mp.undo()
     return out
@@ -48,6 +51,7 @@ def env(tmp_path, built, monkeypatch):
     monkeypatch.setenv("TRICORDER_STORE_DIR", str(tmp_path / "store_data"))
     monkeypatch.setenv("TRICORDER_CACHE_DIR", str(tmp_path / "cache"))
     monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    monkeypatch.setenv("TRICORDER_OFFLINE", "1")
     return out
 
 
@@ -75,8 +79,9 @@ def test_pilot_steer_on_traction_adds_the_reread_line_and_keeps_the_checks_line(
     assert len(rev.claims_added) == 1 and rev.claims_dropped == []
     added = claims_by_id(got.readout)[rev.claims_added[0]]
     assert added.value.number == 2_060_868 and added.value.label == "arr" and added.confidence == "computed"
-    assert added.text.startswith("On your steer (pilot treated as non-recurring): ARR is $2,060,868")
+    assert added.text.startswith("On the operator's steer, pilot not counted: ARR $2,060,868.")
     assert "$2,500,000" in added.text and "21.3%" in added.text and added.severity == "flag"
+    assert "measured on the books figure" in added.text  # the gap base, as the check measures its own
     assert added.id in got.readout.pieces[0].claim_ids
     # The check's own line and number stay.
     kept = claims_by_id(got.readout)[line.id]
@@ -86,6 +91,40 @@ def test_pilot_steer_on_traction_adds_the_reread_line_and_keeps_the_checks_line(
     assert "wording rules" in rev.note
     assert rows(got.changes, "added")[0][1] == added.id
     assert got.reading.path == "rules"
+
+
+def test_pilot_steer_redoes_the_piece(env, monkeypatch):
+    monkeypatch.setenv("TRICORDER_OPERATOR", "Ken")
+    before = Readout.model_validate_json((out_dir(FULL) / "readout.json").read_text())
+    line = arr_line(before)
+    got = engine.steer(FULL, "traction_and_revenue", "treat the pilot as non-recurring")
+    rev = got.revision
+    added = claims_by_id(got.readout)[rev.claims_added[0]]
+    # Name, not "your steer"; the author comes from the setting when the request names none.
+    assert rev.steer.author == "Ken"
+    assert added.text.startswith("On Ken's steer, pilot not counted: ARR $2,060,868.")
+    # The piece's reason is the steered figure, labelled as the operator's.
+    piece = next(p for p in got.readout.pieces if p.name == "traction_and_revenue")
+    assert piece.reason == added.text and piece.reason_claim_ids == [added.id]
+    # The check's line moves into the diff as "before" and stays reachable.
+    assert rows(got.changes, "replaced") == [["replaced", line.id, line.text, added.id]]
+    assert line.id in claims_by_id(got.readout)
+    # The diff's first line says what happened.
+    assert got.changes.rows[0] == ["headline", "", "", "Added a scenario line."]
+    assert rev.note.startswith("Added a scenario line. Rewritten on Ken's instruction")
+    assert "Your scenario line is new. The original check still shows $2,240,868." in rev.note
+    # The pilot agreement's notice clause, read by contract_reader.
+    agreement = [s for s in added.sources if s.uri == "04_customers/pilot_agreement_marlow.pdf"]
+    assert agreement and agreement[0].locator == "page 2"
+    assert "30 days notice (page 2, clause 7)" in added.text
+    assert check_claim(added, FULL)[1] == []
+
+
+def test_author_from_the_request_wins(env, monkeypatch):
+    monkeypatch.setenv("TRICORDER_OPERATOR", "Ken")
+    got = engine.steer(FULL, "traction_and_revenue", "treat the pilot as non-recurring", author="Priya")
+    assert got.revision.steer.author == "Priya"
+    assert claims_by_id(got.readout)[got.revision.claims_added[0]].text.startswith("On Priya's steer")
 
 
 def test_pilot_steer_on_the_arr_line_is_the_same_reread(env):
@@ -111,19 +150,58 @@ def test_full_room_on_seed_drop_retention_adds_new_claims_and_names_the_mover(en
     assert rev.steer.kind == "more_info" and got.source_room == "hollis_voice"
     assert rev.before.verdict == "not_enough_in_the_room" and rev.after.verdict == "looking_weak"
     new = [claims_by_id(got.readout)[i] for i in rev.claims_added]
-    assert {c.value.label for c in new} == {"nrr_12m", "grr_12m"}
+    assert {"nrr_12m", "grr_12m"} <= {c.value.label for c in new if c.value}
+    assert {verdicts.piece_of(c) for c in new} > {"retention"}  # every piece reran on the full room, not only retention
     assert all(c.id.endswith(".steer1") for c in new)
-    nrr = next(c for c in new if c.value.label == "nrr_12m")
+    nrr = next(c for c in new if c.value and c.value.label == "nrr_12m")
     assert nrr.value.number == pytest.approx(87.31, abs=0.01) and nrr.severity == "flag"
-    assert rev.verdict_moved_by == [nrr.id]
+    assert rev.verdict_moved_by[0] == nrr.id  # the pilot agreement's lines in retention move it too
     assert nrr.conflicts_with == [tab.id]  # remapped to the seed drop's id for the same tab line
-    assert tab.id in claims_by_id(got.readout) and rev.claims_dropped == []
+    assert tab.id in claims_by_id(got.readout)
+    # Only the claims scan's "Unsupported" lines that the full room now supports are dropped, and the diff lists them.
+    was = claims_by_id(before)
+    assert all(was[i].scan == "claims" and was[i].text.startswith("Unsupported") for i in rev.claims_dropped)
+    assert [r[1] for r in rows(got.changes, "dropped")] == rev.claims_dropped
     assert any("03_metrics/customer_mrr_by_month.csv" in s for s in rev.sources_added)
-    assert "More info on your instruction" in rev.note and "2 new claims, marked new" in rev.note
-    assert "moved by" in rev.note and "other pieces still read hollis_voice_seed_drop" in rev.note
+    assert rev.note.startswith("Read 5 new files; retention moved to Looking weak")
+    assert "More info on the operator's instruction" in rev.note and "new claims, marked new" in rev.note
+    assert "moved by" in rev.note
+    assert "Every piece now reads hollis_voice, the full room, instead of hollis_voice_seed_drop." in rev.note
+    assert ["source", "", "hollis_voice_seed_drop", "hollis_voice"] in got.changes.rows
     # The gap the full room closes is gone; the readout keeps its room.
     assert not [g for g in got.readout.gaps if g.piece == "retention" and "customer_mrr_by_month" in g.what]
     assert got.readout.room == "hollis_voice_seed_drop"
+
+
+def test_full_room_reruns_every_piece_and_lines_open_from_the_full_room(env):
+    got = engine.steer(SEED, "retention", "read the full room")
+    moved = {r[1] for r in rows(got.changes, "piece moved")}
+    assert "the_pitch_itself" in moved  # a piece other than the one typed on was rebuilt from the full room
+    assert set(got.readout.scans_run) == set(available())
+    for c in got.readout.claims:
+        assert engine.claim_room(got.readout, c.id, SEED) == FULL
+        assert check_claim(c, engine.claim_room(got.readout, c.id, SEED))[1] == []
+    # A second ask does not read again.
+    again = engine.steer(SEED, "market", "read the full room")
+    assert again.revision.claims_added == []
+    assert again.revision.note.startswith("Nothing new read: every piece already reads hollis_voice")
+
+
+def test_claim_room_before_a_switch_is_the_room_itself(env):
+    readout = engine.steerable(SEED)
+    assert all(engine.claim_room(readout, c.id, SEED) == SEED for c in readout.claims)
+
+
+def test_overview_steer_reads_the_full_room(env):
+    got = engine.steer(SEED, "overview", "read the full room")
+    assert got.source_room == "hollis_voice" and got.revision.claims_added
+    assert ["typed on", "", "", "overview"] in got.changes.rows
+    assert got.revision.steer.piece in {r[1] for r in rows(got.changes, "piece moved")} | {"retention", "traction_and_revenue"}
+
+
+def test_overview_steer_refuses_a_rewrite(env):
+    with pytest.raises(engine.BadSteer, match="On the overview"):
+        engine.steer(FULL, "overview", "treat the pilot as non-recurring")
 
 
 def test_full_room_on_the_full_room_changes_nothing(env):
@@ -134,7 +212,8 @@ def test_full_room_on_the_full_room_changes_nothing(env):
 def test_named_outside_source_is_not_fetched(env):
     got = engine.steer(FULL, "market", "pull the competitor's pricing pages")
     assert got.revision.steer.kind == "more_info" and got.revision.claims_added == []
-    assert "not fetched" in got.revision.note
+    assert got.revision.note.startswith("Not fetched:")
+    assert got.changes.rows[0][3].startswith("Not fetched:")
 
 
 # Done when 3: a different number is refused -----------------------------------------------------
@@ -149,7 +228,13 @@ def test_number_request_leaves_every_number_and_says_so(env):
     assert [c.value for c in got.readout.claims] == [c.value for c in before.claims]
     assert "You asked for 3 million." in rev.note and "The check's number stays as it wrote it" in rev.note
     assert line.text in rev.note
-    assert not any(c.value and c.value.number == 3_000_000 for c in got.readout.claims)
+    # No line took the asked-for number (the claims scan may state a deck's own $3M; it was there before).
+    assert [c for c in got.readout.claims if c.value and c.value.number == 3_000_000] == \
+        [c for c in before.claims if c.value and c.value.number == 3_000_000]
+    # A refusal says so first, and is not filed as a rewrite.
+    assert rev.note.startswith("Refused: computed numbers do not change on request.")
+    assert got.changes.rows[0] == ["headline", "", "", "Refused: computed numbers do not change on request."]
+    assert "Rewritten" not in rev.note
 
 
 # Done when 4: every rewritten claim passes the quote checker ------------------------------------
@@ -187,8 +272,12 @@ def test_more_info_store_save_copies_the_full_rooms_files(env):
     got = engine.steer(SEED, "retention", "read the full room")
     assert got.store.saved
     held = open_store().list_company("demo", "hollis_voice_seed_drop")
-    assert "03_metrics/customer_mrr_by_month.csv" in {f.path for f in held.files}
-    assert "02_financials/expense_ledger.csv" not in {f.path for f in held.files}  # in the full room, cited by nothing kept
+    held_files = {f.path for f in held.files}
+    assert "03_metrics/customer_mrr_by_month.csv" in held_files
+    # Every piece now reads the full room, so every file its lines cite is held, and nothing they do not cite.
+    cited = {s.uri for c in got.readout.claims for s in c.sources if s.kind != "url"}
+    assert cited <= held_files
+    assert "02_financials/expense_ledger.csv" in held_files  # cited by the mislabels lines the full room adds
 
 
 # The model path, on hand-built responses ---------------------------------------------------------
