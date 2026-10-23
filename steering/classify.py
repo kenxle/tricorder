@@ -27,21 +27,26 @@ DEFINITION = [re.compile(p, re.I) for p in (
     rf"\btreat {_T} as (?:a |an )?(?:non[- ]?recurring|one[- ]?(?:time|off)|not recurring)",
     rf"\b(?:don['’]?t|do not|never) count {_T} (?:as|in|towards?) (?:recurring|arr|mrr)",
     rf"\b(?:exclude|drop|remove|take out|leave out|strip) {_T} (?:from|out of) (?:the )?(?:arr|mrr|recurring)",
-    rf"^\s*{_T} (?:isn'?t|is not|is never|are not|aren'?t) recurring",
+    rf"^\s*{_T} (?:isn['’]?t|is not|is never|are not|aren['’]?t) recurring",
     rf"^\s*{_T} (?:is|are) (?:non[- ]?recurring|one[- ]?(?:time|off))",
 )]
 # "Don't treat the pilot as non-recurring" asks for the opposite of the definition (review wave 2b, S5).
-NEGATED = re.compile(r"\b(?:don['’]?t|do not|never|not|no longer|stop|please don['’]?t)\s*$", re.I)
+# "Why not treat the pilot as ..." suggests it, so "why not" is not a negation.
+NEGATED = re.compile(r"\b(?:don['’]?t|do not|never|(?<!why )not|no longer|stop|please don['’]?t)\s*$", re.I)
 FULL_ROOM = re.compile(r"\b(?:full|whole|entire|complete) (?:data )?room\b|\bsecond tier\b|\btier (?:two|2)\b|\brest of the room\b", re.I)
 MORE_VERB = re.compile(r"\b(?:read|open|pull|fetch|get|find|look (?:at|for|in)|search|bring in|dig into)\b", re.I)
 NAMED = re.compile(r"\b(?:(?:the |their |a )?(?:latest |recent )?(?:competitor'?s?'? )?(?:pricing pages?|filings?|10-?k|s-1|website|reviews?|press|news|bank statements?|app store pages?))\b", re.I)
 # A number is a request only after a frame that asks for it ("should be", "make it", "use",
-# "change ... to"), and a bare year is never one (review wave 2b, O1).
+# "change ... to"), and a bare year is never one (review wave 2b, O1). A four-digit number standing
+# right after a frame word ("to 2000", "use 2024") is a request even so. In "from A to B" the request
+# is B, so a number right after "from" is skipped when another number follows it.
 FRAME = re.compile(
     r"(?:\bshould(?:\s+\w+)?\s+(?:be|read|say|show)|\bmust be|\bought to be|\bis (?:really|actually)|\bto be"
     r"|\bcall it|\binstead of|\brather than"
-    r"|\b(?:make|use|set|change|update|put|round|bump|raise|lower|move|restate)(?:\s+[\w'$.,]+){0,3}?(?:\s+(?:to|at|as))?)"
+    r"|\b(?:make|use|set|change|update|put|round|bump|raise|lower|move|restate)(?:\s+[\w'$.,%]+){0,5}?(?:\s+(?:to|at|as))?)"
     r"\s*$", re.I)
+FRAME_WORD = re.compile(r"\b(?:to|be|use|make|set|at|as|read|show|it|of|than)\s*$", re.I)
+FROM = re.compile(r"\bfrom\s*$", re.I)
 YEAR = re.compile(r"(?:19|20)\d\d")
 NUMBER = re.compile(
     r"\$\s?\d[\d,]*(?:\.\d+)?(?:\s?(?:million|thousand|billion|m|k|bn)\b)?"
@@ -86,11 +91,14 @@ def negated_definition(sentence: str) -> bool:
 
 
 def _number_asked(s: str) -> str | None:
-    for m in NUMBER.finditer(s):
-        text = m.group(0).strip()
-        if YEAR.fullmatch(text):
+    found = list(NUMBER.finditer(s))
+    for i, m in enumerate(found):
+        text, before = m.group(0).strip(), s[:m.start()]
+        if YEAR.fullmatch(text) and not FRAME_WORD.search(before):
             continue
-        if FRAME.search(s[:m.start()][-60:]):
+        if FROM.search(before) and i + 1 < len(found):
+            continue  # "from A to B": A is the number shown, B the one asked for
+        if FRAME.search(before[-80:]):
             return text
     return None
 

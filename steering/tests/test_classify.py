@@ -181,3 +181,33 @@ def test_a_number_with_no_request_frame_is_not_a_number_request(sentence):
 ])
 def test_more_number_requests(sentence, number):
     assert read_sentence(sentence).number_text == number
+
+
+# Code review of the fix round ----------------------------------------------------------------------
+
+
+@pytest.mark.parametrize("sentence, number", [
+    # Item 2: in "from A to B" the request is B.
+    ("Change ARR from $3M to $2.5M", "$2.5M"),
+    ("Update NRR from 120% to 110%", "110%"),
+    # Item 3: a four-digit number right after a frame word is a request; the frame reaches the asked number.
+    ("Use the 2024 ARR of $2.1M", "$2.1M"),
+    ("set the customer count to 2000", "2000"),
+])
+def test_the_number_asked_for_is_the_one_read(sentence, number):
+    assert read_sentence(sentence).number_text == number
+
+
+def test_a_bare_year_is_still_not_a_request():
+    assert read_sentence("the 2026 plan is aggressive").number_text is None
+
+
+@pytest.mark.parametrize("sentence", [
+    "the pilot isn’t recurring",
+    "the pilots aren’t recurring",
+    "Why not treat the pilot as non-recurring",
+])
+def test_curly_apostrophes_and_why_not_read_the_definition(sentence):
+    # Item 4: U+2019 in "isn't" and "aren't"; "why not" suggests the term, it does not negate it.
+    r = read_sentence(sentence)
+    assert r.term in ("pilot", "pilots") and r.treat_as == "non_recurring"
