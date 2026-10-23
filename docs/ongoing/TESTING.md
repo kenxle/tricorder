@@ -16,14 +16,18 @@
 
 ```sh
 pip install -r requirements.txt     # Python 3.11 or newer
+pip install -r data_room/requirements.txt
+pip install pypdf                  # chart fixture PDF assembly
 cd readout && npm ci                # Node 20 or newer, for the page
 ```
+
+The chart fixture tests need the data-room drawing packages and `pypdf`. Without them, pytest skips those fixtures. Install them for a complete local run without skips.
 
 ## The gates
 
 | Command | What it runs | Green means |
 |---|---|---|
-| `bin/ci-py` | `python -m schema.export --check` (generated schema files are current), then `pytest` over `schema/`, `scans/`, `server/`, `eval/` and `clients/` | exit 0, "N passed" and no failures |
+| `bin/ci-py` | `python -m schema.export --check` (generated schema files are current), then `pytest` over the test folders in `pyproject.toml`, including the store, founder requests, memo, and steering | exit 0, "N passed" and no failures |
 | `bin/ci-web` | The page's type check and build | exit 0 |
 | `bin/smoke <room_dir>` | Every scan that exists on one room, then the merge | each scan prints its counts and the merge prints its summary, with no traceback |
 

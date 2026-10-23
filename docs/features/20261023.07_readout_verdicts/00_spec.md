@@ -2,6 +2,8 @@
 
 The merge now fills the company overview and headline flags. Steering uses the same rules. No decision is waiting on Ken.
 
+Merged in [PR 14](https://github.com/kenxle/tricorder/pull/14), commit `ae68541`. Local and GitHub checks passed. Next is the board's TRI-readout-link (source linking and numeric evidence peers), which is needed for the full headline example.
+
 ## Scope and behavior
 
 This is the next open board item, TRI-pieces-top-flags (shared verdicts and headline flags), within the [readout roadmap slice](../../ongoing/ROADMAP.md#readout). It implements [the framework's piece and flag rules](../../ongoing/FRAMEWORKS.md#piece-verdicts).
@@ -42,7 +44,11 @@ The new steps pass their focused behavior tests. The actual room rebuilds and me
 
 Integration exposed a memo bug: headline text bypassed the existing cleanup of script paths. The export now applies that same cleanup to headline text. Tests that assumed these merge steps did not exist now cover current results or explicitly cover a legacy readout without verdicts.
 
-The change is in [pull request 14](https://github.com/kenxle/tricorder/pull/14). The latest main changes are integrated, and the full local checks and refreshed browser walk pass. GitHub checks must pass before merge. The roadmap's whole readout slice stays open until linking, asks, and connecting prose are handled.
+The change merged in [pull request 14](https://github.com/kenxle/tricorder/pull/14), commit `ae68541`. The full local checks and refreshed browser walk passed after integrating the memo presentation changes. [GitHub's Python and web jobs passed](https://github.com/kenxle/tricorder/actions/runs/39961810520). A later main change touched style exploration documents only. The landed runtime code matches the tested `f348f0a` revision; a path-scoped `git diff` was empty, the schema export check passed, and the local API health check passed.
+
+There is no hosted deployment. This feature is merged and verified for the laptop runtime. The roadmap's whole readout slice stays open until linking, asks, and connecting prose are handled.
+
+The reviews exposed an empty-list fallback and an assumption about which claim held the rebuilt number. Regression tests now protect both. Persona reviews also caught a trust problem in the wording of incomplete checks; tests now require the pending state to be named. The system diagram already contains the shared merge stages, so no new diagram was needed.
 
 ## Cleanup paths for Ken
 
