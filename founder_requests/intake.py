@@ -347,13 +347,13 @@ def _plain(name: str) -> str:
     return name.replace("_", " ")
 
 
-def changes(before: Readout | None, after: Readout, answered: list[tuple[cl.Row, str, str]]) -> list[str]:
+def changes(before: Readout | None, after: Readout, answered: list[tuple[cl.Row, str, str]], files: int = 1) -> list[str]:
     """What the files changed, in plain words: coverage, then claims, flags and verdicts, then the ask list."""
     said: list[str] = []
     for row, was, now in answered:
         if row.kind == "ask":
-            said.append(f"{row.item} is something only the founder can give, so no check reads the file; "
-                        "the line stays on the ask list until you take it off.")
+            said.append(f"{row.item} is something only the founder can give, so no check reads the file. "
+                        "The line stays on the ask list.")
         elif now in ("found", "checked") and was not in ("found", "checked"):
             said.append(f"Coverage now finds {row.item}.")
         elif now != was:
@@ -387,7 +387,7 @@ def changes(before: Readout | None, after: Readout, answered: list[tuple[cl.Row,
             said.append(f"{_plain(p.name).capitalize()} moved from {_plain(verdicts[p.name])} to {_plain(p.verdict)}.")
             moved = True
     if not moved:
-        said.append("No check reads this file yet, so no number changed.")
+        said.append(f"No check reads {'this file' if files == 1 else 'these files'} yet, so no number changed.")
     if before is not None and len(after.asks) != len(before.asks):
         way = "down" if len(after.asks) < len(before.asks) else "up"
         said.append(f"The ask list is {way} from {len(before.asks)} to {len(after.asks)} lines.")
@@ -460,7 +460,7 @@ def receive_batch(room_dir: Path, files: list[tuple[bytes, str, str | None]]) ->
     receipt = {
         "room": room.name, "files": entries, "scans_rerun": reran,
         "asks_before": len(before.asks) if before else None, "asks_after": len(readout.asks),
-        "summary": changes(before, readout, answered), "at": at,
+        "summary": changes(before, readout, answered, len(entries)), "at": at,
     }
     log_path = out_dir(room) / LOG
     try:

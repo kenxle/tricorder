@@ -305,6 +305,9 @@ def test_several_files_in_one_add_rerun_once(env, monkeypatch):
     assert [a["checklist_id"] for a in files[1]["answers"]] == ["C97", "C46"]
     assert files[0]["answers"][0]["status_after"] == "found"
     assert "Coverage now finds Reference list: management, customers, current investors, advisors." in receipt["summary"]
+    assert "No check reads these files yet, so no number changed." in receipt["summary"]
+    assert ("Customer reference calls is something only the founder can give, so no check reads the file. "
+            "The line stays on the ask list.") in receipt["summary"]
     log = json.loads((out / room.name / "founder_requests.json").read_text())
     assert [e["original_name"] for e in log["received"][-2:]] == ["Hiring Plan.csv", "Our references.pdf"]
 
