@@ -416,8 +416,14 @@ def test_a_plan_in_the_founders_own_columns_still_lands(env):
         assert receipt["summary"][0].endswith("could not read the new file, so its part of the readout is from before.")
         assert not any("no number changed" in s for s in receipt["summary"])
     said = " ".join(receipt["summary"])
-    assert ("could not read the new file" in said) == bool(failed)
-    assert not any(s["scan"] in said for s in receipt["scans_rerun"])
+    # The sentence also fires when a scan ran but wrote a gap naming the file (S3),
+    # which the claims scan now does for a plan in other columns instead of crashing.
+    if failed:
+        assert "could not read the new file" in said
+    # No engine names: "claims" is also a plain word ("2 claims changed"), so look for the scan as code would name it.
+    for name in (s["scan"] for s in receipt["scans_rerun"]):
+        assert not any(form in said for form in (f"scans.{name}", f"{name} scan", f"{name}.json")), said
+    assert "redflags" not in said
 
 
 def test_the_same_sentence_is_said_once(brasswick):
