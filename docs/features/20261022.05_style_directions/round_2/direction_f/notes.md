@@ -1,0 +1,14 @@
+# Direction F: Instrument
+
+- **Name:** Instrument. Round one's direction A (Reference Range), rebuilt so Tricorder looks like an expensive instrument, not a dashboard template.
+- **Idea:** keep what Ken liked in A (the range strip, the ARR number line over its source table, stated beside found, the Ask the founder prompt, a white ground, Archivo at 87.5% width). Then put it all on a strict 12-column grid (1312px container, 32px gutter, 16px below 992px), with a larger and tighter type scale, two radii (6px controls, 12px panels) and no shadows on working screens.
+- **Homepage drama:** a deep blue-black hero (#070b16) with the line set at up to 124px, leading 0.9. A large product surface (the Hollis Voice readout: green flag, red flag, and an overview where every piece carries its own range strip) straddles the hero and the white page. The only shadow in the system sits under it. The closing band repeats the deep ground.
+- **Type:** Archivo 600 at 87.5% width for display; Instrument Sans for body (replaces Atkinson Hyperlegible, which read as utilitarian); IBM Plex Mono for figures and sources (replaces Fragment Mono; Plex reads as financial terminal rather than code editor).
+- **Colour:** white and ink, one cobalt accent (#2b44d4 light, #96a6ff dark) used only for action and the band. Verdict colours are separate and always carry a shape and a word.
+- **Risk taken:** the overview in the hero draws a strip for every piece, including market and team, where the strip only shows two sources agreeing. It is denser than a plain list and asks the reader to learn one convention on the first screen.
+- **Unsure:** (1) The pages load `bootstrap-grid.min.css` 5.3.3 from jsDelivr rather than the full `bootstrap.min.css` the brief names: same package and version, grid and flex utilities only, so nothing of Bootstrap's look can leak in. (2) The hero has a very soft cobalt glow behind the line; if Ken reads it as a gradient hero, set `.hero` to the flat `--d-ground`. (3) The overview's figure column ("$252M, 2 agree", "37 mo vs 19 mo") is my shorthand, not BRAND template wording. (4) Market, team and comps marks come from the room's README and answer key, as in A, not from a Tricorder run. (5) Hollis Voice has no mixed or not-enough piece, so those verdict lines show the template with brackets. (6) On phones the source table scrolls sideways inside its own box, so the Where chips are partly hidden until scrolled.
+- **Build:** both pages are generated from shared sources in the session scratchpad (base.css, page CSS, body HTML, a token table read from the CSS so the guide's hex cannot drift, and the rules list). The two HTML files here are the complete standalone output.
+
+## To delete at cleanup
+
+- Nothing in this folder. Build sources and screenshot crops live in the session scratchpad only.

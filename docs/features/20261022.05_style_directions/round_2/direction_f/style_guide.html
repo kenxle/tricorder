@@ -1,0 +1,1055 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tricorder Style, Direction F</title>
+<meta name="description" content="Tricorder style guide, Direction F: Instrument.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css">
+<style>
+/* Tricorder, Direction F: Instrument. Tokens first, then grid, type, components. */
+:root {
+  color-scheme: light;
+  --ground: #ffffff;
+  --surface: #ffffff;
+  --raise: #f5f6f9;
+  --ink: #0a0f1c;
+  --ink-2: #394155;
+  --ink-3: #646c80;
+  --rule: #e1e4eb;
+  --rule-2: #c3c8d4;
+  --accent: #2b44d4;
+  --accent-hover: #1b2c9e;
+  --on-accent: #ffffff;
+  --accent-soft: #edf0ff;
+  --band: #e1e6ff;
+  --band-edge: #8a9bef;
+  --strong: #14784a;
+  --strong-bg: #e5f3eb;
+  --weak: #bf3428;
+  --weak-bg: #fcebe8;
+  --mixed: #875800;
+  --mixed-bg: #f7eedb;
+  --thin: #576074;
+  --thin-bg: #eef0f4;
+
+  /* The deep ground: hero, product surface and closing band. Same in both themes, a shade deeper in dark. */
+  --d-ground: #070b16;
+  --d-surface: #0d1323;
+  --d-raise: #131a2c;
+  --d-ink: #f1f3f8;
+  --d-ink-2: #b0b7c9;
+  --d-ink-3: #808aa1;
+  --d-rule: #1e2639;
+  --d-rule-2: #323c56;
+  --d-accent: #96a6ff;
+  --d-accent-hover: #c2cbff;
+  --d-on-accent: #070b16;
+  --d-accent-soft: #161f3d;
+  --d-band: #1d2652;
+  --d-band-edge: #5767bd;
+  --d-strong: #5dcf98;
+  --d-strong-bg: #0f2a1f;
+  --d-weak: #ff8073;
+  --d-weak-bg: #33161a;
+  --d-mixed: #e4b250;
+  --d-mixed-bg: #2c2412;
+  --d-thin: #a3aabc;
+  --d-thin-bg: #1a2031;
+
+  --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "Instrument Sans", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  --f-data: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px; --s9: 96px; --s10: 128px;
+  --r-control: 6px;
+  --r-panel: 12px;
+  --gutter: 32px;
+  --edge: 32px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ground: #0a0e19;
+    --surface: #0f1424;
+    --raise: #141a2b;
+    --ink: #eef0f6;
+    --ink-2: #b3b9ca;
+    --ink-3: #858da3;
+    --rule: #1f2639;
+    --rule-2: #343d57;
+    --accent: #96a6ff;
+    --accent-hover: #c2cbff;
+    --on-accent: #070b16;
+    --accent-soft: #161f3d;
+    --band: #1d2652;
+    --band-edge: #5767bd;
+    --strong: #5dcf98;
+    --strong-bg: #0f2a1f;
+    --weak: #ff8073;
+    --weak-bg: #33161a;
+    --mixed: #e4b250;
+    --mixed-bg: #2c2412;
+    --thin: #a3aabc;
+    --thin-bg: #1a2031;
+    --d-ground: #04060d;
+    --d-surface: #0b1020;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ground: #0a0e19;
+  --surface: #0f1424;
+  --raise: #141a2b;
+  --ink: #eef0f6;
+  --ink-2: #b3b9ca;
+  --ink-3: #858da3;
+  --rule: #1f2639;
+  --rule-2: #343d57;
+  --accent: #96a6ff;
+  --accent-hover: #c2cbff;
+  --on-accent: #070b16;
+  --accent-soft: #161f3d;
+  --band: #1d2652;
+  --band-edge: #5767bd;
+  --strong: #5dcf98;
+  --strong-bg: #0f2a1f;
+  --weak: #ff8073;
+  --weak-bg: #33161a;
+  --mixed: #e4b250;
+  --mixed-bg: #2c2412;
+  --thin: #a3aabc;
+  --thin-bg: #1a2031;
+  --d-ground: #04060d;
+  --d-surface: #0b1020;
+}
+
+/* Anything inside .deep reads the deep tokens, so every component works on the dark ground unchanged. */
+.deep {
+  color-scheme: dark;
+  --ground: var(--d-ground);
+  --surface: var(--d-surface);
+  --raise: var(--d-raise);
+  --ink: var(--d-ink);
+  --ink-2: var(--d-ink-2);
+  --ink-3: var(--d-ink-3);
+  --rule: var(--d-rule);
+  --rule-2: var(--d-rule-2);
+  --accent: var(--d-accent);
+  --accent-hover: var(--d-accent-hover);
+  --on-accent: var(--d-on-accent);
+  --accent-soft: var(--d-accent-soft);
+  --band: var(--d-band);
+  --band-edge: var(--d-band-edge);
+  --strong: var(--d-strong);
+  --strong-bg: var(--d-strong-bg);
+  --weak: var(--d-weak);
+  --weak-bg: var(--d-weak-bg);
+  --mixed: var(--d-mixed);
+  --mixed-bg: var(--d-mixed-bg);
+  --thin: var(--d-thin);
+  --thin-bg: var(--d-thin-bg);
+  background: var(--ground);
+  color: var(--ink);
+}
+
+/* Base. Bootstrap supplies the grid only; everything it styles is reset here. */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 17px;
+  line-height: 1.55;
+  font-feature-settings: "kern" 1;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--accent-hover); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+p { margin: 0; }
+p + p { margin-top: var(--s4); }
+h1, h2, h3, h4 { text-wrap: balance; margin: 0; font-family: var(--f-display); font-stretch: 87.5%; font-weight: 600; color: var(--ink); }
+ul { margin: 0; padding: 0; list-style: none; }
+table, .num, .strip, .fig { font-variant-numeric: tabular-nums; }
+.mono { font-family: var(--f-data); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* The 12-column grid: one container, one gutter. */
+.wrap {
+  width: 100%;
+  max-width: calc(1312px + 2 * var(--edge));
+  margin: 0 auto;
+  padding-left: max(var(--edge), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--edge), env(safe-area-inset-right, 0px));
+}
+.row { --bs-gutter-x: var(--gutter); --bs-gutter-y: var(--gutter); }
+.row.g-tight { --bs-gutter-y: 0; }
+@media (max-width: 991.98px) {
+  :root { --gutter: 16px; --edge: 16px; }
+}
+
+/* Type scale. Display is Archivo at 87.5% width; leading tightens as size grows. */
+.t-hero, .t-1, .t-2, .t-3 { font-family: var(--f-display); font-stretch: 87.5%; font-weight: 600; color: var(--ink); }
+.t-hero { font-size: clamp(46px, 8.6vw, 124px); line-height: 0.9; letter-spacing: -0.012em; font-weight: 600; }
+.t-hero .ln { display: block; }
+.t-1 { font-size: clamp(36px, 4.2vw, 60px); line-height: 0.98; letter-spacing: -0.01em; }
+.t-2 { font-size: clamp(28px, 2.6vw, 38px); line-height: 1.04; letter-spacing: -0.008em; }
+.t-3 { font-size: 24px; line-height: 1.12; letter-spacing: -0.015em; }
+.t-4 { font-family: var(--f-body); font-stretch: 100%; font-size: 17px; line-height: 1.35; font-weight: 600; letter-spacing: -0.005em; }
+.lead { font-size: clamp(18px, 1.45vw, 21px); line-height: 1.5; color: var(--ink-2); }
+.small { font-size: 15px; line-height: 1.5; }
+.eyebrow { font-family: var(--f-data); font-size: 12px; line-height: 16px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); font-weight: 400; }
+.fig-xl { font-family: var(--f-display); font-stretch: 87.5%; font-weight: 600; font-size: 40px; line-height: 1; letter-spacing: -0.01em; }
+
+/* Section rhythm. A section opens with a full-width hairline that meets both container edges. */
+.sec { padding-top: var(--s10); }
+.sec-top { border-top: 1px solid var(--rule); padding-top: var(--s5); }
+.sec-head { margin-bottom: var(--s8); }
+.sec-head .eyebrow { margin-bottom: var(--s5); }
+.sec-head .lead { margin-top: var(--s5); max-width: 40em; }
+@media (max-width: 991.98px) {
+  .sec { padding-top: var(--s8); }
+  .sec-head { margin-bottom: var(--s6); }
+  .sec-head .eyebrow { margin-bottom: var(--s4); }
+  .sec-head .lead { margin-top: var(--s4); }
+}
+
+/* Panels: one moderate radius, one hairline, no shadow. */
+.panel { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--r-panel); display: flex; flex-direction: column; min-width: 0; }
+.panel-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s2) var(--s4); padding: var(--s4) var(--s5); border-bottom: 1px solid var(--rule); }
+.panel-head .t-4 { margin: 0; }
+.panel-body { padding: var(--s5); display: flex; flex-direction: column; gap: var(--s5); flex: 1 1 auto; }
+.panel-body p + p, .flag p + p, .note p + p { margin-top: 0; }
+.panel-foot { padding: var(--s4) var(--s5); border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; gap: var(--s2) var(--s4); justify-content: space-between; align-items: center; font-size: 14px; color: var(--ink-3); }
+.panel.dashed { border-style: dashed; border-color: var(--rule-2); }
+.h-100 { height: 100%; }
+.push { margin-top: auto; }
+
+/* Marks: a shape, a word and a colour. Never colour alone. */
+.mark { display: inline-flex; align-items: center; gap: 7px; font-family: var(--f-data); font-size: 12px; line-height: 20px; padding: 0 8px; border-radius: var(--r-control); white-space: nowrap; font-weight: 500; }
+.mark i { flex: none; display: inline-block; width: 9px; height: 9px; }
+.m-strong { color: var(--strong); background: var(--strong-bg); }
+.m-strong i { background: currentColor; border-radius: 1px; }
+.m-weak { color: var(--weak); background: var(--weak-bg); }
+.m-weak i { width: 0; height: 0; border-left: 5.5px solid transparent; border-right: 5.5px solid transparent; border-bottom: 9px solid currentColor; }
+.m-mixed { color: var(--mixed); background: var(--mixed-bg); }
+.m-mixed i { border: 1.5px solid currentColor; border-radius: 1px; background: linear-gradient(90deg, currentColor 50%, transparent 50%); }
+.m-thin { color: var(--thin); background: var(--thin-bg); }
+.m-thin i { border: 1.5px dashed currentColor; border-radius: 1px; }
+.m-run { color: var(--ink-3); background: transparent; box-shadow: inset 0 0 0 1px var(--rule-2); }
+.m-run i { border: 1.5px solid currentColor; border-radius: 50%; }
+.m-dis { color: var(--ink-2); background: var(--raise); box-shadow: inset 0 0 0 1px var(--rule); }
+.m-dis i { width: 9px; background: linear-gradient(90deg, currentColor 0 2px, transparent 2px 3.5px, currentColor 3.5px 5.5px, transparent 5.5px 7px, currentColor 7px 9px); clip-path: polygon(0 45%, 2px 45%, 2px 0, 5.5px 0, 5.5px 25%, 7px 25%, 7px 60%, 9px 60%, 9px 100%, 0 100%); }
+
+/* Source chips: their own row, under the sentence they support. */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  font-family: var(--f-data); font-size: 12px; line-height: 18px; color: var(--ink-2); background: var(--surface);
+  border: 1px solid var(--rule-2); border-radius: var(--r-control); padding: 2px 8px; cursor: pointer;
+  white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis; text-decoration: none; display: inline-block;
+}
+.chip:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+
+/* The range strip. A rail with tenth ticks, the band where sources agree or a check rebuilt the figure,
+   one tick per source, and a red triangle over the stated figure the check did not rebuild. */
+.strip { position: relative; padding-top: 22px; }
+.strip.bare { padding-top: 0; }
+.rail { position: relative; height: 16px; }
+.rail::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--rule-2); }
+.rail::after {
+  content: ""; position: absolute; left: 0; right: 0; top: calc(50% - 3px); height: 7px;
+  background: repeating-linear-gradient(90deg, var(--rule-2) 0 1px, transparent 1px 10%);
+  border-right: 1px solid var(--rule-2);
+}
+.band { position: absolute; top: 2px; bottom: 2px; z-index: 1; background: var(--band); border: 1px solid var(--band-edge); border-radius: 3px; min-width: 6px; }
+.tk { position: absolute; z-index: 2; top: -3px; bottom: -3px; width: 2px; margin-left: -1px; background: var(--ink); border-radius: 1px; }
+.tk.w { background: var(--weak); }
+.tk.fz { width: 10px; margin-left: -5px; background: repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 4px); border-radius: 0; }
+.oor { position: absolute; z-index: 3; top: -13px; margin-left: -6px; width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 9px solid var(--weak); }
+.lab { position: absolute; top: 0; font-family: var(--f-data); font-size: 11.5px; line-height: 16px; color: var(--ink-2); white-space: nowrap; transform: translateX(-50%); }
+.lab.r { transform: translateX(calc(-100% + 0px)); }
+.lab.rr { transform: translateX(calc(-100% - 12px)); }
+.lab.l { transform: none; }
+.lab.w { color: var(--weak); }
+.lab.dn { top: 44px; }
+.axis { display: flex; justify-content: space-between; margin-top: 8px; font-family: var(--f-data); font-size: 11px; line-height: 14px; color: var(--ink-3); }
+.strip.has-dn .axis { margin-top: 30px; }
+@media (max-width: 575.98px) { .lab.dn-sm { top: 44px; } .strip:has(.dn-sm) .axis { margin-top: 30px; } }
+.strip-key { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); font-family: var(--f-data); font-size: 12px; color: var(--ink-3); }
+.strip-key span { display: inline-flex; align-items: center; gap: 8px; }
+.k-band { width: 20px; height: 10px; background: var(--band); border: 1px solid var(--band-edge); border-radius: 2px; }
+.k-tick { width: 2px; height: 14px; background: var(--ink); }
+.k-fz { width: 10px; height: 14px; background: repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 4px); }
+.k-oor { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 9px solid var(--weak); }
+
+/* Flag: the headline list. Green and red share one structure and one size. */
+.flag { display: flex; flex-direction: column; gap: var(--s4); padding: var(--s5); background: var(--surface); border: 1px solid var(--rule); border-radius: var(--r-panel); min-width: 0; }
+.flag .t-4 { margin: 0; }
+.flag p { color: var(--ink-2); font-size: 15px; line-height: 1.5; }
+.flag .chips { margin-top: auto; }
+
+/* Tables: one surface. The head row has the body's fill and a stronger rule under it. */
+.tbox { overflow-x: auto; }
+table.data { width: 100%; border-collapse: collapse; font-size: 15px; }
+table.data th, table.data td { text-align: left; padding: 12px var(--s4) 12px 0; border-bottom: 1px solid var(--rule); vertical-align: baseline; }
+table.data th:last-child, table.data td:last-child { padding-right: 0; }
+table.data th { font-family: var(--f-data); font-size: 11.5px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); border-bottom-color: var(--rule-2); white-space: nowrap; padding-top: 0; }
+table.data tr:last-child td { border-bottom: 0; }
+table.data th.v { text-align: right; padding-right: var(--s6); }
+table.data td.v { text-align: right; font-family: var(--f-data); font-size: 14px; white-space: nowrap; padding-right: var(--s6); }
+table.data td.src { white-space: nowrap; }
+
+/* Stated beside found: two figures, same size, side by side. */
+.sbf { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border: 1px solid var(--rule); border-radius: var(--r-panel); }
+.sbf > div { padding: var(--s4) var(--s5) var(--s5); display: flex; flex-direction: column; gap: var(--s2); min-width: 0; }
+.sbf > div + div { border-left: 1px solid var(--rule); }
+.sbf .fig-xl { margin-top: var(--s1); }
+.sbf .found .fig-xl { color: var(--ink); }
+.sbf .where { font-family: var(--f-data); font-size: 12px; color: var(--ink-3); line-height: 1.45; overflow-wrap: anywhere; }
+.sbf .fig-xl { font-size: clamp(30px, 2.6vw, 40px); }
+@media (max-width: 575.98px) { .sbf { grid-template-columns: minmax(0, 1fr); } .sbf > div + div { border-left: 0; border-top: 1px solid var(--rule); } }
+.diff { display: flex; justify-content: space-between; align-items: baseline; gap: var(--s4); font-size: 15px; color: var(--ink-2); }
+.diff b { font-family: var(--f-data); font-weight: 500; color: var(--ink); font-size: 15px; }
+
+/* Ask the founder: a prompt the operator can add to the ask list. */
+.ask { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--s3) var(--s5); align-items: center; padding: var(--s4) var(--s5); border: 1px solid var(--band-edge); border-radius: var(--r-panel); background: var(--accent-soft); }
+.ask .eyebrow { color: var(--accent); margin-bottom: 4px; }
+.ask p:not(.eyebrow) { color: var(--ink); font-size: 16px; line-height: 1.45; margin: 0; }
+@media (max-width: 575.98px) { .ask { grid-template-columns: minmax(0, 1fr); } }
+
+/* Verdict line: the overview, one row per piece. */
+.verdicts { border-top: 1px solid var(--rule); }
+.vline { display: grid; grid-template-columns: 14rem minmax(0, 1fr); gap: var(--s2) var(--s5); padding: var(--s4) 0; border-bottom: 1px solid var(--rule); }
+.vline .piece { font-weight: 600; }
+.vline .head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2) var(--s3); }
+.vline p { color: var(--ink-2); font-size: 15px; }
+.vline .count { font-family: var(--f-data); font-size: 12px; color: var(--ink-3); margin-top: 6px; }
+@media (max-width: 767.98px) { .vline { grid-template-columns: minmax(0, 1fr); } }
+
+/* Notes: gap, clean check, steered piece. Same structure, told apart by mark and outline. */
+.note { display: flex; flex-direction: column; gap: var(--s3); padding: var(--s5); border: 1px solid var(--rule); border-radius: var(--r-panel); background: var(--surface); min-width: 0; }
+.note.gap { border-style: dashed; border-color: var(--rule-2); }
+.note.clean { border-color: var(--strong); }
+.note.steer { border-color: var(--band-edge); }
+.note p { color: var(--ink-2); font-size: 15px; }
+.note dl { margin: 0; display: grid; gap: var(--s3); }
+.note dt { font-family: var(--f-data); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); font-weight: 400; }
+.note dd { margin: 2px 0 0; color: var(--ink-2); font-size: 15px; }
+.note .chips { margin-top: auto; }
+.g { display: inline-block; flex: none; }
+.g-gap { width: 9px; height: 9px; border: 1.5px dashed currentColor; border-radius: 1px; }
+.g-clean { width: 11px; height: 9px; background: currentColor; clip-path: polygon(0 55%, 15% 40%, 40% 65%, 85% 0, 100% 15%, 40% 100%); }
+.g-steer { width: 9px; height: 9px; border: 1.5px solid currentColor; border-radius: 50%; position: relative; }
+.m-gap { color: var(--thin); background: var(--thin-bg); }
+.m-clean { color: var(--strong); background: var(--strong-bg); }
+.m-steer { color: var(--accent); background: var(--accent-soft); }
+
+/* Controls. Hover darkens the accent in light, lightens it in dark; text contrast holds in both. */
+.button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 22px;
+  font-family: var(--f-body); font-size: 16px; font-weight: 600; line-height: 1; text-decoration: none; white-space: nowrap;
+  border-radius: var(--r-control); border: 1px solid var(--accent); background: var(--accent); color: var(--on-accent); cursor: pointer;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+.button:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--on-accent); }
+.button.ghost { background: transparent; border-color: var(--rule-2); color: var(--ink); }
+.button.ghost:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--ink); }
+.button.quiet { background: transparent; border-color: transparent; color: var(--accent); padding: 0 4px; text-decoration: underline; text-underline-offset: 4px; }
+.button.quiet:hover { color: var(--accent-hover); background: transparent; }
+.button.small { min-height: 36px; padding: 0 14px; font-size: 14px; }
+.button[disabled], .button[aria-disabled="true"] { opacity: 0.4; cursor: not-allowed; }
+.button[disabled]:hover { background: var(--accent); border-color: var(--accent); }
+.button .arr { font-family: var(--f-data); font-weight: 400; }
+@media (prefers-reduced-motion: reduce) { .button { transition: none; } }
+.field { display: grid; gap: var(--s2); }
+.field label { font-family: var(--f-data); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+.field .help { font-size: 14px; color: var(--ink-3); }
+.input {
+  font: 16px/1.4 var(--f-body); color: var(--ink); background: var(--surface); border: 1px solid var(--rule-2); border-radius: var(--r-control);
+  padding: 0 14px; min-height: 48px; width: 100%; min-width: 0;
+}
+.input::placeholder { color: var(--ink-3); }
+.input:hover { border-color: var(--ink-3); }
+.input:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; border-color: var(--accent); }
+.inline-field { display: flex; gap: var(--s2); flex-wrap: wrap; }
+.inline-field .input { flex: 1 1 260px; width: auto; }
+
+.synthetic { font-family: var(--f-data); font-size: 12px; line-height: 18px; color: var(--ink-3); }
+
+/* Top bar. */
+.bar { display: flex; align-items: center; gap: var(--s5); min-height: 72px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-family: var(--f-display); font-stretch: 87.5%; font-weight: 700; font-size: 21px; letter-spacing: -0.02em; }
+.brand:hover { color: var(--ink); }
+.brand svg { display: block; }
+.nav { margin-left: auto; display: flex; align-items: center; gap: var(--s5); font-size: 15px; }
+.nav a { color: var(--ink-2); text-decoration: none; }
+.nav a:hover { color: var(--ink); text-decoration: underline; }
+.theme-btn { font: 12px/1 var(--f-data); color: var(--ink-2); background: transparent; border: 1px solid var(--rule-2); border-radius: var(--r-control); padding: 8px 10px; cursor: pointer; }
+.theme-btn:hover { color: var(--ink); border-color: var(--ink-3); background: var(--accent-soft); }
+@media (max-width: 767.98px) { .nav .opt { display: none; } .nav { gap: var(--s4); } }
+@media (max-width: 575.98px) { .nav a { display: none; } }
+
+footer.foot { border-top: 1px solid var(--rule); margin-top: var(--s10); padding: var(--s6) 0 var(--s8); font-size: 14px; color: var(--ink-3); }
+footer.foot .row > div:last-child { text-align: right; }
+footer.foot a + a { margin-left: var(--s5); }
+@media (max-width: 767.98px) { footer.foot .row > div:last-child { text-align: left; } footer.foot { margin-top: var(--s8); } }
+
+/* Style guide only. Quiet: white ground, no deep band. */
+.top { border-bottom: 1px solid var(--rule); }
+.title { padding-top: var(--s9); padding-bottom: var(--s8); }
+.title .eyebrow { margin-bottom: var(--s5); }
+.title .lead { margin-top: var(--s5); max-width: 40em; }
+.toc { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.toc ol { list-style: none; margin: 0; padding: var(--s4) 0; display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); counter-reset: toc; }
+.toc a { font-size: 15px; color: var(--ink-2); text-decoration: none; }
+.toc a:hover { color: var(--ink); text-decoration: underline; }
+.toc .n { font-family: var(--f-data); font-size: 12px; color: var(--ink-3); margin-right: 8px; }
+
+.sg .sec { padding-top: var(--s9); }
+.sg .sec-head { margin-bottom: var(--s6); }
+.sg .sec-head .lead { font-size: 18px; }
+.block + .block { margin-top: var(--s7); }
+.block + .row.block { margin-top: calc(var(--s7) - var(--bs-gutter-y)); }
+.block-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--s2) var(--s5); margin-bottom: var(--s4); }
+.use { margin-top: var(--s4); font-size: 15px; color: var(--ink-2); max-width: 46em; }
+.use b { font-family: var(--f-data); font-weight: 400; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); margin-right: 8px; }
+
+/* Token tables. */
+.sw { display: inline-block; width: 28px; height: 28px; border-radius: var(--r-control); border: 1px solid rgba(127, 127, 127, 0.35); vertical-align: middle; }
+table.tokens { table-layout: fixed; min-width: 760px; }
+table.tokens th:nth-child(1) { width: 22%; } table.tokens th:nth-child(2), table.tokens th:nth-child(3) { width: 15%; }
+table.tokens td { vertical-align: middle; padding-top: 10px; padding-bottom: 10px; }
+table.tokens td.hex { font-family: var(--f-data); font-size: 13px; white-space: nowrap; }
+table.tokens td.tok { font-family: var(--f-data); font-size: 13px; white-space: nowrap; color: var(--ink); }
+table.tokens td.role { color: var(--ink-2); font-size: 14px; }
+
+/* Type specimens. */
+.face { padding: var(--s5); }
+.face p.spec { font-size: 64px; line-height: 0.95; letter-spacing: -0.012em; margin: var(--s4) 0; color: var(--ink); }
+.face p.spec.d { font-family: var(--f-display); font-stretch: 87.5%; font-weight: 600; }
+.face p.spec.b { font-family: var(--f-body); font-weight: 500; letter-spacing: -0.02em; }
+.face p.spec.m { font-family: var(--f-data); font-weight: 400; font-size: 52px; letter-spacing: -0.04em; }
+.face p:not(.eyebrow) { color: var(--ink-2); font-size: 15px; }
+.scale-row { display: grid; grid-template-columns: 9rem minmax(0, 1fr) 13rem; gap: var(--s4) var(--s5); align-items: baseline; padding: var(--s4) 0; border-bottom: 1px solid var(--rule); }
+.scale-row:first-child { border-top: 1px solid var(--rule); }
+.scale-row .meta { font-family: var(--f-data); font-size: 12px; color: var(--ink-3); }
+.scale-row .sample { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 767.98px) { .scale-row { grid-template-columns: minmax(0, 1fr); gap: var(--s2); } }
+
+/* Space, corners, lines. */
+.space-row { display: grid; grid-template-columns: 4rem 3.5rem minmax(0, 1fr); gap: var(--s4); align-items: center; padding: 6px 0; font-family: var(--f-data); font-size: 12px; color: var(--ink-3); }
+.space-row .bar-s { height: 12px; background: var(--band); border: 1px solid var(--band-edge); border-radius: 2px; }
+.corner { display: grid; gap: var(--s3); justify-items: start; }
+.corner .shape { width: 100%; height: 72px; border: 1px solid var(--rule-2); background: var(--surface); }
+.corner .meta { font-family: var(--f-data); font-size: 12px; color: var(--ink-3); }
+.line-row { display: grid; grid-template-columns: minmax(0, 1fr) 13rem; gap: var(--s4); align-items: center; padding: var(--s3) 0; font-family: var(--f-data); font-size: 12px; color: var(--ink-3); }
+.line-row i { display: block; height: 0; }
+.cols { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px; height: 96px; }
+.cols span { background: var(--accent-soft); border: 1px solid var(--band-edge); border-radius: 3px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 6px; font-family: var(--f-data); font-size: 11px; color: var(--accent); }
+@media (max-width: 991.98px) { .cols { gap: 16px; } }
+@media (max-width: 575.98px) { .cols { gap: 6px; height: 64px; } .cols span { font-size: 9px; } }
+
+/* Anatomy of the strip. */
+.anatomy .strip { margin-top: var(--s5); }
+.anatomy .strip .lab { font-size: 12px; }
+
+.marks-row { display: flex; flex-wrap: wrap; gap: var(--s3) var(--s4); align-items: center; }
+.controls-row { display: flex; flex-wrap: wrap; gap: var(--s3); align-items: center; }
+.state { font-family: var(--f-data); font-size: 11.5px; color: var(--ink-3); display: block; margin-bottom: var(--s2); letter-spacing: 0.06em; text-transform: uppercase; }
+.button.force-hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+.button.ghost.force-hover { background: var(--accent-soft); border-color: var(--accent); color: var(--ink); }
+.chip.force-hover { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+
+/* Rules. */
+.rules { border-top: 1px solid var(--ink); }
+.rules .li { border-bottom: 1px solid var(--rule); padding: var(--s4) 0; }
+.rules .row { --bs-gutter-y: var(--s2); align-items: baseline; }
+.rules .n { font-family: var(--f-data); font-size: 13px; color: var(--ink-3); }
+.rules .rule { font-weight: 600; color: var(--ink); }
+.rules .why { color: var(--ink-2); font-size: 15px; }
+
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="home.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><rect x="0.75" y="0.75" width="24.5" height="24.5" rx="6" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="5" y1="15" x2="21" y2="15" stroke="currentColor" stroke-opacity="0.45"/><rect x="6" y="12" width="7" height="6" rx="1.5" fill="var(--band)" stroke="var(--band-edge)"/><rect x="8.75" y="9.5" width="1.5" height="11" rx="0.75" fill="currentColor"/><path d="M15.5 6.5 L20.5 6.5 L18 10.5 Z" fill="var(--weak)"/><rect x="17.25" y="11" width="1.5" height="9.5" rx="0.75" fill="var(--weak)"/></svg>Tricorder</a>
+      <nav class="nav" aria-label="Page">
+        <a href="home.html">Sample homepage</a>
+        <a href="../../index.html">All directions</a>
+        <button class="theme-btn" id="theme" type="button" aria-label="Change colour theme">Theme: auto</button>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="row title g-tight">
+    <div class="col-12 col-lg-9">
+      <p class="eyebrow">Style guide, Direction F</p>
+      <h1 class="t-1">Instrument</h1>
+      <p class="lead">Tricorder should look like an expensive instrument: a white working surface, a strict 12-column grid, and every number drawn against its range. The homepage gets one deep ground for drama; the product stays quiet and gets out of the way.</p>
+    </div>
+  </div>
+  <nav class="toc" aria-label="Sections">
+    <ol>
+      <li><a href="#direction"><span class="n">01</span>Direction</a></li>
+      <li><a href="#colour"><span class="n">02</span>Colour</a></li>
+      <li><a href="#type"><span class="n">03</span>Type</a></li>
+      <li><a href="#space"><span class="n">04</span>Grid, space, corners</a></li>
+      <li><a href="#strip"><span class="n">05</span>Range strip</a></li>
+      <li><a href="#flags"><span class="n">06</span>Flags and marks</a></li>
+      <li><a href="#verdicts"><span class="n">07</span>Verdict lines</a></li>
+      <li><a href="#tables"><span class="n">08</span>Tables</a></li>
+      <li><a href="#sbf"><span class="n">09</span>Stated beside found</a></li>
+      <li><a href="#notes"><span class="n">10</span>Gap, clean, steer</a></li>
+      <li><a href="#controls"><span class="n">11</span>Chips and controls</a></li>
+      <li><a href="#rules"><span class="n">12</span>Rules</a></li>
+    </ol>
+  </nav>
+</div>
+
+<main class="sg">
+<section class="sec" id="direction" aria-labelledby="h-direction">
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="row sec-head g-tight">
+        <div class="col-12 col-lg-8">
+          <p class="eyebrow">01 Direction</p>
+          <h2 class="t-2" id="h-direction">Round one's Reference Range, rebuilt to a stricter standard.</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-4"><div class="panel h-100"><div class="panel-body"><p class="eyebrow">Kept</p><p>The range strip as the signature. The ARR disagreement as a number line over a source table. Stated beside found. The Ask the founder prompt. A white ground and Archivo at 87.5% width for display.</p></div></div></div>
+      <div class="col-12 col-md-4"><div class="panel h-100"><div class="panel-body"><p class="eyebrow">Raised</p><p>A strict 12-column grid with one gutter. A larger, tighter type scale. One radius scale: 6px on controls, 12px on panels. No shadows on working screens. One accent, used for action only.</p></div></div></div>
+      <div class="col-12 col-md-4"><div class="panel h-100"><div class="panel-body"><p class="eyebrow">Added</p><p>A deep blue-black ground for the homepage hero and closing band, and a large product surface that straddles the hero and the page. New body and data faces: Instrument Sans and IBM Plex Mono.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="colour" aria-labelledby="h-colour">
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="row sec-head g-tight">
+        <div class="col-12 col-lg-8">
+          <p class="eyebrow">02 Colour</p>
+          <h2 class="t-2" id="h-colour">White, ink, one accent, four verdict colours.</h2>
+          <p class="lead">The four verdict colours are separate from the accent and always travel with a shape and a word. The accent never marks a verdict.</p>
+        </div>
+      </div>
+    </div>
+    <div class="block">
+      <div class="block-head"><h3 class="t-4">Working tokens, light and dark</h3></div>
+      <div class="tbox"><table class="data tokens"><thead><tr><th scope="col">Token</th><th scope="col">Light</th><th scope="col">Dark</th><th scope="col">Role</th></tr></thead><tbody><tr><td class="tok">--ground</td><td class="hex"><span class="sw" style="background:#ffffff"></span>&nbsp; #ffffff</td><td class="hex"><span class="sw" style="background:#0a0e19"></span>&nbsp; #0a0e19</td><td class="role">Page ground. White, or a deliberate dark. Never grey.</td></tr>
+<tr><td class="tok">--surface</td><td class="hex"><span class="sw" style="background:#ffffff"></span>&nbsp; #ffffff</td><td class="hex"><span class="sw" style="background:#0f1424"></span>&nbsp; #0f1424</td><td class="role">Panels, cards, inputs and chips.</td></tr>
+<tr><td class="tok">--raise</td><td class="hex"><span class="sw" style="background:#f5f6f9"></span>&nbsp; #f5f6f9</td><td class="hex"><span class="sw" style="background:#141a2b"></span>&nbsp; #141a2b</td><td class="role">The second level: the active tab, a flag inside the product surface, the disagreement mark.</td></tr>
+<tr><td class="tok">--ink</td><td class="hex"><span class="sw" style="background:#0a0f1c"></span>&nbsp; #0a0f1c</td><td class="hex"><span class="sw" style="background:#eef0f6"></span>&nbsp; #eef0f6</td><td class="role">Headings, figures, primary text.</td></tr>
+<tr><td class="tok">--ink-2</td><td class="hex"><span class="sw" style="background:#394155"></span>&nbsp; #394155</td><td class="hex"><span class="sw" style="background:#b3b9ca"></span>&nbsp; #b3b9ca</td><td class="role">Body copy and table cells.</td></tr>
+<tr><td class="tok">--ink-3</td><td class="hex"><span class="sw" style="background:#646c80"></span>&nbsp; #646c80</td><td class="hex"><span class="sw" style="background:#858da3"></span>&nbsp; #858da3</td><td class="role">Labels, axis numbers, captions.</td></tr>
+<tr><td class="tok">--rule</td><td class="hex"><span class="sw" style="background:#e1e4eb"></span>&nbsp; #e1e4eb</td><td class="hex"><span class="sw" style="background:#1f2639"></span>&nbsp; #1f2639</td><td class="role">Hairlines around panels and between rows.</td></tr>
+<tr><td class="tok">--rule-2</td><td class="hex"><span class="sw" style="background:#c3c8d4"></span>&nbsp; #c3c8d4</td><td class="hex"><span class="sw" style="background:#343d57"></span>&nbsp; #343d57</td><td class="role">Strip rail, chip and control outlines, the rule under a table head.</td></tr>
+<tr><td class="tok">--accent</td><td class="hex"><span class="sw" style="background:#2b44d4"></span>&nbsp; #2b44d4</td><td class="hex"><span class="sw" style="background:#96a6ff"></span>&nbsp; #96a6ff</td><td class="role">Links, primary button, focus ring, the Ask the founder label.</td></tr>
+<tr><td class="tok">--accent-hover</td><td class="hex"><span class="sw" style="background:#1b2c9e"></span>&nbsp; #1b2c9e</td><td class="hex"><span class="sw" style="background:#c2cbff"></span>&nbsp; #c2cbff</td><td class="role">Hover on the primary button and on links.</td></tr>
+<tr><td class="tok">--on-accent</td><td class="hex"><span class="sw" style="background:#ffffff"></span>&nbsp; #ffffff</td><td class="hex"><span class="sw" style="background:#070b16"></span>&nbsp; #070b16</td><td class="role">Text on the accent.</td></tr>
+<tr><td class="tok">--accent-soft</td><td class="hex"><span class="sw" style="background:#edf0ff"></span>&nbsp; #edf0ff</td><td class="hex"><span class="sw" style="background:#161f3d"></span>&nbsp; #161f3d</td><td class="role">Hover fill on quiet controls, the ask prompt's fill.</td></tr>
+<tr><td class="tok">--band</td><td class="hex"><span class="sw" style="background:#e1e6ff"></span>&nbsp; #e1e6ff</td><td class="hex"><span class="sw" style="background:#1d2652"></span>&nbsp; #1d2652</td><td class="role">The strip's band: sources within 1%, or a rebuilt figure.</td></tr>
+<tr><td class="tok">--band-edge</td><td class="hex"><span class="sw" style="background:#8a9bef"></span>&nbsp; #8a9bef</td><td class="hex"><span class="sw" style="background:#5767bd"></span>&nbsp; #5767bd</td><td class="role">Band outline, ask prompt and steer note outline.</td></tr>
+<tr><td class="tok">--strong</td><td class="hex"><span class="sw" style="background:#14784a"></span>&nbsp; #14784a</td><td class="hex"><span class="sw" style="background:#5dcf98"></span>&nbsp; #5dcf98</td><td class="role">Looking strong, green flag, clean check.</td></tr>
+<tr><td class="tok">--strong-bg</td><td class="hex"><span class="sw" style="background:#e5f3eb"></span>&nbsp; #e5f3eb</td><td class="hex"><span class="sw" style="background:#0f2a1f"></span>&nbsp; #0f2a1f</td><td class="role">Fill behind the strong mark.</td></tr>
+<tr><td class="tok">--weak</td><td class="hex"><span class="sw" style="background:#bf3428"></span>&nbsp; #bf3428</td><td class="hex"><span class="sw" style="background:#ff8073"></span>&nbsp; #ff8073</td><td class="role">Looking weak, red flag, the out-of-range triangle.</td></tr>
+<tr><td class="tok">--weak-bg</td><td class="hex"><span class="sw" style="background:#fcebe8"></span>&nbsp; #fcebe8</td><td class="hex"><span class="sw" style="background:#33161a"></span>&nbsp; #33161a</td><td class="role">Fill behind the weak mark.</td></tr>
+<tr><td class="tok">--mixed</td><td class="hex"><span class="sw" style="background:#875800"></span>&nbsp; #875800</td><td class="hex"><span class="sw" style="background:#e4b250"></span>&nbsp; #e4b250</td><td class="role">Mixed.</td></tr>
+<tr><td class="tok">--mixed-bg</td><td class="hex"><span class="sw" style="background:#f7eedb"></span>&nbsp; #f7eedb</td><td class="hex"><span class="sw" style="background:#2c2412"></span>&nbsp; #2c2412</td><td class="role">Fill behind the mixed mark.</td></tr>
+<tr><td class="tok">--thin</td><td class="hex"><span class="sw" style="background:#576074"></span>&nbsp; #576074</td><td class="hex"><span class="sw" style="background:#a3aabc"></span>&nbsp; #a3aabc</td><td class="role">Not enough in the room, and gaps.</td></tr>
+<tr><td class="tok">--thin-bg</td><td class="hex"><span class="sw" style="background:#eef0f4"></span>&nbsp; #eef0f4</td><td class="hex"><span class="sw" style="background:#1a2031"></span>&nbsp; #1a2031</td><td class="role">Fill behind the not-enough mark.</td></tr></tbody></table></div>
+    </div>
+    <div class="block">
+      <div class="block-head"><h3 class="t-4">The deep ground, homepage only</h3></div>
+      <div class="tbox"><table class="data tokens"><thead><tr><th scope="col">Token</th><th scope="col">Light theme</th><th scope="col">Dark theme</th><th scope="col">Role</th></tr></thead><tbody><tr><td class="tok">--d-ground</td><td class="hex"><span class="sw" style="background:#070b16"></span>&nbsp; #070b16</td><td class="hex"><span class="sw" style="background:#04060d"></span>&nbsp; #04060d</td><td class="role">The hero and the closing band. Deep blue-black, not black.</td></tr>
+<tr><td class="tok">--d-surface</td><td class="hex"><span class="sw" style="background:#0d1323"></span>&nbsp; #0d1323</td><td class="hex"><span class="sw" style="background:#0b1020"></span>&nbsp; #0b1020</td><td class="role">The product surface on the homepage.</td></tr>
+<tr><td class="tok">--d-raise</td><td class="hex"><span class="sw" style="background:#131a2c"></span>&nbsp; #131a2c</td><td class="hex"><span class="sw" style="background:#131a2c"></span>&nbsp; #131a2c</td><td class="role">Flags and the overview inside the product surface.</td></tr>
+<tr><td class="tok">--d-ink</td><td class="hex"><span class="sw" style="background:#f1f3f8"></span>&nbsp; #f1f3f8</td><td class="hex"><span class="sw" style="background:#f1f3f8"></span>&nbsp; #f1f3f8</td><td class="role">The line and headings on the deep ground.</td></tr>
+<tr><td class="tok">--d-ink-2</td><td class="hex"><span class="sw" style="background:#b0b7c9"></span>&nbsp; #b0b7c9</td><td class="hex"><span class="sw" style="background:#b0b7c9"></span>&nbsp; #b0b7c9</td><td class="role">Body copy on the deep ground.</td></tr>
+<tr><td class="tok">--d-rule</td><td class="hex"><span class="sw" style="background:#1e2639"></span>&nbsp; #1e2639</td><td class="hex"><span class="sw" style="background:#1e2639"></span>&nbsp; #1e2639</td><td class="role">Hairlines on the deep ground.</td></tr>
+<tr><td class="tok">--d-accent</td><td class="hex"><span class="sw" style="background:#96a6ff"></span>&nbsp; #96a6ff</td><td class="hex"><span class="sw" style="background:#96a6ff"></span>&nbsp; #96a6ff</td><td class="role">The primary button and links on the deep ground.</td></tr>
+<tr><td class="tok">--d-band</td><td class="hex"><span class="sw" style="background:#1d2652"></span>&nbsp; #1d2652</td><td class="hex"><span class="sw" style="background:#1d2652"></span>&nbsp; #1d2652</td><td class="role">The strip's band on the deep ground.</td></tr></tbody></table></div>
+      <p class="use"><b>Use</b>Anything inside an element with the class <span class="mono">deep</span> reads these tokens, so every component works on the deep ground unchanged. In the dark theme the deep ground drops a shade so the hero still reads as deeper than the page.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="type" aria-labelledby="h-type">
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="row sec-head g-tight">
+        <div class="col-12 col-lg-8">
+          <p class="eyebrow">03 Type</p>
+          <h2 class="t-2" id="h-type">Three faces, each with one job.</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-4"><div class="panel face h-100"><p class="eyebrow">Display</p><p class="spec d">Archivo</p><p>At 87.5% width, weight 600, from 24px up. Leading 0.9 at the hero, 1.12 at 24px. Letter spacing tightens as size grows.</p></div></div>
+      <div class="col-12 col-lg-4"><div class="panel face h-100"><p class="eyebrow">Body</p><p class="spec b">Instrument</p><p>Instrument Sans for sentences, labels in the product and buttons. Tabular figures on, so a figure in a sentence holds its width.</p></div></div>
+      <div class="col-12 col-lg-4"><div class="panel face h-100"><p class="eyebrow">Data</p><p class="spec m">$2,240,868</p><p>IBM Plex Mono for figures in tables, strips, chips and source names. Right aligned in tables so the digits line up.</p></div></div>
+    </div>
+    <div class="block" style="margin-top:var(--s7)">
+      <div class="scale-row"><span class="meta">Hero</span><span class="sample t-hero" style="font-size:clamp(40px,6vw,88px)">get a readout.</span><span class="meta">124 / 0.90, Archivo 600</span></div>
+      <div class="scale-row"><span class="meta">Title 1</span><span class="sample t-1">Two promises.</span><span class="meta">60 / 0.98, Archivo 600</span></div>
+      <div class="scale-row"><span class="meta">Title 2</span><span class="sample t-2">A memo you can check.</span><span class="meta">38 / 1.04, Archivo 600</span></div>
+      <div class="scale-row"><span class="meta">Title 3</span><span class="sample t-3">Disagreement: ARR</span><span class="meta">24 / 1.12, Archivo 600</span></div>
+      <div class="scale-row"><span class="meta">Item</span><span class="sample t-4">Runway leaves out most of the hiring plan.</span><span class="meta">17 / 1.35, Instrument 600</span></div>
+      <div class="scale-row"><span class="meta">Lead</span><span class="sample lead">The associate works in the readout.</span><span class="meta">21 / 1.50, Instrument 400</span></div>
+      <div class="scale-row"><span class="meta">Body</span><span class="sample">Nothing in the room explains the $259,132 gap. Ask the founder.</span><span class="meta">17 / 1.55, Instrument 400</span></div>
+      <div class="scale-row"><span class="meta">Label</span><span class="sample eyebrow">Traction and revenue</span><span class="meta">12 / 16, Plex Mono, caps</span></div>
+      <div class="scale-row"><span class="meta">Figure</span><span class="sample mono" style="font-size:14px">$2,500,000</span><span class="meta">14, Plex Mono, tabular</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="space" aria-labelledby="h-space">
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="row sec-head g-tight">
+        <div class="col-12 col-lg-8">
+          <p class="eyebrow">04 Grid, space, corners and lines</p>
+          <h2 class="t-2" id="h-space">Twelve columns, one gutter, two radii.</h2>
+          <p class="lead">Columns are 80px with a 32px gutter inside a 1312px container. Below 992px the gutter and the page edge drop to 16px.</p>
+        </div>
+      </div>
+    </div>
+    <div class="block">
+      <div class="cols" aria-hidden="true"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span></div>
+    </div>
+    <div class="row block">
+      <div class="col-12 col-lg-4">
+        <h3 class="t-4" style="margin-bottom:var(--s4)">Space</h3>
+        <div class="space-row"><span>--s1</span><span>4</span><i class="bar-s" style="width:4px"></i></div>
+        <div class="space-row"><span>--s2</span><span>8</span><i class="bar-s" style="width:8px"></i></div>
+        <div class="space-row"><span>--s3</span><span>12</span><i class="bar-s" style="width:12px"></i></div>
+        <div class="space-row"><span>--s4</span><span>16</span><i class="bar-s" style="width:16px"></i></div>
+        <div class="space-row"><span>--s5</span><span>24</span><i class="bar-s" style="width:24px"></i></div>
+        <div class="space-row"><span>--s6</span><span>32</span><i class="bar-s" style="width:32px"></i></div>
+        <div class="space-row"><span>--s7</span><span>48</span><i class="bar-s" style="width:48px"></i></div>
+        <div class="space-row"><span>--s8</span><span>64</span><i class="bar-s" style="width:64px"></i></div>
+        <div class="space-row"><span>--s9</span><span>96</span><i class="bar-s" style="width:96px"></i></div>
+        <div class="space-row"><span>--s10</span><span>128</span><i class="bar-s" style="width:128px"></i></div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <h3 class="t-4" style="margin-bottom:var(--s4)">Corners</h3>
+        <div class="row">
+          <div class="col-4 corner"><div class="shape" style="border-radius:0"></div><span class="meta">0: tables, rules, strips</span></div>
+          <div class="col-4 corner"><div class="shape" style="border-radius:6px"></div><span class="meta">6: controls, chips, marks</span></div>
+          <div class="col-4 corner"><div class="shape" style="border-radius:12px"></div><span class="meta">12: panels</span></div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <h3 class="t-4" style="margin-bottom:var(--s4)">Lines</h3>
+        <div class="line-row"><i style="border-top:1px solid var(--rule)"></i><span>1px rule: panels, rows</span></div>
+        <div class="line-row"><i style="border-top:1px solid var(--rule-2)"></i><span>1px rule-2: rail, table head</span></div>
+        <div class="line-row"><i style="border-top:1px solid var(--ink)"></i><span>1px ink: opens a list</span></div>
+        <div class="line-row"><i style="border-top:1px dashed var(--rule-2)"></i><span>dashed: absent only</span></div>
+        <div class="line-row"><i style="border-top:1px solid var(--strong)"></i><span>outline: clean check</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="strip" aria-labelledby="h-strip">
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="row sec-head g-tight">
+        <div class="col-12 col-lg-8">
+          <p class="eyebrow">05 Range strip</p>
+          <h2 class="t-2" id="h-strip">Every number, against its range.</h2>
+          <p class="lead">A rail with tenth ticks. A band where sources agree within 1%, or where a check rebuilt the figure. One tick per source. A red triangle over the stated figure the check did not rebuild.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-8">
+        <div class="panel anatomy h-100">
+          <div class="panel-body">
+            <div class="strip" role="img" aria-label="Range strip: the check found 19 months of runway. The stated 37 months sits out of range.">
+              <div class="rail"><div class="band" style="left:46.5%;width:2%"></div><div class="tk" style="left:47.5%"></div><div class="oor" style="left:92.5%"></div><div class="tk w" style="left:92.5%"></div></div>
+              <span class="lab dn-sm" style="left:47.5%">found 19 mo</span>
+              <span class="lab rr w" style="left:92.5%">stated 37 mo</span>
+              <div class="axis"><span>0</span><span>40 months</span></div>
+            </div>
+            <div class="strip" role="img" aria-label="Range strip: deck, cap table and model agree on 9,000,000 dollars.">
+              <div class="rail"><div class="band" style="left:20%;width:60%"></div><div class="tk" style="left:50%"></div></div>
+              <span class="lab" style="left:50%">deck, cap table, model: $9,000,000</span>
+              <div class="axis"><span>$8.85M</span><span>$9.15M</span></div>
+            </div>
+            <div class="strip push" role="img" aria-label="Range strip: three ARR figures, no band because no two agree.">
+              <div class="rail"><div class="tk" style="left:21.9%"></div><div class="tk" style="left:45.45%"></div><div class="tk fz" style="left:90.91%"></div></div>
+              <span class="lab" style="left:21.9%">model $2.24M</span>
+              <span class="lab dn-sm" style="left:45.45%">deck $2.50M</span>
+              <span class="lab r" style="left:96%">video, about $3.0M</span>
+              <div class="axis"><span>$2.0M</span><span>$3.1M</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="panel h-100">
+          <div class="panel-body">
+            <p class="eyebrow">Key</p>
+            <div class="strip-key" style="flex-direction:column;gap:12px">
+              <span><i class="k-band" aria-hidden="true"></i>band: sources within 1%, or rebuilt</span>
+              <span><i class="k-tick" aria-hidden="true"></i>one source's figure</span>
+              <span><i class="k-fz" aria-hidden="true"></i>a spoken figure, rounded</span>
+              <span><i class="k-oor" aria-hidden="true"></i>stated, and the check did not rebuild it</span>
+            </div>
+            <p class="use push" style="margin-top:auto"><b>Use</b>A disagreement gets no band, so the strip never picks a winner. Strip labels round to $2.24M; the table under it keeps exact dollars.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="flags" aria-labelledby="h-flags">
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="row sec-head g-tight">
+        <div class="col-12 col-lg-8">
+          <p class="eyebrow">06 Flags and marks</p>
+          <h2 class="t-2" id="h-flags">A strength gets the same care as a problem.</h2>
+          <p class="lead">Green and red flags share one structure, one size and one height. Each mark is a shape, a word and a colour.</p>
+        </div>
+      </div>
+    </div>
+    <div class="block">
+      <div class="marks-row">
+        <span class="mark m-strong"><i aria-hidden="true"></i>looking strong</span>
+        <span class="mark m-weak"><i aria-hidden="true"></i>looking weak</span>
+        <span class="mark m-mixed"><i aria-hidden="true"></i>mixed</span>
+        <span class="mark m-thin"><i aria-hidden="true"></i>not enough in the room</span>
+        <span class="mark m-run"><i aria-hidden="true"></i>running</span>
+        <span class="mark m-dis"><i aria-hidden="true"></i>Disagreement</span>
+      </div>
+    </div>
+    <div class="row block">
+      <div class="col-12 col-lg-6">
+        <article class="flag h-100">
+          <div><span class="mark m-strong"><i aria-hidden="true"></i>Green flag</span></div>
+          <h3 class="t-4">The round adds up.</h3>
+          <p>$9,000,000, stated in the deck and the same in the cap table and the model. Nothing in the room contradicts it.</p>
+          <div class="strip" role="img" aria-label="Range strip: three sources agree on 9,000,000 dollars.">
+            <div class="rail"><div class="band" style="left:20%;width:60%"></div><div class="tk" style="left:50%"></div></div>
+            <span class="lab" style="left:50%">deck, cap table, model: $9,000,000</span>
+            <div class="axis"><span>$8.85M</span><span>$9.15M</span></div>
+          </div>
+          <div class="chips">
+            <button class="chip" type="button">pitch_deck.pdf, slide 13</button>
+            <button class="chip" type="button">cap_table.xlsx, Cap_Table, B24</button>
+            <button class="chip" type="button">financial_model.xlsx, SERIES_A_RAISE</button>
+          </div>
+        </article>
+      </div>
+      <div class="col-12 col-lg-6">
+        <article class="flag h-100">
+          <div><span class="mark m-weak"><i aria-hidden="true"></i>Red flag</span></div>
+          <h3 class="t-4">Runway leaves out most of the hiring plan.</h3>
+          <p>37 months stated; 19 months found with all 24 planned hires paid for. Burn and runway reads looking weak.</p>
+          <div class="strip" role="img" aria-label="Range strip: 19 months found, 37 stated, out of range.">
+            <div class="rail"><div class="band" style="left:46.5%;width:2%"></div><div class="tk" style="left:47.5%"></div><div class="oor" style="left:92.5%"></div><div class="tk w" style="left:92.5%"></div></div>
+            <span class="lab dn-sm" style="left:47.5%">found 19 mo</span>
+            <span class="lab rr w" style="left:92.5%">stated 37 mo</span>
+            <div class="axis"><span>0</span><span>40 months</span></div>
+          </div>
+          <div class="chips">
+            <button class="chip" type="button">financial_model.xlsx, RUNWAY_MONTHS</button>
+            <button class="chip" type="button">pitch_deck.pdf, slide 11</button>
+            <button class="chip" type="button">hiring_plan.csv, rerun through Cash_Runway</button>
+          </div>
+        </article>
+      </div>
+    </div>
+    <p class="synthetic" style="margin-top:var(--s4)">Synthetic data room for Deal Flow NYC 2026. Not a real company.</p>
+  </div>
+</section>
+
+<section class="sec" id="verdicts" aria-labelledby="h-verdicts">
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="row sec-head g-tight">
+        <div class="col-12 col-lg-8">
+          <p class="eyebrow">07 Verdict lines</p>
+          <h2 class="t-2" id="h-verdicts">One line per piece, strong and weak at the same length.</h2>
+        </div>
+      </div>
+    </div>
+    <div class="verdicts">
+      <div class="vline"><div class="head"><span class="piece">Market</span></div><div><div class="head"><span class="mark m-strong"><i aria-hidden="true"></i>looking strong</span></div><p style="margin-top:8px">Market size $252,000,000 on deck slide 8 and in the model (MARKET_TAM_USD). Both are the company's own estimate.</p><p class="count">[n] sources corroborate, [n] contradict.</p></div></div>
+      <div class="vline"><div class="head"><span class="piece">Traction and revenue</span></div><div><div class="head"><span class="mark m-weak"><i aria-hidden="true"></i>looking weak</span></div><p style="margin-top:8px">ARR is stated four ways, from about $3,000,000 on the pitch video to $2,060,868 in the subscription rows (pitch video, 0:35; customer_mrr_by_month.csv).</p><p class="count">[n] sources corroborate, [n] contradict.</p></div></div>
+      <div class="vline"><div class="head"><span class="piece">[Piece]</span></div><div><div class="head"><span class="mark m-mixed"><i aria-hidden="true"></i>mixed</span></div><p style="margin-top:8px">[The reason, in one sentence, with its number and source.]</p><p class="count">[n] sources corroborate, [n] contradict.</p></div></div>
+      <div class="vline"><div class="head"><span class="piece">[Piece]</span></div><div><div class="head"><span class="mark m-thin"><i aria-hidden="true"></i>not enough in the room</span></div><p style="margin-top:8px">[What the room is missing, named the way a gap is.]</p><p class="count">[n] sources corroborate, [n] contradict.</p></div></div>
+    </div>
+    <p class="use"><b>Use</b>The mark comes from the script's rule. Hollis Voice has no mixed or not-enough piece, so those two show the template. Counts come from the run.</p>
+  </div>
+</section>
+
+<section class="sec" id="tables" aria-labelledby="h-tables">
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="row sec-head g-tight">
+        <div class="col-12 col-lg-8">
+          <p class="eyebrow">08 Corroboration and disagreement</p>
+          <h2 class="t-2" id="h-tables">Sources side by side. No winner picked.</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <article class="panel h-100">
+          <div class="panel-head"><div style="display:flex;align-items:center;gap:12px"><span class="mark m-strong"><i aria-hidden="true"></i>Corroborated</span><h3 class="t-4">Series A raise, $9,000,000</h3></div></div>
+          <div class="panel-body">
+            <div class="strip" role="img" aria-label="Range strip: three sources agree on 9,000,000 dollars.">
+              <div class="rail"><div class="band" style="left:20%;width:60%"></div><div class="tk" style="left:50%"></div></div>
+              <span class="lab" style="left:50%">3 sources: $9,000,000</span>
+              <div class="axis"><span>$8.85M</span><span>$9.15M</span></div>
+            </div>
+            <div class="tbox">
+              <table class="data">
+                <thead><tr><th scope="col">Source</th><th scope="col" class="v">States</th><th scope="col">Where</th></tr></thead>
+                <tbody>
+                  <tr><td>Deck</td><td class="v">$9,000,000</td><td class="src"><button class="chip" type="button">pitch_deck.pdf, slide 13</button></td></tr>
+                  <tr><td>Cap table</td><td class="v">$9,000,000</td><td class="src"><button class="chip" type="button">cap_table.xlsx, Cap_Table, B24</button></td></tr>
+                  <tr><td>Financial model</td><td class="v">$9,000,000</td><td class="src"><button class="chip" type="button">financial_model.xlsx, Assumptions, SERIES_A_RAISE</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="gapline">3 independent sources agree. Nothing in the room contradicts it.</p>
+            <p class="use push" style="margin-top:auto"><b>Use</b>Write "corroborated" or "agree". A repeat across the deck, the overview, the video and the website shows in the table but counts as one source.</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-12 col-lg-6">
+        <article class="panel h-100">
+          <div class="panel-head"><div style="display:flex;align-items:center;gap:12px"><span class="mark m-dis"><i aria-hidden="true"></i>Disagreement</span><h3 class="t-4">ARR</h3></div></div>
+          <div class="panel-body">
+            <div class="strip" role="img" aria-label="Range strip: three ARR figures, no band.">
+              <div class="rail"><div class="tk" style="left:21.9%"></div><div class="tk" style="left:45.45%"></div><div class="tk fz" style="left:90.91%"></div></div>
+              <span class="lab" style="left:21.9%">model $2.24M</span>
+              <span class="lab dn-sm" style="left:45.45%">deck $2.50M</span>
+              <span class="lab r" style="left:96%">video, about $3.0M</span>
+              <div class="axis"><span>$2.0M</span><span>$3.1M</span></div>
+            </div>
+            <div class="tbox">
+              <table class="data">
+                <thead><tr><th scope="col">Source</th><th scope="col" class="v">States</th><th scope="col">Where</th></tr></thead>
+                <tbody>
+                  <tr><td>Pitch video</td><td class="v">about $3,000,000</td><td class="src"><button class="chip" type="button">pitch video, 0:35</button></td></tr>
+                  <tr><td>Deck</td><td class="v">$2,500,000</td><td class="src"><button class="chip" type="button">pitch_deck.pdf, slide 3</button></td></tr>
+                  <tr><td>Financial model</td><td class="v">$2,240,868</td><td class="src"><button class="chip" type="button">financial_model.xlsx, ARR_Build, ARR_TOTAL</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="gapline">Largest gap: about $760,000, between the video and the model. The deck is $259,132 above the model. The room does not explain either gap.</p>
+            <div class="ask push">
+              <div><p class="eyebrow">Ask the founder</p><p>Which of these is ARR as of 2026-09-30, and can you walk us from the billing data to it?</p></div>
+              <button class="button ghost small" type="button">Add to ask list</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="sbf" aria-labelledby="h-sbf">
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="row sec-head g-tight">
+        <div class="col-12 col-lg-8">
+          <p class="eyebrow">09 Stated beside found</p>
+          <h2 class="t-2" id="h-sbf">What the document says, next to what the check found.</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <article class="panel h-100">
+          <div class="panel-head"><div style="display:flex;align-items:center;gap:12px"><span class="mark m-weak"><i aria-hidden="true"></i>Flag</span><h3 class="t-4">A pilot is counted as ARR</h3></div></div>
+          <div class="panel-body">
+            <div class="sbf">
+              <div><span class="eyebrow">The document shows</span><span class="fig-xl fig">$2,240,868</span><span class="where">financial_model.xlsx, ARR_Build</span></div>
+              <div class="found"><span class="eyebrow">The check found</span><span class="fig-xl fig">$2,060,868</span><span class="where">customer_mrr_by_month.csv, subscription rows only</span></div>
+            </div>
+            <div class="diff"><span>Difference</span><b>$180,000</b></div>
+            <div class="ask push">
+              <div><p class="eyebrow">Ask the founder</p><p>Has Marlow signed anything beyond the pilot?</p></div>
+              <button class="button ghost small" type="button">Add to ask list</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="panel h-100">
+          <div class="panel-body">
+            <p class="eyebrow">How it is built</p>
+            <p>Two cells of one structure: a label, the figure in Archivo at 40px, and the source in Plex Mono under it. The found figure sits on the right, the way a reader scans from claim to check. The difference sits on its own line with exact dollars.</p>
+            <p>The prompt under it is the Ask the founder component: one question, written so the operator can paste it into an email, and one button that adds it to the ask list. It is the only place outside a button or link where the accent fills a box.</p>
+            <p class="use push" style="margin-top:auto"><b>Use</b>Never colour the stated figure red. The mark says which piece is weak; the two figures stay ink so neither reads as the right answer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="notes" aria-labelledby="h-notes">
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="row sec-head g-tight">
+        <div class="col-12 col-lg-8">
+          <p class="eyebrow">10 Gap, clean check, steered piece</p>
+          <h2 class="t-2" id="h-notes">Same structure, told apart by mark and outline.</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-4">
+        <div class="note gap h-100">
+          <div><span class="mark m-gap"><i class="g g-gap" aria-hidden="true"></i>Gap</span></div>
+          <h3 class="t-4">Not in the room: IP assignment agreements</h3>
+          <dl>
+            <div><dt>Needed for</dt><dd>Confirming the founders and every contractor assigned their work to the company.</dd></div>
+            <div><dt>Ask for</dt><dd>Signed invention assignment agreements for both founders and every contractor who wrote code.</dd></div>
+          </dl>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="note clean h-100">
+          <div><span class="mark m-clean"><i class="g g-clean" aria-hidden="true"></i>Clean check</span></div>
+          <h3 class="t-4">Clean: cash reconciles.</h3>
+          <p>Money raised before the Series A, less every month's net loss to 2026-09-30, was compared with the model's cash. The two differ by $0.24 on $1,800,000.</p>
+          <div class="chips"><button class="chip" type="button">cap_table.xlsx</button><button class="chip" type="button">financial_model.xlsx</button></div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="note steer h-100">
+          <div><span class="mark m-steer"><i class="g g-steer" aria-hidden="true"></i>Steered</span></div>
+          <h3 class="t-4">Rewritten on your instruction: "Lead with the pilot."</h3>
+          <p>The pilot counted as ARR now opens the piece. Verdict unchanged. The checks' numbers are unchanged.</p>
+          <div class="chips"><button class="chip" type="button">financial_model.xlsx, ARR_Build</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="controls" aria-labelledby="h-controls">
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="row sec-head g-tight">
+        <div class="col-12 col-lg-8">
+          <p class="eyebrow">11 Chips and controls</p>
+          <h2 class="t-2" id="h-controls">Quiet controls, 6px corners, 48px tall.</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-4">
+        <div class="panel h-100"><div class="panel-body">
+          <h3 class="t-4">Source chip</h3>
+          <div><span class="state">Rest</span><div class="chips"><button class="chip" type="button">pitch_deck.pdf, slide 13</button></div></div>
+          <div><span class="state">Hover</span><div class="chips"><button class="chip force-hover" type="button">pitch_deck.pdf, slide 13</button></div></div>
+          <p class="use push" style="margin-top:auto"><b>Use</b>Chips sit on their own row under the sentence they support, never inside it.</p>
+        </div></div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="panel h-100"><div class="panel-body">
+          <h3 class="t-4">Buttons</h3>
+          <div><span class="state">Rest</span><div class="controls-row"><button class="button" type="button">See the readout</button><button class="button ghost" type="button">Bring a room</button></div></div>
+          <div><span class="state">Hover</span><div class="controls-row"><button class="button force-hover" type="button">See the readout</button><button class="button ghost force-hover" type="button">Bring a room</button></div></div>
+          <div><span class="state">Quiet and disabled</span><div class="controls-row"><button class="button quiet" type="button">Open sources</button><button class="button" type="button" disabled>Export memo</button></div></div>
+        </div></div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="panel h-100"><div class="panel-body">
+          <h3 class="t-4">Text input</h3>
+          <div class="field">
+            <label for="steer">Steer this piece</label>
+            <input class="input" id="steer" type="text" placeholder="Lead with the pilot">
+            <span class="help">One sentence. The checks' numbers stay on screen beside the change.</span>
+          </div>
+          <div class="push" style="margin-top:auto"><button class="button small" type="button">Rewrite</button></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="rules" aria-labelledby="h-rules">
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="row sec-head g-tight">
+        <div class="col-12 col-lg-8">
+          <p class="eyebrow">12 Rules</p>
+          <h2 class="t-2" id="h-rules">Rules a builder can apply without asking.</h2>
+        </div>
+      </div>
+    </div>
+    <div class="rules">
+      <div class="li"><div class="row"><div class="col-2 col-lg-1 n">01</div><div class="col-10 col-lg-5 rule">Put everything on the 12-column grid with one gutter: 32px, or 16px below 992px.</div><div class="col-10 offset-2 col-lg-6 offset-lg-0 why">Readers check alignment by eye. One shared left edge is what makes a page read as ordered.</div></div></div>
+<div class="li"><div class="row"><div class="col-2 col-lg-1 n">02</div><div class="col-10 col-lg-5 rule">Start every section heading on the same column as the content under it.</div><div class="col-10 offset-2 col-lg-6 offset-lg-0 why">A label floating in its own narrow column breaks the left edge and reads as decoration.</div></div></div>
+<div class="li"><div class="row"><div class="col-2 col-lg-1 n">03</div><div class="col-10 col-lg-5 rule">Boxes in one row share one structure and one height.</div><div class="col-10 offset-2 col-lg-6 offset-lg-0 why">Uneven bottoms look like an accident, and the eye compares boxes by their edges.</div></div></div>
+<div class="li"><div class="row"><div class="col-2 col-lg-1 n">04</div><div class="col-10 col-lg-5 rule">Use two radii for boxes: 6px on controls, chips and marks; 12px on panels and control groups. Tables and rules stay square. The band inside a strip gets a 3px softening, nothing more.</div><div class="col-10 offset-2 col-lg-6 offset-lg-0 why">One scale reads as one hand. A rounded table stops looking like a table.</div></div></div>
+<div class="li"><div class="row"><div class="col-2 col-lg-1 n">05</div><div class="col-10 col-lg-5 rule">No shadows on working screens. The homepage's product surface is the one exception.</div><div class="col-10 offset-2 col-lg-6 offset-lg-0 why">Depth on a dense screen adds noise. The hero surface is the one object meant to look physical.</div></div></div>
+<div class="li"><div class="row"><div class="col-2 col-lg-1 n">06</div><div class="col-10 col-lg-5 rule">Use the accent for action and reference only: links, buttons, focus, the band, the ask prompt.</div><div class="col-10 offset-2 col-lg-6 offset-lg-0 why">Blue must never read as a verdict, so the four verdict colours keep their meaning.</div></div></div>
+<div class="li"><div class="row"><div class="col-2 col-lg-1 n">07</div><div class="col-10 col-lg-5 rule">Every verdict mark carries a shape, a word and a colour.</div><div class="col-10 offset-2 col-lg-6 offset-lg-0 why">The memo gets printed, and some partners do not see red and green apart.</div></div></div>
+<div class="li"><div class="row"><div class="col-2 col-lg-1 n">08</div><div class="col-10 col-lg-5 rule">One shape, one meaning: square strong, triangle weak, half square mixed, dashed square not enough, ring running.</div><div class="col-10 offset-2 col-lg-6 offset-lg-0 why">The triangle is the out-of-range mark on the strip. Reusing a shape elsewhere dilutes it.</div></div></div>
+<div class="li"><div class="row"><div class="col-2 col-lg-1 n">09</div><div class="col-10 col-lg-5 rule">Dashed means absent: gaps and not enough in the room, nothing else.</div><div class="col-10 offset-2 col-lg-6 offset-lg-0 why">Absence should look different from a finding.</div></div></div>
+<div class="li"><div class="row"><div class="col-2 col-lg-1 n">10</div><div class="col-10 col-lg-5 rule">Colour a flag on its mark only. No coloured stripe down one edge of a box, no tinted panel.</div><div class="col-10 offset-2 col-lg-6 offset-lg-0 why">A page of red panels reads as alarm. The readout says a flag once, at the size it is.</div></div></div>
+<div class="li"><div class="row"><div class="col-2 col-lg-1 n">11</div><div class="col-10 col-lg-5 rule">Draw a band only where sources agree within 1%, or where a check rebuilt the figure.</div><div class="col-10 offset-2 col-lg-6 offset-lg-0 why">A disagreement gets no band, so the strip never picks a winner.</div></div></div>
+<div class="li"><div class="row"><div class="col-2 col-lg-1 n">12</div><div class="col-10 col-lg-5 rule">A table is one surface. The head row keeps the body's fill and gets a stronger rule under it.</div><div class="col-10 offset-2 col-lg-6 offset-lg-0 why">A filled head row splits one object into two and makes the table look like a template.</div></div></div>
+<div class="li"><div class="row"><div class="col-2 col-lg-1 n">13</div><div class="col-10 col-lg-5 rule">Figures in tables, strips and chips are Plex Mono, right aligned in tables. Figures in sentences stay in Instrument Sans with tabular figures.</div><div class="col-10 offset-2 col-lg-6 offset-lg-0 why">Columns of dollars have to line up to be compared. A sentence should read as one voice.</div></div></div>
+<div class="li"><div class="row"><div class="col-2 col-lg-1 n">14</div><div class="col-10 col-lg-5 rule">Every figure has a source chip, on its own row under the sentence.</div><div class="col-10 offset-2 col-lg-6 offset-lg-0 why">Every claim links to its source. A chip inside a sentence breaks the line it supports.</div></div></div>
+<div class="li"><div class="row"><div class="col-2 col-lg-1 n">15</div><div class="col-10 col-lg-5 rule">Set display type in Archivo at 87.5% width, 24px and up, with leading from 0.9 to 1.12.</div><div class="col-10 offset-2 col-lg-6 offset-lg-0 why">Loose leading on a large headline looks amateur. Condensed letters crowd below 24px.</div></div></div>
+<div class="li"><div class="row"><div class="col-2 col-lg-1 n">16</div><div class="col-10 col-lg-5 rule">Keep the deep ground for the homepage: the hero, the product surface and the closing band.</div><div class="col-10 offset-2 col-lg-6 offset-lg-0 why">Drama belongs on the page that sells. The product and the memo stay quiet so the numbers lead.</div></div></div>
+<div class="li"><div class="row"><div class="col-2 col-lg-1 n">17</div><div class="col-10 col-lg-5 rule">On hover, darken the accent in light and lighten it in dark. Text keeps its colour.</div><div class="col-10 offset-2 col-lg-6 offset-lg-0 why">A hover that drops contrast hides the control at the moment someone reaches for it.</div></div></div>
+<div class="li"><div class="row"><div class="col-2 col-lg-1 n">18</div><div class="col-10 col-lg-5 rule">Show the synthetic label once per page, near the readout.</div><div class="col-10 offset-2 col-lg-6 offset-lg-0 why">Repeated, it becomes wallpaper. Once, next to the figures, it is read.</div></div></div>
+<div class="li"><div class="row"><div class="col-2 col-lg-1 n">19</div><div class="col-10 col-lg-5 rule">No motion beyond a short hover fade, and none under reduced motion.</div><div class="col-10 offset-2 col-lg-6 offset-lg-0 why">Tricorder states. It does not alarm.</div></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="row g-tight">
+      <div class="col-12 col-md-8">Tricorder. Direction F, Instrument. A style study, not a live product page.</div>
+      <div class="col-12 col-md-4"><a href="home.html">Sample homepage</a><a href="../../index.html">All directions</a></div>
+    </div>
+  </div>
+</footer>
+<script>
+(function () {
+  var b = document.getElementById('theme');
+  var r = document.documentElement;
+  var order = ['auto', 'light', 'dark'];
+  var cur = 'auto';
+  try { cur = localStorage.getItem('tricorder-f-theme') || 'auto'; } catch (e) {}
+  function apply(v) {
+    cur = order.indexOf(v) < 0 ? 'auto' : v;
+    if (cur === 'auto') r.removeAttribute('data-theme'); else r.setAttribute('data-theme', cur);
+    if (b) b.textContent = 'Theme: ' + cur;
+    try { localStorage.setItem('tricorder-f-theme', cur); } catch (e) {}
+  }
+  apply(cur);
+  if (b) b.addEventListener('click', function () { apply(order[(order.indexOf(cur) + 1) % 3]); });
+})();
+</script>
+</body>
+</html>
