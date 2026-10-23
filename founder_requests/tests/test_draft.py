@@ -56,6 +56,7 @@ def test_never_ask_for_a_file_the_room_holds(brasswick):
     assert "Send monthly revenue by customer" not in text
     revenue = next(i for i in items if i.number == 1)
     assert revenue.text.startswith("Please add the kind of revenue") and "03_metrics/revenue_by_customer.csv" in revenue.in_room
+    assert revenue.includes is None  # a file they already sent needs no "Ideally it includes" line
     cohort = _by_id(items, "C14")
     assert cohort.text == "Please send the cohort export behind the deck's retention figure, with a one-line definition of a cohort."
     material = _by_id(items, "C111")
@@ -120,7 +121,7 @@ def test_the_email_is_short_and_warm(brasswick):
     assert out.body.rstrip().endswith("Thanks,\nSam Ortiz\nRidgeline Ventures")
     for gone in ("What it is:", "Best form:", "A good one shows", "term sheet for this round"):
         assert gone not in out.body
-    assert out.body.count("Ideally it includes") == 5
+    assert out.body.count("Ideally it includes") == 4  # not for the revenue file they already sent
     assert out.mailto_fits, len(out.mailto)
     assert out.by == "2026-10-30"
 
