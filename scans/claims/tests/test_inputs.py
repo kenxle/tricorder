@@ -110,3 +110,30 @@ def test_empty_room_exits_zero(tmp_path):
     result = scan(room, tmp_path / "out")
     assert result.claims == []
     assert {g.what.split(":")[0] for g in result.gaps} == {"Not in the room"}
+
+
+def test_a_missing_named_cell_and_a_missing_column_fall_through_without_a_crash(tmp_path):
+    """CS-F6: the model loses its ARR_TOTAL name and the metrics export loses its
+    paying-customers column. The scan still exits 0, ARR is still read from the
+    other documents, and every claim passes the quote checker."""
+    import csv
+
+    import openpyxl
+
+    room = make_room(tmp_path, ["01_overview/pitch_deck.pdf", "02_financials/financial_model.xlsx",
+                                "03_metrics/monthly_metrics.csv", "03_metrics/customer_mrr_by_month.csv"])
+    model = room / "02_financials" / "financial_model.xlsx"
+    wb = openpyxl.load_workbook(model)
+    del wb.defined_names["ARR_TOTAL"]
+    wb.save(model)
+    metrics = room / "03_metrics" / "monthly_metrics.csv"
+    rows = list(csv.reader(metrics.read_text(encoding="utf-8").splitlines()))
+    drop = rows[0].index("paying_accounts")
+    metrics.write_text("\n".join(",".join(r[:drop] + r[drop + 1:]) for r in rows) + "\n", encoding="utf-8")
+
+    result = scan(room, tmp_path / "out")
+    assert check_result(result, room)[1] == {}
+    arr = next(c for c in result.claims if c.value and c.value.label == "arr" and c.sources[0].locator == "slide 3")
+    assert arr.text.startswith("Contradicted:")
+    assert "02_financials/financial_model.xlsx" not in [s.uri for s in arr.sources]
+    assert "03_metrics/monthly_metrics.csv" in [s.uri for s in arr.sources]
