@@ -10,6 +10,7 @@ interface Item {
   number: number; lines: number[]; text: string; operator_why: string; piece: string; checklist_id: string | null;
   covers: string[]; if_you_have_it: boolean; ask_stage: string; top: number | null; title: string;
   guidance: Guidance | null; includes: string | null; in_room: string[]; rests_on_flag: boolean;
+  requests: { checklist_id: string; name: string }[];
 }
 interface Held { number: number; title: string; files: string[] }
 interface Lines {
@@ -201,7 +202,7 @@ export function FounderRequests({ room, onRebuilt }: { room: string; onRebuilt?:
   );
 }
 
-interface Pending { file: File; answers: number[] }
+interface Pending { file: File; answers: string[] }
 
 function AddReply({ lines, room, box, onDone }: { lines: Lines; room: string; box: RefObject<HTMLDivElement | null>; onDone: () => void }) {
   const [pending, setPending] = useState<Pending[]>([]);
@@ -209,11 +210,14 @@ function AddReply({ lines, room, box, onDone }: { lines: Lines; room: string; bo
   const [receipt, setReceipt] = useState<Receipt | null>(null);
   const [error, setError] = useState("");
   const target = lines.synthetic ? lines.working_copy ?? `${room}_live` : room;
-  const requests = lines.items.filter((i) => i.checklist_id);
-  const byNumber = new Map(requests.map((i) => [i.number, i]));
+  // Every request a file can answer, by its plain name; a merged line offers each of its documents.
+  const requests = lines.items.flatMap((i) => i.requests.map((r) => ({
+    id: r.checklist_id, label: i.requests.length > 1 ? `${i.title}: ${r.name}` : i.title,
+  })));
+  const label = new Map(requests.map((r) => [r.id, r.label]));
 
   const choose = (files: FileList | null) =>
-    setPending((p) => [...p, ...[...(files ?? [])].map((file) => ({ file, answers: [] as number[] }))]);
+    setPending((p) => [...p, ...[...(files ?? [])].map((file) => ({ file, answers: [] as string[] }))]);
   const set = (k: number, f: (p: Pending) => Pending | null) =>
     setPending((p) => p.flatMap((x, j) => (j === k ? [f(x)].filter((y): y is Pending => y !== null) : [x])));
   const ready = pending.length > 0 && pending.every((p) => p.answers.length > 0);
@@ -232,10 +236,10 @@ function AddReply({ lines, room, box, onDone }: { lines: Lines; room: string; bo
       if (lines.synthetic && !lines.working_copy) {
         await fetch(`${base(room)}/copy`, { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" }).then((r) => json(r));
       }
-      // A line number only means something in this room's readout; the copy is sent the checklist ids.
+      // Checklist ids, not line numbers: a line number only means something in this room's readout.
       const files = await Promise.all(pending.map(async (p) => ({
         name: p.file.name, data: await b64(p.file),
-        answers: p.answers.map((n) => byNumber.get(n)?.checklist_id).filter(Boolean).join(","),
+        answers: p.answers.join(","),
       })));
       const r = await fetch(`${base(target)}/batch`, {
         method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ files }),
@@ -259,14 +263,14 @@ function AddReply({ lines, room, box, onDone }: { lines: Lines; room: string; bo
         <div key={`${p.file.name}-${k}`} className="fr-pending" aria-label={`File ${p.file.name}`}>
           <div className="fr-title">{p.file.name} <button aria-label={`Remove ${p.file.name}`} onClick={() => set(k, () => null)}>Remove</button></div>
           {p.answers.map((n) => (
-            <span key={n} className="fr-chip">{byNumber.get(n)?.title}
-              <button className="fr-x" aria-label={`Not ${byNumber.get(n)?.title}`} onClick={() => set(k, (x) => ({ ...x, answers: x.answers.filter((m) => m !== n) }))}>x</button>
+            <span key={n} className="fr-chip">{label.get(n)}
+              <button className="fr-x" aria-label={`Not ${label.get(n)}`} onClick={() => set(k, (x) => ({ ...x, answers: x.answers.filter((m) => m !== n) }))}>x</button>
             </span>
           ))}
           <label htmlFor={`fr-answers-${k}`}>{p.answers.length ? "It also answers" : "It answers"}</label>
-          <select id={`fr-answers-${k}`} value="" onChange={(e) => { const n = Number(e.target.value); if (n) set(k, (x) => ({ ...x, answers: [...x.answers, n] })); }}>
+          <select id={`fr-answers-${k}`} value="" onChange={(e) => { const n = e.target.value; if (n) set(k, (x) => ({ ...x, answers: [...x.answers, n] })); }}>
             <option value="">Pick a request</option>
-            {requests.filter((i) => !p.answers.includes(i.number)).map((i) => <option key={i.number} value={String(i.number)}>{i.title}</option>)}
+            {requests.filter((r) => !p.answers.includes(r.id)).map((r) => <option key={r.id} value={r.id}>{r.label}</option>)}
           </select>
         </div>
       ))}

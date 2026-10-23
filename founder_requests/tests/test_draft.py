@@ -167,3 +167,13 @@ def test_a_merged_line_number_drafts_its_item(brasswick):
     later = material.lines[-1]
     out = d.draft(brasswick, [later], room_dir=BRASSWICK)
     assert len(out.items) == 1 and out.items[0].title == "Material agreements"
+
+
+def test_a_merged_item_lists_each_request_a_reply_can_answer(brasswick):
+    people = next(i for i in d.items(brasswick, BRASSWICK) if i.title == "People we can call")
+    ids = [r["checklist_id"] for r in people.requests]
+    assert ids[0] == "C35" and "C97" in ids and len(ids) == len(set(ids)) == len(people.lines)
+    names = {r["checklist_id"]: r["name"] for r in people.requests}
+    assert names["C97"].startswith("Reference list") and not any("C" + "9" in n for n in names.values())
+    hiring = _by_id(d.items(brasswick, BRASSWICK), "C22")
+    assert hiring.requests == [{"checklist_id": "C22", "name": "Hiring plan and future org"}]

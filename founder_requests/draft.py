@@ -177,6 +177,7 @@ class Item:
     includes: str | None        # "Ideally it includes ..." for the founder
     in_room: list[str]          # room files that already answer part of it (operator view)
     rests_on_flag: bool
+    requests: list[dict] = field(default_factory=list)  # [{checklist_id, name}]: what a reply's file can answer
 
 
 @dataclass
@@ -271,6 +272,7 @@ def analyse(readout: Readout, room_dir: Path | None = None) -> tuple[list[Item],
             guidance=(asdict(g) | {"good": list(g.good), "path": g.path}) if g else None,
             includes=gd.includes(g.guide) if g else None, in_room=in_room,
             rests_on_flag=a.from_kind == "gap" and a.piece in flagged,
+            requests=[{"checklist_id": row.id, "name": row.item}] if row and row.kind in ("document", "ask") else [],
         ))
 
     out = _merge_families(raw, sow)
@@ -307,6 +309,7 @@ def _merge_families(raw: list[Item], sow: list[str]) -> list[Item]:
         if it.ask_stage == "before_second_meeting":
             m.ask_stage = "before_second_meeting"
         m.rests_on_flag = m.rests_on_flag or it.rests_on_flag
+        m.requests += [r for r in it.requests if r not in m.requests]
         m.operator_why += " " + it.operator_why
     return out
 
