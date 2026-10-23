@@ -55,23 +55,23 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --ground: #0a1526;
-    --panel: #102039;
-    --wash: #142744;
+    --ground: #060b14;
+    --panel: #0d1624;
+    --wash: #131e30;
     --ink: #eaf0f7;
     --ink-2: #bcc7d6;
     --ink-3: #8e9bb0;
-    --rule: #20334f;
-    --rule-2: #36496a;
-    --navy: #050d1a;
+    --rule: #1c293d;
+    --rule-2: #31425d;
+    --navy: #10294b;
     --navy-ink: #ffffff;
-    --navy-ink-2: #a3b1c6;
-    --navy-rule: rgba(255, 255, 255, 0.12);
+    --navy-ink-2: #b4c2d6;
+    --navy-rule: rgba(255, 255, 255, 0.16);
     --accent: #7cc4a4;
     --accent-hover: #a3d9c0;
     --accent-tint: #123128;
     --on-accent: #05140e;
-    --band: #1c3050;
+    --band: #1b2c47;
     --band-edge: #5a7096;
     --strong: #5cc788;
     --strong-bg: #0f2c1c;
@@ -80,30 +80,30 @@
     --mixed: #e6b456;
     --mixed-bg: #33270f;
     --thin: #a6b2c4;
-    --thin-bg: #1a2a43;
+    --thin-bg: #172338;
     --focus: #7cc4a4;
     --shadow-lift: 0 1px 2px rgba(0, 0, 0, 0.4), 0 18px 40px -12px rgba(0, 0, 0, 0.7), 0 48px 96px -32px rgba(0, 0, 0, 0.8);
   }
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --ground: #0a1526;
-  --panel: #102039;
-  --wash: #142744;
+  --ground: #060b14;
+  --panel: #0d1624;
+  --wash: #131e30;
   --ink: #eaf0f7;
   --ink-2: #bcc7d6;
   --ink-3: #8e9bb0;
-  --rule: #20334f;
-  --rule-2: #36496a;
-  --navy: #050d1a;
+  --rule: #1c293d;
+  --rule-2: #31425d;
+  --navy: #10294b;
   --navy-ink: #ffffff;
-  --navy-ink-2: #a3b1c6;
-  --navy-rule: rgba(255, 255, 255, 0.12);
+  --navy-ink-2: #b4c2d6;
+  --navy-rule: rgba(255, 255, 255, 0.16);
   --accent: #7cc4a4;
   --accent-hover: #a3d9c0;
   --accent-tint: #123128;
   --on-accent: #05140e;
-  --band: #1c3050;
+  --band: #1b2c47;
   --band-edge: #5a7096;
   --strong: #5cc788;
   --strong-bg: #0f2c1c;
@@ -112,7 +112,7 @@
   --mixed: #e6b456;
   --mixed-bg: #33270f;
   --thin: #a6b2c4;
-  --thin-bg: #1a2a43;
+  --thin-bg: #172338;
   --focus: #7cc4a4;
   --shadow-lift: 0 1px 2px rgba(0, 0, 0, 0.4), 0 18px 40px -12px rgba(0, 0, 0, 0.7), 0 48px 96px -32px rgba(0, 0, 0, 0.8);
 }
@@ -179,10 +179,19 @@ a:hover { color: var(--accent-hover); }
 .theme-btn { font: 500 13px var(--f-ui); color: #ffffff; background: transparent; border: 1px solid rgba(255, 255, 255, 0.28); border-radius: var(--r-s); min-height: 34px; padding: 0 12px; cursor: pointer; }
 .theme-btn:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.7); }
 
-.hero { padding-top: 72px; padding-bottom: 120px; }
+.hero { padding-top: 64px; padding-bottom: 120px; }
+.hero-l { display: flex; flex-direction: column; height: 100%; }
+.hero-l .eyebrow { margin-top: -2px; }
+.hero-facts { margin-top: auto; padding-top: 56px; }
+.hero-facts div { display: flex; align-items: baseline; gap: 24px; padding: 18px 0; border-top: 1px solid var(--navy-rule); }
+.hero-facts div:last-child { padding-bottom: 0; }
+.hero-facts b { flex: 0 0 188px; font-family: var(--f-display); font-weight: 500; font-size: 32px; line-height: 1; letter-spacing: -0.02em; color: #ffffff; }
+.hero-facts span { font-size: 15px; line-height: 1.45; color: var(--navy-ink-2); }
+@media (max-width: 575.98px) { .hero-facts { padding-top: 40px; } .hero-facts div { gap: 16px; padding: 14px 0; } .hero-facts b { font-size: 24px; flex-basis: 116px; } .hero-facts span { font-size: 14px; } }
 .hero .eyebrow { color: #8fcfb2; }
 .hero h1 { color: #ffffff; text-wrap: balance; }
 .hero .rest { font-size: 20px; line-height: 1.5; color: #c6d1df; margin-top: 28px; max-width: 30em; }
+@media (min-width: 992px) { .hero .h1 { font-size: clamp(60px, 2.6vw + 30px, 76px); } .hero-l { padding-right: 24px; } }
 .hero .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
 
 /* The readout card: the one lifted surface on the page. */
@@ -279,6 +288,9 @@ a:hover { color: var(--accent-hover); }
 .p-title { font-size: 16px; font-weight: 600; color: var(--ink); }
 .p-body { padding: 24px; }
 .p-body > * + * { margin-top: 18px; }
+.p-fill { flex: 1 1 auto; display: flex; flex-direction: column; }
+.p-fill > .p-end { margin-top: auto; padding-top: 22px; }
+.p-fill.p-spread { justify-content: space-between; }
 .p-foot { margin-top: auto; padding: 14px 24px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-3); }
 
 /* Tables: one surface, rules only. */
@@ -297,7 +309,8 @@ a:hover { color: var(--accent-hover); }
 .ask-q { color: var(--ink); font-size: 15.5px; line-height: 1.45; flex: 1 1 280px; }
 
 /* Overview lines */
-.vlist { list-style: none; margin: 0; padding: 0; }
+.vlist { list-style: none; margin: 0; padding: 0; flex: 1 1 auto; display: flex; flex-direction: column; }
+.vlist li { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; }
 .vlist li { padding: 18px 24px; border-bottom: 1px solid var(--rule); }
 .vlist li:last-child { border-bottom: 0; }
 .v-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
@@ -315,7 +328,8 @@ a:hover { color: var(--accent-hover); }
 
 /* Persona cards: one subgrid, so both cards line up row by row. */
 .pair { display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--gutter); row-gap: 0; }
-.pair .persona { display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; align-content: start; }
+.pair .persona { display: grid; grid-row: span 7; grid-template-rows: subgrid; row-gap: 0; align-content: start; }
+.pair .ticks { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; }
 @media (max-width: 991.98px) { .pair { grid-template-columns: 1fr; } .pair .persona + .persona { margin-top: var(--gutter); } }
 .persona { padding: 40px; }
 .persona .role { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
@@ -324,18 +338,19 @@ a:hover { color: var(--accent-hover); }
 .persona cite { display: block; margin-top: 8px; font-family: var(--f-ui); font-style: normal; font-size: 13px; color: var(--ink-3); }
 .persona cite a { color: var(--ink-3); }
 .persona cite a:hover { color: var(--accent); }
-.persona .say { margin-top: 20px; align-self: start; }
+.persona .say { margin-top: 24px; align-self: start; }
 .persona blockquote { align-self: start; }
 .ticks { list-style: none; margin: 24px 0 0; padding: 0; border-top: 1px solid var(--rule); }
-.ticks li { padding: 12px 0 12px 26px; border-bottom: 1px solid var(--rule); position: relative; font-size: 15px; }
+.ticks li { padding: 13px 0 13px 26px; border-bottom: 1px solid var(--rule); position: relative; font-size: 15px; }
 .ticks li::before { content: ""; position: absolute; left: 1px; top: 20px; width: 7px; height: 7px; border-radius: 2px; background: var(--accent); }
 @media (max-width: 767.98px) { .persona { padding: 24px; } }
 
 /* Ruled lists: rules run the full column width. */
-.ruled { border-top: 1px solid var(--ink); padding-top: 20px; padding-bottom: 28px; height: 100%; }
+.ruled { border-top: 1px solid var(--ink); padding-top: 20px; padding-bottom: 44px; height: 100%; }
 .ruled p { font-size: 17px; line-height: 1.5; color: var(--ink); }
-.ruled .sub { font-size: 14.5px; color: var(--ink-2); margin-top: 6px; }
+.ruled .sub { font-size: 14.5px; color: var(--ink-2); margin-top: 8px; }
 .ruled.lead-item p:first-child { font-family: var(--f-display); font-size: 28px; line-height: 1.2; letter-spacing: -0.015em; font-weight: 500; }
+.ruled.not p { font-family: var(--f-display); font-size: 22px; line-height: 1.3; letter-spacing: -0.01em; }
 .data-goes { font-family: var(--f-display); font-size: 24px; line-height: 1.4; color: var(--ink); letter-spacing: -0.01em; }
 
 /* Closing band */
@@ -482,30 +497,30 @@ code { color: var(--ink); }
             <thead><tr><th scope="col">Token</th><th scope="col">Light</th><th scope="col">Dark</th><th scope="col">Role</th></tr></thead>
             <tbody>
               <tr class="grp"><td colspan="4">Ground and ink</td></tr>
-              <tr><td><code>--ground</code></td><td><span class="sw"><i style="background:#ffffff"></i>#ffffff</span></td><td><span class="sw"><i style="background:#0a1526"></i>#0a1526</span></td><td class="role">Page ground. Plain white, never grey.</td></tr>
-              <tr><td><code>--panel</code></td><td><span class="sw"><i style="background:#ffffff"></i>#ffffff</span></td><td><span class="sw"><i style="background:#102039"></i>#102039</span></td><td class="role">Panels and the readout card. Set apart by an outline, not a fill.</td></tr>
-              <tr><td><code>--wash</code></td><td><span class="sw"><i style="background:#f4f6f9"></i>#f4f6f9</span></td><td><span class="sw"><i style="background:#142744"></i>#142744</span></td><td class="role">Hover fill on secondary buttons. Never a page or table ground.</td></tr>
+              <tr><td><code>--ground</code></td><td><span class="sw"><i style="background:#ffffff"></i>#ffffff</span></td><td><span class="sw"><i style="background:#060b14"></i>#060b14</span></td><td class="role">Page ground. Plain white, never grey.</td></tr>
+              <tr><td><code>--panel</code></td><td><span class="sw"><i style="background:#ffffff"></i>#ffffff</span></td><td><span class="sw"><i style="background:#0d1624"></i>#0d1624</span></td><td class="role">Panels and the readout card. Set apart by an outline, not a fill.</td></tr>
+              <tr><td><code>--wash</code></td><td><span class="sw"><i style="background:#f4f6f9"></i>#f4f6f9</span></td><td><span class="sw"><i style="background:#131e30"></i>#131e30</span></td><td class="role">Hover fill on secondary buttons. Never a page or table ground.</td></tr>
               <tr><td><code>--ink</code></td><td><span class="sw"><i style="background:#0b1a2e"></i>#0b1a2e</span></td><td><span class="sw"><i style="background:#eaf0f7"></i>#eaf0f7</span></td><td class="role">Headlines, figures, piece names.</td></tr>
               <tr><td><code>--ink-2</code></td><td><span class="sw"><i style="background:#33415a"></i>#33415a</span></td><td><span class="sw"><i style="background:#bcc7d6"></i>#bcc7d6</span></td><td class="role">Body text and reasons.</td></tr>
               <tr><td><code>--ink-3</code></td><td><span class="sw"><i style="background:#5a6679"></i>#5a6679</span></td><td><span class="sw"><i style="background:#8e9bb0"></i>#8e9bb0</span></td><td class="role">Labels, column heads, axes. Passes 4.5:1 on its ground.</td></tr>
-              <tr><td><code>--rule</code></td><td><span class="sw"><i style="background:#e1e5eb"></i>#e1e5eb</span></td><td><span class="sw"><i style="background:#20334f"></i>#20334f</span></td><td class="role">Hairlines between rows and around panels.</td></tr>
-              <tr><td><code>--rule-2</code></td><td><span class="sw"><i style="background:#c3cad5"></i>#c3cad5</span></td><td><span class="sw"><i style="background:#36496a"></i>#36496a</span></td><td class="role">Chip and input outlines, table head rule, strip track.</td></tr>
+              <tr><td><code>--rule</code></td><td><span class="sw"><i style="background:#e1e5eb"></i>#e1e5eb</span></td><td><span class="sw"><i style="background:#1c293d"></i>#1c293d</span></td><td class="role">Hairlines between rows and around panels.</td></tr>
+              <tr><td><code>--rule-2</code></td><td><span class="sw"><i style="background:#c3cad5"></i>#c3cad5</span></td><td><span class="sw"><i style="background:#31425d"></i>#31425d</span></td><td class="role">Chip and input outlines, table head rule, strip track.</td></tr>
               <tr class="grp"><td colspan="4">The deep band</td></tr>
-              <tr><td><code>--navy</code></td><td><span class="sw"><i style="background:#0b1a2e"></i>#0b1a2e</span></td><td><span class="sw"><i style="background:#050d1a"></i>#050d1a</span></td><td class="role">The homepage hero, the closing band and this page's header. Nowhere else.</td></tr>
-              <tr><td><code>--navy-ink-2</code></td><td><span class="sw"><i style="background:#a9b6c9"></i>#a9b6c9</span></td><td><span class="sw"><i style="background:#a3b1c6"></i>#a3b1c6</span></td><td class="role">Navigation and secondary text on navy. Headlines on navy are white.</td></tr>
+              <tr><td><code>--navy</code></td><td><span class="sw"><i style="background:#0b1a2e"></i>#0b1a2e</span></td><td><span class="sw"><i style="background:#10294b"></i>#10294b</span></td><td class="role">The homepage hero, the closing band and this page's header. Nowhere else.</td></tr>
+              <tr><td><code>--navy-ink-2</code></td><td><span class="sw"><i style="background:#a9b6c9"></i>#a9b6c9</span></td><td><span class="sw"><i style="background:#b4c2d6"></i>#b4c2d6</span></td><td class="role">Navigation and secondary text on navy. Headlines on navy are white.</td></tr>
               <tr class="grp"><td colspan="4">Accent</td></tr>
               <tr><td><code>--accent</code></td><td><span class="sw"><i style="background:#1d5a47"></i>#1d5a47</span></td><td><span class="sw"><i style="background:#7cc4a4"></i>#7cc4a4</span></td><td class="role">Primary buttons, links, focus ring, the Ask the founder outline, role labels.</td></tr>
               <tr><td><code>--accent-hover</code></td><td><span class="sw"><i style="background:#143f32"></i>#143f32</span></td><td><span class="sw"><i style="background:#a3d9c0"></i>#a3d9c0</span></td><td class="role">Hover on the accent. Darker on light, lighter on dark, so the label keeps its contrast.</td></tr>
               <tr><td><code>--accent-tint</code></td><td><span class="sw"><i style="background:#e8f1ed"></i>#e8f1ed</span></td><td><span class="sw"><i style="background:#123128"></i>#123128</span></td><td class="role">Inside the Ask the founder box, chip hover, the input focus ring.</td></tr>
               <tr class="grp"><td colspan="4">Range strip</td></tr>
-              <tr><td><code>--band</code></td><td><span class="sw"><i style="background:#e4e9f0"></i>#e4e9f0</span></td><td><span class="sw"><i style="background:#1c3050"></i>#1c3050</span></td><td class="role">The band: what a check rebuilt, or where sources agree.</td></tr>
+              <tr><td><code>--band</code></td><td><span class="sw"><i style="background:#e4e9f0"></i>#e4e9f0</span></td><td><span class="sw"><i style="background:#1b2c47"></i>#1b2c47</span></td><td class="role">The band: what a check rebuilt, or where sources agree.</td></tr>
               <tr><td><code>--band-edge</code></td><td><span class="sw"><i style="background:#9aa6b8"></i>#9aa6b8</span></td><td><span class="sw"><i style="background:#5a7096"></i>#5a7096</span></td><td class="role">The band's two ends.</td></tr>
               <tr class="grp"><td colspan="4">Verdicts, each with a shape and a word</td></tr>
               <tr><td><code>--strong</code></td><td><span class="sw"><i style="background:#17803d"></i>#17803d</span></td><td><span class="sw"><i style="background:#5cc788"></i>#5cc788</span></td><td class="role">Looking strong, green flag, clean check. Filled circle.</td></tr>
               <tr><td><code>--weak</code></td><td><span class="sw"><i style="background:#b42318"></i>#b42318</span></td><td><span class="sw"><i style="background:#ff8172"></i>#ff8172</span></td><td class="role">Looking weak, red flag, the stated figure out of range. Triangle.</td></tr>
               <tr><td><code>--mixed</code></td><td><span class="sw"><i style="background:#94580a"></i>#94580a</span></td><td><span class="sw"><i style="background:#e6b456"></i>#e6b456</span></td><td class="role">Mixed. Half-filled circle.</td></tr>
               <tr><td><code>--thin</code></td><td><span class="sw"><i style="background:#56637a"></i>#56637a</span></td><td><span class="sw"><i style="background:#a6b2c4"></i>#a6b2c4</span></td><td class="role">Not enough in the room, and gaps. Open circle.</td></tr>
-              <tr><td><code>--strong-bg</code> and kin</td><td><span class="sw"><i style="background:#e5f3ea"></i>#e5f3ea</span></td><td><span class="sw"><i style="background:#0f2c1c"></i>#0f2c1c</span></td><td class="role">Fill behind a mark only. Weak #fce9e7 / #3a1715, mixed #faf0dd / #33270f, thin #edf0f4 / #1a2a43.</td></tr>
+              <tr><td><code>--strong-bg</code> and kin</td><td><span class="sw"><i style="background:#e5f3ea"></i>#e5f3ea</span></td><td><span class="sw"><i style="background:#0f2c1c"></i>#0f2c1c</span></td><td class="role">Fill behind a mark only. Weak #fce9e7 / #3a1715, mixed #faf0dd / #33270f, thin #edf0f4 / #172338.</td></tr>
             </tbody>
           </table>
         </div>

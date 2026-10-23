@@ -55,23 +55,23 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --ground: #0a1526;
-    --panel: #102039;
-    --wash: #142744;
+    --ground: #060b14;
+    --panel: #0d1624;
+    --wash: #131e30;
     --ink: #eaf0f7;
     --ink-2: #bcc7d6;
     --ink-3: #8e9bb0;
-    --rule: #20334f;
-    --rule-2: #36496a;
-    --navy: #050d1a;
+    --rule: #1c293d;
+    --rule-2: #31425d;
+    --navy: #10294b;
     --navy-ink: #ffffff;
-    --navy-ink-2: #a3b1c6;
-    --navy-rule: rgba(255, 255, 255, 0.12);
+    --navy-ink-2: #b4c2d6;
+    --navy-rule: rgba(255, 255, 255, 0.16);
     --accent: #7cc4a4;
     --accent-hover: #a3d9c0;
     --accent-tint: #123128;
     --on-accent: #05140e;
-    --band: #1c3050;
+    --band: #1b2c47;
     --band-edge: #5a7096;
     --strong: #5cc788;
     --strong-bg: #0f2c1c;
@@ -80,30 +80,30 @@
     --mixed: #e6b456;
     --mixed-bg: #33270f;
     --thin: #a6b2c4;
-    --thin-bg: #1a2a43;
+    --thin-bg: #172338;
     --focus: #7cc4a4;
     --shadow-lift: 0 1px 2px rgba(0, 0, 0, 0.4), 0 18px 40px -12px rgba(0, 0, 0, 0.7), 0 48px 96px -32px rgba(0, 0, 0, 0.8);
   }
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --ground: #0a1526;
-  --panel: #102039;
-  --wash: #142744;
+  --ground: #060b14;
+  --panel: #0d1624;
+  --wash: #131e30;
   --ink: #eaf0f7;
   --ink-2: #bcc7d6;
   --ink-3: #8e9bb0;
-  --rule: #20334f;
-  --rule-2: #36496a;
-  --navy: #050d1a;
+  --rule: #1c293d;
+  --rule-2: #31425d;
+  --navy: #10294b;
   --navy-ink: #ffffff;
-  --navy-ink-2: #a3b1c6;
-  --navy-rule: rgba(255, 255, 255, 0.12);
+  --navy-ink-2: #b4c2d6;
+  --navy-rule: rgba(255, 255, 255, 0.16);
   --accent: #7cc4a4;
   --accent-hover: #a3d9c0;
   --accent-tint: #123128;
   --on-accent: #05140e;
-  --band: #1c3050;
+  --band: #1b2c47;
   --band-edge: #5a7096;
   --strong: #5cc788;
   --strong-bg: #0f2c1c;
@@ -112,7 +112,7 @@
   --mixed: #e6b456;
   --mixed-bg: #33270f;
   --thin: #a6b2c4;
-  --thin-bg: #1a2a43;
+  --thin-bg: #172338;
   --focus: #7cc4a4;
   --shadow-lift: 0 1px 2px rgba(0, 0, 0, 0.4), 0 18px 40px -12px rgba(0, 0, 0, 0.7), 0 48px 96px -32px rgba(0, 0, 0, 0.8);
 }
@@ -179,10 +179,19 @@ a:hover { color: var(--accent-hover); }
 .theme-btn { font: 500 13px var(--f-ui); color: #ffffff; background: transparent; border: 1px solid rgba(255, 255, 255, 0.28); border-radius: var(--r-s); min-height: 34px; padding: 0 12px; cursor: pointer; }
 .theme-btn:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.7); }
 
-.hero { padding-top: 72px; padding-bottom: 120px; }
+.hero { padding-top: 64px; padding-bottom: 120px; }
+.hero-l { display: flex; flex-direction: column; height: 100%; }
+.hero-l .eyebrow { margin-top: -2px; }
+.hero-facts { margin-top: 0; padding-top: 72px; }
+.hero-facts div { display: flex; align-items: baseline; gap: 24px; padding: 18px 0; border-top: 1px solid var(--navy-rule); }
+.hero-facts div:last-child { padding-bottom: 0; }
+.hero-facts b { flex: 0 0 188px; font-family: var(--f-display); font-weight: 500; font-size: 32px; line-height: 1; letter-spacing: -0.02em; color: #ffffff; }
+.hero-facts span { font-size: 15px; line-height: 1.45; color: var(--navy-ink-2); }
+@media (max-width: 575.98px) { .hero-facts { padding-top: 40px; } .hero-facts div { gap: 16px; padding: 14px 0; } .hero-facts b { font-size: 24px; flex-basis: 116px; } .hero-facts span { font-size: 14px; } }
 .hero .eyebrow { color: #8fcfb2; }
 .hero h1 { color: #ffffff; text-wrap: balance; }
 .hero .rest { font-size: 20px; line-height: 1.5; color: #c6d1df; margin-top: 28px; max-width: 30em; }
+@media (min-width: 992px) { .hero .h1 { font-size: clamp(60px, 2.6vw + 30px, 76px); } .hero-l { padding-right: 24px; } }
 .hero .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
 
 /* The readout card: the one lifted surface on the page. */
@@ -279,6 +288,9 @@ a:hover { color: var(--accent-hover); }
 .p-title { font-size: 16px; font-weight: 600; color: var(--ink); }
 .p-body { padding: 24px; }
 .p-body > * + * { margin-top: 18px; }
+.p-fill { flex: 1 1 auto; display: flex; flex-direction: column; }
+.p-fill > .p-end { margin-top: auto; padding-top: 22px; }
+.p-fill.p-spread { justify-content: space-between; }
 .p-foot { margin-top: auto; padding: 14px 24px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-3); }
 
 /* Tables: one surface, rules only. */
@@ -297,7 +309,8 @@ a:hover { color: var(--accent-hover); }
 .ask-q { color: var(--ink); font-size: 15.5px; line-height: 1.45; flex: 1 1 280px; }
 
 /* Overview lines */
-.vlist { list-style: none; margin: 0; padding: 0; }
+.vlist { list-style: none; margin: 0; padding: 0; flex: 1 1 auto; display: flex; flex-direction: column; }
+.vlist li { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; }
 .vlist li { padding: 18px 24px; border-bottom: 1px solid var(--rule); }
 .vlist li:last-child { border-bottom: 0; }
 .v-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
@@ -315,7 +328,8 @@ a:hover { color: var(--accent-hover); }
 
 /* Persona cards: one subgrid, so both cards line up row by row. */
 .pair { display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--gutter); row-gap: 0; }
-.pair .persona { display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; align-content: start; }
+.pair .persona { display: grid; grid-row: span 7; grid-template-rows: subgrid; row-gap: 0; align-content: start; }
+.pair .ticks { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; }
 @media (max-width: 991.98px) { .pair { grid-template-columns: 1fr; } .pair .persona + .persona { margin-top: var(--gutter); } }
 .persona { padding: 40px; }
 .persona .role { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
@@ -324,19 +338,20 @@ a:hover { color: var(--accent-hover); }
 .persona cite { display: block; margin-top: 8px; font-family: var(--f-ui); font-style: normal; font-size: 13px; color: var(--ink-3); }
 .persona cite a { color: var(--ink-3); }
 .persona cite a:hover { color: var(--accent); }
-.persona .say { margin-top: 20px; align-self: start; }
+.persona .say { margin-top: 24px; align-self: start; }
 .persona blockquote { align-self: start; }
 .ticks { list-style: none; margin: 24px 0 0; padding: 0; border-top: 1px solid var(--rule); }
-.ticks li { padding: 12px 0 12px 26px; border-bottom: 1px solid var(--rule); position: relative; font-size: 15px; }
+.ticks li { padding: 13px 0 13px 26px; border-bottom: 1px solid var(--rule); position: relative; font-size: 15px; }
 .ticks li::before { content: ""; position: absolute; left: 1px; top: 20px; width: 7px; height: 7px; border-radius: 2px; background: var(--accent); }
 @media (max-width: 767.98px) { .persona { padding: 24px; } }
 
 /* Ruled lists: rules run the full column width. */
-.ruled { border-top: 1px solid var(--ink); padding-top: 20px; padding-bottom: 28px; height: 100%; }
+.ruled { border-top: 1px solid var(--ink); padding-top: 20px; padding-bottom: 44px; height: 100%; }
 .ruled p { font-size: 17px; line-height: 1.5; color: var(--ink); }
-.ruled .sub { font-size: 14.5px; color: var(--ink-2); margin-top: 6px; }
+.ruled .sub { font-size: 14.5px; color: var(--ink-2); margin-top: 8px; }
 .ruled .ic { display: block; width: 28px; height: 28px; color: var(--accent); margin-bottom: 14px; }
 .ruled.lead-item p:first-of-type { font-family: var(--f-display); font-size: 28px; line-height: 1.2; letter-spacing: -0.015em; font-weight: 500; }
+.ruled.not p { font-family: var(--f-display); font-size: 22px; line-height: 1.3; letter-spacing: -0.01em; }
 .data-goes { font-family: var(--f-display); font-size: 24px; line-height: 1.4; color: var(--ink); letter-spacing: -0.01em; }
 
 /* Closing band */
@@ -381,14 +396,21 @@ footer a { color: var(--ink-2); }
 
 <section class="hero" aria-labelledby="line">
   <div class="wrap">
-    <div class="row align-items-center">
+    <div class="row">
       <div class="col-lg-6">
+        <div class="hero-l">
         <p class="eyebrow">First-pass diligence for seed and Series A funds</p>
         <h1 id="line" class="display h1">Point it at a startup, get a readout.</h1>
         <p class="rest">Tricorder takes any data: decks, videos, spreadsheets, data rooms. It reveals insight you can trust, every claim sourced.</p>
         <div class="ctas">
           <a class="btn-d btn-p" href="#readout">See the Hollis Voice readout</a>
           <a class="btn-d btn-s" href="#pilot">Bring a data room to the pilot</a>
+        </div>
+        <div class="hero-facts">
+          <div><b>2 clicks</b><span>from any line to the files behind it</span></div>
+          <div><b>9 pieces</b><span>of the company, each with a verdict line</span></div>
+          <div><b>1 sentence</b><span>to steer any piece</span></div>
+        </div>
         </div>
       </div>
       <div class="col-lg-6">
@@ -472,7 +494,7 @@ footer a { color: var(--ink-2); }
             <span class="p-title">Disagreement: ARR</span>
             <span class="mark m-dis"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><rect x="2" y="1" width="2" height="10" fill="currentColor"/><rect x="8" y="1" width="2" height="10" fill="currentColor"/></svg>3 sources, 3 figures</span>
           </div>
-          <div class="p-body">
+          <div class="p-body p-fill p-spread">
             <div class="strip" style="margin-top:0" role="img" aria-label="Range strip from 2.0 to 3.1 million dollars. The model states 2.24 million, the deck 2.50 million, the pitch video about 3.0 million. No band, because no two agree.">
               <div class="track"></div>
               <div class="ax" style="left:0"></div><div class="ax" style="left:50%"></div><div class="ax" style="left:calc(100% - 1px)"></div>
@@ -510,29 +532,30 @@ footer a { color: var(--ink-2); }
         <div class="panel-d h-100">
           <div class="p-head">
             <span class="p-title">Overview</span>
-            <span class="rc-meta">5 of 9 pieces</span>
+            <span class="rc-meta">6 of 9 pieces</span>
           </div>
           <ul class="vlist">
             <li><div class="v-top"><span class="v-piece">The pitch itself</span><span class="mark m-strong"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>looking strong</span></div><p class="v-why">Series A raise, $9,000,000, the same in the deck, the cap table and the model.</p></li>
             <li><div class="v-top"><span class="v-piece">Market</span><span class="mark m-strong"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>looking strong</span></div><p class="v-why">Market size $252,000,000 on deck slide 8 and in the model. Both are the company's own estimate.</p></li>
+            <li><div class="v-top"><span class="v-piece">Team</span><span class="mark m-strong"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>looking strong</span></div><p class="v-why">Staff today, 17, on deck slide 10 and in the model.</p></li>
             <li><div class="v-top"><span class="v-piece">Traction and revenue</span><span class="mark m-weak"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1 L11 10.5 L1 10.5 Z" fill="currentColor"/></svg>looking weak</span></div><p class="v-why">ARR is stated four ways, from about $3,000,000 on the pitch video to $2,060,868 in the subscription rows.</p></li>
             <li><div class="v-top"><span class="v-piece">Burn and runway</span><span class="mark m-weak"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1 L11 10.5 L1 10.5 Z" fill="currentColor"/></svg>looking weak</span></div><p class="v-why">Runway: 37 months in the model. 19 months with the full hiring plan.</p></li>
             <li><div class="v-top"><span class="v-piece">Comps</span><span class="mark m-run"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2"/></svg>running</span></div><p class="v-why">Still running: comps. Pieces so far above.</p></li>
           </ul>
-          <div class="p-foot">Team, unit economics, retention and customers: 4 more pieces in the readout.</div>
+          <div class="p-foot">Unit economics, retention and customers: 3 more pieces in the readout.</div>
         </div>
       </div>
 
       <div class="col-lg-4">
         <div class="panel-d h-100">
-          <div class="p-body">
+          <div class="p-body p-fill">
             <h3 class="note-h"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true" style="color:var(--weak)"><path d="M6 0.8 L11.4 11 L0.6 11 Z" fill="currentColor"/></svg>Flag: a pilot is counted as ARR</h3>
             <div class="figs n2" style="margin-top:16px">
               <div class="fig"><div class="fig-l">Model</div><div class="fig-v weak">$2,240,868</div></div>
               <div class="fig"><div class="fig-l">Subscription rows</div><div class="fig-v">$2,060,868</div></div>
             </div>
             <p class="small">Difference: $180,000, the Marlow Veterinary Group pilot. It runs six months for $90,000 in total, and either side can end it on 30 days notice.</p>
-            <div class="chips" style="margin-top:14px">
+            <div class="chips p-end">
               <button class="chip" type="button">customer_mrr_by_month.csv</button>
               <button class="chip" type="button">pilot_agreement_marlow.pdf, clauses 2, 7, 8</button>
             </div>
@@ -541,7 +564,7 @@ footer a { color: var(--ink-2); }
       </div>
       <div class="col-lg-4">
         <div class="panel-d gap h-100">
-          <div class="p-body">
+          <div class="p-body p-fill">
             <h3 class="note-h"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true" style="color:var(--thin)"><circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Not in the room: IP assignment agreements</h3>
             <dl class="dl-d">
               <dt>Needed for</dt>
@@ -549,15 +572,20 @@ footer a { color: var(--ink-2); }
               <dt>Ask for</dt>
               <dd>Signed invention assignment agreements for both founders and every contractor who wrote code.</dd>
             </dl>
+            <div class="p-end"><button class="btn-d btn-s btn-sm" type="button">Add to the ask list</button></div>
           </div>
         </div>
       </div>
       <div class="col-lg-4">
         <div class="panel-d h-100">
-          <div class="p-body">
+          <div class="p-body p-fill">
             <h3 class="note-h"><svg class="sh" viewBox="0 0 12 12" aria-hidden="true" style="color:var(--strong)"><path d="M2 6.2 L4.8 9 L10 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Clean: cash reconciles.</h3>
+            <div class="figs n2" style="margin-top:16px">
+              <div class="fig"><div class="fig-l">Model cash</div><div class="fig-v">$1,800,000</div></div>
+              <div class="fig"><div class="fig-l">Difference</div><div class="fig-v">$0.24</div></div>
+            </div>
             <p class="small">Money raised before the Series A, less every month's net loss to 2026-09-30, was compared with the model's cash. The two differ by $0.24 on $1,800,000.</p>
-            <div class="chips" style="margin-top:14px">
+            <div class="chips p-end">
               <button class="chip" type="button">cap_table.xlsx</button>
               <button class="chip" type="button">financial_model.xlsx</button>
             </div>
@@ -634,9 +662,9 @@ footer a { color: var(--ink-2); }
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4"><div class="ruled"><p>Not a sourcing database or a CRM.</p></div></div>
-      <div class="col-md-4"><div class="ruled"><p>Not confirmatory diligence.</p></div></div>
-      <div class="col-md-4"><div class="ruled"><p>Not a replacement for the partner's judgment.</p></div></div>
+      <div class="col-md-4"><div class="ruled not"><p>Not a sourcing database or a CRM.</p></div></div>
+      <div class="col-md-4"><div class="ruled not"><p>Not confirmatory diligence.</p></div></div>
+      <div class="col-md-4"><div class="ruled not"><p>Not a replacement for the partner's judgment.</p></div></div>
     </div>
     <div class="row" style="margin-top:56px">
       <div class="col-lg-8">
