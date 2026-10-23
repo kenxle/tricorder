@@ -10,6 +10,7 @@ import sys
 from pathlib import Path
 
 import pdfplumber
+import pytest
 from fastapi.testclient import TestClient
 
 from schema.check_quotes import check_claim
@@ -335,3 +336,64 @@ def test_cli_finds_a_readouts_room_under_tricorder_rooms_dir(tmp_path):
     assert done.returncode == 0, done.stderr
     assert json.loads(done.stdout)["version"] == 1
     assert (tmp_path / "out" / "tiny_room" / "memo" / "memo_v1.json").exists()
+
+
+@pytest.mark.parametrize("errno_", ["EPERM", "ENOTSUP"])
+def test_a_save_works_on_a_filesystem_without_hard_links(tmp_path, monkeypatch, errno_):
+    """Fix round 2, item 7: os.link fails with EPERM or ENOTSUP there; the save still makes its version."""
+    import errno
+    import os
+
+    from memo import store
+    client = _client(tmp_path, monkeypatch)
+    code = getattr(errno, errno_)
+
+    def no_links(src, dst, *a, **kw):
+        raise OSError(code, os.strerror(code))
+
+    monkeypatch.setattr(os, "link", no_links)
+    edits = [{"action": "add", "section": 9, "text": "Met the founders."}]
+    r = client.post("/api/rooms/hollis_voice/memo/edits", json={"author": "Dana", "base_version": 1, "edits": edits})
+    assert r.status_code == 200, r.text
+    room = ROOT / "data_room" / "hollis_voice"
+    assert store.versions(room) == [1, 2] and store.load(room).changes[-1].author == "Dana"
+    assert not [p.name for p in store.memo_dir(room).iterdir() if p.name.endswith(".tmp")]
+    # The version is still never overwritten: the same version again is a 409.
+    monkeypatch.setattr(store, "load", lambda room_dir, version=None, real=store.load(room, 1): real)
+    again = client.post("/api/rooms/hollis_voice/memo/edits", json={"author": "Sam", "base_version": 1, "edits": edits})
+    assert again.status_code == 409, again.text
+
+
+def test_racing_saves_without_hard_links_make_one_version(tmp_path, monkeypatch):
+    """Fix round 2, item 7: the O_EXCL fallback keeps S4's rule, 8 racing saves make exactly one version."""
+    import errno
+    import threading
+
+    from memo import store
+    from memo.export import edit
+    from memo.model import Edit
+
+    def no_links(src, dst, *a, **kw):
+        raise OSError(errno.ENOTSUP, "Operation not supported")
+
+    _client(tmp_path, monkeypatch)
+    monkeypatch.setattr(os, "link", no_links)
+    room = ROOT / "data_room" / "hollis_voice"
+    v1 = store.load(room)
+    gate, won, lost = threading.Barrier(8), [], []
+
+    def save(k):
+        gate.wait()
+        try:
+            won.append(edit(room, [Edit(action="add", section=9, text=f"Line {k}.")], f"Op {k}", pdf=False, base=v1))
+        except FileExistsError:
+            lost.append(k)
+
+    threads = [threading.Thread(target=save, args=(k,)) for k in range(8)]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+    assert len(won) == 1 and len(lost) == 7
+    assert store.versions(room) == [1, 2]
+    assert store.load(room).changes[-1].author == won[0].memo.changes[-1].author
