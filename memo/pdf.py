@@ -9,7 +9,9 @@ when the operator has written one in section 15, opens section 2.
 Each line that cites claims carries note numbers. The notes print at the end
 of each section: each source's file and locator, what it reads as (a CSV row
 with its column names, a cell with its line and column, numbers formatted as
-the claims state them), and the date it was read.
+the claims state them), and the date it was read: a web source's retrieved_at,
+or for a file, the date the export read it. Claim ids stay out (ME-R20); the page's
+operator view shows them.
 
 Made with reportlab (see 04_architecture.md, "The PDF", for why and the
 alternatives). It is imported only when a PDF is written.
@@ -47,8 +49,9 @@ def note_text(memo: Memo, claim_id: str) -> str:
         st = memo.sources.get(source_key(s.uri, s.locator))
         reads = st.reads_as if st and st.reads_as else f"\"{s.quote}\""
         part = f"{Path(s.uri).name}, {s.locator}: {reads}"
-        if s.retrieved_at:
-            part += f". Read {s.retrieved_at}"
+        read = s.retrieved_at or (st.read_at if st else "")
+        if read:
+            part += f". Read {read}"
         parts.append(part)
     return "; ".join(parts) + "."
 

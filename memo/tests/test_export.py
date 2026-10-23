@@ -111,6 +111,10 @@ def test_every_claim_in_the_pdf_has_a_note_naming_its_file_and_locator(tmp_path)
         for s in claim.sources:
             assert f"{Path(s.uri).name}, {s.locator}" in text, (claim.id, s.uri, s.locator)
     assert "Not in the room:" in text and "not assessed yet" in text
+    # ME-R14 (review wave 2b O3): every note names the date its source was read; a file, the export's date.
+    dated = re.findall(r"\[\d+\] [^\[]*?\. Read \d{4}-\d\d-\d\d", text)
+    assert len(dated) == len(notes)
+    assert all(st.read_at == memo.built_at[:10] for k, st in memo.sources.items() if st.found and "://" not in k)
 
 
 def test_the_pdf_is_for_partners(tmp_path):
