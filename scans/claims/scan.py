@@ -31,6 +31,11 @@ def run(room_dir: Path) -> ScanResult:
     if not statements and "no deck" in notes:
         gaps.append(gap("Not in the room: the pitch deck (01_overview/pitch_deck.pdf)", "file missing",
                         "the pitch deck as a PDF", "the_pitch_itself"))
+    _, skipped_rows = extract.claims_json_rows(room)
+    if skipped_rows:
+        gaps.append(gap("Not in the room: a readable claims.json (01_overview/claims.json); rows without a label, a value and a slide were skipped",
+                        f"{skipped_rows} rows skipped" if skipped_rows != 1 else "1 row skipped, or the file is not JSON",
+                        "the deck's claims page as claims.json, each row with label, value and slide", "the_pitch_itself"))
     spoken, video_source = extract.video_statements(room)
     if video_source is None:
         gaps.append(gap("Not in the room: a transcript of the pitch video, or its script", "file missing",

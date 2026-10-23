@@ -24,7 +24,7 @@ from pathlib import Path
 from schema.claim import Check, Claim, Gap, Panel, Source, Value
 from schema.settings import load as load_settings
 from scans.base import Ids, gap
-from scans.claims.evidence import READERS, Evidence, independent_group
+from scans.claims.evidence import READERS, Evidence, Reading, independent_group
 from scans.claims.extract import Statement
 from scans.claims.kinds import KINDS
 from scans.claims.numbers import HEDGES
@@ -176,13 +176,16 @@ def _gap_pct(st: Statement, e: Evidence) -> str:
 def label_all(room: Path, statements: list[Statement], as_of: str | None, ids: Ids) -> tuple[list[Labelled], list[Gap]]:
     settings = load_settings()
     out: list[Labelled] = []
-    cache: dict[tuple[str, int], object] = {}
+    unreadable: dict[str, dict] = {}
     claims = [s for s in statements if s.kind != "example"]
     for st in claims:
         item = Labelled(st, normalised_number(st))
         tol = tolerance(st, None, settings)
         for key in KINDS[st.kind].evidence:
-            reading = READERS[key](room, st, as_of)
+            try:
+                reading = READERS[key](room, st, as_of)
+            except Exception as exc:  # a founder's own file with other columns or text in a number cell
+                reading = _unreadable(room, key, st, exc, unreadable)
             if reading.missing and reading.missing not in item.missing:
                 item.missing.append(reading.missing)
             matched_docs = set()
@@ -223,7 +226,42 @@ def label_all(room: Path, statements: list[Statement], as_of: str | None, ids: I
         else:
             item.label = "unsupported"
         item.claim = _claim(item, ids, as_of)
-    return out, _gaps(out)
+    return out, _gaps(out) + _unreadable_gaps(unreadable)
+
+
+# Reader key prefix -> the input kind scans.base.find looks up, to name the file that failed.
+FILE_KIND = {"model": "model", "team": "model", "cap": "cap_table", "metrics": "metrics", "customers": "customers",
+             "hiring": "hiring_plan", "contract": "contracts", "bios": "bios"}
+
+
+def _unreadable(room: Path, key: str, st: Statement, exc: Exception, seen: dict) -> Reading:
+    """A reader that raised: that document says nothing about this claim, and the file is
+    named once in a gap. The claim falls through to the next document, or reads unsupported."""
+    from scans.base import find
+
+    prefix = key.split("_")[0]
+    doc = DOC_OF_READER.get(prefix, (key, None))
+    hits = find(room, FILE_KIND.get(prefix, prefix)) if prefix in FILE_KIND else []
+    if prefix == "customers":
+        hits = [h for h in hits if "customer" in h.name]
+    rel = str(hits[0].relative_to(room)) if hits else doc[0]
+    reason = f"{type(exc).__name__}: {exc}"
+    entry = seen.setdefault(rel, {"doc": doc, "reasons": [], "kinds": [], "piece": KINDS[st.kind].piece})
+    if reason not in entry["reasons"]:
+        entry["reasons"].append(reason)
+    if KINDS[st.kind].name not in entry["kinds"]:
+        entry["kinds"].append(KINDS[st.kind].name)
+    return Reading([], f"a readable {doc[0]} ({rel})")
+
+
+def _unreadable_gaps(seen: dict) -> list[Gap]:
+    out = []
+    for rel, e in seen.items():
+        doc, row = e["doc"]
+        out.append(gap(f"Not in the room: a readable {doc}. {rel} could not be read for {', '.join(e['kinds'])}",
+                       "a column or cell the script needs is missing or not a number: " + "; ".join(e["reasons"]),
+                       f"{doc} with the expected columns" + (f" ({row})" if row else ""), e["piece"]))
+    return out
 
 
 def _check_name(item: Labelled) -> str:
@@ -303,9 +341,16 @@ def _gaps(items: list[Labelled]) -> list[Gap]:
         wheres = "; ".join(f"{i.st.where}: {_figure(i.st)}" for i in group)
         n = len(group)
         gaps.append(gap(f"Not in the room: {kind.ask_doc}, to back {n} pitch claim{'s' if n > 1 else ''} on {kind.name} ({wheres})",
-                        ("file missing: " + ", ".join(missing)) if missing else "not stated in any document outside the pitch",
+                        _why(missing),
                         kind.ask_doc + (f" ({kind.ask_row})" if kind.ask_row else ""), kind.piece))
     return gaps
+
+
+def _why(missing: list[str]) -> str:
+    gone = [m for m in missing if not m.startswith("a readable ")]
+    bad = [m.removeprefix("a readable ") for m in missing if m.startswith("a readable ")]
+    parts = (["file missing: " + ", ".join(gone)] if gone else []) + (["could not read: " + ", ".join(bad)] if bad else [])
+    return "; ".join(parts) or "not stated in any document outside the pitch"
 
 
 def _unit_words(item: Labelled) -> str:

@@ -302,8 +302,9 @@ def _hiring(room: Path, st, as_of, what: str) -> Reading:
         return Reading([])
     doc, row = "hiring plan", "C22"
     if what == "count":
+        ids = f", {rows[0]['hire_id']} to {rows[-1]['hire_id']}" if "hire_id" in rows[0] else ""
         return Reading([Evidence(float(len(rows)), None, _row_source(room, path, len(rows) - 1), doc, row,
-                                 f"{len(rows)} hire rows, {rows[0]['hire_id']} to {rows[-1]['hire_id']}", str(len(rows)))])
+                                 f"{len(rows)} hire rows (rows 2 to {len(rows) + 1}){ids}", str(len(rows)))])
     if what == "last_headcount":
         number = float(rows[-1]["headcount_after_hire"])
         return Reading([Evidence(number, None, _row_source(room, path, len(rows) - 1), doc, row,
@@ -311,7 +312,7 @@ def _hiring(room: Path, st, as_of, what: str) -> Reading:
     if what == "dept":
         line = st.quote.lower()
         dept = next((d for d in DEPARTMENTS if line.startswith(d)), None)
-        if dept is None:
+        if dept is None or "department" not in rows[0]:
             return Reading([])
         hits = [i for i, r in enumerate(rows) if r.get("department", "").lower() == dept]
         if not hits:
