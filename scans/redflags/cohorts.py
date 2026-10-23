@@ -21,6 +21,7 @@ that "read the full room" on retention has a check to rerun
 
 from __future__ import annotations
 
+import re
 from collections import defaultdict
 from pathlib import Path
 
@@ -87,20 +88,45 @@ def read_tab(room: Path) -> dict | None:
     }
 
 
+_MONTH = re.compile(r"^\d{4}-(0[1-9]|1[0-2])$")
+
+
+def _readable(r: dict) -> tuple[str, str, float] | None:
+    """(customer, month, mrr) for a row the script can sum, or None for a row it must skip.
+    A blank mrr reads as 0, as before; a blank or malformed month, a blank customer, or text in mrr is skipped."""
+    cid, month = (r.get("customer_id") or "").strip(), (r.get("month") or "").strip()
+    if not cid or not _MONTH.match(month):
+        return None
+    try:
+        return cid, month, float(r.get("mrr") or 0)
+    except ValueError:
+        return None
+
+
 def rebuild(room: Path) -> dict | None:
-    """NRR_12 and GRR_12 from the customer file, with the file rows each cohort sums, or None when it is missing."""
+    """NRR_12 and GRR_12 from the customer file, with the file rows each cohort sums, or None when it is missing.
+    Rows the script cannot read are skipped and counted (`skipped`, `read`), never fatal; with no readable row,
+    or no cohort with 12 months of data, the dict has no "nrr"."""
     path = room / CUSTOMERS
     if not path.exists():
         return None
     mrr: dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
     rows_at: dict[tuple[str, str], list[int]] = defaultdict(list)
+    skipped: list[int] = []
+    read = 0
     for n, r in enumerate(csv_rows(path), 2):
-        v = float(r.get("mrr") or 0)
-        mrr[r["customer_id"]][r["month"]] += v
+        read += 1
+        got = _readable(r)
+        if got is None:
+            skipped.append(n)
+            continue
+        cid, month, v = got
+        mrr[cid][month] += v
         if v:  # a row with no MRR adds nothing to the sums, so the panel does not list it
-            rows_at[(r["customer_id"], r["month"])].append(n)
+            rows_at[(cid, month)].append(n)
+    counted = {"skipped": skipped, "read": read}
     if not mrr:
-        return None
+        return counted
     last = max(m for d in mrr.values() for m in d)
     by_cohort: dict[str, dict] = {}
     for cid, d in mrr.items():
@@ -118,13 +144,13 @@ def rebuild(room: Path) -> dict | None:
         c["end_rows"] += rows_at.get((cid, later), [])
     start = sum(c["start"] for c in by_cohort.values())
     if not by_cohort or start == 0:
-        return None
+        return counted
     end = sum(c["end"] for c in by_cohort.values())
     kept = sum(c["kept"] for c in by_cohort.values())
     months = sorted(by_cohort)
     return {"customers": sum(c["customers"] for c in by_cohort.values()), "cohorts": len(months),
             "first": months[0], "last": months[-1], "nrr": 100 * end / start, "grr": 100 * kept / start,
-            "by_cohort": {m: by_cohort[m] for m in months}, "header": csv_row_text(path, 1)}
+            "by_cohort": {m: by_cohort[m] for m in months}, "header": csv_row_text(path, 1), **counted}
 
 
 def _money(v: float) -> str:
@@ -170,11 +196,24 @@ def check(room: Path, ids: Ids) -> tuple[list[Claim], list[Gap], list[Panel]]:
         gaps.append(gap(f"Not in the room: the customer file ({CUSTOMERS}), so the cohorts cannot be rebuilt",
                         "file missing", "Monthly revenue by customer since the first sale, with MRR per month", PIECE))
         return claims, gaps, []
+    if built["skipped"]:
+        rows = built["skipped"]
+        listed = ", ".join(map(str, rows[:10])) + (f" and {len(rows) - 10} more" if len(rows) > 10 else "")
+        gaps.append(gap(f"Not in the room: a customer, a month (YYYY-MM) and a number for MRR in every row of the customer file ({CUSTOMERS})",
+                        f"{len(rows)} of {built['read']} rows could not be read and were skipped: rows {listed}",
+                        "the same export with every row filled in", PIECE))
+    if "nrr" not in built:
+        gaps.append(gap(f"Not in the room: 12 months of readable rows in the customer file ({CUSTOMERS}), so the cohorts cannot be rebuilt",
+                        f"no cohort has 12 months of data in the {built['read'] - len(built['skipped'])} rows read",
+                        "Monthly revenue by customer since the first sale, with MRR per month", PIECE))
+        return claims, gaps, []
 
     # The header row: the columns the script summed. The rows themselves are in the panel, one list per cohort.
     row_source = Source(kind="file", uri=CUSTOMERS, locator="row 1", quote=built["header"])
     span = f"the {built['cohorts']} cohorts from {built['first']} to {built['last']} that have 12 months of data"
-    how = f" {SCRIPT} summed the mrr column of the rows listed in the panel '{PANEL}'."
+    how = f" {SCRIPT} summed the mrr column of the rows listed in the panel '{PANEL}'." + (
+        f" It skipped {len(built['skipped'])} row{'s' if len(built['skipped']) != 1 else ''} it could not read (see the gaps)."
+        if built["skipped"] else "")
     if tab is not None:
         fewer = tab["customers"] < built["customers"]
         above = tab["nrr"] > built["nrr"] and abs(tab["nrr"] - built["nrr"]) / built["nrr"] > tol
