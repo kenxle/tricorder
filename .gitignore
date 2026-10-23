@@ -17,3 +17,5 @@ out/
 node_modules/
 readout/dist/
 rooms/
+# The readout store on this laptop (TRICORDER_STORE_DIR moves it). Investor data, never committed.
+store_data/
