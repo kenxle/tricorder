@@ -26,7 +26,8 @@ CHECKS: tuple[str, ...] = (
     "vanity",           # 1.8 Vanity metric check
     "cap_table",        # 1.10 Cap table reconciliation
     "mislabels",        # 1.12 Accounting mislabels
-    "contract_terms",   # 1.13 Contract terms
+    "contract_terms",   # 1.13 Contract terms (Saturday: the model reading, checks 2 and 5)
+    "contract_terms_full",  # 1.13 checks 1, 3, 4 and 6 and the clause notes
     "deck_vs_books",    # Deck revenue against the P&L
 )
 
