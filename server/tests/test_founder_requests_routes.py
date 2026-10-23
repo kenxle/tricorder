@@ -8,6 +8,7 @@ from pathlib import Path
 import pytest
 from fastapi.testclient import TestClient
 
+from founder_requests.tests.conftest import ready_scans
 from server.app import app
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -24,8 +25,8 @@ def env(tmp_path, monkeypatch):
 
 
 def _build(room):
-    for mod in ("scans.redflags", "scans.memo"):
-        subprocess.run([sys.executable, "-m", mod, str(room)], cwd=ROOT, check=True, capture_output=True)
+    for name in ready_scans(room) + ["memo"]:
+        subprocess.run([sys.executable, "-m", f"scans.{name}", str(room)], cwd=ROOT, check=True, capture_output=True)
 
 
 def test_lines_and_draft(env):
@@ -66,7 +67,9 @@ def test_copy_then_upload_reruns_and_rebuilds(env):
     body = r.json()
     assert body["saved"] == "05_team/hiring_plan.csv" and body["status_before"] == "missing"
     assert body["status_after"] == "found" and body["asks_after"] == body["asks_before"] - 1
-    assert [s["scan"] for s in body["scans_rerun"]] == ["redflags"]
+    assert [s["scan"] for s in body["scans_rerun"]] == ready_scans(env / "rooms" / "brasswick_live")
+    assert all(s["ok"] for s in body["scans_rerun"])
+    assert not any("redflags" in line or "Scans that were waiting" in line for line in body["summary"])
     log = client.get("/api/rooms/brasswick_live/founder-requests/received").json()
     assert log["received"][-1]["saved"] == "05_team/hiring_plan.csv"
 
