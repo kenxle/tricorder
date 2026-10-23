@@ -142,6 +142,8 @@ def source_text(room: str, source: Source) -> dict:
 
 from server.store_routes import router as store_router  # noqa: E402
 app.include_router(store_router)
+from server.steering_routes import router as steering_router  # noqa: E402
+app.include_router(steering_router)
 
 if PAGE_DIST.is_dir():
     app.mount("/", StaticFiles(directory=PAGE_DIST, html=True), name="page")
