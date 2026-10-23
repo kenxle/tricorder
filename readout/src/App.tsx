@@ -69,7 +69,8 @@ function ReadoutView({ readout, onReadout, onRoom }: { readout: Readout; onReado
 
       <section aria-label="Top flags">
         <h2>Top green and red flags</h2>
-        {readout.top_flags.length === 0 && <p className="note">No flags yet.</p>}
+        {greens.length === 0 && <p className="note">No green headline from the linked evidence yet.</p>}
+        {reds.length === 0 && <p className="note">No red headline with linked numeric comparisons yet. Check the overview for flagged claims.</p>}
         <ol className="flags">
           {[...greens, ...reds].map((f) => (
             <li key={`${f.kind}-${f.rank}`} className={`flag ${f.kind}`}>

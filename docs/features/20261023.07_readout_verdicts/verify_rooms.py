@@ -66,7 +66,7 @@ def main():
                           "greens": [f.piece for f in readout.top_flags if f.kind == "green"],
                           "reds": [f.piece for f in readout.top_flags if f.kind == "red"]})
     with (EVIDENCE / "claims.csv").open("w", newline="") as out:
-        writer = csv.DictWriter(out, fieldnames=list(claim_rows[0]))
+        writer = csv.DictWriter(out, fieldnames=list(claim_rows[0]), lineterminator="\n")
         writer.writeheader()
         writer.writerows(claim_rows)
     (EVIDENCE / "summary.json").write_text(json.dumps(summaries, indent=2) + "\n")

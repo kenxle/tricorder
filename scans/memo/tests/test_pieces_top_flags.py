@@ -33,6 +33,14 @@ def test_all_pieces_exist_in_order_even_without_a_scan():
     assert out.top_flags == []
 
 
+def test_a_missing_scan_is_unassessed_rather_than_a_company_document_gap():
+    out = pieces.apply(Readout(room="t", built_at="now", scans_missing=["comps"]), Path("."))
+    comps = piece(out, "comps")
+    assert comps.verdict == "not_enough_in_the_room"
+    assert comps.status == "waiting_on_input" and comps.waiting_on == ["comps"]
+    assert comps.reason.startswith("Not assessed yet:") and "comps" in comps.reason
+
+
 def test_assignment_uses_scan_then_label_then_entry():
     assert pieces.piece_of(claim("a", "arr", scan="comps")) == "comps"
     assert pieces.piece_of(claim("a", "headcount", scan="signals")) == "market"
@@ -71,6 +79,14 @@ def test_repeated_pitch_sources_count_as_one_and_repeated_cells_are_one_file():
     assert piece(out, "market").contradicting_sources == 0
 
 
+def test_the_deck_and_video_cannot_corroborate_each_other():
+    out = build([claim("deck", "tam", uri="01_overview/pitch_deck.pdf", corroborated=["video"]),
+                 claim("video", "tam", uri="01_overview/pitch_video_script.md", corroborated=["deck"])])
+    assert piece(out, "market").verdict == "not_enough_in_the_room"
+    assert piece(out, "market").corroborating_sources == 0
+    assert out.top_flags == []
+
+
 def test_unverified_claims_and_dangling_links_do_not_make_a_piece_strong():
     bad = claim("bad", "tam", corroborated=["gone"]).model_copy(update={"confidence": "unverified"})
     out = build([claim("a", "headcount", corroborated=["gone"])], unverified=[bad])
@@ -89,6 +105,20 @@ def test_reds_rank_by_gap_one_per_piece_and_ties_keep_piece_order():
     assert [(f.piece, f.rank, f.claim_ids) for f in out.top_flags] == [
         ("burn_and_runway", 1, ["runway"]), ("traction_and_revenue", 2, ["large"]), ("retention", 3, ["retention"])]
     assert piece(out, "traction_and_revenue").reason_claim_ids == ["large"]
+
+
+def test_the_actual_cohort_comparison_ranks_with_the_rebuilt_denominator():
+    from scans.base import Ids, ROOT
+    from scans.redflags.cohorts import check
+
+    claims, _, _ = check(ROOT / "data_room/hollis_voice", Ids("cohort-test"))
+    rebuilt = next(c for c in claims if c.severity == "flag" and c.value.label == "nrr_12m")
+    tab = next(c for c in claims if c.id in rebuilt.conflicts_with)
+    expected = abs(tab.value.number - rebuilt.value.number) / abs(rebuilt.value.number)
+    assert pieces.red_gap(rebuilt, {c.id: c for c in claims}) == expected
+    out = build([*claims, claim("cash", "cash", number=116, severity="flag", conflicts=["cash-found"]),
+                 claim("cash-found", "cash", number=100)])
+    assert [f.piece for f in out.top_flags][:2] == ["retention", "burn_and_runway"]
 
 
 def test_unrankable_red_flags_stay_in_their_piece():

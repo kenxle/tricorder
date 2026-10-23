@@ -186,10 +186,10 @@ export function SteerableOverview({ readout, onReadout }: { readout: Readout; on
           <li key={p.name} className={`piece ${p.verdict}`} data-piece={p.name}>
             <div className="piece-row">
               <button className="link" aria-expanded={open.has(p.name)} onClick={() => toggle(p.name)}>
-                <strong>{PIECE_LABEL[p.name]}</strong> · {VERDICT_LABEL[p.verdict]}
+                <strong>{PIECE_LABEL[p.name]}</strong> · {p.status === "waiting_on_input" && p.claim_ids.length === 0 ? "Not assessed yet" : VERDICT_LABEL[p.verdict]}
               </button>
               <span className="counts">
-                {p.corroborating_sources} agree · {p.contradicting_sources} disagree
+                Source links: {p.corroborating_sources} agree · {p.contradicting_sources} disagree
               </span>
               <button
                 onClick={() => {

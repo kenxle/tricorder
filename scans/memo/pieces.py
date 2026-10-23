@@ -33,6 +33,18 @@ CHECK_PIECE: dict[str, str] = {
 NARRATIVE = ("pitch_deck", "claims.json", "company_overview", "pitch_video", "website_copy",
              "product_one_pager", "cover_note")
 
+PIECE_SCANS = {
+    "traction_and_revenue": ("redflags", "claims"),
+    "retention": ("redflags", "claims"),
+    "burn_and_runway": ("redflags", "model", "bank"),
+    "unit_economics": ("redflags", "model"),
+    "customers": ("redflags", "claims"),
+    "market": ("signals", "frameworks", "outside"),
+    "comps": ("comps",),
+    "team": ("founders", "outside"),
+    "the_pitch_itself": ("claims", "video"),
+}
+
 
 def piece_of(claim: Claim) -> str:
     if claim.scan == "comps":
@@ -72,9 +84,14 @@ def red_gap(claim: Claim, by_id: dict[str, Claim]) -> float | None:
     others = [o for o in others if (o.value.label, o.value.unit, o.value.period) == (value.label, value.unit, value.period)]
     found = next((o for o in others if o.confidence == "computed"), None) or next(
         (o for o in others if any(source_key(s.uri) != "narrative" for s in o.sources)), None)
-    if found is None or found.value.number == 0:
+    if found is None:
         return None
-    return abs(value.number - found.value.number) / abs(found.value.number)
+    # The cohort check's flag carries its rebuild; its peer carries the tab reading.
+    # Other supported comparisons follow the framework's stated-flag/found-peer shape.
+    denominator = value.number if claim.check.name.split(".")[0] == "rebuild_cohorts_from_customer_file" else found.value.number
+    if denominator == 0:
+        return None
+    return abs(value.number - found.value.number) / abs(denominator)
 
 
 def worst_flag(flags: list[Claim], by_id: dict[str, Claim]) -> Claim:
@@ -87,6 +104,7 @@ def apply(readout: Readout, room_dir: Path) -> Readout:
     pieces = []
     for name in PIECE_ORDER:
         claims = [c for c in by_id.values() if piece_of(c) == name]
+        waiting = [scan for scan in PIECE_SCANS[name] if scan in readout.scans_missing] if not claims else []
         gaps = [g for g in readout.gaps if g.piece == name]
         cor = [c for c in claims if corroborated(c, by_id)]
         con = [c for c in claims if contradicted(c)]
@@ -111,11 +129,14 @@ def apply(readout: Readout, room_dir: Path) -> Readout:
             elif claims:
                 label = claims[0].value.label.replace("_", " ") if claims[0].value else "it"
                 reason = f"Only one source states {label}."
+            elif waiting:
+                reason = f"Not assessed yet: no verified claims are available from the {', '.join(waiting)} scans."
             else:
                 reason = "No claim in the readout feeds this piece yet."
         support = {s for c in cor for s in independent_sources(c, by_id)}
         against = {s.uri for c in con for s in c.sources}
         pieces.append(Piece(name=name, verdict=verdict, reason=reason, reason_claim_ids=ids,
                             claim_ids=[c.id for c in claims], corroborating_sources=len(support),
-                            contradicting_sources=len(against)))
+                            contradicting_sources=len(against), status="waiting_on_input" if waiting else "done",
+                            waiting_on=waiting))
     return readout.model_copy(update={"pieces": pieces})

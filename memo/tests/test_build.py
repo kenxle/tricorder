@@ -177,6 +177,17 @@ def test_real_merge_verdicts_and_headlines_reach_the_memo(readout):
     assert "pieces" not in memo.steps_missing and "top_flags" not in memo.steps_missing
 
 
+def test_empty_headlines_are_respected_and_unfinished_checks_are_named(readout):
+    readout = readout.model_copy(update={"top_flags": []})
+    memo = build_memo(readout, ROOM, AT)
+    lines = memo.section(2).lines
+    assert not [ln for ln in lines if ln.kind == "claim" and ln.severity in ("green", "red")]
+    assert memo.line("s02-no-green")[1].text == "Green headlines are pending the source-linking checks."
+    assert "linked numeric comparisons" in memo.line("s02-no-red")[1].text
+    assert memo.line("s02-piece-comps")[1].label == "Comps: not assessed yet"
+    assert "Source links" in memo.line("s02-piece-market")[1].text
+
+
 def test_room_gaps_sit_in_their_section_and_link_the_ask_list(readout):
     memo = build_memo(readout, ROOM, AT)
     s10 = [ln for ln in memo.section(10).lines if ln.text == "Not in the room: a balance sheet"]
@@ -279,7 +290,7 @@ def test_with_pieces_and_flags_the_summary_and_openers_fill(full_readout):
     assert len([ln for ln in s2 if ln.id.startswith("s02-piece-")]) == len(full_readout.pieces)
     assert memo.line("s02-pieces-unassessed")[1].label == "Verdicts not in yet"
     opener = memo.section(7).lines[0]
-    assert opener.kind == "pieces" and opener.text.startswith("Traction and revenue, looking weak (1 corroborate, 1 contradict)")
+    assert opener.kind == "pieces" and opener.text.startswith("Traction and revenue, looking weak (source links: 1 corroborating, 1 contradicting)")
     chart = full_readout.top_flags[0].claim_ids[0]
     assert memo.claims[chart].corroborated_by  # linked claims ride along for the second click
     assert any(ln.id == "s12-piece-burn_and_runway" for ln in memo.section(12).lines)

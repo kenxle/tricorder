@@ -115,13 +115,15 @@
     {
       "name": "comps",
       "verdict": "not_enough_in_the_room",
-      "reason": "No claim in the readout feeds this piece yet.",
+      "reason": "Not assessed yet: no verified claims are available from the comps scans.",
       "reason_claim_ids": [],
       "claim_ids": [],
       "corroborating_sources": 0,
       "contradicting_sources": 0,
-      "status": "done",
-      "waiting_on": []
+      "status": "waiting_on_input",
+      "waiting_on": [
+        "comps"
+      ]
     },
     {
       "name": "team",

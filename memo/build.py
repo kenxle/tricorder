@@ -309,8 +309,9 @@ class _Builder:
         parts, ids = [], []
         for p in self.r.pieces:
             if p.name in sec.pieces:
-                parts.append(f"{PIECE_WORDS[p.name]}, {VERDICT_WORDS[p.verdict]} "
-                             f"({p.corroborating_sources} corroborate, {p.contradicting_sources} contradict)")
+                verdict = "not assessed yet" if p.status == "waiting_on_input" and not p.claim_ids else VERDICT_WORDS[p.verdict]
+                parts.append(f"{PIECE_WORDS[p.name]}, {verdict} "
+                             f"(source links: {p.corroborating_sources} corroborating, {p.contradicting_sources} contradicting)")
                 ids += [cid for cid in p.claim_ids if cid in self.claims and cid not in ids]
         if not parts:
             return None
@@ -401,7 +402,7 @@ class _Builder:
     def flags(self) -> list[MemoLine]:
         """The flags, in full, once. Top flags when that step has run; else every claim with severity flag."""
         lines: list[MemoLine] = []
-        if self.r.top_flags:
+        if self.r.top_flags or (self.flags_built and self.r.pieces):
             for f in sorted(self.r.top_flags, key=lambda f: (f.kind != "green", f.rank)):
                 ids = [c for c in f.claim_ids if c in self.claims]
                 if not ids:
@@ -415,7 +416,13 @@ class _Builder:
                     self.flag_lines.append((lid, title, ids))
             if not any(f.kind == "green" for f in self.r.top_flags) and self.r.pieces:
                 lines.append(MemoLine(id="s02-no-green", kind="fact",
-                                      text="No green flag: nothing in the room is corroborated and uncontradicted."))
+                                      text=("Green headlines are pending the source-linking checks." if not step_built("link")
+                                            else "No green headline from the linked evidence yet.")))
+            if not any(f.kind == "red" for f in self.r.top_flags):
+                lines.append(MemoLine(id="s02-no-red", kind="fact",
+                                      text=("No red headline with linked numeric comparisons yet. Flagged claims remain in the overview."
+                                            if any(c.severity == "flag" for c in self.claims.values())
+                                            else "No red flag in the checks run so far.")))
             return lines
         flagged = [c for c in self.claims.values() if c.severity == "flag" and self.replaced_by.get(c.id) not in self.claims]
         arr = arr_side_by_side(list(self.claims.values()), self.room_dir)
@@ -465,9 +472,10 @@ class _Builder:
             p = by_name.get(name)
             if p:
                 ids = [c for c in p.claim_ids if c in self.claims]
+                verdict = "not assessed yet" if p.status == "waiting_on_input" and not p.claim_ids else VERDICT_WORDS[p.verdict]
                 lines.append(MemoLine(id=f"s02-piece-{name}", kind="pieces",
-                                      label=f"{PIECE_WORDS[name]}: {VERDICT_WORDS[p.verdict]}",
-                                      text=f"{partner_text(p.reason)} {p.corroborating_sources} sources corroborate, {p.contradicting_sources} contradict.",
+                                      label=f"{PIECE_WORDS[name]}: {verdict}",
+                                      text=f"{partner_text(p.reason)} Source links: {p.corroborating_sources} corroborating, {p.contradicting_sources} contradicting.",
                                       claim_ids=ids, severity={"looking_strong": "green", "looking_weak": "red"}.get(p.verdict)))
             else:
                 unassessed.append(name)
