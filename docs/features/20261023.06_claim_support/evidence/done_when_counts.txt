@@ -1,0 +1,46 @@
+| Room | Claims | Numeric | From the script | Supported | Contradicted | Unsupported | Could not verify | Quote checker failures | Examples not counted |
+|---|---|---|---|---|---|---|---|---|---|
+| hollis_voice | 64 | 64 | 10 | 39 | 8 | 17 | 0 | 0 | 0 |
+| brasswick | 53 | 52 | 11 | 31 | 7 | 15 | 0 | 0 | 6 |
+| hollis_voice_seed_drop | 64 | 64 | 10 | 33 | 6 | 25 | 0 | 0 | 0 |
+| hollis_voice_clean | 64 | 63 | 11 | 44 | 0 | 20 | 0 | 0 | 0 |
+
+| Room | Planted entry | Pitch figures it touches | Contradicted | With both sources | The rest |
+|---|---|---|---|---|---|
+| hollis_voice | PF2 | 1 | 1 | 1 | none |
+| hollis_voice | PF2b | 1 | 1 | 1 | none |
+| hollis_voice | PF3 | 1 | 0 | 0 | 102.6% (slide 6): supported |
+| hollis_voice | PF4 | 3 | 1 | 1 | 37 (slide 11): supported; $374,462 (slide 11): supported |
+| hollis_voice | PF5 | 1 | 1 | 1 | none |
+| hollis_voice | PF6 | 1 | 0 | 0 | 80% (slide 5): supported |
+| hollis_voice | PF7 | 2 | 2 | 2 | none |
+| brasswick | BF1 | 2 | 1 | 1 | 30% (slide 6): supported |
+| brasswick | BF2 | 2 | 1 | 1 | 2026 (slide 4): supported |
+| brasswick | BF3 | 2 | 2 | 2 | none |
+| brasswick | BF4 | 1 | 1 | 1 | none |
+| brasswick | BF5 | 2 | 2 | 2 | none |
+| hollis_voice_seed_drop | PF2 | 1 | 1 | 1 | none |
+| hollis_voice_seed_drop | PF2b | 1 | 1 | 1 | none |
+| hollis_voice_seed_drop | PF4 | 3 | 1 | 1 | 37 (slide 11): supported; $374,462 (slide 11): supported |
+| hollis_voice_seed_drop | PF6 | 1 | 0 | 0 | 80% (slide 5): supported |
+| hollis_voice_seed_drop | PF7 | 2 | 2 | 2 | none |
+
+| Room | Green flag | Figure | Where | Label | Sources |
+|---|---|---|---|---|---|
+| hollis_voice | GF1 | $9,000,000 | slide 13 | supported | 01_overview/pitch_deck.pdf, 02_financials/cap_table.xlsx, 02_financials/financial_model.xlsx |
+| hollis_voice | GF2 | about $9,000 | slide 8 | supported | 01_overview/pitch_deck.pdf, 02_financials/financial_model.xlsx |
+| hollis_voice | GF2 | near $252,000,000 | slide 8 | supported | 01_overview/pitch_deck.pdf, 02_financials/financial_model.xlsx |
+| hollis_voice | GF3 | 17 | slide 10 | supported | 01_overview/pitch_deck.pdf, 02_financials/financial_model.xlsx |
+| hollis_voice | GF3 | 17 | slide 12 | supported | 01_overview/pitch_deck.pdf, 02_financials/financial_model.xlsx |
+| hollis_voice | GF3 | 41 | slide 12 | supported | 01_overview/pitch_deck.pdf, 05_team/hiring_plan.csv |
+| brasswick | GF1 | $3,000,000 | slide 11 | supported | 01_overview/pitch_deck.pdf, 02_financials/cap_table.xlsx, 02_financials/financial_model.xlsx |
+| brasswick | GF2 | 14 | slide 5 | supported | 01_overview/pitch_deck.pdf, 02_financials/financial_model.xlsx, 03_metrics/monthly_metrics.csv, 03_metrics/revenue_by_customer.csv |
+| brasswick | GF2 | 15 | slide 5 | supported | 01_overview/pitch_deck.pdf, 03_metrics/revenue_by_customer.csv |
+| hollis_voice_clean | GF1 | $9,000,000 | slide 13 | supported | 01_overview/pitch_deck.pdf, 02_financials/cap_table.xlsx, 02_financials/financial_model.xlsx |
+| hollis_voice_clean | GF2 | about $9,000 | slide 8 | supported | 01_overview/pitch_deck.pdf, 02_financials/financial_model.xlsx |
+| hollis_voice_clean | GF2 | near $252,000,000 | slide 8 | supported | 01_overview/pitch_deck.pdf, 02_financials/financial_model.xlsx |
+| hollis_voice_clean | GF3 | 17 | slide 10 | supported | 01_overview/pitch_deck.pdf, 02_financials/financial_model.xlsx |
+| hollis_voice_clean | GF3 | 17 | slide 12 | supported | 01_overview/pitch_deck.pdf, 02_financials/financial_model.xlsx |
+| hollis_voice_clean | GF3 | 41 | slide 12 | supported | 01_overview/pitch_deck.pdf, 05_team/hiring_plan.csv |
+
+{"hollis_voice": {"claims": 64, "numeric": 64, "from_script": 10, "labels": {"supported": 39, "contradicted": 8, "unsupported": 17, "could not verify": 0}, "quote_failures": 0, "planted": [{"id": "PF2", "pitch_figures": 1, "contradicted": 1, "with_both_sources": 1, "others": []}, {"id": "PF2b", "pitch_figures": 1, "contradicted": 1, "with_both_sources": 1, "others": []}, {"id": "PF3", "pitch_figures": 1, "contradicted": 0, "with_both_sources": 0, "others": ["102.6% (slide 6): supported"]}, {"id": "PF4", "pitch_figures": 3, "contradicted": 1, "with_both_sources": 1, "others": ["37 (slide 11): supported", "$374,462 (slide 11): supported"]}, {"id": "PF5", "pitch_figures": 1, "contradicted": 1, "with_both_sources": 1, "others": []}, {"id": "PF6", "pitch_figures": 1, "contradicted": 0, "with_both_sources": 0, "others": ["80% (slide 5): supported"]}, {"id": "PF7", "pitch_figures": 2, "contradicted": 2, "with_both_sources": 2, "others": []}], "greens": [{"id": "GF1", "stated": "$9,000,000", "where": "slide 13", "label": "supported", "sources": ["01_overview/pitch_deck.pdf", "02_financials/cap_table.xlsx", "02_financials/financial_model.xlsx"]}, {"id": "GF2", "stated": "about $9,000", "where": "slide 8", "label": "supported", "sources": ["01_overview/pitch_deck.pdf", "02_financials/financial_model.xlsx"]}, {"id": "GF2", "stated": "near $252,000,000", "where": "slide 8", "label": "supported", "sources": ["01_overview/pitch_deck.pdf", "02_financials/financial_model.xlsx"]}, {"id": "GF3", "stated": "17", "where": "slide 10", "label": "supported", "sources": ["01_overview/pitch_deck.pdf", "02_financials/financial_model.xlsx"]}, {"id": "GF3", "stated": "17", "where": "slide 12", "label": "supported", "sources": ["01_overview/pitch_deck.pdf", "02_financials/financial_model.xlsx"]}, {"id": "GF3", "stated": "41", "where": "slide 12", "label": "supported", "sources": ["01_overview/pitch_deck.pdf", "05_team/hiring_plan.csv"]}], "not_counted": 0}, "brasswick": {"claims": 53, "numeric": 52, "from_script": 11, "labels": {"supported": 31, "contradicted": 7, "unsupported": 15, "could not verify": 0}, "quote_failures": 0, "planted": [{"id": "BF1", "pitch_figures": 2, "contradicted": 1, "with_both_sources": 1, "others": ["30% (slide 6): supported"]}, {"id": "BF2", "pitch_figures": 2, "contradicted": 1, "with_both_sources": 1, "others": ["2026 (slide 4): supported"]}, {"id": "BF3", "pitch_figures": 2, "contradicted": 2, "with_both_sources": 2, "others": []}, {"id": "BF4", "pitch_figures": 1, "contradicted": 1, "with_both_sources": 1, "others": []}, {"id": "BF5", "pitch_figures": 2, "contradicted": 2, "with_both_sources": 2, "others": []}], "greens": [{"id": "GF1", "stated": "$3,000,000", "where": "slide 11", "label": "supported", "sources": ["01_overview/pitch_deck.pdf", "02_financials/cap_table.xlsx", "02_financials/financial_model.xlsx"]}, {"id": "GF2", "stated": "14", "where": "slide 5", "label": "supported", "sources": ["01_overview/pitch_deck.pdf", "02_financials/financial_model.xlsx", "03_metrics/monthly_metrics.csv", "03_metrics/revenue_by_customer.csv"]}, {"id": "GF2", "stated": "15", "where": "slide 5", "label": "supported", "sources": ["01_overview/pitch_deck.pdf", "03_metrics/revenue_by_customer.csv"]}], "not_counted": 6}, "hollis_voice_seed_drop": {"claims": 64, "numeric": 64, "from_script": 10, "labels": {"supported": 33, "contradicted": 6, "unsupported": 25, "could not verify": 0}, "quote_failures": 0, "planted": [{"id": "PF2", "pitch_figures": 1, "contradicted": 1, "with_both_sources": 1, "others": []}, {"id": "PF2b", "pitch_figures": 1, "contradicted": 1, "with_both_sources": 1, "others": []}, {"id": "PF4", "pitch_figures": 3, "contradicted": 1, "with_both_sources": 1, "others": ["37 (slide 11): supported", "$374,462 (slide 11): supported"]}, {"id": "PF6", "pitch_figures": 1, "contradicted": 0, "with_both_sources": 0, "others": ["80% (slide 5): supported"]}, {"id": "PF7", "pitch_figures": 2, "contradicted": 2, "with_both_sources": 2, "others": []}], "greens": [], "not_counted": 0}, "hollis_voice_clean": {"claims": 64, "numeric": 63, "from_script": 11, "labels": {"supported": 44, "contradicted": 0, "unsupported": 20, "could not verify": 0}, "quote_failures": 0, "planted": [], "greens": [{"id": "GF1", "stated": "$9,000,000", "where": "slide 13", "label": "supported", "sources": ["01_overview/pitch_deck.pdf", "02_financials/cap_table.xlsx", "02_financials/financial_model.xlsx"]}, {"id": "GF2", "stated": "about $9,000", "where": "slide 8", "label": "supported", "sources": ["01_overview/pitch_deck.pdf", "02_financials/financial_model.xlsx"]}, {"id": "GF2", "stated": "near $252,000,000", "where": "slide 8", "label": "supported", "sources": ["01_overview/pitch_deck.pdf", "02_financials/financial_model.xlsx"]}, {"id": "GF3", "stated": "17", "where": "slide 10", "label": "supported", "sources": ["01_overview/pitch_deck.pdf", "02_financials/financial_model.xlsx"]}, {"id": "GF3", "stated": "17", "where": "slide 12", "label": "supported", "sources": ["01_overview/pitch_deck.pdf", "02_financials/financial_model.xlsx"]}, {"id": "GF3", "stated": "41", "where": "slide 12", "label": "supported", "sources": ["01_overview/pitch_deck.pdf", "05_team/hiring_plan.csv"]}], "not_counted": 0}}
