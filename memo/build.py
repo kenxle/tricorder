@@ -139,6 +139,12 @@ def _and(words: list[str]) -> str:
     return words[0] if len(words) == 1 else ", ".join(words[:-1]) + " and " + words[-1]
 
 
+def memo_notice(notice: str | None) -> str | None:
+    """The synthetic line the memo shows. BRAND.md asks for a banner only on a room under a real
+    company's name ("Not this company's data"); an invented company's line stays off the memo (Ken, 2026-10-23)."""
+    return notice if notice and "not this company" in notice.lower() else None
+
+
 def _company(room: str) -> str:
     base = re.sub(r"_(seed_drop|clean.*)$", "", room)
     return " ".join(w.capitalize() for w in base.split("_"))
@@ -394,7 +400,7 @@ class _Builder:
             lines.append(MemoLine(id="s01-asof", kind="fact", label="Room data",
                                   text=f"The latest month the claims cover is {periods[-1]}."))
         lines.append(MemoLine(id="s01-version", kind="fact", label="Version", text="Shared version 1."))
-        if self.r.synthetic_notice:
+        if memo_notice(self.r.synthetic_notice):
             lines.append(MemoLine(id="s01-synthetic", kind="fact", label="Synthetic", text=self.r.synthetic_notice))
         return lines
 
@@ -676,7 +682,7 @@ class _Builder:
         for s in sections:
             s.empty_because = empty_because(s)
         memo = Memo(room=self.r.room, company=_company(self.r.room), readout_built_at=self.r.built_at,
-                    built_at=self.built_at, version=1, synthetic_notice=self.r.synthetic_notice, sections=sections,
+                    built_at=self.built_at, version=1, synthetic_notice=memo_notice(self.r.synthetic_notice), sections=sections,
                     claims={cid: self.claims[cid] for cid in sorted(cited)},
                     asks=self.asks, checklist=self.coverage_rows, stage=self.stage,
                     steps_missing=[n for n in ("link", "pieces", "top_flags") if not step_built(n)],
