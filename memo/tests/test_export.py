@@ -104,7 +104,7 @@ def test_every_claim_in_the_pdf_has_a_note_naming_its_source_and_locator(tmp_pat
 def test_server_routes_build_edit_and_serve(tmp_path, monkeypatch):
     from server.app import app
     monkeypatch.setenv("TRICORDER_OUT_DIR", str(tmp_path))
-    client = TestClient(app)
+    client = TestClient(app, base_url="http://127.0.0.1")  # the local guard refuses any other host
     assert client.get("/api/rooms/hollis_voice/memo").status_code == 404
     assert client.post("/api/rooms/hollis_voice/memo").status_code == 409  # no readout yet
     build_readout(tmp_path)

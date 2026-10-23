@@ -13,7 +13,8 @@ from server.app import app
 
 ROOT = Path(__file__).resolve().parents[2]
 PLAN = (ROOT / "founder_requests" / "tests" / "fixtures" / "synthetic_brasswick_hiring_plan.csv").read_bytes()
-client = TestClient(app)
+OCTET = {"content-type": "application/octet-stream"}  # the raw-file route takes the file as bytes
+client = TestClient(app, base_url="http://127.0.0.1")  # the local guard refuses any other host
 
 
 @pytest.fixture
@@ -51,7 +52,7 @@ def test_lines_and_draft(env):
 
 def test_upload_to_a_synthetic_room_is_refused(env):
     before = sorted(p.name for p in (ROOT / "data_room" / "brasswick").rglob("*"))
-    r = client.post("/api/rooms/brasswick/founder-requests/files?answers=C22&name=plan.csv", content=PLAN)
+    r = client.post("/api/rooms/brasswick/founder-requests/files?answers=C22&name=plan.csv", headers=OCTET, content=PLAN)
     assert r.status_code == 409 and "copy-room" in r.json()["detail"]
     assert sorted(p.name for p in (ROOT / "data_room" / "brasswick").rglob("*")) == before
 
@@ -62,7 +63,7 @@ def test_copy_then_upload_reruns_and_rebuilds(env):
     assert client.post("/api/rooms/brasswick/founder-requests/copy", json={}).status_code == 409
     _build(env / "rooms" / "brasswick_live")
     r = client.post("/api/rooms/brasswick_live/founder-requests/files?answers=C22&name=Brasswick%20Hiring%20Plan.csv",
-                    content=PLAN)
+                    headers=OCTET, content=PLAN)
     assert r.status_code == 200, r.text
     body = r.json()
     assert body["saved"] == "05_team/hiring_plan.csv" and body["status_before"] == "missing"
@@ -84,7 +85,7 @@ def test_copy_then_upload_reruns_and_rebuilds(env):
 ])
 def test_bad_uploads_are_refused(env, query, content, status):
     client.post("/api/rooms/brasswick/founder-requests/copy", json={})
-    r = client.post(f"/api/rooms/brasswick_live/founder-requests/files?{query}", content=content)
+    r = client.post(f"/api/rooms/brasswick_live/founder-requests/files?{query}", headers=OCTET, content=content)
     assert r.status_code == status, r.text
     assert not (env / "rooms" / "brasswick_live" / "05_team" / "hiring_plan.csv").exists()
 
@@ -92,14 +93,14 @@ def test_bad_uploads_are_refused(env, query, content, status):
 def test_size_limit_is_checked_before_the_body_is_kept(env, monkeypatch):
     client.post("/api/rooms/brasswick/founder-requests/copy", json={})
     monkeypatch.setenv("TRICORDER_UPLOAD_MAX_MB", "0.0001")
-    r = client.post("/api/rooms/brasswick_live/founder-requests/files?answers=C22&name=plan.csv", content=PLAN)
+    r = client.post("/api/rooms/brasswick_live/founder-requests/files?answers=C22&name=plan.csv", headers=OCTET, content=PLAN)
     assert r.status_code == 413
 
 
 def test_room_ids_are_checked(env):
     assert client.get("/api/rooms/..%2F..%2Fetc/founder-requests").status_code == 404
     # An encoded slash makes the path miss the route: 404, or 405 when the built page is mounted at /.
-    r = client.post("/api/rooms/x%2F..%2Fbrasswick/founder-requests/files?answers=C22&name=p.csv", content=PLAN)
+    r = client.post("/api/rooms/x%2F..%2Fbrasswick/founder-requests/files?answers=C22&name=p.csv", headers=OCTET, content=PLAN)
     assert r.status_code in (404, 405)
     assert not (env / "rooms").exists() or not any((env / "rooms").rglob("p.csv"))
 
@@ -118,3 +119,42 @@ def test_several_files_in_one_add(env):
                       json={"files": [{"name": "x.csv", "answers": "C35", "data": "not base64!"}]})
     assert bad.status_code == 400
     assert client.post("/api/rooms/brasswick/founder-requests/batch", json={"files": files}).status_code == 409
+
+
+def test_the_server_answers_while_an_upload_reruns_scans(env, monkeypatch):
+    """The reruns run off the event loop, so /health answers during an upload (review S2)."""
+    import threading
+    import time
+
+    from founder_requests import intake as ik
+    client.post("/api/rooms/brasswick/founder-requests/copy", json={})
+    release = threading.Event()
+    started = threading.Event()
+
+    def slow(room, names):
+        started.set()
+        release.wait(10)
+        return []
+
+    monkeypatch.setattr(ik, "run_scans", slow)
+    with TestClient(app, base_url="http://127.0.0.1") as c:
+        files = [{"name": "plan.csv", "answers": "C22", "data": base64.b64encode(PLAN).decode()}]
+        done = {}
+        t = threading.Thread(target=lambda: done.setdefault("r", c.post(
+            "/api/rooms/brasswick_live/founder-requests/batch", json={"files": files})))
+        t.start()
+        assert started.wait(10)
+        t0 = time.monotonic()
+        assert c.get("/health").status_code == 200
+        waited = time.monotonic() - t0
+        release.set()
+        t.join(30)
+    assert waited < 2, f"/health waited {waited:.1f}s behind the upload"
+    assert done["r"].status_code == 200
+
+
+def test_rooms_under_the_rooms_folder_are_listed(env):
+    assert client.post("/api/rooms/brasswick/founder-requests/copy", json={"name": "listed_copy"}).status_code == 200
+    assert "listed_copy" in [r["id"] for r in client.get("/api/rooms").json()]  # O2
+    assert client.get("/api/rooms/listed_copy/readout").status_code in (200, 404)
+    assert client.post("/api/rooms/listed_copy/readout").status_code == 200  # the app's own routes see it
