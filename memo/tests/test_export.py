@@ -134,4 +134,4 @@ def test_the_page_needs_no_network(tmp_path):
     run_cli(tmp_path, str(ROOM))
     page = (tmp_path / "hollis_voice" / "memo" / "memo.html").read_text(encoding="utf-8")
     assert not re.search(r'<(script|link|img)[^>]+(src|href)="(https?:)?//', page)
-    assert "—" not in page and "–" not in page
+    assert "\u2014" not in page and "\u2013" not in page
