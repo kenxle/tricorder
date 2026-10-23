@@ -13,11 +13,15 @@ from schema.claim import Readout
 
 ROOT = Path(__file__).resolve().parents[2]
 ROOM = ROOT / "data_room" / "hollis_voice"
+# The scans a user runs before the memo, then the merge. A scan added here adds claims; no test names a count.
+SCANS = ("scans.redflags", "scans.claims", "scans.memo")
 
 
 def build_readout(out: Path, room: Path = ROOM) -> Path:
-    env = {**os.environ, "TRICORDER_OUT_DIR": str(out)}
-    for mod in ("scans.redflags", "scans.memo"):
+    # No model calls in tests: the claims scan reads only what its script can parse without a key.
+    env = {k: v for k, v in os.environ.items() if k != "ANTHROPIC_API_KEY"}
+    env["TRICORDER_OUT_DIR"] = str(out)
+    for mod in SCANS:
         subprocess.run([sys.executable, "-m", mod, str(room)], cwd=ROOT, env=env, check=True, capture_output=True)
     return out / room.name / "readout.json"
 

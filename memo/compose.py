@@ -46,7 +46,7 @@ def arr_figures(claims: list[Claim], room_dir: str | Path) -> list[Figure]:
             f.claim_ids.append(cid)
 
     for c in claims:
-        if c.value and c.value.label == "arr":
+        if c.value and c.value.label == "arr" and c.value.unit in ("USD", "USD_per_year"):
             s = c.sources[0]
             add(c.value.number, f"{Path(s.uri).name}, {s.locator}", c.id)
     for c in claims:
@@ -56,7 +56,9 @@ def arr_figures(claims: list[Claim], room_dir: str | Path) -> list[Figure]:
                 continue
             d = dict(pairs)
             name = Path(s.uri).name
-            flagged = c.severity == "flag"
+            # A flag about ARR or MRR brings the ARR column of the rows it cites; a flag about
+            # something else (paying customers on the same row) does not.
+            flagged = c.severity == "flag" and (bool(c.value and c.value.label in ("arr", "mrr")) or bool(_ARR.search(c.text)))
             if "sheet" in d:
                 # A line named ARR (a total), or an ARR column on a line a flag cites.
                 if _ARR.search(d.get("line") or "") or (flagged and _ARR.search(d.get("column") or "")):
@@ -77,7 +79,7 @@ def arr_side_by_side(claims: list[Claim], room_dir: str | Path) -> tuple[str, li
     if len(figs) < 2:
         return None
     stated = " ".join(c.text for c in claims)
-    parts = [f"{fmt_number(str(f.number), stated)} ({f.where})" for f in figs]
+    parts = [f"{fmt_number(str(f.number), stated, 'money')} ({f.where})" for f in figs]
     ids: list[str] = []
     for f in figs:
         ids += [i for i in f.claim_ids if i not in ids]

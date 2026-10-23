@@ -64,12 +64,14 @@ FLAG_TITLES = {
 }
 
 # Sentences that describe how a script worked, not what the room shows. The operator view keeps them.
-_PLUMBING = re.compile(r"[^.]*(?:scans/|\.py\b|Mislabel kind)[^.]*\.\s*")
+_PLUMBING = re.compile(r"[^.]*(?:scans/|\.py\b|Mislabel kind|\b[a-z]+(?:_[a-z0-9]+){2,}\b)[^.]*\.\s*")
+# "the redflags scan's rebuild_cohorts_from_customer_file check" names a script; a partner reads "a check on the room".
+_CHECK_NAME = re.compile(r"\bthe \w+ scan's [a-z0-9_]+ check\b")
 
 
 def partner_text(text: str) -> str:
     """A claim's sentence without the sentences about the script that made it."""
-    out = _PLUMBING.sub("", text).strip()
+    out = _PLUMBING.sub("", _CHECK_NAME.sub("a check on the room", text)).strip()
     return out or text
 
 
@@ -176,6 +178,13 @@ class _Builder:
         self.asks = {f"ask-{i:02d}": a for i, a in enumerate(readout.asks, 1)}
         # Flags shown in full in section 2: (line id, title, claim ids). Filled by summary().
         self.flag_lines: list[tuple[str, str, list[str]]] = []
+        # The claims scan's verdict on each pitch claim (supported, unsupported, contradicted) and what it is about.
+        self.pitch: dict[str, tuple[str, str]] = {}
+        table = _panel(readout, "claims table")
+        if table and "claim id" in table.columns:
+            for row in table.rows:
+                rec = dict(zip(table.columns, row))
+                self.pitch[rec["claim id"]] = (str(rec.get("label", "")).lower(), str(rec.get("kind", "")))
 
     # Quote check ----------------------------------------------------------
 
@@ -195,6 +204,43 @@ class _Builder:
             label = LABEL_WORDS[claim.value.label]
         return MemoLine(id=f"{sid}-{claim.id}", kind=kind, text=partner_text(claim.text), label=label,
                         claim_ids=[claim.id], ask_ids=self.asks_for_claim(claim.id), severity=claim.severity)
+
+    def is_pitch(self, claim: Claim) -> bool:
+        """A figure from the pitch, checked against the room by the claims scan."""
+        return claim.id in self.pitch or claim.check.name == "claim_support"
+
+    def pitch_verdict(self, claim: Claim) -> str:
+        if claim.id in self.pitch:
+            return self.pitch[claim.id][0]
+        return claim.text.split(":", 1)[0].strip().lower()
+
+    def pitch_lines(self, sid: str, claims: list[Claim]) -> list[MemoLine]:
+        """The pitch's claims for a section as one partner line, with each claim behind it.
+        The claims' own lines stay in the operator view, so a room with 60 pitch claims reads in a few lines."""
+        if not claims:
+            return []
+        by = {"supported": [], "unsupported": [], "contradicted": []}
+        for c in claims:
+            by.setdefault(self.pitch_verdict(c), []).append(c)
+        what = []
+        for c in by["unsupported"]:
+            w = (self.pitch.get(c.id, ("", ""))[1] or LABEL_WORDS.get(c.value.label if c.value else "", "")).strip()
+            if w and w.lower() not in [x.lower() for x in what]:
+                what.append(w)
+        n = len(claims)
+        k = len(by["supported"])
+        parts = [f"{k} {'matches' if k == 1 else 'match'} the room"] if k else []
+        if by["unsupported"]:
+            u = len(by["unsupported"])
+            parts.append(f"{u} {'has' if u == 1 else 'have'} nothing in the room to check against"
+                         + (f" ({_and(what[:6])}{' and more' if len(what) > 6 else ''})" if what else ""))
+        others = n - len(by["supported"]) - len(by["unsupported"])
+        if others:
+            parts.append(f"{others} {'disagrees' if others == 1 else 'disagree'} with it")
+        summary = MemoLine(id=f"{sid}-pitch", kind="claim", label="The pitch's figures",
+                           text=f"{n} figure{'s' if n != 1 else ''} from the pitch: " + "; ".join(parts) + ".",
+                           claim_ids=[c.id for c in claims])
+        return [summary] + [self.claim_line(sid, c).model_copy(update={"audience": "operator"}) for c in claims]
 
     def asks_for_claim(self, claim_id: str) -> list[str]:
         return [aid for aid, a in self.asks.items() if claim_id in a.claim_ids]
@@ -311,7 +357,13 @@ class _Builder:
                               text=re_line + (f" (stage from {src.split(':')[0]})." if src else ".")))
         raise_claims = self.claims_with_label("raise_amount", "pre_money", "post_money")
         if raise_claims:
-            lines += [self.claim_line("s01", c) for c in raise_claims]
+            by_label: dict[str, list[Claim]] = {}
+            for c in raise_claims:
+                by_label.setdefault(c.value.label, []).append(c)
+            for group in by_label.values():
+                ln = self.claim_line("s01", group[0])
+                ln.claim_ids = [c.id for c in group]
+                lines.append(ln)
         else:
             # The summary says it for the partners ("what it raises: not assessed yet"); the head keeps it for the operator.
             lines.append(self.readout_gap("s01-raise", "The raise and the pre-money valuation: not assessed yet.",
@@ -360,14 +412,25 @@ class _Builder:
                                   claim_ids=ids, severity="red", composed=True))
             self.flag_lines.append(("s02-flag-arr", title, ids))
             covered = set(ids)
+        # One red flag per subject: the deck, the video and a check that say the same thing share a line,
+        # in full for the first and behind the line for the rest.
+        groups: dict[str, tuple[str, list[Claim]]] = {}
         for c in flagged:
             if c.id in covered:
                 continue
-            title = FLAG_TITLES.get(cl.check_names(c.check.name)) or LABEL_WORDS.get(c.value.label if c.value else "", "") or "Files disagree"
-            lid = f"s02-flag-{c.id}"
+            title = FLAG_TITLES.get(cl.check_names(c.check.name)) or LABEL_WORDS.get(c.value.label if c.value else "", "")
+            key = title or c.id
+            groups.setdefault(key, (title or "Files disagree", []))[1].append(c)
+        for title, group in groups.values():
+            first = group[0]
+            lid = f"s02-flag-{first.id}"
+            text = partner_text(first.text)
+            if len(group) > 1:
+                more = len(group) - 1
+                text += f" {more} more claim{'s' if more != 1 else ''} on this, behind this line."
             lines.append(MemoLine(id=lid, kind="claim", label=f"Red flag {len(self.flag_lines) + 1}: {title}",
-                                  text=partner_text(c.text), claim_ids=[c.id], severity="red"))
-            self.flag_lines.append((lid, title, [c.id]))
+                                  text=text, claim_ids=[c.id for c in group], severity="red"))
+            self.flag_lines.append((lid, title, [c.id for c in group]))
         if not lines:
             lines.append(MemoLine(id="s02-no-flags", kind="fact", text="No red flag in the checks run so far."))
         return lines
@@ -418,14 +481,18 @@ class _Builder:
         if opener:
             lines.append(opener)
         refs: set[str] = set()
+        pitch: list[Claim] = []
         for c in routed:
             ref = self.flag_ref(sid, c.id)
             if ref:
                 if ref.id not in refs:
                     refs.add(ref.id)
                     lines.append(ref)
+            elif self.is_pitch(c):
+                pitch.append(c)
             else:
                 lines.append(self.claim_line(sid, c))
+        lines += self.pitch_lines(sid, pitch)
         gaps = self.room_gap_lines(sec.number)
         lines += gaps
         if not routed and not gaps and not opener:
@@ -540,8 +607,14 @@ class _Builder:
         for i, (k, ids) in enumerate(sorted(by_key.items()), 1):
             uri, loc, at = meta[k]
             lines.append(MemoLine(id=f"s16-src-{i:03d}", kind="source", text=f"{uri}, {loc}" + (f", read {at}" if at else ""),
-                                  claim_ids=sorted(set(ids))))
-        return lines
+                                  claim_ids=sorted(set(ids)), audience="operator"))
+        files = sorted({k.split("|", 1)[0] for k in by_key})
+        dates = sorted({m[2] for m in meta.values() if m[2]})
+        summary = MemoLine(id="s16-sources", kind="fact", label="Sources",
+                           text=f"{len(by_key)} places in {len(files)} files of the room"
+                                + (f", read {_and(dates)}" if dates else "")
+                                + ". Each claim's note names its own file and place.")
+        return [summary] + lines
 
     # Assemble -------------------------------------------------------------
 

@@ -44,11 +44,11 @@ def test_every_section_is_filled_or_names_its_gap(readout):
             assert any(ln.kind == "gap" for ln in s.lines) and s.empty_because, s.title
 
 
-def test_every_claim_lands_in_one_body_section(readout):
+def test_every_claim_lands_in_the_header_or_one_body_section(readout):
     memo = build_memo(readout, ROOM, AT)
     where: dict[str, set[int]] = {}
     for s in memo.sections:
-        if s.number in range(3, 12):
+        if s.number == 1 or s.number in range(3, 12):
             for ln in s.lines:
                 if ln.kind in ("claim", "ref"):
                     for cid in ln.claim_ids:
@@ -73,9 +73,8 @@ def test_flags_open_the_summary_in_full_once_and_are_referred_to_elsewhere(reado
     for cid in flags:
         words = partner_text(readout_claim(readout, cid).text)
         holders = [ln.id for _, ln in partner_lines(memo) if words in ln.text]
-        if not holders:  # an ARR figure the side-by-side line states instead of its sentence
-            composed = [ln for ln in s2 if ln.composed]
-            assert composed and cid in composed[0].claim_ids, cid
+        if not holders:  # behind a section 2 flag: an ARR figure on the side-by-side line, or a second claim on the same subject
+            assert any(cid in ln.claim_ids for ln in s2), cid
             continue
         assert len(holders) == 1 and holders[0].startswith("s02-"), (cid, holders)
     s12_refs = [ln for ln in memo.section(12).lines if ln.kind == "ref"]
@@ -98,12 +97,33 @@ def test_the_arr_figures_sit_side_by_side_from_claims_only(readout):
     assert deck_arr in line.claim_ids and set(line.claim_ids) <= set(memo.claims)
     # Every figure in the side-by-side sentence is in a cited claim's text or its sources' readings.
     side = line.text.split("side by side:", 1)[1].split(").", 1)[0]
+    from memo.sources import fmt_number
     backing = " ".join([memo.claims[c].text for c in line.claim_ids]
+                       + [fmt_number(str(memo.claims[c].value.number), "", "money") for c in line.claim_ids if memo.claims[c].value]
                        + [memo.sources[f"{s.uri}|{s.locator}"].reads_as for c in line.claim_ids for s in memo.claims[c].sources])
     figures = re.findall(r"\$[\d,]+(?:\.\d+)?", side)
     assert len(figures) >= 2
     for f in figures:
         assert f in backing, f
+
+
+def test_the_pitch_claims_read_as_one_line_per_section(readout):
+    memo = build_memo(readout, ROOM, AT)
+    pitch = {c.id for c in readout.claims if c.check.name == "claim_support"}
+    if not pitch:
+        return
+    for s in memo.sections:
+        shown = [ln for ln in visible(s, "partner") if ln.kind == "claim" and set(ln.claim_ids) & pitch and not ln.severity == "red"]
+        own = [ln for ln in shown if ln.id.endswith("-pitch")]
+        assert len(own) <= 1, s.title
+        if own:
+            behind = [ln for ln in s.lines if ln.audience == "operator" and ln.kind == "claim" and set(ln.claim_ids) <= pitch]
+            assert set(own[0].claim_ids) == {cid for ln in behind for cid in ln.claim_ids}
+            assert re.match(r"\d+ figures? from the pitch: ", own[0].text)
+    # Every pitch claim is reachable from a partner line: the section's pitch line, a flag, or the header.
+    reach = {cid for _, ln in partner_lines(memo) for cid in ln.claim_ids}
+    assert pitch <= reach
+    assert sum(len(visible(s, "partner")) for s in memo.sections) < len(readout.claims) + 60
 
 
 def test_the_partner_view_holds_no_plumbing(readout):

@@ -3,6 +3,9 @@
 // For every line with something behind it: one click on the line must show its claims (or, for a
 // gap, its checklist item and ask line). For every claim shown: one more click on its source button
 // must show the source text with the quote marked, and the "agree" and "disagree" lists.
+// It first reads the partner view (the default) and checks that what a partner sees holds no plumbing:
+// no claim ids, check names, checklist numbers, commands or blanks. Then it switches to the operator
+// view, where every line shows, and drills every line. Screenshots are of the partner view.
 // Writes <out_dir>/<name>_drive.json and light and dark screenshots.
 const { chromium } = require('playwright');
 const fs = require('fs');
@@ -21,6 +24,24 @@ const exe = process.env.CHROME || '/opt/pw-browsers/chromium-1194/chrome-linux/c
     const page = await browser.newPage({ viewport: { width: 1100, height: 900 } });
     await page.goto(url);
     report.lines = await page.locator('.line[data-line-id]').count();
+    // The partner view: what shows, and that none of it is plumbing.
+    const firstScreen = pg => pg.evaluate(() => {
+      window.scrollTo(0, 0); const out = [];
+      document.querySelectorAll('.line[data-line-id]').forEach(l => {
+        const r = l.getBoundingClientRect(); if (l.offsetParent !== null && r.top < window.innerHeight && r.bottom > 0) out.push(l.getAttribute('data-line-id')); });
+      return out; });
+    report.partner_first_screen = await firstScreen(page);
+    report.partner_visible_lines = await page.$$eval('.line[data-line-id]', ls => ls.filter(l => l.offsetParent !== null).length);
+    const partnerOpen = await page.$$eval('.line .line-open', bs => bs.filter(b => b.offsetParent !== null).map(b => b.closest('.line').getAttribute('data-line-id')));
+    for (const id of partnerOpen) await page.locator(`.line[data-line-id="${id}"] > .line-open`).click();
+    await page.$$eval('.claim .source-open', bs => bs.filter(b => b.offsetParent !== null).forEach(b => b.click()));
+    const partnerText = await page.evaluate(() => document.body.innerText);
+    const plumbing = partnerText.match(/redflags-\d+|(?<![!\w])C\d\d\b|python -m|scans\/|Who writes|not built|[Vv]erifier|Operator writes|\b[a-z]+_vs_[a-z_]+\b/g) || [];
+    report.partner_plumbing = [...new Set(plumbing)];
+    for (const p of report.partner_plumbing) report.failures.push(`partner view shows plumbing: ${p}`);
+    await page.reload();
+    // The operator view: every line shows; drill them all.
+    await page.click('#view-toggle');
     const ids = await page.$$eval('.line .line-open', bs => bs.map(b => b.closest('.line').getAttribute('data-line-id')));
     report.drillable = ids.length;
     for (const id of ids) {
@@ -58,7 +79,7 @@ const exe = process.env.CHROME || '/opt/pw-browsers/chromium-1194/chrome-linux/c
       await btn.click();
     }
     // A drilled-open state for the screenshots: the first claim line with a linked claim, else the first claim line.
-    await page.reload();
+    await page.reload();   // back to the partner view
     const pick = await page.$$eval('.line.kind-claim', ls => ls.map(l => l.getAttribute('data-line-id')));
     const first = pick.find(i => i.startsWith('s07')) || pick[0];
     if (first) {
@@ -77,6 +98,7 @@ const exe = process.env.CHROME || '/opt/pw-browsers/chromium-1194/chrome-linux/c
     const phone = await browser.newPage({ viewport: { width: 390, height: 844 }, colorScheme: 'dark' });
     await phone.goto(url);
     await phone.screenshot({ path: path.join(out, `${name}_phone_dark.png`) });
+    report.phone_first_screen = await firstScreen(phone);
     report.phone_horizontal_scroll = await phone.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
   } finally {
     await browser.close();
