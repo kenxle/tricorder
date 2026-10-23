@@ -64,7 +64,9 @@ def memo_versions(room: str) -> list[int]:
 def edit_memo(room: str, req: EditRequest) -> Memo:
     latest = _latest(room)
     if req.base_version != latest.version:
-        raise HTTPException(409, f"the memo is at version {latest.version}; reload and edit that version")
+        # The page keeps the typed changes and offers to reapply them on latest_version.
+        raise HTTPException(409, {"message": f"the memo is at version {latest.version}; your changes were made on version "
+                                             f"{req.base_version}", "latest_version": latest.version})
     try:
         return edit(_room(room), req.edits, req.author).memo
     except EditError as err:

@@ -34,13 +34,28 @@ def unsourced_numbers(text: str) -> list[str]:
     return [m.group(0).strip() for m in _NUMBER.finditer(_DATE.sub(" ", text))]
 
 
+def _digits(n: str) -> str:
+    return re.sub(r"[^\d.]", "", n).rstrip(".")
+
+
+def numbers_not_in_claims(text: str, claims: list) -> list[str]:
+    """Figures in the operator's sentence that none of the attached claims states."""
+    stated = " ".join(c.text + (f" {c.value.number:g}" if c.value else "") for c in claims)
+    have = {_digits(n) for n in unsourced_numbers(stated)}
+    return [n for n in unsourced_numbers(text) if _digits(n) not in have]
+
+
 def _operator_line(memo: Memo, version: int, k: int, text: str, claim_ids: list[str], author: str) -> MemoLine:
+    """An operator line. Attached claims stay only while every figure in the sentence is one they state;
+    a sentence with a figure of the operator's own is the operator's, and shows no claim behind it."""
     text = text.strip()
     if not text:
         raise EditError("an operator line needs text")
     unknown = [c for c in claim_ids if c not in memo.claims]
     if unknown:
         raise EditError(f"no claim {unknown[0]!r} in this memo; attach a claim the memo cites")
+    if claim_ids and numbers_not_in_claims(text, [memo.claims[c] for c in claim_ids]):
+        claim_ids = []
     return MemoLine(id=f"op-{version}-{k}", kind="operator", text=text, claim_ids=list(claim_ids), author=author,
                     version=version, unsourced_numbers=[] if claim_ids else unsourced_numbers(text))
 
@@ -89,8 +104,10 @@ def apply_edits(memo: Memo, edits: list[Edit], author: str, at: str) -> Memo:
                 del sec.lines[i]
                 log.append(f"removed {whose} line {old.id} from section {sec.number}")
             else:
-                sec.lines[i] = _operator_line(new, v, k, e.text, e.claim_ids, author)
-                log.append(f"replaced {whose} line {old.id} in section {sec.number}")
+                line = _operator_line(new, v, k, e.text, e.claim_ids, author)
+                sec.lines[i] = line
+                detached = " (its claims detached: the new sentence states a figure they do not)" if e.claim_ids and not line.claim_ids else ""
+                log.append(f"replaced {whose} line {old.id} in section {sec.number}{detached}")
     for sec in new.sections:
         sec.empty_because = empty_because(sec)
     what = "; ".join(log)

@@ -33,7 +33,13 @@ LineKind = Literal[
     "fact",        # A header field: to, date, version, the synthetic notice.
     "source",      # One cited source in section 16.
     "change",      # One change-log line in section 16.
+    "ref",         # Points to a flag shown in full elsewhere (section 2); opens the same claims.
 ]
+
+# Who sees a line. "all": the partner view, the operator view and the PDF. "page": both views of
+# the page, not the PDF (the ask list summary). "operator": only the operator view (blanks,
+# one-by-one ask lines, the plumbing of a section that is not assessed yet).
+Audience = Literal["all", "page", "operator"]
 
 
 class _Strict(BaseModel):
@@ -62,6 +68,8 @@ class MemoLine(_Strict):
     version: int | None = Field(default=None, description="Operator lines only: the version that added or last changed it.")
     unsourced_numbers: list[str] = Field(default_factory=list, description="Numbers in an operator line with no claim behind them: 'operator's figure, no source'.")
     severity: Literal["green", "red", "flag", "watch", "info"] | None = None
+    audience: Audience = "all"
+    composed: bool = Field(default=False, description="Tricorder put this sentence together from several claims' values and sources (memo/compose.py).")
 
 
 class MemoSection(_Strict):
@@ -71,6 +79,7 @@ class MemoSection(_Strict):
     who_writes: str = Field(description="From MEMO_TEMPLATE.md, 'Who writes it'.")
     lines: list[MemoLine] = Field(default_factory=list)
     empty_because: list[str] = Field(default_factory=list, description="When Tricorder has nothing to put here: the gap lines' text that say why.")
+    collapsed: bool = Field(default=False, description="Not assessed yet: the partner view shows one line.")
 
 
 class ChecklistRef(_Strict):
@@ -92,6 +101,7 @@ class SourceText(_Strict):
     key: str = Field(description="'uri|locator'")
     text: str
     found: bool = Field(description="The quote checker found the quote in this text.")
+    reads_as: str = Field(default="", description="The source as a partner reads it: a CSV row with its column names, a cell with its line and column (memo/sources.py).")
 
 
 class ChangeEntry(_Strict):

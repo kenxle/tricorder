@@ -1,9 +1,15 @@
-"""The static PDF: the same sections in the same order, every claim footnoted.
+"""The static PDF, for the partners: the partner view of the memo, every claim footnoted.
+
+It prints what the page's partner view shows, minus the lines that belong to
+the page only (the ask list, which goes to the founder, not the partners).
+No check names, claim ids, checklist numbers, operator blanks or commands.
+Sections with nothing to say for a partner are left out. The recommendation,
+when the operator has written one in section 15, opens section 2.
 
 Each line that cites claims carries note numbers. The notes print at the end
-of each section: the claim id, then each source's file, locator, quoted text
-and the date it was read. Gap lines, operator lines and the operator's blanks
-are marked as such. The "could not verify" box prints at the end of section 14.
+of each section: each source's file and locator, what it reads as (a CSV row
+with its column names, a cell with its line and column, numbers formatted as
+the claims state them), and the date it was read.
 
 Made with reportlab (see 04_architecture.md, "The PDF", for why and the
 alternatives). It is imported only when a PDF is written.
@@ -14,25 +20,50 @@ from __future__ import annotations
 from pathlib import Path
 from xml.sax.saxutils import escape
 
-from memo.model import Memo, MemoLine
+from memo.html import recommendation, visible
+from memo.model import Memo, MemoLine, source_key
 
-TAGS = {"gap": "Gap", "operator": "Operator", "slot": "Operator writes", "reading": "Reading",
-        "unverified": "Could not verify", "ask": "Ask", "coverage": "Checklist", "pieces": "Pieces"}
-FOOTNOTED = {"claim", "reading", "pieces", "operator", "ask"}
+FOOTNOTED = {"claim", "reading", "pieces", "operator"}
+HEAD_LABELS = ("To", "Date", "Re", "Version")
+
+
+def pdf_sections(memo: Memo) -> list[tuple[int, str, list[MemoLine]]]:
+    """The sections and lines the PDF prints, in order."""
+    rec = recommendation(memo)
+    out = []
+    for s in memo.sections:
+        lines = visible(s, "pdf")
+        if s.number == 2 and rec:
+            lines = [rec] + lines
+        if lines:
+            out.append((s.number, s.title, lines))
+    return out
+
+
+def note_text(memo: Memo, claim_id: str) -> str:
+    """One note: each source's file, locator and reading, and the date it was read."""
+    c = memo.claims[claim_id]
+    parts = []
+    for s in c.sources:
+        st = memo.sources.get(source_key(s.uri, s.locator))
+        reads = st.reads_as if st and st.reads_as else f"\"{s.quote}\""
+        part = f"{Path(s.uri).name}, {s.locator}: {reads}"
+        if s.retrieved_at:
+            part += f". Read {s.retrieved_at}"
+        parts.append(part)
+    return "; ".join(parts) + "."
 
 
 def _line_html(line: MemoLine, notes: list[int]) -> str:
-    tag = TAGS.get(line.kind)
-    if line.kind == "operator":
-        tag = f"Operator ({line.author}, version {line.version})"
     parts = []
-    if tag:
-        parts.append(f'<font size="7" color="#5d6470">{escape(tag.upper())}</font>&nbsp;&nbsp;')
     if line.label:
         parts.append(f"<b>{escape(line.label)}.</b> ")
     parts.append(escape(line.text))
-    if line.kind == "operator" and line.unsourced_numbers:
-        parts.append(f' <font color="#8a5a00">[operator\'s figure, no source: {escape(", ".join(line.unsourced_numbers))}]</font>')
+    if line.kind == "operator":
+        parts.append(f' <font size="7.5" color="#5d6470">({escape(line.author or "")}, version {line.version})</font>')
+        if line.unsourced_numbers:
+            parts.append(f' <font color="#8a5a00">[{escape(line.author or "the operator")}\'s figure, no source: '
+                         f'{escape(", ".join(line.unsourced_numbers))}]</font>')
     if notes:
         parts.append("<super>" + ",".join(str(n) for n in notes) + "</super>")
     return "".join(parts)
@@ -44,7 +75,7 @@ def render_pdf(memo: Memo, path: str | Path) -> Path:
     from reportlab.lib.pagesizes import LETTER
     from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
     from reportlab.lib.units import inch
-    from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
+    from reportlab.platypus import Paragraph, SimpleDocTemplate
 
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -58,16 +89,21 @@ def render_pdf(memo: Memo, path: str | Path) -> Path:
     banner = ParagraphStyle("banner", parent=body, textColor=colors.HexColor("#8a5a00"))
 
     story = [Paragraph(escape(f"{memo.company}: memo for the partners' meeting"), title),
-             Paragraph(escape(f"Shared version {memo.version}. Drafted {memo.built_at[:16].replace('T', ' ')} UTC from the readout built "
-                              f"{memo.readout_built_at}. Every claim is footnoted to its file, locator and quoted text."), who)]
+             Paragraph(escape("Every claim is footnoted to the file it came from."), who)]
     if memo.synthetic_notice:
         story.append(Paragraph(escape(memo.synthetic_notice), banner))
     n = 0
-    for sec in memo.sections:
-        story.append(Paragraph(escape(f"{sec.number}. {sec.title}"), h2))
-        story.append(Paragraph(escape(f"Who writes it: {sec.who_writes}"), who))
+    for number, sec_title, lines in pdf_sections(memo):
+        if number == 1:
+            # The header prints as one compact line under the title, as on the page.
+            head = [ln for ln in lines if ln.kind == "fact" and ln.label in HEAD_LABELS]
+            story.insert(2, Paragraph(escape("   ".join(f"{ln.label}: {ln.text}" for ln in head)), who))
+            lines = [ln for ln in lines if ln not in head and not (ln.kind == "fact" and ln.label == "Synthetic")]
+            if not lines:
+                continue
+        story.append(Paragraph(escape(f"{number}. {sec_title}"), h2))
         sec_notes: list[tuple[int, str]] = []
-        for ln in sec.lines:
+        for ln in lines:
             nums = []
             if ln.kind in FOOTNOTED:
                 for cid in ln.claim_ids:
@@ -79,16 +115,13 @@ def render_pdf(memo: Memo, path: str | Path) -> Path:
         if sec_notes:
             story.append(Paragraph("Notes", notes_h))
             for num, cid in sec_notes:
-                c = memo.claims[cid]
-                srcs = "; ".join(f"{s.uri}, {s.locator}: \"{s.quote}\"" + (f" (read {s.retrieved_at})" if s.retrieved_at else "")
-                                 for s in c.sources)
-                story.append(Paragraph(escape(f"[{num}] {cid}. {c.confidence}, {c.check.name}. {srcs}"), note))
+                story.append(Paragraph(escape(f"[{num}] {note_text(memo, cid)}"), note))
 
     def footer(canvas, doc):
         canvas.saveState()
         canvas.setFont("Helvetica", 7)
         canvas.setFillColor(colors.HexColor("#5d6470"))
-        text = f"{memo.company} memo, shared version {memo.version}."
+        text = f"{memo.company} memo, version {memo.version}."
         if memo.synthetic_notice:
             text += f" {memo.synthetic_notice}"
         canvas.drawString(0.75 * inch, 0.5 * inch, text)
