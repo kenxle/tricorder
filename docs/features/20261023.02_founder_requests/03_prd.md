@@ -22,7 +22,7 @@ Out: sending mail; reading the operator's mailbox (inbox slices); a model call; 
 
 - **FR-R1.** Every ask line in the readout is listed with its number (its position in `readout.asks`, from 1), its founder words, its title, its piece, whether it is in the pinned top five, whether it is "if you have it", and its ask stage.
 - **FR-R2.** A draft can be made for one line or any set of lines. With no lines named, the draft covers the pinned top five; with none pinned, every required line asked before the second meeting.
-- **FR-R3.** Each document line carries guidance from its document guide (the checklist row's `guide` column): what the document is, the form that works best, and what a good one shows. Every guide the checklist names has guidance.
+- **FR-R3.** Each document line carries guidance from its document guide (the checklist row's `guide` column). The operator's view links the guide. The founder's text carries one "Ideally it includes ..." line per kind of document (FR-R26). Every guide the checklist names has guidance.
 - **FR-R4.** Lines that share a guide appear under one heading in the message, with the guidance once.
 - **FR-R5.** Lines marked "if you have it" go under "If you have them:", after the required lines.
 - **FR-R6.** The subject, greeting and body contain no file path, cell reference, claim id, checklist id or the readout's internal phrases ("Not in the room:", "Also needed for"). Applies to every line on Brasswick and Hollis Voice.
@@ -33,10 +33,10 @@ Out: sending mail; reading the operator's mailbox (inbox slices); a model call; 
 
 ### Receiving
 
-- **FR-R11.** A file is added for one named request (a checklist id, or the ask line's number, which resolves to its checklist id). An unknown request is refused.
+- **FR-R11.** A file is added for one or more named requests (checklist ids, or ask line numbers that resolve to checklist ids, comma separated). The first decides where it lands. An unknown request is refused.
 - **FR-R12.** The file lands in the room's numbered folder for its item: the folder that already holds the item's documents; else the folder named for the item's piece (metrics, financials, contracts or customers, team, overview, legal); else a new folder with the next number.
 - **FR-R13.** The file is saved under a name the scans and the coverage step recognise for that item (`hiring_plan.csv` for the hiring plan; a prefix from the coverage file patterns for other documents), so the item reads as found after the merge.
-- **FR-R14.** The scans that were waiting run again: every built scan whose needs are met and whose last result did not list one of the room's current input files (or that has no result yet). Then the merge rebuilds the readout. The answer names the scans that ran, the item's coverage status before and after, and the number of ask lines before and after.
+- **FR-R14.** The scans that were waiting run again: every built scan whose needs are met and whose last result did not list one of the room's current input files (or that has no result yet). Then the merge rebuilds the readout. The answer gives each file's saved path and each request's coverage status before and after, the number of ask lines before and after, and the plain-words summary of FR-R27.
 - **FR-R15.** Each received file is logged in `out/<room>/founder_requests.json`: when, the request, the original name, the saved path, its size and the scans rerun.
 
 ### Safety of the upload
@@ -49,7 +49,17 @@ Out: sending mail; reading the operator's mailbox (inbox slices); a model call; 
 
 ### Page
 
-- **FR-R21.** The readout page shows the panel: ask lines with checkboxes and per-line "Draft request", the draft with Copy and "Open in mail app", and "Add a file from the founder" with the result.
+- **FR-R21.** The readout page shows the panel: ask lines with checkboxes and per-line "Draft request", the draft with the trust line ("Tricorder never sends this. Copy it, or open it in your own mail app and send it from there."), a date, name and fund, Copy and "Open in mail app", and "Add the founder's reply" with the result. No check code appears in the panel's text. The add box sits beside the list on a wide screen and above it on a narrow one.
+
+### Fix round: what the persona review changed (2026-10-23)
+
+- **FR-R22. Never ask for a file the room holds.** Each line's own document is checked against the room's files with coverage's file patterns (`scans.memo.checklist.match_document`, pattern only). A held line is dropped and listed for the operator as "Not asked for: the room already holds these". A line whose document is held but still lacks something is reworded to the missing part: the revenue line asks for the kind of revenue on each row and an MRR column; the cohort line asks for the cohort export behind the deck's retention figure.
+- **FR-R23. Never ask twice.** Lines that ask for the same document merge into one item that keeps every line number: material agreements (C98 to C100, C110 to C114), option grants and 409A (C73, C78), and people we can call (C35, C46, C58, C97). Material agreements names a statement of work already in the room ("beyond the ... statement of work already in the room"). A merged item lists each request a reply's file can answer, by its plain name.
+- **FR-R24. Closing paperwork waits at seed.** At pre-seed and seed, incorporation documents and bylaws (C74), IP assignments (C76) and board minutes (C77) are "After the term sheet" and never in the default five.
+- **FR-R25. The top five is what settles the decision first.** From the lines asked before the second meeting, rank by the piece's weight (traction and revenue, retention, burn and runway, unit economics, customers, market, comps, team, the pitch itself), then lines a red flag or a weak piece rests on, then required before "if you have it", then line order. Take five.
+- **FR-R26. The email is short and reads like a person.** Subject "<Company>: a few things before our next meeting" ("one thing" for one item). The body thanks them for the room, asks by a date with a reason ("before our partner meeting"; default a week from today, editable), says a rough version is fine, then one plain line per item and one "Ideally it includes ..." line per kind of document, and signs off with the operator's name and fund (`TRICORDER_OPERATOR_NAME`, `TRICORDER_FUND_NAME`, or the two fields). On Brasswick the default five fits a mail link (at most 2,000 characters).
+- **FR-R27. The receipt says what changed in plain words.** For each request: "Coverage now finds <item>.", or that it moved, or that it is still missing. Then new or dropped claims, new or dropped flags and moved piece verdicts; or "No check reads this file yet, so no number changed." Then the ask list's count, if it changed. No scan module names.
+- **FR-R28. Several files in one add.** Every file is checked before any is written; one bad file refuses the whole add. The waiting scans run once and the readout is rebuilt once. One file may answer several requests.
 
 ## Failure cases
 

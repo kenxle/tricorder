@@ -1,0 +1,27 @@
+$ python3 -m founder_requests draft data_room/brasswick --to celia@example.com --sender Sam Ortiz --fund Example Ventures --by 2026-11-06
+(cwd /home/claude/wt/founder-requests, TRICORDER_OUT_DIR=/tmp/tricorder-verify/founder-requests-r2/out)
+Subject: Brasswick: a few things before our next meeting
+
+Hi Celia,
+
+Thanks for sharing the Brasswick data room. Could you send the items below by Friday 6 November? We would like them before our partner meeting. A rough version is fine, and if something does not exist yet, just say so.
+
+1. Please send monthly balance sheets.
+   Ideally it includes an export from your accounting system, one column per month, cash or accrual basis stated.
+2. Please send your hiring plan for the next 12 to 18 months.
+   Ideally it includes one row per hire with role, start date, base pay and equity.
+
+If you have them:
+3. Please add the kind of revenue (subscription, pilot or one-time fee) to each row of the revenue by customer file you sent, and an MRR column to the monthly metrics.
+4. Please send the investor updates you have sent since your first outside money.
+   Ideally it includes the original emails or PDFs with their send dates.
+5. Please send the cohort export behind the deck's retention figure, with a one-line definition of a cohort.
+   Ideally it includes one row per starting month, customer and revenue retention, monthly and annual plans apart.
+
+Thanks,
+Sam Ortiz
+Example Ventures
+
+mailto (1750 characters):
+mailto:celia@example.com?subject=Brasswick%3A%20a%20few%20things%20before%20our%20next%20meeting&body=Hi%20Celia%2C%0D%0A%0D%0AThanks%20for%20sharing%20the%20Brasswick%20data%20room.%20Could%20you%20send%20the%20items%20below%20by%20Friday%206%20November%3F%20We%20would%20like%20them%20before%20our%20partner%20meeting.%20A%20rough%20version%20is%20fine%2C%20and%20if%20something%20does%20not%20exist%20yet%2C%20just%20say%20so.%0D%0A%0D%0A1.%20Please%20send%20monthly%20balance%20sheets.%0D%0A%20%20%20Ideally%20it%20includes%20an%20export%20from%20your%20accounting%20system%2C%20one%20column%20per%20month%2C%20cash%20or%20accrual%20basis%20stated.%0D%0A2.%20Please%20send%20your%20hiring%20plan%20for%20the%20next%2012%20to%2018%20months.%0D%0A%20%20%20Ideally%20it%20includes%20one%20row%20per%20hire%20with%20role%2C%20start%20date%2C%20base%20pay%20and%20equity.%0D%0A%0D%0AIf%20you%20have%20them%3A%0D%0A3.%20Please%20add%20the%20kind%20of%20revenue%20%28subscription%2C%20pilot%20or%20one-time%20fee%29%20to%20each%20row%20of%20the%20revenue%20by%20customer%20file%20you%20sent%2C%20and%20an%20MRR%20column%20to%20the%20monthly%20metrics.%0D%0A4.%20Please%20send%20the%20investor%20updates%20you%20have%20sent%20since%20your%20first%20outside%20money.%0D%0A%20%20%20Ideally%20it%20includes%20the%20original%20emails%20or%20PDFs%20with%20their%20send%20dates.%0D%0A5.%20Please%20send%20the%20cohort%20export%20behind%20the%20deck%27s%20retention%20figure%2C%20with%20a%20one-line%20definition%20of%20a%20cohort.%0D%0A%20%20%20Ideally%20it%20includes%20one%20row%20per%20starting%20month%2C%20customer%20and%20revenue%20retention%2C%20monthly%20and%20annual%20plans%20apart.%0D%0A%0D%0AThanks%2C%0D%0ASam%20Ortiz%0D%0AExample%20Ventures%0D%0A
+exit 0
