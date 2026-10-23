@@ -15,7 +15,7 @@ other file is a source of its own.
 from __future__ import annotations
 
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Callable
 
@@ -41,6 +41,19 @@ class Evidence:
     row: str | None     # checklist row id of the document
     how: str            # how the script read it: "named cell RUNWAY_MONTHS"
     printed: str        # the figure as the reader shows it
+    more: list[Source] = field(default_factory=list)  # the other end of a range a sum or count was made from
+
+    @property
+    def sources(self) -> list[Source]:
+        return [self.source] + self.more
+
+    @property
+    def words(self) -> str:
+        """Where and how, for a person: "row 22; column arr, month 2026-09", or the range a sum spans."""
+        loc = self.source.locator
+        if loc in self.how or "rows " in self.how:
+            return self.how
+        return f"{loc}; {self.how}"
 
     @property
     def group(self) -> str:
@@ -200,8 +213,8 @@ def _metrics_ltm(room: Path, st, as_of) -> Reading:
         return Reading([])
     number = sum(float(r[col]) for r in rows[i - 11:i + 1])
     how = f"sum of column {col}, {rows[i - 11]['month']} to {rows[i]['month']} (rows {i - 9} to {i + 2})"
-    return Reading([Evidence(number, None, _row_source(room, path, i), "metrics export", "C02", how, _fmt(number)),
-                    Evidence(number, None, _row_source(room, path, i - 11), "metrics export", "C02", how, _fmt(number))])
+    return Reading([Evidence(number, None, _row_source(room, path, i - 11), "metrics export", "C02", how, _fmt(number),
+                             [_row_source(room, path, i)])])
 
 
 def _metrics_first(room: Path, st, as_of) -> Reading:
@@ -226,8 +239,9 @@ def _metrics_range(room: Path, st, as_of) -> Reading:
         return Reading([])
     how = f"rows for {first} and {last} exist; the export starts at {rows[0]['month']}"
     iso = f"{first}..{last}"
-    return Reading([Evidence(None, iso, _row_source(room, path, a), "metrics export", "C02", how, iso),
-                    Evidence(None, iso, _row_source(room, path, b), "metrics export", "C02", how, iso)])
+    how += f" (rows {a + 2} and {b + 2})"
+    return Reading([Evidence(None, iso, _row_source(room, path, a), "metrics export", "C02", how, iso,
+                             [_row_source(room, path, b)] if b != a else [])])
 
 
 def _metrics_grew(room: Path, st, as_of) -> Reading:
@@ -240,11 +254,10 @@ def _metrics_grew(room: Path, st, as_of) -> Reading:
         return Reading([])
     values = [float(rows[i][col]) for i in idx]
     grew = all(b > a for a, b in zip(values, values[1:]))
-    how = f"column {col}, {rows[idx[0]]['month']} to {rows[idx[-1]]['month']}: " + ("rose every month" if grew else "did not rise every month")
+    how = (f"column {col}, {rows[idx[0]]['month']} to {rows[idx[-1]]['month']} (rows {idx[0] + 2} to {idx[-1] + 2}): "
+           + ("rose every month" if grew else "did not rise every month"))
     return Reading([Evidence(1.0 if grew else 0.0, None, _row_source(room, path, idx[0]), "metrics export", "C02", how,
-                             "rose every month" if grew else "did not rise every month"),
-                    Evidence(1.0 if grew else 0.0, None, _row_source(room, path, idx[-1]), "metrics export", "C02", how,
-                             "rose every month" if grew else "did not rise every month")])
+                             "rose every month" if grew else "did not rise every month", [_row_source(room, path, idx[-1])])])
 
 
 def _customers(room: Path, st, as_of, what: str) -> Reading:
@@ -262,24 +275,31 @@ def _customers(room: Path, st, as_of, what: str) -> Reading:
     total = sum(rev.values())
     span = f"rows {idx[0] + 2} to {idx[-1] + 2}" + (", product_type Subscription" if "product_type" in rows[0] else "")
     doc, row = "revenue by customer", "C03"
+
+    def ranged(number: float, used: list[int], how: str, printed: str, first: int | None = None) -> Reading:
+        """Cite the rows the figure was made from: the first and last of the range."""
+        lead = used[0] if first is None else first
+        more = [_row_source(room, path, i) for i in sorted({used[0], used[-1]} - {lead})]
+        return Reading([Evidence(number, None, _row_source(room, path, lead), doc, row, how, printed, more)])
+
     if what in ("sum", "arr"):
         number = total * (12 if what == "arr" else 1)
         how = f"sum of column {col} for {month}, {span}" + (", times 12" if what == "arr" else "")
-        top = max(idx, key=lambda i: rev[i])
-        return Reading([Evidence(number, None, _row_source(room, path, top), doc, row, how, _fmt(number))])
+        return ranged(number, idx, how, _fmt(number))
     if what == "count_now":
         paying = [i for i in idx if rev[i] > 0]
-        how = f"customers with {col} above 0 in {month}, {span}"
-        return Reading([Evidence(float(len(paying)), None, _row_source(room, path, paying[-1]), doc, row, how, str(len(paying)))])
+        how = f"customers with {col} above 0 in {month}, rows {paying[0] + 2} to {paying[-1] + 2}" if paying else ""
+        return ranged(float(len(paying)), paying, how, str(len(paying))) if paying else Reading([])
     if what == "count_ever":
-        ever = {r["customer_id"] for r in rows if r["month"] <= month and recurring(r) and float(r[col] or 0) > 0}
-        how = f"distinct customer_id with {col} above 0 in any month to {month}"
-        return Reading([Evidence(float(len(ever)), None, _row_source(room, path, idx[-1]), doc, row, how, str(len(ever)))])
+        used = [i for i, r in enumerate(rows) if r["month"] <= month and recurring(r) and float(r[col] or 0) > 0]
+        ever = {rows[i]["customer_id"] for i in used}
+        how = f"distinct customer_id with {col} above 0 in any month to {month}, rows {used[0] + 2} to {used[-1] + 2}" if used else ""
+        return ranged(float(len(ever)), used, how, str(len(ever))) if used else Reading([])
     if what == "largest_share":
         top = max(idx, key=lambda i: rev[i])
         share = 100 * rev[top] / total if total else 0.0
-        how = f"{rows[top]['customer_name']} {col} {_fmt(rev[top])} of {_fmt(total)} in {month} ({span})"
-        return Reading([Evidence(share, None, _row_source(room, path, top), doc, row, how, f"{share:.1f}%")])
+        how = f"{rows[top]['customer_name']} {col} {_fmt(rev[top])} (row {top + 2}) of {_fmt(total)}, the sum for {month}, {span}"
+        return ranged(share, idx, how, f"{share:.1f}%", first=top)
     if what == "locations" and "locations" in rows[idx[0]]:
         names = named_entities(st.quote)
         pick = [i for i in idx if any(n.split()[0].lower() in rows[i]["customer_name"].lower() for n in names)] if names else []
@@ -290,7 +310,7 @@ def _customers(room: Path, st, as_of, what: str) -> Reading:
     if what == "invoices" and "carrier_invoices_audited" in rows[idx[0]]:
         number = sum(float(rows[i]["carrier_invoices_audited"] or 0) for i in idx)
         how = f"sum of column carrier_invoices_audited for {month}, {span}"
-        return Reading([Evidence(number, None, _row_source(room, path, idx[-1]), doc, row, how, _fmt(number))])
+        return ranged(number, idx, how, _fmt(number))
     return Reading([])
 
 
@@ -302,8 +322,9 @@ def _hiring(room: Path, st, as_of, what: str) -> Reading:
         return Reading([])
     doc, row = "hiring plan", "C22"
     if what == "count":
+        ids = f", {rows[0]['hire_id']} to {rows[-1]['hire_id']}" if "hire_id" in rows[0] else ""
         return Reading([Evidence(float(len(rows)), None, _row_source(room, path, len(rows) - 1), doc, row,
-                                 f"{len(rows)} hire rows, {rows[0]['hire_id']} to {rows[-1]['hire_id']}", str(len(rows)))])
+                                 f"{len(rows)} hire rows (rows 2 to {len(rows) + 1}){ids}", str(len(rows)))])
     if what == "last_headcount":
         number = float(rows[-1]["headcount_after_hire"])
         return Reading([Evidence(number, None, _row_source(room, path, len(rows) - 1), doc, row,
@@ -311,7 +332,7 @@ def _hiring(room: Path, st, as_of, what: str) -> Reading:
     if what == "dept":
         line = st.quote.lower()
         dept = next((d for d in DEPARTMENTS if line.startswith(d)), None)
-        if dept is None:
+        if dept is None or "department" not in rows[0]:
             return Reading([])
         hits = [i for i, r in enumerate(rows) if r.get("department", "").lower() == dept]
         if not hits:
@@ -359,8 +380,9 @@ def _pattern(room: Path, kind: str, pattern: str, doc: str, row: str, entity_fro
                 start = page.rfind("\n", 0, m.start()) + 1
                 end = page.find("\n", m.end())
                 quote = page[start:end if end != -1 else len(page)].strip()
+                said = " ".join(m.group(0).split())
                 out.append(Evidence(number, None, _src(room, path, f"page {n}", quote), doc, row,
-                                    f"{path.name}, page {n}", " ".join(m.group(0).split())))
+                                    f"the words '{said}' on {path.name}, page {n}", said))
     return Reading(out, any_of=entity_from is None)
 
 
@@ -373,13 +395,15 @@ def _contract_date(room: Path, st, as_of) -> Reading:
     iso = st.mention.iso or ""
     out = []
     for path, n, line, page in _pdf_lines(room, "contracts"):
-        if not any(name.split()[0] in page for name in names):
+        named = next((name for name in names if name.split()[0] in page), None)
+        if named is None:
             continue
         dates = re.findall(r"\d{4}-\d{2}-\d{2}", line)
         if any(d.startswith(iso) for d in dates):
             hit = next(d for d in dates if d.startswith(iso))
             out.append(Evidence(None, hit[:len(iso)], _src(room, path, f"page {n}", line.strip()), "customer contract", "C34",
-                                f"{path.name}, page {n}", hit))
+                                f"the date {hit} in the line '{line.strip()}' on {path.name}, page {n}, a page that names "
+                                f"{named.split()[0]}", hit))
             break
     return Reading(out)
 
@@ -401,6 +425,26 @@ def _contract_number(room: Path, st, as_of) -> Reading:
                                     f"{path.name}, page {n}", m.group(1)))
                 return Reading(out)
     return Reading(out)
+
+
+def _bios_years(room: Path, st, as_of) -> Reading:
+    """"N years" in the bios, said in the sentence about the founder the pitch names.
+    With no name in the pitch sentence, any bio's "N years" may match (any_of)."""
+    reading = _pattern(room, "bios", r"\b([a-z]+|\d+) years\b", "founder bios", "C53")
+    names = [n.split()[0] for n in named_entities(st.quote)] if st is not None else []
+    if not names or reading.missing:
+        return reading
+    from schema.readers import pdf_pages
+
+    kept = []
+    for e in reading.evidence:
+        page = pdf_pages(room / e.source.uri)[int(e.source.locator.split()[-1]) - 1]
+        at = page.find(e.source.quote)
+        start = max(page.rfind(". ", 0, at if at >= 0 else 0), page.rfind("\n\n", 0, at if at >= 0 else 0))
+        sentence = page[start + 1: at + len(e.source.quote)] if at >= 0 else e.source.quote
+        if any(name in sentence for name in names):
+            kept.append(e)
+    return Reading(kept, any_of=False)
 
 
 def _bios_founded(room: Path, st, as_of) -> Reading:
@@ -466,6 +510,6 @@ READERS: dict[str, Reader] = {
     "model_staff_now": lambda r, st, a: _named(r, ("STAFF_NOW", "EMPLOYEES_NOW")),
     "hiring_last_headcount": lambda r, st, a: _hiring(r, st, a, "last_headcount"),
     "model_staff_after": lambda r, st, a: _named(r, ("EMPLOYEES_AFTER_HIRES", "STAFF_AFTER_HIRES")),
-    "bios_years": lambda r, st, a: _pattern(r, "bios", r"\b([a-z]+|\d+) years\b", "founder bios", "C53"),
+    "bios_years": lambda r, st, a: _bios_years(r, st, a),
     "bios_founded": _bios_founded,
 }

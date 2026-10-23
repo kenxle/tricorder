@@ -8,7 +8,9 @@
 The root is TRICORDER_STORE_DIR (default store_data/, ignored by git). Delete
 also clears the company's outside pulls in TRICORDER_CACHE_DIR (default
 cache/): the folder cache/outside/<company>/ and the cache/index.json entries
-that point into it. The store never writes in out/ or in a room.
+that point into it, but only when this fund held the company and no other
+fund still does, because that folder is shared. The store never writes in
+out/ or in a room.
 """
 
 from __future__ import annotations
@@ -28,6 +30,7 @@ from .models import (
     DeleteReport,
     HeldFile,
     Holding,
+    Kept,
     NotCopied,
     Removed,
     SaveResult,
@@ -321,16 +324,35 @@ class FileStore:
                 out.append(key)
         return out
 
-    def _left(self, fund: str, company: str) -> list[str]:
+    def _left(self, fund: str, company: str, cache_kept: bool) -> list[str]:
+        """What is still on disk for this fund's company. The company's cache
+        pulls count only when this delete was meant to remove them."""
         left = []
         folder = self.root / fund / company
         if folder.exists() or folder.is_symlink():
             left.append(str(folder))
-        cache_folder = self._cache_company_dir(company)
-        if cache_folder.exists() or cache_folder.is_symlink():
-            left.append(str(cache_folder))
-        left += [f"cache/index.json: {key}" for key in self._index_entries_for(company)]
+        if not cache_kept:
+            cache_folder = self._cache_company_dir(company)
+            if cache_folder.exists() or cache_folder.is_symlink():
+                left.append(str(cache_folder))
+            left += [f"cache/index.json: {key}" for key in self._index_entries_for(company)]
         return left
+
+    def _other_funds_holding(self, fund: str, company: str) -> list[str]:
+        if not self.root.is_dir():
+            return []
+        others = []
+        for d in sorted(self.root.iterdir()):
+            if d.name == fund or d.is_symlink() or not d.is_dir():
+                continue
+            try:
+                check_id("fund", d.name)
+            except BadId:
+                continue
+            held = d / company
+            if not held.is_symlink() and self._version_dirs(held):
+                others.append(d.name)
+        return others
 
     def delete_company(self, fund: str, company: str) -> DeleteReport:
         folder = self._company_dir(fund, company)
@@ -339,17 +361,28 @@ class FileStore:
             raise BadId(f"cache/outside/{company} is a link; not removing it")
         held = self.list_company(fund, company)
         rooms = sorted({v.room for v in held.versions})
+        nothing_held = not held.versions
+        # cache/outside/<company>/ is shared by every fund that looked at the
+        # company (the outside-in scans write it without a fund). It goes only
+        # when this fund held the company and no other fund still does.
+        others = self._other_funds_holding(fund, company)
+        kept: list[Kept] = []
+        if cache_folder.exists() or self._index_entries_for(company):
+            if nothing_held:
+                kept.append(Kept(path=str(cache_folder), why=f"fund {fund} holds nothing for {company}, so its outside pulls in cache/ stay"))
+            elif others:
+                kept.append(Kept(path=str(cache_folder), why=f"still held for {company} by fund {', '.join(others)}, so the shared outside pulls in cache/ stay"))
         removed = Removed(
             versions=len(held.versions),
             files=len({f.sha256 for f in held.files}),
             results=sum(len(v.results) for v in held.versions),
-            cache_files=len(held.cache),
+            cache_files=0 if kept else len(held.cache),
         )
         if folder.exists():
             shutil.rmtree(folder)
-        if cache_folder.exists():
+        if not kept and cache_folder.exists():
             shutil.rmtree(cache_folder)
-        doomed = set(self._index_entries_for(company))
+        doomed = set() if kept else set(self._index_entries_for(company))
         if doomed:
             index = self._index()
             keep = {k: v for k, v in index.items() if k not in doomed}
@@ -357,7 +390,8 @@ class FileStore:
             removed.index_entries = len(doomed)
         fund_dir = self.root / fund
         also = [str(out_dir(Path(room))) for room in rooms if out_dir(Path(room)).is_dir()]
-        report = DeleteReport(fund=fund, company=company, removed=removed, left=self._left(fund, company), also_on_this_laptop=also)
+        report = DeleteReport(fund=fund, company=company, nothing_held=nothing_held, removed=removed, kept=kept,
+                              left=self._left(fund, company, cache_kept=bool(kept)), also_on_this_laptop=also)
         if fund_dir.is_dir() and not any(fund_dir.iterdir()):
             fund_dir.rmdir()
         return report

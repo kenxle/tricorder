@@ -13,7 +13,7 @@ from scans.base import ROOT
 from server.app import app
 
 ROOM = ROOT / "data_room" / "hollis_voice"
-client = TestClient(app)
+client = TestClient(app, base_url="http://127.0.0.1")  # the local guard refuses any other host
 
 
 @pytest.fixture(scope="module")
@@ -89,3 +89,14 @@ def test_save_of_an_unknown_room_or_a_room_with_no_readout_is_404(env, tmp_path,
 def test_unknown_company_is_404(env):
     assert client.get("/api/store/demo/nobody/readout").status_code == 404
     assert client.get("/api/store/demo/nobody/files/x.csv").status_code == 404
+
+
+def test_a_delete_under_a_fund_that_never_stored_the_company_touches_no_cache(env):
+    """Review S9, through the route."""
+    page = env / "cache" / "outside" / "hollis_voice" / "website" / "home.html"
+    r = client.post("/api/store/zzz/hollis_voice/delete", json={"confirm": "hollis_voice"})
+    assert r.status_code == 200
+    body = r.json()
+    assert body["nothing_held"] is True and body["removed"]["cache_files"] == 0 and body["removed"]["index_entries"] == 0
+    assert page.exists()
+    assert "https://hollisvoice.example.com/" in json.loads((env / "cache" / "index.json").read_text())

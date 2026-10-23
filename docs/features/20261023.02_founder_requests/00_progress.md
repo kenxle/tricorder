@@ -6,6 +6,9 @@ Roadmap slice: [founder-requests](../../ongoing/ROADMAP.md#founder-requests). Ro
 
 ## Attention needed
 
+- **Orchestrator: shared files touched in the review round.** `server/app.py` (the guard middleware line, its import, and `room_parents()` reading `TRICORDER_ROOMS_DIR`), `readout/src/App.tsx` (an `onRoom` prop so the page follows a reply to its working copy), and one `base_url` argument in each of `server/tests/test_app.py`, `test_store_routes.py`, `test_steering_routes.py` and `memo/tests/test_export.py`.
+- **Ken: the guard allows any loopback origin, any port.** That keeps the Vite dev server working. Another local program on another port could still post. Multipart bodies are allowed as the coordinator asked; a cross-site multipart form is still stopped by the Origin check.
+
 - **Claim support owner: the claims scan crashes on a hiring plan without a `headcount_after_hire` column** (`scans/claims/evidence.py`, `_hiring`, `KeyError`). A founder's own hiring plan will rarely have that column. The add still finishes and the receipt says "One check could not read the new file, so its part of the readout is from before." (test `test_a_plan_in_the_founders_own_columns_still_lands`, fixture `synthetic_brasswick_hiring_plan_own_columns.csv`). The main fixture now uses the repo's hiring plan columns.
 
 - **Orchestrator: the independent persona reports are recorded from your relay.** Their full text was not in a shared folder; 02_prototype_decision.md says so. If you kept them, a link there would help.
@@ -57,12 +60,13 @@ Roadmap slice: [founder-requests](../../ongoing/ROADMAP.md#founder-requests). Ro
 - 2026-10-23 02:30 UTC: several files go up as one JSON batch with base64 bodies, so still no multipart dependency.
 - 2026-10-23 02:40 UTC: fix-round drive on run `founder-requests-r2`, port 8812; two defects found and fixed test-first; instance stopped by `control.sh cleanup`.
 - 2026-10-23 03:00 UTC: merged `claude/project-thread-ea11in` (claim support). Tests now derive the expected scans from each scan's NEEDS (`conftest.ready_scans`). A scan now waits only for input files written since its last run, since the claims scan leaves some kinds out on purpose and would otherwise rerun on every add. The receipt says a relabelled claim in its new words: on Brasswick the hiring plan turns three deck hiring claims from Supported to Contradicted.
+- 2026-10-23 03:40 UTC: review wave 2a round: S1 to S4 and O2, O3, O6, O7, O9 fixed test-first; a server-wide localhost guard (`server/local_guard.py`) now covers every router. Driven on run `founder-requests-r5`.
 - No human approval was asked for or needed; the orchestrator integrates.
 
 ## To delete at cleanup
 
 - `rooms/brasswick_live/` in this worktree: the working copy made by the verification run (git-ignored).
 - `rooms/brasswick_r2/` and `rooms/brasswick_r3/` in this worktree: the fix-round working copies (git-ignored).
-- `/tmp/tricorder-verify/founder-requests/` and `/tmp/tricorder-verify/founder-requests-r2/`: the run folders (out, evidence copy, server log).
+- `/tmp/tricorder-verify/founder-requests/`, `-r2/`, `-r3/`, `-r4/` and `-r5/`: the run folders (out, rooms, evidence copy, server log).
 - `/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/founder-requests/`: scratch readouts, Playwright scripts, the 409A stub.
 - `readout/dist/` and `readout/node_modules/` in this worktree: built by `bin/ci-web` (git-ignored).

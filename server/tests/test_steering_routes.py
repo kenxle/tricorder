@@ -14,7 +14,7 @@ from server.app import app
 
 FULL = ROOT / "data_room" / "hollis_voice"
 SEED = ROOT / "data_room" / "hollis_voice_seed_drop"
-client = TestClient(app)
+client = TestClient(app, base_url="http://127.0.0.1")  # the local guard refuses any other host
 
 
 @pytest.fixture(scope="module")

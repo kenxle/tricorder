@@ -58,7 +58,7 @@ def test_transcript_is_used_and_times_are_copied(tmp_path):
     assert arr.check.name == "spoken_arr_vs_claims_page"
     assert "01_overview/pitch_deck.pdf" in [s.uri for s in arr.sources]
     runway = next(c for c in spoken if c.sources[0].locator == "seg 2")
-    assert runway.text.startswith("Supported:")
+    assert runway.text.startswith("Unsupported:") and "only a model reading backs this" in runway.text  # the model alone
     _, failures = check_result(result, room)
     assert failures == {}
     assert not any("transcript of the pitch video" in g.what for g in result.gaps)
@@ -137,3 +137,60 @@ def test_a_missing_named_cell_and_a_missing_column_fall_through_without_a_crash(
     assert arr.text.startswith("Contradicted:")
     assert "02_financials/financial_model.xlsx" not in [s.uri for s in arr.sources]
     assert "03_metrics/monthly_metrics.csv" in [s.uri for s in arr.sources]
+
+
+# Review wave 2a, S5: founders send their own files. A file with other columns,
+# text in a number cell, or a malformed claims.json must never crash the scan.
+# The claim kinds that file backs read "not found in that file", and a gap names it.
+
+
+def _unreadable_gap(result: ScanResult, rel: str):
+    return [g for g in result.gaps if rel in g.what and "could not be read" in g.what]
+
+
+def test_a_hiring_plan_with_other_columns_is_a_gap_not_a_crash(tmp_path):
+    room = make_room(tmp_path, ["01_overview/pitch_deck.pdf", "02_financials/financial_model.xlsx"])
+    plan = room / "05_team" / "hiring_plan.csv"
+    plan.parent.mkdir(parents=True)
+    plan.write_text("role,start_month\nSenior Voice Engineer,2026-10\nAccount Executive,2026-11\n", encoding="utf-8")
+    result = scan(room, tmp_path / "out")
+    assert check_result(result, room)[1] == {}
+    gaps = _unreadable_gap(result, "05_team/hiring_plan.csv")
+    assert len(gaps) == 1, [g.what for g in result.gaps]
+    assert "hire_id" in gaps[0].why or "headcount_after_hire" in gaps[0].why
+    # A plan with no department column says nothing about hires by department.
+    assert not any("department" in c.text and "hiring plan" in c.text for c in result.claims)
+
+
+def test_text_in_a_metrics_cell_is_a_gap_not_a_crash(tmp_path):
+    room = tmp_path / "bw"
+    for rel in ("01_overview/pitch_deck.pdf", "03_metrics/monthly_metrics.csv"):
+        (room / rel).parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy(ROOT / "data_room" / "brasswick" / rel, room / rel)
+    metrics = room / "03_metrics" / "monthly_metrics.csv"
+    lines = metrics.read_text(encoding="utf-8").splitlines()
+    head = lines[0].split(",")
+    row = next(i for i, line in enumerate(lines) if line.startswith("2026-09,"))
+    cells = lines[row].split(",")
+    cells[head.index("total_revenue")] = "n/a"
+    lines[row] = ",".join(cells)
+    metrics.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    result = scan(room, tmp_path / "out")
+    assert check_result(result, room)[1] == {}
+    gaps = _unreadable_gap(result, "03_metrics/monthly_metrics.csv")
+    assert len(gaps) == 1, [g.what for g in result.gaps]
+    assert "n/a" in gaps[0].why
+    # The cells that are numbers still back what they can: paying_brokers is untouched.
+    brokers = next(c for c in result.claims if c.sources[0].locator == "slide 5" and c.value and c.value.label == "paying_accounts")
+    assert "03_metrics/monthly_metrics.csv" in [s.uri for s in brokers.sources]
+
+
+def test_a_malformed_claims_json_is_a_gap_not_a_crash(tmp_path):
+    room = make_room(tmp_path, ["02_financials/financial_model.xlsx"])
+    (room / "01_overview").mkdir(parents=True)
+    (room / "01_overview" / "pitch_deck.pdf").write_bytes(b"not a pdf")
+    (room / "01_overview" / "claims.json").write_text(json.dumps({"claims": [{"label": "ARR"}, "junk", {"value": 3}]}),
+                                                       encoding="utf-8")
+    result = scan(room, tmp_path / "out")
+    assert result.claims == []
+    assert any("claims.json" in g.what and "3 rows" in g.why for g in result.gaps), [(g.what, g.why) for g in result.gaps]

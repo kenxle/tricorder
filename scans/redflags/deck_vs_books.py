@@ -616,7 +616,7 @@ def check(room: Path, ids: Ids) -> tuple[list[Claim], list[Gap], list[Panel]]:
     tol, tol_shape = float(s["match_tolerance"]), float(s["chart_shape_tolerance"])
     try:
         figures, as_of = deck_figures(room, decks[0])
-    except (LocatorError, OSError) as err:
+    except Exception as err:  # noqa: BLE001 - a missing page, a bad file or bytes that are not a PDF
         out.gap("Not in the room: a readable pitch deck (01_overview/pitch_deck.pdf)", f"the deck could not be read: {err}",
                 "A text PDF of the pitch deck")
         return out.claims, out.gaps, []

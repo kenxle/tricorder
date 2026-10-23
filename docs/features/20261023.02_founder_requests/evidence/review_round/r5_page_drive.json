@@ -1,0 +1,11 @@
+{
+ "health_during_upload": {
+  "status": 200,
+  "ms": 177
+ },
+ "room_after_reply": "brasswick_live",
+ "receipt": "synthetic_brasswick_hiring_plan_own_columns.csv is saved as 05_team/hiring_plan.csv.\nBrasswick reference list.pdf is saved as 05_team/brasswick_reference_list.pdf.\n\nWhat changed\n\nOne check could not read the new files, so its part of the readout is from before.\nCoverage now finds Hiring plan and future org.\nCoverage now finds Reference list: management, customers, current investors, advisors.\nThis room had no readout before, so this is its first: 32 claims.",
+ "hiring_plan_left": false,
+ "refused_by_guard": [],
+ "errors": []
+}

@@ -136,7 +136,7 @@ def test_the_pdf_is_for_partners(tmp_path):
 def test_server_routes_build_edit_and_serve(tmp_path, monkeypatch):
     from server.app import app
     monkeypatch.setenv("TRICORDER_OUT_DIR", str(tmp_path))
-    client = TestClient(app)
+    client = TestClient(app, base_url="http://127.0.0.1")  # the local guard refuses any other host
     assert client.get("/api/rooms/hollis_voice/memo").status_code == 404
     assert client.post("/api/rooms/hollis_voice/memo").status_code == 409  # no readout yet
     build_readout(tmp_path)

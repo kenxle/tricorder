@@ -52,7 +52,10 @@ function mailtoFor(to: string, subject: string, body: string) {
   return `mailto:${enc(to).replace("%40", "@")}?subject=${enc(subject)}&body=${enc(body.replace(/\r?\n/g, "\r\n"))}`;
 }
 
-export function FounderRequests({ room, onRebuilt }: { room: string; onRebuilt?: () => void }) {
+// The last receipt, kept across the page switching to the working copy's readout (which remounts the panel).
+let lastReceipt: Receipt | null = null;
+
+export function FounderRequests({ room, onRebuilt }: { room: string; onRebuilt?: (room: string) => void }) {
   const [lines, setLines] = useState<Lines | null>(null);
   const [error, setError] = useState("");
   const [sel, setSel] = useState<Set<number>>(new Set());
@@ -195,7 +198,7 @@ export function FounderRequests({ room, onRebuilt }: { room: string; onRebuilt?:
               </details>
             </aside>
           )}
-          <AddReply lines={lines} room={room} box={intake} onDone={() => { load(); onRebuilt?.(); }} />
+          <AddReply lines={lines} room={room} box={intake} onDone={(r) => { if (r === room) load(); onRebuilt?.(r); }} />
         </div>
       </div>
     </section>
@@ -204,10 +207,10 @@ export function FounderRequests({ room, onRebuilt }: { room: string; onRebuilt?:
 
 interface Pending { file: File; answers: string[] }
 
-function AddReply({ lines, room, box, onDone }: { lines: Lines; room: string; box: RefObject<HTMLDivElement | null>; onDone: () => void }) {
+function AddReply({ lines, room, box, onDone }: { lines: Lines; room: string; box: RefObject<HTMLDivElement | null>; onDone: (room: string) => void }) {
   const [pending, setPending] = useState<Pending[]>([]);
   const [busy, setBusy] = useState(false);
-  const [receipt, setReceipt] = useState<Receipt | null>(null);
+  const [receipt, setReceipt] = useState<Receipt | null>(() => (lastReceipt?.room === room ? lastReceipt : null));
   const [error, setError] = useState("");
   const target = lines.synthetic ? lines.working_copy ?? `${room}_live` : room;
   // Every request a file can answer, by its plain name; a merged line offers each of its documents.
@@ -244,8 +247,9 @@ function AddReply({ lines, room, box, onDone }: { lines: Lines; room: string; bo
       const r = await fetch(`${base(target)}/batch`, {
         method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ files }),
       }).then((x) => json<Receipt>(x));
+      lastReceipt = r;
       setReceipt(r); setPending([]);
-      onDone();
+      onDone(r.room);  // the page then shows the room the files went into
     } catch (e) {
       setError((e as Error).message);
     } finally {

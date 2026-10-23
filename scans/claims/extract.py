@@ -128,13 +128,33 @@ def as_of(pages: list[str]) -> str | None:
     return None
 
 
-def _claims_json(room: Path) -> list[dict]:
+def _good_row(c) -> bool:
+    if not (isinstance(c, dict) and isinstance(c.get("label"), str) and isinstance(c.get("value"), str)):
+        return False
+    try:
+        int(c.get("slide") or 0)
+    except (TypeError, ValueError):
+        return False
+    return True
+
+
+def claims_json_rows(room: Path) -> tuple[list[dict], int]:
+    """(usable rows, rows skipped). A row needs a text label, a text value and a slide
+    number; anything else in a founder's file is skipped and counted, never a crash."""
     for path in find(room, "deck_claims"):
         try:
-            return list(json.loads(path.read_text(encoding="utf-8")).get("claims", []))
+            data = json.loads(path.read_text(encoding="utf-8"))
         except (OSError, ValueError):
-            return []
-    return []
+            return [], 1
+        rows = data.get("claims", []) if isinstance(data, dict) else []
+        rows = rows if isinstance(rows, list) else []
+        good = [c for c in rows if _good_row(c)]
+        return good, len(rows) - len(good)
+    return [], 0
+
+
+def _claims_json(room: Path) -> list[dict]:
+    return claims_json_rows(room)[0]
 
 
 def _split_row(row: str, known: list[dict]) -> tuple[str, str, int | None] | None:

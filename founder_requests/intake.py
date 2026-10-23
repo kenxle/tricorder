@@ -122,8 +122,11 @@ def copy_room(src: Path, name: str | None = None) -> Path:
     dest = rooms_root() / name
     if dest.exists():
         raise IntakeError(409, f"rooms/{name} already exists; it was not touched.")
+    links = [p for p in src.rglob("*") if p.is_symlink()]
+    if links:
+        raise IntakeError(400, f"{src.name} holds a link ({links[0].relative_to(src)}); a room with links is not copied.")
     dest.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copytree(src, dest)
+    shutil.copytree(src, dest, symlinks=True)
     return dest
 
 
@@ -265,7 +268,7 @@ def target_for(room: Path, row: cl.Row, stem: str, ext: str) -> Path:
     if row.id in CANONICAL:
         name = CANONICAL[row.id]
         if (Path(room) / folder / f"{name}{ext}").exists():
-            name = f"{name}_from_founder_{stem}"[:STEM_MAX + 20]
+            name = f"{name}_from_founder_{stem}"[:STEM_MAX].rstrip("_")
     else:
         pat, prefix = cl.DOC_PATTERNS.get(row.id), _prefix(row.id)
         name = stem if not pat or re.search(pat, f"{stem}{ext}") or not prefix else f"{prefix}_{stem}"
@@ -360,7 +363,7 @@ def _first(texts: list[str], n: int = 3) -> str:
 
 
 def changes(before: Readout | None, after: Readout, answered: list[tuple[cl.Row, str, str]], files: int = 1,
-            failed: int = 0) -> list[str]:
+            failed: int = 0, saved: list[str] | tuple = ()) -> list[str]:
     """What the files changed, in plain words: coverage, then claims, flags and verdicts, then the ask list."""
     said: list[str] = []
     for row, was, now in answered:
@@ -374,7 +377,9 @@ def changes(before: Readout | None, after: Readout, answered: list[tuple[cl.Row,
         else:
             said.append(f"Coverage still lists {row.item} as {_plain(now)}. The file is saved under the name "
                         "for the first request it answers.")
-    old = before or Readout(room=after.room, built_at="")
+    if before is None:
+        said.append(f"This room had no readout before, so this is its first: {len(after.claims)} claims.")
+    old = before or after
     # A claim keeps its id when a rerun relabels it, so the same id with new words is a change.
     old_by_id = {(c.scan, c.id): c.text for c in old.claims}
     new_by_id = {(c.scan, c.id): c.text for c in after.claims}
@@ -406,12 +411,18 @@ def changes(before: Readout | None, after: Readout, answered: list[tuple[cl.Row,
         if p.name in verdicts and verdicts[p.name] != p.verdict:
             said.append(f"{_plain(p.name).capitalize()} moved from {_plain(verdicts[p.name])} to {_plain(p.verdict)}.")
             moved = True
-    if not moved:
-        said.append(f"No check reads {'this file' if files == 1 else 'these files'} yet, so no number changed.")
-    if failed:
+    # A check that exits non-zero, or writes a new gap naming the new file, could not read it (review S3).
+    names = {n for f in saved for n in (str(f), Path(f).name)}
+    seen_gaps = {(g.what, g.why, g.would_need) for g in old.gaps}
+    unread = [g for g in after.gaps if (g.what, g.why, g.would_need) not in seen_gaps
+              and any(n in f"{g.what} {g.why} {g.would_need}" for n in names)]
+    count = failed or (1 if unread else 0)
+    if count:
         what = "the new file" if files == 1 else "the new files"
-        lead = "One check" if failed == 1 else f"{failed} checks"
-        said.append(f"{lead} could not read {what}, so {'its' if failed == 1 else 'their'} part of the readout is from before.")
+        lead = "One check" if count == 1 else f"{count} checks"
+        said.insert(0, f"{lead} could not read {what}, so {'its' if count == 1 else 'their'} part of the readout is from before.")
+    elif not moved and before is not None:
+        said.append(f"No check reads {'this file' if files == 1 else 'these files'} yet, so no number changed.")
     if before is not None and len(after.asks) != len(before.asks):
         way = "down" if len(after.asks) < len(before.asks) else "up"
         said.append(f"The ask list is {way} from {len(before.asks)} to {len(after.asks)} lines.")
@@ -484,7 +495,8 @@ def receive_batch(room_dir: Path, files: list[tuple[bytes, str, str | None]]) ->
     receipt = {
         "room": room.name, "files": entries, "scans_rerun": reran,
         "asks_before": len(before.asks) if before else None, "asks_after": len(readout.asks),
-        "summary": changes(before, readout, answered, len(entries), sum(not r["ok"] for r in reran)), "at": at,
+        "summary": changes(before, readout, answered, len(entries), sum(not r["ok"] for r in reran),
+                           [e["saved"] for e in entries]), "at": at,
     }
     log_path = out_dir(room) / LOG
     try:
@@ -492,7 +504,7 @@ def receive_batch(room_dir: Path, files: list[tuple[bytes, str, str | None]]) ->
     except (OSError, ValueError):
         log = {"received": []}
     for e in entries:
-        log.setdefault("received", []).append(e | {"summary": receipt["summary"]})
+        log.setdefault("received", []).append(e | {"summary": receipt["summary"], "scans_rerun": reran})
     log_path.parent.mkdir(parents=True, exist_ok=True)
     log_path.write_text(json.dumps(log, indent=2) + "\n", encoding="utf-8")
     return receipt | {"readout": str(target)}
