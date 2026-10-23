@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { Claim, Piece, Readout, Source } from "../../schema/ts/claim";
 import { buildReadout, getReadout, getRooms, getSourceText, type RoomInfo } from "./api";
 import { PIECE_LABEL, VERDICT_LABEL } from "./labels";
+import { FounderRequests } from "./FounderRequests";
 
 // The readout page skeleton: top flags, the overview, a piece's claims, a
 // claim's source, gaps, the could-not-verify box and the ask list, in that
@@ -142,6 +143,7 @@ function ReadoutView({ readout }: { readout: Readout }) {
           </>
         )}
       </section>
+      <FounderRequests room={readout.room} />
     </>
   );
 }
