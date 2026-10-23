@@ -132,3 +132,52 @@ def test_model_more_info():
                             wants_full_room=True, source_named=None))
     r = read_sentence("we got tier two from the founder, use it", llm=llm)
     assert r.path == "model" and r.kind == "more_info" and r.source == "full_room"
+
+
+# Negated definitions (review wave 2b, S5) ------------------------------------------------------
+
+
+@pytest.mark.parametrize("sentence", [
+    "Don't treat the pilot as non-recurring",
+    "Don’t treat the pilot as non-recurring",
+    "do not treat the pilot as one-time",
+    "Never treat the pilot as non recurring",
+    "please don't exclude the pilot from ARR",
+])
+def test_a_negated_definition_is_not_read_as_the_definition(sentence):
+    r = read_sentence(sentence)
+    assert r.term is None and r.treat_as is None and r.kind == "rewrite"
+
+
+def test_a_negated_definition_still_reads_the_full_room():
+    r = read_sentence("do not treat the pilot as non-recurring yet, read the full room")
+    assert r.term is None and r.kind == "more_info" and r.source == "full_room"
+
+
+def test_a_model_definition_on_a_negated_sentence_is_dropped():
+    # Hand-built response: a model that misses the "don't".
+    llm = fake(SteerReading(kind="rewrite", definition_term="pilot", asks_for_number=False, number_text=None,
+                            wants_full_room=False, source_named=None))
+    r = read_sentence("Don't treat the pilot as non-recurring", llm=llm)
+    assert r.term is None and r.treat_as is None
+
+
+# A number in a sentence is not by itself a request (review wave 2b, O1) ----------------------
+
+
+@pytest.mark.parametrize("sentence", [
+    "Explain the 37 months of runway in plain words",
+    "Say the 2026 plan is aggressive",
+    "Mention that 2025 was the first full year",
+])
+def test_a_number_with_no_request_frame_is_not_a_number_request(sentence):
+    assert read_sentence(sentence).number_text is None
+
+
+@pytest.mark.parametrize("sentence, number", [
+    ("use $3M for ARR", "$3M"),
+    ("ARR is really 3 million", "3 million"),
+    ("runway should read 40 months", "40 months"),
+])
+def test_more_number_requests(sentence, number):
+    assert read_sentence(sentence).number_text == number

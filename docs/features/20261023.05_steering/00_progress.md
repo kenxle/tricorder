@@ -16,6 +16,26 @@ Roadmap slice: [steering](../../ongoing/ROADMAP.md#steering). Route: prototype f
 6. **Setting:** `TRICORDER_OPERATOR` names who steers when the request does not. Unset, lines read "the operator's steer".
 7. **Schema proposals** (captain, after Saturday): [04_architecture.md](04_architecture.md), "Proposed schema changes".
 
+## Review round (wave 2b)
+
+Review: `docs/features/20261022.10_feature_breakdown/review_wave2b.md` (worktree `review2`). Branch `fix/wave2b-steering` from main b948d09. Every test below was run red on b948d09's code (a scratch worktree with only the new test files copied in) and green on this branch.
+
+| Finding | Fix | Commit | Test, red then green |
+|---|---|---|---|
+| B1, steering half | The switch is an explicit Panel `{"name": "reads room", "columns": ["Room", "Since"], "rows": [["<full room>", "steer <n>"]]}`, written by the switching steer and kept by every later steer and rebuild. `scans.memo.merge.reads_room(readout, room_dir)` and `readout_room(room_dir)` resolve it (and the older `source` row), only to the seed drop's own sibling full room. The memo and `server/app.py` halves are the memo builder's. | b5c8e46 | `test_the_full_room_marker_is_an_explicit_panel`, `test_rebuilding_a_switched_seed_drop_keeps_the_full_room` |
+| S3, steer half | Size limits on `SteerBody`: sentence 1,000 raw, author 80, claim_id 120, piece and fund 64; the engine also holds author and line id. | b5c8e46 | `test_an_oversized_steer_field_is_422` (author and fund were 200 before), `test_a_name_at_the_limit_is_kept` |
+| S5 | A definition after "don't", "do not", "never" or "not" is skipped, on the rules and the model path; the rest of the sentence is still read. | 10b9165 | `test_a_negated_definition_is_not_read_as_the_definition`, `test_a_negated_definition_still_reads_the_full_room`, `test_a_model_definition_on_a_negated_sentence_is_dropped`, `test_a_negated_definition_steer_adds_no_scenario_line` |
+| S6 | `_merge_piece` keeps the operator's scenario lines out of the rerun, so they stay; a repeated pilot steer adds no copy and says so. | b5c8e46 | `test_a_later_rewrite_keeps_the_earlier_scenario_line`, `test_a_second_pilot_steer_keeps_the_first_line` |
+| S7 | `build_readout` keeps a steered readout's revisions, steer panels, scenario lines, model rewordings and switch (`steering.engine.carry`), and a switched seed drop rebuilds from the full room's results. All three rebuild paths call it. `python -m scans.memo <room> --fresh` is the one way to start over. | b5c8e46, 978ec0f | `test_rebuilding_keeps_revisions_scenario_lines_and_panels`, `test_rebuilding_through_the_page_keeps_the_steer`, `test_the_merge_command_keeps_steers_and_starts_over_only_when_asked` |
+| S8 | `reword.guard`: figures in order with units, each against the same source word, and the same agree, differ, up, down and negation words. A refused rewording keeps the line's words. Tested on HAND-BUILT model answers. | b5c8e46 | `test_a_rewording_that_swaps_two_figures_is_refused`, `test_a_rewording_that_changes_the_meaning_is_refused` (three cases) |
+| S9 | "Matches" only within `match_tolerance` and on the same customer count. A tab below the rebuild by more than the tolerance is a watch that states the difference. | a761a3c | `test_a_tab_far_below_the_rebuild_is_not_a_match`, `test_a_tab_within_tolerance_with_more_customers_says_so` |
+| O1 | A number is a request only after a request frame ("should be", "make", "use", "change ... to"); a bare year never is. PRD STEER-R4 says so. | 10b9165 | `test_a_number_with_no_request_frame_is_not_a_number_request`, `test_more_number_requests` |
+| O2 | Every scan runs before any result is written; a crash raises `ScanFailed`, and the route answers 500 "redflags failed: ...". | b5c8e46 | `test_a_scan_that_crashes_during_a_steer_names_the_scan_and_writes_nothing`, `test_a_scan_crash_is_a_500_naming_the_scan` |
+
+Changed on purpose: the hand-built plain rewording in `test_model_reword_keeps_numbers_and_quotes` used to turn "differs ... a gap of" into "lower", which the S8 guard now refuses; it keeps "differs" now. The assertion in `test_a_full_room_line_opens_from_the_seed_drop_page` that `POST .../source` is 404 after a switch pinned the B1 bug and is gone; the memo builder's test of that route replaces it.
+
+Known limit: a founder file added to a switched seed drop is saved in the seed drop, but the rebuild reads the full room's results, so it shows only when the full room has it too.
+
 ## Documents
 
 - [product_thinking.md](product_thinking.md), [01_brief.md](01_brief.md)
@@ -50,6 +70,8 @@ Roadmap slice: [steering](../../ongoing/ROADMAP.md#steering). Route: prototype f
 - No human approval was needed or given.
 
 ## To delete at cleanup
+
+- `/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/fix-steering/` (wave 2b scratch: out, store, cache, logs), including the git worktree `redcheck/` on b948d09 used for the red runs (remove with `git worktree remove`)
 
 - `/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/steering/` (scratch out folders and the Node Playwright install)
 - `/tmp/tricorder-verify/steering-trial/` (a trial run before the real one)

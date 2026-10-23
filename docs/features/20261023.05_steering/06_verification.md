@@ -45,3 +45,7 @@ Seen in the screenshots, not steering's: the claims scan states "The pitch video
 - **Retention claims come from the script half of entry 1.3**, written in this slice (`scans/redflags/cohorts.py`).
 - `control.sh shot` cannot type, so the page step uses the Playwright driver in this folder. Since the fix round the page is also mounted on the readout page.
 - The first round's store test asserted `expense_ledger.csv` was not copied into the seed drop's version. Since a full-room read reruns every piece, the mislabels lines cite it, so it is copied; the test now asserts every cited file is held.
+
+## Review wave 2b
+
+The run above predates review wave 2b. Its row "the room's own `POST /source` for the same file is 404" recorded the B1 bug, not a design. The wave 2b fixes and their red-then-green tests are in [00_progress.md](00_progress.md), "Review round (wave 2b)". They were proved by the unit and route tests and by a scratch CLI run (seed drop: "read the full room", then the pilot steer, then `python -m scans.memo`): the rebuilt readout kept 2 revisions, the `reads room` panel and `steer2-001`, with 92 claims, 0 quote failures against `hollis_voice` and 0 unverified. No browser run was repeated, because the page did not change.
