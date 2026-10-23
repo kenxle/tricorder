@@ -99,7 +99,11 @@ def synthetic_notice(room_dir: str | Path) -> str | None:
         for path in find(room_dir, kind):
             if path.suffix.lower() != ".pdf":
                 continue
-            for line in pdf_page(path, 1).splitlines():
+            try:
+                first = pdf_page(path, 1)
+            except Exception:  # noqa: BLE001 - a file named .pdf that is not one gives no banner, never a crash
+                continue
+            for line in first.splitlines():
                 if "synthetic" in line.lower():
                     return re.sub(r"\s*(Slide|Page) \d+ of \d+\s*$", "", line).strip()
     return None
