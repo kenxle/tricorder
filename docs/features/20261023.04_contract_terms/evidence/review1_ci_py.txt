@@ -1,0 +1,298 @@
+........................................................................ [ 13%]
+........................................................................ [ 26%]
+........................................................................ [ 39%]
+........................................................................ [ 52%]
+........................................................................ [ 66%]
+........................................................................ [ 79%]
+..........................FF...F.....EE.....F.F.F....FF................. [ 92%]
+........................................                                 [100%]
+==================================== ERRORS ====================================
+__ ERROR at setup of test_with_pieces_and_flags_the_summary_and_openers_fill ___
+
+readout = Readout(room='hollis_voice', built_at='2026-10-23T03:45:49Z', synthetic_notice='Synthetic data room for Deal Flow NYC ... 'readings', 'model', 'frameworks', 'founders', 'presence', 'outside', 'bank'], revisions=[], connecting=[], scores=[])
+
+    @pytest.fixture()
+    def full_readout(readout) -> Readout:
+>       return with_pieces(readout)
+               ^^^^^^^^^^^^^^^^^^^^
+
+memo/tests/conftest.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+readout = Readout(room='hollis_voice', built_at='2026-10-23T03:45:49Z', synthetic_notice='Synthetic data room for Deal Flow NYC ... 'readings', 'model', 'frameworks', 'founders', 'presence', 'outside', 'bank'], revisions=[], connecting=[], scores=[])
+
+    def with_pieces(readout: Readout) -> Readout:
+        """The real readout plus pieces, top flags and links, hand-built from its real claim ids.
+    
+        Hand-built test data: the pieces, top_flags and link steps are not built yet.
+        The prototype uses the same shape (docs/features/20261023.03_memo_export/spike/simulate_steps.py).
+        """
+        from schema.claim import Piece, TopFlag
+    
+        r = readout.model_copy(deep=True)
+        claims = {c.id: c for c in r.claims}
+>       claims["redflags-008"].corroborated_by = ["redflags-009"]
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'redflags-008'
+
+memo/tests/conftest.py:51: KeyError
+_______________ ERROR at setup of test_routing_prefers_the_piece _______________
+
+readout = Readout(room='hollis_voice', built_at='2026-10-23T03:45:49Z', synthetic_notice='Synthetic data room for Deal Flow NYC ... 'readings', 'model', 'frameworks', 'founders', 'presence', 'outside', 'bank'], revisions=[], connecting=[], scores=[])
+
+    @pytest.fixture()
+    def full_readout(readout) -> Readout:
+>       return with_pieces(readout)
+               ^^^^^^^^^^^^^^^^^^^^
+
+memo/tests/conftest.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+readout = Readout(room='hollis_voice', built_at='2026-10-23T03:45:49Z', synthetic_notice='Synthetic data room for Deal Flow NYC ... 'readings', 'model', 'frameworks', 'founders', 'presence', 'outside', 'bank'], revisions=[], connecting=[], scores=[])
+
+    def with_pieces(readout: Readout) -> Readout:
+        """The real readout plus pieces, top flags and links, hand-built from its real claim ids.
+    
+        Hand-built test data: the pieces, top_flags and link steps are not built yet.
+        The prototype uses the same shape (docs/features/20261023.03_memo_export/spike/simulate_steps.py).
+        """
+        from schema.claim import Piece, TopFlag
+    
+        r = readout.model_copy(deep=True)
+        claims = {c.id: c for c in r.claims}
+>       claims["redflags-008"].corroborated_by = ["redflags-009"]
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'redflags-008'
+
+memo/tests/conftest.py:51: KeyError
+=================================== FAILURES ===================================
+_______________ test_hollis_voice_claims_land_in_their_sections ________________
+
+readout = Readout(room='hollis_voice', built_at='2026-10-23T03:45:49Z', synthetic_notice='Synthetic data room for Deal Flow NYC ... 'readings', 'model', 'frameworks', 'founders', 'presence', 'outside', 'bank'], revisions=[], connecting=[], scores=[])
+
+    def test_hollis_voice_claims_land_in_their_sections(readout):
+        memo = build_memo(readout, ROOM, AT)
+        where = {cid: s.number for s in memo.sections if s.number in range(3, 12)
+                 for ln in s.lines if ln.kind == "claim" for cid in ln.claim_ids}
+>       assert where["redflags-007"] == 7   # deck ARR against the P&L: traction
+               ^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'redflags-007'
+
+memo/tests/test_build.py:42: KeyError
+______________ test_flags_open_the_summary_and_reappear_as_risks _______________
+
+readout = Readout(room='hollis_voice', built_at='2026-10-23T03:45:49Z', synthetic_notice='Synthetic data room for Deal Flow NYC ... 'readings', 'model', 'frameworks', 'founders', 'presence', 'outside', 'bank'], revisions=[], connecting=[], scores=[])
+
+    def test_flags_open_the_summary_and_reappear_as_risks(readout):
+        memo = build_memo(readout, ROOM, AT)
+        flagged = {c.id for c in readout.claims if c.severity == "flag"}
+>       assert flagged == {"redflags-001", "redflags-007"}
+E       AssertionError: assert {'redflags-co...islabels-001'} == {'redflags-00...redflags-007'}
+E         
+E         Extra items in the left set:
+E         'redflags-mislabels-001'
+E         'redflags-contract_terms_full-012'
+E         'redflags-contract_terms_full-011'
+E         'redflags-deck_vs_books-001'
+E         'redflags-cohorts-002'...
+E         
+E         ...Full output truncated (4 lines hidden), use '-vv' to show
+
+memo/tests/test_build.py:52: AssertionError
+_____________ test_section_14_holds_coverage_every_ask_and_the_box _____________
+
+readout = Readout(room='hollis_voice', built_at='2026-10-23T03:45:49Z', synthetic_notice='Synthetic data room for Deal Flow NYC ... 'readings', 'model', 'frameworks', 'founders', 'presence', 'outside', 'bank'], revisions=[], connecting=[], scores=[])
+
+    def test_section_14_holds_coverage_every_ask_and_the_box(readout):
+        memo = build_memo(readout, ROOM, AT)
+        lines = memo.section(14).lines
+        asks = [ln for ln in lines if ln.kind == "ask"]
+>       assert len(asks) == len(readout.asks) == 27
+E       AssertionError: assert 34 == 27
+E        +  where 34 = len([AskItem(what='If an outside accountant has reviewed or audited any year, please send the signed report and the statem...5 Q1 (13 customers)', piece='customers', from_kind='gap', claim_ids=[], checklist_id='C34', if_you_have_it=False), ...])
+E        +    where [AskItem(what='If an outside accountant has reviewed or audited any year, please send the signed report and the statem...5 Q1 (13 customers)', piece='customers', from_kind='gap', claim_ids=[], checklist_id='C34', if_you_have_it=False), ...] = Readout(room='hollis_voice', built_at='2026-10-23T03:45:49Z', synthetic_notice='Synthetic data room for Deal Flow NYC ... 'readings', 'model', 'frameworks', 'founders', 'presence', 'outside', 'bank'], revisions=[], connecting=[], scores=[]).asks
+
+memo/tests/test_build.py:93: AssertionError
+___________ test_attached_claims_are_kept_and_unknown_claims_refused ___________
+
+readout = Readout(room='hollis_voice', built_at='2026-10-23T03:45:49Z', synthetic_notice='Synthetic data room for Deal Flow NYC ... 'readings', 'model', 'frameworks', 'founders', 'presence', 'outside', 'bank'], revisions=[], connecting=[], scores=[])
+
+    def test_attached_claims_are_kept_and_unknown_claims_refused(readout):
+        v1 = build_memo(readout, ROOM, AT)
+>       v2 = apply_edits(v1, [Edit(action="add", section=7, text="ARR is stated as $2.5M on the deck.", claim_ids=["redflags-007"])], "Dana", LATER)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+memo/tests/test_edit.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+memo/edit.py:66: in apply_edits
+    line = _operator_line(new, v, k, e.text, e.claim_ids, author)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+memo = Memo(room='hollis_voice', company='Hollis Voice', readout_built_at='2026-10-23T03:45:49Z', built_at='2026-10-23T13:00:...ut built 2026-10-23T03:45:49Z.')], withdrawn_lines=[], stage='series_a', steps_missing=['link', 'pieces', 'top_flags'])
+version = 2, k = 1, text = 'ARR is stated as $2.5M on the deck.'
+claim_ids = ['redflags-007'], author = 'Dana'
+
+    def _operator_line(memo: Memo, version: int, k: int, text: str, claim_ids: list[str], author: str) -> MemoLine:
+        text = text.strip()
+        if not text:
+            raise EditError("an operator line needs text")
+        unknown = [c for c in claim_ids if c not in memo.claims]
+        if unknown:
+>           raise EditError(f"no claim {unknown[0]!r} in this memo; attach a claim the memo cites")
+E           memo.edit.EditError: no claim 'redflags-007' in this memo; attach a claim the memo cites
+
+memo/edit.py:43: EditError
+_______ test_each_version_gets_a_change_log_line_and_the_header_follows ________
+
+readout = Readout(room='hollis_voice', built_at='2026-10-23T03:45:49Z', synthetic_notice='Synthetic data room for Deal Flow NYC ... 'readings', 'model', 'frameworks', 'founders', 'presence', 'outside', 'bank'], revisions=[], connecting=[], scores=[])
+
+    def test_each_version_gets_a_change_log_line_and_the_header_follows(readout):
+        v1 = build_memo(readout, ROOM, AT)
+>       v2 = apply_edits(v1, [Edit(action="remove", line_id="s07-redflags-010")], "Dana", LATER)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+memo/tests/test_edit.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+memo = Memo(room='hollis_voice', company='Hollis Voice', readout_built_at='2026-10-23T03:45:49Z', built_at='2026-10-23T12:00:...ut built 2026-10-23T03:45:49Z.')], withdrawn_lines=[], stage='series_a', steps_missing=['link', 'pieces', 'top_flags'])
+edits = [Edit(action='remove', section=None, line_id='s07-redflags-010', text='', claim_ids=[])]
+author = 'Dana', at = '2026-10-23T13:00:00Z'
+
+    def apply_edits(memo: Memo, edits: list[Edit], author: str, at: str) -> Memo:
+        """A new version with the edits applied. The memo passed in is not changed."""
+        if not edits:
+            raise EditError("no edits")
+        if not author.strip():
+            raise EditError("an edit needs its author")
+        new = memo.model_copy(deep=True)
+        v = memo.version + 1
+        new.version, new.based_on_version, new.built_at = v, memo.version, at
+        log: list[str] = []
+        for k, e in enumerate(edits, 1):
+            if e.action == "add":
+                if e.section is None:
+                    raise EditError("add needs a section number")
+                try:
+                    sec = new.section(e.section)
+                except KeyError:
+                    raise EditError(f"no section {e.section}") from None
+                line = _operator_line(new, v, k, e.text, e.claim_ids, author)
+                at_i = len(sec.lines)
+                if sec.lines and sec.lines[-1].kind == "coverage":
+                    at_i -= 1  # sections close with their coverage
+                if e.line_id:
+                    ids = [ln.id for ln in sec.lines]
+                    if e.line_id not in ids:
+                        raise EditError(f"no line {e.line_id!r} in section {e.section}")
+                    at_i = ids.index(e.line_id) + 1
+                sec.lines.insert(at_i, line)
+                log.append(f"added a line to section {sec.number}")
+            else:
+                if not e.line_id:
+                    raise EditError(f"{e.action} needs a line_id")
+                try:
+                    sec, old = new.line(e.line_id)
+                except KeyError:
+>                   raise EditError(f"no line {e.line_id!r}") from None
+E                   memo.edit.EditError: no line 's07-redflags-010'
+
+memo/edit.py:83: EditError
+___________________ test_a_rebuild_keeps_the_operators_lines ___________________
+
+readout = Readout(room='hollis_voice', built_at='2026-10-23T03:45:49Z', synthetic_notice='Synthetic data room for Deal Flow NYC ... 'readings', 'model', 'frameworks', 'founders', 'presence', 'outside', 'bank'], revisions=[], connecting=[], scores=[])
+
+    def test_a_rebuild_keeps_the_operators_lines(readout):
+        v1 = build_memo(readout, ROOM, AT)
+>       v2 = apply_edits(v1, [Edit(action="add", section=7, line_id="s07-redflags-007", text="The founder says the pilot will convert."),
+                              Edit(action="remove", line_id="s07-redflags-010"),
+                              Edit(action="replace", line_id="s15-recommendation", text="Wait.")], "Dana", LATER)
+
+memo/tests/test_edit.py:85: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+memo = Memo(room='hollis_voice', company='Hollis Voice', readout_built_at='2026-10-23T03:45:49Z', built_at='2026-10-23T12:00:...ut built 2026-10-23T03:45:49Z.')], withdrawn_lines=[], stage='series_a', steps_missing=['link', 'pieces', 'top_flags'])
+edits = [Edit(action='add', section=7, line_id='s07-redflags-007', text='The founder says the pilot will convert.', claim_ids=...text='', claim_ids=[]), Edit(action='replace', section=None, line_id='s15-recommendation', text='Wait.', claim_ids=[])]
+author = 'Dana', at = '2026-10-23T13:00:00Z'
+
+    def apply_edits(memo: Memo, edits: list[Edit], author: str, at: str) -> Memo:
+        """A new version with the edits applied. The memo passed in is not changed."""
+        if not edits:
+            raise EditError("no edits")
+        if not author.strip():
+            raise EditError("an edit needs its author")
+        new = memo.model_copy(deep=True)
+        v = memo.version + 1
+        new.version, new.based_on_version, new.built_at = v, memo.version, at
+        log: list[str] = []
+        for k, e in enumerate(edits, 1):
+            if e.action == "add":
+                if e.section is None:
+                    raise EditError("add needs a section number")
+                try:
+                    sec = new.section(e.section)
+                except KeyError:
+                    raise EditError(f"no section {e.section}") from None
+                line = _operator_line(new, v, k, e.text, e.claim_ids, author)
+                at_i = len(sec.lines)
+                if sec.lines and sec.lines[-1].kind == "coverage":
+                    at_i -= 1  # sections close with their coverage
+                if e.line_id:
+                    ids = [ln.id for ln in sec.lines]
+                    if e.line_id not in ids:
+>                       raise EditError(f"no line {e.line_id!r} in section {e.section}")
+E                       memo.edit.EditError: no line 's07-redflags-007' in section 7
+
+memo/edit.py:73: EditError
+____________ test_every_claim_in_the_page_passes_the_quote_checker _____________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-278/test_every_claim_in_the_page_p0')
+
+    def test_every_claim_in_the_page_passes_the_quote_checker(tmp_path):
+        build_readout(tmp_path)
+        run_cli(tmp_path, str(ROOM))
+        memo = embedded((tmp_path / "hollis_voice" / "memo" / "memo.html").read_text(encoding="utf-8"))
+>       assert len(memo.claims) == 10
+E       AssertionError: assert 27 == 10
+E        +  where 27 = len({'redflags-cohorts-001': Claim(id='redflags-cohorts-001', scan='redflags', text='The Cohorts tab states 12-month net r...or='page 2', start_s=None, end_s=None, quote='Terms', retrieved_at=None)], conflicts_with=[], corroborated_by=[]), ...})
+E        +    where {'redflags-cohorts-001': Claim(id='redflags-cohorts-001', scan='redflags', text='The Cohorts tab states 12-month net r...or='page 2', start_s=None, end_s=None, quote='Terms', retrieved_at=None)], conflicts_with=[], corroborated_by=[]), ...} = Memo(room='hollis_voice', company='Hollis Voice', readout_built_at='2026-10-23T03:46:17Z', built_at='2026-10-23T03:46:...ut built 2026-10-23T03:46:17Z.')], withdrawn_lines=[], stage='series_a', steps_missing=['link', 'pieces', 'top_flags']).claims
+
+memo/tests/test_export.py:82: AssertionError
+_____ test_every_claim_in_the_pdf_has_a_note_naming_its_source_and_locator _____
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-278/test_every_claim_in_the_pdf_ha0')
+
+    def test_every_claim_in_the_pdf_has_a_note_naming_its_source_and_locator(tmp_path):
+        build_readout(tmp_path)
+        run_cli(tmp_path, str(ROOM))
+        folder = tmp_path / "hollis_voice" / "memo"
+        memo = Memo.model_validate_json((folder / "memo_v1.json").read_text(encoding="utf-8"))
+        text = re.sub(r"\s+", " ", pdf_text(folder / "memo.pdf"))
+        for sec in [s.title for s in memo.sections]:
+            assert sec.split(",")[0] in text
+        notes = re.findall(r"\[(\d+)\] (redflags-\d{3})\.", text)
+>       assert {cid for _, cid in notes} == set(memo.claims)
+E       AssertionError: assert set() == {'redflags-co...ull-003', ...}
+E         
+E         Extra items in the right set:
+E         'redflags-contract_terms_full-006'
+E         'redflags-mislabels-001'
+E         'redflags-deck_vs_books-003'
+E         'redflags-contract_terms_full-014'
+E         'redflags-cohorts-003'...
+E         
+E         ...Full output truncated (23 lines hidden), use '-vv' to show
+
+memo/tests/test_export.py:96: AssertionError
+=========================== short test summary info ============================
+FAILED memo/tests/test_build.py::test_hollis_voice_claims_land_in_their_sections
+FAILED memo/tests/test_build.py::test_flags_open_the_summary_and_reappear_as_risks
+FAILED memo/tests/test_build.py::test_section_14_holds_coverage_every_ask_and_the_box
+FAILED memo/tests/test_edit.py::test_attached_claims_are_kept_and_unknown_claims_refused
+FAILED memo/tests/test_edit.py::test_each_version_gets_a_change_log_line_and_the_header_follows
+FAILED memo/tests/test_edit.py::test_a_rebuild_keeps_the_operators_lines - me...
+FAILED memo/tests/test_export.py::test_every_claim_in_the_page_passes_the_quote_checker
+FAILED memo/tests/test_export.py::test_every_claim_in_the_pdf_has_a_note_naming_its_source_and_locator
+ERROR memo/tests/test_build.py::test_with_pieces_and_flags_the_summary_and_openers_fill
+ERROR memo/tests/test_build.py::test_routing_prefers_the_piece - KeyError: 'r...
+8 failed, 534 passed, 2 errors in 233.40s (0:03:53)
