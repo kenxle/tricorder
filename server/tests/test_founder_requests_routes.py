@@ -88,4 +88,7 @@ def test_size_limit_is_checked_before_the_body_is_kept(env, monkeypatch):
 
 def test_room_ids_are_checked(env):
     assert client.get("/api/rooms/..%2F..%2Fetc/founder-requests").status_code == 404
-    assert client.post("/api/rooms/x%2F..%2Fbrasswick/founder-requests/files?answers=C22&name=p.csv", content=PLAN).status_code == 404
+    # An encoded slash makes the path miss the route: 404, or 405 when the built page is mounted at /.
+    r = client.post("/api/rooms/x%2F..%2Fbrasswick/founder-requests/files?answers=C22&name=p.csv", content=PLAN)
+    assert r.status_code in (404, 405)
+    assert not (env / "rooms").exists() or not any((env / "rooms").rglob("p.csv"))
