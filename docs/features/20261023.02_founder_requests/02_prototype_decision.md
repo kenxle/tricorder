@@ -14,45 +14,51 @@ Screenshots (Chromium, 2026-10-23), light and dark, desktop and phone: `02_proto
 ## What trying it settled
 
 - **One message per click, grouped by document.** Lines that share a guide (the six material-agreement lines) sit under one heading with the guidance once.
-- **Default selection: the pinned top five.** On Brasswick: the hiring plan, the roadmap and demo, incorporation documents, IP assignments, board minutes.
-- **The top-five draft is about 4,500 characters as a mail link,** above the 2,000 at which some mail apps cut a link. So "Copy text" is the primary button, and the mail link shows a warning past 2,000. The guidance stays in the message: it is the point of the feature.
-- **The founder never sees the reason line.** The readout's `why` ("Not in the room: ... Also needed for C12.") is internal and stays on the operator's side.
+- **Default selection: the pinned top five.** The first round picked the hiring plan, roadmap and closing paperwork; the persona review below changed the rule (FR-R25).
+- **The first top-five draft was about 4,500 characters as a mail link,** above the 2,000 at which some mail apps cut a link. The fix round cut it under 2,000 (FR-R26); "Copy text" stays the primary button and the warning stays for long selections.
+- **The founder never sees the reason line.** The readout's `why` is internal and stays on the operator's side, where it names items, not check codes.
 - **Ask rows get no guide block.** Rows only the founder can answer (current burn, founder references) and C101 (patents; its guide is about invention assignments) carry a title and no guidance, because their guide describes a different document.
 - **A synthetic room is never written.** The first file copies `data_room/<room>` to `rooms/<room>_live`.
 
 ## Persona review
 
-**Limit: run by the builder in this session, not by independent persona subagents.** This session has no tool to start a subagent. I read `.claude/agents/persona-associate.md`, `persona-partner.md`, their PERSONAS.md sections and PERSONA_REVIEWS.md, then read the prototype screenshots as each persona. A builder knows what the page means, which is what a persona review is meant to get past, so the orchestrator should rerun both agents on the screenshots above. Findings are simulated judgment, not customer evidence.
+**Independent.** The orchestrator ran `persona-associate` and `persona-partner` as subagents on 2026-10-23. Each read only PERSONAS.md and this feature's screenshots, prototype and copied draft text. Their full reports were not left in a shared folder; what follows is the orchestrator's relay of them, quoted where it quoted them. An earlier builder-run read of the same screenshots is replaced by this section. Findings are simulated judgment, not customer evidence.
+
+**Both rated it "workable".** The mechanics are right: tick, draft, copy or mail link, add the reply, receipt. The email was not sendable as drafted.
 
 ### The associate who spends days gathering (primary)
 
-**Verdict:** would use it on every room, because it turns the ask list into a sendable message in one step. **Rating:** workable.
-
-- Works: one click from a line to a message with the form spelled out ("A CSV or a spreadsheet tab with one row per planned hire"). Fewer rounds of "that is not what we meant" is what kept a room from costing weeks. [Grounded: "It took us weeks to sift through the data", PERSONAS.md, associate, problem in their own words]
-- Works: "For you, not sent" keeps the internal reason off the founder's screen. [Inferred]
-- Stuck: lines 1 and 3 ask for monthly revenue by customer, and Brasswick's room already holds `revenue_by_customer.csv`. Sending that makes me look careless to the founder. [Grounded: "If it is wrong, I am the one who looks bad", PERSONAS.md, associate, objection]
-- Stuck: the top-five draft is too long for the mail button, so the main path shows a warning. I would copy and paste into my mail anyway. [Inferred]
-- Stuck: 32 lines with six "Material agreements" titles in a row is a lot to scan. [Inferred]
-- Would change my mind: after adding a file, show me which scan ran and what changed in the readout, not only that the line left. [Inferred]
+- Stuck: the draft asked for files the room already holds. Line 3 (cohort: "send monthly revenue by customer") and line 1 ask for what `03_metrics/revenue_by_customer.csv` and `monthly_metrics.csv` already hold. Line 29 asks for consulting agreements though a contractor statement of work is in the room.
+- Stuck: it asked twice. Material agreements (line 23) repeats lines 24, 25, 28 and 29; the equity lines (13, 17, 20) repeat the 409A and the grants.
+- Stuck: the email was long and formal: "What it is", "Best form" and "A good one shows" for every item ("reads like grading homework"), no date, no sign-off, a subject that did not read like a person.
+- Stuck: the add box sat under 32 lines, took one file at a time, and the receipt said "Scans that were waiting ran again: redflags".
+- Stuck: internal codes in the operator's view ("Also needed for C12").
 
 ### The partner who finds the disagreement too late (primary)
 
-**Verdict:** fine with it, as long as it never tips the founder off about a flag before the meeting. **Rating:** workable.
-
-- Works: the message asks for documents and never states a finding. A request that names the disagreement gives the founder time to explain it away. [Inferred]
-- Works: "After the term sheet" lines are off by default, so bank statements and tax returns are not asked for at the first pass. [Inferred]
-- Stuck: nothing tells me which requests went out and which came back. [Inferred]
-- Would change my mind: a record of requests drafted and files received per room. [Inferred]
+- Stuck: "Top five" picked the roadmap, incorporation documents, IP assignments, board minutes and the hiring plan, and left out revenue by customer, retention and the monthly financials: the things that settle the decision.
+- Stuck: formation, IP and minutes are closing paperwork at seed, like bank statements.
+- Stuck: the prior financing guidance asked for "the term sheet for this round", which the fund writes.
+- Stuck: line 12's title said customer letters of intent while the line asks for references from management, investors and advisors.
+- Stuck: the trust line ("Tricorder never sends this") was in the prototype but not in the built drawer.
 
 ### What I took and what I left
 
-| Finding | Taken or left | Why |
+| Finding | Taken or left | Where |
 |---|---|---|
-| Show the scan that reran and the readout change after a file | Taken | The intake result returns the scans rerun, the item's checklist status before and after, and the ask count before and after (PRD FR-R13). |
-| Lines that ask for a file already in the room | Left, raised | It comes from coverage's guide text for C14 and the deferred-revenue gap's `would_need`. Coverage's owner fixes it; see Attention needed in [00_progress.md](00_progress.md). |
-| Long draft past the mail link limit | Taken in part | Copy is primary, the link warns. Shortening the guidance was rejected: the guidance is what the founder needs. |
-| Many lines with one title | Left | The list follows the readout's order, which the coverage step owns. The draft groups them. |
-| Record of requests and replies | Taken in part | Each received file is logged in `out/<room>/founder_requests.json`. Tricorder does not know whether a draft was sent, so drafts are not logged. |
+| Top five ranks what settles the decision first | Taken | Piece weight (traction and revenue, retention, burn and runway first), then a red flag or weak piece resting on the item. FR-R25. On Brasswick: revenue by customer, investor updates, the cohort export, monthly financial statements, the hiring plan. |
+| Formation, IP and minutes after the term sheet at seed | Taken | FR-R24. Never in the default five. |
+| Never ask for a file the room holds | Taken | Each line is checked against the room's files with coverage's own patterns (`scans.memo.checklist.match_document`, pattern only, unedited). A held line drops and is listed for the operator as "Not asked for"; the revenue line and the cohort line are reworded to what is still missing. FR-R22. |
+| Never ask twice | Taken | Material agreements, option grants and 409A, and the reference lines each merge into one item; material agreements says "beyond the Norrgate Software Studio statement of work already in the room". FR-R23. |
+| Line 12's title and fold with 9 and 11 | Taken | One item, "People we can call". |
+| Shorter, warmer email | Taken | One plain line per item and one "Ideally it includes ..." line per kind of document; a date with a reason; a sign-off with name and fund; subject "Brasswick: a few things before our next meeting". The default five on Brasswick is 1,750 characters as a mail link from the command line with name and fund, 1,744 on the page; under 2,000. FR-R26. |
+| Drop "the term sheet for this round" | Taken | Prior financing reads "Signed PDFs, one per investor." |
+| Trust line in the built drawer, plain synthetic-room line | Taken | "Tricorder never sends this. Copy it, or open it in your own mail app and send it from there." and "This is a sample room, so the files go into a working copy of it." |
+| Several files, one file for several lines, add box reachable | Taken | FR-R28. The add box sits beside the list on a wide screen and above it on a phone; the toolbar has "Add the founder's reply". |
+| Receipt in plain words | Taken | FR-R27: what coverage now finds, claims, flags and verdicts that moved, or "No check reads this file yet, so no number changed." |
+| Hide check codes | Taken | "Also needed for: <item names>." No check code appears in the panel's text (checked on the page). |
+| Coverage's own ask list repeats and asks for held files | Left, raised | Coverage's ask list is the captain's. Note for its owner in [00_progress.md](00_progress.md). |
+| "What it is" and "Best form" in the operator's view | Left | The operator view keeps the guide link under "Where the guidance comes from"; the list stays short. |
 
 ## Prototype status
 

@@ -1,0 +1,18 @@
+$ python3 -m scans.memo.claim_support data_room/brasswick
+(cwd /home/claude/wt/claim-support, TRICORDER_OUT_DIR=/tmp/tricorder-verify/claim-support/out)
+{
+  "readout": "/tmp/tricorder-verify/claim-support/out/brasswick/readout.json",
+  "claims_table": {
+    "claims": "53",
+    "supported": "31",
+    "contradicted": "7",
+    "unsupported": "15",
+    "from deck": "42",
+    "from script": "11",
+    "as of": "2026-09-30",
+    "video source": "script",
+    "not counted (examples)": "6",
+    "relabelled by the memo step": "yes"
+  }
+}
+exit 0

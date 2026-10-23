@@ -1,0 +1,8 @@
+$ curl synthetic upload
+{"detail":"brasswick is a synthetic room checked into the repo, so Tricorder never writes into it. Copy it first: python -m founder_requests copy-room data_room/brasswick"}
+HTTP 409
+$ curl bad kind
+{"detail":"Files of kind '.exe' are not accepted. Accepted: .pdf, .json, .png, .jpg, .jpeg, .mp4, .csv, .md, .txt, .xlsx, .docx, .pptx."}
+HTTP 415
+$ git status --short data_room
+(empty means untouched)

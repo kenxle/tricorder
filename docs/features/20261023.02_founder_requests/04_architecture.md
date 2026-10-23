@@ -19,8 +19,8 @@ A new top-level package, `founder_requests/`, beside `memo/`, `inbox/` and `stor
 | Component | Change |
 |---|---|
 | `founder_requests/guidance.py` | New. `GUIDANCE` (33 entries, one per guide), `for_item(checklist_id)`. |
-| `founder_requests/draft.py` | New. `items(readout)`, `founder_text(ask)`, `leaks(text)`, `default_selection`, `company_and_greeting`, `draft(...) -> Draft`, `mailto`. |
-| `founder_requests/intake.py` | New. `copy_room`, `check_name`, `check_bytes`, `target_for`, `save`, `waiting_scans`, `receive`. |
+| `founder_requests/draft.py` | New. `analyse(readout, room_dir) -> (items, held)`, `items`, `founder_text(ask)`, `leaks(text)`, `default_selection`, `company_and_greeting`, `draft(...) -> Draft`, `mailto`, `default_by`. |
+| `founder_requests/intake.py` | New. `copy_room`, `check_name`, `check_bytes`, `resolve_requests`, `target_for`, `save`, `waiting_scans`, `changes`, `receive_batch`, `receive`. |
 | `founder_requests/__main__.py` | New CLI: `list`, `draft`, `copy-room`, `add`. |
 | `server/founder_requests_routes.py` | New `APIRouter`. |
 | `server/app.py` | One import and one `include_router` line, placed before the page mount (a mount at `/` placed first would answer every path). |
@@ -29,11 +29,11 @@ A new top-level package, `founder_requests/`, beside `memo/`, `inbox/` and `stor
 
 ## Data shapes
 
-**Item** (one ask line, `GET /api/rooms/{room}/founder-requests`): `number`, `text` (founder words), `operator_why`, `piece`, `checklist_id`, `covers`, `if_you_have_it`, `ask_stage`, `top`, `title`, `guidance` (`guide`, `title`, `what`, `form`, `good[]`, `path`) or null.
+**Item** (one ask line or a merged family, `GET /api/rooms/{room}/founder-requests`): `number` (first line), `lines[]`, `text` (founder words), `operator_why` (item names, no codes), `piece`, `checklist_id`, `covers`, `if_you_have_it`, `ask_stage`, `top`, `title`, `guidance` (`guide`, `title`, `what`, `form`, `good[]`, `path`) or null, `includes`, `in_room[]`, `rests_on_flag`, `requests[]` (`checklist_id`, `name`). The listing also returns `held[]` (`number`, `title`, `files[]`), `by`, `reason`, `sender`, `fund`.
 
-**Draft** (`POST /api/rooms/{room}/founder-requests/draft`, body `{"numbers": [6, 16], "to": "", "sender": ""}`): `room`, `company`, `to`, `subject`, `body`, `mailto`, `mailto_fits`, `read_from`, `items[]`, `leaks[]` (always empty; the test asserts it).
+**Draft** (`POST /api/rooms/{room}/founder-requests/draft`, body `{"numbers": [6, 16], "to": "", "sender": null, "fund": null, "by": "2026-11-06", "reason": "before our partner meeting"}`): `room`, `company`, `to`, `subject`, `body`, `mailto`, `mailto_fits`, `read_from`, `by`, `items[]`, `leaks[]` (always empty; the test asserts it). `sender` and `fund` default to `TRICORDER_OPERATOR_NAME` and `TRICORDER_FUND_NAME`.
 
-**Receipt** (`POST /api/rooms/{room}/founder-requests/files?answers=C22&name=<original name>`, raw body): `room`, `room_path`, `copied_from` (null unless a copy was made), `saved` (path relative to the room), `checklist_id`, `bytes`, `scans_rerun[]` (`scan`, `ok`, `error`), `status_before`, `status_after`, `asks_before`, `asks_after`, `readout` (path).
+**Receipt** (`POST /api/rooms/{room}/founder-requests/batch` with `{"files": [{"name", "answers": "C97,C46", "data": <base64>}]}`, or `POST .../files?answers=C22&name=<original name>` with the raw file): `room`, `files[]` (`original_name`, `saved`, `bytes`, `answers[]` of `checklist_id`, `item`, `status_before`, `status_after`; `note` when saved beside an earlier file), `scans_rerun[]` (`scan`, `ok`, `error`; the page does not show scan names), `asks_before`, `asks_after`, `summary[]` (plain sentences, FR-R27), `at`, `readout` (path). The single-file route adds the first file's fields at the top.
 
 **Log** `out/<room>/founder_requests.json`: `{"received": [<receipt without readout>, "at": ...]}`.
 
@@ -45,17 +45,17 @@ None needed. After Saturday, an `AskItem.guide` field would let the page show gu
 
 ### Draft
 
-`items(readout)` walks `readout.asks`, joins each line to its Panel row by `what` (lower case), and attaches guidance by checklist id. `draft(readout, numbers)` picks the lines, splits required from "if you have it", groups each by guide, and writes the body. `founder_text` strips locations, cell references, paths and ids, and turns a fragment into "Please send ...". The route returns `leaks` from the same function the test uses.
+`analyse(readout, room_dir)` walks `readout.asks`, joins each line to its Panel row by `what` (lower case), and attaches guidance by checklist id. With the room it checks each line's document against the room's files with coverage's patterns (`match_document(row, files, None)`): a held line drops into `held`, the revenue and cohort lines are reworded to what is missing (FR-R22). Closing items move after the term sheet at seed (FR-R24), families merge (FR-R23), and `_rank` pins the five (FR-R25). `draft(readout, numbers)` resolves any line number of an item, splits required from "if you have it", writes one line per item and one "Ideally it includes" per guide, the date line and the sign-off (FR-R26). `founder_text` strips locations, cell references, paths and ids, and turns a fragment into "Please send ...". The route returns `leaks` from the same function the test uses.
 
 ### Receive
 
 1. Resolve the room. A room under `data_room/` is refused with the copy command (route) or copied first when the CLI is given `--copy` (writes `rooms/<room>_live`).
-2. Resolve the request: a checklist id, or an ask number from the current readout. Only document and ask rows are accepted.
-3. Check the name (FR-R17), the size (FR-R19) and the bytes (FR-R18).
+2. Resolve each file's requests (`resolve_requests`): checklist ids or ask numbers from the current readout, comma separated. Only document and ask rows are accepted.
+3. Check every file's name (FR-R17), size (FR-R19) and bytes (FR-R18), and that no two land on one path, before any write (FR-R28).
 4. `target_for`: folder (FR-R12) and name (FR-R13). Write with `O_CREAT | O_EXCL | O_NOFOLLOW` (FR-R20).
 5. `waiting_scans`: for each built scan whose `NEEDS` are met, run it when it has no result or its result's `inputs` lacks a current room input file.
 6. Run each as `python -m scans.<name> <room>` with the caller's environment (so `TRICORDER_OUT_DIR` holds), then `build_readout` and `write_readout`.
-7. Read the item's status from the new coverage Panel; append the log.
+7. Read each request's status from the new coverage Panel; `changes(before, after)` compares claim texts, flags and piece verdicts and writes the summary (FR-R27); append one log entry per file.
 
 `TRICORDER_ROOMS_DIR` moves `rooms/` for tests and verification runs. The router finds rooms in `data_room/` and in that folder by the same rule as `server/app.py`.
 
