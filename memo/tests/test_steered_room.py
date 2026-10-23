@@ -81,12 +81,13 @@ def test_the_steered_seed_drop_exports_with_nothing_unverified(env):
 
 
 def test_the_steered_seed_drop_pdf_notes_its_full_room_lines(env, tmp_path):
-    from pypdf import PdfReader
+    import pdfplumber  # in requirements.txt; pypdf is not installed in CI
 
     from memo.export import export
 
     written = export(SEED, pdf=True)
-    text = " ".join(p.extract_text() for p in PdfReader(str(written.pdf)).pages)
+    with pdfplumber.open(written.pdf) as pdf:
+        text = " ".join(p.extract_text() or "" for p in pdf.pages)
     assert "customer_mrr_by_month.csv" in text and "Could not open" not in text
 
 
