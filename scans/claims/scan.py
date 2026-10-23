@@ -24,6 +24,10 @@ def run(room_dir: Path) -> ScanResult:
     ids = Ids(NAME)
     gaps = []
     statements, notes, as_of, from_pdf = extract.deck_statements(room)
+    if any("claims.json" in n for n in notes):
+        gaps.append(gap("Not in the room: readable text in the pitch deck; its claims.json stands in, so only the claims page is read",
+                        "the deck PDF has no text a reader can extract", "the pitch deck as a PDF with a text layer",
+                        "the_pitch_itself"))
     if not statements and "no deck" in notes:
         gaps.append(gap("Not in the room: the pitch deck (01_overview/pitch_deck.pdf)", "file missing",
                         "the pitch deck as a PDF", "the_pitch_itself"))

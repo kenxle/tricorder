@@ -233,7 +233,7 @@ def _claim(item: Labelled, ids: Ids, as_of: str | None) -> Claim:
     elif item.label == "contradicted":
         parts = [f"{e.doc} ({e.source.locator}) says {e.printed}{_gap_pct(st, e)}" for e in item.disagree]
         parts += [f"{_where_words(o)[0].lower()}{_where_words(o)[1:]} says {_figure(o)}" for o in item.founder_disagree
-                  if not item.disagree]
+                  if (st.spoken or not item.disagree) and o.origin != "appendix"]
         text = f"Contradicted: {where} gives {kind.name} as {figure}, but " + "; ".join(parts) + "."
     else:
         text = f"Unsupported: {where} gives {kind.name} as {figure}. No document outside the pitch states it."
@@ -243,7 +243,8 @@ def _claim(item: Labelled, ids: Ids, as_of: str | None) -> Claim:
     sources = [_source(st)]
     if item.label == "contradicted":
         sources += [e.source for e in item.disagree]
-        if not item.disagree:
+        if st.spoken or not item.disagree:
+            # A spoken figure is set against the deck's (FRAMEWORKS 4.3), so the deck's slide is shown too.
             sources += [_source(o) for o in item.founder_disagree if o.origin != "appendix"]
     else:
         sources += [_source(r) for r in st.repeats]
@@ -255,7 +256,9 @@ def _claim(item: Labelled, ids: Ids, as_of: str | None) -> Claim:
             unique.append(s)
     return Claim(id=ids(), scan="claims", text=text, value=value,
                  severity="flag" if item.label == "contradicted" else "info",
-                 check=Check(kind="script", name=_check_name(item), model=None), confidence="computed", sources=unique)
+                 check=Check(kind="model", name=_check_name(item) + ".read", model=None) if st.origin == "model"
+                 else Check(kind="script", name=_check_name(item), model=None),
+                 confidence="quoted" if st.origin == "model" else "computed", sources=unique)
 
 
 def backed_by(kind_name: str) -> str:
@@ -317,7 +320,7 @@ def panels(items: list[Labelled], skipped: list[Statement], as_of: str | None, v
                      (f" ({st.mention.hedge})" if st.mention.hedge else "") + (", from the script" if st.origin == "script" else "")
         agree = [_ev_words(e) for e in item.agree] + [f"{o.where}: {_figure(o)} (same pitch)" for o in item.founder_agree]
         disagree = [_ev_words(e) for e in item.disagree] + [f"{o.where}: {_figure(o)} (same pitch)" for o in item.founder_disagree]
-        where = st.where + "".join(f"; repeated at {r.where}" for r in st.repeats)
+        where = st.where + "".join(f"; repeated at {r.where}: '{r.quote}'" for r in st.repeats)
         rows.append([item.claim.id, item.label, where, st.quote.replace("\n", " "), item.kind.name, _figure(st), normal, spoken,
                      "; ".join(agree), "; ".join(disagree), backed_by(st.kind), ask_text(item)])
     counts = {k: sum(1 for i in items if i.label == k) for k in ("supported", "contradicted", "unsupported")}
