@@ -1,0 +1,4 @@
+$ python3 -m scans.redflags data_room/hollis_voice
+(cwd /home/claude/wt/memo-export, TRICORDER_OUT_DIR=/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/memo-export/verify/memo-export-final/out)
+redflags: 10 claims, 4 gaps -> /tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/memo-export/verify/memo-export-final/out/hollis_voice/redflags.json
+exit 0
