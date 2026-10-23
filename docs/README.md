@@ -26,6 +26,7 @@
 - [ongoing/ARCHITECTURE.md](ongoing/ARCHITECTURE.md): The shape of the system at a level a person can hold in their head.
 - [ongoing/STYLE_GUIDE.md](ongoing/STYLE_GUIDE.md): How the product looks: color, type, spacing and the reusable components.
 - [ongoing/BRAND.md](ongoing/BRAND.md): How the product talks: tone, word choice and positioning.
+- [ongoing/PERSONA_REVIEWS.md](ongoing/PERSONA_REVIEWS.md): How to run the persona agents in `.claude/agents/` against a design or draft.
 - [ongoing/TESTING.md](ongoing/TESTING.md): How testing works: what runs, how to run it and what counts as green.
 - [ongoing/diagrams/INDEX.md](ongoing/diagrams/INDEX.md): The index of the diagrams folder.
 
