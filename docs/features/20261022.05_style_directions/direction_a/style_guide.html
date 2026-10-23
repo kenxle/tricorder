@@ -7,7 +7,7 @@
 <meta name="description" content="Tricorder style guide, Direction A: Reference Range.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Fragment+Mono&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Archivo:wdth,wght@62..125,400..800&family=Fragment+Mono&display=swap">
 <style>
 /* Tricorder, Direction A: Reference Range. Tokens first, then components. */
 :root {
@@ -35,7 +35,7 @@
   --thin: #5b6072;
   --thin-bg: #eceef3;
 
-  --f-display: "Bricolage Grotesque", "Avenir Next Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --f-display: "Archivo", "Avenir Next Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
   --f-body: "Atkinson Hyperlegible", "Verdana", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --f-data: "Fragment Mono", "SFMono-Regular", "Menlo", "Consolas", "Liberation Mono", monospace;
 
@@ -104,6 +104,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--f-body);
+  font-stretch: 87.5%;
   font-size: 15px;
   line-height: 1.45;
 }
@@ -417,7 +418,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); justify
           <tbody>
             <tr><td>Motif</td><td>Medical chart and vitals monitor</td><td>The range strip, the out-of-range triangle as the weak mark, the overview drawn as channel rows, the faint chart-paper grid behind the hero.</td></tr>
             <tr><td>Accent</td><td>Hue 231, #2b41bf</td><td>A clinical blue for action and reference only: buttons, links, focus, the normal band. It never marks a verdict, so blue never reads as a judgment.</td></tr>
-            <tr><td>Type</td><td>Bricolage Grotesque, Atkinson Hyperlegible, Fragment Mono</td><td>Bricolage for headings, where its slight irregularity gives the page a voice. Atkinson, a face drawn for low vision, for everything read. Fragment Mono for every figure and file name.</td></tr>
+            <tr><td>Type</td><td>Archivo (semi-condensed), Atkinson Hyperlegible, Fragment Mono</td><td>Archivo for headings, drawn semi-condensed so titles read like instrument labels. Atkinson, a face drawn for low vision, for everything read. Fragment Mono for every figure and file name.</td></tr>
             <tr><td>Density</td><td>Dense, a working instrument</td><td>15px body, 13px tables, 4px spacing unit, rows separated by hairlines rather than gaps. The overview fits seven pieces in one panel.</td></tr>
             <tr><td>Ground</td><td>Light, dark too</td><td>Light is primary, a cool white with a hint of the accent. Dark is a monitor at night: near black with brighter marks.</td></tr>
             <tr><td>Shape</td><td>Square corners and hairlines</td><td>Zero radius everywhere, including buttons and inputs. Panels are separated by a 1px rule, never a shadow. A 3px left edge carries a flag's colour.</td></tr>
@@ -438,7 +439,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); justify
         <div>
           <div class="role">Display</div>
           <div class="big" style="font-family:var(--f-display);font-weight:800;letter-spacing:-0.03em">Readout</div>
-          <p>Bricolage Grotesque, 600 to 800. Page titles, section heads, block heads. 20px and up only.</p>
+          <p>Archivo semi-condensed, 600 to 800. Page titles, section heads, block heads. 20px and up only.</p>
         </div>
         <div>
           <div class="role">Body</div>
@@ -730,7 +731,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); justify
         <li><span>Every figure has a source chip beside it or in its row. A figure without one does not ship.</span><span class="why">Every claim links to its source. That is a product commitment.</span></li>
         <li><span>Draw a band only where sources agree within 1%, or where a check rebuilt the figure. A disagreement gets no band.</span><span class="why">The readout lists sources side by side and does not pick a winner.</span></li>
         <li><span>Green flags and red flags share one size, weight and length.</span><span class="why">A strength gets the same care as a problem.</span></li>
-        <li><span>Bricolage only at 20px and up. Anything read in sentences is Atkinson.</span><span class="why">Bricolage's character breaks down when small. Atkinson is built for legibility.</span></li>
+        <li><span>Archivo only at 20px and up. Anything read in sentences is Atkinson.</span><span class="why">Condensed letters crowd when small. Atkinson is built for legibility.</span></li>
         <li><span>The chart-paper grid sits behind the hero and the call to action only, never behind data.</span><span class="why">Grid lines compete with the ticks on a strip.</span></li>
         <li><span>No motion except the running ring, and none at all under reduced motion.</span><span class="why">A blinking monitor is an alarm. Tricorder states, it does not alarm.</span></li>
       </ol>
