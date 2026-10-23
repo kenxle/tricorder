@@ -27,6 +27,7 @@ from pathlib import Path
 from schema.claim import Claim, Gap, Readout
 from schema.readers import LocatorError
 from scans.memo import checklist as cl
+from scans.memo.merge import reads_room
 
 from memo.compose import arr_side_by_side
 from memo.model import ChangeEntry, ChecklistRef, GapRef, Memo, MemoLine, MemoSection, SourceText, source_key
@@ -161,7 +162,7 @@ class _Builder:
         self.r = readout
         self.room_dir = Path(room_dir)
         # Where the lines' files open: the readout's own room, or the full room once a steer switched it (memo/rooms.py).
-        self.rooms = source_rooms(readout, self.room_dir)
+        self.rooms = source_rooms(reads_room(readout, self.room_dir), self.room_dir)
         self.built_at = built_at
         self.claims: dict[str, Claim] = {}
         self.unverified: list[tuple[Claim, list[str]]] = [(c, ["moved to the box by the merge"]) for c in readout.unverified]

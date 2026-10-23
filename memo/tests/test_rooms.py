@@ -1,4 +1,6 @@
-"""memo/rooms.py: the rooms a readout's sources resolve in, and nothing outside them (review wave 2b, B1 and S2)."""
+"""memo/rooms.py: the rooms a readout's sources resolve in, and nothing outside them (review wave 2b, B1 and S2).
+
+The switch marker is read by scans.memo.merge.reads_room (steering's); these tests pin what the memo relies on."""
 
 from __future__ import annotations
 
@@ -8,7 +10,9 @@ from schema.claim import Panel, Readout
 from schema.readers import LocatorError
 from scans.base import ROOT
 
-from memo.rooms import OutsideRoom, reads_room, resolve, source_rooms
+from scans.memo.merge import reads_room
+
+from memo.rooms import OutsideRoom, resolve, source_rooms
 
 FULL = ROOT / "data_room" / "hollis_voice"
 SEED = ROOT / "data_room" / "hollis_voice_seed_drop"
@@ -27,7 +31,7 @@ def _steer_row(to: str) -> Panel:
 def test_a_readout_reads_its_own_room_until_a_steer_switches_it():
     assert reads_room(None, SEED) == SEED
     assert reads_room(_readout(), SEED) == SEED
-    assert source_rooms(_readout(), SEED) == [SEED]
+    assert source_rooms(reads_room(_readout(), SEED), SEED) == [SEED]
 
 
 @pytest.mark.parametrize("marker", [
@@ -36,7 +40,7 @@ def test_a_readout_reads_its_own_room_until_a_steer_switches_it():
 ])
 def test_either_switch_marker_reads_the_full_room(marker):
     assert reads_room(_readout(marker), SEED).resolve() == FULL.resolve()
-    assert [p.resolve() for p in source_rooms(_readout(marker), SEED)] == [FULL.resolve(), SEED.resolve()]
+    assert [p.resolve() for p in source_rooms(reads_room(_readout(marker), SEED), SEED)] == [FULL.resolve(), SEED.resolve()]
 
 
 @pytest.mark.parametrize("named", ["brasswick", "hollis_voice_clean", "../../", "/etc"])

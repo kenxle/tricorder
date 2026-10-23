@@ -23,7 +23,7 @@ from schema.claim import Readout, ScanResult, Source
 from schema.readers import LocatorError
 from scans import SCANS
 from scans.base import ROOT, available, out_dir, room_inputs
-from scans.memo.merge import build_readout, write_readout
+from scans.memo.merge import build_readout, readout_room, write_readout
 from memo.rooms import OutsideRoom, resolve, source_rooms, text_in
 from server.local_guard import LocalGuard
 from founder_requests.intake import rooms_root
@@ -59,21 +59,11 @@ def room_dir(room: str) -> Path:
     return rooms()[room]
 
 
-def _saved_readout(path: Path) -> Readout | None:
-    target = out_dir(path) / "readout.json"
-    if not target.exists():
-        return None
-    try:
-        return Readout.model_validate_json(target.read_text(encoding="utf-8"))
-    except ValueError:
-        return None
-
-
 def readable_rooms(room: str) -> list[Path]:
     """Where the room's files open: the room itself, or, once a "read the full room" steer
-    switched its readout, the full room first (memo/rooms.py). Never any other folder."""
+    switched its readout, the full room first (scans.memo.merge.readout_room). Never any other folder."""
     path = room_dir(room)
-    return source_rooms(_saved_readout(path), path)
+    return source_rooms(readout_room(path), path)
 
 
 def _inside(rooms_: list[Path], rel: str) -> Path:

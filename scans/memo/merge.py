@@ -21,7 +21,7 @@ import json
 from pathlib import Path
 
 from schema.check_quotes import check_result
-from schema.claim import Readout, ScanResult
+from schema.claim import Panel, Readout, ScanResult
 from scans import SCANS
 from scans.base import available, gap, now_iso, out_dir, room_name, synthetic_notice
 
@@ -34,6 +34,49 @@ STEPS: tuple[str, ...] = (
     "asks",        # FRAMEWORKS "Ask list"
     "connecting",  # the one model pass: connecting sentences, each citing claim ids
 )
+
+
+SEED_SUFFIX = "_seed_drop"
+READS_PANEL = "reads room"
+
+
+def full_room_of(room_dir: Path) -> Path | None:
+    """The seed drop's second tier: the sibling folder named without '_seed_drop'."""
+    name = Path(room_dir).resolve().name
+    if not name.endswith(SEED_SUFFIX):
+        return None
+    full = Path(room_dir).resolve().parent / name[: -len(SEED_SUFFIX)]
+    return full if full.is_dir() else None
+
+
+def reads_panel(room: str, steer_n: int) -> Panel:
+    """The marker a "read the full room" steer writes: the room every source resolves in, and since which steer."""
+    return Panel(name=READS_PANEL, columns=["Room", "Since"], rows=[[room, f"steer {steer_n}"]])
+
+
+def reads_room(readout: Readout | None, room_dir: Path) -> Path:
+    """The room the readout's sources resolve in: the full room once a "read the full room" steer switched it,
+    else the room itself. Also reads the "source" row of a steer panel, which readouts steered before the
+    "reads room" panel carry."""
+    room_dir = Path(room_dir)
+    full = full_room_of(room_dir) if readout is not None else None
+    if full is None:
+        return room_dir
+    named = {r[0] for p in readout.panels if p.name == READS_PANEL for r in p.rows if r}
+    named |= {r[3] for p in readout.panels if p.name.startswith("steer ") for r in p.rows if len(r) > 3 and r[0] == "source"}
+    return full if full.name in named else room_dir
+
+
+def on_disk(room_dir: Path) -> Readout | None:
+    path = out_dir(room_dir) / "readout.json"
+    if not path.exists():
+        return None
+    return Readout.model_validate_json(path.read_text(encoding="utf-8"))
+
+
+def readout_room(room_dir: Path) -> Path:
+    """The room the readout at out/<room>/readout.json resolves its sources in (see reads_room)."""
+    return reads_room(on_disk(room_dir), room_dir)
 
 
 def load_results(room_dir: Path) -> tuple[list[ScanResult], list[str]]:
