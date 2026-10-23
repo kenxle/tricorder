@@ -126,14 +126,14 @@ def render_html(memo: Memo) -> str:
             lines.insert(0, rec)
         partner_empty = not visible(s.model_copy(update={"lines": lines}), "partner")
         cls = "memo-section" + (" collapsed" if s.collapsed else "") + (" aud-operator" if partner_empty else "")
-        toc.append(f'<li class="{"aud-operator" if partner_empty else ""}"><a href="#s{s.number:02d}">{_e(s.title)}</a></li>')
+        toc.append(f'<li class="{"aud-operator" if partner_empty else ""}"><a href="#s{s.number:02d}">{s.number}. {_e(s.title)}</a></li>')
         secs.append(
             f'<section class="{cls}" id="s{s.number:02d}" data-section="{s.number}">'
             f'<h2>{s.number}. {_e(s.title)}</h2><p class="note aud-operator">Who writes it: {_e(s.who_writes)}</p>'
             f'<ul class="lines">{"".join(_line(ln, s.number) for ln in lines)}</ul>'
             f'<div class="op-add" data-section="{s.number}"></div></section>')
     data = json.dumps(memo.model_dump(mode="json"), ensure_ascii=False).replace("</", "<\\/")
-    banner = f'<p class="banner" role="note">{_e(memo.synthetic_notice)}</p>' if memo.synthetic_notice else ""
+    banner = ""
     return (PAGE.replace("{{TITLE}}", _e(f"{memo.company} memo"))
             .replace("{{COMPANY}}", _e(memo.company))
             .replace("{{VERSION}}", str(memo.version))
@@ -169,7 +169,7 @@ button.tool, .op-add button, .op-tools button, .edit-bar button { font:inherit; 
 button.tool[aria-pressed="true"] { border-color:var(--fg); }
 details.toc { font-size:14px; margin:8px 0 0; }
 details.toc summary { cursor:pointer; color:var(--muted); }
-details.toc ol { padding-left:20px; margin:6px 0; columns:2; }
+details.toc ol { list-style:none; padding-left:0; margin:6px 0; columns:2; }
 details.toc a { color:inherit; }
 @media (min-width: 1240px) {
   details.toc { position:fixed; top:16px; left:max(16px, calc(50% - 430px - 230px)); width:200px; }
@@ -188,9 +188,7 @@ body.operator .memo-section.collapsed h2 { position:static; width:auto; height:a
 .memo-section.collapsed .kind { display:none; }
 .memo-section.collapsed .text { color:var(--muted); }
 .lines { list-style:none; padding:0; margin:0; }
-.line { margin:2px 0; border-left:3px solid transparent; }
-.line.sev-green { border-left-color:var(--green); }
-.line.sev-red, .line.sev-flag { border-left-color:var(--red); }
+.line { margin:2px 0; }
 .line-open, .line-static { display:block; width:100%; text-align:left; background:none; border:0; color:inherit; font:inherit; padding:5px 8px; border-radius:6px; }
 .line-open { cursor:pointer; }
 .line-open:hover, .line-open:focus-visible { background:var(--soft); outline:none; }
