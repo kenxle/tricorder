@@ -267,3 +267,12 @@ def test_a_ceiling_written_as_no_customer_above_reads_at_most(results):
     claim = by_id(result)[row["claim id"]]
     assert "as at most 9%" in claim.text
     assert "as above 9%" not in claim.text
+
+
+def test_a_bare_figure_reads_with_its_unit_in_the_claim_text(results):
+    """The table's "stated" column keeps the figure as printed ("29"); the sentence
+    a reader sees says what it counts ("29 months")."""
+    result = results["brasswick"]
+    row = find_row(result, "slide 10", "29")
+    assert row["kind"] == "runway"
+    assert "gives runway as 29 months" in by_id(result)[row["claim id"]].text

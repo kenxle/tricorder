@@ -32,6 +32,10 @@ from scans.claims.numbers import HEDGES
 TABLE = "claims table"
 COUNTS = "claims table counts"
 NOT_COUNTED = "claims not counted"
+# Nouns that say what a bare figure counts, so "29" reads "29 months" in a sentence.
+COUNT_NOUNS = {"months", "years", "weeks", "days", "hires", "people", "clinics", "brokers", "locations",
+               "customers", "employees", "cohorts"}
+
 COLUMNS = ["claim id", "label", "where", "quote", "kind", "stated", "normalised", "spoken",
            "agrees", "disagrees", "should be backed by", "ask"]
 
@@ -231,6 +235,10 @@ def _check_name(item: Labelled) -> str:
 def _claim(item: Labelled, ids: Ids, as_of: str | None) -> Claim:
     st, kind = item.st, item.kind
     where, figure = _where_words(st), _figure(st)
+    m = st.mention
+    if (m.unit is None and m.kind_hint == "number" and (m.unit_word or "").lower() in COUNT_NOUNS
+            and m.unit_word.lower() not in figure.lower()):
+        figure = f"{figure} {m.unit_word}"   # "29" on a big-number slide reads "29 months" in the sentence
     if item.label == "supported":
         docs = "; ".join(f"{e.doc} ({e.source.locator}, {e.printed})" for e in item.agree)
         text = f"Supported: {where} gives {kind.name} as {figure}. Outside the pitch, {docs} agree{'s' if len(item.agree) == 1 else ''}."
