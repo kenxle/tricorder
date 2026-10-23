@@ -13,6 +13,15 @@ Roadmap slice: [contract-terms](../../ongoing/ROADMAP.md#contract-terms). Route:
 5. **Server owner.** `server/app.py`'s `rooms()` lists only folders with a `00_` to `09_` subfolder. A contracts-only upload works through the CLI under any layout, and through the API only as `rooms/<name>/04_customers/*.pdf`.
 6. **FRAMEWORKS owner.** Entry 1.13's `Term` has no status for a quote the checker cannot find; this module adds `quote_not_found` in its own model. Brasswick returns three `watch` results on check 3 (automatic renewals the plan carries, no non-renewal rate stated), which follows the entry's rule; the worked example does not list Brasswick for check 3.
 
+## Review round 1 (wave 2a)
+
+Review: [review_wave2a.md](../20261022.10_feature_breakdown/review_wave2a.md), read, not edited. Branch `claude/project-thread-ea11in` merged first (per-module claim ids, a module crash becomes a gap).
+
+| Finding | Disposition | Test, red then green |
+|---|---|---|
+| B1. The clean room got two false flags on the Marlow pilot from checks 1 and 3, citing no ARR build cell | Fixed in `5b83853`. A check says a contract is counted only when `recurring_count` finds the counting row: an `ARR_Build` line for the customer or its cohort, or with no ARR build, the customer file's subscription rows. The flag cites that row (`ARR_Build!E13` for Marlow). Otherwise an info claim says what was found ("the ARR build does not count it"). Coverage counts only customers the counting holds: $36,584 of $171,739 in the clean room. | `test_clean_room_raises_no_flag_or_watch_on_marlow`, `test_a_counted_flag_cites_the_counting_row` (red, then green); `test_clean_room_coverage_leaves_out_the_uncounted_pilot` (written with the fix) |
+| O8 (deck part). A deck that is not a PDF crashed `synthetic_notice` and `deck_vs_books` | Fixed in `debee0c`. No banner, and the gap "Not in the room: a readable pitch deck". | `scans/redflags/tests/test_unreadable_deck.py`, 3 tests, red then green, including the memo merge |
+
 ## Documents
 
 - [product_thinking.md](product_thinking.md) and [01_brief.md](01_brief.md)

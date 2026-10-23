@@ -134,6 +134,23 @@ class Counting:
         return next((ln for ln in self.arr_lines if q in ln["label"]), None)
 
 
+def recurring_count(cnt: "Counting", key: str) -> tuple[bool, list[Source], str]:
+    """Whether the counting side counts this customer as recurring revenue, with the row that shows it.
+
+    With an ARR build, only a line for the customer or its cohort counts (FRAMEWORKS 1.13, "Mechanical
+    check"); a customer file row alone does not, because the clean room lists the pilot there and leaves
+    it out of ARR. With no ARR build, the customer file's subscription rows are the counting.
+    A check says a contract is counted only when this returns True (review wave 2a, B1)."""
+    if cnt.arr_lines:
+        line = cnt.arr_line_for(key)
+        if line is None:
+            return False, [], "the ARR build"
+        return True, [cnt.src_cell(f"ARR_Build!E{line['row']}", line["arr"])], f"the ARR build line '{line['label']}'"
+    _mrr, rows = cnt.counted(key)
+    subs = [r for r in rows if r.product_type.lower() == "subscription"]
+    return bool(subs), [], "the customer file's subscription rows"
+
+
 def _col(i: int) -> str:
     from openpyxl.utils import get_column_letter
 
@@ -291,27 +308,30 @@ def check_1(c: ContractTerms, key: str, cnt: Counting, s: dict, out: Out) -> Non
         return
     exit_day, why, terms = ex
     days = (exit_day - as_of).days
-    srcs = [term_src(c, t) for t in terms] + [cnt.src_row(r) for r in rows]
-    line = cnt.arr_line_for(key)
-    if line and mrr > 0:
-        srcs.append(cnt.src_cell(f"ARR_Build!E{line['row']}", line["arr"]))
+    counted_rec, count_srcs, where = recurring_count(cnt, key)
+    srcs = [term_src(c, t) for t in terms] + [cnt.src_row(r) for r in rows] + count_srcs
     arr = 12 * mrr
     term_m = int(c.term_months.value) if c.term_months.stated else None
     month = cnt.as_of[:7]
-    if mrr > 0 and days < 0:
+    if mrr > 0 and not counted_rec:
+        out.claim(P1, f"{c.label}: {why}; the earliest exit is {exit_day}, {days} days after {as_of}. The customer "
+                      f"file lists {money(mrr)} MRR for it in {month}; {where} does not count it, so it is not "
+                      f"counted as a year of ARR.", srcs, "info")
+        out.row(c, P1, "clear", f"not in {where}")
+    elif mrr > 0 and days < 0:
         out.claim(P1, f"{c.label}: the term ended {exit_day}, {-days} days before {as_of}, and the contract states no "
-                      f"renewal, but the customer is counted as a year of ARR: {money(arr)} (12 x {money(mrr)} MRR in "
+                      f"renewal, but {where} counts the customer as a year of ARR: {money(arr)} (12 x {money(mrr)} MRR in "
                       f"{month}).", srcs, "flag", value=Value(number=arr, unit="USD", label="other", period=month))
         out.row(c, P1, "flag", f"term ended {exit_day}, {money(arr)} counted")
     elif mrr > 0 and days <= s["short_notice_days"]:
-        out.claim(P1, f"{c.label}: {why}, so the earliest exit is {exit_day}, {days} days after {as_of}, but the "
-                      f"customer is counted as a year of ARR: {money(arr)} (12 x {money(mrr)} MRR in {month}). "
+        out.claim(P1, f"{c.label}: {why}, so the earliest exit is {exit_day}, {days} days after {as_of}, but "
+                      f"{where} counts the customer as a year of ARR: {money(arr)} (12 x {money(mrr)} MRR in {month}). "
                       f"{HOW} worked the dates and the product.", srcs, "flag",
                   value=Value(number=arr, unit="USD", label="other", period=month))
         out.row(c, P1, "flag", f"{days} days to exit, {money(arr)} counted")
     elif mrr > 0 and term_m is not None and term_m < s["min_contract_months"]:
-        out.claim(P1, f"{c.label}: the term is {term_m} months, under {s['min_contract_months']}, and the customer is "
-                      f"counted as a year of ARR: {money(arr)}. The earliest exit is {exit_day}, {days} days after {as_of}.",
+        out.claim(P1, f"{c.label}: the term is {term_m} months, under {s['min_contract_months']}, and {where} "
+                      f"counts the customer as a year of ARR: {money(arr)}. The earliest exit is {exit_day}, {days} days after {as_of}.",
                   srcs, "watch", value=Value(number=arr, unit="USD", label="other", period=month))
         out.row(c, P1, "watch", f"term {term_m} months")
     else:
@@ -335,6 +355,15 @@ def check_3(c: ContractTerms, key: str, cnt: Counting, s: dict, out: Out) -> Non
         return
     end = str(c.term_end_date.value)
     mrr, rows = cnt.counted(key)
+    counted_rec, count_srcs, where = recurring_count(cnt, key)
+    if mrr > 0 and not counted_rec:
+        # The plan's starting figure is built from the counted lines; a customer they leave out
+        # has no share of the plan to rest on the contract (review wave 2a, B1).
+        out.claim(P3, f"{c.label}: the term ends {end}. The customer file lists {money(mrr)} MRR for it in "
+                      f"{cnt.as_of[:7]}, but {where} does not count it, so no plan revenue is taken to rest on it.",
+                  [term_src(c, c.term_end_date)] + [cnt.src_row(r) for r in rows], "info")
+        out.row(c, P3, "clear", f"not in {where}")
+        return
     start_cell, start = cnt.start
     share = mrr / start if start else 0.0
     plan = cnt.pnl_plan
@@ -342,7 +371,7 @@ def check_3(c: ContractTerms, key: str, cnt: Counting, s: dict, out: Out) -> Non
     renews = c.auto_renews.stated and c.auto_renews.value is True
     resting = share * sum(v for _, _, v in after)
     srcs = [term_src(c, c.term_end_date)] + ([term_src(c, c.auto_renews)] if renews else []) \
-        + [cnt.src_cell(start_cell, start)] + [cnt.src_row(r) for r in rows]
+        + [cnt.src_cell(start_cell, start)] + [cnt.src_row(r) for r in rows] + count_srcs
     window = f"{plan[0][0]} to {plan[-1][0]}"
     if not after:
         text = f"{c.label}: the term ends {end}, after the last plan month ({plan[-1][0]}), so no plan month rests on a renewal."
@@ -468,10 +497,13 @@ def check_6(customers: list[tuple[ContractTerms, str]], cnt: Counting, out: Out)
             out.gap(f"Not in the room: the contracts for {len(lacking)} of {len(counted)} customers counted in {month}",
                     "file missing", _ask("each of: " + "; ".join(lacking)), "customers")
     # Coverage: how much of the counted MRR rests on paper the room holds.
-    covered, srcs = 0.0, []
+    covered, srcs, n_cov = 0.0, [], 0
     for _c, key in customers:
+        if not recurring_count(cnt, key)[0]:
+            continue  # a customer the counting leaves out is not part of the counted MRR it covers
         mrr, rows = cnt.counted(key)
         covered += mrr
+        n_cov += 1
         srcs += [cnt.src_row(r) for r in rows]
     total, total_src = None, None
     if (cnt.room / METRICS).exists():
@@ -488,7 +520,7 @@ def check_6(customers: list[tuple[ContractTerms, str]], cnt: Counting, out: Out)
         share = covered / total
         out.claim(P6, f"Contracts in the room cover {money(covered)} of the {money(total)} counted MRR in {month} "
                       f"({pct(share)}), from {where}. {HOW} summed the customer file's rows for the "
-                      f"{len(customers)} customers with a contract.", ([total_src] if total_src else []) + srcs, "info",
+                      f"{n_cov} counted customers with a contract.", ([total_src] if total_src else []) + srcs, "info",
                   value=Value(number=round(100 * share, 1), unit="percent", label="other", period=month))
 
 
