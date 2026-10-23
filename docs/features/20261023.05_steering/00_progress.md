@@ -1,19 +1,18 @@
 # Feature progress: steering in one sentence
 
-**Now.** Fix round done on `forge/steering`, merged with `claude/project-thread-ea11in` (claims scan and claim support included). All eight items pass, driven through `control.sh` on port 8815 and in Chromium ([06_verification.md](06_verification.md)). Full suite: 525 passed, 9 failed, all on the integration branch before steering: the 6 known memo tests and 3 founder-requests tests that expect only `redflags` in `scans_run` now that the claims scan exists. **Next:** the orchestrator merges.
+**Now.** Fix round done on `forge/steering`, merged with `claude/project-thread-ea11in` (claims scan and claim support included). All eight items pass, driven through `control.sh` on port 8815 and in Chromium ([06_verification.md](06_verification.md)). Full suite after the last merge (320244e): 532 passed, 6 failed, the 6 known memo tests only. An earlier merge also showed 3 founder-requests failures; the integration branch has since fixed them. **Next:** the orchestrator merges.
 
 Roadmap slice: [steering](../../ongoing/ROADMAP.md#steering). Route: prototype first.
 
 ## Attention needed
 
 1. **Ken: a definition steer may add a new figure** beside the check's, labelled as the steer's. The coordinator made that call; Ken can reverse it ([03_prd.md](03_prd.md), question 1).
-2. **Founder-requests owner: 3 tests fail on the integration branch** (`founder_requests/tests/test_intake.py::test_waiting_scans_follow_needs_and_inputs`, `::test_hiring_plan_reply_reruns_and_rebuilds`, `server/tests/test_founder_requests_routes.py::test_copy_then_upload_reruns_and_rebuilds`). They assert `scans_run == ["redflags"]`; the claims scan now runs too. Seen on a clean export of `claude/project-thread-ea11in`, not caused by steering.
-3. **Claims scan owner:** traction shows "gives paying customers as 357 clinics" twice (`evidence/fix_round/steer_traction_dark.png`).
-4. **Readout slice owner (captain): `scans/memo/pieces.py` and `top_flags.py` still do not exist.** `steering/verdicts.py` is the stand-in; the readout page's overview now comes from `/steerable`, which uses it.
-5. **Shared files touched:** `readout/src/App.tsx` (one import, the Overview section swapped for `SteerableSection`; the up and down buttons moved into it; a top flag now scrolls to its piece); `server/app.py` (one `include_router`); `pyproject.toml` testpaths; `readout/vite.config.ts`.
-6. **Entry 1.3 owner:** `scans/redflags/cohorts.check()` now returns `(claims, gaps, panels)` and adds the panel "cohort retention rebuild".
-7. **Setting:** `TRICORDER_OPERATOR` names who steers when the request does not. Unset, lines read "the operator's steer".
-8. **Schema proposals** (captain, after Saturday): [04_architecture.md](04_architecture.md), "Proposed schema changes".
+2. **Claims scan owner:** traction shows "gives paying customers as 357 clinics" twice (`evidence/fix_round/steer_traction_dark.png`).
+3. **Readout slice owner (captain): `scans/memo/pieces.py` and `top_flags.py` still do not exist.** `steering/verdicts.py` is the stand-in; the readout page's overview now comes from `/steerable`, which uses it.
+4. **Shared files touched:** `readout/src/App.tsx` (one import, the Overview section swapped for `SteerableSection`; the up and down buttons moved into it; a top flag now scrolls to its piece); `server/app.py` (one `include_router`); `pyproject.toml` testpaths; `readout/vite.config.ts`.
+5. **Entry 1.3 owner:** `scans/redflags/cohorts.check()` now returns `(claims, gaps, panels)` and adds the panel "cohort retention rebuild".
+6. **Setting:** `TRICORDER_OPERATOR` names who steers when the request does not. Unset, lines read "the operator's steer".
+7. **Schema proposals** (captain, after Saturday): [04_architecture.md](04_architecture.md), "Proposed schema changes".
 
 ## Documents
 
