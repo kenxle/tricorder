@@ -188,6 +188,7 @@ def test_more_info_store_save_copies_the_full_rooms_files(env):
     assert got.store.saved
     held = open_store().list_company("demo", "hollis_voice_seed_drop")
     assert "03_metrics/customer_mrr_by_month.csv" in {f.path for f in held.files}
+    assert "02_financials/expense_ledger.csv" not in {f.path for f in held.files}  # in the full room, cited by nothing kept
 
 
 # The model path, on hand-built responses ---------------------------------------------------------

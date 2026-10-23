@@ -345,11 +345,14 @@ def _llm():
 
 
 def _save(readout: Readout, fund: str, room_dir: Path, source_room: Path) -> StoreNote:
-    """Every revision is kept in the store as a new version. The source room holds every file the sources name."""
+    """Every revision is kept in the store as a new version. The results kept are the readout's own
+    room's; files resolve in the source room, which holds every file the sources name (a seed drop's
+    files are copies of its full room's), so a more-info steer stores the new files its lines cite and
+    nothing else the full room holds."""
     try:
         from store import open_store
 
-        results, _ = load_results(source_room)
+        results, _ = load_results(room_dir)
         got = open_store().save(fund, room_name(room_dir), readout, source_room, results)
         return StoreNote(saved=True, version=got.version, new=got.new)
     except Exception as err:  # a refused id, a full disk: the steer stands, the response says why
