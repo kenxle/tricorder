@@ -1,0 +1,13 @@
+/* Steering's own styles, on the readout page's tokens (tokens.css). */
+.claim .steer-on { margin-left: 6px; font-size: 13px; color: var(--muted); text-decoration: underline; }
+.steered { list-style: none; }
+.tag { font-size: 12px; border: 1px solid currentColor; border-radius: 4px; padding: 0 4px; margin-right: 6px; }
+.tag.new { color: var(--green); }
+.tag.yours { color: var(--amber); }
+.steer { display: flex; gap: 8px; align-items: center; margin: 6px 0 6px 16px; }
+.steer input { flex: 1; min-width: 0; font: inherit; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--fg); }
+.diff { margin: 8px 0 8px 16px; padding: 8px 10px; border-left: 4px solid var(--amber); }
+.diff h3 { margin: 0 0 4px; font-size: 15px; }
+.diff ul { margin: 4px 0; padding-left: 18px; }
+.diff p { margin: 4px 0; }
+.diff s { color: var(--muted); }

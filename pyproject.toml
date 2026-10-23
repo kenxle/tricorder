@@ -11,5 +11,5 @@ dependencies = { file = ["requirements.txt"] }
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
-testpaths = ["schema", "scans", "server", "eval", "clients", "store", "founder_requests", "memo"]
+testpaths = ["schema", "scans", "server", "eval", "clients", "store", "founder_requests", "memo", "steering"]
 addopts = "-q"

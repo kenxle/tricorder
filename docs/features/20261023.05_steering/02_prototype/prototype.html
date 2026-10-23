@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Steering prototype</title>
+<style>
+/* The readout page's tokens (readout/src/tokens.css), copied so this file opens on its own. */
+:root { --bg:#ffffff; --fg:#16181d; --muted:#5d6470; --line:#e3e5e8; --green:#1f7a4d; --red:#b3261e; --amber:#8a5a00;
+  --font: system-ui, -apple-system, "Segoe UI", sans-serif; --mono: ui-monospace, "SF Mono", Menlo, monospace; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#111317; --fg:#e8eaed; --muted:#9aa1ab; --line:#2a2e35; --green:#5cc48d; --red:#ff8a80; --amber:#f0b44c; } }
+:root[data-theme="dark"] { --bg:#111317; --fg:#e8eaed; --muted:#9aa1ab; --line:#2a2e35; --green:#5cc48d; --red:#ff8a80; --amber:#f0b44c; }
+body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.5 var(--font); }
+.page { max-width:960px; margin:0 auto; padding:16px; }
+.masthead { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+.masthead h1 { margin:0 auto 0 0; font-size:22px; }
+.banner { border:1px solid var(--amber); color:var(--amber); padding:6px 10px; border-radius:6px; }
+.proto { border:1px dashed var(--muted); color:var(--muted); padding:6px 10px; border-radius:6px; font-size:14px; }
+.note { color:var(--muted); }
+.link { background:none; border:0; padding:0; color:inherit; font:inherit; cursor:pointer; text-align:left; }
+.pieces, .claims { list-style:none; padding:0; }
+.piece { border-top:1px solid var(--line); padding:10px 0; }
+.piece-row { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+.piece.looking_strong strong { color:var(--green); }
+.piece.looking_weak strong { color:var(--red); }
+.reason { margin:4px 0 0; color:var(--muted); }
+.claim { margin:6px 0 6px 16px; }
+.claim.flag { color:var(--red); }
+.claim .steer-on { margin-left:6px; font-size:13px; color:var(--muted); text-decoration:underline; }
+.claim.before { text-decoration:line-through; color:var(--muted); }
+.tag { font-size:12px; border:1px solid currentColor; border-radius:4px; padding:0 4px; margin-right:6px; }
+.tag.new { color:var(--green); } .tag.yours { color:var(--amber); } .tag.stays { color:var(--muted); }
+.steer { display:flex; gap:8px; margin:6px 0 6px 16px; }
+.steer input { flex:1; font:inherit; padding:6px 8px; border:1px solid var(--line); border-radius:6px; background:var(--bg); color:var(--fg); }
+.diff { margin:8px 0 8px 16px; padding:8px 10px; border-left:4px solid var(--amber); }
+.diff h3 { margin:0 0 4px; font-size:15px; }
+.diff ul { margin:4px 0; padding-left:18px; }
+.room-pick { display:flex; gap:6px; }
+.room-pick button[aria-pressed="true"] { font-weight:700; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="masthead">
+    <h1>Tricorder</h1>
+    <div class="room-pick" role="group" aria-label="Room">
+      <button data-room="hollis_voice" aria-pressed="true">hollis_voice</button>
+      <button data-room="hollis_voice_seed_drop" aria-pressed="false">hollis_voice_seed_drop</button>
+    </div>
+    <button id="theme">Dark</button>
+  </header>
+  <p class="banner">Synthetic data room for Deal Flow NYC 2026. Not a real company.</p>
+  <p class="proto">Prototype. Claims, gaps and figures are printed by <code>spike/steer_spike.py</code> from the rooms. Simulated: the revised wording and the diff layout (the engine writes the real ones), and the store save. Click any line or "Steer this piece", type one sentence, press Enter. Try "treat the pilot as non-recurring" on traction, "read the full room" on retention in the seed drop, or "make ARR 3 million".</p>
+  <section aria-label="Overview"><h2>Overview</h2><ul class="pieces" id="pieces"></ul></section>
+</main>
+<script>
+const SPIKE = {
+  "hollis_voice": {
+    "claims": [
+      {
+        "id": "redflags-001",
+        "check": "mrr_column_vs_subscription_rows",
+        "severity": "flag",
+        "text": "monthly_metrics.csv shows MRR of $186,739 for 2026-09. The subscription rows add to $171,739. The $15,000 difference is 8.7% of subscription MRR and equals the non-subscription lines: Marlow Veterinary Group (Pilot, $15,000). Months over tolerance: 2026-08, 2026-09. Mislabel kind a: non-recurring revenue in MRR."
+      },
+      {
+        "id": "redflags-002",
+        "check": "billings_vs_recognised_revenue",
+        "severity": "info",
+        "text": "The P&L row \"Subscription revenue\" matches subscription revenue in the customer file in all 21 actual months (largest difference $0). Billings differ from revenue by more than 1.0% in 18 of those months, which annual plans paid up front explain on their own. scans/redflags/mislabels.py summed the columns in the header row cited."
+      },
+      {
+        "id": "redflags-003",
+        "check": "contractor_spend_vs_headcount_and_burn",
+        "severity": "info",
+        "text": "Ledger lines tie to P&L cost of revenue plus operating expenses in all 21 actual months (largest difference $0). No ledger line names a contractor, consultant, freelancer, agency or statement of work."
+      },
+      {
+        "id": "redflags-004",
+        "check": "capitalised_spend_vs_pnl_and_cash",
+        "severity": "info",
+        "text": "Every ledger line is booked as one of Cost of revenue, G&A, R&D, S&M; none names an asset. The cash bridge difference is -$0.24 against cash of $1,800,000. scans/redflags/mislabels.py summed the columns in the header row cited."
+      },
+      {
+        "id": "redflags-005",
+        "check": "deferred_revenue_vs_earned",
+        "severity": "info",
+        "text": "Billed but not yet earned at 2026-09: $104,876 across 28 customers. The P&L row \"Subscription revenue\" does not exceed revenue earned in any month, and ARR_Build Subscription ARR ($2,060,868) is 12 times 2026-09 subscription revenue. scans/redflags/mislabels.py summed the columns in the header row cited."
+      },
+      {
+        "id": "redflags-006",
+        "check": "one_time_fees_in_recurring_metrics",
+        "severity": "info",
+        "text": "One-time fees of $9,500 in 2026-09 are not in the mrr column: the gap between mrr and subscription MRR is $15,000, not the fee total, and the ARR_Build row \"Onboarding fees\" counts $0 of ARR."
+      },
+      {
+        "id": "redflags-007",
+        "check": "deck_revenue_vs_pnl",
+        "severity": "flag",
+        "text": "The deck's ARR of $2,500,000 (slide 3) differs from the P&L's $2,240,868 (12 x 'Recurring revenue (subscription plus pilot)' for 2026-09), a gap of 11.6%."
+      },
+      {
+        "id": "redflags-008",
+        "check": "deck_revenue_vs_pnl",
+        "severity": "info",
+        "text": "The deck's revenue chart on slide 3 has 21 bars for 2025-01 to 2026-09; their shape matches 'Recurring revenue (subscription plus pilot)' in the P&L (largest difference 0.4 points of the tallest bar)."
+      },
+      {
+        "id": "redflags-009",
+        "check": "deck_history_vs_metrics",
+        "severity": "info",
+        "text": "The revenue chart on slide 3 starts at 2025-01, the first revenue month in the books, and runs to 2026-09 with no month left out."
+      },
+      {
+        "id": "redflags-010",
+        "check": "deck_revenue_vs_pnl",
+        "severity": "info",
+        "text": "The deck's plan growth of 3.5% a month (slide 11) matches the model's plan columns, which grow 3.50% to 3.50% a month. It is a plan, not a period the books hold as actuals."
+      }
+    ],
+    "gaps": [
+      {
+        "piece": "traction_and_revenue",
+        "what": "Not in the room: a revenue export that separates pass-through money"
+      },
+      {
+        "piece": "burn_and_runway",
+        "what": "Not in the room: a list of contractors, or an org chart that shows them"
+      },
+      {
+        "piece": "burn_and_runway",
+        "what": "Not in the room: a balance sheet"
+      },
+      {
+        "piece": "traction_and_revenue",
+        "what": "Not in the room: a balance sheet with a deferred revenue line"
+      }
+    ],
+    "pilot_steer": {
+      "recurring_2026_09": 186739,
+      "pilot_2026_09": 15000,
+      "arr_without_pilot": 2060868,
+      "deck_arr": 2500000,
+      "gap_pct": 21.3
+    },
+    "cohorts_tab": {
+      "customers": 57,
+      "nrr": 102.6,
+      "note": "Cohort = customers still active after onboarding"
+    },
+    "cohorts_rebuilt": {
+      "customers": 68,
+      "nrr": 87.3,
+      "grr": 73.4
+    }
+  },
+  "hollis_voice_seed_drop": {
+    "claims": [
+      {
+        "id": "redflags-001",
+        "check": "mrr_column_vs_subscription_rows",
+        "severity": "flag",
+        "text": "monthly_metrics.csv shows MRR of $186,739 for 2026-09. The model's ARR_Build shows subscription MRR of $171,739. The $15,000 difference is 8.7% of subscription MRR and equals the non-subscription lines: Marlow Veterinary Group (pilot) (Pilot, $15,000). Months over tolerance: 2026-08, 2026-09. Mislabel kind a: non-recurring revenue in MRR."
+      },
+      {
+        "id": "redflags-002",
+        "check": "one_time_fees_in_recurring_metrics",
+        "severity": "info",
+        "text": "One-time fees of $9,500 in 2026-09 are not in the mrr column: the gap between mrr and subscription MRR is $15,000, not the fee total, and the ARR_Build row \"Onboarding fees\" counts $0 of ARR."
+      },
+      {
+        "id": "redflags-003",
+        "check": "deck_revenue_vs_pnl",
+        "severity": "flag",
+        "text": "The deck's ARR of $2,500,000 (slide 3) differs from the P&L's $2,240,868 (12 x 'Recurring revenue (subscription plus pilot)' for 2026-09), a gap of 11.6%."
+      },
+      {
+        "id": "redflags-004",
+        "check": "deck_revenue_vs_pnl",
+        "severity": "info",
+        "text": "The deck's revenue chart on slide 3 has 21 bars for 2025-01 to 2026-09; their shape matches 'Recurring revenue (subscription plus pilot)' in the P&L (largest difference 0.4 points of the tallest bar)."
+      },
+      {
+        "id": "redflags-005",
+        "check": "deck_history_vs_metrics",
+        "severity": "info",
+        "text": "The revenue chart on slide 3 starts at 2025-01, the first revenue month in the books, and runs to 2026-09 with no month left out."
+      },
+      {
+        "id": "redflags-006",
+        "check": "deck_revenue_vs_pnl",
+        "severity": "info",
+        "text": "The deck's plan growth of 3.5% a month (slide 11) matches the model's plan columns, which grow 3.50% to 3.50% a month. It is a plan, not a period the books hold as actuals."
+      }
+    ],
+    "gaps": [
+      {
+        "piece": "traction_and_revenue",
+        "what": "Not in the room: a revenue export by product type"
+      },
+      {
+        "piece": "traction_and_revenue",
+        "what": "Not in the room: an invoices or billings export"
+      },
+      {
+        "piece": "traction_and_revenue",
+        "what": "Not in the room: a revenue export that separates pass-through money"
+      },
+      {
+        "piece": "burn_and_runway",
+        "what": "Not in the room: an expense ledger"
+      },
+      {
+        "piece": "burn_and_runway",
+        "what": "Not in the room: an expense ledger"
+      },
+      {
+        "piece": "traction_and_revenue",
+        "what": "Not in the room: a balance sheet with a deferred revenue line"
+      }
+    ],
+    "pilot_steer": {
+      "recurring_2026_09": 186739,
+      "pilot_2026_09": 15000,
+      "arr_without_pilot": 2060868,
+      "deck_arr": 2500000,
+      "gap_pct": 21.3
+    },
+    "cohorts_tab": {
+      "customers": 57,
+      "nrr": 102.6,
+      "note": "Cohort = customers still active after onboarding"
+    },
+    "cohorts_rebuilt": null
+  }
+};
+const PIECE = { traction_and_revenue: "Traction and revenue", retention: "Retention", burn_and_runway: "Burn and runway" };
+const VERDICT = { looking_strong: "Looking strong", looking_weak: "Looking weak", mixed: "Mixed", not_enough_in_the_room: "Not enough in the room" };
+const usd = (n) => "$" + Math.round(n).toLocaleString("en-US");
+const BURN_CHECKS = ["contractor_spend_vs_headcount_and_burn", "capitalised_spend_vs_pnl_and_cash"];
+let room = "hollis_voice";
+let state = {};
+
+function initial(r) {
+  const d = SPIKE[r];
+  const piece = (c) => (BURN_CHECKS.includes(c.check) ? "burn_and_runway" : "traction_and_revenue");
+  const claims = d.claims.map((c) => ({ ...c, piece: piece(c) }));
+  const t = d.cohorts_tab;
+  claims.push({ id: "redflags-c01", check: "cohort_tab_nrr", severity: "info", piece: "retention",
+    text: `The Cohorts tab states 12-month net revenue retention of ${t.nrr}% for ${t.customers} customers ("${t.note}").` });
+  const gaps = d.gaps.slice();
+  if (!d.cohorts_rebuilt) gaps.push({ piece: "retention", what: "Not in the room: the customer file (03_metrics/customer_mrr_by_month.csv), so the cohorts cannot be rebuilt" });
+  return { claims, gaps, revisions: [], open: r === "hollis_voice" ? "traction_and_revenue" : "retention", boxOn: null };
+}
+
+function verdict(name) {
+  const cs = state[room].claims.filter((c) => c.piece === name && !c.replaced);
+  if (cs.some((c) => c.severity === "flag")) return "looking_weak";
+  return "not_enough_in_the_room";
+}
+function reason(name) {
+  const cs = state[room].claims.filter((c) => c.piece === name && !c.replaced);
+  const flags = cs.filter((c) => c.severity === "flag");
+  if (flags.length) return (flags.find((c) => c.yours) || flags[0]).text;
+  const g = state[room].gaps.find((x) => x.piece === name);
+  return g ? g.what : "Only one source states it.";
+}
+
+function steer(name, sentence, onId) {
+  const s = state[room], d = SPIKE[room];
+  const before = verdict(name);
+  const low = sentence.toLowerCase();
+  const rev = { piece: name, sentence, onId, added: [], dropped: [], wording: [], note: "", path: "wording rules (no model key)" };
+  if (/\b(make|set|change|use|should be|call it)\b/.test(low) && /\d/.test(low)) {
+    rev.kind = "rewrite";
+    rev.note = `You asked for a different number. The check's number stays: ${usd(12 * d.pilot_steer.recurring_2026_09)} (financial_model.xlsx, P&L, 'Recurring revenue (subscription plus pilot)', 2026-09, times 12).`;
+  } else if (/\b(read|open|pull|fetch|get)\b/.test(low) && /(full room|second tier|rest of the room)/.test(low)) {
+    rev.kind = "more_info";
+    const full = SPIKE.hollis_voice.cohorts_rebuilt;
+    const t = d.cohorts_tab;
+    const c1 = { id: "redflags-c02", piece: name, severity: "flag", isNew: true, check: "rebuild_cohorts_from_customer_file",
+      text: `Rebuilt from the customer file, 12-month net revenue retention is ${full.nrr}% over ${full.customers} customers, against ${t.nrr}% over ${t.customers} in the Cohorts tab.` };
+    const c2 = { id: "redflags-c03", piece: name, severity: "watch", isNew: true, check: "rebuild_cohorts_from_customer_file",
+      text: `Rebuilt 12-month gross revenue retention is ${full.grr}%, under the 80% line.` };
+    s.claims.push(c1, c2);
+    s.gaps = s.gaps.filter((g) => !(g.piece === name && g.what.includes("customer file")));
+    rev.added = [c1, c2];
+    rev.sources = ["03_metrics/customer_mrr_by_month.csv"];
+    rev.movedBy = c1;
+  } else if (/treat .*pilot.* non-recurring|pilot.*(not|isn't) recurring|exclude .*pilot/.test(low)) {
+    rev.kind = "rewrite";
+    const p = d.pilot_steer;
+    const c = { id: "steer-1", piece: name, severity: "flag", isNew: true, yours: true, check: "deck_revenue_vs_pnl",
+      text: `On your steer (pilot treated as non-recurring): ARR is ${usd(p.arr_without_pilot)}, 12 x ('Recurring revenue (subscription plus pilot)' ${usd(p.recurring_2026_09)} less 'Pilot revenue' ${usd(p.pilot_2026_09)}) for 2026-09, against the deck's ${usd(p.deck_arr)}, a gap of ${p.gap_pct}%.` };
+    s.claims.push(c);
+    rev.added = [c];
+  } else {
+    rev.kind = "rewrite";
+    rev.note = "No wording rule matched this sentence, and no model key is set, so the piece is unchanged.";
+  }
+  rev.before = before; rev.after = verdict(name);
+  if (rev.before === rev.after) rev.movedBy = null;
+  s.revisions.push(rev);
+  s.boxOn = null;
+  render();
+}
+
+function el(tag, attrs = {}, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) { if (k === "on") for (const [ev, f] of Object.entries(v)) e.addEventListener(ev, f); else if (k === "cls") e.className = v; else e.setAttribute(k, v); }
+  for (const k of kids) e.append(k);
+  return e;
+}
+
+function box(name, onId) {
+  const input = el("input", { "aria-label": "Steer in one sentence", placeholder: "Say what is wrong, in one sentence. Press Enter." });
+  input.addEventListener("keydown", (e) => { if (e.key === "Enter" && input.value.trim()) steer(name, input.value.trim(), onId); if (e.key === "Escape") { state[room].boxOn = null; render(); } });
+  setTimeout(() => input.focus(), 0);
+  return el("div", { cls: "steer" }, input);
+}
+
+function diff(rev) {
+  const word = rev.kind === "more_info" ? "More info on your instruction" : "Rewritten on your instruction";
+  const v = rev.before === rev.after ? "Verdict unchanged." : `Verdict: ${VERDICT[rev.before]} to ${VERDICT[rev.after]}, moved by "${rev.movedBy.text}"`;
+  const lis = [];
+  rev.added.forEach((c) => lis.push(el("li", {}, "Added: " + c.text)));
+  rev.dropped.forEach((c) => lis.push(el("li", {}, "Dropped: " + c.text)));
+  if (rev.sources) lis.push(el("li", {}, `Read ${rev.sources.length} new source: ${rev.sources.join(", ")}`));
+  if (!rev.added.length && !rev.dropped.length) lis.push(el("li", {}, "No claim added or dropped."));
+  return el("div", { cls: "diff", role: "status" },
+    el("h3", {}, `${word}: "${rev.sentence}".`),
+    el("ul", {}, ...lis),
+    el("p", {}, v + (rev.note ? " " + rev.note : " The checks' numbers are unchanged.")),
+    el("p", { cls: "note" }, `Read as ${rev.kind === "more_info" ? "more info" : "a rewrite"}, by ${rev.path}. Revision ${state[room].revisions.indexOf(rev) + 1}, kept. (Simulated: store save.)`));
+}
+
+function render() {
+  const s = state[room];
+  const ul = document.getElementById("pieces");
+  ul.replaceChildren();
+  for (const name of Object.keys(PIECE)) {
+    const v = verdict(name);
+    const li = el("li", { cls: `piece ${v}` });
+    li.append(el("div", { cls: "piece-row" },
+      el("button", { cls: "link", on: { click: () => { s.open = s.open === name ? null : name; render(); } } }, el("strong", {}, PIECE[name]), ` · ${VERDICT[v]}`),
+      el("button", { on: { click: () => { s.open = name; s.boxOn = name + ":"; render(); } } }, "Steer this piece")));
+    li.append(el("p", { cls: "reason" }, reason(name)));
+    if (s.open === name) {
+      if (s.boxOn === name + ":") li.append(box(name, null));
+      const lines = el("ul", { cls: "claims" });
+      for (const c of s.claims.filter((c) => c.piece === name)) {
+        const line = el("li", { cls: `claim ${c.severity || ""}` });
+        if (c.isNew) line.append(el("span", { cls: c.yours ? "tag yours" : "tag new" }, c.yours ? "your steer" : "new"));
+        line.append(c.text);
+        line.append(el("button", { cls: "link steer-on", on: { click: () => { s.boxOn = name + ":" + c.id; render(); } } }, "steer this line"));
+        lines.append(line);
+        if (s.boxOn === name + ":" + c.id) lines.append(box(name, c.id));
+        for (const rev of s.revisions.filter((r) => r.onId === c.id)) lines.append(diff(rev));
+      }
+      li.append(lines);
+      for (const rev of s.revisions.filter((r) => r.piece === name && !r.onId)) li.append(diff(rev));
+    }
+    ul.append(li);
+  }
+}
+
+for (const r of Object.keys(SPIKE)) state[r] = initial(r);
+document.querySelectorAll("[data-room]").forEach((b) => b.addEventListener("click", () => {
+  room = b.dataset.room;
+  document.querySelectorAll("[data-room]").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+  render();
+}));
+document.getElementById("theme").addEventListener("click", (e) => {
+  const dark = document.documentElement.dataset.theme !== "dark";
+  document.documentElement.dataset.theme = dark ? "dark" : "light";
+  e.target.textContent = dark ? "Light" : "Dark";
+});
+render();
+</script>
+</body>
+</html>
