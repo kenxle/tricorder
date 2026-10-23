@@ -10,8 +10,10 @@ Check name: rebuild_cohorts_from_customer_file (the answer key's PF3).
       NRR_12 = SUM MRR_i(c+12) / SUM MRR_i(c)
       GRR_12 = SUM MIN(MRR_i(c+12), MRR_i(c)) / SUM MRR_i(c)
 - Flag when the tab counts fewer customers than the rebuild, or its NRR is
-  above the rebuilt NRR by more than match_tolerance. GRR under grr_line is a
-  watch.
+  above the rebuilt NRR by more than match_tolerance. A tab NRR below the
+  rebuild by more than match_tolerance is a watch that states the difference.
+  "Matches" only within match_tolerance and on the same customer count.
+  GRR under grr_line is a watch.
 
 The model reading (what the tab's note leaves out, the slide 6 chart) is not
 built here; it belongs to the entry's owner. Written by the steering slice so
@@ -216,13 +218,21 @@ def check(room: Path, ids: Ids) -> tuple[list[Claim], list[Gap], list[Panel]]:
         if built["skipped"] else "")
     if tab is not None:
         fewer = tab["customers"] < built["customers"]
-        above = tab["nrr"] > built["nrr"] and abs(tab["nrr"] - built["nrr"]) / built["nrr"] > tol
-        severity = "flag" if (fewer or above) else "info"
         diff = tab["nrr"] - built["nrr"]
-        compare = (f", against {tab['nrr']:.1f}% over {tab['customers']} customers in the Cohorts tab: "
-                   f"{abs(diff):.1f} points {'lower' if diff > 0 else 'higher'}"
-                   + (f", and the tab counts {built['customers'] - tab['customers']} customers fewer." if fewer else ".")
-                   if severity == "flag" else f", which matches the Cohorts tab's {tab['nrr']:.1f}% over {tab['customers']} customers.")
+        within = abs(diff) / built["nrr"] <= tol
+        above = diff > 0 and not within
+        severity = "flag" if (fewer or above) else ("info" if within else "watch")
+        theirs = f"{tab['nrr']:.1f}% over {tab['customers']} customers"
+        if severity == "flag":
+            compare = (f", against {theirs} in the Cohorts tab: {abs(diff):.1f} points {'lower' if diff > 0 else 'higher'}"
+                       + (f", and the tab counts {built['customers'] - tab['customers']} customers fewer." if fewer else "."))
+        elif not within:  # the tab is below the rebuild by more than the tolerance: stated, never called a match
+            compare = f", which is {abs(diff):.1f} points higher than the Cohorts tab's {theirs}."
+        elif tab["customers"] == built["customers"]:
+            compare = f", which matches the Cohorts tab's {theirs}."
+        else:
+            compare = (f", within {100 * tol:.0f}% of the Cohorts tab's {theirs}, "
+                       f"though the tab counts {tab['customers'] - built['customers']} customers more.")
         sources = [row_source, Source(kind="file", uri=MODEL, locator=tab["nrr_cell"], quote=tab["nrr_raw"])]
         conflicts = [tab_claim.id] if severity == "flag" else []
     else:
