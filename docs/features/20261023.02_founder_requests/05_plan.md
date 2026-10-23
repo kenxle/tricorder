@@ -17,16 +17,16 @@ One owner. The slices share one package and build on each other; the only shared
 
 | Requirement | Acceptance or failure case | Command or observation | Owner | Evidence or status |
 |---|---|---|---|---|
-| FR-R1, FR-R2 | Brasswick lists 32 lines; default is the top five | `test_draft.py::test_brasswick_lines_and_default` | builder | see 06_verification.md |
-| FR-R3 | Every checklist guide has guidance; each entry's sections exist in its guide | `test_guidance.py` | builder | see 06_verification.md |
-| FR-R4, FR-R5 | Shared guide grouped once; optional lines after required | `test_draft.py::test_grouping_and_optional_section` | builder | see 06_verification.md |
-| FR-R6, FR-R7 | No leak on any line of Brasswick or Hollis Voice; full sentences | `test_draft.py::test_no_internal_reference_reaches_the_founder` | builder | see 06_verification.md |
-| FR-R8 | "Hi Celia," and "Brasswick" read from the room | `test_draft.py::test_greeting_and_company_from_the_room` | builder | see 06_verification.md |
-| FR-R9, FR-R10 | mailto encodes CRLF and %20; length flag | `test_draft.py::test_mailto_encoding` | builder | see 06_verification.md |
-| FR-R11 to FR-R15 | Hiring plan reply on a Brasswick copy reruns redflags and C22 goes missing to found | `test_intake.py::test_hiring_plan_reply_reruns_and_rebuilds` | builder | see 06_verification.md |
-| FR-R16 to FR-R20 | Synthetic room refused; bad names, kinds, sizes, links, overwrite refused | `test_intake.py`, `server/tests/test_founder_requests_routes.py` | builder | see 06_verification.md |
-| FR-R21 | Panel renders, drafts, adds a file | `bin/ci-web`; screenshots in `evidence/` | builder | see 06_verification.md |
-| Done when | Brasswick request with guidance; copy and mailto; reply starts waiting scans | the verify-tricorder recipe, driven once | builder | `evidence/` |
+| FR-R1, FR-R2 | Brasswick lists 32 lines; default is the top five | `test_draft.py::test_brasswick_lines_and_default` | builder | Pass, 2026-10-23, [06_verification.md](06_verification.md) |
+| FR-R3 | Every checklist guide has guidance; each entry's sections exist in its guide | `test_guidance.py` | builder | Pass, 2026-10-23, [06_verification.md](06_verification.md) |
+| FR-R4, FR-R5 | Shared guide grouped once; optional lines after required | `test_draft.py::test_grouping_and_optional_section` | builder | Pass, 2026-10-23, [06_verification.md](06_verification.md) |
+| FR-R6, FR-R7 | No leak on any line of Brasswick or Hollis Voice; full sentences | `test_draft.py::test_no_internal_reference_reaches_the_founder` | builder | Pass, 2026-10-23, [06_verification.md](06_verification.md) |
+| FR-R8 | "Hi Celia," and "Brasswick" read from the room | `test_draft.py::test_greeting_and_company_from_the_room` | builder | Pass, 2026-10-23, [06_verification.md](06_verification.md) |
+| FR-R9, FR-R10 | mailto encodes CRLF and %20; length flag | `test_draft.py::test_mailto_encoding` | builder | Pass, 2026-10-23, [06_verification.md](06_verification.md) |
+| FR-R11 to FR-R15 | Hiring plan reply on a Brasswick copy reruns redflags and C22 goes missing to found | `test_intake.py::test_hiring_plan_reply_reruns_and_rebuilds` | builder | Pass, 2026-10-23, [06_verification.md](06_verification.md) |
+| FR-R16 to FR-R20 | Synthetic room refused; bad names, kinds, sizes, links, overwrite refused | `test_intake.py`, `server/tests/test_founder_requests_routes.py` | builder | Pass, 2026-10-23, [06_verification.md](06_verification.md) |
+| FR-R21 | Panel renders, drafts, adds a file | `bin/ci-web`; screenshots in `evidence/` | builder | Pass, 2026-10-23, [06_verification.md](06_verification.md) |
+| Done when | Brasswick request with guidance; copy and mailto; reply starts waiting scans | the verify-tricorder recipe, driven once | builder | Pass, [06_verification.md](06_verification.md), `evidence/` |
 
 ## Testing findings and dispositions
 

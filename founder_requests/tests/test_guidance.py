@@ -31,7 +31,7 @@ def test_guidance_words_are_founder_safe():
     for g in gd.GUIDANCE.values():
         text = " ".join([g.title, g.what, g.form, *g.good])
         assert not d.leaks(text), (g.guide, d.leaks(text))
-        assert "—" not in text and "–" not in text, g.guide
+        assert chr(0x2014) not in text and chr(0x2013) not in text, g.guide
 
 
 def test_for_item_follows_the_checklist_guide_column():

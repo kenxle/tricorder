@@ -1,0 +1,3 @@
+$ curl -X POST --data-binary @founder_requests/tests/fixtures/synthetic_brasswick_hiring_plan.csv "http://127.0.0.1:8812/api/rooms/brasswick/founder-requests/files?answers=C22&name=Brasswick%20Hiring%20Plan.csv"
+{"detail":"brasswick is a synthetic room checked into the repo, so Tricorder never writes into it. Copy it first: python -m founder_requests copy-room data_room/brasswick"}
+HTTP 409

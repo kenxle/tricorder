@@ -4,7 +4,8 @@ Each entry says, in words a founder reads, what the document is, the form
 that works best, and what a good one shows. Every entry is taken from its
 guide in docs/reports/20261022.03_document_guides/<slug>.md: "what" and
 "form" from the guide's "What it is" section, "good" from its "Green flags"
-section. tests/test_guidance.py checks that every guide the checklist names
+section, or from the shape "What it is" describes where a green flag is about the investor's
+reading rather than the file. tests/test_guidance.py checks that every guide the checklist names
 has an entry and that each entry's sections exist in its guide.
 
 The words are rewritten for the founder: no investor jargon about flags, no
