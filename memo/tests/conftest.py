@@ -38,34 +38,52 @@ def out_dir(tmp_path, monkeypatch) -> Path:
     return tmp_path
 
 
+def by_check(readout: Readout, name: str, severity: str | None = None) -> list[str]:
+    """The ids of the claims a check wrote, in readout order. Tests name checks, never claim numbers."""
+    return [c.id for c in readout.claims if c.check.name == name and (severity is None or c.severity == severity)]
+
+
+def flagged(readout: Readout) -> list[str]:
+    return [c.id for c in readout.claims if c.severity == "flag"]
+
+
 def with_pieces(readout: Readout) -> Readout:
-    """The real readout plus pieces, top flags and links, hand-built from its real claim ids.
+    """The real readout plus pieces, top flags and links, hand-built on its real claims.
 
     Hand-built test data: the pieces, top_flags and link steps are not built yet.
+    Every id is looked up by the check that wrote it, so a new check never breaks this.
     The prototype uses the same shape (docs/features/20261023.03_memo_export/spike/simulate_steps.py).
     """
     from schema.claim import Piece, TopFlag
 
     r = readout.model_copy(deep=True)
     claims = {c.id: c for c in r.claims}
-    claims["redflags-008"].corroborated_by = ["redflags-009"]
-    claims["redflags-009"].corroborated_by = ["redflags-008"]
-    claims["redflags-007"].conflicts_with = ["redflags-001"]
-    claims["redflags-001"].conflicts_with = ["redflags-007"]
+    deck_arr = by_check(r, "deck_revenue_vs_pnl", "flag")[0]
+    mrr = by_check(r, "mrr_column_vs_subscription_rows", "flag")[0]
+    chart, history = by_check(r, "deck_revenue_vs_pnl", "info")[0], by_check(r, "deck_history_vs_metrics")[0]
+    cash = by_check(r, "capitalised_spend_vs_pnl_and_cash")[0]
+    contractors = by_check(r, "contractor_spend_vs_headcount_and_burn")[0]
+    billings = by_check(r, "billings_vs_recognised_revenue")[0]
+    fees = by_check(r, "one_time_fees_in_recurring_metrics")[0]
+    deferred = by_check(r, "deferred_revenue_vs_earned")[0]
+    claims[chart].corroborated_by = [history]
+    claims[history].corroborated_by = [chart]
+    claims[deck_arr].conflicts_with = [mrr]
+    claims[mrr].conflicts_with = [deck_arr]
     r.pieces = [
-        Piece(name="traction_and_revenue", verdict="looking_weak", reason=claims["redflags-007"].text,
-              reason_claim_ids=["redflags-007"], claim_ids=["redflags-001", "redflags-007", "redflags-008", "redflags-009", "redflags-010"],
+        Piece(name="traction_and_revenue", verdict="looking_weak", reason=claims[deck_arr].text,
+              reason_claim_ids=[deck_arr], claim_ids=[mrr, deck_arr, chart, history],
               corroborating_sources=1, contradicting_sources=1),
-        Piece(name="burn_and_runway", verdict="mixed", reason=claims["redflags-004"].text,
-              reason_claim_ids=["redflags-004"], claim_ids=["redflags-003", "redflags-004"]),
+        Piece(name="burn_and_runway", verdict="mixed", reason=claims[cash].text,
+              reason_claim_ids=[cash], claim_ids=[contractors, cash]),
         Piece(name="unit_economics", verdict="not_enough_in_the_room", reason="Not in the room: unit economics by cohort.",
-              claim_ids=["redflags-002", "redflags-005", "redflags-006"]),
+              claim_ids=[billings, deferred, fees]),
     ]
     r.top_flags = [
         TopFlag(kind="green", piece="traction_and_revenue", rank=1, text="Green flag: the revenue chart matches the books.",
-                claim_ids=["redflags-008"]),
+                claim_ids=[chart]),
         TopFlag(kind="red", piece="traction_and_revenue", rank=1, text="Red flag: the deck's ARR is above the P&L's.",
-                claim_ids=["redflags-007"]),
+                claim_ids=[deck_arr]),
     ]
     return r
 
