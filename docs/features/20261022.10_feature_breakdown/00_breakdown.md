@@ -26,11 +26,13 @@ These run on files already in `data_room/`. No API key, no host, no decision fro
 
 | Feature | Roadmap slice | Route | Lives in | Status |
 |---|---|---|---|---|
-| Deck revenue against the books | [deck-vs-books](../../ongoing/ROADMAP.md#deck-vs-books) | Prototype-first, interface example | `scans/redflags/deck_vs_books.py` | In the forge: [folder](../20261022.11_deck_vs_books/) |
-| Accounting mislabels | [accounting-mislabels](../../ongoing/ROADMAP.md#accounting-mislabels) | Prototype-first, interface example | `scans/redflags/mislabels.py` | In the forge: [folder](../20261022.12_accounting_mislabels/) |
-| Checklist coverage and the ask list | [checklist-coverage](../../ongoing/ROADMAP.md#checklist-coverage) | Prototype-first, clickable prototype | `scans/memo/coverage.py` | In the forge: [folder](../20261022.13_checklist_coverage/) |
+| Deck revenue against the books | [deck-vs-books](../../ongoing/ROADMAP.md#deck-vs-books) | Prototype-first, interface example | `scans/redflags/deck_vs_books.py` | Merged in PR #4, 2026-10-23: [folder](../20261022.11_deck_vs_books/) |
+| Accounting mislabels | [accounting-mislabels](../../ongoing/ROADMAP.md#accounting-mislabels) | Prototype-first, interface example | `scans/redflags/mislabels.py` | Merged in PR #4, 2026-10-23: [folder](../20261022.12_accounting_mislabels/) |
+| Checklist coverage and the ask list | [checklist-coverage](../../ongoing/ROADMAP.md#checklist-coverage) | Prototype-first, clickable prototype | `scans/memo/coverage.py` | Merged in PR #4, 2026-10-23: [folder](../20261022.13_checklist_coverage/) |
 | Tricorder's own financial model | [financial-model](../../ongoing/ROADMAP.md#financial-model) | Prototype-first, clickable prototype (the runway what-if) | `scans/model/` | Next |
 | Business frameworks | [frameworks-scan](../../ongoing/ROADMAP.md#frameworks-scan) | Prototype-first, interface example | `scans/frameworks/` | Next, needs the Anthropic key |
+
+Wave 1's first three features are closed out in [01_closeout.md](01_closeout.md).
 
 ## Wave 2: the readout as a product
 
