@@ -1,0 +1,18 @@
+$ python3 -m founder_requests add rooms/brasswick_live /tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/founder-requests/replies/Brasswick 409A Report 2026.pdf --for C73
+(cwd /home/claude/wt/founder-requests, TRICORDER_OUT_DIR=/tmp/tricorder-verify/founder-requests/out)
+{
+  "room": "brasswick_live",
+  "checklist_id": "C73",
+  "item": "409A valuation",
+  "original_name": "Brasswick 409A Report 2026.pdf",
+  "saved": "06_legal/brasswick_409a_report_2026.pdf",
+  "bytes": 114,
+  "scans_rerun": [],
+  "status_before": "missing",
+  "status_after": "found",
+  "asks_before": 31,
+  "asks_after": 30,
+  "at": "2026-10-23T02:05:28Z",
+  "readout": "/tmp/tricorder-verify/founder-requests/out/brasswick_live/readout.json"
+}
+exit 0

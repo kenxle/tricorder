@@ -1,0 +1,4 @@
+$ python3 -m scans.claims data_room/brasswick
+(cwd /home/claude/wt/founder-requests, TRICORDER_OUT_DIR=/tmp/tricorder-verify/founder-requests-r5/out)
+claims: 53 claims, 9 gaps -> /tmp/tricorder-verify/founder-requests-r5/out/brasswick/claims.json
+exit 0

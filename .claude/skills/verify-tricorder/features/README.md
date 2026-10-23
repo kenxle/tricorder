@@ -35,3 +35,9 @@ Each feature file starts with an H1 title and one paragraph on what the user see
 - [Accounting mislabels](./accounting-mislabels.md) covers the entry 1.12 sub-checks: non-recurring money in MRR, billings shown as revenue, pass-through money, contractors left out of burn, and the rest.
 - [Checklist coverage and the ask list](./checklist-coverage.md) covers what the room holds for the company's stage and the lines to ask the founder for.
 - [Readout page](./readout-page.md) covers the built page: flags, overview, gaps and the ask list for a room.
+- [Readout store and delete](./readout-store.md) covers saving a readout with its sources and files per fund, listing everything held for a company, and the one confirmed delete.
+- [Contract terms](./contract-terms.md) covers entry 1.13 checks 1, 3, 4 and 6, the clause notes, contracts-only folders, and the ask lines for missing contracts.
+- [Requests to the founder](./founder-requests.md) covers drafting a message from the ask list with guidance, copy and mailto, and adding a founder's reply so the waiting scans rerun.
+- [The memo and its PDF](./memo-export.md) covers the draft memo in the template's sections, the interactive page's two clicks, the footnoted PDF, the quote check and operator edits with versions.
+- [Steering](./steering.md) covers one typed sentence on a piece or a line: the rewrite, the full room as more info, the number guard, the diff, and every revision kept.
+- [Claim support](./claim-support.md) covers every pitch figure labelled supported, contradicted or unsupported against the room, and the memo step that relabels them against other scans' flags.

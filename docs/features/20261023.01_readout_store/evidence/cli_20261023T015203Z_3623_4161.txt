@@ -1,0 +1,25 @@
+$ python3 -m scans.memo data_room/hollis_voice
+(cwd /home/claude/wt/readout-store, TRICORDER_OUT_DIR=/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/readout-store/verify/readout-store/out)
+{
+  "readout": "/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/readout-store/verify/readout-store/out/hollis_voice/readout.json",
+  "claims": 10,
+  "unverified": 0,
+  "gaps": 19,
+  "scans_run": [
+    "redflags"
+  ],
+  "scans_missing": [
+    "comps",
+    "signals",
+    "video",
+    "claims",
+    "readings",
+    "model",
+    "frameworks",
+    "founders",
+    "presence",
+    "outside",
+    "bank"
+  ]
+}
+exit 0

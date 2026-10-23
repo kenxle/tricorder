@@ -1,0 +1,44 @@
+{
+  "save": {
+    "version": 1,
+    "new": true,
+    "content_sha256": "03fa58fe28b0b7dbf364a170a6606d851cd4479104626a7384bd8d9637a1fbaf"
+  },
+  "save_again": {
+    "version": 1,
+    "new": false,
+    "content_sha256": "03fa58fe28b0b7dbf364a170a6606d851cd4479104626a7384bd8d9637a1fbaf"
+  },
+  "list": {
+    "fund": "demo",
+    "company": "hollis_voice",
+    "store_files": 19,
+    "store": [
+      "files/327789cd88034377bd1f8480a9a29806fd7dae40ad1ccaf8156f03958d4f7e93",
+      "files/385c6dfd0f5407ca43c104bad3222071fa4ab02a3008e1f196414d693ae35af9",
+      "files/42e14c40aba418d556f2970fb57c5e34812f64b363d48436fa5e9d4ac09d6ed5",
+      "files/522507006f5491c6f7512c618963ff4d2c509feac45bce73e4a0f2ce8ef6e9d7",
+      "files/5419371b7018da7a4fe7ffab443a523b202708b1d3294a6c1d1108831534c943",
+      "files/5fe1ed10a203cb83357651fe94da404b6e480c76a7f7d21f38363b1f5b5a86ea",
+      "... 13 more"
+    ],
+    "cache": [
+      "outside/hollis_voice/website/home.html"
+    ]
+  },
+  "delete": {
+    "removed_store_files": 19,
+    "removed_cache_files": 1,
+    "index_entries_pruned": 1,
+    "left_after": {
+      "store": [],
+      "cache": []
+    }
+  },
+  "index_after": {
+    "https://competitor.example.com/pricing": {
+      "file": "signals/competitor_pricing.html",
+      "read_at": "2026-10-23"
+    }
+  }
+}

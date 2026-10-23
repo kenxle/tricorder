@@ -1,0 +1,11 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.16, pytest-9.1.1, pluggy-1.7.0
+rootdir: /home/claude/wt/contract-terms
+configfile: pyproject.toml
+plugins: anyio-4.15.1
+collected 29 items
+
+scans/redflags/tests/test_contract_terms_full.py ....................... [ 79%]
+......                                                                   [100%]
+
+============================== 29 passed in 7.43s ==============================

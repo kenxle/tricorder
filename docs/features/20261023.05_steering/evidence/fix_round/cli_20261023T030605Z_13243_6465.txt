@@ -1,0 +1,5 @@
+$ python3 -m schema.check_quotes data_room/hollis_voice /tmp/tricorder-verify/steering/out/hollis_voice/readout.json /tmp/tricorder-verify/steering/out/hollis_voice_seed_drop/readout.json
+(cwd /home/claude/wt/steering, TRICORDER_OUT_DIR=/tmp/tricorder-verify/steering/out)
+/tmp/tricorder-verify/steering/out/hollis_voice/readout.json: 92 claims checked
+/tmp/tricorder-verify/steering/out/hollis_voice_seed_drop/readout.json: 91 claims checked
+exit 0

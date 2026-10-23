@@ -1,0 +1,58 @@
+{
+  "author": "Priya Shah",
+  "failures": [],
+  "start_version": 1,
+  "save_button": "Save 3 changes as version 2",
+  "other_save": 200,
+  "conflict_status": "Someone saved version 2 first. Your 3 changes are kept. Reapply them on version 2",
+  "pending_after_conflict": 3,
+  "saved_version": 3,
+  "operator_lines": [
+    {
+      "section": 9,
+      "author": "Priya Shah",
+      "version": 3,
+      "claim_ids": [],
+      "unsourced_numbers": [
+        "6"
+      ],
+      "text": "I met both founders on 2026-10-20; they have worked together for 6 years."
+    },
+    {
+      "section": 10,
+      "author": "Priya Shah",
+      "version": 3,
+      "claim_ids": [],
+      "unsourced_numbers": [
+        "$2,100,000"
+      ],
+      "text": "Cash is $2,100,000 after the March wire, by the founder's count."
+    },
+    {
+      "section": 12,
+      "author": "Sam Okafor",
+      "version": 2,
+      "claim_ids": [],
+      "unsourced_numbers": [],
+      "text": "Ask about the Marlow pilot first."
+    },
+    {
+      "section": 15,
+      "author": "Priya Shah",
+      "version": 3,
+      "claim_ids": [],
+      "unsourced_numbers": [],
+      "text": "Wait. Ask for the bank statements and the ARR walk before the partners meet."
+    }
+  ],
+  "change_log": [
+    "1 Tricorder: Drafted from the readout built 2026-10-23T03:40:13Z.",
+    "2 Sam Okafor: Added a line to section 12.",
+    "3 Priya Shah: Added a line to section 9; filled the blank in section 15; replaced Tricorder's line \"Every ledger line is booked as...\" in section 10 (its claims detached: the new sentence states a figure they do not)."
+  ],
+  "summary_first_line": "Recommendation. Wait. Ask for the bank statements and the ARR walk before the partners meet. Priya Shah, version 3who wrote it",
+  "withdrawn": [
+    "s15-recommendation",
+    "s10-redflags-mislabels-004"
+  ]
+}

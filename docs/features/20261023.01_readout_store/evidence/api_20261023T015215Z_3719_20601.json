@@ -1,0 +1,411 @@
+month,date,vendor,description,category,booked_as,amount_usd
+2025-01,2025-01-01,Marsh Speech Licensing,Speech recognition and voice licences,third_party_licences,Cost of revenue,148.48
+2025-01,2025-01-01,Gantry Workspace,Office rent,rent,G&A,9850.00
+2025-01,2025-01-03,Deskwise Software,Software subscriptions and tools,tools,G&A,5303.31
+2025-01,2025-01-03,Pennant Insurance Brokers,Insurance premiums,insurance,G&A,1102.94
+2025-01,2025-01-06,Tallow Telecom,Phone minutes and SIP trunking,telephony,Cost of revenue,435.70
+2025-01,2025-01-12,Pinewell Analytics,Analytics and call-review tools,tools,G&A,2855.63
+2025-01,2025-01-12,Tern Travel Desk,Travel and client visits,travel,G&A,608.98
+2025-01,2025-01-15,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (first run)",payroll_engineering,R&D,15596.13
+2025-01,2025-01-15,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (first run)",payroll_sales_marketing,S&M,7554.41
+2025-01,2025-01-15,Ironbridge Payroll Services,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,7902.31
+2025-01,2025-01-17,Halcyon Inference API,Language model and speech API usage,model_inference,R&D,258.13
+2025-01,2025-01-18,Pembry Legal Services,Legal and filing fees,legal,G&A,5692.07
+2025-01,2025-01-19,Birchfield Supply,Office supplies and catering,other,G&A,850.05
+2025-01,2025-01-20,Brindle Cloud Hosting,Cloud compute and storage,cloud_hosting,R&D,126.46
+2025-01,2025-01-25,Dunmore Accounting Group,Bookkeeping and tax preparation,accounting,G&A,3431.63
+2025-01,2025-01-31,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (second run)",payroll_engineering,R&D,15590.46
+2025-01,2025-01-31,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (second run)",payroll_sales_marketing,S&M,7432.92
+2025-01,2025-01-31,Ironbridge Payroll Services,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,7761.55
+2025-02,2025-02-01,Gantry Workspace,Office rent,rent,G&A,9850.00
+2025-02,2025-02-01,Pennant Insurance Brokers,Insurance premiums,insurance,G&A,1136.83
+2025-02,2025-02-04,Marsh Speech Licensing,Speech recognition and voice licences,third_party_licences,Cost of revenue,385.03
+2025-02,2025-02-04,Deskwise Software,Software subscriptions and tools,tools,G&A,5085.58
+2025-02,2025-02-05,Tallow Telecom,Phone minutes and SIP trunking,telephony,Cost of revenue,1136.51
+2025-02,2025-02-11,Pinewell Analytics,Analytics and call-review tools,tools,G&A,2738.39
+2025-02,2025-02-13,Halcyon Inference API,Language model and speech API usage,model_inference,R&D,599.70
+2025-02,2025-02-15,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (first run)",payroll_engineering,R&D,23322.61
+2025-02,2025-02-15,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (first run)",payroll_sales_marketing,S&M,7235.52
+2025-02,2025-02-15,Ironbridge Payroll Services,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,7783.42
+2025-02,2025-02-15,Tern Travel Desk,Travel and client visits,travel,G&A,659.18
+2025-02,2025-02-19,Brindle Cloud Hosting,Cloud compute and storage,cloud_hosting,R&D,289.34
+2025-02,2025-02-19,Birchfield Supply,Office supplies and catering,other,G&A,939.16
+2025-02,2025-02-22,Pembry Legal Services,Legal and filing fees,legal,G&A,5414.02
+2025-02,2025-02-27,Dunmore Accounting Group,Bookkeeping and tax preparation,accounting,G&A,3455.68
+2025-02,2025-02-28,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (second run)",payroll_engineering,R&D,23304.91
+2025-02,2025-02-28,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (second run)",payroll_sales_marketing,S&M,7276.62
+2025-02,2025-02-28,Ironbridge Payroll Services,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,7860.90
+2025-03,2025-03-01,Marsh Speech Licensing,Speech recognition and voice licences,third_party_licences,Cost of revenue,648.38
+2025-03,2025-03-01,Gantry Workspace,Office rent,rent,G&A,9850.00
+2025-03,2025-03-02,Pennant Insurance Brokers,Insurance premiums,insurance,G&A,1146.40
+2025-03,2025-03-05,Tallow Telecom,Phone minutes and SIP trunking,telephony,Cost of revenue,1635.42
+2025-03,2025-03-05,Deskwise Software,Software subscriptions and tools,tools,G&A,5232.15
+2025-03,2025-03-06,Pinewell Analytics,Analytics and call-review tools,tools,G&A,2817.31
+2025-03,2025-03-15,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (first run)",payroll_engineering,R&D,23131.71
+2025-03,2025-03-15,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (first run)",payroll_sales_marketing,S&M,7476.35
+2025-03,2025-03-15,Ironbridge Payroll Services,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,7827.63
+2025-03,2025-03-18,Halcyon Inference API,Language model and speech API usage,model_inference,R&D,969.93
+2025-03,2025-03-19,Pembry Legal Services,Legal and filing fees,legal,G&A,8379.07
+2025-03,2025-03-20,Brindle Cloud Hosting,Cloud compute and storage,cloud_hosting,R&D,501.09
+2025-03,2025-03-20,Tern Travel Desk,Travel and client visits,travel,G&A,4091.47
+2025-03,2025-03-22,Dunmore Accounting Group,Bookkeeping and tax preparation,accounting,G&A,6273.63
+2025-03,2025-03-27,Birchfield Supply,Office supplies and catering,other,G&A,895.43
+2025-03,2025-03-31,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (second run)",payroll_engineering,R&D,23407.24
+2025-03,2025-03-31,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (second run)",payroll_sales_marketing,S&M,7665.12
+2025-03,2025-03-31,Ironbridge Payroll Services,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,7847.25
+2025-04,2025-04-01,Gantry Workspace,Office rent,rent,G&A,9850.00
+2025-04,2025-04-01,Pennant Insurance Brokers,Insurance premiums,insurance,G&A,1163.20
+2025-04,2025-04-03,Marsh Speech Licensing,Speech recognition and voice licences,third_party_licences,Cost of revenue,701.91
+2025-04,2025-04-03,Deskwise Software,Software subscriptions and tools,tools,G&A,5596.27
+2025-04,2025-04-05,Tallow Telecom,Phone minutes and SIP trunking,telephony,Cost of revenue,1921.19
+2025-04,2025-04-07,Pinewell Analytics,Analytics and call-review tools,tools,G&A,3013.38
+2025-04,2025-04-07,Birchfield Supply,Office supplies and catering,other,G&A,1598.64
+2025-04,2025-04-12,Halcyon Inference API,Language model and speech API usage,model_inference,R&D,1071.91
+2025-04,2025-04-12,Tern Travel Desk,Travel and client visits,travel,G&A,3172.73
+2025-04,2025-04-15,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (first run)",payroll_engineering,R&D,24099.76
+2025-04,2025-04-15,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (first run)",payroll_sales_marketing,S&M,14712.59
+2025-04,2025-04-15,Ironbridge Payroll Services,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,7814.00
+2025-04,2025-04-20,Brindle Cloud Hosting,Cloud compute and storage,cloud_hosting,R&D,601.24
+2025-04,2025-04-23,Pembry Legal Services,Legal and filing fees,legal,G&A,2032.43
+2025-04,2025-04-25,Dunmore Accounting Group,Bookkeeping and tax preparation,accounting,G&A,3490.00
+2025-04,2025-04-30,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (second run)",payroll_engineering,R&D,23595.72
+2025-04,2025-04-30,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (second run)",payroll_sales_marketing,S&M,15089.70
+2025-04,2025-04-30,Ironbridge Payroll Services,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,7729.54
+2025-05,2025-05-01,Gantry Workspace,Office rent,rent,G&A,9850.00
+2025-05,2025-05-02,Marsh Speech Licensing,Speech recognition and voice licences,third_party_licences,Cost of revenue,939.74
+2025-05,2025-05-03,Birchfield Supply,Office supplies and catering,other,G&A,1143.91
+2025-05,2025-05-05,Tallow Telecom,Phone minutes and SIP trunking,telephony,Cost of revenue,2597.46
+2025-05,2025-05-05,Deskwise Software,Software subscriptions and tools,tools,G&A,5749.00
+2025-05,2025-05-05,Pennant Insurance Brokers,Insurance premiums,insurance,G&A,1136.93
+2025-05,2025-05-07,Pinewell Analytics,Analytics and call-review tools,tools,G&A,3095.61
+2025-05,2025-05-14,Halcyon Inference API,Language model and speech API usage,model_inference,R&D,1362.38
+2025-05,2025-05-14,Pembry Legal Services,Legal and filing fees,legal,G&A,7744.40
+2025-05,2025-05-15,Brindle Cloud Hosting,Cloud compute and storage,cloud_hosting,R&D,627.35
+2025-05,2025-05-15,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (first run)",payroll_engineering,R&D,32323.19
+2025-05,2025-05-15,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (first run)",payroll_sales_marketing,S&M,14677.45
+2025-05,2025-05-15,Ironbridge Payroll Services,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,7575.89
+2025-05,2025-05-18,Tern Travel Desk,Travel and client visits,travel,G&A,808.27
+2025-05,2025-05-26,Dunmore Accounting Group,Bookkeeping and tax preparation,accounting,G&A,3487.20
+2025-05,2025-05-31,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (second run)",payroll_engineering,R&D,32828.25
+2025-05,2025-05-31,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (second run)",payroll_sales_marketing,S&M,14303.55
+2025-05,2025-05-31,Ironbridge Payroll Services,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,7748.60
+2025-06,2025-06-01,Gantry Workspace,Office rent,rent,G&A,9850.00
+2025-06,2025-06-01,Pennant Insurance Brokers,Insurance premiums,insurance,G&A,1173.96
+2025-06,2025-06-02,Marsh Speech Licensing,Speech recognition and voice licences,third_party_licences,Cost of revenue,1140.98
+2025-06,2025-06-03,Birchfield Supply,Office supplies and catering,other,G&A,807.53
+2025-06,2025-06-04,Deskwise Software,Software subscriptions and tools,tools,G&A,6003.17
+2025-06,2025-06-09,Tallow Telecom,Phone minutes and SIP trunking,telephony,Cost of revenue,3146.04
+2025-06,2025-06-10,Pinewell Analytics,Analytics and call-review tools,tools,G&A,3232.47
+2025-06,2025-06-14,Brindle Cloud Hosting,Cloud compute and storage,cloud_hosting,R&D,984.90
+2025-06,2025-06-14,Pembry Legal Services,Legal and filing fees,legal,G&A,2143.65
+2025-06,2025-06-15,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (first run)",payroll_engineering,R&D,32343.10
+2025-06,2025-06-15,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (first run)",payroll_sales_marketing,S&M,14381.08
+2025-06,2025-06-15,Ironbridge Payroll Services,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,7664.65
+2025-06,2025-06-18,Halcyon Inference API,Language model and speech API usage,model_inference,R&D,1402.65
+2025-06,2025-06-21,Dunmore Accounting Group,Bookkeeping and tax preparation,accounting,G&A,6071.32
+2025-06,2025-06-24,Tern Travel Desk,Travel and client visits,travel,G&A,2593.67
+2025-06,2025-06-30,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (second run)",payroll_engineering,R&D,32510.65
+2025-06,2025-06-30,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (second run)",payroll_sales_marketing,S&M,14646.14
+2025-06,2025-06-30,Ironbridge Payroll Services,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,7616.46
+2025-07,2025-07-01,Marsh Speech Licensing,Speech recognition and voice licences,third_party_licences,Cost of revenue,1312.02
+2025-07,2025-07-01,Gantry Workspace,Office rent,rent,G&A,14625.00
+2025-07,2025-07-02,Pennant Insurance Brokers,Insurance premiums,insurance,G&A,1506.89
+2025-07,2025-07-05,Tallow Telecom,Phone minutes and SIP trunking,telephony,Cost of revenue,3815.97
+2025-07,2025-07-06,Deskwise Software,Software subscriptions and tools,tools,G&A,6527.71
+2025-07,2025-07-09,Birchfield Supply,Office supplies and catering,other,G&A,1191.31
+2025-07,2025-07-10,Halcyon Inference API,Language model and speech API usage,model_inference,R&D,2022.08
+2025-07,2025-07-11,Brindle Cloud Hosting,Cloud compute and storage,cloud_hosting,R&D,947.28
+2025-07,2025-07-12,Pinewell Analytics,Analytics and call-review tools,tools,G&A,3514.92
+2025-07,2025-07-15,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (first run)",payroll_engineering,R&D,31771.04
+2025-07,2025-07-15,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (first run)",payroll_sales_marketing,S&M,14885.68
+2025-07,2025-07-15,Ironbridge Payroll Services,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,7720.34
+2025-07,2025-07-15,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (first run)",support_staff,S&M,4875.25
+2025-07,2025-07-20,Tern Travel Desk,Travel and client visits,travel,G&A,3241.76
+2025-07,2025-07-24,Pembry Legal Services,Legal and filing fees,legal,G&A,8779.95
+2025-07,2025-07-29,Dunmore Accounting Group,Bookkeeping and tax preparation,accounting,G&A,3360.07
+2025-07,2025-07-31,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (second run)",payroll_engineering,R&D,31350.06
+2025-07,2025-07-31,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (second run)",payroll_sales_marketing,S&M,14921.73
+2025-07,2025-07-31,Ironbridge Payroll Services,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,7757.38
+2025-07,2025-07-31,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (second run)",support_staff,S&M,4817.67
+2025-08,2025-08-01,Gantry Workspace,Office rent,rent,G&A,14625.00
+2025-08,2025-08-01,Deskwise Software,Software subscriptions and tools,tools,G&A,6782.84
+2025-08,2025-08-01,Pennant Insurance Brokers,Insurance premiums,insurance,G&A,1491.56
+2025-08,2025-08-02,Marsh Speech Licensing,Speech recognition and voice licences,third_party_licences,Cost of revenue,1637.24
+2025-08,2025-08-05,Tallow Telecom,Phone minutes and SIP trunking,telephony,Cost of revenue,4513.24
+2025-08,2025-08-12,Pinewell Analytics,Analytics and call-review tools,tools,G&A,3652.30
+2025-08,2025-08-13,Halcyon Inference API,Language model and speech API usage,model_inference,R&D,2102.92
+2025-08,2025-08-15,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (first run)",payroll_engineering,R&D,31366.38
+2025-08,2025-08-15,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (first run)",payroll_sales_marketing,S&M,21437.73
+2025-08,2025-08-15,Ironbridge Payroll Services,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,7820.41
+2025-08,2025-08-15,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (first run)",support_staff,S&M,4974.19
+2025-08,2025-08-15,Pembry Legal Services,Legal and filing fees,legal,G&A,7868.93
+2025-08,2025-08-15,Birchfield Supply,Office supplies and catering,other,G&A,782.52
+2025-08,2025-08-17,Brindle Cloud Hosting,Cloud compute and storage,cloud_hosting,R&D,1484.49
+2025-08,2025-08-19,Tern Travel Desk,Travel and client visits,travel,G&A,1774.52
+2025-08,2025-08-31,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (second run)",payroll_engineering,R&D,31608.59
+2025-08,2025-08-31,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (second run)",payroll_sales_marketing,S&M,21330.46
+2025-08,2025-08-31,Ironbridge Payroll Services,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,7757.90
+2025-08,2025-08-31,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (second run)",support_staff,S&M,4847.00
+2025-08,2025-08-31,Dunmore Accounting Group,Bookkeeping and tax preparation,accounting,G&A,3501.20
+2025-09,2025-09-01,Gantry Workspace,Office rent,rent,G&A,14625.00
+2025-09,2025-09-02,Deskwise Software,Software subscriptions and tools,tools,G&A,6636.00
+2025-09,2025-09-02,Pennant Insurance Brokers,Insurance premiums,insurance,G&A,1497.27
+2025-09,2025-09-03,Marsh Speech Licensing,Speech recognition and voice licences,third_party_licences,Cost of revenue,1813.47
+2025-09,2025-09-04,Tallow Telecom,Phone minutes and SIP trunking,telephony,Cost of revenue,5442.28
+2025-09,2025-09-11,Halcyon Inference API,Language model and speech API usage,model_inference,R&D,2806.11
+2025-09,2025-09-11,Tern Travel Desk,Travel and client visits,travel,G&A,3981.84
+2025-09,2025-09-12,Pinewell Analytics,Analytics and call-review tools,tools,G&A,3573.23
+2025-09,2025-09-15,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (first run)",payroll_engineering,R&D,31532.37
+2025-09,2025-09-15,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (first run)",payroll_sales_marketing,S&M,21773.42
+2025-09,2025-09-15,Ironbridge Payroll Services,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,7781.18
+2025-09,2025-09-15,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (first run)",support_staff,S&M,4768.47
+2025-09,2025-09-15,Pembry Legal Services,Legal and filing fees,legal,G&A,3056.68
+2025-09,2025-09-18,Brindle Cloud Hosting,Cloud compute and storage,cloud_hosting,R&D,1545.22
+2025-09,2025-09-18,Birchfield Supply,Office supplies and catering,other,G&A,631.05
+2025-09,2025-09-20,Dunmore Accounting Group,Bookkeeping and tax preparation,accounting,G&A,6197.39
+2025-09,2025-09-30,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (second run)",payroll_engineering,R&D,31757.09
+2025-09,2025-09-30,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (second run)",payroll_sales_marketing,S&M,21651.89
+2025-09,2025-09-30,Ironbridge Payroll Services,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,7806.22
+2025-09,2025-09-30,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (second run)",support_staff,S&M,4799.59
+2025-10,2025-10-01,Marsh Speech Licensing,Speech recognition and voice licences,third_party_licences,Cost of revenue,2216.35
+2025-10,2025-10-01,Gantry Workspace,Office rent,rent,G&A,14625.00
+2025-10,2025-10-04,Pennant Insurance Brokers,Insurance premiums,insurance,G&A,1479.72
+2025-10,2025-10-05,Tallow Telecom,Phone minutes and SIP trunking,telephony,Cost of revenue,6522.20
+2025-10,2025-10-06,Deskwise Software,Software subscriptions and tools,tools,G&A,7249.69
+2025-10,2025-10-06,Tern Travel Desk,Travel and client visits,travel,G&A,2837.38
+2025-10,2025-10-08,Pinewell Analytics,Analytics and call-review tools,tools,G&A,3903.68
+2025-10,2025-10-12,Birchfield Supply,Office supplies and catering,other,G&A,1318.81
+2025-10,2025-10-15,Brindle Cloud Hosting,Cloud compute and storage,cloud_hosting,R&D,1906.09
+2025-10,2025-10-15,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (first run)",payroll_engineering,R&D,38859.66
+2025-10,2025-10-15,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (first run)",payroll_sales_marketing,S&M,22524.18
+2025-10,2025-10-15,Ironbridge Payroll Services,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,7960.73
+2025-10,2025-10-15,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (first run)",support_staff,S&M,4742.37
+2025-10,2025-10-20,Halcyon Inference API,Language model and speech API usage,model_inference,R&D,3377.12
+2025-10,2025-10-22,Pembry Legal Services,Legal and filing fees,legal,G&A,2555.08
+2025-10,2025-10-24,Dunmore Accounting Group,Bookkeeping and tax preparation,accounting,G&A,3351.19
+2025-10,2025-10-31,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (second run)",payroll_engineering,R&D,39522.67
+2025-10,2025-10-31,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (second run)",payroll_sales_marketing,S&M,21954.62
+2025-10,2025-10-31,Ironbridge Payroll Services,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,7776.52
+2025-10,2025-10-31,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (second run)",support_staff,S&M,4851.87
+2025-11,2025-11-01,Marsh Speech Licensing,Speech recognition and voice licences,third_party_licences,Cost of revenue,3157.99
+2025-11,2025-11-01,Gantry Workspace,Office rent,rent,G&A,14625.00
+2025-11,2025-11-05,Tallow Telecom,Phone minutes and SIP trunking,telephony,Cost of revenue,10085.63
+2025-11,2025-11-05,Pennant Insurance Brokers,Insurance premiums,insurance,G&A,1457.52
+2025-11,2025-11-06,Deskwise Software,Software subscriptions and tools,tools,G&A,7003.52
+2025-11,2025-11-11,Pinewell Analytics,Analytics and call-review tools,tools,G&A,3771.13
+2025-11,2025-11-12,Halcyon Inference API,Language model and speech API usage,model_inference,R&D,5274.72
+2025-11,2025-11-15,Brindle Cloud Hosting,Cloud compute and storage,cloud_hosting,R&D,2860.99
+2025-11,2025-11-15,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (first run)",payroll_engineering,R&D,40455.39
+2025-11,2025-11-15,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (first run)",payroll_sales_marketing,S&M,21709.30
+2025-11,2025-11-15,Ironbridge Payroll Services,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,7738.76
+2025-11,2025-11-15,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (first run)",support_staff,S&M,4942.52
+2025-11,2025-11-17,Pembry Legal Services,Legal and filing fees,legal,G&A,25009.92
+2025-11,2025-11-18,Birchfield Supply,Office supplies and catering,other,G&A,1338.57
+2025-11,2025-11-25,Tern Travel Desk,Travel and client visits,travel,G&A,1039.80
+2025-11,2025-11-29,Dunmore Accounting Group,Bookkeeping and tax preparation,accounting,G&A,3547.08
+2025-11,2025-11-30,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (second run)",payroll_engineering,R&D,40618.57
+2025-11,2025-11-30,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (second run)",payroll_sales_marketing,S&M,21815.31
+2025-11,2025-11-30,Ironbridge Payroll Services,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,7640.27
+2025-11,2025-11-30,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (second run)",support_staff,S&M,4887.49
+2025-12,2025-12-01,Marsh Speech Licensing,Speech recognition and voice licences,third_party_licences,Cost of revenue,3843.81
+2025-12,2025-12-01,Gantry Workspace,Office rent,rent,G&A,14625.00
+2025-12,2025-12-01,Pennant Insurance Brokers,Insurance premiums,insurance,G&A,1464.27
+2025-12,2025-12-03,Deskwise Software,Software subscriptions and tools,tools,G&A,8114.26
+2025-12,2025-12-07,Birchfield Supply,Office supplies and catering,other,G&A,403.00
+2025-12,2025-12-08,Tallow Telecom,Phone minutes and SIP trunking,telephony,Cost of revenue,11562.23
+2025-12,2025-12-09,Pembry Legal Services,Legal and filing fees,legal,G&A,5221.25
+2025-12,2025-12-10,Pinewell Analytics,Analytics and call-review tools,tools,G&A,4369.22
+2025-12,2025-12-11,Brindle Cloud Hosting,Cloud compute and storage,cloud_hosting,R&D,3558.65
+2025-12,2025-12-15,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (first run)",payroll_engineering,R&D,40093.98
+2025-12,2025-12-15,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (first run)",payroll_sales_marketing,S&M,28785.39
+2025-12,2025-12-15,Ironbridge Payroll Services,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,7672.72
+2025-12,2025-12-15,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (first run)",support_staff,S&M,4756.43
+2025-12,2025-12-20,Halcyon Inference API,Language model and speech API usage,model_inference,R&D,5657.85
+2025-12,2025-12-23,Tern Travel Desk,Travel and client visits,travel,G&A,1091.24
+2025-12,2025-12-26,Dunmore Accounting Group,Bookkeeping and tax preparation,accounting,G&A,6153.54
+2025-12,2025-12-31,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (second run)",payroll_engineering,R&D,40965.24
+2025-12,2025-12-31,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (second run)",payroll_sales_marketing,S&M,28789.23
+2025-12,2025-12-31,Ironbridge Payroll Services,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,7720.15
+2025-12,2025-12-31,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (second run)",support_staff,S&M,4824.66
+2026-01,2026-01-01,Marsh Speech Licensing,Speech recognition and voice licences,third_party_licences,Cost of revenue,3935.01
+2026-01,2026-01-01,Gantry Workspace,Office rent,rent,G&A,21790.00
+2026-01,2026-01-02,Pennant Insurance Brokers,Insurance premiums,insurance,G&A,1491.40
+2026-01,2026-01-03,Tallow Telecom,Phone minutes and SIP trunking,telephony,Cost of revenue,11550.18
+2026-01,2026-01-05,Deskwise Software,Software subscriptions and tools,tools,G&A,8359.06
+2026-01,2026-01-08,Pinewell Analytics,Analytics and call-review tools,tools,G&A,4501.03
+2026-01,2026-01-14,Halcyon Inference API,Language model and speech API usage,model_inference,R&D,6247.73
+2026-01,2026-01-14,Tern Travel Desk,Travel and client visits,travel,G&A,1845.15
+2026-01,2026-01-15,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (first run)",payroll_engineering,R&D,49330.22
+2026-01,2026-01-15,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (first run)",payroll_sales_marketing,S&M,29997.20
+2026-01,2026-01-15,Ironbridge Payroll Services,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,7953.78
+2026-01,2026-01-15,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (first run)",support_staff,S&M,4949.15
+2026-01,2026-01-19,Pembry Legal Services,Legal and filing fees,legal,G&A,2402.01
+2026-01,2026-01-20,Brindle Cloud Hosting,Cloud compute and storage,cloud_hosting,R&D,3318.24
+2026-01,2026-01-25,Birchfield Supply,Office supplies and catering,other,G&A,1220.07
+2026-01,2026-01-26,Dunmore Accounting Group,Bookkeeping and tax preparation,accounting,G&A,3450.14
+2026-01,2026-01-31,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (second run)",payroll_engineering,R&D,50081.84
+2026-01,2026-01-31,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (second run)",payroll_sales_marketing,S&M,30854.00
+2026-01,2026-01-31,Ironbridge Payroll Services,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,8116.45
+2026-01,2026-01-31,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (second run)",support_staff,S&M,5074.00
+2026-02,2026-02-01,Gantry Workspace,Office rent,rent,G&A,21790.00
+2026-02,2026-02-03,Pennant Insurance Brokers,Insurance premiums,insurance,G&A,1457.47
+2026-02,2026-02-04,Tallow Telecom,Phone minutes and SIP trunking,telephony,Cost of revenue,13419.25
+2026-02,2026-02-04,Marsh Speech Licensing,Speech recognition and voice licences,third_party_licences,Cost of revenue,5224.99
+2026-02,2026-02-04,Deskwise Software,Software subscriptions and tools,tools,G&A,9113.83
+2026-02,2026-02-09,Pembry Legal Services,Legal and filing fees,legal,G&A,8001.27
+2026-02,2026-02-12,Pinewell Analytics,Analytics and call-review tools,tools,G&A,4907.45
+2026-02,2026-02-14,Brindle Cloud Hosting,Cloud compute and storage,cloud_hosting,R&D,4090.66
+2026-02,2026-02-15,Halcyon Inference API,Language model and speech API usage,model_inference,R&D,6283.59
+2026-02,2026-02-15,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (first run)",payroll_engineering,R&D,49479.98
+2026-02,2026-02-15,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (first run)",payroll_sales_marketing,S&M,30142.48
+2026-02,2026-02-15,Ironbridge Payroll Services,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,8075.72
+2026-02,2026-02-15,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (first run)",support_staff,S&M,5049.99
+2026-02,2026-02-17,Birchfield Supply,Office supplies and catering,other,G&A,1105.18
+2026-02,2026-02-19,Tern Travel Desk,Travel and client visits,travel,G&A,2435.76
+2026-02,2026-02-28,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (second run)",payroll_engineering,R&D,50219.83
+2026-02,2026-02-28,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (second run)",payroll_sales_marketing,S&M,29900.72
+2026-02,2026-02-28,Ironbridge Payroll Services,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,7919.71
+2026-02,2026-02-28,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (second run)",support_staff,S&M,5028.64
+2026-02,2026-02-28,Dunmore Accounting Group,Bookkeeping and tax preparation,accounting,G&A,3431.42
+2026-03,2026-03-01,Gantry Workspace,Office rent,rent,G&A,21790.00
+2026-03,2026-03-01,Deskwise Software,Software subscriptions and tools,tools,G&A,8647.36
+2026-03,2026-03-02,Marsh Speech Licensing,Speech recognition and voice licences,third_party_licences,Cost of revenue,5048.01
+2026-03,2026-03-03,Tallow Telecom,Phone minutes and SIP trunking,telephony,Cost of revenue,14895.05
+2026-03,2026-03-04,Pennant Insurance Brokers,Insurance premiums,insurance,G&A,1479.89
+2026-03,2026-03-11,Pinewell Analytics,Analytics and call-review tools,tools,G&A,4656.27
+2026-03,2026-03-12,Tern Travel Desk,Travel and client visits,travel,G&A,1028.55
+2026-03,2026-03-15,Brindle Cloud Hosting,Cloud compute and storage,cloud_hosting,R&D,3629.95
+2026-03,2026-03-15,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (first run)",payroll_engineering,R&D,48579.28
+2026-03,2026-03-15,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (first run)",payroll_sales_marketing,S&M,29828.97
+2026-03,2026-03-15,Ironbridge Payroll Services,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,7817.55
+2026-03,2026-03-15,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (first run)",support_staff,S&M,10196.46
+2026-03,2026-03-15,Pembry Legal Services,Legal and filing fees,legal,G&A,2682.29
+2026-03,2026-03-15,Birchfield Supply,Office supplies and catering,other,G&A,879.02
+2026-03,2026-03-18,Halcyon Inference API,Language model and speech API usage,model_inference,R&D,7693.76
+2026-03,2026-03-22,Dunmore Accounting Group,Bookkeeping and tax preparation,accounting,G&A,6346.86
+2026-03,2026-03-31,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (second run)",payroll_engineering,R&D,48313.87
+2026-03,2026-03-31,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (second run)",payroll_sales_marketing,S&M,30103.43
+2026-03,2026-03-31,Ironbridge Payroll Services,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,8015.42
+2026-03,2026-03-31,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (second run)",support_staff,S&M,10279.32
+2026-04,2026-04-01,Marsh Speech Licensing,Speech recognition and voice licences,third_party_licences,Cost of revenue,6532.87
+2026-04,2026-04-01,Gantry Workspace,Office rent,rent,G&A,21790.00
+2026-04,2026-04-03,Deskwise Software,Software subscriptions and tools,tools,G&A,8110.82
+2026-04,2026-04-04,Pennant Insurance Brokers,Insurance premiums,insurance,G&A,1450.42
+2026-04,2026-04-05,Birchfield Supply,Office supplies and catering,other,G&A,687.54
+2026-04,2026-04-07,Pinewell Analytics,Analytics and call-review tools,tools,G&A,4367.37
+2026-04,2026-04-09,Tallow Telecom,Phone minutes and SIP trunking,telephony,Cost of revenue,18999.36
+2026-04,2026-04-13,Brindle Cloud Hosting,Cloud compute and storage,cloud_hosting,R&D,5526.69
+2026-04,2026-04-15,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (first run)",payroll_engineering,R&D,50147.02
+2026-04,2026-04-15,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (first run)",payroll_sales_marketing,S&M,37063.13
+2026-04,2026-04-15,Ironbridge Payroll Services,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,8102.25
+2026-04,2026-04-15,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (first run)",support_staff,S&M,10017.85
+2026-04,2026-04-16,Tern Travel Desk,Travel and client visits,travel,G&A,5416.96
+2026-04,2026-04-17,Halcyon Inference API,Language model and speech API usage,model_inference,R&D,8302.26
+2026-04,2026-04-18,Pembry Legal Services,Legal and filing fees,legal,G&A,25507.08
+2026-04,2026-04-30,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (second run)",payroll_engineering,R&D,48877.82
+2026-04,2026-04-30,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (second run)",payroll_sales_marketing,S&M,37092.01
+2026-04,2026-04-30,Ironbridge Payroll Services,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,8068.62
+2026-04,2026-04-30,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (second run)",support_staff,S&M,10067.37
+2026-04,2026-04-30,Dunmore Accounting Group,Bookkeeping and tax preparation,accounting,G&A,3324.15
+2026-05,2026-05-01,Gantry Workspace,Office rent,rent,G&A,21790.00
+2026-05,2026-05-01,Pennant Insurance Brokers,Insurance premiums,insurance,G&A,1472.90
+2026-05,2026-05-02,Marsh Speech Licensing,Speech recognition and voice licences,third_party_licences,Cost of revenue,6877.81
+2026-05,2026-05-06,Deskwise Software,Software subscriptions and tools,tools,G&A,8449.65
+2026-05,2026-05-07,Tallow Telecom,Phone minutes and SIP trunking,telephony,Cost of revenue,20335.17
+2026-05,2026-05-12,Brindle Cloud Hosting,Cloud compute and storage,cloud_hosting,R&D,5465.64
+2026-05,2026-05-12,Pinewell Analytics,Analytics and call-review tools,tools,G&A,4549.81
+2026-05,2026-05-12,Pembry Legal Services,Legal and filing fees,legal,G&A,7616.92
+2026-05,2026-05-15,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (first run)",payroll_engineering,R&D,48386.44
+2026-05,2026-05-15,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (first run)",payroll_sales_marketing,S&M,36208.24
+2026-05,2026-05-15,Ironbridge Payroll Services,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,8285.20
+2026-05,2026-05-15,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (first run)",support_staff,S&M,10113.21
+2026-05,2026-05-15,Birchfield Supply,Office supplies and catering,other,G&A,433.49
+2026-05,2026-05-19,Halcyon Inference API,Language model and speech API usage,model_inference,R&D,9405.23
+2026-05,2026-05-19,Tern Travel Desk,Travel and client visits,travel,G&A,3900.22
+2026-05,2026-05-30,Dunmore Accounting Group,Bookkeeping and tax preparation,accounting,G&A,3425.28
+2026-05,2026-05-31,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (second run)",payroll_engineering,R&D,50092.12
+2026-05,2026-05-31,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (second run)",payroll_sales_marketing,S&M,36762.26
+2026-05,2026-05-31,Ironbridge Payroll Services,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,8322.05
+2026-05,2026-05-31,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (second run)",support_staff,S&M,10213.70
+2026-06,2026-06-01,Gantry Workspace,Office rent,rent,G&A,21790.00
+2026-06,2026-06-02,Pennant Insurance Brokers,Insurance premiums,insurance,G&A,1488.34
+2026-06,2026-06-04,Marsh Speech Licensing,Speech recognition and voice licences,third_party_licences,Cost of revenue,7126.35
+2026-06,2026-06-04,Deskwise Software,Software subscriptions and tools,tools,G&A,9020.82
+2026-06,2026-06-05,Tallow Telecom,Phone minutes and SIP trunking,telephony,Cost of revenue,22105.48
+2026-06,2026-06-09,Pinewell Analytics,Analytics and call-review tools,tools,G&A,4857.36
+2026-06,2026-06-11,Tern Travel Desk,Travel and client visits,travel,G&A,4255.00
+2026-06,2026-06-11,Birchfield Supply,Office supplies and catering,other,G&A,1019.62
+2026-06,2026-06-14,Pembry Legal Services,Legal and filing fees,legal,G&A,2027.62
+2026-06,2026-06-15,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (first run)",payroll_engineering,R&D,57707.68
+2026-06,2026-06-15,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (first run)",payroll_sales_marketing,S&M,36543.37
+2026-06,2026-06-15,Ironbridge Payroll Services,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,8189.54
+2026-06,2026-06-15,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (first run)",support_staff,S&M,10041.60
+2026-06,2026-06-18,Brindle Cloud Hosting,Cloud compute and storage,cloud_hosting,R&D,6221.26
+2026-06,2026-06-19,Halcyon Inference API,Language model and speech API usage,model_inference,R&D,9868.25
+2026-06,2026-06-25,Dunmore Accounting Group,Bookkeeping and tax preparation,accounting,G&A,6133.36
+2026-06,2026-06-30,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (second run)",payroll_engineering,R&D,57439.98
+2026-06,2026-06-30,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (second run)",payroll_sales_marketing,S&M,36194.63
+2026-06,2026-06-30,Ironbridge Payroll Services,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,8110.31
+2026-06,2026-06-30,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (second run)",support_staff,S&M,10169.60
+2026-07,2026-07-01,Gantry Workspace,Office rent,rent,G&A,27240.00
+2026-07,2026-07-03,Marsh Speech Licensing,Speech recognition and voice licences,third_party_licences,Cost of revenue,7054.51
+2026-07,2026-07-04,Tallow Telecom,Phone minutes and SIP trunking,telephony,Cost of revenue,22876.86
+2026-07,2026-07-05,Deskwise Software,Software subscriptions and tools,tools,G&A,8938.20
+2026-07,2026-07-05,Pennant Insurance Brokers,Insurance premiums,insurance,G&A,1469.11
+2026-07,2026-07-05,Birchfield Supply,Office supplies and catering,other,G&A,960.72
+2026-07,2026-07-09,Pinewell Analytics,Analytics and call-review tools,tools,G&A,4812.88
+2026-07,2026-07-10,Halcyon Inference API,Language model and speech API usage,model_inference,R&D,11540.23
+2026-07,2026-07-15,Brindle Cloud Hosting,Cloud compute and storage,cloud_hosting,R&D,5807.43
+2026-07,2026-07-15,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (first run)",payroll_engineering,R&D,57405.58
+2026-07,2026-07-15,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (first run)",payroll_sales_marketing,S&M,36466.94
+2026-07,2026-07-15,Ironbridge Payroll Services,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,15371.74
+2026-07,2026-07-15,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (first run)",support_staff,S&M,10358.08
+2026-07,2026-07-22,Pembry Legal Services,Legal and filing fees,legal,G&A,7443.74
+2026-07,2026-07-22,Tern Travel Desk,Travel and client visits,travel,G&A,1454.71
+2026-07,2026-07-26,Dunmore Accounting Group,Bookkeeping and tax preparation,accounting,G&A,3454.33
+2026-07,2026-07-31,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (second run)",payroll_engineering,R&D,56532.18
+2026-07,2026-07-31,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (second run)",payroll_sales_marketing,S&M,36809.50
+2026-07,2026-07-31,Ironbridge Payroll Services,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,15707.92
+2026-07,2026-07-31,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (second run)",support_staff,S&M,10396.31
+2026-08,2026-08-01,Gantry Workspace,Office rent,rent,G&A,27240.00
+2026-08,2026-08-02,Marsh Speech Licensing,Speech recognition and voice licences,third_party_licences,Cost of revenue,8891.51
+2026-08,2026-08-05,Deskwise Software,Software subscriptions and tools,tools,G&A,8459.15
+2026-08,2026-08-05,Pennant Insurance Brokers,Insurance premiums,insurance,G&A,1493.09
+2026-08,2026-08-06,Tallow Telecom,Phone minutes and SIP trunking,telephony,Cost of revenue,25950.57
+2026-08,2026-08-11,Pinewell Analytics,Analytics and call-review tools,tools,G&A,4554.93
+2026-08,2026-08-15,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (first run)",payroll_engineering,R&D,58023.24
+2026-08,2026-08-15,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (first run)",payroll_sales_marketing,S&M,36343.17
+2026-08,2026-08-15,Ironbridge Payroll Services,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,15378.27
+2026-08,2026-08-15,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (first run)",support_staff,S&M,10101.75
+2026-08,2026-08-19,Tern Travel Desk,Travel and client visits,travel,G&A,5324.40
+2026-08,2026-08-20,Brindle Cloud Hosting,Cloud compute and storage,cloud_hosting,R&D,7444.29
+2026-08,2026-08-20,Halcyon Inference API,Language model and speech API usage,model_inference,R&D,12289.88
+2026-08,2026-08-22,Pembry Legal Services,Legal and filing fees,legal,G&A,1633.51
+2026-08,2026-08-23,Dunmore Accounting Group,Bookkeeping and tax preparation,accounting,G&A,3286.82
+2026-08,2026-08-27,Birchfield Supply,Office supplies and catering,other,G&A,301.51
+2026-08,2026-08-31,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (second run)",payroll_engineering,R&D,57923.44
+2026-08,2026-08-31,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (second run)",payroll_sales_marketing,S&M,36677.08
+2026-08,2026-08-31,Ironbridge Payroll Services,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,15733.40
+2026-08,2026-08-31,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (second run)",support_staff,S&M,10035.25
+2026-09,2026-09-01,Gantry Workspace,Office rent,rent,G&A,27240.00
+2026-09,2026-09-02,Marsh Speech Licensing,Speech recognition and voice licences,third_party_licences,Cost of revenue,9049.25
+2026-09,2026-09-03,Pennant Insurance Brokers,Insurance premiums,insurance,G&A,1421.96
+2026-09,2026-09-04,Deskwise Software,Software subscriptions and tools,tools,G&A,9620.66
+2026-09,2026-09-07,Tern Travel Desk,Travel and client visits,travel,G&A,7397.66
+2026-09,2026-09-09,Tallow Telecom,Phone minutes and SIP trunking,telephony,Cost of revenue,28298.55
+2026-09,2026-09-09,Pinewell Analytics,Analytics and call-review tools,tools,G&A,5180.35
+2026-09,2026-09-10,Birchfield Supply,Office supplies and catering,other,G&A,1113.15
+2026-09,2026-09-13,Halcyon Inference API,Language model and speech API usage,model_inference,R&D,12028.41
+2026-09,2026-09-15,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (first run)",payroll_engineering,R&D,57358.72
+2026-09,2026-09-15,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (first run)",payroll_sales_marketing,S&M,43411.24
+2026-09,2026-09-15,Ironbridge Payroll Services,"General and administrative, salaries and benefits (first run)",payroll_g_and_a,G&A,15800.25
+2026-09,2026-09-15,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (first run)",support_staff,S&M,10178.95
+2026-09,2026-09-16,Pembry Legal Services,Legal and filing fees,legal,G&A,3011.65
+2026-09,2026-09-20,Brindle Cloud Hosting,Cloud compute and storage,cloud_hosting,R&D,8512.88
+2026-09,2026-09-26,Dunmore Accounting Group,Bookkeeping and tax preparation,accounting,G&A,6178.03
+2026-09,2026-09-30,Ironbridge Payroll Services,"Engineering and product, salaries and benefits (second run)",payroll_engineering,R&D,58374.61
+2026-09,2026-09-30,Ironbridge Payroll Services,"Sales, marketing and implementation, salaries and benefits (second run)",payroll_sales_marketing,S&M,42988.76
+2026-09,2026-09-30,Ironbridge Payroll Services,"General and administrative, salaries and benefits (second run)",payroll_g_and_a,G&A,15666.42
+2026-09,2026-09-30,Ironbridge Payroll Services,"Customer support specialists, salaries and benefits (second run)",support_staff,S&M,10087.72
+
+HTTP 200

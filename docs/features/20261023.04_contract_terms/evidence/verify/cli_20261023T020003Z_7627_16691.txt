@@ -1,0 +1,4 @@
+$ python3 -m scans.redflags /tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/contract-terms/contracts_only
+(cwd /home/claude/wt/contract-terms, TRICORDER_OUT_DIR=/tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/contract-terms/verify/contract-terms/out)
+redflags: 4 claims, 9 gaps -> /tmp/claude-0/-home-claude/46d40c2c-7610-5980-8cc8-4007978d4e75/scratchpad/contract-terms/verify/contract-terms/out/contracts_only/redflags.json
+exit 0

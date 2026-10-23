@@ -1,0 +1,25 @@
+$ python3 -m scans.memo data_room/brasswick
+(cwd /home/claude/wt/founder-requests, TRICORDER_OUT_DIR=/tmp/tricorder-verify/founder-requests-r5/out)
+{
+  "readout": "/tmp/tricorder-verify/founder-requests-r5/out/brasswick/readout.json",
+  "claims": 85,
+  "unverified": 0,
+  "gaps": 30,
+  "scans_run": [
+    "redflags",
+    "claims"
+  ],
+  "scans_missing": [
+    "comps",
+    "signals",
+    "video",
+    "readings",
+    "model",
+    "frameworks",
+    "founders",
+    "presence",
+    "outside",
+    "bank"
+  ]
+}
+exit 0
