@@ -1,5 +1,27 @@
 # Verification: requests to the founder
 
+## Review round (2026-10-23, review wave 2a: S1 to S4, O2, O3, O6, O7, O9)
+
+Merged `claude/project-thread-ea11in` (red-flag ids per module). Fixed test-first, at `476f697` and `4455fa6`. Driven on run `founder-requests-r5`, port 8812, `TRICORDER_ROOMS_DIR=/tmp/tricorder-verify/founder-requests-r5/rooms`, revision `4455fa6`. Evidence: [evidence/review_round/](evidence/review_round/), copied after `control.sh cleanup` ("stopped pid 645").
+
+| Finding | Fix | Test | Driven |
+|---|---|---|---|
+| S1 cross-site writes and DNS rebinding | `server/local_guard.py`, one ASGI middleware in `server/app.py` for every router: Host must be localhost, 127.0.0.1 or [::1] (any port); an unsafe method with a non-loopback Origin (or Referer) is 403; a body must be JSON, octet-stream or multipart, never text/plain or a form (415). The raw-file route now takes `application/octet-stream`. | `server/tests/test_local_guard.py`: foreign hosts, cross-site writes and form bodies refused on store delete, `/files`, `/batch`, steer, memo edits and memo build, with nothing written; the page origin and the Vite dev origin (`localhost:5173`) get through | `r5_guard_probes.txt`: text/plain with `Origin: http://evil.example` to `/files` 403 and no `pipeline.csv` written; text/plain to `/batch` 415; `Host: attacker.example:8820` 403; same-origin and dev-origin drafts 200. The page drove with no 403 or 415 (`refused_by_guard: []`). |
+| S2 upload froze the server | The reruns run in the thread pool (`run_in_threadpool`). | `test_the_server_answers_while_an_upload_reruns_scans`: `/health` under 2 s while a rerun is held | `/health` answered 200 in 177 ms during the page's upload (`r5_page_drive.json`) |
+| S3 "no number changed" after a crash | A scan that exits non-zero, or a new gap naming the new file, puts "One check could not read the new file(s), so its part of the readout is from before." first, and "no number changed" is not said. A copy with no earlier readout says "This room had no readout before, so this is its first: N claims." | `test_a_scan_that_fails_on_the_new_file_is_said_plainly`, `test_a_gap_about_the_new_file_counts_as_not_read`, `test_a_plan_in_the_founders_own_columns_still_lands`, `test_a_room_with_no_readout_before_says_so_instead_of_listing_every_claim` | The page added a hiring plan in a founder's own columns: the claims scan crashed and the receipt led with the sentence (`r5_page_receipt.txt`) |
+| S4 log without the scans | Each log entry carries `scans_rerun`. | `test_hiring_plan_reply_reruns_and_rebuilds`, the failing-scan test | `r5_guard_probes.txt`: both entries list redflags ok, claims failed |
+| O2 copies missing from `/api/rooms` | `server/app.py` reads `rooms_root()` on every call. | `test_rooms_under_the_rooms_folder_are_listed` | `brasswick_live` listed from the run's rooms folder |
+| O3 page stayed on the sample room | After a reply to a working copy, the page selects the copy and keeps the receipt. | `bin/ci-web` | `room_after_reply: brasswick_live`, `r3_page_reply_on_copy_*.png` (light, dark, phone) |
+| O6 name length | A name beside an earlier file is cut to 80. | `test_a_name_beside_an_earlier_file_stays_within_80_characters` | not driven |
+| O7 copy followed links | A room holding a link is refused (400); the copy uses `symlinks=True`. | `test_a_room_copy_never_follows_a_link` | not driven |
+| O9 no network test | Every command (and the scans it reruns) runs with a sitecustomize that refuses internet sockets; the routes run with `socket.connect` patched. | `founder_requests/tests/test_no_network.py` | not driven |
+
+Other test files changed by the guard: `server/tests/test_app.py`, `test_store_routes.py`, `test_steering_routes.py` and `memo/tests/test_export.py` now give their TestClient `base_url="http://127.0.0.1"` (the default host `testserver` is refused).
+
+Suite at `4455fa6`: `bin/ci-py` 597 passed, 8 failed, 2 errors. All ten are in `memo/tests/`, and the same ten fail on the merged base `5115da2` without this round's changes (checked from a `git archive` of that commit). `bin/ci-web` passed.
+
+The screenshot files are named `r3_*` because the drive script names them so; they are from run r5.
+
 ## Fix round (2026-10-23, after the independent persona review)
 
 Driven again by the recipe, run `founder-requests-r2`, port 8812, `TRICORDER_OFFLINE=1`, at revisions `477d06a` (command line and API drafts) and `e160691` (the page drive, the CLI add and the readback; the server was relaunched after each code change, and the branch head after it changes only docs). Evidence is in [evidence/fix_round/](evidence/fix_round/), copied after `control.sh cleanup` ("stopped pid 26804", 33 files kept). The working rooms are `rooms/brasswick_r2` and `rooms/brasswick_r3` (git-ignored), because `rooms/brasswick_live` from the first run still exists and is not deleted; the page drive's final pass used `brasswick_r3`. `cli_20261023T0234*` are from before the last two fixes; the current draft is `cli_20261023T023546Z_25458_3459.txt`.

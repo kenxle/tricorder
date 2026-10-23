@@ -37,6 +37,28 @@ def _snapshot(folder: Path) -> dict:
 # Names --------------------------------------------------------------------------------------
 
 
+def test_a_name_beside_an_earlier_file_stays_within_80_characters(env):
+    room = ik.copy_room(BRASSWICK)
+    ik.save(room, Path("05_team/hiring_plan.csv"), PLAN)
+    row = next(r for r in cl.load() if r.id == "C22")
+    stem, ext = ik.check_name("x" * 300 + ".csv")
+    rel = ik.target_for(room, row, stem, ext)
+    assert len(rel.stem) <= ik.STEM_MAX and rel.stem.startswith("hiring_plan_from_founder_")  # FR-R17 (O6)
+
+
+def test_a_room_copy_never_follows_a_link(env, tmp_path):
+    secret = tmp_path / "secret.txt"
+    secret.write_text("outside the room")
+    src = tmp_path / "src_room"
+    import shutil
+    shutil.copytree(BRASSWICK, src)
+    os.symlink(secret, src / "05_team" / "link.txt")
+    with pytest.raises(ik.IntakeError) as err:
+        ik.copy_room(src, "linked_copy")
+    assert err.value.status == 400 and "link" in err.value.message
+    assert not (env[0] / "linked_copy").exists()  # O7
+
+
 @pytest.mark.parametrize("name, want", [
     ("Hiring Plan.csv", ("hiring_plan", ".csv")),
     ("../../etc/passwd.csv", ("passwd", ".csv")),
@@ -235,6 +257,7 @@ def test_hiring_plan_reply_reruns_and_rebuilds(env):
     assert not any(a["checklist_id"] == "C22" for a in readout["asks"])
     log = json.loads((out / room.name / "founder_requests.json").read_text())
     entry = log["received"][-1]
+    assert entry["scans_rerun"] == receipt["scans_rerun"] and entry["scans_rerun"]  # FR-R15
     assert entry["original_name"] == "Brasswick Hiring Plan.csv" and entry["checklist_id"] == "C22"
     assert entry["bytes"] == len(PLAN) and entry["at"]
 
@@ -361,8 +384,23 @@ def test_a_scan_that_fails_on_the_new_file_is_said_plainly(env, monkeypatch):
     build(room, out)
     monkeypatch.setattr(ik, "run_scans", lambda r, names: [{"scan": n, "ok": n != "redflags", "error": "boom"} for n in names])
     receipt = ik.receive(room, PLAN, "plan.csv", "C22")
-    assert "One check could not read the new file, so its part of the readout is from before." in receipt["summary"]
+    assert receipt["summary"][0] == "One check could not read the new file, so its part of the readout is from before."
+    assert not any("no number changed" in s for s in receipt["summary"])  # a crash is not "nothing changed" (S3)
     assert not any("redflags" in s or "boom" in s for s in receipt["summary"])
+    log = json.loads((out / room.name / "founder_requests.json").read_text())
+    assert log["received"][-1]["scans_rerun"] == receipt["scans_rerun"]  # FR-R15 (S4)
+
+
+def test_a_gap_about_the_new_file_counts_as_not_read(brasswick):
+    from schema.claim import Gap
+    after = brasswick.model_copy(deep=True)
+    after.gaps.append(Gap(what="Not in the room: a readable hiring plan", why="05_team/hiring_plan.csv has no hire_id column",
+                          would_need="the hiring plan with one row per hire"))
+    said = ik.changes(brasswick, after, [], saved=["05_team/hiring_plan.csv"])
+    assert said[0] == "One check could not read the new file, so its part of the readout is from before."
+    assert not any("no number changed" in s for s in said)
+    assert ik.changes(brasswick, after, [], saved=["06_legal/other.pdf"]) == [
+        "No check reads this file yet, so no number changed."]
 
 
 def test_a_plan_in_the_founders_own_columns_still_lands(env):
@@ -372,8 +410,11 @@ def test_a_plan_in_the_founders_own_columns_still_lands(env):
     own = (Path(__file__).parent / "fixtures" / "synthetic_brasswick_hiring_plan_own_columns.csv").read_bytes()
     receipt = ik.receive(room, own, "Hiring Plan.csv", "C22")
     assert receipt["saved"] == "05_team/hiring_plan.csv" and receipt["status_after"] == "found"
-    assert receipt["summary"][0] == "Coverage now finds Hiring plan and future org."
+    assert "Coverage now finds Hiring plan and future org." in receipt["summary"]
     failed = sum(not s["ok"] for s in receipt["scans_rerun"])
+    if failed:
+        assert receipt["summary"][0].endswith("could not read the new file, so its part of the readout is from before.")
+        assert not any("no number changed" in s for s in receipt["summary"])
     said = " ".join(receipt["summary"])
     assert ("could not read the new file" in said) == bool(failed)
     assert not any(s["scan"] in said for s in receipt["scans_rerun"])
@@ -384,3 +425,8 @@ def test_the_same_sentence_is_said_once(brasswick):
     after.claims += [_claim("redflags-901", "Plan says 5."), _claim("redflags-902", "Plan says 5.")]
     said = ik.changes(brasswick, after, [])
     assert "2 new claims: Plan says 5." in said
+
+
+def test_a_room_with_no_readout_before_says_so_instead_of_listing_every_claim(brasswick):
+    said = ik.changes(None, brasswick, [])
+    assert said == [f"This room had no readout before, so this is its first: {len(brasswick.claims)} claims."]

@@ -47,6 +47,8 @@ Out: sending mail; reading the operator's mailbox (inbox slices); a model call; 
 - **FR-R19.** A file over the size limit (25 MB, `TRICORDER_UPLOAD_MAX_MB`) or empty is refused before it is written.
 - **FR-R20.** A file never overwrites another. The write is exclusive and does not follow links; the target must resolve inside the room.
 
+- **FR-R29. Only this machine's page can write.** Every route refuses a request whose Host is not loopback, a write whose Origin or Referer is another site, and a write whose body is not JSON, octet-stream or multipart. The upload reruns run off the server's event loop, and each log entry records the scans rerun and their result.
+
 ### Page
 
 - **FR-R21.** The readout page shows the panel: ask lines with checkboxes and per-line "Draft request", the draft with the trust line ("Tricorder never sends this. Copy it, or open it in your own mail app and send it from there."), a date, name and fund, Copy and "Open in mail app", and "Add the founder's reply" with the result. No check code appears in the panel's text. The add box sits beside the list on a wide screen and above it on a narrow one.

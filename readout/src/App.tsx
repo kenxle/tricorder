@@ -44,12 +44,19 @@ export function App() {
         <button onClick={() => buildReadout(room).then(setReadout, (e: Error) => setError(e.message))}>Build readout</button>
       </header>
       {error && <p className="note">{error}</p>}
-      {readout && <ReadoutView readout={readout} onReadout={setReadout} />}
+      {readout && (
+        <ReadoutView
+          readout={readout}
+          onReadout={setReadout}
+          // A reply added to a working copy: list it and show its readout.
+          onRoom={(r) => getRooms().then((rs) => { setRooms(rs); setRoom(r); })}
+        />
+      )}
     </main>
   );
 }
 
-function ReadoutView({ readout, onReadout }: { readout: Readout; onReadout: (r: Readout) => void }) {
+function ReadoutView({ readout, onReadout, onRoom }: { readout: Readout; onReadout: (r: Readout) => void; onRoom?: (room: string) => void }) {
   const claims = useMemo(() => new Map(readout.claims.map((c) => [c.id, c])), [readout]);
   const goTo = (piece: string) => document.querySelector(`[data-piece="${piece}"]`)?.scrollIntoView({ behavior: "smooth" });
 
@@ -113,7 +120,10 @@ function ReadoutView({ readout, onReadout }: { readout: Readout; onReadout: (r: 
           </>
         )}
       </section>
-      <FounderRequests room={readout.room} />
+      <FounderRequests
+        room={readout.room}
+        onRebuilt={(r) => (r === readout.room ? getReadout(r).then(onReadout) : onRoom?.(r))}
+      />
     </>
   );
 }

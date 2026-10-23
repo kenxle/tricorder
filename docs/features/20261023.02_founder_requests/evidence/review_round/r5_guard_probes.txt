@@ -1,0 +1,19 @@
+$ text/plain from another site to /files
+{"detail": "Refused: this request came from another site."} HTTP 403
+$ text/plain, no Origin, to /batch
+{"detail": "Send JSON (or the raw file as application/octet-stream)."} HTTP 415
+$ Host: attacker.example:8820
+{"detail": "This server answers only on localhost: the request's host is not this machine."} HTTP 403
+$ same-origin JSON draft
+HTTP 200
+$ dev-server origin and host, JSON draft
+HTTP 200
+$ ls brasswick_live/04_contracts (no pipeline.csv)
+msa_corvane_logistics.pdf
+order_form_ostley_freight.pdf
+order_form_tessmore_freight.pdf
+sow_norrgate_software_studio.pdf
+$ /api/rooms lists the copy
+"id":"brasswick_live"
+$ log entries carry scans_rerun
+[[('redflags', True), ('claims', False)], [('redflags', True), ('claims', False)]]

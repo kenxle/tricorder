@@ -15,6 +15,7 @@ from dataclasses import asdict
 from pathlib import Path
 
 from fastapi import APIRouter, HTTPException, Request
+from starlette.concurrency import run_in_threadpool
 from pydantic import BaseModel
 
 from schema.claim import Readout
@@ -116,7 +117,8 @@ async def add_file(room: str, request: Request, answers: str | None = None, name
     path = _room(room)
     data = await _body(request, ik.max_bytes())
     try:
-        return ik.receive(path, data, name or "", answers)
+        # The reruns block for seconds to minutes: run them off the event loop (review S2).
+        return await run_in_threadpool(ik.receive, path, data, name or "", answers)
     except ik.IntakeError as err:
         raise HTTPException(err.status, err.message)
 
@@ -132,7 +134,7 @@ async def add_files(room: str, request: Request) -> dict:
     except (ValueError, binascii.Error):
         raise HTTPException(400, "The upload is not a list of files with their names and the requests they answer.")
     try:
-        return ik.receive_batch(path, files)
+        return await run_in_threadpool(ik.receive_batch, path, files)
     except ik.IntakeError as err:
         raise HTTPException(err.status, err.message)
 
