@@ -24,7 +24,7 @@ from pathlib import Path
 from schema.claim import Check, Claim, Gap, Panel, Source, Value
 from schema.settings import load as load_settings
 from scans.base import Ids, gap
-from scans.claims.evidence import READERS, Evidence, independent_group
+from scans.claims.evidence import READERS, Evidence, Reading, independent_group
 from scans.claims.extract import Statement
 from scans.claims.kinds import KINDS
 from scans.claims.numbers import HEDGES
@@ -35,6 +35,9 @@ NOT_COUNTED = "claims not counted"
 # Nouns that say what a bare figure counts, so "29" reads "29 months" in a sentence.
 COUNT_NOUNS = {"months", "years", "weeks", "days", "hires", "people", "clinics", "brokers", "locations",
                "customers", "employees", "cohorts"}
+
+MODEL_DOC = "financial model"
+MODEL_ONLY = "only a model reading backs this"
 
 COLUMNS = ["claim id", "label", "where", "quote", "kind", "stated", "normalised", "spoken",
            "agrees", "disagrees", "should be backed by", "ask"]
@@ -60,6 +63,7 @@ class Labelled:
     founder_disagree: list[Statement] = field(default_factory=list)
     missing: list[str] = field(default_factory=list)
     claim: Claim | None = None
+    model_only: bool = False   # only the company's financial model agrees: not support (review wave 2a, S7)
 
     @property
     def kind(self):
@@ -163,7 +167,7 @@ def _source(st: Statement) -> Source:
 
 
 def _ev_words(e: Evidence) -> str:
-    return f"{e.doc} ({e.source.locator}): {e.printed}"
+    return f"{e.doc} ({e.words}): {e.printed}"
 
 
 def _gap_pct(st: Statement, e: Evidence) -> str:
@@ -176,13 +180,16 @@ def _gap_pct(st: Statement, e: Evidence) -> str:
 def label_all(room: Path, statements: list[Statement], as_of: str | None, ids: Ids) -> tuple[list[Labelled], list[Gap]]:
     settings = load_settings()
     out: list[Labelled] = []
-    cache: dict[tuple[str, int], object] = {}
+    unreadable: dict[str, dict] = {}
     claims = [s for s in statements if s.kind != "example"]
     for st in claims:
         item = Labelled(st, normalised_number(st))
         tol = tolerance(st, None, settings)
         for key in KINDS[st.kind].evidence:
-            reading = READERS[key](room, st, as_of)
+            try:
+                reading = READERS[key](room, st, as_of)
+            except Exception as exc:  # a founder's own file with other columns or text in a number cell
+                reading = _unreadable(room, key, st, exc, unreadable)
             if reading.missing and reading.missing not in item.missing:
                 item.missing.append(reading.missing)
             matched_docs = set()
@@ -216,6 +223,8 @@ def label_all(room: Path, statements: list[Statement], as_of: str | None, ids: I
     for item in out:
         if item.disagree:
             item.label = "contradicted"
+        elif item.agree and all(e.doc == MODEL_DOC for e in item.agree):
+            item.label, item.model_only = "unsupported", True
         elif item.agree:
             item.label = "supported"
         elif item.founder_disagree:
@@ -223,7 +232,42 @@ def label_all(room: Path, statements: list[Statement], as_of: str | None, ids: I
         else:
             item.label = "unsupported"
         item.claim = _claim(item, ids, as_of)
-    return out, _gaps(out)
+    return out, _gaps(out) + _unreadable_gaps(unreadable)
+
+
+# Reader key prefix -> the input kind scans.base.find looks up, to name the file that failed.
+FILE_KIND = {"model": "model", "team": "model", "cap": "cap_table", "metrics": "metrics", "customers": "customers",
+             "hiring": "hiring_plan", "contract": "contracts", "bios": "bios"}
+
+
+def _unreadable(room: Path, key: str, st: Statement, exc: Exception, seen: dict) -> Reading:
+    """A reader that raised: that document says nothing about this claim, and the file is
+    named once in a gap. The claim falls through to the next document, or reads unsupported."""
+    from scans.base import find
+
+    prefix = key.split("_")[0]
+    doc = DOC_OF_READER.get(prefix, (key, None))
+    hits = find(room, FILE_KIND.get(prefix, prefix)) if prefix in FILE_KIND else []
+    if prefix == "customers":
+        hits = [h for h in hits if "customer" in h.name]
+    rel = str(hits[0].relative_to(room)) if hits else doc[0]
+    reason = f"{type(exc).__name__}: {exc}"
+    entry = seen.setdefault(rel, {"doc": doc, "reasons": [], "kinds": [], "piece": KINDS[st.kind].piece})
+    if reason not in entry["reasons"]:
+        entry["reasons"].append(reason)
+    if KINDS[st.kind].name not in entry["kinds"]:
+        entry["kinds"].append(KINDS[st.kind].name)
+    return Reading([], f"a readable {doc[0]} ({rel})")
+
+
+def _unreadable_gaps(seen: dict) -> list[Gap]:
+    out = []
+    for rel, e in seen.items():
+        doc, row = e["doc"]
+        out.append(gap(f"Not in the room: a readable {doc}. {rel} could not be read for {', '.join(e['kinds'])}",
+                       "a column or cell the script needs is missing or not a number: " + "; ".join(e["reasons"]),
+                       f"{doc} with the expected columns" + (f" ({row})" if row else ""), e["piece"]))
+    return out
 
 
 def _check_name(item: Labelled) -> str:
@@ -240,13 +284,17 @@ def _claim(item: Labelled, ids: Ids, as_of: str | None) -> Claim:
             and m.unit_word.lower() not in figure.lower()):
         figure = f"{figure} {m.unit_word}"   # "29" on a big-number slide reads "29 months" in the sentence
     if item.label == "supported":
-        docs = "; ".join(f"{e.doc} ({e.source.locator}, {e.printed})" for e in item.agree)
+        docs = "; ".join(f"{e.doc} ({e.words}: {e.printed})" for e in item.agree)
         text = f"Supported: {where} gives {kind.name} as {figure}. Outside the pitch, {docs} agree{'s' if len(item.agree) == 1 else ''}."
     elif item.label == "contradicted":
-        parts = [f"{e.doc} ({e.source.locator}) says {e.printed}{_gap_pct(st, e)}" for e in item.disagree]
+        parts = [f"{e.doc} ({e.words}) says {e.printed}{_gap_pct(st, e)}" for e in item.disagree]
         parts += [f"{_where_words(o)[0].lower()}{_where_words(o)[1:]} says {_figure(o)}" for o in item.founder_disagree
                   if (st.spoken or not item.disagree) and o.origin != "appendix"]
         text = f"Contradicted: {where} gives {kind.name} as {figure}, but " + "; ".join(parts) + "."
+    elif item.model_only:
+        docs = "; ".join(f"{e.doc} ({e.words}: {e.printed})" for e in item.agree)
+        text = (f"Unsupported: {where} gives {kind.name} as {figure}; {MODEL_ONLY}. The company's {docs} agrees, "
+                f"and the model is the company's own calculation; no other document states it.")
     else:
         text = f"Unsupported: {where} gives {kind.name} as {figure}. No document outside the pitch states it."
     value = None
@@ -254,13 +302,13 @@ def _claim(item: Labelled, ids: Ids, as_of: str | None) -> Claim:
         value = Value(number=item.number, unit=kind.unit, label=kind.label, period=_period(st, as_of))
     sources = [_source(st)]
     if item.label == "contradicted":
-        sources += [e.source for e in item.disagree]
+        sources += [s for e in item.disagree for s in e.sources]
         if st.spoken or not item.disagree:
             # A spoken figure is set against the deck's (FRAMEWORKS 4.3), so the deck's slide is shown too.
             sources += [_source(o) for o in item.founder_disagree if o.origin != "appendix"]
     else:
         sources += [_source(r) for r in st.repeats]
-        sources += [e.source for e in item.agree]
+        sources += [s for e in item.agree for s in e.sources]   # a model-only figure still shows the cell it matched
     seen, unique = set(), []
     for s in sources:
         if (s.uri, s.locator, s.quote) not in seen:
@@ -285,7 +333,8 @@ def backed_by(kind_name: str) -> str:
 def ask_text(item: Labelled) -> str:
     kind = item.kind
     if item.label == "unsupported":
-        return f"Please send {kind.ask_doc}" + (f" ({kind.ask_row})" if kind.ask_row else "") + f", to back: {_figure(item.st)}."
+        note = f" Today {MODEL_ONLY}: the company's financial model." if item.model_only else ""
+        return f"Please send {kind.ask_doc}" + (f" ({kind.ask_row})" if kind.ask_row else "") + f", to back: {_figure(item.st)}.{note}"
     if item.label == "contradicted":
         return f"Please walk us from the source data to {_figure(item.st)} ({item.st.where}) (C71)."
     return ""
@@ -300,12 +349,21 @@ def _gaps(items: list[Labelled]) -> list[Gap]:
     for name, group in by_kind.items():
         kind = KINDS[name]
         missing = sorted({m for i in group for m in i.missing})
+        model_only = [i for i in group if i.model_only]
         wheres = "; ".join(f"{i.st.where}: {_figure(i.st)}" for i in group)
         n = len(group)
         gaps.append(gap(f"Not in the room: {kind.ask_doc}, to back {n} pitch claim{'s' if n > 1 else ''} on {kind.name} ({wheres})",
-                        ("file missing: " + ", ".join(missing)) if missing else "not stated in any document outside the pitch",
+                        _why(missing) + (f"; {len(model_only)} of them: {MODEL_ONLY}, the company's financial model"
+                                         if model_only else ""),
                         kind.ask_doc + (f" ({kind.ask_row})" if kind.ask_row else ""), kind.piece))
     return gaps
+
+
+def _why(missing: list[str]) -> str:
+    gone = [m for m in missing if not m.startswith("a readable ")]
+    bad = [m.removeprefix("a readable ") for m in missing if m.startswith("a readable ")]
+    parts = (["file missing: " + ", ".join(gone)] if gone else []) + (["could not read: " + ", ".join(bad)] if bad else [])
+    return "; ".join(parts) or "not stated in any document outside the pitch"
 
 
 def _unit_words(item: Labelled) -> str:
