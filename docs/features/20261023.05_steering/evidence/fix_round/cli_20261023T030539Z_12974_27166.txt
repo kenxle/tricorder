@@ -1,0 +1,4 @@
+$ python3 -m scans.claims data_room/hollis_voice
+(cwd /home/claude/wt/steering, TRICORDER_OUT_DIR=/tmp/tricorder-verify/steering/out)
+claims: 64 claims, 8 gaps -> /tmp/tricorder-verify/steering/out/hollis_voice/claims.json
+exit 0
