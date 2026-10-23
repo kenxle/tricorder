@@ -178,3 +178,37 @@ def test_the_page_needs_no_network(tmp_path):
     page = (tmp_path / "hollis_voice" / "memo" / "memo.html").read_text(encoding="utf-8")
     assert not re.search(r'<(script|link|img)[^>]+(src|href)="(https?:)?//', page)
     assert "\u2014" not in page and "\u2013" not in page
+
+
+# Review wave 2b, S1, S3 and S4: the page's fill, edit sizes, the PDF once per version, racing saves. ---------
+
+
+def _client(tmp_path, monkeypatch):
+    from server.app import app
+    monkeypatch.setenv("TRICORDER_OUT_DIR", str(tmp_path))
+    build_readout(tmp_path)
+    client = TestClient(app, base_url="http://127.0.0.1")
+    assert client.post("/api/rooms/hollis_voice/memo").status_code == 200
+    return client
+
+
+def _outside_data(page: str) -> str:
+    return re.sub(r'<script type="application/json" id="memo-data">.*?</script>', "", page, flags=re.S)
+
+
+def test_a_line_cannot_expand_a_placeholder_or_carry_markup(tmp_path, monkeypatch):
+    client = _client(tmp_path, monkeypatch)
+    lines = ["{{DATA}}<img src=x onerror=1>", "See {{SCRIPT}} and {{SECTIONS}}", "<!--<script>"]
+    r = client.post("/api/rooms/hollis_voice/memo/edits", json={"author": "{{TITLE}}", "base_version": 1,
+                    "edits": [{"action": "add", "section": 9, "text": t} for t in lines]})
+    assert r.status_code == 200, r.text
+    page = client.get("/api/rooms/hollis_voice/memo.html").text
+    outside = _outside_data(page)
+    assert "<img" not in outside and "<!--" not in outside
+    assert outside.count("<script") == 1  # the page's own script, once
+    for t in ("{{DATA}}", "{{SCRIPT}}", "{{SECTIONS}}"):
+        assert t in outside  # the operator's literal text, not an expansion
+    # The embedded memo has no raw markup to break out of its element, and still parses.
+    data = re.search(r'id="memo-data">(.*?)</script>', page, re.S).group(1)
+    assert "<" not in data and ">" not in data
+    assert [l.text for l in embedded(page).section(9).lines if l.kind == "operator"] == lines
