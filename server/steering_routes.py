@@ -7,14 +7,16 @@
                                         the text at a line's i-th source, read from the room the line
                                         reads: the full room once a "read the full room" steer switched it
 
-A bad piece, line or sentence is a 422; a room with no readout and no scan
-results is a 404 naming the commands to run.
+A bad piece, line or sentence is a 422, and so is a field over its size limit
+(review wave 2b, S3); a room with no readout and no scan results is a 404 naming
+the commands to run; a scan that crashes while the steer reruns it is a 500 that
+names the scan, with nothing written.
 """
 
 from __future__ import annotations
 
 from fastapi import APIRouter, HTTPException
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from schema.claim import Readout
 from schema.readers import LocatorError, text_at
@@ -26,11 +28,11 @@ router = APIRouter(prefix="/api/rooms", tags=["steering"])
 
 
 class SteerBody(BaseModel):
-    piece: str
-    sentence: str
-    claim_id: str | None = None
-    author: str | None = None
-    fund: str = "demo"
+    piece: str = Field(max_length=64)
+    sentence: str = Field(max_length=2 * engine.MAX_SENTENCE)  # the engine holds the collapsed sentence to MAX_SENTENCE
+    claim_id: str | None = Field(default=None, max_length=engine.MAX_LINE_ID)
+    author: str | None = Field(default=None, max_length=engine.MAX_AUTHOR)
+    fund: str = Field(default="demo", max_length=64)
 
 
 def _room(room: str):
@@ -57,6 +59,8 @@ def steer(room: str, body: SteerBody) -> SteerOutcome:
         raise HTTPException(422, str(err))
     except engine.NoReadout as err:
         raise HTTPException(404, str(err))
+    except engine.ScanFailed as err:
+        raise HTTPException(500, str(err))
 
 
 @router.get("/{room}/revisions")

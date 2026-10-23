@@ -299,7 +299,7 @@ def reword_llm(lines):
 def test_model_reword_keeps_numbers_and_quotes(env):
     before = Readout.model_validate_json((out_dir(FULL) / "readout.json").read_text())
     line = arr_line(before)
-    plain = "The deck says ARR is $2,500,000 (slide 3); the P&L gives $2,240,868 (12 x 'Recurring revenue (subscription plus pilot)' for 2026-09), 11.6% lower."
+    plain = "The deck says ARR is $2,500,000 (slide 3), which differs from the P&L's $2,240,868 (12 x 'Recurring revenue (subscription plus pilot)' for 2026-09), a gap of 11.6%."
     got = engine.steer(FULL, "traction_and_revenue", "say the ARR line more plainly", llm=reword_llm([(line.id, plain)]))
     assert got.reading.path == "model"
     assert claims_by_id(got.readout)[line.id].text == plain
@@ -359,3 +359,133 @@ def test_number_request_on_the_piece_finds_the_line_it_names(env):
     before = Readout.model_validate_json((out_dir(FULL) / "readout.json").read_text())
     got = engine.steer(FULL, "traction_and_revenue", "make ARR 3 million")
     assert arr_line(before).text in got.revision.note
+
+
+# Review wave 2b ---------------------------------------------------------------------------------
+
+
+def test_a_negated_definition_steer_adds_no_scenario_line(env):
+    """S5: "Don't treat the pilot as non-recurring" must not apply the opposite."""
+    got = engine.steer(FULL, "traction_and_revenue", "Don't treat the pilot as non-recurring", author="Ken")
+    assert not [c for c in got.readout.claims if c.scan == "steering"]
+    assert got.revision.claims_added == []
+    assert got.revision.note.startswith("Nothing changed: Tricorder could not tell what to change")
+
+
+def test_a_later_rewrite_keeps_the_earlier_scenario_line(env):
+    """S6: "Make this shorter" after the pilot steer keeps steer1-001 and the piece's reason."""
+    first = engine.steer(FULL, "traction_and_revenue", "treat the pilot as non-recurring")
+    line = first.revision.claims_added[0]
+    assert line == "steer1-001"
+    second = engine.steer(FULL, "traction_and_revenue", "Make this shorter")
+    assert line in claims_by_id(second.readout)
+    assert line not in second.revision.claims_dropped
+    piece = next(p for p in second.readout.pieces if p.name == "traction_and_revenue")
+    assert piece.reason_claim_ids == [line]
+    written = Readout.model_validate_json((out_dir(FULL) / "readout.json").read_text())
+    assert line in claims_by_id(written)
+
+
+def test_a_second_pilot_steer_keeps_the_first_line(env):
+    """S6: a repeat pilot steer does not drop steer1's line for an identical one."""
+    engine.steer(FULL, "traction_and_revenue", "treat the pilot as non-recurring")
+    second = engine.steer(FULL, "traction_and_revenue", "treat the pilot as non-recurring")
+    assert "steer1-001" in claims_by_id(second.readout)
+    assert "steer1-001" not in second.revision.claims_dropped
+    assert [c.id for c in second.readout.claims if c.scan == "steering"] == ["steer1-001"]
+    assert second.revision.note.startswith("Nothing changed: the scenario line is already in the piece (steer1-001)")
+
+
+def _rebuild_as_a_person_does(room):
+    """The page's "Build readout" button and python -m scans.memo: build, then write."""
+    write_readout(build_readout(room), room)
+    return Readout.model_validate_json((out_dir(room) / "readout.json").read_text())
+
+
+def test_rebuilding_keeps_revisions_scenario_lines_and_panels(env):
+    """S7: a rebuild after a steer keeps every revision, the steer panels and the scenario line."""
+    first = engine.steer(FULL, "traction_and_revenue", "treat the pilot as non-recurring")
+    engine.steer(FULL, "traction_and_revenue", "make ARR 3 million")
+    rebuilt = _rebuild_as_a_person_does(FULL)
+    assert [r.steer.instruction for r in rebuilt.revisions] == ["treat the pilot as non-recurring", "make ARR 3 million"]
+    assert [p.name for p in rebuilt.panels if p.name.startswith("steer ")] == ["steer 1: what changed", "steer 2: what changed"]
+    line = first.revision.claims_added[0]
+    assert line in claims_by_id(rebuilt)
+    piece = next(p for p in rebuilt.pieces if p.name == "traction_and_revenue")
+    assert piece.reason_claim_ids == [line]
+    # The next steer numbers itself after the kept ones, so no id repeats one an earlier version holds.
+    third = engine.steer(FULL, "traction_and_revenue", "treat the pilot as non-recurring")
+    assert third.changes.name == "steer 3: what changed"
+
+
+def test_rebuilding_a_switched_seed_drop_keeps_the_full_room(env):
+    """S7 and B1: a rebuild of the seed drop after "read the full room" still reads the full room."""
+    got = engine.steer(SEED, "retention", "read the full room")
+    steered = {c.id for c in got.readout.claims}
+    rebuilt = _rebuild_as_a_person_does(SEED)
+    assert rebuilt.room == "hollis_voice_seed_drop"
+    assert engine.reads_room(rebuilt, SEED) == FULL
+    assert {c.id for c in rebuilt.claims} == steered
+    assert [p.verdict for p in rebuilt.pieces] == [p.verdict for p in got.readout.pieces]
+    for c in rebuilt.claims:
+        assert check_claim(c, FULL)[1] == []
+
+
+def test_the_full_room_marker_is_an_explicit_panel(env):
+    """B1: the switch is a "reads room" panel, read by scans.memo.merge.reads_room, so the memo and the server use it."""
+    from scans.memo import merge
+
+    got = engine.steer(SEED, "retention", "read the full room")
+    marker = [p for p in got.readout.panels if p.name == merge.READS_PANEL]
+    assert [p.model_dump() for p in marker] == [{"name": "reads room", "columns": ["Room", "Since"], "rows": [["hollis_voice", "steer 1"]]}]
+    written = Readout.model_validate_json((out_dir(SEED) / "readout.json").read_text())
+    assert merge.reads_room(written, SEED) == FULL
+    assert merge.readout_room(SEED) == FULL
+    assert merge.readout_room(FULL) == FULL
+    # A marker that names any room other than the seed drop's own full room is ignored.
+    forged = written.model_copy(update={"panels": [merge.reads_panel("brasswick", 1)]})
+    assert merge.reads_room(forged, SEED) == SEED
+    assert merge.reads_room(written, FULL) == FULL
+
+
+def test_a_rewording_that_swaps_two_figures_is_refused(env):
+    """S8, on a HAND-BUILT model answer: the same numbers in another order, with "agrees" for "differs"."""
+    before = Readout.model_validate_json((out_dir(FULL) / "readout.json").read_text())
+    line = arr_line(before)
+    swapped = "The deck's ARR of $2,240,868 (slide 3) agrees with the P&L's $2,500,000 (12 x 'Recurring revenue (subscription plus pilot)' for 2026-09), a gap of 11.6%."
+    got = engine.steer(FULL, "traction_and_revenue", "say the ARR line more plainly", llm=reword_llm([(line.id, swapped)]))
+    assert claims_by_id(got.readout)[line.id].text == line.text
+    assert rows(got.changes, "wording") == []
+    assert "refused" in got.revision.note
+
+
+@pytest.mark.parametrize("bad", [
+    # HAND-BUILT model answers. "differs" becomes "agrees", numbers in place.
+    "The deck's ARR of $2,500,000 (slide 3) agrees with the P&L's $2,240,868 (12 x 'Recurring revenue (subscription plus pilot)' for 2026-09), a gap of 11.6%.",
+    # The sources swap around the numbers.
+    "The P&L's ARR of $2,500,000 (slide 3) differs from the deck's $2,240,868 (12 x 'Recurring revenue (subscription plus pilot)' for 2026-09), a gap of 11.6%.",
+    # A unit changes.
+    "The deck's ARR of $2,500,000 (slide 3) differs from the P&L's $2,240,868 (12 x 'Recurring revenue (subscription plus pilot)' for 2026-09), a gap of 11.6 points.",
+])
+def test_a_rewording_that_changes_the_meaning_is_refused(bad):
+    from steering.reword import guard
+
+    old = "The deck's ARR of $2,500,000 (slide 3) differs from the P&L's $2,240,868 (12 x 'Recurring revenue (subscription plus pilot)' for 2026-09), a gap of 11.6%."
+    assert guard(old, bad) is not None
+    assert guard(old, old.replace("The deck's ARR of", "The deck puts ARR at")) is None
+
+
+def test_a_scan_that_crashes_during_a_steer_names_the_scan_and_writes_nothing(env, monkeypatch):
+    """O2: the steer stops with the scan's name, and no scan result or readout is half written."""
+    from scans.redflags import scan as redflags_scan
+
+    def boom(room):
+        raise RuntimeError("the parser fell over")
+    monkeypatch.setattr(redflags_scan, "run", boom)
+    folder = out_dir(SEED)
+    before = {p.name: p.read_bytes() for p in folder.iterdir()}
+    full_before = {p.name: p.read_bytes() for p in out_dir(FULL).iterdir()}
+    with pytest.raises(engine.ScanFailed, match="redflags failed: RuntimeError: the parser fell over"):
+        engine.steer(SEED, "retention", "read the full room")
+    assert {p.name: p.read_bytes() for p in folder.iterdir()} == before
+    assert {p.name: p.read_bytes() for p in out_dir(FULL).iterdir()} == full_before

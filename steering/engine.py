@@ -25,7 +25,8 @@ from typing import Callable
 from schema.check_quotes import check_claim
 from schema.claim import PIECE_ORDER, Claim, Panel, Piece, PieceRevision, Readout, ScanResult, Steer
 from scans.base import available, now_iso, out_dir, room_name, write_result
-from scans.memo.merge import build_readout, load_results, write_readout
+from scans.memo.merge import (READS_PANEL, SEED_SUFFIX, build_readout, full_room_of, load_results, reads_panel,
+                               reads_room, write_readout)
 from steering import verdicts
 from steering.classify import model_available, read_sentence
 from steering.models import Reading, SteerOutcome, StoreNote
@@ -33,7 +34,8 @@ from steering.rereads import exclude_from_recurring, possessive
 from steering.reword import reword
 
 MAX_SENTENCE = 500
-SEED_SUFFIX = "_seed_drop"
+MAX_AUTHOR = 80     # a name, written into the claim text, the note and every revision (review wave 2b, S3)
+MAX_LINE_ID = 120
 VERDICT_WORDS = {"looking_strong": "Looking strong", "looking_weak": "Looking weak", "mixed": "Mixed",
                  "not_enough_in_the_room": "Not enough in the room"}
 PIECE_WORDS = {p: p.replace("_", " ") for p in PIECE_ORDER}
@@ -45,6 +47,14 @@ class BadSteer(ValueError):
 
 class NoReadout(LookupError):
     """No readout and no scan results for the room."""
+
+
+class ScanFailed(RuntimeError):
+    """A scan crashed while a steer reran it. Nothing was written: no result, no readout, no store version."""
+
+    def __init__(self, scan: str, err: Exception):
+        self.scan = scan
+        super().__init__(f"{scan} failed: {type(err).__name__}: {err}")
 
 
 # --------------------------------------------------------------------------- loading
@@ -71,15 +81,6 @@ def steerable(room_dir: Path) -> Readout:
     return readout
 
 
-def full_room_of(room_dir: Path) -> Path | None:
-    """The seed drop's second tier: the sibling folder named without '_seed_drop'."""
-    name = Path(room_dir).resolve().name
-    if not name.endswith(SEED_SUFFIX):
-        return None
-    full = Path(room_dir).resolve().parent / name[: -len(SEED_SUFFIX)]
-    return full if full.is_dir() else None
-
-
 # --------------------------------------------------------------------------- claims
 
 
@@ -103,19 +104,24 @@ def _scans_feeding(readout: Readout, piece: str) -> list[str]:
 
 
 def _rerun(scans: list[str], room: Path) -> list[ScanResult]:
+    """Run every scan first and write their results only when all of them ran, so a crash leaves out/ as it was."""
     results = []
     for name in scans:
-        module = importlib.import_module(f"scans.{name}.scan")
-        result = module.run(room)
+        try:
+            results.append(importlib.import_module(f"scans.{name}.scan").run(room))
+        except Exception as err:  # any scan's crash stops the steer, named (review wave 2b, O2)
+            raise ScanFailed(name, err) from err
+    for result in results:
         write_result(result, room)
-        results.append(result)
     return results
 
 
 def _merge_piece(before: Readout, fresh: Readout, piece: str, tag: str) -> tuple[Readout, list[str], list[str]]:
     """The before readout with the piece's claims, unverified claims and gaps taken from the fresh merge.
-    Returns (readout, added ids, dropped ids). Matched claims keep their ids; new ones get the tag."""
-    old = _piece_claims(before, piece)
+    Returns (readout, added ids, dropped ids). Matched claims keep their ids; new ones get the tag.
+    The operator's scenario lines (scan "steering") are no check's output, so the rerun never drops them
+    (review wave 2b, S6): they stay in the readout as they were."""
+    old = [c for c in _piece_claims(before, piece) if c.scan != "steering"]
     old_by_key = {_key(c): c for c in old}
     fresh_piece = _piece_claims(fresh, piece)
     taken = {id(c) for c in old}
@@ -191,11 +197,22 @@ def operator(author: str | None) -> str | None:
     return author or os.environ.get("TRICORDER_OPERATOR") or None
 
 
-def _merge_all(before: Readout, fresh: Readout, tag: str) -> tuple[Readout, list[str], list[str]]:
+def _merge_all(before: Readout, fresh: Readout, tag: str | None) -> tuple[Readout, list[str], list[str]]:
     """The whole readout from the fresh merge (every piece), keeping the before ids of claims it states the
-    same way, the operator's scenario lines, and every steer's record. Returns (readout, added, dropped)."""
+    same way, the operator's scenario lines, and every steer's record. Returns (readout, added, dropped).
+    A fresh claim with no match gets the tag; with tag None (a rebuild) it keeps its own id unless that id is
+    already taken."""
     kept_ids = {_key(c): c.id for c in before.claims if c.scan != "steering"}
-    ids = {c.id: kept_ids.get(_key(c), f"{c.id}.{tag}") for c in fresh.claims + fresh.unverified}
+    taken = {c.id for c in before.claims + before.unverified}
+    ids: dict[str, str] = {}
+    for c in fresh.claims + fresh.unverified:
+        if _key(c) in kept_ids:
+            ids[c.id] = kept_ids[_key(c)]
+        elif tag is not None:
+            ids[c.id] = f"{c.id}.{tag}"
+        else:
+            ids[c.id] = c.id if c.id not in taken else f"{c.id}.rebuilt"
+        taken.add(ids[c.id])
 
     def remap(c: Claim) -> Claim:
         return c.model_copy(update={"id": ids.get(c.id, c.id),
@@ -204,15 +221,32 @@ def _merge_all(before: Readout, fresh: Readout, tag: str) -> tuple[Readout, list
 
     claims = [remap(c) for c in fresh.claims]
     fresh_keys = {_key(c) for c in fresh.claims}
-    added = [c.id for c in claims if c.id.endswith(f".{tag}")]
+    added = [c.id for c in claims if c.id not in {b.id for b in before.claims}]
     dropped = [c.id for c in before.claims if c.scan != "steering" and _key(c) not in fresh_keys]
     scenarios = [c for c in before.claims if c.scan == "steering"]
-    steer_panels = [p for p in before.panels if p.name.startswith("steer ")]
+    steer_panels = [p for p in before.panels if p.name.startswith("steer ") or p.name == READS_PANEL]
     merged = before.model_copy(update={
         "claims": claims + scenarios, "unverified": [remap(c) for c in fresh.unverified], "gaps": fresh.gaps,
         "asks": fresh.asks, "panels": fresh.panels + steer_panels, "scans_run": fresh.scans_run,
         "scans_missing": fresh.scans_missing})
     return merged, added, dropped
+
+
+def carry(before: Readout, fresh: Readout, room: Path) -> Readout:
+    """A rebuilt readout that keeps what the steers left (review wave 2b, S7): every revision, every "steer N"
+    panel, the "reads room" switch and the operator's scenario lines. Claims the rebuild states the same way keep
+    their ids, so every revision's ids still resolve, and a model rewording is put back on the line it changed.
+    Verdicts and the scenario reasons are rebuilt as a steer rebuilds them."""
+    reworded = {(r[2]): r[3] for p in before.panels if p.name.startswith("steer ") for r in p.rows
+                if len(r) > 3 and r[0] == "wording"}
+    if reworded:
+        fresh = fresh.model_copy(update={"claims": [c.model_copy(update={"text": reworded[c.text]}) if c.text in reworded else c
+                                                    for c in fresh.claims]})
+    merged, _, _ = _merge_all(before, fresh, None)
+    merged = merged.model_copy(update={"built_at": fresh.built_at, "synthetic_notice": fresh.synthetic_notice,
+                                       "connecting": fresh.connecting, "scores": fresh.scores})
+    out, _ = _rebuild(merged, room)
+    return out
 
 
 def scenario_reasons(readout: Readout) -> Readout:
@@ -236,17 +270,6 @@ def _rebuild(readout: Readout, room: Path) -> tuple[Readout, str]:
     return scenario_reasons(out), by
 
 
-def reads_room(readout: Readout, room_dir: Path) -> Path:
-    """The room the readout reads now: the full room once a "read the full room" steer switched it, else its own.
-    The seed drop's files are byte-for-byte copies of the full room's, so every line resolves there after a switch."""
-    full = full_room_of(room_dir)
-    if full is not None:
-        for panel in readout.panels:
-            if panel.name.startswith("steer ") and any(r[0] == "source" and r[3] == full.name for r in panel.rows):
-                return full
-    return Path(room_dir)
-
-
 def claim_room(readout: Readout, claim_id: str, room_dir: Path) -> Path:
     """The room a claim's files open from: the full room for any line once the readout reads it."""
     return reads_room(readout, room_dir)
@@ -261,6 +284,10 @@ def steer(room_dir: str | Path, piece: str, sentence: str, claim_id: str | None 
         raise BadSteer("type one sentence")
     if len(sentence) > MAX_SENTENCE:
         raise BadSteer(f"one sentence, up to {MAX_SENTENCE} characters")
+    if author is not None and len(author) > MAX_AUTHOR:
+        raise BadSteer(f"an author name, up to {MAX_AUTHOR} characters")
+    if claim_id is not None and len(claim_id) > MAX_LINE_ID:
+        raise BadSteer(f"a line id, up to {MAX_LINE_ID} characters")
     if piece not in PIECE_ORDER and piece != OVERVIEW:
         raise BadSteer(f"no piece {piece!r}; pieces are {', '.join(PIECE_ORDER)}, or {OVERVIEW}")
 
@@ -300,14 +327,14 @@ def steer(room_dir: str | Path, piece: str, sentence: str, claim_id: str | None 
             else:
                 source_room = full
                 _rerun(sorted(available()), full)
-                working, added, dropped = _merge_all(current, build_readout(full), tag)
+                working, added, dropped = _merge_all(current, build_readout(full, keep_steers=False), tag)
         else:
             headline = "Not fetched: Tricorder does not fetch outside sources on a steer yet."
             notes.append(f"You asked for {reading.source_named}. Ask the founder for it, or add it to the room.")
     else:
         if reading.number_text is None:
             _rerun(_scans_feeding(current, piece), reading_room)
-            working, added, dropped = _merge_piece(current, build_readout(reading_room), piece, tag)
+            working, added, dropped = _merge_piece(current, build_readout(reading_room, keep_steers=False), piece, tag)
         if reading.term:
             piece_claims = _piece_claims(working, piece)
             if claim_id is not None:
@@ -315,6 +342,14 @@ def steer(room_dir: str | Path, piece: str, sentence: str, claim_id: str | None 
                 piece_claims = line or piece_claims
             counter = iter(range(1, 1000))
             got = exclude_from_recurring(reading.term, piece_claims, reading_room, lambda: f"{tag}-{next(counter):03d}", author)
+            same = lambda c: (c.text, c.value.model_dump_json() if c.value else None)  # noqa: E731
+            held = {same(c): c.id for c in working.claims if c.scan == "steering"}
+            repeats = [held[same(c)] for c in got["claims"] if same(c) in held]
+            if repeats:  # the same scenario line an earlier steer added: keep that one, add no copy
+                fresh_lines = [c for c in got["claims"] if same(c) not in held]
+                got = {**got, "claims": fresh_lines,
+                       "replaces": {k: v for k, v in got["replaces"].items() if k in {c.id for c in fresh_lines}},
+                       "notes": [f"the scenario line is already in the piece ({', '.join(repeats)}), so no copy was added."] + got["notes"]}
             notes += got["notes"]
             working = working.model_copy(update={"claims": working.claims + got["claims"]})
             added += [c.id for c in got["claims"]]
@@ -437,7 +472,9 @@ def steer(room_dir: str | Path, piece: str, sentence: str, claim_id: str | None 
     rows.append(["rebuilt by", "", "", rebuilt_by])
     changes = Panel(name=f"steer {n}: what changed", columns=["Change", "Claim", "Before", "After"], rows=rows)
 
-    readout = after_r.model_copy(update={"revisions": current.revisions + [revision], "panels": working_panels + [changes]})
+    marker = [reads_panel(room_name(source_room), n)] if source_room != reading_room else []
+    working_panels = [p for p in working_panels if not (marker and p.name == READS_PANEL)]
+    readout = after_r.model_copy(update={"revisions": current.revisions + [revision], "panels": working_panels + marker + [changes]})
     write_readout(readout, room_dir)
     store = _save(readout, fund, room_dir, source_room) if save else StoreNote(saved=False, why="not asked to save")
     return SteerOutcome(readout=readout, revision=revision, changes=changes, reading=reading,
@@ -482,6 +519,9 @@ def main(argv: list[str] | None = None) -> int:
     except (BadSteer, NoReadout) as err:
         print(str(err), file=sys.stderr)
         return 2
+    except ScanFailed as err:
+        print(str(err), file=sys.stderr)
+        return 1
     added = {c.id: c.text for c in got.readout.claims if c.id in got.revision.claims_added}
     print(json.dumps({
         "room": got.readout.room, "piece": args.piece, "read_by": got.reading.path, "kind": got.reading.kind,
