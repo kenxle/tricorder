@@ -52,6 +52,18 @@ Keep `TRICORDER_OUT_DIR=out` when exporting `.env`: an empty value selects the w
 
 Zed project settings in `.zed/settings.json` disable automatic formatting on save. This repo has no configured formatter or lint command, and applying an editor's default formatter creates unrelated changes to existing files. Language-server diagnostics and the CI gates below remain available. Set a shared formatter and its configuration before enabling automatic formatting for this project.
 
+## Intent agent guidance
+
+`readout/` pins `@tanstack/intent` as a development dependency. After `npm ci`, run the installed CLI from that directory:
+
+```sh
+cd readout
+./node_modules/.bin/intent list
+./node_modules/.bin/intent install
+```
+
+The current dependencies ship no Intent skills, so setup leaves permissions and agent guidance unchanged. Run setup again after adding a package that ships skills. It configures guidance for npm dependencies, not Python packages.
+
 ## The gates
 
 | Command | What it runs | Green means |
