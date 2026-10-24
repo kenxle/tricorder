@@ -318,8 +318,107 @@ def unit_economics_sazabi(R: Room) -> dict:
     ], chart)
 
 
+# Customers -----------------------------------------------------------------------------------------------------
+
+CONCENTRATION_LINE = 20  # knowledge/customers.md: MicroVentures, "more than 20% of a company's total revenue"
+
+
+def lines(R: Room) -> dict:
+    return {l["name"]: l["units"] * l["price"] for l in R.r["whatif"]["lines"]}
+
+
+def share_chart(names: list[str], values: list[float], total: float, styles: list[str], extra_lines: list[dict], label: str) -> dict:
+    return {"kind": "bars", "unit": "percent", "orientation": "h", "x": names, "height": 80 + 44 * len(names),
+            "series": [{"name": "Share", "y": [round(100 * v / total, 2) for v in values], "styles": styles,
+                        "text": [f"{100 * v / total:.1f}%" for v in values]}],
+            "lines": extra_lines + [{"y": CONCENTRATION_LINE, "label": "20%: a common investor threshold", "style": "bad"}],
+            "label": label}
+
+
+def customers_ploy(R: Room) -> dict:
+    L = lines(R)
+    model_mrr, sub_mrr = R.v("tr-2") / 12, R.v("tr-3") / 12
+    pilot = R.r["whatif"]["pilot"]
+    assert close(model_mrr - sub_mrr, pilot["mrr"]), "the pilot is the gap between the model's MRR and the rebuilt one"
+    assert close(sum(L.values()), sub_mrr), "plans and contracts add to subscription MRR"
+    name, largest = R.quote("cu-1").rsplit(",", 1)
+    largest = float(largest)
+    assert close(largest / model_mrr, R.v("cu-1")), "the largest customer's share matches the room's claim"
+    units = {l["name"]: l["units"] for l in R.r["whatif"]["lines"]}
+    paying = int(R.v("tr-4"))
+    n_ent = paying - units["Starter plan"] - units["Pro plan"] - 1
+    assert n_ent >= 1
+    pilot_months = int(re.search(r"(\d+)-month pilot", R.quote("tr-3", 1)).group(1))
+    credit_ws = int(num(R.quote("tr-4", 0).split()[0]))
+    self_serve = L["Starter plan"] + L["Pro plan"]
+    names = [f"{pilot['name']}, the pilot", f"{name}, largest contract", f"The other {n_ent - 1} contracts",
+             f"Pro plans, {units['Pro plan']} workspaces", f"Starter plans, {units['Starter plan']} workspaces"]
+    vals = [pilot["mrr"], largest, L["Enterprise contracts"] - largest, L["Pro plan"], L["Starter plan"]]
+    chart = share_chart(names, vals, model_mrr, ["bad", "mixed", "plan", "plan", "plan"],
+                        [{"y": 10, "label": "Deck: no customer above 10%", "style": "accent"}],
+                        f"Share of September revenue of {money(model_mrr)}: the pilot {pct(pilot['mrr'] / model_mrr)}, "
+                        f"the largest contract {pct(largest / model_mrr)}, Pro plans {pct(L['Pro plan'] / model_mrr)}.")
+    return build(R, "customers", [
+        {"lead": "The largest contract is small.", "refs": ["cu-1"],
+         "body": f"{name} pays {money(largest)} a month: {pct(largest / model_mrr)} of September revenue. "
+                 "Its order form agrees with the customer file, and the deck says no customer is above 10%."},
+        {"lead": "The pilot is the biggest single payer.", "refs": ["tr-3", "cu-1"],
+         "body": f"{pilot['name']} pays {money(pilot['mrr'])} a month for a {pilot_months}-month pilot: {pct(pilot['mrr'] / model_mrr)} of September revenue. "
+                 f"Counted as a customer, it is above the deck's 10%. If it does not convert, that revenue ends."},
+        {"lead": "The rest is spread across many accounts.", "refs": ["tr-3"],
+         "body": f"{units['Starter plan'] + units['Pro plan']:,} self-serve workspaces bring {money(self_serve)} a month, {pct(self_serve / model_mrr)} of revenue. "
+                 f"{n_ent} enterprise contracts bring {money(L['Enterprise contracts'])}."},
+        {"lead": "Paying, not just using.", "refs": ["tr-4"],
+         "body": f"{credit_ws:,} workspaces use credits and {paying:,} of them pay. Paying accounts are the customers. Free use is interest."},
+    ], [
+        f"Has {pilot['name']} signed an annual contract? If so, its term, price and notice period.",
+        "Term, notice period and renewal date for each enterprise contract.",
+        "The top three customers' share of revenue, month by month.",
+    ], chart)
+
+
+def customers_sazabi(R: Room) -> dict:
+    L = lines(R)
+    rebuilt = R.v("tr-3") / 12
+    assert close(sum(L.values()), rebuilt), "plans, the contract and usage add to recurring MRR"
+    name, ent = R.quote("cu-1").rsplit(",", 1)
+    ent = float(ent)
+    assert close(ent, L["Enterprise contract"]) and close(ent / rebuilt, R.v("cu-1")), "the contract's share matches the room's claim"
+    paying = int(R.v("cu-2"))
+    ws_total = int(re.search(r"out of (\d+) workspaces", R.C["cu-2"]["text"]).group(1))
+    dp_paying, dp_total = int(R.v("tr-4")), int(num(R.quote("tr-4", 0).split()[0]))
+    plan_names = [n for n in L if n.endswith(" plan") and not n.startswith("Recurring")]
+    plans_total = sum(L[n] for n in plan_names)
+    n_plans = paying - 1
+    units = {l["name"]: l["units"] for l in R.r["whatif"]["lines"]}
+    assert sum(units[n] for n in plan_names) == n_plans, "every paying team but the contract is on a plan"
+    usage = L["Recurring usage over plan"]
+    order = sorted(plan_names, key=lambda n: -L[n])
+    names = [f"{name}, the one contract"] + [f"{n}s, {units[n]} teams" for n in order] + ["Recurring usage over plan"]
+    vals = [ent] + [L[n] for n in order] + [usage]
+    chart = share_chart(names, vals, rebuilt, ["bad"] + ["plan"] * len(order) + ["mixed"], [],
+                        f"Share of recurring MRR of {money(rebuilt)}: {name} {pct(ent / rebuilt)}, against a common 20% threshold.")
+    return build(R, "customers", [
+        {"lead": "One customer is a large share.", "refs": ["cu-1"],
+         "body": f"{name} pays {money(ent)} a month: {pct(ent / rebuilt)} of recurring revenue. Its order form agrees with the customer file. "
+                 f"That is {'above' if 100 * ent / rebuilt > CONCENTRATION_LINE else 'below'} the {CONCENTRATION_LINE}% many investors use as a threshold."},
+        {"lead": "Many small plans behind it.", "refs": ["cu-2"],
+         "body": f"{n_plans} teams on plans bring {money(plans_total)} a month together, {money(plans_total / n_plans)} each on average."},
+        {"lead": "Paying, not just signed up.", "refs": ["cu-2", "tr-4"],
+         "body": f"{paying} teams pay out of {ws_total} workspaces. {dp_paying} of the {dp_total} design partners pay. The deck says all {dp_total} do. "
+                 "Design partners show interest. The ones that pay are customers."},
+        {"lead": "Usage beyond the plan.", "refs": ["tr-3"],
+         "body": f"Recurring usage over plan adds {money(usage)} a month, {pct(usage / rebuilt)} of recurring revenue. It moves with how much teams log, so it can fall as well as rise."},
+    ], [
+        f"{name}'s signed terms: length, notice period and renewal date.",
+        "Which design partners are expected to pay, on which plan, and when.",
+        "The top three customers' share of recurring revenue, month by month.",
+    ], chart)
+
+
 PIECES = {
     "retention": {"ploy": retention_ploy, "sazabi": retention_sazabi},
+    "customers": {"ploy": customers_ploy, "sazabi": customers_sazabi},
     "unit_economics": {"ploy": unit_economics_ploy, "sazabi": unit_economics_sazabi},
     "team": {"ploy": team_ploy, "sazabi": team_sazabi},
 }

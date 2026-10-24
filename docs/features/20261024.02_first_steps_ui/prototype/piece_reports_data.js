@@ -205,6 +205,106 @@ window.TC_PIECE_REPORTS_DATA = {
    ]
   },
   {
+   "key": "piece-customers",
+   "piece": "customers",
+   "title": "Customers",
+   "knowledge": "knowledge/customers.md",
+   "paras": [
+    {
+     "lead": "The largest contract is small.",
+     "refs": [
+      "cu-1"
+     ],
+     "body": "Halden Freight pays $18,000 a month: 7.7% of September revenue. Its order form agrees with the customer file, and the deck says no customer is above 10%."
+    },
+    {
+     "lead": "The pilot is the biggest single payer.",
+     "refs": [
+      "tr-3",
+      "cu-1"
+     ],
+     "body": "Northwind Analytics pays $30,000 a month for a 3-month pilot: 12.8% of September revenue. Counted as a customer, it is above the deck's 10%. If it does not convert, that revenue ends."
+    },
+    {
+     "lead": "The rest is spread across many accounts.",
+     "refs": [
+      "tr-3"
+     ],
+     "body": "730 self-serve workspaces bring $141,500 a month, 60.6% of revenue. 5 enterprise contracts bring $62,000."
+    },
+    {
+     "lead": "Paying, not just using.",
+     "refs": [
+      "tr-4"
+     ],
+     "body": "1,240 workspaces use credits and 736 of them pay. Paying accounts are the customers. Free use is interest."
+    }
+   ],
+   "asks": [
+    "Has Northwind Analytics signed an annual contract? If so, its term, price and notice period.",
+    "Term, notice period and renewal date for each enterprise contract.",
+    "The top three customers' share of revenue, month by month."
+   ],
+   "chart": {
+    "kind": "bars",
+    "unit": "percent",
+    "orientation": "h",
+    "x": [
+     "Northwind Analytics, the pilot",
+     "Halden Freight, largest contract",
+     "The other 4 contracts",
+     "Pro plans, 420 workspaces",
+     "Starter plans, 310 workspaces"
+    ],
+    "height": 300,
+    "series": [
+     {
+      "name": "Share",
+      "y": [
+       12.85,
+       7.71,
+       18.84,
+       53.96,
+       6.64
+      ],
+      "styles": [
+       "bad",
+       "mixed",
+       "plan",
+       "plan",
+       "plan"
+      ],
+      "text": [
+       "12.8%",
+       "7.7%",
+       "18.8%",
+       "54.0%",
+       "6.6%"
+      ]
+     }
+    ],
+    "lines": [
+     {
+      "y": 10,
+      "label": "Deck: no customer above 10%",
+      "style": "accent"
+     },
+     {
+      "y": 20,
+      "label": "20%: a common investor threshold",
+      "style": "bad"
+     }
+    ],
+    "label": "Share of September revenue of $233,500: the pilot 12.8%, the largest contract 7.7%, Pro plans 54.0%."
+   },
+   "needs": [
+    "01_pitch/pitch_deck.pdf",
+    "03_metrics/customer_mrr_by_month.csv",
+    "03_metrics/workspaces_by_plan.csv",
+    "04_customers/order_form_northwind_analytics.pdf"
+   ]
+  },
+  {
    "key": "piece-team",
    "piece": "team",
    "title": "Team",
@@ -477,6 +577,101 @@ window.TC_PIECE_REPORTS_DATA = {
     "02_financials/monthly_statements.xlsx",
     "03_metrics/cloud_costs_by_month.csv",
     "03_metrics/customer_mrr_by_month.csv"
+   ]
+  },
+  {
+   "key": "piece-customers",
+   "piece": "customers",
+   "title": "Customers",
+   "knowledge": "knowledge/customers.md",
+   "paras": [
+    {
+     "lead": "One customer is a large share.",
+     "refs": [
+      "cu-1"
+     ],
+     "body": "Corvane Systems pays $4,500 a month: 30.9% of recurring revenue. Its order form agrees with the customer file. That is above the 20% many investors use as a threshold."
+    },
+    {
+     "lead": "Many small plans behind it.",
+     "refs": [
+      "cu-2"
+     ],
+     "body": "31 teams on plans bring $8,900 a month together, $287 each on average."
+    },
+    {
+     "lead": "Paying, not just signed up.",
+     "refs": [
+      "cu-2",
+      "tr-4"
+     ],
+     "body": "32 teams pay out of 118 workspaces. 21 of the 50 design partners pay. The deck says all 50 do. Design partners show interest. The ones that pay are customers."
+    },
+    {
+     "lead": "Usage beyond the plan.",
+     "refs": [
+      "tr-3"
+     ],
+     "body": "Recurring usage over plan adds $1,180 a month, 8.1% of recurring revenue. It moves with how much teams log, so it can fall as well as rise."
+    }
+   ],
+   "asks": [
+    "Corvane Systems's signed terms: length, notice period and renewal date.",
+    "Which design partners are expected to pay, on which plan, and when.",
+    "The top three customers' share of recurring revenue, month by month."
+   ],
+   "chart": {
+    "kind": "bars",
+    "unit": "percent",
+    "orientation": "h",
+    "x": [
+     "Corvane Systems, the one contract",
+     "Growth plans, 6 teams",
+     "Startup plans, 11 teams",
+     "Hobby plans, 14 teams",
+     "Recurring usage over plan"
+    ],
+    "height": 300,
+    "series": [
+     {
+      "name": "Share",
+      "y": [
+       30.86,
+       41.15,
+       15.09,
+       4.8,
+       8.09
+      ],
+      "styles": [
+       "bad",
+       "plan",
+       "plan",
+       "plan",
+       "mixed"
+      ],
+      "text": [
+       "30.9%",
+       "41.2%",
+       "15.1%",
+       "4.8%",
+       "8.1%"
+      ]
+     }
+    ],
+    "lines": [
+     {
+      "y": 20,
+      "label": "20%: a common investor threshold",
+      "style": "bad"
+     }
+    ],
+    "label": "Share of recurring MRR of $14,580: Corvane Systems 30.9%, against a common 20% threshold."
+   },
+   "needs": [
+    "01_pitch/pitch_deck.pdf",
+    "02_financials/monthly_statements.xlsx",
+    "03_metrics/customer_mrr_by_month.csv",
+    "03_metrics/workspaces_by_plan.csv"
    ]
   },
   {
