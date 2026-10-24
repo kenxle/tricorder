@@ -148,6 +148,32 @@
       ${s.kind === "readable copy" ? `<span class="note"> (a readable copy made from the saved file)</span>` : ""}
     </span>`;
   }
+  // Hovering an evidence number shows the fact and its source (Ken, 12:58 PM).
+  let tip = null;
+  function hideTip() { if (tip) { tip.remove(); tip = null; } }
+  function showTip(a) {
+    hideTip();
+    const row = document.getElementById(a.getAttribute("href").slice(1));
+    if (!row) return;
+    const text = row.querySelector(".claim-text").textContent.replace(/^\s*\d+\s*/, "").trim();
+    const chipEl = row.querySelector(".srcchip");
+    const s = chipEl ? D.sources[chipEl.dataset.src] : null;
+    tip = document.createElement("div");
+    tip.className = "ev-tip";
+    tip.setAttribute("role", "tooltip");
+    tip.innerHTML = `<span class="ev-tip-n">${esc(a.textContent)}</span> ${esc(text)}${s ? `<span class="ev-tip-src">Source: ${esc(s.title)}</span>` : ""}`;
+    document.body.appendChild(tip);
+    const r = a.getBoundingClientRect();
+    const w = Math.min(380, window.innerWidth - 32);
+    tip.style.width = w + "px";
+    tip.style.left = Math.max(16, Math.min(window.scrollX + r.left, window.scrollX + window.innerWidth - w - 16)) + "px";
+    tip.style.top = (window.scrollY + r.bottom + 8) + "px";
+  }
+  app.addEventListener("mouseover", (e) => { const a = e.target.closest(".ev-ref"); if (a) showTip(a); });
+  app.addEventListener("mouseout", (e) => { if (e.target.closest(".ev-ref")) hideTip(); });
+  app.addEventListener("focusin", (e) => { const a = e.target.closest(".ev-ref"); if (a) showTip(a); });
+  app.addEventListener("focusout", (e) => { if (e.target.closest(".ev-ref")) hideTip(); });
+
   app.addEventListener("click", (e) => {
     const b = e.target.closest(".srcchip");
     if (!b) return;
@@ -284,7 +310,6 @@
       numberClaims(R);
       body = `<p class="status" id="overall" role="status"></p>
         ${insightsHtml(R)}
-        <div class="evidence-head"><h2>Evidence</h2><p class="note">Every fact Tricorder found, numbered, each with its source: the founders, comps, market signals, then the outside world.</p></div>
         ${R.sections.map(sectionHtml).join("")}
         <section class="roomgaps wait" id="roomgaps" aria-label="What only a data room can answer">
           <h2>What only a data room can answer</h2>
@@ -295,9 +320,7 @@
     app.innerHTML = `${header("readout", ["start", "the company URL"])}
       <h2 id="co-name" class="co-title">${esc(name)}</h2>
       ${R ? aboutHtml(R) : setupPanel()}
-      <div class="masthead readout-head"><h2 class="sub-title">First readout</h2>
-        ${R ? '<button class="link tc-link-btn" id="replay" type="button">Replay the research</button>' : ""}</div>
-      <p class="note">Built from public sources.</p>
+      <div class="readout-head">${R ? '<button class="link tc-link-btn" id="replay" type="button">Replay the research</button>' : ""}</div>
       ${body}
       <div class="actions"><button class="tc-btn primary" id="to-request" type="button">Draft the data-room request</button></div>`;
     bindSetup();

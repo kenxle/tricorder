@@ -157,3 +157,7 @@ tr.claim:target { background: var(--tc-hover, rgba(127,127,127,0.12)); }
 
 .about { font-size: 18px; line-height: 1.55; max-width: 72ch; color: var(--tc-ink); margin: var(--tc-space-2) 0 var(--tc-space-5); }
 .about .based .ev-ref { font-size: 11px; }
+.ev-tip { position: absolute; z-index: 20; padding: var(--tc-space-3); background: var(--tc-surface); color: var(--tc-ink); border: var(--tc-hair) solid var(--tc-rule); border-radius: var(--tc-radius-m, 8px); box-shadow: 0 8px 24px rgba(0,0,0,0.18); font-size: 14px; line-height: 1.45; pointer-events: none; }
+.ev-tip-n { font-family: var(--tc-font-mono); font-size: 12px; color: var(--tc-ink-3); margin-right: 4px; }
+.ev-tip-src { display: block; margin-top: 6px; font-family: var(--tc-font-mono); font-size: 12px; color: var(--tc-ink-3); }
+.readout-head { display: flex; justify-content: flex-end; }
