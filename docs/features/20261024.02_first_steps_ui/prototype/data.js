@@ -1,5 +1,5 @@
 window.DATA = {
- "built": "2026-10-24T13:40:37",
+ "built": "2026-10-24T15:12:29",
  "built_by": "docs/features/20261024.02_first_steps_ui/prototype/build_data.py",
  "list_source": "yc_spring_2026_companies",
  "companies": [
@@ -5424,6 +5424,602 @@ window.DATA = {
      }
     ],
     "memo_company": "Ploy builds, edits and runs a company's website and marketing with AI agents. It raised a $26.57M seed (SEC Form D, 11 investors). In this synthetic room it asks for a $25.0M Series A at $150.0M pre-money.",
+    "reports": [
+     {
+      "key": "traction_and_revenue",
+      "title": "Traction and revenue",
+      "knowledge": "knowledge/traction_and_revenue.md",
+      "paras": [
+       {
+        "lead": "What the room shows.",
+        "refs": [
+         "tr-3",
+         "tr-2"
+        ],
+        "body": "Recurring revenue grew from $12,500 a month in 2026-01 to $203,500 in 2026-09: 310 Starter and 420 Pro workspaces and 5 enterprise contracts."
+       },
+       {
+        "lead": "The pilot stays in its own line.",
+        "refs": [
+         "tr-3",
+         "tr-1"
+        ],
+        "body": "Northwind Analytics paid $90,000 for a {'2026-09', '2026-08'}-month pilot, booked as $30,000 a month. A paid pilot is traction, but it stays out of ARR until it becomes a recurring contract. Counted in, ARR reaches the deck's $2.8M. Without it, ARR is $2,442,000."
+       },
+       {
+        "lead": "Paying, not just using.",
+        "refs": [
+         "tr-4"
+        ],
+        "body": "1,240 workspaces use credits and 736 of them pay. Paying is the stronger signal of demand. Free use is interest."
+       },
+       {
+        "lead": "No single customer carries it.",
+        "refs": [
+         "cu-1"
+        ],
+        "body": "The largest customer, Halden Freight, is 7.7% of September revenue."
+       }
+      ],
+      "asks": [
+       "Has the Northwind Analytics pilot converted? If so, the signed annual contract.",
+       "Monthly revenue by customer, with the plan and the kind of revenue on every row.",
+       "What turns a free workspace into a paying one, and how often it happens."
+      ],
+      "chart": {
+       "kind": "revenue",
+       "months": [
+        "2026-01",
+        "2026-02",
+        "2026-03",
+        "2026-04",
+        "2026-05",
+        "2026-06",
+        "2026-07",
+        "2026-08",
+        "2026-09"
+       ],
+       "recurring": [
+        12500,
+        24500,
+        38250,
+        55000,
+        91250,
+        125500,
+        155750,
+        182000,
+        203500
+       ],
+       "one_time": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        30000.0,
+        30000.0
+       ],
+       "recurring_label": "Recurring: plans and contracts",
+       "one_time_label": "Pilot, not recurring",
+       "deck_monthly": 233333.33333333334,
+       "deck_label": "Deck: $2.8M ARR, $233,333 a month"
+      },
+      "needs": [
+       "03_metrics/customer_mrr_by_month.csv"
+      ]
+     },
+     {
+      "key": "burn_and_runway",
+      "title": "Burn and runway",
+      "knowledge": "knowledge/burn_and_runway.md",
+      "paras": [
+       {
+        "lead": "Where the money goes.",
+        "refs": [
+         "ue-3"
+        ],
+        "body": "September's spending was about $1,043,500: $60,950 of model inference, $19,800 of hosting, $31,570 of support, and $931,180 for the team of 14 and everything else. Net of revenue, the company burns $810,000 a month."
+       },
+       {
+        "lead": "Runway on the company's plan.",
+        "refs": [
+         "bu-1"
+        ],
+        "body": "At $810,000 a month, the $24,310,000 in the bank lasts 30.0 months."
+       },
+       {
+        "lead": "With the whole hiring plan.",
+        "refs": [
+         "bu-2"
+        ],
+        "body": "The model's burn carries 6 of the 22 planned hires. With all of them, runway is 24.1 months."
+       },
+       {
+        "lead": "Against Kimmy's baseline.",
+        "refs": [
+         "pi-1"
+        ],
+        "body": "Kimmy looks for 18 months of runway after a round closes, and more when fundraising is slow. With the $25.0M Series A and every planned hire, runway is 47.3 months."
+       },
+       {
+        "lead": "If the pilot does not convert.",
+        "refs": [
+         "tr-3",
+         "bu-2"
+        ],
+        "body": "Losing the $30,000 a month adds that much to the burn. With every planned hire, runway falls to 23.4 months before any new round."
+       }
+      ],
+      "asks": [
+       "Bank statements that tie September's cash to $24,310,000.",
+       "Which hires the round pays for first, and the milestone each one supports.",
+       "The model with all 22 hires in the burn."
+      ],
+      "chart": {
+       "kind": "cash",
+       "as_of": "2026-09",
+       "series": [
+        {
+         "name": "The company's plan",
+         "points": [
+          [
+           0,
+           24310000
+          ],
+          [
+           1,
+           23500000
+          ],
+          [
+           2,
+           22690000
+          ],
+          [
+           3,
+           21880000
+          ],
+          [
+           4,
+           21070000
+          ],
+          [
+           5,
+           20260000
+          ],
+          [
+           6,
+           19450000
+          ],
+          [
+           7,
+           18640000
+          ],
+          [
+           8,
+           17830000
+          ],
+          [
+           9,
+           17020000
+          ],
+          [
+           10,
+           16210000
+          ],
+          [
+           11,
+           15400000
+          ],
+          [
+           12,
+           14590000
+          ],
+          [
+           13,
+           13780000
+          ],
+          [
+           14,
+           12970000
+          ],
+          [
+           15,
+           12160000
+          ],
+          [
+           16,
+           11350000
+          ],
+          [
+           17,
+           10540000
+          ],
+          [
+           18,
+           9730000
+          ],
+          [
+           19,
+           8920000
+          ],
+          [
+           20,
+           8110000
+          ],
+          [
+           21,
+           7300000
+          ],
+          [
+           22,
+           6490000
+          ],
+          [
+           23,
+           5680000
+          ],
+          [
+           24,
+           4870000
+          ],
+          [
+           25,
+           4060000
+          ],
+          [
+           26,
+           3250000
+          ],
+          [
+           27,
+           2440000
+          ],
+          [
+           28,
+           1630000
+          ],
+          [
+           29,
+           820000
+          ],
+          [
+           30,
+           10000
+          ],
+          [
+           30.01,
+           0
+          ]
+         ],
+         "style": "plan",
+         "end": "30.0 mo"
+        },
+        {
+         "name": "With all 22 planned hires",
+         "points": [
+          [
+           0,
+           24310000
+          ],
+          [
+           1,
+           23500000
+          ],
+          [
+           2,
+           22690000
+          ],
+          [
+           3,
+           21880000
+          ],
+          [
+           4,
+           21028000
+          ],
+          [
+           5,
+           20137500
+          ],
+          [
+           6,
+           19212000
+          ],
+          [
+           7,
+           18254500
+          ],
+          [
+           8,
+           17265000
+          ],
+          [
+           9,
+           16245500
+          ],
+          [
+           10,
+           15198500
+          ],
+          [
+           11,
+           14120500
+          ],
+          [
+           12,
+           13042500
+          ],
+          [
+           13,
+           11964500
+          ],
+          [
+           14,
+           10886500
+          ],
+          [
+           15,
+           9808500
+          ],
+          [
+           16,
+           8730500
+          ],
+          [
+           17,
+           7652500
+          ],
+          [
+           18,
+           6574500
+          ],
+          [
+           19,
+           5496500
+          ],
+          [
+           20,
+           4418500
+          ],
+          [
+           21,
+           3340500
+          ],
+          [
+           22,
+           2262500
+          ],
+          [
+           23,
+           1184500
+          ],
+          [
+           24,
+           106500
+          ],
+          [
+           24.1,
+           0
+          ]
+         ],
+         "style": "hires",
+         "end": "24.1 mo"
+        },
+        {
+         "name": "After the $25.0M Series A, all hires",
+         "points": [
+          [
+           0,
+           49310000
+          ],
+          [
+           1,
+           48500000
+          ],
+          [
+           2,
+           47690000
+          ],
+          [
+           3,
+           46880000
+          ],
+          [
+           4,
+           46028000
+          ],
+          [
+           5,
+           45137500
+          ],
+          [
+           6,
+           44212000
+          ],
+          [
+           7,
+           43254500
+          ],
+          [
+           8,
+           42265000
+          ],
+          [
+           9,
+           41245500
+          ],
+          [
+           10,
+           40198500
+          ],
+          [
+           11,
+           39120500
+          ],
+          [
+           12,
+           38042500
+          ],
+          [
+           13,
+           36964500
+          ],
+          [
+           14,
+           35886500
+          ],
+          [
+           15,
+           34808500
+          ],
+          [
+           16,
+           33730500
+          ],
+          [
+           17,
+           32652500
+          ],
+          [
+           18,
+           31574500
+          ],
+          [
+           19,
+           30496500
+          ],
+          [
+           20,
+           29418500
+          ],
+          [
+           21,
+           28340500
+          ],
+          [
+           22,
+           27262500
+          ],
+          [
+           23,
+           26184500
+          ],
+          [
+           24,
+           25106500
+          ],
+          [
+           25,
+           24028500
+          ],
+          [
+           26,
+           22950500
+          ],
+          [
+           27,
+           21872500
+          ],
+          [
+           28,
+           20794500
+          ],
+          [
+           29,
+           19716500
+          ],
+          [
+           30,
+           18638500
+          ],
+          [
+           31,
+           17560500
+          ],
+          [
+           32,
+           16482500
+          ],
+          [
+           33,
+           15404500
+          ],
+          [
+           34,
+           14326500
+          ],
+          [
+           35,
+           13248500
+          ],
+          [
+           36,
+           12170500
+          ],
+          [
+           37,
+           11092500
+          ],
+          [
+           38,
+           10014500
+          ],
+          [
+           39,
+           8936500
+          ],
+          [
+           40,
+           7858500
+          ],
+          [
+           41,
+           6780500
+          ],
+          [
+           42,
+           5702500
+          ],
+          [
+           43,
+           4624500
+          ],
+          [
+           44,
+           3546500
+          ],
+          [
+           45,
+           2468500
+          ],
+          [
+           46,
+           1390500
+          ],
+          [
+           47,
+           312500
+          ],
+          [
+           47.29,
+           0
+          ]
+         ],
+         "style": "round",
+         "end": "47.3 mo"
+        }
+       ],
+       "baseline": 18,
+       "baseline_label": "Kimmy: 18 months after a round"
+      },
+      "needs": [
+       "06_team/hiring_plan.csv",
+       "02_financials/monthly_statements.xlsx"
+      ]
+     }
+    ],
     "states": {
      "partial": {
       "arrived": [
@@ -7988,6 +8584,402 @@ window.DATA = {
      }
     ],
     "memo_company": "Sazabi watches a team's production logs with AI, investigates problems and opens fixes. Its own post announced an $8.0M seed co-led by J2 Ventures, Village Global and Y Combinator; EDGAR has no Form D for it. In this synthetic room the seed is $8.0M on SAFEs at a $40.0M post-money cap, $5.25M of it signed.",
+    "reports": [
+     {
+      "key": "traction_and_revenue",
+      "title": "Traction and revenue",
+      "knowledge": "knowledge/traction_and_revenue.md",
+      "paras": [
+       {
+        "lead": "What the room shows.",
+        "refs": [
+         "tr-3",
+         "cu-2"
+        ],
+        "body": "Recurring revenue rose from $4,850 a month in 2026-06, the open-beta month, to $14,580 in 2026-09: 31 plan subscriptions, one enterprise contract and recurring usage over plan."
+       },
+       {
+        "lead": "The backfill stays in its own line.",
+        "refs": [
+         "tr-3",
+         "tr-1"
+        ],
+        "body": "A one-time backfill of 38,000 GB of old logs brought in $3,800 in September. One-time and variable charges go in their own line and are never multiplied by 12. Counted as recurring, they lift ARR to the deck's $221K."
+       },
+       {
+        "lead": "Paying, not just signed up.",
+        "refs": [
+         "tr-4",
+         "cu-2"
+        ],
+        "body": "32 teams pay out of 118 workspaces, and 21 of the 50 design partners. The deck says all 50 pay. Paying teams are the strong signal. Free design partners are interest."
+       },
+       {
+        "lead": "The teams that pay stay and spend more.",
+        "refs": [
+         "re-1",
+         "re-3"
+        ],
+        "body": "The teams paying in June pay more now: net revenue retention of 122.6%. Three months is a short record."
+       },
+       {
+        "lead": "One customer is a large share.",
+        "refs": [
+         "cu-1"
+        ],
+        "body": "Corvane Systems pays 30.9% of recurring revenue. Depending on one customer is a concern even this early."
+       }
+      ],
+      "asks": [
+       "The signed terms behind Corvane Systems, and when they renew.",
+       "Which design partners are expected to pay, and when.",
+       "Usage revenue by month, with recurring and one-time charges apart."
+      ],
+      "chart": {
+       "kind": "revenue",
+       "months": [
+        "2026-06",
+        "2026-07",
+        "2026-08",
+        "2026-09"
+       ],
+       "recurring": [
+        4850.0,
+        6700.0,
+        12990.0,
+        14580.0
+       ],
+       "one_time": [
+        0,
+        0,
+        0,
+        3800.0
+       ],
+       "recurring_label": "Recurring: plans, contract and usage",
+       "one_time_label": "Backfill, one-time",
+       "deck_monthly": 18416.666666666668,
+       "deck_label": "Deck: $221K ARR, $18,417 a month"
+      },
+      "needs": [
+       "03_metrics/customer_mrr_by_month.csv",
+       "03_metrics/workspaces_by_plan.csv"
+      ]
+     },
+     {
+      "key": "burn_and_runway",
+      "title": "Burn and runway",
+      "knowledge": "knowledge/burn_and_runway.md",
+      "paras": [
+       {
+        "lead": "Where the money goes.",
+        "refs": [
+         "ue-3"
+        ],
+        "body": "September's spending was about $273,380: $4,000 of cloud after $2,900 of credits, $2,480 of model inference, and $266,900 for the team of 10 and everything else. Net of revenue, the company burns $255,000 a month."
+       },
+       {
+        "lead": "The statements tie out.",
+        "refs": [
+         "bu-3"
+        ],
+        "body": "The bank statements close September at $4,065,000, the cash the model uses."
+       },
+       {
+        "lead": "Runway on the company's plan, and with every hire.",
+        "refs": [
+         "bu-1",
+         "bu-2"
+        ],
+        "body": "At $255,000 a month, the cash lasts 15.9 months. The model's burn carries 4 of the 6 planned hires. With all of them, runway is 14.5 months."
+       },
+       {
+        "lead": "Against Kimmy's baseline.",
+        "refs": [
+         "pi-2",
+         "lc-2"
+        ],
+        "body": "Kimmy looks for 18 months of runway after a round closes. If the $2,750,000 of commitments without a signed SAFE comes in, runway with every hire is 23.8 months."
+       },
+       {
+        "lead": "When the cloud credits end.",
+        "refs": [
+         "ue-3"
+        ],
+        "body": "The $2,900 a month of credits stops after 2027-03-31. With that cost back and every hire, runway is 14.4 months."
+       }
+      ],
+      "asks": [
+       "Which of the 6 hires the seed pays for, and the milestone each one supports.",
+       "When the $2,750,000 of unsigned commitments will sign.",
+       "Cost of revenue once the cloud credits end."
+      ],
+      "chart": {
+       "kind": "cash",
+       "as_of": "2026-09",
+       "series": [
+        {
+         "name": "The company's plan",
+         "points": [
+          [
+           0,
+           4065000
+          ],
+          [
+           1,
+           3810000
+          ],
+          [
+           2,
+           3555000
+          ],
+          [
+           3,
+           3300000
+          ],
+          [
+           4,
+           3045000
+          ],
+          [
+           5,
+           2790000
+          ],
+          [
+           6,
+           2535000
+          ],
+          [
+           7,
+           2280000
+          ],
+          [
+           8,
+           2025000
+          ],
+          [
+           9,
+           1770000
+          ],
+          [
+           10,
+           1515000
+          ],
+          [
+           11,
+           1260000
+          ],
+          [
+           12,
+           1005000
+          ],
+          [
+           13,
+           750000
+          ],
+          [
+           14,
+           495000
+          ],
+          [
+           15,
+           240000
+          ],
+          [
+           15.94,
+           0
+          ]
+         ],
+         "style": "plan",
+         "end": "15.9 mo"
+        },
+        {
+         "name": "With all 6 planned hires",
+         "points": [
+          [
+           0,
+           4065000
+          ],
+          [
+           1,
+           3810000
+          ],
+          [
+           2,
+           3555000
+          ],
+          [
+           3,
+           3300000
+          ],
+          [
+           4,
+           3045000
+          ],
+          [
+           5,
+           2769000
+          ],
+          [
+           6,
+           2476000
+          ],
+          [
+           7,
+           2183000
+          ],
+          [
+           8,
+           1890000
+          ],
+          [
+           9,
+           1597000
+          ],
+          [
+           10,
+           1304000
+          ],
+          [
+           11,
+           1011000
+          ],
+          [
+           12,
+           718000
+          ],
+          [
+           13,
+           425000
+          ],
+          [
+           14,
+           132000
+          ],
+          [
+           14.45,
+           0
+          ]
+         ],
+         "style": "hires",
+         "end": "14.5 mo"
+        },
+        {
+         "name": "If the $2.75M unsigned comes in, all hires",
+         "points": [
+          [
+           0,
+           6815000
+          ],
+          [
+           1,
+           6560000
+          ],
+          [
+           2,
+           6305000
+          ],
+          [
+           3,
+           6050000
+          ],
+          [
+           4,
+           5795000
+          ],
+          [
+           5,
+           5519000
+          ],
+          [
+           6,
+           5226000
+          ],
+          [
+           7,
+           4933000
+          ],
+          [
+           8,
+           4640000
+          ],
+          [
+           9,
+           4347000
+          ],
+          [
+           10,
+           4054000
+          ],
+          [
+           11,
+           3761000
+          ],
+          [
+           12,
+           3468000
+          ],
+          [
+           13,
+           3175000
+          ],
+          [
+           14,
+           2882000
+          ],
+          [
+           15,
+           2589000
+          ],
+          [
+           16,
+           2296000
+          ],
+          [
+           17,
+           2003000
+          ],
+          [
+           18,
+           1710000
+          ],
+          [
+           19,
+           1417000
+          ],
+          [
+           20,
+           1124000
+          ],
+          [
+           21,
+           831000
+          ],
+          [
+           22,
+           538000
+          ],
+          [
+           23,
+           245000
+          ],
+          [
+           23.84,
+           0
+          ]
+         ],
+         "style": "round",
+         "end": "23.8 mo"
+        }
+       ],
+       "baseline": 18,
+       "baseline_label": "Kimmy: 18 months after a round"
+      },
+      "needs": [
+       "06_team/hiring_plan.csv",
+       "02_financials/monthly_statements.xlsx"
+      ]
+     }
+    ],
     "states": {
      "partial": {
       "arrived": [

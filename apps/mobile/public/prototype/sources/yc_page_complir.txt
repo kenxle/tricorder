@@ -1,0 +1,194 @@
+currentUser: None
+publicFounderProfilesEnabled: False
+disabledPublicVisibility: None
+company.id: 31443
+company.slug: complir
+company.name: Complir
+company.batch: P26
+company.batch_name: Spring 2026
+company.small_logo_url: https://bookface-images.s3.amazonaws.com/small_logos/f1f72e453635f03c2884d2d58c26211bfd627530.png
+company.one_liner: Vanta for physical products
+company.website: https://complir.io/
+company.long_description: AI-powered product compliance platform that makes it easy for retailers to launch and scale products across borders without drowning in regulatory work. Complir's AI agents handle the regulations and documentation across every market you sell in - and keep your entire catalogue audit-ready.
+company.tags: (none)
+company.ycdc_status: Active
+company.logo_url: https://bookface-images.s3.us-west-2.amazonaws.com/logos/7a027a050ca72fd475314ede5b4dbbde52750f27.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAEOMZEBIQ%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIEDbvrWNiOjTC1iHZvYudu14sXNq95pCk3L5YmJpm5dOAiAMAItHtC5ryRv29s6heWTlzhtxf1n0q6xMm3wNnMoQ3irlAwh8EAAaDDAwNjIwMTgxMTA3MiIMT%2BxFnkJXEBG3oAoDKsIDPnsurhOm6il198EGWQg0U1a%2FWUlozPlsU5T7wUntAqTr9FxT3nFotW44jQqjGOcoPk2XUOszMR8JiD59hmLdfd%2FvBIcxmkwSueKOt3jTaE8jLUlIiv79LZckLO4Fo1QMa72ifEe4MvPrbRhiA5l6p5GUC8Hxn%2F2OtKL85%2BgRhqKiQhcE3QiFaPMfwZKfYqLw%2BGdNzVptBbdUiCDE9w82K2GKeCMWc26J44InPi62luUOK%2Fhxw7j6LnHspyRCg6Iqf4WWJuNmkmom779nPx9CZQt0%2FaztAfnSeX%2FHgkNcADkM88VyUziTKyXMKu5du6a7YAyzHxelB3hiJbS4SPTYMk5BhuSGC6K1OBc3RMMqHkW5Q6pcfSaNuEneryZALNFsoorqhbkRFohWUPANIWaLWRPNdMLx7Vj4owwXwCUHc9HEyON%2Bc0zgJWG%2F6vtKstwxx%2BGcwqt9%2B8Y%2Fvv%2BSjxffMG6rr75EeN1Bso9YQOMfnnkYMpS0KBMb%2FPy%2FHkZo7kOvt210REYtNhvRxx1gCeJUvwJCiJ5fW1jGQ1X6wcr6PEbQ1dhT8KRU4l7oeyH0NFzZpQwPPUjloMTVIgdRYOli29qqMOGv6dYGOqYBaYP8DnY3DQaZ%2BbeZXUO1gJD96Ox5Nj7Gvitit6uhzb636pJnfBKfZPmjPzr3qOboefriSmaop%2B0uKA5SOnb18m0GYDCP1OqDsKPZ9q08D4uwy5sCMqSJbc0yLFXOLwXpTdZdHwI3b%2F6QyJhtRqIGHe36bbO7HRdOKv2qZElk%2BJN0wIbr5iDETEPPyeP4nPNxAdj9mVWcrjpqeK4CJibeBLiT3URUqQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=398731ccb7e23877416540d312a6478b5d8a7595129f1ede2bad39eb7b747914
+company.year_founded: 2024
+company.team_size: 13
+company.location: Copenhagen, Denmark
+company.city: Copenhagen
+company.city_tag: None
+company.country: DK
+company.twitter_url: 
+company.fb_url: 
+company.cb_url: 
+company.github_url: None
+company.free_response_question_answers: (none)
+company.dday_video_url: None
+company.app_video_url: None
+company.app_answers: (none)
+company.ycdc_url: https://www.ycombinator.com/companies/complir
+company.company_photos: (none)
+company.primary_group_partner.id: 18194
+company.primary_group_partner.full_name: Andrew Miklas
+company.primary_group_partner.avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/5cc81ee2e3dd733f0d777d4391fb94430df03378.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAEOMZEBIQ%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIEDbvrWNiOjTC1iHZvYudu14sXNq95pCk3L5YmJpm5dOAiAMAItHtC5ryRv29s6heWTlzhtxf1n0q6xMm3wNnMoQ3irlAwh8EAAaDDAwNjIwMTgxMTA3MiIMT%2BxFnkJXEBG3oAoDKsIDPnsurhOm6il198EGWQg0U1a%2FWUlozPlsU5T7wUntAqTr9FxT3nFotW44jQqjGOcoPk2XUOszMR8JiD59hmLdfd%2FvBIcxmkwSueKOt3jTaE8jLUlIiv79LZckLO4Fo1QMa72ifEe4MvPrbRhiA5l6p5GUC8Hxn%2F2OtKL85%2BgRhqKiQhcE3QiFaPMfwZKfYqLw%2BGdNzVptBbdUiCDE9w82K2GKeCMWc26J44InPi62luUOK%2Fhxw7j6LnHspyRCg6Iqf4WWJuNmkmom779nPx9CZQt0%2FaztAfnSeX%2FHgkNcADkM88VyUziTKyXMKu5du6a7YAyzHxelB3hiJbS4SPTYMk5BhuSGC6K1OBc3RMMqHkW5Q6pcfSaNuEneryZALNFsoorqhbkRFohWUPANIWaLWRPNdMLx7Vj4owwXwCUHc9HEyON%2Bc0zgJWG%2F6vtKstwxx%2BGcwqt9%2B8Y%2Fvv%2BSjxffMG6rr75EeN1Bso9YQOMfnnkYMpS0KBMb%2FPy%2FHkZo7kOvt210REYtNhvRxx1gCeJUvwJCiJ5fW1jGQ1X6wcr6PEbQ1dhT8KRU4l7oeyH0NFzZpQwPPUjloMTVIgdRYOli29qqMOGv6dYGOqYBaYP8DnY3DQaZ%2BbeZXUO1gJD96Ox5Nj7Gvitit6uhzb636pJnfBKfZPmjPzr3qOboefriSmaop%2B0uKA5SOnb18m0GYDCP1OqDsKPZ9q08D4uwy5sCMqSJbc0yLFXOLwXpTdZdHwI3b%2F6QyJhtRqIGHe36bbO7HRdOKv2qZElk%2BJN0wIbr5iDETEPPyeP4nPNxAdj9mVWcrjpqeK4CJibeBLiT3URUqQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=e8dd0aec6e005f63e7f533f506ba702afa7fba4f34ec72aec3a342f69ca3ad86
+company.primary_group_partner.url: https://www.ycombinator.com/people/andrew-miklas
+company.founders[0].user_id: 1829555
+company.founders[0].is_active: True
+company.founders[0].founder_bio: CEO, Complir.
+company.founders[0].full_name: Gustav Bang
+company.founders[0].title: Founder/CEO
+company.founders[0].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/6644ca87428bf7e32a68c78f8acb753c5f9970ad.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAEOMZEBIQ%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIEDbvrWNiOjTC1iHZvYudu14sXNq95pCk3L5YmJpm5dOAiAMAItHtC5ryRv29s6heWTlzhtxf1n0q6xMm3wNnMoQ3irlAwh8EAAaDDAwNjIwMTgxMTA3MiIMT%2BxFnkJXEBG3oAoDKsIDPnsurhOm6il198EGWQg0U1a%2FWUlozPlsU5T7wUntAqTr9FxT3nFotW44jQqjGOcoPk2XUOszMR8JiD59hmLdfd%2FvBIcxmkwSueKOt3jTaE8jLUlIiv79LZckLO4Fo1QMa72ifEe4MvPrbRhiA5l6p5GUC8Hxn%2F2OtKL85%2BgRhqKiQhcE3QiFaPMfwZKfYqLw%2BGdNzVptBbdUiCDE9w82K2GKeCMWc26J44InPi62luUOK%2Fhxw7j6LnHspyRCg6Iqf4WWJuNmkmom779nPx9CZQt0%2FaztAfnSeX%2FHgkNcADkM88VyUziTKyXMKu5du6a7YAyzHxelB3hiJbS4SPTYMk5BhuSGC6K1OBc3RMMqHkW5Q6pcfSaNuEneryZALNFsoorqhbkRFohWUPANIWaLWRPNdMLx7Vj4owwXwCUHc9HEyON%2Bc0zgJWG%2F6vtKstwxx%2BGcwqt9%2B8Y%2Fvv%2BSjxffMG6rr75EeN1Bso9YQOMfnnkYMpS0KBMb%2FPy%2FHkZo7kOvt210REYtNhvRxx1gCeJUvwJCiJ5fW1jGQ1X6wcr6PEbQ1dhT8KRU4l7oeyH0NFzZpQwPPUjloMTVIgdRYOli29qqMOGv6dYGOqYBaYP8DnY3DQaZ%2BbeZXUO1gJD96Ox5Nj7Gvitit6uhzb636pJnfBKfZPmjPzr3qOboefriSmaop%2B0uKA5SOnb18m0GYDCP1OqDsKPZ9q08D4uwy5sCMqSJbc0yLFXOLwXpTdZdHwI3b%2F6QyJhtRqIGHe36bbO7HRdOKv2qZElk%2BJN0wIbr5iDETEPPyeP4nPNxAdj9mVWcrjpqeK4CJibeBLiT3URUqQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=b6308ef995cb22ab7074f1592203c25fb02332a2950f4d5a89863a89e8307e47
+company.founders[0].twitter_url: 
+company.founders[0].has_email: True
+company.founders[0].latest_yc_company.name: Complir
+company.founders[0].latest_yc_company.href: https://www.ycombinator.com/companies/complir
+company.founders[1].user_id: 2546336
+company.founders[1].is_active: True
+company.founders[1].founder_bio: CTO, Complir.
+company.founders[1].full_name: Marc Kaa Brejner
+company.founders[1].title: Founder/CTO
+company.founders[1].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/525de72f6379fbef9587491d142604e3a4b31a5f.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAEOMZEBIQ%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIEDbvrWNiOjTC1iHZvYudu14sXNq95pCk3L5YmJpm5dOAiAMAItHtC5ryRv29s6heWTlzhtxf1n0q6xMm3wNnMoQ3irlAwh8EAAaDDAwNjIwMTgxMTA3MiIMT%2BxFnkJXEBG3oAoDKsIDPnsurhOm6il198EGWQg0U1a%2FWUlozPlsU5T7wUntAqTr9FxT3nFotW44jQqjGOcoPk2XUOszMR8JiD59hmLdfd%2FvBIcxmkwSueKOt3jTaE8jLUlIiv79LZckLO4Fo1QMa72ifEe4MvPrbRhiA5l6p5GUC8Hxn%2F2OtKL85%2BgRhqKiQhcE3QiFaPMfwZKfYqLw%2BGdNzVptBbdUiCDE9w82K2GKeCMWc26J44InPi62luUOK%2Fhxw7j6LnHspyRCg6Iqf4WWJuNmkmom779nPx9CZQt0%2FaztAfnSeX%2FHgkNcADkM88VyUziTKyXMKu5du6a7YAyzHxelB3hiJbS4SPTYMk5BhuSGC6K1OBc3RMMqHkW5Q6pcfSaNuEneryZALNFsoorqhbkRFohWUPANIWaLWRPNdMLx7Vj4owwXwCUHc9HEyON%2Bc0zgJWG%2F6vtKstwxx%2BGcwqt9%2B8Y%2Fvv%2BSjxffMG6rr75EeN1Bso9YQOMfnnkYMpS0KBMb%2FPy%2FHkZo7kOvt210REYtNhvRxx1gCeJUvwJCiJ5fW1jGQ1X6wcr6PEbQ1dhT8KRU4l7oeyH0NFzZpQwPPUjloMTVIgdRYOli29qqMOGv6dYGOqYBaYP8DnY3DQaZ%2BbeZXUO1gJD96Ox5Nj7Gvitit6uhzb636pJnfBKfZPmjPzr3qOboefriSmaop%2B0uKA5SOnb18m0GYDCP1OqDsKPZ9q08D4uwy5sCMqSJbc0yLFXOLwXpTdZdHwI3b%2F6QyJhtRqIGHe36bbO7HRdOKv2qZElk%2BJN0wIbr5iDETEPPyeP4nPNxAdj9mVWcrjpqeK4CJibeBLiT3URUqQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=b662c1f7a97c51a12ac043b3c0535b73b4c148b64da9efaf91e815b53ee3653c
+company.founders[1].twitter_url: 
+company.founders[1].has_email: True
+company.founders[1].latest_yc_company.name: Complir
+company.founders[1].latest_yc_company.href: https://www.ycombinator.com/companies/complir
+company.founders[2].user_id: 2094459
+company.founders[2].is_active: True
+company.founders[2].founder_bio: CPO, Complir.
+company.founders[2].full_name: Tine Kühnel
+company.founders[2].title: Founder/CPO
+company.founders[2].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/b25c73bd560bb552032f7504c12949ee6af59ef2.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAEOMZEBIQ%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184815Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIEDbvrWNiOjTC1iHZvYudu14sXNq95pCk3L5YmJpm5dOAiAMAItHtC5ryRv29s6heWTlzhtxf1n0q6xMm3wNnMoQ3irlAwh8EAAaDDAwNjIwMTgxMTA3MiIMT%2BxFnkJXEBG3oAoDKsIDPnsurhOm6il198EGWQg0U1a%2FWUlozPlsU5T7wUntAqTr9FxT3nFotW44jQqjGOcoPk2XUOszMR8JiD59hmLdfd%2FvBIcxmkwSueKOt3jTaE8jLUlIiv79LZckLO4Fo1QMa72ifEe4MvPrbRhiA5l6p5GUC8Hxn%2F2OtKL85%2BgRhqKiQhcE3QiFaPMfwZKfYqLw%2BGdNzVptBbdUiCDE9w82K2GKeCMWc26J44InPi62luUOK%2Fhxw7j6LnHspyRCg6Iqf4WWJuNmkmom779nPx9CZQt0%2FaztAfnSeX%2FHgkNcADkM88VyUziTKyXMKu5du6a7YAyzHxelB3hiJbS4SPTYMk5BhuSGC6K1OBc3RMMqHkW5Q6pcfSaNuEneryZALNFsoorqhbkRFohWUPANIWaLWRPNdMLx7Vj4owwXwCUHc9HEyON%2Bc0zgJWG%2F6vtKstwxx%2BGcwqt9%2B8Y%2Fvv%2BSjxffMG6rr75EeN1Bso9YQOMfnnkYMpS0KBMb%2FPy%2FHkZo7kOvt210REYtNhvRxx1gCeJUvwJCiJ5fW1jGQ1X6wcr6PEbQ1dhT8KRU4l7oeyH0NFzZpQwPPUjloMTVIgdRYOli29qqMOGv6dYGOqYBaYP8DnY3DQaZ%2BbeZXUO1gJD96Ox5Nj7Gvitit6uhzb636pJnfBKfZPmjPzr3qOboefriSmaop%2B0uKA5SOnb18m0GYDCP1OqDsKPZ9q08D4uwy5sCMqSJbc0yLFXOLwXpTdZdHwI3b%2F6QyJhtRqIGHe36bbO7HRdOKv2qZElk%2BJN0wIbr5iDETEPPyeP4nPNxAdj9mVWcrjpqeK4CJibeBLiT3URUqQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=7981a0c7fa34ece282eb4264b29b7e80dd9c76c560d95533bd6377fd6af06659
+company.founders[2].twitter_url: 
+company.founders[2].has_email: True
+company.founders[2].latest_yc_company.name: Complir
+company.founders[2].latest_yc_company.href: https://www.ycombinator.com/companies/complir
+jobPostings[0].id: 104000
+jobPostings[0].title: Open Application
+jobPostings[0].url: /companies/complir/jobs/83TkluK-open-application
+jobPostings[0].applyUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication%3Fsignup_job_id%3D104000&defaults%5BsignUpActive%5D=true&defaults%5Bwaas_company%5D=31443
+jobPostings[0].location: Copenhagen, Denmark
+jobPostings[0].askUs: False
+jobPostings[0].type: Full-time
+jobPostings[0].role: operations
+jobPostings[0].roleSpecificType: None
+jobPostings[0].prettyRole: Operations
+jobPostings[0].salaryRange: 
+jobPostings[0].equityRange: 
+jobPostings[0].minExperience: Any (new grads ok)
+jobPostings[0].minSchoolYear: None
+jobPostings[0].visa: US citizen/visa only
+jobPostings[0].skills: (none)
+jobPostings[0].isIncomplete: False
+jobPostings[0].companyUrl: /companies/complir
+jobPostings[0].companyLogoUrl: https://bookface-images.s3.amazonaws.com/small_logos/f1f72e453635f03c2884d2d58c26211bfd627530.png
+jobPostings[0].companyName: Complir
+jobPostings[0].companyBatchName: P26
+jobPostings[0].companyOneLiner: Vanta for physical products
+jobPostings[0].hiringManager: None
+jobPostings[0].createdAt: 2 months
+jobPostings[0].lastActive: None
+jobPostings[1].id: 111394
+jobPostings[1].title: Product Engineer
+jobPostings[1].url: /companies/complir/jobs/A20A77P-product-engineer
+jobPostings[1].applyUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication%3Fsignup_job_id%3D111394&defaults%5BsignUpActive%5D=true&defaults%5Bwaas_company%5D=31443
+jobPostings[1].location: Copenhagen, Denmark
+jobPostings[1].askUs: False
+jobPostings[1].type: Full-time
+jobPostings[1].role: eng
+jobPostings[1].roleSpecificType: Full stack
+jobPostings[1].prettyRole: Engineering
+jobPostings[1].salaryRange: 
+jobPostings[1].equityRange: 
+jobPostings[1].minExperience: Any (new grads ok)
+jobPostings[1].minSchoolYear: None
+jobPostings[1].visa: US citizen/visa only
+jobPostings[1].skills: (none)
+jobPostings[1].isIncomplete: False
+jobPostings[1].companyUrl: /companies/complir
+jobPostings[1].companyLogoUrl: https://bookface-images.s3.amazonaws.com/small_logos/f1f72e453635f03c2884d2d58c26211bfd627530.png
+jobPostings[1].companyName: Complir
+jobPostings[1].companyBatchName: P26
+jobPostings[1].companyOneLiner: Vanta for physical products
+jobPostings[1].hiringManager: None
+jobPostings[1].createdAt: about 1 month
+jobPostings[1].lastActive: None
+jobsUrl: https://bookface.ycombinator.com/workatastartup
+newsItems: (none)
+newsUrl: https://bookface.ycombinator.com/company/31443/company_news
+videos: (none)
+launches[0].id: 99317
+launches[0].title: Complir - Helping large retailers remove compliance as a bottleneck to launching products globally.
+launches[0].body: Hi there! I’m Gustav, and together with Tine and Marc we’re building AI infrastructure that automates compliance for global retailers.
+
+If you sell physical products across markets, compliance is brutal.
+
+Every country has different requirements. Documentation is fragmented. Regulations change constantly. Most teams still manage it in spreadsheets, consultants, and shared drives. And every product launch becomes a fire drill.
+
+Our users are:
+
+\- Enterprise retailers with thousands of SKUs
+
+\- Compliance, quality, and sourcing teams
+
+\- Companies launching across multiple EU and international markets
+
+They don’t want to just be compliant. They want to ship products fast and never think about compliance again.
+
+**How we got here**
+
+Just one month after Tine and I met back in May 2024, we made a deal with Flying Tiger Copenhagen (a 1,000+ store global retail chain, similar to a European Five Below) and forward deployed ourselves in their offices, working directly with their compliance, packaging, and sourcing teams for over a year.
+
+We had no idea how much manual work we were about to witness.
+
+Regulations are dynamic. Products change. Data is messy. Requirements depend on category, market, material, packaging, claims, and more. Most existing tools treat compliance like static storage.
+
+So we built an AI-native system that:
+
+\- Maps products to relevant regulatory requirements across markets
+
+\- Transforms messy product data into structured, audit-ready compliance records
+
+\- Automatically generates legally required outputs — including translations, warnings, labels, risk assessments, declarations, and technical documentation
+
+\- Propagates updates when regulations or products change, so documentation stays compliant without manual rework
+
+Today we manage 100k+ products, work with large retailers across Europe, and are growing \~45% MoM
+
+If you know large retailers selling across markets, tell them they can save millions in yearly compliance costs - while launching more products in more markets, faster.
+
+And if you’re building or operating in retail, import/export, or compliance infrastructure, we’d love to compare notes!
+
+Demo: [**https://www.youtube.com/watch?v=4omoq7tcU88**](https://www.youtube.com/watch?v=4omoq7tcU88)
+launches[0].state: public
+launches[0].tagline: Vanta for physical products
+launches[0].created_at: 2026-04-03T21:07:08.390Z
+launches[0].company.id: 31443
+launches[0].company.name: Complir
+launches[0].company.logo: https://bookface-images.s3.amazonaws.com/small_logos/f1f72e453635f03c2884d2d58c26211bfd627530.png
+launches[0].company.batch: p2026
+launches[0].company.tags: (none)
+launches[0].company.url: https://complir.io/
+launches[0].company.slug: complir
+launches[0].company.description: Vanta for physical products
+launches[0].user.name: Gustav Bang
+launches[0].user.avatar: https://bookface-images.s3.amazonaws.com/avatars/6644ca87428bf7e32a68c78f8acb753c5f9970ad.jpg
+launches[0].total_vote_count: 27
+launches[0].slug: Ppt-complir-helping-large-retailers-remove-compliance-as-a-bottleneck-to-launching-products-globally
+launches[0].launch_embed_url: https://www.ycombinator.com/launches/Ppt-complir-helping-large-retailers-remove-compliance-as-a-bottleneck-to-launching-products-globally/upvote_embed.svg
+launches[0].twitter_share_url: https://twitter.com/intent/tweet?text=Complir+just+launched+on+%40ycombinator%27s+Launch+YC%21%0A%0AComplir+-+Helping+large+retailers+remove+compliance+as+a+bottleneck+to+launching+products+globally..+Check+them+out%3A&url=https%3A%2F%2Fwww.ycombinator.com%2Flaunches%2FPpt-complir-helping-large-retailers-remove-compliance-as-a-bottleneck-to-launching-products-globally
+launches[0].sanitized_title: Complir - Helping large retailers remove compliance as a bottleneck to launching products globally.
+launches[0].ycdc_launch_url: https://www.ycombinator.com/launches/Ppt-complir-helping-large-retailers-remove-compliance-as-a-bottleneck-to-launching-products-globally
+launches[0].url: https://www.ycombinator.com/launches/Ppt-complir-helping-large-retailers-remove-compliance-as-a-bottleneck-to-launching-products-globally
+launches[0].share_image: None
+launches[0].approved_at: None
+launches[0].approved_by: None
+launches[0].requested_publish_at: 2026-04-01T05:00:00Z
+editUrl: https://bookface.ycombinator.com/company/31443/edit
+editUserUrl: https://bookface.ycombinator.com/edit_user_profile
+createProfileUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication&defaults%5BsignUpActive%5D=true
+signedIn: False
+showDirectApply: True
+waasDirectoryUrl: https://www.workatastartup.com/companies
+investorSubdomain: False
+userCanRequestEmails: False

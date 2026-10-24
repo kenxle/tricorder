@@ -76,7 +76,8 @@
     const st = X.st();
     const ev = evidence(room);
     const company = X.company();
-    const flags = X.orderFlags([...room.top_flags.green, ...room.top_flags.red]);
+    // Only what the associate picked reaches the memo (memo_picks.js): flags and insights are in unless taken out.
+    const flags = X.orderFlags([...room.top_flags.green, ...room.top_flags.red]).filter((f) => X.picked(`flag:${f.claim_id}`));
     const headline = flags.filter((f) => X.weight(f) === "headline");
     const reds = flags.filter((f) => X.weight(f) === "big");
     const small = flags.filter((f) => X.weight(f) === "small");
@@ -96,6 +97,14 @@
     const history = room.memo_company.split(". ").slice(1).join(". ");
     P(s1, { kind: "history", lead: "", body: history, refs: [ev.source(room.round.source, `The round on the deck: ${room.round.raise} at ${room.round.pre_money} pre-money.`), ...refs(["lc-1", "lc-2"])].filter(Boolean) });
     secs.push(s1);
+
+    // The outside research the associate kept: the first readout's insights, and any evidence row they put in.
+    const insights = ((window.TC_INSIGHTS || {})[T.S.research.slug] || []).map((ins, i) => ({ ins, i })).filter(({ i }) => X.picked(`insight:${i}`));
+    if (insights.length) {
+      const so = { key: "outside", title: "What the outside research shows", paras: [] };
+      insights.forEach(({ ins }) => P(so, { kind: "insight", lead: ins.title, body: ins.text, refs: ins.refs.map((r) => ev.research(r)).filter(Boolean) }));
+      secs.push(so);
+    }
 
     // The investment case
     const op = st.op;
@@ -129,6 +138,26 @@
       .forEach((p) => P(s4, { kind: "piece", lead: `${p.label}${p.verdict === "mixed" ? ", mixed" : ""}.`, body: reasonOf(p) + steerNotes(p.name), refs: refs(p.claim_ids), piece: p.name }));
     secs.push(s4);
 
+    // Evidence the associate put in by hand: first-readout rows and the room's own claims.
+    const numbered = X.researchNumbered();
+    const hand = [
+      ...numbered.map((c, i) => ({ c, key: `claim:${i + 1}` })).filter((x) => X.picked(x.key)).map((x) => ({ text: x.c.text, ref: ev.research(x.c.text.slice(0, 60)) })),
+      ...Object.keys(room.claims).filter((id) => X.picked(`room:${id}`)).map((id) => ({ text: room.claims[id].text, ref: ev.room(id) })),
+    ];
+    if (hand.length) {
+      const sh = { key: "picked", title: "Evidence the associate added", paras: [] };
+      hand.forEach((h) => P(sh, { kind: "picked", lead: "", body: h.text, refs: [h.ref].filter(Boolean) }));
+      secs.push(sh);
+    }
+
+    // The reports, read through Kimmy's expert knowledge, each with its chart.
+    (room.reports || []).forEach((rep) => {
+      const sr = { key: `report-${rep.key}`, title: rep.title, paras: [], report: rep };
+      rep.paras.forEach((p) => P(sr, { kind: "report", lead: p.lead, body: p.body, refs: refs(p.refs) }));
+      P(sr, { kind: "asks", lead: "What to ask.", body: rep.asks.join(" "), refs: [] });
+      secs.push(sr);
+    });
+
     // What is still unknown, and what was asked
     const s5 = { key: "unknown", title: "What is still unknown, and what was asked", paras: [] };
     room.pieces.filter((p) => p.verdict === "not_enough_in_the_room")
@@ -155,7 +184,7 @@
     const st = X.st();
     const nums = p.refs.map((k) => built.ev.map.get(k)).filter(Boolean);
     const refsHtml = nums.length ? ` <span class="x-refs">${nums.map((e) => `<button type="button" class="x-ev" data-ev="${esc(e.key)}" data-para="${p.id}" aria-label="Evidence ${e.n}">${e.n}</button>`).join("")}</span>` : "";
-    const flagCards = p.flag ? X.flagCard(room, p.flag, { noAsk: true }) : p.flags ? `<ul class="x-smallflags">${p.flags.map((f) => X.smallFlag(room, f)).join("")}</ul>` : "";
+    const flagCards = p.flag ? X.flagCard(room, p.flag, { noAsk: true, noPick: true }) : p.flags ? `<ul class="x-smallflags">${p.flags.map((f) => X.smallFlag(room, f, { noPick: true })).join("")}</ul>` : "";
     const evList = nums.length ? `<ol class="x-evlist">${nums.map((e) => `<li class="x-claim" id="ev-${p.id}-${e.n}" value="${e.n}">${e.html}</li>`).join("")}</ol>` : "";
     const hasEv = !!(flagCards || evList);
     const v = st.views[p.id];
@@ -279,6 +308,7 @@
     const sent = st.sentAt ? `Sent to the partners at ${st.sentAt.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}` : "Draft, not sent yet";
     const sections = built.secs.map((s) => `<section class="x-memo-sec" aria-label="${esc(s.title)}" data-sec="${s.key}">
         <h3>${esc(s.title)}</h3>
+        ${s.report ? `${X.kimmyLine(s.report)}${X.reportChart(s.report)}` : ""}
         ${s.paras.map((p) => paraHtml(room, p, built, mode)).join("")}
         ${s.key === "case" && mode === "principal" ? `<details class="x-whatif-d"><summary>Try a what-if</summary><div id="x-whatif-slot">${whatifHtml(room)}</div></details>` : ""}
         ${s.key === "rec" && mode === "associate" ? opFields() : ""}
@@ -294,6 +324,7 @@
       T.app.innerHTML = `${T.header("memo")}
         <article class="x-memo x-doc">${head}${sections}</article>
         <div class="actions"><button class="tc-btn primary" type="button" id="send-memo">Send to the partners</button></div>`;
+      X.drawCharts(T.app);
       document.getElementById("send-memo").addEventListener("click", () => { st.sentAt = new Date(); T.go("principal"); });
       T.app.querySelectorAll("[data-op]").forEach((el) => el.addEventListener("change", () => { st.op[el.dataset.op] = el.value; render(mode); }));
     } else {
@@ -306,6 +337,7 @@
         </div>
         <div class="actions"><a class="btn tc-btn tc-btn--secondary" href="http://localhost:5173/">Open the built readout page</a>
           <button class="tc-btn tc-btn--secondary" type="button" id="to-start">Start with another company</button></div>`;
+      X.drawCharts(T.app);
       document.getElementById("to-start").addEventListener("click", () => T.go("start"));
       bindWhatif(room);
       bindChat(built, room);

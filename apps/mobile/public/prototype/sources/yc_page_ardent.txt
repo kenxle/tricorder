@@ -1,0 +1,152 @@
+currentUser: None
+publicFounderProfilesEnabled: False
+disabledPublicVisibility: None
+company.id: 31475
+company.slug: ardent
+company.name: Ardent
+company.batch: P26
+company.batch_name: Spring 2026
+company.small_logo_url: https://bookface-images.s3.amazonaws.com/small_logos/f4ef54cc2ae204ad4ac662f9bfacf6a3fa6faf47.png
+company.one_liner: Database sandboxes for Agents
+company.website: https://tryardent.com
+company.long_description: Clone any postgres DB regardless of size in 6s so agents can test their work
+company.tags: (none)
+company.ycdc_status: Active
+company.logo_url: https://bookface-images.s3.us-west-2.amazonaws.com/logos/538848f8ca1fc47727bc5cb62a50b9f33eb13955.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAE53W4IQV%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184813Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQC5WGckxdpdac%2BNuoblG%2BAUATK153YEEMAg0brafcxXaQIhAMhO3M1M0gt%2FCHizLxDPKlHDWxAmHPSSDTfrr1%2BLNVCGKuUDCHsQABoMMDA2MjAxODExMDcyIgxWVGpusD3m6iJRoj4qwgMDalYNWZXNT%2BsvyEXwqRvic7ANQzM46%2BFVxxBhZE76pVeLSdcl9LugHzAyvTdsyQSF4SP6dMgYzBqwu0Np4JQog9NxvAeF5HBqkEzw0HolHFmmp%2FbXR%2Fnr9c6ZFpW%2FRXvMyih6lkLITMPNo%2F0rWLxD4Ssld9auu7MaW6tB6JMooxaFDVhTYTqk3r41zpPMr7Vq4I8H%2BbA%2FPjsG3PcD%2BRawPdTmYYec1PYS9venGt9K53%2BT0l0Yym%2B%2BqhiyHftuMd%2FLoggGiU5C9S%2FIlFiSFJQfFdwSl0IkM2cv7InAgejZrYtbVUClqTLFEfvDikhh%2FYUpp3CtwCDjUJnN62HOuWVkdRgzq95lVcf4NXOUvRUpeXOaS0invt4wDKFcMkarwW1AAh7DmQucy5%2BJVKawEqaXL2H9kTQdRJWMeMKz9E8uUd4u59CQcdVU013BXQG8B5%2FaTPrkNQQwRtsyYVuiOWm6xbmHyEl5Nqpkqe999RUc%2FgM5ZXuoMgY3J03wKc%2B%2F8aHqJGHs148Wymvs1OtfqUFBSLcj86TDzFRxXtyJy2R2vlH7ltoJ5cXslZ1eLMBAFfHFoEHfe95sb6uPTrkyhWxya84w4K%2Fp1gY6pAEsXGOp6AHF1tz3Bx8N6YVI%2FwNVp0KOYPEZ7EcMw%2FXkSVVbBXde5qEyjdEWsWFFph8hD1UXvp0GNKkPT6yOP85JTO4G0yZlpSvrZo3l6BCqnlNTGC7%2F5RdZ4ZqPl%2BA9T%2BDXrFEu1weJDocLxLEC5GBdreYn7%2FSgwVHCvI531YcktgFrr%2FENaJsvOTcmdzQQRfd1pKZIYyCmywxSCYelZ7PtKVSO9Q%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=1c03020f94514288e05d7193c5d8db289fb7335f45e619fd3f293f78c6d47058
+company.year_founded: 2025
+company.team_size: 3
+company.location: San Francisco
+company.city: San Francisco
+company.city_tag: san-francisco-bay-area
+company.country: US
+company.twitter_url: https://x.com/ArdentAI
+company.fb_url: 
+company.cb_url: 
+company.github_url: 
+company.free_response_question_answers: (none)
+company.dday_video_url: None
+company.app_video_url: None
+company.app_answers: (none)
+company.ycdc_url: https://www.ycombinator.com/companies/ardent
+company.company_photos: (none)
+company.primary_group_partner.id: 5630
+company.primary_group_partner.full_name: Aaron Epstein
+company.primary_group_partner.avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/335da14a6701470d7ff708d8aff388f06d9f6984.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAE53W4IQV%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184813Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQC5WGckxdpdac%2BNuoblG%2BAUATK153YEEMAg0brafcxXaQIhAMhO3M1M0gt%2FCHizLxDPKlHDWxAmHPSSDTfrr1%2BLNVCGKuUDCHsQABoMMDA2MjAxODExMDcyIgxWVGpusD3m6iJRoj4qwgMDalYNWZXNT%2BsvyEXwqRvic7ANQzM46%2BFVxxBhZE76pVeLSdcl9LugHzAyvTdsyQSF4SP6dMgYzBqwu0Np4JQog9NxvAeF5HBqkEzw0HolHFmmp%2FbXR%2Fnr9c6ZFpW%2FRXvMyih6lkLITMPNo%2F0rWLxD4Ssld9auu7MaW6tB6JMooxaFDVhTYTqk3r41zpPMr7Vq4I8H%2BbA%2FPjsG3PcD%2BRawPdTmYYec1PYS9venGt9K53%2BT0l0Yym%2B%2BqhiyHftuMd%2FLoggGiU5C9S%2FIlFiSFJQfFdwSl0IkM2cv7InAgejZrYtbVUClqTLFEfvDikhh%2FYUpp3CtwCDjUJnN62HOuWVkdRgzq95lVcf4NXOUvRUpeXOaS0invt4wDKFcMkarwW1AAh7DmQucy5%2BJVKawEqaXL2H9kTQdRJWMeMKz9E8uUd4u59CQcdVU013BXQG8B5%2FaTPrkNQQwRtsyYVuiOWm6xbmHyEl5Nqpkqe999RUc%2FgM5ZXuoMgY3J03wKc%2B%2F8aHqJGHs148Wymvs1OtfqUFBSLcj86TDzFRxXtyJy2R2vlH7ltoJ5cXslZ1eLMBAFfHFoEHfe95sb6uPTrkyhWxya84w4K%2Fp1gY6pAEsXGOp6AHF1tz3Bx8N6YVI%2FwNVp0KOYPEZ7EcMw%2FXkSVVbBXde5qEyjdEWsWFFph8hD1UXvp0GNKkPT6yOP85JTO4G0yZlpSvrZo3l6BCqnlNTGC7%2F5RdZ4ZqPl%2BA9T%2BDXrFEu1weJDocLxLEC5GBdreYn7%2FSgwVHCvI531YcktgFrr%2FENaJsvOTcmdzQQRfd1pKZIYyCmywxSCYelZ7PtKVSO9Q%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=6c4d54950b8c17558ab236a8f2eddc688b82e3c49e87453206099419513cc6ea
+company.primary_group_partner.url: https://www.ycombinator.com/people/aaron-epstein
+company.founders[0].user_id: 1239054
+company.founders[0].is_active: True
+company.founders[0].founder_bio: Database sandboxes for Agents. Clone any Postgres DB regardless of size in 6s so agents can test their work
+
+Formerly ML Engineer, Cornell CS
+company.founders[0].full_name: Vikram Chennai
+company.founders[0].title: Founder/CEO
+company.founders[0].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/5e3dd79a34fc2739d09791645c7883ccf5c8f6ce.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAE53W4IQV%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184813Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQC5WGckxdpdac%2BNuoblG%2BAUATK153YEEMAg0brafcxXaQIhAMhO3M1M0gt%2FCHizLxDPKlHDWxAmHPSSDTfrr1%2BLNVCGKuUDCHsQABoMMDA2MjAxODExMDcyIgxWVGpusD3m6iJRoj4qwgMDalYNWZXNT%2BsvyEXwqRvic7ANQzM46%2BFVxxBhZE76pVeLSdcl9LugHzAyvTdsyQSF4SP6dMgYzBqwu0Np4JQog9NxvAeF5HBqkEzw0HolHFmmp%2FbXR%2Fnr9c6ZFpW%2FRXvMyih6lkLITMPNo%2F0rWLxD4Ssld9auu7MaW6tB6JMooxaFDVhTYTqk3r41zpPMr7Vq4I8H%2BbA%2FPjsG3PcD%2BRawPdTmYYec1PYS9venGt9K53%2BT0l0Yym%2B%2BqhiyHftuMd%2FLoggGiU5C9S%2FIlFiSFJQfFdwSl0IkM2cv7InAgejZrYtbVUClqTLFEfvDikhh%2FYUpp3CtwCDjUJnN62HOuWVkdRgzq95lVcf4NXOUvRUpeXOaS0invt4wDKFcMkarwW1AAh7DmQucy5%2BJVKawEqaXL2H9kTQdRJWMeMKz9E8uUd4u59CQcdVU013BXQG8B5%2FaTPrkNQQwRtsyYVuiOWm6xbmHyEl5Nqpkqe999RUc%2FgM5ZXuoMgY3J03wKc%2B%2F8aHqJGHs148Wymvs1OtfqUFBSLcj86TDzFRxXtyJy2R2vlH7ltoJ5cXslZ1eLMBAFfHFoEHfe95sb6uPTrkyhWxya84w4K%2Fp1gY6pAEsXGOp6AHF1tz3Bx8N6YVI%2FwNVp0KOYPEZ7EcMw%2FXkSVVbBXde5qEyjdEWsWFFph8hD1UXvp0GNKkPT6yOP85JTO4G0yZlpSvrZo3l6BCqnlNTGC7%2F5RdZ4ZqPl%2BA9T%2BDXrFEu1weJDocLxLEC5GBdreYn7%2FSgwVHCvI531YcktgFrr%2FENaJsvOTcmdzQQRfd1pKZIYyCmywxSCYelZ7PtKVSO9Q%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=7dd1d885cf12dcac4b011a550da89a13ef3de943b0ae130cb65e7c8aa22b3c06
+company.founders[0].twitter_url: https://x.com/vchennai2
+company.founders[0].has_email: True
+company.founders[0].latest_yc_company.name: Ardent
+company.founders[0].latest_yc_company.href: https://www.ycombinator.com/companies/ardent
+jobPostings[0].id: 102418
+jobPostings[0].title: Founding Engineer - Product (Staff)
+jobPostings[0].url: /companies/ardent/jobs/4fjIRN4-founding-engineer-product-staff
+jobPostings[0].applyUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication%3Fsignup_job_id%3D102418&defaults%5BsignUpActive%5D=true&defaults%5Bwaas_company%5D=31475
+jobPostings[0].location: San Francisco, CA, US
+jobPostings[0].askUs: True
+jobPostings[0].type: Full-time
+jobPostings[0].role: eng
+jobPostings[0].roleSpecificType: Full stack
+jobPostings[0].prettyRole: Engineering
+jobPostings[0].salaryRange: $150K - $200K
+jobPostings[0].equityRange: 1.00% - 3.00%
+jobPostings[0].minExperience: 3+ years
+jobPostings[0].minSchoolYear: None
+jobPostings[0].visa: US citizen/visa only
+jobPostings[0].skills[0]: Go
+jobPostings[0].skills[1]: PostgreSQL
+jobPostings[0].isIncomplete: False
+jobPostings[0].companyUrl: /companies/ardent
+jobPostings[0].companyLogoUrl: https://bookface-images.s3.amazonaws.com/small_logos/f4ef54cc2ae204ad4ac662f9bfacf6a3fa6faf47.png
+jobPostings[0].companyName: Ardent
+jobPostings[0].companyBatchName: P26
+jobPostings[0].companyOneLiner: Database sandboxes for Agents
+jobPostings[0].hiringManager: None
+jobPostings[0].createdAt: 3 months
+jobPostings[0].lastActive: 2 months
+jobsUrl: https://bookface.ycombinator.com/workatastartup
+newsItems: (none)
+newsUrl: https://bookface.ycombinator.com/company/31475/company_news
+videos: (none)
+launches[0].id: 100815
+launches[0].title: Ardent - Clone any postgres DB of any size in <6s
+launches[0].body: Hi! I’m Vikram founder of [@Ardent](https://bookface.ycombinator.com/company/31475). **We let you clone any postgres DB in &lt;6s** so your coding agents and devs can test code on a 1:1 of production or dev DBs with zero risk
+
+![uploaded image](/media/?type=post&id=100815&key=user_uploads/1239054/b0ebde7f-0ac7-49a9-8f42-e4fb3f26d585)
+
+We’re working with companies with huge amounts of data like Supermemory and YC companies like [@Surface Labs](https://bookface.ycombinator.com/company/28921)
+
+**This is me cloning a 1.6TB db is 6s:**
+
+<https://youtu.be/8Q4IX7HUJmo>
+
+Website: <https://tryardent.com/>
+
+**How did we get here (the problem)?**
+
+Ardent was a reaction to the failure of our last product - an AI Data Engineer. It was a coding agent that generated data pipelines, wrote migrations, backfills and other things you’d expect of a data engineer.
+
+While the code _looked_ great we had no way of testing generated code. Writing to prod was out of the question and dev environments were never in sync, shared amongst devs which caused write clashes between agents, and was a huge pain to manage. **_What we needed was a ephemeral DB sandbox per agent of the user’s DB._**
+
+Because of how hard testing was, generated code would never be tested and was too unstable to put in production. Database failures almost always mean downtime, a risk both we and customers were obviously not willing to take. We churned almost 200K in ARR
+
+This problem exists with any coding agent today. We’re shipping 100x more DB code to production and we mostly just hope to god it works the same as dev.
+
+**Ardent - Isolated &lt;6s database clones that let you test agent code:**
+
+Ardent solves the DB sandbox problem by letting you create 6s clones of ANY postgres DB regardless of size, allowing you to give every developer and every agent a full copy of production or dev to test against.
+
+Clones autoscale to zero when not in use, use copy on write for massive storage efficiency and can be loaded with a single CLI command (zero infra management)
+
+You can see the exact results of any code run against the DB in a perfect 1:1 reproduction and don’t have to change your DB provider.
+
+The entire thing runs as a CLI that feels exactly like git. Cloning is as simple as “ardent branch create &lt;name&gt;”
+
+This means you can spin up instant environments to test _every_ line of DB code with none of the overhead
+
+**Asks**
+
+**Use Ardent at your company to go faster by let agents work safely at the DB layer and prevent regressions:** <https://cal.com/vikram-chennai/yc-reserved>
+
+**Introduce me to series A-C engineering leaders (Founders, CTOs, VP of Eng):** Many of the later stage startups we’ve talked to have the majority of their engineers shipping with claude, codex or cursor on migrations, backfills and pretty much any code that hits the DB. They will eventually crash their production DB unless they’re rigorously testing. I’d like to prevent those crashes :)
+
+Contact me: [vikram@tryardent.com](mailto:vikram@tryardent.com)
+launches[0].state: public
+launches[0].tagline: Ardent lets engineers give their coding agents 1:1 clones of prod to test code and prevent downtime
+launches[0].created_at: 2026-05-05T20:21:15.273Z
+launches[0].company.id: 31475
+launches[0].company.name: Ardent
+launches[0].company.logo: https://bookface-images.s3.amazonaws.com/small_logos/f4ef54cc2ae204ad4ac662f9bfacf6a3fa6faf47.png
+launches[0].company.batch: p2026
+launches[0].company.tags: (none)
+launches[0].company.url: https://tryardent.com
+launches[0].company.slug: ardent
+launches[0].company.description: Database sandboxes for Agents
+launches[0].user.name: Vikram Chennai
+launches[0].user.avatar: https://bookface-images.s3.amazonaws.com/avatars/5e3dd79a34fc2739d09791645c7883ccf5c8f6ce.jpg
+launches[0].total_vote_count: 16
+launches[0].slug: QE3-ardent-clone-any-postgres-db-of-any-size-in-6s
+launches[0].launch_embed_url: https://www.ycombinator.com/launches/QE3-ardent-clone-any-postgres-db-of-any-size-in-6s/upvote_embed.svg
+launches[0].twitter_share_url: https://twitter.com/intent/tweet?text=Ardent+just+launched+on+%40ycombinator%27s+Launch+YC%21%0A%0AArdent+-+Clone+any+postgres+DB+of+any+size+in+%3C6s.+Check+them+out%3A&url=https%3A%2F%2Fwww.ycombinator.com%2Flaunches%2FQE3-ardent-clone-any-postgres-db-of-any-size-in-6s
+launches[0].sanitized_title: Ardent - Clone any postgres DB of any size in &lt;6s
+launches[0].ycdc_launch_url: https://www.ycombinator.com/launches/QE3-ardent-clone-any-postgres-db-of-any-size-in-6s
+launches[0].url: https://www.ycombinator.com/launches/QE3-ardent-clone-any-postgres-db-of-any-size-in-6s
+launches[0].share_image: None
+launches[0].approved_at: None
+launches[0].approved_by: None
+launches[0].requested_publish_at: 2026-05-06T18:32:00Z
+editUrl: https://bookface.ycombinator.com/company/31475/edit
+editUserUrl: https://bookface.ycombinator.com/edit_user_profile
+createProfileUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication&defaults%5BsignUpActive%5D=true
+signedIn: False
+showDirectApply: True
+waasDirectoryUrl: https://www.workatastartup.com/companies
+investorSubdomain: False
+userCanRequestEmails: False

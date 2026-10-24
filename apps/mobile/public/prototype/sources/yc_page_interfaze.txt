@@ -1,0 +1,131 @@
+currentUser: None
+publicFounderProfilesEnabled: False
+disabledPublicVisibility: None
+company.id: 31386
+company.slug: interfaze
+company.name: Interfaze
+company.batch: P26
+company.batch_name: Spring 2026
+company.small_logo_url: https://bookface-images.s3.amazonaws.com/small_logos/cbbb1bb306037fdebdde3c7b1d20cb434879fb79.png
+company.one_liner: AI model built for high accuracy deterministic tasks
+company.website: https://interfaze.ai
+company.long_description: Interfaze is an AI model built on a new architecture that merges specialized DNN/CNN models with transformers for tasks that require deterministic output and high consistency like Document intelligence, Object detection, Classification, Audio understanding and more.
+
+Interfaze outperforms large lab models like Gemini flash, Claude Sonnet and the GPT-5.4 mini series
+
+Architecture paper: https://arxiv.org/abs/2602.04101
+Full open benchmarks: https://interfaze.ai/leaderboards
+company.tags: (none)
+company.ycdc_status: Active
+company.logo_url: https://bookface-images.s3.us-west-2.amazonaws.com/logos/1e160c04bd462f825edcdb12b43b894e05b3de0d.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECACT4FLLUS%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184817Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIAaX0KauBcsZxcjSsv%2BI3vEwBv6H2fsRETKESACH09bpAiEAmkkieNVgfWTzR2DQVRA2dam6CENZkIRp38CvpxzSLgoq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDEN%2BqGwlV1au%2BUx%2BfirCA%2FtIoTSLv7Aoiz1yGjXKLMVHfO%2BGjHb56MshV1DISDqfqE%2Bz2M9Wm4gm6IWyeY%2F3g1Wp52Y2bZtvHavqfnbiAEqAtFDsgm%2FdcmvP4OmNVV0D2vJKz5tIB9vs0u%2B05yznQPnVWr%2BripDeNudmDEPIR1uPH5i5qBYNwufmLWF5NjQemQz%2BCGpLaWIS96ci3pzzFuI%2FKZz%2F7oZRr1DgKU5E1M3kKus0PtRcMBbfhlYaSikkSpANLdOZDEuJCU8dcyJjTPOvKpOoa4KWQXju6boL120U0uKzhk1d%2Fl5mLeXd5HjSVdgNYW8bBDkFcCLvREs8Lp83hNDnDQGXOEcQmc4RcD%2FbWayxwG%2BKlW9bE10LvdMYz5mK6V4yul3E4n30xOHfFMAzCFjHRHx2e3gzHeQv%2B5BgSY3DsIGY0ldA9RE7Nfyf2xIVB17JKtkvtuzSxmDZ3STm6VYm4NFCmwWasL9q8zZTOFum15QfbheNsj5h6bWkSG1O%2BqFylGHeYTRYSknXhIYUeNSmDkc%2FVPClswrbKH0UTE1o0Z6LvLKsY4MH6qjNleY7CjNa7kAc6CKxkLMB2reSbfe2kHxRcyh8KktgNbQduTDgr%2BnWBjqlASlw6Vq0IEbyX1bxOeN8owxH4Zf98%2BbGBOP6xPlxWiEVx5uFSa60iJeujDw1txxeOQiTTY7x%2BlA21KQQXJSxt1N5UKgXeh7pkano3v%2BI3EfxKwDcOrgXMRN7OOvT%2Bmel7Pp4xYCPfF6AV4js9zscCg%2FTHhMtli4ilCQUL55rnAQzQMvNbExETLvn9IiUDJ0tGatBAFPo%2FrdyNxD2FQtsElFMys8pBg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=2cd3be5e3834a6c5ddac3ba33f542b3bf5fcb07be2e90b9081d236890320e007
+company.year_founded: 2025
+company.team_size: 5
+company.location: San Francisco
+company.city: San Francisco
+company.city_tag: san-francisco-bay-area
+company.country: US
+company.twitter_url: https://x.com/interfaze_ai
+company.fb_url: 
+company.cb_url: https://www.crunchbase.com/organization/jigsawstack
+company.github_url: None
+company.free_response_question_answers: (none)
+company.dday_video_url: None
+company.app_video_url: None
+company.app_answers: (none)
+company.ycdc_url: https://www.ycombinator.com/companies/interfaze
+company.company_photos[0].id: 2003
+company.company_photos[0].url: https://bookface-images.s3.us-west-2.amazonaws.com/attachments/e1b4669e7ba400f6249ca5fc9776423b8b2478f7.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECACT4FLLUS%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184817Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIAaX0KauBcsZxcjSsv%2BI3vEwBv6H2fsRETKESACH09bpAiEAmkkieNVgfWTzR2DQVRA2dam6CENZkIRp38CvpxzSLgoq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDEN%2BqGwlV1au%2BUx%2BfirCA%2FtIoTSLv7Aoiz1yGjXKLMVHfO%2BGjHb56MshV1DISDqfqE%2Bz2M9Wm4gm6IWyeY%2F3g1Wp52Y2bZtvHavqfnbiAEqAtFDsgm%2FdcmvP4OmNVV0D2vJKz5tIB9vs0u%2B05yznQPnVWr%2BripDeNudmDEPIR1uPH5i5qBYNwufmLWF5NjQemQz%2BCGpLaWIS96ci3pzzFuI%2FKZz%2F7oZRr1DgKU5E1M3kKus0PtRcMBbfhlYaSikkSpANLdOZDEuJCU8dcyJjTPOvKpOoa4KWQXju6boL120U0uKzhk1d%2Fl5mLeXd5HjSVdgNYW8bBDkFcCLvREs8Lp83hNDnDQGXOEcQmc4RcD%2FbWayxwG%2BKlW9bE10LvdMYz5mK6V4yul3E4n30xOHfFMAzCFjHRHx2e3gzHeQv%2B5BgSY3DsIGY0ldA9RE7Nfyf2xIVB17JKtkvtuzSxmDZ3STm6VYm4NFCmwWasL9q8zZTOFum15QfbheNsj5h6bWkSG1O%2BqFylGHeYTRYSknXhIYUeNSmDkc%2FVPClswrbKH0UTE1o0Z6LvLKsY4MH6qjNleY7CjNa7kAc6CKxkLMB2reSbfe2kHxRcyh8KktgNbQduTDgr%2BnWBjqlASlw6Vq0IEbyX1bxOeN8owxH4Zf98%2BbGBOP6xPlxWiEVx5uFSa60iJeujDw1txxeOQiTTY7x%2BlA21KQQXJSxt1N5UKgXeh7pkano3v%2BI3EfxKwDcOrgXMRN7OOvT%2Bmel7Pp4xYCPfF6AV4js9zscCg%2FTHhMtli4ilCQUL55rnAQzQMvNbExETLvn9IiUDJ0tGatBAFPo%2FrdyNxD2FQtsElFMys8pBg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=b7b7ab13da0b73468c96797e8601e6c7ad247b04bd2e7fce3eb1738593908cc9
+company.company_photos[0].photo_type: sign
+company.primary_group_partner.id: 5630
+company.primary_group_partner.full_name: Aaron Epstein
+company.primary_group_partner.avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/335da14a6701470d7ff708d8aff388f06d9f6984.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECACT4FLLUS%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184817Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIAaX0KauBcsZxcjSsv%2BI3vEwBv6H2fsRETKESACH09bpAiEAmkkieNVgfWTzR2DQVRA2dam6CENZkIRp38CvpxzSLgoq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDEN%2BqGwlV1au%2BUx%2BfirCA%2FtIoTSLv7Aoiz1yGjXKLMVHfO%2BGjHb56MshV1DISDqfqE%2Bz2M9Wm4gm6IWyeY%2F3g1Wp52Y2bZtvHavqfnbiAEqAtFDsgm%2FdcmvP4OmNVV0D2vJKz5tIB9vs0u%2B05yznQPnVWr%2BripDeNudmDEPIR1uPH5i5qBYNwufmLWF5NjQemQz%2BCGpLaWIS96ci3pzzFuI%2FKZz%2F7oZRr1DgKU5E1M3kKus0PtRcMBbfhlYaSikkSpANLdOZDEuJCU8dcyJjTPOvKpOoa4KWQXju6boL120U0uKzhk1d%2Fl5mLeXd5HjSVdgNYW8bBDkFcCLvREs8Lp83hNDnDQGXOEcQmc4RcD%2FbWayxwG%2BKlW9bE10LvdMYz5mK6V4yul3E4n30xOHfFMAzCFjHRHx2e3gzHeQv%2B5BgSY3DsIGY0ldA9RE7Nfyf2xIVB17JKtkvtuzSxmDZ3STm6VYm4NFCmwWasL9q8zZTOFum15QfbheNsj5h6bWkSG1O%2BqFylGHeYTRYSknXhIYUeNSmDkc%2FVPClswrbKH0UTE1o0Z6LvLKsY4MH6qjNleY7CjNa7kAc6CKxkLMB2reSbfe2kHxRcyh8KktgNbQduTDgr%2BnWBjqlASlw6Vq0IEbyX1bxOeN8owxH4Zf98%2BbGBOP6xPlxWiEVx5uFSa60iJeujDw1txxeOQiTTY7x%2BlA21KQQXJSxt1N5UKgXeh7pkano3v%2BI3EfxKwDcOrgXMRN7OOvT%2Bmel7Pp4xYCPfF6AV4js9zscCg%2FTHhMtli4ilCQUL55rnAQzQMvNbExETLvn9IiUDJ0tGatBAFPo%2FrdyNxD2FQtsElFMys8pBg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=98a1213b6c5ec5f5a385fdae52050d6b9a7e2e5fd543c9765709d5844655b475
+company.primary_group_partner.url: https://www.ycombinator.com/people/aaron-epstein
+company.founders[0].user_id: 1618136
+company.founders[0].is_active: True
+company.founders[0].founder_bio: 8 years in edge computer vision research | 2nd time founder
+company.founders[0].full_name: Yoeven D Khemlani
+company.founders[0].title: Founder/CEO
+company.founders[0].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/48506dcf75872046a6d42638b3e2a07552e1a7ca.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECACT4FLLUS%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184817Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIAaX0KauBcsZxcjSsv%2BI3vEwBv6H2fsRETKESACH09bpAiEAmkkieNVgfWTzR2DQVRA2dam6CENZkIRp38CvpxzSLgoq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDEN%2BqGwlV1au%2BUx%2BfirCA%2FtIoTSLv7Aoiz1yGjXKLMVHfO%2BGjHb56MshV1DISDqfqE%2Bz2M9Wm4gm6IWyeY%2F3g1Wp52Y2bZtvHavqfnbiAEqAtFDsgm%2FdcmvP4OmNVV0D2vJKz5tIB9vs0u%2B05yznQPnVWr%2BripDeNudmDEPIR1uPH5i5qBYNwufmLWF5NjQemQz%2BCGpLaWIS96ci3pzzFuI%2FKZz%2F7oZRr1DgKU5E1M3kKus0PtRcMBbfhlYaSikkSpANLdOZDEuJCU8dcyJjTPOvKpOoa4KWQXju6boL120U0uKzhk1d%2Fl5mLeXd5HjSVdgNYW8bBDkFcCLvREs8Lp83hNDnDQGXOEcQmc4RcD%2FbWayxwG%2BKlW9bE10LvdMYz5mK6V4yul3E4n30xOHfFMAzCFjHRHx2e3gzHeQv%2B5BgSY3DsIGY0ldA9RE7Nfyf2xIVB17JKtkvtuzSxmDZ3STm6VYm4NFCmwWasL9q8zZTOFum15QfbheNsj5h6bWkSG1O%2BqFylGHeYTRYSknXhIYUeNSmDkc%2FVPClswrbKH0UTE1o0Z6LvLKsY4MH6qjNleY7CjNa7kAc6CKxkLMB2reSbfe2kHxRcyh8KktgNbQduTDgr%2BnWBjqlASlw6Vq0IEbyX1bxOeN8owxH4Zf98%2BbGBOP6xPlxWiEVx5uFSa60iJeujDw1txxeOQiTTY7x%2BlA21KQQXJSxt1N5UKgXeh7pkano3v%2BI3EfxKwDcOrgXMRN7OOvT%2Bmel7Pp4xYCPfF6AV4js9zscCg%2FTHhMtli4ilCQUL55rnAQzQMvNbExETLvn9IiUDJ0tGatBAFPo%2FrdyNxD2FQtsElFMys8pBg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=2f89d7025c94ecf4c87fc7437f6b2cde63c2995c875e39320593a4d337efdc6e
+company.founders[0].twitter_url: https://x.com/yoeven
+company.founders[0].has_email: True
+company.founders[0].latest_yc_company.name: Interfaze
+company.founders[0].latest_yc_company.href: https://www.ycombinator.com/companies/interfaze
+company.founders[1].user_id: 2229538
+company.founders[1].is_active: True
+company.founders[1].founder_bio: Building https://interfaze.ai
+company.founders[1].full_name: Harsha Vardhan Khurdula
+company.founders[1].title: Founder/CTO
+company.founders[1].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/9136e9e55a80d9ebea288f0e36dc19b8d9bd272f.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECACT4FLLUS%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184817Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIAaX0KauBcsZxcjSsv%2BI3vEwBv6H2fsRETKESACH09bpAiEAmkkieNVgfWTzR2DQVRA2dam6CENZkIRp38CvpxzSLgoq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDEN%2BqGwlV1au%2BUx%2BfirCA%2FtIoTSLv7Aoiz1yGjXKLMVHfO%2BGjHb56MshV1DISDqfqE%2Bz2M9Wm4gm6IWyeY%2F3g1Wp52Y2bZtvHavqfnbiAEqAtFDsgm%2FdcmvP4OmNVV0D2vJKz5tIB9vs0u%2B05yznQPnVWr%2BripDeNudmDEPIR1uPH5i5qBYNwufmLWF5NjQemQz%2BCGpLaWIS96ci3pzzFuI%2FKZz%2F7oZRr1DgKU5E1M3kKus0PtRcMBbfhlYaSikkSpANLdOZDEuJCU8dcyJjTPOvKpOoa4KWQXju6boL120U0uKzhk1d%2Fl5mLeXd5HjSVdgNYW8bBDkFcCLvREs8Lp83hNDnDQGXOEcQmc4RcD%2FbWayxwG%2BKlW9bE10LvdMYz5mK6V4yul3E4n30xOHfFMAzCFjHRHx2e3gzHeQv%2B5BgSY3DsIGY0ldA9RE7Nfyf2xIVB17JKtkvtuzSxmDZ3STm6VYm4NFCmwWasL9q8zZTOFum15QfbheNsj5h6bWkSG1O%2BqFylGHeYTRYSknXhIYUeNSmDkc%2FVPClswrbKH0UTE1o0Z6LvLKsY4MH6qjNleY7CjNa7kAc6CKxkLMB2reSbfe2kHxRcyh8KktgNbQduTDgr%2BnWBjqlASlw6Vq0IEbyX1bxOeN8owxH4Zf98%2BbGBOP6xPlxWiEVx5uFSa60iJeujDw1txxeOQiTTY7x%2BlA21KQQXJSxt1N5UKgXeh7pkano3v%2BI3EfxKwDcOrgXMRN7OOvT%2Bmel7Pp4xYCPfF6AV4js9zscCg%2FTHhMtli4ilCQUL55rnAQzQMvNbExETLvn9IiUDJ0tGatBAFPo%2FrdyNxD2FQtsElFMys8pBg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=69fb77303ecdfe6505dc98cc7f2f5b2369247eb8f408f3317cc9147df6dadef3
+company.founders[1].twitter_url: https://x.com/khurdula
+company.founders[1].has_email: True
+company.founders[1].latest_yc_company.name: Interfaze
+company.founders[1].latest_yc_company.href: https://www.ycombinator.com/companies/interfaze
+jobPostings[0].id: 107799
+jobPostings[0].title: Applied AI Engineer & Researcher
+jobPostings[0].url: /companies/interfaze/jobs/LYxZ0kI-applied-ai-engineer-researcher
+jobPostings[0].applyUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication%3Fsignup_job_id%3D107799&defaults%5BsignUpActive%5D=true&defaults%5Bwaas_company%5D=31386
+jobPostings[0].location: San Francisco, CA, US
+jobPostings[0].askUs: True
+jobPostings[0].type: Full-time
+jobPostings[0].role: eng
+jobPostings[0].roleSpecificType: Machine learning
+jobPostings[0].prettyRole: Engineering
+jobPostings[0].salaryRange: $150K - $350K
+jobPostings[0].equityRange: 0.50% - 2.00%
+jobPostings[0].minExperience: 1+ years
+jobPostings[0].minSchoolYear: None
+jobPostings[0].visa: Will sponsor
+jobPostings[0].skills[0]: C++
+jobPostings[0].skills[1]: Rust
+jobPostings[0].skills[2]: Torch/PyTorch
+jobPostings[0].skills[3]: Docker
+jobPostings[0].skills[4]: CUDA
+jobPostings[0].skills[5]: Transformers
+jobPostings[0].isIncomplete: False
+jobPostings[0].companyUrl: /companies/interfaze
+jobPostings[0].companyLogoUrl: https://bookface-images.s3.amazonaws.com/small_logos/cbbb1bb306037fdebdde3c7b1d20cb434879fb79.png
+jobPostings[0].companyName: Interfaze
+jobPostings[0].companyBatchName: P26
+jobPostings[0].companyOneLiner: AI model built for high accuracy deterministic tasks
+jobPostings[0].hiringManager: None
+jobPostings[0].createdAt: about 2 months
+jobPostings[0].lastActive: about 1 month
+jobsUrl: https://bookface.ycombinator.com/workatastartup
+newsItems: (none)
+newsUrl: https://bookface.ycombinator.com/company/31386/company_news
+videos: (none)
+launches[0].id: 99878
+launches[0].title: Interfaze - Deterministic AI for developer tasks: OCR, Object detection, Web scraping, STT, Classification and more
+launches[0].state: public
+launches[0].tagline: A new model architecture that outperforms SOTA LLMs on deterministic tasks that require high consistency and accuracy
+launches[0].created_at: 2026-04-20T15:59:34.348Z
+launches[0].company.id: 31386
+launches[0].company.name: Interfaze
+launches[0].company.logo: https://bookface-images.s3.amazonaws.com/small_logos/cbbb1bb306037fdebdde3c7b1d20cb434879fb79.png
+launches[0].company.batch: p2026
+launches[0].company.tags: (none)
+launches[0].company.url: https://interfaze.ai
+launches[0].company.slug: interfaze
+launches[0].company.description: AI model built for high accuracy deterministic tasks
+launches[0].user.name: Yoeven D Khemlani
+launches[0].user.avatar: https://bookface-images.s3.amazonaws.com/avatars/48506dcf75872046a6d42638b3e2a07552e1a7ca.jpg
+launches[0].total_vote_count: 32
+launches[0].slug: Pyw-interfaze-deterministic-ai-for-developer-tasks-ocr-object-detection-web-scraping-stt-classification-and-more
+launches[0].launch_embed_url: https://www.ycombinator.com/launches/Pyw-interfaze-deterministic-ai-for-developer-tasks-ocr-object-detection-web-scraping-stt-classification-and-more/upvote_embed.svg
+launches[0].twitter_share_url: https://twitter.com/intent/tweet?text=Interfaze+just+launched+on+%40ycombinator%27s+Launch+YC%21%0A%0AInterfaze+-+Deterministic+AI+for+developer+tasks%3A+OCR%2C+Object+detection%2C+Web+scraping%2C+STT%2C+Classification+and+more.+Check+them+out%3A&url=https%3A%2F%2Fwww.ycombinator.com%2Flaunches%2FPyw-interfaze-deterministic-ai-for-developer-tasks-ocr-object-detection-web-scraping-stt-classification-and-more
+launches[0].sanitized_title: Interfaze - Deterministic AI for developer tasks: OCR, Object detection, Web scraping, STT, Classification and more
+launches[0].ycdc_launch_url: https://www.ycombinator.com/launches/Pyw-interfaze-deterministic-ai-for-developer-tasks-ocr-object-detection-web-scraping-stt-classification-and-more
+launches[0].url: https://www.ycombinator.com/launches/Pyw-interfaze-deterministic-ai-for-developer-tasks-ocr-object-detection-web-scraping-stt-classification-and-more
+launches[0].share_config.url: /media/?type=post&id=99878&key=user_uploads/1618136/2310c230-6719-4913-ba16-43c8cab6c2d9
+launches[0].share_image: None
+launches[0].approved_at: None
+launches[0].approved_by: None
+launches[0].requested_publish_at: 2026-04-20T17:00:00Z
+editUrl: https://bookface.ycombinator.com/company/31386/edit
+editUserUrl: https://bookface.ycombinator.com/edit_user_profile
+createProfileUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication&defaults%5BsignUpActive%5D=true
+signedIn: False
+showDirectApply: True
+waasDirectoryUrl: https://www.workatastartup.com/companies
+investorSubdomain: False
+userCanRequestEmails: False

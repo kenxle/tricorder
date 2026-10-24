@@ -1,0 +1,104 @@
+currentUser: None
+publicFounderProfilesEnabled: False
+disabledPublicVisibility: None
+company.id: 31547
+company.slug: insforge-instacloud
+company.name: InsForge (InstaCloud)
+company.batch: P26
+company.batch_name: Spring 2026
+company.small_logo_url: https://bookface-images.s3.amazonaws.com/small_logos/de52713fe1552551dbe8aa2a5e60202c09bfc0d7.png
+company.one_liner: The agent-native serverless cloud
+company.website: https://insforge.dev/
+company.long_description: InstaCloud is the agent-native serverless cloud: deploy any code or service instantly, with automatic scaling and zero DevOps required.
+company.tags[0]: Developer Tools
+company.tags[1]: DevSecOps
+company.tags[2]: Cloud Computing
+company.tags[3]: Infrastructure
+company.ycdc_status: Active
+company.logo_url: https://bookface-images.s3.us-west-2.amazonaws.com/logos/724ed514d3c8fd4180fdcae386cdc5e4ff1d809b.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAJNHNFYFD%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184819Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIG47BGHzUC%2BpIVxbL2uhdqI6c3jHfZDbGf3M4U8ryg9xAiEA9khH0GtK4V6I5IfboUa%2BhCYNvvGPQntJ8WqdcfNsYlsq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDIIYsJOzAdJOreiDGyrCA7wueDPlEXq0HWYeke9iU133aggWJdfxTEST0%2FS4VYlSqdHZ66UDYzwnLSyBGxb24%2FJd9vuWTYm5quQu6UNyXaHpr2vDIrjonVs9ITUctHuGKKLZKz%2FfLQ4iCKwPd4hT9GOC%2Fyeg8akLAocqGFVdZ6BkxKZIf4s1z9IP2f4cvttBfYL0QOJOBy3cgXp06Nm%2FJ9M2h745sQ3Xk%2BHDG7KRfW%2FqIdFZMeWbhrFTNtKRq6HeNOFlcFTzCxncIseGhN71aB74HyRcGM34Df4D1XIlkKMqanklMpnrAhOrScS2sRY2jVqZghngnlueB96wKFNrSuvvxoFLPzZ4OqOZiUTd5I4N73UsrTWsBvvzSXlTcqNPaBVG4Gqo1wN%2BSWdSYfjkcIg%2BM0qVTX%2BpPoYgYU7ZaWdJWx3m9K5orOJTLS0aHvrIPKIkb59dAlcPut1wIm6vWHzo3JfEMIZ6srOf1Hw%2FjwYap7NWCDtRadSALhcSwFdzKC3Dx7etwmS5P4r3dct43yyYJgO%2Ft2WxXdsluKO91X0quMxe6ESi%2B1ahvA62wtY7mz5QFJ6a5p2j%2FnTabq3M9ApLG0l0hTOsQJK9puntGM0KRTDhr%2BnWBjqlARKuKpSAQJeUKAaxfcJIyvtRpj%2B%2FzUHlwjDLvi0nR5rajG%2B7N4v9G0lju%2BQUjToN4JJWEpOUaiTlGeHZjlU0VYGfN4EDMSD9c3EeF24NlNwbnVHuw1n6tCAzzQWCm8BYfAcFmuJNsctNsWNOZNYE2jP6GDEwONAeqif1Ibry86gR62GIitHi4NU64J96VfJeSC4mdE1Nr1ECspwKWmmsxKnK3CPCCw%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=2c6e40fddf20ee6de5a592a974c60d5538807418afc41400c32a1e20156e40ba
+company.year_founded: 2025
+company.team_size: 6
+company.location: San Francisco
+company.city: San Francisco
+company.city_tag: san-francisco-bay-area
+company.country: US
+company.twitter_url: https://x.com/Insforge
+company.fb_url: 
+company.cb_url: 
+company.github_url: 
+company.free_response_question_answers: (none)
+company.dday_video_url: None
+company.app_video_url: None
+company.app_answers: (none)
+company.ycdc_url: https://www.ycombinator.com/companies/insforge-instacloud
+company.company_photos: (none)
+company.primary_group_partner.id: 18194
+company.primary_group_partner.full_name: Andrew Miklas
+company.primary_group_partner.avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/5cc81ee2e3dd733f0d777d4391fb94430df03378.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAJNHNFYFD%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184819Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIG47BGHzUC%2BpIVxbL2uhdqI6c3jHfZDbGf3M4U8ryg9xAiEA9khH0GtK4V6I5IfboUa%2BhCYNvvGPQntJ8WqdcfNsYlsq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDIIYsJOzAdJOreiDGyrCA7wueDPlEXq0HWYeke9iU133aggWJdfxTEST0%2FS4VYlSqdHZ66UDYzwnLSyBGxb24%2FJd9vuWTYm5quQu6UNyXaHpr2vDIrjonVs9ITUctHuGKKLZKz%2FfLQ4iCKwPd4hT9GOC%2Fyeg8akLAocqGFVdZ6BkxKZIf4s1z9IP2f4cvttBfYL0QOJOBy3cgXp06Nm%2FJ9M2h745sQ3Xk%2BHDG7KRfW%2FqIdFZMeWbhrFTNtKRq6HeNOFlcFTzCxncIseGhN71aB74HyRcGM34Df4D1XIlkKMqanklMpnrAhOrScS2sRY2jVqZghngnlueB96wKFNrSuvvxoFLPzZ4OqOZiUTd5I4N73UsrTWsBvvzSXlTcqNPaBVG4Gqo1wN%2BSWdSYfjkcIg%2BM0qVTX%2BpPoYgYU7ZaWdJWx3m9K5orOJTLS0aHvrIPKIkb59dAlcPut1wIm6vWHzo3JfEMIZ6srOf1Hw%2FjwYap7NWCDtRadSALhcSwFdzKC3Dx7etwmS5P4r3dct43yyYJgO%2Ft2WxXdsluKO91X0quMxe6ESi%2B1ahvA62wtY7mz5QFJ6a5p2j%2FnTabq3M9ApLG0l0hTOsQJK9puntGM0KRTDhr%2BnWBjqlARKuKpSAQJeUKAaxfcJIyvtRpj%2B%2FzUHlwjDLvi0nR5rajG%2B7N4v9G0lju%2BQUjToN4JJWEpOUaiTlGeHZjlU0VYGfN4EDMSD9c3EeF24NlNwbnVHuw1n6tCAzzQWCm8BYfAcFmuJNsctNsWNOZNYE2jP6GDEwONAeqif1Ibry86gR62GIitHi4NU64J96VfJeSC4mdE1Nr1ECspwKWmmsxKnK3CPCCw%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=759401384a684ff44d95015f75179c7074e4d8847386846e7ad7cd23a348acbe
+company.primary_group_partner.url: https://www.ycombinator.com/people/andrew-miklas
+company.founders[0].user_id: 967495
+company.founders[0].is_active: True
+company.founders[0].founder_bio: Co-founder & CEO at InsForge (YC P26). Ex-Amazon PM, Yale MBA. Former professional League of Legends player.
+company.founders[0].full_name: Hang Huang
+company.founders[0].title: Founder/CEO
+company.founders[0].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/2058201598004fe3b3a6453fb39790a037aa9afc.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAJNHNFYFD%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184819Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIG47BGHzUC%2BpIVxbL2uhdqI6c3jHfZDbGf3M4U8ryg9xAiEA9khH0GtK4V6I5IfboUa%2BhCYNvvGPQntJ8WqdcfNsYlsq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDIIYsJOzAdJOreiDGyrCA7wueDPlEXq0HWYeke9iU133aggWJdfxTEST0%2FS4VYlSqdHZ66UDYzwnLSyBGxb24%2FJd9vuWTYm5quQu6UNyXaHpr2vDIrjonVs9ITUctHuGKKLZKz%2FfLQ4iCKwPd4hT9GOC%2Fyeg8akLAocqGFVdZ6BkxKZIf4s1z9IP2f4cvttBfYL0QOJOBy3cgXp06Nm%2FJ9M2h745sQ3Xk%2BHDG7KRfW%2FqIdFZMeWbhrFTNtKRq6HeNOFlcFTzCxncIseGhN71aB74HyRcGM34Df4D1XIlkKMqanklMpnrAhOrScS2sRY2jVqZghngnlueB96wKFNrSuvvxoFLPzZ4OqOZiUTd5I4N73UsrTWsBvvzSXlTcqNPaBVG4Gqo1wN%2BSWdSYfjkcIg%2BM0qVTX%2BpPoYgYU7ZaWdJWx3m9K5orOJTLS0aHvrIPKIkb59dAlcPut1wIm6vWHzo3JfEMIZ6srOf1Hw%2FjwYap7NWCDtRadSALhcSwFdzKC3Dx7etwmS5P4r3dct43yyYJgO%2Ft2WxXdsluKO91X0quMxe6ESi%2B1ahvA62wtY7mz5QFJ6a5p2j%2FnTabq3M9ApLG0l0hTOsQJK9puntGM0KRTDhr%2BnWBjqlARKuKpSAQJeUKAaxfcJIyvtRpj%2B%2FzUHlwjDLvi0nR5rajG%2B7N4v9G0lju%2BQUjToN4JJWEpOUaiTlGeHZjlU0VYGfN4EDMSD9c3EeF24NlNwbnVHuw1n6tCAzzQWCm8BYfAcFmuJNsctNsWNOZNYE2jP6GDEwONAeqif1Ibry86gR62GIitHi4NU64J96VfJeSC4mdE1Nr1ECspwKWmmsxKnK3CPCCw%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=04a6aa70464d3f62412861682b87975ba7575cfe6b2f990eb9ab4562d1704767
+company.founders[0].twitter_url: https://x.com/hanghuang_
+company.founders[0].has_email: True
+company.founders[0].latest_yc_company.name: InsForge (InstaCloud)
+company.founders[0].latest_yc_company.href: https://www.ycombinator.com/companies/insforge-instacloud
+company.founders[1].user_id: 2376097
+company.founders[1].is_active: True
+company.founders[1].founder_bio: Co-founder & CTO at InsForge. Previously Software Engineer at Databricks(Networking Infra). 
+Interned @ Meta(Ads ML Infra) & Amazon(Backend Infra) 
+
+Hackathon Addict :) 10x Wins + 9x judge
+company.founders[1].full_name: Tony Chang
+company.founders[1].title: Founder
+company.founders[1].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/d9ae957713ee880ded3c7c44a66eb2110e1fd999.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAJNHNFYFD%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184819Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIG47BGHzUC%2BpIVxbL2uhdqI6c3jHfZDbGf3M4U8ryg9xAiEA9khH0GtK4V6I5IfboUa%2BhCYNvvGPQntJ8WqdcfNsYlsq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDIIYsJOzAdJOreiDGyrCA7wueDPlEXq0HWYeke9iU133aggWJdfxTEST0%2FS4VYlSqdHZ66UDYzwnLSyBGxb24%2FJd9vuWTYm5quQu6UNyXaHpr2vDIrjonVs9ITUctHuGKKLZKz%2FfLQ4iCKwPd4hT9GOC%2Fyeg8akLAocqGFVdZ6BkxKZIf4s1z9IP2f4cvttBfYL0QOJOBy3cgXp06Nm%2FJ9M2h745sQ3Xk%2BHDG7KRfW%2FqIdFZMeWbhrFTNtKRq6HeNOFlcFTzCxncIseGhN71aB74HyRcGM34Df4D1XIlkKMqanklMpnrAhOrScS2sRY2jVqZghngnlueB96wKFNrSuvvxoFLPzZ4OqOZiUTd5I4N73UsrTWsBvvzSXlTcqNPaBVG4Gqo1wN%2BSWdSYfjkcIg%2BM0qVTX%2BpPoYgYU7ZaWdJWx3m9K5orOJTLS0aHvrIPKIkb59dAlcPut1wIm6vWHzo3JfEMIZ6srOf1Hw%2FjwYap7NWCDtRadSALhcSwFdzKC3Dx7etwmS5P4r3dct43yyYJgO%2Ft2WxXdsluKO91X0quMxe6ESi%2B1ahvA62wtY7mz5QFJ6a5p2j%2FnTabq3M9ApLG0l0hTOsQJK9puntGM0KRTDhr%2BnWBjqlARKuKpSAQJeUKAaxfcJIyvtRpj%2B%2FzUHlwjDLvi0nR5rajG%2B7N4v9G0lju%2BQUjToN4JJWEpOUaiTlGeHZjlU0VYGfN4EDMSD9c3EeF24NlNwbnVHuw1n6tCAzzQWCm8BYfAcFmuJNsctNsWNOZNYE2jP6GDEwONAeqif1Ibry86gR62GIitHi4NU64J96VfJeSC4mdE1Nr1ECspwKWmmsxKnK3CPCCw%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=5eee3f210151e4ff13cf93ad575638840b625f5476d7ec85587dd9a83cb6ef2d
+company.founders[1].twitter_url: https://x.com/tonychang430
+company.founders[1].has_email: True
+company.founders[1].latest_yc_company.name: InsForge (InstaCloud)
+company.founders[1].latest_yc_company.href: https://www.ycombinator.com/companies/insforge-instacloud
+jobPostings: (none)
+jobsUrl: https://bookface.ycombinator.com/workatastartup
+newsItems: (none)
+newsUrl: https://bookface.ycombinator.com/company/31547/company_news
+videos: (none)
+launches[0].id: 101500
+launches[0].title: InsForge: The backend platform for AI-native developers
+launches[0].state: public
+launches[0].tagline: Let your coding agent deploy, operate, and debug your backend end-to-end
+launches[0].created_at: 2026-05-18T15:39:09.065Z
+launches[0].company.id: 31547
+launches[0].company.name: InsForge (InstaCloud)
+launches[0].company.logo: https://bookface-images.s3.amazonaws.com/small_logos/de52713fe1552551dbe8aa2a5e60202c09bfc0d7.png
+launches[0].company.batch: p2026
+launches[0].company.tags[0]: Developer Tools
+launches[0].company.tags[1]: DevSecOps
+launches[0].company.tags[2]: Cloud Computing
+launches[0].company.tags[3]: Infrastructure
+launches[0].company.url: https://insforge.dev/
+launches[0].company.slug: insforge-instacloud
+launches[0].company.description: The agent-native serverless cloud
+launches[0].user.name: Hang Huang
+launches[0].user.avatar: https://bookface-images.s3.amazonaws.com/avatars/2058201598004fe3b3a6453fb39790a037aa9afc.jpg
+launches[0].total_vote_count: 33
+launches[0].slug: QP6-insforge-the-backend-platform-for-ai-native-developers
+launches[0].launch_embed_url: https://www.ycombinator.com/launches/QP6-insforge-the-backend-platform-for-ai-native-developers/upvote_embed.svg
+launches[0].twitter_share_url: https://twitter.com/intent/tweet?text=InsForge+%28InstaCloud%29+just+launched+on+%40ycombinator%27s+Launch+YC%21%0A%0AInsForge%3A+The+backend+platform+for+AI-native+developers.+Check+them+out%3A&url=https%3A%2F%2Fwww.ycombinator.com%2Flaunches%2FQP6-insforge-the-backend-platform-for-ai-native-developers
+launches[0].sanitized_title: InsForge: The backend platform for AI-native developers
+launches[0].ycdc_launch_url: https://www.ycombinator.com/launches/QP6-insforge-the-backend-platform-for-ai-native-developers
+launches[0].url: https://www.ycombinator.com/launches/QP6-insforge-the-backend-platform-for-ai-native-developers
+launches[0].share_config.url: /media/?type=post&id=101500&key=user_uploads/967495/90d7cdcf-0682-408c-bf3c-c5f192edf89b
+launches[0].share_image: None
+launches[0].approved_at: None
+launches[0].approved_by: None
+launches[0].requested_publish_at: 2026-05-18T18:00:00Z
+editUrl: https://bookface.ycombinator.com/company/31547/edit
+editUserUrl: https://bookface.ycombinator.com/edit_user_profile
+createProfileUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication&defaults%5BsignUpActive%5D=true
+signedIn: False
+showDirectApply: True
+waasDirectoryUrl: https://www.workatastartup.com/companies
+investorSubdomain: False
+userCanRequestEmails: False

@@ -1,0 +1,291 @@
+currentUser: None
+publicFounderProfilesEnabled: False
+disabledPublicVisibility: None
+company.id: 31470
+company.slug: tasklet-2
+company.name: Tasklet
+company.batch: P26
+company.batch_name: Spring 2026
+company.small_logo_url: https://bookface-images.s3.amazonaws.com/small_logos/81b17e42b6c7c39c503ac476a049465e7d2e530d.png
+company.one_liner: Agents that own the work
+company.website: https://tasklet.ai
+company.long_description: AI chatbots can answer questions, but they can't do your work — they aren't connected to your tools, can't take actions, and stop running when you close the tab. Meanwhile, knowledge workers are still spending most of their day switching between dozens of SaaS apps, manually stitching together workflows that should be automated.
+
+Tasklet is the AI agent that actually does the work. It connects to every tool you use — via thousands of built-in integrations, any HTTP API, or MCP servers — and takes real actions on your behalf: pulling reports, updating CRMs, triaging emails, processing data, and more. When it needs a UI, it generates one on the fly. When it needs to crunch numbers or do bulk operations, it writes and runs code in a cloud sandbox. When it needs to interact with a website that doesn't have an API, it uses a real browser. And because it runs in the cloud 24/7, you can set up triggers to have it take ongoing responsibility for workflows — not just do something once, but handle it going forward.
+
+The product is deliberately simple: a chat interface where you talk to an extremely capable agent. But underneath that simplicity is a cloud-native agent runtime, best-in-class context engineering, a universal connections layer, and multi-model support that keeps us on the frontier as AI improves. 
+
+We think legacy SaaS is being unbundled by agents, and Tasklet is the operating system that ties it all together.
+company.tags: (none)
+company.ycdc_status: Active
+company.logo_url: https://bookface-images.s3.us-west-2.amazonaws.com/logos/1b2bc69a76a5e43c68ca00cc0f3a7653322f80a6.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECADFBJ2B3P%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184819Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDFapybgM5X2dB17g%2B3ieHDav%2Bv%2B9b0hZ29dIn8Y4G7rAiEA8hNBG3LgRZhW%2F11OAxWG6UXxLrwK62%2BqmssXiqzsZTMq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDFZJA76A0sGxWPJ4JyrCA%2BOsBDvd%2BsjwadtTfFIKagB%2FoFFdSEsIWp1BG0bHrdAUSKg5lm1cqJgvYO%2BS4eYCSzmhX3trn6pgeDOsvAxLsApR9yE0oFdydqQoGl0p6sJ9r879sZxs9HdBtsXoXW7YZbgT%2FhOGePP6spwsf%2BCD6FuAc3%2BVjeI3IoEVIdmo4DFhlvMTRW5s8CdCc1fmQHlhKjpidfeoTyRRwfvft4sgVen3xoPdzEKIdBaRg0Ay8yCk3lQdfFB3s1GZJWgPfDfrfb9QlG2FkMF5rCsR6%2BLP60qaBuR1vfig0elzgCJx4Sq7mNLBJHcxoBuCi%2BK3dFmwoOhNFKBrA7t%2FzA3qnL6KzT6lXH7v6QFknn54IC9sqDUEYZTIUFldgegVLvZOY1x9hczScljQVZN3vlY5WyW5fQaoT3nLFbpQyR4ivt54R12hlAB%2BGWqiMB5M43v4qWNX4oYb0lG1Oaf5y6m948V3%2BUyFIr%2B04fi9zOA6B2m8r6EfYzXudjjlQmseNXpeO1OcwryDe%2B8kLMDBHvzkDoPLES5zvARPuFPdzqUkiy4jZ%2ByLblxFiX2SFY1ZLhjhJTb754Wc3LvVdamdtGMWmqJV5CIRcDDgr%2BnWBjqlAUu2%2F2rPS0APou9g3hjj7qM8nKkKkPh5hpECnXAia8SeaD2ANNazEcUwoUcm3jnrP1%2B4%2BclOjUL65aPUDZttf%2Bci6%2Bb%2BkAm6biS8FJUt86NU4yBVA8A%2FMPZSd5e%2Bwz2ii7D4Bh3YsGgqCYdX8n4DVLLKnZh68NhoxemMc2X6GcxeEvkqgfEWxEkSnSXZTT3ZqUyzBw082Uma%2FaAaUAKTwOvTMgv09A%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=269c9917ceb0190daa345ba87103372a1bfa191fe4f57c33a7b8b6f3c55fe007
+company.year_founded: 2025
+company.team_size: 8
+company.location: San Francisco
+company.city: San Francisco
+company.city_tag: san-francisco-bay-area
+company.country: US
+company.twitter_url: https://x.com/TaskletAI
+company.fb_url: 
+company.cb_url: 
+company.github_url: None
+company.free_response_question_answers[0].id: 1
+company.free_response_question_answers[0].answer: We met at Firebase and continued working together at Google after the acquisition. In 2020 we left to start a company together, initially building an email client called Shortwave. While adding an AI agent to Shortwave in late 2024, we noticed something surprising: some users kept asking for the agent and integrations without the email client. They wanted a general-purpose AI agent that could connect to all their work tools — not just email. So in 2025 we made a bold bet, building Tasklet as a standalone cloud AI agent for knowledge work.
+company.free_response_question_answers[0].question: How did your company get started? (i.e., How did the founders meet? How did you come up with the idea? How did you decide to be a founder?)
+company.free_response_question_answers[1].id: 4
+company.free_response_question_answers[1].answer: We founded the company in 2020 as a team of ex-Firebase/Google engineers. We initially built Shortwave, an AI-powered email client. After ChatGPT launched, we went all-in on AI and built a conversational assistant for email that showed real traction.\
+\
+In fall 2024 we shipped a full AI agent inside Shortwave — and growth accelerated. We started adding integrations with CRMs, project management tools, and messaging apps, and were among the first products to support MCP. That's when something unexpected happened: users started telling us they wanted the agent and integrations but didn't care about the email client.
+
+So in 2025 we made a bold move — we built Tasklet, a standalone cloud AI agent for knowledge work. We went from idea to first user in under 6 weeks, and it was a massive hit. Each new capability we shipped (v2 agent architecture, sandbox, computer use, triggers) accelerated growth further, and by January 2026 Tasklet alone was adding more monthly revenue than Shortwave had in its first 4 years.
+company.free_response_question_answers[1].question: What's the history of your company from getting started until the present day? What were the big inflection points?
+company.free_response_question_answers[2].id: 5
+company.free_response_question_answers[2].answer: AI chatbots can answer questions, but they can't actually do your work. They aren't connected to your tools, they can't take actions, and they stop running the moment you close the tab. The result is that knowledge workers still spend most of their day switching between dozens of SaaS apps — pulling data from one, updating another, copy-pasting between tabs, and stitching together workflows manually.\
+\
+We're building the AI agent that replaces all of that: one app that connects to every tool you use, runs 24/7 in the cloud, can use a computer, and can take ongoing responsibility for entire workflows.
+company.free_response_question_answers[2].question: What is the core problem you are solving? Why is this a big problem? What made you decide to work on it?
+company.free_response_question_answers[3].id: 6
+company.free_response_question_answers[3].answer: In the long run, we believe most knowledge work will be done by AI agents, not humans. Tasklet is the operating system for that future — the place where you manage, direct, and collaborate with agents that handle your work across every tool.
+
+If we truly succeed, the average knowledge worker will 10x their output not by working harder, but by delegating most of their routine work to agents that run 24/7. Legacy SaaS apps will fade into background infrastructure that agents access via API, and the human's job shifts from doing the work to directing it. We think this is as big a shift as the move from desktop software to cloud — and we're building the platform that makes it happen.
+company.free_response_question_answers[3].question: What is your long-term vision? If you truly succeed, what will be different about the world?
+company.dday_video_url: None
+company.app_video_url: None
+company.app_answers: (none)
+company.ycdc_url: https://www.ycombinator.com/companies/tasklet-2
+company.company_photos[0].id: 1071
+company.company_photos[0].url: https://bookface-images.s3.us-west-2.amazonaws.com/attachments/8d5edbeb92eeab98b82eab9506397d176a5ac977.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECADFBJ2B3P%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184819Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDFapybgM5X2dB17g%2B3ieHDav%2Bv%2B9b0hZ29dIn8Y4G7rAiEA8hNBG3LgRZhW%2F11OAxWG6UXxLrwK62%2BqmssXiqzsZTMq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDFZJA76A0sGxWPJ4JyrCA%2BOsBDvd%2BsjwadtTfFIKagB%2FoFFdSEsIWp1BG0bHrdAUSKg5lm1cqJgvYO%2BS4eYCSzmhX3trn6pgeDOsvAxLsApR9yE0oFdydqQoGl0p6sJ9r879sZxs9HdBtsXoXW7YZbgT%2FhOGePP6spwsf%2BCD6FuAc3%2BVjeI3IoEVIdmo4DFhlvMTRW5s8CdCc1fmQHlhKjpidfeoTyRRwfvft4sgVen3xoPdzEKIdBaRg0Ay8yCk3lQdfFB3s1GZJWgPfDfrfb9QlG2FkMF5rCsR6%2BLP60qaBuR1vfig0elzgCJx4Sq7mNLBJHcxoBuCi%2BK3dFmwoOhNFKBrA7t%2FzA3qnL6KzT6lXH7v6QFknn54IC9sqDUEYZTIUFldgegVLvZOY1x9hczScljQVZN3vlY5WyW5fQaoT3nLFbpQyR4ivt54R12hlAB%2BGWqiMB5M43v4qWNX4oYb0lG1Oaf5y6m948V3%2BUyFIr%2B04fi9zOA6B2m8r6EfYzXudjjlQmseNXpeO1OcwryDe%2B8kLMDBHvzkDoPLES5zvARPuFPdzqUkiy4jZ%2ByLblxFiX2SFY1ZLhjhJTb754Wc3LvVdamdtGMWmqJV5CIRcDDgr%2BnWBjqlAUu2%2F2rPS0APou9g3hjj7qM8nKkKkPh5hpECnXAia8SeaD2ANNazEcUwoUcm3jnrP1%2B4%2BclOjUL65aPUDZttf%2Bci6%2Bb%2BkAm6biS8FJUt86NU4yBVA8A%2FMPZSd5e%2Bwz2ii7D4Bh3YsGgqCYdX8n4DVLLKnZh68NhoxemMc2X6GcxeEvkqgfEWxEkSnSXZTT3ZqUyzBw082Uma%2FaAaUAKTwOvTMgv09A%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=3bae1c2ce16e605d06790bbfa67e0f5b03a4d054f73c5e523ed5efd6698c9b8e
+company.company_photos[0].photo_type: sign
+company.primary_group_partner.id: 18194
+company.primary_group_partner.full_name: Andrew Miklas
+company.primary_group_partner.avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/5cc81ee2e3dd733f0d777d4391fb94430df03378.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECADFBJ2B3P%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184819Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDFapybgM5X2dB17g%2B3ieHDav%2Bv%2B9b0hZ29dIn8Y4G7rAiEA8hNBG3LgRZhW%2F11OAxWG6UXxLrwK62%2BqmssXiqzsZTMq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDFZJA76A0sGxWPJ4JyrCA%2BOsBDvd%2BsjwadtTfFIKagB%2FoFFdSEsIWp1BG0bHrdAUSKg5lm1cqJgvYO%2BS4eYCSzmhX3trn6pgeDOsvAxLsApR9yE0oFdydqQoGl0p6sJ9r879sZxs9HdBtsXoXW7YZbgT%2FhOGePP6spwsf%2BCD6FuAc3%2BVjeI3IoEVIdmo4DFhlvMTRW5s8CdCc1fmQHlhKjpidfeoTyRRwfvft4sgVen3xoPdzEKIdBaRg0Ay8yCk3lQdfFB3s1GZJWgPfDfrfb9QlG2FkMF5rCsR6%2BLP60qaBuR1vfig0elzgCJx4Sq7mNLBJHcxoBuCi%2BK3dFmwoOhNFKBrA7t%2FzA3qnL6KzT6lXH7v6QFknn54IC9sqDUEYZTIUFldgegVLvZOY1x9hczScljQVZN3vlY5WyW5fQaoT3nLFbpQyR4ivt54R12hlAB%2BGWqiMB5M43v4qWNX4oYb0lG1Oaf5y6m948V3%2BUyFIr%2B04fi9zOA6B2m8r6EfYzXudjjlQmseNXpeO1OcwryDe%2B8kLMDBHvzkDoPLES5zvARPuFPdzqUkiy4jZ%2ByLblxFiX2SFY1ZLhjhJTb754Wc3LvVdamdtGMWmqJV5CIRcDDgr%2BnWBjqlAUu2%2F2rPS0APou9g3hjj7qM8nKkKkPh5hpECnXAia8SeaD2ANNazEcUwoUcm3jnrP1%2B4%2BclOjUL65aPUDZttf%2Bci6%2Bb%2BkAm6biS8FJUt86NU4yBVA8A%2FMPZSd5e%2Bwz2ii7D4Bh3YsGgqCYdX8n4DVLLKnZh68NhoxemMc2X6GcxeEvkqgfEWxEkSnSXZTT3ZqUyzBw082Uma%2FaAaUAKTwOvTMgv09A%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=4552d11673e3a848146d104ab59917b72d9d78d8426d5d242169642135fb9af2
+company.primary_group_partner.url: https://www.ycombinator.com/people/andrew-miklas
+company.founders[0].user_id: 9178
+company.founders[0].is_active: True
+company.founders[0].founder_bio: Current: founder at Tasklet
+Formerly: founder at Firebase & Shortwave
+
+company.founders[0].full_name: Andrew Lee
+company.founders[0].title: Founder/CEO
+company.founders[0].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/3f4f2dc761f3a9b6dfd2089cc1a88cc449023acc.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECADFBJ2B3P%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184819Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDFapybgM5X2dB17g%2B3ieHDav%2Bv%2B9b0hZ29dIn8Y4G7rAiEA8hNBG3LgRZhW%2F11OAxWG6UXxLrwK62%2BqmssXiqzsZTMq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDFZJA76A0sGxWPJ4JyrCA%2BOsBDvd%2BsjwadtTfFIKagB%2FoFFdSEsIWp1BG0bHrdAUSKg5lm1cqJgvYO%2BS4eYCSzmhX3trn6pgeDOsvAxLsApR9yE0oFdydqQoGl0p6sJ9r879sZxs9HdBtsXoXW7YZbgT%2FhOGePP6spwsf%2BCD6FuAc3%2BVjeI3IoEVIdmo4DFhlvMTRW5s8CdCc1fmQHlhKjpidfeoTyRRwfvft4sgVen3xoPdzEKIdBaRg0Ay8yCk3lQdfFB3s1GZJWgPfDfrfb9QlG2FkMF5rCsR6%2BLP60qaBuR1vfig0elzgCJx4Sq7mNLBJHcxoBuCi%2BK3dFmwoOhNFKBrA7t%2FzA3qnL6KzT6lXH7v6QFknn54IC9sqDUEYZTIUFldgegVLvZOY1x9hczScljQVZN3vlY5WyW5fQaoT3nLFbpQyR4ivt54R12hlAB%2BGWqiMB5M43v4qWNX4oYb0lG1Oaf5y6m948V3%2BUyFIr%2B04fi9zOA6B2m8r6EfYzXudjjlQmseNXpeO1OcwryDe%2B8kLMDBHvzkDoPLES5zvARPuFPdzqUkiy4jZ%2ByLblxFiX2SFY1ZLhjhJTb754Wc3LvVdamdtGMWmqJV5CIRcDDgr%2BnWBjqlAUu2%2F2rPS0APou9g3hjj7qM8nKkKkPh5hpECnXAia8SeaD2ANNazEcUwoUcm3jnrP1%2B4%2BclOjUL65aPUDZttf%2Bci6%2Bb%2BkAm6biS8FJUt86NU4yBVA8A%2FMPZSd5e%2Bwz2ii7D4Bh3YsGgqCYdX8n4DVLLKnZh68NhoxemMc2X6GcxeEvkqgfEWxEkSnSXZTT3ZqUyzBw082Uma%2FaAaUAKTwOvTMgv09A%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=7bc7317c709f1e99820d040fdfeb071fc7857da9d4b8c360dc1fb757ebde7415
+company.founders[0].twitter_url: https://twitter.com/startupandrew
+company.founders[0].has_email: True
+company.founders[0].latest_yc_company.name: Tasklet
+company.founders[0].latest_yc_company.href: https://www.ycombinator.com/companies/tasklet-2
+company.founders[1].user_id: 3465650
+company.founders[1].is_active: True
+company.founders[1].founder_bio: Putting agents to work @ Tasklet
+company.founders[1].full_name: Jonny Dimond
+company.founders[1].title: Founder
+company.founders[1].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/f27ef0f6587f0bd991ebb2f466a430a8eedb6cf4.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECADFBJ2B3P%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184819Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDFapybgM5X2dB17g%2B3ieHDav%2Bv%2B9b0hZ29dIn8Y4G7rAiEA8hNBG3LgRZhW%2F11OAxWG6UXxLrwK62%2BqmssXiqzsZTMq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDFZJA76A0sGxWPJ4JyrCA%2BOsBDvd%2BsjwadtTfFIKagB%2FoFFdSEsIWp1BG0bHrdAUSKg5lm1cqJgvYO%2BS4eYCSzmhX3trn6pgeDOsvAxLsApR9yE0oFdydqQoGl0p6sJ9r879sZxs9HdBtsXoXW7YZbgT%2FhOGePP6spwsf%2BCD6FuAc3%2BVjeI3IoEVIdmo4DFhlvMTRW5s8CdCc1fmQHlhKjpidfeoTyRRwfvft4sgVen3xoPdzEKIdBaRg0Ay8yCk3lQdfFB3s1GZJWgPfDfrfb9QlG2FkMF5rCsR6%2BLP60qaBuR1vfig0elzgCJx4Sq7mNLBJHcxoBuCi%2BK3dFmwoOhNFKBrA7t%2FzA3qnL6KzT6lXH7v6QFknn54IC9sqDUEYZTIUFldgegVLvZOY1x9hczScljQVZN3vlY5WyW5fQaoT3nLFbpQyR4ivt54R12hlAB%2BGWqiMB5M43v4qWNX4oYb0lG1Oaf5y6m948V3%2BUyFIr%2B04fi9zOA6B2m8r6EfYzXudjjlQmseNXpeO1OcwryDe%2B8kLMDBHvzkDoPLES5zvARPuFPdzqUkiy4jZ%2ByLblxFiX2SFY1ZLhjhJTb754Wc3LvVdamdtGMWmqJV5CIRcDDgr%2BnWBjqlAUu2%2F2rPS0APou9g3hjj7qM8nKkKkPh5hpECnXAia8SeaD2ANNazEcUwoUcm3jnrP1%2B4%2BclOjUL65aPUDZttf%2Bci6%2Bb%2BkAm6biS8FJUt86NU4yBVA8A%2FMPZSd5e%2Bwz2ii7D4Bh3YsGgqCYdX8n4DVLLKnZh68NhoxemMc2X6GcxeEvkqgfEWxEkSnSXZTT3ZqUyzBw082Uma%2FaAaUAKTwOvTMgv09A%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=83da9be36af66ccc5c8c2ff9286ca25fdff2e68b0dd4de4ea3f8b9ebe67d6d8a
+company.founders[1].twitter_url: https://x.com/jonnydimond
+company.founders[1].has_email: True
+company.founders[1].latest_yc_company.name: Tasklet
+company.founders[1].latest_yc_company.href: https://www.ycombinator.com/companies/tasklet-2
+jobPostings[0].id: 92948
+jobPostings[0].title: Head of Design Engineering
+jobPostings[0].url: /companies/tasklet-2/jobs/Qz919CA-head-of-design-engineering
+jobPostings[0].applyUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication%3Fsignup_job_id%3D92948&defaults%5BsignUpActive%5D=true&defaults%5Bwaas_company%5D=31470
+jobPostings[0].location: San Francisco, CA, US
+jobPostings[0].askUs: True
+jobPostings[0].type: Full-time
+jobPostings[0].role: design
+jobPostings[0].roleSpecificType: Product design
+jobPostings[0].prettyRole: Design
+jobPostings[0].salaryRange: $300K - $450K
+jobPostings[0].equityRange: 0.35% - 0.70%
+jobPostings[0].minExperience: 6+ years
+jobPostings[0].minSchoolYear: None
+jobPostings[0].visa: US citizenship/visa not required
+jobPostings[0].skills: (none)
+jobPostings[0].isIncomplete: False
+jobPostings[0].companyUrl: /companies/tasklet-2
+jobPostings[0].companyLogoUrl: https://bookface-images.s3.amazonaws.com/small_logos/81b17e42b6c7c39c503ac476a049465e7d2e530d.png
+jobPostings[0].companyName: Tasklet
+jobPostings[0].companyBatchName: P26
+jobPostings[0].companyOneLiner: Agents that own the work
+jobPostings[0].hiringManager: None
+jobPostings[0].createdAt: 7 months
+jobPostings[0].lastActive: None
+jobPostings[1].id: 92949
+jobPostings[1].title: Software Engineer — AI Infra
+jobPostings[1].url: /companies/tasklet-2/jobs/OXrYogv-software-engineer-ai-infra
+jobPostings[1].applyUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication%3Fsignup_job_id%3D92949&defaults%5BsignUpActive%5D=true&defaults%5Bwaas_company%5D=31470
+jobPostings[1].location: San Francisco, CA, US
+jobPostings[1].askUs: True
+jobPostings[1].type: Full-time
+jobPostings[1].role: eng
+jobPostings[1].roleSpecificType: Backend
+jobPostings[1].prettyRole: Engineering
+jobPostings[1].salaryRange: $225K - $425K
+jobPostings[1].equityRange: 0.20% - 0.65%
+jobPostings[1].minExperience: 11+ years
+jobPostings[1].minSchoolYear: None
+jobPostings[1].visa: US citizenship/visa not required
+jobPostings[1].skills: (none)
+jobPostings[1].isIncomplete: False
+jobPostings[1].companyUrl: /companies/tasklet-2
+jobPostings[1].companyLogoUrl: https://bookface-images.s3.amazonaws.com/small_logos/81b17e42b6c7c39c503ac476a049465e7d2e530d.png
+jobPostings[1].companyName: Tasklet
+jobPostings[1].companyBatchName: P26
+jobPostings[1].companyOneLiner: Agents that own the work
+jobPostings[1].hiringManager: None
+jobPostings[1].createdAt: 7 months
+jobPostings[1].lastActive: None
+jobPostings[2].id: 92950
+jobPostings[2].title: Software Engineer — Platform
+jobPostings[2].url: /companies/tasklet-2/jobs/HUSklWt-software-engineer-platform
+jobPostings[2].applyUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication%3Fsignup_job_id%3D92950&defaults%5BsignUpActive%5D=true&defaults%5Bwaas_company%5D=31470
+jobPostings[2].location: San Francisco, CA, US
+jobPostings[2].askUs: True
+jobPostings[2].type: Full-time
+jobPostings[2].role: eng
+jobPostings[2].roleSpecificType: Backend
+jobPostings[2].prettyRole: Engineering
+jobPostings[2].salaryRange: $225K - $425K
+jobPostings[2].equityRange: 0.20% - 0.65%
+jobPostings[2].minExperience: 6+ years
+jobPostings[2].minSchoolYear: None
+jobPostings[2].visa: US citizenship/visa not required
+jobPostings[2].skills: (none)
+jobPostings[2].isIncomplete: False
+jobPostings[2].companyUrl: /companies/tasklet-2
+jobPostings[2].companyLogoUrl: https://bookface-images.s3.amazonaws.com/small_logos/81b17e42b6c7c39c503ac476a049465e7d2e530d.png
+jobPostings[2].companyName: Tasklet
+jobPostings[2].companyBatchName: P26
+jobPostings[2].companyOneLiner: Agents that own the work
+jobPostings[2].hiringManager: None
+jobPostings[2].createdAt: 7 months
+jobPostings[2].lastActive: None
+jobPostings[3].id: 94464
+jobPostings[3].title: Customer Success Engineer
+jobPostings[3].url: /companies/tasklet-2/jobs/UcpBWuw-customer-success-engineer
+jobPostings[3].applyUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication%3Fsignup_job_id%3D94464&defaults%5BsignUpActive%5D=true&defaults%5Bwaas_company%5D=31470
+jobPostings[3].location: San Francisco, CA, US
+jobPostings[3].askUs: True
+jobPostings[3].type: Full-time
+jobPostings[3].role: support
+jobPostings[3].roleSpecificType: None
+jobPostings[3].prettyRole: Support
+jobPostings[3].salaryRange: $140K - $185K
+jobPostings[3].equityRange: 
+jobPostings[3].minExperience: Any (new grads ok)
+jobPostings[3].minSchoolYear: None
+jobPostings[3].visa: US citizen/visa only
+jobPostings[3].skills: (none)
+jobPostings[3].isIncomplete: False
+jobPostings[3].companyUrl: /companies/tasklet-2
+jobPostings[3].companyLogoUrl: https://bookface-images.s3.amazonaws.com/small_logos/81b17e42b6c7c39c503ac476a049465e7d2e530d.png
+jobPostings[3].companyName: Tasklet
+jobPostings[3].companyBatchName: P26
+jobPostings[3].companyOneLiner: Agents that own the work
+jobPostings[3].hiringManager: None
+jobPostings[3].createdAt: 6 months
+jobPostings[3].lastActive: 11 days
+jobPostings[4].id: 94748
+jobPostings[4].title: Software Engineer — Product
+jobPostings[4].url: /companies/tasklet-2/jobs/8WgDV4q-software-engineer-product
+jobPostings[4].applyUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication%3Fsignup_job_id%3D94748&defaults%5BsignUpActive%5D=true&defaults%5Bwaas_company%5D=31470
+jobPostings[4].location: San Francisco, CA, US
+jobPostings[4].askUs: True
+jobPostings[4].type: Full-time
+jobPostings[4].role: eng
+jobPostings[4].roleSpecificType: Full stack
+jobPostings[4].prettyRole: Engineering
+jobPostings[4].salaryRange: $225K - $425K
+jobPostings[4].equityRange: 0.20% - 0.65%
+jobPostings[4].minExperience: Any (new grads ok)
+jobPostings[4].minSchoolYear: None
+jobPostings[4].visa: US citizenship/visa not required
+jobPostings[4].skills: (none)
+jobPostings[4].isIncomplete: False
+jobPostings[4].companyUrl: /companies/tasklet-2
+jobPostings[4].companyLogoUrl: https://bookface-images.s3.amazonaws.com/small_logos/81b17e42b6c7c39c503ac476a049465e7d2e530d.png
+jobPostings[4].companyName: Tasklet
+jobPostings[4].companyBatchName: P26
+jobPostings[4].companyOneLiner: Agents that own the work
+jobPostings[4].hiringManager: None
+jobPostings[4].createdAt: 5 months
+jobPostings[4].lastActive: None
+jobsUrl: https://bookface.ycombinator.com/workatastartup
+newsItems: (none)
+newsUrl: https://bookface.ycombinator.com/company/31470/company_news
+videos: (none)
+launches[0].id: 99481
+launches[0].title: Tasklet – The cloud agent OS for knowledge work
+launches[0].body: Hey YC! 👋
+
+We're Andrew and Jonny, and we're building **Tasklet** — the cloud agent operating system for knowledge work.
+
+Tasklet’s AI agents connect to every tool you use at work and actually get things done — pulling reports, updating CRMs, processing data, triaging emails, and more. They run 24/7 in the cloud and take ongoing responsibility for your workflows. We've grown &gt;**1,200% since January 1** to **$5M ARR** and just raised **$20M** from USV, Lightspeed, Jeff Dean, the Collison brothers, and others.
+
+<https://youtu.be/sriwtDYi6XQ>
+
+### ❌ The Problem
+
+AGI is here, but knowledge workers still spend their days switching between dozens of SaaS apps, manually copying data between tools, and stitching together workflows that should be automated.
+
+AI chatbots can answer questions, but they can't actually _do_ your work — they aren't connected to your tools, can't take real actions, and stop running when you close the tab.
+
+### 🛠 What We Built
+
+Tasklet is a single, powerful AI agent that:
+
+* **Connects to everything** — thousands of built-in integrations, any HTTP API, any MCP server, or a full cloud browser for sites without APIs
+* **Takes real actions** — not just answering questions, but doing the work across all your tools
+* **Runs 24/7 in the cloud** — set up triggers (schedules, emails, Slack messages, webhooks) and Tasklet handles workflows autonomously, even when you're asleep
+* **Generates UIs on the fly** — need a dashboard, form, or visualization? It creates one instantly
+* **Writes and runs code** — crunches numbers, processes data, and handles bulk operations in a cloud sandbox
+* **Gets smarter over time** — we automatically improve your agents as new models & technologies come out.
+
+The product is deliberately simple: a chat interface where you talk to an extremely capable agent. But underneath that simplicity is a cloud-native runtime, best-in-class context engineering, and a universal connections layer.
+
+### 📈 Traction
+
+* **&gt;1,200% growth** since January 1
+* **$5M ARR** and accelerating
+* Just raised **$20M** at a **$175M valuation** from **USV, Lightspeed, Jeff Dean, Patrick & John Collison, and others**
+
+### 👥 The Team
+
+Andrew previously founded **Firebase** (YC S11 — acquired by Google) and is back at YC to seize the moment. Jonny was an early Firebaser and the technical lead for Google Cloud Firestore. We lead a 9-person team in San Francisco with deep experience in agent systems, cloud infrastructure, and productivity tools from their time at Firebase, Google, Amazon, and OpenAI.
+
+### 🚀 Try Tasklet & Help us find talent
+
+👉 **Sign up at [tasklet.ai](http://tasklet.ai) and put your new AI agent to work.**
+
+👉 **We're hiring!** 11 open roles across engineering, design, marketing, and more. We’re offering a $20k referral bonus. [Check out our careers page.](https://tasklet.notion.site/Open-Positions-at-Tasklet-2a3688565308819fa2f7e9440b5729fa)
+
+We'd love to hear what you think — drop a comment and tell us what’s working well & what isn’t.
+launches[0].state: public
+launches[0].tagline: AI agents that connect to all your tools, use computers in the cloud, and run automatically 24/7 to get real work done
+launches[0].created_at: 2026-04-07T16:48:20.499Z
+launches[0].company.id: 31470
+launches[0].company.name: Tasklet
+launches[0].company.logo: https://bookface-images.s3.amazonaws.com/small_logos/81b17e42b6c7c39c503ac476a049465e7d2e530d.png
+launches[0].company.batch: p2026
+launches[0].company.tags: (none)
+launches[0].company.url: https://tasklet.ai
+launches[0].company.slug: tasklet-2
+launches[0].company.description: Agents that own the work
+launches[0].user.name: Andrew Lee
+launches[0].user.avatar: https://bookface-images.s3.amazonaws.com/avatars/3f4f2dc761f3a9b6dfd2089cc1a88cc449023acc.jpg
+launches[0].total_vote_count: 39
+launches[0].slug: PsX-tasklet-the-cloud-agent-os-for-knowledge-work
+launches[0].launch_embed_url: https://www.ycombinator.com/launches/PsX-tasklet-the-cloud-agent-os-for-knowledge-work/upvote_embed.svg
+launches[0].twitter_share_url: https://twitter.com/intent/tweet?text=Tasklet+just+launched+on+%40ycombinator%27s+Launch+YC%21%0A%0ATasklet+%E2%80%93+The+cloud+agent+OS+for+knowledge+work.+Check+them+out%3A&url=https%3A%2F%2Fwww.ycombinator.com%2Flaunches%2FPsX-tasklet-the-cloud-agent-os-for-knowledge-work
+launches[0].sanitized_title: Tasklet – The cloud agent OS for knowledge work
+launches[0].ycdc_launch_url: https://www.ycombinator.com/launches/PsX-tasklet-the-cloud-agent-os-for-knowledge-work
+launches[0].url: https://www.ycombinator.com/launches/PsX-tasklet-the-cloud-agent-os-for-knowledge-work
+launches[0].share_image: None
+launches[0].approved_at: None
+launches[0].approved_by: None
+launches[0].requested_publish_at: 2026-04-07T19:00:00Z
+editUrl: https://bookface.ycombinator.com/company/31470/edit
+editUserUrl: https://bookface.ycombinator.com/edit_user_profile
+createProfileUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication&defaults%5BsignUpActive%5D=true
+signedIn: False
+showDirectApply: True
+waasDirectoryUrl: https://www.workatastartup.com/companies
+investorSubdomain: False
+userCanRequestEmails: False

@@ -1,0 +1,227 @@
+currentUser: None
+publicFounderProfilesEnabled: False
+disabledPublicVisibility: None
+company.id: 31222
+company.slug: superset
+company.name: Superset
+company.batch: P26
+company.batch_name: Spring 2026
+company.small_logo_url: https://bookface-images.s3.amazonaws.com/small_logos/9c4aa01fc589ba1d208558f7b720c6081f672b08.png
+company.one_liner: Building self-improving software
+company.website: https://www.superset.sh/
+company.long_description: Superset is an open-source IDE that helps engineers run 100s of coding agents in parallel.
+
+Our desktop app is loved by tens of thousands of engineers, and we're scaling out our effort to build a collaborative, cross-platform tool to allow users to code anywhere.
+company.tags[0]: Developer Tools
+company.tags[1]: Consumer
+company.tags[2]: B2B
+company.tags[3]: Enterprise Software
+company.tags[4]: AI
+company.ycdc_status: Active
+company.logo_url: https://bookface-images.s3.us-west-2.amazonaws.com/logos/8976b703a7ffd33c610ee62e2ed8603df773e99d.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAMEBF2EWZ%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184814Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHZz5jxJmu4km8jz%2FN%2BxyRbnmrGG6iRaE1s7A4wPNb0hAiEAh%2FdV6ByeNR5iLxaOjiodRzjD%2BLyABmN4HJgAyrZKOoEq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDOIOIEE4zL6fpCqMJSrCA3Ti4dFxlxmPRy0FD7abv2xH3kkH8pCgee01yPfiAODKrW7u4VsEnE%2BDLsBaEZlF9orRgBcaYSgDv19ExMeLXWplGhmnTR59XLZfayYHCPn50iybhnf8IYfdPMXaZYtj03wN1BT8n4EkAkIn9NQQI8sTOMAX4EVZNLAqyIF1SRbLQXHI5z%2BwlFu2bybSr7h0noHyNxiTeqGh2WhxDIc1wpzPUFmruuEPOlNJtOC10aYB8eVJfEAOWqWb8LD18%2FmavPFKTF6GUB1hLb%2F16HGH9B9c6eEQ2f7D1MplPw%2BwqKaB%2BT5km2NBrjPd%2BOXNuPHzyXgubsuOid%2FWnjiXkWaUwPiGtERRVfwBbockag8x2zf7JziPSxXShoMgTl0Rf3cD2%2BvSe%2FXGukRO3tFxKX7QlMaFqqnbPBLGdKPSY9wF14Vmf0QolKeln4n64%2F6tfOoqLgAZ2r2AavBMwOnVMvnq%2BIhmDQf%2B7XPIE8MF3yPjMRiMzmYlzk4ieduMWd0cIFtb0yrlQGeaHKf8W1JKq81pOaR9IVD2qy0t0tojrSxNcfm5KSlPj6xjQI635jUGzvU74ZMGFGw2IfFmdCLl%2BlJ2PPeQtjDhr%2BnWBjqlARp1Ptj1P4pLmbLmcnldFzQ0xq5h3Y5IZanfMIjYgBXrm%2BB%2FddFwqJr7sQlfDirRY6LzFvQ5GsaZLwItuZBGXOwNE6Rhw9mep2yBeB6pp%2B3zcYAzfiHlr8ALFJ40p8d98LuCGsOkbwfjEs3fh34Em%2F63ikLkrYIdj6PlhD0z6a8ZVPetlUQ82nHF8GvulfoUoGXERb3adZz28B6VZp8DWgKnx0DXlA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=58286027d15880845088999d2fe132bdbfe0986b520c05f7cd584a8ff6f74a0e
+company.year_founded: 2026
+company.team_size: 4
+company.location: San Francisco
+company.city: San Francisco
+company.city_tag: san-francisco-bay-area
+company.country: US
+company.twitter_url: https://x.com/superset_sh
+company.fb_url: 
+company.cb_url: 
+company.github_url: https://github.com/superset-sh/
+company.free_response_question_answers: (none)
+company.dday_video_url: None
+company.app_video_url: None
+company.app_answers: (none)
+company.ycdc_url: https://www.ycombinator.com/companies/superset
+company.company_photos[0].id: 1047
+company.company_photos[0].url: https://bookface-images.s3.us-west-2.amazonaws.com/attachments/7d7985153e3f3f3657501cad87d810751a2de2c3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAMEBF2EWZ%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184814Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHZz5jxJmu4km8jz%2FN%2BxyRbnmrGG6iRaE1s7A4wPNb0hAiEAh%2FdV6ByeNR5iLxaOjiodRzjD%2BLyABmN4HJgAyrZKOoEq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDOIOIEE4zL6fpCqMJSrCA3Ti4dFxlxmPRy0FD7abv2xH3kkH8pCgee01yPfiAODKrW7u4VsEnE%2BDLsBaEZlF9orRgBcaYSgDv19ExMeLXWplGhmnTR59XLZfayYHCPn50iybhnf8IYfdPMXaZYtj03wN1BT8n4EkAkIn9NQQI8sTOMAX4EVZNLAqyIF1SRbLQXHI5z%2BwlFu2bybSr7h0noHyNxiTeqGh2WhxDIc1wpzPUFmruuEPOlNJtOC10aYB8eVJfEAOWqWb8LD18%2FmavPFKTF6GUB1hLb%2F16HGH9B9c6eEQ2f7D1MplPw%2BwqKaB%2BT5km2NBrjPd%2BOXNuPHzyXgubsuOid%2FWnjiXkWaUwPiGtERRVfwBbockag8x2zf7JziPSxXShoMgTl0Rf3cD2%2BvSe%2FXGukRO3tFxKX7QlMaFqqnbPBLGdKPSY9wF14Vmf0QolKeln4n64%2F6tfOoqLgAZ2r2AavBMwOnVMvnq%2BIhmDQf%2B7XPIE8MF3yPjMRiMzmYlzk4ieduMWd0cIFtb0yrlQGeaHKf8W1JKq81pOaR9IVD2qy0t0tojrSxNcfm5KSlPj6xjQI635jUGzvU74ZMGFGw2IfFmdCLl%2BlJ2PPeQtjDhr%2BnWBjqlARp1Ptj1P4pLmbLmcnldFzQ0xq5h3Y5IZanfMIjYgBXrm%2BB%2FddFwqJr7sQlfDirRY6LzFvQ5GsaZLwItuZBGXOwNE6Rhw9mep2yBeB6pp%2B3zcYAzfiHlr8ALFJ40p8d98LuCGsOkbwfjEs3fh34Em%2F63ikLkrYIdj6PlhD0z6a8ZVPetlUQ82nHF8GvulfoUoGXERb3adZz28B6VZp8DWgKnx0DXlA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=323ecf9d5ed9697eae50fb78c16486adfe1e7ce855f5fd0c58a681a21926e6ea
+company.company_photos[0].photo_type: team
+company.primary_group_partner.id: 5628
+company.primary_group_partner.full_name: Nicolas Dessaigne
+company.primary_group_partner.avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/2827f95ab4f63f6fc0195211105d03de01ff1381.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAMEBF2EWZ%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184814Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHZz5jxJmu4km8jz%2FN%2BxyRbnmrGG6iRaE1s7A4wPNb0hAiEAh%2FdV6ByeNR5iLxaOjiodRzjD%2BLyABmN4HJgAyrZKOoEq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDOIOIEE4zL6fpCqMJSrCA3Ti4dFxlxmPRy0FD7abv2xH3kkH8pCgee01yPfiAODKrW7u4VsEnE%2BDLsBaEZlF9orRgBcaYSgDv19ExMeLXWplGhmnTR59XLZfayYHCPn50iybhnf8IYfdPMXaZYtj03wN1BT8n4EkAkIn9NQQI8sTOMAX4EVZNLAqyIF1SRbLQXHI5z%2BwlFu2bybSr7h0noHyNxiTeqGh2WhxDIc1wpzPUFmruuEPOlNJtOC10aYB8eVJfEAOWqWb8LD18%2FmavPFKTF6GUB1hLb%2F16HGH9B9c6eEQ2f7D1MplPw%2BwqKaB%2BT5km2NBrjPd%2BOXNuPHzyXgubsuOid%2FWnjiXkWaUwPiGtERRVfwBbockag8x2zf7JziPSxXShoMgTl0Rf3cD2%2BvSe%2FXGukRO3tFxKX7QlMaFqqnbPBLGdKPSY9wF14Vmf0QolKeln4n64%2F6tfOoqLgAZ2r2AavBMwOnVMvnq%2BIhmDQf%2B7XPIE8MF3yPjMRiMzmYlzk4ieduMWd0cIFtb0yrlQGeaHKf8W1JKq81pOaR9IVD2qy0t0tojrSxNcfm5KSlPj6xjQI635jUGzvU74ZMGFGw2IfFmdCLl%2BlJ2PPeQtjDhr%2BnWBjqlARp1Ptj1P4pLmbLmcnldFzQ0xq5h3Y5IZanfMIjYgBXrm%2BB%2FddFwqJr7sQlfDirRY6LzFvQ5GsaZLwItuZBGXOwNE6Rhw9mep2yBeB6pp%2B3zcYAzfiHlr8ALFJ40p8d98LuCGsOkbwfjEs3fh34Em%2F63ikLkrYIdj6PlhD0z6a8ZVPetlUQ82nHF8GvulfoUoGXERb3adZz28B6VZp8DWgKnx0DXlA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=e155c2563de0254e166d364bd6fb1d54b3620f19a82314be8c51c809da9c5ef8
+company.primary_group_partner.url: https://www.ycombinator.com/people/nicolas-dessaigne
+company.founders[0].user_id: 276516
+company.founders[0].is_active: True
+company.founders[0].founder_bio: Co-Founder at Superset
+prev cofounder at Onlook (W25), swe at Amazon, ServiceNow
+company.founders[0].full_name: Kiet Ho
+company.founders[0].title: Founder/CEO
+company.founders[0].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/be990abee447e67c96fc01cb7c94ab41f17d7381.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAMEBF2EWZ%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184814Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHZz5jxJmu4km8jz%2FN%2BxyRbnmrGG6iRaE1s7A4wPNb0hAiEAh%2FdV6ByeNR5iLxaOjiodRzjD%2BLyABmN4HJgAyrZKOoEq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDOIOIEE4zL6fpCqMJSrCA3Ti4dFxlxmPRy0FD7abv2xH3kkH8pCgee01yPfiAODKrW7u4VsEnE%2BDLsBaEZlF9orRgBcaYSgDv19ExMeLXWplGhmnTR59XLZfayYHCPn50iybhnf8IYfdPMXaZYtj03wN1BT8n4EkAkIn9NQQI8sTOMAX4EVZNLAqyIF1SRbLQXHI5z%2BwlFu2bybSr7h0noHyNxiTeqGh2WhxDIc1wpzPUFmruuEPOlNJtOC10aYB8eVJfEAOWqWb8LD18%2FmavPFKTF6GUB1hLb%2F16HGH9B9c6eEQ2f7D1MplPw%2BwqKaB%2BT5km2NBrjPd%2BOXNuPHzyXgubsuOid%2FWnjiXkWaUwPiGtERRVfwBbockag8x2zf7JziPSxXShoMgTl0Rf3cD2%2BvSe%2FXGukRO3tFxKX7QlMaFqqnbPBLGdKPSY9wF14Vmf0QolKeln4n64%2F6tfOoqLgAZ2r2AavBMwOnVMvnq%2BIhmDQf%2B7XPIE8MF3yPjMRiMzmYlzk4ieduMWd0cIFtb0yrlQGeaHKf8W1JKq81pOaR9IVD2qy0t0tojrSxNcfm5KSlPj6xjQI635jUGzvU74ZMGFGw2IfFmdCLl%2BlJ2PPeQtjDhr%2BnWBjqlARp1Ptj1P4pLmbLmcnldFzQ0xq5h3Y5IZanfMIjYgBXrm%2BB%2FddFwqJr7sQlfDirRY6LzFvQ5GsaZLwItuZBGXOwNE6Rhw9mep2yBeB6pp%2B3zcYAzfiHlr8ALFJ40p8d98LuCGsOkbwfjEs3fh34Em%2F63ikLkrYIdj6PlhD0z6a8ZVPetlUQ82nHF8GvulfoUoGXERb3adZz28B6VZp8DWgKnx0DXlA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=88e5876831edfa9586b94dd32307e92980b89bc3fafb63e7baf7eeba739ca85a
+company.founders[0].twitter_url: https://x.com/FlyaKiet
+company.founders[0].has_email: True
+company.founders[0].latest_yc_company.name: Superset
+company.founders[0].latest_yc_company.href: https://www.ycombinator.com/companies/superset
+company.founders[1].user_id: 667926
+company.founders[1].is_active: True
+company.founders[1].founder_bio: Co-founder at Superset
+former CTO of Untether Labs (YC W23), Google, Amazon
+company.founders[1].full_name: Satya Patel
+company.founders[1].title: Founder/CTO
+company.founders[1].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/e04862bf60855ebe5323bfaaf8b1634a063087b5.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAMEBF2EWZ%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184814Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHZz5jxJmu4km8jz%2FN%2BxyRbnmrGG6iRaE1s7A4wPNb0hAiEAh%2FdV6ByeNR5iLxaOjiodRzjD%2BLyABmN4HJgAyrZKOoEq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDOIOIEE4zL6fpCqMJSrCA3Ti4dFxlxmPRy0FD7abv2xH3kkH8pCgee01yPfiAODKrW7u4VsEnE%2BDLsBaEZlF9orRgBcaYSgDv19ExMeLXWplGhmnTR59XLZfayYHCPn50iybhnf8IYfdPMXaZYtj03wN1BT8n4EkAkIn9NQQI8sTOMAX4EVZNLAqyIF1SRbLQXHI5z%2BwlFu2bybSr7h0noHyNxiTeqGh2WhxDIc1wpzPUFmruuEPOlNJtOC10aYB8eVJfEAOWqWb8LD18%2FmavPFKTF6GUB1hLb%2F16HGH9B9c6eEQ2f7D1MplPw%2BwqKaB%2BT5km2NBrjPd%2BOXNuPHzyXgubsuOid%2FWnjiXkWaUwPiGtERRVfwBbockag8x2zf7JziPSxXShoMgTl0Rf3cD2%2BvSe%2FXGukRO3tFxKX7QlMaFqqnbPBLGdKPSY9wF14Vmf0QolKeln4n64%2F6tfOoqLgAZ2r2AavBMwOnVMvnq%2BIhmDQf%2B7XPIE8MF3yPjMRiMzmYlzk4ieduMWd0cIFtb0yrlQGeaHKf8W1JKq81pOaR9IVD2qy0t0tojrSxNcfm5KSlPj6xjQI635jUGzvU74ZMGFGw2IfFmdCLl%2BlJ2PPeQtjDhr%2BnWBjqlARp1Ptj1P4pLmbLmcnldFzQ0xq5h3Y5IZanfMIjYgBXrm%2BB%2FddFwqJr7sQlfDirRY6LzFvQ5GsaZLwItuZBGXOwNE6Rhw9mep2yBeB6pp%2B3zcYAzfiHlr8ALFJ40p8d98LuCGsOkbwfjEs3fh34Em%2F63ikLkrYIdj6PlhD0z6a8ZVPetlUQ82nHF8GvulfoUoGXERb3adZz28B6VZp8DWgKnx0DXlA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=0794b097975feacb0d63f633fdce8f3decf0b870eeaffc6aacb0e6b3c5df78c3
+company.founders[1].twitter_url: https://x.com/saddle_paddle
+company.founders[1].has_email: True
+company.founders[1].latest_yc_company.name: Superset
+company.founders[1].latest_yc_company.href: https://www.ycombinator.com/companies/superset
+company.founders[2].user_id: 230159
+company.founders[2].is_active: True
+company.founders[2].founder_bio: Co-Founder @Superset. | Prev. Co-Founder CTO Adam(W25) and Cofounder@BioGlyph 
+company.founders[2].full_name: Avi Peltz
+company.founders[2].title: Founder/CPO
+company.founders[2].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/700e04a07290a0348d38f550c8a5e467947d5cca.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAMEBF2EWZ%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184814Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHZz5jxJmu4km8jz%2FN%2BxyRbnmrGG6iRaE1s7A4wPNb0hAiEAh%2FdV6ByeNR5iLxaOjiodRzjD%2BLyABmN4HJgAyrZKOoEq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDOIOIEE4zL6fpCqMJSrCA3Ti4dFxlxmPRy0FD7abv2xH3kkH8pCgee01yPfiAODKrW7u4VsEnE%2BDLsBaEZlF9orRgBcaYSgDv19ExMeLXWplGhmnTR59XLZfayYHCPn50iybhnf8IYfdPMXaZYtj03wN1BT8n4EkAkIn9NQQI8sTOMAX4EVZNLAqyIF1SRbLQXHI5z%2BwlFu2bybSr7h0noHyNxiTeqGh2WhxDIc1wpzPUFmruuEPOlNJtOC10aYB8eVJfEAOWqWb8LD18%2FmavPFKTF6GUB1hLb%2F16HGH9B9c6eEQ2f7D1MplPw%2BwqKaB%2BT5km2NBrjPd%2BOXNuPHzyXgubsuOid%2FWnjiXkWaUwPiGtERRVfwBbockag8x2zf7JziPSxXShoMgTl0Rf3cD2%2BvSe%2FXGukRO3tFxKX7QlMaFqqnbPBLGdKPSY9wF14Vmf0QolKeln4n64%2F6tfOoqLgAZ2r2AavBMwOnVMvnq%2BIhmDQf%2B7XPIE8MF3yPjMRiMzmYlzk4ieduMWd0cIFtb0yrlQGeaHKf8W1JKq81pOaR9IVD2qy0t0tojrSxNcfm5KSlPj6xjQI635jUGzvU74ZMGFGw2IfFmdCLl%2BlJ2PPeQtjDhr%2BnWBjqlARp1Ptj1P4pLmbLmcnldFzQ0xq5h3Y5IZanfMIjYgBXrm%2BB%2FddFwqJr7sQlfDirRY6LzFvQ5GsaZLwItuZBGXOwNE6Rhw9mep2yBeB6pp%2B3zcYAzfiHlr8ALFJ40p8d98LuCGsOkbwfjEs3fh34Em%2F63ikLkrYIdj6PlhD0z6a8ZVPetlUQ82nHF8GvulfoUoGXERb3adZz28B6VZp8DWgKnx0DXlA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=b9e1c5d7362b6de8cfb6902e0786df2f526a34f844a4e5307bff6ec71389bef1
+company.founders[2].twitter_url: https://x.com/avimakesrobots
+company.founders[2].has_email: True
+company.founders[2].latest_yc_company.name: Superset
+company.founders[2].latest_yc_company.href: https://www.ycombinator.com/companies/superset
+jobPostings[0].id: 91489
+jobPostings[0].title: Founding Engineer
+jobPostings[0].url: /companies/superset/jobs/Nd9luiP-founding-engineer
+jobPostings[0].applyUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication%3Fsignup_job_id%3D91489&defaults%5BsignUpActive%5D=true&defaults%5Bwaas_company%5D=31222
+jobPostings[0].location: San Francisco, CA, US
+jobPostings[0].askUs: True
+jobPostings[0].type: Full-time
+jobPostings[0].role: eng
+jobPostings[0].roleSpecificType: Full stack
+jobPostings[0].prettyRole: Engineering
+jobPostings[0].salaryRange: $175K - $225K
+jobPostings[0].equityRange: 1.00% - 1.50%
+jobPostings[0].minExperience: 2+ years
+jobPostings[0].minSchoolYear: None
+jobPostings[0].visa: Will sponsor
+jobPostings[0].skills[0]: PostgreSQL
+jobPostings[0].skills[1]: React
+jobPostings[0].skills[2]: TypeScript
+jobPostings[0].skills[3]: Next.js
+jobPostings[0].skills[4]: AI Agents
+jobPostings[0].isIncomplete: False
+jobPostings[0].companyUrl: /companies/superset
+jobPostings[0].companyLogoUrl: https://bookface-images.s3.amazonaws.com/small_logos/9c4aa01fc589ba1d208558f7b720c6081f672b08.png
+jobPostings[0].companyName: Superset
+jobPostings[0].companyBatchName: P26
+jobPostings[0].companyOneLiner: Building self-improving software
+jobPostings[0].hiringManager: None
+jobPostings[0].createdAt: 8 months
+jobPostings[0].lastActive: 28 days
+jobPostings[1].id: 109607
+jobPostings[1].title: Founding Design Engineer
+jobPostings[1].url: /companies/superset/jobs/rp22UiM-founding-design-engineer
+jobPostings[1].applyUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication%3Fsignup_job_id%3D109607&defaults%5BsignUpActive%5D=true&defaults%5Bwaas_company%5D=31222
+jobPostings[1].location: San Francisco, CA, US
+jobPostings[1].askUs: True
+jobPostings[1].type: Full-time
+jobPostings[1].role: eng
+jobPostings[1].roleSpecificType: Frontend
+jobPostings[1].prettyRole: Engineering
+jobPostings[1].salaryRange: $175K - $225K
+jobPostings[1].equityRange: 1.00% - 1.50%
+jobPostings[1].minExperience: Any (new grads ok)
+jobPostings[1].minSchoolYear: None
+jobPostings[1].visa: US citizenship/visa not required
+jobPostings[1].skills[0]: CSS
+jobPostings[1].skills[1]: React
+jobPostings[1].skills[2]: TypeScript
+jobPostings[1].skills[3]: Figma
+jobPostings[1].skills[4]: Tailwind
+jobPostings[1].isIncomplete: False
+jobPostings[1].companyUrl: /companies/superset
+jobPostings[1].companyLogoUrl: https://bookface-images.s3.amazonaws.com/small_logos/9c4aa01fc589ba1d208558f7b720c6081f672b08.png
+jobPostings[1].companyName: Superset
+jobPostings[1].companyBatchName: P26
+jobPostings[1].companyOneLiner: Building self-improving software
+jobPostings[1].hiringManager: None
+jobPostings[1].createdAt: about 1 month
+jobPostings[1].lastActive: 2 days
+jobsUrl: https://bookface.ycombinator.com/workatastartup
+newsItems: (none)
+newsUrl: https://bookface.ycombinator.com/company/31222/company_news
+videos: (none)
+launches[0].id: 101973
+launches[0].title: Superset - the open source IDE for the AI Agents era
+launches[0].body: **_TL;DR_ [Superset](https://superset.sh/)** is a terminal-first IDE with built-in agents management, PR review, and remote workspaces; built for running coding agents in parallel.
+
+Superset is a daily driver for great teams including YC companies, engineers at Wix, DoorDash, Netflix, and major OSS products/projects including [homebrew](https://github.com/Homebrew/brew), [mastra](https://github.com/mastra-ai/mastra), [browser-use](https://github.com/browser-use/browser-use) and many more\
+\
+Check out our fun video interviewing some of our users 👇
+
+<https://www.youtube.com/watch?v=r_d_eYBV8cI>\
+\
+We're Avi, Kiet and Satya\
+\
+The future workspace for software development looks less like a text editor based IDE and more like a tool to help devs manage multiple Claude Code or Codex sessions, setup automations and workflows for coding agents, aggregate context from tickets, logs, etc, and efficiently review changes.\
+\
+Since launching just 5 months ago:
+
+* **11K+ Github stars** and **75+ contributors,**
+* Used as the daily driver in great teams including YC companies, engineers at OpenAI, Google, Vercel, and major OSS products/projects including [homebrew](https://github.com/Homebrew/brew), [mastra](https://github.com/mastra-ai/mastra), [browser-use](https://github.com/browser-use/browser-use) and many more
+* A thriving community with **5K+ followers on X**, **1K+ members on Discord.**
+* Got **#1 on Product hunt** and **top 4 on HN twice**
+
+![uploaded image](/media/?type=post&id=101973&key=user_uploads/230159/5bfff019-f7dd-4262-b872-67641385eb17)
+
+X has been very supportive:
+
+![uploaded image](/media/?type=post&id=101973&key=user_uploads/230159/42ce6b2b-21fd-4d1b-9bcb-a00fecd85d52)
+
+\
+CTO of Mastra:
+
+![uploaded image](/media/?type=post&id=101973&key=user_uploads/230159/3e7afc9f-1023-4d20-a701-324ecbc44273)
+
+Vercel about Superset:
+
+![uploaded image](/media/?type=post&id=101973&key=user_uploads/230159/66749d1b-feea-4eb0-a2ba-3afb1a84e76a)
+
+Principle Engineer at Cloudflare
+
+![uploaded image](/media/?type=post&id=101973&key=user_uploads/230159/12c60756-7b29-45e8-96d4-72d9563979bb)
+
+CTO of Browser Use:
+
+![uploaded image](/media/?type=post&id=101973&key=user_uploads/230159/54080db5-f070-4d19-bf19-f9782075b1b0)
+
+\
+**Superset Product Tour**\
+<https://www.youtube.com/watch?v=YWDHn7gUwfg>\
+**\
+Please try us and give us your feedback:**
+
+Star the repo: <https://github.com/superset-sh/superset>\
+send us your feedback: [hello@superset.sh](mailto:hello@superset.sh)
+
+Try superset: <https://superset.sh/>
+launches[0].state: public
+launches[0].tagline: The fastest growing open source agentic IDE: 11K stars + thousands of daily active users
+launches[0].created_at: 2026-05-26T16:52:54.121Z
+launches[0].company.id: 31222
+launches[0].company.name: Superset
+launches[0].company.logo: https://bookface-images.s3.amazonaws.com/small_logos/9c4aa01fc589ba1d208558f7b720c6081f672b08.png
+launches[0].company.batch: p2026
+launches[0].company.tags[0]: Developer Tools
+launches[0].company.tags[1]: Consumer
+launches[0].company.tags[2]: B2B
+launches[0].company.tags[3]: Enterprise Software
+launches[0].company.tags[4]: AI
+launches[0].company.url: https://www.superset.sh/
+launches[0].company.slug: superset
+launches[0].company.description: Building self-improving software
+launches[0].user.name: Avi Peltz
+launches[0].user.avatar: https://bookface-images.s3.amazonaws.com/avatars/700e04a07290a0348d38f550c8a5e467947d5cca.jpg
+launches[0].total_vote_count: 12
+launches[0].slug: QWj-superset-the-open-source-ide-for-the-ai-agents-era
+launches[0].launch_embed_url: https://www.ycombinator.com/launches/QWj-superset-the-open-source-ide-for-the-ai-agents-era/upvote_embed.svg
+launches[0].twitter_share_url: https://twitter.com/intent/tweet?text=Superset+just+launched+on+%40ycombinator%27s+Launch+YC%21%0A%0ASuperset+-+the+open+source+IDE+for+the+AI+Agents+era.+Check+them+out%3A&url=https%3A%2F%2Fwww.ycombinator.com%2Flaunches%2FQWj-superset-the-open-source-ide-for-the-ai-agents-era
+launches[0].sanitized_title: Superset - the open source IDE for the AI Agents era
+launches[0].ycdc_launch_url: https://www.ycombinator.com/launches/QWj-superset-the-open-source-ide-for-the-ai-agents-era
+launches[0].url: https://www.ycombinator.com/launches/QWj-superset-the-open-source-ide-for-the-ai-agents-era
+launches[0].share_image: None
+launches[0].approved_at: None
+launches[0].approved_by: None
+launches[0].requested_publish_at: None
+editUrl: https://bookface.ycombinator.com/company/31222/edit
+editUserUrl: https://bookface.ycombinator.com/edit_user_profile
+createProfileUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication&defaults%5BsignUpActive%5D=true
+signedIn: False
+showDirectApply: True
+waasDirectoryUrl: https://www.workatastartup.com/companies
+investorSubdomain: False
+userCanRequestEmails: False

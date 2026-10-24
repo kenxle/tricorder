@@ -200,3 +200,15 @@ body:has(dialog[open]) { overflow: hidden; }
 .ask.flash { animation: tc-flash 2.2s ease-out; }
 @keyframes tc-flash { 0%, 55% { background: var(--tc-band); } 100% { background: transparent; } }
 @media (prefers-reduced-motion: reduce) { .ask.flash { animation: none; background: var(--tc-band); } }
+#app > #notify:has(.notice) { position: sticky; top: 0; z-index: 5; background: var(--tc-ground); padding: var(--tc-space-2) 0; }
+#app > #notify .notice { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+
+/* The In memo toggle. */
+.insight .based { display: flex; align-items: center; justify-content: space-between; gap: var(--tc-space-2); flex-wrap: wrap; }
+.memo-pick { white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 2px 8px 2px 4px; border: var(--tc-hair) solid var(--tc-rule); border-radius: 6px; background: transparent; color: var(--tc-ink-3); font: 500 12px/1.2 var(--tc-font-mono); cursor: pointer; vertical-align: middle; }
+.memo-pick:hover { border-color: var(--tc-ink-3); color: var(--tc-ink); }
+.memo-pick:focus-visible { outline: 2px solid var(--tc-accent); outline-offset: 2px; }
+.memo-box { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border: 1.5px solid var(--tc-ink-3); border-radius: 3px; font-size: 12px; line-height: 1; }
+.memo-pick.on { color: var(--tc-ink); border-color: var(--tc-ink); }
+.memo-pick.on .memo-box { background: var(--tc-ink); border-color: var(--tc-ink); color: var(--tc-ground); }
+.claims .claim-src .memo-pick { margin-left: var(--tc-space-2); }
