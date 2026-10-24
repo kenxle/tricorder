@@ -416,8 +416,89 @@ def customers_sazabi(R: Room) -> dict:
     ], chart)
 
 
+# Market --------------------------------------------------------------------------------------------------------
+
+
+def big(n: float) -> str:
+    """$1.44B for a billion or more, else synthetic_rooms.millions."""
+    return f"${n / 1e9:.2f}B" if n >= 1e9 else millions(n)
+
+
+def market_ploy(R: Room) -> dict:
+    deck_mkt, model_mkt, annual, deck_count = R.v("ma-1"), R.v("ma-2"), R.v("ma-3"), int(R.v("ma-4"))
+    assert close(deck_count * annual, deck_mkt), "the deck's market is its count times the price"
+    model_count = round(model_mkt / annual)
+    assert close(model_count * annual, model_mkt) and model_count == int(R.quote("ma-2")), "the model's market is its count times the price"
+    assert close(annual, 12 * R.f["pro"]), "the price is the Pro plan's, a year"
+    arr = R.v("tr-3")
+    paying_sub = int(R.v("tr-4")) - 1  # the pilot pays but is not in recurring ARR
+    arpa = arr / paying_sub
+    share = arr / model_mkt
+    chart = {"kind": "bars", "unit": "usd", "barmode": "group",
+             "x": [f"Deck: {deck_count:,} companies", f"Model: {model_count:,} companies"],
+             "series": [{"name": f"At the Pro list price, {money(annual)} a year", "y": [deck_mkt, model_mkt], "style": "plan",
+                         "text": [big(deck_mkt), big(model_mkt)]},
+                        {"name": f"At what a paying workspace pays today, {money(arpa)} a year", "y": [deck_count * arpa, model_count * arpa], "style": "mixed",
+                         "text": [big(deck_count * arpa), big(model_count * arpa)]}],
+             "label": f"Market size, count times price: the deck's {deck_count:,} companies and the model's {model_count:,}, each at the Pro list price "
+                      f"of {money(annual)} a year and at today's {money(arpa)} a year per paying workspace."}
+    return build(R, "market", [
+        {"lead": "Count times price.", "refs": ["ma-4", "ma-1", "ma-2"],
+         "body": f"The deck counts {deck_count:,} target companies and the model {model_count:,}. At {money(annual)} a year each, that is "
+                 f"{money(deck_mkt)} or {money(model_mkt)}. The company's own files disagree by {deck_count - model_count:,} companies."},
+        {"lead": "Which price.", "refs": ["ma-3", "tr-3", "tr-4"],
+         "body": f"Both use the Pro plan's list price, which is a ceiling. The {paying_sub:,} workspaces on plans and contracts pay {money(arpa)} a year on average today. "
+                 f"At that price the model's count gives {big(model_count * arpa)}."},
+        {"lead": "How much is won so far.", "refs": ["tr-3", "ma-2"],
+         "body": f"Recurring revenue of {money(arr)} a year is {pct(share)} of the model's market."},
+        {"lead": "Both counts are the company's.", "refs": [],
+         "body": "The deck and the model come from the founder, so two of them agreeing would still be one estimate. "
+                 "The room holds no outside source for how many companies could buy."},
+    ], [
+        f"What makes up the {deck_count - model_count:,} companies between the deck's count and the model's.",
+        "The source behind the count, and what a target company has to look like to be in it.",
+        "The market at the price paying workspaces pay today, by plan.",
+    ], chart)
+
+
+def market_sazabi(R: Room) -> dict:
+    mkt = R.v("ma-1")
+    annual = 12 * R.v("ue-4")
+    assert close(annual, 12 * R.f["growth"]), "the price is the Growth plan's, a year"
+    count = round(mkt / annual)
+    assert close(count * annual, mkt) and f"{count:,}" in R.quote("ma-1"), "the deck's market is its count times the price"
+    arr = R.v("tr-3")
+    paying = int(R.v("cu-2"))
+    arpa = arr / paying
+    ratio = mkt / arr
+    chart = {"kind": "bars", "unit": "usd", "x": [f"At the Growth list price, {money(annual)} a year", f"At what a paying team pays today, {money(arpa)} a year"],
+             "series": [{"name": f"{count:,} engineering teams", "y": [mkt, count * arpa], "styles": ["plan", "mixed"],
+                         "text": [big(mkt), big(count * arpa)]}],
+             "label": f"Market size for the deck's {count:,} engineering teams: {big(mkt)} at the Growth list price, "
+                      f"{big(count * arpa)} at what a paying team pays today."}
+    return build(R, "market", [
+        {"lead": "Count times price.", "refs": ["ma-1"],
+         "body": f"The deck sizes the market at {money(mkt)}: {count:,} engineering teams at the Growth plan's {money(annual)} a year. "
+                 "No other file in the room states the count."},
+        {"lead": "Which price.", "refs": ["ue-4", "cu-2", "tr-3"],
+         "body": f"Growth is the top self-serve plan, so its price is a ceiling. The {paying} paying teams bring {money(arpa)} a year on average today. "
+                 f"At that price the same count gives {big(count * arpa)}."},
+        {"lead": "How much is won so far.", "refs": ["tr-3"],
+         "body": f"The deck's market is {ratio:,.0f} times today's recurring revenue of {money(arr)} a year. "
+                 "A market that large rests on the count, so the count needs a source."},
+        {"lead": "The count needs a source.", "refs": [],
+         "body": "The room does not say where the count comes from, or what makes an engineering team a buyer. "
+                 "One company estimate is a starting point, not evidence."},
+    ], [
+        f"Where the {count:,} engineering teams come from, and what a team has to look like to be in it.",
+        "The market at the price paying teams pay today, by plan.",
+        "Which segment the company wins first, and how many teams are in it.",
+    ], chart)
+
+
 PIECES = {
     "retention": {"ploy": retention_ploy, "sazabi": retention_sazabi},
+    "market": {"ploy": market_ploy, "sazabi": market_sazabi},
     "customers": {"ploy": customers_ploy, "sazabi": customers_sazabi},
     "unit_economics": {"ploy": unit_economics_ploy, "sazabi": unit_economics_sazabi},
     "team": {"ploy": team_ploy, "sazabi": team_sazabi},

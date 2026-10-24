@@ -305,6 +305,93 @@ window.TC_PIECE_REPORTS_DATA = {
    ]
   },
   {
+   "key": "piece-market",
+   "piece": "market",
+   "title": "Market",
+   "knowledge": "knowledge/market.md",
+   "paras": [
+    {
+     "lead": "Count times price.",
+     "refs": [
+      "ma-4",
+      "ma-1",
+      "ma-2"
+     ],
+     "body": "The deck counts 40,000 target companies and the model 36,000. At $3,600 a year each, that is $144,000,000 or $129,600,000. The company's own files disagree by 4,000 companies."
+    },
+    {
+     "lead": "Which price.",
+     "refs": [
+      "ma-3",
+      "tr-3",
+      "tr-4"
+     ],
+     "body": "Both use the Pro plan's list price, which is a ceiling. The 735 workspaces on plans and contracts pay $3,322 a year on average today. At that price the model's count gives $119.61M."
+    },
+    {
+     "lead": "How much is won so far.",
+     "refs": [
+      "tr-3",
+      "ma-2"
+     ],
+     "body": "Recurring revenue of $2,442,000 a year is 1.9% of the model's market."
+    },
+    {
+     "lead": "Both counts are the company's.",
+     "refs": [],
+     "body": "The deck and the model come from the founder, so two of them agreeing would still be one estimate. The room holds no outside source for how many companies could buy."
+    }
+   ],
+   "asks": [
+    "What makes up the 4,000 companies between the deck's count and the model's.",
+    "The source behind the count, and what a target company has to look like to be in it.",
+    "The market at the price paying workspaces pay today, by plan."
+   ],
+   "chart": {
+    "kind": "bars",
+    "unit": "usd",
+    "barmode": "group",
+    "x": [
+     "Deck: 40,000 companies",
+     "Model: 36,000 companies"
+    ],
+    "series": [
+     {
+      "name": "At the Pro list price, $3,600 a year",
+      "y": [
+       144000000,
+       129600000
+      ],
+      "style": "plan",
+      "text": [
+       "$144.0M",
+       "$129.6M"
+      ]
+     },
+     {
+      "name": "At what a paying workspace pays today, $3,322 a year",
+      "y": [
+       132897959.18367347,
+       119608163.26530612
+      ],
+      "style": "mixed",
+      "text": [
+       "$132.90M",
+       "$119.61M"
+      ]
+     }
+    ],
+    "label": "Market size, count times price: the deck's 40,000 companies and the model's 36,000, each at the Pro list price of $3,600 a year and at today's $3,322 a year per paying workspace."
+   },
+   "needs": [
+    "01_pitch/pitch_deck.pdf",
+    "02_financials/financial_model.xlsx",
+    "03_metrics/customer_mrr_by_month.csv",
+    "03_metrics/workspaces_by_plan.csv",
+    "04_customers/order_form_northwind_analytics.pdf"
+   ]
+  },
+  {
    "key": "piece-team",
    "piece": "team",
    "title": "Team",
@@ -669,6 +756,80 @@ window.TC_PIECE_REPORTS_DATA = {
    },
    "needs": [
     "01_pitch/pitch_deck.pdf",
+    "02_financials/monthly_statements.xlsx",
+    "03_metrics/customer_mrr_by_month.csv",
+    "03_metrics/workspaces_by_plan.csv"
+   ]
+  },
+  {
+   "key": "piece-market",
+   "piece": "market",
+   "title": "Market",
+   "knowledge": "knowledge/market.md",
+   "paras": [
+    {
+     "lead": "Count times price.",
+     "refs": [
+      "ma-1"
+     ],
+     "body": "The deck sizes the market at $1,440,000,000: 120,000 engineering teams at the Growth plan's $12,000 a year. No other file in the room states the count."
+    },
+    {
+     "lead": "Which price.",
+     "refs": [
+      "ue-4",
+      "cu-2",
+      "tr-3"
+     ],
+     "body": "Growth is the top self-serve plan, so its price is a ceiling. The 32 paying teams bring $5,468 a year on average today. At that price the same count gives $656.1M."
+    },
+    {
+     "lead": "How much is won so far.",
+     "refs": [
+      "tr-3"
+     ],
+     "body": "The deck's market is 8,230 times today's recurring revenue of $174,960 a year. A market that large rests on the count, so the count needs a source."
+    },
+    {
+     "lead": "The count needs a source.",
+     "refs": [],
+     "body": "The room does not say where the count comes from, or what makes an engineering team a buyer. One company estimate is a starting point, not evidence."
+    }
+   ],
+   "asks": [
+    "Where the 120,000 engineering teams come from, and what a team has to look like to be in it.",
+    "The market at the price paying teams pay today, by plan.",
+    "Which segment the company wins first, and how many teams are in it."
+   ],
+   "chart": {
+    "kind": "bars",
+    "unit": "usd",
+    "x": [
+     "At the Growth list price, $12,000 a year",
+     "At what a paying team pays today, $5,468 a year"
+    ],
+    "series": [
+     {
+      "name": "120,000 engineering teams",
+      "y": [
+       1440000000,
+       656100000.0
+      ],
+      "styles": [
+       "plan",
+       "mixed"
+      ],
+      "text": [
+       "$1.44B",
+       "$656.1M"
+      ]
+     }
+    ],
+    "label": "Market size for the deck's 120,000 engineering teams: $1.44B at the Growth list price, $656.1M at what a paying team pays today."
+   },
+   "needs": [
+    "01_pitch/pitch_deck.pdf",
+    "02_financials/financial_model.xlsx",
     "02_financials/monthly_statements.xlsx",
     "03_metrics/customer_mrr_by_month.csv",
     "03_metrics/workspaces_by_plan.csv"
