@@ -10,7 +10,7 @@ This file is the source of truth for every agent and every tool that opens this 
 2. Read `.who-am-i` in the repo root to learn whose agent you are (see "Know who you are" below). If it is missing, set it up before anything else.
 3. Read `docs/BULLETIN.md`. First the Messages table: look for messages that @-mention your handle and answer them. Then the Board: newest rows first. Claim a row (`[>] @yourhandle`) before working it. If the work is not on the board, put it there first. "What's next" means: the top open row for your handle.
 4. Read the ongoing docs the task touches (table below).
-5. For a module or feature, start from `docs/ongoing/ROADMAP.md`: pick the top unblocked slice, open a feature folder under `docs/features/YYYYMMDD.NN_<slice>/`, and build it on a `feat/<slice>` branch. Slices are written so one person or one agent can finish one in one sitting.
+5. For a module or feature, start from `docs/ongoing/ROADMAP.md`: pick the top unblocked slice, open a feature folder under `docs/features/YYYYMMDD.NN_<slice>/`, and build it on `main`. Slices are written so one person or one agent can finish one in one sitting.
 6. The plan this repo started from is `docs/features/20261022.01_hackathon_plan/00_overview.md`. The writers' brief behind it, with Ken's words and every decision so far, is `00_brief_for_writers.md` in the same folder.
 
 ## Know who you are
@@ -61,7 +61,7 @@ Add yourself here when you join. Your handle is your first name in lowercase.
 - Reddit blocks agents. A Reddit page enters this repo only when Ken saves it from his browser into a `reddit_corpus/raw/` folder. Agents emit URL lists for him and never fetch reddit.com.
 - Plain words, one idea per sentence, no em dashes, in anything a person reads.
 - Never delete files, branches or worktrees from an agent. List paths for Ken's cleanup instead.
-- Commit by path, often. Docs-only changes push at once. Code changes land through a PR to `main`.
+- Work on `main` and push straight to it. No branches, no pull requests: this is a hackathon. Commit by path, small and often. Pull right before you commit. Before pushing code, run the checks for the part you touched (`bin/ci-py` for Python, `bin/ci-web` for the readout page) and push only when they pass. If `main` goes red in CI, whoever broke it fixes it first.
 - Secrets come from environment variables only. Never commit a key, a token, or a teammate's personal data.
 
 ## Documents
