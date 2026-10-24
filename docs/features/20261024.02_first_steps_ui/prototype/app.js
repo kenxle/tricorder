@@ -75,8 +75,8 @@
     const r = resolve(input);
     const s = setupFor(r);
     Object.assign(S, { url: r.input, company: r.company, how: r.how, research: s.research, fields: s.fields, streamed: false,
-      items: null, itemsStage: null, edited: false, requests: null, roomShared: false, roomOpened: false });
-    clearTimeout(S.arrivalTimer);
+      items: null, itemsStage: null, edited: false, requests: null, roomShared: false, roomOpened: false, roomPartial: false, roomMore: false, roomFull: false });
+    clearTimeout(S.arrivalTimer); clearTimeout(S.moreTimer);
     const q = new URLSearchParams(location.search);
     q.set("company", r.input);
     history.replaceState(null, "", "?" + q.toString() + "#readout");
@@ -108,6 +108,7 @@
   app.addEventListener("click", (e) => {
     if (e.target.closest("#to-request")) openRequest();
     if (e.target.closest("#open-room")) openRoom();
+    if (e.target.closest("#open-more")) openMore();
   });
 
   function render() {
@@ -116,9 +117,9 @@
     if (r !== "start" && !S.fields) return renderStart();
     const dlg = document.getElementById("req-modal");
     if (dlg && dlg.open) dlg.close();
-    if (r === "readout") return renderReadout();
+    if (r === "readout") return S.roomOpened && window.TC_ROOM_VIEW ? showRoomView() : renderReadout();
     if (r === "request") { renderReadout(); return openRequest(); }
-    if (r === "received") { if (S.requests && roomOf()) { S.roomShared = true; S.roomOpened = true; } return renderReadout(); }
+    if (r === "received") { if (S.requests && roomOf()) { if (!S.roomOpened) openRoom(); else showRoomView(); return; } return renderReadout(); }
     if (window.TC_STEPS && window.TC_STEPS[r]) return window.TC_STEPS[r]();
     return renderStart();
   }
@@ -518,7 +519,8 @@
   function markSent() {
     const now = new Date();
     S.requests = { sentAt: now };
-    S.roomShared = false; S.roomOpened = false;
+    S.roomShared = false; S.roomOpened = false; S.roomPartial = false; S.roomMore = false; S.roomFull = false;
+    clearTimeout(S.moreTimer);
     S.items.filter((i) => i.checked).forEach((i) => { i.askedAt = now; });
     clearTimeout(S.arrivalTimer);
     if (roomOf()) {
@@ -528,46 +530,56 @@
     paintWorking();
   }
 
+  // Opening the room hands the working page to room_view.js: the first files arrive, then the rest (Ken, 1:03 PM).
+  const roomStates = () => { const r = roomOf(); return r && r.states ? r.states : null; };
   function openRoom() {
-    S.roomShared = true; S.roomOpened = true;
-    paintWorking();
-    const box = document.getElementById("roomgaps");
-    if (box) { box.setAttribute("tabindex", "-1"); box.focus({ preventScroll: true }); box.scrollIntoView({ block: "start" }); }
+    S.roomShared = true; S.roomOpened = true; S.roomPartial = !S.roomFull && !!roomStates();
+    showRoomView();
+    scheduleMore();
+  }
+  function openMore() {
+    S.roomPartial = false; S.roomFull = true;
+    showRoomView();
+  }
+  function showRoomView() {
+    const view = window.TC_ROOM_VIEW;
+    if (!view || typeof view.render !== "function") return renderReadout();
+    view.render(S.roomPartial ? "partial" : "full");
+    paintMore();
+  }
+  function scheduleMore() {
+    const st = roomStates();
+    if (!st || !S.roomPartial || S.roomMore) return;
+    clearTimeout(S.moreTimer);
+    S.moreTimer = setTimeout(() => { S.roomMore = true; paintMore(); }, 1800 * PACE);
+  }
+  function paintMore() {
+    const st = roomStates();
+    const n = document.getElementById("notify");
+    if (!st || !n || !S.roomMore || !S.roomPartial || n.querySelector("#open-more")) return;
+    const k = st.full.files_total - st.partial.arrived.length;
+    const company = S.fields.name.value || "This company";
+    n.insertAdjacentHTML("beforeend", `<div class="notice" role="status"><div><strong>${esc(company)} added ${k} more file${k === 1 ? "" : "s"}</strong> <span class="dot" aria-hidden="true">·</span> just now</div>
+      <button class="tc-btn primary" type="button" id="open-more">Open the data room</button></div>`);
   }
 
   function requestsInner() {
     const company = S.fields.name.value || "This company";
     const rows = S.items.filter((i) => i.checked);
     rows.forEach((i) => { if (!i.askedAt) i.askedAt = new Date(); });
-    const opened = S.roomOpened;
-    const answered = opened ? rows.filter(heldBy).length : 0;
-    const open = rows.length - answered;
-    const note = opened
-      ? `${answered} answered, ${open} still open. Sent to ${esc(founderFull())}.`
-      : `${rows.length} item${rows.length === 1 ? "" : "s"} asked for, all open. Request sent to ${esc(founderFull())} <span class="dot" aria-hidden="true">·</span> waiting for ${esc(company)}'s data room`;
-    const chips = (files) => `<div class="tc-chips">${files.map((f) => window.TCX.roomChip({ uri: f.split(", ")[0], locator: f.split(", ")[1] || "whole file", quote: "Received with the room." })).join("")}</div>`;
-    const view = opened && window.TC_ROOM_VIEW && typeof window.TC_ROOM_VIEW.render === "function";
-    let custom = "";
-    if (view) {
-      try { const out = window.TC_ROOM_VIEW.render(open > 0 ? "partial" : "full"); if (typeof out === "string") custom = out; } catch (e) { custom = ""; }
-    }
     return `<h2>Data room requests</h2>
-      <p class="note" id="req-note">${note}</p>
-      ${custom}
-      <ul class="reqs">${rows.map((it) => { const f = opened ? heldBy(it) : null; return `<li class="req" data-state="${f ? "answered" : "open"}">
-        <span class="tc-mark${f ? " tc-mark--strong" : ""}">${f ? "Answered" : "Open"}</span>
-        <div><div class="title">${esc(it.title)}</div><div class="meta">Asked ${esc(askedText(it.askedAt))}</div>${f ? chips(f) : ""}</div></li>`; }).join("")}</ul>
-      ${opened ? `<div class="actions"><a class="btn primary tc-btn" href="#flags">See the flags from the room</a>
-        <a class="btn tc-btn tc-btn--secondary" href="http://localhost:5173/">Open the built readout page</a></div>` : ""}`;
+      <p class="note" id="req-note">${rows.length} item${rows.length === 1 ? "" : "s"} asked for, all open. Request sent to ${esc(founderFull())} <span class="dot" aria-hidden="true">·</span> waiting for ${esc(company)}'s data room</p>
+      <ul class="reqs">${rows.map((it) => `<li class="req" data-state="open">
+        <span class="tc-mark">Open</span>
+        <div><div class="title">${esc(it.title)}</div><div class="meta">Asked ${esc(askedText(it.askedAt))}</div></div></li>`).join("")}</ul>`;
   }
 
   function notifyHtml() {
     const room = roomOf();
-    if (!S.requests || !room) return "";
+    if (!S.requests || !room || !S.roomShared || S.roomOpened) return "";
     const company = S.fields.name.value || "This company";
-    if (S.roomOpened) return `<p class="banner tc-synthetic" role="note">This data room is synthetic. The team wrote it for the demo. It is not ${esc(company)}'s data.</p>`;
-    if (!S.roomShared) return "";
-    const n = room.files.length;
+    const st = roomStates();
+    const n = st ? st.partial.arrived.length : room.files.length;
     return `<div class="notice" role="status"><div><strong>${esc(company)} shared its data room</strong> <span class="dot" aria-hidden="true">·</span> ${n} file${n === 1 ? "" : "s"} <span class="dot" aria-hidden="true">·</span> just now</div>
       <button class="tc-btn primary" type="button" id="open-room">Open the data room</button></div>`;
   }
