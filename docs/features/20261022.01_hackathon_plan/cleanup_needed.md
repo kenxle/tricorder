@@ -22,3 +22,4 @@ From the story-group guides agent, 2026-10-22 3:39 PM:
 - `docs/features/20261024.02_first_steps_ui/prototype/style` (symlink to docs/ongoing/style): replaced by the copy in `tc_style/` on 2026-10-24, because Lahe does not serve symlinks.
 - `docs/devpost/gallery/12_mobile_flow.png` (untracked): leftover from the first gallery run; the script no longer writes it.
 - `docs/devpost/promo/audio/` untracked intermediate audio files (everything except the committed `*_raw.wav` voice takes).
+- `apps/mobile/src/app/diligence-room.tsx` and `apps/mobile/src/app/diligence-memo.tsx`: temporary preview routes for the room view and memo; remove once src/app/diligence.tsx imports RoomView, MemoScreen and PartnerScreen. Outside the repo: `~/.claude/skills/playwright-skill/shoot_room_tmp.mjs` (a screenshot script copied there to find Playwright).
