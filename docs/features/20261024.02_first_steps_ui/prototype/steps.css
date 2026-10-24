@@ -200,3 +200,15 @@ span.x-mline-text { cursor: default; text-decoration: none; }
 .x-suggest .tc-chip { font-family: var(--tc-font-sans); font-size: 13px; text-align: left; white-space: normal; }
 .x-chatform { display: flex; gap: var(--tc-space-2); }
 .x-chatform .tc-input { flex: 1 1 auto; min-width: 0; }
+
+/* Reports read with Kimmy's expert knowledge, each with one interactive chart. */
+.x-kimmy { font: 12px/1.4 var(--tc-font-mono); color: var(--tc-ink-3); margin: 0 0 var(--tc-space-3); }
+.x-kimmy code { color: var(--tc-ink-2); }
+.x-chart { width: 100%; max-width: 860px; min-height: 340px; margin: 0 0 var(--tc-space-4); }
+.x-report-body { max-width: 760px; }
+.x-report-body > p { font-size: 16px; line-height: 1.6; color: var(--tc-ink-2); margin: 0 0 var(--tc-space-3); }
+.x-report-body > p strong { color: var(--tc-ink); font-weight: 600; }
+.x-asks { margin: 0 0 var(--tc-space-3); padding-left: var(--tc-space-5); color: var(--tc-ink-2); }
+.x-asks li { margin: var(--tc-space-1) 0; }
+.x-report-ev > summary { cursor: pointer; font-size: 14px; color: var(--tc-ink); min-height: var(--tc-hit); display: flex; align-items: center; text-decoration: underline; text-decoration-color: var(--tc-accent); text-underline-offset: 3px; }
+.x-doc .x-chart { margin-top: var(--tc-space-2); }

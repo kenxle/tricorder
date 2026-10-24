@@ -129,6 +129,14 @@
       .forEach((p) => P(s4, { kind: "piece", lead: `${p.label}${p.verdict === "mixed" ? ", mixed" : ""}.`, body: reasonOf(p) + steerNotes(p.name), refs: refs(p.claim_ids), piece: p.name }));
     secs.push(s4);
 
+    // The reports, read through Kimmy's expert knowledge, each with its chart.
+    (room.reports || []).forEach((rep) => {
+      const sr = { key: `report-${rep.key}`, title: rep.title, paras: [], report: rep };
+      rep.paras.forEach((p) => P(sr, { kind: "report", lead: p.lead, body: p.body, refs: refs(p.refs) }));
+      P(sr, { kind: "asks", lead: "What to ask.", body: rep.asks.join(" "), refs: [] });
+      secs.push(sr);
+    });
+
     // What is still unknown, and what was asked
     const s5 = { key: "unknown", title: "What is still unknown, and what was asked", paras: [] };
     room.pieces.filter((p) => p.verdict === "not_enough_in_the_room")
@@ -279,6 +287,7 @@
     const sent = st.sentAt ? `Sent to the partners at ${st.sentAt.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}` : "Draft, not sent yet";
     const sections = built.secs.map((s) => `<section class="x-memo-sec" aria-label="${esc(s.title)}" data-sec="${s.key}">
         <h3>${esc(s.title)}</h3>
+        ${s.report ? `${X.kimmyLine(s.report)}${X.reportChart(s.report)}` : ""}
         ${s.paras.map((p) => paraHtml(room, p, built, mode)).join("")}
         ${s.key === "case" && mode === "principal" ? `<details class="x-whatif-d"><summary>Try a what-if</summary><div id="x-whatif-slot">${whatifHtml(room)}</div></details>` : ""}
         ${s.key === "rec" && mode === "associate" ? opFields() : ""}
@@ -294,6 +303,7 @@
       T.app.innerHTML = `${T.header("memo")}
         <article class="x-memo x-doc">${head}${sections}</article>
         <div class="actions"><button class="tc-btn primary" type="button" id="send-memo">Send to the partners</button></div>`;
+      X.drawCharts(T.app);
       document.getElementById("send-memo").addEventListener("click", () => { st.sentAt = new Date(); T.go("principal"); });
       T.app.querySelectorAll("[data-op]").forEach((el) => el.addEventListener("change", () => { st.op[el.dataset.op] = el.value; render(mode); }));
     } else {
@@ -306,6 +316,7 @@
         </div>
         <div class="actions"><a class="btn tc-btn tc-btn--secondary" href="http://localhost:5173/">Open the built readout page</a>
           <button class="tc-btn tc-btn--secondary" type="button" id="to-start">Start with another company</button></div>`;
+      X.drawCharts(T.app);
       document.getElementById("to-start").addEventListener("click", () => T.go("start"));
       bindWhatif(room);
       bindChat(built, room);

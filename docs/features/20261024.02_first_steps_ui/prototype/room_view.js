@@ -168,12 +168,13 @@
 
   function blocks(state) {
     if (!room()) return null;
-    return { banner: banner(state), standsOut: standsOut(state), pieces: pieces(state), research: research(state), requests: requests(state), actions: actions() };
+    const reports = (room().reports || []).map((r) => X.reportBlock(room(), r, state)).join("");
+    return { banner: banner(state), standsOut: standsOut(state), pieces: pieces(state), reports, research: research(state), requests: requests(state), actions: actions() };
   }
   function html(state) {
     const b = blocks(state);
     if (!b) return `<div class="empty" role="status"><strong>No synthetic data room for this company yet.</strong> Ploy and Sazabi have one.</div>`;
-    return `<div class="x-roomview" data-room-state="${esc(state)}">${b.banner}${b.standsOut}${b.pieces}${b.research}${b.requests}${b.actions}</div>`;
+    return `<div class="x-roomview" data-room-state="${esc(state)}">${b.banner}${b.standsOut}${b.pieces}${b.reports}${b.research}${b.requests}${b.actions}</div>`;
   }
 
   // The whole working page, redrawn with the room's data in. state: "partial" or "full" (the default).
@@ -183,6 +184,7 @@
     // (S.roomPartial). A request the room never holds stays open even when every file is in.
     const s = state === "partial" && (params.get("room") === "partial" || T.S.roomPartial) ? "partial" : "full";
     T.app.innerHTML = `${T.header("room")}<h2 class="co-title" id="co-name">${esc(X.company())}</h2>${html(s)}`;
+    X.drawCharts(T.app);
     window.scrollTo(0, 0);
   }
 

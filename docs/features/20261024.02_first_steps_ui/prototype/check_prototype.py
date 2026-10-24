@@ -211,8 +211,11 @@ with sync_playwright() as p:
         pg.click("#to-memo")
         pg.wait_for_selector(".x-doc")
         secs = pg.eval_on_selector_all(".x-doc .x-memo-sec", "els => els.map(e => e.getAttribute('aria-label'))")
-        check(secs == ["What the company does", "The investment case", "What is strong", "What is weak, and why", "What is still unknown, and what was asked", "Recommendation"],
+        check(secs == ["What the company does", "The investment case", "What is strong", "What is weak, and why", "Traction and revenue", "Burn and runway",
+                       "What is still unknown, and what was asked", "Recommendation"],
               f"the memo reads top to bottom as a document ({secs})")
+        check(pg.locator(".x-doc .x-chart .main-svg").count() >= 2 and pg.locator(".x-doc .x-kimmy").count() == 2,
+              "the memo carries both reports, each with its chart and Kimmy's knowledge file")
         check(pg.evaluate("[...document.querySelectorAll('.x-doc table, .x-doc .x-ticks, .x-doc .skel')].filter(e => e.offsetParent).length") == 0,
               "no tables, checklists or loading states at the top level of the memo")
         check("The associate's own figure" in pg.locator(".x-doc").inner_text(), "the associate's steers show in the memo")
@@ -263,6 +266,13 @@ with sync_playwright() as p:
         flags, waiting = pg.locator(".x-roomview .x-flag").count(), pg.locator(".x-roomview .x-waiting").count()
         check(flags >= 2 and pg.locator("section[aria-label='What stands out'] .x-flag").count() == flags, f"{state}: what stands out leads with the room's flags ({flags})")
         check(pg.locator(".x-roomview .tc-verdict").count() == 10, f"{state}: ten pieces carry the room's verdicts")
+        if state == "full":
+            pg.wait_for_function("document.querySelectorAll('.x-report .x-chart .main-svg').length >= 2")
+            check(pg.locator(".x-report").count() == 2 and pg.locator(".x-report .x-kimmy").count() == 2 and "knowledge/burn_and_runway.md" in pg.locator(".x-report").nth(1).inner_text(),
+                  "full: traction and burn reports, each read with Kimmy's knowledge file")
+            check(pg.evaluate("[...document.querySelectorAll('.x-report .x-chart')].every(e => e.querySelector('.main-svg'))"), "full: each report draws its interactive chart, offline")
+        else:
+            check(pg.locator(".x-report .tc-label--gap").count() >= 1, "partial: a report waiting on its file says so")
         check(pg.locator(".x-roomsays .tc-mark--strong").count() >= 3, f"{state}: pre-room claims show as confirmed by the room")
         if state == "partial":
             check(waiting >= 1 and pg.locator(".x-waiting .tc-mark--running").count() >= 1, f"partial: checks waiting on a file show their open request ({waiting})")
@@ -320,7 +330,7 @@ with sync_playwright() as p:
 
     pg.click("#to-memo")
     pg.wait_for_selector(".x-doc")
-    check(pg.locator(".x-doc .x-memo-sec").count() == 6 and "Seed" in pg.locator(".x-memohead").inner_text(), "Sazabi step 7: the memo reads as a document, the seed in its header")
+    check(pg.locator(".x-doc .x-memo-sec").count() == 8 and "Seed" in pg.locator(".x-memohead").inner_text(), "Sazabi step 7: the memo reads as a document, the seed in its header")
     pg.locator("[data-evtoggle]").first.click()
     check(pg.locator(".x-para-ev:not([hidden]) .x-claim").count() >= 1, "Sazabi step 7: one click opens a paragraph's evidence in place")
     pg.screenshot(path=str(SHOTS / "7b_make_the_memo_sazabi.png"), full_page=True)
