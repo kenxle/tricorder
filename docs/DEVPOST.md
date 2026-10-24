@@ -18,13 +18,11 @@ Tricorder automates research and helps associates build the memo that will be th
 
 - Public research. Scrape the web to get public signals on a company.
 - Data room analysis: the deck, the financial model, the cap table, the ledgers and the contracts. Expert knowledge is encoded to analyze existing documents.
+- Request additional info: Send automated requests to founders for more info.
 - Surfacing red flags: specific red flags are automatically bubbled up to speed up the due diligence process.
-- Fully sourced. All claims are linked to documentation that can be
-- Builds the readout: the top green and red flags, nine pieces of the company each marked strong, weak, mixed or not enough in the room, the gaps, and an ask list for the founder.
-- Lets the associate steer a piece in one plain sentence. The piece rebuilds and shows what changed. A steer never changes a script's number.
-- Drafts the request to the founder. When the reply's files arrive, the scans that were waiting rerun.
-- Exports a memo page and keeps every version of a readout in a per-fund store.
-- Shows the readout in a React web app and an Expo (React Native) app.
+- Fully sourced. All claims are linked to documentation that can be examined.
+- Builds the memo: collaborate with the associate to build a memo.
+- Allow Principals to review and ask questions of the memo.
 
 **In the clickable prototype**, which is the reference the team is building to:
 
