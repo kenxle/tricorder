@@ -55,6 +55,22 @@ In Turbo's terminal UI, select the mobile task and press `i` to interact with it
 
 The package owns `dev` rather than `start` so the repository's `pnpm start` continues to launch the Python API and tRPC gateway without Metro.
 
+## Local storage
+
+[MMKV](https://github.com/margelo/react-native-mmkv) provides synchronous local key-value storage. Reuse the shared instance from `@/lib/storage`:
+
+```ts
+import { storage } from "@/lib/storage";
+
+storage.set("readout.showSources", true);
+const showSources = storage.getBoolean("readout.showSources") ?? false;
+storage.remove("readout.showSources");
+```
+
+For reactive values, pass this instance to MMKV hooks, for example `useMMKVBoolean('readout.showSources', storage)` from `react-native-mmkv`. The store is unencrypted and intended for non-sensitive app preferences. On web, MMKV uses browser localStorage. Read and write only on the client, such as in event handlers or effects; storage access during server rendering throws. No screens persist data yet.
+
+MMKV and its `react-native-nitro-modules` dependency require a rebuilt native development client. Run `pnpm build:ios` after installing these dependencies (or `pnpm --filter @tricorder/mobile exec expo run:android` for Android). Expo Go cannot load these native modules.
+
 ## AI agents
 
 [AGENTS.md](AGENTS.md) contains Expo guidance and links to SDK 58 documentation. Agent plugin settings and Expo MCP registration are developer-local configuration. They are not included in this scaffold; install and configure the tools on each developer machine.
