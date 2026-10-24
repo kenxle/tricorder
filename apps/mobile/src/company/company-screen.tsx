@@ -3,16 +3,15 @@ import type { PropsWithChildren } from "react";
 import { useCallback, useMemo, useState } from "react";
 import {
   KeyboardAvoidingView,
-  Linking,
-  Modal,
   Platform,
   ScrollView,
   StyleSheet,
   Text,
   View,
 } from "react-native";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native-safe-area-context";
 
+import { NativeSheet } from "../readout/native-sheet";
 import {
   Action,
   Body,
@@ -24,15 +23,16 @@ import {
   useReadoutColors,
 } from "../readout/ui";
 import { RequestForm } from "../request-ui/request-form";
-import { savedRequestStage, useRequestSession } from "../request-ui/session";
+import { useRequestSession } from "../request-ui/session";
+import { stages, useCompanyState } from "./company-state";
 import { data } from "./data";
-import { requestItems, resolveCompany, safeWebUrl } from "./model";
+import { EvidenceContent } from "./evidence-content";
+import { requestItems, resolveCompany } from "./model";
 import type {
   Company,
   RequestItem,
   ResearchClaim,
   ResearchSection,
-  SetupField,
   Stage,
 } from "./model";
 
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     paddingBottom: 48,
     width: "100%",
   },
-  emphasis: { fontFamily: "ArchivoBold" },
+  emphasis: { fontWeight: "600" },
   group: { gap: 8 },
   hero: { gap: 16, paddingVertical: 16 },
   lede: { fontSize: 20, lineHeight: 29, maxWidth: 720 },
@@ -64,8 +64,8 @@ const styles = StyleSheet.create({
   screen: { flex: 1 },
   section: { borderTopWidth: 1, gap: 16, paddingTop: 24 },
   sectionTitle: {
-    fontFamily: "ArchivoDisplay",
-    fontSize: 28,
+    fontSize: 24,
+    fontWeight: "700",
     letterSpacing: -0.6,
     lineHeight: 34,
   },
@@ -79,7 +79,6 @@ const styles = StyleSheet.create({
   },
   sheetHeader: {
     alignItems: "center",
-    borderBottomWidth: 1,
     flexDirection: "row",
     gap: 16,
     justifyContent: "space-between",
@@ -91,33 +90,17 @@ const styles = StyleSheet.create({
     gap: 24,
     maxWidth: 720,
     padding: 24,
-    paddingTop: 64,
+    paddingTop: 32,
     width: "100%",
   },
   title: {
-    fontFamily: "ArchivoDisplay",
-    fontSize: 44,
-    letterSpacing: -2,
-    lineHeight: 46,
+    fontSize: 34,
+    fontWeight: "700",
+    letterSpacing: -0.7,
+    lineHeight: 41,
   },
 });
 
-const stages: {
-  id: Stage;
-  title: string;
-}[] = [
-  { id: "pre_seed", title: "Pre-seed" },
-  { id: "seed", title: "Seed" },
-  { id: "series_a", title: "Series A" },
-];
-const fieldLabels = {
-  batch: "Batch",
-  founders: "Founders",
-  location: "Location",
-  name: "Name",
-  team_size: "Team size",
-  website: "Website",
-};
 const Sheet = ({
   title,
   onClose,
@@ -125,90 +108,37 @@ const Sheet = ({
 }: PropsWithChildren<{
   title: string;
   onClose: () => void;
-}>) => {
-  const colors = useReadoutColors();
-  return (
-    <Modal
-      visible
-      animationType="slide"
-      onRequestClose={onClose}
-      presentationStyle="pageSheet"
+}>) => (
+  <NativeSheet visible onClose={onClose}>
+    <View style={styles.sheetHeader}>
+      <Heading>{title}</Heading>
+      <Action compact title="Done" onPress={onClose} />
+    </View>
+    <KeyboardAvoidingView
+      style={styles.screen}
+      enabled={Platform.OS !== "web"}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
     >
-      <SafeAreaProvider>
-        <SafeAreaView style={[styles.screen, { backgroundColor: colors.bg }]}>
-          <View style={[styles.sheetHeader, { borderColor: colors.line }]}>
-            <Heading>{title}</Heading>
-            <Action title="Done" onPress={onClose} />
-          </View>
-          <KeyboardAvoidingView
-            style={styles.screen}
-            enabled={Platform.OS !== "web"}
-            behavior={Platform.OS === "ios" ? "padding" : "height"}
-          >
-            <ScrollView
-              keyboardShouldPersistTaps="handled"
-              contentContainerStyle={styles.sheetContent}
-            >
-              {children}
-            </ScrollView>
-          </KeyboardAvoidingView>
-        </SafeAreaView>
-      </SafeAreaProvider>
-    </Modal>
-  );
-};
+      <ScrollView
+        keyboardShouldPersistTaps="handled"
+        contentContainerStyle={styles.sheetContent}
+      >
+        {children}
+      </ScrollView>
+    </KeyboardAvoidingView>
+  </NativeSheet>
+);
 const SourceEvidence = ({
   claim,
   onClose,
 }: {
   claim: ResearchClaim;
   onClose: () => void;
-}) => {
-  const [error, setError] = useState("");
-  const source = claim.source ? data.sources[claim.source] : undefined;
-  const url = safeWebUrl(claim.url ?? source?.url ?? "");
-  const openSource = async () => {
-    if (!url) {
-      return;
-    }
-    try {
-      await Linking.openURL(url);
-    } catch {
-      setError("Could not open this source. You can copy the URL below.");
-    }
-  };
-  return (
-    <Sheet title="Evidence" onClose={onClose}>
-      <Note>PUBLIC SOURCE · SAVED SNAPSHOT</Note>
-      <Heading>{source?.title ?? "Source unavailable"}</Heading>
-      <Body>{claim.text}</Body>
-      {claim.excerpt ? (
-        <Card>
-          <Note>{claim.excerpt.before}</Note>
-          <Body style={styles.emphasis}>{claim.excerpt.match}</Body>
-          <Note>{claim.excerpt.after}</Note>
-        </Card>
-      ) : null}
-      {!claim.excerpt && claim.quote ? (
-        <Card>
-          <Body>{claim.quote}</Body>
-        </Card>
-      ) : null}
-      {!claim.excerpt && !claim.quote && (
-        <Note>No excerpt is included in this saved record.</Note>
-      )}
-      {url && (
-        <>
-          <Action title="Open original source ↗" onPress={openSource} />
-          <Note>{url}</Note>
-        </>
-      )}
-      {error ? <Body accessibilityRole="alert">{error}</Body> : null}
-      <Note>Saved research: {data.built.replace("T", " ")}</Note>
-      <Note>{source?.path}</Note>
-    </Sheet>
-  );
-};
+}) => (
+  <Sheet title="Evidence" onClose={onClose}>
+    <EvidenceContent claim={claim} />
+  </Sheet>
+);
 const ClaimLine = ({
   claim,
   number,
@@ -301,54 +231,12 @@ const Section = ({
     </View>
   );
 };
-const setupFor = (company: Company): Record<string, SetupField> => {
-  const saved = data.research[company.slug]?.setup;
-  if (saved) {
-    return Object.fromEntries(
-      Object.entries(saved).map(([key, value]) => [key, { ...value }])
-    );
-  }
-  const founders = data.yc_founders[company.slug];
-  return {
-    batch: { source: data.list_source, value: company.batch },
-    founders: {
-      source: founders?.[0]?.source,
-      value: founders?.map((founder) => founder.name).join(", ") ?? "",
-    },
-    location: { source: data.list_source, value: company.regions[0] ?? "" },
-    name: { source: data.list_source, value: company.name },
-    stage: {
-      note: "Set by the associate; not confirmed by research",
-      value: "seed",
-    },
-    team_size: { source: data.list_source, value: String(company.team_size) },
-    website: { source: data.list_source, value: company.website },
-  };
-};
-const fieldProvenance = (field: SetupField | undefined): string => {
-  if (field?.edited) {
-    return "Corrected by you";
-  }
-  if (field?.source) {
-    return data.sources[field.source]?.title ?? "Source unavailable";
-  }
-  return "Not in the saved files";
-};
 const CompanyWorkspace = ({ company }: { company: Company }) => {
   const colors = useReadoutColors();
   const research = data.research[company.slug];
-  const [fields, setFields] = useState(() => setupFor(company));
-  const [setup, setSetup] = useState(false);
+  const { fields, stage } = useCompanyState(company);
   const [request, setRequest] = useState(false);
   const [evidence, setEvidence] = useState<ResearchClaim | null>(null);
-  const [stage, setStage] = useState<Stage>(() => {
-    const value =
-      savedRequestStage(company.slug) ?? research?.setup.stage?.value;
-    if (value === "series_a" || value === "pre_seed") {
-      return value;
-    }
-    return "seed";
-  });
   const bundledItems = useMemo(
     () => requestItems(data.checklist, stage, research),
     [stage, research]
@@ -369,13 +257,6 @@ const CompanyWorkspace = ({ company }: { company: Company }) => {
     layoutItems?.stage === stage ? layoutItems.items : bundledItems
   );
   const selected = session.items.filter((item) => item.checked).length;
-  const changeStage = (next: Stage) => {
-    setStage(next);
-    setFields((current) => ({
-      ...current,
-      stage: { ...current.stage, edited: true, value: next },
-    }));
-  };
   return (
     <>
       <ScrollView
@@ -384,7 +265,7 @@ const CompanyWorkspace = ({ company }: { company: Company }) => {
       >
         <Row>
           <Action
-            title="← Company URL"
+            title="← Companies"
             onPress={() => router.setParams({ company: "" })}
           />
           <Note style={styles.mono}>FIRST READOUT / BEFORE THE ROOM</Note>
@@ -400,7 +281,15 @@ const CompanyWorkspace = ({ company }: { company: Company }) => {
             <Note>· {stages.find((entry) => entry.id === stage)?.title}</Note>
           </Row>
           <Row>
-            <Action title="Company details" onPress={() => setSetup(true)} />
+            <Action
+              title="Company details"
+              onPress={() =>
+                router.push({
+                  params: { company: company.website },
+                  pathname: "/company-sheet",
+                })
+              }
+            />
             <Action
               title="Draft the data-room request"
               primary
@@ -474,56 +363,6 @@ const CompanyWorkspace = ({ company }: { company: Company }) => {
           />
         </View>
       </ScrollView>
-      {setup && (
-        <Sheet title="Company details" onClose={() => setSetup(false)}>
-          <Note>
-            Matched from the saved YC directory. Corrections apply to this
-            readout and the request draft.
-          </Note>
-          {Object.entries(fieldLabels).map(([key, label]) => (
-            <View key={key} style={styles.group}>
-              <Field
-                label={label}
-                value={fields[key]?.value ?? ""}
-                onChangeText={(value) =>
-                  setFields((current) => ({
-                    ...current,
-                    [key]: { ...current[key], edited: true, value },
-                  }))
-                }
-              />
-              <Note>{fieldProvenance(fields[key])}</Note>
-              {fields[key]?.source && (
-                <Action
-                  title={`Source for ${label.toLowerCase()}`}
-                  onPress={() => {
-                    setSetup(false);
-                    setEvidence({
-                      source: fields[key].source,
-                      text: `${label} in the saved record: ${setupFor(company)[key].value}`,
-                    });
-                  }}
-                />
-              )}
-            </View>
-          ))}
-          <Heading>Stage</Heading>
-          <Row>
-            {stages.map((entry) => (
-              <Action
-                key={entry.id}
-                title={`${stage === entry.id ? "✓ " : ""}${entry.title}`}
-                onPress={() => changeStage(entry.id)}
-              />
-            ))}
-          </Row>
-          <Note>
-            {fields.stage.edited
-              ? "Corrected by you"
-              : (fields.stage.note ?? "From the saved research")}
-          </Note>
-        </Sheet>
-      )}
       {request && (
         <Sheet title="Data-room request" onClose={() => setRequest(false)}>
           <Note>
