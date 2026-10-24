@@ -23,3 +23,4 @@ From the story-group guides agent, 2026-10-22 3:39 PM:
 - `docs/devpost/gallery/12_mobile_flow.png` (untracked): leftover from the first gallery run; the script no longer writes it.
 - `docs/devpost/promo/audio/` untracked intermediate audio files (everything except the committed `*_raw.wav` voice takes).
 - `apps/mobile/src/app/diligence-room.tsx` and `apps/mobile/src/app/diligence-memo.tsx`: temporary preview routes for the room view and memo; remove once src/app/diligence.tsx imports RoomView, MemoScreen and PartnerScreen. Outside the repo: `~/.claude/skills/playwright-skill/shoot_room_tmp.mjs` (a screenshot script copied there to find Playwright).
+- Git worktree `/private/tmp/claude-501/-Users-kennethstclair-Documents-workspace-personal/084ee931-da9d-4fe6-8f9e-b5f26fa08a8a/scratchpad/tc-merge` (used to push a merge while the shared tree had uncommitted ARCHITECTURE.md): `git worktree remove` it. Also `~/.claude/skills/playwright-skill/err_tmp.mjs`.
