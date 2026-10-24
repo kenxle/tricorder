@@ -29,7 +29,7 @@ Tricorder automates research and helps associates build the memo that will be th
 
 **The team.** Ken St. Clair (captain, product), Benjamin (TypeScript port, web and React Native apps), Kimmy (domain expert, expert knowledge) and Tirth.
 
-**Research first.** Before code, we wrote up what investors say about diligence, the competing tools, and what a seed or Series A data room holds. That gave us the two personas, a 193-item diligence checklist, and a catalog of every check the scans run.
+**Research first.** Before code, we researched what investors say about diligence, the competing tools, and what a seed or Series A data room holds. That gave us the two personas, a 193-item diligence checklist, and a catalog of every check the scans run.
 
 **Synthetic rooms with answer keys.** A generator writes the test rooms. Hollis Voice, an invented Series A company, has 17 files with 8 planted red flags, 3 decoys and 3 green flags. Brasswick, an invented seed company, has 14 files and 5 red flags. A clean copy of Hollis Voice has none. The answer keys sit outside the rooms, and only the scorer reads them.
 
