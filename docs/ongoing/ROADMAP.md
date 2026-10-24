@@ -31,6 +31,14 @@ Build in this order. The first three are the demo and are always shown. The rest
 
 **Due at 11:00 AM:** the first social post for the $150 social content prize. An agent drafts both posts ([social-posts](roadmap/social-posts.md)) and Ken posts at 11:00 and 3:30.
 
+## Ben: the TypeScript port
+
+Ken decided at 11:00 AM: Tricorder moves to TypeScript, with a React web app and a React Native app sharing one core. Ben builds it. The Python version keeps running the demo until the TypeScript one scores the same on every room's answer key.
+
+| Slice | What is left to build | Who |
+|---|---|---|
+| [typescript-port](roadmap/typescript-port.md) (not started) | The shared TypeScript core (schema, readers, scans, merge, scoring), the React web app and the React Native app | Ben |
+
 ## After the demo path
 
 Everything on the roadmap is built today. Agents take these once the demo path is covered, in this order. Each joins the demo at an integration point and shows its last passing run if it is not live.

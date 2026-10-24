@@ -52,3 +52,4 @@ contract-terms-saturday,not started,the model reading of contracts and checks 2 
 comps,not started,the comps panel,design-and-finance,no scans/comps/
 market-signals,not started,the market-signals panel and its live run,frontend,no scans/signals/
 demo-freeze,partly built,frozen outputs in demo/frozen/; the demo-freeze tag; rehearsal,captain,eval/score.py and bin/smoke exist; no demo/ folder
+typescript-port,not started,the whole port,Ben,decided 2026-10-24 11:00; no TypeScript outside readout/ yet
