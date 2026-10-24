@@ -124,6 +124,7 @@
       const t = { type: "bar", name: s.name, marker, orientation: h ? "h" : "v",
         hovertemplate: `${esc(s.name)}<br>%{${h ? "y" : "x"}}: ${hover}<extra></extra>` };
       if (h) { t.y = c.x; t.x = s.y; } else { t.x = c.x; t.y = s.y; }
+      if (s.hover) { t.customdata = s.hover; t.hovertemplate = `%{${h ? "y" : "x"}}: %{customdata}<extra></extra>`; }
       if (s.text) {
         t.text = s.text; t.textposition = s.textposition || "outside"; t.cliponaxis = false;
         if (s.textanchor) t.insidetextanchor = s.textanchor;
@@ -142,7 +143,7 @@
       margin: h ? { ...L.margin, l: 16 } : L.margin,
       shapes: extra.shapes, annotations: extra.annotations,
     };
-    if (c.height) layout.height = c.height;
+    if (c.height) layout.height = Math.max(L.height, c.height);
     window.Plotly.newPlot(el, traces, layout, { displayModeBar: false, responsive: true });
   }
 

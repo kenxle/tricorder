@@ -666,8 +666,69 @@ def legal_sazabi(R: Room) -> dict:
     ], chart)
 
 
+# The outside world ---------------------------------------------------------------------------------------------
+
+# The four answers the room gives a public fact, in the room view's words (room_view.js, PRE), and how each reads.
+STATUS = [("confirms", "Confirmed by the room", "good"), ("answers", "Answered by the room", "mixed"),
+          ("differs", "The room differs", "bad"), ("not settled", "Not settled by the room", "plan")]
+FACT = {"prices": "the prices", "team": "the team size", "formd_sold": "the Form D amount", "formd_safe": "the SAFEs on the Form D",
+        "formd_investors": "the Form D's investor count", "batch_share": "the share of the YC batch", "usage": "the launch post's usage",
+        "engineers": "the engineer count", "still_raising": "the press report that it was still raising", "design_partners": "the design partner count",
+        "seed": "the seed total", "formd_none": "the missing Form D", "hiring": "the job posts against the hiring plan",
+        "named_customers": "the customers named in public", "revenue_range": "the Form D's revenue range"}
+
+
+ASK = {"seed": "Signed copies of every SAFE behind the seed total, and who the unsigned commitments are.",
+       "formd_none": "Was a Form D filed, and under what legal name?",
+       "named_customers": "Contracts or invoices for the customers named in public, or why they are not in the room.",
+       "hiring": "Which roles in the hiring plan are open now, and where they are posted."}
+
+
+def listing(xs: list[str]) -> str:
+    return xs[0] if len(xs) == 1 else ", ".join(xs[:-1]) + " and " + xs[-1]
+
+
+def outside_world(R: Room) -> dict:
+    pcs = R.r["prechecks"]
+    assert all(pc["pre"] in FACT for pc in pcs), "every public fact has a name"
+
+    def claim_of(pc):
+        s = pc["source"]
+        return next((cid for cid, c in R.C.items() if any(x.get("uri") == s["uri"] and x.get("locator") == s["locator"] for x in c["sources"])), None)
+
+    by = {k: [pc for pc in pcs if pc["status"] == k] for k, _, _ in STATUS}
+    assert sum(len(v) for v in by.values()) == len(pcs), "every public fact has one of the four answers"
+    refs = lambda k: sorted({c for c in (claim_of(pc) for pc in by[k]) if c})
+    names = lambda k: [FACT[pc["pre"]] for pc in by[k]]
+    paras = [{"lead": "What the public record confirms.", "refs": refs("confirms"),
+              "body": f"{len(by['confirms'])} of {len(pcs)} checks against the public record come back confirmed: {listing(names('confirms'))}. "
+                      "Each pairs a public source with a room file, a small green flag."}]
+    if by["answers"]:
+        paras.append({"lead": "Where the public record is silent.", "refs": refs("answers"),
+                      "body": f"The public record left {listing(names('answers'))} open, and the room answers it. " + " ".join(pc["room"] for pc in by["answers"])})
+    if by["differs"]:
+        paras.append({"lead": "Where the room differs.", "refs": refs("differs"),
+                      "body": f"The room differs on {listing(names('differs'))}. " + " ".join(pc["room"] for pc in by["differs"])
+                              + " Each difference is a question for the founder, with both dates named."})
+    if by["not settled"]:
+        paras.append({"lead": "What the room cannot settle.", "refs": refs("not settled"),
+                      "body": f"The room cannot settle {listing(names('not settled'))}. " + " ".join(pc["room"] for pc in by["not settled"])
+                              + " A missing record is a gap and a question, not a flag on its own."})
+    chart = {"kind": "bars", "unit": "count", "orientation": "h", "x": [label for _, label, _ in STATUS],
+             "series": [{"name": "Public facts", "y": [len(by[k]) for k, _, _ in STATUS], "styles": [st for _, _, st in STATUS],
+                         "text": [str(len(by[k])) for k, _, _ in STATUS],
+                         "hover": [listing([FACT[pc["pre"]] for pc in by[k]]) if by[k] else "none" for k, _, _ in STATUS]}],
+             "range": [0, len(pcs) + 1],
+             "label": f"{len(pcs)} public facts checked against the room: " + ", ".join(f"{len(by[k])} {label.lower()}" for k, label, _ in STATUS) + "."}
+    asks = [ASK.get(pc["pre"], f"A dated document that explains {FACT[pc['pre']]}.") for pc in (by["differs"] + by["not settled"])][:3]
+    asks.append("Any public figure the founder expects to have changed since it was published, with the date it changed.")
+    assert int(R.v("ow-1")) <= len(by["confirms"]), "the room's count of agreeing facts fits the checks"
+    return build(R, "outside_world", paras, asks, chart)
+
+
 PIECES = {
     "retention": {"ploy": retention_ploy, "sazabi": retention_sazabi},
+    "outside_world": {"ploy": outside_world, "sazabi": outside_world},
     "legal_and_cap_table": {"ploy": legal_ploy, "sazabi": legal_sazabi},
     "the_pitch_itself": {"ploy": pitch_ploy, "sazabi": pitch_sazabi},
     "market": {"ploy": market_ploy, "sazabi": market_sazabi},

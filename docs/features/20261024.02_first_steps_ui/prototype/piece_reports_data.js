@@ -637,6 +637,101 @@ window.TC_PIECE_REPORTS_DATA = {
     "05_legal/claims_statement.pdf",
     "05_legal/safe_conversion_schedule.pdf"
    ]
+  },
+  {
+   "key": "piece-outside_world",
+   "piece": "outside_world",
+   "title": "Outside world",
+   "knowledge": "knowledge/outside_world.md",
+   "paras": [
+    {
+     "lead": "What the public record confirms.",
+     "refs": [
+      "lc-1",
+      "lc-2",
+      "lc-3",
+      "pi-2",
+      "te-1",
+      "ue-4"
+     ],
+     "body": "6 of 9 checks against the public record come back confirmed: the Form D amount, the SAFEs on the Form D, the Form D's investor count, the prices, the team size and the share of the YC batch. Each pairs a public source with a room file, a small green flag."
+    },
+    {
+     "lead": "Where the public record is silent.",
+     "refs": [],
+     "body": "The public record left the Form D's revenue range open, and the room answers it. The room gives September MRR of $233,500, $203,500 of it subscription."
+    },
+    {
+     "lead": "Where the room differs.",
+     "refs": [
+      "bu-2"
+     ],
+     "body": "The room differs on the job posts against the hiring plan. The hiring plan adds 22 people by month 11. Not a flag: a job board lags a plan. Each difference is a question for the founder, with both dates named."
+    },
+    {
+     "lead": "What the room cannot settle.",
+     "refs": [],
+     "body": "The room cannot settle the customers named in public. No contract for Hex or Clay is in the room. The room's customers are its own. A missing record is a gap and a question, not a flag on its own."
+    }
+   ],
+   "asks": [
+    "Which roles in the hiring plan are open now, and where they are posted.",
+    "Contracts or invoices for the customers named in public, or why they are not in the room.",
+    "Any public figure the founder expects to have changed since it was published, with the date it changed."
+   ],
+   "chart": {
+    "kind": "bars",
+    "unit": "count",
+    "orientation": "h",
+    "x": [
+     "Confirmed by the room",
+     "Answered by the room",
+     "The room differs",
+     "Not settled by the room"
+    ],
+    "series": [
+     {
+      "name": "Public facts",
+      "y": [
+       6,
+       1,
+       1,
+       1
+      ],
+      "styles": [
+       "good",
+       "mixed",
+       "bad",
+       "plan"
+      ],
+      "text": [
+       "6",
+       "1",
+       "1",
+       "1"
+      ],
+      "hover": [
+       "the Form D amount, the SAFEs on the Form D, the Form D's investor count, the prices, the team size and the share of the YC batch",
+       "the Form D's revenue range",
+       "the job posts against the hiring plan",
+       "the customers named in public"
+      ]
+     }
+    ],
+    "range": [
+     0,
+     10
+    ],
+    "label": "9 public facts checked against the room: 6 confirmed by the room, 1 answered by the room, 1 the room differs, 1 not settled by the room."
+   },
+   "needs": [
+    "01_pitch/pitch_deck.pdf",
+    "02_financials/financial_model.xlsx",
+    "03_metrics/workspaces_by_plan.csv",
+    "05_legal/cap_table.xlsx",
+    "05_legal/safe_conversion_schedule.pdf",
+    "06_team/hiring_plan.csv"
+   ]
   }
  ],
  "sazabi": [
@@ -1279,6 +1374,108 @@ window.TC_PIECE_REPORTS_DATA = {
     "05_legal/cap_table.xlsx",
     "05_legal/claims_statement.pdf",
     "05_legal/safe_schedule.pdf"
+   ]
+  },
+  {
+   "key": "piece-outside_world",
+   "piece": "outside_world",
+   "title": "Outside world",
+   "knowledge": "knowledge/outside_world.md",
+   "paras": [
+    {
+     "lead": "What the public record confirms.",
+     "refs": [
+      "pi-2",
+      "te-1",
+      "te-2",
+      "tr-5",
+      "ue-4"
+     ],
+     "body": "5 of 10 checks against the public record come back confirmed: the prices, the launch post's usage, the team size, the engineer count and the press report that it was still raising. Each pairs a public source with a room file, a small green flag."
+    },
+    {
+     "lead": "Where the public record is silent.",
+     "refs": [
+      "tr-4"
+     ],
+     "body": "The public record left the design partner count open, and the room answers it. The workspace file lists 50 design partners. 21 pay."
+    },
+    {
+     "lead": "Where the room differs.",
+     "refs": [
+      "bu-2",
+      "lc-2"
+     ],
+     "body": "The room differs on the seed total and the job posts against the hiring plan. The cap table counts $8,000,000, as the post says. The signed SAFEs add to $5,250,000. The hiring plan adds 6 people by month 6. Not a flag: a job board lags a plan. Each difference is a question for the founder, with both dates named."
+    },
+    {
+     "lead": "What the room cannot settle.",
+     "refs": [
+      "lc-3"
+     ],
+     "body": "The room cannot settle the missing Form D and the customers named in public. The room holds no Form D. The first SAFE was funded on 2026-02-17, so one was due by 2026-03-04. No contract with Weave, Mastra or XMTP Labs is in the room. The room's customers are its own. A missing record is a gap and a question, not a flag on its own."
+    }
+   ],
+   "asks": [
+    "Signed copies of every SAFE behind the seed total, and who the unsigned commitments are.",
+    "Which roles in the hiring plan are open now, and where they are posted.",
+    "Was a Form D filed, and under what legal name?",
+    "Any public figure the founder expects to have changed since it was published, with the date it changed."
+   ],
+   "chart": {
+    "kind": "bars",
+    "unit": "count",
+    "orientation": "h",
+    "x": [
+     "Confirmed by the room",
+     "Answered by the room",
+     "The room differs",
+     "Not settled by the room"
+    ],
+    "series": [
+     {
+      "name": "Public facts",
+      "y": [
+       5,
+       1,
+       2,
+       2
+      ],
+      "styles": [
+       "good",
+       "mixed",
+       "bad",
+       "plan"
+      ],
+      "text": [
+       "5",
+       "1",
+       "2",
+       "2"
+      ],
+      "hover": [
+       "the prices, the launch post's usage, the team size, the engineer count and the press report that it was still raising",
+       "the design partner count",
+       "the seed total and the job posts against the hiring plan",
+       "the missing Form D and the customers named in public"
+      ]
+     }
+    ],
+    "range": [
+     0,
+     11
+    ],
+    "label": "10 public facts checked against the room: 5 confirmed by the room, 1 answered by the room, 2 the room differs, 2 not settled by the room."
+   },
+   "needs": [
+    "01_pitch/pitch_deck.pdf",
+    "02_financials/financial_model.xlsx",
+    "03_metrics/monthly_metrics.csv",
+    "03_metrics/workspaces_by_plan.csv",
+    "05_legal/cap_table.xlsx",
+    "05_legal/safe_schedule.pdf",
+    "06_team/founder_bio_sherwood_callaway.pdf",
+    "06_team/hiring_plan.csv"
    ]
   }
  ]
