@@ -3,7 +3,7 @@
 The first thing Tricorder does with a data room: see what is in it, work out what is missing, and draft the request for it automatically. The associate edits the list before anything goes out.
 
 - **Status today:** not started. Asked for by Ken on 2026-10-24 at 11:17 AM, on [his desk](../../KEN_DESK.md).
-- **Who builds it:** frontend for the list on the page; agent for the automatic run.
+- **Who builds it:** Benjamin (Ken, 11:17 AM: "ben can work on this").
 - **Waits on:** nothing new. It joins two built pieces: [checklist-coverage](checklist-coverage.md) (what the room holds and what it lacks, by stage) and [founder-requests](founder-requests.md) (the drafted message with guidance on what to send).
 - **Checked against:** `scans/memo/coverage.py` marks each checklist item found, missing, not checked or not expected; `founder_requests/draft.py` drafts from the ask list. No page lets the associate edit the list yet, and nothing runs on its own when a room arrives.
 

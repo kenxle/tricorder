@@ -18,7 +18,7 @@ Build in this order. The first four are the demo and are always shown. Room-requ
 
 | # | Slice | What is left to build | Who | Waits on |
 |---|---|---|---|---|
-| 1 | [room-requests](roadmap/room-requests.md) (not started) | The first thing Tricorder does with a room: show what it holds and what is missing, draft the request automatically, and let the associate check, uncheck and add items | frontend and agent | nothing; checklist coverage and founder requests are built |
+| 1 | [room-requests](roadmap/room-requests.md) (not started) | The first thing Tricorder does with a room: show what it holds and what is missing, draft the request automatically, and let the associate check, uncheck and add items | Benjamin | nothing; checklist coverage and founder requests are built |
 | 2 | [redflag-engine](roadmap/redflag-engine.md) (partly built) | The red flags in the numbers: the planted-flag checks still missing (deck claims page, ARR definition, burn against the hiring plan, deck against model, customer concentration, gross margin, vanity metric, cap table and the green-flag cells) | design-and-finance | nothing; the readers and schema are built |
 | 3 | [readout](roadmap/readout.md) (partly built) | Link sources across claims, build the ask list, and the model pass that writes connecting sentences | captain | redflag-engine for real output; builds on saved output until then |
 | 4 | [readout-page](roadmap/readout-page.md) (partly built) | The page judges see: the claims and cohort panels, the memo link, the video jump, the ask-list copy button, the reorder buttons | frontend | readout |
