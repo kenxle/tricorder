@@ -16,7 +16,6 @@ import {
   Action,
   Body,
   Card,
-  Field,
   Heading,
   Note,
   Row,
@@ -24,6 +23,7 @@ import {
 } from "../readout/ui";
 import { RequestForm } from "../request-ui/request-form";
 import { useRequestSession } from "../request-ui/session";
+import { CompanyCarousel } from "./company-carousel";
 import { stages, useCompanyState } from "./company-state";
 import { data } from "./data";
 import { EvidenceContent } from "./evidence-content";
@@ -85,14 +85,6 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   snapshot: { borderBottomWidth: 1, borderTopWidth: 1, paddingVertical: 16 },
-  start: {
-    alignSelf: "center",
-    gap: 24,
-    maxWidth: 720,
-    padding: 24,
-    paddingTop: 32,
-    width: "100%",
-  },
   title: {
     fontSize: 34,
     fontWeight: "700",
@@ -394,21 +386,9 @@ export const CompanyScreen = () => {
     ? params.company[0]
     : params.company;
   const company = parameter ? resolveCompany(parameter, data.companies) : null;
-  const [input, setInput] = useState("");
-  const [error, setError] = useState("");
-  const start = (value: string) => {
-    if (!resolveCompany(value, data.companies)) {
-      setError(
-        "This URL does not match a company in the saved YC Spring 2026 directory. Try its website or exact YC company page."
-      );
-      return;
-    }
-    setError("");
-    router.setParams({ company: value.trim() });
-  };
   return (
     <SafeAreaView style={[styles.screen, { backgroundColor: colors.bg }]}>
-      {Platform.OS !== "web" && (
+      {company && Platform.OS !== "web" && (
         <View style={[styles.masthead, { borderColor: colors.line }]}>
           <Body style={styles.brand}>Tricorder</Body>
           <Note style={styles.mono}>EVERY CLAIM SOURCED</Note>
@@ -417,56 +397,9 @@ export const CompanyScreen = () => {
       {company ? (
         <CompanyWorkspace key={company.slug} company={company} />
       ) : (
-        <ScrollView
-          keyboardShouldPersistTaps="handled"
-          contentContainerStyle={styles.start}
-        >
-          <Note style={styles.mono}>01 / COMPANY URL</Note>
-          <Heading style={styles.title}>Which company?</Heading>
-          <Body style={styles.lede}>Point it at a startup, get a readout.</Body>
-          <Note>
-            Paste the company’s website or its YC company page. The saved
-            research opens automatically.
-          </Note>
-          <Field
-            label="Company URL"
-            value={input}
-            onChangeText={setInput}
-            placeholder="https://ploy.ai"
-            autoCapitalize="none"
-            autoCorrect={false}
-            keyboardType="url"
-            returnKeyType="go"
-            onSubmitEditing={() => start(input)}
-          />
-          <Action
-            title="Start readout →"
-            primary
-            onPress={() => start(input)}
-            disabled={!input.trim()}
-          />
-          {error || parameter ? (
-            <Body accessibilityRole="alert" style={{ color: colors.red }}>
-              {error || "No matching company found for the URL in this link."}
-            </Body>
-          ) : null}
-          <Row>
-            <Note>Try a saved readout</Note>
-            <Action title="Ploy" onPress={() => start("https://ploy.ai")} />
-            <Action
-              title="Sazabi"
-              onPress={() => start("https://www.sazabi.com")}
-            />
-          </Row>
-          <Note>
-            {data.companies.length} companies in the saved YC Spring 2026
-            directory. Public research is available for Ploy and Sazabi.
-          </Note>
-          <Action
-            title="Open sample room analysis"
-            onPress={() => router.push("/rooms")}
-          />
-        </ScrollView>
+        <CompanyCarousel
+          onSelect={(url) => router.setParams({ company: url })}
+        />
       )}
     </SafeAreaView>
   );
