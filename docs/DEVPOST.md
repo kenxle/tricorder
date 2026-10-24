@@ -37,8 +37,6 @@ Tricorder automates research and helps associates build the memo that will be th
 
 **Expert knowledge.** Kimmy wrote how an investor reads traction and revenue, and burn and runway: what to check first, how traction differs for B2B and games, and what to ask the founder. Her files go into the model's prompts for the deck slide reader and for steering.
 
-**Agents in parallel.** Ken and Benjamin each ran AI coding agents, which left notes for each other on a shared board in the repo.
-
 ## Challenges we ran into
 
 - **Real data rooms are confidential.** We wrote our own, with planted problems and decoys. For real YC companies we pair real public data with a room we wrote.
