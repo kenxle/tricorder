@@ -114,15 +114,19 @@ Where it stands: steps 7 and 8 are built (the memo). Step 3 is partly built: the
 
 Each item says who is waiting and what Claude recommends.
 
-- [ ] **1. Who is on the team, and what each person builds.** So far on the board: Benjamin (the TypeScript port) and Tirth (tasks coming from Benjamin). Kimi is with you now. The roadmap's Saturday roles are captain, frontend, backend-and-data and design-and-finance. **Claude recommends** writing each person's name and area in the Notes, and Claude puts them in the Team table in [AGENTS.md](../AGENTS.md) and on the roadmap. *Waiting: everyone's agents, which assign work by role.*
-- [ ] **2. GitHub access.** The repo is private. Benjamin already pushes. Tirth and Kimi need an invite to `kenxle/tricorder` (Settings, Collaborators) before their agents can pull. *Waiting: Tirth, Kimi.*
-- [ ] **3. What runs at the 3:30 PM freeze.** Benjamin is porting to TypeScript; the Python version is the one that works today. **Claude recommends** the freeze runs whichever version passes the answer-key check at 3:30, with Python as the fallback. *Waiting: Benjamin ([board](BULLETIN.md), 11:01).*
-- [ ] **4. The social post at 11:00.** The first post for the $150 social content prize. Drafts: [social-posts](ongoing/roadmap/social-posts.md). The second post is at 3:30.
-- [ ] **5. The real YC companies for the live beat.** **Claude recommends Ploy and Sazabi.** Candidates: [research_demo_companies.md](reports/20261022.02_research/research_demo_companies.md). An agent builds their synthetic rooms once you pick. *Waiting: the outside-in and yc-rooms slices.*
-- [ ] **6. API keys in `.env` on the demo laptop.** Anthropic first; then the sponsor keys that arrive today (Akta, Crunchbase, Nicrron). [keys](ongoing/roadmap/keys.md). *Waiting: cached-data, comps, market signals, outside-in.*
-- [ ] **7. Ask the organiser to change the track and pitch.** The Team Match Network lists Tricorder as "sourcing, diligence" with the old pitch; only the admin can edit it.
-- [ ] **8. Record the pitch video.** Read the Hollis Voice script flatly: [pitch_video_script.md](../data_room/hollis_voice/01_overview/pitch_video_script.md). Save it as `pitch_video.mp4` beside the script. *Waiting: the pitch-video slice, which uses the script until then.*
-- [ ] **9. The founder brief in your words.** The one page the judges get: [founder-brief](ongoing/roadmap/founder-brief.md).
+- [ ] **1. Three questions for you and Kimmy before the concentration and burn-against-hiring checks are built.** The full rule-to-check table is in the status section of [expert-knowledge](ongoing/roadmap/expert-knowledge.md). *Waiting: you and Kimmy.*
+  - Can customer concentration be excused at an early stage? Kimmy's file says no: concentration is concerning in general.
+  - Does runway count from the data date or from the round's close?
+  - One flag title always says "pilot", even when the cause is different. Keep it or reword it?
+- [ ] **2. Who is on the team, and what each person builds.** So far on the board: Benjamin (the TypeScript port) and Tirth (tasks coming from Benjamin). Kimi is with you now. The roadmap's Saturday roles are captain, frontend, backend-and-data and design-and-finance. **Claude recommends** writing each person's name and area in the Notes, and Claude puts them in the Team table in [AGENTS.md](../AGENTS.md) and on the roadmap. *Waiting: everyone's agents, which assign work by role.*
+- [ ] **3. GitHub access.** The repo is private. Benjamin already pushes. Tirth and Kimi need an invite to `kenxle/tricorder` (Settings, Collaborators) before their agents can pull. *Waiting: Tirth, Kimi.*
+- [ ] **4. What runs at the 3:30 PM freeze.** Benjamin is porting to TypeScript; the Python version is the one that works today. **Claude recommends** the freeze runs whichever version passes the answer-key check at 3:30, with Python as the fallback. *Waiting: Benjamin ([board](BULLETIN.md), 11:01).*
+- [ ] **5. The social post at 11:00.** The first post for the $150 social content prize. Drafts: [social-posts](ongoing/roadmap/social-posts.md). The second post is at 3:30.
+- [ ] **6. The real YC companies for the live beat.** **Claude recommends Ploy and Sazabi.** Candidates: [research_demo_companies.md](reports/20261022.02_research/research_demo_companies.md). An agent builds their synthetic rooms once you pick. *Waiting: the outside-in and yc-rooms slices.*
+- [ ] **7. API keys in `.env` on the demo laptop.** Anthropic first; then the sponsor keys that arrive today (Akta, Crunchbase, Nicrron). [keys](ongoing/roadmap/keys.md). *Waiting: cached-data, comps, market signals, outside-in.*
+- [ ] **8. Ask the organiser to change the track and pitch.** The Team Match Network lists Tricorder as "sourcing, diligence" with the old pitch; only the admin can edit it.
+- [ ] **9. Record the pitch video.** Read the Hollis Voice script flatly: [pitch_video_script.md](../data_room/hollis_voice/01_overview/pitch_video_script.md). Save it as `pitch_video.mp4` beside the script. *Waiting: the pitch-video slice, which uses the script until then.*
+- [ ] **10. The founder brief in your words.** The one page the judges get: [founder-brief](ongoing/roadmap/founder-brief.md).
 
 ## Lower priority
 

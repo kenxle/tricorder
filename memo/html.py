@@ -491,7 +491,13 @@ def _collapsed(s: MemoSection) -> str:
             f'<ul class="lines needs">{"".join(rows)}</ul></div>')
 
 
-def render_html(memo: Memo) -> str:
+def render_html(memo: Memo, reports: list | None = None) -> str:
+    """The page. `reports` are the expert-read sections (scans/memo/sections.py); each shows at the top of its
+    section, with its chart drawn by plotly.js from the file beside the page."""
+    from memo.report_html import PLOTLY_FILE, for_page, report_block
+
+    reports = for_page(reports or [], memo)
+    by_section = {r.section: r for r in reports}
     rec = recommendation(memo)
     s2 = memo.section(2)
     has_green = any(ln.severity == "green" and ln.kind == "claim" for ln in s2.lines)
@@ -511,10 +517,13 @@ def render_html(memo: Memo) -> str:
         if s.number == 2:
             inner = _summary(memo, s, rec, green_line)
         elif s.collapsed:
-            inner = _collapsed(s)
+            inner = _collapsed(s) + (report_block(by_section[s.number], memo) if s.number in by_section else "")
         else:
+            report = report_block(by_section[s.number], memo) if s.number in by_section else ""
             inner = (f'<div class="sec-head"><h2 class="t-2">{s.number}. {_e(s.title)}</h2>'
-                     f'<p class="note aud-operator">Who writes it: {_e(s.who_writes)}</p></div>{_body(memo, s)}')
+                     f'<p class="note aud-operator">Who writes it: {_e(s.who_writes)}</p></div>{report}{_body(memo, s)}')
+        if s.number in by_section:
+            cls = cls.replace(" aud-operator", "")
         secs.append(f'<section class="{cls}" id="s{s.number:02d}" data-section="{s.number}">{inner}'
                     f'<ul class="lines lines-added"></ul><div class="op-add" data-section="{s.number}"></div></section>')
     values = {
@@ -522,7 +531,10 @@ def render_html(memo: Memo) -> str:
         "TITLE": _e(f"{memo.company} memo"), "COMPANY": _e(memo.company), "VERSION": str(memo.version),
         "BUILT": _e(memo.built_at[:16].replace("T", " ")), "FOOT": _e(memo.synthetic_notice),
         "TOC": "".join(toc), "SECTIONS": "".join(secs), "DATA": embed_json(memo.model_dump(mode="json")),
-        "SCRIPT": (PAGE_DIR / "memo.js").read_text(encoding="utf-8"),
+        "SCRIPT": (PAGE_DIR / "memo.js").read_text(encoding="utf-8") + "\n" + (PAGE_DIR / "charts.js").read_text(encoding="utf-8"),
+        "REPORTS": (f'<script type="application/json" id="report-data">'
+                    f'{embed_json([r.model_dump(mode="json") for r in reports])}</script>\n'
+                    + (f'<script src="{PLOTLY_FILE}"></script>\n' if any(r.chart for r in reports) else "")) if reports else "",
     }
     return fill(PAGE, values)
 
@@ -592,7 +604,7 @@ PAGE = """<!doctype html>
 <span class="status" id="edit-status" role="status"></span>
 </div>
 <script type="application/json" id="memo-data">{{DATA}}</script>
-<script>{{SCRIPT}}</script>
+{{REPORTS}}<script>{{SCRIPT}}</script>
 </body>
 </html>
 """

@@ -1,0 +1,189 @@
+currentUser: None
+publicFounderProfilesEnabled: False
+disabledPublicVisibility: None
+company.id: 31453
+company.slug: minicor
+company.name: Minicor
+company.batch: P26
+company.batch_name: Spring 2026
+company.small_logo_url: https://bookface-images.s3.amazonaws.com/small_logos/e14eb470879a4e71c717ad6774095600e8b0de85.png
+company.one_liner: Scalable windows desktop automations
+company.website: https://minicor.com
+company.long_description: Minicor connects AI startups to legacy desktop apps that have no API. Reliably, quickly and at scale.
+
+Describe a workflow and get an API endpoint. Each call triggers a self-healing desktop automation on a Windows VM. On-prem, cloud, or Citrix. Build through your coding agent via our MCP.
+
+Complete with the observability tools to manage your customer relationship: full video replay of every automation, granular logging, and slack enabled alerts.
+company.tags: (none)
+company.ycdc_status: Active
+company.logo_url: https://bookface-images.s3.us-west-2.amazonaws.com/logos/b8ff65794f2179e95b0ba2312a4f77809bb603bb.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAKCHEJS5J%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184813Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFIDgDQkhkFMsJbVjywFDli%2BzBY20QbKJ0BImjL4UuPjAiBcu%2Fqx0RtDk7zVEPvwsZsXN3kwh2WkVJ%2Fb2QCGsMtEoyrlAwh8EAAaDDAwNjIwMTgxMTA3MiIMhRHWcLMxfSU3m8qDKsIDg1njiUOXYKZ7EE3H2CDjhk8vgTHx%2FvvsTG%2B9BKcWe%2Fwg5vY3u9EvxuEjMwiHpQ1%2BHgqVXshAqxYBAx4fbEq2KES1XgaAyWDc6GCQMUAL9DDoYTJ2EvLopFTyernBwuuG4H5U4C9VutdzVGybGLUm8i4O7WFVNgc7sDuRiWXbm7RsSchS1JiFfxfOu1IIrLQXShLzeGgeIuQflWirv8U6ehrVuFAZNA3ngeP76uYUPXD%2FZipHR12A23dHO7FAJJZqEccwZNhFIEBPSJnKJKlWtPVFJ1neI2NFhINrJ45RZNkxOG%2FNRQzna0iJwPl%2BVx%2B6Tl5rG2%2F8wXlu83IFh7c8M88aQDJQlsBol0LL%2FtUC8inu5FeJtkR19p%2BENDFrgZRLs4cG%2FxcGrf77FVc7cwAXMPQAeU7%2BSa45AR3wr4etvM6llmcsxmonBQfL%2BtS9ic7uXcJLFgkj%2BCSBQGSacfiX18M4gXh7QhAfbS97XTRvIyhPOPx1%2BzxuhrXL5WU3UT%2F2CbXw%2BEUZpDRciokFsnxZWXQrKBMtbt2hShVPdsQTutht%2F3%2BBmdm6OOyLTd2VpIIf9av7uktViuBzgIR3cKyhey3WMOCv6dYGOqYBFm90kccUkRjBnmp4XWQUbQ3JoNBwnpU5XZF3AdSkUXtmhrsrG6G7E4N4rbG3gBBlmOfb702NJHcfshat94XHiEabe2XjFKbBEkDkDVCGc%2Bcg30uD9CeiMBMTpVZ1en2ol4aENcg5F9qkj7V4TfPdcOAAdM%2B4snzmNDt3Ro%2BKRfp8169Sg03HNqQ81Qp%2Bgb%2BVIowHTSF4NZ95mI9OyTceUUoKTTKSMQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=a7043b43d5553dc03003bcd33d59e3fa564170baaf6519a181cf80903463d3f7
+company.year_founded: 2024
+company.team_size: 9
+company.location: San Francisco
+company.city: San Francisco
+company.city_tag: san-francisco-bay-area
+company.country: US
+company.twitter_url: https://x.com/minicor_
+company.fb_url: 
+company.cb_url: 
+company.github_url: 
+company.free_response_question_answers: (none)
+company.dday_video_url: None
+company.app_video_url: None
+company.app_answers: (none)
+company.ycdc_url: https://www.ycombinator.com/companies/minicor
+company.company_photos: (none)
+company.primary_group_partner.id: 24083
+company.primary_group_partner.full_name: Tom Blomfield
+company.primary_group_partner.avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/9ab7bdb23ee93545fc44ab122a4e3a59baa2619c.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAKCHEJS5J%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184813Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFIDgDQkhkFMsJbVjywFDli%2BzBY20QbKJ0BImjL4UuPjAiBcu%2Fqx0RtDk7zVEPvwsZsXN3kwh2WkVJ%2Fb2QCGsMtEoyrlAwh8EAAaDDAwNjIwMTgxMTA3MiIMhRHWcLMxfSU3m8qDKsIDg1njiUOXYKZ7EE3H2CDjhk8vgTHx%2FvvsTG%2B9BKcWe%2Fwg5vY3u9EvxuEjMwiHpQ1%2BHgqVXshAqxYBAx4fbEq2KES1XgaAyWDc6GCQMUAL9DDoYTJ2EvLopFTyernBwuuG4H5U4C9VutdzVGybGLUm8i4O7WFVNgc7sDuRiWXbm7RsSchS1JiFfxfOu1IIrLQXShLzeGgeIuQflWirv8U6ehrVuFAZNA3ngeP76uYUPXD%2FZipHR12A23dHO7FAJJZqEccwZNhFIEBPSJnKJKlWtPVFJ1neI2NFhINrJ45RZNkxOG%2FNRQzna0iJwPl%2BVx%2B6Tl5rG2%2F8wXlu83IFh7c8M88aQDJQlsBol0LL%2FtUC8inu5FeJtkR19p%2BENDFrgZRLs4cG%2FxcGrf77FVc7cwAXMPQAeU7%2BSa45AR3wr4etvM6llmcsxmonBQfL%2BtS9ic7uXcJLFgkj%2BCSBQGSacfiX18M4gXh7QhAfbS97XTRvIyhPOPx1%2BzxuhrXL5WU3UT%2F2CbXw%2BEUZpDRciokFsnxZWXQrKBMtbt2hShVPdsQTutht%2F3%2BBmdm6OOyLTd2VpIIf9av7uktViuBzgIR3cKyhey3WMOCv6dYGOqYBFm90kccUkRjBnmp4XWQUbQ3JoNBwnpU5XZF3AdSkUXtmhrsrG6G7E4N4rbG3gBBlmOfb702NJHcfshat94XHiEabe2XjFKbBEkDkDVCGc%2Bcg30uD9CeiMBMTpVZ1en2ol4aENcg5F9qkj7V4TfPdcOAAdM%2B4snzmNDt3Ro%2BKRfp8169Sg03HNqQ81Qp%2Bgb%2BVIowHTSF4NZ95mI9OyTceUUoKTTKSMQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=70876008649c5ae062f470d75cc785967f45f1098dae84c6cb4ba2f8af9e1373
+company.primary_group_partner.url: https://www.ycombinator.com/people/tom-blomfield
+company.founders[0].user_id: 1037983
+company.founders[0].is_active: True
+company.founders[0].founder_bio: CEO @ Minicor (X26) - building an RPA platform for deploying AI into legacy desktop systems
+
+Previously also built a furniture rental company and worked as early engineer at YC companies connecting systems together!
+company.founders[0].full_name: Faizaan Chishtie
+company.founders[0].title: Founder/CEO
+company.founders[0].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/8237083383c5f9e3a2ff2c95697815c59d0c2774.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAKCHEJS5J%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184813Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFIDgDQkhkFMsJbVjywFDli%2BzBY20QbKJ0BImjL4UuPjAiBcu%2Fqx0RtDk7zVEPvwsZsXN3kwh2WkVJ%2Fb2QCGsMtEoyrlAwh8EAAaDDAwNjIwMTgxMTA3MiIMhRHWcLMxfSU3m8qDKsIDg1njiUOXYKZ7EE3H2CDjhk8vgTHx%2FvvsTG%2B9BKcWe%2Fwg5vY3u9EvxuEjMwiHpQ1%2BHgqVXshAqxYBAx4fbEq2KES1XgaAyWDc6GCQMUAL9DDoYTJ2EvLopFTyernBwuuG4H5U4C9VutdzVGybGLUm8i4O7WFVNgc7sDuRiWXbm7RsSchS1JiFfxfOu1IIrLQXShLzeGgeIuQflWirv8U6ehrVuFAZNA3ngeP76uYUPXD%2FZipHR12A23dHO7FAJJZqEccwZNhFIEBPSJnKJKlWtPVFJ1neI2NFhINrJ45RZNkxOG%2FNRQzna0iJwPl%2BVx%2B6Tl5rG2%2F8wXlu83IFh7c8M88aQDJQlsBol0LL%2FtUC8inu5FeJtkR19p%2BENDFrgZRLs4cG%2FxcGrf77FVc7cwAXMPQAeU7%2BSa45AR3wr4etvM6llmcsxmonBQfL%2BtS9ic7uXcJLFgkj%2BCSBQGSacfiX18M4gXh7QhAfbS97XTRvIyhPOPx1%2BzxuhrXL5WU3UT%2F2CbXw%2BEUZpDRciokFsnxZWXQrKBMtbt2hShVPdsQTutht%2F3%2BBmdm6OOyLTd2VpIIf9av7uktViuBzgIR3cKyhey3WMOCv6dYGOqYBFm90kccUkRjBnmp4XWQUbQ3JoNBwnpU5XZF3AdSkUXtmhrsrG6G7E4N4rbG3gBBlmOfb702NJHcfshat94XHiEabe2XjFKbBEkDkDVCGc%2Bcg30uD9CeiMBMTpVZ1en2ol4aENcg5F9qkj7V4TfPdcOAAdM%2B4snzmNDt3Ro%2BKRfp8169Sg03HNqQ81Qp%2Bgb%2BVIowHTSF4NZ95mI9OyTceUUoKTTKSMQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=a8cd55265c5160129c6f7ee68d77b297711486e05af66dc3c35eebe7abcb6096
+company.founders[0].twitter_url: https://x.com/faizchishtie
+company.founders[0].has_email: True
+company.founders[0].latest_yc_company.name: Minicor
+company.founders[0].latest_yc_company.href: https://www.ycombinator.com/companies/minicor
+company.founders[1].user_id: 1639230
+company.founders[1].is_active: True
+company.founders[1].founder_bio: Building Minicor (X26) - Building an agentic desktop and browser automation platform.
+Deep in infra, RPA (QuickBooks/Sage/Citrix), and browser automation.
+company.founders[1].full_name: Saheed Akinbile
+company.founders[1].title: Founder/CTO
+company.founders[1].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/d6ab7a935a1ba8fc9b8588ea0351c0b067c23f39.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAKCHEJS5J%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184813Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFIDgDQkhkFMsJbVjywFDli%2BzBY20QbKJ0BImjL4UuPjAiBcu%2Fqx0RtDk7zVEPvwsZsXN3kwh2WkVJ%2Fb2QCGsMtEoyrlAwh8EAAaDDAwNjIwMTgxMTA3MiIMhRHWcLMxfSU3m8qDKsIDg1njiUOXYKZ7EE3H2CDjhk8vgTHx%2FvvsTG%2B9BKcWe%2Fwg5vY3u9EvxuEjMwiHpQ1%2BHgqVXshAqxYBAx4fbEq2KES1XgaAyWDc6GCQMUAL9DDoYTJ2EvLopFTyernBwuuG4H5U4C9VutdzVGybGLUm8i4O7WFVNgc7sDuRiWXbm7RsSchS1JiFfxfOu1IIrLQXShLzeGgeIuQflWirv8U6ehrVuFAZNA3ngeP76uYUPXD%2FZipHR12A23dHO7FAJJZqEccwZNhFIEBPSJnKJKlWtPVFJ1neI2NFhINrJ45RZNkxOG%2FNRQzna0iJwPl%2BVx%2B6Tl5rG2%2F8wXlu83IFh7c8M88aQDJQlsBol0LL%2FtUC8inu5FeJtkR19p%2BENDFrgZRLs4cG%2FxcGrf77FVc7cwAXMPQAeU7%2BSa45AR3wr4etvM6llmcsxmonBQfL%2BtS9ic7uXcJLFgkj%2BCSBQGSacfiX18M4gXh7QhAfbS97XTRvIyhPOPx1%2BzxuhrXL5WU3UT%2F2CbXw%2BEUZpDRciokFsnxZWXQrKBMtbt2hShVPdsQTutht%2F3%2BBmdm6OOyLTd2VpIIf9av7uktViuBzgIR3cKyhey3WMOCv6dYGOqYBFm90kccUkRjBnmp4XWQUbQ3JoNBwnpU5XZF3AdSkUXtmhrsrG6G7E4N4rbG3gBBlmOfb702NJHcfshat94XHiEabe2XjFKbBEkDkDVCGc%2Bcg30uD9CeiMBMTpVZ1en2ol4aENcg5F9qkj7V4TfPdcOAAdM%2B4snzmNDt3Ro%2BKRfp8169Sg03HNqQ81Qp%2Bgb%2BVIowHTSF4NZ95mI9OyTceUUoKTTKSMQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=c4540b15fe46bd5b8498ba71b0bc5b4d62f5a3d1ad99f07690b317ad17396860
+company.founders[1].twitter_url: https://x.com/sahee_d
+company.founders[1].has_email: True
+company.founders[1].latest_yc_company.name: Minicor
+company.founders[1].latest_yc_company.href: https://www.ycombinator.com/companies/minicor
+jobPostings[0].id: 94138
+jobPostings[0].title: Software Engineer
+jobPostings[0].url: /companies/minicor/jobs/mDMbXZk-software-engineer
+jobPostings[0].applyUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication%3Fsignup_job_id%3D94138&defaults%5BsignUpActive%5D=true&defaults%5Bwaas_company%5D=31453
+jobPostings[0].location: San Francisco, CA, US
+jobPostings[0].askUs: True
+jobPostings[0].type: Full-time
+jobPostings[0].role: eng
+jobPostings[0].roleSpecificType: Full stack
+jobPostings[0].prettyRole: Engineering
+jobPostings[0].salaryRange: $175K - $250K
+jobPostings[0].equityRange: 0.15% - 0.45%
+jobPostings[0].minExperience: 3+ years
+jobPostings[0].minSchoolYear: None
+jobPostings[0].visa: Will sponsor
+jobPostings[0].skills[0]: Amazon Web Services (AWS)
+jobPostings[0].skills[1]: Google Cloud
+jobPostings[0].skills[2]: Java
+jobPostings[0].skills[3]: JavaScript
+jobPostings[0].skills[4]: Kotlin
+jobPostings[0].skills[5]: Python
+jobPostings[0].skills[6]: Next.js
+jobPostings[0].isIncomplete: False
+jobPostings[0].companyUrl: /companies/minicor
+jobPostings[0].companyLogoUrl: https://bookface-images.s3.amazonaws.com/small_logos/e14eb470879a4e71c717ad6774095600e8b0de85.png
+jobPostings[0].companyName: Minicor
+jobPostings[0].companyBatchName: P26
+jobPostings[0].companyOneLiner: Scalable windows desktop automations
+jobPostings[0].hiringManager: None
+jobPostings[0].createdAt: 6 months
+jobPostings[0].lastActive: 2 months
+jobsUrl: https://bookface.ycombinator.com/workatastartup
+newsItems[0].title: Minicor Raises $3.8M Seed
+newsItems[0].url: https://www.thesaasnews.com/news/minicor-raises-3-8m-seed/
+newsItems[0].date: Oct 15, 2026
+newsItems[1].title: The Top DevTech Startups in YC P26 - The Silicon Valley Post
+newsItems[1].url: https://svpost.com/articles/top-devtech-startups-yc-p26/
+newsItems[1].date: Jun 10, 2026
+newsItems[2].title: What Y Combinator's Latest Batch Reveals About The Future
+newsItems[2].url: https://www.forbes.com/sites/dariashunina/2026/06/04/what-y-combinators-latest-batch-reveals-about-the-future/
+newsItems[2].date: Jun 04, 2026
+newsUrl: https://bookface.ycombinator.com/company/31453/company_news
+videos: (none)
+launches[0].id: 99004
+launches[0].title: Minicor - Windows desktop automations at scale.
+launches[0].body: Hey YC!! Faiz and Saheed here from Minicor ([minicor.com](http://minicor.com))
+
+**TLDR;** AI companies selling into healthcare, automotive, financial services, and logistics can't go live because their customers run on legacy desktop software with no APIs. The only way in is clicking through the UI, and it breaks constantly. Minicor is a platform for building self-healing desktop automation that scales.
+
+Launch video:\
+<https://www.youtube.com/watch?v=nzH4ekkaA2c>
+
+**The problem**
+
+Our customers selling into legacy industries can't go live because the systems of record their customers use (EHRs, ERPs, DMS) are Windows desktop apps with no APIs. The only way to read / write is through UI automations, but desktop RPA at scale breaks constantly. Even small error rates become hundreds of failures a day, and every one needs manual intervention.
+
+They're signing customers but don't have capacity to integrate because they're too busy fighting fires with existing RPAs; or their prospects are blocked because they need "proof" they can write back to their systems, and spinning up a desktop automation POC takes too long.
+
+**In production**
+
+We're live right now processing thousands of workflows a week across healthcare EHRs and other legacy systems. Our agents write AI-generated data into desktop apps in real-time. We went live with a customer in 3 weeks post POC.
+
+**How it works**
+
+1. Install our Desktop Client on the machines running the legacy software.
+2. Speak the automation into existence - either through your favourite coding agent via our MCP, or to us directly. You get an API endpoint to trigger it.
+3. Minicor handles everything after that. Only pay when the data gets in
+
+**Demos**
+
+Generating an automation with our MCP:
+
+![uploaded image](/media/?type=post&id=99004&key=user_uploads/1037983/3566b35e-8721-428e-9c8c-99b2d4f337a4)
+
+Agent recovering from failure:
+
+![uploaded image](/media/?type=post&id=99004&key=user_uploads/1037983/c33c944c-0319-4aa1-a291-c526751938f6)
+
+Recorded video replays of every run, with full error logging, so nothing ever fails silently:
+
+![uploaded image](/media/?type=post&id=99004&key=user_uploads/1037983/ce87bffc-0860-43ab-a1b9-94d5b5656adf)
+
+**About us**
+
+Saheed and I both started our careers building bespoke / legacy system integrations. Me at a YC startup, Saheed at Morgan Stanley and Ford. We met in 2019 in a UX class, built a non-profit together over the pandemic, and started working on this in 2023.
+
+We started with an observability and error recovery platform for API integrations, and got pulled into Desktop automations when a prospect closed hyper quickly on the promise that we could help them connect to an on-prem EMR.
+
+**If a legacy desktop integration is blocking a deal right now**
+
+**We can have a POC running in hours.** Whether that's a demo for a prospect or getting something into production next week. Email / DM us on Bookface / book time to chat (:
+
+**Know an AI company fighting horrible desktop based UI integrations?** We'd appreciate an intro, coffee / lunch on us!
+
+[faiz@minicor.com](mailto:faiz@minicor.com) / <https://calendly.com/faiz-laminar/minicor-demo>
+launches[0].state: public
+launches[0].tagline: RPA platform for deploying AI into legacy desktop systems
+launches[0].created_at: 2026-03-23T02:00:00.081Z
+launches[0].company.id: 31453
+launches[0].company.name: Minicor
+launches[0].company.logo: https://bookface-images.s3.amazonaws.com/small_logos/e14eb470879a4e71c717ad6774095600e8b0de85.png
+launches[0].company.batch: p2026
+launches[0].company.tags: (none)
+launches[0].company.url: https://minicor.com
+launches[0].company.slug: minicor
+launches[0].company.description: Scalable windows desktop automations
+launches[0].user.name: Faizaan Chishtie
+launches[0].user.avatar: https://bookface-images.s3.amazonaws.com/avatars/8237083383c5f9e3a2ff2c95697815c59d0c2774.jpg
+launches[0].total_vote_count: 27
+launches[0].slug: Pkq-minicor-windows-desktop-automations-at-scale
+launches[0].launch_embed_url: https://www.ycombinator.com/launches/Pkq-minicor-windows-desktop-automations-at-scale/upvote_embed.svg
+launches[0].twitter_share_url: https://twitter.com/intent/tweet?text=Minicor+just+launched+on+%40ycombinator%27s+Launch+YC%21%0A%0AMinicor+-+Windows+desktop+automations+at+scale..+Check+them+out%3A&url=https%3A%2F%2Fwww.ycombinator.com%2Flaunches%2FPkq-minicor-windows-desktop-automations-at-scale
+launches[0].sanitized_title: Minicor - Windows desktop automations at scale.
+launches[0].ycdc_launch_url: https://www.ycombinator.com/launches/Pkq-minicor-windows-desktop-automations-at-scale
+launches[0].url: https://www.ycombinator.com/launches/Pkq-minicor-windows-desktop-automations-at-scale
+launches[0].share_image: None
+launches[0].approved_at: None
+launches[0].approved_by: None
+launches[0].requested_publish_at: None
+editUrl: https://bookface.ycombinator.com/company/31453/edit
+editUserUrl: https://bookface.ycombinator.com/edit_user_profile
+createProfileUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication&defaults%5BsignUpActive%5D=true
+signedIn: False
+showDirectApply: True
+waasDirectoryUrl: https://www.workatastartup.com/companies
+investorSubdomain: False
+userCanRequestEmails: False

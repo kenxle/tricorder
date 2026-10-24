@@ -1,0 +1,187 @@
+Startup Sazabi bets on logs and AI agents to replace traditional observability stacks - SiliconANGLE 
+ Skip to content 
+ [the voice of enterprise and emerging tech] 
+ OUR NETWORK 
+ search 
+ Search SiliconANGLE 
+ search 
+ Submit search 
+ THE SILICONANGLE 120 
+ Market Data Provided by 
+ Search SiliconANGLE 
+ search 
+ Submit search 
+ Home 
+ TechForward 
+ Cloud 
+ Cloud Native 
+ AI 
+ Security 
+ Infra 
+ Blockchain 
+ Big Data 
+ Emerging Tech 
+ AWS Marketplace Newsroom 
+ Policy 
+ Apps 
+ Iot 
+ Women In Tech 
+ theCUBE Research 
+ Special Reports 
+ Video Exclusives 
+ CUBE SPECIAL FEATURES 
+ RECENT CUBE EVENTS 
+ AWARDS 
+ More AWS Marketplace Newsroom 
+ Policy 
+ Apps 
+ Iot 
+ Women In Tech 
+ theCUBE Research 
+ Special Reports 
+ Video Exclusives 
+ CUBE SPECIAL FEATURES 
+ RECENT CUBE EVENTS 
+ AWARDS 
+ Sign In 
+ THE SILICONANGLE 120 
+ Market Data Provided by 
+ SHARE 
+ UPDATED 09:00 EDT / APRIL 08 2026 
+ INFRA 
+ Startup Sazabi bets on logs and AI agents to replace traditional observability stacks
+ by Paul Gillin 
+ Artificial intelligence-driven observability startup Sazabi Inc. is emerging from stealth mode this week with a platform that challenges conventional monitoring approaches by focusing exclusively on log data and using AI agents to automate analysis.
+ The company is positioning its technology as a departure from traditional observability stacks that rely on a combination of logs, metrics and traces. Instead, Sazabi argues that advances in AI make it possible to extract all necessary operational insight from logs alone, thus reducing complexity and storage costs.
+ “Fundamentally, logs are just events, metrics are aggregated events and traces are basically correlated events,” said founder Sherwood Callaway, whose previous ventures include financial software firm Brex LLC and phone call automation platform Opkit Inc. “We only accept logs, and we create metrics and traces from those logs on the back end.”
+ Callaway said the approach is rooted in his own practical experience debugging production systems, where logs are often the first source engineers consult. He described logs as “the most intuitive type of telemetry to use” and “the Occam’s razor of observability.”
+ Simpler approach
+ The company’s platform, scheduled for delivery by the end of the year, is designed to simplify observability by reducing the need for instrumentation and complex data pipelines. Rather than requiring teams to configure multiple monitoring systems, Sazabi collects log data and uses AI to interpret it at scale.
+ That approach “reduces the complexity around instrumentation and the complexity in our data pipeline and storage infrastructure,” Callaway said.
+ At the core of the platform is an AI agent that continuously analyzes log streams, identifies anomalies and determines whether issues warrant attention. The system also generates alerts automatically based on historical patterns.
+ “We have our agent running in perpetuity in the background, looking for anomalies, investigating them and deciding whether they’re worth your attention,” Callaway said.
+ Agents control how alerts are generated and routed, including what information is included and who receives the notification. The result is fewer alerts with higher relevance, Callaway said. “It results in many fewer alerts, alerts that have much higher signal and that are much more actionable,” he said.
+ Sazabi also features a conversational interface that allows engineers to query production systems using natural language rather than navigating dashboards. The system can answer questions such as “why is production down?” or “which commit is responsible?” and return results based on real-time data analysis.
+ “You can root cause in seconds what would typically require minutes or hours of digging through different screens in a traditional tool,” Callaway said.
+ The underlying architecture combines log ingestion with a storage-and-query layer optimized for AI workloads. Sazabi uses materialized views and summarized data representations to reduce the amount of information the system must scan.
+ Summary data
+ “We can take an hour’s worth of log data and summarize that into a much smaller package using language models,” Callaway said. “You only have to query the summary.”
+ AI enhances storage efficiency by determining which data should be retained, summarized or moved to lower-cost storage tiers.
+ Sazabi targets early-stage and growth-stage technology companies rather than large enterprises, reflecting Callaway’s background in startup environments and the fact that most enterprises already have multiple observability platforms.
+ Venture-backed tech startups are typically focused on rapid product development and may lack specialized observability expertise, he said.
+ The platform is designed to integrate with existing observability tools, allowing customers to adopt it without replacing their current infrastructure.  “Just change the endpoint and we’ll be receiving logs,” Callaway said.
+ While incumbent vendors are all adding AI features to their observability suites, Callaway argued that the shift toward AI-driven software development will require fundamentally new observability models.
+ “It will be very hard for legacy or incumbent vendors to completely retool their products,” he said.
+ Sazabi has not disclosed detailed funding information but confirmed it’s in the process of raising seed capital.
+ Image: Pixabay
+ A message from John Furrier, co-founder of SiliconANGLE: 
+ Support our mission to keep content open and free by engaging with theCUBE community. Join theCUBE’s Alumni Trust Network , where technology leaders connect, share intelligence and create opportunities.
+ 15M+ viewers of theCUBE videos , powering conversations across AI, cloud, cybersecurity and more
+ 11.4k+ theCUBE alumni — Connect with more than 11,400 tech and business leaders shaping the future through a unique trusted-based network
+ Are you an AWS customer?  Support SiliconANGLE financially by buying your AWS services from our Marketplace portal page and links: https://siliconangle.com/aws-marketplace/ 
+ About SiliconANGLE Media 
+ SiliconANGLE Media is a recognized leader in digital media innovation, uniting breakthrough technology, strategic insights and real-time audience engagement. As the parent company of SiliconANGLE , theCUBE Network , theCUBE Research , CUBE365 , theCUBE AI and theCUBE SuperStudios — with flagship locations in Silicon Valley and the New York Stock Exchange — SiliconANGLE Media operates at the intersection of media, technology and AI.
+ Founded by tech visionaries John Furrier and Dave Vellante, SiliconANGLE Media has built a dynamic ecosystem of industry-leading digital media brands that reach 15+ million elite tech professionals. Our new proprietary theCUBE AI Video Cloud is breaking ground in audience interaction, leveraging theCUBEai.com neural network to help technology companies make data-driven decisions and stay at the forefront of industry conversations. 
+ LATEST STORIES 
+ Nirva raises $25M to make AI jewelry with 'perspective’ that listens and provides insights
+ IBM puts governed context at the center of production AI
+ 9 executive interviews reveal what's ahead for enterprise AI at Oracle AI World
+ Anthropic introduces Claude Duet, a proactive AI agent for professionals
+ Thomson Reuters folds AI into its professional tax and audit software
+ Ai2 releases OlmoEarth v1.3 state-of-the-art AI-ready satellite embeddings for the whole planet
+ LATEST STORIES 
+ Nirva raises $25M to make AI jewelry with 'perspective’ that listens and provides insights
+ EMERGING TECH - BY KYT DOTSON . 7 MINUTES AGO 
+ IBM puts governed context at the center of production AI
+ AI - BY VICTORIA GAYTON . 57 MINUTES AGO 
+ 9 executive interviews reveal what's ahead for enterprise AI at Oracle AI World
+ INFRA - BY CHERYL KNIGHT . 1 HOUR AGO 
+ Anthropic introduces Claude Duet, a proactive AI agent for professionals
+ AI - BY KYT DOTSON . 4 HOURS AGO 
+ Thomson Reuters folds AI into its professional tax and audit software
+ APPS - BY PAUL GILLIN . 5 HOURS AGO 
+ Ai2 releases OlmoEarth v1.3 state-of-the-art AI-ready satellite embeddings for the whole planet
+ AI - BY KYT DOTSON . 5 HOURS AGO 
+ CUBE EVENT COVERAGE    help_outline 
+ LATEST FROM THECUBE 
+ IBM puts governed context at the center of production AI 
+ 9 executive interviews reveal what's ahead for enterprise AI at Oracle AI World 
+ In a tight AI market, Dell says supply matters more than price 
+ Comet Cloud targets small businesses underserved by GPU cloud providers 
+ Era4 ties financial sovereignty to Britain’s AI infrastructure 
+ DIVE INTO DAVE VELLANTE’S BREAKING ANALYSIS SERIES 
+ help_outline 
+ ServiceNow AI Control Tower: Selling a penthouse while building the frame 
+ The AI control gap: Who gets to say ‘It’s safe'? 
+ Nvidia’s scale-in play: Controlling agents is the next infrastructure priority 
+ CoreWeave’s next test: From GPU scarcity to a durable AI cloud 
+ Salesforce after Dreamforce: How the CRM giant can grow beyond its own interface 
+ Sign Up for Our Weekly Newsletter 
+ SUBSCRIBE 
+ UPCOMING CUBE EVENTS 
+ SEE MORE 
+ RECENT CUBE EVENTS
+ IBM's AI Operating Model 2026
+ Dell Technologies New York Symposium 2026
+ SEMICON West 2026
+ AI Data Pipeline Forum 2026
+ Infor Velocity Week 2026
+ Dell AI Data Platform Event: From Ambition to AI at Scale 2026
+ PRIVACY POLICY 
+ TERMS 
+ ABOUT US 
+ CONTACT US 
+ BRAND GUIDELINES 
+ Send us a News tip 
+ Join our community
+ theCUBE
+ theCUBE Research
+ © 2026 SiliconANGLE Media Inc. All rights reserved. 
+ × 
+ Send us a news tip
+ Send us a News Tip
+ Email 
+ This field is for validation purposes and should be left unchanged.
+ Name * 
+ First 
+ Last 
+ Type of Pitch * Consumer or Enterprise? Enterprise Startup News Emerging Technology 
+ Email * 
+ What's your story? * 
+ File Max. file size: 244 MB. 
+ CAPTCHA 
+ × 
+ Sign in
+ SIGN IN
+ ...
+ Remember me 
+ LOGIN Forgot Password? 
+ × 
+ Bio
+ Ethics statement
+ × 
+ Extract the signal from the noise
+ Get SiliconANGLE updates and analysis.
+ × 
+ Contact us
+ Inquire about guest posts All other inquiries 
+ × Partner with us
+ NAME OF INDIVIDUAL * 
+ NAME OF COMPANY * 
+ EMAIL * 
+ COMMENTS * 
+ × Contact us
+ NAME OF INDIVIDUAL * 
+ NAME OF COMPANY * 
+ EMAIL * 
+ COMMENTS * 
+ CAPTCHA 
+ × Guest inquiry
+ NAME OF INDIVIDUAL * 
+ NAME OF COMPANY * 
+ EMAIL * 
+ COMMENTS * 
+ CAPTCHA 
+ We use cookies for analytics and measurement. You can accept or reject tracking cookies. See our Privacy Policy .
+ Accept 
+ Reject

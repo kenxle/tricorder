@@ -227,7 +227,7 @@ def _client(tmp_path, monkeypatch):
 
 
 def _outside_data(page: str) -> str:
-    return re.sub(r'<script type="application/json" id="memo-data">.*?</script>', "", page, flags=re.S)
+    return re.sub(r'<script type="application/json" id="(?:memo|report)-data">.*?</script>', "", page, flags=re.S)
 
 
 def test_a_line_cannot_expand_a_placeholder_or_carry_markup(tmp_path, monkeypatch):
@@ -239,7 +239,9 @@ def test_a_line_cannot_expand_a_placeholder_or_carry_markup(tmp_path, monkeypatc
     page = client.get("/api/rooms/hollis_voice/memo.html").text
     outside = _outside_data(page)
     assert "<img" not in outside and "<!--" not in outside
-    assert outside.count("<script") == 1  # the page's own script, once
+    assert outside.count("<script>") == 1  # the page's own script, once
+    # The only other script is plotly.js, from the file beside the page (the expert-read charts).
+    assert re.findall(r'<script src="([^"]+)"', outside) == ["plotly-2.35.2.min.js"]
     for t in ("{{DATA}}", "{{SCRIPT}}", "{{SECTIONS}}"):
         assert t in outside  # the operator's literal text, not an expansion
     # The embedded memo has no raw markup to break out of its element, and still parses.

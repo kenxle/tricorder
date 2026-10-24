@@ -11,6 +11,14 @@ export default function AppTabs() {
       indicatorColor={colors.surface}
       labelStyle={{ selected: { color: colors.accent } }}
     >
+      <NativeTabs.Trigger name="diligence">
+        <NativeTabs.Trigger.Label>Diligence</NativeTabs.Trigger.Label>
+        <NativeTabs.Trigger.Icon
+          src={require("@/assets/images/tabIcons/explore.png")}
+          renderingMode="template"
+        />
+      </NativeTabs.Trigger>
+
       <NativeTabs.Trigger name="index">
         <NativeTabs.Trigger.Label>Company</NativeTabs.Trigger.Label>
         <NativeTabs.Trigger.Icon

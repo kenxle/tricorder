@@ -2,6 +2,10 @@
   var M = JSON.parse(document.getElementById('memo-data').textContent);
   var lineById = {};
   M.sections.forEach(function (s) { s.lines.forEach(function (l) { lineById[l.id] = l; }); });
+  // The expert-read sections' sentences open their claims like any claim line.
+  var R = document.getElementById('report-data'); R = R ? JSON.parse(R.textContent) : [];
+  R.forEach(function (r) { r.parts.forEach(function (p) { p.sentences.forEach(function (x) {
+    lineById[x.id] = {id: x.id, kind: 'claim', text: x.text, claim_ids: x.claim_ids, checklist_ids: [], ask_ids: [], replaces: []}; }); }); });
   var rec = M.sections[14].lines.filter(function (l) { return l.kind === 'operator'; });
   if (rec.length) lineById['s02-recommendation'] = Object.assign({}, rec[0], {id: 's02-recommendation', text: rec.map(function (l) { return l.text; }).join(' ')});
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
@@ -263,7 +267,7 @@
   });
   document.querySelectorAll('.line[data-line-id]').forEach(function (li) {
     var id = li.getAttribute('data-line-id'); var l = lineById[id];
-    if (!l || ['fact', 'source', 'change'].indexOf(l.kind) >= 0 || id === 's02-recommendation') return;
+    if (!l || ['fact', 'source', 'change'].indexOf(l.kind) >= 0 || id === 's02-recommendation' || li.closest('.xr')) return;
     var tools = el('div', 'op-tools');
     var rw = el('button', null, l.kind === 'slot' ? 'Write this' : 'Rewrite'); rw.type = 'button';
     rw.addEventListener('click', function () { editor(li, l.kind === 'slot' ? '' : l.text, function (t) {

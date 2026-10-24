@@ -6,6 +6,7 @@
     POST /api/rooms/{room}/memo/edits      {author, base_version, edits: [...]} -> the next version
     GET  /api/rooms/{room}/memo.html       the interactive page, with editing on
     GET  /api/rooms/{room}/memo.pdf        the PDF of the latest version
+    GET  /api/rooms/{room}/plotly-<version>.min.js   the vendored plotly.js the page's charts load (no CDN)
 """
 
 from __future__ import annotations
@@ -16,9 +17,10 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from memo import store
 from memo.edit import EditError
-from memo.export import NoReadout, edit, export, version_pdf
+from memo.export import NoReadout, edit, export, page_reports, version_pdf
 from memo.html import render_html
 from memo.model import MAX_AUTHOR, MAX_EDITS, Edit, Memo
+from memo.report_html import PLOTLY_FILE, PLOTLY_PATH
 
 router = APIRouter()
 
@@ -86,7 +88,14 @@ def edit_memo(room: str, req: EditRequest) -> Memo:
 
 @router.get("/api/rooms/{room}/memo.html", response_class=HTMLResponse)
 def memo_page(room: str) -> HTMLResponse:
-    return HTMLResponse(render_html(_latest(room)))
+    memo = _latest(room)
+    return HTMLResponse(render_html(memo, page_reports(memo, _room(room))))
+
+
+@router.get(f"/api/rooms/{{room}}/{PLOTLY_FILE}", include_in_schema=False)
+def memo_plotly(room: str) -> FileResponse:
+    _room(room)
+    return FileResponse(PLOTLY_PATH, media_type="text/javascript", headers={"Cache-Control": "public, max-age=86400"})
 
 
 @router.get("/api/rooms/{room}/memo.pdf")

@@ -213,7 +213,7 @@
     if (c.placeholder) {
       return `<tr class="claim ph wait"><td class="claim-text">${esc(c.text)}</td><td class="claim-src"><span class="tc-mark ph" title="Not researched yet">Placeholder</span></td></tr>`;
     }
-    return `<tr class="claim wait" id="ev-${c._n}"><td class="claim-text"><span class="ev-n">${c._n}</span> ${esc(c.text)} ${KIND[c.kind] || ""}</td><td class="claim-src">${chip(c.source, c)}</td></tr>`;
+    return `<tr class="claim wait" id="ev-${c._n}"><td class="claim-text"><span class="ev-n">${c._n}</span> ${esc(c.text)} ${KIND[c.kind] || ""}</td><td class="claim-src">${chip(c.source, c)}${window.TC_MEMO ? ` ${window.TC_MEMO.toggleHtml("claim:" + c._n)}` : ""}</td></tr>`;
   }
   const MARKS = { strong: ["tc-mark--strong", "Looking strong"], weak: ["tc-mark--weak", "Looking weak"], mixed: ["tc-mark--mixed", "Mixed"], thin: ["tc-mark--thin", "Not enough yet"] };
   function allClaims(R) {
@@ -243,12 +243,12 @@
     const list = (window.TC_INSIGHTS || {})[R.slug] || [];
     if (!list.length) return "";
     const claims = allClaims(R).filter((c) => !c.placeholder);
-    const cards = list.map((ins) => {
+    const cards = list.map((ins, idx) => {
       const nums = [...new Set(ins.refs.map((r) => (claims.find((c) => c.text.includes(r)) || {})._n).filter(Boolean))];
       const [cls, label] = MARKS[ins.mark] || MARKS.thin;
       return `<article class="tc-card insight wait"><div class="tc-card-head"><span class="tc-mark ${cls}">${label}</span><span class="piece">${esc(ins.piece)}</span></div>
         <h3>${esc(ins.title)}</h3><p>${esc(ins.text)}</p>
-        <p class="based">Based on ${nums.map((n) => `<a class="ev-ref" href="#ev-${n}">${n}</a>`).join(" ")}</p></article>`;
+        <p class="based"><span>Based on ${nums.map((n) => `<a class="ev-ref" href="#ev-${n}">${n}</a>`).join(" ")}</span>${window.TC_MEMO ? window.TC_MEMO.toggleHtml("insight:" + idx) : ""}</p></article>`;
     }).join("");
     return `<section class="insights" aria-label="What stands out"><h2>What stands out</h2><div class="insight-grid">${cards}</div></section>`;
   }
@@ -557,7 +557,7 @@
     clearTimeout(S.arrivalTimer);
     if (roomOf()) {
       const run = S.runStart = (S.runStart || 0) + 1;
-      S.arrivalTimer = setTimeout(() => { if (run === S.runStart && S.requests) { S.roomShared = true; paintWorking(); } }, 1800 * PACE);
+      S.roomShared = run === S.runStart; // the completed room is ready at once, so the demo never waits (Ken, 3:20 PM)
     }
     paintWorking();
   }
@@ -565,9 +565,8 @@
   // Opening the room hands the working page to room_view.js: the first files arrive, then the rest (Ken, 1:03 PM).
   const roomStates = () => { const r = roomOf(); return r && r.states ? r.states : null; };
   function openRoom() {
-    S.roomShared = true; S.roomOpened = true; S.roomPartial = !S.roomFull && !!roomStates();
+    S.roomShared = true; S.roomOpened = true; S.roomPartial = false; S.roomFull = true;
     showRoomView();
-    scheduleMore();
   }
   function openMore() {
     S.roomPartial = false; S.roomFull = true;
@@ -611,9 +610,9 @@
     if (!S.requests || !room || !S.roomShared || S.roomOpened) return "";
     const company = S.fields.name.value || "This company";
     const st = roomStates();
-    const n = st ? st.partial.arrived.length : room.files.length;
-    return `<div class="notice" role="status"><div><strong>${esc(company)} shared its data room</strong> <span class="dot" aria-hidden="true">·</span> ${n} file${n === 1 ? "" : "s"} <span class="dot" aria-hidden="true">·</span> just now</div>
-      <button class="tc-btn primary" type="button" id="open-room">Open the data room</button></div>`;
+    const n = st ? st.full.files_total : room.files.length;
+    return `<div class="notice" role="status"><div><strong>${esc(company)} shared its data room</strong> <span class="dot" aria-hidden="true">·</span> all ${n} file${n === 1 ? "" : "s"} <span class="dot" aria-hidden="true">·</span> just now</div>
+      <button class="tc-btn primary" type="button" id="open-room">Open the completed data room</button></div>`;
   }
 
   function paintWorking() {

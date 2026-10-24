@@ -59,6 +59,36 @@ def relative_gap(stated: float, found: float) -> float:
     return abs(stated - found) / abs(found)
 
 
+# Reports: Kimmy's expert lens on traction and on burn (knowledge/*.md), with the numbers for their charts.
+
+KNOWLEDGE = {"traction_and_revenue": "knowledge/traction_and_revenue.md", "burn_and_runway": "knowledge/burn_and_runway.md"}
+KIMMY_RUNWAY_MONTHS = 18  # knowledge/burn_and_runway.md: 18 months of runway after the round closes, Kimmy's baseline
+
+
+def month_label(as_of: str, k: int) -> str:
+    y, m = int(as_of[:4]), int(as_of[5:7]) + k
+    y += (m - 1) // 12
+    return f"{y}-{(m - 1) % 12 + 1:02d}"
+
+
+def cash_path(cash: float, base_burn: float, extra_hires: list[dict]) -> list[list[float]]:
+    """Cash at the end of each month from today, as [month, cash] points, ending where it reaches zero."""
+    pts, left, m = [[0, cash]], cash, 0
+    while m < 120:
+        m += 1
+        burn = base_burn + sum(h["monthly_cost"] for h in extra_hires if h["start"] <= m)
+        if left < burn:
+            pts.append([round(m - 1 + left / burn, 2), 0])
+            break
+        left -= burn
+        pts.append([m, round(left)])
+    return pts
+
+
+def report(key: str, title: str, paras: list[dict], asks: list[str], chart: dict, needs: list[str]) -> dict:
+    return {"key": key, "title": title, "knowledge": KNOWLEDGE[key], "paras": paras, "asks": asks, "chart": chart, "needs": needs}
+
+
 def runway(cash: float, base_burn: float, extra_hires: list[dict], pace: float = 1.0, revenue_change: float = 0.0) -> float:
     """Months until the cash runs out, month by month. Extra hires add their monthly cost from their start month."""
     left, m = cash, 0
@@ -459,6 +489,67 @@ def ploy_room(f: dict, pre: dict) -> dict:
                   [], strip([credit_ws, paying_ws], paying_ws, [{"v": credit_ws, "label": f"Deck {credit_ws:,}", "pos": "above"}], "count", 100),
                   f"The deck says {credit_ws:,} paying workspaces. The workspace file shows {paying_ws:,} paying and {free_ws:,} on the free plan. Which count do you report?",
                   relative_gap(credit_ws, paying_ws))]
+    # Reports read through Kimmy's lens (knowledge/traction_and_revenue.md, knowledge/burn_and_runway.md).
+    # The months before September are invented room history; September equals the figures above.
+    months = [month_label("2026-01", k) for k in range(9)]
+    starter_hist = [40, 70, 105, 140, 175, 210, 245, 280, starter_ws]
+    pro_hist = [35, 70, 110, 160, 215, 275, 330, 380, pro_ws]
+    ent_start = dict(zip([n for n, _ in enterprise], ["2026-05", "2026-06", "2026-07", "2026-08", "2026-09"]))
+    pilot_months = {"2026-08", "2026-09"}
+    recurring = [starter_hist[i] * f["starter"] + pro_hist[i] * f["pro"] + sum(v for n, v in enterprise if ent_start[n] <= mo)
+                 for i, mo in enumerate(months)]
+    one_time = [pilot_mrr if mo in pilot_months else 0 for mo in months]
+    assert recurring[-1] == sub_mrr and recurring[-1] + one_time[-1] == model_mrr
+    all_hires = [h for h in hires if not h["in_model"]]
+    gross = model_burn + revenue
+    people = gross - inference - hosting - support
+    rw_round = runway(cash + raise_amt, model_burn, all_hires)
+    rw_down = runway(cash, model_burn + pilot_mrr, all_hires)
+    reports = [
+        report("traction_and_revenue", "Traction and revenue", [
+            {"lead": "What the room shows.", "refs": ["tr-3", "tr-2"],
+             "body": f"Recurring revenue grew from {money(recurring[0])} a month in {months[0]} to {money(recurring[-1])} in {months[-1]}: "
+                     f"{starter_ws} Starter and {pro_ws} Pro workspaces and {len(enterprise)} enterprise contracts."},
+            {"lead": "The pilot stays in its own line.", "refs": ["tr-3", "tr-1"],
+             "body": f"{pilot_name} paid {money(pilot_total)} for a {pilot_months}-month pilot, booked as {money(pilot_mrr)} a month. "
+                     f"A paid pilot is traction, but it stays out of ARR until it becomes a recurring contract. Counted in, ARR reaches the deck's "
+                     f"{millions(deck_arr)}. Without it, ARR is {money(rebuilt_arr)}."},
+            {"lead": "Paying, not just using.", "refs": ["tr-4"],
+             "body": f"{credit_ws:,} workspaces use credits and {paying_ws:,} of them pay. Paying is the stronger signal of demand. Free use is interest."},
+            {"lead": "No single customer carries it.", "refs": ["cu-1"],
+             "body": f"The largest customer, {largest_name}, is {pct(largest_share)} of September revenue."},
+        ], [
+            f"Has the {pilot_name} pilot converted? If so, the signed annual contract.",
+            "Monthly revenue by customer, with the plan and the kind of revenue on every row.",
+            "What turns a free workspace into a paying one, and how often it happens.",
+        ], {"kind": "revenue", "months": months, "recurring": recurring, "one_time": one_time,
+            "recurring_label": "Recurring: plans and contracts", "one_time_label": "Pilot, not recurring",
+            "deck_monthly": deck_arr / 12, "deck_label": f"Deck: {millions(deck_arr)} ARR, {money(deck_arr / 12)} a month"}, [cust]),
+        report("burn_and_runway", "Burn and runway", [
+            {"lead": "Where the money goes.", "refs": ["ue-3"],
+             "body": f"September's spending was about {money(gross)}: {money(inference)} of model inference, {money(hosting)} of hosting, "
+                     f"{money(support)} of support, and {money(people)} for the team of {f['team']} and everything else. "
+                     f"Net of revenue, the company burns {money(model_burn)} a month."},
+            {"lead": "Runway on the company's plan.", "refs": ["bu-1"],
+             "body": f"At {money(model_burn)} a month, the {money(cash)} in the bank lasts {runway_model:.1f} months."},
+            {"lead": "With the whole hiring plan.", "refs": ["bu-2"],
+             "body": f"The model's burn carries {len(hires) - len(all_hires)} of the {len(hires)} planned hires. With all of them, runway is {runway_rebuilt:.1f} months."},
+            {"lead": "Against Kimmy's baseline.", "refs": ["pi-1"],
+             "body": f"Kimmy looks for {KIMMY_RUNWAY_MONTHS} months of runway after a round closes, and more when fundraising is slow. "
+                     f"With the {millions(raise_amt)} Series A and every planned hire, runway is {rw_round:.1f} months."},
+            {"lead": "If the pilot does not convert.", "refs": ["tr-3", "bu-2"],
+             "body": f"Losing the {money(pilot_mrr)} a month adds that much to the burn. With every planned hire, runway falls to {rw_down:.1f} months before any new round."},
+        ], [
+            f"Bank statements that tie September's cash to {money(cash)}.",
+            "Which hires the round pays for first, and the milestone each one supports.",
+            f"The model with all {len(hires)} hires in the burn.",
+        ], {"kind": "cash", "as_of": "2026-09", "series": [
+                {"name": "The company's plan", "points": cash_path(cash, model_burn, []), "style": "plan", "end": f"{runway_model:.1f} mo"},
+                {"name": f"With all {len(hires)} planned hires", "points": cash_path(cash, model_burn, all_hires), "style": "hires", "end": f"{runway_rebuilt:.1f} mo"},
+                {"name": f"After the {millions(raise_amt)} Series A, all hires", "points": cash_path(cash + raise_amt, model_burn, all_hires), "style": "round", "end": f"{rw_round:.1f} mo"},
+            ], "baseline": KIMMY_RUNWAY_MONTHS, "baseline_label": f"Kimmy: {KIMMY_RUNWAY_MONTHS} months after a round"}, [hiring, stmts]),
+    ]
+
     # Why each flag matters, in plain words, shown under its header (Ken, 1:34 PM).
     why = {
         "ue-3": "Model inference is a direct cost of serving each customer. Leaving it out makes the margin look like software's when it is closer to a services business's.",
@@ -477,6 +568,7 @@ def ploy_room(f: dict, pre: dict) -> dict:
                   "ownership": pct(ownership, 2), "source": src(deck, "slide 14", f"{millions(raise_amt)} Series A")},
         "top_flags": {"green": greens, "red": reds}, "pieces": pieces, "claims": C, "drill": drill, "holds": holds,
         "prechecks": prechecks, "whatif": whatif, "steer_examples": steer_examples, "memo_company": memo_company,
+        "reports": reports,
     }, partial_files, extra)
 
 
@@ -869,6 +961,70 @@ def sazabi_room(f: dict, pre: dict) -> dict:
                         [], strip([deck_paying_dp, dp_paying], dp_paying, [{"v": deck_paying_dp, "label": f"Deck {deck_paying_dp}", "pos": "above"}], "count", 5),
                         f"The deck says all {deck_paying_dp} design partners pay. The workspace file shows {dp_paying} paying and {dp_free} free. Which count do you report?",
                         relative_gap(deck_paying_dp, dp_paying))]
+    # Reports read through Kimmy's lens (knowledge/traction_and_revenue.md, knowledge/burn_and_runway.md).
+    # June to August are invented room history; June's plans are the June cohort and September equals the figures above.
+    months = [month_label("2026-06", k) for k in range(4)]
+    hist = [june, {"Hobby": 11, "Startup": 8, "Growth": 4}, {"Hobby": 12, "Startup": 10, "Growth": 5}, {k: n for k, (n, _) in plans.items()}]
+    over_hist = [2_000, 5_500, 8_900, over_gb_recurring]
+    ent_from = "2026-08"
+    recurring = [sum(h[k] * plans[k][1] for k in plans) + (ent_mrr if mo >= ent_from else 0) + over_hist[i] * f["over_per_gb"]
+                 for i, (h, mo) in enumerate(zip(hist, months))]
+    one_time = [0, 0, 0, backfill]
+    assert round(recurring[-1], 2) == round(rebuilt_mrr, 2) and round(recurring[-1] + one_time[-1], 2) == round(model_mrr, 2)
+    all_hires = [h for h in hires if not h["in_model"]]
+    gross = model_burn + revenue
+    cloud_net = cloud_gross - cloud_credits
+    people = gross - cloud_net - inference
+    rw_round = runway(cash + unsigned_total, model_burn, all_hires)
+    credits_end = [{"start": 7, "monthly_cost": cloud_credits}]  # the credits expire 2027-03-31; month 7 from September is April
+    rw_down = runway(cash, model_burn, all_hires + credits_end)
+    reports = [
+        report("traction_and_revenue", "Traction and revenue", [
+            {"lead": "What the room shows.", "refs": ["tr-3", "cu-2"],
+             "body": f"Recurring revenue rose from {money(recurring[0])} a month in {months[0]}, the open-beta month, to {money(recurring[-1])} in {months[-1]}: "
+                     f"{sum(n for n, _ in plans.values())} plan subscriptions, one enterprise contract and recurring usage over plan."},
+            {"lead": "The backfill stays in its own line.", "refs": ["tr-3", "tr-1"],
+             "body": f"A one-time backfill of {backfill_gb:,} GB of old logs brought in {money(backfill)} in September. One-time and variable charges "
+                     f"go in their own line and are never multiplied by 12. Counted as recurring, they lift ARR to the deck's {deck_arr_k}."},
+            {"lead": "Paying, not just signed up.", "refs": ["tr-4", "cu-2"],
+             "body": f"{paying_teams} teams pay out of {workspaces_total} workspaces, and {dp_paying} of the {f['design_partners']} design partners. "
+                     f"The deck says all {f['design_partners']} pay. Paying teams are the strong signal. Free design partners are interest."},
+            {"lead": "The teams that pay stay and spend more.", "refs": ["re-1", "re-3"],
+             "body": f"The teams paying in June pay more now: net revenue retention of {pct(nrr)}. Three months is a short record."},
+            {"lead": "One customer is a large share.", "refs": ["cu-1"],
+             "body": f"{ent_name} pays {pct(ent_share)} of recurring revenue. Depending on one customer is a concern even this early."},
+        ], [
+            f"The signed terms behind {ent_name}, and when they renew.",
+            "Which design partners are expected to pay, and when.",
+            "Usage revenue by month, with recurring and one-time charges apart.",
+        ], {"kind": "revenue", "months": months, "recurring": recurring, "one_time": one_time,
+            "recurring_label": "Recurring: plans, contract and usage", "one_time_label": "Backfill, one-time",
+            "deck_monthly": deck_arr / 12, "deck_label": f"Deck: {deck_arr_k} ARR, {money(deck_arr / 12)} a month"}, [cust, ws]),
+        report("burn_and_runway", "Burn and runway", [
+            {"lead": "Where the money goes.", "refs": ["ue-3"],
+             "body": f"September's spending was about {money(gross)}: {money(cloud_net)} of cloud after {money(cloud_credits)} of credits, "
+                     f"{money(inference)} of model inference, and {money(people)} for the team of {f['team']} and everything else. Net of revenue, the company burns {money(model_burn)} a month."},
+            {"lead": "The statements tie out.", "refs": ["bu-3"],
+             "body": f"The bank statements close September at {money(cash)}, the cash the model uses."},
+            {"lead": "Runway on the company's plan, and with every hire.", "refs": ["bu-1", "bu-2"],
+             "body": f"At {money(model_burn)} a month, the cash lasts {runway_model:.1f} months. The model's burn carries {len(hires) - len(all_hires)} of the "
+                     f"{len(hires)} planned hires. With all of them, runway is {runway_rebuilt:.1f} months."},
+            {"lead": "Against Kimmy's baseline.", "refs": ["pi-2", "lc-2"],
+             "body": f"Kimmy looks for {KIMMY_RUNWAY_MONTHS} months of runway after a round closes. If the {money(unsigned_total)} of commitments without a signed SAFE "
+                     f"comes in, runway with every hire is {rw_round:.1f} months."},
+            {"lead": "When the cloud credits end.", "refs": ["ue-3"],
+             "body": f"The {money(cloud_credits)} a month of credits stops after {credits_expire}. With that cost back and every hire, runway is {rw_down:.1f} months."},
+        ], [
+            f"Which of the {len(hires)} hires the seed pays for, and the milestone each one supports.",
+            f"When the {money(unsigned_total)} of unsigned commitments will sign.",
+            "Cost of revenue once the cloud credits end.",
+        ], {"kind": "cash", "as_of": "2026-09", "series": [
+                {"name": "The company's plan", "points": cash_path(cash, model_burn, []), "style": "plan", "end": f"{runway_model:.1f} mo"},
+                {"name": f"With all {len(hires)} planned hires", "points": cash_path(cash, model_burn, all_hires), "style": "hires", "end": f"{runway_rebuilt:.1f} mo"},
+                {"name": f"If the {millions(unsigned_total)} unsigned comes in, all hires", "points": cash_path(cash + unsigned_total, model_burn, all_hires), "style": "round", "end": f"{rw_round:.1f} mo"},
+            ], "baseline": KIMMY_RUNWAY_MONTHS, "baseline_label": f"Kimmy: {KIMMY_RUNWAY_MONTHS} months after a round"}, [hiring, stmts]),
+    ]
+
     # Why each flag matters, in plain words, shown under its header (Ken, 1:34 PM). Small green flags need none.
     why = {
         "lc-2": "A round counted as closed should match the money that is signed and the filing the law asks for. "
@@ -890,4 +1046,5 @@ def sazabi_room(f: dict, pre: dict) -> dict:
                   "ownership": pct(ownership, 2), "source": src(deck, "slide 12", f"{millions(cap_total)} seed, {millions(seed_cap)} post-money cap")},
         "top_flags": {"green": greens, "red": reds}, "pieces": pieces, "claims": C, "drill": drill, "holds": holds,
         "prechecks": prechecks, "whatif": whatif, "steer_examples": steer_examples, "memo_company": memo_company,
+        "reports": reports,
     }, partial_files, extra_flags)

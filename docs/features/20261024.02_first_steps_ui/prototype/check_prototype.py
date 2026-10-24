@@ -47,6 +47,18 @@ with sync_playwright() as p:
         check(pg.locator(".section .claim:visible").count() > 5 and pg.locator(".insights:visible").count() == 1 and pg.locator("#roomgaps li:visible").count() > 0,
               "every section filled in whole")
         check(pg.locator(".steps, .back, .stepbar, .step-bar").count() == 0, "no step bar or back links")
+        ins = pg.locator(".insight .memo-pick")
+        n_ins = pg.locator(".insight").count()
+        check(ins.count() == n_ins and n_ins > 0 and ins.evaluate_all("els => els.every(e => e.getAttribute('aria-checked') === 'true')"), f"every insight starts In memo ({n_ins})")
+        rows = pg.locator(".claim:not(.ph) .memo-pick")
+        check(rows.count() > 5 and rows.evaluate_all("els => els.every(e => e.getAttribute('aria-checked') === 'false')"), f"plain evidence rows start out of the memo ({rows.count()})")
+        rows.first.click()
+        check(rows.first.get_attribute("aria-checked") == "true" and pg.evaluate("TC_MEMO.get('claim:1')") is True and any(x["key"] == "claim:1" for x in pg.evaluate("TC_MEMO.list(true)")), "clicking a row puts it in the memo")
+        ins.first.focus()
+        pg.keyboard.press("Space")
+        check(ins.first.get_attribute("aria-checked") == "false" and pg.evaluate("TC_MEMO.get('insight:0')") is False, "the toggle works from the keyboard")
+        check("claim:1" in pg.evaluate("localStorage.getItem('tricorder.proto.memo.' + TC.S.research.slug)"), "choices are kept in localStorage")
+        ins.first.click()
         check("prototype" not in pg.locator("body").inner_text().lower(), "no Prototype label on the readout")
         chips = pg.locator(".claims .srcchip")
         check(chips.count() > 5, f"source chips present ({chips.count()})")
@@ -99,29 +111,21 @@ with sync_playwright() as p:
         check(pg.locator(".req[data-state='open']").count() == asked and pg.locator(".req[data-state='answered']").count() == 0 and asked > 0, f"every requested item shows as Open ({asked})")
         check("Asked" in pg.locator(".req").first.inner_text() and f"Request sent to {cfg['founder']}" in pg.locator("#req-note").inner_text() and f"waiting for {cfg['name']}'s data room" in pg.locator("#req-note").inner_text(),
               "each item shows when it was asked, and the page says the request went to the founder")
-        pg.wait_for_selector("#open-room", timeout=10000)
+        pg.wait_for_selector("#open-room", timeout=2000)
         note = pg.locator(".notice").inner_text()
-        first = pg.evaluate("TC.S.research.room.states.partial.arrived.length")
         total = pg.evaluate("TC.S.research.room.states.full.files_total")
-        check(f"{cfg['name']} shared its data room" in note and f"{first} files" in note and "just now" in note, f"first notification counts the files that arrived ({first} of {total})")
+        check(f"{cfg['name']} shared its data room" in note and f"all {total} files" in note and "Open the completed data room" in note,
+              f"right after sending, one click opens the completed room ({total} files)")
         pg.screenshot(path=str(SHOTS / f"4a_requests_open_notification_{cfg['slug']}.png"), full_page=True)
         pg.click("#open-room")
-        pg.wait_for_selector(".x-roomview[data-room-state='partial']")
-        ans = lambda st: pg.evaluate(f"TC.S.items.filter(i => i.checked && i.id && TC.S.research.room.states.{st}.answered.includes(i.id)).length")
-        exp_partial = ans("partial")
-        got = pg.locator(".x-roomview .req[data-state='answered']").count()
-        check(got == exp_partial and 0 < got < asked and pg.locator(".x-roomview .req[data-state='open']").count() == asked - got,
-              f"opening the room shows the partial view ({got} answered, {asked - got} open)")
-        check(pg.locator(".x-roomview .req[data-state='answered'] .roomchip").count() >= got, "each answered item names the file that answered it")
-        check("synthetic" in pg.locator("#notify .banner").inner_text(), "the partial room is labelled synthetic")
-        pg.wait_for_selector("#open-more", timeout=10000)
-        more = pg.locator("#notify .notice").inner_text()
-        check(f"{cfg['name']} added {total - first} more files" in more and "just now" in more, f"second notification: {total - first} more files")
-        pg.screenshot(path=str(SHOTS / f"4_room_received_{cfg['slug']}.png"), full_page=True)
-        pg.click("#open-more")
         pg.wait_for_selector(".x-roomview[data-room-state='full']")
+        ans = lambda st: pg.evaluate(f"TC.S.items.filter(i => i.checked && i.id && TC.S.research.room.states.{st}.answered.includes(i.id)).length")
         answered = pg.locator(".x-roomview .req[data-state='answered']").count()
-        check(answered == ans("full") and answered > got and pg.locator("#open-more").count() == 0, f"the full view answers more ({answered} answered, {asked - answered} still open: nothing in the room settles them)")
+        check(answered == ans("full") and 0 < answered < asked and pg.locator(".x-roomview .req[data-state='open']").count() == asked - answered,
+              f"the completed room answers what it holds ({answered} answered, {asked - answered} still open: nothing in the room settles them)")
+        check(pg.locator(".x-roomview .req[data-state='answered'] .roomchip").count() >= answered, "each answered item names the file that answered it")
+        check("synthetic" in pg.locator("#notify .banner").inner_text(), "the room is labelled synthetic")
+        pg.screenshot(path=str(SHOTS / f"4_room_received_{cfg['slug']}.png"), full_page=True)
         check(pg.locator("a[href='http://localhost:5173/']").count() == 1, "the working page links to the built app")
         check("prototype" not in pg.locator("body").inner_text().lower() and "simulate" not in pg.locator("body").inner_text().lower() and pg.locator(".steps, .back").count() == 0, "no Prototype label, step bar or back links on the working page")
         # A founder question from a flag card: on the request, in the requests box as Open, and TC_OPEN_REQUEST shows it
@@ -156,7 +160,7 @@ with sync_playwright() as p:
         check(pg.locator(".x-verdicts .tc-verdict").count() == 10, "the overview has ten pieces with a verdict")
         check(pg.locator(".x-drill").count() == 2, "two drill-downs, one weak and one strong")
         pg.locator(".x-flag .roomchip").first.click()
-        check("synthetic room" in pg.locator(".x-flag .panel").first.inner_text(), "a room source chip opens its synthetic excerpt")
+        check(".xlsx" in pg.locator(".x-flag .panel").first.inner_text() or ".pdf" in pg.locator(".x-flag .panel").first.inner_text() or ".csv" in pg.locator(".x-flag .panel").first.inner_text(), "a room source chip opens its synthetic excerpt")
         pg.locator(".x-smallflag .srcchip").first.click()
         check("Saved copy" in pg.locator(".x-smallflag .panel").first.inner_text(), "an outside source chip opens the saved public page")
         held, missing = pg.locator(".x-tick[data-held='yes']").count(), pg.locator(".x-tick[data-held='no']").count()
@@ -198,9 +202,12 @@ with sync_playwright() as p:
         # Step 7: the associate's memo, a document in prose
         pg.click("#to-memo")
         pg.wait_for_selector(".x-doc")
-        secs = pg.eval_on_selector_all(".x-doc .x-memo-sec", "els => els.map(e => e.getAttribute('aria-label'))")
-        check(secs == ["What the company does", "The investment case", "What is strong", "What is weak, and why", "What is still unknown, and what was asked", "Recommendation"],
+        secs = [x for x in pg.eval_on_selector_all(".x-doc .x-memo-sec", "els => els.map(e => e.getAttribute('aria-label'))") if x != "Evidence the associate added"]
+        check(secs == ["What the company does", "What the outside research shows", "The investment case", "What is strong", "What is weak, and why", "Traction and revenue", "Burn and runway",
+                       "What is still unknown, and what was asked", "Recommendation"],
               f"the memo reads top to bottom as a document ({secs})")
+        check(pg.locator(".x-doc .x-chart .main-svg").count() >= 2 and pg.locator(".x-doc .x-kimmy").count() == 2,
+              "the memo carries both reports, each with its chart and Kimmy's knowledge file")
         check(pg.evaluate("[...document.querySelectorAll('.x-doc table, .x-doc .x-ticks, .x-doc .skel')].filter(e => e.offsetParent).length") == 0,
               "no tables, checklists or loading states at the top level of the memo")
         check("The associate's own figure" in pg.locator(".x-doc").inner_text(), "the associate's steers show in the memo")
@@ -251,6 +258,28 @@ with sync_playwright() as p:
         flags, waiting = pg.locator(".x-roomview .x-flag").count(), pg.locator(".x-roomview .x-waiting").count()
         check(flags >= 2 and pg.locator("section[aria-label='What stands out'] .x-flag").count() == flags, f"{state}: what stands out leads with the room's flags ({flags})")
         check(pg.locator(".x-roomview .tc-verdict").count() == 10, f"{state}: ten pieces carry the room's verdicts")
+        if state == "full":
+            pg.wait_for_function("document.querySelectorAll('.x-report .x-chart .main-svg').length >= 2")
+            check(pg.locator(".x-report").count() == 2 and pg.locator(".x-report .x-kimmy").count() == 2 and "knowledge/burn_and_runway.md" in pg.locator(".x-report").nth(1).inner_text(),
+                  "full: traction and burn reports, each read with Kimmy's knowledge file")
+            check(pg.evaluate("[...document.querySelectorAll('.x-report .x-chart')].every(e => e.querySelector('.main-svg'))"), "full: each report draws its interactive chart, offline")
+            pg.evaluate("TC_MEMO.reset()")
+            check(pg.locator(".x-flag .memo-pick[aria-checked='true']").count() == pg.locator(".x-flag").count() and pg.locator(".x-insight .memo-pick[aria-checked='true']").count() >= 1
+                  and pg.locator(".x-roomview .x-claim .memo-pick[aria-checked='false']").count() >= 1 and pg.locator(".x-report .x-evlist .memo-pick").count() >= 1,
+                  "full: every flag, insight and claim has an In memo toggle; flags and insights in, plain evidence out")
+            red = pg.locator(".x-flag[data-flag='red'] .tc-card-title").first.inner_text()
+            pg.locator(".x-flag[data-flag='red'] .memo-pick").first.click()
+            pg.locator(".x-report").first.locator("summary").click()
+            pg.locator(".x-report .x-evlist .memo-pick").first.click()
+            pg.evaluate("location.hash = 'memo'")
+            pg.wait_for_selector(".x-doc")
+            check(red not in pg.locator(".x-doc").inner_text() and pg.locator("section[aria-label='Evidence the associate added'] .x-para").count() == 1,
+                  "the memo keeps only what is picked: a flag taken out is gone, a claim put in appears")
+            pg.evaluate("TC_MEMO.reset()")
+            pg.goto(BASE + f"?company=https://ploy.ai&room={state}")
+            pg.wait_for_selector(f".x-roomview[data-room-state='{state}']")
+        else:
+            check(pg.locator(".x-report .tc-label--gap").count() >= 1, "partial: a report waiting on its file says so")
         check(pg.locator(".x-roomsays .tc-mark--strong").count() >= 3, f"{state}: pre-room claims show as confirmed by the room")
         if state == "partial":
             check(waiting >= 1 and pg.locator(".x-waiting .tc-mark--running").count() >= 1, f"partial: checks waiting on a file show their open request ({waiting})")
@@ -308,7 +337,7 @@ with sync_playwright() as p:
 
     pg.click("#to-memo")
     pg.wait_for_selector(".x-doc")
-    check(pg.locator(".x-doc .x-memo-sec").count() == 6 and "Seed" in pg.locator(".x-memohead").inner_text(), "Sazabi step 7: the memo reads as a document, the seed in its header")
+    check(pg.locator(".x-doc .x-memo-sec:not([aria-label='Evidence the associate added'])").count() == 9 and "Seed" in pg.locator(".x-memohead").inner_text(), "Sazabi step 7: the memo reads as a document, the seed in its header")
     pg.locator("[data-evtoggle]").first.click()
     check(pg.locator(".x-para-ev:not([hidden]) .x-claim").count() >= 1, "Sazabi step 7: one click opens a paragraph's evidence in place")
     pg.screenshot(path=str(SHOTS / "7b_make_the_memo_sazabi.png"), full_page=True)
