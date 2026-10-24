@@ -310,7 +310,7 @@
     let body;
     if (!R) {
       body = `<div class="empty" role="status"><strong>Research not cached for this company.</strong>
-        The prototype holds saved research for Ploy and Sazabi only. In the built app, Tricorder runs the outside scans here, section by section.
+        Tricorder has saved research for Ploy and Sazabi only. Research for other companies is not set up yet.
         You can still draft the data-room request from the stage's first-tier documents.</div>`;
     } else {
       numberClaims(R);
@@ -552,7 +552,6 @@
       <h2 class="co-title">${esc(company)}: data room received</h2>
       <p class="banner tc-synthetic" role="note">This data room is synthetic. The team wrote it for the demo. It is not ${esc(company)}'s data.</p>
       <p>You asked for ${n} item${n === 1 ? "" : "s"}. Tricorder now checks what the room holds against that list, then reads the room for red and green flags.</p>
-      <p>This is where the prototype joins the app that is already built: the readout with its flags, the gaps, and the requests for anything still missing.</p>
       <div class="actions"><a class="btn primary tc-btn" href="#flags">See the flags from the room</a> <a class="btn tc-btn tc-btn--secondary" href="http://localhost:5173/">Open the built readout page</a>
         <span class="note">Runs on this laptop at localhost:5173.</span></div>`;
   }
