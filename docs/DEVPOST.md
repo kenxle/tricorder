@@ -33,8 +33,6 @@ Tricorder automates research and helps associates build the memo that will be th
 
 **Synthetic rooms with answer keys.** A generator creates fake data rooms. Hollis Voice, an invented Series A company, has 17 files with 8 planted red flags, 3 decoys and 3 green flags. Brasswick, an invented seed company, has 14 files and 5 red flags. A clean copy of Hollis Voice has none. The answer keys sit outside the rooms, and only the scorer reads them.
 
-**Scripts for math, a model for words.** Each scan is Python and writes its claims as JSON. Scripts compute every number. Claude reads only what a script cannot, such as a contract clause, and returns structured output with the exact quote it relied on. A merge step turns the claims into the readout.
-
 **The TypeScript port.** At 11:00 AM we decided to move to TypeScript, and Benjamin started the port the same morning. Today's commits brought:
 
 - a pnpm and Turbo workspace;
