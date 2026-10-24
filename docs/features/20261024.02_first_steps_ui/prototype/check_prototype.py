@@ -156,7 +156,7 @@ with sync_playwright() as p:
         check(pg.locator(".x-verdicts .tc-verdict").count() == 10, "the overview has ten pieces with a verdict")
         check(pg.locator(".x-drill").count() == 2, "two drill-downs, one weak and one strong")
         pg.locator(".x-flag .roomchip").first.click()
-        check("synthetic room" in pg.locator(".x-flag .panel").first.inner_text(), "a room source chip opens its synthetic excerpt")
+        check(".xlsx" in pg.locator(".x-flag .panel").first.inner_text() or ".pdf" in pg.locator(".x-flag .panel").first.inner_text() or ".csv" in pg.locator(".x-flag .panel").first.inner_text(), "a room source chip opens its synthetic excerpt")
         pg.locator(".x-smallflag .srcchip").first.click()
         check("Saved copy" in pg.locator(".x-smallflag .panel").first.inner_text(), "an outside source chip opens the saved public page")
         held, missing = pg.locator(".x-tick[data-held='yes']").count(), pg.locator(".x-tick[data-held='no']").count()

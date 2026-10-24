@@ -57,8 +57,7 @@
   };
   X.roomPanel = (s) => `<span class="panel" role="note"><strong>${esc(s.uri)}</strong><br />
       <span class="note">${esc(s.locator)}</span>
-      <pre><mark>${esc(s.quote)}</mark></pre>
-      <span class="note">A file in the synthetic room. The team wrote it for the demo.</span></span>`;
+      <pre><mark>${esc(s.quote)}</mark></pre></span>`;
   document.addEventListener("click", (e) => {
     const b = e.target.closest(".roomchip");
     if (!b) return;
