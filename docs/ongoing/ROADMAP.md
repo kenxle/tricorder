@@ -2,6 +2,8 @@
 
 What Tricorder builds next, and who builds it. Today is Saturday 2026-10-24. Hacking runs 10:30 AM to 4:30 PM, the demo freezes at 3:30 PM, and judging starts at 4:30 PM. The team is forming on site, so this page names roles; the [board](../BULLETIN.md) names the people behind each one.
 
+**The framework:** every slice serves a step of the [demo workflow](diagrams/demo_workflow.md): a real list of YC companies, our own research, requests for the data room, red and green flags, the associate's steering, and the interactive memo for the principals.
+
 ## Charter
 
 **What belongs:** The plan at a glance: what to build next and in what order, who builds it, what is built, and what waits on Ken. One line per slice.

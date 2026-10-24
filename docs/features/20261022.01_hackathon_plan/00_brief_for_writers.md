@@ -492,3 +492,9 @@ Added 2026-10-22 at 3:34 PM, Ken, on the same note:
 > just empty the architecture doc for now. we aren't to the point where you could have written a good one yet. we're still understanding our product direction. i also just asked someone else to rewrite the brand voice
 
 Settled: ARCHITECTURE.md holds only its charter and a status line until the product direction settles. BRAND.md belongs to whoever Ken asked to rewrite the brand voice; agents here leave it alone.
+
+## Added 2026-10-24, 11:15 AM: the demo workflow is the framework
+
+Ken, on his desk: "give me a workflow showing our demo workflow. we want to start with a real list of YC spring 26 companies and kick off our due diligence. we run our own models and do internet reserach. we then  send requests for data room information. we get that info from the data room, and analyze it, looking for red flags and green flags. the associate will analyze and cross reference and steer and make sure this is good, and use this to prepare the 'memo' which is actually an interactive deliverable for the principles. the principles have the final memo. let's use this as the framework for what we're building"
+
+The workflow: [diagrams/demo_workflow.md](../../ongoing/diagrams/demo_workflow.md).

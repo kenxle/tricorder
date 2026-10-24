@@ -8,6 +8,10 @@
 
 **Sources:** [the rooms](../../data_room/README.md), [the YC companies research](../reports/20261022.02_research/research_demo_companies.md), [the overview page](../features/20261022.01_hackathon_plan/00_overview.md).
 
+## The framework
+
+The demo follows the [demo workflow](diagrams/demo_workflow.md), Ken's framework for what Tricorder builds (2026-10-24, 11:15 AM): a real list of YC Spring 2026 companies, our own models and internet research, requests to the company for data room information, red and green flags from the room, the associate's cross-referencing and steering, and the interactive memo the principals end with. Where the beat sheet below differs, the workflow wins until the beat sheet is redone.
+
 ## The rooms
 
 Every data room is synthetic, as the organisers require.

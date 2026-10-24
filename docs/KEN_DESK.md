@@ -19,10 +19,30 @@
 - **Testimonials (B2B) and traction from social presence (B2C):** nothing checks either yet. The nearest slice is [online-presence](ongoing/roadmap/online-presence.md), not started. Say if these should become checklist items or part of that slice.
 - **Checking whether founders tell the truth when the VC knows less than they do:** this is the core of what is built. The [claim-support](ongoing/roadmap/claim-support.md) scan checks every figure in the deck and the pitch against the room's own files, and the red-flag checks compare numbers by script, so the VC does not need the founder's expertise to see where the founder's own documents disagree. It could be a line in the pitch.
 
+## The demo workflow
+
+The framework for what we build, from your 11:15 note. Each step with the slices behind it and their status: [demo_workflow.md](ongoing/diagrams/demo_workflow.md).
+
+```mermaid
+graph TD
+    A["1. A real list of<br/>YC Spring 2026 companies"] --> B["2. Kick off diligence:<br/>our own models and internet research"]
+    B --> C["3. Send the company requests<br/>for data room information"]
+    C --> D["4. The data room comes back"]
+    D --> E["5. Analyze the room:<br/>red flags and green flags"]
+    B --> F
+    E --> F["6. The associate analyzes,<br/>cross-references and steers"]
+    F --> G["7. The interactive memo<br/>for the principals"]
+    G --> H["8. The principals have<br/>the final memo"]
+    F -. "asks for more" .-> C
+```
+
+Where it stands: steps 3, 7 and 8 are built (requests to the company, the memo). Step 5 is mostly built. Step 6 is partly built. Steps 1, 2 and 4 are not started: they wait on your pick of YC companies and on the outside research.
+
 ## Needs your call
 
 Each item says who is waiting and what Claude recommends.
 
+- [ ] **0. Reorder the build and the demo to follow the workflow?** Today the demo opens on Hollis Voice's flags, and the roadmap's demo path builds the room analysis first. The workflow starts with the YC list and our own research, which are not started. **Claude recommends:** keep the room analysis first (it is most of the demo and mostly built), and move [cached-data](ongoing/roadmap/cached-data.md) and [outside-in](ongoing/roadmap/outside-in.md) up to right after it, so steps 1 and 2 exist by the 3:30 freeze. Then Claude rewrites the beat sheet in [DEMO.md](ongoing/DEMO.md) in the workflow's order. *Waiting: your pick of YC companies (item 5) for steps 1, 2 and 4.*
 - [ ] **1. Who is on the team, and what each person builds.** So far on the board: Benjamin (the TypeScript port) and Tirth (tasks coming from Benjamin). Kimi is with you now. The roadmap's Saturday roles are captain, frontend, backend-and-data and design-and-finance. **Claude recommends** writing each person's name and area in the Notes, and Claude puts them in the Team table in [AGENTS.md](../AGENTS.md) and on the roadmap. *Waiting: everyone's agents, which assign work by role.*
 - [ ] **2. GitHub access.** The repo is private. Benjamin already pushes. Tirth and Kimi need an invite to `kenxle/tricorder` (Settings, Collaborators) before their agents can pull. *Waiting: Tirth, Kimi.*
 - [ ] **3. What runs at the 3:30 PM freeze.** Benjamin is porting to TypeScript; the Python version is the one that works today. **Claude recommends** the freeze runs whichever version passes the answer-key check at 3:30, with Python as the fallback. *Waiting: Benjamin ([board](BULLETIN.md), 11:01).*
