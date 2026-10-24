@@ -8,7 +8,7 @@ Due diligence on startups can take weeks, and this creates a slow down in moment
 
 An associate at a seed fund described the first pass: "Before I even open your data room, I already have ten tabs up. I’m checking your traffic, reviews, investors, any co-founder issues, and whether your story matches what’s online." ([Startups Magazine, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)). And a survey of 885 VCs found the average firm spends 118 hours of diligence on a deal ([NBER working paper](https://www.nber.org/system/files/working_papers/w22587/w22587.pdf)).
 
-So we built the first pass: gather everything, check every number against every other source, and show where each claim came from.
+Tricorder gathers everything, checks every number against every other source, and shows where each claim came from.
 
 ## What it does
 
