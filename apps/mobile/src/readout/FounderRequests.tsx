@@ -16,6 +16,7 @@ import {
   View,
 } from "react-native";
 
+import { AnnotationScope } from "../annotations/context";
 import { apiRequest, roomPath } from "./api";
 import { NativeSheet } from "./native-sheet";
 import {
@@ -392,22 +393,33 @@ function RequestManager({
             </View>
           }
           renderItem={({ item }) => (
-            <RequestItem
-              item={item}
-              selected={selected.has(item.number)}
-              disabled={busy}
-              onToggle={() => toggle(item.number)}
-              onDraft={() => makeDraft([item.number])}
-            />
+            <AnnotationScope
+              id={`room:${room}/request:${item.number}`}
+              label={`${room} · Founder request · ${item.title}`}
+            >
+              <RequestItem
+                item={item}
+                selected={selected.has(item.number)}
+                disabled={busy}
+                onToggle={() => toggle(item.number)}
+                onDraft={() => makeDraft([item.number])}
+              />
+            </AnnotationScope>
           )}
           ListFooterComponent={
             lines.held.length ? (
               <Card>
                 <Heading>Not asked for: the room already holds these</Heading>
                 {lines.held.map((item) => (
-                  <Note key={item.number}>
-                    {item.title}: {item.files.join(", ")}
-                  </Note>
+                  <AnnotationScope
+                    key={item.number}
+                    id={`room:${room}/held:${item.number}`}
+                    label={`${room} · Evidence already held · ${item.title}`}
+                  >
+                    <Note>
+                      {item.title}: {item.files.join(", ")}
+                    </Note>
+                  </AnnotationScope>
                 ))}
               </Card>
             ) : undefined
@@ -789,18 +801,23 @@ function AddReply({
 
 function ReceiptView({ receipt }: { receipt: Receipt }) {
   return (
-    <View style={styles.gap} accessibilityLiveRegion="polite">
-      <Heading>What changed</Heading>
-      {receipt.files.map((file) => (
-        <Body key={file.saved}>
-          {file.original_name} is saved as {file.saved}.
-          {file.note ? ` ${file.note}` : ""}
-        </Body>
-      ))}
-      {receipt.summary.map((line, index) => (
-        <Body key={index}>{line}</Body>
-      ))}
-    </View>
+    <AnnotationScope
+      id={`room:${receipt.room}/receipt:${receipt.files.map((file) => file.saved).join(",")}`}
+      label={`${receipt.room} · Founder reply receipt`}
+    >
+      <View style={styles.gap} accessibilityLiveRegion="polite">
+        <Heading>What changed</Heading>
+        {receipt.files.map((file) => (
+          <Body key={file.saved}>
+            {file.original_name} is saved as {file.saved}.
+            {file.note ? ` ${file.note}` : ""}
+          </Body>
+        ))}
+        {receipt.summary.map((line, index) => (
+          <Body key={index}>{line}</Body>
+        ))}
+      </View>
+    </AnnotationScope>
   );
 }
 

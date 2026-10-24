@@ -11,6 +11,8 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
+import { AnnotationToolbar } from "../annotations/annotation-panel";
+import { AnnotationItem, AnnotationScope } from "../annotations/context";
 import { NativeSheet } from "../readout/native-sheet";
 import {
   Action,
@@ -143,36 +145,41 @@ const ClaimLine = ({
   const colors = useReadoutColors();
   const source = claim.source && data.sources[claim.source];
   return (
-    <View style={[styles.claim, { borderColor: colors.line }]}>
-      <Body
-        accessibilityRole={source ? "link" : undefined}
-        accessibilityLabel={
-          source
-            ? `${claim.text}. Evidence ${number}: ${source.title}`
-            : undefined
-        }
-        onPress={source ? () => onSource(claim) : undefined}
-        style={[
-          { minHeight: source ? 44 : undefined },
-          claim.placeholder ? { color: colors.muted } : undefined,
-        ]}
-      >
-        {claim.text}
-        {/* Universal Text accepts only a string; RN Text preserves selectable prose and inline links. */}
-        {source && (
-          <Text
-            style={{ color: colors.accent, textDecorationLine: "underline" }}
-          >
-            {` [${number}]`}
-          </Text>
+    <AnnotationItem
+      id={`claim:${claim.source ?? "unsourced"}:${claim.text}`}
+      label={claim.text}
+    >
+      <View style={[styles.claim, { borderColor: colors.line }]}>
+        <Body
+          accessibilityRole={source ? "link" : undefined}
+          accessibilityLabel={
+            source
+              ? `${claim.text}. Evidence ${number}: ${source.title}`
+              : undefined
+          }
+          onPress={source ? () => onSource(claim) : undefined}
+          style={[
+            { minHeight: source ? 44 : undefined },
+            claim.placeholder ? { color: colors.muted } : undefined,
+          ]}
+        >
+          {claim.text}
+          {/* Universal Text accepts only a string; RN Text preserves selectable prose and inline links. */}
+          {source && (
+            <Text
+              style={{ color: colors.accent, textDecorationLine: "underline" }}
+            >
+              {` [${number}]`}
+            </Text>
+          )}
+        </Body>
+        {claim.placeholder ? <Note>Not researched yet</Note> : null}
+        {!claim.placeholder && claim.kind ? <Note>{claim.kind}</Note> : null}
+        {!source && !claim.placeholder && (
+          <Note>Source unavailable in this snapshot</Note>
         )}
-      </Body>
-      {claim.placeholder ? <Note>Not researched yet</Note> : null}
-      {!claim.placeholder && claim.kind ? <Note>{claim.kind}</Note> : null}
-      {!source && !claim.placeholder && (
-        <Note>Source unavailable in this snapshot</Note>
-      )}
-    </View>
+      </View>
+    </AnnotationItem>
   );
 };
 const Section = ({
@@ -195,32 +202,46 @@ const Section = ({
     })) ?? [{ claims: section.claims ?? [], subtitle: "", title: "" }];
   const claims = groups.flatMap((group) => group.claims);
   return (
-    <View style={[styles.section, { borderColor: colors.line }]}>
-      <Heading style={styles.sectionTitle}>{section.title}</Heading>
-      {groups.map((group) => (
-        <View key={group.title || section.key} style={styles.group}>
-          {group.title ? (
-            <Body style={styles.emphasis}>{group.title}</Body>
-          ) : null}
-          {group.subtitle ? <Note>{group.subtitle}</Note> : null}
-          {group.claims.map((claim) => (
-            <ClaimLine
-              key={claim.text}
-              claim={claim}
-              number={claims.indexOf(claim) + 1}
-              onSource={onSource}
-            />
-          ))}
-        </View>
-      ))}
-      {section.gaps?.map((gap) => (
-        <Card key={gap.text}>
-          <Note>GAP</Note>
-          <Body>{gap.text}</Body>
-          <Note>{gap.why}</Note>
-        </Card>
-      ))}
-    </View>
+    <AnnotationItem id={`section:${section.key}`} label={section.title}>
+      <View style={[styles.section, { borderColor: colors.line }]}>
+        <Heading style={styles.sectionTitle}>{section.title}</Heading>
+        {groups.map((group) => (
+          <AnnotationItem
+            key={group.title || section.key}
+            id={`group:${group.title || section.key}`}
+            label={group.title || section.title}
+          >
+            <View style={styles.group}>
+              {group.title ? (
+                <Body style={styles.emphasis}>{group.title}</Body>
+              ) : null}
+              {group.subtitle ? <Note>{group.subtitle}</Note> : null}
+              {group.claims.map((claim) => (
+                <ClaimLine
+                  key={claim.text}
+                  claim={claim}
+                  number={claims.indexOf(claim) + 1}
+                  onSource={onSource}
+                />
+              ))}
+            </View>
+          </AnnotationItem>
+        ))}
+        {section.gaps?.map((gap) => (
+          <AnnotationItem
+            key={gap.text}
+            id={`gap:${gap.text}`}
+            label={gap.text}
+          >
+            <Card>
+              <Note>GAP</Note>
+              <Body>{gap.text}</Body>
+              <Note>{gap.why}</Note>
+            </Card>
+          </AnnotationItem>
+        ))}
+      </View>
+    </AnnotationItem>
   );
 };
 const CompanyWorkspace = ({ company }: { company: Company }) => {
@@ -250,7 +271,10 @@ const CompanyWorkspace = ({ company }: { company: Company }) => {
   );
   const selected = session.items.filter((item) => item.checked).length;
   return (
-    <>
+    <AnnotationScope
+      id={`company:${company.slug}`}
+      label={`${company.name} · Company report`}
+    >
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerStyle={styles.content}
@@ -374,7 +398,7 @@ const CompanyWorkspace = ({ company }: { company: Company }) => {
       {evidence && (
         <SourceEvidence claim={evidence} onClose={() => setEvidence(null)} />
       )}
-    </>
+    </AnnotationScope>
   );
 };
 export const CompanyScreen = () => {
@@ -388,6 +412,9 @@ export const CompanyScreen = () => {
   const company = parameter ? resolveCompany(parameter, data.companies) : null;
   return (
     <SafeAreaView style={[styles.screen, { backgroundColor: colors.bg }]}>
+      <View style={{ paddingHorizontal: 16 }}>
+        <AnnotationToolbar />
+      </View>
       {company && Platform.OS !== "web" && (
         <View style={[styles.masthead, { borderColor: colors.line }]}>
           <Body style={styles.brand}>Tricorder</Body>

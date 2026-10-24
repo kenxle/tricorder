@@ -3,7 +3,7 @@ import { BottomSheet } from "@expo/ui/community/bottom-sheet";
 import type { PropsWithChildren } from "react";
 import { View } from "react-native";
 
-import { useReadoutColors } from "./ui";
+import { useReadoutColors } from "./colors";
 
 // The universal web sheet cannot disable dismissal; the Expo compatibility
 // layer forwards this guard to its dialog, including drag, backdrop and Escape.

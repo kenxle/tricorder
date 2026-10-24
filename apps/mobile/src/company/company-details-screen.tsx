@@ -8,6 +8,7 @@ import {
 import { router, useLocalSearchParams } from "expo-router";
 import { ScrollView, View } from "react-native";
 
+import { AnnotationScope } from "../annotations/context";
 import { Action, Field, Note, useReadoutColors } from "../readout/ui";
 import {
   fieldLabels,
@@ -125,13 +126,18 @@ export const CompanyFieldEvidenceScreen = () => {
       style={{ backgroundColor: colors.bg }}
       contentContainerStyle={{ gap: 16, padding: 24 }}
     >
-      {saved && label ? (
-        <EvidenceContent
-          claim={{
-            source: saved.source,
-            text: `${label} in the saved record: ${saved.value}`,
-          }}
-        />
+      {saved && label && company ? (
+        <AnnotationScope
+          id={`company:${company.slug}/details:${field}`}
+          label={`${company.name} · ${label}`}
+        >
+          <EvidenceContent
+            claim={{
+              source: saved.source,
+              text: `${label} in the saved record: ${saved.value}`,
+            }}
+          />
+        </AnnotationScope>
       ) : (
         <Note>Source unavailable in this saved record.</Note>
       )}

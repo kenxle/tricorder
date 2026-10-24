@@ -3,6 +3,7 @@ import type { PythonAPI } from "@tricorder/schema/api";
 import { useEffect, useRef, useState } from "react";
 import { ActivityIndicator } from "react-native";
 
+import { AnnotationScope } from "../annotations/context";
 import { apiRequest, roomPath } from "./api";
 import { Action, Body, Card, Note } from "./ui";
 
@@ -88,25 +89,32 @@ function SourceContent({
         onPress={() => (open ? setOpen(false) : void load())}
       />
       {open && (
-        <Card>
-          <Note>
-            {from === room ? "" : `${from}, the full room: `}
-            {source.uri} · {source.locator}
-          </Note>
-          <Body>{source.quote}</Body>
-          {loading && <ActivityIndicator accessibilityLabel="Loading source" />}
-          {error ? (
-            <>
-              <Body accessibilityRole="alert">{error}</Body>
-              <Action title="Retry source" onPress={() => void load()} />
-            </>
-          ) : null}
-          {text !== null && text.trim() !== source.quote.trim() && (
-            <Body style={{ fontFamily: "monospace", fontSize: 13 }}>
-              {text.slice(0, 1200)}
-            </Body>
-          )}
-        </Card>
+        <AnnotationScope
+          id={`room:${room}/source:${source.uri}:${source.locator}`}
+          label={`${room} · Source ${n} · ${source.locator}`}
+        >
+          <Card>
+            <Note>
+              {from === room ? "" : `${from}, the full room: `}
+              {source.uri} · {source.locator}
+            </Note>
+            <Body>{source.quote}</Body>
+            {loading && (
+              <ActivityIndicator accessibilityLabel="Loading source" />
+            )}
+            {error ? (
+              <>
+                <Body accessibilityRole="alert">{error}</Body>
+                <Action title="Retry source" onPress={() => void load()} />
+              </>
+            ) : null}
+            {text !== null && text.trim() !== source.quote.trim() && (
+              <Body style={{ fontFamily: "monospace", fontSize: 13 }}>
+                {text.slice(0, 1200)}
+              </Body>
+            )}
+          </Card>
+        </AnnotationScope>
       )}
     </>
   );

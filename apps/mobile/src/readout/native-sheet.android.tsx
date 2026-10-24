@@ -6,7 +6,7 @@ import type { PropsWithChildren } from "react";
 import { useEffect, useRef, useState } from "react";
 import { View } from "react-native";
 
-import { useReadoutColors } from "./ui";
+import { useReadoutColors } from "./colors";
 
 // The universal sheet does not expose Compose's swipe-dismiss guard.
 export const NativeSheet = ({

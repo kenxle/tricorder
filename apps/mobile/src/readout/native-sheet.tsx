@@ -3,7 +3,7 @@ import { interactiveDismissDisabled } from "@expo/ui/swift-ui/modifiers";
 import type { PropsWithChildren } from "react";
 import { View } from "react-native";
 
-import { useReadoutColors } from "./ui";
+import { useReadoutColors } from "./colors";
 
 // Keep RN virtualized lists and keyboard-aware forms inside a native presentation.
 export const NativeSheet = ({
