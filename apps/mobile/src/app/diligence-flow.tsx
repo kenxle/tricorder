@@ -5,11 +5,10 @@ import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { ScrollView, View } from "react-native";
 
-import { Body, Note, useReadoutColors } from "../readout/ui";
+import { Action, Body, Card, Note, useReadoutColors } from "../readout/ui";
 import { researchFor } from "../diligence/diligence-data";
 import { RequestDialog, RequestsBox, RoomNotice, UpNextBox, buildItems } from "../diligence/requests";
 import type { RequestItem, RoomState } from "../diligence/requests";
-import { RoomView } from "../diligence/room-view";
 import { StartScreen } from "../diligence/start";
 import { WorkingPage } from "../diligence/working";
 
@@ -68,11 +67,15 @@ export default function DiligenceFlow() {
           <RoomNotice title={`${research.name} added ${k} more file${k === 1 ? "" : "s"}`} onOpen={() => setRoom("full")} />
         ) : null}
         <RequestsBox research={research} items={items} room={room} />
-        <RoomView
-          state={room === "full" ? "full" : "partial"}
-          onMemo={() => router.push("/diligence-memo" as never)}
-          onSteer={() => router.push("/diligence-memo?steer=1" as never)}
-        />
+        {/* Placeholder until the room view (../diligence/room-view.tsx, owned by the other agent) is on main. */}
+        <Card>
+          <Body style={{ fontFamily: "ArchivoBold" }}>{room === "full" ? "The data room is in." : "The data room is partly in."}</Body>
+          <Action
+            title="Open the room view"
+            primary
+            onPress={() => router.push(`/diligence-room?room=${room === "full" ? "full" : "partial"}` as never)}
+          />
+        </Card>
       </View>
     );
   } else {
