@@ -19,3 +19,4 @@ From the story-group guides agent, 2026-10-22 3:39 PM:
 - docs/reports/20261022.03_document_guides/raw/hn-tmp/ (temporary Hacker News fetches)
 - docs/reports/20261022.03_document_guides/raw/pitch-deck/hn_deck_*.json (temporary Hacker News fetches)
 - `.who-am-i` (repo root, untracked): replaced by `.agent-owner` on 2026-10-24 to match the last hackathon.
+- `docs/features/20261024.02_first_steps_ui/prototype/style` (symlink to docs/ongoing/style): replaced by the copy in `tc_style/` on 2026-10-24, because Lahe does not serve symlinks.

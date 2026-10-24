@@ -58,3 +58,21 @@ The job: an associate wants a first view of a company before asking the founder 
 ## The prototype
 
 A clickable HTML prototype of the four screens, with real data for Ploy and Sazabi from the saved files: [prototype/](prototype/). Its review will be recorded here.
+
+## Added 12:40 PM: step 5, red and green flags from the room
+
+Ken, on his desk: "ok, let's go ahead and get into this aspect of the prototype", on step 5 of the [demo workflow](../../ongoing/diagrams/demo_workflow.md).
+
+- **Who and when.** The associate, once the founder's data room is in. On stage it follows "Room received".
+- **What it shows.** The readout of the room, in the order Ken set: the best green flags and the worst red flags first, then an overview of each piece of the company marked strong, weak, mixed or not enough in the room, then a drill-down into one weak piece and one strong one. Each flag shows what the company stated beside what the rest of the room shows, with both sources. The range strip from the style guide draws each number against its normal band.
+- **Joined to the earlier steps.** Items the associate asked for and the room now holds are ticked off; anything still missing stays on the list. Claims from the pre-room research that the room confirms or contradicts are marked.
+- **The data is faked.** Ploy's room is synthetic and not built yet ([yc-rooms](../../ongoing/roadmap/yc-rooms.md)), so the prototype invents flags consistent with Ploy's public facts, modelled on what the real engine writes for Hollis Voice (`out/hollis_voice/readout.json` on Ken's laptop, and [FRAMEWORKS.md](../../ongoing/FRAMEWORKS.md), "Piece verdicts"). Every page says the room is synthetic.
+- **What is real today.** The engine already finds these flags on Hollis Voice and Brasswick; the real readout page is at [localhost:5173](http://localhost:5173/). The prototype shows how step 5 should look and flow; the builders bring the real page to it.
+
+## Added 12:40 PM: steps 6 to 8, steering and the memo
+
+Ken: "and this aspect of the prototype / and make sure they are using our new style guide", on steps 6 to 8.
+
+- **Step 6, the associate steers.** On the readout, the associate cross-references and corrects: says a piece is wrong and why, asks Tricorder to get more information, agrees or disagrees with a line. A steer never changes a script's number; it changes the wording, adds a figure beside the check's labelled as the steer's, or sends a request. Modelled on what is built: [steering](../../ongoing/roadmap/steering.md).
+- **Steps 7 and 8, the interactive memo for the principals.** The associate turns the steered readout into the memo. The principal reads it: the round and the flags first, every line two clicks from its source, and their own view to agree, disagree and try a what-if. Modelled on [memo-export](../../ongoing/roadmap/memo-export.md) and [MEMO_TEMPLATE.md](../../ongoing/MEMO_TEMPLATE.md).
+- **Every screen uses the [style guide](../../ongoing/STYLE_GUIDE.md)** and its shared stylesheet.

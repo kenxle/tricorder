@@ -1,0 +1,962 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Black Card style guide</title>
+<meta name="description" content="Tricorder style guide, Direction E: Black Card, in Archivo.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Tricorder, Direction E: Black Card, in Archivo. Dark first. Tokens, then base, then components, then page. */
+
+/* Dark tokens are the default. .is-dark keeps a band dark inside the light theme. */
+:root, .is-dark {
+  color-scheme: dark;
+  --ground: #131210;
+  --surface: #1a1916;
+  --surface-2: #211f1b;
+  --lit-top: #201e1a;
+  --lit-bottom: #171614;
+  --ink: #eeebe4;
+  --ink-2: #bdb7ab;
+  --ink-3: #9a9488;
+  --rule: #2e2b26;
+  --rule-2: #45413a;
+  --accent: #d3bf8e;
+  --accent-2: #e5d6ae;
+  --btn-bg: #d3bf8e;
+  --btn-bg-hover: #e5d6ae;
+  --btn-fg: #16140f;
+  --band: rgba(211, 191, 142, 0.20);
+  --band-edge: #b9a574;
+  --band-fill: rgba(211, 191, 142, 0.20);
+  --glow: rgba(211, 191, 142, 0.55);
+  --strong: #7dc4a0;
+  --strong-bg: rgba(125, 196, 160, 0.12);
+  --weak: #f08c78;
+  --weak-bg: rgba(240, 140, 120, 0.12);
+  --mixed: #93b2e6;
+  --mixed-bg: rgba(147, 178, 230, 0.12);
+  --thin: #aaa498;
+  --thin-bg: rgba(170, 164, 152, 0.10);
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --ground: #ffffff;
+    --surface: #ffffff;
+    --surface-2: #f6f4ef;
+    --lit-top: #ffffff;
+    --lit-bottom: #ffffff;
+    --ink: #1c1b18;
+    --ink-2: #47443d;
+    --ink-3: #6b675e;
+    --rule: #e6e2da;
+    --rule-2: #cdc7ba;
+    --accent: #85692f;
+    --accent-2: #6a5323;
+    --btn-bg: #1c1b18;
+    --btn-bg-hover: #3a3731;
+    --btn-fg: #eadbb4;
+    --band: rgba(133, 105, 47, 0.14);
+    --band-edge: #8a6c2e;
+    --band-fill: linear-gradient(180deg, #f4e8c4 0%, #dcc286 48%, #b99850 100%);
+    --glow: rgba(133, 105, 47, 0.35);
+    --strong: #1e7550;
+    --strong-bg: rgba(30, 117, 80, 0.08);
+    --weak: #b3402e;
+    --weak-bg: rgba(179, 64, 46, 0.08);
+    --mixed: #2d5c9c;
+    --mixed-bg: rgba(45, 92, 156, 0.08);
+    --thin: #6b675e;
+    --thin-bg: rgba(107, 103, 94, 0.08);
+  }
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --ground: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f6f4ef;
+  --lit-top: #ffffff;
+  --lit-bottom: #ffffff;
+  --ink: #1c1b18;
+  --ink-2: #47443d;
+  --ink-3: #6b675e;
+  --rule: #e6e2da;
+  --rule-2: #cdc7ba;
+  --accent: #85692f;
+  --accent-2: #6a5323;
+  --btn-bg: #1c1b18;
+  --btn-bg-hover: #3a3731;
+  --btn-fg: #eadbb4;
+  --band: rgba(133, 105, 47, 0.14);
+  --band-edge: #8a6c2e;
+  --band-fill: linear-gradient(180deg, #f4e8c4 0%, #dcc286 48%, #b99850 100%);
+  --glow: rgba(133, 105, 47, 0.35);
+  --strong: #1e7550;
+  --strong-bg: rgba(30, 117, 80, 0.08);
+  --weak: #b3402e;
+  --weak-bg: rgba(179, 64, 46, 0.08);
+  --mixed: #2d5c9c;
+  --mixed-bg: rgba(45, 92, 156, 0.08);
+  --thin: #6b675e;
+  --thin-bg: rgba(107, 103, 94, 0.08);
+}
+:root[data-theme="dark"] { color-scheme: dark; }
+
+:root {
+  --f-sans: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --f-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px; --s9: 96px;
+  --r-s: 4px;   /* marks and chips */
+  --r-m: 8px;   /* buttons and inputs */
+  --r-l: 14px;  /* panels */
+  --hair: 1px;
+}
+
+/* Base. Bootstrap supplies the grid only; everything visible is ours. */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--f-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.is-dark { background: var(--ground); color: var(--ink); }
+a { color: var(--ink); text-decoration-color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+h1, h2, h3, h4 { font-family: var(--f-sans); color: var(--ink); margin: 0; text-wrap: balance; }
+p { margin: 0 0 var(--s3); }
+.mono { font-family: var(--f-mono); }
+.num, table, .strip, .pair { font-variant-numeric: tabular-nums; }
+
+/* One grid: 12 columns, one 24px gutter, 1200px of content. */
+.container {
+  max-width: 1264px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 992px) { .container { padding-left: 32px; padding-right: 32px; } }
+.row { --bs-gutter-x: 24px; --bs-gutter-y: 24px; }
+
+/* Eyebrow: a quiet mono label. No bar above it. */
+.eyebrow { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 var(--s4); }
+
+/* Buttons. Primary carries the metal. Hover keeps contrast in both themes. */
+.tc-btn {
+  display: inline-flex; align-items: center; gap: var(--s2);
+  min-height: 44px; padding: 0 20px; border-radius: var(--r-m);
+  font: 600 15px/1 var(--f-sans); letter-spacing: 0.005em; text-decoration: none; cursor: pointer;
+  border: var(--hair) solid var(--btn-bg); background: var(--btn-bg); color: var(--btn-fg);
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+.tc-btn:hover { background: var(--btn-bg-hover); border-color: var(--btn-bg-hover); color: var(--btn-fg); }
+.tc-btn.sec { background: transparent; border-color: var(--rule-2); color: var(--ink); }
+.tc-btn.sec:hover { background: var(--surface-2); border-color: var(--accent); color: var(--ink); }
+.tc-btn.sm { min-height: 36px; padding: 0 14px; font-size: 14px; }
+.tc-btn .arr { font-family: var(--f-mono); font-weight: 400; }
+
+/* Marks: a glyph plus a word, never colour alone. */
+.vmark {
+  display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+  font: 500 12px/1 var(--f-mono); padding: 5px 8px 5px 7px; border-radius: var(--r-s);
+  border: var(--hair) solid currentColor;
+}
+.vmark svg { width: 10px; height: 10px; flex: none; }
+.m-strong { color: var(--strong); background: var(--strong-bg); }
+.m-weak { color: var(--weak); background: var(--weak-bg); }
+.m-mixed { color: var(--mixed); background: var(--mixed-bg); }
+.m-thin { color: var(--thin); background: var(--thin-bg); border-style: dashed; }
+.m-run { color: var(--ink-3); background: transparent; border-style: dotted; }
+.m-dis { color: var(--ink-2); background: transparent; }
+
+/* Source chip: file and place, always on its own row under the sentence. */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  font: 12px/1 var(--f-mono); color: var(--ink-2); background: transparent;
+  border: var(--hair) solid var(--rule-2); border-radius: var(--r-s); padding: 6px 8px; cursor: pointer;
+  max-width: 100%; text-align: left; line-height: 1.3; text-decoration: none;
+}
+.chip:hover { color: var(--ink); border-color: var(--accent); background: var(--surface-2); }
+
+/* The range strip. Values go in as numbers; the browser places them.
+   --min and --max set the scale. --v places a tick, a label or the band.
+   The band is the agreed or rebuilt figure, give or take 1%. */
+.strip { --min: 0; --max: 1; position: relative; }
+.strip-track { position: relative; height: 12px; }
+.strip-track::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--rule-2); }
+.strip-track::after { content: ""; position: absolute; left: 0; right: 0; top: 2px; bottom: 2px; border-left: 1px solid var(--rule-2); border-right: 1px solid var(--rule-2); }
+.strip-band, .strip-tick, .strip-lab {
+  position: absolute;
+  left: calc((var(--v) - var(--min)) / (var(--max) - var(--min)) * 100%);
+}
+.strip-band {
+  top: 0; bottom: 0; transform: translateX(-50%);
+  width: max(8px, calc(var(--v) * 0.02 / (var(--max) - var(--min)) * 100%));
+  background: var(--band-fill); border: var(--hair) solid var(--band-edge); border-radius: 2px;
+}
+.strip-tick { top: -3px; bottom: -3px; width: 2px; margin-left: -1px; background: var(--ink); border-radius: 1px; }
+.strip-tick.out { background: var(--weak); }
+.strip-tick.out::before {
+  content: ""; position: absolute; left: -4px; top: -9px; width: 10px; height: 7px; background: var(--weak);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+.strip-tick.about { background: repeating-linear-gradient(180deg, currentColor 0 2px, transparent 2px 4px); color: var(--weak); }
+.strip.labelled { padding: 28px 0 24px; }
+.strip.labelled.nodn { padding-bottom: 0; }
+.strip-lab { font: 11px/1.2 var(--f-mono); color: var(--ink-2); white-space: nowrap; transform: translateX(-50%); }
+.strip-lab.up { top: 0; }
+.strip-lab.dn { bottom: 0; }
+.strip-lab.r { transform: translateX(calc(-100% + 4px)); }
+.strip-lab.l { transform: translateX(-4px); }
+.strip-lab.w { color: var(--weak); }
+.strip-lab.b { color: var(--accent); }
+.strip-axis { display: flex; justify-content: space-between; margin-top: var(--s3); font: 11px/1 var(--f-mono); color: var(--ink-3); }
+.strip-key { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); font: 12px/1.3 var(--f-mono); color: var(--ink-3); }
+.strip-key span { display: inline-flex; align-items: center; gap: var(--s2); }
+.k-band { width: 18px; height: 10px; background: var(--band-fill); border: 1px solid var(--band-edge); border-radius: 2px; }
+.k-tick { width: 2px; height: 12px; background: var(--ink); border-radius: 1px; }
+.k-out { width: 10px; height: 7px; background: var(--weak); clip-path: polygon(0 0, 100% 0, 50% 100%); }
+
+/* Stated beside found: two figures, same size, same baseline. */
+.pair { display: grid; grid-template-columns: 1fr 1fr; border: var(--hair) solid var(--rule); border-radius: var(--r-m); }
+.pair > div { padding: var(--s3) var(--s4); }
+.pair > div + div { border-left: var(--hair) solid var(--rule); }
+.pair .k { font: 11px/1 var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: var(--s2); }
+.pair .v { font: 500 26px/1.1 var(--f-mono); letter-spacing: -0.02em; color: var(--ink); }
+.pair .v.w { color: var(--weak); }
+.pair.sm .v { font-size: 20px; }
+.pair .s { font-size: 13px; color: var(--ink-3); margin-top: 6px; }
+
+/* Panels. One radius, one hairline, no shadow on quiet surfaces. */
+.panel { background: var(--surface); border: var(--hair) solid var(--rule); border-radius: var(--r-l); }
+.card-e { display: flex; flex-direction: column; height: 100%; padding: var(--s5); }
+.card-e .head { display: flex; align-items: center; justify-content: space-between; gap: var(--s3); flex-wrap: wrap; margin-bottom: var(--s4); }
+.card-e .meta { font: 12px/1.3 var(--f-mono); color: var(--ink-3); }
+.card-e h3 { font-size: 20px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: var(--s4); }
+.card-e p { color: var(--ink-2); font-size: 15px; }
+.card-e .foot { margin-top: auto; padding-top: var(--s4); }
+
+/* Tables: one surface, hairline rows, the head row is not filled. */
+.tbox { overflow-x: auto; }
+table.t { width: 100%; border-collapse: collapse; font-size: 14px; }
+.t th, .t td { text-align: left; padding: 10px 12px; border-bottom: var(--hair) solid var(--rule); vertical-align: middle; }
+.t th:first-child, .t td:first-child { padding-left: 0; }
+.t th:last-child, .t td:last-child { padding-right: 0; }
+.t th { font: 11px/1.2 var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); font-weight: 400; border-bottom-color: var(--rule-2); white-space: nowrap; }
+.t td.v { font-family: var(--f-mono); text-align: right; white-space: nowrap; color: var(--ink); }
+.t th.v { text-align: right; }
+.t tr:last-child td { border-bottom: 0; }
+.t td .chip { white-space: nowrap; }
+@media (max-width: 575.98px) {
+  .t.stack thead { display: none; }
+  .t.stack tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; border-bottom: var(--hair) solid var(--rule); padding: 10px 0; }
+  .t.stack tr:last-child { border-bottom: 0; }
+  .t.stack td { border: 0; padding: 0; }
+  .t.stack td:last-child { grid-column: 1 / -1; padding-top: 8px; }
+  .t.stack td .chip { white-space: normal; }
+}
+
+/* Ask the founder: a feature, outlined in the metal. */
+.ask { border: var(--hair) solid var(--band-edge); border-radius: var(--r-l); padding: var(--s5); background: var(--surface); }
+.ask .lbl { font: 500 12px/1 var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: var(--s3); display: flex; align-items: center; gap: var(--s2); }
+.ask .q { font-size: 18px; line-height: 1.4; font-weight: 500; color: var(--ink); margin-bottom: var(--s4); }
+.ask .acts { display: flex; flex-wrap: wrap; gap: var(--s2); }
+
+.synthetic { font: 12px/1.4 var(--f-mono); color: var(--ink-3); }
+
+/* ---------- Page ---------- */
+
+/* Top bar sits inside the hero. */
+.bar { display: flex; align-items: center; gap: var(--s5); min-height: 72px; border-bottom: var(--hair) solid var(--rule); }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font: 800 20px/1 var(--f-sans); letter-spacing: -0.03em; }
+.brand:hover { color: var(--ink); }
+.brand svg { width: 24px; height: 24px; }
+.nav { display: flex; align-items: center; gap: var(--s5); margin-left: auto; font-size: 14px; }
+.nav a { color: var(--ink-2); text-decoration: none; }
+.nav a:hover { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); }
+.theme-btn { font: 12px/1 var(--f-mono); color: var(--ink-2); background: transparent; border: var(--hair) solid var(--rule-2); border-radius: var(--r-m); padding: 8px 10px; cursor: pointer; }
+.theme-btn:hover { color: var(--ink); border-color: var(--accent); }
+
+/* Hero: the one place with drama. A soft light falls behind the readout. */
+.hero { position: relative; overflow: hidden; }
+.hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(60% 55% at 78% 62%, rgba(211, 191, 142, 0.10), transparent 70%);
+}
+.hero > .container { position: relative; }
+.hero-line { padding-top: var(--s9); }
+.hero h1 {
+  font-size: clamp(46px, 7.6vw, 112px); font-weight: 800; line-height: 0.94; letter-spacing: -0.045em;
+}
+.hero-body { padding-top: var(--s8); padding-bottom: var(--s9); }
+.lede { font-size: 21px; line-height: 1.45; color: var(--ink-2); max-width: 30ch; margin-bottom: var(--s6); }
+.hero .ctas { display: flex; flex-wrap: wrap; gap: var(--s3); }
+.for { margin-top: var(--s7); padding-top: var(--s4); border-top: var(--hair) solid var(--rule); font-size: 14px; color: var(--ink-3); max-width: 34ch; }
+
+/* The lit panel: raised, with a metal edge that fades round the whole outline. */
+.lit {
+  border-radius: var(--r-l);
+  border: 1px solid transparent;
+  background:
+    linear-gradient(180deg, var(--lit-top), var(--lit-bottom)) padding-box,
+    linear-gradient(155deg, var(--glow), rgba(211, 191, 142, 0.10) 38%, rgba(255, 255, 255, 0.06) 70%, rgba(211, 191, 142, 0.22)) border-box;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05) inset, 0 1px 2px rgba(0, 0, 0, 0.35), 0 12px 32px -16px rgba(0, 0, 0, 0.6);
+}
+.lit-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s3); flex-wrap: wrap; padding: var(--s5) var(--s5) var(--s4); border-bottom: var(--hair) solid var(--rule); }
+.lit-title { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+.lit-head .meta { font: 12px/1.3 var(--f-mono); color: var(--ink-3); }
+.ov { padding: 0 var(--s5); }
+.ov-row {
+  display: grid; grid-template-columns: minmax(0, 1.25fr) 128px minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: var(--s4); align-items: center; padding: 14px 0; border-bottom: var(--hair) solid var(--rule);
+}
+.ov-row.hd { padding: 12px 0 10px; font: 11px/1 var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); border-bottom-color: var(--rule-2); }
+.ov-row:last-child { border-bottom: 0; }
+.ov-piece b { display: block; font-size: 15px; font-weight: 600; color: var(--ink); line-height: 1.25; }
+.ov-piece span { display: block; font: 12px/1.3 var(--f-mono); color: var(--ink-3); margin-top: 3px; }
+.ov-fig { font: 13px/1.45 var(--f-mono); color: var(--ink-2); text-align: right; white-space: nowrap; }
+.ov-fig .w { color: var(--weak); }
+.ov-fig .sep { display: none; }
+.ov-run { font: 12px/1.3 var(--f-mono); color: var(--ink-3); }
+.lit-foot { display: flex; justify-content: space-between; gap: var(--s2) var(--s4); flex-wrap: wrap; padding: var(--s4) var(--s5); border-top: var(--hair) solid var(--rule); font: 12px/1.4 var(--f-mono); color: var(--ink-3); }
+
+/* Sections. Every heading starts on the container's left edge, like the content under it. */
+.block { padding-top: var(--s9); }
+.sec-head { margin-bottom: var(--s7); }
+.sec-head h2 { font-size: clamp(32px, 4vw, 52px); font-weight: 800; line-height: 1.02; letter-spacing: -0.035em; max-width: 22ch; }
+.sec-head p { margin: var(--s4) 0 0; font-size: 18px; color: var(--ink-2); max-width: 60ch; }
+
+/* Disagreement panel. */
+.dis { padding: var(--s6); }
+.dis .head { display: flex; align-items: center; justify-content: space-between; gap: var(--s3); flex-wrap: wrap; margin-bottom: var(--s5); }
+.dis .head h3 { font-size: 24px; font-weight: 700; letter-spacing: -0.015em; display: flex; align-items: center; gap: var(--s3); flex-wrap: wrap; }
+.dis .meta { font: 12px/1.3 var(--f-mono); color: var(--ink-3); }
+.dis .gapline { font-size: 16px; color: var(--ink-2); margin-bottom: var(--s5); }
+.dis .strip-axis { margin-bottom: var(--s4); }
+.dis .strip-key { margin-bottom: var(--s5); }
+
+/* Lists of note-style cards. */
+.lbl { display: flex; align-items: center; gap: var(--s2); font: 500 12px/1 var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+.lbl svg { width: 10px; height: 10px; }
+.lbl.c-strong { color: var(--strong); }
+.lbl.c-weak { color: var(--weak); }
+.lbl.c-thin { color: var(--thin); }
+dl.facts { margin: 0; display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: var(--s2) var(--s4); font-size: 14px; }
+dl.facts dt { font: 12px/1.6 var(--f-mono); color: var(--ink-3); font-weight: 400; }
+dl.facts dd { margin: 0; color: var(--ink-2); }
+
+/* Who it is for. */
+.who-role { font: 500 12px/1 var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: var(--s4); }
+.who h3 { font-size: 28px; font-weight: 800; letter-spacing: -0.025em; line-height: 1.08; margin-bottom: var(--s4); }
+.who blockquote { margin: 0 0 var(--s4); font-size: 17px; line-height: 1.45; color: var(--ink); }
+.who cite { display: block; font: normal 12px/1.4 var(--f-mono); color: var(--ink-3); margin-top: var(--s2); }
+.who cite a { color: var(--ink-3); }
+.who ul { list-style: none; margin: 0; padding: 0; border-top: var(--hair) solid var(--rule); }
+.who li { padding: 12px 0 12px 22px; border-bottom: var(--hair) solid var(--rule); font-size: 15px; color: var(--ink-2); position: relative; }
+.who li:last-child { border-bottom: 0; padding-bottom: 0; }
+.who li::before { content: ""; position: absolute; left: 0; top: 21px; width: 10px; height: 1px; background: var(--accent); }
+
+/* What it adds: a ruled terms list on the same 12 columns. */
+.terms { border-top: var(--hair) solid var(--ink); }
+.term { padding: 20px 0; border-bottom: var(--hair) solid var(--rule); }
+.term .row { --bs-gutter-y: 8px; align-items: baseline; }
+.terms h3 { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
+.terms p { margin: 0; font-size: 16px; color: var(--ink-2); }
+
+/* What it is not. */
+.not-card { padding: var(--s5); height: 100%; display: flex; flex-direction: column; gap: var(--s3); }
+.not-card .lbl svg { color: var(--ink-3); }
+.not-card p { margin: 0; font-size: 19px; font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; color: var(--ink); }
+.data-line { margin: var(--s5) 0 0; font-size: 16px; color: var(--ink-2); max-width: 70ch; }
+
+/* Closing band: dark again in both themes. */
+.cta { margin-top: var(--s9); border-top: var(--hair) solid var(--rule); }
+.cta .row { padding: var(--s9) 0; align-items: end; }
+.cta h2 { font-size: clamp(32px, 4.4vw, 60px); font-weight: 800; line-height: 1.0; letter-spacing: -0.04em; max-width: 16ch; }
+.cta p { margin: var(--s4) 0 0; font-size: 17px; color: var(--ink-2); max-width: 52ch; }
+.cta .ctas { display: flex; flex-wrap: wrap; gap: var(--s3); justify-content: flex-end; }
+
+footer.foot { border-top: var(--hair) solid var(--rule); }
+footer.foot .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s2) var(--s5); padding-top: var(--s5); padding-bottom: var(--s6); font-size: 13px; color: var(--ink-3); }
+footer.foot a { color: var(--ink-2); margin-left: var(--s4); }
+footer.foot a:first-child { margin-left: 0; }
+
+@media (max-width: 1199.98px) {
+  .ov-row { grid-template-columns: minmax(0, 1.2fr) 124px minmax(0, 1.2fr) minmax(0, 1fr); }
+}
+@media (max-width: 991.98px) {
+  .hero-body { padding-top: var(--s6); }
+  .lede { max-width: 40ch; }
+  .for { margin-top: var(--s5); max-width: none; }
+  .cta .ctas { justify-content: flex-start; }
+}
+@media (max-width: 767.98px) {
+  .nav .opt { display: none; }
+  .nav { gap: var(--s4); }
+  .hero-line { padding-top: var(--s7); }
+  .hero-body { padding-bottom: var(--s8); }
+  .lede { font-size: 19px; }
+  .ov { padding: 0 var(--s4); }
+  .lit-head, .lit-foot { padding-left: var(--s4); padding-right: var(--s4); }
+  .ov-row { grid-template-columns: minmax(0, 1fr) auto; gap: var(--s3) var(--s3); }
+  .ov-row.hd { display: none; }
+  .ov-row .strip, .ov-row .ov-run { grid-column: 1 / -1; }
+  .ov-fig { grid-column: 1 / -1; text-align: left; white-space: normal; }
+  .ov-fig br { display: none; }
+  .ov-fig .sep { display: inline; }
+  .ov-fig::before { content: "Stated, found: "; color: var(--ink-3); }
+  .ov-fig.none { display: none; }
+  .block { padding-top: var(--s8); }
+  .sec-head { margin-bottom: var(--s6); }
+  .card-e, .dis, .ask, .not-card { padding: var(--s4); }
+  .pair .v { font-size: 22px; }
+  .pair > div { padding: var(--s3); }
+  dl.facts { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  dl.facts dd { margin-bottom: var(--s2); }
+  .cta .row { padding: var(--s8) 0; }
+}
+@media (max-width: 575.98px) { .nav .opt-sm { display: none; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+/* ---------- Style guide only ---------- */
+.sg-top { border-bottom: var(--hair) solid var(--rule); }
+.sg-title { padding-top: var(--s8); padding-bottom: var(--s7); }
+.sg-title h1 { font-size: clamp(44px, 6vw, 80px); font-weight: 800; line-height: 0.96; letter-spacing: -0.04em; }
+.sg-title .lede { max-width: 58ch; margin: var(--s5) 0 0; font-size: 19px; }
+.toc { display: flex; flex-wrap: wrap; gap: var(--s2); margin-top: var(--s6); }
+.toc a { font: 13px/1 var(--f-mono); color: var(--ink-2); text-decoration: none; border: var(--hair) solid var(--rule-2); border-radius: var(--r-m); padding: 9px 12px; }
+.toc a:hover { color: var(--ink); border-color: var(--accent); background: var(--surface-2); }
+.sg .block { padding-top: var(--s8); }
+.sg .sec-head { margin-bottom: var(--s6); }
+.sg .sec-head h2 { font-size: clamp(30px, 3.4vw, 44px); }
+.sub { font: 500 12px/1 var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); margin: var(--s7) 0 var(--s4); padding-bottom: var(--s3); border-bottom: var(--hair) solid var(--rule); }
+.sub:first-child { margin-top: 0; }
+.use { margin-top: var(--s3); font-size: 14px; color: var(--ink-3); max-width: 80ch; }
+.use b { font: 500 11px/1 var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); margin-right: var(--s2); }
+
+/* Token tables: swatches carry literal hex so both themes show on one page. */
+.tok-panel { padding: var(--s5); height: 100%; }
+.tok-panel h3 { font-size: 18px; font-weight: 700; margin-bottom: var(--s4); display: flex; justify-content: space-between; align-items: baseline; gap: var(--s3); }
+.tok-panel h3 span { font: 12px/1 var(--f-mono); color: var(--ink-3); font-weight: 400; }
+.t.tok td { vertical-align: middle; padding-top: 8px; padding-bottom: 8px; }
+.t.tok td.n { font: 12px/1.3 var(--f-mono); color: var(--ink); white-space: nowrap; }
+.t.tok td.h { font: 12px/1.3 var(--f-mono); color: var(--ink-2); white-space: nowrap; }
+.t.tok td.r { font-size: 13px; color: var(--ink-2); }
+.sw { display: inline-block; width: 22px; height: 22px; border-radius: 6px; border: 1px solid rgba(128, 128, 128, 0.35); vertical-align: middle; margin-right: 10px; }
+
+/* Type specimens. */
+.spec { padding: 22px 0; border-bottom: var(--hair) solid var(--rule); }
+.spec:first-child { border-top: var(--hair) solid var(--ink); }
+.spec .row { --bs-gutter-y: 8px; align-items: baseline; }
+.spec .meta { font: 12px/1.6 var(--f-mono); color: var(--ink-3); }
+.spec .meta b { display: block; font: 600 15px/1.3 var(--f-sans); color: var(--ink); margin-bottom: 4px; }
+.sp-display { font-size: 72px; font-weight: 800; line-height: 0.94; letter-spacing: -0.045em; }
+.sp-h2 { font-size: 44px; font-weight: 800; line-height: 1.02; letter-spacing: -0.035em; }
+.sp-h3 { font-size: 20px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; }
+.sp-lede { font-size: 21px; line-height: 1.45; color: var(--ink-2); }
+.sp-body { font-size: 16px; line-height: 1.5; color: var(--ink-2); max-width: 62ch; }
+.sp-fig { font: 500 26px/1.1 var(--f-mono); letter-spacing: -0.02em; }
+.sp-data { font: 13px/1.45 var(--f-mono); color: var(--ink-2); }
+
+/* Spacing, corners, lines. */
+.space-row { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: var(--s4); align-items: center; padding: 6px 0; font: 12px/1 var(--f-mono); color: var(--ink-3); }
+.space-row i { display: block; height: 10px; background: var(--band); border: 1px solid var(--band-edge); border-radius: 2px; }
+.shape { height: 100%; padding: var(--s5); display: flex; flex-direction: column; gap: var(--s4); }
+.shape .demo { height: 72px; border: var(--hair) solid var(--rule-2); background: var(--surface-2); }
+.shape b { font-size: 15px; }
+.shape p { margin: 0; font-size: 14px; color: var(--ink-2); }
+.shape .k { font: 500 12px/1 var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+.line-demo { height: 0; margin: 14px 0 10px; }
+.cols12 { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; }
+.cols12 i { height: 40px; border-radius: 4px; background: var(--band); border: 1px solid var(--band-edge); }
+@media (max-width: 767.98px) { .cols12 { gap: 6px; } }
+
+/* Component frames. */
+.frame { padding: var(--s5); }
+.mark-row { display: flex; flex-wrap: wrap; gap: var(--s3); align-items: center; }
+.verdicts .vl { display: grid; grid-template-columns: minmax(0, 0.9fr) 190px minmax(0, 2fr); gap: var(--s4); padding: 16px 0; border-bottom: var(--hair) solid var(--rule); align-items: baseline; }
+.verdicts .vl:first-child { padding-top: 0; }
+.verdicts .vl:last-child { border-bottom: 0; padding-bottom: 0; }
+.verdicts .vl b { font-weight: 600; }
+.verdicts .why { color: var(--ink-2); font-size: 15px; }
+.verdicts .why .n { display: block; font: 12px/1.5 var(--f-mono); color: var(--ink-3); margin-top: 4px; }
+.steer { border: var(--hair) solid var(--band-edge); }
+.state { font: 11px/1 var(--f-mono); color: var(--ink-3); display: block; margin-top: var(--s2); }
+.btn-grid { display: grid; grid-template-columns: repeat(2, max-content); gap: var(--s3) var(--s5); align-items: start; }
+.tc-btn.is-hover { background: var(--btn-bg-hover); border-color: var(--btn-bg-hover); }
+.tc-btn.sec.is-hover { background: var(--surface-2); border-color: var(--accent); }
+.tc-btn[disabled], .tc-btn[disabled]:hover { background: transparent; border-color: var(--rule); color: var(--ink-3); cursor: not-allowed; }
+.chip.is-hover { color: var(--ink); border-color: var(--accent); background: var(--surface-2); }
+.field { display: grid; gap: var(--s2); max-width: 560px; }
+.field label { font: 500 12px/1 var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+.field .in { display: flex; gap: var(--s2); flex-wrap: wrap; }
+.input { flex: 1 1 260px; min-width: 0; min-height: 44px; padding: 0 14px; font: 16px var(--f-sans); color: var(--ink); background: var(--surface); border: var(--hair) solid var(--rule-2); border-radius: var(--r-m); }
+.input::placeholder { color: var(--ink-3); }
+.input:hover { border-color: var(--ink-3); }
+.input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+.field .help { font-size: 13px; color: var(--ink-3); }
+
+/* Rules list. */
+.rules .term .row { --bs-gutter-y: 6px; }
+.rules .why { color: var(--ink-3); font-size: 14px; margin-top: 6px; }
+.sg-foot { margin-top: var(--s9); }
+
+@media (max-width: 991.98px) {
+  .verdicts .vl { grid-template-columns: minmax(0, 1fr) auto; }
+  .verdicts .vl .why { grid-column: 1 / -1; }
+}
+@media (max-width: 767.98px) {
+  .sp-display { font-size: 48px; }
+  .sp-h2 { font-size: 32px; }
+  .frame, .tok-panel, .shape { padding: var(--s4); }
+  .t.tok td.r, .t.tok th:nth-child(3) { display: none; }
+}
+</style>
+</head>
+<body class="sg">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="g-strong" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4.5" fill="currentColor"/></symbol>
+    <symbol id="g-weak" viewBox="0 0 10 10"><path d="M0.5 1 H9.5 L5 9.5 Z" fill="currentColor"/></symbol>
+    <symbol id="g-mixed" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M5 1 A4 4 0 0 0 5 9 Z" fill="currentColor"/></symbol>
+    <symbol id="g-thin" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 1.6"/></symbol>
+    <symbol id="g-run" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="5" cy="5" r="1.5" fill="currentColor"/></symbol>
+    <symbol id="g-dis" viewBox="0 0 10 10"><rect x="1" y="3" width="2" height="7" fill="currentColor"/><rect x="4" y="0" width="2" height="10" fill="currentColor"/><rect x="7" y="5" width="2" height="5" fill="currentColor"/></symbol>
+    <symbol id="g-clean" viewBox="0 0 10 10"><path d="M1 5.2 L4 8 L9 2" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="g-gap" viewBox="0 0 10 10"><rect x="0.75" y="0.75" width="8.5" height="8.5" rx="1" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 1.6"/></symbol>
+    <symbol id="g-not" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M2.2 7.8 L7.8 2.2" stroke="currentColor" stroke-width="1.2"/></symbol>
+    <symbol id="g-steer" viewBox="0 0 10 10"><path d="M1.5 8.5 L8.5 1.5 M3.5 1.5 H8.5 V6.5" fill="none" stroke="currentColor" stroke-width="1.3"/></symbol>
+    <symbol id="g-ask" viewBox="0 0 10 10"><path d="M1 1.5 H9 V7 H4 L1.5 9 V7 H1 Z" fill="none" stroke="currentColor" stroke-width="1.2"/></symbol>
+  </defs>
+</svg>
+
+<header class="sg-top">
+  <div class="container">
+    <div class="bar" style="border-bottom:0">
+      <a class="brand" href="home.html" aria-label="Tricorder, home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="0.5" y="0.5" width="23" height="23" rx="6" fill="none" stroke="var(--accent)"/><line x1="5" y1="12" x2="19" y2="12" stroke="var(--rule-2)"/><rect x="9" y="9" width="6" height="6" rx="1.5" fill="var(--band)" stroke="var(--band-edge)"/><rect x="11.25" y="6" width="1.5" height="12" rx="0.75" fill="currentColor"/></svg>
+        Tricorder
+      </a>
+      <nav class="nav" aria-label="Page">
+        <a href="home.html">Homepage</a>
+        <a class="opt-sm" href="../../index.html">All directions</a>
+        <button class="theme-btn" id="theme" type="button" aria-label="Change colour theme">Theme: auto</button>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="sg-title">
+  <div class="container">
+    <div class="eyebrow">Style guide, Direction E</div>
+    <h1>Black Card</h1>
+    <p class="lede">The quiet wealth of a charge card, crossed with the precision of a trading terminal. Warm graphite, off-white type and one pale metal, kept to hairlines, the primary button and the band of the range strip.</p>
+    <nav class="toc" aria-label="Sections">
+      <a href="#colour">Colour</a><a href="#type">Type</a><a href="#space">Spacing, corners, lines</a><a href="#components">Readout components</a><a href="#controls">Controls</a><a href="#rules">Rules</a>
+    </nav>
+  </div>
+</section>
+
+<section class="block" id="colour" aria-labelledby="colour-h" style="padding-top:var(--s7)">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Colour</div>
+      <h2 id="colour-h">Dark first. Light is white with graphite ink.</h2>
+      <p>Every colour is a token. Dark is the default. The light theme swaps the ground to white and the metal to a deeper brass so it reads on paper. The homepage hero and closing band stay dark in both themes.</p>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <div class="panel tok-panel">
+          <h3>Dark <span>default</span></h3>
+          <div class="tbox"><table class="t tok"><thead><tr><th scope="col">Token</th><th scope="col">Hex</th><th scope="col">Role</th></tr></thead><tbody>
+            <tr><td class="n">--ground</td><td class="h"><span class="sw" style="background:#131210"></span>#131210</td><td class="r">Page ground. Warm near-black.</td></tr>
+            <tr><td class="n">--surface</td><td class="h"><span class="sw" style="background:#1a1916"></span>#1a1916</td><td class="r">Panels and cards.</td></tr>
+            <tr><td class="n">--surface-2</td><td class="h"><span class="sw" style="background:#211f1b"></span>#211f1b</td><td class="r">Hover fill only.</td></tr>
+            <tr><td class="n">--ink</td><td class="h"><span class="sw" style="background:#eeebe4"></span>#eeebe4</td><td class="r">Headings, figures. 15.7:1 on ground.</td></tr>
+            <tr><td class="n">--ink-2</td><td class="h"><span class="sw" style="background:#bdb7ab"></span>#bdb7ab</td><td class="r">Body copy. 9.4:1.</td></tr>
+            <tr><td class="n">--ink-3</td><td class="h"><span class="sw" style="background:#9a9488"></span>#9a9488</td><td class="r">Labels, axes. 6.2:1.</td></tr>
+            <tr><td class="n">--rule</td><td class="h"><span class="sw" style="background:#2e2b26"></span>#2e2b26</td><td class="r">Hairlines.</td></tr>
+            <tr><td class="n">--rule-2</td><td class="h"><span class="sw" style="background:#45413a"></span>#45413a</td><td class="r">Stronger hairline: inputs, chips, strip track.</td></tr>
+            <tr><td class="n">--accent</td><td class="h"><span class="sw" style="background:#d3bf8e"></span>#d3bf8e</td><td class="r">Champagne. Primary button, focus, band edge.</td></tr>
+            <tr><td class="n">--btn-bg-hover</td><td class="h"><span class="sw" style="background:#e5d6ae"></span>#e5d6ae</td><td class="r">Primary hover. Text stays #16140f, 12.8:1.</td></tr>
+            <tr><td class="n">--strong</td><td class="h"><span class="sw" style="background:#7dc4a0"></span>#7dc4a0</td><td class="r">Looking strong, green flag. Filled dot.</td></tr>
+            <tr><td class="n">--weak</td><td class="h"><span class="sw" style="background:#f08c78"></span>#f08c78</td><td class="r">Looking weak, red flag, out of band. Triangle.</td></tr>
+            <tr><td class="n">--mixed</td><td class="h"><span class="sw" style="background:#93b2e6"></span>#93b2e6</td><td class="r">Mixed. Half-filled dot.</td></tr>
+            <tr><td class="n">--thin</td><td class="h"><span class="sw" style="background:#aaa498"></span>#aaa498</td><td class="r">Not enough in the room. Dashed ring.</td></tr>
+          </tbody></table></div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="panel tok-panel">
+          <h3>Light <span>white ground</span></h3>
+          <div class="tbox"><table class="t tok"><thead><tr><th scope="col">Token</th><th scope="col">Hex</th><th scope="col">Role</th></tr></thead><tbody>
+            <tr><td class="n">--ground</td><td class="h"><span class="sw" style="background:#ffffff"></span>#ffffff</td><td class="r">Page ground. Plain white.</td></tr>
+            <tr><td class="n">--surface</td><td class="h"><span class="sw" style="background:#ffffff"></span>#ffffff</td><td class="r">Panels. Held by a hairline, no fill.</td></tr>
+            <tr><td class="n">--surface-2</td><td class="h"><span class="sw" style="background:#f6f4ef"></span>#f6f4ef</td><td class="r">Hover fill only.</td></tr>
+            <tr><td class="n">--ink</td><td class="h"><span class="sw" style="background:#1c1b18"></span>#1c1b18</td><td class="r">Graphite. Headings, figures. 17.2:1.</td></tr>
+            <tr><td class="n">--ink-2</td><td class="h"><span class="sw" style="background:#47443d"></span>#47443d</td><td class="r">Body copy. 9.7:1.</td></tr>
+            <tr><td class="n">--ink-3</td><td class="h"><span class="sw" style="background:#6b675e"></span>#6b675e</td><td class="r">Labels, axes. 5.6:1.</td></tr>
+            <tr><td class="n">--rule</td><td class="h"><span class="sw" style="background:#e6e2da"></span>#e6e2da</td><td class="r">Hairlines.</td></tr>
+            <tr><td class="n">--rule-2</td><td class="h"><span class="sw" style="background:#cdc7ba"></span>#cdc7ba</td><td class="r">Stronger hairline: inputs, chips, strip track.</td></tr>
+            <tr><td class="n">--accent</td><td class="h"><span class="sw" style="background:#85692f"></span>#85692f</td><td class="r">Brass. Focus, labels, band edge. 5.2:1.</td></tr>
+            <tr><td class="n">--btn-bg</td><td class="h"><span class="sw" style="background:#1c1b18"></span>#1c1b18</td><td class="r">Primary button: graphite, champagne text #eadbb4.</td></tr>
+            <tr><td class="n">--strong</td><td class="h"><span class="sw" style="background:#1e7550"></span>#1e7550</td><td class="r">Looking strong. 5.7:1.</td></tr>
+            <tr><td class="n">--weak</td><td class="h"><span class="sw" style="background:#b3402e"></span>#b3402e</td><td class="r">Looking weak. 5.7:1.</td></tr>
+            <tr><td class="n">--mixed</td><td class="h"><span class="sw" style="background:#2d5c9c"></span>#2d5c9c</td><td class="r">Mixed. 6.7:1.</td></tr>
+            <tr><td class="n">--thin</td><td class="h"><span class="sw" style="background:#6b675e"></span>#6b675e</td><td class="r">Not enough in the room. 5.6:1.</td></tr>
+          </tbody></table></div>
+        </div>
+      </div>
+    </div>
+    <p class="use"><b>Why</b>Mixed is a cool blue, not amber, so it never reads as the metal. The band is the metal at 20% in dark. In light it is a brushed brass gradient with a deep brass edge (#8a6c2e), so it reads as metal on white and not as beige. Contrast ratios are against the page ground.</p>
+  </div>
+</section>
+
+<section class="block" id="type" aria-labelledby="type-h">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Type</div>
+      <h2 id="type-h">One grotesk, set tight. One mono for figures.</h2>
+      <p>Archivo carries the display, the headings and the body. IBM Plex Mono carries every figure, file name and label, with tabular numbers so columns line up.</p>
+    </div>
+    <div>
+      <div class="spec"><div class="row"><div class="col-12 col-md-4"><div class="meta"><b>Display</b>Archivo 800<br>46 to 112px, leading 0.94, tracking -0.045em</div></div><div class="col-12 col-md-8"><div class="sp-display">Point it at a startup.</div></div></div></div>
+      <div class="spec"><div class="row"><div class="col-12 col-md-4"><div class="meta"><b>Section heading</b>Archivo 800<br>32 to 52px, leading 1.02, tracking -0.035em</div></div><div class="col-12 col-md-8"><div class="sp-h2">Two people at each fund.</div></div></div></div>
+      <div class="spec"><div class="row"><div class="col-12 col-md-4"><div class="meta"><b>Card title</b>Archivo 700<br>20px, leading 1.2</div></div><div class="col-12 col-md-8"><div class="sp-h3">Red flag: runway leaves out most of the hiring plan.</div></div></div></div>
+      <div class="spec"><div class="row"><div class="col-12 col-md-4"><div class="meta"><b>Lede</b>Archivo 400<br>19 to 21px, leading 1.45</div></div><div class="col-12 col-md-8"><div class="sp-lede">Tricorder takes any data: decks, videos, spreadsheets, data rooms.</div></div></div></div>
+      <div class="spec"><div class="row"><div class="col-12 col-md-4"><div class="meta"><b>Body</b>Archivo 400<br>15 to 16px, leading 1.5</div></div><div class="col-12 col-md-8"><p class="sp-body" style="margin:0">The deck says 80% gross margin (slide 5). The ledger gives 58.1% once hosting, inference, telephony and support are counted.</p></div></div></div>
+      <div class="spec"><div class="row"><div class="col-12 col-md-4"><div class="meta"><b>Figure</b>IBM Plex Mono 500<br>20 to 26px, tabular</div></div><div class="col-12 col-md-8"><div class="sp-fig">$2,240,868 <span style="color:var(--ink-3)">/</span> $2,060,868</div></div></div></div>
+      <div class="spec"><div class="row"><div class="col-12 col-md-4"><div class="meta"><b>Data and label</b>IBM Plex Mono 400<br>11 to 13px; labels in caps at 0.08em</div></div><div class="col-12 col-md-8"><div class="sp-data">financial_model.xlsx, ARR_Build, ARR_TOTAL</div><div class="eyebrow" style="margin:8px 0 0">Ask the founder</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="space" aria-labelledby="space-h">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Spacing, corners, lines</div>
+      <h2 id="space-h">Twelve columns, one gutter, three corners.</h2>
+      <p>Content is 1200px wide on twelve columns with a 24px gutter. Spacing steps from 4 to 96px. Corners come in three sizes and nothing else.</p>
+    </div>
+    <div class="cols12" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <p class="use"><b>Grid</b>Bootstrap 5.3 for columns only. Container 1264px with 32px side padding on desktop, 16px on phones. Every heading starts on column one.</p>
+
+    <div class="row" style="margin-top:var(--s6)">
+      <div class="col-12 col-lg-4">
+        <div class="panel shape">
+          <span class="k">Spacing</span>
+          <div>
+            <div class="space-row"><span>4</span><i style="width:4px"></i></div>
+            <div class="space-row"><span>8</span><i style="width:8px"></i></div>
+            <div class="space-row"><span>12</span><i style="width:12px"></i></div>
+            <div class="space-row"><span>16</span><i style="width:16px"></i></div>
+            <div class="space-row"><span>24</span><i style="width:24px"></i></div>
+            <div class="space-row"><span>32</span><i style="width:32px"></i></div>
+            <div class="space-row"><span>48</span><i style="width:48px"></i></div>
+            <div class="space-row"><span>64</span><i style="width:64px"></i></div>
+            <div class="space-row"><span>96</span><i style="width:96px"></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="panel shape">
+          <span class="k">Corners</span>
+          <div class="row" style="--bs-gutter-x:12px">
+            <div class="col-4"><div class="demo" style="border-radius:4px"></div><p class="mt-2"><b>4px</b><br>Marks, chips</p></div>
+            <div class="col-4"><div class="demo" style="border-radius:8px"></div><p class="mt-2"><b>8px</b><br>Buttons, inputs</p></div>
+            <div class="col-4"><div class="demo" style="border-radius:14px"></div><p class="mt-2"><b>14px</b><br>Panels</p></div>
+          </div>
+          <p>Tables, rules and range strips stay square.</p>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="panel shape">
+          <span class="k">Lines</span>
+          <div>
+            <div class="line-demo" style="border-top:1px solid var(--rule)"></div><p>Rule: between rows and around panels.</p>
+            <div class="line-demo" style="border-top:1px solid var(--rule-2)"></div><p>Rule 2: inputs, chips, a table's head row.</p>
+            <div class="line-demo" style="border-top:1px solid var(--ink)"></div><p>Ink: opens a ruled list, full width.</p>
+            <div class="line-demo" style="border-top:1px solid var(--band-edge)"></div><p>Metal: the Ask the founder outline and the band's edge.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="components" aria-labelledby="comp-h">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Readout components</div>
+      <h2 id="comp-h">The readout, drawn for real.</h2>
+      <p>Every example uses Hollis Voice. Where Hollis Voice has no case, the template shows in brackets.</p>
+      <p class="synthetic" style="font-size:12px;margin-top:var(--s3);max-width:none">Synthetic data room for Deal Flow NYC 2026. Not a real company.</p>
+    </div>
+
+    <h3 class="sub">Marks</h3>
+    <div class="panel frame">
+      <div class="mark-row">
+        <span class="vmark m-strong"><svg aria-hidden="true"><use href="#g-strong"/></svg>looking strong</span>
+        <span class="vmark m-weak"><svg aria-hidden="true"><use href="#g-weak"/></svg>looking weak</span>
+        <span class="vmark m-mixed"><svg aria-hidden="true"><use href="#g-mixed"/></svg>mixed</span>
+        <span class="vmark m-thin"><svg aria-hidden="true"><use href="#g-thin"/></svg>not enough in the room</span>
+        <span class="vmark m-run"><svg aria-hidden="true"><use href="#g-run"/></svg>running</span>
+        <span class="vmark m-dis"><svg aria-hidden="true"><use href="#g-dis"/></svg>Disagreement</span>
+      </div>
+    </div>
+    <p class="use"><b>Use</b>A glyph and a word, always together. Dot strong, triangle weak, half dot mixed, dashed ring not enough, ringed dot running. A disagreement is not a verdict, so it takes ink.</p>
+
+    <h3 class="sub">Range strip</h3>
+    <div class="panel frame">
+      <div class="strip labelled" style="--min:1.9;--max:3.1" role="img" aria-label="Range strip: subscription rows rebuild 2,060,868 dollars. The model, the deck and the video all sit above it.">
+        <span class="strip-lab dn b" style="--v:2.060868">rows $2.06M</span>
+        <span class="strip-lab up w" style="--v:2.240868">model $2.24M</span>
+        <span class="strip-lab dn w" style="--v:2.5">deck $2.50M</span>
+        <span class="strip-lab up w r" style="--v:3">video, about $3.0M</span>
+        <div class="strip-track"><span class="strip-band" style="--v:2.060868"></span><span class="strip-tick" style="--v:2.060868"></span><span class="strip-tick out" style="--v:2.240868"></span><span class="strip-tick out" style="--v:2.5"></span><span class="strip-tick out about" style="--v:3"></span></div>
+      </div>
+      <div class="strip-axis"><span>$1.9M</span><span>$2.5M</span><span>$3.1M</span></div>
+      <div class="strip-key" style="margin-top:var(--s4)">
+        <span><i class="k-band"></i>band: the agreed or rebuilt figure, within 1%</span>
+        <span><i class="k-tick"></i>a source's figure</span>
+        <span><i class="k-out"></i>outside the band</span>
+      </div>
+    </div>
+    <p class="use"><b>Use</b>Values go in as numbers and CSS places them, so no one positions a tick by hand. A spoken figure gets a dotted tick. The overview uses the same strip without labels or axis.</p>
+
+    <h3 class="sub">Green flag and red flag</h3>
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <article class="panel card-e">
+          <div class="head"><span class="vmark m-strong"><svg aria-hidden="true"><use href="#g-strong"/></svg>Green flag</span><span class="meta">The pitch itself</span></div>
+          <h3>Green flag: the round adds up.</h3>
+          <div class="pair">
+            <div><div class="k">Stated</div><div class="v">$9,000,000</div><div class="s">Deck, slide 13</div></div>
+            <div><div class="k">Found</div><div class="v">$9,000,000</div><div class="s">Cap table and model</div></div>
+          </div>
+          <p style="margin-top:var(--s4)">$9,000,000, stated in the deck and the same in the cap table and the model. Nothing in the room contradicts it.</p>
+          <div class="foot chips">
+            <button class="chip" type="button">pitch_deck.pdf, slide 13</button>
+            <button class="chip" type="button">cap_table.xlsx, Cap_Table, B24</button>
+            <button class="chip" type="button">financial_model.xlsx, SERIES_A_RAISE</button>
+          </div>
+        </article>
+      </div>
+      <div class="col-12 col-lg-6">
+        <article class="panel card-e">
+          <div class="head"><span class="vmark m-weak"><svg aria-hidden="true"><use href="#g-weak"/></svg>Red flag</span><span class="meta">Burn and runway</span></div>
+          <h3>Red flag: runway leaves out most of the hiring plan.</h3>
+          <div class="pair">
+            <div><div class="k">Stated</div><div class="v w">37 months</div><div class="s">Model and deck, slide 11</div></div>
+            <div><div class="k">Found</div><div class="v">19 months</div><div class="s">All 24 planned hires paid</div></div>
+          </div>
+          <p style="margin-top:var(--s4)">37 months stated; 19 months found with all 24 planned hires paid for. Burn and runway reads looking weak.</p>
+          <div class="foot chips">
+            <button class="chip" type="button">financial_model.xlsx, RUNWAY_MONTHS</button>
+            <button class="chip" type="button">pitch_deck.pdf, slide 11</button>
+            <button class="chip" type="button">hiring_plan.csv, rerun through Cash_Runway</button>
+          </div>
+        </article>
+      </div>
+    </div>
+    <p class="use"><b>Use</b>Same structure, same height, side by side. Stated sits left of found at the same size. Only the stated figure takes the weak colour, and only when it is out of band.</p>
+
+    <h3 class="sub">Verdict lines</h3>
+    <div class="panel frame verdicts">
+      <div class="vl"><b>The pitch itself</b><span><span class="vmark m-strong"><svg aria-hidden="true"><use href="#g-strong"/></svg>looking strong</span></span><span class="why">Series A raise, $9,000,000, the same in the deck, the cap table and the model.<span class="n">[n] sources corroborate, [n] contradict.</span></span></div>
+      <div class="vl"><b>Traction and revenue</b><span><span class="vmark m-weak"><svg aria-hidden="true"><use href="#g-weak"/></svg>looking weak</span></span><span class="why">ARR is stated four ways, from about $3,000,000 on the pitch video to $2,060,868 in the subscription rows (pitch video, 0:35; customer_mrr_by_month.csv).<span class="n">[n] sources corroborate, [n] contradict.</span></span></div>
+      <div class="vl"><b>[Piece]</b><span><span class="vmark m-mixed"><svg aria-hidden="true"><use href="#g-mixed"/></svg>mixed</span></span><span class="why">[The reason, in one sentence, with its number and source.]<span class="n">[n] sources corroborate, [n] contradict.</span></span></div>
+      <div class="vl"><b>[Piece]</b><span><span class="vmark m-thin"><svg aria-hidden="true"><use href="#g-thin"/></svg>not enough in the room</span></span><span class="why">[What the room is missing, named the way a gap is.]<span class="n">[n] sources corroborate, [n] contradict.</span></span></div>
+    </div>
+    <p class="use"><b>Use</b>One line per piece, strong and weak at the same length. The mark comes from the script's rule. Counts come from the run.</p>
+
+    <h3 class="sub">Corroboration and disagreement</h3>
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <article class="panel card-e">
+          <div class="head"><span class="vmark m-strong"><svg aria-hidden="true"><use href="#g-strong"/></svg>Corroborated</span><span class="meta">The pitch itself</span></div>
+          <h3>Corroborated: Series A raise, $9,000,000</h3>
+          <div class="tbox"><table class="t stack"><thead><tr><th scope="col">Source</th><th scope="col" class="v">States</th><th scope="col">Where</th></tr></thead><tbody>
+            <tr><td>Deck</td><td class="v">$9,000,000</td><td><button class="chip" type="button">pitch_deck.pdf, slide 13</button></td></tr>
+            <tr><td>Cap table</td><td class="v">$9,000,000</td><td><button class="chip" type="button">cap_table.xlsx, Cap_Table, B24</button></td></tr>
+            <tr><td>Financial model</td><td class="v">$9,000,000</td><td><button class="chip" type="button">financial_model.xlsx, SERIES_A_RAISE</button></td></tr>
+          </tbody></table></div>
+          <p class="foot" style="margin:0">3 independent sources agree. Nothing in the room contradicts it.</p>
+        </article>
+      </div>
+      <div class="col-12 col-lg-6">
+        <article class="panel card-e">
+          <div class="head"><span class="vmark m-dis"><svg aria-hidden="true"><use href="#g-dis"/></svg>Disagreement</span><span class="meta">Traction and revenue</span></div>
+          <h3>Disagreement: ARR</h3>
+          <div class="tbox"><table class="t stack"><thead><tr><th scope="col">Source</th><th scope="col" class="v">States</th><th scope="col">Where</th></tr></thead><tbody>
+            <tr><td>Pitch video</td><td class="v">about $3,000,000</td><td><button class="chip" type="button">pitch video, 0:35</button></td></tr>
+            <tr><td>Deck</td><td class="v">$2,500,000</td><td><button class="chip" type="button">pitch_deck.pdf, slide 3</button></td></tr>
+            <tr><td>Financial model</td><td class="v">$2,240,868</td><td><button class="chip" type="button">financial_model.xlsx, ARR_TOTAL</button></td></tr>
+          </tbody></table></div>
+          <p class="foot" style="margin:0">Largest gap: about $760,000, between the video and the model. The deck is $259,132 above the model. The room does not explain either gap.</p>
+        </article>
+      </div>
+    </div>
+    <p class="use"><b>Use</b>A table is one surface. The head row has no fill, only a stronger rule under it. List the sources side by side and do not pick a winner.</p>
+
+    <h3 class="sub">Ask the founder</h3>
+    <div class="ask">
+      <div class="lbl" style="color:var(--accent)"><svg aria-hidden="true"><use href="#g-ask"/></svg>Ask the founder</div>
+      <p class="q">Which of these is ARR as of 2026-09-30, and can you walk us from the billing data to it?</p>
+      <div class="acts"><button class="tc-btn sm" type="button">Add to the ask list</button><button class="tc-btn sec sm" type="button">Copy the question</button></div>
+    </div>
+    <p class="use"><b>Use</b>Outlined in the metal, all the way round, because it is an action for the operator. It closes a disagreement or a flag, and its question can be pasted into an email.</p>
+
+    <h3 class="sub">Flag, gap, clean check</h3>
+    <div class="row">
+      <div class="col-12 col-lg-4">
+        <article class="panel card-e">
+          <div class="head"><span class="lbl c-weak"><svg aria-hidden="true"><use href="#g-weak"/></svg>Flag</span><span class="meta">Traction and revenue</span></div>
+          <h3>Flag: a pilot is counted as ARR</h3>
+          <div class="pair sm">
+            <div><div class="k">Stated</div><div class="v w">$2,240,868</div></div>
+            <div><div class="k">Found</div><div class="v">$2,060,868</div></div>
+          </div>
+          <p style="margin-top:var(--s4)">Difference: $180,000. Ask the founder: has Marlow signed anything beyond the pilot?</p>
+          <div class="foot chips"><button class="chip" type="button">customer_mrr_by_month.csv</button><button class="chip" type="button">pilot_agreement_marlow.pdf, clauses 2, 7 and 8</button></div>
+        </article>
+      </div>
+      <div class="col-12 col-lg-4">
+        <article class="panel card-e">
+          <div class="head"><span class="lbl c-thin"><svg aria-hidden="true"><use href="#g-gap"/></svg>Gap</span><span class="meta">Team</span></div>
+          <h3>Not in the room: IP assignment agreements</h3>
+          <dl class="facts">
+            <dt>Needed for</dt><dd>Confirming the founders and every contractor assigned their work to the company.</dd>
+            <dt>Ask for</dt><dd>Signed invention assignment agreements for both founders and every contractor who wrote code.</dd>
+          </dl>
+          <div class="foot"><button class="tc-btn sec sm" type="button">Add to the ask list</button></div>
+        </article>
+      </div>
+      <div class="col-12 col-lg-4">
+        <article class="panel card-e">
+          <div class="head"><span class="lbl c-strong"><svg aria-hidden="true"><use href="#g-clean"/></svg>Clean check</span><span class="meta">Burn and runway</span></div>
+          <h3>Clean: cash reconciles.</h3>
+          <p>Money raised before the Series A, less every month's net loss to 2026-09-30, was compared with the model's cash. The two differ by $0.24 on $1,800,000.</p>
+          <div class="foot chips"><button class="chip" type="button">cap_table.xlsx</button><button class="chip" type="button">financial_model.xlsx</button></div>
+        </article>
+      </div>
+    </div>
+    <p class="use"><b>Use</b>A gap is a question, drawn with a dashed glyph. A clean check is shown so the operator knows it ran. Chips sit on their own row at the foot.</p>
+
+    <h3 class="sub">Source chip and steered piece</h3>
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <div class="panel card-e">
+          <div class="chips">
+            <span><button class="chip" type="button">pitch_deck.pdf, slide 3</button><span class="state">Default</span></span>
+            <span><button class="chip is-hover" type="button">pitch_deck.pdf, slide 3</button><span class="state">Hover</span></span>
+          </div>
+          <p class="foot" style="margin:0">File and place in mono. One click opens the source. A long chip wraps; it is never cut short.</p>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="panel card-e steer">
+          <div class="head" style="margin-bottom:var(--s3)"><span class="lbl" style="color:var(--accent)"><svg aria-hidden="true"><use href="#g-steer"/></svg>Steered piece</span><span class="meta">Traction and revenue</span></div>
+          <p style="color:var(--ink)"><b>Rewritten on your instruction: "Lead with the pilot."</b> The pilot counted as ARR now opens the piece. Verdict unchanged.</p>
+          <p class="foot" style="margin:0">The checks' numbers are unchanged.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="controls" aria-labelledby="controls-h">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Controls</div>
+      <h2 id="controls-h">Buttons and the steer input.</h2>
+      <p>The primary button is the only filled control. Hover lightens it on dark and lifts it on light; the text colour never changes.</p>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <div class="panel card-e">
+          <div class="btn-grid">
+            <span><button class="tc-btn" type="button">See the readout</button><span class="state">Primary</span></span>
+            <span><button class="tc-btn is-hover" type="button">See the readout</button><span class="state">Primary, hover</span></span>
+            <span><button class="tc-btn sec" type="button">Bring a room</button><span class="state">Secondary</span></span>
+            <span><button class="tc-btn sec is-hover" type="button">Bring a room</button><span class="state">Secondary, hover</span></span>
+            <span><button class="tc-btn sm" type="button">Add to the ask list</button><span class="state">Small</span></span>
+            <span><button class="tc-btn" type="button" disabled>Run again</button><span class="state">Disabled</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="panel card-e">
+          <div class="field">
+            <label for="steer">Steer this piece</label>
+            <div class="in">
+              <input class="input" id="steer" type="text" placeholder="One sentence, for example: lead with the pilot">
+              <button class="tc-btn" type="button">Steer</button>
+            </div>
+            <span class="help">The checks' numbers stay on screen beside the change.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="rules" aria-labelledby="rules-h">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Rules</div>
+      <h2 id="rules-h">Rules a builder can apply without asking.</h2>
+    </div>
+    <div class="terms rules">
+      <div class="term"><div class="row"><div class="col-12 col-md-4"><h3>The metal is for edges</h3></div><div class="col-12 col-md-8"><p>Use it for hairlines, the primary button, focus and the band. Never as a large fill.</p><p class="why">A thin line of gold reads as precision. A field of it reads as decoration.</p></div></div></div>
+      <div class="term"><div class="row"><div class="col-12 col-md-4"><h3>Drama lives on the homepage</h3></div><div class="col-12 col-md-8"><p>Only the homepage hero and closing band stay dark in the light theme, and only the hero panel is raised.</p><p class="why">The product screens are for work. They stay quiet and get out of the way.</p></div></div></div>
+      <div class="term"><div class="row"><div class="col-12 col-md-4"><h3>Headings on column one</h3></div><div class="col-12 col-md-8"><p>Every section heading starts on the container's left edge, the same line as the content under it. No labels in a side column.</p><p class="why">A reader checks alignment by eye. One edge is easy to trust.</p></div></div></div>
+      <div class="term"><div class="row"><div class="col-12 col-md-4"><h3>Cards in a row match</h3></div><div class="col-12 col-md-8"><p>Side-by-side boxes share one structure and one height. Their chips or actions sit at the foot.</p><p class="why">Uneven boxes look like an error, and an error is the last thing a partner should see.</p></div></div></div>
+      <div class="term"><div class="row"><div class="col-12 col-md-4"><h3>Headlines are tight</h3></div><div class="col-12 col-md-8"><p>Display at 0.94 leading, section headings at 1.02, both with negative tracking.</p><p class="why">Loose leading on large type looks unfinished.</p></div></div></div>
+      <div class="term"><div class="row"><div class="col-12 col-md-4"><h3>Figures in mono</h3></div><div class="col-12 col-md-8"><p>Every number, file name and place is IBM Plex Mono with tabular figures. Stated sits beside found, at the same size.</p><p class="why">The partner compares numbers down a column. They must line up.</p></div></div></div>
+      <div class="term"><div class="row"><div class="col-12 col-md-4"><h3>Never colour alone</h3></div><div class="col-12 col-md-8"><p>Each mark pairs a glyph with a word. Out of band is a triangle as well as a colour.</p><p class="why">Some readers cannot tell red from green, and printouts lose colour.</p></div></div></div>
+      <div class="term"><div class="row"><div class="col-12 col-md-4"><h3>Chips on their own row</h3></div><div class="col-12 col-md-8"><p>Source chips go under the sentence they support, never inside it.</p><p class="why">A chip in mid-sentence breaks the line the reader is following.</p></div></div></div>
+      <div class="term"><div class="row"><div class="col-12 col-md-4"><h3>One radius scale</h3></div><div class="col-12 col-md-8"><p>4px for marks and chips, 8px for buttons and inputs, 14px for panels. Tables and strips stay square.</p><p class="why">Three sizes read as a system. More read as accident.</p></div></div></div>
+      <div class="term"><div class="row"><div class="col-12 col-md-4"><h3>Hover keeps contrast</h3></div><div class="col-12 col-md-8"><p>Hover changes the fill or the border, never the text to a fainter colour. Check both themes.</p><p class="why">A control that fades when you point at it feels broken.</p></div></div></div>
+      <div class="term"><div class="row"><div class="col-12 col-md-4"><h3>The synthetic label once</h3></div><div class="col-12 col-md-8"><p>The synthetic data room label appears once per page, next to the readout excerpt.</p><p class="why">Said once it is a fact. Said everywhere it is noise.</p></div></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot sg-foot">
+  <div class="container">
+    <span>Tricorder. Direction E, Black Card. A style study, not a live product page.</span>
+    <span><a href="home.html">Homepage</a><a href="../../index.html">All directions</a></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var b = document.getElementById('theme');
+  var r = document.documentElement;
+  var order = ['auto', 'light', 'dark'];
+  var cur = 'auto';
+  try { cur = localStorage.getItem('tricorder-e-theme') || 'auto'; } catch (e) {}
+  function apply(v) {
+    cur = order.indexOf(v) < 0 ? 'auto' : v;
+    if (cur === 'auto') r.removeAttribute('data-theme'); else r.setAttribute('data-theme', cur);
+    if (b) b.textContent = 'Theme: ' + cur;
+    try { localStorage.setItem('tricorder-e-theme', cur); } catch (e) {}
+  }
+  apply(cur);
+  if (b) b.addEventListener('click', function () { apply(order[(order.indexOf(cur) + 1) % 3]); });
+})();
+</script>
+</body>
+</html>
