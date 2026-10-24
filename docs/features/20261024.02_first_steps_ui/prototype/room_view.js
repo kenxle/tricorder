@@ -172,7 +172,7 @@
   }
   function html(state) {
     const b = blocks(state);
-    if (!b) return `<div class="empty" role="status"><strong>No synthetic data room for this company yet.</strong> Ploy has a full one and Sazabi a lighter one.</div>`;
+    if (!b) return `<div class="empty" role="status"><strong>No synthetic data room for this company yet.</strong> Ploy and Sazabi have one.</div>`;
     return `<div class="x-roomview" data-room-state="${esc(state)}">${b.banner}${b.standsOut}${b.pieces}${b.research}${b.requests}${b.actions}</div>`;
   }
 

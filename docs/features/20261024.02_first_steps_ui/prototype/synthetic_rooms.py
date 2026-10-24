@@ -26,7 +26,9 @@ def money(n: float) -> str:
 
 
 def millions(n: float) -> str:
-    return f"${n / 1_000_000:.1f}M"
+    """One decimal when exact, two when one decimal would change the figure ($5.25M, not $5.3M)."""
+    m = n / 1_000_000
+    return f"${m:.1f}M" if abs(round(m, 1) - m) < 1e-9 else f"${m:.2f}M"
 
 
 def pct(x: float, places: int = 1) -> str:

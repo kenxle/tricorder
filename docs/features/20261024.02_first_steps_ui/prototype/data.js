@@ -1,5 +1,5 @@
 window.DATA = {
- "built": "2026-10-24T13:38:19",
+ "built": "2026-10-24T13:40:37",
  "built_by": "docs/features/20261024.02_first_steps_ui/prototype/build_data.py",
  "list_source": "yc_spring_2026_companies",
  "companies": [
@@ -4047,7 +4047,7 @@ window.DATA = {
         "ticks": [
          {
           "v": 26571989,
-          "label": "Cap table and Form D $26.6M",
+          "label": "Cap table and Form D $26.57M",
           "pos": "above",
           "out": false
          }
@@ -4281,7 +4281,7 @@ window.DATA = {
          },
          {
           "v": 2802000.0,
-          "label": "Model $2.8M",
+          "label": "Model $2.80M",
           "pos": "below",
           "out": true
          }
@@ -5423,7 +5423,7 @@ window.DATA = {
       "reworded": "Steered: the associate takes the model's 36,000 companies as the count, so the market is $129,600,000. The deck's 40,000 includes agencies' client sites."
      }
     ],
-    "memo_company": "Ploy builds, edits and runs a company's website and marketing with AI agents. It raised a $26.6M seed (SEC Form D, 11 investors). In this synthetic room it asks for a $25.0M Series A at $150.0M pre-money.",
+    "memo_company": "Ploy builds, edits and runs a company's website and marketing with AI agents. It raised a $26.57M seed (SEC Form D, 11 investors). In this synthetic room it asks for a $25.0M Series A at $150.0M pre-money.",
     "states": {
      "partial": {
       "arrived": [
@@ -7968,7 +7968,7 @@ window.DATA = {
     "steer_examples": [
      {
       "piece": "legal_and_cap_table",
-      "sentence": "Count the $2.8M of commitments: the co-leads confirmed them to us in writing.",
+      "sentence": "Count the $2.75M of commitments: the co-leads confirmed them to us in writing.",
       "kind": "figure",
       "check_value": "$5,250,000",
       "steer_value": "$8,000,000",

@@ -27,7 +27,7 @@
     const T = window.TC;
     T.app.innerHTML = `${T.header(step, back)}<h2 class="co-title">${esc(X.company())}</h2>
       <div class="empty" role="status"><strong>No synthetic data room for this company yet.</strong>
-      Ploy has a full one and Sazabi a lighter one. Paste ploy.ai or sazabi.com above to see their room.</div>`;
+      Ploy and Sazabi have one. Paste ploy.ai or sazabi.com above to see their room.</div>`;
   };
 
   // Marks
@@ -78,10 +78,14 @@
       ${X.chips(c.sources)}${X.chips(c.agree, "Agrees")}${X.chips(c.disagree, "Disagrees")}`;
 
   // The range strip, from numbers. Labels near an edge turn inward.
+  // One decimal when that is exact. Money takes two when one would change it ($5.25M, not $5.3M);
+  // a percent or a month count takes two only when two are exact.
+  const exact = (x, n) => Math.abs(Number(x.toFixed(n)) - x) < 1e-9;
+  const dec = (x) => (exact(x, 1) || !exact(x, 2) ? x.toFixed(1) : x.toFixed(2));
   X.fmt = (v, unit) => {
-    if (unit === "usd") return v >= 1e6 ? `$${(v / 1e6).toFixed(1)}M` : `$${Math.round(v).toLocaleString("en-US")}`;
-    if (unit === "percent") return `${v.toFixed(1)}%`;
-    if (unit === "months") return `${v.toFixed(1)} mo`;
+    if (unit === "usd") return v >= 1e6 ? `$${(v / 1e6).toFixed(exact(v / 1e6, 1) ? 1 : 2)}M` : `$${Math.round(v).toLocaleString("en-US")}`;
+    if (unit === "percent") return `${dec(v)}%`;
+    if (unit === "months") return `${dec(v)} mo`;
     return Math.round(v).toLocaleString("en-US");
   };
   X.strip = (st, foundLabel) => {
