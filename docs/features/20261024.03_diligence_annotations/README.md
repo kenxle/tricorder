@@ -38,7 +38,13 @@ Flow: [local annotation data flow](../../ongoing/diagrams/diligence_annotations.
 ## Validation
 
 - Eight annotation tests cover distinct authors, GP write rejection, invalid ranges, UTF-16 boundaries, overlapping highlights, unchanged-source matching, reload, corrupt records, failed writes and repeated-label scope isolation.
-- Mobile typecheck and iOS JavaScript export passed during implementation. Root lint and full mobile tests are rerun after integration.
-- iPhone 17 Pro simulator: native long-press selection without keyboard, save as Alex, save as Maya, GP review with both authors and original-passage expansion verified. Reload and nested evidence-sheet checks are recorded at closeout.
-- Three independent read-only reviews examined correctness, security/data integrity and unnecessary complexity. Correctness/security found a repeated-label anchor collision; per-item scopes and a regression check address it. The requested named review models were unavailable, so available built-in reviewers were used.
+- Final checks passed: mobile typecheck, root lint/format gate, iOS JavaScript export and all 40 current mobile tests (including concurrent feature tests).
+- iPhone 17 Pro simulator: native long-press selection without keyboard, save as Alex, save as Maya, GP review with both authors and original-passage expansion verified. Reload restored Jordan (GP) and both saved notes. Inline source actions still open evidence sheets. Creating a comment from a nested evidence sheet was not independently completed in the walkthrough.
+- Three independent read-only reviews examined correctness, security/data integrity and unnecessary complexity. Correctness/security found a repeated-label anchor collision; per-item scopes and a regression check address it, and both reviewers verified the fix. The requested named review models were unavailable, so available built-in reviewers were used.
 - Physical iPhone, Android and web annotation interactions are not claimed as tested. Creation is intentionally iOS-only; existing web/Android prose remains readable.
+
+## Local handoff
+
+The implementation is recorded in commit `c6942e0`; final validation is recorded in a separate documentation commit. Existing Company/citation/room-arrival work in the shared checkout was preserved. The iPhone simulator preview started for this task uses port 8097; the other development servers were not stopped. Two clearly labelled “Demo review” annotations were created through the simulator UI, one by each associate, in the simulator's local store only. Physical-phone stores are separate.
+
+The installed Intent executable was unavailable. The implementation session could not write `.git/FETCH_HEAD` in the sandbox and read the fetched upstream bulletin separately. Benjamin subsequently authorized atomic commits and pushing; delivery preserves the existing commit sequence and reconciles upstream without rewriting history.
