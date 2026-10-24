@@ -124,14 +124,14 @@ codex mcp login expo
 
 For Claude Code, run `/mcp` in the session and sign in to Expo. Restart the agent session after installing plugins. OAuth credentials stay outside the repository. See the [official agent setup](https://docs.expo.dev/get-started/create-a-project/#set-up-an-ai-agent) and [Expo MCP guide](https://docs.expo.dev/mcp/).
 
-The `expo-mcp` development dependency enables local MCP tools. From the repository root, start Metro with MCP enabled:
+The `expo-mcp` development dependency enables local MCP tools. The mobile `dev`, `dev:device`, `ios`, `android` and `web` scripts set `EXPO_UNSTABLE_MCP_SERVER=1` automatically, including when launched through root scripts or Turbo. From the repository root:
 
 ```sh
 pnpm --filter @tricorder/mobile exec expo whoami  # Use the same account as MCP
-EXPO_UNSTABLE_MCP_SERVER=1 pnpm dev:mobile
+pnpm dev:mobile
 ```
 
-If Expo CLI is signed out, run `pnpm --filter @tricorder/mobile exec expo login`. Reconnect the Expo MCP server or restart the agent after starting or stopping Metro so its local capabilities refresh. Local tools include simulator screenshots, UI automation and opening React Native DevTools. The remote server registration alone does not enable these tools; Metro must be running with the flag above.
+If Expo CLI is signed out, run `pnpm --filter @tricorder/mobile exec expo login`. Reconnect the Expo MCP server or restart the agent after starting or stopping Metro so its local capabilities refresh. Local tools include simulator screenshots, UI automation and opening React Native DevTools. The remote server registration alone does not enable these tools; Metro must be running with MCP enabled. Direct `pnpm exec expo start` commands still require the flag explicitly.
 
 ## UX flow prototype
 
