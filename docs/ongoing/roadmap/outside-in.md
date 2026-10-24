@@ -3,7 +3,7 @@
 **The associate's ten tabs, opened automatically.** An associate at Flyer One Ventures describes her first step on a deal: "Before I even open your data room, I already have ten tabs up.
 
 - **Status today:** not started. Left: the outside-world tabs: website, Hacker News, App Store, SEC filings.
-- **Who builds it:** agent with Ken for keys.
+- **Who builds it:** Benjamin (Ken, 11:33 AM), from the [brief](../../features/20261024.01_pre_room_diligence/00_brief.md).
 - **Waits on:** the board row TRI-sponsor-keys (get the sponsor API keys before Saturday): Akta, Tavily, You.com, a GitHub token, the EDGAR User-Agent, and a Product Hunt token if Ken approves its terms; traffic and Akta's review signals also need Akta's Subscription plan or a sponsor coupon, and without it they run as gaps; [sponsor-adapters](sponsor-adapters.md), for Akta in sample mode until the key arrives; [readout-store](readout-store.md), so each company's pulled pages and claims outlive one laptop and the operator can see and delete them; [cached-data](cached-data.md) (the `cache/index.json` rule); [yc-rooms](yc-rooms.md), whose approved YC companies and their synthetic rooms are the live run under Done when; a decision on Product Hunt, whose API terms say non-commercial use (shared with online-presence); [steering](steering.md), for the "get more info" steers only, since the tabs work without it.
 - **Horizon:** Now to Friday night
 - **Checked against:** no scans/outside/.

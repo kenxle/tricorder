@@ -3,7 +3,7 @@
 The outside data the comps and market-signal scans read on Saturday, saved as files, so nothing on stage waits on a live call.
 
 - **Status today:** not started. Left: save every outside call under cache/.
-- **Who builds it:** agent.
+- **Who builds it:** Benjamin (Ken, 11:33 AM), from the [brief](../../features/20261024.01_pre_room_diligence/00_brief.md).
 - **Waits on:** keys (Akta and Tavily for the signal pulls; the EDGAR User-Agent for the SEC downloads); Ken's approved list in yc-rooms, for the real companies' calls.
 - **Horizon:** Now to Friday night
 - **Checked against:** no cache/ folder.

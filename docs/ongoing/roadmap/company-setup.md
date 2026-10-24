@@ -3,7 +3,7 @@
 Start diligence on a real company before any data room exists: pick it from the YC Spring 2026 list, set it up, and kick off our own research.
 
 - **Status today:** not started. Steps 1 and 2 of the [demo workflow](../diagrams/demo_workflow.md); Ken asked where they were on 2026-10-24 at 11:27 AM.
-- **Who builds it:** agent, until someone on the team takes it.
+- **Who builds it:** Benjamin (Ken, 11:33 AM), from the [brief](../../features/20261024.01_pre_room_diligence/00_brief.md).
 - **Waits on:** nothing to start. The list is saved. The research it kicks off is [outside-in](outside-in.md), [founder-profiles](founder-profiles.md), [comps](comps.md) and [market-signals](market-signals.md), which need [cached-data](cached-data.md) and Ken's keys to show real results.
 - **Checked against:** the list of YC Spring 2026 companies is saved at [yc_spring_2026_companies.csv](../../reports/20261022.02_research/raw/demo_companies/yc_spring_2026_companies.csv), written by [demo_yc_batch.py](../../reports/20261022.02_research/demo_yc_batch.py) from YC's public directory. Nothing in the app reads it; the app starts from a room, not a company.
 

@@ -3,7 +3,7 @@
 Comparable companies and recent rounds, each with the reason it is a fair comp.
 
 - **Status today:** not started. Left: the comps panel.
-- **Who builds it:** design-and-finance.
+- **Who builds it:** Benjamin (Ken, 11:33 AM), from the [brief](../../features/20261024.01_pre_room_diligence/00_brief.md).
 - **Waits on:** claim-result, cached-data, saturday-specs (the selection rules, prompt and schema).
 - **Horizon:** Saturday
 - **Checked against:** no scans/comps/.

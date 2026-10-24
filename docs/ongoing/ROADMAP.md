@@ -18,14 +18,14 @@ The demo path follows the [demo workflow](diagrams/demo_workflow.md), step by st
 
 | # | Slice | What is left to build | Who | Waits on |
 |---|---|---|---|---|
-| | **1 and 2. Before the data room: pick a YC company, run our own research** | | | |
-| 1 | [company-setup](roadmap/company-setup.md) (not started) | Pick a company from the saved YC Spring 2026 list, set it up, and kick off the research that needs no data room; its first readout comes before any room | agent | nothing to start; cached-data and Ken's keys for real results |
-| 2 | [cached-data](roadmap/cached-data.md) (not started) | Save every outside call under `cache/` so the demo runs without the network | agent | Ken's keys |
-| 3 | [outside-in](roadmap/outside-in.md) (not started) | The outside-world tabs for the real company's live beat: website, Hacker News, App Store, SEC filings | agent | Ken's pick of YC companies (yc-rooms), Ken's keys |
-| 4 | [founder-profiles](roadmap/founder-profiles.md) (not started) | A card per founder from GitHub, personal sites and talks | agent | cached-data for the demo run |
-| 5 | [comps](roadmap/comps.md) (not started) | The comparable-companies panel | design-and-finance | cached-data |
-| 6 | [signals-readings](roadmap/signals-readings.md) (not started) | The saved market-signal readings | agent | cached-data |
-| 7 | [market-signals](roadmap/market-signals.md) (not started) | The market-signals panel and its live run on the real company | frontend | signals-readings |
+| | **1 and 2. Before the data room: pick a YC company, run our own research.** Benjamin's; [brief](../features/20261024.01_pre_room_diligence/00_brief.md) | | | |
+| 1 | [company-setup](roadmap/company-setup.md) (not started) | Pick a company from the saved YC Spring 2026 list, set it up, and kick off the research that needs no data room; its first readout comes before any room | Benjamin | nothing to start; cached-data and Ken's keys for real results |
+| 2 | [cached-data](roadmap/cached-data.md) (not started) | Save every outside call under `cache/` so the demo runs without the network | Benjamin | Ken's keys |
+| 3 | [outside-in](roadmap/outside-in.md) (not started) | The outside-world tabs for the real company's live beat: website, Hacker News, App Store, SEC filings | Benjamin | Ken's pick of YC companies (yc-rooms), Ken's keys |
+| 4 | [founder-profiles](roadmap/founder-profiles.md) (not started) | A card per founder from GitHub, personal sites and talks | Benjamin | cached-data for the demo run |
+| 5 | [comps](roadmap/comps.md) (not started) | The comparable-companies panel | Benjamin | cached-data |
+| 6 | [signals-readings](roadmap/signals-readings.md) (not started) | The saved market-signal readings | Benjamin | cached-data |
+| 7 | [market-signals](roadmap/market-signals.md) (not started) | The market-signals panel and its live run on the real company | Benjamin | signals-readings |
 | | **3 and 4. Ask for the data room, and take in what comes back** | | | |
 | 8 | [room-requests](roadmap/room-requests.md) (not started) | The first thing Tricorder does with a room: show what it holds and what is missing, draft the request automatically, and let the associate check, uncheck and add items | Benjamin | nothing; checklist coverage and founder requests are built |
 | | **5. Red and green flags from the room** | | | |
