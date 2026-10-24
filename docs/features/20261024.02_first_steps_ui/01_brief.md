@@ -13,7 +13,13 @@ The [demo workflow](../../ongoing/diagrams/demo_workflow.md) starts before any d
 
 ## Problem
 
-There is no way in the app to start diligence from a company. The first half of the demo has no screens.
+The associate's first pass starts before any data room, and they do it by hand.
+
+- **They research the company before the room opens.** An associate at a seed fund opens ten browser tabs first: traffic, reviews, investors, co-founder issues, and whether the story matches what is online ([the associate persona](../../ongoing/PERSONAS.md#the-associate-who-spends-days-gathering), quoting [Startups Magazine, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)).
+- **Getting the information is the slowest part of diligence.** Investors name market research and chasing documents that have not arrived, not the writing ([research gaps, "Which part is slowest"](../../reports/20261022.02_research/research_gaps.md#which-part-is-slowest)). One investor: "The information I need isn't usually there, leading to back-and-forth emails with founders." ([syndicate lead, Aug 2024](https://elitegamedevelopers.substack.com/p/the-essential-startup-data-room-key))
+- **The volume makes it worse.** The same associate reviews about 500 decks a year and goes deep on about 15 ([the associate persona](../../ongoing/PERSONAS.md#the-associate-who-spends-days-gathering)).
+
+Tricorder today helps only after a room exists. It cannot do the ten tabs, and it cannot draft the first request for documents, so the associate still does the slowest part alone.
 
 ## Desired outcome
 
