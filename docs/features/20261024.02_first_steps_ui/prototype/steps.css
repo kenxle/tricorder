@@ -108,3 +108,13 @@ span.x-mline-text { cursor: default; text-decoration: none; }
 .x-glance { margin: var(--tc-space-5) 0 var(--tc-space-3); font: 500 12px/1.2 var(--tc-font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--tc-ink-3); }
 .x-reader { display: flex; gap: var(--tc-space-3); align-items: center; flex-wrap: wrap; }
 #w-pace { accent-color: var(--tc-accent); width: 100%; min-height: var(--tc-hit); }
+/* On a phone, stated sits above found so the figures keep their size. */
+@media (max-width: 520px) {
+  .x-flag .tc-pair, .x-result .tc-pair { grid-template-columns: minmax(0, 1fr); }
+  .x-flag .tc-pair > div + div, .x-result .tc-pair > div + div { border-left: 0; border-top: var(--tc-hair) solid var(--tc-rule); }
+  .tc-pair-value { overflow-wrap: anywhere; }
+}
+/* A source panel opened inside stated-beside-found stays inside its half. */
+@media (min-width: 521px) { .x-flag .tc-pair { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+.tc-pair .panel { box-sizing: border-box; max-width: 100%; }
+.tc-pair .panel pre, .tc-pair .panel code { overflow-wrap: anywhere; }

@@ -26,8 +26,8 @@
   X.noRoom = (step, back) => {
     const T = window.TC;
     T.app.innerHTML = `${T.header(step, back)}<h2 class="co-title">${esc(X.company())}</h2>
-      <div class="empty" role="status"><strong>No synthetic data room for this company in the prototype.</strong>
-      Ploy has a full one and Sazabi a lighter one. Feed in ploy.ai or sazabi.com to see this step.</div>`;
+      <div class="empty" role="status"><strong>No synthetic data room for this company yet.</strong>
+      Ploy has a full one and Sazabi a lighter one. Paste ploy.ai or sazabi.com above to see their room.</div>`;
   };
 
   // Marks

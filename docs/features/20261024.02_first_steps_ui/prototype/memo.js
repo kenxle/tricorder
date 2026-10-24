@@ -214,8 +214,11 @@
         <div id="x-whatif-slot">${whatifHtml(room)}</div>
         <section class="x-section" aria-label="The memo"><h2 class="x-h">The memo</h2>
           <p class="x-yourview" id="x-yourview">Your view: ${views.filter((v) => v === "agree").length} agree, ${views.filter((v) => v === "disagree").length} disagree. Only you see it.</p>
-          <article class="x-memo"><section class="x-memo-sec" aria-label="Header"><h3><span class="tc-meta">1</span>Header</h3>${head}</section>${sections}</article></section>`;
+          <article class="x-memo"><section class="x-memo-sec" aria-label="Header"><h3><span class="tc-meta">1</span>Header</h3>${head}</section>${sections}</article></section>
+        <div class="actions"><a class="btn tc-btn primary" href="http://localhost:5173/">Open the built readout page</a>
+          <button class="tc-btn tc-btn--secondary" type="button" id="to-start">Start with another company</button></div>`;
       bindWhatif(room);
+      document.getElementById("to-start").addEventListener("click", () => T.go("start"));
       document.getElementById("reader").addEventListener("input", (e) => { st.reader = e.target.value || "Partner"; const el = document.getElementById("w-reader"); if (el) el.textContent = st.reader; });
     }
   }
