@@ -118,3 +118,21 @@ span.x-mline-text { cursor: default; text-decoration: none; }
 @media (min-width: 521px) { .x-flag .tc-pair { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
 .tc-pair .panel { box-sizing: border-box; max-width: 100%; }
 .tc-pair .panel pre, .tc-pair .panel code { overflow-wrap: anywhere; }
+
+/* The working page with the room's data in (room_view.js). */
+.x-roombanner { display: flex; flex-wrap: wrap; gap: var(--tc-space-3); align-items: center; padding: var(--tc-space-4) var(--tc-space-5); margin: 0 0 var(--tc-space-3);
+  background: var(--tc-surface); border: var(--tc-hair) solid var(--tc-rule-2); border-radius: var(--tc-radius-l); font-size: 16px; color: var(--tc-ink); }
+.x-sub { margin: var(--tc-space-5) 0 var(--tc-space-3); font: 500 12px/1.2 var(--tc-font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--tc-ink-3); }
+.x-section > .x-sub:first-of-type { margin-top: 0; }
+.x-waiting p { margin: 0; }
+.x-waiting .tc-card-foot { display: flex; flex-wrap: wrap; gap: 6px; }
+.x-insights, .x-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--tc-gutter); align-items: stretch; }
+.x-insight .tc-card-title { font-size: 18px; }
+.x-roomsays { display: inline-flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.x-wait { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: var(--tc-space-2); }
+.x-ph .claim-text { color: var(--tc-ink-3); }
+.x-roomview .x-claims { max-width: 1000px; }
+.x-roomview .tc-label, .x-roomview .tc-mark, .x-roombanner span { white-space: normal; overflow-wrap: anywhere; }
+.x-roomview .x-waiting .tc-card-head > * { min-width: 0; }
+.x-flags > * { min-width: 0; }
+.x-waiting .tc-card-title, .x-waiting p, .x-wait, .tc-verdict-why { overflow-wrap: anywhere; }

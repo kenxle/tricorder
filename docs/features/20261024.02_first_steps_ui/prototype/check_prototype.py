@@ -116,7 +116,7 @@ with sync_playwright() as p:
 
     # Step 5: flags from Ploy's synthetic room (steps 5 to 8: step5.js, step6.js, memo.js)
     pg.click("a[href='#flags']")
-    pg.wait_for_selector(".x-flag")
+    pg.wait_for_selector(".x-drill")
     check("Synthetic data room" in pg.locator(".x-synthetic").inner_text(), "step 5 labels the room synthetic")
     greens, reds = pg.locator(".x-flag[data-flag='green']").count(), pg.locator(".x-flag[data-flag='red']").count()
     order = pg.eval_on_selector_all(".x-flag", "els => els.map(e => e.dataset.flag)")
@@ -187,6 +187,27 @@ with sync_playwright() as p:
     check("1 agree" in pg.locator("#x-yourview").inner_text(), "the principal can agree with a line")
     pg.screenshot(path=str(SHOTS / "8_principals_view.png"), full_page=True)
 
+    # The working page with the room's data in, by URL: partial, then full (room_view.js)
+    for state in ("partial", "full"):
+        pg.goto(BASE + f"?company=https://ploy.ai&room={state}")
+        pg.wait_for_selector(f".x-roomview[data-room-state='{state}']")
+        answered, still = pg.locator("[data-request='answered']").count(), pg.locator("[data-request='open']").count()
+        flags, waiting = pg.locator(".x-roomview .x-flag").count(), pg.locator(".x-roomview .x-waiting").count()
+        check(flags >= 2 and pg.locator("section[aria-label='What stands out'] .x-flag").count() == flags, f"{state}: what stands out leads with the room's flags ({flags})")
+        check(pg.locator(".x-roomview .tc-verdict").count() == 10, f"{state}: ten pieces carry the room's verdicts")
+        check(pg.locator(".x-roomsays .tc-mark--strong").count() >= 3, f"{state}: pre-room claims show as confirmed by the room")
+        if state == "partial":
+            check(waiting >= 1 and pg.locator(".x-waiting .tc-mark--running").count() >= 1, f"partial: checks waiting on a file show their open request ({waiting})")
+            check(pg.locator(".tc-verdict .tc-mark--thin", has_text="not enough yet").count() >= 1, "partial: pieces that need the rest say not enough yet")
+            part = answered
+        else:
+            check(waiting == 0 and answered > part, f"full: nothing waits on a file, and more requests are answered ({part} then {answered})")
+        check("synthetic" in pg.locator(".x-roomview .x-synthetic").inner_text(), f"{state}: the room is labelled synthetic")
+        pg.screenshot(path=str(SHOTS / f"room_{state}.png"), full_page=True)
+    pg.click("[data-room-go='steer']")
+    pg.wait_for_selector(".x-piece")
+    check(pg.locator(".x-piece").count() == 10, "steering works from the full room")
+
     # Sazabi, lighter: steps 5 and 8 work
     pg.goto(BASE + "?company=sazabi.com&pace=0")
     pg.evaluate("location.hash = 'flags'")
@@ -219,6 +240,13 @@ with sync_playwright() as p:
     pg.wait_for_function("document.getElementById('overall').textContent.startsWith('Research done')")
     sw = pg.evaluate("document.documentElement.scrollWidth")
     check(sw <= 390, f"no sideways scroll at phone width ({sw}px)")
+    for state in ("partial", "full"):
+        pg.goto(BASE + f"?company=https://ploy.ai&room={state}")
+        pg.wait_for_selector(".x-roomview")
+        sw = pg.evaluate("document.documentElement.scrollWidth")
+        check(sw <= 390, f"no sideways scroll at phone width on the {state} room ({sw}px)")
+    pg.goto(BASE + "?company=ploy.ai&pace=0")
+    pg.wait_for_timeout(300)
     for step in ("flags", "steer", "memo", "principal"):
         pg.evaluate(f"location.hash = '{step}'")
         pg.wait_for_timeout(200)

@@ -1,5 +1,5 @@
 window.DATA = {
- "built": "2026-10-24T12:51:42",
+ "built": "2026-10-24T13:07:59",
  "built_by": "docs/features/20261024.02_first_steps_ui/prototype/build_data.py",
  "list_source": "yc_spring_2026_companies",
  "companies": [
@@ -3978,7 +3978,6 @@ window.DATA = {
     "files": [
      "00_welcome/cover_note_and_index.pdf",
      "01_pitch/pitch_deck.pdf",
-     "01_pitch/pitch_deck.pdf, slide 9",
      "02_financials/financial_model.xlsx",
      "02_financials/monthly_statements.xlsx",
      "03_metrics/customer_mrr_by_month.csv",
@@ -5346,7 +5345,425 @@ window.DATA = {
       "reworded": "Steered: the associate takes the model's 36,000 companies as the count, so the market is $129,600,000. The deck's 40,000 includes agencies' client sites."
      }
     ],
-    "memo_company": "Ploy builds, edits and runs a company's website and marketing with AI agents. It raised a $26.6M seed (SEC Form D, 11 investors). In this synthetic room it asks for a $25.0M Series A at $150.0M pre-money."
+    "memo_company": "Ploy builds, edits and runs a company's website and marketing with AI agents. It raised a $26.6M seed (SEC Form D, 11 investors). In this synthetic room it asks for a $25.0M Series A at $150.0M pre-money.",
+    "states": {
+     "partial": {
+      "arrived": [
+       "00_welcome/cover_note_and_index.pdf",
+       "01_pitch/pitch_deck.pdf",
+       "02_financials/financial_model.xlsx",
+       "02_financials/monthly_statements.xlsx",
+       "03_metrics/monthly_metrics.csv",
+       "03_metrics/workspaces_by_plan.csv",
+       "05_legal/cap_table.xlsx",
+       "05_legal/safe_conversion_schedule.pdf",
+       "05_legal/seed_stock_purchase_agreement.pdf",
+       "06_team/founder_bio_bryant_chou.pdf"
+      ],
+      "files_total": 15,
+      "shown": [
+       "bu-1",
+       "lc-1",
+       "lc-2",
+       "lc-3",
+       "ma-1",
+       "ma-2",
+       "ma-3",
+       "ow-1",
+       "pi-1",
+       "pi-2",
+       "re-1",
+       "te-1",
+       "tr-1",
+       "tr-2",
+       "tr-4",
+       "ue-1",
+       "ue-2",
+       "ue-3",
+       "ue-4"
+      ],
+      "flags": {
+       "green": [
+        "lc-1"
+       ],
+       "red": [
+        "ue-3",
+        "tr-4"
+       ]
+      },
+      "waiting": [
+       {
+        "piece": "customers",
+        "files": [
+         "03_metrics/customer_mrr_by_month.csv"
+        ],
+        "requests": [
+         "C03"
+        ],
+        "title": "Customers: the check runs when 03_metrics/customer_mrr_by_month.csv arrives.",
+        "text": "Stated so far: under 10%. Tricorder rebuilds it from the file the founder has not sent yet."
+       },
+       {
+        "piece": "burn_and_runway",
+        "files": [
+         "06_team/hiring_plan.csv"
+        ],
+        "requests": [
+         "C22"
+        ],
+        "title": "Burn and runway: the check runs when 06_team/hiring_plan.csv arrives.",
+        "text": "Stated so far: 30 months. Tricorder rebuilds it from the file the founder has not sent yet."
+       },
+       {
+        "piece": "traction_and_revenue",
+        "files": [
+         "03_metrics/customer_mrr_by_month.csv",
+         "04_customers/order_form_northwind_analytics.pdf"
+        ],
+        "requests": [
+         "C03",
+         "C34"
+        ],
+        "title": "Traction and revenue: the check runs when 03_metrics/customer_mrr_by_month.csv arrives.",
+        "text": "Stated so far: $2.8M. Tricorder rebuilds it from the file the founder has not sent yet."
+       }
+      ],
+      "pieces": {
+       "traction_and_revenue": {
+        "verdict": "looking_weak",
+        "reason": "The deck says 1,240 paying workspaces. The workspace file shows 1,240 workspaces using credits, of which 736 pay; 504 are on the free plan.",
+        "agree": 0,
+        "disagree": 3,
+        "waiting": [
+         "03_metrics/customer_mrr_by_month.csv",
+         "04_customers/order_form_northwind_analytics.pdf"
+        ]
+       },
+       "retention": {
+        "verdict": "not_enough_in_the_room",
+        "reason": "Only one source states churn: the model's 2.0% a month. The customer file starts in 2026-01, too soon for 12-month retention.",
+        "agree": 0,
+        "disagree": 0,
+        "waiting": []
+       },
+       "burn_and_runway": {
+        "verdict": "not_enough_in_the_room",
+        "reason": "Not enough yet. Waiting on 06_team/hiring_plan.csv.",
+        "agree": 0,
+        "disagree": 0,
+        "waiting": [
+         "06_team/hiring_plan.csv"
+        ]
+       },
+       "unit_economics": {
+        "verdict": "looking_weak",
+        "reason": "Model inference, $60,950 in September, sits under research and development. Counted as cost of revenue, gross margin is 51.9%.",
+        "agree": 2,
+        "disagree": 3,
+        "waiting": []
+       },
+       "customers": {
+        "verdict": "not_enough_in_the_room",
+        "reason": "Not enough yet. Waiting on 03_metrics/customer_mrr_by_month.csv.",
+        "agree": 0,
+        "disagree": 0,
+        "waiting": [
+         "03_metrics/customer_mrr_by_month.csv"
+        ]
+       },
+       "market": {
+        "verdict": "mixed",
+        "reason": "The deck and the model agree on $3,600 a year per company. They disagree on the count: 40,000 against 36,000.",
+        "agree": 2,
+        "disagree": 2,
+        "waiting": []
+       },
+       "team": {
+        "verdict": "looking_strong",
+        "reason": "Staff today: 14 on deck slide 11 and in the model, the same as the YC page.",
+        "agree": 3,
+        "disagree": 0,
+        "waiting": []
+       },
+       "the_pitch_itself": {
+        "verdict": "looking_strong",
+        "reason": "Series A: raise $25,000,000 at $150,000,000 pre-money, so 14.29% for the new money.",
+        "agree": 2,
+        "disagree": 0,
+        "waiting": []
+       },
+       "legal_and_cap_table": {
+        "verdict": "looking_strong",
+        "reason": "The cap table's seed total is $26,571,989, the amount sold on the SEC Form D.",
+        "agree": 3,
+        "disagree": 0,
+        "waiting": [
+         "05_legal/claims_statement.pdf"
+        ]
+       },
+       "outside_world": {
+        "verdict": "looking_strong",
+        "reason": "Three public facts check out against the room: the prices, the team size and the Form D amount.",
+        "agree": 3,
+        "disagree": 0,
+        "waiting": []
+       }
+      },
+      "prechecks": {
+       "0": "confirms",
+       "1": "confirms",
+       "2": "confirms",
+       "3": "confirms",
+       "4": "confirms",
+       "5": "confirms",
+       "6": "answers",
+       "7": "waiting",
+       "8": "waiting"
+      },
+      "answered": [
+       "C02",
+       "C19",
+       "C20",
+       "C47",
+       "C53",
+       "C59",
+       "C60",
+       "C72",
+       "C75"
+      ],
+      "request_of": {
+       "03_metrics/monthly_metrics.csv": "C02",
+       "03_metrics/customer_mrr_by_month.csv": "C03",
+       "04_customers/order_form_northwind_analytics.pdf": "C34",
+       "04_customers/order_form_halden_freight.pdf": "C34",
+       "05_legal/safe_conversion_schedule.pdf": "C75",
+       "05_legal/seed_stock_purchase_agreement.pdf": "C75",
+       "05_legal/cap_table.xlsx": "C72",
+       "02_financials/monthly_statements.xlsx": "C20",
+       "02_financials/financial_model.xlsx": "C19",
+       "06_team/hiring_plan.csv": "C22",
+       "01_pitch/pitch_deck.pdf": "C47",
+       "06_team/founder_bio_bryant_chou.pdf": "C53",
+       "00_welcome/cover_note_and_index.pdf": "C59",
+       "05_legal/claims_statement.pdf": "C80"
+      }
+     },
+     "full": {
+      "arrived": [
+       "00_welcome/cover_note_and_index.pdf",
+       "01_pitch/pitch_deck.pdf",
+       "02_financials/financial_model.xlsx",
+       "02_financials/monthly_statements.xlsx",
+       "03_metrics/customer_mrr_by_month.csv",
+       "03_metrics/monthly_metrics.csv",
+       "03_metrics/workspaces_by_plan.csv",
+       "04_customers/order_form_halden_freight.pdf",
+       "04_customers/order_form_northwind_analytics.pdf",
+       "05_legal/cap_table.xlsx",
+       "05_legal/claims_statement.pdf",
+       "05_legal/safe_conversion_schedule.pdf",
+       "05_legal/seed_stock_purchase_agreement.pdf",
+       "06_team/founder_bio_bryant_chou.pdf",
+       "06_team/hiring_plan.csv"
+      ],
+      "files_total": 15,
+      "shown": [
+       "bu-1",
+       "bu-2",
+       "cu-1",
+       "lc-1",
+       "lc-2",
+       "lc-3",
+       "lc-4",
+       "ma-1",
+       "ma-2",
+       "ma-3",
+       "ow-1",
+       "pi-1",
+       "pi-2",
+       "re-1",
+       "te-1",
+       "tr-1",
+       "tr-2",
+       "tr-3",
+       "tr-4",
+       "ue-1",
+       "ue-2",
+       "ue-3",
+       "ue-4"
+      ],
+      "flags": {
+       "green": [
+        "lc-1",
+        "cu-1"
+       ],
+       "red": [
+        "ue-3",
+        "bu-2",
+        "tr-3"
+       ]
+      },
+      "waiting": [],
+      "pieces": {
+       "traction_and_revenue": {
+        "verdict": "looking_weak",
+        "reason": "Rebuilt from the customer file, subscription MRR is $203,500, so ARR is $2,442,000. The $30,000 difference is the Northwind Analytics pilot: $90,000 for 3 months, booked as monthly recurring revenue.",
+        "agree": 1,
+        "disagree": 3,
+        "waiting": []
+       },
+       "retention": {
+        "verdict": "not_enough_in_the_room",
+        "reason": "Only one source states churn: the model's 2.0% a month. The customer file starts in 2026-01, too soon for 12-month retention.",
+        "agree": 0,
+        "disagree": 0,
+        "waiting": []
+       },
+       "burn_and_runway": {
+        "verdict": "looking_weak",
+        "reason": "The model's burn carries 6 of the 22 planned hires. With all 22 from the hiring plan, runway is 24.1 months.",
+        "agree": 0,
+        "disagree": 2,
+        "waiting": []
+       },
+       "unit_economics": {
+        "verdict": "looking_weak",
+        "reason": "Model inference, $60,950 in September, sits under research and development. Counted as cost of revenue, gross margin is 51.9%.",
+        "agree": 2,
+        "disagree": 3,
+        "waiting": []
+       },
+       "customers": {
+        "verdict": "looking_strong",
+        "reason": "The deck says no customer is more than 10% of revenue. The largest, Halden Freight, is 7.7% of September MRR.",
+        "agree": 3,
+        "disagree": 0,
+        "waiting": []
+       },
+       "market": {
+        "verdict": "mixed",
+        "reason": "The deck and the model agree on $3,600 a year per company. They disagree on the count: 40,000 against 36,000.",
+        "agree": 2,
+        "disagree": 2,
+        "waiting": []
+       },
+       "team": {
+        "verdict": "looking_strong",
+        "reason": "Staff today: 14 on deck slide 11 and in the model, the same as the YC page.",
+        "agree": 3,
+        "disagree": 0,
+        "waiting": []
+       },
+       "the_pitch_itself": {
+        "verdict": "looking_strong",
+        "reason": "Series A: raise $25,000,000 at $150,000,000 pre-money, so 14.29% for the new money.",
+        "agree": 2,
+        "disagree": 0,
+        "waiting": []
+       },
+       "legal_and_cap_table": {
+        "verdict": "looking_strong",
+        "reason": "The cap table's seed total is $26,571,989, the amount sold on the SEC Form D.",
+        "agree": 3,
+        "disagree": 0,
+        "waiting": []
+       },
+       "outside_world": {
+        "verdict": "looking_strong",
+        "reason": "Three public facts check out against the room: the prices, the team size and the Form D amount.",
+        "agree": 3,
+        "disagree": 0,
+        "waiting": []
+       }
+      },
+      "prechecks": {
+       "0": "confirms",
+       "1": "confirms",
+       "2": "confirms",
+       "3": "confirms",
+       "4": "confirms",
+       "5": "confirms",
+       "6": "answers",
+       "7": "differs",
+       "8": "not settled"
+      },
+      "answered": [
+       "C02",
+       "C03",
+       "C19",
+       "C20",
+       "C22",
+       "C34",
+       "C47",
+       "C53",
+       "C59",
+       "C60",
+       "C72",
+       "C75",
+       "C80"
+      ],
+      "request_of": {
+       "03_metrics/monthly_metrics.csv": "C02",
+       "03_metrics/customer_mrr_by_month.csv": "C03",
+       "04_customers/order_form_northwind_analytics.pdf": "C34",
+       "04_customers/order_form_halden_freight.pdf": "C34",
+       "05_legal/safe_conversion_schedule.pdf": "C75",
+       "05_legal/seed_stock_purchase_agreement.pdf": "C75",
+       "05_legal/cap_table.xlsx": "C72",
+       "02_financials/monthly_statements.xlsx": "C20",
+       "02_financials/financial_model.xlsx": "C19",
+       "06_team/hiring_plan.csv": "C22",
+       "01_pitch/pitch_deck.pdf": "C47",
+       "06_team/founder_bio_bryant_chou.pdf": "C53",
+       "00_welcome/cover_note_and_index.pdf": "C59",
+       "05_legal/claims_statement.pdf": "C80"
+      }
+     }
+    },
+    "extra_flags": [
+     {
+      "kind": "red",
+      "piece": "traction_and_revenue",
+      "claim_id": "tr-4",
+      "title": "The deck counts free workspaces as paying ones.",
+      "stated": {
+       "key": "Stated, deck slide 6",
+       "value": "1,240",
+       "out": true,
+       "source": {
+        "uri": "01_pitch/pitch_deck.pdf",
+        "locator": "slide 6",
+        "quote": "1,240 paying workspaces"
+       }
+      },
+      "found": {
+       "key": "Found, workspace file",
+       "value": "736",
+       "source": {
+        "uri": "03_metrics/workspaces_by_plan.csv",
+        "locator": "2026-09, plan column",
+        "quote": "Free: 504"
+       }
+      },
+      "others": [],
+      "strip": {
+       "min": 600,
+       "max": 1400,
+       "band": 736,
+       "ticks": [
+        {
+         "v": 1240,
+         "label": "Deck 1,240",
+         "pos": "above",
+         "out": true
+        }
+       ],
+       "unit": "count"
+      },
+      "ask": "The deck says 1,240 paying workspaces. The workspace file shows 736 paying and 504 on the free plan. Which count do you report?",
+      "relative_gap": 0.6847826086956522
+     }
+    ]
    }
   },
   "sazabi": {
@@ -6292,7 +6709,252 @@ window.DATA = {
       "request": "Design partners expected to convert to paid this quarter"
      }
     ],
-    "memo_company": "Sazabi watches a team's production logs with AI, alerts on real problems and opens fixes. It raised a $8.0M seed, per its own post. In this synthetic room it asks for a $6.0M seed extension."
+    "memo_company": "Sazabi watches a team's production logs with AI, alerts on real problems and opens fixes. It raised a $8.0M seed, per its own post. In this synthetic room it asks for a $6.0M seed extension.",
+    "states": {
+     "partial": {
+      "arrived": [
+       "01_pitch/pitch_deck.pdf",
+       "05_legal/cap_table.xlsx"
+      ],
+      "files_total": 5,
+      "shown": [
+       "lc-1"
+      ],
+      "flags": {
+       "green": [
+        "lc-1"
+       ],
+       "red": []
+      },
+      "waiting": [
+       {
+        "piece": "traction_and_revenue",
+        "files": [
+         "03_metrics/workspaces_by_plan.csv"
+        ],
+        "requests": [
+         "C02"
+        ],
+        "title": "Traction and revenue: the check runs when 03_metrics/workspaces_by_plan.csv arrives.",
+        "text": "Stated so far: 50. Tricorder rebuilds it from the file the founder has not sent yet."
+       }
+      ],
+      "pieces": {
+       "traction_and_revenue": {
+        "verdict": "not_enough_in_the_room",
+        "reason": "Not enough yet. Waiting on 03_metrics/workspaces_by_plan.csv.",
+        "agree": 0,
+        "disagree": 0,
+        "waiting": [
+         "03_metrics/workspaces_by_plan.csv"
+        ]
+       },
+       "retention": {
+        "verdict": "not_enough_in_the_room",
+        "reason": "Not in the room: a cohort export.",
+        "agree": 0,
+        "disagree": 0,
+        "waiting": []
+       },
+       "burn_and_runway": {
+        "verdict": "not_enough_in_the_room",
+        "reason": "Only the model states cash and burn. No bank statements are in the room.",
+        "agree": 0,
+        "disagree": 0,
+        "waiting": []
+       },
+       "unit_economics": {
+        "verdict": "not_enough_in_the_room",
+        "reason": "Not in the room: storage and AI cost per customer.",
+        "agree": 0,
+        "disagree": 0,
+        "waiting": []
+       },
+       "customers": {
+        "verdict": "not_enough_in_the_room",
+        "reason": "Not in the room: customer contracts.",
+        "agree": 0,
+        "disagree": 0,
+        "waiting": []
+       },
+       "market": {
+        "verdict": "not_enough_in_the_room",
+        "reason": "Only the deck sizes the market.",
+        "agree": 0,
+        "disagree": 0,
+        "waiting": []
+       },
+       "team": {
+        "verdict": "not_enough_in_the_room",
+        "reason": "Not enough yet. Waiting on 02_financials/financial_model.xlsx.",
+        "agree": 0,
+        "disagree": 0,
+        "waiting": [
+         "02_financials/financial_model.xlsx"
+        ]
+       },
+       "the_pitch_itself": {
+        "verdict": "not_enough_in_the_room",
+        "reason": "Only the deck states the raise.",
+        "agree": 0,
+        "disagree": 0,
+        "waiting": []
+       },
+       "legal_and_cap_table": {
+        "verdict": "looking_strong",
+        "reason": "The cap table's seed total is $8,000,000, the amount in the company's post.",
+        "agree": 2,
+        "disagree": 0,
+        "waiting": []
+       },
+       "outside_world": {
+        "verdict": "not_enough_in_the_room",
+        "reason": "Not enough yet. Waiting on 02_financials/financial_model.xlsx.",
+        "agree": 0,
+        "disagree": 0,
+        "waiting": [
+         "02_financials/financial_model.xlsx"
+        ]
+       }
+      },
+      "prechecks": {
+       "0": "waiting",
+       "1": "confirms",
+       "2": "waiting",
+       "3": "waiting"
+      },
+      "answered": [
+       "C60",
+       "C72"
+      ],
+      "request_of": {
+       "03_metrics/workspaces_by_plan.csv": "C02",
+       "02_financials/financial_model.xlsx": "C19",
+       "05_legal/cap_table.xlsx": "C72",
+       "01_pitch/pitch_deck.pdf": "C60",
+       "06_team/hiring_plan.csv": "C22"
+      }
+     },
+     "full": {
+      "arrived": [
+       "01_pitch/pitch_deck.pdf",
+       "02_financials/financial_model.xlsx",
+       "03_metrics/workspaces_by_plan.csv",
+       "05_legal/cap_table.xlsx",
+       "06_team/hiring_plan.csv"
+      ],
+      "files_total": 5,
+      "shown": [
+       "lc-1",
+       "ow-1",
+       "te-1",
+       "tr-1",
+       "tr-2"
+      ],
+      "flags": {
+       "green": [
+        "lc-1"
+       ],
+       "red": [
+        "tr-1"
+       ]
+      },
+      "waiting": [],
+      "pieces": {
+       "traction_and_revenue": {
+        "verdict": "looking_weak",
+        "reason": "The deck says 50 paying teams. The workspace file shows 18 paying and 32 free design partners.",
+        "agree": 0,
+        "disagree": 1,
+        "waiting": []
+       },
+       "retention": {
+        "verdict": "not_enough_in_the_room",
+        "reason": "Not in the room: a cohort export.",
+        "agree": 0,
+        "disagree": 0,
+        "waiting": []
+       },
+       "burn_and_runway": {
+        "verdict": "not_enough_in_the_room",
+        "reason": "Only the model states cash and burn. No bank statements are in the room.",
+        "agree": 0,
+        "disagree": 0,
+        "waiting": []
+       },
+       "unit_economics": {
+        "verdict": "not_enough_in_the_room",
+        "reason": "Not in the room: storage and AI cost per customer.",
+        "agree": 0,
+        "disagree": 0,
+        "waiting": []
+       },
+       "customers": {
+        "verdict": "not_enough_in_the_room",
+        "reason": "Not in the room: customer contracts.",
+        "agree": 0,
+        "disagree": 0,
+        "waiting": []
+       },
+       "market": {
+        "verdict": "not_enough_in_the_room",
+        "reason": "Only the deck sizes the market.",
+        "agree": 0,
+        "disagree": 0,
+        "waiting": []
+       },
+       "team": {
+        "verdict": "looking_strong",
+        "reason": "Staff today: 10 in the model, the same as the YC page.",
+        "agree": 2,
+        "disagree": 0,
+        "waiting": []
+       },
+       "the_pitch_itself": {
+        "verdict": "not_enough_in_the_room",
+        "reason": "Only the deck states the raise.",
+        "agree": 0,
+        "disagree": 0,
+        "waiting": []
+       },
+       "legal_and_cap_table": {
+        "verdict": "looking_strong",
+        "reason": "The cap table's seed total is $8,000,000, the amount in the company's post.",
+        "agree": 2,
+        "disagree": 0,
+        "waiting": []
+       },
+       "outside_world": {
+        "verdict": "looking_strong",
+        "reason": "The model's prices match the public pricing page.",
+        "agree": 2,
+        "disagree": 0,
+        "waiting": []
+       }
+      },
+      "prechecks": {
+       "0": "confirms",
+       "1": "confirms",
+       "2": "confirms",
+       "3": "confirms"
+      },
+      "answered": [
+       "C02",
+       "C19",
+       "C22",
+       "C60",
+       "C72"
+      ],
+      "request_of": {
+       "03_metrics/workspaces_by_plan.csv": "C02",
+       "02_financials/financial_model.xlsx": "C19",
+       "05_legal/cap_table.xlsx": "C72",
+       "01_pitch/pitch_deck.pdf": "C60",
+       "06_team/hiring_plan.csv": "C22"
+      }
+     }
+    },
+    "extra_flags": []
    }
   }
  },

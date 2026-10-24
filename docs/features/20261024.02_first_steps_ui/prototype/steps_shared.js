@@ -33,7 +33,7 @@
   // Marks
   const VERDICT = { looking_strong: ["strong", "looking strong"], looking_weak: ["weak", "looking weak"], mixed: ["mixed", "mixed"],
     not_enough_in_the_room: ["thin", "not enough in the room"] };
-  X.verdictMark = (v) => `<span class="tc-mark tc-mark--${VERDICT[v][0]}">${VERDICT[v][1]}</span>`;
+  X.verdictMark = (v, word) => `<span class="tc-mark tc-mark--${VERDICT[v][0]}">${word || VERDICT[v][1]}</span>`;
   X.claimMark = (c) => {
     if (c.severity === "flag") return '<span class="tc-mark tc-mark--weak">Red flag</span>';
     if (c.mark === "corroborated") return '<span class="tc-mark tc-mark--strong">Corroborated</span>';
@@ -125,7 +125,7 @@
   // "Add to the request" puts the founder question on the request list as an item of its own.
   X.addAsk = (room, cid) => {
     const T = window.TC;
-    const f = [...room.top_flags.red, ...room.top_flags.green].find((x) => x.claim_id === cid);
+    const f = [...room.top_flags.red, ...room.top_flags.green, ...(room.extra_flags || [])].find((x) => x.claim_id === cid);
     if (!f) return;
     if (!T.S.items) T.buildItems();
     const it = { key: `ask-${cid}`, id: null, title: `Question: ${X.pieceOf(room, f.piece).label}`, ask: f.ask, includes: null, guide: null, guidance: null,
@@ -158,7 +158,7 @@
   X.counts = (p) => `${p.agree} source${p.agree === 1 ? " agrees" : "s agree"} · ${p.disagree} disagree${p.disagree === 1 ? "s" : ""}`;
 
   // The overview row for a piece.
-  X.verdictRow = (p, extra) => `<div class="tc-verdict" data-piece="${esc(p.name)}"><b>${esc(p.label)}</b><span>${X.verdictMark(p.verdict)}</span>
+  X.verdictRow = (p, extra) => `<div class="tc-verdict" data-piece="${esc(p.name)}"><b>${esc(p.label)}</b><span>${X.verdictMark(p.verdict, p.word)}</span>
       <div class="tc-verdict-why">${esc(p.reason)}<span class="tc-verdict-count">${X.counts(p)}</span>${extra || ""}</div></div>`;
 
   X.table = (panel) => `<div class="tc-table-wrap"><table class="tc-table tc-table--stack"><caption class="x-caption">${esc(panel.name)}</caption>

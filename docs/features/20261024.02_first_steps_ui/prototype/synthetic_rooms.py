@@ -68,6 +68,75 @@ def runway(cash: float, base_burn: float, extra_hires: list[dict], pace: float =
     return 120.0
 
 
+def file_of(source: dict) -> str | None:
+    """The room file a source cites, or None for an outside source."""
+    return None if source.get("public") else source["uri"].split(", ")[0]
+
+
+def with_states(room: dict, partial_files: set[str], extra_flags: list[dict]) -> dict:
+    """What the working page can show when only some files have arrived ("partial") and when all have ("full").
+
+    A claim shows once every room file it cites has arrived. A piece keeps its verdict when nothing it
+    rests on is missing; a piece with an arrived flag reads looking weak; otherwise it reads "not enough
+    yet" and names the files it waits on. A request is answered once all its files are in."""
+    C = room["claims"]
+    every = {file_of(x) for c in C.values() for x in c["sources"] + c["agree"] + c["disagree"]} - {None}
+    every |= {f.split(", ")[0] for v in room["holds"].values() for f in v}
+    request_of = {}
+    for cid, files in room["holds"].items():
+        for f in files:
+            request_of.setdefault(f.split(", ")[0], cid)
+    labels = {p["name"]: p["label"] for p in room["pieces"]}
+
+    def state(arrived: set[str]) -> dict:
+        def ok(c):
+            return all(file_of(x) in arrived for x in c["sources"] if file_of(x))
+        def missing(c):
+            return sorted({file_of(x) for x in c["sources"] if file_of(x) and file_of(x) not in arrived})
+        def flag_ok(f):
+            return ok(C[f["claim_id"]]) and all(file_of(x) in arrived for x in (f["stated"]["source"], f["found"]["source"]) if file_of(x))
+        shown = {cid for cid, c in C.items() if ok(c)}
+        flags = {"green": [], "red": []}
+        waiting = []
+        for kind in ("green", "red"):
+            for f in room["top_flags"][kind]:
+                if flag_ok(f):
+                    flags[kind].append(f["claim_id"])
+                else:
+                    files = missing(C[f["claim_id"]])
+                    waiting.append({"piece": f["piece"], "files": files, "requests": sorted({request_of.get(x) for x in files} - {None}),
+                                    "title": f"{labels[f['piece']]}: the check runs when {files[0]} arrives.",
+                                    "text": f"Stated so far: {f['stated']['value']}. Tricorder rebuilds it from the file the founder has not sent yet."})
+        for f in extra_flags:
+            if flag_ok(f) and not any(C[x]["piece"] == f["piece"] for x in flags[f["kind"]]) and arrived != every:
+                flags[f["kind"]].append(f["claim_id"])
+        pieces = {}
+        for p in room["pieces"]:
+            gone = [C[x] for x in p["claim_ids"] if x not in shown]
+            files = sorted({m for c in gone for m in missing(c)})
+            have = [C[x] for x in p["claim_ids"] if x in shown]
+            if not gone or all(c["mark"] is None and c["severity"] == "info" for c in gone):
+                pieces[p["name"]] = {"verdict": p["verdict"], "reason": p["reason"], "agree": p["agree"], "disagree": p["disagree"], "waiting": files}
+            elif any(c["severity"] == "flag" for c in have):
+                c = next(c for c in have if c["severity"] == "flag")
+                pieces[p["name"]] = {"verdict": "looking_weak", "reason": c["text"], "agree": 0,
+                                     "disagree": sum(1 for x in have if x["mark"] == "contradicted"), "waiting": files}
+            else:
+                pieces[p["name"]] = {"verdict": "not_enough_in_the_room", "reason": f"Not enough yet. Waiting on {', '.join(files)}.",
+                                     "agree": 0, "disagree": 0, "waiting": files}
+        pre = {}
+        for i, pc in enumerate(room["prechecks"]):
+            f = file_of(pc["source"])
+            pre[i] = pc["status"] if f in arrived else "waiting"
+        answered = sorted(cid for cid, files in room["holds"].items() if all(x.split(", ")[0] in arrived for x in files))
+        return {"arrived": sorted(arrived), "files_total": len(every), "shown": sorted(shown), "flags": flags, "waiting": waiting,
+                "pieces": pieces, "prechecks": pre, "answered": answered, "request_of": request_of}
+
+    room["states"] = {"partial": state(set(partial_files)), "full": state(every)}
+    room["extra_flags"] = extra_flags
+    return room
+
+
 # Ploy ------------------------------------------------------------------------------------
 
 
@@ -363,13 +432,22 @@ def ploy_room(f: dict, pre: dict) -> dict:
                     f"(SEC Form D, {f['investors']} investors). In this synthetic room it asks for a {millions(raise_amt)} Series A at "
                     f"{millions(pre_money)} pre-money.")
 
-    return {
-        "synthetic_notice": NOTICE, "as_of": "2026-09-30", "files": sorted({x for v in holds.values() for x in v} | {ws, model}),
+    # The partial state: the founder's first batch. The billing exports, the order forms, the hiring plan and
+    # the claims statement come later. The workspace file's flag can show before the customer file arrives.
+    partial_files = {deck, cover, model, metrics, ws, cap, safes, spa, bio, stmts}
+    extra = [flag("red", "traction_and_revenue", "tr-4", "The deck counts free workspaces as paying ones.",
+                  {"key": "Stated, deck slide 6", "value": f"{credit_ws:,}", "out": True, "source": src(deck, "slide 6", f"{credit_ws:,} paying workspaces")},
+                  {"key": "Found, workspace file", "value": f"{paying_ws:,}", "source": src(ws, "2026-09, plan column", f"Free: {free_ws}")},
+                  [], strip([credit_ws, paying_ws], paying_ws, [{"v": credit_ws, "label": f"Deck {credit_ws:,}", "pos": "above"}], "count", 100),
+                  f"The deck says {credit_ws:,} paying workspaces. The workspace file shows {paying_ws:,} paying and {free_ws:,} on the free plan. Which count do you report?",
+                  relative_gap(credit_ws, paying_ws))]
+    return with_states({
+        "synthetic_notice": NOTICE, "as_of": "2026-09-30", "files": sorted({x.split(", ")[0] for v in holds.values() for x in v} | {ws, model}),
         "round": {"name": "Series A", "raise": money(raise_amt), "pre_money": money(pre_money), "post_money": money(post_money),
                   "ownership": pct(ownership, 2), "source": src(deck, "slide 14", f"{millions(raise_amt)} Series A")},
         "top_flags": {"green": greens, "red": reds}, "pieces": pieces, "claims": C, "drill": drill, "holds": holds,
         "prechecks": prechecks, "whatif": whatif, "steer_examples": steer_examples, "memo_company": memo_company,
-    }
+    }, partial_files, extra)
 
 
 # Sazabi, lighter --------------------------------------------------------------------------
@@ -459,12 +537,12 @@ def sazabi_room(f: dict, pre: dict) -> dict:
         {"piece": "traction_and_revenue", "sentence": "Ask which design partners convert to paid this quarter.", "kind": "more",
          "request": "Design partners expected to convert to paid this quarter"},
     ]
-    return {
-        "synthetic_notice": NOTICE, "as_of": "2026-09-30", "files": sorted({x for v in holds.values() for x in v}),
+    return with_states({
+        "synthetic_notice": NOTICE, "as_of": "2026-09-30", "files": sorted({x.split(", ")[0] for v in holds.values() for x in v}),
         "round": {"name": "Seed extension", "raise": money(raise_amt), "pre_money": money(pre_money), "post_money": money(post_money),
                   "ownership": pct(raise_amt / post_money, 2), "source": src(deck, "slide 12", f"{millions(raise_amt)} seed extension")},
         "top_flags": {"green": greens, "red": reds}, "pieces": pieces, "claims": C, "drill": drill, "holds": holds,
         "prechecks": prechecks, "whatif": whatif, "steer_examples": steer_examples,
         "memo_company": (f"Sazabi watches a team's production logs with AI, alerts on real problems and opens fixes. It raised a "
                          f"{millions(f['seed'])} seed, per its own post. In this synthetic room it asks for a {millions(raise_amt)} seed extension."),
-    }
+    }, {deck, cap}, [])
