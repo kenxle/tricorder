@@ -60,7 +60,6 @@ const NativeSelectionText = ({
         scrollEnabled={false}
         showSoftInputOnFocus={false}
         style={[props.style, { height: contentHeight, margin: 0, padding: 0 }]}
-
         onSelectionChange={({ nativeEvent: { selection: next } }) => {
           // iOS collapses selection when the annotation button takes focus.
           // Keep the last valid range until its comment is saved or cancelled.
@@ -75,18 +74,14 @@ const NativeSelectionText = ({
   );
 };
 
-const canSelectText = (
-  associate: boolean,
-  linked: boolean,
-  selecting: boolean
-) => Platform.OS === "ios" && associate && (!linked || selecting);
-
 const ScopedText = ({
   target,
   ...props
 }: TextProps & { target: AnnotationTarget }) => {
   const all = useAnnotations((state) => state.annotations);
   const personaId = useAnnotations((state) => state.personaId);
+  const selectingText = useAnnotations((state) => state.selectingText);
+  const setSelectingText = useAnnotations((state) => state.setSelectingText);
   const associate =
     personas.find((person) => person.id === personaId)?.role === "associate";
   const annotations = useMemo(
@@ -99,7 +94,6 @@ const ScopedText = ({
     end: number;
   } | null>(null);
   const [reviewing, setReviewing] = useState(false);
-  const [selectLinkedText, setSelectLinkedText] = useState(false);
   const segments = highlightSegments(target.text, annotations);
   const spans = segments.map((segment) => (
     <Text
@@ -113,7 +107,6 @@ const ScopedText = ({
       {segment.text}
     </Text>
   ));
-  const inlineLinks = hasInlinePress(props.children);
   const highlightedChildren = mapTextLeaves(props.children, (text, start) =>
     segments.flatMap((segment) => {
       const from = Math.max(start, segment.start);
@@ -137,11 +130,11 @@ const ScopedText = ({
       );
     })
   );
-  const selectable = canSelectText(
-    associate,
-    Boolean(props.onPress) || inlineLinks,
-    selectLinkedText
-  );
+  // Plain evidence passages stay directly selectable, including inside sheets
+  // without a toolbar. Linked prose uses the explicit mode to preserve sources.
+  const linked = Boolean(props.onPress) || hasInlinePress(props.children);
+  const selectable =
+    Platform.OS === "ios" && associate && (selectingText || !linked);
   return (
     <View>
       {selectable ? (
@@ -156,39 +149,21 @@ const ScopedText = ({
       ) : (
         <Text
           {...props}
-          onLongPress={
-            associate && Platform.OS === "ios"
-              ? () => setSelectLinkedText(true)
-              : props.onLongPress
+          selectable={
+            Platform.OS === "ios" && associate ? false : props.selectable
           }
+          suppressHighlighting
         >
           {annotations.length > 0 ? highlightedChildren : props.children}
         </Text>
       )}
-      {selectable && selection.end > selection.start && (
-        <AnnotationButton
-          title="Annotate selection"
-          onPress={() => setComposing({ ...selection })}
-        />
-      )}
-      {selectLinkedText && props.onPress && (
-        <Text
-          accessibilityRole="button"
-          onPress={props.onPress}
-          style={props.style}
-        >
-          Open linked evidence
-        </Text>
-      )}
-      {selectLinkedText && selectable && (
-        <AnnotationButton
-          title="Done selecting"
-          onPress={() => {
-            setSelectLinkedText(false);
-            setSelection({ end: 0, start: 0 });
-          }}
-        />
-      )}
+      {selectable &&
+        validSelection(target.text, selection.start, selection.end) && (
+          <AnnotationButton
+            title="Annotate selection"
+            onPress={() => setComposing({ ...selection })}
+          />
+        )}
       {annotations.length > 0 && (
         <AnnotationButton
           title={`${annotations.length} ${annotations.length === 1 ? "annotation" : "annotations"}`}
@@ -203,6 +178,7 @@ const ScopedText = ({
           onClose={() => {
             setComposing(null);
             setSelection({ end: 0, start: 0 });
+            setSelectingText(false);
           }}
         />
       )}
@@ -218,6 +194,8 @@ const ScopedText = ({
 
 export const AnnotatableText = (props: TextProps) => {
   const scope = useAnnotationScope();
+  const personaId = useAnnotations((state) => state.personaId);
+  const selectingText = useAnnotations((state) => state.selectingText);
   const text = plainText(props.children);
   if (
     !scope ||
@@ -234,5 +212,11 @@ export const AnnotatableText = (props: TextProps) => {
     scopeLabel: scope.label,
     text,
   };
-  return <ScopedText key={`${scope.id}:${text}`} {...props} target={target} />;
+  return (
+    <ScopedText
+      key={`${scope.id}:${text}:${personaId}:${selectingText}`}
+      {...props}
+      target={target}
+    />
+  );
 };

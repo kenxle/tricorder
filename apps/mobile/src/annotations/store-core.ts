@@ -16,6 +16,8 @@ export interface AnnotationState {
   personaId: string;
   annotations: Annotation[];
   storageError: string | null;
+  selectingText: boolean;
+  setSelectingText: (selecting: boolean) => void;
   setPersona: (id: string) => void;
   addAnnotation: (input: AnnotationInput) => boolean;
 }
@@ -91,10 +93,21 @@ export const createAnnotationStore = (storage: AnnotationStorage) =>
           },
         ]);
       },
+      selectingText: false,
       setPersona: (id) => {
-        if (personas.some((persona) => persona.id === id)) {
-          save(id, get().annotations);
+        if (
+          personas.some((persona) => persona.id === id) &&
+          save(id, get().annotations)
+        ) {
+          set({ selectingText: false });
         }
+      },
+      setSelectingText: (selecting) => {
+        const associate = personas.some(
+          (persona) =>
+            persona.id === get().personaId && persona.role === "associate"
+        );
+        set({ selectingText: selecting && associate });
       },
     };
   });

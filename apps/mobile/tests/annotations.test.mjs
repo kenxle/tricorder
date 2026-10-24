@@ -64,6 +64,25 @@ test("the GP can read existing annotations but cannot add one", () => {
   assert.equal(store.getState().personaId, "jordan");
 });
 
+test("selection mode is transient, associate-only and cleared by persona changes", () => {
+  const storage = memoryStorage();
+  const store = createAnnotationStore(storage);
+  store.getState().setSelectingText(true);
+  assert.equal(store.getState().selectingText, true);
+  assert.equal(store.getState().annotations.length, 0);
+  assert.equal(createAnnotationStore(storage).getState().selectingText, false);
+  store.getState().setPersona("alex");
+  assert.equal(store.getState().selectingText, false);
+  store.getState().setSelectingText(true);
+  store.getState().setPersona("jordan");
+  store.getState().setSelectingText(true);
+  assert.equal(store.getState().selectingText, false);
+  store.getState().setPersona("maya");
+  store.getState().setSelectingText(true);
+  store.getState().setSelectingText(false);
+  assert.equal(store.getState().selectingText, false);
+});
+
 test("invalid selections and empty comments never enter the diligence record", () => {
   const store = createAnnotationStore(memoryStorage());
   for (const invalid of [

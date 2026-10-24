@@ -241,6 +241,8 @@ export const AnnotationToolbar = () => {
   const colors = useReadoutColors();
   const personaId = useAnnotations((state) => state.personaId);
   const setPersona = useAnnotations((state) => state.setPersona);
+  const selectingText = useAnnotations((state) => state.selectingText);
+  const setSelectingText = useAnnotations((state) => state.setSelectingText);
   const annotations = useAnnotations((state) => state.annotations);
   const storageError = useAnnotations((state) => state.storageError);
   const [reviewing, setReviewing] = useState(false);
@@ -275,8 +277,24 @@ export const AnnotationToolbar = () => {
       <Text style={{ color: colors.muted }}>
         {person.role === "gp"
           ? "Review the team's notes and the passages behind them."
-          : "Long-press diligence text to select a passage, then annotate it."}
+          : "Choose Select text to annotate, then long-press a word and adjust the selection handles."}
       </Text>
+      {person.role === "associate" && Platform.OS === "ios" && (
+        <>
+          <AnnotationButton
+            title={
+              selectingText ? "Done selecting text" : "Select text to annotate"
+            }
+            onPress={() => setSelectingText(!selectingText)}
+          />
+          {selectingText && (
+            <Text accessibilityRole="alert" style={{ color: colors.muted }}>
+              Selection is on. Long-press a word, drag the handles, then tap
+              Annotate selection. Finish selecting to use evidence links.
+            </Text>
+          )}
+        </>
+      )}
       <AnnotationButton
         title={`Team annotations (${annotations.length})`}
         onPress={() => setReviewing(true)}
