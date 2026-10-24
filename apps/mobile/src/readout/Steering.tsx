@@ -10,15 +10,15 @@ import { useEffect, useRef, useState } from "react";
 import {
   FlatList,
   KeyboardAvoidingView,
-  Modal,
   Platform,
   StyleSheet,
   Text,
   View,
 } from "react-native";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
+import { AnnotationScope } from "../annotations/context";
 import { apiRequest, roomPath } from "./api";
+import { NativeSheet } from "./native-sheet";
 import { SourceChip } from "./SourceChip";
 import {
   Action,
@@ -206,6 +206,16 @@ export function SteerableOverview({
       setSentence("");
     }
   };
+  const dismiss = () => {
+    if (busy) {
+      return;
+    }
+    setPanel(null);
+    setDetail(null);
+    setTarget(null);
+    setError("");
+    onClosePiece?.();
+  };
   const close = () => {
     if (busy) {
       return;
@@ -214,10 +224,7 @@ export function SteerableOverview({
       setPanel(null);
       return;
     }
-    setDetail(null);
-    setTarget(null);
-    setError("");
-    onClosePiece?.();
+    dismiss();
   };
   const send = async () => {
     if (!target || !sentence.trim() || request.current) {
@@ -269,216 +276,241 @@ export function SteerableOverview({
         : "Overview";
 
   return (
-    <View style={styles.stack}>
-      <Heading>Overview</Heading>
-      <Action
-        title="Steer the overview"
-        onPress={() => open("overview", null)}
-      />
-      {switched && (
-        <Card>
-          <Body>
-            Every piece reads {cell(switched.panel, "source", 3)}, the full
-            room, instead of {cell(switched.panel, "source", 2)}.
-          </Body>
-          <Note>
-            {who(switched.rev)}: “{switched.rev.steer.instruction}”.
-          </Note>
-        </Card>
-      )}
-      {steersOn("overview", null).length > 0 && (
+    <AnnotationScope
+      id={`room:${readout.room}/overview`}
+      label={`${readout.room} · Overview`}
+    >
+      <View style={styles.stack}>
+        <Heading>Overview</Heading>
         <Action
-          title="What changed in the overview"
-          onPress={() => open("overview")}
+          title="Steer the overview"
+          onPress={() => open("overview", null)}
         />
-      )}
-      {order.map((name, index) => {
-        const current = readout.pieces.find(
-          (candidate) => candidate.name === name
-        );
-        if (!current) {
-          return null;
-        }
-        return (
-          <Card key={name}>
-            <Action
-              title={`${PIECE_LABEL[name]} · ${current.status === "waiting_on_input" && current.claim_ids.length === 0 ? "Not assessed yet" : VERDICT_LABEL[current.verdict]}`}
-              onPress={() => open(name)}
-            />
+        {switched && (
+          <Card>
+            <Body>
+              Every piece reads {cell(switched.panel, "source", 3)}, the full
+              room, instead of {cell(switched.panel, "source", 2)}.
+            </Body>
             <Note>
-              Source links: {current.corroborating_sources} agree ·{" "}
-              {current.contradicting_sources} disagree
+              {who(switched.rev)}: “{switched.rev.steer.instruction}”.
             </Note>
-            <Body>{current.reason}</Body>
-            <Row>
-              <Action
-                title="Steer this piece"
-                onPress={() => open(name, null)}
-              />
-              <Action
-                title={`Move ${PIECE_LABEL[name]} up`}
-                disabled={index === 0}
-                onPress={() => move(index, -1)}
-              />
-              <Action
-                title={`Move ${PIECE_LABEL[name]} down`}
-                disabled={index === order.length - 1}
-                onPress={() => move(index, 1)}
-              />
-            </Row>
           </Card>
-        );
-      })}
-      <Modal
-        visible={detail !== null}
-        animationType="slide"
-        onRequestClose={close}
-      >
-        <SafeAreaProvider>
-          <SafeAreaView style={[styles.fill, { backgroundColor: colors.bg }]}>
-            <KeyboardAvoidingView
-              style={styles.fill}
-              behavior={Platform.OS === "ios" ? "padding" : "height"}
+        )}
+        {steersOn("overview", null).length > 0 && (
+          <Action
+            title="What changed in the overview"
+            onPress={() => open("overview")}
+          />
+        )}
+        {order.map((name, index) => {
+          const current = readout.pieces.find(
+            (candidate) => candidate.name === name
+          );
+          if (!current) {
+            return null;
+          }
+          return (
+            <AnnotationScope
+              key={name}
+              id={`room:${readout.room}/piece:${name}`}
+              label={`${readout.room} · ${PIECE_LABEL[name]}`}
             >
-              <View style={styles.header}>
+              <Card>
                 <Action
-                  title={panel ? "Back to piece" : "Close overview detail"}
-                  onPress={close}
-                  disabled={busy}
+                  title={`${PIECE_LABEL[name]} · ${current.status === "waiting_on_input" && current.claim_ids.length === 0 ? "Not assessed yet" : VERDICT_LABEL[current.verdict]}`}
+                  onPress={() => open(name)}
                 />
-                <Heading>{panel?.name ?? heading}</Heading>
-                {readout.synthetic_notice && (
-                  <Note>{readout.synthetic_notice}</Note>
-                )}
-                {error ? (
-                  <Text accessibilityRole="alert" style={{ color: colors.red }}>
-                    {error}
-                  </Text>
-                ) : null}
-                {!panel && target && (
-                  <View style={styles.stack}>
-                    <Field
-                      label="Steer in one sentence"
-                      value={sentence}
-                      onChangeText={setSentence}
-                      editable={!busy}
-                      autoFocus
-                      placeholder={
-                        detail === "overview"
-                          ? "On the overview, ask to read more: read the full room"
-                          : readout.revisions.length === 0
-                            ? "For example: treat the pilot as non-recurring"
-                            : "Say what is wrong, in one sentence."
-                      }
-                      returnKeyType="send"
-                      onSubmitEditing={() => void send()}
-                    />
-                    <Row>
-                      <Action
-                        title={busy ? "Steering" : "Apply steer"}
-                        disabled={busy || !sentence.trim()}
-                        onPress={() => void send()}
-                      />
-                      <Action
-                        title="Cancel steer"
-                        disabled={busy}
-                        onPress={() => setTarget(null)}
-                      />
-                    </Row>
-                  </View>
-                )}
-              </View>
-              {panel ? (
-                <FlatList
-                  renderScrollComponent={renderReadoutScroll}
-                  data={panel.rows}
-                  keyExtractor={(_, index) => String(index)}
-                  contentContainerStyle={styles.content}
-                  renderItem={({ item }) => (
-                    <Card>
-                      {item.map((value, index) => (
-                        <View key={index}>
-                          <Note>
-                            {panel.columns[index] ?? String(index + 1)}
-                          </Note>
-                          <Body>{value}</Body>
-                        </View>
-                      ))}
-                    </Card>
+                <Note>
+                  Source links: {current.corroborating_sources} agree ·{" "}
+                  {current.contradicting_sources} disagree
+                </Note>
+                <Body>{current.reason}</Body>
+                <Row>
+                  <Action
+                    title="Steer this piece"
+                    onPress={() => open(name, null)}
+                  />
+                  <Action
+                    title={`Move ${PIECE_LABEL[name]} up`}
+                    disabled={index === 0}
+                    onPress={() => move(index, -1)}
+                  />
+                  <Action
+                    title={`Move ${PIECE_LABEL[name]} down`}
+                    disabled={index === order.length - 1}
+                    onPress={() => move(index, 1)}
+                  />
+                </Row>
+              </Card>
+            </AnnotationScope>
+          );
+        })}
+        <NativeSheet
+          visible={detail !== null}
+          dismissalDisabled={busy}
+          onClose={dismiss}
+        >
+          <AnnotationScope
+            id={`room:${readout.room}/piece:${detail ?? "overview"}`}
+            label={`${readout.room} · ${heading}`}
+          >
+            <View style={[styles.fill, { backgroundColor: colors.bg }]}>
+              <KeyboardAvoidingView
+                style={styles.fill}
+                behavior={Platform.OS === "ios" ? "padding" : "height"}
+              >
+                <View style={styles.header}>
+                  <Action
+                    title={panel ? "Back to piece" : "Close overview detail"}
+                    onPress={close}
+                    disabled={busy}
+                  />
+                  <Heading>{panel?.name ?? heading}</Heading>
+                  {readout.synthetic_notice && (
+                    <Note>{readout.synthetic_notice}</Note>
                   )}
-                />
-              ) : (
-                <FlatList
-                  renderScrollComponent={renderReadoutScroll}
-                  data={data}
-                  keyExtractor={(item) =>
-                    item.kind === "claim"
-                      ? `claim:${item.claim.id}`
-                      : `revision:${item.revision.n}`
-                  }
-                  keyboardShouldPersistTaps="handled"
-                  contentContainerStyle={styles.content}
-                  ListHeaderComponent={
+                  {error ? (
+                    <Text
+                      accessibilityRole="alert"
+                      style={{ color: colors.red }}
+                    >
+                      {error}
+                    </Text>
+                  ) : null}
+                  {!panel && target && (
                     <View style={styles.stack}>
-                      {piece && (
-                        <>
-                          <Body>{piece.reason}</Body>
-                          <Note>
-                            Source links: {piece.corroborating_sources} agree ·{" "}
-                            {piece.contradicting_sources} disagree
-                          </Note>
-                        </>
-                      )}
-                      {!target && (
+                      <Field
+                        label="Steer in one sentence"
+                        value={sentence}
+                        onChangeText={setSentence}
+                        editable={!busy}
+                        autoFocus
+                        placeholder={
+                          detail === "overview"
+                            ? "On the overview, ask to read more: read the full room"
+                            : readout.revisions.length === 0
+                              ? "For example: treat the pilot as non-recurring"
+                              : "Say what is wrong, in one sentence."
+                        }
+                        returnKeyType="send"
+                        onSubmitEditing={() => void send()}
+                      />
+                      <Row>
                         <Action
-                          title={
-                            detail === "overview"
-                              ? "Steer the overview"
-                              : "Steer this piece"
-                          }
-                          onPress={() => {
+                          title={busy ? "Steering" : "Apply steer"}
+                          disabled={busy || !sentence.trim()}
+                          onPress={() => void send()}
+                        />
+                        <Action
+                          title="Cancel steer"
+                          disabled={busy}
+                          onPress={() => setTarget(null)}
+                        />
+                      </Row>
+                    </View>
+                  )}
+                </View>
+                {panel ? (
+                  <FlatList
+                    renderScrollComponent={renderReadoutScroll}
+                    data={panel.rows}
+                    keyExtractor={(_, index) => String(index)}
+                    contentContainerStyle={styles.content}
+                    renderItem={({ item }) => (
+                      <Card>
+                        {item.map((value, index) => (
+                          <AnnotationScope
+                            key={index}
+                            id={`room:${readout.room}/panel:${panel.name}/row:${JSON.stringify(item)}/column:${panel.columns[index] ?? index}`}
+                            label={`${readout.room} · ${panel.name} · ${panel.columns[index] ?? index + 1}`}
+                          >
+                            <View>
+                              <Note>
+                                {panel.columns[index] ?? String(index + 1)}
+                              </Note>
+                              <Body>{value}</Body>
+                            </View>
+                          </AnnotationScope>
+                        ))}
+                      </Card>
+                    )}
+                  />
+                ) : (
+                  <FlatList
+                    renderScrollComponent={renderReadoutScroll}
+                    data={data}
+                    keyExtractor={(item) =>
+                      item.kind === "claim"
+                        ? `claim:${item.claim.id}`
+                        : `revision:${item.revision.n}`
+                    }
+                    keyboardShouldPersistTaps="handled"
+                    contentContainerStyle={styles.content}
+                    ListHeaderComponent={
+                      <View style={styles.stack}>
+                        {piece && (
+                          <>
+                            <Body>{piece.reason}</Body>
+                            <Note>
+                              Source links: {piece.corroborating_sources} agree
+                              · {piece.contradicting_sources} disagree
+                            </Note>
+                          </>
+                        )}
+                        {!target && (
+                          <Action
+                            title={
+                              detail === "overview"
+                                ? "Steer the overview"
+                                : "Steer this piece"
+                            }
+                            onPress={() => {
+                              setTarget({
+                                claimId: null,
+                                piece: detail ?? "overview",
+                              });
+                              setSentence("");
+                            }}
+                          />
+                        )}
+                      </View>
+                    }
+                    ListEmptyComponent={
+                      <Note>No claims in this piece yet.</Note>
+                    }
+                    renderItem={({ item }) =>
+                      item.kind === "claim" ? (
+                        <ClaimLine
+                          claim={item.claim}
+                          readout={readout}
+                          addedBy={addedBy.get(item.claim.id)}
+                          onPanel={setPanel}
+                          onSteer={() => {
                             setTarget({
-                              claimId: null,
+                              claimId: item.claim.id,
                               piece: detail ?? "overview",
                             });
                             setSentence("");
                           }}
                         />
-                      )}
-                    </View>
-                  }
-                  ListEmptyComponent={<Note>No claims in this piece yet.</Note>}
-                  renderItem={({ item }) =>
-                    item.kind === "claim" ? (
-                      <ClaimLine
-                        claim={item.claim}
-                        readout={readout}
-                        addedBy={addedBy.get(item.claim.id)}
-                        onPanel={setPanel}
-                        onSteer={() => {
-                          setTarget({
-                            claimId: item.claim.id,
-                            piece: detail ?? "overview",
-                          });
-                          setSentence("");
-                        }}
-                      />
-                    ) : (
-                      <Diff
-                        revision={item.revision}
-                        readout={readout}
-                        claims={claims}
-                        onPanel={setPanel}
-                      />
-                    )
-                  }
-                />
-              )}
-            </KeyboardAvoidingView>
-          </SafeAreaView>
-        </SafeAreaProvider>
-      </Modal>
-    </View>
+                      ) : (
+                        <Diff
+                          revision={item.revision}
+                          readout={readout}
+                          claims={claims}
+                          onPanel={setPanel}
+                        />
+                      )
+                    }
+                  />
+                )}
+              </KeyboardAvoidingView>
+            </View>
+          </AnnotationScope>
+        </NativeSheet>
+      </View>
+    </AnnotationScope>
   );
 }
 
@@ -502,48 +534,53 @@ function ClaimLine({
       claim.text.includes(`'${candidate.name}'`)
   );
   return (
-    <Card>
-      {addedBy && (
-        <Note>
-          {claim.scan === "steering"
-            ? who(addedBy.rev)
-            : `new, ${who(addedBy.rev)}`}
-        </Note>
-      )}
-      {claim.scan === "steering" && <Note>Operator scenario</Note>}
-      <View
-        style={[
-          styles.claim,
-          {
-            borderLeftColor:
-              claim.scan === "steering"
-                ? colors.amber
-                : claim.severity === "flag"
-                  ? colors.red
-                  : "transparent",
-          },
-        ]}
-      >
-        <Body>{claim.text}</Body>
-      </View>
-      {claim.sources.map((source, index) => (
-        <SourceChip
-          key={index}
-          room={readout.room}
-          source={source}
-          n={index + 1}
-          claimId={claim.id}
-          revision={`${readout.built_at}:${readout.revisions.length}`}
-        />
-      ))}
-      {panel && (
-        <Action
-          title={`Show the rows it sums (${panel.rows.length} lines)`}
-          onPress={() => onPanel(panel)}
-        />
-      )}
-      {onSteer && <Action title="Steer this line" onPress={onSteer} />}
-    </Card>
+    <AnnotationScope
+      id={`room:${readout.room}/claim:${claim.id}`}
+      label={`${readout.room} · Claim ${claim.id}`}
+    >
+      <Card>
+        {addedBy && (
+          <Note>
+            {claim.scan === "steering"
+              ? who(addedBy.rev)
+              : `new, ${who(addedBy.rev)}`}
+          </Note>
+        )}
+        {claim.scan === "steering" && <Note>Operator scenario</Note>}
+        <View
+          style={[
+            styles.claim,
+            {
+              borderLeftColor:
+                claim.scan === "steering"
+                  ? colors.amber
+                  : claim.severity === "flag"
+                    ? colors.red
+                    : "transparent",
+            },
+          ]}
+        >
+          <Body>{claim.text}</Body>
+        </View>
+        {claim.sources.map((source, index) => (
+          <SourceChip
+            key={index}
+            room={readout.room}
+            source={source}
+            n={index + 1}
+            claimId={claim.id}
+            revision={`${readout.built_at}:${readout.revisions.length}`}
+          />
+        ))}
+        {panel && (
+          <Action
+            title={`Show the rows it sums (${panel.rows.length} lines)`}
+            onPress={() => onPanel(panel)}
+          />
+        )}
+        {onSteer && <Action title="Steer this line" onPress={onSteer} />}
+      </Card>
+    </AnnotationScope>
   );
 }
 
@@ -563,56 +600,61 @@ function Diff({
     cell(panel, "headline", 3) ??
     (rev.steer.kind === "more_info" ? "More info" : "Rewritten");
   return (
-    <Card>
-      <Note>Steer {n}</Note>
-      <Heading>{headline}</Heading>
-      <Body>
-        {who(rev)}: “{rev.steer.instruction}”
-      </Body>
-      {(panel?.rows ?? [])
-        .filter((row) => row[0] === "replaced")
-        .map((row, index) => (
-          <View key={`before:${index}`}>
-            <Note>Before, the check&apos;s line (kept):</Note>
-            {claims.get(row[1]) ? (
-              <ClaimLine
-                claim={claims.get(row[1])!}
-                readout={readout}
-                onPanel={onPanel}
-              />
-            ) : (
-              <Body>{row[2]}</Body>
-            )}
-          </View>
-        ))}
-      {(panel?.rows ?? [])
-        .filter((row) => row[0] === "dropped")
-        .map((row, index) => (
-          <Body key={`dropped:${index}`}>Dropped: {row[2]}</Body>
-        ))}
-      {(panel?.rows ?? [])
-        .filter((row) => row[0] === "wording")
-        .map((row, index) => (
-          <View key={`wording:${index}`}>
-            <Note>Reworded, before:</Note>
-            <Body>{row[2]}</Body>
-            <Note>After:</Note>
-            <Body>{row[3]}</Body>
-          </View>
-        ))}
-      {rev.steer.kind === "more_info" && rev.claims_added.length > 0 && (
+    <AnnotationScope
+      id={`room:${readout.room}/revision:${n}`}
+      label={`${readout.room} · Steer ${n}`}
+    >
+      <Card>
+        <Note>Steer {n}</Note>
+        <Heading>{headline}</Heading>
         <Body>
-          {rev.claims_added.length} new lines, marked new in their pieces. New
-          sources:{" "}
-          {[
-            ...new Set(
-              rev.sources_added.map((source) => source.split(", ")[0])
-            ),
-          ].join("; ")}
+          {who(rev)}: “{rev.steer.instruction}”
         </Body>
-      )}
-      {said(rev, headline) ? <Body>{said(rev, headline)}</Body> : null}
-    </Card>
+        {(panel?.rows ?? [])
+          .filter((row) => row[0] === "replaced")
+          .map((row, index) => (
+            <View key={`before:${index}`}>
+              <Note>Before, the check&apos;s line (kept):</Note>
+              {claims.get(row[1]) ? (
+                <ClaimLine
+                  claim={claims.get(row[1])!}
+                  readout={readout}
+                  onPanel={onPanel}
+                />
+              ) : (
+                <Body>{row[2]}</Body>
+              )}
+            </View>
+          ))}
+        {(panel?.rows ?? [])
+          .filter((row) => row[0] === "dropped")
+          .map((row, index) => (
+            <Body key={`dropped:${index}`}>Dropped: {row[2]}</Body>
+          ))}
+        {(panel?.rows ?? [])
+          .filter((row) => row[0] === "wording")
+          .map((row, index) => (
+            <View key={`wording:${index}`}>
+              <Note>Reworded, before:</Note>
+              <Body>{row[2]}</Body>
+              <Note>After:</Note>
+              <Body>{row[3]}</Body>
+            </View>
+          ))}
+        {rev.steer.kind === "more_info" && rev.claims_added.length > 0 && (
+          <Body>
+            {rev.claims_added.length} new lines, marked new in their pieces. New
+            sources:{" "}
+            {[
+              ...new Set(
+                rev.sources_added.map((source) => source.split(", ")[0])
+              ),
+            ].join("; ")}
+          </Body>
+        )}
+        {said(rev, headline) ? <Body>{said(rev, headline)}</Body> : null}
+      </Card>
+    </AnnotationScope>
   );
 }
 

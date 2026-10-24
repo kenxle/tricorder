@@ -1,6 +1,12 @@
 {
   "version": 1,
   "skills": {
+    "expo-ui": {
+      "source": "expo/skills",
+      "sourceType": "github",
+      "skillPath": "plugins/expo/skills/expo-ui/SKILL.md",
+      "computedHash": "aacbebd4e76f98abfff29a73a5ef806bf6c34b4e4a5155fbbc6f3bc3866e8cbb"
+    },
     "grill-me": {
       "source": "mattpocock/skills",
       "sourceType": "github",

@@ -3,6 +3,8 @@ import { SymbolView } from "expo-symbols";
 import { Platform, Pressable, ScrollView, StyleSheet } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+import reactLogo from "@/assets/images/react-logo.png";
+import tutorialWeb from "@/assets/images/tutorial-web.png";
 import { ExternalLink } from "@/components/external-link";
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
@@ -11,7 +13,61 @@ import { WebBadge } from "@/components/web-badge";
 import { BottomTabInset, MaxContentWidth, Spacing } from "@/constants/theme";
 import { useTheme } from "@/hooks/use-theme";
 
-export default function TabTwoScreen() {
+const styles = StyleSheet.create({
+  centerText: {
+    textAlign: "center",
+  },
+  collapsibleContent: {
+    alignItems: "center",
+  },
+  container: {
+    flexGrow: 1,
+    maxWidth: MaxContentWidth,
+  },
+  contentContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+  },
+  imageReact: {
+    alignSelf: "center",
+    height: 100,
+    width: 100,
+  },
+  imageTutorial: {
+    aspectRatio: 296 / 171,
+    borderRadius: Spacing.three,
+    marginTop: Spacing.two,
+    width: "100%",
+  },
+  linkButton: {
+    alignItems: "center",
+    borderRadius: Spacing.five,
+    flexDirection: "row",
+    gap: Spacing.one,
+    justifyContent: "center",
+    paddingHorizontal: Spacing.four,
+    paddingVertical: Spacing.two,
+  },
+  pressed: {
+    opacity: 0.7,
+  },
+  scrollView: {
+    flex: 1,
+  },
+  sectionsWrapper: {
+    gap: Spacing.five,
+    paddingHorizontal: Spacing.four,
+    paddingTop: Spacing.three,
+  },
+  titleContainer: {
+    alignItems: "center",
+    gap: Spacing.three,
+    paddingHorizontal: Spacing.four,
+    paddingVertical: Spacing.six,
+  },
+});
+
+const TabTwoScreen = () => {
   const safeAreaInsets = useSafeAreaInsets();
   const insets = {
     ...safeAreaInsets,
@@ -91,10 +147,7 @@ export default function TabTwoScreen() {
                 <ThemedText type="smallBold">w</ThemedText> in the terminal
                 running this project.
               </ThemedText>
-              <Image
-                source={require("@/assets/images/tutorial-web.png")}
-                style={styles.imageTutorial}
-              />
+              <Image source={tutorialWeb} style={styles.imageTutorial} />
             </ThemedView>
           </Collapsible>
 
@@ -105,10 +158,7 @@ export default function TabTwoScreen() {
               <ThemedText type="code">@3x</ThemedText> suffixes to provide files
               for different screen densities.
             </ThemedText>
-            <Image
-              source={require("@/assets/images/react-logo.png")}
-              style={styles.imageReact}
-            />
+            <Image source={reactLogo} style={styles.imageReact} />
             <ExternalLink href="https://reactnative.dev/docs/images">
               <ThemedText type="linkPrimary">Learn more</ThemedText>
             </ExternalLink>
@@ -142,58 +192,6 @@ export default function TabTwoScreen() {
       </ThemedView>
     </ScrollView>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  centerText: {
-    textAlign: "center",
-  },
-  collapsibleContent: {
-    alignItems: "center",
-  },
-  container: {
-    flexGrow: 1,
-    maxWidth: MaxContentWidth,
-  },
-  contentContainer: {
-    flexDirection: "row",
-    justifyContent: "center",
-  },
-  imageReact: {
-    alignSelf: "center",
-    height: 100,
-    width: 100,
-  },
-  imageTutorial: {
-    aspectRatio: 296 / 171,
-    borderRadius: Spacing.three,
-    marginTop: Spacing.two,
-    width: "100%",
-  },
-  linkButton: {
-    alignItems: "center",
-    borderRadius: Spacing.five,
-    flexDirection: "row",
-    gap: Spacing.one,
-    justifyContent: "center",
-    paddingHorizontal: Spacing.four,
-    paddingVertical: Spacing.two,
-  },
-  pressed: {
-    opacity: 0.7,
-  },
-  scrollView: {
-    flex: 1,
-  },
-  sectionsWrapper: {
-    gap: Spacing.five,
-    paddingHorizontal: Spacing.four,
-    paddingTop: Spacing.three,
-  },
-  titleContainer: {
-    alignItems: "center",
-    gap: Spacing.three,
-    paddingHorizontal: Spacing.four,
-    paddingVertical: Spacing.six,
-  },
-});
+export default TabTwoScreen;

@@ -1,5 +1,5 @@
 import { useFonts } from "expo-font";
-import { DarkTheme, DefaultTheme, ThemeProvider } from "expo-router";
+import { DarkTheme, DefaultTheme, Stack, ThemeProvider } from "expo-router";
 import { ActivityIndicator, View, useColorScheme } from "react-native";
 import { KeyboardProvider } from "react-native-keyboard-controller";
 
@@ -7,8 +7,10 @@ import Archivo from "../../assets/fonts/Archivo.ttf";
 import ArchivoBold from "../../assets/fonts/ArchivoBold.ttf";
 import ArchivoDisplay from "../../assets/fonts/ArchivoDisplay.ttf";
 import PlexMono from "../../assets/fonts/PlexMono.ttf";
-import AppTabs from "../components/app-tabs";
+import { CompanyStateProvider } from "../company/company-state";
 import { useReadoutColors } from "../readout/ui";
+
+export const unstable_settings = { anchor: "(tabs)" };
 
 export default function RootLayout() {
   const scheme = useColorScheme();
@@ -50,7 +52,15 @@ export default function RootLayout() {
       }}
     >
       <KeyboardProvider>
-        <AppTabs />
+        <CompanyStateProvider>
+          <Stack>
+            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            <Stack.Screen
+              name="company-sheet"
+              options={{ headerShown: false, presentation: "modal" }}
+            />
+          </Stack>
+        </CompanyStateProvider>
       </KeyboardProvider>
     </ThemeProvider>
   );

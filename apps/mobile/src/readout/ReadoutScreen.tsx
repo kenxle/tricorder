@@ -1,18 +1,15 @@
 import type { Claim, Readout } from "@tricorder/schema";
 import * as Clipboard from "expo-clipboard";
 import { useEffect, useRef, useState } from "react";
-import {
-  ActivityIndicator,
-  FlatList,
-  Modal,
-  StyleSheet,
-  View,
-} from "react-native";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { ActivityIndicator, FlatList, StyleSheet, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
+import { AnnotationToolbar } from "../annotations/annotation-panel";
+import { AnnotationScope } from "../annotations/context";
 import { buildReadout, getReadout, getRooms, getSteerable } from "./api";
 import type { RoomInfo } from "./api";
 import { FounderRequests } from "./FounderRequests";
+import { NativeSheet } from "./native-sheet";
 import { SourceChip } from "./SourceChip";
 import { SteerableOverview } from "./Steering";
 import {
@@ -121,36 +118,30 @@ export default function ReadoutScreen() {
           onRoom={(next) => void openRebuilt(next)}
         />
       ) : null}
-      <Modal
-        visible={picker}
-        animationType="slide"
-        onRequestClose={() => setPicker(false)}
-      >
-        <SafeAreaProvider>
-          <SafeAreaView style={[styles.screen, { backgroundColor: colors.bg }]}>
-            <Row>
-              <Heading>Choose room</Heading>
-              <Action title="Close rooms" onPress={() => setPicker(false)} />
-            </Row>
-            <FlatList
-              renderScrollComponent={renderReadoutScroll}
-              data={rooms}
-              keyExtractor={(item) => item.id}
-              renderItem={({ item }) => (
-                <Card>
-                  <Action
-                    title={item.id}
-                    onPress={() => {
-                      setRoom(item.id);
-                      setPicker(false);
-                    }}
-                  />
-                </Card>
-              )}
-            />
-          </SafeAreaView>
-        </SafeAreaProvider>
-      </Modal>
+      <NativeSheet visible={picker} onClose={() => setPicker(false)}>
+        <View style={[styles.screen, { backgroundColor: colors.bg }]}>
+          <Row>
+            <Heading>Choose room</Heading>
+            <Action title="Close rooms" onPress={() => setPicker(false)} />
+          </Row>
+          <FlatList
+            renderScrollComponent={renderReadoutScroll}
+            data={rooms}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => (
+              <Card>
+                <Action
+                  title={item.id}
+                  onPress={() => {
+                    setRoom(item.id);
+                    setPicker(false);
+                  }}
+                />
+              </Card>
+            )}
+          />
+        </View>
+      </NativeSheet>
     </SafeAreaView>
   );
 }
@@ -161,6 +152,26 @@ type RowItem = { key: string; title?: string } & (
   | { kind: "ask"; value: Readout["asks"][number] }
   | { kind: "empty" }
 );
+const rowScope = (room: string, item: RowItem) => {
+  let id = "empty";
+  if (item.kind === "claim") {
+    const { id: claimId } = item.value;
+    id = claimId;
+  } else if (item.kind !== "empty") {
+    id = item.value.what;
+  }
+  const labels = {
+    ask: "Founder request",
+    claim: "Unverified claim",
+    empty: "Founder requests",
+    gap: "Evidence gap",
+  };
+  return {
+    id: `room:${room}/${item.kind}:${id}`,
+    label: `${room} · ${labels[item.kind]}`,
+  };
+};
+
 function RoomReadout({
   room,
   onRoom,
@@ -305,6 +316,7 @@ function RoomReadout({
       keyboardShouldPersistTaps="handled"
       ListHeaderComponent={
         <>
+          <AnnotationToolbar />
           <Row>
             <Action
               title={building ? "Building readout…" : "Build readout"}
@@ -363,21 +375,28 @@ function RoomReadout({
                   readout.top_flags.filter((f) => f.kind === kind)
                 )
                 .map((flag) => (
-                  <Card key={`${flag.kind}-${flag.rank}`}>
-                    <Note
-                      style={{
-                        color:
-                          flag.kind === "green" ? colors.green : colors.red,
-                        fontFamily: "PlexMono",
-                      }}
-                    >
-                      {flag.kind === "green" ? "● Green flag" : "▲ Red flag"}
-                    </Note>
-                    <Action
-                      title={flag.text}
-                      onPress={() => setSelectedPiece(flag.piece)}
-                    />
-                  </Card>
+                  <AnnotationScope
+                    key={`${flag.kind}-${flag.rank}`}
+                    id={`room:${room}/flag:${flag.piece}:${flag.text}`}
+                    label={`${room} · ${flag.piece.replaceAll("_", " ")} · ${flag.kind} flag`}
+                  >
+                    <Card>
+                      <Note
+                        style={{
+                          color:
+                            flag.kind === "green" ? colors.green : colors.red,
+                          fontFamily: "PlexMono",
+                        }}
+                      >
+                        {flag.kind === "green" ? "● Green flag" : "▲ Red flag"}
+                      </Note>
+                      <Body>{flag.text}</Body>
+                      <Action
+                        title="Inspect finding"
+                        onPress={() => setSelectedPiece(flag.piece)}
+                      />
+                    </Card>
+                  </AnnotationScope>
                 ))}
               <SteerableOverview
                 key={room}
@@ -403,46 +422,48 @@ function RoomReadout({
               {copied && <Note>Copied.</Note>}
             </Row>
           ) : null}
-          <Card>
-            {item.kind === "gap" && (
-              <>
-                <Body>{item.value.what}</Body>
-                <Note>{item.value.why}</Note>
-              </>
-            )}
-            {item.kind === "ask" && (
-              <>
-                <Body>{item.value.what}</Body>
-                <Note>{item.value.why}</Note>
-              </>
-            )}
-            {item.kind === "empty" && <Note>Nothing to ask for.</Note>}
-            {item.kind === "claim" && (
-              <>
-                <Body>{item.value.text}</Body>
-                {item.value.sources.map((source, i) => (
-                  <SourceChip
-                    key={`${readout?.built_at}:${readout?.revisions.length}:${i}`}
-                    room={room}
-                    source={source}
-                    n={i + 1}
-                  />
-                ))}
-                {item.value.corroborated_by.length +
-                  item.value.conflicts_with.length >
-                  0 && (
-                  <Note>
-                    {item.value.corroborated_by.length} agree,{" "}
-                    {item.value.conflicts_with.length} disagree
-                    {item.value.conflicts_with
-                      .map((id) => claims.get(id)?.text)
-                      .filter(Boolean)
-                      .map((text) => ` · ${text}`)}
-                  </Note>
-                )}
-              </>
-            )}
-          </Card>
+          <AnnotationScope {...rowScope(room, item)}>
+            <Card>
+              {item.kind === "gap" && (
+                <>
+                  <Body>{item.value.what}</Body>
+                  <Note>{item.value.why}</Note>
+                </>
+              )}
+              {item.kind === "ask" && (
+                <>
+                  <Body>{item.value.what}</Body>
+                  <Note>{item.value.why}</Note>
+                </>
+              )}
+              {item.kind === "empty" && <Note>Nothing to ask for.</Note>}
+              {item.kind === "claim" && (
+                <>
+                  <Body>{item.value.text}</Body>
+                  {item.value.sources.map((source, i) => (
+                    <SourceChip
+                      key={`${readout?.built_at}:${readout?.revisions.length}:${i}`}
+                      room={room}
+                      source={source}
+                      n={i + 1}
+                    />
+                  ))}
+                  {item.value.corroborated_by.length +
+                    item.value.conflicts_with.length >
+                    0 && (
+                    <Note>
+                      {item.value.corroborated_by.length} agree,{" "}
+                      {item.value.conflicts_with.length} disagree
+                      {item.value.conflicts_with
+                        .map((id) => claims.get(id)?.text)
+                        .filter(Boolean)
+                        .map((text) => ` · ${text}`)}
+                    </Note>
+                  )}
+                </>
+              )}
+            </Card>
+          </AnnotationScope>
         </>
       )}
     />

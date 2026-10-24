@@ -5,7 +5,9 @@
   "type": "module",
   "exports": {
     ".": "./src/claim.ts",
-    "./api": "./src/api.ts"
+    "./api": "./src/api.ts",
+    "./company": "./src/company.ts",
+    "./company-room": "./src/company-room.ts"
   },
   "scripts": {
     "typecheck": "tsc --noEmit"
