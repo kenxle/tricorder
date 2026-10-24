@@ -1,4 +1,11 @@
-import { Button, Host, Picker } from "@expo/ui";
+import {
+  Button,
+  Column,
+  Host,
+  ListItem,
+  Picker,
+  Text as NativeText,
+} from "@expo/ui";
 import { useState } from "react";
 import {
   KeyboardAvoidingView,
@@ -279,26 +286,64 @@ export const AnnotationToolbar = () => {
           ? "Review the team's notes and the passages behind them."
           : "Choose Select text to annotate, then long-press a word and adjust the selection handles."}
       </Text>
-      {person.role === "associate" && Platform.OS === "ios" && (
-        <>
-          <AnnotationButton
-            title={
-              selectingText ? "Done selecting text" : "Select text to annotate"
-            }
-            onPress={() => setSelectingText(!selectingText)}
-          />
-          {selectingText && (
-            <Text accessibilityRole="alert" style={{ color: colors.muted }}>
-              Selection is on. Long-press a word, drag the handles, then tap
-              Annotate selection. Finish selecting to use evidence links.
-            </Text>
+      <Host matchContents={{ vertical: true }} seedColor={colors.accent}>
+        <Column
+          spacing={0}
+          style={{
+            backgroundColor: colors.surface,
+            borderRadius: 14,
+            width: "100%",
+          }}
+        >
+          {person.role === "associate" && Platform.OS === "ios" && (
+            <>
+              <ListItem
+                testID="Toggle text annotation selection"
+                onPress={() => setSelectingText(!selectingText)}
+              >
+                <NativeText
+                  style={{ paddingHorizontal: 16, paddingVertical: 14 }}
+                  textStyle={{ color: colors.accent }}
+                >
+                  {selectingText
+                    ? "Done selecting text"
+                    : "Select text to annotate"}
+                </NativeText>
+              </ListItem>
+              <Column
+                style={{
+                  backgroundColor: colors.line,
+                  height: 1,
+                  width: "100%",
+                }}
+              />
+            </>
           )}
-        </>
-      )}
-      <AnnotationButton
-        title={`Team annotations (${annotations.length})`}
-        onPress={() => setReviewing(true)}
-      />
+          <ListItem
+            testID="Team annotations"
+            onPress={() => setReviewing(true)}
+            colors={{
+              containerColor: colors.surface,
+              contentColor: colors.accent,
+            }}
+          >
+            <NativeText
+              style={{ paddingHorizontal: 16, paddingVertical: 14 }}
+              textStyle={{ color: colors.accent }}
+            >
+              {`Team annotations (${annotations.length})`}
+            </NativeText>
+          </ListItem>
+        </Column>
+      </Host>
+      {person.role === "associate" &&
+        Platform.OS === "ios" &&
+        selectingText && (
+          <Text accessibilityRole="alert" style={{ color: colors.muted }}>
+            Selection is on. Long-press a word, drag the handles, then tap
+            Annotate selection. Finish selecting to use evidence links.
+          </Text>
+        )}
       {storageError && (
         <Text accessibilityRole="alert" style={{ color: colors.red }}>
           {storageError}

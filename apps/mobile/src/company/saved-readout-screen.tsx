@@ -13,27 +13,21 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { AnnotationToolbar } from "../annotations/annotation-panel";
 import { AnnotationItem, AnnotationScope } from "../annotations/context";
 import { NativeSheet } from "../readout/native-sheet";
-import {
-  Action,
-  Body,
-  Card,
-  Heading,
-  Note,
-  useReadoutColors,
-} from "../readout/ui";
+import { Action, Body, Heading, Note, useReadoutColors } from "../readout/ui";
 import { getCompanyReadout, getCompanySection } from "./api";
 import { CitedText } from "./cited-text";
 import { CompanyCarousel } from "./company-carousel";
 import { safeWebUrl } from "./model";
+import { InsightMark, ReadoutSurface } from "./readout-surface";
 import { CompanyRoomArrivals } from "./room-arrival";
 import { SavedRequest } from "./saved-request";
 
 const styles = StyleSheet.create({
   content: {
     alignSelf: "center",
-    gap: 28,
+    gap: 24,
     maxWidth: 1000,
-    padding: 20,
+    padding: 16,
     paddingBottom: 60,
     width: "100%",
   },
@@ -45,10 +39,28 @@ const styles = StyleSheet.create({
   },
   evidenceText: { gap: 8 },
   group: { gap: 12 },
-  heading: { fontFamily: "ArchivoDisplay", fontSize: 34, lineHeight: 41 },
+  heading: {
+    fontFamily: undefined,
+    fontSize: 34,
+    fontWeight: "700",
+    letterSpacing: -0.7,
+    lineHeight: 41,
+  },
+  insightTitle: {
+    fontFamily: undefined,
+    fontSize: 17,
+    fontWeight: "600",
+    lineHeight: 24,
+  },
   lede: { fontSize: 19, lineHeight: 29 },
   screen: { flex: 1 },
-  section: { borderTopWidth: 1, gap: 20, paddingTop: 24 },
+  section: { gap: 16, paddingTop: 8 },
+  sectionHeading: {
+    fontFamily: undefined,
+    fontSize: 22,
+    fontWeight: "700",
+    lineHeight: 28,
+  },
   skeleton: { borderRadius: 4, height: 18 },
 });
 
@@ -120,7 +132,7 @@ const EvidenceSheet = ({
           {evidence.qualification ? (
             <Note>{evidence.qualification}</Note>
           ) : null}
-          <Card>
+          <ReadoutSurface>
             <Heading>Saved passage</Heading>
             {evidence.excerpt?.before ? (
               <Note>{evidence.excerpt.before}</Note>
@@ -132,7 +144,7 @@ const EvidenceSheet = ({
             {evidence.excerpt?.after ? (
               <Note>{evidence.excerpt.after}</Note>
             ) : null}
-          </Card>
+          </ReadoutSurface>
           {source ? <Note>{source.locator}</Note> : null}
           {url ? (
             <>
@@ -149,12 +161,6 @@ const EvidenceSheet = ({
   );
 };
 
-const insightMarks = {
-  mixed: "Mixed",
-  strong: "Looking strong",
-  thin: "Not enough yet",
-  weak: "Looking weak",
-};
 const Insight = ({
   insight,
   readout,
@@ -163,33 +169,23 @@ const Insight = ({
   insight: CompanyInsight;
   readout: CompanyReadout;
   onOpen: (entry: CompanyEvidence) => void;
-}) => {
-  const colors = useReadoutColors();
-  const markColors = {
-    mixed: colors.amber,
-    strong: colors.green,
-    thin: colors.amber,
-    weak: colors.red,
-  };
-  const color = markColors[insight.mark];
-  return (
-    <AnnotationScope
-      id={`company:${readout.company.slug}/insight:${insight.id}`}
-      label={`${readout.company.name} · ${insight.piece}`}
-    >
-      <Card>
-        <Note style={{ color }}>{insightMarks[insight.mark]}</Note>
-        <Heading>{insight.piece}</Heading>
-        <Body style={{ fontFamily: "ArchivoBold" }}>{insight.title}</Body>
-        <CitedText
-          segments={insight.segments ?? [insight]}
-          evidence={readout.evidence}
-          onOpen={onOpen}
-        />
-      </Card>
-    </AnnotationScope>
-  );
-};
+}) => (
+  <AnnotationScope
+    id={`company:${readout.company.slug}/insight:${insight.id}`}
+    label={`${readout.company.name} · ${insight.piece}`}
+  >
+    <ReadoutSurface>
+      <InsightMark mark={insight.mark} />
+      <Heading style={styles.sectionHeading}>{insight.piece}</Heading>
+      <Body style={styles.insightTitle}>{insight.title}</Body>
+      <CitedText
+        segments={insight.segments ?? [insight]}
+        evidence={readout.evidence}
+        onOpen={onOpen}
+      />
+    </ReadoutSurface>
+  </AnnotationScope>
+);
 
 const LoadedSection = ({
   response,
@@ -211,7 +207,7 @@ const LoadedSection = ({
       label={`${response.company.name} · ${section.title}`}
     >
       <View style={styles.group}>
-        <Heading>{section.title}</Heading>
+        <Heading style={styles.sectionHeading}>{section.title}</Heading>
         {empty ? <Note>No saved evidence for this section.</Note> : null}
         {section.groups.map((group) => (
           <AnnotationItem
@@ -219,8 +215,10 @@ const LoadedSection = ({
             id={`group:${group.id}`}
             label={group.title || section.title}
           >
-            <View style={styles.group}>
-              {group.title ? <Heading>{group.title}</Heading> : null}
+            <ReadoutSurface>
+              {group.title ? (
+                <Heading style={styles.insightTitle}>{group.title}</Heading>
+              ) : null}
               {group.subtitle ? <Note>{group.subtitle}</Note> : null}
               {group.evidenceIds.map((id) => {
                 const entry = evidence[id];
@@ -257,13 +255,20 @@ const LoadedSection = ({
                   id={`unavailable:${text}`}
                   label={text}
                 >
-                  <Card>
+                  <View
+                    style={{
+                      backgroundColor: colors.surface,
+                      borderRadius: 14,
+                      gap: 8,
+                      padding: 16,
+                    }}
+                  >
                     <Note>Not researched yet</Note>
                     <Body>{text}</Body>
-                  </Card>
+                  </View>
                 </AnnotationItem>
               ))}
-            </View>
+            </ReadoutSurface>
           </AnnotationItem>
         ))}
         {section.gaps.map((gap) => (
@@ -272,11 +277,11 @@ const LoadedSection = ({
             id={`gap:${gap.text}`}
             label={gap.text}
           >
-            <Card>
+            <ReadoutSurface>
               <Note>Unknown</Note>
               <Body>{gap.text}</Body>
               <Note>{gap.why}</Note>
-            </Card>
+            </ReadoutSurface>
           </AnnotationItem>
         ))}
       </View>
@@ -336,11 +341,11 @@ const SectionFetch = ({
   }, [company, sectionKey, snapshot]);
   if (error) {
     return (
-      <Card>
+      <ReadoutSurface>
         <Heading>{title}</Heading>
         <Body accessibilityRole="alert">{error}</Body>
         <Action title={`Retry ${title}`} onPress={onRetry} />
-      </Card>
+      </ReadoutSurface>
     );
   }
   return response ? (
@@ -396,7 +401,7 @@ const WorkingPage = ({ readout }: { readout: CompanyReadout }) => {
         <Note>Saved public research · {readout.snapshotAt.slice(0, 10)}</Note>
       </View>
       <View style={styles.group}>
-        <Heading>What stands out</Heading>
+        <Heading style={styles.sectionHeading}>What stands out</Heading>
         <Note>Team-authored readings of the saved sources.</Note>
         {readout.insights.map((insight) => (
           <Insight
@@ -421,7 +426,7 @@ const WorkingPage = ({ readout }: { readout: CompanyReadout }) => {
           onOpen={setEvidence}
         />
       ))}
-      <Card>
+      <ReadoutSurface>
         <Heading>Up Next: Data Room Requests</Heading>
         {readout.roomGaps.map((gap) => (
           <View key={gap.text} style={styles.group}>
@@ -434,7 +439,7 @@ const WorkingPage = ({ readout }: { readout: CompanyReadout }) => {
           primary
           onPress={() => setRequestOpen(true)}
         />
-      </Card>
+      </ReadoutSurface>
       {evidence ? (
         <EvidenceSheet
           key={evidence.id}
@@ -485,11 +490,11 @@ const ReadoutFetch = ({
   }, [url]);
   if (error) {
     return (
-      <Card>
+      <ReadoutSurface>
         <Heading>Saved readout unavailable</Heading>
         <Body accessibilityRole="alert">{error}</Body>
         <Action title="Retry readout" onPress={onRetry} />
-      </Card>
+      </ReadoutSurface>
     );
   }
   return readout ? (

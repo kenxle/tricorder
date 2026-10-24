@@ -5,7 +5,7 @@ import { StyleSheet, View } from "react-native";
 
 export const CardGradient = ({ colors }: { colors: string[] }) => (
   <View pointerEvents="none" accessible={false} style={StyleSheet.absoluteFill}>
-    <Host style={StyleSheet.absoluteFill}>
+    <Host ignoreSafeArea="all" style={StyleSheet.absoluteFill}>
       <Rectangle
         modifiers={[
           foregroundStyle({
