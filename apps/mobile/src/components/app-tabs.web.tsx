@@ -23,6 +23,11 @@ export default function AppTabs() {
           <TabTrigger name="diligence" href="/diligence" asChild>
             <TabButton isFocused={pathname === "/diligence"}>Diligence</TabButton>
           </TabTrigger>
+          <TabTrigger name="diligence-flow" href="/diligence-flow" asChild>
+            <TabButton isFocused={pathname.startsWith("/diligence-")}>Diligence (native)</TabButton>
+          </TabTrigger>
+          <TabTrigger name="diligence-room" href="/diligence-room" style={{ display: "none" }} />
+          <TabTrigger name="diligence-memo" href="/diligence-memo" style={{ display: "none" }} />
           <TabTrigger name="home" href="/" asChild>
             <TabButton isFocused={pathname === "/"}>Company</TabButton>
           </TabTrigger>
