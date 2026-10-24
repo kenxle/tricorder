@@ -51,7 +51,7 @@
 
       <section class="x-section" aria-label="Top green and red flags">
         <h2 class="x-h">The best green flags and the worst red flags</h2>
-        <div class="x-flags">${[...room.top_flags.green, ...room.top_flags.red].map((f) => X.flagCard(room, f)).join("")}</div>
+        ${X.flagsHtml(room, [...room.top_flags.green, ...room.top_flags.red])}
       </section>
 
       <section class="x-section" aria-label="Overview">

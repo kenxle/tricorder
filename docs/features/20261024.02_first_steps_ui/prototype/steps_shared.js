@@ -111,7 +111,7 @@
     const asked = X.st().asked[f.claim_id];
     const ask = f.ask && !(opts && opts.noAsk) ? `<div class="tc-ask"><span class="tc-label tc-label--ask">Ask the founder</span>
         <p class="tc-ask-question">${esc(f.ask)}</p>
-        <div class="tc-ask-actions"><button class="tc-btn tc-btn--small" type="button" data-ask="${esc(f.claim_id)}"${asked ? " disabled" : ""}>${asked ? "On the request" : "Add to the request"}</button>
+        <div class="tc-ask-actions">${asked ? X.viewReq(`ask-${f.claim_id}`) : `<button class="tc-btn tc-btn--small" type="button" data-ask="${esc(f.claim_id)}">Add to the request</button>`}
         <button class="tc-btn tc-btn--secondary tc-btn--small" type="button" data-copyask="${esc(f.ask)}">Copy the question</button></div></div>` : "";
     return `<article class="tc-card x-flag" data-flag="${esc(f.kind)}" id="flag-${esc(f.claim_id)}">
       <div class="tc-card-head"><span class="tc-mark tc-mark--${f.kind === "red" ? "weak" : "strong"}">${f.kind === "red" ? "Red flag" : "Green flag"}</span>
@@ -121,6 +121,34 @@
       ${f.kind === "red" ? X.strip(f.strip, "Found") : X.strip({ ...f.strip, ticks: [] }, f.strip.ticks[0] ? f.strip.ticks[0].label.replace(/ \S+$/, "") : "Agreed")}
       ${ask}</article>`;
   };
+
+  // Flag weight. Rule (Ken, 1:22 PM): two sources that agree make a small green flag; two that disagree make a big red flag.
+  X.weight = (f) => (f.kind === "red" || f.basis === "disagreement" ? "big" : f.basis === "agreement" ? "small" : "headline");
+  // Headline green flags (real strengths) first, then big red flags worst first, then small green flags.
+  X.orderFlags = (flags) => [
+    ...flags.filter((f) => X.weight(f) === "headline"),
+    ...flags.filter((f) => X.weight(f) === "big").sort((a, b) => (b.relative_gap || 0) - (a.relative_gap || 0)),
+    ...flags.filter((f) => X.weight(f) === "small"),
+  ];
+  X.smallFlag = (room, f) => `<li class="x-smallflag" data-flag="small-green"><span class="tc-mark tc-mark--strong">Small green flag</span>
+      <span class="x-small-title">${esc(f.title)}</span> <span class="tc-meta">${esc(X.pieceOf(room, f.piece).label)}</span>
+      <div class="tc-chips">${X.roomChip(f.stated.source)}${X.roomChip(f.found.source)}</div></li>`;
+  X.flagsHtml = (room, flags, opts) => {
+    const ordered = X.orderFlags(flags);
+    const big = ordered.filter((f) => X.weight(f) !== "small");
+    const small = ordered.filter((f) => X.weight(f) === "small");
+    return `<div class="x-flags">${big.map((f) => X.flagCard(room, f, opts)).join("")}</div>
+      ${small.length ? `<h3 class="x-sub">Small green flags: sources that agree</h3><ul class="x-smallflags">${small.map((f) => X.smallFlag(room, f)).join("")}</ul>` : ""}`;
+  };
+
+  // "View in the request" opens the request over the page at that item (app.js), or the request screen.
+  X.viewReq = (key) => `<button class="tc-btn tc-btn--secondary tc-btn--small" type="button" data-viewreq="${esc(key)}">View in the request</button>`;
+  document.addEventListener("click", (e) => {
+    const v = e.target.closest("[data-viewreq]");
+    if (!v) return;
+    if (typeof window.TC_OPEN_REQUEST === "function") window.TC_OPEN_REQUEST(v.dataset.viewreq);
+    else location.hash = "#request";
+  });
 
   // "Add to the request" puts the founder question on the request list as an item of its own.
   X.addAsk = (room, cid) => {
@@ -137,8 +165,8 @@
     const a = e.target.closest("[data-ask]");
     if (a) {
       X.addAsk(X.room(), a.dataset.ask);
-      a.textContent = "On the request";
-      a.disabled = true;
+      a.outerHTML = X.viewReq(`ask-${a.dataset.ask}`);
+      return;
     }
     const c = e.target.closest("[data-copyask]");
     if (c) {

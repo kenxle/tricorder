@@ -123,6 +123,19 @@ with sync_playwright() as p:
     check(answered == ans("full") and answered > got and pg.locator("#open-more").count() == 0, f"the full view answers more ({answered} answered, {asked - answered} still open: nothing in the room settles them)")
     check(pg.locator("a[href='http://localhost:5173/']").count() == 1, "the working page links to the built app")
     check("prototype" not in pg.locator("body").inner_text().lower() and "simulate" not in pg.locator("body").inner_text().lower() and pg.locator(".steps, .back").count() == 0, "no Prototype label, step bar or back links on the working page")
+    # A founder question from a flag card: on the request, in the requests box as Open, and TC_OPEN_REQUEST shows it
+    pg.locator(".x-roomview [data-ask]:not([disabled])").first.click()
+    qkey = pg.evaluate("TC.S.items.find(i => i.key.startsWith('ask-')).key")
+    check(pg.locator(".x-roomview .req[data-state='open']").filter(has_text="Question:").count() == 1, "a founder question appears in the Data room requests box as Open")
+    pg.evaluate(f"TC_OPEN_REQUEST('{qkey}')")
+    pg.wait_for_selector("dialog#req-modal[open] #ask-group")
+    check("Questions for the founder" in pg.locator("#ask-group").inner_text() and pg.locator("dialog li.ask.flash").count() == 1 and pg.locator("dialog li.ask.flash").get_attribute("data-key") == qkey,
+          "TC_OPEN_REQUEST opens the dialog on the question, under Questions for the founder, highlighted")
+    check(pg.locator("dialog li.ask.flash").is_visible(), "the highlighted question is scrolled into view")
+    pg.keyboard.press("Escape")
+    pg.evaluate("TC_OPEN_REQUEST()")
+    check(pg.locator("dialog#req-modal[open]").count() == 1 and pg.locator("dialog li.ask.flash").count() == 0, "TC_OPEN_REQUEST with no id just opens the dialog")
+    pg.click("#req-close")
     pg.screenshot(path=str(SHOTS / "4b_room_full.png"), full_page=True)
 
     # Step 5: flags from Ploy's synthetic room (steps 5 to 8: step5.js, step6.js, memo.js)
@@ -139,16 +152,23 @@ with sync_playwright() as p:
     check(pg.locator(".x-drill").count() == 2, "two drill-downs, one weak and one strong")
     pg.locator(".x-flag .roomchip").first.click()
     check("synthetic room" in pg.locator(".x-flag .panel").first.inner_text(), "a room source chip opens its synthetic excerpt")
-    pg.locator(".x-flag .srcchip").first.click()
-    check("Saved copy" in pg.locator(".x-flag .panel").nth(1).inner_text(), "an outside source chip opens the saved public page")
+    pg.locator(".x-smallflag .srcchip").first.click()
+    check("Saved copy" in pg.locator(".x-smallflag .panel").first.inner_text(), "an outside source chip opens the saved public page")
     held, missing = pg.locator(".x-tick[data-held='yes']").count(), pg.locator(".x-tick[data-held='no']").count()
-    check(held > 0 and missing > 0 and held == answered and missing == asked - answered, f"request ticked off: {held} in the room, {missing} still missing, same as the working page")
+    check(held > 0 and missing > 0 and held == answered and missing == asked + 1 - answered, f"request ticked off: {held} in the room, {missing} still missing, same as the working page")
     check(pg.locator(".x-pre tr[data-status='confirms']").count() >= 3 and "26,571,989" in pg.locator(".x-pre").inner_text(),
           "first-readout claims confirmed by the room, the Form D amount among them")
-    pg.click("[data-ask]")
-    check(pg.locator("[data-ask]").first.is_disabled(), "a founder question goes onto the request")
+    pg.locator("[data-ask]").first.click()
+    check(pg.locator(".tc-ask [data-viewreq]").count() >= 2, "a second founder question goes onto the request, and each offers View in the request")
+    small = pg.locator(".x-smallflag").count()
+    after = pg.evaluate("""(() => { const reds = [...document.querySelectorAll(".x-flag[data-flag='red']")]; const s = document.querySelector(".x-smallflag");
+      return !!s && reds.length > 0 && !!(reds[reds.length - 1].compareDocumentPosition(s) & Node.DOCUMENT_POSITION_FOLLOWING); })()""")
+    check(small >= 1 and after and pg.locator(".x-flag", has_text="matches the SEC Form D").count() == 0,
+          f"sources that agree are small green flags, listed after the red flags ({small})")
+    check(pg.locator(".x-flag[data-flag='red']", has_text="disagree on how many companies").count() == 1,
+          "sources that disagree are a big red flag with stated beside found")
     pg.locator(".x-flag .roomchip").first.click()
-    pg.locator(".x-flag .srcchip").first.click()
+    pg.locator(".x-smallflag .srcchip").first.click()
     pg.screenshot(path=str(SHOTS / "5_flags_from_the_room.png"), full_page=True)
 
     # Step 6: steering
@@ -161,7 +181,7 @@ with sync_playwright() as p:
     check(pg.evaluate("TC.S.items.some(i => i.title.startsWith('Model inference invoices'))"), "a more-information steer goes onto the request")
     pg.click("[data-example='2']")
     check(pg.locator(".x-piece.tc-steered").count() == 1 and pg.locator(".x-piece.tc-steered .x-before").count() == 1, "a rewrite marks the piece steered and keeps the before")
-    check(pg.locator(".x-piece[data-piece='market'] .tc-mark--mixed").count() == 1, "the steered piece keeps the script's verdict")
+    check(pg.locator(".x-piece[data-piece='market'] .tc-mark--weak").count() == 1, "the steered piece keeps the script's verdict")
     pg.click("[data-lines='team']")
     pg.click("[data-disagree='te-1']")
     pg.fill(".x-steerbox input", "I disagree because two of the 14 are contractors.")

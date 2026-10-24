@@ -44,6 +44,7 @@
       const T = window.TC;
       if (!T.S.items) T.buildItems();
       const key = `steer-${st.steers.length + 1}`;
+      s.key = key;
       T.S.items.push({ key, id: null, title: s.request[0].toUpperCase() + s.request.slice(1), ask: `Please send ${s.request[0].toLowerCase() + s.request.slice(1)}.`,
         includes: null, guide: null, guidance: null, fromReadout: false, firstTier: false, custom: true, reasons: [`From a steer on ${p.label.toLowerCase()}.`], checked: true });
     }
@@ -65,7 +66,8 @@
     }
     if (s.kind === "more") {
       return `<div class="x-result" data-kind="more">${said}
-        <p><span class="tc-mark tc-mark--running">Waiting on the founder</span> Added to the data-room request: ${esc(s.request)}.</p></div>`;
+        <p><span class="tc-mark tc-mark--running">Waiting on the founder</span> Added to the data-room request: ${esc(s.request)}.</p>
+        <div class="x-line-tools">${X.viewReq(s.key)}</div></div>`;
     }
     if (s.kind === "note") {
       const c = room.claims[s.line];

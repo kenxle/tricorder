@@ -136,3 +136,9 @@ span.x-mline-text { cursor: default; text-decoration: none; }
 .x-roomview .x-waiting .tc-card-head > * { min-width: 0; }
 .x-flags > * { min-width: 0; }
 .x-waiting .tc-card-title, .x-waiting p, .x-wait, .tc-verdict-why { overflow-wrap: anywhere; }
+
+/* Small green flags: two sources that agree. Listed after the real strengths and the red flags, one line each. */
+.x-smallflags { list-style: none; margin: 0; padding: 0; max-width: 1000px; border-top: var(--tc-hair) solid var(--tc-rule); }
+.x-smallflag { display: flex; flex-wrap: wrap; gap: var(--tc-space-2) var(--tc-space-3); align-items: center; padding: var(--tc-space-3) 0; border-bottom: var(--tc-hair) solid var(--tc-rule); font-size: 15px; }
+.x-small-title { color: var(--tc-ink-2); }
+.x-smallflag .tc-chips { flex: 1 0 100%; }

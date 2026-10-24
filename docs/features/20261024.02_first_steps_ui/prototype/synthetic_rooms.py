@@ -267,6 +267,9 @@ def ploy_room(f: dict, pre: dict) -> dict:
     claim("ma-3", "market", f"Both use {money(annual_price)} a year per company: the Pro plan's ${f['pro']} a month.", annual_price, money(annual_price),
           "computed", [src(deck, "slide 9", f"{money(annual_price)} a year"), src(model, "Market!B4", f"{annual_price}")], "corroborated",
           agree=[public("prices", "ploy.ai/pricing")])
+    claim("ma-4", "market", f"The deck counts {market_deck_count:,} target companies and the model counts {market_model_count:,}: "
+          f"{money(market_deck)} against {money(market_model)}.", market_deck_count, f"{market_deck_count:,}", "quoted",
+          [src(deck, "slide 9", f"{market_deck_count:,} companies"), src(model, "Market!B3", f"{market_model_count}")], "contradicted", "flag")
     # Team
     claim("te-1", "team", f"Staff today: {f['team']} on deck slide 11 and in the model, the same as the YC page.", f["team"], str(f["team"]), "quoted",
           [src(deck, "slide 11", f"{f['team']} people"), src(model, "Assumptions!C4", f"STAFF_NOW = {f['team']}")], "corroborated",
@@ -294,9 +297,12 @@ def ploy_room(f: dict, pre: dict) -> dict:
           "computed", [src(model, "Pricing!B3:B4", "prices"), src(cap, "Seed!F22", "seed total")], "corroborated",
           agree=[public("prices", "ploy.ai/pricing"), public("team", "YC company page"), public("formd_sold", "SEC Form D")])
 
-    def flag(kind, piece, cid, title, stated, found, others, strip_, ask=None, gap=None):
+    # basis: "disagreement" (two sources differ: a big red flag), "agreement" (two sources match: a small
+    # green flag), or "strength" (a good number in its own right: a headline green flag). Ken, 1:22 PM.
+    def flag(kind, piece, cid, title, stated, found, others, strip_, ask=None, gap=None, basis=None):
         return {"kind": kind, "piece": piece, "claim_id": cid, "title": title, "stated": stated, "found": found,
-                "others": others, "strip": strip_, "ask": ask, "relative_gap": gap}
+                "others": others, "strip": strip_, "ask": ask, "relative_gap": gap,
+                "basis": basis or ("disagreement" if kind == "red" else "strength")}
 
     reds = [
         flag("red", "traction_and_revenue", "tr-3", f"ARR counts a {pilot_months}-month pilot as recurring revenue.",
@@ -327,13 +333,21 @@ def ploy_room(f: dict, pre: dict) -> dict:
              f"The model's burn carries {len(hires) - len(extra)} of the {len(hires)} hires in the hiring plan. What is runway with the full plan, and which hires would you hold?",
              relative_gap(deck_runway, runway_rebuilt)),
     ]
+    reds.append(flag("red", "market", "ma-4", "The deck and the model disagree on how many companies the market holds.",
+                     {"key": "Stated, deck slide 9", "value": f"{market_deck_count:,}", "out": True, "source": src(deck, "slide 9", f"{market_deck_count:,} companies")},
+                     {"key": "Found, the model's Market tab", "value": f"{market_model_count:,}", "source": src(model, "Market!B3", f"{market_model_count}")},
+                     [], strip([market_deck_count, market_model_count], market_model_count,
+                               [{"v": market_deck_count, "label": f"Deck {market_deck_count:,}", "pos": "above"}], "count", 2000),
+                     f"The deck counts {market_deck_count:,} companies and the model {market_model_count:,}. Which count is right, and what makes up the difference?",
+                     relative_gap(market_deck_count, market_model_count)))
     reds.sort(key=lambda x: -x["relative_gap"])
     greens = [
         flag("green", "legal_and_cap_table", "lc-1", "The cap table's seed matches the SEC Form D to the dollar.",
              {"key": "Room, cap table", "value": money(f["sold"]), "source": src(cap, "Seed!F22", f"{f['sold']}")},
              {"key": "Outside, SEC Form D", "value": money(f["sold"]), "source": public("formd_sold", "SEC Form D")},
              [{"key": "Also SAFEs, in both", "value": money(f["safe"]), "source": src(cap, "SAFEs!E9", f"{f['safe']}")}],
-             strip([f["sold"]], f["sold"], [{"v": f["sold"], "label": f"Cap table and Form D {millions(f['sold'])}", "pos": "above"}], "usd", 1_000_000)),
+             strip([f["sold"]], f["sold"], [{"v": f["sold"], "label": f"Cap table and Form D {millions(f['sold'])}", "pos": "above"}], "usd", 1_000_000),
+             basis="agreement"),
         flag("green", "customers", "cu-1", f"No customer is more than 10% of revenue. The largest is {pct(largest_share)}.",
              {"key": "Stated, deck slide 8", "value": "under 10%", "source": src(deck, "slide 8", "No customer is more than 10% of revenue")},
              {"key": "Found, customer file", "value": pct(largest_share), "source": src(cust, "2026-09, largest row", f"{largest_name},{largest}")},
@@ -355,9 +369,8 @@ def ploy_room(f: dict, pre: dict) -> dict:
          "claim_ids": ["ue-1", "ue-2", "ue-3", "ue-4"]},
         {"name": "customers", "label": "Customers", "verdict": "looking_strong", "reason": C["cu-1"]["text"], "agree": 3, "disagree": 0,
          "claim_ids": ["cu-1"]},
-        {"name": "market", "label": "Market", "verdict": "mixed",
-         "reason": f"The deck and the model agree on {money(annual_price)} a year per company. They disagree on the count: {market_deck_count:,} against {market_model_count:,}.",
-         "agree": 2, "disagree": 2, "claim_ids": ["ma-1", "ma-2", "ma-3"]},
+        {"name": "market", "label": "Market", "verdict": "looking_weak", "reason": C["ma-4"]["text"],
+         "agree": 2, "disagree": 2, "claim_ids": ["ma-4", "ma-1", "ma-2", "ma-3"]},
         {"name": "team", "label": "Team", "verdict": "looking_strong", "reason": C["te-1"]["text"], "agree": 3, "disagree": 0, "claim_ids": ["te-1"]},
         {"name": "the_pitch_itself", "label": "The pitch itself", "verdict": "looking_strong", "reason": C["pi-1"]["text"], "agree": 2, "disagree": 0,
          "claim_ids": ["pi-1", "pi-2"]},
@@ -491,13 +504,13 @@ def sazabi_room(f: dict, pre: dict) -> dict:
     claim("te-1", "team", f"Staff today: {f['team']} in the model, the same as the YC page.", f["team"], str(f["team"]), "quoted",
           [src(model, "Assumptions!C4", f"STAFF_NOW = {f['team']}")], "corroborated", agree=[public("team", "YC company page")])
 
-    reds = [{"kind": "red", "piece": "traction_and_revenue", "claim_id": "tr-1", "title": "The deck counts free design partners as paying teams.",
+    reds = [{"kind": "red", "basis": "disagreement", "piece": "traction_and_revenue", "claim_id": "tr-1", "title": "The deck counts free design partners as paying teams.",
              "stated": {"key": "Stated, deck slide 4", "value": str(deck_paying), "out": True, "source": src(deck, "slide 4", f"{deck_paying} paying teams")},
              "found": {"key": "Found, workspace file", "value": str(paying), "source": src(ws, "2026-09, plan column", f"Free: {free}")},
              "others": [], "strip": strip([deck_paying, paying], paying, [{"v": deck_paying, "label": f"Deck {deck_paying}", "pos": "above"}], "count", 5),
              "ask": f"The deck says {deck_paying} paying teams and the workspace file shows {paying}. Which number do you use, and when do the others convert?",
              "relative_gap": relative_gap(deck_paying, paying)}]
-    greens = [{"kind": "green", "piece": "legal_and_cap_table", "claim_id": "lc-1", "title": "The cap table's seed matches the company's public post.",
+    greens = [{"kind": "green", "basis": "agreement", "piece": "legal_and_cap_table", "claim_id": "lc-1", "title": "The cap table's seed matches the company's public post.",
                "stated": {"key": "Room, cap table", "value": money(f["seed"]), "source": src(cap, "Seed!F14", f"{f['seed']}")},
                "found": {"key": "Outside, company post", "value": money(f["seed"]), "source": public("seed", "Sazabi blog")},
                "others": [], "strip": strip([f["seed"]], f["seed"], [{"v": f["seed"], "label": f"Both {millions(f['seed'])}", "pos": "above"}], "usd", 1_000_000),

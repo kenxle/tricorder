@@ -1,5 +1,5 @@
 {
- "built": "2026-10-24T13:07:59",
+ "built": "2026-10-24T13:25:37",
  "built_by": "docs/features/20261024.02_first_steps_ui/prototype/build_data.py",
  "list_source": "yc_spring_2026_companies",
  "companies": [
@@ -4055,7 +4055,8 @@
         "unit": "usd"
        },
        "ask": null,
-       "relative_gap": null
+       "relative_gap": null,
+       "basis": "agreement"
       },
       {
        "kind": "green",
@@ -4106,7 +4107,8 @@
         "unit": "percent"
        },
        "ask": null,
-       "relative_gap": null
+       "relative_gap": null,
+       "basis": "strength"
       }
      ],
      "red": [
@@ -4166,7 +4168,8 @@
         "unit": "percent"
        },
        "ask": "Model inference cost $60,950 in September and sits under research and development. Why is it not in cost of revenue?",
-       "relative_gap": 0.5029707872586234
+       "relative_gap": 0.5029707872586234,
+       "basis": "disagreement"
       },
       {
        "kind": "red",
@@ -4224,7 +4227,8 @@
         "unit": "months"
        },
        "ask": "The model's burn carries 6 of the 22 hires in the hiring plan. What is runway with the full plan, and which hires would you hold?",
-       "relative_gap": 0.24487557018303605
+       "relative_gap": 0.24487557018303605,
+       "basis": "disagreement"
       },
       {
        "kind": "red",
@@ -4282,7 +4286,51 @@
         "unit": "usd"
        },
        "ask": "Northwind Analytics paid $90,000 for a 3-month pilot. Has it signed an annual contract? If not, can you show ARR without it?",
-       "relative_gap": 0.1466011466011466
+       "relative_gap": 0.1466011466011466,
+       "basis": "disagreement"
+      },
+      {
+       "kind": "red",
+       "piece": "market",
+       "claim_id": "ma-4",
+       "title": "The deck and the model disagree on how many companies the market holds.",
+       "stated": {
+        "key": "Stated, deck slide 9",
+        "value": "40,000",
+        "out": true,
+        "source": {
+         "uri": "01_pitch/pitch_deck.pdf",
+         "locator": "slide 9",
+         "quote": "40,000 companies"
+        }
+       },
+       "found": {
+        "key": "Found, the model's Market tab",
+        "value": "36,000",
+        "source": {
+         "uri": "02_financials/financial_model.xlsx",
+         "locator": "Market!B3",
+         "quote": "36000"
+        }
+       },
+       "others": [],
+       "strip": {
+        "min": 34000,
+        "max": 42000,
+        "band": 36000,
+        "ticks": [
+         {
+          "v": 40000,
+          "label": "Deck 40,000",
+          "pos": "above",
+          "out": true
+         }
+        ],
+        "unit": "count"
+       },
+       "ask": "The deck counts 40,000 companies and the model 36,000. Which count is right, and what makes up the difference?",
+       "relative_gap": 0.1111111111111111,
+       "basis": "disagreement"
       }
      ]
     },
@@ -4352,11 +4400,12 @@
      {
       "name": "market",
       "label": "Market",
-      "verdict": "mixed",
-      "reason": "The deck and the model agree on $3,600 a year per company. They disagree on the count: 40,000 against 36,000.",
+      "verdict": "looking_weak",
+      "reason": "The deck counts 40,000 target companies and the model counts 36,000: $144,000,000 against $129,600,000.",
       "agree": 2,
       "disagree": 2,
       "claim_ids": [
+       "ma-4",
        "ma-1",
        "ma-2",
        "ma-3"
@@ -4766,6 +4815,30 @@
         "locator": "public record"
        }
       ],
+      "disagree": []
+     },
+     "ma-4": {
+      "id": "ma-4",
+      "piece": "market",
+      "text": "The deck counts 40,000 target companies and the model counts 36,000: $144,000,000 against $129,600,000.",
+      "value": 40000,
+      "display": "40,000",
+      "confidence": "quoted",
+      "sources": [
+       {
+        "uri": "01_pitch/pitch_deck.pdf",
+        "locator": "slide 9",
+        "quote": "40,000 companies"
+       },
+       {
+        "uri": "02_financials/financial_model.xlsx",
+        "locator": "Market!B3",
+        "quote": "36000"
+       }
+      ],
+      "mark": "contradicted",
+      "severity": "flag",
+      "agree": [],
       "disagree": []
      },
      "te-1": {
@@ -5369,6 +5442,7 @@
        "ma-1",
        "ma-2",
        "ma-3",
+       "ma-4",
        "ow-1",
        "pi-1",
        "pi-2",
@@ -5388,6 +5462,7 @@
        ],
        "red": [
         "ue-3",
+        "ma-4",
         "tr-4"
        ]
       },
@@ -5472,8 +5547,8 @@
         ]
        },
        "market": {
-        "verdict": "mixed",
-        "reason": "The deck and the model agree on $3,600 a year per company. They disagree on the count: 40,000 against 36,000.",
+        "verdict": "looking_weak",
+        "reason": "The deck counts 40,000 target companies and the model counts 36,000: $144,000,000 against $129,600,000.",
         "agree": 2,
         "disagree": 2,
         "waiting": []
@@ -5578,6 +5653,7 @@
        "ma-1",
        "ma-2",
        "ma-3",
+       "ma-4",
        "ow-1",
        "pi-1",
        "pi-2",
@@ -5600,7 +5676,8 @@
        "red": [
         "ue-3",
         "bu-2",
-        "tr-3"
+        "tr-3",
+        "ma-4"
        ]
       },
       "waiting": [],
@@ -5641,8 +5718,8 @@
         "waiting": []
        },
        "market": {
-        "verdict": "mixed",
-        "reason": "The deck and the model agree on $3,600 a year per company. They disagree on the count: 40,000 against 36,000.",
+        "verdict": "looking_weak",
+        "reason": "The deck counts 40,000 target companies and the model counts 36,000: $144,000,000 against $129,600,000.",
         "agree": 2,
         "disagree": 2,
         "waiting": []
@@ -5761,7 +5838,8 @@
        "unit": "count"
       },
       "ask": "The deck says 1,240 paying workspaces. The workspace file shows 736 paying and 504 on the free plan. Which count do you report?",
-      "relative_gap": 0.6847826086956522
+      "relative_gap": 0.6847826086956522,
+      "basis": "disagreement"
      }
     ]
    }
@@ -6258,6 +6336,7 @@
      "green": [
       {
        "kind": "green",
+       "basis": "agreement",
        "piece": "legal_and_cap_table",
        "claim_id": "lc-1",
        "title": "The cap table's seed matches the company's public post.",
@@ -6301,6 +6380,7 @@
      "red": [
       {
        "kind": "red",
+       "basis": "disagreement",
        "piece": "traction_and_revenue",
        "claim_id": "tr-1",
        "title": "The deck counts free design partners as paying teams.",

@@ -57,8 +57,8 @@
 
     out.push({ title: "Summary and the ask", n: 2, lines: [
       { kind: "claim", text: room.memo_company, claims: ["pi-1", "lc-1"].filter((id) => room.claims[id]) },
-      ...room.top_flags.green.map((f) => ({ kind: "claim", text: `Green flag. ${f.title}`, claims: [f.claim_id] })),
-      ...room.top_flags.red.map((f) => ({ kind: "claim", text: `Red flag. ${f.title} Stated ${f.stated.value}, found ${f.found.value}.`, claims: [f.claim_id] })),
+      ...X.orderFlags([...room.top_flags.green, ...room.top_flags.red]).map((f) => ({ kind: "claim", claims: [f.claim_id],
+        text: f.kind === "red" ? `Red flag. ${f.title} Stated ${f.stated.value}, found ${f.found.value}.` : `${X.weight(f) === "small" ? "Small green flag" : "Green flag"}. ${f.title}` })),
       { kind: "operator", field: "rec", text: op.rec ? `Recommendation: ${op.rec}${op.amount ? `, ${op.amount}` : ""}.` : "" },
     ], glance: room.pieces.map((p) => p.name) });
 
@@ -210,7 +210,7 @@
         <section class="x-section" aria-label="The round"><h2 class="x-h">The round</h2>${round}
           ${st.op.rec ? `<p class="x-lede">The associate's recommendation: <strong>${esc(st.op.rec)}</strong>${st.op.amount ? `, ${esc(st.op.amount)}` : ""}.</p>` : '<p class="note">The associate has not written a recommendation yet.</p>'}</section>
         <section class="x-section" aria-label="The flags"><h2 class="x-h">The flags</h2>
-          <div class="x-flags">${[...room.top_flags.green, ...room.top_flags.red].map((f) => X.flagCard(room, f, { noAsk: true })).join("")}</div></section>
+          ${X.flagsHtml(room, [...room.top_flags.green, ...room.top_flags.red], { noAsk: true })}</section>
         <div id="x-whatif-slot">${whatifHtml(room)}</div>
         <section class="x-section" aria-label="The memo"><h2 class="x-h">The memo</h2>
           <p class="x-yourview" id="x-yourview">Your view: ${views.filter((v) => v === "agree").length} agree, ${views.filter((v) => v === "disagree").length} disagree. Only you see it.</p>

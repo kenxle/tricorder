@@ -63,7 +63,7 @@
     const s = st(state);
     const all = [...r.top_flags.green, ...r.top_flags.red, ...(r.extra_flags || [])];
     const pick = (ids) => ids.map((id) => all.find((f) => f.claim_id === id)).filter(Boolean);
-    return [...pick(s.flags.green), ...pick(s.flags.red).sort((a, b) => b.relative_gap - a.relative_gap)];
+    return X.orderFlags([...pick(s.flags.green), ...pick(s.flags.red)]);
   }
 
   function banner(state) {
@@ -81,7 +81,7 @@
   function standsOut(state) {
     const r = room();
     const s = st(state);
-    const flags = flagsOf(state).map((f) => X.flagCard(r, f)).join("");
+    const flags = X.flagsHtml(r, flagsOf(state));
     const waiting = s.waiting.map((w) => `<article class="tc-card x-waiting" data-waiting="${esc(w.piece)}">
         <div class="tc-card-head"><span class="tc-label tc-label--gap">Waiting on ${esc(w.files.map(short).join(", "))}</span><span class="tc-meta">${esc(X.pieceOf(r, w.piece).label)}</span></div>
         <h3 class="tc-card-title">${esc(w.title)}</h3><p>${esc(w.text)}</p>
@@ -95,7 +95,7 @@
     }).join("")}</div>` : "";
     return `<section class="x-section" aria-label="What stands out"><h2 class="x-h">What stands out</h2>
       <h3 class="x-sub">From the data room</h3>
-      <div class="x-flags">${flags}${waiting}</div>${outside}</section>`;
+      ${flags}${waiting ? `<h3 class="x-sub">Waiting on files</h3><div class="x-flags">${waiting}</div>` : ""}${outside}</section>`;
   }
 
   function pieces(state) {
