@@ -117,6 +117,7 @@
       <div class="tc-card-head"><span class="tc-mark tc-mark--${f.kind === "red" ? "weak" : "strong"}">${f.kind === "red" ? "Red flag" : "Green flag"}</span>
         <span class="tc-meta">${esc(piece.label)}</span></div>
       <h3 class="tc-card-title">${esc(f.title)}</h3>
+      ${f.why ? `<p class="x-why">${esc(f.why)}</p>` : ""}
       ${X.pair(f.stated, f.found)}${others}
       ${f.kind === "red" ? X.strip(f.strip, "Found") : X.strip({ ...f.strip, ticks: [] }, f.strip.ticks[0] ? f.strip.ticks[0].label.replace(/ \S+$/, "") : "Agreed")}
       ${ask}</article>`;

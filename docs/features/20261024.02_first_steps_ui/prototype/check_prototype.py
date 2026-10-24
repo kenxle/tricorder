@@ -170,6 +170,7 @@ with sync_playwright() as p:
           return !!s && reds.length > 0 && !!(reds[reds.length - 1].compareDocumentPosition(s) & Node.DOCUMENT_POSITION_FOLLOWING); })()""")
         check(small >= 1 and after and pg.locator(".x-flag", has_text="matches the SEC Form D").count() == 0,
               f"sources that agree are small green flags, listed after the red flags ({small})")
+        check(pg.locator(".x-flag .x-why").count() == pg.locator(".x-flag").count(), "every big flag says in a line or two why it matters")
         check(pg.locator(".x-flag[data-flag='red']", has_text="disagree on how many companies").count() == 1,
               "sources that disagree are a big red flag with stated beside found")
         pg.locator(".x-flag .roomchip").first.click()

@@ -1,5 +1,5 @@
 window.DATA = {
- "built": "2026-10-24T13:25:37",
+ "built": "2026-10-24T13:36:05",
  "built_by": "docs/features/20261024.02_first_steps_ui/prototype/build_data.py",
  "list_source": "yc_spring_2026_companies",
  "companies": [
@@ -4108,7 +4108,8 @@ window.DATA = {
        },
        "ask": null,
        "relative_gap": null,
-       "basis": "strength"
+       "basis": "strength",
+       "why": "When no customer is a large share of revenue, losing one does not sink the company. Concentration is a common risk at this stage, and it is low here."
       }
      ],
      "red": [
@@ -4169,7 +4170,8 @@ window.DATA = {
        },
        "ask": "Model inference cost $60,950 in September and sits under research and development. Why is it not in cost of revenue?",
        "relative_gap": 0.5029707872586234,
-       "basis": "disagreement"
+       "basis": "disagreement",
+       "why": "Model inference is a direct cost of serving each customer. Leaving it out makes the margin look like software's when it is closer to a services business's."
       },
       {
        "kind": "red",
@@ -4228,7 +4230,8 @@ window.DATA = {
        },
        "ask": "The model's burn carries 6 of the 22 hires in the hiring plan. What is runway with the full plan, and which hires would you hold?",
        "relative_gap": 0.24487557018303605,
-       "basis": "disagreement"
+       "basis": "disagreement",
+       "why": "The planned hires are the biggest new cost. A runway that leaves most of them out says the money lasts longer than it will, and puts the next raise too late."
       },
       {
        "kind": "red",
@@ -4287,7 +4290,8 @@ window.DATA = {
        },
        "ask": "Northwind Analytics paid $90,000 for a 3-month pilot. Has it signed an annual contract? If not, can you show ARR without it?",
        "relative_gap": 0.1466011466011466,
-       "basis": "disagreement"
+       "basis": "disagreement",
+       "why": "ARR should count only revenue that repeats every year. A paid pilot that ends after three months inflates it, and every multiple built on ARR with it."
       },
       {
        "kind": "red",
@@ -4330,7 +4334,8 @@ window.DATA = {
        },
        "ask": "The deck counts 40,000 companies and the model 36,000. Which count is right, and what makes up the difference?",
        "relative_gap": 0.1111111111111111,
-       "basis": "disagreement"
+       "basis": "disagreement",
+       "why": "The market size sets how big the company can get. When the company's own files disagree on it, neither number holds until the founder explains the gap."
       }
      ]
     },
@@ -5839,7 +5844,8 @@ window.DATA = {
       },
       "ask": "The deck says 1,240 paying workspaces. The workspace file shows 736 paying and 504 on the free plan. Which count do you report?",
       "relative_gap": 0.6847826086956522,
-      "basis": "disagreement"
+      "basis": "disagreement",
+      "why": "Paying customers are what turn into revenue. Counting free workspaces as paying makes demand look bigger than what anyone pays for."
      }
     ]
    }
@@ -6264,7 +6270,18 @@ window.DATA = {
     "growth": 1000,
     "seed": 8000000,
     "design_partners": 50,
-    "team": 10
+    "team": 10,
+    "over_per_gb": 0.1,
+    "usage_teams": 35,
+    "usage_investigations": 8000,
+    "usage_issues": 2000,
+    "usage_tb": 2,
+    "launch_date": "2026-06-01",
+    "engineers": 9,
+    "angels_more_than": 60,
+    "seed_post_date": "2026-06-25",
+    "still_raising_date": "2026-04-08",
+    "edgar_formd": 0
    },
    "pre": {
     "prices": {
@@ -6308,65 +6325,231 @@ window.DATA = {
       "match": "company.team_size: 10",
       "after": " company.location: San Francisco company.city: San Francisco company.city_tag: san-francisco-bay-area company.country: US company.twitter_url: https://x.com/sazabi company.fb_url: company.cb_url: company.github_url: None company.free_response_question_answers: (none) company.dday_video_url: None com"
      }
+    },
+    "usage": {
+     "text": "The launch post says that in one month it onboarded 35 teams, ran 8,000 investigations and took in 2 TB of logs.",
+     "source": "yc_page_sazabi",
+     "quote": "In the past month we’ve onboarded 35 new teams, run 8,000 background investigations, detected 2,000 issues, ingested 2 TB of logs",
+     "excerpt": {
+      "before": " to do things our competitors fundamentally can't, like analyze and memorize every historical incident, or optimize our DB for the specific query patterns of our agent. It's an Apple-style approach to observability. ### Where We Are Today Sazabi is currently in closed alpha, but we’re growing fast. ",
+      "match": "In the past month we’ve onboarded 35 new teams, run 8,000 background investigations, detected 2,000 issues, ingested 2 TB of logs",
+      "after": ", and opened 200 PRs. Sazabi is founded by Sherwood Callaway, a two-time YC founder who previously started the infrastructure and observability teams at Brex. We’re a team of nine engineers in total, including three early members of the Brex team and two former observability founders. Our investors "
+     },
+     "kind": "company says"
+    },
+    "engineers": {
+     "text": "The launch post says the team is nine engineers, three of them from Brex.",
+     "source": "yc_page_sazabi",
+     "quote": "We’re a team of nine engineers in total, including three early members of the Brex team",
+     "excerpt": {
+      "before": "owing fast. In the past month we’ve onboarded 35 new teams, run 8,000 background investigations, detected 2,000 issues, ingested 2 TB of logs, and opened 200 PRs. Sazabi is founded by Sherwood Callaway, a two-time YC founder who previously started the infrastructure and observability teams at Brex. ",
+      "match": "We’re a team of nine engineers in total, including three early members of the Brex team",
+      "after": " and two former observability founders. Our investors include angels from top AI dev tools and infrastructure startups. To name a few: * Harrison Chase, CEO of LangChain * Merrill Lutsky, founder and CEO of Graphite * Ivan Burazin, founder and CEO of Daytona * Matt Biilmann, founder and CEO of Netli"
+     }
+    },
+    "formd_none": {
+     "text": "No signal: EDGAR's company search for Sazabi returned 0 Form D filings.",
+     "source": "edgar_company_sazabi",
+     "quote": "company=sazabi&amp;type=D",
+     "excerpt": {
+      "before": "<?xml version=\"1.0\" encoding=\"ISO-8859-1\" ?> <feed xmlns=\"http://www.w3.org/2005/Atom\"> <author> <email>webmaster@sec.gov</email> <name>Webmaster</name> </author> <id>https://www.sec.gov/cgi-bin/browse-edgar?",
+      "match": "company=sazabi&amp;type=D",
+      "after": "&amp;owner=include&amp;action=getcompany&amp;count=40</id> <link href=\"https://www.sec.gov/cgi-bin/browse-edgar?company=sazabi&amp;type=D&amp;owner=include&amp;action=getcompany&amp;count=40&amp;start=0&amp;output=atom\" rel=\"self\" type=\"application/atom+xml\" /> <link href=\"https://www.sec.gov/cgi-bi"
+     },
+     "kind": "no signal"
+    },
+    "still_raising": {
+     "text": "In April 2026 the company said it was still raising its seed.",
+     "source": "news_sazabi_siliconangle",
+     "quote": "confirmed it’s in the process of raising seed capital",
+     "excerpt": {
+      "before": "ervability suites, Callaway argued that the shift toward AI-driven software development will require fundamentally new observability models. “It will be very hard for legacy or incumbent vendors to completely retool their products,” he said. Sazabi has not disclosed detailed funding information but ",
+      "match": "confirmed it’s in the process of raising seed capital",
+      "after": ". Image: Pixabay A message from John Furrier, co-founder of SiliconANGLE: Support our mission to keep content open and free by engaging with theCUBE community. Join theCUBE’s Alumni Trust Network , where technology leaders connect, share intelligence and create opportunities. 15M+ viewers of theCUBE"
+     }
+    },
+    "named_customers": {
+     "text": "Case studies on its site: Weave, Mastra and XMTP Labs.",
+     "source": "site_sazabi_customers",
+     "quote": "XMTP Labs x Sazabi",
+     "excerpt": {
+      "before": "Privacy Terms DPA Cookies All Case Studies Categories Dev Tools Agents Messaging Filters Categories Mastra x Sazabi Discover how this TypeScript agent framework uses Sazabi to uncover and diagnose production problems without starting every investigation with a manual log review. Read the full story ",
+      "match": "XMTP Labs x Sazabi",
+      "after": " Discover how this secure, decentralized messaging protocol partnered with Sazabi to catch bugs before they reach users and scale observability for its agent-powered consumer app. Read the full story"
+     }
+    },
+    "hiring": {
+     "text": "Hiring: no open roles listed on YC.",
+     "source": "yc_page_sazabi",
+     "quote": "jobPostings: (none)",
+     "excerpt": {
+      "before": "cca4c4dcf7785cbc747f5ba7a9d17b6ac6911fe7c6e50f2671fbf1295c6 company.founders[0].twitter_url: https://twitter.com/shcallaway company.founders[0].has_email: True company.founders[0].latest_yc_company.name: Sazabi company.founders[0].latest_yc_company.href: https://www.ycombinator.com/companies/sazabi ",
+      "match": "jobPostings: (none)",
+      "after": " jobsUrl: https://bookface.ycombinator.com/workatastartup newsItems[0].title: The End of Manual Debugging newsItems[0].url: https://www.youtube.com/watch?v=UGYnC9zqa-k newsItems[0].date: Mar 27, 2026 newsUrl: https://bookface.ycombinator.com/company/31211/company_news videos[0].id: 2345 videos[0].ti"
+     },
+     "kind": "no signal"
     }
    },
    "room": {
     "synthetic_notice": "Synthetic data room for Deal Flow NYC 2026. Written by the team. Not this company's data.",
     "as_of": "2026-09-30",
     "files": [
+     "00_welcome/cover_note_and_index.pdf",
      "01_pitch/pitch_deck.pdf",
+     "02_financials/bank_statements_2026.pdf",
      "02_financials/financial_model.xlsx",
+     "02_financials/monthly_statements.xlsx",
+     "03_metrics/cloud_costs_by_month.csv",
+     "03_metrics/customer_mrr_by_month.csv",
+     "03_metrics/monthly_metrics.csv",
      "03_metrics/workspaces_by_plan.csv",
+     "04_customers/order_form_corvane_systems.pdf",
      "05_legal/cap_table.xlsx",
+     "05_legal/claims_statement.pdf",
+     "05_legal/safe_schedule.pdf",
+     "06_team/founder_bio_sherwood_callaway.pdf",
      "06_team/hiring_plan.csv"
     ],
     "round": {
-     "name": "Seed extension",
-     "raise": "$6,000,000",
-     "pre_money": "$54,000,000",
-     "post_money": "$60,000,000",
-     "ownership": "10.00%",
+     "name": "Seed",
+     "raise": "$8,000,000",
+     "pre_money": "$32,000,000",
+     "post_money": "$40,000,000",
+     "ownership": "20.00%",
      "source": {
       "uri": "01_pitch/pitch_deck.pdf",
       "locator": "slide 12",
-      "quote": "$6.0M seed extension"
+      "quote": "$8.0M seed, $40.0M post-money cap"
      }
     },
     "top_flags": {
      "green": [
       {
        "kind": "green",
-       "basis": "agreement",
-       "piece": "legal_and_cap_table",
-       "claim_id": "lc-1",
-       "title": "The cap table's seed matches the company's public post.",
+       "piece": "retention",
+       "claim_id": "re-1",
+       "title": "Teams that pay spend more: net revenue retention of 122.6% since June.",
        "stated": {
-        "key": "Room, cap table",
-        "value": "$8,000,000",
+        "key": "Stated, deck slide 6",
+        "value": "above 120%",
         "source": {
-         "uri": "05_legal/cap_table.xlsx",
-         "locator": "Seed!F14",
-         "quote": "8000000"
+         "uri": "01_pitch/pitch_deck.pdf",
+         "locator": "slide 6",
+         "quote": "Net revenue retention above 120%"
         }
        },
        "found": {
-        "key": "Outside, company post",
-        "value": "$8,000,000",
+        "key": "Found, customer file",
+        "value": "122.6%",
         "source": {
-         "public": "seed",
-         "uri": "Sazabi blog",
+         "uri": "03_metrics/customer_mrr_by_month.csv",
+         "locator": "teams paying in 2026-06, their 2026-06 and 2026-09 rows",
+         "quote": "4650,5700"
+        }
+       },
+       "others": [
+        {
+         "key": "Monthly churn",
+         "value": "1.9%",
+         "source": {
+          "uri": "03_metrics/customer_mrr_by_month.csv",
+          "locator": "teams paying in 2026-06, 2026-09 rows",
+          "quote": "1 with no row"
+         }
+        }
+       ],
+       "strip": {
+        "min": 115,
+        "max": 130,
+        "band": 122.58064516129032,
+        "ticks": [
+         {
+          "v": 122.58064516129032,
+          "label": "Customer file 122.6%",
+          "pos": "above",
+          "out": false
+         }
+        ],
+        "unit": "percent"
+       },
+       "ask": null,
+       "relative_gap": null,
+       "basis": "strength"
+      },
+      {
+       "kind": "green",
+       "piece": "traction_and_revenue",
+       "claim_id": "tr-5",
+       "title": "The launch post's usage matches the metrics file.",
+       "stated": {
+        "key": "Room, metrics file",
+        "value": "35 teams",
+        "source": {
+         "uri": "03_metrics/monthly_metrics.csv",
+         "locator": "2026-05 row",
+         "quote": "35,8000,2000,2"
+        }
+       },
+       "found": {
+        "key": "Outside, Launch YC post",
+        "value": "35 teams",
+        "source": {
+         "public": "usage",
+         "uri": "Launch YC post",
          "locator": "public record"
         }
        },
        "others": [],
        "strip": {
-        "min": 7000000,
-        "max": 9000000,
-        "band": 8000000,
+        "min": 30,
+        "max": 40,
+        "band": 35,
         "ticks": [
          {
-          "v": 8000000,
-          "label": "Both $8.0M",
+          "v": 35,
+          "label": "Metrics file and launch post 35",
+          "pos": "above",
+          "out": false
+         }
+        ],
+        "unit": "count"
+       },
+       "ask": null,
+       "relative_gap": null,
+       "basis": "agreement"
+      },
+      {
+       "kind": "green",
+       "piece": "unit_economics",
+       "claim_id": "ue-4",
+       "title": "The model's prices match the public pricing page.",
+       "stated": {
+        "key": "Room, the model",
+        "value": "$1,000",
+        "source": {
+         "uri": "02_financials/financial_model.xlsx",
+         "locator": "Pricing!B3:B5",
+         "quote": "50, 200, 1000"
+        }
+       },
+       "found": {
+        "key": "Outside, pricing page",
+        "value": "$1,000",
+        "source": {
+         "public": "prices",
+         "uri": "sazabi.com/pricing",
+         "locator": "public record"
+        }
+       },
+       "others": [],
+       "strip": {
+        "min": 900,
+        "max": 1100,
+        "band": 1000,
+        "ticks": [
+         {
+          "v": 1000,
+          "label": "Model and pricing page $1,000",
           "pos": "above",
           "out": false
          }
@@ -6374,52 +6557,291 @@ window.DATA = {
         "unit": "usd"
        },
        "ask": null,
-       "relative_gap": 0
+       "relative_gap": null,
+       "basis": "agreement"
+      },
+      {
+       "kind": "green",
+       "piece": "team",
+       "claim_id": "te-2",
+       "title": "The team matches the launch post: 9 engineers, 3 from Brex.",
+       "stated": {
+        "key": "Room, staff list",
+        "value": "9 engineers",
+        "source": {
+         "uri": "02_financials/financial_model.xlsx",
+         "locator": "Staff!A2:C11",
+         "quote": "9 engineers"
+        }
+       },
+       "found": {
+        "key": "Outside, Launch YC post",
+        "value": "9 engineers",
+        "source": {
+         "public": "engineers",
+         "uri": "Launch YC post",
+         "locator": "public record"
+        }
+       },
+       "others": [],
+       "strip": {
+        "min": 8,
+        "max": 10,
+        "band": 9,
+        "ticks": [
+         {
+          "v": 9,
+          "label": "Staff list and launch post 9",
+          "pos": "above",
+          "out": false
+         }
+        ],
+        "unit": "count"
+       },
+       "ask": null,
+       "relative_gap": null,
+       "basis": "agreement"
       }
      ],
      "red": [
       {
        "kind": "red",
-       "basis": "disagreement",
-       "piece": "traction_and_revenue",
-       "claim_id": "tr-1",
-       "title": "The deck counts free design partners as paying teams.",
+       "piece": "legal_and_cap_table",
+       "claim_id": "lc-2",
+       "title": "The cap table counts an $8.0M seed. The signed SAFEs add to $5.25M, and no Form D is on file.",
        "stated": {
-        "key": "Stated, deck slide 4",
-        "value": "50",
+        "key": "Stated, cap table",
+        "value": "$8,000,000",
         "out": true,
         "source": {
-         "uri": "01_pitch/pitch_deck.pdf",
-         "locator": "slide 4",
-         "quote": "50 paying teams"
+         "uri": "05_legal/cap_table.xlsx",
+         "locator": "Seed!F24",
+         "quote": "8000000"
         }
        },
        "found": {
-        "key": "Found, workspace file",
-        "value": "18",
+        "key": "Found, signed SAFEs",
+        "value": "$5,250,000",
         "source": {
-         "uri": "03_metrics/workspaces_by_plan.csv",
-         "locator": "2026-09, plan column",
-         "quote": "Free: 32"
+         "uri": "05_legal/safe_schedule.pdf",
+         "locator": "page 2, Signed total",
+         "quote": "$5,250,000"
         }
        },
-       "others": [],
+       "others": [
+        {
+         "key": "Also SEC EDGAR",
+         "value": "0 Form D filings",
+         "source": {
+          "public": "formd_none",
+          "uri": "SEC EDGAR",
+          "locator": "public record"
+         }
+        },
+        {
+         "key": "Also the press, 2026-04-08",
+         "value": "still raising",
+         "source": {
+          "public": "still_raising",
+          "uri": "SiliconANGLE",
+          "locator": "public record"
+         }
+        }
+       ],
        "strip": {
-        "min": 10,
-        "max": 60,
-        "band": 18,
+        "min": 4500000,
+        "max": 9000000,
+        "band": 5250000,
         "ticks": [
          {
-          "v": 50,
-          "label": "Deck 50",
+          "v": 8000000,
+          "label": "Cap table $8.0M",
           "pos": "above",
           "out": true
          }
         ],
-        "unit": "count"
+        "unit": "usd"
        },
-       "ask": "The deck says 50 paying teams and the workspace file shows 18. Which number do you use, and when do the others convert?",
-       "relative_gap": 1.7777777777777777
+       "ask": "The cap table counts $8,000,000. The signed SAFEs add to $5,250,000. Who are the 9 unsigned commitments, when do they sign, and was a Form D filed after the first sale on 2026-02-17, under what name?",
+       "relative_gap": 0.5238095238095238,
+       "basis": "disagreement"
+      },
+      {
+       "kind": "red",
+       "piece": "unit_economics",
+       "claim_id": "ue-3",
+       "title": "Gross margin counts cloud credits as free.",
+       "stated": {
+        "key": "Stated, deck slide 7",
+        "value": "65%",
+        "out": true,
+        "source": {
+         "uri": "01_pitch/pitch_deck.pdf",
+         "locator": "slide 7",
+         "quote": "65% gross margin"
+        }
+       },
+       "found": {
+        "key": "Found, cloud bill at full price",
+        "value": "49.0%",
+        "source": {
+         "uri": "03_metrics/cloud_costs_by_month.csv",
+         "locator": "2026-09 row, credits column",
+         "quote": "-2900"
+        }
+       },
+       "others": [
+        {
+         "key": "Also the model",
+         "value": "64.7%",
+         "source": {
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "P&L!J24",
+          "quote": "0.6474"
+         }
+        }
+       ],
+       "strip": {
+        "min": 40,
+        "max": 70,
+        "band": 48.96626768226333,
+        "ticks": [
+         {
+          "v": 65.0,
+          "label": "Deck 65%",
+          "pos": "above",
+          "out": true
+         },
+         {
+          "v": 64.74428726877039,
+          "label": "Model 64.7%",
+          "pos": "below",
+          "out": true
+         }
+        ],
+        "unit": "percent"
+       },
+       "ask": "Cloud credits paid $2,900 of September's $6,900 cloud bill, and they expire on 2027-03-31. What is gross margin at full price?",
+       "relative_gap": 0.3274444444444444,
+       "basis": "disagreement"
+      },
+      {
+       "kind": "red",
+       "piece": "traction_and_revenue",
+       "claim_id": "tr-3",
+       "title": "ARR counts a one-time log backfill as recurring revenue.",
+       "stated": {
+        "key": "Stated, deck slide 5",
+        "value": "$221K",
+        "out": true,
+        "source": {
+         "uri": "01_pitch/pitch_deck.pdf",
+         "locator": "slide 5",
+         "quote": "$221K ARR"
+        }
+       },
+       "found": {
+        "key": "Found, customer file",
+        "value": "$174,960",
+        "source": {
+         "uri": "03_metrics/customer_mrr_by_month.csv",
+         "locator": "2026-09 rows, line is not Backfill overage",
+         "quote": "14580"
+        }
+       },
+       "others": [
+        {
+         "key": "Also the model",
+         "value": "$220,560",
+         "source": {
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "Revenue!J30",
+          "quote": "220560"
+         }
+        }
+       ],
+       "strip": {
+        "min": 160000,
+        "max": 240000,
+        "band": 174960.0,
+        "ticks": [
+         {
+          "v": 221000.0,
+          "label": "Deck $221K",
+          "pos": "above",
+          "out": true
+         },
+         {
+          "v": 220560.0,
+          "label": "Model $220,560",
+          "pos": "below",
+          "out": true
+         }
+        ],
+        "unit": "usd"
+       },
+       "ask": "September includes $3,800 for a one-time backfill of 38,000 GB. Can you show ARR without it, and how often do backfills recur?",
+       "relative_gap": 0.263145861911294,
+       "basis": "disagreement"
+      },
+      {
+       "kind": "red",
+       "piece": "burn_and_runway",
+       "claim_id": "bu-2",
+       "title": "Runway leaves 2 of the 6 planned hires out of the burn.",
+       "stated": {
+        "key": "Stated, deck slide 11",
+        "value": "16 months",
+        "out": true,
+        "source": {
+         "uri": "01_pitch/pitch_deck.pdf",
+         "locator": "slide 11",
+         "quote": "16 months of runway"
+        }
+       },
+       "found": {
+        "key": "Found, hiring plan",
+        "value": "14.5 months",
+        "source": {
+         "uri": "06_team/hiring_plan.csv",
+         "locator": "rows H01 to H06",
+         "quote": "6 hires"
+        }
+       },
+       "others": [
+        {
+         "key": "Also the model",
+         "value": "15.9 months",
+         "source": {
+          "uri": "02_financials/financial_model.xlsx",
+          "locator": "Assumptions!C9",
+          "quote": "15.94"
+         }
+        }
+       ],
+       "strip": {
+        "min": 14,
+        "max": 17,
+        "band": 14.450511945392492,
+        "ticks": [
+         {
+          "v": 16,
+          "label": "Deck 16 mo",
+          "pos": "above",
+          "out": true
+         },
+         {
+          "v": 15.941176470588236,
+          "label": "Model 15.9 mo",
+          "pos": "below",
+          "out": true
+         }
+        ],
+        "unit": "months"
+       },
+       "ask": "The model's burn carries 4 of the 6 hires in the hiring plan. What is runway with the full plan, and which hires would you hold?",
+       "relative_gap": 0.10722720831365136,
+       "basis": "disagreement"
       }
      ]
     },
@@ -6428,97 +6850,125 @@ window.DATA = {
       "name": "traction_and_revenue",
       "label": "Traction and revenue",
       "verdict": "looking_weak",
-      "reason": "The deck says 50 paying teams. The workspace file shows 18 paying and 32 free design partners.",
-      "agree": 0,
-      "disagree": 1,
+      "reason": "Rebuilt from the customer file, recurring MRR is $14,580, so ARR is $174,960. The $3,800 difference is a one-time backfill: 38,000 GB of old logs at $0.10 per GB, billed once in September and counted as monthly revenue.",
+      "agree": 2,
+      "disagree": 4,
       "claim_ids": [
        "tr-1",
-       "tr-2"
+       "tr-2",
+       "tr-3",
+       "tr-4",
+       "tr-5"
       ]
      },
      {
       "name": "retention",
       "label": "Retention",
-      "verdict": "not_enough_in_the_room",
-      "reason": "Not in the room: a cohort export.",
-      "agree": 0,
+      "verdict": "looking_strong",
+      "reason": "The 18 teams paying in June paid $4,650 then and $5,700 in September: net revenue retention of 122.6%.",
+      "agree": 2,
       "disagree": 0,
-      "claim_ids": []
+      "claim_ids": [
+       "re-1",
+       "re-2",
+       "re-3"
+      ]
      },
      {
       "name": "burn_and_runway",
       "label": "Burn and runway",
-      "verdict": "not_enough_in_the_room",
-      "reason": "Only the model states cash and burn. No bank statements are in the room.",
-      "agree": 0,
-      "disagree": 0,
-      "claim_ids": []
+      "verdict": "looking_weak",
+      "reason": "The model's burn carries 4 of the 6 hires in the hiring plan. With all 6, runway is 14.5 months.",
+      "agree": 2,
+      "disagree": 2,
+      "claim_ids": [
+       "bu-1",
+       "bu-2",
+       "bu-3"
+      ]
      },
      {
       "name": "unit_economics",
       "label": "Unit economics",
-      "verdict": "not_enough_in_the_room",
-      "reason": "Not in the room: storage and AI cost per customer.",
-      "agree": 0,
-      "disagree": 0,
-      "claim_ids": []
+      "verdict": "looking_weak",
+      "reason": "Cloud credits paid $2,900 of September's $6,900 cloud bill. At full price, gross margin is 49.0%. $21,400 of credits remain, and they expire on 2027-03-31.",
+      "agree": 1,
+      "disagree": 3,
+      "claim_ids": [
+       "ue-1",
+       "ue-2",
+       "ue-3",
+       "ue-4"
+      ]
      },
      {
       "name": "customers",
       "label": "Customers",
-      "verdict": "not_enough_in_the_room",
-      "reason": "Not in the room: customer contracts.",
-      "agree": 0,
+      "verdict": "mixed",
+      "reason": "The order form backs the customer file, but one contract, Corvane Systems, is 30.9% of recurring MRR.",
+      "agree": 2,
       "disagree": 0,
-      "claim_ids": []
+      "claim_ids": [
+       "cu-1",
+       "cu-2"
+      ]
      },
      {
       "name": "market",
       "label": "Market",
       "verdict": "not_enough_in_the_room",
-      "reason": "Only the deck sizes the market.",
+      "reason": "The deck sizes the market at $1,440,000,000: 120,000 engineering teams at the Growth plan's $12,000 a year. Only the deck states it.",
       "agree": 0,
       "disagree": 0,
-      "claim_ids": []
+      "claim_ids": [
+       "ma-1"
+      ]
      },
      {
       "name": "team",
       "label": "Team",
       "verdict": "looking_strong",
-      "reason": "Staff today: 10 in the model, the same as the YC page.",
+      "reason": "9 of the 10 are engineers and 3 came from Brex, as the launch post says.",
       "agree": 2,
       "disagree": 0,
       "claim_ids": [
-       "te-1"
+       "te-1",
+       "te-2"
       ]
      },
      {
       "name": "the_pitch_itself",
       "label": "The pitch itself",
-      "verdict": "not_enough_in_the_room",
-      "reason": "Only the deck states the raise.",
-      "agree": 0,
-      "disagree": 0,
-      "claim_ids": []
+      "verdict": "mixed",
+      "reason": "The deck and the model agree on an $8.0M seed at a $40.0M cap. The deck calls it closed; $2,750,000 is unsigned.",
+      "agree": 1,
+      "disagree": 1,
+      "claim_ids": [
+       "pi-1",
+       "pi-2"
+      ]
      },
      {
       "name": "legal_and_cap_table",
       "label": "Legal and cap table",
-      "verdict": "looking_strong",
-      "reason": "The cap table's seed total is $8,000,000, the amount in the company's post.",
-      "agree": 2,
-      "disagree": 0,
+      "verdict": "looking_weak",
+      "reason": "The signed SAFEs add to $5,250,000 from 66 holders. The cap table counts $2,750,000 more from 9 commitments that have no signed SAFE.",
+      "agree": 1,
+      "disagree": 2,
       "claim_ids": [
-       "lc-1"
+       "lc-2",
+       "lc-3",
+       "lc-1",
+       "lc-4"
       ]
      },
      {
       "name": "outside_world",
       "label": "Outside world",
-      "verdict": "looking_strong",
-      "reason": "The model's prices match the public pricing page.",
-      "agree": 2,
-      "disagree": 0,
+      "verdict": "mixed",
+      "reason": "Four public facts check out against the room: the prices, the team, the launch post's usage and the design partners. Two do not: no Form D is on EDGAR, and in April the company said it was still raising.",
+      "agree": 3,
+      "disagree": 2,
       "claim_ids": [
        "ow-1"
       ]
@@ -6528,20 +6978,70 @@ window.DATA = {
      "tr-1": {
       "id": "tr-1",
       "piece": "traction_and_revenue",
-      "text": "The deck says 50 paying teams. The workspace file shows 18 paying and 32 free design partners.",
-      "value": 18,
-      "display": "18",
-      "confidence": "computed",
+      "text": "The deck states ARR of $221K.",
+      "value": 221000.0,
+      "display": "$221K",
+      "confidence": "quoted",
       "sources": [
        {
         "uri": "01_pitch/pitch_deck.pdf",
-        "locator": "slide 4",
-        "quote": "50 paying teams"
+        "locator": "slide 5",
+        "quote": "$221K ARR"
+       }
+      ],
+      "mark": "contradicted",
+      "severity": "info",
+      "agree": [
+       {
+        "uri": "02_financials/financial_model.xlsx",
+        "locator": "Revenue!J30",
+        "quote": "220560"
+       }
+      ],
+      "disagree": [
+       {
+        "uri": "03_metrics/customer_mrr_by_month.csv",
+        "locator": "2026-09 rows, line column",
+        "quote": "Backfill overage"
+       }
+      ]
+     },
+     "tr-2": {
+      "id": "tr-2",
+      "piece": "traction_and_revenue",
+      "text": "The model's ARR is $220,560: twelve times September's MRR of $18,380.",
+      "value": 220560.0,
+      "display": "$220,560",
+      "confidence": "computed",
+      "sources": [
+       {
+        "uri": "02_financials/financial_model.xlsx",
+        "locator": "Revenue!J30",
+        "quote": "220560"
+       }
+      ],
+      "mark": "contradicted",
+      "severity": "info",
+      "agree": [],
+      "disagree": []
+     },
+     "tr-3": {
+      "id": "tr-3",
+      "piece": "traction_and_revenue",
+      "text": "Rebuilt from the customer file, recurring MRR is $14,580, so ARR is $174,960. The $3,800 difference is a one-time backfill: 38,000 GB of old logs at $0.10 per GB, billed once in September and counted as monthly revenue.",
+      "value": 174960.0,
+      "display": "$174,960",
+      "confidence": "computed",
+      "sources": [
+       {
+        "uri": "03_metrics/customer_mrr_by_month.csv",
+        "locator": "2026-09 rows, line is not Backfill overage",
+        "quote": "14580"
        },
        {
-        "uri": "03_metrics/workspaces_by_plan.csv",
-        "locator": "2026-09, plan column",
-        "quote": "Free: 32"
+        "uri": "02_financials/monthly_statements.xlsx",
+        "locator": "Invoices!row 88",
+        "quote": "Backfill overage, one-time, 3800"
        }
       ],
       "mark": "contradicted",
@@ -6549,18 +7049,117 @@ window.DATA = {
       "agree": [],
       "disagree": []
      },
-     "tr-2": {
-      "id": "tr-2",
+     "tr-4": {
+      "id": "tr-4",
       "piece": "traction_and_revenue",
-      "text": "September MRR from the paying teams is $5,100, so ARR is $61,200.",
-      "value": 61200,
-      "display": "$61,200",
+      "text": "The deck says all 50 design partners are on paid plans. The workspace file shows 21 of them paying and 29 still free.",
+      "value": 21,
+      "display": "21",
       "confidence": "computed",
       "sources": [
        {
+        "uri": "01_pitch/pitch_deck.pdf",
+        "locator": "slide 4",
+        "quote": "50 design partners on paid plans"
+       },
+       {
         "uri": "03_metrics/workspaces_by_plan.csv",
-        "locator": "2026-09 rows",
-        "quote": "5100"
+        "locator": "2026-09, design_partner = yes, plan column",
+        "quote": "Free: 29"
+       }
+      ],
+      "mark": "contradicted",
+      "severity": "flag",
+      "agree": [],
+      "disagree": []
+     },
+     "tr-5": {
+      "id": "tr-5",
+      "piece": "traction_and_revenue",
+      "text": "The metrics file's May row matches the launch post: 35 teams onboarded, 8,000 investigations, 2 TB of logs.",
+      "value": 35,
+      "display": "35",
+      "confidence": "quoted",
+      "sources": [
+       {
+        "uri": "03_metrics/monthly_metrics.csv",
+        "locator": "2026-05 row",
+        "quote": "35,8000,2000,2"
+       }
+      ],
+      "mark": "corroborated",
+      "severity": "info",
+      "agree": [
+       {
+        "public": "usage",
+        "uri": "Launch YC post",
+        "locator": "public record"
+       }
+      ],
+      "disagree": []
+     },
+     "re-1": {
+      "id": "re-1",
+      "piece": "retention",
+      "text": "The 18 teams paying in June paid $4,650 then and $5,700 in September: net revenue retention of 122.6%.",
+      "value": 1.2258064516129032,
+      "display": "122.6%",
+      "confidence": "computed",
+      "sources": [
+       {
+        "uri": "03_metrics/customer_mrr_by_month.csv",
+        "locator": "teams paying in 2026-06, their 2026-06 and 2026-09 rows",
+        "quote": "4650,5700"
+       }
+      ],
+      "mark": "corroborated",
+      "severity": "info",
+      "agree": [
+       {
+        "uri": "01_pitch/pitch_deck.pdf",
+        "locator": "slide 6",
+        "quote": "Net revenue retention above 120%"
+       }
+      ],
+      "disagree": []
+     },
+     "re-2": {
+      "id": "re-2",
+      "piece": "retention",
+      "text": "The deck states net revenue retention above 120%.",
+      "value": 1.2,
+      "display": "above 120%",
+      "confidence": "quoted",
+      "sources": [
+       {
+        "uri": "01_pitch/pitch_deck.pdf",
+        "locator": "slide 6",
+        "quote": "Net revenue retention above 120%"
+       }
+      ],
+      "mark": "corroborated",
+      "severity": "info",
+      "agree": [
+       {
+        "uri": "03_metrics/customer_mrr_by_month.csv",
+        "locator": "teams paying in 2026-06",
+        "quote": "5700"
+       }
+      ],
+      "disagree": []
+     },
+     "re-3": {
+      "id": "re-3",
+      "piece": "retention",
+      "text": "1 of the 18 June teams left by September: monthly churn of 1.9%. Three months is a short record.",
+      "value": 0.018872447186110586,
+      "display": "1.9%",
+      "confidence": "computed",
+      "sources": [
+       {
+        "uri": "03_metrics/customer_mrr_by_month.csv",
+        "locator": "teams paying in 2026-06, 2026-09 rows",
+        "quote": "1 with no row"
        }
       ],
       "mark": null,
@@ -6568,35 +7167,150 @@ window.DATA = {
       "agree": [],
       "disagree": []
      },
-     "lc-1": {
-      "id": "lc-1",
-      "piece": "legal_and_cap_table",
-      "text": "The cap table's seed total is $8,000,000, the amount in the company's post.",
-      "value": 8000000,
-      "display": "$8,000,000",
+     "bu-1": {
+      "id": "bu-1",
+      "piece": "burn_and_runway",
+      "text": "The deck and the model state 16 months of runway on $4,065,000 of cash and $255,000 of monthly burn.",
+      "value": 16,
+      "display": "16 months",
       "confidence": "quoted",
       "sources": [
        {
-        "uri": "05_legal/cap_table.xlsx",
-        "locator": "Seed!F14",
-        "quote": "8000000"
+        "uri": "01_pitch/pitch_deck.pdf",
+        "locator": "slide 11",
+        "quote": "16 months of runway"
+       },
+       {
+        "uri": "02_financials/financial_model.xlsx",
+        "locator": "Assumptions!C9",
+        "quote": "15.94"
        }
       ],
-      "mark": "corroborated",
+      "mark": "contradicted",
       "severity": "info",
       "agree": [
        {
-        "public": "seed",
-        "uri": "Sazabi blog",
-        "locator": "public record"
+        "uri": "02_financials/bank_statements_2026.pdf",
+        "locator": "2026-09-30 closing balance",
+        "quote": "$4,065,000"
        }
       ],
       "disagree": []
      },
-     "ow-1": {
-      "id": "ow-1",
-      "piece": "outside_world",
-      "text": "The model's prices match the public pricing page.",
+     "bu-2": {
+      "id": "bu-2",
+      "piece": "burn_and_runway",
+      "text": "The model's burn carries 4 of the 6 hires in the hiring plan. With all 6, runway is 14.5 months.",
+      "value": 14.450511945392492,
+      "display": "14.5 months",
+      "confidence": "computed",
+      "sources": [
+       {
+        "uri": "06_team/hiring_plan.csv",
+        "locator": "rows H01 to H06",
+        "quote": "6 hires"
+       },
+       {
+        "uri": "02_financials/financial_model.xlsx",
+        "locator": "Assumptions!C12",
+        "quote": "HIRES_IN_MODEL = 4"
+       }
+      ],
+      "mark": "contradicted",
+      "severity": "flag",
+      "agree": [],
+      "disagree": []
+     },
+     "bu-3": {
+      "id": "bu-3",
+      "piece": "burn_and_runway",
+      "text": "The bank statements close September at $4,065,000, the cash the model uses.",
+      "value": 4065000,
+      "display": "$4,065,000",
+      "confidence": "quoted",
+      "sources": [
+       {
+        "uri": "02_financials/bank_statements_2026.pdf",
+        "locator": "2026-09-30 closing balance",
+        "quote": "$4,065,000"
+       },
+       {
+        "uri": "02_financials/financial_model.xlsx",
+        "locator": "Assumptions!C7",
+        "quote": "4065000"
+       }
+      ],
+      "mark": "corroborated",
+      "severity": "info",
+      "agree": [],
+      "disagree": []
+     },
+     "ue-1": {
+      "id": "ue-1",
+      "piece": "unit_economics",
+      "text": "The deck states gross margin of 65%.",
+      "value": 0.65,
+      "display": "65%",
+      "confidence": "quoted",
+      "sources": [
+       {
+        "uri": "01_pitch/pitch_deck.pdf",
+        "locator": "slide 7",
+        "quote": "65% gross margin"
+       }
+      ],
+      "mark": "contradicted",
+      "severity": "info",
+      "agree": [],
+      "disagree": []
+     },
+     "ue-2": {
+      "id": "ue-2",
+      "piece": "unit_economics",
+      "text": "The model's gross margin for 2026-09 is 64.7%: log storage and compute net of cloud credits, plus model inference.",
+      "value": 0.647442872687704,
+      "display": "64.7%",
+      "confidence": "computed",
+      "sources": [
+       {
+        "uri": "02_financials/financial_model.xlsx",
+        "locator": "P&L!J24",
+        "quote": "0.6474"
+       }
+      ],
+      "mark": "contradicted",
+      "severity": "info",
+      "agree": [],
+      "disagree": []
+     },
+     "ue-3": {
+      "id": "ue-3",
+      "piece": "unit_economics",
+      "text": "Cloud credits paid $2,900 of September's $6,900 cloud bill. At full price, gross margin is 49.0%. $21,400 of credits remain, and they expire on 2027-03-31.",
+      "value": 0.4896626768226333,
+      "display": "49.0%",
+      "confidence": "computed",
+      "sources": [
+       {
+        "uri": "03_metrics/cloud_costs_by_month.csv",
+        "locator": "2026-09 row, credits column",
+        "quote": "-2900"
+       },
+       {
+        "uri": "02_financials/financial_model.xlsx",
+        "locator": "P&L!J18",
+        "quote": "4000"
+       }
+      ],
+      "mark": "contradicted",
+      "severity": "flag",
+      "agree": [],
+      "disagree": []
+     },
+     "ue-4": {
+      "id": "ue-4",
+      "piece": "unit_economics",
+      "text": "The model's prices are Hobby $50, Startup $200 and Growth $1,000 every 30 days, as on the public pricing page.",
       "value": 1000,
       "display": "$1,000",
       "confidence": "quoted",
@@ -6616,6 +7330,75 @@ window.DATA = {
         "locator": "public record"
        }
       ],
+      "disagree": []
+     },
+     "cu-1": {
+      "id": "cu-1",
+      "piece": "customers",
+      "text": "The largest customer, Corvane Systems, pays $4,500 a month: 30.9% of recurring MRR.",
+      "value": 0.30864197530864196,
+      "display": "30.9%",
+      "confidence": "computed",
+      "sources": [
+       {
+        "uri": "03_metrics/customer_mrr_by_month.csv",
+        "locator": "2026-09, largest row",
+        "quote": "Corvane Systems,4500"
+       }
+      ],
+      "mark": "corroborated",
+      "severity": "info",
+      "agree": [
+       {
+        "uri": "04_customers/order_form_corvane_systems.pdf",
+        "locator": "page 1, Fees",
+        "quote": "$4,500 a month"
+       }
+      ],
+      "disagree": []
+     },
+     "cu-2": {
+      "id": "cu-2",
+      "piece": "customers",
+      "text": "32 teams pay in September, out of 118 workspaces. 21 of the 50 design partners are among them.",
+      "value": 32,
+      "display": "32",
+      "confidence": "computed",
+      "sources": [
+       {
+        "uri": "03_metrics/workspaces_by_plan.csv",
+        "locator": "2026-09, plan column",
+        "quote": "paying: 32"
+       }
+      ],
+      "mark": "corroborated",
+      "severity": "info",
+      "agree": [
+       {
+        "public": "design_partners",
+        "uri": "Sazabi blog",
+        "locator": "public record"
+       }
+      ],
+      "disagree": []
+     },
+     "ma-1": {
+      "id": "ma-1",
+      "piece": "market",
+      "text": "The deck sizes the market at $1,440,000,000: 120,000 engineering teams at the Growth plan's $12,000 a year. Only the deck states it.",
+      "value": 1440000000,
+      "display": "$1,440,000,000",
+      "confidence": "computed",
+      "sources": [
+       {
+        "uri": "01_pitch/pitch_deck.pdf",
+        "locator": "slide 9",
+        "quote": "120,000 engineering teams"
+       }
+      ],
+      "mark": null,
+      "severity": "info",
+      "agree": [],
       "disagree": []
      },
      "te-1": {
@@ -6642,53 +7425,395 @@ window.DATA = {
        }
       ],
       "disagree": []
+     },
+     "te-2": {
+      "id": "te-2",
+      "piece": "team",
+      "text": "9 of the 10 are engineers and 3 came from Brex, as the launch post says.",
+      "value": 9,
+      "display": "9",
+      "confidence": "quoted",
+      "sources": [
+       {
+        "uri": "02_financials/financial_model.xlsx",
+        "locator": "Staff!A2:C11",
+        "quote": "9 engineers"
+       },
+       {
+        "uri": "06_team/founder_bio_sherwood_callaway.pdf",
+        "locator": "page 1",
+        "quote": "3 early Brex engineers"
+       }
+      ],
+      "mark": "corroborated",
+      "severity": "info",
+      "agree": [
+       {
+        "public": "engineers",
+        "uri": "Launch YC post",
+        "locator": "public record"
+       }
+      ],
+      "disagree": []
+     },
+     "pi-1": {
+      "id": "pi-1",
+      "piece": "the_pitch_itself",
+      "text": "The seed: $8,000,000 on SAFEs with a $40,000,000 post-money cap, so the seed owns 20.00%.",
+      "value": 8000000,
+      "display": "$8,000,000",
+      "confidence": "computed",
+      "sources": [
+       {
+        "uri": "01_pitch/pitch_deck.pdf",
+        "locator": "slide 12",
+        "quote": "$8.0M seed, $40.0M post-money cap"
+       },
+       {
+        "uri": "02_financials/financial_model.xlsx",
+        "locator": "Assumptions!C21",
+        "quote": "8000000"
+       }
+      ],
+      "mark": "corroborated",
+      "severity": "info",
+      "agree": [],
+      "disagree": []
+     },
+     "pi-2": {
+      "id": "pi-2",
+      "piece": "the_pitch_itself",
+      "text": "The deck calls the round closed. The SAFE schedule shows $2,750,000 of it still without a signed SAFE.",
+      "value": 2750000,
+      "display": "$2,750,000",
+      "confidence": "computed",
+      "sources": [
+       {
+        "uri": "01_pitch/pitch_deck.pdf",
+        "locator": "slide 12",
+        "quote": "Seed closed"
+       },
+       {
+        "uri": "05_legal/safe_schedule.pdf",
+        "locator": "page 3, Commitments",
+        "quote": "$2,750,000"
+       }
+      ],
+      "mark": "contradicted",
+      "severity": "info",
+      "agree": [],
+      "disagree": []
+     },
+     "lc-1": {
+      "id": "lc-1",
+      "piece": "legal_and_cap_table",
+      "text": "The cap table's seed total is $8,000,000, the amount in the company's post.",
+      "value": 8000000,
+      "display": "$8,000,000",
+      "confidence": "quoted",
+      "sources": [
+       {
+        "uri": "05_legal/cap_table.xlsx",
+        "locator": "Seed!F24",
+        "quote": "8000000"
+       }
+      ],
+      "mark": "corroborated",
+      "severity": "info",
+      "agree": [
+       {
+        "public": "seed",
+        "uri": "Sazabi blog",
+        "locator": "public record"
+       }
+      ],
+      "disagree": []
+     },
+     "lc-2": {
+      "id": "lc-2",
+      "piece": "legal_and_cap_table",
+      "text": "The signed SAFEs add to $5,250,000 from 66 holders. The cap table counts $2,750,000 more from 9 commitments that have no signed SAFE.",
+      "value": 5250000,
+      "display": "$5,250,000",
+      "confidence": "computed",
+      "sources": [
+       {
+        "uri": "05_legal/cap_table.xlsx",
+        "locator": "Seed!F24",
+        "quote": "8000000"
+       },
+       {
+        "uri": "05_legal/safe_schedule.pdf",
+        "locator": "page 2, Signed total",
+        "quote": "$5,250,000"
+       }
+      ],
+      "mark": "contradicted",
+      "severity": "flag",
+      "agree": [],
+      "disagree": [
+       {
+        "public": "still_raising",
+        "uri": "SiliconANGLE, April 2026",
+        "locator": "public record"
+       }
+      ]
+     },
+     "lc-3": {
+      "id": "lc-3",
+      "piece": "legal_and_cap_table",
+      "text": "The first SAFE was funded on 2026-02-17, so a Form D was due by 2026-03-04. EDGAR has 0 Form D filings for Sazabi.",
+      "value": 0,
+      "display": "0",
+      "confidence": "computed",
+      "sources": [
+       {
+        "uri": "05_legal/safe_schedule.pdf",
+        "locator": "page 1, first row",
+        "quote": "Funded 2026-02-17"
+       }
+      ],
+      "mark": "contradicted",
+      "severity": "info",
+      "agree": [],
+      "disagree": [
+       {
+        "public": "formd_none",
+        "uri": "SEC EDGAR",
+        "locator": "public record"
+       }
+      ]
+     },
+     "lc-4": {
+      "id": "lc-4",
+      "piece": "legal_and_cap_table",
+      "text": "The claims statement says there are no lawsuits, threatened claims or regulator contact.",
+      "value": null,
+      "display": "none",
+      "confidence": "quoted",
+      "sources": [
+       {
+        "uri": "05_legal/claims_statement.pdf",
+        "locator": "page 1",
+        "quote": "There are none."
+       }
+      ],
+      "mark": null,
+      "severity": "info",
+      "agree": [],
+      "disagree": []
+     },
+     "ow-1": {
+      "id": "ow-1",
+      "piece": "outside_world",
+      "text": "Four public facts check out against the room: the prices, the team, the launch post's usage and the design partners. Two do not: no Form D is on EDGAR, and in April the company said it was still raising.",
+      "value": 4,
+      "display": "4 of 6",
+      "confidence": "computed",
+      "sources": [
+       {
+        "uri": "02_financials/financial_model.xlsx",
+        "locator": "Pricing!B3:B5",
+        "quote": "prices"
+       },
+       {
+        "uri": "03_metrics/monthly_metrics.csv",
+        "locator": "2026-05 row",
+        "quote": "usage"
+       }
+      ],
+      "mark": "contradicted",
+      "severity": "info",
+      "agree": [
+       {
+        "public": "prices",
+        "uri": "sazabi.com/pricing",
+        "locator": "public record"
+       },
+       {
+        "public": "team",
+        "uri": "YC company page",
+        "locator": "public record"
+       },
+       {
+        "public": "usage",
+        "uri": "Launch YC post",
+        "locator": "public record"
+       }
+      ],
+      "disagree": [
+       {
+        "public": "formd_none",
+        "uri": "SEC EDGAR",
+        "locator": "public record"
+       },
+       {
+        "public": "still_raising",
+        "uri": "SiliconANGLE, April 2026",
+        "locator": "public record"
+       }
+      ]
      }
     },
     "drill": [
      {
-      "piece": "traction_and_revenue",
+      "piece": "legal_and_cap_table",
       "kind": "weak",
       "claim_ids": [
-       "tr-1",
-       "tr-2"
+       "lc-2",
+       "lc-3",
+       "lc-1",
+       "lc-4"
       ],
-      "panel": null,
+      "panel": {
+       "name": "the seed: cap table, signed SAFEs and SEC EDGAR",
+       "columns": [
+        "Figure",
+        "Cap table",
+        "Signed SAFEs",
+        "SEC EDGAR"
+       ],
+       "rows": [
+        [
+         "Seed total",
+         "$8,000,000",
+         "$5,250,000",
+         "no Form D"
+        ],
+        [
+         "Holders",
+         "75",
+         "66",
+         "no Form D"
+        ],
+        [
+         "Without a signed SAFE",
+         "$2,750,000",
+         "",
+         ""
+        ],
+        [
+         "First sale",
+         "",
+         "2026-02-17",
+         "Form D due by 2026-03-04"
+        ],
+        [
+         "Last SAFE signed",
+         "",
+         "2026-08-21",
+         ""
+        ]
+       ]
+      },
       "gaps": [
-       "Not in the room: monthly revenue by customer."
+       "Not in the room: a Form D, or the reason none was filed.",
+       "Not in the room: the pro forma cap table after the seed."
       ]
      },
      {
-      "piece": "legal_and_cap_table",
+      "piece": "retention",
       "kind": "strong",
       "claim_ids": [
-       "lc-1"
+       "re-1",
+       "re-2",
+       "re-3"
       ],
-      "panel": null,
-      "gaps": []
+      "panel": {
+       "name": "the June paying teams, June against September",
+       "columns": [
+        "Plan",
+        "Teams in June",
+        "MRR in June",
+        "Teams in September",
+        "MRR in September"
+       ],
+       "rows": [
+        [
+         "Hobby",
+         "9",
+         "$450",
+         "6",
+         "$300"
+        ],
+        [
+         "Startup",
+         "6",
+         "$1,200",
+         "7",
+         "$1,400"
+        ],
+        [
+         "Growth",
+         "3",
+         "$3,000",
+         "4",
+         "$4,000"
+        ],
+        [
+         "All",
+         "18",
+         "$4,650",
+         "17",
+         "$5,700"
+        ]
+       ]
+      },
+      "gaps": [
+       "Not in the room: a cohort export. The customer file starts at open beta in June, so retention covers three months."
+      ]
      }
     ],
     "holds": {
      "C02": [
-      "03_metrics/workspaces_by_plan.csv"
+      "03_metrics/monthly_metrics.csv"
+     ],
+     "C03": [
+      "03_metrics/customer_mrr_by_month.csv"
      ],
      "C19": [
       "02_financials/financial_model.xlsx"
      ],
-     "C72": [
-      "05_legal/cap_table.xlsx"
+     "C20": [
+      "02_financials/monthly_statements.xlsx",
+      "02_financials/bank_statements_2026.pdf"
+     ],
+     "C22": [
+      "06_team/hiring_plan.csv"
+     ],
+     "C23": [
+      "03_metrics/cloud_costs_by_month.csv"
+     ],
+     "C34": [
+      "04_customers/order_form_corvane_systems.pdf"
+     ],
+     "C47": [
+      "01_pitch/pitch_deck.pdf, slide 9"
+     ],
+     "C53": [
+      "06_team/founder_bio_sherwood_callaway.pdf"
+     ],
+     "C59": [
+      "00_welcome/cover_note_and_index.pdf"
      ],
      "C60": [
       "01_pitch/pitch_deck.pdf"
      ],
-     "C22": [
-      "06_team/hiring_plan.csv"
+     "C72": [
+      "05_legal/cap_table.xlsx"
+     ],
+     "C75": [
+      "05_legal/safe_schedule.pdf"
+     ],
+     "C80": [
+      "05_legal/claims_statement.pdf"
      ]
     },
     "prechecks": [
      {
       "pre": "prices",
       "status": "confirms",
-      "room": "The model's prices match.",
+      "room": "The model prices Hobby at $50, Startup at $200 and Growth at $1,000.",
       "source": {
        "uri": "02_financials/financial_model.xlsx",
        "locator": "Pricing!B3:B5",
@@ -6696,23 +7821,13 @@ window.DATA = {
       }
      },
      {
-      "pre": "seed",
+      "pre": "usage",
       "status": "confirms",
-      "room": "The cap table's seed total is $8,000,000.",
+      "room": "The metrics file's May row: 35 teams, 8,000 investigations, 2 TB of logs.",
       "source": {
-       "uri": "05_legal/cap_table.xlsx",
-       "locator": "Seed!F14",
-       "quote": "8000000"
-      }
-     },
-     {
-      "pre": "design_partners",
-      "status": "confirms",
-      "room": "The workspace file lists 50 design partners. 18 pay.",
-      "source": {
-       "uri": "03_metrics/workspaces_by_plan.csv",
-       "locator": "2026-09, plan column",
-       "quote": "Free: 32"
+       "uri": "03_metrics/monthly_metrics.csv",
+       "locator": "2026-05 row",
+       "quote": "35,8000,2000,2"
       }
      },
      {
@@ -6724,291 +7839,333 @@ window.DATA = {
        "locator": "Assumptions!C4",
        "quote": "STAFF_NOW = 10"
       }
+     },
+     {
+      "pre": "engineers",
+      "status": "confirms",
+      "room": "The staff list has 9 engineers, 3 of them from Brex.",
+      "source": {
+       "uri": "02_financials/financial_model.xlsx",
+       "locator": "Staff!A2:C11",
+       "quote": "9 engineers"
+      }
+     },
+     {
+      "pre": "still_raising",
+      "status": "confirms",
+      "room": "The SAFE schedule shows SAFEs signed from 2026-02-17 to 2026-08-21, and $2,750,000 still unsigned.",
+      "source": {
+       "uri": "05_legal/safe_schedule.pdf",
+       "locator": "page 3, Commitments",
+       "quote": "$2,750,000"
+      }
+     },
+     {
+      "pre": "design_partners",
+      "status": "answers",
+      "room": "The workspace file lists 50 design partners. 21 pay.",
+      "source": {
+       "uri": "03_metrics/workspaces_by_plan.csv",
+       "locator": "2026-09, design_partner = yes, plan column",
+       "quote": "Free: 29"
+      }
+     },
+     {
+      "pre": "seed",
+      "status": "differs",
+      "room": "The cap table counts $8,000,000, as the post says. The signed SAFEs add to $5,250,000.",
+      "source": {
+       "uri": "05_legal/safe_schedule.pdf",
+       "locator": "page 2, Signed total",
+       "quote": "$5,250,000"
+      }
+     },
+     {
+      "pre": "formd_none",
+      "status": "not settled",
+      "room": "The room holds no Form D. The first SAFE was funded on 2026-02-17, so one was due by 2026-03-04.",
+      "source": {
+       "uri": "05_legal/safe_schedule.pdf",
+       "locator": "page 1, first row",
+       "quote": "Funded 2026-02-17"
+      }
+     },
+     {
+      "pre": "hiring",
+      "status": "differs",
+      "room": "The hiring plan adds 6 people by month 6. Not a flag: a job board lags a plan.",
+      "source": {
+       "uri": "06_team/hiring_plan.csv",
+       "locator": "rows H01 to H06",
+       "quote": "6 hires"
+      }
+     },
+     {
+      "pre": "named_customers",
+      "status": "not settled",
+      "room": "No contract with Weave, Mastra or XMTP Labs is in the room. The room's customers are its own.",
+      "source": {
+       "uri": "03_metrics/customer_mrr_by_month.csv",
+       "locator": "customer column",
+       "quote": "no match"
+      }
      }
     ],
     "whatif": {
      "lines": [
       {
        "name": "Hobby plan",
-       "units": 6,
+       "units": 14,
        "price": 50
       },
       {
        "name": "Startup plan",
-       "units": 9,
+       "units": 11,
        "price": 200,
        "tweak": true
       },
       {
        "name": "Growth plan",
-       "units": 3,
+       "units": 6,
        "price": 1000
+      },
+      {
+       "name": "Enterprise contract",
+       "units": 1,
+       "price": 4500
+      },
+      {
+       "name": "Recurring usage over plan",
+       "units": 1,
+       "price": 1180.0
       }
      ],
      "pilot": null,
-     "company_arr": null,
-     "rebuilt_arr": 61200,
-     "churn": 0.03,
-     "cash": 6900000,
-     "base_burn": 380000,
-     "company_runway": null,
+     "company_arr": 221000.0,
+     "rebuilt_arr": 174960.0,
+     "churn": 0.018872447186110586,
+     "cash": 4065000,
+     "base_burn": 255000,
+     "company_runway": 16,
      "rebuilt_runway": 14.5,
      "extra_hires": [
       {
-       "start": 1,
-       "monthly_cost": 19000
-      },
-      {
-       "start": 2,
-       "monthly_cost": 19000
-      },
-      {
-       "start": 3,
-       "monthly_cost": 19000
-      },
-      {
-       "start": 4,
-       "monthly_cost": 19000
-      },
-      {
        "start": 5,
-       "monthly_cost": 19000
+       "monthly_cost": 21000
       },
       {
        "start": 6,
-       "monthly_cost": 19000
+       "monthly_cost": 17000
       }
      ],
-     "extra_count": 6
+     "extra_count": 2
     },
     "steer_examples": [
      {
-      "piece": "traction_and_revenue",
-      "sentence": "Ask which design partners convert to paid this quarter.",
+      "piece": "legal_and_cap_table",
+      "sentence": "Count the $2.8M of commitments: the co-leads confirmed them to us in writing.",
+      "kind": "figure",
+      "check_value": "$5,250,000",
+      "steer_value": "$8,000,000",
+      "label": "Seed signed"
+     },
+     {
+      "piece": "unit_economics",
+      "sentence": "Get the cloud invoices for July to September, with the credit balance and expiry.",
       "kind": "more",
-      "request": "Design partners expected to convert to paid this quarter"
+      "request": "Cloud invoices for July to September 2026, with the credit balance and expiry"
+     },
+     {
+      "piece": "traction_and_revenue",
+      "sentence": "The backfill was billed once. Leave it out of ARR and show usage on its own line.",
+      "kind": "rewrite",
+      "reworded": "Steered: the associate leaves the one-time backfill of $3,800 out of ARR, so ARR is $174,960. Recurring usage over plan, $1,180 a month, stays in."
      }
     ],
-    "memo_company": "Sazabi watches a team's production logs with AI, alerts on real problems and opens fixes. It raised a $8.0M seed, per its own post. In this synthetic room it asks for a $6.0M seed extension.",
+    "memo_company": "Sazabi watches a team's production logs with AI, investigates problems and opens fixes. Its own post announced an $8.0M seed co-led by J2 Ventures, Village Global and Y Combinator; EDGAR has no Form D for it. In this synthetic room the seed is $8.0M on SAFEs at a $40.0M post-money cap, $5.25M of it signed.",
     "states": {
      "partial": {
       "arrived": [
+       "00_welcome/cover_note_and_index.pdf",
        "01_pitch/pitch_deck.pdf",
-       "05_legal/cap_table.xlsx"
+       "02_financials/financial_model.xlsx",
+       "02_financials/monthly_statements.xlsx",
+       "03_metrics/monthly_metrics.csv",
+       "03_metrics/workspaces_by_plan.csv",
+       "05_legal/cap_table.xlsx",
+       "06_team/founder_bio_sherwood_callaway.pdf"
       ],
-      "files_total": 5,
+      "files_total": 15,
       "shown": [
-       "lc-1"
+       "bu-1",
+       "cu-2",
+       "lc-1",
+       "ma-1",
+       "ow-1",
+       "pi-1",
+       "re-2",
+       "te-1",
+       "te-2",
+       "tr-1",
+       "tr-2",
+       "tr-4",
+       "tr-5",
+       "ue-1",
+       "ue-2",
+       "ue-4"
       ],
       "flags": {
        "green": [
-        "lc-1"
+        "tr-5",
+        "ue-4",
+        "te-2"
        ],
-       "red": []
+       "red": [
+        "tr-4"
+       ]
       },
       "waiting": [
        {
-        "piece": "traction_and_revenue",
+        "piece": "retention",
         "files": [
-         "03_metrics/workspaces_by_plan.csv"
+         "03_metrics/customer_mrr_by_month.csv"
         ],
         "requests": [
-         "C02"
+         "C03"
         ],
-        "title": "Traction and revenue: the check runs when 03_metrics/workspaces_by_plan.csv arrives.",
-        "text": "Stated so far: 50. Tricorder rebuilds it from the file the founder has not sent yet."
+        "title": "Retention: the check runs when 03_metrics/customer_mrr_by_month.csv arrives.",
+        "text": "Stated so far: above 120%. Tricorder rebuilds it from the file the founder has not sent yet."
+       },
+       {
+        "piece": "legal_and_cap_table",
+        "files": [
+         "05_legal/safe_schedule.pdf"
+        ],
+        "requests": [
+         "C75"
+        ],
+        "title": "Legal and cap table: the check runs when 05_legal/safe_schedule.pdf arrives.",
+        "text": "Stated so far: $8,000,000. Tricorder rebuilds it from the file the founder has not sent yet."
+       },
+       {
+        "piece": "unit_economics",
+        "files": [
+         "03_metrics/cloud_costs_by_month.csv"
+        ],
+        "requests": [
+         "C23"
+        ],
+        "title": "Unit economics: the check runs when 03_metrics/cloud_costs_by_month.csv arrives.",
+        "text": "Stated so far: 65%. Tricorder rebuilds it from the file the founder has not sent yet."
+       },
+       {
+        "piece": "traction_and_revenue",
+        "files": [
+         "03_metrics/customer_mrr_by_month.csv"
+        ],
+        "requests": [
+         "C03"
+        ],
+        "title": "Traction and revenue: the check runs when 03_metrics/customer_mrr_by_month.csv arrives.",
+        "text": "Stated so far: $221K. Tricorder rebuilds it from the file the founder has not sent yet."
+       },
+       {
+        "piece": "burn_and_runway",
+        "files": [
+         "06_team/hiring_plan.csv"
+        ],
+        "requests": [
+         "C22"
+        ],
+        "title": "Burn and runway: the check runs when 06_team/hiring_plan.csv arrives.",
+        "text": "Stated so far: 16 months. Tricorder rebuilds it from the file the founder has not sent yet."
        }
       ],
-      "pieces": {
-       "traction_and_revenue": {
-        "verdict": "not_enough_in_the_room",
-        "reason": "Not enough yet. Waiting on 03_metrics/workspaces_by_plan.csv.",
-        "agree": 0,
-        "disagree": 0,
-        "waiting": [
-         "03_metrics/workspaces_by_plan.csv"
-        ]
-       },
-       "retention": {
-        "verdict": "not_enough_in_the_room",
-        "reason": "Not in the room: a cohort export.",
-        "agree": 0,
-        "disagree": 0,
-        "waiting": []
-       },
-       "burn_and_runway": {
-        "verdict": "not_enough_in_the_room",
-        "reason": "Only the model states cash and burn. No bank statements are in the room.",
-        "agree": 0,
-        "disagree": 0,
-        "waiting": []
-       },
-       "unit_economics": {
-        "verdict": "not_enough_in_the_room",
-        "reason": "Not in the room: storage and AI cost per customer.",
-        "agree": 0,
-        "disagree": 0,
-        "waiting": []
-       },
-       "customers": {
-        "verdict": "not_enough_in_the_room",
-        "reason": "Not in the room: customer contracts.",
-        "agree": 0,
-        "disagree": 0,
-        "waiting": []
-       },
-       "market": {
-        "verdict": "not_enough_in_the_room",
-        "reason": "Only the deck sizes the market.",
-        "agree": 0,
-        "disagree": 0,
-        "waiting": []
-       },
-       "team": {
-        "verdict": "not_enough_in_the_room",
-        "reason": "Not enough yet. Waiting on 02_financials/financial_model.xlsx.",
-        "agree": 0,
-        "disagree": 0,
-        "waiting": [
-         "02_financials/financial_model.xlsx"
-        ]
-       },
-       "the_pitch_itself": {
-        "verdict": "not_enough_in_the_room",
-        "reason": "Only the deck states the raise.",
-        "agree": 0,
-        "disagree": 0,
-        "waiting": []
-       },
-       "legal_and_cap_table": {
-        "verdict": "looking_strong",
-        "reason": "The cap table's seed total is $8,000,000, the amount in the company's post.",
-        "agree": 2,
-        "disagree": 0,
-        "waiting": []
-       },
-       "outside_world": {
-        "verdict": "not_enough_in_the_room",
-        "reason": "Not enough yet. Waiting on 02_financials/financial_model.xlsx.",
-        "agree": 0,
-        "disagree": 0,
-        "waiting": [
-         "02_financials/financial_model.xlsx"
-        ]
-       }
-      },
-      "prechecks": {
-       "0": "waiting",
-       "1": "confirms",
-       "2": "waiting",
-       "3": "waiting"
-      },
-      "answered": [
-       "C60",
-       "C72"
-      ],
-      "request_of": {
-       "03_metrics/workspaces_by_plan.csv": "C02",
-       "02_financials/financial_model.xlsx": "C19",
-       "05_legal/cap_table.xlsx": "C72",
-       "01_pitch/pitch_deck.pdf": "C60",
-       "06_team/hiring_plan.csv": "C22"
-      }
-     },
-     "full": {
-      "arrived": [
-       "01_pitch/pitch_deck.pdf",
-       "02_financials/financial_model.xlsx",
-       "03_metrics/workspaces_by_plan.csv",
-       "05_legal/cap_table.xlsx",
-       "06_team/hiring_plan.csv"
-      ],
-      "files_total": 5,
-      "shown": [
-       "lc-1",
-       "ow-1",
-       "te-1",
-       "tr-1",
-       "tr-2"
-      ],
-      "flags": {
-       "green": [
-        "lc-1"
-       ],
-       "red": [
-        "tr-1"
-       ]
-      },
-      "waiting": [],
       "pieces": {
        "traction_and_revenue": {
         "verdict": "looking_weak",
-        "reason": "The deck says 50 paying teams. The workspace file shows 18 paying and 32 free design partners.",
+        "reason": "The deck says all 50 design partners are on paid plans. The workspace file shows 21 of them paying and 29 still free.",
         "agree": 0,
-        "disagree": 1,
-        "waiting": []
+        "disagree": 3,
+        "waiting": [
+         "03_metrics/customer_mrr_by_month.csv"
+        ]
        },
        "retention": {
         "verdict": "not_enough_in_the_room",
-        "reason": "Not in the room: a cohort export.",
+        "reason": "Not enough yet. Waiting on 03_metrics/customer_mrr_by_month.csv.",
         "agree": 0,
         "disagree": 0,
-        "waiting": []
+        "waiting": [
+         "03_metrics/customer_mrr_by_month.csv"
+        ]
        },
        "burn_and_runway": {
         "verdict": "not_enough_in_the_room",
-        "reason": "Only the model states cash and burn. No bank statements are in the room.",
+        "reason": "Not enough yet. Waiting on 02_financials/bank_statements_2026.pdf, 06_team/hiring_plan.csv.",
         "agree": 0,
         "disagree": 0,
-        "waiting": []
+        "waiting": [
+         "02_financials/bank_statements_2026.pdf",
+         "06_team/hiring_plan.csv"
+        ]
        },
        "unit_economics": {
         "verdict": "not_enough_in_the_room",
-        "reason": "Not in the room: storage and AI cost per customer.",
+        "reason": "Not enough yet. Waiting on 03_metrics/cloud_costs_by_month.csv.",
         "agree": 0,
         "disagree": 0,
-        "waiting": []
+        "waiting": [
+         "03_metrics/cloud_costs_by_month.csv"
+        ]
        },
        "customers": {
         "verdict": "not_enough_in_the_room",
-        "reason": "Not in the room: customer contracts.",
+        "reason": "Not enough yet. Waiting on 03_metrics/customer_mrr_by_month.csv.",
         "agree": 0,
         "disagree": 0,
-        "waiting": []
+        "waiting": [
+         "03_metrics/customer_mrr_by_month.csv"
+        ]
        },
        "market": {
         "verdict": "not_enough_in_the_room",
-        "reason": "Only the deck sizes the market.",
+        "reason": "The deck sizes the market at $1,440,000,000: 120,000 engineering teams at the Growth plan's $12,000 a year. Only the deck states it.",
         "agree": 0,
         "disagree": 0,
         "waiting": []
        },
        "team": {
         "verdict": "looking_strong",
-        "reason": "Staff today: 10 in the model, the same as the YC page.",
+        "reason": "9 of the 10 are engineers and 3 came from Brex, as the launch post says.",
         "agree": 2,
         "disagree": 0,
         "waiting": []
        },
        "the_pitch_itself": {
         "verdict": "not_enough_in_the_room",
-        "reason": "Only the deck states the raise.",
+        "reason": "Not enough yet. Waiting on 05_legal/safe_schedule.pdf.",
         "agree": 0,
         "disagree": 0,
-        "waiting": []
+        "waiting": [
+         "05_legal/safe_schedule.pdf"
+        ]
        },
        "legal_and_cap_table": {
-        "verdict": "looking_strong",
-        "reason": "The cap table's seed total is $8,000,000, the amount in the company's post.",
-        "agree": 2,
+        "verdict": "not_enough_in_the_room",
+        "reason": "Not enough yet. Waiting on 05_legal/claims_statement.pdf, 05_legal/safe_schedule.pdf.",
+        "agree": 0,
         "disagree": 0,
-        "waiting": []
+        "waiting": [
+         "05_legal/claims_statement.pdf",
+         "05_legal/safe_schedule.pdf"
+        ]
        },
        "outside_world": {
-        "verdict": "looking_strong",
-        "reason": "The model's prices match the public pricing page.",
-        "agree": 2,
-        "disagree": 0,
+        "verdict": "mixed",
+        "reason": "Four public facts check out against the room: the prices, the team, the launch post's usage and the design partners. Two do not: no Form D is on EDGAR, and in April the company said it was still raising.",
+        "agree": 3,
+        "disagree": 2,
         "waiting": []
        }
       },
@@ -7016,25 +8173,266 @@ window.DATA = {
        "0": "confirms",
        "1": "confirms",
        "2": "confirms",
-       "3": "confirms"
+       "3": "confirms",
+       "4": "waiting",
+       "5": "answers",
+       "6": "waiting",
+       "7": "waiting",
+       "8": "waiting",
+       "9": "waiting"
       },
       "answered": [
        "C02",
        "C19",
-       "C22",
+       "C47",
+       "C53",
+       "C59",
        "C60",
        "C72"
       ],
       "request_of": {
-       "03_metrics/workspaces_by_plan.csv": "C02",
+       "03_metrics/monthly_metrics.csv": "C02",
+       "03_metrics/customer_mrr_by_month.csv": "C03",
        "02_financials/financial_model.xlsx": "C19",
+       "02_financials/monthly_statements.xlsx": "C20",
+       "02_financials/bank_statements_2026.pdf": "C20",
+       "06_team/hiring_plan.csv": "C22",
+       "03_metrics/cloud_costs_by_month.csv": "C23",
+       "04_customers/order_form_corvane_systems.pdf": "C34",
+       "01_pitch/pitch_deck.pdf": "C47",
+       "06_team/founder_bio_sherwood_callaway.pdf": "C53",
+       "00_welcome/cover_note_and_index.pdf": "C59",
        "05_legal/cap_table.xlsx": "C72",
-       "01_pitch/pitch_deck.pdf": "C60",
-       "06_team/hiring_plan.csv": "C22"
+       "05_legal/safe_schedule.pdf": "C75",
+       "05_legal/claims_statement.pdf": "C80"
+      }
+     },
+     "full": {
+      "arrived": [
+       "00_welcome/cover_note_and_index.pdf",
+       "01_pitch/pitch_deck.pdf",
+       "02_financials/bank_statements_2026.pdf",
+       "02_financials/financial_model.xlsx",
+       "02_financials/monthly_statements.xlsx",
+       "03_metrics/cloud_costs_by_month.csv",
+       "03_metrics/customer_mrr_by_month.csv",
+       "03_metrics/monthly_metrics.csv",
+       "03_metrics/workspaces_by_plan.csv",
+       "04_customers/order_form_corvane_systems.pdf",
+       "05_legal/cap_table.xlsx",
+       "05_legal/claims_statement.pdf",
+       "05_legal/safe_schedule.pdf",
+       "06_team/founder_bio_sherwood_callaway.pdf",
+       "06_team/hiring_plan.csv"
+      ],
+      "files_total": 15,
+      "shown": [
+       "bu-1",
+       "bu-2",
+       "bu-3",
+       "cu-1",
+       "cu-2",
+       "lc-1",
+       "lc-2",
+       "lc-3",
+       "lc-4",
+       "ma-1",
+       "ow-1",
+       "pi-1",
+       "pi-2",
+       "re-1",
+       "re-2",
+       "re-3",
+       "te-1",
+       "te-2",
+       "tr-1",
+       "tr-2",
+       "tr-3",
+       "tr-4",
+       "tr-5",
+       "ue-1",
+       "ue-2",
+       "ue-3",
+       "ue-4"
+      ],
+      "flags": {
+       "green": [
+        "re-1",
+        "tr-5",
+        "ue-4",
+        "te-2"
+       ],
+       "red": [
+        "lc-2",
+        "ue-3",
+        "tr-3",
+        "bu-2"
+       ]
+      },
+      "waiting": [],
+      "pieces": {
+       "traction_and_revenue": {
+        "verdict": "looking_weak",
+        "reason": "Rebuilt from the customer file, recurring MRR is $14,580, so ARR is $174,960. The $3,800 difference is a one-time backfill: 38,000 GB of old logs at $0.10 per GB, billed once in September and counted as monthly revenue.",
+        "agree": 2,
+        "disagree": 4,
+        "waiting": []
+       },
+       "retention": {
+        "verdict": "looking_strong",
+        "reason": "The 18 teams paying in June paid $4,650 then and $5,700 in September: net revenue retention of 122.6%.",
+        "agree": 2,
+        "disagree": 0,
+        "waiting": []
+       },
+       "burn_and_runway": {
+        "verdict": "looking_weak",
+        "reason": "The model's burn carries 4 of the 6 hires in the hiring plan. With all 6, runway is 14.5 months.",
+        "agree": 2,
+        "disagree": 2,
+        "waiting": []
+       },
+       "unit_economics": {
+        "verdict": "looking_weak",
+        "reason": "Cloud credits paid $2,900 of September's $6,900 cloud bill. At full price, gross margin is 49.0%. $21,400 of credits remain, and they expire on 2027-03-31.",
+        "agree": 1,
+        "disagree": 3,
+        "waiting": []
+       },
+       "customers": {
+        "verdict": "mixed",
+        "reason": "The order form backs the customer file, but one contract, Corvane Systems, is 30.9% of recurring MRR.",
+        "agree": 2,
+        "disagree": 0,
+        "waiting": []
+       },
+       "market": {
+        "verdict": "not_enough_in_the_room",
+        "reason": "The deck sizes the market at $1,440,000,000: 120,000 engineering teams at the Growth plan's $12,000 a year. Only the deck states it.",
+        "agree": 0,
+        "disagree": 0,
+        "waiting": []
+       },
+       "team": {
+        "verdict": "looking_strong",
+        "reason": "9 of the 10 are engineers and 3 came from Brex, as the launch post says.",
+        "agree": 2,
+        "disagree": 0,
+        "waiting": []
+       },
+       "the_pitch_itself": {
+        "verdict": "mixed",
+        "reason": "The deck and the model agree on an $8.0M seed at a $40.0M cap. The deck calls it closed; $2,750,000 is unsigned.",
+        "agree": 1,
+        "disagree": 1,
+        "waiting": []
+       },
+       "legal_and_cap_table": {
+        "verdict": "looking_weak",
+        "reason": "The signed SAFEs add to $5,250,000 from 66 holders. The cap table counts $2,750,000 more from 9 commitments that have no signed SAFE.",
+        "agree": 1,
+        "disagree": 2,
+        "waiting": []
+       },
+       "outside_world": {
+        "verdict": "mixed",
+        "reason": "Four public facts check out against the room: the prices, the team, the launch post's usage and the design partners. Two do not: no Form D is on EDGAR, and in April the company said it was still raising.",
+        "agree": 3,
+        "disagree": 2,
+        "waiting": []
+       }
+      },
+      "prechecks": {
+       "0": "confirms",
+       "1": "confirms",
+       "2": "confirms",
+       "3": "confirms",
+       "4": "confirms",
+       "5": "answers",
+       "6": "differs",
+       "7": "not settled",
+       "8": "differs",
+       "9": "not settled"
+      },
+      "answered": [
+       "C02",
+       "C03",
+       "C19",
+       "C20",
+       "C22",
+       "C23",
+       "C34",
+       "C47",
+       "C53",
+       "C59",
+       "C60",
+       "C72",
+       "C75",
+       "C80"
+      ],
+      "request_of": {
+       "03_metrics/monthly_metrics.csv": "C02",
+       "03_metrics/customer_mrr_by_month.csv": "C03",
+       "02_financials/financial_model.xlsx": "C19",
+       "02_financials/monthly_statements.xlsx": "C20",
+       "02_financials/bank_statements_2026.pdf": "C20",
+       "06_team/hiring_plan.csv": "C22",
+       "03_metrics/cloud_costs_by_month.csv": "C23",
+       "04_customers/order_form_corvane_systems.pdf": "C34",
+       "01_pitch/pitch_deck.pdf": "C47",
+       "06_team/founder_bio_sherwood_callaway.pdf": "C53",
+       "00_welcome/cover_note_and_index.pdf": "C59",
+       "05_legal/cap_table.xlsx": "C72",
+       "05_legal/safe_schedule.pdf": "C75",
+       "05_legal/claims_statement.pdf": "C80"
       }
      }
     },
-    "extra_flags": []
+    "extra_flags": [
+     {
+      "kind": "red",
+      "piece": "traction_and_revenue",
+      "claim_id": "tr-4",
+      "title": "The deck counts free design partners as paying ones.",
+      "stated": {
+       "key": "Stated, deck slide 4",
+       "value": "50",
+       "out": true,
+       "source": {
+        "uri": "01_pitch/pitch_deck.pdf",
+        "locator": "slide 4",
+        "quote": "50 design partners on paid plans"
+       }
+      },
+      "found": {
+       "key": "Found, workspace file",
+       "value": "21",
+       "source": {
+        "uri": "03_metrics/workspaces_by_plan.csv",
+        "locator": "2026-09, design_partner = yes, plan column",
+        "quote": "Free: 29"
+       }
+      },
+      "others": [],
+      "strip": {
+       "min": 10,
+       "max": 60,
+       "band": 21,
+       "ticks": [
+        {
+         "v": 50,
+         "label": "Deck 50",
+         "pos": "above",
+         "out": true
+        }
+       ],
+       "unit": "count"
+      },
+      "ask": "The deck says all 50 design partners pay. The workspace file shows 21 paying and 29 free. Which count do you report?",
+      "relative_gap": 1.380952380952381,
+      "basis": "disagreement"
+     }
+    ]
    }
   }
  },

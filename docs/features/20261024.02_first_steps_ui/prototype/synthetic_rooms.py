@@ -1,4 +1,4 @@
-"""Synthetic data rooms for steps 5 to 8 of the prototype: Ploy in full, Sazabi lighter.
+"""Synthetic data rooms for steps 5 to 8 of the prototype: Ploy and Sazabi, each in full.
 
 These rooms do not exist as files. The team invents them for the demo, and every screen says so.
 The shapes follow what the real engine writes (out/<room>/readout.json: top_flags, pieces with a
@@ -6,13 +6,16 @@ verdict and a one-line reason, claims with sources, gaps, panels) and FRAMEWORKS
 
 Rules held here:
 - Where the public record states a figure (Form D amounts, prices, team size), the room repeats it,
-  taken from the parsed public facts. Planted problems sit between two invented room documents only.
+  taken from the parsed public facts. Ploy's planted problems sit between two invented room documents only.
+  Sazabi's lead problem is the one Ken asked for (1:27 PM): the room's cap table against the public record
+  (no Form D on EDGAR, still raising in April). Two sources agreeing is a small green flag; disagreeing, a big red one.
 - Every derived figure (ARR, gross margin, runway, shares) is computed below, never typed.
 - Invented names are fictional. The room names no real customer or investor.
 """
 
 from __future__ import annotations
 
+import datetime as dt
 import math
 
 NOTICE = "Synthetic data room for Deal Flow NYC 2026. Written by the team. Not this company's data."
@@ -454,6 +457,18 @@ def ploy_room(f: dict, pre: dict) -> dict:
                   [], strip([credit_ws, paying_ws], paying_ws, [{"v": credit_ws, "label": f"Deck {credit_ws:,}", "pos": "above"}], "count", 100),
                   f"The deck says {credit_ws:,} paying workspaces. The workspace file shows {paying_ws:,} paying and {free_ws:,} on the free plan. Which count do you report?",
                   relative_gap(credit_ws, paying_ws))]
+    # Why each flag matters, in plain words, shown under its header (Ken, 1:34 PM).
+    why = {
+        "ue-3": "Model inference is a direct cost of serving each customer. Leaving it out makes the margin look like software's when it is closer to a services business's.",
+        "bu-2": "The planned hires are the biggest new cost. A runway that leaves most of them out says the money lasts longer than it will, and puts the next raise too late.",
+        "tr-3": "ARR should count only revenue that repeats every year. A paid pilot that ends after three months inflates it, and every multiple built on ARR with it.",
+        "ma-4": "The market size sets how big the company can get. When the company's own files disagree on it, neither number holds until the founder explains the gap.",
+        "tr-4": "Paying customers are what turn into revenue. Counting free workspaces as paying makes demand look bigger than what anyone pays for.",
+        "cu-1": "When no customer is a large share of revenue, losing one does not sink the company. Concentration is a common risk at this stage, and it is low here.",
+    }
+    for fl in reds + greens + extra:
+        if fl["claim_id"] in why:
+            fl["why"] = why[fl["claim_id"]]
     return with_states({
         "synthetic_notice": NOTICE, "as_of": "2026-09-30", "files": sorted({x.split(", ")[0] for v in holds.values() for x in v} | {ws, model}),
         "round": {"name": "Series A", "raise": money(raise_amt), "pre_money": money(pre_money), "post_money": money(post_money),
@@ -463,99 +478,401 @@ def ploy_room(f: dict, pre: dict) -> dict:
     }, partial_files, extra)
 
 
-# Sazabi, lighter --------------------------------------------------------------------------
+# Sazabi -----------------------------------------------------------------------------------
+
+
+def counts(C: dict, ids: list[str]) -> tuple[int, int]:
+    """Sources that agree and sources that disagree across a piece's lines. A line names its other sources when it has
+    them; a line marked corroborated or contradicted with none named counts as one."""
+    agree = sum(len(C[i]["agree"]) or (C[i]["mark"] == "corroborated") for i in ids)
+    disagree = sum(len(C[i]["disagree"]) or (C[i]["mark"] == "contradicted") for i in ids)
+    return agree, disagree
 
 
 def sazabi_room(f: dict, pre: dict) -> dict:
+    """Sazabi's synthetic room. The planted problem Ken asked for: the cap table and the outside record disagree
+    about the seed. The cap table counts the $8M from the company's post; the signed SAFEs add to less, no Form D
+    is on EDGAR, and in April the company said it was still raising. Every other figure the public record states
+    (prices, design partners, the launch post's usage, team size, engineers) the room repeats from the parsed facts."""
+    cover = "00_welcome/cover_note_and_index.pdf"
     deck = "01_pitch/pitch_deck.pdf"
     model = "02_financials/financial_model.xlsx"
+    stmts = "02_financials/monthly_statements.xlsx"
+    bank = "02_financials/bank_statements_2026.pdf"
+    metrics = "03_metrics/monthly_metrics.csv"
+    cust = "03_metrics/customer_mrr_by_month.csv"
     ws = "03_metrics/workspaces_by_plan.csv"
+    cloud = "03_metrics/cloud_costs_by_month.csv"
+    ent_form = "04_customers/order_form_corvane_systems.pdf"
     cap = "05_legal/cap_table.xlsx"
+    safes = "05_legal/safe_schedule.pdf"
+    claims_stmt = "05_legal/claims_statement.pdf"
+    bio = "06_team/founder_bio_sherwood_callaway.pdf"
     hiring = "06_team/hiring_plan.csv"
-    hobby, startup, growth = 6, 9, 3
-    deck_paying = f["design_partners"]
-    cash, burn = 6_900_000, 380_000
-    raise_amt, pre_money = 6_000_000, 54_000_000
-    churn = 0.03
-    hires = [{"start": 1 + i, "monthly_cost": 19000} for i in range(6)]
 
-    mrr = hobby * f["hobby"] + startup * f["startup"] + growth * f["growth"]
-    arr = 12 * mrr
-    paying = hobby + startup + growth
-    free = f["design_partners"] - paying
-    post_money = pre_money + raise_amt
-    rw = runway(cash, burn, hires)
+    # The invented base of the room. Prices, the seed total, design partners, usage and team come from the public record.
+    plans = {"Hobby": (14, f["hobby"]), "Startup": (11, f["startup"]), "Growth": (6, f["growth"])}
+    ent_name, ent_mrr = "Corvane Systems", 4500
+    over_gb_recurring, backfill_gb = 11_800, 38_000
+    dp_paying = 21
+    workspaces_total = 118
+    # The seed's SAFEs: three co-leads, one participating fund, the angels, then commitments with no signed SAFE yet.
+    co_leads, co_lead_amt = 3, 1_250_000
+    fund_amt = 500_000
+    angels = [15_000] * 42 + [18_500] * 20
+    unsigned = [500_000, 500_000, 400_000, 350_000, 300_000, 250_000, 200_000, 150_000, 100_000]
+    first_sale, last_signed = "2026-02-17", "2026-08-21"
+    seed_cap = 40_000_000
+    opening_cash = 380_000
+    burns = [140_000, 150_000, 165_000, 185_000, 205_000, 225_000, 240_000, 255_000]  # net burn, 2026-02 to 2026-09
+    cloud_gross, cloud_credits, inference = 6_900, 2_900, 2_480
+    credits_left, credits_expire = 21_400, "2027-03-31"
+    staff = ["Founder and CEO"] + ["Engineer"] * (f["engineers"] - 1) + ["Go-to-market lead"]
+    from_brex = 3
+    roles = ["Engineer", "Engineer", "Solutions engineer", "Account executive", "Engineer", "Designer"]
+    costs = {"Engineer": 21_000, "Solutions engineer": 18_000, "Account executive": 16_500, "Designer": 17_000}
+    hires = [{"id": f"H{i + 1:02d}", "role": r, "start": 1 + i, "monthly_cost": costs[r], "in_model": i < 4} for i, r in enumerate(roles)]
+    # The paying cohort at open beta (June), and where it stands in September.
+    june = {"Hobby": 9, "Startup": 6, "Growth": 3}
+    sept_of_june = {"Hobby": 6, "Startup": 7, "Growth": 4}
+    churned_of_june = 1
+    market_count = 120_000
+    # The launch post's month: May, the month before the launch.
+    may = {"teams": f["usage_teams"], "investigations": f["usage_investigations"], "issues": f["usage_issues"], "tb": f["usage_tb"]}
+
+    # What follows is computed.
+    sub_plans = sum(n * p for n, p in plans.values())
+    paying_teams = sum(n for n, _ in plans.values()) + 1
+    over_recurring = over_gb_recurring * f["over_per_gb"]
+    backfill = backfill_gb * f["over_per_gb"]
+    rebuilt_mrr = sub_plans + ent_mrr + over_recurring
+    model_mrr = rebuilt_mrr + backfill
+    model_arr, rebuilt_arr = 12 * model_mrr, 12 * rebuilt_mrr
+    deck_arr = round(model_arr, -3)
+    deck_arr_k = f"${deck_arr / 1000:,.0f}K"
+    dp_free = f["design_partners"] - dp_paying
+    ent_share = ent_mrr / rebuilt_mrr
+    signed_holders = co_leads + 1 + len(angels)
+    assert len(angels) > f["angels_more_than"], "the post says more than this many angels"
+    signed = co_leads * co_lead_amt + fund_amt + sum(angels)
+    cap_total = signed + sum(unsigned)
+    assert cap_total == f["seed"], "the cap table's seed total must be the company's post"
+    cap_holders = signed_holders + len(unsigned)
+    unsigned_total = cap_total - signed
+    formd_due = (dt.date.fromisoformat(first_sale) + dt.timedelta(days=15)).isoformat()
+    assert first_sale < f["still_raising_date"] < f["seed_post_date"] <= last_signed
+    cash = opening_cash + signed - sum(burns)
+    model_burn = burns[-1]
+    runway_model = cash / model_burn
+    deck_runway = round(runway_model)
+    extra = [h for h in hires if not h["in_model"]]
+    runway_rebuilt = runway(cash, model_burn, extra)
+    revenue = model_mrr
+    gm_model = 1 - (cloud_gross - cloud_credits + inference) / revenue
+    gm_rebuilt = 1 - (cloud_gross + inference) / revenue
+    deck_gm = round(gm_model, 2)
+    june_mrr = sum(june[k] * plans[k][1] for k in june)
+    sept_mrr_june = sum(sept_of_june[k] * plans[k][1] for k in sept_of_june)
+    assert sum(june.values()) - churned_of_june == sum(sept_of_june.values())
+    nrr = sept_mrr_june / june_mrr
+    deck_nrr = 1.2
+    assert nrr > deck_nrr, "the deck's 'above 120%' must hold in the customer file"
+    monthly_churn = 1 - ((sum(june.values()) - churned_of_june) / sum(june.values())) ** (1 / 3)
+    annual_price = 12 * f["growth"]
+    market = market_count * annual_price
+    post_money = seed_cap
+    pre_money = post_money - cap_total
+    ownership = cap_total / post_money
+    deck_paying_dp = f["design_partners"]
+    signed_m = f"${signed / 1_000_000:.2f}M"
 
     C = {}
 
     def claim(cid, piece, text, value, display, confidence, sources, mark=None, severity="info", agree=None, disagree=None):
         C[cid] = {"id": cid, "piece": piece, "text": text, "value": value, "display": display, "confidence": confidence,
                   "sources": sources, "mark": mark, "severity": severity, "agree": agree or [], "disagree": disagree or []}
+        return cid
 
-    claim("tr-1", "traction_and_revenue", f"The deck says {deck_paying} paying teams. The workspace file shows {paying} paying and {free} free design partners.",
-          paying, str(paying), "computed", [src(deck, "slide 4", f"{deck_paying} paying teams"), src(ws, "2026-09, plan column", f"Free: {free}")],
+    # Traction and revenue
+    claim("tr-1", "traction_and_revenue", f"The deck states ARR of {deck_arr_k}.", deck_arr, deck_arr_k, "quoted",
+          [src(deck, "slide 5", f"{deck_arr_k} ARR")], "contradicted",
+          agree=[src(model, "Revenue!J30", f"{model_arr:.0f}")], disagree=[src(cust, "2026-09 rows, line column", "Backfill overage")])
+    claim("tr-2", "traction_and_revenue", f"The model's ARR is {money(model_arr)}: twelve times September's MRR of {money(model_mrr)}.",
+          model_arr, money(model_arr), "computed", [src(model, "Revenue!J30", f"{model_arr:.0f}")], "contradicted")
+    claim("tr-3", "traction_and_revenue",
+          f"Rebuilt from the customer file, recurring MRR is {money(rebuilt_mrr)}, so ARR is {money(rebuilt_arr)}. The {money(backfill)} difference is "
+          f"a one-time backfill: {backfill_gb:,} GB of old logs at ${f['over_per_gb']:.2f} per GB, billed once in September and counted as monthly revenue.",
+          rebuilt_arr, money(rebuilt_arr), "computed",
+          [src(cust, "2026-09 rows, line is not Backfill overage", f"{rebuilt_mrr:.0f}"), src(stmts, "Invoices!row 88", f"Backfill overage, one-time, {backfill:.0f}")],
           "contradicted", "flag")
-    claim("tr-2", "traction_and_revenue", f"September MRR from the paying teams is {money(mrr)}, so ARR is {money(arr)}.", arr, money(arr), "computed",
-          [src(ws, "2026-09 rows", f"{mrr}")])
-    claim("lc-1", "legal_and_cap_table", f"The cap table's seed total is {money(f['seed'])}, the amount in the company's post.", f["seed"], money(f["seed"]),
-          "quoted", [src(cap, "Seed!F14", f"{f['seed']}")], "corroborated", agree=[public("seed", "Sazabi blog")])
-    claim("ow-1", "outside_world", "The model's prices match the public pricing page.", f["growth"], f"${f['growth']:,}", "quoted",
-          [src(model, "Pricing!B3:B5", f"{f['hobby']}, {f['startup']}, {f['growth']}")], "corroborated", agree=[public("prices", "sazabi.com/pricing")])
-    claim("te-1", "team", f"Staff today: {f['team']} in the model, the same as the YC page.", f["team"], str(f["team"]), "quoted",
-          [src(model, "Assumptions!C4", f"STAFF_NOW = {f['team']}")], "corroborated", agree=[public("team", "YC company page")])
+    claim("tr-4", "traction_and_revenue",
+          f"The deck says all {deck_paying_dp} design partners are on paid plans. The workspace file shows {dp_paying} of them paying and {dp_free} still free.",
+          dp_paying, str(dp_paying), "computed",
+          [src(deck, "slide 4", f"{deck_paying_dp} design partners on paid plans"), src(ws, "2026-09, design_partner = yes, plan column", f"Free: {dp_free}")],
+          "contradicted", "flag")
+    claim("tr-5", "traction_and_revenue",
+          f"The metrics file's May row matches the launch post: {may['teams']} teams onboarded, {may['investigations']:,} investigations, {may['tb']} TB of logs.",
+          may["teams"], str(may["teams"]), "quoted",
+          [src(metrics, "2026-05 row", f"{may['teams']},{may['investigations']},{may['issues']},{may['tb']}")], "corroborated",
+          agree=[public("usage", "Launch YC post")])
+    # Retention
+    claim("re-1", "retention",
+          f"The {sum(june.values())} teams paying in June paid {money(june_mrr)} then and {money(sept_mrr_june)} in September: net revenue retention of {pct(nrr)}.",
+          nrr, pct(nrr), "computed", [src(cust, "teams paying in 2026-06, their 2026-06 and 2026-09 rows", f"{june_mrr},{sept_mrr_june}")], "corroborated",
+          agree=[src(deck, "slide 6", "Net revenue retention above 120%")])
+    claim("re-2", "retention", f"The deck states net revenue retention above {pct(deck_nrr, 0)}.", deck_nrr, f"above {pct(deck_nrr, 0)}", "quoted",
+          [src(deck, "slide 6", "Net revenue retention above 120%")], "corroborated", agree=[src(cust, "teams paying in 2026-06", f"{sept_mrr_june}")])
+    claim("re-3", "retention",
+          f"{churned_of_june} of the {sum(june.values())} June teams left by September: monthly churn of {pct(monthly_churn)}. Three months is a short record.",
+          monthly_churn, pct(monthly_churn), "computed", [src(cust, "teams paying in 2026-06, 2026-09 rows", f"{churned_of_june} with no row")])
+    # Burn and runway
+    claim("bu-1", "burn_and_runway", f"The deck and the model state {deck_runway} months of runway on {money(cash)} of cash and {money(model_burn)} of monthly burn.",
+          deck_runway, f"{deck_runway} months", "quoted",
+          [src(deck, "slide 11", f"{deck_runway} months of runway"), src(model, "Assumptions!C9", f"{runway_model:.2f}")], "contradicted",
+          agree=[src(bank, "2026-09-30 closing balance", money(cash))])
+    claim("bu-2", "burn_and_runway",
+          f"The model's burn carries {len(hires) - len(extra)} of the {len(hires)} hires in the hiring plan. With all {len(hires)}, runway is {runway_rebuilt:.1f} months.",
+          runway_rebuilt, f"{runway_rebuilt:.1f} months", "computed",
+          [src(hiring, f"rows H01 to H{len(hires):02d}", f"{len(hires)} hires"), src(model, "Assumptions!C12", f"HIRES_IN_MODEL = {len(hires) - len(extra)}")],
+          "contradicted", "flag")
+    claim("bu-3", "burn_and_runway", f"The bank statements close September at {money(cash)}, the cash the model uses.", cash, money(cash), "quoted",
+          [src(bank, "2026-09-30 closing balance", money(cash)), src(model, "Assumptions!C7", f"{cash}")], "corroborated")
+    # Unit economics
+    claim("ue-1", "unit_economics", f"The deck states gross margin of {pct(deck_gm, 0)}.", deck_gm, pct(deck_gm, 0), "quoted",
+          [src(deck, "slide 7", f"{pct(deck_gm, 0)} gross margin")], "contradicted")
+    claim("ue-2", "unit_economics", f"The model's gross margin for 2026-09 is {pct(gm_model)}: log storage and compute net of cloud credits, plus model inference.",
+          gm_model, pct(gm_model), "computed", [src(model, "P&L!J24", f"{gm_model:.4f}")], "contradicted")
+    claim("ue-3", "unit_economics",
+          f"Cloud credits paid {money(cloud_credits)} of September's {money(cloud_gross)} cloud bill. At full price, gross margin is {pct(gm_rebuilt)}. "
+          f"{money(credits_left)} of credits remain, and they expire on {credits_expire}.",
+          gm_rebuilt, pct(gm_rebuilt), "computed",
+          [src(cloud, "2026-09 row, credits column", f"-{cloud_credits}"), src(model, "P&L!J18", f"{cloud_gross - cloud_credits}")], "contradicted", "flag")
+    claim("ue-4", "unit_economics",
+          f"The model's prices are Hobby ${f['hobby']}, Startup ${f['startup']} and Growth ${f['growth']:,} every 30 days, as on the public pricing page.",
+          f["growth"], f"${f['growth']:,}", "quoted", [src(model, "Pricing!B3:B5", f"{f['hobby']}, {f['startup']}, {f['growth']}")], "corroborated",
+          agree=[public("prices", "sazabi.com/pricing")])
+    # Customers
+    claim("cu-1", "customers", f"The largest customer, {ent_name}, pays {money(ent_mrr)} a month: {pct(ent_share)} of recurring MRR.",
+          ent_share, pct(ent_share), "computed", [src(cust, "2026-09, largest row", f"{ent_name},{ent_mrr}")], "corroborated",
+          agree=[src(ent_form, "page 1, Fees", f"{money(ent_mrr)} a month")])
+    claim("cu-2", "customers",
+          f"{paying_teams} teams pay in September, out of {workspaces_total} workspaces. {dp_paying} of the {f['design_partners']} design partners are among them.",
+          paying_teams, str(paying_teams), "computed", [src(ws, "2026-09, plan column", f"paying: {paying_teams}")], "corroborated",
+          agree=[public("design_partners", "Sazabi blog")])
+    # Market
+    claim("ma-1", "market", f"The deck sizes the market at {money(market)}: {market_count:,} engineering teams at the Growth plan's {money(annual_price)} a year. "
+          "Only the deck states it.", market, money(market), "computed", [src(deck, "slide 9", f"{market_count:,} engineering teams")])
+    # Team
+    claim("te-1", "team", f"Staff today: {len(staff)} in the model, the same as the YC page.", len(staff), str(len(staff)), "quoted",
+          [src(model, "Assumptions!C4", f"STAFF_NOW = {len(staff)}")], "corroborated", agree=[public("team", "YC company page")])
+    claim("te-2", "team",
+          f"{f['engineers']} of the {len(staff)} are engineers and {from_brex} came from Brex, as the launch post says.",
+          f["engineers"], str(f["engineers"]), "quoted",
+          [src(model, "Staff!A2:C11", f"{f['engineers']} engineers"), src(bio, "page 1", f"{from_brex} early Brex engineers")], "corroborated",
+          agree=[public("engineers", "Launch YC post")])
+    # The pitch itself
+    claim("pi-1", "the_pitch_itself",
+          f"The seed: {money(cap_total)} on SAFEs with a {money(seed_cap)} post-money cap, so the seed owns {pct(ownership, 2)}.",
+          cap_total, money(cap_total), "computed", [src(deck, "slide 12", f"{millions(cap_total)} seed, {millions(seed_cap)} post-money cap"),
+                                                    src(model, "Assumptions!C21", f"{cap_total}")], "corroborated")
+    claim("pi-2", "the_pitch_itself",
+          f"The deck calls the round closed. The SAFE schedule shows {money(unsigned_total)} of it still without a signed SAFE.",
+          unsigned_total, money(unsigned_total), "computed", [src(deck, "slide 12", "Seed closed"), src(safes, "page 3, Commitments", money(unsigned_total))],
+          "contradicted")
+    # Legal and cap table
+    claim("lc-1", "legal_and_cap_table", f"The cap table's seed total is {money(cap_total)}, the amount in the company's post.", cap_total, money(cap_total),
+          "quoted", [src(cap, "Seed!F24", f"{cap_total}")], "corroborated", agree=[public("seed", "Sazabi blog")])
+    claim("lc-2", "legal_and_cap_table",
+          f"The signed SAFEs add to {money(signed)} from {signed_holders} holders. The cap table counts {money(unsigned_total)} more from "
+          f"{len(unsigned)} commitments that have no signed SAFE.",
+          signed, money(signed), "computed", [src(cap, "Seed!F24", f"{cap_total}"), src(safes, "page 2, Signed total", money(signed))],
+          "contradicted", "flag", disagree=[public("still_raising", "SiliconANGLE, April 2026")])
+    claim("lc-3", "legal_and_cap_table",
+          f"The first SAFE was funded on {first_sale}, so a Form D was due by {formd_due}. EDGAR has {f['edgar_formd']} Form D filings for Sazabi.",
+          f["edgar_formd"], str(f["edgar_formd"]), "computed", [src(safes, "page 1, first row", f"Funded {first_sale}")], "contradicted",
+          disagree=[public("formd_none", "SEC EDGAR")])
+    claim("lc-4", "legal_and_cap_table", "The claims statement says there are no lawsuits, threatened claims or regulator contact.", None, "none",
+          "quoted", [src(claims_stmt, "page 1", "There are none.")])
+    # The outside world
+    claim("ow-1", "outside_world",
+          "Four public facts check out against the room: the prices, the team, the launch post's usage and the design partners. "
+          "Two do not: no Form D is on EDGAR, and in April the company said it was still raising.", 4, "4 of 6", "computed",
+          [src(model, "Pricing!B3:B5", "prices"), src(metrics, "2026-05 row", "usage")], "contradicted",
+          agree=[public("prices", "sazabi.com/pricing"), public("team", "YC company page"), public("usage", "Launch YC post")],
+          disagree=[public("formd_none", "SEC EDGAR"), public("still_raising", "SiliconANGLE, April 2026")])
 
-    reds = [{"kind": "red", "basis": "disagreement", "piece": "traction_and_revenue", "claim_id": "tr-1", "title": "The deck counts free design partners as paying teams.",
-             "stated": {"key": "Stated, deck slide 4", "value": str(deck_paying), "out": True, "source": src(deck, "slide 4", f"{deck_paying} paying teams")},
-             "found": {"key": "Found, workspace file", "value": str(paying), "source": src(ws, "2026-09, plan column", f"Free: {free}")},
-             "others": [], "strip": strip([deck_paying, paying], paying, [{"v": deck_paying, "label": f"Deck {deck_paying}", "pos": "above"}], "count", 5),
-             "ask": f"The deck says {deck_paying} paying teams and the workspace file shows {paying}. Which number do you use, and when do the others convert?",
-             "relative_gap": relative_gap(deck_paying, paying)}]
-    greens = [{"kind": "green", "basis": "agreement", "piece": "legal_and_cap_table", "claim_id": "lc-1", "title": "The cap table's seed matches the company's public post.",
-               "stated": {"key": "Room, cap table", "value": money(f["seed"]), "source": src(cap, "Seed!F14", f"{f['seed']}")},
-               "found": {"key": "Outside, company post", "value": money(f["seed"]), "source": public("seed", "Sazabi blog")},
-               "others": [], "strip": strip([f["seed"]], f["seed"], [{"v": f["seed"], "label": f"Both {millions(f['seed'])}", "pos": "above"}], "usd", 1_000_000),
-               "ask": None, "relative_gap": 0}]
-    thin = "not_enough_in_the_room"
+    def flag(kind, piece, cid, title, stated, found, others, strip_, ask=None, gap=None, basis=None):
+        return {"kind": kind, "piece": piece, "claim_id": cid, "title": title, "stated": stated, "found": found,
+                "others": others, "strip": strip_, "ask": ask, "relative_gap": gap,
+                "basis": basis or ("disagreement" if kind == "red" else "strength")}
+
+    reds = [
+        flag("red", "legal_and_cap_table", "lc-2", f"The cap table counts an {millions(cap_total)} seed. The signed SAFEs add to {signed_m}, and no Form D is on file.",
+             {"key": "Stated, cap table", "value": money(cap_total), "out": True, "source": src(cap, "Seed!F24", f"{cap_total}")},
+             {"key": "Found, signed SAFEs", "value": money(signed), "source": src(safes, "page 2, Signed total", money(signed))},
+             [{"key": "Also SEC EDGAR", "value": f"{f['edgar_formd']} Form D filings", "source": public("formd_none", "SEC EDGAR")},
+              {"key": f"Also the press, {f['still_raising_date']}", "value": "still raising", "source": public("still_raising", "SiliconANGLE")}],
+             strip([cap_total, signed], signed, [{"v": cap_total, "label": f"Cap table {millions(cap_total)}", "pos": "above"}], "usd", 500_000),
+             f"The cap table counts {money(cap_total)}. The signed SAFEs add to {money(signed)}. Who are the {len(unsigned)} unsigned commitments, when do they sign, "
+             f"and was a Form D filed after the first sale on {first_sale}, under what name?",
+             relative_gap(cap_total, signed)),
+        flag("red", "unit_economics", "ue-3", "Gross margin counts cloud credits as free.",
+             {"key": "Stated, deck slide 7", "value": pct(deck_gm, 0), "out": True, "source": src(deck, "slide 7", f"{pct(deck_gm, 0)} gross margin")},
+             {"key": "Found, cloud bill at full price", "value": pct(gm_rebuilt), "source": src(cloud, "2026-09 row, credits column", f"-{cloud_credits}")},
+             [{"key": "Also the model", "value": pct(gm_model), "source": src(model, "P&L!J24", f"{gm_model:.4f}")}],
+             strip([deck_gm * 100, gm_model * 100, gm_rebuilt * 100], gm_rebuilt * 100,
+                   [{"v": deck_gm * 100, "label": f"Deck {pct(deck_gm, 0)}", "pos": "above"}, {"v": gm_model * 100, "label": f"Model {pct(gm_model)}", "pos": "below"}],
+                   "percent", 5),
+             f"Cloud credits paid {money(cloud_credits)} of September's {money(cloud_gross)} cloud bill, and they expire on {credits_expire}. What is gross margin at full price?",
+             relative_gap(deck_gm, gm_rebuilt)),
+        flag("red", "traction_and_revenue", "tr-3", "ARR counts a one-time log backfill as recurring revenue.",
+             {"key": "Stated, deck slide 5", "value": deck_arr_k, "out": True, "source": src(deck, "slide 5", f"{deck_arr_k} ARR")},
+             {"key": "Found, customer file", "value": money(rebuilt_arr), "source": src(cust, "2026-09 rows, line is not Backfill overage", f"{rebuilt_mrr:.0f}")},
+             [{"key": "Also the model", "value": money(model_arr), "source": src(model, "Revenue!J30", f"{model_arr:.0f}")}],
+             strip([deck_arr, model_arr, rebuilt_arr], rebuilt_arr,
+                   [{"v": deck_arr, "label": f"Deck {deck_arr_k}", "pos": "above"}, {"v": model_arr, "label": f"Model {money(model_arr)}", "pos": "below"}],
+                   "usd", 10_000),
+             f"September includes {money(backfill)} for a one-time backfill of {backfill_gb:,} GB. Can you show ARR without it, and how often do backfills recur?",
+             relative_gap(deck_arr, rebuilt_arr)),
+        flag("red", "burn_and_runway", "bu-2", f"Runway leaves {len(extra)} of the {len(hires)} planned hires out of the burn.",
+             {"key": "Stated, deck slide 11", "value": f"{deck_runway} months", "out": True, "source": src(deck, "slide 11", f"{deck_runway} months of runway")},
+             {"key": "Found, hiring plan", "value": f"{runway_rebuilt:.1f} months", "source": src(hiring, f"rows H01 to H{len(hires):02d}", f"{len(hires)} hires")},
+             [{"key": "Also the model", "value": f"{runway_model:.1f} months", "source": src(model, "Assumptions!C9", f"{runway_model:.2f}")}],
+             strip([deck_runway, runway_model, runway_rebuilt], runway_rebuilt,
+                   [{"v": deck_runway, "label": f"Deck {deck_runway} mo", "pos": "above"}, {"v": runway_model, "label": f"Model {runway_model:.1f} mo", "pos": "below"}],
+                   "months", 1),
+             f"The model's burn carries {len(hires) - len(extra)} of the {len(hires)} hires in the hiring plan. What is runway with the full plan, and which hires would you hold?",
+             relative_gap(deck_runway, runway_rebuilt)),
+    ]
+    reds.sort(key=lambda x: -x["relative_gap"])
+    assert reds[0]["claim_id"] == "lc-2", "the round's disagreement leads the red flags"
+    greens = [
+        flag("green", "retention", "re-1", f"Teams that pay spend more: net revenue retention of {pct(nrr)} since June.",
+             {"key": "Stated, deck slide 6", "value": f"above {pct(deck_nrr, 0)}", "source": src(deck, "slide 6", "Net revenue retention above 120%")},
+             {"key": "Found, customer file", "value": pct(nrr), "source": src(cust, "teams paying in 2026-06, their 2026-06 and 2026-09 rows", f"{june_mrr},{sept_mrr_june}")},
+             [{"key": "Monthly churn", "value": pct(monthly_churn), "source": src(cust, "teams paying in 2026-06, 2026-09 rows", f"{churned_of_june} with no row")}],
+             strip([nrr * 100], nrr * 100, [{"v": nrr * 100, "label": f"Customer file {pct(nrr)}", "pos": "above"}], "percent", 5)),
+        flag("green", "traction_and_revenue", "tr-5", "The launch post's usage matches the metrics file.",
+             {"key": "Room, metrics file", "value": f"{may['teams']} teams", "source": src(metrics, "2026-05 row", f"{may['teams']},{may['investigations']},{may['issues']},{may['tb']}")},
+             {"key": "Outside, Launch YC post", "value": f"{may['teams']} teams", "source": public("usage", "Launch YC post")},
+             [], strip([may["teams"]], may["teams"], [{"v": may["teams"], "label": f"Metrics file and launch post {may['teams']}", "pos": "above"}], "count", 5),
+             basis="agreement"),
+        flag("green", "unit_economics", "ue-4", "The model's prices match the public pricing page.",
+             {"key": "Room, the model", "value": f"${f['growth']:,}", "source": src(model, "Pricing!B3:B5", f"{f['hobby']}, {f['startup']}, {f['growth']}")},
+             {"key": "Outside, pricing page", "value": f"${f['growth']:,}", "source": public("prices", "sazabi.com/pricing")},
+             [], strip([f["growth"]], f["growth"], [{"v": f["growth"], "label": f"Model and pricing page ${f['growth']:,}", "pos": "above"}], "usd", 100),
+             basis="agreement"),
+        flag("green", "team", "te-2", f"The team matches the launch post: {f['engineers']} engineers, {from_brex} from Brex.",
+             {"key": "Room, staff list", "value": f"{f['engineers']} engineers", "source": src(model, "Staff!A2:C11", f"{f['engineers']} engineers")},
+             {"key": "Outside, Launch YC post", "value": f"{f['engineers']} engineers", "source": public("engineers", "Launch YC post")},
+             [], strip([f["engineers"]], f["engineers"], [{"v": f["engineers"], "label": f"Staff list and launch post {f['engineers']}", "pos": "above"}], "count", 1),
+             basis="agreement"),
+    ]
+
+    def piece(name, label, verdict, reason, ids):
+        a, d = counts(C, ids)
+        return {"name": name, "label": label, "verdict": verdict, "reason": reason, "agree": a, "disagree": d, "claim_ids": ids}
+
     pieces = [
-        {"name": "traction_and_revenue", "label": "Traction and revenue", "verdict": "looking_weak", "reason": C["tr-1"]["text"], "agree": 0, "disagree": 1, "claim_ids": ["tr-1", "tr-2"]},
-        {"name": "retention", "label": "Retention", "verdict": thin, "reason": "Not in the room: a cohort export.", "agree": 0, "disagree": 0, "claim_ids": []},
-        {"name": "burn_and_runway", "label": "Burn and runway", "verdict": thin, "reason": "Only the model states cash and burn. No bank statements are in the room.", "agree": 0, "disagree": 0, "claim_ids": []},
-        {"name": "unit_economics", "label": "Unit economics", "verdict": thin, "reason": "Not in the room: storage and AI cost per customer.", "agree": 0, "disagree": 0, "claim_ids": []},
-        {"name": "customers", "label": "Customers", "verdict": thin, "reason": "Not in the room: customer contracts.", "agree": 0, "disagree": 0, "claim_ids": []},
-        {"name": "market", "label": "Market", "verdict": thin, "reason": "Only the deck sizes the market.", "agree": 0, "disagree": 0, "claim_ids": []},
-        {"name": "team", "label": "Team", "verdict": "looking_strong", "reason": C["te-1"]["text"], "agree": 2, "disagree": 0, "claim_ids": ["te-1"]},
-        {"name": "the_pitch_itself", "label": "The pitch itself", "verdict": thin, "reason": "Only the deck states the raise.", "agree": 0, "disagree": 0, "claim_ids": []},
-        {"name": "legal_and_cap_table", "label": "Legal and cap table", "verdict": "looking_strong", "reason": C["lc-1"]["text"], "agree": 2, "disagree": 0, "claim_ids": ["lc-1"]},
-        {"name": "outside_world", "label": "Outside world", "verdict": "looking_strong", "reason": C["ow-1"]["text"], "agree": 2, "disagree": 0, "claim_ids": ["ow-1"]},
+        piece("traction_and_revenue", "Traction and revenue", "looking_weak", C["tr-3"]["text"], ["tr-1", "tr-2", "tr-3", "tr-4", "tr-5"]),
+        piece("retention", "Retention", "looking_strong", C["re-1"]["text"], ["re-1", "re-2", "re-3"]),
+        piece("burn_and_runway", "Burn and runway", "looking_weak", C["bu-2"]["text"], ["bu-1", "bu-2", "bu-3"]),
+        piece("unit_economics", "Unit economics", "looking_weak", C["ue-3"]["text"], ["ue-1", "ue-2", "ue-3", "ue-4"]),
+        piece("customers", "Customers", "mixed",
+              f"The order form backs the customer file, but one contract, {ent_name}, is {pct(ent_share)} of recurring MRR.", ["cu-1", "cu-2"]),
+        piece("market", "Market", "not_enough_in_the_room", C["ma-1"]["text"], ["ma-1"]),
+        piece("team", "Team", "looking_strong", C["te-2"]["text"], ["te-1", "te-2"]),
+        piece("the_pitch_itself", "The pitch itself", "mixed",
+              f"The deck and the model agree on an {millions(cap_total)} seed at a {millions(seed_cap)} cap. The deck calls it closed; {money(unsigned_total)} is unsigned.",
+              ["pi-1", "pi-2"]),
+        piece("legal_and_cap_table", "Legal and cap table", "looking_weak", C["lc-2"]["text"], ["lc-2", "lc-3", "lc-1", "lc-4"]),
+        piece("outside_world", "Outside world", "mixed", C["ow-1"]["text"], ["ow-1"]),
     ]
+
     drill = [
-        {"piece": "traction_and_revenue", "kind": "weak", "claim_ids": ["tr-1", "tr-2"], "panel": None, "gaps": ["Not in the room: monthly revenue by customer."]},
-        {"piece": "legal_and_cap_table", "kind": "strong", "claim_ids": ["lc-1"], "panel": None, "gaps": []},
+        {"piece": "legal_and_cap_table", "kind": "weak", "claim_ids": ["lc-2", "lc-3", "lc-1", "lc-4"],
+         "panel": {"name": "the seed: cap table, signed SAFEs and SEC EDGAR", "columns": ["Figure", "Cap table", "Signed SAFEs", "SEC EDGAR"],
+                   "rows": [["Seed total", money(cap_total), money(signed), "no Form D"],
+                            ["Holders", str(cap_holders), str(signed_holders), "no Form D"],
+                            ["Without a signed SAFE", money(unsigned_total), "", ""],
+                            ["First sale", "", first_sale, f"Form D due by {formd_due}"],
+                            ["Last SAFE signed", "", last_signed, ""]]},
+         "gaps": ["Not in the room: a Form D, or the reason none was filed.", "Not in the room: the pro forma cap table after the seed."]},
+        {"piece": "retention", "kind": "strong", "claim_ids": ["re-1", "re-2", "re-3"],
+         "panel": {"name": "the June paying teams, June against September", "columns": ["Plan", "Teams in June", "MRR in June", "Teams in September", "MRR in September"],
+                   "rows": [[k, str(june[k]), money(june[k] * plans[k][1]), str(sept_of_june[k]), money(sept_of_june[k] * plans[k][1])] for k in june]
+                   + [["All", str(sum(june.values())), money(june_mrr), str(sum(sept_of_june.values())), money(sept_mrr_june)]]},
+         "gaps": ["Not in the room: a cohort export. The customer file starts at open beta in June, so retention covers three months."]},
     ]
-    holds = {"C02": [ws], "C19": [model], "C72": [cap], "C60": [deck], "C22": [hiring]}
-    prechecks = [
-        {"pre": "prices", "status": "confirms", "room": "The model's prices match.", "source": src(model, "Pricing!B3:B5", f"{f['hobby']}, {f['startup']}, {f['growth']}")},
-        {"pre": "seed", "status": "confirms", "room": f"The cap table's seed total is {money(f['seed'])}.", "source": src(cap, "Seed!F14", f"{f['seed']}")},
-        {"pre": "design_partners", "status": "confirms", "room": f"The workspace file lists {f['design_partners']} design partners. {paying} pay.",
-         "source": src(ws, "2026-09, plan column", f"Free: {free}")},
-        {"pre": "team", "status": "confirms", "room": f"The model's staff today is {f['team']}.", "source": src(model, "Assumptions!C4", f"STAFF_NOW = {f['team']}")},
-    ]
-    whatif = {
-        "lines": [{"name": "Hobby plan", "units": hobby, "price": f["hobby"]}, {"name": "Startup plan", "units": startup, "price": f["startup"], "tweak": True},
-                  {"name": "Growth plan", "units": growth, "price": f["growth"]}],
-        "pilot": None, "company_arr": None, "rebuilt_arr": arr, "churn": churn, "cash": cash, "base_burn": burn, "company_runway": None,
-        "rebuilt_runway": round(rw, 1), "extra_hires": hires, "extra_count": len(hires),
+
+    holds = {
+        "C02": [metrics], "C03": [cust], "C19": [model], "C20": [stmts, bank], "C22": [hiring], "C23": [cloud], "C34": [ent_form],
+        "C47": [f"{deck}, slide 9"], "C53": [bio], "C59": [cover], "C60": [deck], "C72": [cap], "C75": [safes], "C80": [claims_stmt],
     }
-    steer_examples = [
-        {"piece": "traction_and_revenue", "sentence": "Ask which design partners convert to paid this quarter.", "kind": "more",
-         "request": "Design partners expected to convert to paid this quarter"},
+
+    prechecks = [
+        {"pre": "prices", "status": "confirms", "room": f"The model prices Hobby at ${f['hobby']}, Startup at ${f['startup']} and Growth at ${f['growth']:,}.",
+         "source": src(model, "Pricing!B3:B5", f"{f['hobby']}, {f['startup']}, {f['growth']}")},
+        {"pre": "usage", "status": "confirms", "room": f"The metrics file's May row: {may['teams']} teams, {may['investigations']:,} investigations, {may['tb']} TB of logs.",
+         "source": src(metrics, "2026-05 row", f"{may['teams']},{may['investigations']},{may['issues']},{may['tb']}")},
+        {"pre": "team", "status": "confirms", "room": f"The model's staff today is {len(staff)}.", "source": src(model, "Assumptions!C4", f"STAFF_NOW = {len(staff)}")},
+        {"pre": "engineers", "status": "confirms", "room": f"The staff list has {f['engineers']} engineers, {from_brex} of them from Brex.",
+         "source": src(model, "Staff!A2:C11", f"{f['engineers']} engineers")},
+        {"pre": "still_raising", "status": "confirms",
+         "room": f"The SAFE schedule shows SAFEs signed from {first_sale} to {last_signed}, and {money(unsigned_total)} still unsigned.",
+         "source": src(safes, "page 3, Commitments", money(unsigned_total))},
+        {"pre": "design_partners", "status": "answers", "room": f"The workspace file lists {f['design_partners']} design partners. {dp_paying} pay.",
+         "source": src(ws, "2026-09, design_partner = yes, plan column", f"Free: {dp_free}")},
+        {"pre": "seed", "status": "differs", "room": f"The cap table counts {money(cap_total)}, as the post says. The signed SAFEs add to {money(signed)}.",
+         "source": src(safes, "page 2, Signed total", money(signed))},
+        {"pre": "formd_none", "status": "not settled", "room": f"The room holds no Form D. The first SAFE was funded on {first_sale}, so one was due by {formd_due}.",
+         "source": src(safes, "page 1, first row", f"Funded {first_sale}")},
+        {"pre": "hiring", "status": "differs", "room": f"The hiring plan adds {len(hires)} people by month {hires[-1]['start']}. Not a flag: a job board lags a plan.",
+         "source": src(hiring, f"rows H01 to H{len(hires):02d}", f"{len(hires)} hires")},
+        {"pre": "named_customers", "status": "not settled", "room": "No contract with Weave, Mastra or XMTP Labs is in the room. The room's customers are its own.",
+         "source": src(cust, "customer column", "no match")},
     ]
+
+    whatif = {
+        "lines": [{"name": f"{k} plan", "units": n, "price": p, **({"tweak": True} if k == "Startup" else {})} for k, (n, p) in plans.items()]
+        + [{"name": "Enterprise contract", "units": 1, "price": ent_mrr}, {"name": "Recurring usage over plan", "units": 1, "price": over_recurring}],
+        "pilot": None, "company_arr": deck_arr, "rebuilt_arr": rebuilt_arr, "churn": monthly_churn, "cash": cash, "base_burn": model_burn,
+        "company_runway": deck_runway, "rebuilt_runway": round(runway_rebuilt, 1),
+        "extra_hires": [{"start": h["start"], "monthly_cost": h["monthly_cost"]} for h in extra], "extra_count": len(extra),
+    }
+    assert abs(sum(l["units"] * l["price"] for l in whatif["lines"]) * 12 - rebuilt_arr) < 0.01
+
+    steer_examples = [
+        {"piece": "legal_and_cap_table", "sentence": f"Count the {millions(unsigned_total)} of commitments: the co-leads confirmed them to us in writing.",
+         "kind": "figure", "check_value": money(signed), "steer_value": money(cap_total), "label": "Seed signed"},
+        {"piece": "unit_economics", "sentence": "Get the cloud invoices for July to September, with the credit balance and expiry.", "kind": "more",
+         "request": "Cloud invoices for July to September 2026, with the credit balance and expiry"},
+        {"piece": "traction_and_revenue", "sentence": "The backfill was billed once. Leave it out of ARR and show usage on its own line.", "kind": "rewrite",
+         "reworded": f"Steered: the associate leaves the one-time backfill of {money(backfill)} out of ARR, so ARR is {money(rebuilt_arr)}. "
+                     f"Recurring usage over plan, {money(over_recurring)} a month, stays in."},
+    ]
+
+    memo_company = (f"Sazabi watches a team's production logs with AI, investigates problems and opens fixes. Its own post announced an "
+                    f"{millions(f['seed'])} seed co-led by J2 Ventures, Village Global and Y Combinator; EDGAR has no Form D for it. "
+                    f"In this synthetic room the seed is {millions(cap_total)} on SAFEs at a {millions(seed_cap)} post-money cap, "
+                    f"{signed_m} of it signed.")
+
+    # The partial state: the founder's first batch. The customer file, bank statements, cloud bill, SAFE schedule,
+    # hiring plan, order form and claims statement come later. The workspace file's flag can show first.
+    partial_files = {deck, cover, model, metrics, ws, cap, bio, stmts}
+    extra_flags = [flag("red", "traction_and_revenue", "tr-4", "The deck counts free design partners as paying ones.",
+                        {"key": "Stated, deck slide 4", "value": str(deck_paying_dp), "out": True,
+                         "source": src(deck, "slide 4", f"{deck_paying_dp} design partners on paid plans")},
+                        {"key": "Found, workspace file", "value": str(dp_paying), "source": src(ws, "2026-09, design_partner = yes, plan column", f"Free: {dp_free}")},
+                        [], strip([deck_paying_dp, dp_paying], dp_paying, [{"v": deck_paying_dp, "label": f"Deck {deck_paying_dp}", "pos": "above"}], "count", 5),
+                        f"The deck says all {deck_paying_dp} design partners pay. The workspace file shows {dp_paying} paying and {dp_free} free. Which count do you report?",
+                        relative_gap(deck_paying_dp, dp_paying))]
+    files = sorted({file_of(x) for c in C.values() for x in c["sources"] + c["agree"] + c["disagree"]} - {None}
+                   | {x.split(", ")[0] for v in holds.values() for x in v})
     return with_states({
-        "synthetic_notice": NOTICE, "as_of": "2026-09-30", "files": sorted({x.split(", ")[0] for v in holds.values() for x in v}),
-        "round": {"name": "Seed extension", "raise": money(raise_amt), "pre_money": money(pre_money), "post_money": money(post_money),
-                  "ownership": pct(raise_amt / post_money, 2), "source": src(deck, "slide 12", f"{millions(raise_amt)} seed extension")},
+        "synthetic_notice": NOTICE, "as_of": "2026-09-30", "files": files,
+        "round": {"name": "Seed", "raise": money(cap_total), "pre_money": money(pre_money), "post_money": money(post_money),
+                  "ownership": pct(ownership, 2), "source": src(deck, "slide 12", f"{millions(cap_total)} seed, {millions(seed_cap)} post-money cap")},
         "top_flags": {"green": greens, "red": reds}, "pieces": pieces, "claims": C, "drill": drill, "holds": holds,
-        "prechecks": prechecks, "whatif": whatif, "steer_examples": steer_examples,
-        "memo_company": (f"Sazabi watches a team's production logs with AI, alerts on real problems and opens fixes. It raised a "
-                         f"{millions(f['seed'])} seed, per its own post. In this synthetic room it asks for a {millions(raise_amt)} seed extension."),
-    }, {deck, cap}, [])
+        "prechecks": prechecks, "whatif": whatif, "steer_examples": steer_examples, "memo_company": memo_company,
+    }, partial_files, extra_flags)
