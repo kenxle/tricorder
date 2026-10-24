@@ -147,3 +147,56 @@ span.x-mline-text { cursor: default; text-decoration: none; }
 /* Why a flag matters, under its header (Ken, 1:34 PM). */
 .x-flag .tc-card-title:has(+ .x-why) { margin-bottom: var(--tc-space-2); }
 .x-why { font-size: 14px; line-height: 1.5; color: var(--tc-ink-2); max-width: 64ch; margin: 0 0 var(--tc-space-4); }
+
+/* The memo as a document (Ken, 2:14 PM): prose first, evidence behind numbers and a toggle. */
+.x-doc { max-width: 760px; }
+.x-memohead { padding: var(--tc-space-5) 0 var(--tc-space-4); border-bottom: var(--tc-hair) solid var(--tc-ink); margin-bottom: var(--tc-space-2); }
+.x-memohead .co-title { margin: var(--tc-space-2) 0 var(--tc-space-2); }
+.x-memohead-sub { font-size: 20px; color: var(--tc-ink); margin: 0 0 var(--tc-space-2); }
+.x-memohead .tc-meta, .x-memohead .tc-synthetic { margin: var(--tc-space-1) 0 0; }
+.x-doc .x-memo-sec { border-top: 0; padding: var(--tc-space-5) 0 0; }
+.x-doc .x-memo-sec > h3 { font-size: 22px; margin-bottom: var(--tc-space-3); }
+.x-para { padding: var(--tc-space-2) 0 var(--tc-space-3); border-radius: var(--tc-radius-m); transition: background-color .6s ease; }
+.x-para > p { margin: 0; font-size: 17px; line-height: 1.6; color: var(--tc-ink-2); }
+.x-para > p strong { color: var(--tc-ink); font-weight: 600; }
+.x-refs { white-space: nowrap; }
+.x-ev { display: inline-block; min-width: 22px; padding: 0 5px; margin-left: 3px; font: 11px/1.6 var(--tc-font-mono); color: var(--tc-ink-2); background: none;
+  border: var(--tc-hair) solid var(--tc-rule-2); border-radius: var(--tc-radius-s); cursor: pointer; vertical-align: 2px; position: relative; }
+.x-ev::after { content: ""; position: absolute; left: -10px; right: -10px; top: 50%; height: var(--tc-hit); transform: translateY(-50%); }
+.x-ev:hover, .x-ev:focus-visible { border-color: var(--tc-accent); color: var(--tc-ink); }
+.x-para-tools { display: flex; flex-wrap: wrap; gap: var(--tc-space-1) var(--tc-space-4); margin-top: var(--tc-space-1); font-size: 13px; }
+.x-para-tools .tc-link-btn { font-size: 13px; color: var(--tc-ink-3); min-height: var(--tc-hit); }
+.x-para-tools .tc-link-btn:hover, .x-para-tools .tc-link-btn[aria-expanded="true"], .x-para-tools .tc-link-btn[aria-pressed="true"] { color: var(--tc-ink); }
+.x-para-acts { display: inline-flex; gap: var(--tc-space-4); }
+.x-para-marks { display: flex; flex-wrap: wrap; gap: var(--tc-space-2); margin-top: var(--tc-space-1); font-size: 14px; }
+.x-partnerq { display: inline-flex; gap: var(--tc-space-2); align-items: center; color: var(--tc-ink); }
+.x-para-ev { margin: var(--tc-space-2) 0 var(--tc-space-3); padding: var(--tc-space-4); border: var(--tc-hair) solid var(--tc-rule-2); border-radius: var(--tc-radius-l); background: var(--tc-surface); }
+.x-para-ev[hidden] { display: none; }
+.x-para-ev .x-flag { border: 0; padding: 0; background: none; }
+.x-evlist { margin: var(--tc-space-3) 0 0; padding-left: var(--tc-space-5); }
+.x-evlist > li { padding: var(--tc-space-2) 0; }
+.x-evlist > li::marker { font: 12px var(--tc-font-mono); color: var(--tc-ink-3); }
+.x-hl { background: var(--tc-band); }
+.x-whatif-d { margin: var(--tc-space-2) 0 var(--tc-space-3); }
+.x-whatif-d > summary { cursor: pointer; font-size: 14px; color: var(--tc-ink); min-height: var(--tc-hit); display: flex; align-items: center; text-decoration: underline; text-decoration-color: var(--tc-accent); text-underline-offset: 3px; }
+.x-whatif-d .x-whatif { margin-top: var(--tc-space-2); }
+
+/* The partner's review: the memo with a chat beside it. */
+.x-review { margin: var(--tc-space-4) 0 0; }
+.x-reviewgrid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--tc-space-6); }
+@media (min-width: 1100px) { .x-reviewgrid { grid-template-columns: minmax(0, 760px) minmax(300px, 1fr); } }
+.x-chat { align-self: start; position: sticky; top: var(--tc-space-2); max-height: calc(100vh - 16px); display: flex; flex-direction: column; gap: var(--tc-space-3);
+  padding: var(--tc-space-5); background: var(--tc-surface); border: var(--tc-hair) solid var(--tc-rule); border-radius: var(--tc-radius-l); margin-top: var(--tc-space-5); }
+@media (max-width: 1099.98px) { .x-chat { position: static; max-height: none; order: -1; } }
+.x-chat h3 { margin: 0; font-size: 20px; font-weight: 700; }
+.x-chat > .note { margin: 0; font-size: 14px; }
+.x-msgs { list-style: none; margin: 0; padding: 0; overflow-y: auto; display: flex; flex-direction: column; gap: var(--tc-space-2); min-height: 0; }
+.x-msg { padding: var(--tc-space-2) var(--tc-space-3); border-radius: var(--tc-radius-m); font-size: 14px; line-height: 1.5; }
+.x-msg--you { align-self: flex-end; max-width: 85%; border: var(--tc-hair) solid var(--tc-rule-2); color: var(--tc-ink); }
+.x-msg--memo { border: var(--tc-hair) solid var(--tc-rule); color: var(--tc-ink-2); }
+.x-msg-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: var(--tc-space-2); }
+.x-msg-links .tc-chip { font-family: var(--tc-font-sans); }
+.x-suggest { display: flex; flex-wrap: wrap; gap: 6px; }
+.x-suggest .tc-chip { font-family: var(--tc-font-sans); font-size: 13px; text-align: left; white-space: normal; }
+.x-chatform { display: flex; gap: var(--tc-space-2); }
+.x-chatform .tc-input { flex: 1 1 auto; min-width: 0; }
