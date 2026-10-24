@@ -75,17 +75,17 @@ export default function DiligenceFlow() {
         {room === "more" ? (
           <RoomNotice title={`${research.name} added ${k} more file${k === 1 ? "" : "s"}`} onOpen={() => setRoom("full")} />
         ) : null}
+        <RoomView embedded onFinalize={() => setStage("memo")} state={room === "full" ? "full" : "partial"} />
         <RequestsBox research={research} items={items} room={room} />
-        <RoomView embedded onMemo={() => setStage("memo")} onSteer={() => setStage("memo")} state={room === "full" ? "full" : "partial"} />
       </View>
     );
   } else {
-    const n = research.room.partial.arrived.length;
+    const n = research.room.filesTotal;
     body = (
       <WorkingPage
         research={research}
         notice={room === "shared" ? (
-          <RoomNotice title={`${research.name} shared its data room · ${n} file${n === 1 ? "" : "s"}`} onOpen={() => setRoom("partial")} />
+          <RoomNotice title={`${research.name} shared its data room · ${n} file${n === 1 ? "" : "s"}`} onOpen={() => setRoom("full")} />
         ) : null}
         roomBox={sent ? <RequestsBox research={research} items={items} room={room} /> : <UpNextBox research={research} onDraft={() => setDialog(true)} />}
       />

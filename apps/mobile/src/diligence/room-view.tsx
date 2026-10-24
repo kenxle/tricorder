@@ -31,6 +31,7 @@ const TONE: Record<string, "strong" | "weak" | "thin" | "gap"> = {
 export const ReportSection = ({ report, drill }: { report: RoomReport; drill?: (ref: string) => void }) => (
   <Card>
     <Body style={styles.cardTitle}>{report.title}</Body>
+    <Note>Built from Kimmy's expert knowledge</Note>
     {report.chart?.kind === "revenue" ? <RevenueBars chart={report.chart} /> : null}
     {report.chart?.kind === "cash" ? <RunwayBars chart={report.chart} /> : null}
     {report.paras.map((p) => (
@@ -70,6 +71,7 @@ export const RoomView = ({
   embedded = false,
   onSteer,
   onMemo,
+  onFinalize,
 }: {
   state: RoomStateName;
   room?: Room;
@@ -77,6 +79,7 @@ export const RoomView = ({
   embedded?: boolean;
   onSteer?: () => void;
   onMemo?: () => void;
+  onFinalize?: () => void;
 }) => {
   const colors = useReadoutColors();
   const s = room.states[state];
@@ -94,6 +97,15 @@ export const RoomView = ({
       <Note>
         {room.synthetic_notice} Data as of {room.as_of}.
       </Note>
+
+      {state === "full" ? (
+        <>
+          <Heading>From Kimmy's expert knowledge</Heading>
+          {room.reports.map((r) => (
+            <ReportSection key={r.key} report={r} />
+          ))}
+        </>
+      ) : null}
 
       <Heading>What stands out</Heading>
       <WeightedFlags company={company} flags={flagsForState(room, state)} room={room} />
@@ -129,11 +141,10 @@ export const RoomView = ({
         );
       })}
 
-      {state === "full" ? room.reports.map((r) => <ReportSection key={r.key} report={r} />) : null}
-
       <Row>
         {onSteer ? <Action onPress={onSteer} title="Steer the readout" /> : null}
         {onMemo ? <Action onPress={onMemo} primary title="Make the memo" /> : null}
+        {onFinalize ? <Action onPress={onFinalize} primary title="Finalize" /> : null}
       </Row>
     </Scroller>
   );
