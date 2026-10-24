@@ -249,15 +249,85 @@ with sync_playwright() as p:
     pg.wait_for_selector(".x-piece")
     check(pg.locator(".x-piece").count() == 10, "steering works from the full room")
 
-    # Sazabi, lighter: steps 5 and 8 work
+    # Sazabi, the demo company: steps 5 to 8 on its synthetic room (synthetic_rooms.py, sazabi_room)
     pg.goto(BASE + "?company=sazabi.com&pace=0")
+    pg.wait_for_function("document.getElementById('overall') && document.getElementById('overall').textContent.startsWith('Research done')")
     pg.evaluate("location.hash = 'flags'")
-    pg.wait_for_selector(".x-flag")
-    check(pg.locator(".x-verdicts .tc-verdict").count() == 10, "Sazabi's room shows its flags and ten pieces")
+    pg.wait_for_selector(".x-drill")
+    check("Synthetic data room" in pg.locator(".x-synthetic").first.inner_text(), "Sazabi step 5: the room is labelled synthetic")
+    greens, reds = pg.locator(".x-flag[data-flag='green']").count(), pg.locator(".x-flag[data-flag='red']").count()
+    order = pg.eval_on_selector_all(".x-flag", "els => els.map(e => e.dataset.flag)")
+    check(greens >= 1 and reds == 4 and order == sorted(order, key=lambda k: k != "green"), f"Sazabi step 5: headline green first, then four red flags ({greens} green, {reds} red)")
+    lead = pg.locator(".x-flag[data-flag='red']").first
+    check("Form D" in lead.inner_text() and "$5,250,000" in lead.inner_text() and "$8,000,000" in lead.inner_text() and lead.locator(".srcchip").count() >= 2,
+          "Sazabi step 5: the worst red flag is the round, cap table beside signed SAFEs, with EDGAR and the press as outside sources")
+    check(pg.locator(".x-flag .tc-pair").count() == greens + reds and pg.locator(".x-flag .tc-strip").count() == greens + reds,
+          "Sazabi step 5: every flag shows stated beside found and a range strip")
+    check(pg.locator(".x-flag[data-flag='red'] .tc-strip-tick.is-out").count() >= reds, "Sazabi step 5: each red flag's stated figure sits outside the band")
+    small = pg.locator(".x-smallflag").count()
+    check(small >= 3, f"Sazabi step 5: sources that agree are small green flags ({small})")
+    check(pg.locator(".x-verdicts .tc-verdict").count() == 10 and pg.locator(".x-drill").count() == 2, "Sazabi step 5: ten pieces with a verdict, two drill-downs")
+    check(pg.locator(".x-drill table").count() == 2, "Sazabi step 5: each drill-down has its table")
+    lead.locator(".srcchip").first.click()
+    check("Saved copy" in lead.locator(".panel").first.inner_text(), "Sazabi step 5: the EDGAR chip on the round flag opens the saved public page")
+    exp_held = pg.evaluate("TC.S.items.filter(i => i.checked && i.id && TC.S.research.room.holds[i.id]).length")
+    held, missing = pg.locator(".x-tick[data-held='yes']").count(), pg.locator(".x-tick[data-held='no']").count()
+    check(held == exp_held and held > 0 and missing > 0, f"Sazabi step 5: request ticked off ({held} in the room, {missing} still missing)")
+    pre = pg.locator(".x-pre").inner_text()
+    check(pg.locator(".x-pre tr[data-status='confirms']").count() >= 3 and pg.locator(".x-pre tr[data-status='differs']").count() >= 1 and "Form D" in pre,
+          "Sazabi step 5: first-readout claims confirmed and contradicted by the room, the missing Form D among them")
     pg.screenshot(path=str(SHOTS / "5b_flags_from_the_room_sazabi.png"), full_page=True)
-    pg.evaluate("location.hash = 'principal'")
+
+    pg.click("#to-steer")
+    pg.wait_for_selector(".x-piece")
+    check(pg.locator(".x-piece").count() == 10, "Sazabi step 6: ten steerable pieces")
+    pg.click("[data-example='0']")
+    fig = pg.locator(".x-result[data-kind='figure']").inner_text()
+    check("$5,250,000" in fig and "$8,000,000" in fig, "Sazabi step 6: a figure steer sits beside the check's figure, which stays")
+    pg.click("[data-example='1']")
+    check(pg.evaluate("TC.S.items.some(i => i.title.startsWith('Cloud invoices'))"), "Sazabi step 6: a more-information steer goes onto the request")
+    pg.click("[data-example='2']")
+    check(pg.locator(".x-piece.tc-steered").count() == 1 and pg.locator(".x-piece[data-piece='traction_and_revenue'] .tc-mark--weak").count() == 1,
+          "Sazabi step 6: a rewrite marks the piece steered and keeps the script's verdict")
+    pg.screenshot(path=str(SHOTS / "6b_steer_the_readout_sazabi.png"), full_page=True)
+
+    pg.click("#to-memo")
+    pg.wait_for_selector(".x-memo")
+    check(pg.locator(".x-memo-sec").count() >= 10 and "v4" in pg.locator(".x-head-facts").inner_text() and "Seed" in pg.locator(".x-head-facts").inner_text(),
+          "Sazabi step 7: the memo has its sections, the seed in its header and v4 for three steers")
+    pg.locator("[data-mline]").first.click()
+    check(pg.locator(".x-mline-claims:not([hidden]) .x-claim").count() >= 1, "Sazabi step 7: one click on a memo line opens its claims")
+    pg.screenshot(path=str(SHOTS / "7b_make_the_memo_sazabi.png"), full_page=True)
+
+    pg.click("#to-principal")
     pg.wait_for_selector(".x-whatif")
+    first_sections = pg.eval_on_selector_all("main section[aria-label]", "els => els.slice(0, 2).map(e => e.getAttribute('aria-label'))")
+    check(first_sections == ["The round", "The flags"], f"Sazabi step 8: the principal's view opens on the round and the flags ({first_sections})")
     check(pg.locator("#w-pilot").count() == 0, "Sazabi's what-if has no pilot to count")
+    row = lambda: pg.locator(".x-wtable tbody tr").first.inner_text().split("\t")
+    check(row()[1] == "$221,000" and row()[2] == "$174,960" and row()[2] == row()[3], f"Sazabi step 8: the what-if starts at Tricorder's rebuilt ARR ({row()})")
+    pg.fill("#w-price", "300")
+    pg.press("#w-price", "Tab")
+    check(row()[2] == "$174,960" and row()[3] != row()[2], "Sazabi step 8: changing the Startup price changes only the scenario column")
+    pg.screenshot(path=str(SHOTS / "8b_principals_view_sazabi.png"), full_page=True)
+
+    # Sazabi's working page with the room in, partial then full
+    for state in ("partial", "full"):
+        pg.goto(BASE + f"?company=sazabi.com&room={state}")
+        pg.wait_for_selector(f".x-roomview[data-room-state='{state}']")
+        answered = pg.locator("[data-request='answered']").count()
+        flags, waiting = pg.locator(".x-roomview .x-flag").count(), pg.locator(".x-roomview .x-waiting").count()
+        check(flags >= 1 and pg.locator(".x-roomview .tc-verdict").count() == 10 and pg.locator(".x-roomsays .tc-mark--strong").count() >= 3,
+              f"Sazabi {state}: flags lead, ten pieces carry verdicts, pre-room claims show as confirmed ({flags} flags)")
+        if state == "partial":
+            check(waiting >= 1 and pg.locator(".tc-verdict .tc-mark--thin", has_text="not enough yet").count() >= 1,
+                  f"Sazabi partial: checks waiting on a file show, and pieces that need the rest say not enough yet ({waiting})")
+            check(pg.locator(".x-waiting", has_text="safe_schedule.pdf").count() == 1, "Sazabi partial: the round's check waits on the SAFE schedule")
+            part = answered
+        else:
+            check(waiting == 0 and answered > part and pg.locator(".x-roomview .x-flag[data-flag='red']", has_text="Form D").count() == 1,
+                  f"Sazabi full: nothing waits, more requests answered ({part} then {answered}), the round's red flag shows")
+        pg.screenshot(path=str(SHOTS / f"room_{state}_sazabi.png"), full_page=True)
 
     # Sazabi by YC URL in the address bar, all at once for the shot
     pg.goto(BASE + "?company=https://www.ycombinator.com/companies/sazabi&pace=0")

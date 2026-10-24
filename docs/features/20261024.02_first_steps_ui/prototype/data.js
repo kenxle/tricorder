@@ -1,5 +1,5 @@
 window.DATA = {
- "built": "2026-10-24T13:36:05",
+ "built": "2026-10-24T13:38:19",
  "built_by": "docs/features/20261024.02_first_steps_ui/prototype/build_data.py",
  "list_source": "yc_spring_2026_companies",
  "companies": [
@@ -6474,7 +6474,8 @@ window.DATA = {
        },
        "ask": null,
        "relative_gap": null,
-       "basis": "strength"
+       "basis": "strength",
+       "why": "Teams that pay more each month are the best sign the product sticks. Here the teams paying since June spend more now than they did then."
       },
       {
        "kind": "green",
@@ -6664,7 +6665,8 @@ window.DATA = {
        },
        "ask": "The cap table counts $8,000,000. The signed SAFEs add to $5,250,000. Who are the 9 unsigned commitments, when do they sign, and was a Form D filed after the first sale on 2026-02-17, under what name?",
        "relative_gap": 0.5238095238095238,
-       "basis": "disagreement"
+       "basis": "disagreement",
+       "why": "A round counted as closed should match the money that is signed and the filing the law asks for. When the cap table, the signed SAFEs and the public record disagree, the fund cannot be sure what it is buying into."
       },
       {
        "kind": "red",
@@ -6723,7 +6725,8 @@ window.DATA = {
        },
        "ask": "Cloud credits paid $2,900 of September's $6,900 cloud bill, and they expire on 2027-03-31. What is gross margin at full price?",
        "relative_gap": 0.3274444444444444,
-       "basis": "disagreement"
+       "basis": "disagreement",
+       "why": "Cloud credits run out. A margin that holds only while the credits last shows less than it costs to serve each customer."
       },
       {
        "kind": "red",
@@ -6782,7 +6785,8 @@ window.DATA = {
        },
        "ask": "September includes $3,800 for a one-time backfill of 38,000 GB. Can you show ARR without it, and how often do backfills recur?",
        "relative_gap": 0.263145861911294,
-       "basis": "disagreement"
+       "basis": "disagreement",
+       "why": "ARR should count only revenue that repeats every year. A one-time backfill billed once inflates it, and every multiple built on ARR with it."
       },
       {
        "kind": "red",
@@ -6841,7 +6845,8 @@ window.DATA = {
        },
        "ask": "The model's burn carries 4 of the 6 hires in the hiring plan. What is runway with the full plan, and which hires would you hold?",
        "relative_gap": 0.10722720831365136,
-       "basis": "disagreement"
+       "basis": "disagreement",
+       "why": "The planned hires are the biggest new cost. A runway that leaves some of them out says the money lasts longer than it will."
       }
      ]
     },
@@ -8430,7 +8435,8 @@ window.DATA = {
       },
       "ask": "The deck says all 50 design partners pay. The workspace file shows 21 paying and 29 free. Which count do you report?",
       "relative_gap": 1.380952380952381,
-      "basis": "disagreement"
+      "basis": "disagreement",
+      "why": "Paying customers are what turn into revenue. Counting free design partners as paying makes demand look bigger than what anyone pays for."
      }
     ]
    }

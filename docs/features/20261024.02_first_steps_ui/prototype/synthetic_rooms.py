@@ -867,6 +867,19 @@ def sazabi_room(f: dict, pre: dict) -> dict:
                         [], strip([deck_paying_dp, dp_paying], dp_paying, [{"v": deck_paying_dp, "label": f"Deck {deck_paying_dp}", "pos": "above"}], "count", 5),
                         f"The deck says all {deck_paying_dp} design partners pay. The workspace file shows {dp_paying} paying and {dp_free} free. Which count do you report?",
                         relative_gap(deck_paying_dp, dp_paying))]
+    # Why each flag matters, in plain words, shown under its header (Ken, 1:34 PM). Small green flags need none.
+    why = {
+        "lc-2": "A round counted as closed should match the money that is signed and the filing the law asks for. "
+                "When the cap table, the signed SAFEs and the public record disagree, the fund cannot be sure what it is buying into.",
+        "ue-3": "Cloud credits run out. A margin that holds only while the credits last shows less than it costs to serve each customer.",
+        "tr-3": "ARR should count only revenue that repeats every year. A one-time backfill billed once inflates it, and every multiple built on ARR with it.",
+        "bu-2": "The planned hires are the biggest new cost. A runway that leaves some of them out says the money lasts longer than it will.",
+        "tr-4": "Paying customers are what turn into revenue. Counting free design partners as paying makes demand look bigger than what anyone pays for.",
+        "re-1": "Teams that pay more each month are the best sign the product sticks. Here the teams paying since June spend more now than they did then.",
+    }
+    for fl in reds + greens + extra_flags:
+        if fl["claim_id"] in why:
+            fl["why"] = why[fl["claim_id"]]
     files = sorted({file_of(x) for c in C.values() for x in c["sources"] + c["agree"] + c["disagree"]} - {None}
                    | {x.split(", ")[0] for v in holds.values() for x in v})
     return with_states({

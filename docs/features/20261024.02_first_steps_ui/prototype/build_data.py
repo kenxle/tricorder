@@ -535,9 +535,29 @@ def sazabi() -> dict:
         "design_partners": claim(f"The seed post says {dp.group(1)} design partners signed up.", s_seed, dp.group(0),
                                  kind="company says"),
         "team": claim(f"Team size on YC: {co['team_size']}.", s_yc, f"company.team_size: {co['team_size']}"),
+        # Pre-room claims the synthetic room checks. Each repeats a readout claim's source and quote, so the
+        # working page can mark that claim in place.
+        "usage": claim(f"The launch post says that in one month it onboarded {um.group(1)} teams, ran {um.group(2)} "
+                       f"investigations and took in {um.group(4)} TB of logs.", s_yc, usage_q, kind="company says"),
+        "engineers": claim(f"The launch post says the team is {team_m.group(1)} engineers, three of them from Brex.", s_yc,
+                           "We’re a team of nine engineers in total, including three early members of the Brex team"),
+        "formd_none": claim(f"No signal: EDGAR's company search for Sazabi returned {edgar_entries} Form D filings.", s_edgar,
+                            "company=sazabi&amp;type=D", kind="no signal"),
+        "still_raising": claim("In April 2026 the company said it was still raising its seed.", s_sa,
+                               "confirmed it’s in the process of raising seed capital"),
+        "named_customers": claim("Case studies on its site: Weave, Mastra and XMTP Labs.", s_cust, "XMTP Labs x Sazabi"),
+        "hiring": claim("Hiring: no open roles listed on YC.", s_yc, "jobPostings: (none)", kind="no signal"),
     }
+    words = {"five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10, "eleven": 11, "twelve": 12}
+    seed_txt = norm(SOURCES[s_seed]["_text"])
     facts = {"hobby": prices["Hobby"], "startup": prices["Startup"], "growth": prices["Growth"],
-             "seed": int(seed_m.group(1)) * 1_000_000, "design_partners": int(dp.group(1)), "team": co["team_size"]}
+             "seed": int(seed_m.group(1)) * 1_000_000, "design_partners": int(dp.group(1)), "team": co["team_size"],
+             "over_per_gb": float(over.group(1)), "usage_teams": int(um.group(1)), "usage_investigations": int(um.group(2).replace(",", "")),
+             "usage_issues": int(um.group(3).replace(",", "")), "usage_tb": int(um.group(4)), "launch_date": launch["created_at"][:10],
+             "engineers": words[team_m.group(1).lower()], "angels_more_than": int(find(r"more than (\d+) angel investors", seed_txt).group(1)),
+             "seed_post_date": find(r"(\d{4}-\d{2}-\d{2})T00:00:00Z", SOURCES[s_seed]["_text"]).group(1),
+             "still_raising_date": datetime.strptime(find(r"UPDATED [\d:]+ EDT / ([A-Z]+ \d{2} \d{4})", SOURCES[s_sa]["_text"]).group(1).title(),
+                                                "%B %d %Y").date().isoformat(), "edgar_formd": edgar_entries}
     return {"slug": "sazabi", "setup": setup, "greeting": f0["full_name"].split()[0], "sections": sections, "room_gaps": room_gaps,
             "facts": facts, "pre": pre}
 
