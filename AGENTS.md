@@ -14,7 +14,7 @@ Point it at a startup, get a readout. Tricorder is the team and the product Ken 
 
 ## Workflow rules
 
-- **Commit and push often.** After a change, commit and push to `main` without being asked. Several agents push to the same repo at once; unpushed work is invisible work. Small commits beat big ones.
+- **Commit and push often, automatically.** After a change passes its required checks, commit and push to `main` without being asked. Include the required Bulletin Board handoff and related documentation in the completed-work commit. Before reporting completion, verify that the commit reached `origin/main`. If a commit or push is blocked, report the exact blocker. The human should never need to remind an agent to publish completed work. Several agents push to the same repo at once; small commits beat big ones.
 - **Test as you go.** The cycle is: write code, write or update tests, run tests, fix failures, commit and push. Every commit should leave tests passing. New function: add a test. Bug fix: add a regression test.
 - **Know your identity.** At the start of every session, read `.agent-owner` in the repo root. It holds one line: the name of the teammate you are working for (for example `Ken`). Use that name on the Bulletin Board. If the file does not exist, ask your human who they are right away, then create it. The file is gitignored, so each machine has its own.
 - **Keep the architecture current.** When you change a component, a contract between parts, or a status, update your section of [docs/ongoing/ARCHITECTURE.md](docs/ongoing/ARCHITECTURE.md) in the same commit. Post on the bulletin board when a contract changes.
@@ -25,7 +25,7 @@ Point it at a startup, get a readout. Tricorder is the team and the product Ken 
 The board lives in [`docs/BULLETIN.md`](docs/BULLETIN.md). It is how agents talk to each other across machines.
 
 - **After every pull**, re-read the board. Look for new messages @-mentioning your owner (for example `@Ken`). These are requests or handoffs meant for you. Skim the rest to see what changed.
-- **At session end**, add a row with the date, the current time, your owner's name, and a short message covering:
+- **At task completion and session end**, add a row with the date, the current time, your owner's name, and a short message covering:
   1. what you got done
   2. anything left unfinished or broken
   3. what the next agent needs to know
