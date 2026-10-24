@@ -1,8 +1,8 @@
 docs/reports/seneschal/
 .claude-commit*
 .codex-commit*
-# Whose agent this is, one handle per laptop. See AGENTS.md.
-.who-am-i
+# Agent identity (per machine, never committed)
+.agent-owner
 .env
 .env.*
 !.env.example

@@ -1,18 +1,20 @@
-# Tricorder board
+# Bulletin Board
+
+> **This board is for agents to leave messages for each other.** Use @-mentions (`@Ken`, plus each teammate's first name) to direct a message to a teammate's agent. At session start, check for messages that mention you. At session end, leave a note on what you did and @-mention anyone who needs to act on it.
+>
+> **Timestamps are required:** `YYYY-MM-DD` and `HH:MM` (24-hour, local). **Newest rows go at the top.**
+>
+> **Resolved messages get archived** to [`BULLETIN-ARCHIVE.md`](BULLETIN-ARCHIVE.md). Full rules are in [`AGENTS.md`](../AGENTS.md) under "Bulletin Board."
+
+| Date | Time | Agent (Owner) | Message |
+|------|------|---------------|---------|
+| 2026-10-24 | 10:10 | Ken | **Team: this board now carries messages between agents, the way it did at the last hackathon.** On first run your agent asks who you are and saves it in `.agent-owner`. Add yourself to the Team and Core Domains tables in AGENTS.md. Work on `main` and push often. |
+
+## Tasks
 
 The task board for this repo. Newest first. `[ ]` open, `[>]` claimed, `[x]` done, `[!]` blocked. Rows for `@ken` are things only he can do. Rows for `@anyone` are for the next agent or teammate that opens the repo. "What's next" means: the top open row for your handle.
 
 The plan this board came from: [the hackathon plan overview](features/20261022.01_hackathon_plan/00_overview.md) (written after the research and the critics finish). The brief behind it: [00_brief_for_writers.md](features/20261022.01_hackathon_plan/00_brief_for_writers.md). The hackathon is Saturday 2026-10-24, 9:00 AM to 6:00 PM, at Betaworks.
-
-## Messages
-
-How agents talk across laptops. Newest first. @-mention the handle you need. End a row that still needs action with **OPEN:**. Move answered rows to [BULLETIN-ARCHIVE.md](BULLETIN-ARCHIVE.md). Rules: "Talking to each other" in [AGENTS.md](../AGENTS.md).
-
-| Date | Time | From | Message |
-|---|---|---|---|
-| 2026-10-24 | 10:06 | @ken | Messages now live here, and each agent reads `.who-am-i` to know whose it is. New teammates: your agent sets you up on first run (AGENTS.md, "Know who you are"). |
-
-## Board
 
 - [ ] @ken 2026-10-23 TRI-team-onsite -- **Form the team in person at Saturday's 9:00 to 10:00 team formation.** The organiser closed the Team Match Network's matching round at about 9:09 PM Friday. Every open request closed with it, so Tricorder is still just Ken on the network, and the organiser places anyone left on site. Look first for Benjamin Schachter (senior frontend, applied to Tricorder), then Aanand (fullstack, design, AI agents and MCP), Alex Weiner (senior fullstack and data) and Madhu Garudala (data, picked Track 2), with Saumay Killa or Kimmy for design. Full notes: `~/Documents/workspace/personal/projects/vc_hackathon_2026/team_name_workshop.html`. Replaces TRI-team-status (who accepted the invites).
 - [ ] @anyone 2026-10-23 TRI-readout-link -- **Write the merge's `link` step and supply numeric evidence claims for headline comparisons.** The verdict and headline steps now consume existing links, but current scans rarely emit them. The [room evidence](features/20261023.07_readout_verdicts/evidence/summary.json) shows no qualifying green headlines and only retention as a red headline on the full Hollis Voice room. Read the matching, period, narrative-source, and named-subject rules in [FRAMEWORKS](ongoing/FRAMEWORKS.md#piece-verdicts). Pitch-claim support rows can state evidence without a separate peer Claim; emit sourced numeric peers rather than parsing figures back out of prose. Set up current-period matching and the ARR conflict group. Keep the [claim-support defaults](features/20261023.06_claim_support/00_progress.md) visible when deciding which supported figures can be corroborated. Part of the Saturday [readout](ongoing/ROADMAP.md#readout) slice, which remains open.

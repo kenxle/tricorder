@@ -1,3 +1,7 @@
-# Bulletin archive
+# Bulletin Board Archive
 
-Answered messages from [the board](BULLETIN.md), under the date they were archived. Each keeps its original text and adds a **RESOLVED:** note.
+> **Resolved messages from the [Bulletin Board](BULLETIN.md).** A message moves here once its action items are done, or once everyone it mentions has seen it. This keeps the live board short.
+>
+> **When and how to archive:** see "Archiving" in [`AGENTS.md`](../AGENTS.md).
+
+---
