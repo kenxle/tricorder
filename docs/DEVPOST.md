@@ -24,15 +24,6 @@ Tricorder automates research and helps associates build the memo that will be th
 - Builds the memo: collaborate with the associate to build a memo.
 - Allow Principals to review and ask questions of the memo.
 
-**In the clickable prototype**, which is the reference the team is building to:
-
-- Paste a company's URL. It matches against 193 saved YC Spring 2026 companies and sets itself up.
-- A first readout from public sources before any data room: website, Hacker News, App Store, SEC filings, founders, comps and market signals. Ploy and Sazabi use real saved data; other sections are placeholders.
-- The data-room request as a checklist the associate edits, with a live draft.
-- The room arriving, with its flags merged into the working page.
-- An interactive memo for the partner, with drill-downs, agree, disagree, what-if and a chat that points into the memo.
-
-Every data room is synthetic, and every page says so. The real companies' public data is real.
 
 ## How we built it
 
@@ -59,7 +50,7 @@ The scans and the merge are still Python, served by FastAPI to the React web app
 
 ## Challenges we ran into
 
-- **Real data rooms are confidential.** We wrote our own, with planted problems and decoys. For real YC companies we pair real public data with a synthetic room, and every page of the room says it is synthetic.
+- **Real data rooms are confidential.** We wrote our own, with planted problems and decoys. For real YC companies we pair real public data with a room we wrote.
 - **Keeping the model honest.** The model API would not return citations together with structured output. So every claim carries its quote, and a script checks the quote against the file.
 - **Scoring ourselves.** On a fresh run today, the engine finds 5 of 5 planted flags in Brasswick but only 2 of 8 in Hollis Voice. It misses a pilot counted as ARR, the deck's ARR against the model, burn against the hiring plan, customer concentration, gross margin, and cumulative sign-ups shown as active clinics. The checks for those are on the roadmap and not built yet.
 - **Changing stack mid-day.** We moved to TypeScript partway through the day, with web and mobile apps on one core. The Python engine keeps running the demo until the port scores the same on every answer key.
