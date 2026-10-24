@@ -18,8 +18,11 @@ from scans.base import gap
 from scans.claims.extract import Statement, _pages
 from scans.claims.kinds import KINDS
 from scans.claims.numbers import Mention, mentions
+from scans.knowledge import block as knowledge_block
 
 CHECK = "claim_extract"
+# The slides' checkable facts are mostly traction: named customers, pilots, contract dates.
+KNOWLEDGE_PIECES = ("traction_and_revenue",)
 PROMPT = (Path(__file__).parent / "prompts" / "slide_read.md").read_text(encoding="utf-8")
 
 
@@ -61,7 +64,8 @@ def read_slides(room: Path, statements: list[Statement], reader=None) -> tuple[l
 
     docs = [f'<doc path="{uri}" locator="slide {n}">\n{pages[n - 1]}\n</doc>' for n in slides]
     try:
-        out = (reader or read)(SlideFacts, check_name=CHECK, scan="claims", task=PROMPT, docs=docs)
+        out = (reader or read)(SlideFacts, check_name=CHECK, scan="claims", task=PROMPT, docs=docs,
+                                  knowledge=knowledge_block(KNOWLEDGE_PIECES))
     except ModelRefused as err:
         return [], [gap(f"Not in the room: a model reading of slides {where}", f"the model refused ({err})",
                         "a rerun, or the founder's own list of the facts on these slides", "the_pitch_itself")]

@@ -379,7 +379,7 @@ def steer(room_dir: str | Path, piece: str, sentence: str, claim_id: str | None 
             notes.append(f'{ask} The check\'s number stays as it wrote it: "{target.text}"' if target
                          else f"{ask} No check in this piece states a number, so nothing changed.")
         elif reading.path == "model":
-            kept, refused = reword(_piece_claims(working, piece), sentence, llm or _llm())
+            kept, refused = reword(_piece_claims(working, piece), sentence, llm or _llm(), piece=piece)
             if refused:
                 notes.append("Rewording refused for " + "; ".join(refused) + ".")
             claims = []

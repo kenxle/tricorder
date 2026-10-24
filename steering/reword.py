@@ -21,6 +21,7 @@ import re
 from typing import Callable
 
 from schema.claim import Claim
+from scans.knowledge import block as knowledge_block
 from steering.models import RewordReading
 
 _NUM = re.compile(r"\d[\d,]*(?:\.\d+)?")
@@ -100,12 +101,15 @@ def guard(old: str, new: str) -> str | None:
     return None
 
 
-def reword(claims: list[Claim], sentence: str, llm: Callable) -> tuple[dict[str, str], list[str]]:
-    """({claim id: new text} kept, [why each refused line was refused])."""
+def reword(claims: list[Claim], sentence: str, llm: Callable, piece: str | None = None) -> tuple[dict[str, str], list[str]]:
+    """({claim id: new text} kept, [why each refused line was refused]).
+
+    `piece` loads that piece's expert knowledge (knowledge/<piece>.md) into the prompt, when it has a file."""
     by_id = {c.id: c for c in claims}
     lines = "\n".join(f"[{c.id}] {c.text}" for c in claims)
     got: RewordReading = llm(RewordReading, check_name="steer.reword", scan="steering",
-                             task=TASK.format(sentence=sentence, lines=lines), route="read", effort="medium", max_tokens=4000)
+                             task=TASK.format(sentence=sentence, lines=lines), route="read", effort="medium", max_tokens=4000,
+                             knowledge=knowledge_block([piece]))
     kept, refused = {}, []
     for line in got.lines:
         old = by_id.get(line.claim_id)
