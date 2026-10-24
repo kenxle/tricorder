@@ -27,6 +27,9 @@ flowchart LR
     SC[schema/claim.py] -->|schema.export| TS[packages/schema/ src types]
     TS -.->|@tricorder/schema| P[apps/web/ page]
     SV --> P
+    DEV[Turbo dev] -.-> API[apps/api/ dev launcher]
+    API -.-> SV
+    DEV -.-> P
     P -->|one-sentence steer| ST[steering/]
     ST -->|rerun the piece| S
     P -->|ask list| FR[founder_requests/<br/>draft, never sent]

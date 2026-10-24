@@ -33,8 +33,9 @@ The web package also pins `@tanstack/intent` as development tooling for discover
 
 ## TypeScript workspace
 
-The root `package.json` defines npm workspaces at `apps/*` and `packages/*`. `turbo.json` orchestrates package-owned build and typecheck scripts. Install from the root with `npm ci`; the root lockfile pins every JavaScript dependency. Root dependencies are repo tooling only. Python source stays in its current folders while the port proceeds.
+The root `package.json` defines npm workspaces at `apps/*` and `packages/*`. `turbo.json` orchestrates package-owned build and typecheck scripts. Install from the root with `npm ci`; the root lockfile pins every JavaScript dependency. Root dependencies are repo tooling only. Python source stays in its current folders while the port proceeds. `apps/api/` is a dev-only workspace wrapper around that backend, not a TypeScript API port.
 
+Root `npm run dev` runs both `@tricorder/api#dev` and `@tricorder/web#dev`. The API launcher selects the project virtualenv, loads the root `.env` through Uvicorn without overriding exported values, and watches the Python source folders for reloads. `TRICORDER_PYTHON` explicitly overrides interpreter selection. The API task alone passes through backend environment variables; they are not globally forwarded to web tasks. `bin/serve --dev` delegates to the same Turbo command. Ctrl+C stops the task tree.
 
 `apps/web/` depends on `@tricorder/schema` through its package manifest. `schema/claim.py` remains the source of truth, and `python -m schema.export` writes `packages/schema/src/claim.ts` plus `schema/claim.schema.json`. The schema package exports TypeScript source directly, so app bundlers consume it without a separate compile step. It has no React, browser or Node dependencies. The schema freshness gate remains in `bin/ci-py`.
 
@@ -61,6 +62,7 @@ Each folder has one owner, so parallel pull requests do not touch the same files
 | `scans/memo/` | The merge and its steps: linking, claim support, piece verdicts, top flags, coverage, ask list, connecting sentences | captain |
 | `clients/` | `llm.py`, the one door to the model; one module per outside source, each with off, sample and live modes | backend-and-data |
 | `server/` | The FastAPI app | backend-and-data |
+| `apps/api/` | Dev launcher and Turbo environment policy for the existing Python API | Benjamin |
 | `apps/web/` | The React/Vite web app, built into `apps/web/dist/` and served by FastAPI | Benjamin |
 | `packages/schema/` | Platform-neutral generated TypeScript types, imported as `@tricorder/schema` by apps | Benjamin |
 | `eval/` | `score.py`: a readout against an answer key | captain |

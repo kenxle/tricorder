@@ -35,18 +35,24 @@ test -f .env || cp .env.example .env
 
 Set `TRICORDER_OFFLINE=1`, `TRICORDER_OUT_DIR=out` and `TRICORDER_CONTRACT_READER=script` in `.env`. Leave API keys empty for the synthetic-room demo. Set `TRICORDER_OPERATOR_NAME` and `TRICORDER_OPERATOR` to your name.
 
-The launch scripts do not load `.env`. Export it before running them:
+Start the API and web app together with one command from the repo root:
 
 ```sh
-source .venv/bin/activate
+npm run dev
+```
+
+Turbo starts the Python API at <http://127.0.0.1:8787> and Vite at <http://localhost:5173>. Vite proxies `/api` and `/health` to the API. Stop old dev servers first so those ports are free. Ctrl+C stops both Turbo tasks and their child processes.
+
+The API dev task in `apps/api/` automatically loads the root `.env` through Uvicorn. Exported environment variables take precedence. It prefers `.venv/bin/python`, so no virtualenv activation is needed after setup. Set `TRICORDER_PYTHON` to override that choice; without a project virtualenv it falls back to `PYTHON` or `python3`. Python source changes reload the API; Vite handles frontend changes.
+
+`bin/smoke`, `bin/ci-py` and API-only `bin/serve` still use the shell's environment. For a scan from the command line:
+
+```sh
 set -a
 source .env
 set +a
 PYTHON=.venv/bin/python bin/smoke data_room/hollis_voice
-PYTHON=.venv/bin/python bin/serve --dev
 ```
-
-Open <http://localhost:5173> for the page. The API and built page are at <http://127.0.0.1:8787>. The explicit `PYTHON` selects this project's environment even if your shell already sets `PYTHON` to another interpreter. Use the same prefix for `bin/ci-py`.
 
 Keep `TRICORDER_OUT_DIR=out` when exporting `.env`: an empty value selects the working directory instead of the default `out/` folder. Without API keys, model readings become gaps. Scans that have not been implemented also appear as gaps.
 
@@ -70,13 +76,13 @@ Run from the repo root:
 ```sh
 npm ci
 npm run dev:web                    # Only Vite; start the Python API separately
-npm run dev                        # Web dev server through Turbo
+npm run dev                        # API + web, plus Expo when its dev script exists
 npm run typecheck                  # Web and shared schema through Turbo
 npm run build                      # Web output: apps/web/dist/
 npm run build -- --filter=@tricorder/web
 ```
 
-`bin/serve` serves the web build at `/` after a build and server restart. CI installs the root lockfile before running `bin/ci-web`. Dev tasks are uncached; build outputs and successful typechecks are cached locally in `.turbo/`.
+`bin/serve --dev` is an alias for `npm run dev`. `bin/serve` serves the web build at `/` after a build and server restart. CI installs the root lockfile before running `bin/ci-web`. Dev tasks are uncached; build outputs and successful typechecks are cached locally in `.turbo/`.
 
 When adding Expo, create its package in `apps/mobile/`, use the root install and lockfile, and add `dev` and `typecheck` scripts to its own manifest. Its `dev` script joins the same root `npm run dev` automatically. To run only Expo, use `npm run dev -- --filter=@tricorder/mobile` once that package exists. Expo owns native launch/export commands; the current `build` task means a web bundle. Keep app environment files in their app directories. Run `npx expo install --check` from the mobile app after choosing its SDK and align React versions across apps.
 
