@@ -12,7 +12,7 @@ Tricorder makes this process faster, more accurate, and facilitates decision mak
 
 ## What it does
 
-Point it at a startup, get a readout. Tricorder does the first pass of diligence for seed and Series A funds. The associate runs it and steers it into a memo. The partner reads the memo and decides. Tricorder never says invest or pass.
+Tricorder automates research and helps associates build the memo that will be the artifact used to decide whether to invest in a company or not.
 
 **Working in the code today**, on synthetic data rooms:
 
