@@ -190,3 +190,7 @@ Secrets come from the environment and are never committed. `.env.example` lists 
 ## Running it
 
 `bin/smoke <room_dir>` runs every scan that exists, then the merge. `bin/serve` starts the server on port 8787 and serves the built page; `bin/serve --dev` adds the page's dev server. The gates are in [TESTING.md](TESTING.md).
+
+### Mobile UX sketch
+
+`apps/mobile/src/app/flow.tsx` exposes the isolated `prototype/FlowScreen.tsx` sketch through the UX Flow tab. Its synthetic fixtures and editable request, revision and memo state are local to the component. It imports no API adapter. The root uses the platform-specific AppTabs: native bottom tabs on iOS/Android and a normal-flow web tab bar. Home continues to render the existing readout.

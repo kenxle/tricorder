@@ -104,3 +104,9 @@ EXPO_UNSTABLE_MCP_SERVER=1 pnpm dev:mobile
 ```
 
 If Expo CLI is signed out, run `pnpm --filter @tricorder/mobile exec expo login`. Reconnect the Expo MCP server or restart the agent after starting or stopping Metro so its local capabilities refresh. Local tools include simulator screenshots, UI automation and opening React Native DevTools. The remote server registration alone does not enable these tools; Metro must be running with the flag above.
+
+## UX flow prototype
+
+Open the **UX Flow** bottom tab, or `/flow` on Expo web. The ten-screen sketch follows `docs/ongoing/diagrams/ux_review.md`: company entry, research, first readout, requests, receipt, updated findings, evidence, steering, memo editing and reader preview. Screen index jumps to any stage. All content is synthetic and all interactions stay in component state; reload resets the sketch. No research, upload, sending, PDF generation or model calls run. The palette follows Black Card; typography uses system fonts for this broad prototype.
+
+The Home tab retains the existing API-backed readout. Native uses Expo native tabs; web reserves layout space for its bottom navigation.

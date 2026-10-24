@@ -12,12 +12,15 @@ import { ThemedView } from "./themed-view";
 
 export default function AppTabs() {
   return (
-    <Tabs>
-      <TabSlot style={{ height: "100%" }} />
+    <Tabs style={{ flex: 1 }}>
+      <TabSlot style={{ flex: 1 }} />
       <TabList asChild>
         <CustomTabList>
           <TabTrigger name="home" href="/" asChild>
             <TabButton>Home</TabButton>
+          </TabTrigger>
+          <TabTrigger name="flow" href="/flow" asChild>
+            <TabButton>UX Flow</TabButton>
           </TabTrigger>
           <TabTrigger name="explore" href="/explore" asChild>
             <TabButton>Explore</TabButton>
@@ -58,7 +61,7 @@ export function CustomTabList(props: TabListProps) {
     <View {...props} style={styles.tabListContainer}>
       <ThemedView type="backgroundElement" style={styles.innerContainer}>
         <ThemedText type="smallBold" style={styles.brandText}>
-          Expo Starter
+          Tricorder
         </ThemedText>
 
         {props.children}
@@ -112,7 +115,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     padding: Spacing.three,
-    position: "absolute",
     width: "100%",
   },
 });
