@@ -5,15 +5,15 @@ import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { ScrollView, View } from "react-native";
 
-import { Action, Body, Card, Note, useReadoutColors } from "../readout/ui";
-import { researchFor } from "../diligence/diligence-data";
-import { RequestDialog, RequestsBox, RoomNotice, UpNextBox, buildItems } from "../diligence/requests";
-import type { RequestItem, RoomState } from "../diligence/requests";
-import { StartScreen } from "../diligence/start";
-import { WorkingPage } from "../diligence/working";
-import { RoomView } from "../diligence/room-view";
-import { MemoScreen } from "../diligence/memo";
-import { PartnerScreen } from "../diligence/partner";
+import { Action, Body, Card, Note, useReadoutColors } from "../../readout/ui";
+import { researchFor } from "../../diligence/diligence-data";
+import { RequestDialog, RequestsBox, RoomNotice, UpNextBox, buildItems } from "../../diligence/requests";
+import type { RequestItem, RoomState } from "../../diligence/requests";
+import { StartScreen } from "../../diligence/start";
+import { WorkingPage } from "../../diligence/working";
+import { RoomView } from "../../diligence/room-view";
+import { MemoScreen } from "../../diligence/memo";
+import { PartnerScreen } from "../../diligence/partner";
 
 const ARRIVAL_MS = 1800;
 

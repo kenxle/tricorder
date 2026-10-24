@@ -2,7 +2,7 @@
 import type { Href } from "expo-router";
 import { useLocalSearchParams, useRouter } from "expo-router";
 
-import { RoomView } from "../diligence/room-view";
+import { RoomView } from "../../diligence/room-view";
 
 const MEMO = "/diligence-memo" as Href;
 

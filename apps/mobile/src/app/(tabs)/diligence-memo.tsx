@@ -3,8 +3,8 @@
 import { useLocalSearchParams } from "expo-router";
 import { useState } from "react";
 
-import { MemoScreen } from "../diligence/memo";
-import { PartnerScreen } from "../diligence/partner";
+import { MemoScreen } from "../../diligence/memo";
+import { PartnerScreen } from "../../diligence/partner";
 
 const DiligenceMemoPreview = () => {
   const { view } = useLocalSearchParams<{ view?: string }>();
