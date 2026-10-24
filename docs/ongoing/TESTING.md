@@ -57,7 +57,11 @@ PYTHON=.venv/bin/python bin/smoke data_room/hollis_voice
 
 Keep `TRICORDER_OUT_DIR=out` when exporting `.env`: an empty value selects the working directory instead of the default `out/` folder. Without API keys, model readings become gaps. Scans that have not been implemented also appear as gaps.
 
-Zed project settings in `.zed/settings.json` disable automatic formatting on save. The mobile package has ESLint, but the repo has no configured formatter. Applying an editor's default formatter creates unrelated changes to existing files. Language-server diagnostics and the CI gates below remain available. Set a shared formatter and its configuration before enabling automatic formatting for this project.
+The workspace uses [Ultracite](https://www.ultracite.ai/) 8.0.2 with Oxlint and Oxfmt. Run `pnpm format` for formatting only, `pnpm fix` for formatting plus safe lint fixes, `pnpm check` for the shared read-only check, and `pnpm lint` for that check plus Expo ESLint. `bin/ci-web` runs `pnpm lint`, so CI enforces formatting. Agents must run the gate before declaring work complete; see [AGENTS.md](../../AGENTS.md#required-repository-workflow).
+
+The initial migration formatted the app/workspace source and root configuration. Generated schema/API contracts, Python-owned memo/scans/schema files, research/prototype documents, data rooms, native build directories and lockfiles are excluded. Their existing generators and checks remain authoritative. Zed's automatic save formatting remains disabled; use the explicit shared commands rather than an editor default.
+
+`oxlint.config.mts` extends Ultracite core and React. Its migration overrides waive 190 existing file/rule pairs in 37 named files, including style preferences and existing async/React patterns. These are file-wide exceptions, not proof that the legacy code meets every Ultracite rule. New files use the full presets. When cleaning up an affected file, remove its rule exception and fix the newly reported violations; do not extend this list for new work. Expo ESLint remains as an additional mobile-specific check.
 
 ## Intent agent guidance
 
@@ -90,7 +94,8 @@ pnpm build:ios                  # Build/install the native iOS development clien
 pnpm build:ios --device "Deez iPhone" # Build/install on the connected iPhone
 pnpm dev                        # Python API + tRPC gateway + web + Expo Metro
 pnpm typecheck                  # Web, mobile, gateway and shared schema through Turbo
-pnpm lint                       # Mobile ESLint through Turbo
+pnpm format                     # Oxfmt, using the Ultracite preset
+pnpm lint                       # Ultracite formatting/lint + mobile Expo ESLint
 pnpm test                       # Gateway HTTP and validation tests
 pnpm start                      # Python API + tRPC, serving the built web page
 pnpm build                      # Web and mobile bundles: apps/{web,mobile}/dist/
@@ -142,7 +147,7 @@ For alternate ports, export `PORT` for Python, `TRICORDER_RPC_PORT` for the gate
 | Command | What it runs | Green means |
 |---|---|---|
 | `bin/ci-py` | `python -m schema.export --check` and `python -m server.export_api --check` (generated schema and API contracts are current), then `pytest` over the test folders in `pyproject.toml`, including the store, founder requests, memo, and steering | exit 0, "N passed" and no failures |
-| `bin/ci-web` | Turbo typechecks all TypeScript packages, lints mobile, runs gateway tests and exports/builds apps | exit 0 |
+| `bin/ci-web` | Turbo typechecks all TypeScript packages, checks Ultracite formatting/lint and mobile Expo ESLint, runs gateway tests and exports/builds apps | exit 0 |
 | `bin/smoke <room_dir>` | Every scan that exists on one room, then the merge | each scan prints its counts and the merge prints its summary, with no traceback |
 
 GitHub Actions runs `bin/ci-py` and `bin/ci-web` as two separate jobs on every pull request, so a red page build never blocks a Python merge. A red CI blocks a merge, even on Saturday.

@@ -1,10 +1,3 @@
-import {
-  useEffect,
-  useMemo,
-  useState,
-  type KeyboardEvent,
-  type ReactNode,
-} from "react";
 import type {
   Claim,
   Panel,
@@ -13,8 +6,12 @@ import type {
   Readout,
   Source,
 } from "@tricorder/schema";
+import { useEffect, useMemo, useState } from "react";
+import type { KeyboardEvent, ReactNode } from "react";
+
 import { PIECE_LABEL, VERDICT_LABEL } from "./labels";
 import { getClaimSource, getSteerable, postSteer } from "./steerApi";
+
 import "./steering.css";
 
 // The overview, steerable: one box on the overview, on every piece and on
@@ -26,12 +23,12 @@ import "./steering.css";
 const EXAMPLE = "For example: treat the pilot as non-recurring";
 const OVERVIEW = "overview";
 
-type Steered = {
+interface Steered {
   rev: PieceRevision;
   n: number;
   panel: Panel | undefined;
   typedOn: string;
-};
+}
 
 function changesOf(readout: Readout, n: number): Panel | undefined {
   return readout.panels.find((p) => p.name === `steer ${n}: what changed`);
@@ -40,7 +37,7 @@ function changesOf(readout: Readout, n: number): Panel | undefined {
 function cell(
   panel: Panel | undefined,
   change: string,
-  col: number,
+  col: number
 ): string | null {
   const row = panel?.rows.find((r) => r[0] === change);
   return row ? row[col] : null;
@@ -55,10 +52,10 @@ function when(at: string): string {
   return Number.isNaN(d.getTime())
     ? at
     : d.toLocaleString([], {
-        month: "short",
         day: "numeric",
         hour: "2-digit",
         minute: "2-digit",
+        month: "short",
       });
 }
 
@@ -69,7 +66,7 @@ function who(rev: PieceRevision): string {
 /** The panel a line's text names in quotes, such as the cohort rows a retention figure sums. */
 function namedPanel(readout: Readout, claim: Claim): Panel | undefined {
   return readout.panels.find(
-    (p) => !p.name.startsWith("steer ") && claim.text.includes(`'${p.name}'`),
+    (p) => !p.name.startsWith("steer ") && claim.text.includes(`'${p.name}'`)
   );
 }
 
@@ -86,10 +83,16 @@ export function SteerableSection({
   useEffect(() => {
     setReadout(null);
     setError("");
-    getSteerable(room).then(setReadout, (e: Error) => setError(e.message));
+    getSteerable(room).then(setReadout, (error_: Error) =>
+      setError(error_.message)
+    );
   }, [room]);
-  if (error) return <p className="note">{error}</p>;
-  if (!readout) return <p className="note">Loading the overview.</p>;
+  if (error) {
+    return <p className="note">{error}</p>;
+  }
+  if (!readout) {
+    return <p className="note">Loading the overview.</p>;
+  }
   return (
     <SteerableOverview
       key={readout.room}
@@ -112,25 +115,29 @@ export function SteerableOverview({
   const claims = useMemo(
     () =>
       new Map([...readout.claims, ...readout.unverified].map((c) => [c.id, c])),
-    [readout],
+    [readout]
   );
   const steered: Steered[] = useMemo(
     () =>
       readout.revisions.map((rev, i) => {
         const panel = changesOf(readout, i + 1);
         return {
-          rev,
           n: i + 1,
           panel,
+          rev,
           typedOn: cell(panel, "typed on", 3) ?? rev.steer.piece,
         };
       }),
-    [readout],
+    [readout]
   );
   // Which steer added a line, and the check lines a scenario line replaced (shown as "before" in the diff).
   const addedBy = useMemo(() => {
     const m = new Map<string, Steered>();
-    for (const s of steered) for (const id of s.rev.claims_added) m.set(id, s);
+    for (const s of steered) {
+      for (const id of s.rev.claims_added) {
+        m.set(id, s);
+      }
+    }
     return m;
   }, [steered]);
   const replaced = useMemo(
@@ -139,36 +146,40 @@ export function SteerableOverview({
         steered.flatMap((s) =>
           (s.panel?.rows ?? [])
             .filter((r) => r[0] === "replaced")
-            .map((r) => r[1]),
-        ),
+            .map((r) => r[1])
+        )
       ),
-    [steered],
+    [steered]
   );
   const pieceOf = useMemo(() => {
     const m = new Map<string, Piece["name"]>();
-    for (const p of readout.pieces)
-      for (const id of p.claim_ids) m.set(id, p.name);
+    for (const p of readout.pieces) {
+      for (const id of p.claim_ids) {
+        m.set(id, p.name);
+      }
+    }
     return m;
   }, [readout]);
   // A steer's own lines show under the place it was typed; a full-room read's lines show in their own pieces.
   const shownUnder = useMemo(() => {
     const m = new Map<string, string[]>();
     for (const s of steered) {
-      if (s.typedOn === OVERVIEW) continue;
+      if (s.typedOn === OVERVIEW) {
+        continue;
+      }
       m.set(
         `${s.n}`,
         s.rev.claims_added.filter(
           (id) =>
-            pieceOf.get(id) === s.typedOn &&
-            claims.get(id)?.scan === "steering",
-        ),
+            pieceOf.get(id) === s.typedOn && claims.get(id)?.scan === "steering"
+        )
       );
     }
     return m;
   }, [steered, pieceOf, claims]);
   const underASteer = useMemo(
     () => new Set([...shownUnder.values()].flat()),
-    [shownUnder],
+    [shownUnder]
   );
   const switched = steered.find((s) => cell(s.panel, "source", 3));
 
@@ -179,8 +190,8 @@ export function SteerableOverview({
       new Set(
         readout.pieces
           .filter((p) => p.verdict === "looking_weak")
-          .map((p) => p.name),
-      ),
+          .map((p) => p.name)
+      )
   );
   const [box, setBox] = useState<string | null>(null);
   const [busy, setBusy] = useState<string | null>(null);
@@ -191,21 +202,26 @@ export function SteerableOverview({
     const where = `${piece}:${claimId ?? ""}`;
     setBusy(where);
     setError("");
-    postSteer(readout.room, { piece, sentence, claim_id: claimId })
+    postSteer(readout.room, { claim_id: claimId, piece, sentence })
       .then((r) => {
         setBox(null);
-        if (piece !== OVERVIEW) setOpen((o) => new Set(o).add(piece));
+        if (piece !== OVERVIEW) {
+          setOpen((o) => new Set(o).add(piece));
+        }
         onReadout(r.readout);
       })
-      .catch((e: Error) => setError(e.message))
+      .catch((error_: Error) => setError(error_.message))
       .finally(() => setBusy(null));
   };
 
   const toggle = (name: string) =>
     setOpen((o) => {
       const next = new Set(o);
-      if (next.has(name)) next.delete(name);
-      else next.add(name);
+      if (next.has(name)) {
+        next.delete(name);
+      } else {
+        next.add(name);
+      }
       return next;
     });
   const move = (i: number, by: number) => {
@@ -240,7 +256,7 @@ export function SteerableOverview({
       />
     );
   };
-  const ctx: Ctx = { readout, claims, addedBy, shownUnder, steersOn, line };
+  const ctx: Ctx = { addedBy, claims, line, readout, shownUnder, steersOn };
 
   return (
     <section aria-label="Overview">
@@ -349,14 +365,14 @@ export function SteerableOverview({
   );
 }
 
-type Ctx = {
+interface Ctx {
   readout: Readout;
   claims: Map<string, Claim>;
   addedBy: Map<string, Steered>;
   shownUnder: Map<string, string[]>;
   steersOn: (typedOn: string, claimId: string | null) => Steered[];
   line: (c: Claim, piece: string) => ReactNode;
-};
+}
 
 function LineWithSteers(props: {
   claim: Claim;
@@ -493,8 +509,12 @@ function SteerBox({
 }) {
   const [text, setText] = useState("");
   const onKey = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" && text.trim() && !busy) onSend(text.trim());
-    if (e.key === "Escape") onClose();
+    if (e.key === "Enter" && text.trim() && !busy) {
+      onSend(text.trim());
+    }
+    if (e.key === "Escape") {
+      onClose();
+    }
   };
   return (
     <div className="steer">
@@ -518,13 +538,14 @@ function SteerBox({
 /** The note without its headline, the instruction it repeats, and the engineering footer (kept in the JSON). */
 function said(rev: PieceRevision, headline: string): string {
   let rest = (rev.note ?? "").trim();
-  if (headline && rest.startsWith(headline))
+  if (headline && rest.startsWith(headline)) {
     rest = rest.slice(headline.length).trim();
+  }
   rest = rest.replace(/^[^"]*? instruction: ".*?"\.\s*/, "");
   rest = rest.replace(/^Every piece now reads [^.]*\.\s*/, "");
   rest = rest.replace(/^\d+ new claims?, marked new( \([^)]*\))?\.\s*/, "");
   const cut = rest.indexOf("Read as ");
-  return (cut >= 0 ? rest.slice(0, cut) : rest).trim();
+  return (cut === -1 ? rest : rest.slice(0, cut)).trim();
 }
 
 function Diff({ s, ctx }: { s: Steered; ctx: Ctx }) {
@@ -577,7 +598,7 @@ function Diff({ s, ctx }: { s: Steered; ctx: Ctx }) {
             {rev.claims_added.length} new lines, marked new in their pieces. New
             sources:{" "}
             {[...new Set(rev.sources_added.map((x) => x.split(", ")[0]))].join(
-              "; ",
+              "; "
             )}
           </li>
         )}
@@ -606,7 +627,7 @@ function SourceChip({
         setFrom(r.room);
         setText(r.text);
       },
-      (e: Error) => setText(e.message),
+      (error: Error) => setText(error.message)
     );
   // The quote shows once: when the text at the locator is the quote itself, it is not repeated.
   const same = text !== null && text.trim() === source.quote.trim();
@@ -624,7 +645,7 @@ function SourceChip({
       {text !== null && (
         <span className="panel" role="note">
           <span className="note">
-            {from !== room ? `${from}, the full room: ` : ""}
+            {from === room ? "" : `${from}, the full room: `}
             {source.uri} · {source.locator}
           </span>
           <q>{source.quote}</q>

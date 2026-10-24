@@ -1,13 +1,11 @@
 # Tricorder mobile
 
-Follow the root [AGENTS.md](../../AGENTS.md) as well as this Expo guidance.
-This is the `@tricorder/mobile` pnpm workspace. Run installs from the repository root;
-use the single root `pnpm-lock.yaml`. Do not create an app-local lockfile.
+Follow the root [AGENTS.md](../../AGENTS.md) as well as this Expo guidance. This is the `@tricorder/mobile` pnpm workspace. Run installs from the repository root; use the single root `pnpm-lock.yaml`. Do not create an app-local lockfile.
 
 - `pnpm dev:mobile` from the root starts Metro through Turbo.
 - `pnpm --filter @tricorder/mobile ios` or `android` starts Metro and opens that platform.
 - `pnpm build --filter=@tricorder/mobile` exports Android, iOS and web JavaScript to `dist/`.
-- `pnpm typecheck --filter=@tricorder/mobile` and `pnpm lint --filter=@tricorder/mobile` run package checks.
+- `pnpm typecheck --filter=@tricorder/mobile` runs package typechecks. Run `pnpm format` and `pnpm lint` from the root for shared Ultracite/Oxlint/Oxfmt checks plus Expo ESLint.
 - Shared contracts come from `@tricorder/schema` via `workspace:*`. Do not import web or backend implementation files.
 - This is the SDK 58 starter. The Tricorder readout and API integration are future work.
 
@@ -44,8 +42,7 @@ Run lint and typecheck before declaring any task done.
 
 ## Building with EAS
 
-Use EAS to build, sign, and submit the app in the cloud (`eas build`, `eas submit`) and to ship over-the-air updates (`eas update`) — no local Xcode or Android Studio required. Run EAS CLI as `bunx eas-cli <command>` in Bun projects, or `npx eas-cli@latest <command>` otherwise; substitute that for bare `eas` in docs examples.
-Docs: https://docs.expo.dev/eas/index.md
+Use EAS to build, sign, and submit the app in the cloud (`eas build`, `eas submit`) and to ship over-the-air updates (`eas update`) — no local Xcode or Android Studio required. Run EAS CLI as `bunx eas-cli <command>` in Bun projects, or `npx eas-cli@latest <command>` otherwise; substitute that for bare `eas` in docs examples. Docs: https://docs.expo.dev/eas/index.md
 
 ## Rules
 

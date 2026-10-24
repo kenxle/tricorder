@@ -1,10 +1,6 @@
 {
   "name": "tricorder",
   "private": true,
-  "packageManager": "pnpm@11.9.0",
-  "engines": {
-    "node": ">=22.13.0"
-  },
   "scripts": {
     "build": "turbo run build",
     "generate:api": "bash bin/generate-api",
@@ -15,10 +11,21 @@
     "test": "turbo run test",
     "dev:web": "turbo run dev --filter=@tricorder/web",
     "dev:mobile": "turbo run dev --filter=@tricorder/mobile --ui=tui",
-    "lint": "turbo run lint",
-    "build:ios": "pnpm --filter @tricorder/mobile build:ios"
+    "lint": "pnpm check && turbo run lint",
+    "build:ios": "pnpm --filter @tricorder/mobile build:ios",
+    "check": "ultracite check",
+    "fix": "ultracite fix",
+    "format": "oxfmt --write .",
+    "format:check": "oxfmt --check ."
   },
   "devDependencies": {
-    "turbo": "2.11.10"
-  }
+    "oxfmt": "^0.71.0",
+    "oxlint": "^1.86.0",
+    "turbo": "2.11.10",
+    "ultracite": "8.0.2"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "packageManager": "pnpm@11.9.0"
 }

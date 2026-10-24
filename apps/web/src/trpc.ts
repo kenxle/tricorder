@@ -1,6 +1,6 @@
+import type { AppRouter } from "@tricorder/rpc";
 import { createTRPCClient, httpBatchLink } from "@trpc/client";
 import type { inferRouterInputs, inferRouterOutputs } from "@trpc/server";
-import type { AppRouter } from "@tricorder/rpc";
 
 export type { AppRouter } from "@tricorder/rpc";
 // Inputs come from the router's Zod schemas, including pre-transform values.

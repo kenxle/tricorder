@@ -72,7 +72,7 @@ Several agents push to `main` at once. If you go a while without pulling, you wi
 Teammates: add yourself here and in Core Domains when you join. Your @-handle is your first name.
 
 | Name | Handle | Area(s) |
-|------|--------|---------|
+| --- | --- | --- |
 | Ken | `@Ken` | Product design, user research, product management, the demo and the pitch |
 | Benjamin | `@Benjamin` | The TypeScript port: shared core, React web, React Native; room-requests |
 | Kimmy | `@Kimmy` | Expert knowledge in each analysis |
@@ -82,7 +82,7 @@ Teammates: add yourself here and in Core Domains when you join. Your @-handle is
 Each teammate owns a domain. Respect these boundaries and use the Bulletin Board for cross-domain requests.
 
 | Name | Core Domain | Owns (files, folders, systems) |
-|------|-------------|--------------------------------|
+| --- | --- | --- |
 | Ken | Product (design, research, PM) | What we build and why: the product brief, features, roadmap, personas, research, the brand, the demo story and the synthetic data rooms. Lives in `docs/ongoing/`, `docs/reports/`, `data_room/`. Agents: check with @Ken before changing scope, the readout's words, or the demo story. |
 | Benjamin | The TypeScript port | The shared TypeScript core, the React web app and the React Native app. See [typescript-port](docs/ongoing/roadmap/typescript-port.md). Agents: once Benjamin's port of a folder is announced on the board, change that folder in TypeScript, not Python. |
 
@@ -105,8 +105,9 @@ Each teammate owns a domain. Respect these boundaries and use the Bulletin Board
 Read what your work touches. Seneschal keeps the table current. Add your new documents to it when you create them.
 
 <!-- seneschal:doc-table -->
+
 | Document | Read when |
-|---|---|
+| --- | --- |
 | `docs/ongoing/PRODUCT_BRIEF.md` | Any feature: what Tricorder is, who it is for, the scans, the principles. |
 | `docs/ongoing/ROADMAP.md` | Picking what to build next and who builds it. Each slice's detail, what it must include and how we know it is done, is in `docs/ongoing/roadmap/<slice>.md`. |
 | `docs/ongoing/FRAMEWORKS.md` | Building or changing a scan: the frameworks each scan runs, their inputs, their output shape. |
@@ -123,6 +124,7 @@ Read what your work touches. Seneschal keeps the table current. Add your new doc
 | `docs/ongoing/TESTING.md` | Writing or running tests, or reading what the CI command runs. |
 | `docs/ongoing/diagrams/INDEX.md` | Finding a diagram of a flow before changing it. |
 | `data_room/README.md` | Running any scan: the synthetic Hollis Voice room, how to regenerate it, and the answer key of planted flags. |
+
 <!-- /seneschal:doc-table -->
 
 ## Repo structure
@@ -181,3 +183,140 @@ tricorder/
 
 - No em dashes. Use a comma, colon, semicolon, or period.
 - Write plainly. One idea per sentence.
+
+# Ultracite Code Standards
+
+This project uses **Ultracite**, a zero-config preset that enforces strict code quality standards through automated formatting and linting.
+
+## Required repository workflow
+
+- Run `pnpm format` after editing and `pnpm lint` before reporting completion. CI runs the same gate through `bin/ci-web`.
+- For a small change, use `pnpm exec ultracite fix <paths>` on the files you changed, then run `pnpm lint`. Never use dangerous fixes for routine formatting.
+- The installed [Ultracite skill](node_modules/ultracite/skills/ultracite/SKILL.md) and [official rules](https://www.ultracite.ai/) describe the conventions; use the locked local tools, not a fresh `@latest` during ordinary work.
+- `oxlint.config.mts` contains file-specific migration exceptions for existing code. New files use the full core/React presets. Do not add exceptions for new violations; remove existing ones as their code is cleaned up.
+- Generated contracts, Python-owned files, research documents/data rooms and native build folders are excluded. Regenerate contracts with their existing exporters.
+
+## Quick Reference
+
+- **Format code**: `pnpm format`
+- **Apply safe lint fixes**: `pnpm fix`
+- **Check for issues**: `pnpm exec ultracite check`
+- **Diagnose setup**: `pnpm exec ultracite doctor`
+
+Oxlint + Oxfmt (the underlying engine) provides robust linting and formatting. Most issues are automatically fixable.
+
+---
+
+## Core Principles
+
+Write code that is **accessible, performant, type-safe, and maintainable**. Focus on clarity and explicit intent over brevity.
+
+### Type Safety & Explicitness
+
+- Use explicit types for function parameters and return values when they enhance clarity
+- Prefer `unknown` over `any` when the type is genuinely unknown
+- Use const assertions (`as const`) for immutable values and literal types
+- Leverage TypeScript's type narrowing instead of type assertions
+- Use meaningful variable names instead of magic numbers - extract constants with descriptive names
+
+### Modern JavaScript/TypeScript
+
+- Use arrow functions for callbacks and short functions
+- Prefer `for...of` loops over `.forEach()` and indexed `for` loops
+- Use optional chaining (`?.`) and nullish coalescing (`??`) for safer property access
+- Prefer template literals over string concatenation
+- Use destructuring for object and array assignments
+- Use `const` by default, `let` only when reassignment is needed, never `var`
+
+### Async & Promises
+
+- Always `await` promises in async functions - don't forget to use the return value
+- Use `async/await` syntax instead of promise chains for better readability
+- Handle errors appropriately in async code with try-catch blocks
+- Don't use async functions as Promise executors
+
+### React & JSX
+
+- Use function components over class components
+- Call hooks at the top level only, never conditionally
+- Specify all dependencies in hook dependency arrays correctly
+- Use the `key` prop for elements in iterables (prefer unique IDs over array indices)
+- Nest children between opening and closing tags instead of passing as props
+- Don't define components inside other components
+- Use semantic HTML and ARIA attributes for accessibility:
+  - Provide meaningful alt text for images
+  - Use proper heading hierarchy
+  - Add labels for form inputs
+  - Include keyboard event handlers alongside mouse events
+  - Use semantic elements (`<button>`, `<nav>`, etc.) instead of divs with roles
+
+### Error Handling & Debugging
+
+- Remove `console.log`, `debugger`, and `alert` statements from production code
+- Throw `Error` objects with descriptive messages, not strings or other values
+- Use `try-catch` blocks meaningfully - don't catch errors just to rethrow them
+- Prefer early returns over nested conditionals for error cases
+
+### Code Organization
+
+- Keep functions focused and under reasonable cognitive complexity limits
+- Extract complex conditions into well-named boolean variables
+- Use early returns to reduce nesting
+- Prefer simple conditionals over nested ternary operators
+- Group related code together and separate concerns
+- Avoid import cycles; move shared code into a module both sides import
+
+### Security
+
+- Add `rel="noopener noreferrer"` when using `target="_blank"` on links
+- Avoid `dangerouslySetInnerHTML` unless absolutely necessary
+- Don't use `eval()` or assign directly to `document.cookie`
+- Validate and sanitize user input
+
+### Performance
+
+- Avoid spread syntax in accumulators within loops
+- Use top-level regex literals instead of creating them in loops
+- Prefer specific imports over namespace imports
+- Avoid barrel files (index files that re-export everything)
+- Use proper image components (e.g., Next.js `<Image>`) over `<img>` tags
+
+### Framework-Specific Guidance
+
+**Next.js:**
+
+- Use Next.js `<Image>` component for images
+- Use `next/head` or App Router metadata API for head elements
+- Use Server Components for async data fetching instead of async Client Components
+
+**React 19+:**
+
+- Use ref as a prop instead of `React.forwardRef`
+
+**Solid/Svelte/Vue/Qwik:**
+
+- Use `class` and `for` attributes (not `className` or `htmlFor`)
+
+---
+
+## Testing
+
+- Write assertions inside `it()` or `test()` blocks
+- Avoid done callbacks in async tests - use async/await instead
+- Don't use `.only` or `.skip` in committed code
+- Keep test suites reasonably flat - avoid excessive `describe` nesting
+
+## When Oxlint + Oxfmt Can't Help
+
+Oxlint + Oxfmt will catch most mechanical issues automatically. Focus your attention on:
+
+1. **Business logic correctness** - Oxlint + Oxfmt can't validate your algorithms
+2. **Meaningful naming** - Use descriptive names for functions, variables, and types
+3. **Architecture decisions** - Component structure, data flow, and API design
+4. **Edge cases** - Handle boundary conditions and error states
+5. **User experience** - Accessibility, performance, and usability considerations
+6. **Documentation** - Add comments for complex logic, but prefer self-documenting code
+
+---
+
+Most formatting and common issues are automatically fixed by Oxlint + Oxfmt. Run `pnpm exec ultracite fix` before committing to ensure compliance.

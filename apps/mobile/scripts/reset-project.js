@@ -7,9 +7,9 @@
  * You can remove the `reset-project` script from package.json and safely delete this file after running it.
  */
 
-const fs = require("fs");
-const path = require("path");
-const readline = require("readline");
+const fs = require("node:fs");
+const path = require("node:path");
+const readline = require("node:readline");
 
 const root = process.cwd();
 const oldDirs = ["src", "scripts"];
@@ -65,7 +65,9 @@ const moveDirectories = async (userInput) => {
     if (userInput === "y") {
       // Create the app-example directory
       await fs.promises.mkdir(exampleDirPath, { recursive: true });
-      await fs.promises.mkdir(path.join(exampleDirPath, "assets/images"), { recursive: true });
+      await fs.promises.mkdir(path.join(exampleDirPath, "assets/images"), {
+        recursive: true,
+      });
       console.log(`📁 /${exampleDir} directory created.`);
     }
 
@@ -78,7 +80,7 @@ const moveDirectories = async (userInput) => {
           await fs.promises.rename(oldDirPath, newDirPath);
           console.log(`➡️ /${dir} moved to /${exampleDir}/${dir}.`);
         } else {
-          await fs.promises.rm(oldDirPath, { recursive: true, force: true });
+          await fs.promises.rm(oldDirPath, { force: true, recursive: true });
           console.log(`❌ /${dir} deleted.`);
         }
       } else {
@@ -91,13 +93,17 @@ const moveDirectories = async (userInput) => {
       const assetPath = path.join(root, "assets/images", asset);
       if (fs.existsSync(assetPath)) {
         if (userInput === "y") {
-          const newAssetPath = path.join(exampleDirPath, "assets/images", asset);
+          const newAssetPath = path.join(
+            exampleDirPath,
+            "assets/images",
+            asset
+          );
           await fs.promises.rename(assetPath, newAssetPath);
           console.log(
             `➡️ /assets/images/${asset} moved to /${exampleDir}/assets/images/${asset}.`
           );
         } else {
-          await fs.promises.rm(assetPath, { recursive: true, force: true });
+          await fs.promises.rm(assetPath, { force: true, recursive: true });
           console.log(`❌ /assets/images/${asset} deleted.`);
         }
       }

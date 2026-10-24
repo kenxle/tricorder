@@ -1,6 +1,8 @@
-import { useEffect, useMemo, useState } from "react";
 import type { Claim, Readout, Source } from "@tricorder/schema";
-import { buildReadout, getReadout, getRooms, getSourceText, type RoomInfo } from "./api";
+import { useEffect, useMemo, useState } from "react";
+
+import { buildReadout, getReadout, getRooms, getSourceText } from "./api";
+import type { RoomInfo } from "./api";
 import { FounderRequests } from "./FounderRequests";
 import { SteerableSection } from "./Steering";
 
@@ -18,30 +20,49 @@ export function App() {
     getRooms()
       .then((r) => {
         setRooms(r);
-        setRoom((cur) => cur || r.find((x) => x.id === "hollis_voice")?.id || r[0]?.id || "");
+        setRoom(
+          (cur) =>
+            cur || r.find((x) => x.id === "hollis_voice")?.id || r[0]?.id || ""
+        );
       })
-      .catch((e: Error) => setError(e.message));
+      .catch((error_: Error) => setError(error_.message));
   }, []);
 
   useEffect(() => {
-    if (!room) return;
+    if (!room) {
+      return;
+    }
     setReadout(null);
     setError("");
-    getReadout(room).then(setReadout).catch(() => setError("No readout for this room yet."));
+    getReadout(room)
+      .then(setReadout)
+      .catch(() => setError("No readout for this room yet."));
   }, [room]);
 
   return (
     <main className="page">
       <header className="masthead">
         <h1>Tricorder</h1>
-        <select value={room} onChange={(e) => setRoom(e.target.value)} aria-label="Room">
+        <select
+          value={room}
+          onChange={(e) => setRoom(e.target.value)}
+          aria-label="Room"
+        >
           {rooms.map((r) => (
             <option key={r.id} value={r.id}>
               {r.id}
             </option>
           ))}
         </select>
-        <button onClick={() => buildReadout(room).then(setReadout, (e: Error) => setError(e.message))}>Build readout</button>
+        <button
+          onClick={() =>
+            buildReadout(room).then(setReadout, (error_: Error) =>
+              setError(error_.message)
+            )
+          }
+        >
+          Build readout
+        </button>
       </header>
       {error && <p className="note">{error}</p>}
       {readout && (
@@ -49,28 +70,58 @@ export function App() {
           readout={readout}
           onReadout={setReadout}
           // A reply added to a working copy: list it and show its readout.
-          onRoom={(r) => getRooms().then((rs) => { setRooms(rs); setRoom(r); })}
+          onRoom={(r) =>
+            getRooms().then((rs) => {
+              setRooms(rs);
+              setRoom(r);
+            })
+          }
         />
       )}
     </main>
   );
 }
 
-function ReadoutView({ readout, onReadout, onRoom }: { readout: Readout; onReadout: (r: Readout) => void; onRoom?: (room: string) => void }) {
-  const claims = useMemo(() => new Map(readout.claims.map((c) => [c.id, c])), [readout]);
-  const goTo = (piece: string) => document.querySelector(`[data-piece="${piece}"]`)?.scrollIntoView({ behavior: "smooth" });
+function ReadoutView({
+  readout,
+  onReadout,
+  onRoom,
+}: {
+  readout: Readout;
+  onReadout: (r: Readout) => void;
+  onRoom?: (room: string) => void;
+}) {
+  const claims = useMemo(
+    () => new Map(readout.claims.map((c) => [c.id, c])),
+    [readout]
+  );
+  const goTo = (piece: string) =>
+    document
+      .querySelector(`[data-piece="${piece}"]`)
+      ?.scrollIntoView({ behavior: "smooth" });
 
   const greens = readout.top_flags.filter((f) => f.kind === "green");
   const reds = readout.top_flags.filter((f) => f.kind === "red");
 
   return (
     <>
-      {readout.synthetic_notice && <p className="banner">{readout.synthetic_notice}</p>}
+      {readout.synthetic_notice && (
+        <p className="banner">{readout.synthetic_notice}</p>
+      )}
 
       <section aria-label="Top flags">
         <h2>Top green and red flags</h2>
-        {greens.length === 0 && <p className="note">No green headline from the linked evidence yet.</p>}
-        {reds.length === 0 && <p className="note">No red headline with linked numeric comparisons yet. Check the overview for flagged claims.</p>}
+        {greens.length === 0 && (
+          <p className="note">
+            No green headline from the linked evidence yet.
+          </p>
+        )}
+        {reds.length === 0 && (
+          <p className="note">
+            No red headline with linked numeric comparisons yet. Check the
+            overview for flagged claims.
+          </p>
+        )}
         <ol className="flags">
           {[...greens, ...reds].map((f) => (
             <li key={`${f.kind}-${f.rank}`} className={`flag ${f.kind}`}>
@@ -100,7 +151,11 @@ function ReadoutView({ readout, onReadout, onRoom }: { readout: Readout; onReado
       {readout.unverified.length > 0 && (
         <section aria-label="Could not verify">
           <h2>Could not verify</h2>
-          <ClaimList room={readout.room} claims={readout.unverified} all={claims} />
+          <ClaimList
+            room={readout.room}
+            claims={readout.unverified}
+            all={claims}
+          />
         </section>
       )}
 
@@ -110,7 +165,15 @@ function ReadoutView({ readout, onReadout, onRoom }: { readout: Readout; onReado
           <p className="note">Nothing to ask for.</p>
         ) : (
           <>
-            <button onClick={() => navigator.clipboard.writeText(readout.asks.map((a) => `- ${a.what}`).join("\n"))}>Copy</button>
+            <button
+              onClick={() =>
+                navigator.clipboard.writeText(
+                  readout.asks.map((a) => `- ${a.what}`).join("\n")
+                )
+              }
+            >
+              Copy
+            </button>
             <ul>
               {readout.asks.map((a, i) => (
                 <li key={i}>
@@ -123,13 +186,23 @@ function ReadoutView({ readout, onReadout, onRoom }: { readout: Readout; onReado
       </section>
       <FounderRequests
         room={readout.room}
-        onRebuilt={(r) => (r === readout.room ? getReadout(r).then(onReadout) : onRoom?.(r))}
+        onRebuilt={(r) =>
+          r === readout.room ? getReadout(r).then(onReadout) : onRoom?.(r)
+        }
       />
     </>
   );
 }
 
-function ClaimList({ room, claims, all }: { room: string; claims: Claim[]; all: Map<string, Claim> }) {
+function ClaimList({
+  room,
+  claims,
+  all,
+}: {
+  room: string;
+  claims: Claim[];
+  all: Map<string, Claim>;
+}) {
   return (
     <ul className="claims">
       {claims.map((c) => (
@@ -141,8 +214,12 @@ function ClaimList({ room, claims, all }: { room: string; claims: Claim[]; all: 
           {[...c.conflicts_with, ...c.corroborated_by].length > 0 && (
             <span className="note">
               {" "}
-              {c.corroborated_by.length} agree, {c.conflicts_with.length} disagree
-              {c.conflicts_with.map((id) => all.get(id)?.text).filter(Boolean).map((t) => ` · ${t}`)}
+              {c.corroborated_by.length} agree, {c.conflicts_with.length}{" "}
+              disagree
+              {c.conflicts_with
+                .map((id) => all.get(id)?.text)
+                .filter(Boolean)
+                .map((t) => ` · ${t}`)}
             </span>
           )}
         </li>
@@ -151,7 +228,15 @@ function ClaimList({ room, claims, all }: { room: string; claims: Claim[]; all: 
   );
 }
 
-function SourceChip({ room, source, n }: { room: string; source: Source; n: number }) {
+function SourceChip({
+  room,
+  source,
+  n,
+}: {
+  room: string;
+  source: Source;
+  n: number;
+}) {
   const [text, setText] = useState<string | null>(null);
   return (
     <span className="source">
@@ -159,7 +244,14 @@ function SourceChip({ room, source, n }: { room: string; source: Source; n: numb
         <button
           className="link"
           title={`${source.uri} · ${source.locator}`}
-          onClick={() => (text === null ? getSourceText(room, source).then((r) => setText(r.text), (e: Error) => setText(e.message)) : setText(null))}
+          onClick={() =>
+            text === null
+              ? getSourceText(room, source).then(
+                  (r) => setText(r.text),
+                  (error: Error) => setText(error.message)
+                )
+              : setText(null)
+          }
         >
           [{n}]
         </button>

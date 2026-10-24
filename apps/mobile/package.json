@@ -1,7 +1,19 @@
 {
   "name": "@tricorder/mobile",
   "version": "1.0.0",
+  "private": true,
   "main": "expo-router/entry",
+  "scripts": {
+    "reset-project": "node ./scripts/reset-project.js",
+    "android": "expo start --dev-client --android",
+    "ios": "expo start --dev-client --ios",
+    "web": "expo start --web",
+    "lint": "expo lint",
+    "dev": "expo start --dev-client",
+    "build": "expo export --platform all",
+    "typecheck": "tsc --noEmit",
+    "build:ios": "expo run:ios --no-bundler"
+  },
   "dependencies": {
     "@expo/ui": "~58.0.23",
     "@tricorder/schema": "workspace:*",
@@ -40,17 +52,5 @@
     "eslint": "^9.39.5",
     "eslint-config-expo": "~58.0.4",
     "typescript": "~6.0.3"
-  },
-  "scripts": {
-    "reset-project": "node ./scripts/reset-project.js",
-    "android": "expo start --dev-client --android",
-    "ios": "expo start --dev-client --ios",
-    "web": "expo start --web",
-    "lint": "expo lint",
-    "dev": "expo start --dev-client",
-    "build": "expo export --platform all",
-    "typecheck": "tsc --noEmit",
-    "build:ios": "expo run:ios --no-bundler"
-  },
-  "private": true
+  }
 }

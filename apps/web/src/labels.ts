@@ -2,15 +2,15 @@
 import type { Piece } from "@tricorder/schema";
 
 export const PIECE_LABEL: Record<Piece["name"], string> = {
-  traction_and_revenue: "Traction and revenue",
-  retention: "Retention",
   burn_and_runway: "Burn and runway",
-  unit_economics: "Unit economics",
+  comps: "Comps",
   customers: "Customers",
   market: "Market",
-  comps: "Comps",
+  retention: "Retention",
   team: "Team",
   the_pitch_itself: "The pitch itself",
+  traction_and_revenue: "Traction and revenue",
+  unit_economics: "Unit economics",
 };
 
 export const VERDICT_LABEL: Record<Piece["verdict"], string> = {
