@@ -213,8 +213,114 @@ def team_sazabi(R: Room) -> dict:
     ], team_chart(team, h))
 
 
+# Unit economics ------------------------------------------------------------------------------------------------
+
+# knowledge/unit_economics.md: Bessemer's cloud average and a16z's observation for AI companies, as reference lines.
+BESSEMER_GM = 65   # "Cloud software averages 65 to 70 percent gross margin in Bessemer's data"
+A16Z_AI_GM = 55    # a16z: AI gross margins "often in the 50-60% range"; the line marks the middle
+
+
+def where(gm: float) -> str:
+    """Where a margin sits against the two reference ranges in knowledge/unit_economics.md."""
+    g = gm * 100
+    if g < 50:
+        return "below a16z's 50 to 60% for AI companies"
+    if g <= 60:
+        return "inside a16z's 50 to 60% range for AI companies"
+    if g < BESSEMER_GM:
+        return "between the AI range and Bessemer's cloud average"
+    if g <= 70:
+        return "inside Bessemer's 65 to 70% cloud average"
+    return "above Bessemer's 65 to 70% cloud average"
+
+
+def margin_chart(views: list[str], gp: list[float], costs: list[dict], rev: float) -> dict:
+    """Each bar is 100% of revenue: gross profit at the bottom, so its top is the margin, then each cost on top."""
+    share = lambda xs: [round(100 * x / rev, 2) for x in xs]
+    return {"kind": "bars", "unit": "percent", "barmode": "stack", "x": views, "range": [0, 100],
+            "series": [{"name": "Gross profit", "y": share(gp), "style": "good", "text": [f"{100 * g / rev:.1f}% margin" for g in gp], "textposition": "inside", "textanchor": "start"}]
+            + [{"name": c["name"], "y": share(c["y"]), "style": c["style"]} for c in costs],
+            "lines": [{"y": BESSEMER_GM, "label": f"Bessemer: cloud software averages {BESSEMER_GM} to 70%", "style": "accent", "right": True},
+                      {"y": A16Z_AI_GM, "label": "a16z: AI companies often 50 to 60%", "style": "plan", "right": True, "below": True}]}
+
+
+def unit_economics_ploy(R: Room) -> dict:
+    rows = {r[0]: r for r in R.panel("unit_economics")["rows"]}
+    rev = num(next(r for k, r in rows.items() if k.startswith("Revenue"))[1])
+    hosting, support, inference = num(rows["Hosting"][1]), num(rows["Support"][1]), num(rows["Model inference"][1])
+    assert close(rev, R.v("tr-2") / 12), "September revenue is the model's MRR"
+    assert close(inference, num(R.quote("ue-3", 0).split()[-1])), "inference matches the ledger row"
+    gm_model, gm_full = 1 - (hosting + support) / rev, 1 - (hosting + support + inference) / rev
+    assert close(gm_model, R.v("ue-2")) and close(gm_full, R.v("ue-3")), "margins match the room's claims"
+    deck = R.v("ue-1")
+    gaps = R.drill_gaps("unit_economics")
+    assert any("acquisition cost" in g for g in gaps), "the room says acquisition cost is not in it"
+    chart = margin_chart(["The model's books", "With inference in cost of revenue"],
+                         [rev - hosting - support, rev - hosting - support - inference],
+                         [{"name": "Hosting and support", "y": [hosting + support] * 2, "style": "plan"},
+                          {"name": "Model inference", "y": [0, inference], "style": "bad"}], rev)
+    chart["label"] = (f"Gross margin, each bar 100% of September revenue of {money(rev)}: {pct(gm_model)} on the model's books, "
+                      f"{pct(gm_full)} with model inference in cost of revenue. Bessemer's cloud average is 65 to 70%.")
+    return build(R, "unit_economics", [
+        {"lead": "What it costs to serve.", "refs": ["ue-2"],
+         "body": f"September revenue was {money(rev)}. The model counts {money(hosting)} of hosting and {money(support)} of support as cost of revenue, "
+                 f"for a gross margin of {pct(gm_model)}."},
+        {"lead": "Inference is a delivery cost.", "refs": ["ue-3", "ue-1"],
+         "body": f"Model inference cost {money(inference)} in September, and the ledger books it under research and development. "
+                 f"The product runs the model to do each customer's work, so it belongs in cost of revenue. Counted there, gross margin is {pct(gm_full)}. The deck says {pct(deck, 0)}."},
+        {"lead": "Against the benchmarks.", "refs": ["ue-3"],
+         "body": f"Bessemer's cloud companies average 65 to 70%. a16z sees AI companies often at 50 to 60%. "
+                 f"At {pct(gm_full)} the margin sits {where(gm_full)}. The deck's {pct(deck, 0)} is {where(deck)}."},
+        {"lead": "Prices check out. Acquisition cost is missing.", "refs": ["ue-4"],
+         "body": "The model's prices match the public pricing page. The room holds no acquisition cost or payback period, "
+                 "so what a customer earns against what it costs to win cannot be checked."},
+    ], [
+        "Model inference invoices for July to September, and how the cost moves with usage.",
+        "Gross margin by plan, with inference in cost of revenue.",
+        "Acquisition cost and payback by channel, with payback measured on gross profit.",
+    ], chart)
+
+
+def unit_economics_sazabi(R: Room) -> dict:
+    rev = R.v("tr-2") / 12
+    recurring = R.v("tr-3") / 12
+    gm_model, gm_full, deck = R.v("ue-2"), R.v("ue-3"), R.v("ue-1")
+    credits = (gm_model - gm_full) * rev
+    assert close(credits, -num(R.quote("ue-3", 0))), "credits match the cloud bill's credits column"
+    paid = (1 - gm_model) * rev
+    cloud_net = num(R.quote("ue-3", 1))
+    inference = paid - cloud_net
+    cloud_gross = cloud_net + credits
+    gm_recurring = 1 - (paid + credits) / recurring
+    chart = margin_chart(["The model's books", "At full cloud price"],
+                         [rev - paid, rev - paid - credits],
+                         [{"name": "Cloud paid in cash, and inference", "y": [paid, paid], "style": "plan"},
+                          {"name": "Cloud paid by credits", "y": [0, credits], "style": "bad"}], rev)
+    chart["label"] = (f"Gross margin, each bar 100% of September revenue of {money(rev)}: {pct(gm_model)} on the model's books, "
+                      f"{pct(gm_full)} with the cloud bill at full price. Bessemer's cloud average is 65 to 70%.")
+    return build(R, "unit_economics", [
+        {"lead": "What it costs to serve.", "refs": ["ue-2"],
+         "body": f"September revenue in the model was {money(rev)}. Cost of revenue is {money(cloud_net)} of cloud after credits and "
+                 f"{money(inference)} of model inference, for a gross margin of {pct(gm_model)}."},
+        {"lead": "Credits pay part of the bill.", "refs": ["ue-3", "ue-1"],
+         "body": f"Cloud credits covered {money(credits)} of the {money(cloud_gross)} cloud bill. Credits run out, so the margin to plan on prices the cloud in full: "
+                 f"{pct(gm_full)}. The deck says {pct(deck, 0)}."},
+        {"lead": "On recurring revenue alone.", "refs": ["tr-3"],
+         "body": f"September revenue includes a one-time backfill. On recurring revenue of {money(recurring)}, with the cloud at full price, "
+                 f"gross margin is {pct(gm_recurring)}: {where(gm_recurring)}."},
+        {"lead": "Prices check out. Acquisition cost is missing.", "refs": ["ue-4"],
+         "body": "The model's prices match the public pricing page. The room holds no acquisition cost or payback, "
+                 "so what a team earns against what it costs to win cannot be checked."},
+    ], [
+        "Cloud invoices for July to September, with the credit balance and the date the credits expire.",
+        "What it costs to serve the free design partners, and where that cost sits.",
+        "Acquisition cost and payback, with payback measured on gross profit.",
+    ], chart)
+
+
 PIECES = {
     "retention": {"ploy": retention_ploy, "sazabi": retention_sazabi},
+    "unit_economics": {"ploy": unit_economics_ploy, "sazabi": unit_economics_sazabi},
     "team": {"ploy": team_ploy, "sazabi": team_sazabi},
 }
 

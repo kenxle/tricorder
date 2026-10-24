@@ -97,6 +97,114 @@ window.TC_PIECE_REPORTS_DATA = {
    ]
   },
   {
+   "key": "piece-unit_economics",
+   "piece": "unit_economics",
+   "title": "Unit economics",
+   "knowledge": "knowledge/unit_economics.md",
+   "paras": [
+    {
+     "lead": "What it costs to serve.",
+     "refs": [
+      "ue-2"
+     ],
+     "body": "September revenue was $233,500. The model counts $19,800 of hosting and $31,570 of support as cost of revenue, for a gross margin of 78.0%."
+    },
+    {
+     "lead": "Inference is a delivery cost.",
+     "refs": [
+      "ue-3",
+      "ue-1"
+     ],
+     "body": "Model inference cost $60,950 in September, and the ledger books it under research and development. The product runs the model to do each customer's work, so it belongs in cost of revenue. Counted there, gross margin is 51.9%. The deck says 78%."
+    },
+    {
+     "lead": "Against the benchmarks.",
+     "refs": [
+      "ue-3"
+     ],
+     "body": "Bessemer's cloud companies average 65 to 70%. a16z sees AI companies often at 50 to 60%. At 51.9% the margin sits inside a16z's 50 to 60% range for AI companies. The deck's 78% is above Bessemer's 65 to 70% cloud average."
+    },
+    {
+     "lead": "Prices check out. Acquisition cost is missing.",
+     "refs": [
+      "ue-4"
+     ],
+     "body": "The model's prices match the public pricing page. The room holds no acquisition cost or payback period, so what a customer earns against what it costs to win cannot be checked."
+    }
+   ],
+   "asks": [
+    "Model inference invoices for July to September, and how the cost moves with usage.",
+    "Gross margin by plan, with inference in cost of revenue.",
+    "Acquisition cost and payback by channel, with payback measured on gross profit."
+   ],
+   "chart": {
+    "kind": "bars",
+    "unit": "percent",
+    "barmode": "stack",
+    "x": [
+     "The model's books",
+     "With inference in cost of revenue"
+    ],
+    "range": [
+     0,
+     100
+    ],
+    "series": [
+     {
+      "name": "Gross profit",
+      "y": [
+       78.0,
+       51.9
+      ],
+      "style": "good",
+      "text": [
+       "78.0% margin",
+       "51.9% margin"
+      ],
+      "textposition": "inside",
+      "textanchor": "start"
+     },
+     {
+      "name": "Hosting and support",
+      "y": [
+       22.0,
+       22.0
+      ],
+      "style": "plan"
+     },
+     {
+      "name": "Model inference",
+      "y": [
+       0.0,
+       26.1
+      ],
+      "style": "bad"
+     }
+    ],
+    "lines": [
+     {
+      "y": 65,
+      "label": "Bessemer: cloud software averages 65 to 70%",
+      "style": "accent",
+      "right": true
+     },
+     {
+      "y": 55,
+      "label": "a16z: AI companies often 50 to 60%",
+      "style": "plan",
+      "right": true,
+      "below": true
+     }
+    ],
+    "label": "Gross margin, each bar 100% of September revenue of $233,500: 78.0% on the model's books, 51.9% with model inference in cost of revenue. Bessemer's cloud average is 65 to 70%."
+   },
+   "needs": [
+    "01_pitch/pitch_deck.pdf",
+    "02_financials/financial_model.xlsx",
+    "02_financials/monthly_statements.xlsx"
+   ]
+  },
+  {
    "key": "piece-team",
    "piece": "team",
    "title": "Team",
@@ -258,6 +366,116 @@ window.TC_PIECE_REPORTS_DATA = {
    },
    "needs": [
     "01_pitch/pitch_deck.pdf",
+    "03_metrics/customer_mrr_by_month.csv"
+   ]
+  },
+  {
+   "key": "piece-unit_economics",
+   "piece": "unit_economics",
+   "title": "Unit economics",
+   "knowledge": "knowledge/unit_economics.md",
+   "paras": [
+    {
+     "lead": "What it costs to serve.",
+     "refs": [
+      "ue-2"
+     ],
+     "body": "September revenue in the model was $18,380. Cost of revenue is $4,000 of cloud after credits and $2,480 of model inference, for a gross margin of 64.7%."
+    },
+    {
+     "lead": "Credits pay part of the bill.",
+     "refs": [
+      "ue-3",
+      "ue-1"
+     ],
+     "body": "Cloud credits covered $2,900 of the $6,900 cloud bill. Credits run out, so the margin to plan on prices the cloud in full: 49.0%. The deck says 65%."
+    },
+    {
+     "lead": "On recurring revenue alone.",
+     "refs": [
+      "tr-3"
+     ],
+     "body": "September revenue includes a one-time backfill. On recurring revenue of $14,580, with the cloud at full price, gross margin is 35.7%: below a16z's 50 to 60% for AI companies."
+    },
+    {
+     "lead": "Prices check out. Acquisition cost is missing.",
+     "refs": [
+      "ue-4"
+     ],
+     "body": "The model's prices match the public pricing page. The room holds no acquisition cost or payback, so what a team earns against what it costs to win cannot be checked."
+    }
+   ],
+   "asks": [
+    "Cloud invoices for July to September, with the credit balance and the date the credits expire.",
+    "What it costs to serve the free design partners, and where that cost sits.",
+    "Acquisition cost and payback, with payback measured on gross profit."
+   ],
+   "chart": {
+    "kind": "bars",
+    "unit": "percent",
+    "barmode": "stack",
+    "x": [
+     "The model's books",
+     "At full cloud price"
+    ],
+    "range": [
+     0,
+     100
+    ],
+    "series": [
+     {
+      "name": "Gross profit",
+      "y": [
+       64.74,
+       48.97
+      ],
+      "style": "good",
+      "text": [
+       "64.7% margin",
+       "49.0% margin"
+      ],
+      "textposition": "inside",
+      "textanchor": "start"
+     },
+     {
+      "name": "Cloud paid in cash, and inference",
+      "y": [
+       35.26,
+       35.26
+      ],
+      "style": "plan"
+     },
+     {
+      "name": "Cloud paid by credits",
+      "y": [
+       0.0,
+       15.78
+      ],
+      "style": "bad"
+     }
+    ],
+    "lines": [
+     {
+      "y": 65,
+      "label": "Bessemer: cloud software averages 65 to 70%",
+      "style": "accent",
+      "right": true
+     },
+     {
+      "y": 55,
+      "label": "a16z: AI companies often 50 to 60%",
+      "style": "plan",
+      "right": true,
+      "below": true
+     }
+    ],
+    "label": "Gross margin, each bar 100% of September revenue of $18,380: 64.7% on the model's books, 49.0% with the cloud bill at full price. Bessemer's cloud average is 65 to 70%."
+   },
+   "needs": [
+    "01_pitch/pitch_deck.pdf",
+    "02_financials/financial_model.xlsx",
+    "02_financials/monthly_statements.xlsx",
+    "03_metrics/cloud_costs_by_month.csv",
     "03_metrics/customer_mrr_by_month.csv"
    ]
   },

@@ -90,16 +90,24 @@
   };
   const mono = () => token("--tc-font-mono");
 
+  // Reference lines: c.lines (or one c.line), each {y, label, style}. A line marks a cited benchmark or the deck's own figure.
   function lineShape(c, horizontal) {
-    if (!c.line) return { shapes: [], annotations: [] };
-    const col = token("--tc-weak");
-    const ax = AXIS[c.unit] || AXIS.count;
-    const label = { text: c.line.label, showarrow: false, font: { family: mono(), size: 12, color: col } };
-    return horizontal
-      ? { shapes: [{ type: "line", yref: "paper", y0: 0, y1: 1, x0: c.line.y, x1: c.line.y, line: { color: col, width: 2, dash: "dash" } }],
-          annotations: [{ ...label, yref: "paper", y: 1, yanchor: "bottom", x: c.line.y, xanchor: "left", xshift: 4 }], ax }
-      : { shapes: [{ type: "line", xref: "paper", x0: 0, x1: 1, y0: c.line.y, y1: c.line.y, line: { color: col, width: 2, dash: "dash" } }],
-          annotations: [{ ...label, xref: "paper", x: 0, xanchor: "left", y: c.line.y, yanchor: "bottom" }], ax };
+    const lines = c.lines || (c.line ? [c.line] : []);
+    const shapes = [];
+    const annotations = [];
+    lines.forEach((ln, i) => {
+      const col = colour(ln.style || "bad");
+      const font = { family: mono(), size: 12, color: col };
+      const box = { bgcolor: token("--tc-surface") || "#fff", borderpad: 2 };
+      if (horizontal) {
+        shapes.push({ type: "line", yref: "paper", y0: 0, y1: 1, x0: ln.y, x1: ln.y, line: { color: col, width: 2, dash: "dash" } });
+        annotations.push({ ...box, text: ln.label, showarrow: false, font, yref: "paper", y: 1 + 0.08 * i, yanchor: "bottom", x: ln.y, xanchor: "left", xshift: 4 });
+      } else {
+        shapes.push({ type: "line", xref: "paper", x0: 0, x1: 1, y0: ln.y, y1: ln.y, line: { color: col, width: 2, dash: "dash" } });
+        annotations.push({ ...box, text: ln.label, showarrow: false, font, xref: "paper", x: ln.right ? 1 : 0, xanchor: ln.right ? "right" : "left", y: ln.y, yanchor: ln.below ? "top" : "bottom" });
+      }
+    });
+    return { shapes, annotations };
   }
 
   function bars(el, c) {
@@ -118,6 +126,7 @@
       if (h) { t.y = c.x; t.x = s.y; } else { t.x = c.x; t.y = s.y; }
       if (s.text) {
         t.text = s.text; t.textposition = s.textposition || "outside"; t.cliponaxis = false;
+        if (s.textanchor) t.insidetextanchor = s.textanchor;
         t.textfont = t.textposition === "outside" ? { family: mono(), size: 12, color: token("--tc-ink-2") } : { family: mono(), size: 12 };
       }
       return t;
