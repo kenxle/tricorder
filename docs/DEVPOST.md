@@ -14,7 +14,7 @@ Tricorder makes this process faster, more accurate, and facilitates decision mak
 
 Tricorder automates research and helps associates build the memo that will be the artifact used to decide whether to invest in a company or not.
 
-**Working in the code today**, on synthetic data rooms:
+**Tricorder's features:**
 
 - Reads the room: the deck, the financial model, the cap table, the ledgers and the contracts.
 - Runs red-flag checks as scripts: deck revenue against the books, accounting mislabels, churn hidden in the cohort tab, and contract terms read against how each contract is counted as revenue.
