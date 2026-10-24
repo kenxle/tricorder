@@ -51,6 +51,7 @@ def test_model_facts_are_kept_only_when_quote_and_number_check_out(fake_model):
     assert 'locator="slide 2"' in sent and 'locator="slide 9"' in sent
     assert 'locator="slide 3"' not in sent           # slides with figures never go to the model
     assert fake_model[0]["check_name"] == "claim_extract"
+    assert fake_model[0]["knowledge"].startswith('<expert_knowledge piece="traction_and_revenue">')
     model_claims = [c for c in result.claims if "read by the model" in c.text]
     assert [c.sources[0].quote for c in model_claims] == ["Built for vet clinics: vaccine"]
     assert model_claims[0].text.startswith("Unsupported:")

@@ -64,13 +64,17 @@ def read(
     task: str,
     docs: list[str] | None = None,
     script_results: str | None = None,
+    knowledge: str | None = None,
     route: Literal["read", "bulk"] = "read",
     effort: Literal["low", "medium", "high", "xhigh", "max"] = "high",
     max_tokens: int = 16000,
 ) -> T:
     """One model reading. The user message is the entry's prompt from FRAMEWORKS.md,
-    with the two header lines the system prompt expects."""
+    with the two header lines the system prompt expects. `knowledge` is the
+    expert-knowledge block from scans.knowledge.block, placed after the task."""
     parts = [f"Scan: {scan}", f"Check name: {check_name}", "", task]
+    if knowledge:
+        parts += ["", knowledge]
     if docs:
         parts += ["", docs_block(docs)]
     if script_results:

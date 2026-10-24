@@ -159,7 +159,7 @@ Each synthetic room has an answer key beside it in `data_room/`, outside the roo
 
 ## Model calls
 
-All model calls go through `clients/llm.py`: structured outputs only (a Pydantic class in, a validated instance out), the shared system prompt from FRAMEWORKS, Opus 5.5 for reading and the memo pass and Haiku 5.5 for bulk classification, each a setting. A gateway such as Nicrron's is a base URL setting, once someone checks it passes structured outputs through. Citations are not used, because the API refuses them together with structured output; the quote checker does that job. A refusal becomes a gap.
+All model calls go through `clients/llm.py`: structured outputs only (a Pydantic class in, a validated instance out), the shared system prompt from FRAMEWORKS, Opus 5.5 for reading and the memo pass and Haiku 5.5 for bulk classification, each a setting. A gateway such as Nicrron's is a base URL setting, once someone checks it passes structured outputs through. Citations are not used, because the API refuses them together with structured output; the quote checker does that job. A refusal becomes a gap. A call that reads for a piece can pass `knowledge=`, built by `scans/knowledge.py` from `knowledge/<piece>.md` (Kimmy's expert knowledge). The model reads it as a lens, never as a source. A piece with no file gets no block. Which calls load which piece: [expert-knowledge](roadmap/expert-knowledge.md).
 
 The pitch video is transcribed locally by whisper.cpp into `pitch_video.transcript.json` beside the video; the model picks claims by segment id, so times are copied, never guessed.
 
