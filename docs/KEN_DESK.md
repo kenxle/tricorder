@@ -66,7 +66,7 @@ Written 11:56. Each step of the [demo workflow](ongoing/diagrams/demo_workflow.m
 ### 7 and 8. The interactive memo for the principals
 
 - **We have:** the memo as a page and a PDF, built ([memo-export](ongoing/roadmap/memo-export.md)), at `/api/rooms/<room>/memo.html` and `.pdf`.
-- **We need:** a link to it from the readout page (one line). Each principal's own copy to steer is not built.
+- **We need:** the PDF is dropped. The deliverable is interactive, and Benjamin is building the interactive principal's page ([UI decisions](features/20261024.02_first_steps_ui/02_ui_decisions.md#the-memo-for-the-principal)).
 
 ### What would unblock the most
 

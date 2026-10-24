@@ -1,5 +1,7 @@
 # memo-export
 
+> **Update, 2:14 PM:** the deliverable is the interactive memo, not a PDF. See [The memo for the principal](../../features/20261024.02_first_steps_ui/02_ui_decisions.md#the-memo-for-the-principal).
+
 Tricorder helps the operator write the memo for the partners' meeting ([writers' brief](../../features/20261022.01_hackathon_plan/00_brief_for_writers.md), 1:58 PM and 2:00 PM blocks).
 
 - **Status today:** done.
