@@ -311,7 +311,8 @@
     if (!R) {
       body = `<div class="empty" role="status"><strong>Research not cached for this company.</strong>
         Tricorder has saved research for Ploy and Sazabi only. Research for other companies is not set up yet.
-        You can still draft the data-room request from the stage's first-tier documents.</div>`;
+        You can still draft the data-room request from the stage's first-tier documents.</div>
+        <div class="actions"><button class="tc-btn primary" id="to-request" type="button">Draft the data-room request</button></div>`;
     } else {
       numberClaims(R);
       body = `<p class="tc-sr-only" id="overall" role="status"></p>
@@ -321,14 +322,14 @@
           <h2>Up Next: Data Room Requests</h2>
           <p class="note">These become the first items on the data-room request.</p>
           <ul class="gaps tc-gap-list">${R.room_gaps.map((g) => `<li class="wait"><strong>${esc(g.text)}</strong> <span class="why">${esc(g.why)}</span></li>`).join("")}</ul>
+          <div class="actions"><button class="tc-btn primary" id="to-request" type="button">Draft the data-room request</button></div>
         </section>`;
     }
     app.innerHTML = `${header("readout", ["start", "the company URL"])}
       <h2 id="co-name" class="co-title">${esc(name)}</h2>
       ${R ? aboutHtml(R) : setupPanel()}
 
-      ${body}
-      <div class="actions"><button class="tc-btn primary" id="to-request" type="button">Draft the data-room request</button></div>`;
+      ${body}`;
     bindSetup();
     document.getElementById("to-request").addEventListener("click", () => go("request"));
     if (R) {
