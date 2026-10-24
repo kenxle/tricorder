@@ -29,6 +29,8 @@ Tricorder is a set of Python scans that each read a company's files and write on
 
 Rejected: one Streamlit app (no room for the frontend role, and a prior financial-AI hackathon disqualified "Simple Streamlit only applications"), and Rails with Python subprocesses (two runtimes on the demo laptop, one bottleneck).
 
+The web package also pins `@tanstack/intent` as development tooling for discovering agent skills in installed npm dependencies. Setup runs from `readout/`. No current dependency ships Intent skills, so no managed agent guidance has been generated. Commands live in [TESTING.md](TESTING.md#intent-agent-guidance).
+
 ## Folder layout
 
 Each folder has one owner, so parallel pull requests do not touch the same files. Owners match the roadmap's "Who owns what"; the roadmap wins if they differ.
