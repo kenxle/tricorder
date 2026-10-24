@@ -58,3 +58,13 @@ The job: an associate wants a first view of a company before asking the founder 
 ## The prototype
 
 A clickable HTML prototype of the four screens, with real data for Ploy and Sazabi from the saved files: [prototype/](prototype/). Its review will be recorded here.
+
+## Added 12:40 PM: step 5, red and green flags from the room
+
+Ken, on his desk: "ok, let's go ahead and get into this aspect of the prototype", on step 5 of the [demo workflow](../../ongoing/diagrams/demo_workflow.md).
+
+- **Who and when.** The associate, once the founder's data room is in. On stage it follows "Room received".
+- **What it shows.** The readout of the room, in the order Ken set: the best green flags and the worst red flags first, then an overview of each piece of the company marked strong, weak, mixed or not enough in the room, then a drill-down into one weak piece and one strong one. Each flag shows what the company stated beside what the rest of the room shows, with both sources. The range strip from the style guide draws each number against its normal band.
+- **Joined to the earlier steps.** Items the associate asked for and the room now holds are ticked off; anything still missing stays on the list. Claims from the pre-room research that the room confirms or contradicts are marked.
+- **The data is faked.** Ploy's room is synthetic and not built yet ([yc-rooms](../../ongoing/roadmap/yc-rooms.md)), so the prototype invents flags consistent with Ploy's public facts, modelled on what the real engine writes for Hollis Voice (`out/hollis_voice/readout.json` on Ken's laptop, and [FRAMEWORKS.md](../../ongoing/FRAMEWORKS.md), "Piece verdicts"). Every page says the room is synthetic.
+- **What is real today.** The engine already finds these flags on Hollis Voice and Brasswick; the real readout page is at [localhost:5173](http://localhost:5173/). The prototype shows how step 5 should look and flow; the builders bring the real page to it.
