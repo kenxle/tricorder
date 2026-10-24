@@ -4,11 +4,40 @@ Point it at a startup, get a readout.
 
 ## Inspiration
 
-Being written.
+Track 2 asked for better diligence. We started with the people who do it.
+
+An associate at a seed fund described the first pass: "Before I even open your data room, I already have ten tabs up. I’m checking your traffic, reviews, investors, any co-founder issues, and whether your story matches what’s online." ([Startups Magazine, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)). The same associate reviews about 500 decks a year and goes deep on about 15.
+
+The work is slow. A survey of 885 VCs found the average firm spends 118 hours of diligence on a deal ([NBER working paper](https://www.nber.org/system/files/working_papers/w22587/w22587.pdf)). Investors say the slow part is getting the information, not writing the memo.
+
+And the numbers often disagree. A fund's guide puts it plainly: "When burn or revenue differs between the deck, the model and the accounting records, the gap suggests carelessness or something worse, and either reading damages the deal." ([CRV, Aug 2026](https://www.crv.com/content/what-is-a-data-room)).
+
+So we built the first pass: gather everything, check every number against every other source, and show where each claim came from.
 
 ## What it does
 
-Being written.
+Point it at a startup, get a readout. Tricorder does the first pass of diligence for seed and Series A funds. The associate runs it and steers it into a memo. The partner reads the memo and decides. Tricorder never says invest or pass.
+
+**Working in the code today**, on synthetic data rooms:
+
+- Reads the room: the deck, the financial model, the cap table, the ledgers and the contracts.
+- Runs red-flag checks as scripts: deck revenue against the books, accounting mislabels, churn hidden in the cohort tab, and contract terms read against how each contract is counted as revenue.
+- Ties every claim to its source with the exact quote. A script finds that quote again in the file. A claim whose quote is not found goes to a "could not verify" box.
+- Builds the readout: the top green and red flags, nine pieces of the company each marked strong, weak, mixed or not enough in the room, the gaps, and an ask list for the founder.
+- Lets the associate steer a piece in one plain sentence. The piece rebuilds and shows what changed. A steer never changes a script's number.
+- Drafts the request to the founder. When the reply's files arrive, the scans that were waiting rerun.
+- Exports a memo page and keeps every version of a readout in a per-fund store.
+- Shows the readout in a React web app and an Expo (React Native) app.
+
+**In the clickable prototype**, which is the reference the team is building to:
+
+- Paste a company's URL. It matches against 193 saved YC Spring 2026 companies and sets itself up.
+- A first readout from public sources before any data room: website, Hacker News, App Store, SEC filings, founders, comps and market signals. Ploy and Sazabi use real saved data; other sections are placeholders.
+- The data-room request as a checklist the associate edits, with a live draft.
+- The room arriving, with its flags merged into the working page.
+- An interactive memo for the partner, with drill-downs, agree, disagree, what-if and a chat that points into the memo.
+
+Every data room is synthetic, and every page says so. The real companies' public data is real.
 
 ## How we built it
 
