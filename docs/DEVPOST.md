@@ -16,9 +16,10 @@ Tricorder automates research and helps associates build the memo that will be th
 
 **Tricorder's features:**
 
-- Reads the room: the deck, the financial model, the cap table, the ledgers and the contracts.
-- Runs red-flag checks as scripts: deck revenue against the books, accounting mislabels, churn hidden in the cohort tab, and contract terms read against how each contract is counted as revenue.
-- Ties every claim to its source with the exact quote. A script finds that quote again in the file. A claim whose quote is not found goes to a "could not verify" box.
+- Public research. Scrape the web to get public signals on a company.
+- Data room analysis: the deck, the financial model, the cap table, the ledgers and the contracts. Expert knowledge is encoded to analyze existing documents.
+- Surfacing red flags: specific red flags are automatically bubbled up to speed up the due diligence process.
+- Fully sourced. All claims are linked to documentation that can be
 - Builds the readout: the top green and red flags, nine pieces of the company each marked strong, weak, mixed or not enough in the room, the gaps, and an ask list for the founder.
 - Lets the associate steer a piece in one plain sentence. The piece rebuilds and shows what changed. A steer never changes a script's number.
 - Drafts the request to the founder. When the reply's files arrive, the scans that were waiting rerun.
