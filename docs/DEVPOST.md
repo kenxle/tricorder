@@ -33,18 +33,11 @@ Tricorder automates research and helps associates build the memo that will be th
 
 **Synthetic rooms with answer keys.** A generator creates fake data rooms. Hollis Voice, an invented Series A company, has 17 files with 8 planted red flags, 3 decoys and 3 green flags. Brasswick, an invented seed company, has 14 files and 5 red flags. A clean copy of Hollis Voice has none. The answer keys sit outside the rooms, and only the scorer reads them.
 
-**The TypeScript port.** At 11:00 AM we decided to move to TypeScript, and Benjamin started the port the same morning. Today's commits brought:
+**The stack.** A React web app and a React Native (Expo) app share TypeScript types generated from the Python models. Both talk through a typed tRPC gateway, checked with Zod, to a Python API (FastAPI) that runs the scans and builds the readout. The workspace runs on pnpm and Turbo.
 
-- a pnpm and Turbo workspace;
-- a typed tRPC gateway, checked with Zod, over the Python API;
-- TypeScript types generated from the Python models;
-- the readout ported to an Expo (React Native) app, with a company research workspace.
+**Expert knowledge.** Kimmy wrote how an investor reads traction and revenue, and burn and runway: what to check first, how traction differs for B2B and games, and what to ask the founder. Her files go into the model's prompts for the deck slide reader and for steering.
 
-The scans and the merge are still Python, served by FastAPI to the React web app.
-
-**Expert knowledge.** Kimmy wrote how an investor reads traction and revenue, and burn and runway: what to check first, how traction differs for B2B and games, and what to ask the founder. Her files now go into the model's prompts for the deck slide reader and for steering.
-
-**Agents in parallel.** Ken and Benjamin each ran AI coding agents, which left notes for each other on a shared board in the repo. The repo has more than 500 commits since Thursday.
+**Agents in parallel.** Ken and Benjamin each ran AI coding agents, which left notes for each other on a shared board in the repo.
 
 ## Challenges we ran into
 
