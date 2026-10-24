@@ -8,7 +8,8 @@
   const params = new URLSearchParams(location.search);
   const PACE = params.has("pace") ? Number(params.get("pace")) : 1; // 0 shows everything at once (for checks)
   const STAGES = { pre_seed: "Pre-seed", seed: "Seed", series_a: "Series A" };
-  const STEPS = [["start", "Company URL"], ["readout", "First readout"], ["request", "Data-room request"], ["received", "Room received"]];
+  const STEPS = [["start", "Company URL"], ["readout", "First readout"], ["request", "Data-room request"], ["received", "Room received"],
+    ["flags", "Flags from the room"], ["steer", "Steer the readout"], ["memo", "Make the memo"], ["principal", "The principal's view"]]; // steps 5 to 8: step5.js, step6.js, memo.js
 
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const hostOf = (u) => {
@@ -102,6 +103,7 @@
     if (r === "readout") return renderReadout();
     if (r === "request") return renderRequest();
     if (r === "received") return renderReceived();
+    if (window.TC_STEPS && window.TC_STEPS[r]) return window.TC_STEPS[r]();
     return renderStart();
   }
 
@@ -495,7 +497,7 @@
       <p class="banner tc-synthetic" role="note">This data room is synthetic. The team wrote it for the demo. It is not ${esc(company)}'s data.</p>
       <p>You asked for ${n} item${n === 1 ? "" : "s"}. Tricorder now checks what the room holds against that list, then reads the room for red and green flags.</p>
       <p>This is where the prototype joins the app that is already built: the readout with its flags, the gaps, and the requests for anything still missing.</p>
-      <div class="actions"><a class="btn primary tc-btn" href="http://localhost:5173/">Open the readout in Tricorder</a>
+      <div class="actions"><a class="btn primary tc-btn" href="#flags">See the flags from the room</a> <a class="btn tc-btn tc-btn--secondary" href="http://localhost:5173/">Open the built readout page</a>
         <span class="note">Runs on this laptop at localhost:5173.</span></div>`;
   }
 
@@ -508,3 +510,6 @@
     render();
   }
 })();
+  // Steps 5 to 8 live in their own files and read state and helpers from here.
+  window.TC = { D, S, app, esc, chip, sourcePanel, header, go, buildItems, render };
+

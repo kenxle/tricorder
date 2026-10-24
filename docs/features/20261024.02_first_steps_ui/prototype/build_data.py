@@ -39,6 +39,7 @@ CHECKLIST = ROOT / "docs" / "ongoing" / "checklist.csv"
 OUT_SOURCES = HERE / "sources"
 
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(HERE))
 from founder_requests import guidance as gd  # noqa: E402
 
 try:  # the founder wording the built app already uses; the prototype falls back without it
@@ -355,7 +356,27 @@ def ploy() -> dict:
         "location": {"value": co["location"], "source": s_yc},
         "team_size": {"value": str(co["team_size"]), "source": s_yc},
     }
-    return {"slug": "ploy", "setup": setup, "greeting": persons[0][0], "sections": sections, "room_gaps": room_gaps}
+    # Public facts the synthetic room must agree with, and the pre-room claims step 5 checks against the room.
+    pre = {
+        "formd_sold": claim(f"Form D: ${sold:,} sold.", s_formd, f"<totalAmountSold>{sold}</totalAmountSold>"),
+        "formd_safe": claim(f"Form D: ${safe_amt} came from SAFEs that converted.", s_formd, clar),
+        "formd_investors": claim(f"Form D: {investors} investors.", s_formd,
+                                 f"<totalNumberAlreadyInvested>{investors}</totalNumberAlreadyInvested>"),
+        "prices": claim(f"Prices: Free ${free}, Starter ${starter} and Pro ${pro} a month.", s_pricing, pm.group(0)),
+        "team": claim(f"Team size on YC: {co['team_size']}.", s_yc, f"company.team_size: {co['team_size']}"),
+        "batch_share": claim("The company says over 13% of the batch use Ploy.", s_launch,
+                             "Over 13% of the YC P26 companies are using Ploy", kind="company says"),
+        "named_customers": claim("Press names Hex and Clay as customers.", s_vca,
+                                 "Agencies like Tonik and TNT Growth build and run client sites on the platform"),
+        "hiring": claim(f"Hiring: one open role on YC, {job['title']}.", s_yc, f"jobPostings[0].salaryRange: {job['salaryRange']}"),
+        "revenue_range": claim(f"Revenue: the Form D gives the range as \"{revenue_range}\".", s_formd,
+                               f"<revenueRange>{revenue_range}</revenueRange>"),
+    }
+    facts = {"sold": sold, "safe": int(safe_amt.replace(",", "")), "investors": investors, "free": free,
+             "starter": starter, "pro": pro, "team": co["team_size"], "batch_size": len(load_companies()),
+             "batch_share_pct": int(find(r"Over (\d+)% of the YC P26", launch["body"]).group(1)), "seed_first_sale": first_sale}
+    return {"slug": "ploy", "setup": setup, "greeting": persons[0][0], "sections": sections, "room_gaps": room_gaps,
+            "facts": facts, "pre": pre}
 
 
 # Sazabi ----------------------------------------------------------------------------------
@@ -506,7 +527,19 @@ def sazabi() -> dict:
         "location": {"value": co["location"], "source": s_yc},
         "team_size": {"value": str(co["team_size"]), "source": s_yc},
     }
-    return {"slug": "sazabi", "setup": setup, "greeting": f0["full_name"].split()[0], "sections": sections, "room_gaps": room_gaps}
+    pre = {
+        "prices": claim(f"Prices: Hobby ${prices['Hobby']}, Startup ${prices['Startup']} and Growth ${prices['Growth']:,}.",
+                        s_report, rq, url="https://www.sazabi.com/pricing"),
+        "seed": claim(f"The company's own post: a ${seed_m.group(1)}M seed.", s_seed,
+                      "Our $8 million seed round is co-led by J2 Ventures, Village Global, and Y Combinator."),
+        "design_partners": claim(f"The seed post says {dp.group(1)} design partners signed up.", s_seed, dp.group(0),
+                                 kind="company says"),
+        "team": claim(f"Team size on YC: {co['team_size']}.", s_yc, f"company.team_size: {co['team_size']}"),
+    }
+    facts = {"hobby": prices["Hobby"], "startup": prices["Startup"], "growth": prices["Growth"],
+             "seed": int(seed_m.group(1)) * 1_000_000, "design_partners": int(dp.group(1)), "team": co["team_size"]}
+    return {"slug": "sazabi", "setup": setup, "greeting": f0["full_name"].split()[0], "sections": sections, "room_gaps": room_gaps,
+            "facts": facts, "pre": pre}
 
 
 # Checklist -------------------------------------------------------------------------------
@@ -543,6 +576,10 @@ def main() -> None:
         if f:
             founders[c["slug"]] = f
     research = {"ploy": ploy(), "sazabi": sazabi()}
+    # The synthetic data rooms for steps 5 to 8. Every figure that the public record states is taken from it.
+    from synthetic_rooms import ploy_room, sazabi_room  # noqa: E402
+    research["ploy"]["room"] = ploy_room(research["ploy"]["facts"], research["ploy"]["pre"])
+    research["sazabi"]["room"] = sazabi_room(research["sazabi"]["facts"], research["sazabi"]["pre"])
     s_csv = source(CSV_PATH, "https://www.ycombinator.com/companies?batch=Spring%202026", "YC directory: Spring 2026 companies")
     data = {
         "built": datetime.now().isoformat(timespec="seconds"),
