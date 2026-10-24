@@ -91,9 +91,9 @@
       xaxis: { ...L.xaxis, range: [0, end], tickvals: ticks, ticktext: ticks.map((k) => monthLabel(c.as_of, k)) },
       yaxis: { ...L.yaxis, tickprefix: "$", tickformat: "~s", rangemode: "tozero" },
       shapes: [{ type: "line", x0: c.baseline, x1: c.baseline, yref: "paper", y0: 0, y1: 1, line: { color: token("--tc-accent"), width: 1.5, dash: "dot" } }],
-      annotations: [{ x: c.baseline, xanchor: "left", xshift: 6, yref: "paper", y: 1, yanchor: "top", text: c.baseline_label, showarrow: false, align: "left",
+      annotations: [{ x: c.baseline, xanchor: "right", xshift: -6, yref: "paper", y: 1, yanchor: "top", text: c.baseline_label, showarrow: false, align: "right",
         font: { family: token("--tc-font-mono"), size: 12, color: token("--tc-accent") } },
-        ...c.series.map((s) => { const p = s.points[s.points.length - 1]; return { x: p[0], y: 0, yanchor: "bottom", yshift: 4, text: `${p[0].toFixed(1)} mo`, showarrow: false,
+        ...c.series.map((s, i) => { const p = s.points[s.points.length - 1]; return { x: p[0], y: 0, yanchor: "bottom", yshift: 6 + 16 * i, text: s.end, showarrow: false,
           font: { family: token("--tc-font-mono"), size: 11, color: style[s.style].color } }; })],
     };
     window.Plotly.newPlot(el, traces, layout, { displayModeBar: false, responsive: true });
@@ -134,7 +134,7 @@
       ${X.reportChart(rep)}
       <div class="x-report-body">${rep.paras.map((p) => `<p><strong>${esc(p.lead)}</strong> ${esc(p.body)} <span class="x-refs">${p.refs.map(ref).join("")}</span></p>`).join("")}
         <h3 class="x-sub">What to ask</h3><ul class="x-asks">${rep.asks.map((a) => `<li>${esc(a)}</li>`).join("")}</ul>
-        <details class="x-report-ev"><summary>Evidence (${order.length})</summary><ol class="x-evlist">${order.map((id) => `<li class="x-claim">${X.claimBody(room.claims[id])}</li>`).join("")}</ol></details>
+        <details class="x-report-ev"><summary>Evidence (${order.length})</summary><ol class="x-evlist">${order.map((id) => `<li class="x-claim">${X.claimBody(room.claims[id])}<div class="x-pickrow">${X.pick(`room:${id}`)}</div></li>`).join("")}</ol></details>
       </div></section>`;
   };
 

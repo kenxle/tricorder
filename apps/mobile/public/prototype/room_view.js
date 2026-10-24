@@ -92,7 +92,7 @@
     const outside = insights.length ? `<h3 class="x-sub">From the outside research, before the room</h3><div class="x-insights">${insights.map((ins) => {
       const [cls, label] = MARK[ins.mark] || MARK.thin;
       return `<article class="tc-card x-insight"><div class="tc-card-head"><span class="tc-mark ${cls}">${label}</span><span class="tc-meta">${esc(ins.piece)}</span></div>
-        <h3 class="tc-card-title">${esc(ins.title)}</h3><p>${esc(ins.text)}</p></article>`;
+        <h3 class="tc-card-title">${esc(ins.title)}</h3><p>${esc(ins.text)}</p><div class="tc-card-foot">${X.pick(`insight:${insights.indexOf(ins)}`)}</div></article>`;
     }).join("")}</div>` : "";
     return `<section class="x-section" aria-label="What stands out"><h2 class="x-h">What stands out</h2>
       <h3 class="x-sub">From the data room</h3>
@@ -119,10 +119,11 @@
   function research(state) {
     const R = window.TC.S.research;
     const secs = [...R.sections].sort((a, b) => ORDER.indexOf(a.title) - ORDER.indexOf(b.title));
+    const numbered = X.researchNumbered();
     const row = (c) => c.placeholder
       ? `<li class="x-claim x-ph"><span class="claim-text">${esc(c.text)}</span> <span class="tc-mark tc-mark--thin">Not researched yet</span></li>`
       : `<li class="x-claim"><div class="x-claim-head"><span class="claim-text">${esc(c.text)}</span>${preStatus(state, c)}</div>
-          <div class="tc-chips">${window.TC.chip(c.source, c)}</div></li>`;
+          <div class="tc-chips">${window.TC.chip(c.source, c)}${X.pick(`claim:${numbered.indexOf(c) + 1}`)}</div></li>`;
     const pre = room().prechecks.map((pc, i) => ({ pc, i })).filter(({ pc }) => !secs.some((s) => (s.parts ? s.parts.flatMap((p) => p.claims) : s.cards ? s.cards.flatMap((c) => c.claims) : s.claims)
       .some((c) => preStatus(state, c) && R.pre[pc.pre] && c.quote === R.pre[pc.pre].quote)));
     const body = secs.map((s) => {

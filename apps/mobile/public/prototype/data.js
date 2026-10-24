@@ -1,5 +1,5 @@
 window.DATA = {
- "built": "2026-10-24T15:08:02",
+ "built": "2026-10-24T15:12:29",
  "built_by": "docs/features/20261024.02_first_steps_ui/prototype/build_data.py",
  "list_source": "yc_spring_2026_companies",
  "companies": [
@@ -5693,7 +5693,8 @@ window.DATA = {
            0
           ]
          ],
-         "style": "plan"
+         "style": "plan",
+         "end": "30.0 mo"
         },
         {
          "name": "With all 22 planned hires",
@@ -5803,7 +5804,8 @@ window.DATA = {
            0
           ]
          ],
-         "style": "hires"
+         "style": "hires",
+         "end": "24.1 mo"
         },
         {
          "name": "After the $25.0M Series A, all hires",
@@ -6005,11 +6007,12 @@ window.DATA = {
            0
           ]
          ],
-         "style": "round"
+         "style": "round",
+         "end": "47.3 mo"
         }
        ],
        "baseline": 18,
-       "baseline_label": "Kimmy's baseline: 18 months after a round"
+       "baseline_label": "Kimmy: 18 months after a round"
       },
       "needs": [
        "06_team/hiring_plan.csv",
@@ -8786,7 +8789,8 @@ window.DATA = {
            0
           ]
          ],
-         "style": "plan"
+         "style": "plan",
+         "end": "15.9 mo"
         },
         {
          "name": "With all 6 planned hires",
@@ -8856,7 +8860,8 @@ window.DATA = {
            0
           ]
          ],
-         "style": "hires"
+         "style": "hires",
+         "end": "14.5 mo"
         },
         {
          "name": "If the $2.75M unsigned comes in, all hires",
@@ -8962,11 +8967,12 @@ window.DATA = {
            0
           ]
          ],
-         "style": "round"
+         "style": "round",
+         "end": "23.8 mo"
         }
        ],
        "baseline": 18,
-       "baseline_label": "Kimmy's baseline: 18 months after a round"
+       "baseline_label": "Kimmy: 18 months after a round"
       },
       "needs": [
        "06_team/hiring_plan.csv",

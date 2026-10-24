@@ -120,7 +120,7 @@
         <button class="tc-btn tc-btn--secondary tc-btn--small" type="button" data-copyask="${esc(f.ask)}">Copy the question</button></div></div>` : "";
     return `<article class="tc-card x-flag" data-flag="${esc(f.kind)}" id="flag-${esc(f.claim_id)}">
       <div class="tc-card-head"><span class="tc-mark tc-mark--${f.kind === "red" ? "weak" : "strong"}">${f.kind === "red" ? "Red flag" : "Green flag"}</span>
-        <span class="tc-meta">${esc(piece.label)}</span></div>
+        <span class="x-flaghead-right"><span class="tc-meta">${esc(piece.label)}</span>${opts && opts.noPick ? "" : X.pick(`flag:${f.claim_id}`)}</span></div>
       <h3 class="tc-card-title">${esc(f.title)}</h3>
       ${f.why ? `<p class="x-why">${esc(f.why)}</p>` : ""}
       ${X.pair(f.stated, f.found)}${others}
@@ -131,6 +131,21 @@
   // A card titled "<piece>: <text>" shows the piece as its title and the text as a subtitle (Ken, 1:25 PM).
   X.subtitle = (t) => { const i = t.indexOf(": "); const rest = i < 0 ? t : t.slice(i + 2); return rest[0].toUpperCase() + rest.slice(1); };
 
+  // "In memo" toggles (memo_picks.js). Keys: flag:<claim id> and insight:<n> are in by default; claim:<n> (a first-readout
+  // evidence row, numbered as app.js numbers it) and room:<claim id> (the room's own evidence) are out by default.
+  X.pick = (key) => (window.TC_MEMO ? window.TC_MEMO.toggleHtml(key) : "");
+  X.picked = (key) => (window.TC_MEMO ? window.TC_MEMO.get(key) : /^(flag|insight):/.test(key));
+  // The first readout's evidence rows in app.js's order: founders, comps, market signals, the outside world.
+  X.researchNumbered = () => {
+    const R = window.TC.S.research;
+    if (!R) return [];
+    const order = ["The founders", "Comps", "Market signals", "The outside world"];
+    const rank = (s) => { const i = order.indexOf(s.title); return i < 0 ? 99 : i; };
+    return [...R.sections].sort((a, b) => rank(a) - rank(b))
+      .flatMap((s) => (s.parts ? s.parts.flatMap((p) => p.claims) : s.cards ? s.cards.flatMap((c) => c.claims) : s.claims))
+      .filter((c) => !c.placeholder);
+  };
+
   // Flag weight. Rule (Ken, 1:22 PM): two sources that agree make a small green flag; two that disagree make a big red flag.
   X.weight = (f) => (f.kind === "red" || f.basis === "disagreement" ? "big" : f.basis === "agreement" ? "small" : "headline");
   // Headline green flags (real strengths) first, then big red flags worst first, then small green flags.
@@ -139,15 +154,15 @@
     ...flags.filter((f) => X.weight(f) === "big").sort((a, b) => (b.relative_gap || 0) - (a.relative_gap || 0)),
     ...flags.filter((f) => X.weight(f) === "small"),
   ];
-  X.smallFlag = (room, f) => `<li class="x-smallflag" data-flag="small-green"><span class="tc-mark tc-mark--strong">Small green flag</span>
-      <span class="x-small-title">${esc(f.title)}</span> <span class="tc-meta">${esc(X.pieceOf(room, f.piece).label)}</span>
+  X.smallFlag = (room, f, opts) => `<li class="x-smallflag" data-flag="small-green"><span class="tc-mark tc-mark--strong">Small green flag</span>
+      <span class="x-small-title">${esc(f.title)}</span> <span class="tc-meta">${esc(X.pieceOf(room, f.piece).label)}</span>${opts && opts.noPick ? "" : X.pick(`flag:${f.claim_id}`)}
       <div class="tc-chips">${X.roomChip(f.stated.source)}${X.roomChip(f.found.source)}</div></li>`;
   X.flagsHtml = (room, flags, opts) => {
     const ordered = X.orderFlags(flags);
     const big = ordered.filter((f) => X.weight(f) !== "small");
     const small = ordered.filter((f) => X.weight(f) === "small");
     return `<div class="x-flags">${big.map((f) => X.flagCard(room, f, opts)).join("")}</div>
-      ${small.length ? `<h3 class="x-sub">Small green flags: sources that agree</h3><ul class="x-smallflags">${small.map((f) => X.smallFlag(room, f)).join("")}</ul>` : ""}`;
+      ${small.length ? `<h3 class="x-sub">Small green flags: sources that agree</h3><ul class="x-smallflags">${small.map((f) => X.smallFlag(room, f, opts)).join("")}</ul>` : ""}`;
   };
 
   // "View in the request" opens the request over the page at that item (app.js), or the request screen.

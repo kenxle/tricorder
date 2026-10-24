@@ -212,3 +212,8 @@ span.x-mline-text { cursor: default; text-decoration: none; }
 .x-asks li { margin: var(--tc-space-1) 0; }
 .x-report-ev > summary { cursor: pointer; font-size: 14px; color: var(--tc-ink); min-height: var(--tc-hit); display: flex; align-items: center; text-decoration: underline; text-decoration-color: var(--tc-accent); text-underline-offset: 3px; }
 .x-doc .x-chart { margin-top: var(--tc-space-2); }
+
+/* "In memo" toggles on the room's flags, insights and evidence (memo_picks.js styles the toggle). */
+.x-flaghead-right { display: inline-flex; gap: var(--tc-space-3); align-items: center; flex-wrap: wrap; }
+.x-pickrow { margin-top: var(--tc-space-2); }
+.x-insight .tc-card-foot { margin-top: auto; padding-top: var(--tc-space-3); }
