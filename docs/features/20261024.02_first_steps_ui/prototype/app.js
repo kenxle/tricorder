@@ -213,7 +213,7 @@
     if (c.placeholder) {
       return `<tr class="claim ph wait"><td class="claim-text">${esc(c.text)}</td><td class="claim-src"><span class="tc-mark ph" title="Not researched yet">Placeholder</span></td></tr>`;
     }
-    return `<tr class="claim wait" id="ev-${c._n}"><td class="claim-text"><span class="ev-n">${c._n}</span> ${esc(c.text)} ${KIND[c.kind] || ""}</td><td class="claim-src">${chip(c.source, c)}</td></tr>`;
+    return `<tr class="claim wait" id="ev-${c._n}"><td class="claim-text"><span class="ev-n">${c._n}</span> ${esc(c.text)} ${KIND[c.kind] || ""}</td><td class="claim-src">${chip(c.source, c)}${window.TC_MEMO ? ` ${window.TC_MEMO.toggleHtml("claim:" + c._n)}` : ""}</td></tr>`;
   }
   const MARKS = { strong: ["tc-mark--strong", "Looking strong"], weak: ["tc-mark--weak", "Looking weak"], mixed: ["tc-mark--mixed", "Mixed"], thin: ["tc-mark--thin", "Not enough yet"] };
   function allClaims(R) {
@@ -243,12 +243,12 @@
     const list = (window.TC_INSIGHTS || {})[R.slug] || [];
     if (!list.length) return "";
     const claims = allClaims(R).filter((c) => !c.placeholder);
-    const cards = list.map((ins) => {
+    const cards = list.map((ins, idx) => {
       const nums = [...new Set(ins.refs.map((r) => (claims.find((c) => c.text.includes(r)) || {})._n).filter(Boolean))];
       const [cls, label] = MARKS[ins.mark] || MARKS.thin;
       return `<article class="tc-card insight wait"><div class="tc-card-head"><span class="tc-mark ${cls}">${label}</span><span class="piece">${esc(ins.piece)}</span></div>
         <h3>${esc(ins.title)}</h3><p>${esc(ins.text)}</p>
-        <p class="based">Based on ${nums.map((n) => `<a class="ev-ref" href="#ev-${n}">${n}</a>`).join(" ")}</p></article>`;
+        <p class="based"><span>Based on ${nums.map((n) => `<a class="ev-ref" href="#ev-${n}">${n}</a>`).join(" ")}</span>${window.TC_MEMO ? window.TC_MEMO.toggleHtml("insight:" + idx) : ""}</p></article>`;
     }).join("");
     return `<section class="insights" aria-label="What stands out"><h2>What stands out</h2><div class="insight-grid">${cards}</div></section>`;
   }
