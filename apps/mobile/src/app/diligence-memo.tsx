@@ -6,8 +6,10 @@ import { useState } from "react";
 import { MemoScreen } from "../diligence/memo";
 import { PartnerScreen } from "../diligence/partner";
 
-export default function DiligenceMemoPreview() {
+const DiligenceMemoPreview = () => {
   const { view } = useLocalSearchParams<{ view?: string }>();
   const [sent, setSent] = useState(view === "partner");
   return sent ? <PartnerScreen /> : <MemoScreen onSend={() => setSent(true)} />;
-}
+};
+
+export default DiligenceMemoPreview;

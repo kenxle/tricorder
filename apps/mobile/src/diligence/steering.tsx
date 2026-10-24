@@ -5,10 +5,22 @@ import { StyleSheet, TextInput, View } from "react-native";
 
 import { Action, Note, Row, useReadoutColors } from "../readout/ui";
 
+const styles = StyleSheet.create({
+  input: {
+    borderRadius: 8,
+    borderWidth: 1,
+    fontFamily: "Archivo",
+    fontSize: 15,
+    minHeight: 44,
+    padding: 10,
+  },
+  wrap: { gap: 8 },
+});
+
 const MOVES = ["Agree", "Disagree", "Ask", "What if"] as const;
 type Move = (typeof MOVES)[number];
 
-export function SteerBar({ label }: { label: string }) {
+export const SteerBar = ({ label }: { label: string }) => {
   const colors = useReadoutColors();
   const [move, setMove] = useState<Move | null>(null);
   const [text, setText] = useState("");
@@ -56,16 +68,4 @@ export function SteerBar({ label }: { label: string }) {
       {saved ? <Note>{saved}</Note> : null}
     </View>
   );
-}
-
-const styles = StyleSheet.create({
-  input: {
-    borderRadius: 8,
-    borderWidth: 1,
-    fontFamily: "Archivo",
-    fontSize: 15,
-    minHeight: 44,
-    padding: 10,
-  },
-  wrap: { gap: 8 },
-});
+};
