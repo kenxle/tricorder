@@ -26,6 +26,12 @@ def build_readout(out: Path, room: Path = ROOM) -> Path:
     return out / room.name / "readout.json"
 
 
+@pytest.fixture(autouse=True)
+def no_model(monkeypatch):
+    """No model calls in memo tests: the expert-read sections use the script's draft."""
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+
+
 @pytest.fixture(scope="session")
 def readout_path(tmp_path_factory) -> Path:
     return build_readout(tmp_path_factory.mktemp("out"))

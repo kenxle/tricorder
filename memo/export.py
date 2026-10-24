@@ -20,6 +20,7 @@ from memo import store
 from memo.build import build_memo
 from memo.edit import apply_edits, carry_operator_lines
 from memo.html import render_html
+from memo.report_html import PLOTLY_FILE, PLOTLY_PATH
 from memo.model import Edit, Memo
 from memo.pdf import render_pdf
 
@@ -68,11 +69,35 @@ def version_pdf(memo: Memo, room_dir: Path) -> Path:
     return path
 
 
+def page_reports(memo: Memo, room_dir: Path) -> list:
+    """The expert-read sections for this memo's page (scans/memo/sections.py): the ones written for the
+    memo's readout, else the script's draft built now. Never a model call, and never an error."""
+    from scans.memo import sections
+    try:
+        readout = load_readout(Path(room_dir)) if readout_path(Path(room_dir)).exists() else None
+        return sections.for_memo(readout, room_dir, memo.readout_built_at)
+    except Exception:  # the memo still renders without its expert-read sections
+        return []
+
+
+def write_sections(readout: Readout, room_dir: Path) -> None:
+    """Write the expert-read sections for this readout: the model's when a key is set, else the script's."""
+    from scans.memo import sections
+    try:
+        sections.build_all(readout, room_dir)
+    except Exception:  # page_reports falls back to the script's draft
+        pass
+
+
 def render(memo: Memo, room_dir: Path, pdf: bool = True) -> tuple[Path, Path | None]:
     folder = store.memo_dir(room_dir)
     folder.mkdir(parents=True, exist_ok=True)
     html_path = folder / "memo.html"
-    _replace(html_path, render_html(memo))
+    # plotly.js beside the page, so the saved page draws its charts offline.
+    vendored = folder / PLOTLY_FILE
+    if PLOTLY_PATH.exists() and (not vendored.exists() or vendored.stat().st_size != PLOTLY_PATH.stat().st_size):
+        _replace(vendored, src=PLOTLY_PATH)
+    _replace(html_path, render_html(memo, page_reports(memo, room_dir)))
     if not pdf:
         return html_path, None
     pdf_path = folder / "memo.pdf"
@@ -83,6 +108,8 @@ def render(memo: Memo, room_dir: Path, pdf: bool = True) -> tuple[Path, Path | N
 def export(room_dir: Path, readout_file: Path | None = None, pdf: bool = True) -> Written:
     room_dir = Path(room_dir)
     readout = load_readout(room_dir, readout_file)
+    if readout_file is None or Path(readout_file) == readout_path(room_dir):
+        write_sections(readout, room_dir)
     at = now_iso()
     memo = build_memo(readout, room_dir, at)
     latest = store.load(room_dir)
