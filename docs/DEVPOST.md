@@ -41,7 +41,19 @@ Every data room is synthetic, and every page says so. The real companies' public
 
 ## How we built it
 
-Being written.
+**The team.** Ken St. Clair (captain, product), Benjamin (TypeScript port, web and React Native apps), Kimmy (domain expert, expert knowledge) and Tirth.
+
+**Research first.** Before code, we wrote up what investors say about diligence, the competing tools, and what a seed or Series A data room holds. That gave us the two personas, a 193-item diligence checklist, and a catalog of every check the scans run.
+
+**Synthetic rooms with answer keys.** A generator writes the test rooms. Hollis Voice, an invented Series A company, has 17 files with 8 planted red flags, 3 decoys and 3 green flags. Brasswick, an invented seed company, has 14 files and 5 red flags. A clean copy of Hollis Voice has none. The answer keys sit outside the rooms, and only the scorer reads them.
+
+**Scripts for math, a model for words.** Each scan is Python and writes its claims as JSON. Scripts compute every number. Claude reads only what a script cannot, such as a contract clause, and returns structured output with the exact quote it relied on. A merge step turns the claims into the readout.
+
+**The apps.** A FastAPI server feeds a React web app. Benjamin set up a pnpm and Turbo workspace, a typed tRPC gateway with TypeScript types generated from the Python models, and an Expo app on the same API.
+
+**Expert knowledge.** Kimmy wrote how an investor reads traction and revenue, and burn and runway: what to check first, how traction differs for B2B and games, and what to ask the founder.
+
+**Agents in parallel.** Ken and Benjamin each ran AI coding agents, which left notes for each other on a shared board in the repo. The repo has more than 500 commits since Thursday.
 
 ## Challenges we ran into
 
