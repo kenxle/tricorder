@@ -425,14 +425,16 @@
     return { subject: `${company}: a few things for a data room`, body: lines.join("\n") + "\n" };
   }
 
+  const isQuestion = (it) => String(it.key).startsWith("ask-");
   function itemLi(it) {
     const g = it.guidance;
     const tags = [
       it.fromReadout ? '<span class="tc-mark warn">From the readout</span>' : "",
       it.firstTier ? `<span class="tc-mark">First tier at ${esc(STAGES[S.itemsStage])}</span>` : "",
-      it.custom ? '<span class="tc-mark">Added by you</span>' : "",
+      it.custom && !isQuestion(it) ? '<span class="tc-mark">Added by you</span>' : "",
+      isQuestion(it) ? '<span class="tc-mark warn">From the room</span>' : "",
     ].join("");
-    return `<li class="ask">
+    return `<li class="ask" data-key="${esc(it.key)}">
       <label class="hit"><input class="tc-check" type="checkbox" data-item="${esc(it.key)}" aria-label="Ask for ${esc(it.title)}"${it.checked ? " checked" : ""} /></label>
       <div>
         <div class="title">${esc(it.title)}</div>
@@ -449,7 +451,7 @@
   }
 
   // The data-room request is a dialog over the associate's working page (Ken, 1:03 PM).
-  function openRequest() {
+  function openRequest(itemId) {
     if (!S.fields) return;
     if (!S.items || S.itemsStage !== S.fields.stage.value) buildItems();
     if (!S.by) S.by = defaultBy();
@@ -477,7 +479,7 @@
       </div>
       <div class="layout">
         <div>
-          <ul class="asks" id="asks">${S.items.map(itemLi).join("")}</ul>
+          <ul class="asks" id="asks">${askList()}</ul>
           <form class="addrow" id="addform"><input class="tc-input" type="text" id="addtext" placeholder="Add an item, for example: your SOC 2 report" aria-label="Add an item" />
             <button class="tc-btn tc-btn--secondary" type="submit">Add</button></form>
         </div>
@@ -508,7 +510,36 @@
     if (S.edited) { document.getElementById("d-subject").value = S.subject; document.getElementById("d-body").value = S.body; }
     refreshDraft(false);
     if (!dlg.open) dlg.showModal();
+    if (itemId) focusItem(dlg, itemId);
   }
+
+  // The list: the checklist and your own additions, then "Questions for the founder" that flag cards added.
+  const QHEAD = '<li class="ask-group" id="ask-group"><h3>Questions for the founder</h3><p class="note">Added from the flags in the data room.</p></li>';
+  function askList() {
+    const qs = S.items.filter(isQuestion);
+    return S.items.filter((i) => !isQuestion(i)).map(itemLi).join("") + (qs.length ? QHEAD + qs.map(itemLi).join("") : "");
+  }
+  function focusItem(dlg, id) {
+    let it = S.items.find((x) => x.key === id || x.key === `ask-${id}` || x.id === id);
+    if (!it && window.TCX && roomOf()) { window.TCX.addAsk(roomOf(), id); it = S.items.find((x) => x.key === `ask-${id}`); if (it) { dlg.querySelector("#asks").innerHTML = askList(); refreshDraft(); } }
+    const li = it && [...dlg.querySelectorAll("#asks li.ask")].find((x) => x.dataset.key === it.key);
+    if (!li) return;
+    li.scrollIntoView({ block: "center" });
+    li.classList.add("flash");
+    setTimeout(() => li.classList.remove("flash"), 2200);
+  }
+  window.TC_OPEN_REQUEST = (itemId) => openRequest(itemId);
+
+  // Questions added from a card land in the Data room requests box straight away.
+  function refreshRequestsBox() {
+    const view = window.TC_ROOM_VIEW;
+    const sec = document.querySelector('.x-roomview .x-section[aria-label="Data room requests"]');
+    if (sec && view && typeof view.blocks === "function") {
+      const b = view.blocks(S.roomPartial ? "partial" : "full");
+      if (b) sec.outerHTML = b.requests;
+    } else if (S.requests) paintWorking();
+  }
+  document.addEventListener("click", (e) => { if (e.target.closest("[data-ask]")) refreshRequestsBox(); });
 
   // After the request goes out: the working page lists each item as Open, then the room arrives ------
   const askedText = (d) => d.toLocaleString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
@@ -518,6 +549,7 @@
 
   function markSent() {
     const now = new Date();
+    if (S.requests) { S.items.filter((i) => i.checked && !i.askedAt).forEach((i) => { i.askedAt = now; }); refreshRequestsBox(); return; }
     S.requests = { sentAt: now };
     S.roomShared = false; S.roomOpened = false; S.roomPartial = false; S.roomMore = false; S.roomFull = false;
     clearTimeout(S.moreTimer);
@@ -627,7 +659,8 @@
       const it = { key: `add-${++S.added}`, id: null, title: text[0].toUpperCase() + text.slice(1), ask: `Please send ${lcfirst(text)}.`,
         includes: null, guide: null, guidance: null, fromReadout: false, firstTier: false, custom: true, reasons: [], checked: true };
       S.items.push(it);
-      asks.insertAdjacentHTML("beforeend", itemLi(it));
+      const grp = asks.querySelector("#ask-group");
+      if (grp) grp.insertAdjacentHTML("beforebegin", itemLi(it)); else asks.insertAdjacentHTML("beforeend", itemLi(it));
       el.value = "";
       refreshDraft();
     });
