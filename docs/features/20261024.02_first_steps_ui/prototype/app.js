@@ -75,7 +75,8 @@
     const r = resolve(input);
     const s = setupFor(r);
     Object.assign(S, { url: r.input, company: r.company, how: r.how, research: s.research, fields: s.fields, streamed: false,
-      items: null, itemsStage: null, edited: false });
+      items: null, itemsStage: null, edited: false, requests: null, roomShared: false, roomOpened: false });
+    clearTimeout(S.arrivalTimer);
     const q = new URLSearchParams(location.search);
     q.set("company", r.input);
     history.replaceState(null, "", "?" + q.toString() + "#readout");
@@ -104,13 +105,20 @@
     if (v) startCompany(v);
   });
 
+  app.addEventListener("click", (e) => {
+    if (e.target.closest("#to-request")) openRequest();
+    if (e.target.closest("#open-room")) openRoom();
+  });
+
   function render() {
     S.run++; // stops any arrival that is still playing
     const r = route();
     if (r !== "start" && !S.fields) return renderStart();
+    const dlg = document.getElementById("req-modal");
+    if (dlg && dlg.open) dlg.close();
     if (r === "readout") return renderReadout();
-    if (r === "request") return renderRequest();
-    if (r === "received") return renderReceived();
+    if (r === "request") { renderReadout(); return openRequest(); }
+    if (r === "received") { if (S.requests && roomOf()) { S.roomShared = true; S.roomOpened = true; } return renderReadout(); }
     if (window.TC_STEPS && window.TC_STEPS[r]) return window.TC_STEPS[r]();
     return renderStart();
   }
@@ -319,19 +327,19 @@
         ${insightsHtml(R)}
         ${R.sections.map(sectionHtml).join("")}
         <section class="roomgaps wait" id="roomgaps" aria-label="Up Next: Data Room Requests">
-          <h2>Up Next: Data Room Requests</h2>
+          ${S.requests ? requestsInner() : `<h2>Up Next: Data Room Requests</h2>
           <p class="note">These become the first items on the data-room request.</p>
           <ul class="gaps tc-gap-list">${R.room_gaps.map((g) => `<li class="wait"><strong>${esc(g.text)}</strong> <span class="why">${esc(g.why)}</span></li>`).join("")}</ul>
-          <div class="actions"><button class="tc-btn primary" id="to-request" type="button">Draft the data-room request</button></div>
+          <div class="actions"><button class="tc-btn primary" id="to-request" type="button">Draft the data-room request</button></div>`}
         </section>`;
     }
     app.innerHTML = `${header("readout", ["start", "the company URL"])}
+      <div id="notify" aria-live="polite">${notifyHtml()}</div>
       <h2 id="co-name" class="co-title">${esc(name)}</h2>
       ${R ? aboutHtml(R) : setupPanel()}
 
       ${body}`;
     bindSetup();
-    document.getElementById("to-request").addEventListener("click", () => go("request"));
     if (R) {
       arrive(R);
     }
@@ -439,15 +447,24 @@
       </div></li>`;
   }
 
-  function renderRequest() {
-    chipN = 0;
+  // The data-room request is a dialog over the associate's working page (Ken, 1:03 PM).
+  function openRequest() {
+    if (!S.fields) return;
     if (!S.items || S.itemsStage !== S.fields.stage.value) buildItems();
     if (!S.by) S.by = defaultBy();
     const company = S.fields.name.value || "This company";
     const fromReadout = S.items.filter((i) => i.fromReadout).length;
-    const founderFull = (S.fields.founders.value || "").split(",")[0].trim() || "the founder";
-    app.innerHTML = `${header("request", ["readout", "the first readout"])}
-      <h2 class="co-title">${esc(company)}: the data-room request</h2>
+    let dlg = document.getElementById("req-modal");
+    if (!dlg) {
+      dlg = document.createElement("dialog");
+      dlg.id = "req-modal";
+      dlg.setAttribute("aria-labelledby", "req-title");
+      document.body.appendChild(dlg);
+      dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+    }
+    dlg.innerHTML = `<div class="modal-head"><h2 id="req-title">${esc(company)}: the data-room request</h2>
+        <button class="tc-btn tc-btn--secondary" type="button" id="req-close">Close</button></div>
+      <div class="modal-body">
       <p class="banner tc-synthetic" role="note">For the demo, the data room that comes back is synthetic. The team writes it. It is not ${esc(company)}'s data.</p>
       <p class="note">The readout's gaps come first (${fromReadout}), then the standard first-tier documents for a ${esc(STAGES[S.itemsStage].toLowerCase())} company. Uncheck, check or add items. The draft updates as you go. Tricorder never sends it.</p>
       <div class="toolbar">
@@ -483,29 +500,83 @@
             </div>
           </aside>
         </div>
-      </div>
-      <section class="sent" aria-label="Request status">
-        <div class="status-card" id="status-card"><strong>Request sent to ${esc(founderFull)}</strong> <span class="dot" aria-hidden="true">·</span> waiting for ${esc(company)}'s data room</div>
-        <div id="arrival"></div>
-      </section>`;
-    bindRequest();
-    showArrival(company);
-    refreshDraft(true);
+      </div></div>
+      <div class="modal-foot"><span class="note">Send it from your own mail, then mark it sent.</span>
+        <button class="tc-btn primary" type="button" id="mark-sent">Mark as sent</button></div>`;
+    bindRequest(dlg);
+    if (S.edited) { document.getElementById("d-subject").value = S.subject; document.getElementById("d-body").value = S.body; }
+    refreshDraft(false);
+    if (!dlg.open) dlg.showModal();
   }
 
-  // The room's arrival, shown as a product notification. The file count is the synthetic room's own.
-  function showArrival(company) {
-    const room = S.research && S.research.room;
-    if (!room) return;
-    const run = S.run;
-    setTimeout(() => {
-      const el = document.getElementById("arrival");
-      if (!el || run !== S.run) return;
-      const n = room.files.length;
-      el.innerHTML = `<div class="notice" role="status"><div><strong>${esc(company)} shared its data room</strong> <span class="dot" aria-hidden="true">·</span> ${n} file${n === 1 ? "" : "s"} <span class="dot" aria-hidden="true">·</span> just now</div>
-        <button class="tc-btn primary" type="button" id="to-received">Open the data room</button></div>`;
-      document.getElementById("to-received").addEventListener("click", () => go("received"));
-    }, 1800 * PACE);
+  // After the request goes out: the working page lists each item as Open, then the room arrives ------
+  const askedText = (d) => d.toLocaleString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
+  const roomOf = () => (S.research && S.research.room) || null;
+  const heldBy = (it) => { const r = roomOf(); return r && it.id && r.holds[it.id] ? r.holds[it.id] : null; };
+  const founderFull = () => (S.fields.founders.value || "").split(",")[0].trim() || "the founder";
+
+  function markSent() {
+    const now = new Date();
+    S.requests = { sentAt: now };
+    S.roomShared = false; S.roomOpened = false;
+    S.items.filter((i) => i.checked).forEach((i) => { i.askedAt = now; });
+    clearTimeout(S.arrivalTimer);
+    if (roomOf()) {
+      const run = S.runStart = (S.runStart || 0) + 1;
+      S.arrivalTimer = setTimeout(() => { if (run === S.runStart && S.requests) { S.roomShared = true; paintWorking(); } }, 1800 * PACE);
+    }
+    paintWorking();
+  }
+
+  function openRoom() {
+    S.roomShared = true; S.roomOpened = true;
+    paintWorking();
+    const box = document.getElementById("roomgaps");
+    if (box) { box.setAttribute("tabindex", "-1"); box.focus({ preventScroll: true }); box.scrollIntoView({ block: "start" }); }
+  }
+
+  function requestsInner() {
+    const company = S.fields.name.value || "This company";
+    const rows = S.items.filter((i) => i.checked);
+    rows.forEach((i) => { if (!i.askedAt) i.askedAt = new Date(); });
+    const opened = S.roomOpened;
+    const answered = opened ? rows.filter(heldBy).length : 0;
+    const open = rows.length - answered;
+    const note = opened
+      ? `${answered} answered, ${open} still open. Sent to ${esc(founderFull())}.`
+      : `${rows.length} item${rows.length === 1 ? "" : "s"} asked for, all open. Request sent to ${esc(founderFull())} <span class="dot" aria-hidden="true">·</span> waiting for ${esc(company)}'s data room`;
+    const chips = (files) => `<div class="tc-chips">${files.map((f) => window.TCX.roomChip({ uri: f.split(", ")[0], locator: f.split(", ")[1] || "whole file", quote: "Received with the room." })).join("")}</div>`;
+    const view = opened && window.TC_ROOM_VIEW && typeof window.TC_ROOM_VIEW.render === "function";
+    let custom = "";
+    if (view) {
+      try { const out = window.TC_ROOM_VIEW.render(open > 0 ? "partial" : "full"); if (typeof out === "string") custom = out; } catch (e) { custom = ""; }
+    }
+    return `<h2>Data room requests</h2>
+      <p class="note" id="req-note">${note}</p>
+      ${custom}
+      <ul class="reqs">${rows.map((it) => { const f = opened ? heldBy(it) : null; return `<li class="req" data-state="${f ? "answered" : "open"}">
+        <span class="tc-mark${f ? " tc-mark--strong" : ""}">${f ? "Answered" : "Open"}</span>
+        <div><div class="title">${esc(it.title)}</div><div class="meta">Asked ${esc(askedText(it.askedAt))}</div>${f ? chips(f) : ""}</div></li>`; }).join("")}</ul>
+      ${opened ? `<div class="actions"><a class="btn primary tc-btn" href="#flags">See the flags from the room</a>
+        <a class="btn tc-btn tc-btn--secondary" href="http://localhost:5173/">Open the built readout page</a></div>` : ""}`;
+  }
+
+  function notifyHtml() {
+    const room = roomOf();
+    if (!S.requests || !room) return "";
+    const company = S.fields.name.value || "This company";
+    if (S.roomOpened) return `<p class="banner tc-synthetic" role="note">This data room is synthetic. The team wrote it for the demo. It is not ${esc(company)}'s data.</p>`;
+    if (!S.roomShared) return "";
+    const n = room.files.length;
+    return `<div class="notice" role="status"><div><strong>${esc(company)} shared its data room</strong> <span class="dot" aria-hidden="true">·</span> ${n} file${n === 1 ? "" : "s"} <span class="dot" aria-hidden="true">·</span> just now</div>
+      <button class="tc-btn primary" type="button" id="open-room">Open the data room</button></div>`;
+  }
+
+  function paintWorking() {
+    const n = document.getElementById("notify");
+    if (n) n.innerHTML = notifyHtml();
+    const box = document.getElementById("roomgaps");
+    if (box && S.requests) { box.setAttribute("aria-label", "Data room requests"); box.innerHTML = requestsInner(); }
   }
 
   function refreshDraft(force) {
@@ -523,14 +594,14 @@
     document.getElementById("mailto").href = `mailto:${enc(S.to).replace("%40", "@")}?subject=${enc(S.subject)}&body=${enc(S.body.replace(/\r?\n/g, "\r\n"))}`;
   }
 
-  function bindRequest() {
+  function bindRequest(dlg) {
     const asks = document.getElementById("asks");
     asks.addEventListener("change", (e) => {
       const key = e.target.dataset.item;
       const it = S.items.find((x) => x.key === key);
       if (it) { it.checked = e.target.checked; refreshDraft(); }
     });
-    app.querySelectorAll("[data-pick]").forEach((b) => b.addEventListener("click", () => {
+    dlg.querySelectorAll("[data-pick]").forEach((b) => b.addEventListener("click", () => {
       const k = b.dataset.pick;
       S.items.forEach((i) => { i.checked = k === "all" || (k === "readout" && i.fromReadout); });
       asks.querySelectorAll("input[type=checkbox]").forEach((cb) => { cb.checked = S.items.find((x) => x.key === cb.dataset.item).checked; });
@@ -557,6 +628,8 @@
     document.getElementById("d-subject").addEventListener("input", (e) => { S.subject = e.target.value; S.edited = true; refreshDraft(); });
     document.getElementById("d-body").addEventListener("input", (e) => { S.body = e.target.value; S.edited = S.body !== S.autoBody; refreshDraft(); });
     document.getElementById("redo-btn").addEventListener("click", () => refreshDraft(true));
+    document.getElementById("req-close").addEventListener("click", () => dlg.close());
+    document.getElementById("mark-sent").addEventListener("click", () => { if (!S.items.some((i) => i.checked)) { document.getElementById("copied").textContent = "Pick at least one item first."; return; } dlg.close(); markSent(); });
     document.getElementById("copy").addEventListener("click", () => {
       const text = `Subject: ${S.subject}\n\n${S.body}`;
       const done = (ok) => { document.getElementById("copied").textContent = ok ? "Copied." : "Copy did not work here. Select the text instead."; };
@@ -564,20 +637,8 @@
     });
   }
 
-  // Step 4: the room comes back -----------------------------------------------------------------
-  function renderReceived() {
-    const company = S.fields.name.value || "This company";
-    const n = S.items ? S.items.filter((i) => i.checked).length : 0;
-    app.innerHTML = `${header("received", ["request", "the data-room request"])}
-      <h2 class="co-title">${esc(company)}: data room received</h2>
-      <p class="banner tc-synthetic" role="note">This data room is synthetic. The team wrote it for the demo. It is not ${esc(company)}'s data.</p>
-      <p>You asked for ${n} item${n === 1 ? "" : "s"}. Tricorder now checks what the room holds against that list, then reads the room for red and green flags.</p>
-      <div class="actions"><a class="btn primary tc-btn" href="#flags">See the flags from the room</a> <a class="btn tc-btn tc-btn--secondary" href="http://localhost:5173/">Open the built readout page</a>
-        <span class="note">Runs on this laptop at localhost:5173.</span></div>`;
-  }
-
   // Steps 5 to 8 live in their own files and read state and helpers from here.
-  window.TC = { D, S, app, esc, chip, sourcePanel, header, go, buildItems, render };
+  window.TC = { D, S, app, esc, chip, sourcePanel, header, go, buildItems, render, openRoom };
 
   // Start ------------------------------------------------------------------------------------------
   const fromAddress = params.get("company");

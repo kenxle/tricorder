@@ -58,9 +58,23 @@ with sync_playwright() as p:
     check("linkedin" not in pg.content().lower(), "no LinkedIn on the readout")
     pg.screenshot(path=str(SHOTS / "2_first_readout_ploy.png"), full_page=True)
 
-    # Step 3: request
+    # Step 3: the data-room request is a dialog over the working page
+    check(pg.locator("#roomgaps #to-request").count() == 1 and pg.locator("#roomgaps h2").inner_text() == "Up Next: Data Room Requests", "the Draft button sits inside the Up Next box")
     pg.click("#to-request")
-    pg.wait_for_selector("#d-body")
+    pg.wait_for_selector("dialog#req-modal[open] #d-body")
+    check(pg.evaluate("document.querySelector('#req-modal').contains(document.activeElement) || document.activeElement === document.querySelector('#req-modal')"), "focus moves into the dialog")
+    for _ in range(40):
+        pg.keyboard.press("Tab")
+    check(pg.evaluate("document.querySelector('#req-modal').contains(document.activeElement)"), "focus stays trapped inside the dialog after 40 tabs")
+    pg.keyboard.press("Escape")
+    check(pg.locator("dialog#req-modal[open]").count() == 0, "Esc closes the dialog")
+    check(pg.evaluate("document.activeElement.id") == "to-request", "focus returns to the Draft button")
+    pg.click("#to-request")
+    pg.wait_for_selector("dialog#req-modal[open] #req-close")
+    pg.click("#req-close")
+    check(pg.locator("dialog#req-modal[open]").count() == 0 and pg.evaluate("document.activeElement.id") == "to-request", "the Close button closes the dialog and returns focus")
+    pg.click("#to-request")
+    pg.wait_for_selector("dialog#req-modal[open] #d-body")
     body0 = pg.locator("#d-body").input_value()
     check("Hi Bryant," in body0, "draft greets the founder")
     first_cb = pg.locator("#asks input[type=checkbox]").first
@@ -72,22 +86,32 @@ with sync_playwright() as p:
     pg.click("#addform button")
     body2 = pg.locator("#d-body").input_value()
     check("Please send your SOC 2 report." in body2, "an added item reaches the draft")
-    check("prototype" not in pg.locator("body").inner_text().lower() and pg.locator(".steps, .back").count() == 0, "no Prototype label, step bar or back links on the request")
-    check(pg.locator(".banner").first.inner_text().startswith("For the demo, the data room"), "request labels the room synthetic")
+    check(pg.locator("dialog .guidance, dialog details").count() > 0, "guidance is in the dialog")
+    check("prototype" not in pg.locator("body").inner_text().lower() and pg.locator(".steps, .back").count() == 0, "no Prototype label, step bar or back links with the dialog open")
+    check(pg.locator("dialog .banner").first.inner_text().startswith("For the demo, the data room"), "dialog labels the room synthetic")
+    pg.screenshot(path=str(SHOTS / "3_data_room_request_ploy.png"))
+    pg.click("#mark-sent")
 
-    # Step 4: received
-    check("Request sent to Bryant Chou" in pg.locator("#status-card").inner_text() and "waiting for Ploy's data room" in pg.locator("#status-card").inner_text(), "request screen shows the sent status card with the founder's name")
-    pg.wait_for_selector("#to-received")
+    # Step 4: the working page lists the requests, then the room arrives
+    check(pg.locator("dialog#req-modal[open]").count() == 0, "Mark as sent closes the dialog")
+    asked = pg.evaluate("TC.S.items.filter(i => i.checked).length")
+    check(pg.locator(".req[data-state='open']").count() == asked and pg.locator(".req[data-state='answered']").count() == 0 and asked > 0, f"every requested item shows as Open ({asked})")
+    check("Asked" in pg.locator(".req").first.inner_text() and "Request sent to Bryant Chou" in pg.locator("#req-note").inner_text() and "waiting for Ploy's data room" in pg.locator("#req-note").inner_text(),
+          "each item shows when it was asked, and the page says the request went to the founder")
+    pg.wait_for_selector("#open-room", timeout=10000)
     note = pg.locator(".notice").inner_text()
     nfiles = pg.evaluate("TC.S.research.room.files.length")
-    check(f"Ploy shared its data room" in note and f"{nfiles} files" in note and "just now" in note and "Open the data room" in note and not any(w in pg.locator("body").inner_text().lower() for w in ("simulate", "prototype")),
-          f"arrival notice shows the room's own file count ({nfiles}) and an Open the data room button")
-    pg.screenshot(path=str(SHOTS / "3_data_room_request_ploy.png"), full_page=True)
-    pg.click("#to-received")
-    pg.wait_for_selector("text=data room received")
-    check(pg.locator("a[href='http://localhost:5173/']").count() == 1, "received step links to the app")
-    check("prototype" not in pg.locator("body").inner_text().lower() and pg.locator(".steps, .back").count() == 0, "no Prototype label, step bar or back links on room received")
-    check("synthetic" in pg.locator(".banner").inner_text(), "received step labels the room synthetic")
+    check("Ploy shared its data room" in note and f"{nfiles} files" in note and "just now" in note, f"arrival notice shows the room's own file count ({nfiles})")
+    pg.screenshot(path=str(SHOTS / "4a_requests_open_notification.png"), full_page=True)
+    pg.click("#open-room")
+    expected = pg.evaluate("TC.S.items.filter(i => i.checked && i.id && TC.S.research.room.holds[i.id]).length")
+    answered = pg.locator(".req[data-state='answered']").count()
+    check(answered == expected and 0 < answered < asked and pg.locator(".req[data-state='open']").count() == asked - answered,
+          f"opening the room answers what it holds ({answered} answered, {asked - answered} still open)")
+    check(pg.locator(".req[data-state='answered'] .roomchip").count() >= answered and pg.locator(".req[data-state='open'] .roomchip").count() == 0, "each answered item names the file that answered it")
+    check(pg.locator("a[href='http://localhost:5173/']").count() == 1, "the working page links to the built app")
+    check("prototype" not in pg.locator("body").inner_text().lower() and "simulate" not in pg.locator("body").inner_text().lower() and pg.locator(".steps, .back").count() == 0, "no Prototype label, step bar or back links on the working page")
+    check("synthetic" in pg.locator("#notify .banner").inner_text(), "opened room is labelled synthetic")
     pg.screenshot(path=str(SHOTS / "4_room_received.png"), full_page=True)
 
     # Step 5: flags from Ploy's synthetic room (steps 5 to 8: step5.js, step6.js, memo.js)
@@ -107,7 +131,7 @@ with sync_playwright() as p:
     pg.locator(".x-flag .srcchip").first.click()
     check("Saved copy" in pg.locator(".x-flag .panel").nth(1).inner_text(), "an outside source chip opens the saved public page")
     held, missing = pg.locator(".x-tick[data-held='yes']").count(), pg.locator(".x-tick[data-held='no']").count()
-    check(held > 0 and missing > 0, f"request ticked off: {held} in the room, {missing} still missing")
+    check(held > 0 and missing > 0 and held == answered and missing == asked - answered, f"request ticked off: {held} in the room, {missing} still missing, same as the working page")
     check(pg.locator(".x-pre tr[data-status='confirms']").count() >= 3 and "26,571,989" in pg.locator(".x-pre").inner_text(),
           "first-readout claims confirmed by the room, the Form D amount among them")
     pg.click("[data-ask]")
