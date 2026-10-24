@@ -1,5 +1,7 @@
 import { createHTTPServer } from "@trpc/server/adapters/standalone";
 
+import type { SavedCompanyData } from "./company-data.ts";
+import { serveCompany } from "./company-http.ts";
 import { streamRequestUI } from "./request-ui-stream.ts";
 import type { RequestUIPatchSource } from "./request-ui-stream.ts";
 import { appRouter } from "./router.ts";
@@ -8,6 +10,7 @@ export interface RPCServerOptions {
   apiURL: string;
   fetch?: typeof globalThis.fetch;
   requestUIPatches?: RequestUIPatchSource;
+  companyData?: () => SavedCompanyData;
 }
 
 function localHost(host: string | undefined): boolean {
@@ -53,6 +56,14 @@ export function createRPCServer(options: RPCServerOptions) {
       }
       if (req.url?.split("?")[0] === "/ui/request") {
         void streamRequestUI(req, res, options.requestUIPatches);
+        return;
+      }
+      if (
+        ["/company/readout", "/company/section"].includes(
+          req.url?.split("?")[0] ?? ""
+        )
+      ) {
+        serveCompany(req, res, options.companyData);
         return;
       }
       next();

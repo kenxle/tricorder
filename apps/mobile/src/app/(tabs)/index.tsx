@@ -1,1 +1,1 @@
-export { default } from "../../company/company-screen";
+export { default } from "../../company/saved-readout-screen";

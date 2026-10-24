@@ -1,0 +1,513 @@
+{
+  "version": 1,
+  "companies": {
+    "ploy": {
+      "evidence": [
+        {
+          "id": "ploy:pricing",
+          "number": 1,
+          "source": "site_ploy_pricing",
+          "quote": "Monthly price $0/mo $50/mo $300/mo Custom"
+        },
+        {
+          "id": "ploy:named-customers",
+          "number": 2,
+          "source": "news_ploy_vcaonline",
+          "quote": "Agencies like Tonik and TNT Growth build and run client sites on the platform"
+        },
+        {
+          "id": "ploy:locations",
+          "number": 3,
+          "source": "news_ploy_vcaonline",
+          "quote": "Ploy is a small team based in San Francisco and New York, and it's hiring."
+        },
+        {
+          "id": "ploy:yc-launch",
+          "number": 4,
+          "source": "yc_page_ploy",
+          "quote": "launches[0].total_vote_count: 23"
+        },
+        {
+          "id": "ploy:batch-usage",
+          "number": 5,
+          "source": "yc_page_ploy",
+          "quote": "Over 13% of the YC P26 companies are using Ploy"
+        },
+        {
+          "id": "ploy:hn-attention",
+          "number": 6,
+          "source": "hn_ploy",
+          "quote": "points 258 | comments 131"
+        },
+        {
+          "id": "ploy:hn-domain-filter",
+          "number": 7,
+          "source": "hn_ploy",
+          "quote": "domain_query: ploy.ai"
+        },
+        {
+          "id": "ploy:hn-disputes",
+          "number": 8,
+          "source": "demo_dispute_scan",
+          "quote": "ploy,summary,,1,0,"
+        },
+        {
+          "id": "ploy:app-store",
+          "number": 9,
+          "source": "appstore_ploy",
+          "quote": "resultCount: 6"
+        },
+        {
+          "id": "ploy:form-d",
+          "number": 10,
+          "source": "edgar_formd_ploy_primary_doc",
+          "quote": "<signatureDate>2026-06-24</signatureDate>"
+        },
+        {
+          "id": "ploy:round-sold",
+          "number": 11,
+          "source": "edgar_formd_ploy_primary_doc",
+          "quote": "<totalAmountSold>26571989</totalAmountSold>"
+        },
+        {
+          "id": "ploy:safe-conversions",
+          "number": 12,
+          "source": "edgar_formd_ploy_primary_doc",
+          "quote": "Includes $11,572,000 of securities issued upon conversion and cancellation of outstanding SAFEs."
+        },
+        {
+          "id": "ploy:investors",
+          "number": 13,
+          "source": "edgar_formd_ploy_primary_doc",
+          "quote": "<totalNumberAlreadyInvested>11</totalNumberAlreadyInvested>"
+        },
+        {
+          "id": "ploy:seed-press",
+          "number": 14,
+          "source": "news_ploy_pulse2",
+          "quote": "The round was led by First Round Capital and Y Combinator."
+        },
+        {
+          "id": "ploy:webflow-founder",
+          "number": 15,
+          "source": "yc_page_ploy",
+          "quote": "After 12 years as the cofounder and CTO at Webflow"
+        },
+        {
+          "id": "ploy:vungle-founder",
+          "number": 16,
+          "source": "yc_page_ploy",
+          "quote": "vungle ➡️ $LFTO (2011-2013)"
+        },
+        {
+          "id": "ploy:ceo-filing",
+          "number": 17,
+          "source": "edgar_formd_ploy_primary_doc",
+          "quote": "<signatureTitle>Chief Executive Officer</signatureTitle>"
+        },
+        {
+          "id": "ploy:github-unconfirmed",
+          "number": 18,
+          "source": "github_user_bryantchou",
+          "quote": "created_at: 2026-01-17T06:43:04Z"
+        },
+        {
+          "id": "ploy:director-filing",
+          "number": 19,
+          "source": "edgar_formd_ploy_primary_doc",
+          "quote": "<lastName>Jackson</lastName>"
+        },
+        {
+          "id": "ploy:competitors",
+          "number": 20,
+          "source": "site_ploy",
+          "quote": "Ploy vs Framer"
+        },
+        {
+          "id": "ploy:replaced-tools",
+          "number": 21,
+          "source": "site_ploy",
+          "quote": "WordPress, Webflow, Framer, Wix, or a custom build."
+        },
+        {
+          "id": "ploy:sherpa-comp",
+          "number": 22,
+          "source": "yc_spring_2026_companies",
+          "quote": "Make websites improve themselves."
+        },
+        {
+          "id": "ploy:revnu-comp",
+          "number": 23,
+          "source": "yc_spring_2026_companies",
+          "quote": "Your AI growth hire."
+        },
+        {
+          "id": "ploy:hiring",
+          "number": 24,
+          "source": "yc_page_ploy",
+          "quote": "jobPostings[0].salaryRange: $150K - $250K"
+        },
+        {
+          "id": "ploy:team-size",
+          "number": 25,
+          "source": "yc_page_ploy",
+          "quote": "company.team_size: 14"
+        }
+      ],
+      "summary": {
+        "text": "Ploy turns a company's website into its growth engine: an AI platform that builds and runs the site and its marketing. It moves sites over from WordPress, Webflow, Framer and Wix. Plans run from free to $300 a month, with enterprise priced on request. A YC Spring 2026 company of 14 people, based in San Francisco and New York.",
+        "evidenceIds": [
+          "ploy:pricing",
+          "ploy:replaced-tools",
+          "ploy:team-size",
+          "ploy:locations"
+        ],
+        "provenance": "authored-demo",
+        "segments": [
+          {
+            "text": "Ploy turns a company's website into its growth engine: an AI platform that builds and runs the site and its marketing.",
+            "evidenceIds": ["ploy:replaced-tools", "ploy:locations"]
+          },
+          {
+            "text": " It moves sites over from WordPress, Webflow, Framer and Wix.",
+            "evidenceIds": ["ploy:replaced-tools"]
+          },
+          {
+            "text": " Plans run from free to $300 a month, with enterprise priced on request.",
+            "evidenceIds": ["ploy:pricing"]
+          },
+          {
+            "text": " A YC Spring 2026 company of 14 people,",
+            "evidenceIds": ["ploy:team-size"]
+          },
+          {
+            "text": " based in San Francisco and New York.",
+            "evidenceIds": ["ploy:locations"]
+          }
+        ]
+      },
+      "insights": [
+        {
+          "id": "ploy:insight:the-round",
+          "mark": "strong",
+          "piece": "The round",
+          "title": "The seed round is real and fully raised.",
+          "text": "Press reports a $27M seed led by First Round Capital and Y Combinator. The SEC filing agrees: every dollar offered was sold, to 11 investors, and $11,572,000 of it came from SAFEs that converted.",
+          "evidenceIds": [
+            "ploy:seed-press",
+            "ploy:round-sold",
+            "ploy:safe-conversions",
+            "ploy:investors",
+            "ploy:form-d"
+          ],
+          "provenance": "authored-demo"
+        },
+        {
+          "id": "ploy:insight:team",
+          "mark": "strong",
+          "piece": "Team",
+          "title": "The founder has built this kind of company before.",
+          "text": "Bryant Chou was co-founder and CTO of Webflow for 12 years, and of Vungle before that. Webflow is one of the tools Ploy says it moves sites away from.",
+          "evidenceIds": [
+            "ploy:webflow-founder",
+            "ploy:vungle-founder",
+            "ploy:ceo-filing",
+            "ploy:replaced-tools"
+          ],
+          "provenance": "authored-demo"
+        },
+        {
+          "id": "ploy:insight:traction",
+          "mark": "mixed",
+          "piece": "Traction",
+          "title": "Early demand signals, but no revenue is public.",
+          "text": "Press names Hex and Clay as customers, and the company says over 13% of its batch use Ploy. Both come from the company's side. The SEC filing declines to disclose revenue, so this goes on the data-room request.",
+          "evidenceIds": [
+            "ploy:named-customers",
+            "ploy:batch-usage",
+            "ploy:pricing"
+          ],
+          "provenance": "authored-demo"
+        },
+        {
+          "id": "ploy:insight:market",
+          "mark": "weak",
+          "piece": "Market",
+          "title": "A crowded field with well-funded rivals.",
+          "text": "Ploy measures itself against Framer, Vercel, Lovable, Bolt and v0, and two companies in its own batch pitch nearly the same thing.",
+          "evidenceIds": [
+            "ploy:competitors",
+            "ploy:sherpa-comp",
+            "ploy:revnu-comp"
+          ],
+          "provenance": "authored-demo"
+        },
+        {
+          "id": "ploy:insight:outside-world",
+          "mark": "strong",
+          "piece": "Outside world",
+          "title": "Developers pay attention, and nobody is complaining.",
+          "text": "A post on its engineering drew 258 points and 131 comments on Hacker News. No story or comment about Ploy uses dispute language.",
+          "evidenceIds": ["ploy:hn-attention", "ploy:hn-disputes"],
+          "provenance": "authored-demo"
+        },
+        {
+          "id": "ploy:insight:burn-and-runway",
+          "mark": "thin",
+          "piece": "Burn and runway",
+          "title": "Spending is unknown until the room arrives.",
+          "text": "The team is 14 people with one open role. Nothing public shows burn or runway after the seed.",
+          "evidenceIds": ["ploy:team-size", "ploy:hiring"],
+          "provenance": "authored-demo"
+        }
+      ]
+    },
+    "sazabi": {
+      "evidence": [
+        {
+          "id": "sazabi:pricing",
+          "number": 1,
+          "source": "research_demo_companies",
+          "quote": "pricing shows Hobby $50, Startup $200, Growth $1,000 a month, and Enterprise"
+        },
+        {
+          "id": "sazabi:usage-pricing",
+          "number": 2,
+          "source": "site_sazabi_pricing",
+          "quote": "additional data costs $0.10 per GB"
+        },
+        {
+          "id": "sazabi:case-studies",
+          "number": 3,
+          "source": "site_sazabi_customers",
+          "quote": "XMTP Labs x Sazabi"
+        },
+        {
+          "id": "sazabi:design-partners",
+          "number": 4,
+          "source": "blog_sazabi_seed",
+          "quote": "signed up 50 design partners"
+        },
+        {
+          "id": "sazabi:yc-launch",
+          "number": 5,
+          "source": "yc_page_sazabi",
+          "quote": "launches[0].total_vote_count: 44"
+        },
+        {
+          "id": "sazabi:usage",
+          "number": 6,
+          "source": "yc_page_sazabi",
+          "quote": "In the past month we’ve onboarded 35 new teams, run 8,000 background investigations, detected 2,000 issues, ingested 2 TB of logs"
+        },
+        {
+          "id": "sazabi:hn-attention",
+          "number": 7,
+          "source": "hn_sazabi",
+          "quote": "domain_query: sazabi.com"
+        },
+        {
+          "id": "sazabi:hn-disputes",
+          "number": 8,
+          "source": "demo_dispute_scan",
+          "quote": "sazabi,summary,,3,0,"
+        },
+        {
+          "id": "sazabi:app-store",
+          "number": 9,
+          "source": "appstore_sazabi",
+          "quote": "resultCount: 10"
+        },
+        {
+          "id": "sazabi:form-d-search",
+          "number": 10,
+          "source": "edgar_company_sazabi",
+          "quote": "company=sazabi&amp;type=D"
+        },
+        {
+          "id": "sazabi:seed-announcement",
+          "number": 11,
+          "source": "blog_sazabi_seed",
+          "quote": "Our $8 million seed round is co-led by J2 Ventures, Village Global, and Y Combinator."
+        },
+        {
+          "id": "sazabi:still-raising",
+          "number": 12,
+          "source": "news_sazabi_siliconangle",
+          "quote": "confirmed it’s in the process of raising seed capital"
+        },
+        {
+          "id": "sazabi:yc-founder",
+          "number": 13,
+          "source": "yc_page_sazabi",
+          "quote": "Sherwood Callaway is a 2x YC founder"
+        },
+        {
+          "id": "sazabi:brex-teams",
+          "number": 14,
+          "source": "yc_page_sazabi",
+          "quote": "previously started the infrastructure and observability teams at Brex"
+        },
+        {
+          "id": "sazabi:opkit",
+          "number": 15,
+          "source": "news_sazabi_siliconangle",
+          "quote": "phone call automation platform Opkit Inc."
+        },
+        {
+          "id": "sazabi:github",
+          "number": 16,
+          "source": "github_user_shcallaway",
+          "quote": "created_at: 2014-03-28T16:21:37Z"
+        },
+        {
+          "id": "sazabi:yc-talk",
+          "number": 17,
+          "source": "yc_library_sazabi_talk",
+          "quote": "The End of Manual Debugging"
+        },
+        {
+          "id": "sazabi:engineers",
+          "number": 18,
+          "source": "yc_page_sazabi",
+          "quote": "We’re a team of nine engineers in total, including three early members of the Brex team"
+        },
+        {
+          "id": "sazabi:replaced-tools",
+          "number": 19,
+          "source": "yc_page_sazabi",
+          "quote": "Legacy players like Datadog, Grafana, Sentry, and Axiom"
+        },
+        {
+          "id": "sazabi:ai-sre-comps",
+          "number": 20,
+          "source": "yc_page_sazabi",
+          "quote": "AI SRE startups like Traversal and Resolve"
+        },
+        {
+          "id": "sazabi:superlog",
+          "number": 21,
+          "source": "yc_page_superlog",
+          "quote": "company.one_liner: Make software self-healing"
+        },
+        {
+          "id": "sazabi:superlog-research",
+          "number": 22,
+          "source": "research_demo_companies",
+          "quote": "It would make a fair comp for a Sazabi room."
+        },
+        {
+          "id": "sazabi:hiring",
+          "number": 23,
+          "source": "yc_page_sazabi",
+          "quote": "jobPostings: (none)"
+        },
+        {
+          "id": "sazabi:team-size",
+          "number": 24,
+          "source": "yc_page_sazabi",
+          "quote": "company.team_size: 10"
+        }
+      ],
+      "summary": {
+        "text": "Sazabi is an AI-native observability platform for fast-moving engineering teams, pitched as Datadog for the AI era. It takes in a team's logs and investigates problems on its own. Plans run from $50 to $1,000 every 30 days, with usage billed on top. A YC Spring 2026 company of 10 people.",
+        "evidenceIds": [
+          "sazabi:replaced-tools",
+          "sazabi:usage",
+          "sazabi:pricing",
+          "sazabi:team-size",
+          "sazabi:usage-pricing"
+        ],
+        "provenance": "authored-demo",
+        "segments": [
+          {
+            "text": "Sazabi is an AI-native observability platform for fast-moving engineering teams, pitched as Datadog for the AI era.",
+            "evidenceIds": ["sazabi:replaced-tools"]
+          },
+          {
+            "text": " It takes in a team's logs and investigates problems on its own.",
+            "evidenceIds": ["sazabi:usage"]
+          },
+          {
+            "text": " Plans run from $50 to $1,000 every 30 days,",
+            "evidenceIds": ["sazabi:pricing"]
+          },
+          {
+            "text": " with usage billed on top.",
+            "evidenceIds": ["sazabi:usage-pricing"]
+          },
+          {
+            "text": " A YC Spring 2026 company of 10 people.",
+            "evidenceIds": ["sazabi:team-size"]
+          }
+        ]
+      },
+      "insights": [
+        {
+          "id": "sazabi:insight:the-round",
+          "mark": "mixed",
+          "piece": "The round",
+          "title": "The round is announced but not filed.",
+          "text": "The company says it raised an $8M seed co-led by J2 Ventures, Village Global and Y Combinator. EDGAR shows no Form D, and in April the company said it was still raising.",
+          "evidenceIds": [
+            "sazabi:seed-announcement",
+            "sazabi:form-d-search",
+            "sazabi:still-raising"
+          ],
+          "provenance": "authored-demo"
+        },
+        {
+          "id": "sazabi:insight:team",
+          "mark": "strong",
+          "piece": "Team",
+          "title": "The founder knows this problem from the inside.",
+          "text": "A second-time YC founder who started the infrastructure and observability teams at Brex. Three of the nine engineers come from Brex, and he has a YC talk on the problem.",
+          "evidenceIds": [
+            "sazabi:yc-founder",
+            "sazabi:brex-teams",
+            "sazabi:engineers",
+            "sazabi:yc-talk"
+          ],
+          "provenance": "authored-demo"
+        },
+        {
+          "id": "sazabi:insight:traction",
+          "mark": "mixed",
+          "piece": "Traction",
+          "title": "Strong early usage, all in the company's own words.",
+          "text": "It reports 50 design partners in under a month, 35 teams onboarded, 8,000 investigations and 2 TB of logs. None of it is confirmed outside the company yet.",
+          "evidenceIds": [
+            "sazabi:design-partners",
+            "sazabi:usage",
+            "sazabi:case-studies"
+          ],
+          "provenance": "authored-demo"
+        },
+        {
+          "id": "sazabi:insight:outside-world",
+          "mark": "weak",
+          "piece": "Outside world",
+          "title": "Little outside attention so far.",
+          "text": "Three Hacker News stories link to the site, and the largest has 2 points. Nobody disputes it, but few have noticed it.",
+          "evidenceIds": ["sazabi:hn-attention", "sazabi:hn-disputes"],
+          "provenance": "authored-demo"
+        },
+        {
+          "id": "sazabi:insight:market",
+          "mark": "mixed",
+          "piece": "Market",
+          "title": "Clear pricing in a field full of incumbents.",
+          "text": "Plans run from $50 to $1,000 every 30 days, with usage billed on top. It replaces Datadog, Grafana, Sentry and Axiom, and AI SRE startups and a batchmate chase the same buyers.",
+          "evidenceIds": [
+            "sazabi:pricing",
+            "sazabi:usage-pricing",
+            "sazabi:replaced-tools",
+            "sazabi:ai-sre-comps",
+            "sazabi:superlog"
+          ],
+          "provenance": "authored-demo"
+        }
+      ]
+    }
+  }
+}
