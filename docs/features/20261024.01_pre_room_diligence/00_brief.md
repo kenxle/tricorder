@@ -12,7 +12,7 @@ Today Tricorder starts from a data room. This adds the part before it: the assoc
 
 1. **Start from a URL.** The associate feeds in a company by its URL, its website or its YC company page, in the browser. There is no list screen (Ken, 12:02 PM).
 2. **Tricorder sets the company up** from the URL: name, website, founders, batch, matched against the saved YC Spring 2026 list. The associate can correct any field.
-3. **The research runs on its own.** Each part fills in as it lands, and each fails alone:
+3. **The research runs on its own.** Each part shows on the page as its data arrives, not all at the end (Ken, 12:03 PM: "we should show data as it appears, dynamically"). Each part fails alone:
    - **The outside world:** the company's website, Hacker News, the App Store, and its SEC Form D filings (rounds raised, amount sold).
    - **The founders:** a card per founder from GitHub, personal sites and talks.
    - **Comparable companies:** recent private rounds and public companies, each with why it is a fair comp.

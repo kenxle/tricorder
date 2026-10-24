@@ -49,7 +49,7 @@ Then the flow joins what is built: the room comes back, and the readout shows re
 
 - **Which companies.** The prototype uses Ploy and Sazabi, the research's picks, until Ken chooses ([research_demo_companies.md](../../reports/20261022.02_research/research_demo_companies.md)).
 - **One page or steps.** The prototype shows the four screens as steps with a back link; one long page is the alternative.
-- **Live or instant.** On stage, does the research appear to run section by section, or is it simply there? The prototype shows sections filling in, with a setting to show them at once.
+- **Live or instant: settled.** Data shows as it arrives, section by section (Ken, 12:03 PM: "we should show data as it appears, dynamically"). The prototype fakes the arrival; Benjamin builds the real streaming.
 
 ## Product thinking
 
