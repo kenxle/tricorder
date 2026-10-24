@@ -73,7 +73,11 @@ Every data room is synthetic, and every page says so. The real companies' public
 
 ## What we learned
 
-Being written.
+- **Disagreement is the signal.** Two sources that agree earn a small green flag. Two that disagree earn a big red flag.
+- **Scripts should do the math.** A model that reads a number can misread it. A script that recomputes it can be checked.
+- **The first pass starts before the data room.** The slow part is gathering, so Tricorder has to research the company from public sources and draft the request for documents.
+- **The partner's memo has to stay live.** We built a PDF export early. By Saturday we saw the partner needs to drill in and steer, so the memo is now an interactive page.
+- **Traction means different things by business model.** Kimmy showed us that a B2B company proves demand with paying customers, while a game company may show wishlists and trailer views.
 
 ## What's next for Tricorder
 
