@@ -200,3 +200,5 @@ body:has(dialog[open]) { overflow: hidden; }
 .ask.flash { animation: tc-flash 2.2s ease-out; }
 @keyframes tc-flash { 0%, 55% { background: var(--tc-band); } 100% { background: transparent; } }
 @media (prefers-reduced-motion: reduce) { .ask.flash { animation: none; background: var(--tc-band); } }
+#app > #notify:has(.notice) { position: sticky; top: 0; z-index: 5; background: var(--tc-ground); padding: var(--tc-space-2) 0; }
+#app > #notify .notice { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
