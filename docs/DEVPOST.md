@@ -6,7 +6,7 @@ Point it at a startup, get a readout.
 
 Due diligence on startups can take weeks, and this creates a slow down in momentum that can damage the relationship with the startups. But with millions of dollars on the line, it's important to know where your money is going and whether you're making a good investment.
 
-An associate at a seed fund described the first pass: "Before I even open your data room, I already have ten tabs up. I’m checking your traffic, reviews, investors, any co-founder issues, and whether your story matches what’s online." ([Startups Magazine, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)). The same associate reviews about 500 decks a year and goes deep on about 15.
+An associate at a seed fund described the first pass: "Before I even open your data room, I already have ten tabs up. I’m checking your traffic, reviews, investors, any co-founder issues, and whether your story matches what’s online." ([Startups Magazine, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)).
 
 The work is slow. A survey of 885 VCs found the average firm spends 118 hours of diligence on a deal ([NBER working paper](https://www.nber.org/system/files/working_papers/w22587/w22587.pdf)). Investors say the slow part is getting the information, not writing the memo.
 
