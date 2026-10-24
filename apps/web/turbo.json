@@ -1,0 +1,9 @@
+{
+  "extends": ["//"],
+  "tasks": {
+    "dev": {
+      "with": ["@tricorder/api#dev", "@tricorder/rpc#dev"],
+      "passThroughEnv": ["BROWSER", "BROWSER_ARGS"]
+    }
+  }
+}

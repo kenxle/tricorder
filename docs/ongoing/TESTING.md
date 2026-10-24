@@ -76,7 +76,7 @@ Use pnpm 11.9.0, pinned in `package.json`. `pnpm-workspace.yaml` defines the wor
 
 ```sh
 pnpm install --frozen-lockfile
-pnpm dev:web                    # Only Vite; start Python and tRPC separately
+pnpm dev:web                    # Python API + tRPC + Vite; opens the web page
 pnpm dev:mobile                 # Metro for the custom development client
 pnpm build:ios                  # Build/install the native iOS development client
 pnpm build:ios --device "Deez iPhone" # Build/install on the connected iPhone
@@ -96,6 +96,8 @@ The Expo SDK 58 starter lives in `apps/mobile/` and uses the root install and lo
 The workspace uses pnpm's default isolated install layout. Only esbuild's dependency build script is enabled in `pnpm-workspace.yaml`. Declare shared packages with `workspace:*`; do not add an npm lockfile. After intentionally changing dependencies, use `pnpm install` to update the lockfile.
 
 See the official [pnpm workspace guide](https://pnpm.io/workspaces), [Expo monorepo guide](https://docs.expo.dev/guides/monorepos/) and [Turbo workspace structure](https://turborepo.dev/docs/crafting-your-repository/structuring-a-repository).
+
+`apps/web/turbo.json` uses Turbo's `with` configuration to start the API and tRPC dev tasks whenever the web dev task is selected. Vite opens the browser automatically at <http://localhost:5173>, or its next free port if 5173 is occupied. Use `BROWSER=none pnpm dev:web` to suppress browser opening.
 
 ## tRPC gateway
 
