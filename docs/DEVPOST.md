@@ -57,7 +57,11 @@ Every data room is synthetic, and every page says so. The real companies' public
 
 ## Challenges we ran into
 
-Being written.
+- **Real data rooms are confidential.** We wrote our own, with planted problems and decoys. For real YC companies we pair real public data with a synthetic room, and every page of the room says it is synthetic.
+- **Keeping the model honest.** The model API would not return citations together with structured output. So every claim carries its quote, and a script checks the quote against the file.
+- **Scoring ourselves.** On a fresh run today, the engine finds 5 of 5 planted flags in Brasswick but only 2 of 8 in Hollis Voice. The checks for the other six are not built yet: the ARR definition, burn against the hiring plan, customer concentration, gross margin and the vanity sign-ups metric.
+- **Changing stack mid-day.** At 11:00 AM we decided to move to TypeScript, with web and mobile apps on one core. The Python engine keeps running the demo until the port scores the same on every answer key.
+- **Scope.** The roadmap has 57 slices. 13 are done and 10 are partly built.
 
 ## Accomplishments that we're proud of
 
