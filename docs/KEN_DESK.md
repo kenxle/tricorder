@@ -10,11 +10,13 @@
 - customer testimonials are from b2b side
 - b2c often want more info about traction (often social presence, not often strong enough)
 - validating, are the founders saying the truth, but the vcs are less knowledgeable than the founders, so it's hard
+- first thing is what's in the data room and what do we need to ask for, and automate this
 
 
 
 ### From the notes
 
+- **What's in the room and what to ask for, automated:** now the first slice on the roadmap, [room-requests](ongoing/roadmap/room-requests.md). It checks the room on arrival, lists what is missing, and the associate checks, unchecks and adds items before the request is drafted.
 - **Requests for more data:** built. The [founder-requests](ongoing/roadmap/founder-requests.md) slice drafts the message to the company asking for what the room is missing, with guidance on what to send.
 - **Testimonials (B2B) and traction from social presence (B2C):** nothing checks either yet. The nearest slice is [online-presence](ongoing/roadmap/online-presence.md), not started. Say if these should become checklist items or part of that slice.
 - **Checking whether founders tell the truth when the VC knows less than they do:** this is the core of what is built. The [claim-support](ongoing/roadmap/claim-support.md) scan checks every figure in the deck and the pitch against the room's own files, and the red-flag checks compare numbers by script, so the VC does not need the founder's expertise to see where the founder's own documents disagree. It could be a line in the pitch.
@@ -36,7 +38,7 @@ graph TD
     F -. "asks for more" .-> C
 ```
 
-Where it stands: steps 3, 7 and 8 are built (requests to the company, the memo). Step 5 is mostly built. Step 6 is partly built. Steps 1, 2 and 4 are not started: they wait on your pick of YC companies and on the outside research.
+Where it stands: steps 7 and 8 are built (the memo). Step 3 is partly built: the drafted request exists, and [room-requests](ongoing/roadmap/room-requests.md) adds the automatic check and the associate's list. Step 5 is mostly built. Step 6 is partly built. Steps 1, 2 and 4 are not started: they wait on your pick of YC companies and on the outside research.
 
 ## Needs your call
 

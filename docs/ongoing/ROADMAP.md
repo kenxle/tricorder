@@ -14,22 +14,23 @@ What Tricorder builds next, and who builds it. Today is Saturday 2026-10-24. Hac
 
 ## Up next: the demo path
 
-Build in this order. The first three are the demo and are always shown. The rest follow the [demo fallback order](roadmap/saturday.md#demo-fallback-order) in reverse: if one is not working at the 2:30 PM fallback call, it shows saved results on stage, and it is still built.
+Build in this order. The first four are the demo and are always shown. Room-requests is first because Ken named it the first thing (11:16 AM). The rest follow the [demo fallback order](roadmap/saturday.md#demo-fallback-order) in reverse: if one is not working at the 2:30 PM fallback call, it shows saved results on stage, and it is still built.
 
 | # | Slice | What is left to build | Who | Waits on |
 |---|---|---|---|---|
-| 1 | [redflag-engine](roadmap/redflag-engine.md) (partly built) | The red flags in the numbers: the planted-flag checks still missing (deck claims page, ARR definition, burn against the hiring plan, deck against model, customer concentration, gross margin, vanity metric, cap table and the green-flag cells) | design-and-finance | nothing; the readers and schema are built |
-| 2 | [readout](roadmap/readout.md) (partly built) | Link sources across claims, build the ask list, and the model pass that writes connecting sentences | captain | redflag-engine for real output; builds on saved output until then |
-| 3 | [readout-page](roadmap/readout-page.md) (partly built) | The page judges see: the claims and cohort panels, the memo link, the video jump, the ask-list copy button, the reorder buttons | frontend | readout |
-| 4 | [pitch-video](roadmap/pitch-video.md) (not started) | Transcribe the pitch video and pull its claims with timestamps | backend-and-data | Ken's recorded video (record-pitch-video); the script works until then |
-| 5 | [contract-terms-saturday](roadmap/contract-terms-saturday.md) (not started) | The model reading of the contracts, and contract checks 2 and 5 | backend-and-data | pitch-video comes first in that role's day |
-| 6 | [claim-result](roadmap/claim-result.md) (partly built) | Check web sources against their saved copies | captain | cached-data |
-| 7 | [cached-data](roadmap/cached-data.md) (not started) | Save every outside call under `cache/` so the demo runs without the network | agent | Ken's keys |
-| 8 | [comps](roadmap/comps.md) (not started) | The comparable-companies panel | design-and-finance | cached-data |
-| 9 | [signals-readings](roadmap/signals-readings.md) (not started) | The saved market-signal readings | agent | cached-data |
-| 10 | [market-signals](roadmap/market-signals.md) (not started) | The market-signals panel and its live run on the real company | frontend | signals-readings |
-| 11 | [outside-in](roadmap/outside-in.md) (not started) | The outside-world tabs for the real company's live beat: website, Hacker News, App Store, SEC filings | agent | Ken's pick of YC companies (yc-rooms), Ken's keys |
-| 12 | [demo-freeze](roadmap/demo-freeze.md) (partly built) | Frozen outputs in `demo/frozen/`, the 3:30 PM tag, the rehearsal | captain | everything above; starts at 1:00 PM |
+| 1 | [room-requests](roadmap/room-requests.md) (not started) | The first thing Tricorder does with a room: show what it holds and what is missing, draft the request automatically, and let the associate check, uncheck and add items | frontend and agent | nothing; checklist coverage and founder requests are built |
+| 2 | [redflag-engine](roadmap/redflag-engine.md) (partly built) | The red flags in the numbers: the planted-flag checks still missing (deck claims page, ARR definition, burn against the hiring plan, deck against model, customer concentration, gross margin, vanity metric, cap table and the green-flag cells) | design-and-finance | nothing; the readers and schema are built |
+| 3 | [readout](roadmap/readout.md) (partly built) | Link sources across claims, build the ask list, and the model pass that writes connecting sentences | captain | redflag-engine for real output; builds on saved output until then |
+| 4 | [readout-page](roadmap/readout-page.md) (partly built) | The page judges see: the claims and cohort panels, the memo link, the video jump, the ask-list copy button, the reorder buttons | frontend | readout |
+| 5 | [pitch-video](roadmap/pitch-video.md) (not started) | Transcribe the pitch video and pull its claims with timestamps | backend-and-data | Ken's recorded video (record-pitch-video); the script works until then |
+| 6 | [contract-terms-saturday](roadmap/contract-terms-saturday.md) (not started) | The model reading of the contracts, and contract checks 2 and 5 | backend-and-data | pitch-video comes first in that role's day |
+| 7 | [claim-result](roadmap/claim-result.md) (partly built) | Check web sources against their saved copies | captain | cached-data |
+| 8 | [cached-data](roadmap/cached-data.md) (not started) | Save every outside call under `cache/` so the demo runs without the network | agent | Ken's keys |
+| 9 | [comps](roadmap/comps.md) (not started) | The comparable-companies panel | design-and-finance | cached-data |
+| 10 | [signals-readings](roadmap/signals-readings.md) (not started) | The saved market-signal readings | agent | cached-data |
+| 11 | [market-signals](roadmap/market-signals.md) (not started) | The market-signals panel and its live run on the real company | frontend | signals-readings |
+| 12 | [outside-in](roadmap/outside-in.md) (not started) | The outside-world tabs for the real company's live beat: website, Hacker News, App Store, SEC filings | agent | Ken's pick of YC companies (yc-rooms), Ken's keys |
+| 13 | [demo-freeze](roadmap/demo-freeze.md) (partly built) | Frozen outputs in `demo/frozen/`, the 3:30 PM tag, the rehearsal | captain | everything above; starts at 1:00 PM |
 
 **Due at 11:00 AM:** the first social post for the $150 social content prize. An agent drafts both posts ([social-posts](roadmap/social-posts.md)) and Ken posts at 11:00 and 3:30.
 
