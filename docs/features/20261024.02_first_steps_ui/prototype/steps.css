@@ -102,3 +102,9 @@ span.x-mline-text { cursor: default; text-decoration: none; }
 .x-whatif-controls label.x-checkrow { display: flex; gap: var(--tc-space-2); align-items: center; min-height: var(--tc-hit); text-transform: none; letter-spacing: 0; font: 15px/1.3 inherit; color: var(--tc-ink); }
 .x-scn { background: var(--tc-band); }
 .x-yourview { font-size: 14px; color: var(--tc-ink-2); }
+.x-secpieces { display: flex; flex-wrap: wrap; gap: var(--tc-space-2) var(--tc-space-5); margin: 0 0 var(--tc-space-3); font-size: 15px; }
+.x-secpieces > span { display: inline-flex; flex-wrap: wrap; gap: var(--tc-space-2); align-items: center; }
+.x-secpieces b { font-weight: 600; }
+.x-glance { margin: var(--tc-space-5) 0 var(--tc-space-3); font: 500 12px/1.2 var(--tc-font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--tc-ink-3); }
+.x-reader { display: flex; gap: var(--tc-space-3); align-items: center; flex-wrap: wrap; }
+#w-pace { accent-color: var(--tc-accent); width: 100%; min-height: var(--tc-hit); }
