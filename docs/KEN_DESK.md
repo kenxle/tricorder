@@ -21,7 +21,7 @@
 
 **Counts** from [status_counts.py](ongoing/roadmap/status_counts.py): 13 slices done, 10 partly built, 29 not started, 5 waiting on you.
 
-**To look at the demo flow now:** the [demo workflow](ongoing/diagrams/demo_workflow.md) and [DEMO.md](ongoing/DEMO.md). Claude is setting up this laptop to run the app so you can click through it.
+**To look at the demo flow now:** the [demo workflow](ongoing/diagrams/demo_workflow.md) and [DEMO.md](ongoing/DEMO.md). The app runs on this laptop at <http://localhost:5173/>, with readouts for Hollis Voice and Brasswick. No Anthropic key is on this laptop, so the model's readings show as gaps; the script checks all ran.
 
 ## Notes
 
