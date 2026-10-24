@@ -4,7 +4,7 @@ Point it at a startup, get a readout.
 
 ## Inspiration
 
-Track 2 asked for better diligence. We started with the people who do it.
+Due diligence on startups can take weeks, and this creates a slow down in momentum that can damage the relationship with the startups. But with millions of dollars on the line, it's important to know where your money is going and whether you're making a good investment.
 
 An associate at a seed fund described the first pass: "Before I even open your data room, I already have ten tabs up. I’m checking your traffic, reviews, investors, any co-founder issues, and whether your story matches what’s online." ([Startups Magazine, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)). The same associate reviews about 500 decks a year and goes deep on about 15.
 
