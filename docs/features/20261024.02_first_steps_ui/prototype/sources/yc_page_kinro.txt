@@ -1,0 +1,162 @@
+currentUser: None
+publicFounderProfilesEnabled: False
+disabledPublicVisibility: None
+company.id: 31382
+company.slug: kinro
+company.name: Kinro
+company.batch: P26
+company.batch_name: Spring 2026
+company.small_logo_url: https://bookface-images.s3.amazonaws.com/small_logos/0a6042942a7506c8f7817f8f92ca6675143b71ba.png
+company.one_liner: Autonomous insurance brokerage for small businesses
+company.website: https://www.kinro.com/
+company.long_description: We help small business owners get the right coverage.
+company.tags[0]: Fintech
+company.tags[1]: Insurance
+company.tags[2]: Consumer Finance
+company.ycdc_status: Active
+company.logo_url: https://bookface-images.s3.us-west-2.amazonaws.com/logos/1a8718b15bc559ebcf18e0aaba39861e1dc76205.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAJNHNFYFD%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184819Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIG47BGHzUC%2BpIVxbL2uhdqI6c3jHfZDbGf3M4U8ryg9xAiEA9khH0GtK4V6I5IfboUa%2BhCYNvvGPQntJ8WqdcfNsYlsq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDIIYsJOzAdJOreiDGyrCA7wueDPlEXq0HWYeke9iU133aggWJdfxTEST0%2FS4VYlSqdHZ66UDYzwnLSyBGxb24%2FJd9vuWTYm5quQu6UNyXaHpr2vDIrjonVs9ITUctHuGKKLZKz%2FfLQ4iCKwPd4hT9GOC%2Fyeg8akLAocqGFVdZ6BkxKZIf4s1z9IP2f4cvttBfYL0QOJOBy3cgXp06Nm%2FJ9M2h745sQ3Xk%2BHDG7KRfW%2FqIdFZMeWbhrFTNtKRq6HeNOFlcFTzCxncIseGhN71aB74HyRcGM34Df4D1XIlkKMqanklMpnrAhOrScS2sRY2jVqZghngnlueB96wKFNrSuvvxoFLPzZ4OqOZiUTd5I4N73UsrTWsBvvzSXlTcqNPaBVG4Gqo1wN%2BSWdSYfjkcIg%2BM0qVTX%2BpPoYgYU7ZaWdJWx3m9K5orOJTLS0aHvrIPKIkb59dAlcPut1wIm6vWHzo3JfEMIZ6srOf1Hw%2FjwYap7NWCDtRadSALhcSwFdzKC3Dx7etwmS5P4r3dct43yyYJgO%2Ft2WxXdsluKO91X0quMxe6ESi%2B1ahvA62wtY7mz5QFJ6a5p2j%2FnTabq3M9ApLG0l0hTOsQJK9puntGM0KRTDhr%2BnWBjqlARKuKpSAQJeUKAaxfcJIyvtRpj%2B%2FzUHlwjDLvi0nR5rajG%2B7N4v9G0lju%2BQUjToN4JJWEpOUaiTlGeHZjlU0VYGfN4EDMSD9c3EeF24NlNwbnVHuw1n6tCAzzQWCm8BYfAcFmuJNsctNsWNOZNYE2jP6GDEwONAeqif1Ibry86gR62GIitHi4NU64J96VfJeSC4mdE1Nr1ECspwKWmmsxKnK3CPCCw%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=1c7c20d6c90cc92208817b221c26c744668d8258f288c8f253ea3a02af5ddb7d
+company.year_founded: 2026
+company.team_size: 6
+company.location: San Francisco
+company.city: San Francisco
+company.city_tag: san-francisco-bay-area
+company.country: US
+company.twitter_url: https://x.com/kinroai
+company.fb_url: 
+company.cb_url: 
+company.github_url: 
+company.free_response_question_answers: (none)
+company.dday_video_url: None
+company.app_video_url: None
+company.app_answers: (none)
+company.ycdc_url: https://www.ycombinator.com/companies/kinro
+company.company_photos: (none)
+company.primary_group_partner.id: 5628
+company.primary_group_partner.full_name: Nicolas Dessaigne
+company.primary_group_partner.avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/2827f95ab4f63f6fc0195211105d03de01ff1381.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAJNHNFYFD%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184819Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIG47BGHzUC%2BpIVxbL2uhdqI6c3jHfZDbGf3M4U8ryg9xAiEA9khH0GtK4V6I5IfboUa%2BhCYNvvGPQntJ8WqdcfNsYlsq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDIIYsJOzAdJOreiDGyrCA7wueDPlEXq0HWYeke9iU133aggWJdfxTEST0%2FS4VYlSqdHZ66UDYzwnLSyBGxb24%2FJd9vuWTYm5quQu6UNyXaHpr2vDIrjonVs9ITUctHuGKKLZKz%2FfLQ4iCKwPd4hT9GOC%2Fyeg8akLAocqGFVdZ6BkxKZIf4s1z9IP2f4cvttBfYL0QOJOBy3cgXp06Nm%2FJ9M2h745sQ3Xk%2BHDG7KRfW%2FqIdFZMeWbhrFTNtKRq6HeNOFlcFTzCxncIseGhN71aB74HyRcGM34Df4D1XIlkKMqanklMpnrAhOrScS2sRY2jVqZghngnlueB96wKFNrSuvvxoFLPzZ4OqOZiUTd5I4N73UsrTWsBvvzSXlTcqNPaBVG4Gqo1wN%2BSWdSYfjkcIg%2BM0qVTX%2BpPoYgYU7ZaWdJWx3m9K5orOJTLS0aHvrIPKIkb59dAlcPut1wIm6vWHzo3JfEMIZ6srOf1Hw%2FjwYap7NWCDtRadSALhcSwFdzKC3Dx7etwmS5P4r3dct43yyYJgO%2Ft2WxXdsluKO91X0quMxe6ESi%2B1ahvA62wtY7mz5QFJ6a5p2j%2FnTabq3M9ApLG0l0hTOsQJK9puntGM0KRTDhr%2BnWBjqlARKuKpSAQJeUKAaxfcJIyvtRpj%2B%2FzUHlwjDLvi0nR5rajG%2B7N4v9G0lju%2BQUjToN4JJWEpOUaiTlGeHZjlU0VYGfN4EDMSD9c3EeF24NlNwbnVHuw1n6tCAzzQWCm8BYfAcFmuJNsctNsWNOZNYE2jP6GDEwONAeqif1Ibry86gR62GIitHi4NU64J96VfJeSC4mdE1Nr1ECspwKWmmsxKnK3CPCCw%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=69af43817d3ce88e99c2bcec79a468f7d6a80797144bb3dabc6c77127727e736
+company.primary_group_partner.url: https://www.ycombinator.com/people/nicolas-dessaigne
+company.founders[0].user_id: 2043734
+company.founders[0].is_active: True
+company.founders[0].founder_bio: I am the co-founder & CEO of Kinro, the first autonomous insurance brokerage.
+Previously Research Scientist at Google DeepMind & Meta.
+company.founders[0].full_name: Pierre-Alexandre Kamienny
+company.founders[0].title: Founder/CEO
+company.founders[0].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/8011f44491a795f4215a55159a7c9b09eab0bb1e.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAJNHNFYFD%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184819Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIG47BGHzUC%2BpIVxbL2uhdqI6c3jHfZDbGf3M4U8ryg9xAiEA9khH0GtK4V6I5IfboUa%2BhCYNvvGPQntJ8WqdcfNsYlsq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDIIYsJOzAdJOreiDGyrCA7wueDPlEXq0HWYeke9iU133aggWJdfxTEST0%2FS4VYlSqdHZ66UDYzwnLSyBGxb24%2FJd9vuWTYm5quQu6UNyXaHpr2vDIrjonVs9ITUctHuGKKLZKz%2FfLQ4iCKwPd4hT9GOC%2Fyeg8akLAocqGFVdZ6BkxKZIf4s1z9IP2f4cvttBfYL0QOJOBy3cgXp06Nm%2FJ9M2h745sQ3Xk%2BHDG7KRfW%2FqIdFZMeWbhrFTNtKRq6HeNOFlcFTzCxncIseGhN71aB74HyRcGM34Df4D1XIlkKMqanklMpnrAhOrScS2sRY2jVqZghngnlueB96wKFNrSuvvxoFLPzZ4OqOZiUTd5I4N73UsrTWsBvvzSXlTcqNPaBVG4Gqo1wN%2BSWdSYfjkcIg%2BM0qVTX%2BpPoYgYU7ZaWdJWx3m9K5orOJTLS0aHvrIPKIkb59dAlcPut1wIm6vWHzo3JfEMIZ6srOf1Hw%2FjwYap7NWCDtRadSALhcSwFdzKC3Dx7etwmS5P4r3dct43yyYJgO%2Ft2WxXdsluKO91X0quMxe6ESi%2B1ahvA62wtY7mz5QFJ6a5p2j%2FnTabq3M9ApLG0l0hTOsQJK9puntGM0KRTDhr%2BnWBjqlARKuKpSAQJeUKAaxfcJIyvtRpj%2B%2FzUHlwjDLvi0nR5rajG%2B7N4v9G0lju%2BQUjToN4JJWEpOUaiTlGeHZjlU0VYGfN4EDMSD9c3EeF24NlNwbnVHuw1n6tCAzzQWCm8BYfAcFmuJNsctNsWNOZNYE2jP6GDEwONAeqif1Ibry86gR62GIitHi4NU64J96VfJeSC4mdE1Nr1ECspwKWmmsxKnK3CPCCw%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=a5caa0483412cbf7b76d385a2b7fc5449398752d5e669fdfc173795c2520bab0
+company.founders[0].twitter_url: https://x.com/pierrealexai
+company.founders[0].has_email: True
+company.founders[0].latest_yc_company.name: Kinro
+company.founders[0].latest_yc_company.href: https://www.ycombinator.com/companies/kinro
+company.founders[1].user_id: 3399845
+company.founders[1].is_active: True
+company.founders[1].founder_bio: Co-Founder and CTO of Kinro AI
+company.founders[1].full_name: Parth Ainampudi
+company.founders[1].title: Founder/CTO
+company.founders[1].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/fe864aaf327324d1df33b5061c87e9160c1dea01.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAJNHNFYFD%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184819Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIG47BGHzUC%2BpIVxbL2uhdqI6c3jHfZDbGf3M4U8ryg9xAiEA9khH0GtK4V6I5IfboUa%2BhCYNvvGPQntJ8WqdcfNsYlsq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDIIYsJOzAdJOreiDGyrCA7wueDPlEXq0HWYeke9iU133aggWJdfxTEST0%2FS4VYlSqdHZ66UDYzwnLSyBGxb24%2FJd9vuWTYm5quQu6UNyXaHpr2vDIrjonVs9ITUctHuGKKLZKz%2FfLQ4iCKwPd4hT9GOC%2Fyeg8akLAocqGFVdZ6BkxKZIf4s1z9IP2f4cvttBfYL0QOJOBy3cgXp06Nm%2FJ9M2h745sQ3Xk%2BHDG7KRfW%2FqIdFZMeWbhrFTNtKRq6HeNOFlcFTzCxncIseGhN71aB74HyRcGM34Df4D1XIlkKMqanklMpnrAhOrScS2sRY2jVqZghngnlueB96wKFNrSuvvxoFLPzZ4OqOZiUTd5I4N73UsrTWsBvvzSXlTcqNPaBVG4Gqo1wN%2BSWdSYfjkcIg%2BM0qVTX%2BpPoYgYU7ZaWdJWx3m9K5orOJTLS0aHvrIPKIkb59dAlcPut1wIm6vWHzo3JfEMIZ6srOf1Hw%2FjwYap7NWCDtRadSALhcSwFdzKC3Dx7etwmS5P4r3dct43yyYJgO%2Ft2WxXdsluKO91X0quMxe6ESi%2B1ahvA62wtY7mz5QFJ6a5p2j%2FnTabq3M9ApLG0l0hTOsQJK9puntGM0KRTDhr%2BnWBjqlARKuKpSAQJeUKAaxfcJIyvtRpj%2B%2FzUHlwjDLvi0nR5rajG%2B7N4v9G0lju%2BQUjToN4JJWEpOUaiTlGeHZjlU0VYGfN4EDMSD9c3EeF24NlNwbnVHuw1n6tCAzzQWCm8BYfAcFmuJNsctNsWNOZNYE2jP6GDEwONAeqif1Ibry86gR62GIitHi4NU64J96VfJeSC4mdE1Nr1ECspwKWmmsxKnK3CPCCw%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=4c37eed54c1952bf0f5acfd5099d9bc04eaf30cd6eafc32e23a0ed5dad6b135f
+company.founders[1].twitter_url: 
+company.founders[1].has_email: True
+company.founders[1].latest_yc_company.name: Kinro
+company.founders[1].latest_yc_company.href: https://www.ycombinator.com/companies/kinro
+company.founders[2].user_id: 3226721
+company.founders[2].is_active: True
+company.founders[2].founder_bio: I am the co-founder & COO of Kinro AI. 
+Kinro enables sales of insurance in AI native platforms like ChatGPT.
+company.founders[2].full_name: Corentin Hugot
+company.founders[2].title: Founder/COO
+company.founders[2].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/33cfc43b4150b1e60e86301f8a32c4c9e650a725.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAJNHNFYFD%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184819Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIG47BGHzUC%2BpIVxbL2uhdqI6c3jHfZDbGf3M4U8ryg9xAiEA9khH0GtK4V6I5IfboUa%2BhCYNvvGPQntJ8WqdcfNsYlsq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDIIYsJOzAdJOreiDGyrCA7wueDPlEXq0HWYeke9iU133aggWJdfxTEST0%2FS4VYlSqdHZ66UDYzwnLSyBGxb24%2FJd9vuWTYm5quQu6UNyXaHpr2vDIrjonVs9ITUctHuGKKLZKz%2FfLQ4iCKwPd4hT9GOC%2Fyeg8akLAocqGFVdZ6BkxKZIf4s1z9IP2f4cvttBfYL0QOJOBy3cgXp06Nm%2FJ9M2h745sQ3Xk%2BHDG7KRfW%2FqIdFZMeWbhrFTNtKRq6HeNOFlcFTzCxncIseGhN71aB74HyRcGM34Df4D1XIlkKMqanklMpnrAhOrScS2sRY2jVqZghngnlueB96wKFNrSuvvxoFLPzZ4OqOZiUTd5I4N73UsrTWsBvvzSXlTcqNPaBVG4Gqo1wN%2BSWdSYfjkcIg%2BM0qVTX%2BpPoYgYU7ZaWdJWx3m9K5orOJTLS0aHvrIPKIkb59dAlcPut1wIm6vWHzo3JfEMIZ6srOf1Hw%2FjwYap7NWCDtRadSALhcSwFdzKC3Dx7etwmS5P4r3dct43yyYJgO%2Ft2WxXdsluKO91X0quMxe6ESi%2B1ahvA62wtY7mz5QFJ6a5p2j%2FnTabq3M9ApLG0l0hTOsQJK9puntGM0KRTDhr%2BnWBjqlARKuKpSAQJeUKAaxfcJIyvtRpj%2B%2FzUHlwjDLvi0nR5rajG%2B7N4v9G0lju%2BQUjToN4JJWEpOUaiTlGeHZjlU0VYGfN4EDMSD9c3EeF24NlNwbnVHuw1n6tCAzzQWCm8BYfAcFmuJNsctNsWNOZNYE2jP6GDEwONAeqif1Ibry86gR62GIitHi4NU64J96VfJeSC4mdE1Nr1ECspwKWmmsxKnK3CPCCw%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=a57ad71e45128eac2cb81c9d9df85333cf684bd572cce4b9e8c0ac3aee47313a
+company.founders[2].twitter_url: https://x.com/corentin_hgt
+company.founders[2].has_email: True
+company.founders[2].latest_yc_company.name: Kinro
+company.founders[2].latest_yc_company.href: https://www.ycombinator.com/companies/kinro
+jobPostings[0].id: 107965
+jobPostings[0].title: Content & Brand Intern
+jobPostings[0].url: /companies/kinro/jobs/TZ7vUM1-content-brand-intern
+jobPostings[0].applyUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication%3Fsignup_job_id%3D107965&defaults%5BsignUpActive%5D=true&defaults%5Bwaas_company%5D=31382
+jobPostings[0].location: San Francisco, CA, US
+jobPostings[0].askUs: True
+jobPostings[0].type: Internship
+jobPostings[0].role: marketing
+jobPostings[0].roleSpecificType: None
+jobPostings[0].prettyRole: Marketing
+jobPostings[0].salaryRange: $4K - $10K / monthly
+jobPostings[0].equityRange: 
+jobPostings[0].minExperience: None
+jobPostings[0].minSchoolYear: Any
+jobPostings[0].visa: US citizen/visa only
+jobPostings[0].skills: (none)
+jobPostings[0].isIncomplete: False
+jobPostings[0].companyUrl: /companies/kinro
+jobPostings[0].companyLogoUrl: https://bookface-images.s3.amazonaws.com/small_logos/0a6042942a7506c8f7817f8f92ca6675143b71ba.png
+jobPostings[0].companyName: Kinro
+jobPostings[0].companyBatchName: P26
+jobPostings[0].companyOneLiner: Autonomous insurance brokerage for small businesses
+jobPostings[0].hiringManager: None
+jobPostings[0].createdAt: about 2 months
+jobPostings[0].lastActive: about 1 month
+jobPostings[1].id: 109891
+jobPostings[1].title: Insurance Producer
+jobPostings[1].url: /companies/kinro/jobs/X8IIJLV-insurance-producer
+jobPostings[1].applyUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication%3Fsignup_job_id%3D109891&defaults%5BsignUpActive%5D=true&defaults%5Bwaas_company%5D=31382
+jobPostings[1].location: San Francisco, CA, US / Remote (US)
+jobPostings[1].askUs: True
+jobPostings[1].type: Full-time
+jobPostings[1].role: sales
+jobPostings[1].roleSpecificType: None
+jobPostings[1].prettyRole: Sales
+jobPostings[1].salaryRange: $50 - $80
+jobPostings[1].equityRange: 
+jobPostings[1].minExperience: 1+ years
+jobPostings[1].minSchoolYear: None
+jobPostings[1].visa: US citizen/visa only
+jobPostings[1].skills: (none)
+jobPostings[1].isIncomplete: False
+jobPostings[1].companyUrl: /companies/kinro
+jobPostings[1].companyLogoUrl: https://bookface-images.s3.amazonaws.com/small_logos/0a6042942a7506c8f7817f8f92ca6675143b71ba.png
+jobPostings[1].companyName: Kinro
+jobPostings[1].companyBatchName: P26
+jobPostings[1].companyOneLiner: Autonomous insurance brokerage for small businesses
+jobPostings[1].hiringManager: None
+jobPostings[1].createdAt: about 1 month
+jobPostings[1].lastActive: None
+jobsUrl: https://bookface.ycombinator.com/workatastartup
+newsItems: (none)
+newsUrl: https://bookface.ycombinator.com/company/31382/company_news
+videos: (none)
+launches[0].id: 103281
+launches[0].title: Kinro - The first autonomous insurance brokerage
+launches[0].state: public
+launches[0].tagline: Our AI agents handle the full broker workflow 24/7, from finding prospects to binding policies.
+launches[0].created_at: 2026-06-16T15:35:00.984Z
+launches[0].company.id: 31382
+launches[0].company.name: Kinro
+launches[0].company.logo: https://bookface-images.s3.amazonaws.com/small_logos/0a6042942a7506c8f7817f8f92ca6675143b71ba.png
+launches[0].company.batch: p2026
+launches[0].company.tags[0]: Fintech
+launches[0].company.tags[1]: Insurance
+launches[0].company.tags[2]: Consumer Finance
+launches[0].company.url: https://www.kinro.com/
+launches[0].company.slug: kinro
+launches[0].company.description: Autonomous insurance brokerage for small businesses
+launches[0].user.name: Corentin Hugot
+launches[0].user.avatar: https://bookface-images.s3.amazonaws.com/avatars/33cfc43b4150b1e60e86301f8a32c4c9e650a725.jpg
+launches[0].total_vote_count: 7
+launches[0].slug: Qrp-kinro-the-first-autonomous-insurance-brokerage
+launches[0].launch_embed_url: https://www.ycombinator.com/launches/Qrp-kinro-the-first-autonomous-insurance-brokerage/upvote_embed.svg
+launches[0].twitter_share_url: https://twitter.com/intent/tweet?text=Kinro+just+launched+on+%40ycombinator%27s+Launch+YC%21%0A%0AKinro+-+The+first+autonomous+insurance+brokerage.+Check+them+out%3A&url=https%3A%2F%2Fwww.ycombinator.com%2Flaunches%2FQrp-kinro-the-first-autonomous-insurance-brokerage
+launches[0].sanitized_title: Kinro - The first autonomous insurance brokerage
+launches[0].ycdc_launch_url: https://www.ycombinator.com/launches/Qrp-kinro-the-first-autonomous-insurance-brokerage
+launches[0].url: https://www.ycombinator.com/launches/Qrp-kinro-the-first-autonomous-insurance-brokerage
+launches[0].share_config.url: /media/?type=post&id=103281&key=user_uploads/3226721/30408a2d-dd8a-47e8-a0b7-b6c76f94eee2
+launches[0].share_image: None
+launches[0].approved_at: 2026-06-16T15:34:47Z
+launches[0].approved_by.id: 89898
+launches[0].approved_by.name: Steven Pham
+launches[0].approved_by.hnid: sandslash
+launches[0].requested_publish_at: 2026-06-17T15:00:00Z
+editUrl: https://bookface.ycombinator.com/company/31382/edit
+editUserUrl: https://bookface.ycombinator.com/edit_user_profile
+createProfileUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication&defaults%5BsignUpActive%5D=true
+signedIn: False
+showDirectApply: True
+waasDirectoryUrl: https://www.workatastartup.com/companies
+investorSubdomain: False
+userCanRequestEmails: False

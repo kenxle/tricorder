@@ -1,0 +1,185 @@
+currentUser: None
+publicFounderProfilesEnabled: False
+disabledPublicVisibility: None
+company.id: 31516
+company.slug: expanse
+company.name: Expanse
+company.batch: P26
+company.batch_name: Spring 2026
+company.small_logo_url: https://bookface-images.s3.amazonaws.com/small_logos/af6cfe1f95da6fb2bfc1789fb605ed70b77da3b4.png
+company.one_liner: Unlock wasted GPU capacity.
+company.website: https://expanse.sh
+company.long_description: Expanse unlocks wasted GPU capacity. We recover idle compute through three capabilities: resource prediction (right-sizing job submissions before they reach the scheduler), optimisation suggestions (code and config changes researchers can apply themselves), and failure prediction (catching jobs that will fail before they consume hours of GPU time).
+
+We’re four engineers. We ran HPC and GPU training workloads at the largest quant funds and national supercomputing centres. We faced this problem first hand and the only fix was to over-provision and burn millions. Ismaeel built the first multimodal HPC resource predictor as research at EPCC (Edinburgh’s Parallel Computing Centre), which beat every published baseline. This is the tool we wish we had.
+company.tags[0]: Deep Learning
+company.tags[1]: B2B
+company.tags[2]: Infrastructure
+company.tags[3]: ML
+company.ycdc_status: Active
+company.logo_url: https://bookface-images.s3.us-west-2.amazonaws.com/logos/24be103249f59b059163af2c4327028826eeb1c9.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAJMSLTZ2X%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184818Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIF9wnHMtLp9DzUbl0XTnbrFHxvV9LQa3n%2BDfPLhMEx7iAiBsD%2FjbeaOXlaysBvZ12%2BAKRely7D0fwfibE20exuX3tCrlAwh8EAAaDDAwNjIwMTgxMTA3MiIMpwsJOedcS3qnnX2OKsIDmNKqFCDfKW01WNYeptIPM8XzQmVyxGG9AFM4EW3%2FJ9D1Ds%2FEybdvV5dtVYOlFJKC62VDyDMAT85gUwiTDkYQzEPKoJ1y50dchn0CPQdriOjG2gA4JIIzwFsDUQT9oy%2F1BH9YAWc%2BZzjq7ISHbKEkjZSGEcldFZ8vnIS%2Fxs5OA1KECT%2BdOfZIGhDsGEC%2BtsX0wl9ZsBAQN3tVZJUblBOhm7KeZHhsiK4ad4fayKli8nbhclbOSw7%2FVID%2BtShRrrS5BbbZf5QKR0ve9QF2cAUkvSwZZTDEEIz2Mv2tTxs5IGjRaGl0f9s2A9gfchBXBKqbGe1Wye9nSWyPanpG5b6G6kQkkkLZb9pMwkBfukoMXG8lVvBQCj%2FLpLN2lYqFzsYbhqgnHNHg6MIuPJsiv9sNU9I6NQgQXUekZTFYNWDbNr1dM9ABtAtSi4Js51YrY02jGImQn4D7HLCKoP7ern07Dth6AErRBJwKtSdDm0E7kxW2ErXteHtaaMqn7V4vOQ3%2Fpl2fATwf7SU8sRxDtl6S8j4Nf7uhEVwD7Z66EPKoaTlB90lcf2sdPheK0nclqPQsFIQNQTE2pLN4L9mpgnWD7yzVMOGv6dYGOqYBzZ0uQ%2BBPGZFOoUqBP2uYbKjyTYSO1R%2Fd7gBIf5NNek%2BFK%2BkVfBh4bLEVYIJ28xZjOBOuUdpTIxrNIvOSvBxHMKoRScUFOe1%2FDuJvFTB6jNdbDFiuTOmmYd9sQ5da0NjAozWkHzghylb%2Fm8PhXFLUexH31NrrdDHpMZja5bs8c77QfCc4s4H3RhvN4NU4fjkUs7mNn7hm44%2BGPfTzZ6JFlfnSJYJ84w%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=911071e47c8f74813dc0adbcbd906e2dba0b331a7255822c8335de961e25ae1d
+company.year_founded: 2025
+company.team_size: 4
+company.location: London, United Kingdom
+company.city: London
+company.city_tag: None
+company.country: GB
+company.twitter_url: https://x.com/ExpanseCompute
+company.fb_url: 
+company.cb_url: https://www.crunchbase.com/organization/expanse
+company.github_url: https://github.com/expanse-labs
+company.free_response_question_answers: (none)
+company.dday_video_url: None
+company.app_video_url: None
+company.app_answers: (none)
+company.ycdc_url: https://www.ycombinator.com/companies/expanse
+company.company_photos[0].id: 3917
+company.company_photos[0].url: https://bookface-images.s3.us-west-2.amazonaws.com/attachments/1a2d766656b058e3ae5a7333ccf58b05bb9d8689.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAJMSLTZ2X%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184818Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIF9wnHMtLp9DzUbl0XTnbrFHxvV9LQa3n%2BDfPLhMEx7iAiBsD%2FjbeaOXlaysBvZ12%2BAKRely7D0fwfibE20exuX3tCrlAwh8EAAaDDAwNjIwMTgxMTA3MiIMpwsJOedcS3qnnX2OKsIDmNKqFCDfKW01WNYeptIPM8XzQmVyxGG9AFM4EW3%2FJ9D1Ds%2FEybdvV5dtVYOlFJKC62VDyDMAT85gUwiTDkYQzEPKoJ1y50dchn0CPQdriOjG2gA4JIIzwFsDUQT9oy%2F1BH9YAWc%2BZzjq7ISHbKEkjZSGEcldFZ8vnIS%2Fxs5OA1KECT%2BdOfZIGhDsGEC%2BtsX0wl9ZsBAQN3tVZJUblBOhm7KeZHhsiK4ad4fayKli8nbhclbOSw7%2FVID%2BtShRrrS5BbbZf5QKR0ve9QF2cAUkvSwZZTDEEIz2Mv2tTxs5IGjRaGl0f9s2A9gfchBXBKqbGe1Wye9nSWyPanpG5b6G6kQkkkLZb9pMwkBfukoMXG8lVvBQCj%2FLpLN2lYqFzsYbhqgnHNHg6MIuPJsiv9sNU9I6NQgQXUekZTFYNWDbNr1dM9ABtAtSi4Js51YrY02jGImQn4D7HLCKoP7ern07Dth6AErRBJwKtSdDm0E7kxW2ErXteHtaaMqn7V4vOQ3%2Fpl2fATwf7SU8sRxDtl6S8j4Nf7uhEVwD7Z66EPKoaTlB90lcf2sdPheK0nclqPQsFIQNQTE2pLN4L9mpgnWD7yzVMOGv6dYGOqYBzZ0uQ%2BBPGZFOoUqBP2uYbKjyTYSO1R%2Fd7gBIf5NNek%2BFK%2BkVfBh4bLEVYIJ28xZjOBOuUdpTIxrNIvOSvBxHMKoRScUFOe1%2FDuJvFTB6jNdbDFiuTOmmYd9sQ5da0NjAozWkHzghylb%2Fm8PhXFLUexH31NrrdDHpMZja5bs8c77QfCc4s4H3RhvN4NU4fjkUs7mNn7hm44%2BGPfTzZ6JFlfnSJYJ84w%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=6f37ac305c5866ba393f81cf7ea910d80b98ca1958d87883e01cb62b2e8ebe91
+company.company_photos[0].photo_type: team
+company.primary_group_partner.id: 11216
+company.primary_group_partner.full_name: David Lieb
+company.primary_group_partner.avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/6e415a060218fc99589322800cec5173b48ce926.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAJMSLTZ2X%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184818Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIF9wnHMtLp9DzUbl0XTnbrFHxvV9LQa3n%2BDfPLhMEx7iAiBsD%2FjbeaOXlaysBvZ12%2BAKRely7D0fwfibE20exuX3tCrlAwh8EAAaDDAwNjIwMTgxMTA3MiIMpwsJOedcS3qnnX2OKsIDmNKqFCDfKW01WNYeptIPM8XzQmVyxGG9AFM4EW3%2FJ9D1Ds%2FEybdvV5dtVYOlFJKC62VDyDMAT85gUwiTDkYQzEPKoJ1y50dchn0CPQdriOjG2gA4JIIzwFsDUQT9oy%2F1BH9YAWc%2BZzjq7ISHbKEkjZSGEcldFZ8vnIS%2Fxs5OA1KECT%2BdOfZIGhDsGEC%2BtsX0wl9ZsBAQN3tVZJUblBOhm7KeZHhsiK4ad4fayKli8nbhclbOSw7%2FVID%2BtShRrrS5BbbZf5QKR0ve9QF2cAUkvSwZZTDEEIz2Mv2tTxs5IGjRaGl0f9s2A9gfchBXBKqbGe1Wye9nSWyPanpG5b6G6kQkkkLZb9pMwkBfukoMXG8lVvBQCj%2FLpLN2lYqFzsYbhqgnHNHg6MIuPJsiv9sNU9I6NQgQXUekZTFYNWDbNr1dM9ABtAtSi4Js51YrY02jGImQn4D7HLCKoP7ern07Dth6AErRBJwKtSdDm0E7kxW2ErXteHtaaMqn7V4vOQ3%2Fpl2fATwf7SU8sRxDtl6S8j4Nf7uhEVwD7Z66EPKoaTlB90lcf2sdPheK0nclqPQsFIQNQTE2pLN4L9mpgnWD7yzVMOGv6dYGOqYBzZ0uQ%2BBPGZFOoUqBP2uYbKjyTYSO1R%2Fd7gBIf5NNek%2BFK%2BkVfBh4bLEVYIJ28xZjOBOuUdpTIxrNIvOSvBxHMKoRScUFOe1%2FDuJvFTB6jNdbDFiuTOmmYd9sQ5da0NjAozWkHzghylb%2Fm8PhXFLUexH31NrrdDHpMZja5bs8c77QfCc4s4H3RhvN4NU4fjkUs7mNn7hm44%2BGPfTzZ6JFlfnSJYJ84w%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=b2997e4fa700df34af77a24944117a28dd125d20ff9daf719fd4027ec37ac206
+company.primary_group_partner.url: https://www.ycombinator.com/people/david-lieb
+company.founders[0].user_id: 3381342
+company.founders[0].is_active: True
+company.founders[0].founder_bio: Ismaeel is co-founder and CEO of Expanse. Built the first multimodal HPC resource predictor at EPCC (Edinburgh’s Parallel Computing Centre), beating every published baseline. Previously: ran large scale ML models at one of the world’s largest quantitative funds (QRT). Studied Computer Science at the University of Edinburgh.
+company.founders[0].full_name: Ismaeel Bashir
+company.founders[0].title: Founder/CEO
+company.founders[0].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/3c4fa6230901fda37ce33a006271ece271e5e9e8.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAJMSLTZ2X%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184818Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIF9wnHMtLp9DzUbl0XTnbrFHxvV9LQa3n%2BDfPLhMEx7iAiBsD%2FjbeaOXlaysBvZ12%2BAKRely7D0fwfibE20exuX3tCrlAwh8EAAaDDAwNjIwMTgxMTA3MiIMpwsJOedcS3qnnX2OKsIDmNKqFCDfKW01WNYeptIPM8XzQmVyxGG9AFM4EW3%2FJ9D1Ds%2FEybdvV5dtVYOlFJKC62VDyDMAT85gUwiTDkYQzEPKoJ1y50dchn0CPQdriOjG2gA4JIIzwFsDUQT9oy%2F1BH9YAWc%2BZzjq7ISHbKEkjZSGEcldFZ8vnIS%2Fxs5OA1KECT%2BdOfZIGhDsGEC%2BtsX0wl9ZsBAQN3tVZJUblBOhm7KeZHhsiK4ad4fayKli8nbhclbOSw7%2FVID%2BtShRrrS5BbbZf5QKR0ve9QF2cAUkvSwZZTDEEIz2Mv2tTxs5IGjRaGl0f9s2A9gfchBXBKqbGe1Wye9nSWyPanpG5b6G6kQkkkLZb9pMwkBfukoMXG8lVvBQCj%2FLpLN2lYqFzsYbhqgnHNHg6MIuPJsiv9sNU9I6NQgQXUekZTFYNWDbNr1dM9ABtAtSi4Js51YrY02jGImQn4D7HLCKoP7ern07Dth6AErRBJwKtSdDm0E7kxW2ErXteHtaaMqn7V4vOQ3%2Fpl2fATwf7SU8sRxDtl6S8j4Nf7uhEVwD7Z66EPKoaTlB90lcf2sdPheK0nclqPQsFIQNQTE2pLN4L9mpgnWD7yzVMOGv6dYGOqYBzZ0uQ%2BBPGZFOoUqBP2uYbKjyTYSO1R%2Fd7gBIf5NNek%2BFK%2BkVfBh4bLEVYIJ28xZjOBOuUdpTIxrNIvOSvBxHMKoRScUFOe1%2FDuJvFTB6jNdbDFiuTOmmYd9sQ5da0NjAozWkHzghylb%2Fm8PhXFLUexH31NrrdDHpMZja5bs8c77QfCc4s4H3RhvN4NU4fjkUs7mNn7hm44%2BGPfTzZ6JFlfnSJYJ84w%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=4a395594b4a7d20fa5906b8edf602a12999f4f4c783b40998f071911f75914a3
+company.founders[0].twitter_url: https://x.com/ismaeel_bashir_
+company.founders[0].has_email: True
+company.founders[0].latest_yc_company.name: Expanse
+company.founders[0].latest_yc_company.href: https://www.ycombinator.com/companies/expanse
+company.founders[1].user_id: 3409042
+company.founders[1].is_active: True
+company.founders[1].founder_bio: Nikodem is co-founder and CTO of Expanse. Trained and optimised speech recognition models on GPU clusters. Previously: managed the platforms researchers and engineers depended on at one of the world’s largest hedge funds (Millennium). Studied Computer Science at the University of Edinburgh.
+company.founders[1].full_name: Nikodem Bieniek
+company.founders[1].title: Founder
+company.founders[1].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/c2d55059ebf4b59335ad292b3cc38a1e9d667650.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAJMSLTZ2X%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184818Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIF9wnHMtLp9DzUbl0XTnbrFHxvV9LQa3n%2BDfPLhMEx7iAiBsD%2FjbeaOXlaysBvZ12%2BAKRely7D0fwfibE20exuX3tCrlAwh8EAAaDDAwNjIwMTgxMTA3MiIMpwsJOedcS3qnnX2OKsIDmNKqFCDfKW01WNYeptIPM8XzQmVyxGG9AFM4EW3%2FJ9D1Ds%2FEybdvV5dtVYOlFJKC62VDyDMAT85gUwiTDkYQzEPKoJ1y50dchn0CPQdriOjG2gA4JIIzwFsDUQT9oy%2F1BH9YAWc%2BZzjq7ISHbKEkjZSGEcldFZ8vnIS%2Fxs5OA1KECT%2BdOfZIGhDsGEC%2BtsX0wl9ZsBAQN3tVZJUblBOhm7KeZHhsiK4ad4fayKli8nbhclbOSw7%2FVID%2BtShRrrS5BbbZf5QKR0ve9QF2cAUkvSwZZTDEEIz2Mv2tTxs5IGjRaGl0f9s2A9gfchBXBKqbGe1Wye9nSWyPanpG5b6G6kQkkkLZb9pMwkBfukoMXG8lVvBQCj%2FLpLN2lYqFzsYbhqgnHNHg6MIuPJsiv9sNU9I6NQgQXUekZTFYNWDbNr1dM9ABtAtSi4Js51YrY02jGImQn4D7HLCKoP7ern07Dth6AErRBJwKtSdDm0E7kxW2ErXteHtaaMqn7V4vOQ3%2Fpl2fATwf7SU8sRxDtl6S8j4Nf7uhEVwD7Z66EPKoaTlB90lcf2sdPheK0nclqPQsFIQNQTE2pLN4L9mpgnWD7yzVMOGv6dYGOqYBzZ0uQ%2BBPGZFOoUqBP2uYbKjyTYSO1R%2Fd7gBIf5NNek%2BFK%2BkVfBh4bLEVYIJ28xZjOBOuUdpTIxrNIvOSvBxHMKoRScUFOe1%2FDuJvFTB6jNdbDFiuTOmmYd9sQ5da0NjAozWkHzghylb%2Fm8PhXFLUexH31NrrdDHpMZja5bs8c77QfCc4s4H3RhvN4NU4fjkUs7mNn7hm44%2BGPfTzZ6JFlfnSJYJ84w%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=3d631c4015e4f2291aa8fc007e90f6f13826b696e13b18dd0b720027de58ee75
+company.founders[1].twitter_url: https://x.com/nkdem_b
+company.founders[1].has_email: True
+company.founders[1].latest_yc_company.name: Expanse
+company.founders[1].latest_yc_company.href: https://www.ycombinator.com/companies/expanse
+company.founders[2].user_id: 3409418
+company.founders[2].is_active: True
+company.founders[2].founder_bio: Yafet is co-founder and COO of Expanse. Built the first GNN-based cluster graph network for predicting SLURM queue wait times at EPCC (Edinburgh’s Parallel Computing Centre). Previously: tooling and infrastructure for researchers at one of the world’s largest quantitative funds (G-Research). Studied Computer Science at the University of Edinburgh.
+company.founders[2].full_name: Yafet Melake
+company.founders[2].title: Founder
+company.founders[2].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/db8ab1acbb09fe838ce4d380889c7d1c27bf0975.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAJMSLTZ2X%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184818Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIF9wnHMtLp9DzUbl0XTnbrFHxvV9LQa3n%2BDfPLhMEx7iAiBsD%2FjbeaOXlaysBvZ12%2BAKRely7D0fwfibE20exuX3tCrlAwh8EAAaDDAwNjIwMTgxMTA3MiIMpwsJOedcS3qnnX2OKsIDmNKqFCDfKW01WNYeptIPM8XzQmVyxGG9AFM4EW3%2FJ9D1Ds%2FEybdvV5dtVYOlFJKC62VDyDMAT85gUwiTDkYQzEPKoJ1y50dchn0CPQdriOjG2gA4JIIzwFsDUQT9oy%2F1BH9YAWc%2BZzjq7ISHbKEkjZSGEcldFZ8vnIS%2Fxs5OA1KECT%2BdOfZIGhDsGEC%2BtsX0wl9ZsBAQN3tVZJUblBOhm7KeZHhsiK4ad4fayKli8nbhclbOSw7%2FVID%2BtShRrrS5BbbZf5QKR0ve9QF2cAUkvSwZZTDEEIz2Mv2tTxs5IGjRaGl0f9s2A9gfchBXBKqbGe1Wye9nSWyPanpG5b6G6kQkkkLZb9pMwkBfukoMXG8lVvBQCj%2FLpLN2lYqFzsYbhqgnHNHg6MIuPJsiv9sNU9I6NQgQXUekZTFYNWDbNr1dM9ABtAtSi4Js51YrY02jGImQn4D7HLCKoP7ern07Dth6AErRBJwKtSdDm0E7kxW2ErXteHtaaMqn7V4vOQ3%2Fpl2fATwf7SU8sRxDtl6S8j4Nf7uhEVwD7Z66EPKoaTlB90lcf2sdPheK0nclqPQsFIQNQTE2pLN4L9mpgnWD7yzVMOGv6dYGOqYBzZ0uQ%2BBPGZFOoUqBP2uYbKjyTYSO1R%2Fd7gBIf5NNek%2BFK%2BkVfBh4bLEVYIJ28xZjOBOuUdpTIxrNIvOSvBxHMKoRScUFOe1%2FDuJvFTB6jNdbDFiuTOmmYd9sQ5da0NjAozWkHzghylb%2Fm8PhXFLUexH31NrrdDHpMZja5bs8c77QfCc4s4H3RhvN4NU4fjkUs7mNn7hm44%2BGPfTzZ6JFlfnSJYJ84w%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=96a5c29e19f0a73cb3658fade8c9bdbdd714132a47e2b179dd499050ae1e1b2f
+company.founders[2].twitter_url: https://x.com/yafet_melake
+company.founders[2].has_email: True
+company.founders[2].latest_yc_company.name: Expanse
+company.founders[2].latest_yc_company.href: https://www.ycombinator.com/companies/expanse
+company.founders[3].user_id: 2274795
+company.founders[3].is_active: True
+company.founders[3].founder_bio: Eren is co-founder and CPO of Expanse. Built state-of-the-art decentralised foundation model training systems and performance models. Previously: prototyped emerging technologies in quantitative finance (G-Research). Studied Computer Science at the University of Edinburgh and Imperial College London.
+company.founders[3].full_name: Eren Mendi
+company.founders[3].title: Founder
+company.founders[3].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/af898412d2d555432b879560ffcdfde4fbb3e53a.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAJMSLTZ2X%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184818Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIF9wnHMtLp9DzUbl0XTnbrFHxvV9LQa3n%2BDfPLhMEx7iAiBsD%2FjbeaOXlaysBvZ12%2BAKRely7D0fwfibE20exuX3tCrlAwh8EAAaDDAwNjIwMTgxMTA3MiIMpwsJOedcS3qnnX2OKsIDmNKqFCDfKW01WNYeptIPM8XzQmVyxGG9AFM4EW3%2FJ9D1Ds%2FEybdvV5dtVYOlFJKC62VDyDMAT85gUwiTDkYQzEPKoJ1y50dchn0CPQdriOjG2gA4JIIzwFsDUQT9oy%2F1BH9YAWc%2BZzjq7ISHbKEkjZSGEcldFZ8vnIS%2Fxs5OA1KECT%2BdOfZIGhDsGEC%2BtsX0wl9ZsBAQN3tVZJUblBOhm7KeZHhsiK4ad4fayKli8nbhclbOSw7%2FVID%2BtShRrrS5BbbZf5QKR0ve9QF2cAUkvSwZZTDEEIz2Mv2tTxs5IGjRaGl0f9s2A9gfchBXBKqbGe1Wye9nSWyPanpG5b6G6kQkkkLZb9pMwkBfukoMXG8lVvBQCj%2FLpLN2lYqFzsYbhqgnHNHg6MIuPJsiv9sNU9I6NQgQXUekZTFYNWDbNr1dM9ABtAtSi4Js51YrY02jGImQn4D7HLCKoP7ern07Dth6AErRBJwKtSdDm0E7kxW2ErXteHtaaMqn7V4vOQ3%2Fpl2fATwf7SU8sRxDtl6S8j4Nf7uhEVwD7Z66EPKoaTlB90lcf2sdPheK0nclqPQsFIQNQTE2pLN4L9mpgnWD7yzVMOGv6dYGOqYBzZ0uQ%2BBPGZFOoUqBP2uYbKjyTYSO1R%2Fd7gBIf5NNek%2BFK%2BkVfBh4bLEVYIJ28xZjOBOuUdpTIxrNIvOSvBxHMKoRScUFOe1%2FDuJvFTB6jNdbDFiuTOmmYd9sQ5da0NjAozWkHzghylb%2Fm8PhXFLUexH31NrrdDHpMZja5bs8c77QfCc4s4H3RhvN4NU4fjkUs7mNn7hm44%2BGPfTzZ6JFlfnSJYJ84w%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d45c3afce89b700bde4aeb3a537f13173f8092cb13e444eedb676b2526226060
+company.founders[3].twitter_url: https://x.com/erenzmendi03
+company.founders[3].has_email: True
+company.founders[3].latest_yc_company.name: Expanse
+company.founders[3].latest_yc_company.href: https://www.ycombinator.com/companies/expanse
+jobPostings: (none)
+jobsUrl: https://bookface.ycombinator.com/workatastartup
+newsItems[0].title: Why we started Expanse, and our $5.3M seed · Expanse Blog
+newsItems[0].url: https://expanse.sh/blog/expanse-raises-5-3m-seed
+newsItems[0].date: Sep 16, 2026
+newsItems[1].title: What Y Combinator's Latest Batch Reveals About The Future
+newsItems[1].url: https://www.forbes.com/sites/dariashunina/2026/06/04/what-y-combinators-latest-batch-reveals-about-the-future/
+newsItems[1].date: Jun 08, 2026
+newsUrl: https://bookface.ycombinator.com/company/31516/company_news
+videos: (none)
+launches[0].id: 100703
+launches[0].title: Expanse - Unlock wasted GPU capacity
+launches[0].body: **TL;DR**
+
+Expanse unlocks wasted GPU capacity. We’re the intelligence layer for compute infrastructure. Submit jobs with the right resources. Optimise them to run faster. Debug failures in seconds, not days. Works on cloud and on-prem HPC.
+
+Want to know how much more you can get out of your hardware? Schedule a call: <https://book.getexpanse.io>
+
+**Problem**
+
+Running compute on a cluster means guessing memory, time, and GPUs before you submit. Get it wrong and your job fails mid-run. Over-guess and you pay for compute you never use. 30% of cloud spend is lost to over-allocation \[1\]. Microsoft Research found their own deep learning jobs hit 50% GPU utilisation or lower \[2\].
+
+Sizing jobs takes decades of experience. Memory patterns, batching, GPU threading, CPU vectorisation. AI agents don’t have enough information to fix it either. SLURM and Kubernetes don’t expose enough structured data. Even strong platform teams are forced to choose: spend time debugging and optimising every job, or accept the waste. AI infrastructure spending will hit $2.52 trillion in 2026 \[3\]. The waste grows with every new cluster. This problem isn’t going away.
+
+**Solution**
+
+Expanse learns your cluster. We analyse your code and hardware telemetry, then track them over time. Our deep learning models build a picture of what your workloads actually need. Predictions get sharper with every job.
+
+Our models are deployed on your cluster. All analysis runs on your network. Your code and telemetry never leave your infrastructure. We can’t see your data, and you maintain full data sovereignty.
+
+One command installs Expanse on your cluster. You get two tools.
+
+`expanse analyse` - for every job:
+
+* **Suggests the right resource configuration**
+* **Predicts failures from historical code and telemetry patterns**
+* **Surfaces code-level optimisations that increase efficiency**
+
+`expanse diagnose` - for every failure:
+
+* **Finds the root cause**
+* **Returns solution-oriented logs with the exact code and config changes to fix it**
+
+Days of debugging and optimising become seconds. Platform teams get what they need to do this in minutes instead of weeks.
+
+**Founders**
+
+We're four engineers from the University of Edinburgh, all coming from top quant funds and national supercomputing centres. Ismaeel built the first multimodal HPC resource predictor at EPCC (Edinburgh's Parallel Computing Centre), beating every published baseline. Yafet built the first GNN cluster graph network for predicting SLURM queue wait times. Eren built decentralised foundation model training systems at Edinburgh. Niko trained large-scale speech ML models on GPU clusters and architected cloud and Kubernetes infrastructure at one of the largest hedge funds in the world. We left our jobs to fix this ourselves.
+
+**CTA / Ask**
+
+Running compute and not getting enough out of what you’re paying for? Failing jobs, unclear errors, bills too high? We’d love to chat.
+
+Know anyone in AI infrastructure (managing cloud and/or on-premise data centres), quant finance, drug discovery, or AI research labs? An intro would mean a lot :)
+
+**YC Deal**
+
+All YC companies running serious ML training can contact us for a discounted pilot. We’ll find inefficiencies and wastage on your compute setup. Then we deploy Expanse, no changes to your workflows. You get more out of the hardware you’re paying for.
+
+Reach out: [founders@expanse.sh](mailto:founders@expanse.sh) or <https://book.getexpanse.io>
+
+References
+
+\[1\] <https://grafana.com/blog/2023/03/03/how-to-optimize-resource-utilization-with-kubernetes-monitoring-for-grafana-cloud>
+
+\[2\] <https://www.microsoft.com/en-us/research/publication/an-empirical-study-on-low-gpu-utilization-of-deep-learning-jobs/>
+
+\[3\] <https://www.gartner.com/en/newsroom/press-releases/2026-1-15-gartner-says-worldwide-ai-spending-will-total-2-point-5-trillion-dollars-in-2026>
+launches[0].state: public
+launches[0].tagline: Unlock wasted GPU capacity.
+launches[0].created_at: 2026-05-04T04:30:18.506Z
+launches[0].company.id: 31516
+launches[0].company.name: Expanse
+launches[0].company.logo: https://bookface-images.s3.amazonaws.com/small_logos/af6cfe1f95da6fb2bfc1789fb605ed70b77da3b4.png
+launches[0].company.batch: p2026
+launches[0].company.tags[0]: Deep Learning
+launches[0].company.tags[1]: B2B
+launches[0].company.tags[2]: Infrastructure
+launches[0].company.tags[3]: ML
+launches[0].company.url: https://expanse.sh
+launches[0].company.slug: expanse
+launches[0].company.description: Unlock wasted GPU capacity.
+launches[0].user.name: Ismaeel Bashir
+launches[0].user.avatar: https://bookface-images.s3.amazonaws.com/avatars/3c4fa6230901fda37ce33a006271ece271e5e9e8.jpg
+launches[0].total_vote_count: 53
+launches[0].slug: QCF-expanse-unlock-wasted-gpu-capacity
+launches[0].launch_embed_url: https://www.ycombinator.com/launches/QCF-expanse-unlock-wasted-gpu-capacity/upvote_embed.svg
+launches[0].twitter_share_url: https://twitter.com/intent/tweet?text=Expanse+just+launched+on+%40ycombinator%27s+Launch+YC%21%0A%0AExpanse+-+Unlock+wasted+GPU+capacity.+Check+them+out%3A&url=https%3A%2F%2Fwww.ycombinator.com%2Flaunches%2FQCF-expanse-unlock-wasted-gpu-capacity
+launches[0].sanitized_title: Expanse - Unlock wasted GPU capacity
+launches[0].ycdc_launch_url: https://www.ycombinator.com/launches/QCF-expanse-unlock-wasted-gpu-capacity
+launches[0].url: https://www.ycombinator.com/launches/QCF-expanse-unlock-wasted-gpu-capacity
+launches[0].share_image: None
+launches[0].approved_at: None
+launches[0].approved_by: None
+launches[0].requested_publish_at: 2026-05-04T15:00:00Z
+editUrl: https://bookface.ycombinator.com/company/31516/edit
+editUserUrl: https://bookface.ycombinator.com/edit_user_profile
+createProfileUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication&defaults%5BsignUpActive%5D=true
+signedIn: False
+showDirectApply: True
+waasDirectoryUrl: https://www.workatastartup.com/companies
+investorSubdomain: False
+userCanRequestEmails: False
