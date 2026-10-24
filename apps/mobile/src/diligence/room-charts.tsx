@@ -7,7 +7,34 @@ import { usd } from "./room-data";
 
 const BAR_HEIGHT = 160;
 
-export function RevenueBars({ chart }: { chart: RevenueChart }) {
+const styles = StyleSheet.create({
+  axis: { fontSize: 12, lineHeight: 16 },
+  baseline: { borderLeftWidth: 2, bottom: -4, position: "absolute", top: -4 },
+  col: { alignItems: "center", flex: 1, justifyContent: "flex-end" },
+  deckLine: { borderTopWidth: 2, left: 0, position: "absolute", right: 0 },
+  hlabel: { fontSize: 14 },
+  hrow: { gap: 4 },
+  htrack: { borderBottomWidth: 1, position: "relative" },
+  legend: { flexDirection: "row", flexWrap: "wrap", gap: 12 },
+  legendItem: { alignItems: "center", flexDirection: "row", gap: 6 },
+  plot: {
+    borderBottomWidth: 1,
+    flexDirection: "row",
+    height: BAR_HEIGHT + 40,
+    paddingTop: 8,
+    position: "relative",
+  },
+  wrap: { gap: 10, marginVertical: 8 },
+});
+
+const Legend = ({ color, label }: { color: string; label: string }) => (
+  <View style={styles.legendItem}>
+    <View style={{ backgroundColor: color, height: 10, width: 10 }} />
+    <Note style={styles.axis}>{label}</Note>
+  </View>
+);
+
+export const RevenueBars = ({ chart }: { chart: RevenueChart }) => {
   const colors = useReadoutColors();
   const totals = chart.months.map(
     (_, i) => (chart.recurring[i] ?? 0) + (chart.one_time[i] ?? 0)
@@ -52,9 +79,9 @@ export function RevenueBars({ chart }: { chart: RevenueChart }) {
       </View>
     </View>
   );
-}
+};
 
-export function RunwayBars({ chart }: { chart: CashChart }) {
+export const RunwayBars = ({ chart }: { chart: CashChart }) => {
   const colors = useReadoutColors();
   const months = chart.series.map((s) => s.points.at(-1)?.[0] ?? 0);
   const max = Math.max(chart.baseline, ...months);
@@ -88,33 +115,4 @@ export function RunwayBars({ chart }: { chart: CashChart }) {
       <Legend color={colors.red} label={chart.baseline_label} />
     </View>
   );
-}
-
-function Legend({ color, label }: { color: string; label: string }) {
-  return (
-    <View style={styles.legendItem}>
-      <View style={{ backgroundColor: color, height: 10, width: 10 }} />
-      <Note style={styles.axis}>{label}</Note>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  axis: { fontSize: 12, lineHeight: 16 },
-  baseline: { borderLeftWidth: 2, bottom: -4, position: "absolute", top: -4 },
-  col: { alignItems: "center", flex: 1, justifyContent: "flex-end" },
-  deckLine: { borderTopWidth: 2, left: 0, position: "absolute", right: 0 },
-  hlabel: { fontSize: 14 },
-  hrow: { gap: 4 },
-  htrack: { borderBottomWidth: 1, position: "relative" },
-  legend: { flexDirection: "row", flexWrap: "wrap", gap: 12 },
-  legendItem: { alignItems: "center", flexDirection: "row", gap: 6 },
-  plot: {
-    borderBottomWidth: 1,
-    flexDirection: "row",
-    height: BAR_HEIGHT + 40,
-    paddingTop: 8,
-    position: "relative",
-  },
-  wrap: { gap: 10, marginVertical: 8 },
-});
+};

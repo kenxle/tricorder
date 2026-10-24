@@ -113,7 +113,9 @@
   // Charts redraw in the right colours when the theme changes.
   if (window.matchMedia) window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => X.drawCharts(document));
 
-  X.kimmyLine = (rep) => `<p class="x-kimmy">Read with Kimmy's expert knowledge: <code>${esc(rep.knowledge)}</code></p>`;
+  // The knowledge file is copied beside the page by build_data.py, so the link works offline.
+  X.kimmyLine = (rep) => `<p class="x-kimmy"><span class="tc-label tc-label--steered">Built from Kimmy's expert knowledge</span>
+    <a href="${esc(rep.knowledge)}" target="_blank" rel="noopener"><code>${esc(rep.knowledge)}</code></a></p>`;
 
   // A report on the working page. Evidence is numbered within the report; hover a number for the fact and its source.
   X.reportBlock = (room, rep, state) => {

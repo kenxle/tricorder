@@ -157,9 +157,10 @@
   }
 
   function actions() {
-    return `<div class="actions"><button class="tc-btn primary" type="button" data-room-go="steer">Steer the readout</button>
+    // Finalize builds the memo from what is in the room and the In memo picks; Send to the partners is on the memo.
+    return `<div class="actions"><button class="tc-btn primary" type="button" data-room-go="memo">Finalize the memo</button>
+      <button class="tc-btn tc-btn--secondary" type="button" data-room-go="steer">Steer the readout</button>
       <a class="btn tc-btn tc-btn--secondary" href="#flags">See the flags from the room</a>
-      <button class="tc-btn tc-btn--secondary" type="button" data-room-go="memo">Make the memo</button>
       <a class="btn tc-btn tc-btn--secondary" href="http://localhost:5173/">Open the built readout page</a></div>`;
   }
   document.addEventListener("click", (e) => {
@@ -175,7 +176,10 @@
   function html(state) {
     const b = blocks(state);
     if (!b) return `<div class="empty" role="status"><strong>No synthetic data room for this company yet.</strong> Ploy and Sazabi have one.</div>`;
-    return `<div class="x-roomview" data-room-state="${esc(state)}">${b.banner}${b.standsOut}${b.pieces}${b.reports}${b.research}${b.requests}${b.actions}</div>`;
+    // The expert analyses lead, then the weighted flags (Ken, 3:20 PM).
+    const analyses = b.reports ? `<div class="x-analyses" aria-label="Analyses from expert knowledge">${b.reports}</div>` : "";
+    return `<div class="x-roomview" data-room-state="${esc(state)}">${b.banner}<div class="actions x-top-actions"><button class="tc-btn primary" type="button" data-room-go="memo" id="finalize-top">Finalize the memo</button>
+      <span class="note">Builds the memo from what is in the room and what you marked In memo.</span></div>${analyses}${b.standsOut}${b.pieces}${b.research}${b.requests}${b.actions}</div>`;
   }
 
   // The whole working page, redrawn with the room's data in. state: "partial" or "full" (the default).

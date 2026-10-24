@@ -5,12 +5,26 @@
 import { useState, useSyncExternalStore } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 
-import { Action, Body, Card, Heading, Note, Row, useReadoutColors } from "../readout/ui";
+import {
+  Action,
+  Body,
+  Card,
+  Heading,
+  Note,
+  Row,
+  useReadoutColors,
+} from "../readout/ui";
 import { MemoToggle } from "./diligence-bits";
 import { Mark, RoomChip, WeightedFlags } from "./flags";
 import { getPick, listPicks, subscribePicks } from "./memo-picks";
 import type { Room } from "./room-data";
-import { ROOM_COMPANY, ROOM_SLUG, VERDICT_LABEL, flagsForState, sazabiRoom } from "./room-data";
+import {
+  ROOM_COMPANY,
+  ROOM_SLUG,
+  VERDICT_LABEL,
+  flagsForState,
+  sazabiRoom,
+} from "./room-data";
 import { ReportSection } from "./room-view";
 import { SteerBar } from "./steering";
 
@@ -20,7 +34,13 @@ const styles = StyleSheet.create({
   drill: { borderRadius: 8, borderWidth: 1, gap: 6, padding: 12 },
   focus: { textDecorationLine: "underline" },
   mono: { fontFamily: "PlexMono", fontSize: 12 },
-  page: { alignSelf: "center", gap: 12, maxWidth: 880, padding: 16, width: "100%" },
+  page: {
+    alignSelf: "center",
+    gap: 12,
+    maxWidth: 880,
+    padding: 16,
+    width: "100%",
+  },
   title: { fontFamily: "ArchivoBold", fontSize: 20, lineHeight: 26 },
 });
 
@@ -28,7 +48,11 @@ const claimKey = (id: string) => `roomclaim:${id}`;
 
 // Flags use the store's default (in). A room claim is in unless the person took it out.
 const useInMemo = (company: string) => {
-  useSyncExternalStore(subscribePicks, () => JSON.stringify(listPicks(company)), () => "");
+  useSyncExternalStore(
+    subscribePicks,
+    () => JSON.stringify(listPicks(company)),
+    () => ""
+  );
   const set = new Map(listPicks(company).map((p) => [p.key, p.in]));
   return {
     claim: (id: string) => set.get(claimKey(id)) ?? true,
@@ -43,7 +67,15 @@ const verdictTone = (v: string) => {
   return v === "looking_weak" ? "weak" : "gap";
 };
 
-const ClaimDrill = ({ room, id, company }: { room: Room; id: string; company?: string }) => {
+const ClaimDrill = ({
+  room,
+  id,
+  company,
+}: {
+  room: Room;
+  id: string;
+  company?: string;
+}) => {
   const colors = useReadoutColors();
   const c = room.claims[id];
   if (!c) {
@@ -53,8 +85,15 @@ const ClaimDrill = ({ room, id, company }: { room: Room; id: string; company?: s
     <View style={[styles.drill, { borderColor: colors.line }]}>
       <Row>
         <Note style={styles.mono}>{id}</Note>
-        {c.mark ? <Mark label={c.mark} tone={c.mark === "contradicted" ? "weak" : "strong"} /> : null}
-        {company ? <MemoToggle company={company} pickKey={claimKey(id)} /> : null}
+        {c.mark ? (
+          <Mark
+            label={c.mark}
+            tone={c.mark === "contradicted" ? "weak" : "strong"}
+          />
+        ) : null}
+        {company ? (
+          <MemoToggle company={company} pickKey={claimKey(id)} />
+        ) : null}
       </Row>
       <Body>{c.text}</Body>
       <Row>
@@ -94,7 +133,9 @@ export const MemoDocument = ({
   const [open, setOpen] = useState<Record<string, boolean>>({});
   const inMemo = useInMemo(company);
   const toggle = (id: string) => setOpen((o) => ({ ...o, [id]: !o[id] }));
-  const flags = flagsForState(room, "full").filter((f) => inMemo.flag(f.claim_id));
+  const flags = flagsForState(room, "full").filter((f) =>
+    inMemo.flag(f.claim_id)
+  );
   const toggleCompany = editable ? company : undefined;
   return (
     <View style={styles.doc}>
@@ -114,12 +155,35 @@ export const MemoDocument = ({
         return (
           <Card key={p.name}>
             <Row>
-              <Body style={[styles.title, focus === p.name ? styles.focus : null]}>{p.label}</Body>
-              <Mark label={VERDICT_LABEL[p.verdict] ?? p.verdict} tone={verdictTone(p.verdict)} />
+              <Body
+                style={[styles.title, focus === p.name ? styles.focus : null]}
+              >
+                {p.label}
+              </Body>
+              <Mark
+                label={VERDICT_LABEL[p.verdict] ?? p.verdict}
+                tone={verdictTone(p.verdict)}
+              />
             </Row>
             <Body>{p.reason}</Body>
-            <Action onPress={() => toggle(key)} title={open[key] ? "Hide the evidence" : `Show the evidence (${ids.length})`} />
-            {open[key] ? ids.map((id) => <ClaimDrill company={toggleCompany} id={id} key={id} room={room} />) : null}
+            <Action
+              onPress={() => toggle(key)}
+              title={
+                open[key]
+                  ? "Hide the evidence"
+                  : `Show the evidence (${ids.length})`
+              }
+            />
+            {open[key]
+              ? ids.map((id) => (
+                  <ClaimDrill
+                    company={toggleCompany}
+                    id={id}
+                    key={id}
+                    room={room}
+                  />
+                ))
+              : null}
             {steerable ? <SteerBar label={p.label} /> : null}
           </Card>
         );
@@ -130,7 +194,10 @@ export const MemoDocument = ({
           <ReportSection drill={toggle} report={r} />
           {r.paras
             .flatMap((p) => p.refs)
-            .filter((ref, i, all) => all.indexOf(ref) === i && open[ref] && inMemo.claim(ref))
+            .filter(
+              (ref, i, all) =>
+                all.indexOf(ref) === i && open[ref] && inMemo.claim(ref)
+            )
             .map((ref) => (
               <ClaimDrill id={ref} key={ref} room={room} />
             ))}
@@ -152,7 +219,9 @@ export const MemoScreen = ({
   embedded?: boolean;
 }) => {
   const colors = useReadoutColors();
-  const send = onSend ? <Action onPress={onSend} primary title="Send to the partners" /> : null;
+  const send = onSend ? (
+    <Action onPress={onSend} primary title="Send to the partners" />
+  ) : null;
   const body = (
     <>
       <Row>{send}</Row>
@@ -164,7 +233,10 @@ export const MemoScreen = ({
     return <View style={styles.doc}>{body}</View>;
   }
   return (
-    <ScrollView contentContainerStyle={styles.page} style={{ backgroundColor: colors.bg }}>
+    <ScrollView
+      contentContainerStyle={styles.page}
+      style={{ backgroundColor: colors.bg }}
+    >
       {body}
     </ScrollView>
   );

@@ -120,34 +120,32 @@ export const sazabiRoom = roomJson as unknown as Room;
 export const ROOM_COMPANY = "Sazabi";
 export const ROOM_SLUG = "sazabi";
 
-export function allFlags(room: Room): RoomFlag[] {
-  return [
-    ...room.top_flags.green,
-    ...room.top_flags.red,
-    ...(room.extra_flags ?? []),
-  ];
-}
+export const allFlags = (room: Room): RoomFlag[] => [
+  ...room.top_flags.green,
+  ...room.top_flags.red,
+  ...(room.extra_flags ?? []),
+];
 
 // Ken, 1:22 PM: two sources that agree make a small green flag; two that disagree make a big red flag.
 export type FlagWeight = "headline" | "big" | "small";
-export function flagWeight(f: RoomFlag): FlagWeight {
+export const flagWeight = (f: RoomFlag): FlagWeight => {
   if (f.kind === "red" || f.basis === "disagreement") {
     return "big";
   }
   return f.basis === "agreement" ? "small" : "headline";
-}
+};
 
 // Real strengths first, then big red flags worst first, then small green flags.
-export function orderFlags(flags: RoomFlag[]): RoomFlag[] {
+export const orderFlags = (flags: RoomFlag[]): RoomFlag[] => {
   const headline = flags.filter((f) => flagWeight(f) === "headline");
   const big = flags
     .filter((f) => flagWeight(f) === "big")
-    .sort((a, b) => (b.relative_gap ?? 0) - (a.relative_gap ?? 0));
+    .toSorted((a, b) => (b.relative_gap ?? 0) - (a.relative_gap ?? 0));
   const small = flags.filter((f) => flagWeight(f) === "small");
   return [...headline, ...big, ...small];
-}
+};
 
-export function flagsForState(room: Room, state: RoomStateName): RoomFlag[] {
+export const flagsForState = (room: Room, state: RoomStateName): RoomFlag[] => {
   const s = room.states[state];
   const all = allFlags(room);
   const ids = [...s.flags.green, ...s.flags.red];
@@ -155,32 +153,28 @@ export function flagsForState(room: Room, state: RoomStateName): RoomFlag[] {
     .map((id) => all.find((f) => f.claim_id === id))
     .filter((f): f is RoomFlag => f !== undefined);
   return orderFlags(picked);
-}
+};
 
-export function pieceLabel(room: Room, name: string): string {
-  return room.pieces.find((p) => p.name === name)?.label ?? name;
-}
+export const pieceLabel = (room: Room, name: string): string =>
+  room.pieces.find((p) => p.name === name)?.label ?? name;
 
 // "<piece>: <text>" titles show the text as a subtitle (Ken, 1:25 PM).
-export function subtitle(t: string): string {
+export const subtitle = (t: string): string => {
   const i = t.indexOf(": ");
   const rest = i === -1 ? t : t.slice(i + 2);
   return rest.charAt(0).toUpperCase() + rest.slice(1);
-}
+};
 
-export function shortFile(f: string): string {
-  return f.split("/").pop() ?? f;
-}
+export const shortFile = (f: string): string => f.split("/").pop() ?? f;
 
-export function sourceLabel(s: RoomSource): string {
+export const sourceLabel = (s: RoomSource): string => {
   const file = shortFile(s.uri.split(", ")[0] ?? s.uri);
   return s.locator ? `${file}, ${s.locator}` : file;
-}
+};
 
 // Exact dollars, no rounding (Ken: $5.25M, not $5.3M).
-export function usd(n: number): string {
-  return `$${Math.round(n).toLocaleString("en-US")}`;
-}
+export const usd = (n: number): string =>
+  `$${Math.round(n).toLocaleString("en-US")}`;
 
 export const VERDICT_LABEL: Record<string, string> = {
   looking_strong: "Looking strong",
