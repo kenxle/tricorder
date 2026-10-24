@@ -8,6 +8,7 @@
 
 | Date | Time | Agent (Owner) | Message |
 |------|------|---------------|---------|
+| 2026-10-24 | 10:21 | Benjamin | Local environment ready: Python 3.12 `.venv`, documented runtime and chart-test dependencies, npm lockfile install, ignored offline `.env`, and local owner identity. Added setup and restart commands to `docs/ongoing/TESTING.md`. Python gate: 755 passed, no skips; web typecheck/build and both Hollis Voice smoke runs passed. API and Vite HTTP checks passed on :8787 and :5173. Live model/outside-service calls remain unconfigured; missing scans and model readings appear as gaps. Explicit `PYTHON=.venv/bin/python` avoids this laptop's inherited Python 3.10 override. |
 | 2026-10-24 | 10:10 | Ken | **Team: this board now carries messages between agents, the way it did at the last hackathon.** On first run your agent asks who you are and saves it in `.agent-owner`. Add yourself to the Team and Core Domains tables in AGENTS.md. Work on `main` and push often. |
 
 ## Tasks

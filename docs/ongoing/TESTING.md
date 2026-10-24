@@ -15,13 +15,40 @@
 ## Setup
 
 ```sh
+python3.12 -m venv .venv            # Python 3.12 matches CI
+source .venv/bin/activate
 pip install -r requirements.txt     # Python 3.11 or newer
 pip install -r data_room/requirements.txt
 pip install pypdf                  # chart fixture PDF assembly
-cd readout && npm ci                # Node 20 or newer, for the page
+(cd readout && npm ci)             # Node 22 matches CI
 ```
 
 The chart fixture tests need the data-room drawing packages and `pypdf`. Without them, pytest skips those fixtures. Install them for a complete local run without skips.
+
+## Local development without API keys
+
+Run these commands from the repo root after installing dependencies:
+
+```sh
+test -f .env || cp .env.example .env
+```
+
+Set `TRICORDER_OFFLINE=1`, `TRICORDER_OUT_DIR=out` and `TRICORDER_CONTRACT_READER=script` in `.env`. Leave API keys empty for the synthetic-room demo. Set `TRICORDER_OPERATOR_NAME` and `TRICORDER_OPERATOR` to your name.
+
+The launch scripts do not load `.env`. Export it before running them:
+
+```sh
+source .venv/bin/activate
+set -a
+source .env
+set +a
+PYTHON=.venv/bin/python bin/smoke data_room/hollis_voice
+PYTHON=.venv/bin/python bin/serve --dev
+```
+
+Open <http://localhost:5173> for the page. The API and built page are at <http://127.0.0.1:8787>. The explicit `PYTHON` selects this project's environment even if your shell already sets `PYTHON` to another interpreter. Use the same prefix for `bin/ci-py`.
+
+Keep `TRICORDER_OUT_DIR=out` when exporting `.env`: an empty value selects the working directory instead of the default `out/` folder. Without API keys, model readings become gaps. Scans that have not been implemented also appear as gaps.
 
 ## The gates
 
