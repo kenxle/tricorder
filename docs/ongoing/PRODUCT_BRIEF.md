@@ -28,7 +28,7 @@ Point it at a startup, get a readout. Tricorder reads everything about a startup
 
 The deliverable memo is shared with others within the firm, but rather than a fixed document, this is still interactive, allowing drilldowns, and even allowing partners to alter growth models and see how they could change, themselves.
 
-By identifying gaps, highlighting strengths, rigorously showing its work, and adjusting on the fly, the Tricorder is the best tool for the partner deploying capital.
+Tricorder flags the gaps, points out the strengths, links every claim to its source, and changes when the associate steers it. The partner can decide on the memo knowing where each claim came from and what is still missing.
 
 ## Who it is for
 
