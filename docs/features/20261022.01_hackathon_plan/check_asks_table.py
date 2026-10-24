@@ -72,10 +72,10 @@ def main():
     rows = table_rows(lines)
     problems = []
     for i, cells in enumerate(rows, start=1):
-        if len(cells) != 4:
-            problems.append(f"row {i}: expected 4 cells, found {len(cells)}")
+        if len(cells) != 3:
+            problems.append(f"row {i}: expected 3 cells, found {len(cells)}")
             continue
-        ask, _when_said, slice_cell, when_built = cells
+        ask, slice_cell, when_built = cells
         anchors = LINK.findall(slice_cell)
         if not anchors:
             problems.append(f"row {i} ({ask}): no slice link")

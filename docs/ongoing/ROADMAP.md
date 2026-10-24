@@ -24,65 +24,65 @@ A slice is done when its pull request is merged to `main`. On Saturday the capta
 
 ## Ken's asks and where they are built
 
-Every feature or behaviour Ken asked for on 2026-10-22, and the slice that builds it. "When Ken said it" is the time the [writers' brief](../features/20261022.01_hackathon_plan/00_brief_for_writers.md) gives his words, or the document the ask came from. "When it is built" names the horizon of each linked slice, in link order. A script checks that every link points at a slice in this file and that the horizons match: [check_asks_table.py](../features/20261022.01_hackathon_plan/check_asks_table.py).
+Every feature or behaviour Ken asked for on 2026-10-22, and the slice that builds it. "When it is built" names the horizon of each linked slice, in link order. A script checks that every link points at a slice in this file and that the horizons match: [check_asks_table.py](../features/20261022.01_hackathon_plan/check_asks_table.py).
 
 Five of the day's blocks are rules with nothing to build: the 1:21 PM block (no research labels in documents), the 1:24 PM block (say, do, pay is not user against buyer), the 1:12 PM rename to "the operator", the 2:35 PM block (the two primary personas are the associate who prepares the memo and the partner who reads it, at seed and Series A funds), and the 3:32 PM note (everything is built by the end of Saturday, and building starts now). The first three bind the documents. The fourth decides who every slice serves first. The last one sets this roadmap's two horizons.
 
-| Ken's ask | When Ken said it | Slice that builds it | When it is built |
-|---|---|---|---|
-| Red flags in the financials and metrics | 10:15 AM (Track 2 pasted) | [redflag-engine](#redflag-engine) | Saturday |
-| A memo where every claim links to its source | 10:15 AM (Track 2 pasted) | [claim-result](#claim-result), [readout](#readout) | Saturday |
-| Market signals for the company and its competitors | 10:15 AM (Track 2 pasted) | [outside-in](#outside-in), [market-signals](#market-signals) | Now to Friday night, then Saturday |
-| Competitive analysis | about 10:10 AM | [market-signals](#market-signals), [comps](#comps) | Saturday |
-| Comps, each with why it is a fair comp | about 10:10 AM | [comps-deep](#comps-deep), [comps](#comps) | Now to Friday night, then Saturday |
-| EDGAR full-text search for comps | 10:17 AM | [comps-deep](#comps-deep) | Now to Friday night |
-| Financial modeling | about 10:10 AM | [financial-model](#financial-model), [redflag-engine](#redflag-engine) | Now to Friday night, then Saturday |
-| A pitch video broken into claims with timestamps | about 10:10 AM | [pitch-video](#pitch-video) | Saturday |
-| The video leads you to its interesting parts | about 10:10 AM | [video-moments](#video-moments) | Now to Friday night |
-| Business frameworks: lean canvas, jobs to be done and the rest | about 10:10 AM | [frameworks-scan](#frameworks-scan) | Now to Friday night |
-| Founder profiles: socials, GitHub, passion, from the industry or not | about 10:10 AM | [founder-profiles](#founder-profiles) | Now to Friday night |
-| The company's presence online, including Reddit and Facebook | about 10:10 AM | [online-presence](#online-presence) | Now to Friday night |
-| A Reddit mini-browser that saves each page Ken opens | about 10:10 AM | [online-presence](#online-presence) | Now to Friday night |
-| The one-page founder brief | 10:18 AM | [founder-brief](#founder-brief) | Now to Friday night |
-| A simulated data room | 10:26 AM | [data-room](#data-room) | Now to Friday night |
-| Pull pitch decks out of the inbox | 11:20 AM | [inbox-forward](#inbox-forward), [inbox-apis](#inbox-apis) | Now to Friday night |
-| Diligence starts on the inbound, before anyone asks | 11:20 AM | [inbound-unasked](#inbound-unasked) | Now to Friday night |
-| The investor can see and delete everything pulled | 11:20 AM | [readout-store](#readout-store) | Now to Friday night |
-| An overview of which pieces look strong and which look weak | 12:55 PM | [readout](#readout), [readout-page](#readout-page) | Saturday |
-| Easy drill-downs to verify and corroborate every number | 12:55 PM | [readout](#readout), [readout-page](#readout-page) | Saturday |
-| The readout opens on the best green flags and the worst red flags | 1:09 PM | [readout](#readout), [readout-page](#readout-page) | Saturday |
-| The pitch line: "Point it at a startup, get a readout. Tricorder takes any data: decks, videos, spreadsheets, data rooms. It reveals insight you can trust, every claim sourced." | 10:34 AM (team-workshop session, board row TRI-new-pitch) | [demo-script](#demo-script) | Now to Friday night |
-| Real green flags in the demo room | 1:09 PM (overview page card) | [data-room](#data-room) | Now to Friday night |
-| Steer the readout by rewriting a piece | 1:12 PM | [steering](#steering) | Now to Friday night |
-| Steer the readout by getting more info for a piece | 1:12 PM and 1:15 PM | [steering](#steering) | Now to Friday night |
-| Angels want diligence and buy it by proxy | 1:27 PM | [product](#product) | Now to Friday night |
-| Accounting mislabels, not only ARR that is not recurring | 1:32 PM | [accounting-mislabels](#accounting-mislabels), [redflag-engine](#redflag-engine) | Now to Friday night, then Saturday |
-| Find differences in reporting; never claim to catch fraud | 1:33 PM | [demo-script](#demo-script), [bank-check](#bank-check) | Now to Friday night |
-| Online research only, no interviews | 1:34 PM | [research-gaps](#research-gaps) | Now to Friday night |
-| The same core job as the competitor, plus our extras | 1:36 PM | [product](#product) | Now to Friday night |
-| First screens that suit the company's stage | 1:38 PM | [stage-views](#stage-views) | Now to Friday night |
-| The operator can reorder the pieces | 1:38 PM (product brief, "The operator sets the order") | [stage-views](#stage-views), [readout-page](#readout-page) | Now to Friday night, then Saturday |
-| The associate's ten tabs, opened automatically | 1:47 PM (comment on the voice-of-the-customer research) | [outside-in](#outside-in) | Now to Friday night |
-| Reference checks, low priority | 1:50 PM (comment on the voice-of-the-customer research) | [reference-checks](#reference-checks) | Now to Friday night |
-| A bank check through a banking connector | 1:52 PM | [bank-check](#bank-check) | Now to Friday night |
-| Contracts as an input, checked for gaps such as cancellation periods | 1:53 PM, and 3:17 PM ("include contract terms for sat") | [contract-terms-saturday](#contract-terms-saturday) | Saturday |
-| A list of things to ask the founder for | 1:54 PM | [readout](#readout), [readout-page](#readout-page) | Saturday |
-| A diligence checklist | 1:56 PM | [checklist](#checklist) | Now to Friday night |
-| Coverage against the checklist, and an ask list from missing items at the company's stage | 1:56 PM | [checklist-coverage](#checklist-coverage) | Now to Friday night |
-| Help write the partners' memo: an interactive memo with drill-downs, plus a static PDF with footnotes, in a template built from real published memos | 1:58 PM and 2:00 PM | [memo-export](#memo-export) | Now to Friday night |
-| Each reader gets their own steerable copy of the memo, and can try what-if changes on the model, marked as scenarios | 2:01 PM | [reader-scenarios](#reader-scenarios) | Now to Friday night |
-| A blind room and a clean room against "rigged" | overview page card, "The blind room" | [blind-room](#blind-room), [demo-freeze](#demo-freeze) | Now to Friday night, then Saturday |
-| Multiplayer: several people build one readout and split the work (uncertain) | 2:05 PM | [multiplayer](#multiplayer) | Now to Friday night |
-| Deck revenue against the P&L, and decks that show only part of the history | 2:19 PM | [deck-vs-books](#deck-vs-books) | Now to Friday night |
-| Speed: start every scan as early as its input exists, readout fills in as results land | 2:19 PM | [inbound-unasked](#inbound-unasked) | Now to Friday night |
-| Steering easy enough for a partner who runs diligence: one plain sentence on the line that looks wrong, no setup, the answer on that line | 2:21 PM (Ken's edit to the product brief, "Steering the readout") | [steering](#steering) | Now to Friday night |
-| The claims workflow: extract claims from the deck and video, check whether the other documents support them | 2:41 PM | [claim-support](#claim-support) | Now to Friday night |
-| Templated data rooms with hidden issues, names swapped on the fly, one per problem story | 2:46 PM | [room-templates](#room-templates) | Now to Friday night |
-| A reference guide for every document a seed or Series A room can hold: green flags, red flags and pitfalls, and how Tricorder checks it | 2:38 PM | [checklist](#checklist), [checklist-coverage](#checklist-coverage) | Now to Friday night |
-| Synthetic rooms for 2 or 3 real YC spring companies so the internet scan runs live | 2:44 PM | [yc-rooms](#yc-rooms), [room-templates](#room-templates) | Now to Friday night |
-| Live demos on real YC companies from a list Ken approves, each paired with a fake data room | 2:49 PM | [yc-rooms](#yc-rooms), [demo-script](#demo-script), [market-signals](#market-signals), [demo-freeze](#demo-freeze) | Now to Friday night, then Saturday |
-| The sponsor tools (Akta, Crunchbase, Nicrron) in the product, built ahead with keys plugged in on the day | 2:56 PM | [sponsor-adapters](#sponsor-adapters) | Now to Friday night |
-| Quick messages to the company asking for information, with guidance on what to submit | 3:15 PM | [founder-requests](#founder-requests) | Now to Friday night |
+| Ken's ask | Slice that builds it | When it is built |
+|---|---|---|
+| Red flags in the financials and metrics | [redflag-engine](#redflag-engine) | Saturday |
+| A memo where every claim links to its source | [claim-result](#claim-result), [readout](#readout) | Saturday |
+| Market signals for the company and its competitors | [outside-in](#outside-in), [market-signals](#market-signals) | Now to Friday night, then Saturday |
+| Competitive analysis | [market-signals](#market-signals), [comps](#comps) | Saturday |
+| Comps, each with why it is a fair comp | [comps-deep](#comps-deep), [comps](#comps) | Now to Friday night, then Saturday |
+| EDGAR full-text search for comps | [comps-deep](#comps-deep) | Now to Friday night |
+| Financial modeling | [financial-model](#financial-model), [redflag-engine](#redflag-engine) | Now to Friday night, then Saturday |
+| A pitch video broken into claims with timestamps | [pitch-video](#pitch-video) | Saturday |
+| The video leads you to its interesting parts | [video-moments](#video-moments) | Now to Friday night |
+| Business frameworks: lean canvas, jobs to be done and the rest | [frameworks-scan](#frameworks-scan) | Now to Friday night |
+| Founder profiles: socials, GitHub, passion, from the industry or not | [founder-profiles](#founder-profiles) | Now to Friday night |
+| The company's presence online, including Reddit and Facebook | [online-presence](#online-presence) | Now to Friday night |
+| A Reddit mini-browser that saves each page Ken opens | [online-presence](#online-presence) | Now to Friday night |
+| The one-page founder brief | [founder-brief](#founder-brief) | Now to Friday night |
+| A simulated data room | [data-room](#data-room) | Now to Friday night |
+| Pull pitch decks out of the inbox | [inbox-forward](#inbox-forward), [inbox-apis](#inbox-apis) | Now to Friday night |
+| Diligence starts on the inbound, before anyone asks | [inbound-unasked](#inbound-unasked) | Now to Friday night |
+| The investor can see and delete everything pulled | [readout-store](#readout-store) | Now to Friday night |
+| An overview of which pieces look strong and which look weak | [readout](#readout), [readout-page](#readout-page) | Saturday |
+| Easy drill-downs to verify and corroborate every number | [readout](#readout), [readout-page](#readout-page) | Saturday |
+| The readout opens on the best green flags and the worst red flags | [readout](#readout), [readout-page](#readout-page) | Saturday |
+| The pitch line: "Point it at a startup, get a readout. Tricorder takes any data: decks, videos, spreadsheets, data rooms. It reveals insight you can trust, every claim sourced." | [demo-script](#demo-script) | Now to Friday night |
+| Real green flags in the demo room | [data-room](#data-room) | Now to Friday night |
+| Steer the readout by rewriting a piece | [steering](#steering) | Now to Friday night |
+| Steer the readout by getting more info for a piece | [steering](#steering) | Now to Friday night |
+| Angels want diligence and buy it by proxy | [product](#product) | Now to Friday night |
+| Accounting mislabels, not only ARR that is not recurring | [accounting-mislabels](#accounting-mislabels), [redflag-engine](#redflag-engine) | Now to Friday night, then Saturday |
+| Find differences in reporting; never claim to catch fraud | [demo-script](#demo-script), [bank-check](#bank-check) | Now to Friday night |
+| Online research only, no interviews | [research-gaps](#research-gaps) | Now to Friday night |
+| The same core job as the competitor, plus our extras | [product](#product) | Now to Friday night |
+| First screens that suit the company's stage | [stage-views](#stage-views) | Now to Friday night |
+| The operator can reorder the pieces | [stage-views](#stage-views), [readout-page](#readout-page) | Now to Friday night, then Saturday |
+| The associate's ten tabs, opened automatically | [outside-in](#outside-in) | Now to Friday night |
+| Reference checks, low priority | [reference-checks](#reference-checks) | Now to Friday night |
+| A bank check through a banking connector | [bank-check](#bank-check) | Now to Friday night |
+| Contracts as an input, checked for gaps such as cancellation periods | [contract-terms-saturday](#contract-terms-saturday) | Saturday |
+| A list of things to ask the founder for | [readout](#readout), [readout-page](#readout-page) | Saturday |
+| A diligence checklist | [checklist](#checklist) | Now to Friday night |
+| Coverage against the checklist, and an ask list from missing items at the company's stage | [checklist-coverage](#checklist-coverage) | Now to Friday night |
+| Help write the partners' memo: an interactive memo with drill-downs, plus a static PDF with footnotes, in a template built from real published memos | [memo-export](#memo-export) | Now to Friday night |
+| Each reader gets their own steerable copy of the memo, and can try what-if changes on the model, marked as scenarios | [reader-scenarios](#reader-scenarios) | Now to Friday night |
+| A blind room and a clean room against "rigged" | [blind-room](#blind-room), [demo-freeze](#demo-freeze) | Now to Friday night, then Saturday |
+| Multiplayer: several people build one readout and split the work (uncertain) | [multiplayer](#multiplayer) | Now to Friday night |
+| Deck revenue against the P&L, and decks that show only part of the history | [deck-vs-books](#deck-vs-books) | Now to Friday night |
+| Speed: start every scan as early as its input exists, readout fills in as results land | [inbound-unasked](#inbound-unasked) | Now to Friday night |
+| Steering easy enough for a partner who runs diligence: one plain sentence on the line that looks wrong, no setup, the answer on that line | [steering](#steering) | Now to Friday night |
+| The claims workflow: extract claims from the deck and video, check whether the other documents support them | [claim-support](#claim-support) | Now to Friday night |
+| Templated data rooms with hidden issues, names swapped on the fly, one per problem story | [room-templates](#room-templates) | Now to Friday night |
+| A reference guide for every document a seed or Series A room can hold: green flags, red flags and pitfalls, and how Tricorder checks it | [checklist](#checklist), [checklist-coverage](#checklist-coverage) | Now to Friday night |
+| Synthetic rooms for 2 or 3 real YC spring companies so the internet scan runs live | [yc-rooms](#yc-rooms), [room-templates](#room-templates) | Now to Friday night |
+| Live demos on real YC companies from a list Ken approves, each paired with a fake data room | [yc-rooms](#yc-rooms), [demo-script](#demo-script), [market-signals](#market-signals), [demo-freeze](#demo-freeze) | Now to Friday night, then Saturday |
+| The sponsor tools (Akta, Crunchbase, Nicrron) in the product, built ahead with keys plugged in on the day | [sponsor-adapters](#sponsor-adapters) | Now to Friday night |
+| Quick messages to the company asking for information, with guidance on what to submit | [founder-requests](#founder-requests) | Now to Friday night |
 
 ### Proposals waiting on Ken
 
