@@ -118,6 +118,7 @@ export type RoomStateName = "partial" | "full";
 
 export const sazabiRoom = roomJson as unknown as Room;
 export const ROOM_COMPANY = "Sazabi";
+export const ROOM_SLUG = "sazabi";
 
 export function allFlags(room: Room): RoomFlag[] {
   return [

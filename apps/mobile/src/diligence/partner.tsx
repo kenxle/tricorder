@@ -4,19 +4,21 @@
 import { useState } from "react";
 import { ScrollView, StyleSheet, TextInput, View } from "react-native";
 
-import {
-  Action,
-  Body,
-  Card,
-  Heading,
-  Note,
-  Row,
-  useReadoutColors,
-} from "../readout/ui";
-import type { MemoPicks } from "./memo";
+import { Action, Body, Card, Heading, Note, useReadoutColors } from "../readout/ui";
 import { MemoDocument } from "./memo";
 import type { Room } from "./room-data";
-import { ROOM_COMPANY, sazabiRoom } from "./room-data";
+import { ROOM_COMPANY, ROOM_SLUG, sazabiRoom } from "./room-data";
+
+const styles = StyleSheet.create({
+  hit: { borderRadius: 8, borderWidth: 1, gap: 4, padding: 10 },
+  input: { borderRadius: 8, borderWidth: 1, fontFamily: "Archivo", fontSize: 15, minHeight: 44, padding: 10 },
+  page: { alignSelf: "center", gap: 12, maxWidth: 880, padding: 16, width: "100%" },
+  q: { fontFamily: "ArchivoBold" },
+  stack: { gap: 12 },
+  title: { fontFamily: "ArchivoBold", fontSize: 20, lineHeight: 26 },
+  turn: { gap: 6 },
+  where: { fontFamily: "PlexMono", fontSize: 12, textTransform: "uppercase" },
+});
 
 interface Answer {
   question: string;
@@ -24,44 +26,28 @@ interface Answer {
 }
 
 const WORD = /[a-z0-9$%.]+/g;
+const MIN_WORD = 4;
+const MAX_HITS = 3;
 
-export function answerFromMemo(room: Room, question: string): Answer {
-  const words = (question.toLowerCase().match(WORD) ?? []).filter(
-    (w) => w.length > 3
-  );
+export const answerFromMemo = (room: Room, question: string): Answer => {
+  const words = (question.toLowerCase().match(WORD) ?? []).filter((w) => w.length >= MIN_WORD);
   const statements = [
-    ...room.pieces.map((p) => ({
-      label: p.label,
-      piece: p.name,
-      text: p.reason,
-    })),
-    ...room.reports.flatMap((r) =>
-      r.paras.map((p) => ({
-        label: r.title,
-        piece: r.key,
-        text: `${p.lead} ${p.body}`,
-      }))
-    ),
+    ...room.pieces.map((p) => ({ label: p.label, piece: p.name, text: p.reason })),
+    ...room.reports.flatMap((r) => r.paras.map((p) => ({ label: r.title, piece: r.key, text: `${p.lead} ${p.body}` }))),
   ];
-  const scored = statements
+  const hits = statements
     .map((s) => {
       const hay = `${s.label} ${s.text}`.toLowerCase();
       return { s, score: words.filter((w) => hay.includes(w)).length };
     })
     .filter((x) => x.score > 0)
     .sort((a, b) => b.score - a.score)
-    .slice(0, 3)
+    .slice(0, MAX_HITS)
     .map((x) => x.s);
-  return { hits: scored, question };
-}
+  return { hits, question };
+};
 
-export function PartnerChat({
-  room,
-  onFocus,
-}: {
-  room: Room;
-  onFocus: (piece: string) => void;
-}) {
+export const PartnerChat = ({ room, onFocus }: { room: Room; onFocus: (piece: string) => void }) => {
   const colors = useReadoutColors();
   const [q, setQ] = useState("");
   const [answers, setAnswers] = useState<Answer[]>([]);
@@ -76,22 +62,14 @@ export function PartnerChat({
     <Card>
       <Body style={styles.title}>Ask about the memo</Body>
       {answers.map((a, i) => (
-        <View key={`${i}-${a.question}`} style={styles.turn}>
+        <View key={`${String(i)}-${a.question}`} style={styles.turn}>
           <Body style={styles.q}>{a.question}</Body>
-          {a.hits.length === 0 ? (
-            <Note>The memo does not cover that yet.</Note>
-          ) : null}
+          {a.hits.length === 0 ? <Note>The memo does not cover that yet.</Note> : null}
           {a.hits.map((h) => (
-            <View
-              key={`${h.piece}${h.text}`}
-              style={[styles.hit, { borderColor: colors.line }]}
-            >
+            <View key={`${h.piece}${h.text}`} style={[styles.hit, { borderColor: colors.line }]}>
               <Note style={styles.where}>{h.label}</Note>
               <Body>{h.text}</Body>
-              <Action
-                onPress={() => onFocus(h.piece)}
-                title="Go to it in the memo"
-              />
+              <Action onPress={() => onFocus(h.piece)} title="Go to it in the memo" />
             </View>
           ))}
         </View>
@@ -108,50 +86,32 @@ export function PartnerChat({
       <Action disabled={q.trim() === ""} onPress={ask} primary title="Ask" />
     </Card>
   );
-}
+};
 
-export function PartnerScreen({
+export const PartnerScreen = ({
   room = sazabiRoom,
-  picks,
+  company = ROOM_SLUG,
+  embedded = false,
 }: {
   room?: Room;
-  picks?: MemoPicks;
-}) {
+  company?: string;
+  embedded?: boolean;
+}) => {
   const colors = useReadoutColors();
   const [focus, setFocus] = useState<string | null>(null);
-  return (
-    <ScrollView
-      contentContainerStyle={styles.page}
-      style={{ backgroundColor: colors.bg }}
-    >
-      <Row>
-        <Heading>Memo from the associate: {ROOM_COMPANY}</Heading>
-      </Row>
+  const body = (
+    <>
+      <Heading>Memo from the associate: {ROOM_COMPANY}</Heading>
       <PartnerChat onFocus={setFocus} room={room} />
-      <MemoDocument focus={focus} picks={picks} room={room} />
+      <MemoDocument company={company} focus={focus} room={room} />
+    </>
+  );
+  if (embedded) {
+    return <View style={styles.stack}>{body}</View>;
+  }
+  return (
+    <ScrollView contentContainerStyle={styles.page} style={{ backgroundColor: colors.bg }}>
+      {body}
     </ScrollView>
   );
-}
-
-const styles = StyleSheet.create({
-  hit: { borderRadius: 8, borderWidth: 1, gap: 4, padding: 10 },
-  input: {
-    borderRadius: 8,
-    borderWidth: 1,
-    fontFamily: "Archivo",
-    fontSize: 15,
-    minHeight: 44,
-    padding: 10,
-  },
-  page: {
-    alignSelf: "center",
-    gap: 12,
-    maxWidth: 880,
-    padding: 16,
-    width: "100%",
-  },
-  q: { fontFamily: "ArchivoBold" },
-  title: { fontFamily: "ArchivoBold", fontSize: 20, lineHeight: 26 },
-  turn: { gap: 6 },
-  where: { fontFamily: "PlexMono", fontSize: 12, textTransform: "uppercase" },
-});
+};

@@ -11,6 +11,9 @@ import { RequestDialog, RequestsBox, RoomNotice, UpNextBox, buildItems } from ".
 import type { RequestItem, RoomState } from "../diligence/requests";
 import { StartScreen } from "../diligence/start";
 import { WorkingPage } from "../diligence/working";
+import { RoomView } from "../diligence/room-view";
+import { MemoScreen } from "../diligence/memo";
+import { PartnerScreen } from "../diligence/partner";
 
 const ARRIVAL_MS = 1800;
 
@@ -24,11 +27,13 @@ export default function DiligenceFlow() {
   const [dialog, setDialog] = useState(false);
   const [sent, setSent] = useState(false);
   const [room, setRoom] = useState<RoomState>("none");
+  const [stage, setStage] = useState<"room" | "memo" | "partner">("room");
 
   useEffect(() => {
     if (research) setItems(buildItems(research));
     setSent(false);
     setRoom("none");
+    setStage("room");
   }, [research]);
 
   // The room arrives as a notification after the request goes out; the rest of the files follow.
@@ -59,6 +64,10 @@ export default function DiligenceFlow() {
         <StartScreen onStart={start} />
       </View>
     );
+  } else if (stage === "memo") {
+    body = <MemoScreen embedded onSend={() => setStage("partner")} />;
+  } else if (stage === "partner") {
+    body = <PartnerScreen embedded />;
   } else if (room === "partial" || room === "more" || room === "full") {
     const k = research.room.filesTotal - research.room.partial.arrived.length;
     body = (
@@ -67,15 +76,7 @@ export default function DiligenceFlow() {
           <RoomNotice title={`${research.name} added ${k} more file${k === 1 ? "" : "s"}`} onOpen={() => setRoom("full")} />
         ) : null}
         <RequestsBox research={research} items={items} room={room} />
-        {/* Placeholder until the room view (../diligence/room-view.tsx, owned by the other agent) is on main. */}
-        <Card>
-          <Body style={{ fontFamily: "ArchivoBold" }}>{room === "full" ? "The data room is in." : "The data room is partly in."}</Body>
-          <Action
-            title="Open the room view"
-            primary
-            onPress={() => router.push(`/diligence-room?room=${room === "full" ? "full" : "partial"}` as never)}
-          />
-        </Card>
+        <RoomView embedded onMemo={() => setStage("memo")} onSteer={() => setStage("memo")} state={room === "full" ? "full" : "partial"} />
       </View>
     );
   } else {
