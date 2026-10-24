@@ -43,3 +43,18 @@ The readout is the associate's working page for the company. Top to bottom:
 - **Card titles are the piece name only** ("Burn and runway"); the rest goes in a subtitle.
 - **The range strip only shows a number against a sourced normal band.** It is not used to plot stated against found.
 - Money shows exact figures ($5.25M, not $5.3M).
+
+## The memo for the principal
+
+Ken, 2:14 PM: "this is interactive, so it cannot be a pdf. it needs to be what the associate was working on, but remove all the noise. the memo should explain what is going on and be drill downable, or steerable, but is more of a document about the company and its investing value".
+
+- **The memo is interactive. There is no PDF.**
+- **It is the associate's working page, distilled.** Same content, with the noise removed.
+- **It reads as a document about the company and its investment case.** It explains what is going on.
+- **Every statement drills down** to its flags and evidence.
+- **The principal can steer it** with agree, disagree, ask and what-if.
+- **No noise.** Nothing on the page is there only for the associate's working.
+- **The associate sends the memo with a button.** The view then becomes the principal reviewing it.
+- **The principal has a chat that helps them navigate the memo.** It answers by pointing to the statements and evidence in the memo. Benjamin is building this.
+
+Ken, 2:14 PM: "we should have a button where the associate sends the memo, and then see the principal reviewing the memo. they should have a chat that helps them navigate the memo. benjamin is working on this".

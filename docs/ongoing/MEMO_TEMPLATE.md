@@ -1,5 +1,7 @@
 # Memo template
 
+> **Update, 2:14 PM:** the deliverable is the interactive memo, not a PDF. See [The memo for the principal](../features/20261024.02_first_steps_ui/02_ui_decisions.md#the-memo-for-the-principal).
+
 ## Charter
 
 **What belongs:** The memo Tricorder drafts for the partners' meeting. Its sections in order, what each holds, which readout pieces and checklist items fill it, how each line links down to its claims and sources, where the top green and red flags, the gaps and the ask list sit, which sections carry assumptions a reader can tweak, and what stays the operator's to write. A short filled example on the demo company.
