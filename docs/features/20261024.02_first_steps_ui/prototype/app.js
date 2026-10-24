@@ -184,13 +184,12 @@
       const input = k === "stage"
         ? `<select class="tc-input" id="f-${k}" data-field="${k}">${Object.entries(STAGES).map(([sk, st]) => `<option value="${sk}"${v.value === sk ? " selected" : ""}>${st}</option>`).join("")}</select>`
         : `<input class="tc-input" type="text" id="f-${k}" data-field="${k}" value="${esc(v.value)}" />`;
-      const src = v.source ? `${esc(v.note || "From")} ${v.note ? "" : esc(D.sources[v.source].title)}${chip(v.source)}` : esc(v.note || "");
+      const src = v.source ? chip(v.source) : esc(v.note || "");
       return `<div class="field"><label class="tc-label" for="f-${k}">${label}</label>${input}<div class="src">${src}${v.edited ? ' <span class="tc-mark warn">Corrected by you</span>' : ""}</div></div>`;
     }).join("");
-    const how = S.company ? `Matched by ${esc(S.how)} in the saved YC Spring 2026 list.` : "This URL is not in the saved YC Spring 2026 list.";
+    const unknown = S.company ? "" : `<p class="note">This URL is not in the saved YC Spring 2026 list.</p>`;
     return `<section class="setup" aria-label="The company">
-      <h2>The company, set up from <code>${esc(S.url)}</code></h2>
-      <p class="note">${how} Correct any field. The readout and the request use your corrections.</p>
+      ${unknown}
       <div class="fields">${cells}</div></section>`;
   }
   function bindSetup() {
