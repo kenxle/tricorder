@@ -122,6 +122,9 @@
       ${ask}</article>`;
   };
 
+  // A card titled "<piece>: <text>" shows the piece as its title and the text as a subtitle (Ken, 1:25 PM).
+  X.subtitle = (t) => { const i = t.indexOf(": "); const rest = i < 0 ? t : t.slice(i + 2); return rest[0].toUpperCase() + rest.slice(1); };
+
   // Flag weight. Rule (Ken, 1:22 PM): two sources that agree make a small green flag; two that disagree make a big red flag.
   X.weight = (f) => (f.kind === "red" || f.basis === "disagreement" ? "big" : f.basis === "agreement" ? "small" : "headline");
   // Headline green flags (real strengths) first, then big red flags worst first, then small green flags.

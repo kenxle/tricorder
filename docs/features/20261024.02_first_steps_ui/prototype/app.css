@@ -194,3 +194,9 @@ dialog#req-modal::backdrop { background: rgba(0, 0, 0, 0.45); }
 .modal-foot { position: sticky; bottom: 0; z-index: 2; display: flex; align-items: center; justify-content: flex-end; gap: var(--tc-space-4); padding: var(--tc-space-3) var(--tc-space-5); background: var(--tc-surface); border-top: var(--tc-hair) solid var(--tc-rule); }
 body:has(dialog[open]) { overflow: hidden; }
 @media (max-width: 767.98px) { .modal-head, .modal-body, .modal-foot { padding-left: var(--tc-space-4); padding-right: var(--tc-space-4); } .req { grid-template-columns: 1fr; gap: var(--tc-space-1); } }
+.ask-group { padding: var(--tc-space-5) 0 var(--tc-space-2); border-bottom: var(--tc-hair) solid var(--tc-rule); list-style: none; }
+.ask-group h3 { margin: 0; font-size: 18px; font-weight: 700; }
+.ask-group .note { margin: var(--tc-space-1) 0 0; font-size: 14px; }
+.ask.flash { animation: tc-flash 2.2s ease-out; }
+@keyframes tc-flash { 0%, 55% { background: var(--tc-band); } 100% { background: transparent; } }
+@media (prefers-reduced-motion: reduce) { .ask.flash { animation: none; background: var(--tc-band); } }
