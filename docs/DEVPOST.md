@@ -49,7 +49,6 @@ Tricorder automates research and helps associates build the memo that will be th
 - **No false alarms.** In today's fresh run, neither scored room had a decoy flagged, and the clean room raised no flags at all.
 - **Every claim opens its source.** A claim either carries a quote a script found in the file, or it is set aside as unverified.
 - **Steering that keeps the math intact.** The associate can reword, regroup or ask for more on any piece. The script's numbers stay on screen beside the change.
-- **One backend, two apps.** The web app and the Expo app read the same readout through typed contracts generated from the Python models.
 - **A clear workflow.** Eight steps, from a list of real companies to the partner's memo, and each slice of the roadmap serves one of them.
 
 ## What we learned
