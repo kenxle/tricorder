@@ -6,9 +6,16 @@
 
 ## Notes
 
-Ken's notes while working with Kimi. Type anywhere below this line; Claude keeps your words as written and pulls action items out separately.
+- Data room will need to send requests for more data
+- customer testimonials are from b2b side
+- b2c often want more info about traction (often social presence, not often strong enough)
 
 
+
+### From the notes
+
+- **Requests for more data:** built. The [founder-requests](ongoing/roadmap/founder-requests.md) slice drafts the message to the company asking for what the room is missing, with guidance on what to send.
+- **Testimonials (B2B) and traction from social presence (B2C):** nothing checks either yet. The nearest slice is [online-presence](ongoing/roadmap/online-presence.md), not started. Say if these should become checklist items or part of that slice.
 
 ## Needs your call
 
