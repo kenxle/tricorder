@@ -23,11 +23,11 @@ Tricorder today helps only after a room exists. It cannot do the ten tabs, and i
 
 ## Desired outcome
 
-In a few clicks on stage, the associate goes from the YC list to a first readout on a real company, built from public sources with every claim sourced, and a drafted request for the data room that they can edit.
+In a few clicks on stage, the associate goes from a company's URL to a first readout on a real company, built from public sources with every claim sourced, and a drafted request for the data room that they can edit.
 
 The screens, in order:
 
-1. **The list.** YC Spring 2026 companies: name, one-line pitch, industry, team size. Search and filter. The researched six are marked.
+1. **Start from a URL.** The associate has Tricorder open in a browser and feeds in a company by its URL: its website, or its YC company page. Tricorder resolves the company (by domain or YC slug, against the saved YC Spring 2026 list) and goes to setup. A URL in the address bar works too, so a link can open a company directly. There is no list screen (Ken, 12:02 PM: "i wil have this open in a browser and i will feed in a company by browser URL").
 2. **Set up the company.** Name, website, founders, batch, each with where it came from. The associate can correct a field, then starts the research.
 3. **The first readout, before any room.** The research fills in by section, each failing alone: the outside world (website, Hacker News, App Store, SEC filings), the founders, comps and market signals. Every claim shows its source. What only a data room can answer shows as gaps.
 4. **The data-room request.** The gaps and the stage's standard first-tier documents as a checked list. The associate unchecks, checks and adds items, and sees the drafted message with guidance per document.

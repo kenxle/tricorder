@@ -10,8 +10,8 @@ Today Tricorder starts from a data room. This adds the part before it: the assoc
 
 ## What the associate sees
 
-1. **The list.** Tricorder opens on the YC Spring 2026 companies: name, one-line pitch, website, industry, team size.
-2. **Pick one.** Tricorder sets the company up: name, website, founders, batch. The associate can correct any field.
+1. **Start from a URL.** The associate feeds in a company by its URL, its website or its YC company page, in the browser. There is no list screen (Ken, 12:02 PM).
+2. **Tricorder sets the company up** from the URL: name, website, founders, batch, matched against the saved YC Spring 2026 list. The associate can correct any field.
 3. **The research runs on its own.** Each part fills in as it lands, and each fails alone:
    - **The outside world:** the company's website, Hacker News, the App Store, and its SEC Form D filings (rounds raised, amount sold).
    - **The founders:** a card per founder from GitHub, personal sites and talks.
@@ -24,7 +24,7 @@ Today Tricorder starts from a data room. This adds the part before it: the assoc
 
 The demo freezes at 3:30 PM. Build in this order, so each step is usable before the next starts. Pieces you hand to Tirth come from this list.
 
-1. **The list and company setup** ([company-setup](../../ongoing/roadmap/company-setup.md)). Read the saved list; set up a company and save it in the store.
+1. **Company setup from a URL** ([company-setup](../../ongoing/roadmap/company-setup.md)). Resolve the URL against the saved list; set up the company and save it in the store.
 2. **The free outside sources, cached** ([outside-in](../../ongoing/roadmap/outside-in.md), [cached-data](../../ongoing/roadmap/cached-data.md)). The website, Hacker News (Algolia API), Apple's Lookup API and SEC EDGAR need no paid key. Save every call under `cache/` and run offline from it.
 3. **Founder cards** ([founder-profiles](../../ongoing/roadmap/founder-profiles.md)). GitHub first.
 4. **Comps** ([comps](../../ongoing/roadmap/comps.md)), from the Form D files.
@@ -49,7 +49,7 @@ The demo freezes at 3:30 PM. Build in this order, so each step is usable before 
 
 ## Done when
 
-- The associate picks Ploy from the list, and its first readout appears with outside-world claims and founder cards, each claim with a source the quote checker passes.
+- The associate feeds in Ploy's URL, and its first readout appears with outside-world claims and founder cards, each claim with a source the quote checker passes.
 - The same run works with the network off.
 - The readout's gaps show as checked items in room-requests.
 - Comps and market signals show what the keys allow; anything else shows as a gap that says why.
