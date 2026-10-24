@@ -2,6 +2,6 @@
 # The TypeScript workspace gate: type check packages and build apps.
 set -euo pipefail
 cd "$(dirname "$0")/.."
-if [ ! -x node_modules/.bin/turbo ]; then npm ci --no-audit --no-fund; fi
-npm run typecheck
-npm run build
+if [ ! -x node_modules/.bin/turbo ]; then pnpm install --frozen-lockfile; fi
+pnpm run typecheck
+pnpm run build

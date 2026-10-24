@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # The server on localhost, and the page's dev server beside it if asked.
 #   bin/serve          the API (and the built page, if apps/web/dist exists) on :8787
-#   bin/serve --dev    alias for npm run dev: API and web through Turbo
+#   bin/serve --dev    alias for pnpm dev: API and web through Turbo
 set -euo pipefail
 cd "$(dirname "$0")/.."
 if [ "${1:-}" = "--dev" ]; then
-  exec npm run dev
+  exec pnpm dev
 fi
 PY="${PYTHON:-python3}"
 "$PY" -m uvicorn server.app:app --host 127.0.0.1 --port "${PORT:-8787}"

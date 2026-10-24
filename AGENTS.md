@@ -155,7 +155,7 @@ tricorder/
 
 ## Development commands
 
-- `npm run dev`: the API and web app together through Turbo. Ctrl+C stops both.
+- `pnpm dev`: the API and web app together through Turbo. Ctrl+C stops both.
 - `bin/serve`: the API (and the built page) at http://127.0.0.1:8787. `bin/serve --dev` also starts the page's dev server on :5173.
 - `bin/ci-py`: the Python tests and checks CI runs.
 - `bin/ci-web`: the readout page's build and tests CI runs.

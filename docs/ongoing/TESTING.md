@@ -20,7 +20,8 @@ source .venv/bin/activate
 pip install -r requirements.txt     # Python 3.11 or newer
 pip install -r data_room/requirements.txt
 pip install pypdf                  # chart fixture PDF assembly
-npm ci                            # From the repo root; Node 22 matches CI
+corepack enable                   # Makes pnpm available with the pinned version
+pnpm install --frozen-lockfile     # From the repo root; Node 22.13+ (CI uses 22)
 ```
 
 The chart fixture tests need the data-room drawing packages and `pypdf`. Without them, pytest skips those fixtures. Install them for a complete local run without skips.
@@ -38,7 +39,7 @@ Set `TRICORDER_OFFLINE=1`, `TRICORDER_OUT_DIR=out` and `TRICORDER_CONTRACT_READE
 Start the API and web app together with one command from the repo root:
 
 ```sh
-npm run dev
+pnpm dev
 ```
 
 Turbo starts the Python API at <http://127.0.0.1:8787> and Vite at <http://localhost:5173>. Vite proxies `/api` and `/health` to the API. Stop old dev servers first so those ports are free. Ctrl+C stops both Turbo tasks and their child processes.
@@ -60,33 +61,35 @@ Zed project settings in `.zed/settings.json` disable automatic formatting on sav
 
 ## Intent agent guidance
 
-`apps/web/` pins `@tanstack/intent` as a development dependency. After `npm ci`, run the installed CLI from that workspace:
+`apps/web/` pins `@tanstack/intent` as a development dependency. After `pnpm install --frozen-lockfile`, run the installed CLI from that workspace:
 
 ```sh
-npm exec --workspace=@tricorder/web -- intent list
-npm exec --workspace=@tricorder/web -- intent install
+pnpm --filter @tricorder/web exec intent list
+pnpm --filter @tricorder/web exec intent install
 ```
 
 The current dependencies ship no Intent skills, so setup leaves permissions and agent guidance unchanged. Run setup again after adding a package that ships skills. It configures guidance for npm dependencies, not Python packages.
 
 ## TypeScript workspace commands
 
-Run from the repo root:
+Use pnpm 11.9.0, pinned in `package.json`. `pnpm-workspace.yaml` defines the workspace, and `pnpm-lock.yaml` is the only JavaScript dependency lockfile. Run from the repo root:
 
 ```sh
-npm ci
-npm run dev:web                    # Only Vite; start the Python API separately
-npm run dev                        # API + web, plus Expo when its dev script exists
-npm run typecheck                  # Web and shared schema through Turbo
-npm run build                      # Web output: apps/web/dist/
-npm run build -- --filter=@tricorder/web
+pnpm install --frozen-lockfile
+pnpm dev:web                    # Only Vite; start the Python API separately
+pnpm dev                        # API + web, plus Expo when its dev script exists
+pnpm typecheck                  # Web and shared schema through Turbo
+pnpm build                      # Web output: apps/web/dist/
+pnpm build --filter=@tricorder/web
 ```
 
-`bin/serve --dev` is an alias for `npm run dev`. `bin/serve` serves the web build at `/` after a build and server restart. CI installs the root lockfile before running `bin/ci-web`. Dev tasks are uncached; build outputs and successful typechecks are cached locally in `.turbo/`.
+`bin/serve --dev` is an alias for `pnpm dev`. `bin/serve` serves the web build at `/` after a build and server restart. CI installs the root lockfile before running `bin/ci-web`. Dev tasks are uncached; build outputs and successful typechecks are cached locally in `.turbo/`.
 
-When adding Expo, create its package in `apps/mobile/`, use the root install and lockfile, and add `dev` and `typecheck` scripts to its own manifest. Its `dev` script joins the same root `npm run dev` automatically. To run only Expo, use `npm run dev -- --filter=@tricorder/mobile` once that package exists. Expo owns native launch/export commands; the current `build` task means a web bundle. Keep app environment files in their app directories. Run `npx expo install --check` from the mobile app after choosing its SDK and align React versions across apps.
+When adding Expo, create its package in `apps/mobile/`, use the root install and lockfile, and add `dev` and `typecheck` scripts to its own manifest. Its `dev` script joins the same root `pnpm dev` automatically. To run only Expo, use `pnpm dev --filter=@tricorder/mobile` once that package exists. Expo owns native launch/export commands; the current `build` task means a web bundle. Keep app environment files in their app directories. Run `pnpm exec expo install --check` from the mobile app after choosing its SDK and align React versions across apps.
 
-See the official [Expo monorepo guide](https://docs.expo.dev/guides/monorepos/) and [Turbo workspace structure](https://turborepo.dev/docs/crafting-your-repository/structuring-a-repository).
+The workspace uses pnpm's default isolated install layout. Only esbuild's dependency build script is enabled in `pnpm-workspace.yaml`. Declare shared packages with `workspace:*`; do not add an npm lockfile. After intentionally changing dependencies, use `pnpm install` to update the lockfile.
+
+See the official [pnpm workspace guide](https://pnpm.io/workspaces), [Expo monorepo guide](https://docs.expo.dev/guides/monorepos/) and [Turbo workspace structure](https://turborepo.dev/docs/crafting-your-repository/structuring-a-repository).
 
 ## The gates
 

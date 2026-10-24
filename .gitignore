@@ -18,6 +18,7 @@ out/
 .pytest_cache/
 *.egg-info/
 node_modules/
+.pnpm-store/
 apps/*/dist/
 .turbo/
 apps/*/.expo/
