@@ -556,6 +556,87 @@ window.TC_PIECE_REPORTS_DATA = {
     "04_customers/order_form_northwind_analytics.pdf",
     "06_team/hiring_plan.csv"
    ]
+  },
+  {
+   "key": "piece-legal_and_cap_table",
+   "piece": "legal_and_cap_table",
+   "title": "Legal and cap table",
+   "knowledge": "knowledge/legal_and_cap_table.md",
+   "paras": [
+    {
+     "lead": "The cap table matches the public record.",
+     "refs": [
+      "lc-1"
+     ],
+     "body": "The seed total on the cap table, $26,571,989, is the amount sold on the SEC Form D, to the dollar. A filing the company does not control agreeing with its own file is a small green flag."
+    },
+    {
+     "lead": "The SAFEs and the holders agree too.",
+     "refs": [
+      "lc-2",
+      "lc-3"
+     ],
+     "body": "$11,572,000 of SAFEs converted into the seed, the figure the Form D gives. The cap table lists 11 seed holders, the Form D's count."
+    },
+    {
+     "lead": "No claims stated.",
+     "refs": [
+      "lc-4"
+     ],
+     "body": "The claims statement says there are no lawsuits, threatened claims or regulator contact. It is the company's own statement. A litigation and lien search would test it."
+    },
+    {
+     "lead": "The pro forma is missing.",
+     "refs": [],
+     "body": "The room holds no pro forma cap table after the Series A. Without it, the ownership after the round cannot be rebuilt from its terms."
+    }
+   ],
+   "asks": [
+    "The pro forma cap table after the Series A, with SAFE conversions and the option pool.",
+    "Signed copies of the seed stock purchase agreements, so each row ties to a paper.",
+    "Founder vesting schedules and any side letters."
+   ],
+   "chart": {
+    "kind": "bars",
+    "unit": "usd",
+    "barmode": "group",
+    "x": [
+     "Seed total sold",
+     "From SAFEs that converted"
+    ],
+    "series": [
+     {
+      "name": "Cap table",
+      "y": [
+       26571989.0,
+       11572000.0
+      ],
+      "style": "good",
+      "text": [
+       "$26.57M",
+       "$11.57M"
+      ]
+     },
+     {
+      "name": "SEC Form D",
+      "y": [
+       26571989.0,
+       11572000.0
+      ],
+      "style": "plan",
+      "text": [
+       "$26.57M",
+       "$11.57M"
+      ]
+     }
+    ],
+    "label": "The cap table against the SEC Form D: $26,571,989 sold and $11,572,000 from SAFEs in both."
+   },
+   "needs": [
+    "05_legal/cap_table.xlsx",
+    "05_legal/claims_statement.pdf",
+    "05_legal/safe_conversion_schedule.pdf"
+   ]
   }
  ],
  "sazabi": [
@@ -1096,6 +1177,108 @@ window.TC_PIECE_REPORTS_DATA = {
     "05_legal/cap_table.xlsx",
     "05_legal/safe_schedule.pdf",
     "06_team/hiring_plan.csv"
+   ]
+  },
+  {
+   "key": "piece-legal_and_cap_table",
+   "piece": "legal_and_cap_table",
+   "title": "Legal and cap table",
+   "knowledge": "knowledge/legal_and_cap_table.md",
+   "paras": [
+    {
+     "lead": "The cap table counts more than is signed.",
+     "refs": [
+      "lc-1",
+      "lc-2"
+     ],
+     "body": "The cap table's seed total is $8,000,000, the amount in the company's post. The signed SAFEs add to $5,250,000 from 66 holders. The other $2,750,000 comes from 9 commitments with no signed SAFE. A row with no paper is a promise."
+    },
+    {
+     "lead": "No Form D on file.",
+     "refs": [
+      "lc-3"
+     ],
+     "body": "The first SAFE was funded on 2026-02-17. A Form D is due 15 days after the first sale, so by 2026-03-04. EDGAR has 0 Form D filings for the company, and the room's as-of date is 210 days past the due date. A filing may sit under another legal name, so this is a question for the founder before it is a flag."
+    },
+    {
+     "lead": "The round kept raising after it was announced.",
+     "refs": [
+      "lc-2",
+      "pi-2"
+     ],
+     "body": "The press reported the company still raising on 2026-04-08. The company announced the seed on 2026-06-25, and SAFEs were still being signed until 2026-08-21. The deck calls the round closed."
+    },
+    {
+     "lead": "No claims stated.",
+     "refs": [
+      "lc-4"
+     ],
+     "body": "The claims statement says there are no lawsuits, threatened claims or regulator contact. It is the company's own statement."
+    }
+   ],
+   "asks": [
+    "Was a Form D filed, and under what legal name? If not, why not?",
+    "Who the 9 unsigned commitments are, and when they sign.",
+    "Signed copies of every SAFE, and the pro forma cap table after the seed converts."
+   ],
+   "chart": {
+    "kind": "timeline",
+    "height": 340,
+    "range": [
+     "2026-01-20",
+     "2026-10-28"
+    ],
+    "gap": {
+     "from": "2026-03-04",
+     "to": "2026-09-30",
+     "label": "No Form D on EDGAR: 210 days past due",
+     "mid": "2026-06-17"
+    },
+    "events": [
+     {
+      "date": "2026-02-17",
+      "short": "First SAFE funded",
+      "label": "First SAFE funded, 2026-02-17",
+      "style": "accent"
+     },
+     {
+      "date": "2026-03-04",
+      "short": "Form D due",
+      "label": "Form D due, 15 days after the first sale",
+      "style": "bad"
+     },
+     {
+      "date": "2026-04-08",
+      "short": "Press: still raising",
+      "label": "The press reports the company still raising, 2026-04-08",
+      "style": "bad"
+     },
+     {
+      "date": "2026-06-25",
+      "short": "Company post: seed raised",
+      "label": "The company's post announces the seed, 2026-06-25",
+      "style": "plan"
+     },
+     {
+      "date": "2026-08-21",
+      "short": "Last SAFE signed",
+      "label": "Last SAFE signed, 2026-08-21",
+      "style": "plan"
+     },
+     {
+      "date": "2026-09-30",
+      "short": "Room as of",
+      "label": "The room's as-of date. EDGAR has 0 Form D filings",
+      "style": "bad"
+     }
+    ],
+    "label": "The seed's dates: first SAFE funded 2026-02-17, Form D due 2026-03-04, press says still raising 2026-04-08, company post 2026-06-25, last SAFE signed 2026-08-21. EDGAR has 0 Form D filings as of 2026-09-30."
+   },
+   "needs": [
+    "01_pitch/pitch_deck.pdf",
+    "05_legal/cap_table.xlsx",
+    "05_legal/claims_statement.pdf",
+    "05_legal/safe_schedule.pdf"
    ]
   }
  ]

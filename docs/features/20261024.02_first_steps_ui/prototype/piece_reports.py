@@ -585,8 +585,90 @@ def pitch_sazabi(R: Room) -> dict:
     ], chart)
 
 
+# Legal and cap table -------------------------------------------------------------------------------------------
+
+FORM_D_DAYS = 15  # knowledge/legal_and_cap_table.md: the SEC's Form D page, due within 15 calendar days after the first sale
+
+
+def legal_ploy(R: Room) -> dict:
+    rows = {r[0]: r for r in R.panel("legal_and_cap_table")["rows"]}
+    sold, safe, inv = (num(rows["Seed total sold"][1]), num(rows["From SAFEs that converted"][1]), int(num(rows["Seed investors"][1])))
+    for k in ("Seed total sold", "From SAFEs that converted", "Seed investors"):
+        assert rows[k][1] == rows[k][2], f"cap table and Form D agree on {k}"
+    assert close(sold, R.v("lc-1")) and close(safe, R.v("lc-2")) and inv == R.v("lc-3") and sold == R.f["sold"] and safe == R.f["safe"] and inv == R.f["investors"]
+    assert any("pro forma" in g for g in R.drill_gaps("legal_and_cap_table")), "the room says the pro forma is not in it"
+    chart = {"kind": "bars", "unit": "usd", "barmode": "group", "x": ["Seed total sold", "From SAFEs that converted"],
+             "series": [{"name": "Cap table", "y": [sold, safe], "style": "good", "text": [big(sold), big(safe)]},
+                        {"name": "SEC Form D", "y": [sold, safe], "style": "plan", "text": [big(sold), big(safe)]}],
+             "label": f"The cap table against the SEC Form D: {money(sold)} sold and {money(safe)} from SAFEs in both."}
+    return build(R, "legal_and_cap_table", [
+        {"lead": "The cap table matches the public record.", "refs": ["lc-1"],
+         "body": f"The seed total on the cap table, {money(sold)}, is the amount sold on the SEC Form D, to the dollar. "
+                 "A filing the company does not control agreeing with its own file is a small green flag."},
+        {"lead": "The SAFEs and the holders agree too.", "refs": ["lc-2", "lc-3"],
+         "body": f"{money(safe)} of SAFEs converted into the seed, the figure the Form D gives. The cap table lists {inv} seed holders, the Form D's count."},
+        {"lead": "No claims stated.", "refs": ["lc-4"],
+         "body": "The claims statement says there are no lawsuits, threatened claims or regulator contact. It is the company's own statement. "
+                 "A litigation and lien search would test it."},
+        {"lead": "The pro forma is missing.", "refs": [],
+         "body": "The room holds no pro forma cap table after the Series A. Without it, the ownership after the round cannot be rebuilt from its terms."},
+    ], [
+        "The pro forma cap table after the Series A, with SAFE conversions and the option pool.",
+        "Signed copies of the seed stock purchase agreements, so each row ties to a paper.",
+        "Founder vesting schedules and any side letters.",
+    ], chart)
+
+
+def legal_sazabi(R: Room) -> dict:
+    rows = {r[0]: r for r in R.panel("legal_and_cap_table")["rows"]}
+    cap, signed = num(rows["Seed total"][1]), num(rows["Seed total"][2])
+    holders_cap, holders_signed = int(num(rows["Holders"][1])), int(num(rows["Holders"][2]))
+    unsigned = num(rows["Without a signed SAFE"][1])
+    assert close(cap, R.v("lc-1")) and close(signed, R.v("lc-2")) and close(cap - signed, unsigned) and close(unsigned, R.v("pi-2"))
+    first_sale, last_signed = rows["First sale"][2], rows["Last SAFE signed"][2]
+    due = (dt.date.fromisoformat(first_sale) + dt.timedelta(days=FORM_D_DAYS)).isoformat()
+    assert rows["First sale"][3] == f"Form D due by {due}", "the Form D due date matches the room's"
+    as_of = R.r["as_of"]
+    late = (dt.date.fromisoformat(as_of) - dt.date.fromisoformat(due)).days
+    edgar = int(R.f["edgar_formd"])
+    assert edgar == R.v("lc-3")
+    still, post_date = R.f["still_raising_date"], R.f["seed_post_date"]
+    pad = dt.timedelta(days=28)
+    chart = {"kind": "timeline", "height": 340,
+             "range": [(dt.date.fromisoformat(first_sale) - pad).isoformat(), (dt.date.fromisoformat(as_of) + pad).isoformat()],
+             "gap": {"from": due, "to": as_of, "label": f"No Form D on EDGAR: {late} days past due",
+                     "mid": (dt.date.fromisoformat(due) + (dt.date.fromisoformat(as_of) - dt.date.fromisoformat(due)) / 2).isoformat()},
+             "events": [{"date": first_sale, "short": "First SAFE funded", "label": f"First SAFE funded, {first_sale}", "style": "accent"},
+                        {"date": due, "short": "Form D due", "label": f"Form D due, {FORM_D_DAYS} days after the first sale", "style": "bad"},
+                        {"date": still, "short": "Press: still raising", "label": f"The press reports the company still raising, {still}", "style": "bad"},
+                        {"date": post_date, "short": "Company post: seed raised", "label": f"The company's post announces the seed, {post_date}", "style": "plan"},
+                        {"date": last_signed, "short": "Last SAFE signed", "label": f"Last SAFE signed, {last_signed}", "style": "plan"},
+                        {"date": as_of, "short": "Room as of", "label": f"The room's as-of date. EDGAR has {edgar} Form D filings", "style": "bad"}],
+             "label": f"The seed's dates: first SAFE funded {first_sale}, Form D due {due}, press says still raising {still}, company post {post_date}, "
+                      f"last SAFE signed {last_signed}. EDGAR has {edgar} Form D filings as of {as_of}."}
+    return build(R, "legal_and_cap_table", [
+        {"lead": "The cap table counts more than is signed.", "refs": ["lc-1", "lc-2"],
+         "body": f"The cap table's seed total is {money(cap)}, the amount in the company's post. The signed SAFEs add to {money(signed)} from {holders_signed} holders. "
+                 f"The other {money(unsigned)} comes from {holders_cap - holders_signed} commitments with no signed SAFE. A row with no paper is a promise."},
+        {"lead": "No Form D on file.", "refs": ["lc-3"],
+         "body": f"The first SAFE was funded on {first_sale}. A Form D is due {FORM_D_DAYS} days after the first sale, so by {due}. "
+                 f"EDGAR has {edgar} Form D filings for the company, and the room's as-of date is {late} days past the due date. "
+                 "A filing may sit under another legal name, so this is a question for the founder before it is a flag."},
+        {"lead": "The round kept raising after it was announced.", "refs": ["lc-2", "pi-2"],
+         "body": f"The press reported the company still raising on {still}. The company announced the seed on {post_date}, and SAFEs were still being signed until {last_signed}. "
+                 "The deck calls the round closed."},
+        {"lead": "No claims stated.", "refs": ["lc-4"],
+         "body": "The claims statement says there are no lawsuits, threatened claims or regulator contact. It is the company's own statement."},
+    ], [
+        "Was a Form D filed, and under what legal name? If not, why not?",
+        f"Who the {holders_cap - holders_signed} unsigned commitments are, and when they sign.",
+        "Signed copies of every SAFE, and the pro forma cap table after the seed converts.",
+    ], chart)
+
+
 PIECES = {
     "retention": {"ploy": retention_ploy, "sazabi": retention_sazabi},
+    "legal_and_cap_table": {"ploy": legal_ploy, "sazabi": legal_sazabi},
     "the_pitch_itself": {"ploy": pitch_ploy, "sazabi": pitch_sazabi},
     "market": {"ploy": market_ploy, "sazabi": market_sazabi},
     "customers": {"ploy": customers_ploy, "sazabi": customers_sazabi},

@@ -187,8 +187,12 @@
     }
     const annotations = ev.map((e, i) => ({ x: e.date, y: 0, yanchor: i % 2 ? "top" : "bottom", yshift: i % 2 ? -14 : 14, text: e.short || e.label,
       showarrow: false, align: "center", font: { family: mono(), size: 11, color: colour(e.style) } }));
+    if (c.gap && c.gap.label) {
+      annotations.push({ x: c.gap.mid, y: 0, yshift: 46, yanchor: "bottom", text: c.gap.label, showarrow: false,
+        font: { family: mono(), size: 12, color: token("--tc-weak") } });
+    }
     const layout = {
-      ...L, showlegend: false, height: c.height || 300, margin: { ...L.margin, l: 24, r: 24 },
+      ...L, showlegend: false, height: c.height || 300, margin: { ...L.margin, l: 24, r: 24, t: 16 },
       xaxis: { ...L.xaxis, type: "date", tickformat: "%b %Y", range: c.range },
       yaxis: { ...L.yaxis, visible: false, range: [-1, 1] },
       shapes, annotations,
