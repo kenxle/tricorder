@@ -18,6 +18,7 @@ from fastapi import APIRouter, HTTPException, Request
 from starlette.concurrency import run_in_threadpool
 from pydantic import BaseModel
 
+from server.api_models import FounderRequestList, ReceivedLog
 from schema.claim import Readout
 from scans.base import out_dir
 from founder_requests import draft as d
@@ -63,7 +64,7 @@ def _readout(path: Path) -> Readout:
     return Readout.model_validate_json(target.read_text(encoding="utf-8"))
 
 
-@router.get("")
+@router.get("", response_model=FounderRequestList)
 def list_lines(room: str) -> dict:
     path = _room(room)
     items, held = d.analyse(_readout(path), path)
@@ -79,7 +80,7 @@ def list_lines(room: str) -> dict:
     }
 
 
-@router.post("/draft")
+@router.post("/draft", response_model=d.Draft)
 def make_draft(room: str, ask: DraftAsk) -> dict:
     path = _room(room)
     try:
@@ -139,7 +140,7 @@ async def add_files(room: str, request: Request) -> dict:
         raise HTTPException(err.status, err.message)
 
 
-@router.get("/received")
+@router.get("/received", response_model=ReceivedLog, response_model_exclude_unset=True)
 def received(room: str) -> dict:
     target = out_dir(_room(room)) / ik.LOG
     try:

@@ -1,12 +1,9 @@
-import type { Readout } from "@tricorder/schema";
+import type { PythonAPI } from "@tricorder/schema/api";
 import { initTRPC, TRPCError } from "@trpc/server";
 
-export interface RoomInfo {
-  id: string;
-  path: string;
-  inputs: string[];
-  has_readout: boolean;
-}
+export type RoomInfo = PythonAPI["GET /api/rooms"]["output"][number];
+type PythonQuery = keyof PythonAPI & `GET ${string}`;
+type QueryInput<K extends PythonQuery> = PythonAPI[K]["path"] & PythonAPI[K]["query"];
 
 export interface RPCContext {
   apiURL: string;
@@ -22,10 +19,22 @@ function roomID(value: unknown): string {
   return value;
 }
 
-async function pythonJSON<T>(ctx: RPCContext, path: string): Promise<T> {
+async function pythonJSON<K extends PythonQuery>(ctx: RPCContext, operation: K, input: QueryInput<K>): Promise<PythonAPI[K]["output"]> {
+  // The operation selects both the Python URL and its generated response type.
+  const params = { ...input } as Record<string, unknown>;
+  const path = operation.slice(4).replace(/\{([^}]+)\}/g, (_match, name: string) => {
+    const value = params[name];
+    if (value === undefined) throw new Error(`Missing Python path parameter: ${name}`);
+    delete params[name];
+    return encodeURIComponent(String(value));
+  });
+  const url = new URL(path, ctx.apiURL);
+  for (const [name, value] of Object.entries(params)) {
+    if (value !== undefined && value !== null) url.searchParams.set(name, String(value));
+  }
   let response: Response;
   try {
-    response = await ctx.fetch(new URL(path, ctx.apiURL), {
+    response = await ctx.fetch(url, {
       signal: AbortSignal.timeout(30_000),
       redirect: "error",
     });
@@ -47,19 +56,98 @@ async function pythonJSON<T>(ctx: RPCContext, path: string): Promise<T> {
     throw new TRPCError({ code, message });
   }
   try {
-    // Python owns runtime validation (Pydantic for Readout). This facade shares
-    // its generated TypeScript model; it does not validate the JSON a second time.
-    return await response.json() as T;
+    // FastAPI validates declared response models. The generated contract is
+    // compile-time only; this boundary does not validate the JSON a second time.
+    return await response.json() as PythonAPI[K]["output"];
   } catch {
     throw new TRPCError({ code: "BAD_GATEWAY", message: "The Python API returned invalid JSON." });
   }
 }
 
+function object(value: unknown): Record<string, unknown> {
+  if (!value || typeof value !== "object" || Array.isArray(value)) throw new Error("Expected an input object.");
+  return value as Record<string, unknown>;
+}
+
+function positiveInteger(value: unknown): number | undefined {
+  if (value === undefined || value === null) return undefined;
+  if (typeof value !== "number" || !Number.isSafeInteger(value) || value < 1) throw new Error("Expected a positive integer.");
+  return value;
+}
+
+function roomInput(value: unknown): QueryInput<"GET /api/rooms/{room}/memo"> {
+  const input = object(value);
+  return { room: roomID(input.room), version: positiveInteger(input.version) };
+}
+
+function resultInput(value: unknown): QueryInput<"GET /api/rooms/{room}/results/{scan}"> {
+  const input = object(value);
+  return { room: roomID(input.room), scan: roomID(input.scan) };
+}
+
+function claimID(value: unknown): string {
+  // Steering appends tags such as .steer1 to newly merged claim IDs.
+  if (typeof value !== "string" || !/^[A-Za-z0-9_.-]+$/.test(value) || value === "." || value === "..") {
+    throw new Error("Expected a claim ID containing letters, digits, underscores, hyphens or dots.");
+  }
+  return value;
+}
+
+function sourceInput(value: unknown): QueryInput<"GET /api/rooms/{room}/claims/{claim_id}/sources/{i}"> {
+  const input = object(value);
+  if (typeof input.i !== "number" || !Number.isSafeInteger(input.i) || input.i < 0) throw new Error("Expected a nonnegative source index.");
+  return { room: roomID(input.room), claim_id: claimID(input.claim_id), i: input.i };
+}
+
+function fundInput(value: unknown): QueryInput<"GET /api/store/{fund}"> {
+  const input = object(value);
+  return { fund: roomID(input.fund) };
+}
+
+function companyInput(value: unknown): QueryInput<"GET /api/store/{fund}/{company}/readout"> {
+  const input = object(value);
+  return { fund: roomID(input.fund), company: roomID(input.company), version: positiveInteger(input.version) };
+}
+
 export const appRouter = t.router({
+  health: t.procedure.query(({ ctx }) => pythonJSON(ctx, "GET /health", {})),
+  scan: t.router({
+    list: t.procedure.query(({ ctx }) => pythonJSON(ctx, "GET /api/scans", {})),
+  }),
   room: t.router({
-    list: t.procedure.query(({ ctx }) => pythonJSON<RoomInfo[]>(ctx, "/api/rooms")),
+    list: t.procedure.query(({ ctx }) => pythonJSON(ctx, "GET /api/rooms", {})),
     readout: t.procedure.input(roomID).query(({ ctx, input }) =>
-      pythonJSON<Readout>(ctx, `/api/rooms/${encodeURIComponent(input)}/readout`)),
+      pythonJSON(ctx, "GET /api/rooms/{room}/readout", { room: input })),
+    result: t.procedure.input(resultInput).query(({ ctx, input }) =>
+      pythonJSON(ctx, "GET /api/rooms/{room}/results/{scan}", input)),
+    steerable: t.procedure.input(roomID).query(({ ctx, input }) =>
+      pythonJSON(ctx, "GET /api/rooms/{room}/steerable", { room: input })),
+    revisions: t.procedure.input(roomID).query(({ ctx, input }) =>
+      pythonJSON(ctx, "GET /api/rooms/{room}/revisions", { room: input })),
+    source: t.procedure.input(sourceInput).query(({ ctx, input }) =>
+      pythonJSON(ctx, "GET /api/rooms/{room}/claims/{claim_id}/sources/{i}", input)),
+  }),
+  memo: t.router({
+    get: t.procedure.input(roomInput).query(({ ctx, input }) =>
+      pythonJSON(ctx, "GET /api/rooms/{room}/memo", input)),
+    versions: t.procedure.input(roomID).query(({ ctx, input }) =>
+      pythonJSON(ctx, "GET /api/rooms/{room}/memo/versions", { room: input })),
+  }),
+  store: t.router({
+    companies: t.procedure.input(fundInput).query(({ ctx, input }) =>
+      pythonJSON(ctx, "GET /api/store/{fund}", input)),
+    holding: t.procedure.input(companyInput).query(({ ctx, input }) =>
+      pythonJSON(ctx, "GET /api/store/{fund}/{company}", { fund: input.fund, company: input.company })),
+    versions: t.procedure.input(companyInput).query(({ ctx, input }) =>
+      pythonJSON(ctx, "GET /api/store/{fund}/{company}/versions", { fund: input.fund, company: input.company })),
+    readout: t.procedure.input(companyInput).query(({ ctx, input }) =>
+      pythonJSON(ctx, "GET /api/store/{fund}/{company}/readout", input)),
+  }),
+  founderRequests: t.router({
+    list: t.procedure.input(roomID).query(({ ctx, input }) =>
+      pythonJSON(ctx, "GET /api/rooms/{room}/founder-requests", { room: input })),
+    received: t.procedure.input(roomID).query(({ ctx, input }) =>
+      pythonJSON(ctx, "GET /api/rooms/{room}/founder-requests/received", { room: input })),
   }),
 });
 

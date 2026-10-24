@@ -106,3 +106,53 @@ test("oversized batches are rejected before any Python calls", async (t) => {
   assert.equal(response.status, 400);
   assert.equal(calls, 0);
 });
+
+test("generated Python contracts route JSON reads and optional version queries", async (t) => {
+  const calls: string[] = [];
+  const { client } = await fixture(t, async (input) => {
+    const url = new URL(String(input));
+    calls.push(url.pathname + url.search);
+    return Response.json({});
+  });
+  await client.health.query();
+  await client.scan.list.query();
+  await client.room.result.query({ room: "room_1", scan: "redflags" });
+  await client.room.source.query({ room: "room_1", claim_id: "claims-001.steer1", i: 0 });
+  await client.room.revisions.query("room_1");
+  await client.room.steerable.query("room_1");
+  await client.memo.get.query({ room: "room_1", version: 2 });
+  await client.memo.get.query({ room: "room_1" });
+  await client.memo.get.query({ room: "room_1", version: null });
+  await client.memo.versions.query("room_1");
+  await client.store.companies.query({ fund: "demo" });
+  await client.store.holding.query({ fund: "demo", company: "company_1" });
+  await client.store.versions.query({ fund: "demo", company: "company_1" });
+  await client.store.readout.query({ fund: "demo", company: "company_1", version: 3 });
+  await client.founderRequests.list.query("room_1");
+  await client.founderRequests.received.query("room_1");
+  assert.deepEqual(calls, [
+    "/health", "/api/scans", "/api/rooms/room_1/results/redflags",
+    "/api/rooms/room_1/claims/claims-001.steer1/sources/0", "/api/rooms/room_1/revisions",
+    "/api/rooms/room_1/steerable", "/api/rooms/room_1/memo?version=2", "/api/rooms/room_1/memo",
+    "/api/rooms/room_1/memo", "/api/rooms/room_1/memo/versions", "/api/store/demo", "/api/store/demo/company_1",
+    "/api/store/demo/company_1/versions", "/api/store/demo/company_1/readout?version=3",
+    "/api/rooms/room_1/founder-requests", "/api/rooms/room_1/founder-requests/received",
+  ]);
+});
+
+test("new query parsers reject unsafe paths and invalid numbers before Python", async (t) => {
+  let calls = 0;
+  const { client } = await fixture(t, async () => { calls += 1; return Response.json({}); });
+  for (const query of [
+    () => client.room.result.query({ room: "room", scan: "../secret" }),
+    () => client.room.source.query({ room: "room", claim_id: "claim", i: -1 }),
+    () => client.memo.get.query({ room: "room", version: 0 }),
+    () => client.room.source.query({ room: "room", claim_id: "..", i: 0 }),
+    () => client.room.source.query({ room: "room", claim_id: "../secret", i: 0 }),
+    () => client.store.readout.query({ fund: "demo", company: "../secret" }),
+    () => client.store.readout.query({ fund: "demo", company: "company", version: 1.5 }),
+  ]) {
+    await assert.rejects(query, (error: unknown) => error instanceof TRPCClientError && error.data.code === "BAD_REQUEST");
+  }
+  assert.equal(calls, 0);
+});

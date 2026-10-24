@@ -5,4 +5,5 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 PY="${PYTHON:-python3}"
 "$PY" -m schema.export --check
+"$PY" -m server.export_api --check
 "$PY" -m pytest

@@ -25,9 +25,11 @@ flowchart LR
     S -->|out/room/scan.json| M[scans/memo<br/>quote check, link, claim support,<br/>pieces, flags, coverage, asks]
     M -->|out/room/readout.json| SV[server/app.py<br/>behind local_guard.py]
     SC[schema/claim.py] -->|schema.export| TS[packages/schema/ src types]
+    SV -->|OpenAPI via server.export_api| AT[packages/schema/src/api.ts<br/>PythonAPI and PythonModels]
+    AT -.->|generated operation types| RPC
     TS -.->|@tricorder/schema| P[apps/web/ page]
     SV -->|REST: builds, sources and other features| P
-    P -->|tRPC room queries through Python proxy| RPC[apps/rpc/ typed gateway]
+    P -->|typed tRPC queries through Python proxy| RPC[apps/rpc/ typed gateway]
     RPC -->|existing REST reads| SV
     DEV[Turbo dev] -.-> API[apps/api/ dev launcher]
     API -.-> SV

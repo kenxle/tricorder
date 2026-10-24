@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Export Python's API contract for TypeScript without starting either server.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+if [ -n "${TRICORDER_PYTHON:-}" ]; then
+  PY="$TRICORDER_PYTHON"
+elif [ -x .venv/bin/python ]; then
+  PY=.venv/bin/python
+else
+  PY="${PYTHON:-python3}"
+fi
+"$PY" -m server.export_api "$@"

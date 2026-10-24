@@ -18,6 +18,7 @@ from fastapi import APIRouter, HTTPException
 from fastapi.responses import Response
 from pydantic import BaseModel
 
+from server.api_models import CompanyList
 from store import BadId, NotHeld, open_store
 from store.files import load_from_out
 from store.models import DeleteReport, Holding, SaveResult, StoredReadout, VersionInfo
@@ -42,7 +43,7 @@ def _call(fn, *args):
         raise HTTPException(404, str(err))
 
 
-@router.get("/{fund}")
+@router.get("/{fund}", response_model=CompanyList)
 def companies(fund: str) -> dict:
     return {"fund": fund, "companies": _call(open_store().companies, fund)}
 

@@ -25,6 +25,7 @@ from scans import SCANS
 from scans.base import ROOT, available, out_dir, room_inputs
 from scans.memo.merge import build_readout, readout_room, write_readout
 from memo.rooms import OutsideRoom, resolve, source_rooms, text_in
+from server.api_models import Health, RoomInfo, ScanList, SourceText
 from server.local_guard import LocalGuard
 from founder_requests.intake import rooms_root
 
@@ -97,17 +98,17 @@ def _inside(rooms_: list[Path], rel: str) -> Path:
         raise HTTPException(404, "no such file")
 
 
-@app.get("/health")
+@app.get("/health", response_model=Health)
 def health() -> dict:
     return {"ok": True, "scans": available()}
 
 
-@app.get("/api/scans")
+@app.get("/api/scans", response_model=ScanList)
 def list_scans() -> dict:
     return {"all": list(SCANS), "available": available()}
 
 
-@app.get("/api/rooms")
+@app.get("/api/rooms", response_model=list[RoomInfo])
 def list_rooms() -> list[dict]:
     return [
         {
@@ -166,7 +167,7 @@ def get_file(room: str, rel: str) -> FileResponse:
     return FileResponse(_inside(readable_rooms(room), rel))
 
 
-@app.post("/api/rooms/{room}/source")
+@app.post("/api/rooms/{room}/source", response_model=SourceText)
 def source_text(room: str, source: Source) -> dict:
     """The text at a source's locator, for the footnote panel. A file source opens only inside
     the room (or the full room it was switched to): never an absolute path, another room, the

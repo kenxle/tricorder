@@ -19,6 +19,7 @@ from __future__ import annotations
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 
+from server.api_models import ClaimSource, RoomRevisions
 from schema.claim import Readout
 from memo.rooms import OutsideRoom, is_file_source, room_holding, text_in
 from schema.readers import LocatorError
@@ -65,7 +66,7 @@ def steer(room: str, body: SteerBody) -> SteerOutcome:
         raise HTTPException(500, str(err))
 
 
-@router.get("/{room}/revisions")
+@router.get("/{room}/revisions", response_model=RoomRevisions)
 def revisions(room: str) -> dict:
     path = _room(room)
     try:
@@ -76,7 +77,7 @@ def revisions(room: str) -> dict:
             "changes": [p.model_dump() for p in readout.panels if p.name.startswith("steer ")]}
 
 
-@router.get("/{room}/claims/{claim_id}/sources/{i}")
+@router.get("/{room}/claims/{claim_id}/sources/{i}", response_model=ClaimSource)
 def claim_source(room: str, claim_id: str, i: int) -> dict:
     path = _room(room)
     try:

@@ -101,9 +101,29 @@ See the official [pnpm workspace guide](https://pnpm.io/workspaces), [Expo monor
 
 ## tRPC gateway
 
-`apps/rpc/src/router.ts` owns `AppRouter`, `room.list` and `room.readout`. `apps/web/src/trpc.ts` imports the router type only and creates the vanilla client with batching. Add new procedures to the router; future apps can import the same type through `@tricorder/rpc`. Builds, source text, file downloads, steering and founder requests continue to use REST.
+`apps/rpc/src/router.ts` owns `AppRouter`. Its read-only queries cover health, scans, rooms, results, steering readouts/revisions/source text, memos, the readout store and founder requests. `apps/web/src/trpc.ts` imports the router type only and creates the vanilla client with batching. Other clients can import `AppRouter` through `@tricorder/rpc` and use `inferRouterInputs` / `inferRouterOutputs` from `@trpc/server`.
 
-The gateway binds to loopback and accepts only GET queries with a loopback Host. Python remains the runtime validator for its response data; the gateway uses generated `Readout` types at that boundary. Node 22.13+ runs the TypeScript entrypoint with native type stripping, so the gateway needs no build step.
+Python owns the contracts. `server/api_models.py` declares response shapes for routes that previously returned bare dictionaries. Existing Pydantic models remain in their owning modules. FastAPI assembles these annotations into OpenAPI; `server/export_api.py` introspects that schema locally and writes `packages/schema/src/api.ts`, exported as `@tricorder/schema/api`. It emits `PythonModels` and `PythonAPI`, with separate path parameters, query parameters, JSON request bodies and outputs per operation. No running server, credentials or new dependencies are needed.
+
+```sh
+pnpm generate:api               # After changing Python route/model annotations
+pnpm check:api                  # Fail if generated contracts are stale
+```
+
+The commands select Python using `TRICORDER_PYTHON`, the project `.venv`, then `PYTHON` / `python3`. Python dependencies from setup must be installed. `bin/ci-py` checks freshness, and TypeScript checks catch incompatible gateway/client uses after regeneration. Generation is explicit, not a live watcher.
+
+For example, the web client infers these directly:
+
+```ts
+const rooms = await trpc.room.list.query();
+const result = await trpc.room.result.query({ room: rooms[0].id, scan: "redflags" });
+const memo = await trpc.memo.get.query({ room: rooms[0].id, version: 1 });
+type Memo = RouterOutputs["memo"]["get"];
+```
+
+When adding a route: declare its Python inputs and response model, regenerate, then add an explicit procedure in `apps/rpc/src/router.ts` using its generated `PythonAPI` operation. The helper derives its output from the operation key, so no handwritten TypeScript response interface is needed. This exports declared HTTP contracts, not arbitrary Python functions, database rows or fields guessed from samples. A plain `dict` or `Any` stays `unknown`; give that field a Python model for deeper inference. In particular, founder-request item `guidance` and `requests` still contain unstructured dictionaries.
+
+The gateway binds to loopback and accepts only GET queries with a loopback Host. FastAPI validates declared response models. The gateway trusts this contract and does not validate successful JSON again. Node 22.13+ runs the TypeScript entrypoint with native type stripping. Generated request types include existing write routes, but the tRPC gateway remains read-only; uploads, writes and file/PDF/HTML responses continue through REST. Existing web feature calls remain in place. The steering GET endpoints (`room.steerable`, `room.revisions`, `room.source`) retain Python's lazy-build behavior: if a readout is absent but scan results exist, the engine builds and saves it. GET-only refers to the gateway transport, not a guarantee of zero filesystem writes.
 
 For alternate ports, export `PORT` for Python, `TRICORDER_RPC_PORT` for the gateway, and matching `TRICORDER_RPC_URL` for Python. `TRICORDER_API_URL` overrides the gateway's Python destination, otherwise it uses `PORT` (default 8787). Export these in the shell before launch; the Node task does not load `.env`. Vite's existing proxy target remains port 8787.
 
@@ -111,7 +131,7 @@ For alternate ports, export `PORT` for Python, `TRICORDER_RPC_PORT` for the gate
 
 | Command | What it runs | Green means |
 |---|---|---|
-| `bin/ci-py` | `python -m schema.export --check` (generated schema files are current), then `pytest` over the test folders in `pyproject.toml`, including the store, founder requests, memo, and steering | exit 0, "N passed" and no failures |
+| `bin/ci-py` | `python -m schema.export --check` and `python -m server.export_api --check` (generated schema and API contracts are current), then `pytest` over the test folders in `pyproject.toml`, including the store, founder requests, memo, and steering | exit 0, "N passed" and no failures |
 | `bin/ci-web` | Turbo typechecks all TypeScript packages, lints mobile, runs gateway tests and exports/builds apps | exit 0 |
 | `bin/smoke <room_dir>` | Every scan that exists on one room, then the merge | each scan prints its counts and the merge prints its summary, with no traceback |
 
