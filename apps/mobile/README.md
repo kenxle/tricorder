@@ -55,6 +55,12 @@ In Turbo's terminal UI, select the mobile task and press `i` to interact with it
 
 The package owns `dev` rather than `start` so the repository's `pnpm start` continues to launch the Python API and tRPC gateway without Metro.
 
+## Native interaction foundation
+
+The app includes SDK-compatible Keyboard Controller, Expo Haptics and NetInfo. The root layout mounts `KeyboardProvider`; screens can use Keyboard Controller's keyboard-aware components as their forms are implemented. Existing forms retain their current keyboard avoidance. Haptics and connectivity APIs are available but are not yet connected to screen actions or retry behavior.
+
+These packages autolink without additional `app.json` plugin entries. Rebuild the native development client after installing them (`pnpm build:ios`, or `pnpm --filter @tricorder/mobile exec expo run:android`). An older client cannot load the new native code. Skia and WebView remain deferred to chart and memo work.
+
 ## Local storage
 
 [MMKV](https://github.com/margelo/react-native-mmkv) provides synchronous local key-value storage. Reuse the shared instance from `@/lib/storage`:
