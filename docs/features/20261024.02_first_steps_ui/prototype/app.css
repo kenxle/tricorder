@@ -161,3 +161,17 @@ tr.claim:target { background: var(--tc-hover, rgba(127,127,127,0.12)); }
 .ev-tip-n { font-family: var(--tc-font-mono); font-size: 12px; color: var(--tc-ink-3); margin-right: 4px; }
 .ev-tip-src { display: block; margin-top: 6px; font-family: var(--tc-font-mono); font-size: 12px; color: var(--tc-ink-3); }
 .readout-head { display: flex; justify-content: flex-end; }
+
+/* The product bar and loading skeletons. */
+.appbar { display: flex; align-items: center; gap: var(--tc-space-4); }
+.appbar .tc-brand { text-decoration: none; color: var(--tc-ink); font-weight: 800; font-size: 20px; }
+.appbar-go { margin-left: auto; width: min(420px, 60%); }
+.appbar-go .tc-input { width: 100%; }
+.loading > :not(h2):not(.skel) { display: none !important; }
+.loading [data-status] { display: none; }
+.skel { display: grid; gap: 10px; padding: var(--tc-space-3) 0; }
+.skel span { display: block; height: 14px; border-radius: 4px; background: linear-gradient(90deg, var(--tc-rule) 0%, var(--tc-surface) 50%, var(--tc-rule) 100%); background-size: 200% 100%; animation: tc-skel 1.2s linear infinite; }
+.skel span:nth-child(2) { width: 85%; } .skel span:nth-child(3) { width: 60%; }
+@keyframes tc-skel { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) { .skel span { animation: none; } }
+.tc-sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

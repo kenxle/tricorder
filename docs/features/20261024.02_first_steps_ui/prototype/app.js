@@ -91,10 +91,18 @@
     return `<ol class="steps" aria-label="Steps">${STEPS.map(([k, t], i) =>
       `<li${k === cur ? ' aria-current="step"' : ""}>${i + 1}. ${esc(t)}</li>`).join("")}</ol>`;
   }
-  function header(cur, back) {
-    return `<header class="masthead"><h1 class="tc-brand">Tricorder</h1><span class="note">Prototype. First steps, before any data room.</span></header>
-      ${stepsNav(cur)}${back ? `<p class="back"><a href="#${back[0]}">Back to ${esc(back[1])}</a></p>` : ""}`;
+  // The product's own bar, no prototype chrome (Ken, 1:00 PM: "make this like a real mock as though we're actually using the product").
+  function header(cur) {
+    const go = cur === "start" ? "" : `<form class="appbar-go" data-appbar-go><input class="tc-input" type="text" placeholder="Paste a company URL" aria-label="Company URL" /></form>`;
+    return `<header class="masthead appbar"><a class="tc-brand" href="#start">Tricorder</a>${go}</header>`;
   }
+  app.addEventListener("submit", (e) => {
+    const f = e.target.closest("[data-appbar-go]");
+    if (!f) return;
+    e.preventDefault();
+    const v = f.querySelector("input").value.trim();
+    if (v) startCompany(v);
+  });
 
   function render() {
     S.run++; // stops any arrival that is still playing
@@ -118,8 +126,6 @@
           <input type="url" id="url" name="url" required class="tc-input" placeholder="https://ploy.ai" aria-label="Company URL" value="${esc(S.url)}" />
           <button class="tc-btn primary" type="submit">Start</button>
         </form>
-        <div class="tries"><span class="note">Try:</span>${tries.map((t) => `<button type="button" class="link tc-link-btn" data-try="${esc(t)}">${esc(t.replace(/^https:\/\//, ""))}</button>`).join("")}</div>
-        <p class="note">Tricorder matches the URL against the saved YC Spring 2026 list of ${D.companies.length} companies. A link with <code>?company=</code> and a URL opens a company directly.</p>
       </section>`;
     const form = document.getElementById("urlform");
     form.addEventListener("submit", (e) => { e.preventDefault(); startCompany(document.getElementById("url").value); });
@@ -308,7 +314,7 @@
         You can still draft the data-room request from the stage's first-tier documents.</div>`;
     } else {
       numberClaims(R);
-      body = `<p class="status" id="overall" role="status"></p>
+      body = `<p class="tc-sr-only" id="overall" role="status"></p>
         ${insightsHtml(R)}
         ${R.sections.map(sectionHtml).join("")}
         <section class="roomgaps wait" id="roomgaps" aria-label="What only a data room can answer">
@@ -320,50 +326,36 @@
     app.innerHTML = `${header("readout", ["start", "the company URL"])}
       <h2 id="co-name" class="co-title">${esc(name)}</h2>
       ${R ? aboutHtml(R) : setupPanel()}
-      <div class="readout-head">${R ? '<button class="link tc-link-btn" id="replay" type="button">Replay the research</button>' : ""}</div>
+
       ${body}
       <div class="actions"><button class="tc-btn primary" id="to-request" type="button">Draft the data-room request</button></div>`;
     bindSetup();
     document.getElementById("to-request").addEventListener("click", () => go("request"));
     if (R) {
-      document.getElementById("replay").addEventListener("click", () => { S.streamed = false; renderReadout(); });
       arrive(R);
     }
   }
 
-  // The research arrives: each section, then each claim, as if streaming in.
+  // Each section shows a skeleton until its data arrives, then fills in whole (Ken, 1:00 PM).
   function arrive(R) {
     const run = ++S.run;
     const overall = document.getElementById("overall");
-    const sections = [...app.querySelectorAll(".section")];
-    const steps = [];
-    const show = (el) => { el.classList.remove("wait"); el.classList.add("arrive"); };
-    const t = (ms) => ms * PACE;
-    sections.forEach((sec, i) => {
-      const s = R.sections[i];
-      steps.push([t(500), () => { show(sec); sec.querySelector("[data-status]").textContent = "Reading the saved sources"; overall.textContent = `Researching: ${s.title.toLowerCase()}`; }]);
-      sec.querySelectorAll(".wait").forEach((el) => steps.push([el.matches(".part, .card") ? t(250) : t(420), () => show(el)]));
-      steps.push([t(300), () => { sec.querySelector("[data-status]").textContent = `Done: ${countOf(s)}`; }]);
-    });
-    const rg = document.getElementById("roomgaps");
-    steps.push([t(500), () => show(rg)]);
-    rg.querySelectorAll(".wait").forEach((el) => steps.push([t(300), () => show(el)]));
-    app.querySelectorAll(".insight.wait").forEach((el) => steps.push([t(450), () => { overall.textContent = "Reading the evidence"; show(el); }]));
-    steps.push([0, () => { overall.textContent = `Research done: ${R.sections.length} sections.`; S.streamed = true; }]);
-
-    if (S.streamed || PACE === 0) {
-      steps.forEach(([, f]) => f());
-      app.querySelectorAll(".arrive").forEach((el) => el.classList.remove("arrive"));
-      return;
-    }
-    let i = 0;
-    const tick = () => {
-      if (run !== S.run || i >= steps.length) return;
-      const [, f] = steps[i++];
-      f();
-      setTimeout(tick, i < steps.length ? steps[i][0] : 0);
-    };
-    setTimeout(tick, t(300));
+    app.querySelectorAll(".wait").forEach((el) => el.classList.remove("wait"));
+    const blocks = [...app.querySelectorAll(".insights, .section, #roomgaps")];
+    const done = () => { overall.textContent = `Research done: ${R.sections.length} sections.`; S.streamed = true; };
+    app.querySelectorAll(".section").forEach((b) => { const st = b.querySelector("[data-status]"); if (st) st.textContent = `Done: ${countOf(R.sections[Number(b.dataset.sec)])}`; });
+    if (S.streamed || PACE === 0) return done();
+    const skel = '<div class="skel" aria-hidden="true"><span></span><span></span><span></span></div>';
+    blocks.forEach((b) => { b.classList.add("loading"); b.insertAdjacentHTML("beforeend", skel); });
+    overall.textContent = "Researching";
+    // Order data lands in: the sections, then the insights read from them, then what only a room can answer.
+    const order = [...app.querySelectorAll(".section"), app.querySelector(".insights"), document.getElementById("roomgaps")].filter(Boolean);
+    order.forEach((b, i) => setTimeout(() => {
+      if (run !== S.run) return;
+      b.classList.remove("loading");
+      const s = b.querySelector(":scope > .skel"); if (s) s.remove();
+      if (i === order.length - 1) done();
+    }, (500 + i * 650) * PACE));
   }
 
   // Step 3: the data-room request ---------------------------------------------------------------
