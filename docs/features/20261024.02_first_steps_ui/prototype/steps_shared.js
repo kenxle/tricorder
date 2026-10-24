@@ -88,6 +88,8 @@
     if (unit === "months") return `${dec(v)} mo`;
     return Math.round(v).toLocaleString("en-US");
   };
+  // The range strip draws a figure against a sourced normal range (Ken, 1:48 PM). A flag gets one only
+  // when its strip carries a benchmark {label, source}; stated beside found alone never gets a strip.
   X.strip = (st, foundLabel) => {
     const pos = (v) => (v - st.min) / (st.max - st.min);
     const side = (v) => (pos(v) > 0.85 ? " is-right" : pos(v) < 0.15 ? " is-left" : "");
@@ -123,7 +125,7 @@
       <h3 class="tc-card-title">${esc(f.title)}</h3>
       ${f.why ? `<p class="x-why">${esc(f.why)}</p>` : ""}
       ${X.pair(f.stated, f.found)}${others}
-      ${f.kind === "red" ? X.strip(f.strip, "Found") : X.strip({ ...f.strip, ticks: [] }, f.strip.ticks[0] ? f.strip.ticks[0].label.replace(/ \S+$/, "") : "Agreed")}
+      ${f.strip && f.strip.benchmark ? X.strip(f.strip, f.strip.benchmark.label) : ""}
       ${ask}</article>`;
   };
 

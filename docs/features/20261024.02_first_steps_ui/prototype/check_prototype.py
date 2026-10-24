@@ -150,9 +150,9 @@ with sync_playwright() as p:
         greens, reds = pg.locator(".x-flag[data-flag='green']").count(), pg.locator(".x-flag[data-flag='red']").count()
         order = pg.eval_on_selector_all(".x-flag", "els => els.map(e => e.dataset.flag)")
         check(greens >= 1 and reds >= 1 and order == sorted(order, key=lambda k: k != "green"), f"green flags first, then red ({greens} green, {reds} red)")
-        check(pg.locator(".x-flag .tc-pair").count() == greens + reds and pg.locator(".x-flag .tc-strip").count() == greens + reds,
-              "every flag shows stated beside found and a range strip")
-        check(pg.locator(".x-flag[data-flag='red'] .tc-strip-tick.is-out").count() >= reds, "each red flag's stated figure sits outside the band")
+        check(pg.locator(".x-flag .tc-pair").count() == greens + reds and pg.locator(".x-flag .tc-strip").count() == 0,
+              "every flag shows stated beside found, and no range strip without a sourced benchmark")
+        check(pg.locator(".x-flag[data-flag='red'] .tc-pair-value.is-out").count() >= reds, "each red flag marks its stated figure")
         check(pg.locator(".x-verdicts .tc-verdict").count() == 10, "the overview has ten pieces with a verdict")
         check(pg.locator(".x-drill").count() == 2, "two drill-downs, one weak and one strong")
         pg.locator(".x-flag .roomchip").first.click()
@@ -261,9 +261,9 @@ with sync_playwright() as p:
     lead = pg.locator(".x-flag[data-flag='red']").first
     check("Form D" in lead.inner_text() and "$5,250,000" in lead.inner_text() and "$8,000,000" in lead.inner_text() and lead.locator(".srcchip").count() >= 2,
           "Sazabi step 5: the worst red flag is the round, cap table beside signed SAFEs, with EDGAR and the press as outside sources")
-    check(pg.locator(".x-flag .tc-pair").count() == greens + reds and pg.locator(".x-flag .tc-strip").count() == greens + reds,
-          "Sazabi step 5: every flag shows stated beside found and a range strip")
-    check(pg.locator(".x-flag[data-flag='red'] .tc-strip-tick.is-out").count() >= reds, "Sazabi step 5: each red flag's stated figure sits outside the band")
+    check(pg.locator(".x-flag .tc-pair").count() == greens + reds and pg.locator(".x-flag .tc-strip").count() == 0,
+          "Sazabi step 5: every flag shows stated beside found, and no range strip without a sourced benchmark")
+    check(pg.locator(".x-flag[data-flag='red'] .tc-pair-value.is-out").count() >= reds, "Sazabi step 5: each red flag marks its stated figure")
     small = pg.locator(".x-smallflag").count()
     check(small >= 3, f"Sazabi step 5: sources that agree are small green flags ({small})")
     check(pg.locator(".x-verdicts .tc-verdict").count() == 10 and pg.locator(".x-drill").count() == 2, "Sazabi step 5: ten pieces with a verdict, two drill-downs")
