@@ -1,6 +1,8 @@
 # Style directions, 2026-10-22
 
-Ken asked for at least three style guides, each with a sample homepage, seeded by a hash of the datetime, and reviewed by persona agents. This folder holds all of it. STYLE_GUIDE.md stays unwritten until Ken picks a direction.
+**Decision:** Ken chose direction E in Archivo (`round_2/direction_e_archivo/`) on 2026-10-24 at 12:28 PM. The guide is [docs/ongoing/STYLE_GUIDE.md](../../ongoing/STYLE_GUIDE.md).
+
+Ken asked for at least three style guides, each with a sample homepage, seeded by a hash of the datetime, and reviewed by persona agents. This folder holds all of it.
 
 - `seed_directions.py` and `seed_directions.json`: the seed. sha256 of `2026-10-22T19:51:56Z` is `4156dadf...62d8`; each 20-digit slice picked one direction's motif, accent hue, type, density, ground and shape.
 - `BRIEF_FOR_DESIGNERS.md`: the brief the three designers worked from.

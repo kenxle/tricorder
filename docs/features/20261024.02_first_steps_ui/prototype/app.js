@@ -91,7 +91,7 @@
       `<li${k === cur ? ' aria-current="step"' : ""}>${i + 1}. ${esc(t)}</li>`).join("")}</ol>`;
   }
   function header(cur, back) {
-    return `<header class="masthead"><h1>Tricorder</h1><span class="note">Prototype. First steps, before any data room.</span></header>
+    return `<header class="masthead"><h1 class="tc-brand">Tricorder</h1><span class="note">Prototype. First steps, before any data room.</span></header>
       ${stepsNav(cur)}${back ? `<p class="back"><a href="#${back[0]}">Back to ${esc(back[1])}</a></p>` : ""}`;
   }
 
@@ -113,10 +113,10 @@
         <h2>Which company?</h2>
         <p>Paste the company's website or its YC company page. Tricorder sets the company up and starts the research.</p>
         <form id="urlform">
-          <input type="url" id="url" name="url" required placeholder="https://ploy.ai" aria-label="Company URL" value="${esc(S.url)}" />
-          <button class="primary" type="submit">Start</button>
+          <input type="url" id="url" name="url" required class="tc-input" placeholder="https://ploy.ai" aria-label="Company URL" value="${esc(S.url)}" />
+          <button class="tc-btn primary" type="submit">Start</button>
         </form>
-        <div class="tries"><span class="note">Try:</span>${tries.map((t) => `<button type="button" class="link" data-try="${esc(t)}">${esc(t.replace(/^https:\/\//, ""))}</button>`).join("")}</div>
+        <div class="tries"><span class="note">Try:</span>${tries.map((t) => `<button type="button" class="link tc-link-btn" data-try="${esc(t)}">${esc(t.replace(/^https:\/\//, ""))}</button>`).join("")}</div>
         <p class="note">Tricorder matches the URL against the saved YC Spring 2026 list of ${D.companies.length} companies. A link with <code>?company=</code> and a URL opens a company directly.</p>
       </section>`;
     const form = document.getElementById("urlform");
@@ -132,7 +132,7 @@
     chipN++;
     const src = D.sources[sid];
     const data = claimObj ? ` data-claim='${esc(JSON.stringify({ q: claimObj.quote, e: claimObj.excerpt, url: claimObj.url || "" }))}'` : "";
-    return `<button class="chip srcchip" type="button" data-src="${esc(sid)}"${data} aria-expanded="false" title="${esc(src.title)}">source</button>`;
+    return `<button class="tc-chip srcchip" type="button" data-src="${esc(sid)}"${data} aria-expanded="false" title="${esc(src.title)}">source</button>`;
   }
   function sourcePanel(sid, c) {
     const s = D.sources[sid];
@@ -158,21 +158,21 @@
   });
 
   const KIND = {
-    "company says": '<span class="chip says">The company says</span>',
-    "no signal": '<span class="chip nosignal">No signal</span>',
-    match: '<span class="chip match">Matches</span>',
-    differs: '<span class="chip warn">Differs</span>',
-    unconfirmed: '<span class="chip warn">Not confirmed</span>',
+    "company says": '<span class="tc-mark says">The company says</span>',
+    "no signal": '<span class="tc-mark nosignal">No signal</span>',
+    match: '<span class="tc-mark tc-mark--strong match">Matches</span>',
+    differs: '<span class="tc-mark tc-mark--weak warn">Differs</span>',
+    unconfirmed: '<span class="tc-mark tc-mark--thin warn">Not confirmed</span>',
   };
   function claimLi(c) {
     if (c.placeholder) {
-      return `<li class="claim ph wait">${esc(c.text)}<span class="chip ph" title="Prototype filler. Benjamin's research builds this part.">Placeholder</span></li>`;
+      return `<li class="claim ph wait"><span class="claim-text">${esc(c.text)}</span><span class="tc-mark ph" title="Prototype filler. Benjamin's research builds this part.">Placeholder</span></li>`;
     }
-    return `<li class="claim wait">${esc(c.text)}${KIND[c.kind] || ""}${chip(c.source, c)}</li>`;
+    return `<li class="claim wait"><span class="claim-text">${esc(c.text)}</span>${KIND[c.kind] || ""}${chip(c.source, c)}</li>`;
   }
   function gapsList(gaps) {
     if (!gaps || !gaps.length) return "";
-    return `<ul class="gaps">${gaps.map((g) => `<li class="wait"><strong>Gap:</strong> ${esc(g.text)} <span class="why">${esc(g.why)}</span></li>`).join("")}</ul>`;
+    return `<ul class="gaps tc-gap-list">${gaps.map((g) => `<li class="wait"><strong>Gap:</strong> ${esc(g.text)} <span class="why">${esc(g.why)}</span></li>`).join("")}</ul>`;
   }
 
   // Step 2: the first readout ------------------------------------------------------------------
@@ -182,10 +182,10 @@
     const cells = FIELD_LABELS.map(([k, label]) => {
       const v = f[k];
       const input = k === "stage"
-        ? `<select id="f-${k}" data-field="${k}">${Object.entries(STAGES).map(([sk, st]) => `<option value="${sk}"${v.value === sk ? " selected" : ""}>${st}</option>`).join("")}</select>`
-        : `<input type="text" id="f-${k}" data-field="${k}" value="${esc(v.value)}" />`;
+        ? `<select class="tc-input" id="f-${k}" data-field="${k}">${Object.entries(STAGES).map(([sk, st]) => `<option value="${sk}"${v.value === sk ? " selected" : ""}>${st}</option>`).join("")}</select>`
+        : `<input class="tc-input" type="text" id="f-${k}" data-field="${k}" value="${esc(v.value)}" />`;
       const src = v.source ? `${esc(v.note || "From")} ${v.note ? "" : esc(D.sources[v.source].title)}${chip(v.source)}` : esc(v.note || "");
-      return `<div class="field"><label for="f-${k}">${label}</label>${input}<div class="src">${src}${v.edited ? ' <span class="chip warn">Corrected by you</span>' : ""}</div></div>`;
+      return `<div class="field"><label class="tc-label" for="f-${k}">${label}</label>${input}<div class="src">${src}${v.edited ? ' <span class="tc-mark warn">Corrected by you</span>' : ""}</div></div>`;
     }).join("");
     const how = S.company ? `Matched by ${esc(S.how)} in the saved YC Spring 2026 list.` : "This URL is not in the saved YC Spring 2026 list.";
     return `<section class="setup" aria-label="The company">
@@ -200,7 +200,7 @@
         S.fields[k].value = el.value;
         S.fields[k].edited = true;
         const src = el.parentElement.querySelector(".src");
-        if (src && !src.querySelector(".warn")) src.insertAdjacentHTML("beforeend", ' <span class="chip warn">Corrected by you</span>');
+        if (src && !src.querySelector(".warn")) src.insertAdjacentHTML("beforeend", ' <span class="tc-mark warn">Corrected by you</span>');
         if (k === "name") { const t = document.getElementById("co-name"); if (t) t.textContent = el.value || "This company"; }
       });
     });
@@ -243,17 +243,17 @@
         <section class="roomgaps wait" id="roomgaps" aria-label="What only a data room can answer">
           <h2>What only a data room can answer</h2>
           <p class="note">These become the first items on the data-room request.</p>
-          <ul class="gaps">${R.room_gaps.map((g) => `<li class="wait"><strong>${esc(g.text)}</strong> <span class="why">${esc(g.why)}</span></li>`).join("")}</ul>
+          <ul class="gaps tc-gap-list">${R.room_gaps.map((g) => `<li class="wait"><strong>${esc(g.text)}</strong> <span class="why">${esc(g.why)}</span></li>`).join("")}</ul>
         </section>`;
     }
     app.innerHTML = `${header("readout", ["start", "the company URL"])}
-      <h2 id="co-name" style="margin:4px 0 0">${esc(name)}</h2>
+      <h2 id="co-name" class="co-title">${esc(name)}</h2>
       ${setupPanel()}
-      <div class="masthead"><h2 style="margin:0 auto 0 0;font-size:19px">First readout, before any data room</h2>
-        ${R ? '<button class="link" id="replay" type="button">Replay the research</button>' : ""}</div>
+      <div class="masthead readout-head"><h2 class="sub-title">First readout, before any data room</h2>
+        ${R ? '<button class="link tc-link-btn" id="replay" type="button">Replay the research</button>' : ""}</div>
       <p class="note">Built from public sources only. Every claim has a source. Items marked placeholder stand in for research the built app will run.</p>
       ${body}
-      <div class="actions"><button class="primary" id="to-request" type="button">Draft the data-room request</button></div>`;
+      <div class="actions"><button class="tc-btn primary" id="to-request" type="button">Draft the data-room request</button></div>`;
     bindSetup();
     document.getElementById("to-request").addEventListener("click", () => go("request"));
     if (R) {
@@ -356,12 +356,12 @@
   function itemLi(it) {
     const g = it.guidance;
     const tags = [
-      it.fromReadout ? '<span class="chip warn">From the readout</span>' : "",
-      it.firstTier ? `<span class="chip">First tier at ${esc(STAGES[S.itemsStage])}</span>` : "",
-      it.custom ? '<span class="chip">Added by you</span>' : "",
+      it.fromReadout ? '<span class="tc-mark warn">From the readout</span>' : "",
+      it.firstTier ? `<span class="tc-mark">First tier at ${esc(STAGES[S.itemsStage])}</span>` : "",
+      it.custom ? '<span class="tc-mark">Added by you</span>' : "",
     ].join("");
     return `<li class="ask">
-      <input type="checkbox" data-item="${esc(it.key)}" aria-label="Ask for ${esc(it.title)}"${it.checked ? " checked" : ""} />
+      <label class="hit"><input class="tc-check" type="checkbox" data-item="${esc(it.key)}" aria-label="Ask for ${esc(it.title)}"${it.checked ? " checked" : ""} /></label>
       <div>
         <div class="title">${esc(it.title)}</div>
         <div>${esc(it.ask)}</div>
@@ -383,44 +383,44 @@
     const company = S.fields.name.value || "This company";
     const fromReadout = S.items.filter((i) => i.fromReadout).length;
     app.innerHTML = `${header("request", ["readout", "the first readout"])}
-      <h2 style="margin:4px 0 0">${esc(company)}: the data-room request</h2>
-      <p class="banner" role="note">For the demo, the data room that comes back is synthetic. The team writes it. It is not ${esc(company)}'s data.</p>
+      <h2 class="co-title">${esc(company)}: the data-room request</h2>
+      <p class="banner tc-synthetic" role="note">For the demo, the data room that comes back is synthetic. The team writes it. It is not ${esc(company)}'s data.</p>
       <p class="note">The readout's gaps come first (${fromReadout}), then the standard first-tier documents for a ${esc(STAGES[S.itemsStage].toLowerCase())} company. Uncheck, check or add items. The draft updates as you go. Tricorder never sends it.</p>
       <div class="toolbar">
         <span class="note">Select:</span>
-        <button type="button" data-pick="all">All</button>
-        <button type="button" data-pick="none">None</button>
-        <button type="button" data-pick="readout">Only from the readout</button>
+        <button class="tc-btn tc-btn--secondary tc-btn--small" type="button" data-pick="all">All</button>
+        <button class="tc-btn tc-btn--secondary tc-btn--small" type="button" data-pick="none">None</button>
+        <button class="tc-btn tc-btn--secondary tc-btn--small" type="button" data-pick="readout">Only from the readout</button>
         <span class="note push" id="count"></span>
       </div>
       <div class="layout">
         <div>
           <ul class="asks" id="asks">${S.items.map(itemLi).join("")}</ul>
-          <form class="addrow" id="addform"><input type="text" id="addtext" placeholder="Add an item, for example: your SOC 2 report" aria-label="Add an item" />
-            <button type="submit">Add</button></form>
+          <form class="addrow" id="addform"><input class="tc-input" type="text" id="addtext" placeholder="Add an item, for example: your SOC 2 report" aria-label="Add an item" />
+            <button class="tc-btn tc-btn--secondary" type="submit">Add</button></form>
         </div>
         <div class="side">
           <aside class="drawer" aria-label="Draft to the founder">
             <h3>Draft to the founder</h3>
-            <p style="margin:0 0 4px;font-size:14px">Tricorder never sends this. Copy it, or open it in your own mail app and send it from there.</p>
-            <label for="d-to">To</label><input id="d-to" type="email" placeholder="founder's email" value="${esc(S.to)}" />
+            <p class="drawer-note">Tricorder never sends this. Copy it, or open it in your own mail app and send it from there.</p>
+            <label for="d-to">To</label><input class="tc-input" id="d-to" type="email" placeholder="founder's email" value="${esc(S.to)}" />
             <div class="row">
-              <div><label for="d-by">Ask for it by</label><input id="d-by" type="date" value="${esc(S.by)}" /></div>
-              <div><label for="d-sender">Your name</label><input id="d-sender" type="text" value="${esc(S.sender)}" /></div>
-              <div><label for="d-fund">Fund</label><input id="d-fund" type="text" value="${esc(S.fund)}" /></div>
+              <div><label for="d-by">Ask for it by</label><input class="tc-input" id="d-by" type="date" value="${esc(S.by)}" /></div>
+              <div><label for="d-sender">Your name</label><input class="tc-input" id="d-sender" type="text" value="${esc(S.sender)}" /></div>
+              <div><label for="d-fund">Fund</label><input class="tc-input" id="d-fund" type="text" value="${esc(S.fund)}" /></div>
             </div>
-            <p class="note" id="redo" hidden><button type="button" id="redo-btn">Redo the draft with these</button> This replaces your edits to the message.</p>
-            <label for="d-subject">Subject</label><input id="d-subject" type="text" />
-            <label for="d-body">Message (edit freely)</label><textarea id="d-body"></textarea>
-            <div class="actions" style="margin:10px 0 0">
-              <button class="primary" type="button" id="copy">Copy text</button>
-              <a class="btn" id="mailto" href="#">Open in mail app</a>
+            <p class="note" id="redo" hidden><button class="tc-btn tc-btn--secondary tc-btn--small" type="button" id="redo-btn">Redo the draft with these</button> This replaces your edits to the message.</p>
+            <label for="d-subject">Subject</label><input class="tc-input" id="d-subject" type="text" />
+            <label for="d-body">Message (edit freely)</label><textarea class="tc-input" id="d-body"></textarea>
+            <div class="actions drawer-actions">
+              <button class="tc-btn primary" type="button" id="copy">Copy text</button>
+              <a class="btn tc-btn tc-btn--secondary" id="mailto" href="#">Open in mail app</a>
               <span class="ok" id="copied" role="status"></span>
             </div>
           </aside>
         </div>
       </div>
-      <div class="actions"><button class="primary" type="button" id="to-received">The founder sends the room</button></div>`;
+      <div class="actions"><button class="tc-btn primary" type="button" id="to-received">The founder sends the room</button></div>`;
     bindRequest();
     refreshDraft(true);
   }
@@ -487,11 +487,11 @@
     const company = S.fields.name.value || "This company";
     const n = S.items ? S.items.filter((i) => i.checked).length : 0;
     app.innerHTML = `${header("received", ["request", "the data-room request"])}
-      <h2 style="margin:4px 0 0">${esc(company)}: data room received</h2>
-      <p class="banner" role="note">This data room is synthetic. The team wrote it for the demo. It is not ${esc(company)}'s data.</p>
+      <h2 class="co-title">${esc(company)}: data room received</h2>
+      <p class="banner tc-synthetic" role="note">This data room is synthetic. The team wrote it for the demo. It is not ${esc(company)}'s data.</p>
       <p>You asked for ${n} item${n === 1 ? "" : "s"}. Tricorder now checks what the room holds against that list, then reads the room for red and green flags.</p>
       <p>This is where the prototype joins the app that is already built: the readout with its flags, the gaps, and the requests for anything still missing.</p>
-      <div class="actions"><a class="btn primary" href="http://localhost:5173/">Open the readout in Tricorder</a>
+      <div class="actions"><a class="btn primary tc-btn" href="http://localhost:5173/">Open the readout in Tricorder</a>
         <span class="note">Runs on this laptop at localhost:5173.</span></div>`;
   }
 
