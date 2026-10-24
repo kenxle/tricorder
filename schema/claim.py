@@ -3,7 +3,7 @@
 The JSON Schema in FRAMEWORKS.md is the single source for every field type.
 These Pydantic models follow it field for field. If the two ever differ,
 FRAMEWORKS wins and this file changes. `python -m schema.export` writes
-`schema/claim.schema.json` and `schema/ts/claim.ts` from these models; a test
+`schema/claim.schema.json` and `packages/schema/src/claim.ts` from these models; a test
 fails when either is stale.
 
 Frozen before Saturday. On Saturday only the captain changes this file, and

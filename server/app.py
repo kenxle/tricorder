@@ -33,7 +33,7 @@ from founder_requests.intake import rooms_root
 def room_parents() -> list[Path]:
     return [ROOT / "data_room", rooms_root()]
 SAMPLE_OUT = ROOT / "sample_out"
-PAGE_DIST = ROOT / "readout" / "dist"
+PAGE_DIST = ROOT / "apps" / "web" / "dist"
 _ROOM_ID = re.compile(r"^[A-Za-z0-9_\-]+$")
 _ROOM_PART = re.compile(r"^\d\d_")
 

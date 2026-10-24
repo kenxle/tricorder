@@ -12,7 +12,7 @@ import type {
   PieceRevision,
   Readout,
   Source,
-} from "../../schema/ts/claim";
+} from "@tricorder/schema";
 import { PIECE_LABEL, VERDICT_LABEL } from "./labels";
 import { getClaimSource, getSteerable, postSteer } from "./steerApi";
 import "./steering.css";

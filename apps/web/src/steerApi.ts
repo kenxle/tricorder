@@ -1,6 +1,6 @@
 // Steering's door to the server (server/steering_routes.py). Types come from
-// schema/ts, generated from schema/claim.py; the response wrapper is steering's own.
-import type { Panel, PieceRevision, Readout } from "../../schema/ts/claim";
+// @tricorder/schema, generated from schema/claim.py; the response wrapper is steering's own.
+import type { Panel, PieceRevision, Readout } from "@tricorder/schema";
 
 export interface SteerResponse {
   readout: Readout;

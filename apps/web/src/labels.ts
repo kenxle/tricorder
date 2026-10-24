@@ -1,5 +1,5 @@
 // Words the page shows for schema values. BRAND.md owns the wording.
-import type { Piece } from "../../schema/ts/claim";
+import type { Piece } from "@tricorder/schema";
 
 export const PIECE_LABEL: Record<Piece["name"], string> = {
   traction_and_revenue: "Traction and revenue",

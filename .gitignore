@@ -18,7 +18,9 @@ out/
 .pytest_cache/
 *.egg-info/
 node_modules/
-readout/dist/
+apps/*/dist/
+.turbo/
+apps/*/.expo/
 rooms/
 # The readout store on this laptop (TRICORDER_STORE_DIR moves it). Investor data, never committed.
 store_data/

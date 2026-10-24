@@ -44,8 +44,8 @@ cmd_launch() {
   if curl -s -o /dev/null "http://127.0.0.1:$p/health"; then
     echo "port $p answers but this run did not start it; set TRICORDER_VERIFY_PORT to a free port" >&2; exit 1
   fi
-  if [ ! -f "$REPO/readout/dist/index.html" ]; then
-    (cd "$REPO/readout" && npm ci --silent && npm run build --silent) > "$EV/page_build.txt" 2>&1
+  if [ ! -f "$REPO/apps/web/dist/index.html" ]; then
+    (cd "$REPO" && bin/ci-web) > "$EV/page_build.txt" 2>&1
   fi
   # No subshell: $! must be the server's own pid, so cleanup stops exactly what launch started.
   cd "$REPO"
@@ -66,7 +66,7 @@ cmd_doctor() {
   local h; h="$(curl -s "$(url)/health")" || { echo "FAIL $(url)/health does not answer"; exit 1; }
   echo "$h" | grep -q '"ok":true' || { echo "FAIL health says: $h"; exit 1; }
   echo "$h" | grep -q '"redflags"' || { echo "FAIL the redflags scan is not available: $h"; exit 1; }
-  curl -s "$(url)/" | grep -q '<div id="root">' || { echo "FAIL the readout page is not served (build readout/dist)"; exit 1; }
+  curl -s "$(url)/" | grep -q '<div id="root">' || { echo "FAIL the readout page is not served (build apps/web/dist)"; exit 1; }
   echo "OK run=$RUN pid=$PID url=$(url) out=$OUT evidence=$EV rev=$(git -C "$REPO" rev-parse --short HEAD)"
 }
 

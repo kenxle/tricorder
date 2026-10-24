@@ -25,7 +25,7 @@ Preconditions:
 
 - `control.sh doctor` prints `OK` for this run.
 - No folder `rooms/brasswick_live` exists in the checkout. If one does, pick another copy name (`copy-room --as`, or `{"name": "..."}` on the copy route), build its readout, and on the page pick that room in `Room` before adding files (the page's own copy step always uses `<room>_live`).
-- `readout/dist/` was built from this checkout after the panel landed (`bin/ci-web`), or the page has no panel.
+- `apps/web/dist/` was built from this checkout after the panel landed (`bin/ci-web`), or the page has no panel.
 
 - **Build the readout.** Run `control.sh cli python3 -m scans.redflags data_room/brasswick`, then `control.sh cli python3 -m scans.memo data_room/brasswick`. Both exit 0.
 - **List the lines.** Run `control.sh cli python3 -m founder_requests list data_room/brasswick`. Line 1 is `Monthly revenue by customer  [Top 1, ...]` and asks only for the kind of revenue and an MRR column; line 6 is `Hiring plan  [Top 5]`; incorporation, IP and minutes read `after the term sheet`.

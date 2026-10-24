@@ -26,7 +26,7 @@ Preconditions:
 
 - `TRICORDER_VERIFY_RUN=steering` and `TRICORDER_VERIFY_PORT=8815` (or another free port).
 - Before `control.sh launch`, export `TRICORDER_STORE_DIR=<run folder>/store_data`, `TRICORDER_CACHE_DIR=<run folder>/cache` and `TRICORDER_OPERATOR=Ken`, so steers save into this run's store, never the repo's `store_data/`, and name who steered.
-- `readout/dist/` holds `steer.html`. Rebuild with `bin/ci-web` after changing the page; `control.sh launch` builds only when `dist/` is missing.
+- `apps/web/dist/` holds `steer.html`. Rebuild with `bin/ci-web` after changing the page; `control.sh launch` builds only when `dist/` is missing.
 - `ANTHROPIC_API_KEY` is unset, so the wording rules read every sentence. With a key set and `TRICORDER_OFFLINE` unset the model reads them instead; `control.sh` sets `TRICORDER_OFFLINE=1`, so it always runs the rules.
 - For the page: Node 20 or later and a folder outside the repo with `npm i --no-save playwright`; set `CHROME` to a Chrome binary if Playwright's own is not installed.
 - `control.sh doctor` prints `OK` for this run.

@@ -10,7 +10,7 @@ The readout page shows one room's readout: a synthetic-room banner, the top gree
 
 ## How to get to it (user POV)
 
-- Open the API's root URL in a browser after `readout/dist/` is built.
+- Open the API's root URL in a browser after `apps/web/dist/` is built.
 - Pick a room from the select labelled `Room`.
 - Press `Build readout`.
 

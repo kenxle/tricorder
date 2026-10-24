@@ -1,4 +1,4 @@
-"""Write schema/claim.schema.json and schema/ts/claim.ts from schema.claim.
+"""Write schema/claim.schema.json and packages/schema/src/claim.ts from schema.claim.
 
     python -m schema.export          write both files
     python -m schema.export --check  exit 1 if either is stale (CI runs this)
@@ -23,7 +23,7 @@ from schema.claim import EXPORTED
 
 HERE = Path(__file__).resolve().parent
 JSON_PATH = HERE / "claim.schema.json"
-TS_PATH = HERE / "ts" / "claim.ts"
+TS_PATH = HERE.parent / "packages" / "schema" / "src" / "claim.ts"
 
 
 def json_schema(mode: str = "validation") -> dict[str, Any]:

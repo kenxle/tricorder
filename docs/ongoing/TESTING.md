@@ -20,7 +20,7 @@ source .venv/bin/activate
 pip install -r requirements.txt     # Python 3.11 or newer
 pip install -r data_room/requirements.txt
 pip install pypdf                  # chart fixture PDF assembly
-(cd readout && npm ci)             # Node 22 matches CI
+npm ci                            # From the repo root; Node 22 matches CI
 ```
 
 The chart fixture tests need the data-room drawing packages and `pypdf`. Without them, pytest skips those fixtures. Install them for a complete local run without skips.
@@ -54,22 +54,40 @@ Zed project settings in `.zed/settings.json` disable automatic formatting on sav
 
 ## Intent agent guidance
 
-`readout/` pins `@tanstack/intent` as a development dependency. After `npm ci`, run the installed CLI from that directory:
+`apps/web/` pins `@tanstack/intent` as a development dependency. After `npm ci`, run the installed CLI from that workspace:
 
 ```sh
-cd readout
-./node_modules/.bin/intent list
-./node_modules/.bin/intent install
+npm exec --workspace=@tricorder/web -- intent list
+npm exec --workspace=@tricorder/web -- intent install
 ```
 
 The current dependencies ship no Intent skills, so setup leaves permissions and agent guidance unchanged. Run setup again after adding a package that ships skills. It configures guidance for npm dependencies, not Python packages.
+
+## TypeScript workspace commands
+
+Run from the repo root:
+
+```sh
+npm ci
+npm run dev:web                    # Only Vite; start the Python API separately
+npm run dev                        # Web dev server through Turbo
+npm run typecheck                  # Web and shared schema through Turbo
+npm run build                      # Web output: apps/web/dist/
+npm run build -- --filter=@tricorder/web
+```
+
+`bin/serve` serves the web build at `/` after a build and server restart. CI installs the root lockfile before running `bin/ci-web`. Dev tasks are uncached; build outputs and successful typechecks are cached locally in `.turbo/`.
+
+When adding Expo, create its package in `apps/mobile/`, use the root install and lockfile, and add `dev` and `typecheck` scripts to its own manifest. Its `dev` script joins the same root `npm run dev` automatically. To run only Expo, use `npm run dev -- --filter=@tricorder/mobile` once that package exists. Expo owns native launch/export commands; the current `build` task means a web bundle. Keep app environment files in their app directories. Run `npx expo install --check` from the mobile app after choosing its SDK and align React versions across apps.
+
+See the official [Expo monorepo guide](https://docs.expo.dev/guides/monorepos/) and [Turbo workspace structure](https://turborepo.dev/docs/crafting-your-repository/structuring-a-repository).
 
 ## The gates
 
 | Command | What it runs | Green means |
 |---|---|---|
 | `bin/ci-py` | `python -m schema.export --check` (generated schema files are current), then `pytest` over the test folders in `pyproject.toml`, including the store, founder requests, memo, and steering | exit 0, "N passed" and no failures |
-| `bin/ci-web` | The page's type check and build | exit 0 |
+| `bin/ci-web` | Turbo typechecks all TypeScript packages and builds apps | exit 0 |
 | `bin/smoke <room_dir>` | Every scan that exists on one room, then the merge | each scan prints its counts and the merge prints its summary, with no traceback |
 
 GitHub Actions runs `bin/ci-py` and `bin/ci-web` as two separate jobs on every pull request, so a red page build never blocks a Python merge. A red CI blocks a merge, even on Saturday.

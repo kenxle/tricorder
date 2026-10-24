@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import type { Claim, Readout, Source } from "../../schema/ts/claim";
+import type { Claim, Readout, Source } from "@tricorder/schema";
 import { buildReadout, getReadout, getRooms, getSourceText, type RoomInfo } from "./api";
 import { FounderRequests } from "./FounderRequests";
 import { SteerableSection } from "./Steering";

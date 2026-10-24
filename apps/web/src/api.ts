@@ -1,6 +1,6 @@
-// The page's only door to the data. Types come from schema/ts, generated from
+// The page's only door to the data. Types come from @tricorder/schema, generated from
 // schema/claim.py, so a field is never typed by hand here.
-import type { Readout, Source } from "../../schema/ts/claim";
+import type { Readout, Source } from "@tricorder/schema";
 
 export interface RoomInfo {
   id: string;

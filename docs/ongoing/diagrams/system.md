@@ -24,7 +24,9 @@ flowchart LR
     LLM[clients/llm.py<br/>words only] -.-> S
     S -->|out/room/scan.json| M[scans/memo<br/>quote check, link, claim support,<br/>pieces, flags, coverage, asks]
     M -->|out/room/readout.json| SV[server/app.py<br/>behind local_guard.py]
-    SV --> P[readout/ page]
+    SC[schema/claim.py] -->|schema.export| TS[packages/schema/ src types]
+    TS -.->|@tricorder/schema| P[apps/web/ page]
+    SV --> P
     P -->|one-sentence steer| ST[steering/]
     ST -->|rerun the piece| S
     P -->|ask list| FR[founder_requests/<br/>draft, never sent]

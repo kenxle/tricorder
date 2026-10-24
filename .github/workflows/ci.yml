@@ -25,5 +25,6 @@ jobs:
         with:
           node-version: "22"
           cache: npm
-          cache-dependency-path: readout/package-lock.json
+          cache-dependency-path: package-lock.json
+      - run: npm ci --no-audit --no-fund
       - run: bin/ci-web

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# The page gate: type check and build the readout page.
+# The TypeScript workspace gate: type check packages and build apps.
 set -euo pipefail
-cd "$(dirname "$0")/../readout"
-if [ ! -d node_modules ]; then npm ci --no-audit --no-fund; fi
+cd "$(dirname "$0")/.."
+if [ ! -x node_modules/.bin/turbo ]; then npm ci --no-audit --no-fund; fi
 npm run typecheck
 npm run build

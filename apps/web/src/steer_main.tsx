@@ -1,6 +1,6 @@
 import { StrictMode, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
-import type { Readout } from "../../schema/ts/claim";
+import type { Readout } from "@tricorder/schema";
 import { getRooms, type RoomInfo } from "./api";
 import { getSteerable } from "./steerApi";
 import { SteerableOverview } from "./Steering";

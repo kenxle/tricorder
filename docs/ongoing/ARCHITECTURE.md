@@ -24,12 +24,23 @@ Tricorder is a set of Python scans that each read a company's files and write on
 |---|---|---|
 | Scans, merge, scoring | Python 3.11+, Pydantic, pandas, openpyxl, pdfplumber, the Anthropic SDK | The scans are Python-shaped (spreadsheets, PDFs, whisper, the model). The feasibility research recommends it (Part 4.1). |
 | Server | FastAPI on uvicorn, `server/app.py`, localhost only. `server/local_guard.py` refuses a non-loopback Host, a cross-origin write and a text or form body on a JSON route. Each feature's routes live in `server/<feature>_routes.py`, included above the page mount. | The page reads JSON and never waits on Python. |
-| Page | React 19, TypeScript, Vite, in `readout/` | The frontend works in parallel against generated types and sample files. No CDN, so the demo needs no wifi. |
+| Page | React 19, TypeScript, Vite, in `apps/web/` | The frontend works in parallel against generated types and sample files. No CDN, so the demo needs no wifi. |
 | Store | Files: `out/<room>/` for results, `rooms/` for rooms that arrive by upload or the inbox, and `store_data/` for readouts saved per fund (`store/`, `python -m store`) | One laptop on Saturday. The store keeps each saved readout with its sources and files, lists what a fund holds for a company, and deletes it all with one confirmed command. |
 
 Rejected: one Streamlit app (no room for the frontend role, and a prior financial-AI hackathon disqualified "Simple Streamlit only applications"), and Rails with Python subprocesses (two runtimes on the demo laptop, one bottleneck).
 
-The web package also pins `@tanstack/intent` as development tooling for discovering agent skills in installed npm dependencies. Setup runs from `readout/`. No current dependency ships Intent skills, so no managed agent guidance has been generated. Commands live in [TESTING.md](TESTING.md#intent-agent-guidance).
+The web package also pins `@tanstack/intent` as development tooling for discovering agent skills in installed npm dependencies. Setup runs from `apps/web/`. No current dependency ships Intent skills, so no managed agent guidance has been generated. Commands live in [TESTING.md](TESTING.md#intent-agent-guidance).
+
+## TypeScript workspace
+
+The root `package.json` defines npm workspaces at `apps/*` and `packages/*`. `turbo.json` orchestrates package-owned build and typecheck scripts. Install from the root with `npm ci`; the root lockfile pins every JavaScript dependency. Root dependencies are repo tooling only. Python source stays in its current folders while the port proceeds.
+
+
+`apps/web/` depends on `@tricorder/schema` through its package manifest. `schema/claim.py` remains the source of truth, and `python -m schema.export` writes `packages/schema/src/claim.ts` plus `schema/claim.schema.json`. The schema package exports TypeScript source directly, so app bundlers consume it without a separate compile step. It has no React, browser or Node dependencies. The schema freshness gate remains in `bin/ci-py`.
+
+The future Expo app belongs in `apps/mobile/`. It should declare `@tricorder/schema` as a dependency and own its Expo scripts and environment files. No native app is scaffolded yet. Runtime scan and reader ports should become separate packages as they are implemented; native and web clients should not import filesystem readers or server credentials.
+
+Turbo caches `dist/**` for builds and task logs for typechecks. Typechecks use a transit dependency so schema source changes invalidate consuming apps. Build inputs include each package's `.env` files; Turbo does not load them. The Python root `.env` remains backend configuration and is not forwarded to web tasks. Dev servers are persistent and uncached. Remote caching is not configured.
 
 ## Folder layout
 
@@ -37,7 +48,7 @@ Each folder has one owner, so parallel pull requests do not touch the same files
 
 | Folder | What it holds | Owner on Saturday |
 |---|---|---|
-| `schema/` | `claim.py` (the models), `claim.schema.json` and `ts/claim.ts` (generated), `readers.py` (open a file at a locator), `check_quotes.py`, `settings.py` (the thresholds) | captain; `readers.py` backend-and-data |
+| `schema/` | `claim.py` (the models), `claim.schema.json` (generated), `readers.py` (open a file at a locator), `check_quotes.py`, `settings.py` (the thresholds) | captain; `readers.py` backend-and-data |
 | `scans/base.py` | The scan command line, result paths, ids, gaps, the input kinds a room holds | captain |
 | `scans/redflags/` | Scan 1: one module per FRAMEWORKS entry 1.1 to 1.14 (1.14 is deck against the books). `contract_reader.py` is the one contract reader for entry 1.13. Each module numbers its own claims (`redflags-<module>-001`), and a module that crashes becomes a gap. | design-and-finance |
 | `scans/comps/` | Scan 2: public comps and private rounds | design-and-finance |
@@ -50,7 +61,8 @@ Each folder has one owner, so parallel pull requests do not touch the same files
 | `scans/memo/` | The merge and its steps: linking, claim support, piece verdicts, top flags, coverage, ask list, connecting sentences | captain |
 | `clients/` | `llm.py`, the one door to the model; one module per outside source, each with off, sample and live modes | backend-and-data |
 | `server/` | The FastAPI app | backend-and-data |
-| `readout/` | The page | frontend |
+| `apps/web/` | The React/Vite web app, built into `apps/web/dist/` and served by FastAPI | Benjamin |
+| `packages/schema/` | Platform-neutral generated TypeScript types, imported as `@tricorder/schema` by apps | Benjamin |
 | `eval/` | `score.py`: a readout against an answer key | captain |
 | `memo/`, `inbox/`, `store/` | The memo export (built; reader copies not yet), the inbox webhook (not built), the readout store (built) | agent |
 | `founder_requests/` | The request to the founder drafted from the ask list, and a reply's files added to the room so the waiting scans rerun | agent |

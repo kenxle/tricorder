@@ -139,7 +139,8 @@ tricorder/
 ├── founder_requests/      # Requests to the company for missing items
 ├── store/                 # The readout store
 ├── server/                # The API (FastAPI)
-├── readout/               # The readout page (Vite)
+├── apps/web/              # The readout page (React/Vite)
+├── packages/schema/       # Generated shared TypeScript types
 ├── eval/                  # Scoring against the answer keys
 ├── clients/               # Outside data clients
 ├── bin/                   # serve, smoke, ci-py, ci-web

@@ -9,7 +9,7 @@ Tricorder reads a startup's data room and builds a readout of sourced claims. A 
 
 - **The command line.** `python3 -m scans.<scan> <room>` runs one scan, `python3 -m scans.memo <room>` builds the readout, `bin/smoke <room>` runs both, `python3 -m eval.score <room>` scores a room against its answer key.
 - **The API.** `server/app.py` (FastAPI) lists rooms, runs scans, builds and serves readouts, and returns the text at a source's locator.
-- **The readout page.** A React page in `readout/`, built to `readout/dist/` and served by the API at `/`.
+- **The readout page.** A React page in `apps/web/`, built to `apps/web/dist/` and served by the API at `/`.
 
 The rooms are synthetic, in `data_room/`: `hollis_voice` (full room), `hollis_voice_seed_drop` (the first files only), `hollis_voice_clean` (no plants), and `brasswick` (a second company). Each planted room has an answer key (`data_room/answer_key*.json`). Nothing reaches the network: the helper sets `TRICORDER_OFFLINE=1`.
 
@@ -22,7 +22,7 @@ export TRICORDER_VERIFY_RUN=pr-123        # any name; one run, one folder
 .claude/skills/verify-tricorder/control.sh launch
 ```
 
-- It builds `readout/dist/` if missing (`npm ci && npm run build` in `readout/`, needs Node 20), then starts the API on port 8790 (`TRICORDER_VERIFY_PORT` to change) with `TRICORDER_OUT_DIR` set to this run's own `out/`.
+- It builds `apps/web/dist/` if missing (`bin/ci-web` from the repo root, needs Node 22 or newer), then starts the API on port 8790 (`TRICORDER_VERIFY_PORT` to change) with `TRICORDER_OUT_DIR` set to this run's own `out/`.
 - Ready means it printed `ready: http://127.0.0.1:8790 ...`, which it prints only after `/health` answers `"ok":true`.
 - It refuses a port that answers but that it did not start. Ken's own instance and other runs stay untouched.
 - Scan results land in this run's `out/`, never in the repo's `out/`. A fresh run starts with no results, so drive the scans before reading any.

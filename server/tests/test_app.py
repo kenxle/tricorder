@@ -1,4 +1,5 @@
 import pytest
+import runpy
 from fastapi.testclient import TestClient
 
 from scans.base import ROOT
@@ -10,6 +11,24 @@ client = TestClient(app, base_url="http://127.0.0.1")  # the local guard refuses
 def test_health_answers():
     r = client.get("/health")
     assert r.status_code == 200 and r.json()["ok"] is True
+
+
+def test_server_serves_web_workspace_pages_and_assets(tmp_path, monkeypatch):
+    """Starting the API after a workspace build serves both Vite entrypoints."""
+    dist = tmp_path / "apps" / "web" / "dist"
+    (dist / "assets").mkdir(parents=True)
+    (dist / "index.html").write_text('<script src="/assets/main.js"></script>')
+    (dist / "steer.html").write_text("<h1>Steering</h1>")
+    (dist / "assets" / "main.js").write_text('console.log("readout");')
+    monkeypatch.setattr("scans.base.ROOT", tmp_path)
+    isolated = runpy.run_path(str(ROOT / "server" / "app.py"))["app"]
+    with TestClient(isolated, base_url="http://127.0.0.1") as web:
+        page = web.get("/")
+        assert page.status_code == 200
+        assert '/assets/main.js' in page.text
+        assert web.get("/steer.html").text == "<h1>Steering</h1>"
+        assert web.get("/assets/main.js").text == 'console.log("readout");'
+        assert web.get("/health").json()["ok"] is True
 
 
 def test_rooms_lists_the_synthetic_rooms():
