@@ -475,6 +475,87 @@ window.TC_PIECE_REPORTS_DATA = {
     "02_financials/financial_model.xlsx",
     "06_team/hiring_plan.csv"
    ]
+  },
+  {
+   "key": "piece-the_pitch_itself",
+   "piece": "the_pitch_itself",
+   "title": "The pitch itself",
+   "knowledge": "knowledge/the_pitch_itself.md",
+   "paras": [
+    {
+     "lead": "The ask.",
+     "refs": [
+      "pi-1"
+     ],
+     "body": "A $25.0M Series A at $150.0M pre-money, so $175.0M post. The new money buys 14.29% of the company."
+    },
+    {
+     "lead": "The price against revenue.",
+     "refs": [
+      "tr-1",
+      "tr-3"
+     ],
+     "body": "The post-money is 62.5 times the deck's ARR and 71.7 times ARR rebuilt from the customer file. The pilot is the difference. Tricorder sets no line for the multiple. The partner weighs it against comparable rounds."
+    },
+    {
+     "lead": "What the round buys.",
+     "refs": [
+      "pi-1",
+      "bu-2"
+     ],
+     "body": "With the round in the bank and every planned hire paid, the cash lasts 47.3 months. Without the round, 24.1. YC advises raising enough to reach the next fundable milestone, usually 12 to 18 months out. 47.3 months is past that."
+    },
+    {
+     "lead": "A pitch claim that holds.",
+     "refs": [
+      "pi-2"
+     ],
+     "body": "The deck says 13% of the YC batch use Ploy. The workspace file tags 13.5%, and the launch post agrees."
+    }
+   ],
+   "asks": [
+    "The use of funds by line, each tied to a dated milestone and to the hiring plan.",
+    "The pro forma cap table after the round, with the option pool.",
+    "Which ARR the $150.0M pre-money was set on: the deck's, or the one without the pilot."
+   ],
+   "chart": {
+    "kind": "bars",
+    "unit": "multiple",
+    "x": [
+     "Deck ARR, $2.8M",
+     "Model ARR, $2,802,000",
+     "Rebuilt ARR, $2,442,000"
+    ],
+    "series": [
+     {
+      "name": "Post-money as a multiple of ARR",
+      "y": [
+       62.5,
+       62.46,
+       71.66
+      ],
+      "styles": [
+       "plan",
+       "plan",
+       "mixed"
+      ],
+      "text": [
+       "62.5x",
+       "62.5x",
+       "71.7x"
+      ]
+     }
+    ],
+    "label": "Post-money of $175.0M as a multiple of ARR: Deck ARR, $2.8M 62.5x, Model ARR, $2,802,000 62.5x, Rebuilt ARR, $2,442,000 71.7x."
+   },
+   "needs": [
+    "01_pitch/pitch_deck.pdf",
+    "02_financials/financial_model.xlsx",
+    "03_metrics/customer_mrr_by_month.csv",
+    "03_metrics/workspaces_by_plan.csv",
+    "04_customers/order_form_northwind_analytics.pdf",
+    "06_team/hiring_plan.csv"
+   ]
   }
  ],
  "sazabi": [
@@ -913,6 +994,107 @@ window.TC_PIECE_REPORTS_DATA = {
    "needs": [
     "02_financials/financial_model.xlsx",
     "06_team/founder_bio_sherwood_callaway.pdf",
+    "06_team/hiring_plan.csv"
+   ]
+  },
+  {
+   "key": "piece-the_pitch_itself",
+   "piece": "the_pitch_itself",
+   "title": "The pitch itself",
+   "knowledge": "knowledge/the_pitch_itself.md",
+   "paras": [
+    {
+     "lead": "The ask.",
+     "refs": [
+      "pi-1"
+     ],
+     "body": "An $8.0M seed on SAFEs at a $40.0M post-money cap. If it all converts at the cap, the seed owns 20.00%."
+    },
+    {
+     "lead": "Called closed, partly unsigned.",
+     "refs": [
+      "pi-2",
+      "lc-2"
+     ],
+     "body": "The deck calls the round closed. The SAFE schedule shows $5,250,000 signed and $2,750,000 of commitments with no signed SAFE: 34.4% of the round. A commitment is a promise until the paper is signed."
+    },
+    {
+     "lead": "The price against revenue.",
+     "refs": [
+      "tr-3"
+     ],
+     "body": "The $40.0M cap is 229 times recurring ARR of $174,960. Tricorder sets no line for the multiple. At seed the price rests on more than revenue, and the partner weighs it against comparable rounds."
+    },
+    {
+     "lead": "What the unsigned money changes.",
+     "refs": [
+      "bu-2",
+      "pi-2"
+     ],
+     "body": "With every planned hire, the cash in the bank lasts 14.5 months. If the unsigned $2.75M comes in, 23.8. YC advises raising enough for the next fundable milestone, usually 12 to 18 months out. The signed money alone gives 14.5 months, inside that."
+    }
+   ],
+   "asks": [
+    "Who the unsigned commitments are, and when they sign.",
+    "Signed copies of every SAFE, so the schedule ties to the papers.",
+    "The use of funds by line, each tied to a dated milestone."
+   ],
+   "chart": {
+    "kind": "bars",
+    "unit": "usd",
+    "barmode": "stack",
+    "x": [
+     "What the deck says",
+     "What the SAFE schedule shows"
+    ],
+    "series": [
+     {
+      "name": "Called closed",
+      "y": [
+       8000000,
+       0
+      ],
+      "style": "plan",
+      "text": [
+       "$8.0M",
+       ""
+      ]
+     },
+     {
+      "name": "Signed SAFEs",
+      "y": [
+       0,
+       5250000
+      ],
+      "style": "good",
+      "text": [
+       "",
+       "$5.25M"
+      ],
+      "textposition": "inside"
+     },
+     {
+      "name": "Commitments with no signed SAFE",
+      "y": [
+       0,
+       2750000
+      ],
+      "style": "thin",
+      "text": [
+       "",
+       "$2.75M unsigned"
+      ]
+     }
+    ],
+    "label": "The seed as the deck states it, $8.0M closed, and as the SAFE schedule shows it: $5.25M signed and $2.75M with no signed SAFE."
+   },
+   "needs": [
+    "01_pitch/pitch_deck.pdf",
+    "02_financials/financial_model.xlsx",
+    "02_financials/monthly_statements.xlsx",
+    "03_metrics/customer_mrr_by_month.csv",
+    "05_legal/cap_table.xlsx",
+    "05_legal/safe_schedule.pdf",
     "06_team/hiring_plan.csv"
    ]
   }

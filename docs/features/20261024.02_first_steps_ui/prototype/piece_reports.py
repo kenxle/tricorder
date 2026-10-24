@@ -496,8 +496,98 @@ def market_sazabi(R: Room) -> dict:
     ], chart)
 
 
+# The pitch itself ----------------------------------------------------------------------------------------------
+
+
+def round_terms(R: Room) -> dict:
+    rd = R.r["round"]
+    raise_, pre, post = num(rd["raise"]), num(rd["pre_money"]), num(rd["post_money"])
+    assert close(post, pre + raise_), "post-money is pre-money plus the raise"
+    own = raise_ / post
+    assert pct(own, 2) == rd["ownership"], "ownership matches the room's round"
+    return {"name": rd["name"], "raise": raise_, "pre": pre, "post": post, "own": own}
+
+
+def runway_end(R: Room, style: str) -> float:
+    """Months until the cash runs out on one line of Kimmy's cash chart (burn and runway report)."""
+    s = next(x for x in R.report("burn_and_runway")["chart"]["series"] if x["style"] == style)
+    end, label = s["points"][-1][0], float(s["end"].split()[0])
+    assert abs(end - label) <= 0.06, "the line's end matches its label"
+    return label
+
+
+def yc_fit(months: float) -> str:
+    """Where a runway sits against YC's 12 to 18 months (knowledge/the_pitch_itself.md)."""
+    return "past that" if months > 18 else "inside that" if months >= 12 else "short of that"
+
+
+def multiple_chart(post: float, arrs: list[tuple[str, float, str]], what: str) -> dict:
+    return {"kind": "bars", "unit": "multiple", "x": [a[0] for a in arrs],
+            "series": [{"name": "Post-money as a multiple of ARR", "y": [round(post / a[1], 2) for a in arrs], "styles": [a[2] for a in arrs],
+                        "text": [f"{post / a[1]:,.1f}x" for a in arrs]}],
+            "label": f"{what} of {big(post)} as a multiple of ARR: " + ", ".join(f"{a[0]} {post / a[1]:,.1f}x" for a in arrs) + "."}
+
+
+def pitch_ploy(R: Room) -> dict:
+    t = round_terms(R)
+    assert close(t["raise"], R.v("pi-1"))
+    deck_arr, model_arr, arr = R.v("tr-1"), R.v("tr-2"), R.v("tr-3")
+    rw_round, rw_hires = runway_end(R, "round"), runway_end(R, "hires")
+    share = R.v("pi-2")
+    chart = multiple_chart(t["post"], [(f"Deck ARR, {big(deck_arr)}", deck_arr, "plan"), (f"Model ARR, {money(model_arr)}", model_arr, "plan"),
+                                       (f"Rebuilt ARR, {money(arr)}", arr, "mixed")], "Post-money")
+    return build(R, "the_pitch_itself", [
+        {"lead": "The ask.", "refs": ["pi-1"],
+         "body": f"A {big(t['raise'])} {t['name']} at {big(t['pre'])} pre-money, so {big(t['post'])} post. The new money buys {pct(t['own'], 2)} of the company."},
+        {"lead": "The price against revenue.", "refs": ["tr-1", "tr-3"],
+         "body": f"The post-money is {t['post'] / deck_arr:.1f} times the deck's ARR and {t['post'] / arr:.1f} times ARR rebuilt from the customer file. "
+                 "The pilot is the difference. Tricorder sets no line for the multiple. The partner weighs it against comparable rounds."},
+        {"lead": "What the round buys.", "refs": ["pi-1", "bu-2"],
+         "body": f"With the round in the bank and every planned hire paid, the cash lasts {rw_round:.1f} months. Without the round, {rw_hires:.1f}. "
+                 f"YC advises raising enough to reach the next fundable milestone, usually 12 to 18 months out. {rw_round:.1f} months is {yc_fit(rw_round)}."},
+        {"lead": "A pitch claim that holds.", "refs": ["pi-2"],
+         "body": f"The deck says {R.f['batch_share_pct']}% of the YC batch use Ploy. The workspace file tags {pct(share)}, and the launch post agrees."},
+    ], [
+        "The use of funds by line, each tied to a dated milestone and to the hiring plan.",
+        "The pro forma cap table after the round, with the option pool.",
+        f"Which ARR the {big(t['pre'])} pre-money was set on: the deck's, or the one without the pilot.",
+    ], chart)
+
+
+def pitch_sazabi(R: Room) -> dict:
+    t = round_terms(R)
+    cap_total, unsigned, signed = R.v("pi-1"), R.v("pi-2"), R.v("lc-2")
+    assert close(cap_total, t["raise"]) and close(signed + unsigned, cap_total), "signed plus unsigned is the round"
+    arr = R.v("tr-3")
+    rw_round, rw_hires = runway_end(R, "round"), runway_end(R, "hires")
+    chart = {"kind": "bars", "unit": "usd", "barmode": "stack", "x": ["What the deck says", "What the SAFE schedule shows"],
+             "series": [{"name": "Called closed", "y": [cap_total, 0], "style": "plan", "text": [big(cap_total), ""]},
+                        {"name": "Signed SAFEs", "y": [0, signed], "style": "good", "text": ["", big(signed)], "textposition": "inside"},
+                        {"name": "Commitments with no signed SAFE", "y": [0, unsigned], "style": "thin", "text": ["", f"{big(unsigned)} unsigned"]}],
+             "label": f"The {t['name'].lower()} as the deck states it, {big(cap_total)} closed, and as the SAFE schedule shows it: "
+                      f"{big(signed)} signed and {big(unsigned)} with no signed SAFE."}
+    return build(R, "the_pitch_itself", [
+        {"lead": "The ask.", "refs": ["pi-1"],
+         "body": f"An {big(cap_total)} {t['name'].lower()} on SAFEs at a {big(t['post'])} post-money cap. If it all converts at the cap, the seed owns {pct(t['own'], 2)}."},
+        {"lead": "Called closed, partly unsigned.", "refs": ["pi-2", "lc-2"],
+         "body": f"The deck calls the round closed. The SAFE schedule shows {money(signed)} signed and {money(unsigned)} of commitments with no signed SAFE: "
+                 f"{pct(unsigned / cap_total)} of the round. A commitment is a promise until the paper is signed."},
+        {"lead": "The price against revenue.", "refs": ["tr-3"],
+         "body": f"The {big(t['post'])} cap is {t['post'] / arr:,.0f} times recurring ARR of {money(arr)}. "
+                 "Tricorder sets no line for the multiple. At seed the price rests on more than revenue, and the partner weighs it against comparable rounds."},
+        {"lead": "What the unsigned money changes.", "refs": ["bu-2", "pi-2"],
+         "body": f"With every planned hire, the cash in the bank lasts {rw_hires:.1f} months. If the unsigned {big(unsigned)} comes in, {rw_round:.1f}. "
+                 f"YC advises raising enough for the next fundable milestone, usually 12 to 18 months out. The signed money alone gives {rw_hires:.1f} months, {yc_fit(rw_hires)}."},
+    ], [
+        f"Who the unsigned commitments are, and when they sign.",
+        "Signed copies of every SAFE, so the schedule ties to the papers.",
+        "The use of funds by line, each tied to a dated milestone.",
+    ], chart)
+
+
 PIECES = {
     "retention": {"ploy": retention_ploy, "sazabi": retention_sazabi},
+    "the_pitch_itself": {"ploy": pitch_ploy, "sazabi": pitch_sazabi},
     "market": {"ploy": market_ploy, "sazabi": market_sazabi},
     "customers": {"ploy": customers_ploy, "sazabi": customers_sazabi},
     "unit_economics": {"ploy": unit_economics_ploy, "sazabi": unit_economics_sazabi},
