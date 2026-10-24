@@ -57,7 +57,6 @@ Tricorder automates research and helps associates build the memo that will be th
 - **Don't take agency from the associate.** Collaborate with the associate and make them faster, but don't do their job.
 - **Principals want agency too.** We have to balance a clean memo with an ability to let Principals dig deeper and tweak financial models.
 - **The first pass starts before the data room.** The slow part is gathering, so Tricorder has to research the company from public sources and draft the request for documents.
-- **The partner's memo has to stay live.** We built a PDF export early. On Saturday we decided the partner's memo cannot be a PDF, because the partner needs to drill in and steer it.
 - **Traction means different things by business model.** Kimmy showed us that a B2B company proves demand with paying customers, while a game company may show wishlists and trailer views.
 
 ## What's next for Tricorder
