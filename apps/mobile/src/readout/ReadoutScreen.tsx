@@ -87,7 +87,10 @@ export default function ReadoutScreen() {
   return (
     <SafeAreaView style={[styles.screen, { backgroundColor: colors.bg }]}>
       <View style={styles.masthead}>
-        <Heading>Tricorder</Heading>
+        <View>
+          <Note style={styles.eyebrow}>THE WORKING READOUT</Note>
+          <Heading>Data rooms</Heading>
+        </View>
         <Action
           title={room ? `Room: ${room}` : "Choose room"}
           onPress={() => setPicker(true)}
@@ -165,6 +168,7 @@ function RoomReadout({
   room: string;
   onRoom: (room: string) => void;
 }) {
+  const colors = useReadoutColors();
   const [readout, setReadout] = useState<Readout | null>(null);
   const [loading, setLoading] = useState(true);
   const [building, setBuilding] = useState(false);
@@ -328,12 +332,23 @@ function RoomReadout({
           {error ? <Body accessibilityRole="alert">{error}</Body> : null}
           {readout && (
             <>
+              <Heading style={styles.title}>
+                {room.replaceAll("_", " ")}
+              </Heading>
+              <Note>
+                Every claim sourced. Review the findings, inspect the evidence,
+                and steer the readout.
+              </Note>
               {readout.synthetic_notice && (
-                <Card>
-                  <Body>{readout.synthetic_notice}</Body>
-                </Card>
+                <Note style={styles.eyebrow}>{readout.synthetic_notice}</Note>
               )}
-              <Heading>Top green and red flags</Heading>
+              <FounderRequests
+                room={room}
+                onRebuilt={(next) =>
+                  next === room ? void load() : onRoom(next)
+                }
+              />
+              <Heading>What stands out</Heading>
               {!readout.top_flags.some((f) => f.kind === "green") && (
                 <Note>No green headline from the linked evidence yet.</Note>
               )}
@@ -349,8 +364,14 @@ function RoomReadout({
                 )
                 .map((flag) => (
                   <Card key={`${flag.kind}-${flag.rank}`}>
-                    <Note>
-                      {flag.kind === "green" ? "Green flag" : "Red flag"}
+                    <Note
+                      style={{
+                        color:
+                          flag.kind === "green" ? colors.green : colors.red,
+                        fontFamily: "PlexMono",
+                      }}
+                    >
+                      {flag.kind === "green" ? "● Green flag" : "▲ Red flag"}
                     </Note>
                     <Action
                       title={flag.text}
@@ -424,26 +445,36 @@ function RoomReadout({
           </Card>
         </>
       )}
-      ListFooterComponent={
-        readout ? (
-          <FounderRequests
-            room={room}
-            onRebuilt={(next) => (next === room ? void load() : onRoom(next))}
-          />
-        ) : undefined
-      }
     />
   );
 }
 const styles = StyleSheet.create({
   content: {
     alignSelf: "center",
-    gap: 8,
-    maxWidth: 960,
-    paddingBottom: 32,
+    gap: 16,
+    maxWidth: 1200,
+    paddingBottom: 48,
     width: "100%",
   },
+  eyebrow: { fontFamily: "PlexMono", fontSize: 12 },
   list: { flex: 1 },
-  masthead: { gap: 8, paddingVertical: 12 },
+  masthead: {
+    alignItems: "center",
+    alignSelf: "center",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 16,
+    justifyContent: "space-between",
+    maxWidth: 1200,
+    paddingVertical: 16,
+    width: "100%",
+  },
   screen: { flex: 1, paddingHorizontal: 16 },
+  title: {
+    fontFamily: "ArchivoDisplay",
+    fontSize: 44,
+    letterSpacing: -1.6,
+    lineHeight: 48,
+    textTransform: "capitalize",
+  },
 });

@@ -14,7 +14,6 @@ import {
   ScrollView,
   StyleSheet,
   Switch,
-  useColorScheme,
   View,
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
@@ -29,6 +28,7 @@ import {
   Note,
   Row,
   renderReadoutScroll,
+  useReadoutColors,
 } from "./ui";
 
 type Lines = PythonModels["FounderRequestList"];
@@ -127,7 +127,7 @@ export function FounderRequests({
   const [receipt, setReceipt] = useState<Receipt | null>(
     lastReceipt?.room === room ? lastReceipt : null
   );
-  const dark = useColorScheme() === "dark";
+  const colors = useReadoutColors();
   return (
     <Card>
       <Heading>Requests to the founder</Heading>
@@ -136,6 +136,7 @@ export function FounderRequests({
         Tricorder never sends it: copy it, or open it in your own mail app.
       </Note>
       <Action
+        primary
         title="Manage requests and founder replies"
         onPress={() => setVisible(true)}
       />
@@ -150,12 +151,7 @@ export function FounderRequests({
         }}
       >
         <SafeAreaProvider>
-          <SafeAreaView
-            style={[
-              styles.fill,
-              { backgroundColor: dark ? "#111317" : "#ffffff" },
-            ]}
-          >
+          <SafeAreaView style={[styles.fill, { backgroundColor: colors.bg }]}>
             {visible && (
               <RequestManager
                 key={room}

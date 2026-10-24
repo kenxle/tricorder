@@ -13,22 +13,30 @@ import type { TextInputProps, TextProps, ScrollViewProps } from "react-native";
 export function useReadoutColors() {
   return useColorScheme() === "dark"
     ? {
-        amber: "#f0b44c",
-        bg: "#111317",
-        fg: "#e8eaed",
-        green: "#5cc48d",
-        line: "#424854",
-        muted: "#9aa1ab",
-        red: "#ff8a80",
+        accent: "#d3bf8e",
+        amber: "#d3bf8e",
+        bg: "#131210",
+        buttonBg: "#d3bf8e",
+        buttonFg: "#16140f",
+        fg: "#eeebe4",
+        green: "#7dc4a0",
+        line: "#45413a",
+        muted: "#bdb7ab",
+        red: "#f08c78",
+        surface: "#1a1916",
       }
     : {
-        amber: "#8a5a00",
+        accent: "#85692f",
+        amber: "#85692f",
         bg: "#ffffff",
-        fg: "#16181d",
-        green: "#1f7a4d",
-        line: "#d1d5db",
-        muted: "#5d6470",
-        red: "#b3261e",
+        buttonBg: "#1c1b18",
+        buttonFg: "#eadbb4",
+        fg: "#1c1b18",
+        green: "#1e7550",
+        line: "#cdc7ba",
+        muted: "#47443d",
+        red: "#b3402e",
+        surface: "#ffffff",
       };
 }
 export function Body({ style, ...props }: TextProps) {
@@ -60,10 +68,12 @@ export function Action({
   title,
   onPress,
   disabled = false,
+  primary = false,
 }: {
   title: string;
   onPress: () => void;
   disabled?: boolean;
+  primary?: boolean;
 }) {
   const colors = useReadoutColors();
   return (
@@ -76,12 +86,22 @@ export function Action({
       style={({ pressed }) => [
         styles.action,
         {
+          backgroundColor: primary ? colors.buttonBg : colors.surface,
           borderColor: colors.line,
           opacity: disabled ? 0.45 : pressed ? 0.65 : 1,
         },
       ]}
     >
-      <Body selectable={false}>{title}</Body>
+      <Body
+        selectable={false}
+        style={{
+          color: primary ? colors.buttonFg : colors.fg,
+          fontFamily: "ArchivoBold",
+          fontSize: 15,
+        }}
+      >
+        {title}
+      </Body>
     </Pressable>
   );
 }
@@ -93,7 +113,7 @@ export function Field({
   const colors = useReadoutColors();
   return (
     <View style={styles.field}>
-      <Body>{label}</Body>
+      <Body style={styles.label}>{label}</Body>
       <TextInput
         accessibilityLabel={label}
         placeholderTextColor={colors.muted}
@@ -111,7 +131,14 @@ export function Field({
 export function Card({ children }: PropsWithChildren) {
   const colors = useReadoutColors();
   return (
-    <View style={[styles.card, { borderColor: colors.line }]}>{children}</View>
+    <View
+      style={[
+        styles.card,
+        { backgroundColor: colors.surface, borderColor: colors.line },
+      ]}
+    >
+      {children}
+    </View>
   );
 }
 // Explicitly use the app ScrollView. The default FlatList renderer painted blank
@@ -132,27 +159,35 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 9,
   },
-  body: { flexShrink: 1, fontSize: 16, lineHeight: 24 },
+  body: { flexShrink: 1, fontFamily: "Archivo", fontSize: 16, lineHeight: 24 },
   card: {
-    borderRadius: 8,
+    borderRadius: 14,
     borderWidth: 1,
-    gap: 10,
-    marginVertical: 6,
-    padding: 12,
+    gap: 12,
+    marginVertical: 8,
+    padding: 24,
   },
   field: { gap: 6 },
   heading: {
-    fontSize: 20,
-    fontWeight: "600",
-    lineHeight: 28,
+    fontFamily: "ArchivoBold",
+    fontSize: 24,
+    letterSpacing: -0.4,
+    lineHeight: 30,
     marginVertical: 8,
   },
   input: {
     borderRadius: 8,
     borderWidth: 1,
+    fontFamily: "Archivo",
     fontSize: 16,
     minHeight: 48,
     padding: 12,
+  },
+  label: {
+    fontFamily: "PlexMono",
+    fontSize: 12,
+    letterSpacing: 1,
+    textTransform: "uppercase",
   },
   row: { alignItems: "center", flexDirection: "row", flexWrap: "wrap", gap: 8 },
 });

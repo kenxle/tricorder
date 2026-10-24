@@ -193,4 +193,4 @@ Secrets come from the environment and are never committed. `.env.example` lists 
 
 ### Mobile UX sketch
 
-`apps/mobile/src/app/flow.tsx` exposes the isolated `prototype/FlowScreen.tsx` sketch through the UX Flow tab. Its synthetic fixtures and editable request, revision and memo state are local to the component. It imports no API adapter. The root uses the platform-specific AppTabs: native bottom tabs on iOS/Android and a normal-flow web tab bar. Home continues to render the existing readout.
+`apps/mobile/src/app/flow.tsx` exposes the isolated `prototype/FlowScreen.tsx` sketch through the UX Flow tab. Its synthetic fixtures and editable request, revision and memo state are local to the component. It imports no API adapter. The root uses the platform-specific AppTabs: native bottom tabs on iOS/Android and a normal-flow web tab bar. Home continues to render the existing readout. Shared native UI uses the Black Card light/dark palette and bundled Archivo/Plex Mono TTF fonts derived from the style guide assets through the existing expo-font package.
