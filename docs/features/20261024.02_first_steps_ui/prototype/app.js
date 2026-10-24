@@ -172,7 +172,28 @@
     if (c.placeholder) {
       return `<tr class="claim ph wait"><td class="claim-text">${esc(c.text)}</td><td class="claim-src"><span class="tc-mark ph" title="Prototype filler. Benjamin's research builds this part.">Placeholder</span></td></tr>`;
     }
-    return `<tr class="claim wait"><td class="claim-text">${esc(c.text)} ${KIND[c.kind] || ""}</td><td class="claim-src">${chip(c.source, c)}</td></tr>`;
+    return `<tr class="claim wait" id="ev-${c._n}"><td class="claim-text"><span class="ev-n">${c._n}</span> ${esc(c.text)} ${KIND[c.kind] || ""}</td><td class="claim-src">${chip(c.source, c)}</td></tr>`;
+  }
+  const MARKS = { strong: ["tc-mark--strong", "Looking strong"], weak: ["tc-mark--weak", "Looking weak"], mixed: ["tc-mark--mixed", "Mixed"], thin: ["tc-mark--thin", "Not enough yet"] };
+  function allClaims(R) {
+    return R.sections.flatMap((s) => s.parts ? s.parts.flatMap((p) => p.claims) : s.cards ? s.cards.flatMap((c) => c.claims) : s.claims);
+  }
+  function numberClaims(R) {
+    let n = 0;
+    allClaims(R).forEach((c) => { if (!c.placeholder) c._n = ++n; });
+  }
+  function insightsHtml(R) {
+    const list = (window.TC_INSIGHTS || {})[R.slug] || [];
+    if (!list.length) return "";
+    const claims = allClaims(R).filter((c) => !c.placeholder);
+    const cards = list.map((ins) => {
+      const nums = [...new Set(ins.refs.map((r) => (claims.find((c) => c.text.includes(r)) || {})._n).filter(Boolean))];
+      const [cls, label] = MARKS[ins.mark] || MARKS.thin;
+      return `<article class="tc-card insight wait"><div class="tc-card-head"><span class="tc-mark ${cls}">${label}</span><span class="piece">${esc(ins.piece)}</span></div>
+        <h3>${esc(ins.title)}</h3><p>${esc(ins.text)}</p>
+        <p class="based">Based on ${nums.map((n) => `<a class="ev-ref" href="#ev-${n}">${n}</a>`).join(" ")}</p></article>`;
+    }).join("");
+    return `<section class="insights" aria-label="What stands out"><h2>What stands out</h2><div class="insight-grid">${cards}</div></section>`;
   }
   function claimsTable(claims) {
     return `<table class="tc-table claims"><thead><tr><th scope="col">What we found</th><th scope="col">Source</th></tr></thead><tbody>${claims.map(claimLi).join("")}</tbody></table>`;
@@ -183,7 +204,7 @@
   }
 
   // Step 2: the first readout ------------------------------------------------------------------
-  const FIELD_LABELS = [["name", "Name"], ["website", "Website"], ["founders", "Founders"], ["batch", "Batch"], ["stage", "Stage"], ["location", "Location"], ["team_size", "Team size"]];
+  const FIELD_LABELS = [["name", "Name"], ["website", "Website"], ["founders", "Founders"], ["stage", "Stage"], ["location", "Location"], ["team_size", "Team size"]];
   function setupPanel() {
     const f = S.fields;
     const cells = FIELD_LABELS.map(([k, label]) => {
@@ -244,7 +265,10 @@
         The prototype holds saved research for Ploy and Sazabi only. In the built app, Tricorder runs the outside scans here, section by section.
         You can still draft the data-room request from the stage's first-tier documents.</div>`;
     } else {
+      numberClaims(R);
       body = `<p class="status" id="overall" role="status"></p>
+        ${insightsHtml(R)}
+        <div class="evidence-head"><h2>Evidence</h2><p class="note">Every fact Tricorder found, numbered, each with its source.</p></div>
         ${R.sections.map(sectionHtml).join("")}
         <section class="roomgaps wait" id="roomgaps" aria-label="What only a data room can answer">
           <h2>What only a data room can answer</h2>
@@ -285,6 +309,7 @@
     const rg = document.getElementById("roomgaps");
     steps.push([t(500), () => show(rg)]);
     rg.querySelectorAll(".wait").forEach((el) => steps.push([t(300), () => show(el)]));
+    app.querySelectorAll(".insight.wait").forEach((el) => steps.push([t(450), () => { overall.textContent = "Reading the evidence"; show(el); }]));
     steps.push([0, () => { overall.textContent = `Research done: ${R.sections.length} sections.`; S.streamed = true; }]);
 
     if (S.streamed || PACE === 0) {
@@ -501,6 +526,9 @@
         <span class="note">Runs on this laptop at localhost:5173.</span></div>`;
   }
 
+  // Steps 5 to 8 live in their own files and read state and helpers from here.
+  window.TC = { D, S, app, esc, chip, sourcePanel, header, go, buildItems, render };
+
   // Start ------------------------------------------------------------------------------------------
   const fromAddress = params.get("company");
   if (fromAddress) {
@@ -510,6 +538,3 @@
     render();
   }
 })();
-  // Steps 5 to 8 live in their own files and read state and helpers from here.
-  window.TC = { D, S, app, esc, chip, sourcePanel, header, go, buildItems, render };
-

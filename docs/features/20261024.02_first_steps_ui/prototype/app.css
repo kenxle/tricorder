@@ -143,3 +143,14 @@ code { font-size: 13px; overflow-wrap: anywhere; }
   .start { padding-top: var(--tc-space-7); }
   .start > p:first-of-type { font-size: 19px; }
 }
+
+/* Insights first, evidence after (Ken, 12:52 PM: organized as insights, not one fact one source). */
+.insights { margin: var(--tc-space-5) 0 var(--tc-space-6); }
+.insight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--tc-space-4); }
+.insight .piece { font-family: var(--tc-font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--tc-ink-3); }
+.insight h3 { margin-bottom: var(--tc-space-2); }
+.insight .based { margin-top: auto; padding-top: var(--tc-space-3); font-size: 13px; color: var(--tc-ink-3); }
+.ev-ref { display: inline-block; min-width: 24px; padding: 0 6px; margin-right: 2px; text-align: center; font-family: var(--tc-font-mono); font-size: 12px; border: var(--tc-hair) solid var(--tc-rule); border-radius: 4px; text-decoration: none; }
+.evidence-head { margin-top: var(--tc-space-6); border-top: var(--tc-hair) solid var(--tc-rule); padding-top: var(--tc-space-4); }
+.ev-n { display: inline-block; min-width: 22px; font-family: var(--tc-font-mono); font-size: 12px; color: var(--tc-ink-3); }
+tr.claim:target { background: var(--tc-hover, rgba(127,127,127,0.12)); }
