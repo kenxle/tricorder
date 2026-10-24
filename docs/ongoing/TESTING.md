@@ -36,13 +36,13 @@ test -f .env || cp .env.example .env
 
 Set `TRICORDER_OFFLINE=1`, `TRICORDER_OUT_DIR=out` and `TRICORDER_CONTRACT_READER=script` in `.env`. Leave API keys empty for the synthetic-room demo. Set `TRICORDER_OPERATOR_NAME` and `TRICORDER_OPERATOR` to your name.
 
-Start the API and web app together with one command from the repo root:
+Start the API, web app and Expo together with one command from the repo root:
 
 ```sh
 pnpm dev
 ```
 
-Turbo starts the Python API at <http://127.0.0.1:8787> and Vite at <http://localhost:5173>. Vite proxies `/api` and `/health` to the API. Stop old dev servers first so those ports are free. Ctrl+C stops both Turbo tasks and their child processes.
+Turbo starts the Python API at <http://127.0.0.1:8787>, Vite at <http://localhost:5173>, and Expo Metro at <http://localhost:8081>. Vite proxies `/api` and `/health` to the API. Stop old dev servers first so those ports are free. Ctrl+C stops all Turbo tasks and their child processes.
 
 The API dev task in `apps/api/` automatically loads the root `.env` through Uvicorn. Exported environment variables take precedence. It prefers `.venv/bin/python`, so no virtualenv activation is needed after setup. Set `TRICORDER_PYTHON` to override that choice; without a project virtualenv it falls back to `PYTHON` or `python3`. Python source changes reload the API; Vite handles frontend changes.
 
@@ -57,7 +57,7 @@ PYTHON=.venv/bin/python bin/smoke data_room/hollis_voice
 
 Keep `TRICORDER_OUT_DIR=out` when exporting `.env`: an empty value selects the working directory instead of the default `out/` folder. Without API keys, model readings become gaps. Scans that have not been implemented also appear as gaps.
 
-Zed project settings in `.zed/settings.json` disable automatic formatting on save. This repo has no configured formatter or lint command, and applying an editor's default formatter creates unrelated changes to existing files. Language-server diagnostics and the CI gates below remain available. Set a shared formatter and its configuration before enabling automatic formatting for this project.
+Zed project settings in `.zed/settings.json` disable automatic formatting on save. The mobile package has ESLint, but the repo has no configured formatter. Applying an editor's default formatter creates unrelated changes to existing files. Language-server diagnostics and the CI gates below remain available. Set a shared formatter and its configuration before enabling automatic formatting for this project.
 
 ## Intent agent guidance
 
@@ -77,15 +77,17 @@ Use pnpm 11.9.0, pinned in `package.json`. `pnpm-workspace.yaml` defines the wor
 ```sh
 pnpm install --frozen-lockfile
 pnpm dev:web                    # Only Vite; start the Python API separately
-pnpm dev                        # API + web, plus Expo when its dev script exists
-pnpm typecheck                  # Web and shared schema through Turbo
-pnpm build                      # Web output: apps/web/dist/
+pnpm dev:mobile                 # Only Expo Metro
+pnpm dev                        # API + web + Expo Metro
+pnpm typecheck                  # Web, mobile and shared schema through Turbo
+pnpm lint                       # Mobile ESLint through Turbo
+pnpm build                      # Web and mobile bundles: apps/{web,mobile}/dist/
 pnpm build --filter=@tricorder/web
 ```
 
 `bin/serve --dev` is an alias for `pnpm dev`. `bin/serve` serves the web build at `/` after a build and server restart. CI installs the root lockfile before running `bin/ci-web`. Dev tasks are uncached; build outputs and successful typechecks are cached locally in `.turbo/`.
 
-When adding Expo, create its package in `apps/mobile/`, use the root install and lockfile, and add `dev` and `typecheck` scripts to its own manifest. Its `dev` script joins the same root `pnpm dev` automatically. To run only Expo, use `pnpm dev --filter=@tricorder/mobile` once that package exists. Expo owns native launch/export commands; the current `build` task means a web bundle. Keep app environment files in their app directories. Run `pnpm exec expo install --check` from the mobile app after choosing its SDK and align React versions across apps.
+The Expo SDK 58 starter lives in `apps/mobile/` and uses the root install and lockfile. `pnpm dev:mobile` starts Metro through Turbo. The dev commands explicitly select Turbo's terminal UI so Expo can receive keyboard input; select the mobile task and press `i` to interact. Use `pnpm --filter @tricorder/mobile ios`, `android` or `web` to open a platform. `pnpm build --filter=@tricorder/mobile` exports Android, iOS and web JavaScript bundles; it does not build an IPA or APK. SDK 58 needs a compatible development build until the physical-device Expo Go release supports it. The starter has no readout or backend connection yet. Keep app environment files in their app directories. From `apps/mobile/`, run `pnpm exec expo install --check` to check SDK compatibility and `pnpm dlx expo-doctor` for project diagnostics. App React versions follow each framework; the shared schema contains no React runtime. See [the mobile README](../../apps/mobile/README.md) for agent plugin installation and Expo MCP authentication.
 
 The workspace uses pnpm's default isolated install layout. Only esbuild's dependency build script is enabled in `pnpm-workspace.yaml`. Declare shared packages with `workspace:*`; do not add an npm lockfile. After intentionally changing dependencies, use `pnpm install` to update the lockfile.
 
@@ -96,7 +98,7 @@ See the official [pnpm workspace guide](https://pnpm.io/workspaces), [Expo monor
 | Command | What it runs | Green means |
 |---|---|---|
 | `bin/ci-py` | `python -m schema.export --check` (generated schema files are current), then `pytest` over the test folders in `pyproject.toml`, including the store, founder requests, memo, and steering | exit 0, "N passed" and no failures |
-| `bin/ci-web` | Turbo typechecks all TypeScript packages and builds apps | exit 0 |
+| `bin/ci-web` | Turbo typechecks all TypeScript packages, lints mobile and exports/builds apps | exit 0 |
 | `bin/smoke <room_dir>` | Every scan that exists on one room, then the merge | each scan prints its counts and the merge prints its summary, with no traceback |
 
 GitHub Actions runs `bin/ci-py` and `bin/ci-web` as two separate jobs on every pull request, so a red page build never blocks a Python merge. A red CI blocks a merge, even on Saturday.

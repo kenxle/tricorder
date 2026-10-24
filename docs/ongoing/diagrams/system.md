@@ -30,6 +30,8 @@ flowchart LR
     DEV[Turbo dev] -.-> API[apps/api/ dev launcher]
     API -.-> SV
     DEV -.-> P
+    DEV -.-> MOBILE[apps/mobile/ Expo starter<br/>readout integration pending]
+    TS -.->|declared workspace dependency| MOBILE
     P -->|one-sentence steer| ST[steering/]
     ST -->|rerun the piece| S
     P -->|ask list| FR[founder_requests/<br/>draft, never sent]

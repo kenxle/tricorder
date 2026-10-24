@@ -12,6 +12,9 @@
     "typecheck": {
       "dependsOn": ["transit"]
     },
+    "lint": {
+      "dependsOn": ["transit"]
+    },
     "dev": {
       "cache": false,
       "persistent": true

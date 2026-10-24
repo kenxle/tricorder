@@ -4,4 +4,5 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 if [ ! -x node_modules/.bin/turbo ]; then pnpm install --frozen-lockfile; fi
 pnpm run typecheck
+pnpm run lint
 pnpm run build
