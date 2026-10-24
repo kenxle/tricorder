@@ -76,9 +76,15 @@ Every data room is synthetic, and every page says so. The real companies' public
 - **Disagreement is the signal.** Two sources that agree earn a small green flag. Two that disagree earn a big red flag.
 - **Scripts should do the math.** A model that reads a number can misread it. A script that recomputes it can be checked.
 - **The first pass starts before the data room.** The slow part is gathering, so Tricorder has to research the company from public sources and draft the request for documents.
-- **The partner's memo has to stay live.** We built a PDF export early. By Saturday we saw the partner needs to drill in and steer, so the memo is now an interactive page.
+- **The partner's memo has to stay live.** We built a PDF export early. On Saturday we decided the partner's memo cannot be a PDF, because the partner needs to drill in and steer it.
 - **Traction means different things by business model.** Kimmy showed us that a B2B company proves demand with paying customers, while a game company may show wishlists and trailer views.
 
 ## What's next for Tricorder
 
-Being written.
+- **Build the prototype's first steps into the app:** set up a company from its URL, research it live from public sources, and fill each section as its data arrives.
+- **Finish the red-flag checks** that Hollis Voice still slips past.
+- **Load Kimmy's knowledge into every analysis,** and use it to build Tricorder's own financial model.
+- **Give each partner their own copy of the memo,** with what-ifs on the growth model and a chat that points to the evidence.
+- **Read the pitch video,** with each claim tied to its timestamp.
+- **Check the bank account,** with the founder's consent, through Plaid's sandbox first.
+- **Run a pilot with one fund** on real inbound deals. It will judge Tricorder on speed, on the flags the partner agrees with, and on whether it is worth paying for. We claim no time saving until that pilot measures one.
