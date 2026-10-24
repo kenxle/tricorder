@@ -1,18 +1,13 @@
 import type { Claim, Readout } from "@tricorder/schema";
 import * as Clipboard from "expo-clipboard";
 import { useEffect, useRef, useState } from "react";
-import {
-  ActivityIndicator,
-  FlatList,
-  Modal,
-  StyleSheet,
-  View,
-} from "react-native";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { ActivityIndicator, FlatList, StyleSheet, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import { buildReadout, getReadout, getRooms, getSteerable } from "./api";
 import type { RoomInfo } from "./api";
 import { FounderRequests } from "./FounderRequests";
+import { NativeSheet } from "./native-sheet";
 import { SourceChip } from "./SourceChip";
 import { SteerableOverview } from "./Steering";
 import {
@@ -121,36 +116,30 @@ export default function ReadoutScreen() {
           onRoom={(next) => void openRebuilt(next)}
         />
       ) : null}
-      <Modal
-        visible={picker}
-        animationType="slide"
-        onRequestClose={() => setPicker(false)}
-      >
-        <SafeAreaProvider>
-          <SafeAreaView style={[styles.screen, { backgroundColor: colors.bg }]}>
-            <Row>
-              <Heading>Choose room</Heading>
-              <Action title="Close rooms" onPress={() => setPicker(false)} />
-            </Row>
-            <FlatList
-              renderScrollComponent={renderReadoutScroll}
-              data={rooms}
-              keyExtractor={(item) => item.id}
-              renderItem={({ item }) => (
-                <Card>
-                  <Action
-                    title={item.id}
-                    onPress={() => {
-                      setRoom(item.id);
-                      setPicker(false);
-                    }}
-                  />
-                </Card>
-              )}
-            />
-          </SafeAreaView>
-        </SafeAreaProvider>
-      </Modal>
+      <NativeSheet visible={picker} onClose={() => setPicker(false)}>
+        <View style={[styles.screen, { backgroundColor: colors.bg }]}>
+          <Row>
+            <Heading>Choose room</Heading>
+            <Action title="Close rooms" onPress={() => setPicker(false)} />
+          </Row>
+          <FlatList
+            renderScrollComponent={renderReadoutScroll}
+            data={rooms}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => (
+              <Card>
+                <Action
+                  title={item.id}
+                  onPress={() => {
+                    setRoom(item.id);
+                    setPicker(false);
+                  }}
+                />
+              </Card>
+            )}
+          />
+        </View>
+      </NativeSheet>
     </SafeAreaView>
   );
 }

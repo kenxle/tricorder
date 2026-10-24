@@ -1,14 +1,10 @@
+import { Checkbox, Host } from "@expo/ui";
 import { useRef, useState, useEffect } from "react";
 import type { ComponentRef } from "react";
-import {
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+
+import { Action, Field, useReadoutColors } from "../readout/ui";
 
 const screens = [
   "Start",
@@ -42,7 +38,27 @@ const evidence = [
   },
 ];
 
+const button = (title: string, onPress: () => void, primary = false) => (
+  <Action title={title} onPress={onPress} primary={primary} />
+);
+
+const field = (
+  label: string,
+  value: string,
+  change: (v: string) => void,
+  multiline = false
+) => (
+  <Field
+    label={label}
+    value={value}
+    onChangeText={change}
+    multiline={multiline}
+  />
+);
+
 export default function FlowScreen() {
+  const colors = useReadoutColors();
+  const s = createStyles(colors);
   const [step, setStep] = useState(0);
   const [url, setUrl] = useState("https://hollis.example");
   const [requests, setRequests] = useState(initialRequests);
@@ -89,21 +105,7 @@ export default function FlowScreen() {
     }
     setExtra("");
   }
-  const button = (title: string, onPress: () => void, primary = false) => (
-    <Pressable
-      accessibilityRole="button"
-      onPress={onPress}
-      style={({ pressed }) => [
-        s.button,
-        primary && s.primary,
-        pressed && { opacity: 0.7 },
-      ]}
-    >
-      <Text style={[s.buttonText, primary && { color: "#16140f" }]}>
-        {title}
-      </Text>
-    </Pressable>
-  );
+
   const body = (text: string) => <Text style={s.body}>{text}</Text>;
   const card = (title: string, text: string, action?: React.ReactNode) => (
     <View style={s.card}>
@@ -112,27 +114,7 @@ export default function FlowScreen() {
       {action}
     </View>
   );
-  const field = (
-    label: string,
-    value: string,
-    change: (v: string) => void,
-    multiline = false
-  ) => (
-    <View style={s.field}>
-      <Text style={s.label}>{label}</Text>
-      <TextInput
-        accessibilityLabel={label}
-        value={value}
-        onChangeText={change}
-        multiline={multiline}
-        style={[
-          s.input,
-          multiline && { minHeight: 100, textAlignVertical: "top" },
-        ]}
-        placeholderTextColor="#9a9488"
-      />
-    </View>
-  );
+
   const sourceButton = (index: number) =>
     button("Inspect source", () => setSource(index));
   return (
@@ -239,25 +221,22 @@ export default function FlowScreen() {
               "Missing items begin checked. Keep, remove or add requests before reviewing your message."
             )}
             {requests.map((item) => (
-              <Pressable
-                key={item}
-                accessibilityRole="checkbox"
-                accessibilityState={{
-                  checked: selected.includes(item),
-                  disabled: received && receivedItems.has(item),
-                }}
-                disabled={received && receivedItems.has(item)}
-                onPress={() => toggle(item)}
-                style={s.card}
-              >
-                <Text style={s.cardTitle}>
-                  {received && receivedItems.has(item)
-                    ? "Received"
-                    : selected.includes(item)
-                      ? "☑"
-                      : "☐"}{" "}
-                  · {item}
-                </Text>
+              <View key={item} style={s.card}>
+                <Host
+                  matchContents={{ vertical: true }}
+                  seedColor={colors.accent}
+                >
+                  <Checkbox
+                    label={
+                      received && receivedItems.has(item)
+                        ? `Received · ${item}`
+                        : item
+                    }
+                    value={selected.includes(item)}
+                    disabled={received && receivedItems.has(item)}
+                    onValueChange={() => toggle(item)}
+                  />
+                </Host>
                 {body(
                   item === initialRequests[0]
                     ? "Understand revenue quality and customer concentration."
@@ -267,7 +246,7 @@ export default function FlowScreen() {
                         ? "Check commitments against contract terms."
                         : "Additional operator request."
                 )}
-              </Pressable>
+              </View>
             ))}
             {field("Add a request", extra, setExtra)}
             {button("Add item", addRequest)}
@@ -430,71 +409,50 @@ export default function FlowScreen() {
     </SafeAreaView>
   );
 }
-const s = StyleSheet.create({
-  body: { color: "#bdb7ab", fontSize: 16, lineHeight: 25 },
-  brand: { color: "#eeebe4", fontSize: 22, fontWeight: "800" },
-  button: {
-    alignSelf: "flex-start",
-    borderColor: "#d3bf8e",
-    borderRadius: 6,
-    borderWidth: 1,
-    justifyContent: "center",
-    minHeight: 44,
-    padding: 12,
-  },
-  buttonText: { color: "#d3bf8e", fontSize: 15, fontWeight: "600" },
-  card: {
-    backgroundColor: "#1a1916",
-    borderColor: "#45413a",
-    borderRadius: 8,
-    borderWidth: 1,
-    gap: 12,
-    padding: 20,
-  },
-  cardTitle: { color: "#eeebe4", fontSize: 20, fontWeight: "600" },
-  content: {
-    alignSelf: "center",
-    gap: 16,
-    maxWidth: 820,
-    padding: 24,
-    paddingBottom: 100,
-    width: "100%",
-  },
-  eyebrow: { color: "#d3bf8e", fontSize: 12, letterSpacing: 1.5 },
-  field: { gap: 8 },
-  footer: { flexDirection: "row", flexWrap: "wrap", gap: 12, marginTop: 16 },
-  input: {
-    backgroundColor: "#1a1916",
-    borderColor: "#9a9488",
-    borderRadius: 6,
-    borderWidth: 1,
-    color: "#eeebe4",
-    fontSize: 16,
-    minHeight: 48,
-    padding: 12,
-  },
-  label: { color: "#bdb7ab", fontSize: 14 },
-  primary: { backgroundColor: "#d3bf8e" },
-  screen: { backgroundColor: "#131210", flex: 1 },
-  source: {
-    borderColor: "#d3bf8e",
-    borderRadius: 8,
-    borderWidth: 1,
-    gap: 12,
-    padding: 20,
-  },
-  title: {
-    color: "#eeebe4",
-    fontSize: 36,
-    fontWeight: "800",
-    letterSpacing: -1,
-  },
-  top: {
-    alignItems: "center",
-    borderBottomColor: "#45413a",
-    borderBottomWidth: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    padding: 16,
-  },
-});
+const createStyles = (colors: ReturnType<typeof useReadoutColors>) =>
+  StyleSheet.create({
+    body: { color: colors.muted, fontSize: 16, lineHeight: 25 },
+    brand: { color: colors.fg, fontSize: 22, fontWeight: "800" },
+    card: {
+      backgroundColor: colors.surface,
+      borderColor: colors.line,
+      borderRadius: 8,
+      borderWidth: 1,
+      gap: 12,
+      padding: 20,
+    },
+    cardTitle: { color: colors.fg, fontSize: 20, fontWeight: "600" },
+    content: {
+      alignSelf: "center",
+      gap: 16,
+      maxWidth: 820,
+      padding: 24,
+      paddingBottom: 100,
+      width: "100%",
+    },
+    eyebrow: { color: colors.accent, fontSize: 12, letterSpacing: 1.5 },
+    footer: { flexDirection: "row", flexWrap: "wrap", gap: 12, marginTop: 16 },
+    label: { color: colors.muted, fontSize: 14 },
+    screen: { backgroundColor: colors.bg, flex: 1 },
+    source: {
+      borderColor: colors.accent,
+      borderRadius: 8,
+      borderWidth: 1,
+      gap: 12,
+      padding: 20,
+    },
+    title: {
+      color: colors.fg,
+      fontSize: 36,
+      fontWeight: "800",
+      letterSpacing: -1,
+    },
+    top: {
+      alignItems: "center",
+      borderBottomColor: colors.line,
+      borderBottomWidth: 1,
+      flexDirection: "row",
+      justifyContent: "space-between",
+      padding: 16,
+    },
+  });

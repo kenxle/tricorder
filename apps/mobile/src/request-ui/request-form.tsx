@@ -1,3 +1,4 @@
+import { Checkbox, Host } from "@expo/ui";
 import type { Spec } from "@json-render/core";
 import {
   JSONUIProvider,
@@ -14,10 +15,10 @@ import type { RequestItem, Stage } from "@tricorder/request-ui/model";
 import { readRequestStream } from "@tricorder/request-ui/stream";
 import { fetch } from "expo/fetch";
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import { Pressable, StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 import { serverOrigin } from "../readout/api";
-import { Action, Body, Field, Note, useReadoutColors } from "../readout/ui";
+import { Action, Field, Note, useReadoutColors } from "../readout/ui";
 import type { RequestSession } from "./session";
 
 const styles = StyleSheet.create({
@@ -28,12 +29,9 @@ const styles = StyleSheet.create({
     lineHeight: 22,
     minHeight: 360,
   },
-  item: { flex: 1, gap: 4 },
-  title: { fontFamily: "ArchivoBold" },
   toggle: {
     borderBottomWidth: 1,
-    flexDirection: "row",
-    gap: 12,
+    gap: 6,
     paddingVertical: 16,
   },
 });
@@ -58,25 +56,13 @@ const Toggle = ({
 }) => {
   const colors = useReadoutColors();
   return (
-    <Pressable
-      accessibilityRole="checkbox"
-      accessibilityLabel={item.title}
-      accessibilityState={{ checked }}
-      onPress={onChange}
-      style={({ pressed }) => [
-        styles.toggle,
-        { borderColor: colors.line, opacity: pressed ? 0.6 : 1 },
-      ]}
-    >
-      <Body style={{ color: checked ? colors.accent : colors.muted }}>
-        {checked ? "☑" : "□"}
-      </Body>
-      <View style={styles.item}>
-        <Body style={styles.title}>{item.title}</Body>
-        <Note>{item.reason}</Note>
-        {item.guidance ? <Note>{item.guidance}</Note> : null}
-      </View>
-    </Pressable>
+    <View style={[styles.toggle, { borderColor: colors.line }]}>
+      <Host matchContents={{ vertical: true }} seedColor={colors.accent}>
+        <Checkbox label={item.title} value={checked} onValueChange={onChange} />
+      </Host>
+      <Note>{item.reason}</Note>
+      {item.guidance ? <Note>{item.guidance}</Note> : null}
+    </View>
   );
 };
 

@@ -10,15 +10,14 @@ import { useEffect, useRef, useState } from "react";
 import {
   FlatList,
   KeyboardAvoidingView,
-  Modal,
   Platform,
   StyleSheet,
   Text,
   View,
 } from "react-native";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 import { apiRequest, roomPath } from "./api";
+import { NativeSheet } from "./native-sheet";
 import { SourceChip } from "./SourceChip";
 import {
   Action,
@@ -206,6 +205,16 @@ export function SteerableOverview({
       setSentence("");
     }
   };
+  const dismiss = () => {
+    if (busy) {
+      return;
+    }
+    setPanel(null);
+    setDetail(null);
+    setTarget(null);
+    setError("");
+    onClosePiece?.();
+  };
   const close = () => {
     if (busy) {
       return;
@@ -214,10 +223,7 @@ export function SteerableOverview({
       setPanel(null);
       return;
     }
-    setDetail(null);
-    setTarget(null);
-    setError("");
-    onClosePiece?.();
+    dismiss();
   };
   const send = async () => {
     if (!target || !sentence.trim() || request.current) {
@@ -329,155 +335,151 @@ export function SteerableOverview({
           </Card>
         );
       })}
-      <Modal
+      <NativeSheet
         visible={detail !== null}
-        animationType="slide"
-        onRequestClose={close}
+        dismissalDisabled={busy}
+        onClose={dismiss}
       >
-        <SafeAreaProvider>
-          <SafeAreaView style={[styles.fill, { backgroundColor: colors.bg }]}>
-            <KeyboardAvoidingView
-              style={styles.fill}
-              behavior={Platform.OS === "ios" ? "padding" : "height"}
-            >
-              <View style={styles.header}>
-                <Action
-                  title={panel ? "Back to piece" : "Close overview detail"}
-                  onPress={close}
-                  disabled={busy}
-                />
-                <Heading>{panel?.name ?? heading}</Heading>
-                {readout.synthetic_notice && (
-                  <Note>{readout.synthetic_notice}</Note>
-                )}
-                {error ? (
-                  <Text accessibilityRole="alert" style={{ color: colors.red }}>
-                    {error}
-                  </Text>
-                ) : null}
-                {!panel && target && (
-                  <View style={styles.stack}>
-                    <Field
-                      label="Steer in one sentence"
-                      value={sentence}
-                      onChangeText={setSentence}
-                      editable={!busy}
-                      autoFocus
-                      placeholder={
-                        detail === "overview"
-                          ? "On the overview, ask to read more: read the full room"
-                          : readout.revisions.length === 0
-                            ? "For example: treat the pilot as non-recurring"
-                            : "Say what is wrong, in one sentence."
-                      }
-                      returnKeyType="send"
-                      onSubmitEditing={() => void send()}
+        <View style={[styles.fill, { backgroundColor: colors.bg }]}>
+          <KeyboardAvoidingView
+            style={styles.fill}
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+          >
+            <View style={styles.header}>
+              <Action
+                title={panel ? "Back to piece" : "Close overview detail"}
+                onPress={close}
+                disabled={busy}
+              />
+              <Heading>{panel?.name ?? heading}</Heading>
+              {readout.synthetic_notice && (
+                <Note>{readout.synthetic_notice}</Note>
+              )}
+              {error ? (
+                <Text accessibilityRole="alert" style={{ color: colors.red }}>
+                  {error}
+                </Text>
+              ) : null}
+              {!panel && target && (
+                <View style={styles.stack}>
+                  <Field
+                    label="Steer in one sentence"
+                    value={sentence}
+                    onChangeText={setSentence}
+                    editable={!busy}
+                    autoFocus
+                    placeholder={
+                      detail === "overview"
+                        ? "On the overview, ask to read more: read the full room"
+                        : readout.revisions.length === 0
+                          ? "For example: treat the pilot as non-recurring"
+                          : "Say what is wrong, in one sentence."
+                    }
+                    returnKeyType="send"
+                    onSubmitEditing={() => void send()}
+                  />
+                  <Row>
+                    <Action
+                      title={busy ? "Steering" : "Apply steer"}
+                      disabled={busy || !sentence.trim()}
+                      onPress={() => void send()}
                     />
-                    <Row>
-                      <Action
-                        title={busy ? "Steering" : "Apply steer"}
-                        disabled={busy || !sentence.trim()}
-                        onPress={() => void send()}
-                      />
-                      <Action
-                        title="Cancel steer"
-                        disabled={busy}
-                        onPress={() => setTarget(null)}
-                      />
-                    </Row>
-                  </View>
+                    <Action
+                      title="Cancel steer"
+                      disabled={busy}
+                      onPress={() => setTarget(null)}
+                    />
+                  </Row>
+                </View>
+              )}
+            </View>
+            {panel ? (
+              <FlatList
+                renderScrollComponent={renderReadoutScroll}
+                data={panel.rows}
+                keyExtractor={(_, index) => String(index)}
+                contentContainerStyle={styles.content}
+                renderItem={({ item }) => (
+                  <Card>
+                    {item.map((value, index) => (
+                      <View key={index}>
+                        <Note>{panel.columns[index] ?? String(index + 1)}</Note>
+                        <Body>{value}</Body>
+                      </View>
+                    ))}
+                  </Card>
                 )}
-              </View>
-              {panel ? (
-                <FlatList
-                  renderScrollComponent={renderReadoutScroll}
-                  data={panel.rows}
-                  keyExtractor={(_, index) => String(index)}
-                  contentContainerStyle={styles.content}
-                  renderItem={({ item }) => (
-                    <Card>
-                      {item.map((value, index) => (
-                        <View key={index}>
-                          <Note>
-                            {panel.columns[index] ?? String(index + 1)}
-                          </Note>
-                          <Body>{value}</Body>
-                        </View>
-                      ))}
-                    </Card>
-                  )}
-                />
-              ) : (
-                <FlatList
-                  renderScrollComponent={renderReadoutScroll}
-                  data={data}
-                  keyExtractor={(item) =>
-                    item.kind === "claim"
-                      ? `claim:${item.claim.id}`
-                      : `revision:${item.revision.n}`
-                  }
-                  keyboardShouldPersistTaps="handled"
-                  contentContainerStyle={styles.content}
-                  ListHeaderComponent={
-                    <View style={styles.stack}>
-                      {piece && (
-                        <>
-                          <Body>{piece.reason}</Body>
-                          <Note>
-                            Source links: {piece.corroborating_sources} agree ·{" "}
-                            {piece.contradicting_sources} disagree
-                          </Note>
-                        </>
-                      )}
-                      {!target && (
-                        <Action
-                          title={
-                            detail === "overview"
-                              ? "Steer the overview"
-                              : "Steer this piece"
-                          }
-                          onPress={() => {
-                            setTarget({
-                              claimId: null,
-                              piece: detail ?? "overview",
-                            });
-                            setSentence("");
-                          }}
-                        />
-                      )}
-                    </View>
-                  }
-                  ListEmptyComponent={<Note>No claims in this piece yet.</Note>}
-                  renderItem={({ item }) =>
-                    item.kind === "claim" ? (
-                      <ClaimLine
-                        claim={item.claim}
-                        readout={readout}
-                        addedBy={addedBy.get(item.claim.id)}
-                        onPanel={setPanel}
-                        onSteer={() => {
+              />
+            ) : (
+              <FlatList
+                renderScrollComponent={renderReadoutScroll}
+                data={data}
+                keyExtractor={(item) =>
+                  item.kind === "claim"
+                    ? `claim:${item.claim.id}`
+                    : `revision:${item.revision.n}`
+                }
+                keyboardShouldPersistTaps="handled"
+                contentContainerStyle={styles.content}
+                ListHeaderComponent={
+                  <View style={styles.stack}>
+                    {piece && (
+                      <>
+                        <Body>{piece.reason}</Body>
+                        <Note>
+                          Source links: {piece.corroborating_sources} agree ·{" "}
+                          {piece.contradicting_sources} disagree
+                        </Note>
+                      </>
+                    )}
+                    {!target && (
+                      <Action
+                        title={
+                          detail === "overview"
+                            ? "Steer the overview"
+                            : "Steer this piece"
+                        }
+                        onPress={() => {
                           setTarget({
-                            claimId: item.claim.id,
+                            claimId: null,
                             piece: detail ?? "overview",
                           });
                           setSentence("");
                         }}
                       />
-                    ) : (
-                      <Diff
-                        revision={item.revision}
-                        readout={readout}
-                        claims={claims}
-                        onPanel={setPanel}
-                      />
-                    )
-                  }
-                />
-              )}
-            </KeyboardAvoidingView>
-          </SafeAreaView>
-        </SafeAreaProvider>
-      </Modal>
+                    )}
+                  </View>
+                }
+                ListEmptyComponent={<Note>No claims in this piece yet.</Note>}
+                renderItem={({ item }) =>
+                  item.kind === "claim" ? (
+                    <ClaimLine
+                      claim={item.claim}
+                      readout={readout}
+                      addedBy={addedBy.get(item.claim.id)}
+                      onPanel={setPanel}
+                      onSteer={() => {
+                        setTarget({
+                          claimId: item.claim.id,
+                          piece: detail ?? "overview",
+                        });
+                        setSentence("");
+                      }}
+                    />
+                  ) : (
+                    <Diff
+                      revision={item.revision}
+                      readout={readout}
+                      claims={claims}
+                      onPanel={setPanel}
+                    />
+                  )
+                }
+              />
+            )}
+          </KeyboardAvoidingView>
+        </View>
+      </NativeSheet>
     </View>
   );
 }

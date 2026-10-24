@@ -1,3 +1,4 @@
+import { Host, Switch } from "@expo/ui";
 import type { PythonModels } from "@tricorder/schema/api";
 import * as Clipboard from "expo-clipboard";
 import * as DocumentPicker from "expo-document-picker";
@@ -9,16 +10,14 @@ import {
   FlatList,
   KeyboardAvoidingView,
   Linking,
-  Modal,
   Platform,
   ScrollView,
   StyleSheet,
-  Switch,
   View,
 } from "react-native";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 import { apiRequest, roomPath } from "./api";
+import { NativeSheet } from "./native-sheet";
 import {
   Action,
   Body,
@@ -141,34 +140,32 @@ export function FounderRequests({
         onPress={() => setVisible(true)}
       />
       {receipt?.room === room && <ReceiptView receipt={receipt} />}
-      <Modal
+      <NativeSheet
         visible={visible}
-        animationType="slide"
-        onRequestClose={() => {
+        dismissalDisabled={busy}
+        onClose={() => {
           if (!busy) {
             setVisible(false);
           }
         }}
       >
-        <SafeAreaProvider>
-          <SafeAreaView style={[styles.fill, { backgroundColor: colors.bg }]}>
-            {visible && (
-              <RequestManager
-                key={room}
-                room={room}
-                onBusy={setBusy}
-                onClose={() => setVisible(false)}
-                onDone={(next) => {
-                  lastReceipt = next;
-                  setReceipt(next);
-                  setVisible(false);
-                  onRebuilt?.(next.room);
-                }}
-              />
-            )}
-          </SafeAreaView>
-        </SafeAreaProvider>
-      </Modal>
+        <View style={[styles.fill, { backgroundColor: colors.bg }]}>
+          {visible && (
+            <RequestManager
+              key={room}
+              room={room}
+              onBusy={setBusy}
+              onClose={() => setVisible(false)}
+              onDone={(next) => {
+                lastReceipt = next;
+                setReceipt(next);
+                setVisible(false);
+                onRebuilt?.(next.room);
+              }}
+            />
+          )}
+        </View>
+      </NativeSheet>
     </Card>
   );
 }
@@ -554,15 +551,14 @@ function RequestItem({
 }) {
   return (
     <Card>
-      <Row>
+      <Host matchContents={{ vertical: true }}>
         <Switch
           value={selected}
           onValueChange={onToggle}
           disabled={disabled}
-          accessibilityLabel={`Select ${item.title}`}
+          label={item.title}
         />
-        <Heading>{item.title}</Heading>
-      </Row>
+      </Host>
       <Body>{item.text}</Body>
       <Note>{item.piece.replaceAll("_", " ")}</Note>
       {!!item.top && <Note>Top {item.top}</Note>}
@@ -758,9 +754,9 @@ function AddReply({
           />
           <Note>It answers:</Note>
           {requests.map((request) => (
-            <Row key={request.id}>
+            <Host key={request.id} matchContents={{ vertical: true }}>
               <Switch
-                accessibilityLabel={`${item.asset.name} answers ${request.label}`}
+                label={request.label}
                 disabled={busy}
                 value={item.answers.includes(request.id)}
                 onValueChange={() =>
@@ -772,10 +768,7 @@ function AddReply({
                   }))
                 }
               />
-              <View style={styles.label}>
-                <Body>{request.label}</Body>
-              </View>
-            </Row>
+            </Host>
           ))}
         </Card>
       )}
@@ -816,6 +809,5 @@ const styles = StyleSheet.create({
   fill: { flex: 1 },
   gap: { gap: 10 },
   header: { gap: 10, padding: 16 },
-  label: { flex: 1 },
   message: { minHeight: 260, textAlignVertical: "top" },
 });
