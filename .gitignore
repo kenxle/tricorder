@@ -1,5 +1,8 @@
 docs/reports/seneschal/
 .claude-commit*
+.codex-commit*
+# Whose agent this is, one handle per laptop. See AGENTS.md.
+.who-am-i
 .env
 .env.*
 !.env.example

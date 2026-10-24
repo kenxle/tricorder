@@ -6,14 +6,55 @@ This file is the source of truth for every agent and every tool that opens this 
 
 ## Start every session here
 
-1. Read `docs/BULLETIN.md`, the board. Newest rows first. Claim a row (`[>] @yourhandle`) before working it. If the work is not on the board, put it there first. "What's next" means: the top open row for your handle.
-2. Read the ongoing docs the task touches (table below).
-3. For a module or feature, start from `docs/ongoing/ROADMAP.md`: pick the top unblocked slice, open a feature folder under `docs/features/YYYYMMDD.NN_<slice>/`, and build it on a `feat/<slice>` branch. Slices are written so one person or one agent can finish one in one sitting.
-4. The plan this repo started from is `docs/features/20261022.01_hackathon_plan/00_overview.md`. The writers' brief behind it, with Ken's words and every decision so far, is `00_brief_for_writers.md` in the same folder.
+1. `git pull origin main`.
+2. Read `.who-am-i` in the repo root to learn whose agent you are (see "Know who you are" below). If it is missing, set it up before anything else.
+3. Read `docs/BULLETIN.md`. First the Messages table: look for messages that @-mention your handle and answer them. Then the Board: newest rows first. Claim a row (`[>] @yourhandle`) before working it. If the work is not on the board, put it there first. "What's next" means: the top open row for your handle.
+4. Read the ongoing docs the task touches (table below).
+5. For a module or feature, start from `docs/ongoing/ROADMAP.md`: pick the top unblocked slice, open a feature folder under `docs/features/YYYYMMDD.NN_<slice>/`, and build it on a `feat/<slice>` branch. Slices are written so one person or one agent can finish one in one sitting.
+6. The plan this repo started from is `docs/features/20261022.01_hackathon_plan/00_overview.md`. The writers' brief behind it, with Ken's words and every decision so far, is `00_brief_for_writers.md` in the same folder.
+
+## Know who you are
+
+`.who-am-i` in the repo root holds one line: the handle of the teammate you work for, in lowercase (for example `ken`). Sign every message and every board row with it. The file is gitignored, so each laptop has its own.
+
+If the file does not exist, your teammate has not been set up yet. Before any other work:
+
+1. Ask your human for their first name and what they are working on today.
+2. Create `.who-am-i` with their first name in lowercase as the only line.
+3. Add them to the Team table below, in the same commit as step 4.
+4. Post a hello in the Messages table of `docs/BULLETIN.md`: who they are and what they are taking on.
+5. Commit and push those two files at once, so the other agents see the new teammate on their next pull.
+
+## Talking to each other
+
+Agents on different laptops talk through `docs/BULLETIN.md`. Nothing else carries a message between machines, so an unpushed message was never sent.
+
+- **Messages go in the Messages table** at the top of the board: date, time, from, message. Newest first.
+- **Use @-mentions** for a request or a handoff, for example `@sumit: the readout API returns flags now, see server/readout_routes.py`.
+- **Take times from the clock** (`date +%H:%M`), never a guess. Dates as `YYYY-MM-DD`, times as 24-hour local.
+- **End a message that still needs action with `**OPEN:**`** and what is outstanding. When it is answered, move the row to `docs/BULLETIN-ARCHIVE.md` under a dated heading with a `**RESOLVED:**` note.
+- **Work goes on the Board, talk goes in Messages.** A request that is a piece of work becomes a board row for that handle; the message links to it.
+- **Stay in your lane.** If your change touches a teammate's area (Team table), do not change their code quietly. Message them with what you need and why, and wait for their go-ahead or let them make it.
+- **Contracts are news.** When you change a shape another part reads (an API route, a schema in `schema/`, a scan's output), post a message the same commit.
+- **At session end**, post what you finished, what is unfinished or broken, and what the next agent needs to know.
+
+## Pull constantly
+
+Several agents push at once. Run `git pull origin main` at session start, before each new task, right before committing, between tasks, every 5 to 10 minutes on long work, whenever you read the board, and when the code does not look the way you expect. Re-read the Messages table after every pull.
+
+When several agents share one checkout, one coordinating agent owns pull, commit and push; the workers do not. Give overlapping work separate worktrees. Never stash, reset or overwrite another agent's work to make a pull succeed. If a push is rejected, pull and reconcile, never force-push.
+
+## Team
+
+Add yourself here when you join. Your handle is your first name in lowercase.
+
+| Name | Handle | Working on |
+|---|---|---|
+| Ken St. Clair | `@ken` | Captain. Product, research, the demo and the pitch. Check with @ken before changing scope, the readout's words, or the demo story. |
 
 ## Rules that always apply
 
-- The hackathon is one day. Every slice says what it is for: before Saturday (groundwork), Saturday (the team, in the room), or after (productizing). A Saturday slice is sized in hours, not days.
+- Everything on the roadmap is built by the end of Saturday. There is no later horizon.
 - Every claim in a readout carries its source: a URL, a timestamp in the video, a line in the deck. A readout line with no source is a bug, not a feature.
 - No number in a document comes from a model's head. Counts, percentages and date math come from a script or from calc-mcp, and the document names the script.
 - A quote attributed to a real person needs a link to that person's own words right after it. No link, no quotation marks.

@@ -4,6 +4,14 @@ The task board for this repo. Newest first. `[ ]` open, `[>]` claimed, `[x]` don
 
 The plan this board came from: [the hackathon plan overview](features/20261022.01_hackathon_plan/00_overview.md) (written after the research and the critics finish). The brief behind it: [00_brief_for_writers.md](features/20261022.01_hackathon_plan/00_brief_for_writers.md). The hackathon is Saturday 2026-10-24, 9:00 AM to 6:00 PM, at Betaworks.
 
+## Messages
+
+How agents talk across laptops. Newest first. @-mention the handle you need. End a row that still needs action with **OPEN:**. Move answered rows to [BULLETIN-ARCHIVE.md](BULLETIN-ARCHIVE.md). Rules: "Talking to each other" in [AGENTS.md](../AGENTS.md).
+
+| Date | Time | From | Message |
+|---|---|---|---|
+| 2026-10-24 | 10:06 | @ken | Messages now live here, and each agent reads `.who-am-i` to know whose it is. New teammates: your agent sets you up on first run (AGENTS.md, "Know who you are"). |
+
 ## Board
 
 - [ ] @ken 2026-10-23 TRI-team-onsite -- **Form the team in person at Saturday's 9:00 to 10:00 team formation.** The organiser closed the Team Match Network's matching round at about 9:09 PM Friday. Every open request closed with it, so Tricorder is still just Ken on the network, and the organiser places anyone left on site. Look first for Benjamin Schachter (senior frontend, applied to Tricorder), then Aanand (fullstack, design, AI agents and MCP), Alex Weiner (senior fullstack and data) and Madhu Garudala (data, picked Track 2), with Saumay Killa or Kimmy for design. Full notes: `~/Documents/workspace/personal/projects/vc_hackathon_2026/team_name_workshop.html`. Replaces TRI-team-status (who accepted the invites).
