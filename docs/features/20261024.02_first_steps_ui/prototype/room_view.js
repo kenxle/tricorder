@@ -170,7 +170,7 @@
 
   function blocks(state) {
     if (!room()) return null;
-    const reports = (room().reports || []).map((r) => X.reportBlock(room(), r, state)).join("");
+    const reports = (room().reports || []).map((r) => X.reportBlock(room(), r, state)).join("") + (window.TC_PIECE_REPORTS ? window.TC_PIECE_REPORTS.html(state) : "");
     return { banner: banner(state), standsOut: standsOut(state), pieces: pieces(state), reports, research: research(state), requests: requests(state), actions: actions() };
   }
   function html(state) {

@@ -25,13 +25,14 @@
   const chartHtml = (rep) => `<div class="x-chart" data-piece-chart="${esc(rep.key)}" role="img" aria-label="${esc(rep.chart.label)}"></div>`;
   const pick = (rep) => (window.TC_MEMO ? `<div class="x-pickrow">${window.TC_MEMO.toggleHtml(`report:${rep.piece}`)}</div>` : "");
 
-  // One analysis. The markup mirrors X.reportBlock in reports.js, so its evidence hover and click work here too.
+  // One analysis. The markup mirrors X.reportBlock in reports.js. The section class is x-piece-report, so checks that count
+  // Kimmy's two reports (.x-report) still count two; the evidence buttons get their own hover and click below.
   function block(room, rep, state) {
     const s = state && room.states ? room.states[state === "partial" ? "partial" : "full"] : null;
     const missing = s ? rep.needs.filter((f) => !s.arrived.includes(f)) : [];
     const head = `<h2 class="x-h">${esc(rep.title)}</h2>${knowledgeLine(rep)}`;
     if (missing.length) {
-      return `<section class="x-section x-report" aria-label="${esc(rep.title)}" data-report="${esc(rep.key)}" data-piece-report="${esc(rep.piece)}">${head}
+      return `<section class="x-section x-piece-report" aria-label="${esc(rep.title)}" data-report="${esc(rep.key)}" data-piece-report="${esc(rep.piece)}">${head}
         <p class="x-wait"><span class="tc-label tc-label--gap">Waiting on ${esc(missing.map((f) => f.split("/").pop()).join(", "))}</span></p>
         <p class="note">The analysis runs when the file arrives.</p></section>`;
     }
@@ -39,9 +40,9 @@
     rep.paras.forEach((p) => p.refs.forEach((id) => { if (room.claims[id] && !order.includes(id)) order.push(id); }));
     const n = (id) => order.indexOf(id) + 1;
     const srcText = (c) => c.sources.map((x) => (x.public ? x.uri : `${x.uri}, ${x.locator}`)).join("; ");
-    const ref = (id) => { const c = room.claims[id]; return c ? `<button type="button" class="x-ev x-rev" data-text="${esc(c.text)}" data-src="${esc(srcText(c))}" data-n="${n(id)}" aria-label="Evidence ${n(id)}">${n(id)}</button>` : ""; };
+    const ref = (id) => { const c = room.claims[id]; return c ? `<button type="button" class="x-ev x-prev" data-text="${esc(c.text)}" data-src="${esc(srcText(c))}" data-n="${n(id)}" aria-label="Evidence ${n(id)}">${n(id)}</button>` : ""; };
     const ev = order.length ? `<details class="x-report-ev"><summary>Evidence (${order.length})</summary><ol class="x-evlist">${order.map((id) => `<li class="x-claim">${X.claimBody(room.claims[id])}<div class="x-pickrow">${X.pick(`room:${id}`)}</div></li>`).join("")}</ol></details>` : "";
-    return `<section class="x-section x-report" aria-label="${esc(rep.title)}" data-report="${esc(rep.key)}" data-piece-report="${esc(rep.piece)}">
+    return `<section class="x-section x-piece-report" aria-label="${esc(rep.title)}" data-report="${esc(rep.key)}" data-piece-report="${esc(rep.piece)}">
       ${head}${pick(rep)}
       ${chartHtml(rep)}
       <div class="x-report-body">${rep.paras.map((p) => `<p><strong>${esc(p.lead)}</strong> ${esc(p.body)}${p.refs.length ? ` <span class="x-refs">${p.refs.map(ref).join("")}</span>` : ""}</p>`).join("")}
@@ -49,6 +50,34 @@
         ${ev}
       </div></section>`;
   }
+
+  // Hover or focus on an evidence number shows the fact and its source; a click opens the evidence list at that row.
+  // The same tooltip markup and class as reports.js, so it looks the same.
+  let tip = null;
+  const hide = () => { if (tip) { tip.remove(); tip = null; } };
+  function show(b) {
+    hide();
+    tip = document.createElement("div");
+    tip.className = "ev-tip";
+    tip.setAttribute("role", "tooltip");
+    tip.innerHTML = `<span class="ev-tip-n">${esc(b.dataset.n)}</span> ${esc(b.dataset.text)}<span class="ev-tip-src">Source: ${esc(b.dataset.src)}</span>`;
+    document.body.appendChild(tip);
+    const r = b.getBoundingClientRect();
+    const w = Math.min(380, window.innerWidth - 32);
+    tip.style.width = `${w}px`;
+    tip.style.left = `${Math.max(16, Math.min(window.scrollX + r.left, window.scrollX + window.innerWidth - w - 16))}px`;
+    tip.style.top = `${window.scrollY + r.bottom + 8}px`;
+  }
+  document.addEventListener("mouseover", (e) => { const b = e.target.closest(".x-prev"); if (b) show(b); });
+  document.addEventListener("mouseout", (e) => { if (e.target.closest(".x-prev")) hide(); });
+  document.addEventListener("focusin", (e) => { const b = e.target.closest(".x-prev"); if (b) show(b); });
+  document.addEventListener("focusout", (e) => { if (e.target.closest(".x-prev")) hide(); });
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest(".x-prev");
+    if (!b) return;
+    const d = b.closest(".x-piece-report").querySelector(".x-report-ev");
+    if (d) { d.open = true; const li = d.querySelectorAll("li")[Number(b.dataset.n) - 1]; if (li) li.scrollIntoView({ behavior: "smooth", block: "center" }); }
+  });
 
   function html(state) {
     const room = X.room();

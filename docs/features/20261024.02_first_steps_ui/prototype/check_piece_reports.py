@@ -35,6 +35,8 @@ def check_piece_reports(pg, check, errors) -> None:
         for state in ("full", "partial"):
             pg.goto(f"{BASE}?company={company}&room={state}")
             pg.wait_for_selector(".x-roomview")
+            wired = pg.evaluate("!!window.TC_PIECE_REPORTS") and pg.locator("[data-piece-report]").count() > 0
+            print(f"INFO {slug} {state}: " + ("index.html and room_view.js load the analyses" if wired else "not wired yet; the check inserts them"))
             if not pg.evaluate("!!window.TC_PIECE_REPORTS"):
                 pg.add_script_tag(url="piece_reports_data.js")
                 pg.add_script_tag(url="piece_reports.js")
@@ -58,7 +60,7 @@ def check_piece_reports(pg, check, errors) -> None:
                 check(sec.locator(".x-report-body > p").count() == len(rep["paras"]) and sec.locator(".x-asks li").count() == len(rep["asks"]),
                       f"{slug} {rep['piece']}: {len(rep['paras'])} paragraphs and {len(rep['asks'])} things to ask")
                 n_refs = len({r for p in rep["paras"] for r in p["refs"]})
-                check(sec.locator(".x-rev").count() >= n_refs and (n_refs == 0 or sec.locator(".x-evlist li").count() == n_refs),
+                check(sec.locator(".x-prev").count() >= n_refs and (n_refs == 0 or sec.locator(".x-evlist li").count() == n_refs),
                       f"{slug} {rep['piece']}: {n_refs} numbered evidence rows with sources")
                 key = f"report:{rep['piece']}"
                 tog = sec.locator(f".memo-pick[data-memo='{key}']")
@@ -67,6 +69,12 @@ def check_piece_reports(pg, check, errors) -> None:
                 tog.click()
                 check(pg.evaluate("(k) => TC_MEMO.get(k)", key) is (not before), f"{slug} {rep['piece']}: the toggle flips {key}")
                 tog.click()
+            check(pg.locator(".x-report").count() == 2, f"{slug}: Kimmy's two reports still count two (.x-report)")
+            first = pg.locator("[data-piece-report] .x-prev").first
+            first.hover()
+            check(pg.locator(".ev-tip").count() == 1 and "Source:" in pg.locator(".ev-tip").inner_text(), f"{slug}: hovering an evidence number shows the fact and its source")
+            first.click()
+            check(pg.locator("[data-piece-report] .x-report-ev[open]").count() == 1, f"{slug}: clicking an evidence number opens the evidence list")
             r = pg.request.get(f"http://localhost:{PORT}/{reps[0]['knowledge']}")
             check(r.ok and "expert knowledge" in r.text(), f"{slug}: the knowledge file link opens")
             pg.locator("[data-piece-report]").first.scroll_into_view_if_needed()
