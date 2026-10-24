@@ -36,6 +36,8 @@ flowchart LR
     DEV -.-> P
     DEV -.-> RPC
     DEV -.-> MOBILE[apps/mobile/ React Native readout]
+    SNAP[Saved public research snapshot] --> COMPANY[Mobile Company workspace<br/>setup, research, local request draft]
+    COMPANY -.->|separate Rooms navigation| MOBILE
     TS -.->|shared readout contracts| MOBILE
     AT -.->|generated HTTP contracts| MOBILE
     MOBILE -->|local REST readout requests| ADAPTER[Expo API adapter<br/>loopback only]
