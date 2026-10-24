@@ -9,6 +9,7 @@
 - Data room will need to send requests for more data
 - customer testimonials are from b2b side
 - b2c often want more info about traction (often social presence, not often strong enough)
+- validating, are the founders saying the truth, but the vcs are less knowledgeable than the founders, so it's hard
 
 
 
@@ -16,6 +17,7 @@
 
 - **Requests for more data:** built. The [founder-requests](ongoing/roadmap/founder-requests.md) slice drafts the message to the company asking for what the room is missing, with guidance on what to send.
 - **Testimonials (B2B) and traction from social presence (B2C):** nothing checks either yet. The nearest slice is [online-presence](ongoing/roadmap/online-presence.md), not started. Say if these should become checklist items or part of that slice.
+- **Checking whether founders tell the truth when the VC knows less than they do:** this is the core of what is built. The [claim-support](ongoing/roadmap/claim-support.md) scan checks every figure in the deck and the pitch against the room's own files, and the red-flag checks compare numbers by script, so the VC does not need the founder's expertise to see where the founder's own documents disagree. It could be a line in the pitch.
 
 ## Needs your call
 
