@@ -202,7 +202,7 @@
   };
   function claimLi(c) {
     if (c.placeholder) {
-      return `<tr class="claim ph wait"><td class="claim-text">${esc(c.text)}</td><td class="claim-src"><span class="tc-mark ph" title="Prototype filler. Benjamin's research builds this part.">Placeholder</span></td></tr>`;
+      return `<tr class="claim ph wait"><td class="claim-text">${esc(c.text)}</td><td class="claim-src"><span class="tc-mark ph" title="Not researched yet">Placeholder</span></td></tr>`;
     }
     return `<tr class="claim wait" id="ev-${c._n}"><td class="claim-text"><span class="ev-n">${c._n}</span> ${esc(c.text)} ${KIND[c.kind] || ""}</td><td class="claim-src">${chip(c.source, c)}</td></tr>`;
   }
@@ -317,8 +317,8 @@
       body = `<p class="tc-sr-only" id="overall" role="status"></p>
         ${insightsHtml(R)}
         ${R.sections.map(sectionHtml).join("")}
-        <section class="roomgaps wait" id="roomgaps" aria-label="What only a data room can answer">
-          <h2>What only a data room can answer</h2>
+        <section class="roomgaps wait" id="roomgaps" aria-label="Up Next: Data Room Requests">
+          <h2>Up Next: Data Room Requests</h2>
           <p class="note">These become the first items on the data-room request.</p>
           <ul class="gaps tc-gap-list">${R.room_gaps.map((g) => `<li class="wait"><strong>${esc(g.text)}</strong> <span class="why">${esc(g.why)}</span></li>`).join("")}</ul>
         </section>`;
