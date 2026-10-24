@@ -2,11 +2,11 @@
 
 **What to build:** An associate reviews partial and full synthetic room arrivals on the same company working page. The page shows what arrived, which findings are now supported or contradicted, and which conclusions still wait on evidence. Room flags and public research remain distinguishable and traceable.
 
-**Blocked by:** 01: Open a saved company readout with traceable evidence.
+**Dependency:** 01: Open a saved company readout with traceable evidence, satisfied by the locally implemented and verified ticket 01. No dependency on ticket 02.
 
-**Status:** ready-for-agent
+**Status:** implementation in progress.
 
-**Open implementation decision:** This ticket is drafted for saved-result replay through the API. Confirm that boundary before implementation. If actual file ingestion and engine reruns are required, revise this ticket and its blocking edges first. The prototype's Ploy/Sazabi room objects are not existing analyzable room files.
+**Implementation boundary:** Benjamin asked to “do the rest” after the proposed replay scope was explained on 2026-10-24. Proceeding with saved-result replay through the API. Actual ingestion works for existing server rooms (58 focused intake/route tests passed), but Ploy/Sazabi still have no analyzable room files or company-to-room ingestion mapping. The existing Rooms ingestion journey is preserved. Replay does not claim to run that ingestion path.
 
 - [ ] Saved partial and full results for both demo companies validate against the shared room/readout contracts, with an explicit company-to-room association and stable claim, file and arrival identities.
 - [ ] A reproducible demo action or replay fixture produces an arrival notice through the application boundary. The UI does not invent arrivals on a timer or claim a founder actually sent files.

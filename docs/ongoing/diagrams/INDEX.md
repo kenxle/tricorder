@@ -13,3 +13,5 @@
 - [claims_workflow.md](claims_workflow.md): how claims are pulled from the deck and the pitch video, checked against every other document and the outside world, labelled supported, contradicted or unsupported, and fed into the readout.
 - [system.md](system.md): how a company's files pass through the scans, the merge and the server to the page, and where the model and the readers sit.
 - [ux_review.md](ux_review.md): the specified user journey from company URL to principal memo, a Mermaid flow, prototype UX findings, and proposed iterations.
+
+- [diligence_annotations.md](diligence_annotations.md): local iPhone persona, selected-text annotation, persistence and GP-review flow.

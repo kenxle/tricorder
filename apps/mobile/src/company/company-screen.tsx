@@ -3,42 +3,44 @@ import type { PropsWithChildren } from "react";
 import { useCallback, useMemo, useState } from "react";
 import {
   KeyboardAvoidingView,
-  Linking,
-  Modal,
   Platform,
-  Pressable,
   ScrollView,
   StyleSheet,
+  Text,
   View,
 } from "react-native";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native-safe-area-context";
 
+import { AnnotationToolbar } from "../annotations/annotation-panel";
+import { AnnotationItem, AnnotationScope } from "../annotations/context";
+import { NativeSheet } from "../readout/native-sheet";
 import {
   Action,
   Body,
   Card,
-  Field,
   Heading,
   Note,
   Row,
   useReadoutColors,
 } from "../readout/ui";
 import { RequestForm } from "../request-ui/request-form";
-import { savedRequestStage, useRequestSession } from "../request-ui/session";
+import { useRequestSession } from "../request-ui/session";
+import { CompanyCarousel } from "./company-carousel";
+import { stages, useCompanyState } from "./company-state";
 import { data } from "./data";
-import { requestItems, resolveCompany, safeWebUrl } from "./model";
+import { EvidenceContent } from "./evidence-content";
+import { requestItems, resolveCompany } from "./model";
 import type {
   Company,
   RequestItem,
   ResearchClaim,
   ResearchSection,
-  SetupField,
   Stage,
 } from "./model";
 
 const styles = StyleSheet.create({
   brand: { fontFamily: "ArchivoDisplay", fontSize: 22, letterSpacing: -0.7 },
-  claim: { borderBottomWidth: 1, gap: 8, paddingVertical: 16 },
+  claim: { gap: 4, paddingVertical: 4 },
   content: {
     alignSelf: "center",
     gap: 24,
@@ -47,7 +49,7 @@ const styles = StyleSheet.create({
     paddingBottom: 48,
     width: "100%",
   },
-  emphasis: { fontFamily: "ArchivoBold" },
+  emphasis: { fontWeight: "600" },
   group: { gap: 8 },
   hero: { gap: 16, paddingVertical: 16 },
   lede: { fontSize: 20, lineHeight: 29, maxWidth: 720 },
@@ -64,8 +66,8 @@ const styles = StyleSheet.create({
   screen: { flex: 1 },
   section: { borderTopWidth: 1, gap: 16, paddingTop: 24 },
   sectionTitle: {
-    fontFamily: "ArchivoDisplay",
-    fontSize: 28,
+    fontSize: 24,
+    fontWeight: "700",
     letterSpacing: -0.6,
     lineHeight: 34,
   },
@@ -79,54 +81,20 @@ const styles = StyleSheet.create({
   },
   sheetHeader: {
     alignItems: "center",
-    borderBottomWidth: 1,
     flexDirection: "row",
     gap: 16,
     justifyContent: "space-between",
     padding: 16,
   },
   snapshot: { borderBottomWidth: 1, borderTopWidth: 1, paddingVertical: 16 },
-  source: {
-    borderRadius: 4,
-    borderWidth: 1,
-    flexShrink: 1,
-    justifyContent: "center",
-    minHeight: 44,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-  },
-  start: {
-    alignSelf: "center",
-    gap: 24,
-    maxWidth: 720,
-    padding: 24,
-    paddingTop: 64,
-    width: "100%",
-  },
   title: {
-    fontFamily: "ArchivoDisplay",
-    fontSize: 44,
-    letterSpacing: -2,
-    lineHeight: 46,
+    fontSize: 34,
+    fontWeight: "700",
+    letterSpacing: -0.7,
+    lineHeight: 41,
   },
 });
 
-const stages: {
-  id: Stage;
-  title: string;
-}[] = [
-  { id: "pre_seed", title: "Pre-seed" },
-  { id: "seed", title: "Seed" },
-  { id: "series_a", title: "Series A" },
-];
-const fieldLabels = {
-  batch: "Batch",
-  founders: "Founders",
-  location: "Location",
-  name: "Name",
-  team_size: "Team size",
-  website: "Website",
-};
 const Sheet = ({
   title,
   onClose,
@@ -134,90 +102,37 @@ const Sheet = ({
 }: PropsWithChildren<{
   title: string;
   onClose: () => void;
-}>) => {
-  const colors = useReadoutColors();
-  return (
-    <Modal
-      visible
-      animationType="slide"
-      onRequestClose={onClose}
-      presentationStyle="pageSheet"
+}>) => (
+  <NativeSheet visible onClose={onClose}>
+    <View style={styles.sheetHeader}>
+      <Heading>{title}</Heading>
+      <Action compact title="Done" onPress={onClose} />
+    </View>
+    <KeyboardAvoidingView
+      style={styles.screen}
+      enabled={Platform.OS !== "web"}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
     >
-      <SafeAreaProvider>
-        <SafeAreaView style={[styles.screen, { backgroundColor: colors.bg }]}>
-          <View style={[styles.sheetHeader, { borderColor: colors.line }]}>
-            <Heading>{title}</Heading>
-            <Action title="Done" onPress={onClose} />
-          </View>
-          <KeyboardAvoidingView
-            style={styles.screen}
-            enabled={Platform.OS !== "web"}
-            behavior={Platform.OS === "ios" ? "padding" : "height"}
-          >
-            <ScrollView
-              keyboardShouldPersistTaps="handled"
-              contentContainerStyle={styles.sheetContent}
-            >
-              {children}
-            </ScrollView>
-          </KeyboardAvoidingView>
-        </SafeAreaView>
-      </SafeAreaProvider>
-    </Modal>
-  );
-};
+      <ScrollView
+        keyboardShouldPersistTaps="handled"
+        contentContainerStyle={styles.sheetContent}
+      >
+        {children}
+      </ScrollView>
+    </KeyboardAvoidingView>
+  </NativeSheet>
+);
 const SourceEvidence = ({
   claim,
   onClose,
 }: {
   claim: ResearchClaim;
   onClose: () => void;
-}) => {
-  const [error, setError] = useState("");
-  const source = claim.source ? data.sources[claim.source] : undefined;
-  const url = safeWebUrl(claim.url ?? source?.url ?? "");
-  const openSource = async () => {
-    if (!url) {
-      return;
-    }
-    try {
-      await Linking.openURL(url);
-    } catch {
-      setError("Could not open this source. You can copy the URL below.");
-    }
-  };
-  return (
-    <Sheet title="Evidence" onClose={onClose}>
-      <Note>PUBLIC SOURCE · SAVED SNAPSHOT</Note>
-      <Heading>{source?.title ?? "Source unavailable"}</Heading>
-      <Body>{claim.text}</Body>
-      {claim.excerpt ? (
-        <Card>
-          <Note>{claim.excerpt.before}</Note>
-          <Body style={styles.emphasis}>{claim.excerpt.match}</Body>
-          <Note>{claim.excerpt.after}</Note>
-        </Card>
-      ) : null}
-      {!claim.excerpt && claim.quote ? (
-        <Card>
-          <Body>{claim.quote}</Body>
-        </Card>
-      ) : null}
-      {!claim.excerpt && !claim.quote && (
-        <Note>No excerpt is included in this saved record.</Note>
-      )}
-      {url && (
-        <>
-          <Action title="Open original source ↗" onPress={openSource} />
-          <Note>{url}</Note>
-        </>
-      )}
-      {error ? <Body accessibilityRole="alert">{error}</Body> : null}
-      <Note>Saved research: {data.built.replace("T", " ")}</Note>
-      <Note>{source?.path}</Note>
-    </Sheet>
-  );
-};
+}) => (
+  <Sheet title="Evidence" onClose={onClose}>
+    <EvidenceContent claim={claim} />
+  </Sheet>
+);
 const ClaimLine = ({
   claim,
   number,
@@ -230,33 +145,41 @@ const ClaimLine = ({
   const colors = useReadoutColors();
   const source = claim.source && data.sources[claim.source];
   return (
-    <View style={[styles.claim, { borderColor: colors.line }]}>
-      <Body style={claim.placeholder ? { color: colors.muted } : undefined}>
-        {claim.text}
-      </Body>
-      <Row>
+    <AnnotationItem
+      id={`claim:${claim.source ?? "unsourced"}:${claim.text}`}
+      label={claim.text}
+    >
+      <View style={[styles.claim, { borderColor: colors.line }]}>
+        <Body
+          accessibilityRole={source ? "link" : undefined}
+          accessibilityLabel={
+            source
+              ? `${claim.text}. Evidence ${number}: ${source.title}`
+              : undefined
+          }
+          onPress={source ? () => onSource(claim) : undefined}
+          style={[
+            { minHeight: source ? 44 : undefined },
+            claim.placeholder ? { color: colors.muted } : undefined,
+          ]}
+        >
+          {claim.text}
+          {/* Universal Text accepts only a string; RN Text preserves selectable prose and inline links. */}
+          {source && (
+            <Text
+              style={{ color: colors.accent, textDecorationLine: "underline" }}
+            >
+              {` [${number}]`}
+            </Text>
+          )}
+        </Body>
         {claim.placeholder ? <Note>Not researched yet</Note> : null}
         {!claim.placeholder && claim.kind ? <Note>{claim.kind}</Note> : null}
-        {source && (
-          <Pressable
-            accessibilityRole="button"
-            accessibilityLabel={`Evidence ${number}: ${source.title}`}
-            onPress={() => onSource(claim)}
-            style={({ pressed }) => [
-              styles.source,
-              { borderColor: colors.line, opacity: pressed ? 0.6 : 1 },
-            ]}
-          >
-            <Note style={styles.mono}>
-              [{number}] {source.title}
-            </Note>
-          </Pressable>
-        )}
         {!source && !claim.placeholder && (
           <Note>Source unavailable in this snapshot</Note>
         )}
-      </Row>
-    </View>
+      </View>
+    </AnnotationItem>
   );
 };
 const Section = ({
@@ -279,82 +202,54 @@ const Section = ({
     })) ?? [{ claims: section.claims ?? [], subtitle: "", title: "" }];
   const claims = groups.flatMap((group) => group.claims);
   return (
-    <View style={[styles.section, { borderColor: colors.line }]}>
-      <Heading style={styles.sectionTitle}>{section.title}</Heading>
-      {groups.map((group) => (
-        <View key={group.title || section.key} style={styles.group}>
-          {group.title ? (
-            <Body style={styles.emphasis}>{group.title}</Body>
-          ) : null}
-          {group.subtitle ? <Note>{group.subtitle}</Note> : null}
-          {group.claims.map((claim) => (
-            <ClaimLine
-              key={claim.text}
-              claim={claim}
-              number={claims.indexOf(claim) + 1}
-              onSource={onSource}
-            />
-          ))}
-        </View>
-      ))}
-      {section.gaps?.map((gap) => (
-        <Card key={gap.text}>
-          <Note>GAP</Note>
-          <Body>{gap.text}</Body>
-          <Note>{gap.why}</Note>
-        </Card>
-      ))}
-    </View>
+    <AnnotationItem id={`section:${section.key}`} label={section.title}>
+      <View style={[styles.section, { borderColor: colors.line }]}>
+        <Heading style={styles.sectionTitle}>{section.title}</Heading>
+        {groups.map((group) => (
+          <AnnotationItem
+            key={group.title || section.key}
+            id={`group:${group.title || section.key}`}
+            label={group.title || section.title}
+          >
+            <View style={styles.group}>
+              {group.title ? (
+                <Body style={styles.emphasis}>{group.title}</Body>
+              ) : null}
+              {group.subtitle ? <Note>{group.subtitle}</Note> : null}
+              {group.claims.map((claim) => (
+                <ClaimLine
+                  key={claim.text}
+                  claim={claim}
+                  number={claims.indexOf(claim) + 1}
+                  onSource={onSource}
+                />
+              ))}
+            </View>
+          </AnnotationItem>
+        ))}
+        {section.gaps?.map((gap) => (
+          <AnnotationItem
+            key={gap.text}
+            id={`gap:${gap.text}`}
+            label={gap.text}
+          >
+            <Card>
+              <Note>GAP</Note>
+              <Body>{gap.text}</Body>
+              <Note>{gap.why}</Note>
+            </Card>
+          </AnnotationItem>
+        ))}
+      </View>
+    </AnnotationItem>
   );
-};
-const setupFor = (company: Company): Record<string, SetupField> => {
-  const saved = data.research[company.slug]?.setup;
-  if (saved) {
-    return Object.fromEntries(
-      Object.entries(saved).map(([key, value]) => [key, { ...value }])
-    );
-  }
-  const founders = data.yc_founders[company.slug];
-  return {
-    batch: { source: data.list_source, value: company.batch },
-    founders: {
-      source: founders?.[0]?.source,
-      value: founders?.map((founder) => founder.name).join(", ") ?? "",
-    },
-    location: { source: data.list_source, value: company.regions[0] ?? "" },
-    name: { source: data.list_source, value: company.name },
-    stage: {
-      note: "Set by the associate; not confirmed by research",
-      value: "seed",
-    },
-    team_size: { source: data.list_source, value: String(company.team_size) },
-    website: { source: data.list_source, value: company.website },
-  };
-};
-const fieldProvenance = (field: SetupField | undefined): string => {
-  if (field?.edited) {
-    return "Corrected by you";
-  }
-  if (field?.source) {
-    return data.sources[field.source]?.title ?? "Source unavailable";
-  }
-  return "Not in the saved files";
 };
 const CompanyWorkspace = ({ company }: { company: Company }) => {
   const colors = useReadoutColors();
   const research = data.research[company.slug];
-  const [fields, setFields] = useState(() => setupFor(company));
-  const [setup, setSetup] = useState(false);
+  const { fields, stage } = useCompanyState(company);
   const [request, setRequest] = useState(false);
   const [evidence, setEvidence] = useState<ResearchClaim | null>(null);
-  const [stage, setStage] = useState<Stage>(() => {
-    const value =
-      savedRequestStage(company.slug) ?? research?.setup.stage?.value;
-    if (value === "series_a" || value === "pre_seed") {
-      return value;
-    }
-    return "seed";
-  });
   const bundledItems = useMemo(
     () => requestItems(data.checklist, stage, research),
     [stage, research]
@@ -375,22 +270,18 @@ const CompanyWorkspace = ({ company }: { company: Company }) => {
     layoutItems?.stage === stage ? layoutItems.items : bundledItems
   );
   const selected = session.items.filter((item) => item.checked).length;
-  const changeStage = (next: Stage) => {
-    setStage(next);
-    setFields((current) => ({
-      ...current,
-      stage: { ...current.stage, edited: true, value: next },
-    }));
-  };
   return (
-    <>
+    <AnnotationScope
+      id={`company:${company.slug}`}
+      label={`${company.name} · Company report`}
+    >
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerStyle={styles.content}
       >
         <Row>
           <Action
-            title="← Company URL"
+            title="← Companies"
             onPress={() => router.setParams({ company: "" })}
           />
           <Note style={styles.mono}>FIRST READOUT / BEFORE THE ROOM</Note>
@@ -406,7 +297,15 @@ const CompanyWorkspace = ({ company }: { company: Company }) => {
             <Note>· {stages.find((entry) => entry.id === stage)?.title}</Note>
           </Row>
           <Row>
-            <Action title="Company details" onPress={() => setSetup(true)} />
+            <Action
+              title="Company details"
+              onPress={() =>
+                router.push({
+                  params: { company: company.website },
+                  pathname: "/company-sheet",
+                })
+              }
+            />
             <Action
               title="Draft the data-room request"
               primary
@@ -480,56 +379,6 @@ const CompanyWorkspace = ({ company }: { company: Company }) => {
           />
         </View>
       </ScrollView>
-      {setup && (
-        <Sheet title="Company details" onClose={() => setSetup(false)}>
-          <Note>
-            Matched from the saved YC directory. Corrections apply to this
-            readout and the request draft.
-          </Note>
-          {Object.entries(fieldLabels).map(([key, label]) => (
-            <View key={key} style={styles.group}>
-              <Field
-                label={label}
-                value={fields[key]?.value ?? ""}
-                onChangeText={(value) =>
-                  setFields((current) => ({
-                    ...current,
-                    [key]: { ...current[key], edited: true, value },
-                  }))
-                }
-              />
-              <Note>{fieldProvenance(fields[key])}</Note>
-              {fields[key]?.source && (
-                <Action
-                  title={`Source for ${label.toLowerCase()}`}
-                  onPress={() => {
-                    setSetup(false);
-                    setEvidence({
-                      source: fields[key].source,
-                      text: `${label} in the saved record: ${setupFor(company)[key].value}`,
-                    });
-                  }}
-                />
-              )}
-            </View>
-          ))}
-          <Heading>Stage</Heading>
-          <Row>
-            {stages.map((entry) => (
-              <Action
-                key={entry.id}
-                title={`${stage === entry.id ? "✓ " : ""}${entry.title}`}
-                onPress={() => changeStage(entry.id)}
-              />
-            ))}
-          </Row>
-          <Note>
-            {fields.stage.edited
-              ? "Corrected by you"
-              : (fields.stage.note ?? "From the saved research")}
-          </Note>
-        </Sheet>
-      )}
       {request && (
         <Sheet title="Data-room request" onClose={() => setRequest(false)}>
           <Note>
@@ -549,7 +398,7 @@ const CompanyWorkspace = ({ company }: { company: Company }) => {
       {evidence && (
         <SourceEvidence claim={evidence} onClose={() => setEvidence(null)} />
       )}
-    </>
+    </AnnotationScope>
   );
 };
 export const CompanyScreen = () => {
@@ -561,21 +410,12 @@ export const CompanyScreen = () => {
     ? params.company[0]
     : params.company;
   const company = parameter ? resolveCompany(parameter, data.companies) : null;
-  const [input, setInput] = useState("");
-  const [error, setError] = useState("");
-  const start = (value: string) => {
-    if (!resolveCompany(value, data.companies)) {
-      setError(
-        "This URL does not match a company in the saved YC Spring 2026 directory. Try its website or exact YC company page."
-      );
-      return;
-    }
-    setError("");
-    router.setParams({ company: value.trim() });
-  };
   return (
     <SafeAreaView style={[styles.screen, { backgroundColor: colors.bg }]}>
-      {Platform.OS !== "web" && (
+      <View style={{ paddingHorizontal: 16 }}>
+        <AnnotationToolbar />
+      </View>
+      {company && Platform.OS !== "web" && (
         <View style={[styles.masthead, { borderColor: colors.line }]}>
           <Body style={styles.brand}>Tricorder</Body>
           <Note style={styles.mono}>EVERY CLAIM SOURCED</Note>
@@ -584,56 +424,9 @@ export const CompanyScreen = () => {
       {company ? (
         <CompanyWorkspace key={company.slug} company={company} />
       ) : (
-        <ScrollView
-          keyboardShouldPersistTaps="handled"
-          contentContainerStyle={styles.start}
-        >
-          <Note style={styles.mono}>01 / COMPANY URL</Note>
-          <Heading style={styles.title}>Which company?</Heading>
-          <Body style={styles.lede}>Point it at a startup, get a readout.</Body>
-          <Note>
-            Paste the company’s website or its YC company page. The saved
-            research opens automatically.
-          </Note>
-          <Field
-            label="Company URL"
-            value={input}
-            onChangeText={setInput}
-            placeholder="https://ploy.ai"
-            autoCapitalize="none"
-            autoCorrect={false}
-            keyboardType="url"
-            returnKeyType="go"
-            onSubmitEditing={() => start(input)}
-          />
-          <Action
-            title="Start readout →"
-            primary
-            onPress={() => start(input)}
-            disabled={!input.trim()}
-          />
-          {error || parameter ? (
-            <Body accessibilityRole="alert" style={{ color: colors.red }}>
-              {error || "No matching company found for the URL in this link."}
-            </Body>
-          ) : null}
-          <Row>
-            <Note>Try a saved readout</Note>
-            <Action title="Ploy" onPress={() => start("https://ploy.ai")} />
-            <Action
-              title="Sazabi"
-              onPress={() => start("https://www.sazabi.com")}
-            />
-          </Row>
-          <Note>
-            {data.companies.length} companies in the saved YC Spring 2026
-            directory. Public research is available for Ploy and Sazabi.
-          </Note>
-          <Action
-            title="Open sample room analysis"
-            onPress={() => router.push("/rooms")}
-          />
-        </ScrollView>
+        <CompanyCarousel
+          onSelect={(url) => router.setParams({ company: url })}
+        />
       )}
     </SafeAreaView>
   );
