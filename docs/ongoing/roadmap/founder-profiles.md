@@ -3,7 +3,7 @@
 A card per founder from GitHub, personal sites and talks.
 
 - **Status today:** not started. Left: a card per founder from GitHub, personal sites and talks.
-- **Who builds it:** agent.
+- **Who builds it:** Benjamin (Ken, 11:33 AM), from the [brief](../../features/20261024.01_pre_room_diligence/00_brief.md).
 - **Waits on:** Ken reads GitHub's terms on persona accounts before any demo account is made (feasibility open point); [outside-in](outside-in.md), for the company resolver, the founder names it pulls from the deck, and the GitHub client and cache it builds.
 - **Horizon:** Now to Friday night
 - **Checked against:** no scans/founders/.

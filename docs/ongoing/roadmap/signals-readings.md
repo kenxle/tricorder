@@ -3,7 +3,7 @@
 This week's saved competitor readings, written as the market-signals panel's data, so Saturday only shows them.
 
 - **Status today:** not started. Left: the saved signal readings.
-- **Who builds it:** agent.
+- **Who builds it:** Benjamin (Ken, 11:33 AM), from the [brief](../../features/20261024.01_pre_room_diligence/00_brief.md).
 - **Waits on:** cached-data, saturday-specs (the signals schema), skeleton (the Claim schema).
 - **Horizon:** Now to Friday night
 - **Checked against:** no cache/signals/.

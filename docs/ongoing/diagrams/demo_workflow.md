@@ -23,7 +23,7 @@ Status comes from [status.csv](../roadmap/status.csv), checked against the code.
 
 | Step | Slices that build it | Status |
 |---|---|---|
-| 1. A real list of YC Spring 2026 companies | [yc-rooms](../roadmap/yc-rooms.md) | Waiting on Ken's pick. Candidates: [research_demo_companies.md](../../reports/20261022.02_research/research_demo_companies.md) |
+| 1. A real list of YC Spring 2026 companies | [company-setup](../roadmap/company-setup.md) (not started; the list of companies is saved), [yc-rooms](../roadmap/yc-rooms.md) | Waiting on Ken's pick. Candidates: [research_demo_companies.md](../../reports/20261022.02_research/research_demo_companies.md) |
 | 2. Our own models and internet research | [outside-in](../roadmap/outside-in.md), [online-presence](../roadmap/online-presence.md), [founder-profiles](../roadmap/founder-profiles.md), [comps](../roadmap/comps.md), [market-signals](../roadmap/market-signals.md), [signals-readings](../roadmap/signals-readings.md), [frameworks-scan](../roadmap/frameworks-scan.md), [cached-data](../roadmap/cached-data.md) | Not started |
 | 3. Requests for data room information | [room-requests](../roadmap/room-requests.md) (not started: the automatic check and the associate's editable list), [founder-requests](../roadmap/founder-requests.md) (done: the drafted message), [checklist-coverage](../roadmap/checklist-coverage.md) (partly built: what the room holds and lacks) | Partly built |
 | 4. The data room comes back | [yc-rooms](../roadmap/yc-rooms.md) (the synthetic room per company), [room-templates](../roadmap/room-templates.md), [inbox-forward](../roadmap/inbox-forward.md) | Not started. A reply's file already lands in a working copy of a sample room (founder-requests) |

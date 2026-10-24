@@ -6,8 +6,8 @@ research-gaps,done,,agent,slice Status line says done; docs/reports/20261022.02_
 sponsor-adapters,not started,one adapter per sponsor (Akta; Crunchbase; Nicrron); keys arrive today,agent,clients/ holds only llm.py
 keys,waiting on Ken,the .env keys and the demo laptop's tools,Ken,no .env in the repo checkout
 yc-rooms,waiting on Ken,Ken picks the real YC companies; then an agent generates their synthetic rooms,agent after Ken,data_room/generate.py offers only hollis and brasswick
-cached-data,not started,save every outside call under cache/,agent,no cache/ folder
-signals-readings,not started,the saved signal readings,agent,no cache/signals/
+cached-data,not started,save every outside call under cache/,Benjamin,no cache/ folder
+signals-readings,not started,the saved signal readings,Benjamin,no cache/signals/
 saturday-specs,partly built,example result files in sample_out/; the static readout mock; one test call per schema,agent,FRAMEWORKS.md entries exist; no sample_out/ folder
 skeleton,done,,agent,merged in PR #2; schema/ server/ readout/ bin/ci-py and bin/ci-web exist
 social-posts,not started,draft the 11:00 AM and 3:30 PM posts,agent drafts then Ken,no post drafts in docs/
@@ -31,8 +31,8 @@ founder-requests,done,,agent,merged in PR #8; founder_requests/ exists
 memo-export,done,,agent,merged in PR #8; memo/ exists
 reader-scenarios,not started,each memo reader gets their own copy to steer and can try what-ifs on the financial model,agent,no scenarios code in memo/
 bank-check,not started,the Plaid sandbox bank check,agent with Ken for Plaid,no Plaid code; scans/__init__.py lists bank as planned
-outside-in,not started,the outside-world tabs: website; Hacker News; App Store; SEC filings,agent with Ken for keys,no scans/outside/
-founder-profiles,not started,a card per founder from GitHub; personal sites and talks,agent,no scans/founders/
+outside-in,not started,the outside-world tabs: website; Hacker News; App Store; SEC filings,Benjamin,no scans/outside/
+founder-profiles,not started,a card per founder from GitHub; personal sites and talks,Benjamin,no scans/founders/
 online-presence,not started,the company's footprint: web; Hacker News; Product Hunt; app stores; Reddit pages Ken saves,agent,no scans/presence/
 reference-checks,not started,prepare the operator's reference calls (low priority: Ken is not sure Tricorder can take this on),agent,no reference-check code
 stage-views,not started,first screens that suit the company's stage,agent,no stage view code
@@ -49,9 +49,10 @@ readout,partly built,source linking (board task TRI-readout-link); the ask-list 
 readout-page,partly built,wave 2 panels (claims table; cohort rebuild); memo link; video jump; ask-list copy button; reorder buttons; market-signals panel,frontend,readout/src/App.tsx shows top flags; overview; gaps; could not verify; ask list; source chips
 pitch-video,not started,transcribe the video and pull its claims with timestamps,backend-and-data,no scans/video/
 contract-terms-saturday,not started,the model reading of contracts and checks 2 and 5,backend-and-data,scans/redflags/contract_terms.py does not exist; the shared contract_reader.py does
-comps,not started,the comps panel,design-and-finance,no scans/comps/
-market-signals,not started,the market-signals panel and its live run,frontend,no scans/signals/
+comps,not started,the comps panel,Benjamin,no scans/comps/
+market-signals,not started,the market-signals panel and its live run,Benjamin,no scans/signals/
 demo-freeze,partly built,frozen outputs in demo/frozen/; the demo-freeze tag; rehearsal,captain,eval/score.py and bin/smoke exist; no demo/ folder
 typescript-port,not started,the whole port,Benjamin,decided 2026-10-24 11:00; no TypeScript outside readout/ yet
 room-requests,not started,the automatic run when a room arrives; the associate's editable request list,Benjamin,coverage.py and founder_requests/draft.py exist; no editable list or automatic run
 expert-knowledge,not started,one knowledge file per analysis loaded by its prompts,Kimmy,document guides exist; no analysis reads them at run time
+company-setup,not started,the list in the app; set up a company; kick off the pre-room research,Benjamin,yc_spring_2026_companies.csv saved; no app code reads it

@@ -3,7 +3,7 @@
 Hiring, traffic, reviews, news and pricing for the demo company's real competitors, and the live outside-world run on one approved real company.
 
 - **Status today:** not started. Left: the market-signals panel and its live run.
-- **Who builds it:** frontend.
+- **Who builds it:** Benjamin (Ken, 11:33 AM), from the [brief](../../features/20261024.01_pre_room_diligence/00_brief.md).
 - **Waits on:** signals-readings (this week's `cache/signals/signals.json`); yc-rooms and cached-data, for the approved real company's saved calls.
 - **Horizon:** Saturday
 - **Checked against:** no scans/signals/.

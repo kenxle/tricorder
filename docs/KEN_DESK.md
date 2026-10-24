@@ -16,7 +16,7 @@
 
 ### From the notes
 
-- **What's in the room and what to ask for, automated:** now the first slice on the roadmap, [room-requests](ongoing/roadmap/room-requests.md). It checks the room on arrival, lists what is missing, and the associate checks, unchecks and adds items before the request is drafted.
+- **What's in the room and what to ask for, automated:** on the roadmap as step 3, [room-requests](ongoing/roadmap/room-requests.md). It checks the room on arrival, lists what is missing, and the associate checks, unchecks and adds items before the request is drafted.
 - **Requests for more data:** built. The [founder-requests](ongoing/roadmap/founder-requests.md) slice drafts the message to the company asking for what the room is missing, with guidance on what to send.
 - **Testimonials (B2B) and traction from social presence (B2C):** nothing checks either yet. The nearest slice is [online-presence](ongoing/roadmap/online-presence.md), not started. Say if these should become checklist items or part of that slice.
 - **Checking whether founders tell the truth when the VC knows less than they do:** this is the core of what is built. The [claim-support](ongoing/roadmap/claim-support.md) scan checks every figure in the deck and the pitch against the room's own files, and the red-flag checks compare numbers by script, so the VC does not need the founder's expertise to see where the founder's own documents disagree. It could be a line in the pitch.
@@ -38,13 +38,12 @@ graph TD
     F -. "asks for more" .-> C
 ```
 
-Where it stands: steps 7 and 8 are built (the memo). Step 3 is partly built: the drafted request exists, and [room-requests](ongoing/roadmap/room-requests.md) adds the automatic check and the associate's list. Step 5 is mostly built. Step 6 is partly built. Steps 1, 2 and 4 are not started: they wait on your pick of YC companies and on the outside research.
+Where it stands: steps 7 and 8 are built (the memo). Step 3 is partly built: the drafted request exists, and [room-requests](ongoing/roadmap/room-requests.md) adds the automatic check and the associate's list. Step 5 is mostly built. Step 6 is partly built. Steps 1, 2 and 4 are not started. The roadmap's demo path now follows the workflow, starting with [company-setup](ongoing/roadmap/company-setup.md): pick a company from the saved YC Spring 2026 list and run our own research before any room.
 
 ## Needs your call
 
 Each item says who is waiting and what Claude recommends.
 
-- [ ] **0. Reorder the build and the demo to follow the workflow?** Today the demo opens on Hollis Voice's flags, and the roadmap's demo path builds the room analysis first. The workflow starts with the YC list and our own research, which are not started. **Claude recommends:** keep the room analysis first (it is most of the demo and mostly built), and move [cached-data](ongoing/roadmap/cached-data.md) and [outside-in](ongoing/roadmap/outside-in.md) up to right after it, so steps 1 and 2 exist by the 3:30 freeze. Then Claude rewrites the beat sheet in [DEMO.md](ongoing/DEMO.md) in the workflow's order. *Waiting: your pick of YC companies (item 5) for steps 1, 2 and 4.*
 - [ ] **1. Who is on the team, and what each person builds.** So far on the board: Benjamin (the TypeScript port) and Tirth (tasks coming from Benjamin). Kimi is with you now. The roadmap's Saturday roles are captain, frontend, backend-and-data and design-and-finance. **Claude recommends** writing each person's name and area in the Notes, and Claude puts them in the Team table in [AGENTS.md](../AGENTS.md) and on the roadmap. *Waiting: everyone's agents, which assign work by role.*
 - [ ] **2. GitHub access.** The repo is private. Benjamin already pushes. Tirth and Kimi need an invite to `kenxle/tricorder` (Settings, Collaborators) before their agents can pull. *Waiting: Tirth, Kimi.*
 - [ ] **3. What runs at the 3:30 PM freeze.** Benjamin is porting to TypeScript; the Python version is the one that works today. **Claude recommends** the freeze runs whichever version passes the answer-key check at 3:30, with Python as the fallback. *Waiting: Benjamin ([board](BULLETIN.md), 11:01).*
@@ -80,6 +79,10 @@ From the [roadmap](ongoing/ROADMAP.md), "Up next". Status counts are from [statu
 
 Newest first.
 
+- 11:28: Demo path follows the workflow; company-setup added as the first slice (pick a YC company, research before the room).
+- 11:19: Kimmy's slice, expert-knowledge.
+- 11:18: room-requests, for Benjamin.
+- 11:17: The demo workflow diagram.
 - 11:05: Board asks Benjamin to write tasks for Tirth.
 - 11:01: TypeScript port set up for Benjamin: slice, roadmap section, team row, board message.
 - 10:54: Roadmap reshaped: what to build next and who builds it; each slice in its own file.
