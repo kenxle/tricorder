@@ -35,8 +35,11 @@ flowchart LR
     API -.-> SV
     DEV -.-> P
     DEV -.-> RPC
-    DEV -.-> MOBILE[apps/mobile/ Expo starter<br/>readout integration pending]
-    TS -.->|declared workspace dependency| MOBILE
+    DEV -.-> MOBILE[apps/mobile/ React Native readout]
+    TS -.->|shared readout contracts| MOBILE
+    AT -.->|generated HTTP contracts| MOBILE
+    MOBILE -->|local REST readout requests| ADAPTER[Expo API adapter<br/>loopback only]
+    ADAPTER -->|allowlisted JSON reads and writes| SV
     P -->|one-sentence steer| ST[steering/]
     ST -->|rerun the piece| S
     P -->|ask list| FR[founder_requests/<br/>draft, never sent]
