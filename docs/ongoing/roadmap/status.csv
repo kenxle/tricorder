@@ -54,3 +54,4 @@ market-signals,not started,the market-signals panel and its live run,frontend,no
 demo-freeze,partly built,frozen outputs in demo/frozen/; the demo-freeze tag; rehearsal,captain,eval/score.py and bin/smoke exist; no demo/ folder
 typescript-port,not started,the whole port,Benjamin,decided 2026-10-24 11:00; no TypeScript outside readout/ yet
 room-requests,not started,the automatic run when a room arrives; the associate's editable request list,Benjamin,coverage.py and founder_requests/draft.py exist; no editable list or automatic run
+expert-knowledge,not started,one knowledge file per analysis loaded by its prompts,Kimmy,document guides exist; no analysis reads them at run time

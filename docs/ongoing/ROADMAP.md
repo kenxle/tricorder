@@ -42,6 +42,14 @@ Ken decided at 11:00 AM: Tricorder moves to TypeScript, with a React web app and
 |---|---|---|
 | [typescript-port](roadmap/typescript-port.md) (not started) | The shared TypeScript core (schema, readers, scans, merge, scoring), the React web app and the React Native app | Benjamin |
 
+## Kimmy: expert knowledge
+
+Ken, 11:18 AM: Kimmy embeds expert knowledge in the different analyses.
+
+| Slice | What is left to build | Who |
+|---|---|---|
+| [expert-knowledge](roadmap/expert-knowledge.md) (not started) | One knowledge file per analysis (what an expert checks, benchmarks by stage, green and red flags, questions for the founder), loaded by that analysis's prompts | Kimmy |
+
 ## After the demo path
 
 Everything on the roadmap is built today. Agents take these once the demo path is covered, in this order. Each joins the demo at an integration point and shows its last passing run if it is not live.

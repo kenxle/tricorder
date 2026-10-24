@@ -74,7 +74,8 @@ Teammates: add yourself here and in Core Domains when you join. Your @-handle is
 | Name | Handle | Area(s) |
 |------|--------|---------|
 | Ken | `@Ken` | Product design, user research, product management, the demo and the pitch |
-| Benjamin | `@Benjamin` | The TypeScript port: shared core, React web, React Native |
+| Benjamin | `@Benjamin` | The TypeScript port: shared core, React web, React Native; room-requests |
+| Kimmy | `@Kimmy` | Expert knowledge in each analysis |
 
 ## Core Domains
 
