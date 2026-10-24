@@ -444,6 +444,7 @@
     if (!S.by) S.by = defaultBy();
     const company = S.fields.name.value || "This company";
     const fromReadout = S.items.filter((i) => i.fromReadout).length;
+    const founderFull = (S.fields.founders.value || "").split(",")[0].trim() || "the founder";
     app.innerHTML = `${header("request", ["readout", "the first readout"])}
       <h2 class="co-title">${esc(company)}: the data-room request</h2>
       <p class="banner tc-synthetic" role="note">For the demo, the data room that comes back is synthetic. The team writes it. It is not ${esc(company)}'s data.</p>
@@ -482,9 +483,28 @@
           </aside>
         </div>
       </div>
-      <div class="actions"><button class="tc-btn primary" type="button" id="to-received">The founder sends the room</button></div>`;
+      <section class="sent" aria-label="Request status">
+        <div class="status-card" id="status-card"><strong>Request sent to ${esc(founderFull)}</strong> <span class="dot" aria-hidden="true">·</span> waiting for ${esc(company)}'s data room</div>
+        <div id="arrival"></div>
+      </section>`;
     bindRequest();
+    showArrival(company);
     refreshDraft(true);
+  }
+
+  // The room's arrival, shown as a product notification. The file count is the synthetic room's own.
+  function showArrival(company) {
+    const room = S.research && S.research.room;
+    if (!room) return;
+    const run = S.run;
+    setTimeout(() => {
+      const el = document.getElementById("arrival");
+      if (!el || run !== S.run) return;
+      const n = room.files.length;
+      el.innerHTML = `<div class="notice" role="status"><div><strong>${esc(company)} shared its data room</strong> <span class="dot" aria-hidden="true">·</span> ${n} file${n === 1 ? "" : "s"} <span class="dot" aria-hidden="true">·</span> just now</div>
+        <button class="tc-btn primary" type="button" id="to-received">Open the data room</button></div>`;
+      document.getElementById("to-received").addEventListener("click", () => go("received"));
+    }, 1800 * PACE);
   }
 
   function refreshDraft(force) {
@@ -541,7 +561,6 @@
       const done = (ok) => { document.getElementById("copied").textContent = ok ? "Copied." : "Copy did not work here. Select the text instead."; };
       (navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject()).then(() => done(true), () => done(false));
     });
-    document.getElementById("to-received").addEventListener("click", () => go("received"));
   }
 
   // Step 4: the room comes back -----------------------------------------------------------------

@@ -74,9 +74,15 @@ with sync_playwright() as p:
     check("Please send your SOC 2 report." in body2, "an added item reaches the draft")
     check("prototype" not in pg.locator("body").inner_text().lower() and pg.locator(".steps, .back").count() == 0, "no Prototype label, step bar or back links on the request")
     check(pg.locator(".banner").first.inner_text().startswith("For the demo, the data room"), "request labels the room synthetic")
-    pg.screenshot(path=str(SHOTS / "3_data_room_request_ploy.png"), full_page=True)
 
     # Step 4: received
+    check("Request sent to Bryant Chou" in pg.locator("#status-card").inner_text() and "waiting for Ploy's data room" in pg.locator("#status-card").inner_text(), "request screen shows the sent status card with the founder's name")
+    pg.wait_for_selector("#to-received")
+    note = pg.locator(".notice").inner_text()
+    nfiles = pg.evaluate("TC.S.research.room.files.length")
+    check(f"Ploy shared its data room" in note and f"{nfiles} files" in note and "just now" in note and "Open the data room" in note and not any(w in pg.locator("body").inner_text().lower() for w in ("simulate", "prototype")),
+          f"arrival notice shows the room's own file count ({nfiles}) and an Open the data room button")
+    pg.screenshot(path=str(SHOTS / "3_data_room_request_ploy.png"), full_page=True)
     pg.click("#to-received")
     pg.wait_for_selector("text=data room received")
     check(pg.locator("a[href='http://localhost:5173/']").count() == 1, "received step links to the app")

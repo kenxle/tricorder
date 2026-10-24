@@ -175,3 +175,9 @@ tr.claim:target { background: var(--tc-hover, rgba(127,127,127,0.12)); }
 @keyframes tc-skel { from { background-position: 200% 0; } to { background-position: -200% 0; } }
 @media (prefers-reduced-motion: reduce) { .skel span { animation: none; } }
 .tc-sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Request status and the arrival notice. */
+.sent { margin: var(--tc-space-6) 0 0; display: grid; gap: var(--tc-space-3); }
+.status-card, .notice { background: var(--tc-surface); border: var(--tc-hair) solid var(--tc-rule); border-radius: var(--tc-radius-l); padding: var(--tc-space-4) var(--tc-space-5); }
+.notice { display: flex; gap: var(--tc-space-3) var(--tc-space-5); align-items: center; justify-content: space-between; flex-wrap: wrap; border-color: var(--tc-ink); }
+.dot { color: var(--tc-ink-3); }
