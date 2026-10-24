@@ -20,6 +20,9 @@ export default function AppTabs() {
           ])}
         >
           <Body style={styles.brand}>Tricorder</Body>
+          <TabTrigger name="diligence" href="/diligence" asChild>
+            <TabButton isFocused={pathname === "/diligence"}>Diligence</TabButton>
+          </TabTrigger>
           <TabTrigger name="home" href="/" asChild>
             <TabButton isFocused={pathname === "/"}>Company</TabButton>
           </TabTrigger>

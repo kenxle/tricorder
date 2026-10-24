@@ -1,0 +1,107 @@
+currentUser: None
+publicFounderProfilesEnabled: False
+disabledPublicVisibility: None
+company.id: 31463
+company.slug: armature
+company.name: Armature
+company.batch: P26
+company.batch_name: Spring 2026
+company.small_logo_url: https://bookface-images.s3.amazonaws.com/small_logos/cafd940f7349e6c612893fad752013b10458ce39.png
+company.one_liner: We get your product picked by coding agents.
+company.website: https://armature.tech
+company.long_description: Coding agents like Claude Code, Codex and Cursor now decide which tools get installed in a codebase. Armature runs the real agents inside a panel of realistic repositories, measures whether they pick you, and works with your team on the docs, SDK and content that make them choose you.
+
+We call this Agent-Led Growth (~coding agents GEO for dev tools).
+
+And once agents use your product, Armature shows you what users do with it through AI, with self-serve MCP analytics and evals that catch regressions before your users see them.
+company.tags[0]: Marketing
+company.tags[1]: SEO
+company.tags[2]: AI
+company.tags[3]: APIs
+company.ycdc_status: Active
+company.logo_url: https://bookface-images.s3.us-west-2.amazonaws.com/logos/71f846b40a300e119b3f2f5ce80ce2baba197b94.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAJMSLTZ2X%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184814Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIF9wnHMtLp9DzUbl0XTnbrFHxvV9LQa3n%2BDfPLhMEx7iAiBsD%2FjbeaOXlaysBvZ12%2BAKRely7D0fwfibE20exuX3tCrlAwh8EAAaDDAwNjIwMTgxMTA3MiIMpwsJOedcS3qnnX2OKsIDmNKqFCDfKW01WNYeptIPM8XzQmVyxGG9AFM4EW3%2FJ9D1Ds%2FEybdvV5dtVYOlFJKC62VDyDMAT85gUwiTDkYQzEPKoJ1y50dchn0CPQdriOjG2gA4JIIzwFsDUQT9oy%2F1BH9YAWc%2BZzjq7ISHbKEkjZSGEcldFZ8vnIS%2Fxs5OA1KECT%2BdOfZIGhDsGEC%2BtsX0wl9ZsBAQN3tVZJUblBOhm7KeZHhsiK4ad4fayKli8nbhclbOSw7%2FVID%2BtShRrrS5BbbZf5QKR0ve9QF2cAUkvSwZZTDEEIz2Mv2tTxs5IGjRaGl0f9s2A9gfchBXBKqbGe1Wye9nSWyPanpG5b6G6kQkkkLZb9pMwkBfukoMXG8lVvBQCj%2FLpLN2lYqFzsYbhqgnHNHg6MIuPJsiv9sNU9I6NQgQXUekZTFYNWDbNr1dM9ABtAtSi4Js51YrY02jGImQn4D7HLCKoP7ern07Dth6AErRBJwKtSdDm0E7kxW2ErXteHtaaMqn7V4vOQ3%2Fpl2fATwf7SU8sRxDtl6S8j4Nf7uhEVwD7Z66EPKoaTlB90lcf2sdPheK0nclqPQsFIQNQTE2pLN4L9mpgnWD7yzVMOGv6dYGOqYBzZ0uQ%2BBPGZFOoUqBP2uYbKjyTYSO1R%2Fd7gBIf5NNek%2BFK%2BkVfBh4bLEVYIJ28xZjOBOuUdpTIxrNIvOSvBxHMKoRScUFOe1%2FDuJvFTB6jNdbDFiuTOmmYd9sQ5da0NjAozWkHzghylb%2Fm8PhXFLUexH31NrrdDHpMZja5bs8c77QfCc4s4H3RhvN4NU4fjkUs7mNn7hm44%2BGPfTzZ6JFlfnSJYJ84w%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=3bbdb739232e60ed281e315f1bbf1a629ced6a2095be578b063e280970a0ac35
+company.year_founded: 2026
+company.team_size: 3
+company.location: Paris, France
+company.city: Paris
+company.city_tag: None
+company.country: FR
+company.twitter_url: https://x.com/ArmatureYCP26
+company.fb_url: 
+company.cb_url: https://www.crunchbase.com/organization/armature-3615
+company.github_url: 
+company.free_response_question_answers: (none)
+company.dday_video_url: None
+company.app_video_url: None
+company.app_answers: (none)
+company.ycdc_url: https://www.ycombinator.com/companies/armature
+company.company_photos: (none)
+company.primary_group_partner.id: 18194
+company.primary_group_partner.full_name: Andrew Miklas
+company.primary_group_partner.avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/5cc81ee2e3dd733f0d777d4391fb94430df03378.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAJMSLTZ2X%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184814Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIF9wnHMtLp9DzUbl0XTnbrFHxvV9LQa3n%2BDfPLhMEx7iAiBsD%2FjbeaOXlaysBvZ12%2BAKRely7D0fwfibE20exuX3tCrlAwh8EAAaDDAwNjIwMTgxMTA3MiIMpwsJOedcS3qnnX2OKsIDmNKqFCDfKW01WNYeptIPM8XzQmVyxGG9AFM4EW3%2FJ9D1Ds%2FEybdvV5dtVYOlFJKC62VDyDMAT85gUwiTDkYQzEPKoJ1y50dchn0CPQdriOjG2gA4JIIzwFsDUQT9oy%2F1BH9YAWc%2BZzjq7ISHbKEkjZSGEcldFZ8vnIS%2Fxs5OA1KECT%2BdOfZIGhDsGEC%2BtsX0wl9ZsBAQN3tVZJUblBOhm7KeZHhsiK4ad4fayKli8nbhclbOSw7%2FVID%2BtShRrrS5BbbZf5QKR0ve9QF2cAUkvSwZZTDEEIz2Mv2tTxs5IGjRaGl0f9s2A9gfchBXBKqbGe1Wye9nSWyPanpG5b6G6kQkkkLZb9pMwkBfukoMXG8lVvBQCj%2FLpLN2lYqFzsYbhqgnHNHg6MIuPJsiv9sNU9I6NQgQXUekZTFYNWDbNr1dM9ABtAtSi4Js51YrY02jGImQn4D7HLCKoP7ern07Dth6AErRBJwKtSdDm0E7kxW2ErXteHtaaMqn7V4vOQ3%2Fpl2fATwf7SU8sRxDtl6S8j4Nf7uhEVwD7Z66EPKoaTlB90lcf2sdPheK0nclqPQsFIQNQTE2pLN4L9mpgnWD7yzVMOGv6dYGOqYBzZ0uQ%2BBPGZFOoUqBP2uYbKjyTYSO1R%2Fd7gBIf5NNek%2BFK%2BkVfBh4bLEVYIJ28xZjOBOuUdpTIxrNIvOSvBxHMKoRScUFOe1%2FDuJvFTB6jNdbDFiuTOmmYd9sQ5da0NjAozWkHzghylb%2Fm8PhXFLUexH31NrrdDHpMZja5bs8c77QfCc4s4H3RhvN4NU4fjkUs7mNn7hm44%2BGPfTzZ6JFlfnSJYJ84w%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=2313777818b11991bb4acd9c9e1e6ef6b14bb2c14ebe4c4ec85cccdd25d1c9ac
+company.primary_group_partner.url: https://www.ycombinator.com/people/andrew-miklas
+company.founders[0].user_id: 3408440
+company.founders[0].is_active: True
+company.founders[0].founder_bio: Ex-Palantir, studied at Polytechnique.
+company.founders[0].full_name: Theodore Otzenberger
+company.founders[0].title: Founder/CEO
+company.founders[0].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/aecab3cbccf2f426fe2735507cde98d9e0bdfb27.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAJMSLTZ2X%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184814Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIF9wnHMtLp9DzUbl0XTnbrFHxvV9LQa3n%2BDfPLhMEx7iAiBsD%2FjbeaOXlaysBvZ12%2BAKRely7D0fwfibE20exuX3tCrlAwh8EAAaDDAwNjIwMTgxMTA3MiIMpwsJOedcS3qnnX2OKsIDmNKqFCDfKW01WNYeptIPM8XzQmVyxGG9AFM4EW3%2FJ9D1Ds%2FEybdvV5dtVYOlFJKC62VDyDMAT85gUwiTDkYQzEPKoJ1y50dchn0CPQdriOjG2gA4JIIzwFsDUQT9oy%2F1BH9YAWc%2BZzjq7ISHbKEkjZSGEcldFZ8vnIS%2Fxs5OA1KECT%2BdOfZIGhDsGEC%2BtsX0wl9ZsBAQN3tVZJUblBOhm7KeZHhsiK4ad4fayKli8nbhclbOSw7%2FVID%2BtShRrrS5BbbZf5QKR0ve9QF2cAUkvSwZZTDEEIz2Mv2tTxs5IGjRaGl0f9s2A9gfchBXBKqbGe1Wye9nSWyPanpG5b6G6kQkkkLZb9pMwkBfukoMXG8lVvBQCj%2FLpLN2lYqFzsYbhqgnHNHg6MIuPJsiv9sNU9I6NQgQXUekZTFYNWDbNr1dM9ABtAtSi4Js51YrY02jGImQn4D7HLCKoP7ern07Dth6AErRBJwKtSdDm0E7kxW2ErXteHtaaMqn7V4vOQ3%2Fpl2fATwf7SU8sRxDtl6S8j4Nf7uhEVwD7Z66EPKoaTlB90lcf2sdPheK0nclqPQsFIQNQTE2pLN4L9mpgnWD7yzVMOGv6dYGOqYBzZ0uQ%2BBPGZFOoUqBP2uYbKjyTYSO1R%2Fd7gBIf5NNek%2BFK%2BkVfBh4bLEVYIJ28xZjOBOuUdpTIxrNIvOSvBxHMKoRScUFOe1%2FDuJvFTB6jNdbDFiuTOmmYd9sQ5da0NjAozWkHzghylb%2Fm8PhXFLUexH31NrrdDHpMZja5bs8c77QfCc4s4H3RhvN4NU4fjkUs7mNn7hm44%2BGPfTzZ6JFlfnSJYJ84w%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=006a74781f8c6b40da5cf9f4955340f04f9d5193d476baf3f2977ae80b78b460
+company.founders[0].twitter_url: https://x.com/Totzenberger
+company.founders[0].has_email: True
+company.founders[0].latest_yc_company.name: Armature
+company.founders[0].latest_yc_company.href: https://www.ycombinator.com/companies/armature
+company.founders[1].user_id: 3284644
+company.founders[1].is_active: True
+company.founders[1].founder_bio: Previously leading AI Automation (AI Agents & MCP servers) at Joko as early employee
+company.founders[1].full_name: Louis Scremin
+company.founders[1].title: Founder
+company.founders[1].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/0841ba8c45279329c31ad5a76eab2bdd0c7a79b4.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAJMSLTZ2X%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184814Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIF9wnHMtLp9DzUbl0XTnbrFHxvV9LQa3n%2BDfPLhMEx7iAiBsD%2FjbeaOXlaysBvZ12%2BAKRely7D0fwfibE20exuX3tCrlAwh8EAAaDDAwNjIwMTgxMTA3MiIMpwsJOedcS3qnnX2OKsIDmNKqFCDfKW01WNYeptIPM8XzQmVyxGG9AFM4EW3%2FJ9D1Ds%2FEybdvV5dtVYOlFJKC62VDyDMAT85gUwiTDkYQzEPKoJ1y50dchn0CPQdriOjG2gA4JIIzwFsDUQT9oy%2F1BH9YAWc%2BZzjq7ISHbKEkjZSGEcldFZ8vnIS%2Fxs5OA1KECT%2BdOfZIGhDsGEC%2BtsX0wl9ZsBAQN3tVZJUblBOhm7KeZHhsiK4ad4fayKli8nbhclbOSw7%2FVID%2BtShRrrS5BbbZf5QKR0ve9QF2cAUkvSwZZTDEEIz2Mv2tTxs5IGjRaGl0f9s2A9gfchBXBKqbGe1Wye9nSWyPanpG5b6G6kQkkkLZb9pMwkBfukoMXG8lVvBQCj%2FLpLN2lYqFzsYbhqgnHNHg6MIuPJsiv9sNU9I6NQgQXUekZTFYNWDbNr1dM9ABtAtSi4Js51YrY02jGImQn4D7HLCKoP7ern07Dth6AErRBJwKtSdDm0E7kxW2ErXteHtaaMqn7V4vOQ3%2Fpl2fATwf7SU8sRxDtl6S8j4Nf7uhEVwD7Z66EPKoaTlB90lcf2sdPheK0nclqPQsFIQNQTE2pLN4L9mpgnWD7yzVMOGv6dYGOqYBzZ0uQ%2BBPGZFOoUqBP2uYbKjyTYSO1R%2Fd7gBIf5NNek%2BFK%2BkVfBh4bLEVYIJ28xZjOBOuUdpTIxrNIvOSvBxHMKoRScUFOe1%2FDuJvFTB6jNdbDFiuTOmmYd9sQ5da0NjAozWkHzghylb%2Fm8PhXFLUexH31NrrdDHpMZja5bs8c77QfCc4s4H3RhvN4NU4fjkUs7mNn7hm44%2BGPfTzZ6JFlfnSJYJ84w%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=cb39185c13efae13407c7796c384d294df32a2bc6798d4728e20b7ae630b4481
+company.founders[1].twitter_url: 
+company.founders[1].has_email: True
+company.founders[1].latest_yc_company.name: Armature
+company.founders[1].latest_yc_company.href: https://www.ycombinator.com/companies/armature
+jobPostings: (none)
+jobsUrl: https://bookface.ycombinator.com/workatastartup
+newsItems[0].title: Which tools do Claude, Codex and Cursor choose? We measured 17k runs to find out | Hacker News
+newsItems[0].url: https://news.ycombinator.com/item?id=49557206
+newsItems[0].date: Sep 02, 2026
+newsUrl: https://bookface.ycombinator.com/company/31463/company_news
+videos: (none)
+launches[0].id: 101594
+launches[0].title: Armature - Making your app finally usable by AI agents
+launches[0].state: public
+launches[0].tagline: Armature helps companies monitor, analyze, and optimize how AI agents experience their products.
+launches[0].created_at: 2026-05-19T20:45:48.490Z
+launches[0].company.id: 31463
+launches[0].company.name: Armature
+launches[0].company.logo: https://bookface-images.s3.amazonaws.com/small_logos/cafd940f7349e6c612893fad752013b10458ce39.png
+launches[0].company.batch: p2026
+launches[0].company.tags[0]: Marketing
+launches[0].company.tags[1]: SEO
+launches[0].company.tags[2]: AI
+launches[0].company.tags[3]: APIs
+launches[0].company.url: https://armature.tech
+launches[0].company.slug: armature
+launches[0].company.description: We get your product picked by coding agents.
+launches[0].user.name: Theodore Otzenberger
+launches[0].user.avatar: https://bookface-images.s3.amazonaws.com/avatars/aecab3cbccf2f426fe2735507cde98d9e0bdfb27.jpg
+launches[0].total_vote_count: 25
+launches[0].slug: QQc-armature-making-your-app-finally-usable-by-ai-agents
+launches[0].launch_embed_url: https://www.ycombinator.com/launches/QQc-armature-making-your-app-finally-usable-by-ai-agents/upvote_embed.svg
+launches[0].twitter_share_url: https://twitter.com/intent/tweet?text=Armature+just+launched+on+%40ycombinator%27s+Launch+YC%21%0A%0AArmature+-+Making+your+app+finally+usable+by+AI+agents.+Check+them+out%3A&url=https%3A%2F%2Fwww.ycombinator.com%2Flaunches%2FQQc-armature-making-your-app-finally-usable-by-ai-agents
+launches[0].sanitized_title: Armature - Making your app finally usable by AI agents
+launches[0].ycdc_launch_url: https://www.ycombinator.com/launches/QQc-armature-making-your-app-finally-usable-by-ai-agents
+launches[0].url: https://www.ycombinator.com/launches/QQc-armature-making-your-app-finally-usable-by-ai-agents
+launches[0].share_config.url: /media/?type=post&id=101594&key=user_uploads/3408440/bdb32e65-c048-467e-aa62-0e67c8f1fff7
+launches[0].share_image: None
+launches[0].approved_at: None
+launches[0].approved_by: None
+launches[0].requested_publish_at: None
+editUrl: https://bookface.ycombinator.com/company/31463/edit
+editUserUrl: https://bookface.ycombinator.com/edit_user_profile
+createProfileUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication&defaults%5BsignUpActive%5D=true
+signedIn: False
+showDirectApply: True
+waasDirectoryUrl: https://www.workatastartup.com/companies
+investorSubdomain: False
+userCanRequestEmails: False

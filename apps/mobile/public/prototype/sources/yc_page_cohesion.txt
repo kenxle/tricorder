@@ -1,0 +1,118 @@
+currentUser: None
+publicFounderProfilesEnabled: False
+disabledPublicVisibility: None
+company.id: 31562
+company.slug: cohesion
+company.name: Cohesion
+company.batch: P26
+company.batch_name: Spring 2026
+company.small_logo_url: https://bookface-images.s3.amazonaws.com/small_logos/a85ed9b4f8c87d919e87f4a7838af368b02f0f94.png
+company.one_liner: Modern Intelligence for Finance
+company.website: https://cohesionplatform.com/
+company.long_description: Cohesion is building the modern system of intelligence for financial analysts. Cohesion believes that the way financial research is done is changing. Teams that leverage AI better understand their research, can cover more scope, and make better decisions.
+
+company.tags[0]: Finance
+company.ycdc_status: Active
+company.logo_url: https://bookface-images.s3.us-west-2.amazonaws.com/logos/ae8e9388b39536c56dd5305092bbd58cd2447509.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAEOMZEBIQ%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184816Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIEDbvrWNiOjTC1iHZvYudu14sXNq95pCk3L5YmJpm5dOAiAMAItHtC5ryRv29s6heWTlzhtxf1n0q6xMm3wNnMoQ3irlAwh8EAAaDDAwNjIwMTgxMTA3MiIMT%2BxFnkJXEBG3oAoDKsIDPnsurhOm6il198EGWQg0U1a%2FWUlozPlsU5T7wUntAqTr9FxT3nFotW44jQqjGOcoPk2XUOszMR8JiD59hmLdfd%2FvBIcxmkwSueKOt3jTaE8jLUlIiv79LZckLO4Fo1QMa72ifEe4MvPrbRhiA5l6p5GUC8Hxn%2F2OtKL85%2BgRhqKiQhcE3QiFaPMfwZKfYqLw%2BGdNzVptBbdUiCDE9w82K2GKeCMWc26J44InPi62luUOK%2Fhxw7j6LnHspyRCg6Iqf4WWJuNmkmom779nPx9CZQt0%2FaztAfnSeX%2FHgkNcADkM88VyUziTKyXMKu5du6a7YAyzHxelB3hiJbS4SPTYMk5BhuSGC6K1OBc3RMMqHkW5Q6pcfSaNuEneryZALNFsoorqhbkRFohWUPANIWaLWRPNdMLx7Vj4owwXwCUHc9HEyON%2Bc0zgJWG%2F6vtKstwxx%2BGcwqt9%2B8Y%2Fvv%2BSjxffMG6rr75EeN1Bso9YQOMfnnkYMpS0KBMb%2FPy%2FHkZo7kOvt210REYtNhvRxx1gCeJUvwJCiJ5fW1jGQ1X6wcr6PEbQ1dhT8KRU4l7oeyH0NFzZpQwPPUjloMTVIgdRYOli29qqMOGv6dYGOqYBaYP8DnY3DQaZ%2BbeZXUO1gJD96Ox5Nj7Gvitit6uhzb636pJnfBKfZPmjPzr3qOboefriSmaop%2B0uKA5SOnb18m0GYDCP1OqDsKPZ9q08D4uwy5sCMqSJbc0yLFXOLwXpTdZdHwI3b%2F6QyJhtRqIGHe36bbO7HRdOKv2qZElk%2BJN0wIbr5iDETEPPyeP4nPNxAdj9mVWcrjpqeK4CJibeBLiT3URUqQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=42652afb5b5c307b0561f316e3a12b69a54e38246f8783bb3466da237d0c899f
+company.year_founded: 2026
+company.team_size: 3
+company.location: New York City, NY
+company.city: New York City
+company.city_tag: None
+company.country: US
+company.twitter_url: 
+company.fb_url: 
+company.cb_url: 
+company.github_url: 
+company.free_response_question_answers: (none)
+company.dday_video_url: None
+company.app_video_url: None
+company.app_answers: (none)
+company.ycdc_url: https://www.ycombinator.com/companies/cohesion
+company.company_photos: (none)
+company.primary_group_partner.id: 24083
+company.primary_group_partner.full_name: Tom Blomfield
+company.primary_group_partner.avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/9ab7bdb23ee93545fc44ab122a4e3a59baa2619c.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAEOMZEBIQ%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184816Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIEDbvrWNiOjTC1iHZvYudu14sXNq95pCk3L5YmJpm5dOAiAMAItHtC5ryRv29s6heWTlzhtxf1n0q6xMm3wNnMoQ3irlAwh8EAAaDDAwNjIwMTgxMTA3MiIMT%2BxFnkJXEBG3oAoDKsIDPnsurhOm6il198EGWQg0U1a%2FWUlozPlsU5T7wUntAqTr9FxT3nFotW44jQqjGOcoPk2XUOszMR8JiD59hmLdfd%2FvBIcxmkwSueKOt3jTaE8jLUlIiv79LZckLO4Fo1QMa72ifEe4MvPrbRhiA5l6p5GUC8Hxn%2F2OtKL85%2BgRhqKiQhcE3QiFaPMfwZKfYqLw%2BGdNzVptBbdUiCDE9w82K2GKeCMWc26J44InPi62luUOK%2Fhxw7j6LnHspyRCg6Iqf4WWJuNmkmom779nPx9CZQt0%2FaztAfnSeX%2FHgkNcADkM88VyUziTKyXMKu5du6a7YAyzHxelB3hiJbS4SPTYMk5BhuSGC6K1OBc3RMMqHkW5Q6pcfSaNuEneryZALNFsoorqhbkRFohWUPANIWaLWRPNdMLx7Vj4owwXwCUHc9HEyON%2Bc0zgJWG%2F6vtKstwxx%2BGcwqt9%2B8Y%2Fvv%2BSjxffMG6rr75EeN1Bso9YQOMfnnkYMpS0KBMb%2FPy%2FHkZo7kOvt210REYtNhvRxx1gCeJUvwJCiJ5fW1jGQ1X6wcr6PEbQ1dhT8KRU4l7oeyH0NFzZpQwPPUjloMTVIgdRYOli29qqMOGv6dYGOqYBaYP8DnY3DQaZ%2BbeZXUO1gJD96Ox5Nj7Gvitit6uhzb636pJnfBKfZPmjPzr3qOboefriSmaop%2B0uKA5SOnb18m0GYDCP1OqDsKPZ9q08D4uwy5sCMqSJbc0yLFXOLwXpTdZdHwI3b%2F6QyJhtRqIGHe36bbO7HRdOKv2qZElk%2BJN0wIbr5iDETEPPyeP4nPNxAdj9mVWcrjpqeK4CJibeBLiT3URUqQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=731e4ed4b17f71643a893b2e08243d6330cfb3264433e6c3e1010926fbb05fbc
+company.primary_group_partner.url: https://www.ycombinator.com/people/tom-blomfield
+company.founders[0].user_id: 2959783
+company.founders[0].is_active: True
+company.founders[0].founder_bio: Co-Founder and CEO of Cohesion, former hedge fund analyst for 5+ years at Long Path Partners covering software companies 
+company.founders[0].full_name: Devon Krapcho
+company.founders[0].title: Founder/CEO
+company.founders[0].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/2f9a3e43456dcc4c8c68b652f439a3c82424eb30.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAEOMZEBIQ%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184816Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIEDbvrWNiOjTC1iHZvYudu14sXNq95pCk3L5YmJpm5dOAiAMAItHtC5ryRv29s6heWTlzhtxf1n0q6xMm3wNnMoQ3irlAwh8EAAaDDAwNjIwMTgxMTA3MiIMT%2BxFnkJXEBG3oAoDKsIDPnsurhOm6il198EGWQg0U1a%2FWUlozPlsU5T7wUntAqTr9FxT3nFotW44jQqjGOcoPk2XUOszMR8JiD59hmLdfd%2FvBIcxmkwSueKOt3jTaE8jLUlIiv79LZckLO4Fo1QMa72ifEe4MvPrbRhiA5l6p5GUC8Hxn%2F2OtKL85%2BgRhqKiQhcE3QiFaPMfwZKfYqLw%2BGdNzVptBbdUiCDE9w82K2GKeCMWc26J44InPi62luUOK%2Fhxw7j6LnHspyRCg6Iqf4WWJuNmkmom779nPx9CZQt0%2FaztAfnSeX%2FHgkNcADkM88VyUziTKyXMKu5du6a7YAyzHxelB3hiJbS4SPTYMk5BhuSGC6K1OBc3RMMqHkW5Q6pcfSaNuEneryZALNFsoorqhbkRFohWUPANIWaLWRPNdMLx7Vj4owwXwCUHc9HEyON%2Bc0zgJWG%2F6vtKstwxx%2BGcwqt9%2B8Y%2Fvv%2BSjxffMG6rr75EeN1Bso9YQOMfnnkYMpS0KBMb%2FPy%2FHkZo7kOvt210REYtNhvRxx1gCeJUvwJCiJ5fW1jGQ1X6wcr6PEbQ1dhT8KRU4l7oeyH0NFzZpQwPPUjloMTVIgdRYOli29qqMOGv6dYGOqYBaYP8DnY3DQaZ%2BbeZXUO1gJD96Ox5Nj7Gvitit6uhzb636pJnfBKfZPmjPzr3qOboefriSmaop%2B0uKA5SOnb18m0GYDCP1OqDsKPZ9q08D4uwy5sCMqSJbc0yLFXOLwXpTdZdHwI3b%2F6QyJhtRqIGHe36bbO7HRdOKv2qZElk%2BJN0wIbr5iDETEPPyeP4nPNxAdj9mVWcrjpqeK4CJibeBLiT3URUqQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=0f1ece8ec067c9d550567294d218fc2e9c815a87db14dd4b09f9ebfb222a44a8
+company.founders[0].twitter_url: 
+company.founders[0].has_email: True
+company.founders[0].latest_yc_company.name: Cohesion
+company.founders[0].latest_yc_company.href: https://www.ycombinator.com/companies/cohesion
+company.founders[1].user_id: 1346140
+company.founders[1].is_active: True
+company.founders[1].founder_bio: Co-Founder of Cohesion. Eliminating market inefficiency. Prev. AWS, Security @ Amazon
+company.founders[1].full_name: Matthew McBrien
+company.founders[1].title: Founder
+company.founders[1].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/f078fa8ab9b669d75d3fae5cdf7ca60e901db9b7.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAEOMZEBIQ%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184816Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIEDbvrWNiOjTC1iHZvYudu14sXNq95pCk3L5YmJpm5dOAiAMAItHtC5ryRv29s6heWTlzhtxf1n0q6xMm3wNnMoQ3irlAwh8EAAaDDAwNjIwMTgxMTA3MiIMT%2BxFnkJXEBG3oAoDKsIDPnsurhOm6il198EGWQg0U1a%2FWUlozPlsU5T7wUntAqTr9FxT3nFotW44jQqjGOcoPk2XUOszMR8JiD59hmLdfd%2FvBIcxmkwSueKOt3jTaE8jLUlIiv79LZckLO4Fo1QMa72ifEe4MvPrbRhiA5l6p5GUC8Hxn%2F2OtKL85%2BgRhqKiQhcE3QiFaPMfwZKfYqLw%2BGdNzVptBbdUiCDE9w82K2GKeCMWc26J44InPi62luUOK%2Fhxw7j6LnHspyRCg6Iqf4WWJuNmkmom779nPx9CZQt0%2FaztAfnSeX%2FHgkNcADkM88VyUziTKyXMKu5du6a7YAyzHxelB3hiJbS4SPTYMk5BhuSGC6K1OBc3RMMqHkW5Q6pcfSaNuEneryZALNFsoorqhbkRFohWUPANIWaLWRPNdMLx7Vj4owwXwCUHc9HEyON%2Bc0zgJWG%2F6vtKstwxx%2BGcwqt9%2B8Y%2Fvv%2BSjxffMG6rr75EeN1Bso9YQOMfnnkYMpS0KBMb%2FPy%2FHkZo7kOvt210REYtNhvRxx1gCeJUvwJCiJ5fW1jGQ1X6wcr6PEbQ1dhT8KRU4l7oeyH0NFzZpQwPPUjloMTVIgdRYOli29qqMOGv6dYGOqYBaYP8DnY3DQaZ%2BbeZXUO1gJD96Ox5Nj7Gvitit6uhzb636pJnfBKfZPmjPzr3qOboefriSmaop%2B0uKA5SOnb18m0GYDCP1OqDsKPZ9q08D4uwy5sCMqSJbc0yLFXOLwXpTdZdHwI3b%2F6QyJhtRqIGHe36bbO7HRdOKv2qZElk%2BJN0wIbr5iDETEPPyeP4nPNxAdj9mVWcrjpqeK4CJibeBLiT3URUqQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=1c614429e857ca20b6b6c7edac22564036b62134fa5b29a9475fdcefa7e4e746
+company.founders[1].twitter_url: https://x.com/mmcbrien4
+company.founders[1].has_email: True
+company.founders[1].latest_yc_company.name: Cohesion
+company.founders[1].latest_yc_company.href: https://www.ycombinator.com/companies/cohesion
+company.founders[2].user_id: 2975201
+company.founders[2].is_active: True
+company.founders[2].founder_bio: Co-Founder of Cohesion (YC P26). Prev. building AI for investors at T. Rowe Price
+company.founders[2].full_name: Matt Munns
+company.founders[2].title: Founder
+company.founders[2].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/48b70c6afcafea9cb8c2b7bde96be0763fb8b984.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAEOMZEBIQ%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184816Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIEDbvrWNiOjTC1iHZvYudu14sXNq95pCk3L5YmJpm5dOAiAMAItHtC5ryRv29s6heWTlzhtxf1n0q6xMm3wNnMoQ3irlAwh8EAAaDDAwNjIwMTgxMTA3MiIMT%2BxFnkJXEBG3oAoDKsIDPnsurhOm6il198EGWQg0U1a%2FWUlozPlsU5T7wUntAqTr9FxT3nFotW44jQqjGOcoPk2XUOszMR8JiD59hmLdfd%2FvBIcxmkwSueKOt3jTaE8jLUlIiv79LZckLO4Fo1QMa72ifEe4MvPrbRhiA5l6p5GUC8Hxn%2F2OtKL85%2BgRhqKiQhcE3QiFaPMfwZKfYqLw%2BGdNzVptBbdUiCDE9w82K2GKeCMWc26J44InPi62luUOK%2Fhxw7j6LnHspyRCg6Iqf4WWJuNmkmom779nPx9CZQt0%2FaztAfnSeX%2FHgkNcADkM88VyUziTKyXMKu5du6a7YAyzHxelB3hiJbS4SPTYMk5BhuSGC6K1OBc3RMMqHkW5Q6pcfSaNuEneryZALNFsoorqhbkRFohWUPANIWaLWRPNdMLx7Vj4owwXwCUHc9HEyON%2Bc0zgJWG%2F6vtKstwxx%2BGcwqt9%2B8Y%2Fvv%2BSjxffMG6rr75EeN1Bso9YQOMfnnkYMpS0KBMb%2FPy%2FHkZo7kOvt210REYtNhvRxx1gCeJUvwJCiJ5fW1jGQ1X6wcr6PEbQ1dhT8KRU4l7oeyH0NFzZpQwPPUjloMTVIgdRYOli29qqMOGv6dYGOqYBaYP8DnY3DQaZ%2BbeZXUO1gJD96Ox5Nj7Gvitit6uhzb636pJnfBKfZPmjPzr3qOboefriSmaop%2B0uKA5SOnb18m0GYDCP1OqDsKPZ9q08D4uwy5sCMqSJbc0yLFXOLwXpTdZdHwI3b%2F6QyJhtRqIGHe36bbO7HRdOKv2qZElk%2BJN0wIbr5iDETEPPyeP4nPNxAdj9mVWcrjpqeK4CJibeBLiT3URUqQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=c98a9b11dce47b658b4b94d943be4f2c92fdbc7845bcb861f7a035b98504290a
+company.founders[2].twitter_url: 
+company.founders[2].has_email: True
+company.founders[2].latest_yc_company.name: Cohesion
+company.founders[2].latest_yc_company.href: https://www.ycombinator.com/companies/cohesion
+jobPostings: (none)
+jobsUrl: https://bookface.ycombinator.com/workatastartup
+newsItems: (none)
+newsUrl: https://bookface.ycombinator.com/company/31562/company_news
+videos: (none)
+launches[0].id: 99818
+launches[0].title: Cohesion: Your public equities agentic teammate
+launches[0].body: [Cohesion](https://cohesionplatform.com/) is your public equities agentic teammate.
+
+Cohesion agents track earnings, news, and non-traditional datasets like podcasts and X/Twitter.
+
+Today’s tools require querying, endless reading, and manual search across decade-old platforms that aren’t capturing the most important datasets.
+
+We built a team of AI agents that monitor the companies you cover and generate differentiated insights. The result? Captured alpha, less time searching “why is $stock down”, automated idea generation - all in a system purpose-built for public equity investing that doesn't require manual setup.\
+\
+<https://youtu.be/DZMmSVwp2Pk>
+
+Today, Cohesion is live with 10+ long/short and long-only fundamental equity funds managing a combined $10Bn+ AUM. Built by a team with 10+ years of public markets investing experience.
+
+In advance of the upcoming earnings season, we’re offering limited early trial access. Take 2 minutes to send 20 tickers and have the easiest earnings season of your career:[ https://cohesionplatform.com/#start-free-trial](https://cohesionplatform.com/#start-free-trial)
+launches[0].state: public
+launches[0].tagline: A team of AI agents that monitor the companies you cover and generate differentiated insights.
+launches[0].created_at: 2026-04-16T16:56:39.117Z
+launches[0].company.id: 31562
+launches[0].company.name: Cohesion
+launches[0].company.logo: https://bookface-images.s3.amazonaws.com/small_logos/a85ed9b4f8c87d919e87f4a7838af368b02f0f94.png
+launches[0].company.batch: p2026
+launches[0].company.tags[0]: Finance
+launches[0].company.url: https://cohesionplatform.com/
+launches[0].company.slug: cohesion
+launches[0].company.description: Modern Intelligence for Finance
+launches[0].user.name: Devon Krapcho
+launches[0].user.avatar: https://bookface-images.s3.amazonaws.com/avatars/2f9a3e43456dcc4c8c68b652f439a3c82424eb30.jpg
+launches[0].total_vote_count: 25
+launches[0].slug: Pxy-cohesion-your-public-equities-agentic-teammate
+launches[0].launch_embed_url: https://www.ycombinator.com/launches/Pxy-cohesion-your-public-equities-agentic-teammate/upvote_embed.svg
+launches[0].twitter_share_url: https://twitter.com/intent/tweet?text=Cohesion+just+launched+on+%40ycombinator%27s+Launch+YC%21%0A%0ACohesion%3A+Your+public+equities+agentic+teammate.+Check+them+out%3A&url=https%3A%2F%2Fwww.ycombinator.com%2Flaunches%2FPxy-cohesion-your-public-equities-agentic-teammate
+launches[0].sanitized_title: Cohesion: Your public equities agentic teammate
+launches[0].ycdc_launch_url: https://www.ycombinator.com/launches/Pxy-cohesion-your-public-equities-agentic-teammate
+launches[0].url: https://www.ycombinator.com/launches/Pxy-cohesion-your-public-equities-agentic-teammate
+launches[0].share_image: None
+launches[0].approved_at: None
+launches[0].approved_by: None
+launches[0].requested_publish_at: 2026-04-16T17:00:00Z
+editUrl: https://bookface.ycombinator.com/company/31562/edit
+editUserUrl: https://bookface.ycombinator.com/edit_user_profile
+createProfileUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication&defaults%5BsignUpActive%5D=true
+signedIn: False
+showDirectApply: True
+waasDirectoryUrl: https://www.workatastartup.com/companies
+investorSubdomain: False
+userCanRequestEmails: False

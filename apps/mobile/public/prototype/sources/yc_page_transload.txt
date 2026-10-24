@@ -1,0 +1,122 @@
+currentUser: None
+publicFounderProfilesEnabled: False
+disabledPublicVisibility: None
+company.id: 31403
+company.slug: transload
+company.name: transload
+company.batch: P26
+company.batch_name: Spring 2026
+company.small_logo_url: https://bookface-images.s3.amazonaws.com/small_logos/1bddf9622d95fa25a8b10500158d81f74f5df2f7.png
+company.one_liner: Measure freight with security cameras
+company.website: https://www.transload.ai
+company.long_description: transload helps logistics companies measure shipments using the security cameras they already have. A pallet, a couch, a tire – we capture its true size as it moves through the warehouse.
+
+For our customers, 15% of shipments turn out to be bigger than what the sender claimed. Catching those differences is worth ~$50k per site per month in rebillings and improved trailer utilization.
+company.tags: (none)
+company.ycdc_status: Active
+company.logo_url: https://bookface-images.s3.us-west-2.amazonaws.com/logos/c9a96f370d0f373cc2914abc3270d4cdc9579231.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAIIUGZ7C6%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184817Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDxmLWbF3KKePktsY9CFfjJW9ekH18npV%2FjAR%2FWaklAPwIhAJiWPPsPENByP8aJ%2F9qOjH10wtc2LspdRDjZuVE3Iy3rKuUDCHwQABoMMDA2MjAxODExMDcyIgzhzwuanuR3VdkhJR4qwgObmDAWjLOwa4FUO5qR31lpRxu9t0iVoYSlf6SkcXGy%2FCGyJVUyoMshF%2BGX18FndsEU1gLMuWg4%2BKNW3tuVPQT603U99Bq4f08nkXvdhzlKTVlj5kfq0QUmV1aULYVTBejAeGD660CcAfngOM8meVItxsdxreXbeSTDemwryPF6dOaXXFMvIb22S1%2Bk5rniKClfhXNdoUUSljqVQdaaOIGOBGVH%2FsG4H%2FUYr5v%2FIE7mzojm6ZWXvHx5yc0duDT3ETIa5vJ09DIZQOHw%2BbfVq82hfC%2Ff9IwZs%2BqYHvp%2Bn3GvtkwzfFqKNh1X5L0hR9SaJ9nTSPy9lwEWqgP1d0cPvihq7mLITGHf%2FEVZcT916M9rrUQMU3r38IqOUA0mQe80wOsVEtK397tOpjQf6BB7s1vyqq05XuGZeMkYT0AH9H4xvjCSMjFV5f%2FLUFfbd3VY1Ee8O5G%2F7oNJ0k1k8MzED%2F34z9WDWkXkqYaRxvQ7fH3a9Q9s5pWrciRBtoFdX09LTLEcFa8LYFrdgwP%2B3CSTCPT6GbhwBqKnsBgDPGrbQOx9j73Ioh%2FYRm2HzxsKWr5p9RTJUM7DoVLPZI7o1ZhM6SU5PpQw5q%2Fp1gY6pAG3GqRFuwZ%2B2r0104WoNpGnPem7p5PgWSYv1Gnsl%2F1BzAbWAfBflxmw60qNu1a3xkX9WBaSFD0s5RAcB9stU2nLdjtkUGuRz16C18Y1ufqBPDyUcKxrXfJQTnQtPQ5V0qh9I9VmnNo1Yeo5CTXP60vR%2Fveb2kjkocnMF%2B4T7sfhhG7%2F31rRIJwqxAol84ohN7%2BAns2Wvs0bo0Igd4Zae0rp7yUBZA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=7cb0a9097d4f782603b34f566693cec2dca0761eb0d6c1c51e3aa856b9f20b9c
+company.year_founded: 2026
+company.team_size: 3
+company.location: Munich, Germany
+company.city: Munich
+company.city_tag: None
+company.country: DE
+company.twitter_url: 
+company.fb_url: 
+company.cb_url: 
+company.github_url: 
+company.free_response_question_answers: (none)
+company.dday_video_url: None
+company.app_video_url: None
+company.app_answers: (none)
+company.ycdc_url: https://www.ycombinator.com/companies/transload
+company.company_photos: (none)
+company.primary_group_partner.id: 11216
+company.primary_group_partner.full_name: David Lieb
+company.primary_group_partner.avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/6e415a060218fc99589322800cec5173b48ce926.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAIIUGZ7C6%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184817Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDxmLWbF3KKePktsY9CFfjJW9ekH18npV%2FjAR%2FWaklAPwIhAJiWPPsPENByP8aJ%2F9qOjH10wtc2LspdRDjZuVE3Iy3rKuUDCHwQABoMMDA2MjAxODExMDcyIgzhzwuanuR3VdkhJR4qwgObmDAWjLOwa4FUO5qR31lpRxu9t0iVoYSlf6SkcXGy%2FCGyJVUyoMshF%2BGX18FndsEU1gLMuWg4%2BKNW3tuVPQT603U99Bq4f08nkXvdhzlKTVlj5kfq0QUmV1aULYVTBejAeGD660CcAfngOM8meVItxsdxreXbeSTDemwryPF6dOaXXFMvIb22S1%2Bk5rniKClfhXNdoUUSljqVQdaaOIGOBGVH%2FsG4H%2FUYr5v%2FIE7mzojm6ZWXvHx5yc0duDT3ETIa5vJ09DIZQOHw%2BbfVq82hfC%2Ff9IwZs%2BqYHvp%2Bn3GvtkwzfFqKNh1X5L0hR9SaJ9nTSPy9lwEWqgP1d0cPvihq7mLITGHf%2FEVZcT916M9rrUQMU3r38IqOUA0mQe80wOsVEtK397tOpjQf6BB7s1vyqq05XuGZeMkYT0AH9H4xvjCSMjFV5f%2FLUFfbd3VY1Ee8O5G%2F7oNJ0k1k8MzED%2F34z9WDWkXkqYaRxvQ7fH3a9Q9s5pWrciRBtoFdX09LTLEcFa8LYFrdgwP%2B3CSTCPT6GbhwBqKnsBgDPGrbQOx9j73Ioh%2FYRm2HzxsKWr5p9RTJUM7DoVLPZI7o1ZhM6SU5PpQw5q%2Fp1gY6pAG3GqRFuwZ%2B2r0104WoNpGnPem7p5PgWSYv1Gnsl%2F1BzAbWAfBflxmw60qNu1a3xkX9WBaSFD0s5RAcB9stU2nLdjtkUGuRz16C18Y1ufqBPDyUcKxrXfJQTnQtPQ5V0qh9I9VmnNo1Yeo5CTXP60vR%2Fveb2kjkocnMF%2B4T7sfhhG7%2F31rRIJwqxAol84ohN7%2BAns2Wvs0bo0Igd4Zae0rp7yUBZA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=ea60769ededdc34bb1912f7674efc07226632d36dfc8d043953a97263734e66b
+company.primary_group_partner.url: https://www.ycombinator.com/people/david-lieb
+company.founders[0].user_id: 3295758
+company.founders[0].is_active: True
+company.founders[0].founder_bio: Co-founder & CEO at transload. Top 5% of Analysts at McKinsey. Led a 9-person door-to-door NGO fundraising team at age 17 (€300k donations), built and scaled a virtual clinic at avi medical to 7-figures ARR. Distinction from Technical University of Munich.
+company.founders[0].full_name: Julius Scheel
+company.founders[0].title: Founder/CEO
+company.founders[0].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/088594e486847468054541e814191b9d7318b16c.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAIIUGZ7C6%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184817Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDxmLWbF3KKePktsY9CFfjJW9ekH18npV%2FjAR%2FWaklAPwIhAJiWPPsPENByP8aJ%2F9qOjH10wtc2LspdRDjZuVE3Iy3rKuUDCHwQABoMMDA2MjAxODExMDcyIgzhzwuanuR3VdkhJR4qwgObmDAWjLOwa4FUO5qR31lpRxu9t0iVoYSlf6SkcXGy%2FCGyJVUyoMshF%2BGX18FndsEU1gLMuWg4%2BKNW3tuVPQT603U99Bq4f08nkXvdhzlKTVlj5kfq0QUmV1aULYVTBejAeGD660CcAfngOM8meVItxsdxreXbeSTDemwryPF6dOaXXFMvIb22S1%2Bk5rniKClfhXNdoUUSljqVQdaaOIGOBGVH%2FsG4H%2FUYr5v%2FIE7mzojm6ZWXvHx5yc0duDT3ETIa5vJ09DIZQOHw%2BbfVq82hfC%2Ff9IwZs%2BqYHvp%2Bn3GvtkwzfFqKNh1X5L0hR9SaJ9nTSPy9lwEWqgP1d0cPvihq7mLITGHf%2FEVZcT916M9rrUQMU3r38IqOUA0mQe80wOsVEtK397tOpjQf6BB7s1vyqq05XuGZeMkYT0AH9H4xvjCSMjFV5f%2FLUFfbd3VY1Ee8O5G%2F7oNJ0k1k8MzED%2F34z9WDWkXkqYaRxvQ7fH3a9Q9s5pWrciRBtoFdX09LTLEcFa8LYFrdgwP%2B3CSTCPT6GbhwBqKnsBgDPGrbQOx9j73Ioh%2FYRm2HzxsKWr5p9RTJUM7DoVLPZI7o1ZhM6SU5PpQw5q%2Fp1gY6pAG3GqRFuwZ%2B2r0104WoNpGnPem7p5PgWSYv1Gnsl%2F1BzAbWAfBflxmw60qNu1a3xkX9WBaSFD0s5RAcB9stU2nLdjtkUGuRz16C18Y1ufqBPDyUcKxrXfJQTnQtPQ5V0qh9I9VmnNo1Yeo5CTXP60vR%2Fveb2kjkocnMF%2B4T7sfhhG7%2F31rRIJwqxAol84ohN7%2BAns2Wvs0bo0Igd4Zae0rp7yUBZA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=6e6be20a6ef5c36024526bd79d8a73cc076a7556db095ab1d4624bc519ef410a
+company.founders[0].twitter_url: 
+company.founders[0].has_email: True
+company.founders[0].latest_yc_company.name: transload
+company.founders[0].latest_yc_company.href: https://www.ycombinator.com/companies/transload
+company.founders[1].user_id: 3351253
+company.founders[1].is_active: True
+company.founders[1].founder_bio: Co-founder & CTO (AI) of transload. Five years building computer vision systems across deep-tech startups and academic research, with a co-authored paper in IEEE Transactions on Medical Imaging. Graduated top 5% of his Master's in Computer Science at TU Munich and earned a double-degree Master's in Data Science from the University of Queensland, recognized with the Dean's Commendation for Academic Excellence.
+company.founders[1].full_name: Nils Börner
+company.founders[1].title: Founder
+company.founders[1].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/f055d7e29278b519383c67517e4e756812738b37.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAIIUGZ7C6%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184817Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDxmLWbF3KKePktsY9CFfjJW9ekH18npV%2FjAR%2FWaklAPwIhAJiWPPsPENByP8aJ%2F9qOjH10wtc2LspdRDjZuVE3Iy3rKuUDCHwQABoMMDA2MjAxODExMDcyIgzhzwuanuR3VdkhJR4qwgObmDAWjLOwa4FUO5qR31lpRxu9t0iVoYSlf6SkcXGy%2FCGyJVUyoMshF%2BGX18FndsEU1gLMuWg4%2BKNW3tuVPQT603U99Bq4f08nkXvdhzlKTVlj5kfq0QUmV1aULYVTBejAeGD660CcAfngOM8meVItxsdxreXbeSTDemwryPF6dOaXXFMvIb22S1%2Bk5rniKClfhXNdoUUSljqVQdaaOIGOBGVH%2FsG4H%2FUYr5v%2FIE7mzojm6ZWXvHx5yc0duDT3ETIa5vJ09DIZQOHw%2BbfVq82hfC%2Ff9IwZs%2BqYHvp%2Bn3GvtkwzfFqKNh1X5L0hR9SaJ9nTSPy9lwEWqgP1d0cPvihq7mLITGHf%2FEVZcT916M9rrUQMU3r38IqOUA0mQe80wOsVEtK397tOpjQf6BB7s1vyqq05XuGZeMkYT0AH9H4xvjCSMjFV5f%2FLUFfbd3VY1Ee8O5G%2F7oNJ0k1k8MzED%2F34z9WDWkXkqYaRxvQ7fH3a9Q9s5pWrciRBtoFdX09LTLEcFa8LYFrdgwP%2B3CSTCPT6GbhwBqKnsBgDPGrbQOx9j73Ioh%2FYRm2HzxsKWr5p9RTJUM7DoVLPZI7o1ZhM6SU5PpQw5q%2Fp1gY6pAG3GqRFuwZ%2B2r0104WoNpGnPem7p5PgWSYv1Gnsl%2F1BzAbWAfBflxmw60qNu1a3xkX9WBaSFD0s5RAcB9stU2nLdjtkUGuRz16C18Y1ufqBPDyUcKxrXfJQTnQtPQ5V0qh9I9VmnNo1Yeo5CTXP60vR%2Fveb2kjkocnMF%2B4T7sfhhG7%2F31rRIJwqxAol84ohN7%2BAns2Wvs0bo0Igd4Zae0rp7yUBZA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=4510fca3c290dedca85a20fbb59297c0d9c76c5b26f0cdb1636956e2b9bcf257
+company.founders[1].twitter_url: https://x.com/nilsboern
+company.founders[1].has_email: True
+company.founders[1].latest_yc_company.name: transload
+company.founders[1].latest_yc_company.href: https://www.ycombinator.com/companies/transload
+company.founders[2].user_id: 3351257
+company.founders[2].is_active: True
+company.founders[2].founder_bio: Co-founder & CTO (Engineering) at transload. Previously first software engineer at Veli, where he built an AI emergency alerting system from water and electricity sensor data for care homes and launched a Bluetooth localization product that doubled ARR. Studied Computer Science at the Technical University of Munich.
+company.founders[2].full_name: Jago Wahl-Schwentker
+company.founders[2].title: Founder
+company.founders[2].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/7cbc85fe1288abec7012f3677f4031043394ba9c.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAIIUGZ7C6%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184817Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDxmLWbF3KKePktsY9CFfjJW9ekH18npV%2FjAR%2FWaklAPwIhAJiWPPsPENByP8aJ%2F9qOjH10wtc2LspdRDjZuVE3Iy3rKuUDCHwQABoMMDA2MjAxODExMDcyIgzhzwuanuR3VdkhJR4qwgObmDAWjLOwa4FUO5qR31lpRxu9t0iVoYSlf6SkcXGy%2FCGyJVUyoMshF%2BGX18FndsEU1gLMuWg4%2BKNW3tuVPQT603U99Bq4f08nkXvdhzlKTVlj5kfq0QUmV1aULYVTBejAeGD660CcAfngOM8meVItxsdxreXbeSTDemwryPF6dOaXXFMvIb22S1%2Bk5rniKClfhXNdoUUSljqVQdaaOIGOBGVH%2FsG4H%2FUYr5v%2FIE7mzojm6ZWXvHx5yc0duDT3ETIa5vJ09DIZQOHw%2BbfVq82hfC%2Ff9IwZs%2BqYHvp%2Bn3GvtkwzfFqKNh1X5L0hR9SaJ9nTSPy9lwEWqgP1d0cPvihq7mLITGHf%2FEVZcT916M9rrUQMU3r38IqOUA0mQe80wOsVEtK397tOpjQf6BB7s1vyqq05XuGZeMkYT0AH9H4xvjCSMjFV5f%2FLUFfbd3VY1Ee8O5G%2F7oNJ0k1k8MzED%2F34z9WDWkXkqYaRxvQ7fH3a9Q9s5pWrciRBtoFdX09LTLEcFa8LYFrdgwP%2B3CSTCPT6GbhwBqKnsBgDPGrbQOx9j73Ioh%2FYRm2HzxsKWr5p9RTJUM7DoVLPZI7o1ZhM6SU5PpQw5q%2Fp1gY6pAG3GqRFuwZ%2B2r0104WoNpGnPem7p5PgWSYv1Gnsl%2F1BzAbWAfBflxmw60qNu1a3xkX9WBaSFD0s5RAcB9stU2nLdjtkUGuRz16C18Y1ufqBPDyUcKxrXfJQTnQtPQ5V0qh9I9VmnNo1Yeo5CTXP60vR%2Fveb2kjkocnMF%2B4T7sfhhG7%2F31rRIJwqxAol84ohN7%2BAns2Wvs0bo0Igd4Zae0rp7yUBZA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=6d0befe0b8daa9874752bcc6d2014f352921dbcc4d1e98a9e29bc80afc078eb6
+company.founders[2].twitter_url: 
+company.founders[2].has_email: True
+company.founders[2].latest_yc_company.name: transload
+company.founders[2].latest_yc_company.href: https://www.ycombinator.com/companies/transload
+jobPostings: (none)
+jobsUrl: https://bookface.ycombinator.com/workatastartup
+newsItems: (none)
+newsUrl: https://bookface.ycombinator.com/company/31403/company_news
+videos: (none)
+launches[0].id: 101496
+launches[0].title: transload – we measure freight with security cameras
+launches[0].body: **TL;DR:** 
+
+* Trucking companies lose billions because they don't know the actual size of the items on their trucks 
+* We measure every shipment using the existing warehouse security cameras – no new hardware or process changes
+
+<https://youtu.be/4ZGgDSRsALo>
+
+**Problem:** Over 2 million irregular items move across the US in trucks every day. Trucking companies charge based on how big each item is but rely on the sender to tell them. Senders often guess wrong or lowball, costing trucking companies revenue and truck space.
+
+**Solution:** We use the CCTV cameras already installed in the warehouse against theft and claims to measure items with computer vision. In the future we track shipment status, location and evidence for claims across the supply chain.
+
+**Ask:** Do you know any trucking company or warehouse owners? We would love to help them.
+
+![uploaded image](/media/?type=post&id=101496&key=user_uploads/3295758/23e99fb2-1112-4df1-a5d5-087daf23b720)
+
+**Team:** Nils (Computer Vision), Julius (ex-McKinsey), Jago (AI on industrial sensor data). Friends for 8 years from TU Munich.
+launches[0].state: public
+launches[0].tagline: Measurement, localization and tracking of freight in warehouses using only pre-installed CCTV
+launches[0].created_at: 2026-05-18T01:00:41.343Z
+launches[0].company.id: 31403
+launches[0].company.name: transload
+launches[0].company.logo: https://bookface-images.s3.amazonaws.com/small_logos/1bddf9622d95fa25a8b10500158d81f74f5df2f7.png
+launches[0].company.batch: p2026
+launches[0].company.tags: (none)
+launches[0].company.url: https://www.transload.ai
+launches[0].company.slug: transload
+launches[0].company.description: Measure freight with security cameras
+launches[0].user.name: Julius Scheel
+launches[0].user.avatar: https://bookface-images.s3.amazonaws.com/avatars/088594e486847468054541e814191b9d7318b16c.jpg
+launches[0].total_vote_count: 8
+launches[0].slug: QP2-transload-we-measure-freight-with-security-cameras
+launches[0].launch_embed_url: https://www.ycombinator.com/launches/QP2-transload-we-measure-freight-with-security-cameras/upvote_embed.svg
+launches[0].twitter_share_url: https://twitter.com/intent/tweet?text=transload+just+launched+on+%40ycombinator%27s+Launch+YC%21%0A%0Atransload+%E2%80%93+we+measure+freight+with+security+cameras.+Check+them+out%3A&url=https%3A%2F%2Fwww.ycombinator.com%2Flaunches%2FQP2-transload-we-measure-freight-with-security-cameras
+launches[0].sanitized_title: transload – we measure freight with security cameras
+launches[0].ycdc_launch_url: https://www.ycombinator.com/launches/QP2-transload-we-measure-freight-with-security-cameras
+launches[0].url: https://www.ycombinator.com/launches/QP2-transload-we-measure-freight-with-security-cameras
+launches[0].share_image: None
+launches[0].approved_at: None
+launches[0].approved_by: None
+launches[0].requested_publish_at: 2026-05-18T15:00:00Z
+editUrl: https://bookface.ycombinator.com/company/31403/edit
+editUserUrl: https://bookface.ycombinator.com/edit_user_profile
+createProfileUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication&defaults%5BsignUpActive%5D=true
+signedIn: False
+showDirectApply: True
+waasDirectoryUrl: https://www.workatastartup.com/companies
+investorSubdomain: False
+userCanRequestEmails: False

@@ -12,6 +12,7 @@
     "dev": "EXPO_UNSTABLE_MCP_SERVER=1 node --dns-result-order=ipv4first ./node_modules/expo/bin/cli start --localhost --dev-client",
     "build": "expo export --platform all",
     "typecheck": "tsc --noEmit",
+    "sync:prototype": "node ./scripts/sync-prototype.mjs",
     "build:ios": "expo run:ios --no-bundler",
     "test": "node --test tests/*.test.mjs",
     "dev:device": "EXPO_UNSTABLE_MCP_SERVER=1 node ./scripts/dev-device.mjs"

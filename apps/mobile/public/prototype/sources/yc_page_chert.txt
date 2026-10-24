@@ -1,0 +1,136 @@
+currentUser: None
+publicFounderProfilesEnabled: False
+disabledPublicVisibility: None
+company.id: 31364
+company.slug: chert
+company.name: Chert
+company.batch: P26
+company.batch_name: Spring 2026
+company.small_logo_url: https://bookface-images.s3.amazonaws.com/small_logos/7dbcfda02066d2a118790619245d76bd15d26183.png
+company.one_liner: iMessage infrastructure for business
+company.website: https://www.trychert.com/
+company.long_description: Chert provides the infrastructure for businesses to automate conversations over iMessage. We’re already working with B2C startups, customer experience teams, and sales teams to reach end users through trusted and conversational messaging. 
+company.tags: (none)
+company.ycdc_status: Active
+company.logo_url: https://bookface-images.s3.us-west-2.amazonaws.com/logos/1a4ece2e06e4ed164d2028ba6612a882777270fd.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAP3NKJ5L7%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184812Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCVk3hHF27US9G4ZdeasrKvoLmKZ0D0TGGSelnXekFZ1wIgI3wxaZYjPHA2rzc1KwcS4ByDbTvsrKyZ5z8siZf%2BxZsq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDBXWY1eTYhCYlr%2B4yirCA4Ibaa6FB6E9YBndnMfyhtx%2BIDCjsRQ4MmnSfFOHU9Tw5RpZ%2FyNBYdPQ2Fop9nKQdGr0sy%2Fvpr3eQkSW%2FCVjbu8nDSdQ62RXbZ4aVZFIKMA3vDsx%2Fxzce2wnWn7lDL0gUbNLg49VZWmjTf9enR%2F7K%2Fc2bk4JvjHGNaHDBrCuHITzzmlgJg2jeqn0yodZe%2BHtpEU22thrjnu5BPflf9CwjANy3M2MsLmoHynufBPcR1uR4k3fh73OABHFc9snS3IYVDemVDT5bpM6IyMgpcY%2BzFlRy1nwBuLONq8jEvhdS3j9SSh%2BLRr54Yp%2FyH0sarBUXRGR%2BtchKdt5in%2FL3nkR2M2%2F630QbMP%2B9aGu3nUCHH4XYy3aX0rHzFANaS%2BmG%2Bi9wUvvHBpt%2Fup5UM53sEIQJAErgtHnf7%2BgKSlHoj7fHBTmuW4Ji4cHP%2B3yCZciTXEcptGTsBngZybAjbY%2B0mNzSVlglj2OTMBAYW6OKOt3DUD5trRSh3qv1ZqvWf0pTF1Ul3pPSVHj7zV71bZsRRpEktlQvJ%2Flt7py0wVWdgjyZ2%2BbAhAW%2FyIi6EhKX%2BRcxn%2FQqhLNZLwpRC24V18U%2BxDnOoB%2FKzDnr%2BnWBjqlAS1Gai2I3MGwi78IhzeXp8XgpML990fvRw3pHaJOL9NWxqHjt4qfowWXW8F%2FtM4WXXnrqx2vcc8rV94Hh42LUtCuAxA%2BQt04XAwjp09HuGNHIixEYuIvbCFx4%2B0f%2BcTGCxJAEsU48i5lwzTbDnh8x0AIaVsEl0N6ztS%2BNt6CzhHjkDaxt0uaFWk70eJ6ZFejOSS%2BVcxKPpsdb7GB0gIWTRN4ZRnLwQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=bbf9b2ff7b7594266ef52083acb433bd5759724bee0207ffda1015ddc11ed80a
+company.year_founded: 2026
+company.team_size: 2
+company.location: New York City, NY
+company.city: New York City
+company.city_tag: None
+company.country: US
+company.twitter_url: https://x.com/Cherthq
+company.fb_url: 
+company.cb_url: 
+company.github_url: None
+company.free_response_question_answers: (none)
+company.dday_video_url: None
+company.app_video_url: None
+company.app_answers: (none)
+company.ycdc_url: https://www.ycombinator.com/companies/chert
+company.company_photos[0].id: 1244
+company.company_photos[0].url: https://bookface-images.s3.us-west-2.amazonaws.com/attachments/4c4c2a2521e23b3d41bdf6d61180168f43df3df5.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAP3NKJ5L7%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184812Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCVk3hHF27US9G4ZdeasrKvoLmKZ0D0TGGSelnXekFZ1wIgI3wxaZYjPHA2rzc1KwcS4ByDbTvsrKyZ5z8siZf%2BxZsq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDBXWY1eTYhCYlr%2B4yirCA4Ibaa6FB6E9YBndnMfyhtx%2BIDCjsRQ4MmnSfFOHU9Tw5RpZ%2FyNBYdPQ2Fop9nKQdGr0sy%2Fvpr3eQkSW%2FCVjbu8nDSdQ62RXbZ4aVZFIKMA3vDsx%2Fxzce2wnWn7lDL0gUbNLg49VZWmjTf9enR%2F7K%2Fc2bk4JvjHGNaHDBrCuHITzzmlgJg2jeqn0yodZe%2BHtpEU22thrjnu5BPflf9CwjANy3M2MsLmoHynufBPcR1uR4k3fh73OABHFc9snS3IYVDemVDT5bpM6IyMgpcY%2BzFlRy1nwBuLONq8jEvhdS3j9SSh%2BLRr54Yp%2FyH0sarBUXRGR%2BtchKdt5in%2FL3nkR2M2%2F630QbMP%2B9aGu3nUCHH4XYy3aX0rHzFANaS%2BmG%2Bi9wUvvHBpt%2Fup5UM53sEIQJAErgtHnf7%2BgKSlHoj7fHBTmuW4Ji4cHP%2B3yCZciTXEcptGTsBngZybAjbY%2B0mNzSVlglj2OTMBAYW6OKOt3DUD5trRSh3qv1ZqvWf0pTF1Ul3pPSVHj7zV71bZsRRpEktlQvJ%2Flt7py0wVWdgjyZ2%2BbAhAW%2FyIi6EhKX%2BRcxn%2FQqhLNZLwpRC24V18U%2BxDnOoB%2FKzDnr%2BnWBjqlAS1Gai2I3MGwi78IhzeXp8XgpML990fvRw3pHaJOL9NWxqHjt4qfowWXW8F%2FtM4WXXnrqx2vcc8rV94Hh42LUtCuAxA%2BQt04XAwjp09HuGNHIixEYuIvbCFx4%2B0f%2BcTGCxJAEsU48i5lwzTbDnh8x0AIaVsEl0N6ztS%2BNt6CzhHjkDaxt0uaFWk70eJ6ZFejOSS%2BVcxKPpsdb7GB0gIWTRN4ZRnLwQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=1f1372d6b66cc0262d730665647e97aa638722e24fa7f3c42502e7c31a2772d4
+company.company_photos[0].photo_type: sign
+company.primary_group_partner.id: 11216
+company.primary_group_partner.full_name: David Lieb
+company.primary_group_partner.avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/6e415a060218fc99589322800cec5173b48ce926.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAP3NKJ5L7%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184812Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCVk3hHF27US9G4ZdeasrKvoLmKZ0D0TGGSelnXekFZ1wIgI3wxaZYjPHA2rzc1KwcS4ByDbTvsrKyZ5z8siZf%2BxZsq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDBXWY1eTYhCYlr%2B4yirCA4Ibaa6FB6E9YBndnMfyhtx%2BIDCjsRQ4MmnSfFOHU9Tw5RpZ%2FyNBYdPQ2Fop9nKQdGr0sy%2Fvpr3eQkSW%2FCVjbu8nDSdQ62RXbZ4aVZFIKMA3vDsx%2Fxzce2wnWn7lDL0gUbNLg49VZWmjTf9enR%2F7K%2Fc2bk4JvjHGNaHDBrCuHITzzmlgJg2jeqn0yodZe%2BHtpEU22thrjnu5BPflf9CwjANy3M2MsLmoHynufBPcR1uR4k3fh73OABHFc9snS3IYVDemVDT5bpM6IyMgpcY%2BzFlRy1nwBuLONq8jEvhdS3j9SSh%2BLRr54Yp%2FyH0sarBUXRGR%2BtchKdt5in%2FL3nkR2M2%2F630QbMP%2B9aGu3nUCHH4XYy3aX0rHzFANaS%2BmG%2Bi9wUvvHBpt%2Fup5UM53sEIQJAErgtHnf7%2BgKSlHoj7fHBTmuW4Ji4cHP%2B3yCZciTXEcptGTsBngZybAjbY%2B0mNzSVlglj2OTMBAYW6OKOt3DUD5trRSh3qv1ZqvWf0pTF1Ul3pPSVHj7zV71bZsRRpEktlQvJ%2Flt7py0wVWdgjyZ2%2BbAhAW%2FyIi6EhKX%2BRcxn%2FQqhLNZLwpRC24V18U%2BxDnOoB%2FKzDnr%2BnWBjqlAS1Gai2I3MGwi78IhzeXp8XgpML990fvRw3pHaJOL9NWxqHjt4qfowWXW8F%2FtM4WXXnrqx2vcc8rV94Hh42LUtCuAxA%2BQt04XAwjp09HuGNHIixEYuIvbCFx4%2B0f%2BcTGCxJAEsU48i5lwzTbDnh8x0AIaVsEl0N6ztS%2BNt6CzhHjkDaxt0uaFWk70eJ6ZFejOSS%2BVcxKPpsdb7GB0gIWTRN4ZRnLwQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=378dca33edf82f9db893c69880af2b4e07b026c7c5e1ed5c891a00034e8bd5b1
+company.primary_group_partner.url: https://www.ycombinator.com/people/david-lieb
+company.founders[0].user_id: 2953142
+company.founders[0].is_active: True
+company.founders[0].founder_bio: Hi, I'm Gary, co-founder and CEO at Chert. We're providing the infrastructure for businesses to build conversational interfaces in iMessage. 
+
+Before moving to SF last month, I studied CS and Business at Penn and spent the past year researching ML model architectures, designing neuromorphic chips, and building projects with my co-founder Ian. Outside of this, I like flying planes, running marathons, and reading! 
+company.founders[0].full_name: Gary Gao
+company.founders[0].title: Founder/CEO
+company.founders[0].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/a359c885dbbeb0c80ec74f02f1b4571c51e20958.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAP3NKJ5L7%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184812Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCVk3hHF27US9G4ZdeasrKvoLmKZ0D0TGGSelnXekFZ1wIgI3wxaZYjPHA2rzc1KwcS4ByDbTvsrKyZ5z8siZf%2BxZsq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDBXWY1eTYhCYlr%2B4yirCA4Ibaa6FB6E9YBndnMfyhtx%2BIDCjsRQ4MmnSfFOHU9Tw5RpZ%2FyNBYdPQ2Fop9nKQdGr0sy%2Fvpr3eQkSW%2FCVjbu8nDSdQ62RXbZ4aVZFIKMA3vDsx%2Fxzce2wnWn7lDL0gUbNLg49VZWmjTf9enR%2F7K%2Fc2bk4JvjHGNaHDBrCuHITzzmlgJg2jeqn0yodZe%2BHtpEU22thrjnu5BPflf9CwjANy3M2MsLmoHynufBPcR1uR4k3fh73OABHFc9snS3IYVDemVDT5bpM6IyMgpcY%2BzFlRy1nwBuLONq8jEvhdS3j9SSh%2BLRr54Yp%2FyH0sarBUXRGR%2BtchKdt5in%2FL3nkR2M2%2F630QbMP%2B9aGu3nUCHH4XYy3aX0rHzFANaS%2BmG%2Bi9wUvvHBpt%2Fup5UM53sEIQJAErgtHnf7%2BgKSlHoj7fHBTmuW4Ji4cHP%2B3yCZciTXEcptGTsBngZybAjbY%2B0mNzSVlglj2OTMBAYW6OKOt3DUD5trRSh3qv1ZqvWf0pTF1Ul3pPSVHj7zV71bZsRRpEktlQvJ%2Flt7py0wVWdgjyZ2%2BbAhAW%2FyIi6EhKX%2BRcxn%2FQqhLNZLwpRC24V18U%2BxDnOoB%2FKzDnr%2BnWBjqlAS1Gai2I3MGwi78IhzeXp8XgpML990fvRw3pHaJOL9NWxqHjt4qfowWXW8F%2FtM4WXXnrqx2vcc8rV94Hh42LUtCuAxA%2BQt04XAwjp09HuGNHIixEYuIvbCFx4%2B0f%2BcTGCxJAEsU48i5lwzTbDnh8x0AIaVsEl0N6ztS%2BNt6CzhHjkDaxt0uaFWk70eJ6ZFejOSS%2BVcxKPpsdb7GB0gIWTRN4ZRnLwQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=020267120a24238288f8c77234fc16869c7f27474d4cd834298d9e428c8a8b75
+company.founders[0].twitter_url: https://x.com/GaryGao891219
+company.founders[0].has_email: True
+company.founders[0].latest_yc_company.name: Chert
+company.founders[0].latest_yc_company.href: https://www.ycombinator.com/companies/chert
+company.founders[1].user_id: 2929634
+company.founders[1].is_active: True
+company.founders[1].founder_bio: I study Mathematics at NYU and previously worked on algorithm research at Courant. Along the way, I’ve won 8 hackathons, including MIT, Harvard, Penn, and Princeton.
+
+fun fact: I've lived in a total of 16 cities in 20 years of my life.
+company.founders[1].full_name: Ian Fong
+company.founders[1].title: Founder/CTO
+company.founders[1].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/1dc2361805e790ab05e61222605ef6497542b411.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECAP3NKJ5L7%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184812Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCVk3hHF27US9G4ZdeasrKvoLmKZ0D0TGGSelnXekFZ1wIgI3wxaZYjPHA2rzc1KwcS4ByDbTvsrKyZ5z8siZf%2BxZsq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDBXWY1eTYhCYlr%2B4yirCA4Ibaa6FB6E9YBndnMfyhtx%2BIDCjsRQ4MmnSfFOHU9Tw5RpZ%2FyNBYdPQ2Fop9nKQdGr0sy%2Fvpr3eQkSW%2FCVjbu8nDSdQ62RXbZ4aVZFIKMA3vDsx%2Fxzce2wnWn7lDL0gUbNLg49VZWmjTf9enR%2F7K%2Fc2bk4JvjHGNaHDBrCuHITzzmlgJg2jeqn0yodZe%2BHtpEU22thrjnu5BPflf9CwjANy3M2MsLmoHynufBPcR1uR4k3fh73OABHFc9snS3IYVDemVDT5bpM6IyMgpcY%2BzFlRy1nwBuLONq8jEvhdS3j9SSh%2BLRr54Yp%2FyH0sarBUXRGR%2BtchKdt5in%2FL3nkR2M2%2F630QbMP%2B9aGu3nUCHH4XYy3aX0rHzFANaS%2BmG%2Bi9wUvvHBpt%2Fup5UM53sEIQJAErgtHnf7%2BgKSlHoj7fHBTmuW4Ji4cHP%2B3yCZciTXEcptGTsBngZybAjbY%2B0mNzSVlglj2OTMBAYW6OKOt3DUD5trRSh3qv1ZqvWf0pTF1Ul3pPSVHj7zV71bZsRRpEktlQvJ%2Flt7py0wVWdgjyZ2%2BbAhAW%2FyIi6EhKX%2BRcxn%2FQqhLNZLwpRC24V18U%2BxDnOoB%2FKzDnr%2BnWBjqlAS1Gai2I3MGwi78IhzeXp8XgpML990fvRw3pHaJOL9NWxqHjt4qfowWXW8F%2FtM4WXXnrqx2vcc8rV94Hh42LUtCuAxA%2BQt04XAwjp09HuGNHIixEYuIvbCFx4%2B0f%2BcTGCxJAEsU48i5lwzTbDnh8x0AIaVsEl0N6ztS%2BNt6CzhHjkDaxt0uaFWk70eJ6ZFejOSS%2BVcxKPpsdb7GB0gIWTRN4ZRnLwQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=e1829a6d7adfc7db63da31315145345189971931b885d5d39a9ad0e60c5b9d26
+company.founders[1].twitter_url: https://x.com/ianyfong
+company.founders[1].has_email: True
+company.founders[1].latest_yc_company.name: Chert
+company.founders[1].latest_yc_company.href: https://www.ycombinator.com/companies/chert
+jobPostings: (none)
+jobsUrl: https://bookface.ycombinator.com/workatastartup
+newsItems: (none)
+newsUrl: https://bookface.ycombinator.com/company/31364/company_news
+videos: (none)
+launches[0].id: 100959
+launches[0].title: Chert – iMessage infrastructure for trusted communication at scale
+launches[0].body: # \*\*\*\*
+
+**TL;DR**: Chert provides the infrastructure for teams to send, receive, and automate conversations over iMessage using APIs. We’re already working with B2C startups, customer experience teams, and sales teams to reach end users through trusted and conversational messaging.
+
+**Ask**: If you’re interested in integrating iMessage into your customer conversations, or know someone who is, we’d love to talk: <https://cal.com/team/chert/chert-call> 
+
+<https://www.youtube.com/watch?v=g0BYKdbaNFo>
+
+**The Problem**
+
+iMessage is one of the most trusted and widely used messaging channels in the US. People use it every day to talk with friends, book appointments, coordinate plans, and have conversations. 
+
+But for businesses, iMessage is still very difficult to automate programmatically. 
+
+If a business wants to build on iMessage today, they would have to set up phone lines, manage devices, monitor line health, and connect everything back into their existing tools. 
+
+**Our Solution**
+
+Chert lets teams build agents that can send and receive iMessages directly through our API.
+
+Using iMessage as the communication channel has a few major advantages:
+
+1. **Higher trust and visibility**: while green-bubble SMS and RCS messages get ignored, people open and read blue-bubble iMessages 
+2. **More expressive conversations**: Typing indicators, reactions, stickers, attachments, images, and videos make conversations feel more human than standard SMS or email.
+3. **Better response loops**: Because iMessage is a channel users already check constantly, teams can create faster and more continuous conversations with prospects, customers, and users. 
+
+We can also integrate natively into calendars (Calendly, [Cal.com](http://Cal.com), etc), CRMs (Hubspot, Salesforce, etc), and internal tools to add logging and structure into conversations.
+
+**Our ask**: 
+
+1. If you’re building a B2C startup, customer experience team, or AI agent that could benefit from iMessage as a communication channel, we’d love to talk: <https://cal.com/team/chert/chert-call> 
+2. If you have other use cases for iMessage that you think would be helpful, we’d love to hear them: <https://cal.com/team/chert/chert-call>
+
+Visit us at <https://www.trychert.com/>
+
+Contact us at [contact@trychert.com](mailto:contact@trychert.com)
+launches[0].state: public
+launches[0].tagline: Chert provides the infrastructure for teams to send, receive, and automate conversations over iMessage using APIs.
+launches[0].created_at: 2026-05-07T22:21:41.432Z
+launches[0].company.id: 31364
+launches[0].company.name: Chert
+launches[0].company.logo: https://bookface-images.s3.amazonaws.com/small_logos/7dbcfda02066d2a118790619245d76bd15d26183.png
+launches[0].company.batch: p2026
+launches[0].company.tags: (none)
+launches[0].company.url: https://www.trychert.com/
+launches[0].company.slug: chert
+launches[0].company.description: iMessage infrastructure for business
+launches[0].user.name: Gary Gao
+launches[0].user.avatar: https://bookface-images.s3.amazonaws.com/avatars/a359c885dbbeb0c80ec74f02f1b4571c51e20958.jpg
+launches[0].total_vote_count: 44
+launches[0].slug: QGN-chert-imessage-infrastructure-for-trusted-communication-at-scale
+launches[0].launch_embed_url: https://www.ycombinator.com/launches/QGN-chert-imessage-infrastructure-for-trusted-communication-at-scale/upvote_embed.svg
+launches[0].twitter_share_url: https://twitter.com/intent/tweet?text=Chert+just+launched+on+%40ycombinator%27s+Launch+YC%21%0A%0AChert+%E2%80%93+iMessage+infrastructure+for+trusted+communication+at+scale.+Check+them+out%3A&url=https%3A%2F%2Fwww.ycombinator.com%2Flaunches%2FQGN-chert-imessage-infrastructure-for-trusted-communication-at-scale
+launches[0].sanitized_title: Chert – iMessage infrastructure for trusted communication at scale
+launches[0].ycdc_launch_url: https://www.ycombinator.com/launches/QGN-chert-imessage-infrastructure-for-trusted-communication-at-scale
+launches[0].url: https://www.ycombinator.com/launches/QGN-chert-imessage-infrastructure-for-trusted-communication-at-scale
+launches[0].share_image: None
+launches[0].approved_at: None
+launches[0].approved_by: None
+launches[0].requested_publish_at: 2026-05-07T23:00:00Z
+editUrl: https://bookface.ycombinator.com/company/31364/edit
+editUserUrl: https://bookface.ycombinator.com/edit_user_profile
+createProfileUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication&defaults%5BsignUpActive%5D=true
+signedIn: False
+showDirectApply: True
+waasDirectoryUrl: https://www.workatastartup.com/companies
+investorSubdomain: False
+userCanRequestEmails: False

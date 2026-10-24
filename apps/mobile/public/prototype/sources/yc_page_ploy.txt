@@ -1,0 +1,155 @@
+currentUser: None
+publicFounderProfilesEnabled: False
+disabledPublicVisibility: None
+company.id: 31041
+company.slug: ploy
+company.name: Ploy
+company.batch: P26
+company.batch_name: Spring 2026
+company.small_logo_url: https://bookface-images.s3.amazonaws.com/small_logos/ccc3c5e484f835514f0cfb2db7ddd1510a6b0be4.png
+company.one_liner: Ploy turns your website into your company's growth engine. 
+company.website: https://ploy.ai
+company.long_description: 
+company.tags: (none)
+company.ycdc_status: Active
+company.logo_url: https://bookface-images.s3.us-west-2.amazonaws.com/logos/50ce5656fb5034ba3867079b0e2e63cea7b06021.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECACT4FLLUS%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184817Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIAaX0KauBcsZxcjSsv%2BI3vEwBv6H2fsRETKESACH09bpAiEAmkkieNVgfWTzR2DQVRA2dam6CENZkIRp38CvpxzSLgoq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDEN%2BqGwlV1au%2BUx%2BfirCA%2FtIoTSLv7Aoiz1yGjXKLMVHfO%2BGjHb56MshV1DISDqfqE%2Bz2M9Wm4gm6IWyeY%2F3g1Wp52Y2bZtvHavqfnbiAEqAtFDsgm%2FdcmvP4OmNVV0D2vJKz5tIB9vs0u%2B05yznQPnVWr%2BripDeNudmDEPIR1uPH5i5qBYNwufmLWF5NjQemQz%2BCGpLaWIS96ci3pzzFuI%2FKZz%2F7oZRr1DgKU5E1M3kKus0PtRcMBbfhlYaSikkSpANLdOZDEuJCU8dcyJjTPOvKpOoa4KWQXju6boL120U0uKzhk1d%2Fl5mLeXd5HjSVdgNYW8bBDkFcCLvREs8Lp83hNDnDQGXOEcQmc4RcD%2FbWayxwG%2BKlW9bE10LvdMYz5mK6V4yul3E4n30xOHfFMAzCFjHRHx2e3gzHeQv%2B5BgSY3DsIGY0ldA9RE7Nfyf2xIVB17JKtkvtuzSxmDZ3STm6VYm4NFCmwWasL9q8zZTOFum15QfbheNsj5h6bWkSG1O%2BqFylGHeYTRYSknXhIYUeNSmDkc%2FVPClswrbKH0UTE1o0Z6LvLKsY4MH6qjNleY7CjNa7kAc6CKxkLMB2reSbfe2kHxRcyh8KktgNbQduTDgr%2BnWBjqlASlw6Vq0IEbyX1bxOeN8owxH4Zf98%2BbGBOP6xPlxWiEVx5uFSa60iJeujDw1txxeOQiTTY7x%2BlA21KQQXJSxt1N5UKgXeh7pkano3v%2BI3EfxKwDcOrgXMRN7OOvT%2Bmel7Pp4xYCPfF6AV4js9zscCg%2FTHhMtli4ilCQUL55rnAQzQMvNbExETLvn9IiUDJ0tGatBAFPo%2FrdyNxD2FQtsElFMys8pBg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=9f31ffd43e19eb409957d558cb8c49a9800a6683a57c25988541a28d53a29adb
+company.year_founded: 2025
+company.team_size: 14
+company.location: San Francisco
+company.city: San Francisco
+company.city_tag: san-francisco-bay-area
+company.country: US
+company.twitter_url: https://x.com/ployai
+company.fb_url: 
+company.cb_url: 
+company.github_url: None
+company.free_response_question_answers: (none)
+company.dday_video_url: None
+company.app_video_url: None
+company.app_answers: (none)
+company.ycdc_url: https://www.ycombinator.com/companies/ploy
+company.company_photos: (none)
+company.primary_group_partner.id: 678
+company.primary_group_partner.full_name: Garry Tan
+company.primary_group_partner.avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/3e671fcf11664b0b9ec2a979cb97ce510f50b8e1.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECACT4FLLUS%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184817Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIAaX0KauBcsZxcjSsv%2BI3vEwBv6H2fsRETKESACH09bpAiEAmkkieNVgfWTzR2DQVRA2dam6CENZkIRp38CvpxzSLgoq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDEN%2BqGwlV1au%2BUx%2BfirCA%2FtIoTSLv7Aoiz1yGjXKLMVHfO%2BGjHb56MshV1DISDqfqE%2Bz2M9Wm4gm6IWyeY%2F3g1Wp52Y2bZtvHavqfnbiAEqAtFDsgm%2FdcmvP4OmNVV0D2vJKz5tIB9vs0u%2B05yznQPnVWr%2BripDeNudmDEPIR1uPH5i5qBYNwufmLWF5NjQemQz%2BCGpLaWIS96ci3pzzFuI%2FKZz%2F7oZRr1DgKU5E1M3kKus0PtRcMBbfhlYaSikkSpANLdOZDEuJCU8dcyJjTPOvKpOoa4KWQXju6boL120U0uKzhk1d%2Fl5mLeXd5HjSVdgNYW8bBDkFcCLvREs8Lp83hNDnDQGXOEcQmc4RcD%2FbWayxwG%2BKlW9bE10LvdMYz5mK6V4yul3E4n30xOHfFMAzCFjHRHx2e3gzHeQv%2B5BgSY3DsIGY0ldA9RE7Nfyf2xIVB17JKtkvtuzSxmDZ3STm6VYm4NFCmwWasL9q8zZTOFum15QfbheNsj5h6bWkSG1O%2BqFylGHeYTRYSknXhIYUeNSmDkc%2FVPClswrbKH0UTE1o0Z6LvLKsY4MH6qjNleY7CjNa7kAc6CKxkLMB2reSbfe2kHxRcyh8KktgNbQduTDgr%2BnWBjqlASlw6Vq0IEbyX1bxOeN8owxH4Zf98%2BbGBOP6xPlxWiEVx5uFSa60iJeujDw1txxeOQiTTY7x%2BlA21KQQXJSxt1N5UKgXeh7pkano3v%2BI3EfxKwDcOrgXMRN7OOvT%2Bmel7Pp4xYCPfF6AV4js9zscCg%2FTHhMtli4ilCQUL55rnAQzQMvNbExETLvn9IiUDJ0tGatBAFPo%2FrdyNxD2FQtsElFMys8pBg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=85325047bc4d53b25ac84cb2faf3081c8e4503750cb10a852170dad6ee9429e6
+company.primary_group_partner.url: https://www.ycombinator.com/people/garry-tan
+company.founders[0].user_id: 5667
+company.founders[0].is_active: True
+company.founders[0].founder_bio: cofounder and CTO — vungle ➡️ $LFTO (2011-2013)
+cofounder and CTO — webflow (2013-2025)
+company.founders[0].full_name: Bryant Chou
+company.founders[0].title: Founder
+company.founders[0].avatar_thumb_url: https://bookface-images.s3.us-west-2.amazonaws.com/avatars/f9509aa428b058a8eb3786903df1d3440f0637a5.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQC4NIECACT4FLLUS%2F20261022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261022T184817Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIAaX0KauBcsZxcjSsv%2BI3vEwBv6H2fsRETKESACH09bpAiEAmkkieNVgfWTzR2DQVRA2dam6CENZkIRp38CvpxzSLgoq5QMIfBAAGgwwMDYyMDE4MTEwNzIiDEN%2BqGwlV1au%2BUx%2BfirCA%2FtIoTSLv7Aoiz1yGjXKLMVHfO%2BGjHb56MshV1DISDqfqE%2Bz2M9Wm4gm6IWyeY%2F3g1Wp52Y2bZtvHavqfnbiAEqAtFDsgm%2FdcmvP4OmNVV0D2vJKz5tIB9vs0u%2B05yznQPnVWr%2BripDeNudmDEPIR1uPH5i5qBYNwufmLWF5NjQemQz%2BCGpLaWIS96ci3pzzFuI%2FKZz%2F7oZRr1DgKU5E1M3kKus0PtRcMBbfhlYaSikkSpANLdOZDEuJCU8dcyJjTPOvKpOoa4KWQXju6boL120U0uKzhk1d%2Fl5mLeXd5HjSVdgNYW8bBDkFcCLvREs8Lp83hNDnDQGXOEcQmc4RcD%2FbWayxwG%2BKlW9bE10LvdMYz5mK6V4yul3E4n30xOHfFMAzCFjHRHx2e3gzHeQv%2B5BgSY3DsIGY0ldA9RE7Nfyf2xIVB17JKtkvtuzSxmDZ3STm6VYm4NFCmwWasL9q8zZTOFum15QfbheNsj5h6bWkSG1O%2BqFylGHeYTRYSknXhIYUeNSmDkc%2FVPClswrbKH0UTE1o0Z6LvLKsY4MH6qjNleY7CjNa7kAc6CKxkLMB2reSbfe2kHxRcyh8KktgNbQduTDgr%2BnWBjqlASlw6Vq0IEbyX1bxOeN8owxH4Zf98%2BbGBOP6xPlxWiEVx5uFSa60iJeujDw1txxeOQiTTY7x%2BlA21KQQXJSxt1N5UKgXeh7pkano3v%2BI3EfxKwDcOrgXMRN7OOvT%2Bmel7Pp4xYCPfF6AV4js9zscCg%2FTHhMtli4ilCQUL55rnAQzQMvNbExETLvn9IiUDJ0tGatBAFPo%2FrdyNxD2FQtsElFMys8pBg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=91e663c73e060766bb68a7e04acf8fc9fa1cc8520a67e9734decd9bc16a8914b
+company.founders[0].twitter_url: https://x.com/bryantchou
+company.founders[0].has_email: True
+company.founders[0].latest_yc_company.name: Ploy
+company.founders[0].latest_yc_company.href: https://www.ycombinator.com/companies/ploy
+jobPostings[0].id: 93359
+jobPostings[0].title: Founding Engineer
+jobPostings[0].url: /companies/ploy/jobs/XsX0ycv-founding-engineer
+jobPostings[0].applyUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication%3Fsignup_job_id%3D93359&defaults%5BsignUpActive%5D=true&defaults%5Bwaas_company%5D=31041
+jobPostings[0].location: San Francisco, CA, US
+jobPostings[0].askUs: True
+jobPostings[0].type: Full-time
+jobPostings[0].role: eng
+jobPostings[0].roleSpecificType: Full stack
+jobPostings[0].prettyRole: Engineering
+jobPostings[0].salaryRange: $150K - $250K
+jobPostings[0].equityRange: 
+jobPostings[0].minExperience: Any (new grads ok)
+jobPostings[0].minSchoolYear: None
+jobPostings[0].visa: US citizen/visa only
+jobPostings[0].skills: (none)
+jobPostings[0].isIncomplete: False
+jobPostings[0].companyUrl: /companies/ploy
+jobPostings[0].companyLogoUrl: https://bookface-images.s3.amazonaws.com/small_logos/ccc3c5e484f835514f0cfb2db7ddd1510a6b0be4.png
+jobPostings[0].companyName: Ploy
+jobPostings[0].companyBatchName: P26
+jobPostings[0].companyOneLiner: Ploy turns your website into your company's growth engine. 
+jobPostings[0].hiringManager: None
+jobPostings[0].createdAt: 6 months
+jobPostings[0].lastActive: None
+jobsUrl: https://bookface.ycombinator.com/workatastartup
+newsItems: (none)
+newsUrl: https://bookface.ycombinator.com/company/31041/company_news
+videos: (none)
+launches[0].id: 103433
+launches[0].title: Ploy turns your website into your company's growth engine.
+launches[0].body: After 12 years as the cofounder and CTO at Webflow I left fulfilled knowing folks can design beautiful sites without writing code — but now I'm out to make sure your website doesn't just look great, but it becomes your business' main engine of growth.
+
+<https://youtu.be/NONVS2IoDQE>
+
+Agents have changed what's possible, which is why I'm building again. Ploy deploys swarms of marketing and web design agents that monitor your site and proactively launch campaigns, content, and optimizations.
+
+**TL;DR [Ploy](https://ploy.ai/)** is the marketing platform that turns your website into your company's growth engine. Connect your site and swarms of marketing agents run it for you: designing pages, writing copy, launching campaigns, and optimizing what's working. 
+
+## The Problem
+
+Most founders ship an early website and then forget about it. In the early days, a single-page site is often good enough... but once you start signing more customers, your website becomes a critical growth lever.
+
+If you're a founder looking to activate your website, you have a few options: hire a marketing lead, work with an agency, or try to vibe code together a few landing pages and growth flows. These are expensive and distracting during a time when you should be focused on customers and your product.
+
+## The Solution
+
+Ploy gives founders the marketing infrastructure of a growth team without needing to make an early hire. Here's how it works:
+
+### 1. Get your site on Ploy in minutes.
+
+Paste your URL and Ploy slurps your site down to the last pixel — extracting your design system, components, and brand content. Don't have a site yet? Ploy can design and build one from scratch, trained on thousands of modern web design patterns.
+
+### 2. Run PloyBooks — marketing strategies on autopilot.
+
+Ploy's agents come pre-trained with expert skills we call PloyBooks. Spin up a set of ABM pages targeting a new account and publish them under your domain in minutes. Run an SEO audit. Redesign an underperforming landing page. Launch paid ads. And if there isn't a PloyBook for what you need, write your own, and Ploy's agents will handle the rest.
+
+### 3. Your website and your company scale together.
+
+Ploy watches your traffic, spots gaps and opportunities, and proactively suggests new Ploys for you to run. And it remembers everything as you grow: every experiment, every page, every campaign that did (or didn't) resonate with your customers. Over 13% of the YC P26 companies are using Ploy to power their website and to drive automated revenue. The earlier you plug Ploy into your business, the smarter it gets about what actually works for you. 
+
+And Ploy keeps working even after you add marketers to your team. Companies like Hex and Clay are using Ploy to run programmatic SEO engines and generate ABM pages at scale.
+
+## Why we're building this
+
+I've spent most of my career working on websites, and I think the space is about to change more in the next few years than it has in the last 15 combined. I was CTO of Vungle, then spent 12+ years as co-founder and CTO of Webflow, where I built the core product, CMS, and hosting that now power \~1.5% of the internet.
+
+AI has unlocked a new class of agents and primitives that make the website a game-changing growth hub and marketing system of record. That's exactly why I'm stoked to be building Ploy alongside a killer founding team here in San Francisco.
+
+Run your first Ploy today: <https://ploy.ai/auth/sign-up>
+
+![uploaded image](/media/?type=post&id=103433&key=user_uploads/5667/67ea05c2-1fd3-4da2-b885-baa6f1f522fd)
+
+
+launches[0].state: public
+launches[0].tagline: Ploy is an all-in-one marketing platform built around your website, the hub that connects all of your growth channels.
+launches[0].created_at: 2026-06-17T14:06:07.903Z
+launches[0].company.id: 31041
+launches[0].company.name: Ploy
+launches[0].company.logo: https://bookface-images.s3.amazonaws.com/small_logos/ccc3c5e484f835514f0cfb2db7ddd1510a6b0be4.png
+launches[0].company.batch: p2026
+launches[0].company.tags: (none)
+launches[0].company.url: https://ploy.ai
+launches[0].company.slug: ploy
+launches[0].company.description: Ploy turns your website into your company's growth engine. 
+launches[0].user.name: Bryant Chou
+launches[0].user.avatar: https://bookface-images.s3.amazonaws.com/avatars/f9509aa428b058a8eb3786903df1d3440f0637a5.jpg
+launches[0].total_vote_count: 23
+launches[0].slug: QuH-ploy-turns-your-website-into-your-company-s-growth-engine
+launches[0].launch_embed_url: https://www.ycombinator.com/launches/QuH-ploy-turns-your-website-into-your-company-s-growth-engine/upvote_embed.svg
+launches[0].twitter_share_url: https://twitter.com/intent/tweet?text=Ploy+just+launched+on+%40ycombinator%27s+Launch+YC%21%0A%0APloy+turns+your+website+into+your+company%27s+growth+engine..+Check+them+out%3A&url=https%3A%2F%2Fwww.ycombinator.com%2Flaunches%2FQuH-ploy-turns-your-website-into-your-company-s-growth-engine
+launches[0].sanitized_title: Ploy turns your website into your company's growth engine.
+launches[0].ycdc_launch_url: https://www.ycombinator.com/launches/QuH-ploy-turns-your-website-into-your-company-s-growth-engine
+launches[0].url: https://www.ycombinator.com/launches/QuH-ploy-turns-your-website-into-your-company-s-growth-engine
+launches[0].share_config.url: /media/?type=post&id=103433&key=user_uploads/5667/67ea05c2-1fd3-4da2-b885-baa6f1f522fd
+launches[0].share_image: None
+launches[0].approved_at: 2026-06-17T18:54:33Z
+launches[0].approved_by.id: 229665
+launches[0].approved_by.name: Grey Baker
+launches[0].approved_by.hnid: greysteil
+launches[0].requested_publish_at: None
+editUrl: https://bookface.ycombinator.com/company/31041/edit
+editUserUrl: https://bookface.ycombinator.com/edit_user_profile
+createProfileUrl: https://account.ycombinator.com/authenticate?continue=https%3A%2F%2Fwww.workatastartup.com%2Fapplication&defaults%5BsignUpActive%5D=true
+signedIn: False
+showDirectApply: True
+waasDirectoryUrl: https://www.workatastartup.com/companies
+investorSubdomain: False
+userCanRequestEmails: False
