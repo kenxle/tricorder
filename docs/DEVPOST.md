@@ -49,9 +49,16 @@ Every data room is synthetic, and every page says so. The real companies' public
 
 **Scripts for math, a model for words.** Each scan is Python and writes its claims as JSON. Scripts compute every number. Claude reads only what a script cannot, such as a contract clause, and returns structured output with the exact quote it relied on. A merge step turns the claims into the readout.
 
-**The apps.** A FastAPI server feeds a React web app. Benjamin set up a pnpm and Turbo workspace, a typed tRPC gateway with TypeScript types generated from the Python models, and an Expo app on the same API.
+**The TypeScript port.** At 11:00 AM we decided to move to TypeScript, and Benjamin started the port the same morning. Today's commits brought:
 
-**Expert knowledge.** Kimmy wrote how an investor reads traction and revenue, and burn and runway: what to check first, how traction differs for B2B and games, and what to ask the founder.
+- a pnpm and Turbo workspace;
+- a typed tRPC gateway, checked with Zod, over the Python API;
+- TypeScript types generated from the Python models;
+- the readout ported to an Expo (React Native) app, with a company research workspace.
+
+The scans and the merge are still Python, served by FastAPI to the React web app.
+
+**Expert knowledge.** Kimmy wrote how an investor reads traction and revenue, and burn and runway: what to check first, how traction differs for B2B and games, and what to ask the founder. Her files now go into the model's prompts for the deck slide reader and for steering.
 
 **Agents in parallel.** Ken and Benjamin each ran AI coding agents, which left notes for each other on a shared board in the repo. The repo has more than 500 commits since Thursday.
 
@@ -60,7 +67,7 @@ Every data room is synthetic, and every page says so. The real companies' public
 - **Real data rooms are confidential.** We wrote our own, with planted problems and decoys. For real YC companies we pair real public data with a synthetic room, and every page of the room says it is synthetic.
 - **Keeping the model honest.** The model API would not return citations together with structured output. So every claim carries its quote, and a script checks the quote against the file.
 - **Scoring ourselves.** On a fresh run today, the engine finds 5 of 5 planted flags in Brasswick but only 2 of 8 in Hollis Voice. It misses a pilot counted as ARR, the deck's ARR against the model, burn against the hiring plan, customer concentration, gross margin, and cumulative sign-ups shown as active clinics. The checks for those are on the roadmap and not built yet.
-- **Changing stack mid-day.** At 11:00 AM we decided to move to TypeScript, with web and mobile apps on one core. The Python engine keeps running the demo until the port scores the same on every answer key.
+- **Changing stack mid-day.** We moved to TypeScript partway through the day, with web and mobile apps on one core. The Python engine keeps running the demo until the port scores the same on every answer key.
 - **Scope.** The roadmap has 57 slices. 13 are done and 10 are partly built.
 
 ## Accomplishments that we're proud of
@@ -83,7 +90,7 @@ Every data room is synthetic, and every page says so. The real companies' public
 
 - **Build the prototype's first steps into the app:** set up a company from its URL, research it live from public sources, and fill each section as its data arrives.
 - **Finish the red-flag checks** that Hollis Voice still slips past.
-- **Load Kimmy's knowledge into every analysis,** and use it to build Tricorder's own financial model.
+- **Write Kimmy's knowledge for the other pieces,** and use it in the checks still to be built and in Tricorder's own financial model.
 - **Give each partner their own copy of the memo,** with what-ifs on the growth model and a chat that points to the evidence.
 - **Read the pitch video,** with each claim tied to its timestamp.
 - **Check the bank account,** with the founder's consent, through Plaid's sandbox first.
