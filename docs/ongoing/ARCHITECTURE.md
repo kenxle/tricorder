@@ -18,7 +18,7 @@ Tricorder is a set of Python scans that each read a company's files and write on
 
 ## The stack
 
-**Moving to TypeScript.** Ken decided on 2026-10-24 at 11:00 AM to port Tricorder to TypeScript, with a React web app and a React Native app on one shared core. Ben builds it: [typescript-port](roadmap/typescript-port.md). Until the port scores the same on every answer key, the Python stack below is what runs.
+**Moving to TypeScript.** Ken decided on 2026-10-24 at 11:00 AM to port Tricorder to TypeScript, with a React web app and a React Native app on one shared core. Benjamin builds it: [typescript-port](roadmap/typescript-port.md). Until the port scores the same on every answer key, the Python stack below is what runs.
 
 | Layer | What | Why |
 |---|---|---|

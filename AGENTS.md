@@ -74,7 +74,7 @@ Teammates: add yourself here and in Core Domains when you join. Your @-handle is
 | Name | Handle | Area(s) |
 |------|--------|---------|
 | Ken | `@Ken` | Product design, user research, product management, the demo and the pitch |
-| Ben | `@Ben` | The TypeScript port: shared core, React web, React Native |
+| Benjamin | `@Benjamin` | The TypeScript port: shared core, React web, React Native |
 
 ## Core Domains
 
@@ -83,7 +83,7 @@ Each teammate owns a domain. Respect these boundaries and use the Bulletin Board
 | Name | Core Domain | Owns (files, folders, systems) |
 |------|-------------|--------------------------------|
 | Ken | Product (design, research, PM) | What we build and why: the product brief, features, roadmap, personas, research, the brand, the demo story and the synthetic data rooms. Lives in `docs/ongoing/`, `docs/reports/`, `data_room/`. Agents: check with @Ken before changing scope, the readout's words, or the demo story. |
-| Ben | The TypeScript port | The shared TypeScript core, the React web app and the React Native app. See [typescript-port](docs/ongoing/roadmap/typescript-port.md). Agents: once Ben's port of a folder is announced on the board, change that folder in TypeScript, not Python. |
+| Benjamin | The TypeScript port | The shared TypeScript core, the React web app and the React Native app. See [typescript-port](docs/ongoing/roadmap/typescript-port.md). Agents: once Benjamin's port of a folder is announced on the board, change that folder in TypeScript, not Python. |
 
 ## Project overview
 

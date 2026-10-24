@@ -33,11 +33,11 @@ Build in this order. The first three are the demo and are always shown. The rest
 
 ## Ben: the TypeScript port
 
-Ken decided at 11:00 AM: Tricorder moves to TypeScript, with a React web app and a React Native app sharing one core. Ben builds it. The Python version keeps running the demo until the TypeScript one scores the same on every room's answer key.
+Ken decided at 11:00 AM: Tricorder moves to TypeScript, with a React web app and a React Native app sharing one core. Benjamin builds it. The Python version keeps running the demo until the TypeScript one scores the same on every room's answer key.
 
 | Slice | What is left to build | Who |
 |---|---|---|
-| [typescript-port](roadmap/typescript-port.md) (not started) | The shared TypeScript core (schema, readers, scans, merge, scoring), the React web app and the React Native app | Ben |
+| [typescript-port](roadmap/typescript-port.md) (not started) | The shared TypeScript core (schema, readers, scans, merge, scoring), the React web app and the React Native app | Benjamin |
 
 ## After the demo path
 
