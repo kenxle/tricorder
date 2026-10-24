@@ -17,7 +17,7 @@
     "fix": "ultracite fix",
     "format": "oxfmt --write .",
     "format:check": "oxfmt --check .",
-    "dev:mobile:device": "pnpm --filter @tricorder/mobile dev:device"
+    "dev:mobile:device": "turbo run dev:device --filter=@tricorder/mobile --ui=tui --"
   },
   "devDependencies": {
     "oxfmt": "^0.71.0",

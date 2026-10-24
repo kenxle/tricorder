@@ -19,6 +19,16 @@
       "cache": false,
       "persistent": true
     },
+    "dev:device": {
+      "cache": false,
+      "persistent": true,
+      "with": ["@tricorder/api#dev", "@tricorder/rpc#dev"],
+      "passThroughEnv": [
+        "EXPO_*",
+        "TRICORDER_*",
+        "REACT_NATIVE_PACKAGER_HOSTNAME"
+      ]
+    },
     "start": {
       "cache": false,
       "persistent": true

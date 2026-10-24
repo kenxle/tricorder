@@ -43,11 +43,11 @@ pnpm --filter @tricorder/mobile test     # Adapter boundary tests
 `127.0.0.1` in a QR code points to the iPhone itself, not this Mac. Keep `pnpm dev:mobile` for the simulator. For a physical phone:
 
 1. Connect this Mac to the iPhone's Personal Hotspot. Keep the installed Tricorder development build on the phone.
-2. Stop the existing Metro terminal with Ctrl+C. Stop any earlier temporary phone proxy on port 8082.
-3. Run `pnpm dev:mobile:device` from the root, or `pnpm dev:device` from `apps/mobile`.
+2. Stop any existing `pnpm dev`, backend or Metro terminals with Ctrl+C. Stop any earlier temporary phone proxy on port 8082.
+3. Run `pnpm dev:mobile:device` from the root. This starts the Python API, RPC gateway and phone Metro together. Do not also run `pnpm dev` or separate backend commands. Vite is not needed for the phone.
 4. Scan the new QR code with the iPhone. It advertises the Mac's hotspot address, such as `172.20.10.2:8082`, instead of loopback. Allow local network access if iOS asks.
 
-The launcher detects the hotspot's local IPv4 address, keeps Metro on `127.0.0.1:8081`, and exposes a forwarding port only on that hotspot interface. Only the phone's gateway address can connect. It sets both `EXPO_PACKAGER_PROXY_URL` and `EXPO_PUBLIC_API_URL`; Fast Refresh WebSockets use the same forwarder. Ctrl+C stops its Metro and proxy together. The Python API still runs separately for room analysis (`pnpm --filter @tricorder/api dev`).
+The launcher detects the hotspot's local IPv4 address, keeps Metro on `127.0.0.1:8081`, and exposes a forwarding port only on that hotspot interface. Only the phone's gateway address can connect. It sets both `EXPO_PACKAGER_PROXY_URL` and `EXPO_PUBLIC_API_URL`; Fast Refresh WebSockets use the same forwarder. Ctrl+C in the root command stops the API, gateway, Metro and phone proxy together. The package-local `pnpm dev:device` still starts only Metro and the proxy for developers managing backend services separately.
 
 For a trusted Wi-Fi network instead, specify the actual Mac and phone IPv4 addresses:
 
