@@ -75,8 +75,8 @@
 
 /* Steps 7 and 8: the memo */
 .x-memo { max-width: 920px; }
-.x-memo-sec { border-top: var(--tc-hair) solid var(--tc-rule); padding: var(--tc-space-5) 0; }
-.x-memo-sec > h3 { margin: 0 0 var(--tc-space-3); font-size: 20px; font-weight: 700; line-height: 1.2; }
+.x-memo-sec, .x-memo-piece { border-top: var(--tc-hair) solid var(--tc-rule); padding: var(--tc-space-5) 0; }
+.x-memo-sec > h3, .x-memo-piece > h3 { margin: 0 0 var(--tc-space-3); font-size: 20px; font-weight: 700; line-height: 1.2; }
 .x-memo-sec > h3 .tc-meta { font-weight: 400; margin-right: var(--tc-space-2); }
 .x-mlines { list-style: none; margin: 0; padding: 0; }
 .x-mline { padding: var(--tc-space-2) 0; }
@@ -154,8 +154,8 @@ span.x-mline-text { cursor: default; text-decoration: none; }
 .x-memohead .co-title { margin: var(--tc-space-2) 0 var(--tc-space-2); }
 .x-memohead-sub { font-size: 20px; color: var(--tc-ink); margin: 0 0 var(--tc-space-2); }
 .x-memohead .tc-meta, .x-memohead .tc-synthetic { margin: var(--tc-space-1) 0 0; }
-.x-doc .x-memo-sec { border-top: 0; padding: var(--tc-space-5) 0 0; }
-.x-doc .x-memo-sec > h3 { font-size: 22px; margin-bottom: var(--tc-space-3); }
+.x-doc .x-memo-sec, .x-doc .x-memo-piece { border-top: 0; padding: var(--tc-space-5) 0 0; }
+.x-doc .x-memo-sec > h3, .x-doc .x-memo-piece > h3 { font-size: 22px; margin-bottom: var(--tc-space-3); }
 .x-para { padding: var(--tc-space-2) 0 var(--tc-space-3); border-radius: var(--tc-radius-m); transition: background-color .6s ease; }
 .x-para > p { margin: 0; font-size: 17px; line-height: 1.6; color: var(--tc-ink-2); }
 .x-para > p strong { color: var(--tc-ink); font-weight: 600; }
@@ -202,8 +202,8 @@ span.x-mline-text { cursor: default; text-decoration: none; }
 .x-chatform .tc-input { flex: 1 1 auto; min-width: 0; }
 
 /* Reports read with Kimmy's expert knowledge, each with one interactive chart. */
-.x-kimmy { font: 12px/1.4 var(--tc-font-mono); color: var(--tc-ink-3); margin: 0 0 var(--tc-space-3); }
-.x-kimmy code { color: var(--tc-ink-2); }
+.x-kimmy, .x-knowledge { font: 12px/1.4 var(--tc-font-mono); color: var(--tc-ink-3); margin: 0 0 var(--tc-space-3); }
+.x-kimmy code, .x-knowledge code { color: var(--tc-ink-2); }
 .x-chart { width: 100%; max-width: 860px; min-height: 340px; margin: 0 0 var(--tc-space-4); }
 .x-report-body { max-width: 760px; }
 .x-report-body > p { font-size: 16px; line-height: 1.6; color: var(--tc-ink-2); margin: 0 0 var(--tc-space-3); }
@@ -219,6 +219,6 @@ span.x-mline-text { cursor: default; text-decoration: none; }
 .x-insight .tc-card-foot { margin-top: auto; padding-top: var(--tc-space-3); }
 
 /* The completed room leads with the expert analyses (Ken, 3:20 PM). */
-.x-kimmy { display: flex; flex-wrap: wrap; gap: var(--tc-space-2) var(--tc-space-3); align-items: center; }
-.x-kimmy a { color: var(--tc-ink-2); min-height: var(--tc-hit); display: inline-flex; align-items: center; }
+.x-kimmy, .x-knowledge { display: flex; flex-wrap: wrap; gap: var(--tc-space-2) var(--tc-space-3); align-items: center; }
+.x-kimmy a, .x-knowledge a { color: var(--tc-ink-2); min-height: var(--tc-hit); display: inline-flex; align-items: center; }
 .x-roomview > .actions:first-of-type { margin: var(--tc-space-3) 0 0; }

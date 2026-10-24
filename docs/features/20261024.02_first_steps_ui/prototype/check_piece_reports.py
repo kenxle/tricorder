@@ -54,7 +54,7 @@ def check_piece_reports(pg, check, errors) -> None:
             for rep in reps:
                 sec = pg.locator(f"[data-piece-report='{rep['piece']}']")
                 txt = sec.inner_text()
-                check(rep["knowledge"] in txt and "built from expert knowledge" in txt.lower() and "kimmy" not in txt.lower(),
+                check(rep["knowledge"] in txt and "built from expert knowledge" in txt.lower() and "kimmy" not in txt.lower() and sec.locator(".x-knowledge").count() == 1,
                       f"{slug} {rep['piece']}: labelled with {rep['knowledge']}")
                 check(sec.locator(".x-chart .main-svg").count() >= 1, f"{slug} {rep['piece']}: its chart draws")
                 check(sec.locator(".x-report-body > p").count() == len(rep["paras"]) and sec.locator(".x-asks li").count() == len(rep["asks"]),
@@ -79,6 +79,36 @@ def check_piece_reports(pg, check, errors) -> None:
             check(r.ok and "expert knowledge" in r.text(), f"{slug}: the knowledge file link opens")
             pg.locator("[data-piece-report]").first.scroll_into_view_if_needed()
             pg.screenshot(path=str(SHOTS / f"piece_reports_{slug}.png"), full_page=True)
+    # Finalize: the memo carries every piece analysis kept In memo (in by default), in the room's piece order, each with its chart and label.
+    for slug, company in COMPANIES:
+        reps = data[slug]
+        pg.goto(f"{BASE}?company={company}&room=full")
+        pg.wait_for_selector(".x-roomview")
+        pg.evaluate("TC_MEMO.reset()")
+        pg.click("#finalize-top")
+        pg.wait_for_selector(".x-doc")
+        pg.wait_for_function("[...document.querySelectorAll('.x-doc [data-piece-chart]')].length > 0 && [...document.querySelectorAll('.x-doc [data-piece-chart]')].every(e => e.querySelector('.main-svg'))", timeout=15000)
+        secs = pg.locator(".x-doc .x-memo-piece")
+        check(secs.count() == len(reps), f"{slug} memo: Finalize shows all {len(reps)} piece analyses with no extra clicks ({secs.count()})")
+        order = pg.evaluate("TC_ROOM_VIEW.model('full') && Object.keys(TC_ROOM_VIEW.model('full').pieces)")
+        shown = pg.eval_on_selector_all(".x-doc .x-memo-sec[data-sec^='report-'], .x-doc .x-memo-piece", "els => els.map(e => e.dataset.sec.replace(/^report-(piece-)?/, ''))")
+        check(shown == [p for p in order if p in shown] and len(shown) == len(reps) + 2, f"{slug} memo: Kimmy's two and the piece analyses in the room's piece order ({shown})")
+        for rep in reps:
+            sec = pg.locator(f".x-doc .x-memo-piece[data-sec='report-{rep['key']}']")
+            check(sec.locator(".x-chart .main-svg").count() >= 1 and rep["knowledge"] in sec.locator(".x-knowledge").inner_text(),
+                  f"{slug} memo: {rep['piece']} has its chart and its knowledge-file label")
+        check(pg.locator(".x-doc .x-kimmy").count() == 2, f"{slug} memo: Kimmy's label stays on her two reports only")
+        pg.screenshot(path=str(SHOTS / f"piece_reports_memo_{slug}.png"), full_page=True)
+        # Taking one out of the memo removes it.
+        pg.evaluate("location.hash = 'room'")
+        pg.wait_for_selector(".memo-pick[data-memo='report:market']")
+        pg.locator(".memo-pick[data-memo='report:market']").click()
+        pg.evaluate("location.hash = 'memo'")
+        pg.wait_for_selector(".x-doc")
+        check(pg.locator(".x-doc .x-memo-piece").count() == len(reps) - 1 and pg.locator(".x-doc .x-memo-piece[data-sec='report-piece-market']").count() == 0,
+              f"{slug} memo: taking Market out of the memo removes it")
+        pg.evaluate("TC_MEMO.reset()")
+
     # Phone width: no sideways scroll with the analyses in.
     pg.set_viewport_size({"width": 390, "height": 844})
     pg.goto(f"{BASE}?company=https://www.sazabi.com/&room=full")

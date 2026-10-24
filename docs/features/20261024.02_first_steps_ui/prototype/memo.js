@@ -150,13 +150,18 @@
       secs.push(sh);
     }
 
-    // The reports, read through Kimmy's expert knowledge, each with its chart.
-    (room.reports || []).forEach((rep) => {
-      const sr = { key: `report-${rep.key}`, title: rep.title, paras: [], report: rep };
-      rep.paras.forEach((p) => P(sr, { kind: "report", lead: p.lead, body: p.body, refs: refs(p.refs) }));
-      P(sr, { kind: "asks", lead: "What to ask.", body: rep.asks.join(" "), refs: [] });
-      secs.push(sr);
-    });
+    // The reports, each with its chart, in the room's piece order: Kimmy's two (room.reports), then every piece
+    // analysis the associate kept In memo (piece_reports.js, keys report:<piece>, in by default).
+    const order = room.pieces.map((p) => p.name);
+    const pieceReps = (window.TC_PIECE_REPORTS ? window.TC_PIECE_REPORTS.list() : []).filter((rep) => X.picked(`report:${rep.piece}`));
+    [...(room.reports || []).map((rep) => ({ rep, piece: rep.key, kimmy: true })), ...pieceReps.map((rep) => ({ rep, piece: rep.piece, kimmy: false }))]
+      .sort((a, b) => order.indexOf(a.piece) - order.indexOf(b.piece))
+      .forEach(({ rep, kimmy }) => {
+        const sr = { key: `report-${rep.key}`, title: rep.title, paras: [], ...(kimmy ? { report: rep } : { pieceReport: rep }) };
+        rep.paras.forEach((p) => P(sr, { kind: "report", lead: p.lead, body: p.body, refs: refs(p.refs) }));
+        P(sr, { kind: "asks", lead: "What to ask.", body: rep.asks.join(" "), refs: [] });
+        secs.push(sr);
+      });
 
     // What is still unknown, and what was asked
     const s5 = { key: "unknown", title: "What is still unknown, and what was asked", paras: [] };
@@ -306,9 +311,11 @@
     const built = build(room);
     const who = T.S.sender || "The associate";
     const sent = st.sentAt ? `Sent to the partners at ${st.sentAt.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}` : "Draft, not sent yet";
-    const sections = built.secs.map((s) => `<section class="x-memo-sec" aria-label="${esc(s.title)}" data-sec="${s.key}">
+    // A piece analysis is its own section with its own class (x-memo-piece), so the memo's main sections keep their count.
+    const sections = built.secs.map((s) => `<section class="${s.pieceReport ? "x-memo-piece" : "x-memo-sec"}" aria-label="${esc(s.title)}" data-sec="${s.key}">
         <h3>${esc(s.title)}</h3>
         ${s.report ? `${X.kimmyLine(s.report)}${X.reportChart(s.report)}` : ""}
+        ${s.pieceReport ? window.TC_PIECE_REPORTS.memoHead(s.pieceReport) : ""}
         ${s.paras.map((p) => paraHtml(room, p, built, mode)).join("")}
         ${s.key === "case" && mode === "principal" ? `<details class="x-whatif-d"><summary>Try a what-if</summary><div id="x-whatif-slot">${whatifHtml(room)}</div></details>` : ""}
         ${s.key === "rec" && mode === "associate" ? opFields() : ""}

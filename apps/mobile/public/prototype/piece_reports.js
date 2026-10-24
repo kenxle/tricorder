@@ -5,8 +5,9 @@
 //   TC_PIECE_REPORTS.html(state)   every piece analysis for the open company's room, as an HTML string ("partial" or "full")
 //   TC_PIECE_REPORTS.list()        the open company's analyses, as data
 //   TC_PIECE_REPORTS.draw(root)    draws every piece chart under root. It also runs by itself whenever a chart placeholder appears.
+//   TC_PIECE_REPORTS.memoHead(rep) the knowledge-file label and chart placeholder that open a piece's memo section (memo.js)
 //
-// Each analysis carries an In memo toggle with the key report:<piece> (TC_MEMO).
+// Each analysis carries an In memo toggle with the key report:<piece> (TC_MEMO), in by default; memo.js shows the ones that are in.
 // Load after data.js, steps_shared.js, vendor/plotly, reports.js and memo_picks.js; then piece_reports_data.js and this file.
 (function () {
   "use strict";
@@ -20,7 +21,7 @@
     return ((window.TC_PIECE_REPORTS_DATA || {})[slug]) || [];
   }
 
-  const knowledgeLine = (rep) => `<p class="x-kimmy"><span class="tc-label tc-label--steered">Built from expert knowledge</span>
+  const knowledgeLine = (rep) => `<p class="x-knowledge"><span class="tc-label tc-label--steered">Built from expert knowledge</span>
     <a href="${esc(rep.knowledge)}" target="_blank" rel="noopener"><code>${esc(rep.knowledge)}</code></a></p>`;
   const chartHtml = (rep) => `<div class="x-chart" data-piece-chart="${esc(rep.key)}" role="img" aria-label="${esc(rep.chart.label)}"></div>`;
   const pick = (rep) => (window.TC_MEMO ? `<div class="x-pickrow">${window.TC_MEMO.toggleHtml(`report:${rep.piece}`)}</div>` : "");
@@ -261,5 +262,8 @@
     draw(document);
   });
 
-  window.TC_PIECE_REPORTS = { html, list, draw };
+  // For the memo: the knowledge-file label and the chart placeholder that open a piece's section.
+  const memoHead = (rep) => knowledgeLine(rep) + chartHtml(rep);
+
+  window.TC_PIECE_REPORTS = { html, list, draw, memoHead };
 })();

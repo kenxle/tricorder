@@ -1,7 +1,7 @@
 // Which claims go into the final memo. One shared list for every page: the first readout, the room view and the memo.
 // State is kept per company, in memory and (wrapped in try/catch) in localStorage.
 //
-//   TC_MEMO.get(key)            true if the claim is in the memo. Unset keys use the default: insights and flags are in, everything else is out.
+//   TC_MEMO.get(key)            true if the claim is in the memo. Unset keys use the default: insights, flags and piece analyses are in, everything else is out.
 //   TC_MEMO.set(key, bool)      put a claim in or out. Fires the change event.
 //   TC_MEMO.list()              every key seen so far, as [{ key, in }]. list(true) gives only the ones in.
 //   TC_MEMO.toggleHtml(key)     the "In memo" toggle button, as an HTML string. The click and the on/off state are handled here, on every page.
@@ -12,6 +12,7 @@
 //   insight:<n>     a card under What stands out on the first readout (n counts from 0)
 //   claim:<n>       a numbered evidence row on the first readout (the number shown beside the row)
 //   flag:<claim_id> a flag from the data room (the claim id in the room data)
+//   report:<piece> a piece analysis in the completed room (piece_reports.js), shown in the memo
 // A key with any other prefix defaults to out. Pages call get(key) for each of their rows; that is what makes list() know them.
 (function () {
   "use strict";
@@ -24,7 +25,7 @@
     const T = window.TC;
     return (T && T.S && ((T.S.research && T.S.research.slug) || T.S.url)) || "default";
   };
-  const defaultIn = (key) => /^(insight|flag):/.test(key);
+  const defaultIn = (key) => /^(insight|flag|report):/.test(key);
   function load(c) {
     if (mem[c]) return mem[c];
     let o = {};
