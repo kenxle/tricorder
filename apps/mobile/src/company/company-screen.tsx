@@ -1,7 +1,6 @@
-import * as Clipboard from "expo-clipboard";
 import { router, useLocalSearchParams } from "expo-router";
 import type { PropsWithChildren } from "react";
-import { useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import {
   KeyboardAvoidingView,
   Linking,
@@ -24,15 +23,13 @@ import {
   Row,
   useReadoutColors,
 } from "../readout/ui";
+import { RequestForm } from "../request-ui/request-form";
+import { savedRequestStage, useRequestSession } from "../request-ui/session";
 import { data } from "./data";
-import {
-  draftRequest,
-  requestItems,
-  resolveCompany,
-  safeWebUrl,
-} from "./model";
+import { requestItems, resolveCompany, safeWebUrl } from "./model";
 import type {
   Company,
+  RequestItem,
   ResearchClaim,
   ResearchSection,
   SetupField,
@@ -41,14 +38,6 @@ import type {
 
 const styles = StyleSheet.create({
   brand: { fontFamily: "ArchivoDisplay", fontSize: 22, letterSpacing: -0.7 },
-  check: { fontSize: 24, lineHeight: 28 },
-  checkRow: {
-    borderBottomWidth: 1,
-    flexDirection: "row",
-    gap: 12,
-    paddingVertical: 16,
-  },
-  checkText: { flex: 1, gap: 4 },
   claim: { borderBottomWidth: 1, gap: 8, paddingVertical: 16 },
   content: {
     alignSelf: "center",
@@ -57,12 +46,6 @@ const styles = StyleSheet.create({
     padding: 16,
     paddingBottom: 48,
     width: "100%",
-  },
-  draft: {
-    fontFamily: "PlexMono",
-    fontSize: 14,
-    lineHeight: 22,
-    minHeight: 360,
   },
   emphasis: { fontFamily: "ArchivoBold" },
   group: { gap: 8 },
@@ -365,70 +348,39 @@ const CompanyWorkspace = ({ company }: { company: Company }) => {
   const [request, setRequest] = useState(false);
   const [evidence, setEvidence] = useState<ResearchClaim | null>(null);
   const [stage, setStage] = useState<Stage>(() => {
-    const value = research?.setup.stage?.value;
+    const value =
+      savedRequestStage(company.slug) ?? research?.setup.stage?.value;
     if (value === "series_a" || value === "pre_seed") {
       return value;
     }
     return "seed";
   });
-  const [items, setItems] = useState(() =>
-    requestItems(data.checklist, stage, research)
+  const bundledItems = useMemo(
+    () => requestItems(data.checklist, stage, research),
+    [stage, research]
   );
-  const [custom, setCustom] = useState("");
-  const [copyStatus, setCopyStatus] = useState("");
-  const [editedDraft, setEditedDraft] = useState<string | null>(null);
-  const generated = draftRequest(
+  const [layoutItems, setLayoutItems] = useState<{
+    stage: Stage;
+    items: RequestItem[];
+  } | null>(null);
+  const receiveItems = useCallback(
+    (items: RequestItem[]) => setLayoutItems({ items, stage }),
+    [stage]
+  );
+  const session = useRequestSession(
+    company.slug,
     fields.name.value,
     fields.founders.value,
-    items
+    stage,
+    layoutItems?.stage === stage ? layoutItems.items : bundledItems
   );
-  const draft = editedDraft ?? generated;
-  const selected = items.filter((item) => item.checked).length;
+  const selected = session.items.filter((item) => item.checked).length;
   const changeStage = (next: Stage) => {
     setStage(next);
     setFields((current) => ({
       ...current,
       stage: { ...current.stage, edited: true, value: next },
     }));
-    setItems((current) => [
-      ...requestItems(data.checklist, next, research).map((item) => ({
-        ...item,
-        checked:
-          current.find((previous) => previous.id === item.id)?.checked ?? true,
-      })),
-      ...current.filter((item) => item.id.startsWith("custom-")),
-    ]);
-    setCopyStatus("");
-  };
-  const addItem = () => {
-    const text = custom.trim();
-    if (!text) {
-      return;
-    }
-    setItems((current) => [
-      ...current,
-      {
-        ask: text,
-        checked: true,
-        guidance: "",
-        id: `custom-${Date.now()}-${current.length}`,
-        reason: "Added by you",
-        title: text,
-      },
-    ]);
-    setCustom("");
-    setCopyStatus("");
-  };
-  const copyDraft = async () => {
-    try {
-      setCopyStatus(
-        (await Clipboard.setStringAsync(draft))
-          ? "Copied. Nothing has been sent."
-          : "Could not copy. Select the draft to copy it manually."
-      );
-    } catch {
-      setCopyStatus("Could not copy. Select the draft to copy it manually.");
-    }
   };
   return (
     <>
@@ -585,96 +537,13 @@ const CompanyWorkspace = ({ company }: { company: Company }) => {
             {stages.find((entry) => entry.id === stage)?.title} · {selected}{" "}
             selected
           </Note>
-          <Body>
-            Check what you need. Each item includes guidance for the founder.
-          </Body>
-          {items.map((item) => (
-            <Pressable
-              key={item.id}
-              accessibilityRole="checkbox"
-              accessibilityState={{ checked: item.checked }}
-              accessibilityLabel={item.title}
-              onPress={() => {
-                setItems((current) =>
-                  current.map((entry) =>
-                    entry.id === item.id
-                      ? { ...entry, checked: !entry.checked }
-                      : entry
-                  )
-                );
-                setCopyStatus("");
-              }}
-              style={({ pressed }) => [
-                styles.checkRow,
-                { borderColor: colors.line, opacity: pressed ? 0.6 : 1 },
-              ]}
-            >
-              <Body
-                style={[
-                  styles.check,
-                  { color: item.checked ? colors.accent : colors.muted },
-                ]}
-              >
-                {item.checked ? "☑" : "□"}
-              </Body>
-              <View style={styles.checkText}>
-                <Body style={styles.emphasis}>{item.title}</Body>
-                <Note>{item.reason}</Note>
-                {item.guidance ? <Note>{item.guidance}</Note> : null}
-              </View>
-            </Pressable>
-          ))}
-          <Field
-            label="Add an item"
-            value={custom}
-            onChangeText={setCustom}
-            onSubmitEditing={addItem}
-            placeholder="What else do you need?"
+          <RequestForm
+            company={company.slug}
+            stage={stage}
+            items={bundledItems}
+            session={session}
+            onItems={receiveItems}
           />
-          <Action
-            title="Add to request"
-            disabled={!custom.trim()}
-            onPress={addItem}
-          />
-          <Heading>Message to the founder</Heading>
-          <Note>
-            The draft updates with your selections until you edit it. Nothing is
-            sent from this screen.
-          </Note>
-          {editedDraft !== null && (
-            <Card>
-              <Note>
-                You edited this draft. Checklist changes are preserved, but will
-                not overwrite your words.
-              </Note>
-              <Action
-                title="Regenerate from selected items"
-                onPress={() => {
-                  setEditedDraft(null);
-                  setCopyStatus("");
-                }}
-              />
-            </Card>
-          )}
-          <Field
-            label="Draft message"
-            multiline
-            value={draft}
-            onChangeText={(value) => {
-              setEditedDraft(value);
-              setCopyStatus("");
-            }}
-            style={styles.draft}
-          />
-          <Action
-            title="Copy request"
-            primary
-            disabled={!selected || !draft.trim()}
-            onPress={copyDraft}
-          />
-          {copyStatus ? (
-            <Note accessibilityLiveRegion="polite">{copyStatus}</Note>
-          ) : null}
         </Sheet>
       )}
       {evidence && (

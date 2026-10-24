@@ -95,7 +95,7 @@ const showSources = storage.getBoolean("readout.showSources") ?? false;
 storage.remove("readout.showSources");
 ```
 
-For reactive values, pass this instance to MMKV hooks, for example `useMMKVBoolean('readout.showSources', storage)` from `react-native-mmkv`. The store is unencrypted and intended for non-sensitive app preferences. On web, MMKV uses browser localStorage. Read and write only on the client, such as in event handlers or effects; storage access during server rendering throws. No screens persist data yet.
+For reactive values, pass this instance to MMKV hooks, for example `useMMKVBoolean('readout.showSources', storage)` from `react-native-mmkv`. The store is unencrypted and intended for non-sensitive app preferences. On web, MMKV uses browser localStorage. Read and write only on the client, such as in event handlers or effects; storage access during server rendering throws. The Company request dialog separately persists explicitly saved demo drafts and stage; see Streamed company request UI below.
 
 MMKV and its `react-native-nitro-modules` dependency require a rebuilt native development client. Run `pnpm build:ios` after installing these dependencies (or `pnpm --filter @tricorder/mobile exec expo run:android` for Android). Expo Go cannot load these native modules.
 
@@ -138,3 +138,13 @@ If Expo CLI is signed out, run `pnpm --filter @tricorder/mobile exec expo login`
 Open the **UX Flow** bottom tab, or `/flow` on Expo web. The ten-screen sketch follows `docs/ongoing/diagrams/ux_review.md`: company entry, research, first readout, requests, receipt, updated findings, evidence, steering, memo editing and reader preview. Screen index jumps to any stage. All content is synthetic and all interactions stay in component state; reload resets the sketch. No research, upload, sending, PDF generation or model calls run. The palette follows Black Card; typography uses system fonts for this broad prototype.
 
 The Home tab retains the existing API-backed readout. Native uses Expo native tabs; web reserves layout space for its bottom navigation.
+
+## Streamed company request UI
+
+The Company tab's request dialog uses `@json-render/react-native` 0.21.3 with a shared Zod 4 catalog in `packages/request-ui`. The registry wraps the existing native controls. RPC emits JSONL patches from saved company research at `GET /ui/request?company=ploy&stage=seed`; Expo forwards the stream directly at `/api/ui/request`, bypassing the buffering Python proxy. This is deterministic saved data, not a model call or fresh research.
+
+Start `pnpm --filter @tricorder/rpc dev` alongside `pnpm dev:mobile`; root `pnpm dev` and `pnpm dev:mobile:device` already include the gateway. Restart Metro after installing the new workspace package. `TRICORDER_RPC_URL` (or `TRICORDER_RPC_PORT`, default 8789) configures the server-only loopback target. Existing phone forwarding works unchanged. If RPC is unavailable or a stream is invalid/incomplete, the dialog shows a labelled bundled-checklist fallback and Retry.
+
+Selections, custom items and text live in a separate json-render state store and survive layout refresh and modal close. **Save draft on this device** writes the exact displayed message, selected items, custom items and stage to the separate `tricorder.demo-requests` MMKV store (localStorage on web). Reopening restores that message; **Regenerate from selected items** explicitly replaces it. Save is local, unencrypted demo storage; the flow never sends requests or marks them sent. Company setup corrections themselves remain session-only, but their wording is captured in a saved message.
+
+Only installed catalog components/actions can render. The parser rejects arbitrary bindings, actions, state patches and cyclic/unknown references; streams are bounded and cancelled on timeout, failure or close. A backend can change text and arrangements within this catalog without another app release. New component types or capabilities still require an app update. Next tickets extend the catalog to evidence cards, room progress and memo sections; this slice adds no sliders or financial what-if engine.

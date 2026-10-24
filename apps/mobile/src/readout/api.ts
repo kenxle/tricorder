@@ -4,7 +4,7 @@ import { Platform } from "react-native";
 
 // Native talks to the Expo server, which forwards only the readout's API routes.
 // Python remains on loopback. Release builds need an explicitly configured server.
-function serverOrigin() {
+export function serverOrigin() {
   if (Platform.OS === "web") {
     return "";
   }

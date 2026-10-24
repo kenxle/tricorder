@@ -1,10 +1,13 @@
 import { createHTTPServer } from "@trpc/server/adapters/standalone";
 
+import { streamRequestUI } from "./request-ui-stream.ts";
+import type { RequestUIPatchSource } from "./request-ui-stream.ts";
 import { appRouter } from "./router.ts";
 
 export interface RPCServerOptions {
   apiURL: string;
   fetch?: typeof globalThis.fetch;
+  requestUIPatches?: RequestUIPatchSource;
 }
 
 function localHost(host: string | undefined): boolean {
@@ -46,6 +49,10 @@ export function createRPCServer(options: RPCServerOptions) {
             detail: "The tRPC facade supports read-only GET queries.",
           })
         );
+        return;
+      }
+      if (req.url?.split("?")[0] === "/ui/request") {
+        void streamRequestUI(req, res, options.requestUIPatches);
         return;
       }
       next();
