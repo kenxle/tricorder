@@ -50,6 +50,8 @@ Open <http://localhost:5173> for the page. The API and built page are at <http:/
 
 Keep `TRICORDER_OUT_DIR=out` when exporting `.env`: an empty value selects the working directory instead of the default `out/` folder. Without API keys, model readings become gaps. Scans that have not been implemented also appear as gaps.
 
+Zed project settings in `.zed/settings.json` disable automatic formatting on save. This repo has no configured formatter or lint command, and applying an editor's default formatter creates unrelated changes to existing files. Language-server diagnostics and the CI gates below remain available. Set a shared formatter and its configuration before enabling automatic formatting for this project.
+
 ## The gates
 
 | Command | What it runs | Green means |
