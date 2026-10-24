@@ -77,7 +77,9 @@ Use pnpm 11.9.0, pinned in `package.json`. `pnpm-workspace.yaml` defines the wor
 ```sh
 pnpm install --frozen-lockfile
 pnpm dev:web                    # Only Vite; start the Python API separately
-pnpm dev:mobile                 # Only Expo Metro
+pnpm dev:mobile                 # Metro for the custom development client
+pnpm build:ios                  # Build/install the native iOS development client
+pnpm build:ios --device "Deez iPhone" # Build/install on the connected iPhone
 pnpm dev                        # API + web + Expo Metro
 pnpm typecheck                  # Web, mobile and shared schema through Turbo
 pnpm lint                       # Mobile ESLint through Turbo

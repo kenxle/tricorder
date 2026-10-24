@@ -8,6 +8,7 @@
     "expo": "~58.0.19",
     "expo-clipboard": "~58.0.4",
     "expo-constants": "~58.0.13",
+    "expo-dev-client": "~58.0.15",
     "expo-device": "~58.0.5",
     "expo-document-picker": "~58.0.4",
     "expo-file-system": "~58.0.11",
@@ -42,13 +43,14 @@
   },
   "scripts": {
     "reset-project": "node ./scripts/reset-project.js",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo start --dev-client --android",
+    "ios": "expo start --dev-client --ios",
     "web": "expo start --web",
     "lint": "expo lint",
-    "dev": "expo start",
+    "dev": "expo start --dev-client",
     "build": "expo export --platform all",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:ios": "expo run:ios --no-bundler"
   },
   "private": true
 }

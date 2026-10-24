@@ -11,7 +11,8 @@
     "dev": "turbo run dev --ui=tui",
     "dev:web": "turbo run dev --filter=@tricorder/web",
     "dev:mobile": "turbo run dev --filter=@tricorder/mobile --ui=tui",
-    "lint": "turbo run lint"
+    "lint": "turbo run lint",
+    "build:ios": "pnpm --filter @tricorder/mobile build:ios"
   },
   "devDependencies": {
     "turbo": "2.11.10"

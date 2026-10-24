@@ -17,6 +17,22 @@ pnpm lint --filter=@tricorder/mobile
 pnpm build --filter=@tricorder/mobile    # Export Android, iOS and web bundles
 ```
 
+## Native development client
+
+The mobile dev commands open the custom development client. Build and install it
+once before starting Metro:
+
+```sh
+pnpm build:ios                         # Build/install on the selected iOS Simulator
+pnpm build:ios --device "Deez iPhone"    # Build/install on that connected iPhone
+pnpm dev:mobile                        # Start Metro for the development client
+```
+
+The iPhone command requires Developer Mode, a trusted connection, and Apple
+Development signing. Simulator builds use the local Xcode toolchain without
+signing. Rebuild after changing native dependencies or app configuration; normal
+JavaScript changes use Metro and Fast Refresh. Generated `ios/` files stay ignored.
+
 The build writes JavaScript bundles and web output to `apps/mobile/dist/`.
 It does not produce an IPA or APK. SDK 58 requires a compatible development build
 until Expo Go supports it. See [Expo's setup guide](https://docs.expo.dev/get-started/create-a-project/).
