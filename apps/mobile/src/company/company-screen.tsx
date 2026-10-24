@@ -6,9 +6,9 @@ import {
   Linking,
   Modal,
   Platform,
-  Pressable,
   ScrollView,
   StyleSheet,
+  Text,
   View,
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
@@ -38,7 +38,7 @@ import type {
 
 const styles = StyleSheet.create({
   brand: { fontFamily: "ArchivoDisplay", fontSize: 22, letterSpacing: -0.7 },
-  claim: { borderBottomWidth: 1, gap: 8, paddingVertical: 16 },
+  claim: { gap: 4, paddingVertical: 4 },
   content: {
     alignSelf: "center",
     gap: 24,
@@ -86,15 +86,6 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   snapshot: { borderBottomWidth: 1, borderTopWidth: 1, paddingVertical: 16 },
-  source: {
-    borderRadius: 4,
-    borderWidth: 1,
-    flexShrink: 1,
-    justifyContent: "center",
-    minHeight: 44,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-  },
   start: {
     alignSelf: "center",
     gap: 24,
@@ -231,31 +222,34 @@ const ClaimLine = ({
   const source = claim.source && data.sources[claim.source];
   return (
     <View style={[styles.claim, { borderColor: colors.line }]}>
-      <Body style={claim.placeholder ? { color: colors.muted } : undefined}>
+      <Body
+        accessibilityRole={source ? "link" : undefined}
+        accessibilityLabel={
+          source
+            ? `${claim.text}. Evidence ${number}: ${source.title}`
+            : undefined
+        }
+        onPress={source ? () => onSource(claim) : undefined}
+        style={[
+          { minHeight: source ? 44 : undefined },
+          claim.placeholder ? { color: colors.muted } : undefined,
+        ]}
+      >
         {claim.text}
-      </Body>
-      <Row>
-        {claim.placeholder ? <Note>Not researched yet</Note> : null}
-        {!claim.placeholder && claim.kind ? <Note>{claim.kind}</Note> : null}
+        {/* Universal Text accepts only a string; RN Text preserves selectable prose and inline links. */}
         {source && (
-          <Pressable
-            accessibilityRole="button"
-            accessibilityLabel={`Evidence ${number}: ${source.title}`}
-            onPress={() => onSource(claim)}
-            style={({ pressed }) => [
-              styles.source,
-              { borderColor: colors.line, opacity: pressed ? 0.6 : 1 },
-            ]}
+          <Text
+            style={{ color: colors.accent, textDecorationLine: "underline" }}
           >
-            <Note style={styles.mono}>
-              [{number}] {source.title}
-            </Note>
-          </Pressable>
+            {` [${number}]`}
+          </Text>
         )}
-        {!source && !claim.placeholder && (
-          <Note>Source unavailable in this snapshot</Note>
-        )}
-      </Row>
+      </Body>
+      {claim.placeholder ? <Note>Not researched yet</Note> : null}
+      {!claim.placeholder && claim.kind ? <Note>{claim.kind}</Note> : null}
+      {!source && !claim.placeholder && (
+        <Note>Source unavailable in this snapshot</Note>
+      )}
     </View>
   );
 };
