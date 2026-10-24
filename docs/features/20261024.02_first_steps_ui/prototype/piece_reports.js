@@ -109,13 +109,17 @@
     const hover = ax.hover.replace("VAL", h ? "x" : "y");
     const traces = c.series.map((s) => {
       const col = colour(s.style);
-      const marker = s.style === "thin"
-        ? { color: token("--tc-thin-bg") || "rgba(0,0,0,0.1)", line: { color: col, width: 1 }, pattern: { shape: "/", fgcolor: col, size: 6 } }
-        : { color: col };
+      const marker = s.styles ? { color: s.styles.map(colour) }
+        : s.style === "thin"
+          ? { color: token("--tc-thin-bg") || "rgba(0,0,0,0.1)", line: { color: col, width: 1 }, pattern: { shape: "/", fgcolor: col, size: 6 } }
+          : { color: col };
       const t = { type: "bar", name: s.name, marker, orientation: h ? "h" : "v",
         hovertemplate: `${esc(s.name)}<br>%{${h ? "y" : "x"}}: ${hover}<extra></extra>` };
       if (h) { t.y = c.x; t.x = s.y; } else { t.x = c.x; t.y = s.y; }
-      if (s.text) { t.text = s.text; t.textposition = "outside"; t.cliponaxis = false; t.textfont = { family: mono(), size: 12, color: token("--tc-ink-2") }; }
+      if (s.text) {
+        t.text = s.text; t.textposition = s.textposition || "outside"; t.cliponaxis = false;
+        t.textfont = t.textposition === "outside" ? { family: mono(), size: 12, color: token("--tc-ink-2") } : { family: mono(), size: 12 };
+      }
       return t;
     });
     const valueAxis = { ...L.yaxis, tickprefix: ax.tickprefix, ticksuffix: ax.ticksuffix, tickformat: ax.tickformat, rangemode: "tozero" };
@@ -123,7 +127,7 @@
     const catAxis = { ...L.xaxis, type: "category", automargin: true };
     const extra = lineShape(c, h);
     const layout = {
-      ...L, barmode: c.barmode || "group", bargap: 0.35, showlegend: c.series.length > 1,
+      ...L, barmode: c.barmode || "group", bargap: 0.35, showlegend: c.series.length > 1, legend: { ...L.legend, traceorder: "normal" },
       xaxis: h ? { ...valueAxis, gridcolor: L.xaxis.gridcolor } : catAxis,
       yaxis: h ? { ...catAxis, autorange: "reversed" } : valueAxis,
       margin: h ? { ...L.margin, l: 16 } : L.margin,

@@ -147,8 +147,75 @@ def retention_sazabi(R: Room) -> dict:
                  f"net revenue retention of {pct(nrr)}."})
 
 
+# Team ----------------------------------------------------------------------------------------------------------
+
+
+def hiring(R: Room) -> dict:
+    """The hiring plan as the room states it: total hires, how many the model's burn carries, and what the rest cost."""
+    total = int(num(R.quote("bu-2", 0)))
+    in_model = int(num(R.quote("bu-2", 1)))
+    extra = R.r["whatif"]["extra_hires"]
+    assert len(extra) == R.r["whatif"]["extra_count"] == total - in_model, "the hires outside the model add up"
+    return {"total": total, "in_model": in_model, "extra": len(extra), "extra_cost": sum(h["monthly_cost"] for h in extra),
+            "last_start": max(h["start"] for h in extra)}
+
+
+def team_chart(team: int, h: dict) -> dict:
+    return {"kind": "bars", "unit": "count", "barmode": "stack", "x": ["Today", "After the hiring plan"],
+            "series": [{"name": "Team today", "y": [team, team], "style": "plan"},
+                       {"name": "Hires the model's burn carries", "y": [0, h["in_model"]], "style": "good"},
+                       {"name": "Hires outside the model's burn", "y": [0, h["extra"]], "style": "bad",
+                        "text": ["", f"{team + h['total']} people"], "textposition": "outside"}],
+            "label": f"Team of {team} today. The hiring plan adds {h['total']}, to {team + h['total']}. "
+                     f"The model's burn carries {h['in_model']} of them and leaves {h['extra']} out."}
+
+
+def team_ploy(R: Room) -> dict:
+    team = int(R.v("te-1"))
+    h = hiring(R)
+    grows = "more than doubles it" if team + h["total"] > 2 * team else "grows it"
+    return build(R, "team", [
+        {"lead": "The headcount matches the public record.", "refs": ["te-1"],
+         "body": f"The deck, the model and the YC page all say {team} people today. The company's files and the public record agreeing on headcount is a small green flag."},
+        {"lead": f"The hiring plan {grows}.", "refs": ["bu-2"],
+         "body": f"The plan adds {h['total']} people, which takes the team to {team + h['total']}. The model's burn carries {h['in_model']} of them."},
+        {"lead": "The hires the model leaves out.", "refs": ["bu-2"],
+         "body": f"The other {h['extra']} hires add {money(h['extra_cost'])} a month once all have started, by month {h['last_start']}. "
+                 "Payroll is usually the largest part of burn, so a plan the model does not pay for makes the runway look longer than it is."},
+        {"lead": "Who owns each function.", "refs": [],
+         "body": "The room holds a founder bio and a hiring plan, but no org chart naming who leads sales, product and finance today. "
+                 "That is the next thing to ask for."},
+    ], [
+        f"Which of the {h['total']} hires the round pays for first, and the milestone each one supports.",
+        "An org chart or payroll list naming everyone counted today, with contractors marked.",
+        "Founder vesting schedules and retention terms for key people.",
+    ], team_chart(team, h))
+
+
+def team_sazabi(R: Room) -> dict:
+    team, eng = int(R.v("te-1")), int(R.v("te-2"))
+    brex = int(num(R.quote("te-2", 1)))
+    h = hiring(R)
+    return build(R, "team", [
+        {"lead": "The team matches the public record.", "refs": ["te-1", "te-2"],
+         "body": f"The model and the YC page say {team} people. The staff list and the launch post say {eng} of them are engineers, "
+                 f"{brex} from Brex. Independent sources agreeing is a small green flag."},
+        {"lead": "Almost everyone builds.", "refs": ["te-2"],
+         "body": f"{team - eng} of the {team} works outside engineering. That is a fact to report, not a score. "
+                 "The question is who owns selling as the company moves from design partners to paying teams."},
+        {"lead": "The hiring plan.", "refs": ["bu-2"],
+         "body": f"The plan adds {h['total']} people, to {team + h['total']}. The model's burn carries {h['in_model']}. "
+                 f"The other {h['extra']} add {money(h['extra_cost'])} a month once they start, by month {h['last_start']}."},
+    ], [
+        f"Which of the {h['total']} hires the seed pays for first, and the milestone each one supports.",
+        "Who owns sales today, and when the first sales hire starts.",
+        "Founder vesting schedules and retention terms for the early Brex engineers.",
+    ], team_chart(team, h))
+
+
 PIECES = {
     "retention": {"ploy": retention_ploy, "sazabi": retention_sazabi},
+    "team": {"ploy": team_ploy, "sazabi": team_sazabi},
 }
 
 

@@ -95,6 +95,91 @@ window.TC_PIECE_REPORTS_DATA = {
     "03_metrics/customer_mrr_by_month.csv",
     "04_customers/order_form_northwind_analytics.pdf"
    ]
+  },
+  {
+   "key": "piece-team",
+   "piece": "team",
+   "title": "Team",
+   "knowledge": "knowledge/team.md",
+   "paras": [
+    {
+     "lead": "The headcount matches the public record.",
+     "refs": [
+      "te-1"
+     ],
+     "body": "The deck, the model and the YC page all say 14 people today. The company's files and the public record agreeing on headcount is a small green flag."
+    },
+    {
+     "lead": "The hiring plan more than doubles it.",
+     "refs": [
+      "bu-2"
+     ],
+     "body": "The plan adds 22 people, which takes the team to 36. The model's burn carries 6 of them."
+    },
+    {
+     "lead": "The hires the model leaves out.",
+     "refs": [
+      "bu-2"
+     ],
+     "body": "The other 16 hires add $268,000 a month once all have started, by month 11. Payroll is usually the largest part of burn, so a plan the model does not pay for makes the runway look longer than it is."
+    },
+    {
+     "lead": "Who owns each function.",
+     "refs": [],
+     "body": "The room holds a founder bio and a hiring plan, but no org chart naming who leads sales, product and finance today. That is the next thing to ask for."
+    }
+   ],
+   "asks": [
+    "Which of the 22 hires the round pays for first, and the milestone each one supports.",
+    "An org chart or payroll list naming everyone counted today, with contractors marked.",
+    "Founder vesting schedules and retention terms for key people."
+   ],
+   "chart": {
+    "kind": "bars",
+    "unit": "count",
+    "barmode": "stack",
+    "x": [
+     "Today",
+     "After the hiring plan"
+    ],
+    "series": [
+     {
+      "name": "Team today",
+      "y": [
+       14,
+       14
+      ],
+      "style": "plan"
+     },
+     {
+      "name": "Hires the model's burn carries",
+      "y": [
+       0,
+       6
+      ],
+      "style": "good"
+     },
+     {
+      "name": "Hires outside the model's burn",
+      "y": [
+       0,
+       16
+      ],
+      "style": "bad",
+      "text": [
+       "",
+       "36 people"
+      ],
+      "textposition": "outside"
+     }
+    ],
+    "label": "Team of 14 today. The hiring plan adds 22, to 36. The model's burn carries 6 of them and leaves 16 out."
+   },
+   "needs": [
+    "01_pitch/pitch_deck.pdf",
+    "02_financials/financial_model.xlsx",
+    "06_team/hiring_plan.csv"
+   ]
   }
  ],
  "sazabi": [
@@ -174,6 +259,87 @@ window.TC_PIECE_REPORTS_DATA = {
    "needs": [
     "01_pitch/pitch_deck.pdf",
     "03_metrics/customer_mrr_by_month.csv"
+   ]
+  },
+  {
+   "key": "piece-team",
+   "piece": "team",
+   "title": "Team",
+   "knowledge": "knowledge/team.md",
+   "paras": [
+    {
+     "lead": "The team matches the public record.",
+     "refs": [
+      "te-1",
+      "te-2"
+     ],
+     "body": "The model and the YC page say 10 people. The staff list and the launch post say 9 of them are engineers, 3 from Brex. Independent sources agreeing is a small green flag."
+    },
+    {
+     "lead": "Almost everyone builds.",
+     "refs": [
+      "te-2"
+     ],
+     "body": "1 of the 10 works outside engineering. That is a fact to report, not a score. The question is who owns selling as the company moves from design partners to paying teams."
+    },
+    {
+     "lead": "The hiring plan.",
+     "refs": [
+      "bu-2"
+     ],
+     "body": "The plan adds 6 people, to 16. The model's burn carries 4. The other 2 add $38,000 a month once they start, by month 6."
+    }
+   ],
+   "asks": [
+    "Which of the 6 hires the seed pays for first, and the milestone each one supports.",
+    "Who owns sales today, and when the first sales hire starts.",
+    "Founder vesting schedules and retention terms for the early Brex engineers."
+   ],
+   "chart": {
+    "kind": "bars",
+    "unit": "count",
+    "barmode": "stack",
+    "x": [
+     "Today",
+     "After the hiring plan"
+    ],
+    "series": [
+     {
+      "name": "Team today",
+      "y": [
+       10,
+       10
+      ],
+      "style": "plan"
+     },
+     {
+      "name": "Hires the model's burn carries",
+      "y": [
+       0,
+       4
+      ],
+      "style": "good"
+     },
+     {
+      "name": "Hires outside the model's burn",
+      "y": [
+       0,
+       2
+      ],
+      "style": "bad",
+      "text": [
+       "",
+       "16 people"
+      ],
+      "textposition": "outside"
+     }
+    ],
+    "label": "Team of 10 today. The hiring plan adds 6, to 16. The model's burn carries 4 of them and leaves 2 out."
+   },
+   "needs": [
+    "02_financials/financial_model.xlsx",
+    "06_team/founder_bio_sherwood_callaway.pdf",
+    "06_team/hiring_plan.csv"
    ]
   }
  ]
