@@ -40,3 +40,11 @@ window.TC_INSIGHTS = {
       refs: ["Prices: Hobby $50", "Usage past the plan", "legacy tools it replaces", "AI SRE startups", "Same batch, overlapping product: Superlog"] },
   ],
 };
+
+// A short paragraph on what each company does, from the evidence. refs work as above.
+window.TC_ABOUT = {
+  ploy: { text: "Ploy turns a company's website into its growth engine: an AI platform that builds and runs the site and its marketing. It moves sites over from WordPress, Webflow, Framer and Wix. Plans run from free to $300 a month, with enterprise priced on request. A YC Spring 2026 company of 14 people, based in San Francisco and New York.",
+    refs: ["Prices: Free $0", "moves sites over from", "Team size on YC: 14", "based in San Francisco and New York"] },
+  sazabi: { text: "Sazabi is an AI-native observability platform for fast-moving engineering teams, pitched as Datadog for the AI era. It takes in a team's logs and investigates problems on its own. Plans run from $50 to $1,000 every 30 days, with usage billed on top. A YC Spring 2026 company of 10 people.",
+    refs: ["legacy tools it replaces", "onboarded 35 teams", "Prices: Hobby $50", "Team size on YC: 10"] },
+};

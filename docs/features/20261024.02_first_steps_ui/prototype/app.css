@@ -154,3 +154,6 @@ code { font-size: 13px; overflow-wrap: anywhere; }
 .evidence-head { margin-top: var(--tc-space-6); border-top: var(--tc-hair) solid var(--tc-rule); padding-top: var(--tc-space-4); }
 .ev-n { display: inline-block; min-width: 22px; font-family: var(--tc-font-mono); font-size: 12px; color: var(--tc-ink-3); }
 tr.claim:target { background: var(--tc-hover, rgba(127,127,127,0.12)); }
+
+.about { font-size: 18px; line-height: 1.55; max-width: 72ch; color: var(--tc-ink); margin: var(--tc-space-2) 0 var(--tc-space-5); }
+.about .based .ev-ref { font-size: 11px; }

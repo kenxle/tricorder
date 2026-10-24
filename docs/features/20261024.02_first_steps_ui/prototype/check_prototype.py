@@ -33,7 +33,7 @@ with sync_playwright() as p:
     pg.click("button[type=submit]")
     pg.wait_for_selector("#co-name")
     check("company=ploy.ai" in pg.url, "address bar carries ?company=")
-    check(pg.locator("#f-name").input_value() == "Ploy", "setup field name is Ploy")
+    check(pg.locator("#co-name").inner_text() == "Ploy" and pg.locator(".about").count() == 1, "Ploy resolves, with its about paragraph and no setup fields")
     pg.wait_for_timeout(1500)
     early = pg.locator(".claim.wait").count()
     check(early > 0, f"claims arrive over time ({early} still waiting after 1.5s)")
@@ -78,7 +78,7 @@ with sync_playwright() as p:
     # Sazabi by YC URL in the address bar, all at once for the shot
     pg.goto(BASE + "?company=https://www.ycombinator.com/companies/sazabi&pace=0")
     pg.wait_for_function("document.getElementById('overall') && document.getElementById('overall').textContent.startsWith('Research done')")
-    check(pg.locator("#f-name").input_value() == "Sazabi", "address-bar YC URL resolves Sazabi")
+    check(pg.locator("#co-name").inner_text() == "Sazabi", "address-bar YC URL resolves Sazabi")
     pg.screenshot(path=str(SHOTS / "2b_first_readout_sazabi.png"), full_page=True)
 
     # A company in the list without cached research, and an unknown URL

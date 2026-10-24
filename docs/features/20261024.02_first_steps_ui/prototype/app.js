@@ -182,6 +182,22 @@
     let n = 0;
     allClaims(R).forEach((c) => { if (!c.placeholder) c._n = ++n; });
   }
+  // Ken, 12:55 PM: what the company does, then the founders, then comps, then market signals.
+  const SECTION_ORDER = ["The founders", "Comps", "Market signals", "The outside world"];
+  function orderedResearch(R) {
+    if (!R) return R;
+    const rank = (s) => { const i = SECTION_ORDER.indexOf(s.title); return i < 0 ? 99 : i; };
+    return { ...R, sections: [...R.sections].sort((a, b) => rank(a) - rank(b)) };
+  }
+  function refNums(R, refs) {
+    const claims = allClaims(R).filter((c) => !c.placeholder);
+    return [...new Set(refs.map((r) => (claims.find((c) => c.text.includes(r)) || {})._n).filter(Boolean))];
+  }
+  function aboutHtml(R) {
+    const a = (window.TC_ABOUT || {})[R.slug];
+    if (!a) return "";
+    return `<p class="about">${esc(a.text)} <span class="based">${refNums(R, a.refs).map((n) => `<a class="ev-ref" href="#ev-${n}">${n}</a>`).join(" ")}</span></p>`;
+  }
   function insightsHtml(R) {
     const list = (window.TC_INSIGHTS || {})[R.slug] || [];
     if (!list.length) return "";
@@ -257,7 +273,7 @@
 
   function renderReadout() {
     chipN = 0;
-    const R = S.research;
+    const R = orderedResearch(S.research);
     const name = S.fields.name.value || "This company";
     let body;
     if (!R) {
@@ -268,7 +284,7 @@
       numberClaims(R);
       body = `<p class="status" id="overall" role="status"></p>
         ${insightsHtml(R)}
-        <div class="evidence-head"><h2>Evidence</h2><p class="note">Every fact Tricorder found, numbered, each with its source.</p></div>
+        <div class="evidence-head"><h2>Evidence</h2><p class="note">Every fact Tricorder found, numbered, each with its source: the founders, comps, market signals, then the outside world.</p></div>
         ${R.sections.map(sectionHtml).join("")}
         <section class="roomgaps wait" id="roomgaps" aria-label="What only a data room can answer">
           <h2>What only a data room can answer</h2>
@@ -278,7 +294,7 @@
     }
     app.innerHTML = `${header("readout", ["start", "the company URL"])}
       <h2 id="co-name" class="co-title">${esc(name)}</h2>
-      ${setupPanel()}
+      ${R ? aboutHtml(R) : setupPanel()}
       <div class="masthead readout-head"><h2 class="sub-title">First readout</h2>
         ${R ? '<button class="link tc-link-btn" id="replay" type="button">Replay the research</button>' : ""}</div>
       <p class="note">Built from public sources.</p>
