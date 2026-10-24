@@ -126,13 +126,13 @@
 
   // Step 1: the URL -------------------------------------------------------------------------
   function renderStart() {
-    const tries = ["https://ploy.ai", "https://www.sazabi.com/", "https://www.ycombinator.com/companies/ploy", "https://tester.army"];
+    const tries = ["https://www.sazabi.com/", "https://ploy.ai", "https://www.ycombinator.com/companies/ploy", "https://tester.army"];
     app.innerHTML = `${header("start")}
       <section class="start" aria-label="Start from a company URL">
-        <h2>Which company?</h2>
+        <h2>Diligence on whom?</h2>
         <p>Paste the company's website or its YC company page. Tricorder sets the company up and starts the research.</p>
         <form id="urlform">
-          <input type="url" id="url" name="url" required class="tc-input" placeholder="https://ploy.ai" aria-label="Company URL" value="${esc(S.url)}" />
+          <input type="url" id="url" name="url" required class="tc-input" placeholder="https://www.sazabi.com/" aria-label="Company URL" value="${esc(S.url)}" />
           <button class="tc-btn primary" type="submit">Start</button>
         </form>
       </section>`;
