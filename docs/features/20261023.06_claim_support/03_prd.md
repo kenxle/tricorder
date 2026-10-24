@@ -2,7 +2,7 @@
 
 ## Problem, user, context
 
-See [01_brief.md](01_brief.md) and [product_thinking.md](product_thinking.md). The associate needs every pitch figure labelled against the rest of the room, with both sides shown when they disagree and an ask line when nothing backs it. Roadmap slice: [claim-support](../../ongoing/ROADMAP.md#claim-support).
+See [01_brief.md](01_brief.md) and [product_thinking.md](product_thinking.md). The associate needs every pitch figure labelled against the rest of the room, with both sides shown when they disagree and an ask line when nothing backs it. Roadmap slice: [claim-support](../../ongoing/roadmap/claim-support.md).
 
 ## Scope
 

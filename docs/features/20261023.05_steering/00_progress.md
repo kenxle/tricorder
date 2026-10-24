@@ -4,7 +4,7 @@
 
 **Now.** Fix round done on `forge/steering`, merged with `claude/project-thread-ea11in` (claims scan and claim support included). All eight items pass, driven through `control.sh` on port 8815 and in Chromium ([06_verification.md](06_verification.md)). Full suite after the last merge (320244e): 532 passed, 6 failed, the 6 known memo tests only. An earlier merge also showed 3 founder-requests failures; the integration branch has since fixed them. **Next:** the orchestrator merges.
 
-Roadmap slice: [steering](../../ongoing/ROADMAP.md#steering). Route: prototype first.
+Roadmap slice: [steering](../../ongoing/roadmap/steering.md). Route: prototype first.
 
 ## Attention needed
 

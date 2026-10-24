@@ -1,6 +1,6 @@
 # Short brief: accounting mislabels
 
-Roadmap slice: [accounting-mislabels](../../ongoing/ROADMAP.md#accounting-mislabels). Rules: [FRAMEWORKS.md](../../ongoing/FRAMEWORKS.md), entry 1.12. Reasoning: [product_thinking.md](product_thinking.md). Progress: [00_progress.md](00_progress.md).
+Roadmap slice: [accounting-mislabels](../../ongoing/roadmap/accounting-mislabels.md). Rules: [FRAMEWORKS.md](../../ongoing/FRAMEWORKS.md), entry 1.12. Reasoning: [product_thinking.md](product_thinking.md). Progress: [00_progress.md](00_progress.md).
 
 ## Target users
 

@@ -1,6 +1,6 @@
 # PRD: checklist coverage
 
-Context: [01_brief.md](01_brief.md) and [product_thinking.md](product_thinking.md). Agreed experience: [02_prototype_decision.md](02_prototype_decision.md). Rules this builds: [FRAMEWORKS.md](../../ongoing/FRAMEWORKS.md), "Checklist coverage", "Ask list", "1.10 Cap table reconciliation" (model reading only) and "1.11 What the room cannot settle". Roadmap slice: [checklist-coverage](../../ongoing/ROADMAP.md#checklist-coverage).
+Context: [01_brief.md](01_brief.md) and [product_thinking.md](product_thinking.md). Agreed experience: [02_prototype_decision.md](02_prototype_decision.md). Rules this builds: [FRAMEWORKS.md](../../ongoing/FRAMEWORKS.md), "Checklist coverage", "Ask list", "1.10 Cap table reconciliation" (model reading only) and "1.11 What the room cannot settle". Roadmap slice: [checklist-coverage](../../ongoing/roadmap/checklist-coverage.md).
 
 ## Problem, user, context
 

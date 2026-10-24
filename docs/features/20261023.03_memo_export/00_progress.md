@@ -4,7 +4,7 @@
 
 **Now (2026-10-23, fix round).** The independent associate and partner reviews rated the first memo a checker's report. The fix round takes eight of their points: the first screen is the answer, a partner view with no plumbing is the default for the page and the only view in the PDF, empty sections are one line, flags print once, the recommendation opens the summary, the PDF reads sources as a partner would, the ARR figures sit side by side from claims, and editing is one sitting with a 409 that keeps the work. It also absorbs three integration merges (cohorts, claim support with about 60 pitch claims, per-module claim ids) and steering's replaced claims. `bin/ci-py` at a7b0e56: 648 passed, 0 failed. Fresh drive on port 8813 ([06_verification.md](06_verification.md)). **Next:** the checkpoint review.
 
-Roadmap slice: [memo-export](../../ongoing/ROADMAP.md#memo-export). Route: prototype first.
+Roadmap slice: [memo-export](../../ongoing/roadmap/memo-export.md). Route: prototype first.
 
 ## Attention needed
 

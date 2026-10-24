@@ -1,6 +1,6 @@
 # Brief: requests to the founder
 
-Roadmap slice: [founder-requests](../../ongoing/ROADMAP.md#founder-requests). Reasoning: [product_thinking.md](product_thinking.md). Progress: [00_progress.md](00_progress.md).
+Roadmap slice: [founder-requests](../../ongoing/roadmap/founder-requests.md). Reasoning: [product_thinking.md](product_thinking.md). Progress: [00_progress.md](00_progress.md).
 
 ## Target users
 

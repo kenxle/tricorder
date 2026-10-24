@@ -11,21 +11,21 @@ I would shortlist it. It's in my top three, but I wouldn't pick it to win yet. T
 ### 1. The demo grades its own homework
 
 - **Severity:** must fix before Saturday
-- **Concerns:** [ROADMAP.md, redflag-engine](../../ongoing/ROADMAP.md#redflag-engine), [answer_key.json](../../../data_room/answer_key.json), [founder_brief.md, the workflow](founder_brief.md#the-one-workflow-well-demo)
+- **Concerns:** [ROADMAP.md, redflag-engine](../../ongoing/roadmap/redflag-engine.md), [answer_key.json](../../../data_room/answer_key.json), [founder_brief.md, the workflow](founder_brief.md#the-one-workflow-well-demo)
 - **What is wrong:** The red-flag engine has "one check per planted flag", and its test passes when it matches the answer key by check name. The founder brief ends on "our score against the answer key". A judge reads that as a test you wrote for code you wrote.
 - **Fix:** This week, an agent that has not seen the check list generates a second room. It uses a new seed, moves the values and drops or adds one flag, and its answer key stays sealed until the 3:30 PM freeze. On stage, run that room live, then offer a judge one cell to change in `financial_model.xlsx` and rerun the red-flag scan.
 
 ### 2. The demo shows one of the three things Track 2 asks for
 
 - **Severity:** must fix before Saturday
-- **Concerns:** [founder_brief.md, "On screen"](founder_brief.md#the-one-workflow-well-demo), [ROADMAP.md, Cut order](../../ongoing/ROADMAP.md#cut-order), [problem_tracks.txt](../../reports/20261022.01_hackathon_sources/problem_tracks.txt)
+- **Concerns:** [founder_brief.md, "On screen"](founder_brief.md#the-one-workflow-well-demo), [ROADMAP.md, Cut order](../../ongoing/roadmap/saturday.md#demo-fallback-order), [problem_tracks.txt](../../reports/20261022.01_hackathon_sources/problem_tracks.txt)
 - **What is wrong:** Track 2 asks for market signals, comps and red flags. The founder brief's gap claim is that none of 24 tools shows all three together ([landscape_counts.py](../../reports/20261022.02_research/landscape_counts.py)). Yet the "On screen" list shows only disagreements, flags, gaps and the score, and the cut order drops signals and comps first. The pitch claims a gap that the demo does not fill.
 - **Fix:** Give comps and signals 30 seconds on screen, from cache if need be. A comp row should carry its "why it is fair" sentence, and a signal row its link. If they are cut on the day, take the "none of 24" line out of the pitch.
 
 ### 3. No buyer has spoken yet
 
 - **Severity:** must fix before Saturday
-- **Concerns:** [founder_brief.md, Customer](founder_brief.md#customer), [PERSONAS.md, persona 1](../../ongoing/PERSONAS.md#1-the-partner-who-finds-the-disagreement-too-late)
+- **Concerns:** [founder_brief.md, Customer](founder_brief.md#customer), [PERSONAS.md, persona 1](../../ongoing/PERSONAS.md#the-partner-who-finds-the-disagreement-too-late)
 - **What is wrong:** The organisers said to talk to people with the problem and "build a company, not a project" ([problem tracks](../../reports/20261022.01_hackathon_sources/problem_tracks.txt)). The partner's pay rating is inferred from a competitor's case study and a pricing roundup. The brief admits "our interviews ask directly", so no interview has happened. That reads as a project.
 - **Fix:** Run the interviews before Saturday. Put one named, consenting investor's answer in the Problem section, replacing the organisers' own sentence. The best version is one fund that says it would forward its next three decks.
 
@@ -46,7 +46,7 @@ I would shortlist it. It's in my top three, but I wouldn't pick it to win yet. T
 ### 6. The opening is a feature that isn't built
 
 - **Severity:** should fix
-- **Concerns:** [ROADMAP.md, The one workflow we demo](../../ongoing/ROADMAP.md#the-one-workflow-we-demo), [founder_brief.md](founder_brief.md#the-one-workflow-well-demo)
+- **Concerns:** [ROADMAP.md, The one workflow we demo](../../ongoing/roadmap/demo_workflow.md), [founder_brief.md](founder_brief.md#the-one-workflow-well-demo)
 - **What is wrong:** The first 30 seconds show a forwarded email, followed by "today we start the forward by hand". A judge hears "this part is fake" before seeing anything real. Running the seed drop and then the full room spends a second load on the same story.
 - **Fix:** Open on the ARR disagreement table already on screen. Mention "it runs when the deck lands in your inbox" in the close, as what is next. Keep the seed drop to full room switch only if it takes under 20 seconds.
 
@@ -60,14 +60,14 @@ I would shortlist it. It's in my top three, but I wouldn't pick it to win yet. T
 ### 8. The data sentence leaves out the model provider
 
 - **Severity:** should fix
-- **Concerns:** [BRAND.md, Where the data goes](../../ongoing/BRAND.md#where-the-data-goes), [ROADMAP.md, readout-store](../../ongoing/ROADMAP.md#readout-store)
+- **Concerns:** [BRAND.md, Where the data goes](../../ongoing/BRAND.md#where-the-data-goes), [ROADMAP.md, readout-store](../../ongoing/roadmap/readout-store.md)
 - **What is wrong:** The sentence says Tricorder "keeps only the readout and its sources". But readout-store keeps "the files it read" too, and the room's text goes to a third-party model API. The security engineer on the panel will ask exactly this, and the landscape research says to name what is sent to which model.
 - **Fix:** Add one plain clause naming the model provider and its retention terms. Say "sources" includes the files.
 
 ### 9. The only sponsor tool sits in the first slice cut
 
 - **Severity:** note
-- **Concerns:** [ROADMAP.md, market-signals](../../ongoing/ROADMAP.md#market-signals)
+- **Concerns:** [ROADMAP.md, market-signals](../../ongoing/roadmap/market-signals.md)
 - **What is wrong:** Akta is used only for market signals, the first thing cut.
 - **Fix:** If signals are cut, use Akta's company data in the comps panel and say so in one line.
 

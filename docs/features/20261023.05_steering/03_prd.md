@@ -1,6 +1,6 @@
 # PRD: steering in one sentence
 
-Brief: [01_brief.md](01_brief.md). Prototype and persona review: [02_prototype_decision.md](02_prototype_decision.md). Roadmap slice: [steering](../../ongoing/ROADMAP.md#steering).
+Brief: [01_brief.md](01_brief.md). Prototype and persona review: [02_prototype_decision.md](02_prototype_decision.md). Roadmap slice: [steering](../../ongoing/roadmap/steering.md).
 
 ## Problem, user, context
 

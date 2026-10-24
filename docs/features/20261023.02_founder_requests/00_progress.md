@@ -4,7 +4,7 @@
 
 **Now (2026-10-23 02:45 UTC).** Fix round done on branch `forge/founder-requests`, after the orchestrator's independent persona review (both "workable", email not sendable as drafted). All seven fixes taken, test-first ([02_prototype_decision.md](02_prototype_decision.md), FR-R22 to FR-R28 in [03_prd.md](03_prd.md)), driven again on port 8812 ([06_verification.md](06_verification.md), fix-round section). `python3 -m pytest`: 276 passed, 0 failed; `bin/ci-py` and `bin/ci-web` pass. **Next:** the orchestrator's code review and integration.
 
-Roadmap slice: [founder-requests](../../ongoing/ROADMAP.md#founder-requests). Route: prototype first.
+Roadmap slice: [founder-requests](../../ongoing/roadmap/founder-requests.md). Route: prototype first.
 
 ## Attention needed
 

@@ -4,7 +4,7 @@
 
 **Now.** Built, tested and driven. `scans/redflags/contract_reader.py` (the one contract reader for entry 1.13) and `scans/redflags/contract_terms_full.py` (checks 1, 3, 4 and 6 and the clause notes) run inside the red-flag engine. On Hollis Voice the plan check flags the Marlow pilot with its eight plan months after the term ends ($161,258 of plan revenue) and clears Cedar & Pine and Brookline Row. The three clause fields read "not stated" on every Hollis Voice contract, each citing every page it read. Whole suite: 214 passed, 18 skipped (wave 1's deck tests, matplotlib missing here) ([evidence/ci_py.txt](evidence/ci_py.txt)). **Next:** the orchestrator merges `forge/contract-terms`; Saturday's team adds `contract_terms.py` on the seam in [04_architecture.md](04_architecture.md).
 
-Roadmap slice: [contract-terms](../../ongoing/ROADMAP.md#contract-terms). Route: prototype first, nonvisual, with an interface example printed by a real spike.
+Roadmap slice: [contract-terms](../../ongoing/roadmap/contract-terms.md). Route: prototype first, nonvisual, with an interface example printed by a real spike.
 
 ## Attention needed
 

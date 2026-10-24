@@ -1,6 +1,6 @@
 # PRD: readout store and delete
 
-Short brief: [01_brief.md](01_brief.md). Interface example: [02_interface_example.md](02_interface_example.md). Roadmap slice: [readout-store](../../ongoing/ROADMAP.md#readout-store).
+Short brief: [01_brief.md](01_brief.md). Interface example: [02_interface_example.md](02_interface_example.md). Roadmap slice: [readout-store](../../ongoing/roadmap/readout-store.md).
 
 ## Requirements
 

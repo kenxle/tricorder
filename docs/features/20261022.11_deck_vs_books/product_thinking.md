@@ -4,7 +4,7 @@
 
 The associate who prepares the memo opens a deck and a data room. Before they trust any number on a slide, they want to know two things. Does the revenue in the deck match the books for the same period? And does the deck show the whole revenue history, or only the flattering part?
 
-Her rule, in her words: "If revenue in the deck doesn’t match the P&L, or you show only part of your history, everything else becomes questionable." ([associate at a seed-focused fund, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal), quoted in [ROADMAP.md](../../ongoing/ROADMAP.md#deck-vs-books)).
+Her rule, in her words: "If revenue in the deck doesn’t match the P&L, or you show only part of your history, everything else becomes questionable." ([associate at a seed-focused fund, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal), quoted in [ROADMAP.md](../../ongoing/roadmap/deck-vs-books.md)).
 
 Today she does it by hand. She reads each revenue number off the deck, finds the month in the P&L tab, and eyeballs the chart against the monthly column. A chart that starts late is easy to miss, because nothing on the slide says what came before.
 

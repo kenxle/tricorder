@@ -1,4 +1,4 @@
-"""Check the "Ken's asks and where they are built" table in ROADMAP.md.
+"""Check the "Ken's asks and where they are built" table in docs/ongoing/roadmap/asks.md.
 
 For every row it confirms:
   - the row links to at least one slice;
@@ -19,7 +19,8 @@ import re
 import sys
 from pathlib import Path
 
-ROADMAP = Path(__file__).resolve().parents[2] / "ongoing" / "ROADMAP.md"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import roadmap_files  # noqa: E402
 TABLE_HEADING = "## Ken's asks and where they are built"
 SLICE_NAME = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 LINK = re.compile(r"\]\(#([^)]+)\)")
@@ -67,7 +68,7 @@ def table_rows(lines):
 
 
 def main():
-    lines = ROADMAP.read_text(encoding="utf-8").splitlines()
+    lines = roadmap_files.lines()
     slices = find_slices(lines)
     rows = table_rows(lines)
     problems = []
@@ -93,7 +94,7 @@ def main():
             problems.append(
                 f"row {i} ({ask}): when-built says '{when_built}', slices say '{expected}'"
             )
-    print(f"{len(slices)} slices found in {ROADMAP.name}")
+    print(f"{len(slices)} slices found in docs/ongoing/roadmap/")
     print(f"{len(rows)} rows in the asks table")
     if problems:
         for p in problems:

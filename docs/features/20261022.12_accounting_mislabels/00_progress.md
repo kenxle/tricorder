@@ -2,7 +2,7 @@
 
 Merged to `main` in PR #4 on 2026-10-23 (merge commit `dc10bbc`). `scans/redflags/mislabels.py` was built test first, and after the review fix round its 68 tests pass. The red-flag engine carries the module's claims and its three panels. On Brasswick, `eval.score` finds BF1, BF3 and BF4 from this module, and no room flags a decoy. The proposed text is applied to entry 1.12 in [FRAMEWORKS.md](../../ongoing/FRAMEWORKS.md#112-accounting-mislabels), and the roadmap slice is marked done. Next action: none for this feature. The one open item below has an owner.
 
-Roadmap slice: [accounting-mislabels](../../ongoing/ROADMAP.md#accounting-mislabels). Route: prototype first, with an interface example in place of a screen.
+Roadmap slice: [accounting-mislabels](../../ongoing/roadmap/accounting-mislabels.md). Route: prototype first, with an interface example in place of a screen.
 
 ## Attention needed
 

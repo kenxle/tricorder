@@ -1,6 +1,6 @@
 # Product thinking: requests to the founder
 
-Source note for [01_brief.md](01_brief.md). Roadmap slice: [founder-requests](../../ongoing/ROADMAP.md#founder-requests).
+Source note for [01_brief.md](01_brief.md). Roadmap slice: [founder-requests](../../ongoing/roadmap/founder-requests.md).
 
 ## User job
 

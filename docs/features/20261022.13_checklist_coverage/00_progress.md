@@ -2,7 +2,7 @@
 
 **Now.** Slices 1 and 2 of the [Plan](05_plan.md) are merged to `main` in PR #4 on 2026-10-23 (merge commit `dc10bbc`): `scans/memo/checklist.py`, `scans/memo/coverage.py` and `scans/memo/tests/test_coverage.py`. Every Done when check in the roadmap slice passes, and the slice is marked done. The memo merge writes the coverage Panels and the checklist ask lines. The prototype is rebuilt from the product step, with the six defaults the orchestrator chose (open for Ken), and has screenshots. **Next:** slice 3 (operator stage route and the React panel) and slice 4 (guide-check register), on board row TRI-coverage-panel.
 
-Roadmap slice: [checklist-coverage](../../ongoing/ROADMAP.md#checklist-coverage). Route: prototype first.
+Roadmap slice: [checklist-coverage](../../ongoing/roadmap/checklist-coverage.md). Route: prototype first.
 
 ## Attention needed
 

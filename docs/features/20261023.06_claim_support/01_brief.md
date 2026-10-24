@@ -2,7 +2,7 @@
 
 **Users.** The associate who works a data room, and the partner who reads its top flags. See [product_thinking.md](product_thinking.md).
 
-**Context.** Roadmap slice [claim-support](../../ongoing/ROADMAP.md#claim-support), diagram [claims_workflow.md](../../ongoing/diagrams/claims_workflow.md). Built before Saturday, so the readout's drill-down has a full claims table on the day.
+**Context.** Roadmap slice [claim-support](../../ongoing/roadmap/claim-support.md), diagram [claims_workflow.md](../../ongoing/diagrams/claims_workflow.md). Built before Saturday, so the readout's drill-down has a full claims table on the day.
 
 **Problem.** A pitch makes about sixty checkable statements. Nobody checks them all by hand, and the ones left out are where the plants hide: a spoken ARR above the deck, a ceiling on customer share that one customer breaks, a hiring count three times the model's.
 

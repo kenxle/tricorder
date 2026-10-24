@@ -11,7 +11,7 @@ Source note for [01_brief.md](01_brief.md). Written 2026-10-23.
 **What they want.** In their own words, from [USER_STORIES.md](../../ongoing/USER_STORIES.md):
 
 - The associate: "When I write the memo for the partners' meeting, I want every claim tied to its source, so I can defend it to people who never met the founder."
-- The partner: "When I read a memo on a deal I did not work, I want to drill from any line to its sources and try my own what-ifs on the model, so I can trust it without redoing the work." The what-ifs are the next slice, [reader-scenarios](../../ongoing/ROADMAP.md#reader-scenarios).
+- The partner: "When I read a memo on a deal I did not work, I want to drill from any line to its sources and try my own what-ifs on the model, so I can trust it without redoing the work." The what-ifs are the next slice, [reader-scenarios](../../ongoing/roadmap/reader-scenarios.md).
 
 **What they do today.** The associate copies numbers from ten tabs into a document by hand and adds footnotes by hand. The partner either trusts the memo or reopens the data room ([BRAND.md](../../ongoing/BRAND.md), "How we describe Tricorder", the associate's quote).
 

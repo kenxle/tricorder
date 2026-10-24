@@ -1,6 +1,6 @@
 # Brief: readout store and delete
 
-Roadmap slice: [readout-store](../../ongoing/ROADMAP.md#readout-store). Reasoning: [product_thinking.md](product_thinking.md). Progress: [00_progress.md](00_progress.md).
+Roadmap slice: [readout-store](../../ongoing/roadmap/readout-store.md). Reasoning: [product_thinking.md](product_thinking.md). Progress: [00_progress.md](00_progress.md).
 
 ## Target users
 

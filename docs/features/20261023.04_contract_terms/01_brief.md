@@ -1,6 +1,6 @@
 # Short brief: contract-terms
 
-Roadmap slice: [contract-terms](../../ongoing/ROADMAP.md#contract-terms). Rules: [FRAMEWORKS.md](../../ongoing/FRAMEWORKS.md) entry 1.13, "Contract terms". Reasoning: [product_thinking.md](product_thinking.md).
+Roadmap slice: [contract-terms](../../ongoing/roadmap/contract-terms.md). Rules: [FRAMEWORKS.md](../../ongoing/FRAMEWORKS.md) entry 1.13, "Contract terms". Reasoning: [product_thinking.md](product_thinking.md).
 
 ## Who it is for
 

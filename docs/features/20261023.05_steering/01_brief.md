@@ -1,6 +1,6 @@
 # Brief: steering in one sentence
 
-Roadmap slice: [steering](../../ongoing/ROADMAP.md#steering). Architecture: [ARCHITECTURE.md](../../ongoing/ARCHITECTURE.md), "Steering". Product brief: [PRODUCT_BRIEF.md](../../ongoing/PRODUCT_BRIEF.md) and [FEATURES.md](../../ongoing/FEATURES.md), "Steering the readout". Reasoning: [product_thinking.md](product_thinking.md). Progress: [00_progress.md](00_progress.md).
+Roadmap slice: [steering](../../ongoing/roadmap/steering.md). Architecture: [ARCHITECTURE.md](../../ongoing/ARCHITECTURE.md), "Steering". Product brief: [PRODUCT_BRIEF.md](../../ongoing/PRODUCT_BRIEF.md) and [FEATURES.md](../../ongoing/FEATURES.md), "Steering the readout". Reasoning: [product_thinking.md](product_thinking.md). Progress: [00_progress.md](00_progress.md).
 
 ## Target users
 

@@ -6,7 +6,7 @@ Merged in [PR 14](https://github.com/kenxle/tricorder/pull/14), commit `ae68541`
 
 ## Scope and behavior
 
-This is the next open board item, TRI-pieces-top-flags (shared verdicts and headline flags), within the [readout roadmap slice](../../ongoing/ROADMAP.md#readout). It implements [the framework's piece and flag rules](../../ongoing/FRAMEWORKS.md#piece-verdicts).
+This is the next open board item, TRI-pieces-top-flags (shared verdicts and headline flags), within the [readout roadmap slice](../../ongoing/roadmap/readout.md). It implements [the framework's piece and flag rules](../../ongoing/FRAMEWORKS.md#piece-verdicts).
 
 - Assign verified claims to the fixed company pieces. Each piece gets a verdict, reason, claim links, and source counts.
 - A flag makes its piece weak. Otherwise corroborated and contradicted claims determine the verdict. Empty pieces state what is missing.

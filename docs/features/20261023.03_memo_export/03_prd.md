@@ -1,6 +1,6 @@
 # PRD: the memo and its PDF
 
-Roadmap slice: [memo-export](../../ongoing/ROADMAP.md#memo-export). Brief: [01_brief.md](01_brief.md). Prototype and persona review: [02_prototype_decision.md](02_prototype_decision.md). Template: [MEMO_TEMPLATE.md](../../ongoing/MEMO_TEMPLATE.md).
+Roadmap slice: [memo-export](../../ongoing/roadmap/memo-export.md). Brief: [01_brief.md](01_brief.md). Prototype and persona review: [02_prototype_decision.md](02_prototype_decision.md). Template: [MEMO_TEMPLATE.md](../../ongoing/MEMO_TEMPLATE.md).
 
 ## Problem, users, context
 
@@ -10,7 +10,7 @@ The associate prepares the memo for the partners' meeting; the partner reads it 
 
 In: the export from a readout, the interactive page, the PDF, operator edits with numbered versions, the quote check on export, the CLI and the server routes.
 
-Not in: reader copies and scenarios ([reader-scenarios](../../ongoing/ROADMAP.md#reader-scenarios)); steering a section (the [steering](../../ongoing/ROADMAP.md#steering) slice); the connecting sentences (the merge's model pass); a mount point in the readout page (`readout/src/App.tsx` is avoided; Attention needed).
+Not in: reader copies and scenarios ([reader-scenarios](../../ongoing/roadmap/reader-scenarios.md)); steering a section (the [steering](../../ongoing/roadmap/steering.md) slice); the connecting sentences (the merge's model pass); a mount point in the readout page (`readout/src/App.tsx` is avoided; Attention needed).
 
 ## Requirements
 

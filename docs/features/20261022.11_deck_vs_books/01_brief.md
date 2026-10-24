@@ -1,6 +1,6 @@
 # Short brief: deck-vs-books
 
-Roadmap slice: [deck-vs-books](../../ongoing/ROADMAP.md#deck-vs-books). Feature: "Deck against the books" in [FEATURES.md](../../ongoing/FEATURES.md). Reasoning: [product_thinking.md](product_thinking.md).
+Roadmap slice: [deck-vs-books](../../ongoing/roadmap/deck-vs-books.md). Feature: "Deck against the books" in [FEATURES.md](../../ongoing/FEATURES.md). Reasoning: [product_thinking.md](product_thinking.md).
 
 ## Who it is for
 
@@ -20,7 +20,7 @@ Every revenue figure in the deck is matched to a P&L period, or listed as unmatc
 
 ## Known constraints
 
-- Scripts only. No model call in the main path ([ROADMAP.md](../../ongoing/ROADMAP.md#redflag-engine), "Scripts only on Saturday").
+- Scripts only. No model call in the main path ([ROADMAP.md](../../ongoing/roadmap/redflag-engine.md), "Scripts only on Saturday").
 - Files are read through `schema/readers.py`. Thresholds come from `schema.settings.load()`.
 - It runs offline on the demo laptop.
 - It must not double the engine's work. The ARR-against-`ARR_TOTAL` flag stays the engine's (PF2).

@@ -1,6 +1,6 @@
 # PRD: requests to the founder
 
-Context: [01_brief.md](01_brief.md), [product_thinking.md](product_thinking.md), the prototype and its review in [02_prototype_decision.md](02_prototype_decision.md). Roadmap slice: [founder-requests](../../ongoing/ROADMAP.md#founder-requests).
+Context: [01_brief.md](01_brief.md), [product_thinking.md](product_thinking.md), the prototype and its review in [02_prototype_decision.md](02_prototype_decision.md). Roadmap slice: [founder-requests](../../ongoing/roadmap/founder-requests.md).
 
 ## Problem, user, context
 

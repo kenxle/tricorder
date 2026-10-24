@@ -105,7 +105,7 @@ Read what your work touches. Seneschal keeps the table current. Add your new doc
 | Document | Read when |
 |---|---|
 | `docs/ongoing/PRODUCT_BRIEF.md` | Any feature: what Tricorder is, who it is for, the scans, the principles. |
-| `docs/ongoing/ROADMAP.md` | Picking the next slice to build, or checking what a slice must include. |
+| `docs/ongoing/ROADMAP.md` | Picking what to build next and who builds it. Each slice's detail, what it must include and how we know it is done, is in `docs/ongoing/roadmap/<slice>.md`. |
 | `docs/ongoing/FRAMEWORKS.md` | Building or changing a scan: the frameworks each scan runs, their inputs, their output shape. |
 | `docs/ongoing/CHECKLIST.md` | Building or changing a scan, the coverage panel or the ask list: every item Tricorder looks for, by stage. |
 | `docs/ongoing/MEMO_TEMPLATE.md` | Building the memo export, the interactive memo, reader copies or scenarios: the memo's sections in order, what fills each, and what stays the operator's. |

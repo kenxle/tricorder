@@ -1,6 +1,6 @@
 # Brief: the memo and its PDF
 
-Roadmap slice: [memo-export](../../ongoing/ROADMAP.md#memo-export). Template: [MEMO_TEMPLATE.md](../../ongoing/MEMO_TEMPLATE.md). Reasoning: [product_thinking.md](product_thinking.md). Progress: [00_progress.md](00_progress.md).
+Roadmap slice: [memo-export](../../ongoing/roadmap/memo-export.md). Template: [MEMO_TEMPLATE.md](../../ongoing/MEMO_TEMPLATE.md). Reasoning: [product_thinking.md](product_thinking.md). Progress: [00_progress.md](00_progress.md).
 
 ## Target users
 

@@ -1,6 +1,6 @@
 # Product thinking: steering in one sentence
 
-Roadmap slice: [steering](../../ongoing/ROADMAP.md#steering). Brief: [01_brief.md](01_brief.md).
+Roadmap slice: [steering](../../ongoing/roadmap/steering.md). Brief: [01_brief.md](01_brief.md).
 
 ## User job
 
@@ -11,7 +11,7 @@ Roadmap slice: [steering](../../ongoing/ROADMAP.md#steering). Brief: [01_brief.m
 
 ## Evidence
 
-- Ken's 1:12 PM and 1:15 PM blocks: a comment or instruction on a piece rewrites it or gets more info ([ROADMAP.md](../../ongoing/ROADMAP.md#steering)).
+- Ken's 1:12 PM and 1:15 PM blocks: a comment or instruction on a piece rewrites it or gets more info ([ROADMAP.md](../../ongoing/roadmap/steering.md)).
 - Ken's 2:21 PM edit to the product brief: one plain sentence, no setup, no menus, the answer on that line.
 - The partner persona's proof is the pilot counted as ARR (PF1 in `data_room/answer_key.json`). "Treat the pilot as non-recurring" is the sentence a partner who distrusts ARR would type.
 - The full room catches entries the seed drop cannot (PERSONAS.md, Series A stage). "Read the full room" is the sentence an associate types when tier two arrives.

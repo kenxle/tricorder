@@ -1,6 +1,6 @@
 # Brief: checklist coverage
 
-Roadmap slice: [checklist-coverage](../../ongoing/ROADMAP.md#checklist-coverage). Rules: [FRAMEWORKS.md](../../ongoing/FRAMEWORKS.md), "Checklist coverage". Reasoning: [product_thinking.md](product_thinking.md). Progress: [00_progress.md](00_progress.md).
+Roadmap slice: [checklist-coverage](../../ongoing/roadmap/checklist-coverage.md). Rules: [FRAMEWORKS.md](../../ongoing/FRAMEWORKS.md), "Checklist coverage". Reasoning: [product_thinking.md](product_thinking.md). Progress: [00_progress.md](00_progress.md).
 
 ## Target users
 

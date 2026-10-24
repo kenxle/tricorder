@@ -2,7 +2,7 @@
 
 ## User job
 
-The associate who prepares the memo has a data room with a few customer contracts and a model that counts every customer as ARR and as plan revenue. Before she trusts the revenue line, she wants to know where the counting runs ahead of the paper: a pilot the plan keeps after it ends, a customer who can walk in 30 days but is counted for a year, revenue booked before a contract started, and how much of the counted revenue has any contract behind it at all. She also wants the clauses a partner asks about first, exclusivity, most-favoured-customer pricing and change of control, read and quoted, or plainly marked as absent. Ken asked for contracts as an input, "checked for gaps such as cancellation periods" ([ROADMAP.md](../../ongoing/ROADMAP.md#contract-terms), 1:53 PM block).
+The associate who prepares the memo has a data room with a few customer contracts and a model that counts every customer as ARR and as plan revenue. Before she trusts the revenue line, she wants to know where the counting runs ahead of the paper: a pilot the plan keeps after it ends, a customer who can walk in 30 days but is counted for a year, revenue booked before a contract started, and how much of the counted revenue has any contract behind it at all. She also wants the clauses a partner asks about first, exclusivity, most-favoured-customer pricing and change of control, read and quoted, or plainly marked as absent. Ken asked for contracts as an input, "checked for gaps such as cancellation periods" ([ROADMAP.md](../../ongoing/roadmap/contract-terms.md), 1:53 PM block).
 
 The partner who reads the memo needs one line per finding, with the clause and the cell side by side ([USER_STORIES.md](../../ongoing/USER_STORIES.md)).
 

@@ -30,7 +30,7 @@ Scores (`eval.score`): hollis_voice 2 of 8, brasswick 5 of 5, seed drop 1 of 8, 
 
 What the fix round changed against the Done when: PF3 is now contradicted (cohort rebuild, 87.3%). BF1 ($943K) and BF3 (runway 29, burn $113,684) are no longer contradicted in the claims table: their flags carry Values the claim cannot be compared with (`other`, `payroll_monthly`), so the row names the flag instead. Green flags Hollis GF2 and GF3's 17 now read unsupported, because only the model states them. The answer key counts them green; that conflict is for Ken (Attention needed 13).
 
-Roadmap slice: [claim-support](../../ongoing/ROADMAP.md#claim-support). Diagram: [claims_workflow.md](../../ongoing/diagrams/claims_workflow.md). Route: prototype first, with an interface example printed by a spike.
+Roadmap slice: [claim-support](../../ongoing/roadmap/claim-support.md). Diagram: [claims_workflow.md](../../ongoing/diagrams/claims_workflow.md). Route: prototype first, with an interface example printed by a spike.
 
 ## Attention needed
 

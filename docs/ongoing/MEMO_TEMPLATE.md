@@ -4,7 +4,7 @@
 
 **What belongs:** The memo Tricorder drafts for the partners' meeting. Its sections in order, what each holds, which readout pieces and checklist items fill it, how each line links down to its claims and sources, where the top green and red flags, the gaps and the ask list sit, which sections carry assumptions a reader can tweak, and what stays the operator's to write. A short filled example on the demo company.
 
-**What does not:** How a piece's verdict or the headline flags are computed (that is [FRAMEWORKS.md](FRAMEWORKS.md), "The readout"). The list of diligence items (that is [CHECKLIST.md](CHECKLIST.md)). How the memo page looks (that is [STYLE_GUIDE.md](STYLE_GUIDE.md)). How the export, the reader copies and the scenarios are built (that is [ARCHITECTURE.md](ARCHITECTURE.md) and the [memo-export](ROADMAP.md#memo-export) and [reader-scenarios](ROADMAP.md#reader-scenarios) slices).
+**What does not:** How a piece's verdict or the headline flags are computed (that is [FRAMEWORKS.md](FRAMEWORKS.md), "The readout"). The list of diligence items (that is [CHECKLIST.md](CHECKLIST.md)). How the memo page looks (that is [STYLE_GUIDE.md](STYLE_GUIDE.md)). How the export, the reader copies and the scenarios are built (that is [ARCHITECTURE.md](ARCHITECTURE.md) and the [memo-export](roadmap/memo-export.md) and [reader-scenarios](roadmap/reader-scenarios.md) slices).
 
 **Level of detail:** A builder can write the export from this file without asking: for each section, its inputs, its line kinds and its links. An operator can see what Tricorder will hand them and what they still have to write.
 

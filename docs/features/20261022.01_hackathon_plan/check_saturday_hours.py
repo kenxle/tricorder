@@ -1,4 +1,7 @@
-"""Check that Saturday's hours in ROADMAP.md add up.
+"""Check that Saturday's hours in the roadmap's slice files and saturday.md add up.
+
+The files are read through roadmap_files.py, which rebuilds the one-file layout
+the rules below describe.
 
 For each role it confirms:
   - the "Hours" lines of the Saturday slices that role owns add up to the build
@@ -23,7 +26,8 @@ import re
 import sys
 from pathlib import Path
 
-ROADMAP = Path(__file__).resolve().parents[2] / "ongoing" / "ROADMAP.md"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import roadmap_files  # noqa: E402
 SLICE_NAME = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)+$|^[a-z0-9]+$")
 ROLES = ["captain", "frontend", "backend-and-data", "design-and-finance"]
 # Hyphenated words in Waits on lines that are plain English or role names, not slices.
@@ -79,7 +83,7 @@ def table(lines, heading_prefix):
 
 
 def main():
-    lines = ROADMAP.read_text(encoding="utf-8").splitlines()
+    lines = roadmap_files.lines()
     slices = parse_slices(lines)
     problems = []
     window = FREEZE - BUILD_START - LUNCH

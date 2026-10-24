@@ -15,7 +15,7 @@ Two rows would also join the table "Where each planted flag is caught":
 
 ### 1.14 Deck revenue against the books
 
-**Scope: built from now to Friday night, run on Saturday inside the red-flag engine.** The roadmap's [deck-vs-books](../../ongoing/ROADMAP.md#deck-vs-books) slice. Scripts only. No model reading.
+**Scope: built from now to Friday night, run on Saturday inside the red-flag engine.** The roadmap's [deck-vs-books](../../ongoing/roadmap/deck-vs-books.md) slice. Scripts only. No model reading.
 
 **Inputs**
 

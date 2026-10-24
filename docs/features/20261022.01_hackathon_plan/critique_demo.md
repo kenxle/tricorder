@@ -16,10 +16,10 @@ Counts and ratios below come from three read-only scripts run on 2026-10-22: `du
 
 ## Findings
 
-**1. The script is too long for the slot.** *Must fix before Saturday.* [ROADMAP.md, demo-freeze](../../ongoing/ROADMAP.md#demo-freeze)
+**1. The script is too long for the slot.** *Must fix before Saturday.* [ROADMAP.md, demo-freeze](../../ongoing/roadmap/demo-freeze.md)
 The plan's "done when" is a five-minute run. The schedule gives 5:30 to 6:00 for every team's demo and the winner ([brief](00_brief_for_writers.md#the-hackathon)), so the slot is likely three minutes or less. Fix: rehearse a three-minute core (the beat sheet below) with a five-minute extension. Add the slot length to the TRI-ask-organisers row (questions for the organisers).
 
-**2. Do not open on a forward you start by hand.** *Must fix before Saturday.* [ROADMAP.md, the one workflow we demo](../../ongoing/ROADMAP.md#the-one-workflow-we-demo), [founder_brief.md](founder_brief.md#the-one-workflow-well-demo)
+**2. Do not open on a forward you start by hand.** *Must fix before Saturday.* [ROADMAP.md, the one workflow we demo](../../ongoing/roadmap/demo_workflow.md), [founder_brief.md](founder_brief.md#the-one-workflow-well-demo)
 The first 20 seconds would go on the one thing on screen that is not real, plus a sentence admitting it. Judges remember what they saw working. Fix: open on the readout, already waiting, which is true because it ran before Ken walked up. Use the inbound forward as the closing "next" line. Build the real forward only if the red-flag engine and readout are done at the 2:30 cut call. A small inbox-polling script needs no OAuth review.
 
 **3. The cash does not reconcile, and nobody planted it.** *Must fix before Saturday.* [financial_model.xlsx](../../../data_room/hollis_voice/02_financials/financial_model.xlsx), [README.md](../../../data_room/README.md#notes-for-whoever-runs-the-demo)
@@ -28,13 +28,13 @@ Operating losses for 2025-01 to 2026-09 sum to $3,091,744 (P&L, C30:W30). The co
 **4. Two details make the room look built to be caught.** *Must fix before Saturday.* [customer_mrr_by_month.csv](../../../data_room/hollis_voice/03_metrics/customer_mrr_by_month.csv), [pitch_deck.pdf, slide 14](../../../data_room/hollis_voice/01_overview/pitch_deck.pdf)
 The largest customer is `C-BIG` and the pilot is `P-MARLOW`, among ids like `C0185`. The deck ends on a "Claims page", which no founder makes, and the cover note promises every number ties. Fix: give both customers ordinary ids. Retitle slide 14 "Appendix: key metrics", which real decks do have, or drop it and keep the `claims.json` sidecar as the parser fallback.
 
-**5. The video needs work to land.** *Should fix.* [pitch_video_script.md](../../../data_room/hollis_voice/01_overview/pitch_video_script.md), [ROADMAP.md, record-pitch-video](../../ongoing/ROADMAP.md#record-pitch-video)
+**5. The video needs work to land.** *Should fix.* [pitch_video_script.md](../../../data_room/hollis_voice/01_overview/pitch_video_script.md), [ROADMAP.md, record-pitch-video](../../ongoing/roadmap/record-pitch-video.md)
 Ken records it, but the script opens "Hi, I'm Imogen Tarrant", and judges will see the presenter playing the founder. Against the deck alone, "about three million" against $2.5M sounds like normal founder rounding. Against the billing rows it lands: $3.0M is 46% above $2,060,868 (answer_key.json, `facts`). Fix: have someone off stage record it, as a voiceover over the deck slides. Play only the 0:35 sentence, with burned-in captions, from an H.264 MP4 (iPhone HEVC may not play in the browser). Frame the line as the ladder.
 
-**6. Source clicks must not launch Excel or a PDF viewer.** *Should fix.* [ROADMAP.md, readout-page](../../ongoing/ROADMAP.md#readout-page)
+**6. Source clicks must not launch Excel or a PDF viewer.** *Should fix.* [ROADMAP.md, readout-page](../../ongoing/roadmap/readout-page.md)
 A spreadsheet app opening on a projector is slow. It also shows the associate the tidy rows listed at the end of this file. Fix: render each cited cell or page as an in-page panel, using a pre-rendered PNG of the slide or a small HTML table with the cell highlighted.
 
-**7. Show the score as a test, and prove the checks are not fitted to it.** *Should fix.* [ROADMAP.md, demo-freeze](../../ongoing/ROADMAP.md#demo-freeze), [BRAND.md, pitching to judges](../../ongoing/BRAND.md#pitching-to-judges)
+**7. Show the score as a test, and prove the checks are not fitted to it.** *Should fix.* [ROADMAP.md, demo-freeze](../../ongoing/roadmap/demo-freeze.md), [BRAND.md, pitching to judges](../../ongoing/BRAND.md#pitching-to-judges)
 Judges already know the room is synthetic, so the score reveals nothing they don't know. The risk is that "8 of 8 on our own key" sounds circular. Fix: one line near the end ("eight planted problems, three traps; today it found X and tripped Y"), and show the real number even if it is 7. If time allows before Saturday, add a plants-off switch to the generator. The research describes one, and `generate.py` has none. A clean room that comes back clean is the strongest ten seconds against "rigged".
 
 **8. Two of the three decoys catch nothing.** *Should fix.* [answer_key.json, decoys](../../../data_room/answer_key.json), [order_form_brookline_row.pdf](../../../data_room/hollis_voice/04_customers/order_form_brookline_row.pdf)

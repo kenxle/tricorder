@@ -1,0 +1,54 @@
+slice,status,left,who,checked_against
+data-room,done,,agent,data_room/ generator and the four rooms exist; slice Status line says built
+blind-room,partly built,the outside person picks flags and seals the variant room's key,agent and an outside person,data_room/hollis_voice_clean and answer_key_clean.json exist; variant key not sealed by an outside person
+record-pitch-video,not started,Ken reads each script into pitch_video.mp4,Ken,no pitch_video.mp4 in data_room/hollis_voice/01_overview/
+research-gaps,done,,agent,slice Status line says done; docs/reports/20261022.02_research/research_gaps.md exists
+sponsor-adapters,not started,one adapter per sponsor (Akta; Crunchbase; Nicrron); keys arrive today,agent,clients/ holds only llm.py
+keys,waiting on Ken,the .env keys and the demo laptop's tools,Ken,no .env in the repo checkout
+yc-rooms,waiting on Ken,Ken picks the real YC companies; then an agent generates their synthetic rooms,agent after Ken,data_room/generate.py offers only hollis and brasswick
+cached-data,not started,save every outside call under cache/,agent,no cache/ folder
+signals-readings,not started,the saved signal readings,agent,no cache/signals/
+saturday-specs,partly built,example result files in sample_out/; the static readout mock; one test call per schema,agent,FRAMEWORKS.md entries exist; no sample_out/ folder
+skeleton,done,,agent,merged in PR #2; schema/ server/ readout/ bin/ci-py and bin/ci-web exist
+social-posts,not started,draft the 11:00 AM and 3:30 PM posts,agent drafts then Ken,no post drafts in docs/
+founder-brief,waiting on Ken,Ken edits the draft in his own words,agent then Ken,docs/features/20261022.01_hackathon_plan/founder_brief.md exists
+checklist,done,,agent,slice Status line says done; docs/ongoing/CHECKLIST.md exists
+demo-script,partly built,Ken reads the core aloud against a timer,agent then Ken,the beat sheet is in docs/ongoing/DEMO.md
+skeleton-card,done,,Ken,slice Status line: Ken's 3:32 PM decision settles it as option B
+readout-store,done,,agent,merged in PR #8; store/ exists
+steering,done,,agent,merged in PR #8; steering/ exists
+room-templates,not started,templated data rooms: swap a company profile in on the fly,agent,data_room/generate.py --company takes only hollis or brasswick
+frameworks-scan,not started,lean canvas and the other frameworks as one prompt and schema each,agent,no scans/frameworks/
+comps-deep,not started,Form D and EDGAR comps in depth,agent,no scans/comps/
+accounting-mislabels,done,,agent,merged in PR #4; scans/redflags/mislabels.py exists
+deck-vs-books,done,,agent,merged in PR #4; scans/redflags/deck_vs_books.py exists
+contract-terms,done,,agent,merged in PR #8; scans/redflags/contract_terms_full.py exists
+financial-model,not started,Tricorder's own rebuilt model the operator can work in,agent,no model scan in scans/
+video-moments,not started,the strip of moments on the video player,agent,no scans/video/
+checklist-coverage,partly built,the coverage panel on the readout page; the register of the guides' proposed checks,agent,merged in PR #4; board task TRI-coverage-panel (finish the panel and register) is open
+claim-support,partly built,Ken's call on figures only the company's model states; the video transcript waits on the recorded video,agent,merged in PR #8; scans/claims/ exists
+founder-requests,done,,agent,merged in PR #8; founder_requests/ exists
+memo-export,done,,agent,merged in PR #8; memo/ exists
+reader-scenarios,not started,each memo reader gets their own copy to steer and can try what-ifs on the financial model,agent,no scenarios code in memo/
+bank-check,not started,the Plaid sandbox bank check,agent with Ken for Plaid,no Plaid code; scans/__init__.py lists bank as planned
+outside-in,not started,the outside-world tabs: website; Hacker News; App Store; SEC filings,agent with Ken for keys,no scans/outside/
+founder-profiles,not started,a card per founder from GitHub; personal sites and talks,agent,no scans/founders/
+online-presence,not started,the company's footprint: web; Hacker News; Product Hunt; app stores; Reddit pages Ken saves,agent,no scans/presence/
+reference-checks,not started,prepare the operator's reference calls (low priority: Ken is not sure Tricorder can take this on),agent,no reference-check code
+stage-views,not started,first screens that suit the company's stage,agent,no stage view code
+inbox-forward,not started,a forwarding address such as deals@ that starts a readout,agent,no inbox code
+inbound-unasked,not started,diligence that starts on the inbound email before the investor asks,agent,no inbox code
+inbox-apis,not started,Gmail and Outlook connected through their official APIs,agent with Ken for Google's verification,no inbox code
+multiplayer,not started,several people build the same readout at once (uncertain: Ken is not sure this works),agent,no multiplayer code
+pilot,waiting on Ken,one fund uses Tricorder on real inbound deals,Ken,Ken-only slice
+product,waiting on Ken,what makes Tricorder a product: the fund buys and the associate uses,Ken,Ken-only slice
+readers,done,,backend-and-data,schema/readers.py implemented and tested in the skeleton (PR #2)
+claim-result,partly built,check URL sources against their saved copies (needs cache/),captain,schema/check_quotes.py exists; no cache/index.json
+redflag-engine,partly built,the deck claims page; ARR definition; burn against hiring plan; deck against model; customer concentration; gross margin; vanity metric; cap table and green-flag cells,design-and-finance,scans/redflags/ has cohorts; mislabels; deck_vs_books; contract terms; scan.py lists the missing checks
+readout,partly built,source linking (board task TRI-readout-link); the ask-list step; the model pass for connecting sentences,captain,scans/memo/ merge; pieces; top_flags exist (PR #14)
+readout-page,partly built,wave 2 panels (claims table; cohort rebuild); memo link; video jump; ask-list copy button; reorder buttons; market-signals panel,frontend,readout/src/App.tsx shows top flags; overview; gaps; could not verify; ask list; source chips
+pitch-video,not started,transcribe the video and pull its claims with timestamps,backend-and-data,no scans/video/
+contract-terms-saturday,not started,the model reading of contracts and checks 2 and 5,backend-and-data,scans/redflags/contract_terms.py does not exist; the shared contract_reader.py does
+comps,not started,the comps panel,design-and-finance,no scans/comps/
+market-signals,not started,the market-signals panel and its live run,frontend,no scans/signals/
+demo-freeze,partly built,frozen outputs in demo/frozen/; the demo-freeze tag; rehearsal,captain,eval/score.py and bin/smoke exist; no demo/ folder

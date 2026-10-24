@@ -26,11 +26,11 @@ These run on files already in `data_room/`. No API key, no host, no decision fro
 
 | Feature | Roadmap slice | Route | Lives in | Status |
 |---|---|---|---|---|
-| Deck revenue against the books | [deck-vs-books](../../ongoing/ROADMAP.md#deck-vs-books) | Prototype-first, interface example | `scans/redflags/deck_vs_books.py` | Merged in PR #4, 2026-10-23: [folder](../20261022.11_deck_vs_books/) |
-| Accounting mislabels | [accounting-mislabels](../../ongoing/ROADMAP.md#accounting-mislabels) | Prototype-first, interface example | `scans/redflags/mislabels.py` | Merged in PR #4, 2026-10-23: [folder](../20261022.12_accounting_mislabels/) |
-| Checklist coverage and the ask list | [checklist-coverage](../../ongoing/ROADMAP.md#checklist-coverage) | Prototype-first, clickable prototype | `scans/memo/coverage.py` | Merged in PR #4, 2026-10-23: [folder](../20261022.13_checklist_coverage/) |
-| Tricorder's own financial model | [financial-model](../../ongoing/ROADMAP.md#financial-model) | Prototype-first, clickable prototype (the runway what-if) | `scans/model/` | Next |
-| Business frameworks | [frameworks-scan](../../ongoing/ROADMAP.md#frameworks-scan) | Prototype-first, interface example | `scans/frameworks/` | Next, needs the Anthropic key |
+| Deck revenue against the books | [deck-vs-books](../../ongoing/roadmap/deck-vs-books.md) | Prototype-first, interface example | `scans/redflags/deck_vs_books.py` | Merged in PR #4, 2026-10-23: [folder](../20261022.11_deck_vs_books/) |
+| Accounting mislabels | [accounting-mislabels](../../ongoing/roadmap/accounting-mislabels.md) | Prototype-first, interface example | `scans/redflags/mislabels.py` | Merged in PR #4, 2026-10-23: [folder](../20261022.12_accounting_mislabels/) |
+| Checklist coverage and the ask list | [checklist-coverage](../../ongoing/roadmap/checklist-coverage.md) | Prototype-first, clickable prototype | `scans/memo/coverage.py` | Merged in PR #4, 2026-10-23: [folder](../20261022.13_checklist_coverage/) |
+| Tricorder's own financial model | [financial-model](../../ongoing/roadmap/financial-model.md) | Prototype-first, clickable prototype (the runway what-if) | `scans/model/` | Next |
+| Business frameworks | [frameworks-scan](../../ongoing/roadmap/frameworks-scan.md) | Prototype-first, interface example | `scans/frameworks/` | Next, needs the Anthropic key |
 
 Wave 1's first three features are closed out in [01_closeout.md](01_closeout.md).
 
@@ -40,15 +40,15 @@ These turn scan output into something the associate and the partner use. They wa
 
 | Feature | Roadmap slices | Route | Waits on |
 |---|---|---|---|
-| Readout store and delete | [readout-store](../../ongoing/ROADMAP.md#readout-store) | Prototype-first, interface example | Skeleton |
-| Steering in one sentence | [steering](../../ongoing/ROADMAP.md#steering) | Prototype-first, clickable prototype | Readout store |
-| Contract terms in full | [contract-terms](../../ongoing/ROADMAP.md#contract-terms) | Prototype-first, interface example | Readout store |
-| Claim support | [claim-support](../../ongoing/ROADMAP.md#claim-support) | Prototype-first, interface example | Checklist coverage, the pitch transcript |
-| Requests to the founder | [founder-requests](../../ongoing/ROADMAP.md#founder-requests) | Prototype-first, clickable prototype | Checklist coverage |
-| The memo and its PDF | [memo-export](../../ongoing/ROADMAP.md#memo-export) | Prototype-first, clickable prototype | Example readout files |
-| Reader copies and scenarios | [reader-scenarios](../../ongoing/ROADMAP.md#reader-scenarios) | Prototype-first, clickable prototype | Memo, steering, financial model |
-| First screens by stage | [stage-views](../../ongoing/ROADMAP.md#stage-views) | Prototype-first, clickable prototype | Readout store, outside-in |
-| Video moments | [video-moments](../../ongoing/ROADMAP.md#video-moments) | Prototype-first, clickable prototype | Ken's recorded pitch video |
+| Readout store and delete | [readout-store](../../ongoing/roadmap/readout-store.md) | Prototype-first, interface example | Skeleton |
+| Steering in one sentence | [steering](../../ongoing/roadmap/steering.md) | Prototype-first, clickable prototype | Readout store |
+| Contract terms in full | [contract-terms](../../ongoing/roadmap/contract-terms.md) | Prototype-first, interface example | Readout store |
+| Claim support | [claim-support](../../ongoing/roadmap/claim-support.md) | Prototype-first, interface example | Checklist coverage, the pitch transcript |
+| Requests to the founder | [founder-requests](../../ongoing/roadmap/founder-requests.md) | Prototype-first, clickable prototype | Checklist coverage |
+| The memo and its PDF | [memo-export](../../ongoing/roadmap/memo-export.md) | Prototype-first, clickable prototype | Example readout files |
+| Reader copies and scenarios | [reader-scenarios](../../ongoing/roadmap/reader-scenarios.md) | Prototype-first, clickable prototype | Memo, steering, financial model |
+| First screens by stage | [stage-views](../../ongoing/roadmap/stage-views.md) | Prototype-first, clickable prototype | Readout store, outside-in |
+| Video moments | [video-moments](../../ongoing/roadmap/video-moments.md) | Prototype-first, clickable prototype | Ken's recorded pitch video |
 
 ### Wave 2 status (2026-10-23)
 
@@ -71,21 +71,21 @@ These read the web and the sponsor APIs. Each waits on Ken's keys (board row TRI
 
 | Feature | Roadmap slices | Waits on |
 |---|---|---|
-| Sponsor adapters | [sponsor-adapters](../../ongoing/ROADMAP.md#sponsor-adapters) | Nothing this week. Can start now |
-| Saved outside data | [cached-data](../../ongoing/ROADMAP.md#cached-data), [signals-readings](../../ongoing/ROADMAP.md#signals-readings) | Keys, the YC pick |
-| Comps in depth | [comps-deep](../../ongoing/ROADMAP.md#comps-deep) | Saved outside data |
-| The associate's ten tabs | [outside-in](../../ongoing/ROADMAP.md#outside-in) | Keys |
-| Founder profiles, online presence, reference checks | [founder-profiles](../../ongoing/ROADMAP.md#founder-profiles), [online-presence](../../ongoing/ROADMAP.md#online-presence), [reference-checks](../../ongoing/ROADMAP.md#reference-checks) | Outside-in, plus a terms check for GitHub and Reddit |
+| Sponsor adapters | [sponsor-adapters](../../ongoing/roadmap/sponsor-adapters.md) | Nothing this week. Can start now |
+| Saved outside data | [cached-data](../../ongoing/roadmap/cached-data.md), [signals-readings](../../ongoing/roadmap/signals-readings.md) | Keys, the YC pick |
+| Comps in depth | [comps-deep](../../ongoing/roadmap/comps-deep.md) | Saved outside data |
+| The associate's ten tabs | [outside-in](../../ongoing/roadmap/outside-in.md) | Keys |
+| Founder profiles, online presence, reference checks | [founder-profiles](../../ongoing/roadmap/founder-profiles.md), [online-presence](../../ongoing/roadmap/online-presence.md), [reference-checks](../../ongoing/roadmap/reference-checks.md) | Outside-in, plus a terms check for GitHub and Reddit |
 
 ## Wave 4: inbox, bank and rooms, each gated on Ken
 
 | Feature | Roadmap slices | Ken's part |
 |---|---|---|
-| Forwarded pitch emails, diligence before anyone asks | [inbox-forward](../../ongoing/ROADMAP.md#inbox-forward), [inbound-unasked](../../ongoing/ROADMAP.md#inbound-unasked) | Pick a domain and a mail service |
-| Gmail and Outlook | [inbox-apis](../../ongoing/ROADMAP.md#inbox-apis) | Google's verification |
-| Bank check | [bank-check](../../ongoing/ROADMAP.md#bank-check) | A Plaid developer account |
-| Templated rooms | [room-templates](../../ongoing/ROADMAP.md#room-templates) | The YC pick, for the real-company rooms |
-| Multiplayer | [multiplayer](../../ongoing/ROADMAP.md#multiplayer) | Marked uncertain by Ken |
+| Forwarded pitch emails, diligence before anyone asks | [inbox-forward](../../ongoing/roadmap/inbox-forward.md), [inbound-unasked](../../ongoing/roadmap/inbound-unasked.md) | Pick a domain and a mail service |
+| Gmail and Outlook | [inbox-apis](../../ongoing/roadmap/inbox-apis.md) | Google's verification |
+| Bank check | [bank-check](../../ongoing/roadmap/bank-check.md) | A Plaid developer account |
+| Templated rooms | [room-templates](../../ongoing/roadmap/room-templates.md) | The YC pick, for the real-company rooms |
+| Multiplayer | [multiplayer](../../ongoing/roadmap/multiplayer.md) | Marked uncertain by Ken |
 
 ## Not forged by agents
 
@@ -95,4 +95,4 @@ The team's Saturday slices (readers, claim-result, redflag-engine, readout, read
 
 - Wave 1 needs nothing anyone is waiting on. The data room, the answer key and the FRAMEWORKS entries already exist, so a scan can be built and scored today.
 - The three first features are all deterministic scripts. Principle 1 in the [product brief](../../ongoing/PRODUCT_BRIEF.md) says a script decides a number is wrong, so they carry the most trust per hour of work.
-- Deck against books and the mislabels feed the traction and revenue piece, the weakest piece in [the one workflow we demo](../../ongoing/ROADMAP.md#the-one-workflow-we-demo). Coverage feeds the ask list, which every later feature in wave 2 uses.
+- Deck against books and the mislabels feed the traction and revenue piece, the weakest piece in [the one workflow we demo](../../ongoing/roadmap/demo_workflow.md). Coverage feeds the ask list, which every later feature in wave 2 uses.

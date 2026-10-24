@@ -12,7 +12,7 @@ It builds by 3:30 only with changes. The data room is solid: its checker passes 
 - What is wrong: `eval/score.py` counts a flag as found by matching check names. Only `arr_from_subscription_rows` and `top_customer_share` match. The key says `deck_claim_vs_named_cell` where FRAMEWORKS says `deck_model_match`, and five more pairs differ the same way.
 - Fix: pick one set of names and rename the other set this week. Then rerun `check.py`.
 
-**2. The red-flag engine breaks first.** Severity: must fix before Saturday. Concerns [ROADMAP.md, redflag-engine](../../ongoing/ROADMAP.md#redflag-engine).
+**2. The red-flag engine breaks first.** Severity: must fix before Saturday. Concerns [ROADMAP.md, redflag-engine](../../ongoing/roadmap/redflag-engine.md).
 - What is wrong: a junior Python-and-Excel person has 3.0 hours for 7 checks. FRAMEWORKS gives Scan 1 eleven entries, each with a script, a prompt, a schema and label rules. The slice also needs a model call to read the deck, and a way to feed files to the model. Nobody else owns either.
 - Fix: make Saturday's engine scripts only. The deck's claims page (slide 14) parses cleanly by regex. Every planted flag already has a script check (feasibility 3.2). Model readings, such as the pilot contract and the cohort note, move to backend-and-data after the video slice, or to after Saturday.
 
@@ -20,7 +20,7 @@ It builds by 3:30 only with changes. The data room is solid: its checker passes 
 - What is wrong: every scan and the quote checker need the same readers (PDF by page, xlsx by cell, CSV by row, markdown by line, transcript by segment). No folder owner has them. The captain has 0.5 hours for a quote checker across all five formats.
 - Fix: one `schema/readers.py`, owned by backend-and-data from 10:30 to 11:30. The quote checker and every scan import it.
 
-**4. The docs name paths that do not exist.** Severity: must fix before Saturday. Concerns [ARCHITECTURE.md, the data room and the answer key](../../ongoing/ARCHITECTURE.md#the-data-room-and-the-answer-key) and [ROADMAP.md, data-room and skeleton](../../ongoing/ROADMAP.md#data-room).
+**4. The docs name paths that do not exist.** Severity: must fix before Saturday. Concerns [ARCHITECTURE.md, the data room and the answer key](../../ongoing/ARCHITECTURE.md#answer-keys-and-scoring) and [ROADMAP.md, data-room and skeleton](../../ongoing/roadmap/data-room.md).
 - What is wrong: both docs say `data_room/out/hollis_series_a/`, `out/hollis_seed_drop/`, `answer_key/planted_flags.json` and a `claims.json` sidecar. On disk the rooms are `hollis_voice/` and `hollis_voice_seed_drop/`, the key is `answer_key.json`, and there is no sidecar. So the skeleton's smoke test points at a missing folder, and the PDF fallback is absent.
 - Fix: correct the paths in both docs. Have the generator write `01_overview/claims.json` into both rooms from the same list.
 
@@ -35,34 +35,34 @@ It builds by 3:30 only with changes. The data room is solid: its checker passes 
   - ScanResult has no place for each entry's label and tables. The page needs those for the comps table, the signals grid and the video moments.
 - Fix: make the FRAMEWORKS JSON Schema the single source and decide where the tables live this week. Then it is small enough to freeze.
 
-**7. The skeleton card should go to option B.** Severity: should fix. Concerns [ROADMAP.md, skeleton-card](../../ongoing/ROADMAP.md#skeleton-card).
+**7. The skeleton card should go to option B.** Severity: should fix. Concerns [ROADMAP.md, skeleton-card](../../ongoing/roadmap/skeleton-card.md).
 - What is wrong: with zero slack, option A spends the first half hour of two people and puts the team behind an 11:00 freeze. Example files cannot be checked against a schema that does not exist yet.
 - Fix: choose B, limited to the card's list with no scan logic. Ken asks the organisers first and tells the judges plainly. If the organisers say no, keep A and cut market signals at 10:20.
 
-**8. The captain carries too much.** Severity: should fix. Concerns [ROADMAP.md, who owns what](../../ongoing/ROADMAP.md#who-owns-what).
+**8. The captain carries too much.** Severity: should fix. Concerns [ROADMAP.md, who owns what](../../ongoing/roadmap/saturday.md#who-owns-what).
 - What is wrong: Ken works in Rails, yet owns the Python schema, the quote checker, the memo and its model pass, the score script, every merge, the organiser questions and a social post at each integration point.
 - Fix: option B removes the schema. Finding 3 removes the readers. An agent drafts the social posts this week, and Ken posts them at 11:00 and 3:30 only.
 
-**9. Market signals cannot show much, so cut it before the day starts.** Severity: should fix. Concerns [FRAMEWORKS.md, Scan 3](../../ongoing/FRAMEWORKS.md#scan-3-market-signals-saturday).
+**9. Market signals cannot show much, so cut it before the day starts.** Severity: should fix. Concerns [FRAMEWORKS.md, Scan 3](../../ongoing/FRAMEWORKS.md#scan-3-market-signals-run-this-week-shown-saturday).
 - What is wrong: the demo company has no outside footprint. Akta's pay-as-you-go plan returns 403 on hiring, traffic and reviews. With one reading taken this week, every signal is labelled `one_reading`.
 - Fix: show the cached competitor files as a static panel. Backend-and-data's 1.5 hours go to findings 2 and 3.
 
-**10. The cache list misses what the comp prompts read.** Severity: should fix. Concerns [ROADMAP.md, cached-data](../../ongoing/ROADMAP.md#cached-data).
+**10. The cache list misses what the comp prompts read.** Severity: should fix. Concerns [ROADMAP.md, cached-data](../../ongoing/roadmap/cached-data.md).
 - What is wrong: entry 2.1 reads each candidate's 10-K Item 1 text, and 2.2 reads a saved page describing each Form D issuer. The slice lists neither. No rule maps a URL to its saved copy, which the quote checker needs.
 - Fix: add both, plus a `cache/index.json` from URL to file.
 
-**11. The demo laptop is never named, and the live step needs the venue's network.** Severity: should fix. Concerns [ROADMAP.md, run of show](../../ongoing/ROADMAP.md#run-of-show) and [the one workflow we demo](../../ongoing/ROADMAP.md#the-one-workflow-we-demo).
+**11. The demo laptop is never named, and the live step needs the venue's network.** Severity: should fix. Concerns [ROADMAP.md, run of show](../../ongoing/roadmap/saturday.md#run-of-show) and [the one workflow we demo](../../ongoing/roadmap/demo_workflow.md).
 - What is wrong: no doc says which laptop is the demo laptop. The demo body runs the full room live, which makes model calls over venue wifi.
 - Fix: use Ken's laptop (M2 Max, with ffmpeg, Python 3.13 and Node 20). The live step runs script checks only, which need no network. Model-backed panels show frozen output. Bring a phone hotspot. The forwarded email stays a screenshot.
 
-**12. The pitch video has file traps.** Severity: should fix. Concerns [ROADMAP.md, record-pitch-video](../../ongoing/ROADMAP.md#record-pitch-video).
+**12. The pitch video has file traps.** Severity: should fix. Concerns [ROADMAP.md, record-pitch-video](../../ongoing/roadmap/record-pitch-video.md).
 - What is wrong:
   - No rule keeps the video out of git, and [GitHub blocks files over 100 MiB](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github).
   - A phone recording may be HEVC, which not every browser plays.
   - whisper.cpp is not installed on Ken's laptop.
 - Fix: convert the video once with ffmpeg to H.264 MP4 and share it outside git. Add the path to `.gitignore`. Install whisper.cpp and save the transcript.
 
-**13 to 16. Notes.** Severity: note. Concerns [FRAMEWORKS.md](../../ongoing/FRAMEWORKS.md#open-points-for-builders), [ARCHITECTURE.md, folder layout](../../ongoing/ARCHITECTURE.md#folder-layout) and [ROADMAP.md, cut order](../../ongoing/ROADMAP.md#cut-order).
+**13 to 16. Notes.** Severity: note. Concerns [FRAMEWORKS.md](../../ongoing/FRAMEWORKS.md#open-points-for-builders), [ARCHITECTURE.md, folder layout](../../ongoing/ARCHITECTURE.md#folder-layout) and [ROADMAP.md, cut order](../../ongoing/roadmap/saturday.md#demo-fallback-order).
 - `GM_PCT` holds 0.8 while the deck says 80% and FRAMEWORKS stores percent points. Add one conversion line to the check list, or the deck-against-model check reports a false conflict.
 - Merge traps: `prompts/` is the captain's but every scan edits its prompts, so keep each prompt in its scan folder. List every package in the root file up front. `bin/ci` runs the React build, so a red TypeScript build blocks Python merges; split it into `bin/ci-py` and `bin/ci-web`, run by the captain before each merge. No hosted CI workflow exists.
 - No structured-output schema has been sent once. Each Saturday schema has 7 to 11 fields that allow more than one type, under the API's documented 16 per request. Two entries in one request could pass it. Send one call per schema this week, and one schema per request on Saturday.
