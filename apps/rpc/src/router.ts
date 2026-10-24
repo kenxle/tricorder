@@ -1,5 +1,6 @@
 import type { PythonAPI } from "@tricorder/schema/api";
 import { initTRPC, TRPCError } from "@trpc/server";
+import { z } from "zod";
 
 export type RoomInfo = PythonAPI["GET /api/rooms"]["output"][number];
 type PythonQuery = keyof PythonAPI & `GET ${string}`;
@@ -12,12 +13,20 @@ export interface RPCContext {
 
 const t = initTRPC.context<RPCContext>().create();
 
-function roomID(value: unknown): string {
-  if (typeof value !== "string" || !/^[A-Za-z0-9_-]+$/.test(value)) {
-    throw new Error("Expected a room ID containing letters, digits, underscores or hyphens.");
-  }
-  return value;
-}
+const roomID = z.string().regex(/^[A-Za-z0-9_-]+$/, "Expected a room ID containing letters, digits, underscores or hyphens.");
+
+// Steering appends tags such as .steer1 to newly merged claim IDs.
+const claimID = z.string().regex(/^[A-Za-z0-9_.-]+$/)
+  .refine((value) => value !== "." && value !== "..", "Expected a claim ID containing letters, digits, underscores, hyphens or dots.");
+const version = z.number().int().safe().positive().nullish().transform((value) => value ?? undefined);
+
+// Objects strip unknown keys, and null/omitted versions both select the latest.
+// Let tRPC infer the client input and parsed resolver input from these schemas.
+const roomInput = z.object({ room: roomID, version });
+const resultInput = z.object({ room: roomID, scan: roomID });
+const sourceInput = z.object({ room: roomID, claim_id: claimID, i: z.number().int().safe().nonnegative() });
+const fundInput = z.object({ fund: roomID });
+const companyInput = z.object({ fund: roomID, company: roomID, version });
 
 async function pythonJSON<K extends PythonQuery>(ctx: RPCContext, operation: K, input: QueryInput<K>): Promise<PythonAPI[K]["output"]> {
   // The operation selects both the Python URL and its generated response type.
@@ -62,51 +71,6 @@ async function pythonJSON<K extends PythonQuery>(ctx: RPCContext, operation: K, 
   } catch {
     throw new TRPCError({ code: "BAD_GATEWAY", message: "The Python API returned invalid JSON." });
   }
-}
-
-function object(value: unknown): Record<string, unknown> {
-  if (!value || typeof value !== "object" || Array.isArray(value)) throw new Error("Expected an input object.");
-  return value as Record<string, unknown>;
-}
-
-function positiveInteger(value: unknown): number | undefined {
-  if (value === undefined || value === null) return undefined;
-  if (typeof value !== "number" || !Number.isSafeInteger(value) || value < 1) throw new Error("Expected a positive integer.");
-  return value;
-}
-
-function roomInput(value: unknown): QueryInput<"GET /api/rooms/{room}/memo"> {
-  const input = object(value);
-  return { room: roomID(input.room), version: positiveInteger(input.version) };
-}
-
-function resultInput(value: unknown): QueryInput<"GET /api/rooms/{room}/results/{scan}"> {
-  const input = object(value);
-  return { room: roomID(input.room), scan: roomID(input.scan) };
-}
-
-function claimID(value: unknown): string {
-  // Steering appends tags such as .steer1 to newly merged claim IDs.
-  if (typeof value !== "string" || !/^[A-Za-z0-9_.-]+$/.test(value) || value === "." || value === "..") {
-    throw new Error("Expected a claim ID containing letters, digits, underscores, hyphens or dots.");
-  }
-  return value;
-}
-
-function sourceInput(value: unknown): QueryInput<"GET /api/rooms/{room}/claims/{claim_id}/sources/{i}"> {
-  const input = object(value);
-  if (typeof input.i !== "number" || !Number.isSafeInteger(input.i) || input.i < 0) throw new Error("Expected a nonnegative source index.");
-  return { room: roomID(input.room), claim_id: claimID(input.claim_id), i: input.i };
-}
-
-function fundInput(value: unknown): QueryInput<"GET /api/store/{fund}"> {
-  const input = object(value);
-  return { fund: roomID(input.fund) };
-}
-
-function companyInput(value: unknown): QueryInput<"GET /api/store/{fund}/{company}/readout"> {
-  const input = object(value);
-  return { fund: roomID(input.fund), company: roomID(input.company), version: positiveInteger(input.version) };
 }
 
 export const appRouter = t.router({

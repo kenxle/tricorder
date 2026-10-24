@@ -10,6 +10,11 @@ type Assert<T extends true> = T;
 
 export type RoomContract = Assert<Equal<Outputs["room"]["list"], PythonAPI["GET /api/rooms"]["output"]>>;
 export type MemoVersion = Assert<Equal<Inputs["memo"]["get"]["version"], number | null | undefined>>;
+export type RoomInput = Assert<Equal<Inputs["room"]["readout"], string>>;
+export type ResultInput = Assert<Equal<Inputs["room"]["result"], { room: string; scan: string }>>;
+export type SourceInput = Assert<Equal<Inputs["room"]["source"], { room: string; claim_id: string; i: number }>>;
+export type MemoInput = Assert<Equal<Inputs["memo"]["get"], { room: string; version?: number | null | undefined }>>;
+export type CompanyInput = Assert<Equal<Inputs["store"]["readout"], { fund: string; company: string; version?: number | null | undefined }>>;
 export type ScanClaim = Assert<Equal<Outputs["room"]["result"]["claims"][number]["text"], string>>;
 export type StoredCompany = Assert<Equal<Outputs["store"]["holding"]["company"], string>>;
 export type FounderItem = Assert<Equal<Outputs["founderRequests"]["list"]["items"][number]["text"], string>>;

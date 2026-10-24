@@ -156,3 +156,58 @@ test("new query parsers reject unsafe paths and invalid numbers before Python", 
   }
   assert.equal(calls, 0);
 });
+
+test("Zod rejects malformed wire inputs without coercion or upstream calls", async (t) => {
+  let calls = 0;
+  const { url } = await fixture(t, async () => { calls += 1; return Response.json({}); });
+  // Send untyped JSON to exercise the boundary beyond the typed client's checks.
+  const cases: [string, unknown][] = [
+    ["room.readout", null],
+    ["room.readout", 1],
+    ["room.readout", ""],
+    ["room.readout", "room/path"],
+    ["memo.get", null],
+    ["memo.get", []],
+    ["memo.get", {}],
+    ["memo.get", { room: "room", version: "2" }],
+    ["memo.get", { room: "room", version: "" }],
+    ["memo.get", { room: "room", version: false }],
+    ["memo.get", { room: "room", version: Number.MAX_SAFE_INTEGER + 1 }],
+    ["room.result", { room: "room" }],
+    ["room.source", { room: "room", claim_id: ".", i: 0 }],
+    ["room.source", { room: "room", claim_id: "claim", i: "0" }],
+    ["room.source", { room: "room", claim_id: "claim", i: null }],
+    ["room.source", { room: "room", claim_id: "claim", i: 0.5 }],
+    ["room.source", { room: "room", claim_id: "claim", i: Number.MAX_SAFE_INTEGER + 1 }],
+    ["store.companies", { fund: null }],
+    ["store.readout", { fund: "demo", company: "company", version: "1" }],
+  ];
+  for (const [procedure, input] of cases) {
+    const response = await fetch(`${url}/${procedure}?${new URLSearchParams({ input: JSON.stringify(input) })}`);
+    assert.equal(response.status, 400, `${procedure}: ${JSON.stringify(input)}`);
+    const body = await response.json();
+    assert.equal(body.error.data.code, "BAD_REQUEST");
+  }
+  assert.equal(calls, 0);
+});
+
+test("Zod strips unknown keys and preserves latest-version selection", async (t) => {
+  const calls: string[] = [];
+  const { url, client } = await fixture(t, async (input) => {
+    const upstream = new URL(String(input));
+    calls.push(upstream.pathname + upstream.search);
+    return Response.json({});
+  });
+  for (const version of [undefined, null, 2]) {
+    await client.store.readout.query({ fund: "demo", company: "company", version });
+  }
+  const input = { room: "room", version: null, extra: "ignored", fund: "ignored" };
+  const response = await fetch(`${url}/memo.get?${new URLSearchParams({ input: JSON.stringify(input) })}`);
+  assert.equal(response.status, 200);
+  assert.deepEqual(calls, [
+    "/api/store/demo/company/readout",
+    "/api/store/demo/company/readout",
+    "/api/store/demo/company/readout?version=2",
+    "/api/rooms/room/memo",
+  ]);
+});

@@ -68,7 +68,15 @@ pnpm --filter @tricorder/web exec intent list
 pnpm --filter @tricorder/web exec intent install
 ```
 
-With tRPC 11.19.0 installed, the pinned Intent 0.5.6 CLI currently fails discovery with `ERR_PACKAGE_PATH_NOT_EXPORTED` for `@tanstack/intent/intent-library`. This optional guidance tooling does not affect the runtime or CI gates. No managed guidance was changed.
+With tRPC 11.19.0 installed, the `intent` command currently fails with `ERR_PACKAGE_PATH_NOT_EXPORTED` for `@tanstack/intent/intent-library`. This optional guidance tooling does not affect the runtime or CI gates. No managed guidance was changed.
+
+The installed tRPC `intent` binary shadows the tooling CLI. Invoke Intent directly from the repo root to discover and load the installed skills without downloading a replacement:
+
+```sh
+node apps/web/node_modules/@tanstack/intent/dist/cli.mjs list
+node apps/web/node_modules/@tanstack/intent/dist/cli.mjs load '@trpc/server#validators'
+node apps/web/node_modules/@tanstack/intent/dist/cli.mjs load '@trpc/client#client-setup'
+```
 
 ## TypeScript workspace commands
 
@@ -102,6 +110,8 @@ See the official [pnpm workspace guide](https://pnpm.io/workspaces), [Expo monor
 ## tRPC gateway
 
 `apps/rpc/src/router.ts` owns `AppRouter`. Its read-only queries cover health, scans, rooms, results, steering readouts/revisions/source text, memos, the readout store and founder requests. `apps/web/src/trpc.ts` imports the router type only and creates the vanilla client with batching. Other clients can import `AppRouter` through `@tricorder/rpc` and use `inferRouterInputs` / `inferRouterOutputs` from `@trpc/server`.
+
+Procedure inputs use Zod 3.25.76 schemas. Objects strip unknown keys; path IDs reject traversal; source indexes and versions require safe integers without string coercion. Null and omitted versions both select the latest version. tRPC infers client inputs before normalization and returns its existing `BAD_REQUEST` envelope for invalid input. The error message contains Zod issues. `pnpm --filter @tricorder/rpc test` covers these rules through HTTP, and the gateway typecheck includes `src/inference.typecheck.ts` assertions for exact client input types and generated Python outputs. See the official [tRPC validators guide](https://trpc.io/docs/server/validators) and [Zod basic usage](https://zod.dev/basics).
 
 Python owns the contracts. `server/api_models.py` declares response shapes for routes that previously returned bare dictionaries. Existing Pydantic models remain in their owning modules. FastAPI assembles these annotations into OpenAPI; `server/export_api.py` introspects that schema locally and writes `packages/schema/src/api.ts`, exported as `@tricorder/schema/api`. It emits `PythonModels` and `PythonAPI`, with separate path parameters, query parameters, JSON request bodies and outputs per operation. No running server, credentials or new dependencies are needed.
 

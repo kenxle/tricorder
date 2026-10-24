@@ -14,7 +14,8 @@
   },
   "dependencies": {
     "@tricorder/schema": "workspace:*",
-    "@trpc/server": "11.19.0"
+    "@trpc/server": "11.19.0",
+    "zod": "3.25.76"
   },
   "devDependencies": {
     "@trpc/client": "11.19.0",
