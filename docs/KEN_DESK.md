@@ -23,6 +23,57 @@
 
 **To look at the demo flow now:** the [demo workflow](ongoing/diagrams/demo_workflow.md) and [DEMO.md](ongoing/DEMO.md). The app runs on this laptop at <http://localhost:5173/>, with readouts for Hollis Voice and Brasswick. No Anthropic key is on this laptop, so the model's readings show as gaps; the script checks all ran.
 
+## The demo flow, from the beginning
+
+Written 11:56. Each step of the [demo workflow](ongoing/diagrams/demo_workflow.md): what we have, what we need, and who.
+
+### 1. A real list of YC Spring 2026 companies
+
+- **We have:** the list, 193 companies saved from YC's public directory on 2026-10-22 ([CSV](reports/20261022.02_research/raw/demo_companies/yc_spring_2026_companies.csv)). Six were researched and ranked for the demo ([research_demo_companies.md](reports/20261022.02_research/research_demo_companies.md)): Ploy, Tasklet, Sazabi, TesterArmy, Minicor, Expanse.
+- **We need:**
+  - **Your pick of two or three.** The research recommends **Ploy** (every outside tab finds something real, and its SEC filing matches the press) and **Sazabi** (the cleanest and safest footprint). Tasklet has the deepest record, but it puts an invented room under a famous founder's company. *You.*
+  - **A list screen in the app.** Today the app opens on a dropdown of our sample rooms ([localhost:5173](http://localhost:5173/)), not on companies. *Benjamin, [company-setup](ongoing/roadmap/company-setup.md).*
+
+### 2. Kick off diligence: our own models and internet research
+
+- **We have:** the six companies' public data, already saved: SEC Form D filings, GitHub, Hacker News and App Store lookups ([raw/demo_companies/](reports/20261022.02_research/raw/demo_companies/)). The full design of the outside-world scan ([outside-in](ongoing/roadmap/outside-in.md)). No code for it yet.
+- **We need:**
+  - **The outside-world scan on the free sources** (website, Hacker News, App Store, SEC), run from the saved copies so it works offline. *Benjamin.*
+  - **Founder cards from GitHub.** *Benjamin.*
+  - **An Anthropic key on the demo laptop.** This laptop has none, so every model reading shows as a gap. *You.*
+  - Comps and market signals are nice to have; they need more keys.
+
+### 3. Send requests for data room information
+
+- **We have:** the drafted message to the founder, with guidance per document, on the readout page ([founder-requests](ongoing/roadmap/founder-requests.md), built). Checklist coverage works out what is missing for the stage.
+- **We need:** the automatic check and the associate's list to check, uncheck and add to ([room-requests](ongoing/roadmap/room-requests.md)). For a company with no room yet, the first request is the stage's standard first-tier list. *Benjamin.*
+
+### 4. The data room comes back
+
+- **We have:** synthetic rooms for Hollis Voice (Series A) and Brasswick (seed), plus clean and variant copies, from the generator in `data_room/`. Adding a returned file to a room works (founder-requests).
+- **We need:** **a synthetic room for each company you pick**, labelled synthetic on every page ([yc-rooms](ongoing/roadmap/yc-rooms.md)). *An agent, as soon as you pick.*
+
+### 5. Analyze: red flags and green flags
+
+- **We have:** deck against the books, accounting mislabels, contract terms, claim support and checklist coverage, all running on both rooms; the readout opens on the top green and red flags.
+- **We need:** the red-flag engine's missing planted-flag checks; the pitch video's transcript (it needs your recorded video); the model's reading of contracts. *Nobody holds these yet.*
+
+### 6. The associate analyzes, cross-references and steers
+
+- **We have:** the readout page (top flags, overview, gaps, could not verify, ask list), steering, and the readout store.
+- **We need:** the claims and cohort panels, and source links across claims ([readout](ongoing/roadmap/readout.md), [readout-page](ongoing/roadmap/readout-page.md)). *Nobody holds these yet.*
+
+### 7 and 8. The interactive memo for the principals
+
+- **We have:** the memo as a page and a PDF, built ([memo-export](ongoing/roadmap/memo-export.md)), at `/api/rooms/<room>/memo.html` and `.pdf`.
+- **We need:** a link to it from the readout page (one line). Each principal's own copy to steer is not built.
+
+### What would unblock the most
+
+1. **Your pick of companies** unblocks steps 1, 2 and 4.
+2. **An Anthropic key on the demo laptop** turns the model's gaps into readings.
+3. **Owners for steps 5 and 6.** Everything there is unassigned; Kimmy's expert knowledge feeds step 5.
+
 ## Notes
 
 - Data room will need to send requests for more data
