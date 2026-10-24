@@ -19,7 +19,7 @@ The demo path follows the [demo workflow](diagrams/demo_workflow.md), step by st
 | # | Slice | What is left to build | Who | Waits on |
 |---|---|---|---|---|
 | | **1 and 2. Before the data room: pick a YC company, run our own research.** Benjamin's; [brief](../features/20261024.01_pre_room_diligence/00_brief.md) | | | |
-| 1 | [company-setup](roadmap/company-setup.md) (not started) | Pick a company from the saved YC Spring 2026 list, set it up, and kick off the research that needs no data room; its first readout comes before any room | Benjamin | nothing to start; cached-data and Ken's keys for real results |
+| 1 | [company-setup](roadmap/company-setup.md) (not started) | Feed in a company by URL, set it up from the saved YC Spring 2026 list, and kick off the research that needs no data room; its first readout comes before any room | Benjamin | nothing to start; cached-data and Ken's keys for real results |
 | 2 | [cached-data](roadmap/cached-data.md) (not started) | Save every outside call under `cache/` so the demo runs without the network | Benjamin | Ken's keys |
 | 3 | [outside-in](roadmap/outside-in.md) (not started) | The outside-world tabs for the real company's live beat: website, Hacker News, App Store, SEC filings | Benjamin | Ken's pick of YC companies (yc-rooms), Ken's keys |
 | 4 | [founder-profiles](roadmap/founder-profiles.md) (not started) | A card per founder from GitHub, personal sites and talks | Benjamin | cached-data for the demo run |

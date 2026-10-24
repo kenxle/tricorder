@@ -13,17 +13,25 @@ The [demo workflow](../../ongoing/diagrams/demo_workflow.md) starts before any d
 
 ## Problem
 
-There is no way in the app to start diligence from a company. The first half of the demo has no screens.
+The associate's first pass starts before any data room, and they do it by hand.
+
+- **They research the company before the room opens.** An associate at a seed fund opens ten browser tabs first: traffic, reviews, investors, co-founder issues, and whether the story matches what is online ([the associate persona](../../ongoing/PERSONAS.md#the-associate-who-spends-days-gathering), quoting [Startups Magazine, Jan 2026](https://startupsmagazine.co.uk/how-to-build-a-data-room-that-closes-the-deal)).
+- **Getting the information is the slowest part of diligence.** Investors name market research and chasing documents that have not arrived, not the writing ([research gaps, "Which part is slowest"](../../reports/20261022.02_research/research_gaps.md#which-part-is-slowest)). One investor: "The information I need isn't usually there, leading to back-and-forth emails with founders." ([syndicate lead, Aug 2024](https://elitegamedevelopers.substack.com/p/the-essential-startup-data-room-key))
+- **The volume makes it worse.** The same associate reviews about 500 decks a year and goes deep on about 15 ([the associate persona](../../ongoing/PERSONAS.md#the-associate-who-spends-days-gathering)).
+
+Tricorder today helps only after a room exists. It cannot do the ten tabs, and it cannot draft the first request for documents, so the associate still does the slowest part alone.
 
 ## Desired outcome
 
-In a few clicks on stage, the associate goes from the YC list to a first readout on a real company, built from public sources with every claim sourced, and a drafted request for the data room that they can edit.
+In a few clicks on stage, the associate goes from a company's URL to a first readout on a real company, built from public sources with every claim sourced, and a drafted request for the data room that they can edit.
 
 The screens, in order:
 
-1. **The list.** YC Spring 2026 companies: name, one-line pitch, industry, team size. Search and filter. The researched six are marked.
-2. **Set up the company.** Name, website, founders, batch, each with where it came from. The associate can correct a field, then starts the research.
+1. **Start from a URL.** The associate has Tricorder open in a browser and feeds in a company by its URL: its website, or its YC company page. Tricorder resolves the company (by domain or YC slug, against the saved YC Spring 2026 list) and goes to setup. A URL in the address bar works too, so a link can open a company directly. There is no list screen (Ken, 12:02 PM: "i wil have this open in a browser and i will feed in a company by browser URL").
+2. **Set up the company, automatically.** Dropping in the URL sets the company up and starts the research, with no extra click (Ken, 12:02 PM: "just drop in a url and it does this automatically"). The name, website, founders and batch show at the top of the readout, each with where it came from, and the associate can still correct one.
+   In the prototype the setup is stubbed too: the URL matches against the saved list in the page itself. Benjamin builds the back end (Ken, 12:02 PM: "stub this out as well, and let ben do the back end").
 3. **The first readout, before any room.** The research fills in by section, each failing alone: the outside world (website, Hacker News, App Store, SEC filings), the founders, comps and market signals. Every claim shows its source. What only a data room can answer shows as gaps.
+   In the prototype this research is faked: real saved facts where we have them, placeholders elsewhere. Benjamin builds the real research (Ken, 12:02 PM: "fake this and we'll ask benjamin to do it"; [pre-room brief](../20261024.01_pre_room_diligence/00_brief.md)).
 4. **The data-room request.** The gaps and the stage's standard first-tier documents as a checked list. The associate unchecks, checks and adds items, and sees the drafted message with guidance per document.
 
 Then the flow joins what is built: the room comes back, and the readout shows red and green flags.
@@ -41,7 +49,7 @@ Then the flow joins what is built: the room comes back, and the readout shows re
 
 - **Which companies.** The prototype uses Ploy and Sazabi, the research's picks, until Ken chooses ([research_demo_companies.md](../../reports/20261022.02_research/research_demo_companies.md)).
 - **One page or steps.** The prototype shows the four screens as steps with a back link; one long page is the alternative.
-- **Live or instant.** On stage, does the research appear to run section by section, or is it simply there? The prototype shows sections filling in, with a setting to show them at once.
+- **Live or instant: settled.** Data shows as it arrives, section by section (Ken, 12:03 PM: "we should show data as it appears, dynamically"). The prototype fakes the arrival; Benjamin builds the real streaming.
 
 ## Product thinking
 
