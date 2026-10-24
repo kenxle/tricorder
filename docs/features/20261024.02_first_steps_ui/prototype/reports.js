@@ -134,7 +134,7 @@
       ${X.reportChart(rep)}
       <div class="x-report-body">${rep.paras.map((p) => `<p><strong>${esc(p.lead)}</strong> ${esc(p.body)} <span class="x-refs">${p.refs.map(ref).join("")}</span></p>`).join("")}
         <h3 class="x-sub">What to ask</h3><ul class="x-asks">${rep.asks.map((a) => `<li>${esc(a)}</li>`).join("")}</ul>
-        <details class="x-report-ev"><summary>Evidence (${order.length})</summary><ol class="x-evlist">${order.map((id) => `<li class="x-claim">${X.claimBody(room.claims[id])}</li>`).join("")}</ol></details>
+        <details class="x-report-ev"><summary>Evidence (${order.length})</summary><ol class="x-evlist">${order.map((id) => `<li class="x-claim">${X.claimBody(room.claims[id])}<div class="x-pickrow">${X.pick(`room:${id}`)}</div></li>`).join("")}</ol></details>
       </div></section>`;
   };
 

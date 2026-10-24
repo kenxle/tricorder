@@ -76,7 +76,8 @@
     const st = X.st();
     const ev = evidence(room);
     const company = X.company();
-    const flags = X.orderFlags([...room.top_flags.green, ...room.top_flags.red]);
+    // Only what the associate picked reaches the memo (memo_picks.js): flags and insights are in unless taken out.
+    const flags = X.orderFlags([...room.top_flags.green, ...room.top_flags.red]).filter((f) => X.picked(`flag:${f.claim_id}`));
     const headline = flags.filter((f) => X.weight(f) === "headline");
     const reds = flags.filter((f) => X.weight(f) === "big");
     const small = flags.filter((f) => X.weight(f) === "small");
@@ -96,6 +97,14 @@
     const history = room.memo_company.split(". ").slice(1).join(". ");
     P(s1, { kind: "history", lead: "", body: history, refs: [ev.source(room.round.source, `The round on the deck: ${room.round.raise} at ${room.round.pre_money} pre-money.`), ...refs(["lc-1", "lc-2"])].filter(Boolean) });
     secs.push(s1);
+
+    // The outside research the associate kept: the first readout's insights, and any evidence row they put in.
+    const insights = ((window.TC_INSIGHTS || {})[T.S.research.slug] || []).map((ins, i) => ({ ins, i })).filter(({ i }) => X.picked(`insight:${i}`));
+    if (insights.length) {
+      const so = { key: "outside", title: "What the outside research shows", paras: [] };
+      insights.forEach(({ ins }) => P(so, { kind: "insight", lead: ins.title, body: ins.text, refs: ins.refs.map((r) => ev.research(r)).filter(Boolean) }));
+      secs.push(so);
+    }
 
     // The investment case
     const op = st.op;
@@ -128,6 +137,18 @@
     room.pieces.filter((p) => (p.verdict === "looking_weak" || p.verdict === "mixed") && !weakCovered.has(p.name))
       .forEach((p) => P(s4, { kind: "piece", lead: `${p.label}${p.verdict === "mixed" ? ", mixed" : ""}.`, body: reasonOf(p) + steerNotes(p.name), refs: refs(p.claim_ids), piece: p.name }));
     secs.push(s4);
+
+    // Evidence the associate put in by hand: first-readout rows and the room's own claims.
+    const numbered = X.researchNumbered();
+    const hand = [
+      ...numbered.map((c, i) => ({ c, key: `claim:${i + 1}` })).filter((x) => X.picked(x.key)).map((x) => ({ text: x.c.text, ref: ev.research(x.c.text.slice(0, 60)) })),
+      ...Object.keys(room.claims).filter((id) => X.picked(`room:${id}`)).map((id) => ({ text: room.claims[id].text, ref: ev.room(id) })),
+    ];
+    if (hand.length) {
+      const sh = { key: "picked", title: "Evidence the associate added", paras: [] };
+      hand.forEach((h) => P(sh, { kind: "picked", lead: "", body: h.text, refs: [h.ref].filter(Boolean) }));
+      secs.push(sh);
+    }
 
     // The reports, read through Kimmy's expert knowledge, each with its chart.
     (room.reports || []).forEach((rep) => {
@@ -163,7 +184,7 @@
     const st = X.st();
     const nums = p.refs.map((k) => built.ev.map.get(k)).filter(Boolean);
     const refsHtml = nums.length ? ` <span class="x-refs">${nums.map((e) => `<button type="button" class="x-ev" data-ev="${esc(e.key)}" data-para="${p.id}" aria-label="Evidence ${e.n}">${e.n}</button>`).join("")}</span>` : "";
-    const flagCards = p.flag ? X.flagCard(room, p.flag, { noAsk: true }) : p.flags ? `<ul class="x-smallflags">${p.flags.map((f) => X.smallFlag(room, f)).join("")}</ul>` : "";
+    const flagCards = p.flag ? X.flagCard(room, p.flag, { noAsk: true, noPick: true }) : p.flags ? `<ul class="x-smallflags">${p.flags.map((f) => X.smallFlag(room, f, { noPick: true })).join("")}</ul>` : "";
     const evList = nums.length ? `<ol class="x-evlist">${nums.map((e) => `<li class="x-claim" id="ev-${p.id}-${e.n}" value="${e.n}">${e.html}</li>`).join("")}</ol>` : "";
     const hasEv = !!(flagCards || evList);
     const v = st.views[p.id];

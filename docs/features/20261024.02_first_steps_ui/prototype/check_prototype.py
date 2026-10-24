@@ -210,8 +210,8 @@ with sync_playwright() as p:
         # Step 7: the associate's memo, a document in prose
         pg.click("#to-memo")
         pg.wait_for_selector(".x-doc")
-        secs = pg.eval_on_selector_all(".x-doc .x-memo-sec", "els => els.map(e => e.getAttribute('aria-label'))")
-        check(secs == ["What the company does", "The investment case", "What is strong", "What is weak, and why", "Traction and revenue", "Burn and runway",
+        secs = [x for x in pg.eval_on_selector_all(".x-doc .x-memo-sec", "els => els.map(e => e.getAttribute('aria-label'))") if x != "Evidence the associate added"]
+        check(secs == ["What the company does", "What the outside research shows", "The investment case", "What is strong", "What is weak, and why", "Traction and revenue", "Burn and runway",
                        "What is still unknown, and what was asked", "Recommendation"],
               f"the memo reads top to bottom as a document ({secs})")
         check(pg.locator(".x-doc .x-chart .main-svg").count() >= 2 and pg.locator(".x-doc .x-kimmy").count() == 2,
@@ -271,6 +271,21 @@ with sync_playwright() as p:
             check(pg.locator(".x-report").count() == 2 and pg.locator(".x-report .x-kimmy").count() == 2 and "knowledge/burn_and_runway.md" in pg.locator(".x-report").nth(1).inner_text(),
                   "full: traction and burn reports, each read with Kimmy's knowledge file")
             check(pg.evaluate("[...document.querySelectorAll('.x-report .x-chart')].every(e => e.querySelector('.main-svg'))"), "full: each report draws its interactive chart, offline")
+            pg.evaluate("TC_MEMO.reset()")
+            check(pg.locator(".x-flag .memo-pick[aria-checked='true']").count() == pg.locator(".x-flag").count() and pg.locator(".x-insight .memo-pick[aria-checked='true']").count() >= 1
+                  and pg.locator(".x-roomview .x-claim .memo-pick[aria-checked='false']").count() >= 1 and pg.locator(".x-report .x-evlist .memo-pick").count() >= 1,
+                  "full: every flag, insight and claim has an In memo toggle; flags and insights in, plain evidence out")
+            red = pg.locator(".x-flag[data-flag='red'] .tc-card-title").first.inner_text()
+            pg.locator(".x-flag[data-flag='red'] .memo-pick").first.click()
+            pg.locator(".x-report").first.locator("summary").click()
+            pg.locator(".x-report .x-evlist .memo-pick").first.click()
+            pg.evaluate("location.hash = 'memo'")
+            pg.wait_for_selector(".x-doc")
+            check(red not in pg.locator(".x-doc").inner_text() and pg.locator("section[aria-label='Evidence the associate added'] .x-para").count() == 1,
+                  "the memo keeps only what is picked: a flag taken out is gone, a claim put in appears")
+            pg.evaluate("TC_MEMO.reset()")
+            pg.goto(BASE + f"?company=https://ploy.ai&room={state}")
+            pg.wait_for_selector(f".x-roomview[data-room-state='{state}']")
         else:
             check(pg.locator(".x-report .tc-label--gap").count() >= 1, "partial: a report waiting on its file says so")
         check(pg.locator(".x-roomsays .tc-mark--strong").count() >= 3, f"{state}: pre-room claims show as confirmed by the room")
@@ -330,7 +345,7 @@ with sync_playwright() as p:
 
     pg.click("#to-memo")
     pg.wait_for_selector(".x-doc")
-    check(pg.locator(".x-doc .x-memo-sec").count() == 8 and "Seed" in pg.locator(".x-memohead").inner_text(), "Sazabi step 7: the memo reads as a document, the seed in its header")
+    check(pg.locator(".x-doc .x-memo-sec:not([aria-label='Evidence the associate added'])").count() == 9 and "Seed" in pg.locator(".x-memohead").inner_text(), "Sazabi step 7: the memo reads as a document, the seed in its header")
     pg.locator("[data-evtoggle]").first.click()
     check(pg.locator(".x-para-ev:not([hidden]) .x-claim").count() >= 1, "Sazabi step 7: one click opens a paragraph's evidence in place")
     pg.screenshot(path=str(SHOTS / "7b_make_the_memo_sazabi.png"), full_page=True)
