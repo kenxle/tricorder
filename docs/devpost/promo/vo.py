@@ -7,15 +7,15 @@ import json, os, subprocess, sys, urllib.request
 
 # (name, start second, max length in seconds, API speed, text). Text is verbatim from SHOT_LIST.md.
 LINES = [
-    ("vo1", 0.30, 4.40, 1.10, "Before an associate opens a data room, they already have ten tabs open."),
-    ("vo2", 5.20, 4.50, 1.05, "Days go to gathering, before any thinking starts."),
-    ("vo3", 10.30, 5.00, 1.10, "And when the deck, the model and the books disagree, it damages the deal."),
-    ("vo4", 15.80, 3.20, 1.10, "Tricorder starts from a company's website."),
-    ("vo5", 19.50, 5.00, 1.10, "It reads public sources and writes a first readout. Every point names its source."),
-    ("vo6", 25.00, 3.40, 1.10, "Then it drafts the data room request."),
-    ("vo7", 29.00, 6.00, 1.12, "When the room comes in, red and green flags lead: what the founder stated, beside what the room shows."),
-    ("vo8", 35.80, 4.20, 1.10, "The partner reads an interactive memo, and can ask it questions."),
-    ("vo9", 41.00, 3.20, 1.00, "Point it at a startup, get a readout."),
+    ("vo1", 0.30, 4.75, 1.10, "Before an associate opens a data room, they already have ten tabs open."),
+    ("vo2", 5.70, 4.00, 1.05, "Days go to gathering, before any thinking starts."),
+    ("vo3", 10.50, 5.60, 1.10, "And when the deck, the model and the books disagree, it damages the deal."),
+    ("vo4", 16.60, 2.80, 1.10, "Tricorder starts from a company's website."),
+    ("vo5", 19.80, 5.50, 1.10, "It reads public sources and writes a first readout. Every point names its source."),
+    ("vo6", 25.60, 2.60, 1.10, "Then it drafts the data room request."),
+    ("vo7", 28.80, 6.20, 1.12, "When the room comes in, red and green flags lead: what the founder stated, beside what the room shows."),
+    ("vo8", 35.60, 4.00, 1.10, "The partner reads an interactive memo, and can ask it questions."),
+    ("vo9", 40.90, 2.80, 1.00, "Point it at a startup, get a readout."),
 ]
 INSTR = ("Calm, plain, confident narrator for a short product film about investment research software. "
          "Even pacing with no long pauses. American accent. No hype, no sales voice.")
