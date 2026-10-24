@@ -2,7 +2,26 @@
 
 **What this is:** Ken's working page for the hackathon. The top holds what needs Ken now. Comment on any item, and Claude answers on the page and updates the work. Hacking ends at **4:30 PM**, the demo freezes at **3:30 PM**, and judging runs 4:30 to 6:00.
 
-**Last updated:** 2026-10-24 11:08, from the [board](BULLETIN.md) through Ken's 11:05 post and the [roadmap](ongoing/ROADMAP.md).
+**Last updated:** 2026-10-24 11:50, from the [board](BULLETIN.md), the commits since 10:00 and the [roadmap](ongoing/ROADMAP.md).
+
+## Status at 11:50
+
+**The demo you can show today is the data-room half: Hollis Voice and Brasswick, with red and green flags, steering and the memo. The half before the data room is not built yet.** By the [demo workflow](ongoing/diagrams/demo_workflow.md):
+
+- **Steps 1 and 2, the YC list and our own research: not started.** Benjamin has the [brief](features/20261024.01_pre_room_diligence/00_brief.md) since 11:34. The list of 193 YC Spring 2026 companies and six companies' saved public data are ready for it.
+- **Step 3, asking for the data room: half built.** Drafting the request to the founder works. Room-requests (the automatic check and the associate's editable list) is Benjamin's, not started.
+- **Step 5, red and green flags: mostly built.** Deck against the books, accounting mislabels and contract terms are done. The red-flag engine still lacks several planted-flag checks. Pitch video not started.
+- **Steps 6 to 8, steering and the memo: mostly built.** Steering, the readout store and the memo (page and PDF) are done. The readout page still lacks the claims and cohort panels and the memo link.
+
+**The team, from the board:**
+
+- **Benjamin** has moved the repo to a TypeScript workspace (pnpm and Turbo, `apps/web`, `apps/api`, `packages/schema`; 11:36 to 11:38). The Python API still runs the scans. His board post says his RPC and mobile work is not committed yet. Not started: the pre-room brief, room-requests, tasks for Tirth.
+- **Kimmy** and **Tirth**: nothing on the board yet. Their agents set them up on first run; they need GitHub invites if they lack them.
+- **Roles with no person:** the red-flag engine (design-and-finance), the readout (captain), pitch video and contract reading (backend-and-data).
+
+**Counts** from [status_counts.py](ongoing/roadmap/status_counts.py): 13 slices done, 10 partly built, 29 not started, 5 waiting on you.
+
+**To look at the demo flow now:** the [demo workflow](ongoing/diagrams/demo_workflow.md) and [DEMO.md](ongoing/DEMO.md). Claude is setting up this laptop to run the app so you can click through it.
 
 ## Notes
 
