@@ -217,3 +217,8 @@ span.x-mline-text { cursor: default; text-decoration: none; }
 .x-flaghead-right { display: inline-flex; gap: var(--tc-space-3); align-items: center; flex-wrap: wrap; }
 .x-pickrow { margin-top: var(--tc-space-2); }
 .x-insight .tc-card-foot { margin-top: auto; padding-top: var(--tc-space-3); }
+
+/* The completed room leads with the expert analyses (Ken, 3:20 PM). */
+.x-kimmy { display: flex; flex-wrap: wrap; gap: var(--tc-space-2) var(--tc-space-3); align-items: center; }
+.x-kimmy a { color: var(--tc-ink-2); min-height: var(--tc-hit); display: inline-flex; align-items: center; }
+.x-roomview > .actions:first-of-type { margin: var(--tc-space-3) 0 0; }

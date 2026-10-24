@@ -588,7 +588,16 @@ def checklist() -> list[dict]:
     return out
 
 
+def copy_knowledge() -> None:
+    """Copy Kimmy's expert knowledge files beside the page, so each report can link the file it was read with."""
+    out = HERE / "knowledge"
+    out.mkdir(exist_ok=True)
+    for f in sorted((ROOT / "knowledge").glob("*.md")):
+        (out / f.name).write_text(f.read_text())
+
+
 def main() -> None:
+    copy_knowledge()
     companies = load_companies()
     founders = {}
     for c in companies:

@@ -262,6 +262,10 @@ with sync_playwright() as p:
             pg.wait_for_function("document.querySelectorAll('.x-report .x-chart .main-svg').length >= 2")
             check(pg.locator(".x-report").count() == 2 and pg.locator(".x-report .x-kimmy").count() == 2 and "knowledge/burn_and_runway.md" in pg.locator(".x-report").nth(1).inner_text(),
                   "full: traction and burn reports, each read with Kimmy's knowledge file")
+            check(pg.evaluate("(() => { const a = document.querySelector('.x-analyses'), f = document.querySelector('.x-roomview .x-flag'); return !!a && !!f && !!(a.compareDocumentPosition(f) & Node.DOCUMENT_POSITION_FOLLOWING); })()")
+                  and pg.locator(".x-kimmy a[href='knowledge/traction_and_revenue.md']").count() == 1 and pg.request.get(BASE.replace("index.html", "knowledge/traction_and_revenue.md")).ok,
+                  "full: the expert analyses lead, ahead of the flags, and each links its knowledge file")
+            check(pg.locator("#finalize-top").count() == 1, "full: Finalize the memo sits at the top of the completed room")
             check(pg.evaluate("[...document.querySelectorAll('.x-report .x-chart')].every(e => e.querySelector('.main-svg'))"), "full: each report draws its interactive chart, offline")
             pg.evaluate("TC_MEMO.reset()")
             check(pg.locator(".x-flag .memo-pick[aria-checked='true']").count() == pg.locator(".x-flag").count() and pg.locator(".x-insight .memo-pick[aria-checked='true']").count() >= 1
