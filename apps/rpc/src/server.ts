@@ -11,6 +11,7 @@ export interface RPCServerOptions {
   fetch?: typeof globalThis.fetch;
   requestUIPatches?: RequestUIPatchSource;
   companyData?: () => SavedCompanyData;
+  companyRoomData?: () => unknown;
 }
 
 function localHost(host: string | undefined): boolean {
@@ -59,11 +60,11 @@ export function createRPCServer(options: RPCServerOptions) {
         return;
       }
       if (
-        ["/company/readout", "/company/section"].includes(
+        ["/company/readout", "/company/section", "/company/room"].includes(
           req.url?.split("?")[0] ?? ""
         )
       ) {
-        serveCompany(req, res, options.companyData);
+        serveCompany(req, res, options.companyData, options.companyRoomData);
         return;
       }
       next();

@@ -3,6 +3,7 @@ import type {
   CompanySectionKey,
   CompanySectionResponse,
 } from "@tricorder/schema/company";
+import type { CompanyRoomArrival } from "@tricorder/schema/company-room";
 
 import { serverOrigin } from "../readout/api";
 
@@ -50,5 +51,15 @@ export const getCompanySection = (
 ) =>
   companyRequest<CompanySectionResponse>(
     `/api/company/section?${new URLSearchParams({ company, section }).toString()}`,
+    signal
+  );
+
+export const getCompanyRoom = (
+  company: string,
+  stage: "partial" | "full",
+  signal?: AbortSignal
+) =>
+  companyRequest<CompanyRoomArrival>(
+    `/api/company/room?${new URLSearchParams({ company, stage }).toString()}`,
     signal
   );

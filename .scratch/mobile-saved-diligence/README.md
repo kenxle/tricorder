@@ -8,7 +8,7 @@ An associate opens saved public research from a company URL, prepares a request,
 
 Benjamin explicitly selected saved public research and synthetic rooms for the first milestone. Fresh research for unfamiliar URLs is outside this milestone.
 
-**Open implementation decision:** the breakdown proposes replaying saved, contract-valid room results through the application API. Benjamin has not separately answered whether actual synthetic-file ingestion and engine reruns are required. Ticket 03 records this assumption. Resolve it before implementing that ticket; if ingestion is required, revise its scope and dependencies rather than claiming replay proves ingestion.
+**Room implementation boundary:** following Benjamin's instruction to do the remaining ticket 03 work, this milestone uses saved, contract-valid room replay through the application API. Real server ingestion is independently verified for existing rooms; Ploy/Sazabi lack analyzable source files and an ingestion mapping. Replay must not be presented as ingestion or a fresh analysis run.
 
 ## Tickets and frontier
 
@@ -20,7 +20,7 @@ Benjamin explicitly selected saved public research and synthetic rooms for the f
 | [04: Close requests against received evidence](issues/04-reconcile-received-evidence.md) | 02, 03 | Answered requests, outstanding requests and founder questions |
 | [05: Read the company's saved memo on mobile](issues/05-saved-memo-reader.md) | 03 | Versioned memo with line-to-claim-to-source navigation |
 
-Ticket 01 is implemented and verified locally, with the user-approved company carousel retained; see [its handoff](ticket01-handoff.md). Changes remain uncommitted. Tickets 02 and 03 can proceed independently, subject to the open room decision. Ticket 05 need not wait for 04 or steering. `ready-for-agent` describes ticket readiness; it does not override blocking edges or an explicitly recorded open decision. Tickets 02 through 05 remain unfinished.
+Ticket 01 is implemented and verified locally, with the user-approved company carousel retained; see [its handoff](ticket01-handoff.md). Changes remain uncommitted. Ticket 03 is in progress using saved replay; ticket 02 can proceed independently. Ticket 05 need not wait for 04 or steering. `ready-for-agent` describes ticket readiness; it does not override blocking edges or an explicitly recorded open decision. Tickets 02 through 05 remain unfinished.
 
 ## Contract and verification boundaries
 

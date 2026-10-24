@@ -25,6 +25,7 @@ import { getCompanyReadout, getCompanySection } from "./api";
 import { CitedText } from "./cited-text";
 import { CompanyCarousel } from "./company-carousel";
 import { safeWebUrl } from "./model";
+import { CompanyRoomArrivals } from "./room-arrival";
 import { SavedRequest } from "./saved-request";
 
 const styles = StyleSheet.create({
@@ -402,6 +403,10 @@ const WorkingPage = ({ readout }: { readout: CompanyReadout }) => {
           />
         ))}
       </View>
+      <CompanyRoomArrivals
+        key={readout.company.slug}
+        company={readout.company}
+      />
       {readout.sections.map((section) => (
         <IndependentSection
           key={section.key}

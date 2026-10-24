@@ -23,6 +23,11 @@ test("company proxy accepts only exact routes and bounded, unambiguous queries",
     "/api/company/section?company=ploy&section=founders&url=elsewhere",
     "/api/company/section?company=..&section=founders",
     "/api/company/section?company=ploy%2Foutside&section=founders",
+    "/api/company/room?company=ploy",
+    "/api/company/room?company=ploy&stage=full&stage=partial",
+    "/api/company/room?company=ploy&stage=latest",
+    "/api/company/room?company=../ploy&stage=full",
+    "/api/company/room?company=ploy&stage=full&url=https://example.com",
     `/api/company/section?company=${"x".repeat(101)}&section=founders`,
   ];
   await Promise.all(
@@ -155,4 +160,30 @@ test("company proxy propagates cancellation and reports connection failures", as
   assert.equal(unavailable.status, 502);
   const body = await unavailable.json();
   assert.match(body.detail, /local RPC server is unavailable/u);
+});
+
+test("room replay forwards only a fixed local GET without changing server state", async () => {
+  await Promise.all(
+    ["partial", "full"].map(async (stage) => {
+      const request = new Request(
+        `${origin}/api/company/room?company=sazabi&stage=${stage}`
+      );
+      const response = await proxyCompany(
+        request,
+        "http://127.0.0.1:8789",
+        (target, options) => {
+          assert.equal(
+            String(target),
+            `http://127.0.0.1:8789/company/room?company=sazabi&stage=${stage}`
+          );
+          assert.equal(options.method, "GET");
+          assert.equal(options.redirect, "error");
+          return Response.json({ provenance: "saved-synthetic-replay", stage });
+        }
+      );
+      assert.equal(response.status, 200);
+      const body = await response.json();
+      assert.equal(body.stage, stage);
+    })
+  );
 });

@@ -50,6 +50,16 @@ const validQuery = (url: URL) => {
     );
   }
   const company = url.searchParams.get("company");
+  if (url.pathname === "/api/company/room") {
+    const stage = url.searchParams.get("stage");
+    return (
+      entries.length === 2 &&
+      company !== null &&
+      /^[a-z0-9][a-z0-9-]{0,99}$/u.test(company) &&
+      stage !== null &&
+      ["partial", "full"].includes(stage)
+    );
+  }
   const section = url.searchParams.get("section");
   return (
     entries.length === 2 &&
@@ -74,7 +84,11 @@ export const proxyCompany = async (
     return fail(405, "Saved company readouts support GET only.");
   }
   if (
-    !["/api/company/readout", "/api/company/section"].includes(url.pathname)
+    ![
+      "/api/company/readout",
+      "/api/company/section",
+      "/api/company/room",
+    ].includes(url.pathname)
   ) {
     return fail(404, "Unknown company endpoint.");
   }
