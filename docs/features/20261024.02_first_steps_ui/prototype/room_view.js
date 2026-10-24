@@ -83,8 +83,9 @@
     const s = st(state);
     const flags = X.flagsHtml(r, flagsOf(state));
     const waiting = s.waiting.map((w) => `<article class="tc-card x-waiting" data-waiting="${esc(w.piece)}">
-        <div class="tc-card-head"><span class="tc-label tc-label--gap">Waiting on ${esc(w.files.map(short).join(", "))}</span><span class="tc-meta">${esc(X.pieceOf(r, w.piece).label)}</span></div>
-        <h3 class="tc-card-title">${esc(w.title)}</h3><p>${esc(w.text)}</p>
+        <div class="tc-card-head"><span class="tc-label tc-label--gap">Waiting on ${esc(w.files.map(short).join(", "))}</span></div>
+        <h3 class="tc-card-title x-card-title">${esc(X.pieceOf(r, w.piece).label)}</h3>
+        <p class="x-card-sub">${esc(X.subtitle(w.title))}</p><p>${esc(w.text)}</p>
         <div class="tc-card-foot">${w.requests.map((id) => `<span class="tc-mark tc-mark--running">Open request: ${esc(title(id))}</span>`).join(" ")}</div></article>`).join("");
     const insights = ((window.TC_INSIGHTS || {})[window.TC.S.research.slug] || []);
     const MARK = { strong: ["tc-mark--strong", "Looking strong"], weak: ["tc-mark--weak", "Looking weak"], mixed: ["tc-mark--mixed", "Mixed"], thin: ["tc-mark--thin", "Not enough yet"] };

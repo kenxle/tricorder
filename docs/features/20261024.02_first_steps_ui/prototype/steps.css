@@ -142,3 +142,5 @@ span.x-mline-text { cursor: default; text-decoration: none; }
 .x-smallflag { display: flex; flex-wrap: wrap; gap: var(--tc-space-2) var(--tc-space-3); align-items: center; padding: var(--tc-space-3) 0; border-bottom: var(--tc-hair) solid var(--tc-rule); font-size: 15px; }
 .x-small-title { color: var(--tc-ink-2); }
 .x-smallflag .tc-chips { flex: 1 0 100%; }
+.x-card-title { margin-bottom: var(--tc-space-1) !important; }
+.x-card-sub { font-size: 16px; color: var(--tc-ink); margin: 0 0 var(--tc-space-2); }
