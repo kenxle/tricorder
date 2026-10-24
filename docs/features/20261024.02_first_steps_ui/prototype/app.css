@@ -1,4 +1,4 @@
-/* The prototype's look: the shared Tricorder style (style/tricorder.css, a link to docs/ongoing/style/)
+/* The prototype's look: the shared Tricorder style (tc_style/tricorder.css, a copy of docs/ongoing/style/ made because Lahe does not follow symlinks)
    plus the layout of these four screens. Every colour, size, radius and font here is a token from that file.
    The rules are in docs/ongoing/STYLE_GUIDE.md. Product screens stay quiet: no raised surfaces, no dark hero. */
 
