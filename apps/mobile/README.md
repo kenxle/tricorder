@@ -6,7 +6,8 @@ Run from the repository root:
 
 ```sh
 pnpm install --frozen-lockfile
-pnpm dev:mobile                         # Localhost Metro, with Turbo terminal UI
+pnpm dev:mobile                         # Simulator: localhost Metro, with Turbo terminal UI
+pnpm dev:mobile:device                  # Physical iPhone on its Personal Hotspot
 pnpm dev                                # API, tRPC, Vite and Metro together
 pnpm --filter @tricorder/mobile ios      # Open the iOS Simulator
 pnpm --filter @tricorder/mobile android  # Open an Android emulator
@@ -27,7 +28,7 @@ pnpm dev:mobile
 
 The Expo API route forwards only the readout's existing endpoints to `http://127.0.0.1:8787`. Contracts come from `@tricorder/schema` and `@tricorder/schema/api`; the app does not import web or backend code. The adapter checks Host, Origin/Referer and content type. Both services must bind to loopback: mobile launch scripts pass `--localhost` and use Node’s `--dns-result-order=ipv4first` so the listener matches Expo’s advertised `127.0.0.1` bundle URL even when macOS resolves localhost to `::1` first. Do not start this adapter with `--lan` or `--tunnel`, or deploy it on a public listener. There is no remote user authentication. Python's existing localhost guard is unchanged.
 
-Expo web uses same-origin `/api` requests. Native development uses localhost and the Metro port from its manifest. The iOS Simulator shares the Mac's localhost. The Android launch command sets up adb reverse for Metro; if starting the app manually, use `adb reverse tcp:8081 tcp:8081` first. A physical device needs a trusted loopback port forward to the Mac for both the bundle and API requests; Wi-Fi access to Metro is deliberately disabled. Installing a development build on an iPhone alone does not establish that connection.
+Expo web uses same-origin `/api` requests. Native development uses localhost and the Metro port from its manifest. The iOS Simulator shares the Mac's localhost. The Android launch command sets up adb reverse for Metro; if starting the app manually, use `adb reverse tcp:8081 tcp:8081` first. For a physical iPhone, use the phone-only forwarding command below for both bundles and API requests. Installing a development build alone does not establish that connection.
 
 For a different backend port, set `TRICORDER_API_URL=http://127.0.0.1:<port>` in `apps/mobile/.env.local`. For a different native Expo server/forwarded address, set `EXPO_PUBLIC_API_URL=http://localhost:<port>` there. This value points to Expo, not directly to Python. Restart Metro after changing environment files. Release bundles require this explicit server URL and a running, locally bound Expo server; no hosted deployment or production authentication is provided.
 
@@ -36,6 +37,27 @@ Clipboard uses `expo-clipboard`, mail actions open an editable composer and neve
 ```sh
 pnpm --filter @tricorder/mobile test     # Adapter boundary tests
 ```
+
+## Physical iPhone connection
+
+`127.0.0.1` in a QR code points to the iPhone itself, not this Mac. Keep `pnpm dev:mobile` for the simulator. For a physical phone:
+
+1. Connect this Mac to the iPhone's Personal Hotspot. Keep the installed Tricorder development build on the phone.
+2. Stop the existing Metro terminal with Ctrl+C. Stop any earlier temporary phone proxy on port 8082.
+3. Run `pnpm dev:mobile:device` from the root, or `pnpm dev:device` from `apps/mobile`.
+4. Scan the new QR code with the iPhone. It advertises the Mac's hotspot address, such as `172.20.10.2:8082`, instead of loopback. Allow local network access if iOS asks.
+
+The launcher detects the hotspot's local IPv4 address, keeps Metro on `127.0.0.1:8081`, and exposes a forwarding port only on that hotspot interface. Only the phone's gateway address can connect. It sets both `EXPO_PACKAGER_PROXY_URL` and `EXPO_PUBLIC_API_URL`; Fast Refresh WebSockets use the same forwarder. Ctrl+C stops its Metro and proxy together. The Python API still runs separately for room analysis (`pnpm --filter @tricorder/api dev`).
+
+For a trusted Wi-Fi network instead, specify the actual Mac and phone IPv4 addresses:
+
+```sh
+pnpm dev:mobile:device --host 192.168.1.8 --device 192.168.1.9
+```
+
+These are examples, not fixed addresses. Find the phone's IP in Settings → Wi-Fi → the connected network. Both addresses must be on the same subnet. The forwarder uses the supplied source IP as its development-only access boundary; it is not production authentication. Browser-origin requests are rejected, so test with the native development build, not mobile Safari. Do not use this on an untrusted network or substitute a wildcard listener. Re-run after an address/network change.
+
+Use `--port 8090 --proxy-port 8091` if the defaults are occupied. The launcher refuses to reuse another Metro process so it cannot advertise a bundle with stale API settings. No new native build is needed for this launcher fix.
 
 ## Native development client
 

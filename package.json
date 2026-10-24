@@ -16,7 +16,8 @@
     "check": "ultracite check",
     "fix": "ultracite fix",
     "format": "oxfmt --write .",
-    "format:check": "oxfmt --check ."
+    "format:check": "oxfmt --check .",
+    "dev:mobile:device": "pnpm --filter @tricorder/mobile dev:device"
   },
   "devDependencies": {
     "oxfmt": "^0.71.0",
