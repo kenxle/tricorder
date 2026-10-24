@@ -410,6 +410,7 @@ const WorkingPage = ({ readout }: { readout: CompanyReadout }) => {
       <CompanyRoomArrivals
         key={readout.company.slug}
         company={readout.company}
+        snapshotAt={readout.snapshotAt}
       />
       {readout.sections.map((section) => (
         <IndependentSection

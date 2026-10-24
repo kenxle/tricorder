@@ -20,7 +20,7 @@ Benjamin explicitly selected saved public research and synthetic rooms for the f
 | [04: Close requests against received evidence](issues/04-reconcile-received-evidence.md) | 02, 03 | Answered requests, outstanding requests and founder questions |
 | [05: Read the company's saved memo on mobile](issues/05-saved-memo-reader.md) | 03 | Versioned memo with line-to-claim-to-source navigation |
 
-Ticket 01 is implemented and verified locally, with the user-approved company carousel retained; see [its handoff](ticket01-handoff.md). Changes remain uncommitted. Ticket 03 is in progress using saved replay; ticket 02 can proceed independently. Ticket 05 need not wait for 04 or steering. `ready-for-agent` describes ticket readiness; it does not override blocking edges or an explicitly recorded open decision. Tickets 02 through 05 remain unfinished.
+Ticket 01 is implemented and verified locally, with the user-approved company carousel retained; see [its handoff](ticket01-handoff.md). Changes remain uncommitted. Ticket 03 replay is implemented, with the full native walkthrough outstanding; see [its handoff](ticket03-handoff.md). Ticket 02 can proceed independently. Ticket 05 need not wait for 04 or steering. `ready-for-agent` describes ticket readiness; it does not override blocking edges or an explicitly recorded open decision. Tickets 02, 04 and 05 remain unimplemented; ticket 03 still needs its final native acceptance check.
 
 ## Contract and verification boundaries
 

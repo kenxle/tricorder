@@ -20,22 +20,26 @@ import {
   openRoomArrival,
   receiveRoomArrival,
   restoreRoomState,
+  roomStorageKey,
   stageForSequence,
   validateRoomArrival,
 } from "./room-arrival-state";
 import type { RoomArrivalState, RoomStage } from "./room-arrival-state";
 
 const storage = createMMKV({ id: "tricorder.demo-room-arrivals" });
-const storageKey = (company: string) => `v1:${company}`;
-const readSaved = (company: string) => {
+const readSaved = (company: string, snapshotAt: string) => {
   try {
     return {
-      state: restoreRoomState(company, storage.getString(storageKey(company))),
+      state: restoreRoomState(
+        company,
+        snapshotAt,
+        storage.getString(roomStorageKey(company, snapshotAt))
+      ),
       warning: "",
     };
   } catch {
     return {
-      state: emptyRoomState(company),
+      state: emptyRoomState(company, snapshotAt),
       warning: "Saved room progress could not be restored on this device.",
     };
   }
@@ -191,8 +195,16 @@ const RoomFindings = ({ arrival }: { arrival: CompanyRoomArrival }) => {
 };
 
 type ArrivalCache = Partial<Record<1 | 2, CompanyRoomArrival>>;
-const RoomSession = ({ company }: { company: CompanyIdentity }) => {
-  const initial = useMemo(() => readSaved(company.slug), [company.slug]);
+interface RoomSessionProps {
+  company: CompanyIdentity;
+  snapshotAt: string;
+}
+
+const RoomSession = ({ company, snapshotAt }: RoomSessionProps) => {
+  const initial = useMemo(
+    () => readSaved(company.slug, snapshotAt),
+    [company.slug, snapshotAt]
+  );
   const [progress, setProgress] = useState(initial.state);
   const progressRef = useRef(progress);
   const [cache, setCache] = useState<ArrivalCache>({});
@@ -252,7 +264,10 @@ const RoomSession = ({ company }: { company: CompanyIdentity }) => {
 
   const retain = (next: RoomArrivalState) => {
     try {
-      storage.set(storageKey(company.slug), JSON.stringify(next));
+      storage.set(
+        roomStorageKey(company.slug, snapshotAt),
+        JSON.stringify(next)
+      );
       setWarning("");
     } catch {
       setWarning(
@@ -374,6 +389,11 @@ const RoomSession = ({ company }: { company: CompanyIdentity }) => {
 
 export const CompanyRoomArrivals = ({
   company,
-}: {
-  company: CompanyIdentity;
-}) => <RoomSession key={company.slug} company={company} />;
+  snapshotAt,
+}: RoomSessionProps) => (
+  <RoomSession
+    key={roomStorageKey(company.slug, snapshotAt)}
+    company={company}
+    snapshotAt={snapshotAt}
+  />
+);

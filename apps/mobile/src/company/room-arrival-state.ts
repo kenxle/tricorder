@@ -8,35 +8,45 @@ const savedRoomStateSchema = z
     opened: sequenceSchema,
     received: sequenceSchema,
     roomId: z.string().min(1).nullable(),
-    snapshotAt: z.string().min(1).nullable(),
+    snapshotAt: z.string().min(1),
     version: z.literal(1),
   })
   .refine((state) => state.opened <= state.received)
   .refine((state) =>
-    state.received === 0
-      ? state.roomId === null && state.snapshotAt === null
-      : state.roomId !== null && state.snapshotAt !== null
+    state.received === 0 ? state.roomId === null : state.roomId !== null
   );
 
 export type RoomArrivalState = z.infer<typeof savedRoomStateSchema>;
 export type RoomStage = CompanyRoomArrival["stage"];
 
-export const emptyRoomState = (company: string): RoomArrivalState => ({
+export const roomStorageKey = (company: string, snapshotAt: string) =>
+  `v2:${encodeURIComponent(company)}:${encodeURIComponent(snapshotAt)}`;
+
+export const emptyRoomState = (
+  company: string,
+  snapshotAt: string
+): RoomArrivalState => ({
   company,
   opened: 0,
   received: 0,
   roomId: null,
-  snapshotAt: null,
+  snapshotAt,
   version: 1,
 });
 
-export const restoreRoomState = (company: string, serialized?: string) => {
+export const restoreRoomState = (
+  company: string,
+  snapshotAt: string,
+  serialized?: string
+) => {
   if (!serialized) {
-    return emptyRoomState(company);
+    return emptyRoomState(company, snapshotAt);
   }
   const state = savedRoomStateSchema.parse(JSON.parse(serialized));
-  if (state.company !== company) {
-    throw new Error("The saved arrival belongs to another company.");
+  if (state.company !== company || state.snapshotAt !== snapshotAt) {
+    throw new Error(
+      "The saved arrival belongs to another company or snapshot."
+    );
   }
   return state;
 };
@@ -61,7 +71,7 @@ export const validateRoomArrival = (
     arrival.stage !== stageForSequence(arrival.sequence) ||
     (expectedStage !== undefined && arrival.stage !== expectedStage) ||
     (state.roomId !== null && state.roomId !== arrival.roomId) ||
-    (state.snapshotAt !== null && state.snapshotAt !== arrival.snapshotAt)
+    state.snapshotAt !== arrival.snapshotAt
   ) {
     throw new Error(
       "The saved arrival does not match this company and room snapshot."

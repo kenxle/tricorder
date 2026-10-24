@@ -208,3 +208,24 @@ The saved readout preserves authored-demo provenance, source qualifications and 
 ### Local iPhone diligence annotations
 
 `apps/mobile/src/annotations/` adds a local collaboration overlay to the Expo demo. The Company, Rooms and UX Flow surfaces share three fictional personas and a Zustand store backed by a dedicated MMKV instance. Scoped `Body` prose uses iOS native read-only text selection. Associates explicitly enable selection for linked prose from the toolbar; plain evidence passages remain directly selectable in sheets. Selection mode is transient and resets on persona changes, and finishing a comment restores source links. Annotation sheets capture the selected range before focus changes. Every note retains its original passage, exact quote, author, time and company/room/item identity. Per-evidence/item scopes distinguish repeated labels; inline highlights require the unchanged source text. The GP reviews all local notes and captured passages, with annotation creation rejected by the store. Existing backend controls are independent; annotation actions never call an API. Corrupt restore and failed writes are visible, and failed saves do not append a record. No additional native module is required. See the [feature and verification record](../features/20261024.03_diligence_annotations/README.md) and [data flow](diagrams/diligence_annotations.md).
+
+### Saved synthetic room arrivals
+
+`@tricorder/schema/company-room` defines saved arrivals with explicit company, room, arrival, file and claim identities. RPC GET `/company/room?company=ploy|sazabi&stage=partial|full` validates the prototype room snapshot and returns deterministic replay data. The fixed Expo `/api/company/room` adapter retains the existing local-origin and GET-only guards. No files are uploaded and no scans run on this route.
+
+`company-room.ts` includes a claim only when every referenced synthetic file has arrived, including comparison and corroboration sources. It preserves saved quotations, ordered strengths/red flags/corroborations and remaining gaps. Imported authored calculations remain unverified rather than claiming a new computation. Public sources and synthetic file excerpts retain distinct source kinds.
+
+Mobile `company/room-arrival.tsx` fetches an arrival only on an explicit replay action or restoration of saved progress. Receipt creates a notice; opening it reveals findings on the same company page. MMKV records the highest received/opened sequence separately for each company and snapshot. Duplicate or older arrivals cannot regress state. A new snapshot uses a separate record while preserving previous progress. Failed requests retain the mounted successful findings and expose retry. The evidence sheet repeats the synthetic notice and shows every supporting source passage.
+
+```mermaid
+flowchart TD
+  Action[Replay partial or full arrival] --> Expo[Expo company room adapter]
+  Expo --> RPC[RPC validates saved synthetic result]
+  RPC --> Notice[Pending arrival notice]
+  Notice --> Open[Open arrival on company working page]
+  Open --> Evidence[Inspect saved claim and source passages]
+  Notice --> Progress[MMKV company and snapshot progress]
+  Open --> Progress
+```
+
+Existing real intake remains in Python `founder_requests/intake.py` and the mobile Rooms journey. It writes accepted files into working copies, runs compatible scans, rebuilds readouts and persists receipts. It requires an existing room and supported input names/formats. Ploy/Sazabi replay fixtures are not analyzable source documents and are not mapped into that ingestion path.
