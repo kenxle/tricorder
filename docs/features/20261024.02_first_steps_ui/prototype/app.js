@@ -248,9 +248,9 @@
     app.innerHTML = `${header("readout", ["start", "the company URL"])}
       <h2 id="co-name" class="co-title">${esc(name)}</h2>
       ${setupPanel()}
-      <div class="masthead readout-head"><h2 class="sub-title">First readout, before any data room</h2>
+      <div class="masthead readout-head"><h2 class="sub-title">First readout</h2>
         ${R ? '<button class="link tc-link-btn" id="replay" type="button">Replay the research</button>' : ""}</div>
-      <p class="note">Built from public sources only. Every claim has a source. Items marked placeholder stand in for research the built app will run.</p>
+      <p class="note">Built from public sources.</p>
       ${body}
       <div class="actions"><button class="tc-btn primary" id="to-request" type="button">Draft the data-room request</button></div>`;
     bindSetup();
