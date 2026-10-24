@@ -55,10 +55,11 @@ a.btn { text-decoration: none; }
 .section { border-top: var(--tc-hair) solid var(--tc-rule); padding: var(--tc-space-5) 0; }
 .section h2 { margin: 0 0 var(--tc-space-2); font-size: 20px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; display: flex; gap: var(--tc-space-3); align-items: baseline; flex-wrap: wrap; }
 .part h3 { margin: var(--tc-space-4) 0 var(--tc-space-1); font: 500 12px/1.2 var(--tc-font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--tc-ink-3); }
-.claims { list-style: none; padding: 0; margin: 0; max-width: 80ch; }
-.claim { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding: var(--tc-space-3) 0; border-bottom: var(--tc-hair) solid var(--tc-rule); color: var(--tc-ink-2); }
-.claim:last-child { border-bottom: 0; }
-.claim .claim-text { flex: 1 0 100%; color: var(--tc-ink); }
+.claims { margin: 0 0 var(--tc-space-3); max-width: 100ch; }
+.claims .claim-text { color: var(--tc-ink); }
+.claims .claim-src { width: 1%; white-space: nowrap; text-align: right; }
+.claims th:last-child { text-align: right; }
+.claims tr.panel td { padding-top: 0; }
 .claim.ph .claim-text { color: var(--tc-ink-3); }
 .wait { display: none !important; }
 .arrive { animation: arrive .35s ease-out; }

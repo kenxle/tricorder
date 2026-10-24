@@ -150,10 +150,12 @@
     const b = e.target.closest(".srcchip");
     if (!b) return;
     const open = b.getAttribute("aria-expanded") === "true";
-    const next = b.nextElementSibling;
+    const row = b.closest("tr");
+    const next = row ? row.nextElementSibling : b.nextElementSibling;
     if (open && next && next.classList.contains("panel")) { next.remove(); b.setAttribute("aria-expanded", "false"); return; }
     const c = b.dataset.claim ? JSON.parse(b.dataset.claim) : null;
-    b.insertAdjacentHTML("afterend", sourcePanel(b.dataset.src, c));
+    if (row) row.insertAdjacentHTML("afterend", `<tr class="panel"><td colspan="2">${sourcePanel(b.dataset.src, c)}</td></tr>`);
+    else b.insertAdjacentHTML("afterend", sourcePanel(b.dataset.src, c));
     b.setAttribute("aria-expanded", "true");
   });
 
@@ -166,9 +168,12 @@
   };
   function claimLi(c) {
     if (c.placeholder) {
-      return `<li class="claim ph wait"><span class="claim-text">${esc(c.text)}</span><span class="tc-mark ph" title="Prototype filler. Benjamin's research builds this part.">Placeholder</span></li>`;
+      return `<tr class="claim ph wait"><td class="claim-text">${esc(c.text)}</td><td class="claim-src"><span class="tc-mark ph" title="Prototype filler. Benjamin's research builds this part.">Placeholder</span></td></tr>`;
     }
-    return `<li class="claim wait"><span class="claim-text">${esc(c.text)}</span>${KIND[c.kind] || ""}${chip(c.source, c)}</li>`;
+    return `<tr class="claim wait"><td class="claim-text">${esc(c.text)} ${KIND[c.kind] || ""}</td><td class="claim-src">${chip(c.source, c)}</td></tr>`;
+  }
+  function claimsTable(claims) {
+    return `<table class="tc-table claims"><thead><tr><th scope="col">What we found</th><th scope="col">Source</th></tr></thead><tbody>${claims.map(claimLi).join("")}</tbody></table>`;
   }
   function gapsList(gaps) {
     if (!gaps || !gaps.length) return "";
@@ -209,13 +214,13 @@
     let inner = "";
     if (s.parts) {
       inner = s.parts.map((p) => `<div class="part wait"><h3>${esc(p.label)}</h3>${p.claims.length
-        ? `<ul class="claims">${p.claims.map(claimLi).join("")}</ul>` : `<p class="note wait">Nothing found.</p>`}</div>`).join("");
+        ? claimsTable(p.claims) : `<p class="note wait">Nothing found.</p>`}</div>`).join("");
     } else if (s.cards) {
       inner = `<div class="cards">${s.cards.map((c) => `<article class="card wait"><h3>${esc(c.name)}</h3><div class="role">${esc(c.role)}</div>
         <div class="links">${c.x ? `X: <a href="${esc(c.x)}" target="_blank" rel="noopener">linked, not read</a>` : ""}${c.github ? ` · <a href="${esc(c.github)}" target="_blank" rel="noopener">GitHub</a>` : ""}</div>
-        <ul class="claims">${c.claims.map(claimLi).join("")}</ul></article>`).join("")}</div>`;
+        ${claimsTable(c.claims)}</article>`).join("")}</div>`;
     } else {
-      inner = `<ul class="claims">${s.claims.map(claimLi).join("")}</ul>`;
+      inner = claimsTable(s.claims);
     }
     return `<section class="section wait" data-sec="${i}" aria-label="${esc(s.title)}">
       <h2>${esc(s.title)} <span class="status" data-status>Waiting</span></h2>${inner}${gapsList(s.gaps)}</section>`;
