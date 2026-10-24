@@ -30,13 +30,15 @@ with sync_playwright() as p:
 
     # Step 2: Ploy readout, streaming
     pg.fill("#url", "ploy.ai")
+    pg.evaluate("window.__maxSkel = 0; new MutationObserver(() => { window.__maxSkel = Math.max(window.__maxSkel, document.querySelectorAll('.loading > .skel').length); }).observe(document.body, {childList: true, subtree: true, attributes: true})")
     pg.click("button[type=submit]")
     pg.wait_for_selector("#co-name")
+    pg.wait_for_function("window.__maxSkel > 0", polling="raf")
     check("company=ploy.ai" in pg.url, "address bar carries ?company=")
     check(pg.locator("#co-name").inner_text() == "Ploy" and pg.locator(".about").count() == 1, "Ploy resolves, with its about paragraph and no setup fields")
     blocks = pg.locator(".insights, .section, #roomgaps").count()
-    skels = pg.locator(".loading > .skel").count()
-    check(blocks >= 5 and skels == blocks, f"skeletons show first ({skels} of {blocks} sections loading right after the click)")
+    skels = pg.evaluate("window.__maxSkel")
+    check(blocks >= 5 and skels == blocks, f"skeletons show first ({skels} of {blocks} sections showed a skeleton at once)")
     check(pg.locator(".loading .claim:visible").count() == 0, "a loading section shows no claims, only its skeleton")
     pg.wait_for_function("document.getElementById('overall').textContent.startsWith('Research done')", timeout=60000)
     pg.wait_for_timeout(300)
