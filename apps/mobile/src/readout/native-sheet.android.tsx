@@ -73,7 +73,9 @@ export const NativeSheet = ({
       >
         <Column modifiers={[fillMaxSize(), padding(0, 12, 0, 0)]}>
           <RNHostView modifiers={[fillMaxSize()]}>
-            <View style={{ backgroundColor: colors.bg, flex: 1 }}>
+            <View
+              style={{ backgroundColor: colors.bg, flexGrow: 1, height: 0 }}
+            >
               {children}
             </View>
           </RNHostView>

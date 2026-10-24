@@ -109,7 +109,11 @@ const EvidenceSheet = ({
           <Heading>Evidence [{evidence.number}]</Heading>
           <Action compact title="Done" onPress={onClose} />
         </View>
-        <ScrollView contentContainerStyle={styles.content}>
+        <ScrollView
+          style={{ flex: 1, minHeight: 0 }}
+          contentContainerStyle={styles.content}
+          keyboardShouldPersistTaps="handled"
+        >
           <Note>Saved public research · {snapshotAt.replace("T", " ")}</Note>
           <Heading>{evidence.sourceTitle}</Heading>
           <Body>{evidence.claim.text}</Body>

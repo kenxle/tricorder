@@ -33,8 +33,10 @@ export const NativeSheet = ({
         shouldDismissOnClickOutside={!dismissalDisabled}
         modifiers={[interactiveDismissDisabled(dismissalDisabled)]}
       >
-        <RNHostView style={{ height: "100%", width: "100%" }}>
-          <View style={{ backgroundColor: colors.bg, flex: 1 }}>
+        <RNHostView>
+          {/* Match Expo's sheet bridge: a zero basis keeps long RN content from
+              expanding the viewport beyond the native presentation's height. */}
+          <View style={{ backgroundColor: colors.bg, flexGrow: 1, height: 0 }}>
             {children}
           </View>
         </RNHostView>

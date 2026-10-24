@@ -327,21 +327,24 @@ function RequestManager({
         <Heading>Requests to the founder</Heading>
         <Row>
           <Action
+            compact
             title="Requests"
             disabled={busy}
             onPress={() => setTab("requests")}
           />
           <Action
+            compact
             title="Draft"
             disabled={busy || !draft}
             onPress={() => setTab("draft")}
           />
           <Action
+            compact
             title="Add reply"
             disabled={busy || !lines}
             onPress={() => setTab("reply")}
           />
-          <Action title="Close" disabled={busy} onPress={onClose} />
+          <Action compact title="Close" disabled={busy} onPress={onClose} />
         </Row>
         {busy && <ActivityIndicator accessibilityLabel="Working" />}
         {!!error && <Body accessibilityRole="alert">{error}</Body>}
@@ -372,6 +375,7 @@ function RequestManager({
                   (kind, index) => (
                     <Action
                       key={kind}
+                      compact
                       title={["Top five", "All required", "All", "None"][index]}
                       disabled={busy}
                       onPress={() => pick(kind)}
@@ -487,6 +491,7 @@ function RequestManager({
           />
           <Row>
             <Action
+              compact
               title="Copy text"
               disabled={busy}
               onPress={() =>
@@ -504,6 +509,7 @@ function RequestManager({
               }
             />
             <Action
+              compact
               title="Open in mail app"
               disabled={busy}
               onPress={openMail}
