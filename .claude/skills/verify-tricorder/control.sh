@@ -41,32 +41,47 @@ chrome() {
 cmd_launch() {
   if [ -f "$STATE" ]; then . "$STATE"; if kill -0 "$PID" 2>/dev/null; then echo "already running: pid $PID on $(url)"; return; fi; fi
   local p="${TRICORDER_VERIFY_PORT:-8790}"
+  local rpc="${TRICORDER_VERIFY_RPC_PORT:-$((p + 1))}"
+  if [ "$p" = "$rpc" ]; then echo "API and tRPC ports must differ" >&2; exit 1; fi
   if curl -s -o /dev/null "http://127.0.0.1:$p/health"; then
     echo "port $p answers but this run did not start it; set TRICORDER_VERIFY_PORT to a free port" >&2; exit 1
+  fi
+  if curl -s -o /dev/null "http://127.0.0.1:$rpc/trpc/room.list"; then
+    echo "port $rpc answers but this run did not start it; set TRICORDER_VERIFY_RPC_PORT to a free port" >&2; exit 1
   fi
   if [ ! -f "$REPO/apps/web/dist/index.html" ]; then
     (cd "$REPO" && bin/ci-web) > "$EV/page_build.txt" 2>&1
   fi
   # No subshell: $! must be the server's own pid, so cleanup stops exactly what launch started.
   cd "$REPO"
-  TRICORDER_OUT_DIR="$OUT" TRICORDER_OFFLINE=1 nohup "$PY" -m uvicorn server.app:app \
+  TRICORDER_API_URL="http://127.0.0.1:$p" TRICORDER_RPC_PORT="$rpc" \
+    nohup node --experimental-strip-types apps/rpc/src/index.ts > "$BASE/rpc.log" 2>&1 &
+  local rpc_pid=$!
+  TRICORDER_RPC_URL="http://127.0.0.1:$rpc" TRICORDER_OUT_DIR="$OUT" TRICORDER_OFFLINE=1 nohup "$PY" -m uvicorn server.app:app \
       --host 127.0.0.1 --port "$p" > "$BASE/server.log" 2>&1 &
-  echo "PID=$! PORT=$p" > "$STATE"
+  echo "PID=$! RPC_PID=$rpc_pid PORT=$p" > "$STATE"
   for _ in $(seq 1 50); do
-    if curl -s "http://127.0.0.1:$p/health" | grep -q '"ok":true'; then echo "ready: $(url) (run $RUN, out $OUT)"; return; fi
+    if curl -s "http://127.0.0.1:$p/health" | grep -q '"ok":true' && \
+       curl -fs -o /dev/null "http://127.0.0.1:$p/trpc/room.list"; then
+      echo "ready: $(url) (run $RUN, out $OUT)"; return
+    fi
     sleep 0.2
   done
-  echo "server did not answer /health; see $BASE/server.log" >&2; exit 1
+  echo "API or tRPC did not become ready; see $BASE/server.log and $BASE/rpc.log" >&2
+  cmd_cleanup
+  exit 1
 }
 
 cmd_doctor() {
   [ -f "$STATE" ] || { echo "FAIL no instance launched for run $RUN"; exit 1; }
   . "$STATE"
   kill -0 "$PID" 2>/dev/null || { echo "FAIL pid $PID is not running"; exit 1; }
+  [ -n "${RPC_PID:-}" ] && kill -0 "$RPC_PID" 2>/dev/null || { echo "FAIL this run's tRPC gateway is not running"; exit 1; }
   local h; h="$(curl -s "$(url)/health")" || { echo "FAIL $(url)/health does not answer"; exit 1; }
   echo "$h" | grep -q '"ok":true' || { echo "FAIL health says: $h"; exit 1; }
   echo "$h" | grep -q '"redflags"' || { echo "FAIL the redflags scan is not available: $h"; exit 1; }
   curl -s "$(url)/" | grep -q '<div id="root">' || { echo "FAIL the readout page is not served (build apps/web/dist)"; exit 1; }
+  curl -fs -o /dev/null "$(url)/trpc/room.list" || { echo "FAIL the tRPC room query does not answer"; exit 1; }
   echo "OK run=$RUN pid=$PID url=$(url) out=$OUT evidence=$EV rev=$(git -C "$REPO" rev-parse --short HEAD)"
 }
 
@@ -106,14 +121,17 @@ cmd_shot() {
 cmd_cleanup() {
   if [ -f "$STATE" ]; then
     . "$STATE"
-    if kill -0 "$PID" 2>/dev/null; then
-      kill "$PID"
-      for _ in $(seq 1 50); do kill -0 "$PID" 2>/dev/null || break; sleep 0.1; done
-      if kill -0 "$PID" 2>/dev/null; then echo "pid $PID did not stop within 5 seconds" >&2; exit 1; fi
-      echo "stopped pid $PID"
-    else
-      echo "pid $PID already gone"
-    fi
+    local child
+    for child in "$PID" ${RPC_PID:-}; do
+      if kill -0 "$child" 2>/dev/null; then
+        kill "$child"
+        for _ in $(seq 1 50); do kill -0 "$child" 2>/dev/null || break; sleep 0.1; done
+        if kill -0 "$child" 2>/dev/null; then echo "pid $child did not stop within 5 seconds" >&2; exit 1; fi
+        echo "stopped pid $child"
+      else
+        echo "pid $child already gone"
+      fi
+    done
     mv "$STATE" "$BASE/state.stopped.env"
   else
     echo "nothing launched for run $RUN"

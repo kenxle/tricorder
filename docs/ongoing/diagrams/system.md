@@ -26,10 +26,13 @@ flowchart LR
     M -->|out/room/readout.json| SV[server/app.py<br/>behind local_guard.py]
     SC[schema/claim.py] -->|schema.export| TS[packages/schema/ src types]
     TS -.->|@tricorder/schema| P[apps/web/ page]
-    SV --> P
+    SV -->|REST: builds, sources and other features| P
+    P -->|tRPC room queries through Python proxy| RPC[apps/rpc/ typed gateway]
+    RPC -->|existing REST reads| SV
     DEV[Turbo dev] -.-> API[apps/api/ dev launcher]
     API -.-> SV
     DEV -.-> P
+    DEV -.-> RPC
     DEV -.-> MOBILE[apps/mobile/ Expo starter<br/>readout integration pending]
     TS -.->|declared workspace dependency| MOBILE
     P -->|one-sentence steer| ST[steering/]

@@ -1,23 +1,19 @@
 // The page's only door to the data. Types come from @tricorder/schema, generated from
 // schema/claim.py, so a field is never typed by hand here.
 import type { Readout, Source } from "@tricorder/schema";
+import { trpc } from "./trpc";
+import type { RouterOutputs } from "./trpc";
 
-export interface RoomInfo {
-  id: string;
-  path: string;
-  inputs: string[];
-  has_readout: boolean;
-}
+export type RoomInfo = RouterOutputs["room"]["list"][number];
 
 async function json<T>(res: Response): Promise<T> {
   if (!res.ok) throw new Error(`${res.status} ${await res.text()}`);
   return (await res.json()) as T;
 }
 
-export const getRooms = () => fetch("/api/rooms").then((r) => json<RoomInfo[]>(r));
+export const getRooms = () => trpc.room.list.query();
 
-export const getReadout = (room: string) =>
-  fetch(`/api/rooms/${encodeURIComponent(room)}/readout`).then((r) => json<Readout>(r));
+export const getReadout = (room: string) => trpc.room.readout.query(room);
 
 export const buildReadout = (room: string) =>
   fetch(`/api/rooms/${encodeURIComponent(room)}/readout`, { method: "POST" }).then((r) => json<Readout>(r));

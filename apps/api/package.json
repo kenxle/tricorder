@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "bash ./dev.sh"
+    "dev": "bash ./dev.sh",
+    "start": "bash ./dev.sh --no-reload"
   }
 }

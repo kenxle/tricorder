@@ -20,6 +20,26 @@
         "INBOUND_WEBHOOK_SECRET",
         "PLAID_*"
       ]
+    },
+    "start": {
+      "passThroughEnv": [
+        "TRICORDER_*",
+        "PYTHON",
+        "PORT",
+        "ANTHROPIC_API_KEY",
+        "WHISPER_*",
+        "EDGAR_USER_AGENT",
+        "AKTA_API_KEY",
+        "TAVILY_API_KEY",
+        "YOU_API_KEY",
+        "GITHUB_TOKEN",
+        "PRODUCT_HUNT_TOKEN",
+        "CRUNCHBASE_API_KEY",
+        "NICRRON_API_KEY",
+        "OPENAI_API_KEY",
+        "INBOUND_WEBHOOK_SECRET",
+        "PLAID_*"
+      ]
     }
   }
 }

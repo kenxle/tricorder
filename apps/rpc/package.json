@@ -1,0 +1,24 @@
+{
+  "name": "@tricorder/rpc",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/router.ts"
+  },
+  "scripts": {
+    "dev": "node --experimental-strip-types --watch src/index.ts",
+    "start": "node --experimental-strip-types src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test src/*.test.ts"
+  },
+  "dependencies": {
+    "@tricorder/schema": "workspace:*",
+    "@trpc/server": "11.19.0"
+  },
+  "devDependencies": {
+    "@trpc/client": "11.19.0",
+    "@types/node": "22.20.5",
+    "typescript": "5.9.3"
+  }
+}

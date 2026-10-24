@@ -7,5 +7,4 @@ cd "$(dirname "$0")/.."
 if [ "${1:-}" = "--dev" ]; then
   exec pnpm dev
 fi
-PY="${PYTHON:-python3}"
-"$PY" -m uvicorn server.app:app --host 127.0.0.1 --port "${PORT:-8787}"
+exec pnpm start

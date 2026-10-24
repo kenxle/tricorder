@@ -12,9 +12,12 @@ else
   PY="${PYTHON:-python3}"
 fi
 
-ARGS=(--host 127.0.0.1 --port "${PORT:-8787}" --reload)
-for dir in clients eval founder_requests memo scans schema server steering store; do
-  ARGS+=(--reload-dir "$dir")
-done
+ARGS=(--host 127.0.0.1 --port "${PORT:-8787}")
+if [ "${1:-}" != "--no-reload" ]; then
+  ARGS+=(--reload)
+  for dir in clients eval founder_requests memo scans schema server steering store; do
+    ARGS+=(--reload-dir "$dir")
+  done
+fi
 if [ -f .env ]; then ARGS+=(--env-file .env); fi
 exec "$PY" -m uvicorn server.app:app "${ARGS[@]}"

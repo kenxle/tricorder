@@ -9,6 +9,8 @@
     "build": "turbo run build",
     "typecheck": "turbo run typecheck",
     "dev": "turbo run dev --ui=tui",
+    "start": "turbo run start",
+    "test": "turbo run test",
     "dev:web": "turbo run dev --filter=@tricorder/web",
     "dev:mobile": "turbo run dev --filter=@tricorder/mobile --ui=tui",
     "lint": "turbo run lint",

@@ -1,0 +1,11 @@
+{
+  "extends": ["//"],
+  "tasks": {
+    "dev": {
+      "passThroughEnv": ["TRICORDER_API_URL", "TRICORDER_RPC_PORT", "PORT"]
+    },
+    "start": {
+      "passThroughEnv": ["TRICORDER_API_URL", "TRICORDER_RPC_PORT", "PORT"]
+    }
+  }
+}

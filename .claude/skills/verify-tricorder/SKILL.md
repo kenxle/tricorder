@@ -23,7 +23,8 @@ export TRICORDER_VERIFY_RUN=pr-123        # any name; one run, one folder
 ```
 
 - It builds `apps/web/dist/` if missing (`bin/ci-web` from the repo root, needs Node 22 or newer), then starts the API on port 8790 (`TRICORDER_VERIFY_PORT` to change) with `TRICORDER_OUT_DIR` set to this run's own `out/`.
-- Ready means it printed `ready: http://127.0.0.1:8790 ...`, which it prints only after `/health` answers `"ok":true`.
+- It also starts a read-only tRPC gateway on the next port (`TRICORDER_VERIFY_RPC_PORT` to change), pointed at this run's Python API, so the page reads this run's isolated output.
+- Ready means it printed `ready: http://127.0.0.1:8790 ...`, which it prints only after `/health` answers `"ok":true` and `/trpc/room.list` succeeds.
 - It refuses a port that answers but that it did not start. Ken's own instance and other runs stay untouched.
 - Scan results land in this run's `out/`, never in the repo's `out/`. A fresh run starts with no results, so drive the scans before reading any.
 - Python dependencies come from `requirements.txt` (`pip install -r requirements.txt`). The deck-drawing test tools (matplotlib, reportlab, pypdf) are only for tests and are not needed here.
@@ -61,7 +62,7 @@ Evidence goes to `${TRICORDER_VERIFY_DIR:-${TMPDIR:-/tmp}/tricorder-verify}/<run
 .claude/skills/verify-tricorder/control.sh cleanup
 ```
 
-It stops only the server this run started, by the pid in this run's `state.env`. It never kills by name or port, and never touches the evidence folder or the scan results. It prints how many evidence files remain. Folders are not removed: in this repo agents never delete files, so list the run folder for cleanup instead.
+It stops only the API and tRPC processes this run started, by the pids in this run's `state.env`. It never kills by name or port, and never touches the evidence folder or the scan results. It prints how many evidence files remain. Folders are not removed: in this repo agents never delete files, so list the run folder for cleanup instead.
 
 ## Keeping this skill honest
 

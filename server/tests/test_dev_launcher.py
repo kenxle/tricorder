@@ -11,7 +11,8 @@ from scans.base import ROOT
 
 
 @pytest.mark.parametrize("selection", ["override", "venv", "fallback"])
-def test_dev_launcher_selects_python_and_passes_api_options(tmp_path, selection):
+@pytest.mark.parametrize("reload", [True, False])
+def test_dev_launcher_selects_python_and_passes_api_options(tmp_path, selection, reload):
     launcher = tmp_path / "apps" / "api" / "dev.sh"
     launcher.parent.mkdir(parents=True)
     shutil.copyfile(ROOT / "apps" / "api" / "dev.sh", launcher)
@@ -31,7 +32,8 @@ def test_dev_launcher_selects_python_and_passes_api_options(tmp_path, selection)
     elif selection == "fallback":
         env["PYTHON"] = str(probe)
 
-    result = subprocess.run(["bash", str(launcher)], cwd=tmp_path.parent, env=env,
+    command = ["bash", str(launcher)] + ([] if reload else ["--no-reload"])
+    result = subprocess.run(command, cwd=tmp_path.parent, env=env,
                             capture_output=True, text=True)
     assert result.returncode == 0, result.stderr
     cwd, interpreter, *args = result.stdout.splitlines()
@@ -40,6 +42,8 @@ def test_dev_launcher_selects_python_and_passes_api_options(tmp_path, selection)
     assert Path(interpreter).resolve() == expected.resolve()
     assert args[:3] == ["-m", "uvicorn", "server.app:app"]
     assert args[args.index("--port") + 1] == "8799"
-    assert "--reload" in args
-    assert "server" in args and "scans" in args
+    assert ("--reload" in args) == reload
+    assert ("--reload-dir" in args) == reload
+    if reload:
+        assert "server" in args and "scans" in args
     assert ("--env-file" in args) == (selection != "fallback")

@@ -8,7 +8,7 @@ Run from the repository root:
 ```sh
 pnpm install --frozen-lockfile
 pnpm dev:mobile                         # Metro only, with Turbo terminal UI
-pnpm dev                                # API, Vite and Metro together
+pnpm dev                                # API, tRPC, Vite and Metro together
 pnpm --filter @tricorder/mobile ios      # Open the iOS Simulator
 pnpm --filter @tricorder/mobile android  # Open an Android emulator
 pnpm --filter @tricorder/mobile web      # Open the Expo web preview
@@ -43,7 +43,8 @@ Metro discovers this pnpm monorepo automatically; no custom resolver is needed.
 In Turbo's terminal UI, select the mobile task and press `i` to interact with its terminal.
 Expo's `i`, `a` and `w` shortcuts then open a platform.
 
-The package owns `dev` for its Metro development server.
+The package owns `dev` rather than `start` so the repository's `pnpm start`
+continues to launch the Python API and tRPC gateway without Metro.
 
 ## AI agents
 

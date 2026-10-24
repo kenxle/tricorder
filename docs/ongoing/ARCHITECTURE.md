@@ -29,13 +29,15 @@ Tricorder is a set of Python scans that each read a company's files and write on
 
 Rejected: one Streamlit app (no room for the frontend role, and a prior financial-AI hackathon disqualified "Simple Streamlit only applications"), and Rails with Python subprocesses (two runtimes on the demo laptop, one bottleneck).
 
-The web package also pins `@tanstack/intent` as development tooling for discovering agent skills in installed npm dependencies. Setup runs from `apps/web/`. No current dependency ships Intent skills, so no managed agent guidance has been generated. Commands live in [TESTING.md](TESTING.md#intent-agent-guidance).
+The web package also pins `@tanstack/intent` as development tooling for discovering agent skills in installed npm dependencies. Setup runs from `apps/web/`. The pinned Intent CLI currently fails to discover tRPC 11.19.0 skills because its `intent-library` export is unavailable; no managed agent guidance has been generated. Commands live in [TESTING.md](TESTING.md#intent-agent-guidance).
 
 ## TypeScript workspace
 
 The root `package.json` pins pnpm 11.9.0. `pnpm-workspace.yaml` defines workspaces at `apps/*` and `packages/*`. `turbo.json` orchestrates package-owned build and typecheck scripts. Install from the root with `pnpm install --frozen-lockfile`; `pnpm-lock.yaml` pins every JavaScript dependency. Root dependencies are repo tooling only. Shared dependencies use `workspace:*` so they always resolve locally. pnpm uses its default isolated install layout; only esbuild is permitted to run a dependency build script. Python source stays in its current folders while the port proceeds. `apps/api/` is a dev-only workspace wrapper around that backend, not a TypeScript API port.
 
-Root `pnpm dev` runs `@tricorder/api#dev`, `@tricorder/web#dev` and `@tricorder/mobile#dev`. Use `pnpm dev:mobile` for Metro alone. The API launcher selects the project virtualenv, loads the root `.env` through Uvicorn without overriding exported values, and watches the Python source folders for reloads. `TRICORDER_PYTHON` explicitly overrides interpreter selection. The API task alone passes through backend environment variables; they are not globally forwarded to web tasks. `bin/serve --dev` delegates to the same Turbo command. Ctrl+C stops the task tree.
+Root `pnpm dev` runs `@tricorder/api#dev`, `@tricorder/rpc#dev`, `@tricorder/web#dev` and `@tricorder/mobile#dev`. Use `pnpm dev:mobile` for Metro alone. Root `pnpm start` still launches only the API and gateway. The API launcher selects the project virtualenv, loads the root `.env` through Uvicorn without overriding exported values, and watches the Python source folders for reloads. `TRICORDER_PYTHON` explicitly overrides interpreter selection. The API task alone passes through backend environment variables; they are not globally forwarded to web tasks. `bin/serve --dev` delegates to the same Turbo command. Ctrl+C stops the task tree.
+
+`apps/rpc/` is a read-only tRPC 11 gateway on loopback port 8789. `room.list` and `room.readout` delegate to Python REST, with room input validation, bounded request timeouts and HTTP error mapping. `apps/web/src/trpc.ts` imports `AppRouter` as a type and uses the vanilla batched client. Python proxies `/trpc` before its static page mount; Vite uses that same entry point. The browser uses tRPC for room lists and readouts, and REST for builds, sources, steering and founder requests. `bin/serve` runs Python and the gateway via Turbo start tasks. Node 22.13+ executes the gateway TypeScript with native type stripping. Python still validates readout responses; this is a transport boundary, not a scan or schema port.
 
 `apps/web/` depends on `@tricorder/schema` through its package manifest. `schema/claim.py` remains the source of truth, and `python -m schema.export` writes `packages/schema/src/claim.ts` plus `schema/claim.schema.json`. The schema package exports TypeScript source directly, so app bundlers consume it without a separate compile step. It has no React, browser or Node dependencies. The schema freshness gate remains in `bin/ci-py`.
 
@@ -174,6 +176,7 @@ Secrets come from the environment and are never committed. `.env.example` lists 
 | `TRICORDER_OPERATOR_NAME`, `TRICORDER_FUND_NAME` | The sign-off on a request to the founder |
 | `TRICORDER_OPERATOR` | Who a steer is credited to when the request names nobody |
 | `TRICORDER_CONTRACT_READER` | `script` keeps entry 1.13 on the script reader even when a model reading is registered |
+| `TRICORDER_RPC_PORT`, `TRICORDER_RPC_URL`, `TRICORDER_API_URL` | Gateway listener (default 8789), Python-to-gateway URL (default `http://127.0.0.1:8789`) and gateway-to-Python URL (default `http://127.0.0.1:${PORT:-8787}`). Export in the launch shell for both runtimes. |
 | `TRICORDER_SETTINGS` | A JSON file of threshold overrides |
 | `WHISPER_CPP_BIN`, `WHISPER_MODEL_PATH` | The local transcriber |
 | `EDGAR_USER_AGENT`, `AKTA_API_KEY`, `TAVILY_API_KEY`, `YOU_API_KEY`, `GITHUB_TOKEN`, `PRODUCT_HUNT_TOKEN`, `CRUNCHBASE_API_KEY`, `NICRRON_API_KEY`, `OPENAI_API_KEY` | Outside sources; each client falls back to sample mode without its key |

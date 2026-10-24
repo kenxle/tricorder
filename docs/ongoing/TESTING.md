@@ -36,17 +36,17 @@ test -f .env || cp .env.example .env
 
 Set `TRICORDER_OFFLINE=1`, `TRICORDER_OUT_DIR=out` and `TRICORDER_CONTRACT_READER=script` in `.env`. Leave API keys empty for the synthetic-room demo. Set `TRICORDER_OPERATOR_NAME` and `TRICORDER_OPERATOR` to your name.
 
-Start the API, web app and Expo together with one command from the repo root:
+Start the API and web app together with one command from the repo root:
 
 ```sh
 pnpm dev
 ```
 
-Turbo starts the Python API at <http://127.0.0.1:8787>, Vite at <http://localhost:5173>, and Expo Metro at <http://localhost:8081>. Vite proxies `/api` and `/health` to the API. Stop old dev servers first so those ports are free. Ctrl+C stops all Turbo tasks and their child processes.
+Turbo starts the Python API at <http://127.0.0.1:8787>, the tRPC gateway at <http://127.0.0.1:8789/trpc>, Vite at <http://localhost:5173>, and Expo Metro at <http://localhost:8081>. Vite proxies `/api`, `/health` and `/trpc` to Python. Python forwards `/trpc` queries to the gateway, which reads the existing Python REST API. Stop old dev servers first so those ports are free. Ctrl+C stops all Turbo tasks and their child processes.
 
 The API dev task in `apps/api/` automatically loads the root `.env` through Uvicorn. Exported environment variables take precedence. It prefers `.venv/bin/python`, so no virtualenv activation is needed after setup. Set `TRICORDER_PYTHON` to override that choice; without a project virtualenv it falls back to `PYTHON` or `python3`. Python source changes reload the API; Vite handles frontend changes.
 
-`bin/smoke`, `bin/ci-py` and API-only `bin/serve` still use the shell's environment. For a scan from the command line:
+`bin/serve` runs Python and tRPC without reload through `pnpm start` and loads the root `.env`. Run `pnpm build` first to serve the built page at `/`. `bin/smoke` and `bin/ci-py` use the shell's environment. For a scan from the command line:
 
 ```sh
 set -a
@@ -68,7 +68,7 @@ pnpm --filter @tricorder/web exec intent list
 pnpm --filter @tricorder/web exec intent install
 ```
 
-The current dependencies ship no Intent skills, so setup leaves permissions and agent guidance unchanged. Run setup again after adding a package that ships skills. It configures guidance for npm dependencies, not Python packages.
+With tRPC 11.19.0 installed, the pinned Intent 0.5.6 CLI currently fails discovery with `ERR_PACKAGE_PATH_NOT_EXPORTED` for `@tanstack/intent/intent-library`. This optional guidance tooling does not affect the runtime or CI gates. No managed guidance was changed.
 
 ## TypeScript workspace commands
 
@@ -76,18 +76,20 @@ Use pnpm 11.9.0, pinned in `package.json`. `pnpm-workspace.yaml` defines the wor
 
 ```sh
 pnpm install --frozen-lockfile
-pnpm dev:web                    # Only Vite; start the Python API separately
+pnpm dev:web                    # Only Vite; start Python and tRPC separately
 pnpm dev:mobile                 # Metro for the custom development client
 pnpm build:ios                  # Build/install the native iOS development client
 pnpm build:ios --device "Deez iPhone" # Build/install on the connected iPhone
-pnpm dev                        # API + web + Expo Metro
-pnpm typecheck                  # Web, mobile and shared schema through Turbo
+pnpm dev                        # Python API + tRPC gateway + web + Expo Metro
+pnpm typecheck                  # Web, mobile, gateway and shared schema through Turbo
 pnpm lint                       # Mobile ESLint through Turbo
+pnpm test                       # Gateway HTTP and validation tests
+pnpm start                      # Python API + tRPC, serving the built web page
 pnpm build                      # Web and mobile bundles: apps/{web,mobile}/dist/
 pnpm build --filter=@tricorder/web
 ```
 
-`bin/serve --dev` is an alias for `pnpm dev`. `bin/serve` serves the web build at `/` after a build and server restart. CI installs the root lockfile before running `bin/ci-web`. Dev tasks are uncached; build outputs and successful typechecks are cached locally in `.turbo/`.
+`bin/serve --dev` is an alias for `pnpm dev`. `bin/serve` starts Python and the tRPC gateway and serves the web build at `/` after a build. CI installs the root lockfile before running `bin/ci-web`. Dev tasks are uncached; build outputs and successful typechecks are cached locally in `.turbo/`.
 
 The Expo SDK 58 starter lives in `apps/mobile/` and uses the root install and lockfile. `pnpm dev:mobile` starts Metro through Turbo. The dev commands explicitly select Turbo's terminal UI so Expo can receive keyboard input; select the mobile task and press `i` to interact. Use `pnpm --filter @tricorder/mobile ios`, `android` or `web` to open a platform. `pnpm build --filter=@tricorder/mobile` exports Android, iOS and web JavaScript bundles; it does not build an IPA or APK. SDK 58 needs a compatible development build until the physical-device Expo Go release supports it. The starter has no readout or backend connection yet. Keep app environment files in their app directories. From `apps/mobile/`, run `pnpm exec expo install --check` to check SDK compatibility and `pnpm dlx expo-doctor` for project diagnostics. App React versions follow each framework; the shared schema contains no React runtime. See [the mobile README](../../apps/mobile/README.md) for agent plugin installation and Expo MCP authentication.
 
@@ -95,12 +97,20 @@ The workspace uses pnpm's default isolated install layout. Only esbuild's depend
 
 See the official [pnpm workspace guide](https://pnpm.io/workspaces), [Expo monorepo guide](https://docs.expo.dev/guides/monorepos/) and [Turbo workspace structure](https://turborepo.dev/docs/crafting-your-repository/structuring-a-repository).
 
+## tRPC gateway
+
+`apps/rpc/src/router.ts` owns `AppRouter`, `room.list` and `room.readout`. `apps/web/src/trpc.ts` imports the router type only and creates the vanilla client with batching. Add new procedures to the router; future apps can import the same type through `@tricorder/rpc`. Builds, source text, file downloads, steering and founder requests continue to use REST.
+
+The gateway binds to loopback and accepts only GET queries with a loopback Host. Python remains the runtime validator for its response data; the gateway uses generated `Readout` types at that boundary. Node 22.13+ runs the TypeScript entrypoint with native type stripping, so the gateway needs no build step.
+
+For alternate ports, export `PORT` for Python, `TRICORDER_RPC_PORT` for the gateway, and matching `TRICORDER_RPC_URL` for Python. `TRICORDER_API_URL` overrides the gateway's Python destination, otherwise it uses `PORT` (default 8787). Export these in the shell before launch; the Node task does not load `.env`. Vite's existing proxy target remains port 8787.
+
 ## The gates
 
 | Command | What it runs | Green means |
 |---|---|---|
 | `bin/ci-py` | `python -m schema.export --check` (generated schema files are current), then `pytest` over the test folders in `pyproject.toml`, including the store, founder requests, memo, and steering | exit 0, "N passed" and no failures |
-| `bin/ci-web` | Turbo typechecks all TypeScript packages, lints mobile and exports/builds apps | exit 0 |
+| `bin/ci-web` | Turbo typechecks all TypeScript packages, lints mobile, runs gateway tests and exports/builds apps | exit 0 |
 | `bin/smoke <room_dir>` | Every scan that exists on one room, then the merge | each scan prints its counts and the merge prints its summary, with no traceback |
 
 GitHub Actions runs `bin/ci-py` and `bin/ci-web` as two separate jobs on every pull request, so a red page build never blocks a Python merge. A red CI blocks a merge, even on Saturday.

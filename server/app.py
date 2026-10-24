@@ -188,6 +188,8 @@ from server.memo_routes import router as memo_router  # noqa: E402  (memo-export
 app.include_router(memo_router)
 from server.steering_routes import router as steering_router  # noqa: E402
 app.include_router(steering_router)
+from server.trpc_routes import router as trpc_router  # noqa: E402
+app.include_router(trpc_router)
 
 if PAGE_DIST.is_dir():
     app.mount("/", StaticFiles(directory=PAGE_DIST, html=True), name="page")

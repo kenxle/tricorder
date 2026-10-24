@@ -123,11 +123,39 @@ importers:
         specifier: ~6.0.3
         version: 6.0.3
 
-  apps/web:
+  apps/rpc:
     dependencies:
       '@tricorder/schema':
         specifier: workspace:*
         version: link:../../packages/schema
+      '@trpc/server':
+        specifier: 11.19.0
+        version: 11.19.0(typescript@5.9.3)
+    devDependencies:
+      '@trpc/client':
+        specifier: 11.19.0
+        version: 11.19.0(@trpc/server@11.19.0(typescript@5.9.3))(typescript@5.9.3)
+      '@types/node':
+        specifier: 22.20.5
+        version: 22.20.5
+      typescript:
+        specifier: 5.9.3
+        version: 5.9.3
+
+  apps/web:
+    dependencies:
+      '@tricorder/rpc':
+        specifier: workspace:*
+        version: link:../rpc
+      '@tricorder/schema':
+        specifier: workspace:*
+        version: link:../../packages/schema
+      '@trpc/client':
+        specifier: 11.19.0
+        version: 11.19.0(@trpc/server@11.19.0(typescript@5.9.3))(typescript@5.9.3)
+      '@trpc/server':
+        specifier: 11.19.0
+        version: 11.19.0(typescript@5.9.3)
       react:
         specifier: 19.2.0
         version: 19.2.0
@@ -1497,6 +1525,19 @@ packages:
     resolution: {integrity: sha512-9Ta/GMGPcqBIqlbrqeYyqBVKEP7XyAXy6nn90bPiE2oHB6KPgjEweUbHNXLQ6Pim01VtMMNf0dmUFMGKKHXmlw==}
     engines: {node: '>=20.12.0'}
     hasBin: true
+
+  '@trpc/client@11.19.0':
+    resolution: {integrity: sha512-0MKkPq6MejsKB5Opca1Rl22KVIaqo2+A1EiXyZ8EGUsl9TLrPdpGn+Usux20TZKFwnSC2+wI/WilqNJaP4ODfw==}
+    hasBin: true
+    peerDependencies:
+      '@trpc/server': 11.19.0
+      typescript: '>=5.7.2'
+
+  '@trpc/server@11.19.0':
+    resolution: {integrity: sha512-7C1goiDurz82yFKtZUbEzjXd0Rg/jyisaIZQhdvus+1l7E6mwcEYZXjZ1US/HF8kOyz1LERL8UN3bcboJtjcyQ==}
+    hasBin: true
+    peerDependencies:
+      typescript: '>=5.7.2'
 
   '@turbo/darwin-64@2.11.10':
     resolution: {integrity: sha512-By4idRap5+nLnMuRzLB4qkOPRlvNdyY1ne4VJYDyUoUB11H94k7uif9mbe3JT8JSNXs1D68uMcBj6hJ/jMQRvA==}
@@ -5775,6 +5816,15 @@ snapshots:
   '@sinclair/typebox@0.27.12': {}
 
   '@tanstack/intent@0.5.6': {}
+
+  '@trpc/client@11.19.0(@trpc/server@11.19.0(typescript@5.9.3))(typescript@5.9.3)':
+    dependencies:
+      '@trpc/server': 11.19.0(typescript@5.9.3)
+      typescript: 5.9.3
+
+  '@trpc/server@11.19.0(typescript@5.9.3)':
+    dependencies:
+      typescript: 5.9.3
 
   '@turbo/darwin-64@2.11.10':
     optional: true
