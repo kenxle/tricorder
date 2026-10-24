@@ -42,7 +42,6 @@ Tricorder automates research and helps associates build the memo that will be th
 - **Real data rooms are confidential.** We wrote our own, with planted problems and decoys. For real YC companies we pair real public data with a room we wrote.
 - **Keeping the model honest.** The model API would not return citations together with structured output. So every claim carries its quote, and a script checks the quote against the file.
 - **Scoring ourselves.** On a fresh run today, the engine finds 5 of 5 planted flags in Brasswick but only 2 of 8 in Hollis Voice. It misses a pilot counted as ARR, the deck's ARR against the model, burn against the hiring plan, customer concentration, gross margin, and cumulative sign-ups shown as active clinics. The checks for those are on the roadmap and not built yet.
-- **Changing stack mid-day.** We moved to TypeScript partway through the day, with web and mobile apps on one core. The Python engine keeps running the demo until the port scores the same on every answer key.
 - **Scope.** The roadmap has 57 slices. 13 are done and 10 are partly built.
 
 ## Accomplishments that we're proud of
