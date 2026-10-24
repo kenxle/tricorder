@@ -76,3 +76,7 @@ Ken: "and this aspect of the prototype / and make sure they are using our new st
 - **Step 6, the associate steers.** On the readout, the associate cross-references and corrects: says a piece is wrong and why, asks Tricorder to get more information, agrees or disagrees with a line. A steer never changes a script's number; it changes the wording, adds a figure beside the check's labelled as the steer's, or sends a request. Modelled on what is built: [steering](../../ongoing/roadmap/steering.md).
 - **Steps 7 and 8, the interactive memo for the principals.** The associate turns the steered readout into the memo. The principal reads it: the round and the flags first, every line two clicks from its source, and their own view to agree, disagree and try a what-if. Modelled on [memo-export](../../ongoing/roadmap/memo-export.md) and [MEMO_TEMPLATE.md](../../ongoing/MEMO_TEMPLATE.md).
 - **Every screen uses the [style guide](../../ongoing/STYLE_GUIDE.md)** and its shared stylesheet.
+
+## Added 1:22 PM: agreement is a small green flag, disagreement a big red one
+
+Ken, on the cap table matching the Form D: "matching is a small green flag. not matching is a big red flag". When two sources agree, the readout shows a small green flag that never leads. When they disagree, it shows a red flag that ranks among the worst. The real engine's piece verdicts and headline ranking should follow the same weighting ([FRAMEWORKS.md](../../ongoing/FRAMEWORKS.md), "Piece verdicts").

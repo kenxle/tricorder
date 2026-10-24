@@ -42,3 +42,10 @@ The readout's pieces, as the code names them in `scans/memo/pieces.py` and `sche
 - Which analyses to do first. A suggestion: the four on the demo path above.
 
 **Judgment:** yes.
+
+### Added 13:03: it feeds our own financial models and the red flags
+
+Ken, on the prototype: "we also will want to start integrating kimmy's expert knowledge to build our own financial models and identify red flags".
+
+- **Our own financial models.** The knowledge files give [financial-model](financial-model.md) its assumptions and benchmarks by stage, so Tricorder can rebuild a company's model its own way and set it beside the founder's.
+- **Red flags.** The knowledge files give the [redflag-engine](redflag-engine.md) its thresholds and the patterns an expert looks for, each with a source. A threshold still runs as a script; the knowledge says what it should be and why.

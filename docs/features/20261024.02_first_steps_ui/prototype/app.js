@@ -8,7 +8,8 @@
   const params = new URLSearchParams(location.search);
   const PACE = params.has("pace") ? Number(params.get("pace")) : 1; // 0 shows everything at once (for checks)
   const STAGES = { pre_seed: "Pre-seed", seed: "Seed", series_a: "Series A" };
-  const STEPS = [["start", "Company URL"], ["readout", "First readout"], ["request", "Data-room request"], ["received", "Room received"]];
+  const STEPS = [["start", "Company URL"], ["readout", "First readout"], ["request", "Data-room request"], ["received", "Room received"],
+    ["flags", "Flags from the room"], ["steer", "Steer the readout"], ["memo", "Make the memo"], ["principal", "The principal's view"]]; // steps 5 to 8: step5.js, step6.js, memo.js
 
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const hostOf = (u) => {
@@ -74,7 +75,8 @@
     const r = resolve(input);
     const s = setupFor(r);
     Object.assign(S, { url: r.input, company: r.company, how: r.how, research: s.research, fields: s.fields, streamed: false,
-      items: null, itemsStage: null, edited: false });
+      items: null, itemsStage: null, edited: false, requests: null, roomShared: false, roomOpened: false, roomPartial: false, roomMore: false, roomFull: false });
+    clearTimeout(S.arrivalTimer); clearTimeout(S.moreTimer);
     const q = new URLSearchParams(location.search);
     q.set("company", r.input);
     history.replaceState(null, "", "?" + q.toString() + "#readout");
@@ -90,18 +92,35 @@
     return `<ol class="steps" aria-label="Steps">${STEPS.map(([k, t], i) =>
       `<li${k === cur ? ' aria-current="step"' : ""}>${i + 1}. ${esc(t)}</li>`).join("")}</ol>`;
   }
-  function header(cur, back) {
-    return `<header class="masthead"><h1 class="tc-brand">Tricorder</h1><span class="note">Prototype. First steps, before any data room.</span></header>
-      ${stepsNav(cur)}${back ? `<p class="back"><a href="#${back[0]}">Back to ${esc(back[1])}</a></p>` : ""}`;
+  // The product's own bar, no prototype chrome (Ken, 1:00 PM: "make this like a real mock as though we're actually using the product").
+  function header(cur) {
+    const go = cur === "start" ? "" : `<form class="appbar-go" data-appbar-go><input class="tc-input" type="text" placeholder="Paste a company URL" aria-label="Company URL" /></form>`;
+    return `<header class="masthead appbar"><a class="tc-brand" href="#start">Tricorder</a>${go}</header>`;
   }
+  app.addEventListener("submit", (e) => {
+    const f = e.target.closest("[data-appbar-go]");
+    if (!f) return;
+    e.preventDefault();
+    const v = f.querySelector("input").value.trim();
+    if (v) startCompany(v);
+  });
+
+  app.addEventListener("click", (e) => {
+    if (e.target.closest("#to-request")) openRequest();
+    if (e.target.closest("#open-room")) openRoom();
+    if (e.target.closest("#open-more")) openMore();
+  });
 
   function render() {
     S.run++; // stops any arrival that is still playing
     const r = route();
     if (r !== "start" && !S.fields) return renderStart();
-    if (r === "readout") return renderReadout();
-    if (r === "request") return renderRequest();
-    if (r === "received") return renderReceived();
+    const dlg = document.getElementById("req-modal");
+    if (dlg && dlg.open) dlg.close();
+    if (r === "readout") return S.roomOpened && window.TC_ROOM_VIEW ? showRoomView() : renderReadout();
+    if (r === "request") { renderReadout(); return openRequest(); }
+    if (r === "received") { if (S.requests && roomOf()) { if (!S.roomOpened) openRoom(); else showRoomView(); return; } return renderReadout(); }
+    if (window.TC_STEPS && window.TC_STEPS[r]) return window.TC_STEPS[r]();
     return renderStart();
   }
 
@@ -116,8 +135,6 @@
           <input type="url" id="url" name="url" required class="tc-input" placeholder="https://ploy.ai" aria-label="Company URL" value="${esc(S.url)}" />
           <button class="tc-btn primary" type="submit">Start</button>
         </form>
-        <div class="tries"><span class="note">Try:</span>${tries.map((t) => `<button type="button" class="link tc-link-btn" data-try="${esc(t)}">${esc(t.replace(/^https:\/\//, ""))}</button>`).join("")}</div>
-        <p class="note">Tricorder matches the URL against the saved YC Spring 2026 list of ${D.companies.length} companies. A link with <code>?company=</code> and a URL opens a company directly.</p>
       </section>`;
     const form = document.getElementById("urlform");
     form.addEventListener("submit", (e) => { e.preventDefault(); startCompany(document.getElementById("url").value); });
@@ -146,14 +163,42 @@
       ${s.kind === "readable copy" ? `<span class="note"> (a readable copy made from the saved file)</span>` : ""}
     </span>`;
   }
+  // Hovering an evidence number shows the fact and its source (Ken, 12:58 PM).
+  let tip = null;
+  function hideTip() { if (tip) { tip.remove(); tip = null; } }
+  function showTip(a) {
+    hideTip();
+    const row = document.getElementById(a.getAttribute("href").slice(1));
+    if (!row) return;
+    const text = row.querySelector(".claim-text").textContent.replace(/^\s*\d+\s*/, "").trim();
+    const chipEl = row.querySelector(".srcchip");
+    const s = chipEl ? D.sources[chipEl.dataset.src] : null;
+    tip = document.createElement("div");
+    tip.className = "ev-tip";
+    tip.setAttribute("role", "tooltip");
+    tip.innerHTML = `<span class="ev-tip-n">${esc(a.textContent)}</span> ${esc(text)}${s ? `<span class="ev-tip-src">Source: ${esc(s.title)}</span>` : ""}`;
+    document.body.appendChild(tip);
+    const r = a.getBoundingClientRect();
+    const w = Math.min(380, window.innerWidth - 32);
+    tip.style.width = w + "px";
+    tip.style.left = Math.max(16, Math.min(window.scrollX + r.left, window.scrollX + window.innerWidth - w - 16)) + "px";
+    tip.style.top = (window.scrollY + r.bottom + 8) + "px";
+  }
+  app.addEventListener("mouseover", (e) => { const a = e.target.closest(".ev-ref"); if (a) showTip(a); });
+  app.addEventListener("mouseout", (e) => { if (e.target.closest(".ev-ref")) hideTip(); });
+  app.addEventListener("focusin", (e) => { const a = e.target.closest(".ev-ref"); if (a) showTip(a); });
+  app.addEventListener("focusout", (e) => { if (e.target.closest(".ev-ref")) hideTip(); });
+
   app.addEventListener("click", (e) => {
     const b = e.target.closest(".srcchip");
     if (!b) return;
     const open = b.getAttribute("aria-expanded") === "true";
-    const next = b.nextElementSibling;
+    const row = b.closest("tr");
+    const next = row ? row.nextElementSibling : b.nextElementSibling;
     if (open && next && next.classList.contains("panel")) { next.remove(); b.setAttribute("aria-expanded", "false"); return; }
     const c = b.dataset.claim ? JSON.parse(b.dataset.claim) : null;
-    b.insertAdjacentHTML("afterend", sourcePanel(b.dataset.src, c));
+    if (row) row.insertAdjacentHTML("afterend", `<tr class="panel"><td colspan="2">${sourcePanel(b.dataset.src, c)}</td></tr>`);
+    else b.insertAdjacentHTML("afterend", sourcePanel(b.dataset.src, c));
     b.setAttribute("aria-expanded", "true");
   });
 
@@ -166,9 +211,49 @@
   };
   function claimLi(c) {
     if (c.placeholder) {
-      return `<li class="claim ph wait"><span class="claim-text">${esc(c.text)}</span><span class="tc-mark ph" title="Prototype filler. Benjamin's research builds this part.">Placeholder</span></li>`;
+      return `<tr class="claim ph wait"><td class="claim-text">${esc(c.text)}</td><td class="claim-src"><span class="tc-mark ph" title="Not researched yet">Placeholder</span></td></tr>`;
     }
-    return `<li class="claim wait"><span class="claim-text">${esc(c.text)}</span>${KIND[c.kind] || ""}${chip(c.source, c)}</li>`;
+    return `<tr class="claim wait" id="ev-${c._n}"><td class="claim-text"><span class="ev-n">${c._n}</span> ${esc(c.text)} ${KIND[c.kind] || ""}</td><td class="claim-src">${chip(c.source, c)}</td></tr>`;
+  }
+  const MARKS = { strong: ["tc-mark--strong", "Looking strong"], weak: ["tc-mark--weak", "Looking weak"], mixed: ["tc-mark--mixed", "Mixed"], thin: ["tc-mark--thin", "Not enough yet"] };
+  function allClaims(R) {
+    return R.sections.flatMap((s) => s.parts ? s.parts.flatMap((p) => p.claims) : s.cards ? s.cards.flatMap((c) => c.claims) : s.claims);
+  }
+  function numberClaims(R) {
+    let n = 0;
+    allClaims(R).forEach((c) => { if (!c.placeholder) c._n = ++n; });
+  }
+  // Ken, 12:55 PM: what the company does, then the founders, then comps, then market signals.
+  const SECTION_ORDER = ["The founders", "Comps", "Market signals", "The outside world"];
+  function orderedResearch(R) {
+    if (!R) return R;
+    const rank = (s) => { const i = SECTION_ORDER.indexOf(s.title); return i < 0 ? 99 : i; };
+    return { ...R, sections: [...R.sections].sort((a, b) => rank(a) - rank(b)) };
+  }
+  function refNums(R, refs) {
+    const claims = allClaims(R).filter((c) => !c.placeholder);
+    return [...new Set(refs.map((r) => (claims.find((c) => c.text.includes(r)) || {})._n).filter(Boolean))];
+  }
+  function aboutHtml(R) {
+    const a = (window.TC_ABOUT || {})[R.slug];
+    if (!a) return "";
+    return `<p class="about">${esc(a.text)} <span class="based">${refNums(R, a.refs).map((n) => `<a class="ev-ref" href="#ev-${n}">${n}</a>`).join(" ")}</span></p>`;
+  }
+  function insightsHtml(R) {
+    const list = (window.TC_INSIGHTS || {})[R.slug] || [];
+    if (!list.length) return "";
+    const claims = allClaims(R).filter((c) => !c.placeholder);
+    const cards = list.map((ins) => {
+      const nums = [...new Set(ins.refs.map((r) => (claims.find((c) => c.text.includes(r)) || {})._n).filter(Boolean))];
+      const [cls, label] = MARKS[ins.mark] || MARKS.thin;
+      return `<article class="tc-card insight wait"><div class="tc-card-head"><span class="tc-mark ${cls}">${label}</span><span class="piece">${esc(ins.piece)}</span></div>
+        <h3>${esc(ins.title)}</h3><p>${esc(ins.text)}</p>
+        <p class="based">Based on ${nums.map((n) => `<a class="ev-ref" href="#ev-${n}">${n}</a>`).join(" ")}</p></article>`;
+    }).join("");
+    return `<section class="insights" aria-label="What stands out"><h2>What stands out</h2><div class="insight-grid">${cards}</div></section>`;
+  }
+  function claimsTable(claims) {
+    return `<table class="tc-table claims"><thead><tr><th scope="col">What we found</th><th scope="col">Source</th></tr></thead><tbody>${claims.map(claimLi).join("")}</tbody></table>`;
   }
   function gapsList(gaps) {
     if (!gaps || !gaps.length) return "";
@@ -176,7 +261,7 @@
   }
 
   // Step 2: the first readout ------------------------------------------------------------------
-  const FIELD_LABELS = [["name", "Name"], ["website", "Website"], ["founders", "Founders"], ["batch", "Batch"], ["stage", "Stage"], ["location", "Location"], ["team_size", "Team size"]];
+  const FIELD_LABELS = [["name", "Name"], ["website", "Website"], ["founders", "Founders"], ["stage", "Stage"], ["location", "Location"], ["team_size", "Team size"]];
   function setupPanel() {
     const f = S.fields;
     const cells = FIELD_LABELS.map(([k, label]) => {
@@ -184,13 +269,12 @@
       const input = k === "stage"
         ? `<select class="tc-input" id="f-${k}" data-field="${k}">${Object.entries(STAGES).map(([sk, st]) => `<option value="${sk}"${v.value === sk ? " selected" : ""}>${st}</option>`).join("")}</select>`
         : `<input class="tc-input" type="text" id="f-${k}" data-field="${k}" value="${esc(v.value)}" />`;
-      const src = v.source ? `${esc(v.note || "From")} ${v.note ? "" : esc(D.sources[v.source].title)}${chip(v.source)}` : esc(v.note || "");
+      const src = v.source ? chip(v.source) : esc(v.note || "");
       return `<div class="field"><label class="tc-label" for="f-${k}">${label}</label>${input}<div class="src">${src}${v.edited ? ' <span class="tc-mark warn">Corrected by you</span>' : ""}</div></div>`;
     }).join("");
-    const how = S.company ? `Matched by ${esc(S.how)} in the saved YC Spring 2026 list.` : "This URL is not in the saved YC Spring 2026 list.";
+    const unknown = S.company ? "" : `<p class="note">This URL is not in the saved YC Spring 2026 list.</p>`;
     return `<section class="setup" aria-label="The company">
-      <h2>The company, set up from <code>${esc(S.url)}</code></h2>
-      <p class="note">${how} Correct any field. The readout and the request use your corrections.</p>
+      ${unknown}
       <div class="fields">${cells}</div></section>`;
   }
   function bindSetup() {
@@ -210,13 +294,13 @@
     let inner = "";
     if (s.parts) {
       inner = s.parts.map((p) => `<div class="part wait"><h3>${esc(p.label)}</h3>${p.claims.length
-        ? `<ul class="claims">${p.claims.map(claimLi).join("")}</ul>` : `<p class="note wait">Nothing found.</p>`}</div>`).join("");
+        ? claimsTable(p.claims) : `<p class="note wait">Nothing found.</p>`}</div>`).join("");
     } else if (s.cards) {
       inner = `<div class="cards">${s.cards.map((c) => `<article class="card wait"><h3>${esc(c.name)}</h3><div class="role">${esc(c.role)}</div>
         <div class="links">${c.x ? `X: <a href="${esc(c.x)}" target="_blank" rel="noopener">linked, not read</a>` : ""}${c.github ? ` · <a href="${esc(c.github)}" target="_blank" rel="noopener">GitHub</a>` : ""}</div>
-        <ul class="claims">${c.claims.map(claimLi).join("")}</ul></article>`).join("")}</div>`;
+        ${claimsTable(c.claims)}</article>`).join("")}</div>`;
     } else {
-      inner = `<ul class="claims">${s.claims.map(claimLi).join("")}</ul>`;
+      inner = claimsTable(s.claims);
     }
     return `<section class="section wait" data-sec="${i}" aria-label="${esc(s.title)}">
       <h2>${esc(s.title)} <span class="status" data-status>Waiting</span></h2>${inner}${gapsList(s.gaps)}</section>`;
@@ -230,70 +314,58 @@
 
   function renderReadout() {
     chipN = 0;
-    const R = S.research;
+    const R = orderedResearch(S.research);
     const name = S.fields.name.value || "This company";
     let body;
     if (!R) {
       body = `<div class="empty" role="status"><strong>Research not cached for this company.</strong>
-        The prototype holds saved research for Ploy and Sazabi only. In the built app, Tricorder runs the outside scans here, section by section.
-        You can still draft the data-room request from the stage's first-tier documents.</div>`;
+        Tricorder has saved research for Ploy and Sazabi only. Research for other companies is not set up yet.
+        You can still draft the data-room request from the stage's first-tier documents.</div>
+        <div class="actions"><button class="tc-btn primary" id="to-request" type="button">Draft the data-room request</button></div>`;
     } else {
-      body = `<p class="status" id="overall" role="status"></p>
+      numberClaims(R);
+      body = `<p class="tc-sr-only" id="overall" role="status"></p>
+        ${insightsHtml(R)}
         ${R.sections.map(sectionHtml).join("")}
-        <section class="roomgaps wait" id="roomgaps" aria-label="What only a data room can answer">
-          <h2>What only a data room can answer</h2>
+        <section class="roomgaps wait" id="roomgaps" aria-label="Up Next: Data Room Requests">
+          ${S.requests ? requestsInner() : `<h2>Up Next: Data Room Requests</h2>
           <p class="note">These become the first items on the data-room request.</p>
           <ul class="gaps tc-gap-list">${R.room_gaps.map((g) => `<li class="wait"><strong>${esc(g.text)}</strong> <span class="why">${esc(g.why)}</span></li>`).join("")}</ul>
+          <div class="actions"><button class="tc-btn primary" id="to-request" type="button">Draft the data-room request</button></div>`}
         </section>`;
     }
     app.innerHTML = `${header("readout", ["start", "the company URL"])}
+      <div id="notify" aria-live="polite">${notifyHtml()}</div>
       <h2 id="co-name" class="co-title">${esc(name)}</h2>
-      ${setupPanel()}
-      <div class="masthead readout-head"><h2 class="sub-title">First readout, before any data room</h2>
-        ${R ? '<button class="link tc-link-btn" id="replay" type="button">Replay the research</button>' : ""}</div>
-      <p class="note">Built from public sources only. Every claim has a source. Items marked placeholder stand in for research the built app will run.</p>
-      ${body}
-      <div class="actions"><button class="tc-btn primary" id="to-request" type="button">Draft the data-room request</button></div>`;
+      ${R ? aboutHtml(R) : setupPanel()}
+
+      ${body}`;
     bindSetup();
-    document.getElementById("to-request").addEventListener("click", () => go("request"));
     if (R) {
-      document.getElementById("replay").addEventListener("click", () => { S.streamed = false; renderReadout(); });
       arrive(R);
     }
   }
 
-  // The research arrives: each section, then each claim, as if streaming in.
+  // Each section shows a skeleton until its data arrives, then fills in whole (Ken, 1:00 PM).
   function arrive(R) {
     const run = ++S.run;
     const overall = document.getElementById("overall");
-    const sections = [...app.querySelectorAll(".section")];
-    const steps = [];
-    const show = (el) => { el.classList.remove("wait"); el.classList.add("arrive"); };
-    const t = (ms) => ms * PACE;
-    sections.forEach((sec, i) => {
-      const s = R.sections[i];
-      steps.push([t(500), () => { show(sec); sec.querySelector("[data-status]").textContent = "Reading the saved sources"; overall.textContent = `Researching: ${s.title.toLowerCase()}`; }]);
-      sec.querySelectorAll(".wait").forEach((el) => steps.push([el.matches(".part, .card") ? t(250) : t(420), () => show(el)]));
-      steps.push([t(300), () => { sec.querySelector("[data-status]").textContent = `Done: ${countOf(s)}`; }]);
-    });
-    const rg = document.getElementById("roomgaps");
-    steps.push([t(500), () => show(rg)]);
-    rg.querySelectorAll(".wait").forEach((el) => steps.push([t(300), () => show(el)]));
-    steps.push([0, () => { overall.textContent = `Research done: ${R.sections.length} sections.`; S.streamed = true; }]);
-
-    if (S.streamed || PACE === 0) {
-      steps.forEach(([, f]) => f());
-      app.querySelectorAll(".arrive").forEach((el) => el.classList.remove("arrive"));
-      return;
-    }
-    let i = 0;
-    const tick = () => {
-      if (run !== S.run || i >= steps.length) return;
-      const [, f] = steps[i++];
-      f();
-      setTimeout(tick, i < steps.length ? steps[i][0] : 0);
-    };
-    setTimeout(tick, t(300));
+    app.querySelectorAll(".wait").forEach((el) => el.classList.remove("wait"));
+    const blocks = [...app.querySelectorAll(".insights, .section, #roomgaps")];
+    const done = () => { overall.textContent = `Research done: ${R.sections.length} sections.`; S.streamed = true; };
+    app.querySelectorAll(".section").forEach((b) => { const st = b.querySelector("[data-status]"); if (st) st.textContent = `Done: ${countOf(R.sections[Number(b.dataset.sec)])}`; });
+    if (S.streamed || PACE === 0) return done();
+    const skel = '<div class="skel" aria-hidden="true"><span></span><span></span><span></span></div>';
+    blocks.forEach((b) => { b.classList.add("loading"); b.insertAdjacentHTML("beforeend", skel); });
+    overall.textContent = "Researching";
+    // Order data lands in: the sections, then the insights read from them, then what only a room can answer.
+    const order = [...app.querySelectorAll(".section"), app.querySelector(".insights"), document.getElementById("roomgaps")].filter(Boolean);
+    order.forEach((b, i) => setTimeout(() => {
+      if (run !== S.run) return;
+      b.classList.remove("loading");
+      const s = b.querySelector(":scope > .skel"); if (s) s.remove();
+      if (i === order.length - 1) done();
+    }, (500 + i * 650) * PACE));
   }
 
   // Step 3: the data-room request ---------------------------------------------------------------
@@ -376,14 +448,24 @@
       </div></li>`;
   }
 
-  function renderRequest() {
-    chipN = 0;
+  // The data-room request is a dialog over the associate's working page (Ken, 1:03 PM).
+  function openRequest() {
+    if (!S.fields) return;
     if (!S.items || S.itemsStage !== S.fields.stage.value) buildItems();
     if (!S.by) S.by = defaultBy();
     const company = S.fields.name.value || "This company";
     const fromReadout = S.items.filter((i) => i.fromReadout).length;
-    app.innerHTML = `${header("request", ["readout", "the first readout"])}
-      <h2 class="co-title">${esc(company)}: the data-room request</h2>
+    let dlg = document.getElementById("req-modal");
+    if (!dlg) {
+      dlg = document.createElement("dialog");
+      dlg.id = "req-modal";
+      dlg.setAttribute("aria-labelledby", "req-title");
+      document.body.appendChild(dlg);
+      dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+    }
+    dlg.innerHTML = `<div class="modal-head"><h2 id="req-title">${esc(company)}: the data-room request</h2>
+        <button class="tc-btn tc-btn--secondary" type="button" id="req-close">Close</button></div>
+      <div class="modal-body">
       <p class="banner tc-synthetic" role="note">For the demo, the data room that comes back is synthetic. The team writes it. It is not ${esc(company)}'s data.</p>
       <p class="note">The readout's gaps come first (${fromReadout}), then the standard first-tier documents for a ${esc(STAGES[S.itemsStage].toLowerCase())} company. Uncheck, check or add items. The draft updates as you go. Tricorder never sends it.</p>
       <div class="toolbar">
@@ -419,10 +501,94 @@
             </div>
           </aside>
         </div>
-      </div>
-      <div class="actions"><button class="tc-btn primary" type="button" id="to-received">The founder sends the room</button></div>`;
-    bindRequest();
-    refreshDraft(true);
+      </div></div>
+      <div class="modal-foot"><span class="note">Send it from your own mail, then mark it sent.</span>
+        <button class="tc-btn primary" type="button" id="mark-sent">Mark as sent</button></div>`;
+    bindRequest(dlg);
+    if (S.edited) { document.getElementById("d-subject").value = S.subject; document.getElementById("d-body").value = S.body; }
+    refreshDraft(false);
+    if (!dlg.open) dlg.showModal();
+  }
+
+  // After the request goes out: the working page lists each item as Open, then the room arrives ------
+  const askedText = (d) => d.toLocaleString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
+  const roomOf = () => (S.research && S.research.room) || null;
+  const heldBy = (it) => { const r = roomOf(); return r && it.id && r.holds[it.id] ? r.holds[it.id] : null; };
+  const founderFull = () => (S.fields.founders.value || "").split(",")[0].trim() || "the founder";
+
+  function markSent() {
+    const now = new Date();
+    S.requests = { sentAt: now };
+    S.roomShared = false; S.roomOpened = false; S.roomPartial = false; S.roomMore = false; S.roomFull = false;
+    clearTimeout(S.moreTimer);
+    S.items.filter((i) => i.checked).forEach((i) => { i.askedAt = now; });
+    clearTimeout(S.arrivalTimer);
+    if (roomOf()) {
+      const run = S.runStart = (S.runStart || 0) + 1;
+      S.arrivalTimer = setTimeout(() => { if (run === S.runStart && S.requests) { S.roomShared = true; paintWorking(); } }, 1800 * PACE);
+    }
+    paintWorking();
+  }
+
+  // Opening the room hands the working page to room_view.js: the first files arrive, then the rest (Ken, 1:03 PM).
+  const roomStates = () => { const r = roomOf(); return r && r.states ? r.states : null; };
+  function openRoom() {
+    S.roomShared = true; S.roomOpened = true; S.roomPartial = !S.roomFull && !!roomStates();
+    showRoomView();
+    scheduleMore();
+  }
+  function openMore() {
+    S.roomPartial = false; S.roomFull = true;
+    showRoomView();
+  }
+  function showRoomView() {
+    const view = window.TC_ROOM_VIEW;
+    if (!view || typeof view.render !== "function") return renderReadout();
+    view.render(S.roomPartial ? "partial" : "full");
+    paintMore();
+  }
+  function scheduleMore() {
+    const st = roomStates();
+    if (!st || !S.roomPartial || S.roomMore) return;
+    clearTimeout(S.moreTimer);
+    S.moreTimer = setTimeout(() => { S.roomMore = true; paintMore(); }, 1800 * PACE);
+  }
+  function paintMore() {
+    const st = roomStates();
+    const n = document.getElementById("notify");
+    if (!st || !n || !S.roomMore || !S.roomPartial || n.querySelector("#open-more")) return;
+    const k = st.full.files_total - st.partial.arrived.length;
+    const company = S.fields.name.value || "This company";
+    n.insertAdjacentHTML("beforeend", `<div class="notice" role="status"><div><strong>${esc(company)} added ${k} more file${k === 1 ? "" : "s"}</strong> <span class="dot" aria-hidden="true">·</span> just now</div>
+      <button class="tc-btn primary" type="button" id="open-more">Open the data room</button></div>`);
+  }
+
+  function requestsInner() {
+    const company = S.fields.name.value || "This company";
+    const rows = S.items.filter((i) => i.checked);
+    rows.forEach((i) => { if (!i.askedAt) i.askedAt = new Date(); });
+    return `<h2>Data room requests</h2>
+      <p class="note" id="req-note">${rows.length} item${rows.length === 1 ? "" : "s"} asked for, all open. Request sent to ${esc(founderFull())} <span class="dot" aria-hidden="true">·</span> waiting for ${esc(company)}'s data room</p>
+      <ul class="reqs">${rows.map((it) => `<li class="req" data-state="open">
+        <span class="tc-mark">Open</span>
+        <div><div class="title">${esc(it.title)}</div><div class="meta">Asked ${esc(askedText(it.askedAt))}</div></div></li>`).join("")}</ul>`;
+  }
+
+  function notifyHtml() {
+    const room = roomOf();
+    if (!S.requests || !room || !S.roomShared || S.roomOpened) return "";
+    const company = S.fields.name.value || "This company";
+    const st = roomStates();
+    const n = st ? st.partial.arrived.length : room.files.length;
+    return `<div class="notice" role="status"><div><strong>${esc(company)} shared its data room</strong> <span class="dot" aria-hidden="true">·</span> ${n} file${n === 1 ? "" : "s"} <span class="dot" aria-hidden="true">·</span> just now</div>
+      <button class="tc-btn primary" type="button" id="open-room">Open the data room</button></div>`;
+  }
+
+  function paintWorking() {
+    const n = document.getElementById("notify");
+    if (n) n.innerHTML = notifyHtml();
+    const box = document.getElementById("roomgaps");
+    if (box && S.requests) { box.setAttribute("aria-label", "Data room requests"); box.innerHTML = requestsInner(); }
   }
 
   function refreshDraft(force) {
@@ -440,14 +606,14 @@
     document.getElementById("mailto").href = `mailto:${enc(S.to).replace("%40", "@")}?subject=${enc(S.subject)}&body=${enc(S.body.replace(/\r?\n/g, "\r\n"))}`;
   }
 
-  function bindRequest() {
+  function bindRequest(dlg) {
     const asks = document.getElementById("asks");
     asks.addEventListener("change", (e) => {
       const key = e.target.dataset.item;
       const it = S.items.find((x) => x.key === key);
       if (it) { it.checked = e.target.checked; refreshDraft(); }
     });
-    app.querySelectorAll("[data-pick]").forEach((b) => b.addEventListener("click", () => {
+    dlg.querySelectorAll("[data-pick]").forEach((b) => b.addEventListener("click", () => {
       const k = b.dataset.pick;
       S.items.forEach((i) => { i.checked = k === "all" || (k === "readout" && i.fromReadout); });
       asks.querySelectorAll("input[type=checkbox]").forEach((cb) => { cb.checked = S.items.find((x) => x.key === cb.dataset.item).checked; });
@@ -474,26 +640,17 @@
     document.getElementById("d-subject").addEventListener("input", (e) => { S.subject = e.target.value; S.edited = true; refreshDraft(); });
     document.getElementById("d-body").addEventListener("input", (e) => { S.body = e.target.value; S.edited = S.body !== S.autoBody; refreshDraft(); });
     document.getElementById("redo-btn").addEventListener("click", () => refreshDraft(true));
+    document.getElementById("req-close").addEventListener("click", () => dlg.close());
+    document.getElementById("mark-sent").addEventListener("click", () => { if (!S.items.some((i) => i.checked)) { document.getElementById("copied").textContent = "Pick at least one item first."; return; } dlg.close(); markSent(); });
     document.getElementById("copy").addEventListener("click", () => {
       const text = `Subject: ${S.subject}\n\n${S.body}`;
       const done = (ok) => { document.getElementById("copied").textContent = ok ? "Copied." : "Copy did not work here. Select the text instead."; };
       (navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject()).then(() => done(true), () => done(false));
     });
-    document.getElementById("to-received").addEventListener("click", () => go("received"));
   }
 
-  // Step 4: the room comes back -----------------------------------------------------------------
-  function renderReceived() {
-    const company = S.fields.name.value || "This company";
-    const n = S.items ? S.items.filter((i) => i.checked).length : 0;
-    app.innerHTML = `${header("received", ["request", "the data-room request"])}
-      <h2 class="co-title">${esc(company)}: data room received</h2>
-      <p class="banner tc-synthetic" role="note">This data room is synthetic. The team wrote it for the demo. It is not ${esc(company)}'s data.</p>
-      <p>You asked for ${n} item${n === 1 ? "" : "s"}. Tricorder now checks what the room holds against that list, then reads the room for red and green flags.</p>
-      <p>This is where the prototype joins the app that is already built: the readout with its flags, the gaps, and the requests for anything still missing.</p>
-      <div class="actions"><a class="btn primary tc-btn" href="http://localhost:5173/">Open the readout in Tricorder</a>
-        <span class="note">Runs on this laptop at localhost:5173.</span></div>`;
-  }
+  // Steps 5 to 8 live in their own files and read state and helpers from here.
+  window.TC = { D, S, app, esc, chip, sourcePanel, header, go, buildItems, render, openRoom };
 
   // Start ------------------------------------------------------------------------------------------
   const fromAddress = params.get("company");
